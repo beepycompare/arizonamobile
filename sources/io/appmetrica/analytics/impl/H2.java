@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class H2 extends AbstractC0256g {
     public static final String g = "background";
 

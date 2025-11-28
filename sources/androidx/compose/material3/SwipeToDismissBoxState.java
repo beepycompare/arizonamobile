@@ -71,7 +71,7 @@ public final class SwipeToDismissBoxState {
     public static final float _init_$lambda$2(Density density) {
         float f;
         f = SwipeToDismissBoxKt.DismissVelocityThreshold;
-        return density.mo429toPx0680j_4(f);
+        return density.mo430toPx0680j_4(f);
     }
 
     public final AnchoredDraggableState<SwipeToDismissBoxValue> getAnchoredDraggableState$material3() {

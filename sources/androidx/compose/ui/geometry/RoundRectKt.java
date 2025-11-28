@@ -13,15 +13,15 @@ public final class RoundRectKt {
     }
 
     /* renamed from: RoundRect-ZAM2FJo  reason: not valid java name */
-    public static final RoundRect m5087RoundRectZAM2FJo(Rect rect, long j, long j2, long j3, long j4) {
+    public static final RoundRect m5088RoundRectZAM2FJo(Rect rect, long j, long j2, long j3, long j4) {
         return new RoundRect(rect.getLeft(), rect.getTop(), rect.getRight(), rect.getBottom(), j, j2, j3, j4, null);
     }
 
     /* renamed from: translate-Uv8p0NA  reason: not valid java name */
-    public static final RoundRect m5091translateUv8p0NA(RoundRect roundRect, long j) {
+    public static final RoundRect m5092translateUv8p0NA(RoundRect roundRect, long j) {
         int i = (int) (j >> 32);
         int i2 = (int) (4294967295L & j);
-        return new RoundRect(roundRect.getLeft() + Float.intBitsToFloat(i), roundRect.getTop() + Float.intBitsToFloat(i2), roundRect.getRight() + Float.intBitsToFloat(i), Float.intBitsToFloat(i2) + roundRect.getBottom(), roundRect.m5085getTopLeftCornerRadiuskKHJgLs(), roundRect.m5086getTopRightCornerRadiuskKHJgLs(), roundRect.m5084getBottomRightCornerRadiuskKHJgLs(), roundRect.m5083getBottomLeftCornerRadiuskKHJgLs(), null);
+        return new RoundRect(roundRect.getLeft() + Float.intBitsToFloat(i), roundRect.getTop() + Float.intBitsToFloat(i2), roundRect.getRight() + Float.intBitsToFloat(i), Float.intBitsToFloat(i2) + roundRect.getBottom(), roundRect.m5086getTopLeftCornerRadiuskKHJgLs(), roundRect.m5087getTopRightCornerRadiuskKHJgLs(), roundRect.m5085getBottomRightCornerRadiuskKHJgLs(), roundRect.m5084getBottomLeftCornerRadiuskKHJgLs(), null);
     }
 
     public static final Rect getBoundingRect(RoundRect roundRect) {
@@ -29,7 +29,7 @@ public final class RoundRectKt {
     }
 
     public static final Rect getSafeInnerRect(RoundRect roundRect) {
-        return new Rect(roundRect.getLeft() + (Math.max(Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getTop() + (Math.max(Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f), roundRect.getRight() - (Math.max(Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getBottom() - (Math.max(Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f));
+        return new Rect(roundRect.getLeft() + (Math.max(Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getTop() + (Math.max(Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f), roundRect.getRight() - (Math.max(Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getBottom() - (Math.max(Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f));
     }
 
     public static final boolean isEmpty(RoundRect roundRect) {
@@ -41,14 +41,14 @@ public final class RoundRectKt {
     }
 
     public static final boolean isRect(RoundRect roundRect) {
-        long m5085getTopLeftCornerRadiuskKHJgLs = roundRect.m5085getTopLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
-        if (((~m5085getTopLeftCornerRadiuskKHJgLs) & (m5085getTopLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
-            long m5086getTopRightCornerRadiuskKHJgLs = roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 9223372034707292159L;
-            if (((~m5086getTopRightCornerRadiuskKHJgLs) & (m5086getTopRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
-                long m5083getBottomLeftCornerRadiuskKHJgLs = roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
-                if (((~m5083getBottomLeftCornerRadiuskKHJgLs) & (m5083getBottomLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
-                    long m5084getBottomRightCornerRadiuskKHJgLs = roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 9223372034707292159L;
-                    return (((~m5084getBottomRightCornerRadiuskKHJgLs) & (m5084getBottomRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) != 0;
+        long m5086getTopLeftCornerRadiuskKHJgLs = roundRect.m5086getTopLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
+        if (((~m5086getTopLeftCornerRadiuskKHJgLs) & (m5086getTopLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
+            long m5087getTopRightCornerRadiuskKHJgLs = roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 9223372034707292159L;
+            if (((~m5087getTopRightCornerRadiuskKHJgLs) & (m5087getTopRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
+                long m5084getBottomLeftCornerRadiuskKHJgLs = roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
+                if (((~m5084getBottomLeftCornerRadiuskKHJgLs) & (m5084getBottomLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
+                    long m5085getBottomRightCornerRadiuskKHJgLs = roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 9223372034707292159L;
+                    return (((~m5085getBottomRightCornerRadiuskKHJgLs) & (m5085getBottomRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) != 0;
                 }
                 return false;
             }
@@ -58,7 +58,7 @@ public final class RoundRectKt {
     }
 
     public static final boolean isEllipse(RoundRect roundRect) {
-        return roundRect.m5085getTopLeftCornerRadiuskKHJgLs() == roundRect.m5086getTopRightCornerRadiuskKHJgLs() && roundRect.m5086getTopRightCornerRadiuskKHJgLs() == roundRect.m5084getBottomRightCornerRadiuskKHJgLs() && roundRect.m5084getBottomRightCornerRadiuskKHJgLs() == roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() && ((double) roundRect.getWidth()) <= ((double) Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() >> 32))) * 2.0d && ((double) roundRect.getHeight()) <= ((double) Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() & 4294967295L))) * 2.0d;
+        return roundRect.m5086getTopLeftCornerRadiuskKHJgLs() == roundRect.m5087getTopRightCornerRadiuskKHJgLs() && roundRect.m5087getTopRightCornerRadiuskKHJgLs() == roundRect.m5085getBottomRightCornerRadiuskKHJgLs() && roundRect.m5085getBottomRightCornerRadiuskKHJgLs() == roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() && ((double) roundRect.getWidth()) <= ((double) Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() >> 32))) * 2.0d && ((double) roundRect.getHeight()) <= ((double) Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() & 4294967295L))) * 2.0d;
     }
 
     public static final boolean isCircle(RoundRect roundRect) {
@@ -76,30 +76,30 @@ public final class RoundRectKt {
     public static final long getCenter(RoundRect roundRect) {
         float left = roundRect.getLeft() + (roundRect.getWidth() / 2.0f);
         float top = roundRect.getTop() + (roundRect.getHeight() / 2.0f);
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
     }
 
     public static final boolean isSimple(RoundRect roundRect) {
-        long m5085getTopLeftCornerRadiuskKHJgLs = roundRect.m5085getTopLeftCornerRadiuskKHJgLs();
-        return (m5085getTopLeftCornerRadiuskKHJgLs >>> 32) == (m5085getTopLeftCornerRadiuskKHJgLs & 4294967295L) && roundRect.m5085getTopLeftCornerRadiuskKHJgLs() == roundRect.m5086getTopRightCornerRadiuskKHJgLs() && roundRect.m5085getTopLeftCornerRadiuskKHJgLs() == roundRect.m5084getBottomRightCornerRadiuskKHJgLs() && roundRect.m5085getTopLeftCornerRadiuskKHJgLs() == roundRect.m5083getBottomLeftCornerRadiuskKHJgLs();
+        long m5086getTopLeftCornerRadiuskKHJgLs = roundRect.m5086getTopLeftCornerRadiuskKHJgLs();
+        return (m5086getTopLeftCornerRadiuskKHJgLs >>> 32) == (m5086getTopLeftCornerRadiuskKHJgLs & 4294967295L) && roundRect.m5086getTopLeftCornerRadiuskKHJgLs() == roundRect.m5087getTopRightCornerRadiuskKHJgLs() && roundRect.m5086getTopLeftCornerRadiuskKHJgLs() == roundRect.m5085getBottomRightCornerRadiuskKHJgLs() && roundRect.m5086getTopLeftCornerRadiuskKHJgLs() == roundRect.m5084getBottomLeftCornerRadiuskKHJgLs();
     }
 
     public static final RoundRect lerp(RoundRect roundRect, RoundRect roundRect2, float f) {
-        return new RoundRect(MathHelpersKt.lerp(roundRect.getLeft(), roundRect2.getLeft(), f), MathHelpersKt.lerp(roundRect.getTop(), roundRect2.getTop(), f), MathHelpersKt.lerp(roundRect.getRight(), roundRect2.getRight(), f), MathHelpersKt.lerp(roundRect.getBottom(), roundRect2.getBottom(), f), CornerRadiusKt.m5008lerp3Ry4LBc(roundRect.m5085getTopLeftCornerRadiuskKHJgLs(), roundRect2.m5085getTopLeftCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5008lerp3Ry4LBc(roundRect.m5086getTopRightCornerRadiuskKHJgLs(), roundRect2.m5086getTopRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5008lerp3Ry4LBc(roundRect.m5084getBottomRightCornerRadiuskKHJgLs(), roundRect2.m5084getBottomRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5008lerp3Ry4LBc(roundRect.m5083getBottomLeftCornerRadiuskKHJgLs(), roundRect2.m5083getBottomLeftCornerRadiuskKHJgLs(), f), null);
+        return new RoundRect(MathHelpersKt.lerp(roundRect.getLeft(), roundRect2.getLeft(), f), MathHelpersKt.lerp(roundRect.getTop(), roundRect2.getTop(), f), MathHelpersKt.lerp(roundRect.getRight(), roundRect2.getRight(), f), MathHelpersKt.lerp(roundRect.getBottom(), roundRect2.getBottom(), f), CornerRadiusKt.m5009lerp3Ry4LBc(roundRect.m5086getTopLeftCornerRadiuskKHJgLs(), roundRect2.m5086getTopLeftCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5009lerp3Ry4LBc(roundRect.m5087getTopRightCornerRadiuskKHJgLs(), roundRect2.m5087getTopRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5009lerp3Ry4LBc(roundRect.m5085getBottomRightCornerRadiuskKHJgLs(), roundRect2.m5085getBottomRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5009lerp3Ry4LBc(roundRect.m5084getBottomLeftCornerRadiuskKHJgLs(), roundRect2.m5084getBottomLeftCornerRadiuskKHJgLs(), f), null);
     }
 
     public static final RoundRect RoundRect(float f, float f2, float f3, float f4, float f5, float f6) {
-        long m4989constructorimpl = CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f6) & 4294967295L));
-        return new RoundRect(f, f2, f3, f4, m4989constructorimpl, m4989constructorimpl, m4989constructorimpl, m4989constructorimpl, null);
+        long m4990constructorimpl = CornerRadius.m4990constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f6) & 4294967295L));
+        return new RoundRect(f, f2, f3, f4, m4990constructorimpl, m4990constructorimpl, m4990constructorimpl, m4990constructorimpl, null);
     }
 
     /* renamed from: RoundRect-gG7oq9Y  reason: not valid java name */
-    public static final RoundRect m5089RoundRectgG7oq9Y(float f, float f2, float f3, float f4, long j) {
+    public static final RoundRect m5090RoundRectgG7oq9Y(float f, float f2, float f3, float f4, long j) {
         return RoundRect(f, f2, f3, f4, Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 
     /* renamed from: RoundRect-sniSvfs  reason: not valid java name */
-    public static final RoundRect m5090RoundRectsniSvfs(Rect rect, long j) {
+    public static final RoundRect m5091RoundRectsniSvfs(Rect rect, long j) {
         return RoundRect(rect, Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 }

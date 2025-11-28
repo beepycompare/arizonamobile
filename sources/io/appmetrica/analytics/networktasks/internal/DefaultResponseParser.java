@@ -2,10 +2,10 @@ package io.appmetrica.analytics.networktasks.internal;
 
 import androidx.core.app.NotificationCompat;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DefaultResponseParser {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class Response {
         public final String mStatus;
 

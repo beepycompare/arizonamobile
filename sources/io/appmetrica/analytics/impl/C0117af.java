@@ -12,7 +12,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.af  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0117af extends Fd {
     public static final C0195df d = new C0195df("UUID_RESULT", null);
     public static final C0195df e = new C0195df("DEVICE_ID_RESULT", null);

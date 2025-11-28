@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.networktasks.internal.ArgumentsMerger;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* renamed from: io.appmetrica.analytics.impl.v5  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AbstractC0640v5 implements InterfaceC0327ij {
 
     /* renamed from: a  reason: collision with root package name */

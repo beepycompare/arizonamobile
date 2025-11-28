@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Gi extends Hd {
     public Gi(int i, String str, uo uoVar, InterfaceC0562s2 interfaceC0562s2) {
         super(i, str, uoVar, new Fi(interfaceC0562s2));

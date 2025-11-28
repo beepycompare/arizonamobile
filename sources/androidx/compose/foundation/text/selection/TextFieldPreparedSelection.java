@@ -38,24 +38,24 @@ public final class TextFieldPreparedSelection extends BaseTextPreparedSelection<
     }
 
     public TextFieldPreparedSelection(TextFieldValue textFieldValue, OffsetMapping offsetMapping, TextLayoutResultProxy textLayoutResultProxy, TextPreparedSelectionState textPreparedSelectionState) {
-        super(textFieldValue.getAnnotatedString(), textFieldValue.m7708getSelectiond9O1mEE(), textLayoutResultProxy != null ? textLayoutResultProxy.getValue() : null, offsetMapping, textPreparedSelectionState, null);
+        super(textFieldValue.getAnnotatedString(), textFieldValue.m7709getSelectiond9O1mEE(), textLayoutResultProxy != null ? textLayoutResultProxy.getValue() : null, offsetMapping, textPreparedSelectionState, null);
         this.currentValue = textFieldValue;
         this.layoutResultProxy = textLayoutResultProxy;
     }
 
     public final TextFieldValue getValue() {
-        return TextFieldValue.m7703copy3r_uNRQ$default(this.currentValue, getAnnotatedString(), m1735getSelectiond9O1mEE(), (TextRange) null, 4, (Object) null);
+        return TextFieldValue.m7704copy3r_uNRQ$default(this.currentValue, getAnnotatedString(), m1736getSelectiond9O1mEE(), (TextRange) null, 4, (Object) null);
     }
 
     public final List<EditCommand> deleteIfSelectedOr(Function1<? super TextFieldPreparedSelection, ? extends EditCommand> function1) {
-        if (TextRange.m7451getCollapsedimpl(m1735getSelectiond9O1mEE())) {
+        if (TextRange.m7452getCollapsedimpl(m1736getSelectiond9O1mEE())) {
             EditCommand invoke = function1.invoke(this);
             if (invoke != null) {
                 return CollectionsKt.listOf(invoke);
             }
             return null;
         }
-        return CollectionsKt.listOf((Object[]) new EditCommand[]{new CommitTextCommand("", 0), new SetSelectionCommand(TextRange.m7455getMinimpl(m1735getSelectiond9O1mEE()), TextRange.m7455getMinimpl(m1735getSelectiond9O1mEE()))});
+        return CollectionsKt.listOf((Object[]) new EditCommand[]{new CommitTextCommand("", 0), new SetSelectionCommand(TextRange.m7456getMinimpl(m1736getSelectiond9O1mEE()), TextRange.m7456getMinimpl(m1736getSelectiond9O1mEE()))});
     }
 
     public final TextFieldPreparedSelection moveCursorUpByPage() {
@@ -92,7 +92,7 @@ public final class TextFieldPreparedSelection extends BaseTextPreparedSelection<
             zero = decorationBoxCoordinates != null ? LayoutCoordinates.localBoundingBoxOf$default(decorationBoxCoordinates, innerTextFieldCoordinates, false, 2, null) : null;
         }
         zero = Rect.Companion.getZero();
-        Rect cursorRect = textLayoutResultProxy.getValue().getCursorRect(getOffsetMapping().originalToTransformed(TextRange.m7452getEndimpl(this.currentValue.m7708getSelectiond9O1mEE())));
-        return getOffsetMapping().transformedToOriginal(textLayoutResultProxy.getValue().m7427getOffsetForPositionk4lQ0M(Offset.m5027constructorimpl((Float.floatToRawIntBits(cursorRect.getLeft()) << 32) | (Float.floatToRawIntBits(cursorRect.getTop() + (Float.intBitsToFloat((int) (zero.m5068getSizeNHjbRc() & 4294967295L)) * i)) & 4294967295L))));
+        Rect cursorRect = textLayoutResultProxy.getValue().getCursorRect(getOffsetMapping().originalToTransformed(TextRange.m7453getEndimpl(this.currentValue.m7709getSelectiond9O1mEE())));
+        return getOffsetMapping().transformedToOriginal(textLayoutResultProxy.getValue().m7428getOffsetForPositionk4lQ0M(Offset.m5028constructorimpl((Float.floatToRawIntBits(cursorRect.getLeft()) << 32) | (Float.floatToRawIntBits(cursorRect.getTop() + (Float.intBitsToFloat((int) (zero.m5069getSizeNHjbRc() & 4294967295L)) * i)) & 4294967295L))));
     }
 }

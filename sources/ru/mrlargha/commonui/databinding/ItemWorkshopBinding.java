@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class ItemWorkshopBinding implements ViewBinding {
     public final ImageView ivItemImage;
     public final CardView parentLayout;

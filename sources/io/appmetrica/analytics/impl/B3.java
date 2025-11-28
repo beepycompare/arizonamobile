@@ -9,7 +9,7 @@ import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
 import kotlin.ranges.RangesKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class B3 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

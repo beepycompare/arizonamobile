@@ -97,7 +97,7 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
         this.retainedInstance = retainedInstance;
         if (list == null) {
             retainedInstance.onDestroy();
-            m9352switch(navState.getChildren());
+            m9410switch(navState.getChildren());
         } else {
             restore(navState, list);
         }
@@ -440,12 +440,12 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
 
     public final void navigate(N navState) {
         Intrinsics.checkNotNullParameter(navState, "navState");
-        m9352switch(navState.getChildren());
+        m9410switch(navState.getChildren());
         this.navState = navState;
     }
 
     /* renamed from: switch  reason: not valid java name */
-    private final void m9352switch(List<? extends ChildNavState<? extends C>> list) {
+    private final void m9410switch(List<? extends ChildNavState<? extends C>> list) {
         if (DecomposeExperimentFlags.INSTANCE.getDuplicateConfigurationsEnabled()) {
             switchExperimental(list);
         } else {

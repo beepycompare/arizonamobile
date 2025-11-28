@@ -45,7 +45,7 @@ public final class DatePickerKt$DatePicker$6 implements Function2<Composer, Inte
         }
         Long selectedDateMillis = this.$state.getSelectedDateMillis();
         long displayedMonthMillis = this.$state.getDisplayedMonthMillis();
-        int mo2241getDisplayModejFl4v0 = this.$state.mo2241getDisplayModejFl4v0();
+        int mo2242getDisplayModejFl4v0 = this.$state.mo2242getDisplayModejFl4v0();
         ComposerKt.sourceInformationMarkerStart(composer, -1589289911, "CC(remember):DatePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$state);
         final DatePickerState datePickerState = this.$state;
@@ -79,7 +79,7 @@ public final class DatePickerKt$DatePicker$6 implements Function2<Composer, Inte
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DatePickerKt.m2234SwitchableDateEntryContentKaiTk9E(selectedDateMillis, displayedMonthMillis, mo2241getDisplayModejFl4v0, function1, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
+        DatePickerKt.m2235SwitchableDateEntryContentKaiTk9E(selectedDateMillis, displayedMonthMillis, mo2242getDisplayModejFl4v0, function1, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

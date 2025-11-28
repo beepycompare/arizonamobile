@@ -53,7 +53,7 @@ public final class FocusEventModifierNodeKt {
     */
     public static final FocusState getFocusState(FocusEventModifierNode focusEventModifierNode) {
         FocusEventModifierNode focusEventModifierNode2 = focusEventModifierNode;
-        int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
+        int m6989constructorimpl = NodeKind.m6989constructorimpl(1024);
         Modifier.Node node = focusEventModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -66,10 +66,10 @@ public final class FocusEventModifierNodeKt {
                 if (i != 4) {
                     throw new NoWhenBranchMatchedException();
                 }
-            } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i2 = 0;
                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                    if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                         i2++;
                         if (i2 == 1) {
                             node = delegate$ui_release;
@@ -106,13 +106,13 @@ public final class FocusEventModifierNodeKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui_release() & m6988constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui_release() & m6989constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
@@ -124,10 +124,10 @@ public final class FocusEventModifierNodeKt {
                                 if (i3 != 4) {
                                     throw new NoWhenBranchMatchedException();
                                 }
-                            } else if ((node2.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i4 = 0;
                                 for (Modifier.Node delegate$ui_release2 = ((DelegatingNode) node2).getDelegate$ui_release(); delegate$ui_release2 != null; delegate$ui_release2 = delegate$ui_release2.getChild$ui_release()) {
-                                    if ((delegate$ui_release2.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                                    if ((delegate$ui_release2.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                         i4++;
                                         if (i4 == 1) {
                                             node2 = delegate$ui_release2;

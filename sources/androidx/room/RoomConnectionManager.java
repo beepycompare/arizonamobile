@@ -80,9 +80,9 @@ public final class RoomConnectionManager extends BaseRoomConnectionManager {
                 String str2 = config.name;
                 newConnectionPool = new PassthroughConnectionPool(driverWrapper, str2 != null ? str2 : ":memory:", transactionWrapper);
             } else if (config.name == null) {
-                newConnectionPool = ConnectionPoolKt.newSingleConnectionPool(new BaseRoomConnectionManager.DriverWrapper(this, config.sqliteDriver), ":memory:");
+                newConnectionPool = ConnectionPoolKt.newSingleConnectionPool(new BaseRoomConnectionManager.DriverWrapper(this, config.sqliteDriver), ":memory:", config.getPreparedStatementCacheSize$room_runtime());
             } else {
-                newConnectionPool = ConnectionPoolKt.newConnectionPool(new BaseRoomConnectionManager.DriverWrapper(this, config.sqliteDriver), config.name, getMaxNumberOfReaders(config.journalMode), getMaxNumberOfWriters(config.journalMode));
+                newConnectionPool = ConnectionPoolKt.newConnectionPool(new BaseRoomConnectionManager.DriverWrapper(this, config.sqliteDriver), config.name, getMaxNumberOfReaders(config.journalMode), getMaxNumberOfWriters(config.journalMode), config.getPreparedStatementCacheSize$room_runtime());
             }
             this.connectionPool = newConnectionPool;
         }

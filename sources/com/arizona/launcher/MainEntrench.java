@@ -96,6 +96,7 @@ import com.miami.game.core.app.root.nav.main.MainComponent;
 import com.miami.game.core.app.root.nav.main.MainExternalUiStateHolder;
 import com.miami.game.core.app.root.nav.main.MainState;
 import com.miami.game.core.app.root.nav.main.compose.MainRouteKt;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.miami.game.feature.download.dialog.ui.connection.ConnectionHolder;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogExternalUiState;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogExternalUiStateHolder;
@@ -380,7 +381,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v16.7.7 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.8.1 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -517,15 +518,15 @@ public final class MainEntrench extends Hilt_MainEntrench {
             } else {
                 composer.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-            Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+            Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C251@9598L8,255@9723L43,253@9628L160:MainEntrench.kt#5ji0rp");
@@ -610,7 +611,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7995constructorimpl(1)), null, startRestartGroup, 48, 4);
+            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m881height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7996constructorimpl(1)), null, startRestartGroup, 48, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -850,6 +851,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         SharedPreferences.Editor edit = sharedPreferences.edit();
         UtilsKt.set_isArizonaType(FlavorUtilKt.isArizona());
         UtilsKt.set_isDebug(false);
+        FirebaseConfigHelper.INSTANCE.setDebug(false, FlavorUtilKt.isArizona());
         if (FlavorUtilKt.isArizona()) {
             edit.putBoolean("isArizonaType", true);
         } else {

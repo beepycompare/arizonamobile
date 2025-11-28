@@ -129,8 +129,8 @@ public final class LazyStaggeredGridState implements ScrollableState {
         this.pinnedItems = new LazyLayoutPinnedItemList();
         this.itemAnimator = new LazyLayoutItemAnimator<>();
         lazyStaggeredGridScrollPosition.getNearestRangeState();
-        this.placementScopeInvalidator = ObservableScopeInvalidator.m1074constructorimpl$default(null, 1, null);
-        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1074constructorimpl$default(null, 1, null);
+        this.placementScopeInvalidator = ObservableScopeInvalidator.m1075constructorimpl$default(null, 1, null);
+        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1075constructorimpl$default(null, 1, null);
         this._lazyLayoutScrollDeltaBetweenPasses = new LazyLayoutScrollDeltaBetweenPasses();
     }
 
@@ -271,7 +271,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
     }
 
     /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1120getPlacementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m1121getPlacementScopeInvalidatorzYiylxw$foundation_release() {
         return this.placementScopeInvalidator;
     }
 
@@ -362,7 +362,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
                 }
                 if (copyWithScrollDeltaWithoutRemeasure != null) {
                     applyMeasureResult$foundation_release(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
-                    ObservableScopeInvalidator.m1078invalidateScopeimpl(this.placementScopeInvalidator);
+                    ObservableScopeInvalidator.m1079invalidateScopeimpl(this.placementScopeInvalidator);
                     notifyPrefetch(f3 - this.scrollToBeConsumed, copyWithScrollDeltaWithoutRemeasure);
                 } else {
                     Remeasurement remeasurement = this.remeasurement;
@@ -408,7 +408,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
     }
 
     /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1119getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m1120getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
         return this.measurementScopeInvalidator;
     }
 
@@ -427,7 +427,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
     }
 
     public final void snapToItemInternal$foundation_release(int i, int i2, boolean z) {
-        int m8123getXimpl;
+        int m8124getXimpl;
         boolean z2 = (this.scrollPosition.getIndex() == i && this.scrollPosition.getScrollOffset() == i2) ? false : true;
         if (z2) {
             this.itemAnimator.reset();
@@ -436,11 +436,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
         LazyStaggeredGridItemInfo findVisibleItem = LazyStaggeredGridMeasureResultKt.findVisibleItem(value, i);
         if (findVisibleItem != null && z2) {
             if (value.getOrientation() == Orientation.Vertical) {
-                m8123getXimpl = IntOffset.m8124getYimpl(findVisibleItem.mo1098getOffsetnOccac());
+                m8124getXimpl = IntOffset.m8125getYimpl(findVisibleItem.mo1099getOffsetnOccac());
             } else {
-                m8123getXimpl = IntOffset.m8123getXimpl(findVisibleItem.mo1098getOffsetnOccac());
+                m8124getXimpl = IntOffset.m8124getXimpl(findVisibleItem.mo1099getOffsetnOccac());
             }
-            int i3 = m8123getXimpl + i2;
+            int i3 = m8124getXimpl + i2;
             int length = value.getFirstVisibleItemScrollOffsets().length;
             int[] iArr = new int[length];
             for (int i4 = 0; i4 < length; i4++) {
@@ -458,7 +458,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
             }
             return;
         }
-        ObservableScopeInvalidator.m1078invalidateScopeimpl(this.measurementScopeInvalidator);
+        ObservableScopeInvalidator.m1079invalidateScopeimpl(this.measurementScopeInvalidator);
     }
 
     public final int[] updateScrollPositionIfTheFirstItemWasMoved$foundation_release(LazyLayoutItemProvider lazyLayoutItemProvider, int[] iArr) {
@@ -481,7 +481,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
         int index;
         int findPreviousItemIndex;
         int i;
-        long m7959fixedHeightOenEA2s;
+        long m7960fixedHeightOenEA2s;
         if (!this.prefetchingEnabled || lazyStaggeredGridMeasureResult.getVisibleItemsInfo().isEmpty()) {
             return;
         }
@@ -522,11 +522,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
                     i = (slots.getPositions()[i7] + slots.getSizes()[i7]) - i6;
                 }
                 if (lazyStaggeredGridMeasureResult.getOrientation() == Orientation.Vertical) {
-                    m7959fixedHeightOenEA2s = Constraints.Companion.m7960fixedWidthOenEA2s(i);
+                    m7960fixedHeightOenEA2s = Constraints.Companion.m7961fixedWidthOenEA2s(i);
                 } else {
-                    m7959fixedHeightOenEA2s = Constraints.Companion.m7959fixedHeightOenEA2s(i);
+                    m7960fixedHeightOenEA2s = Constraints.Companion.m7960fixedHeightOenEA2s(i);
                 }
-                this.currentItemPrefetchHandles.put(Integer.valueOf(i3), LazyLayoutPrefetchState.m1057schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, i3, m7959fixedHeightOenEA2s, null, 4, null));
+                this.currentItemPrefetchHandles.put(Integer.valueOf(i3), LazyLayoutPrefetchState.m1058schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, i3, m7960fixedHeightOenEA2s, null, 4, null));
             }
             i2++;
             index = i3;

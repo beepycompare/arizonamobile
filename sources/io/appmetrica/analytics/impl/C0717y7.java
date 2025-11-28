@@ -5,7 +5,7 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* renamed from: io.appmetrica.analytics.impl.y7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0717y7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */

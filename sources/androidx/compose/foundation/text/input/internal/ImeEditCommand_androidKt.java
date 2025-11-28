@@ -30,14 +30,14 @@ public final class ImeEditCommand_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit commitText$lambda$0(String str, int i, TextFieldBuffer textFieldBuffer) {
-        TextRange m1436getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1436getCompositionMzsxiRA$foundation_release();
-        if (m1436getCompositionMzsxiRA$foundation_release != null) {
-            imeReplace(textFieldBuffer, TextRange.m7457getStartimpl(m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl()), TextRange.m7452getEndimpl(m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl()), str);
+        TextRange m1437getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1437getCompositionMzsxiRA$foundation_release();
+        if (m1437getCompositionMzsxiRA$foundation_release != null) {
+            imeReplace(textFieldBuffer, TextRange.m7458getStartimpl(m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl()), TextRange.m7453getEndimpl(m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl()), str);
         } else {
-            imeReplace(textFieldBuffer, TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), str);
+            imeReplace(textFieldBuffer, TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE()), TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()), str);
         }
-        int m7457getStartimpl = TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE());
-        textFieldBuffer.m1440setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7457getStartimpl + i) - 1 : (m7457getStartimpl + i) - str.length(), 0, textFieldBuffer.getLength())));
+        int m7458getStartimpl = TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE());
+        textFieldBuffer.m1441setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7458getStartimpl + i) - 1 : (m7458getStartimpl + i) - str.length(), 0, textFieldBuffer.getLength())));
         return Unit.INSTANCE;
     }
 
@@ -89,23 +89,23 @@ public final class ImeEditCommand_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit setComposingText$lambda$2(String str, List list, int i, TextFieldBuffer textFieldBuffer) {
-        TextRange m1436getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1436getCompositionMzsxiRA$foundation_release();
-        if (m1436getCompositionMzsxiRA$foundation_release != null) {
+        TextRange m1437getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1437getCompositionMzsxiRA$foundation_release();
+        if (m1437getCompositionMzsxiRA$foundation_release != null) {
             String str2 = str;
-            imeReplace(textFieldBuffer, TextRange.m7457getStartimpl(m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl()), TextRange.m7452getEndimpl(m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl()), str2);
+            imeReplace(textFieldBuffer, TextRange.m7458getStartimpl(m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl()), TextRange.m7453getEndimpl(m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl()), str2);
             if (str2.length() > 0) {
-                textFieldBuffer.setComposition$foundation_release(TextRange.m7457getStartimpl(m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl()), TextRange.m7457getStartimpl(m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl()) + str.length(), list);
+                textFieldBuffer.setComposition$foundation_release(TextRange.m7458getStartimpl(m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl()), TextRange.m7458getStartimpl(m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl()) + str.length(), list);
             }
         } else {
-            int m7457getStartimpl = TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE());
+            int m7458getStartimpl = TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE());
             String str3 = str;
-            imeReplace(textFieldBuffer, m7457getStartimpl, TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), str3);
+            imeReplace(textFieldBuffer, m7458getStartimpl, TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()), str3);
             if (str3.length() > 0) {
-                textFieldBuffer.setComposition$foundation_release(m7457getStartimpl, str.length() + m7457getStartimpl, list);
+                textFieldBuffer.setComposition$foundation_release(m7458getStartimpl, str.length() + m7458getStartimpl, list);
             }
         }
-        int m7457getStartimpl2 = TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE());
-        textFieldBuffer.m1440setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7457getStartimpl2 + i) - 1 : (m7457getStartimpl2 + i) - str.length(), 0, textFieldBuffer.getLength())));
+        int m7458getStartimpl2 = TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE());
+        textFieldBuffer.m1441setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7458getStartimpl2 + i) - 1 : (m7458getStartimpl2 + i) - str.length(), 0, textFieldBuffer.getLength())));
         return Unit.INSTANCE;
     }
 
@@ -125,18 +125,18 @@ public final class ImeEditCommand_androidKt {
         if (!(i >= 0 && i2 >= 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("Expected lengthBeforeCursor and lengthAfterCursor to be non-negative, were " + i + " and " + i2 + " respectively.");
         }
-        int m7452getEndimpl = TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE());
-        int i3 = m7452getEndimpl + i2;
-        if (((i2 ^ i3) & (m7452getEndimpl ^ i3)) < 0) {
+        int m7453getEndimpl = TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE());
+        int i3 = m7453getEndimpl + i2;
+        if (((i2 ^ i3) & (m7453getEndimpl ^ i3)) < 0) {
             i3 = textFieldBuffer.getLength();
         }
-        imeDelete(textFieldBuffer, TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), Math.min(i3, textFieldBuffer.getLength()));
-        int m7457getStartimpl = TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE());
-        int i4 = m7457getStartimpl - i;
-        if (((i ^ m7457getStartimpl) & (m7457getStartimpl ^ i4)) < 0) {
+        imeDelete(textFieldBuffer, TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()), Math.min(i3, textFieldBuffer.getLength()));
+        int m7458getStartimpl = TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE());
+        int i4 = m7458getStartimpl - i;
+        if (((i ^ m7458getStartimpl) & (m7458getStartimpl ^ i4)) < 0) {
             i4 = 0;
         }
-        imeDelete(textFieldBuffer, Math.max(0, i4), TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()));
+        imeDelete(textFieldBuffer, Math.max(0, i4), TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE()));
         return Unit.INSTANCE;
     }
 
@@ -162,11 +162,11 @@ public final class ImeEditCommand_androidKt {
         while (true) {
             if (i4 < i) {
                 int i6 = i5 + 1;
-                if (TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) > i6) {
-                    i5 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) - i6) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) - i6)) ? i5 + 2 : i6;
+                if (TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) > i6) {
+                    i5 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) - i6) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) - i6)) ? i5 + 2 : i6;
                     i4++;
                 } else {
-                    i5 = TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE());
+                    i5 = TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE());
                     break;
                 }
             } else {
@@ -179,16 +179,16 @@ public final class ImeEditCommand_androidKt {
                 break;
             }
             int i8 = i7 + 1;
-            if (TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) + i8 < textFieldBuffer.getLength()) {
-                i7 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) + i8) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) + i8)) ? i7 + 2 : i8;
+            if (TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) + i8 < textFieldBuffer.getLength()) {
+                i7 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) + i8) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) + i8)) ? i7 + 2 : i8;
                 i3++;
             } else {
-                i7 = textFieldBuffer.getLength() - TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE());
+                i7 = textFieldBuffer.getLength() - TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE());
                 break;
             }
         }
-        imeDelete(textFieldBuffer, TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), TextRange.m7452getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) + i7);
-        imeDelete(textFieldBuffer, TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()) - i5, TextRange.m7457getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()));
+        imeDelete(textFieldBuffer, TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()), TextRange.m7453getEndimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) + i7);
+        imeDelete(textFieldBuffer, TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE()) - i5, TextRange.m7458getStartimpl(textFieldBuffer.m1439getSelectiond9O1mEE()));
         return Unit.INSTANCE;
     }
 
@@ -222,24 +222,24 @@ public final class ImeEditCommand_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit setSelection$lambda$10(ImeEditCommandScope imeEditCommandScope, int i, int i2, TextFieldBuffer textFieldBuffer) {
-        long mo1479mapToTransformedGEjPoXI = imeEditCommandScope.mo1479mapToTransformedGEjPoXI(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
-        int m7455getMinimpl = TextRange.m7455getMinimpl(mo1479mapToTransformedGEjPoXI);
-        int m7454getMaximpl = TextRange.m7454getMaximpl(mo1479mapToTransformedGEjPoXI);
-        if (i < m7455getMinimpl) {
-            i = m7455getMinimpl;
+        long mo1480mapToTransformedGEjPoXI = imeEditCommandScope.mo1480mapToTransformedGEjPoXI(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
+        int m7456getMinimpl = TextRange.m7456getMinimpl(mo1480mapToTransformedGEjPoXI);
+        int m7455getMaximpl = TextRange.m7455getMaximpl(mo1480mapToTransformedGEjPoXI);
+        if (i < m7456getMinimpl) {
+            i = m7456getMinimpl;
         }
-        if (i <= m7454getMaximpl) {
-            m7454getMaximpl = i;
+        if (i <= m7455getMaximpl) {
+            m7455getMaximpl = i;
         }
-        int m7455getMinimpl2 = TextRange.m7455getMinimpl(mo1479mapToTransformedGEjPoXI);
-        int m7454getMaximpl2 = TextRange.m7454getMaximpl(mo1479mapToTransformedGEjPoXI);
-        if (i2 < m7455getMinimpl2) {
-            i2 = m7455getMinimpl2;
+        int m7456getMinimpl2 = TextRange.m7456getMinimpl(mo1480mapToTransformedGEjPoXI);
+        int m7455getMaximpl2 = TextRange.m7455getMaximpl(mo1480mapToTransformedGEjPoXI);
+        if (i2 < m7456getMinimpl2) {
+            i2 = m7456getMinimpl2;
         }
-        if (i2 <= m7454getMaximpl2) {
-            m7454getMaximpl2 = i2;
+        if (i2 <= m7455getMaximpl2) {
+            m7455getMaximpl2 = i2;
         }
-        textFieldBuffer.m1440setSelection5zctL8(imeEditCommandScope.mo1478mapFromTransformedGEjPoXI(TextRangeKt.TextRange(m7454getMaximpl, m7454getMaximpl2)));
+        textFieldBuffer.m1441setSelection5zctL8(imeEditCommandScope.mo1479mapFromTransformedGEjPoXI(TextRangeKt.TextRange(m7455getMaximpl, m7455getMaximpl2)));
         return Unit.INSTANCE;
     }
 
@@ -272,21 +272,21 @@ public final class ImeEditCommand_androidKt {
             max--;
         }
         textFieldBuffer.replace(i4, max, charSequence.subSequence(i3, length));
-        textFieldBuffer.m1440setSelection5zctL8(TextRangeKt.TextRange(min + charSequence.length()));
+        textFieldBuffer.m1441setSelection5zctL8(TextRangeKt.TextRange(min + charSequence.length()));
     }
 
     public static final void imeDelete(TextFieldBuffer textFieldBuffer, int i, int i2) {
-        TextRange m1436getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1436getCompositionMzsxiRA$foundation_release();
+        TextRange m1437getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1437getCompositionMzsxiRA$foundation_release();
         int min = Math.min(i, i2);
         int max = Math.max(i, i2);
         TextFieldBufferKt.delete(textFieldBuffer, min, max);
-        if (m1436getCompositionMzsxiRA$foundation_release != null) {
-            m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl();
-            long m1444adjustTextRangevJH6DeI = TextFieldBufferKt.m1444adjustTextRangevJH6DeI(m1436getCompositionMzsxiRA$foundation_release.m7461unboximpl(), min, max, 0);
-            if (TextRange.m7451getCollapsedimpl(m1444adjustTextRangevJH6DeI)) {
+        if (m1437getCompositionMzsxiRA$foundation_release != null) {
+            m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl();
+            long m1445adjustTextRangevJH6DeI = TextFieldBufferKt.m1445adjustTextRangevJH6DeI(m1437getCompositionMzsxiRA$foundation_release.m7462unboximpl(), min, max, 0);
+            if (TextRange.m7452getCollapsedimpl(m1445adjustTextRangevJH6DeI)) {
                 textFieldBuffer.commitComposition$foundation_release();
             } else {
-                TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, TextRange.m7455getMinimpl(m1444adjustTextRangevJH6DeI), TextRange.m7454getMaximpl(m1444adjustTextRangevJH6DeI), null, 4, null);
+                TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, TextRange.m7456getMinimpl(m1445adjustTextRangevJH6DeI), TextRange.m7455getMaximpl(m1445adjustTextRangevJH6DeI), null, 4, null);
             }
         }
     }

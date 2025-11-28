@@ -8,14 +8,14 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class TextFieldValueKt {
     public static final AnnotatedString getTextBeforeSelection(TextFieldValue textFieldValue, int i) {
-        return textFieldValue.getAnnotatedString().subSequence(Math.max(0, TextRange.m7455getMinimpl(textFieldValue.m7708getSelectiond9O1mEE()) - i), TextRange.m7455getMinimpl(textFieldValue.m7708getSelectiond9O1mEE()));
+        return textFieldValue.getAnnotatedString().subSequence(Math.max(0, TextRange.m7456getMinimpl(textFieldValue.m7709getSelectiond9O1mEE()) - i), TextRange.m7456getMinimpl(textFieldValue.m7709getSelectiond9O1mEE()));
     }
 
     public static final AnnotatedString getTextAfterSelection(TextFieldValue textFieldValue, int i) {
-        return textFieldValue.getAnnotatedString().subSequence(TextRange.m7454getMaximpl(textFieldValue.m7708getSelectiond9O1mEE()), Math.min(TextRange.m7454getMaximpl(textFieldValue.m7708getSelectiond9O1mEE()) + i, textFieldValue.getText().length()));
+        return textFieldValue.getAnnotatedString().subSequence(TextRange.m7455getMaximpl(textFieldValue.m7709getSelectiond9O1mEE()), Math.min(TextRange.m7455getMaximpl(textFieldValue.m7709getSelectiond9O1mEE()) + i, textFieldValue.getText().length()));
     }
 
     public static final AnnotatedString getSelectedText(TextFieldValue textFieldValue) {
-        return textFieldValue.getAnnotatedString().m7269subSequence5zctL8(textFieldValue.m7708getSelectiond9O1mEE());
+        return textFieldValue.getAnnotatedString().m7270subSequence5zctL8(textFieldValue.m7709getSelectiond9O1mEE());
     }
 }

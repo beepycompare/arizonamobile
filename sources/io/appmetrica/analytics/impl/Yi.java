@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 import java.util.LinkedHashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Yi implements Zi {
 
     /* renamed from: a  reason: collision with root package name */

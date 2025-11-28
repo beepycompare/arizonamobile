@@ -131,7 +131,7 @@ public final class ServerButtonKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1603655072, i, -1, "com.miami.game.feature.home.ui.compose.ServerButton.<anonymous> (ServerButton.kt:46)");
             }
-            Modifier m281borderziNgDLE = BorderKt.m281borderziNgDLE(BackgroundKt.m266backgroundbw27NRU(SizeKt.m899width3ABfNKs(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(32)), Dp.m7995constructorimpl(180)), Color.m5278copywmQWz5c$default(Color.Companion.m5305getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), new ServerHomeShape()), Dp.m7995constructorimpl(2), Brush.Companion.m5235verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5269boximpl(Color.m5278copywmQWz5c$default(Color.Companion.m5311getLightGray0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5269boximpl(Color.Companion.m5314getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new ServerHomeShape());
+            Modifier m282borderziNgDLE = BorderKt.m282borderziNgDLE(BackgroundKt.m267backgroundbw27NRU(SizeKt.m900width3ABfNKs(SizeKt.m881height3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(32)), Dp.m7996constructorimpl(180)), Color.m5279copywmQWz5c$default(Color.Companion.m5306getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), new ServerHomeShape()), Dp.m7996constructorimpl(2), Brush.Companion.m5236verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5270boximpl(Color.m5279copywmQWz5c$default(Color.Companion.m5312getLightGray0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5270boximpl(Color.Companion.m5315getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new ServerHomeShape());
             ComposerKt.sourceInformationMarkerStart(composer, 780753801, "CC(remember):ServerButton.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -146,7 +146,7 @@ public final class ServerButtonKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            Modifier drawWithContent = DrawModifierKt.drawWithContent(m281borderziNgDLE, (Function1) rememberedValue);
+            Modifier drawWithContent = DrawModifierKt.drawWithContent(m282borderziNgDLE, (Function1) rememberedValue);
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), centerVertically, composer, 54);
@@ -165,15 +165,15 @@ public final class ServerButtonKt {
             } else {
                 composer.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-            Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+            Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 76644041, "C70@2901L2338,124@5275L47,123@5252L199:ServerButton.kt#dswm0d");
@@ -196,15 +196,15 @@ public final class ServerButtonKt {
             } else {
                 composer.useNode();
             }
-            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer);
-            Updater.m4604setimpl(m4597constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer);
+            Updater.m4605setimpl(m4598constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                m4597constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m4598constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 1173809505, "C:ServerButton.kt#dswm0d");
@@ -218,14 +218,14 @@ public final class ServerButtonKt {
                 }
                 ContentScale contentScale = fillHeight;
                 float f = 70;
-                Modifier m899width3ABfNKs = SizeKt.m899width3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(f));
+                Modifier m900width3ABfNKs = SizeKt.m900width3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(f));
                 Alignment center = Alignment.Companion.getCenter();
                 ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
                 ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
                 int hashCode3 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
                 CompositionLocalMap currentCompositionLocalMap3 = composer.getCurrentCompositionLocalMap();
-                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer, m899width3ABfNKs);
+                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer, m900width3ABfNKs);
                 Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                 if (!(composer.getApplier() instanceof Applier)) {
@@ -237,34 +237,34 @@ public final class ServerButtonKt {
                 } else {
                     composer.useNode();
                 }
-                Composer m4597constructorimpl3 = Updater.m4597constructorimpl(composer);
-                Updater.m4604setimpl(m4597constructorimpl3, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl3 = Updater.m4598constructorimpl(composer);
+                Updater.m4605setimpl(m4598constructorimpl3, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl3.getInserting() || !Intrinsics.areEqual(m4597constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
-                    m4597constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
-                    m4597constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
+                if (m4598constructorimpl3.getInserting() || !Intrinsics.areEqual(m4598constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
+                    m4598constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
+                    m4598constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
                 }
-                Updater.m4604setimpl(m4597constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 1583302100, "C82@3445L28,83@3498L273:ServerButton.kt#dswm0d");
                 float f2 = 16;
-                AnimatedLoadingKt.m9677AnimatedLoadinguFdPcIQ(true, Dp.m7995constructorimpl(f2), null, composer, 54, 4);
-                SingletonAsyncImageKt.m9072AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
+                AnimatedLoadingKt.m9735AnimatedLoadinguFdPcIQ(true, Dp.m7996constructorimpl(f2), null, composer, 54, 4);
+                SingletonAsyncImageKt.m9084AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m895size3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 composer.endNode();
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
-                Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(SizeKt.fillMaxHeight$default(PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, Dp.m7995constructorimpl(8), 0.0f, 2, null), 0.0f, 1, null), 0.0f, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(1)), 1, null);
+                Modifier m798offsetVpY3zN4$default = OffsetKt.m798offsetVpY3zN4$default(SizeKt.fillMaxHeight$default(PaddingKt.m845paddingVpY3zN4$default(Modifier.Companion, Dp.m7996constructorimpl(8), 0.0f, 2, null), 0.0f, 1, null), 0.0f, Dp.m7996constructorimpl(-Dp.m7996constructorimpl(1)), 1, null);
                 ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
                 MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getSpaceAround(), Alignment.Companion.getStart(), composer, 6);
                 ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
                 int hashCode4 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
                 CompositionLocalMap currentCompositionLocalMap4 = composer.getCurrentCompositionLocalMap();
-                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer, m797offsetVpY3zN4$default);
+                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer, m798offsetVpY3zN4$default);
                 Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                 if (!(composer.getApplier() instanceof Applier)) {
@@ -276,20 +276,20 @@ public final class ServerButtonKt {
                 } else {
                     composer.useNode();
                 }
-                Composer m4597constructorimpl4 = Updater.m4597constructorimpl(composer);
-                Updater.m4604setimpl(m4597constructorimpl4, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl4 = Updater.m4598constructorimpl(composer);
+                Updater.m4605setimpl(m4598constructorimpl4, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl4.getInserting() || !Intrinsics.areEqual(m4597constructorimpl4.rememberedValue(), Integer.valueOf(hashCode4))) {
-                    m4597constructorimpl4.updateRememberedValue(Integer.valueOf(hashCode4));
-                    m4597constructorimpl4.apply(Integer.valueOf(hashCode4), setCompositeKeyHash4);
+                if (m4598constructorimpl4.getInserting() || !Intrinsics.areEqual(m4598constructorimpl4.rememberedValue(), Integer.valueOf(hashCode4))) {
+                    m4598constructorimpl4.updateRememberedValue(Integer.valueOf(hashCode4));
+                    m4598constructorimpl4.apply(Integer.valueOf(hashCode4), setCompositeKeyHash4);
                 }
-                Updater.m4604setimpl(m4597constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -1442354001, "C100@4318L10,101@4379L13,102@4435L13,96@4104L370,106@4601L11,107@4672L10,108@4733L12,104@4499L272:ServerButton.kt#dswm0d");
-                TextKt.m3168TextNvy7gAk(String.valueOf(homeUiState.getCurrentServer().getName()), null, Color.Companion.m5316getWhite0d7_KjU(), null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(f2), composer, 6), null, null, null, 0L, null, null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(17), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
-                TextKt.m3168TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2102getPrimary0d7_KjU(), null, TypeKt.m9797dpToSp8Feqmps(Dp.m7995constructorimpl(9), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131050);
+                TextKt.m3169TextNvy7gAk(String.valueOf(homeUiState.getCurrentServer().getName()), null, Color.Companion.m5317getWhite0d7_KjU(), null, TypeKt.m9855dpToSp8Feqmps(Dp.m7996constructorimpl(f2), composer, 6), null, null, null, 0L, null, null, TypeKt.m9855dpToSp8Feqmps(Dp.m7996constructorimpl(17), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
+                TextKt.m3169TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2103getPrimary0d7_KjU(), null, TypeKt.m9855dpToSp8Feqmps(Dp.m7996constructorimpl(9), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131050);
                 composer2 = composer;
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -301,7 +301,7 @@ public final class ServerButtonKt {
             } else {
                 composer.startReplaceGroup(1175523370);
                 ComposerKt.sourceInformation(composer, "115@4980L10,112@4839L368");
-                TextKt.m3168TextNvy7gAk("СЕРВЕР НЕ ВЫБРАН", SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5316getWhite0d7_KjU(), null, TextUnitKt.getSp(12), null, null, null, 0L, null, TextAlign.m7872boximpl(TextAlign.Companion.m7879getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 25014, 0, 130024);
+                TextKt.m3169TextNvy7gAk("СЕРВЕР НЕ ВЫБРАН", SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5317getWhite0d7_KjU(), null, TextUnitKt.getSp(12), null, null, null, 0L, null, TextAlign.m7873boximpl(TextAlign.Companion.m7880getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 25014, 0, 130024);
                 composer2 = composer;
                 composer2.endReplaceGroup();
             }
@@ -311,7 +311,7 @@ public final class ServerButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.server_button_arrow, composer2, 0), (String) null, OffsetKt.m797offsetVpY3zN4$default(SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(8)), Dp.m7995constructorimpl(-Dp.m7995constructorimpl(10)), 0.0f, 2, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 432, 120);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.server_button_arrow, composer2, 0), (String) null, OffsetKt.m798offsetVpY3zN4$default(SizeKt.m895size3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(8)), Dp.m7996constructorimpl(-Dp.m7996constructorimpl(10)), 0.0f, 2, null), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 432, 120);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -329,19 +329,19 @@ public final class ServerButtonKt {
     public static final Unit ServerButton$lambda$0$0$0(ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         Path path2 = path;
-        int m5268getIntersectrtfAjoo = ClipOp.Companion.m5268getIntersectrtfAjoo();
+        int m5269getIntersectrtfAjoo = ClipOp.Companion.m5269getIntersectrtfAjoo();
         DrawContext drawContext = drawWithContent.getDrawContext();
-        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+        long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5781clipPathmtrdDE(path2, m5268getIntersectrtfAjoo);
+            drawContext.getTransform().mo5782clipPathmtrdDE(path2, m5269getIntersectrtfAjoo);
             drawWithContent.drawContent();
             drawContext.getCanvas().restore();
-            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
             return Unit.INSTANCE;
         } catch (Throwable th) {
             drawContext.getCanvas().restore();
-            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
             throw th;
         }
     }

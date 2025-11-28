@@ -8,7 +8,7 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* renamed from: io.appmetrica.analytics.impl.pm  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0508pm extends MessageNano {
     public static volatile C0508pm[] b;
 

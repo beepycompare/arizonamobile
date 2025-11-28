@@ -3,7 +3,7 @@ package io.appmetrica.analytics.networktasks.impl;
 import android.net.Uri;
 import com.adjust.sdk.Constants;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */

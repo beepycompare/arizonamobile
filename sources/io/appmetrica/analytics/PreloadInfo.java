@@ -3,14 +3,14 @@ package io.appmetrica.analytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class PreloadInfo {
 
     /* renamed from: a  reason: collision with root package name */
     private final String f187a;
     private final Map b;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */

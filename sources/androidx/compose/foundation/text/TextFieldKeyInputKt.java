@@ -20,7 +20,7 @@ import kotlin.reflect.KFunction;
 /* loaded from: classes.dex */
 public final class TextFieldKeyInputKt {
     /* renamed from: textFieldKeyInput-2WJ9YEU$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1373textFieldKeyInput2WJ9YEU$default(Modifier modifier, LegacyTextFieldState legacyTextFieldState, TextFieldSelectionManager textFieldSelectionManager, TextFieldValue textFieldValue, Function1 function1, boolean z, boolean z2, OffsetMapping offsetMapping, UndoManager undoManager, int i, int i2, Object obj) {
+    public static /* synthetic */ Modifier m1374textFieldKeyInput2WJ9YEU$default(Modifier modifier, LegacyTextFieldState legacyTextFieldState, TextFieldSelectionManager textFieldSelectionManager, TextFieldValue textFieldValue, Function1 function1, boolean z, boolean z2, OffsetMapping offsetMapping, UndoManager undoManager, int i, int i2, Object obj) {
         if ((i2 & 8) != 0) {
             function1 = new Function1() { // from class: androidx.compose.foundation.text.TextFieldKeyInputKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
@@ -31,7 +31,7 @@ public final class TextFieldKeyInputKt {
                 }
             };
         }
-        return m1372textFieldKeyInput2WJ9YEU(modifier, legacyTextFieldState, textFieldSelectionManager, textFieldValue, function1, z, z2, offsetMapping, undoManager, i);
+        return m1373textFieldKeyInput2WJ9YEU(modifier, legacyTextFieldState, textFieldSelectionManager, textFieldValue, function1, z, z2, offsetMapping, undoManager, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40,7 +40,7 @@ public final class TextFieldKeyInputKt {
     }
 
     /* renamed from: textFieldKeyInput-2WJ9YEU  reason: not valid java name */
-    public static final Modifier m1372textFieldKeyInput2WJ9YEU(Modifier modifier, final LegacyTextFieldState legacyTextFieldState, final TextFieldSelectionManager textFieldSelectionManager, final TextFieldValue textFieldValue, final Function1<? super TextFieldValue, Unit> function1, final boolean z, final boolean z2, final OffsetMapping offsetMapping, final UndoManager undoManager, final int i) {
+    public static final Modifier m1373textFieldKeyInput2WJ9YEU(Modifier modifier, final LegacyTextFieldState legacyTextFieldState, final TextFieldSelectionManager textFieldSelectionManager, final TextFieldValue textFieldValue, final Function1<? super TextFieldValue, Unit> function1, final boolean z, final boolean z2, final OffsetMapping offsetMapping, final UndoManager undoManager, final int i) {
         return ComposedModifierKt.composed$default(modifier, null, new Function3<Modifier, Composer, Integer, Modifier>() { // from class: androidx.compose.foundation.text.TextFieldKeyInputKt$textFieldKeyInput$2
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ Modifier invoke(Modifier modifier2, Composer composer, Integer num) {

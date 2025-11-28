@@ -19,7 +19,7 @@ import java.util.Locale;
 import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class AppMetricaConfig {
     public final Map<String, Object> additionalConfig;
     public final Boolean advIdentifiersTracking;
@@ -50,7 +50,7 @@ public class AppMetricaConfig {
     public final Boolean sessionsAutoTrackingEnabled;
     public final String userProfileID;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
         private static final Gn D = new Gn(new C0283h0());
         private Integer A;
@@ -260,11 +260,11 @@ public class AppMetricaConfig {
         return new Builder(str, 0);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008f A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00e8 A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0102 A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008d A[Catch: all -> 0x011d, TryCatch #1 {all -> 0x011d, blocks: (B:3:0x0005, B:14:0x0058, B:18:0x0092, B:22:0x00e8, B:24:0x00fd, B:28:0x010b, B:27:0x0106, B:29:0x010e, B:21:0x00e3, B:17:0x008d), top: B:35:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00e3 A[Catch: all -> 0x011d, TryCatch #1 {all -> 0x011d, blocks: (B:3:0x0005, B:14:0x0058, B:18:0x0092, B:22:0x00e8, B:24:0x00fd, B:28:0x010b, B:27:0x0106, B:29:0x010e, B:21:0x00e3, B:17:0x008d), top: B:35:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00fd A[Catch: all -> 0x011d, TryCatch #1 {all -> 0x011d, blocks: (B:3:0x0005, B:14:0x0058, B:18:0x0092, B:22:0x00e8, B:24:0x00fd, B:28:0x010b, B:27:0x0106, B:29:0x010e, B:21:0x00e3, B:17:0x008d), top: B:35:0x0005 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

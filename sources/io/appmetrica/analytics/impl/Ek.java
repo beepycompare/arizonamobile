@@ -8,7 +8,7 @@ import android.os.Process;
 import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
 import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import io.appmetrica.analytics.internal.AppMetricaService;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Ek {
 
     /* renamed from: a  reason: collision with root package name */

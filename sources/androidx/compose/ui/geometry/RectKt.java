@@ -9,19 +9,19 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class RectKt {
     /* renamed from: Rect-tz77jQw  reason: not valid java name */
-    public static final Rect m5075Recttz77jQw(long j, long j2) {
+    public static final Rect m5076Recttz77jQw(long j, long j2) {
         int i = (int) (j >> 32);
         int i2 = (int) (j & 4294967295L);
         return new Rect(Float.intBitsToFloat(i), Float.intBitsToFloat(i2), Float.intBitsToFloat(i) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 & 4294967295L)));
     }
 
     /* renamed from: Rect-0a9Yr6o  reason: not valid java name */
-    public static final Rect m5073Rect0a9Yr6o(long j, long j2) {
+    public static final Rect m5074Rect0a9Yr6o(long j, long j2) {
         return new Rect(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)));
     }
 
     /* renamed from: Rect-3MmeM6k  reason: not valid java name */
-    public static final Rect m5074Rect3MmeM6k(long j, float f) {
+    public static final Rect m5075Rect3MmeM6k(long j, float f) {
         int i = (int) (j >> 32);
         int i2 = (int) (j & 4294967295L);
         return new Rect(Float.intBitsToFloat(i) - f, Float.intBitsToFloat(i2) - f, Float.intBitsToFloat(i) + f, Float.intBitsToFloat(i2) + f);

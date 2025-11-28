@@ -13,16 +13,16 @@ public interface PaddingValues {
     public static final Companion Companion = Companion.$$INSTANCE;
 
     /* renamed from: calculateBottomPadding-D9Ej5fM */
-    float mo785calculateBottomPaddingD9Ej5fM();
+    float mo786calculateBottomPaddingD9Ej5fM();
 
     /* renamed from: calculateLeftPadding-u2uoSUM */
-    float mo786calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection);
+    float mo787calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection);
 
     /* renamed from: calculateRightPadding-u2uoSUM */
-    float mo787calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection);
+    float mo788calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection);
 
     /* renamed from: calculateTopPadding-D9Ej5fM */
-    float mo788calculateTopPaddingD9Ej5fM();
+    float mo789calculateTopPaddingD9Ej5fM();
 
     /* compiled from: Padding.kt */
     @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B/\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\bJ\u0017\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u0011H\u0016¢\u0006\u0004\b\u0012\u0010\u0013J\u000f\u0010\u0014\u001a\u00020\u0003H\u0016¢\u0006\u0004\b\u0015\u0010\u0016J\u0017\u0010\u0017\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u0011H\u0016¢\u0006\u0004\b\u0018\u0010\u0013J\u000f\u0010\u0019\u001a\u00020\u0003H\u0016¢\u0006\u0004\b\u001a\u0010\u0016J\u0013\u0010\u001b\u001a\u00020\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001eH\u0096\u0002J\b\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020\"H\u0016R\u0018\u0010\u0002\u001a\u00020\u00038\u0002X\u0083\u0004¢\u0006\n\n\u0002\u0010\u000b\u0012\u0004\b\t\u0010\nR\u0018\u0010\u0004\u001a\u00020\u00038\u0002X\u0083\u0004¢\u0006\n\n\u0002\u0010\u000b\u0012\u0004\b\f\u0010\nR\u0018\u0010\u0005\u001a\u00020\u00038\u0002X\u0083\u0004¢\u0006\n\n\u0002\u0010\u000b\u0012\u0004\b\r\u0010\nR\u0018\u0010\u0006\u001a\u00020\u00038\u0002X\u0083\u0004¢\u0006\n\n\u0002\u0010\u000b\u0012\u0004\b\u000e\u0010\n¨\u0006#"}, d2 = {"Landroidx/compose/foundation/layout/PaddingValues$Absolute;", "Landroidx/compose/foundation/layout/PaddingValues;", TtmlNode.LEFT, "Landroidx/compose/ui/unit/Dp;", "top", TtmlNode.RIGHT, "bottom", "<init>", "(FFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getLeft-D9Ej5fM$annotations", "()V", "F", "getTop-D9Ej5fM$annotations", "getRight-D9Ej5fM$annotations", "getBottom-D9Ej5fM$annotations", "calculateLeftPadding", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "calculateLeftPadding-u2uoSUM", "(Landroidx/compose/ui/unit/LayoutDirection;)F", "calculateTopPadding", "calculateTopPadding-D9Ej5fM", "()F", "calculateRightPadding", "calculateRightPadding-u2uoSUM", "calculateBottomPadding", "calculateBottomPadding-D9Ej5fM", "equals", "", "other", "", "hashCode", "", "toString", "", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
@@ -39,19 +39,19 @@ public interface PaddingValues {
         }
 
         /* renamed from: getBottom-D9Ej5fM$annotations  reason: not valid java name */
-        private static /* synthetic */ void m856getBottomD9Ej5fM$annotations() {
+        private static /* synthetic */ void m857getBottomD9Ej5fM$annotations() {
         }
 
         /* renamed from: getLeft-D9Ej5fM$annotations  reason: not valid java name */
-        private static /* synthetic */ void m857getLeftD9Ej5fM$annotations() {
+        private static /* synthetic */ void m858getLeftD9Ej5fM$annotations() {
         }
 
         /* renamed from: getRight-D9Ej5fM$annotations  reason: not valid java name */
-        private static /* synthetic */ void m858getRightD9Ej5fM$annotations() {
+        private static /* synthetic */ void m859getRightD9Ej5fM$annotations() {
         }
 
         /* renamed from: getTop-D9Ej5fM$annotations  reason: not valid java name */
-        private static /* synthetic */ void m859getTopD9Ej5fM$annotations() {
+        private static /* synthetic */ void m860getTopD9Ej5fM$annotations() {
         }
 
         private Absolute(float f, float f2, float f3, float f4) {
@@ -66,46 +66,46 @@ public interface PaddingValues {
 
         @Override // androidx.compose.foundation.layout.PaddingValues
         /* renamed from: calculateLeftPadding-u2uoSUM */
-        public float mo786calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
+        public float mo787calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
             return this.left;
         }
 
         @Override // androidx.compose.foundation.layout.PaddingValues
         /* renamed from: calculateTopPadding-D9Ej5fM */
-        public float mo788calculateTopPaddingD9Ej5fM() {
+        public float mo789calculateTopPaddingD9Ej5fM() {
             return this.top;
         }
 
         @Override // androidx.compose.foundation.layout.PaddingValues
         /* renamed from: calculateRightPadding-u2uoSUM */
-        public float mo787calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
+        public float mo788calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
             return this.right;
         }
 
         @Override // androidx.compose.foundation.layout.PaddingValues
         /* renamed from: calculateBottomPadding-D9Ej5fM */
-        public float mo785calculateBottomPaddingD9Ej5fM() {
+        public float mo786calculateBottomPaddingD9Ej5fM() {
             return this.bottom;
         }
 
         public boolean equals(Object obj) {
             if (obj instanceof Absolute) {
                 Absolute absolute = (Absolute) obj;
-                return Dp.m8000equalsimpl0(this.left, absolute.left) && Dp.m8000equalsimpl0(this.top, absolute.top) && Dp.m8000equalsimpl0(this.right, absolute.right) && Dp.m8000equalsimpl0(this.bottom, absolute.bottom);
+                return Dp.m8001equalsimpl0(this.left, absolute.left) && Dp.m8001equalsimpl0(this.top, absolute.top) && Dp.m8001equalsimpl0(this.right, absolute.right) && Dp.m8001equalsimpl0(this.bottom, absolute.bottom);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((Dp.m8001hashCodeimpl(this.left) * 31) + Dp.m8001hashCodeimpl(this.top)) * 31) + Dp.m8001hashCodeimpl(this.right)) * 31) + Dp.m8001hashCodeimpl(this.bottom);
+            return (((((Dp.m8002hashCodeimpl(this.left) * 31) + Dp.m8002hashCodeimpl(this.top)) * 31) + Dp.m8002hashCodeimpl(this.right)) * 31) + Dp.m8002hashCodeimpl(this.bottom);
         }
 
         public String toString() {
-            return "PaddingValues.Absolute(left=" + ((Object) Dp.m8006toStringimpl(this.left)) + ", top=" + ((Object) Dp.m8006toStringimpl(this.top)) + ", right=" + ((Object) Dp.m8006toStringimpl(this.right)) + ", bottom=" + ((Object) Dp.m8006toStringimpl(this.bottom)) + ')';
+            return "PaddingValues.Absolute(left=" + ((Object) Dp.m8007toStringimpl(this.left)) + ", top=" + ((Object) Dp.m8007toStringimpl(this.top)) + ", right=" + ((Object) Dp.m8007toStringimpl(this.right)) + ", bottom=" + ((Object) Dp.m8007toStringimpl(this.bottom)) + ')';
         }
 
         public /* synthetic */ Absolute(float f, float f2, float f3, float f4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? Dp.m7995constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7995constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7995constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7995constructorimpl(0) : f4, null);
+            this((i & 1) != 0 ? Dp.m7996constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7996constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7996constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7996constructorimpl(0) : f4, null);
         }
     }
 

@@ -144,13 +144,13 @@ public final class TextFieldDecoratorModifierNode$startInputSession$1 extends Su
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m1568invokeKlQnJC8(imeAction.m7629unboximpl());
+                m1569invokeKlQnJC8(imeAction.m7630unboximpl());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m1568invokeKlQnJC8(int i) {
-                ((TextFieldDecoratorModifierNode) this.receiver).m1564onImeActionPerformedKlQnJC8(i);
+            public final void m1569invokeKlQnJC8(int i) {
+                ((TextFieldDecoratorModifierNode) this.receiver).m1565onImeActionPerformedKlQnJC8(i);
             }
         }
 

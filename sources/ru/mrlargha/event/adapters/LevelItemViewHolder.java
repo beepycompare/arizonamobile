@@ -81,12 +81,12 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
         eventAwardItemBinding.itemLevelNameUsually.setText(award.getTitle());
         if (z) {
             Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "/projects/arizona-rp/systems/battlepass_holiday/redwards/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
+            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(resourceUrl$default + "/projects/arizona-rp/systems/event_battlepass/rewards/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
         } else {
             Picasso picasso2 = Picasso.get();
-            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso2.load(resourceUrl2 + "/projects/rodina-rp/systems/battlepass/items/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
+            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso2.load(resourceUrl$default2 + "/projects/rodina-rp/systems/battlepass/items/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
         }
         eventAwardItemBinding.locked.setVisibility(8);
         eventAwardItemBinding.received.setVisibility(8);

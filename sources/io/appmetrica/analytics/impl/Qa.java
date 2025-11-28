@@ -9,7 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Qa {
     /* JADX WARN: Removed duplicated region for block: B:33:0x007c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */

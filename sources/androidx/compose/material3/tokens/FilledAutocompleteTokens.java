@@ -12,7 +12,7 @@ public final class FilledAutocompleteTokens {
     private static final float TextFieldHoverActiveIndicatorHeight;
     public static final FilledAutocompleteTokens INSTANCE = new FilledAutocompleteTokens();
     private static final ColorSchemeKeyTokens MenuContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float MenuContainerElevation = ElevationTokens.INSTANCE.m3890getLevel2D9Ej5fM();
+    private static final float MenuContainerElevation = ElevationTokens.INSTANCE.m3891getLevel2D9Ej5fM();
     private static final ShapeKeyTokens MenuContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens TextFieldActiveIndicatorColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldCaretColor = ColorSchemeKeyTokens.Primary;
@@ -52,7 +52,7 @@ public final class FilledAutocompleteTokens {
     private static final ColorSchemeKeyTokens FieldErrorSupportingTextColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens TextFieldErrorTrailingIconColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens TextFieldFocusActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
-    private static final float TextFieldFocusActiveIndicatorHeight = Dp.m7995constructorimpl((float) 2.0d);
+    private static final float TextFieldFocusActiveIndicatorHeight = Dp.m7996constructorimpl((float) 2.0d);
     private static final ColorSchemeKeyTokens FieldFocusInputTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FieldFocusLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens TextFieldFocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -69,20 +69,20 @@ public final class FilledAutocompleteTokens {
     private static final ColorSchemeKeyTokens FieldLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens FieldLabelTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens TextFieldLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float TextFieldLeadingIconSize = Dp.m7995constructorimpl((float) 20.0d);
+    private static final float TextFieldLeadingIconSize = Dp.m7996constructorimpl((float) 20.0d);
     private static final ColorSchemeKeyTokens FieldSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens FieldSupportingTextFont = TypographyKeyTokens.BodySmall;
     private static final ColorSchemeKeyTokens TextFieldTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float TextFieldTrailingIconSize = Dp.m7995constructorimpl((float) 24.0d);
+    private static final float TextFieldTrailingIconSize = Dp.m7996constructorimpl((float) 24.0d);
 
     private FilledAutocompleteTokens() {
     }
 
     static {
         float f = (float) 1.0d;
-        TextFieldActiveIndicatorHeight = Dp.m7995constructorimpl(f);
-        TextFieldDisabledActiveIndicatorHeight = Dp.m7995constructorimpl(f);
-        TextFieldHoverActiveIndicatorHeight = Dp.m7995constructorimpl(f);
+        TextFieldActiveIndicatorHeight = Dp.m7996constructorimpl(f);
+        TextFieldDisabledActiveIndicatorHeight = Dp.m7996constructorimpl(f);
+        TextFieldHoverActiveIndicatorHeight = Dp.m7996constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getMenuContainerColor() {
@@ -90,7 +90,7 @@ public final class FilledAutocompleteTokens {
     }
 
     /* renamed from: getMenuContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3951getMenuContainerElevationD9Ej5fM() {
+    public final float m3952getMenuContainerElevationD9Ej5fM() {
         return MenuContainerElevation;
     }
 
@@ -103,7 +103,7 @@ public final class FilledAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3952getTextFieldActiveIndicatorHeightD9Ej5fM() {
+    public final float m3953getTextFieldActiveIndicatorHeightD9Ej5fM() {
         return TextFieldActiveIndicatorHeight;
     }
 
@@ -124,7 +124,7 @@ public final class FilledAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldDisabledActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3953getTextFieldDisabledActiveIndicatorHeightD9Ej5fM() {
+    public final float m3954getTextFieldDisabledActiveIndicatorHeightD9Ej5fM() {
         return TextFieldDisabledActiveIndicatorHeight;
     }
 
@@ -261,7 +261,7 @@ public final class FilledAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldFocusActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3954getTextFieldFocusActiveIndicatorHeightD9Ej5fM() {
+    public final float m3955getTextFieldFocusActiveIndicatorHeightD9Ej5fM() {
         return TextFieldFocusActiveIndicatorHeight;
     }
 
@@ -290,7 +290,7 @@ public final class FilledAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldHoverActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3955getTextFieldHoverActiveIndicatorHeightD9Ej5fM() {
+    public final float m3956getTextFieldHoverActiveIndicatorHeightD9Ej5fM() {
         return TextFieldHoverActiveIndicatorHeight;
     }
 
@@ -335,7 +335,7 @@ public final class FilledAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3956getTextFieldLeadingIconSizeD9Ej5fM() {
+    public final float m3957getTextFieldLeadingIconSizeD9Ej5fM() {
         return TextFieldLeadingIconSize;
     }
 
@@ -352,7 +352,7 @@ public final class FilledAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3957getTextFieldTrailingIconSizeD9Ej5fM() {
+    public final float m3958getTextFieldTrailingIconSizeD9Ej5fM() {
         return TextFieldTrailingIconSize;
     }
 }

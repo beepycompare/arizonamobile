@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.text.TextUtils;
 /* renamed from: io.appmetrica.analytics.impl.ge  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0271ge implements uo {
 
     /* renamed from: a  reason: collision with root package name */

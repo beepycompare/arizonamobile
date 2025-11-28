@@ -24,7 +24,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.Intrinsics;
 /* renamed from: io.appmetrica.analytics.impl.oc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0473oc extends Q2 implements Pa {
     public static final Long s = Long.valueOf(TimeUnit.SECONDS.toMillis(1));
     public final Gn p;

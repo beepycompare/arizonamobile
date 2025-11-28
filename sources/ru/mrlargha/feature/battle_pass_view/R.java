@@ -4,10 +4,10 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class id {
-        public static int cvReward = 0x7f0a03d6;
-        public static int ivReward = 0x7f0a0764;
-        public static int parentLayout = 0x7f0a0a08;
-        public static int tvRewardDesc = 0x7f0a0eb5;
+        public static int cvReward = 0x7f0a03ca;
+        public static int ivReward = 0x7f0a0743;
+        public static int parentLayout = 0x7f0a09db;
+        public static int tvRewardDesc = 0x7f0a0e3c;
 
         private id() {
         }
@@ -15,7 +15,7 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class layout {
-        public static int item_reward = 0x7f0d0149;
+        public static int item_reward = 0x7f0d013d;
 
         private layout() {
         }

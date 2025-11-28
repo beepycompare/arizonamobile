@@ -13,7 +13,7 @@ public interface TextAutoSize {
     boolean equals(Object obj);
 
     /* renamed from: getFontSize-Ci0_558 */
-    long mo1213getFontSizeCi0_558(TextAutoSizeLayoutScope textAutoSizeLayoutScope, long j, AnnotatedString annotatedString);
+    long mo1214getFontSizeCi0_558(TextAutoSizeLayoutScope textAutoSizeLayoutScope, long j, AnnotatedString annotatedString);
 
     int hashCode();
 
@@ -27,23 +27,23 @@ public interface TextAutoSize {
         }
 
         /* renamed from: StepBased-vU-0ePk$default  reason: not valid java name */
-        public static /* synthetic */ TextAutoSize m1337StepBasedvU0ePk$default(Companion companion, long j, long j2, long j3, int i, Object obj) {
+        public static /* synthetic */ TextAutoSize m1338StepBasedvU0ePk$default(Companion companion, long j, long j2, long j3, int i, Object obj) {
             if ((i & 1) != 0) {
-                j = TextAutoSizeDefaults.INSTANCE.m1340getMinFontSizeXSAIIZE();
+                j = TextAutoSizeDefaults.INSTANCE.m1341getMinFontSizeXSAIIZE();
             }
             long j4 = j;
             if ((i & 2) != 0) {
-                j2 = TextAutoSizeDefaults.INSTANCE.m1339getMaxFontSizeXSAIIZE();
+                j2 = TextAutoSizeDefaults.INSTANCE.m1340getMaxFontSizeXSAIIZE();
             }
             long j5 = j2;
             if ((i & 4) != 0) {
                 j3 = TextUnitKt.getSp(0.25d);
             }
-            return companion.m1338StepBasedvU0ePk(j4, j5, j3);
+            return companion.m1339StepBasedvU0ePk(j4, j5, j3);
         }
 
         /* renamed from: StepBased-vU-0ePk  reason: not valid java name */
-        public final TextAutoSize m1338StepBasedvU0ePk(long j, long j2, long j3) {
+        public final TextAutoSize m1339StepBasedvU0ePk(long j, long j2, long j3) {
             return new AutoSizeStepBased(j, j2, j3, null);
         }
     }

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.remotepermissions.impl;
 
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */

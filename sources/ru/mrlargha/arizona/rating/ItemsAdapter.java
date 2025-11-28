@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.RecyclerView;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -136,17 +138,21 @@ public final class ItemsAdapter extends RecyclerView.Adapter<MembersViewHolder> 
             }
         });
         if (this.isCars) {
-            ImageView image = binding.image;
-            Intrinsics.checkNotNullExpressionValue(image, "image");
-            Context context = binding.image.getContext();
-            Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
-            UtilsKt.setNotLoadedImage(image, context);
-            binding.cardBg.setBackground(0);
-            Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", ratingItem.getImageIndex(), (String) null, 4, (Object) null);
-            if (iconFromArchive$default != null) {
-                ImageView image2 = binding.image;
-                Intrinsics.checkNotNullExpressionValue(image2, "image");
-                UtilsKt.setImage(image2, iconFromArchive$default);
+            if (UtilsKt.isArizonaType()) {
+                ImageView image = binding.image;
+                Intrinsics.checkNotNullExpressionValue(image, "image");
+                Context context = binding.image.getContext();
+                Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+                UtilsKt.setNotLoadedImage(image, context);
+                binding.cardBg.setBackground(0);
+                Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", ratingItem.getImageIndex(), (String) null, 4, (Object) null);
+                if (iconFromArchive$default != null) {
+                    ImageView image2 = binding.image;
+                    Intrinsics.checkNotNullExpressionValue(image2, "image");
+                    UtilsKt.setImage(image2, iconFromArchive$default);
+                }
+            } else {
+                Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/projects/rodina-rp/assets/images/inventory/vehicles/512/" + ratingItem.getImageIndex() + ".webp").into(binding.image);
             }
         } else {
             ImageView image3 = binding.image;

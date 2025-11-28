@@ -4,7 +4,7 @@ import android.content.res.Configuration;
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Pb {
     public static List a(Configuration configuration) {
         if (AndroidUtils.isApiAchieved(24)) {

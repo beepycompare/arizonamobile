@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.billing.impl;
 
 import io.appmetrica.analytics.billing.internal.config.BillingConfig;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class A {
 
     /* renamed from: a  reason: collision with root package name */

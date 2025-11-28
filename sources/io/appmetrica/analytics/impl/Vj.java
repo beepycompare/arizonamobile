@@ -9,7 +9,7 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.ArrayList;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Vj implements Ya, IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */

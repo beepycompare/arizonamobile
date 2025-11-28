@@ -22,9 +22,9 @@ public final class SemanticsModifierNodeKt {
     public static final Rect touchBoundsInRoot(Modifier.Node node, boolean z) {
         if (node.getNode().isAttached()) {
             if (!z) {
-                return LayoutCoordinatesKt.boundsInRoot(DelegatableNodeKt.m6842requireCoordinator64DMado(node, NodeKind.m6988constructorimpl(8)));
+                return LayoutCoordinatesKt.boundsInRoot(DelegatableNodeKt.m6843requireCoordinator64DMado(node, NodeKind.m6989constructorimpl(8)));
             }
-            return DelegatableNodeKt.m6842requireCoordinator64DMado(node, NodeKind.m6988constructorimpl(8)).touchBoundsInRoot();
+            return DelegatableNodeKt.m6843requireCoordinator64DMado(node, NodeKind.m6989constructorimpl(8)).touchBoundsInRoot();
         }
         return Rect.Companion.getZero();
     }

@@ -10,49 +10,49 @@ public final class PointerId {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PointerId m6548boximpl(long j) {
+    public static final /* synthetic */ PointerId m6549boximpl(long j) {
         return new PointerId(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m6549constructorimpl(long j) {
+    public static long m6550constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6550equalsimpl(long j, Object obj) {
-        return (obj instanceof PointerId) && j == ((PointerId) obj).m6554unboximpl();
+    public static boolean m6551equalsimpl(long j, Object obj) {
+        return (obj instanceof PointerId) && j == ((PointerId) obj).m6555unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6551equalsimpl0(long j, long j2) {
+    public static final boolean m6552equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6552hashCodeimpl(long j) {
+    public static int m6553hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6553toStringimpl(long j) {
+    public static String m6554toStringimpl(long j) {
         return "PointerId(value=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m6550equalsimpl(this.value, obj);
+        return m6551equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6552hashCodeimpl(this.value);
+        return m6553hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m6553toStringimpl(this.value);
+        return m6554toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m6554unboximpl() {
+    public final /* synthetic */ long m6555unboximpl() {
         return this.value;
     }
 

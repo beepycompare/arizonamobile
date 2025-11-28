@@ -62,17 +62,17 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class SecureTextFieldKt {
     private static final char DefaultObfuscationCharacter = 8226;
-    private static final KeyboardOptions SecureTextFieldKeyboardOptions = new KeyboardOptions(0, (Boolean) false, KeyboardType.Companion.m7698getPasswordPjHm6EE(), 0, (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 121, (DefaultConstructorMarker) null);
+    private static final KeyboardOptions SecureTextFieldKeyboardOptions = new KeyboardOptions(0, (Boolean) false, KeyboardType.Companion.m7699getPasswordPjHm6EE(), 0, (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 121, (DefaultConstructorMarker) null);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit OutlinedSecureTextField_XvU6IwQ$lambda$5(TextFieldState textFieldState, Modifier modifier, boolean z, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3 function3, Function2 function2, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Function2 function26, boolean z2, InputTransformation inputTransformation, int i, char c, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function27, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, int i2, int i3, int i4, int i5, Composer composer, int i6) {
-        m2834OutlinedSecureTextFieldXvU6IwQ(textFieldState, modifier, z, textStyle, textFieldLabelPosition, function3, function2, function22, function23, function24, function25, function26, z2, inputTransformation, i, c, keyboardOptions, keyboardActionHandler, function27, shape, textFieldColors, paddingValues, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+        m2835OutlinedSecureTextFieldXvU6IwQ(textFieldState, modifier, z, textStyle, textFieldLabelPosition, function3, function2, function22, function23, function24, function25, function26, z2, inputTransformation, i, c, keyboardOptions, keyboardActionHandler, function27, shape, textFieldColors, paddingValues, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SecureTextField_XvU6IwQ$lambda$2(TextFieldState textFieldState, Modifier modifier, boolean z, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3 function3, Function2 function2, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Function2 function26, boolean z2, InputTransformation inputTransformation, int i, char c, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function27, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, int i2, int i3, int i4, int i5, Composer composer, int i6) {
-        m2835SecureTextFieldXvU6IwQ(textFieldState, modifier, z, textStyle, textFieldLabelPosition, function3, function2, function22, function23, function24, function25, function26, z2, inputTransformation, i, c, keyboardOptions, keyboardActionHandler, function27, shape, textFieldColors, paddingValues, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+        m2836SecureTextFieldXvU6IwQ(textFieldState, modifier, z, textStyle, textFieldLabelPosition, function3, function2, function22, function23, function24, function25, function26, z2, inputTransformation, i, c, keyboardOptions, keyboardActionHandler, function27, shape, textFieldColors, paddingValues, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
         return Unit.INSTANCE;
     }
 
@@ -130,7 +130,7 @@ public final class SecureTextFieldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2835SecureTextFieldXvU6IwQ(final TextFieldState textFieldState, Modifier modifier, boolean z, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3<? super TextFieldLabelScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Function2<? super Composer, ? super Integer, Unit> function26, boolean z2, InputTransformation inputTransformation, int i, char c, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function27, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3, final int i4, final int i5) {
+    public static final void m2836SecureTextFieldXvU6IwQ(final TextFieldState textFieldState, Modifier modifier, boolean z, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3<? super TextFieldLabelScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Function2<? super Composer, ? super Integer, Unit> function26, boolean z2, InputTransformation inputTransformation, int i, char c, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function27, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3, final int i4, final int i5) {
         final TextFieldState textFieldState2;
         int i6;
         Modifier.Companion companion;
@@ -467,7 +467,7 @@ public final class SecureTextFieldKt {
                                         boolean z8 = i20 != 0 ? false : z2;
                                         InputTransformation inputTransformation4 = i22 != 0 ? null : inputTransformation;
                                         if ((i5 & 16384) != 0) {
-                                            i32 = TextObfuscationMode.Companion.m1470getRevealLastTypedvTwcZD0();
+                                            i32 = TextObfuscationMode.Companion.m1471getRevealLastTypedvTwcZD0();
                                             i23 &= -57345;
                                         } else {
                                             i32 = i;
@@ -487,9 +487,9 @@ public final class SecureTextFieldKt {
                                         if ((2097152 & i5) == 0) {
                                             paddingValues3 = paddingValues;
                                         } else if (obj == null || (attached instanceof TextFieldLabelPosition.Above)) {
-                                            paddingValues3 = TextFieldDefaults.m3129contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
+                                            paddingValues3 = TextFieldDefaults.m3130contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
                                         } else {
-                                            paddingValues3 = TextFieldDefaults.m3128contentPaddingWithLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
+                                            paddingValues3 = TextFieldDefaults.m3129contentPaddingWithLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
                                         }
                                         i33 = i32;
                                         shape4 = shape3;
@@ -558,12 +558,12 @@ public final class SecureTextFieldKt {
                                     }
                                     startRestartGroup.startReplaceGroup(1649245416);
                                     ComposerKt.sourceInformation(startRestartGroup, "*161@9673L25");
-                                    long m7487getColor0d7_KjU = textStyle2.m7487getColor0d7_KjU();
-                                    if (m7487getColor0d7_KjU == 16) {
-                                        m7487getColor0d7_KjU = textFieldColors3.m3124textColorXeAY9LY$material3(z6, z5, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                    long m7488getColor0d7_KjU = textStyle2.m7488getColor0d7_KjU();
+                                    if (m7488getColor0d7_KjU == 16) {
+                                        m7488getColor0d7_KjU = textFieldColors3.m3125textColorXeAY9LY$material3(z6, z5, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    final TextStyle merge = textStyle2.merge(new TextStyle(m7487getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
+                                    final TextStyle merge = textStyle2.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
                                     CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(-2072926674, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SecureTextFieldKt$SecureTextField$1
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -583,8 +583,8 @@ public final class SecureTextFieldKt {
                                             Modifier modifier4 = Modifier.this;
                                             boolean z10 = z5;
                                             Strings.Companion companion2 = Strings.Companion;
-                                            Modifier m878defaultMinSizeVpY3zN4 = SizeKt.m878defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z10, Strings_androidKt.m3610getString2EP1pXo(Strings.m3531constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3145getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3144getMinHeightD9Ej5fM());
-                                            SolidColor solidColor = new SolidColor(textFieldColors3.m3074cursorColorvNxB06k$material3(z5), null);
+                                            Modifier m879defaultMinSizeVpY3zN4 = SizeKt.m879defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z10, Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3146getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3145getMinHeightD9Ej5fM());
+                                            SolidColor solidColor = new SolidColor(textFieldColors3.m3075cursorColorvNxB06k$material3(z5), null);
                                             MutableInteractionSource mutableInteractionSource5 = mutableInteractionSource4;
                                             TextFieldLabelPosition textFieldLabelPosition4 = textFieldLabelPosition3;
                                             Function3<TextFieldLabelScope, Composer, Integer, Unit> function34 = function33;
@@ -602,7 +602,7 @@ public final class SecureTextFieldKt {
                                             final MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource4;
                                             final TextFieldColors textFieldColors5 = textFieldColors3;
                                             final Shape shape5 = shape4;
-                                            BasicSecureTextFieldKt.m1217BasicSecureTextFieldegD4TGM(textFieldState2, m878defaultMinSizeVpY3zN4, z6, false, inputTransformation3, merge, keyboardOptions3, keyboardActionHandler3, function216, mutableInteractionSource4, solidColor, TextFieldDefaults.INSTANCE.decorator(textFieldState2, z6, TextFieldLineLimits.SingleLine.INSTANCE, null, mutableInteractionSource5, textFieldLabelPosition4, function34, function227, function228, function229, function230, function231, function232, z11, textFieldColors4, paddingValues5, ComposableLambdaKt.rememberComposableLambda(-43781811, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SecureTextFieldKt$SecureTextField$1.1
+                                            BasicSecureTextFieldKt.m1218BasicSecureTextFieldegD4TGM(textFieldState2, m879defaultMinSizeVpY3zN4, z6, false, inputTransformation3, merge, keyboardOptions3, keyboardActionHandler3, function216, mutableInteractionSource4, solidColor, TextFieldDefaults.INSTANCE.decorator(textFieldState2, z6, TextFieldLineLimits.SingleLine.INSTANCE, null, mutableInteractionSource5, textFieldLabelPosition4, function34, function227, function228, function229, function230, function231, function232, z11, textFieldColors4, paddingValues5, ComposableLambdaKt.rememberComposableLambda(-43781811, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SecureTextFieldKt$SecureTextField$1.1
                                                 @Override // kotlin.jvm.functions.Function2
                                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
                                                     invoke(composer4, num.intValue());
@@ -618,7 +618,7 @@ public final class SecureTextFieldKt {
                                                     if (ComposerKt.isTraceInProgress()) {
                                                         ComposerKt.traceEventStart(-43781811, i44, -1, "androidx.compose.material3.SecureTextField.<anonymous>.<anonymous> (SecureTextField.kt:205)");
                                                     }
-                                                    TextFieldDefaults.INSTANCE.m3138Container4EFweAY(z12, z13, mutableInteractionSource6, null, textFieldColors5, shape5, 0.0f, 0.0f, composer4, 100663296, 200);
+                                                    TextFieldDefaults.INSTANCE.m3139Container4EFweAY(z12, z13, mutableInteractionSource6, null, textFieldColors5, shape5, 0.0f, 0.0f, composer4, 100663296, 200);
                                                     if (ComposerKt.isTraceInProgress()) {
                                                         ComposerKt.traceEventEnd();
                                                     }
@@ -1008,7 +1008,7 @@ public final class SecureTextFieldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2834OutlinedSecureTextFieldXvU6IwQ(final TextFieldState textFieldState, Modifier modifier, boolean z, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3<? super TextFieldLabelScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Function2<? super Composer, ? super Integer, Unit> function26, boolean z2, InputTransformation inputTransformation, int i, char c, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function27, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3, final int i4, final int i5) {
+    public static final void m2835OutlinedSecureTextFieldXvU6IwQ(final TextFieldState textFieldState, Modifier modifier, boolean z, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3<? super TextFieldLabelScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Function2<? super Composer, ? super Integer, Unit> function26, boolean z2, InputTransformation inputTransformation, int i, char c, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function27, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3, final int i4, final int i5) {
         TextFieldState textFieldState2;
         int i6;
         Modifier.Companion companion;
@@ -1083,7 +1083,7 @@ public final class SecureTextFieldKt {
         Function2<? super Composer, ? super Integer, Unit> function220;
         boolean z5;
         TextFieldColors colors;
-        PaddingValues m2704contentPaddinga9UjIt4$default;
+        PaddingValues m2705contentPaddinga9UjIt4$default;
         Function2<? super Composer, ? super Integer, Unit> function221;
         boolean z6;
         MutableInteractionSource mutableInteractionSource3;
@@ -1308,7 +1308,7 @@ public final class SecureTextFieldKt {
                                         keyboardActionHandler3 = keyboardActionHandler;
                                         function216 = function27;
                                         shape4 = shape;
-                                        m2704contentPaddinga9UjIt4$default = paddingValues;
+                                        m2705contentPaddinga9UjIt4$default = paddingValues;
                                         mutableInteractionSource3 = mutableInteractionSource;
                                         function219 = obj2;
                                         i34 = i23;
@@ -1343,7 +1343,7 @@ public final class SecureTextFieldKt {
                                         boolean z8 = i20 != 0 ? false : z2;
                                         InputTransformation inputTransformation4 = i22 != 0 ? null : inputTransformation;
                                         if ((i5 & 16384) != 0) {
-                                            i32 = TextObfuscationMode.Companion.m1470getRevealLastTypedvTwcZD0();
+                                            i32 = TextObfuscationMode.Companion.m1471getRevealLastTypedvTwcZD0();
                                             i23 &= -57345;
                                         } else {
                                             i32 = i;
@@ -1376,7 +1376,7 @@ public final class SecureTextFieldKt {
                                         function220 = function225;
                                         z5 = z8;
                                         colors = (i5 & 1048576) != 0 ? OutlinedTextFieldDefaults.INSTANCE.colors(startRestartGroup, 6) : textFieldColors;
-                                        m2704contentPaddinga9UjIt4$default = (2097152 & i5) != 0 ? OutlinedTextFieldDefaults.m2704contentPaddinga9UjIt4$default(OutlinedTextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null) : paddingValues;
+                                        m2705contentPaddinga9UjIt4$default = (2097152 & i5) != 0 ? OutlinedTextFieldDefaults.m2705contentPaddinga9UjIt4$default(OutlinedTextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null) : paddingValues;
                                         function221 = function224;
                                         if (i29 != 0) {
                                             mutableInteractionSource3 = null;
@@ -1409,12 +1409,12 @@ public final class SecureTextFieldKt {
                                     }
                                     startRestartGroup.startReplaceGroup(-715882166);
                                     ComposerKt.sourceInformation(startRestartGroup, "*321@19160L25");
-                                    long m7487getColor0d7_KjU = textStyle2.m7487getColor0d7_KjU();
-                                    if (m7487getColor0d7_KjU == 16) {
-                                        m7487getColor0d7_KjU = colors.m3124textColorXeAY9LY$material3(z6, z5, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                    long m7488getColor0d7_KjU = textStyle2.m7488getColor0d7_KjU();
+                                    if (m7488getColor0d7_KjU == 16) {
+                                        m7488getColor0d7_KjU = colors.m3125textColorXeAY9LY$material3(z6, z5, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(colors.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(1147500080, true, new SecureTextFieldKt$OutlinedSecureTextField$1(modifier3, obj, textFieldLabelPosition3, z5, colors, textFieldState2, z6, mutableInteractionSource4, function219, function217, function218, function221, function220, function215, m2704contentPaddinga9UjIt4$default, inputTransformation3, textStyle2.merge(new TextStyle(m7487getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActionHandler3, function216, i33, c3, shape4), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
+                                    CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(colors.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(1147500080, true, new SecureTextFieldKt$OutlinedSecureTextField$1(modifier3, obj, textFieldLabelPosition3, z5, colors, textFieldState2, z6, mutableInteractionSource4, function219, function217, function218, function221, function220, function215, m2705contentPaddinga9UjIt4$default, inputTransformation3, textStyle2.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActionHandler3, function216, i33, c3, shape4), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -1435,7 +1435,7 @@ public final class SecureTextFieldKt {
                                     textFieldColors2 = colors;
                                     z4 = z5;
                                     function29 = function215;
-                                    paddingValues2 = m2704contentPaddinga9UjIt4$default;
+                                    paddingValues2 = m2705contentPaddinga9UjIt4$default;
                                     mutableInteractionSource2 = mutableInteractionSource3;
                                     composer2 = startRestartGroup;
                                     textStyle3 = textStyle2;

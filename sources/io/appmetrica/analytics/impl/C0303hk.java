@@ -21,7 +21,7 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
 import io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider;
 import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
 /* renamed from: io.appmetrica.analytics.impl.hk  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0303hk implements ServiceContext {
 
     /* renamed from: a  reason: collision with root package name */

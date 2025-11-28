@@ -27,7 +27,7 @@ public final class BackgroundElement extends ModifierNodeElement<BackgroundNode>
     }
 
     public /* synthetic */ BackgroundElement(long j, Brush brush, float f, Shape shape, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j, (i & 2) != 0 ? null : brush, f, shape, function1, null);
+        this((i & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j, (i & 2) != 0 ? null : brush, f, shape, function1, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -47,7 +47,7 @@ public final class BackgroundElement extends ModifierNodeElement<BackgroundNode>
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(BackgroundNode backgroundNode) {
-        backgroundNode.m269setColor8_81llA(this.color);
+        backgroundNode.m270setColor8_81llA(this.color);
         backgroundNode.setBrush(this.brush);
         backgroundNode.setAlpha(this.alpha);
         backgroundNode.setShape(this.shape);
@@ -61,14 +61,14 @@ public final class BackgroundElement extends ModifierNodeElement<BackgroundNode>
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        int m5286hashCodeimpl = Color.m5286hashCodeimpl(this.color) * 31;
+        int m5287hashCodeimpl = Color.m5287hashCodeimpl(this.color) * 31;
         Brush brush = this.brush;
-        return ((((m5286hashCodeimpl + (brush != null ? brush.hashCode() : 0)) * 31) + Float.hashCode(this.alpha)) * 31) + this.shape.hashCode();
+        return ((((m5287hashCodeimpl + (brush != null ? brush.hashCode() : 0)) * 31) + Float.hashCode(this.alpha)) * 31) + this.shape.hashCode();
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public boolean equals(Object obj) {
         BackgroundElement backgroundElement = obj instanceof BackgroundElement ? (BackgroundElement) obj : null;
-        return backgroundElement != null && Color.m5280equalsimpl0(this.color, backgroundElement.color) && Intrinsics.areEqual(this.brush, backgroundElement.brush) && this.alpha == backgroundElement.alpha && Intrinsics.areEqual(this.shape, backgroundElement.shape);
+        return backgroundElement != null && Color.m5281equalsimpl0(this.color, backgroundElement.color) && Intrinsics.areEqual(this.brush, backgroundElement.brush) && this.alpha == backgroundElement.alpha && Intrinsics.areEqual(this.shape, backgroundElement.shape);
     }
 }

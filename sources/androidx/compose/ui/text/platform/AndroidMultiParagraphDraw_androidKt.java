@@ -22,12 +22,12 @@ import kotlin.NoWhenBranchMatchedException;
 /* loaded from: classes2.dex */
 public final class AndroidMultiParagraphDraw_androidKt {
     /* renamed from: drawMultiParagraph-7AXcY_I  reason: not valid java name */
-    public static final void m7715drawMultiParagraph7AXcY_I(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+    public static final void m7716drawMultiParagraph7AXcY_I(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
         canvas.save();
         if (multiParagraph.getParagraphInfoList$ui_text().size() <= 1) {
-            m7717drawParagraphs7AXcY_I(multiParagraph, canvas, brush, f, shadow, textDecoration, drawStyle, i);
+            m7718drawParagraphs7AXcY_I(multiParagraph, canvas, brush, f, shadow, textDecoration, drawStyle, i);
         } else if (brush instanceof SolidColor) {
-            m7717drawParagraphs7AXcY_I(multiParagraph, canvas, brush, f, shadow, textDecoration, drawStyle, i);
+            m7718drawParagraphs7AXcY_I(multiParagraph, canvas, brush, f, shadow, textDecoration, drawStyle, i);
         } else if (!(brush instanceof ShaderBrush)) {
             throw new NoWhenBranchMatchedException();
         } else {
@@ -40,37 +40,37 @@ public final class AndroidMultiParagraphDraw_androidKt {
                 f3 += paragraphInfo.getParagraph().getHeight();
                 f2 = Math.max(f2, paragraphInfo.getParagraph().getWidth());
             }
-            Shader mo5248createShaderuvyYCjk = ((ShaderBrush) brush).mo5248createShaderuvyYCjk(Size.m5095constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L)));
+            Shader mo5249createShaderuvyYCjk = ((ShaderBrush) brush).mo5249createShaderuvyYCjk(Size.m5096constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L)));
             Matrix matrix = new Matrix();
-            mo5248createShaderuvyYCjk.getLocalMatrix(matrix);
+            mo5249createShaderuvyYCjk.getLocalMatrix(matrix);
             List<ParagraphInfo> paragraphInfoList$ui_text2 = multiParagraph.getParagraphInfoList$ui_text();
             int size2 = paragraphInfoList$ui_text2.size();
             for (int i3 = 0; i3 < size2; i3++) {
                 ParagraphInfo paragraphInfo2 = paragraphInfoList$ui_text2.get(i3);
-                paragraphInfo2.getParagraph().mo7256painthn5TExg(canvas, BrushKt.ShaderBrush(mo5248createShaderuvyYCjk), f, shadow, textDecoration, drawStyle, i);
+                paragraphInfo2.getParagraph().mo7257painthn5TExg(canvas, BrushKt.ShaderBrush(mo5249createShaderuvyYCjk), f, shadow, textDecoration, drawStyle, i);
                 canvas.translate(0.0f, paragraphInfo2.getParagraph().getHeight());
                 matrix.setTranslate(0.0f, -paragraphInfo2.getParagraph().getHeight());
-                mo5248createShaderuvyYCjk.setLocalMatrix(matrix);
+                mo5249createShaderuvyYCjk.setLocalMatrix(matrix);
             }
         }
         canvas.restore();
     }
 
     /* renamed from: drawMultiParagraph-7AXcY_I$default  reason: not valid java name */
-    public static /* synthetic */ void m7716drawMultiParagraph7AXcY_I$default(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
+    public static /* synthetic */ void m7717drawMultiParagraph7AXcY_I$default(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             f = Float.NaN;
         }
-        m7715drawMultiParagraph7AXcY_I(multiParagraph, canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? BlendMode.Companion.m5220getSrcOver0nO6VwU() : i);
+        m7716drawMultiParagraph7AXcY_I(multiParagraph, canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? BlendMode.Companion.m5221getSrcOver0nO6VwU() : i);
     }
 
     /* renamed from: drawParagraphs-7AXcY_I  reason: not valid java name */
-    private static final void m7717drawParagraphs7AXcY_I(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+    private static final void m7718drawParagraphs7AXcY_I(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
         List<ParagraphInfo> paragraphInfoList$ui_text = multiParagraph.getParagraphInfoList$ui_text();
         int size = paragraphInfoList$ui_text.size();
         for (int i2 = 0; i2 < size; i2++) {
             ParagraphInfo paragraphInfo = paragraphInfoList$ui_text.get(i2);
-            paragraphInfo.getParagraph().mo7256painthn5TExg(canvas, brush, f, shadow, textDecoration, drawStyle, i);
+            paragraphInfo.getParagraph().mo7257painthn5TExg(canvas, brush, f, shadow, textDecoration, drawStyle, i);
             canvas.translate(0.0f, paragraphInfo.getParagraph().getHeight());
         }
     }

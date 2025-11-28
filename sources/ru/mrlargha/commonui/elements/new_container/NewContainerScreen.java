@@ -117,18 +117,18 @@ public final class NewContainerScreen extends SAMPUIElement {
         newContainerLayoutBinding.actionButton.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(containerInfo.getMainColor())));
         newContainerLayoutBinding.blurContainer.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(containerInfo.getMainColor())));
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         String str = this.imageCdnPath;
-        picasso.load(resourceUrl + str + containerInfo.getLogo()).into(newContainerLayoutBinding.mainImageContainer);
+        picasso.load(resourceUrl$default + str + containerInfo.getLogo()).into(newContainerLayoutBinding.mainImageContainer);
         this.awardsAdapter.addWinnerInfo(containerInfo.getItems());
         String backgroundImage = containerInfo.getBackgroundImage();
         if (backgroundImage != null && backgroundImage.length() != 0) {
             NewContainerLayoutBinding newContainerLayoutBinding2 = this.binding;
             newContainerLayoutBinding2.blurContainer.setVisibility(4);
             Picasso picasso2 = Picasso.get();
-            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             String str2 = this.imageCdnPath;
-            picasso2.load(resourceUrl2 + str2 + containerInfo.getBackgroundImage()).into(newContainerLayoutBinding2.imageBg);
+            picasso2.load(resourceUrl$default2 + str2 + containerInfo.getBackgroundImage()).into(newContainerLayoutBinding2.imageBg);
         } else {
             NewContainerLayoutBinding newContainerLayoutBinding3 = this.binding;
             newContainerLayoutBinding3.imageBg.setImageDrawable(null);
@@ -138,9 +138,9 @@ public final class NewContainerScreen extends SAMPUIElement {
         if (buttonBackgroundImage != null && buttonBackgroundImage.length() != 0) {
             NewContainerLayoutBinding newContainerLayoutBinding4 = this.binding;
             Picasso picasso3 = Picasso.get();
-            String resourceUrl3 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+            String resourceUrl$default3 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             String str3 = this.imageCdnPath;
-            picasso3.load(resourceUrl3 + str3 + containerInfo.getButtonBackgroundImage()).into(newContainerLayoutBinding4.imageButtonBg);
+            picasso3.load(resourceUrl$default3 + str3 + containerInfo.getButtonBackgroundImage()).into(newContainerLayoutBinding4.imageButtonBg);
             newContainerLayoutBinding4.actionButtonText.setTextColor(-1);
             newContainerLayoutBinding4.actionButton.setBackgroundTintList(null);
             return;

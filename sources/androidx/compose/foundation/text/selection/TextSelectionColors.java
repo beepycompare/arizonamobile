@@ -22,12 +22,12 @@ public final class TextSelectionColors {
     }
 
     /* renamed from: getBackgroundColor-0d7_KjU  reason: not valid java name */
-    public final long m1849getBackgroundColor0d7_KjU() {
+    public final long m1850getBackgroundColor0d7_KjU() {
         return this.backgroundColor;
     }
 
     /* renamed from: getHandleColor-0d7_KjU  reason: not valid java name */
-    public final long m1850getHandleColor0d7_KjU() {
+    public final long m1851getHandleColor0d7_KjU() {
         return this.handleColor;
     }
 
@@ -37,16 +37,16 @@ public final class TextSelectionColors {
         }
         if (obj instanceof TextSelectionColors) {
             TextSelectionColors textSelectionColors = (TextSelectionColors) obj;
-            return Color.m5280equalsimpl0(this.handleColor, textSelectionColors.handleColor) && Color.m5280equalsimpl0(this.backgroundColor, textSelectionColors.backgroundColor);
+            return Color.m5281equalsimpl0(this.handleColor, textSelectionColors.handleColor) && Color.m5281equalsimpl0(this.backgroundColor, textSelectionColors.backgroundColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Color.m5286hashCodeimpl(this.handleColor) * 31) + Color.m5286hashCodeimpl(this.backgroundColor);
+        return (Color.m5287hashCodeimpl(this.handleColor) * 31) + Color.m5287hashCodeimpl(this.backgroundColor);
     }
 
     public String toString() {
-        return "SelectionColors(selectionHandleColor=" + ((Object) Color.m5287toStringimpl(this.handleColor)) + ", selectionBackgroundColor=" + ((Object) Color.m5287toStringimpl(this.backgroundColor)) + ')';
+        return "SelectionColors(selectionHandleColor=" + ((Object) Color.m5288toStringimpl(this.handleColor)) + ", selectionBackgroundColor=" + ((Object) Color.m5288toStringimpl(this.backgroundColor)) + ')';
     }
 }

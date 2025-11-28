@@ -87,16 +87,16 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         return this.rewardsList.size();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0128, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0129, code lost:
         if (r12.isArizona == false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x01cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x01d0, code lost:
         if (r1.getReceived() != 0) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x01d1, code lost:
-        if (r6 != false) goto L39;
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x01d2, code lost:
+        if (r8 != false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x01d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x01d4, code lost:
         android.util.Log.e("rewards", "third argument  " + r5);
         r1 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r1);
@@ -104,10 +104,10 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r2 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x01f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x01fa, code lost:
         if (r1 >= r2.getNeedToPlay()) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x01fb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x01fc, code lost:
         r1 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r1);
         r1 = r1.getNeedToPlay();
@@ -137,17 +137,17 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r0.getButton.setBackgroundResource(ru.mrlargha.feature.calendar.R.drawable.daily_reward_get_button_unavailable_bg);
         r0.getButtonText.setTextColor(android.graphics.Color.parseColor("#10FFFFFF"));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x02aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x02ab, code lost:
         r1 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r1);
         r1 = r1.getPlayed();
         r2 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x02bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x02bd, code lost:
         if (r1 < r2.getNeedToPlay()) goto L45;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x02be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x02bf, code lost:
         android.util.Log.e("rewards", "forth argument  " + r5);
         r0.mainContainer.setBackgroundResource(ru.mrlargha.feature.calendar.R.drawable.daily_rewards_award_item_bg);
         r0.dayContainer.setBackgroundResource(ru.mrlargha.feature.calendar.R.drawable.daily_rewards_award_day_container_bg);
@@ -160,32 +160,32 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r0.getButton.setBackgroundResource(ru.mrlargha.feature.calendar.R.drawable.daily_reward_get_button_available_bg);
         r0.getButtonText.setTextColor(android.graphics.Color.parseColor("#FFFFFF"));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0314, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0315, code lost:
         r3 = com.arizona.common.utils.EasyAnimation.INSTANCE;
         r0 = r0.getButton;
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, "getButton");
         com.arizona.common.utils.EasyAnimation.animateClick$default(r3, r0, 0, null, new ru.mrlargha.feature.calendar.RewardsAdapter$$ExternalSyntheticLambda0(r12), 3, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x032d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x032e, code lost:
         r0 = r12.updateInfo;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x032f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0330, code lost:
         if (r0 == null) goto L51;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0331, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0332, code lost:
         checkRewardType(r0, r13.getBinding(), r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x0338, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x0339, code lost:
         return;
      */
     /* JADX WARN: Code restructure failed: missing block: B:61:?, code lost:
         return;
      */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x013b  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x017c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x013c  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x017d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x01c7  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -214,10 +214,11 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         }
         int i2 = i + 1;
         binding.dayTitle.setText("ДЕНЬ " + i2);
+        boolean z3 = true;
         if (this.isArizona) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/welcome_calendar/" + rewardInfo.getImage() + ".webp";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/welcome_calendar/" + rewardInfo.getImage() + ".webp";
         } else {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/battlepass/items/" + rewardInfo.getImage() + ".webp";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/items/" + rewardInfo.getImage() + ".webp";
         }
         Picasso.get().load(str).networkPolicy(NetworkPolicy.NO_CACHE, new NetworkPolicy[0]).memoryPolicy(MemoryPolicy.NO_CACHE, new MemoryPolicy[0]).into(binding.rewardIc);
         DailyRewardsScreen.UpdatePlayerInfo updatePlayerInfo6 = this.updateInfo;
@@ -225,7 +226,6 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         int needToPlay = updatePlayerInfo6.getNeedToPlay();
         DailyRewardsScreen.UpdatePlayerInfo updatePlayerInfo7 = this.updateInfo;
         Intrinsics.checkNotNull(updatePlayerInfo7);
-        boolean z3 = true;
         if (needToPlay > updatePlayerInfo7.getPlayed()) {
             DailyRewardsScreen.UpdatePlayerInfo updatePlayerInfo8 = this.updateInfo;
             Intrinsics.checkNotNull(updatePlayerInfo8);

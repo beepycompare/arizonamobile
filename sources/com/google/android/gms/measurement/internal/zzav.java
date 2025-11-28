@@ -2566,9 +2566,8 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Not initialized variable reg: 9, insn: 0x0158: MOVE  (r8 I:??[OBJECT, ARRAY]) = (r9 I:??[OBJECT, ARRAY]), block:B:43:0x0158 */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0153  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x015f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2578,63 +2577,60 @@ public final class zzav extends zzos {
         Cursor cursor2;
         Cursor cursor3;
         Cursor cursor4;
-        Cursor cursor5;
         zzah zzahVar;
-        SQLiteDatabase zze2;
-        String[] strArr;
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty(str2);
         zzg();
         zzaw();
         try {
-            try {
-                zze2 = zze();
-                strArr = new String[11];
-                strArr[0] = "origin";
-                strArr[1] = "value";
-                strArr[2] = AppMeasurementSdk.ConditionalUserProperty.ACTIVE;
-                strArr[3] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME;
-                strArr[4] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT;
-                strArr[5] = "timed_out_event";
-                strArr[6] = AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP;
-                strArr[7] = "triggered_event";
-                strArr[8] = AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP;
-                strArr[9] = AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE;
-                cursor = null;
-                zzahVar = 0;
-                cursor2 = null;
-                cursor2 = null;
-                cursor2 = null;
-            } catch (Throwable th) {
-                th = th;
-                cursor4 = cursor3;
-                if (cursor4 != null) {
-                    cursor4.close();
-                }
-                throw th;
-            }
+            SQLiteDatabase zze2 = zze();
+            String[] strArr = new String[11];
+            strArr[0] = "origin";
+            strArr[1] = "value";
+            strArr[2] = AppMeasurementSdk.ConditionalUserProperty.ACTIVE;
+            strArr[3] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME;
+            strArr[4] = AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT;
+            strArr[5] = "timed_out_event";
+            strArr[6] = AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP;
+            strArr[7] = "triggered_event";
+            strArr[8] = AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP;
+            strArr[9] = AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE;
+            cursor = null;
+            zzahVar = 0;
+            cursor2 = null;
+            cursor2 = null;
+            cursor2 = null;
             try {
                 strArr[10] = "expired_event";
-                cursor5 = zze2.query("conditional_properties", strArr, "app_id=? and name=?", new String[]{str, str2}, null, null, null);
+                cursor4 = zze2.query("conditional_properties", strArr, "app_id=? and name=?", new String[]{str, str2}, null, null, null);
                 try {
-                } catch (SQLiteException e) {
-                    e = e;
-                    str3 = str2;
+                    try {
+                    } catch (SQLiteException e) {
+                        e = e;
+                        str3 = str2;
+                    }
+                } catch (Throwable th) {
+                    th = th;
+                    cursor3 = cursor4;
+                    if (cursor3 != null) {
+                        cursor3.close();
+                    }
+                    throw th;
                 }
             } catch (SQLiteException e2) {
                 e = e2;
                 str3 = str2;
-                cursor5 = cursor2;
+                cursor4 = cursor2;
                 zzic zzicVar = this.zzu;
                 zzicVar.zzaV().zzb().zzd("Error querying conditional property", zzgu.zzl(str), zzicVar.zzl().zzc(str3), e);
                 zzahVar = cursor2;
-                if (cursor5 != null) {
+                if (cursor4 != null) {
                 }
                 return zzahVar;
             } catch (Throwable th2) {
                 th = th2;
-                cursor4 = cursor;
-                if (cursor4 != null) {
+                cursor3 = cursor;
+                if (cursor3 != null) {
                 }
                 throw th;
             }
@@ -2646,31 +2642,31 @@ public final class zzav extends zzos {
             th = th3;
             cursor = null;
         }
-        if (!cursor5.moveToFirst()) {
-            if (cursor5 != null) {
-                cursor5.close();
+        if (!cursor4.moveToFirst()) {
+            if (cursor4 != null) {
+                cursor4.close();
             }
             return zzahVar;
         }
-        String string = cursor5.getString(0);
+        String string = cursor4.getString(0);
         if (string == null) {
             string = "";
         }
-        Object zzL = zzL(cursor5, 1);
-        boolean z = cursor5.getInt(2) != 0;
-        String string2 = cursor5.getString(3);
-        long j = cursor5.getLong(4);
+        Object zzL = zzL(cursor4, 1);
+        boolean z = cursor4.getInt(2) != 0;
+        String string2 = cursor4.getString(3);
+        long j = cursor4.getLong(4);
         zzpg zzpgVar = this.zzg;
         str3 = str2;
         String str4 = string;
         try {
-            zzah zzahVar2 = new zzah(str, str4, new zzpl(str3, cursor5.getLong(8), zzL, str4), cursor5.getLong(6), z, string2, (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(5), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(7), zzbg.CREATOR), cursor5.getLong(9), (zzbg) zzpgVar.zzp().zzl(cursor5.getBlob(10), zzbg.CREATOR));
-            if (cursor5.moveToNext()) {
+            zzah zzahVar2 = new zzah(str, str4, new zzpl(str3, cursor4.getLong(8), zzL, str4), cursor4.getLong(6), z, string2, (zzbg) zzpgVar.zzp().zzl(cursor4.getBlob(5), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor4.getBlob(7), zzbg.CREATOR), cursor4.getLong(9), (zzbg) zzpgVar.zzp().zzl(cursor4.getBlob(10), zzbg.CREATOR));
+            if (cursor4.moveToNext()) {
                 zzic zzicVar2 = this.zzu;
                 zzicVar2.zzaV().zzb().zzc("Got multiple records for conditional property, expected one", zzgu.zzl(str), zzicVar2.zzl().zzc(str3));
             }
-            if (cursor5 != null) {
-                cursor5.close();
+            if (cursor4 != null) {
+                cursor4.close();
             }
             return zzahVar2;
         } catch (SQLiteException e4) {
@@ -2678,7 +2674,7 @@ public final class zzav extends zzos {
             zzic zzicVar3 = this.zzu;
             zzicVar3.zzaV().zzb().zzd("Error querying conditional property", zzgu.zzl(str), zzicVar3.zzl().zzc(str3), e);
             zzahVar = cursor2;
-            if (cursor5 != null) {
+            if (cursor4 != null) {
             }
             return zzahVar;
         }
@@ -2717,14 +2713,14 @@ public final class zzav extends zzos {
         return zzt(sb.toString(), (String[]) arrayList.toArray(new String[arrayList.size()]));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0087, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x008b, code lost:
         r3 = r11.zzaV().zzb();
         r11.zzc();
         r3.zzb("Read more than the max allowed conditional properties, ignoring extra", 1000);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0164  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x016b  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x016f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

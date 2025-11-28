@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.b2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0130b2 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */

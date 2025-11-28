@@ -40,8 +40,8 @@ public final class ScrollableTabData {
     }
 
     private final int calculateTabOffset(TabPosition tabPosition, Density density, int i, List<TabPosition> list) {
-        int mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(((TabPosition) CollectionsKt.last((List<? extends Object>) list)).m3041getRightD9Ej5fM()) + i;
-        int maxValue = mo423roundToPx0680j_4 - this.scrollState.getMaxValue();
-        return RangesKt.coerceIn(density.mo423roundToPx0680j_4(tabPosition.m3040getLeftD9Ej5fM()) - ((maxValue / 2) - (density.mo423roundToPx0680j_4(tabPosition.m3042getWidthD9Ej5fM()) / 2)), 0, RangesKt.coerceAtLeast(mo423roundToPx0680j_4 - maxValue, 0));
+        int mo424roundToPx0680j_4 = density.mo424roundToPx0680j_4(((TabPosition) CollectionsKt.last((List<? extends Object>) list)).m3042getRightD9Ej5fM()) + i;
+        int maxValue = mo424roundToPx0680j_4 - this.scrollState.getMaxValue();
+        return RangesKt.coerceIn(density.mo424roundToPx0680j_4(tabPosition.m3041getLeftD9Ej5fM()) - ((maxValue / 2) - (density.mo424roundToPx0680j_4(tabPosition.m3043getWidthD9Ej5fM()) / 2)), 0, RangesKt.coerceAtLeast(mo424roundToPx0680j_4 - maxValue, 0));
     }
 }

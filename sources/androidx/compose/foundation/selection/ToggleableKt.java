@@ -27,26 +27,26 @@ import kotlin.jvm.functions.Function3;
 /* loaded from: classes.dex */
 public final class ToggleableKt {
     /* renamed from: toggleable-XHw0xAI$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1179toggleableXHw0xAI$default(Modifier modifier, boolean z, boolean z2, Role role, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ Modifier m1180toggleableXHw0xAI$default(Modifier modifier, boolean z, boolean z2, Role role, Function1 function1, int i, Object obj) {
         if ((i & 2) != 0) {
             z2 = true;
         }
         if ((i & 4) != 0) {
             role = null;
         }
-        return m1178toggleableXHw0xAI(modifier, z, z2, role, function1);
+        return m1179toggleableXHw0xAI(modifier, z, z2, role, function1);
     }
 
     /* renamed from: toggleable-oSLSa3U$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1181toggleableoSLSa3U$default(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ Modifier m1182toggleableoSLSa3U$default(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function1 function1, int i, Object obj) {
         if ((i & 2) != 0) {
             z2 = true;
         }
-        return m1180toggleableoSLSa3U(modifier, z, z2, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function1);
+        return m1181toggleableoSLSa3U(modifier, z, z2, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function1);
     }
 
     /* renamed from: toggleable-oSLSa3U  reason: not valid java name */
-    public static final Modifier m1180toggleableoSLSa3U(Modifier modifier, final boolean z, final boolean z2, final Role role, final MutableInteractionSource mutableInteractionSource, final Function1<? super Boolean, Unit> function1) {
+    public static final Modifier m1181toggleableoSLSa3U(Modifier modifier, final boolean z, final boolean z2, final Role role, final MutableInteractionSource mutableInteractionSource, final Function1<? super Boolean, Unit> function1) {
         if (ComposeFoundationFlags.isNonComposedClickableEnabled) {
             return modifier.then(new ToggleableElement(z, mutableInteractionSource, null, true, z2, role, function1, null));
         }
@@ -106,18 +106,18 @@ public final class ToggleableKt {
                         composer.endReplaceGroup();
                     }
                 }
-                Modifier m1176toggleableO2vRcR0 = ToggleableKt.m1176toggleableO2vRcR0(Modifier.Companion, z, mutableInteractionSource2, indication, z2, role, function1);
+                Modifier m1177toggleableO2vRcR0 = ToggleableKt.m1177toggleableO2vRcR0(Modifier.Companion, z, mutableInteractionSource2, indication, z2, role, function1);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m1176toggleableO2vRcR0;
+                return m1177toggleableO2vRcR0;
             }
         });
     }
 
     /* renamed from: toggleable-O2vRcR0$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1177toggleableO2vRcR0$default(Modifier modifier, boolean z, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z2, Role role, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ Modifier m1178toggleableO2vRcR0$default(Modifier modifier, boolean z, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z2, Role role, Function1 function1, int i, Object obj) {
         if ((i & 8) != 0) {
             z2 = true;
         }
@@ -125,30 +125,30 @@ public final class ToggleableKt {
         if ((i & 16) != 0) {
             role = null;
         }
-        return m1176toggleableO2vRcR0(modifier, z, mutableInteractionSource, indication, z3, role, function1);
+        return m1177toggleableO2vRcR0(modifier, z, mutableInteractionSource, indication, z3, role, function1);
     }
 
     /* renamed from: triStateToggleable-XHw0xAI$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1185triStateToggleableXHw0xAI$default(Modifier modifier, ToggleableState toggleableState, boolean z, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1186triStateToggleableXHw0xAI$default(Modifier modifier, ToggleableState toggleableState, boolean z, Role role, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
             z = true;
         }
         if ((i & 4) != 0) {
             role = null;
         }
-        return m1184triStateToggleableXHw0xAI(modifier, toggleableState, z, role, function0);
+        return m1185triStateToggleableXHw0xAI(modifier, toggleableState, z, role, function0);
     }
 
     /* renamed from: triStateToggleable-oSLSa3U$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1187triStateToggleableoSLSa3U$default(Modifier modifier, ToggleableState toggleableState, boolean z, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1188triStateToggleableoSLSa3U$default(Modifier modifier, ToggleableState toggleableState, boolean z, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
             z = true;
         }
-        return m1186triStateToggleableoSLSa3U(modifier, toggleableState, z, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function0);
+        return m1187triStateToggleableoSLSa3U(modifier, toggleableState, z, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function0);
     }
 
     /* renamed from: triStateToggleable-oSLSa3U  reason: not valid java name */
-    public static final Modifier m1186triStateToggleableoSLSa3U(Modifier modifier, final ToggleableState toggleableState, final boolean z, final Role role, final MutableInteractionSource mutableInteractionSource, final Function0<Unit> function0) {
+    public static final Modifier m1187triStateToggleableoSLSa3U(Modifier modifier, final ToggleableState toggleableState, final boolean z, final Role role, final MutableInteractionSource mutableInteractionSource, final Function0<Unit> function0) {
         if (ComposeFoundationFlags.isNonComposedClickableEnabled) {
             return modifier.then(new TriStateToggleableElement(toggleableState, mutableInteractionSource, null, true, z, role, function0, null));
         }
@@ -208,18 +208,18 @@ public final class ToggleableKt {
                         composer.endReplaceGroup();
                     }
                 }
-                Modifier m1182triStateToggleableO2vRcR0 = ToggleableKt.m1182triStateToggleableO2vRcR0(Modifier.Companion, toggleableState, mutableInteractionSource2, indication, z, role, function0);
+                Modifier m1183triStateToggleableO2vRcR0 = ToggleableKt.m1183triStateToggleableO2vRcR0(Modifier.Companion, toggleableState, mutableInteractionSource2, indication, z, role, function0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m1182triStateToggleableO2vRcR0;
+                return m1183triStateToggleableO2vRcR0;
             }
         });
     }
 
     /* renamed from: triStateToggleable-O2vRcR0$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1183triStateToggleableO2vRcR0$default(Modifier modifier, ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1184triStateToggleableO2vRcR0$default(Modifier modifier, ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, Role role, Function0 function0, int i, Object obj) {
         if ((i & 8) != 0) {
             z = true;
         }
@@ -227,12 +227,12 @@ public final class ToggleableKt {
         if ((i & 16) != 0) {
             role = null;
         }
-        return m1182triStateToggleableO2vRcR0(modifier, toggleableState, mutableInteractionSource, indication, z2, role, function0);
+        return m1183triStateToggleableO2vRcR0(modifier, toggleableState, mutableInteractionSource, indication, z2, role, function0);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replaced with new overload that only supports IndicationNodeFactory instances inside LocalIndication, and does not use composed")
     /* renamed from: toggleable-XHw0xAI  reason: not valid java name */
-    public static final /* synthetic */ Modifier m1178toggleableXHw0xAI(Modifier modifier, final boolean z, final boolean z2, final Role role, final Function1 function1) {
+    public static final /* synthetic */ Modifier m1179toggleableXHw0xAI(Modifier modifier, final boolean z, final boolean z2, final Role role, final Function1 function1) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.selection.ToggleableKt$toggleable-XHw0xAI$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -287,18 +287,18 @@ public final class ToggleableKt {
                     ComposerKt.sourceInformationMarkerEnd(composer);
                     composer.endReplaceGroup();
                 }
-                Modifier m1176toggleableO2vRcR0 = ToggleableKt.m1176toggleableO2vRcR0(Modifier.Companion, z, mutableInteractionSource, indication, z2, role, function1);
+                Modifier m1177toggleableO2vRcR0 = ToggleableKt.m1177toggleableO2vRcR0(Modifier.Companion, z, mutableInteractionSource, indication, z2, role, function1);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m1176toggleableO2vRcR0;
+                return m1177toggleableO2vRcR0;
             }
         });
     }
 
     /* renamed from: toggleable-O2vRcR0  reason: not valid java name */
-    public static final Modifier m1176toggleableO2vRcR0(Modifier modifier, final boolean z, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z2, final Role role, final Function1<? super Boolean, Unit> function1) {
+    public static final Modifier m1177toggleableO2vRcR0(Modifier modifier, final boolean z, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z2, final Role role, final Function1<? super Boolean, Unit> function1) {
         ToggleableElement composed$default;
         if (indication instanceof IndicationNodeFactory) {
             composed$default = new ToggleableElement(z, mutableInteractionSource, (IndicationNodeFactory) indication, false, z2, role, function1, null);
@@ -341,7 +341,7 @@ public final class ToggleableKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replaced with new overload that only supports IndicationNodeFactory instances inside LocalIndication, and does not use composed")
     /* renamed from: triStateToggleable-XHw0xAI  reason: not valid java name */
-    public static final /* synthetic */ Modifier m1184triStateToggleableXHw0xAI(Modifier modifier, final ToggleableState toggleableState, final boolean z, final Role role, final Function0 function0) {
+    public static final /* synthetic */ Modifier m1185triStateToggleableXHw0xAI(Modifier modifier, final ToggleableState toggleableState, final boolean z, final Role role, final Function0 function0) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.selection.ToggleableKt$triStateToggleable-XHw0xAI$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -396,18 +396,18 @@ public final class ToggleableKt {
                     ComposerKt.sourceInformationMarkerEnd(composer);
                     composer.endReplaceGroup();
                 }
-                Modifier m1182triStateToggleableO2vRcR0 = ToggleableKt.m1182triStateToggleableO2vRcR0(Modifier.Companion, ToggleableState.this, mutableInteractionSource, indication, z, role, function0);
+                Modifier m1183triStateToggleableO2vRcR0 = ToggleableKt.m1183triStateToggleableO2vRcR0(Modifier.Companion, ToggleableState.this, mutableInteractionSource, indication, z, role, function0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m1182triStateToggleableO2vRcR0;
+                return m1183triStateToggleableO2vRcR0;
             }
         });
     }
 
     /* renamed from: triStateToggleable-O2vRcR0  reason: not valid java name */
-    public static final Modifier m1182triStateToggleableO2vRcR0(Modifier modifier, final ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final Role role, final Function0<Unit> function0) {
+    public static final Modifier m1183triStateToggleableO2vRcR0(Modifier modifier, final ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final Role role, final Function0<Unit> function0) {
         TriStateToggleableElement composed$default;
         if (indication instanceof IndicationNodeFactory) {
             composed$default = new TriStateToggleableElement(toggleableState, mutableInteractionSource, (IndicationNodeFactory) indication, false, z, role, function0, null);

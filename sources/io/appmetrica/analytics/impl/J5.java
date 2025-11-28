@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract /* synthetic */ class J5 {
 
     /* renamed from: a  reason: collision with root package name */

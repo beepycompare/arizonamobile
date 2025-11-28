@@ -27,7 +27,7 @@ public final class TextSelectionColorsKt {
     static {
         long Color = ColorKt.Color(4282550004L);
         DefaultSelectionColor = Color;
-        DefaultTextSelectionColors = new TextSelectionColors(Color, Color.m5278copywmQWz5c$default(Color, 0.4f, 0.0f, 0.0f, 0.0f, 14, null), null);
+        DefaultTextSelectionColors = new TextSelectionColors(Color, Color.m5279copywmQWz5c$default(Color, 0.4f, 0.0f, 0.0f, 0.0f, 14, null), null);
     }
 
     public static final ProvidableCompositionLocal<TextSelectionColors> getLocalTextSelectionColors() {

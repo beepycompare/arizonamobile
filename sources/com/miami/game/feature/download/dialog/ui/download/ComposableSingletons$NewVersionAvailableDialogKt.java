@@ -37,12 +37,12 @@ public final class ComposableSingletons$NewVersionAvailableDialogKt {
     });
 
     /* renamed from: getLambda$-1405896063$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9709getLambda$1405896063$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9767getLambda$1405896063$dialogs_release() {
         return f53lambda$1405896063;
     }
 
     /* renamed from: getLambda$-1889472662$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9710getLambda$1889472662$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9768getLambda$1889472662$dialogs_release() {
         return f54lambda$1889472662;
     }
 
@@ -56,7 +56,7 @@ public final class ComposableSingletons$NewVersionAvailableDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1405896063, i, -1, "com.miami.game.feature.download.dialog.ui.download.ComposableSingletons$NewVersionAvailableDialogKt.lambda$-1405896063.<anonymous> (NewVersionAvailableDialog.kt:83)");
             }
-            TextKt.m3168TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3169TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -74,7 +74,7 @@ public final class ComposableSingletons$NewVersionAvailableDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1889472662, i, -1, "com.miami.game.feature.download.dialog.ui.download.ComposableSingletons$NewVersionAvailableDialogKt.lambda$-1889472662.<anonymous> (NewVersionAvailableDialog.kt:89)");
             }
-            TextKt.m3168TextNvy7gAk("ЗАГРУЗИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3169TextNvy7gAk("ЗАГРУЗИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

@@ -11,7 +11,7 @@ import io.appmetrica.analytics.impl.C0573sd;
 import io.appmetrica.analytics.impl.C0598td;
 import io.appmetrica.analytics.impl.C0623ud;
 import io.appmetrica.analytics.impl.C0685x0;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_ADJUST = 2;
     public static final int EXTERNAL_ATTRIBUTION_AIRBRIDGE = 5;

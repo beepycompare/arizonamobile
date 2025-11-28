@@ -40,8 +40,8 @@ public final class SelectionLayoutKt {
     }
 
     /* renamed from: getTextFieldSelectionLayout-RcvT-LA  reason: not valid java name */
-    public static final SelectionLayout m1771getTextFieldSelectionLayoutRcvTLA(TextLayoutResult textLayoutResult, int i, int i2, int i3, long j, boolean z, boolean z2) {
-        return new SingleSelectionLayout(z2, 1, 1, z ? null : new Selection(new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7457getStartimpl(j)), TextRange.m7457getStartimpl(j), 1L), new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7452getEndimpl(j)), TextRange.m7452getEndimpl(j), 1L), TextRange.m7456getReversedimpl(j)), new SelectableInfo(1L, 1, i, i2, i3, textLayoutResult));
+    public static final SelectionLayout m1772getTextFieldSelectionLayoutRcvTLA(TextLayoutResult textLayoutResult, int i, int i2, int i3, long j, boolean z, boolean z2) {
+        return new SingleSelectionLayout(z2, 1, 1, z ? null : new Selection(new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7458getStartimpl(j)), TextRange.m7458getStartimpl(j), 1L), new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7453getEndimpl(j)), TextRange.m7453getEndimpl(j), 1L), TextRange.m7457getReversedimpl(j)), new SelectableInfo(1L, 1, i, i2, i3, textLayoutResult));
     }
 
     public static final Direction resolve2dDirection(Direction direction, Direction direction2) {

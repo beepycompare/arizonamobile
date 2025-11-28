@@ -114,7 +114,7 @@ public abstract class PagerState implements ScrollableState {
         if (!z) {
             InlineClassHelperKt.throwIllegalArgumentException("currentPageOffsetFraction " + f + " is not within the range -0.5 to 0.5");
         }
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5024boximpl(Offset.Companion.m5051getZeroF1C5BW0()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5025boximpl(Offset.Companion.m5052getZeroF1C5BW0()), null, 2, null);
         this.upDownDifference$delegate = mutableStateOf$default;
         PagerScrollPosition pagerScrollPosition = new PagerScrollPosition(i, f, this);
         this.scrollPosition = pagerScrollPosition;
@@ -172,8 +172,8 @@ public abstract class PagerState implements ScrollableState {
         this.premeasureConstraints = ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null);
         this.pinnedPages = new LazyLayoutPinnedItemList();
         pagerScrollPosition.getNearestRangeState();
-        this.placementScopeInvalidator = ObservableScopeInvalidator.m1074constructorimpl$default(null, 1, null);
-        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1074constructorimpl$default(null, 1, null);
+        this.placementScopeInvalidator = ObservableScopeInvalidator.m1075constructorimpl$default(null, 1, null);
+        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1075constructorimpl$default(null, 1, null);
         mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.canScrollForward$delegate = mutableStateOf$default3;
         mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
@@ -205,13 +205,13 @@ public abstract class PagerState implements ScrollableState {
     }
 
     /* renamed from: getUpDownDifference-F1C5BW0$foundation_release  reason: not valid java name */
-    public final long m1161getUpDownDifferenceF1C5BW0$foundation_release() {
-        return ((Offset) this.upDownDifference$delegate.getValue()).m5045unboximpl();
+    public final long m1162getUpDownDifferenceF1C5BW0$foundation_release() {
+        return ((Offset) this.upDownDifference$delegate.getValue()).m5046unboximpl();
     }
 
     /* renamed from: setUpDownDifference-k-4lQ0M$foundation_release  reason: not valid java name */
-    public final void m1163setUpDownDifferencek4lQ0M$foundation_release(long j) {
-        this.upDownDifference$delegate.setValue(Offset.m5024boximpl(j));
+    public final void m1164setUpDownDifferencek4lQ0M$foundation_release(long j) {
+        this.upDownDifference$delegate.setValue(Offset.m5025boximpl(j));
     }
 
     public final int getFirstVisiblePage$foundation_release() {
@@ -271,7 +271,7 @@ public abstract class PagerState implements ScrollableState {
         }
         if (copyWithScrollDeltaWithoutRemeasure != null) {
             applyMeasureResult$foundation_release(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
-            ObservableScopeInvalidator.m1078invalidateScopeimpl(this.placementScopeInvalidator);
+            ObservableScopeInvalidator.m1079invalidateScopeimpl(this.placementScopeInvalidator);
             this.layoutWithoutMeasurement++;
         } else {
             this.scrollPosition.applyScrollDelta(i);
@@ -325,7 +325,7 @@ public abstract class PagerState implements ScrollableState {
     }
 
     public final float getPositionThresholdFraction$foundation_release() {
-        return Math.min(this.density.mo429toPx0680j_4(PagerStateKt.getDefaultPositionThreshold()), getPageSize$foundation_release() / 2.0f) / getPageSize$foundation_release();
+        return Math.min(this.density.mo430toPx0680j_4(PagerStateKt.getDefaultPositionThreshold()), getPageSize$foundation_release() / 2.0f) / getPageSize$foundation_release();
     }
 
     public final MutableInteractionSource getInternalInteractionSource$foundation_release() {
@@ -438,12 +438,12 @@ public abstract class PagerState implements ScrollableState {
     }
 
     /* renamed from: getPremeasureConstraints-msEJaDk$foundation_release  reason: not valid java name */
-    public final long m1160getPremeasureConstraintsmsEJaDk$foundation_release() {
+    public final long m1161getPremeasureConstraintsmsEJaDk$foundation_release() {
         return this.premeasureConstraints;
     }
 
     /* renamed from: setPremeasureConstraints-BRTryo0$foundation_release  reason: not valid java name */
-    public final void m1162setPremeasureConstraintsBRTryo0$foundation_release(long j) {
+    public final void m1163setPremeasureConstraintsBRTryo0$foundation_release(long j) {
         this.premeasureConstraints = j;
     }
 
@@ -456,7 +456,7 @@ public abstract class PagerState implements ScrollableState {
     }
 
     /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1159getPlacementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m1160getPlacementScopeInvalidatorzYiylxw$foundation_release() {
         return this.placementScopeInvalidator;
     }
 
@@ -503,11 +503,11 @@ public abstract class PagerState implements ScrollableState {
             }
             return;
         }
-        ObservableScopeInvalidator.m1078invalidateScopeimpl(this.measurementScopeInvalidator);
+        ObservableScopeInvalidator.m1079invalidateScopeimpl(this.measurementScopeInvalidator);
     }
 
     /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1158getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m1159getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
         return this.measurementScopeInvalidator;
     }
 
@@ -531,10 +531,10 @@ public abstract class PagerState implements ScrollableState {
     /* JADX WARN: Code restructure failed: missing block: B:27:0x006b, code lost:
         if (awaitScrollDependencies(r4) == r0) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00bd, code lost:
         if (androidx.compose.foundation.gestures.ScrollableState.scroll$default(r11, null, new androidx.compose.foundation.pager.PagerState$animateScrollToPage$3(r11, coerceInPageRange(r12), r13 * getPageSizeWithSpacing$foundation_release(), r9, null), r4, 1, null) != r0) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00bf, code lost:
         return r0;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
@@ -809,17 +809,17 @@ public abstract class PagerState implements ScrollableState {
 
     private final boolean isGestureActionMatchesScroll(float f) {
         if (getLayoutInfo().getOrientation() == Orientation.Vertical) {
-            if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1161getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L)))) {
+            if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L)))) {
                 return true;
             }
-        } else if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1161getUpDownDifferenceF1C5BW0$foundation_release() >> 32)))) {
+        } else if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() >> 32)))) {
             return true;
         }
         return isNotGestureAction$foundation_release();
     }
 
     public final boolean isNotGestureAction$foundation_release() {
-        return ((int) Float.intBitsToFloat((int) (m1161getUpDownDifferenceF1C5BW0$foundation_release() >> 32))) == 0 && ((int) Float.intBitsToFloat((int) (m1161getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L))) == 0;
+        return ((int) Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() >> 32))) == 0 && ((int) Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L))) == 0;
     }
 
     private final void notifyPrefetch(float f, PagerLayoutInfo pagerLayoutInfo) {
@@ -838,7 +838,7 @@ public abstract class PagerState implements ScrollableState {
                 }
                 this.wasPrefetchingForward = z;
                 this.indexToPrefetch = calculatePrefetchIndex;
-                this.currentPrefetchHandle = LazyLayoutPrefetchState.m1057schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, calculatePrefetchIndex, this.premeasureConstraints, null, 4, null);
+                this.currentPrefetchHandle = LazyLayoutPrefetchState.m1058schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, calculatePrefetchIndex, this.premeasureConstraints, null, 4, null);
             }
             if (z) {
                 if ((((PageInfo) CollectionsKt.last((List<? extends Object>) pagerLayoutInfo.getVisiblePagesInfo())).getOffset() + (pagerLayoutInfo.getPageSize() + pagerLayoutInfo.getPageSpacing())) - pagerLayoutInfo.getViewportEndOffset() >= f || (prefetchHandle2 = this.currentPrefetchHandle) == null) {

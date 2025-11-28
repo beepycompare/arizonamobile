@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class N4 extends AbstractC0640v5 {
     public N4(BaseRequestConfig.ComponentLoader<Object, Object, S5> componentLoader, C0356jm c0356jm, BaseRequestConfig.BaseRequestArguments<C0639v4, Object> baseRequestArguments) {
         super(componentLoader, c0356jm, baseRequestArguments);

@@ -22,7 +22,7 @@ public final class SingleFrom<T> extends Single<T> {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // ru.rustore.sdk.reactive.single.Single
     public void subscribe(SingleObserver<T> downstream) {
-        Object m9843constructorimpl;
+        Object m9901constructorimpl;
         Intrinsics.checkNotNullParameter(downstream, "downstream");
         SimpleDisposable simpleDisposable = new SimpleDisposable();
         downstream.onSubscribe(simpleDisposable);
@@ -32,18 +32,18 @@ public final class SingleFrom<T> extends Single<T> {
         try {
             Result.Companion companion = Result.Companion;
             SingleFrom<T> singleFrom = this;
-            m9843constructorimpl = Result.m9843constructorimpl(this.source.invoke());
+            m9901constructorimpl = Result.m9901constructorimpl(this.source.invoke());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9901constructorimpl = Result.m9901constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9850isSuccessimpl(m9843constructorimpl) && !simpleDisposable.isDisposed()) {
-            downstream.onSuccess(m9843constructorimpl);
+        if (Result.m9908isSuccessimpl(m9901constructorimpl) && !simpleDisposable.isDisposed()) {
+            downstream.onSuccess(m9901constructorimpl);
         }
-        Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-        if (m9846exceptionOrNullimpl == null || simpleDisposable.isDisposed()) {
+        Throwable m9904exceptionOrNullimpl = Result.m9904exceptionOrNullimpl(m9901constructorimpl);
+        if (m9904exceptionOrNullimpl == null || simpleDisposable.isDisposed()) {
             return;
         }
-        downstream.onError(m9846exceptionOrNullimpl);
+        downstream.onError(m9904exceptionOrNullimpl);
     }
 }

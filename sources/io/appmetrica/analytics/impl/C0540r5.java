@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 /* renamed from: io.appmetrica.analytics.impl.r5  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0540r5 implements InterfaceC0694x9 {
 
     /* renamed from: a  reason: collision with root package name */

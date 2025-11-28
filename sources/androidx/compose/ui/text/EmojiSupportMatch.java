@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class EmojiSupportMatch {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Default = m7285constructorimpl(0);
-    private static final int None = m7285constructorimpl(1);
-    private static final int All = m7285constructorimpl(2);
+    private static final int Default = m7286constructorimpl(0);
+    private static final int None = m7286constructorimpl(1);
+    private static final int All = m7286constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ EmojiSupportMatch m7284boximpl(int i) {
+    public static final /* synthetic */ EmojiSupportMatch m7285boximpl(int i) {
         return new EmojiSupportMatch(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7285constructorimpl(int i) {
+    private static int m7286constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7286equalsimpl(int i, Object obj) {
-        return (obj instanceof EmojiSupportMatch) && i == ((EmojiSupportMatch) obj).m7290unboximpl();
+    public static boolean m7287equalsimpl(int i, Object obj) {
+        return (obj instanceof EmojiSupportMatch) && i == ((EmojiSupportMatch) obj).m7291unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7287equalsimpl0(int i, int i2) {
+    public static final boolean m7288equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7288hashCodeimpl(int i) {
+    public static int m7289hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7286equalsimpl(this.value, obj);
+        return m7287equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7288hashCodeimpl(this.value);
+        return m7289hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7290unboximpl() {
+    public final /* synthetic */ int m7291unboximpl() {
         return this.value;
     }
 
@@ -57,11 +57,11 @@ public final class EmojiSupportMatch {
     }
 
     public String toString() {
-        return m7289toStringimpl(this.value);
+        return m7290toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7289toStringimpl(int i) {
+    public static String m7290toStringimpl(int i) {
         return i == Default ? "EmojiSupportMatch.Default" : i == None ? "EmojiSupportMatch.None" : i == All ? "EmojiSupportMatch.All" : "Invalid(value=" + i + ')';
     }
 
@@ -77,17 +77,17 @@ public final class EmojiSupportMatch {
         }
 
         /* renamed from: getDefault-_3YsG6Y  reason: not valid java name */
-        public final int m7292getDefault_3YsG6Y() {
+        public final int m7293getDefault_3YsG6Y() {
             return EmojiSupportMatch.Default;
         }
 
         /* renamed from: getNone-_3YsG6Y  reason: not valid java name */
-        public final int m7293getNone_3YsG6Y() {
+        public final int m7294getNone_3YsG6Y() {
             return EmojiSupportMatch.None;
         }
 
         /* renamed from: getAll-_3YsG6Y  reason: not valid java name */
-        public final int m7291getAll_3YsG6Y() {
+        public final int m7292getAll_3YsG6Y() {
             return EmojiSupportMatch.All;
         }
     }

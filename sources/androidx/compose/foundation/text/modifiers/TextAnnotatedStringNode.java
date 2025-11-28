@@ -90,7 +90,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
     }
 
     public /* synthetic */ TextAnnotatedStringNode(AnnotatedString annotatedString, TextStyle textStyle, FontFamily.Resolver resolver, Function1 function1, int i, boolean z, int i2, int i3, List list, Function1 function12, SelectionController selectionController, ColorProducer colorProducer, TextAutoSize textAutoSize, Function1 function13, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, textStyle, resolver, (i4 & 8) != 0 ? null : function1, (i4 & 16) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i, (i4 & 32) != 0 ? true : z, (i4 & 64) != 0 ? Integer.MAX_VALUE : i2, (i4 & 128) != 0 ? 1 : i3, (i4 & 256) != 0 ? null : list, (i4 & 512) != 0 ? null : function12, (i4 & 1024) != 0 ? null : selectionController, (i4 & 2048) != 0 ? null : colorProducer, (i4 & 4096) != 0 ? null : textAutoSize, (i4 & 8192) != 0 ? null : function13, null);
+        this(annotatedString, textStyle, resolver, (i4 & 8) != 0 ? null : function1, (i4 & 16) != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i, (i4 & 32) != 0 ? true : z, (i4 & 64) != 0 ? Integer.MAX_VALUE : i2, (i4 & 128) != 0 ? 1 : i3, (i4 & 256) != 0 ? null : list, (i4 & 512) != 0 ? null : function12, (i4 & 1024) != 0 ? null : selectionController, (i4 & 2048) != 0 ? null : colorProducer, (i4 & 4096) != 0 ? null : textAutoSize, (i4 & 8192) != 0 ? null : function13, null);
     }
 
     private TextAnnotatedStringNode(AnnotatedString annotatedString, TextStyle textStyle, FontFamily.Resolver resolver, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, List<AnnotatedString.Range<Placeholder>> list, Function1<? super List<Rect>, Unit> function12, SelectionController selectionController, ColorProducer colorProducer, TextAutoSize textAutoSize, Function1<? super TextSubstitutionValue, Unit> function13) {
@@ -150,7 +150,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
     }
 
     /* renamed from: updateLayoutRelatedArgs-y0k-MQk  reason: not valid java name */
-    public final boolean m1728updateLayoutRelatedArgsy0kMQk(TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3, TextAutoSize textAutoSize) {
+    public final boolean m1729updateLayoutRelatedArgsy0kMQk(TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3, TextAutoSize textAutoSize) {
         boolean z2 = !this.style.hasSameLayoutAffectingAttributes(textStyle);
         this.style = textStyle;
         if (!Intrinsics.areEqual(this.placeholders, list)) {
@@ -173,7 +173,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             this.fontFamilyResolver = resolver;
             z2 = true;
         }
-        if (!TextOverflow.m7921equalsimpl0(this.overflow, i3)) {
+        if (!TextOverflow.m7922equalsimpl0(this.overflow, i3)) {
             this.overflow = i3;
             z2 = true;
         }
@@ -209,7 +209,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
 
     public final void doInvalidations(boolean z, boolean z2, boolean z3, boolean z4) {
         if (z2 || z3 || z4) {
-            getLayoutCache().m1711updateJ2qo7bo(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, this.placeholders, this.autoSize);
+            getLayoutCache().m1712updateJ2qo7bo(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, this.placeholders, this.autoSize);
         }
         if (isAttached()) {
             if (z2 || (z && this.semanticsTextLayoutResult != null)) {
@@ -349,7 +349,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             textSubstitutionValue.setSubstitution(annotatedString);
             MultiParagraphLayoutCache layoutCache = textSubstitutionValue.getLayoutCache();
             if (layoutCache != null) {
-                layoutCache.m1711updateJ2qo7bo(annotatedString, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, CollectionsKt.emptyList(), this.autoSize);
+                layoutCache.m1712updateJ2qo7bo(annotatedString, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, CollectionsKt.emptyList(), this.autoSize);
                 return true;
             }
             return false;
@@ -432,7 +432,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             AnnotatedString text = layoutOrNull.getLayoutInput().getText();
             TextStyle textStyle = textAnnotatedStringNode.style;
             ColorProducer colorProducer = textAnnotatedStringNode.overrideColor;
-            textLayoutResult = TextLayoutResult.m7425copyO0kMr_c$default(layoutOrNull, new TextLayoutInput(text, TextStyle.m7477mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2299invoke0d7_KjU() : Color.Companion.m5315getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null), layoutOrNull.getLayoutInput().getPlaceholders(), layoutOrNull.getLayoutInput().getMaxLines(), layoutOrNull.getLayoutInput().getSoftWrap(), layoutOrNull.getLayoutInput().m7424getOverflowgIe3tQ8(), layoutOrNull.getLayoutInput().getDensity(), layoutOrNull.getLayoutInput().getLayoutDirection(), layoutOrNull.getLayoutInput().getFontFamilyResolver(), layoutOrNull.getLayoutInput().m7423getConstraintsmsEJaDk(), (DefaultConstructorMarker) null), 0L, 2, null);
+            textLayoutResult = TextLayoutResult.m7426copyO0kMr_c$default(layoutOrNull, new TextLayoutInput(text, TextStyle.m7478mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2300invoke0d7_KjU() : Color.Companion.m5316getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null), layoutOrNull.getLayoutInput().getPlaceholders(), layoutOrNull.getLayoutInput().getMaxLines(), layoutOrNull.getLayoutInput().getSoftWrap(), layoutOrNull.getLayoutInput().m7425getOverflowgIe3tQ8(), layoutOrNull.getLayoutInput().getDensity(), layoutOrNull.getLayoutInput().getLayoutDirection(), layoutOrNull.getLayoutInput().getFontFamilyResolver(), layoutOrNull.getLayoutInput().m7424getConstraintsmsEJaDk(), (DefaultConstructorMarker) null), 0L, 2, null);
             if (textLayoutResult != null) {
                 list.add(textLayoutResult);
                 return textLayoutResult == null;
@@ -477,20 +477,20 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
     }
 
     /* renamed from: measureNonExtension-3p2s80s  reason: not valid java name */
-    public final MeasureResult m1727measureNonExtension3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        return mo80measure3p2s80s(measureScope, measurable, j);
+    public final MeasureResult m1728measureNonExtension3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        return mo81measure3p2s80s(measureScope, measurable, j);
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         Trace.beginSection("TextAnnotatedStringNode:measure");
         try {
             MultiParagraphLayoutCache layoutCache = getLayoutCache(measureScope);
-            boolean m1710layoutWithConstraintsK40F9xA = layoutCache.m1710layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
+            boolean m1711layoutWithConstraintsK40F9xA = layoutCache.m1711layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
             TextLayoutResult textLayoutResult = layoutCache.getTextLayoutResult();
             textLayoutResult.getMultiParagraph().getIntrinsics().getHasStaleResolvedFonts();
-            if (m1710layoutWithConstraintsK40F9xA) {
+            if (m1711layoutWithConstraintsK40F9xA) {
                 LayoutModifierNodeKt.invalidateLayer(this);
                 Function1<? super TextLayoutResult, Unit> function1 = this.onTextLayout;
                 if (function1 != null) {
@@ -512,12 +512,12 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             if (function12 != null) {
                 function12.invoke(textLayoutResult.getPlaceholderRects());
             }
-            final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.Companion.m7957fitPrioritizingWidthZbe2FdA((int) (textLayoutResult.m7428getSizeYbymL2g() >> 32), (int) (textLayoutResult.m7428getSizeYbymL2g() >> 32), (int) (textLayoutResult.m7428getSizeYbymL2g() & 4294967295L), (int) (textLayoutResult.m7428getSizeYbymL2g() & 4294967295L)));
-            int m7428getSizeYbymL2g = (int) (textLayoutResult.m7428getSizeYbymL2g() >> 32);
-            int m7428getSizeYbymL2g2 = (int) (textLayoutResult.m7428getSizeYbymL2g() & 4294967295L);
+            final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(Constraints.Companion.m7958fitPrioritizingWidthZbe2FdA((int) (textLayoutResult.m7429getSizeYbymL2g() >> 32), (int) (textLayoutResult.m7429getSizeYbymL2g() >> 32), (int) (textLayoutResult.m7429getSizeYbymL2g() & 4294967295L), (int) (textLayoutResult.m7429getSizeYbymL2g() & 4294967295L)));
+            int m7429getSizeYbymL2g = (int) (textLayoutResult.m7429getSizeYbymL2g() >> 32);
+            int m7429getSizeYbymL2g2 = (int) (textLayoutResult.m7429getSizeYbymL2g() & 4294967295L);
             Map<AlignmentLine, Integer> map = this.baselineCache;
             Intrinsics.checkNotNull(map);
-            return measureScope.layout(m7428getSizeYbymL2g, m7428getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda0
+            return measureScope.layout(m7429getSizeYbymL2g, m7429getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measure_3p2s80s$lambda$10$lambda$9;
@@ -587,11 +587,11 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             TextLayoutResult textLayoutResult = getLayoutCache(contentDrawScope).getTextLayoutResult();
             MultiParagraph multiParagraph = textLayoutResult.getMultiParagraph();
             boolean z = true;
-            boolean z2 = textLayoutResult.getHasVisualOverflow() && !TextOverflow.m7921equalsimpl0(this.overflow, TextOverflow.Companion.m7934getVisiblegIe3tQ8());
+            boolean z2 = textLayoutResult.getHasVisualOverflow() && !TextOverflow.m7922equalsimpl0(this.overflow, TextOverflow.Companion.m7935getVisiblegIe3tQ8());
             if (z2) {
-                Rect m5075Recttz77jQw = RectKt.m5075Recttz77jQw(Offset.Companion.m5051getZeroF1C5BW0(), Size.m5095constructorimpl((Float.floatToRawIntBits((int) (textLayoutResult.m7428getSizeYbymL2g() >> 32)) << 32) | (Float.floatToRawIntBits((int) (textLayoutResult.m7428getSizeYbymL2g() & 4294967295L)) & 4294967295L)));
+                Rect m5076Recttz77jQw = RectKt.m5076Recttz77jQw(Offset.Companion.m5052getZeroF1C5BW0(), Size.m5096constructorimpl((Float.floatToRawIntBits((int) (textLayoutResult.m7429getSizeYbymL2g() >> 32)) << 32) | (Float.floatToRawIntBits((int) (textLayoutResult.m7429getSizeYbymL2g() & 4294967295L)) & 4294967295L)));
                 canvas.save();
-                Canvas.m5252clipRectmtrdDE$default(canvas, m5075Recttz77jQw, 0, 2, null);
+                Canvas.m5253clipRectmtrdDE$default(canvas, m5076Recttz77jQw, 0, 2, null);
             }
             try {
                 TextDecoration textDecoration = this.style.getTextDecoration();
@@ -611,18 +611,18 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
                 DrawStyle drawStyle2 = drawStyle;
                 Brush brush = this.style.getBrush();
                 if (brush != null) {
-                    MultiParagraph.m7296painthn5TExg$default(multiParagraph, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
+                    MultiParagraph.m7297painthn5TExg$default(multiParagraph, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
                 } else {
                     ColorProducer colorProducer = this.overrideColor;
-                    long mo2299invoke0d7_KjU = colorProducer != null ? colorProducer.mo2299invoke0d7_KjU() : Color.Companion.m5315getUnspecified0d7_KjU();
-                    if (mo2299invoke0d7_KjU == 16) {
-                        if (this.style.m7487getColor0d7_KjU() != 16) {
-                            mo2299invoke0d7_KjU = this.style.m7487getColor0d7_KjU();
+                    long mo2300invoke0d7_KjU = colorProducer != null ? colorProducer.mo2300invoke0d7_KjU() : Color.Companion.m5316getUnspecified0d7_KjU();
+                    if (mo2300invoke0d7_KjU == 16) {
+                        if (this.style.m7488getColor0d7_KjU() != 16) {
+                            mo2300invoke0d7_KjU = this.style.m7488getColor0d7_KjU();
                         } else {
-                            mo2299invoke0d7_KjU = Color.Companion.m5305getBlack0d7_KjU();
+                            mo2300invoke0d7_KjU = Color.Companion.m5306getBlack0d7_KjU();
                         }
                     }
-                    multiParagraph.m7301paintLG529CI(canvas, (r14 & 2) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : mo2299invoke0d7_KjU, (r14 & 4) != 0 ? null : shadow2, (r14 & 8) != 0 ? null : textDecoration2, (r14 & 16) == 0 ? drawStyle2 : null, (r14 & 32) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : 0);
+                    multiParagraph.m7302paintLG529CI(canvas, (r14 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : mo2300invoke0d7_KjU, (r14 & 4) != 0 ? null : shadow2, (r14 & 8) != 0 ? null : textDecoration2, (r14 & 16) == 0 ? drawStyle2 : null, (r14 & 32) != 0 ? DrawScope.Companion.m5861getDefaultBlendMode0nO6VwU() : 0);
                 }
                 TextSubstitutionValue textSubstitutionValue = this.textSubstitution;
                 if (!((textSubstitutionValue == null || !textSubstitutionValue.isShowingSubstitution()) ? TextAnnotatedStringNodeKt.hasLinks(this.text) : false)) {

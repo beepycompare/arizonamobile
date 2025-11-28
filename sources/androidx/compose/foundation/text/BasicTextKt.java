@@ -64,49 +64,49 @@ import kotlin.jvm.internal.Intrinsics;
 public final class BasicTextKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_4YKlhWE$lambda$16(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, Map map, int i3, int i4, Composer composer, int i5) {
-        m1237BasicText4YKlhWE(annotatedString, modifier, textStyle, function1, i, z, i2, map, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+        m1238BasicText4YKlhWE(annotatedString, modifier, textStyle, function1, i, z, i2, map, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_4YKlhWE$lambda$17(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, int i4, int i5, Composer composer, int i6) {
-        m1238BasicText4YKlhWE(str, modifier, textStyle, function1, i, z, i2, i3, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
+        m1239BasicText4YKlhWE(str, modifier, textStyle, function1, i, z, i2, i3, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_BpD7jsM$lambda$15(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, int i4, Composer composer, int i5) {
-        m1239BasicTextBpD7jsM(str, modifier, textStyle, function1, i, z, i2, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+        m1240BasicTextBpD7jsM(str, modifier, textStyle, function1, i, z, i2, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_CL7eQgs$lambda$12(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, ColorProducer colorProducer, TextAutoSize textAutoSize, int i4, int i5, int i6, Composer composer, int i7) {
-        m1240BasicTextCL7eQgs(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, colorProducer, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+        m1241BasicTextCL7eQgs(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, colorProducer, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_RWo7tUw$lambda$14(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, ColorProducer colorProducer, int i4, int i5, Composer composer, int i6) {
-        m1241BasicTextRWo7tUw(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, colorProducer, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
+        m1242BasicTextRWo7tUw(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, colorProducer, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_RWo7tUw$lambda$3(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, TextAutoSize textAutoSize, int i4, int i5, Composer composer, int i6) {
-        m1242BasicTextRWo7tUw(str, modifier, textStyle, function1, i, z, i2, i3, colorProducer, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
+        m1243BasicTextRWo7tUw(str, modifier, textStyle, function1, i, z, i2, i3, colorProducer, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_VhcvRP8$lambda$13(String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, int i4, int i5, Composer composer, int i6) {
-        m1244BasicTextVhcvRP8(str, modifier, textStyle, function1, i, z, i2, i3, colorProducer, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
+        m1245BasicTextVhcvRP8(str, modifier, textStyle, function1, i, z, i2, i3, colorProducer, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicText_VhcvRP8$lambda$18(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, int i4, int i5, Composer composer, int i6) {
-        m1243BasicTextVhcvRP8(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
+        m1244BasicTextVhcvRP8(annotatedString, modifier, textStyle, function1, i, z, i2, i3, map, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
@@ -117,7 +117,7 @@ public final class BasicTextKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit LayoutWithLinksAndInlineContent_11Od_4g$lambda$43(Modifier modifier, AnnotatedString annotatedString, Function1 function1, boolean z, Map map, TextStyle textStyle, int i, boolean z2, int i2, int i3, FontFamily.Resolver resolver, SelectionController selectionController, ColorProducer colorProducer, Function1 function12, TextAutoSize textAutoSize, int i4, int i5, int i6, Composer composer, int i7) {
-        m1245LayoutWithLinksAndInlineContent11Od_4g(modifier, annotatedString, function1, z, map, textStyle, i, z2, i2, i3, resolver, selectionController, colorProducer, function12, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+        m1246LayoutWithLinksAndInlineContent11Od_4g(modifier, annotatedString, function1, z, map, textStyle, i, z2, i2, i3, resolver, selectionController, colorProducer, function12, textAutoSize, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
         return Unit.INSTANCE;
     }
 
@@ -146,7 +146,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1242BasicTextRWo7tUw(final String str, Modifier modifier, TextStyle textStyle, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, TextAutoSize textAutoSize, Composer composer, final int i4, final int i5) {
+    public static final void m1243BasicTextRWo7tUw(final String str, Modifier modifier, TextStyle textStyle, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, TextAutoSize textAutoSize, Composer composer, final int i4, final int i5) {
         int i6;
         Modifier.Companion companion;
         int i7;
@@ -179,7 +179,7 @@ public final class BasicTextKt {
         int i23;
         TextStyle textStyle3;
         Modifier modifier3;
-        Modifier m1246textModifierCL7eQgs;
+        Modifier m1247textModifierCL7eQgs;
         Composer startRestartGroup = composer.startRestartGroup(-1040751001);
         ComposerKt.sourceInformation(startRestartGroup, "C(BasicText)N(text,modifier,style,onTextLayout,overflow:c#ui.text.style.TextOverflow,softWrap,maxLines,minLines,color,autoSize)104@5458L7,119@6129L7,121@6142L94,154@7432L41:BasicText.kt#423gt5");
         if ((i5 & 1) != 0) {
@@ -263,7 +263,7 @@ public final class BasicTextKt {
                                             obj = TextStyle.Companion.getDefault();
                                         }
                                         Function1<? super TextLayoutResult, Unit> function13 = i8 != 0 ? null : obj2;
-                                        int m7930getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i10;
+                                        int m7931getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i10;
                                         boolean z3 = i11 != 0 ? true : z;
                                         int i26 = i12 != 0 ? Integer.MAX_VALUE : i2;
                                         int i27 = i14 != 0 ? 1 : i3;
@@ -283,7 +283,7 @@ public final class BasicTextKt {
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                             Object consume2 = startRestartGroup.consume(TextSelectionColorsKt.getLocalTextSelectionColors());
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            long m1849getBackgroundColor0d7_KjU = ((TextSelectionColors) consume2).m1849getBackgroundColor0d7_KjU();
+                                            long m1850getBackgroundColor0d7_KjU = ((TextSelectionColors) consume2).m1850getBackgroundColor0d7_KjU();
                                             Object[] objArr = {selectionRegistrar};
                                             Saver<Long, Long> selectionIdSaver = selectionIdSaver(selectionRegistrar);
                                             i21 = i26;
@@ -303,12 +303,12 @@ public final class BasicTextKt {
                                             }
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             i22 = i6;
-                                            long longValue = ((Number) RememberSaveableKt.m4725rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
+                                            long longValue = ((Number) RememberSaveableKt.m4726rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 565696955, "CC(remember):BasicText.kt#9igjgp");
-                                            boolean changed = startRestartGroup.changed(longValue) | startRestartGroup.changed(selectionRegistrar) | startRestartGroup.changed(m1849getBackgroundColor0d7_KjU);
+                                            boolean changed = startRestartGroup.changed(longValue) | startRestartGroup.changed(selectionRegistrar) | startRestartGroup.changed(m1850getBackgroundColor0d7_KjU);
                                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                                             if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
-                                                rememberedValue2 = new SelectionController(longValue, selectionRegistrar, m1849getBackgroundColor0d7_KjU, null, 8, null);
+                                                rememberedValue2 = new SelectionController(longValue, selectionRegistrar, m1850getBackgroundColor0d7_KjU, null, 8, null);
                                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                                             }
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -336,7 +336,7 @@ public final class BasicTextKt {
                                             Object consume4 = startRestartGroup.consume(CompositionLocalsKt.getLocalFontFamilyResolver());
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             modifier3 = companion;
-                                            m1246textModifierCL7eQgs = m1246textModifierCL7eQgs(modifier3, annotatedString, textStyle3, function13, m7930getClipgIe3tQ8, z3, i21, i23, (FontFamily.Resolver) consume4, null, null, selectionController, colorProducer3, null, textAutoSize3);
+                                            m1247textModifierCL7eQgs = m1247textModifierCL7eQgs(modifier3, annotatedString, textStyle3, function13, m7931getClipgIe3tQ8, z3, i21, i23, (FontFamily.Resolver) consume4, null, null, selectionController, colorProducer3, null, textAutoSize3);
                                             startRestartGroup.endReplaceGroup();
                                         } else {
                                             startRestartGroup.startReplaceGroup(357887763);
@@ -345,13 +345,13 @@ public final class BasicTextKt {
                                             TextStyle textStyle4 = obj;
                                             textStyle3 = textStyle4;
                                             i23 = i28;
-                                            m1246textModifierCL7eQgs = companion.then(new TextStringSimpleElement(str, textStyle4, resolver, m7930getClipgIe3tQ8, z3, i21, i28, colorProducer3, null));
+                                            m1247textModifierCL7eQgs = companion.then(new TextStringSimpleElement(str, textStyle4, resolver, m7931getClipgIe3tQ8, z3, i21, i28, colorProducer3, null));
                                             modifier3 = companion;
                                         }
                                         EmptyMeasurePolicy emptyMeasurePolicy = EmptyMeasurePolicy.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 544976794, "CC(Layout)P(1)122@4875L27,125@5041L333:Layout.kt#80mrfh");
                                         int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1246textModifierCL7eQgs);
+                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1247textModifierCL7eQgs);
                                         CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
                                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1405779621, "CC(ReusableComposeNode)N(factory,update):Composables.kt#9igjgp");
@@ -364,14 +364,14 @@ public final class BasicTextKt {
                                         } else {
                                             startRestartGroup.useNode();
                                         }
-                                        Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                                        Updater.m4604setimpl(m4597constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                                        Updater.m4605setimpl(m4598constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                            m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                            m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                            m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                            m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                         }
                                         startRestartGroup.endNode();
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -383,7 +383,7 @@ public final class BasicTextKt {
                                         modifier2 = modifier3;
                                         textStyle2 = textStyle3;
                                         function12 = function13;
-                                        i19 = m7930getClipgIe3tQ8;
+                                        i19 = m7931getClipgIe3tQ8;
                                         z2 = z3;
                                         i20 = i21;
                                         i18 = i23;
@@ -600,7 +600,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1240BasicTextCL7eQgs(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, Map<String, InlineTextContent> map, ColorProducer colorProducer, TextAutoSize textAutoSize, Composer composer, final int i4, final int i5, final int i6) {
+    public static final void m1241BasicTextCL7eQgs(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, Map<String, InlineTextContent> map, ColorProducer colorProducer, TextAutoSize textAutoSize, Composer composer, final int i4, final int i5, final int i6) {
         int i7;
         int i8;
         Object obj;
@@ -733,7 +733,7 @@ public final class BasicTextKt {
                                             TextStyle textStyle5 = i8 != 0 ? TextStyle.Companion.getDefault() : obj;
                                             Function1<? super TextLayoutResult, Unit> function15 = i9 != 0 ? null : obj2;
                                             if (i10 != 0) {
-                                                i11 = TextOverflow.Companion.m7930getClipgIe3tQ8();
+                                                i11 = TextOverflow.Companion.m7931getClipgIe3tQ8();
                                             }
                                             boolean z4 = i12 != 0 ? true : z;
                                             if (i13 != 0) {
@@ -771,7 +771,7 @@ public final class BasicTextKt {
                                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                                 Object consume2 = startRestartGroup.consume(TextSelectionColorsKt.getLocalTextSelectionColors());
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                long m1849getBackgroundColor0d7_KjU = ((TextSelectionColors) consume2).m1849getBackgroundColor0d7_KjU();
+                                                long m1850getBackgroundColor0d7_KjU = ((TextSelectionColors) consume2).m1850getBackgroundColor0d7_KjU();
                                                 textStyle3 = textStyle5;
                                                 Object[] objArr = {selectionRegistrar};
                                                 function13 = function15;
@@ -795,12 +795,12 @@ public final class BasicTextKt {
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue);
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                long longValue = ((Number) RememberSaveableKt.m4725rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
+                                                long longValue = ((Number) RememberSaveableKt.m4726rememberSaveable(objArr, selectionIdSaver, (Function0<? extends Object>) rememberedValue, startRestartGroup, 0)).longValue();
                                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1713812553, "CC(remember):BasicText.kt#9igjgp");
-                                                boolean changed = startRestartGroup.changed(longValue) | startRestartGroup.changed(selectionRegistrar) | startRestartGroup.changed(m1849getBackgroundColor0d7_KjU);
+                                                boolean changed = startRestartGroup.changed(longValue) | startRestartGroup.changed(selectionRegistrar) | startRestartGroup.changed(m1850getBackgroundColor0d7_KjU);
                                                 Object rememberedValue2 = startRestartGroup.rememberedValue();
                                                 if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue2 = new SelectionController(longValue, selectionRegistrar, m1849getBackgroundColor0d7_KjU, null, 8, null);
+                                                    rememberedValue2 = new SelectionController(longValue, selectionRegistrar, m1850getBackgroundColor0d7_KjU, null, 8, null);
                                                     startRestartGroup.updateRememberedValue(rememberedValue2);
                                                 }
                                                 selectionController = (SelectionController) rememberedValue2;
@@ -824,11 +824,11 @@ public final class BasicTextKt {
                                                 function14 = function13;
                                                 SelectionController selectionController2 = selectionController;
                                                 i30 = i28;
-                                                Modifier m1246textModifierCL7eQgs = m1246textModifierCL7eQgs(modifier3, annotatedString2, textStyle6, function14, i29, z3, i30, i34, resolver, null, null, selectionController2, colorProducer3, null, textAutoSize3);
+                                                Modifier m1247textModifierCL7eQgs = m1247textModifierCL7eQgs(modifier3, annotatedString2, textStyle6, function14, i29, z3, i30, i34, resolver, null, null, selectionController2, colorProducer3, null, textAutoSize3);
                                                 EmptyMeasurePolicy emptyMeasurePolicy = EmptyMeasurePolicy.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 544976794, "CC(Layout)P(1)122@4875L27,125@5041L333:Layout.kt#80mrfh");
                                                 int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1246textModifierCL7eQgs);
+                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1247textModifierCL7eQgs);
                                                 CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
                                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1405779621, "CC(ReusableComposeNode)N(factory,update):Composables.kt#9igjgp");
@@ -841,14 +841,14 @@ public final class BasicTextKt {
                                                 } else {
                                                     startRestartGroup.useNode();
                                                 }
-                                                Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                                                Updater.m4604setimpl(m4597constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                                                Updater.m4605setimpl(m4598constructorimpl, emptyMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                                    m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                                 }
                                                 startRestartGroup.endNode();
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -894,7 +894,7 @@ public final class BasicTextKt {
                                                 composer2 = startRestartGroup;
                                                 Modifier modifier4 = modifier3;
                                                 TextStyle textStyle7 = textStyle3;
-                                                m1245LayoutWithLinksAndInlineContent11Od_4g(modifier4, BasicText_CL7eQgs$lambda$8, function14, hasInlineContent, emptyMap, textStyle7, i29, z3, i30, i34, resolver, selectionController3, colorProducer3, rememberedValue4, textAutoSize3, composer2, ((i27 >> 3) & 910) | ((i27 >> 12) & 57344) | ((i27 << 9) & 458752) | (3670016 & i35) | (29360128 & i35) | (234881024 & i35) | (i35 & 1879048192), ((i27 >> 21) & 896) | ((i26 << 12) & 57344), 0);
+                                                m1246LayoutWithLinksAndInlineContent11Od_4g(modifier4, BasicText_CL7eQgs$lambda$8, function14, hasInlineContent, emptyMap, textStyle7, i29, z3, i30, i34, resolver, selectionController3, colorProducer3, rememberedValue4, textAutoSize3, composer2, ((i27 >> 3) & 910) | ((i27 >> 12) & 57344) | ((i27 << 9) & 458752) | (3670016 & i35) | (29360128 & i35) | (234881024 & i35) | (i35 & 1879048192), ((i27 >> 21) & 896) | ((i26 << 12) & 57344), 0);
                                                 textStyle4 = textStyle7;
                                                 modifier3 = modifier4;
                                                 composer2.endReplaceGroup();
@@ -1162,7 +1162,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1244BasicTextVhcvRP8(final String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, Composer composer, final int i4, final int i5) {
+    public static final /* synthetic */ void m1245BasicTextVhcvRP8(final String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, ColorProducer colorProducer, Composer composer, final int i4, final int i5) {
         String str2;
         int i6;
         Object obj;
@@ -1276,7 +1276,7 @@ public final class BasicTextKt {
                                         }
                                         Function1 function13 = i8 != 0 ? null : obj3;
                                         if (i9 != 0) {
-                                            i21 = TextOverflow.Companion.m7930getClipgIe3tQ8();
+                                            i21 = TextOverflow.Companion.m7931getClipgIe3tQ8();
                                             i20 = i11;
                                         } else {
                                             i20 = i11;
@@ -1303,7 +1303,7 @@ public final class BasicTextKt {
                                             ComposerKt.traceEventStart(-1186827822, i6, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:317)");
                                         }
                                         composer2 = startRestartGroup;
-                                        m1242BasicTextRWo7tUw(str2, companion, textStyle3, function13, i21, z3, i23, i25, colorProducer3, (TextAutoSize) null, composer2, i6 & 268435454, 512);
+                                        m1243BasicTextRWo7tUw(str2, companion, textStyle3, function13, i21, z3, i23, i25, colorProducer3, (TextAutoSize) null, composer2, i6 & 268435454, 512);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -1497,7 +1497,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1241BasicTextRWo7tUw(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, ColorProducer colorProducer, Composer composer, final int i4, final int i5) {
+    public static final /* synthetic */ void m1242BasicTextRWo7tUw(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, ColorProducer colorProducer, Composer composer, final int i4, final int i5) {
         AnnotatedString annotatedString2;
         int i6;
         Object obj;
@@ -1622,7 +1622,7 @@ public final class BasicTextKt {
                                             }
                                             TextStyle textStyle3 = i7 != 0 ? TextStyle.Companion.getDefault() : obj2;
                                             Function1 function13 = i8 != 0 ? null : obj3;
-                                            int m7930getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i10;
+                                            int m7931getClipgIe3tQ8 = i9 != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i10;
                                             if (i22 != 0) {
                                                 i23 = i14;
                                                 z3 = true;
@@ -1651,14 +1651,14 @@ public final class BasicTextKt {
                                                 ComposerKt.traceEventStart(-1064305212, i6, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:359)");
                                             }
                                             composer2 = startRestartGroup;
-                                            m1240BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7930getClipgIe3tQ8, z3, i25, i27, emptyMap, colorProducer3, null, composer2, i6 & 2147483646, 0, 1024);
+                                            m1241BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7931getClipgIe3tQ8, z3, i25, i27, emptyMap, colorProducer3, null, composer2, i6 & 2147483646, 0, 1024);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             modifier2 = companion;
                                             textStyle2 = textStyle3;
                                             function12 = function13;
-                                            i20 = m7930getClipgIe3tQ8;
+                                            i20 = m7931getClipgIe3tQ8;
                                             z2 = z3;
                                             i19 = i25;
                                             i21 = i27;
@@ -1879,7 +1879,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1239BasicTextBpD7jsM(final String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, Composer composer, final int i3, final int i4) {
+    public static final /* synthetic */ void m1240BasicTextBpD7jsM(final String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, Composer composer, final int i3, final int i4) {
         String str2;
         int i5;
         Object obj;
@@ -1967,7 +1967,7 @@ public final class BasicTextKt {
                                 }
                                 Function1 function13 = i7 != 0 ? null : function1;
                                 if (i13 != 0) {
-                                    i15 = TextOverflow.Companion.m7930getClipgIe3tQ8();
+                                    i15 = TextOverflow.Companion.m7931getClipgIe3tQ8();
                                     i14 = i9;
                                 } else {
                                     i14 = i9;
@@ -1981,7 +1981,7 @@ public final class BasicTextKt {
                                     ComposerKt.traceEventStart(1022429478, i5, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:384)");
                                 }
                                 composer2 = startRestartGroup;
-                                m1242BasicTextRWo7tUw(str2, companion, textStyle3, function13, i15, z2, i17, 1, (ColorProducer) null, (TextAutoSize) null, composer2, (i5 & 14) | 12582912 | (i5 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (i5 & 3670016), (int) ViewUtils.EDGE_TO_EDGE_FLAGS);
+                                m1243BasicTextRWo7tUw(str2, companion, textStyle3, function13, i15, z2, i17, 1, (ColorProducer) null, (TextAutoSize) null, composer2, (i5 & 14) | 12582912 | (i5 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (i5 & 3670016), (int) ViewUtils.EDGE_TO_EDGE_FLAGS);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -2118,7 +2118,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1237BasicText4YKlhWE(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, Map map, Composer composer, final int i3, final int i4) {
+    public static final /* synthetic */ void m1238BasicText4YKlhWE(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, Map map, Composer composer, final int i3, final int i4) {
         AnnotatedString annotatedString2;
         int i5;
         Object obj;
@@ -2223,7 +2223,7 @@ public final class BasicTextKt {
                                         i16 = i9;
                                         function13 = obj3;
                                     }
-                                    int m7930getClipgIe3tQ8 = i15 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
+                                    int m7931getClipgIe3tQ8 = i15 != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i;
                                     boolean z3 = i16 != 0 ? true : z;
                                     int i18 = i10 != 0 ? Integer.MAX_VALUE : i2;
                                     Map emptyMap = i12 != 0 ? MapsKt.emptyMap() : map;
@@ -2231,14 +2231,14 @@ public final class BasicTextKt {
                                         ComposerKt.traceEventStart(-648605928, i5, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:408)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m1240BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7930getClipgIe3tQ8, z3, i18, 1, emptyMap, null, null, composer2, (i5 & 14) | 12582912 | (i5 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | ((i5 << 3) & 234881024), 0, 1536);
+                                    m1241BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, m7931getClipgIe3tQ8, z3, i18, 1, emptyMap, null, null, composer2, (i5 & 14) | 12582912 | (i5 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | ((i5 << 3) & 234881024), 0, 1536);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
                                     modifier2 = companion;
                                     textStyle2 = textStyle3;
                                     function12 = function13;
-                                    i13 = m7930getClipgIe3tQ8;
+                                    i13 = m7931getClipgIe3tQ8;
                                     z2 = z3;
                                     i14 = i18;
                                     map2 = emptyMap;
@@ -2389,7 +2389,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1238BasicText4YKlhWE(final String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Composer composer, final int i4, final int i5) {
+    public static final /* synthetic */ void m1239BasicText4YKlhWE(final String str, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Composer composer, final int i4, final int i5) {
         String str2;
         int i6;
         Object obj;
@@ -2494,7 +2494,7 @@ public final class BasicTextKt {
                                         i18 = i10;
                                         function13 = obj3;
                                     }
-                                    int m7930getClipgIe3tQ8 = i17 != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i;
+                                    int m7931getClipgIe3tQ8 = i17 != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i;
                                     boolean z3 = i18 != 0 ? true : z;
                                     int i20 = i11 != 0 ? Integer.MAX_VALUE : i2;
                                     int i21 = i13 != 0 ? 1 : i3;
@@ -2502,14 +2502,14 @@ public final class BasicTextKt {
                                         ComposerKt.traceEventStart(1542716361, i6, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:433)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m1242BasicTextRWo7tUw(str2, companion, textStyle3, function13, m7930getClipgIe3tQ8, z3, i20, i21, (ColorProducer) null, (TextAutoSize) null, composer2, i6 & 33554430, (int) ViewUtils.EDGE_TO_EDGE_FLAGS);
+                                    m1243BasicTextRWo7tUw(str2, companion, textStyle3, function13, m7931getClipgIe3tQ8, z3, i20, i21, (ColorProducer) null, (TextAutoSize) null, composer2, i6 & 33554430, (int) ViewUtils.EDGE_TO_EDGE_FLAGS);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
                                     modifier2 = companion;
                                     textStyle2 = textStyle3;
                                     function12 = function13;
-                                    i14 = m7930getClipgIe3tQ8;
+                                    i14 = m7931getClipgIe3tQ8;
                                     z2 = z3;
                                     i15 = i20;
                                     i16 = i21;
@@ -2662,7 +2662,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1243BasicTextVhcvRP8(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, Composer composer, final int i4, final int i5) {
+    public static final /* synthetic */ void m1244BasicTextVhcvRP8(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, Function1 function1, int i, boolean z, int i2, int i3, Map map, Composer composer, final int i4, final int i5) {
         AnnotatedString annotatedString2;
         int i6;
         Object obj;
@@ -2776,7 +2776,7 @@ public final class BasicTextKt {
                                         }
                                         Function1 function13 = i8 != 0 ? null : obj3;
                                         if (i9 != 0) {
-                                            i21 = TextOverflow.Companion.m7930getClipgIe3tQ8();
+                                            i21 = TextOverflow.Companion.m7931getClipgIe3tQ8();
                                             i20 = i11;
                                         } else {
                                             i20 = i11;
@@ -2803,7 +2803,7 @@ public final class BasicTextKt {
                                             ComposerKt.traceEventStart(851408699, i6, -1, "androidx.compose.foundation.text.BasicText (BasicText.kt:448)");
                                         }
                                         composer2 = startRestartGroup;
-                                        m1240BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, i21, z3, i23, i25, emptyMap, null, null, composer2, i6 & 268435454, 0, 1536);
+                                        m1241BasicTextCL7eQgs(annotatedString2, companion, textStyle3, function13, i21, z3, i23, i25, emptyMap, null, null, composer2, i6 & 268435454, 0, 1536);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -3007,7 +3007,7 @@ public final class BasicTextKt {
                 Object parentData = measurable.getParentData();
                 Intrinsics.checkNotNull(parentData, "null cannot be cast to non-null type androidx.compose.foundation.text.TextRangeLayoutModifier");
                 TextRangeLayoutMeasureResult measure = ((TextRangeLayoutModifier) parentData).getMeasurePolicy().measure(textRangeLayoutMeasureScope);
-                arrayList.add(new Pair(measurable.mo6697measureBRTryo0(Constraints.Companion.m7957fitPrioritizingWidthZbe2FdA(measure.getWidth(), measure.getWidth(), measure.getHeight(), measure.getHeight())), measure.getPlace()));
+                arrayList.add(new Pair(measurable.mo6698measureBRTryo0(Constraints.Companion.m7958fitPrioritizingWidthZbe2FdA(measure.getWidth(), measure.getWidth(), measure.getHeight(), measure.getHeight())), measure.getPlace()));
             }
             return arrayList;
         }
@@ -3015,7 +3015,7 @@ public final class BasicTextKt {
     }
 
     /* renamed from: textModifier-CL7eQgs  reason: not valid java name */
-    private static final Modifier m1246textModifierCL7eQgs(Modifier modifier, AnnotatedString annotatedString, TextStyle textStyle, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, Function1<? super List<Rect>, Unit> function12, SelectionController selectionController, ColorProducer colorProducer, Function1<? super TextAnnotatedStringNode.TextSubstitutionValue, Unit> function13, TextAutoSize textAutoSize) {
+    private static final Modifier m1247textModifierCL7eQgs(Modifier modifier, AnnotatedString annotatedString, TextStyle textStyle, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, Function1<? super List<Rect>, Unit> function12, SelectionController selectionController, ColorProducer colorProducer, Function1<? super TextAnnotatedStringNode.TextSubstitutionValue, Unit> function13, TextAutoSize textAutoSize) {
         if (selectionController == null) {
             return modifier.then(Modifier.Companion).then(new TextAnnotatedStringElement(annotatedString, textStyle, resolver, function1, i, z, i2, i3, list, function12, null, colorProducer, textAutoSize, function13, null));
         }
@@ -3056,7 +3056,7 @@ public final class BasicTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final void m1245LayoutWithLinksAndInlineContent11Od_4g(final Modifier modifier, final AnnotatedString annotatedString, final Function1<? super TextLayoutResult, Unit> function1, final boolean z, Map<String, InlineTextContent> map, final TextStyle textStyle, final int i, final boolean z2, final int i2, final int i3, final FontFamily.Resolver resolver, final SelectionController selectionController, final ColorProducer colorProducer, final Function1<? super TextAnnotatedStringNode.TextSubstitutionValue, Unit> function12, final TextAutoSize textAutoSize, Composer composer, final int i4, final int i5, final int i6) {
+    private static final void m1246LayoutWithLinksAndInlineContent11Od_4g(final Modifier modifier, final AnnotatedString annotatedString, final Function1<? super TextLayoutResult, Unit> function1, final boolean z, Map<String, InlineTextContent> map, final TextStyle textStyle, final int i, final boolean z2, final int i2, final int i3, final FontFamily.Resolver resolver, final SelectionController selectionController, final ColorProducer colorProducer, final Function1<? super TextAnnotatedStringNode.TextSubstitutionValue, Unit> function12, final TextAutoSize textAutoSize, Composer composer, final int i4, final int i5, final int i6) {
         int i7;
         Object obj;
         Object obj2;
@@ -3315,7 +3315,7 @@ public final class BasicTextKt {
                                     }
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     Map<String, InlineTextContent> map3 = emptyMap;
-                                    Modifier m1246textModifierCL7eQgs = m1246textModifierCL7eQgs(obj, annotatedString2, textStyle, (Function1) rememberedValue6, i, z3, i2, i3, resolver, component1, function14, selectionController, colorProducer, function12, textAutoSize);
+                                    Modifier m1247textModifierCL7eQgs = m1247textModifierCL7eQgs(obj, annotatedString2, textStyle, (Function1) rememberedValue6, i, z3, i2, i3, resolver, component1, function14, selectionController, colorProducer, function12, textAutoSize);
                                     if (!z) {
                                         startRestartGroup.startReplaceGroup(147770775);
                                         ComposerKt.sourceInformation(startRestartGroup, "713@29493L55");
@@ -3378,7 +3378,7 @@ public final class BasicTextKt {
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
                                     int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                                     CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1246textModifierCL7eQgs);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1247textModifierCL7eQgs);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                                     if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -3390,15 +3390,15 @@ public final class BasicTextKt {
                                     } else {
                                         startRestartGroup.useNode();
                                     }
-                                    Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                                    Updater.m4604setimpl(m4597constructorimpl, textMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                                    Updater.m4605setimpl(m4598constructorimpl, textMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                        m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                        m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                     }
-                                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -433564842, "C:BasicText.kt#423gt5");
                                     if (textLinkScope2 == null) {
                                         startRestartGroup.startReplaceGroup(-433557001);

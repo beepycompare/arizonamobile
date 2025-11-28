@@ -186,251 +186,251 @@ public final class ColorScheme {
     }
 
     /* renamed from: getPrimary-0d7_KjU  reason: not valid java name */
-    public final long m2102getPrimary0d7_KjU() {
+    public final long m2103getPrimary0d7_KjU() {
         return this.primary;
     }
 
     /* renamed from: getOnPrimary-0d7_KjU  reason: not valid java name */
-    public final long m2086getOnPrimary0d7_KjU() {
+    public final long m2087getOnPrimary0d7_KjU() {
         return this.onPrimary;
     }
 
     /* renamed from: getPrimaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2103getPrimaryContainer0d7_KjU() {
+    public final long m2104getPrimaryContainer0d7_KjU() {
         return this.primaryContainer;
     }
 
     /* renamed from: getOnPrimaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2087getOnPrimaryContainer0d7_KjU() {
+    public final long m2088getOnPrimaryContainer0d7_KjU() {
         return this.onPrimaryContainer;
     }
 
     /* renamed from: getInversePrimary-0d7_KjU  reason: not valid java name */
-    public final long m2081getInversePrimary0d7_KjU() {
+    public final long m2082getInversePrimary0d7_KjU() {
         return this.inversePrimary;
     }
 
     /* renamed from: getSecondary-0d7_KjU  reason: not valid java name */
-    public final long m2107getSecondary0d7_KjU() {
+    public final long m2108getSecondary0d7_KjU() {
         return this.secondary;
     }
 
     /* renamed from: getOnSecondary-0d7_KjU  reason: not valid java name */
-    public final long m2090getOnSecondary0d7_KjU() {
+    public final long m2091getOnSecondary0d7_KjU() {
         return this.onSecondary;
     }
 
     /* renamed from: getSecondaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2108getSecondaryContainer0d7_KjU() {
+    public final long m2109getSecondaryContainer0d7_KjU() {
         return this.secondaryContainer;
     }
 
     /* renamed from: getOnSecondaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2091getOnSecondaryContainer0d7_KjU() {
+    public final long m2092getOnSecondaryContainer0d7_KjU() {
         return this.onSecondaryContainer;
     }
 
     /* renamed from: getTertiary-0d7_KjU  reason: not valid java name */
-    public final long m2121getTertiary0d7_KjU() {
+    public final long m2122getTertiary0d7_KjU() {
         return this.tertiary;
     }
 
     /* renamed from: getOnTertiary-0d7_KjU  reason: not valid java name */
-    public final long m2096getOnTertiary0d7_KjU() {
+    public final long m2097getOnTertiary0d7_KjU() {
         return this.onTertiary;
     }
 
     /* renamed from: getTertiaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2122getTertiaryContainer0d7_KjU() {
+    public final long m2123getTertiaryContainer0d7_KjU() {
         return this.tertiaryContainer;
     }
 
     /* renamed from: getOnTertiaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2097getOnTertiaryContainer0d7_KjU() {
+    public final long m2098getOnTertiaryContainer0d7_KjU() {
         return this.onTertiaryContainer;
     }
 
     /* renamed from: getBackground-0d7_KjU  reason: not valid java name */
-    public final long m2077getBackground0d7_KjU() {
+    public final long m2078getBackground0d7_KjU() {
         return this.background;
     }
 
     /* renamed from: getOnBackground-0d7_KjU  reason: not valid java name */
-    public final long m2083getOnBackground0d7_KjU() {
+    public final long m2084getOnBackground0d7_KjU() {
         return this.onBackground;
     }
 
     /* renamed from: getSurface-0d7_KjU  reason: not valid java name */
-    public final long m2111getSurface0d7_KjU() {
+    public final long m2112getSurface0d7_KjU() {
         return this.surface;
     }
 
     /* renamed from: getOnSurface-0d7_KjU  reason: not valid java name */
-    public final long m2094getOnSurface0d7_KjU() {
+    public final long m2095getOnSurface0d7_KjU() {
         return this.onSurface;
     }
 
     /* renamed from: getSurfaceVariant-0d7_KjU  reason: not valid java name */
-    public final long m2120getSurfaceVariant0d7_KjU() {
+    public final long m2121getSurfaceVariant0d7_KjU() {
         return this.surfaceVariant;
     }
 
     /* renamed from: getOnSurfaceVariant-0d7_KjU  reason: not valid java name */
-    public final long m2095getOnSurfaceVariant0d7_KjU() {
+    public final long m2096getOnSurfaceVariant0d7_KjU() {
         return this.onSurfaceVariant;
     }
 
     /* renamed from: getSurfaceTint-0d7_KjU  reason: not valid java name */
-    public final long m2119getSurfaceTint0d7_KjU() {
+    public final long m2120getSurfaceTint0d7_KjU() {
         return this.surfaceTint;
     }
 
     /* renamed from: getInverseSurface-0d7_KjU  reason: not valid java name */
-    public final long m2082getInverseSurface0d7_KjU() {
+    public final long m2083getInverseSurface0d7_KjU() {
         return this.inverseSurface;
     }
 
     /* renamed from: getInverseOnSurface-0d7_KjU  reason: not valid java name */
-    public final long m2080getInverseOnSurface0d7_KjU() {
+    public final long m2081getInverseOnSurface0d7_KjU() {
         return this.inverseOnSurface;
     }
 
     /* renamed from: getError-0d7_KjU  reason: not valid java name */
-    public final long m2078getError0d7_KjU() {
+    public final long m2079getError0d7_KjU() {
         return this.error;
     }
 
     /* renamed from: getOnError-0d7_KjU  reason: not valid java name */
-    public final long m2084getOnError0d7_KjU() {
+    public final long m2085getOnError0d7_KjU() {
         return this.onError;
     }
 
     /* renamed from: getErrorContainer-0d7_KjU  reason: not valid java name */
-    public final long m2079getErrorContainer0d7_KjU() {
+    public final long m2080getErrorContainer0d7_KjU() {
         return this.errorContainer;
     }
 
     /* renamed from: getOnErrorContainer-0d7_KjU  reason: not valid java name */
-    public final long m2085getOnErrorContainer0d7_KjU() {
+    public final long m2086getOnErrorContainer0d7_KjU() {
         return this.onErrorContainer;
     }
 
     /* renamed from: getOutline-0d7_KjU  reason: not valid java name */
-    public final long m2100getOutline0d7_KjU() {
+    public final long m2101getOutline0d7_KjU() {
         return this.outline;
     }
 
     /* renamed from: getOutlineVariant-0d7_KjU  reason: not valid java name */
-    public final long m2101getOutlineVariant0d7_KjU() {
+    public final long m2102getOutlineVariant0d7_KjU() {
         return this.outlineVariant;
     }
 
     /* renamed from: getScrim-0d7_KjU  reason: not valid java name */
-    public final long m2106getScrim0d7_KjU() {
+    public final long m2107getScrim0d7_KjU() {
         return this.scrim;
     }
 
     /* renamed from: getSurfaceBright-0d7_KjU  reason: not valid java name */
-    public final long m2112getSurfaceBright0d7_KjU() {
+    public final long m2113getSurfaceBright0d7_KjU() {
         return this.surfaceBright;
     }
 
     /* renamed from: getSurfaceDim-0d7_KjU  reason: not valid java name */
-    public final long m2118getSurfaceDim0d7_KjU() {
+    public final long m2119getSurfaceDim0d7_KjU() {
         return this.surfaceDim;
     }
 
     /* renamed from: getSurfaceContainer-0d7_KjU  reason: not valid java name */
-    public final long m2113getSurfaceContainer0d7_KjU() {
+    public final long m2114getSurfaceContainer0d7_KjU() {
         return this.surfaceContainer;
     }
 
     /* renamed from: getSurfaceContainerHigh-0d7_KjU  reason: not valid java name */
-    public final long m2114getSurfaceContainerHigh0d7_KjU() {
+    public final long m2115getSurfaceContainerHigh0d7_KjU() {
         return this.surfaceContainerHigh;
     }
 
     /* renamed from: getSurfaceContainerHighest-0d7_KjU  reason: not valid java name */
-    public final long m2115getSurfaceContainerHighest0d7_KjU() {
+    public final long m2116getSurfaceContainerHighest0d7_KjU() {
         return this.surfaceContainerHighest;
     }
 
     /* renamed from: getSurfaceContainerLow-0d7_KjU  reason: not valid java name */
-    public final long m2116getSurfaceContainerLow0d7_KjU() {
+    public final long m2117getSurfaceContainerLow0d7_KjU() {
         return this.surfaceContainerLow;
     }
 
     /* renamed from: getSurfaceContainerLowest-0d7_KjU  reason: not valid java name */
-    public final long m2117getSurfaceContainerLowest0d7_KjU() {
+    public final long m2118getSurfaceContainerLowest0d7_KjU() {
         return this.surfaceContainerLowest;
     }
 
     /* renamed from: getPrimaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2104getPrimaryFixed0d7_KjU() {
+    public final long m2105getPrimaryFixed0d7_KjU() {
         return this.primaryFixed;
     }
 
     /* renamed from: getPrimaryFixedDim-0d7_KjU  reason: not valid java name */
-    public final long m2105getPrimaryFixedDim0d7_KjU() {
+    public final long m2106getPrimaryFixedDim0d7_KjU() {
         return this.primaryFixedDim;
     }
 
     /* renamed from: getOnPrimaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2088getOnPrimaryFixed0d7_KjU() {
+    public final long m2089getOnPrimaryFixed0d7_KjU() {
         return this.onPrimaryFixed;
     }
 
     /* renamed from: getOnPrimaryFixedVariant-0d7_KjU  reason: not valid java name */
-    public final long m2089getOnPrimaryFixedVariant0d7_KjU() {
+    public final long m2090getOnPrimaryFixedVariant0d7_KjU() {
         return this.onPrimaryFixedVariant;
     }
 
     /* renamed from: getSecondaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2109getSecondaryFixed0d7_KjU() {
+    public final long m2110getSecondaryFixed0d7_KjU() {
         return this.secondaryFixed;
     }
 
     /* renamed from: getSecondaryFixedDim-0d7_KjU  reason: not valid java name */
-    public final long m2110getSecondaryFixedDim0d7_KjU() {
+    public final long m2111getSecondaryFixedDim0d7_KjU() {
         return this.secondaryFixedDim;
     }
 
     /* renamed from: getOnSecondaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2092getOnSecondaryFixed0d7_KjU() {
+    public final long m2093getOnSecondaryFixed0d7_KjU() {
         return this.onSecondaryFixed;
     }
 
     /* renamed from: getOnSecondaryFixedVariant-0d7_KjU  reason: not valid java name */
-    public final long m2093getOnSecondaryFixedVariant0d7_KjU() {
+    public final long m2094getOnSecondaryFixedVariant0d7_KjU() {
         return this.onSecondaryFixedVariant;
     }
 
     /* renamed from: getTertiaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2123getTertiaryFixed0d7_KjU() {
+    public final long m2124getTertiaryFixed0d7_KjU() {
         return this.tertiaryFixed;
     }
 
     /* renamed from: getTertiaryFixedDim-0d7_KjU  reason: not valid java name */
-    public final long m2124getTertiaryFixedDim0d7_KjU() {
+    public final long m2125getTertiaryFixedDim0d7_KjU() {
         return this.tertiaryFixedDim;
     }
 
     /* renamed from: getOnTertiaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2098getOnTertiaryFixed0d7_KjU() {
+    public final long m2099getOnTertiaryFixed0d7_KjU() {
         return this.onTertiaryFixed;
     }
 
     /* renamed from: getOnTertiaryFixedVariant-0d7_KjU  reason: not valid java name */
-    public final long m2099getOnTertiaryFixedVariant0d7_KjU() {
+    public final long m2100getOnTertiaryFixedVariant0d7_KjU() {
         return this.onTertiaryFixedVariant;
     }
 
     private ColorScheme(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
-        this(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), null);
+        this(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), null);
     }
 
     /* renamed from: copy-_VG5OTI$default  reason: not valid java name */
-    public static /* synthetic */ ColorScheme m2073copy_VG5OTI$default(ColorScheme colorScheme, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48, int i, int i2, Object obj) {
+    public static /* synthetic */ ColorScheme m2074copy_VG5OTI$default(ColorScheme colorScheme, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48, int i, int i2, Object obj) {
         long j49;
         long j50;
         long j51;
@@ -634,16 +634,16 @@ public final class ColorScheme {
             j96 = j99;
             j97 = j100;
         }
-        return colorScheme2.m2076copy_VG5OTI(j49, j96, j97, j90, j91, j92, j93, j94, j95, j84, j85, j86, j87, j88, j89, j78, j79, j80, j81, j82, j83, j72, j73, j74, j75, j76, j77, j66, j67, j68, j69, j70, j71, j60, j61, j62, j63, j64, j65, j53, j54, j55, j56, j57, j58, j59, j52, j51);
+        return colorScheme2.m2077copy_VG5OTI(j49, j96, j97, j90, j91, j92, j93, j94, j95, j84, j85, j86, j87, j88, j89, j78, j79, j80, j81, j82, j83, j72, j73, j74, j75, j76, j77, j66, j67, j68, j69, j70, j71, j60, j61, j62, j63, j64, j65, j53, j54, j55, j56, j57, j58, j59, j52, j51);
     }
 
     /* renamed from: copy-_VG5OTI  reason: not valid java name */
-    public final ColorScheme m2076copy_VG5OTI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48) {
+    public final ColorScheme m2077copy_VG5OTI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48) {
         return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, null);
     }
 
     /* renamed from: copy-G1PFc-w$default  reason: not valid java name */
-    public static /* synthetic */ ColorScheme m2072copyG1PFcw$default(ColorScheme colorScheme, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
+    public static /* synthetic */ ColorScheme m2073copyG1PFcw$default(ColorScheme colorScheme, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
         long j30;
         long j31;
         long j32;
@@ -763,17 +763,17 @@ public final class ColorScheme {
             j56 = j62;
             j57 = j63;
         }
-        return colorScheme2.m2075copyG1PFcw(j65, j53, j54, j55, j56, j57, j46, j47, j48, j49, j50, j51, j52, j39, j40, j41, j42, j43, j44, j45, j32, j33, j34, j35, j36, j37, j38, j31, j30);
+        return colorScheme2.m2076copyG1PFcw(j65, j53, j54, j55, j56, j57, j46, j47, j48, j49, j50, j51, j52, j39, j40, j41, j42, j43, j44, j45, j32, j33, j34, j35, j36, j37, j38, j31, j30);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use overload with additional fixed roles instead")
     /* renamed from: copy-G1PFc-w  reason: not valid java name */
-    public final /* synthetic */ ColorScheme m2075copyG1PFcw(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29) {
-        return m2073copy_VG5OTI$default(this, j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 65535, null);
+    public final /* synthetic */ ColorScheme m2076copyG1PFcw(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29) {
+        return m2074copy_VG5OTI$default(this, j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 65535, null);
     }
 
     /* renamed from: copy-C-Xl9yA$default  reason: not valid java name */
-    public static /* synthetic */ ColorScheme m2071copyCXl9yA$default(ColorScheme colorScheme, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
+    public static /* synthetic */ ColorScheme m2072copyCXl9yA$default(ColorScheme colorScheme, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
         long j37;
         long j38;
         long j39;
@@ -921,22 +921,22 @@ public final class ColorScheme {
             j70 = j76;
             j71 = j77;
         }
-        return colorScheme2.m2074copyCXl9yA(j79, j67, j68, j69, j70, j71, j60, j61, j62, j63, j64, j65, j66, j53, j54, j55, j56, j57, j58, j59, j46, j47, j48, j49, j50, j51, j52, j39, j40, j41, j42, j43, j44, j45, j38, j37);
+        return colorScheme2.m2075copyCXl9yA(j79, j67, j68, j69, j70, j71, j60, j61, j62, j63, j64, j65, j66, j53, j54, j55, j56, j57, j58, j59, j46, j47, j48, j49, j50, j51, j52, j39, j40, j41, j42, j43, j44, j45, j38, j37);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use overload with additional fixed roles instead")
     /* renamed from: copy-C-Xl9yA  reason: not valid java name */
-    public final /* synthetic */ ColorScheme m2074copyCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
-        return m2073copy_VG5OTI$default(this, j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0, 65520, null);
+    public final /* synthetic */ ColorScheme m2075copyCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
+        return m2074copy_VG5OTI$default(this, j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0, 65520, null);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder("ColorScheme(primary=");
-        sb.append((Object) Color.m5287toStringimpl(this.primary)).append("onPrimary=").append((Object) Color.m5287toStringimpl(this.onPrimary)).append("primaryContainer=").append((Object) Color.m5287toStringimpl(this.primaryContainer)).append("onPrimaryContainer=").append((Object) Color.m5287toStringimpl(this.onPrimaryContainer)).append("inversePrimary=").append((Object) Color.m5287toStringimpl(this.inversePrimary)).append("secondary=").append((Object) Color.m5287toStringimpl(this.secondary)).append("onSecondary=").append((Object) Color.m5287toStringimpl(this.onSecondary)).append("secondaryContainer=").append((Object) Color.m5287toStringimpl(this.secondaryContainer)).append("onSecondaryContainer=").append((Object) Color.m5287toStringimpl(this.onSecondaryContainer)).append("tertiary=").append((Object) Color.m5287toStringimpl(this.tertiary)).append("onTertiary=").append((Object) Color.m5287toStringimpl(this.onTertiary)).append("tertiaryContainer=");
-        sb.append((Object) Color.m5287toStringimpl(this.tertiaryContainer)).append("onTertiaryContainer=").append((Object) Color.m5287toStringimpl(this.onTertiaryContainer)).append("background=").append((Object) Color.m5287toStringimpl(this.background)).append("onBackground=").append((Object) Color.m5287toStringimpl(this.onBackground)).append("surface=").append((Object) Color.m5287toStringimpl(this.surface)).append("onSurface=").append((Object) Color.m5287toStringimpl(this.onSurface)).append("surfaceVariant=").append((Object) Color.m5287toStringimpl(this.surfaceVariant)).append("onSurfaceVariant=").append((Object) Color.m5287toStringimpl(this.onSurfaceVariant)).append("surfaceTint=").append((Object) Color.m5287toStringimpl(this.surfaceTint)).append("inverseSurface=").append((Object) Color.m5287toStringimpl(this.inverseSurface)).append("inverseOnSurface=").append((Object) Color.m5287toStringimpl(this.inverseOnSurface)).append("error=").append((Object) Color.m5287toStringimpl(this.error));
-        sb.append("onError=").append((Object) Color.m5287toStringimpl(this.onError)).append("errorContainer=").append((Object) Color.m5287toStringimpl(this.errorContainer)).append("onErrorContainer=").append((Object) Color.m5287toStringimpl(this.onErrorContainer)).append("outline=").append((Object) Color.m5287toStringimpl(this.outline)).append("outlineVariant=").append((Object) Color.m5287toStringimpl(this.outlineVariant)).append("scrim=").append((Object) Color.m5287toStringimpl(this.scrim)).append("surfaceBright=").append((Object) Color.m5287toStringimpl(this.surfaceBright)).append("surfaceDim=").append((Object) Color.m5287toStringimpl(this.surfaceDim)).append("surfaceContainer=").append((Object) Color.m5287toStringimpl(this.surfaceContainer)).append("surfaceContainerHigh=").append((Object) Color.m5287toStringimpl(this.surfaceContainerHigh)).append("surfaceContainerHighest=").append((Object) Color.m5287toStringimpl(this.surfaceContainerHighest)).append("surfaceContainerLow=");
-        sb.append((Object) Color.m5287toStringimpl(this.surfaceContainerLow)).append("surfaceContainerLowest=").append((Object) Color.m5287toStringimpl(this.surfaceContainerLowest)).append("primaryFixed=").append((Object) Color.m5287toStringimpl(this.primaryFixed)).append("primaryFixedDim=").append((Object) Color.m5287toStringimpl(this.primaryFixedDim)).append("onPrimaryFixed=").append((Object) Color.m5287toStringimpl(this.onPrimaryContainer)).append("onPrimaryFixedVariant=").append((Object) Color.m5287toStringimpl(this.onPrimaryFixedVariant)).append("secondaryFixed=").append((Object) Color.m5287toStringimpl(this.secondaryFixed)).append("secondaryFixedDim=").append((Object) Color.m5287toStringimpl(this.secondaryFixedDim)).append("onSecondaryFixed=").append((Object) Color.m5287toStringimpl(this.onSecondaryFixed)).append("onSecondaryFixedVariant=").append((Object) Color.m5287toStringimpl(this.onSecondaryFixedVariant)).append("tertiaryFixed=").append((Object) Color.m5287toStringimpl(this.tertiaryFixed)).append("tertiaryFixedDim=").append((Object) Color.m5287toStringimpl(this.tertiaryFixedDim));
-        sb.append("onTertiaryFixed=").append((Object) Color.m5287toStringimpl(this.onTertiaryFixed)).append("onTertiaryFixedVariant=").append((Object) Color.m5287toStringimpl(this.onTertiaryFixedVariant)).append(')');
+        sb.append((Object) Color.m5288toStringimpl(this.primary)).append("onPrimary=").append((Object) Color.m5288toStringimpl(this.onPrimary)).append("primaryContainer=").append((Object) Color.m5288toStringimpl(this.primaryContainer)).append("onPrimaryContainer=").append((Object) Color.m5288toStringimpl(this.onPrimaryContainer)).append("inversePrimary=").append((Object) Color.m5288toStringimpl(this.inversePrimary)).append("secondary=").append((Object) Color.m5288toStringimpl(this.secondary)).append("onSecondary=").append((Object) Color.m5288toStringimpl(this.onSecondary)).append("secondaryContainer=").append((Object) Color.m5288toStringimpl(this.secondaryContainer)).append("onSecondaryContainer=").append((Object) Color.m5288toStringimpl(this.onSecondaryContainer)).append("tertiary=").append((Object) Color.m5288toStringimpl(this.tertiary)).append("onTertiary=").append((Object) Color.m5288toStringimpl(this.onTertiary)).append("tertiaryContainer=");
+        sb.append((Object) Color.m5288toStringimpl(this.tertiaryContainer)).append("onTertiaryContainer=").append((Object) Color.m5288toStringimpl(this.onTertiaryContainer)).append("background=").append((Object) Color.m5288toStringimpl(this.background)).append("onBackground=").append((Object) Color.m5288toStringimpl(this.onBackground)).append("surface=").append((Object) Color.m5288toStringimpl(this.surface)).append("onSurface=").append((Object) Color.m5288toStringimpl(this.onSurface)).append("surfaceVariant=").append((Object) Color.m5288toStringimpl(this.surfaceVariant)).append("onSurfaceVariant=").append((Object) Color.m5288toStringimpl(this.onSurfaceVariant)).append("surfaceTint=").append((Object) Color.m5288toStringimpl(this.surfaceTint)).append("inverseSurface=").append((Object) Color.m5288toStringimpl(this.inverseSurface)).append("inverseOnSurface=").append((Object) Color.m5288toStringimpl(this.inverseOnSurface)).append("error=").append((Object) Color.m5288toStringimpl(this.error));
+        sb.append("onError=").append((Object) Color.m5288toStringimpl(this.onError)).append("errorContainer=").append((Object) Color.m5288toStringimpl(this.errorContainer)).append("onErrorContainer=").append((Object) Color.m5288toStringimpl(this.onErrorContainer)).append("outline=").append((Object) Color.m5288toStringimpl(this.outline)).append("outlineVariant=").append((Object) Color.m5288toStringimpl(this.outlineVariant)).append("scrim=").append((Object) Color.m5288toStringimpl(this.scrim)).append("surfaceBright=").append((Object) Color.m5288toStringimpl(this.surfaceBright)).append("surfaceDim=").append((Object) Color.m5288toStringimpl(this.surfaceDim)).append("surfaceContainer=").append((Object) Color.m5288toStringimpl(this.surfaceContainer)).append("surfaceContainerHigh=").append((Object) Color.m5288toStringimpl(this.surfaceContainerHigh)).append("surfaceContainerHighest=").append((Object) Color.m5288toStringimpl(this.surfaceContainerHighest)).append("surfaceContainerLow=");
+        sb.append((Object) Color.m5288toStringimpl(this.surfaceContainerLow)).append("surfaceContainerLowest=").append((Object) Color.m5288toStringimpl(this.surfaceContainerLowest)).append("primaryFixed=").append((Object) Color.m5288toStringimpl(this.primaryFixed)).append("primaryFixedDim=").append((Object) Color.m5288toStringimpl(this.primaryFixedDim)).append("onPrimaryFixed=").append((Object) Color.m5288toStringimpl(this.onPrimaryContainer)).append("onPrimaryFixedVariant=").append((Object) Color.m5288toStringimpl(this.onPrimaryFixedVariant)).append("secondaryFixed=").append((Object) Color.m5288toStringimpl(this.secondaryFixed)).append("secondaryFixedDim=").append((Object) Color.m5288toStringimpl(this.secondaryFixedDim)).append("onSecondaryFixed=").append((Object) Color.m5288toStringimpl(this.onSecondaryFixed)).append("onSecondaryFixedVariant=").append((Object) Color.m5288toStringimpl(this.onSecondaryFixedVariant)).append("tertiaryFixed=").append((Object) Color.m5288toStringimpl(this.tertiaryFixed)).append("tertiaryFixedDim=").append((Object) Color.m5288toStringimpl(this.tertiaryFixedDim));
+        sb.append("onTertiaryFixed=").append((Object) Color.m5288toStringimpl(this.onTertiaryFixed)).append("onTertiaryFixedVariant=").append((Object) Color.m5288toStringimpl(this.onTertiaryFixedVariant)).append(')');
         return sb.toString();
     }
 
@@ -1309,6 +1309,6 @@ public final class ColorScheme {
     }
 
     private ColorScheme(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29) {
-        this(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU(), null);
+        this(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU(), null);
     }
 }

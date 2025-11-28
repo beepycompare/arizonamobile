@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 /* renamed from: io.appmetrica.analytics.impl.b3  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0131b3 implements IBinaryDataHelper {
 
     /* renamed from: a  reason: collision with root package name */

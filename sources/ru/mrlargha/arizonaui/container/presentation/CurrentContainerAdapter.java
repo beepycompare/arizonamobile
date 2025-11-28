@@ -31,8 +31,8 @@ public final class CurrentContainerAdapter extends RecyclerView.Adapter<CurrentC
         Intrinsics.checkNotNullParameter(holder, "holder");
         holder.getAuctionCurrentItemBinding().acItemTittle.setText(this.containerItemList.get(i).getTittle());
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + "projects/arizona-rp/assets/images/donate/" + this.containerItemList.get(i).getImage() + ".webp").placeholder(R.drawable.item).into(holder.getAuctionCurrentItemBinding().acItemImage);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + "projects/arizona-rp/assets/images/donate/" + this.containerItemList.get(i).getImage() + ".webp").placeholder(R.drawable.item).into(holder.getAuctionCurrentItemBinding().acItemImage);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

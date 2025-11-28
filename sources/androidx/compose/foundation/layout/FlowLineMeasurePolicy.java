@@ -33,7 +33,7 @@ public interface FlowLineMeasurePolicy extends RowColumnMeasurePolicy {
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy
     /* renamed from: createConstraints-xF2OJ5Q */
-    default long mo736createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+    default long mo737createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
         if (isHorizontal()) {
             return RowKt.createRowConstraints(z, i, i2, i3, i4);
         }

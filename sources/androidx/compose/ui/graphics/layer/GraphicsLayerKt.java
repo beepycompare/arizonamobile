@@ -19,12 +19,12 @@ public final class GraphicsLayerKt {
             Outline.Rectangle rectangle = (Outline.Rectangle) outline;
             float left = rectangle.getRect().getLeft();
             float top = rectangle.getRect().getTop();
-            long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(left) << 32) | (Float.floatToRawIntBits(top) & 4294967295L));
+            long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(left) << 32) | (Float.floatToRawIntBits(top) & 4294967295L));
             Rect rect = rectangle.getRect();
             float right = rect.getRight() - rect.getLeft();
             Rect rect2 = rectangle.getRect();
             float bottom = rect2.getBottom() - rect2.getTop();
-            graphicsLayer.m5957setRectOutlinetz77jQw(m5027constructorimpl, Size.m5095constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32)));
+            graphicsLayer.m5958setRectOutlinetz77jQw(m5028constructorimpl, Size.m5096constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32)));
         } else if (outline instanceof Outline.Generic) {
             graphicsLayer.setPathOutline(((Outline.Generic) outline).getPath());
         } else if (!(outline instanceof Outline.Rounded)) {
@@ -38,10 +38,10 @@ public final class GraphicsLayerKt {
             RoundRect roundRect = rounded.getRoundRect();
             float left2 = roundRect.getLeft();
             float top2 = roundRect.getTop();
-            long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(left2) << 32) | (Float.floatToRawIntBits(top2) & 4294967295L));
+            long m5028constructorimpl2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(left2) << 32) | (Float.floatToRawIntBits(top2) & 4294967295L));
             float width = roundRect.getWidth();
             float height = roundRect.getHeight();
-            graphicsLayer.m5958setRoundRectOutlineTNW_H78(m5027constructorimpl2, Size.m5095constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32)));
+            graphicsLayer.m5959setRoundRectOutlineTNW_H78(m5028constructorimpl2, Size.m5096constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32)));
         }
     }
 

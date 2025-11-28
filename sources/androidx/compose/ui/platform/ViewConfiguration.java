@@ -42,8 +42,8 @@ public interface ViewConfiguration {
 
         @Deprecated
         /* renamed from: getMinimumTouchTargetSize-MYxV2XQ  reason: not valid java name */
-        public static long m7185getMinimumTouchTargetSizeMYxV2XQ(ViewConfiguration viewConfiguration) {
-            return ViewConfiguration.super.mo6904getMinimumTouchTargetSizeMYxV2XQ();
+        public static long m7186getMinimumTouchTargetSizeMYxV2XQ(ViewConfiguration viewConfiguration) {
+            return ViewConfiguration.super.mo6905getMinimumTouchTargetSizeMYxV2XQ();
         }
 
         @Deprecated
@@ -63,8 +63,8 @@ public interface ViewConfiguration {
     }
 
     /* renamed from: getMinimumTouchTargetSize-MYxV2XQ */
-    default long mo6904getMinimumTouchTargetSizeMYxV2XQ() {
+    default long mo6905getMinimumTouchTargetSizeMYxV2XQ() {
         float f = 48;
-        return DpKt.m8017DpSizeYgX7TsA(Dp.m7995constructorimpl(f), Dp.m7995constructorimpl(f));
+        return DpKt.m8018DpSizeYgX7TsA(Dp.m7996constructorimpl(f), Dp.m7996constructorimpl(f));
     }
 }

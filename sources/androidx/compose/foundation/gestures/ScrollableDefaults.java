@@ -84,14 +84,14 @@ public final class ScrollableDefaults {
 
         @Override // androidx.compose.foundation.OverscrollEffect
         /* renamed from: applyToScroll-Rhakbz0 */
-        public long mo246applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1) {
-            return function1.invoke(Offset.m5024boximpl(j)).m5045unboximpl();
+        public long mo247applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1) {
+            return function1.invoke(Offset.m5025boximpl(j)).m5046unboximpl();
         }
 
         @Override // androidx.compose.foundation.OverscrollEffect
         /* renamed from: applyToFling-BMRW4eQ */
-        public Object mo245applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation) {
-            Object invoke = function2.invoke(Velocity.m8224boximpl(j), continuation);
+        public Object mo246applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation) {
+            Object invoke = function2.invoke(Velocity.m8225boximpl(j), continuation);
             return invoke == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? invoke : Unit.INSTANCE;
         }
 

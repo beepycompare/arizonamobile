@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import android.text.TextUtils;
 import io.appmetrica.analytics.internal.IdentifiersResult;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class oo implements Ra {
     @Override // io.appmetrica.analytics.impl.Ra
     public final String a(Context context) {

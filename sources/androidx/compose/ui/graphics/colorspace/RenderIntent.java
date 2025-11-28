@@ -12,46 +12,46 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class RenderIntent {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Perceptual = m5726constructorimpl(0);
-    private static final int Relative = m5726constructorimpl(1);
-    private static final int Saturation = m5726constructorimpl(2);
-    private static final int Absolute = m5726constructorimpl(3);
+    private static final int Perceptual = m5727constructorimpl(0);
+    private static final int Relative = m5727constructorimpl(1);
+    private static final int Saturation = m5727constructorimpl(2);
+    private static final int Absolute = m5727constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ RenderIntent m5725boximpl(int i) {
+    public static final /* synthetic */ RenderIntent m5726boximpl(int i) {
         return new RenderIntent(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5726constructorimpl(int i) {
+    public static int m5727constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5727equalsimpl(int i, Object obj) {
-        return (obj instanceof RenderIntent) && i == ((RenderIntent) obj).m5731unboximpl();
+    public static boolean m5728equalsimpl(int i, Object obj) {
+        return (obj instanceof RenderIntent) && i == ((RenderIntent) obj).m5732unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5728equalsimpl0(int i, int i2) {
+    public static final boolean m5729equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5729hashCodeimpl(int i) {
+    public static int m5730hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5727equalsimpl(this.value, obj);
+        return m5728equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5729hashCodeimpl(this.value);
+        return m5730hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5731unboximpl() {
+    public final /* synthetic */ int m5732unboximpl() {
         return this.value;
     }
 
@@ -67,22 +67,22 @@ public final class RenderIntent {
         }
 
         /* renamed from: getPerceptual-uksYyKA  reason: not valid java name */
-        public final int m5733getPerceptualuksYyKA() {
+        public final int m5734getPerceptualuksYyKA() {
             return RenderIntent.Perceptual;
         }
 
         /* renamed from: getRelative-uksYyKA  reason: not valid java name */
-        public final int m5734getRelativeuksYyKA() {
+        public final int m5735getRelativeuksYyKA() {
             return RenderIntent.Relative;
         }
 
         /* renamed from: getSaturation-uksYyKA  reason: not valid java name */
-        public final int m5735getSaturationuksYyKA() {
+        public final int m5736getSaturationuksYyKA() {
             return RenderIntent.Saturation;
         }
 
         /* renamed from: getAbsolute-uksYyKA  reason: not valid java name */
-        public final int m5732getAbsoluteuksYyKA() {
+        public final int m5733getAbsoluteuksYyKA() {
             return RenderIntent.Absolute;
         }
     }
@@ -92,11 +92,11 @@ public final class RenderIntent {
     }
 
     public String toString() {
-        return m5730toStringimpl(this.value);
+        return m5731toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5730toStringimpl(int i) {
-        return m5728equalsimpl0(i, Perceptual) ? "Perceptual" : m5728equalsimpl0(i, Relative) ? "Relative" : m5728equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m5728equalsimpl0(i, Absolute) ? "Absolute" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5731toStringimpl(int i) {
+        return m5729equalsimpl0(i, Perceptual) ? "Perceptual" : m5729equalsimpl0(i, Relative) ? "Relative" : m5729equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m5729equalsimpl0(i, Absolute) ? "Absolute" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

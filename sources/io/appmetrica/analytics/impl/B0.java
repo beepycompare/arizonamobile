@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class B0 {
     public static I6 a(Handler handler, A0 a0) {
         return new I6(handler, a0);

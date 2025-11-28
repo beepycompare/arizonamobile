@@ -3,7 +3,7 @@ package io.appmetrica.analytics.screenshot.impl;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 /* renamed from: io.appmetrica.analytics.screenshot.impl.v  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0779v implements T {
 
     /* renamed from: a  reason: collision with root package name */

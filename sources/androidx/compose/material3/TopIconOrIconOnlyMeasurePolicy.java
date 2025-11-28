@@ -21,11 +21,10 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NavigationItem.kt */
 @Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001B=\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\u0006\u0010\n\u001a\u00020\b\u0012\u0006\u0010\u000b\u001a\u00020\b¢\u0006\u0004\b\f\u0010\rJ)\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001c2\u0006\u0010\u001e\u001a\u00020\u001fH\u0016¢\u0006\u0004\b \u0010!J\"\u0010\"\u001a\u00020#*\u00020$2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020%0\u001c2\u0006\u0010&\u001a\u00020#H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0007\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0012\u0010\u0013R\u0013\u0010\t\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0015\u0010\u0013R\u0013\u0010\n\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0016\u0010\u0013R\u0013\u0010\u000b\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0017\u0010\u0013¨\u0006'"}, d2 = {"Landroidx/compose/material3/TopIconOrIconOnlyMeasurePolicy;", "Landroidx/compose/ui/layout/MeasurePolicy;", "hasLabel", "", "indicatorAnimationProgress", "Lkotlin/Function0;", "", "indicatorHorizontalPadding", "Landroidx/compose/ui/unit/Dp;", "indicatorVerticalPadding", "indicatorToLabelVerticalPadding", "topIconItemVerticalPadding", "<init>", "(ZLkotlin/jvm/functions/Function0;FFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getHasLabel", "()Z", "getIndicatorAnimationProgress", "()Lkotlin/jvm/functions/Function0;", "getIndicatorHorizontalPadding-D9Ej5fM", "()F", "F", "getIndicatorVerticalPadding-D9Ej5fM", "getIndicatorToLabelVerticalPadding-D9Ej5fM", "getTopIconItemVerticalPadding-D9Ej5fM", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;", "maxIntrinsicHeight", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "width", "material3"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
+final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
     private final boolean hasLabel;
     private final Function0<Float> indicatorAnimationProgress;
     private final float indicatorHorizontalPadding;
@@ -55,33 +54,31 @@ public final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
     }
 
     /* renamed from: getIndicatorHorizontalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m3413getIndicatorHorizontalPaddingD9Ej5fM() {
+    public final float m3414getIndicatorHorizontalPaddingD9Ej5fM() {
         return this.indicatorHorizontalPadding;
     }
 
     /* renamed from: getIndicatorVerticalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m3415getIndicatorVerticalPaddingD9Ej5fM() {
+    public final float m3416getIndicatorVerticalPaddingD9Ej5fM() {
         return this.indicatorVerticalPadding;
     }
 
     /* renamed from: getIndicatorToLabelVerticalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m3414getIndicatorToLabelVerticalPaddingD9Ej5fM() {
+    public final float m3415getIndicatorToLabelVerticalPaddingD9Ej5fM() {
         return this.indicatorToLabelVerticalPadding;
     }
 
     /* renamed from: getTopIconItemVerticalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m3416getTopIconItemVerticalPaddingD9Ej5fM() {
+    public final float m3417getTopIconItemVerticalPaddingD9Ej5fM() {
         return this.topIconItemVerticalPadding;
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        MeasureResult m2674placeIconX9ElhV4;
-        MeasureResult m2676placeLabelAndTopIconqoqLrGI;
+    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         MeasureScope measureScope2 = measureScope;
         float floatValue = this.indicatorAnimationProgress.invoke().floatValue();
-        long m7938copyZbe2FdA$default = Constraints.m7938copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        long m7939copyZbe2FdA$default = Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         List<? extends Measurable> list2 = list;
         int size = list2.size();
         int i = 0;
@@ -89,45 +86,43 @@ public final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
             Measurable measurable = list.get(i);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "icon")) {
                 float f = 2;
-                Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(m7938copyZbe2FdA$default, -measureScope2.mo423roundToPx0680j_4(Dp.m7995constructorimpl(this.indicatorHorizontalPadding * f)), -measureScope2.mo423roundToPx0680j_4(Dp.m7995constructorimpl(this.indicatorVerticalPadding * f))));
-                int width = mo6697measureBRTryo0.getWidth() + measureScope2.mo423roundToPx0680j_4(Dp.m7995constructorimpl(this.indicatorHorizontalPadding * f));
-                int height = mo6697measureBRTryo0.getHeight() + measureScope2.mo423roundToPx0680j_4(Dp.m7995constructorimpl(this.indicatorVerticalPadding * f));
+                Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU(m7939copyZbe2FdA$default, -measureScope2.mo424roundToPx0680j_4(Dp.m7996constructorimpl(this.indicatorHorizontalPadding * f)), -measureScope2.mo424roundToPx0680j_4(Dp.m7996constructorimpl(this.indicatorVerticalPadding * f))));
+                int width = mo6698measureBRTryo0.getWidth() + measureScope2.mo424roundToPx0680j_4(Dp.m7996constructorimpl(this.indicatorHorizontalPadding * f));
+                int height = mo6698measureBRTryo0.getHeight() + measureScope2.mo424roundToPx0680j_4(Dp.m7996constructorimpl(this.indicatorVerticalPadding * f));
                 int roundToInt = MathKt.roundToInt(width * floatValue);
                 int size2 = list2.size();
                 int i2 = 0;
                 while (i2 < size2) {
                     Measurable measurable2 = list.get(i2);
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "indicatorRipple")) {
-                        Placeable mo6697measureBRTryo02 = measurable2.mo6697measureBRTryo0(ConstraintsKt.m7963constrainN9IONVI(m7938copyZbe2FdA$default, Constraints.Companion.m7958fixedJhjzzOo(width, height)));
+                        Placeable mo6698measureBRTryo02 = measurable2.mo6698measureBRTryo0(ConstraintsKt.m7964constrainN9IONVI(m7939copyZbe2FdA$default, Constraints.Companion.m7959fixedJhjzzOo(width, height)));
                         int size3 = list2.size();
                         int i3 = 0;
                         while (i3 < size3) {
                             Measurable measurable3 = list.get(i3);
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "indicator")) {
-                                Placeable mo6697measureBRTryo03 = measurable3.mo6697measureBRTryo0(ConstraintsKt.m7963constrainN9IONVI(m7938copyZbe2FdA$default, Constraints.Companion.m7958fixedJhjzzOo(roundToInt, height)));
+                                Placeable mo6698measureBRTryo03 = measurable3.mo6698measureBRTryo0(ConstraintsKt.m7964constrainN9IONVI(m7939copyZbe2FdA$default, Constraints.Companion.m7959fixedJhjzzOo(roundToInt, height)));
                                 if (!this.hasLabel) {
-                                    m2674placeIconX9ElhV4 = NavigationItemKt.m2674placeIconX9ElhV4(measureScope2, mo6697measureBRTryo0, mo6697measureBRTryo02, mo6697measureBRTryo03, j);
-                                    return m2674placeIconX9ElhV4;
+                                    return NavigationItemKt.m2675placeIconX9ElhV4(measureScope2, mo6698measureBRTryo0, mo6698measureBRTryo02, mo6698measureBRTryo03, j);
                                 }
                                 int size4 = list2.size();
                                 int i4 = 0;
                                 while (i4 < size4) {
                                     Measurable measurable4 = list.get(i4);
                                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable4), Constants.ScionAnalytics.PARAM_LABEL)) {
-                                        m2676placeLabelAndTopIconqoqLrGI = NavigationItemKt.m2676placeLabelAndTopIconqoqLrGI(measureScope2, measurable4.mo6697measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU$default(m7938copyZbe2FdA$default, 0, -(mo6697measureBRTryo03.getHeight() + measureScope2.mo423roundToPx0680j_4(this.indicatorToLabelVerticalPadding)), 1, null)), mo6697measureBRTryo0, mo6697measureBRTryo02, mo6697measureBRTryo03, j, this.indicatorToLabelVerticalPadding, this.indicatorVerticalPadding, this.topIconItemVerticalPadding);
-                                        return m2676placeLabelAndTopIconqoqLrGI;
+                                        return NavigationItemKt.m2677placeLabelAndTopIconqoqLrGI(measureScope2, measurable4.mo6698measureBRTryo0(ConstraintsKt.m7969offsetNN6EwU$default(m7939copyZbe2FdA$default, 0, -(mo6698measureBRTryo03.getHeight() + measureScope2.mo424roundToPx0680j_4(this.indicatorToLabelVerticalPadding)), 1, null)), mo6698measureBRTryo0, mo6698measureBRTryo02, mo6698measureBRTryo03, j, this.indicatorToLabelVerticalPadding, this.indicatorVerticalPadding, this.topIconItemVerticalPadding);
                                     }
                                     i4++;
-                                    mo6697measureBRTryo0 = mo6697measureBRTryo0;
-                                    mo6697measureBRTryo03 = mo6697measureBRTryo03;
-                                    mo6697measureBRTryo02 = mo6697measureBRTryo02;
+                                    mo6698measureBRTryo0 = mo6698measureBRTryo0;
+                                    mo6698measureBRTryo03 = mo6698measureBRTryo03;
+                                    mo6698measureBRTryo02 = mo6698measureBRTryo02;
                                     measureScope2 = measureScope;
                                 }
                                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                                 throw new KotlinNothingValueException();
                             }
                             i3++;
-                            mo6697measureBRTryo0 = mo6697measureBRTryo0;
+                            mo6698measureBRTryo0 = mo6698measureBRTryo0;
                             measureScope2 = measureScope;
                         }
                         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
@@ -171,7 +166,7 @@ public final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
                 IntrinsicMeasurable intrinsicMeasurable3 = intrinsicMeasurable;
                 int maxIntrinsicHeight2 = intrinsicMeasurable3 != null ? intrinsicMeasurable3.maxIntrinsicHeight(i) : 0;
                 float f = 2;
-                return maxIntrinsicHeight + maxIntrinsicHeight2 + intrinsicMeasureScope.mo423roundToPx0680j_4(Dp.m7995constructorimpl(Dp.m7995constructorimpl(Dp.m7995constructorimpl(this.topIconItemVerticalPadding * f) + Dp.m7995constructorimpl(this.indicatorVerticalPadding * f)) + this.indicatorToLabelVerticalPadding));
+                return maxIntrinsicHeight + maxIntrinsicHeight2 + intrinsicMeasureScope.mo424roundToPx0680j_4(Dp.m7996constructorimpl(Dp.m7996constructorimpl(Dp.m7996constructorimpl(this.topIconItemVerticalPadding * f) + Dp.m7996constructorimpl(this.indicatorVerticalPadding * f)) + this.indicatorToLabelVerticalPadding));
             }
         }
         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");

@@ -7,7 +7,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.jvm.internal.Intrinsics;
 /* renamed from: io.appmetrica.analytics.impl.jg  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0350jg {
 
     /* renamed from: a  reason: collision with root package name */

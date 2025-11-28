@@ -44,22 +44,22 @@ public final class VectorPainterKt {
 
     @Deprecated(message = "Replace rememberVectorPainter graphicsLayer that consumes the auto mirror flag", replaceWith = @ReplaceWith(expression = "rememberVectorPainter(defaultWidth, defaultHeight, viewportWidth, viewportHeight, name, tintColor, tintBlendMode, false, content)", imports = {"androidx.compose.ui.graphics.vector"}))
     /* renamed from: rememberVectorPainter-mlNsNFs  reason: not valid java name */
-    public static final VectorPainter m6044rememberVectorPaintermlNsNFs(float f, float f2, float f3, float f4, String str, long j, int i, Function4<? super Float, ? super Float, ? super Composer, ? super Integer, Unit> function4, Composer composer, int i2, int i3) {
+    public static final VectorPainter m6045rememberVectorPaintermlNsNFs(float f, float f2, float f3, float f4, String str, long j, int i, Function4<? super Float, ? super Float, ? super Composer, ? super Integer, Unit> function4, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, 411310745, "C(rememberVectorPainter)P(2:c#ui.unit.Dp,1:c#ui.unit.Dp,7,6,3,5:c#ui.graphics.Color,4:c#ui.graphics.BlendMode)85@3807L208:VectorPainter.kt#huu6hf");
         float f5 = (i3 & 4) != 0 ? Float.NaN : f3;
         float f6 = (i3 & 8) != 0 ? Float.NaN : f4;
         String str2 = (i3 & 16) != 0 ? RootGroupName : str;
-        long m5315getUnspecified0d7_KjU = (i3 & 32) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j;
-        int m5218getSrcIn0nO6VwU = (i3 & 64) != 0 ? BlendMode.Companion.m5218getSrcIn0nO6VwU() : i;
+        long m5316getUnspecified0d7_KjU = (i3 & 32) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
+        int m5219getSrcIn0nO6VwU = (i3 & 64) != 0 ? BlendMode.Companion.m5219getSrcIn0nO6VwU() : i;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(411310745, i2, -1, "androidx.compose.ui.graphics.vector.rememberVectorPainter (VectorPainter.kt:85)");
         }
-        VectorPainter m6045rememberVectorPaintervIP8VLU = m6045rememberVectorPaintervIP8VLU(f, f2, f5, f6, str2, m5315getUnspecified0d7_KjU, m5218getSrcIn0nO6VwU, false, function4, composer, (i2 & 14) | 12582912 | (i2 & 112) | (i2 & 896) | (i2 & 7168) | (57344 & i2) | (458752 & i2) | (3670016 & i2) | ((i2 << 3) & 234881024), 0);
+        VectorPainter m6046rememberVectorPaintervIP8VLU = m6046rememberVectorPaintervIP8VLU(f, f2, f5, f6, str2, m5316getUnspecified0d7_KjU, m5219getSrcIn0nO6VwU, false, function4, composer, (i2 & 14) | 12582912 | (i2 & 112) | (i2 & 896) | (i2 & 7168) | (57344 & i2) | (458752 & i2) | (3670016 & i2) | ((i2 << 3) & 234881024), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m6045rememberVectorPaintervIP8VLU;
+        return m6046rememberVectorPaintervIP8VLU;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:80:0x0166, code lost:
@@ -69,14 +69,14 @@ public final class VectorPainterKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final VectorPainter m6045rememberVectorPaintervIP8VLU(float f, float f2, float f3, float f4, String str, long j, int i, boolean z, final Function4<? super Float, ? super Float, ? super Composer, ? super Integer, Unit> function4, Composer composer, int i2, int i3) {
+    public static final VectorPainter m6046rememberVectorPaintervIP8VLU(float f, float f2, float f3, float f4, String str, long j, int i, boolean z, final Function4<? super Float, ? super Float, ? super Composer, ? super Integer, Unit> function4, Composer composer, int i2, int i3) {
         Object obj;
         ComposerKt.sourceInformationMarkerStart(composer, 1685735925, "C(rememberVectorPainter)P(3:c#ui.unit.Dp,2:c#ui.unit.Dp,8,7,4,6:c#ui.graphics.Color,5:c#ui.graphics.BlendMode)130@5715L7,134@5916L82,135@6010L28:VectorPainter.kt#huu6hf");
         float f5 = (i3 & 4) != 0 ? Float.NaN : f3;
         float f6 = (i3 & 8) == 0 ? f4 : Float.NaN;
         String str2 = (i3 & 16) != 0 ? RootGroupName : str;
-        long m5315getUnspecified0d7_KjU = (i3 & 32) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j;
-        int m5218getSrcIn0nO6VwU = (i3 & 64) != 0 ? BlendMode.Companion.m5218getSrcIn0nO6VwU() : i;
+        long m5316getUnspecified0d7_KjU = (i3 & 32) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
+        int m5219getSrcIn0nO6VwU = (i3 & 64) != 0 ? BlendMode.Companion.m5219getSrcIn0nO6VwU() : i;
         boolean z2 = (i3 & 128) != 0 ? false : z;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1685735925, i2, -1, "androidx.compose.ui.graphics.vector.rememberVectorPainter (VectorPainter.kt:129)");
@@ -84,15 +84,15 @@ public final class VectorPainterKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        long m6042obtainSizePxVpY3zN4 = m6042obtainSizePxVpY3zN4((Density) consume, f, f2);
-        final long m6043obtainViewportSizePq9zytI = m6043obtainViewportSizePq9zytI(m6042obtainSizePxVpY3zN4, f5, f6);
+        long m6043obtainSizePxVpY3zN4 = m6043obtainSizePxVpY3zN4((Density) consume, f, f2);
+        final long m6044obtainViewportSizePq9zytI = m6044obtainViewportSizePq9zytI(m6043obtainSizePxVpY3zN4, f5, f6);
         ComposerKt.sourceInformationMarkerStart(composer, 789575591, "CC(remember):VectorPainter.kt#9igjgp");
         boolean z3 = z2;
         String str3 = str2;
-        boolean z4 = ((((458752 & i2) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(m5315getUnspecified0d7_KjU)) || (i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072) | ((((3670016 & i2) ^ 1572864) > 1048576 && composer.changed(m5218getSrcIn0nO6VwU)) || (i2 & 1572864) == 1048576);
+        boolean z4 = ((((458752 & i2) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(m5316getUnspecified0d7_KjU)) || (i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072) | ((((3670016 & i2) ^ 1572864) > 1048576 && composer.changed(m5219getSrcIn0nO6VwU)) || (i2 & 1572864) == 1048576);
         Object rememberedValue = composer.rememberedValue();
         if (z4 || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = m6041createColorFilterxETnrds(m5315getUnspecified0d7_KjU, m5218getSrcIn0nO6VwU);
+            rememberedValue = m6042createColorFilterxETnrds(m5316getUnspecified0d7_KjU, m5219getSrcIn0nO6VwU);
             composer.updateRememberedValue(rememberedValue);
         }
         ColorFilter colorFilter = (ColorFilter) rememberedValue;
@@ -107,7 +107,7 @@ public final class VectorPainterKt {
         }
         VectorPainter vectorPainter = (VectorPainter) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        m6039configureVectorPainterT4PVSW8(vectorPainter, m6042obtainSizePxVpY3zN4, m6043obtainViewportSizePq9zytI, str3, colorFilter, z3);
+        m6040configureVectorPainterT4PVSW8(vectorPainter, m6043obtainSizePxVpY3zN4, m6044obtainViewportSizePq9zytI, str3, colorFilter, z3);
         CompositionContext rememberCompositionContext = ComposablesKt.rememberCompositionContext(composer, 0);
         ComposerKt.sourceInformationMarkerStart(composer, 1985926861, "CC(remember):VectorPainter.kt#9igjgp");
         boolean z5 = ((((234881024 & i2) ^ 100663296) > 67108864 && composer.changed(function4)) || (i2 & 100663296) == 67108864) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(f5)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i2 & 7168) ^ 3072) > 2048 && composer.changed(f6)) || (i2 & 3072) == 2048);
@@ -143,7 +143,7 @@ public final class VectorPainterKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(1749374910, i4, -1, "androidx.compose.ui.graphics.vector.rememberVectorPainter.<anonymous>.<anonymous>.<anonymous> (VectorPainter.kt:154)");
                 }
-                function4.invoke(Float.valueOf(Float.intBitsToFloat((int) (m6043obtainViewportSizePq9zytI >> 32))), Float.valueOf(Float.intBitsToFloat((int) (m6043obtainViewportSizePq9zytI & 4294967295L))), composer2, 0);
+                function4.invoke(Float.valueOf(Float.intBitsToFloat((int) (m6044obtainViewportSizePq9zytI >> 32))), Float.valueOf(Float.intBitsToFloat((int) (m6044obtainViewportSizePq9zytI & 4294967295L))), composer2, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -218,50 +218,50 @@ public final class VectorPainterKt {
     }
 
     /* renamed from: obtainSizePx-VpY3zN4  reason: not valid java name */
-    private static final long m6042obtainSizePxVpY3zN4(Density density, float f, float f2) {
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(density.mo429toPx0680j_4(f)) << 32) | (Float.floatToRawIntBits(density.mo429toPx0680j_4(f2)) & 4294967295L));
+    private static final long m6043obtainSizePxVpY3zN4(Density density, float f, float f2) {
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(density.mo430toPx0680j_4(f)) << 32) | (Float.floatToRawIntBits(density.mo430toPx0680j_4(f2)) & 4294967295L));
     }
 
     /* renamed from: obtainViewportSize-Pq9zytI  reason: not valid java name */
-    private static final long m6043obtainViewportSizePq9zytI(long j, float f, float f2) {
+    private static final long m6044obtainViewportSizePq9zytI(long j, float f, float f2) {
         if (Float.isNaN(f)) {
             f = Float.intBitsToFloat((int) (j >> 32));
         }
         if (Float.isNaN(f2)) {
             f2 = Float.intBitsToFloat((int) (j & 4294967295L));
         }
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 
     /* renamed from: createColorFilter-xETnrds  reason: not valid java name */
-    private static final ColorFilter m6041createColorFilterxETnrds(long j, int i) {
+    private static final ColorFilter m6042createColorFilterxETnrds(long j, int i) {
         if (j != 16) {
-            return ColorFilter.Companion.m5323tintxETnrds(j, i);
+            return ColorFilter.Companion.m5324tintxETnrds(j, i);
         }
         return null;
     }
 
     /* renamed from: configureVectorPainter-T4PVSW8$default  reason: not valid java name */
-    public static /* synthetic */ VectorPainter m6040configureVectorPainterT4PVSW8$default(VectorPainter vectorPainter, long j, long j2, String str, ColorFilter colorFilter, boolean z, int i, Object obj) {
+    public static /* synthetic */ VectorPainter m6041configureVectorPainterT4PVSW8$default(VectorPainter vectorPainter, long j, long j2, String str, ColorFilter colorFilter, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             str = RootGroupName;
         }
-        return m6039configureVectorPainterT4PVSW8(vectorPainter, j, j2, str, colorFilter, (i & 16) != 0 ? false : z);
+        return m6040configureVectorPainterT4PVSW8(vectorPainter, j, j2, str, colorFilter, (i & 16) != 0 ? false : z);
     }
 
     /* renamed from: configureVectorPainter-T4PVSW8  reason: not valid java name */
-    public static final VectorPainter m6039configureVectorPainterT4PVSW8(VectorPainter vectorPainter, long j, long j2, String str, ColorFilter colorFilter, boolean z) {
-        vectorPainter.m6037setSizeuvyYCjk$ui_release(j);
+    public static final VectorPainter m6040configureVectorPainterT4PVSW8(VectorPainter vectorPainter, long j, long j2, String str, ColorFilter colorFilter, boolean z) {
+        vectorPainter.m6038setSizeuvyYCjk$ui_release(j);
         vectorPainter.setAutoMirror$ui_release(z);
         vectorPainter.setIntrinsicColorFilter$ui_release(colorFilter);
-        vectorPainter.m6038setViewportSizeuvyYCjk$ui_release(j2);
+        vectorPainter.m6039setViewportSizeuvyYCjk$ui_release(j2);
         vectorPainter.setName$ui_release(str);
         return vectorPainter;
     }
 
     public static final VectorPainter createVectorPainterFromImageVector(Density density, ImageVector imageVector, GroupComponent groupComponent) {
-        long m6042obtainSizePxVpY3zN4 = m6042obtainSizePxVpY3zN4(density, imageVector.m6012getDefaultWidthD9Ej5fM(), imageVector.m6011getDefaultHeightD9Ej5fM());
-        return m6039configureVectorPainterT4PVSW8(new VectorPainter(groupComponent), m6042obtainSizePxVpY3zN4, m6043obtainViewportSizePq9zytI(m6042obtainSizePxVpY3zN4, imageVector.getViewportWidth(), imageVector.getViewportHeight()), imageVector.getName(), m6041createColorFilterxETnrds(imageVector.m6014getTintColor0d7_KjU(), imageVector.m6013getTintBlendMode0nO6VwU()), imageVector.getAutoMirror());
+        long m6043obtainSizePxVpY3zN4 = m6043obtainSizePxVpY3zN4(density, imageVector.m6013getDefaultWidthD9Ej5fM(), imageVector.m6012getDefaultHeightD9Ej5fM());
+        return m6040configureVectorPainterT4PVSW8(new VectorPainter(groupComponent), m6043obtainSizePxVpY3zN4, m6044obtainViewportSizePq9zytI(m6043obtainSizePxVpY3zN4, imageVector.getViewportWidth(), imageVector.getViewportHeight()), imageVector.getName(), m6042createColorFilterxETnrds(imageVector.m6015getTintColor0d7_KjU(), imageVector.m6014getTintBlendMode0nO6VwU()), imageVector.getAutoMirror());
     }
 
     public static final GroupComponent createGroupComponent(GroupComponent groupComponent, VectorGroup vectorGroup) {
@@ -272,15 +272,15 @@ public final class VectorPainterKt {
                 PathComponent pathComponent = new PathComponent();
                 VectorPath vectorPath = (VectorPath) vectorNode;
                 pathComponent.setPathData(vectorPath.getPathData());
-                pathComponent.m6022setPathFillTypeoQ8Xj4U(vectorPath.m6046getPathFillTypeRgk1Os());
+                pathComponent.m6023setPathFillTypeoQ8Xj4U(vectorPath.m6047getPathFillTypeRgk1Os());
                 pathComponent.setName(vectorPath.getName());
                 pathComponent.setFill(vectorPath.getFill());
                 pathComponent.setFillAlpha(vectorPath.getFillAlpha());
                 pathComponent.setStroke(vectorPath.getStroke());
                 pathComponent.setStrokeAlpha(vectorPath.getStrokeAlpha());
                 pathComponent.setStrokeLineWidth(vectorPath.getStrokeLineWidth());
-                pathComponent.m6023setStrokeLineCapBeK7IIE(vectorPath.m6047getStrokeLineCapKaPHkGw());
-                pathComponent.m6024setStrokeLineJoinWw9F2mQ(vectorPath.m6048getStrokeLineJoinLxFBmk8());
+                pathComponent.m6024setStrokeLineCapBeK7IIE(vectorPath.m6048getStrokeLineCapKaPHkGw());
+                pathComponent.m6025setStrokeLineJoinWw9F2mQ(vectorPath.m6049getStrokeLineJoinLxFBmk8());
                 pathComponent.setStrokeLineMiter(vectorPath.getStrokeLineMiter());
                 pathComponent.setTrimPathStart(vectorPath.getTrimPathStart());
                 pathComponent.setTrimPathEnd(vectorPath.getTrimPathEnd());
@@ -359,7 +359,7 @@ public final class VectorPainterKt {
                         it = it2;
                         Composer composer2 = startRestartGroup;
                         map3 = emptyMap;
-                        VectorComposeKt.m6028Path9cdaXJ4((List) vectorConfig.getOrDefault(VectorProperty.PathData.INSTANCE, vectorPath.getPathData()), vectorPath.m6046getPathFillTypeRgk1Os(), vectorPath.getName(), (Brush) vectorConfig.getOrDefault(VectorProperty.Fill.INSTANCE, vectorPath.getFill()), ((Number) vectorConfig.getOrDefault(VectorProperty.FillAlpha.INSTANCE, Float.valueOf(vectorPath.getFillAlpha()))).floatValue(), (Brush) vectorConfig.getOrDefault(VectorProperty.Stroke.INSTANCE, vectorPath.getStroke()), ((Number) vectorConfig.getOrDefault(VectorProperty.StrokeAlpha.INSTANCE, Float.valueOf(vectorPath.getStrokeAlpha()))).floatValue(), ((Number) vectorConfig.getOrDefault(VectorProperty.StrokeLineWidth.INSTANCE, Float.valueOf(vectorPath.getStrokeLineWidth()))).floatValue(), vectorPath.m6047getStrokeLineCapKaPHkGw(), vectorPath.m6048getStrokeLineJoinLxFBmk8(), vectorPath.getStrokeLineMiter(), ((Number) vectorConfig.getOrDefault(VectorProperty.TrimPathStart.INSTANCE, Float.valueOf(vectorPath.getTrimPathStart()))).floatValue(), ((Number) vectorConfig.getOrDefault(VectorProperty.TrimPathEnd.INSTANCE, Float.valueOf(vectorPath.getTrimPathEnd()))).floatValue(), ((Number) vectorConfig.getOrDefault(VectorProperty.TrimPathOffset.INSTANCE, Float.valueOf(vectorPath.getTrimPathOffset()))).floatValue(), composer2, 0, 0, 0);
+                        VectorComposeKt.m6029Path9cdaXJ4((List) vectorConfig.getOrDefault(VectorProperty.PathData.INSTANCE, vectorPath.getPathData()), vectorPath.m6047getPathFillTypeRgk1Os(), vectorPath.getName(), (Brush) vectorConfig.getOrDefault(VectorProperty.Fill.INSTANCE, vectorPath.getFill()), ((Number) vectorConfig.getOrDefault(VectorProperty.FillAlpha.INSTANCE, Float.valueOf(vectorPath.getFillAlpha()))).floatValue(), (Brush) vectorConfig.getOrDefault(VectorProperty.Stroke.INSTANCE, vectorPath.getStroke()), ((Number) vectorConfig.getOrDefault(VectorProperty.StrokeAlpha.INSTANCE, Float.valueOf(vectorPath.getStrokeAlpha()))).floatValue(), ((Number) vectorConfig.getOrDefault(VectorProperty.StrokeLineWidth.INSTANCE, Float.valueOf(vectorPath.getStrokeLineWidth()))).floatValue(), vectorPath.m6048getStrokeLineCapKaPHkGw(), vectorPath.m6049getStrokeLineJoinLxFBmk8(), vectorPath.getStrokeLineMiter(), ((Number) vectorConfig.getOrDefault(VectorProperty.TrimPathStart.INSTANCE, Float.valueOf(vectorPath.getTrimPathStart()))).floatValue(), ((Number) vectorConfig.getOrDefault(VectorProperty.TrimPathEnd.INSTANCE, Float.valueOf(vectorPath.getTrimPathEnd()))).floatValue(), ((Number) vectorConfig.getOrDefault(VectorProperty.TrimPathOffset.INSTANCE, Float.valueOf(vectorPath.getTrimPathOffset()))).floatValue(), composer2, 0, 0, 0);
                         startRestartGroup = composer2;
                         startRestartGroup.endReplaceGroup();
                     } else {
@@ -450,16 +450,16 @@ public final class VectorPainterKt {
     }
 
     private static final void mirror(DrawScope drawScope, Function1<? super DrawScope, Unit> function1) {
-        long mo5857getCenterF1C5BW0 = drawScope.mo5857getCenterF1C5BW0();
+        long mo5858getCenterF1C5BW0 = drawScope.mo5858getCenterF1C5BW0();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+        long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5786scale0AR0LA0(-1.0f, 1.0f, mo5857getCenterF1C5BW0);
+            drawContext.getTransform().mo5787scale0AR0LA0(-1.0f, 1.0f, mo5858getCenterF1C5BW0);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
         }
     }
 }

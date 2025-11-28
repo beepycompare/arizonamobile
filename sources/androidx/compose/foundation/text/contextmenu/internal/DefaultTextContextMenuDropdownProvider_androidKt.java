@@ -60,12 +60,12 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
     }
 
     public static final Unit IconBox_RPmYEkk$lambda$13(int i, long j, int i2, Composer composer, int i3) {
-        m1408IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m1409IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     public static final Unit IconBox_RPmYEkk$lambda$15(int i, long j, int i2, Composer composer, int i3) {
-        m1408IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m1409IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
@@ -168,7 +168,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1197778906, i, -1, "androidx.compose.foundation.text.contextmenu.internal.defaultTextContextMenuDropdown (DefaultTextContextMenuDropdownProvider.android.kt:98)");
         }
-        BasicTextContextMenuProvider basicTextContextMenuProvider = BasicTextContextMenuProviderKt.basicTextContextMenuProvider(ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt.INSTANCE.m1404getLambda$1357803046$foundation_release(), composer, 6);
+        BasicTextContextMenuProvider basicTextContextMenuProvider = BasicTextContextMenuProviderKt.basicTextContextMenuProvider(ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt.INSTANCE.m1405getLambda$1357803046$foundation_release(), composer, 6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -284,7 +284,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
     }
 
     public static final IntOffset OpenContextMenu$lambda$3$lambda$2(TextContextMenuDataProvider textContextMenuDataProvider, Function0 function0) {
-        return IntOffset.m8114boximpl(IntOffsetKt.m8140roundk4lQ0M(textContextMenuDataProvider.mo1426positiontuRUvjQ((LayoutCoordinates) function0.invoke())));
+        return IntOffset.m8115boximpl(IntOffsetKt.m8141roundk4lQ0M(textContextMenuDataProvider.mo1427positiontuRUvjQ((LayoutCoordinates) function0.invoke())));
     }
 
     public static final Unit OpenContextMenu$lambda$5$lambda$4(TextContextMenuSession textContextMenuSession) {
@@ -394,12 +394,12 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
                 }, null, false, ((TextContextMenuItem) textContextMenuComponent).getLeadingIcon() == 0 ? null : ComposableLambdaKt.composableLambdaInstance(-1930700965, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$DefaultTextContextMenuDropdown$1$1$1$2
                     @Override // kotlin.jvm.functions.Function3
                     public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                        m1410invokeek8zF_U(color.m5289unboximpl(), composer, num.intValue());
+                        m1411invokeek8zF_U(color.m5290unboximpl(), composer, num.intValue());
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: invoke-ek8zF_U  reason: not valid java name */
-                    public final void m1410invokeek8zF_U(long j, Composer composer, int i2) {
+                    public final void m1411invokeek8zF_U(long j, Composer composer, int i2) {
                         ComposerKt.sourceInformation(composer, "CN(color:c#ui.graphics.Color)150@6375L37:DefaultTextContextMenuDropdownProvider.android.kt#18dpbw");
                         if ((i2 & 6) == 0) {
                             i2 |= composer.changed(j) ? 4 : 2;
@@ -411,7 +411,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1930700965, i2, -1, "androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdown.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DefaultTextContextMenuDropdownProvider.android.kt:150)");
                         }
-                        DefaultTextContextMenuDropdownProvider_androidKt.m1408IconBoxRPmYEkk(((TextContextMenuItem) TextContextMenuComponent.this).getLeadingIcon(), j, composer, (i2 << 3) & 112);
+                        DefaultTextContextMenuDropdownProvider_androidKt.m1409IconBoxRPmYEkk(((TextContextMenuItem) TextContextMenuComponent.this).getLeadingIcon(), j, composer, (i2 << 3) & 112);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -446,7 +446,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
     }
 
     /* renamed from: IconBox-RPmYEkk */
-    public static final void m1408IconBoxRPmYEkk(final int i, final long j, Composer composer, final int i2) {
+    public static final void m1409IconBoxRPmYEkk(final int i, final long j, Composer composer, final int i2) {
         int i3;
         ScopeUpdateScope endRestartGroup;
         Function2<? super Composer, ? super Integer, Unit> function2;
@@ -502,11 +502,11 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             boolean z = (i3 & 112) == 32;
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (z || rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = j == 16 ? null : ColorFilter.Companion.m5320tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+                rememberedValue2 = j == 16 ? null : ColorFilter.Companion.m5321tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BoxKt.Box(PainterModifierKt.paint$default(SizeKt.m894size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m401getIconSizeD9Ej5fM()), painterResource, false, null, ContentScale.Companion.getFit(), 0.0f, (ColorFilter) rememberedValue2, 22, null), startRestartGroup, 0);
+            BoxKt.Box(PainterModifierKt.paint$default(SizeKt.m895size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m402getIconSizeD9Ej5fM()), painterResource, false, null, ContentScale.Companion.getFit(), 0.0f, (ColorFilter) rememberedValue2, 22, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.os.Bundle;
 import io.appmetrica.analytics.internal.CounterConfiguration;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Kh extends P3 {
     protected I8 c;
     protected C0750zf d;

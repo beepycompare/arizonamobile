@@ -47,8 +47,8 @@ public final class TestModifierUpdaterKt {
                 rememberedValue = new MeasurePolicy() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1$1
                     @Override // androidx.compose.ui.layout.MeasurePolicy
                     /* renamed from: measure-3p2s80s */
-                    public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                        return MeasureScope.layout$default(measureScope, Constraints.m7948getMaxWidthimpl(j), Constraints.m7947getMaxHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1$1.1
+                    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                        return MeasureScope.layout$default(measureScope, Constraints.m7949getMaxWidthimpl(j), Constraints.m7948getMaxHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1$1.1
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(Placeable.PlacementScope placementScope) {
                             }
@@ -76,14 +76,14 @@ public final class TestModifierUpdaterKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m4601initimpl(m4597constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$1$1
+            Updater.m4602initimpl(m4598constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */

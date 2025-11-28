@@ -5,7 +5,7 @@ import io.appmetrica.analytics.impl.C0589t4;
 import io.appmetrica.analytics.impl.C0696xb;
 import io.appmetrica.analytics.impl.Nb;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Attribute {
     public static BirthDateAttribute birthDate() {
         return new BirthDateAttribute();

@@ -62,15 +62,15 @@ public final class AnimatedShapeKt {
                 @Override // androidx.compose.material3.ShapeWithHorizontalCenterOptically
                 public float offset() {
                     float f = 2;
-                    return (((((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3497topStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue() + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3495bottomStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / f) - ((((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3496topEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue() + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3494bottomEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / f)) * 0.11f;
+                    return (((((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3498topStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue() + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3496bottomStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / f) - ((((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3497topEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue() + ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3495bottomEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()) / f)) * 0.11f;
                 }
 
                 @Override // androidx.compose.ui.graphics.Shape
                 /* renamed from: createOutline-Pq9zytI */
-                public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density2) {
-                    AnimatedShapeState.this.m3501setSizeuvyYCjk(j);
+                public Outline mo332createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density2) {
+                    AnimatedShapeState.this.m3502setSizeuvyYCjk(j);
                     setClampedRange(RangesKt.rangeTo(0.0f, Float.intBitsToFloat((int) (4294967295L & j)) / 2));
-                    return RoundedCornerShapeKt.RoundedCornerShape(((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3497topStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3496topEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3494bottomEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3495bottomStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()).mo331createOutlinePq9zytI(j, layoutDirection, density2);
+                    return RoundedCornerShapeKt.RoundedCornerShape(((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3498topStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3497topEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3495bottomEndTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue(), ((Number) RangesKt.coerceIn(Float.valueOf(AnimatedShapeState.m3496bottomStartTmRCtEA$default(AnimatedShapeState.this, 0L, null, 3, null)), getClampedRange())).floatValue()).mo332createOutlinePq9zytI(j, layoutDirection, density2);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -141,7 +141,7 @@ public final class AnimatedShapeKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit rememberAnimatedShape$lambda$4$lambda$3(Channel channel, RoundedCornerShape roundedCornerShape) {
-        channel.mo8867trySendJP2dKIU(roundedCornerShape);
+        channel.mo8879trySendJP2dKIU(roundedCornerShape);
         return Unit.INSTANCE;
     }
 }

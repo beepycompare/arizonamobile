@@ -280,15 +280,15 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -834,15 +834,15 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1200,12 +1200,12 @@ public final class FlowLayoutKt {
         boolean z = ((((i2 & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i2 & 6) == 4) | ((((i2 & 112) ^ 48) > 32 && composer.changed(vertical)) || (i2 & 48) == 32) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         MeasurePolicy rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo708getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_TOP, vertical.mo708getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
+            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo709getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_TOP, vertical.mo709getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
             rememberedValue = new MeasurePolicy() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$rowMeasurementHelper$1$1
                 @Override // androidx.compose.ui.layout.MeasurePolicy
                 /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                    return MultiContentMeasurePolicy.this.mo780measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
+                public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                    return MultiContentMeasurePolicy.this.mo781measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -1228,7 +1228,7 @@ public final class FlowLayoutKt {
         boolean changed = ((((i3 & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(vertical)) || (i3 & 48) == 32) | ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(vertical2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i3 & 7168) ^ 3072) > 2048 && composer.changed(i)) || (i3 & 3072) == 2048) | ((((57344 & i3) ^ 24576) > 16384 && composer.changed(i2)) || (i3 & 24576) == 16384) | composer.changed(flowLayoutOverflowState);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo708getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.vertical$foundation_layout(vertical2), vertical.mo708getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
+            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo709getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.vertical$foundation_layout(vertical2), vertical.mo709getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
             composer.updateRememberedValue(flowMeasurePolicy);
             rememberedValue = flowMeasurePolicy;
         }
@@ -1250,12 +1250,12 @@ public final class FlowLayoutKt {
         boolean z = ((((i2 & 14) ^ 6) > 4 && composer.changed(vertical)) || (i2 & 6) == 4) | ((((i2 & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i2 & 48) == 32) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         MeasurePolicy rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo708getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_START, horizontal.mo708getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
+            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo709getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_START, horizontal.mo709getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
             rememberedValue = new MeasurePolicy() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$columnMeasurementHelper$1$1
                 @Override // androidx.compose.ui.layout.MeasurePolicy
                 /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                    return FlowMeasurePolicy.this.mo780measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
+                public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                    return FlowMeasurePolicy.this.mo781measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -1278,7 +1278,7 @@ public final class FlowLayoutKt {
         boolean changed = ((((i3 & 14) ^ 6) > 4 && composer.changed(vertical)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i3 & 48) == 32) | ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(horizontal2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i3 & 7168) ^ 3072) > 2048 && composer.changed(i)) || (i3 & 3072) == 2048) | ((((57344 & i3) ^ 24576) > 16384 && composer.changed(i2)) || (i3 & 24576) == 16384) | composer.changed(flowLayoutOverflowState);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo708getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.horizontal$foundation_layout(horizontal2), horizontal.mo708getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
+            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo709getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.horizontal$foundation_layout(horizontal2), horizontal.mo709getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
             composer.updateRememberedValue(flowMeasurePolicy);
             rememberedValue = flowMeasurePolicy;
         }
@@ -1352,9 +1352,9 @@ public final class FlowLayoutKt {
                 while (i16 <= i17 && i11 != i) {
                     int i18 = (i16 + i17) / 2;
                     long intrinsicCrossAxisSize = intrinsicCrossAxisSize(list2, iArr, iArr2, i18, i2, i3, i6, i7, flowLayoutOverflowState);
-                    i11 = IntIntPair.m40getFirstimpl(intrinsicCrossAxisSize);
-                    int m41getSecondimpl = IntIntPair.m41getSecondimpl(intrinsicCrossAxisSize);
-                    if (i11 > i || m41getSecondimpl < min) {
+                    i11 = IntIntPair.m41getFirstimpl(intrinsicCrossAxisSize);
+                    int m42getSecondimpl = IntIntPair.m42getSecondimpl(intrinsicCrossAxisSize);
+                    if (i11 > i || m42getSecondimpl < min) {
                         i16 = i18 + 1;
                         if (i16 > i17) {
                             return i16;
@@ -1379,17 +1379,17 @@ public final class FlowLayoutKt {
     private static final long intrinsicCrossAxisSize(List<? extends IntrinsicMeasurable> list, Function3<? super IntrinsicMeasurable, ? super Integer, ? super Integer, Integer> function3, Function3<? super IntrinsicMeasurable, ? super Integer, ? super Integer, Integer> function32, int i, int i2, int i3, int i4, int i5, FlowLayoutOverflowState flowLayoutOverflowState) {
         int i6;
         if (list.isEmpty()) {
-            return IntIntPair.m36constructorimpl(0, 0);
+            return IntIntPair.m37constructorimpl(0, 0);
         }
-        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m806constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
+        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m807constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
         IntrinsicMeasurable intrinsicMeasurable = (IntrinsicMeasurable) CollectionsKt.getOrNull(list, 0);
         int intValue = intrinsicMeasurable != null ? function32.invoke(intrinsicMeasurable, 0, Integer.valueOf(i)).intValue() : 0;
         int intValue2 = intrinsicMeasurable != null ? function3.invoke(intrinsicMeasurable, 0, Integer.valueOf(intValue)).intValue() : 0;
         int i7 = 0;
         int i8 = 0;
-        if (flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m36constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(intValue2, intValue)), 0, 0, 0, false, false).isLastItemInContainer()) {
-            IntIntPair m762ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m762ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
-            return IntIntPair.m36constructorimpl(m762ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m41getSecondimpl(m762ellipsisSizeF35zmw$foundation_layout.m44unboximpl()) : 0, 0);
+        if (flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m37constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue2, intValue)), 0, 0, 0, false, false).isLastItemInContainer()) {
+            IntIntPair m763ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m763ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
+            return IntIntPair.m37constructorimpl(m763ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m42getSecondimpl(m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) : 0, 0);
         }
         int size = list.size();
         int i9 = i;
@@ -1412,17 +1412,17 @@ public final class FlowLayoutKt {
             int i17 = i16 - i12;
             i6 = i16;
             int i18 = i13;
-            FlowLayoutBuildingBlocks.WrapInfo m754getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(i10 + 2 < list.size(), i17, IntIntPair.m36constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(intValue4, intValue3)), i18, i7, i8, false, false);
-            if (m754getWrapInfoOpUlnko.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(i10 + 2 < list.size(), i17, IntIntPair.m37constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue4, intValue3)), i18, i7, i8, false, false);
+            if (m755getWrapInfoOpUlnko.isLastItemInLine()) {
                 int i19 = i7 + i8 + i3;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m754getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i18, i19, i15, i17);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i18, i19, i15, i17);
                 intValue4 -= i2;
                 i13 = i18 + 1;
-                if (m754getWrapInfoOpUlnko.isLastItemInContainer()) {
+                if (m755getWrapInfoOpUlnko.isLastItemInContainer()) {
                     if (wrapEllipsisInfo != null) {
-                        long m755getEllipsisSizeOO21N7I = wrapEllipsisInfo.m755getEllipsisSizeOO21N7I();
+                        long m756getEllipsisSizeOO21N7I = wrapEllipsisInfo.m756getEllipsisSizeOO21N7I();
                         if (!wrapEllipsisInfo.getPlaceEllipsisOnLastContentLine()) {
-                            i19 += IntIntPair.m41getSecondimpl(m755getEllipsisSizeOO21N7I) + i3;
+                            i19 += IntIntPair.m42getSecondimpl(m756getEllipsisSizeOO21N7I) + i3;
                         }
                     }
                     i7 = i19;
@@ -1441,7 +1441,7 @@ public final class FlowLayoutKt {
             i10 = i6;
             i11 = i10;
         }
-        return IntIntPair.m36constructorimpl(i7 - i3, i6);
+        return IntIntPair.m37constructorimpl(i7 - i3, i6);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1493,23 +1493,23 @@ public final class FlowLayoutKt {
     }
 
     /* renamed from: measureAndCache-rqJ1uqs  reason: not valid java name */
-    public static final long m760measureAndCacherqJ1uqs(Measurable measurable, FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function1<? super Placeable, Unit> function1) {
+    public static final long m761measureAndCacherqJ1uqs(Measurable measurable, FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function1<? super Placeable, Unit> function1) {
         FlowLayoutData flowLayoutData;
         Measurable measurable2 = measurable;
         if (RowColumnImplKt.getWeight(RowColumnImplKt.getRowColumnParentData(measurable2)) == 0.0f) {
             RowColumnParentData rowColumnParentData = RowColumnImplKt.getRowColumnParentData(measurable2);
             if (((rowColumnParentData == null || (flowLayoutData = rowColumnParentData.getFlowLayoutData()) == null) ? null : Float.valueOf(flowLayoutData.getFillCrossAxisFraction())) == null) {
-                Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
-                function1.invoke(mo6697measureBRTryo0);
-                return IntIntPair.m36constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo6697measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo6697measureBRTryo0));
+                Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+                function1.invoke(mo6698measureBRTryo0);
+                return IntIntPair.m37constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo6698measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo6698measureBRTryo0));
             }
         }
         int mainAxisMin = mainAxisMin(measurable2, flowLineMeasurePolicy.isHorizontal(), Integer.MAX_VALUE);
-        return IntIntPair.m36constructorimpl(mainAxisMin, crossAxisMin(measurable2, flowLineMeasurePolicy.isHorizontal(), mainAxisMin));
+        return IntIntPair.m37constructorimpl(mainAxisMin, crossAxisMin(measurable2, flowLineMeasurePolicy.isHorizontal(), mainAxisMin));
     }
 
     /* renamed from: placeHelper-BmaY500  reason: not valid java name */
-    public static final MeasureResult m761placeHelperBmaY500(MeasureScope measureScope, long j, int i, int i2, int[] iArr, final MutableVector<MeasureResult> mutableVector, FlowLineMeasurePolicy flowLineMeasurePolicy, int[] iArr2) {
+    public static final MeasureResult m762placeHelperBmaY500(MeasureScope measureScope, long j, int i, int i2, int[] iArr, final MutableVector<MeasureResult> mutableVector, FlowLineMeasurePolicy flowLineMeasurePolicy, int[] iArr2) {
         int i3;
         int i4;
         int i5;
@@ -1517,40 +1517,40 @@ public final class FlowLayoutKt {
         Arrangement.Vertical verticalArrangement = flowLineMeasurePolicy.getVerticalArrangement();
         Arrangement.Horizontal horizontalArrangement = flowLineMeasurePolicy.getHorizontalArrangement();
         if (isHorizontal) {
-            int i6 = i2 + (measureScope.mo423roundToPx0680j_4(verticalArrangement.mo708getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
-            i3 = Constraints.m7947getMaxHeightimpl(j);
-            if (i6 < m7949getMinHeightimpl) {
-                i6 = m7949getMinHeightimpl;
+            int i6 = i2 + (measureScope.mo424roundToPx0680j_4(verticalArrangement.mo709getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
+            int m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
+            i3 = Constraints.m7948getMaxHeightimpl(j);
+            if (i6 < m7950getMinHeightimpl) {
+                i6 = m7950getMinHeightimpl;
             }
             if (i6 <= i3) {
                 i3 = i6;
             }
             verticalArrangement.arrange(measureScope, i3, iArr, iArr2);
         } else {
-            int i7 = i2 + (measureScope.mo423roundToPx0680j_4(horizontalArrangement.mo708getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7949getMinHeightimpl2 = Constraints.m7949getMinHeightimpl(j);
-            int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
-            if (i7 < m7949getMinHeightimpl2) {
-                i7 = m7949getMinHeightimpl2;
+            int i7 = i2 + (measureScope.mo424roundToPx0680j_4(horizontalArrangement.mo709getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
+            int m7950getMinHeightimpl2 = Constraints.m7950getMinHeightimpl(j);
+            int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
+            if (i7 < m7950getMinHeightimpl2) {
+                i7 = m7950getMinHeightimpl2;
             }
-            int i8 = i7 > m7947getMaxHeightimpl ? m7947getMaxHeightimpl : i7;
+            int i8 = i7 > m7948getMaxHeightimpl ? m7948getMaxHeightimpl : i7;
             horizontalArrangement.arrange(measureScope, i8, iArr, measureScope.getLayoutDirection(), iArr2);
             i3 = i8;
         }
-        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
-        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
-        if (i < m7950getMinWidthimpl) {
-            i = m7950getMinWidthimpl;
+        int m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
+        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+        if (i < m7951getMinWidthimpl) {
+            i = m7951getMinWidthimpl;
         }
-        if (i <= m7948getMaxWidthimpl) {
-            m7948getMaxWidthimpl = i;
+        if (i <= m7949getMaxWidthimpl) {
+            m7949getMaxWidthimpl = i;
         }
         if (isHorizontal) {
-            i5 = m7948getMaxWidthimpl;
+            i5 = m7949getMaxWidthimpl;
             i4 = i3;
         } else {
-            i4 = m7948getMaxWidthimpl;
+            i4 = m7949getMaxWidthimpl;
             i5 = i3;
         }
         return MeasureScope.layout$default(measureScope, i5, i4, null, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda2
@@ -1587,16 +1587,16 @@ public final class FlowLayoutKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final long intrinsicCrossAxisSize(List<? extends IntrinsicMeasurable> list, int[] iArr, int[] iArr2, int i, int i2, int i3, int i4, int i5, FlowLayoutOverflowState flowLayoutOverflowState) {
         if (list.isEmpty()) {
-            return IntIntPair.m36constructorimpl(0, 0);
+            return IntIntPair.m37constructorimpl(0, 0);
         }
-        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m806constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
+        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m807constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
         IntrinsicMeasurable intrinsicMeasurable = (IntrinsicMeasurable) CollectionsKt.getOrNull(list, 0);
         int i6 = intrinsicMeasurable != null ? iArr2[0] : 0;
         int i7 = intrinsicMeasurable != null ? iArr[0] : 0;
         int i8 = 0;
-        if (flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m36constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(i7, i6)), 0, 0, 0, false, false).isLastItemInContainer()) {
-            IntIntPair m762ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m762ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
-            return IntIntPair.m36constructorimpl(m762ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m41getSecondimpl(m762ellipsisSizeF35zmw$foundation_layout.m44unboximpl()) : 0, 0);
+        if (flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m37constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i7, i6)), 0, 0, 0, false, false).isLastItemInContainer()) {
+            IntIntPair m763ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m763ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
+            return IntIntPair.m37constructorimpl(m763ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m42getSecondimpl(m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) : 0, 0);
         }
         int size = list.size();
         int i9 = i;
@@ -1619,17 +1619,17 @@ public final class FlowLayoutKt {
             int i20 = i13;
             int i21 = i17;
             int i22 = i18;
-            FlowLayoutBuildingBlocks.WrapInfo m754getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(i10 + 2 < list.size(), i19, IntIntPair.m36constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(i18, i17)), i20, i8, max, false, false);
-            if (m754getWrapInfoOpUlnko.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(i10 + 2 < list.size(), i19, IntIntPair.m37constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i18, i17)), i20, i8, max, false, false);
+            if (m755getWrapInfoOpUlnko.isLastItemInLine()) {
                 int i23 = i8 + max + i3;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m754getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i20, i23, i15, i19);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i20, i23, i15, i19);
                 int i24 = i22 - i2;
                 i13 = i20 + 1;
-                if (m754getWrapInfoOpUlnko.isLastItemInContainer()) {
+                if (m755getWrapInfoOpUlnko.isLastItemInContainer()) {
                     if (wrapEllipsisInfo != null) {
-                        long m755getEllipsisSizeOO21N7I = wrapEllipsisInfo.m755getEllipsisSizeOO21N7I();
+                        long m756getEllipsisSizeOO21N7I = wrapEllipsisInfo.m756getEllipsisSizeOO21N7I();
                         if (!wrapEllipsisInfo.getPlaceEllipsisOnLastContentLine()) {
-                            i23 += IntIntPair.m41getSecondimpl(m755getEllipsisSizeOO21N7I) + i3;
+                            i23 += IntIntPair.m42getSecondimpl(m756getEllipsisSizeOO21N7I) + i3;
                         }
                     }
                     i8 = i23;
@@ -1651,11 +1651,11 @@ public final class FlowLayoutKt {
             i11 = i10;
             i6 = i21;
         }
-        return IntIntPair.m36constructorimpl(i8 - i3, i11);
+        return IntIntPair.m37constructorimpl(i8 - i3, i11);
     }
 
     /* renamed from: breakDownItems-di9J0FM  reason: not valid java name */
-    public static final MeasureResult m759breakDownItemsdi9J0FM(MeasureScope measureScope, FlowLineMeasurePolicy flowLineMeasurePolicy, Iterator<? extends Measurable> it, float f, float f2, long j, int i, int i2, FlowLayoutOverflowState flowLayoutOverflowState) {
+    public static final MeasureResult m760breakDownItemsdi9J0FM(MeasureScope measureScope, FlowLineMeasurePolicy flowLineMeasurePolicy, Iterator<? extends Measurable> it, float f, float f2, long j, int i, int i2, FlowLayoutOverflowState flowLayoutOverflowState) {
         int i3;
         FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo;
         MutableIntObjectMap mutableIntObjectMap;
@@ -1671,7 +1671,7 @@ public final class FlowLayoutKt {
         MutableIntList mutableIntList;
         int i6;
         MutableIntObjectMap mutableIntObjectMap2;
-        IntIntPair m33boximpl;
+        IntIntPair m34boximpl;
         int i7;
         MutableIntList mutableIntList2;
         MutableIntList mutableIntList3;
@@ -1685,19 +1685,19 @@ public final class FlowLayoutKt {
         MeasureScope measureScope3 = measureScope;
         Iterator<? extends Measurable> it2 = it;
         MutableVector mutableVector = new MutableVector(new MeasureResult[16], 0);
-        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
-        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
-        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+        int m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
+        int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
         MutableIntObjectMap mutableIntObjectMapOf = IntObjectMapKt.mutableIntObjectMapOf();
         ArrayList arrayList = new ArrayList();
-        int ceil = (int) Math.ceil(measureScope3.mo429toPx0680j_4(f));
-        int ceil2 = (int) Math.ceil(measureScope3.mo429toPx0680j_4(f2));
-        long m806constructorimpl = OrientationIndependentConstraints.m806constructorimpl(0, m7948getMaxWidthimpl, 0, m7947getMaxHeightimpl);
-        long m821toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m821toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m810copyyUG9Ft0$default(m806constructorimpl, 0, 0, 0, 0, 14, null), flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
+        int ceil = (int) Math.ceil(measureScope3.mo430toPx0680j_4(f));
+        int ceil2 = (int) Math.ceil(measureScope3.mo430toPx0680j_4(f2));
+        long m807constructorimpl = OrientationIndependentConstraints.m807constructorimpl(0, m7949getMaxWidthimpl, 0, m7948getMaxHeightimpl);
+        long m822toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m822toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m811copyyUG9Ft0$default(m807constructorimpl, 0, 0, 0, 0, 14, null), flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo426toDpu2uoSUM(m7948getMaxWidthimpl), measureScope3.mo426toDpu2uoSUM(m7947getMaxHeightimpl), null) : null;
+        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo427toDpu2uoSUM(m7949getMaxWidthimpl), measureScope3.mo427toDpu2uoSUM(m7948getMaxHeightimpl), null) : null;
         Measurable safeNext = !it2.hasNext() ? null : safeNext(it2, flowLineInfo);
-        IntIntPair m33boximpl2 = safeNext != null ? IntIntPair.m33boximpl(m760measureAndCacherqJ1uqs(safeNext, flowLineMeasurePolicy, m821toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda3
+        IntIntPair m34boximpl2 = safeNext != null ? IntIntPair.m34boximpl(m761measureAndCacherqJ1uqs(safeNext, flowLineMeasurePolicy, m822toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit breakDownItems_di9J0FM$lambda$20$lambda$19;
@@ -1705,27 +1705,27 @@ public final class FlowLayoutKt {
                 return breakDownItems_di9J0FM$lambda$20$lambda$19;
             }
         })) : null;
-        Integer valueOf = m33boximpl2 != null ? Integer.valueOf(IntIntPair.m40getFirstimpl(m33boximpl2.m44unboximpl())) : null;
-        Integer valueOf2 = m33boximpl2 != null ? Integer.valueOf(IntIntPair.m41getSecondimpl(m33boximpl2.m44unboximpl())) : null;
+        Integer valueOf = m34boximpl2 != null ? Integer.valueOf(IntIntPair.m41getFirstimpl(m34boximpl2.m45unboximpl())) : null;
+        Integer valueOf2 = m34boximpl2 != null ? Integer.valueOf(IntIntPair.m42getSecondimpl(m34boximpl2.m45unboximpl())) : null;
         Integer num = valueOf;
         Measurable measurable = safeNext;
         MutableIntList mutableIntList4 = new MutableIntList(0, 1, null);
         MutableIntList mutableIntList5 = new MutableIntList(0, 1, null);
         MutableIntSet mutableIntSetOf = IntSetKt.mutableIntSetOf();
         FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i, flowLayoutOverflowState, j, i2, ceil, ceil2, null);
-        FlowLayoutBuildingBlocks.WrapInfo m754getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m36constructorimpl(m7948getMaxWidthimpl, m7947getMaxHeightimpl), m33boximpl2, 0, 0, 0, false, false);
-        if (m754getWrapInfoOpUlnko.isLastItemInContainer()) {
-            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m754getWrapInfoOpUlnko, m33boximpl2 != null, -1, 0, m7948getMaxWidthimpl, 0);
-            i3 = m7948getMaxWidthimpl;
+        FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m37constructorimpl(m7949getMaxWidthimpl, m7948getMaxHeightimpl), m34boximpl2, 0, 0, 0, false, false);
+        if (m755getWrapInfoOpUlnko.isLastItemInContainer()) {
+            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko, m34boximpl2 != null, -1, 0, m7949getMaxWidthimpl, 0);
+            i3 = m7949getMaxWidthimpl;
         } else {
-            i3 = m7948getMaxWidthimpl;
+            i3 = m7949getMaxWidthimpl;
             wrapEllipsisInfo = null;
         }
         FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo3 = wrapEllipsisInfo;
         MutableIntList mutableIntList6 = mutableIntList4;
         int i12 = i3;
-        FlowLayoutBuildingBlocks.WrapInfo wrapInfo = m754getWrapInfoOpUlnko;
-        int i13 = m7950getMinWidthimpl;
+        FlowLayoutBuildingBlocks.WrapInfo wrapInfo = m755getWrapInfoOpUlnko;
+        int i13 = m7951getMinWidthimpl;
         int i14 = 0;
         int i15 = 0;
         int i16 = 0;
@@ -1733,7 +1733,7 @@ public final class FlowLayoutKt {
         int i17 = 0;
         int i18 = 0;
         MutableIntSet mutableIntSet = mutableIntSetOf;
-        int i19 = m7947getMaxHeightimpl;
+        int i19 = m7948getMaxHeightimpl;
         Measurable measurable2 = measurable;
         int i20 = 0;
         while (!wrapInfo.isLastItemInContainer() && measurable2 != null) {
@@ -1774,7 +1774,7 @@ public final class FlowLayoutKt {
                     z = z3;
                     i10 = i21;
                 }
-                float f3 = measureScope3.mo426toDpu2uoSUM(i10);
+                float f3 = measureScope3.mo427toDpu2uoSUM(i10);
                 if (z) {
                     mutableIntObjectMap2 = mutableIntObjectMapOf;
                     i11 = i19;
@@ -1783,7 +1783,7 @@ public final class FlowLayoutKt {
                     mutableIntObjectMap2 = mutableIntObjectMapOf;
                     i11 = i29 < 0 ? 0 : i29;
                 }
-                flowLineInfo.m770update4j6BHR0$foundation_layout(i9, i27, f3, measureScope3.mo426toDpu2uoSUM(i11));
+                flowLineInfo.m771update4j6BHR0$foundation_layout(i9, i27, f3, measureScope3.mo427toDpu2uoSUM(i11));
                 Unit unit = Unit.INSTANCE;
             } else {
                 i6 = i26;
@@ -1791,7 +1791,7 @@ public final class FlowLayoutKt {
             }
             measurable2 = !it2.hasNext() ? null : safeNext(it2, flowLineInfo);
             objectRef.element = null;
-            IntIntPair m33boximpl3 = measurable2 != null ? IntIntPair.m33boximpl(m760measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m821toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda4
+            IntIntPair m34boximpl3 = measurable2 != null ? IntIntPair.m34boximpl(m761measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m822toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit breakDownItems_di9J0FM$lambda$23$lambda$22;
@@ -1799,31 +1799,31 @@ public final class FlowLayoutKt {
                     return breakDownItems_di9J0FM$lambda$23$lambda$22;
                 }
             })) : null;
-            Integer valueOf3 = m33boximpl3 != null ? Integer.valueOf(IntIntPair.m40getFirstimpl(m33boximpl3.m44unboximpl()) + ceil) : null;
-            valueOf2 = m33boximpl3 != null ? Integer.valueOf(IntIntPair.m41getSecondimpl(m33boximpl3.m44unboximpl())) : null;
+            Integer valueOf3 = m34boximpl3 != null ? Integer.valueOf(IntIntPair.m41getFirstimpl(m34boximpl3.m45unboximpl()) + ceil) : null;
+            valueOf2 = m34boximpl3 != null ? Integer.valueOf(IntIntPair.m42getSecondimpl(m34boximpl3.m45unboximpl())) : null;
             boolean hasNext = it2.hasNext();
             int i30 = i17;
-            long m36constructorimpl = IntIntPair.m36constructorimpl(i23, i19);
-            if (m33boximpl3 == null) {
-                m33boximpl = null;
+            long m37constructorimpl = IntIntPair.m37constructorimpl(i23, i19);
+            if (m34boximpl3 == null) {
+                m34boximpl = null;
             } else {
                 Intrinsics.checkNotNull(valueOf3);
                 int intValue2 = valueOf3.intValue();
                 Intrinsics.checkNotNull(valueOf2);
-                m33boximpl = IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(intValue2, valueOf2.intValue()));
+                m34boximpl = IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue2, valueOf2.intValue()));
             }
-            FlowLayoutBuildingBlocks.WrapInfo m754getWrapInfoOpUlnko2 = flowLayoutBuildingBlocks.m754getWrapInfoOpUlnko(hasNext, i6, m36constructorimpl, m33boximpl, i30, i18, max, false, false);
-            if (m754getWrapInfoOpUlnko2.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko2 = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(hasNext, i6, m37constructorimpl, m34boximpl, i30, i18, max, false, false);
+            if (m755getWrapInfoOpUlnko2.isLastItemInLine()) {
                 int min = Math.min(Math.max(i25, i22), i21);
                 int i31 = i18 + max;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo4 = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m754getWrapInfoOpUlnko2, m33boximpl3 != null, i30, i31, i23, i6);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo4 = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko2, m34boximpl3 != null, i30, i31, i23, i6);
                 mutableIntList3 = mutableIntList7;
                 mutableIntList3.add(max);
                 MutableIntSet mutableIntSet2 = mutableIntSet;
                 if (z2) {
                     mutableIntSet2.plusAssign(i30);
                 }
-                int i32 = (m7947getMaxHeightimpl - i31) - ceil2;
+                int i32 = (m7948getMaxHeightimpl - i31) - ceil2;
                 mutableIntSet = mutableIntSet2;
                 mutableIntList2 = mutableIntList6;
                 mutableIntList2.add(i24);
@@ -1855,7 +1855,7 @@ public final class FlowLayoutKt {
             i13 = i8;
             i14 = i24;
             mutableIntObjectMapOf = mutableIntObjectMap2;
-            wrapInfo = m754getWrapInfoOpUlnko2;
+            wrapInfo = m755getWrapInfoOpUlnko2;
             it2 = it;
             mutableIntList5 = mutableIntList3;
             i16 = i22;
@@ -1872,11 +1872,11 @@ public final class FlowLayoutKt {
             mutableIntObjectMap.set(arrayList.size() - 1, wrapEllipsisInfo3.getPlaceable());
             int i33 = mutableIntList9._size - 1;
             if (wrapEllipsisInfo3.getPlaceEllipsisOnLastContentLine()) {
-                mutableIntList8.set(i33, Math.max(mutableIntList8.get(i33), IntIntPair.m41getSecondimpl(wrapEllipsisInfo3.m755getEllipsisSizeOO21N7I())));
+                mutableIntList8.set(i33, Math.max(mutableIntList8.get(i33), IntIntPair.m42getSecondimpl(wrapEllipsisInfo3.m756getEllipsisSizeOO21N7I())));
                 mutableIntList9.set(mutableIntList._size - 1, mutableIntList9.last() + 1);
                 Unit unit2 = Unit.INSTANCE;
             } else {
-                mutableIntList8.add(IntIntPair.m41getSecondimpl(wrapEllipsisInfo3.m755getEllipsisSizeOO21N7I()));
+                mutableIntList8.add(IntIntPair.m42getSecondimpl(wrapEllipsisInfo3.m756getEllipsisSizeOO21N7I()));
                 Boolean.valueOf(mutableIntList9.add(mutableIntList9.last() + 1));
             }
         } else {
@@ -1899,14 +1899,14 @@ public final class FlowLayoutKt {
             int i39 = iArr5[i37];
             int i40 = mutableIntList8.get(i37);
             if (!mutableIntSet3.contains(i37)) {
-                i40 = Constraints.m7947getMaxHeightimpl(m806constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m7947getMaxHeightimpl(m806constructorimpl) - i38;
+                i40 = Constraints.m7948getMaxHeightimpl(m807constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m7948getMaxHeightimpl(m807constructorimpl) - i38;
             }
             int i41 = i35;
             MutableIntSet mutableIntSet4 = mutableIntSet3;
             int[] iArr6 = iArr3;
             Placeable[] placeableArr2 = placeableArr;
             MutableIntList mutableIntList11 = mutableIntList8;
-            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m7949getMinHeightimpl(m806constructorimpl), Constraints.m7948getMaxWidthimpl(m806constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
+            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m7950getMinHeightimpl(m807constructorimpl), Constraints.m7949getMaxWidthimpl(m807constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
             if (flowLineMeasurePolicy.isHorizontal()) {
                 height = measure.getWidth();
                 width = measure.getHeight();
@@ -1945,7 +1945,7 @@ public final class FlowLayoutKt {
             iArr2 = iArr4;
             j2 = j;
         }
-        return m761placeHelperBmaY500(measureScope2, j2, i4, i5, iArr2, mutableVector, flowLineMeasurePolicy2, iArr);
+        return m762placeHelperBmaY500(measureScope2, j2, i4, i5, iArr2, mutableVector, flowLineMeasurePolicy2, iArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

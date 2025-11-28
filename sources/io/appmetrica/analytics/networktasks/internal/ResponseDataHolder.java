@@ -2,7 +2,7 @@ package io.appmetrica.analytics.networktasks.internal;
 
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ResponseDataHolder {
 
     /* renamed from: a  reason: collision with root package name */

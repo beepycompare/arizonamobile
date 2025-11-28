@@ -35,7 +35,7 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         float f;
         Measurable measurable;
         Measurable measurable2;
@@ -47,9 +47,9 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
         int i3;
         float f3;
         MeasureScope measureScope2 = measureScope;
-        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
         f = SnackbarKt.ContainerMaxWidth;
-        int min = Math.min(m7948getMaxWidthimpl, measureScope2.mo423roundToPx0680j_4(f));
+        int min = Math.min(m7949getMaxWidthimpl, measureScope2.mo424roundToPx0680j_4(f));
         String str = this.$actionTag;
         List<? extends Measurable> list2 = list;
         int size = list2.size();
@@ -66,7 +66,7 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
             i4++;
         }
         Measurable measurable3 = measurable;
-        Placeable mo6697measureBRTryo0 = measurable3 != null ? measurable3.mo6697measureBRTryo0(j) : null;
+        Placeable mo6698measureBRTryo0 = measurable3 != null ? measurable3.mo6698measureBRTryo0(j) : null;
         String str2 = this.$dismissActionTag;
         int size2 = list2.size();
         int i5 = 0;
@@ -82,18 +82,18 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
             i5++;
         }
         Measurable measurable4 = measurable2;
-        final Placeable mo6697measureBRTryo02 = measurable4 != null ? measurable4.mo6697measureBRTryo0(j) : null;
-        int width = mo6697measureBRTryo0 != null ? mo6697measureBRTryo0.getWidth() : 0;
-        int height2 = mo6697measureBRTryo0 != null ? mo6697measureBRTryo0.getHeight() : 0;
-        int width2 = mo6697measureBRTryo02 != null ? mo6697measureBRTryo02.getWidth() : 0;
-        int height3 = mo6697measureBRTryo02 != null ? mo6697measureBRTryo02.getHeight() : 0;
+        final Placeable mo6698measureBRTryo02 = measurable4 != null ? measurable4.mo6698measureBRTryo0(j) : null;
+        int width = mo6698measureBRTryo0 != null ? mo6698measureBRTryo0.getWidth() : 0;
+        int height2 = mo6698measureBRTryo0 != null ? mo6698measureBRTryo0.getHeight() : 0;
+        int width2 = mo6698measureBRTryo02 != null ? mo6698measureBRTryo02.getWidth() : 0;
+        int height3 = mo6698measureBRTryo02 != null ? mo6698measureBRTryo02.getHeight() : 0;
         if (width2 == 0) {
             f3 = SnackbarKt.TextEndExtraSpacing;
-            i = measureScope2.mo423roundToPx0680j_4(f3);
+            i = measureScope2.mo424roundToPx0680j_4(f3);
         } else {
             i = 0;
         }
-        int coerceAtLeast = RangesKt.coerceAtLeast(((min - width) - width2) - i, Constraints.m7950getMinWidthimpl(j));
+        int coerceAtLeast = RangesKt.coerceAtLeast(((min - width) - width2) - i, Constraints.m7951getMinWidthimpl(j));
         String str3 = this.$textTag;
         int size3 = list2.size();
         int i6 = 0;
@@ -101,9 +101,9 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
             Measurable measurable5 = list.get(i6);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable5), str3)) {
                 int i7 = height3;
-                final Placeable mo6697measureBRTryo03 = measurable5.mo6697measureBRTryo0(Constraints.m7938copyZbe2FdA$default(j, 0, coerceAtLeast, 0, 0, 9, null));
-                int i8 = mo6697measureBRTryo03.get(AlignmentLineKt.getFirstBaseline());
-                int i9 = mo6697measureBRTryo03.get(AlignmentLineKt.getLastBaseline());
+                final Placeable mo6698measureBRTryo03 = measurable5.mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(j, 0, coerceAtLeast, 0, 0, 9, null));
+                int i8 = mo6698measureBRTryo03.get(AlignmentLineKt.getFirstBaseline());
+                int i9 = mo6698measureBRTryo03.get(AlignmentLineKt.getLastBaseline());
                 boolean z = true;
                 boolean z2 = (i8 == Integer.MIN_VALUE || i9 == Integer.MIN_VALUE) ? false : true;
                 if (i8 != i9 && z2) {
@@ -113,16 +113,16 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
                 final int i11 = i10 - width;
                 if (!z) {
                     f2 = SnackbarKt.HeightToFirstLine;
-                    i2 = measureScope2.mo423roundToPx0680j_4(f2) - i8;
-                    max = Math.max(measureScope2.mo423roundToPx0680j_4(SnackbarTokens.INSTANCE.m4274getTwoLinesContainerHeightD9Ej5fM()), mo6697measureBRTryo03.getHeight() + i2);
-                    if (mo6697measureBRTryo0 != null) {
-                        height = (max - mo6697measureBRTryo0.getHeight()) / 2;
+                    i2 = measureScope2.mo424roundToPx0680j_4(f2) - i8;
+                    max = Math.max(measureScope2.mo424roundToPx0680j_4(SnackbarTokens.INSTANCE.m4275getTwoLinesContainerHeightD9Ej5fM()), mo6698measureBRTryo03.getHeight() + i2);
+                    if (mo6698measureBRTryo0 != null) {
+                        height = (max - mo6698measureBRTryo0.getHeight()) / 2;
                     }
                     height = 0;
                 } else {
-                    max = Math.max(measureScope2.mo423roundToPx0680j_4(SnackbarTokens.INSTANCE.m4273getSingleLineContainerHeightD9Ej5fM()), Math.max(height2, i7));
-                    i2 = (max - mo6697measureBRTryo03.getHeight()) / 2;
-                    if (mo6697measureBRTryo0 != null && (i3 = mo6697measureBRTryo0.get(AlignmentLineKt.getFirstBaseline())) != Integer.MIN_VALUE) {
+                    max = Math.max(measureScope2.mo424roundToPx0680j_4(SnackbarTokens.INSTANCE.m4274getSingleLineContainerHeightD9Ej5fM()), Math.max(height2, i7));
+                    i2 = (max - mo6698measureBRTryo03.getHeight()) / 2;
+                    if (mo6698measureBRTryo0 != null && (i3 = mo6698measureBRTryo0.get(AlignmentLineKt.getFirstBaseline())) != Integer.MIN_VALUE) {
                         height = (i8 + i2) - i3;
                     }
                     height = 0;
@@ -130,13 +130,13 @@ public final class SnackbarKt$OneRowSnackbar$2$1 implements MeasurePolicy {
                 final int i12 = height;
                 final int i13 = i2;
                 int i14 = max;
-                final int height4 = mo6697measureBRTryo02 != null ? (i14 - mo6697measureBRTryo02.getHeight()) / 2 : 0;
-                final Placeable placeable = mo6697measureBRTryo0;
+                final int height4 = mo6698measureBRTryo02 != null ? (i14 - mo6698measureBRTryo02.getHeight()) / 2 : 0;
+                final Placeable placeable = mo6698measureBRTryo0;
                 return MeasureScope.layout$default(measureScope2, min, i14, null, new Function1() { // from class: androidx.compose.material3.SnackbarKt$OneRowSnackbar$2$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit measure_3p2s80s$lambda$4;
-                        measure_3p2s80s$lambda$4 = SnackbarKt$OneRowSnackbar$2$1.measure_3p2s80s$lambda$4(Placeable.this, i13, mo6697measureBRTryo02, i10, height4, placeable, i11, i12, (Placeable.PlacementScope) obj);
+                        measure_3p2s80s$lambda$4 = SnackbarKt$OneRowSnackbar$2$1.measure_3p2s80s$lambda$4(Placeable.this, i13, mo6698measureBRTryo02, i10, height4, placeable, i11, i12, (Placeable.PlacementScope) obj);
                         return measure_3p2s80s$lambda$4;
                     }
                 }, 4, null);

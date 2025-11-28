@@ -30,33 +30,33 @@ public final class BadgeKt$BadgedBox$1$1 implements MeasurePolicy {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit measure_3p2s80s$lambda$2(Placeable placeable, MeasureScope measureScope, Placeable placeable2, Placeable.PlacementScope placementScope) {
-        boolean z = placeable.getWidth() > measureScope.mo423roundToPx0680j_4(BadgeTokens.INSTANCE.m3666getSizeD9Ej5fM());
+        boolean z = placeable.getWidth() > measureScope.mo424roundToPx0680j_4(BadgeTokens.INSTANCE.m3667getSizeD9Ej5fM());
         float badgeWithContentHorizontalOffset = z ? BadgeKt.getBadgeWithContentHorizontalOffset() : BadgeKt.getBadgeOffset();
         float badgeWithContentVerticalOffset = z ? BadgeKt.getBadgeWithContentVerticalOffset() : BadgeKt.getBadgeOffset();
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, 0, 0, 0.0f, 4, null);
-        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, Math.min(placeable2.getWidth() - measureScope.mo423roundToPx0680j_4(badgeWithContentHorizontalOffset), ((int) placementScope.current(BadgeKt.getBadgeEndRuler(), Float.POSITIVE_INFINITY)) - placeable.getWidth()), Math.max((-placeable.getHeight()) + measureScope.mo423roundToPx0680j_4(badgeWithContentVerticalOffset), (int) placementScope.current(BadgeKt.getBadgeTopRuler(), Float.NEGATIVE_INFINITY)), 0.0f, 4, null);
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, Math.min(placeable2.getWidth() - measureScope.mo424roundToPx0680j_4(badgeWithContentHorizontalOffset), ((int) placementScope.current(BadgeKt.getBadgeEndRuler(), Float.POSITIVE_INFINITY)) - placeable.getWidth()), Math.max((-placeable.getHeight()) + measureScope.mo424roundToPx0680j_4(badgeWithContentVerticalOffset), (int) placementScope.current(BadgeKt.getBadgeTopRuler(), Float.NEGATIVE_INFINITY)), 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo52measure3p2s80s(final MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo53measure3p2s80s(final MeasureScope measureScope, List<? extends Measurable> list, long j) {
         List<? extends Measurable> list2 = list;
         int size = list2.size();
         for (int i = 0; i < size; i++) {
             Measurable measurable = list.get(i);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "badge")) {
-                final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.m7938copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null));
+                final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null));
                 int size2 = list2.size();
                 for (int i2 = 0; i2 < size2; i2++) {
                     Measurable measurable2 = list.get(i2);
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "anchor")) {
-                        final Placeable mo6697measureBRTryo02 = measurable2.mo6697measureBRTryo0(j);
-                        return measureScope.layout(mo6697measureBRTryo02.getWidth(), mo6697measureBRTryo02.getHeight(), MapsKt.mapOf(TuplesKt.to(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(mo6697measureBRTryo02.get(AlignmentLineKt.getFirstBaseline()))), TuplesKt.to(AlignmentLineKt.getLastBaseline(), Integer.valueOf(mo6697measureBRTryo02.get(AlignmentLineKt.getLastBaseline())))), new Function1() { // from class: androidx.compose.material3.BadgeKt$BadgedBox$1$1$$ExternalSyntheticLambda0
+                        final Placeable mo6698measureBRTryo02 = measurable2.mo6698measureBRTryo0(j);
+                        return measureScope.layout(mo6698measureBRTryo02.getWidth(), mo6698measureBRTryo02.getHeight(), MapsKt.mapOf(TuplesKt.to(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(mo6698measureBRTryo02.get(AlignmentLineKt.getFirstBaseline()))), TuplesKt.to(AlignmentLineKt.getLastBaseline(), Integer.valueOf(mo6698measureBRTryo02.get(AlignmentLineKt.getLastBaseline())))), new Function1() { // from class: androidx.compose.material3.BadgeKt$BadgedBox$1$1$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
                                 Unit measure_3p2s80s$lambda$2;
-                                measure_3p2s80s$lambda$2 = BadgeKt$BadgedBox$1$1.measure_3p2s80s$lambda$2(Placeable.this, measureScope, mo6697measureBRTryo02, (Placeable.PlacementScope) obj);
+                                measure_3p2s80s$lambda$2 = BadgeKt$BadgedBox$1$1.measure_3p2s80s$lambda$2(Placeable.this, measureScope, mo6698measureBRTryo02, (Placeable.PlacementScope) obj);
                                 return measure_3p2s80s$lambda$2;
                             }
                         });

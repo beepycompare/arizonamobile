@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.location.Location;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Oc {
     void a(Location location);
 

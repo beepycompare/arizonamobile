@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Fk implements ServiceConnection {
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {

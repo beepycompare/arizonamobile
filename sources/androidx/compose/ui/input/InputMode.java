@@ -10,44 +10,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class InputMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Touch = m6088constructorimpl(1);
-    private static final int Keyboard = m6088constructorimpl(2);
+    private static final int Touch = m6089constructorimpl(1);
+    private static final int Keyboard = m6089constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ InputMode m6087boximpl(int i) {
+    public static final /* synthetic */ InputMode m6088boximpl(int i) {
         return new InputMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6088constructorimpl(int i) {
+    public static int m6089constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6089equalsimpl(int i, Object obj) {
-        return (obj instanceof InputMode) && i == ((InputMode) obj).m6093unboximpl();
+    public static boolean m6090equalsimpl(int i, Object obj) {
+        return (obj instanceof InputMode) && i == ((InputMode) obj).m6094unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6090equalsimpl0(int i, int i2) {
+    public static final boolean m6091equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6091hashCodeimpl(int i) {
+    public static int m6092hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6089equalsimpl(this.value, obj);
+        return m6090equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6091hashCodeimpl(this.value);
+        return m6092hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6093unboximpl() {
+    public final /* synthetic */ int m6094unboximpl() {
         return this.value;
     }
 
@@ -56,12 +56,12 @@ public final class InputMode {
     }
 
     public String toString() {
-        return m6092toStringimpl(this.value);
+        return m6093toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6092toStringimpl(int i) {
-        return m6090equalsimpl0(i, Touch) ? "Touch" : m6090equalsimpl0(i, Keyboard) ? "Keyboard" : "Error";
+    public static String m6093toStringimpl(int i) {
+        return m6091equalsimpl0(i, Touch) ? "Touch" : m6091equalsimpl0(i, Keyboard) ? "Keyboard" : "Error";
     }
 
     /* compiled from: InputModeManager.kt */
@@ -76,12 +76,12 @@ public final class InputMode {
         }
 
         /* renamed from: getTouch-aOaMEAU  reason: not valid java name */
-        public final int m6095getTouchaOaMEAU() {
+        public final int m6096getTouchaOaMEAU() {
             return InputMode.Touch;
         }
 
         /* renamed from: getKeyboard-aOaMEAU  reason: not valid java name */
-        public final int m6094getKeyboardaOaMEAU() {
+        public final int m6095getKeyboardaOaMEAU() {
             return InputMode.Keyboard;
         }
     }

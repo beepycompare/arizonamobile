@@ -76,21 +76,21 @@ public final class DelegatingThemeAwareRippleNode extends DelegatingNode impleme
                 return attachNewRipple$lambda$1;
             }
         };
-        this.rippleNode = delegate(androidx.compose.material.ripple.RippleKt.m1863createRippleModifierNodeTDGSqEk(this.interactionSource, this.bounded, this.radius, new ColorProducer() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$attachNewRipple$calculateColor$1
+        this.rippleNode = delegate(androidx.compose.material.ripple.RippleKt.m1864createRippleModifierNodeTDGSqEk(this.interactionSource, this.bounded, this.radius, new ColorProducer() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$attachNewRipple$calculateColor$1
             @Override // androidx.compose.ui.graphics.ColorProducer
             /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-            public final long mo2299invoke0d7_KjU() {
+            public final long mo2300invoke0d7_KjU() {
                 ColorProducer colorProducer;
                 colorProducer = DelegatingThemeAwareRippleNode.this.color;
-                long mo2299invoke0d7_KjU = colorProducer.mo2299invoke0d7_KjU();
-                if (mo2299invoke0d7_KjU != 16) {
-                    return mo2299invoke0d7_KjU;
+                long mo2300invoke0d7_KjU = colorProducer.mo2300invoke0d7_KjU();
+                if (mo2300invoke0d7_KjU != 16) {
+                    return mo2300invoke0d7_KjU;
                 }
                 RippleConfiguration rippleConfiguration = (RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, RippleKt.getLocalRippleConfiguration());
-                if (rippleConfiguration != null && rippleConfiguration.m2777getColor0d7_KjU() != 16) {
-                    return rippleConfiguration.m2777getColor0d7_KjU();
+                if (rippleConfiguration != null && rippleConfiguration.m2778getColor0d7_KjU() != 16) {
+                    return rippleConfiguration.m2778getColor0d7_KjU();
                 }
-                return ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, ContentColorKt.getLocalContentColor())).m5289unboximpl();
+                return ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, ContentColorKt.getLocalContentColor())).m5290unboximpl();
             }
         }, function0));
     }

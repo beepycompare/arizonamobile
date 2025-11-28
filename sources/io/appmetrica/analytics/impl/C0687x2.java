@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.x2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0687x2 {
 
     /* renamed from: a  reason: collision with root package name */

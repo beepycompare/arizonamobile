@@ -9,15 +9,15 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class LayoutCoordinatesKt {
     public static final long positionInRoot(LayoutCoordinates layoutCoordinates) {
-        return layoutCoordinates.mo6708localToRootMKHz9U(Offset.Companion.m5051getZeroF1C5BW0());
+        return layoutCoordinates.mo6709localToRootMKHz9U(Offset.Companion.m5052getZeroF1C5BW0());
     }
 
     public static final long positionInWindow(LayoutCoordinates layoutCoordinates) {
-        return layoutCoordinates.mo6710localToWindowMKHz9U(Offset.Companion.m5051getZeroF1C5BW0());
+        return layoutCoordinates.mo6711localToWindowMKHz9U(Offset.Companion.m5052getZeroF1C5BW0());
     }
 
     public static final long positionOnScreen(LayoutCoordinates layoutCoordinates) {
-        return layoutCoordinates.mo6709localToScreenMKHz9U(Offset.Companion.m5051getZeroF1C5BW0());
+        return layoutCoordinates.mo6710localToScreenMKHz9U(Offset.Companion.m5052getZeroF1C5BW0());
     }
 
     public static final Rect boundsInRoot(LayoutCoordinates layoutCoordinates) {
@@ -26,64 +26,64 @@ public final class LayoutCoordinatesKt {
 
     public static final Rect boundsInWindow(LayoutCoordinates layoutCoordinates) {
         LayoutCoordinates findRootCoordinates = findRootCoordinates(layoutCoordinates);
-        float mo6705getSizeYbymL2g = (int) (findRootCoordinates.mo6705getSizeYbymL2g() >> 32);
-        float mo6705getSizeYbymL2g2 = (int) (findRootCoordinates.mo6705getSizeYbymL2g() & 4294967295L);
+        float mo6706getSizeYbymL2g = (int) (findRootCoordinates.mo6706getSizeYbymL2g() >> 32);
+        float mo6706getSizeYbymL2g2 = (int) (findRootCoordinates.mo6706getSizeYbymL2g() & 4294967295L);
         Rect localBoundingBoxOf$default = LayoutCoordinates.localBoundingBoxOf$default(findRootCoordinates, layoutCoordinates, false, 2, null);
         float left = localBoundingBoxOf$default.getLeft();
         if (left < 0.0f) {
             left = 0.0f;
         }
-        if (left > mo6705getSizeYbymL2g) {
-            left = mo6705getSizeYbymL2g;
+        if (left > mo6706getSizeYbymL2g) {
+            left = mo6706getSizeYbymL2g;
         }
         float top = localBoundingBoxOf$default.getTop();
         if (top < 0.0f) {
             top = 0.0f;
         }
-        if (top > mo6705getSizeYbymL2g2) {
-            top = mo6705getSizeYbymL2g2;
+        if (top > mo6706getSizeYbymL2g2) {
+            top = mo6706getSizeYbymL2g2;
         }
         float right = localBoundingBoxOf$default.getRight();
         if (right < 0.0f) {
             right = 0.0f;
         }
-        if (right <= mo6705getSizeYbymL2g) {
-            mo6705getSizeYbymL2g = right;
+        if (right <= mo6706getSizeYbymL2g) {
+            mo6706getSizeYbymL2g = right;
         }
         float bottom = localBoundingBoxOf$default.getBottom();
         float f = bottom >= 0.0f ? bottom : 0.0f;
-        if (f <= mo6705getSizeYbymL2g2) {
-            mo6705getSizeYbymL2g2 = f;
+        if (f <= mo6706getSizeYbymL2g2) {
+            mo6706getSizeYbymL2g2 = f;
         }
-        if (left == mo6705getSizeYbymL2g || top == mo6705getSizeYbymL2g2) {
+        if (left == mo6706getSizeYbymL2g || top == mo6706getSizeYbymL2g2) {
             return Rect.Companion.getZero();
         }
-        long mo6710localToWindowMKHz9U = findRootCoordinates.mo6710localToWindowMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(left) << 32) | (Float.floatToRawIntBits(top) & 4294967295L)));
-        long mo6710localToWindowMKHz9U2 = findRootCoordinates.mo6710localToWindowMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(mo6705getSizeYbymL2g) << 32)));
-        long mo6710localToWindowMKHz9U3 = findRootCoordinates.mo6710localToWindowMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(mo6705getSizeYbymL2g) << 32) | (Float.floatToRawIntBits(mo6705getSizeYbymL2g2) & 4294967295L)));
-        long mo6710localToWindowMKHz9U4 = findRootCoordinates.mo6710localToWindowMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(mo6705getSizeYbymL2g2) & 4294967295L) | (Float.floatToRawIntBits(left) << 32)));
-        float intBitsToFloat = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U2 >> 32));
-        float intBitsToFloat3 = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U4 >> 32));
-        float intBitsToFloat4 = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U3 >> 32));
+        long mo6711localToWindowMKHz9U = findRootCoordinates.mo6711localToWindowMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits(left) << 32) | (Float.floatToRawIntBits(top) & 4294967295L)));
+        long mo6711localToWindowMKHz9U2 = findRootCoordinates.mo6711localToWindowMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(mo6706getSizeYbymL2g) << 32)));
+        long mo6711localToWindowMKHz9U3 = findRootCoordinates.mo6711localToWindowMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits(mo6706getSizeYbymL2g) << 32) | (Float.floatToRawIntBits(mo6706getSizeYbymL2g2) & 4294967295L)));
+        long mo6711localToWindowMKHz9U4 = findRootCoordinates.mo6711localToWindowMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits(mo6706getSizeYbymL2g2) & 4294967295L) | (Float.floatToRawIntBits(left) << 32)));
+        float intBitsToFloat = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U2 >> 32));
+        float intBitsToFloat3 = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U4 >> 32));
+        float intBitsToFloat4 = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U3 >> 32));
         float min = Math.min(intBitsToFloat, Math.min(intBitsToFloat2, Math.min(intBitsToFloat3, intBitsToFloat4)));
         float max = Math.max(intBitsToFloat, Math.max(intBitsToFloat2, Math.max(intBitsToFloat3, intBitsToFloat4)));
-        float intBitsToFloat5 = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U & 4294967295L));
-        float intBitsToFloat6 = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U2 & 4294967295L));
-        float intBitsToFloat7 = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U4 & 4294967295L));
-        float intBitsToFloat8 = Float.intBitsToFloat((int) (mo6710localToWindowMKHz9U3 & 4294967295L));
+        float intBitsToFloat5 = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U & 4294967295L));
+        float intBitsToFloat6 = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U2 & 4294967295L));
+        float intBitsToFloat7 = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U4 & 4294967295L));
+        float intBitsToFloat8 = Float.intBitsToFloat((int) (mo6711localToWindowMKHz9U3 & 4294967295L));
         return new Rect(min, Math.min(intBitsToFloat5, Math.min(intBitsToFloat6, Math.min(intBitsToFloat7, intBitsToFloat8))), max, Math.max(intBitsToFloat5, Math.max(intBitsToFloat6, Math.max(intBitsToFloat7, intBitsToFloat8))));
     }
 
     public static final long positionInParent(LayoutCoordinates layoutCoordinates) {
         LayoutCoordinates parentLayoutCoordinates = layoutCoordinates.getParentLayoutCoordinates();
-        return parentLayoutCoordinates != null ? parentLayoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates, Offset.Companion.m5051getZeroF1C5BW0()) : Offset.Companion.m5051getZeroF1C5BW0();
+        return parentLayoutCoordinates != null ? parentLayoutCoordinates.mo6707localPositionOfR5De75A(layoutCoordinates, Offset.Companion.m5052getZeroF1C5BW0()) : Offset.Companion.m5052getZeroF1C5BW0();
     }
 
     public static final Rect boundsInParent(LayoutCoordinates layoutCoordinates) {
         Rect localBoundingBoxOf$default;
         LayoutCoordinates parentLayoutCoordinates = layoutCoordinates.getParentLayoutCoordinates();
-        return (parentLayoutCoordinates == null || (localBoundingBoxOf$default = LayoutCoordinates.localBoundingBoxOf$default(parentLayoutCoordinates, layoutCoordinates, false, 2, null)) == null) ? new Rect(0.0f, 0.0f, (int) (layoutCoordinates.mo6705getSizeYbymL2g() >> 32), (int) (layoutCoordinates.mo6705getSizeYbymL2g() & 4294967295L)) : localBoundingBoxOf$default;
+        return (parentLayoutCoordinates == null || (localBoundingBoxOf$default = LayoutCoordinates.localBoundingBoxOf$default(parentLayoutCoordinates, layoutCoordinates, false, 2, null)) == null) ? new Rect(0.0f, 0.0f, (int) (layoutCoordinates.mo6706getSizeYbymL2g() >> 32), (int) (layoutCoordinates.mo6706getSizeYbymL2g() & 4294967295L)) : localBoundingBoxOf$default;
     }
 
     public static final LayoutCoordinates findRootCoordinates(LayoutCoordinates layoutCoordinates) {

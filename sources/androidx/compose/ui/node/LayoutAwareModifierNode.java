@@ -10,6 +10,6 @@ public interface LayoutAwareModifierNode extends DelegatableNode {
     }
 
     /* renamed from: onRemeasured-ozmzZPI */
-    default void mo418onRemeasuredozmzZPI(long j) {
+    default void mo419onRemeasuredozmzZPI(long j) {
     }
 }

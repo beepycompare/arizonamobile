@@ -12,14 +12,14 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface LayoutModifierNode extends DelegatableNode {
     /* renamed from: measure-3p2s80s */
-    MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j);
+    MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j);
 
     default int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         return NodeMeasuringIntrinsics.INSTANCE.minWidth$ui_release(new NodeMeasuringIntrinsics.MeasureBlock() { // from class: androidx.compose.ui.node.LayoutModifierNode$minIntrinsicWidth$1
             @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.MeasureBlock
             /* renamed from: measure-3p2s80s */
-            public final MeasureResult mo6887measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                return LayoutModifierNode.this.mo80measure3p2s80s(measureScope, measurable, j);
+            public final MeasureResult mo6888measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                return LayoutModifierNode.this.mo81measure3p2s80s(measureScope, measurable, j);
             }
         }, intrinsicMeasureScope, intrinsicMeasurable, i);
     }
@@ -28,8 +28,8 @@ public interface LayoutModifierNode extends DelegatableNode {
         return NodeMeasuringIntrinsics.INSTANCE.minHeight$ui_release(new NodeMeasuringIntrinsics.MeasureBlock() { // from class: androidx.compose.ui.node.LayoutModifierNode$minIntrinsicHeight$1
             @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.MeasureBlock
             /* renamed from: measure-3p2s80s */
-            public final MeasureResult mo6887measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                return LayoutModifierNode.this.mo80measure3p2s80s(measureScope, measurable, j);
+            public final MeasureResult mo6888measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                return LayoutModifierNode.this.mo81measure3p2s80s(measureScope, measurable, j);
             }
         }, intrinsicMeasureScope, intrinsicMeasurable, i);
     }
@@ -38,8 +38,8 @@ public interface LayoutModifierNode extends DelegatableNode {
         return NodeMeasuringIntrinsics.INSTANCE.maxWidth$ui_release(new NodeMeasuringIntrinsics.MeasureBlock() { // from class: androidx.compose.ui.node.LayoutModifierNode$maxIntrinsicWidth$1
             @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.MeasureBlock
             /* renamed from: measure-3p2s80s */
-            public final MeasureResult mo6887measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                return LayoutModifierNode.this.mo80measure3p2s80s(measureScope, measurable, j);
+            public final MeasureResult mo6888measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                return LayoutModifierNode.this.mo81measure3p2s80s(measureScope, measurable, j);
             }
         }, intrinsicMeasureScope, intrinsicMeasurable, i);
     }
@@ -48,8 +48,8 @@ public interface LayoutModifierNode extends DelegatableNode {
         return NodeMeasuringIntrinsics.INSTANCE.maxHeight$ui_release(new NodeMeasuringIntrinsics.MeasureBlock() { // from class: androidx.compose.ui.node.LayoutModifierNode$maxIntrinsicHeight$1
             @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.MeasureBlock
             /* renamed from: measure-3p2s80s  reason: not valid java name */
-            public final MeasureResult mo6887measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                return LayoutModifierNode.this.mo80measure3p2s80s(measureScope, measurable, j);
+            public final MeasureResult mo6888measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                return LayoutModifierNode.this.mo81measure3p2s80s(measureScope, measurable, j);
             }
         }, intrinsicMeasureScope, intrinsicMeasurable, i);
     }

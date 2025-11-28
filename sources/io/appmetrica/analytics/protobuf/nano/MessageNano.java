@@ -2,7 +2,7 @@ package io.appmetrica.analytics.protobuf.nano;
 
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MessageNano {
     protected volatile int cachedSize = -1;
 
@@ -74,7 +74,7 @@ public abstract class MessageNano {
 
     @Override // 
     /* renamed from: clone */
-    public MessageNano mo9836clone() throws CloneNotSupportedException {
+    public MessageNano mo9894clone() throws CloneNotSupportedException {
         return (MessageNano) super.clone();
     }
 

@@ -285,7 +285,7 @@ public final class SliderState implements DraggableState {
     }
 
     /* renamed from: onPress-k-4lQ0M$material3  reason: not valid java name */
-    public final void m2976onPressk4lQ0M$material3(long j) {
+    public final void m2977onPressk4lQ0M$material3(long j) {
         float intBitsToFloat;
         float totalWidth;
         float intBitsToFloat2;

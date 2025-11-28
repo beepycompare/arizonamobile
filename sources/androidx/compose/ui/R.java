@@ -45,12 +45,12 @@ public final class R {
         public static int accessibility_custom_action_7 = 0x7f0a0040;
         public static int accessibility_custom_action_8 = 0x7f0a0041;
         public static int accessibility_custom_action_9 = 0x7f0a0042;
-        public static int androidx_compose_ui_view_composition_context = 0x7f0a00d5;
-        public static int compose_view_saveable_id_tag = 0x7f0a0380;
-        public static int consume_window_insets_tag = 0x7f0a0387;
-        public static int hide_in_inspector_tag = 0x7f0a064f;
-        public static int inspection_slot_table_set = 0x7f0a06f6;
-        public static int wrapped_composition_tag = 0x7f0a0fc5;
+        public static int androidx_compose_ui_view_composition_context = 0x7f0a00d7;
+        public static int compose_view_saveable_id_tag = 0x7f0a0376;
+        public static int consume_window_insets_tag = 0x7f0a037b;
+        public static int hide_in_inspector_tag = 0x7f0a0638;
+        public static int inspection_slot_table_set = 0x7f0a06d6;
+        public static int wrapped_composition_tag = 0x7f0a0f48;
 
         private id() {
         }
@@ -58,26 +58,26 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class string {
-        public static int autofill = 0x7f13002b;
-        public static int close_drawer = 0x7f13004d;
-        public static int close_sheet = 0x7f13004e;
-        public static int default_error_message = 0x7f130073;
-        public static int default_popup_window_title = 0x7f130078;
-        public static int dropdown_menu = 0x7f130084;
-        public static int in_progress = 0x7f1300f0;
-        public static int indeterminate = 0x7f1300f1;
-        public static int navigation_menu = 0x7f1301ca;
-        public static int not_selected = 0x7f1301df;
-        public static int range_end = 0x7f130208;
-        public static int range_start = 0x7f130209;
-        public static int selected = 0x7f13022a;
-        public static int snackbar_pane_title = 0x7f13023d;
-        public static int state_empty = 0x7f130242;
-        public static int state_off = 0x7f130243;
-        public static int state_on = 0x7f130244;
-        public static int switch_role = 0x7f13024b;
-        public static int tab = 0x7f13024c;
-        public static int template_percent = 0x7f130251;
+        public static int autofill = 0x7f12002b;
+        public static int close_drawer = 0x7f12004d;
+        public static int close_sheet = 0x7f12004e;
+        public static int default_error_message = 0x7f120073;
+        public static int default_popup_window_title = 0x7f120078;
+        public static int dropdown_menu = 0x7f120084;
+        public static int in_progress = 0x7f1200f0;
+        public static int indeterminate = 0x7f1200f1;
+        public static int navigation_menu = 0x7f1201ca;
+        public static int not_selected = 0x7f1201df;
+        public static int range_end = 0x7f120208;
+        public static int range_start = 0x7f120209;
+        public static int selected = 0x7f12022a;
+        public static int snackbar_pane_title = 0x7f12023d;
+        public static int state_empty = 0x7f120242;
+        public static int state_off = 0x7f120243;
+        public static int state_on = 0x7f120244;
+        public static int switch_role = 0x7f12024b;
+        public static int tab = 0x7f12024c;
+        public static int template_percent = 0x7f120251;
 
         private string() {
         }
@@ -85,8 +85,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class style {
-        public static int DialogWindowTheme = 0x7f140137;
-        public static int FloatingDialogWindowTheme = 0x7f14015a;
+        public static int DialogWindowTheme = 0x7f130137;
+        public static int FloatingDialogWindowTheme = 0x7f13015a;
 
         private style() {
         }

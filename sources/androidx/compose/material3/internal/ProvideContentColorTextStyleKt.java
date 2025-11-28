@@ -21,12 +21,12 @@ import kotlin.jvm.functions.Function2;
 public final class ProvideContentColorTextStyleKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ProvideContentColorTextStyle_3J_VO9M$lambda$0(long j, TextStyle textStyle, Function2 function2, int i, Composer composer, int i2) {
-        m3529ProvideContentColorTextStyle3JVO9M(j, textStyle, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m3530ProvideContentColorTextStyle3JVO9M(j, textStyle, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* renamed from: ProvideContentColorTextStyle-3J-VO9M  reason: not valid java name */
-    public static final void m3529ProvideContentColorTextStyle3JVO9M(final long j, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    public static final void m3530ProvideContentColorTextStyle3JVO9M(final long j, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-684938728);
         ComposerKt.sourceInformation(startRestartGroup, "C(ProvideContentColorTextStyle)N(contentColor:c#ui.graphics.Color,textStyle,content)39@1424L7,40@1453L152:ProvideContentColorTextStyle.kt#mqatfk");
@@ -50,7 +50,7 @@ public final class ProvideContentColorTextStyleKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(TextKt.getLocalTextStyle());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(j)), TextKt.getLocalTextStyle().provides(((TextStyle) consume).merge(textStyle))}, function2, startRestartGroup, ProvidedValue.$stable | ((i2 >> 3) & 112));
+            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(j)), TextKt.getLocalTextStyle().provides(((TextStyle) consume).merge(textStyle))}, function2, startRestartGroup, ProvidedValue.$stable | ((i2 >> 3) & 112));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

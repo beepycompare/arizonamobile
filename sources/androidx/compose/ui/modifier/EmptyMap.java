@@ -20,7 +20,7 @@ public final class EmptyMap extends ModifierLocalMap {
 
     @Override // androidx.compose.ui.modifier.ModifierLocalMap
     /* renamed from: set$ui_release  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ void mo6825set$ui_release(ModifierLocal modifierLocal, Object obj) {
+    public /* bridge */ /* synthetic */ void mo6826set$ui_release(ModifierLocal modifierLocal, Object obj) {
         set$ui_release((ModifierLocal<ModifierLocal>) modifierLocal, (ModifierLocal) obj);
     }
 

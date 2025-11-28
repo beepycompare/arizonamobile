@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.AppMetricaConfig;
 /* renamed from: io.appmetrica.analytics.impl.o2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0463o2 {
     public static final boolean a(Throwable th) {
         return true;

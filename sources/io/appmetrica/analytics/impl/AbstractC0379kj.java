@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import io.appmetrica.analytics.BuildConfig;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 /* renamed from: io.appmetrica.analytics.impl.kj  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AbstractC0379kj {
     public static void a(String str, Object... objArr) {
         ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format(str, objArr), new Object[0]);

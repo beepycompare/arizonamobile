@@ -74,122 +74,122 @@ public final class DatePickerColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2188getContainerColor0d7_KjU() {
+    public final long m2189getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getTitleContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2207getTitleContentColor0d7_KjU() {
+    public final long m2208getTitleContentColor0d7_KjU() {
         return this.titleContentColor;
     }
 
     /* renamed from: getHeadlineContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2200getHeadlineContentColor0d7_KjU() {
+    public final long m2201getHeadlineContentColor0d7_KjU() {
         return this.headlineContentColor;
     }
 
     /* renamed from: getWeekdayContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2210getWeekdayContentColor0d7_KjU() {
+    public final long m2211getWeekdayContentColor0d7_KjU() {
         return this.weekdayContentColor;
     }
 
     /* renamed from: getSubheadContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2206getSubheadContentColor0d7_KjU() {
+    public final long m2207getSubheadContentColor0d7_KjU() {
         return this.subheadContentColor;
     }
 
     /* renamed from: getNavigationContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2201getNavigationContentColor0d7_KjU() {
+    public final long m2202getNavigationContentColor0d7_KjU() {
         return this.navigationContentColor;
     }
 
     /* renamed from: getYearContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2211getYearContentColor0d7_KjU() {
+    public final long m2212getYearContentColor0d7_KjU() {
         return this.yearContentColor;
     }
 
     /* renamed from: getDisabledYearContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2198getDisabledYearContentColor0d7_KjU() {
+    public final long m2199getDisabledYearContentColor0d7_KjU() {
         return this.disabledYearContentColor;
     }
 
     /* renamed from: getCurrentYearContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2189getCurrentYearContentColor0d7_KjU() {
+    public final long m2190getCurrentYearContentColor0d7_KjU() {
         return this.currentYearContentColor;
     }
 
     /* renamed from: getSelectedYearContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2205getSelectedYearContentColor0d7_KjU() {
+    public final long m2206getSelectedYearContentColor0d7_KjU() {
         return this.selectedYearContentColor;
     }
 
     /* renamed from: getDisabledSelectedYearContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2197getDisabledSelectedYearContentColor0d7_KjU() {
+    public final long m2198getDisabledSelectedYearContentColor0d7_KjU() {
         return this.disabledSelectedYearContentColor;
     }
 
     /* renamed from: getSelectedYearContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2204getSelectedYearContainerColor0d7_KjU() {
+    public final long m2205getSelectedYearContainerColor0d7_KjU() {
         return this.selectedYearContainerColor;
     }
 
     /* renamed from: getDisabledSelectedYearContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2196getDisabledSelectedYearContainerColor0d7_KjU() {
+    public final long m2197getDisabledSelectedYearContainerColor0d7_KjU() {
         return this.disabledSelectedYearContainerColor;
     }
 
     /* renamed from: getDayContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2190getDayContentColor0d7_KjU() {
+    public final long m2191getDayContentColor0d7_KjU() {
         return this.dayContentColor;
     }
 
     /* renamed from: getDisabledDayContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2193getDisabledDayContentColor0d7_KjU() {
+    public final long m2194getDisabledDayContentColor0d7_KjU() {
         return this.disabledDayContentColor;
     }
 
     /* renamed from: getSelectedDayContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2203getSelectedDayContentColor0d7_KjU() {
+    public final long m2204getSelectedDayContentColor0d7_KjU() {
         return this.selectedDayContentColor;
     }
 
     /* renamed from: getDisabledSelectedDayContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2195getDisabledSelectedDayContentColor0d7_KjU() {
+    public final long m2196getDisabledSelectedDayContentColor0d7_KjU() {
         return this.disabledSelectedDayContentColor;
     }
 
     /* renamed from: getSelectedDayContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2202getSelectedDayContainerColor0d7_KjU() {
+    public final long m2203getSelectedDayContainerColor0d7_KjU() {
         return this.selectedDayContainerColor;
     }
 
     /* renamed from: getDisabledSelectedDayContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2194getDisabledSelectedDayContainerColor0d7_KjU() {
+    public final long m2195getDisabledSelectedDayContainerColor0d7_KjU() {
         return this.disabledSelectedDayContainerColor;
     }
 
     /* renamed from: getTodayContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2208getTodayContentColor0d7_KjU() {
+    public final long m2209getTodayContentColor0d7_KjU() {
         return this.todayContentColor;
     }
 
     /* renamed from: getTodayDateBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2209getTodayDateBorderColor0d7_KjU() {
+    public final long m2210getTodayDateBorderColor0d7_KjU() {
         return this.todayDateBorderColor;
     }
 
     /* renamed from: getDayInSelectionRangeContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2191getDayInSelectionRangeContainerColor0d7_KjU() {
+    public final long m2192getDayInSelectionRangeContainerColor0d7_KjU() {
         return this.dayInSelectionRangeContainerColor;
     }
 
     /* renamed from: getDayInSelectionRangeContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2192getDayInSelectionRangeContentColor0d7_KjU() {
+    public final long m2193getDayInSelectionRangeContentColor0d7_KjU() {
         return this.dayInSelectionRangeContentColor;
     }
 
     /* renamed from: getDividerColor-0d7_KjU  reason: not valid java name */
-    public final long m2199getDividerColor0d7_KjU() {
+    public final long m2200getDividerColor0d7_KjU() {
         return this.dividerColor;
     }
 
@@ -198,7 +198,7 @@ public final class DatePickerColors {
     }
 
     /* renamed from: copy-tNwlRmA  reason: not valid java name */
-    public final DatePickerColors m2187copytNwlRmA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, TextFieldColors textFieldColors) {
+    public final DatePickerColors m2188copytNwlRmA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, TextFieldColors textFieldColors) {
         return new DatePickerColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.titleContentColor, j3 != 16 ? j3 : this.headlineContentColor, j4 != 16 ? j4 : this.weekdayContentColor, j5 != 16 ? j5 : this.subheadContentColor, j6 != 16 ? j6 : this.navigationContentColor, j7 != 16 ? j7 : this.yearContentColor, j8 != 16 ? j8 : this.disabledYearContentColor, j9 != 16 ? j9 : this.currentYearContentColor, j10 != 16 ? j10 : this.selectedYearContentColor, j11 != 16 ? j11 : this.disabledSelectedYearContentColor, j12 != 16 ? j12 : this.selectedYearContainerColor, j13 != 16 ? j13 : this.disabledSelectedYearContainerColor, j14 != 16 ? j14 : this.dayContentColor, j15 != 16 ? j15 : this.disabledDayContentColor, j16 != 16 ? j16 : this.selectedDayContentColor, j17 != 16 ? j17 : this.disabledSelectedDayContentColor, j18 != 16 ? j18 : this.selectedDayContainerColor, j19 != 16 ? j19 : this.disabledSelectedDayContainerColor, j20 != 16 ? j20 : this.todayContentColor, j21 != 16 ? j21 : this.todayDateBorderColor, j22 != 16 ? j22 : this.dayInSelectionRangeContainerColor, j23 != 16 ? j23 : this.dayInSelectionRangeContentColor, j24 != 16 ? j24 : this.dividerColor, takeOrElse$material3(textFieldColors, new Function0() { // from class: androidx.compose.material3.DatePickerColors$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
@@ -216,7 +216,7 @@ public final class DatePickerColors {
     public final State<Color> dayContentColor$material3(boolean z, boolean z2, boolean z3, boolean z4, Composer composer, int i) {
         long j;
         Composer composer2;
-        State<Color> m130animateColorAsStateeuL9pac;
+        State<Color> m131animateColorAsStateeuL9pac;
         ComposerKt.sourceInformationMarkerStart(composer, -1233694918, "C(dayContentColor)N(isToday,selected,inRange,enabled):DatePicker.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1233694918, i, -1, "androidx.compose.material3.DatePickerColors.dayContentColor (DatePicker.kt:940)");
@@ -240,25 +240,25 @@ public final class DatePickerColors {
         if (z3) {
             composer.startReplaceGroup(-969483020);
             ComposerKt.sourceInformation(composer, "953@46356L28");
-            m130animateColorAsStateeuL9pac = SnapshotStateKt.rememberUpdatedState(Color.m5269boximpl(j2), composer, 0);
+            m131animateColorAsStateeuL9pac = SnapshotStateKt.rememberUpdatedState(Color.m5270boximpl(j2), composer, 0);
             composer.endReplaceGroup();
             composer2 = composer;
         } else {
             composer.startReplaceGroup(-969417610);
             ComposerKt.sourceInformation(composer, "959@46674L7,956@46492L204");
             composer2 = composer;
-            m130animateColorAsStateeuL9pac = SingleValueAnimationKt.m130animateColorAsStateeuL9pac(j2, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer2, 0, 12);
+            m131animateColorAsStateeuL9pac = SingleValueAnimationKt.m131animateColorAsStateeuL9pac(j2, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer2, 0, 12);
             composer2.endReplaceGroup();
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer2);
-        return m130animateColorAsStateeuL9pac;
+        return m131animateColorAsStateeuL9pac;
     }
 
     public final State<Color> dayContainerColor$material3(boolean z, boolean z2, boolean z3, Composer composer, int i) {
-        long m5314getTransparent0d7_KjU;
+        long m5315getTransparent0d7_KjU;
         Composer composer2;
         State<Color> rememberUpdatedState;
         ComposerKt.sourceInformationMarkerStart(composer, -1240482658, "C(dayContainerColor)N(selected,enabled,animate):DatePicker.kt#uh7d8r");
@@ -266,22 +266,22 @@ public final class DatePickerColors {
             ComposerKt.traceEventStart(-1240482658, i, -1, "androidx.compose.material3.DatePickerColors.dayContainerColor (DatePicker.kt:976)");
         }
         if (z) {
-            m5314getTransparent0d7_KjU = z2 ? this.selectedDayContainerColor : this.disabledSelectedDayContainerColor;
+            m5315getTransparent0d7_KjU = z2 ? this.selectedDayContainerColor : this.disabledSelectedDayContainerColor;
         } else {
-            m5314getTransparent0d7_KjU = Color.Companion.m5314getTransparent0d7_KjU();
+            m5315getTransparent0d7_KjU = Color.Companion.m5315getTransparent0d7_KjU();
         }
-        long j = m5314getTransparent0d7_KjU;
+        long j = m5315getTransparent0d7_KjU;
         if (z3) {
             composer.startReplaceGroup(-1319856736);
             ComposerKt.sourceInformation(composer, "987@47597L7,984@47415L204");
             composer2 = composer;
-            rememberUpdatedState = SingleValueAnimationKt.m130animateColorAsStateeuL9pac(j, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer2, 0, 12);
+            rememberUpdatedState = SingleValueAnimationKt.m131animateColorAsStateeuL9pac(j, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer2, 0, 12);
             composer2.endReplaceGroup();
         } else {
             composer2 = composer;
             composer2.startReplaceGroup(-1319630064);
             ComposerKt.sourceInformation(composer2, "990@47649L28");
-            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5269boximpl(j), composer2, 0);
+            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5270boximpl(j), composer2, 0);
             composer2.endReplaceGroup();
         }
         if (ComposerKt.isTraceInProgress()) {
@@ -308,42 +308,42 @@ public final class DatePickerColors {
         } else {
             j = this.disabledYearContentColor;
         }
-        State<Color> m130animateColorAsStateeuL9pac = SingleValueAnimationKt.m130animateColorAsStateeuL9pac(j, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer, 0, 12);
+        State<Color> m131animateColorAsStateeuL9pac = SingleValueAnimationKt.m131animateColorAsStateeuL9pac(j, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer, 0, 12);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m130animateColorAsStateeuL9pac;
+        return m131animateColorAsStateeuL9pac;
     }
 
     public final State<Color> yearContainerColor$material3(boolean z, boolean z2, Composer composer, int i) {
-        long m5314getTransparent0d7_KjU;
+        long m5315getTransparent0d7_KjU;
         ComposerKt.sourceInformationMarkerStart(composer, -1306331107, "C(yearContainerColor)N(selected,enabled)1040@49460L7,1037@49290L188:DatePicker.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1306331107, i, -1, "androidx.compose.material3.DatePickerColors.yearContainerColor (DatePicker.kt:1030)");
         }
         if (z) {
-            m5314getTransparent0d7_KjU = z2 ? this.selectedYearContainerColor : this.disabledSelectedYearContainerColor;
+            m5315getTransparent0d7_KjU = z2 ? this.selectedYearContainerColor : this.disabledSelectedYearContainerColor;
         } else {
-            m5314getTransparent0d7_KjU = Color.Companion.m5314getTransparent0d7_KjU();
+            m5315getTransparent0d7_KjU = Color.Companion.m5315getTransparent0d7_KjU();
         }
-        State<Color> m130animateColorAsStateeuL9pac = SingleValueAnimationKt.m130animateColorAsStateeuL9pac(m5314getTransparent0d7_KjU, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer, 0, 12);
+        State<Color> m131animateColorAsStateeuL9pac = SingleValueAnimationKt.m131animateColorAsStateeuL9pac(m5315getTransparent0d7_KjU, MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, composer, 6), null, null, composer, 0, 12);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m130animateColorAsStateeuL9pac;
+        return m131animateColorAsStateeuL9pac;
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof DatePickerColors) {
             DatePickerColors datePickerColors = (DatePickerColors) obj;
-            return Color.m5280equalsimpl0(this.containerColor, datePickerColors.containerColor) && Color.m5280equalsimpl0(this.titleContentColor, datePickerColors.titleContentColor) && Color.m5280equalsimpl0(this.headlineContentColor, datePickerColors.headlineContentColor) && Color.m5280equalsimpl0(this.weekdayContentColor, datePickerColors.weekdayContentColor) && Color.m5280equalsimpl0(this.subheadContentColor, datePickerColors.subheadContentColor) && Color.m5280equalsimpl0(this.yearContentColor, datePickerColors.yearContentColor) && Color.m5280equalsimpl0(this.disabledYearContentColor, datePickerColors.disabledYearContentColor) && Color.m5280equalsimpl0(this.currentYearContentColor, datePickerColors.currentYearContentColor) && Color.m5280equalsimpl0(this.selectedYearContentColor, datePickerColors.selectedYearContentColor) && Color.m5280equalsimpl0(this.disabledSelectedYearContentColor, datePickerColors.disabledSelectedYearContentColor) && Color.m5280equalsimpl0(this.selectedYearContainerColor, datePickerColors.selectedYearContainerColor) && Color.m5280equalsimpl0(this.disabledSelectedYearContainerColor, datePickerColors.disabledSelectedYearContainerColor) && Color.m5280equalsimpl0(this.dayContentColor, datePickerColors.dayContentColor) && Color.m5280equalsimpl0(this.disabledDayContentColor, datePickerColors.disabledDayContentColor) && Color.m5280equalsimpl0(this.selectedDayContentColor, datePickerColors.selectedDayContentColor) && Color.m5280equalsimpl0(this.disabledSelectedDayContentColor, datePickerColors.disabledSelectedDayContentColor) && Color.m5280equalsimpl0(this.selectedDayContainerColor, datePickerColors.selectedDayContainerColor) && Color.m5280equalsimpl0(this.disabledSelectedDayContainerColor, datePickerColors.disabledSelectedDayContainerColor) && Color.m5280equalsimpl0(this.todayContentColor, datePickerColors.todayContentColor) && Color.m5280equalsimpl0(this.todayDateBorderColor, datePickerColors.todayDateBorderColor) && Color.m5280equalsimpl0(this.dayInSelectionRangeContainerColor, datePickerColors.dayInSelectionRangeContainerColor) && Color.m5280equalsimpl0(this.dayInSelectionRangeContentColor, datePickerColors.dayInSelectionRangeContentColor);
+            return Color.m5281equalsimpl0(this.containerColor, datePickerColors.containerColor) && Color.m5281equalsimpl0(this.titleContentColor, datePickerColors.titleContentColor) && Color.m5281equalsimpl0(this.headlineContentColor, datePickerColors.headlineContentColor) && Color.m5281equalsimpl0(this.weekdayContentColor, datePickerColors.weekdayContentColor) && Color.m5281equalsimpl0(this.subheadContentColor, datePickerColors.subheadContentColor) && Color.m5281equalsimpl0(this.yearContentColor, datePickerColors.yearContentColor) && Color.m5281equalsimpl0(this.disabledYearContentColor, datePickerColors.disabledYearContentColor) && Color.m5281equalsimpl0(this.currentYearContentColor, datePickerColors.currentYearContentColor) && Color.m5281equalsimpl0(this.selectedYearContentColor, datePickerColors.selectedYearContentColor) && Color.m5281equalsimpl0(this.disabledSelectedYearContentColor, datePickerColors.disabledSelectedYearContentColor) && Color.m5281equalsimpl0(this.selectedYearContainerColor, datePickerColors.selectedYearContainerColor) && Color.m5281equalsimpl0(this.disabledSelectedYearContainerColor, datePickerColors.disabledSelectedYearContainerColor) && Color.m5281equalsimpl0(this.dayContentColor, datePickerColors.dayContentColor) && Color.m5281equalsimpl0(this.disabledDayContentColor, datePickerColors.disabledDayContentColor) && Color.m5281equalsimpl0(this.selectedDayContentColor, datePickerColors.selectedDayContentColor) && Color.m5281equalsimpl0(this.disabledSelectedDayContentColor, datePickerColors.disabledSelectedDayContentColor) && Color.m5281equalsimpl0(this.selectedDayContainerColor, datePickerColors.selectedDayContainerColor) && Color.m5281equalsimpl0(this.disabledSelectedDayContainerColor, datePickerColors.disabledSelectedDayContainerColor) && Color.m5281equalsimpl0(this.todayContentColor, datePickerColors.todayContentColor) && Color.m5281equalsimpl0(this.todayDateBorderColor, datePickerColors.todayDateBorderColor) && Color.m5281equalsimpl0(this.dayInSelectionRangeContainerColor, datePickerColors.dayInSelectionRangeContainerColor) && Color.m5281equalsimpl0(this.dayInSelectionRangeContentColor, datePickerColors.dayInSelectionRangeContentColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((((((((((((((((((((Color.m5286hashCodeimpl(this.containerColor) * 31) + Color.m5286hashCodeimpl(this.titleContentColor)) * 31) + Color.m5286hashCodeimpl(this.headlineContentColor)) * 31) + Color.m5286hashCodeimpl(this.weekdayContentColor)) * 31) + Color.m5286hashCodeimpl(this.subheadContentColor)) * 31) + Color.m5286hashCodeimpl(this.yearContentColor)) * 31) + Color.m5286hashCodeimpl(this.disabledYearContentColor)) * 31) + Color.m5286hashCodeimpl(this.currentYearContentColor)) * 31) + Color.m5286hashCodeimpl(this.selectedYearContentColor)) * 31) + Color.m5286hashCodeimpl(this.disabledSelectedYearContentColor)) * 31) + Color.m5286hashCodeimpl(this.selectedYearContainerColor)) * 31) + Color.m5286hashCodeimpl(this.disabledSelectedYearContainerColor)) * 31) + Color.m5286hashCodeimpl(this.dayContentColor)) * 31) + Color.m5286hashCodeimpl(this.disabledDayContentColor)) * 31) + Color.m5286hashCodeimpl(this.selectedDayContentColor)) * 31) + Color.m5286hashCodeimpl(this.disabledSelectedDayContentColor)) * 31) + Color.m5286hashCodeimpl(this.selectedDayContainerColor)) * 31) + Color.m5286hashCodeimpl(this.disabledSelectedDayContainerColor)) * 31) + Color.m5286hashCodeimpl(this.todayContentColor)) * 31) + Color.m5286hashCodeimpl(this.todayDateBorderColor)) * 31) + Color.m5286hashCodeimpl(this.dayInSelectionRangeContainerColor)) * 31) + Color.m5286hashCodeimpl(this.dayInSelectionRangeContentColor);
+        return (((((((((((((((((((((((((((((((((((((((((Color.m5287hashCodeimpl(this.containerColor) * 31) + Color.m5287hashCodeimpl(this.titleContentColor)) * 31) + Color.m5287hashCodeimpl(this.headlineContentColor)) * 31) + Color.m5287hashCodeimpl(this.weekdayContentColor)) * 31) + Color.m5287hashCodeimpl(this.subheadContentColor)) * 31) + Color.m5287hashCodeimpl(this.yearContentColor)) * 31) + Color.m5287hashCodeimpl(this.disabledYearContentColor)) * 31) + Color.m5287hashCodeimpl(this.currentYearContentColor)) * 31) + Color.m5287hashCodeimpl(this.selectedYearContentColor)) * 31) + Color.m5287hashCodeimpl(this.disabledSelectedYearContentColor)) * 31) + Color.m5287hashCodeimpl(this.selectedYearContainerColor)) * 31) + Color.m5287hashCodeimpl(this.disabledSelectedYearContainerColor)) * 31) + Color.m5287hashCodeimpl(this.dayContentColor)) * 31) + Color.m5287hashCodeimpl(this.disabledDayContentColor)) * 31) + Color.m5287hashCodeimpl(this.selectedDayContentColor)) * 31) + Color.m5287hashCodeimpl(this.disabledSelectedDayContentColor)) * 31) + Color.m5287hashCodeimpl(this.selectedDayContainerColor)) * 31) + Color.m5287hashCodeimpl(this.disabledSelectedDayContainerColor)) * 31) + Color.m5287hashCodeimpl(this.todayContentColor)) * 31) + Color.m5287hashCodeimpl(this.todayDateBorderColor)) * 31) + Color.m5287hashCodeimpl(this.dayInSelectionRangeContainerColor)) * 31) + Color.m5287hashCodeimpl(this.dayInSelectionRangeContentColor);
     }
 }

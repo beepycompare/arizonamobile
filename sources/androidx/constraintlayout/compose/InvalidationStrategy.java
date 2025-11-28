@@ -26,11 +26,11 @@ public final class InvalidationStrategy {
         this.shouldInvalidate = function3 == 0 ? null : new ShouldInvalidateCallback() { // from class: androidx.constraintlayout.compose.InvalidationStrategy$shouldInvalidate$1$1
             @Override // androidx.constraintlayout.compose.ShouldInvalidateCallback
             /* renamed from: invoke-N9IONVI  reason: not valid java name */
-            public final boolean mo8373invokeN9IONVI(long j, long j2) {
+            public final boolean mo8374invokeN9IONVI(long j, long j2) {
                 InvalidationStrategySpecification invalidationStrategySpecification;
                 Function3<InvalidationStrategySpecification, Constraints, Constraints, Boolean> onIncomingConstraints = InvalidationStrategy.this.getOnIncomingConstraints();
                 invalidationStrategySpecification = InvalidationStrategy.this.scope;
-                return onIncomingConstraints.invoke(invalidationStrategySpecification, Constraints.m7935boximpl(j), Constraints.m7935boximpl(j2)).booleanValue();
+                return onIncomingConstraints.invoke(invalidationStrategySpecification, Constraints.m7936boximpl(j), Constraints.m7936boximpl(j2)).booleanValue();
             }
         };
     }

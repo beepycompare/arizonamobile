@@ -22,15 +22,15 @@ final class GridSlotCache implements LazyGridSlotsProvider {
 
     @Override // androidx.compose.foundation.lazy.grid.LazyGridSlotsProvider
     /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-    public LazyGridSlots mo990invoke0kLqBqw(Density density, long j) {
-        if (this.cachedSizes != null && Constraints.m7941equalsimpl0(this.cachedConstraints, j) && this.cachedDensity == density.getDensity()) {
+    public LazyGridSlots mo991invoke0kLqBqw(Density density, long j) {
+        if (this.cachedSizes != null && Constraints.m7942equalsimpl0(this.cachedConstraints, j) && this.cachedDensity == density.getDensity()) {
             LazyGridSlots lazyGridSlots = this.cachedSizes;
             Intrinsics.checkNotNull(lazyGridSlots);
             return lazyGridSlots;
         }
         this.cachedConstraints = j;
         this.cachedDensity = density.getDensity();
-        LazyGridSlots invoke = this.calculation.invoke(density, Constraints.m7935boximpl(j));
+        LazyGridSlots invoke = this.calculation.invoke(density, Constraints.m7936boximpl(j));
         this.cachedSizes = invoke;
         return invoke;
     }

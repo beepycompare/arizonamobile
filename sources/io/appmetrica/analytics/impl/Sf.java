@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.text.TextUtils;
 import android.util.Base64;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Sf implements vo {
     /* JADX WARN: Removed duplicated region for block: B:13:0x0025 A[Catch: all -> 0x004a, TryCatch #0 {all -> 0x004a, blocks: (B:4:0x0009, B:6:0x0011, B:9:0x0015, B:11:0x001c, B:13:0x0025, B:15:0x002c, B:20:0x0043, B:14:0x0028), top: B:25:0x0009 }] */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0028 A[Catch: all -> 0x004a, TryCatch #0 {all -> 0x004a, blocks: (B:4:0x0009, B:6:0x0011, B:9:0x0015, B:11:0x001c, B:13:0x0025, B:15:0x002c, B:20:0x0043, B:14:0x0028), top: B:25:0x0009 }] */

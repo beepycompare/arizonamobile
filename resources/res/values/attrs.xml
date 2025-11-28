@@ -348,8 +348,6 @@
     </attr>
     <attr name="borderSecondColor" format="color">
     </attr>
-    <attr name="borderSize" format="dimension">
-    </attr>
     <attr name="borderThickness" format="dimension">
     </attr>
     <attr name="borderTransparency" format="integer">
@@ -1383,14 +1381,6 @@
     </attr>
     <attr name="errorTextColor" format="color">
     </attr>
-    <attr name="exampleColor" format="color">
-    </attr>
-    <attr name="exampleDimension" format="dimension">
-    </attr>
-    <attr name="exampleDrawable" format="reference|color">
-    </attr>
-    <attr name="exampleString" format="string">
-    </attr>
     <attr name="exitAnim" format="reference">
     </attr>
     <attr name="expandActivityOverflowButtonDrawable" format="reference">
@@ -1516,8 +1506,6 @@
     <attr name="fastScrollVerticalTrackDrawable" format="reference">
     </attr>
     <attr name="fastforward_icon" format="reference">
-    </attr>
-    <attr name="fillColor" format="color">
     </attr>
     <attr name="finishPrimaryWithSecondary" format="boolean">
     </attr>
@@ -2742,8 +2730,6 @@
     </attr>
     <attr name="maxNumber" format="integer">
     </attr>
-    <attr name="maxSpeed" format="integer">
-    </attr>
     <attr name="maxVelocity" format="float">
     </attr>
     <attr name="maxWidth" format="dimension">
@@ -2764,10 +2750,6 @@
         <enum name="bottom" value="81" />
     </attr>
     <attr name="methodName" format="string">
-    </attr>
-    <attr name="metricText" format="string">
-    </attr>
-    <attr name="metricTextColor" format="color">
     </attr>
     <attr name="mimeType" format="string">
     </attr>
@@ -3923,8 +3905,6 @@
     </attr>
     <attr name="textCentered" format="boolean">
     </attr>
-    <attr name="textColor" format="color">
-    </attr>
     <attr name="textColorAlertDialogListItem" format="reference|color">
     </attr>
     <attr name="textColorList" format="string">
@@ -3934,8 +3914,6 @@
     <attr name="textEndPadding" format="dimension">
     </attr>
     <attr name="textFillColor" format="color">
-    </attr>
-    <attr name="textGap" format="dimension">
     </attr>
     <attr name="textInputFilledDenseStyle" format="reference">
     </attr>

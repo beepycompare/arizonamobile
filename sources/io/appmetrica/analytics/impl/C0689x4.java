@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 /* renamed from: io.appmetrica.analytics.impl.x4  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0689x4 extends AbstractC0714y4 {
     public C0689x4(C0678wi c0678wi) {
         super(c0678wi);

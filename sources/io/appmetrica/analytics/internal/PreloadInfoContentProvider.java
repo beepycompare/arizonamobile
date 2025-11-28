@@ -17,7 +17,7 @@ import io.appmetrica.analytics.impl.H5;
 import io.appmetrica.analytics.impl.I5;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 import java.util.concurrent.CountDownLatch;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PreloadInfoContentProvider extends ContentProvider {
 
     /* renamed from: a  reason: collision with root package name */

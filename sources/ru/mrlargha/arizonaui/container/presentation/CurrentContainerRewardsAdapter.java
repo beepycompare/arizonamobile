@@ -67,29 +67,24 @@ public final class CurrentContainerRewardsAdapter extends RecyclerView.Adapter<C
             }
         });
         ConstraintLayout constraintLayout = holder.getContainerPrizeItemBinding().cpiBg;
-        Context context = null;
         if (this.listItem.get(i).getStatus() == 0) {
-            Context context2 = this.context;
-            if (context2 == null) {
+            Context context = this.context;
+            if (context == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("context");
-            } else {
-                context = context2;
+                context = null;
             }
             drawable = ContextCompat.getDrawable(context, R.drawable.auction_item_bg);
         } else {
-            Context context3 = this.context;
-            if (context3 == null) {
+            Context context2 = this.context;
+            if (context2 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("context");
-            } else {
-                context = context3;
+                context2 = null;
             }
-            drawable = ContextCompat.getDrawable(context, R.drawable.active_shape_bg);
+            drawable = ContextCompat.getDrawable(context2, R.drawable.active_shape_bg);
         }
         constraintLayout.setBackground(drawable);
         holder.getContainerPrizeItemBinding().acItemTittle.setText(this.listItem.get(i).getTitle());
-        Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + "projects/arizona-rp/assets/images/donate/" + this.listItem.get(i).getImage() + ".webp").placeholder(R.drawable.item).into(holder.getContainerPrizeItemBinding().acItemImage);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/" + this.listItem.get(i).getImage() + ".webp").placeholder(R.drawable.item).into(holder.getContainerPrizeItemBinding().acItemImage);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

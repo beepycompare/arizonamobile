@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* renamed from: io.appmetrica.analytics.screenshot.impl.s  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0776s extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */

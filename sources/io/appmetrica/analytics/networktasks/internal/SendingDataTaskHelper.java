@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 import io.appmetrica.analytics.networktasks.internal.DefaultResponseParser;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SendingDataTaskHelper {
 
     /* renamed from: a  reason: collision with root package name */

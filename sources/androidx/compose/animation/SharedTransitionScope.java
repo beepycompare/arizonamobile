@@ -51,7 +51,7 @@ public interface SharedTransitionScope extends LookaheadScope {
         public static final Companion Companion = Companion.$$INSTANCE;
 
         /* renamed from: calculateSize-JyjRU_E  reason: not valid java name */
-        long mo124calculateSizeJyjRU_E(long j, long j2);
+        long mo125calculateSizeJyjRU_E(long j, long j2);
 
         /* compiled from: SharedTransitionScope.kt */
         @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007¨\u0006\n"}, d2 = {"Landroidx/compose/animation/SharedTransitionScope$PlaceHolderSize$Companion;", "", "<init>", "()V", "animatedSize", "Landroidx/compose/animation/SharedTransitionScope$PlaceHolderSize;", "getAnimatedSize", "()Landroidx/compose/animation/SharedTransitionScope$PlaceHolderSize;", "contentSize", "getContentSize", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
@@ -61,14 +61,14 @@ public interface SharedTransitionScope extends LookaheadScope {
             private static final PlaceHolderSize animatedSize = new PlaceHolderSize() { // from class: androidx.compose.animation.SharedTransitionScope$PlaceHolderSize$Companion$animatedSize$1
                 @Override // androidx.compose.animation.SharedTransitionScope.PlaceHolderSize
                 /* renamed from: calculateSize-JyjRU_E */
-                public final long mo124calculateSizeJyjRU_E(long j, long j2) {
+                public final long mo125calculateSizeJyjRU_E(long j, long j2) {
                     return j2;
                 }
             };
             private static final PlaceHolderSize contentSize = new PlaceHolderSize() { // from class: androidx.compose.animation.SharedTransitionScope$PlaceHolderSize$Companion$contentSize$1
                 @Override // androidx.compose.animation.SharedTransitionScope.PlaceHolderSize
                 /* renamed from: calculateSize-JyjRU_E */
-                public final long mo124calculateSizeJyjRU_E(long j, long j2) {
+                public final long mo125calculateSizeJyjRU_E(long j, long j2) {
                     return j;
                 }
             };

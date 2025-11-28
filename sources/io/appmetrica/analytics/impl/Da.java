@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Da implements HostRetryInfoProvider {
 
     /* renamed from: a  reason: collision with root package name */

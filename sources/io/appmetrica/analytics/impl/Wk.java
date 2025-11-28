@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.collections.CollectionsKt;
 import okhttp3.internal.connection.RealConnection;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Wk {
 
     /* renamed from: a  reason: collision with root package name */

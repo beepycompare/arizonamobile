@@ -5,7 +5,7 @@ import io.appmetrica.analytics.impl.C0696xb;
 import io.appmetrica.analytics.impl.InterfaceC0281go;
 import io.appmetrica.analytics.impl.Nb;
 import io.appmetrica.analytics.impl.X5;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CounterAttribute {
 
     /* renamed from: a  reason: collision with root package name */

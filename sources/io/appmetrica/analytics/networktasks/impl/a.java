@@ -7,7 +7,7 @@ import io.appmetrica.analytics.network.internal.NetworkClient;
 import io.appmetrica.analytics.network.internal.Request;
 import io.appmetrica.analytics.network.internal.Response;
 import javax.net.ssl.SSLSocketFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class a {
     public static Response a(String str, String str2, SSLSocketFactory sSLSocketFactory) {
         Request.Builder withMethod = new Request.Builder(str2).withMethod(UtilsKt.HTTP_METHOD_GET);

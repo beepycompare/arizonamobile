@@ -4,7 +4,7 @@ import io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoMana
 import io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoSender;
 import io.appmetrica.analytics.billinginterface.internal.update.UpdatePolicy;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface UtilsProvider {
     BillingInfoManager getBillingInfoManager();
 

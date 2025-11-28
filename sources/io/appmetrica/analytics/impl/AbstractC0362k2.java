@@ -4,7 +4,7 @@ import io.appmetrica.analytics.appsetid.internal.AppSetIdRetriever;
 import io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 /* renamed from: io.appmetrica.analytics.impl.k2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AbstractC0362k2 {
     public static final IAppSetIdRetriever a() {
         if (ReflectionUtils.detectClassExists("com.google.android.gms.appset.AppSet")) {

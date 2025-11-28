@@ -28,6 +28,6 @@ public final class DragGestureDetectorKt$awaitPointerSlopOrCancellation$1 extend
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorKt.m488awaitPointerSlopOrCancellation6ksA65w(null, 0L, 0, null, 0L, null, this);
+        return DragGestureDetectorKt.m489awaitPointerSlopOrCancellation6ksA65w(null, 0L, 0, null, 0L, null, this);
     }
 }

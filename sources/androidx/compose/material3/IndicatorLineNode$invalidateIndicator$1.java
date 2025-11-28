@@ -61,7 +61,7 @@ public final class IndicatorLineNode$invalidateIndicator$1 extends SuspendLambda
                 z = this.this$0.enabled;
                 z2 = this.this$0.isError;
                 z3 = this.this$0.focused;
-                Color m5269boximpl = Color.m5269boximpl(colors.m3117indicatorColorXeAY9LY$material3(z, z2, z3));
+                Color m5270boximpl = Color.m5270boximpl(colors.m3118indicatorColorXeAY9LY$material3(z, z2, z3));
                 z4 = this.this$0.enabled;
                 if (z4) {
                     snap$default = MotionSchemeKt.fromToken((MotionScheme) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.this$0, MaterialTheme.INSTANCE.getLocalMotionScheme$material3()), MotionSchemeKeyTokens.FastEffects);
@@ -69,7 +69,7 @@ public final class IndicatorLineNode$invalidateIndicator$1 extends SuspendLambda
                     snap$default = AnimationSpecKt.snap$default(0, 1, null);
                 }
                 this.label = 1;
-                obj = Animatable.animateTo$default(animatable, m5269boximpl, snap$default, null, null, this, 12, null);
+                obj = Animatable.animateTo$default(animatable, m5270boximpl, snap$default, null, null, this, 12, null);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }

@@ -55,12 +55,12 @@ final class TransformableStateKt$animatePanBy$2 extends SuspendLambda implements
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             final TransformScope transformScope = (TransformScope) this.L$0;
-            AnimationState animationState = new AnimationState(VectorConvertersKt.getVectorConverter(Offset.Companion), Offset.m5024boximpl(this.$previous.element), null, 0L, 0L, false, 60, null);
-            Offset m5024boximpl = Offset.m5024boximpl(this.$offset);
+            AnimationState animationState = new AnimationState(VectorConvertersKt.getVectorConverter(Offset.Companion), Offset.m5025boximpl(this.$previous.element), null, 0L, 0L, false, 60, null);
+            Offset m5025boximpl = Offset.m5025boximpl(this.$offset);
             AnimationSpec<Offset> animationSpec = this.$animationSpec;
             final Ref.LongRef longRef = this.$previous;
             this.label = 1;
-            if (SuspendAnimationKt.animateTo$default(animationState, m5024boximpl, animationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animatePanBy$2$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animateTo$default(animationState, m5025boximpl, animationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animatePanBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
                     Unit invokeSuspend$lambda$0;
@@ -80,8 +80,8 @@ final class TransformableStateKt$animatePanBy$2 extends SuspendLambda implements
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, TransformScope transformScope, AnimationScope animationScope) {
-        TransformScope.m614transformByd4ec7I$default(transformScope, 0.0f, Offset.m5039minusMKHz9U(((Offset) animationScope.getValue()).m5045unboximpl(), longRef.element), 0.0f, 5, null);
-        longRef.element = ((Offset) animationScope.getValue()).m5045unboximpl();
+        TransformScope.m615transformByd4ec7I$default(transformScope, 0.0f, Offset.m5040minusMKHz9U(((Offset) animationScope.getValue()).m5046unboximpl(), longRef.element), 0.0f, 5, null);
+        longRef.element = ((Offset) animationScope.getValue()).m5046unboximpl();
         return Unit.INSTANCE;
     }
 }

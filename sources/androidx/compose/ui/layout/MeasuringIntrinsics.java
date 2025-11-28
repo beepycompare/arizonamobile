@@ -22,19 +22,19 @@ public final class MeasuringIntrinsics {
     }
 
     public final int minWidth(LayoutModifier layoutModifier, IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        return layoutModifier.mo748measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Min, IntrinsicWidthHeight.Width), ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null)).getWidth();
+        return layoutModifier.mo749measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Min, IntrinsicWidthHeight.Width), ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null)).getWidth();
     }
 
     public final int minHeight(LayoutModifier layoutModifier, IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        return layoutModifier.mo748measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Min, IntrinsicWidthHeight.Height), ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null)).getHeight();
+        return layoutModifier.mo749measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Min, IntrinsicWidthHeight.Height), ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null)).getHeight();
     }
 
     public final int maxWidth(LayoutModifier layoutModifier, IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        return layoutModifier.mo748measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Max, IntrinsicWidthHeight.Width), ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null)).getWidth();
+        return layoutModifier.mo749measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Max, IntrinsicWidthHeight.Width), ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null)).getWidth();
     }
 
     public final int maxHeight(LayoutModifier layoutModifier, IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        return layoutModifier.mo748measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Max, IntrinsicWidthHeight.Height), ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null)).getHeight();
+        return layoutModifier.mo749measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), new DefaultIntrinsicMeasurable(intrinsicMeasurable, IntrinsicMinMax.Max, IntrinsicWidthHeight.Height), ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null)).getHeight();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -71,23 +71,23 @@ public final class MeasuringIntrinsics {
 
         @Override // androidx.compose.ui.layout.Measurable
         /* renamed from: measure-BRTryo0 */
-        public Placeable mo6697measureBRTryo0(long j) {
+        public Placeable mo6698measureBRTryo0(long j) {
             int minIntrinsicHeight;
             int minIntrinsicWidth;
             if (this.widthHeight == IntrinsicWidthHeight.Width) {
                 if (this.minMax == IntrinsicMinMax.Max) {
-                    minIntrinsicWidth = this.measurable.maxIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j));
+                    minIntrinsicWidth = this.measurable.maxIntrinsicWidth(Constraints.m7948getMaxHeightimpl(j));
                 } else {
-                    minIntrinsicWidth = this.measurable.minIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j));
+                    minIntrinsicWidth = this.measurable.minIntrinsicWidth(Constraints.m7948getMaxHeightimpl(j));
                 }
-                return new EmptyPlaceable(minIntrinsicWidth, Constraints.m7943getHasBoundedHeightimpl(j) ? Constraints.m7947getMaxHeightimpl(j) : 32767);
+                return new EmptyPlaceable(minIntrinsicWidth, Constraints.m7944getHasBoundedHeightimpl(j) ? Constraints.m7948getMaxHeightimpl(j) : 32767);
             }
             if (this.minMax == IntrinsicMinMax.Max) {
-                minIntrinsicHeight = this.measurable.maxIntrinsicHeight(Constraints.m7948getMaxWidthimpl(j));
+                minIntrinsicHeight = this.measurable.maxIntrinsicHeight(Constraints.m7949getMaxWidthimpl(j));
             } else {
-                minIntrinsicHeight = this.measurable.minIntrinsicHeight(Constraints.m7948getMaxWidthimpl(j));
+                minIntrinsicHeight = this.measurable.minIntrinsicHeight(Constraints.m7949getMaxWidthimpl(j));
             }
-            return new EmptyPlaceable(Constraints.m7944getHasBoundedWidthimpl(j) ? Constraints.m7948getMaxWidthimpl(j) : 32767, minIntrinsicHeight);
+            return new EmptyPlaceable(Constraints.m7945getHasBoundedWidthimpl(j) ? Constraints.m7949getMaxWidthimpl(j) : 32767, minIntrinsicHeight);
         }
 
         @Override // androidx.compose.ui.layout.IntrinsicMeasurable
@@ -123,11 +123,11 @@ public final class MeasuringIntrinsics {
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // androidx.compose.ui.layout.Placeable
         /* renamed from: placeAt-f8xVGno */
-        public void mo6698placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        public void mo6699placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
         }
 
         public EmptyPlaceable(int i, int i2) {
-            m6760setMeasuredSizeozmzZPI(IntSize.m8161constructorimpl((i2 & 4294967295L) | (i << 32)));
+            m6761setMeasuredSizeozmzZPI(IntSize.m8162constructorimpl((i2 & 4294967295L) | (i << 32)));
         }
     }
 

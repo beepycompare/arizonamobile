@@ -32,22 +32,22 @@ final class AlignmentLineOffsetTextUnitNode extends Modifier.Node implements Lay
     }
 
     /* renamed from: getBefore-XSAIIZE  reason: not valid java name */
-    public final long m684getBeforeXSAIIZE() {
+    public final long m685getBeforeXSAIIZE() {
         return this.before;
     }
 
     /* renamed from: setBefore--R2X_6o  reason: not valid java name */
-    public final void m686setBeforeR2X_6o(long j) {
+    public final void m687setBeforeR2X_6o(long j) {
         this.before = j;
     }
 
     /* renamed from: getAfter-XSAIIZE  reason: not valid java name */
-    public final long m683getAfterXSAIIZE() {
+    public final long m684getAfterXSAIIZE() {
         return this.after;
     }
 
     /* renamed from: setAfter--R2X_6o  reason: not valid java name */
-    public final void m685setAfterR2X_6o(long j) {
+    public final void m686setAfterR2X_6o(long j) {
         this.after = j;
     }
 
@@ -59,9 +59,9 @@ final class AlignmentLineOffsetTextUnitNode extends Modifier.Node implements Lay
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        MeasureResult m666alignmentLineOffsetMeasuretjqqzMA;
-        m666alignmentLineOffsetMeasuretjqqzMA = AlignmentLineKt.m666alignmentLineOffsetMeasuretjqqzMA(measureScope, this.alignmentLine, TextUnit.m8187getRawTypeimpl(this.before) == 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : measureScope.mo424toDpGaN1DYA(this.before), TextUnit.m8187getRawTypeimpl(this.after) == 0 ? Dp.Companion.m8015getUnspecifiedD9Ej5fM() : measureScope.mo424toDpGaN1DYA(this.after), measurable, j);
-        return m666alignmentLineOffsetMeasuretjqqzMA;
+    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        MeasureResult m667alignmentLineOffsetMeasuretjqqzMA;
+        m667alignmentLineOffsetMeasuretjqqzMA = AlignmentLineKt.m667alignmentLineOffsetMeasuretjqqzMA(measureScope, this.alignmentLine, TextUnit.m8188getRawTypeimpl(this.before) == 0 ? Dp.Companion.m8016getUnspecifiedD9Ej5fM() : measureScope.mo425toDpGaN1DYA(this.before), TextUnit.m8188getRawTypeimpl(this.after) == 0 ? Dp.Companion.m8016getUnspecifiedD9Ej5fM() : measureScope.mo425toDpGaN1DYA(this.after), measurable, j);
+        return m667alignmentLineOffsetMeasuretjqqzMA;
     }
 }

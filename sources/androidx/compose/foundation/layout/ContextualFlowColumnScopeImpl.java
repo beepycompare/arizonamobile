@@ -63,13 +63,13 @@ public final class ContextualFlowColumnScopeImpl implements ColumnScope, Context
 
     @Override // androidx.compose.foundation.layout.ContextualFlowColumnScope
     /* renamed from: getMaxWidth-D9Ej5fM */
-    public float mo740getMaxWidthD9Ej5fM() {
+    public float mo741getMaxWidthD9Ej5fM() {
         return this.maxWidth;
     }
 
     @Override // androidx.compose.foundation.layout.ContextualFlowColumnScope
     /* renamed from: getMaxHeightInLine-D9Ej5fM */
-    public float mo739getMaxHeightInLineD9Ej5fM() {
+    public float mo740getMaxHeightInLineD9Ej5fM() {
         return this.maxHeightInLine;
     }
 

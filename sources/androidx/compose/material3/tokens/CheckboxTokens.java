@@ -67,7 +67,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3711getContainerHeightD9Ej5fM() {
+    public final float m3712getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -76,12 +76,12 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3712getContainerWidthD9Ej5fM() {
+    public final float m3713getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3713getIconSizeD9Ej5fM() {
+    public final float m3714getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -94,7 +94,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedDisabledContainerOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3714getSelectedDisabledContainerOutlineWidthD9Ej5fM() {
+    public final float m3715getSelectedDisabledContainerOutlineWidthD9Ej5fM() {
         return SelectedDisabledContainerOutlineWidth;
     }
 
@@ -115,7 +115,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedErrorFocusOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3715getSelectedErrorFocusOutlineWidthD9Ej5fM() {
+    public final float m3716getSelectedErrorFocusOutlineWidthD9Ej5fM() {
         return SelectedErrorFocusOutlineWidth;
     }
 
@@ -128,7 +128,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedErrorHoverOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3716getSelectedErrorHoverOutlineWidthD9Ej5fM() {
+    public final float m3717getSelectedErrorHoverOutlineWidthD9Ej5fM() {
         return SelectedErrorHoverOutlineWidth;
     }
 
@@ -145,7 +145,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedErrorPressedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3717getSelectedErrorPressedOutlineWidthD9Ej5fM() {
+    public final float m3718getSelectedErrorPressedOutlineWidthD9Ej5fM() {
         return SelectedErrorPressedOutlineWidth;
     }
 
@@ -158,7 +158,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedFocusOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3718getSelectedFocusOutlineWidthD9Ej5fM() {
+    public final float m3719getSelectedFocusOutlineWidthD9Ej5fM() {
         return SelectedFocusOutlineWidth;
     }
 
@@ -171,7 +171,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedHoverOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3719getSelectedHoverOutlineWidthD9Ej5fM() {
+    public final float m3720getSelectedHoverOutlineWidthD9Ej5fM() {
         return SelectedHoverOutlineWidth;
     }
 
@@ -180,7 +180,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3720getSelectedOutlineWidthD9Ej5fM() {
+    public final float m3721getSelectedOutlineWidthD9Ej5fM() {
         return SelectedOutlineWidth;
     }
 
@@ -193,7 +193,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getSelectedPressedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3721getSelectedPressedOutlineWidthD9Ej5fM() {
+    public final float m3722getSelectedPressedOutlineWidthD9Ej5fM() {
         return SelectedPressedOutlineWidth;
     }
 
@@ -202,7 +202,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getStateLayerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3722getStateLayerSizeD9Ej5fM() {
+    public final float m3723getStateLayerSizeD9Ej5fM() {
         return StateLayerSize;
     }
 
@@ -211,7 +211,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedDisabledOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3723getUnselectedDisabledOutlineWidthD9Ej5fM() {
+    public final float m3724getUnselectedDisabledOutlineWidthD9Ej5fM() {
         return UnselectedDisabledOutlineWidth;
     }
 
@@ -220,7 +220,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedErrorFocusOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3724getUnselectedErrorFocusOutlineWidthD9Ej5fM() {
+    public final float m3725getUnselectedErrorFocusOutlineWidthD9Ej5fM() {
         return UnselectedErrorFocusOutlineWidth;
     }
 
@@ -229,7 +229,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedErrorHoverOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3725getUnselectedErrorHoverOutlineWidthD9Ej5fM() {
+    public final float m3726getUnselectedErrorHoverOutlineWidthD9Ej5fM() {
         return UnselectedErrorHoverOutlineWidth;
     }
 
@@ -242,7 +242,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedErrorPressedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3726getUnselectedErrorPressedOutlineWidthD9Ej5fM() {
+    public final float m3727getUnselectedErrorPressedOutlineWidthD9Ej5fM() {
         return UnselectedErrorPressedOutlineWidth;
     }
 
@@ -251,7 +251,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedFocusOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3727getUnselectedFocusOutlineWidthD9Ej5fM() {
+    public final float m3728getUnselectedFocusOutlineWidthD9Ej5fM() {
         return UnselectedFocusOutlineWidth;
     }
 
@@ -260,7 +260,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedHoverOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3728getUnselectedHoverOutlineWidthD9Ej5fM() {
+    public final float m3729getUnselectedHoverOutlineWidthD9Ej5fM() {
         return UnselectedHoverOutlineWidth;
     }
 
@@ -269,7 +269,7 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3729getUnselectedOutlineWidthD9Ej5fM() {
+    public final float m3730getUnselectedOutlineWidthD9Ej5fM() {
         return UnselectedOutlineWidth;
     }
 
@@ -278,60 +278,60 @@ public final class CheckboxTokens {
     }
 
     /* renamed from: getUnselectedPressedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3730getUnselectedPressedOutlineWidthD9Ej5fM() {
+    public final float m3731getUnselectedPressedOutlineWidthD9Ej5fM() {
         return UnselectedPressedOutlineWidth;
     }
 
     static {
         float f = (float) 18.0d;
-        ContainerHeight = Dp.m7995constructorimpl(f);
+        ContainerHeight = Dp.m7996constructorimpl(f);
         float f2 = (float) 2.0d;
-        ContainerShape = RoundedCornerShapeKt.m1207RoundedCornerShape0680j_4(Dp.m7995constructorimpl(f2));
-        ContainerWidth = Dp.m7995constructorimpl(f);
-        IconSize = Dp.m7995constructorimpl(f);
+        ContainerShape = RoundedCornerShapeKt.m1208RoundedCornerShape0680j_4(Dp.m7996constructorimpl(f2));
+        ContainerWidth = Dp.m7996constructorimpl(f);
+        IconSize = Dp.m7996constructorimpl(f);
         float f3 = (float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        SelectedDisabledContainerOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedDisabledContainerOutlineWidth = Dp.m7996constructorimpl(f3);
         SelectedDisabledIconColor = ColorSchemeKeyTokens.Surface;
         SelectedErrorContainerColor = ColorSchemeKeyTokens.Error;
         SelectedErrorFocusContainerColor = ColorSchemeKeyTokens.Error;
         SelectedErrorFocusIconColor = ColorSchemeKeyTokens.OnError;
-        SelectedErrorFocusOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedErrorFocusOutlineWidth = Dp.m7996constructorimpl(f3);
         SelectedErrorHoverContainerColor = ColorSchemeKeyTokens.Error;
         SelectedErrorHoverIconColor = ColorSchemeKeyTokens.OnError;
-        SelectedErrorHoverOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedErrorHoverOutlineWidth = Dp.m7996constructorimpl(f3);
         SelectedErrorIconColor = ColorSchemeKeyTokens.OnError;
         SelectedErrorPressedContainerColor = ColorSchemeKeyTokens.Error;
         SelectedErrorPressedIconColor = ColorSchemeKeyTokens.OnError;
-        SelectedErrorPressedOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedErrorPressedOutlineWidth = Dp.m7996constructorimpl(f3);
         SelectedFocusContainerColor = ColorSchemeKeyTokens.Primary;
         SelectedFocusIconColor = ColorSchemeKeyTokens.OnPrimary;
-        SelectedFocusOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedFocusOutlineWidth = Dp.m7996constructorimpl(f3);
         SelectedHoverContainerColor = ColorSchemeKeyTokens.Primary;
         SelectedHoverIconColor = ColorSchemeKeyTokens.OnPrimary;
-        SelectedHoverOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedHoverOutlineWidth = Dp.m7996constructorimpl(f3);
         SelectedIconColor = ColorSchemeKeyTokens.OnPrimary;
-        SelectedOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedOutlineWidth = Dp.m7996constructorimpl(f3);
         SelectedPressedContainerColor = ColorSchemeKeyTokens.Primary;
         SelectedPressedIconColor = ColorSchemeKeyTokens.OnPrimary;
-        SelectedPressedOutlineWidth = Dp.m7995constructorimpl(f3);
+        SelectedPressedOutlineWidth = Dp.m7996constructorimpl(f3);
         StateLayerShape = ShapeKeyTokens.CornerFull;
-        StateLayerSize = Dp.m7995constructorimpl((float) 40.0d);
+        StateLayerSize = Dp.m7996constructorimpl((float) 40.0d);
         UnselectedDisabledOutlineColor = ColorSchemeKeyTokens.OnSurface;
-        UnselectedDisabledOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedDisabledOutlineWidth = Dp.m7996constructorimpl(f2);
         UnselectedErrorFocusOutlineColor = ColorSchemeKeyTokens.Error;
-        UnselectedErrorFocusOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedErrorFocusOutlineWidth = Dp.m7996constructorimpl(f2);
         UnselectedErrorHoverOutlineColor = ColorSchemeKeyTokens.Error;
-        UnselectedErrorHoverOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedErrorHoverOutlineWidth = Dp.m7996constructorimpl(f2);
         UnselectedErrorOutlineColor = ColorSchemeKeyTokens.Error;
         UnselectedErrorPressedOutlineColor = ColorSchemeKeyTokens.Error;
-        UnselectedErrorPressedOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedErrorPressedOutlineWidth = Dp.m7996constructorimpl(f2);
         UnselectedFocusOutlineColor = ColorSchemeKeyTokens.OnSurface;
-        UnselectedFocusOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedFocusOutlineWidth = Dp.m7996constructorimpl(f2);
         UnselectedHoverOutlineColor = ColorSchemeKeyTokens.OnSurface;
-        UnselectedHoverOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedHoverOutlineWidth = Dp.m7996constructorimpl(f2);
         UnselectedOutlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-        UnselectedOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedOutlineWidth = Dp.m7996constructorimpl(f2);
         UnselectedPressedOutlineColor = ColorSchemeKeyTokens.OnSurface;
-        UnselectedPressedOutlineWidth = Dp.m7995constructorimpl(f2);
+        UnselectedPressedOutlineWidth = Dp.m7996constructorimpl(f2);
     }
 }

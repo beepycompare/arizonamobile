@@ -30,24 +30,24 @@ public final class Scrollable2DNode$setScrollSemanticsActions$2 extends SuspendL
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         Scrollable2DNode$setScrollSemanticsActions$2 scrollable2DNode$setScrollSemanticsActions$2 = new Scrollable2DNode$setScrollSemanticsActions$2(this.this$0, continuation);
-        scrollable2DNode$setScrollSemanticsActions$2.J$0 = ((Offset) obj).m5045unboximpl();
+        scrollable2DNode$setScrollSemanticsActions$2.J$0 = ((Offset) obj).m5046unboximpl();
         return scrollable2DNode$setScrollSemanticsActions$2;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Offset offset, Continuation<? super Offset> continuation) {
-        return m573invoke3MmeM6k(offset.m5045unboximpl(), continuation);
+        return m574invoke3MmeM6k(offset.m5046unboximpl(), continuation);
     }
 
     /* renamed from: invoke-3MmeM6k  reason: not valid java name */
-    public final Object m573invoke3MmeM6k(long j, Continuation<? super Offset> continuation) {
-        return ((Scrollable2DNode$setScrollSemanticsActions$2) create(Offset.m5024boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m574invoke3MmeM6k(long j, Continuation<? super Offset> continuation) {
+        return ((Scrollable2DNode$setScrollSemanticsActions$2) create(Offset.m5025boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         ScrollingLogic2D scrollingLogic2D;
-        Object m570semanticsScrollByd4ec7I;
+        Object m571semanticsScrollByd4ec7I;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i != 0) {
@@ -61,7 +61,7 @@ public final class Scrollable2DNode$setScrollSemanticsActions$2 extends SuspendL
         long j = this.J$0;
         scrollingLogic2D = this.this$0.scrollingLogic;
         this.label = 1;
-        m570semanticsScrollByd4ec7I = Scrollable2DKt.m570semanticsScrollByd4ec7I(scrollingLogic2D, j, this);
-        return m570semanticsScrollByd4ec7I == coroutine_suspended ? coroutine_suspended : m570semanticsScrollByd4ec7I;
+        m571semanticsScrollByd4ec7I = Scrollable2DKt.m571semanticsScrollByd4ec7I(scrollingLogic2D, j, this);
+        return m571semanticsScrollByd4ec7I == coroutine_suspended ? coroutine_suspended : m571semanticsScrollByd4ec7I;
     }
 }

@@ -66,7 +66,7 @@ final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2$2$2 extends Sus
             }
             if (deriveStateLocked != null) {
                 Result.Companion companion = Result.Companion;
-                deriveStateLocked.resumeWith(Result.m9843constructorimpl(Unit.INSTANCE));
+                deriveStateLocked.resumeWith(Result.m9901constructorimpl(Unit.INSTANCE));
             }
             return Unit.INSTANCE;
         }

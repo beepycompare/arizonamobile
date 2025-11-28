@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* renamed from: io.appmetrica.analytics.impl.wi  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0678wi {
 
     /* renamed from: a  reason: collision with root package name */

@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.networktasks;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BuildConfig {
     public static final String BUILD_NUMBER = "50142752";
     public static final String BUILD_TYPE = "release";

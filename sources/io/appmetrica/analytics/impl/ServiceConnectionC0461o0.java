@@ -5,7 +5,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import io.appmetrica.analytics.internal.IAppMetricaService;
 /* renamed from: io.appmetrica.analytics.impl.o0  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ServiceConnectionC0461o0 implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */

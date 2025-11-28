@@ -11,9 +11,9 @@ public final class DockedToolbarTokens {
     private static final float ContainerTrailingSpace;
     public static final DockedToolbarTokens INSTANCE = new DockedToolbarTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 64.0d);
-    private static final float ContainerMaxSpacing = Dp.m7995constructorimpl((float) 32.0d);
-    private static final float ContainerMinSpacing = Dp.m7995constructorimpl((float) 4.0d);
+    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 64.0d);
+    private static final float ContainerMaxSpacing = Dp.m7996constructorimpl((float) 32.0d);
+    private static final float ContainerMinSpacing = Dp.m7996constructorimpl((float) 4.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
 
     private DockedToolbarTokens() {
@@ -21,8 +21,8 @@ public final class DockedToolbarTokens {
 
     static {
         float f = (float) 16.0d;
-        ContainerLeadingSpace = Dp.m7995constructorimpl(f);
-        ContainerTrailingSpace = Dp.m7995constructorimpl(f);
+        ContainerLeadingSpace = Dp.m7996constructorimpl(f);
+        ContainerTrailingSpace = Dp.m7996constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -30,22 +30,22 @@ public final class DockedToolbarTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3861getContainerHeightD9Ej5fM() {
+    public final float m3862getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
     /* renamed from: getContainerLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3862getContainerLeadingSpaceD9Ej5fM() {
+    public final float m3863getContainerLeadingSpaceD9Ej5fM() {
         return ContainerLeadingSpace;
     }
 
     /* renamed from: getContainerMaxSpacing-D9Ej5fM  reason: not valid java name */
-    public final float m3863getContainerMaxSpacingD9Ej5fM() {
+    public final float m3864getContainerMaxSpacingD9Ej5fM() {
         return ContainerMaxSpacing;
     }
 
     /* renamed from: getContainerMinSpacing-D9Ej5fM  reason: not valid java name */
-    public final float m3864getContainerMinSpacingD9Ej5fM() {
+    public final float m3865getContainerMinSpacingD9Ej5fM() {
         return ContainerMinSpacing;
     }
 
@@ -54,7 +54,7 @@ public final class DockedToolbarTokens {
     }
 
     /* renamed from: getContainerTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3865getContainerTrailingSpaceD9Ej5fM() {
+    public final float m3866getContainerTrailingSpaceD9Ej5fM() {
         return ContainerTrailingSpace;
     }
 }

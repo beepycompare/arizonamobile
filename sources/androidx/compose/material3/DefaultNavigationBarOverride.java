@@ -59,7 +59,7 @@ public final class DefaultNavigationBarOverride implements NavigationBarOverride
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(882141204, i2, -1, "androidx.compose.material3.DefaultNavigationBarOverride.NavigationBar (NavigationBar.kt:139)");
             }
-            SurfaceKt.m2996SurfaceT9BRK9s(navigationBarOverrideScope.getModifier(), null, navigationBarOverrideScope.m2610getContainerColor0d7_KjU(), navigationBarOverrideScope.m2611getContentColor0d7_KjU(), navigationBarOverrideScope.m2612getTonalElevationD9Ej5fM(), 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1991263321, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultNavigationBarOverride$NavigationBar$1
+            SurfaceKt.m2997SurfaceT9BRK9s(navigationBarOverrideScope.getModifier(), null, navigationBarOverrideScope.m2611getContainerColor0d7_KjU(), navigationBarOverrideScope.m2612getContentColor0d7_KjU(), navigationBarOverrideScope.m2613getTonalElevationD9Ej5fM(), 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1991263321, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultNavigationBarOverride$NavigationBar$1
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                     invoke(composer2, num.intValue());
@@ -75,11 +75,11 @@ public final class DefaultNavigationBarOverride implements NavigationBarOverride
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(1991263321, i3, -1, "androidx.compose.material3.DefaultNavigationBarOverride.NavigationBar.<anonymous> (NavigationBar.kt:146)");
                     }
-                    Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m879defaultMinSizeVpY3zN4$default(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), NavigationBarOverrideScope.this.getWindowInsets()), 0.0f, NavigationBarKt.access$getNavigationBarHeight$p(), 1, null));
+                    Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m880defaultMinSizeVpY3zN4$default(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), NavigationBarOverrideScope.this.getWindowInsets()), 0.0f, NavigationBarKt.access$getNavigationBarHeight$p(), 1, null));
                     Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                     Function3<RowScope, Composer, Integer, Unit> content = NavigationBarOverrideScope.this.getContent();
                     ComposerKt.sourceInformationMarkerStart(composer2, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-                    MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m701spacedBy0680j_4(NavigationBarKt.getNavigationBarItemHorizontalPadding()), centerVertically, composer2, 54);
+                    MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m702spacedBy0680j_4(NavigationBarKt.getNavigationBarItemHorizontalPadding()), centerVertically, composer2, 54);
                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
@@ -95,15 +95,15 @@ public final class DefaultNavigationBarOverride implements NavigationBarOverride
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                    Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                    Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                     content.invoke(RowScopeInstance.INSTANCE, composer2, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer2);

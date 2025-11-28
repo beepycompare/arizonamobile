@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Wa extends Ul {
     @Override // io.appmetrica.analytics.impl.Ul
     /* synthetic */ void a(Nl nl, C0356jm c0356jm);

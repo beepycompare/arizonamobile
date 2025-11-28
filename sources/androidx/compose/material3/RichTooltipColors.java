@@ -25,27 +25,27 @@ public final class RichTooltipColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2774getContainerColor0d7_KjU() {
+    public final long m2775getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2775getContentColor0d7_KjU() {
+    public final long m2776getContentColor0d7_KjU() {
         return this.contentColor;
     }
 
     /* renamed from: getTitleContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2776getTitleContentColor0d7_KjU() {
+    public final long m2777getTitleContentColor0d7_KjU() {
         return this.titleContentColor;
     }
 
     /* renamed from: getActionContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2773getActionContentColor0d7_KjU() {
+    public final long m2774getActionContentColor0d7_KjU() {
         return this.actionContentColor;
     }
 
     /* renamed from: copy-jRlVdoo$default  reason: not valid java name */
-    public static /* synthetic */ RichTooltipColors m2771copyjRlVdoo$default(RichTooltipColors richTooltipColors, long j, long j2, long j3, long j4, int i, Object obj) {
+    public static /* synthetic */ RichTooltipColors m2772copyjRlVdoo$default(RichTooltipColors richTooltipColors, long j, long j2, long j3, long j4, int i, Object obj) {
         if ((i & 1) != 0) {
             j = richTooltipColors.containerColor;
         }
@@ -57,11 +57,11 @@ public final class RichTooltipColors {
         if ((i & 4) != 0) {
             j3 = richTooltipColors.titleContentColor;
         }
-        return richTooltipColors.m2772copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? richTooltipColors.actionContentColor : j4);
+        return richTooltipColors.m2773copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? richTooltipColors.actionContentColor : j4);
     }
 
     /* renamed from: copy-jRlVdoo  reason: not valid java name */
-    public final RichTooltipColors m2772copyjRlVdoo(long j, long j2, long j3, long j4) {
+    public final RichTooltipColors m2773copyjRlVdoo(long j, long j2, long j3, long j4) {
         return new RichTooltipColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.contentColor, j3 != 16 ? j3 : this.titleContentColor, j4 != 16 ? j4 : this.actionContentColor, null);
     }
 
@@ -71,12 +71,12 @@ public final class RichTooltipColors {
         }
         if (obj instanceof RichTooltipColors) {
             RichTooltipColors richTooltipColors = (RichTooltipColors) obj;
-            return Color.m5280equalsimpl0(this.containerColor, richTooltipColors.containerColor) && Color.m5280equalsimpl0(this.contentColor, richTooltipColors.contentColor) && Color.m5280equalsimpl0(this.titleContentColor, richTooltipColors.titleContentColor) && Color.m5280equalsimpl0(this.actionContentColor, richTooltipColors.actionContentColor);
+            return Color.m5281equalsimpl0(this.containerColor, richTooltipColors.containerColor) && Color.m5281equalsimpl0(this.contentColor, richTooltipColors.contentColor) && Color.m5281equalsimpl0(this.titleContentColor, richTooltipColors.titleContentColor) && Color.m5281equalsimpl0(this.actionContentColor, richTooltipColors.actionContentColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Color.m5286hashCodeimpl(this.containerColor) * 31) + Color.m5286hashCodeimpl(this.contentColor)) * 31) + Color.m5286hashCodeimpl(this.titleContentColor)) * 31) + Color.m5286hashCodeimpl(this.actionContentColor);
+        return (((((Color.m5287hashCodeimpl(this.containerColor) * 31) + Color.m5287hashCodeimpl(this.contentColor)) * 31) + Color.m5287hashCodeimpl(this.titleContentColor)) * 31) + Color.m5287hashCodeimpl(this.actionContentColor);
     }
 }

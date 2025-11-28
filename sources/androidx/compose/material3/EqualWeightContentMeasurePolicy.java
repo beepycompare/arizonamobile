@@ -19,13 +19,13 @@ import kotlin.ranges.RangesKt;
 final class EqualWeightContentMeasurePolicy implements MeasurePolicy {
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         final ArrayList arrayList;
-        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
-        int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+        int m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
         int size = list.size();
         if (size < 1) {
-            return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7949getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$$ExternalSyntheticLambda0
+            return MeasureScope.layout$default(measureScope, m7949getMaxWidthimpl, m7950getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measure_3p2s80s$lambda$0;
@@ -35,20 +35,20 @@ final class EqualWeightContentMeasurePolicy implements MeasurePolicy {
             }, 4, null);
         }
         int i = 0;
-        if (Constraints.m7944getHasBoundedWidthimpl(j)) {
-            int i2 = m7948getMaxWidthimpl / size;
+        if (Constraints.m7945getHasBoundedWidthimpl(j)) {
+            int i2 = m7949getMaxWidthimpl / size;
             List<? extends Measurable> list2 = list;
             int size2 = list2.size();
             for (int i3 = 0; i3 < size2; i3++) {
                 int maxIntrinsicHeight = list.get(i3).maxIntrinsicHeight(i2);
-                if (m7949getMinHeightimpl < maxIntrinsicHeight) {
-                    m7949getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m7947getMaxHeightimpl(j));
+                if (m7950getMinHeightimpl < maxIntrinsicHeight) {
+                    m7950getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m7948getMaxHeightimpl(j));
                 }
             }
             ArrayList arrayList2 = new ArrayList(list.size());
             int size3 = list2.size();
             while (i < size3) {
-                arrayList2.add(list.get(i).mo6697measureBRTryo0(ConstraintsKt.m7963constrainN9IONVI(j, Constraints.Companion.m7958fixedJhjzzOo(i2, m7949getMinHeightimpl))));
+                arrayList2.add(list.get(i).mo6698measureBRTryo0(ConstraintsKt.m7964constrainN9IONVI(j, Constraints.Companion.m7959fixedJhjzzOo(i2, m7950getMinHeightimpl))));
                 i++;
             }
             arrayList = arrayList2;
@@ -56,12 +56,12 @@ final class EqualWeightContentMeasurePolicy implements MeasurePolicy {
             ArrayList arrayList3 = new ArrayList(list.size());
             int size4 = list.size();
             while (i < size4) {
-                arrayList3.add(list.get(i).mo6697measureBRTryo0(ConstraintsKt.m7963constrainN9IONVI(j, Constraints.Companion.m7959fixedHeightOenEA2s(m7949getMinHeightimpl))));
+                arrayList3.add(list.get(i).mo6698measureBRTryo0(ConstraintsKt.m7964constrainN9IONVI(j, Constraints.Companion.m7960fixedHeightOenEA2s(m7950getMinHeightimpl))));
                 i++;
             }
             arrayList = arrayList3;
         }
-        return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7949getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$$ExternalSyntheticLambda1
+        return MeasureScope.layout$default(measureScope, m7949getMaxWidthimpl, m7950getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$5;

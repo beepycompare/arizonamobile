@@ -82,29 +82,29 @@ public final class MinLinesConstrainer {
     }
 
     /* renamed from: coerceMinLines-Oh53vG4$foundation_release  reason: not valid java name */
-    public final long m1700coerceMinLinesOh53vG4$foundation_release(long j, int i) {
+    public final long m1701coerceMinLinesOh53vG4$foundation_release(long j, int i) {
         String str;
-        Paragraph m7317ParagraphUl8oQg4;
+        Paragraph m7318ParagraphUl8oQg4;
         String str2;
-        Paragraph m7317ParagraphUl8oQg42;
-        int m7949getMinHeightimpl;
+        Paragraph m7318ParagraphUl8oQg42;
+        int m7950getMinHeightimpl;
         float f = this.oneLineHeightCache;
         float f2 = this.lineHeightCache;
         if (Float.isNaN(f) || Float.isNaN(f2)) {
             str = MinLinesConstrainerKt.EmptyTextReplacement;
-            m7317ParagraphUl8oQg4 = ParagraphKt.m7317ParagraphUl8oQg4(str, this.resolvedStyle, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), this.density, this.fontFamilyResolver, (r22 & 32) != 0 ? CollectionsKt.emptyList() : null, (r22 & 64) != 0 ? CollectionsKt.emptyList() : null, (r22 & 128) != 0 ? Integer.MAX_VALUE : 1, (r22 & 256) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : TextOverflow.Companion.m7930getClipgIe3tQ8());
-            f = m7317ParagraphUl8oQg4.getHeight();
+            m7318ParagraphUl8oQg4 = ParagraphKt.m7318ParagraphUl8oQg4(str, this.resolvedStyle, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), this.density, this.fontFamilyResolver, (r22 & 32) != 0 ? CollectionsKt.emptyList() : null, (r22 & 64) != 0 ? CollectionsKt.emptyList() : null, (r22 & 128) != 0 ? Integer.MAX_VALUE : 1, (r22 & 256) != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : TextOverflow.Companion.m7931getClipgIe3tQ8());
+            f = m7318ParagraphUl8oQg4.getHeight();
             str2 = MinLinesConstrainerKt.TwoLineTextReplacement;
-            m7317ParagraphUl8oQg42 = ParagraphKt.m7317ParagraphUl8oQg4(str2, this.resolvedStyle, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), this.density, this.fontFamilyResolver, (r22 & 32) != 0 ? CollectionsKt.emptyList() : null, (r22 & 64) != 0 ? CollectionsKt.emptyList() : null, (r22 & 128) != 0 ? Integer.MAX_VALUE : 2, (r22 & 256) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : TextOverflow.Companion.m7930getClipgIe3tQ8());
-            f2 = m7317ParagraphUl8oQg42.getHeight() - f;
+            m7318ParagraphUl8oQg42 = ParagraphKt.m7318ParagraphUl8oQg4(str2, this.resolvedStyle, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), this.density, this.fontFamilyResolver, (r22 & 32) != 0 ? CollectionsKt.emptyList() : null, (r22 & 64) != 0 ? CollectionsKt.emptyList() : null, (r22 & 128) != 0 ? Integer.MAX_VALUE : 2, (r22 & 256) != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : TextOverflow.Companion.m7931getClipgIe3tQ8());
+            f2 = m7318ParagraphUl8oQg42.getHeight() - f;
             this.oneLineHeightCache = f;
             this.lineHeightCache = f2;
         }
         if (i != 1) {
-            m7949getMinHeightimpl = RangesKt.coerceAtMost(RangesKt.coerceAtLeast(Math.round(f + (f2 * (i - 1))), 0), Constraints.m7947getMaxHeightimpl(j));
+            m7950getMinHeightimpl = RangesKt.coerceAtMost(RangesKt.coerceAtLeast(Math.round(f + (f2 * (i - 1))), 0), Constraints.m7948getMaxHeightimpl(j));
         } else {
-            m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+            m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
         }
-        return ConstraintsKt.Constraints(Constraints.m7950getMinWidthimpl(j), Constraints.m7948getMaxWidthimpl(j), m7949getMinHeightimpl, Constraints.m7947getMaxHeightimpl(j));
+        return ConstraintsKt.Constraints(Constraints.m7951getMinWidthimpl(j), Constraints.m7949getMaxWidthimpl(j), m7950getMinHeightimpl, Constraints.m7948getMaxHeightimpl(j));
     }
 }

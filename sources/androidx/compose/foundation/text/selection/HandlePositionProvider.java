@@ -17,7 +17,7 @@ public final class HandlePositionProvider implements PopupPositionProvider {
     public static final int $stable = 0;
     private final Alignment handleReferencePoint;
     private final OffsetProvider positionProvider;
-    private long prevPosition = Offset.Companion.m5051getZeroF1C5BW0();
+    private long prevPosition = Offset.Companion.m5052getZeroF1C5BW0();
 
     public HandlePositionProvider(Alignment alignment, OffsetProvider offsetProvider) {
         this.handleReferencePoint = alignment;
@@ -26,12 +26,12 @@ public final class HandlePositionProvider implements PopupPositionProvider {
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
-    public long mo393calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
-        long mo1229provideF1C5BW0 = this.positionProvider.mo1229provideF1C5BW0();
-        if ((9223372034707292159L & mo1229provideF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            mo1229provideF1C5BW0 = this.prevPosition;
+    public long mo394calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+        long mo1230provideF1C5BW0 = this.positionProvider.mo1230provideF1C5BW0();
+        if ((9223372034707292159L & mo1230provideF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats) {
+            mo1230provideF1C5BW0 = this.prevPosition;
         }
-        this.prevPosition = mo1229provideF1C5BW0;
-        return IntOffset.m8127plusqkQi6aY(IntOffset.m8127plusqkQi6aY(intRect.m8152getTopLeftnOccac(), IntOffsetKt.m8140roundk4lQ0M(mo1229provideF1C5BW0)), this.handleReferencePoint.mo4758alignKFBX0sM(j2, IntSize.Companion.m8171getZeroYbymL2g(), layoutDirection));
+        this.prevPosition = mo1230provideF1C5BW0;
+        return IntOffset.m8128plusqkQi6aY(IntOffset.m8128plusqkQi6aY(intRect.m8153getTopLeftnOccac(), IntOffsetKt.m8141roundk4lQ0M(mo1230provideF1C5BW0)), this.handleReferencePoint.mo4759alignKFBX0sM(j2, IntSize.Companion.m8172getZeroYbymL2g(), layoutDirection));
     }
 }

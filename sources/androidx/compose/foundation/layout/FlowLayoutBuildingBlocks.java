@@ -96,7 +96,7 @@ public final class FlowLayoutBuildingBlocks {
         }
 
         /* renamed from: getEllipsisSize-OO21N7I  reason: not valid java name */
-        public final long m755getEllipsisSizeOO21N7I() {
+        public final long m756getEllipsisSizeOO21N7I() {
             return this.ellipsisSize;
         }
 
@@ -112,37 +112,37 @@ public final class FlowLayoutBuildingBlocks {
     public final WrapEllipsisInfo getWrapEllipsisInfo(WrapInfo wrapInfo, boolean z, int i, int i2, int i3, int i4) {
         WrapEllipsisInfo ellipsisInfo$foundation_layout;
         if (wrapInfo.isLastItemInContainer() && (ellipsisInfo$foundation_layout = this.overflow.ellipsisInfo$foundation_layout(z, i, i2)) != null) {
-            ellipsisInfo$foundation_layout.setPlaceEllipsisOnLastContentLine(i >= 0 && (i4 == 0 || (i3 - IntIntPair.m40getFirstimpl(ellipsisInfo$foundation_layout.m755getEllipsisSizeOO21N7I()) >= 0 && i4 < this.maxItemsInMainAxis)));
+            ellipsisInfo$foundation_layout.setPlaceEllipsisOnLastContentLine(i >= 0 && (i4 == 0 || (i3 - IntIntPair.m41getFirstimpl(ellipsisInfo$foundation_layout.m756getEllipsisSizeOO21N7I()) >= 0 && i4 < this.maxItemsInMainAxis)));
             return ellipsisInfo$foundation_layout;
         }
         return null;
     }
 
     /* renamed from: getWrapInfo-OpUlnko  reason: not valid java name */
-    public final WrapInfo m754getWrapInfoOpUlnko(boolean z, int i, long j, IntIntPair intIntPair, int i2, int i3, int i4, boolean z2, boolean z3) {
+    public final WrapInfo m755getWrapInfoOpUlnko(boolean z, int i, long j, IntIntPair intIntPair, int i2, int i3, int i4, boolean z2, boolean z3) {
         int i5 = i3 + i4;
         if (intIntPair == null) {
             return new WrapInfo(true, true);
         }
-        if (this.overflow.getType$foundation_layout() != FlowLayoutOverflow.OverflowType.Visible && (i2 >= this.maxLines || IntIntPair.m41getSecondimpl(j) - IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()) < 0)) {
+        if (this.overflow.getType$foundation_layout() != FlowLayoutOverflow.OverflowType.Visible && (i2 >= this.maxLines || IntIntPair.m42getSecondimpl(j) - IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()) < 0)) {
             return new WrapInfo(true, true);
         }
-        if (i != 0 && (i >= this.maxItemsInMainAxis || IntIntPair.m40getFirstimpl(j) - IntIntPair.m40getFirstimpl(intIntPair.m44unboximpl()) < 0)) {
+        if (i != 0 && (i >= this.maxItemsInMainAxis || IntIntPair.m41getFirstimpl(j) - IntIntPair.m41getFirstimpl(intIntPair.m45unboximpl()) < 0)) {
             if (z2) {
                 return new WrapInfo(true, true);
             }
-            return new WrapInfo(true, m754getWrapInfoOpUlnko(z, 0, IntIntPair.m36constructorimpl(Constraints.m7948getMaxWidthimpl(this.constraints), (IntIntPair.m41getSecondimpl(j) - this.crossAxisSpacing) - i4), IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(IntIntPair.m40getFirstimpl(intIntPair.m44unboximpl()) - this.mainAxisSpacing, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()))), i2 + 1, i5, 0, true, false).isLastItemInContainer());
+            return new WrapInfo(true, m755getWrapInfoOpUlnko(z, 0, IntIntPair.m37constructorimpl(Constraints.m7949getMaxWidthimpl(this.constraints), (IntIntPair.m42getSecondimpl(j) - this.crossAxisSpacing) - i4), IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(IntIntPair.m41getFirstimpl(intIntPair.m45unboximpl()) - this.mainAxisSpacing, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()))), i2 + 1, i5, 0, true, false).isLastItemInContainer());
         }
-        int max = i3 + Math.max(i4, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()));
-        IntIntPair m762ellipsisSizeF35zmw$foundation_layout = z3 ? null : this.overflow.m762ellipsisSizeF35zmw$foundation_layout(z, i2, max);
-        if (m762ellipsisSizeF35zmw$foundation_layout != null) {
-            m762ellipsisSizeF35zmw$foundation_layout.m44unboximpl();
-            if (i + 1 >= this.maxItemsInMainAxis || ((IntIntPair.m40getFirstimpl(j) - IntIntPair.m40getFirstimpl(intIntPair.m44unboximpl())) - this.mainAxisSpacing) - IntIntPair.m40getFirstimpl(m762ellipsisSizeF35zmw$foundation_layout.m44unboximpl()) < 0) {
+        int max = i3 + Math.max(i4, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()));
+        IntIntPair m763ellipsisSizeF35zmw$foundation_layout = z3 ? null : this.overflow.m763ellipsisSizeF35zmw$foundation_layout(z, i2, max);
+        if (m763ellipsisSizeF35zmw$foundation_layout != null) {
+            m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl();
+            if (i + 1 >= this.maxItemsInMainAxis || ((IntIntPair.m41getFirstimpl(j) - IntIntPair.m41getFirstimpl(intIntPair.m45unboximpl())) - this.mainAxisSpacing) - IntIntPair.m41getFirstimpl(m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) < 0) {
                 if (z3) {
                     return new WrapInfo(true, true);
                 }
-                WrapInfo m754getWrapInfoOpUlnko = m754getWrapInfoOpUlnko(false, 0, IntIntPair.m36constructorimpl(Constraints.m7948getMaxWidthimpl(this.constraints), (IntIntPair.m41getSecondimpl(j) - this.crossAxisSpacing) - Math.max(i4, IntIntPair.m41getSecondimpl(intIntPair.m44unboximpl()))), m762ellipsisSizeF35zmw$foundation_layout, i2 + 1, max, 0, true, true);
-                return new WrapInfo(m754getWrapInfoOpUlnko.isLastItemInContainer(), m754getWrapInfoOpUlnko.isLastItemInContainer());
+                WrapInfo m755getWrapInfoOpUlnko = m755getWrapInfoOpUlnko(false, 0, IntIntPair.m37constructorimpl(Constraints.m7949getMaxWidthimpl(this.constraints), (IntIntPair.m42getSecondimpl(j) - this.crossAxisSpacing) - Math.max(i4, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()))), m763ellipsisSizeF35zmw$foundation_layout, i2 + 1, max, 0, true, true);
+                return new WrapInfo(m755getWrapInfoOpUlnko.isLastItemInContainer(), m755getWrapInfoOpUlnko.isLastItemInContainer());
             }
         }
         return new WrapInfo(false, false);

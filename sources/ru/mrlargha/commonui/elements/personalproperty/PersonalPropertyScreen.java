@@ -78,16 +78,12 @@ public final class PersonalPropertyScreen extends SAMPUIElement {
         rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyRecycler.setVisibility(4);
         rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyTitle.setText(personalPropertyData.getTitle());
         rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyDescription.setText(personalPropertyData.getDescription());
-        Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + personalPropertyData.getImageLink()).placeholder(R.drawable.rodina_universal_placeholder).into(rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyImage);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + personalPropertyData.getImageLink()).placeholder(R.drawable.rodina_universal_placeholder).into(rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyImage);
         List<PersonalPropertyDetail> details = personalPropertyData.getDetails();
-        if (details.isEmpty()) {
-            details = null;
-        }
-        if (details != null) {
+        List<PersonalPropertyDetail> list = details.isEmpty() ? null : details;
+        if (list != null) {
             rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyRecycler.setVisibility(0);
-            rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyRecycler.setAdapter(new PersonalPropertyAdapter(details));
+            rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyRecycler.setAdapter(new PersonalPropertyAdapter(list));
         }
         String primaryButtonText = personalPropertyData.getPrimaryButtonText();
         if (primaryButtonText != null) {

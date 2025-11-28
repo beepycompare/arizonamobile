@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.w2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0662w2 {
     public static void a(C0305hm c0305hm, JSONObject jSONObject) {
         JSONObject optJSONObject = jSONObject.optJSONObject("attribution");

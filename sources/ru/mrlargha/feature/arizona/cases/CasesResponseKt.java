@@ -25,6 +25,6 @@ public final class CasesResponseKt {
     public static final void getCaseImageUrl(ImageView imageView, String imageIc) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
         Intrinsics.checkNotNullParameter(imageIc, "imageIc");
-        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "/projects/arizona-rp/assets/images/donate/" + imageIc).into(imageView);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/projects/arizona-rp/assets/images/donate/" + imageIc).into(imageView);
     }
 }

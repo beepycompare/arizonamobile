@@ -104,27 +104,27 @@ public final class ContextualFlowRowOverflow extends FlowLayoutOverflow {
         }
 
         /* renamed from: expandOrCollapseIndicator--jt2gSs  reason: not valid java name */
-        public final ContextualFlowRowOverflow m743expandOrCollapseIndicatorjt2gSs(final Function3<? super ContextualFlowRowOverflowScope, ? super Composer, ? super Integer, Unit> function3, final Function3<? super ContextualFlowRowOverflowScope, ? super Composer, ? super Integer, Unit> function32, int i, float f, Composer composer, int i2, int i3) {
+        public final ContextualFlowRowOverflow m744expandOrCollapseIndicatorjt2gSs(final Function3<? super ContextualFlowRowOverflowScope, ? super Composer, ? super Integer, Unit> function3, final Function3<? super ContextualFlowRowOverflowScope, ? super Composer, ? super Integer, Unit> function32, int i, float f, Composer composer, int i2, int i3) {
             ComposerKt.sourceInformationMarkerStart(composer, 1802465558, "C(expandOrCollapseIndicator)N(expandIndicator,collapseIndicator,minRowsToShowCollapse,minHeightToShowCollapse:c#ui.unit.Dp)407@19609L7,408@19677L1111:FlowLayoutOverflow.kt#2w3rfo");
             boolean z = true;
             int i4 = (i3 & 4) != 0 ? 1 : i;
-            float m7995constructorimpl = (i3 & 8) != 0 ? Dp.m7995constructorimpl(0) : f;
+            float m7996constructorimpl = (i3 & 8) != 0 ? Dp.m7996constructorimpl(0) : f;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1802465558, i2, -1, "androidx.compose.foundation.layout.ContextualFlowRowOverflow.Companion.expandOrCollapseIndicator (FlowLayoutOverflow.kt:405)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            int mo423roundToPx0680j_4 = ((Density) consume).mo423roundToPx0680j_4(m7995constructorimpl);
+            int mo424roundToPx0680j_4 = ((Density) consume).mo424roundToPx0680j_4(m7996constructorimpl);
             ComposerKt.sourceInformationMarkerStart(composer, 1297598989, "CC(remember):FlowLayoutOverflow.kt#9igjgp");
-            boolean changed = ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i4)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changed(mo423roundToPx0680j_4) | ((((i2 & 14) ^ 6) > 4 && composer.changed(function3)) || (i2 & 6) == 4);
+            boolean changed = ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i4)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changed(mo424roundToPx0680j_4) | ((((i2 & 14) ^ 6) > 4 && composer.changed(function3)) || (i2 & 6) == 4);
             if ((((i2 & 112) ^ 48) <= 32 || !composer.changed(function32)) && (i2 & 48) != 32) {
                 z = false;
             }
             boolean z2 = changed | z;
             Object rememberedValue = composer.rememberedValue();
             if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
-                ContextualFlowRowOverflow contextualFlowRowOverflow = new ContextualFlowRowOverflow(FlowLayoutOverflow.OverflowType.ExpandOrCollapseIndicator, i4, mo423roundToPx0680j_4, new Function1() { // from class: androidx.compose.foundation.layout.ContextualFlowRowOverflow$Companion$$ExternalSyntheticLambda1
+                ContextualFlowRowOverflow contextualFlowRowOverflow = new ContextualFlowRowOverflow(FlowLayoutOverflow.OverflowType.ExpandOrCollapseIndicator, i4, mo424roundToPx0680j_4, new Function1() { // from class: androidx.compose.foundation.layout.ContextualFlowRowOverflow$Companion$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Function2 expandOrCollapseIndicator__jt2gSs$lambda$4$lambda$2;

@@ -9,6 +9,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 final class FocusGroupNode extends DelegatingNode {
     public FocusGroupNode() {
-        delegate(FocusTargetModifierNodeKt.m4949FocusTargetModifierNodePYyLHbc$default(Focusability.Companion.m4970getNeverLCbbffg(), null, 2, null));
+        delegate(FocusTargetModifierNodeKt.m4950FocusTargetModifierNodePYyLHbc$default(Focusability.Companion.m4971getNeverLCbbffg(), null, 2, null));
     }
 }

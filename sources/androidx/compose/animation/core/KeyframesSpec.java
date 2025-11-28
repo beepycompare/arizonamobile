@@ -74,8 +74,8 @@ public final class KeyframesSpec<T> implements DurationBasedAnimationSpec<T> {
         }
 
         /* renamed from: using-ngzHuyU  reason: not valid java name */
-        public final KeyframeEntity<T> m180usingngzHuyU(KeyframeEntity<T> keyframeEntity, int i) {
-            keyframeEntity.m179setArcModeRur9ykg$animation_core(i);
+        public final KeyframeEntity<T> m181usingngzHuyU(KeyframeEntity<T> keyframeEntity, int i) {
+            keyframeEntity.m180setArcModeRur9ykg$animation_core(i);
             return keyframeEntity;
         }
     }
@@ -111,7 +111,7 @@ public final class KeyframesSpec<T> implements DurationBasedAnimationSpec<T> {
                             i = i3;
                             jArr2 = jArr3;
                             iArr2 = iArr3;
-                            mutableIntObjectMap.set(i7, new VectorizedKeyframeSpecElementInfo(twoWayConverter.getConvertToVector().invoke(keyframeEntity.getValue$animation_core()), keyframeEntity.getEasing$animation_core(), keyframeEntity.m178getArcMode9TMq4$animation_core(), null));
+                            mutableIntObjectMap.set(i7, new VectorizedKeyframeSpecElementInfo(twoWayConverter.getConvertToVector().invoke(keyframeEntity.getValue$animation_core()), keyframeEntity.getEasing$animation_core(), keyframeEntity.m179getArcMode9TMq4$animation_core(), null));
                         } else {
                             jArr2 = jArr3;
                             iArr2 = iArr3;
@@ -147,7 +147,7 @@ public final class KeyframesSpec<T> implements DurationBasedAnimationSpec<T> {
             mutableIntList.add(this.config.getDurationMillis());
         }
         mutableIntList.sort();
-        return new VectorizedKeyframesSpec<>(mutableIntList, mutableIntObjectMap, this.config.getDurationMillis(), this.config.getDelayMillis(), EasingKt.getLinearEasing(), ArcMode.Companion.m174getArcLinear9TMq4(), null);
+        return new VectorizedKeyframesSpec<>(mutableIntList, mutableIntObjectMap, this.config.getDurationMillis(), this.config.getDelayMillis(), EasingKt.getLinearEasing(), ArcMode.Companion.m175getArcLinear9TMq4(), null);
     }
 
     /* compiled from: AnimationSpec.kt */
@@ -162,16 +162,16 @@ public final class KeyframesSpec<T> implements DurationBasedAnimationSpec<T> {
         }
 
         public /* synthetic */ KeyframeEntity(Object obj, Easing easing, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-            this(obj, (i2 & 2) != 0 ? EasingKt.getLinearEasing() : easing, (i2 & 4) != 0 ? ArcMode.Companion.m174getArcLinear9TMq4() : i, null);
+            this(obj, (i2 & 2) != 0 ? EasingKt.getLinearEasing() : easing, (i2 & 4) != 0 ? ArcMode.Companion.m175getArcLinear9TMq4() : i, null);
         }
 
         /* renamed from: getArcMode--9T-Mq4$animation_core  reason: not valid java name */
-        public final int m178getArcMode9TMq4$animation_core() {
+        public final int m179getArcMode9TMq4$animation_core() {
             return this.arcMode;
         }
 
         /* renamed from: setArcMode-Rur9ykg$animation_core  reason: not valid java name */
-        public final void m179setArcModeRur9ykg$animation_core(int i) {
+        public final void m180setArcModeRur9ykg$animation_core(int i) {
             this.arcMode = i;
         }
 
@@ -186,14 +186,14 @@ public final class KeyframesSpec<T> implements DurationBasedAnimationSpec<T> {
             }
             if (obj instanceof KeyframeEntity) {
                 KeyframeEntity keyframeEntity = (KeyframeEntity) obj;
-                return Intrinsics.areEqual(keyframeEntity.getValue$animation_core(), getValue$animation_core()) && Intrinsics.areEqual(keyframeEntity.getEasing$animation_core(), getEasing$animation_core()) && ArcMode.m168equalsimpl0(keyframeEntity.arcMode, this.arcMode);
+                return Intrinsics.areEqual(keyframeEntity.getValue$animation_core(), getValue$animation_core()) && Intrinsics.areEqual(keyframeEntity.getEasing$animation_core(), getEasing$animation_core()) && ArcMode.m169equalsimpl0(keyframeEntity.arcMode, this.arcMode);
             }
             return false;
         }
 
         public int hashCode() {
             T value$animation_core = getValue$animation_core();
-            return ((((value$animation_core != null ? value$animation_core.hashCode() : 0) * 31) + ArcMode.m169hashCodeimpl(this.arcMode)) * 31) + getEasing$animation_core().hashCode();
+            return ((((value$animation_core != null ? value$animation_core.hashCode() : 0) * 31) + ArcMode.m170hashCodeimpl(this.arcMode)) * 31) + getEasing$animation_core().hashCode();
         }
     }
 }

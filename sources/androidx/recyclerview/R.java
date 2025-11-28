@@ -4,16 +4,16 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int fastScrollEnabled = 0x7f040271;
-        public static int fastScrollHorizontalThumbDrawable = 0x7f040272;
-        public static int fastScrollHorizontalTrackDrawable = 0x7f040273;
-        public static int fastScrollVerticalThumbDrawable = 0x7f040274;
-        public static int fastScrollVerticalTrackDrawable = 0x7f040275;
-        public static int layoutManager = 0x7f040360;
-        public static int recyclerViewStyle = 0x7f04052a;
-        public static int reverseLayout = 0x7f040537;
-        public static int spanCount = 0x7f040599;
-        public static int stackFromEnd = 0x7f0405aa;
+        public static int fastScrollEnabled = 0x7f04026c;
+        public static int fastScrollHorizontalThumbDrawable = 0x7f04026d;
+        public static int fastScrollHorizontalTrackDrawable = 0x7f04026e;
+        public static int fastScrollVerticalThumbDrawable = 0x7f04026f;
+        public static int fastScrollVerticalTrackDrawable = 0x7f040270;
+        public static int layoutManager = 0x7f04035a;
+        public static int recyclerViewStyle = 0x7f040521;
+        public static int reverseLayout = 0x7f04052e;
+        public static int spanCount = 0x7f040590;
+        public static int stackFromEnd = 0x7f0405a1;
 
         private attr() {
         }
@@ -34,7 +34,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int item_touch_helper_previous_elevation = 0x7f0a0732;
+        public static int item_touch_helper_previous_elevation = 0x7f0a0711;
 
         private id() {
         }

@@ -57,7 +57,7 @@ public interface ViewSizeResolver<T extends View> extends SizeResolver {
                     if (!this.isResumed) {
                         this.isResumed = true;
                         Result.Companion companion = Result.Companion;
-                        cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(size2));
+                        cancellableContinuationImpl2.resumeWith(Result.m9901constructorimpl(size2));
                     }
                 }
                 return true;
@@ -116,11 +116,11 @@ public interface ViewSizeResolver<T extends View> extends SizeResolver {
         }
         int i4 = i - i3;
         if (i4 > 0) {
-            return Dimension.Pixels.m9137boximpl(DimensionKt.Dimension(i4));
+            return Dimension.Pixels.m9149boximpl(DimensionKt.Dimension(i4));
         }
         int i5 = i2 - i3;
         if (i5 > 0) {
-            return Dimension.Pixels.m9137boximpl(DimensionKt.Dimension(i5));
+            return Dimension.Pixels.m9149boximpl(DimensionKt.Dimension(i5));
         }
         return null;
     }

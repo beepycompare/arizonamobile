@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class V5 implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {

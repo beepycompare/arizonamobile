@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.util.Locale;
 import java.util.UUID;
 import kotlin.text.StringsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ge {
 
     /* renamed from: a  reason: collision with root package name */

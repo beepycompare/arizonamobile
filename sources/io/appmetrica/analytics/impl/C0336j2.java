@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdScope;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.j2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0336j2 implements AppSetIdProvider {
 
     /* renamed from: a  reason: collision with root package name */

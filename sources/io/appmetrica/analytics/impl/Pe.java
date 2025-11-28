@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Pe implements Bc, ActivationBarrierCallback {
 
     /* renamed from: a  reason: collision with root package name */

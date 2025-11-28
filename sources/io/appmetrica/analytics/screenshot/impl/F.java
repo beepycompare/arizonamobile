@@ -2,7 +2,7 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class F implements Parcelable {
     public static final E CREATOR = new E();
 

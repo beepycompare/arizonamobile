@@ -10,54 +10,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class ArcMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int ArcAbove = m166constructorimpl(5);
-    private static final int ArcBelow = m166constructorimpl(4);
-    private static final int ArcLinear = m166constructorimpl(0);
+    private static final int ArcAbove = m167constructorimpl(5);
+    private static final int ArcBelow = m167constructorimpl(4);
+    private static final int ArcLinear = m167constructorimpl(0);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ArcMode m165boximpl(int i) {
+    public static final /* synthetic */ ArcMode m166boximpl(int i) {
         return new ArcMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m166constructorimpl(int i) {
+    public static int m167constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m167equalsimpl(int i, Object obj) {
-        return (obj instanceof ArcMode) && i == ((ArcMode) obj).m171unboximpl();
+    public static boolean m168equalsimpl(int i, Object obj) {
+        return (obj instanceof ArcMode) && i == ((ArcMode) obj).m172unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m168equalsimpl0(int i, int i2) {
+    public static final boolean m169equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m169hashCodeimpl(int i) {
+    public static int m170hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m170toStringimpl(int i) {
+    public static String m171toStringimpl(int i) {
         return "ArcMode(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m167equalsimpl(this.value, obj);
+        return m168equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m169hashCodeimpl(this.value);
+        return m170hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m170toStringimpl(this.value);
+        return m171toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m171unboximpl() {
+    public final /* synthetic */ int m172unboximpl() {
         return this.value;
     }
 
@@ -77,17 +77,17 @@ public final class ArcMode {
         }
 
         /* renamed from: getArcAbove--9T-Mq4  reason: not valid java name */
-        public final int m172getArcAbove9TMq4() {
+        public final int m173getArcAbove9TMq4() {
             return ArcMode.ArcAbove;
         }
 
         /* renamed from: getArcBelow--9T-Mq4  reason: not valid java name */
-        public final int m173getArcBelow9TMq4() {
+        public final int m174getArcBelow9TMq4() {
             return ArcMode.ArcBelow;
         }
 
         /* renamed from: getArcLinear--9T-Mq4  reason: not valid java name */
-        public final int m174getArcLinear9TMq4() {
+        public final int m175getArcLinear9TMq4() {
             return ArcMode.ArcLinear;
         }
     }

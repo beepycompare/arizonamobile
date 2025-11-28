@@ -32,9 +32,9 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: getSize-YbymL2g */
-    public long mo6705getSizeYbymL2g() {
+    public long mo6706getSizeYbymL2g() {
         LookaheadDelegate lookaheadDelegate = this.lookaheadDelegate;
-        return IntSize.m8161constructorimpl((lookaheadDelegate.getWidth() << 32) | (lookaheadDelegate.getHeight() & 4294967295L));
+        return IntSize.m8162constructorimpl((lookaheadDelegate.getWidth() << 32) | (lookaheadDelegate.getHeight() & 4294967295L));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
@@ -79,78 +79,78 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
     }
 
     /* renamed from: getLookaheadOffset-F1C5BW0  reason: not valid java name */
-    private final long m6725getLookaheadOffsetF1C5BW0() {
+    private final long m6726getLookaheadOffsetF1C5BW0() {
         LookaheadDelegate rootLookaheadDelegate = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(this.lookaheadDelegate);
-        return Offset.m5039minusMKHz9U(mo6706localPositionOfR5De75A(rootLookaheadDelegate.getCoordinates(), Offset.Companion.m5051getZeroF1C5BW0()), getCoordinator().mo6706localPositionOfR5De75A(rootLookaheadDelegate.getCoordinator(), Offset.Companion.m5051getZeroF1C5BW0()));
+        return Offset.m5040minusMKHz9U(mo6707localPositionOfR5De75A(rootLookaheadDelegate.getCoordinates(), Offset.Companion.m5052getZeroF1C5BW0()), getCoordinator().mo6707localPositionOfR5De75A(rootLookaheadDelegate.getCoordinator(), Offset.Companion.m5052getZeroF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: screenToLocal-MK-Hz9U */
-    public long mo6711screenToLocalMKHz9U(long j) {
-        return Offset.m5040plusMKHz9U(getCoordinator().mo6711screenToLocalMKHz9U(j), m6725getLookaheadOffsetF1C5BW0());
+    public long mo6712screenToLocalMKHz9U(long j) {
+        return Offset.m5041plusMKHz9U(getCoordinator().mo6712screenToLocalMKHz9U(j), m6726getLookaheadOffsetF1C5BW0());
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToScreen-MK-Hz9U */
-    public long mo6709localToScreenMKHz9U(long j) {
-        return getCoordinator().mo6709localToScreenMKHz9U(Offset.m5040plusMKHz9U(j, m6725getLookaheadOffsetF1C5BW0()));
+    public long mo6710localToScreenMKHz9U(long j) {
+        return getCoordinator().mo6710localToScreenMKHz9U(Offset.m5041plusMKHz9U(j, m6726getLookaheadOffsetF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: windowToLocal-MK-Hz9U */
-    public long mo6714windowToLocalMKHz9U(long j) {
-        return Offset.m5040plusMKHz9U(getCoordinator().mo6714windowToLocalMKHz9U(j), m6725getLookaheadOffsetF1C5BW0());
+    public long mo6715windowToLocalMKHz9U(long j) {
+        return Offset.m5041plusMKHz9U(getCoordinator().mo6715windowToLocalMKHz9U(j), m6726getLookaheadOffsetF1C5BW0());
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToWindow-MK-Hz9U */
-    public long mo6710localToWindowMKHz9U(long j) {
-        return getCoordinator().mo6710localToWindowMKHz9U(Offset.m5040plusMKHz9U(j, m6725getLookaheadOffsetF1C5BW0()));
+    public long mo6711localToWindowMKHz9U(long j) {
+        return getCoordinator().mo6711localToWindowMKHz9U(Offset.m5041plusMKHz9U(j, m6726getLookaheadOffsetF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToRoot-MK-Hz9U */
-    public long mo6708localToRootMKHz9U(long j) {
-        return getCoordinator().mo6708localToRootMKHz9U(Offset.m5040plusMKHz9U(j, m6725getLookaheadOffsetF1C5BW0()));
+    public long mo6709localToRootMKHz9U(long j) {
+        return getCoordinator().mo6709localToRootMKHz9U(Offset.m5041plusMKHz9U(j, m6726getLookaheadOffsetF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localPositionOf-R5De75A */
-    public long mo6706localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j) {
-        return mo6707localPositionOfS_NoaFU(layoutCoordinates, j, true);
+    public long mo6707localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j) {
+        return mo6708localPositionOfS_NoaFU(layoutCoordinates, j, true);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localPositionOf-S_NoaFU */
-    public long mo6707localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
+    public long mo6708localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
         if (layoutCoordinates instanceof LookaheadLayoutCoordinates) {
             LookaheadDelegate lookaheadDelegate = ((LookaheadLayoutCoordinates) layoutCoordinates).lookaheadDelegate;
             lookaheadDelegate.getCoordinator().onCoordinatesUsed$ui_release();
             LookaheadDelegate lookaheadDelegate2 = getCoordinator().findCommonAncestor$ui_release(lookaheadDelegate.getCoordinator()).getLookaheadDelegate();
             if (lookaheadDelegate2 != null) {
-                long m8126minusqkQi6aY = IntOffset.m8126minusqkQi6aY(IntOffset.m8127plusqkQi6aY(lookaheadDelegate.m6928positionIniSbpLlY$ui_release(lookaheadDelegate2, !z), IntOffsetKt.m8140roundk4lQ0M(j)), this.lookaheadDelegate.m6928positionIniSbpLlY$ui_release(lookaheadDelegate2, !z));
-                return Offset.m5027constructorimpl((Float.floatToRawIntBits(IntOffset.m8123getXimpl(m8126minusqkQi6aY)) << 32) | (Float.floatToRawIntBits(IntOffset.m8124getYimpl(m8126minusqkQi6aY)) & 4294967295L));
+                long m8127minusqkQi6aY = IntOffset.m8127minusqkQi6aY(IntOffset.m8128plusqkQi6aY(lookaheadDelegate.m6929positionIniSbpLlY$ui_release(lookaheadDelegate2, !z), IntOffsetKt.m8141roundk4lQ0M(j)), this.lookaheadDelegate.m6929positionIniSbpLlY$ui_release(lookaheadDelegate2, !z));
+                return Offset.m5028constructorimpl((Float.floatToRawIntBits(IntOffset.m8124getXimpl(m8127minusqkQi6aY)) << 32) | (Float.floatToRawIntBits(IntOffset.m8125getYimpl(m8127minusqkQi6aY)) & 4294967295L));
             }
             LookaheadDelegate rootLookaheadDelegate = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(lookaheadDelegate);
-            long m8127plusqkQi6aY = IntOffset.m8127plusqkQi6aY(IntOffset.m8127plusqkQi6aY(lookaheadDelegate.m6928positionIniSbpLlY$ui_release(rootLookaheadDelegate, !z), rootLookaheadDelegate.mo6917getPositionnOccac()), IntOffsetKt.m8140roundk4lQ0M(j));
+            long m8128plusqkQi6aY = IntOffset.m8128plusqkQi6aY(IntOffset.m8128plusqkQi6aY(lookaheadDelegate.m6929positionIniSbpLlY$ui_release(rootLookaheadDelegate, !z), rootLookaheadDelegate.mo6918getPositionnOccac()), IntOffsetKt.m8141roundk4lQ0M(j));
             LookaheadDelegate rootLookaheadDelegate2 = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(this.lookaheadDelegate);
-            long m8126minusqkQi6aY2 = IntOffset.m8126minusqkQi6aY(m8127plusqkQi6aY, IntOffset.m8127plusqkQi6aY(this.lookaheadDelegate.m6928positionIniSbpLlY$ui_release(rootLookaheadDelegate2, !z), rootLookaheadDelegate2.mo6917getPositionnOccac()));
-            long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(IntOffset.m8124getYimpl(m8126minusqkQi6aY2)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m8123getXimpl(m8126minusqkQi6aY2)) << 32));
+            long m8127minusqkQi6aY2 = IntOffset.m8127minusqkQi6aY(m8128plusqkQi6aY, IntOffset.m8128plusqkQi6aY(this.lookaheadDelegate.m6929positionIniSbpLlY$ui_release(rootLookaheadDelegate2, !z), rootLookaheadDelegate2.mo6918getPositionnOccac()));
+            long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(IntOffset.m8125getYimpl(m8127minusqkQi6aY2)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m8124getXimpl(m8127minusqkQi6aY2)) << 32));
             NodeCoordinator wrappedBy$ui_release = rootLookaheadDelegate2.getCoordinator().getWrappedBy$ui_release();
             Intrinsics.checkNotNull(wrappedBy$ui_release);
             NodeCoordinator wrappedBy$ui_release2 = rootLookaheadDelegate.getCoordinator().getWrappedBy$ui_release();
             Intrinsics.checkNotNull(wrappedBy$ui_release2);
-            return wrappedBy$ui_release.mo6707localPositionOfS_NoaFU(wrappedBy$ui_release2, m5027constructorimpl, z);
+            return wrappedBy$ui_release.mo6708localPositionOfS_NoaFU(wrappedBy$ui_release2, m5028constructorimpl, z);
         }
         LookaheadDelegate rootLookaheadDelegate3 = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(this.lookaheadDelegate);
-        long mo6707localPositionOfS_NoaFU = mo6707localPositionOfS_NoaFU(rootLookaheadDelegate3.getLookaheadLayoutCoordinates(), j, z);
-        long mo6917getPositionnOccac = rootLookaheadDelegate3.mo6917getPositionnOccac();
-        long m5039minusMKHz9U = Offset.m5039minusMKHz9U(mo6707localPositionOfS_NoaFU, Offset.m5027constructorimpl((4294967295L & Float.floatToRawIntBits(IntOffset.m8124getYimpl(mo6917getPositionnOccac))) | (Float.floatToRawIntBits(IntOffset.m8123getXimpl(mo6917getPositionnOccac)) << 32)));
+        long mo6708localPositionOfS_NoaFU = mo6708localPositionOfS_NoaFU(rootLookaheadDelegate3.getLookaheadLayoutCoordinates(), j, z);
+        long mo6918getPositionnOccac = rootLookaheadDelegate3.mo6918getPositionnOccac();
+        long m5040minusMKHz9U = Offset.m5040minusMKHz9U(mo6708localPositionOfS_NoaFU, Offset.m5028constructorimpl((4294967295L & Float.floatToRawIntBits(IntOffset.m8125getYimpl(mo6918getPositionnOccac))) | (Float.floatToRawIntBits(IntOffset.m8124getXimpl(mo6918getPositionnOccac)) << 32)));
         LayoutCoordinates parentCoordinates = rootLookaheadDelegate3.getCoordinator().getParentCoordinates();
         if (parentCoordinates == null) {
             parentCoordinates = rootLookaheadDelegate3.getCoordinator().getCoordinates();
         }
-        return Offset.m5040plusMKHz9U(m5039minusMKHz9U, parentCoordinates.mo6707localPositionOfS_NoaFU(layoutCoordinates, Offset.Companion.m5051getZeroF1C5BW0(), z));
+        return Offset.m5041plusMKHz9U(m5040minusMKHz9U, parentCoordinates.mo6708localPositionOfS_NoaFU(layoutCoordinates, Offset.Companion.m5052getZeroF1C5BW0(), z));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
@@ -160,14 +160,14 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: transformFrom-EL8BTi8 */
-    public void mo6712transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
-        getCoordinator().mo6712transformFromEL8BTi8(layoutCoordinates, fArr);
+    public void mo6713transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
+        getCoordinator().mo6713transformFromEL8BTi8(layoutCoordinates, fArr);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: transformToScreen-58bKbWc */
-    public void mo6713transformToScreen58bKbWc(float[] fArr) {
-        getCoordinator().mo6713transformToScreen58bKbWc(fArr);
+    public void mo6714transformToScreen58bKbWc(float[] fArr) {
+        getCoordinator().mo6714transformToScreen58bKbWc(fArr);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates

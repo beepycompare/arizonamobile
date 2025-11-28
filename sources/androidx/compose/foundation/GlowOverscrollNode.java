@@ -32,8 +32,8 @@ final class GlowOverscrollNode extends DelegatingNode implements DrawModifierNod
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
-        this.overscrollEffect.m248updateSizeuvyYCjk$foundation_release(contentDrawScope.mo5858getSizeNHjbRc());
-        if (Size.m5106isEmptyimpl(contentDrawScope.mo5858getSizeNHjbRc())) {
+        this.overscrollEffect.m249updateSizeuvyYCjk$foundation_release(contentDrawScope.mo5859getSizeNHjbRc());
+        if (Size.m5107isEmptyimpl(contentDrawScope.mo5859getSizeNHjbRc())) {
             contentDrawScope.drawContent();
             return;
         }
@@ -61,24 +61,24 @@ final class GlowOverscrollNode extends DelegatingNode implements DrawModifierNod
     }
 
     private final boolean drawLeftGlow(DrawScope drawScope, EdgeEffect edgeEffect, Canvas canvas) {
-        return m330drawWithRotationAndOffsetubNVwUQ(270.0f, Offset.m5027constructorimpl((Float.floatToRawIntBits(-Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L))) << 32) | (4294967295L & Float.floatToRawIntBits(drawScope.mo429toPx0680j_4(this.glowDrawPadding.mo786calculateLeftPaddingu2uoSUM(drawScope.getLayoutDirection()))))), edgeEffect, canvas);
+        return m331drawWithRotationAndOffsetubNVwUQ(270.0f, Offset.m5028constructorimpl((Float.floatToRawIntBits(-Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L))) << 32) | (4294967295L & Float.floatToRawIntBits(drawScope.mo430toPx0680j_4(this.glowDrawPadding.mo787calculateLeftPaddingu2uoSUM(drawScope.getLayoutDirection()))))), edgeEffect, canvas);
     }
 
     private final boolean drawTopGlow(DrawScope drawScope, EdgeEffect edgeEffect, Canvas canvas) {
-        return m330drawWithRotationAndOffsetubNVwUQ(0.0f, Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(drawScope.mo429toPx0680j_4(this.glowDrawPadding.mo788calculateTopPaddingD9Ej5fM())) & 4294967295L)), edgeEffect, canvas);
+        return m331drawWithRotationAndOffsetubNVwUQ(0.0f, Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(drawScope.mo430toPx0680j_4(this.glowDrawPadding.mo789calculateTopPaddingD9Ej5fM())) & 4294967295L)), edgeEffect, canvas);
     }
 
     private final boolean drawRightGlow(DrawScope drawScope, EdgeEffect edgeEffect, Canvas canvas) {
-        float f = (-MathKt.roundToInt(Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32)))) + drawScope.mo429toPx0680j_4(this.glowDrawPadding.mo787calculateRightPaddingu2uoSUM(drawScope.getLayoutDirection()));
-        return m330drawWithRotationAndOffsetubNVwUQ(90.0f, Offset.m5027constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32)), edgeEffect, canvas);
+        float f = (-MathKt.roundToInt(Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)))) + drawScope.mo430toPx0680j_4(this.glowDrawPadding.mo788calculateRightPaddingu2uoSUM(drawScope.getLayoutDirection()));
+        return m331drawWithRotationAndOffsetubNVwUQ(90.0f, Offset.m5028constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32)), edgeEffect, canvas);
     }
 
     private final boolean drawBottomGlow(DrawScope drawScope, EdgeEffect edgeEffect, Canvas canvas) {
-        return m330drawWithRotationAndOffsetubNVwUQ(180.0f, Offset.m5027constructorimpl((Float.floatToRawIntBits(-Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits((-Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L))) + drawScope.mo429toPx0680j_4(this.glowDrawPadding.mo785calculateBottomPaddingD9Ej5fM())) & 4294967295L)), edgeEffect, canvas);
+        return m331drawWithRotationAndOffsetubNVwUQ(180.0f, Offset.m5028constructorimpl((Float.floatToRawIntBits(-Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32))) << 32) | (Float.floatToRawIntBits((-Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L))) + drawScope.mo430toPx0680j_4(this.glowDrawPadding.mo786calculateBottomPaddingD9Ej5fM())) & 4294967295L)), edgeEffect, canvas);
     }
 
     /* renamed from: drawWithRotationAndOffset-ubNVwUQ  reason: not valid java name */
-    private final boolean m330drawWithRotationAndOffsetubNVwUQ(float f, long j, EdgeEffect edgeEffect, Canvas canvas) {
+    private final boolean m331drawWithRotationAndOffsetubNVwUQ(float f, long j, EdgeEffect edgeEffect, Canvas canvas) {
         int save = canvas.save();
         canvas.rotate(f);
         canvas.translate(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));

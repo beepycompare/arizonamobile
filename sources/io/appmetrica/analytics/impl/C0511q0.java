@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 import io.appmetrica.analytics.logger.common.BaseReleaseLogger;
 /* renamed from: io.appmetrica.analytics.impl.q0  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0511q0 implements Ia {
 
     /* renamed from: a  reason: collision with root package name */

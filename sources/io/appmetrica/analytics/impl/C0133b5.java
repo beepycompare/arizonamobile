@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.b5  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0133b5 extends AbstractC0107a5 {
     public C0133b5(C0210e5 c0210e5) {
         super(c0210e5);

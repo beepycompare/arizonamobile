@@ -16,7 +16,6 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.StatFs;
 import android.util.Log;
-import android.widget.TextView;
 import androidx.activity.ComponentActivity;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.compose.ComponentActivityKt;
@@ -33,8 +32,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.RendererCapabilities;
-import com.arizona.game.R;
-import com.arizona.game.databinding.ActivityUpdateBinding;
 import com.arizona.launcher.UpdateActivity;
 import com.arizona.launcher.UpdateService;
 import com.arkivanov.decompose.RetainedComponentKt;
@@ -68,13 +65,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: UpdateActivity.kt */
-@Metadata(d1 = {"\u0000o\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005*\u00011\b\u0007\u0018\u0000 ?2\u00020\u0001:\u0002?@B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0015J\b\u0010\u001e\u001a\u00020\u001bH\u0014J\b\u0010\u001f\u001a\u00020\u001bH\u0014J\b\u0010 \u001a\u00020\u001bH\u0002J\u0010\u0010!\u001a\u00020\u001b2\u0006\u0010\"\u001a\u00020\u000bH\u0002J\b\u0010#\u001a\u00020\u000bH\u0002J\u0010\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u000bH\u0002J\u0010\u0010&\u001a\u00020\u001b2\u0006\u0010'\u001a\u00020\u0011H\u0002J\u0010\u0010(\u001a\u00020\u001b2\u0006\u0010)\u001a\u00020*H\u0003J\b\u0010+\u001a\u00020\u001bH\u0002J\b\u0010,\u001a\u00020\u001bH\u0002J\b\u0010-\u001a\u00020\u0011H\u0002J\b\u0010.\u001a\u00020\u001bH\u0002J\b\u0010/\u001a\u00020\u001bH\u0002J\b\u00103\u001a\u00020\u001bH\u0002J\b\u00104\u001a\u00020\u001bH\u0002J\b\u00105\u001a\u00020\u001bH\u0002J\b\u00106\u001a\u00020\u001bH\u0002J\"\u00107\u001a\u00020\u001b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002092\b\u0010;\u001a\u0004\u0018\u00010<H\u0015J\u0010\u0010=\u001a\u00020\u001b2\u0006\u0010>\u001a\u00020\u0005H\u0002R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\u0014\u001a\u00020\u00158\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u0010\u00100\u001a\u000201X\u0082\u0004¢\u0006\u0004\n\u0002\u00102¨\u0006A"}, d2 = {"Lcom/arizona/launcher/UpdateActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "tag", "", "kotlin.jvm.PlatformType", "mService", "Landroid/os/Messenger;", "mMessenger", "SAMP_NEED_FREE_SPACE_BYTES", "", "exoplayer", "Landroidx/media3/exoplayer/ExoPlayer;", "mUpdateMode", "Lcom/arizona/launcher/UpdateMode;", "mIsStartingUpdate", "", "binding", "Lcom/arizona/game/databinding/ActivityUpdateBinding;", "rootFactory", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "getRootFactory", "()Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "setRootFactory", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onResume", "onDestroy", "startDownloadLauncherUpdate", "checkFreeSpace", "needFreeSpaceSize", "freeSpace", "convertBytesToHumanReadable", "bytes", "downloadInfoVisibility", "isVisible", "updateViewInformation", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "requestUpdateGameData", "requestReUpdateGameData", "isOnline", "setUpdateServiceAsBackground", "resetProgress", "mConnection", "com/arizona/launcher/UpdateActivity$mConnection$1", "Lcom/arizona/launcher/UpdateActivity$mConnection$1;", "requestUpdateInfo", "requestUpdateStatus", "showDialog", "hideDialog", "onActivityResult", "requestCode", "", "resultCode", "data", "Landroid/content/Intent;", "installApk", "apkPath", "Companion", "IncomingHandler", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000i\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005*\u0001-\b\u0007\u0018\u0000 ;2\u00020\u0001:\u0002;<B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u001bH\u0015J\b\u0010\u001c\u001a\u00020\u0019H\u0014J\b\u0010\u001d\u001a\u00020\u0019H\u0014J\b\u0010\u001e\u001a\u00020\u0019H\u0002J\u0010\u0010\u001f\u001a\u00020\u00192\u0006\u0010 \u001a\u00020\u000bH\u0002J\b\u0010!\u001a\u00020\u000bH\u0002J\u0010\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020\u000bH\u0002J\u0010\u0010$\u001a\u00020\u00192\u0006\u0010%\u001a\u00020&H\u0003J\b\u0010'\u001a\u00020\u0019H\u0002J\b\u0010(\u001a\u00020\u0019H\u0002J\b\u0010)\u001a\u00020\u0011H\u0002J\b\u0010*\u001a\u00020\u0019H\u0002J\b\u0010+\u001a\u00020\u0019H\u0002J\b\u0010/\u001a\u00020\u0019H\u0002J\b\u00100\u001a\u00020\u0019H\u0002J\b\u00101\u001a\u00020\u0019H\u0002J\b\u00102\u001a\u00020\u0019H\u0002J\"\u00103\u001a\u00020\u00192\u0006\u00104\u001a\u0002052\u0006\u00106\u001a\u0002052\b\u00107\u001a\u0004\u0018\u000108H\u0015J\u0010\u00109\u001a\u00020\u00192\u0006\u0010:\u001a\u00020\u0005H\u0002R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0012\u001a\u00020\u00138\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u0010\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0004\n\u0002\u0010.¨\u0006="}, d2 = {"Lcom/arizona/launcher/UpdateActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "tag", "", "kotlin.jvm.PlatformType", "mService", "Landroid/os/Messenger;", "mMessenger", "SAMP_NEED_FREE_SPACE_BYTES", "", "exoplayer", "Landroidx/media3/exoplayer/ExoPlayer;", "mUpdateMode", "Lcom/arizona/launcher/UpdateMode;", "mIsStartingUpdate", "", "rootFactory", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "getRootFactory", "()Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "setRootFactory", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onResume", "onDestroy", "startDownloadLauncherUpdate", "checkFreeSpace", "needFreeSpaceSize", "freeSpace", "convertBytesToHumanReadable", "bytes", "updateViewInformation", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "requestUpdateGameData", "requestReUpdateGameData", "isOnline", "setUpdateServiceAsBackground", "resetProgress", "mConnection", "com/arizona/launcher/UpdateActivity$mConnection$1", "Lcom/arizona/launcher/UpdateActivity$mConnection$1;", "requestUpdateInfo", "requestUpdateStatus", "showDialog", "hideDialog", "onActivityResult", "requestCode", "", "resultCode", "data", "Landroid/content/Intent;", "installApk", "apkPath", "Companion", "IncomingHandler", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateActivity extends Hilt_UpdateActivity {
     private static final int INSTALL_LAUNCHER = 31;
     public static final String UPDATE_MODE = "mode";
-    private ActivityUpdateBinding binding;
     private ExoPlayer exoplayer;
     private boolean mIsStartingUpdate;
     private Messenger mService;
@@ -148,9 +144,6 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     public void onCreate(Bundle bundle) {
         UpdateMode updateMode;
         super.onCreate(bundle);
-        ActivityUpdateBinding inflate = ActivityUpdateBinding.inflate(getLayoutInflater());
-        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
-        this.binding = inflate;
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         UpdateActivity updateActivity = this;
         final DownloadScreenComponent downloadScreenComponent = (DownloadScreenComponent) RetainedComponentKt.retainedComponent$default((ComponentActivity) updateActivity, (String) null, false, false, (Function0) null, (Function1) new UpdateActivity$onCreate$root$1(getRootFactory()), 15, (Object) null);
@@ -180,12 +173,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C104@3886L175,104@3861L200:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C99@3668L175,99@3643L200:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:104)");
+                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:99)");
             }
             CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[0], ComposableLambdaKt.rememberComposableLambda(-413695961, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
@@ -204,12 +197,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C105@3923L124,105@3904L143:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C100@3705L124,100@3686L143:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:105)");
+                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:100)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(-298306341, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
@@ -228,12 +221,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0$0(DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C106@3945L84:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C101@3727L84:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:106)");
+                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:101)");
             }
             DownloadScreenKt.DownloadScreenRoute(downloadScreenComponent, composer, DownloadScreenComponent.$stable);
             if (ComposerKt.isTraceInProgress()) {
@@ -333,7 +326,6 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                 Log.d("UpdateActivity", "activity is null");
             } else if (updateActivity.isFinishing() || updateActivity.isDestroyed()) {
             } else {
-                ActivityUpdateBinding activityUpdateBinding = null;
                 switch (msg.what) {
                     case 2:
                         Serializable serializable = msg.getData().getSerializable(UpdateService.ERRNO_MSG);
@@ -454,7 +446,16 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             } while (!stateStore7.compareAndSet(value4, DownloadExternalUiState.copy$default(value4, "Проверка файлов...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
                             updateActivity.resetProgress();
                             return;
-                        } else if (i == 4) {
+                        } else if (i != 4) {
+                            if (i != 5) {
+                                throw new NoWhenBranchMatchedException();
+                            }
+                            if (msg.getData().getBoolean("withProgress", false)) {
+                                updateActivity.updateViewInformation(msg);
+                                return;
+                            }
+                            return;
+                        } else {
                             MutableStateFlow<DownloadExternalUiState> stateStore8 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
                                 value5 = stateStore8.getValue();
@@ -464,21 +465,6 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                                 return;
                             }
                             return;
-                        } else if (i == 5) {
-                            ActivityUpdateBinding activityUpdateBinding2 = updateActivity.binding;
-                            if (activityUpdateBinding2 == null) {
-                                Intrinsics.throwUninitializedPropertyAccessException("binding");
-                            } else {
-                                activityUpdateBinding = activityUpdateBinding2;
-                            }
-                            activityUpdateBinding.updateState.setText(updateActivity.getString(R.string.update_game_data));
-                            if (msg.getData().getBoolean("withProgress", false)) {
-                                updateActivity.updateViewInformation(msg);
-                                return;
-                            }
-                            return;
-                        } else {
-                            throw new NoWhenBranchMatchedException();
                         }
                     case 5:
                         String string2 = msg.getData().getString(NotificationCompat.CATEGORY_STATUS, "");
@@ -559,7 +545,6 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                     value = stateStore.getValue();
                 } while (!stateStore.compareAndSet(value, DownloadExternalUiState.copy$default(value, "Проверка игровых файлов...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
                 updateActivity.resetProgress();
-                updateActivity.downloadInfoVisibility(false);
                 updateActivity.mIsStartingUpdate = false;
                 updateActivity.requestReUpdateGameData();
             }
@@ -655,60 +640,6 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         } else {
             return j + " Byte";
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void downloadInfoVisibility(boolean z) {
-        ActivityUpdateBinding activityUpdateBinding = this.binding;
-        ActivityUpdateBinding activityUpdateBinding2 = null;
-        if (activityUpdateBinding == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            activityUpdateBinding = null;
-        }
-        TextView textView15 = activityUpdateBinding.textView15;
-        Intrinsics.checkNotNullExpressionValue(textView15, "textView15");
-        textView15.setVisibility(z ? 0 : 8);
-        ActivityUpdateBinding activityUpdateBinding3 = this.binding;
-        if (activityUpdateBinding3 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            activityUpdateBinding3 = null;
-        }
-        TextView textView16 = activityUpdateBinding3.textView16;
-        Intrinsics.checkNotNullExpressionValue(textView16, "textView16");
-        textView16.setVisibility(z ? 0 : 8);
-        ActivityUpdateBinding activityUpdateBinding4 = this.binding;
-        if (activityUpdateBinding4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            activityUpdateBinding4 = null;
-        }
-        TextView speedDownloaded = activityUpdateBinding4.speedDownloaded;
-        Intrinsics.checkNotNullExpressionValue(speedDownloaded, "speedDownloaded");
-        speedDownloaded.setVisibility(z ? 0 : 8);
-        ActivityUpdateBinding activityUpdateBinding5 = this.binding;
-        if (activityUpdateBinding5 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            activityUpdateBinding5 = null;
-        }
-        TextView bytesDownloaded = activityUpdateBinding5.bytesDownloaded;
-        Intrinsics.checkNotNullExpressionValue(bytesDownloaded, "bytesDownloaded");
-        bytesDownloaded.setVisibility(z ? 0 : 8);
-        ActivityUpdateBinding activityUpdateBinding6 = this.binding;
-        if (activityUpdateBinding6 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            activityUpdateBinding6 = null;
-        }
-        TextView currentLen = activityUpdateBinding6.currentLen;
-        Intrinsics.checkNotNullExpressionValue(currentLen, "currentLen");
-        currentLen.setVisibility(z ? 0 : 8);
-        ActivityUpdateBinding activityUpdateBinding7 = this.binding;
-        if (activityUpdateBinding7 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-        } else {
-            activityUpdateBinding2 = activityUpdateBinding7;
-        }
-        TextView currentSpeed = activityUpdateBinding2.currentSpeed;
-        Intrinsics.checkNotNullExpressionValue(currentSpeed, "currentSpeed");
-        currentSpeed.setVisibility(z ? 0 : 8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -230,9 +230,9 @@ public final class AndroidView_androidKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                                m8245updateViewHolderParams6NefGtU(m4597constructorimpl, materializeModifier, hashCode, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
-                                Updater.m4604setimpl(m4597constructorimpl, obj2, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$1
+                                Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                                m8246updateViewHolderParams6NefGtU(m4598constructorimpl, materializeModifier, hashCode, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
+                                Updater.m4605setimpl(m4598constructorimpl, obj2, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -245,7 +245,7 @@ public final class AndroidView_androidKt {
                                         requireViewFactoryHolder.setResetBlock(function17);
                                     }
                                 });
-                                Updater.m4604setimpl(m4597constructorimpl, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$2
+                                Updater.m4605setimpl(m4598constructorimpl, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$2
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -258,7 +258,7 @@ public final class AndroidView_androidKt {
                                         requireViewFactoryHolder.setUpdateBlock(function17);
                                     }
                                 });
-                                Updater.m4604setimpl(m4597constructorimpl, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$3
+                                Updater.m4605setimpl(m4598constructorimpl, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$3
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -288,9 +288,9 @@ public final class AndroidView_androidKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m4597constructorimpl2 = Updater.m4597constructorimpl(startRestartGroup);
-                                m8245updateViewHolderParams6NefGtU(m4597constructorimpl2, materializeModifier, hashCode, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
-                                Updater.m4604setimpl(m4597constructorimpl2, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$1
+                                Composer m4598constructorimpl2 = Updater.m4598constructorimpl(startRestartGroup);
+                                m8246updateViewHolderParams6NefGtU(m4598constructorimpl2, materializeModifier, hashCode, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
+                                Updater.m4605setimpl(m4598constructorimpl2, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -303,7 +303,7 @@ public final class AndroidView_androidKt {
                                         requireViewFactoryHolder.setUpdateBlock(function17);
                                     }
                                 });
-                                Updater.m4604setimpl(m4597constructorimpl2, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$2
+                                Updater.m4605setimpl(m4598constructorimpl2, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$2
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -469,9 +469,9 @@ public final class AndroidView_androidKt {
     }
 
     /* renamed from: updateViewHolderParams-6NefGtU  reason: not valid java name */
-    private static final <T extends View> void m8245updateViewHolderParams6NefGtU(Composer composer, Modifier modifier, int i, Density density, LifecycleOwner lifecycleOwner, SavedStateRegistryOwner savedStateRegistryOwner, LayoutDirection layoutDirection, CompositionLocalMap compositionLocalMap) {
-        Updater.m4604setimpl(composer, compositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Updater.m4604setimpl(composer, modifier, new Function2<LayoutNode, Modifier, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$1
+    private static final <T extends View> void m8246updateViewHolderParams6NefGtU(Composer composer, Modifier modifier, int i, Density density, LifecycleOwner lifecycleOwner, SavedStateRegistryOwner savedStateRegistryOwner, LayoutDirection layoutDirection, CompositionLocalMap compositionLocalMap) {
+        Updater.m4605setimpl(composer, compositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Updater.m4605setimpl(composer, modifier, new Function2<LayoutNode, Modifier, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$1
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Modifier modifier2) {
                 invoke2(layoutNode, modifier2);
@@ -485,7 +485,7 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setModifier(modifier2);
             }
         });
-        Updater.m4604setimpl(composer, density, new Function2<LayoutNode, Density, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$2
+        Updater.m4605setimpl(composer, density, new Function2<LayoutNode, Density, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$2
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Density density2) {
                 invoke2(layoutNode, density2);
@@ -499,7 +499,7 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setDensity(density2);
             }
         });
-        Updater.m4604setimpl(composer, lifecycleOwner, new Function2<LayoutNode, LifecycleOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$3
+        Updater.m4605setimpl(composer, lifecycleOwner, new Function2<LayoutNode, LifecycleOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$3
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, LifecycleOwner lifecycleOwner2) {
                 invoke2(layoutNode, lifecycleOwner2);
@@ -513,7 +513,7 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setLifecycleOwner(lifecycleOwner2);
             }
         });
-        Updater.m4604setimpl(composer, savedStateRegistryOwner, new Function2<LayoutNode, SavedStateRegistryOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$4
+        Updater.m4605setimpl(composer, savedStateRegistryOwner, new Function2<LayoutNode, SavedStateRegistryOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$4
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, SavedStateRegistryOwner savedStateRegistryOwner2) {
                 invoke2(layoutNode, savedStateRegistryOwner2);
@@ -527,7 +527,7 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setSavedStateRegistryOwner(savedStateRegistryOwner2);
             }
         });
-        Updater.m4604setimpl(composer, layoutDirection, new Function2<LayoutNode, LayoutDirection, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$5
+        Updater.m4605setimpl(composer, layoutDirection, new Function2<LayoutNode, LayoutDirection, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$5
 
             /* compiled from: AndroidView.android.kt */
             @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)

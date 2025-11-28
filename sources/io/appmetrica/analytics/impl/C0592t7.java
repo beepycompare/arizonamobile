@@ -4,7 +4,7 @@ import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import io.appmetrica.analytics.coreutils.internal.services.FrameworkDetector;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 /* renamed from: io.appmetrica.analytics.impl.t7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0592t7 {
 
     /* renamed from: a  reason: collision with root package name */

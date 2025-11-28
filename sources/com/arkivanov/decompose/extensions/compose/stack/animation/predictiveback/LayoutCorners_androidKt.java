@@ -147,13 +147,13 @@ public final class LayoutCorners_androidKt {
         WindowInsets windowInsets = maximumWindowMetrics.getWindowInsets();
         Intrinsics.checkNotNullExpressionValue(windowInsets, "getWindowInsets(...)");
         RoundedCorner roundedCorner = windowInsets.getRoundedCorner(0);
-        Dp m7993boximpl = roundedCorner != null ? Dp.m7993boximpl(density.mo426toDpu2uoSUM(roundedCorner.getRadius())) : null;
+        Dp m7994boximpl = roundedCorner != null ? Dp.m7994boximpl(density.mo427toDpu2uoSUM(roundedCorner.getRadius())) : null;
         RoundedCorner roundedCorner2 = windowInsets.getRoundedCorner(1);
-        Dp m7993boximpl2 = roundedCorner2 != null ? Dp.m7993boximpl(density.mo426toDpu2uoSUM(roundedCorner2.getRadius())) : null;
+        Dp m7994boximpl2 = roundedCorner2 != null ? Dp.m7994boximpl(density.mo427toDpu2uoSUM(roundedCorner2.getRadius())) : null;
         RoundedCorner roundedCorner3 = windowInsets.getRoundedCorner(2);
-        Dp m7993boximpl3 = roundedCorner3 != null ? Dp.m7993boximpl(density.mo426toDpu2uoSUM(roundedCorner3.getRadius())) : null;
+        Dp m7994boximpl3 = roundedCorner3 != null ? Dp.m7994boximpl(density.mo427toDpu2uoSUM(roundedCorner3.getRadius())) : null;
         RoundedCorner roundedCorner4 = windowInsets.getRoundedCorner(3);
-        return new ScreenInfo(new CornerRadii(m7993boximpl, m7993boximpl2, m7993boximpl3, roundedCorner4 != null ? Dp.m7993boximpl(density.mo426toDpu2uoSUM(roundedCorner4.getRadius())) : null, null), maximumWindowMetrics.getBounds().width(), maximumWindowMetrics.getBounds().height());
+        return new ScreenInfo(new CornerRadii(m7994boximpl, m7994boximpl2, m7994boximpl3, roundedCorner4 != null ? Dp.m7994boximpl(density.mo427toDpu2uoSUM(roundedCorner4.getRadius())) : null, null), maximumWindowMetrics.getBounds().width(), maximumWindowMetrics.getBounds().height());
     }
 
     private static final LayoutCorners getLayoutCorners(ScreenInfo screenInfo, Rect rect, LayoutDirection layoutDirection) {
@@ -169,31 +169,31 @@ public final class LayoutCorners_androidKt {
         float component4 = rect.component4();
         int i = (component12 > 0.0f ? 1 : (component12 == 0.0f ? 0 : -1));
         boolean z = false;
-        LayoutCorner m9341getLayoutCorner_Y4kl1M = m9341getLayoutCorner_Y4kl1M(component1.m9335getTopLeftlTKBWiU(), i <= 0 && component22 <= 0.0f);
+        LayoutCorner m9399getLayoutCorner_Y4kl1M = m9399getLayoutCorner_Y4kl1M(component1.m9393getTopLeftlTKBWiU(), i <= 0 && component22 <= 0.0f);
         int i2 = (component32 > component2 ? 1 : (component32 == component2 ? 0 : -1));
-        LayoutCorner m9341getLayoutCorner_Y4kl1M2 = m9341getLayoutCorner_Y4kl1M(component1.m9336getTopRightlTKBWiU(), i2 >= 0 && component22 <= 0.0f);
-        LayoutCorner m9341getLayoutCorner_Y4kl1M3 = m9341getLayoutCorner_Y4kl1M(component1.m9334getBottomRightlTKBWiU(), i2 >= 0 && component4 >= ((float) component3));
-        Dp m9333getBottomLeftlTKBWiU = component1.m9333getBottomLeftlTKBWiU();
+        LayoutCorner m9399getLayoutCorner_Y4kl1M2 = m9399getLayoutCorner_Y4kl1M(component1.m9394getTopRightlTKBWiU(), i2 >= 0 && component22 <= 0.0f);
+        LayoutCorner m9399getLayoutCorner_Y4kl1M3 = m9399getLayoutCorner_Y4kl1M(component1.m9392getBottomRightlTKBWiU(), i2 >= 0 && component4 >= ((float) component3));
+        Dp m9391getBottomLeftlTKBWiU = component1.m9391getBottomLeftlTKBWiU();
         if (i <= 0 && component4 >= component3) {
             z = true;
         }
-        LayoutCorner m9341getLayoutCorner_Y4kl1M4 = m9341getLayoutCorner_Y4kl1M(m9333getBottomLeftlTKBWiU, z);
+        LayoutCorner m9399getLayoutCorner_Y4kl1M4 = m9399getLayoutCorner_Y4kl1M(m9391getBottomLeftlTKBWiU, z);
         int i3 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
         if (i3 != 1) {
             if (i3 != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return new LayoutCorners(m9341getLayoutCorner_Y4kl1M2, m9341getLayoutCorner_Y4kl1M, m9341getLayoutCorner_Y4kl1M4, m9341getLayoutCorner_Y4kl1M3);
+            return new LayoutCorners(m9399getLayoutCorner_Y4kl1M2, m9399getLayoutCorner_Y4kl1M, m9399getLayoutCorner_Y4kl1M4, m9399getLayoutCorner_Y4kl1M3);
         }
-        return new LayoutCorners(m9341getLayoutCorner_Y4kl1M, m9341getLayoutCorner_Y4kl1M2, m9341getLayoutCorner_Y4kl1M3, m9341getLayoutCorner_Y4kl1M4);
+        return new LayoutCorners(m9399getLayoutCorner_Y4kl1M, m9399getLayoutCorner_Y4kl1M2, m9399getLayoutCorner_Y4kl1M3, m9399getLayoutCorner_Y4kl1M4);
     }
 
     /* renamed from: getLayoutCorner-_Y4kl1M  reason: not valid java name */
-    private static final LayoutCorner m9341getLayoutCorner_Y4kl1M(Dp dp, boolean z) {
+    private static final LayoutCorner m9399getLayoutCorner_Y4kl1M(Dp dp, boolean z) {
         if (dp == null) {
             return new LayoutCorner(0.0f, false, 3, null);
         }
-        return new LayoutCorner(dp.m8009unboximpl(), z, null);
+        return new LayoutCorner(dp.m8010unboximpl(), z, null);
     }
 
     private static final Rect getBoundsOnScreen(View view, Rect rect) {

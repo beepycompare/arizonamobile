@@ -116,11 +116,11 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     intersects$SnapshotStateKt__SnapshotFlowKt = SnapshotStateKt__SnapshotFlowKt.intersects$SnapshotStateKt__SnapshotFlowKt(mutableScatterSet2, set);
                                     if (!intersects$SnapshotStateKt__SnapshotFlowKt) {
                                         i = 0;
-                                        set = (Set) ChannelResult.m11379getOrNullimpl(channel.mo11367tryReceivePtdJZtk());
+                                        set = (Set) ChannelResult.m11437getOrNullimpl(channel.mo11425tryReceivePtdJZtk());
                                     }
                                 }
                                 i = 1;
-                                set = (Set) ChannelResult.m11379getOrNullimpl(channel.mo11367tryReceivePtdJZtk());
+                                set = (Set) ChannelResult.m11437getOrNullimpl(channel.mo11425tryReceivePtdJZtk());
                             } while (set != null);
                             if (i != 0) {
                                 try {
@@ -227,7 +227,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     if (i == 0) {
                     }
                     i = 1;
-                    set = (Set) ChannelResult.m11379getOrNullimpl(channel.mo11367tryReceivePtdJZtk());
+                    set = (Set) ChannelResult.m11437getOrNullimpl(channel.mo11425tryReceivePtdJZtk());
                 } while (set != null);
                 if (i != 0) {
                 }
@@ -259,7 +259,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
     public static final Unit invokeSuspend$lambda$0(MutableScatterSet mutableScatterSet, Object obj) {
         if (obj instanceof StateObjectImpl) {
             ReaderKind.Companion companion = ReaderKind.Companion;
-            ((StateObjectImpl) obj).m4756recordReadInh_f27i8$runtime(ReaderKind.m4738constructorimpl(4));
+            ((StateObjectImpl) obj).m4757recordReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(4));
         }
         mutableScatterSet.add(obj);
         return Unit.INSTANCE;
@@ -285,7 +285,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     break loop0;
                                 }
                                 ReaderKind.Companion companion = ReaderKind.Companion;
-                                if (((StateObjectImpl) obj).m4755isReadInh_f27i8$runtime(ReaderKind.m4738constructorimpl(4))) {
+                                if (((StateObjectImpl) obj).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(4))) {
                                     break loop0;
                                 }
                             }
@@ -307,10 +307,10 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 for (T t : set2) {
                     if (t instanceof StateObjectImpl) {
                         ReaderKind.Companion companion2 = ReaderKind.Companion;
-                        if (((StateObjectImpl) t).m4755isReadInh_f27i8$runtime(ReaderKind.m4738constructorimpl(4))) {
+                        if (((StateObjectImpl) t).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(4))) {
                         }
                     }
-                    channel.mo8867trySendJP2dKIU(set);
+                    channel.mo8879trySendJP2dKIU(set);
                 }
             }
         }

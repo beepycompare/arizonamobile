@@ -257,15 +257,15 @@ public final class BasicTooltipKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891254757, "C125@5760L264:BasicTooltip.kt#mqatfk");
@@ -531,15 +531,15 @@ public final class BasicTooltipKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                    Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                    Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 918653216, "C156@6739L9:BasicTooltip.kt#mqatfk");
@@ -837,8 +837,8 @@ public final class BasicTooltipKt {
                                 mutableStateFlow = (MutableStateFlow) this.L$1;
                                 awaitFirstDown$default = obj;
                             }
-                            int m6572getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m6572getTypeT8wyACA();
-                            if (PointerType.m6640equalsimpl0(m6572getTypeT8wyACA, PointerType.Companion.m6647getTouchT8wyACA()) || PointerType.m6640equalsimpl0(m6572getTypeT8wyACA, PointerType.Companion.m6646getStylusT8wyACA())) {
+                            int m6573getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m6573getTypeT8wyACA();
+                            if (PointerType.m6641equalsimpl0(m6573getTypeT8wyACA, PointerType.Companion.m6648getTouchT8wyACA()) || PointerType.m6641equalsimpl0(m6573getTypeT8wyACA, PointerType.Companion.m6647getStylusT8wyACA())) {
                                 try {
                                     this.L$0 = awaitPointerEventScope;
                                     this.L$1 = mutableStateFlow;
@@ -1189,15 +1189,15 @@ public final class BasicTooltipKt {
                             r5 = 0
                             java.lang.Object r4 = r4.get(r5)
                             androidx.compose.ui.input.pointer.PointerInputChange r4 = (androidx.compose.ui.input.pointer.PointerInputChange) r4
-                            int r4 = r4.m6572getTypeT8wyACA()
+                            int r4 = r4.m6573getTypeT8wyACA()
                             androidx.compose.ui.input.pointer.PointerType$Companion r5 = androidx.compose.ui.input.pointer.PointerType.Companion
-                            int r5 = r5.m6645getMouseT8wyACA()
-                            boolean r4 = androidx.compose.ui.input.pointer.PointerType.m6640equalsimpl0(r4, r5)
+                            int r5 = r5.m6646getMouseT8wyACA()
+                            boolean r4 = androidx.compose.ui.input.pointer.PointerType.m6641equalsimpl0(r4, r5)
                             if (r4 == 0) goto L29
-                            int r12 = r12.m6511getType7fucELk()
+                            int r12 = r12.m6512getType7fucELk()
                             androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                            int r4 = r4.m6522getEnter7fucELk()
-                            boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m6518equalsimpl0(r12, r4)
+                            int r4 = r4.m6523getEnter7fucELk()
+                            boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m6519equalsimpl0(r12, r4)
                             if (r4 == 0) goto L7a
                             kotlinx.coroutines.CoroutineScope r5 = r11.$$this$coroutineScope
                             androidx.compose.material3.internal.BasicTooltipKt$handleGestures$2$1$1$1 r12 = new androidx.compose.material3.internal.BasicTooltipKt$handleGestures$2$1$1$1
@@ -1213,8 +1213,8 @@ public final class BasicTooltipKt {
                             goto L29
                         L7a:
                             androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                            int r4 = r4.m6523getExit7fucELk()
-                            boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m6518equalsimpl0(r12, r4)
+                            int r4 = r4.m6524getExit7fucELk()
+                            boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m6519equalsimpl0(r12, r4)
                             if (r12 == 0) goto L29
                             androidx.compose.material3.TooltipState r12 = r11.$state
                             r12.dismiss()
@@ -1338,15 +1338,15 @@ public final class BasicTooltipKt {
             }), new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.material3.internal.BasicTooltipKt$keyboardBehavior$2
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                    return m3515invokeZmokQxo(keyEvent.m6414unboximpl());
+                    return m3516invokeZmokQxo(keyEvent.m6415unboximpl());
                 }
 
                 /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-                public final Boolean m3515invokeZmokQxo(android.view.KeyEvent keyEvent) {
+                public final Boolean m3516invokeZmokQxo(android.view.KeyEvent keyEvent) {
                     if (!TooltipState.this.isVisible()) {
                         mutableState.setValue(false);
                     }
-                    if (!z2 || !KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6422getKeyDownCS__XNY()) || !Key.m6117equalsimpl0(KeyEvent_androidKt.m6425getKeyZmokQxo(keyEvent), Key.Companion.m6353getTabEK5gGoQ()) || !TooltipState.this.isVisible()) {
+                    if (!z2 || !KeyEventType.m6419equalsimpl0(KeyEvent_androidKt.m6427getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6423getKeyDownCS__XNY()) || !Key.m6118equalsimpl0(KeyEvent_androidKt.m6426getKeyZmokQxo(keyEvent), Key.Companion.m6354getTabEK5gGoQ()) || !TooltipState.this.isVisible()) {
                         return false;
                     }
                     mutableState.setValue(true);

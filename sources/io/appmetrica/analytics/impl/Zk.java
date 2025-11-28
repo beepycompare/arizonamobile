@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.text.TextUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Zk {
     public static final String d = "SESSION_SLEEP_START";
     public static final String e = "SESSION_LAST_EVENT_OFFSET";

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C6 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */

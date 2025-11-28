@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class A implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {

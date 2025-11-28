@@ -6,7 +6,7 @@ import java.io.Closeable;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class no {
     public static boolean a(Object obj) {
         return obj != null;

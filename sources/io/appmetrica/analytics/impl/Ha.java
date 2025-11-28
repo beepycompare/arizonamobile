@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
 import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Ha extends SimpleAdvertisingIdGetter, InterfaceC0483om {
     AdvertisingIdsHolder a();
 

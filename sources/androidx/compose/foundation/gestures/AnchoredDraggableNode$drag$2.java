@@ -78,23 +78,23 @@ final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Fun
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$1(final AnchoredDraggableNode anchoredDraggableNode, final AnchoredDragScope anchoredDragScope, DragEvent.DragDelta dragDelta) {
-        long m443reverseIfNeededMKHz9U;
-        float m445toFloatk4lQ0M;
+        long m444reverseIfNeededMKHz9U;
+        float m446toFloatk4lQ0M;
         OverscrollEffect overscrollEffect;
         OverscrollEffect overscrollEffect2;
-        long m446toOffsettuRUvjQ;
+        long m447toOffsettuRUvjQ;
         AnchoredDraggableState anchoredDraggableState;
-        m443reverseIfNeededMKHz9U = anchoredDraggableNode.m443reverseIfNeededMKHz9U(dragDelta.m475getDeltaF1C5BW0());
-        m445toFloatk4lQ0M = anchoredDraggableNode.m445toFloatk4lQ0M(m443reverseIfNeededMKHz9U);
+        m444reverseIfNeededMKHz9U = anchoredDraggableNode.m444reverseIfNeededMKHz9U(dragDelta.m476getDeltaF1C5BW0());
+        m446toFloatk4lQ0M = anchoredDraggableNode.m446toFloatk4lQ0M(m444reverseIfNeededMKHz9U);
         overscrollEffect = anchoredDraggableNode.overscrollEffect;
         if (overscrollEffect == null) {
             anchoredDraggableState = anchoredDraggableNode.state;
-            AnchoredDragScope.dragTo$default(anchoredDragScope, anchoredDraggableState.newOffsetForDelta$foundation_release(m445toFloatk4lQ0M), 0.0f, 2, null);
+            AnchoredDragScope.dragTo$default(anchoredDragScope, anchoredDraggableState.newOffsetForDelta$foundation_release(m446toFloatk4lQ0M), 0.0f, 2, null);
         } else {
             overscrollEffect2 = anchoredDraggableNode.overscrollEffect;
             Intrinsics.checkNotNull(overscrollEffect2);
-            m446toOffsettuRUvjQ = anchoredDraggableNode.m446toOffsettuRUvjQ(m445toFloatk4lQ0M);
-            Offset.m5024boximpl(overscrollEffect2.mo246applyToScrollRhakbz0(m446toOffsettuRUvjQ, NestedScrollSource.Companion.m6462getUserInputWNlRxjI(), new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2$$ExternalSyntheticLambda1
+            m447toOffsettuRUvjQ = anchoredDraggableNode.m447toOffsettuRUvjQ(m446toFloatk4lQ0M);
+            Offset.m5025boximpl(overscrollEffect2.mo247applyToScrollRhakbz0(m447toOffsettuRUvjQ, NestedScrollSource.Companion.m6463getUserInputWNlRxjI(), new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Offset invokeSuspend$lambda$1$lambda$0;
@@ -109,15 +109,15 @@ final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Fun
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset invokeSuspend$lambda$1$lambda$0(AnchoredDraggableNode anchoredDraggableNode, AnchoredDragScope anchoredDragScope, Offset offset) {
         AnchoredDraggableState anchoredDraggableState;
-        float m445toFloatk4lQ0M;
+        float m446toFloatk4lQ0M;
         AnchoredDraggableState anchoredDraggableState2;
-        long m446toOffsettuRUvjQ;
+        long m447toOffsettuRUvjQ;
         anchoredDraggableState = anchoredDraggableNode.state;
-        m445toFloatk4lQ0M = anchoredDraggableNode.m445toFloatk4lQ0M(offset.m5045unboximpl());
-        float newOffsetForDelta$foundation_release = anchoredDraggableState.newOffsetForDelta$foundation_release(m445toFloatk4lQ0M);
+        m446toFloatk4lQ0M = anchoredDraggableNode.m446toFloatk4lQ0M(offset.m5046unboximpl());
+        float newOffsetForDelta$foundation_release = anchoredDraggableState.newOffsetForDelta$foundation_release(m446toFloatk4lQ0M);
         anchoredDraggableState2 = anchoredDraggableNode.state;
-        m446toOffsettuRUvjQ = anchoredDraggableNode.m446toOffsettuRUvjQ(newOffsetForDelta$foundation_release - anchoredDraggableState2.requireOffset());
+        m447toOffsettuRUvjQ = anchoredDraggableNode.m447toOffsettuRUvjQ(newOffsetForDelta$foundation_release - anchoredDraggableState2.requireOffset());
         AnchoredDragScope.dragTo$default(anchoredDragScope, newOffsetForDelta$foundation_release, 0.0f, 2, null);
-        return Offset.m5024boximpl(m446toOffsettuRUvjQ);
+        return Offset.m5025boximpl(m447toOffsettuRUvjQ);
     }
 }

@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Hn implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */

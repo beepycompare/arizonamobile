@@ -71,16 +71,16 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
             if (snapshotFlow.collect(new FlowCollector() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.2
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
-                    return m1774emit3MmeM6k(((Offset) obj2).m5045unboximpl(), continuation);
+                    return m1775emit3MmeM6k(((Offset) obj2).m5046unboximpl(), continuation);
                 }
 
                 /* renamed from: emit-3MmeM6k  reason: not valid java name */
-                public final Object m1774emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
-                    if ((animatable.getValue().m5045unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m5045unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
+                public final Object m1775emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
+                    if ((animatable.getValue().m5046unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m5046unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
                         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(animatable, j, null), 3, null);
                         return Unit.INSTANCE;
                     }
-                    Object snapTo = animatable.snapTo(Offset.m5024boximpl(j), continuation);
+                    Object snapTo = animatable.snapTo(Offset.m5025boximpl(j), continuation);
                     return snapTo == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? snapTo : Unit.INSTANCE;
                 }
 
@@ -119,7 +119,7 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
                         if (i == 0) {
                             ResultKt.throwOnFailure(obj);
                             this.label = 1;
-                            if (Animatable.animateTo$default(this.$animatable, Offset.m5024boximpl(this.$targetValue), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
+                            if (Animatable.animateTo$default(this.$animatable, Offset.m5025boximpl(this.$targetValue), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         } else if (i != 1) {
@@ -145,6 +145,6 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
     public static final Offset invokeSuspend$lambda$0(State state) {
         long rememberAnimatedMagnifierPosition$lambda$3;
         rememberAnimatedMagnifierPosition$lambda$3 = SelectionMagnifierKt.rememberAnimatedMagnifierPosition$lambda$3(state);
-        return Offset.m5024boximpl(rememberAnimatedMagnifierPosition$lambda$3);
+        return Offset.m5025boximpl(rememberAnimatedMagnifierPosition$lambda$3);
     }
 }

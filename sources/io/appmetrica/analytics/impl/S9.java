@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.util.Base64;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class S9 implements L8 {
     @Override // io.appmetrica.analytics.impl.L8
     public final E8 a(W5 w5) {

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController;
 import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
 /* renamed from: io.appmetrica.analytics.impl.ui  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0628ui implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */

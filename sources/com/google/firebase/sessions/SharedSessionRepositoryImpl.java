@@ -182,10 +182,10 @@ public final class SharedSessionRepositoryImpl implements SharedSessionRepositor
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                Flow m11396catch = FlowKt.m11396catch(SharedSessionRepositoryImpl.this.sessionDataStore.getData(), new C00681(SharedSessionRepositoryImpl.this, null));
+                Flow m11454catch = FlowKt.m11454catch(SharedSessionRepositoryImpl.this.sessionDataStore.getData(), new C00691(SharedSessionRepositoryImpl.this, null));
                 final SharedSessionRepositoryImpl sharedSessionRepositoryImpl = SharedSessionRepositoryImpl.this;
                 this.label = 1;
-                if (m11396catch.collect(new FlowCollector() { // from class: com.google.firebase.sessions.SharedSessionRepositoryImpl.1.2
+                if (m11454catch.collect(new FlowCollector() { // from class: com.google.firebase.sessions.SharedSessionRepositoryImpl.1.2
                     @Override // kotlinx.coroutines.flow.FlowCollector
                     public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
                         return emit((SessionData) obj2, (Continuation<? super Unit>) continuation);
@@ -213,24 +213,24 @@ public final class SharedSessionRepositoryImpl implements SharedSessionRepositor
         @DebugMetadata(c = "com.google.firebase.sessions.SharedSessionRepositoryImpl$1$1", f = "SharedSessionRepository.kt", i = {}, l = {92}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: com.google.firebase.sessions.SharedSessionRepositoryImpl$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes4.dex */
-        public static final class C00681 extends SuspendLambda implements Function3<FlowCollector<? super SessionData>, Throwable, Continuation<? super Unit>, Object> {
+        public static final class C00691 extends SuspendLambda implements Function3<FlowCollector<? super SessionData>, Throwable, Continuation<? super Unit>, Object> {
             private /* synthetic */ Object L$0;
             /* synthetic */ Object L$1;
             int label;
             final /* synthetic */ SharedSessionRepositoryImpl this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00681(SharedSessionRepositoryImpl sharedSessionRepositoryImpl, Continuation<? super C00681> continuation) {
+            C00691(SharedSessionRepositoryImpl sharedSessionRepositoryImpl, Continuation<? super C00691> continuation) {
                 super(3, continuation);
                 this.this$0 = sharedSessionRepositoryImpl;
             }
 
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(FlowCollector<? super SessionData> flowCollector, Throwable th, Continuation<? super Unit> continuation) {
-                C00681 c00681 = new C00681(this.this$0, continuation);
-                c00681.L$0 = flowCollector;
-                c00681.L$1 = th;
-                return c00681.invokeSuspend(Unit.INSTANCE);
+                C00691 c00691 = new C00691(this.this$0, continuation);
+                c00691.L$0 = flowCollector;
+                c00691.L$1 = th;
+                return c00691.invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -351,7 +351,7 @@ public final class SharedSessionRepositoryImpl implements SharedSessionRepositor
     public final boolean isSessionExpired(SessionData sessionData) {
         Time backgroundTime = sessionData.getBackgroundTime();
         if (backgroundTime != null) {
-            boolean z = Duration.m11199compareToLRDsOJo(this.timeProvider.currentTime().m9656minus5sfh64U(backgroundTime), this.sessionsSettings.m9660getSessionRestartTimeoutUwyO8pc()) > 0;
+            boolean z = Duration.m11257compareToLRDsOJo(this.timeProvider.currentTime().m9714minus5sfh64U(backgroundTime), this.sessionsSettings.m9718getSessionRestartTimeoutUwyO8pc()) > 0;
             if (z) {
                 Log.d(FirebaseSessions.TAG, "Session " + sessionData.getSessionDetails().getSessionId() + " is expired");
             }

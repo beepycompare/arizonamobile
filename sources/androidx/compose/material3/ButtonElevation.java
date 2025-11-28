@@ -95,13 +95,13 @@ public final class ButtonElevation {
         ComposerKt.sourceInformationMarkerStart(composer, 1397889557, "CC(remember):Button.kt#9igjgp");
         Object rememberedValue3 = composer.rememberedValue();
         if (rememberedValue3 == Composer.Companion.getEmpty()) {
-            Object animatable2 = new Animatable(Dp.m7993boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+            Object animatable2 = new Animatable(Dp.m7994boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
             composer.updateRememberedValue(animatable2);
             rememberedValue3 = animatable2;
         }
         Object obj = (Animatable) rememberedValue3;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Dp m7993boximpl = Dp.m7993boximpl(f);
+        Dp m7994boximpl = Dp.m7994boximpl(f);
         ComposerKt.sourceInformationMarkerStart(composer, 1397893058, "CC(remember):Button.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(obj) | composer.changed(f) | ((((i & 14) ^ 6) > 4 && composer.changed(z)) || (i & 6) == 4);
         if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(this)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
@@ -117,7 +117,7 @@ public final class ButtonElevation {
             animatable = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        EffectsKt.LaunchedEffect(m7993boximpl, (Function2) rememberedValue4, composer, 0);
+        EffectsKt.LaunchedEffect(m7994boximpl, (Function2) rememberedValue4, composer, 0);
         State<Dp> asState = animatable.asState();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -134,10 +134,10 @@ public final class ButtonElevation {
             return false;
         }
         ButtonElevation buttonElevation = (ButtonElevation) obj;
-        return Dp.m8000equalsimpl0(this.defaultElevation, buttonElevation.defaultElevation) && Dp.m8000equalsimpl0(this.pressedElevation, buttonElevation.pressedElevation) && Dp.m8000equalsimpl0(this.focusedElevation, buttonElevation.focusedElevation) && Dp.m8000equalsimpl0(this.hoveredElevation, buttonElevation.hoveredElevation) && Dp.m8000equalsimpl0(this.disabledElevation, buttonElevation.disabledElevation);
+        return Dp.m8001equalsimpl0(this.defaultElevation, buttonElevation.defaultElevation) && Dp.m8001equalsimpl0(this.pressedElevation, buttonElevation.pressedElevation) && Dp.m8001equalsimpl0(this.focusedElevation, buttonElevation.focusedElevation) && Dp.m8001equalsimpl0(this.hoveredElevation, buttonElevation.hoveredElevation) && Dp.m8001equalsimpl0(this.disabledElevation, buttonElevation.disabledElevation);
     }
 
     public int hashCode() {
-        return (((((((Dp.m8001hashCodeimpl(this.defaultElevation) * 31) + Dp.m8001hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8001hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8001hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m8001hashCodeimpl(this.disabledElevation);
+        return (((((((Dp.m8002hashCodeimpl(this.defaultElevation) * 31) + Dp.m8002hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8002hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8002hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m8002hashCodeimpl(this.disabledElevation);
     }
 }

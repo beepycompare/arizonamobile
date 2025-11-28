@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
 import java.util.Arrays;
 /* renamed from: io.appmetrica.analytics.impl.q5  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0516q5 implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */

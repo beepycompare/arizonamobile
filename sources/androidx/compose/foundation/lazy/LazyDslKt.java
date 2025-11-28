@@ -330,7 +330,7 @@ public final class LazyDslKt {
                                         lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -113;
                                     }
-                                    PaddingValues m835PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
+                                    PaddingValues m836PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
                                     if (i4 != 0) {
                                         z3 = false;
                                     }
@@ -358,7 +358,7 @@ public final class LazyDslKt {
                                         modifier3 = companion;
                                     }
                                     lazyListState4 = lazyListState2;
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     horizontal4 = horizontal3;
                                     vertical3 = top;
                                     z6 = z3;
@@ -683,7 +683,7 @@ public final class LazyDslKt {
                                         lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -113;
                                     }
-                                    PaddingValues m835PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
+                                    PaddingValues m836PaddingValues0680j_4 = i14 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
                                     if (i4 != 0) {
                                         z3 = false;
                                     }
@@ -711,7 +711,7 @@ public final class LazyDslKt {
                                         modifier3 = companion;
                                     }
                                     lazyListState4 = lazyListState2;
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     vertical4 = vertical3;
                                     horizontal3 = start;
                                     z6 = z3;
@@ -1020,7 +1020,7 @@ public final class LazyDslKt {
                                         lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -113;
                                     }
-                                    PaddingValues m835PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
+                                    PaddingValues m836PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
                                     if (i4 != 0) {
                                         z3 = false;
                                     }
@@ -1040,7 +1040,7 @@ public final class LazyDslKt {
                                     }
                                     if (i7 != 0) {
                                         lazyListState4 = lazyListState2;
-                                        paddingValues3 = m835PaddingValues0680j_4;
+                                        paddingValues3 = m836PaddingValues0680j_4;
                                         vertical4 = vertical3;
                                         horizontal3 = start;
                                         z7 = z3;
@@ -1048,7 +1048,7 @@ public final class LazyDslKt {
                                     } else {
                                         z6 = z2;
                                         lazyListState4 = lazyListState2;
-                                        paddingValues3 = m835PaddingValues0680j_4;
+                                        paddingValues3 = m836PaddingValues0680j_4;
                                         vertical4 = vertical3;
                                         horizontal3 = start;
                                         z7 = z3;
@@ -1334,7 +1334,7 @@ public final class LazyDslKt {
                                     lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                     i3 &= -113;
                                 }
-                                PaddingValues m835PaddingValues0680j_4 = i12 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
+                                PaddingValues m836PaddingValues0680j_4 = i12 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
                                 if (i4 != 0) {
                                     z2 = false;
                                 }
@@ -1348,7 +1348,7 @@ public final class LazyDslKt {
                                 }
                                 if ((i2 & 64) != 0) {
                                     i3 &= -3670017;
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     vertical3 = obj2;
                                     horizontal3 = obj3;
                                     lazyListState4 = lazyListState2;
@@ -1374,7 +1374,7 @@ public final class LazyDslKt {
                                     horizontal2 = horizontal3;
                                     flingBehavior2 = flingBehavior3;
                                 } else {
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     horizontal3 = obj3;
                                     i6 = -563353797;
                                     z4 = z2;
@@ -1650,7 +1650,7 @@ public final class LazyDslKt {
                                         lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                         i3 &= -113;
                                     }
-                                    PaddingValues m835PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
+                                    PaddingValues m836PaddingValues0680j_4 = i13 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
                                     if (i4 != 0) {
                                         z3 = false;
                                     }
@@ -1670,7 +1670,7 @@ public final class LazyDslKt {
                                     }
                                     if (i7 != 0) {
                                         lazyListState4 = lazyListState2;
-                                        paddingValues3 = m835PaddingValues0680j_4;
+                                        paddingValues3 = m836PaddingValues0680j_4;
                                         horizontal4 = horizontal3;
                                         vertical3 = top;
                                         z7 = z3;
@@ -1678,7 +1678,7 @@ public final class LazyDslKt {
                                     } else {
                                         z6 = z2;
                                         lazyListState4 = lazyListState2;
-                                        paddingValues3 = m835PaddingValues0680j_4;
+                                        paddingValues3 = m836PaddingValues0680j_4;
                                         horizontal4 = horizontal3;
                                         vertical3 = top;
                                         z7 = z3;
@@ -1964,7 +1964,7 @@ public final class LazyDslKt {
                                     lazyListState2 = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
                                     i3 &= -113;
                                 }
-                                PaddingValues m835PaddingValues0680j_4 = i12 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : obj;
+                                PaddingValues m836PaddingValues0680j_4 = i12 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
                                 if (i4 != 0) {
                                     z2 = false;
                                 }
@@ -1978,7 +1978,7 @@ public final class LazyDslKt {
                                 }
                                 if ((i2 & 64) != 0) {
                                     i3 &= -3670017;
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     horizontal3 = obj2;
                                     vertical3 = obj3;
                                     lazyListState4 = lazyListState2;
@@ -2004,7 +2004,7 @@ public final class LazyDslKt {
                                     vertical2 = vertical3;
                                     flingBehavior2 = flingBehavior3;
                                 } else {
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     vertical3 = obj3;
                                     i6 = 407929823;
                                     z4 = z2;

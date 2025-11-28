@@ -23,7 +23,7 @@ public final class HorizontalCenterOpticallyKt {
     public static final float CenterOpticallyCoefficient = 0.11f;
 
     /* renamed from: horizontalCenterOptically-4j6BHR0  reason: not valid java name */
-    public static final Modifier m2413horizontalCenterOptically4j6BHR0(Modifier modifier, final CornerBasedShape cornerBasedShape, final float f, final float f2) {
+    public static final Modifier m2414horizontalCenterOptically4j6BHR0(Modifier modifier, final CornerBasedShape cornerBasedShape, final float f, final float f2) {
         return LayoutModifierKt.layout(modifier, new Function3() { // from class: androidx.compose.material3.HorizontalCenterOpticallyKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -36,24 +36,24 @@ public final class HorizontalCenterOpticallyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult horizontalCenterOptically_4j6BHR0$lambda$1(float f, float f2, CornerBasedShape cornerBasedShape, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(constraints.m7954unboximpl());
-        int width = mo6697measureBRTryo0.getWidth();
-        int height = mo6697measureBRTryo0.getHeight();
-        long m5095constructorimpl = Size.m5095constructorimpl((Float.floatToRawIntBits(width) << 32) | (Float.floatToRawIntBits(height) & 4294967295L));
-        final float f3 = -measureScope.mo429toPx0680j_4(f);
-        final float f4 = measureScope.mo429toPx0680j_4(f2);
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
+        int width = mo6698measureBRTryo0.getWidth();
+        int height = mo6698measureBRTryo0.getHeight();
+        long m5096constructorimpl = Size.m5096constructorimpl((Float.floatToRawIntBits(width) << 32) | (Float.floatToRawIntBits(height) & 4294967295L));
+        final float f3 = -measureScope.mo430toPx0680j_4(f);
+        final float f4 = measureScope.mo430toPx0680j_4(f2);
         MeasureScope measureScope2 = measureScope;
-        float mo1198toPxTmRCtEA = cornerBasedShape.getTopStart().mo1198toPxTmRCtEA(m5095constructorimpl, measureScope2);
-        float mo1198toPxTmRCtEA2 = cornerBasedShape.getTopEnd().mo1198toPxTmRCtEA(m5095constructorimpl, measureScope2);
-        float mo1198toPxTmRCtEA3 = cornerBasedShape.getBottomStart().mo1198toPxTmRCtEA(m5095constructorimpl, measureScope2);
-        float mo1198toPxTmRCtEA4 = cornerBasedShape.getBottomEnd().mo1198toPxTmRCtEA(m5095constructorimpl, measureScope2);
+        float mo1199toPxTmRCtEA = cornerBasedShape.getTopStart().mo1199toPxTmRCtEA(m5096constructorimpl, measureScope2);
+        float mo1199toPxTmRCtEA2 = cornerBasedShape.getTopEnd().mo1199toPxTmRCtEA(m5096constructorimpl, measureScope2);
+        float mo1199toPxTmRCtEA3 = cornerBasedShape.getBottomStart().mo1199toPxTmRCtEA(m5096constructorimpl, measureScope2);
+        float mo1199toPxTmRCtEA4 = cornerBasedShape.getBottomEnd().mo1199toPxTmRCtEA(m5096constructorimpl, measureScope2);
         float f5 = 2;
-        final float f6 = (((mo1198toPxTmRCtEA + mo1198toPxTmRCtEA3) / f5) - ((mo1198toPxTmRCtEA2 + mo1198toPxTmRCtEA4) / f5)) * 0.11f;
+        final float f6 = (((mo1199toPxTmRCtEA + mo1199toPxTmRCtEA3) / f5) - ((mo1199toPxTmRCtEA2 + mo1199toPxTmRCtEA4) / f5)) * 0.11f;
         return MeasureScope.layout$default(measureScope, width, height, null, new Function1() { // from class: androidx.compose.material3.HorizontalCenterOpticallyKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0;
-                horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0 = HorizontalCenterOpticallyKt.horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0(f6, f3, f4, mo6697measureBRTryo0, (Placeable.PlacementScope) obj);
+                horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0 = HorizontalCenterOpticallyKt.horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0(f6, f3, f4, mo6698measureBRTryo0, (Placeable.PlacementScope) obj);
                 return horizontalCenterOptically_4j6BHR0$lambda$1$lambda$0;
             }
         }, 4, null);
@@ -66,7 +66,7 @@ public final class HorizontalCenterOpticallyKt {
     }
 
     /* renamed from: horizontalCenterOptically-4j6BHR0  reason: not valid java name */
-    public static final Modifier m2414horizontalCenterOptically4j6BHR0(Modifier modifier, final ShapeWithHorizontalCenterOptically shapeWithHorizontalCenterOptically, final float f, final float f2) {
+    public static final Modifier m2415horizontalCenterOptically4j6BHR0(Modifier modifier, final ShapeWithHorizontalCenterOptically shapeWithHorizontalCenterOptically, final float f, final float f2) {
         return LayoutModifierKt.layout(modifier, new Function3() { // from class: androidx.compose.material3.HorizontalCenterOpticallyKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -79,16 +79,16 @@ public final class HorizontalCenterOpticallyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult horizontalCenterOptically_4j6BHR0$lambda$3(float f, float f2, final ShapeWithHorizontalCenterOptically shapeWithHorizontalCenterOptically, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(constraints.m7954unboximpl());
-        int width = mo6697measureBRTryo0.getWidth();
-        int height = mo6697measureBRTryo0.getHeight();
-        final float f3 = -measureScope.mo429toPx0680j_4(f);
-        final float f4 = measureScope.mo429toPx0680j_4(f2);
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
+        int width = mo6698measureBRTryo0.getWidth();
+        int height = mo6698measureBRTryo0.getHeight();
+        final float f3 = -measureScope.mo430toPx0680j_4(f);
+        final float f4 = measureScope.mo430toPx0680j_4(f2);
         return MeasureScope.layout$default(measureScope, width, height, null, new Function1() { // from class: androidx.compose.material3.HorizontalCenterOpticallyKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit horizontalCenterOptically_4j6BHR0$lambda$3$lambda$2;
-                horizontalCenterOptically_4j6BHR0$lambda$3$lambda$2 = HorizontalCenterOpticallyKt.horizontalCenterOptically_4j6BHR0$lambda$3$lambda$2(ShapeWithHorizontalCenterOptically.this, f3, f4, mo6697measureBRTryo0, (Placeable.PlacementScope) obj);
+                horizontalCenterOptically_4j6BHR0$lambda$3$lambda$2 = HorizontalCenterOpticallyKt.horizontalCenterOptically_4j6BHR0$lambda$3$lambda$2(ShapeWithHorizontalCenterOptically.this, f3, f4, mo6698measureBRTryo0, (Placeable.PlacementScope) obj);
                 return horizontalCenterOptically_4j6BHR0$lambda$3$lambda$2;
             }
         }, 4, null);
@@ -101,24 +101,24 @@ public final class HorizontalCenterOpticallyKt {
     }
 
     /* renamed from: horizontalCenterOptically-4j6BHR0$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m2415horizontalCenterOptically4j6BHR0$default(Modifier modifier, CornerBasedShape cornerBasedShape, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m2416horizontalCenterOptically4j6BHR0$default(Modifier modifier, CornerBasedShape cornerBasedShape, float f, float f2, int i, Object obj) {
         if ((i & 2) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
-        return m2413horizontalCenterOptically4j6BHR0(modifier, cornerBasedShape, f, f2);
+        return m2414horizontalCenterOptically4j6BHR0(modifier, cornerBasedShape, f, f2);
     }
 
     /* renamed from: horizontalCenterOptically-4j6BHR0$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m2416horizontalCenterOptically4j6BHR0$default(Modifier modifier, ShapeWithHorizontalCenterOptically shapeWithHorizontalCenterOptically, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m2417horizontalCenterOptically4j6BHR0$default(Modifier modifier, ShapeWithHorizontalCenterOptically shapeWithHorizontalCenterOptically, float f, float f2, int i, Object obj) {
         if ((i & 2) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
-        return m2414horizontalCenterOptically4j6BHR0(modifier, shapeWithHorizontalCenterOptically, f, f2);
+        return m2415horizontalCenterOptically4j6BHR0(modifier, shapeWithHorizontalCenterOptically, f, f2);
     }
 }

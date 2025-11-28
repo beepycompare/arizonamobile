@@ -2,7 +2,7 @@ package io.appmetrica.analytics.protobuf.nano;
 
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 final class UnknownFieldData {
     final byte[] bytes;
     final int tag;

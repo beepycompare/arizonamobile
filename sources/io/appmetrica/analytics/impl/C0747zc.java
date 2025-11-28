@@ -8,7 +8,7 @@ import io.appmetrica.analytics.internal.CounterConfiguration;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* renamed from: io.appmetrica.analytics.impl.zc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0747zc {
 
     /* renamed from: a  reason: collision with root package name */

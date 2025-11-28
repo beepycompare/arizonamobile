@@ -15,44 +15,44 @@ public interface Dimension {
         private final int px;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Pixels m9137boximpl(int i) {
+        public static final /* synthetic */ Pixels m9149boximpl(int i) {
             return new Pixels(i);
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m9139equalsimpl(int i, Object obj) {
-            return (obj instanceof Pixels) && i == ((Pixels) obj).m9143unboximpl();
+        public static boolean m9151equalsimpl(int i, Object obj) {
+            return (obj instanceof Pixels) && i == ((Pixels) obj).m9155unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m9140equalsimpl0(int i, int i2) {
+        public static final boolean m9152equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m9141hashCodeimpl(int i) {
+        public static int m9153hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m9142toStringimpl(int i) {
+        public static String m9154toStringimpl(int i) {
             return "Pixels(px=" + i + ')';
         }
 
         public boolean equals(Object obj) {
-            return m9139equalsimpl(this.px, obj);
+            return m9151equalsimpl(this.px, obj);
         }
 
         public int hashCode() {
-            return m9141hashCodeimpl(this.px);
+            return m9153hashCodeimpl(this.px);
         }
 
         public String toString() {
-            return m9142toStringimpl(this.px);
+            return m9154toStringimpl(this.px);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m9143unboximpl() {
+        public final /* synthetic */ int m9155unboximpl() {
             return this.px;
         }
 
@@ -65,7 +65,7 @@ public interface Dimension {
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m9138constructorimpl(int i) {
+        public static int m9150constructorimpl(int i) {
             if (i > 0) {
                 return i;
             }

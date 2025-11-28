@@ -62,11 +62,11 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m1376invoked4ec7I(pressGestureScope, offset.m5045unboximpl(), continuation);
+            return m1377invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m1376invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m1377invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$scope, this.$pressedInteraction, this.$interactionSource, continuation);
             anonymousClass1.L$0 = pressGestureScope;
             anonymousClass1.J$0 = j;

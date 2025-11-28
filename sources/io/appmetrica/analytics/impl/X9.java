@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.pm.FeatureInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class X9 {
     public final Y9 a(FeatureInfo featureInfo) {
         if (featureInfo.name == null) {

@@ -55,7 +55,7 @@ public final class SelectionMovementDeletionContext {
             this.initialWedgeAffinity = transformedTextFieldState.getSelectionWedgeAffinity();
             Unit unit = Unit.INSTANCE;
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-            this.selection = visualText.m1446getSelectiond9O1mEE();
+            this.selection = visualText.m1447getSelectiond9O1mEE();
             this.text = visualText.getText().toString();
         } catch (Throwable th) {
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
@@ -72,12 +72,12 @@ public final class SelectionMovementDeletionContext {
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m1623getSelectiond9O1mEE() {
+    public final long m1624getSelectiond9O1mEE() {
         return this.selection;
     }
 
     /* renamed from: setSelection-5zc-tL8  reason: not valid java name */
-    public final void m1624setSelection5zctL8(long j) {
+    public final void m1625setSelection5zctL8(long j) {
         this.selection = j;
     }
 
@@ -127,11 +127,11 @@ public final class SelectionMovementDeletionContext {
     }
 
     public final int getPrecedingCharacterIndex() {
-        return StringHelpers_androidKt.findPrecedingBreak(this.text, TextRange.m7452getEndimpl(this.selection));
+        return StringHelpers_androidKt.findPrecedingBreak(this.text, TextRange.m7453getEndimpl(this.selection));
     }
 
     public final int getNextCharacterIndex() {
-        return StringHelpers_androidKt.findFollowingBreak(this.text, TextRange.m7452getEndimpl(this.selection));
+        return StringHelpers_androidKt.findFollowingBreak(this.text, TextRange.m7453getEndimpl(this.selection));
     }
 
     public final SelectionMovementDeletionContext moveCursorLeftByWord() {
@@ -155,15 +155,15 @@ public final class SelectionMovementDeletionContext {
             this.textPreparedSelectionState.resetCachedX();
         }
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(RangesKt.coerceAtLeast(jumpByLinesOffset, 0), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(RangesKt.coerceAtLeast(jumpByLinesOffset, 0), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -176,15 +176,15 @@ public final class SelectionMovementDeletionContext {
             this.textPreparedSelectionState.resetCachedX();
         }
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(RangesKt.coerceAtMost(jumpByLinesOffset, this.text.length()), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(RangesKt.coerceAtMost(jumpByLinesOffset, this.text.length()), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -207,21 +207,21 @@ public final class SelectionMovementDeletionContext {
     private final boolean isLtr() {
         ResolvedTextDirection paragraphDirection;
         TextLayoutResult textLayoutResult = this.textLayoutResult;
-        return textLayoutResult == null || (paragraphDirection = textLayoutResult.getParagraphDirection(TextRange.m7452getEndimpl(this.selection))) == null || paragraphDirection == ResolvedTextDirection.Ltr;
+        return textLayoutResult == null || (paragraphDirection = textLayoutResult.getParagraphDirection(TextRange.m7453getEndimpl(this.selection))) == null || paragraphDirection == ResolvedTextDirection.Ltr;
     }
 
     static /* synthetic */ int getNextWordOffsetForLayout$default(SelectionMovementDeletionContext selectionMovementDeletionContext, TextLayoutResult textLayoutResult, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = TextRange.m7452getEndimpl(selectionMovementDeletionContext.selection);
+            i = TextRange.m7453getEndimpl(selectionMovementDeletionContext.selection);
         }
         return selectionMovementDeletionContext.getNextWordOffsetForLayout(textLayoutResult, i);
     }
 
     private final int getNextWordOffsetForLayout(TextLayoutResult textLayoutResult, int i) {
         while (i < this.initialValue.length()) {
-            long m7429getWordBoundaryjx7JFs = textLayoutResult.m7429getWordBoundaryjx7JFs(charOffset(i));
-            if (TextRange.m7452getEndimpl(m7429getWordBoundaryjx7JFs) > i) {
-                return TextRange.m7452getEndimpl(m7429getWordBoundaryjx7JFs);
+            long m7430getWordBoundaryjx7JFs = textLayoutResult.m7430getWordBoundaryjx7JFs(charOffset(i));
+            if (TextRange.m7453getEndimpl(m7430getWordBoundaryjx7JFs) > i) {
+                return TextRange.m7453getEndimpl(m7430getWordBoundaryjx7JFs);
             }
             i++;
         }
@@ -230,16 +230,16 @@ public final class SelectionMovementDeletionContext {
 
     static /* synthetic */ int getPrevWordOffsetForLayout$default(SelectionMovementDeletionContext selectionMovementDeletionContext, TextLayoutResult textLayoutResult, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = TextRange.m7452getEndimpl(selectionMovementDeletionContext.selection);
+            i = TextRange.m7453getEndimpl(selectionMovementDeletionContext.selection);
         }
         return selectionMovementDeletionContext.getPrevWordOffsetForLayout(textLayoutResult, i);
     }
 
     private final int getPrevWordOffsetForLayout(TextLayoutResult textLayoutResult, int i) {
         while (i > 0) {
-            long m7429getWordBoundaryjx7JFs = textLayoutResult.m7429getWordBoundaryjx7JFs(charOffset(i));
-            if (TextRange.m7457getStartimpl(m7429getWordBoundaryjx7JFs) < i) {
-                return TextRange.m7457getStartimpl(m7429getWordBoundaryjx7JFs);
+            long m7430getWordBoundaryjx7JFs = textLayoutResult.m7430getWordBoundaryjx7JFs(charOffset(i));
+            if (TextRange.m7458getStartimpl(m7430getWordBoundaryjx7JFs) < i) {
+                return TextRange.m7458getStartimpl(m7430getWordBoundaryjx7JFs);
             }
             i--;
         }
@@ -248,7 +248,7 @@ public final class SelectionMovementDeletionContext {
 
     static /* synthetic */ int getLineStartByOffsetForLayout$default(SelectionMovementDeletionContext selectionMovementDeletionContext, TextLayoutResult textLayoutResult, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = TextRange.m7455getMinimpl(selectionMovementDeletionContext.selection);
+            i = TextRange.m7456getMinimpl(selectionMovementDeletionContext.selection);
         }
         return selectionMovementDeletionContext.getLineStartByOffsetForLayout(textLayoutResult, i);
     }
@@ -259,7 +259,7 @@ public final class SelectionMovementDeletionContext {
 
     static /* synthetic */ int getLineEndByOffsetForLayout$default(SelectionMovementDeletionContext selectionMovementDeletionContext, TextLayoutResult textLayoutResult, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = TextRange.m7454getMaximpl(selectionMovementDeletionContext.selection);
+            i = TextRange.m7455getMaximpl(selectionMovementDeletionContext.selection);
         }
         return selectionMovementDeletionContext.getLineEndByOffsetForLayout(textLayoutResult, i);
     }
@@ -269,11 +269,11 @@ public final class SelectionMovementDeletionContext {
     }
 
     private final int jumpByLinesOffset(TextLayoutResult textLayoutResult, int i) {
-        int m7452getEndimpl = TextRange.m7452getEndimpl(this.selection);
+        int m7453getEndimpl = TextRange.m7453getEndimpl(this.selection);
         if (Float.isNaN(this.textPreparedSelectionState.getCachedX())) {
-            this.textPreparedSelectionState.setCachedX(textLayoutResult.getCursorRect(m7452getEndimpl).getLeft());
+            this.textPreparedSelectionState.setCachedX(textLayoutResult.getCursorRect(m7453getEndimpl).getLeft());
         }
-        int lineForOffset = textLayoutResult.getLineForOffset(m7452getEndimpl) + i;
+        int lineForOffset = textLayoutResult.getLineForOffset(m7453getEndimpl) + i;
         if (lineForOffset < 0) {
             return Integer.MIN_VALUE;
         }
@@ -285,20 +285,20 @@ public final class SelectionMovementDeletionContext {
         if ((isLtr() && cachedX >= textLayoutResult.getLineRight(lineForOffset)) || (!isLtr() && cachedX <= textLayoutResult.getLineLeft(lineForOffset))) {
             return textLayoutResult.getLineEnd(lineForOffset, true);
         }
-        return textLayoutResult.m7427getOffsetForPositionk4lQ0M(Offset.m5027constructorimpl((Float.floatToRawIntBits(cachedX) << 32) | (Float.floatToRawIntBits(lineBottom) & 4294967295L)));
+        return textLayoutResult.m7428getOffsetForPositionk4lQ0M(Offset.m5028constructorimpl((Float.floatToRawIntBits(cachedX) << 32) | (Float.floatToRawIntBits(lineBottom) & 4294967295L)));
     }
 
     private final int jumpByPagesOffset(int i) {
-        int m7452getEndimpl = TextRange.m7452getEndimpl(this.initialValue.m1446getSelectiond9O1mEE());
+        int m7453getEndimpl = TextRange.m7453getEndimpl(this.initialValue.m1447getSelectiond9O1mEE());
         if (this.textLayoutResult == null || Float.isNaN(this.visibleTextLayoutHeight)) {
-            return m7452getEndimpl;
+            return m7453getEndimpl;
         }
-        Rect translate = this.textLayoutResult.getCursorRect(m7452getEndimpl).translate(0.0f, this.visibleTextLayoutHeight * i);
+        Rect translate = this.textLayoutResult.getCursorRect(m7453getEndimpl).translate(0.0f, this.visibleTextLayoutHeight * i);
         float lineBottom = this.textLayoutResult.getLineBottom(this.textLayoutResult.getLineForVerticalPosition(translate.getTop()));
         if (Math.abs(translate.getTop() - lineBottom) > Math.abs(translate.getBottom() - lineBottom)) {
-            return this.textLayoutResult.m7427getOffsetForPositionk4lQ0M(translate.m5070getTopLeftF1C5BW0());
+            return this.textLayoutResult.m7428getOffsetForPositionk4lQ0M(translate.m5071getTopLeftF1C5BW0());
         }
-        return this.textLayoutResult.m7427getOffsetForPositionk4lQ0M(translate.m5063getBottomLeftF1C5BW0());
+        return this.textLayoutResult.m7428getOffsetForPositionk4lQ0M(translate.m5064getBottomLeftF1C5BW0());
     }
 
     private final int charOffset(int i) {
@@ -328,7 +328,7 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext deselect() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            this.selection = TextRangeKt.TextRange(TextRange.m7452getEndimpl(this.selection));
+            this.selection = TextRangeKt.TextRange(TextRange.m7453getEndimpl(this.selection));
         }
         return this;
     }
@@ -336,14 +336,14 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext collapseLeftOr(Function1<? super SelectionMovementDeletionContext, Unit> function1) {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            if (TextRange.m7451getCollapsedimpl(this.selection)) {
+            if (TextRange.m7452getCollapsedimpl(this.selection)) {
                 function1.invoke(this);
                 return this;
             } else if (isLtr()) {
-                this.selection = TextRangeKt.TextRange(TextRange.m7455getMinimpl(this.selection));
+                this.selection = TextRangeKt.TextRange(TextRange.m7456getMinimpl(this.selection));
                 return this;
             } else {
-                this.selection = TextRangeKt.TextRange(TextRange.m7454getMaximpl(this.selection));
+                this.selection = TextRangeKt.TextRange(TextRange.m7455getMaximpl(this.selection));
             }
         }
         return this;
@@ -352,14 +352,14 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext collapseRightOr(Function1<? super SelectionMovementDeletionContext, Unit> function1) {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            if (TextRange.m7451getCollapsedimpl(this.selection)) {
+            if (TextRange.m7452getCollapsedimpl(this.selection)) {
                 function1.invoke(this);
                 return this;
             } else if (isLtr()) {
-                this.selection = TextRangeKt.TextRange(TextRange.m7454getMaximpl(this.selection));
+                this.selection = TextRangeKt.TextRange(TextRange.m7455getMaximpl(this.selection));
                 return this;
             } else {
-                this.selection = TextRangeKt.TextRange(TextRange.m7455getMinimpl(this.selection));
+                this.selection = TextRangeKt.TextRange(TextRange.m7456getMinimpl(this.selection));
             }
         }
         return this;
@@ -370,15 +370,15 @@ public final class SelectionMovementDeletionContext {
             this.textPreparedSelectionState.resetCachedX();
         }
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(function0.invoke().intValue(), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(function0.invoke().intValue(), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -392,15 +392,15 @@ public final class SelectionMovementDeletionContext {
             selectionMovementDeletionContext.textPreparedSelectionState.resetCachedX();
         }
         if (selectionMovementDeletionContext.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(selectionMovementDeletionContext.m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(((Number) function0.invoke()).intValue(), m7452getEndimpl, selectionMovementDeletionContext.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(selectionMovementDeletionContext.m1623getSelectiond9O1mEE())) {
-                selectionMovementDeletionContext.m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(selectionMovementDeletionContext.m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(((Number) function0.invoke()).intValue(), m7453getEndimpl, selectionMovementDeletionContext.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(selectionMovementDeletionContext.m1624getSelectiond9O1mEE())) {
+                selectionMovementDeletionContext.m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                selectionMovementDeletionContext.setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                selectionMovementDeletionContext.setWedgeAffinity(m1613component2impl);
             }
         }
         return selectionMovementDeletionContext;
@@ -409,15 +409,15 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorPrevByCodePointOrEmoji() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(StringHelpers_androidKt.findCodePointOrEmojiStartBefore(this.text, TextRange.m7452getEndimpl(this.selection), -1), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(StringHelpers_androidKt.findCodePointOrEmojiStartBefore(this.text, TextRange.m7453getEndimpl(this.selection), -1), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -426,15 +426,15 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorPrevByChar() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(StringHelpers_androidKt.findPrecedingBreak(this.text, TextRange.m7452getEndimpl(this.selection)), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(StringHelpers_androidKt.findPrecedingBreak(this.text, TextRange.m7453getEndimpl(this.selection)), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -443,15 +443,15 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorNextByChar() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(StringHelpers_androidKt.findFollowingBreak(this.text, TextRange.m7452getEndimpl(this.selection)), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(StringHelpers_androidKt.findFollowingBreak(this.text, TextRange.m7453getEndimpl(this.selection)), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -460,15 +460,15 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorToHome() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(0, m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(0, m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -477,15 +477,15 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorToEnd() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(this.text.length(), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(this.text.length(), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -494,16 +494,16 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorNextByWord() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
             TextLayoutResult textLayoutResult = this.textLayoutResult;
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getNextWordOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : this.text.length(), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getNextWordOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : this.text.length(), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -512,16 +512,16 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorPrevByWord() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
             TextLayoutResult textLayoutResult = this.textLayoutResult;
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getPrevWordOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : 0, m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getPrevWordOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : 0, m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -530,19 +530,19 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorPrevByParagraph() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            int findParagraphStart = StringHelpersKt.findParagraphStart(this.text, TextRange.m7455getMinimpl(this.selection));
-            if (findParagraphStart == TextRange.m7455getMinimpl(this.selection) && findParagraphStart != 0) {
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            int findParagraphStart = StringHelpersKt.findParagraphStart(this.text, TextRange.m7456getMinimpl(this.selection));
+            if (findParagraphStart == TextRange.m7456getMinimpl(this.selection) && findParagraphStart != 0) {
                 findParagraphStart = StringHelpersKt.findParagraphStart(this.text, findParagraphStart - 1);
             }
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(findParagraphStart, m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(findParagraphStart, m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -551,19 +551,19 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorNextByParagraph() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            int findParagraphEnd = StringHelpersKt.findParagraphEnd(this.text, TextRange.m7454getMaximpl(this.selection));
-            if (findParagraphEnd == TextRange.m7454getMaximpl(this.selection) && findParagraphEnd != this.text.length()) {
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            int findParagraphEnd = StringHelpersKt.findParagraphEnd(this.text, TextRange.m7455getMaximpl(this.selection));
+            if (findParagraphEnd == TextRange.m7455getMaximpl(this.selection) && findParagraphEnd != this.text.length()) {
                 findParagraphEnd = StringHelpersKt.findParagraphEnd(this.text, findParagraphEnd + 1);
             }
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(findParagraphEnd, m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(findParagraphEnd, m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -572,16 +572,16 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorToLineStart() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
             TextLayoutResult textLayoutResult = this.textLayoutResult;
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getLineStartByOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : 0, m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getLineStartByOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : 0, m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -590,16 +590,16 @@ public final class SelectionMovementDeletionContext {
     public final SelectionMovementDeletionContext moveCursorToLineEnd() {
         this.textPreparedSelectionState.resetCachedX();
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
             TextLayoutResult textLayoutResult = this.textLayoutResult;
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getLineEndByOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : this.text.length(), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(textLayoutResult != null ? getLineEndByOffsetForLayout$default(this, textLayoutResult, 0, 1, null) : this.text.length(), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -607,15 +607,15 @@ public final class SelectionMovementDeletionContext {
 
     public final SelectionMovementDeletionContext moveCursorUpByPage() {
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(jumpByPagesOffset(-1), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(jumpByPagesOffset(-1), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -623,15 +623,15 @@ public final class SelectionMovementDeletionContext {
 
     public final SelectionMovementDeletionContext moveCursorDownByPage() {
         if (this.text.length() > 0) {
-            int m7452getEndimpl = TextRange.m7452getEndimpl(m1623getSelectiond9O1mEE());
-            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(jumpByPagesOffset(1), m7452getEndimpl, this.state);
-            int m1611component1impl = CursorAndWedgeAffinity.m1611component1impl(calculateNextCursorPositionAndWedgeAffinity);
-            WedgeAffinity m1612component2impl = CursorAndWedgeAffinity.m1612component2impl(calculateNextCursorPositionAndWedgeAffinity);
-            if (m1611component1impl != m7452getEndimpl || !TextRange.m7451getCollapsedimpl(m1623getSelectiond9O1mEE())) {
-                m1624setSelection5zctL8(TextRangeKt.TextRange(m1611component1impl));
+            int m7453getEndimpl = TextRange.m7453getEndimpl(m1624getSelectiond9O1mEE());
+            long calculateNextCursorPositionAndWedgeAffinity = TextPreparedSelectionKt.calculateNextCursorPositionAndWedgeAffinity(jumpByPagesOffset(1), m7453getEndimpl, this.state);
+            int m1612component1impl = CursorAndWedgeAffinity.m1612component1impl(calculateNextCursorPositionAndWedgeAffinity);
+            WedgeAffinity m1613component2impl = CursorAndWedgeAffinity.m1613component2impl(calculateNextCursorPositionAndWedgeAffinity);
+            if (m1612component1impl != m7453getEndimpl || !TextRange.m7452getCollapsedimpl(m1624getSelectiond9O1mEE())) {
+                m1625setSelection5zctL8(TextRangeKt.TextRange(m1612component1impl));
             }
-            if (m1612component2impl != null) {
-                setWedgeAffinity(m1612component2impl);
+            if (m1613component2impl != null) {
+                setWedgeAffinity(m1613component2impl);
             }
         }
         return this;
@@ -639,19 +639,19 @@ public final class SelectionMovementDeletionContext {
 
     public final SelectionMovementDeletionContext selectMovement() {
         if (this.text.length() > 0) {
-            this.selection = TextRangeKt.TextRange(TextRange.m7457getStartimpl(this.initialValue.m1446getSelectiond9O1mEE()), TextRange.m7452getEndimpl(this.selection));
+            this.selection = TextRangeKt.TextRange(TextRange.m7458getStartimpl(this.initialValue.m1447getSelectiond9O1mEE()), TextRange.m7453getEndimpl(this.selection));
         }
         return this;
     }
 
     public final SelectionMovementDeletionContext deleteMovement() {
         if (this.text.length() > 0) {
-            if (!TextRange.m7451getCollapsedimpl(this.initialValue.m1446getSelectiond9O1mEE())) {
+            if (!TextRange.m7452getCollapsedimpl(this.initialValue.m1447getSelectiond9O1mEE())) {
                 this.state.deleteSelectedText();
             } else {
-                TransformedTextFieldState.m1596replaceTextM8tDOmk$default(this.state, "", TextRangeKt.TextRange(TextRange.m7457getStartimpl(this.initialValue.m1446getSelectiond9O1mEE()), TextRange.m7452getEndimpl(this.selection)), null, !this.isFromSoftKeyboard, 4, null);
+                TransformedTextFieldState.m1597replaceTextM8tDOmk$default(this.state, "", TextRangeKt.TextRange(TextRange.m7458getStartimpl(this.initialValue.m1447getSelectiond9O1mEE()), TextRange.m7453getEndimpl(this.selection)), null, !this.isFromSoftKeyboard, 4, null);
             }
-            this.selection = this.state.getVisualText().m1446getSelectiond9O1mEE();
+            this.selection = this.state.getVisualText().m1447getSelectiond9O1mEE();
             this.wedgeAffinity = WedgeAffinity.Start;
         }
         return this;

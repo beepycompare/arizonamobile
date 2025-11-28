@@ -147,7 +147,7 @@ public final class BasicTextContextMenuProvider implements TextContextMenuProvid
 
         @Override // androidx.compose.foundation.text.contextmenu.data.TextContextMenuSession
         public void close() {
-            this.channel.mo8867trySendJP2dKIU(Unit.INSTANCE);
+            this.channel.mo8879trySendJP2dKIU(Unit.INSTANCE);
         }
 
         public final Object awaitClose(Continuation<? super Unit> continuation) {

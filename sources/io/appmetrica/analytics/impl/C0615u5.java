@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* renamed from: io.appmetrica.analytics.impl.u5  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0615u5 {
 
     /* renamed from: a  reason: collision with root package name */

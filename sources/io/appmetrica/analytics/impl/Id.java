@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModule;
 import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModuleDummy;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Id {
 
     /* renamed from: a  reason: collision with root package name */

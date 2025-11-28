@@ -74,7 +74,7 @@ final class ScrollableNode$onKeyEvent$1 extends SuspendLambda implements Functio
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             ResultKt.throwOnFailure(obj);
-            ((NestedScrollScope) this.L$0).mo533scrollByOzD1aCk(this.$scrollAmount, NestedScrollSource.Companion.m6462getUserInputWNlRxjI());
+            ((NestedScrollScope) this.L$0).mo534scrollByOzD1aCk(this.$scrollAmount, NestedScrollSource.Companion.m6463getUserInputWNlRxjI());
             return Unit.INSTANCE;
         }
     }

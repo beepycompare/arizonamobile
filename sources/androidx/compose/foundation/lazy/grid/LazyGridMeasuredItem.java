@@ -54,7 +54,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     /* JADX WARN: Multi-variable type inference failed */
     private LazyGridMeasuredItem(int i, Object obj, boolean z, int i2, int i3, boolean z2, LayoutDirection layoutDirection, int i4, int i5, List<? extends Placeable> list, long j, Object obj2, LazyLayoutItemAnimator<LazyGridMeasuredItem> lazyLayoutItemAnimator, long j2, int i6, int i7) {
-        long m8161constructorimpl;
+        long m8162constructorimpl;
         this.index = i;
         this.key = obj;
         this.isVertical = z;
@@ -80,12 +80,12 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
         this.mainAxisSize = i8;
         this.mainAxisSizeWithSpacings = RangesKt.coerceAtLeast(i3 + i8, 0);
         if (isVertical()) {
-            m8161constructorimpl = IntSize.m8161constructorimpl((i8 & 4294967295L) | (this.crossAxisSize << 32));
+            m8162constructorimpl = IntSize.m8162constructorimpl((i8 & 4294967295L) | (this.crossAxisSize << 32));
         } else {
-            m8161constructorimpl = IntSize.m8161constructorimpl((this.crossAxisSize & 4294967295L) | (i8 << 32));
+            m8162constructorimpl = IntSize.m8162constructorimpl((this.crossAxisSize & 4294967295L) | (i8 << 32));
         }
-        this.size = m8161constructorimpl;
-        this.offset = IntOffset.Companion.m8134getZeronOccac();
+        this.size = m8162constructorimpl;
+        this.offset = IntOffset.Companion.m8135getZeronOccac();
         this.row = -1;
         this.column = -1;
     }
@@ -116,7 +116,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem
     /* renamed from: getConstraints-msEJaDk */
-    public long mo970getConstraintsmsEJaDk() {
+    public long mo971getConstraintsmsEJaDk() {
         return this.constraints;
     }
 
@@ -151,13 +151,13 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     @Override // androidx.compose.foundation.lazy.grid.LazyGridItemInfo
     /* renamed from: getSize-YbymL2g */
-    public long mo1001getSizeYbymL2g() {
+    public long mo1002getSizeYbymL2g() {
         return this.size;
     }
 
     @Override // androidx.compose.foundation.lazy.grid.LazyGridItemInfo
     /* renamed from: getOffset-nOcc-ac */
-    public long mo1000getOffsetnOccac() {
+    public long mo1001getOffsetnOccac() {
         return this.offset;
     }
 
@@ -173,8 +173,8 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem
     /* renamed from: getOffset-Bjo55l4 */
-    public long mo971getOffsetBjo55l4(int i) {
-        return mo1000getOffsetnOccac();
+    public long mo972getOffsetBjo55l4(int i) {
+        return mo1001getOffsetnOccac();
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem
@@ -193,7 +193,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     }
 
     public final void position(int i, int i2, int i3, int i4, int i5, int i6) {
-        long m8117constructorimpl;
+        long m8118constructorimpl;
         this.mainAxisLayoutSize = isVertical() ? i4 : i3;
         if (!isVertical()) {
             i3 = i4;
@@ -202,11 +202,11 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
             i2 = (i3 - i2) - this.crossAxisSize;
         }
         if (isVertical()) {
-            m8117constructorimpl = IntOffset.m8117constructorimpl((i2 << 32) | (4294967295L & i));
+            m8118constructorimpl = IntOffset.m8118constructorimpl((i2 << 32) | (4294967295L & i));
         } else {
-            m8117constructorimpl = IntOffset.m8117constructorimpl((i2 & 4294967295L) | (i << 32));
+            m8118constructorimpl = IntOffset.m8118constructorimpl((i2 & 4294967295L) | (i << 32));
         }
-        this.offset = m8117constructorimpl;
+        this.offset = m8118constructorimpl;
         this.row = i5;
         this.column = i6;
         this.minMainAxisOffset = -this.beforeContentPadding;
@@ -222,27 +222,27 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
         if (getNonScrollableItem()) {
             return;
         }
-        long mo1000getOffsetnOccac = mo1000getOffsetnOccac();
-        int m8123getXimpl = isVertical() ? IntOffset.m8123getXimpl(mo1000getOffsetnOccac) : IntOffset.m8123getXimpl(mo1000getOffsetnOccac) + i;
+        long mo1001getOffsetnOccac = mo1001getOffsetnOccac();
+        int m8124getXimpl = isVertical() ? IntOffset.m8124getXimpl(mo1001getOffsetnOccac) : IntOffset.m8124getXimpl(mo1001getOffsetnOccac) + i;
         boolean isVertical = isVertical();
-        int m8124getYimpl = IntOffset.m8124getYimpl(mo1000getOffsetnOccac);
+        int m8125getYimpl = IntOffset.m8125getYimpl(mo1001getOffsetnOccac);
         if (isVertical) {
-            m8124getYimpl += i;
+            m8125getYimpl += i;
         }
-        this.offset = IntOffset.m8117constructorimpl((m8123getXimpl << 32) | (m8124getYimpl & 4294967295L));
+        this.offset = IntOffset.m8118constructorimpl((m8124getXimpl << 32) | (m8125getYimpl & 4294967295L));
         if (z) {
             int placeablesCount = getPlaceablesCount();
             for (int i2 = 0; i2 < placeablesCount; i2++) {
                 LazyLayoutItemAnimation animation = this.animator.getAnimation(getKey(), i2);
                 if (animation != null) {
-                    long m1034getRawOffsetnOccac = animation.m1034getRawOffsetnOccac();
-                    int m8123getXimpl2 = isVertical() ? IntOffset.m8123getXimpl(m1034getRawOffsetnOccac) : Integer.valueOf(IntOffset.m8123getXimpl(m1034getRawOffsetnOccac) + i).intValue();
+                    long m1035getRawOffsetnOccac = animation.m1035getRawOffsetnOccac();
+                    int m8124getXimpl2 = isVertical() ? IntOffset.m8124getXimpl(m1035getRawOffsetnOccac) : Integer.valueOf(IntOffset.m8124getXimpl(m1035getRawOffsetnOccac) + i).intValue();
                     boolean isVertical2 = isVertical();
-                    int m8124getYimpl2 = IntOffset.m8124getYimpl(m1034getRawOffsetnOccac);
+                    int m8125getYimpl2 = IntOffset.m8125getYimpl(m1035getRawOffsetnOccac);
                     if (isVertical2) {
-                        m8124getYimpl2 = Integer.valueOf(m8124getYimpl2 + i).intValue();
+                        m8125getYimpl2 = Integer.valueOf(m8125getYimpl2 + i).intValue();
                     }
-                    animation.m1037setRawOffsetgyyYBs(IntOffset.m8117constructorimpl((m8124getYimpl2 & 4294967295L) | (m8123getXimpl2 << 32)));
+                    animation.m1038setRawOffsetgyyYBs(IntOffset.m8118constructorimpl((m8125getYimpl2 & 4294967295L) | (m8124getXimpl2 << 32)));
                 }
             }
         }
@@ -251,7 +251,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     public final void place(Placeable.PlacementScope placementScope, boolean z) {
         GraphicsLayer graphicsLayer;
         Placeable.PlacementScope placementScope2;
-        int m8124getYimpl;
+        int m8125getYimpl;
         int i = 0;
         if (!(this.mainAxisLayoutSize != Integer.MIN_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("position() should be called first");
@@ -261,49 +261,49 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
             Placeable placeable = this.placeables.get(i);
             int mainAxisSize = this.minMainAxisOffset - getMainAxisSize(placeable);
             int i2 = this.maxMainAxisOffset;
-            long mo1000getOffsetnOccac = mo1000getOffsetnOccac();
+            long mo1001getOffsetnOccac = mo1001getOffsetnOccac();
             LazyLayoutItemAnimation animation = this.animator.getAnimation(getKey(), i);
             if (animation != null) {
                 if (z) {
-                    animation.m1036setLookaheadOffsetgyyYBs(mo1000getOffsetnOccac);
+                    animation.m1037setLookaheadOffsetgyyYBs(mo1001getOffsetnOccac);
                 } else {
-                    long m8127plusqkQi6aY = IntOffset.m8127plusqkQi6aY(!IntOffset.m8122equalsimpl0(animation.m1032getLookaheadOffsetnOccac(), LazyLayoutItemAnimation.Companion.m1038getNotInitializednOccac()) ? animation.m1032getLookaheadOffsetnOccac() : mo1000getOffsetnOccac, animation.m1033getPlacementDeltanOccac());
-                    if ((m1009getMainAxisgyyYBs(mo1000getOffsetnOccac) <= mainAxisSize && m1009getMainAxisgyyYBs(m8127plusqkQi6aY) <= mainAxisSize) || (m1009getMainAxisgyyYBs(mo1000getOffsetnOccac) >= i2 && m1009getMainAxisgyyYBs(m8127plusqkQi6aY) >= i2)) {
+                    long m8128plusqkQi6aY = IntOffset.m8128plusqkQi6aY(!IntOffset.m8123equalsimpl0(animation.m1033getLookaheadOffsetnOccac(), LazyLayoutItemAnimation.Companion.m1039getNotInitializednOccac()) ? animation.m1033getLookaheadOffsetnOccac() : mo1001getOffsetnOccac, animation.m1034getPlacementDeltanOccac());
+                    if ((m1010getMainAxisgyyYBs(mo1001getOffsetnOccac) <= mainAxisSize && m1010getMainAxisgyyYBs(m8128plusqkQi6aY) <= mainAxisSize) || (m1010getMainAxisgyyYBs(mo1001getOffsetnOccac) >= i2 && m1010getMainAxisgyyYBs(m8128plusqkQi6aY) >= i2)) {
                         animation.cancelPlacementAnimation();
                     }
-                    mo1000getOffsetnOccac = m8127plusqkQi6aY;
+                    mo1001getOffsetnOccac = m8128plusqkQi6aY;
                 }
                 graphicsLayer = animation.getLayer();
             } else {
                 graphicsLayer = null;
             }
             if (this.reverseLayout) {
-                int m8123getXimpl = isVertical() ? IntOffset.m8123getXimpl(mo1000getOffsetnOccac) : (this.mainAxisLayoutSize - IntOffset.m8123getXimpl(mo1000getOffsetnOccac)) - getMainAxisSize(placeable);
+                int m8124getXimpl = isVertical() ? IntOffset.m8124getXimpl(mo1001getOffsetnOccac) : (this.mainAxisLayoutSize - IntOffset.m8124getXimpl(mo1001getOffsetnOccac)) - getMainAxisSize(placeable);
                 if (isVertical()) {
-                    m8124getYimpl = (this.mainAxisLayoutSize - IntOffset.m8124getYimpl(mo1000getOffsetnOccac)) - getMainAxisSize(placeable);
+                    m8125getYimpl = (this.mainAxisLayoutSize - IntOffset.m8125getYimpl(mo1001getOffsetnOccac)) - getMainAxisSize(placeable);
                 } else {
-                    m8124getYimpl = IntOffset.m8124getYimpl(mo1000getOffsetnOccac);
+                    m8125getYimpl = IntOffset.m8125getYimpl(mo1001getOffsetnOccac);
                 }
-                mo1000getOffsetnOccac = IntOffset.m8117constructorimpl((m8124getYimpl & 4294967295L) | (m8123getXimpl << 32));
+                mo1001getOffsetnOccac = IntOffset.m8118constructorimpl((m8125getYimpl & 4294967295L) | (m8124getXimpl << 32));
             }
-            long m8127plusqkQi6aY2 = IntOffset.m8127plusqkQi6aY(mo1000getOffsetnOccac, this.visualOffset);
+            long m8128plusqkQi6aY2 = IntOffset.m8128plusqkQi6aY(mo1001getOffsetnOccac, this.visualOffset);
             if (!z && animation != null) {
-                animation.m1035setFinalOffsetgyyYBs(m8127plusqkQi6aY2);
+                animation.m1036setFinalOffsetgyyYBs(m8128plusqkQi6aY2);
             }
             if (!isVertical()) {
                 placementScope2 = placementScope;
                 GraphicsLayer graphicsLayer2 = graphicsLayer;
                 if (graphicsLayer2 != null) {
-                    Placeable.PlacementScope.m6765placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, graphicsLayer2, 0.0f, 4, (Object) null);
+                    Placeable.PlacementScope.m6766placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m8128plusqkQi6aY2, graphicsLayer2, 0.0f, 4, (Object) null);
                 } else {
-                    Placeable.PlacementScope.m6764placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
+                    Placeable.PlacementScope.m6765placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m8128plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
                 }
             } else if (graphicsLayer != null) {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m6767placeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, graphicsLayer, 0.0f, 4, (Object) null);
+                Placeable.PlacementScope.m6768placeWithLayeraW9wM$default(placementScope2, placeable, m8128plusqkQi6aY2, graphicsLayer, 0.0f, 4, (Object) null);
             } else {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m6766placeWithLayeraW9wM$default(placementScope2, placeable, m8127plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
+                Placeable.PlacementScope.m6767placeWithLayeraW9wM$default(placementScope2, placeable, m8128plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
             }
             i++;
             placementScope = placementScope2;
@@ -311,8 +311,8 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     }
 
     /* renamed from: getMainAxis--gyyYBs  reason: not valid java name */
-    private final int m1009getMainAxisgyyYBs(long j) {
-        return isVertical() ? IntOffset.m8124getYimpl(j) : IntOffset.m8123getXimpl(j);
+    private final int m1010getMainAxisgyyYBs(long j) {
+        return isVertical() ? IntOffset.m8125getYimpl(j) : IntOffset.m8124getXimpl(j);
     }
 
     private final int getMainAxisSize(Placeable placeable) {
@@ -320,13 +320,13 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     }
 
     /* renamed from: copy-4Tuh3kE  reason: not valid java name */
-    private final long m1008copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
-        int m8123getXimpl = isVertical() ? IntOffset.m8123getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m8123getXimpl(j))).intValue();
+    private final long m1009copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
+        int m8124getXimpl = isVertical() ? IntOffset.m8124getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m8124getXimpl(j))).intValue();
         boolean isVertical = isVertical();
-        int m8124getYimpl = IntOffset.m8124getYimpl(j);
+        int m8125getYimpl = IntOffset.m8125getYimpl(j);
         if (isVertical) {
-            m8124getYimpl = function1.invoke(Integer.valueOf(m8124getYimpl)).intValue();
+            m8125getYimpl = function1.invoke(Integer.valueOf(m8125getYimpl)).intValue();
         }
-        return IntOffset.m8117constructorimpl((m8123getXimpl << 32) | (m8124getYimpl & 4294967295L));
+        return IntOffset.m8118constructorimpl((m8124getXimpl << 32) | (m8125getYimpl & 4294967295L));
     }
 }

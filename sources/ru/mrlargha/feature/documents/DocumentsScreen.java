@@ -561,8 +561,8 @@ public final class DocumentsScreen extends SAMPUIElement {
         DocumentsLayoutBinding documentsLayoutBinding2 = this.binding;
         documentsLayoutBinding2.main.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + infoItemMain.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding2.main.photo);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + infoItemMain.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding2.main.photo);
         documentsLayoutBinding2.main.name.setText(infoItemMain.getName());
         documentsLayoutBinding2.main.sex.setText(infoItemMain.getSex());
         documentsLayoutBinding2.main.birth.setText(infoItemMain.getBirthday());
@@ -1508,8 +1508,8 @@ public final class DocumentsScreen extends SAMPUIElement {
         DocumentsLayoutBinding documentsLayoutBinding2 = this.binding;
         documentsLayoutBinding2.health.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + healthInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding2.health.photo);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + healthInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding2.health.photo);
         documentsLayoutBinding2.health.name.setText(healthInfo.getName());
         documentsLayoutBinding2.health.hpState.setText(healthInfo.getState());
         documentsLayoutBinding2.health.duration.setText(healthInfo.getMed_card_time());
@@ -1605,8 +1605,8 @@ public final class DocumentsScreen extends SAMPUIElement {
         DocumentsLayoutBinding documentsLayoutBinding = this.binding;
         documentsLayoutBinding.army.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + armyInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.army.photo);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + armyInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.army.photo);
         documentsLayoutBinding.army.name.setText(armyInfo.getName());
         documentsLayoutBinding.army.armyOnline.setText(armyInfo.getArmy_online());
         documentsLayoutBinding.army.haveArmyTicket.setText(armyInfo.getHave_army_ticket());

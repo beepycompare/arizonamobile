@@ -57,7 +57,7 @@ public final class ComposableSingletons$SearchBarKt {
     });
 
     /* renamed from: getLambda$-1146652811$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2171getLambda$1146652811$material3() {
+    public final Function2<Composer, Integer, Unit> m2172getLambda$1146652811$material3() {
         return f31lambda$1146652811;
     }
 

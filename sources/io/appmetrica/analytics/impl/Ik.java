@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import java.util.concurrent.atomic.AtomicLong;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ik {
 
     /* renamed from: a  reason: collision with root package name */

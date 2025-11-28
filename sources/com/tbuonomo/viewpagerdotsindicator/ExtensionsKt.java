@@ -78,7 +78,7 @@ public final class ExtensionsKt {
     }
 
     /* renamed from: dpToPx-8Feqmps  reason: not valid java name */
-    public static final float m9809dpToPx8Feqmps(float f, Composer composer, int i) {
+    public static final float m9867dpToPx8Feqmps(float f, Composer composer, int i) {
         composer.startReplaceGroup(141686460);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(141686460, i, -1, "com.tbuonomo.viewpagerdotsindicator.dpToPx (Extensions.kt:50)");
@@ -86,12 +86,12 @@ public final class ExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo429toPx0680j_4 = ((Density) consume).mo429toPx0680j_4(f);
+        float mo430toPx0680j_4 = ((Density) consume).mo430toPx0680j_4(f);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return mo429toPx0680j_4;
+        return mo430toPx0680j_4;
     }
 
     public static final float pxToDp(int i, Composer composer, int i2) {
@@ -102,12 +102,12 @@ public final class ExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo426toDpu2uoSUM = ((Density) consume).mo426toDpu2uoSUM(i);
+        float mo427toDpu2uoSUM = ((Density) consume).mo427toDpu2uoSUM(i);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return mo426toDpu2uoSUM;
+        return mo427toDpu2uoSUM;
     }
 
     public static final float pxToDp(float f, Composer composer, int i) {
@@ -118,11 +118,11 @@ public final class ExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo425toDpu2uoSUM = ((Density) consume).mo425toDpu2uoSUM(f);
+        float mo426toDpu2uoSUM = ((Density) consume).mo426toDpu2uoSUM(f);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return mo425toDpu2uoSUM;
+        return mo426toDpu2uoSUM;
     }
 }

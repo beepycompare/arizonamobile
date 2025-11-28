@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder
 import io.appmetrica.analytics.internal.IdentifiersResult;
 import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.b4  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0132b4 {
 
     /* renamed from: a  reason: collision with root package name */

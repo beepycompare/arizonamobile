@@ -11,7 +11,7 @@ import kotlin.Metadata;
 public final class LayoutModifierNodeCoordinatorKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final int calculateAlignmentAndPlaceChildAsNeeded(LookaheadCapablePlaceable lookaheadCapablePlaceable, AlignmentLine alignmentLine) {
-        int m8123getXimpl;
+        int m8124getXimpl;
         LookaheadCapablePlaceable child = lookaheadCapablePlaceable.getChild();
         if (!(child != null)) {
             InlineClassHelperKt.throwIllegalStateException("Child of " + lookaheadCapablePlaceable + " cannot be null when calculating alignment line");
@@ -33,10 +33,10 @@ public final class LayoutModifierNodeCoordinatorKt {
         child.setShallowPlacing$ui_release(false);
         lookaheadCapablePlaceable.setPlacingForAlignment$ui_release(false);
         if (alignmentLine instanceof HorizontalAlignmentLine) {
-            m8123getXimpl = IntOffset.m8124getYimpl(child.mo6917getPositionnOccac());
+            m8124getXimpl = IntOffset.m8125getYimpl(child.mo6918getPositionnOccac());
         } else {
-            m8123getXimpl = IntOffset.m8123getXimpl(child.mo6917getPositionnOccac());
+            m8124getXimpl = IntOffset.m8124getXimpl(child.mo6918getPositionnOccac());
         }
-        return i + m8123getXimpl;
+        return i + m8124getXimpl;
     }
 }

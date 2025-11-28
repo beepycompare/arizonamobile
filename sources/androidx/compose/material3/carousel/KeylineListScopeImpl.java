@@ -105,13 +105,13 @@ final class KeylineListScopeImpl implements KeylineListScope {
     }
 
     /* renamed from: createWithAlignment-waks0t8  reason: not valid java name */
-    public final KeylineList m3484createWithAlignmentwaks0t8(float f, float f2, int i) {
+    public final KeylineList m3485createWithAlignmentwaks0t8(float f, float f2, int i) {
         float f3;
         int findLastFocalIndex = findLastFocalIndex();
         int i2 = this.firstFocalIndex;
         int i3 = findLastFocalIndex - i2;
         this.pivotIndex = i2;
-        if (CarouselAlignment.m3452equalsimpl0(i, CarouselAlignment.Companion.m3456getCenterNUL3oTo())) {
+        if (CarouselAlignment.m3453equalsimpl0(i, CarouselAlignment.Companion.m3457getCenterNUL3oTo())) {
             float f4 = 0.0f;
             if (f2 != 0.0f) {
                 int i4 = i3 % 2;
@@ -122,7 +122,7 @@ final class KeylineListScopeImpl implements KeylineListScope {
             float f5 = 2;
             f3 = ((f / f5) - ((this.focalItemSize / f5) * i3)) - f4;
         } else {
-            f3 = CarouselAlignment.m3452equalsimpl0(i, CarouselAlignment.Companion.m3457getEndNUL3oTo()) ? f - (this.focalItemSize / 2) : this.focalItemSize / 2;
+            f3 = CarouselAlignment.m3453equalsimpl0(i, CarouselAlignment.Companion.m3458getEndNUL3oTo()) ? f - (this.focalItemSize / 2) : this.focalItemSize / 2;
         }
         this.pivotOffset = f3;
         return new KeylineList(createKeylinesWithPivot(this.pivotIndex, f3, this.firstFocalIndex, findLastFocalIndex, this.focalItemSize, f, f2, this.tmpKeylines));

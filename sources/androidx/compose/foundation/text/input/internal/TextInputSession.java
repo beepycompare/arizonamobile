@@ -16,7 +16,7 @@ public interface TextInputSession extends ImeEditCommandScope {
     boolean onCommitContent(TransferableContent transferableContent);
 
     /* renamed from: onImeAction-KlQnJC8 */
-    void mo1480onImeActionKlQnJC8(int i);
+    void mo1481onImeActionKlQnJC8(int i);
 
     int performHandwritingGesture(HandwritingGesture handwritingGesture);
 

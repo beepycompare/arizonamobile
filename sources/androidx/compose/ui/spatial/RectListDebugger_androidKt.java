@@ -58,14 +58,14 @@ public final class RectListDebugger_androidKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, emptyFillMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, emptyFillMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Hyphens {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m7771constructorimpl(1);
-    private static final int Auto = m7771constructorimpl(2);
-    private static final int Unspecified = m7771constructorimpl(Integer.MIN_VALUE);
+    private static final int None = m7772constructorimpl(1);
+    private static final int Auto = m7772constructorimpl(2);
+    private static final int Unspecified = m7772constructorimpl(Integer.MIN_VALUE);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Hyphens m7770boximpl(int i) {
+    public static final /* synthetic */ Hyphens m7771boximpl(int i) {
         return new Hyphens(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7771constructorimpl(int i) {
+    private static int m7772constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7772equalsimpl(int i, Object obj) {
-        return (obj instanceof Hyphens) && i == ((Hyphens) obj).m7776unboximpl();
+    public static boolean m7773equalsimpl(int i, Object obj) {
+        return (obj instanceof Hyphens) && i == ((Hyphens) obj).m7777unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7773equalsimpl0(int i, int i2) {
+    public static final boolean m7774equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7774hashCodeimpl(int i) {
+    public static int m7775hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7772equalsimpl(this.value, obj);
+        return m7773equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7774hashCodeimpl(this.value);
+        return m7775hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7776unboximpl() {
+    public final /* synthetic */ int m7777unboximpl() {
         return this.value;
     }
 
@@ -64,17 +64,17 @@ public final class Hyphens {
         }
 
         /* renamed from: getNone-vmbZdU8  reason: not valid java name */
-        public final int m7778getNonevmbZdU8() {
+        public final int m7779getNonevmbZdU8() {
             return Hyphens.None;
         }
 
         /* renamed from: getAuto-vmbZdU8  reason: not valid java name */
-        public final int m7777getAutovmbZdU8() {
+        public final int m7778getAutovmbZdU8() {
             return Hyphens.Auto;
         }
 
         /* renamed from: getUnspecified-vmbZdU8  reason: not valid java name */
-        public final int m7779getUnspecifiedvmbZdU8() {
+        public final int m7780getUnspecifiedvmbZdU8() {
             return Hyphens.Unspecified;
         }
     }
@@ -84,11 +84,11 @@ public final class Hyphens {
     }
 
     public String toString() {
-        return m7775toStringimpl(this.value);
+        return m7776toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7775toStringimpl(int i) {
-        return m7773equalsimpl0(i, None) ? "Hyphens.None" : m7773equalsimpl0(i, Auto) ? "Hyphens.Auto" : m7773equalsimpl0(i, Unspecified) ? "Hyphens.Unspecified" : "Invalid";
+    public static String m7776toStringimpl(int i) {
+        return m7774equalsimpl0(i, None) ? "Hyphens.None" : m7774equalsimpl0(i, Auto) ? "Hyphens.Auto" : m7774equalsimpl0(i, Unspecified) ? "Hyphens.Unspecified" : "Invalid";
     }
 }

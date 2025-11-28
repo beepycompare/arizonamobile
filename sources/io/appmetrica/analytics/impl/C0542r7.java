@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* renamed from: io.appmetrica.analytics.impl.r7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0542r7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */

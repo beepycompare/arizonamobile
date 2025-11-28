@@ -41,7 +41,7 @@ public class SparseArrayCompat<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseArrayCompat<E> m46clone() {
+    public SparseArrayCompat<E> m47clone() {
         Object clone = super.clone();
         Intrinsics.checkNotNull(clone, "null cannot be cast to non-null type androidx.collection.SparseArrayCompat<E of androidx.collection.SparseArrayCompat>");
         SparseArrayCompat<E> sparseArrayCompat = (SparseArrayCompat) clone;

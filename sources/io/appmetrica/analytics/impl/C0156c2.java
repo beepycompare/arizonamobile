@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.c2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0156c2 {
 
     /* renamed from: a  reason: collision with root package name */

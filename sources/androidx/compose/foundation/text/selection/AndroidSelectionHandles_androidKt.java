@@ -75,7 +75,7 @@ public final class AndroidSelectionHandles_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SelectionHandle_wLIcFTc$lambda$2(OffsetProvider offsetProvider, boolean z, ResolvedTextDirection resolvedTextDirection, boolean z2, long j, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        m1731SelectionHandlewLIcFTc(offsetProvider, z, resolvedTextDirection, z2, j, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m1732SelectionHandlewLIcFTc(offsetProvider, z, resolvedTextDirection, z2, j, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -86,7 +86,7 @@ public final class AndroidSelectionHandles_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1731SelectionHandlewLIcFTc(final OffsetProvider offsetProvider, final boolean z, final ResolvedTextDirection resolvedTextDirection, boolean z2, long j, final float f, final Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void m1732SelectionHandlewLIcFTc(final OffsetProvider offsetProvider, final boolean z, final ResolvedTextDirection resolvedTextDirection, boolean z2, long j, final float f, final Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         boolean z3;
         long j2;
@@ -133,7 +133,7 @@ public final class AndroidSelectionHandles_androidKt {
             startRestartGroup.startDefaults();
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 16) != 0) {
-                    j2 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                    j2 = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
                     i3 &= -57345;
                 }
                 startRestartGroup.endDefaults();
@@ -209,7 +209,7 @@ public final class AndroidSelectionHandles_androidKt {
                                 } else {
                                     left = Arrangement.Absolute.INSTANCE.getLeft();
                                 }
-                                Modifier m890requiredSizeInqDBjuR0$default = SizeKt.m890requiredSizeInqDBjuR0$default(this.$semanticsModifier, DpSize.m8093getWidthD9Ej5fM(this.$minTouchTargetSize), DpSize.m8091getHeightD9Ej5fM(this.$minTouchTargetSize), 0.0f, 0.0f, 12, null);
+                                Modifier m891requiredSizeInqDBjuR0$default = SizeKt.m891requiredSizeInqDBjuR0$default(this.$semanticsModifier, DpSize.m8094getWidthD9Ej5fM(this.$minTouchTargetSize), DpSize.m8092getHeightD9Ej5fM(this.$minTouchTargetSize), 0.0f, 0.0f, 12, null);
                                 final OffsetProvider offsetProvider = this.$offsetProvider;
                                 boolean z = this.$isLeft;
                                 ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
@@ -217,7 +217,7 @@ public final class AndroidSelectionHandles_androidKt {
                                 ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
                                 int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
                                 CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m890requiredSizeInqDBjuR0$default);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m891requiredSizeInqDBjuR0$default);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                                 if (!(composer.getApplier() instanceof Applier)) {
@@ -229,15 +229,15 @@ public final class AndroidSelectionHandles_androidKt {
                                 } else {
                                     composer.useNode();
                                 }
-                                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-                                Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+                                Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                    m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                 }
-                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer, -1665345997, "C106@4633L40,104@4529L208:AndroidSelectionHandles.android.kt#eksfi3");
@@ -298,12 +298,12 @@ public final class AndroidSelectionHandles_androidKt {
 
                                 /* JADX INFO: Access modifiers changed from: private */
                                 public static final boolean invoke$lambda$2$lambda$1$lambda$0(OffsetProvider offsetProvider) {
-                                    return (offsetProvider.mo1229provideF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats;
+                                    return (offsetProvider.mo1230provideF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats;
                                 }
 
                                 /* JADX INFO: Access modifiers changed from: private */
                                 public static final boolean invoke$lambda$4$lambda$3(OffsetProvider offsetProvider) {
-                                    return (offsetProvider.mo1229provideF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats;
+                                    return (offsetProvider.mo1230provideF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats;
                                 }
                             }
 
@@ -355,8 +355,8 @@ public final class AndroidSelectionHandles_androidKt {
 
             /* JADX INFO: Access modifiers changed from: private */
             public static final Unit SelectionHandle_wLIcFTc$lambda$1$lambda$0(OffsetProvider offsetProvider, boolean z, boolean z2, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                long mo1229provideF1C5BW0 = offsetProvider.mo1229provideF1C5BW0();
-                semanticsPropertyReceiver.set(SelectionHandlesKt.getSelectionHandleInfoKey(), new SelectionHandleInfo(z ? Handle.SelectionStart : Handle.SelectionEnd, mo1229provideF1C5BW0, z2 ? SelectionHandleAnchor.Left : SelectionHandleAnchor.Right, (9223372034707292159L & mo1229provideF1C5BW0) != InlineClassHelperKt.UnspecifiedPackedFloats, null));
+                long mo1230provideF1C5BW0 = offsetProvider.mo1230provideF1C5BW0();
+                semanticsPropertyReceiver.set(SelectionHandlesKt.getSelectionHandleInfoKey(), new SelectionHandleInfo(z ? Handle.SelectionStart : Handle.SelectionEnd, mo1230provideF1C5BW0, z2 ? SelectionHandleAnchor.Left : SelectionHandleAnchor.Right, (9223372034707292159L & mo1230provideF1C5BW0) != InlineClassHelperKt.UnspecifiedPackedFloats, null));
                 return Unit.INSTANCE;
             }
 
@@ -381,7 +381,7 @@ public final class AndroidSelectionHandles_androidKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(2111672474, i2, -1, "androidx.compose.foundation.text.selection.SelectionHandleIcon (AndroidSelectionHandles.android.kt:123)");
                     }
-                    SpacerKt.Spacer(drawSelectionHandle(SizeKt.m896sizeVpY3zN4(modifier, SelectionHandlesKt.getHandleWidth(), SelectionHandlesKt.getHandleHeight()), function0, z), startRestartGroup, 0);
+                    SpacerKt.Spacer(drawSelectionHandle(SizeKt.m897sizeVpY3zN4(modifier, SelectionHandlesKt.getHandleWidth(), SelectionHandlesKt.getHandleHeight()), function0, z), startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -409,7 +409,7 @@ public final class AndroidSelectionHandles_androidKt {
                 Canvas canvas = HandleImageCache.INSTANCE.getCanvas();
                 CanvasDrawScope canvasDrawScope = HandleImageCache.INSTANCE.getCanvasDrawScope();
                 if (imageBitmap == null || canvas == null || ceil > imageBitmap.getWidth() || ceil > imageBitmap.getHeight()) {
-                    imageBitmap = ImageBitmapKt.m5516ImageBitmapx__hDU$default(ceil, ceil, ImageBitmapConfig.Companion.m5510getAlpha8_sVssgQ(), false, null, 24, null);
+                    imageBitmap = ImageBitmapKt.m5517ImageBitmapx__hDU$default(ceil, ceil, ImageBitmapConfig.Companion.m5511getAlpha8_sVssgQ(), false, null, 24, null);
                     HandleImageCache.INSTANCE.setImageBitmap(imageBitmap);
                     canvas = CanvasKt.Canvas(imageBitmap);
                     HandleImageCache.INSTANCE.setCanvas(canvas);
@@ -422,28 +422,28 @@ public final class AndroidSelectionHandles_androidKt {
                 }
                 CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
                 LayoutDirection layoutDirection = cacheDrawScope.getLayoutDirection();
-                long m5095constructorimpl = Size.m5095constructorimpl((Float.floatToRawIntBits(imageBitmap2.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(imageBitmap2.getWidth()) << 32));
+                long m5096constructorimpl = Size.m5096constructorimpl((Float.floatToRawIntBits(imageBitmap2.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(imageBitmap2.getWidth()) << 32));
                 CanvasDrawScope.DrawParams drawParams = canvasDrawScope2.getDrawParams();
                 Density component1 = drawParams.component1();
                 LayoutDirection component2 = drawParams.component2();
                 Canvas component3 = drawParams.component3();
-                long m5775component4NHjbRc = drawParams.m5775component4NHjbRc();
+                long m5776component4NHjbRc = drawParams.m5776component4NHjbRc();
                 CanvasDrawScope.DrawParams drawParams2 = canvasDrawScope2.getDrawParams();
                 drawParams2.setDensity(cacheDrawScope);
                 drawParams2.setLayoutDirection(layoutDirection);
                 drawParams2.setCanvas(canvas2);
-                drawParams2.m5778setSizeuvyYCjk(m5095constructorimpl);
+                drawParams2.m5779setSizeuvyYCjk(m5096constructorimpl);
                 canvas2.save();
                 CanvasDrawScope canvasDrawScope3 = canvasDrawScope2;
-                DrawScope.m5852drawRectnJ9OG0$default(canvasDrawScope3, Color.Companion.m5305getBlack0d7_KjU(), 0L, canvasDrawScope3.mo5858getSizeNHjbRc(), 0.0f, null, null, BlendMode.Companion.m5193getClear0nO6VwU(), 58, null);
-                DrawScope.m5852drawRectnJ9OG0$default(canvasDrawScope3, ColorKt.Color(4278190080L), Offset.Companion.m5051getZeroF1C5BW0(), Size.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 120, null);
-                DrawScope.m5839drawCircleVaOC9Bg$default(canvasDrawScope3, ColorKt.Color(4278190080L), f, Offset.m5027constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), 0.0f, null, null, 0, 120, null);
+                DrawScope.m5853drawRectnJ9OG0$default(canvasDrawScope3, Color.Companion.m5306getBlack0d7_KjU(), 0L, canvasDrawScope3.mo5859getSizeNHjbRc(), 0.0f, null, null, BlendMode.Companion.m5194getClear0nO6VwU(), 58, null);
+                DrawScope.m5853drawRectnJ9OG0$default(canvasDrawScope3, ColorKt.Color(4278190080L), Offset.Companion.m5052getZeroF1C5BW0(), Size.m5096constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 120, null);
+                DrawScope.m5840drawCircleVaOC9Bg$default(canvasDrawScope3, ColorKt.Color(4278190080L), f, Offset.m5028constructorimpl((Float.floatToRawIntBits(f) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), 0.0f, null, null, 0, 120, null);
                 canvas2.restore();
                 CanvasDrawScope.DrawParams drawParams3 = canvasDrawScope2.getDrawParams();
                 drawParams3.setDensity(component1);
                 drawParams3.setLayoutDirection(component2);
                 drawParams3.setCanvas(component3);
-                drawParams3.m5778setSizeuvyYCjk(m5775component4NHjbRc);
+                drawParams3.m5779setSizeuvyYCjk(m5776component4NHjbRc);
                 return imageBitmap2;
             }
 

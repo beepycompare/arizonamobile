@@ -70,18 +70,18 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
         this.canvasDrawScope = canvasDrawScope;
         RenderNode renderNode = new RenderNode("graphicsLayer");
         this.renderNode = renderNode;
-        this.size = Size.Companion.m5113getZeroNHjbRc();
+        this.size = Size.Companion.m5114getZeroNHjbRc();
         renderNode.setClipToBounds(false);
-        m5974applyCompositingStrategyZ1X6vPc(renderNode, CompositingStrategy.Companion.m5938getAutoke2Ky5w());
+        m5975applyCompositingStrategyZ1X6vPc(renderNode, CompositingStrategy.Companion.m5939getAutoke2Ky5w());
         this.alpha = 1.0f;
-        this.blendMode = BlendMode.Companion.m5220getSrcOver0nO6VwU();
-        this.pivotOffset = Offset.Companion.m5050getUnspecifiedF1C5BW0();
+        this.blendMode = BlendMode.Companion.m5221getSrcOver0nO6VwU();
+        this.pivotOffset = Offset.Companion.m5051getUnspecifiedF1C5BW0();
         this.scaleX = 1.0f;
         this.scaleY = 1.0f;
-        this.ambientShadowColor = Color.Companion.m5305getBlack0d7_KjU();
-        this.spotShadowColor = Color.Companion.m5305getBlack0d7_KjU();
+        this.ambientShadowColor = Color.Companion.m5306getBlack0d7_KjU();
+        this.spotShadowColor = Color.Companion.m5306getBlack0d7_KjU();
         this.cameraDistance = 8.0f;
-        this.compositingStrategy = CompositingStrategy.Companion.m5938getAutoke2Ky5w();
+        this.compositingStrategy = CompositingStrategy.Companion.m5939getAutoke2Ky5w();
         this.isInvalidated = true;
     }
 
@@ -107,15 +107,15 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: getBlendMode-0nO6VwU */
-    public int mo5962getBlendMode0nO6VwU() {
+    public int mo5963getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: setBlendMode-s9anfk8 */
-    public void mo5967setBlendModes9anfk8(int i) {
+    public void mo5968setBlendModes9anfk8(int i) {
         this.blendMode = i;
-        obtainLayerPaint().setBlendMode(AndroidBlendMode_androidKt.m5127toAndroidBlendModes9anfk8(i));
+        obtainLayerPaint().setBlendMode(AndroidBlendMode_androidKt.m5128toAndroidBlendModes9anfk8(i));
         updateLayerProperties();
     }
 
@@ -133,13 +133,13 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: getPivotOffset-F1C5BW0 */
-    public long mo5964getPivotOffsetF1C5BW0() {
+    public long mo5965getPivotOffsetF1C5BW0() {
         return this.pivotOffset;
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: setPivotOffset-k-4lQ0M */
-    public void mo5970setPivotOffsetk4lQ0M(long j) {
+    public void mo5971setPivotOffsetk4lQ0M(long j) {
         this.pivotOffset = j;
         if ((9223372034707292159L & j) == InlineClassHelperKt.UnspecifiedPackedFloats) {
             this.renderNode.resetPivot();
@@ -206,28 +206,28 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: getAmbientShadowColor-0d7_KjU */
-    public long mo5961getAmbientShadowColor0d7_KjU() {
+    public long mo5962getAmbientShadowColor0d7_KjU() {
         return this.ambientShadowColor;
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: setAmbientShadowColor-8_81llA */
-    public void mo5966setAmbientShadowColor8_81llA(long j) {
+    public void mo5967setAmbientShadowColor8_81llA(long j) {
         this.ambientShadowColor = j;
-        this.renderNode.setAmbientShadowColor(ColorKt.m5333toArgb8_81llA(j));
+        this.renderNode.setAmbientShadowColor(ColorKt.m5334toArgb8_81llA(j));
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: getSpotShadowColor-0d7_KjU */
-    public long mo5965getSpotShadowColor0d7_KjU() {
+    public long mo5966getSpotShadowColor0d7_KjU() {
         return this.spotShadowColor;
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: setSpotShadowColor-8_81llA */
-    public void mo5972setSpotShadowColor8_81llA(long j) {
+    public void mo5973setSpotShadowColor8_81llA(long j) {
         this.spotShadowColor = j;
-        this.renderNode.setSpotShadowColor(ColorKt.m5333toArgb8_81llA(j));
+        this.renderNode.setSpotShadowColor(ColorKt.m5334toArgb8_81llA(j));
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
@@ -316,23 +316,23 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: getCompositingStrategy-ke2Ky5w */
-    public int mo5963getCompositingStrategyke2Ky5w() {
+    public int mo5964getCompositingStrategyke2Ky5w() {
         return this.compositingStrategy;
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: setCompositingStrategy-Wpw9cng */
-    public void mo5968setCompositingStrategyWpw9cng(int i) {
+    public void mo5969setCompositingStrategyWpw9cng(int i) {
         this.compositingStrategy = i;
         updateLayerProperties();
     }
 
     /* renamed from: applyCompositingStrategy-Z1X6vPc  reason: not valid java name */
-    private final void m5974applyCompositingStrategyZ1X6vPc(RenderNode renderNode, int i) {
-        if (CompositingStrategy.m5934equalsimpl0(i, CompositingStrategy.Companion.m5940getOffscreenke2Ky5w())) {
+    private final void m5975applyCompositingStrategyZ1X6vPc(RenderNode renderNode, int i) {
+        if (CompositingStrategy.m5935equalsimpl0(i, CompositingStrategy.Companion.m5941getOffscreenke2Ky5w())) {
             renderNode.setUseCompositingLayer(true, this.layerPaint);
             renderNode.setHasOverlappingRendering(true);
-        } else if (CompositingStrategy.m5934equalsimpl0(i, CompositingStrategy.Companion.m5939getModulateAlphake2Ky5w())) {
+        } else if (CompositingStrategy.m5935equalsimpl0(i, CompositingStrategy.Companion.m5940getModulateAlphake2Ky5w())) {
             renderNode.setUseCompositingLayer(false, this.layerPaint);
             renderNode.setHasOverlappingRendering(false);
         } else {
@@ -343,22 +343,22 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
 
     private final void updateLayerProperties() {
         if (requiresCompositingLayer()) {
-            m5974applyCompositingStrategyZ1X6vPc(this.renderNode, CompositingStrategy.Companion.m5940getOffscreenke2Ky5w());
+            m5975applyCompositingStrategyZ1X6vPc(this.renderNode, CompositingStrategy.Companion.m5941getOffscreenke2Ky5w());
         } else {
-            m5974applyCompositingStrategyZ1X6vPc(this.renderNode, mo5963getCompositingStrategyke2Ky5w());
+            m5975applyCompositingStrategyZ1X6vPc(this.renderNode, mo5964getCompositingStrategyke2Ky5w());
         }
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: setPosition-H0pRuoY */
-    public void mo5971setPositionH0pRuoY(int i, int i2, long j) {
+    public void mo5972setPositionH0pRuoY(int i, int i2, long j) {
         this.renderNode.setPosition(i, i2, ((int) (j >> 32)) + i, ((int) (4294967295L & j)) + i2);
-        this.size = IntSizeKt.m8178toSizeozmzZPI(j);
+        this.size = IntSizeKt.m8179toSizeozmzZPI(j);
     }
 
     @Override // androidx.compose.ui.graphics.layer.GraphicsLayerImpl
     /* renamed from: setOutline-O0kMr_c */
-    public void mo5969setOutlineO0kMr_c(Outline outline, long j) {
+    public void mo5970setOutlineO0kMr_c(Outline outline, long j) {
         this.renderNode.setOutline(outline);
         this.outlineIsProvided = outline != null;
         applyClip();
@@ -385,7 +385,7 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
             drawContext.setDensity(density);
             drawContext.setLayoutDirection(layoutDirection);
             drawContext.setGraphicsLayer(graphicsLayer);
-            drawContext.mo5780setSizeuvyYCjk(this.size);
+            drawContext.mo5781setSizeuvyYCjk(this.size);
             drawContext.setCanvas(canvasHolder.getAndroidCanvas());
             function1.invoke(this.canvasDrawScope);
             canvasHolder.getAndroidCanvas().setInternalCanvas(internalCanvas);
@@ -439,10 +439,10 @@ public final class GraphicsLayerV29 implements GraphicsLayerImpl {
     }
 
     private final boolean requiresCompositingLayer() {
-        return CompositingStrategy.m5934equalsimpl0(mo5963getCompositingStrategyke2Ky5w(), CompositingStrategy.Companion.m5940getOffscreenke2Ky5w()) || requiresLayerPaint() || getRenderEffect() != null;
+        return CompositingStrategy.m5935equalsimpl0(mo5964getCompositingStrategyke2Ky5w(), CompositingStrategy.Companion.m5941getOffscreenke2Ky5w()) || requiresLayerPaint() || getRenderEffect() != null;
     }
 
     private final boolean requiresLayerPaint() {
-        return (BlendMode.m5189equalsimpl0(mo5962getBlendMode0nO6VwU(), BlendMode.Companion.m5220getSrcOver0nO6VwU()) && getColorFilter() == null) ? false : true;
+        return (BlendMode.m5190equalsimpl0(mo5963getBlendMode0nO6VwU(), BlendMode.Companion.m5221getSrcOver0nO6VwU()) && getColorFilter() == null) ? false : true;
     }
 }

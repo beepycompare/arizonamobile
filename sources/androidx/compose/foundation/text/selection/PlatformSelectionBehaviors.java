@@ -9,8 +9,8 @@ import kotlin.coroutines.Continuation;
 /* loaded from: classes.dex */
 public interface PlatformSelectionBehaviors {
     /* renamed from: onShowContextMenu-Sb-Bc2M  reason: not valid java name */
-    Object mo1745onShowContextMenuSbBc2M(CharSequence charSequence, long j, Continuation<? super Unit> continuation);
+    Object mo1746onShowContextMenuSbBc2M(CharSequence charSequence, long j, Continuation<? super Unit> continuation);
 
     /* renamed from: suggestSelectionForLongPressOrDoubleClick-pYaCw-w  reason: not valid java name */
-    Object mo1746suggestSelectionForLongPressOrDoubleClickpYaCww(CharSequence charSequence, long j, Continuation<? super TextRange> continuation);
+    Object mo1747suggestSelectionForLongPressOrDoubleClickpYaCww(CharSequence charSequence, long j, Continuation<? super TextRange> continuation);
 }

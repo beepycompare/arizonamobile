@@ -63,17 +63,17 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000p\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a\u0087\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00032\u0015\b\u0002\u0010\t\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\n2\u0015\b\u0002\u0010\u000b\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\n2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0007¢\u0006\u0004\b\u0011\u0010\u0012\u001a\u007f\u0010\u0013\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0011\u0010\t\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\n2\u0011\u0010\u000b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\n2\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0007¢\u0006\u0004\b\u0014\u0010\u0015\u001aw\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00102\u001c\u0010\u0016\u001a\u0018\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u00010\u0017¢\u0006\u0002\b\n¢\u0006\u0002\b\u0019H\u0007¢\u0006\u0004\b\u001a\u0010\u001b\u001a:\u0010\u001c\u001a\u00020\u00012\u0006\u0010\u001d\u001a\u00020\r2\u0006\u0010\u001e\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0016\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\nH\u0003¢\u0006\u0004\b\u001f\u0010 \u001a7\u0010!\u001a\u00020\u00012\u0013\u0010\t\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\n2\u0013\u0010\u000b\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0005¢\u0006\u0002\b\nH\u0003¢\u0006\u0002\u0010\"\u001a\u001c\u0010#\u001a\u00020\u0001*\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(H\u0002\u001aD\u0010)\u001a\u00020\u0001*\u00020$2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020&2\u0006\u0010-\u001a\u00020&2\u0006\u0010.\u001a\u00020(2\u0006\u0010'\u001a\u00020(2\u0006\u0010/\u001a\u00020(2\u0006\u00100\u001a\u00020(H\u0002\"\u0010\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0004\n\u0002\u00103\"\u0010\u00104\u001a\u000202X\u0082\u0004¢\u0006\u0004\n\u0002\u00103\"\u0016\u00105\u001a\u000202X\u0080\u0004¢\u0006\n\n\u0002\u00103\u001a\u0004\b6\u00107\"\u0010\u00108\u001a\u000202X\u0082\u0004¢\u0006\u0004\n\u0002\u00103\"\u0010\u00109\u001a\u000202X\u0082\u0004¢\u0006\u0004\n\u0002\u00103\"\u0010\u0010:\u001a\u00020;X\u0082\u0004¢\u0006\u0004\n\u0002\u0010<\"\u0010\u0010=\u001a\u000202X\u0082\u0004¢\u0006\u0004\n\u0002\u00103¨\u0006>²\u0006\n\u0010?\u001a\u00020\rX\u008a\u0084\u0002"}, d2 = {"Tab", "", "selected", "", "onClick", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "text", "Landroidx/compose/runtime/Composable;", "icon", "selectedContentColor", "Landroidx/compose/ui/graphics/Color;", "unselectedContentColor", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "Tab-wqdebIU", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;JJLandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;II)V", "LeadingIconTab", "LeadingIconTab-wqdebIU", "(ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;ZJJLandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;II)V", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Lkotlin/ExtensionFunctionType;", "Tab-bogVsAg", "(ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZJJLandroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "TabTransition", "activeColor", "inactiveColor", "TabTransition-Klgx-Pg", "(JJZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "TabBaselineLayout", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "placeTextOrIcon", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "textOrIconPlaceable", "Landroidx/compose/ui/layout/Placeable;", "tabHeight", "", "placeTextAndIcon", "density", "Landroidx/compose/ui/unit/Density;", "textPlaceable", "iconPlaceable", "tabWidth", "firstBaseline", "lastBaseline", "SmallTabHeight", "Landroidx/compose/ui/unit/Dp;", "F", "LargeTabHeight", "HorizontalTextPadding", "getHorizontalTextPadding", "()F", "SingleLineTextBaselineWithIcon", "DoubleLineTextBaselineWithIcon", "IconDistanceFromBaseline", "Landroidx/compose/ui/unit/TextUnit;", "J", "TextDistanceFromLeadingIcon", "material3", "color"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TabKt {
-    private static final float SmallTabHeight = PrimaryNavigationTabTokens.INSTANCE.m4226getContainerHeightD9Ej5fM();
-    private static final float LargeTabHeight = Dp.m7995constructorimpl(72);
-    private static final float HorizontalTextPadding = Dp.m7995constructorimpl(16);
-    private static final float SingleLineTextBaselineWithIcon = Dp.m7995constructorimpl(14);
-    private static final float DoubleLineTextBaselineWithIcon = Dp.m7995constructorimpl(6);
+    private static final float SmallTabHeight = PrimaryNavigationTabTokens.INSTANCE.m4227getContainerHeightD9Ej5fM();
+    private static final float LargeTabHeight = Dp.m7996constructorimpl(72);
+    private static final float HorizontalTextPadding = Dp.m7996constructorimpl(16);
+    private static final float SingleLineTextBaselineWithIcon = Dp.m7996constructorimpl(14);
+    private static final float DoubleLineTextBaselineWithIcon = Dp.m7996constructorimpl(6);
     private static final long IconDistanceFromBaseline = TextUnitKt.getSp(20);
-    private static final float TextDistanceFromLeadingIcon = Dp.m7995constructorimpl(8);
+    private static final float TextDistanceFromLeadingIcon = Dp.m7996constructorimpl(8);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit LeadingIconTab_wqdebIU$lambda$2(boolean z, Function0 function0, Function2 function2, Function2 function22, Modifier modifier, boolean z2, long j, long j2, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
-        m3035LeadingIconTabwqdebIU(z, function0, function2, function22, modifier, z2, j, j2, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3036LeadingIconTabwqdebIU(z, function0, function2, function22, modifier, z2, j, j2, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -85,19 +85,19 @@ public final class TabKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TabTransition_Klgx_Pg$lambda$6(long j, long j2, boolean z, Function2 function2, int i, Composer composer, int i2) {
-        m3038TabTransitionKlgxPg(j, j2, z, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m3039TabTransitionKlgxPg(j, j2, z, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Tab_bogVsAg$lambda$3(boolean z, Function0 function0, Modifier modifier, boolean z2, long j, long j2, MutableInteractionSource mutableInteractionSource, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m3036TabbogVsAg(z, function0, modifier, z2, j, j2, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3037TabbogVsAg(z, function0, modifier, z2, j, j2, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Tab_wqdebIU$lambda$1(boolean z, Function0 function0, Modifier modifier, boolean z2, Function2 function2, Function2 function22, long j, long j2, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
-        m3037TabwqdebIU(z, function0, modifier, z2, function2, function22, j, j2, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3038TabwqdebIU(z, function0, modifier, z2, function2, function22, j, j2, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -123,7 +123,7 @@ public final class TabKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3037TabwqdebIU(final boolean z, final Function0<Unit> function0, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, long j, long j2, MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
+    public static final void m3038TabwqdebIU(final boolean z, final Function0<Unit> function0, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, long j, long j2, MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
         boolean z3;
         int i3;
         Function0<Unit> function02;
@@ -250,7 +250,7 @@ public final class TabKt {
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                         Object consume = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        j5 = ((Color) consume).m5289unboximpl();
+                                        j5 = ((Color) consume).m5290unboximpl();
                                         i7 &= -3670017;
                                     } else {
                                         j5 = j;
@@ -314,7 +314,7 @@ public final class TabKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(-1745256900, i15, -1, "androidx.compose.material3.Tab.<anonymous>.<anonymous> (Tab.kt:104)");
                                             }
-                                            TextKt.ProvideTextStyle(TextStyle.m7470copyp1EtxEg$default(TypographyKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getLabelTextFont(), composer3, 6), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7879getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744447, null), obj, composer3, 0);
+                                            TextKt.ProvideTextStyle(TextStyle.m7471copyp1EtxEg$default(TypographyKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getLabelTextFont(), composer3, 6), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7880getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744447, null), obj, composer3, 0);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
@@ -324,7 +324,7 @@ public final class TabKt {
                                 startRestartGroup.endReplaceGroup();
                                 int i15 = i7 >> 6;
                                 composer2 = startRestartGroup;
-                                m3036TabbogVsAg(z3, function02, BadgeKt.badgeBounds(companion), z6, j7, j8, mutableInteractionSource3, ComposableLambdaKt.rememberComposableLambda(-906085472, true, new Function3<ColumnScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$Tab$1
+                                m3037TabbogVsAg(z3, function02, BadgeKt.badgeBounds(companion), z6, j7, j8, mutableInteractionSource3, ComposableLambdaKt.rememberComposableLambda(-906085472, true, new Function3<ColumnScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$Tab$1
                                     @Override // kotlin.jvm.functions.Function3
                                     public /* bridge */ /* synthetic */ Unit invoke(ColumnScope columnScope, Composer composer3, Integer num) {
                                         invoke(columnScope, composer3, num.intValue());
@@ -498,7 +498,7 @@ public final class TabKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3035LeadingIconTabwqdebIU(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Modifier modifier, boolean z2, long j, long j2, MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
+    public static final void m3036LeadingIconTabwqdebIU(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Modifier modifier, boolean z2, long j, long j2, MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
         final boolean z3;
         int i3;
         final Function0<Unit> function02;
@@ -593,7 +593,7 @@ public final class TabKt {
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                         Object consume = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        j3 = ((Color) consume).m5289unboximpl();
+                                        j3 = ((Color) consume).m5290unboximpl();
                                         i6 &= -3670017;
                                     }
                                     if ((i2 & 128) != 0) {
@@ -610,11 +610,11 @@ public final class TabKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-611535578, i9, -1, "androidx.compose.material3.LeadingIconTab (Tab.kt:164)");
                                         }
-                                        final IndicationNodeFactory m2780rippleH2RKhps$default = RippleKt.m2780rippleH2RKhps$default(true, 0.0f, j3, 2, null);
+                                        final IndicationNodeFactory m2781rippleH2RKhps$default = RippleKt.m2781rippleH2RKhps$default(true, 0.0f, j3, 2, null);
                                         final Modifier modifier3 = companion;
                                         final Function2<? super Composer, ? super Integer, Unit> function23 = obj;
                                         int i10 = i9 >> 18;
-                                        m3038TabTransitionKlgxPg(j3, j5, z, ComposableLambdaKt.rememberComposableLambda(1831009258, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$LeadingIconTab$1
+                                        m3039TabTransitionKlgxPg(j3, j5, z, ComposableLambdaKt.rememberComposableLambda(1831009258, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$LeadingIconTab$1
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                 invoke(composer3, num.intValue());
@@ -634,7 +634,7 @@ public final class TabKt {
                                                 }
                                                 Modifier modifier4 = Modifier.this;
                                                 f = TabKt.SmallTabHeight;
-                                                Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(PaddingKt.m844paddingVpY3zN4$default(SelectableKt.m1169selectableO2vRcR0(SizeKt.m880height3ABfNKs(modifier4, f), z3, mutableInteractionSource3, m2780rippleH2RKhps$default, z6, Role.m7197boximpl(Role.Companion.m7211getTabo7Vup1c()), function02), TabKt.getHorizontalTextPadding(), 0.0f, 2, null), 0.0f, 1, null);
+                                                Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(PaddingKt.m845paddingVpY3zN4$default(SelectableKt.m1170selectableO2vRcR0(SizeKt.m881height3ABfNKs(modifier4, f), z3, mutableInteractionSource3, m2781rippleH2RKhps$default, z6, Role.m7198boximpl(Role.Companion.m7212getTabo7Vup1c()), function02), TabKt.getHorizontalTextPadding(), 0.0f, 2, null), 0.0f, 1, null);
                                                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                                 Function2<Composer, Integer, Unit> function24 = function23;
                                                 Function2<Composer, Integer, Unit> function25 = function2;
@@ -655,22 +655,22 @@ public final class TabKt {
                                                 } else {
                                                     composer3.useNode();
                                                 }
-                                                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
-                                                Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
+                                                Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                    m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                 }
-                                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                                                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -337008199, "C188@8208L6,189@8227L59,191@8368L5,192@8421L39:Tab.kt#uh7d8r");
                                                 function24.invoke(composer3, 0);
                                                 f2 = TabKt.TextDistanceFromLeadingIcon;
-                                                SpacerKt.Spacer(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, f2), composer3, 6);
-                                                TextKt.ProvideTextStyle(TextStyle.m7470copyp1EtxEg$default(TypographyKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getLabelTextFont(), composer3, 6), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7879getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744447, null), function25, composer3, 0);
+                                                SpacerKt.Spacer(SizeKt.m892requiredWidth3ABfNKs(Modifier.Companion, f2), composer3, 6);
+                                                TextKt.ProvideTextStyle(TextStyle.m7471copyp1EtxEg$default(TypographyKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getLabelTextFont(), composer3, 6), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7880getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744447, null), function25, composer3, 0);
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                                 composer3.endNode();
@@ -707,11 +707,11 @@ public final class TabKt {
                                 startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
-                                final IndicationNodeFactory m2780rippleH2RKhps$default2 = RippleKt.m2780rippleH2RKhps$default(true, 0.0f, j3, 2, null);
+                                final IndicationNodeFactory m2781rippleH2RKhps$default2 = RippleKt.m2781rippleH2RKhps$default(true, 0.0f, j3, 2, null);
                                 final Modifier modifier32 = companion;
                                 final Function2<? super Composer, ? super Integer, Unit> function232 = obj;
                                 int i102 = i92 >> 18;
-                                m3038TabTransitionKlgxPg(j3, j5, z, ComposableLambdaKt.rememberComposableLambda(1831009258, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$LeadingIconTab$1
+                                m3039TabTransitionKlgxPg(j3, j5, z, ComposableLambdaKt.rememberComposableLambda(1831009258, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$LeadingIconTab$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                         invoke(composer3, num.intValue());
@@ -731,7 +731,7 @@ public final class TabKt {
                                         }
                                         Modifier modifier4 = Modifier.this;
                                         f = TabKt.SmallTabHeight;
-                                        Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(PaddingKt.m844paddingVpY3zN4$default(SelectableKt.m1169selectableO2vRcR0(SizeKt.m880height3ABfNKs(modifier4, f), z3, mutableInteractionSource3, m2780rippleH2RKhps$default2, z62, Role.m7197boximpl(Role.Companion.m7211getTabo7Vup1c()), function02), TabKt.getHorizontalTextPadding(), 0.0f, 2, null), 0.0f, 1, null);
+                                        Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(PaddingKt.m845paddingVpY3zN4$default(SelectableKt.m1170selectableO2vRcR0(SizeKt.m881height3ABfNKs(modifier4, f), z3, mutableInteractionSource3, m2781rippleH2RKhps$default2, z62, Role.m7198boximpl(Role.Companion.m7212getTabo7Vup1c()), function02), TabKt.getHorizontalTextPadding(), 0.0f, 2, null), 0.0f, 1, null);
                                         Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                         Function2<Composer, Integer, Unit> function24 = function232;
                                         Function2<Composer, Integer, Unit> function25 = function2;
@@ -752,22 +752,22 @@ public final class TabKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
-                                        Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
+                                        Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                                         RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer3, -337008199, "C188@8208L6,189@8227L59,191@8368L5,192@8421L39:Tab.kt#uh7d8r");
                                         function24.invoke(composer3, 0);
                                         f2 = TabKt.TextDistanceFromLeadingIcon;
-                                        SpacerKt.Spacer(SizeKt.m891requiredWidth3ABfNKs(Modifier.Companion, f2), composer3, 6);
-                                        TextKt.ProvideTextStyle(TextStyle.m7470copyp1EtxEg$default(TypographyKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getLabelTextFont(), composer3, 6), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7879getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744447, null), function25, composer3, 0);
+                                        SpacerKt.Spacer(SizeKt.m892requiredWidth3ABfNKs(Modifier.Companion, f2), composer3, 6);
+                                        TextKt.ProvideTextStyle(TextStyle.m7471copyp1EtxEg$default(TypographyKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getLabelTextFont(), composer3, 6), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7880getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744447, null), function25, composer3, 0);
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
                                         composer3.endNode();
@@ -928,7 +928,7 @@ public final class TabKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3036TabbogVsAg(final boolean z, final Function0<Unit> function0, Modifier modifier, boolean z2, long j, long j2, MutableInteractionSource mutableInteractionSource, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m3037TabbogVsAg(final boolean z, final Function0<Unit> function0, Modifier modifier, boolean z2, long j, long j2, MutableInteractionSource mutableInteractionSource, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         boolean z3;
         int i3;
         int i4;
@@ -1036,7 +1036,7 @@ public final class TabKt {
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                     Object consume = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    j3 = ((Color) consume).m5289unboximpl();
+                                    j3 = ((Color) consume).m5290unboximpl();
                                     i8 = i7 & (-57345);
                                 } else {
                                     i8 = i7;
@@ -1054,10 +1054,10 @@ public final class TabKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1573136853, i8, -1, "androidx.compose.material3.Tab (Tab.kt:237)");
                                     }
-                                    final IndicationNodeFactory m2780rippleH2RKhps$default = RippleKt.m2780rippleH2RKhps$default(true, 0.0f, j3, 2, null);
+                                    final IndicationNodeFactory m2781rippleH2RKhps$default = RippleKt.m2781rippleH2RKhps$default(true, 0.0f, j3, 2, null);
                                     final boolean z7 = z3;
                                     int i11 = i8 >> 12;
-                                    m3038TabTransitionKlgxPg(j3, j7, z, ComposableLambdaKt.rememberComposableLambda(1128552423, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$Tab$3
+                                    m3039TabTransitionKlgxPg(j3, j7, z, ComposableLambdaKt.rememberComposableLambda(1128552423, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$Tab$3
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
@@ -1073,7 +1073,7 @@ public final class TabKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(1128552423, i12, -1, "androidx.compose.material3.Tab.<anonymous> (Tab.kt:244)");
                                             }
-                                            Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(SelectableKt.m1169selectableO2vRcR0(Modifier.this, z7, mutableInteractionSource3, m2780rippleH2RKhps$default, z6, Role.m7197boximpl(Role.Companion.m7211getTabo7Vup1c()), function0), 0.0f, 1, null);
+                                            Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(SelectableKt.m1170selectableO2vRcR0(Modifier.this, z7, mutableInteractionSource3, m2781rippleH2RKhps$default, z6, Role.m7198boximpl(Role.Companion.m7212getTabo7Vup1c()), function0), 0.0f, 1, null);
                                             Alignment.Horizontal centerHorizontally = Alignment.Companion.getCenterHorizontally();
                                             Arrangement.HorizontalOrVertical center = Arrangement.INSTANCE.getCenter();
                                             Function3<ColumnScope, Composer, Integer, Unit> function32 = function3;
@@ -1094,15 +1094,15 @@ public final class TabKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
-                                            Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
+                                            Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                             function32.invoke(ColumnScopeInstance.INSTANCE, composer3, 6);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1139,10 +1139,10 @@ public final class TabKt {
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
                             }
-                            final IndicationNodeFactory m2780rippleH2RKhps$default2 = RippleKt.m2780rippleH2RKhps$default(true, 0.0f, j3, 2, null);
+                            final IndicationNodeFactory m2781rippleH2RKhps$default2 = RippleKt.m2781rippleH2RKhps$default(true, 0.0f, j3, 2, null);
                             final boolean z72 = z3;
                             int i112 = i8 >> 12;
-                            m3038TabTransitionKlgxPg(j3, j7, z, ComposableLambdaKt.rememberComposableLambda(1128552423, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$Tab$3
+                            m3039TabTransitionKlgxPg(j3, j7, z, ComposableLambdaKt.rememberComposableLambda(1128552423, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabKt$Tab$3
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -1158,7 +1158,7 @@ public final class TabKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(1128552423, i12, -1, "androidx.compose.material3.Tab.<anonymous> (Tab.kt:244)");
                                     }
-                                    Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(SelectableKt.m1169selectableO2vRcR0(Modifier.this, z72, mutableInteractionSource3, m2780rippleH2RKhps$default2, z62, Role.m7197boximpl(Role.Companion.m7211getTabo7Vup1c()), function0), 0.0f, 1, null);
+                                    Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(SelectableKt.m1170selectableO2vRcR0(Modifier.this, z72, mutableInteractionSource3, m2781rippleH2RKhps$default2, z62, Role.m7198boximpl(Role.Companion.m7212getTabo7Vup1c()), function0), 0.0f, 1, null);
                                     Alignment.Horizontal centerHorizontally = Alignment.Companion.getCenterHorizontally();
                                     Arrangement.HorizontalOrVertical center = Arrangement.INSTANCE.getCenter();
                                     Function3<ColumnScope, Composer, Integer, Unit> function32 = function3;
@@ -1179,15 +1179,15 @@ public final class TabKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
-                                    Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
+                                    Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                     function32.invoke(ColumnScopeInstance.INSTANCE, composer3, 6);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1302,7 +1302,7 @@ public final class TabKt {
     }
 
     /* renamed from: TabTransition-Klgx-Pg  reason: not valid java name */
-    private static final void m3038TabTransitionKlgxPg(final long j, final long j2, boolean z, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    private static final void m3039TabTransitionKlgxPg(final long j, final long j2, boolean z, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         final boolean z2;
         Composer startRestartGroup = composer.startRestartGroup(-833145221);
@@ -1375,12 +1375,12 @@ public final class TabKt {
                 ComposerKt.traceEventEnd();
             }
             startRestartGroup.endReplaceGroup();
-            ColorSpace m5283getColorSpaceimpl = Color.m5283getColorSpaceimpl(j3);
+            ColorSpace m5284getColorSpaceimpl = Color.m5284getColorSpaceimpl(j3);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-            boolean changed = startRestartGroup.changed(m5283getColorSpaceimpl);
+            boolean changed = startRestartGroup.changed(m5284getColorSpaceimpl);
             TwoWayConverter<Color, AnimationVector4D> rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl);
+                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             TwoWayConverter twoWayConverter = (TwoWayConverter) rememberedValue;
@@ -1397,7 +1397,7 @@ public final class TabKt {
                 ComposerKt.traceEventEnd();
             }
             startRestartGroup.endReplaceGroup();
-            Color m5269boximpl = Color.m5269boximpl(j4);
+            Color m5270boximpl = Color.m5270boximpl(j4);
             boolean booleanValue3 = ((Boolean) updateTransition.getTargetState()).booleanValue();
             startRestartGroup.startReplaceGroup(-1069234984);
             ComposerKt.sourceInformation(startRestartGroup, "CN(it):Tab.kt#uh7d8r");
@@ -1409,10 +1409,10 @@ public final class TabKt {
                 ComposerKt.traceEventEnd();
             }
             startRestartGroup.endReplaceGroup();
-            State createTransitionAnimation = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl, Color.m5269boximpl(j5), tabKt$TabTransition$color$2.invoke((TabKt$TabTransition$color$2) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter, "ColorAnimation", startRestartGroup, 0);
+            State createTransitionAnimation = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl, Color.m5270boximpl(j5), tabKt$TabTransition$color$2.invoke((TabKt$TabTransition$color$2) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter, "ColorAnimation", startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(TabTransition_Klgx_Pg$lambda$5(createTransitionAnimation))), function2, startRestartGroup, ProvidedValue.$stable | (i3 & 112));
+            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(TabTransition_Klgx_Pg$lambda$5(createTransitionAnimation))), function2, startRestartGroup, ProvidedValue.$stable | (i3 & 112));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -1474,26 +1474,26 @@ public final class TabKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 870346887, "C:Tab.kt#uh7d8r");
             if (function2 != null) {
                 startRestartGroup.startReplaceGroup(870361332);
                 ComposerKt.sourceInformation(startRestartGroup, "303@12882L85");
-                Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "text"), HorizontalTextPadding, 0.0f, 2, null);
+                Modifier m845paddingVpY3zN4$default = PaddingKt.m845paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "text"), HorizontalTextPadding, 0.0f, 2, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                 CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m844paddingVpY3zN4$default);
+                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m845paddingVpY3zN4$default);
                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -1505,15 +1505,15 @@ public final class TabKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4597constructorimpl2 = Updater.m4597constructorimpl(startRestartGroup);
-                Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl2 = Updater.m4598constructorimpl(startRestartGroup);
+                Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                    m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                    m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                 }
-                Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1556388667, "C303@12959L6:Tab.kt#uh7d8r");
@@ -1550,15 +1550,15 @@ public final class TabKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4597constructorimpl3 = Updater.m4597constructorimpl(startRestartGroup);
-                Updater.m4604setimpl(m4597constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl3 = Updater.m4598constructorimpl(startRestartGroup);
+                Updater.m4605setimpl(m4598constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl3.getInserting() || !Intrinsics.areEqual(m4597constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                    m4597constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m4597constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                if (m4598constructorimpl3.getInserting() || !Intrinsics.areEqual(m4598constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                    m4598constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m4598constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                 }
-                Updater.m4604setimpl(m4597constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1144843236, "C306@13051L6:Tab.kt#uh7d8r");
@@ -1608,10 +1608,10 @@ public final class TabKt {
         } else {
             f = DoubleLineTextBaselineWithIcon;
         }
-        int mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(f) + density.mo423roundToPx0680j_4(PrimaryNavigationTabTokens.INSTANCE.m4224getActiveIndicatorHeightD9Ej5fM());
-        int i5 = (i2 - i4) - mo423roundToPx0680j_4;
+        int mo424roundToPx0680j_4 = density.mo424roundToPx0680j_4(f) + density.mo424roundToPx0680j_4(PrimaryNavigationTabTokens.INSTANCE.m4225getActiveIndicatorHeightD9Ej5fM());
+        int i5 = (i2 - i4) - mo424roundToPx0680j_4;
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable, (i - placeable.getWidth()) / 2, i5, 0.0f, 4, null);
-        Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, (i - placeable2.getWidth()) / 2, i5 - ((placeable2.getHeight() + density.mo422roundToPxR2X_6o(IconDistanceFromBaseline)) - i3), 0.0f, 4, null);
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, (i - placeable2.getWidth()) / 2, i5 - ((placeable2.getHeight() + density.mo423roundToPxR2X_6o(IconDistanceFromBaseline)) - i3), 0.0f, 4, null);
     }
 
     public static final float getHorizontalTextPadding() {
@@ -1619,6 +1619,6 @@ public final class TabKt {
     }
 
     private static final long TabTransition_Klgx_Pg$lambda$5(State<Color> state) {
-        return state.getValue().m5289unboximpl();
+        return state.getValue().m5290unboximpl();
     }
 }

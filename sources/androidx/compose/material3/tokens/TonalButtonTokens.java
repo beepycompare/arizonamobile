@@ -8,23 +8,23 @@ public final class TonalButtonTokens {
     public static final int $stable = 0;
     public static final TonalButtonTokens INSTANCE = new TonalButtonTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens DisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float DisabledContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float DisabledContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
     private static final float DisabledContainerOpacity = 0.1f;
     private static final ColorSchemeKeyTokens DisabledIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final float DisabledIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final float DisabledLabelTextOpacity = 0.38f;
-    private static final float FocusedContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float FocusedContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusedIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens FocusedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float HoveredContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+    private static final float HoveredContainerElevation = ElevationTokens.INSTANCE.m3890getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens HoveredIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens HoveredLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens LabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens PressedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.Secondary;
@@ -54,7 +54,7 @@ public final class TonalButtonTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4354getContainerElevationD9Ej5fM() {
+    public final float m4355getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -63,7 +63,7 @@ public final class TonalButtonTokens {
     }
 
     /* renamed from: getDisabledContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4355getDisabledContainerElevationD9Ej5fM() {
+    public final float m4356getDisabledContainerElevationD9Ej5fM() {
         return DisabledContainerElevation;
     }
 
@@ -88,7 +88,7 @@ public final class TonalButtonTokens {
     }
 
     /* renamed from: getFocusedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4356getFocusedContainerElevationD9Ej5fM() {
+    public final float m4357getFocusedContainerElevationD9Ej5fM() {
         return FocusedContainerElevation;
     }
 
@@ -101,7 +101,7 @@ public final class TonalButtonTokens {
     }
 
     /* renamed from: getHoveredContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4357getHoveredContainerElevationD9Ej5fM() {
+    public final float m4358getHoveredContainerElevationD9Ej5fM() {
         return HoveredContainerElevation;
     }
 
@@ -122,7 +122,7 @@ public final class TonalButtonTokens {
     }
 
     /* renamed from: getPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4358getPressedContainerElevationD9Ej5fM() {
+    public final float m4359getPressedContainerElevationD9Ej5fM() {
         return PressedContainerElevation;
     }
 

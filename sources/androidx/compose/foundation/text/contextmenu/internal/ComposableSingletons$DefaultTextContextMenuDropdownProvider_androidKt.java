@@ -123,7 +123,7 @@ public final class ComposableSingletons$DefaultTextContextMenuDropdownProvider_a
     });
 
     /* renamed from: getLambda$-1357803046$foundation_release  reason: not valid java name */
-    public final Function5<TextContextMenuSession, TextContextMenuDataProvider, Function0<? extends LayoutCoordinates>, Composer, Integer, Unit> m1404getLambda$1357803046$foundation_release() {
+    public final Function5<TextContextMenuSession, TextContextMenuDataProvider, Function0<? extends LayoutCoordinates>, Composer, Integer, Unit> m1405getLambda$1357803046$foundation_release() {
         return f2lambda$1357803046;
     }
 

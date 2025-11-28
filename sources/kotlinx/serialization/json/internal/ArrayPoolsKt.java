@@ -12,20 +12,20 @@ public final class ArrayPoolsKt {
     private static final int MAX_CHARS_IN_POOL;
 
     static {
-        Object m9843constructorimpl;
+        Object m9901constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             String property = System.getProperty("kotlinx.serialization.json.pool.size");
             Intrinsics.checkNotNullExpressionValue(property, "getProperty(...)");
-            m9843constructorimpl = Result.m9843constructorimpl(StringsKt.toIntOrNull(property));
+            m9901constructorimpl = Result.m9901constructorimpl(StringsKt.toIntOrNull(property));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9901constructorimpl = Result.m9901constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-            m9843constructorimpl = null;
+        if (Result.m9907isFailureimpl(m9901constructorimpl)) {
+            m9901constructorimpl = null;
         }
-        Integer num = (Integer) m9843constructorimpl;
+        Integer num = (Integer) m9901constructorimpl;
         MAX_CHARS_IN_POOL = num != null ? num.intValue() : 2097152;
     }
 }

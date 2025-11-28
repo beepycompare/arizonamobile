@@ -81,8 +81,8 @@ final class CasesScreen$onBackendMessage$1 extends SuspendLambda implements Func
         btnClose.setVisibility(0);
         this.this$0.startGoldBoxAnimation();
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        RequestCreator load = picasso.load(resourceUrl + "projects/arizona-rp/systems/cases/" + casesInfoModel.getCaseId() + ".webp");
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        RequestCreator load = picasso.load(resourceUrl$default + "projects/arizona-rp/systems/cases/" + casesInfoModel.getCaseId() + ".webp");
         arizonaCasesScreenBinding3 = this.this$0.casesBinding;
         load.into(arizonaCasesScreenBinding3.openPage.caseImg);
         return Unit.INSTANCE;

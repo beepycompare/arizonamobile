@@ -9,7 +9,7 @@ import androidx.media3.ui.PlayerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class VideoAdviceBinding implements ViewBinding {
     public final FrameLayout btnSkip;
     private final FrameLayout rootView;

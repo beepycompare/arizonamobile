@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.Ch
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeChangeListener;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Z2 implements ChargeTypeProvider {
     public static final ChargeType d = ChargeType.UNKNOWN;
 

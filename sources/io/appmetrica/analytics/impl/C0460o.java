@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleRegis
 import java.util.ArrayList;
 import java.util.Collection;
 /* renamed from: io.appmetrica.analytics.impl.o  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0460o extends H7 implements ActivityLifecycleRegistry {
 
     /* renamed from: a  reason: collision with root package name */

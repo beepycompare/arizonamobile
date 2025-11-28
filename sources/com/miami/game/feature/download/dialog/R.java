@@ -6,9 +6,9 @@ public final class R {
     public static final class drawable {
         public static int accept_button_active = 0x7f0802ff;
         public static int accept_button_not_active = 0x7f080300;
-        public static int input = 0x7f080ab1;
-        public static int input_password = 0x7f080ab2;
-        public static int input_port = 0x7f080ab3;
+        public static int input = 0x7f080a9b;
+        public static int input_password = 0x7f080a9c;
+        public static int input_port = 0x7f080a9d;
 
         private drawable() {
         }

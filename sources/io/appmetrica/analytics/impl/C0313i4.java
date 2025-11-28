@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.i4  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0313i4 {
 
     /* renamed from: a  reason: collision with root package name */

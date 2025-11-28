@@ -13,7 +13,7 @@ import io.appmetrica.analytics.plugins.IPluginReporter;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.li  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0404li implements Ya {
 
     /* renamed from: a  reason: collision with root package name */

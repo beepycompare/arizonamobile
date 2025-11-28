@@ -10,35 +10,35 @@ public final class NavigationBarHorizontalItemTokens {
     private static final float ActiveIndicatorLeadingSpace;
     private static final float ActiveIndicatorTrailingSpace;
     public static final NavigationBarHorizontalItemTokens INSTANCE = new NavigationBarHorizontalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7995constructorimpl((float) 40.0d);
-    private static final float IconSize = Dp.m7995constructorimpl((float) 24.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7996constructorimpl((float) 40.0d);
+    private static final float IconSize = Dp.m7996constructorimpl((float) 24.0d);
 
     private NavigationBarHorizontalItemTokens() {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4062getActiveIndicatorHeightD9Ej5fM() {
+    public final float m4063getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
     /* renamed from: getActiveIndicatorLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4063getActiveIndicatorLeadingSpaceD9Ej5fM() {
+    public final float m4064getActiveIndicatorLeadingSpaceD9Ej5fM() {
         return ActiveIndicatorLeadingSpace;
     }
 
     /* renamed from: getActiveIndicatorTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4064getActiveIndicatorTrailingSpaceD9Ej5fM() {
+    public final float m4065getActiveIndicatorTrailingSpaceD9Ej5fM() {
         return ActiveIndicatorTrailingSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4065getIconSizeD9Ej5fM() {
+    public final float m4066getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     static {
         float f = (float) 16.0d;
-        ActiveIndicatorLeadingSpace = Dp.m7995constructorimpl(f);
-        ActiveIndicatorTrailingSpace = Dp.m7995constructorimpl(f);
+        ActiveIndicatorLeadingSpace = Dp.m7996constructorimpl(f);
+        ActiveIndicatorTrailingSpace = Dp.m7996constructorimpl(f);
     }
 }

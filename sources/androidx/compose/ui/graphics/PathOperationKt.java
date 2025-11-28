@@ -29,22 +29,22 @@ public final class PathOperationKt {
     }
 
     public static final int getDifference(PathOperation.Companion companion) {
-        return companion.m5583getDifferenceb3I0S0c();
+        return companion.m5584getDifferenceb3I0S0c();
     }
 
     public static final int getIntersect(PathOperation.Companion companion) {
-        return companion.m5584getIntersectb3I0S0c();
+        return companion.m5585getIntersectb3I0S0c();
     }
 
     public static final int getUnion(PathOperation.Companion companion) {
-        return companion.m5586getUnionb3I0S0c();
+        return companion.m5587getUnionb3I0S0c();
     }
 
     public static final int getReverseDifference(PathOperation.Companion companion) {
-        return companion.m5585getReverseDifferenceb3I0S0c();
+        return companion.m5586getReverseDifferenceb3I0S0c();
     }
 
     public static final int getXor(PathOperation.Companion companion) {
-        return companion.m5587getXorb3I0S0c();
+        return companion.m5588getXorb3I0S0c();
     }
 }

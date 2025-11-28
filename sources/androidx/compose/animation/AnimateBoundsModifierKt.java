@@ -42,23 +42,23 @@ public final class AnimateBoundsModifierKt {
     public static final Modifier animateBounds(Modifier modifier, LookaheadScope lookaheadScope, Modifier modifier2, BoundsTransform boundsTransform, boolean z) {
         return modifier.then(new BoundsAnimationElement(lookaheadScope, boundsTransform, new Function2<IntSize, Constraints, Constraints>() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$animateBounds$1
             /* renamed from: invoke-2pbfIzA  reason: not valid java name */
-            public final long m48invoke2pbfIzA(long j, long j2) {
+            public final long m49invoke2pbfIzA(long j, long j2) {
                 return j2;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m7935boximpl(m48invoke2pbfIzA(intSize.m8170unboximpl(), constraints.m7954unboximpl()));
+                return Constraints.m7936boximpl(m49invoke2pbfIzA(intSize.m8171unboximpl(), constraints.m7955unboximpl()));
             }
         }, z)).then(modifier2).then(new BoundsAnimationElement(lookaheadScope, boundsTransform, new Function2<IntSize, Constraints, Constraints>() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$animateBounds$2
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m7935boximpl(m49invoke2pbfIzA(intSize.m8170unboximpl(), constraints.m7954unboximpl()));
+                return Constraints.m7936boximpl(m50invoke2pbfIzA(intSize.m8171unboximpl(), constraints.m7955unboximpl()));
             }
 
             /* renamed from: invoke-2pbfIzA  reason: not valid java name */
-            public final long m49invoke2pbfIzA(long j, long j2) {
-                return Constraints.Companion.m7958fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
+            public final long m50invoke2pbfIzA(long j, long j2) {
+                return Constraints.Companion.m7959fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
             }
         }, z));
     }

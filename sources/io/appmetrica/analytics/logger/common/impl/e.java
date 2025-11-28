@@ -2,7 +2,7 @@ package io.appmetrica.analytics.logger.common.impl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */

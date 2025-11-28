@@ -16,6 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.event.data.ShopItem;
 import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventShopItemBinding;
@@ -58,13 +59,9 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
         binding.tvTitle.setText(shopItem.getName());
         binding.price.setText(String.valueOf(shopItem.getPrice()));
         if (this.isArizona) {
-            Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "/projects/arizona-rp/systems/battlepass_holiday/shop_image/" + shopItem.getImage() + ".webp").into(binding.ivName);
+            Picasso.get().load((UtilsKt.isDebug() ? "https://staging-cdn.azresources.cloud/" : FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null)) + "/projects/arizona-rp/systems/event_battlepass/rewards/" + shopItem.getImage() + ".webp").into(binding.ivName);
         } else {
-            Picasso picasso2 = Picasso.get();
-            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso2.load(resourceUrl2 + "/projects/rodina-rp/systems/battlepass/items/" + shopItem.getImage() + ".webp").into(binding.ivName);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/projects/rodina-rp/systems/battlepass/items/" + shopItem.getImage() + ".webp").into(binding.ivName);
         }
         binding.btnSelect.setVisibility(8);
         binding.btnUnselect.setVisibility(8);
@@ -77,10 +74,11 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
                 }
             });
             binding.bg.setBackgroundResource(R.drawable.event_prise_item_bg);
-            return;
+        } else {
+            binding.btnUnselect.setVisibility(0);
+            binding.bg.setBackgroundResource(R.drawable.event_prise_item_bg1);
         }
-        binding.btnUnselect.setVisibility(0);
-        binding.bg.setBackgroundResource(R.drawable.event_prise_item_bg1);
+        binding.ivCurrency.setImageResource(shopItem.isAzCoins() ? ru.mrlargha.commonui.R.drawable.ic_az_coins : R.drawable.event_coin);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

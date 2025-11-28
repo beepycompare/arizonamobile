@@ -17,7 +17,7 @@ import kotlinx.coroutines.channels.ProduceKt;
 import kotlinx.coroutines.channels.ProducerScope;
 /* compiled from: PipHintTracker.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", "Landroid/graphics/Rect;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.activity.PipHintTrackerKt$trackPipAnimationHintView$flow$1", f = "PipHintTracker.kt", i = {}, l = {86}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.activity.PipHintTrackerKt$trackPipAnimationHintView$flow$1", f = "PipHintTracker.kt", i = {}, l = {86}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLambda implements Function2<ProducerScope<? super Rect>, Continuation<? super Unit>, Object> {
     final /* synthetic */ View $view;
@@ -73,7 +73,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
                     Intrinsics.checkNotNullParameter(v, "v");
                     ProducerScope<Rect> producerScope2 = producerScope;
                     trackPipAnimationHintView$positionInWindow2 = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view2);
-                    producerScope2.mo8867trySendJP2dKIU(trackPipAnimationHintView$positionInWindow2);
+                    producerScope2.mo8879trySendJP2dKIU(trackPipAnimationHintView$positionInWindow2);
                     view2.getViewTreeObserver().addOnScrollChangedListener(onScrollChangedListener);
                     view2.addOnLayoutChangeListener(onLayoutChangeListener);
                 }
@@ -87,7 +87,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
             };
             if (this.$view.isAttachedToWindow()) {
                 trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(this.$view);
-                producerScope.mo8867trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+                producerScope.mo8879trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
                 this.$view.getViewTreeObserver().addOnScrollChangedListener(onScrollChangedListener);
                 this.$view.addOnLayoutChangeListener(onLayoutChangeListener);
             }
@@ -120,14 +120,14 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
         }
         Intrinsics.checkNotNull(view);
         trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view);
-        producerScope.mo8867trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+        producerScope.mo8879trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void invokeSuspend$lambda$1(ProducerScope producerScope, View view) {
         Rect trackPipAnimationHintView$positionInWindow;
         trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view);
-        producerScope.mo8867trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+        producerScope.mo8879trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

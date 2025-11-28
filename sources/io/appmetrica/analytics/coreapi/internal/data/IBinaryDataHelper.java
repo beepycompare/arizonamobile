@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.coreapi.internal.data;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface IBinaryDataHelper {
     byte[] get(String str);
 

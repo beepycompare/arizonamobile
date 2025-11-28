@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: BaseProxy.java */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class a implements IInterface {
 
     /* renamed from: a  reason: collision with root package name */

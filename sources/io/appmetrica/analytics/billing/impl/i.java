@@ -3,7 +3,7 @@ package io.appmetrica.analytics.billing.impl;
 import io.appmetrica.analytics.billinginterface.internal.BillingInfo;
 import io.appmetrica.analytics.billinginterface.internal.ProductType;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class i implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

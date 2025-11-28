@@ -8,7 +8,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorPr
 import io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext;
 import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class S3 implements O5 {
 
     /* renamed from: a  reason: collision with root package name */

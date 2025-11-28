@@ -154,7 +154,7 @@ public final class KeylineList implements List<Keyline>, KMappedMarker {
     }
 
     /* renamed from: removeFirst  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m3481removeFirst() {
+    public /* bridge */ /* synthetic */ Object m3482removeFirst() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -163,7 +163,7 @@ public final class KeylineList implements List<Keyline>, KMappedMarker {
     }
 
     /* renamed from: removeLast  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m3482removeLast() {
+    public /* bridge */ /* synthetic */ Object m3483removeLast() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

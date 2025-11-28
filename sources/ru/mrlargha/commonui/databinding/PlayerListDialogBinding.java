@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class PlayerListDialogBinding implements ViewBinding {
     public final DialogBackgroundBinding bg;
     public final Guideline guideline3;

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.location.Location;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Jo extends Location {
     public static final /* synthetic */ int b = 0;
 

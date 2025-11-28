@@ -29,7 +29,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1429684928, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-1429684928.<anonymous> (TabRow.kt:160)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -53,7 +53,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-463596174, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-463596174.<anonymous> (TabRow.kt:211)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -77,7 +77,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-773954579, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-773954579.<anonymous> (TabRow.kt:266)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -99,7 +99,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(303717663, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$303717663.<anonymous> (TabRow.kt:336)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -121,7 +121,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2075817209, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$2075817209.<anonymous> (TabRow.kt:831)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -145,7 +145,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-306947391, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-306947391.<anonymous> (TabRow.kt:1202)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -167,7 +167,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1187266255, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$1187266255.<anonymous> (TabRow.kt:1233)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -191,7 +191,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1132537920, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-1132537920.<anonymous> (TabRow.kt:1346)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -215,7 +215,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-358046007, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda$-358046007.<anonymous> (TabRow.kt:1411)");
             }
-            DividerKt.m2315HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -223,32 +223,32 @@ public final class ComposableSingletons$TabRowKt {
     });
 
     /* renamed from: getLambda$-1132537920$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2173getLambda$1132537920$material3() {
+    public final Function2<Composer, Integer, Unit> m2174getLambda$1132537920$material3() {
         return f33lambda$1132537920;
     }
 
     /* renamed from: getLambda$-1429684928$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2174getLambda$1429684928$material3() {
+    public final Function2<Composer, Integer, Unit> m2175getLambda$1429684928$material3() {
         return f34lambda$1429684928;
     }
 
     /* renamed from: getLambda$-306947391$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2175getLambda$306947391$material3() {
+    public final Function2<Composer, Integer, Unit> m2176getLambda$306947391$material3() {
         return f35lambda$306947391;
     }
 
     /* renamed from: getLambda$-358046007$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2176getLambda$358046007$material3() {
+    public final Function2<Composer, Integer, Unit> m2177getLambda$358046007$material3() {
         return f36lambda$358046007;
     }
 
     /* renamed from: getLambda$-463596174$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2177getLambda$463596174$material3() {
+    public final Function2<Composer, Integer, Unit> m2178getLambda$463596174$material3() {
         return f37lambda$463596174;
     }
 
     /* renamed from: getLambda$-773954579$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2178getLambda$773954579$material3() {
+    public final Function2<Composer, Integer, Unit> m2179getLambda$773954579$material3() {
         return f38lambda$773954579;
     }
 

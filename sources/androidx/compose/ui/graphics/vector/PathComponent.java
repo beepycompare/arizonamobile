@@ -104,14 +104,14 @@ public final class PathComponent extends VNode {
     }
 
     /* renamed from: getPathFillType-Rg-k1Os  reason: not valid java name */
-    public final int m6019getPathFillTypeRgk1Os() {
+    public final int m6020getPathFillTypeRgk1Os() {
         return this.pathFillType;
     }
 
     /* renamed from: setPathFillType-oQ8Xj4U  reason: not valid java name */
-    public final void m6022setPathFillTypeoQ8Xj4U(int i) {
+    public final void m6023setPathFillTypeoQ8Xj4U(int i) {
         this.pathFillType = i;
-        this.renderPath.mo5170setFillTypeoQ8Xj4U(i);
+        this.renderPath.mo5171setFillTypeoQ8Xj4U(i);
         invalidate();
     }
 
@@ -144,24 +144,24 @@ public final class PathComponent extends VNode {
     }
 
     /* renamed from: getStrokeLineCap-KaPHkGw  reason: not valid java name */
-    public final int m6020getStrokeLineCapKaPHkGw() {
+    public final int m6021getStrokeLineCapKaPHkGw() {
         return this.strokeLineCap;
     }
 
     /* renamed from: setStrokeLineCap-BeK7IIE  reason: not valid java name */
-    public final void m6023setStrokeLineCapBeK7IIE(int i) {
+    public final void m6024setStrokeLineCapBeK7IIE(int i) {
         this.strokeLineCap = i;
         this.isStrokeDirty = true;
         invalidate();
     }
 
     /* renamed from: getStrokeLineJoin-LxFBmk8  reason: not valid java name */
-    public final int m6021getStrokeLineJoinLxFBmk8() {
+    public final int m6022getStrokeLineJoinLxFBmk8() {
         return this.strokeLineJoin;
     }
 
     /* renamed from: setStrokeLineJoin-Ww9F2mQ  reason: not valid java name */
-    public final void m6024setStrokeLineJoinWw9F2mQ(int i) {
+    public final void m6025setStrokeLineJoinWw9F2mQ(int i) {
         this.strokeLineJoin = i;
         this.isStrokeDirty = true;
         invalidate();
@@ -224,9 +224,9 @@ public final class PathComponent extends VNode {
         if (Intrinsics.areEqual(this.renderPath, this.path)) {
             this.renderPath = AndroidPath_androidKt.Path();
         } else {
-            int mo5168getFillTypeRgk1Os = this.renderPath.mo5168getFillTypeRgk1Os();
+            int mo5169getFillTypeRgk1Os = this.renderPath.mo5169getFillTypeRgk1Os();
             this.renderPath.rewind();
-            this.renderPath.mo5170setFillTypeoQ8Xj4U(mo5168getFillTypeRgk1Os);
+            this.renderPath.mo5171setFillTypeoQ8Xj4U(mo5169getFillTypeRgk1Os);
         }
         getPathMeasure().setPath(this.path, false);
         float length = getPathMeasure().getLength();
@@ -253,7 +253,7 @@ public final class PathComponent extends VNode {
         this.isTrimPathDirty = false;
         Brush brush = this.fill;
         if (brush != null) {
-            DrawScope.m5847drawPathGBMwjPU$default(drawScope, this.renderPath, brush, this.fillAlpha, null, null, 0, 56, null);
+            DrawScope.m5848drawPathGBMwjPU$default(drawScope, this.renderPath, brush, this.fillAlpha, null, null, 0, 56, null);
         }
         Brush brush2 = this.stroke;
         if (brush2 != null) {
@@ -264,7 +264,7 @@ public final class PathComponent extends VNode {
                 this.isStrokeDirty = false;
                 stroke = stroke2;
             }
-            DrawScope.m5847drawPathGBMwjPU$default(drawScope, this.renderPath, brush2, this.strokeAlpha, stroke, null, 0, 48, null);
+            DrawScope.m5848drawPathGBMwjPU$default(drawScope, this.renderPath, brush2, this.strokeAlpha, stroke, null, 0, 48, null);
         }
     }
 

@@ -39,15 +39,15 @@ public final class LayoutNodeLayoutDelegate {
     }
 
     /* renamed from: getLastConstraints-DWUhwKw  reason: not valid java name */
-    public final Constraints m6912getLastConstraintsDWUhwKw() {
-        return this.measurePassDelegate.m6941getLastConstraintsDWUhwKw();
+    public final Constraints m6913getLastConstraintsDWUhwKw() {
+        return this.measurePassDelegate.m6942getLastConstraintsDWUhwKw();
     }
 
     /* renamed from: getLastLookaheadConstraints-DWUhwKw  reason: not valid java name */
-    public final Constraints m6913getLastLookaheadConstraintsDWUhwKw() {
+    public final Constraints m6914getLastLookaheadConstraintsDWUhwKw() {
         LookaheadPassDelegate lookaheadPassDelegate = this.lookaheadPassDelegate;
         if (lookaheadPassDelegate != null) {
-            return lookaheadPassDelegate.m6931getLastConstraintsDWUhwKw();
+            return lookaheadPassDelegate.m6932getLastConstraintsDWUhwKw();
         }
         return null;
     }
@@ -289,10 +289,10 @@ public final class LayoutNodeLayoutDelegate {
     }
 
     /* renamed from: performLookaheadMeasure-BRTryo0$ui_release  reason: not valid java name */
-    public final void m6914performLookaheadMeasureBRTryo0$ui_release(long j) {
+    public final void m6915performLookaheadMeasureBRTryo0$ui_release(long j) {
         LookaheadPassDelegate lookaheadPassDelegate = this.lookaheadPassDelegate;
         if (lookaheadPassDelegate != null) {
-            lookaheadPassDelegate.m6932performMeasureBRTryo0$ui_release(j);
+            lookaheadPassDelegate.m6933performMeasureBRTryo0$ui_release(j);
         }
     }
 

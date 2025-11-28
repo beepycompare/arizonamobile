@@ -26,11 +26,11 @@ public final class BlurEffect extends RenderEffect {
 
     @Override // androidx.compose.ui.graphics.RenderEffect
     protected android.graphics.RenderEffect createRenderEffect() {
-        return RenderEffectVerificationHelper.INSTANCE.m5601createBlurEffect8A3gB4(this.renderEffect, this.radiusX, this.radiusY, this.edgeTreatment);
+        return RenderEffectVerificationHelper.INSTANCE.m5602createBlurEffect8A3gB4(this.renderEffect, this.radiusX, this.radiusY, this.edgeTreatment);
     }
 
     public /* synthetic */ BlurEffect(RenderEffect renderEffect, float f, float f2, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(renderEffect, f, (i2 & 4) != 0 ? f : f2, (i2 & 8) != 0 ? TileMode.Companion.m5669getClamp3opZhB0() : i, null);
+        this(renderEffect, f, (i2 & 4) != 0 ? f : f2, (i2 & 8) != 0 ? TileMode.Companion.m5670getClamp3opZhB0() : i, null);
     }
 
     public boolean equals(Object obj) {
@@ -39,17 +39,17 @@ public final class BlurEffect extends RenderEffect {
         }
         if (obj instanceof BlurEffect) {
             BlurEffect blurEffect = (BlurEffect) obj;
-            return this.radiusX == blurEffect.radiusX && this.radiusY == blurEffect.radiusY && TileMode.m5665equalsimpl0(this.edgeTreatment, blurEffect.edgeTreatment) && Intrinsics.areEqual(this.renderEffect, blurEffect.renderEffect);
+            return this.radiusX == blurEffect.radiusX && this.radiusY == blurEffect.radiusY && TileMode.m5666equalsimpl0(this.edgeTreatment, blurEffect.edgeTreatment) && Intrinsics.areEqual(this.renderEffect, blurEffect.renderEffect);
         }
         return false;
     }
 
     public int hashCode() {
         RenderEffect renderEffect = this.renderEffect;
-        return ((((((renderEffect != null ? renderEffect.hashCode() : 0) * 31) + Float.hashCode(this.radiusX)) * 31) + Float.hashCode(this.radiusY)) * 31) + TileMode.m5666hashCodeimpl(this.edgeTreatment);
+        return ((((((renderEffect != null ? renderEffect.hashCode() : 0) * 31) + Float.hashCode(this.radiusX)) * 31) + Float.hashCode(this.radiusY)) * 31) + TileMode.m5667hashCodeimpl(this.edgeTreatment);
     }
 
     public String toString() {
-        return "BlurEffect(renderEffect=" + this.renderEffect + ", radiusX=" + this.radiusX + ", radiusY=" + this.radiusY + ", edgeTreatment=" + ((Object) TileMode.m5667toStringimpl(this.edgeTreatment)) + ')';
+        return "BlurEffect(renderEffect=" + this.renderEffect + ", radiusX=" + this.radiusX + ", radiusY=" + this.radiusY + ", edgeTreatment=" + ((Object) TileMode.m5668toStringimpl(this.edgeTreatment)) + ')';
     }
 }

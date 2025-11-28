@@ -45,11 +45,11 @@ public final class ClockDialNode$pointerInputTapNode$1 implements PointerInputEv
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m2069invoked4ec7I(pressGestureScope, offset.m5045unboximpl(), continuation);
+            return m2070invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m2069invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m2070invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
             anonymousClass1.J$0 = j;
             return anonymousClass1.invokeSuspend(Unit.INSTANCE);

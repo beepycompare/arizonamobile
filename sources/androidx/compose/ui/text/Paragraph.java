@@ -19,7 +19,7 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface Paragraph {
     /* renamed from: fillBoundingBoxes-8ffj60Q */
-    void mo7248fillBoundingBoxes8ffj60Q(long j, float[] fArr, int i);
+    void mo7249fillBoundingBoxes8ffj60Q(long j, float[] fArr, int i);
 
     ResolvedTextDirection getBidiRunDirection(int i);
 
@@ -66,7 +66,7 @@ public interface Paragraph {
     float getMinIntrinsicWidth();
 
     /* renamed from: getOffsetForPosition-k-4lQ0M */
-    int mo7250getOffsetForPositionk4lQ0M(long j);
+    int mo7251getOffsetForPositionk4lQ0M(long j);
 
     ResolvedTextDirection getParagraphDirection(int i);
 
@@ -75,23 +75,23 @@ public interface Paragraph {
     List<Rect> getPlaceholderRects();
 
     /* renamed from: getRangeForRect-8-6BmAI */
-    long mo7252getRangeForRect86BmAI(Rect rect, int i, TextInclusionStrategy textInclusionStrategy);
+    long mo7253getRangeForRect86BmAI(Rect rect, int i, TextInclusionStrategy textInclusionStrategy);
 
     float getWidth();
 
     /* renamed from: getWordBoundary--jx7JFs */
-    long mo7253getWordBoundaryjx7JFs(int i);
+    long mo7254getWordBoundaryjx7JFs(int i);
 
     boolean isLineEllipsized(int i);
 
     /* renamed from: paint-LG529CI */
-    void mo7254paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i);
+    void mo7255paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i);
 
     /* renamed from: paint-RPmYEkk */
-    void mo7255paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration);
+    void mo7256paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration);
 
     /* renamed from: paint-hn5TExg */
-    void mo7256painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i);
+    void mo7257painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i);
 
     /* compiled from: Paragraph.android.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -110,32 +110,32 @@ public interface Paragraph {
     }
 
     /* renamed from: paint-LG529CI$default  reason: not valid java name */
-    static /* synthetic */ void m7306paintLG529CI$default(Paragraph paragraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
+    static /* synthetic */ void m7307paintLG529CI$default(Paragraph paragraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: paint-LG529CI");
         }
-        paragraph.mo7254paintLG529CI(canvas, (i2 & 2) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j, (i2 & 4) != 0 ? null : shadow, (i2 & 8) != 0 ? null : textDecoration, (i2 & 16) == 0 ? drawStyle : null, (i2 & 32) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i);
+        paragraph.mo7255paintLG529CI(canvas, (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j, (i2 & 4) != 0 ? null : shadow, (i2 & 8) != 0 ? null : textDecoration, (i2 & 16) == 0 ? drawStyle : null, (i2 & 32) != 0 ? DrawScope.Companion.m5861getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: paint-RPmYEkk$default  reason: not valid java name */
-    static /* synthetic */ void m7307paintRPmYEkk$default(Paragraph paragraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, int i, Object obj) {
+    static /* synthetic */ void m7308paintRPmYEkk$default(Paragraph paragraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: paint-RPmYEkk");
         }
         if ((i & 2) != 0) {
-            j = Color.Companion.m5315getUnspecified0d7_KjU();
+            j = Color.Companion.m5316getUnspecified0d7_KjU();
         }
-        paragraph.mo7255paintRPmYEkk(canvas, j, (i & 4) != 0 ? null : shadow, (i & 8) != 0 ? null : textDecoration);
+        paragraph.mo7256paintRPmYEkk(canvas, j, (i & 4) != 0 ? null : shadow, (i & 8) != 0 ? null : textDecoration);
     }
 
     /* renamed from: paint-hn5TExg$default  reason: not valid java name */
-    static /* synthetic */ void m7308painthn5TExg$default(Paragraph paragraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
+    static /* synthetic */ void m7309painthn5TExg$default(Paragraph paragraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: paint-hn5TExg");
         }
         if ((i2 & 4) != 0) {
             f = Float.NaN;
         }
-        paragraph.mo7256painthn5TExg(canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i);
+        paragraph.mo7257painthn5TExg(canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? DrawScope.Companion.m5861getDefaultBlendMode0nO6VwU() : i);
     }
 }

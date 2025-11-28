@@ -18,7 +18,7 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes3.dex */
 public final class SingletonAsyncImagePainterKt {
     /* renamed from: rememberAsyncImagePainter-MqR-F_0  reason: not valid java name */
-    public static final AsyncImagePainter m9075rememberAsyncImagePainterMqRF_0(Object obj, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
+    public static final AsyncImagePainter m9087rememberAsyncImagePainterMqRF_0(Object obj, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, 1650263642, "C(rememberAsyncImagePainter)P(4,8,1,2,6,7,5!,3:c#ui.graphics.FilterQuality)47@2345L7,45@2235L341:SingletonAsyncImagePainter.kt#8xxpns");
         Painter painter4 = (i3 & 2) != 0 ? null : painter;
         if ((i3 & 4) != 0) {
@@ -29,7 +29,7 @@ public final class SingletonAsyncImagePainterKt {
         Function1<? super AsyncImagePainter.State.Success, Unit> function15 = (i3 & 32) != 0 ? null : function12;
         Function1<? super AsyncImagePainter.State.Error, Unit> function16 = (i3 & 64) != 0 ? null : function13;
         ContentScale fit = (i3 & 128) != 0 ? ContentScale.Companion.getFit() : contentScale;
-        int m5861getDefaultFilterQualityfv9h1I = (i3 & 256) != 0 ? DrawScope.Companion.m5861getDefaultFilterQualityfv9h1I() : i;
+        int m5862getDefaultFilterQualityfv9h1I = (i3 & 256) != 0 ? DrawScope.Companion.m5862getDefaultFilterQualityfv9h1I() : i;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1650263642, i2, -1, "coil3.compose.rememberAsyncImagePainter (SingletonAsyncImagePainter.kt:45)");
         }
@@ -37,21 +37,21 @@ public final class SingletonAsyncImagePainterKt {
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalContext());
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i4 = i2 << 3;
-        AsyncImagePainter m9059rememberAsyncImagePainter3HmZ8SU = AsyncImagePainterKt.m9059rememberAsyncImagePainter3HmZ8SU(obj, SingletonImageLoader.get((Context) consume), painter4, painter2, painter5, function14, function15, function16, fit, m5861getDefaultFilterQualityfv9h1I, composer, (i2 & 14) | (i4 & 896) | (i4 & 7168) | (57344 & i4) | (458752 & i4) | (3670016 & i4) | (29360128 & i4) | (234881024 & i4) | (i4 & 1879048192), 0);
+        AsyncImagePainter m9071rememberAsyncImagePainter3HmZ8SU = AsyncImagePainterKt.m9071rememberAsyncImagePainter3HmZ8SU(obj, SingletonImageLoader.get((Context) consume), painter4, painter2, painter5, function14, function15, function16, fit, m5862getDefaultFilterQualityfv9h1I, composer, (i2 & 14) | (i4 & 896) | (i4 & 7168) | (57344 & i4) | (458752 & i4) | (3670016 & i4) | (29360128 & i4) | (234881024 & i4) | (i4 & 1879048192), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m9059rememberAsyncImagePainter3HmZ8SU;
+        return m9071rememberAsyncImagePainter3HmZ8SU;
     }
 
     /* renamed from: rememberAsyncImagePainter-19ie5dc  reason: not valid java name */
-    public static final AsyncImagePainter m9074rememberAsyncImagePainter19ie5dc(Object obj, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
+    public static final AsyncImagePainter m9086rememberAsyncImagePainter19ie5dc(Object obj, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, ContentScale contentScale, int i, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, -1093003120, "C(rememberAsyncImagePainter)P(2,4,3!,1:c#ui.graphics.FilterQuality)84@3952L7,82@3842L239:SingletonAsyncImagePainter.kt#8xxpns");
         Function1<AsyncImagePainter.State, AsyncImagePainter.State> defaultTransform = (i3 & 2) != 0 ? AsyncImagePainter.Companion.getDefaultTransform() : function1;
         Function1<? super AsyncImagePainter.State, Unit> function13 = (i3 & 4) != 0 ? null : function12;
         ContentScale fit = (i3 & 8) != 0 ? ContentScale.Companion.getFit() : contentScale;
-        int m5861getDefaultFilterQualityfv9h1I = (i3 & 16) != 0 ? DrawScope.Companion.m5861getDefaultFilterQualityfv9h1I() : i;
+        int m5862getDefaultFilterQualityfv9h1I = (i3 & 16) != 0 ? DrawScope.Companion.m5862getDefaultFilterQualityfv9h1I() : i;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1093003120, i2, -1, "coil3.compose.rememberAsyncImagePainter (SingletonAsyncImagePainter.kt:82)");
         }
@@ -59,11 +59,11 @@ public final class SingletonAsyncImagePainterKt {
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalContext());
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i4 = i2 << 3;
-        AsyncImagePainter m9060rememberAsyncImagePainter5jETZwI = AsyncImagePainterKt.m9060rememberAsyncImagePainter5jETZwI(obj, SingletonImageLoader.get((Context) consume), defaultTransform, function13, fit, m5861getDefaultFilterQualityfv9h1I, composer, (i2 & 14) | (i4 & 896) | (i4 & 7168) | (57344 & i4) | (i4 & 458752), 0);
+        AsyncImagePainter m9072rememberAsyncImagePainter5jETZwI = AsyncImagePainterKt.m9072rememberAsyncImagePainter5jETZwI(obj, SingletonImageLoader.get((Context) consume), defaultTransform, function13, fit, m5862getDefaultFilterQualityfv9h1I, composer, (i2 & 14) | (i4 & 896) | (i4 & 7168) | (57344 & i4) | (i4 & 458752), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m9060rememberAsyncImagePainter5jETZwI;
+        return m9072rememberAsyncImagePainter5jETZwI;
     }
 }

@@ -10,7 +10,7 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
 /* renamed from: io.appmetrica.analytics.impl.s  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0559s extends MessageNano {
     public static final int l = 0;
     public static final int m = 1;

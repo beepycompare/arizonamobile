@@ -121,7 +121,7 @@ public final class DrawerState {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float anchoredDraggableState$lambda$3(DrawerState drawerState) {
-        return drawerState.requireDensity().mo429toPx0680j_4(NavigationDrawerKt.access$getDrawerVelocityThreshold$p());
+        return drawerState.requireDensity().mo430toPx0680j_4(NavigationDrawerKt.access$getDrawerVelocityThreshold$p());
     }
 
     public final boolean isOpen() {

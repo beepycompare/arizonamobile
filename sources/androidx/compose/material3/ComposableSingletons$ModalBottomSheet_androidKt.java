@@ -30,7 +30,7 @@ public final class ComposableSingletons$ModalBottomSheet_androidKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1294623166, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheet_androidKt.lambda$-1294623166.<anonymous> (ModalBottomSheet.android.kt:338)");
             }
-            BottomSheetDefaults.INSTANCE.m1952DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1953DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -61,12 +61,12 @@ public final class ComposableSingletons$ModalBottomSheet_androidKt {
     });
 
     /* renamed from: getLambda$-1294623166$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2167getLambda$1294623166$material3() {
+    public final Function2<Composer, Integer, Unit> m2168getLambda$1294623166$material3() {
         return f27lambda$1294623166;
     }
 
     /* renamed from: getLambda$-91331245$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2168getLambda$91331245$material3() {
+    public final Function2<Composer, Integer, Unit> m2169getLambda$91331245$material3() {
         return f28lambda$91331245;
     }
 }

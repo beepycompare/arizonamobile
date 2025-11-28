@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 import io.appmetrica.analytics.coreapi.internal.backport.Provider;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class M implements Provider {
 
     /* renamed from: a  reason: collision with root package name */

@@ -29,7 +29,7 @@ public abstract class HoverIconModifierNode extends Modifier.Node implements Tra
     public abstract void displayIcon(PointerIcon pointerIcon);
 
     /* renamed from: isRelevantPointerType-uerMTgs  reason: not valid java name */
-    public abstract boolean mo6496isRelevantPointerTypeuerMTgs(int i);
+    public abstract boolean mo6497isRelevantPointerTypeuerMTgs(int i);
 
     public /* synthetic */ HoverIconModifierNode(PointerIcon pointerIcon, boolean z, DpTouchBoundsExpansion dpTouchBoundsExpansion, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(pointerIcon, (i & 2) != 0 ? false : z, (i & 4) != 0 ? null : dpTouchBoundsExpansion);
@@ -87,16 +87,16 @@ public abstract class HoverIconModifierNode extends Modifier.Node implements Tra
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo238onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         if (pointerEventPass == PointerEventPass.Main) {
             List<PointerInputChange> changes = pointerEvent.getChanges();
             int size = changes.size();
             for (int i = 0; i < size; i++) {
-                if (mo6496isRelevantPointerTypeuerMTgs(changes.get(i).m6572getTypeT8wyACA())) {
-                    if (PointerEventType.m6518equalsimpl0(pointerEvent.m6511getType7fucELk(), PointerEventType.Companion.m6522getEnter7fucELk())) {
+                if (mo6497isRelevantPointerTypeuerMTgs(changes.get(i).m6573getTypeT8wyACA())) {
+                    if (PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6523getEnter7fucELk())) {
                         onEnter();
                         return;
-                    } else if (PointerEventType.m6518equalsimpl0(pointerEvent.m6511getType7fucELk(), PointerEventType.Companion.m6523getExit7fucELk())) {
+                    } else if (PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6524getExit7fucELk())) {
                         onExit();
                         return;
                     } else {
@@ -134,9 +134,9 @@ public abstract class HoverIconModifierNode extends Modifier.Node implements Tra
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: getTouchBoundsExpansion-RZrCHBk */
-    public long mo1431getTouchBoundsExpansionRZrCHBk() {
+    public long mo1432getTouchBoundsExpansionRZrCHBk() {
         DpTouchBoundsExpansion dpTouchBoundsExpansion = this.dpTouchBoundsExpansion;
-        return dpTouchBoundsExpansion != null ? dpTouchBoundsExpansion.m6878roundToTouchBoundsExpansionTW6G1oQ(DelegatableNodeKt.requireDensity(this)) : TouchBoundsExpansion.Companion.m7085getNoneRZrCHBk();
+        return dpTouchBoundsExpansion != null ? dpTouchBoundsExpansion.m6879roundToTouchBoundsExpansionTW6G1oQ(DelegatableNodeKt.requireDensity(this)) : TouchBoundsExpansion.Companion.m7086getNoneRZrCHBk();
     }
 
     private final void displayIcon() {

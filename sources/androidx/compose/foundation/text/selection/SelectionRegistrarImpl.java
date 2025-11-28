@@ -245,24 +245,24 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final int sort$lambda$2(LayoutCoordinates layoutCoordinates, Selectable selectable, Selectable selectable2) {
-        long m5051getZeroF1C5BW0;
-        long m5051getZeroF1C5BW02;
+        long m5052getZeroF1C5BW0;
+        long m5052getZeroF1C5BW02;
         LayoutCoordinates layoutCoordinates2 = selectable.getLayoutCoordinates();
         LayoutCoordinates layoutCoordinates3 = selectable2.getLayoutCoordinates();
         if (layoutCoordinates2 != null) {
-            m5051getZeroF1C5BW0 = layoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates2, Offset.Companion.m5051getZeroF1C5BW0());
+            m5052getZeroF1C5BW0 = layoutCoordinates.mo6707localPositionOfR5De75A(layoutCoordinates2, Offset.Companion.m5052getZeroF1C5BW0());
         } else {
-            m5051getZeroF1C5BW0 = Offset.Companion.m5051getZeroF1C5BW0();
+            m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
         }
         if (layoutCoordinates3 != null) {
-            m5051getZeroF1C5BW02 = layoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates3, Offset.Companion.m5051getZeroF1C5BW0());
+            m5052getZeroF1C5BW02 = layoutCoordinates.mo6707localPositionOfR5De75A(layoutCoordinates3, Offset.Companion.m5052getZeroF1C5BW0());
         } else {
-            m5051getZeroF1C5BW02 = Offset.Companion.m5051getZeroF1C5BW0();
+            m5052getZeroF1C5BW02 = Offset.Companion.m5052getZeroF1C5BW0();
         }
-        int i = (int) (m5051getZeroF1C5BW0 & 4294967295L);
-        int i2 = (int) (4294967295L & m5051getZeroF1C5BW02);
+        int i = (int) (m5052getZeroF1C5BW0 & 4294967295L);
+        int i2 = (int) (4294967295L & m5052getZeroF1C5BW02);
         if (Float.intBitsToFloat(i) == Float.intBitsToFloat(i2)) {
-            return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat((int) (m5051getZeroF1C5BW0 >> 32))), Float.valueOf(Float.intBitsToFloat((int) (m5051getZeroF1C5BW02 >> 32))));
+            return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat((int) (m5052getZeroF1C5BW0 >> 32))), Float.valueOf(Float.intBitsToFloat((int) (m5052getZeroF1C5BW02 >> 32))));
         }
         return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat(i)), Float.valueOf(Float.intBitsToFloat(i2)));
     }
@@ -278,10 +278,10 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
     /* renamed from: notifySelectionUpdateStart-ubNVwUQ */
-    public void mo1812notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z) {
+    public void mo1813notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z) {
         Function4<? super Boolean, ? super LayoutCoordinates, ? super Offset, ? super SelectionAdjustment, Unit> function4 = this.onSelectionUpdateStartCallback;
         if (function4 != null) {
-            function4.invoke(Boolean.valueOf(z), layoutCoordinates, Offset.m5024boximpl(j), selectionAdjustment);
+            function4.invoke(Boolean.valueOf(z), layoutCoordinates, Offset.m5025boximpl(j), selectionAdjustment);
         }
     }
 
@@ -295,10 +295,10 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
     /* renamed from: notifySelectionUpdate-njBpvok */
-    public boolean mo1811notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2) {
+    public boolean mo1812notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2) {
         Function6<? super Boolean, ? super LayoutCoordinates, ? super Offset, ? super Offset, ? super Boolean, ? super SelectionAdjustment, Boolean> function6 = this.onSelectionUpdateCallback;
         if (function6 != null) {
-            return function6.invoke(Boolean.valueOf(z2), layoutCoordinates, Offset.m5024boximpl(j), Offset.m5024boximpl(j2), Boolean.valueOf(z), selectionAdjustment).booleanValue();
+            return function6.invoke(Boolean.valueOf(z2), layoutCoordinates, Offset.m5025boximpl(j), Offset.m5025boximpl(j2), Boolean.valueOf(z), selectionAdjustment).booleanValue();
         }
         return true;
     }

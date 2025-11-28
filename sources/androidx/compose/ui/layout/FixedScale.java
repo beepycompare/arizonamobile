@@ -48,8 +48,8 @@ public final class FixedScale implements ContentScale {
 
     @Override // androidx.compose.ui.layout.ContentScale
     /* renamed from: computeScaleFactor-H7hwNQA */
-    public long mo6690computeScaleFactorH7hwNQA(long j, long j2) {
+    public long mo6691computeScaleFactorH7hwNQA(long j, long j2) {
         float f = this.value;
-        return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(f) << 32) | (4294967295L & Float.floatToRawIntBits(f)));
+        return ScaleFactor.m6782constructorimpl((Float.floatToRawIntBits(f) << 32) | (4294967295L & Float.floatToRawIntBits(f)));
     }
 }

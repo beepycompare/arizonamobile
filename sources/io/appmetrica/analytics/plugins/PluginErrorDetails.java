@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PluginErrorDetails {
 
     /* renamed from: a  reason: collision with root package name */
@@ -17,7 +17,7 @@ public class PluginErrorDetails {
     private final String e;
     private final Map f;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
@@ -63,7 +63,7 @@ public class PluginErrorDetails {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Platform {
         public static final String CORDOVA = "cordova";
         public static final String FLUTTER = "flutter";

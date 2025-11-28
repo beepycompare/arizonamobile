@@ -6,7 +6,7 @@ import com.android.billingclient.api.BillingResult;
 import io.appmetrica.analytics.billinginterface.internal.config.BillingConfig;
 import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
 import io.appmetrica.analytics.billingv8.internal.BillingLibraryMonitor$updateBilling$1;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class b implements BillingClientStateListener {
 
     /* renamed from: a  reason: collision with root package name */

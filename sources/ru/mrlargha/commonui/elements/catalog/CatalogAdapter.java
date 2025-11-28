@@ -100,7 +100,7 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
         } else {
             binding.catalogItemPriceText.setVisibility(8);
         }
-        Picasso.get().load((this.isArizona ? FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate/" : FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/battlepass/items/") + catalogItemModel2.getImg() + ".webp").error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$2
+        Picasso.get().load((this.isArizona ? FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/" : FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/items/") + catalogItemModel2.getImg() + ".webp").error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$2
             @Override // com.squareup.picasso.Callback
             public void onError(Exception exc) {
             }

@@ -333,26 +333,26 @@ public final class TextFieldKeyInput {
     }
 
     /* renamed from: typedCommand-ZmokQxo  reason: not valid java name */
-    private final CommitTextCommand m1369typedCommandZmokQxo(KeyEvent keyEvent) {
-        Integer m1265consumeZmokQxo;
-        if (TextFieldKeyInput_androidKt.m1375isTypedEventZmokQxo(keyEvent) && (m1265consumeZmokQxo = this.keyCombiner.m1265consumeZmokQxo(keyEvent)) != null) {
-            return new CommitTextCommand(StringHelpers_jvmKt.appendCodePointX(new StringBuilder(), m1265consumeZmokQxo.intValue()).toString(), 1);
+    private final CommitTextCommand m1370typedCommandZmokQxo(KeyEvent keyEvent) {
+        Integer m1266consumeZmokQxo;
+        if (TextFieldKeyInput_androidKt.m1376isTypedEventZmokQxo(keyEvent) && (m1266consumeZmokQxo = this.keyCombiner.m1266consumeZmokQxo(keyEvent)) != null) {
+            return new CommitTextCommand(StringHelpers_jvmKt.appendCodePointX(new StringBuilder(), m1266consumeZmokQxo.intValue()).toString(), 1);
         }
         return null;
     }
 
     /* renamed from: process-ZmokQxo  reason: not valid java name */
-    public final boolean m1370processZmokQxo(KeyEvent keyEvent) {
-        final KeyCommand mo1268mapZmokQxo;
-        CommitTextCommand m1369typedCommandZmokQxo = m1369typedCommandZmokQxo(keyEvent);
-        if (m1369typedCommandZmokQxo != null) {
+    public final boolean m1371processZmokQxo(KeyEvent keyEvent) {
+        final KeyCommand mo1269mapZmokQxo;
+        CommitTextCommand m1370typedCommandZmokQxo = m1370typedCommandZmokQxo(keyEvent);
+        if (m1370typedCommandZmokQxo != null) {
             if (this.editable) {
-                apply(m1369typedCommandZmokQxo);
+                apply(m1370typedCommandZmokQxo);
                 this.preparedSelectionState.resetCachedX();
                 return true;
             }
             return false;
-        } else if (KeyEventType.m6418equalsimpl0(KeyEvent_androidKt.m6426getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6422getKeyDownCS__XNY()) && (mo1268mapZmokQxo = this.keyMapping.mo1268mapZmokQxo(keyEvent)) != null && (!mo1268mapZmokQxo.getEditsText() || this.editable)) {
+        } else if (KeyEventType.m6419equalsimpl0(KeyEvent_androidKt.m6427getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6423getKeyDownCS__XNY()) && (mo1269mapZmokQxo = this.keyMapping.mo1269mapZmokQxo(keyEvent)) != null && (!mo1269mapZmokQxo.getEditsText() || this.editable)) {
             final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
             booleanRef.element = true;
             commandExecutionContext(new Function1() { // from class: androidx.compose.foundation.text.TextFieldKeyInput$$ExternalSyntheticLambda8
@@ -543,7 +543,7 @@ public final class TextFieldKeyInput {
                 if (!textFieldKeyInput.singleLine) {
                     textFieldKeyInput.apply(new CommitTextCommand("\n", 1));
                 } else {
-                    booleanRef.element = textFieldKeyInput.state.getOnImeActionPerformedWithResult().invoke(ImeAction.m7623boximpl(textFieldKeyInput.imeAction)).booleanValue();
+                    booleanRef.element = textFieldKeyInput.state.getOnImeActionPerformedWithResult().invoke(ImeAction.m7624boximpl(textFieldKeyInput.imeAction)).booleanValue();
                 }
                 Unit unit7 = Unit.INSTANCE;
                 break;
@@ -658,14 +658,14 @@ public final class TextFieldKeyInput {
         if (precedingCodePointOrEmojiStartIndex == -1) {
             return null;
         }
-        return new DeleteSurroundingTextCommand(TextRange.m7452getEndimpl(textFieldPreparedSelection.m1735getSelectiond9O1mEE()) - precedingCodePointOrEmojiStartIndex, 0);
+        return new DeleteSurroundingTextCommand(TextRange.m7453getEndimpl(textFieldPreparedSelection.m1736getSelectiond9O1mEE()) - precedingCodePointOrEmojiStartIndex, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final EditCommand process_ZmokQxo$lambda$17$lambda$6(TextFieldPreparedSelection textFieldPreparedSelection) {
         int nextCharacterIndex = textFieldPreparedSelection.getNextCharacterIndex();
         if (nextCharacterIndex != -1) {
-            return new DeleteSurroundingTextCommand(0, nextCharacterIndex - TextRange.m7452getEndimpl(textFieldPreparedSelection.m1735getSelectiond9O1mEE()));
+            return new DeleteSurroundingTextCommand(0, nextCharacterIndex - TextRange.m7453getEndimpl(textFieldPreparedSelection.m1736getSelectiond9O1mEE()));
         }
         return null;
     }
@@ -675,7 +675,7 @@ public final class TextFieldKeyInput {
         DeleteSurroundingTextCommand deleteSurroundingTextCommand;
         Integer previousWordOffset = textFieldPreparedSelection.getPreviousWordOffset();
         if (previousWordOffset != null) {
-            deleteSurroundingTextCommand = new DeleteSurroundingTextCommand(TextRange.m7452getEndimpl(textFieldPreparedSelection.m1735getSelectiond9O1mEE()) - previousWordOffset.intValue(), 0);
+            deleteSurroundingTextCommand = new DeleteSurroundingTextCommand(TextRange.m7453getEndimpl(textFieldPreparedSelection.m1736getSelectiond9O1mEE()) - previousWordOffset.intValue(), 0);
         } else {
             deleteSurroundingTextCommand = null;
         }
@@ -685,7 +685,7 @@ public final class TextFieldKeyInput {
     /* JADX INFO: Access modifiers changed from: private */
     public static final EditCommand process_ZmokQxo$lambda$17$lambda$10(TextFieldPreparedSelection textFieldPreparedSelection) {
         Integer nextWordOffset = textFieldPreparedSelection.getNextWordOffset();
-        return nextWordOffset != null ? new DeleteSurroundingTextCommand(0, nextWordOffset.intValue() - TextRange.m7452getEndimpl(textFieldPreparedSelection.m1735getSelectiond9O1mEE())) : null;
+        return nextWordOffset != null ? new DeleteSurroundingTextCommand(0, nextWordOffset.intValue() - TextRange.m7453getEndimpl(textFieldPreparedSelection.m1736getSelectiond9O1mEE())) : null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -693,7 +693,7 @@ public final class TextFieldKeyInput {
         DeleteSurroundingTextCommand deleteSurroundingTextCommand;
         Integer lineStartByOffset = textFieldPreparedSelection.getLineStartByOffset();
         if (lineStartByOffset != null) {
-            deleteSurroundingTextCommand = new DeleteSurroundingTextCommand(TextRange.m7452getEndimpl(textFieldPreparedSelection.m1735getSelectiond9O1mEE()) - lineStartByOffset.intValue(), 0);
+            deleteSurroundingTextCommand = new DeleteSurroundingTextCommand(TextRange.m7453getEndimpl(textFieldPreparedSelection.m1736getSelectiond9O1mEE()) - lineStartByOffset.intValue(), 0);
         } else {
             deleteSurroundingTextCommand = null;
         }
@@ -703,13 +703,13 @@ public final class TextFieldKeyInput {
     /* JADX INFO: Access modifiers changed from: private */
     public static final EditCommand process_ZmokQxo$lambda$17$lambda$14(TextFieldPreparedSelection textFieldPreparedSelection) {
         Integer lineEndByOffset = textFieldPreparedSelection.getLineEndByOffset();
-        return lineEndByOffset != null ? new DeleteSurroundingTextCommand(0, lineEndByOffset.intValue() - TextRange.m7452getEndimpl(textFieldPreparedSelection.m1735getSelectiond9O1mEE())) : null;
+        return lineEndByOffset != null ? new DeleteSurroundingTextCommand(0, lineEndByOffset.intValue() - TextRange.m7453getEndimpl(textFieldPreparedSelection.m1736getSelectiond9O1mEE())) : null;
     }
 
     private final void commandExecutionContext(Function1<? super TextFieldPreparedSelection, Unit> function1) {
         TextFieldPreparedSelection textFieldPreparedSelection = new TextFieldPreparedSelection(this.value, this.offsetMapping, this.state.getLayoutResult(), this.preparedSelectionState);
         function1.invoke(textFieldPreparedSelection);
-        if (TextRange.m7450equalsimpl0(textFieldPreparedSelection.m1735getSelectiond9O1mEE(), this.value.m7708getSelectiond9O1mEE()) && Intrinsics.areEqual(textFieldPreparedSelection.getAnnotatedString(), this.value.getAnnotatedString())) {
+        if (TextRange.m7451equalsimpl0(textFieldPreparedSelection.m1736getSelectiond9O1mEE(), this.value.m7709getSelectiond9O1mEE()) && Intrinsics.areEqual(textFieldPreparedSelection.getAnnotatedString(), this.value.getAnnotatedString())) {
             return;
         }
         this.onValueChange.invoke(textFieldPreparedSelection.getValue());

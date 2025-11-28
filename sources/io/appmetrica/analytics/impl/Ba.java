@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Comparator;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ba implements Comparator {
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {

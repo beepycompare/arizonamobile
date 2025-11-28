@@ -41,7 +41,7 @@ public final class NodeKindKt {
     private static final MutableObjectIntMap<Object> classToKindSetMap = ObjectIntMapKt.mutableObjectIntMapOf();
 
     /* renamed from: contains-64DMado  reason: not valid java name */
-    public static final boolean m6996contains64DMado(int i, int i2) {
+    public static final boolean m6997contains64DMado(int i, int i2) {
         return (i & i2) != 0;
     }
 
@@ -55,7 +55,7 @@ public final class NodeKindKt {
     }
 
     /* renamed from: or-64DMado  reason: not valid java name */
-    public static final int m6998or64DMado(int i, int i2) {
+    public static final int m6999or64DMado(int i, int i2) {
         return i | i2;
     }
 
@@ -69,69 +69,69 @@ public final class NodeKindKt {
         if (findKeyIndex >= 0) {
             return mutableObjectIntMap.values[findKeyIndex];
         }
-        int m6988constructorimpl = NodeKind.m6988constructorimpl(1);
+        int m6989constructorimpl = NodeKind.m6989constructorimpl(1);
         if (node instanceof LayoutModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(2);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(2);
         }
         if (node instanceof DrawModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(4);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(4);
         }
         if (node instanceof SemanticsModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(8);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(8);
         }
         if (node instanceof PointerInputModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(16);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(16);
         }
         if (node instanceof ModifierLocalModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(32);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(32);
         }
         if (node instanceof ParentDataModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(64);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(64);
         }
         if (node instanceof LayoutAwareModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(128);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(128);
         }
         if (node instanceof GlobalPositionAwareModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(256);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(256);
         }
         if (node instanceof ApproachLayoutModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(512);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(512);
         }
         if (node instanceof FocusTargetNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(1024);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(1024);
         }
         if (node instanceof FocusPropertiesModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(2048);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(2048);
         }
         if (node instanceof FocusEventModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(4096);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(4096);
         }
         if (node instanceof KeyInputModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(8192);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(8192);
         }
         if (node instanceof RotaryInputModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(16384);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(16384);
         }
         if (node instanceof CompositionLocalConsumerModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(32768);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(32768);
         }
         if (node instanceof SoftKeyboardInterceptionModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(131072);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(131072);
         }
         if (node instanceof TraversableNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(262144);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(262144);
         }
         if (node instanceof BringIntoViewModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(524288);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(524288);
         }
         if (node instanceof OnUnplacedModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(1048576);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(1048576);
         }
         if (node instanceof IndirectTouchInputModifierNode) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(2097152);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(2097152);
         }
-        mutableObjectIntMap.set(classKeyForObject, m6988constructorimpl);
-        return m6988constructorimpl;
+        mutableObjectIntMap.set(classKeyForObject, m6989constructorimpl);
+        return m6989constructorimpl;
     }
 
     public static final void autoInvalidateRemovedNode(Modifier.Node node) {
@@ -170,16 +170,16 @@ public final class NodeKindKt {
 
     private static final void autoInvalidateNodeSelf(Modifier.Node node, int i, int i2) {
         if (i2 != 0 || node.getShouldAutoInvalidate()) {
-            if ((NodeKind.m6988constructorimpl(2) & i) != 0 && (node instanceof LayoutModifierNode)) {
+            if ((NodeKind.m6989constructorimpl(2) & i) != 0 && (node instanceof LayoutModifierNode)) {
                 LayoutModifierNodeKt.invalidateMeasurement((LayoutModifierNode) node);
                 if (i2 == 2) {
-                    DelegatableNodeKt.m6842requireCoordinator64DMado(node, NodeKind.m6988constructorimpl(2)).onRelease();
+                    DelegatableNodeKt.m6843requireCoordinator64DMado(node, NodeKind.m6989constructorimpl(2)).onRelease();
                 }
             }
-            if ((NodeKind.m6988constructorimpl(128) & i) != 0 && (node instanceof LayoutAwareModifierNode) && i2 != 2) {
+            if ((NodeKind.m6989constructorimpl(128) & i) != 0 && (node instanceof LayoutAwareModifierNode) && i2 != 2) {
                 DelegatableNodeKt.requireLayoutNode(node).invalidateMeasurements$ui_release();
             }
-            if ((NodeKind.m6988constructorimpl(256) & i) != 0 && (node instanceof GlobalPositionAwareModifierNode)) {
+            if ((NodeKind.m6989constructorimpl(256) & i) != 0 && (node instanceof GlobalPositionAwareModifierNode)) {
                 if (i2 == 1) {
                     LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(node);
                     requireLayoutNode.setGloballyPositionedObservers(requireLayoutNode.getGloballyPositionedObservers() + 1);
@@ -191,22 +191,22 @@ public final class NodeKindKt {
                     DelegatableNodeKt.requireLayoutNode(node).invalidateOnPositioned$ui_release();
                 }
             }
-            if ((NodeKind.m6988constructorimpl(4) & i) != 0 && (node instanceof DrawModifierNode)) {
+            if ((NodeKind.m6989constructorimpl(4) & i) != 0 && (node instanceof DrawModifierNode)) {
                 DrawModifierNodeKt.invalidateDraw((DrawModifierNode) node);
             }
-            if ((NodeKind.m6988constructorimpl(8) & i) != 0 && (node instanceof SemanticsModifierNode)) {
+            if ((NodeKind.m6989constructorimpl(8) & i) != 0 && (node instanceof SemanticsModifierNode)) {
                 DelegatableNodeKt.requireLayoutNode(node).setSemanticsInvalidated$ui_release(true);
             }
-            if ((NodeKind.m6988constructorimpl(64) & i) != 0 && (node instanceof ParentDataModifierNode)) {
+            if ((NodeKind.m6989constructorimpl(64) & i) != 0 && (node instanceof ParentDataModifierNode)) {
                 ParentDataModifierNodeKt.invalidateParentData((ParentDataModifierNode) node);
             }
-            if ((NodeKind.m6988constructorimpl(2048) & i) != 0 && (node instanceof FocusPropertiesModifierNode)) {
+            if ((NodeKind.m6989constructorimpl(2048) & i) != 0 && (node instanceof FocusPropertiesModifierNode)) {
                 FocusPropertiesModifierNode focusPropertiesModifierNode = (FocusPropertiesModifierNode) node;
                 if (specifiesCanFocusProperty(focusPropertiesModifierNode)) {
                     FocusPropertiesModifierNodeKt.invalidateFocusProperties(focusPropertiesModifierNode);
                 }
             }
-            if ((i & NodeKind.m6988constructorimpl(4096)) == 0 || !(node instanceof FocusEventModifierNode)) {
+            if ((i & NodeKind.m6989constructorimpl(4096)) == 0 || !(node instanceof FocusEventModifierNode)) {
                 return;
             }
             FocusEventModifierNodeKt.invalidateFocusEvent((FocusEventModifierNode) node);
@@ -232,42 +232,42 @@ public final class NodeKindKt {
     }
 
     /* renamed from: getIncludeSelfInTraversal-H91voCI  reason: not valid java name */
-    public static final boolean m6997getIncludeSelfInTraversalH91voCI(int i) {
-        return (i & NodeKind.m6988constructorimpl(128)) != 0;
+    public static final boolean m6998getIncludeSelfInTraversalH91voCI(int i) {
+        return (i & NodeKind.m6989constructorimpl(128)) != 0;
     }
 
     public static final int calculateNodeKindSetFrom(Modifier.Element element) {
-        int m6988constructorimpl = NodeKind.m6988constructorimpl(1);
+        int m6989constructorimpl = NodeKind.m6989constructorimpl(1);
         if (element instanceof LayoutModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(2);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(2);
         }
         if (element instanceof DrawModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(4);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(4);
         }
         if (element instanceof SemanticsModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(8);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(8);
         }
         if (element instanceof PointerInputModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(16);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(16);
         }
         if ((element instanceof ModifierLocalConsumer) || (element instanceof ModifierLocalProvider)) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(32);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(32);
         }
         if (element instanceof FocusEventModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(4096);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(4096);
         }
         if (element instanceof FocusOrderModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(2048);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(2048);
         }
         if (element instanceof OnGloballyPositionedModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(256);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(256);
         }
         if (element instanceof ParentDataModifier) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(64);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(64);
         }
         if ((element instanceof OnPlacedModifier) || (element instanceof OnRemeasuredModifier)) {
-            m6988constructorimpl |= NodeKind.m6988constructorimpl(128);
+            m6989constructorimpl |= NodeKind.m6989constructorimpl(128);
         }
-        return element instanceof BringIntoViewModifierNode ? NodeKind.m6988constructorimpl(524288) | m6988constructorimpl : m6988constructorimpl;
+        return element instanceof BringIntoViewModifierNode ? NodeKind.m6989constructorimpl(524288) | m6989constructorimpl : m6989constructorimpl;
     }
 }

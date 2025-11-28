@@ -53,7 +53,7 @@ public final class ComposableSingletons$ChildPagesKt {
                     ComposerKt.traceEventStart(1649886492, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-1.<anonymous> (ChildPages.kt:109)");
                 }
                 int i3 = i2 << 3;
-                PagerKt.m1146HorizontalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
+                PagerKt.m1147HorizontalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -97,7 +97,7 @@ public final class ComposableSingletons$ChildPagesKt {
                     ComposerKt.traceEventStart(-896049490, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-2.<anonymous> (ChildPages.kt:119)");
                 }
                 int i3 = i2 << 3;
-                PagerKt.m1148VerticalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
+                PagerKt.m1149VerticalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -109,12 +109,12 @@ public final class ComposableSingletons$ChildPagesKt {
     });
 
     /* renamed from: getLambda-1$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9317getLambda1$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9375getLambda1$extensions_compose_release() {
         return f45lambda1;
     }
 
     /* renamed from: getLambda-2$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9318getLambda2$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9376getLambda2$extensions_compose_release() {
         return f46lambda2;
     }
 }

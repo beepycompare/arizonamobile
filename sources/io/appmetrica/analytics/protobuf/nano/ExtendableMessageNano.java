@@ -2,7 +2,7 @@ package io.appmetrica.analytics.protobuf.nano;
 
 import io.appmetrica.analytics.protobuf.nano.ExtendableMessageNano;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ExtendableMessageNano<M extends ExtendableMessageNano<M>> extends MessageNano {
     protected FieldArray unknownFieldData;
 
@@ -95,8 +95,8 @@ public abstract class ExtendableMessageNano<M extends ExtendableMessageNano<M>> 
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     /* renamed from: clone */
-    public M mo9836clone() throws CloneNotSupportedException {
-        M m = (M) super.mo9836clone();
+    public M mo9894clone() throws CloneNotSupportedException {
+        M m = (M) super.mo9894clone();
         InternalNano.cloneUnknownFieldData(this, m);
         return m;
     }

@@ -7,7 +7,7 @@ import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSources
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Wc extends InterfaceC0648vd {
     List<ModuleServicesDatabase> b();
 

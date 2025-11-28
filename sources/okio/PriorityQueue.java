@@ -42,7 +42,7 @@ public final class PriorityQueue {
         if (node == asyncTimeout) {
             return;
         }
-        int compare = Intrinsics.compare(0L, asyncTimeout.timeoutNanos() - node.timeoutNanos());
+        int compare = Intrinsics.compare(0L, asyncTimeout.getTimeoutAt$okio() - node.getTimeoutAt$okio());
         if (compare == 0) {
             this.array[i2] = asyncTimeout;
             asyncTimeout.index = i2;
@@ -61,7 +61,7 @@ public final class PriorityQueue {
             }
             AsyncTimeout asyncTimeout2 = this.array[i2];
             Intrinsics.checkNotNull(asyncTimeout2);
-            if (Intrinsics.compare(0L, asyncTimeout.timeoutNanos() - asyncTimeout2.timeoutNanos()) <= 0) {
+            if (Intrinsics.compare(0L, asyncTimeout.getTimeoutAt$okio() - asyncTimeout2.getTimeoutAt$okio()) <= 0) {
                 break;
             }
             asyncTimeout2.index = i;
@@ -89,11 +89,11 @@ public final class PriorityQueue {
                 Intrinsics.checkNotNull(asyncTimeout2);
                 AsyncTimeout asyncTimeout3 = this.array[i3];
                 Intrinsics.checkNotNull(asyncTimeout3);
-                if (Intrinsics.compare(0L, asyncTimeout3.timeoutNanos() - asyncTimeout2.timeoutNanos()) >= 0) {
+                if (Intrinsics.compare(0L, asyncTimeout3.getTimeoutAt$okio() - asyncTimeout2.getTimeoutAt$okio()) >= 0) {
                     asyncTimeout2 = asyncTimeout3;
                 }
             }
-            if (Intrinsics.compare(0L, asyncTimeout2.timeoutNanos() - asyncTimeout.timeoutNanos()) <= 0) {
+            if (Intrinsics.compare(0L, asyncTimeout2.getTimeoutAt$okio() - asyncTimeout.getTimeoutAt$okio()) <= 0) {
                 break;
             }
             int i5 = asyncTimeout2.index;
@@ -107,6 +107,6 @@ public final class PriorityQueue {
 
     private final int compareTo(AsyncTimeout asyncTimeout, AsyncTimeout asyncTimeout2) {
         Intrinsics.checkNotNullParameter(asyncTimeout, "<this>");
-        return Intrinsics.compare(0L, asyncTimeout2.timeoutNanos() - asyncTimeout.timeoutNanos());
+        return Intrinsics.compare(0L, asyncTimeout2.getTimeoutAt$okio() - asyncTimeout.getTimeoutAt$okio());
     }
 }

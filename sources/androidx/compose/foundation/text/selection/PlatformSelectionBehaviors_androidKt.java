@@ -106,21 +106,21 @@ public final class PlatformSelectionBehaviors_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: canReuse-h5sm0ck  reason: not valid java name */
-    public static final boolean m1754canReuseh5sm0ck(TextClassificationResult textClassificationResult, CharSequence charSequence, long j) {
-        return TextRange.m7450equalsimpl0(j, textClassificationResult.m1819getSelectiond9O1mEE()) && Intrinsics.areEqual(charSequence, textClassificationResult.getText());
+    public static final boolean m1755canReuseh5sm0ck(TextClassificationResult textClassificationResult, CharSequence charSequence, long j) {
+        return TextRange.m7451equalsimpl0(j, textClassificationResult.m1820getSelectiond9O1mEE()) && Intrinsics.areEqual(charSequence, textClassificationResult.getText());
     }
 
     /* renamed from: addPlatformTextContextMenuItems-71BSaZU  reason: not valid java name */
-    public static final void m1753addPlatformTextContextMenuItems71BSaZU(TextContextMenuBuilderScope textContextMenuBuilderScope, Context context, boolean z, CharSequence charSequence, TextRange textRange, PlatformSelectionBehaviors platformSelectionBehaviors, Function1<? super TextContextMenuBuilderScope, Unit> function1) {
+    public static final void m1754addPlatformTextContextMenuItems71BSaZU(TextContextMenuBuilderScope textContextMenuBuilderScope, Context context, boolean z, CharSequence charSequence, TextRange textRange, PlatformSelectionBehaviors platformSelectionBehaviors, Function1<? super TextContextMenuBuilderScope, Unit> function1) {
         if (Build.VERSION.SDK_INT < 28 || charSequence == null || textRange == null || platformSelectionBehaviors == null || !(platformSelectionBehaviors instanceof PlatformSelectionBehaviorsImpl)) {
             function1.invoke(textContextMenuBuilderScope);
             if (charSequence == null || textRange == null) {
                 return;
             }
-            ProcessText_androidKt.m1401addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7461unboximpl());
+            ProcessText_androidKt.m1402addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7462unboximpl());
             return;
         }
-        ((PlatformSelectionBehaviorsImpl) platformSelectionBehaviors).m1749addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation_release(textContextMenuBuilderScope, charSequence, textRange.m7461unboximpl(), function1);
-        ProcessText_androidKt.m1401addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7461unboximpl());
+        ((PlatformSelectionBehaviorsImpl) platformSelectionBehaviors).m1750addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation_release(textContextMenuBuilderScope, charSequence, textRange.m7462unboximpl(), function1);
+        ProcessText_androidKt.m1402addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7462unboximpl());
     }
 }

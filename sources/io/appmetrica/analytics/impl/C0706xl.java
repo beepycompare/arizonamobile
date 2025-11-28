@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
 import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
 import io.appmetrica.analytics.coreutils.internal.services.ContextPermissionChecker;
 /* renamed from: io.appmetrica.analytics.impl.xl  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0706xl implements PermissionExtractor {
     public static final String b = "[SimplePermissionExtractor]";
 

@@ -19,7 +19,7 @@ public interface MeasureBlocks {
     int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i);
 
     /* renamed from: measure-3p2s80s  reason: not valid java name */
-    MeasureResult m6938measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j);
+    MeasureResult m6939measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j);
 
     int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i);
 

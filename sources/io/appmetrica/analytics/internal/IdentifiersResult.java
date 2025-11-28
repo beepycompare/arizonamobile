@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 import io.appmetrica.analytics.impl.C0242fb;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class IdentifiersResult implements Parcelable {
     public static final Parcelable.Creator<IdentifiersResult> CREATOR = new C0242fb();
     public final String errorExplanation;

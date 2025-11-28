@@ -9,63 +9,63 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes.dex */
 public final class SizeKt {
     /* renamed from: getCenter-uvyYCjk$annotations  reason: not valid java name */
-    public static /* synthetic */ void m5115getCenteruvyYCjk$annotations(long j) {
+    public static /* synthetic */ void m5116getCenteruvyYCjk$annotations(long j) {
     }
 
     /* renamed from: isSpecified-uvyYCjk  reason: not valid java name */
-    public static final boolean m5116isSpecifieduvyYCjk(long j) {
+    public static final boolean m5117isSpecifieduvyYCjk(long j) {
         return j != InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isSpecified-uvyYCjk$annotations  reason: not valid java name */
-    public static /* synthetic */ void m5117isSpecifieduvyYCjk$annotations(long j) {
+    public static /* synthetic */ void m5118isSpecifieduvyYCjk$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-uvyYCjk  reason: not valid java name */
-    public static final boolean m5118isUnspecifieduvyYCjk(long j) {
+    public static final boolean m5119isUnspecifieduvyYCjk(long j) {
         return j == InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isUnspecified-uvyYCjk$annotations  reason: not valid java name */
-    public static /* synthetic */ void m5119isUnspecifieduvyYCjk$annotations(long j) {
+    public static /* synthetic */ void m5120isUnspecifieduvyYCjk$annotations(long j) {
     }
 
     /* renamed from: takeOrElse-TmRCtEA  reason: not valid java name */
-    public static final long m5121takeOrElseTmRCtEA(long j, Function0<Size> function0) {
-        return j != InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m5109unboximpl();
+    public static final long m5122takeOrElseTmRCtEA(long j, Function0<Size> function0) {
+        return j != InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m5110unboximpl();
     }
 
     /* renamed from: times-d16Qtg0  reason: not valid java name */
-    public static final long m5124timesd16Qtg0(int i, long j) {
-        return Size.m5107times7Ah8Wj8(j, i);
+    public static final long m5125timesd16Qtg0(int i, long j) {
+        return Size.m5108times7Ah8Wj8(j, i);
     }
 
     /* renamed from: times-d16Qtg0  reason: not valid java name */
-    public static final long m5122timesd16Qtg0(double d, long j) {
-        return Size.m5107times7Ah8Wj8(j, (float) d);
+    public static final long m5123timesd16Qtg0(double d, long j) {
+        return Size.m5108times7Ah8Wj8(j, (float) d);
     }
 
     /* renamed from: times-d16Qtg0  reason: not valid java name */
-    public static final long m5123timesd16Qtg0(float f, long j) {
-        return Size.m5107times7Ah8Wj8(j, f);
+    public static final long m5124timesd16Qtg0(float f, long j) {
+        return Size.m5108times7Ah8Wj8(j, f);
     }
 
     /* renamed from: toRect-uvyYCjk  reason: not valid java name */
-    public static final Rect m5125toRectuvyYCjk(long j) {
-        return RectKt.m5075Recttz77jQw(Offset.Companion.m5051getZeroF1C5BW0(), j);
+    public static final Rect m5126toRectuvyYCjk(long j) {
+        return RectKt.m5076Recttz77jQw(Offset.Companion.m5052getZeroF1C5BW0(), j);
     }
 
     public static final long Size(float f, float f2) {
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: lerp-VgWVRYQ  reason: not valid java name */
-    public static final long m5120lerpVgWVRYQ(long j, long j2, float f) {
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
+    public static final long m5121lerpVgWVRYQ(long j, long j2, float f) {
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
     }
 
     /* renamed from: getCenter-uvyYCjk  reason: not valid java name */
-    public static final long m5114getCenteruvyYCjk(long j) {
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / 2.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / 2.0f) << 32));
+    public static final long m5115getCenteruvyYCjk(long j) {
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / 2.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / 2.0f) << 32));
     }
 }

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class T7 {
 
     /* renamed from: a  reason: collision with root package name */

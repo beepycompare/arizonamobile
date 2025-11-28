@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Zm extends Hi {
     public Zm(Context context, String str) {
         super(context, str, TypedValues.Custom.S_STRING);

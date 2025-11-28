@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.pm.FeatureInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class V9 extends X9 {
     @Override // io.appmetrica.analytics.impl.X9
     public final Y9 b(FeatureInfo featureInfo) {

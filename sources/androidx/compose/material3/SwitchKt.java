@@ -228,7 +228,7 @@ public final class SwitchKt {
                             if (function1 != null) {
                                 z7 = z6;
                                 z8 = false;
-                                companion = ToggleableKt.m1176toggleableO2vRcR0(InteractiveComponentSizeKt.minimumInteractiveComponentSize(Modifier.Companion), z3, mutableInteractionSource4, null, z7, Role.m7197boximpl(Role.Companion.m7210getSwitcho7Vup1c()), function1);
+                                companion = ToggleableKt.m1177toggleableO2vRcR0(InteractiveComponentSizeKt.minimumInteractiveComponentSize(Modifier.Companion), z3, mutableInteractionSource4, null, z7, Role.m7198boximpl(Role.Companion.m7211getSwitcho7Vup1c()), function1);
                             } else {
                                 z7 = z6;
                                 z8 = false;
@@ -238,7 +238,7 @@ public final class SwitchKt {
                             int i11 = i7 >> 6;
                             composer2 = startRestartGroup;
                             Modifier modifier4 = modifier3;
-                            SwitchImpl(SizeKt.m888requiredSizeVpY3zN4(SizeKt.wrapContentSize$default(modifier3.then(companion), Alignment.Companion.getCenter(), z8, 2, null), SwitchWidth, SwitchHeight), z, z7, switchColors3, function23, mutableInteractionSource4, ShapesKt.getValue(SwitchTokens.INSTANCE.getHandleShape(), startRestartGroup, 6), composer2, (i10 & 112) | (i11 & 896) | (i11 & 7168) | (i10 & 57344));
+                            SwitchImpl(SizeKt.m889requiredSizeVpY3zN4(SizeKt.wrapContentSize$default(modifier3.then(companion), Alignment.Companion.getCenter(), z8, 2, null), SwitchWidth, SwitchHeight), z, z7, switchColors3, function23, mutableInteractionSource4, ShapesKt.getValue(SwitchTokens.INSTANCE.getHandleShape(), startRestartGroup, 6), composer2, (i10 & 112) | (i11 & 896) | (i11 & 7168) | (i10 & 57344));
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -364,16 +364,16 @@ public final class SwitchKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-670917213, i2, -1, "androidx.compose.material3.SwitchImpl (Switch.kt:143)");
             }
-            long m3030trackColorWaAFU9c$material3 = switchColors.m3030trackColorWaAFU9c$material3(z2, z);
-            long m3029thumbColorWaAFU9c$material3 = switchColors.m3029thumbColorWaAFU9c$material3(z2, z);
+            long m3031trackColorWaAFU9c$material3 = switchColors.m3031trackColorWaAFU9c$material3(z2, z);
+            long m3030thumbColorWaAFU9c$material3 = switchColors.m3030thumbColorWaAFU9c$material3(z2, z);
             Shape value = ShapesKt.getValue(SwitchTokens.INSTANCE.getTrackShape(), startRestartGroup, 6);
-            Modifier m266backgroundbw27NRU = BackgroundKt.m266backgroundbw27NRU(BorderKt.m279borderxT4_qwU(modifier, SwitchTokens.INSTANCE.m4329getTrackOutlineWidthD9Ej5fM(), switchColors.m3010borderColorWaAFU9c$material3(z2, z), value), m3030trackColorWaAFU9c$material3, value);
+            Modifier m267backgroundbw27NRU = BackgroundKt.m267backgroundbw27NRU(BorderKt.m280borderxT4_qwU(modifier, SwitchTokens.INSTANCE.m4330getTrackOutlineWidthD9Ej5fM(), switchColors.m3011borderColorWaAFU9c$material3(z2, z), value), m3031trackColorWaAFU9c$material3, value);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m266backgroundbw27NRU);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m267backgroundbw27NRU);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
             int i3 = i2;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
@@ -386,26 +386,26 @@ public final class SwitchKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1195356302, "C161@6809L7,153@6374L1160:Switch.kt#uh7d8r");
             shape2 = shape;
-            Modifier m266backgroundbw27NRU2 = BackgroundKt.m266backgroundbw27NRU(IndicationKt.indication(BoxScopeInstance.INSTANCE.align(Modifier.Companion, Alignment.Companion.getCenterStart()).then(new ThumbElement(interactionSource, z, MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6))), interactionSource, RippleKt.m2780rippleH2RKhps$default(false, Dp.m7995constructorimpl(SwitchTokens.INSTANCE.m4327getStateLayerSizeD9Ej5fM() / 2), 0L, 4, null)), m3029thumbColorWaAFU9c$material3, shape2);
+            Modifier m267backgroundbw27NRU2 = BackgroundKt.m267backgroundbw27NRU(IndicationKt.indication(BoxScopeInstance.INSTANCE.align(Modifier.Companion, Alignment.Companion.getCenterStart()).then(new ThumbElement(interactionSource, z, MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6))), interactionSource, RippleKt.m2781rippleH2RKhps$default(false, Dp.m7996constructorimpl(SwitchTokens.INSTANCE.m4328getStateLayerSizeD9Ej5fM() / 2), 0L, 4, null)), m3030thumbColorWaAFU9c$material3, shape2);
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m266backgroundbw27NRU2);
+            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m267backgroundbw27NRU2);
             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -417,22 +417,22 @@ public final class SwitchKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1235811942, "C:Switch.kt#uh7d8r");
             if (function2 != null) {
                 startRestartGroup.startReplaceGroup(1235836927);
                 ComposerKt.sourceInformation(startRestartGroup, "174@7365L145");
-                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(switchColors.m3028iconColorWaAFU9c$material3(z2, z))), function2, startRestartGroup, ProvidedValue.$stable | ((i3 >> 9) & 112));
+                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(switchColors.m3029iconColorWaAFU9c$material3(z2, z))), function2, startRestartGroup, ProvidedValue.$stable | ((i3 >> 9) & 112));
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(1236071411);
@@ -469,13 +469,13 @@ public final class SwitchKt {
     }
 
     static {
-        float m4325getSelectedHandleWidthD9Ej5fM = SwitchTokens.INSTANCE.m4325getSelectedHandleWidthD9Ej5fM();
-        ThumbDiameter = m4325getSelectedHandleWidthD9Ej5fM;
-        UncheckedThumbDiameter = SwitchTokens.INSTANCE.m4332getUnselectedHandleWidthD9Ej5fM();
-        SwitchWidth = SwitchTokens.INSTANCE.m4330getTrackWidthD9Ej5fM();
-        float m4328getTrackHeightD9Ej5fM = SwitchTokens.INSTANCE.m4328getTrackHeightD9Ej5fM();
-        SwitchHeight = m4328getTrackHeightD9Ej5fM;
-        ThumbPadding = Dp.m7995constructorimpl(Dp.m7995constructorimpl(m4328getTrackHeightD9Ej5fM - m4325getSelectedHandleWidthD9Ej5fM) / 2);
+        float m4326getSelectedHandleWidthD9Ej5fM = SwitchTokens.INSTANCE.m4326getSelectedHandleWidthD9Ej5fM();
+        ThumbDiameter = m4326getSelectedHandleWidthD9Ej5fM;
+        UncheckedThumbDiameter = SwitchTokens.INSTANCE.m4333getUnselectedHandleWidthD9Ej5fM();
+        SwitchWidth = SwitchTokens.INSTANCE.m4331getTrackWidthD9Ej5fM();
+        float m4329getTrackHeightD9Ej5fM = SwitchTokens.INSTANCE.m4329getTrackHeightD9Ej5fM();
+        SwitchHeight = m4329getTrackHeightD9Ej5fM;
+        ThumbPadding = Dp.m7996constructorimpl(Dp.m7996constructorimpl(m4329getTrackHeightD9Ej5fM - m4326getSelectedHandleWidthD9Ej5fM) / 2);
         SnapSpec = new SnapSpec<>(0, 1, null);
     }
 

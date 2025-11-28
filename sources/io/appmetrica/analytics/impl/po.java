@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class po implements Ra {
     @Override // io.appmetrica.analytics.impl.Ra
     public final String a(Context context) {

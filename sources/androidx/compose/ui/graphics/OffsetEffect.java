@@ -24,7 +24,7 @@ public final class OffsetEffect extends RenderEffect {
 
     @Override // androidx.compose.ui.graphics.RenderEffect
     protected android.graphics.RenderEffect createRenderEffect() {
-        return RenderEffectVerificationHelper.INSTANCE.m5602createOffsetEffectUv8p0NA(this.renderEffect, this.offset);
+        return RenderEffectVerificationHelper.INSTANCE.m5603createOffsetEffectUv8p0NA(this.renderEffect, this.offset);
     }
 
     public boolean equals(Object obj) {
@@ -33,17 +33,17 @@ public final class OffsetEffect extends RenderEffect {
         }
         if (obj instanceof OffsetEffect) {
             OffsetEffect offsetEffect = (OffsetEffect) obj;
-            return Intrinsics.areEqual(this.renderEffect, offsetEffect.renderEffect) && Offset.m5032equalsimpl0(this.offset, offsetEffect.offset);
+            return Intrinsics.areEqual(this.renderEffect, offsetEffect.renderEffect) && Offset.m5033equalsimpl0(this.offset, offsetEffect.offset);
         }
         return false;
     }
 
     public int hashCode() {
         RenderEffect renderEffect = this.renderEffect;
-        return ((renderEffect != null ? renderEffect.hashCode() : 0) * 31) + Offset.m5037hashCodeimpl(this.offset);
+        return ((renderEffect != null ? renderEffect.hashCode() : 0) * 31) + Offset.m5038hashCodeimpl(this.offset);
     }
 
     public String toString() {
-        return "OffsetEffect(renderEffect=" + this.renderEffect + ", offset=" + ((Object) Offset.m5043toStringimpl(this.offset)) + ')';
+        return "OffsetEffect(renderEffect=" + this.renderEffect + ", offset=" + ((Object) Offset.m5044toStringimpl(this.offset)) + ')';
     }
 }

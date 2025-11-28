@@ -10,7 +10,6 @@ import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.SQLiteStatement;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import java.util.concurrent.atomic.AtomicBoolean;
 import kotlin.ExceptionsKt;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -30,13 +29,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002:\u0003:;<B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ0\u0010\u001c\u001a\u0002H\u001d\"\u0004\b\u0000\u0010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0012\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\"\u0012\u0004\u0012\u0002H\u001d0!H\u0096@¢\u0006\u0002\u0010#JK\u0010$\u001a\u0002H\u001d\"\u0004\b\u0000\u0010\u001d2\u0006\u0010%\u001a\u00020&2-\u0010 \u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001d0(\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001d0)\u0012\u0006\u0012\u0004\u0018\u00010*0'¢\u0006\u0002\b+H\u0096@¢\u0006\u0002\u0010,J\u000e\u0010-\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010.J\u0006\u0010/\u001a\u000200JM\u00101\u001a\u0002H\u001d\"\u0004\b\u0000\u0010\u001d2\b\u0010%\u001a\u0004\u0018\u00010&2-\u0010 \u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001d0(\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001d0)\u0012\u0006\u0012\u0004\u0018\u00010*0'¢\u0006\u0002\b+H\u0082@¢\u0006\u0002\u0010,J\u0016\u00102\u001a\u0002002\u0006\u0010%\u001a\u00020&H\u0082@¢\u0006\u0002\u00103J\u0016\u00104\u001a\u0002002\u0006\u00105\u001a\u00020\bH\u0082@¢\u0006\u0002\u00106J\"\u00107\u001a\u0002H\u001d\"\u0004\b\u0000\u0010\u001d2\f\u0010 \u001a\b\u0012\u0004\u0012\u0002H\u001d08H\u0082H¢\u0006\u0002\u00109R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u000fR\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\u00060\u0014j\u0002`\u0015X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u000fR\u0014\u0010\u0018\u001a\u00020\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006="}, d2 = {"Landroidx/room/coroutines/PooledConnectionImpl;", "Landroidx/room/Transactor;", "Landroidx/room/coroutines/RawConnectionAccessor;", "connectionElementKey", "Landroidx/room/coroutines/ConnectionElementKey;", "delegate", "Landroidx/room/coroutines/ConnectionWithLock;", "isReadOnly", "", "<init>", "(Landroidx/room/coroutines/ConnectionElementKey;Landroidx/room/coroutines/ConnectionWithLock;Z)V", "getConnectionElementKey", "()Landroidx/room/coroutines/ConnectionElementKey;", "getDelegate", "()Landroidx/room/coroutines/ConnectionWithLock;", "()Z", "transactionStack", "Lkotlin/collections/ArrayDeque;", "Landroidx/room/coroutines/PooledConnectionImpl$TransactionItem;", "_isRecycled", "Ljava/util/concurrent/atomic/AtomicBoolean;", "Landroidx/room/concurrent/AtomicBoolean;", "Ljava/util/concurrent/atomic/AtomicBoolean;", "isRecycled", "rawConnection", "Landroidx/sqlite/SQLiteConnection;", "getRawConnection", "()Landroidx/sqlite/SQLiteConnection;", "usePrepared", "R", "sql", "", "block", "Lkotlin/Function1;", "Landroidx/sqlite/SQLiteStatement;", "(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withTransaction", "type", "Landroidx/room/Transactor$SQLiteTransactionType;", "Lkotlin/Function2;", "Landroidx/room/TransactionScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/room/Transactor$SQLiteTransactionType;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "inTransaction", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "markRecycled", "", "transaction", "beginTransaction", "(Landroidx/room/Transactor$SQLiteTransactionType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "endTransaction", FirebaseAnalytics.Param.SUCCESS, "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withStateCheck", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "TransactionItem", "TransactionImpl", "StatementWrapper", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002:\u0003678B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ0\u0010\u0018\u001a\u0002H\u0019\"\u0004\b\u0000\u0010\u00192\u0006\u0010\u001a\u001a\u00020\u001b2\u0012\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u0002H\u00190\u001dH\u0096@¢\u0006\u0002\u0010\u001fJK\u0010 \u001a\u0002H\u0019\"\u0004\b\u0000\u0010\u00192\u0006\u0010!\u001a\u00020\"2-\u0010\u001c\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00190$\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00190%\u0012\u0006\u0012\u0004\u0018\u00010&0#¢\u0006\u0002\b'H\u0096@¢\u0006\u0002\u0010(J\u000e\u0010)\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010*J\u0006\u0010+\u001a\u00020,JM\u0010-\u001a\u0002H\u0019\"\u0004\b\u0000\u0010\u00192\b\u0010!\u001a\u0004\u0018\u00010\"2-\u0010\u001c\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00190$\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00190%\u0012\u0006\u0012\u0004\u0018\u00010&0#¢\u0006\u0002\b'H\u0082@¢\u0006\u0002\u0010(J\u0016\u0010.\u001a\u00020,2\u0006\u0010!\u001a\u00020\"H\u0082@¢\u0006\u0002\u0010/J\u0016\u00100\u001a\u00020,2\u0006\u00101\u001a\u00020\bH\u0082@¢\u0006\u0002\u00102J\"\u00103\u001a\u0002H\u0019\"\u0004\b\u0000\u0010\u00192\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u0002H\u001904H\u0082H¢\u0006\u0002\u00105R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\u000fR\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\u00020\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017¨\u00069"}, d2 = {"Landroidx/room/coroutines/PooledConnectionImpl;", "Landroidx/room/Transactor;", "Landroidx/room/coroutines/RawConnectionAccessor;", "connectionElementKey", "Landroidx/room/coroutines/ConnectionElementKey;", "delegate", "Landroidx/room/coroutines/ConnectionWithLock;", "isReadOnly", "", "<init>", "(Landroidx/room/coroutines/ConnectionElementKey;Landroidx/room/coroutines/ConnectionWithLock;Z)V", "getConnectionElementKey", "()Landroidx/room/coroutines/ConnectionElementKey;", "getDelegate", "()Landroidx/room/coroutines/ConnectionWithLock;", "()Z", "transactionStack", "Lkotlin/collections/ArrayDeque;", "Landroidx/room/coroutines/PooledConnectionImpl$TransactionItem;", "isRecycled", "rawConnection", "Landroidx/sqlite/SQLiteConnection;", "getRawConnection", "()Landroidx/sqlite/SQLiteConnection;", "usePrepared", "R", "sql", "", "block", "Lkotlin/Function1;", "Landroidx/sqlite/SQLiteStatement;", "(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withTransaction", "type", "Landroidx/room/Transactor$SQLiteTransactionType;", "Lkotlin/Function2;", "Landroidx/room/TransactionScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/room/Transactor$SQLiteTransactionType;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "inTransaction", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "markRecycled", "", "transaction", "beginTransaction", "(Landroidx/room/Transactor$SQLiteTransactionType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "endTransaction", FirebaseAnalytics.Param.SUCCESS, "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withStateCheck", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "TransactionItem", "TransactionImpl", "StatementWrapper", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class PooledConnectionImpl implements Transactor, RawConnectionAccessor {
-    private final AtomicBoolean _isRecycled;
     private final ConnectionElementKey connectionElementKey;
     private final ConnectionWithLock delegate;
     private final boolean isReadOnly;
+    private volatile boolean isRecycled;
     private final ArrayDeque<TransactionItem> transactionStack;
 
     /* compiled from: ConnectionPoolImpl.kt */
@@ -70,7 +69,6 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
         this.delegate = delegate;
         this.isReadOnly = z;
         this.transactionStack = new ArrayDeque<>();
-        this._isRecycled = new AtomicBoolean(false);
     }
 
     public final ConnectionElementKey getConnectionElementKey() {
@@ -83,11 +81,6 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
     public final boolean isReadOnly() {
         return this.isReadOnly;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final boolean isRecycled() {
-        return this._isRecycled.get();
     }
 
     @Override // androidx.room.coroutines.RawConnectionAccessor
@@ -117,7 +110,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
                     i = pooledConnectionImpl$usePrepared$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        if (isRecycled()) {
+                        if (this.isRecycled) {
                             SQLite.throwSQLiteException(21, "Connection is recycled");
                             throw new KotlinNothingValueException();
                         }
@@ -165,7 +158,11 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
     }
 
     public final void markRecycled() {
-        if (this._isRecycled.compareAndSet(false, true) && this.delegate.inTransaction()) {
+        if (this.isRecycled) {
+            return;
+        }
+        this.isRecycled = true;
+        if (this.delegate.inTransaction()) {
             SQLite.execSQL(this.delegate, "ROLLBACK TRANSACTION");
         }
     }
@@ -505,7 +502,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
         @Override // androidx.room.TransactionScope
         public <R> Object withNestedTransaction(Function2<? super TransactionScope<R>, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {
             PooledConnectionImpl pooledConnectionImpl = PooledConnectionImpl.this;
-            if (pooledConnectionImpl.isRecycled()) {
+            if (pooledConnectionImpl.isRecycled) {
                 SQLite.throwSQLiteException(21, "Connection is recycled");
                 throw new KotlinNothingValueException();
             }
@@ -540,7 +537,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
                         if (i != 0) {
                             ResultKt.throwOnFailure(obj2);
                             PooledConnectionImpl pooledConnectionImpl2 = PooledConnectionImpl.this;
-                            if (pooledConnectionImpl2.isRecycled()) {
+                            if (pooledConnectionImpl2.isRecycled) {
                                 SQLite.throwSQLiteException(21, "Connection is recycled");
                                 throw new KotlinNothingValueException();
                             }
@@ -596,7 +593,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
     }
 
     private final <R> Object withStateCheck(Function0<? extends R> function0, Continuation<? super R> continuation) {
-        if (isRecycled()) {
+        if (this.isRecycled) {
             SQLite.throwSQLiteException(21, "Connection is recycled");
             throw new KotlinNothingValueException();
         }
@@ -622,7 +619,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
         }
 
         private final <R> R withStateCheck(Function0<? extends R> function0) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId != ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -635,13 +632,13 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo8888bindBlob(int i, byte[] value) {
+        public void mo8900bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo8888bindBlob(i, value);
+                this.delegate.mo8900bindBlob(i, value);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -650,12 +647,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo8889bindDouble(int i, double d) {
-            if (this.this$0.isRecycled()) {
+        public void mo8901bindDouble(int i, double d) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo8889bindDouble(i, d);
+                this.delegate.mo8901bindDouble(i, d);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -664,12 +661,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo8890bindLong(int i, long j) {
-            if (this.this$0.isRecycled()) {
+        public void mo8902bindLong(int i, long j) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo8890bindLong(i, j);
+                this.delegate.mo8902bindLong(i, j);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -678,13 +675,13 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo8892bindText(int i, String value) {
+        public void mo8904bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo8892bindText(i, value);
+                this.delegate.mo8904bindText(i, value);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -693,12 +690,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo8891bindNull(int i) {
-            if (this.this$0.isRecycled()) {
+        public void mo8903bindNull(int i) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo8891bindNull(i);
+                this.delegate.mo8903bindNull(i);
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -707,7 +704,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public byte[] getBlob(int i) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -720,7 +717,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public double getDouble(int i) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -733,7 +730,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public long getLong(int i) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -746,7 +743,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public String getText(int i) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -759,7 +756,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public boolean isNull(int i) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -772,7 +769,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public int getColumnCount() {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -785,7 +782,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public String getColumnName(int i) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -798,7 +795,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public int getColumnType(int i) {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -811,7 +808,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public boolean step() {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -824,7 +821,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         public void reset() {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -837,12 +834,12 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo8893clearBindings() {
-            if (this.this$0.isRecycled()) {
+        public void mo8905clearBindings() {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
-                this.delegate.mo8893clearBindings();
+                this.delegate.mo8905clearBindings();
             } else {
                 SQLite.throwSQLiteException(21, "Attempted to use statement on a different thread");
                 throw new KotlinNothingValueException();
@@ -851,7 +848,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
         @Override // androidx.sqlite.SQLiteStatement, java.lang.AutoCloseable
         public void close() {
-            if (this.this$0.isRecycled()) {
+            if (this.this$0.isRecycled) {
                 SQLite.throwSQLiteException(21, "Statement is recycled");
                 throw new KotlinNothingValueException();
             } else if (this.threadId == ThreadLocal_jvmAndroidKt.currentThreadId()) {
@@ -865,7 +862,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
     @Override // androidx.room.Transactor
     public <R> Object withTransaction(Transactor.SQLiteTransactionType sQLiteTransactionType, Function2<? super TransactionScope<R>, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {
-        if (isRecycled()) {
+        if (this.isRecycled) {
             SQLite.throwSQLiteException(21, "Connection is recycled");
             throw new KotlinNothingValueException();
         }
@@ -879,7 +876,7 @@ public final class PooledConnectionImpl implements Transactor, RawConnectionAcce
 
     @Override // androidx.room.Transactor
     public Object inTransaction(Continuation<? super Boolean> continuation) {
-        if (isRecycled()) {
+        if (this.isRecycled) {
             SQLite.throwSQLiteException(21, "Connection is recycled");
             throw new KotlinNothingValueException();
         }

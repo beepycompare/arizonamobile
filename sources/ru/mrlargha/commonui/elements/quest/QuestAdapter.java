@@ -83,13 +83,9 @@ public final class QuestAdapter extends RecyclerView.Adapter<QuestViewHolder> {
             binding.rodinaQuestProgress.setProgress(questLine2.getProgress());
         }
         if (z) {
-            Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "projects/arizona-rp/systems/image_quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/image_quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
         } else {
-            Picasso picasso2 = Picasso.get();
-            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso2.load(resourceUrl2 + "projects/rodina-rp/systems/quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
         }
         binding.rodinaQuestInfoTitle.setText(questLine2.getTitle());
         binding.rodinaQuestItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestAdapter$$ExternalSyntheticLambda0

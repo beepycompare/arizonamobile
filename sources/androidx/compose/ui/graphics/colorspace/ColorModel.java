@@ -17,22 +17,22 @@ public final class ColorModel {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ColorModel m5701boximpl(long j) {
+    public static final /* synthetic */ ColorModel m5702boximpl(long j) {
         return new ColorModel(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m5702constructorimpl(long j) {
+    public static long m5703constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5703equalsimpl(long j, Object obj) {
-        return (obj instanceof ColorModel) && j == ((ColorModel) obj).m5708unboximpl();
+    public static boolean m5704equalsimpl(long j, Object obj) {
+        return (obj instanceof ColorModel) && j == ((ColorModel) obj).m5709unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5704equalsimpl0(long j, long j2) {
+    public static final boolean m5705equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -40,25 +40,25 @@ public final class ColorModel {
     }
 
     /* renamed from: getComponentCount-impl  reason: not valid java name */
-    public static final int m5705getComponentCountimpl(long j) {
+    public static final int m5706getComponentCountimpl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5706hashCodeimpl(long j) {
+    public static int m5707hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m5703equalsimpl(this.packedValue, obj);
+        return m5704equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m5706hashCodeimpl(this.packedValue);
+        return m5707hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m5708unboximpl() {
+    public final /* synthetic */ long m5709unboximpl() {
         return this.packedValue;
     }
 
@@ -78,22 +78,22 @@ public final class ColorModel {
         }
 
         /* renamed from: getRgb-xdoWZVw  reason: not valid java name */
-        public final long m5711getRgbxdoWZVw() {
+        public final long m5712getRgbxdoWZVw() {
             return ColorModel.Rgb;
         }
 
         /* renamed from: getXyz-xdoWZVw  reason: not valid java name */
-        public final long m5712getXyzxdoWZVw() {
+        public final long m5713getXyzxdoWZVw() {
             return ColorModel.Xyz;
         }
 
         /* renamed from: getLab-xdoWZVw  reason: not valid java name */
-        public final long m5710getLabxdoWZVw() {
+        public final long m5711getLabxdoWZVw() {
             return ColorModel.Lab;
         }
 
         /* renamed from: getCmyk-xdoWZVw  reason: not valid java name */
-        public final long m5709getCmykxdoWZVw() {
+        public final long m5710getCmykxdoWZVw() {
             return ColorModel.Cmyk;
         }
     }
@@ -101,18 +101,18 @@ public final class ColorModel {
     static {
         long j = 3;
         long j2 = j << 32;
-        Rgb = m5702constructorimpl((0 & 4294967295L) | j2);
-        Xyz = m5702constructorimpl((1 & 4294967295L) | j2);
-        Lab = m5702constructorimpl(j2 | (2 & 4294967295L));
-        Cmyk = m5702constructorimpl((j & 4294967295L) | (4 << 32));
+        Rgb = m5703constructorimpl((0 & 4294967295L) | j2);
+        Xyz = m5703constructorimpl((1 & 4294967295L) | j2);
+        Lab = m5703constructorimpl(j2 | (2 & 4294967295L));
+        Cmyk = m5703constructorimpl((j & 4294967295L) | (4 << 32));
     }
 
     public String toString() {
-        return m5707toStringimpl(this.packedValue);
+        return m5708toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5707toStringimpl(long j) {
-        return m5704equalsimpl0(j, Rgb) ? "Rgb" : m5704equalsimpl0(j, Xyz) ? "Xyz" : m5704equalsimpl0(j, Lab) ? "Lab" : m5704equalsimpl0(j, Cmyk) ? "Cmyk" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5708toStringimpl(long j) {
+        return m5705equalsimpl0(j, Rgb) ? "Rgb" : m5705equalsimpl0(j, Xyz) ? "Xyz" : m5705equalsimpl0(j, Lab) ? "Lab" : m5705equalsimpl0(j, Cmyk) ? "Cmyk" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

@@ -1,10 +1,10 @@
 package io.appmetrica.analytics;
 
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface DeferredDeeplinkParametersListener {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public enum Error {
         NOT_A_FIRST_LAUNCH("Deferred deeplink parameters can be requested during first launch only."),
         PARSE_ERROR("Google Play referrer did not contain valid deferred deeplink parameters."),

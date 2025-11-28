@@ -11,7 +11,7 @@ import io.appmetrica.analytics.ReporterConfig;
 import io.appmetrica.analytics.StartupParamsCallback;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0 implements Ja {
     @Override // io.appmetrica.analytics.impl.Ja, io.appmetrica.analytics.impl.H6
     public final void a(int i, Bundle bundle) {

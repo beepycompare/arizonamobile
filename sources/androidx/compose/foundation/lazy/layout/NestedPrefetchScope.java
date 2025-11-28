@@ -15,7 +15,7 @@ public interface NestedPrefetchScope {
     void schedulePrecomposition(int i);
 
     /* renamed from: schedulePrecompositionAndPremeasure-0kLqBqw */
-    void mo1061schedulePrecompositionAndPremeasure0kLqBqw(int i, long j);
+    void mo1062schedulePrecompositionAndPremeasure0kLqBqw(int i, long j);
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Please use schedulePrecomposition(index) instead")
     default void schedulePrefetch(int i) {
@@ -24,7 +24,7 @@ public interface NestedPrefetchScope {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Please use schedulePremeasure(index, constraints) instead")
     /* renamed from: schedulePrefetch-0kLqBqw  reason: not valid java name */
-    default void m1070schedulePrefetch0kLqBqw(int i, long j) {
-        mo1061schedulePrecompositionAndPremeasure0kLqBqw(i, j);
+    default void m1071schedulePrefetch0kLqBqw(int i, long j) {
+        mo1062schedulePrecompositionAndPremeasure0kLqBqw(i, j);
     }
 }

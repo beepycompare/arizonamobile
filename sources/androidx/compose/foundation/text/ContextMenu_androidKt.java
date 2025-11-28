@@ -115,7 +115,7 @@ public final class ContextMenu_androidKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1861815107, "CC(remember):ContextMenu.android.kt#9igjgp");
                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                 if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                    rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MenuItemsAvailability.m1323boximpl(MenuItemsAvailability.Companion.m1336getNoneJKCFgKw()), null, 2, null);
+                    rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MenuItemsAvailability.m1324boximpl(MenuItemsAvailability.Companion.m1337getNoneJKCFgKw()), null, 2, null);
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 final MutableState mutableState = (MutableState) rememberedValue3;
@@ -261,7 +261,7 @@ public final class ContextMenu_androidKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1697102109, "CC(remember):ContextMenu.android.kt#9igjgp");
                 Object rememberedValue4 = startRestartGroup.rememberedValue();
                 if (rememberedValue4 == Composer.Companion.getEmpty()) {
-                    rememberedValue4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MenuItemsAvailability.m1323boximpl(MenuItemsAvailability.Companion.m1336getNoneJKCFgKw()), null, 2, null);
+                    rememberedValue4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MenuItemsAvailability.m1324boximpl(MenuItemsAvailability.Companion.m1337getNoneJKCFgKw()), null, 2, null);
                     startRestartGroup.updateRememberedValue(rememberedValue4);
                 }
                 final MutableState mutableState = (MutableState) rememberedValue4;
@@ -471,7 +471,7 @@ public final class ContextMenu_androidKt {
                     textFieldSelectionState = (TextFieldSelectionState) contextMenu_androidKt$getContextMenuItemsAvailability$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return MenuItemsAvailability.m1323boximpl(MenuItemsAvailability.m1325constructorimpl(textFieldSelectionState.canCopy(), textFieldSelectionState.canPaste(), textFieldSelectionState.canCut(), textFieldSelectionState.canSelectAll(), textFieldSelectionState.canAutofill()));
+                return MenuItemsAvailability.m1324boximpl(MenuItemsAvailability.m1326constructorimpl(textFieldSelectionState.canCopy(), textFieldSelectionState.canPaste(), textFieldSelectionState.canCut(), textFieldSelectionState.canSelectAll(), textFieldSelectionState.canAutofill()));
             }
         }
         contextMenu_androidKt$getContextMenuItemsAvailability$1 = new ContextMenu_androidKt$getContextMenuItemsAvailability$1(continuation);
@@ -480,7 +480,7 @@ public final class ContextMenu_androidKt {
         i = contextMenu_androidKt$getContextMenuItemsAvailability$1.label;
         if (i != 0) {
         }
-        return MenuItemsAvailability.m1323boximpl(MenuItemsAvailability.m1325constructorimpl(textFieldSelectionState.canCopy(), textFieldSelectionState.canPaste(), textFieldSelectionState.canCut(), textFieldSelectionState.canSelectAll(), textFieldSelectionState.canAutofill()));
+        return MenuItemsAvailability.m1324boximpl(MenuItemsAvailability.m1326constructorimpl(textFieldSelectionState.canCopy(), textFieldSelectionState.canPaste(), textFieldSelectionState.canCut(), textFieldSelectionState.canSelectAll(), textFieldSelectionState.canAutofill()));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -511,7 +511,7 @@ public final class ContextMenu_androidKt {
                     textFieldSelectionManager = (TextFieldSelectionManager) contextMenu_androidKt$getContextMenuItemsAvailability$2.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return MenuItemsAvailability.m1323boximpl(MenuItemsAvailability.m1325constructorimpl(textFieldSelectionManager.canCopy$foundation_release(), textFieldSelectionManager.canPaste$foundation_release(), textFieldSelectionManager.canCut$foundation_release(), textFieldSelectionManager.canSelectAll$foundation_release(), textFieldSelectionManager.canAutofill$foundation_release()));
+                return MenuItemsAvailability.m1324boximpl(MenuItemsAvailability.m1326constructorimpl(textFieldSelectionManager.canCopy$foundation_release(), textFieldSelectionManager.canPaste$foundation_release(), textFieldSelectionManager.canCut$foundation_release(), textFieldSelectionManager.canSelectAll$foundation_release(), textFieldSelectionManager.canAutofill$foundation_release()));
             }
         }
         contextMenu_androidKt$getContextMenuItemsAvailability$2 = new ContextMenu_androidKt$getContextMenuItemsAvailability$2(continuation);
@@ -520,6 +520,6 @@ public final class ContextMenu_androidKt {
         i = contextMenu_androidKt$getContextMenuItemsAvailability$2.label;
         if (i != 0) {
         }
-        return MenuItemsAvailability.m1323boximpl(MenuItemsAvailability.m1325constructorimpl(textFieldSelectionManager.canCopy$foundation_release(), textFieldSelectionManager.canPaste$foundation_release(), textFieldSelectionManager.canCut$foundation_release(), textFieldSelectionManager.canSelectAll$foundation_release(), textFieldSelectionManager.canAutofill$foundation_release()));
+        return MenuItemsAvailability.m1324boximpl(MenuItemsAvailability.m1326constructorimpl(textFieldSelectionManager.canCopy$foundation_release(), textFieldSelectionManager.canPaste$foundation_release(), textFieldSelectionManager.canCut$foundation_release(), textFieldSelectionManager.canSelectAll$foundation_release(), textFieldSelectionManager.canAutofill$foundation_release()));
     }
 }

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* renamed from: io.appmetrica.analytics.impl.xk  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0705xk implements Pc {
     public static final boolean a(SQLiteDatabase sQLiteDatabase) {
         return true;

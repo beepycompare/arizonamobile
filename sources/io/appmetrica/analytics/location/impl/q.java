@@ -10,7 +10,7 @@ import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorPr
 import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class q implements LastKnownLocationExtractorProvider, LocationReceiverProvider {
 
     /* renamed from: a  reason: collision with root package name */

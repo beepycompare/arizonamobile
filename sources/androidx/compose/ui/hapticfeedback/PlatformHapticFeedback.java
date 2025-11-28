@@ -15,32 +15,32 @@ public final class PlatformHapticFeedback implements HapticFeedback {
 
     @Override // androidx.compose.ui.hapticfeedback.HapticFeedback
     /* renamed from: performHapticFeedback-CdsT49E */
-    public void mo6053performHapticFeedbackCdsT49E(int i) {
-        if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6061getConfirm5zf0vsI())) {
+    public void mo6054performHapticFeedbackCdsT49E(int i) {
+        if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6062getConfirm5zf0vsI())) {
             this.view.performHapticFeedback(16);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6062getContextClick5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6063getContextClick5zf0vsI())) {
             this.view.performHapticFeedback(6);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6063getGestureEnd5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6064getGestureEnd5zf0vsI())) {
             this.view.performHapticFeedback(13);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6064getGestureThresholdActivate5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6065getGestureThresholdActivate5zf0vsI())) {
             this.view.performHapticFeedback(23);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6065getKeyboardTap5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6066getKeyboardTap5zf0vsI())) {
             this.view.performHapticFeedback(3);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6066getLongPress5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6067getLongPress5zf0vsI())) {
             this.view.performHapticFeedback(0);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6067getReject5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6068getReject5zf0vsI())) {
             this.view.performHapticFeedback(17);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6068getSegmentFrequentTick5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6069getSegmentFrequentTick5zf0vsI())) {
             this.view.performHapticFeedback(27);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6069getSegmentTick5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6070getSegmentTick5zf0vsI())) {
             this.view.performHapticFeedback(26);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6070getTextHandleMove5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6071getTextHandleMove5zf0vsI())) {
             this.view.performHapticFeedback(9);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6071getToggleOff5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6072getToggleOff5zf0vsI())) {
             this.view.performHapticFeedback(22);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6072getToggleOn5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6073getToggleOn5zf0vsI())) {
             this.view.performHapticFeedback(21);
-        } else if (HapticFeedbackType.m6057equalsimpl0(i, HapticFeedbackType.Companion.m6073getVirtualKey5zf0vsI())) {
+        } else if (HapticFeedbackType.m6058equalsimpl0(i, HapticFeedbackType.Companion.m6074getVirtualKey5zf0vsI())) {
             this.view.performHapticFeedback(1);
         }
     }

@@ -6,10 +6,10 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface IndirectTouchEvent {
     /* renamed from: getPosition-F1C5BW0 */
-    long mo6099getPositionF1C5BW0();
+    long mo6100getPositionF1C5BW0();
 
     /* renamed from: getType-LxEHWp8 */
-    int mo6100getTypeLxEHWp8();
+    int mo6101getTypeLxEHWp8();
 
     long getUptimeMillis();
 }

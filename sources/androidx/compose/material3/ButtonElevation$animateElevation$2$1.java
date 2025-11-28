@@ -53,10 +53,10 @@ public final class ButtonElevation$animateElevation$2$1 extends SuspendLambda im
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0048, code lost:
-        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m7993boximpl(r6.$target), r6) == r0) goto L17;
+        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m7994boximpl(r6.$target), r6) == r0) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x00ab, code lost:
-        if (androidx.compose.material3.internal.ElevationKt.m3525animateElevationrAjV9yQ(r6.$animatable, r6.$target, r3, r6.$interaction, r6) == r0) goto L17;
+        if (androidx.compose.material3.internal.ElevationKt.m3526animateElevationrAjV9yQ(r6.$animatable, r6.$target, r3, r6.$interaction, r6) == r0) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:28:0x00ad, code lost:
         return r0;
@@ -73,20 +73,20 @@ public final class ButtonElevation$animateElevation$2$1 extends SuspendLambda im
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!Dp.m8000equalsimpl0(this.$animatable.getTargetValue().m8009unboximpl(), this.$target)) {
+            if (!Dp.m8001equalsimpl0(this.$animatable.getTargetValue().m8010unboximpl(), this.$target)) {
                 if (this.$enabled) {
-                    float m8009unboximpl = this.$animatable.getTargetValue().m8009unboximpl();
+                    float m8010unboximpl = this.$animatable.getTargetValue().m8010unboximpl();
                     f = this.this$0.pressedElevation;
                     FocusInteraction.Focus focus = null;
-                    if (Dp.m8000equalsimpl0(m8009unboximpl, f)) {
-                        focus = new PressInteraction.Press(Offset.Companion.m5051getZeroF1C5BW0(), null);
+                    if (Dp.m8001equalsimpl0(m8010unboximpl, f)) {
+                        focus = new PressInteraction.Press(Offset.Companion.m5052getZeroF1C5BW0(), null);
                     } else {
                         f2 = this.this$0.hoveredElevation;
-                        if (Dp.m8000equalsimpl0(m8009unboximpl, f2)) {
+                        if (Dp.m8001equalsimpl0(m8010unboximpl, f2)) {
                             focus = new HoverInteraction.Enter();
                         } else {
                             f3 = this.this$0.focusedElevation;
-                            if (Dp.m8000equalsimpl0(m8009unboximpl, f3)) {
+                            if (Dp.m8001equalsimpl0(m8010unboximpl, f3)) {
                                 focus = new FocusInteraction.Focus();
                             }
                         }

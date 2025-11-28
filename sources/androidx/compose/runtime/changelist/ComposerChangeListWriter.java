@@ -41,7 +41,7 @@ public final class ComposerChangeListWriter {
     public static final int $stable = 8;
     private final IntStack startedGroups = new IntStack();
     private boolean implicitRootStart = true;
-    private final ArrayList<T> pendingDownNodes = Stack.m4581constructorimpl$default(null, 1, null);
+    private final ArrayList<T> pendingDownNodes = Stack.m4582constructorimpl$default(null, 1, null);
     private int removeFrom = -1;
     private int moveFrom = -1;
     private int moveTo = -1;
@@ -358,8 +358,8 @@ public final class ComposerChangeListWriter {
 
     public final void moveUp() {
         realizeNodeMovementOperations();
-        if (Stack.m4587isNotEmptyimpl(this.pendingDownNodes)) {
-            Stack.m4590popimpl(this.pendingDownNodes);
+        if (Stack.m4588isNotEmptyimpl(this.pendingDownNodes)) {
+            Stack.m4591popimpl(this.pendingDownNodes);
             return;
         }
         int i = this.pendingUps;
@@ -369,7 +369,7 @@ public final class ComposerChangeListWriter {
 
     public final void moveDown(Object obj) {
         realizeNodeMovementOperations();
-        Stack.m4591pushimpl(this.pendingDownNodes, obj);
+        Stack.m4592pushimpl(this.pendingDownNodes, obj);
     }
 
     private final void pushPendingUpsAndDowns() {
@@ -378,9 +378,9 @@ public final class ComposerChangeListWriter {
             this.changeList.pushUps(i);
             this.pendingUps = 0;
         }
-        if (Stack.m4587isNotEmptyimpl(this.pendingDownNodes)) {
-            this.changeList.pushDowns(Stack.m4592toArrayimpl(this.pendingDownNodes));
-            Stack.m4579clearimpl(this.pendingDownNodes);
+        if (Stack.m4588isNotEmptyimpl(this.pendingDownNodes)) {
+            this.changeList.pushDowns(Stack.m4593toArrayimpl(this.pendingDownNodes));
+            Stack.m4580clearimpl(this.pendingDownNodes);
         }
     }
 
@@ -435,7 +435,7 @@ public final class ComposerChangeListWriter {
         this.writersReaderDelta = 0;
         this.implicitRootStart = true;
         this.pendingUps = 0;
-        Stack.m4579clearimpl(this.pendingDownNodes);
+        Stack.m4580clearimpl(this.pendingDownNodes);
         this.removeFrom = -1;
         this.moveFrom = -1;
         this.moveTo = -1;

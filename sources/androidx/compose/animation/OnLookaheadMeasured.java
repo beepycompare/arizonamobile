@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface OnLookaheadMeasured {
     /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-    void m119invokeozmzZPI(long j);
+    void m120invokeozmzZPI(long j);
 }

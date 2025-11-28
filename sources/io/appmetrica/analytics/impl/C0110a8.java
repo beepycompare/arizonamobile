@@ -4,7 +4,7 @@ import android.content.Context;
 import io.appmetrica.analytics.appsetid.internal.AppSetIdListener;
 import io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever;
 /* renamed from: io.appmetrica.analytics.impl.a8  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0110a8 implements IAppSetIdRetriever {
     @Override // io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever
     public final void retrieveAppSetId(Context context, AppSetIdListener appSetIdListener) {

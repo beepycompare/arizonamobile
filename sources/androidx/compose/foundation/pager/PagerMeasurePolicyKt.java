@@ -57,7 +57,7 @@ public final class PagerMeasurePolicyKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final LazyLayoutMeasurePolicy m1154rememberPagerMeasurePolicy8u0NR3k(Function0<PagerLazyLayoutItemProvider> function0, PagerState pagerState, PaddingValues paddingValues, boolean z, Orientation orientation, int i, float f, PageSize pageSize, Alignment.Horizontal horizontal, Alignment.Vertical vertical, SnapPosition snapPosition, CoroutineScope coroutineScope, Function0<Integer> function02, Composer composer, int i2, int i3) {
+    public static final LazyLayoutMeasurePolicy m1155rememberPagerMeasurePolicy8u0NR3k(Function0<PagerLazyLayoutItemProvider> function0, PagerState pagerState, PaddingValues paddingValues, boolean z, Orientation orientation, int i, float f, PageSize pageSize, Alignment.Horizontal horizontal, Alignment.Vertical vertical, SnapPosition snapPosition, CoroutineScope coroutineScope, Function0<Integer> function02, Composer composer, int i2, int i3) {
         Object obj;
         boolean z2;
         Object obj2;

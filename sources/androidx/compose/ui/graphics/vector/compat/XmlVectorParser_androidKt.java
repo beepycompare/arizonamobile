@@ -45,41 +45,41 @@ public final class XmlVectorParser_androidKt {
     private static final String SHAPE_PATH = "path";
 
     /* renamed from: getStrokeLineCap-CSYIeUk$default  reason: not valid java name */
-    static /* synthetic */ int m6050getStrokeLineCapCSYIeUk$default(int i, int i2, int i3, Object obj) {
+    static /* synthetic */ int m6051getStrokeLineCapCSYIeUk$default(int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
-            i2 = StrokeCap.Companion.m5649getButtKaPHkGw();
+            i2 = StrokeCap.Companion.m5650getButtKaPHkGw();
         }
-        return m6049getStrokeLineCapCSYIeUk(i, i2);
+        return m6050getStrokeLineCapCSYIeUk(i, i2);
     }
 
     /* renamed from: getStrokeLineCap-CSYIeUk  reason: not valid java name */
-    private static final int m6049getStrokeLineCapCSYIeUk(int i, int i2) {
+    private static final int m6050getStrokeLineCapCSYIeUk(int i, int i2) {
         if (i != 0) {
             if (i != 1) {
-                return i != 2 ? i2 : StrokeCap.Companion.m5651getSquareKaPHkGw();
+                return i != 2 ? i2 : StrokeCap.Companion.m5652getSquareKaPHkGw();
             }
-            return StrokeCap.Companion.m5650getRoundKaPHkGw();
+            return StrokeCap.Companion.m5651getRoundKaPHkGw();
         }
-        return StrokeCap.Companion.m5649getButtKaPHkGw();
+        return StrokeCap.Companion.m5650getButtKaPHkGw();
     }
 
     /* renamed from: getStrokeLineJoin-kLtJ_vA$default  reason: not valid java name */
-    static /* synthetic */ int m6052getStrokeLineJoinkLtJ_vA$default(int i, int i2, int i3, Object obj) {
+    static /* synthetic */ int m6053getStrokeLineJoinkLtJ_vA$default(int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
-            i2 = StrokeJoin.Companion.m5660getMiterLxFBmk8();
+            i2 = StrokeJoin.Companion.m5661getMiterLxFBmk8();
         }
-        return m6051getStrokeLineJoinkLtJ_vA(i, i2);
+        return m6052getStrokeLineJoinkLtJ_vA(i, i2);
     }
 
     /* renamed from: getStrokeLineJoin-kLtJ_vA  reason: not valid java name */
-    private static final int m6051getStrokeLineJoinkLtJ_vA(int i, int i2) {
+    private static final int m6052getStrokeLineJoinkLtJ_vA(int i, int i2) {
         if (i != 0) {
             if (i != 1) {
-                return i != 2 ? i2 : StrokeJoin.Companion.m5659getBevelLxFBmk8();
+                return i != 2 ? i2 : StrokeJoin.Companion.m5660getBevelLxFBmk8();
             }
-            return StrokeJoin.Companion.m5661getRoundLxFBmk8();
+            return StrokeJoin.Companion.m5662getRoundLxFBmk8();
         }
-        return StrokeJoin.Companion.m5660getMiterLxFBmk8();
+        return StrokeJoin.Companion.m5661getMiterLxFBmk8();
     }
 
     public static final boolean isAtEnd(XmlPullParser xmlPullParser) {
@@ -142,8 +142,8 @@ public final class XmlVectorParser_androidKt {
     }
 
     public static final ImageVector.Builder createVectorImageBuilder(AndroidVectorParser androidVectorParser, Resources resources, Resources.Theme theme, AttributeSet attributeSet) {
-        long m5315getUnspecified0d7_KjU;
-        int m5218getSrcIn0nO6VwU;
+        long m5316getUnspecified0d7_KjU;
+        int m5219getSrcIn0nO6VwU;
         TypedArray obtainAttributes = androidVectorParser.obtainAttributes(resources, theme, attributeSet, AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY());
         boolean namedBoolean = androidVectorParser.getNamedBoolean(obtainAttributes, "autoMirrored", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_AUTO_MIRRORED(), false);
         float namedFloat = androidVectorParser.getNamedFloat(obtainAttributes, "viewportWidth", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_VIEWPORT_WIDTH(), 0.0f);
@@ -158,49 +158,49 @@ public final class XmlVectorParser_androidKt {
                 TypedValue typedValue = new TypedValue();
                 obtainAttributes.getValue(AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_TINT(), typedValue);
                 if (typedValue.type == 2) {
-                    m5315getUnspecified0d7_KjU = Color.Companion.m5315getUnspecified0d7_KjU();
+                    m5316getUnspecified0d7_KjU = Color.Companion.m5316getUnspecified0d7_KjU();
                 } else {
                     ColorStateList namedColorStateList = androidVectorParser.getNamedColorStateList(obtainAttributes, theme, "tint", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_TINT());
                     if (namedColorStateList != null) {
-                        m5315getUnspecified0d7_KjU = ColorKt.Color(namedColorStateList.getDefaultColor());
+                        m5316getUnspecified0d7_KjU = ColorKt.Color(namedColorStateList.getDefaultColor());
                     } else {
-                        m5315getUnspecified0d7_KjU = Color.Companion.m5315getUnspecified0d7_KjU();
+                        m5316getUnspecified0d7_KjU = Color.Companion.m5316getUnspecified0d7_KjU();
                     }
                 }
             } else {
-                m5315getUnspecified0d7_KjU = Color.Companion.m5315getUnspecified0d7_KjU();
+                m5316getUnspecified0d7_KjU = Color.Companion.m5316getUnspecified0d7_KjU();
             }
-            long j = m5315getUnspecified0d7_KjU;
+            long j = m5316getUnspecified0d7_KjU;
             int i = androidVectorParser.getInt(obtainAttributes, AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_TINT_MODE(), -1);
             if (i == -1) {
-                m5218getSrcIn0nO6VwU = BlendMode.Companion.m5218getSrcIn0nO6VwU();
+                m5219getSrcIn0nO6VwU = BlendMode.Companion.m5219getSrcIn0nO6VwU();
             } else if (i == 3) {
-                m5218getSrcIn0nO6VwU = BlendMode.Companion.m5220getSrcOver0nO6VwU();
+                m5219getSrcIn0nO6VwU = BlendMode.Companion.m5221getSrcOver0nO6VwU();
             } else if (i == 5) {
-                m5218getSrcIn0nO6VwU = BlendMode.Companion.m5218getSrcIn0nO6VwU();
+                m5219getSrcIn0nO6VwU = BlendMode.Companion.m5219getSrcIn0nO6VwU();
             } else if (i == 9) {
-                m5218getSrcIn0nO6VwU = BlendMode.Companion.m5217getSrcAtop0nO6VwU();
+                m5219getSrcIn0nO6VwU = BlendMode.Companion.m5218getSrcAtop0nO6VwU();
             } else {
                 switch (i) {
                     case 14:
-                        m5218getSrcIn0nO6VwU = BlendMode.Companion.m5209getModulate0nO6VwU();
+                        m5219getSrcIn0nO6VwU = BlendMode.Companion.m5210getModulate0nO6VwU();
                         break;
                     case 15:
-                        m5218getSrcIn0nO6VwU = BlendMode.Companion.m5214getScreen0nO6VwU();
+                        m5219getSrcIn0nO6VwU = BlendMode.Companion.m5215getScreen0nO6VwU();
                         break;
                     case 16:
-                        m5218getSrcIn0nO6VwU = BlendMode.Companion.m5212getPlus0nO6VwU();
+                        m5219getSrcIn0nO6VwU = BlendMode.Companion.m5213getPlus0nO6VwU();
                         break;
                     default:
-                        m5218getSrcIn0nO6VwU = BlendMode.Companion.m5218getSrcIn0nO6VwU();
+                        m5219getSrcIn0nO6VwU = BlendMode.Companion.m5219getSrcIn0nO6VwU();
                         break;
                 }
             }
-            int i2 = m5218getSrcIn0nO6VwU;
-            float m7995constructorimpl = Dp.m7995constructorimpl(dimension / resources.getDisplayMetrics().density);
-            float m7995constructorimpl2 = Dp.m7995constructorimpl(dimension2 / resources.getDisplayMetrics().density);
+            int i2 = m5219getSrcIn0nO6VwU;
+            float m7996constructorimpl = Dp.m7996constructorimpl(dimension / resources.getDisplayMetrics().density);
+            float m7996constructorimpl2 = Dp.m7996constructorimpl(dimension2 / resources.getDisplayMetrics().density);
             obtainAttributes.recycle();
-            return new ImageVector.Builder(null, m7995constructorimpl, m7995constructorimpl2, namedFloat, namedFloat2, j, i2, namedBoolean, 1, null);
+            return new ImageVector.Builder(null, m7996constructorimpl, m7996constructorimpl2, namedFloat, namedFloat2, j, i2, namedBoolean, 1, null);
         }
         throw new XmlPullParserException(obtainAttributes.getPositionDescription() + "<VectorGraphic> tag requires viewportWidth > 0");
     }
@@ -225,8 +225,8 @@ public final class XmlVectorParser_androidKt {
         List<? extends PathNode> list = pathStringToNodes$default;
         ComplexColorCompat namedComplexColor = androidVectorParser.getNamedComplexColor(obtainAttributes, theme, "fillColor", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_FILL_COLOR(), 0);
         float namedFloat = androidVectorParser.getNamedFloat(obtainAttributes, "fillAlpha", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_FILL_ALPHA(), 1.0f);
-        int m6049getStrokeLineCapCSYIeUk = m6049getStrokeLineCapCSYIeUk(androidVectorParser.getNamedInt(obtainAttributes, "strokeLineCap", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_CAP(), -1), StrokeCap.Companion.m5649getButtKaPHkGw());
-        int m6051getStrokeLineJoinkLtJ_vA = m6051getStrokeLineJoinkLtJ_vA(androidVectorParser.getNamedInt(obtainAttributes, "strokeLineJoin", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_JOIN(), -1), StrokeJoin.Companion.m5659getBevelLxFBmk8());
+        int m6050getStrokeLineCapCSYIeUk = m6050getStrokeLineCapCSYIeUk(androidVectorParser.getNamedInt(obtainAttributes, "strokeLineCap", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_CAP(), -1), StrokeCap.Companion.m5650getButtKaPHkGw());
+        int m6052getStrokeLineJoinkLtJ_vA = m6052getStrokeLineJoinkLtJ_vA(androidVectorParser.getNamedInt(obtainAttributes, "strokeLineJoin", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_JOIN(), -1), StrokeJoin.Companion.m5660getBevelLxFBmk8());
         float namedFloat2 = androidVectorParser.getNamedFloat(obtainAttributes, "strokeMiterLimit", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_MITER_LIMIT(), 1.0f);
         ComplexColorCompat namedComplexColor2 = androidVectorParser.getNamedComplexColor(obtainAttributes, theme, "strokeColor", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_COLOR(), 0);
         float namedFloat3 = androidVectorParser.getNamedFloat(obtainAttributes, "strokeAlpha", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_ALPHA(), 1.0f);
@@ -236,7 +236,7 @@ public final class XmlVectorParser_androidKt {
         float namedFloat7 = androidVectorParser.getNamedFloat(obtainAttributes, "trimPathStart", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_START(), 0.0f);
         int namedInt = androidVectorParser.getNamedInt(obtainAttributes, "fillType", AndroidVectorResources.INSTANCE.getSTYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_FILLTYPE(), FILL_TYPE_WINDING);
         obtainAttributes.recycle();
-        builder.m6016addPathoIyEayM(list, namedInt == 0 ? PathFillType.Companion.m5574getNonZeroRgk1Os() : PathFillType.Companion.m5573getEvenOddRgk1Os(), str, obtainBrushFromComplexColor(namedComplexColor), namedFloat, obtainBrushFromComplexColor(namedComplexColor2), namedFloat3, namedFloat4, m6049getStrokeLineCapCSYIeUk, m6051getStrokeLineJoinkLtJ_vA, namedFloat2, namedFloat7, namedFloat5, namedFloat6);
+        builder.m6017addPathoIyEayM(list, namedInt == 0 ? PathFillType.Companion.m5575getNonZeroRgk1Os() : PathFillType.Companion.m5574getEvenOddRgk1Os(), str, obtainBrushFromComplexColor(namedComplexColor), namedFloat, obtainBrushFromComplexColor(namedComplexColor2), namedFloat3, namedFloat4, m6050getStrokeLineCapCSYIeUk, m6052getStrokeLineJoinkLtJ_vA, namedFloat2, namedFloat7, namedFloat5, namedFloat6);
     }
 
     private static final Brush obtainBrushFromComplexColor(ComplexColorCompat complexColorCompat) {

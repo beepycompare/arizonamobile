@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* renamed from: io.appmetrica.analytics.impl.tk  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0605tk implements Pc {
     @Override // io.appmetrica.analytics.impl.Pc
     public final void a(Context context) {

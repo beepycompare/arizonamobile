@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Tc {
 
     /* renamed from: a  reason: collision with root package name */

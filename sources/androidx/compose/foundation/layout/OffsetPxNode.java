@@ -58,13 +58,13 @@ public final class OffsetPxNode extends Modifier.Node implements LayoutModifierN
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetPxNode$$ExternalSyntheticLambda0
+    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetPxNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = OffsetPxNode.measure_3p2s80s$lambda$0(OffsetPxNode.this, mo6697measureBRTryo0, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$0 = OffsetPxNode.measure_3p2s80s$lambda$0(OffsetPxNode.this, mo6698measureBRTryo0, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$0;
             }
         }, 4, null);
@@ -72,11 +72,11 @@ public final class OffsetPxNode extends Modifier.Node implements LayoutModifierN
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit measure_3p2s80s$lambda$0(OffsetPxNode offsetPxNode, Placeable placeable, Placeable.PlacementScope placementScope) {
-        long m8132unboximpl = offsetPxNode.offset.invoke(placementScope).m8132unboximpl();
+        long m8133unboximpl = offsetPxNode.offset.invoke(placementScope).m8133unboximpl();
         if (offsetPxNode.rtlAware) {
-            Placeable.PlacementScope.placeRelativeWithLayer$default(placementScope, placeable, IntOffset.m8123getXimpl(m8132unboximpl), IntOffset.m8124getYimpl(m8132unboximpl), 0.0f, (Function1) null, 12, (Object) null);
+            Placeable.PlacementScope.placeRelativeWithLayer$default(placementScope, placeable, IntOffset.m8124getXimpl(m8133unboximpl), IntOffset.m8125getYimpl(m8133unboximpl), 0.0f, (Function1) null, 12, (Object) null);
         } else {
-            Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m8123getXimpl(m8132unboximpl), IntOffset.m8124getYimpl(m8132unboximpl), 0.0f, (Function1) null, 12, (Object) null);
+            Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m8124getXimpl(m8133unboximpl), IntOffset.m8125getYimpl(m8133unboximpl), 0.0f, (Function1) null, 12, (Object) null);
         }
         return Unit.INSTANCE;
     }

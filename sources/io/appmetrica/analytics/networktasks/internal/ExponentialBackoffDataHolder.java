@@ -3,7 +3,7 @@ package io.appmetrica.analytics.networktasks.internal;
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
 import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ExponentialBackoffDataHolder {
 
     /* renamed from: a  reason: collision with root package name */

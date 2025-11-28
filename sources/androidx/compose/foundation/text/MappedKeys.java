@@ -40,132 +40,132 @@ public final class MappedKeys {
     }
 
     /* renamed from: getA-EK5gGoQ  reason: not valid java name */
-    public final long m1297getAEK5gGoQ() {
+    public final long m1298getAEK5gGoQ() {
         return A;
     }
 
     /* renamed from: getC-EK5gGoQ  reason: not valid java name */
-    public final long m1300getCEK5gGoQ() {
+    public final long m1301getCEK5gGoQ() {
         return C;
     }
 
     /* renamed from: getH-EK5gGoQ  reason: not valid java name */
-    public final long m1310getHEK5gGoQ() {
+    public final long m1311getHEK5gGoQ() {
         return H;
     }
 
     /* renamed from: getV-EK5gGoQ  reason: not valid java name */
-    public final long m1319getVEK5gGoQ() {
+    public final long m1320getVEK5gGoQ() {
         return V;
     }
 
     /* renamed from: getY-EK5gGoQ  reason: not valid java name */
-    public final long m1321getYEK5gGoQ() {
+    public final long m1322getYEK5gGoQ() {
         return Y;
     }
 
     /* renamed from: getX-EK5gGoQ  reason: not valid java name */
-    public final long m1320getXEK5gGoQ() {
+    public final long m1321getXEK5gGoQ() {
         return X;
     }
 
     /* renamed from: getZ-EK5gGoQ  reason: not valid java name */
-    public final long m1322getZEK5gGoQ() {
+    public final long m1323getZEK5gGoQ() {
         return Z;
     }
 
     /* renamed from: getBackslash-EK5gGoQ  reason: not valid java name */
-    public final long m1298getBackslashEK5gGoQ() {
+    public final long m1299getBackslashEK5gGoQ() {
         return Backslash;
     }
 
     /* renamed from: getDirectionLeft-EK5gGoQ  reason: not valid java name */
-    public final long m1306getDirectionLeftEK5gGoQ() {
+    public final long m1307getDirectionLeftEK5gGoQ() {
         return DirectionLeft;
     }
 
     /* renamed from: getDirectionRight-EK5gGoQ  reason: not valid java name */
-    public final long m1307getDirectionRightEK5gGoQ() {
+    public final long m1308getDirectionRightEK5gGoQ() {
         return DirectionRight;
     }
 
     /* renamed from: getDirectionUp-EK5gGoQ  reason: not valid java name */
-    public final long m1308getDirectionUpEK5gGoQ() {
+    public final long m1309getDirectionUpEK5gGoQ() {
         return DirectionUp;
     }
 
     /* renamed from: getDirectionDown-EK5gGoQ  reason: not valid java name */
-    public final long m1305getDirectionDownEK5gGoQ() {
+    public final long m1306getDirectionDownEK5gGoQ() {
         return DirectionDown;
     }
 
     /* renamed from: getDirectionCenter-EK5gGoQ  reason: not valid java name */
-    public final long m1304getDirectionCenterEK5gGoQ() {
+    public final long m1305getDirectionCenterEK5gGoQ() {
         return DirectionCenter;
     }
 
     /* renamed from: getPageUp-EK5gGoQ  reason: not valid java name */
-    public final long m1316getPageUpEK5gGoQ() {
+    public final long m1317getPageUpEK5gGoQ() {
         return PageUp;
     }
 
     /* renamed from: getPageDown-EK5gGoQ  reason: not valid java name */
-    public final long m1315getPageDownEK5gGoQ() {
+    public final long m1316getPageDownEK5gGoQ() {
         return PageDown;
     }
 
     /* renamed from: getMoveHome-EK5gGoQ  reason: not valid java name */
-    public final long m1313getMoveHomeEK5gGoQ() {
+    public final long m1314getMoveHomeEK5gGoQ() {
         return MoveHome;
     }
 
     /* renamed from: getMoveEnd-EK5gGoQ  reason: not valid java name */
-    public final long m1312getMoveEndEK5gGoQ() {
+    public final long m1313getMoveEndEK5gGoQ() {
         return MoveEnd;
     }
 
     /* renamed from: getInsert-EK5gGoQ  reason: not valid java name */
-    public final long m1311getInsertEK5gGoQ() {
+    public final long m1312getInsertEK5gGoQ() {
         return Insert;
     }
 
     /* renamed from: getEnter-EK5gGoQ  reason: not valid java name */
-    public final long m1309getEnterEK5gGoQ() {
+    public final long m1310getEnterEK5gGoQ() {
         return Enter;
     }
 
     /* renamed from: getNumPadEnter-EK5gGoQ  reason: not valid java name */
-    public final long m1314getNumPadEnterEK5gGoQ() {
+    public final long m1315getNumPadEnterEK5gGoQ() {
         return NumPadEnter;
     }
 
     /* renamed from: getBackspace-EK5gGoQ  reason: not valid java name */
-    public final long m1299getBackspaceEK5gGoQ() {
+    public final long m1300getBackspaceEK5gGoQ() {
         return Backspace;
     }
 
     /* renamed from: getDelete-EK5gGoQ  reason: not valid java name */
-    public final long m1303getDeleteEK5gGoQ() {
+    public final long m1304getDeleteEK5gGoQ() {
         return Delete;
     }
 
     /* renamed from: getPaste-EK5gGoQ  reason: not valid java name */
-    public final long m1317getPasteEK5gGoQ() {
+    public final long m1318getPasteEK5gGoQ() {
         return Paste;
     }
 
     /* renamed from: getCut-EK5gGoQ  reason: not valid java name */
-    public final long m1302getCutEK5gGoQ() {
+    public final long m1303getCutEK5gGoQ() {
         return Cut;
     }
 
     /* renamed from: getCopy-EK5gGoQ  reason: not valid java name */
-    public final long m1301getCopyEK5gGoQ() {
+    public final long m1302getCopyEK5gGoQ() {
         return Copy;
     }
 
     /* renamed from: getTab-EK5gGoQ  reason: not valid java name */
-    public final long m1318getTabEK5gGoQ() {
+    public final long m1319getTabEK5gGoQ() {
         return Tab;
     }
 }

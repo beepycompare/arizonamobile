@@ -56,7 +56,7 @@ public class StaticTextSelectionParams {
 
     public boolean getShouldClip() {
         TextLayoutResult textLayoutResult = this.textLayoutResult;
-        return (textLayoutResult == null || TextOverflow.m7921equalsimpl0(textLayoutResult.getLayoutInput().m7424getOverflowgIe3tQ8(), TextOverflow.Companion.m7934getVisiblegIe3tQ8()) || !textLayoutResult.getHasVisualOverflow()) ? false : true;
+        return (textLayoutResult == null || TextOverflow.m7922equalsimpl0(textLayoutResult.getLayoutInput().m7425getOverflowgIe3tQ8(), TextOverflow.Companion.m7935getVisiblegIe3tQ8()) || !textLayoutResult.getHasVisualOverflow()) ? false : true;
     }
 
     public static /* synthetic */ StaticTextSelectionParams copy$default(StaticTextSelectionParams staticTextSelectionParams, LayoutCoordinates layoutCoordinates, TextLayoutResult textLayoutResult, int i, Object obj) {

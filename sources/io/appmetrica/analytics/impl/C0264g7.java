@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 /* renamed from: io.appmetrica.analytics.impl.g7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0264g7 {
     public static volatile C0264g7 q;
     public final Context e;

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 /* renamed from: io.appmetrica.analytics.impl.gk  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AbstractC0277gk {
     public static ServiceComponentsInitializer a() {
         if ("".length() > 0) {

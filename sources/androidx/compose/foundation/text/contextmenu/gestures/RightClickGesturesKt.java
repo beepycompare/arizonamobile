@@ -74,8 +74,8 @@ public final class RightClickGesturesKt {
             return r1
         L45:
             androidx.compose.ui.input.pointer.PointerEvent r9 = (androidx.compose.ui.input.pointer.PointerEvent) r9
-            int r2 = r9.m6509getButtonsry648PA()
-            boolean r2 = androidx.compose.ui.input.pointer.PointerEvent_androidKt.m6544isSecondaryPressedaHzCxE(r2)
+            int r2 = r9.m6510getButtonsry648PA()
+            boolean r2 = androidx.compose.ui.input.pointer.PointerEvent_androidKt.m6545isSecondaryPressedaHzCxE(r2)
             if (r2 == 0) goto L39
             java.util.List r2 = r9.getChanges()
             r4 = r2

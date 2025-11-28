@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 import java.util.HashSet;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class L6 implements DataSendingRestrictionController {
 
     /* renamed from: a  reason: collision with root package name */

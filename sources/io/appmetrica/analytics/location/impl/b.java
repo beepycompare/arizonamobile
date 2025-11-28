@@ -9,7 +9,7 @@ import io.appmetrica.analytics.gpllibrary.internal.GplLibraryWrapper;
 import io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class b implements LastKnownLocationExtractor {
 
     /* renamed from: a  reason: collision with root package name */

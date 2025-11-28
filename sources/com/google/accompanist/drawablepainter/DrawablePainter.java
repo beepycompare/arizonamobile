@@ -65,7 +65,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
         this.drawable = drawable;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(0, null, 2, null);
         this.drawInvalidateTick$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5092boximpl(DrawablePainterKt.access$getIntrinsicSize(drawable)), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(DrawablePainterKt.access$getIntrinsicSize(drawable)), null, 2, null);
         this.drawableIntrinsicSize$delegate = mutableStateOf$default2;
         this.callback$delegate = LazyKt.lazy(new Function0() { // from class: com.google.accompanist.drawablepainter.DrawablePainter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
@@ -92,14 +92,14 @@ public final class DrawablePainter extends Painter implements RememberObserver {
     }
 
     /* renamed from: getDrawableIntrinsicSize-NH-jbRc  reason: not valid java name */
-    private final long m9398getDrawableIntrinsicSizeNHjbRc() {
-        return ((Size) this.drawableIntrinsicSize$delegate.getValue()).m5109unboximpl();
+    private final long m9456getDrawableIntrinsicSizeNHjbRc() {
+        return ((Size) this.drawableIntrinsicSize$delegate.getValue()).m5110unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setDrawableIntrinsicSize-uvyYCjk  reason: not valid java name */
-    public final void m9399setDrawableIntrinsicSizeuvyYCjk(long j) {
-        this.drawableIntrinsicSize$delegate.setValue(Size.m5092boximpl(j));
+    public final void m9457setDrawableIntrinsicSizeuvyYCjk(long j) {
+        this.drawableIntrinsicSize$delegate.setValue(Size.m5093boximpl(j));
     }
 
     private final Drawable.Callback getCallback() {
@@ -119,7 +119,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
                 DrawablePainter.this.setDrawInvalidateTick(drawInvalidateTick + 1);
                 DrawablePainter drawablePainter2 = DrawablePainter.this;
                 intrinsicSize = DrawablePainterKt.getIntrinsicSize(drawablePainter2.getDrawable());
-                drawablePainter2.m9399setDrawableIntrinsicSizeuvyYCjk(intrinsicSize);
+                drawablePainter2.m9457setDrawableIntrinsicSizeuvyYCjk(intrinsicSize);
             }
 
             @Override // android.graphics.drawable.Drawable.Callback
@@ -195,8 +195,8 @@ public final class DrawablePainter extends Painter implements RememberObserver {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5978getIntrinsicSizeNHjbRc() {
-        return m9398getDrawableIntrinsicSizeNHjbRc();
+    public long mo5979getIntrinsicSizeNHjbRc() {
+        return m9456getDrawableIntrinsicSizeNHjbRc();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -208,9 +208,9 @@ public final class DrawablePainter extends Painter implements RememberObserver {
         try {
             canvas.save();
             if (Build.VERSION.SDK_INT >= 28 && Build.VERSION.SDK_INT < 31 && (this.drawable instanceof AnimatedImageDrawable)) {
-                canvas.scale(Size.m5104getWidthimpl(drawScope.mo5858getSizeNHjbRc()) / Size.m5104getWidthimpl(mo5978getIntrinsicSizeNHjbRc()), Size.m5101getHeightimpl(drawScope.mo5858getSizeNHjbRc()) / Size.m5101getHeightimpl(mo5978getIntrinsicSizeNHjbRc()));
+                canvas.scale(Size.m5105getWidthimpl(drawScope.mo5859getSizeNHjbRc()) / Size.m5105getWidthimpl(mo5979getIntrinsicSizeNHjbRc()), Size.m5102getHeightimpl(drawScope.mo5859getSizeNHjbRc()) / Size.m5102getHeightimpl(mo5979getIntrinsicSizeNHjbRc()));
             } else {
-                this.drawable.setBounds(0, 0, MathKt.roundToInt(Size.m5104getWidthimpl(drawScope.mo5858getSizeNHjbRc())), MathKt.roundToInt(Size.m5101getHeightimpl(drawScope.mo5858getSizeNHjbRc())));
+                this.drawable.setBounds(0, 0, MathKt.roundToInt(Size.m5105getWidthimpl(drawScope.mo5859getSizeNHjbRc())), MathKt.roundToInt(Size.m5102getHeightimpl(drawScope.mo5859getSizeNHjbRc())));
             }
             this.drawable.draw(AndroidCanvas_androidKt.getNativeCanvas(canvas));
         } finally {

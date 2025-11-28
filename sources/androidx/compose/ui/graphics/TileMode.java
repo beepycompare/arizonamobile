@@ -11,46 +11,46 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TileMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Clamp = m5663constructorimpl(0);
-    private static final int Repeated = m5663constructorimpl(1);
-    private static final int Mirror = m5663constructorimpl(2);
-    private static final int Decal = m5663constructorimpl(3);
+    private static final int Clamp = m5664constructorimpl(0);
+    private static final int Repeated = m5664constructorimpl(1);
+    private static final int Mirror = m5664constructorimpl(2);
+    private static final int Decal = m5664constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TileMode m5662boximpl(int i) {
+    public static final /* synthetic */ TileMode m5663boximpl(int i) {
         return new TileMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5663constructorimpl(int i) {
+    public static int m5664constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5664equalsimpl(int i, Object obj) {
-        return (obj instanceof TileMode) && i == ((TileMode) obj).m5668unboximpl();
+    public static boolean m5665equalsimpl(int i, Object obj) {
+        return (obj instanceof TileMode) && i == ((TileMode) obj).m5669unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5665equalsimpl0(int i, int i2) {
+    public static final boolean m5666equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5666hashCodeimpl(int i) {
+    public static int m5667hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5664equalsimpl(this.value, obj);
+        return m5665equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5666hashCodeimpl(this.value);
+        return m5667hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5668unboximpl() {
+    public final /* synthetic */ int m5669unboximpl() {
         return this.value;
     }
 
@@ -66,22 +66,22 @@ public final class TileMode {
         }
 
         /* renamed from: getClamp-3opZhB0  reason: not valid java name */
-        public final int m5669getClamp3opZhB0() {
+        public final int m5670getClamp3opZhB0() {
             return TileMode.Clamp;
         }
 
         /* renamed from: getRepeated-3opZhB0  reason: not valid java name */
-        public final int m5672getRepeated3opZhB0() {
+        public final int m5673getRepeated3opZhB0() {
             return TileMode.Repeated;
         }
 
         /* renamed from: getMirror-3opZhB0  reason: not valid java name */
-        public final int m5671getMirror3opZhB0() {
+        public final int m5672getMirror3opZhB0() {
             return TileMode.Mirror;
         }
 
         /* renamed from: getDecal-3opZhB0  reason: not valid java name */
-        public final int m5670getDecal3opZhB0() {
+        public final int m5671getDecal3opZhB0() {
             return TileMode.Decal;
         }
     }
@@ -91,11 +91,11 @@ public final class TileMode {
     }
 
     public String toString() {
-        return m5667toStringimpl(this.value);
+        return m5668toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5667toStringimpl(int i) {
-        return m5665equalsimpl0(i, Clamp) ? "Clamp" : m5665equalsimpl0(i, Repeated) ? "Repeated" : m5665equalsimpl0(i, Mirror) ? "Mirror" : m5665equalsimpl0(i, Decal) ? "Decal" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5668toStringimpl(int i) {
+        return m5666equalsimpl0(i, Clamp) ? "Clamp" : m5666equalsimpl0(i, Repeated) ? "Repeated" : m5666equalsimpl0(i, Mirror) ? "Mirror" : m5666equalsimpl0(i, Decal) ? "Decal" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

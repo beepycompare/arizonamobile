@@ -14,7 +14,7 @@ public interface DrawContext {
     }
 
     /* renamed from: getSize-NH-jbRc */
-    long mo5779getSizeNHjbRc();
+    long mo5780getSizeNHjbRc();
 
     DrawTransform getTransform();
 
@@ -31,7 +31,7 @@ public interface DrawContext {
     }
 
     /* renamed from: setSize-uvyYCjk */
-    void mo5780setSizeuvyYCjk(long j);
+    void mo5781setSizeuvyYCjk(long j);
 
     default Canvas getCanvas() {
         return EmptyCanvas.INSTANCE;

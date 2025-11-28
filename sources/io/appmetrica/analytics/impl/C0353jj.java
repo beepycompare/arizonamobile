@@ -17,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* renamed from: io.appmetrica.analytics.impl.jj  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0353jj implements SdkEnvironmentProvider {
 
     /* renamed from: a  reason: collision with root package name */

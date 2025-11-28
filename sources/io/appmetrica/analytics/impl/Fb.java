@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.networktasks.internal.ConfigProvider;
 import kotlin.Lazy;
 import kotlin.LazyKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Fb implements ConfigProvider {
 
     /* renamed from: a  reason: collision with root package name */

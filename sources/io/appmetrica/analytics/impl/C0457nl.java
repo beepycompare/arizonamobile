@@ -4,7 +4,7 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 /* renamed from: io.appmetrica.analytics.impl.nl  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0457nl implements FunctionWithThrowable {
     @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
     public final Object apply(Object obj) {

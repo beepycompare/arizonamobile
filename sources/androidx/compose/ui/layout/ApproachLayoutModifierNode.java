@@ -14,10 +14,10 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes2.dex */
 public interface ApproachLayoutModifierNode extends LayoutModifierNode {
     /* renamed from: approachMeasure-3p2s80s */
-    MeasureResult mo85approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j);
+    MeasureResult mo86approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j);
 
     /* renamed from: isMeasurementApproachInProgress-ozmzZPI */
-    boolean mo86isMeasurementApproachInProgressozmzZPI(long j);
+    boolean mo87isMeasurementApproachInProgressozmzZPI(long j);
 
     default boolean isPlacementApproachInProgress(Placeable.PlacementScope placementScope, LayoutCoordinates layoutCoordinates) {
         return false;
@@ -25,9 +25,9 @@ public interface ApproachLayoutModifierNode extends LayoutModifierNode {
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    default MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.ApproachLayoutModifierNode$measure$1$1
+    default MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.ApproachLayoutModifierNode$measure$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -55,8 +55,8 @@ public interface ApproachLayoutModifierNode extends LayoutModifierNode {
             return NodeMeasuringIntrinsics.INSTANCE.minWidth$ui_release(new NodeMeasuringIntrinsics.ApproachMeasureBlock() { // from class: androidx.compose.ui.layout.ApproachLayoutModifierNode$minApproachIntrinsicWidth$1
                 @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.ApproachMeasureBlock
                 /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo6676measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
-                    return ApproachLayoutModifierNode.this.mo85approachMeasure3p2s80s(approachMeasureScope, measurable, j);
+                public final MeasureResult mo6677measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+                    return ApproachLayoutModifierNode.this.mo86approachMeasure3p2s80s(approachMeasureScope, measurable, j);
                 }
             }, approachIntrinsicMeasureScope, intrinsicMeasurable, i);
         }
@@ -72,8 +72,8 @@ public interface ApproachLayoutModifierNode extends LayoutModifierNode {
             return NodeMeasuringIntrinsics.INSTANCE.minHeight$ui_release(new NodeMeasuringIntrinsics.ApproachMeasureBlock() { // from class: androidx.compose.ui.layout.ApproachLayoutModifierNode$minApproachIntrinsicHeight$1
                 @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.ApproachMeasureBlock
                 /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo6676measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
-                    return ApproachLayoutModifierNode.this.mo85approachMeasure3p2s80s(approachMeasureScope, measurable, j);
+                public final MeasureResult mo6677measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+                    return ApproachLayoutModifierNode.this.mo86approachMeasure3p2s80s(approachMeasureScope, measurable, j);
                 }
             }, approachIntrinsicMeasureScope, intrinsicMeasurable, i);
         }
@@ -89,8 +89,8 @@ public interface ApproachLayoutModifierNode extends LayoutModifierNode {
             return NodeMeasuringIntrinsics.INSTANCE.maxWidth$ui_release(new NodeMeasuringIntrinsics.ApproachMeasureBlock() { // from class: androidx.compose.ui.layout.ApproachLayoutModifierNode$maxApproachIntrinsicWidth$1
                 @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.ApproachMeasureBlock
                 /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo6676measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
-                    return ApproachLayoutModifierNode.this.mo85approachMeasure3p2s80s(approachMeasureScope, measurable, j);
+                public final MeasureResult mo6677measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+                    return ApproachLayoutModifierNode.this.mo86approachMeasure3p2s80s(approachMeasureScope, measurable, j);
                 }
             }, approachIntrinsicMeasureScope, intrinsicMeasurable, i);
         }
@@ -106,8 +106,8 @@ public interface ApproachLayoutModifierNode extends LayoutModifierNode {
             return NodeMeasuringIntrinsics.INSTANCE.maxHeight$ui_release(new NodeMeasuringIntrinsics.ApproachMeasureBlock() { // from class: androidx.compose.ui.layout.ApproachLayoutModifierNode$maxApproachIntrinsicHeight$1
                 @Override // androidx.compose.ui.node.NodeMeasuringIntrinsics.ApproachMeasureBlock
                 /* renamed from: measure-3p2s80s  reason: not valid java name */
-                public final MeasureResult mo6676measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
-                    return ApproachLayoutModifierNode.this.mo85approachMeasure3p2s80s(approachMeasureScope, measurable, j);
+                public final MeasureResult mo6677measure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+                    return ApproachLayoutModifierNode.this.mo86approachMeasure3p2s80s(approachMeasureScope, measurable, j);
                 }
             }, approachIntrinsicMeasureScope, intrinsicMeasurable, i);
         }

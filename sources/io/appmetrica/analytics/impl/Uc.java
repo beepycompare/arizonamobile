@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract /* synthetic */ class Uc {
 
     /* renamed from: a  reason: collision with root package name */

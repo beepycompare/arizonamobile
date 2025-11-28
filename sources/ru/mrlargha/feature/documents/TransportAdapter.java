@@ -50,7 +50,7 @@ public final class TransportAdapter extends RecyclerView.Adapter<TransportViewHo
         Intrinsics.checkNotNullExpressionValue(transportItem, "get(...)");
         TransportItem transportItem2 = transportItem;
         DocumentsTransportItemBinding binding = holder.getBinding();
-        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + transportItem2.getImage_url()).into(binding.documentsTransportItemIc);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + transportItem2.getImage_url()).into(binding.documentsTransportItemIc);
         String number = transportItem2.getNumber();
         if (number == null || number.length() == 0) {
             binding.documentsTransportItemNumber.setVisibility(8);

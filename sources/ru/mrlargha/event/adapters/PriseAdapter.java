@@ -178,12 +178,12 @@ public final class PriseAdapter extends RecyclerView.Adapter<OldPriseViewHolder>
             this.binding.rarity.setBackgroundColor(Color.parseColor(str));
             if (this.this$0.isArizona()) {
                 Picasso picasso = Picasso.get();
-                String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-                picasso.load(resourceUrl + "/projects/arizona-rp/assets/images/donate/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
+                String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+                picasso.load(resourceUrl$default + "/projects/arizona-rp/assets/images/donate/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
             } else {
                 Picasso picasso2 = Picasso.get();
-                String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-                picasso2.load(resourceUrl2 + "/projects/rodina-rp/systems/battlepass/items/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
+                String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+                picasso2.load(resourceUrl$default2 + "/projects/rodina-rp/systems/battlepass/items/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
             }
             LinearLayout root = this.binding.getRoot();
             final PriseAdapter priseAdapter = this.this$0;

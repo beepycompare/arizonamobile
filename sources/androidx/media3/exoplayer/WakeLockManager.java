@@ -30,14 +30,14 @@ public final class WakeLockManager {
         this.wakeLockHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.WakeLockManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                WakeLockManager.this.m8661lambda$setEnabled$0$androidxmedia3exoplayerWakeLockManager(z, z2);
+                WakeLockManager.this.m8662lambda$setEnabled$0$androidxmedia3exoplayerWakeLockManager(z, z2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$0$androidx-media3-exoplayer-WakeLockManager  reason: not valid java name */
-    public /* synthetic */ void m8661lambda$setEnabled$0$androidxmedia3exoplayerWakeLockManager(boolean z, boolean z2) {
+    public /* synthetic */ void m8662lambda$setEnabled$0$androidxmedia3exoplayerWakeLockManager(boolean z, boolean z2) {
         this.wakeLockManagerInternal.updateWakeLock(z, z2);
     }
 
@@ -50,7 +50,7 @@ public final class WakeLockManager {
             this.wakeLockHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.WakeLockManager$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WakeLockManager.this.m8662lambda$setStayAwake$1$androidxmedia3exoplayerWakeLockManager(z);
+                    WakeLockManager.this.m8663lambda$setStayAwake$1$androidxmedia3exoplayerWakeLockManager(z);
                 }
             });
         }
@@ -58,7 +58,7 @@ public final class WakeLockManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setStayAwake$1$androidx-media3-exoplayer-WakeLockManager  reason: not valid java name */
-    public /* synthetic */ void m8662lambda$setStayAwake$1$androidxmedia3exoplayerWakeLockManager(boolean z) {
+    public /* synthetic */ void m8663lambda$setStayAwake$1$androidxmedia3exoplayerWakeLockManager(boolean z) {
         this.wakeLockManagerInternal.updateWakeLock(true, z);
     }
 

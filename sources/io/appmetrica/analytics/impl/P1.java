@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.os.Bundle;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class P1 implements InterfaceC0328ik {
     public static final O1 b = new O1();
     public static final int c = 1;

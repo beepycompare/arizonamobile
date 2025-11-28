@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 /* renamed from: io.appmetrica.analytics.impl.e  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0204e {
     public static final long g = TimeUnit.SECONDS.toMillis(1);
     public static final String h = "WatchDog-" + Gd.f490a.incrementAndGet();

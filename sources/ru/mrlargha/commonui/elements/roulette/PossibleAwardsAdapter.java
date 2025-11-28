@@ -33,6 +33,7 @@ public final class PossibleAwardsAdapter extends RecyclerView.Adapter<PossibleAw
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(PossibleAwardsViewHolder holder, int i) {
+        CaseAward caseAward;
         Intrinsics.checkNotNullParameter(holder, "holder");
         SharedPreferences sharedPreferences = this.sharedPreferences;
         if (sharedPreferences == null) {
@@ -40,9 +41,8 @@ public final class PossibleAwardsAdapter extends RecyclerView.Adapter<PossibleAw
             sharedPreferences = null;
         }
         boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        CaseAward caseAward = this.caseAwards.get(i);
-        Intrinsics.checkNotNullExpressionValue(caseAward, "get(...)");
-        CaseAward caseAward2 = caseAward;
+        CaseAward caseAward2 = this.caseAwards.get(i);
+        Intrinsics.checkNotNullExpressionValue(caseAward2, "get(...)");
         CaseRouletteAwardItemBinding binding = holder.getBinding();
         int rarity = caseAward2.getRarity();
         if (rarity == 0) {
@@ -62,14 +62,10 @@ public final class PossibleAwardsAdapter extends RecyclerView.Adapter<PossibleAw
             binding.itemRarityGlow.setImageResource(R.drawable.case_roulette_rarity_4_glow);
         }
         if (z) {
-            Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "projects/arizona-rp/assets/images/donate/" + caseAward2.getUrl()).into(binding.itemIc);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/" + caseAward.getUrl()).into(binding.itemIc);
             return;
         }
-        Picasso picasso2 = Picasso.get();
-        String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso2.load(resourceUrl2 + "projects/rodina-rp/systems/battlepass/items/" + caseAward2.getUrl()).into(binding.itemIc);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/items/" + caseAward.getUrl()).into(binding.itemIc);
     }
 
     public final void clearAwards() {

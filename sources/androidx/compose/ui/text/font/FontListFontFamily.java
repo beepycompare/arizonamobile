@@ -142,7 +142,7 @@ public final class FontListFontFamily extends FileBasedFontFamily implements Lis
     }
 
     /* renamed from: removeFirst  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m7552removeFirst() {
+    public /* bridge */ /* synthetic */ Object m7553removeFirst() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -151,7 +151,7 @@ public final class FontListFontFamily extends FileBasedFontFamily implements Lis
     }
 
     /* renamed from: removeLast  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m7553removeLast() {
+    public /* bridge */ /* synthetic */ Object m7554removeLast() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

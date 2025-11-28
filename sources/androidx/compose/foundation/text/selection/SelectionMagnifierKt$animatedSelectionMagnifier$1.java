@@ -63,10 +63,10 @@ public final class SelectionMagnifierKt$animatedSelectionMagnifier$1 implements 
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset invoke$lambda$2$lambda$1(State state) {
-        return Offset.m5024boximpl(invoke$lambda$0(state));
+        return Offset.m5025boximpl(invoke$lambda$0(state));
     }
 
     private static final long invoke$lambda$0(State<Offset> state) {
-        return state.getValue().m5045unboximpl();
+        return state.getValue().m5046unboximpl();
     }
 }

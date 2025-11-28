@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* renamed from: io.appmetrica.analytics.impl.pj  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0505pj {
 
     /* renamed from: a  reason: collision with root package name */

@@ -43,15 +43,15 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
 
     @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
     public final Object invoke(final PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-        long m5051getZeroF1C5BW0;
+        long m5052getZeroF1C5BW0;
         final VelocityTracker velocityTracker = new VelocityTracker();
         final Ref.LongRef longRef = new Ref.LongRef();
         if (ComposeFoundationFlags.isAdjustPointerInputChangeOffsetForVelocityTrackerEnabled) {
-            m5051getZeroF1C5BW0 = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(this.this$0));
+            m5052getZeroF1C5BW0 = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(this.this$0));
         } else {
-            m5051getZeroF1C5BW0 = Offset.Companion.m5051getZeroF1C5BW0();
+            m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
         }
-        longRef.element = m5051getZeroF1C5BW0;
+        longRef.element = m5052getZeroF1C5BW0;
         final DragGestureNode dragGestureNode = this.this$0;
         Function3 function3 = new Function3() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
@@ -105,7 +105,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         boolean z;
         Channel channel;
         Channel channel2;
-        dragGestureNode.nodeOffset = Offset.Companion.m5051getZeroF1C5BW0();
+        dragGestureNode.nodeOffset = Offset.Companion.m5052getZeroF1C5BW0();
         if (dragGestureNode.getCanDrag().invoke(pointerInputChange).booleanValue()) {
             z = dragGestureNode.isListeningForEvents;
             if (!z) {
@@ -116,10 +116,10 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
                 dragGestureNode.startListeningForEvents();
             }
             VelocityTrackerKt.addPointerInputChange(velocityTracker, pointerInputChange);
-            long m5039minusMKHz9U = Offset.m5039minusMKHz9U(pointerInputChange2.m6569getPositionF1C5BW0(), offset.m5045unboximpl());
+            long m5040minusMKHz9U = Offset.m5040minusMKHz9U(pointerInputChange2.m6570getPositionF1C5BW0(), offset.m5046unboximpl());
             channel = dragGestureNode.channel;
             if (channel != null) {
-                ChannelResult.m11374boximpl(channel.mo8867trySendJP2dKIU(new DragEvent.DragStarted(m5039minusMKHz9U, null)));
+                ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragStarted(m5040minusMKHz9U, null)));
             }
         }
         return Unit.INSTANCE;
@@ -128,15 +128,15 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invoke$lambda$1(VelocityTracker velocityTracker, PointerInputScope pointerInputScope, DragGestureNode dragGestureNode, PointerInputChange pointerInputChange) {
         Channel channel;
-        long m516toValidVelocityTH1AsA0;
+        long m517toValidVelocityTH1AsA0;
         VelocityTrackerKt.addPointerInputChange(velocityTracker, pointerInputChange);
         float maximumFlingVelocity = pointerInputScope.getViewConfiguration().getMaximumFlingVelocity();
-        long m6668calculateVelocityAH228Gc = velocityTracker.m6668calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
+        long m6669calculateVelocityAH228Gc = velocityTracker.m6669calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
         velocityTracker.resetTracking();
         channel = dragGestureNode.channel;
         if (channel != null) {
-            m516toValidVelocityTH1AsA0 = DraggableKt.m516toValidVelocityTH1AsA0(m6668calculateVelocityAH228Gc);
-            ChannelResult.m11374boximpl(channel.mo8867trySendJP2dKIU(new DragEvent.DragStopped(m516toValidVelocityTH1AsA0, null)));
+            m517toValidVelocityTH1AsA0 = DraggableKt.m517toValidVelocityTH1AsA0(m6669calculateVelocityAH228Gc);
+            ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragStopped(m517toValidVelocityTH1AsA0, null)));
         }
         return Unit.INSTANCE;
     }
@@ -146,7 +146,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         Channel channel;
         channel = dragGestureNode.channel;
         if (channel != null) {
-            ChannelResult.m11374boximpl(channel.mo8867trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+            ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
         }
         return Unit.INSTANCE;
     }
@@ -163,18 +163,18 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         long j2;
         if (ComposeFoundationFlags.isAdjustPointerInputChangeOffsetForVelocityTrackerEnabled) {
             long positionOnScreen = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(dragGestureNode));
-            if (!Offset.m5032equalsimpl0(positionOnScreen, longRef.element)) {
-                long m5039minusMKHz9U = Offset.m5039minusMKHz9U(positionOnScreen, longRef.element);
+            if (!Offset.m5033equalsimpl0(positionOnScreen, longRef.element)) {
+                long m5040minusMKHz9U = Offset.m5040minusMKHz9U(positionOnScreen, longRef.element);
                 j2 = dragGestureNode.nodeOffset;
-                dragGestureNode.nodeOffset = Offset.m5040plusMKHz9U(j2, m5039minusMKHz9U);
+                dragGestureNode.nodeOffset = Offset.m5041plusMKHz9U(j2, m5040minusMKHz9U);
             }
             longRef.element = positionOnScreen;
         }
         j = dragGestureNode.nodeOffset;
-        VelocityTrackerKt.m6671addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, j);
+        VelocityTrackerKt.m6672addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, j);
         channel = dragGestureNode.channel;
         if (channel != null) {
-            ChannelResult.m11374boximpl(channel.mo8867trySendJP2dKIU(new DragEvent.DragDelta(offset.m5045unboximpl(), null)));
+            ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragDelta(offset.m5046unboximpl(), null)));
         }
         return Unit.INSTANCE;
     }
@@ -254,7 +254,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
             } catch (CancellationException e) {
                 channel = this.this$0.channel;
                 if (channel != null) {
-                    ChannelResult.m11374boximpl(channel.mo8867trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+                    ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
                 }
                 if (!CoroutineScopeKt.isActive(r1)) {
                     throw e;

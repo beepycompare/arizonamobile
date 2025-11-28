@@ -105,7 +105,7 @@ public final class DonateMainPage extends DonatePage {
                 DonateMainPage.initialize$lambda$0$0();
             }
         });
-        donateMainPageBinding.viewPager.setAdapter(new DonateBottomItemsAdapter(sortItemList.getSecond(), new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$$ExternalSyntheticLambda1
+        donateMainPageBinding.viewPager.setAdapter(new DonateBottomItemsAdapter(CollectionsKt.take(sortItemList.getSecond(), 3), new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit initialize$lambda$0$1;

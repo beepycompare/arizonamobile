@@ -67,13 +67,13 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     private AndroidEdgeEffectOverscrollEffect(Context context, Density density, long j, PaddingValues paddingValues) {
         GlowOverscrollNode glowOverscrollNode;
         this.density = density;
-        this.pointerPosition = Offset.Companion.m5050getUnspecifiedF1C5BW0();
-        EdgeEffectWrapper edgeEffectWrapper = new EdgeEffectWrapper(context, ColorKt.m5333toArgb8_81llA(j));
+        this.pointerPosition = Offset.Companion.m5051getUnspecifiedF1C5BW0();
+        EdgeEffectWrapper edgeEffectWrapper = new EdgeEffectWrapper(context, ColorKt.m5334toArgb8_81llA(j));
         this.edgeEffectWrapper = edgeEffectWrapper;
         this.redrawSignal = SnapshotStateKt.mutableStateOf(Unit.INSTANCE, SnapshotStateKt.neverEqualPolicy());
         this.invalidationEnabled = true;
-        this.containerSize = Size.Companion.m5113getZeroNHjbRc();
-        this.pointerId = PointerId.m6549constructorimpl(-1L);
+        this.containerSize = Size.Companion.m5114getZeroNHjbRc();
+        this.pointerId = PointerId.m6550constructorimpl(-1L);
         SuspendingPointerInputModifierNode SuspendingPointerInputModifierNode = SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.AndroidEdgeEffectOverscrollEffect$pointerInputNode$1
 
             /* compiled from: AndroidOverscroll.android.kt */
@@ -156,9 +156,9 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
                                 break;
                             }
                             obj2 = arrayList2.get(i2);
-                            long m6567getIdJ3iCeTQ = ((PointerInputChange) obj2).m6567getIdJ3iCeTQ();
+                            long m6568getIdJ3iCeTQ = ((PointerInputChange) obj2).m6568getIdJ3iCeTQ();
                             j = androidEdgeEffectOverscrollEffect.pointerId;
-                            if (PointerId.m6551equalsimpl0(m6567getIdJ3iCeTQ, j)) {
+                            if (PointerId.m6552equalsimpl0(m6568getIdJ3iCeTQ, j)) {
                                 break;
                             }
                             i2++;
@@ -168,11 +168,11 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
                             pointerInputChange2 = (PointerInputChange) CollectionsKt.firstOrNull((List<? extends Object>) arrayList2);
                         }
                         if (pointerInputChange2 != null) {
-                            this.this$0.pointerId = pointerInputChange2.m6567getIdJ3iCeTQ();
-                            this.this$0.pointerPosition = pointerInputChange2.m6569getPositionF1C5BW0();
+                            this.this$0.pointerId = pointerInputChange2.m6568getIdJ3iCeTQ();
+                            this.this$0.pointerPosition = pointerInputChange2.m6570getPositionF1C5BW0();
                         }
                         if (arrayList3.isEmpty()) {
-                            this.this$0.pointerId = PointerId.m6549constructorimpl(-1L);
+                            this.this$0.pointerId = PointerId.m6550constructorimpl(-1L);
                             return Unit.INSTANCE;
                         }
                         this.L$0 = awaitPointerEventScope;
@@ -180,8 +180,8 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
                         obj = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope, null, this, 1, null);
                     }
                     PointerInputChange pointerInputChange3 = (PointerInputChange) obj;
-                    this.this$0.pointerId = pointerInputChange3.m6567getIdJ3iCeTQ();
-                    this.this$0.pointerPosition = pointerInputChange3.m6569getPositionF1C5BW0();
+                    this.this$0.pointerId = pointerInputChange3.m6568getIdJ3iCeTQ();
+                    this.this$0.pointerPosition = pointerInputChange3.m6570getPositionF1C5BW0();
                     this.L$0 = awaitPointerEventScope;
                     this.label = 2;
                     obj = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope, null, this, 1, null);
@@ -231,202 +231,202 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public long mo246applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1) {
-        float m240pullBottomk4lQ0M;
+    public long mo247applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1) {
+        float m241pullBottomk4lQ0M;
         float intBitsToFloat;
         int i2;
-        float m242pullRightk4lQ0M;
+        float m243pullRightk4lQ0M;
         float intBitsToFloat2;
-        long m5027constructorimpl;
-        long m5039minusMKHz9U;
+        long m5028constructorimpl;
+        long m5040minusMKHz9U;
         EdgeEffectWrapper edgeEffectWrapper;
         long j2;
         boolean z;
         boolean z2;
         int i3;
         boolean z3;
-        if (Size.m5106isEmptyimpl(this.containerSize)) {
-            return function1.invoke(Offset.m5024boximpl(j)).m5045unboximpl();
+        if (Size.m5107isEmptyimpl(this.containerSize)) {
+            return function1.invoke(Offset.m5025boximpl(j)).m5046unboximpl();
         }
         if (!this.scrollCycleInProgress) {
             if (this.edgeEffectWrapper.isLeftStretched()) {
-                m241pullLeftk4lQ0M(Offset.Companion.m5051getZeroF1C5BW0());
+                m242pullLeftk4lQ0M(Offset.Companion.m5052getZeroF1C5BW0());
             }
             if (this.edgeEffectWrapper.isRightStretched()) {
-                m242pullRightk4lQ0M(Offset.Companion.m5051getZeroF1C5BW0());
+                m243pullRightk4lQ0M(Offset.Companion.m5052getZeroF1C5BW0());
             }
             if (this.edgeEffectWrapper.isTopStretched()) {
-                m243pullTopk4lQ0M(Offset.Companion.m5051getZeroF1C5BW0());
+                m244pullTopk4lQ0M(Offset.Companion.m5052getZeroF1C5BW0());
             }
             if (this.edgeEffectWrapper.isBottomStretched()) {
-                m240pullBottomk4lQ0M(Offset.Companion.m5051getZeroF1C5BW0());
+                m241pullBottomk4lQ0M(Offset.Companion.m5052getZeroF1C5BW0());
             }
             this.scrollCycleInProgress = true;
         }
-        float m263access$destretchMultiplierGyEprt8 = AndroidOverscroll_androidKt.m263access$destretchMultiplierGyEprt8(i);
-        long m5042timestuRUvjQ = Offset.m5042timestuRUvjQ(j, m263access$destretchMultiplierGyEprt8);
+        float m264access$destretchMultiplierGyEprt8 = AndroidOverscroll_androidKt.m264access$destretchMultiplierGyEprt8(i);
+        long m5043timestuRUvjQ = Offset.m5043timestuRUvjQ(j, m264access$destretchMultiplierGyEprt8);
         int i4 = (int) (j & 4294967295L);
         if (Float.intBitsToFloat(i4) != 0.0f) {
             if (this.edgeEffectWrapper.isTopStretched() && Float.intBitsToFloat(i4) < 0.0f) {
-                m240pullBottomk4lQ0M = m243pullTopk4lQ0M(m5042timestuRUvjQ);
+                m241pullBottomk4lQ0M = m244pullTopk4lQ0M(m5043timestuRUvjQ);
                 if (!this.edgeEffectWrapper.isTopStretched()) {
                     this.edgeEffectWrapper.getOrCreateTopEffect().finish();
                 }
-                if (m240pullBottomk4lQ0M == Float.intBitsToFloat((int) (m5042timestuRUvjQ & 4294967295L))) {
+                if (m241pullBottomk4lQ0M == Float.intBitsToFloat((int) (m5043timestuRUvjQ & 4294967295L))) {
                     intBitsToFloat = Float.intBitsToFloat(i4);
                 }
-                intBitsToFloat = m240pullBottomk4lQ0M / m263access$destretchMultiplierGyEprt8;
+                intBitsToFloat = m241pullBottomk4lQ0M / m264access$destretchMultiplierGyEprt8;
             } else if (this.edgeEffectWrapper.isBottomStretched() && Float.intBitsToFloat(i4) > 0.0f) {
-                m240pullBottomk4lQ0M = m240pullBottomk4lQ0M(m5042timestuRUvjQ);
+                m241pullBottomk4lQ0M = m241pullBottomk4lQ0M(m5043timestuRUvjQ);
                 if (!this.edgeEffectWrapper.isBottomStretched()) {
                     this.edgeEffectWrapper.getOrCreateBottomEffect().finish();
                 }
-                if (m240pullBottomk4lQ0M == Float.intBitsToFloat((int) (m5042timestuRUvjQ & 4294967295L))) {
+                if (m241pullBottomk4lQ0M == Float.intBitsToFloat((int) (m5043timestuRUvjQ & 4294967295L))) {
                     intBitsToFloat = Float.intBitsToFloat(i4);
                 }
-                intBitsToFloat = m240pullBottomk4lQ0M / m263access$destretchMultiplierGyEprt8;
+                intBitsToFloat = m241pullBottomk4lQ0M / m264access$destretchMultiplierGyEprt8;
             }
             i2 = (int) (j >> 32);
             if (Float.intBitsToFloat(i2) != 0.0f) {
                 if (this.edgeEffectWrapper.isLeftStretched() && Float.intBitsToFloat(i2) < 0.0f) {
-                    m242pullRightk4lQ0M = m241pullLeftk4lQ0M(m5042timestuRUvjQ);
+                    m243pullRightk4lQ0M = m242pullLeftk4lQ0M(m5043timestuRUvjQ);
                     if (!this.edgeEffectWrapper.isLeftStretched()) {
                         this.edgeEffectWrapper.getOrCreateLeftEffect().finish();
                     }
-                    if (m242pullRightk4lQ0M == Float.intBitsToFloat((int) (m5042timestuRUvjQ >> 32))) {
+                    if (m243pullRightk4lQ0M == Float.intBitsToFloat((int) (m5043timestuRUvjQ >> 32))) {
                         intBitsToFloat2 = Float.intBitsToFloat(i2);
                     }
-                    intBitsToFloat2 = m242pullRightk4lQ0M / m263access$destretchMultiplierGyEprt8;
+                    intBitsToFloat2 = m243pullRightk4lQ0M / m264access$destretchMultiplierGyEprt8;
                 } else if (this.edgeEffectWrapper.isRightStretched() && Float.intBitsToFloat(i2) > 0.0f) {
-                    m242pullRightk4lQ0M = m242pullRightk4lQ0M(m5042timestuRUvjQ);
+                    m243pullRightk4lQ0M = m243pullRightk4lQ0M(m5043timestuRUvjQ);
                     if (!this.edgeEffectWrapper.isRightStretched()) {
                         this.edgeEffectWrapper.getOrCreateRightEffect().finish();
                     }
-                    if (m242pullRightk4lQ0M == Float.intBitsToFloat((int) (m5042timestuRUvjQ >> 32))) {
+                    if (m243pullRightk4lQ0M == Float.intBitsToFloat((int) (m5043timestuRUvjQ >> 32))) {
                         intBitsToFloat2 = Float.intBitsToFloat(i2);
                     }
-                    intBitsToFloat2 = m242pullRightk4lQ0M / m263access$destretchMultiplierGyEprt8;
+                    intBitsToFloat2 = m243pullRightk4lQ0M / m264access$destretchMultiplierGyEprt8;
                 }
-                m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
-                if (!Offset.m5032equalsimpl0(m5027constructorimpl, Offset.Companion.m5051getZeroF1C5BW0())) {
+                m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+                if (!Offset.m5033equalsimpl0(m5028constructorimpl, Offset.Companion.m5052getZeroF1C5BW0())) {
                     invalidateOverscroll$foundation_release();
                 }
-                m5039minusMKHz9U = Offset.m5039minusMKHz9U(j, m5027constructorimpl);
-                long m5045unboximpl = function1.invoke(Offset.m5024boximpl(m5039minusMKHz9U)).m5045unboximpl();
-                long m5039minusMKHz9U2 = Offset.m5039minusMKHz9U(m5039minusMKHz9U, m5045unboximpl);
-                if ((Float.intBitsToFloat((int) (m5039minusMKHz9U >> 32)) == 0.0f || Float.intBitsToFloat((int) (m5039minusMKHz9U & 4294967295L)) != 0.0f) && (Float.intBitsToFloat((int) (m5045unboximpl >> 32)) != 0.0f || Float.intBitsToFloat((int) (m5045unboximpl & 4294967295L)) != 0.0f)) {
+                m5040minusMKHz9U = Offset.m5040minusMKHz9U(j, m5028constructorimpl);
+                long m5046unboximpl = function1.invoke(Offset.m5025boximpl(m5040minusMKHz9U)).m5046unboximpl();
+                long m5040minusMKHz9U2 = Offset.m5040minusMKHz9U(m5040minusMKHz9U, m5046unboximpl);
+                if ((Float.intBitsToFloat((int) (m5040minusMKHz9U >> 32)) == 0.0f || Float.intBitsToFloat((int) (m5040minusMKHz9U & 4294967295L)) != 0.0f) && (Float.intBitsToFloat((int) (m5046unboximpl >> 32)) != 0.0f || Float.intBitsToFloat((int) (m5046unboximpl & 4294967295L)) != 0.0f)) {
                     edgeEffectWrapper = this.edgeEffectWrapper;
                     if (!edgeEffectWrapper.isLeftStretched() || edgeEffectWrapper.isTopStretched() || edgeEffectWrapper.isRightStretched() || edgeEffectWrapper.isBottomStretched()) {
                         animateToReleaseIfNeeded();
                     }
                 }
-                if (NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6462getUserInputWNlRxjI())) {
-                    int i5 = (int) (m5039minusMKHz9U2 >> 32);
+                if (NestedScrollSource.m6451equalsimpl0(i, NestedScrollSource.Companion.m6463getUserInputWNlRxjI())) {
+                    int i5 = (int) (m5040minusMKHz9U2 >> 32);
                     if (Float.intBitsToFloat(i5) > 0.5f) {
-                        m241pullLeftk4lQ0M(m5039minusMKHz9U2);
+                        m242pullLeftk4lQ0M(m5040minusMKHz9U2);
                     } else if (Float.intBitsToFloat(i5) < -0.5f) {
-                        m242pullRightk4lQ0M(m5039minusMKHz9U2);
+                        m243pullRightk4lQ0M(m5040minusMKHz9U2);
                     } else {
-                        j2 = m5027constructorimpl;
+                        j2 = m5028constructorimpl;
                         z2 = false;
-                        i3 = (int) (m5039minusMKHz9U2 & 4294967295L);
+                        i3 = (int) (m5040minusMKHz9U2 & 4294967295L);
                         if (Float.intBitsToFloat(i3) <= 0.5f) {
-                            m243pullTopk4lQ0M(m5039minusMKHz9U2);
+                            m244pullTopk4lQ0M(m5040minusMKHz9U2);
                         } else if (Float.intBitsToFloat(i3) < -0.5f) {
-                            m240pullBottomk4lQ0M(m5039minusMKHz9U2);
+                            m241pullBottomk4lQ0M(m5040minusMKHz9U2);
                         } else {
                             z3 = false;
                             if (!z2 || z3) {
                                 z = true;
-                                if (!Offset.m5032equalsimpl0(m5039minusMKHz9U, Offset.Companion.m5051getZeroF1C5BW0())) {
-                                    z = m244releaseOppositeOverscrollk4lQ0M(j) || z;
+                                if (!Offset.m5033equalsimpl0(m5040minusMKHz9U, Offset.Companion.m5052getZeroF1C5BW0())) {
+                                    z = m245releaseOppositeOverscrollk4lQ0M(j) || z;
                                 }
                                 if (z) {
                                     invalidateOverscroll$foundation_release();
                                 }
-                                return Offset.m5040plusMKHz9U(j2, m5045unboximpl);
+                                return Offset.m5041plusMKHz9U(j2, m5046unboximpl);
                             }
                         }
                         z3 = true;
                         if (!z2) {
                         }
                         z = true;
-                        if (!Offset.m5032equalsimpl0(m5039minusMKHz9U, Offset.Companion.m5051getZeroF1C5BW0())) {
+                        if (!Offset.m5033equalsimpl0(m5040minusMKHz9U, Offset.Companion.m5052getZeroF1C5BW0())) {
                         }
                         if (z) {
                         }
-                        return Offset.m5040plusMKHz9U(j2, m5045unboximpl);
+                        return Offset.m5041plusMKHz9U(j2, m5046unboximpl);
                     }
                     z2 = true;
-                    j2 = m5027constructorimpl;
-                    i3 = (int) (m5039minusMKHz9U2 & 4294967295L);
+                    j2 = m5028constructorimpl;
+                    i3 = (int) (m5040minusMKHz9U2 & 4294967295L);
                     if (Float.intBitsToFloat(i3) <= 0.5f) {
                     }
                     z3 = true;
                     if (!z2) {
                     }
                     z = true;
-                    if (!Offset.m5032equalsimpl0(m5039minusMKHz9U, Offset.Companion.m5051getZeroF1C5BW0())) {
+                    if (!Offset.m5033equalsimpl0(m5040minusMKHz9U, Offset.Companion.m5052getZeroF1C5BW0())) {
                     }
                     if (z) {
                     }
-                    return Offset.m5040plusMKHz9U(j2, m5045unboximpl);
+                    return Offset.m5041plusMKHz9U(j2, m5046unboximpl);
                 }
-                j2 = m5027constructorimpl;
+                j2 = m5028constructorimpl;
                 z = false;
-                if (!Offset.m5032equalsimpl0(m5039minusMKHz9U, Offset.Companion.m5051getZeroF1C5BW0())) {
+                if (!Offset.m5033equalsimpl0(m5040minusMKHz9U, Offset.Companion.m5052getZeroF1C5BW0())) {
                 }
                 if (z) {
                 }
-                return Offset.m5040plusMKHz9U(j2, m5045unboximpl);
+                return Offset.m5041plusMKHz9U(j2, m5046unboximpl);
             }
             intBitsToFloat2 = 0.0f;
-            m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
-            if (!Offset.m5032equalsimpl0(m5027constructorimpl, Offset.Companion.m5051getZeroF1C5BW0())) {
+            m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+            if (!Offset.m5033equalsimpl0(m5028constructorimpl, Offset.Companion.m5052getZeroF1C5BW0())) {
             }
-            m5039minusMKHz9U = Offset.m5039minusMKHz9U(j, m5027constructorimpl);
-            long m5045unboximpl2 = function1.invoke(Offset.m5024boximpl(m5039minusMKHz9U)).m5045unboximpl();
-            long m5039minusMKHz9U22 = Offset.m5039minusMKHz9U(m5039minusMKHz9U, m5045unboximpl2);
-            if (Float.intBitsToFloat((int) (m5039minusMKHz9U >> 32)) == 0.0f) {
+            m5040minusMKHz9U = Offset.m5040minusMKHz9U(j, m5028constructorimpl);
+            long m5046unboximpl2 = function1.invoke(Offset.m5025boximpl(m5040minusMKHz9U)).m5046unboximpl();
+            long m5040minusMKHz9U22 = Offset.m5040minusMKHz9U(m5040minusMKHz9U, m5046unboximpl2);
+            if (Float.intBitsToFloat((int) (m5040minusMKHz9U >> 32)) == 0.0f) {
             }
             edgeEffectWrapper = this.edgeEffectWrapper;
             if (!edgeEffectWrapper.isLeftStretched()) {
             }
             animateToReleaseIfNeeded();
-            if (NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6462getUserInputWNlRxjI())) {
+            if (NestedScrollSource.m6451equalsimpl0(i, NestedScrollSource.Companion.m6463getUserInputWNlRxjI())) {
             }
             z = false;
-            if (!Offset.m5032equalsimpl0(m5039minusMKHz9U, Offset.Companion.m5051getZeroF1C5BW0())) {
+            if (!Offset.m5033equalsimpl0(m5040minusMKHz9U, Offset.Companion.m5052getZeroF1C5BW0())) {
             }
             if (z) {
             }
-            return Offset.m5040plusMKHz9U(j2, m5045unboximpl2);
+            return Offset.m5041plusMKHz9U(j2, m5046unboximpl2);
         }
         intBitsToFloat = 0.0f;
         i2 = (int) (j >> 32);
         if (Float.intBitsToFloat(i2) != 0.0f) {
         }
         intBitsToFloat2 = 0.0f;
-        m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
-        if (!Offset.m5032equalsimpl0(m5027constructorimpl, Offset.Companion.m5051getZeroF1C5BW0())) {
+        m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+        if (!Offset.m5033equalsimpl0(m5028constructorimpl, Offset.Companion.m5052getZeroF1C5BW0())) {
         }
-        m5039minusMKHz9U = Offset.m5039minusMKHz9U(j, m5027constructorimpl);
-        long m5045unboximpl22 = function1.invoke(Offset.m5024boximpl(m5039minusMKHz9U)).m5045unboximpl();
-        long m5039minusMKHz9U222 = Offset.m5039minusMKHz9U(m5039minusMKHz9U, m5045unboximpl22);
-        if (Float.intBitsToFloat((int) (m5039minusMKHz9U >> 32)) == 0.0f) {
+        m5040minusMKHz9U = Offset.m5040minusMKHz9U(j, m5028constructorimpl);
+        long m5046unboximpl22 = function1.invoke(Offset.m5025boximpl(m5040minusMKHz9U)).m5046unboximpl();
+        long m5040minusMKHz9U222 = Offset.m5040minusMKHz9U(m5040minusMKHz9U, m5046unboximpl22);
+        if (Float.intBitsToFloat((int) (m5040minusMKHz9U >> 32)) == 0.0f) {
         }
         edgeEffectWrapper = this.edgeEffectWrapper;
         if (!edgeEffectWrapper.isLeftStretched()) {
         }
         animateToReleaseIfNeeded();
-        if (NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6462getUserInputWNlRxjI())) {
+        if (NestedScrollSource.m6451equalsimpl0(i, NestedScrollSource.Companion.m6463getUserInputWNlRxjI())) {
         }
         z = false;
-        if (!Offset.m5032equalsimpl0(m5039minusMKHz9U, Offset.Companion.m5051getZeroF1C5BW0())) {
+        if (!Offset.m5033equalsimpl0(m5040minusMKHz9U, Offset.Companion.m5052getZeroF1C5BW0())) {
         }
         if (z) {
         }
-        return Offset.m5040plusMKHz9U(j2, m5045unboximpl22);
+        return Offset.m5041plusMKHz9U(j2, m5046unboximpl22);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0052, code lost:
@@ -442,12 +442,12 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo245applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation) {
+    public Object mo246applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation) {
         AndroidEdgeEffectOverscrollEffect$applyToFling$1 androidEdgeEffectOverscrollEffect$applyToFling$1;
         int i;
         float f;
         float f2;
-        long m8236minusAH228Gc;
+        long m8237minusAH228Gc;
         if (continuation instanceof AndroidEdgeEffectOverscrollEffect$applyToFling$1) {
             androidEdgeEffectOverscrollEffect$applyToFling$1 = (AndroidEdgeEffectOverscrollEffect$applyToFling$1) continuation;
             if ((androidEdgeEffectOverscrollEffect$applyToFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -460,19 +460,19 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
                         ResultKt.throwOnFailure(obj);
                         return Unit.INSTANCE;
                     } else if (i == 2) {
-                        m8236minusAH228Gc = androidEdgeEffectOverscrollEffect$applyToFling$1.J$0;
+                        m8237minusAH228Gc = androidEdgeEffectOverscrollEffect$applyToFling$1.J$0;
                         ResultKt.throwOnFailure(obj);
-                        long m8236minusAH228Gc2 = Velocity.m8236minusAH228Gc(m8236minusAH228Gc, ((Velocity) obj).m8242unboximpl());
+                        long m8237minusAH228Gc2 = Velocity.m8237minusAH228Gc(m8237minusAH228Gc, ((Velocity) obj).m8243unboximpl());
                         this.scrollCycleInProgress = false;
-                        if (Velocity.m8233getXimpl(m8236minusAH228Gc2) > 0.0f) {
-                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateLeftEffect(), MathKt.roundToInt(Velocity.m8233getXimpl(m8236minusAH228Gc2)));
-                        } else if (Velocity.m8233getXimpl(m8236minusAH228Gc2) < 0.0f) {
-                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateRightEffect(), -MathKt.roundToInt(Velocity.m8233getXimpl(m8236minusAH228Gc2)));
+                        if (Velocity.m8234getXimpl(m8237minusAH228Gc2) > 0.0f) {
+                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateLeftEffect(), MathKt.roundToInt(Velocity.m8234getXimpl(m8237minusAH228Gc2)));
+                        } else if (Velocity.m8234getXimpl(m8237minusAH228Gc2) < 0.0f) {
+                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateRightEffect(), -MathKt.roundToInt(Velocity.m8234getXimpl(m8237minusAH228Gc2)));
                         }
-                        if (Velocity.m8234getYimpl(m8236minusAH228Gc2) > 0.0f) {
-                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateTopEffect(), MathKt.roundToInt(Velocity.m8234getYimpl(m8236minusAH228Gc2)));
-                        } else if (Velocity.m8234getYimpl(m8236minusAH228Gc2) < 0.0f) {
-                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateBottomEffect(), -MathKt.roundToInt(Velocity.m8234getYimpl(m8236minusAH228Gc2)));
+                        if (Velocity.m8235getYimpl(m8237minusAH228Gc2) > 0.0f) {
+                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateTopEffect(), MathKt.roundToInt(Velocity.m8235getYimpl(m8237minusAH228Gc2)));
+                        } else if (Velocity.m8235getYimpl(m8237minusAH228Gc2) < 0.0f) {
+                            EdgeEffectCompat.INSTANCE.onAbsorbCompat(this.edgeEffectWrapper.getOrCreateBottomEffect(), -MathKt.roundToInt(Velocity.m8235getYimpl(m8237minusAH228Gc2)));
                         }
                         animateToReleaseIfNeeded();
                         return Unit.INSTANCE;
@@ -481,29 +481,29 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
                     }
                 }
                 ResultKt.throwOnFailure(obj);
-                if (Size.m5106isEmptyimpl(this.containerSize)) {
-                    Velocity m8224boximpl = Velocity.m8224boximpl(j);
+                if (Size.m5107isEmptyimpl(this.containerSize)) {
+                    Velocity m8225boximpl = Velocity.m8225boximpl(j);
                     androidEdgeEffectOverscrollEffect$applyToFling$1.label = 1;
                 } else {
-                    if (this.edgeEffectWrapper.isLeftStretched() && Velocity.m8233getXimpl(j) < 0.0f) {
-                        f = EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateLeftEffect(), Velocity.m8233getXimpl(j), Float.intBitsToFloat((int) (this.containerSize >> 32)), this.density);
+                    if (this.edgeEffectWrapper.isLeftStretched() && Velocity.m8234getXimpl(j) < 0.0f) {
+                        f = EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateLeftEffect(), Velocity.m8234getXimpl(j), Float.intBitsToFloat((int) (this.containerSize >> 32)), this.density);
                     } else {
-                        f = (!this.edgeEffectWrapper.isRightStretched() || Velocity.m8233getXimpl(j) <= 0.0f) ? 0.0f : -EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateRightEffect(), -Velocity.m8233getXimpl(j), Float.intBitsToFloat((int) (this.containerSize >> 32)), this.density);
+                        f = (!this.edgeEffectWrapper.isRightStretched() || Velocity.m8234getXimpl(j) <= 0.0f) ? 0.0f : -EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateRightEffect(), -Velocity.m8234getXimpl(j), Float.intBitsToFloat((int) (this.containerSize >> 32)), this.density);
                     }
-                    if (this.edgeEffectWrapper.isTopStretched() && Velocity.m8234getYimpl(j) < 0.0f) {
-                        f2 = EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateTopEffect(), Velocity.m8234getYimpl(j), Float.intBitsToFloat((int) (4294967295L & this.containerSize)), this.density);
+                    if (this.edgeEffectWrapper.isTopStretched() && Velocity.m8235getYimpl(j) < 0.0f) {
+                        f2 = EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateTopEffect(), Velocity.m8235getYimpl(j), Float.intBitsToFloat((int) (4294967295L & this.containerSize)), this.density);
                     } else {
-                        f2 = (!this.edgeEffectWrapper.isBottomStretched() || Velocity.m8234getYimpl(j) <= 0.0f) ? 0.0f : -EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateBottomEffect(), -Velocity.m8234getYimpl(j), Float.intBitsToFloat((int) (4294967295L & this.containerSize)), this.density);
+                        f2 = (!this.edgeEffectWrapper.isBottomStretched() || Velocity.m8235getYimpl(j) <= 0.0f) ? 0.0f : -EdgeEffectCompat.INSTANCE.absorbToRelaxIfNeeded(this.edgeEffectWrapper.getOrCreateBottomEffect(), -Velocity.m8235getYimpl(j), Float.intBitsToFloat((int) (4294967295L & this.containerSize)), this.density);
                     }
                     long Velocity = VelocityKt.Velocity(f, f2);
-                    if (!Velocity.m8232equalsimpl0(Velocity, Velocity.Companion.m8244getZero9UxMQ8M())) {
+                    if (!Velocity.m8233equalsimpl0(Velocity, Velocity.Companion.m8245getZero9UxMQ8M())) {
                         invalidateOverscroll$foundation_release();
                     }
-                    m8236minusAH228Gc = Velocity.m8236minusAH228Gc(j, Velocity);
-                    Velocity m8224boximpl2 = Velocity.m8224boximpl(m8236minusAH228Gc);
-                    androidEdgeEffectOverscrollEffect$applyToFling$1.J$0 = m8236minusAH228Gc;
+                    m8237minusAH228Gc = Velocity.m8237minusAH228Gc(j, Velocity);
+                    Velocity m8225boximpl2 = Velocity.m8225boximpl(m8237minusAH228Gc);
+                    androidEdgeEffectOverscrollEffect$applyToFling$1.J$0 = m8237minusAH228Gc;
                     androidEdgeEffectOverscrollEffect$applyToFling$1.label = 2;
-                    obj = function2.invoke(m8224boximpl2, androidEdgeEffectOverscrollEffect$applyToFling$1);
+                    obj = function2.invoke(m8225boximpl2, androidEdgeEffectOverscrollEffect$applyToFling$1);
                 }
                 return coroutine_suspended;
             }
@@ -536,28 +536,28 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     }
 
     /* renamed from: updateSize-uvyYCjk$foundation_release  reason: not valid java name */
-    public final void m248updateSizeuvyYCjk$foundation_release(long j) {
-        boolean m5100equalsimpl0 = Size.m5100equalsimpl0(this.containerSize, Size.Companion.m5113getZeroNHjbRc());
-        boolean m5100equalsimpl02 = Size.m5100equalsimpl0(j, this.containerSize);
+    public final void m249updateSizeuvyYCjk$foundation_release(long j) {
+        boolean m5101equalsimpl0 = Size.m5101equalsimpl0(this.containerSize, Size.Companion.m5114getZeroNHjbRc());
+        boolean m5101equalsimpl02 = Size.m5101equalsimpl0(j, this.containerSize);
         this.containerSize = j;
-        if (!m5100equalsimpl02) {
+        if (!m5101equalsimpl02) {
             EdgeEffectWrapper edgeEffectWrapper = this.edgeEffectWrapper;
             int roundToInt = MathKt.roundToInt(Float.intBitsToFloat((int) (j >> 32)));
-            edgeEffectWrapper.m329updateSizeozmzZPI(IntSize.m8161constructorimpl((MathKt.roundToInt(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (roundToInt << 32)));
+            edgeEffectWrapper.m330updateSizeozmzZPI(IntSize.m8162constructorimpl((MathKt.roundToInt(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (roundToInt << 32)));
         }
-        if (m5100equalsimpl0 || m5100equalsimpl02) {
+        if (m5101equalsimpl0 || m5101equalsimpl02) {
             return;
         }
         animateToReleaseIfNeeded();
     }
 
     /* renamed from: displacement-F1C5BW0$foundation_release  reason: not valid java name */
-    public final long m247displacementF1C5BW0$foundation_release() {
+    public final long m248displacementF1C5BW0$foundation_release() {
         long j = this.pointerPosition;
         if ((9223372034707292159L & j) == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            j = SizeKt.m5114getCenteruvyYCjk(this.containerSize);
+            j = SizeKt.m5115getCenteruvyYCjk(this.containerSize);
         }
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / Float.intBitsToFloat((int) (this.containerSize & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / Float.intBitsToFloat((int) (this.containerSize >> 32))) << 32));
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / Float.intBitsToFloat((int) (this.containerSize & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / Float.intBitsToFloat((int) (this.containerSize >> 32))) << 32));
     }
 
     @Override // androidx.compose.foundation.OverscrollEffect
@@ -612,7 +612,7 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final boolean m244releaseOppositeOverscrollk4lQ0M(long j) {
+    private final boolean m245releaseOppositeOverscrollk4lQ0M(long j) {
         boolean z;
         if (this.edgeEffectWrapper.isLeftAnimating()) {
             int i = (int) (j >> 32);
@@ -654,8 +654,8 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     }
 
     /* renamed from: pullTop-k-4lQ0M  reason: not valid java name */
-    private final float m243pullTopk4lQ0M(long j) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (m247displacementF1C5BW0$foundation_release() >> 32));
+    private final float m244pullTopk4lQ0M(long j) {
+        float intBitsToFloat = Float.intBitsToFloat((int) (m248displacementF1C5BW0$foundation_release() >> 32));
         int i = (int) (j & 4294967295L);
         float intBitsToFloat2 = Float.intBitsToFloat(i) / Float.intBitsToFloat((int) (this.containerSize & 4294967295L));
         EdgeEffect orCreateTopEffect = this.edgeEffectWrapper.getOrCreateTopEffect();
@@ -663,8 +663,8 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     }
 
     /* renamed from: pullBottom-k-4lQ0M  reason: not valid java name */
-    private final float m240pullBottomk4lQ0M(long j) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (m247displacementF1C5BW0$foundation_release() >> 32));
+    private final float m241pullBottomk4lQ0M(long j) {
+        float intBitsToFloat = Float.intBitsToFloat((int) (m248displacementF1C5BW0$foundation_release() >> 32));
         int i = (int) (j & 4294967295L);
         float intBitsToFloat2 = Float.intBitsToFloat(i) / Float.intBitsToFloat((int) (this.containerSize & 4294967295L));
         EdgeEffect orCreateBottomEffect = this.edgeEffectWrapper.getOrCreateBottomEffect();
@@ -672,8 +672,8 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     }
 
     /* renamed from: pullLeft-k-4lQ0M  reason: not valid java name */
-    private final float m241pullLeftk4lQ0M(long j) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (m247displacementF1C5BW0$foundation_release() & 4294967295L));
+    private final float m242pullLeftk4lQ0M(long j) {
+        float intBitsToFloat = Float.intBitsToFloat((int) (m248displacementF1C5BW0$foundation_release() & 4294967295L));
         int i = (int) (j >> 32);
         float intBitsToFloat2 = Float.intBitsToFloat(i) / Float.intBitsToFloat((int) (this.containerSize >> 32));
         EdgeEffect orCreateLeftEffect = this.edgeEffectWrapper.getOrCreateLeftEffect();
@@ -681,8 +681,8 @@ public final class AndroidEdgeEffectOverscrollEffect implements OverscrollEffect
     }
 
     /* renamed from: pullRight-k-4lQ0M  reason: not valid java name */
-    private final float m242pullRightk4lQ0M(long j) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (m247displacementF1C5BW0$foundation_release() & 4294967295L));
+    private final float m243pullRightk4lQ0M(long j) {
+        float intBitsToFloat = Float.intBitsToFloat((int) (m248displacementF1C5BW0$foundation_release() & 4294967295L));
         int i = (int) (j >> 32);
         float intBitsToFloat2 = Float.intBitsToFloat(i) / Float.intBitsToFloat((int) (this.containerSize >> 32));
         EdgeEffect orCreateRightEffect = this.edgeEffectWrapper.getOrCreateRightEffect();

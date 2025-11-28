@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import java.util.HashSet;
 /* renamed from: io.appmetrica.analytics.impl.q2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0513q2 extends Wg {
     public final zo b;
     public final C0174ck c;

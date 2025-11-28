@@ -10,48 +10,48 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextDirection {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Ltr = m7887constructorimpl(1);
-    private static final int Rtl = m7887constructorimpl(2);
-    private static final int Content = m7887constructorimpl(3);
-    private static final int ContentOrLtr = m7887constructorimpl(4);
-    private static final int ContentOrRtl = m7887constructorimpl(5);
-    private static final int Unspecified = m7887constructorimpl(Integer.MIN_VALUE);
+    private static final int Ltr = m7888constructorimpl(1);
+    private static final int Rtl = m7888constructorimpl(2);
+    private static final int Content = m7888constructorimpl(3);
+    private static final int ContentOrLtr = m7888constructorimpl(4);
+    private static final int ContentOrRtl = m7888constructorimpl(5);
+    private static final int Unspecified = m7888constructorimpl(Integer.MIN_VALUE);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextDirection m7886boximpl(int i) {
+    public static final /* synthetic */ TextDirection m7887boximpl(int i) {
         return new TextDirection(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m7887constructorimpl(int i) {
+    public static int m7888constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7888equalsimpl(int i, Object obj) {
-        return (obj instanceof TextDirection) && i == ((TextDirection) obj).m7892unboximpl();
+    public static boolean m7889equalsimpl(int i, Object obj) {
+        return (obj instanceof TextDirection) && i == ((TextDirection) obj).m7893unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7889equalsimpl0(int i, int i2) {
+    public static final boolean m7890equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7890hashCodeimpl(int i) {
+    public static int m7891hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7888equalsimpl(this.value, obj);
+        return m7889equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7890hashCodeimpl(this.value);
+        return m7891hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7892unboximpl() {
+    public final /* synthetic */ int m7893unboximpl() {
         return this.value;
     }
 
@@ -60,12 +60,12 @@ public final class TextDirection {
     }
 
     public String toString() {
-        return m7891toStringimpl(this.value);
+        return m7892toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7891toStringimpl(int i) {
-        return m7889equalsimpl0(i, Ltr) ? "Ltr" : m7889equalsimpl0(i, Rtl) ? "Rtl" : m7889equalsimpl0(i, Content) ? "Content" : m7889equalsimpl0(i, ContentOrLtr) ? "ContentOrLtr" : m7889equalsimpl0(i, ContentOrRtl) ? "ContentOrRtl" : m7889equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
+    public static String m7892toStringimpl(int i) {
+        return m7890equalsimpl0(i, Ltr) ? "Ltr" : m7890equalsimpl0(i, Rtl) ? "Rtl" : m7890equalsimpl0(i, Content) ? "Content" : m7890equalsimpl0(i, ContentOrLtr) ? "ContentOrLtr" : m7890equalsimpl0(i, ContentOrRtl) ? "ContentOrRtl" : m7890equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
     }
 
     /* compiled from: TextDirection.kt */
@@ -80,32 +80,32 @@ public final class TextDirection {
         }
 
         /* renamed from: getLtr-s_7X-co  reason: not valid java name */
-        public final int m7896getLtrs_7Xco() {
+        public final int m7897getLtrs_7Xco() {
             return TextDirection.Ltr;
         }
 
         /* renamed from: getRtl-s_7X-co  reason: not valid java name */
-        public final int m7897getRtls_7Xco() {
+        public final int m7898getRtls_7Xco() {
             return TextDirection.Rtl;
         }
 
         /* renamed from: getContent-s_7X-co  reason: not valid java name */
-        public final int m7893getContents_7Xco() {
+        public final int m7894getContents_7Xco() {
             return TextDirection.Content;
         }
 
         /* renamed from: getContentOrLtr-s_7X-co  reason: not valid java name */
-        public final int m7894getContentOrLtrs_7Xco() {
+        public final int m7895getContentOrLtrs_7Xco() {
             return TextDirection.ContentOrLtr;
         }
 
         /* renamed from: getContentOrRtl-s_7X-co  reason: not valid java name */
-        public final int m7895getContentOrRtls_7Xco() {
+        public final int m7896getContentOrRtls_7Xco() {
             return TextDirection.ContentOrRtl;
         }
 
         /* renamed from: getUnspecified-s_7X-co  reason: not valid java name */
-        public final int m7898getUnspecifieds_7Xco() {
+        public final int m7899getUnspecifieds_7Xco() {
             return TextDirection.Unspecified;
         }
     }

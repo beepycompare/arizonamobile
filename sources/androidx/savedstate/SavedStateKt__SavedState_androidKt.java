@@ -30,7 +30,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        builderAction.invoke(SavedStateWriter.m8986boximpl(SavedStateWriter.m8988constructorimpl(bundleOf)));
+        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundleOf)));
         return bundleOf;
     }
 
@@ -38,7 +38,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         Intrinsics.checkNotNullParameter(initialState, "initialState");
         Intrinsics.checkNotNullParameter(builderAction, "builderAction");
         Bundle bundle = new Bundle(initialState);
-        builderAction.invoke(SavedStateWriter.m8986boximpl(SavedStateWriter.m8988constructorimpl(bundle)));
+        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundle)));
         return bundle;
     }
 
@@ -46,13 +46,13 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         if ((i & 2) != 0) {
             builderAction = new Function1<SavedStateWriter, Unit>() { // from class: androidx.savedstate.SavedStateKt__SavedState_androidKt$savedState$3
                 /* renamed from: invoke-xApjlu4  reason: not valid java name */
-                public final void m8900invokexApjlu4(Bundle bundle) {
+                public final void m8912invokexApjlu4(Bundle bundle) {
                     Intrinsics.checkNotNullParameter(bundle, "<this>");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SavedStateWriter savedStateWriter) {
-                    m8900invokexApjlu4(savedStateWriter.m9026unboximpl());
+                    m8912invokexApjlu4(savedStateWriter.m9038unboximpl());
                     return Unit.INSTANCE;
                 }
             };
@@ -60,7 +60,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         Intrinsics.checkNotNullParameter(initialState, "initialState");
         Intrinsics.checkNotNullParameter(builderAction, "builderAction");
         Bundle bundle = new Bundle(initialState);
-        builderAction.invoke(SavedStateWriter.m8986boximpl(SavedStateWriter.m8988constructorimpl(bundle)));
+        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundle)));
         return bundle;
     }
 
@@ -72,13 +72,13 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         if ((i & 2) != 0) {
             builderAction = new Function1<SavedStateWriter, Unit>() { // from class: androidx.savedstate.SavedStateKt__SavedState_androidKt$savedState$1
                 /* renamed from: invoke-xApjlu4  reason: not valid java name */
-                public final void m8899invokexApjlu4(Bundle bundle) {
+                public final void m8911invokexApjlu4(Bundle bundle) {
                     Intrinsics.checkNotNullParameter(bundle, "<this>");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SavedStateWriter savedStateWriter) {
-                    m8899invokexApjlu4(savedStateWriter.m9026unboximpl());
+                    m8911invokexApjlu4(savedStateWriter.m9038unboximpl());
                     return Unit.INSTANCE;
                 }
             };
@@ -95,7 +95,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        builderAction.invoke(SavedStateWriter.m8986boximpl(SavedStateWriter.m8988constructorimpl(bundleOf)));
+        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundleOf)));
         return bundleOf;
     }
 }

@@ -1,6 +1,5 @@
 package androidx.room.coroutines;
 
-import androidx.collection.CircularArray;
 import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
 import java.util.List;
@@ -9,6 +8,7 @@ import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.collections.ArrayDeque;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
@@ -22,27 +22,29 @@ import kotlinx.coroutines.sync.SemaphoreKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ&\u0010\u001c\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u001e2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020 0\u0005H\u0086@¢\u0006\u0004\b!\u0010\"J\u000e\u0010#\u001a\u00020\u0016H\u0086@¢\u0006\u0002\u0010$J\b\u0010%\u001a\u00020 H\u0002J\u000e\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020\u0016J\u0006\u0010(\u001a\u00020 J\u0012\u0010)\u001a\u00020 2\n\u0010*\u001a\u00060+j\u0002`,R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0014\u0010\r\u001a\u00060\u000ej\u0002`\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0014\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00160\u0015X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0017R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00160\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006-"}, d2 = {"Landroidx/room/coroutines/Pool;", "", "capacity", "", "connectionFactory", "Lkotlin/Function0;", "Landroidx/sqlite/SQLiteConnection;", "<init>", "(ILkotlin/jvm/functions/Function0;)V", "getCapacity", "()I", "getConnectionFactory", "()Lkotlin/jvm/functions/Function0;", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "Landroidx/room/concurrent/ReentrantLock;", "Ljava/util/concurrent/locks/ReentrantLock;", "size", "isClosed", "", "connections", "", "Landroidx/room/coroutines/ConnectionWithLock;", "[Landroidx/room/coroutines/ConnectionWithLock;", "connectionPermits", "Lkotlinx/coroutines/sync/Semaphore;", "availableConnections", "Landroidx/collection/CircularArray;", "acquireWithTimeout", "timeout", "Lkotlin/time/Duration;", "onTimeout", "", "acquireWithTimeout-KLykuaI", "(JLkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "acquire", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "tryOpenNewConnectionLocked", "recycle", "connection", "close", "dump", "builder", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0003¢\u0006\u0004\b\b\u0010\tJ&\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u001f\u001a\u00020 2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\"0\u0005H\u0086@¢\u0006\u0004\b#\u0010$J\u000e\u0010%\u001a\u00020\u0018H\u0086@¢\u0006\u0002\u0010&J\b\u0010'\u001a\u00020\"H\u0002J\u000e\u0010(\u001a\u00020\"2\u0006\u0010)\u001a\u00020\u0018J\u0006\u0010*\u001a\u00020\"J\u0012\u0010+\u001a\u00020\"2\n\u0010,\u001a\u00060-j\u0002`.R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0007\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000bR\u0014\u0010\u000f\u001a\u00060\u0010j\u0002`\u0011X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0016\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00180\u0017X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0019R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00180\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006/"}, d2 = {"Landroidx/room/coroutines/Pool;", "", "capacity", "", "connectionFactory", "Lkotlin/Function0;", "Landroidx/sqlite/SQLiteConnection;", "preparedStatementCacheSize", "<init>", "(ILkotlin/jvm/functions/Function0;I)V", "getCapacity", "()I", "getConnectionFactory", "()Lkotlin/jvm/functions/Function0;", "getPreparedStatementCacheSize", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "Landroidx/room/concurrent/ReentrantLock;", "Ljava/util/concurrent/locks/ReentrantLock;", "size", "isClosed", "", "connections", "", "Landroidx/room/coroutines/ConnectionWithLock;", "[Landroidx/room/coroutines/ConnectionWithLock;", "connectionPermits", "Lkotlinx/coroutines/sync/Semaphore;", "availableConnections", "Lkotlin/collections/ArrayDeque;", "acquireWithTimeout", "timeout", "Lkotlin/time/Duration;", "onTimeout", "", "acquireWithTimeout-KLykuaI", "(JLkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "acquire", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "tryOpenNewConnectionLocked", "recycle", "connection", "close", "dump", "builder", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class Pool {
-    private final CircularArray<ConnectionWithLock> availableConnections;
+    private final ArrayDeque<ConnectionWithLock> availableConnections;
     private final int capacity;
     private final Function0<SQLiteConnection> connectionFactory;
     private final Semaphore connectionPermits;
     private final ConnectionWithLock[] connections;
     private boolean isClosed;
     private final ReentrantLock lock;
+    private final int preparedStatementCacheSize;
     private int size;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public Pool(int i, Function0<? extends SQLiteConnection> connectionFactory) {
+    public Pool(int i, Function0<? extends SQLiteConnection> connectionFactory, int i2) {
         Intrinsics.checkNotNullParameter(connectionFactory, "connectionFactory");
         this.capacity = i;
         this.connectionFactory = connectionFactory;
+        this.preparedStatementCacheSize = i2;
         this.lock = new ReentrantLock();
         this.connections = new ConnectionWithLock[i];
         this.connectionPermits = SemaphoreKt.Semaphore$default(i, 0, 2, null);
-        this.availableConnections = new CircularArray<>(i);
+        this.availableConnections = new ArrayDeque<>(i);
     }
 
     public final int getCapacity() {
@@ -51,6 +53,10 @@ public final class Pool {
 
     public final Function0<SQLiteConnection> getConnectionFactory() {
         return this.connectionFactory;
+    }
+
+    public final int getPreparedStatementCacheSize() {
+        return this.preparedStatementCacheSize;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(11:9|(2:10|11)|12|13|14|(1:(1:34)(2:30|(2:32|33)))(1:16)|17|18|19|20|(1:22)(10:24|12|13|14|(0)(0)|17|18|19|20|(0)(0))) */
@@ -74,7 +80,7 @@ public final class Pool {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m8887acquireWithTimeoutKLykuaI(long j, Function0<Unit> function0, Continuation<? super ConnectionWithLock> continuation) {
+    public final Object m8899acquireWithTimeoutKLykuaI(long j, Function0<Unit> function0, Continuation<? super ConnectionWithLock> continuation) {
         Pool$acquireWithTimeout$1 pool$acquireWithTimeout$1;
         int i;
         Ref.ObjectRef objectRef;
@@ -95,7 +101,7 @@ public final class Pool {
                     pool$acquireWithTimeout$1.L$1 = objectRef2;
                     pool$acquireWithTimeout$1.J$0 = j;
                     pool$acquireWithTimeout$1.label = 1;
-                    if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                    if (TimeoutKt.m11415withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -121,7 +127,7 @@ public final class Pool {
                             pool$acquireWithTimeout$1.L$1 = objectRef2;
                             pool$acquireWithTimeout$1.J$0 = j;
                             pool$acquireWithTimeout$1.label = 1;
-                            if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                            if (TimeoutKt.m11415withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                             }
                         }
                         if (th instanceof TimeoutCancellationException) {
@@ -139,7 +145,7 @@ public final class Pool {
                         pool$acquireWithTimeout$1.L$1 = objectRef2;
                         pool$acquireWithTimeout$1.J$0 = j;
                         pool$acquireWithTimeout$1.label = 1;
-                        if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                        if (TimeoutKt.m11415withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         function02 = function0;
@@ -156,7 +162,7 @@ public final class Pool {
                         pool$acquireWithTimeout$1.L$1 = objectRef2;
                         pool$acquireWithTimeout$1.J$0 = j;
                         pool$acquireWithTimeout$1.label = 1;
-                        if (TimeoutKt.m11357withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
+                        if (TimeoutKt.m11415withTimeoutKLykuaI(j, new Pool$acquireWithTimeout$2(objectRef2, this, null), pool$acquireWithTimeout$1) == coroutine_suspended) {
                         }
                     } catch (Throwable th5) {
                         ConnectionWithLock connectionWithLock = (ConnectionWithLock) objectRef.element;
@@ -219,9 +225,9 @@ public final class Pool {
                     if (this.availableConnections.isEmpty()) {
                         tryOpenNewConnectionLocked();
                     }
-                    ConnectionWithLock popFirst = this.availableConnections.popFirst();
+                    ConnectionWithLock removeLast = this.availableConnections.removeLast();
                     reentrantLock.unlock();
-                    return popFirst;
+                    return removeLast;
                 }
             }
             ReentrantLock reentrantLock2 = this.lock;
@@ -244,7 +250,7 @@ public final class Pool {
         if (this.size >= this.capacity) {
             return;
         }
-        ConnectionWithLock connectionWithLock = new ConnectionWithLock(this.connectionFactory.invoke(), null, 2, null);
+        ConnectionWithLock connectionWithLock = new ConnectionWithLock(this.connectionFactory.invoke(), null, this.preparedStatementCacheSize, 2, null);
         ConnectionWithLock[] connectionWithLockArr = this.connections;
         int i = this.size;
         this.size = i + 1;

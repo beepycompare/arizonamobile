@@ -257,7 +257,7 @@ public class TypefaceCompat {
         public void onTypefaceRetrieved(Typeface typeface) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.m8486x46c88379(typeface);
+                fontCallback.m8487x46c88379(typeface);
             }
         }
 
@@ -265,7 +265,7 @@ public class TypefaceCompat {
         public void onTypefaceRequestFailed(int i) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.m8485xb24343b7(i);
+                fontCallback.m8486xb24343b7(i);
             }
         }
     }

@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
 import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* renamed from: io.appmetrica.analytics.impl.wc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0672wc extends C0210e5 implements Ta, Sa {
     public final C0527qg w;
     public final C0626ug x;

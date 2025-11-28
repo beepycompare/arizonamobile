@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class J7 implements ClientComponentsInitializer {
 
     /* renamed from: a  reason: collision with root package name */

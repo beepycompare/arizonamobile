@@ -50,17 +50,17 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000B\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a®\u0001\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0013\b\u0002\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0013\b\u0002\u0010\u0007\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0013\b\u0002\u0010\b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0013\b\u0002\u0010\t\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\u0017\u0010\u0011\u001a\u0013\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00010\u0012¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0004\b\u0014\u0010\u0015\u001a\u0084\u0001\u0010\u0016\u001a\u00020\u00012\u0006\u0010\u0017\u001a\u00020\u000b2\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0017\u0010\u0011\u001a\u0013\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00010\u0012¢\u0006\u0002\b\u00062\u0011\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0011\u0010\u0019\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u000f\u001a\u00020\u00102\u0011\u0010\u0007\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0003¢\u0006\u0004\b\u001a\u0010\u001b\"\u0010\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001e¨\u0006\u001f"}, d2 = {"Scaffold", "", "modifier", "Landroidx/compose/ui/Modifier;", "topBar", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "bottomBar", "snackbarHost", "floatingActionButton", "floatingActionButtonPosition", "Landroidx/compose/material3/FabPosition;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "contentWindowInsets", "Landroidx/compose/foundation/layout/WindowInsets;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/PaddingValues;", "Scaffold-TvnljyQ", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;IJJLandroidx/compose/foundation/layout/WindowInsets;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "ScaffoldLayout", "fabPosition", "snackbar", "fab", "ScaffoldLayout-FMILGgc", "(ILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/layout/WindowInsets;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "FabSpacing", "Landroidx/compose/ui/unit/Dp;", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ScaffoldKt {
-    private static final float FabSpacing = Dp.m7995constructorimpl(16);
+    private static final float FabSpacing = Dp.m7996constructorimpl(16);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ScaffoldLayout_FMILGgc$lambda$16(int i, Function2 function2, Function3 function3, Function2 function22, Function2 function23, WindowInsets windowInsets, Function2 function24, int i2, Composer composer, int i3) {
-        m2786ScaffoldLayoutFMILGgc(i, function2, function3, function22, function23, windowInsets, function24, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m2787ScaffoldLayoutFMILGgc(i, function2, function3, function22, function23, windowInsets, function24, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Scaffold_TvnljyQ$lambda$3(Modifier modifier, Function2 function2, Function2 function22, Function2 function23, Function2 function24, int i, long j, long j2, WindowInsets windowInsets, Function3 function3, int i2, int i3, Composer composer, int i4) {
-        m2785ScaffoldTvnljyQ(modifier, function2, function22, function23, function24, i, j, j2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2786ScaffoldTvnljyQ(modifier, function2, function22, function23, function24, i, j, j2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
@@ -90,7 +90,7 @@ public final class ScaffoldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2785ScaffoldTvnljyQ(Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, int i, long j, long j2, WindowInsets windowInsets, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i2, final int i3) {
+    public static final void m2786ScaffoldTvnljyQ(Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, int i, long j, long j2, WindowInsets windowInsets, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -113,11 +113,11 @@ public final class ScaffoldKt {
         final long j4;
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
-        Function2<Composer, Integer, Unit> m2170getLambda$39202156$material3;
+        Function2<Composer, Integer, Unit> m2171getLambda$39202156$material3;
         Function2<Composer, Integer, Unit> lambda$1582488484$material3;
         Function2<Composer, Integer, Unit> lambda$414328099$material3;
-        Function2<Composer, Integer, Unit> m2169getLambda$1514016380$material3;
-        int m2381getEndERTFSPs;
+        Function2<Composer, Integer, Unit> m2170getLambda$1514016380$material3;
+        int m2382getEndERTFSPs;
         int i11;
         long j5;
         long j6;
@@ -202,32 +202,32 @@ public final class ScaffoldKt {
                                         i4 &= -234881025;
                                     }
                                     companion = modifier;
-                                    m2381getEndERTFSPs = i;
+                                    m2382getEndERTFSPs = i;
                                     j5 = j;
-                                    m2170getLambda$39202156$material3 = obj;
+                                    m2171getLambda$39202156$material3 = obj;
                                     lambda$1582488484$material3 = obj2;
                                     lambda$414328099$material3 = obj3;
-                                    m2169getLambda$1514016380$material3 = obj4;
+                                    m2170getLambda$1514016380$material3 = obj4;
                                     i12 = 100663296;
                                     j7 = j2;
                                     windowInsets3 = windowInsets;
                                 } else {
                                     companion = i9 != 0 ? Modifier.Companion : modifier;
-                                    m2170getLambda$39202156$material3 = i16 != 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2170getLambda$39202156$material3() : obj;
+                                    m2171getLambda$39202156$material3 = i16 != 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2171getLambda$39202156$material3() : obj;
                                     lambda$1582488484$material3 = i5 != 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.getLambda$1582488484$material3() : obj2;
                                     lambda$414328099$material3 = i6 != 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.getLambda$414328099$material3() : obj3;
-                                    m2169getLambda$1514016380$material3 = i7 != 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2169getLambda$1514016380$material3() : obj4;
-                                    m2381getEndERTFSPs = i8 != 0 ? FabPosition.Companion.m2381getEndERTFSPs() : i;
+                                    m2170getLambda$1514016380$material3 = i7 != 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2170getLambda$1514016380$material3() : obj4;
+                                    m2382getEndERTFSPs = i8 != 0 ? FabPosition.Companion.m2382getEndERTFSPs() : i;
                                     if ((i3 & 64) != 0) {
                                         i4 &= -3670017;
                                         i11 = -29360129;
-                                        j5 = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2077getBackground0d7_KjU();
+                                        j5 = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2078getBackground0d7_KjU();
                                     } else {
                                         i11 = -29360129;
                                         j5 = j;
                                     }
                                     if ((i3 & 128) != 0) {
-                                        j6 = ColorSchemeKt.m2129contentColorForek8zF_U(j5, startRestartGroup, (i4 >> 18) & 14);
+                                        j6 = ColorSchemeKt.m2130contentColorForek8zF_U(j5, startRestartGroup, (i4 >> 18) & 14);
                                         i4 &= i11;
                                     } else {
                                         j6 = j2;
@@ -274,14 +274,14 @@ public final class ScaffoldKt {
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                final Function2<? super Composer, ? super Integer, Unit> function29 = m2170getLambda$39202156$material3;
+                                final Function2<? super Composer, ? super Integer, Unit> function29 = m2171getLambda$39202156$material3;
                                 final Function2<? super Composer, ? super Integer, Unit> function210 = lambda$1582488484$material3;
                                 final Function2<? super Composer, ? super Integer, Unit> function211 = lambda$414328099$material3;
-                                final Function2<? super Composer, ? super Integer, Unit> function212 = m2169getLambda$1514016380$material3;
-                                final int i18 = m2381getEndERTFSPs;
+                                final Function2<? super Composer, ? super Integer, Unit> function212 = m2170getLambda$1514016380$material3;
+                                final int i18 = m2382getEndERTFSPs;
                                 int i19 = i4 >> 12;
                                 composer2 = startRestartGroup;
-                                SurfaceKt.m2996SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j8, j7, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(848889571, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
+                                SurfaceKt.m2997SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j8, j7, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(848889571, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                         invoke(composer3, num.intValue());
@@ -294,7 +294,7 @@ public final class ScaffoldKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(848889571, i20, -1, "androidx.compose.material3.Scaffold.<anonymous> (Scaffold.kt:104)");
                                             }
-                                            ScaffoldKt.m2786ScaffoldLayoutFMILGgc(i18, function29, function3, function211, function212, mutableWindowInsets, function210, composer3, 0);
+                                            ScaffoldKt.m2787ScaffoldLayoutFMILGgc(i18, function29, function3, function211, function212, mutableWindowInsets, function210, composer3, 0);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                                 return;
@@ -308,11 +308,11 @@ public final class ScaffoldKt {
                                     ComposerKt.traceEventEnd();
                                 }
                                 modifier2 = companion;
-                                function25 = m2170getLambda$39202156$material3;
+                                function25 = m2171getLambda$39202156$material3;
                                 function26 = lambda$1582488484$material3;
                                 function27 = lambda$414328099$material3;
-                                function28 = m2169getLambda$1514016380$material3;
-                                i10 = m2381getEndERTFSPs;
+                                function28 = m2170getLambda$1514016380$material3;
+                                i10 = m2382getEndERTFSPs;
                                 windowInsets2 = windowInsets3;
                                 j3 = j8;
                                 j4 = j7;
@@ -454,7 +454,7 @@ public final class ScaffoldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ScaffoldLayout-FMILGgc  reason: not valid java name */
-    public static final void m2786ScaffoldLayoutFMILGgc(final int i, final Function2<? super Composer, ? super Integer, Unit> function2, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final WindowInsets windowInsets, final Function2<? super Composer, ? super Integer, Unit> function24, Composer composer, final int i2) {
+    public static final void m2787ScaffoldLayoutFMILGgc(final int i, final Function2<? super Composer, ? super Integer, Unit> function2, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final WindowInsets windowInsets, final Function2<? super Composer, ? super Integer, Unit> function24, Composer composer, final int i2) {
         int i3;
         ScaffoldKt$ScaffoldLayout$contentPadding$1$1 scaffoldKt$ScaffoldLayout$contentPadding$1$1;
         int i4;
@@ -534,15 +534,15 @@ public final class ScaffoldKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, -1154869819, "C158@7542L8:Scaffold.kt#uh7d8r");
@@ -601,15 +601,15 @@ public final class ScaffoldKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, 367258716, "C159@7636L10:Scaffold.kt#uh7d8r");
@@ -668,15 +668,15 @@ public final class ScaffoldKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, 2140512701, "C160@7722L5:Scaffold.kt#uh7d8r");
@@ -737,15 +737,15 @@ public final class ScaffoldKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, -931973261, "C162@7832L23:Scaffold.kt#uh7d8r");
@@ -807,15 +807,15 @@ public final class ScaffoldKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, 79510070, "C163@7943L11:Scaffold.kt#uh7d8r");
@@ -893,65 +893,65 @@ public final class ScaffoldKt {
         int intValue;
         int height;
         int bottom;
-        final int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(constraints.m7954unboximpl());
-        final int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(constraints.m7954unboximpl());
-        long m7938copyZbe2FdA$default = Constraints.m7938copyZbe2FdA$default(constraints.m7954unboximpl(), 0, 0, 0, 0, 10, null);
+        final int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(constraints.m7955unboximpl());
+        final int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(constraints.m7955unboximpl());
+        long m7939copyZbe2FdA$default = Constraints.m7939copyZbe2FdA$default(constraints.m7955unboximpl(), 0, 0, 0, 0, 10, null);
         SubcomposeMeasureScope subcomposeMeasureScope2 = subcomposeMeasureScope;
         int left = windowInsets.getLeft(subcomposeMeasureScope2, subcomposeMeasureScope.getLayoutDirection());
         int right = windowInsets.getRight(subcomposeMeasureScope2, subcomposeMeasureScope.getLayoutDirection());
         int bottom2 = windowInsets.getBottom(subcomposeMeasureScope2);
-        final Placeable mo6697measureBRTryo0 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.TopBar, function2))).mo6697measureBRTryo0(m7938copyZbe2FdA$default);
+        final Placeable mo6698measureBRTryo0 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.TopBar, function2))).mo6698measureBRTryo0(m7939copyZbe2FdA$default);
         int i5 = (-left) - right;
         int i6 = -bottom2;
-        final Placeable mo6697measureBRTryo02 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.Snackbar, function22))).mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(m7938copyZbe2FdA$default, i5, i6));
-        final Placeable mo6697measureBRTryo03 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.Fab, function23))).mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(m7938copyZbe2FdA$default, i5, i6));
-        if (mo6697measureBRTryo03.getWidth() == 0 && mo6697measureBRTryo03.getHeight() == 0) {
+        final Placeable mo6698measureBRTryo02 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.Snackbar, function22))).mo6698measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU(m7939copyZbe2FdA$default, i5, i6));
+        final Placeable mo6698measureBRTryo03 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.Fab, function23))).mo6698measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU(m7939copyZbe2FdA$default, i5, i6));
+        if (mo6698measureBRTryo03.getWidth() == 0 && mo6698measureBRTryo03.getHeight() == 0) {
             fabPlacement = null;
         } else {
-            int width = mo6697measureBRTryo03.getWidth();
-            int height2 = mo6697measureBRTryo03.getHeight();
-            if (FabPosition.m2376equalsimpl0(i, FabPosition.Companion.m2383getStartERTFSPs())) {
+            int width = mo6698measureBRTryo03.getWidth();
+            int height2 = mo6698measureBRTryo03.getHeight();
+            if (FabPosition.m2377equalsimpl0(i, FabPosition.Companion.m2384getStartERTFSPs())) {
                 if (subcomposeMeasureScope.getLayoutDirection() == LayoutDirection.Ltr) {
-                    i2 = subcomposeMeasureScope.mo423roundToPx0680j_4(FabSpacing);
+                    i2 = subcomposeMeasureScope.mo424roundToPx0680j_4(FabSpacing);
                     i4 = i2 + left;
                 } else {
-                    i3 = subcomposeMeasureScope.mo423roundToPx0680j_4(FabSpacing);
-                    i4 = ((m7948getMaxWidthimpl - i3) - width) - right;
+                    i3 = subcomposeMeasureScope.mo424roundToPx0680j_4(FabSpacing);
+                    i4 = ((m7949getMaxWidthimpl - i3) - width) - right;
                 }
-            } else if (FabPosition.m2376equalsimpl0(i, FabPosition.Companion.m2381getEndERTFSPs()) || FabPosition.m2376equalsimpl0(i, FabPosition.Companion.m2382getEndOverlayERTFSPs())) {
+            } else if (FabPosition.m2377equalsimpl0(i, FabPosition.Companion.m2382getEndERTFSPs()) || FabPosition.m2377equalsimpl0(i, FabPosition.Companion.m2383getEndOverlayERTFSPs())) {
                 if (subcomposeMeasureScope.getLayoutDirection() == LayoutDirection.Ltr) {
-                    i3 = subcomposeMeasureScope.mo423roundToPx0680j_4(FabSpacing);
-                    i4 = ((m7948getMaxWidthimpl - i3) - width) - right;
+                    i3 = subcomposeMeasureScope.mo424roundToPx0680j_4(FabSpacing);
+                    i4 = ((m7949getMaxWidthimpl - i3) - width) - right;
                 } else {
-                    i2 = subcomposeMeasureScope.mo423roundToPx0680j_4(FabSpacing);
+                    i2 = subcomposeMeasureScope.mo424roundToPx0680j_4(FabSpacing);
                     i4 = i2 + left;
                 }
             } else {
-                i4 = (((m7948getMaxWidthimpl - width) + left) - right) / 2;
+                i4 = (((m7949getMaxWidthimpl - width) + left) - right) / 2;
             }
             fabPlacement = new FabPlacement(i4, width, height2);
         }
-        final Placeable mo6697measureBRTryo04 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.BottomBar, function24))).mo6697measureBRTryo0(m7938copyZbe2FdA$default);
+        final Placeable mo6698measureBRTryo04 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.BottomBar, function24))).mo6698measureBRTryo0(m7939copyZbe2FdA$default);
         int i7 = 0;
-        boolean z = mo6697measureBRTryo04.getWidth() == 0 && mo6697measureBRTryo04.getHeight() == 0;
+        boolean z = mo6698measureBRTryo04.getWidth() == 0 && mo6698measureBRTryo04.getHeight() == 0;
         if (fabPlacement != null) {
-            if (z || FabPosition.m2376equalsimpl0(i, FabPosition.Companion.m2382getEndOverlayERTFSPs())) {
-                height = fabPlacement.getHeight() + subcomposeMeasureScope.mo423roundToPx0680j_4(FabSpacing);
+            if (z || FabPosition.m2377equalsimpl0(i, FabPosition.Companion.m2383getEndOverlayERTFSPs())) {
+                height = fabPlacement.getHeight() + subcomposeMeasureScope.mo424roundToPx0680j_4(FabSpacing);
                 bottom = windowInsets.getBottom(subcomposeMeasureScope2);
             } else {
-                height = mo6697measureBRTryo04.getHeight() + fabPlacement.getHeight();
-                bottom = subcomposeMeasureScope.mo423roundToPx0680j_4(FabSpacing);
+                height = mo6698measureBRTryo04.getHeight() + fabPlacement.getHeight();
+                bottom = subcomposeMeasureScope.mo424roundToPx0680j_4(FabSpacing);
             }
             num = Integer.valueOf(height + bottom);
         } else {
             num = null;
         }
-        int height3 = mo6697measureBRTryo02.getHeight();
+        int height3 = mo6698measureBRTryo02.getHeight();
         if (height3 != 0) {
             if (num != null) {
                 intValue = num.intValue();
             } else {
-                Integer valueOf = Integer.valueOf(mo6697measureBRTryo04.getHeight());
+                Integer valueOf = Integer.valueOf(mo6698measureBRTryo04.getHeight());
                 valueOf.intValue();
                 if (z) {
                     valueOf = null;
@@ -961,25 +961,25 @@ public final class ScaffoldKt {
             i7 = intValue + height3;
         }
         PaddingValues asPaddingValues = WindowInsetsKt.asPaddingValues(windowInsets, subcomposeMeasureScope2);
-        if (mo6697measureBRTryo0.getWidth() == 0 && mo6697measureBRTryo0.getHeight() == 0) {
-            f = asPaddingValues.mo788calculateTopPaddingD9Ej5fM();
+        if (mo6698measureBRTryo0.getWidth() == 0 && mo6698measureBRTryo0.getHeight() == 0) {
+            f = asPaddingValues.mo789calculateTopPaddingD9Ej5fM();
         } else {
-            f = subcomposeMeasureScope.mo426toDpu2uoSUM(mo6697measureBRTryo0.getHeight());
+            f = subcomposeMeasureScope.mo427toDpu2uoSUM(mo6698measureBRTryo0.getHeight());
         }
         if (z) {
-            f2 = asPaddingValues.mo785calculateBottomPaddingD9Ej5fM();
+            f2 = asPaddingValues.mo786calculateBottomPaddingD9Ej5fM();
         } else {
-            f2 = subcomposeMeasureScope.mo426toDpu2uoSUM(mo6697measureBRTryo04.getHeight());
+            f2 = subcomposeMeasureScope.mo427toDpu2uoSUM(mo6698measureBRTryo04.getHeight());
         }
         final Integer num2 = num;
-        scaffoldKt$ScaffoldLayout$contentPadding$1$1.setPaddingHolder(PaddingKt.m838PaddingValuesa9UjIt4(PaddingKt.calculateStartPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), f, PaddingKt.calculateEndPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), f2));
-        final Placeable mo6697measureBRTryo05 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.MainContent, function25))).mo6697measureBRTryo0(m7938copyZbe2FdA$default);
+        scaffoldKt$ScaffoldLayout$contentPadding$1$1.setPaddingHolder(PaddingKt.m839PaddingValuesa9UjIt4(PaddingKt.calculateStartPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), f, PaddingKt.calculateEndPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), f2));
+        final Placeable mo6698measureBRTryo05 = ((Measurable) CollectionsKt.first((List<? extends Object>) subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.MainContent, function25))).mo6698measureBRTryo0(m7939copyZbe2FdA$default);
         final int i8 = i7;
-        return MeasureScope.layout$default(subcomposeMeasureScope, m7948getMaxWidthimpl, m7947getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.ScaffoldKt$$ExternalSyntheticLambda4
+        return MeasureScope.layout$default(subcomposeMeasureScope, m7949getMaxWidthimpl, m7948getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.ScaffoldKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit ScaffoldLayout_FMILGgc$lambda$15$lambda$14$lambda$13;
-                ScaffoldLayout_FMILGgc$lambda$15$lambda$14$lambda$13 = ScaffoldKt.ScaffoldLayout_FMILGgc$lambda$15$lambda$14$lambda$13(Placeable.this, mo6697measureBRTryo0, mo6697measureBRTryo02, m7948getMaxWidthimpl, windowInsets, subcomposeMeasureScope, m7947getMaxHeightimpl, i8, mo6697measureBRTryo04, fabPlacement, mo6697measureBRTryo03, num2, (Placeable.PlacementScope) obj);
+                ScaffoldLayout_FMILGgc$lambda$15$lambda$14$lambda$13 = ScaffoldKt.ScaffoldLayout_FMILGgc$lambda$15$lambda$14$lambda$13(Placeable.this, mo6698measureBRTryo0, mo6698measureBRTryo02, m7949getMaxWidthimpl, windowInsets, subcomposeMeasureScope, m7948getMaxHeightimpl, i8, mo6698measureBRTryo04, fabPlacement, mo6698measureBRTryo03, num2, (Placeable.PlacementScope) obj);
                 return ScaffoldLayout_FMILGgc$lambda$15$lambda$14$lambda$13;
             }
         }, 4, null);

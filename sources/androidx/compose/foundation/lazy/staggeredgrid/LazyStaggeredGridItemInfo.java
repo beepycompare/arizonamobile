@@ -16,8 +16,8 @@ public interface LazyStaggeredGridItemInfo {
     int getLane();
 
     /* renamed from: getOffset-nOcc-ac  reason: not valid java name */
-    long mo1098getOffsetnOccac();
+    long mo1099getOffsetnOccac();
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    long mo1099getSizeYbymL2g();
+    long mo1100getSizeYbymL2g();
 }

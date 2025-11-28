@@ -470,7 +470,7 @@ public final class SnapshotKt {
     public static final <T extends StateRecord> T writableRecord(T t, StateObject stateObject, Snapshot snapshot) {
         T t2;
         if (snapshot.getReadOnly()) {
-            snapshot.mo4736recordModified$runtime(stateObject);
+            snapshot.mo4737recordModified$runtime(stateObject);
         }
         long snapshotId = snapshot.getSnapshotId();
         T t3 = (T) readable(t, snapshotId, snapshot.getInvalid$runtime());
@@ -491,7 +491,7 @@ public final class SnapshotKt {
             }
             Intrinsics.checkNotNull(t2, "null cannot be cast to non-null type T of androidx.compose.runtime.snapshots.SnapshotKt.writableRecord");
             if (t3.getSnapshotId$runtime() != SnapshotId_jvmKt.toSnapshotId(1)) {
-                snapshot.mo4736recordModified$runtime(stateObject);
+                snapshot.mo4737recordModified$runtime(stateObject);
             }
             return t2;
         }
@@ -500,7 +500,7 @@ public final class SnapshotKt {
     public static final <T extends StateRecord> T overwritableRecord(T t, StateObject stateObject, Snapshot snapshot, T t2) {
         T t3;
         if (snapshot.getReadOnly()) {
-            snapshot.mo4736recordModified$runtime(stateObject);
+            snapshot.mo4737recordModified$runtime(stateObject);
         }
         long snapshotId = snapshot.getSnapshotId();
         if (t2.getSnapshotId$runtime() == snapshotId) {
@@ -511,7 +511,7 @@ public final class SnapshotKt {
         }
         t3.setSnapshotId$runtime(snapshotId);
         if (t2.getSnapshotId$runtime() != SnapshotId_jvmKt.toSnapshotId(1)) {
-            snapshot.mo4736recordModified$runtime(stateObject);
+            snapshot.mo4737recordModified$runtime(stateObject);
         }
         return t3;
     }

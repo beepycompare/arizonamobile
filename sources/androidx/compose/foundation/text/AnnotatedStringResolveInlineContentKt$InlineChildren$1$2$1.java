@@ -22,14 +22,14 @@ final class AnnotatedStringResolveInlineContentKt$InlineChildren$1$2$1 implement
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            arrayList.add(list.get(i).mo6697measureBRTryo0(j));
+            arrayList.add(list.get(i).mo6698measureBRTryo0(j));
         }
         final ArrayList arrayList2 = arrayList;
-        return MeasureScope.layout$default(measureScope, Constraints.m7948getMaxWidthimpl(j), Constraints.m7947getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.AnnotatedStringResolveInlineContentKt$InlineChildren$1$2$1$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, Constraints.m7949getMaxWidthimpl(j), Constraints.m7948getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.AnnotatedStringResolveInlineContentKt$InlineChildren$1$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$2;

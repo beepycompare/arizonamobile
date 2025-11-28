@@ -3,7 +3,7 @@ package io.appmetrica.analytics;
 import io.appmetrica.analytics.impl.C0323ie;
 import io.appmetrica.analytics.impl.Gn;
 import java.util.Currency;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class Revenue {
     public final Currency currency;
     public final String payload;
@@ -12,7 +12,7 @@ public class Revenue {
     public final Integer quantity;
     public final Receipt receipt;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
         private static final Gn g = new Gn(new C0323ie("revenue currency"));
 
@@ -59,12 +59,12 @@ public class Revenue {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class Receipt {
         public final String data;
         public final String signature;
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes2.dex */
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */

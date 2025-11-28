@@ -45,7 +45,7 @@ public final class VectorPath extends VectorNode {
     }
 
     /* renamed from: getPathFillType-Rg-k1Os  reason: not valid java name */
-    public final int m6046getPathFillTypeRgk1Os() {
+    public final int m6047getPathFillTypeRgk1Os() {
         return this.pathFillType;
     }
 
@@ -70,12 +70,12 @@ public final class VectorPath extends VectorNode {
     }
 
     /* renamed from: getStrokeLineCap-KaPHkGw  reason: not valid java name */
-    public final int m6047getStrokeLineCapKaPHkGw() {
+    public final int m6048getStrokeLineCapKaPHkGw() {
         return this.strokeLineCap;
     }
 
     /* renamed from: getStrokeLineJoin-LxFBmk8  reason: not valid java name */
-    public final int m6048getStrokeLineJoinLxFBmk8() {
+    public final int m6049getStrokeLineJoinLxFBmk8() {
         return this.strokeLineJoin;
     }
 
@@ -120,7 +120,7 @@ public final class VectorPath extends VectorNode {
         }
         if (obj != null && getClass() == obj.getClass()) {
             VectorPath vectorPath = (VectorPath) obj;
-            return Intrinsics.areEqual(this.name, vectorPath.name) && Intrinsics.areEqual(this.fill, vectorPath.fill) && this.fillAlpha == vectorPath.fillAlpha && Intrinsics.areEqual(this.stroke, vectorPath.stroke) && this.strokeAlpha == vectorPath.strokeAlpha && this.strokeLineWidth == vectorPath.strokeLineWidth && StrokeCap.m5645equalsimpl0(this.strokeLineCap, vectorPath.strokeLineCap) && StrokeJoin.m5655equalsimpl0(this.strokeLineJoin, vectorPath.strokeLineJoin) && this.strokeLineMiter == vectorPath.strokeLineMiter && this.trimPathStart == vectorPath.trimPathStart && this.trimPathEnd == vectorPath.trimPathEnd && this.trimPathOffset == vectorPath.trimPathOffset && PathFillType.m5569equalsimpl0(this.pathFillType, vectorPath.pathFillType) && Intrinsics.areEqual(this.pathData, vectorPath.pathData);
+            return Intrinsics.areEqual(this.name, vectorPath.name) && Intrinsics.areEqual(this.fill, vectorPath.fill) && this.fillAlpha == vectorPath.fillAlpha && Intrinsics.areEqual(this.stroke, vectorPath.stroke) && this.strokeAlpha == vectorPath.strokeAlpha && this.strokeLineWidth == vectorPath.strokeLineWidth && StrokeCap.m5646equalsimpl0(this.strokeLineCap, vectorPath.strokeLineCap) && StrokeJoin.m5656equalsimpl0(this.strokeLineJoin, vectorPath.strokeLineJoin) && this.strokeLineMiter == vectorPath.strokeLineMiter && this.trimPathStart == vectorPath.trimPathStart && this.trimPathEnd == vectorPath.trimPathEnd && this.trimPathOffset == vectorPath.trimPathOffset && PathFillType.m5570equalsimpl0(this.pathFillType, vectorPath.pathFillType) && Intrinsics.areEqual(this.pathData, vectorPath.pathData);
         }
         return false;
     }
@@ -130,6 +130,6 @@ public final class VectorPath extends VectorNode {
         Brush brush = this.fill;
         int hashCode2 = (((hashCode + (brush != null ? brush.hashCode() : 0)) * 31) + Float.hashCode(this.fillAlpha)) * 31;
         Brush brush2 = this.stroke;
-        return ((((((((((((((((((hashCode2 + (brush2 != null ? brush2.hashCode() : 0)) * 31) + Float.hashCode(this.strokeAlpha)) * 31) + Float.hashCode(this.strokeLineWidth)) * 31) + StrokeCap.m5646hashCodeimpl(this.strokeLineCap)) * 31) + StrokeJoin.m5656hashCodeimpl(this.strokeLineJoin)) * 31) + Float.hashCode(this.strokeLineMiter)) * 31) + Float.hashCode(this.trimPathStart)) * 31) + Float.hashCode(this.trimPathEnd)) * 31) + Float.hashCode(this.trimPathOffset)) * 31) + PathFillType.m5570hashCodeimpl(this.pathFillType);
+        return ((((((((((((((((((hashCode2 + (brush2 != null ? brush2.hashCode() : 0)) * 31) + Float.hashCode(this.strokeAlpha)) * 31) + Float.hashCode(this.strokeLineWidth)) * 31) + StrokeCap.m5647hashCodeimpl(this.strokeLineCap)) * 31) + StrokeJoin.m5657hashCodeimpl(this.strokeLineJoin)) * 31) + Float.hashCode(this.strokeLineMiter)) * 31) + Float.hashCode(this.trimPathStart)) * 31) + Float.hashCode(this.trimPathEnd)) * 31) + Float.hashCode(this.trimPathOffset)) * 31) + PathFillType.m5571hashCodeimpl(this.pathFillType);
     }
 }

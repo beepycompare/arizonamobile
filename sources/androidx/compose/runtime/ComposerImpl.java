@@ -101,7 +101,7 @@ public final class ComposerImpl implements Composer {
     private boolean sourceMarkersEnabled;
     private SlotWriter writer;
     private boolean writerHasAProvider;
-    private final ArrayList<T> pendingStack = Stack.m4581constructorimpl$default(null, 1, null);
+    private final ArrayList<T> pendingStack = Stack.m4582constructorimpl$default(null, 1, null);
     private final IntStack parentStateStack = new IntStack();
     private final List<Invalidation> invalidations = new ArrayList();
     private final IntStack entersStack = new IntStack();
@@ -150,7 +150,7 @@ public final class ComposerImpl implements Composer {
                 ComposerImpl.this.childrenComposing--;
             }
         };
-        this.invalidateStack = Stack.m4581constructorimpl$default(null, 1, null);
+        this.invalidateStack = Stack.m4582constructorimpl$default(null, 1, null);
         SlotReader openReader = slotTable.openReader();
         openReader.close();
         this.reader = openReader;
@@ -247,7 +247,7 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startReplaceableGroup(int i) {
-        m4524startBaiHCIY(i, null, GroupKind.Companion.m4541getGroupULZAiWs(), null);
+        m4525startBaiHCIY(i, null, GroupKind.Companion.m4542getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -260,7 +260,7 @@ public final class ComposerImpl implements Composer {
     @ComposeCompilerApi
     public void startReplaceGroup(int i) {
         if (this.pending != null) {
-            m4524startBaiHCIY(i, null, GroupKind.Companion.m4541getGroupULZAiWs(), null);
+            m4525startBaiHCIY(i, null, GroupKind.Companion.m4542getGroupULZAiWs(), null);
             return;
         }
         validateNodeNotExpected();
@@ -304,7 +304,7 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startDefaults() {
-        m4524startBaiHCIY(ComposerKt.defaultsKey, null, GroupKind.Companion.m4541getGroupULZAiWs(), null);
+        m4525startBaiHCIY(ComposerKt.defaultsKey, null, GroupKind.Companion.m4542getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -327,7 +327,7 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startMovableGroup(int i, Object obj) {
-        m4524startBaiHCIY(i, obj, GroupKind.Companion.m4541getGroupULZAiWs(), null);
+        m4525startBaiHCIY(i, obj, GroupKind.Companion.m4542getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -383,7 +383,7 @@ public final class ComposerImpl implements Composer {
 
     private final void abortRoot() {
         cleanUpCompose();
-        Stack.m4579clearimpl(this.pendingStack);
+        Stack.m4580clearimpl(this.pendingStack);
         this.parentStateStack.clear();
         this.entersStack.clear();
         this.providersInvalidStack.clear();
@@ -449,7 +449,7 @@ public final class ComposerImpl implements Composer {
     }
 
     public final void deactivate$runtime() {
-        Stack.m4579clearimpl(this.invalidateStack);
+        Stack.m4580clearimpl(this.invalidateStack);
         this.invalidations.clear();
         this.changes.clear();
         this.providerUpdates = null;
@@ -465,11 +465,11 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void startGroup(int i) {
-        m4524startBaiHCIY(i, null, GroupKind.Companion.m4541getGroupULZAiWs(), null);
+        m4525startBaiHCIY(i, null, GroupKind.Companion.m4542getGroupULZAiWs(), null);
     }
 
     private final void startGroup(int i, Object obj) {
-        m4524startBaiHCIY(i, obj, GroupKind.Companion.m4541getGroupULZAiWs(), null);
+        m4525startBaiHCIY(i, obj, GroupKind.Companion.m4542getGroupULZAiWs(), null);
     }
 
     private final void endGroup() {
@@ -482,13 +482,13 @@ public final class ComposerImpl implements Composer {
 
     @Override // androidx.compose.runtime.Composer
     public void startNode() {
-        m4524startBaiHCIY(125, null, GroupKind.Companion.m4542getNodeULZAiWs(), null);
+        m4525startBaiHCIY(125, null, GroupKind.Companion.m4543getNodeULZAiWs(), null);
         this.nodeExpected = true;
     }
 
     @Override // androidx.compose.runtime.Composer
     public void startReusableNode() {
-        m4524startBaiHCIY(125, null, GroupKind.Companion.m4543getReusableNodeULZAiWs(), null);
+        m4525startBaiHCIY(125, null, GroupKind.Companion.m4544getReusableNodeULZAiWs(), null);
         this.nodeExpected = true;
     }
 
@@ -529,7 +529,7 @@ public final class ComposerImpl implements Composer {
             this.reusingGroup = this.reader.getCurrentGroup();
             this.reusing = true;
         }
-        m4524startBaiHCIY(i, null, GroupKind.Companion.m4541getGroupULZAiWs(), obj);
+        m4525startBaiHCIY(i, null, GroupKind.Companion.m4542getGroupULZAiWs(), obj);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -938,7 +938,7 @@ public final class ComposerImpl implements Composer {
         intStack.push(asInt);
         this.providersInvalid = z2;
         this.providerCache = currentCompositionLocalScope;
-        m4524startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m4541getGroupULZAiWs(), currentCompositionLocalScope);
+        m4525startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m4542getGroupULZAiWs(), currentCompositionLocalScope);
     }
 
     private final void recordProviderUpdate(PersistentCompositionLocalMap persistentCompositionLocalMap) {
@@ -998,7 +998,7 @@ public final class ComposerImpl implements Composer {
         intStack.push(asInt);
         this.providersInvalid = z2;
         this.providerCache = updateProviderMapGroup;
-        m4524startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m4541getGroupULZAiWs(), updateProviderMapGroup);
+        m4525startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m4542getGroupULZAiWs(), updateProviderMapGroup);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -1046,8 +1046,8 @@ public final class ComposerImpl implements Composer {
 
     public final RecomposeScopeImpl getCurrentRecomposeScope$runtime() {
         ArrayList<T> arrayList = this.invalidateStack;
-        if (this.childrenComposing == 0 && Stack.m4587isNotEmptyimpl(arrayList)) {
-            return (RecomposeScopeImpl) Stack.m4588peekimpl(arrayList);
+        if (this.childrenComposing == 0 && Stack.m4588isNotEmptyimpl(arrayList)) {
+            return (RecomposeScopeImpl) Stack.m4589peekimpl(arrayList);
         }
         return null;
     }
@@ -1103,7 +1103,7 @@ public final class ComposerImpl implements Composer {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void m4524startBaiHCIY(int i, Object obj, int i2, Object obj2) {
+    private final void m4525startBaiHCIY(int i, Object obj, int i2, Object obj2) {
         long rotateLeft;
         Object obj3 = obj;
         validateNodeNotExpected();
@@ -1114,7 +1114,7 @@ public final class ComposerImpl implements Composer {
                 if (obj3 == null) {
                     this.rGroupIndex++;
                 }
-                boolean z = i2 == GroupKind.Companion.m4541getGroupULZAiWs();
+                boolean z = i2 == GroupKind.Companion.m4542getGroupULZAiWs();
                 Pending pending = null;
                 if (!getInserting()) {
                     this.reader.beginEmpty();
@@ -1143,7 +1143,7 @@ public final class ComposerImpl implements Composer {
                     enterGroup(z, null);
                     return;
                 }
-                boolean z2 = i2 == GroupKind.Companion.m4542getNodeULZAiWs() && this.reusing;
+                boolean z2 = i2 == GroupKind.Companion.m4543getNodeULZAiWs() && this.reusing;
                 if (this.pending == null) {
                     int groupKey = this.reader.getGroupKey();
                     if (!z2 && groupKey == i && Intrinsics.areEqual(obj, this.reader.getGroupObjectKey())) {
@@ -1207,7 +1207,7 @@ public final class ComposerImpl implements Composer {
         this.compositeKeyHashCode = rotateLeft;
         if (obj3 == null) {
         }
-        if (i2 == GroupKind.Companion.m4541getGroupULZAiWs()) {
+        if (i2 == GroupKind.Companion.m4542getGroupULZAiWs()) {
         }
         Pending pending4 = null;
         if (!getInserting()) {
@@ -1215,7 +1215,7 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void enterGroup(boolean z, Pending pending) {
-        Stack.m4591pushimpl(this.pendingStack, this.pending);
+        Stack.m4592pushimpl(this.pendingStack, this.pending);
         this.pending = pending;
         this.parentStateStack.push(this.groupNodeCount);
         this.parentStateStack.push(this.rGroupIndex);
@@ -1228,7 +1228,7 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void exitGroup(int i, boolean z) {
-        Pending pending = (Pending) Stack.m4590popimpl(this.pendingStack);
+        Pending pending = (Pending) Stack.m4591popimpl(this.pendingStack);
         if (pending != null && !z) {
             pending.setGroupIndex(pending.getGroupIndex() + 1);
         }
@@ -1423,7 +1423,7 @@ public final class ComposerImpl implements Composer {
                 z2 = true;
                 i4 = currentGroup;
             } else {
-                Stack.m4591pushimpl(this.invalidateStack, scope);
+                Stack.m4592pushimpl(this.invalidateStack, scope);
                 CompositionObserver current = this.observerHolder.current();
                 if (current != null) {
                     try {
@@ -1435,7 +1435,7 @@ public final class ComposerImpl implements Composer {
                 } else {
                     scope.rereadTrackedInstances();
                 }
-                Stack.m4590popimpl(this.invalidateStack);
+                Stack.m4591popimpl(this.invalidateStack);
             }
             firstInRange = ComposerKt.firstInRange(this.invalidations, this.reader.getCurrentGroup(), groupSize);
         }
@@ -1457,16 +1457,16 @@ public final class ComposerImpl implements Composer {
         int updatedNodeCount = updatedNodeCount(i);
         if (updatedNodeCount != i2) {
             int i3 = i2 - updatedNodeCount;
-            int m4584getSizeimpl = Stack.m4584getSizeimpl(this.pendingStack) - 1;
+            int m4585getSizeimpl = Stack.m4585getSizeimpl(this.pendingStack) - 1;
             while (i != -1) {
                 int updatedNodeCount2 = updatedNodeCount(i) + i3;
                 updateNodeCount(i, updatedNodeCount2);
-                int i4 = m4584getSizeimpl;
+                int i4 = m4585getSizeimpl;
                 while (true) {
                     if (-1 < i4) {
-                        Pending pending = (Pending) Stack.m4589peekimpl(this.pendingStack, i4);
+                        Pending pending = (Pending) Stack.m4590peekimpl(this.pendingStack, i4);
                         if (pending != null && pending.updateNodeCount(i, updatedNodeCount2)) {
-                            m4584getSizeimpl = i4 - 1;
+                            m4585getSizeimpl = i4 - 1;
                             break;
                         }
                         i4--;
@@ -1776,7 +1776,7 @@ public final class ComposerImpl implements Composer {
                 if (!forcedRecompose) {
                     z = false;
                     recomposeScopeImpl.setRequiresRecompose(z);
-                    Stack.m4591pushimpl(this.invalidateStack, recomposeScopeImpl);
+                    Stack.m4592pushimpl(this.invalidateStack, recomposeScopeImpl);
                     enterRecomposeScope(recomposeScopeImpl);
                     if (recomposeScopeImpl.getPaused()) {
                         return;
@@ -1794,7 +1794,7 @@ public final class ComposerImpl implements Composer {
             }
             z = true;
             recomposeScopeImpl.setRequiresRecompose(z);
-            Stack.m4591pushimpl(this.invalidateStack, recomposeScopeImpl);
+            Stack.m4592pushimpl(this.invalidateStack, recomposeScopeImpl);
             enterRecomposeScope(recomposeScopeImpl);
             if (recomposeScopeImpl.getPaused()) {
             }
@@ -1802,7 +1802,7 @@ public final class ComposerImpl implements Composer {
             CompositionImpl composition2 = getComposition();
             Intrinsics.checkNotNull(composition2, "null cannot be cast to non-null type androidx.compose.runtime.CompositionImpl");
             RecomposeScopeImpl recomposeScopeImpl2 = new RecomposeScopeImpl(composition2);
-            Stack.m4591pushimpl(this.invalidateStack, recomposeScopeImpl2);
+            Stack.m4592pushimpl(this.invalidateStack, recomposeScopeImpl2);
             updateValue(recomposeScopeImpl2);
             enterRecomposeScope(recomposeScopeImpl2);
         }
@@ -1821,7 +1821,7 @@ public final class ComposerImpl implements Composer {
     public ScopeUpdateScope endRestartGroup() {
         Anchor anchor;
         RecomposeScopeImpl recomposeScopeImpl = null;
-        RecomposeScopeImpl recomposeScopeImpl2 = Stack.m4587isNotEmptyimpl(this.invalidateStack) ? (RecomposeScopeImpl) Stack.m4590popimpl(this.invalidateStack) : null;
+        RecomposeScopeImpl recomposeScopeImpl2 = Stack.m4588isNotEmptyimpl(this.invalidateStack) ? (RecomposeScopeImpl) Stack.m4591popimpl(this.invalidateStack) : null;
         if (recomposeScopeImpl2 != null) {
             recomposeScopeImpl2.setRequiresRecompose(false);
             Function1<Composition, Unit> exitRecomposeScope = exitRecomposeScope(recomposeScopeImpl2);
@@ -1889,7 +1889,7 @@ public final class ComposerImpl implements Composer {
             if (!getInserting() && !Intrinsics.areEqual(this.reader.getGroupAux(), persistentCompositionLocalMap)) {
                 z2 = true;
             }
-            m4524startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m4541getGroupULZAiWs(), persistentCompositionLocalMap);
+            m4525startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m4542getGroupULZAiWs(), persistentCompositionLocalMap);
             this.providerCache = null;
             if (getInserting() && !z) {
                 this.writerHasAProvider = true;
@@ -1906,13 +1906,13 @@ public final class ComposerImpl implements Composer {
                     }
 
                     public final void invoke(Composer composer, int i) {
-                        ComposerKt.sourceInformation(composer, "C3477@141594L18:Composer.kt#9igjgp");
+                        ComposerKt.sourceInformation(composer, "C3472@141351L18:Composer.kt#9igjgp");
                         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                             composer.skipToGroupEnd();
                             return;
                         }
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(316014703, i, -1, "androidx.compose.runtime.ComposerImpl.invokeMovableContentLambda.<anonymous> (Composer.kt:3477)");
+                            ComposerKt.traceEventStart(316014703, i, -1, "androidx.compose.runtime.ComposerImpl.invokeMovableContentLambda.<anonymous> (Composer.kt:3472)");
                         }
                         movableContent.getContent().invoke(obj, composer, 0);
                         if (ComposerKt.isTraceInProgress()) {
@@ -1964,15 +1964,17 @@ public final class ComposerImpl implements Composer {
         MutableIntObjectMap<PersistentCompositionLocalMap> mutableIntObjectMap;
         ComposerChangeListWriter composerChangeListWriter3;
         ChangeList changeList3;
+        ComposerChangeListWriter composerChangeListWriter4;
         int i;
+        boolean implicitRootStart;
         int i2;
         SlotTable slotTable$runtime2;
         List<Pair<MovableContentStateReference, MovableContentStateReference>> list2 = list;
-        ComposerChangeListWriter composerChangeListWriter4 = this.changeListWriter;
+        ComposerChangeListWriter composerChangeListWriter5 = this.changeListWriter;
         ChangeList changeList4 = this.lateChanges;
-        ChangeList changeList5 = composerChangeListWriter4.getChangeList();
+        ChangeList changeList5 = composerChangeListWriter5.getChangeList();
         try {
-            composerChangeListWriter4.setChangeList(changeList4);
+            composerChangeListWriter5.setChangeList(changeList4);
             this.changeListWriter.resetSlots();
             int size = list2.size();
             int i3 = 0;
@@ -2005,7 +2007,7 @@ public final class ComposerImpl implements Composer {
                         this.changeListWriter.includeOperationsIn(changeList6, intRef);
                         Unit unit = Unit.INSTANCE;
                         openReader.close();
-                        composerChangeListWriter2 = composerChangeListWriter4;
+                        composerChangeListWriter2 = composerChangeListWriter5;
                         changeList2 = changeList5;
                         i = size;
                         i2 = i4;
@@ -2039,100 +2041,99 @@ public final class ComposerImpl implements Composer {
                                 openReader2.reposition(anchorIndex3);
                                 this.changeListWriter.moveReaderToAbsolute(anchorIndex3);
                                 ChangeList changeList7 = new ChangeList();
-                                ComposerChangeListWriter composerChangeListWriter5 = this.changeListWriter;
-                                ChangeList changeList8 = composerChangeListWriter5.getChangeList();
+                                ComposerChangeListWriter composerChangeListWriter6 = this.changeListWriter;
+                                ChangeList changeList8 = composerChangeListWriter6.getChangeList();
                                 try {
-                                    composerChangeListWriter5.setChangeList(changeList7);
+                                    composerChangeListWriter6.setChangeList(changeList7);
                                     slotReader = openReader2;
                                     try {
-                                        ComposerChangeListWriter composerChangeListWriter6 = this.changeListWriter;
+                                        composerChangeListWriter4 = this.changeListWriter;
                                         i = size;
-                                        boolean implicitRootStart = composerChangeListWriter6.getImplicitRootStart();
-                                        try {
-                                            composerChangeListWriter6.setImplicitRootStart(false);
-                                            component2.transferPendingInvalidations$runtime();
-                                            try {
-                                                i2 = i4;
-                                                mutableIntObjectMap = mutableIntObjectMap2;
-                                                composerChangeListWriter2 = composerChangeListWriter4;
-                                                composerChangeListWriter3 = composerChangeListWriter5;
-                                                changeList2 = changeList5;
-                                                changeList3 = changeList8;
-                                                try {
-                                                    recomposeMovableContent(component2.getComposition$runtime(), component1.getComposition$runtime(), Integer.valueOf(slotReader.getCurrentGroup()), component2.getInvalidations$runtime(), new Function0() { // from class: androidx.compose.runtime.ComposerImpl$$ExternalSyntheticLambda2
-                                                        @Override // kotlin.jvm.functions.Function0
-                                                        public final Object invoke() {
-                                                            Unit insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35;
-                                                            insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35 = ComposerImpl.insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35(ComposerImpl.this, component1);
-                                                            return insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35;
-                                                        }
-                                                    });
-                                                    try {
-                                                        composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
-                                                        try {
-                                                            composerChangeListWriter3.setChangeList(changeList3);
-                                                            this.changeListWriter.includeOperationsIn(changeList7, intRef);
-                                                            Unit unit2 = Unit.INSTANCE;
-                                                            try {
-                                                                this.reader = slotReader2;
-                                                                this.nodeCountOverrides = iArr;
-                                                                this.providerUpdates = mutableIntObjectMap;
-                                                                Unit unit3 = Unit.INSTANCE;
-                                                                try {
-                                                                    slotReader.close();
-                                                                } catch (Throwable th) {
-                                                                    th = th;
-                                                                    composerChangeListWriter = composerChangeListWriter2;
-                                                                    changeList = changeList2;
-                                                                    composerChangeListWriter.setChangeList(changeList);
-                                                                    throw th;
-                                                                }
-                                                            } catch (Throwable th2) {
-                                                                th = th2;
-                                                                slotReader.close();
-                                                                throw th;
-                                                            }
-                                                        } catch (Throwable th3) {
-                                                            th = th3;
-                                                            this.reader = slotReader2;
-                                                            this.nodeCountOverrides = iArr;
-                                                            this.providerUpdates = mutableIntObjectMap;
-                                                            throw th;
-                                                        }
-                                                    } catch (Throwable th4) {
-                                                        th = th4;
-                                                        composerChangeListWriter3.setChangeList(changeList3);
-                                                        throw th;
-                                                    }
-                                                } catch (Throwable th5) {
-                                                    th = th5;
-                                                    composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
-                                                    throw th;
-                                                }
-                                            } catch (Throwable th6) {
-                                                th = th6;
-                                                mutableIntObjectMap = mutableIntObjectMap2;
-                                                changeList3 = changeList8;
-                                                composerChangeListWriter3 = composerChangeListWriter5;
-                                            }
-                                        } catch (Throwable th7) {
-                                            th = th7;
-                                            mutableIntObjectMap = mutableIntObjectMap2;
-                                            composerChangeListWriter3 = composerChangeListWriter5;
-                                            changeList3 = changeList8;
-                                        }
-                                    } catch (Throwable th8) {
-                                        th = th8;
+                                        implicitRootStart = composerChangeListWriter4.getImplicitRootStart();
+                                    } catch (Throwable th) {
+                                        th = th;
                                         mutableIntObjectMap = mutableIntObjectMap2;
-                                        composerChangeListWriter3 = composerChangeListWriter5;
+                                        composerChangeListWriter3 = composerChangeListWriter6;
                                         changeList3 = changeList8;
                                         composerChangeListWriter3.setChangeList(changeList3);
                                         throw th;
                                     }
+                                } catch (Throwable th2) {
+                                    th = th2;
+                                    mutableIntObjectMap = mutableIntObjectMap2;
+                                    slotReader = openReader2;
+                                }
+                                try {
+                                    composerChangeListWriter4.setImplicitRootStart(false);
+                                    try {
+                                        i2 = i4;
+                                        mutableIntObjectMap = mutableIntObjectMap2;
+                                        composerChangeListWriter2 = composerChangeListWriter5;
+                                        composerChangeListWriter3 = composerChangeListWriter6;
+                                        changeList2 = changeList5;
+                                        changeList3 = changeList8;
+                                        try {
+                                            recomposeMovableContent(component2.getComposition$runtime(), component1.getComposition$runtime(), Integer.valueOf(slotReader.getCurrentGroup()), component2.getInvalidations$runtime(), new Function0() { // from class: androidx.compose.runtime.ComposerImpl$$ExternalSyntheticLambda2
+                                                @Override // kotlin.jvm.functions.Function0
+                                                public final Object invoke() {
+                                                    Unit insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35;
+                                                    insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35 = ComposerImpl.insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35(ComposerImpl.this, component1);
+                                                    return insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35;
+                                                }
+                                            });
+                                            try {
+                                                composerChangeListWriter4.setImplicitRootStart(implicitRootStart);
+                                                try {
+                                                    composerChangeListWriter3.setChangeList(changeList3);
+                                                    this.changeListWriter.includeOperationsIn(changeList7, intRef);
+                                                    Unit unit2 = Unit.INSTANCE;
+                                                    try {
+                                                        this.reader = slotReader2;
+                                                        this.nodeCountOverrides = iArr;
+                                                        this.providerUpdates = mutableIntObjectMap;
+                                                        Unit unit3 = Unit.INSTANCE;
+                                                        try {
+                                                            slotReader.close();
+                                                        } catch (Throwable th3) {
+                                                            th = th3;
+                                                            composerChangeListWriter = composerChangeListWriter2;
+                                                            changeList = changeList2;
+                                                            composerChangeListWriter.setChangeList(changeList);
+                                                            throw th;
+                                                        }
+                                                    } catch (Throwable th4) {
+                                                        th = th4;
+                                                        slotReader.close();
+                                                        throw th;
+                                                    }
+                                                } catch (Throwable th5) {
+                                                    th = th5;
+                                                    this.reader = slotReader2;
+                                                    this.nodeCountOverrides = iArr;
+                                                    this.providerUpdates = mutableIntObjectMap;
+                                                    throw th;
+                                                }
+                                            } catch (Throwable th6) {
+                                                th = th6;
+                                                composerChangeListWriter3.setChangeList(changeList3);
+                                                throw th;
+                                            }
+                                        } catch (Throwable th7) {
+                                            th = th7;
+                                            composerChangeListWriter4.setImplicitRootStart(implicitRootStart);
+                                            throw th;
+                                        }
+                                    } catch (Throwable th8) {
+                                        th = th8;
+                                        mutableIntObjectMap = mutableIntObjectMap2;
+                                        changeList3 = changeList8;
+                                        composerChangeListWriter3 = composerChangeListWriter6;
+                                    }
                                 } catch (Throwable th9) {
                                     th = th9;
                                     mutableIntObjectMap = mutableIntObjectMap2;
-                                    slotReader = openReader2;
+                                    composerChangeListWriter3 = composerChangeListWriter6;
+                                    changeList3 = changeList8;
                                 }
                             } catch (Throwable th10) {
                                 th = th10;
@@ -2148,23 +2149,23 @@ public final class ComposerImpl implements Composer {
                     i4 = i2 + 1;
                     list2 = list;
                     size = i;
-                    composerChangeListWriter4 = composerChangeListWriter2;
+                    composerChangeListWriter5 = composerChangeListWriter2;
                     changeList5 = changeList2;
                     i3 = 0;
                 } catch (Throwable th12) {
                     th = th12;
-                    composerChangeListWriter2 = composerChangeListWriter4;
+                    composerChangeListWriter2 = composerChangeListWriter5;
                     changeList2 = changeList5;
                 }
             }
-            ComposerChangeListWriter composerChangeListWriter7 = composerChangeListWriter4;
+            ComposerChangeListWriter composerChangeListWriter7 = composerChangeListWriter5;
             ChangeList changeList9 = changeList5;
             this.changeListWriter.endMovableContentPlacement();
             this.changeListWriter.moveReaderToAbsolute(0);
             composerChangeListWriter7.setChangeList(changeList9);
         } catch (Throwable th13) {
             th = th13;
-            composerChangeListWriter = composerChangeListWriter4;
+            composerChangeListWriter = composerChangeListWriter5;
             changeList = changeList5;
         }
     }
@@ -2369,13 +2370,13 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: composeContent--ZbOJvo$runtime  reason: not valid java name */
-    public final void m4525composeContentZbOJvo$runtime(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2, ShouldPauseCallback shouldPauseCallback) {
+    public final void m4526composeContentZbOJvo$runtime(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2, ShouldPauseCallback shouldPauseCallback) {
         if (!this.changes.isEmpty()) {
             ComposerKt.composeImmediateRuntimeError("Expected applyChanges() to have been called");
         }
         this.shouldPauseCallback = shouldPauseCallback;
         try {
-            m4523doComposeaFTiNEg(mutableScatterMap, function2);
+            m4524doComposeaFTiNEg(mutableScatterMap, function2);
         } finally {
             this.shouldPauseCallback = null;
         }
@@ -2394,14 +2395,14 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: recompose-aFTiNEg$runtime  reason: not valid java name */
-    public final boolean m4526recomposeaFTiNEg$runtime(MutableScatterMap<Object, Object> mutableScatterMap, ShouldPauseCallback shouldPauseCallback) {
+    public final boolean m4527recomposeaFTiNEg$runtime(MutableScatterMap<Object, Object> mutableScatterMap, ShouldPauseCallback shouldPauseCallback) {
         if (!this.changes.isEmpty()) {
             ComposerKt.composeImmediateRuntimeError("Expected applyChanges() to have been called");
         }
-        if (ScopeMap.m4703getSizeimpl(mutableScatterMap) > 0 || !this.invalidations.isEmpty() || this.forciblyRecompose) {
+        if (ScopeMap.m4704getSizeimpl(mutableScatterMap) > 0 || !this.invalidations.isEmpty() || this.forciblyRecompose) {
             this.shouldPauseCallback = shouldPauseCallback;
             try {
-                m4523doComposeaFTiNEg(mutableScatterMap, null);
+                m4524doComposeaFTiNEg(mutableScatterMap, null);
                 this.shouldPauseCallback = null;
                 return this.changes.isNotEmpty();
             } catch (Throwable th) {
@@ -2413,7 +2414,7 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: updateComposerInvalidations-RY85e9Y  reason: not valid java name */
-    public final void m4527updateComposerInvalidationsRY85e9Y(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public final void m4528updateComposerInvalidationsRY85e9Y(MutableScatterMap<Object, Object> mutableScatterMap) {
         Comparator comparator;
         for (int lastIndex = CollectionsKt.getLastIndex(this.invalidations); -1 < lastIndex; lastIndex--) {
             Invalidation invalidation = this.invalidations.get(lastIndex);
@@ -2472,7 +2473,7 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: doCompose-aFTiNEg  reason: not valid java name */
-    private final void m4523doComposeaFTiNEg(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2) {
+    private final void m4524doComposeaFTiNEg(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2) {
         if (this.isComposing) {
             ComposerKt.composeImmediateRuntimeError("Reentrant composition is not supported");
         }
@@ -2481,7 +2482,7 @@ public final class ComposerImpl implements Composer {
         try {
             this.compositionToken = Long.hashCode(SnapshotKt.currentSnapshot().getSnapshotId());
             this.providerUpdates = null;
-            m4527updateComposerInvalidationsRY85e9Y(mutableScatterMap);
+            m4528updateComposerInvalidationsRY85e9Y(mutableScatterMap);
             this.nodeIndex = 0;
             this.isComposing = true;
             if (current != null) {
@@ -2705,7 +2706,7 @@ public final class ComposerImpl implements Composer {
 
     private final void finalizeCompose() {
         this.changeListWriter.finalizeComposition();
-        if (!Stack.m4586isEmptyimpl(this.pendingStack)) {
+        if (!Stack.m4587isEmptyimpl(this.pendingStack)) {
             ComposerKt.composeImmediateRuntimeError("Start/end imbalance");
         }
         cleanUpCompose();
@@ -2718,7 +2719,7 @@ public final class ComposerImpl implements Composer {
         this.compositeKeyHashCode = 0L;
         this.nodeExpected = false;
         this.changeListWriter.resetTransientState();
-        Stack.m4579clearimpl(this.invalidateStack);
+        Stack.m4580clearimpl(this.invalidateStack);
         clearUpdatedNodeCounts();
     }
 
@@ -3006,7 +3007,7 @@ public final class ComposerImpl implements Composer {
     }
 
     public final int stacksSize$runtime() {
-        return this.entersStack.tos + Stack.m4584getSizeimpl(this.invalidateStack) + this.providersInvalidStack.tos + Stack.m4584getSizeimpl(this.pendingStack) + this.parentStateStack.tos;
+        return this.entersStack.tos + Stack.m4585getSizeimpl(this.invalidateStack) + this.providersInvalidStack.tos + Stack.m4585getSizeimpl(this.pendingStack) + this.parentStateStack.tos;
     }
 
     @Override // androidx.compose.runtime.Composer

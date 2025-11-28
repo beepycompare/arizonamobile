@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class PausableProgressBinding implements ViewBinding {
     public final View backProgress;
     public final View frontProgress;

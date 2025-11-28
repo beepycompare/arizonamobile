@@ -101,9 +101,9 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
         Intrinsics.checkNotNullExpressionValue(animation2, "get(...)");
         holder.getAnimationItemBinding().aiTittle.setText(animation2.getName() + " (" + animation.getId() + ")");
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/animation/img/animations/" + this.animationList.get(i).getImage();
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/animation/img/animations/" + this.animationList.get(i).getImage();
         } else {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/animation/img/animations/" + this.animationList.get(i).getImage();
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/animation/img/animations/" + this.animationList.get(i).getImage();
         }
         Picasso.get().load(str).into(holder.getAnimationItemBinding().aiImage);
         if (!this.animationList.get(i).isEnabled()) {

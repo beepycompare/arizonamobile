@@ -4,7 +4,7 @@ import android.content.Intent;
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.BatteryInfo;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeType;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Y2 implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */

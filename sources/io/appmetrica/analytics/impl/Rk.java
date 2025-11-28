@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Rk extends BaseProtobufStateSerializer {
     public final Pk a() {
         return new Pk();

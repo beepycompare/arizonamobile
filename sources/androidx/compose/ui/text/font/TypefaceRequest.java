@@ -20,7 +20,7 @@ public final class TypefaceRequest {
     }
 
     /* renamed from: copy-e1PVR60$default  reason: not valid java name */
-    public static /* synthetic */ TypefaceRequest m7612copye1PVR60$default(TypefaceRequest typefaceRequest, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, Object obj, int i3, Object obj2) {
+    public static /* synthetic */ TypefaceRequest m7613copye1PVR60$default(TypefaceRequest typefaceRequest, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, Object obj, int i3, Object obj2) {
         if ((i3 & 1) != 0) {
             fontFamily = typefaceRequest.fontFamily;
         }
@@ -38,7 +38,7 @@ public final class TypefaceRequest {
         }
         Object obj3 = obj;
         int i4 = i;
-        return typefaceRequest.m7615copye1PVR60(fontFamily, fontWeight, i4, i2, obj3);
+        return typefaceRequest.m7616copye1PVR60(fontFamily, fontWeight, i4, i2, obj3);
     }
 
     public final FontFamily component1() {
@@ -50,12 +50,12 @@ public final class TypefaceRequest {
     }
 
     /* renamed from: component3-_-LCdwA  reason: not valid java name */
-    public final int m7613component3_LCdwA() {
+    public final int m7614component3_LCdwA() {
         return this.fontStyle;
     }
 
     /* renamed from: component4-GVVA2EU  reason: not valid java name */
-    public final int m7614component4GVVA2EU() {
+    public final int m7615component4GVVA2EU() {
         return this.fontSynthesis;
     }
 
@@ -64,7 +64,7 @@ public final class TypefaceRequest {
     }
 
     /* renamed from: copy-e1PVR60  reason: not valid java name */
-    public final TypefaceRequest m7615copye1PVR60(FontFamily fontFamily, FontWeight fontWeight, int i, int i2, Object obj) {
+    public final TypefaceRequest m7616copye1PVR60(FontFamily fontFamily, FontWeight fontWeight, int i, int i2, Object obj) {
         return new TypefaceRequest(fontFamily, fontWeight, i, i2, obj, null);
     }
 
@@ -74,20 +74,20 @@ public final class TypefaceRequest {
         }
         if (obj instanceof TypefaceRequest) {
             TypefaceRequest typefaceRequest = (TypefaceRequest) obj;
-            return Intrinsics.areEqual(this.fontFamily, typefaceRequest.fontFamily) && Intrinsics.areEqual(this.fontWeight, typefaceRequest.fontWeight) && FontStyle.m7570equalsimpl0(this.fontStyle, typefaceRequest.fontStyle) && FontSynthesis.m7581equalsimpl0(this.fontSynthesis, typefaceRequest.fontSynthesis) && Intrinsics.areEqual(this.resourceLoaderCacheKey, typefaceRequest.resourceLoaderCacheKey);
+            return Intrinsics.areEqual(this.fontFamily, typefaceRequest.fontFamily) && Intrinsics.areEqual(this.fontWeight, typefaceRequest.fontWeight) && FontStyle.m7571equalsimpl0(this.fontStyle, typefaceRequest.fontStyle) && FontSynthesis.m7582equalsimpl0(this.fontSynthesis, typefaceRequest.fontSynthesis) && Intrinsics.areEqual(this.resourceLoaderCacheKey, typefaceRequest.resourceLoaderCacheKey);
         }
         return false;
     }
 
     public int hashCode() {
         FontFamily fontFamily = this.fontFamily;
-        int hashCode = (((((((fontFamily == null ? 0 : fontFamily.hashCode()) * 31) + this.fontWeight.hashCode()) * 31) + FontStyle.m7571hashCodeimpl(this.fontStyle)) * 31) + FontSynthesis.m7582hashCodeimpl(this.fontSynthesis)) * 31;
+        int hashCode = (((((((fontFamily == null ? 0 : fontFamily.hashCode()) * 31) + this.fontWeight.hashCode()) * 31) + FontStyle.m7572hashCodeimpl(this.fontStyle)) * 31) + FontSynthesis.m7583hashCodeimpl(this.fontSynthesis)) * 31;
         Object obj = this.resourceLoaderCacheKey;
         return hashCode + (obj != null ? obj.hashCode() : 0);
     }
 
     public String toString() {
-        return "TypefaceRequest(fontFamily=" + this.fontFamily + ", fontWeight=" + this.fontWeight + ", fontStyle=" + ((Object) FontStyle.m7572toStringimpl(this.fontStyle)) + ", fontSynthesis=" + ((Object) FontSynthesis.m7585toStringimpl(this.fontSynthesis)) + ", resourceLoaderCacheKey=" + this.resourceLoaderCacheKey + ')';
+        return "TypefaceRequest(fontFamily=" + this.fontFamily + ", fontWeight=" + this.fontWeight + ", fontStyle=" + ((Object) FontStyle.m7573toStringimpl(this.fontStyle)) + ", fontSynthesis=" + ((Object) FontSynthesis.m7586toStringimpl(this.fontSynthesis)) + ", resourceLoaderCacheKey=" + this.resourceLoaderCacheKey + ')';
     }
 
     private TypefaceRequest(FontFamily fontFamily, FontWeight fontWeight, int i, int i2, Object obj) {
@@ -107,12 +107,12 @@ public final class TypefaceRequest {
     }
 
     /* renamed from: getFontStyle-_-LCdwA  reason: not valid java name */
-    public final int m7616getFontStyle_LCdwA() {
+    public final int m7617getFontStyle_LCdwA() {
         return this.fontStyle;
     }
 
     /* renamed from: getFontSynthesis-GVVA2EU  reason: not valid java name */
-    public final int m7617getFontSynthesisGVVA2EU() {
+    public final int m7618getFontSynthesisGVVA2EU() {
         return this.fontSynthesis;
     }
 

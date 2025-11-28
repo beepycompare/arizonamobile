@@ -4,7 +4,7 @@ import android.content.Context;
 import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Om extends Vm {
     @Override // io.appmetrica.analytics.impl.Vm
     public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {

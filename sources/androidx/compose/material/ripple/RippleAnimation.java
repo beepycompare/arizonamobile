@@ -153,15 +153,15 @@ public final class RippleAnimation {
     }
 
     /* renamed from: draw-4WTKRHQ  reason: not valid java name */
-    public final void m1855draw4WTKRHQ(DrawScope drawScope, long j) {
+    public final void m1856draw4WTKRHQ(DrawScope drawScope, long j) {
         if (this.startRadius == null) {
-            this.startRadius = Float.valueOf(RippleAnimationKt.m1857getRippleStartRadiusuvyYCjk(drawScope.mo5858getSizeNHjbRc()));
+            this.startRadius = Float.valueOf(RippleAnimationKt.m1858getRippleStartRadiusuvyYCjk(drawScope.mo5859getSizeNHjbRc()));
         }
         if (this.origin == null) {
-            this.origin = Offset.m5024boximpl(drawScope.mo5857getCenterF1C5BW0());
+            this.origin = Offset.m5025boximpl(drawScope.mo5858getCenterF1C5BW0());
         }
         if (this.targetCenter == null) {
-            this.targetCenter = Offset.m5024boximpl(OffsetKt.Offset(Size.m5104getWidthimpl(drawScope.mo5858getSizeNHjbRc()) / 2.0f, Size.m5101getHeightimpl(drawScope.mo5858getSizeNHjbRc()) / 2.0f));
+            this.targetCenter = Offset.m5025boximpl(OffsetKt.Offset(Size.m5105getWidthimpl(drawScope.mo5859getSizeNHjbRc()) / 2.0f, Size.m5102getHeightimpl(drawScope.mo5859getSizeNHjbRc()) / 2.0f));
         }
         float floatValue = (!getFinishRequested() || getFinishedFadingIn()) ? this.animatedAlpha.getValue().floatValue() : 1.0f;
         Float f = this.startRadius;
@@ -169,33 +169,33 @@ public final class RippleAnimation {
         float lerp = MathHelpersKt.lerp(f.floatValue(), this.radius, this.animatedRadiusPercent.getValue().floatValue());
         Offset offset = this.origin;
         Intrinsics.checkNotNull(offset);
-        float m5035getXimpl = Offset.m5035getXimpl(offset.m5045unboximpl());
+        float m5036getXimpl = Offset.m5036getXimpl(offset.m5046unboximpl());
         Offset offset2 = this.targetCenter;
         Intrinsics.checkNotNull(offset2);
-        float lerp2 = MathHelpersKt.lerp(m5035getXimpl, Offset.m5035getXimpl(offset2.m5045unboximpl()), this.animatedCenterPercent.getValue().floatValue());
+        float lerp2 = MathHelpersKt.lerp(m5036getXimpl, Offset.m5036getXimpl(offset2.m5046unboximpl()), this.animatedCenterPercent.getValue().floatValue());
         Offset offset3 = this.origin;
         Intrinsics.checkNotNull(offset3);
-        float m5036getYimpl = Offset.m5036getYimpl(offset3.m5045unboximpl());
+        float m5037getYimpl = Offset.m5037getYimpl(offset3.m5046unboximpl());
         Offset offset4 = this.targetCenter;
         Intrinsics.checkNotNull(offset4);
-        long Offset = OffsetKt.Offset(lerp2, MathHelpersKt.lerp(m5036getYimpl, Offset.m5036getYimpl(offset4.m5045unboximpl()), this.animatedCenterPercent.getValue().floatValue()));
-        long m5278copywmQWz5c$default = Color.m5278copywmQWz5c$default(j, Color.m5281getAlphaimpl(j) * floatValue, 0.0f, 0.0f, 0.0f, 14, null);
+        long Offset = OffsetKt.Offset(lerp2, MathHelpersKt.lerp(m5037getYimpl, Offset.m5037getYimpl(offset4.m5046unboximpl()), this.animatedCenterPercent.getValue().floatValue()));
+        long m5279copywmQWz5c$default = Color.m5279copywmQWz5c$default(j, Color.m5282getAlphaimpl(j) * floatValue, 0.0f, 0.0f, 0.0f, 14, null);
         if (!this.bounded) {
-            DrawScope.m5839drawCircleVaOC9Bg$default(drawScope, m5278copywmQWz5c$default, lerp, Offset, 0.0f, null, null, 0, 120, null);
+            DrawScope.m5840drawCircleVaOC9Bg$default(drawScope, m5279copywmQWz5c$default, lerp, Offset, 0.0f, null, null, 0, 120, null);
             return;
         }
-        float m5104getWidthimpl = Size.m5104getWidthimpl(drawScope.mo5858getSizeNHjbRc());
-        float m5101getHeightimpl = Size.m5101getHeightimpl(drawScope.mo5858getSizeNHjbRc());
-        int m5268getIntersectrtfAjoo = ClipOp.Companion.m5268getIntersectrtfAjoo();
+        float m5105getWidthimpl = Size.m5105getWidthimpl(drawScope.mo5859getSizeNHjbRc());
+        float m5102getHeightimpl = Size.m5102getHeightimpl(drawScope.mo5859getSizeNHjbRc());
+        int m5269getIntersectrtfAjoo = ClipOp.Companion.m5269getIntersectrtfAjoo();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+        long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5782clipRectN_I0leg(0.0f, 0.0f, m5104getWidthimpl, m5101getHeightimpl, m5268getIntersectrtfAjoo);
-            DrawScope.m5839drawCircleVaOC9Bg$default(drawScope, m5278copywmQWz5c$default, lerp, Offset, 0.0f, null, null, 0, 120, null);
+            drawContext.getTransform().mo5783clipRectN_I0leg(0.0f, 0.0f, m5105getWidthimpl, m5102getHeightimpl, m5269getIntersectrtfAjoo);
+            DrawScope.m5840drawCircleVaOC9Bg$default(drawScope, m5279copywmQWz5c$default, lerp, Offset, 0.0f, null, null, 0, 120, null);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
         }
     }
 }

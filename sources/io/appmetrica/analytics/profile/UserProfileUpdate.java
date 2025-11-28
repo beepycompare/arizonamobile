@@ -2,7 +2,7 @@ package io.appmetrica.analytics.profile;
 
 import io.appmetrica.analytics.impl.Hd;
 import io.appmetrica.analytics.impl.InterfaceC0281go;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UserProfileUpdate<T extends InterfaceC0281go> {
 
     /* renamed from: a  reason: collision with root package name */

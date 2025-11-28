@@ -17,13 +17,13 @@ import kotlin.Metadata;
 public final class FloatingActionButtonDefaults {
     public static final int $stable = 0;
     public static final FloatingActionButtonDefaults INSTANCE = new FloatingActionButtonDefaults();
-    private static final float LargeIconSize = Dp.m7995constructorimpl(36);
+    private static final float LargeIconSize = Dp.m7996constructorimpl(36);
 
     private FloatingActionButtonDefaults() {
     }
 
     /* renamed from: getLargeIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m2394getLargeIconSizeD9Ej5fM() {
+    public final float m2395getLargeIconSizeD9Ej5fM() {
         return LargeIconSize;
     }
 
@@ -93,22 +93,22 @@ public final class FloatingActionButtonDefaults {
     }
 
     /* renamed from: elevation-xZ9-QkE  reason: not valid java name */
-    public final FloatingActionButtonElevation m2393elevationxZ9QkE(float f, float f2, float f3, float f4, Composer composer, int i, int i2) {
+    public final FloatingActionButtonElevation m2394elevationxZ9QkE(float f, float f2, float f3, float f4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -241106249, "C(elevation)N(defaultElevation:c#ui.unit.Dp,pressedElevation:c#ui.unit.Dp,focusedElevation:c#ui.unit.Dp,hoveredElevation:c#ui.unit.Dp):FloatingActionButton.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            f = FabPrimaryContainerTokens.INSTANCE.m3940getContainerElevationD9Ej5fM();
+            f = FabPrimaryContainerTokens.INSTANCE.m3941getContainerElevationD9Ej5fM();
         }
         float f5 = f;
         if ((i2 & 2) != 0) {
-            f2 = FabPrimaryContainerTokens.INSTANCE.m3943getPressedContainerElevationD9Ej5fM();
+            f2 = FabPrimaryContainerTokens.INSTANCE.m3944getPressedContainerElevationD9Ej5fM();
         }
         float f6 = f2;
         if ((i2 & 4) != 0) {
-            f3 = FabPrimaryContainerTokens.INSTANCE.m3941getFocusedContainerElevationD9Ej5fM();
+            f3 = FabPrimaryContainerTokens.INSTANCE.m3942getFocusedContainerElevationD9Ej5fM();
         }
         float f7 = f3;
         if ((i2 & 8) != 0) {
-            f4 = FabPrimaryContainerTokens.INSTANCE.m3942getHoveredContainerElevationD9Ej5fM();
+            f4 = FabPrimaryContainerTokens.INSTANCE.m3943getHoveredContainerElevationD9Ej5fM();
         }
         float f8 = f4;
         if (ComposerKt.isTraceInProgress()) {
@@ -123,22 +123,22 @@ public final class FloatingActionButtonDefaults {
     }
 
     /* renamed from: loweredElevation-xZ9-QkE  reason: not valid java name */
-    public final FloatingActionButtonElevation m2395loweredElevationxZ9QkE(float f, float f2, float f3, float f4, Composer composer, int i, int i2) {
+    public final FloatingActionButtonElevation m2396loweredElevationxZ9QkE(float f, float f2, float f3, float f4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -285065125, "C(loweredElevation)N(defaultElevation:c#ui.unit.Dp,pressedElevation:c#ui.unit.Dp,focusedElevation:c#ui.unit.Dp,hoveredElevation:c#ui.unit.Dp):FloatingActionButton.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            f = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+            f = ElevationTokens.INSTANCE.m3890getLevel1D9Ej5fM();
         }
         float f5 = f;
         if ((i2 & 2) != 0) {
-            f2 = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+            f2 = ElevationTokens.INSTANCE.m3890getLevel1D9Ej5fM();
         }
         float f6 = f2;
         if ((i2 & 4) != 0) {
-            f3 = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+            f3 = ElevationTokens.INSTANCE.m3890getLevel1D9Ej5fM();
         }
         float f7 = f3;
         if ((i2 & 8) != 0) {
-            f4 = ElevationTokens.INSTANCE.m3890getLevel2D9Ej5fM();
+            f4 = ElevationTokens.INSTANCE.m3891getLevel2D9Ej5fM();
         }
         float f8 = f4;
         if (ComposerKt.isTraceInProgress()) {
@@ -153,24 +153,24 @@ public final class FloatingActionButtonDefaults {
     }
 
     /* renamed from: bottomAppBarFabElevation-a9UjIt4  reason: not valid java name */
-    public final FloatingActionButtonElevation m2392bottomAppBarFabElevationa9UjIt4(float f, float f2, float f3, float f4) {
+    public final FloatingActionButtonElevation m2393bottomAppBarFabElevationa9UjIt4(float f, float f2, float f3, float f4) {
         return new FloatingActionButtonElevation(f, f2, f3, f4, null);
     }
 
     /* renamed from: bottomAppBarFabElevation-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ FloatingActionButtonElevation m2391bottomAppBarFabElevationa9UjIt4$default(FloatingActionButtonDefaults floatingActionButtonDefaults, float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ FloatingActionButtonElevation m2392bottomAppBarFabElevationa9UjIt4$default(FloatingActionButtonDefaults floatingActionButtonDefaults, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7995constructorimpl(0);
+            f3 = Dp.m7996constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7995constructorimpl(0);
+            f4 = Dp.m7996constructorimpl(0);
         }
-        return floatingActionButtonDefaults.m2392bottomAppBarFabElevationa9UjIt4(f, f2, f3, f4);
+        return floatingActionButtonDefaults.m2393bottomAppBarFabElevationa9UjIt4(f, f2, f3, f4);
     }
 }

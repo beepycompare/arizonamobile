@@ -11,49 +11,49 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class PointerEventType {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unknown = m6516constructorimpl(0);
-    private static final int Press = m6516constructorimpl(1);
-    private static final int Release = m6516constructorimpl(2);
-    private static final int Move = m6516constructorimpl(3);
-    private static final int Enter = m6516constructorimpl(4);
-    private static final int Exit = m6516constructorimpl(5);
-    private static final int Scroll = m6516constructorimpl(6);
+    private static final int Unknown = m6517constructorimpl(0);
+    private static final int Press = m6517constructorimpl(1);
+    private static final int Release = m6517constructorimpl(2);
+    private static final int Move = m6517constructorimpl(3);
+    private static final int Enter = m6517constructorimpl(4);
+    private static final int Exit = m6517constructorimpl(5);
+    private static final int Scroll = m6517constructorimpl(6);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PointerEventType m6515boximpl(int i) {
+    public static final /* synthetic */ PointerEventType m6516boximpl(int i) {
         return new PointerEventType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6516constructorimpl(int i) {
+    private static int m6517constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6517equalsimpl(int i, Object obj) {
-        return (obj instanceof PointerEventType) && i == ((PointerEventType) obj).m6521unboximpl();
+    public static boolean m6518equalsimpl(int i, Object obj) {
+        return (obj instanceof PointerEventType) && i == ((PointerEventType) obj).m6522unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6518equalsimpl0(int i, int i2) {
+    public static final boolean m6519equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6519hashCodeimpl(int i) {
+    public static int m6520hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6517equalsimpl(this.value, obj);
+        return m6518equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6519hashCodeimpl(this.value);
+        return m6520hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6521unboximpl() {
+    public final /* synthetic */ int m6522unboximpl() {
         return this.value;
     }
 
@@ -69,37 +69,37 @@ public final class PointerEventType {
         }
 
         /* renamed from: getUnknown-7fucELk  reason: not valid java name */
-        public final int m6528getUnknown7fucELk() {
+        public final int m6529getUnknown7fucELk() {
             return PointerEventType.Unknown;
         }
 
         /* renamed from: getPress-7fucELk  reason: not valid java name */
-        public final int m6525getPress7fucELk() {
+        public final int m6526getPress7fucELk() {
             return PointerEventType.Press;
         }
 
         /* renamed from: getRelease-7fucELk  reason: not valid java name */
-        public final int m6526getRelease7fucELk() {
+        public final int m6527getRelease7fucELk() {
             return PointerEventType.Release;
         }
 
         /* renamed from: getMove-7fucELk  reason: not valid java name */
-        public final int m6524getMove7fucELk() {
+        public final int m6525getMove7fucELk() {
             return PointerEventType.Move;
         }
 
         /* renamed from: getEnter-7fucELk  reason: not valid java name */
-        public final int m6522getEnter7fucELk() {
+        public final int m6523getEnter7fucELk() {
             return PointerEventType.Enter;
         }
 
         /* renamed from: getExit-7fucELk  reason: not valid java name */
-        public final int m6523getExit7fucELk() {
+        public final int m6524getExit7fucELk() {
             return PointerEventType.Exit;
         }
 
         /* renamed from: getScroll-7fucELk  reason: not valid java name */
-        public final int m6527getScroll7fucELk() {
+        public final int m6528getScroll7fucELk() {
             return PointerEventType.Scroll;
         }
     }
@@ -109,11 +109,11 @@ public final class PointerEventType {
     }
 
     public String toString() {
-        return m6520toStringimpl(this.value);
+        return m6521toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6520toStringimpl(int i) {
-        return m6518equalsimpl0(i, Press) ? "Press" : m6518equalsimpl0(i, Release) ? "Release" : m6518equalsimpl0(i, Move) ? "Move" : m6518equalsimpl0(i, Enter) ? "Enter" : m6518equalsimpl0(i, Exit) ? "Exit" : m6518equalsimpl0(i, Scroll) ? "Scroll" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m6521toStringimpl(int i) {
+        return m6519equalsimpl0(i, Press) ? "Press" : m6519equalsimpl0(i, Release) ? "Release" : m6519equalsimpl0(i, Move) ? "Move" : m6519equalsimpl0(i, Enter) ? "Enter" : m6519equalsimpl0(i, Exit) ? "Exit" : m6519equalsimpl0(i, Scroll) ? "Scroll" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

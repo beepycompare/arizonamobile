@@ -155,7 +155,7 @@ public final class FlowLayoutOverflowState {
     }
 
     /* renamed from: ellipsisSize-F35zm-w$foundation_layout  reason: not valid java name */
-    public final IntIntPair m762ellipsisSizeF35zmw$foundation_layout(boolean z, int i, int i2) {
+    public final IntIntPair m763ellipsisSizeF35zmw$foundation_layout(boolean z, int i, int i2) {
         int i3 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i3 != 1 && i3 != 2) {
             if (i3 != 3) {
@@ -222,34 +222,34 @@ public final class FlowLayoutOverflowState {
                 return null;
             }
             Intrinsics.checkNotNull(intIntPair);
-            return new FlowLayoutBuildingBlocks.WrapEllipsisInfo(measurable2, placeable2, intIntPair.m44unboximpl(), false, 8, null);
+            return new FlowLayoutBuildingBlocks.WrapEllipsisInfo(measurable2, placeable2, intIntPair.m45unboximpl(), false, 8, null);
         }
         throw new NoWhenBranchMatchedException();
     }
 
     /* renamed from: setOverflowMeasurables--hBUhpc$foundation_layout  reason: not valid java name */
-    public final void m764setOverflowMeasurableshBUhpc$foundation_layout(IntrinsicMeasurable intrinsicMeasurable, IntrinsicMeasurable intrinsicMeasurable2, boolean z, long j) {
-        long m808constructorimpl = OrientationIndependentConstraints.m808constructorimpl(j, z ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
+    public final void m765setOverflowMeasurableshBUhpc$foundation_layout(IntrinsicMeasurable intrinsicMeasurable, IntrinsicMeasurable intrinsicMeasurable2, boolean z, long j) {
+        long m809constructorimpl = OrientationIndependentConstraints.m809constructorimpl(j, z ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
         if (intrinsicMeasurable != null) {
-            int mainAxisMin = FlowLayoutKt.mainAxisMin(intrinsicMeasurable, z, Constraints.m7947getMaxHeightimpl(m808constructorimpl));
-            this.seeMoreSize = IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(mainAxisMin, FlowLayoutKt.crossAxisMin(intrinsicMeasurable, z, mainAxisMin)));
+            int mainAxisMin = FlowLayoutKt.mainAxisMin(intrinsicMeasurable, z, Constraints.m7948getMaxHeightimpl(m809constructorimpl));
+            this.seeMoreSize = IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(mainAxisMin, FlowLayoutKt.crossAxisMin(intrinsicMeasurable, z, mainAxisMin)));
             this.seeMoreMeasurable = intrinsicMeasurable instanceof Measurable ? (Measurable) intrinsicMeasurable : null;
             this.seeMorePlaceable = null;
         }
         if (intrinsicMeasurable2 != null) {
-            int mainAxisMin2 = FlowLayoutKt.mainAxisMin(intrinsicMeasurable2, z, Constraints.m7947getMaxHeightimpl(m808constructorimpl));
-            this.collapseSize = IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(mainAxisMin2, FlowLayoutKt.crossAxisMin(intrinsicMeasurable2, z, mainAxisMin2)));
+            int mainAxisMin2 = FlowLayoutKt.mainAxisMin(intrinsicMeasurable2, z, Constraints.m7948getMaxHeightimpl(m809constructorimpl));
+            this.collapseSize = IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(mainAxisMin2, FlowLayoutKt.crossAxisMin(intrinsicMeasurable2, z, mainAxisMin2)));
             this.collapseMeasurable = intrinsicMeasurable2 instanceof Measurable ? (Measurable) intrinsicMeasurable2 : null;
             this.collapsePlaceable = null;
         }
     }
 
     /* renamed from: setOverflowMeasurables--hBUhpc$foundation_layout  reason: not valid java name */
-    public final void m763setOverflowMeasurableshBUhpc$foundation_layout(final FlowLineMeasurePolicy flowLineMeasurePolicy, Measurable measurable, Measurable measurable2, long j) {
+    public final void m764setOverflowMeasurableshBUhpc$foundation_layout(final FlowLineMeasurePolicy flowLineMeasurePolicy, Measurable measurable, Measurable measurable2, long j) {
         LayoutOrientation layoutOrientation = flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical;
-        long m821toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m821toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m810copyyUG9Ft0$default(OrientationIndependentConstraints.m808constructorimpl(j, layoutOrientation), 0, 0, 0, 0, 10, null), layoutOrientation);
+        long m822toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m822toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m811copyyUG9Ft0$default(OrientationIndependentConstraints.m809constructorimpl(j, layoutOrientation), 0, 0, 0, 0, 10, null), layoutOrientation);
         if (measurable != null) {
-            FlowLayoutKt.m760measureAndCacherqJ1uqs(measurable, flowLineMeasurePolicy, m821toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutOverflowState$$ExternalSyntheticLambda0
+            FlowLayoutKt.m761measureAndCacherqJ1uqs(measurable, flowLineMeasurePolicy, m822toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutOverflowState$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit overflowMeasurables__hBUhpc$lambda$5$lambda$4;
@@ -260,7 +260,7 @@ public final class FlowLayoutOverflowState {
             this.seeMoreMeasurable = measurable;
         }
         if (measurable2 != null) {
-            FlowLayoutKt.m760measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m821toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutOverflowState$$ExternalSyntheticLambda1
+            FlowLayoutKt.m761measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m822toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutOverflowState$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit overflowMeasurables__hBUhpc$lambda$9$lambda$8;
@@ -283,7 +283,7 @@ public final class FlowLayoutOverflowState {
             i = 0;
             i2 = 0;
         }
-        flowLayoutOverflowState.seeMoreSize = IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(i, i2));
+        flowLayoutOverflowState.seeMoreSize = IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i, i2));
         flowLayoutOverflowState.seeMorePlaceable = placeable;
         return Unit.INSTANCE;
     }
@@ -299,15 +299,15 @@ public final class FlowLayoutOverflowState {
             i = 0;
             i2 = 0;
         }
-        flowLayoutOverflowState.collapseSize = IntIntPair.m33boximpl(IntIntPair.m36constructorimpl(i, i2));
+        flowLayoutOverflowState.collapseSize = IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i, i2));
         flowLayoutOverflowState.collapsePlaceable = placeable;
         return Unit.INSTANCE;
     }
 
     /* renamed from: setOverflowMeasurables-VKLhPVY$foundation_layout  reason: not valid java name */
-    public final void m765setOverflowMeasurablesVKLhPVY$foundation_layout(FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function2<? super Boolean, ? super Integer, ? extends Measurable> function2) {
+    public final void m766setOverflowMeasurablesVKLhPVY$foundation_layout(FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function2<? super Boolean, ? super Integer, ? extends Measurable> function2) {
         this.itemShown = 0;
         this.getOverflowMeasurable = function2;
-        m763setOverflowMeasurableshBUhpc$foundation_layout(flowLineMeasurePolicy, function2.invoke(true, 0), function2.invoke(false, 0), j);
+        m764setOverflowMeasurableshBUhpc$foundation_layout(flowLineMeasurePolicy, function2.invoke(true, 0), function2.invoke(false, 0), j);
     }
 }

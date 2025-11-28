@@ -28,7 +28,7 @@ public final class ComposableSingletons$ModalBottomSheetKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1121996006, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda$1121996006.<anonymous> (ModalBottomSheet.kt:133)");
             }
-            BottomSheetDefaults.INSTANCE.m1952DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1953DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -52,7 +52,7 @@ public final class ComposableSingletons$ModalBottomSheetKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-655173438, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda$-655173438.<anonymous> (ModalBottomSheet.kt:232)");
             }
-            BottomSheetDefaults.INSTANCE.m1952DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1953DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -74,7 +74,7 @@ public final class ComposableSingletons$ModalBottomSheetKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1716959002, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda$1716959002.<anonymous> (ModalBottomSheet.kt:269)");
             }
-            BottomSheetDefaults.INSTANCE.m1952DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1953DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -82,7 +82,7 @@ public final class ComposableSingletons$ModalBottomSheetKt {
     });
 
     /* renamed from: getLambda$-655173438$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2166getLambda$655173438$material3() {
+    public final Function2<Composer, Integer, Unit> m2167getLambda$655173438$material3() {
         return f26lambda$655173438;
     }
 

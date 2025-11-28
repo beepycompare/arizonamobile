@@ -65,37 +65,37 @@ public final class MutableSpanStyle {
     */
     public /* synthetic */ MutableSpanStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(r1, r3, r5, r7, r8, r9, r10, r11, r13, r14, r15, r16, (i & 4096) != 0 ? null : textDecoration, (i & 8192) != 0 ? null : shadow, null);
-        long m5315getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j;
-        long m8200getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j2;
+        long m5316getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
+        long m8201getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m8201getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m8200getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m8200getUnspecifiedXSAIIZE() : j3;
+        long m8201getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m8201getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m5315getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j4;
+        long m5316getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m7155getColor0d7_KjU() {
+    public final long m7156getColor0d7_KjU() {
         return this.color;
     }
 
     /* renamed from: setColor-8_81llA  reason: not valid java name */
-    public final void m7162setColor8_81llA(long j) {
+    public final void m7163setColor8_81llA(long j) {
         this.color = j;
     }
 
     /* renamed from: getFontSize-XSAIIZE  reason: not valid java name */
-    public final long m7156getFontSizeXSAIIZE() {
+    public final long m7157getFontSizeXSAIIZE() {
         return this.fontSize;
     }
 
     /* renamed from: setFontSize--R2X_6o  reason: not valid java name */
-    public final void m7163setFontSizeR2X_6o(long j) {
+    public final void m7164setFontSizeR2X_6o(long j) {
         this.fontSize = j;
     }
 
@@ -108,22 +108,22 @@ public final class MutableSpanStyle {
     }
 
     /* renamed from: getFontStyle-4Lr2A7w  reason: not valid java name */
-    public final FontStyle m7157getFontStyle4Lr2A7w() {
+    public final FontStyle m7158getFontStyle4Lr2A7w() {
         return this.fontStyle;
     }
 
     /* renamed from: setFontStyle-mLjRB2g  reason: not valid java name */
-    public final void m7164setFontStylemLjRB2g(FontStyle fontStyle) {
+    public final void m7165setFontStylemLjRB2g(FontStyle fontStyle) {
         this.fontStyle = fontStyle;
     }
 
     /* renamed from: getFontSynthesis-ZQGJjVo  reason: not valid java name */
-    public final FontSynthesis m7158getFontSynthesisZQGJjVo() {
+    public final FontSynthesis m7159getFontSynthesisZQGJjVo() {
         return this.fontSynthesis;
     }
 
     /* renamed from: setFontSynthesis-tDdu0R4  reason: not valid java name */
-    public final void m7165setFontSynthesistDdu0R4(FontSynthesis fontSynthesis) {
+    public final void m7166setFontSynthesistDdu0R4(FontSynthesis fontSynthesis) {
         this.fontSynthesis = fontSynthesis;
     }
 
@@ -144,22 +144,22 @@ public final class MutableSpanStyle {
     }
 
     /* renamed from: getLetterSpacing-XSAIIZE  reason: not valid java name */
-    public final long m7159getLetterSpacingXSAIIZE() {
+    public final long m7160getLetterSpacingXSAIIZE() {
         return this.letterSpacing;
     }
 
     /* renamed from: setLetterSpacing--R2X_6o  reason: not valid java name */
-    public final void m7166setLetterSpacingR2X_6o(long j) {
+    public final void m7167setLetterSpacingR2X_6o(long j) {
         this.letterSpacing = j;
     }
 
     /* renamed from: getBaselineShift-5SSeXJ0  reason: not valid java name */
-    public final BaselineShift m7154getBaselineShift5SSeXJ0() {
+    public final BaselineShift m7155getBaselineShift5SSeXJ0() {
         return this.baselineShift;
     }
 
     /* renamed from: setBaselineShift-_isdbwI  reason: not valid java name */
-    public final void m7161setBaselineShift_isdbwI(BaselineShift baselineShift) {
+    public final void m7162setBaselineShift_isdbwI(BaselineShift baselineShift) {
         this.baselineShift = baselineShift;
     }
 
@@ -180,12 +180,12 @@ public final class MutableSpanStyle {
     }
 
     /* renamed from: getBackground-0d7_KjU  reason: not valid java name */
-    public final long m7153getBackground0d7_KjU() {
+    public final long m7154getBackground0d7_KjU() {
         return this.background;
     }
 
     /* renamed from: setBackground-8_81llA  reason: not valid java name */
-    public final void m7160setBackground8_81llA(long j) {
+    public final void m7161setBackground8_81llA(long j) {
         this.background = j;
     }
 

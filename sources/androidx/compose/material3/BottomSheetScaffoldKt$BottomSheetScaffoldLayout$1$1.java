@@ -54,26 +54,26 @@ final class BottomSheetScaffoldKt$BottomSheetScaffoldLayout$1$1 implements Multi
 
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo780measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
+    public final MeasureResult mo781measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
         Integer valueOf;
         List<? extends Measurable> list2 = list.get(0);
         int i = 1;
         List<? extends Measurable> list3 = list.get(1);
         List<? extends Measurable> list4 = list.get(2);
         List<? extends Measurable> list5 = list.get(3);
-        final int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
-        final int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
-        long m7938copyZbe2FdA$default = Constraints.m7938copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        final int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+        final int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
+        long m7939copyZbe2FdA$default = Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list4.size());
         int size = list4.size();
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(list4.get(i2).mo6697measureBRTryo0(m7938copyZbe2FdA$default));
+            arrayList.add(list4.get(i2).mo6698measureBRTryo0(m7939copyZbe2FdA$default));
         }
         final ArrayList arrayList2 = arrayList;
         ArrayList arrayList3 = new ArrayList(list2.size());
         int size2 = list2.size();
         for (int i3 = 0; i3 < size2; i3++) {
-            arrayList3.add(list2.get(i3).mo6697measureBRTryo0(m7938copyZbe2FdA$default));
+            arrayList3.add(list2.get(i3).mo6698measureBRTryo0(m7939copyZbe2FdA$default));
         }
         final ArrayList arrayList4 = arrayList3;
         if (arrayList4.isEmpty()) {
@@ -96,26 +96,26 @@ final class BottomSheetScaffoldKt$BottomSheetScaffoldLayout$1$1 implements Multi
         }
         Integer num = valueOf;
         final int intValue = num != null ? num.intValue() : 0;
-        long m7938copyZbe2FdA$default2 = Constraints.m7938copyZbe2FdA$default(m7938copyZbe2FdA$default, 0, 0, 0, m7947getMaxHeightimpl - intValue, 7, null);
+        long m7939copyZbe2FdA$default2 = Constraints.m7939copyZbe2FdA$default(m7939copyZbe2FdA$default, 0, 0, 0, m7948getMaxHeightimpl - intValue, 7, null);
         ArrayList arrayList5 = new ArrayList(list3.size());
         int size3 = list3.size();
         for (int i4 = 0; i4 < size3; i4++) {
-            arrayList5.add(list3.get(i4).mo6697measureBRTryo0(m7938copyZbe2FdA$default2));
+            arrayList5.add(list3.get(i4).mo6698measureBRTryo0(m7939copyZbe2FdA$default2));
         }
         final ArrayList arrayList6 = arrayList5;
         ArrayList arrayList7 = new ArrayList(list5.size());
         int size4 = list5.size();
         for (int i5 = 0; i5 < size4; i5++) {
-            arrayList7.add(list5.get(i5).mo6697measureBRTryo0(m7938copyZbe2FdA$default));
+            arrayList7.add(list5.get(i5).mo6698measureBRTryo0(m7939copyZbe2FdA$default));
         }
         final ArrayList arrayList8 = arrayList7;
         final SheetState sheetState = this.$sheetState;
         final Function0<Float> function0 = this.$sheetOffset;
-        return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7947getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$BottomSheetScaffoldLayout$1$1$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, m7949getMaxWidthimpl, m7948getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$BottomSheetScaffoldLayout$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$12;
-                measure_3p2s80s$lambda$12 = BottomSheetScaffoldKt$BottomSheetScaffoldLayout$1$1.measure_3p2s80s$lambda$12(arrayList2, m7948getMaxWidthimpl, arrayList8, sheetState, function0, m7947getMaxHeightimpl, arrayList6, arrayList4, intValue, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$12 = BottomSheetScaffoldKt$BottomSheetScaffoldLayout$1$1.measure_3p2s80s$lambda$12(arrayList2, m7949getMaxWidthimpl, arrayList8, sheetState, function0, m7948getMaxHeightimpl, arrayList6, arrayList4, intValue, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$12;
             }
         }, 4, null);

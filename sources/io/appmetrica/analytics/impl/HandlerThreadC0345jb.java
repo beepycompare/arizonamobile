@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.os.HandlerThread;
 import io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread;
 /* renamed from: io.appmetrica.analytics.impl.jb  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class HandlerThreadC0345jb extends HandlerThread implements IInterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */

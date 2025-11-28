@@ -196,16 +196,16 @@ public final class ResourcesCompat {
     /* loaded from: classes2.dex */
     public static abstract class FontCallback {
         /* renamed from: onFontRetrievalFailed */
-        public abstract void m8485xb24343b7(int i);
+        public abstract void m8486xb24343b7(int i);
 
         /* renamed from: onFontRetrieved */
-        public abstract void m8486x46c88379(Typeface typeface);
+        public abstract void m8487x46c88379(Typeface typeface);
 
         public final void callbackSuccessAsync(final Typeface typeface, Handler handler) {
             getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResourcesCompat.FontCallback.this.m8486x46c88379(typeface);
+                    ResourcesCompat.FontCallback.this.m8487x46c88379(typeface);
                 }
             });
         }
@@ -214,7 +214,7 @@ public final class ResourcesCompat {
             getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResourcesCompat.FontCallback.this.m8485xb24343b7(i);
+                    ResourcesCompat.FontCallback.this.m8486xb24343b7(i);
                 }
             });
         }

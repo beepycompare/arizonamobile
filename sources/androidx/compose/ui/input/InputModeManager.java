@@ -6,8 +6,8 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface InputModeManager {
     /* renamed from: getInputMode-aOaMEAU  reason: not valid java name */
-    int mo6096getInputModeaOaMEAU();
+    int mo6097getInputModeaOaMEAU();
 
     /* renamed from: requestInputMode-iuPiT84  reason: not valid java name */
-    boolean mo6097requestInputModeiuPiT84(int i);
+    boolean mo6098requestInputModeiuPiT84(int i);
 }

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import java.io.File;
 /* renamed from: io.appmetrica.analytics.impl.l6  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FileObserverC0392l6 extends FileObserver {
 
     /* renamed from: a  reason: collision with root package name */

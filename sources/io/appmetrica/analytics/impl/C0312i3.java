@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.i3  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class C0312i3 implements InterfaceC0337j3 {
 
     /* renamed from: a  reason: collision with root package name */

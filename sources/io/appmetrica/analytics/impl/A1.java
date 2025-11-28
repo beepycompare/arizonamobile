@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface A1 {
     /* synthetic */ void a(Intent intent);
 

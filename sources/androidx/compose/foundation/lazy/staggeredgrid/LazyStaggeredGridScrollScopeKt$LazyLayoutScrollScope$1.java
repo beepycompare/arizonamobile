@@ -59,7 +59,7 @@ public final class LazyStaggeredGridScrollScopeKt$LazyLayoutScrollScope$1 implem
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutScrollScope
     public int calculateDistanceTo(int i, int i2) {
         LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo;
-        int m8123getXimpl;
+        int m8124getXimpl;
         LazyStaggeredGridLayoutInfo layoutInfo = this.$state.getLayoutInfo();
         int i3 = 0;
         if (layoutInfo.getVisibleItemsInfo().isEmpty()) {
@@ -82,12 +82,12 @@ public final class LazyStaggeredGridScrollScopeKt$LazyLayoutScrollScope$1 implem
         if (lazyStaggeredGridItemInfo2 == null) {
             int visibleItemsAverageSize = LazyStaggeredGridMeasureResultKt.visibleItemsAverageSize(layoutInfo);
             int laneCount$foundation_release = this.$state.getLaneCount$foundation_release();
-            m8123getXimpl = (visibleItemsAverageSize * ((i / laneCount$foundation_release) - (getFirstVisibleItemIndex() / laneCount$foundation_release))) - getFirstVisibleItemScrollOffset();
+            m8124getXimpl = (visibleItemsAverageSize * ((i / laneCount$foundation_release) - (getFirstVisibleItemIndex() / laneCount$foundation_release))) - getFirstVisibleItemScrollOffset();
         } else if (layoutInfo.getOrientation() == Orientation.Vertical) {
-            m8123getXimpl = IntOffset.m8124getYimpl(lazyStaggeredGridItemInfo2.mo1098getOffsetnOccac());
+            m8124getXimpl = IntOffset.m8125getYimpl(lazyStaggeredGridItemInfo2.mo1099getOffsetnOccac());
         } else {
-            m8123getXimpl = IntOffset.m8123getXimpl(lazyStaggeredGridItemInfo2.mo1098getOffsetnOccac());
+            m8124getXimpl = IntOffset.m8124getXimpl(lazyStaggeredGridItemInfo2.mo1099getOffsetnOccac());
         }
-        return m8123getXimpl + i2;
+        return m8124getXimpl + i2;
     }
 }

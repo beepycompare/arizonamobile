@@ -14,50 +14,50 @@ public interface InnerShadowScope extends ShadowScope {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m4857roundToPxR2X_6o(InnerShadowScope innerShadowScope, long j) {
-            return InnerShadowScope.super.mo422roundToPxR2X_6o(j);
+        public static int m4858roundToPxR2X_6o(InnerShadowScope innerShadowScope, long j) {
+            return InnerShadowScope.super.mo423roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m4858roundToPx0680j_4(InnerShadowScope innerShadowScope, float f) {
-            return InnerShadowScope.super.mo423roundToPx0680j_4(f);
+        public static int m4859roundToPx0680j_4(InnerShadowScope innerShadowScope, float f) {
+            return InnerShadowScope.super.mo424roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m4859toDpGaN1DYA(InnerShadowScope innerShadowScope, long j) {
-            return InnerShadowScope.super.mo424toDpGaN1DYA(j);
+        public static float m4860toDpGaN1DYA(InnerShadowScope innerShadowScope, long j) {
+            return InnerShadowScope.super.mo425toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4860toDpu2uoSUM(InnerShadowScope innerShadowScope, float f) {
-            return InnerShadowScope.super.mo425toDpu2uoSUM(f);
+        public static float m4861toDpu2uoSUM(InnerShadowScope innerShadowScope, float f) {
+            return InnerShadowScope.super.mo426toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4861toDpu2uoSUM(InnerShadowScope innerShadowScope, int i) {
-            return InnerShadowScope.super.mo426toDpu2uoSUM(i);
+        public static float m4862toDpu2uoSUM(InnerShadowScope innerShadowScope, int i) {
+            return InnerShadowScope.super.mo427toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m4862toDpSizekrfVVM(InnerShadowScope innerShadowScope, long j) {
-            return InnerShadowScope.super.mo427toDpSizekrfVVM(j);
+        public static long m4863toDpSizekrfVVM(InnerShadowScope innerShadowScope, long j) {
+            return InnerShadowScope.super.mo428toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m4863toPxR2X_6o(InnerShadowScope innerShadowScope, long j) {
-            return InnerShadowScope.super.mo428toPxR2X_6o(j);
+        public static float m4864toPxR2X_6o(InnerShadowScope innerShadowScope, long j) {
+            return InnerShadowScope.super.mo429toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m4864toPx0680j_4(InnerShadowScope innerShadowScope, float f) {
-            return InnerShadowScope.super.mo429toPx0680j_4(f);
+        public static float m4865toPx0680j_4(InnerShadowScope innerShadowScope, float f) {
+            return InnerShadowScope.super.mo430toPx0680j_4(f);
         }
 
         @Deprecated
@@ -67,26 +67,26 @@ public interface InnerShadowScope extends ShadowScope {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m4865toSizeXkaWNTQ(InnerShadowScope innerShadowScope, long j) {
-            return InnerShadowScope.super.mo430toSizeXkaWNTQ(j);
+        public static long m4866toSizeXkaWNTQ(InnerShadowScope innerShadowScope, long j) {
+            return InnerShadowScope.super.mo431toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m4866toSp0xMU5do(InnerShadowScope innerShadowScope, float f) {
-            return InnerShadowScope.super.mo431toSp0xMU5do(f);
+        public static long m4867toSp0xMU5do(InnerShadowScope innerShadowScope, float f) {
+            return InnerShadowScope.super.mo432toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4867toSpkPz2Gy4(InnerShadowScope innerShadowScope, float f) {
-            return InnerShadowScope.super.mo432toSpkPz2Gy4(f);
+        public static long m4868toSpkPz2Gy4(InnerShadowScope innerShadowScope, float f) {
+            return InnerShadowScope.super.mo433toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4868toSpkPz2Gy4(InnerShadowScope innerShadowScope, int i) {
-            return InnerShadowScope.super.mo433toSpkPz2Gy4(i);
+        public static long m4869toSpkPz2Gy4(InnerShadowScope innerShadowScope, int i) {
+            return InnerShadowScope.super.mo434toSpkPz2Gy4(i);
         }
     }
 }

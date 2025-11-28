@@ -3,7 +3,7 @@ package io.appmetrica.analytics.remotepermissions.impl;
 import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
 import java.util.Set;
 import kotlin.collections.SetsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class e implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */

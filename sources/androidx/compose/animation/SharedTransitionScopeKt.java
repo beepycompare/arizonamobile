@@ -170,15 +170,15 @@ public final class SharedTransitionScopeKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                    Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                    Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                        m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                        m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                     }
-                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, 158724660, "C102@5092L9:SharedTransitionScope.kt#xbi5r1");
@@ -286,14 +286,14 @@ public final class SharedTransitionScopeKt {
 
                             @Override // kotlin.jvm.functions.Function3
                             public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                                return m127invoke3p2s80s(measureScope, measurable, constraints.m7954unboximpl());
+                                return m128invoke3p2s80s(measureScope, measurable, constraints.m7955unboximpl());
                             }
 
                             /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                            public final MeasureResult m127invoke3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-                                final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
-                                int width = mo6697measureBRTryo0.getWidth();
-                                int height = mo6697measureBRTryo0.getHeight();
+                            public final MeasureResult m128invoke3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+                                final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+                                int width = mo6698measureBRTryo0.getWidth();
+                                int height = mo6698measureBRTryo0.getHeight();
                                 final SharedTransitionScopeImpl sharedTransitionScopeImpl2 = SharedTransitionScopeImpl.this;
                                 return MeasureScope.layout$default(measureScope, width, height, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedTransitionScopeKt$SharedTransitionScope$1$1$1.1
                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -317,7 +317,7 @@ public final class SharedTransitionScopeKt {
                                                 sharedTransitionScopeImpl2.setNullableLookaheadRoot$animation(coordinates);
                                             }
                                         }
-                                        Placeable.PlacementScope.place$default(placementScope, mo6697measureBRTryo0, 0, 0, 0.0f, 4, null);
+                                        Placeable.PlacementScope.place$default(placementScope, mo6698measureBRTryo0, 0, 0, 0.0f, 4, null);
                                     }
                                 }, 4, null);
                             }

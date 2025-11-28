@@ -11,8 +11,8 @@ public final class AbsoluteRoundedCornerShapeKt {
     }
 
     /* renamed from: AbsoluteRoundedCornerShape-0680j_4  reason: not valid java name */
-    public static final AbsoluteRoundedCornerShape m1195AbsoluteRoundedCornerShape0680j_4(float f) {
-        return AbsoluteRoundedCornerShape(CornerSizeKt.m1199CornerSize0680j_4(f));
+    public static final AbsoluteRoundedCornerShape m1196AbsoluteRoundedCornerShape0680j_4(float f) {
+        return AbsoluteRoundedCornerShape(CornerSizeKt.m1200CornerSize0680j_4(f));
     }
 
     public static final AbsoluteRoundedCornerShape AbsoluteRoundedCornerShape(float f) {
@@ -24,8 +24,8 @@ public final class AbsoluteRoundedCornerShapeKt {
     }
 
     /* renamed from: AbsoluteRoundedCornerShape-a9UjIt4  reason: not valid java name */
-    public static final AbsoluteRoundedCornerShape m1196AbsoluteRoundedCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
-        return new AbsoluteRoundedCornerShape(CornerSizeKt.m1199CornerSize0680j_4(f), CornerSizeKt.m1199CornerSize0680j_4(f2), CornerSizeKt.m1199CornerSize0680j_4(f3), CornerSizeKt.m1199CornerSize0680j_4(f4));
+    public static final AbsoluteRoundedCornerShape m1197AbsoluteRoundedCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
+        return new AbsoluteRoundedCornerShape(CornerSizeKt.m1200CornerSize0680j_4(f), CornerSizeKt.m1200CornerSize0680j_4(f2), CornerSizeKt.m1200CornerSize0680j_4(f3), CornerSizeKt.m1200CornerSize0680j_4(f4));
     }
 
     public static /* synthetic */ AbsoluteRoundedCornerShape AbsoluteRoundedCornerShape$default(float f, float f2, float f3, float f4, int i, Object obj) {
@@ -69,19 +69,19 @@ public final class AbsoluteRoundedCornerShapeKt {
     }
 
     /* renamed from: AbsoluteRoundedCornerShape-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ AbsoluteRoundedCornerShape m1197AbsoluteRoundedCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ AbsoluteRoundedCornerShape m1198AbsoluteRoundedCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7995constructorimpl(0);
+            f3 = Dp.m7996constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7995constructorimpl(0);
+            f4 = Dp.m7996constructorimpl(0);
         }
-        return m1196AbsoluteRoundedCornerShapea9UjIt4(f, f2, f3, f4);
+        return m1197AbsoluteRoundedCornerShapea9UjIt4(f, f2, f3, f4);
     }
 }

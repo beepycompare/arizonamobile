@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.text.TextUtils;
 import kotlin.text.Charsets;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Vf {
     public static final String a(C0395l9 c0395l9) {
         String str;

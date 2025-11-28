@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class M3 extends SimpleThreadSafeToggle {
 
     /* renamed from: a  reason: collision with root package name */

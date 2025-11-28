@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import io.appmetrica.analytics.plugins.IPluginReporter;
 import io.appmetrica.analytics.plugins.PluginErrorDetails;
 import java.util.Collection;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Te implements IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */

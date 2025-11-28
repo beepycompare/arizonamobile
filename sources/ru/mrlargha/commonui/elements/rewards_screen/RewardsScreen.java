@@ -133,7 +133,8 @@ public final class RewardsScreen extends SAMPUIElement {
             countDownTimer.cancel();
         }
         RewardsLayoutBinding rewardsLayoutBinding = this.binding;
-        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + this.path + "background/" + rewardScreenInfo.getBackground()).into(rewardsLayoutBinding.layoutBg);
+        int i = 0;
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + this.path + "background/" + rewardScreenInfo.getBackground()).into(rewardsLayoutBinding.layoutBg);
         String str = rewardScreenInfo.getTitleHeaders() + "\n" + rewardScreenInfo.getTitle();
         if (rewardScreenInfo.getType() == 7) {
             rewardsLayoutBinding.title.setTypeface(ResourcesCompat.getFont(getTargetActivity(), R.font.hardpixel));
@@ -145,7 +146,6 @@ public final class RewardsScreen extends SAMPUIElement {
         CountDownTimer start = new RewardsScreen$setRewardScreenInfo$1$1(rewardsLayoutBinding, this, rewardScreenInfo, rewardScreenInfo.getTime() * 1000).start();
         Intrinsics.checkNotNullExpressionValue(start, "start(...)");
         this.timer = start;
-        int i = 0;
         for (Object obj : rewardScreenInfo.getRewards()) {
             int i2 = i + 1;
             if (i < 0) {
@@ -176,9 +176,9 @@ public final class RewardsScreen extends SAMPUIElement {
     private final void setItemReward(RewardsLayoutItemBinding rewardsLayoutItemBinding, Companion.RewardItem rewardItem, Companion.RewardScreenInfo rewardScreenInfo) {
         int parseColor = Color.parseColor(rewardScreenInfo.getColor());
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         String str = this.path;
-        picasso.load(resourceUrl + str + "items/" + rewardItem.getImage()).into(rewardsLayoutItemBinding.shortPrizeIc);
+        picasso.load(resourceUrl$default + str + "items/" + rewardItem.getImage()).into(rewardsLayoutItemBinding.shortPrizeIc);
         rewardsLayoutItemBinding.shortPrizeTitle.setText(rewardItem.getTitle());
         rewardsLayoutItemBinding.shortPrizeDescription.setText(rewardItem.getValue());
         if (rewardItem.getBadge().length() > 0) {

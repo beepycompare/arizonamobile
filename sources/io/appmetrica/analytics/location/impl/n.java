@@ -5,7 +5,7 @@ import android.location.LocationListener;
 import android.os.Bundle;
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class n implements LocationListener {
 
     /* renamed from: a  reason: collision with root package name */

@@ -186,7 +186,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         this.modifier = Modifier.Companion;
         this.density = DensityKt.Density$default(1.0f, 0.0f, 2, null);
         this.position = new int[2];
-        this.size = IntSize.Companion.m8171getZeroYbymL2g();
+        this.size = IntSize.Companion.m8172getZeroYbymL2g();
         this.runUpdate = new Function0<Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$runUpdate$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -314,7 +314,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                 iArr3 = AndroidViewHolder.this.position;
                 view2.getLocationOnScreen(iArr3);
                 j = AndroidViewHolder.this.size;
-                AndroidViewHolder.this.size = layoutCoordinates.mo6705getSizeYbymL2g();
+                AndroidViewHolder.this.size = layoutCoordinates.mo6706getSizeYbymL2g();
                 windowInsetsCompat = AndroidViewHolder.this.insets;
                 if (windowInsetsCompat != null) {
                     iArr4 = AndroidViewHolder.this.position;
@@ -322,7 +322,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                         iArr5 = AndroidViewHolder.this.position;
                         if (i3 == iArr5[1]) {
                             j2 = AndroidViewHolder.this.size;
-                            if (IntSize.m8164equalsimpl0(j, j2)) {
+                            if (IntSize.m8165equalsimpl0(j, j2)) {
                                 return;
                             }
                         }
@@ -425,11 +425,11 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         layoutNode.setMeasurePolicy(new MeasurePolicy() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$5
             @Override // androidx.compose.ui.layout.MeasurePolicy
             /* renamed from: measure-3p2s80s */
-            public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+            public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                 int obtainMeasureSpec;
                 int obtainMeasureSpec2;
                 if (AndroidViewHolder.this.getChildCount() == 0) {
-                    return MeasureScope.layout$default(measureScope, Constraints.m7950getMinWidthimpl(j), Constraints.m7949getMinHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$5$measure$1
+                    return MeasureScope.layout$default(measureScope, Constraints.m7951getMinWidthimpl(j), Constraints.m7950getMinHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$5$measure$1
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(Placeable.PlacementScope placementScope) {
                         }
@@ -441,24 +441,24 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                         }
                     }, 4, null);
                 }
-                if (Constraints.m7950getMinWidthimpl(j) != 0) {
-                    AndroidViewHolder.this.getChildAt(0).setMinimumWidth(Constraints.m7950getMinWidthimpl(j));
+                if (Constraints.m7951getMinWidthimpl(j) != 0) {
+                    AndroidViewHolder.this.getChildAt(0).setMinimumWidth(Constraints.m7951getMinWidthimpl(j));
                 }
-                if (Constraints.m7949getMinHeightimpl(j) != 0) {
-                    AndroidViewHolder.this.getChildAt(0).setMinimumHeight(Constraints.m7949getMinHeightimpl(j));
+                if (Constraints.m7950getMinHeightimpl(j) != 0) {
+                    AndroidViewHolder.this.getChildAt(0).setMinimumHeight(Constraints.m7950getMinHeightimpl(j));
                 }
                 AndroidViewHolder androidViewHolder2 = AndroidViewHolder.this;
-                int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
-                int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
+                int m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
+                int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
                 ViewGroup.LayoutParams layoutParams = AndroidViewHolder.this.getLayoutParams();
                 Intrinsics.checkNotNull(layoutParams);
-                obtainMeasureSpec = androidViewHolder2.obtainMeasureSpec(m7950getMinWidthimpl, m7948getMaxWidthimpl, layoutParams.width);
+                obtainMeasureSpec = androidViewHolder2.obtainMeasureSpec(m7951getMinWidthimpl, m7949getMaxWidthimpl, layoutParams.width);
                 AndroidViewHolder androidViewHolder3 = AndroidViewHolder.this;
-                int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
-                int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+                int m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
+                int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
                 ViewGroup.LayoutParams layoutParams2 = AndroidViewHolder.this.getLayoutParams();
                 Intrinsics.checkNotNull(layoutParams2);
-                obtainMeasureSpec2 = androidViewHolder3.obtainMeasureSpec(m7949getMinHeightimpl, m7947getMaxHeightimpl, layoutParams2.height);
+                obtainMeasureSpec2 = androidViewHolder3.obtainMeasureSpec(m7950getMinHeightimpl, m7948getMaxHeightimpl, layoutParams2.height);
                 androidViewHolder2.measure(obtainMeasureSpec, obtainMeasureSpec2);
                 int measuredWidth = AndroidViewHolder.this.getMeasuredWidth();
                 int measuredHeight = AndroidViewHolder.this.getMeasuredHeight();
@@ -818,14 +818,14 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NestedScrollDispatcher nestedScrollDispatcher = this.dispatcher;
             composeOffset = AndroidViewHolder_androidKt.toComposeOffset(i);
             composeOffset2 = AndroidViewHolder_androidKt.toComposeOffset(i2);
-            long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
+            long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
             composeOffset3 = AndroidViewHolder_androidKt.toComposeOffset(i3);
             composeOffset4 = AndroidViewHolder_androidKt.toComposeOffset(i4);
-            long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
+            long m5028constructorimpl2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
             nestedScrollSource = AndroidViewHolder_androidKt.toNestedScrollSource(i5);
-            long m6444dispatchPostScrollDzOQY0M = nestedScrollDispatcher.m6444dispatchPostScrollDzOQY0M(m5027constructorimpl, m5027constructorimpl2, nestedScrollSource);
-            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6444dispatchPostScrollDzOQY0M >> 32)));
-            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6444dispatchPostScrollDzOQY0M & 4294967295L)));
+            long m6445dispatchPostScrollDzOQY0M = nestedScrollDispatcher.m6445dispatchPostScrollDzOQY0M(m5028constructorimpl, m5028constructorimpl2, nestedScrollSource);
+            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6445dispatchPostScrollDzOQY0M >> 32)));
+            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6445dispatchPostScrollDzOQY0M & 4294967295L)));
         }
     }
 
@@ -840,12 +840,12 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NestedScrollDispatcher nestedScrollDispatcher = this.dispatcher;
             composeOffset = AndroidViewHolder_androidKt.toComposeOffset(i);
             composeOffset2 = AndroidViewHolder_androidKt.toComposeOffset(i2);
-            long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
+            long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
             composeOffset3 = AndroidViewHolder_androidKt.toComposeOffset(i3);
             composeOffset4 = AndroidViewHolder_androidKt.toComposeOffset(i4);
-            long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
+            long m5028constructorimpl2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
             nestedScrollSource = AndroidViewHolder_androidKt.toNestedScrollSource(i5);
-            nestedScrollDispatcher.m6444dispatchPostScrollDzOQY0M(m5027constructorimpl, m5027constructorimpl2, nestedScrollSource);
+            nestedScrollDispatcher.m6445dispatchPostScrollDzOQY0M(m5028constructorimpl, m5028constructorimpl2, nestedScrollSource);
         }
     }
 
@@ -858,11 +858,11 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NestedScrollDispatcher nestedScrollDispatcher = this.dispatcher;
             composeOffset = AndroidViewHolder_androidKt.toComposeOffset(i);
             composeOffset2 = AndroidViewHolder_androidKt.toComposeOffset(i2);
-            long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
+            long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
             nestedScrollSource = AndroidViewHolder_androidKt.toNestedScrollSource(i3);
-            long m6446dispatchPreScrollOzD1aCk = nestedScrollDispatcher.m6446dispatchPreScrollOzD1aCk(m5027constructorimpl, nestedScrollSource);
-            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6446dispatchPreScrollOzD1aCk >> 32)));
-            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6446dispatchPreScrollOzD1aCk & 4294967295L)));
+            long m6447dispatchPreScrollOzD1aCk = nestedScrollDispatcher.m6447dispatchPreScrollOzD1aCk(m5028constructorimpl, nestedScrollSource);
+            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6447dispatchPreScrollOzD1aCk >> 32)));
+            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m6447dispatchPreScrollOzD1aCk & 4294967295L)));
         }
     }
 
@@ -909,27 +909,27 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NodeCoordinator innerCoordinator$ui_release = this.layoutNode.getInnerCoordinator$ui_release();
             if (innerCoordinator$ui_release.isAttached()) {
                 NodeCoordinator nodeCoordinator = innerCoordinator$ui_release;
-                long m8140roundk4lQ0M = IntOffsetKt.m8140roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
-                int m8123getXimpl = IntOffset.m8123getXimpl(m8140roundk4lQ0M);
-                if (m8123getXimpl < 0) {
-                    m8123getXimpl = 0;
+                long m8141roundk4lQ0M = IntOffsetKt.m8141roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
+                int m8124getXimpl = IntOffset.m8124getXimpl(m8141roundk4lQ0M);
+                if (m8124getXimpl < 0) {
+                    m8124getXimpl = 0;
                 }
-                int m8124getYimpl = IntOffset.m8124getYimpl(m8140roundk4lQ0M);
-                if (m8124getYimpl < 0) {
-                    m8124getYimpl = 0;
+                int m8125getYimpl = IntOffset.m8125getYimpl(m8141roundk4lQ0M);
+                if (m8125getYimpl < 0) {
+                    m8125getYimpl = 0;
                 }
-                long mo6705getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo6705getSizeYbymL2g();
-                int i = (int) (mo6705getSizeYbymL2g & 4294967295L);
-                long mo6705getSizeYbymL2g2 = innerCoordinator$ui_release.mo6705getSizeYbymL2g();
-                long m8140roundk4lQ0M2 = IntOffsetKt.m8140roundk4lQ0M(innerCoordinator$ui_release.mo6708localToRootMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g2 >> 32)) << 32))));
-                int m8123getXimpl2 = ((int) (mo6705getSizeYbymL2g >> 32)) - IntOffset.m8123getXimpl(m8140roundk4lQ0M2);
-                if (m8123getXimpl2 < 0) {
-                    m8123getXimpl2 = 0;
+                long mo6706getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo6706getSizeYbymL2g();
+                int i = (int) (mo6706getSizeYbymL2g & 4294967295L);
+                long mo6706getSizeYbymL2g2 = innerCoordinator$ui_release.mo6706getSizeYbymL2g();
+                long m8141roundk4lQ0M2 = IntOffsetKt.m8141roundk4lQ0M(innerCoordinator$ui_release.mo6709localToRootMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits((int) (mo6706getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6706getSizeYbymL2g2 >> 32)) << 32))));
+                int m8124getXimpl2 = ((int) (mo6706getSizeYbymL2g >> 32)) - IntOffset.m8124getXimpl(m8141roundk4lQ0M2);
+                if (m8124getXimpl2 < 0) {
+                    m8124getXimpl2 = 0;
                 }
-                int m8124getYimpl2 = i - IntOffset.m8124getYimpl(m8140roundk4lQ0M2);
-                int i2 = m8124getYimpl2 < 0 ? 0 : m8124getYimpl2;
-                if (m8123getXimpl != 0 || m8124getYimpl != 0 || m8123getXimpl2 != 0 || i2 != 0) {
-                    return windowInsetsCompat.inset(m8123getXimpl, m8124getYimpl, m8123getXimpl2, i2);
+                int m8125getYimpl2 = i - IntOffset.m8125getYimpl(m8141roundk4lQ0M2);
+                int i2 = m8125getYimpl2 < 0 ? 0 : m8125getYimpl2;
+                if (m8124getXimpl != 0 || m8125getYimpl != 0 || m8124getXimpl2 != 0 || i2 != 0) {
+                    return windowInsetsCompat.inset(m8124getXimpl, m8125getYimpl, m8124getXimpl2, i2);
                 }
             }
         }
@@ -940,27 +940,27 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         NodeCoordinator innerCoordinator$ui_release = this.layoutNode.getInnerCoordinator$ui_release();
         if (innerCoordinator$ui_release.isAttached()) {
             NodeCoordinator nodeCoordinator = innerCoordinator$ui_release;
-            long m8140roundk4lQ0M = IntOffsetKt.m8140roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
-            int m8123getXimpl = IntOffset.m8123getXimpl(m8140roundk4lQ0M);
-            if (m8123getXimpl < 0) {
-                m8123getXimpl = 0;
+            long m8141roundk4lQ0M = IntOffsetKt.m8141roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
+            int m8124getXimpl = IntOffset.m8124getXimpl(m8141roundk4lQ0M);
+            if (m8124getXimpl < 0) {
+                m8124getXimpl = 0;
             }
-            int m8124getYimpl = IntOffset.m8124getYimpl(m8140roundk4lQ0M);
-            if (m8124getYimpl < 0) {
-                m8124getYimpl = 0;
+            int m8125getYimpl = IntOffset.m8125getYimpl(m8141roundk4lQ0M);
+            if (m8125getYimpl < 0) {
+                m8125getYimpl = 0;
             }
-            long mo6705getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo6705getSizeYbymL2g();
-            int i = (int) (mo6705getSizeYbymL2g & 4294967295L);
-            long mo6705getSizeYbymL2g2 = innerCoordinator$ui_release.mo6705getSizeYbymL2g();
-            long m8140roundk4lQ0M2 = IntOffsetKt.m8140roundk4lQ0M(innerCoordinator$ui_release.mo6708localToRootMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g2 >> 32)) << 32))));
-            int m8123getXimpl2 = ((int) (mo6705getSizeYbymL2g >> 32)) - IntOffset.m8123getXimpl(m8140roundk4lQ0M2);
-            if (m8123getXimpl2 < 0) {
-                m8123getXimpl2 = 0;
+            long mo6706getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo6706getSizeYbymL2g();
+            int i = (int) (mo6706getSizeYbymL2g & 4294967295L);
+            long mo6706getSizeYbymL2g2 = innerCoordinator$ui_release.mo6706getSizeYbymL2g();
+            long m8141roundk4lQ0M2 = IntOffsetKt.m8141roundk4lQ0M(innerCoordinator$ui_release.mo6709localToRootMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits((int) (mo6706getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6706getSizeYbymL2g2 >> 32)) << 32))));
+            int m8124getXimpl2 = ((int) (mo6706getSizeYbymL2g >> 32)) - IntOffset.m8124getXimpl(m8141roundk4lQ0M2);
+            if (m8124getXimpl2 < 0) {
+                m8124getXimpl2 = 0;
             }
-            int m8124getYimpl2 = i - IntOffset.m8124getYimpl(m8140roundk4lQ0M2);
-            int i2 = m8124getYimpl2 >= 0 ? m8124getYimpl2 : 0;
-            if (m8123getXimpl != 0 || m8124getYimpl != 0 || m8123getXimpl2 != 0 || i2 != 0) {
-                return function4.invoke(Integer.valueOf(m8123getXimpl), Integer.valueOf(m8124getYimpl), Integer.valueOf(m8123getXimpl2), Integer.valueOf(i2));
+            int m8125getYimpl2 = i - IntOffset.m8125getYimpl(m8141roundk4lQ0M2);
+            int i2 = m8125getYimpl2 >= 0 ? m8125getYimpl2 : 0;
+            if (m8124getXimpl != 0 || m8125getYimpl != 0 || m8124getXimpl2 != 0 || i2 != 0) {
+                return function4.invoke(Integer.valueOf(m8124getXimpl), Integer.valueOf(m8125getYimpl), Integer.valueOf(m8124getXimpl2), Integer.valueOf(i2));
             }
         }
         return t;
@@ -1000,29 +1000,29 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         NodeCoordinator innerCoordinator$ui_release = this.layoutNode.getInnerCoordinator$ui_release();
         if (innerCoordinator$ui_release.isAttached()) {
             NodeCoordinator nodeCoordinator = innerCoordinator$ui_release;
-            long m8140roundk4lQ0M = IntOffsetKt.m8140roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
-            int m8123getXimpl = IntOffset.m8123getXimpl(m8140roundk4lQ0M);
-            if (m8123getXimpl < 0) {
-                m8123getXimpl = 0;
+            long m8141roundk4lQ0M = IntOffsetKt.m8141roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
+            int m8124getXimpl = IntOffset.m8124getXimpl(m8141roundk4lQ0M);
+            if (m8124getXimpl < 0) {
+                m8124getXimpl = 0;
             }
-            int m8124getYimpl = IntOffset.m8124getYimpl(m8140roundk4lQ0M);
-            if (m8124getYimpl < 0) {
-                m8124getYimpl = 0;
+            int m8125getYimpl = IntOffset.m8125getYimpl(m8141roundk4lQ0M);
+            if (m8125getYimpl < 0) {
+                m8125getYimpl = 0;
             }
-            long mo6705getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo6705getSizeYbymL2g();
-            int i = (int) (mo6705getSizeYbymL2g & 4294967295L);
-            long mo6705getSizeYbymL2g2 = innerCoordinator$ui_release.mo6705getSizeYbymL2g();
-            long m8140roundk4lQ0M2 = IntOffsetKt.m8140roundk4lQ0M(innerCoordinator$ui_release.mo6708localToRootMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6705getSizeYbymL2g2 >> 32)) << 32))));
-            int m8123getXimpl2 = ((int) (mo6705getSizeYbymL2g >> 32)) - IntOffset.m8123getXimpl(m8140roundk4lQ0M2);
-            if (m8123getXimpl2 < 0) {
-                m8123getXimpl2 = 0;
+            long mo6706getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo6706getSizeYbymL2g();
+            int i = (int) (mo6706getSizeYbymL2g & 4294967295L);
+            long mo6706getSizeYbymL2g2 = innerCoordinator$ui_release.mo6706getSizeYbymL2g();
+            long m8141roundk4lQ0M2 = IntOffsetKt.m8141roundk4lQ0M(innerCoordinator$ui_release.mo6709localToRootMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits((int) (mo6706getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6706getSizeYbymL2g2 >> 32)) << 32))));
+            int m8124getXimpl2 = ((int) (mo6706getSizeYbymL2g >> 32)) - IntOffset.m8124getXimpl(m8141roundk4lQ0M2);
+            if (m8124getXimpl2 < 0) {
+                m8124getXimpl2 = 0;
             }
-            int m8124getYimpl2 = i - IntOffset.m8124getYimpl(m8140roundk4lQ0M2);
-            int i2 = m8124getYimpl2 >= 0 ? m8124getYimpl2 : 0;
-            if (m8123getXimpl != 0 || m8124getYimpl != 0 || m8123getXimpl2 != 0 || i2 != 0) {
-                int i3 = m8123getXimpl;
+            int m8125getYimpl2 = i - IntOffset.m8125getYimpl(m8141roundk4lQ0M2);
+            int i2 = m8125getYimpl2 >= 0 ? m8125getYimpl2 : 0;
+            if (m8124getXimpl != 0 || m8125getYimpl != 0 || m8124getXimpl2 != 0 || i2 != 0) {
+                int i3 = m8124getXimpl;
                 int i4 = i2;
-                return new WindowInsetsAnimationCompat.BoundsCompat(inset(boundsCompat.getLowerBound(), i3, m8124getYimpl, m8123getXimpl2, i4), inset(boundsCompat.getUpperBound(), i3, m8124getYimpl, m8123getXimpl2, i4));
+                return new WindowInsetsAnimationCompat.BoundsCompat(inset(boundsCompat.getLowerBound(), i3, m8125getYimpl, m8124getXimpl2, i4), inset(boundsCompat.getUpperBound(), i3, m8125getYimpl, m8124getXimpl2, i4));
             }
         }
         return boundsCompat;

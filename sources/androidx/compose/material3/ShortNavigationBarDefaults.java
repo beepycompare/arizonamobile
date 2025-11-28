@@ -36,17 +36,17 @@ public final class ShortNavigationBarDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(133067559, i, -1, "androidx.compose.material3.ShortNavigationBarDefaults.<get-contentColor> (ShortNavigationBar.kt:266)");
         }
-        long m2129contentColorForek8zF_U = ColorSchemeKt.m2129contentColorForek8zF_U(getContainerColor(composer, i & 14), composer, 0);
+        long m2130contentColorForek8zF_U = ColorSchemeKt.m2130contentColorForek8zF_U(getContainerColor(composer, i & 14), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2129contentColorForek8zF_U;
+        return m2130contentColorForek8zF_U;
     }
 
     /* renamed from: getArrangement-LnnQw40  reason: not valid java name */
-    public final int m2894getArrangementLnnQw40() {
-        return ShortNavigationBarArrangement.Companion.m2893getEqualWeightLnnQw40();
+    public final int m2895getArrangementLnnQw40() {
+        return ShortNavigationBarArrangement.Companion.m2894getEqualWeightLnnQw40();
     }
 
     public final WindowInsets getWindowInsets(Composer composer, int i) {
@@ -54,11 +54,11 @@ public final class ShortNavigationBarDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-424843026, i, -1, "androidx.compose.material3.ShortNavigationBarDefaults.<get-windowInsets> (ShortNavigationBar.kt:276)");
         }
-        WindowInsets m922onlybOOhFvg = WindowInsetsKt.m922onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m936plusgK_yJZ4(WindowInsetsSides.Companion.m946getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m944getBottomJoeWqyM()));
+        WindowInsets m923onlybOOhFvg = WindowInsetsKt.m923onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m937plusgK_yJZ4(WindowInsetsSides.Companion.m947getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m945getBottomJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m922onlybOOhFvg;
+        return m923onlybOOhFvg;
     }
 }

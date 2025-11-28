@@ -67,12 +67,12 @@ public abstract class Feature {
         }
 
         /* renamed from: getVertex-1ufDz9w  reason: not valid java name */
-        public final long m8542getVertex1ufDz9w() {
+        public final long m8543getVertex1ufDz9w() {
             return this.vertex;
         }
 
         /* renamed from: getRoundedCenter-1ufDz9w  reason: not valid java name */
-        public final long m8541getRoundedCenter1ufDz9w() {
+        public final long m8542getRoundedCenter1ufDz9w() {
             return this.roundedCenter;
         }
 
@@ -97,11 +97,11 @@ public abstract class Feature {
             for (int i = 0; i < size; i++) {
                 createListBuilder.add(getCubics().get(i).transformed(f));
             }
-            return new Corner(CollectionsKt.build(createListBuilder), PointKt.m8559transformedso9K2fw(this.vertex, f), PointKt.m8559transformedso9K2fw(this.roundedCenter, f), this.convex, null);
+            return new Corner(CollectionsKt.build(createListBuilder), PointKt.m8560transformedso9K2fw(this.vertex, f), PointKt.m8560transformedso9K2fw(this.roundedCenter, f), this.convex, null);
         }
 
         public String toString() {
-            return "Corner: vertex=" + ((Object) FloatFloatPair.m31toStringimpl(this.vertex)) + ", center=" + ((Object) FloatFloatPair.m31toStringimpl(this.roundedCenter)) + ", convex=" + this.convex;
+            return "Corner: vertex=" + ((Object) FloatFloatPair.m32toStringimpl(this.vertex)) + ", center=" + ((Object) FloatFloatPair.m32toStringimpl(this.roundedCenter)) + ", convex=" + this.convex;
         }
     }
 }

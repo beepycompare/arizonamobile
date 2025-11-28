@@ -8,7 +8,7 @@ import io.appmetrica.analytics.networktasks.internal.ResponseDataHolder;
 import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
 import io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask;
 import javax.net.ssl.SSLSocketFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Cm implements UnderlyingNetworkTask {
 
     /* renamed from: a  reason: collision with root package name */

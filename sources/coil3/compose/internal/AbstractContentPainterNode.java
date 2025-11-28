@@ -120,13 +120,13 @@ public abstract class AbstractContentPainterNode extends Modifier.Node implement
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         ConstraintsSizeResolver constraintsSizeResolver = this.constraintSizeResolver;
         if (constraintsSizeResolver != null) {
-            constraintsSizeResolver.m9064setConstraintsBRTryo0(j);
+            constraintsSizeResolver.m9076setConstraintsBRTryo0(j);
         }
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(m9084modifyConstraintsZezNO4M(j));
-        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: coil3.compose.internal.AbstractContentPainterNode$$ExternalSyntheticLambda0
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(m9096modifyConstraintsZezNO4M(j));
+        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: coil3.compose.internal.AbstractContentPainterNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
@@ -147,11 +147,11 @@ public abstract class AbstractContentPainterNode extends Modifier.Node implement
         long Constraints$default = ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null);
         ConstraintsSizeResolver constraintsSizeResolver = this.constraintSizeResolver;
         if (constraintsSizeResolver != null) {
-            constraintsSizeResolver.m9064setConstraintsBRTryo0(Constraints$default);
+            constraintsSizeResolver.m9076setConstraintsBRTryo0(Constraints$default);
         }
-        if (getPainter().mo5978getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            long m9084modifyConstraintsZezNO4M = m9084modifyConstraintsZezNO4M(Constraints$default);
-            return Math.max(Constraints.m7950getMinWidthimpl(m9084modifyConstraintsZezNO4M), intrinsicMeasurable.minIntrinsicWidth(i));
+        if (getPainter().mo5979getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            long m9096modifyConstraintsZezNO4M = m9096modifyConstraintsZezNO4M(Constraints$default);
+            return Math.max(Constraints.m7951getMinWidthimpl(m9096modifyConstraintsZezNO4M), intrinsicMeasurable.minIntrinsicWidth(i));
         }
         return intrinsicMeasurable.minIntrinsicWidth(i);
     }
@@ -161,11 +161,11 @@ public abstract class AbstractContentPainterNode extends Modifier.Node implement
         long Constraints$default = ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null);
         ConstraintsSizeResolver constraintsSizeResolver = this.constraintSizeResolver;
         if (constraintsSizeResolver != null) {
-            constraintsSizeResolver.m9064setConstraintsBRTryo0(Constraints$default);
+            constraintsSizeResolver.m9076setConstraintsBRTryo0(Constraints$default);
         }
-        if (getPainter().mo5978getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            long m9084modifyConstraintsZezNO4M = m9084modifyConstraintsZezNO4M(Constraints$default);
-            return Math.max(Constraints.m7950getMinWidthimpl(m9084modifyConstraintsZezNO4M), intrinsicMeasurable.maxIntrinsicWidth(i));
+        if (getPainter().mo5979getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            long m9096modifyConstraintsZezNO4M = m9096modifyConstraintsZezNO4M(Constraints$default);
+            return Math.max(Constraints.m7951getMinWidthimpl(m9096modifyConstraintsZezNO4M), intrinsicMeasurable.maxIntrinsicWidth(i));
         }
         return intrinsicMeasurable.maxIntrinsicWidth(i);
     }
@@ -175,11 +175,11 @@ public abstract class AbstractContentPainterNode extends Modifier.Node implement
         long Constraints$default = ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null);
         ConstraintsSizeResolver constraintsSizeResolver = this.constraintSizeResolver;
         if (constraintsSizeResolver != null) {
-            constraintsSizeResolver.m9064setConstraintsBRTryo0(Constraints$default);
+            constraintsSizeResolver.m9076setConstraintsBRTryo0(Constraints$default);
         }
-        if (getPainter().mo5978getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            long m9084modifyConstraintsZezNO4M = m9084modifyConstraintsZezNO4M(Constraints$default);
-            return Math.max(Constraints.m7949getMinHeightimpl(m9084modifyConstraintsZezNO4M), intrinsicMeasurable.minIntrinsicHeight(i));
+        if (getPainter().mo5979getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            long m9096modifyConstraintsZezNO4M = m9096modifyConstraintsZezNO4M(Constraints$default);
+            return Math.max(Constraints.m7950getMinHeightimpl(m9096modifyConstraintsZezNO4M), intrinsicMeasurable.minIntrinsicHeight(i));
         }
         return intrinsicMeasurable.minIntrinsicHeight(i);
     }
@@ -189,96 +189,96 @@ public abstract class AbstractContentPainterNode extends Modifier.Node implement
         long Constraints$default = ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null);
         ConstraintsSizeResolver constraintsSizeResolver = this.constraintSizeResolver;
         if (constraintsSizeResolver != null) {
-            constraintsSizeResolver.m9064setConstraintsBRTryo0(Constraints$default);
+            constraintsSizeResolver.m9076setConstraintsBRTryo0(Constraints$default);
         }
-        if (getPainter().mo5978getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            long m9084modifyConstraintsZezNO4M = m9084modifyConstraintsZezNO4M(Constraints$default);
-            return Math.max(Constraints.m7949getMinHeightimpl(m9084modifyConstraintsZezNO4M), intrinsicMeasurable.maxIntrinsicHeight(i));
+        if (getPainter().mo5979getIntrinsicSizeNHjbRc() != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            long m9096modifyConstraintsZezNO4M = m9096modifyConstraintsZezNO4M(Constraints$default);
+            return Math.max(Constraints.m7950getMinHeightimpl(m9096modifyConstraintsZezNO4M), intrinsicMeasurable.maxIntrinsicHeight(i));
         }
         return intrinsicMeasurable.maxIntrinsicHeight(i);
     }
 
     /* renamed from: calculateScaledSize-E7KxVPU  reason: not valid java name */
-    private final long m9083calculateScaledSizeE7KxVPU(long j) {
-        if (Size.m5106isEmptyimpl(j)) {
-            return Size.Companion.m5113getZeroNHjbRc();
+    private final long m9095calculateScaledSizeE7KxVPU(long j) {
+        if (Size.m5107isEmptyimpl(j)) {
+            return Size.Companion.m5114getZeroNHjbRc();
         }
-        long mo5978getIntrinsicSizeNHjbRc = getPainter().mo5978getIntrinsicSizeNHjbRc();
-        if (mo5978getIntrinsicSizeNHjbRc == InlineClassHelperKt.UnspecifiedPackedFloats) {
+        long mo5979getIntrinsicSizeNHjbRc = getPainter().mo5979getIntrinsicSizeNHjbRc();
+        if (mo5979getIntrinsicSizeNHjbRc == InlineClassHelperKt.UnspecifiedPackedFloats) {
             return j;
         }
-        float intBitsToFloat = Float.intBitsToFloat((int) (mo5978getIntrinsicSizeNHjbRc >> 32));
+        float intBitsToFloat = Float.intBitsToFloat((int) (mo5979getIntrinsicSizeNHjbRc >> 32));
         if (Math.abs(intBitsToFloat) > Float.MAX_VALUE) {
             intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         }
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5978getIntrinsicSizeNHjbRc & 4294967295L));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5979getIntrinsicSizeNHjbRc & 4294967295L));
         if (Math.abs(intBitsToFloat2) > Float.MAX_VALUE) {
             intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         }
-        long m5095constructorimpl = Size.m5095constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
-        long mo6690computeScaleFactorH7hwNQA = this.contentScale.mo6690computeScaleFactorH7hwNQA(m5095constructorimpl, j);
-        return (Math.abs(Float.intBitsToFloat((int) (mo6690computeScaleFactorH7hwNQA >> 32))) > Float.MAX_VALUE || Math.abs(Float.intBitsToFloat((int) (4294967295L & mo6690computeScaleFactorH7hwNQA))) > Float.MAX_VALUE) ? j : ScaleFactorKt.m6803timesmw2e94(mo6690computeScaleFactorH7hwNQA, m5095constructorimpl);
+        long m5096constructorimpl = Size.m5096constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+        long mo6691computeScaleFactorH7hwNQA = this.contentScale.mo6691computeScaleFactorH7hwNQA(m5096constructorimpl, j);
+        return (Math.abs(Float.intBitsToFloat((int) (mo6691computeScaleFactorH7hwNQA >> 32))) > Float.MAX_VALUE || Math.abs(Float.intBitsToFloat((int) (4294967295L & mo6691computeScaleFactorH7hwNQA))) > Float.MAX_VALUE) ? j : ScaleFactorKt.m6804timesmw2e94(mo6691computeScaleFactorH7hwNQA, m5096constructorimpl);
     }
 
     /* renamed from: modifyConstraints-ZezNO4M  reason: not valid java name */
-    private final long m9084modifyConstraintsZezNO4M(long j) {
-        float m9089constrainWidthK40F9xA;
-        int m7949getMinHeightimpl;
-        float m9088constrainHeightK40F9xA;
-        boolean m7946getHasFixedWidthimpl = Constraints.m7946getHasFixedWidthimpl(j);
-        boolean m7945getHasFixedHeightimpl = Constraints.m7945getHasFixedHeightimpl(j);
-        if (m7946getHasFixedWidthimpl && m7945getHasFixedHeightimpl) {
+    private final long m9096modifyConstraintsZezNO4M(long j) {
+        float m9101constrainWidthK40F9xA;
+        int m7950getMinHeightimpl;
+        float m9100constrainHeightK40F9xA;
+        boolean m7947getHasFixedWidthimpl = Constraints.m7947getHasFixedWidthimpl(j);
+        boolean m7946getHasFixedHeightimpl = Constraints.m7946getHasFixedHeightimpl(j);
+        if (m7947getHasFixedWidthimpl && m7946getHasFixedHeightimpl) {
             return j;
         }
         Painter painter = getPainter();
-        boolean z = Constraints.m7944getHasBoundedWidthimpl(j) && Constraints.m7943getHasBoundedHeightimpl(j);
-        long mo5978getIntrinsicSizeNHjbRc = painter.mo5978getIntrinsicSizeNHjbRc();
-        if (mo5978getIntrinsicSizeNHjbRc == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            return z ? ((painter instanceof AsyncImagePainter) && ((AsyncImagePainter) painter).getState().getValue().getPainter() == null) ? j : Constraints.m7938copyZbe2FdA$default(j, Constraints.m7948getMaxWidthimpl(j), 0, Constraints.m7947getMaxHeightimpl(j), 0, 10, null) : j;
+        boolean z = Constraints.m7945getHasBoundedWidthimpl(j) && Constraints.m7944getHasBoundedHeightimpl(j);
+        long mo5979getIntrinsicSizeNHjbRc = painter.mo5979getIntrinsicSizeNHjbRc();
+        if (mo5979getIntrinsicSizeNHjbRc == InlineClassHelperKt.UnspecifiedPackedFloats) {
+            return z ? ((painter instanceof AsyncImagePainter) && ((AsyncImagePainter) painter).getState().getValue().getPainter() == null) ? j : Constraints.m7939copyZbe2FdA$default(j, Constraints.m7949getMaxWidthimpl(j), 0, Constraints.m7948getMaxHeightimpl(j), 0, 10, null) : j;
         }
-        if (z && (m7946getHasFixedWidthimpl || m7945getHasFixedHeightimpl)) {
-            m9089constrainWidthK40F9xA = Constraints.m7948getMaxWidthimpl(j);
-            m7949getMinHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+        if (z && (m7947getHasFixedWidthimpl || m7946getHasFixedHeightimpl)) {
+            m9101constrainWidthK40F9xA = Constraints.m7949getMaxWidthimpl(j);
+            m7950getMinHeightimpl = Constraints.m7948getMaxHeightimpl(j);
         } else {
-            float intBitsToFloat = Float.intBitsToFloat((int) (mo5978getIntrinsicSizeNHjbRc >> 32));
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5978getIntrinsicSizeNHjbRc & 4294967295L));
-            m9089constrainWidthK40F9xA = Math.abs(intBitsToFloat) <= Float.MAX_VALUE ? UtilsKt.m9089constrainWidthK40F9xA(j, intBitsToFloat) : Constraints.m7950getMinWidthimpl(j);
+            float intBitsToFloat = Float.intBitsToFloat((int) (mo5979getIntrinsicSizeNHjbRc >> 32));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5979getIntrinsicSizeNHjbRc & 4294967295L));
+            m9101constrainWidthK40F9xA = Math.abs(intBitsToFloat) <= Float.MAX_VALUE ? UtilsKt.m9101constrainWidthK40F9xA(j, intBitsToFloat) : Constraints.m7951getMinWidthimpl(j);
             if (Math.abs(intBitsToFloat2) > Float.MAX_VALUE) {
-                m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+                m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
             } else {
-                m9088constrainHeightK40F9xA = UtilsKt.m9088constrainHeightK40F9xA(j, intBitsToFloat2);
-                long m9083calculateScaledSizeE7KxVPU = m9083calculateScaledSizeE7KxVPU(Size.m5095constructorimpl((Float.floatToRawIntBits(m9088constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m9089constrainWidthK40F9xA) << 32)));
-                return Constraints.m7938copyZbe2FdA$default(j, ConstraintsKt.m7965constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9083calculateScaledSizeE7KxVPU >> 32)))), 0, ConstraintsKt.m7964constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9083calculateScaledSizeE7KxVPU & 4294967295L)))), 0, 10, null);
+                m9100constrainHeightK40F9xA = UtilsKt.m9100constrainHeightK40F9xA(j, intBitsToFloat2);
+                long m9095calculateScaledSizeE7KxVPU = m9095calculateScaledSizeE7KxVPU(Size.m5096constructorimpl((Float.floatToRawIntBits(m9100constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m9101constrainWidthK40F9xA) << 32)));
+                return Constraints.m7939copyZbe2FdA$default(j, ConstraintsKt.m7966constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9095calculateScaledSizeE7KxVPU >> 32)))), 0, ConstraintsKt.m7965constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9095calculateScaledSizeE7KxVPU & 4294967295L)))), 0, 10, null);
             }
         }
-        m9088constrainHeightK40F9xA = m7949getMinHeightimpl;
-        long m9083calculateScaledSizeE7KxVPU2 = m9083calculateScaledSizeE7KxVPU(Size.m5095constructorimpl((Float.floatToRawIntBits(m9088constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m9089constrainWidthK40F9xA) << 32)));
-        return Constraints.m7938copyZbe2FdA$default(j, ConstraintsKt.m7965constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9083calculateScaledSizeE7KxVPU2 >> 32)))), 0, ConstraintsKt.m7964constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9083calculateScaledSizeE7KxVPU2 & 4294967295L)))), 0, 10, null);
+        m9100constrainHeightK40F9xA = m7950getMinHeightimpl;
+        long m9095calculateScaledSizeE7KxVPU2 = m9095calculateScaledSizeE7KxVPU(Size.m5096constructorimpl((Float.floatToRawIntBits(m9100constrainHeightK40F9xA) & 4294967295L) | (Float.floatToRawIntBits(m9101constrainWidthK40F9xA) << 32)));
+        return Constraints.m7939copyZbe2FdA$default(j, ConstraintsKt.m7966constrainWidthK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9095calculateScaledSizeE7KxVPU2 >> 32)))), 0, ConstraintsKt.m7965constrainHeightK40F9xA(j, MathKt.roundToInt(Float.intBitsToFloat((int) (m9095calculateScaledSizeE7KxVPU2 & 4294967295L)))), 0, 10, null);
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
-        long m9083calculateScaledSizeE7KxVPU = m9083calculateScaledSizeE7KxVPU(contentDrawScope.mo5858getSizeNHjbRc());
-        long mo4758alignKFBX0sM = this.alignment.mo4758alignKFBX0sM(UtilsKt.m9091toIntSizeuvyYCjk(m9083calculateScaledSizeE7KxVPU), UtilsKt.m9091toIntSizeuvyYCjk(contentDrawScope.mo5858getSizeNHjbRc()), contentDrawScope.getLayoutDirection());
-        int m8123getXimpl = IntOffset.m8123getXimpl(mo4758alignKFBX0sM);
-        int m8124getYimpl = IntOffset.m8124getYimpl(mo4758alignKFBX0sM);
+        long m9095calculateScaledSizeE7KxVPU = m9095calculateScaledSizeE7KxVPU(contentDrawScope.mo5859getSizeNHjbRc());
+        long mo4759alignKFBX0sM = this.alignment.mo4759alignKFBX0sM(UtilsKt.m9103toIntSizeuvyYCjk(m9095calculateScaledSizeE7KxVPU), UtilsKt.m9103toIntSizeuvyYCjk(contentDrawScope.mo5859getSizeNHjbRc()), contentDrawScope.getLayoutDirection());
+        int m8124getXimpl = IntOffset.m8124getXimpl(mo4759alignKFBX0sM);
+        int m8125getYimpl = IntOffset.m8125getYimpl(mo4759alignKFBX0sM);
         ContentDrawScope contentDrawScope2 = contentDrawScope;
         DrawContext drawContext = contentDrawScope2.getDrawContext();
-        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+        long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             if (this.clipToBounds) {
-                DrawTransform.m5915clipRectN_I0leg$default(transform, 0.0f, 0.0f, 0.0f, 0.0f, 0, 31, null);
+                DrawTransform.m5916clipRectN_I0leg$default(transform, 0.0f, 0.0f, 0.0f, 0.0f, 0, 31, null);
             }
-            transform.translate(m8123getXimpl, m8124getYimpl);
-            getPainter().m5984drawx_KDEd0(contentDrawScope2, m9083calculateScaledSizeE7KxVPU, this.alpha, this.colorFilter);
+            transform.translate(m8124getXimpl, m8125getYimpl);
+            getPainter().m5985drawx_KDEd0(contentDrawScope2, m9095calculateScaledSizeE7KxVPU, this.alpha, this.colorFilter);
             drawContext.getCanvas().restore();
-            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
             contentDrawScope.drawContent();
         } catch (Throwable th) {
             drawContext.getCanvas().restore();
-            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
             throw th;
         }
     }
@@ -288,7 +288,7 @@ public abstract class AbstractContentPainterNode extends Modifier.Node implement
         String str = this.contentDescription;
         if (str != null) {
             SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
-            SemanticsPropertiesKt.m7223setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7208getImageo7Vup1c());
+            SemanticsPropertiesKt.m7224setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7209getImageo7Vup1c());
         }
     }
 }

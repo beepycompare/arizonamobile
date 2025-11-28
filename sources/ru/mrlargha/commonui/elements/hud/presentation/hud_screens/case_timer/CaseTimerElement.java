@@ -63,7 +63,7 @@ public final class CaseTimerElement {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r5v2, types: [ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement$setData$1] */
+    /* JADX WARN: Type inference failed for: r6v2, types: [ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement$setData$1] */
     private final void setData(CaseTimerInfo caseTimerInfo) {
         CountDownTimer countDownTimer = this.timer;
         if (countDownTimer != null) {
@@ -71,8 +71,8 @@ public final class CaseTimerElement {
         }
         this.timer = null;
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + "projects/arizona-rp/systems/cases/" + caseTimerInfo.getImage() + ".webp").into(this.binding.image);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + "projects/arizona-rp/systems/cases/" + caseTimerInfo.getImage() + ".webp").into(this.binding.image);
         this.binding.timer.setText(TimeConverterKt.toTimeString(caseTimerInfo.getTime()));
         final long time = caseTimerInfo.getTime() * 1000;
         this.timer = new CountDownTimer(time) { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement$setData$1

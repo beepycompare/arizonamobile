@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.IReporter;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class L5 {
 
     /* renamed from: a  reason: collision with root package name */

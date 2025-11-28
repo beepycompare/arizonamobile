@@ -16,40 +16,40 @@ public final class LineBreak {
     private final int mask;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ LineBreak m7780boximpl(int i) {
+    public static final /* synthetic */ LineBreak m7781boximpl(int i) {
         return new LineBreak(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m7781constructorimpl(int i) {
+    public static int m7782constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7785equalsimpl(int i, Object obj) {
-        return (obj instanceof LineBreak) && i == ((LineBreak) obj).m7792unboximpl();
+    public static boolean m7786equalsimpl(int i, Object obj) {
+        return (obj instanceof LineBreak) && i == ((LineBreak) obj).m7793unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7786equalsimpl0(int i, int i2) {
+    public static final boolean m7787equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7790hashCodeimpl(int i) {
+    public static int m7791hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7785equalsimpl(this.mask, obj);
+        return m7786equalsimpl(this.mask, obj);
     }
 
     public int hashCode() {
-        return m7790hashCodeimpl(this.mask);
+        return m7791hashCodeimpl(this.mask);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7792unboximpl() {
+    public final /* synthetic */ int m7793unboximpl() {
         return this.mask;
     }
 
@@ -58,59 +58,59 @@ public final class LineBreak {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m7782constructorimpl(int i, int i2, int i3) {
+    public static int m7783constructorimpl(int i, int i2, int i3) {
         int packBytes;
         packBytes = LineBreak_androidKt.packBytes(i, i2, i3);
-        return m7781constructorimpl(packBytes);
+        return m7782constructorimpl(packBytes);
     }
 
     /* renamed from: getStrategy-fcGXIks  reason: not valid java name */
-    public static final int m7787getStrategyfcGXIks(int i) {
+    public static final int m7788getStrategyfcGXIks(int i) {
         int unpackByte1;
         unpackByte1 = LineBreak_androidKt.unpackByte1(i);
-        return Strategy.m7802constructorimpl(unpackByte1);
+        return Strategy.m7803constructorimpl(unpackByte1);
     }
 
     /* renamed from: getStrictness-usljTpc  reason: not valid java name */
-    public static final int m7788getStrictnessusljTpc(int i) {
+    public static final int m7789getStrictnessusljTpc(int i) {
         int unpackByte2;
         unpackByte2 = LineBreak_androidKt.unpackByte2(i);
-        return Strictness.m7813constructorimpl(unpackByte2);
+        return Strictness.m7814constructorimpl(unpackByte2);
     }
 
     /* renamed from: getWordBreak-jp8hJ3c  reason: not valid java name */
-    public static final int m7789getWordBreakjp8hJ3c(int i) {
+    public static final int m7790getWordBreakjp8hJ3c(int i) {
         int unpackByte3;
         unpackByte3 = LineBreak_androidKt.unpackByte3(i);
-        return WordBreak.m7825constructorimpl(unpackByte3);
+        return WordBreak.m7826constructorimpl(unpackByte3);
     }
 
     /* renamed from: copy-gijOMQM$default  reason: not valid java name */
-    public static /* synthetic */ int m7784copygijOMQM$default(int i, int i2, int i3, int i4, int i5, Object obj) {
+    public static /* synthetic */ int m7785copygijOMQM$default(int i, int i2, int i3, int i4, int i5, Object obj) {
         if ((i5 & 1) != 0) {
-            i2 = m7787getStrategyfcGXIks(i);
+            i2 = m7788getStrategyfcGXIks(i);
         }
         if ((i5 & 2) != 0) {
-            i3 = m7788getStrictnessusljTpc(i);
+            i3 = m7789getStrictnessusljTpc(i);
         }
         if ((i5 & 4) != 0) {
-            i4 = m7789getWordBreakjp8hJ3c(i);
+            i4 = m7790getWordBreakjp8hJ3c(i);
         }
-        return m7783copygijOMQM(i, i2, i3, i4);
+        return m7784copygijOMQM(i, i2, i3, i4);
     }
 
     /* renamed from: copy-gijOMQM  reason: not valid java name */
-    public static final int m7783copygijOMQM(int i, int i2, int i3, int i4) {
-        return m7782constructorimpl(i2, i3, i4);
+    public static final int m7784copygijOMQM(int i, int i2, int i3, int i4) {
+        return m7783constructorimpl(i2, i3, i4);
     }
 
     public String toString() {
-        return m7791toStringimpl(this.mask);
+        return m7792toStringimpl(this.mask);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7791toStringimpl(int i) {
-        return "LineBreak(strategy=" + ((Object) Strategy.m7806toStringimpl(m7787getStrategyfcGXIks(i))) + ", strictness=" + ((Object) Strictness.m7817toStringimpl(m7788getStrictnessusljTpc(i))) + ", wordBreak=" + ((Object) WordBreak.m7829toStringimpl(m7789getWordBreakjp8hJ3c(i))) + ')';
+    public static String m7792toStringimpl(int i) {
+        return "LineBreak(strategy=" + ((Object) Strategy.m7807toStringimpl(m7788getStrategyfcGXIks(i))) + ", strictness=" + ((Object) Strictness.m7818toStringimpl(m7789getStrictnessusljTpc(i))) + ", wordBreak=" + ((Object) WordBreak.m7830toStringimpl(m7790getWordBreakjp8hJ3c(i))) + ')';
     }
 
     /* compiled from: LineBreak.android.kt */
@@ -122,41 +122,41 @@ public final class LineBreak {
         }
 
         /* renamed from: getHeading-rAG3T2k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7793getHeadingrAG3T2k$annotations() {
+        public static /* synthetic */ void m7794getHeadingrAG3T2k$annotations() {
         }
 
         /* renamed from: getParagraph-rAG3T2k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7794getParagraphrAG3T2k$annotations() {
+        public static /* synthetic */ void m7795getParagraphrAG3T2k$annotations() {
         }
 
         /* renamed from: getSimple-rAG3T2k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7795getSimplerAG3T2k$annotations() {
+        public static /* synthetic */ void m7796getSimplerAG3T2k$annotations() {
         }
 
         /* renamed from: getUnspecified-rAG3T2k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7796getUnspecifiedrAG3T2k$annotations() {
+        public static /* synthetic */ void m7797getUnspecifiedrAG3T2k$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getSimple-rAG3T2k  reason: not valid java name */
-        public final int m7799getSimplerAG3T2k() {
+        public final int m7800getSimplerAG3T2k() {
             return LineBreak.Simple;
         }
 
         /* renamed from: getHeading-rAG3T2k  reason: not valid java name */
-        public final int m7797getHeadingrAG3T2k() {
+        public final int m7798getHeadingrAG3T2k() {
             return LineBreak.Heading;
         }
 
         /* renamed from: getParagraph-rAG3T2k  reason: not valid java name */
-        public final int m7798getParagraphrAG3T2k() {
+        public final int m7799getParagraphrAG3T2k() {
             return LineBreak.Paragraph;
         }
 
         /* renamed from: getUnspecified-rAG3T2k  reason: not valid java name */
-        public final int m7800getUnspecifiedrAG3T2k() {
+        public final int m7801getUnspecifiedrAG3T2k() {
             return LineBreak.Unspecified;
         }
     }
@@ -165,13 +165,13 @@ public final class LineBreak {
         int packBytes;
         int packBytes2;
         int packBytes3;
-        packBytes = LineBreak_androidKt.packBytes(Strategy.Companion.m7810getSimplefcGXIks(), Strictness.Companion.m7821getNormalusljTpc(), WordBreak.Companion.m7831getDefaultjp8hJ3c());
-        Simple = m7781constructorimpl(packBytes);
-        packBytes2 = LineBreak_androidKt.packBytes(Strategy.Companion.m7808getBalancedfcGXIks(), Strictness.Companion.m7820getLooseusljTpc(), WordBreak.Companion.m7832getPhrasejp8hJ3c());
-        Heading = m7781constructorimpl(packBytes2);
-        packBytes3 = LineBreak_androidKt.packBytes(Strategy.Companion.m7809getHighQualityfcGXIks(), Strictness.Companion.m7822getStrictusljTpc(), WordBreak.Companion.m7831getDefaultjp8hJ3c());
-        Paragraph = m7781constructorimpl(packBytes3);
-        Unspecified = m7781constructorimpl(0);
+        packBytes = LineBreak_androidKt.packBytes(Strategy.Companion.m7811getSimplefcGXIks(), Strictness.Companion.m7822getNormalusljTpc(), WordBreak.Companion.m7832getDefaultjp8hJ3c());
+        Simple = m7782constructorimpl(packBytes);
+        packBytes2 = LineBreak_androidKt.packBytes(Strategy.Companion.m7809getBalancedfcGXIks(), Strictness.Companion.m7821getLooseusljTpc(), WordBreak.Companion.m7833getPhrasejp8hJ3c());
+        Heading = m7782constructorimpl(packBytes2);
+        packBytes3 = LineBreak_androidKt.packBytes(Strategy.Companion.m7810getHighQualityfcGXIks(), Strictness.Companion.m7823getStrictusljTpc(), WordBreak.Companion.m7832getDefaultjp8hJ3c());
+        Paragraph = m7782constructorimpl(packBytes3);
+        Unspecified = m7782constructorimpl(0);
     }
 
     /* compiled from: LineBreak.android.kt */
@@ -181,46 +181,46 @@ public final class LineBreak {
     public static final class Strategy {
         private final int value;
         public static final Companion Companion = new Companion(null);
-        private static final int Simple = m7802constructorimpl(1);
-        private static final int HighQuality = m7802constructorimpl(2);
-        private static final int Balanced = m7802constructorimpl(3);
-        private static final int Unspecified = m7802constructorimpl(0);
+        private static final int Simple = m7803constructorimpl(1);
+        private static final int HighQuality = m7803constructorimpl(2);
+        private static final int Balanced = m7803constructorimpl(3);
+        private static final int Unspecified = m7803constructorimpl(0);
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Strategy m7801boximpl(int i) {
+        public static final /* synthetic */ Strategy m7802boximpl(int i) {
             return new Strategy(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m7802constructorimpl(int i) {
+        public static int m7803constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m7803equalsimpl(int i, Object obj) {
-            return (obj instanceof Strategy) && i == ((Strategy) obj).m7807unboximpl();
+        public static boolean m7804equalsimpl(int i, Object obj) {
+            return (obj instanceof Strategy) && i == ((Strategy) obj).m7808unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m7804equalsimpl0(int i, int i2) {
+        public static final boolean m7805equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m7805hashCodeimpl(int i) {
+        public static int m7806hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m7803equalsimpl(this.value, obj);
+            return m7804equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m7805hashCodeimpl(this.value);
+            return m7806hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m7807unboximpl() {
+        public final /* synthetic */ int m7808unboximpl() {
             return this.value;
         }
 
@@ -236,22 +236,22 @@ public final class LineBreak {
             }
 
             /* renamed from: getSimple-fcGXIks  reason: not valid java name */
-            public final int m7810getSimplefcGXIks() {
+            public final int m7811getSimplefcGXIks() {
                 return Strategy.Simple;
             }
 
             /* renamed from: getHighQuality-fcGXIks  reason: not valid java name */
-            public final int m7809getHighQualityfcGXIks() {
+            public final int m7810getHighQualityfcGXIks() {
                 return Strategy.HighQuality;
             }
 
             /* renamed from: getBalanced-fcGXIks  reason: not valid java name */
-            public final int m7808getBalancedfcGXIks() {
+            public final int m7809getBalancedfcGXIks() {
                 return Strategy.Balanced;
             }
 
             /* renamed from: getUnspecified-fcGXIks  reason: not valid java name */
-            public final int m7811getUnspecifiedfcGXIks() {
+            public final int m7812getUnspecifiedfcGXIks() {
                 return Strategy.Unspecified;
             }
         }
@@ -261,12 +261,12 @@ public final class LineBreak {
         }
 
         public String toString() {
-            return m7806toStringimpl(this.value);
+            return m7807toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m7806toStringimpl(int i) {
-            return m7804equalsimpl0(i, Simple) ? "Strategy.Simple" : m7804equalsimpl0(i, HighQuality) ? "Strategy.HighQuality" : m7804equalsimpl0(i, Balanced) ? "Strategy.Balanced" : m7804equalsimpl0(i, Unspecified) ? "Strategy.Unspecified" : "Invalid";
+        public static String m7807toStringimpl(int i) {
+            return m7805equalsimpl0(i, Simple) ? "Strategy.Simple" : m7805equalsimpl0(i, HighQuality) ? "Strategy.HighQuality" : m7805equalsimpl0(i, Balanced) ? "Strategy.Balanced" : m7805equalsimpl0(i, Unspecified) ? "Strategy.Unspecified" : "Invalid";
         }
     }
 
@@ -276,48 +276,48 @@ public final class LineBreak {
     /* loaded from: classes2.dex */
     public static final class Strictness {
         public static final Companion Companion = new Companion(null);
-        private static final int Default = m7813constructorimpl(1);
-        private static final int Loose = m7813constructorimpl(2);
-        private static final int Normal = m7813constructorimpl(3);
-        private static final int Strict = m7813constructorimpl(4);
-        private static final int Unspecified = m7813constructorimpl(0);
+        private static final int Default = m7814constructorimpl(1);
+        private static final int Loose = m7814constructorimpl(2);
+        private static final int Normal = m7814constructorimpl(3);
+        private static final int Strict = m7814constructorimpl(4);
+        private static final int Unspecified = m7814constructorimpl(0);
         private final int value;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Strictness m7812boximpl(int i) {
+        public static final /* synthetic */ Strictness m7813boximpl(int i) {
             return new Strictness(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m7813constructorimpl(int i) {
+        public static int m7814constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m7814equalsimpl(int i, Object obj) {
-            return (obj instanceof Strictness) && i == ((Strictness) obj).m7818unboximpl();
+        public static boolean m7815equalsimpl(int i, Object obj) {
+            return (obj instanceof Strictness) && i == ((Strictness) obj).m7819unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m7815equalsimpl0(int i, int i2) {
+        public static final boolean m7816equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m7816hashCodeimpl(int i) {
+        public static int m7817hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m7814equalsimpl(this.value, obj);
+            return m7815equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m7816hashCodeimpl(this.value);
+            return m7817hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m7818unboximpl() {
+        public final /* synthetic */ int m7819unboximpl() {
             return this.value;
         }
 
@@ -333,27 +333,27 @@ public final class LineBreak {
             }
 
             /* renamed from: getDefault-usljTpc  reason: not valid java name */
-            public final int m7819getDefaultusljTpc() {
+            public final int m7820getDefaultusljTpc() {
                 return Strictness.Default;
             }
 
             /* renamed from: getLoose-usljTpc  reason: not valid java name */
-            public final int m7820getLooseusljTpc() {
+            public final int m7821getLooseusljTpc() {
                 return Strictness.Loose;
             }
 
             /* renamed from: getNormal-usljTpc  reason: not valid java name */
-            public final int m7821getNormalusljTpc() {
+            public final int m7822getNormalusljTpc() {
                 return Strictness.Normal;
             }
 
             /* renamed from: getStrict-usljTpc  reason: not valid java name */
-            public final int m7822getStrictusljTpc() {
+            public final int m7823getStrictusljTpc() {
                 return Strictness.Strict;
             }
 
             /* renamed from: getUnspecified-usljTpc  reason: not valid java name */
-            public final int m7823getUnspecifiedusljTpc() {
+            public final int m7824getUnspecifiedusljTpc() {
                 return Strictness.Unspecified;
             }
         }
@@ -363,12 +363,12 @@ public final class LineBreak {
         }
 
         public String toString() {
-            return m7817toStringimpl(this.value);
+            return m7818toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m7817toStringimpl(int i) {
-            return m7815equalsimpl0(i, Default) ? "Strictness.None" : m7815equalsimpl0(i, Loose) ? "Strictness.Loose" : m7815equalsimpl0(i, Normal) ? "Strictness.Normal" : m7815equalsimpl0(i, Strict) ? "Strictness.Strict" : m7815equalsimpl0(i, Unspecified) ? "Strictness.Unspecified" : "Invalid";
+        public static String m7818toStringimpl(int i) {
+            return m7816equalsimpl0(i, Default) ? "Strictness.None" : m7816equalsimpl0(i, Loose) ? "Strictness.Loose" : m7816equalsimpl0(i, Normal) ? "Strictness.Normal" : m7816equalsimpl0(i, Strict) ? "Strictness.Strict" : m7816equalsimpl0(i, Unspecified) ? "Strictness.Unspecified" : "Invalid";
         }
     }
 
@@ -378,46 +378,46 @@ public final class LineBreak {
     /* loaded from: classes2.dex */
     public static final class WordBreak {
         public static final Companion Companion = new Companion(null);
-        private static final int Default = m7825constructorimpl(1);
-        private static final int Phrase = m7825constructorimpl(2);
-        private static final int Unspecified = m7825constructorimpl(0);
+        private static final int Default = m7826constructorimpl(1);
+        private static final int Phrase = m7826constructorimpl(2);
+        private static final int Unspecified = m7826constructorimpl(0);
         private final int value;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ WordBreak m7824boximpl(int i) {
+        public static final /* synthetic */ WordBreak m7825boximpl(int i) {
             return new WordBreak(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m7825constructorimpl(int i) {
+        public static int m7826constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m7826equalsimpl(int i, Object obj) {
-            return (obj instanceof WordBreak) && i == ((WordBreak) obj).m7830unboximpl();
+        public static boolean m7827equalsimpl(int i, Object obj) {
+            return (obj instanceof WordBreak) && i == ((WordBreak) obj).m7831unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m7827equalsimpl0(int i, int i2) {
+        public static final boolean m7828equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m7828hashCodeimpl(int i) {
+        public static int m7829hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m7826equalsimpl(this.value, obj);
+            return m7827equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m7828hashCodeimpl(this.value);
+            return m7829hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m7830unboximpl() {
+        public final /* synthetic */ int m7831unboximpl() {
             return this.value;
         }
 
@@ -433,17 +433,17 @@ public final class LineBreak {
             }
 
             /* renamed from: getDefault-jp8hJ3c  reason: not valid java name */
-            public final int m7831getDefaultjp8hJ3c() {
+            public final int m7832getDefaultjp8hJ3c() {
                 return WordBreak.Default;
             }
 
             /* renamed from: getPhrase-jp8hJ3c  reason: not valid java name */
-            public final int m7832getPhrasejp8hJ3c() {
+            public final int m7833getPhrasejp8hJ3c() {
                 return WordBreak.Phrase;
             }
 
             /* renamed from: getUnspecified-jp8hJ3c  reason: not valid java name */
-            public final int m7833getUnspecifiedjp8hJ3c() {
+            public final int m7834getUnspecifiedjp8hJ3c() {
                 return WordBreak.Unspecified;
             }
         }
@@ -453,12 +453,12 @@ public final class LineBreak {
         }
 
         public String toString() {
-            return m7829toStringimpl(this.value);
+            return m7830toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m7829toStringimpl(int i) {
-            return m7827equalsimpl0(i, Default) ? "WordBreak.None" : m7827equalsimpl0(i, Phrase) ? "WordBreak.Phrase" : m7827equalsimpl0(i, Unspecified) ? "WordBreak.Unspecified" : "Invalid";
+        public static String m7830toStringimpl(int i) {
+            return m7828equalsimpl0(i, Default) ? "WordBreak.None" : m7828equalsimpl0(i, Phrase) ? "WordBreak.Phrase" : m7828equalsimpl0(i, Unspecified) ? "WordBreak.Unspecified" : "Invalid";
         }
     }
 }

@@ -303,25 +303,25 @@ public final class SaversKt {
     private static final NonNullValueClassSaver<Color, Object> ColorSaver = NonNullValueClassSaver(new Function2<SaverScope, Color, Object>() { // from class: androidx.compose.ui.text.SaversKt$ColorSaver$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Object invoke(SaverScope saverScope, Color color) {
-            return m7386invoke4WTKRHQ(saverScope, color.m5289unboximpl());
+            return m7387invoke4WTKRHQ(saverScope, color.m5290unboximpl());
         }
 
         /* renamed from: invoke-4WTKRHQ  reason: not valid java name */
-        public final Object m7386invoke4WTKRHQ(SaverScope saverScope, long j) {
+        public final Object m7387invoke4WTKRHQ(SaverScope saverScope, long j) {
             if (j == 16) {
                 return false;
             }
-            return Integer.valueOf(ColorKt.m5333toArgb8_81llA(j));
+            return Integer.valueOf(ColorKt.m5334toArgb8_81llA(j));
         }
     }, new Function1<Object, Color>() { // from class: androidx.compose.ui.text.SaversKt$ColorSaver$2
         @Override // kotlin.jvm.functions.Function1
         /* renamed from: invoke-ijrfgN4  reason: not valid java name */
         public final Color invoke(Object obj) {
             if (Intrinsics.areEqual(obj, (Object) false)) {
-                return Color.m5269boximpl(Color.Companion.m5315getUnspecified0d7_KjU());
+                return Color.m5270boximpl(Color.Companion.m5316getUnspecified0d7_KjU());
             }
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-            return Color.m5269boximpl(ColorKt.Color(((Integer) obj).intValue()));
+            return Color.m5270boximpl(ColorKt.Color(((Integer) obj).intValue()));
         }
     });
     private static final NonNullValueClassSaver<TextUnit, Object> TextUnitSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda19
@@ -588,7 +588,7 @@ public final class SaversKt {
             case 7:
                 Object item8 = range.getItem();
                 Intrinsics.checkNotNull(item8, "null cannot be cast to non-null type androidx.compose.ui.text.StringAnnotation");
-                save = save(((StringAnnotation) item8).m7411unboximpl());
+                save = save(((StringAnnotation) item8).m7412unboximpl());
                 break;
             default:
                 throw new NoWhenBranchMatchedException();
@@ -679,7 +679,7 @@ public final class SaversKt {
                 Object obj12 = list.get(1);
                 String str2 = obj12 != null ? (String) obj12 : null;
                 Intrinsics.checkNotNull(str2);
-                return new AnnotatedString.Range(StringAnnotation.m7405boximpl(StringAnnotation.m7406constructorimpl(str2)), intValue, intValue2, str);
+                return new AnnotatedString.Range(StringAnnotation.m7406boximpl(StringAnnotation.m7407constructorimpl(str2)), intValue, intValue2, str);
             default:
                 throw new NoWhenBranchMatchedException();
         }
@@ -753,7 +753,7 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object ParagraphStyleSaver$lambda$21(SaverScope saverScope, ParagraphStyle paragraphStyle) {
-        return CollectionsKt.arrayListOf(save(TextAlign.m7872boximpl(paragraphStyle.m7343getTextAligne0LSkKk())), save(TextDirection.m7886boximpl(paragraphStyle.m7345getTextDirections_7Xco())), save(TextUnit.m8179boximpl(paragraphStyle.m7341getLineHeightXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(paragraphStyle.getTextIndent(), getSaver(TextIndent.Companion), saverScope), save(paragraphStyle.getPlatformStyle(), Savers_androidKt.getSaver(PlatformParagraphStyle.Companion), saverScope), save(paragraphStyle.getLineHeightStyle(), getSaver(LineHeightStyle.Companion), saverScope), save(LineBreak.m7780boximpl(paragraphStyle.m7340getLineBreakrAG3T2k()), Savers_androidKt.getSaver(LineBreak.Companion), saverScope), save(Hyphens.m7770boximpl(paragraphStyle.m7338getHyphensvmbZdU8())), save(paragraphStyle.getTextMotion(), Savers_androidKt.getSaver(TextMotion.Companion), saverScope));
+        return CollectionsKt.arrayListOf(save(TextAlign.m7873boximpl(paragraphStyle.m7344getTextAligne0LSkKk())), save(TextDirection.m7887boximpl(paragraphStyle.m7346getTextDirections_7Xco())), save(TextUnit.m8180boximpl(paragraphStyle.m7342getLineHeightXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(paragraphStyle.getTextIndent(), getSaver(TextIndent.Companion), saverScope), save(paragraphStyle.getPlatformStyle(), Savers_androidKt.getSaver(PlatformParagraphStyle.Companion), saverScope), save(paragraphStyle.getLineHeightStyle(), getSaver(LineHeightStyle.Companion), saverScope), save(LineBreak.m7781boximpl(paragraphStyle.m7341getLineBreakrAG3T2k()), Savers_androidKt.getSaver(LineBreak.Companion), saverScope), save(Hyphens.m7771boximpl(paragraphStyle.m7339getHyphensvmbZdU8())), save(paragraphStyle.getTextMotion(), Savers_androidKt.getSaver(TextMotion.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -764,16 +764,16 @@ public final class SaversKt {
         TextMotion textMotion = null;
         TextAlign textAlign = obj2 != null ? (TextAlign) obj2 : null;
         Intrinsics.checkNotNull(textAlign);
-        int m7878unboximpl = textAlign.m7878unboximpl();
+        int m7879unboximpl = textAlign.m7879unboximpl();
         Object obj3 = list.get(1);
         TextDirection textDirection = obj3 != null ? (TextDirection) obj3 : null;
         Intrinsics.checkNotNull(textDirection);
-        int m7892unboximpl = textDirection.m7892unboximpl();
+        int m7893unboximpl = textDirection.m7893unboximpl();
         Object obj4 = list.get(2);
         Saver<TextUnit, Object> saver = getSaver(TextUnit.Companion);
         TextUnit restore = ((!Intrinsics.areEqual(obj4, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj4 != null) ? saver.restore(obj4) : null;
         Intrinsics.checkNotNull(restore);
-        long m8198unboximpl = restore.m8198unboximpl();
+        long m8199unboximpl = restore.m8199unboximpl();
         Object obj5 = list.get(3);
         Saver<TextIndent, Object> saver2 = getSaver(TextIndent.Companion);
         TextIndent restore2 = ((!Intrinsics.areEqual(obj5, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj5 != null) ? saver2.restore(obj5) : null;
@@ -787,17 +787,17 @@ public final class SaversKt {
         Saver<LineBreak, Object> saver5 = Savers_androidKt.getSaver(LineBreak.Companion);
         LineBreak restore5 = ((!Intrinsics.areEqual(obj8, (Object) false) || (saver5 instanceof NonNullValueClassSaver)) && obj8 != null) ? saver5.restore(obj8) : null;
         Intrinsics.checkNotNull(restore5);
-        int m7792unboximpl = restore5.m7792unboximpl();
+        int m7793unboximpl = restore5.m7793unboximpl();
         Object obj9 = list.get(7);
         Hyphens hyphens = obj9 != null ? (Hyphens) obj9 : null;
         Intrinsics.checkNotNull(hyphens);
-        int m7776unboximpl = hyphens.m7776unboximpl();
+        int m7777unboximpl = hyphens.m7777unboximpl();
         Object obj10 = list.get(8);
         Saver<TextMotion, Object> saver6 = Savers_androidKt.getSaver(TextMotion.Companion);
         if ((!Intrinsics.areEqual(obj10, (Object) false) || (saver6 instanceof NonNullValueClassSaver)) && obj10 != null) {
             textMotion = saver6.restore(obj10);
         }
-        return new ParagraphStyle(m7878unboximpl, m7892unboximpl, m8198unboximpl, restore2, restore3, restore4, m7792unboximpl, m7776unboximpl, textMotion, (DefaultConstructorMarker) null);
+        return new ParagraphStyle(m7879unboximpl, m7893unboximpl, m8199unboximpl, restore2, restore3, restore4, m7793unboximpl, m7777unboximpl, textMotion, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<SpanStyle, Object> getSpanStyleSaver() {
@@ -806,7 +806,7 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object SpanStyleSaver$lambda$23(SaverScope saverScope, SpanStyle spanStyle) {
-        return CollectionsKt.arrayListOf(save(Color.m5269boximpl(spanStyle.m7398getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(TextUnit.m8179boximpl(spanStyle.m7399getFontSizeXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.getFontWeight(), getSaver(FontWeight.Companion), saverScope), save(spanStyle.m7400getFontStyle4Lr2A7w()), save(spanStyle.m7401getFontSynthesisZQGJjVo()), save(-1), save(spanStyle.getFontFeatureSettings()), save(TextUnit.m8179boximpl(spanStyle.m7402getLetterSpacingXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.m7397getBaselineShift5SSeXJ0(), getSaver(BaselineShift.Companion), saverScope), save(spanStyle.getTextGeometricTransform(), getSaver(TextGeometricTransform.Companion), saverScope), save(spanStyle.getLocaleList(), getSaver(LocaleList.Companion), saverScope), save(Color.m5269boximpl(spanStyle.m7396getBackground0d7_KjU()), getSaver(Color.Companion), saverScope), save(spanStyle.getTextDecoration(), getSaver(TextDecoration.Companion), saverScope), save(spanStyle.getShadow(), getSaver(Shadow.Companion), saverScope));
+        return CollectionsKt.arrayListOf(save(Color.m5270boximpl(spanStyle.m7399getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(TextUnit.m8180boximpl(spanStyle.m7400getFontSizeXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.getFontWeight(), getSaver(FontWeight.Companion), saverScope), save(spanStyle.m7401getFontStyle4Lr2A7w()), save(spanStyle.m7402getFontSynthesisZQGJjVo()), save(-1), save(spanStyle.getFontFeatureSettings()), save(TextUnit.m8180boximpl(spanStyle.m7403getLetterSpacingXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.m7398getBaselineShift5SSeXJ0(), getSaver(BaselineShift.Companion), saverScope), save(spanStyle.getTextGeometricTransform(), getSaver(TextGeometricTransform.Companion), saverScope), save(spanStyle.getLocaleList(), getSaver(LocaleList.Companion), saverScope), save(Color.m5270boximpl(spanStyle.m7397getBackground0d7_KjU()), getSaver(Color.Companion), saverScope), save(spanStyle.getTextDecoration(), getSaver(TextDecoration.Companion), saverScope), save(spanStyle.getShadow(), getSaver(Shadow.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -854,12 +854,12 @@ public final class SaversKt {
         Saver<Color, Object> saver = getSaver(Color.Companion);
         Color restore = ((!Intrinsics.areEqual(obj5, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj5 != null) ? saver.restore(obj5) : null;
         Intrinsics.checkNotNull(restore);
-        long m5289unboximpl = restore.m5289unboximpl();
+        long m5290unboximpl = restore.m5290unboximpl();
         Object obj6 = list.get(1);
         Saver<TextUnit, Object> saver2 = getSaver(TextUnit.Companion);
         TextUnit restore2 = ((!Intrinsics.areEqual(obj6, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj6 != null) ? saver2.restore(obj6) : null;
         Intrinsics.checkNotNull(restore2);
-        long m8198unboximpl = restore2.m8198unboximpl();
+        long m8199unboximpl = restore2.m8199unboximpl();
         Object obj7 = list.get(2);
         Saver<FontWeight, Object> saver3 = getSaver(FontWeight.Companion);
         FontWeight restore3 = ((!Intrinsics.areEqual(obj7, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj7 != null) ? saver3.restore(obj7) : null;
@@ -873,7 +873,7 @@ public final class SaversKt {
         Saver<TextUnit, Object> saver4 = getSaver(TextUnit.Companion);
         TextUnit restore4 = ((!Intrinsics.areEqual(obj11, (Object) false) || (saver4 instanceof NonNullValueClassSaver)) && obj11 != null) ? saver4.restore(obj11) : null;
         Intrinsics.checkNotNull(restore4);
-        long m8198unboximpl2 = restore4.m8198unboximpl();
+        long m8199unboximpl2 = restore4.m8199unboximpl();
         Object obj12 = list.get(8);
         Saver<BaselineShift, Object> saver5 = getSaver(BaselineShift.Companion);
         BaselineShift restore5 = ((!Intrinsics.areEqual(obj12, (Object) false) || (saver5 instanceof NonNullValueClassSaver)) && obj12 != null) ? saver5.restore(obj12) : null;
@@ -898,37 +898,37 @@ public final class SaversKt {
                 obj3 = list.get(11);
                 Saver<Color, Object> saver8 = getSaver(Color.Companion);
                 if (Intrinsics.areEqual(obj3, (Object) false)) {
-                    j = m5289unboximpl;
+                    j = m5290unboximpl;
                 } else {
-                    j = m5289unboximpl;
+                    j = m5290unboximpl;
                 }
                 if (obj3 != null) {
                     color = saver8.restore(obj3);
                     Intrinsics.checkNotNull(color);
-                    long m5289unboximpl2 = color.m5289unboximpl();
+                    long m5290unboximpl2 = color.m5290unboximpl();
                     obj4 = list.get(12);
                     Saver<TextDecoration, Object> saver9 = getSaver(TextDecoration.Companion);
                     if (Intrinsics.areEqual(obj4, (Object) false)) {
-                        j2 = m5289unboximpl2;
+                        j2 = m5290unboximpl2;
                     } else {
-                        j2 = m5289unboximpl2;
+                        j2 = m5290unboximpl2;
                     }
                     if (obj4 != null) {
                         textDecoration = saver9.restore(obj4);
                         Object obj14 = list.get(13);
                         Saver<Shadow, Object> saver10 = getSaver(Shadow.Companion);
-                        return new SpanStyle(j, m8198unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8198unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14, (Object) false) || (saver10 instanceof NonNullValueClassSaver)) && obj14 != null) ? saver10.restore(obj14) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                        return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14, (Object) false) || (saver10 instanceof NonNullValueClassSaver)) && obj14 != null) ? saver10.restore(obj14) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
                     }
                     textDecoration = null;
                     Object obj142 = list.get(13);
                     Saver<Shadow, Object> saver102 = getSaver(Shadow.Companion);
                     if (Intrinsics.areEqual(obj142, (Object) false)) {
                     }
-                    return new SpanStyle(j, m8198unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8198unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142, (Object) false) || (saver102 instanceof NonNullValueClassSaver)) && obj142 != null) ? saver102.restore(obj142) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                    return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142, (Object) false) || (saver102 instanceof NonNullValueClassSaver)) && obj142 != null) ? saver102.restore(obj142) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
                 }
                 color = null;
                 Intrinsics.checkNotNull(color);
-                long m5289unboximpl22 = color.m5289unboximpl();
+                long m5290unboximpl22 = color.m5290unboximpl();
                 obj4 = list.get(12);
                 Saver<TextDecoration, Object> saver92 = getSaver(TextDecoration.Companion);
                 if (Intrinsics.areEqual(obj4, (Object) false)) {
@@ -940,7 +940,7 @@ public final class SaversKt {
                 Saver<Shadow, Object> saver1022 = getSaver(Shadow.Companion);
                 if (Intrinsics.areEqual(obj1422, (Object) false)) {
                 }
-                return new SpanStyle(j, m8198unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8198unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj1422, (Object) false) || (saver1022 instanceof NonNullValueClassSaver)) && obj1422 != null) ? saver1022.restore(obj1422) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj1422, (Object) false) || (saver1022 instanceof NonNullValueClassSaver)) && obj1422 != null) ? saver1022.restore(obj1422) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
             }
             localeList = null;
             obj3 = list.get(11);
@@ -951,7 +951,7 @@ public final class SaversKt {
             }
             color = null;
             Intrinsics.checkNotNull(color);
-            long m5289unboximpl222 = color.m5289unboximpl();
+            long m5290unboximpl222 = color.m5290unboximpl();
             obj4 = list.get(12);
             Saver<TextDecoration, Object> saver922 = getSaver(TextDecoration.Companion);
             if (Intrinsics.areEqual(obj4, (Object) false)) {
@@ -963,7 +963,7 @@ public final class SaversKt {
             Saver<Shadow, Object> saver10222 = getSaver(Shadow.Companion);
             if (Intrinsics.areEqual(obj14222, (Object) false)) {
             }
-            return new SpanStyle(j, m8198unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8198unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14222, (Object) false) || (saver10222 instanceof NonNullValueClassSaver)) && obj14222 != null) ? saver10222.restore(obj14222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+            return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14222, (Object) false) || (saver10222 instanceof NonNullValueClassSaver)) && obj14222 != null) ? saver10222.restore(obj14222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
         }
         textGeometricTransform = null;
         obj2 = list.get(10);
@@ -981,7 +981,7 @@ public final class SaversKt {
         }
         color = null;
         Intrinsics.checkNotNull(color);
-        long m5289unboximpl2222 = color.m5289unboximpl();
+        long m5290unboximpl2222 = color.m5290unboximpl();
         obj4 = list.get(12);
         Saver<TextDecoration, Object> saver9222 = getSaver(TextDecoration.Companion);
         if (Intrinsics.areEqual(obj4, (Object) false)) {
@@ -993,7 +993,7 @@ public final class SaversKt {
         Saver<Shadow, Object> saver102222 = getSaver(Shadow.Companion);
         if (Intrinsics.areEqual(obj142222, (Object) false)) {
         }
-        return new SpanStyle(j, m8198unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8198unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142222, (Object) false) || (saver102222 instanceof NonNullValueClassSaver)) && obj142222 != null) ? saver102222.restore(obj142222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+        return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142222, (Object) false) || (saver102222 instanceof NonNullValueClassSaver)) && obj142222 != null) ? saver102222.restore(obj142222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<TextLinkStyles, Object> getTextLinkStylesSaver() {
@@ -1063,7 +1063,7 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object TextIndentSaver$lambda$31(SaverScope saverScope, TextIndent textIndent) {
-        return CollectionsKt.arrayListOf(save(TextUnit.m8179boximpl(textIndent.m7903getFirstLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(TextUnit.m8179boximpl(textIndent.m7904getRestLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope));
+        return CollectionsKt.arrayListOf(save(TextUnit.m8180boximpl(textIndent.m7904getFirstLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(TextUnit.m8180boximpl(textIndent.m7905getRestLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1075,14 +1075,14 @@ public final class SaversKt {
         TextUnit textUnit = null;
         TextUnit restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        long m8198unboximpl = restore.m8198unboximpl();
+        long m8199unboximpl = restore.m8199unboximpl();
         Object obj3 = list.get(1);
         Saver<TextUnit, Object> saver2 = getSaver(TextUnit.Companion);
         if ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) {
             textUnit = saver2.restore(obj3);
         }
         Intrinsics.checkNotNull(textUnit);
-        return new TextIndent(m8198unboximpl, textUnit.m8198unboximpl(), null);
+        return new TextIndent(m8199unboximpl, textUnit.m8199unboximpl(), null);
     }
 
     public static final Saver<FontWeight, Object> getSaver(FontWeight.Companion companion) {
@@ -1106,13 +1106,13 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object BaselineShiftSaver$lambda$35(SaverScope saverScope, BaselineShift baselineShift) {
-        return Float.valueOf(baselineShift.m7757unboximpl());
+        return Float.valueOf(baselineShift.m7758unboximpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final BaselineShift BaselineShiftSaver$lambda$36(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");
-        return BaselineShift.m7751boximpl(BaselineShift.m7752constructorimpl(((Float) obj).floatValue()));
+        return BaselineShift.m7752boximpl(BaselineShift.m7753constructorimpl(((Float) obj).floatValue()));
     }
 
     public static final Saver<TextRange, Object> getSaver(TextRange.Companion companion) {
@@ -1122,7 +1122,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
     public static final Object TextRangeSaver$lambda$37(SaverScope saverScope, TextRange textRange) {
-        return CollectionsKt.arrayListOf(save(Integer.valueOf(TextRange.m7457getStartimpl(textRange.m7461unboximpl()))), save(Integer.valueOf(TextRange.m7452getEndimpl(textRange.m7461unboximpl()))));
+        return CollectionsKt.arrayListOf(save(Integer.valueOf(TextRange.m7458getStartimpl(textRange.m7462unboximpl()))), save(Integer.valueOf(TextRange.m7453getEndimpl(textRange.m7462unboximpl()))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1136,7 +1136,7 @@ public final class SaversKt {
         Object obj3 = list.get(1);
         Integer num2 = obj3 != null ? (Integer) obj3 : null;
         Intrinsics.checkNotNull(num2);
-        return TextRange.m7445boximpl(TextRangeKt.TextRange(intValue, num2.intValue()));
+        return TextRange.m7446boximpl(TextRangeKt.TextRange(intValue, num2.intValue()));
     }
 
     public static final Saver<Shadow, Object> getSaver(Shadow.Companion companion) {
@@ -1145,7 +1145,7 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object ShadowSaver$lambda$39(SaverScope saverScope, Shadow shadow) {
-        return CollectionsKt.arrayListOf(save(Color.m5269boximpl(shadow.m5619getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(Offset.m5024boximpl(shadow.m5620getOffsetF1C5BW0()), getSaver(Offset.Companion), saverScope), save(Float.valueOf(shadow.getBlurRadius())));
+        return CollectionsKt.arrayListOf(save(Color.m5270boximpl(shadow.m5620getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(Offset.m5025boximpl(shadow.m5621getOffsetF1C5BW0()), getSaver(Offset.Companion), saverScope), save(Float.valueOf(shadow.getBlurRadius())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1156,16 +1156,16 @@ public final class SaversKt {
         Saver<Color, Object> saver = getSaver(Color.Companion);
         Color restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        long m5289unboximpl = restore.m5289unboximpl();
+        long m5290unboximpl = restore.m5290unboximpl();
         Object obj3 = list.get(1);
         Saver<Offset, Object> saver2 = getSaver(Offset.Companion);
         Offset restore2 = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) ? saver2.restore(obj3) : null;
         Intrinsics.checkNotNull(restore2);
-        long m5045unboximpl = restore2.m5045unboximpl();
+        long m5046unboximpl = restore2.m5046unboximpl();
         Object obj4 = list.get(2);
         Float f = obj4 != null ? (Float) obj4 : null;
         Intrinsics.checkNotNull(f);
-        return new Shadow(m5289unboximpl, m5045unboximpl, f.floatValue(), null);
+        return new Shadow(m5290unboximpl, m5046unboximpl, f.floatValue(), null);
     }
 
     public static final Saver<Color, Object> getSaver(Color.Companion companion) {
@@ -1178,16 +1178,16 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object TextUnitSaver$lambda$41(SaverScope saverScope, TextUnit textUnit) {
-        if (textUnit == null ? false : TextUnit.m8186equalsimpl0(textUnit.m8198unboximpl(), TextUnit.Companion.m8200getUnspecifiedXSAIIZE())) {
+        if (textUnit == null ? false : TextUnit.m8187equalsimpl0(textUnit.m8199unboximpl(), TextUnit.Companion.m8201getUnspecifiedXSAIIZE())) {
             return (Serializable) false;
         }
-        return CollectionsKt.arrayListOf(save(Float.valueOf(TextUnit.m8189getValueimpl(textUnit.m8198unboximpl()))), save(TextUnitType.m8214boximpl(TextUnit.m8188getTypeUIouoOA(textUnit.m8198unboximpl()))));
+        return CollectionsKt.arrayListOf(save(Float.valueOf(TextUnit.m8190getValueimpl(textUnit.m8199unboximpl()))), save(TextUnitType.m8215boximpl(TextUnit.m8189getTypeUIouoOA(textUnit.m8199unboximpl()))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final TextUnit TextUnitSaver$lambda$42(Object obj) {
         if (Intrinsics.areEqual(obj, (Object) false)) {
-            return TextUnit.m8179boximpl(TextUnit.Companion.m8200getUnspecifiedXSAIIZE());
+            return TextUnit.m8180boximpl(TextUnit.Companion.m8201getUnspecifiedXSAIIZE());
         }
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
@@ -1198,7 +1198,7 @@ public final class SaversKt {
         Object obj3 = list.get(1);
         TextUnitType textUnitType = obj3 != null ? (TextUnitType) obj3 : null;
         Intrinsics.checkNotNull(textUnitType);
-        return TextUnit.m8179boximpl(TextUnitKt.m8201TextUnitanM5pPY(floatValue, textUnitType.m8220unboximpl()));
+        return TextUnit.m8180boximpl(TextUnitKt.m8202TextUnitanM5pPY(floatValue, textUnitType.m8221unboximpl()));
     }
 
     public static final Saver<Offset, Object> getSaver(Offset.Companion companion) {
@@ -1208,13 +1208,13 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
     public static final Object OffsetSaver$lambda$43(SaverScope saverScope, Offset offset) {
-        return offset == null ? false : Offset.m5032equalsimpl0(offset.m5045unboximpl(), Offset.Companion.m5050getUnspecifiedF1C5BW0()) ? (Serializable) false : CollectionsKt.arrayListOf(save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5045unboximpl() >> 32)))), save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5045unboximpl() & 4294967295L)))));
+        return offset == null ? false : Offset.m5033equalsimpl0(offset.m5046unboximpl(), Offset.Companion.m5051getUnspecifiedF1C5BW0()) ? (Serializable) false : CollectionsKt.arrayListOf(save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5046unboximpl() >> 32)))), save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5046unboximpl() & 4294967295L)))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset OffsetSaver$lambda$44(Object obj) {
         if (Intrinsics.areEqual(obj, (Object) false)) {
-            return Offset.m5024boximpl(Offset.Companion.m5050getUnspecifiedF1C5BW0());
+            return Offset.m5025boximpl(Offset.Companion.m5051getUnspecifiedF1C5BW0());
         }
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
@@ -1225,7 +1225,7 @@ public final class SaversKt {
         Object obj3 = list.get(1);
         Float f2 = obj3 != null ? (Float) obj3 : null;
         Intrinsics.checkNotNull(f2);
-        return Offset.m5024boximpl(Offset.m5027constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(f2.floatValue()) & 4294967295L)));
+        return Offset.m5025boximpl(Offset.m5028constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(f2.floatValue()) & 4294967295L)));
     }
 
     public static final Saver<LocaleList, Object> getSaver(LocaleList.Companion companion) {
@@ -1284,7 +1284,7 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object LineHeightStyleSaver$lambda$51(SaverScope saverScope, LineHeightStyle lineHeightStyle) {
-        return CollectionsKt.arrayListOf(save(LineHeightStyle.Alignment.m7839boximpl(lineHeightStyle.m7836getAlignmentPIaL0Z0())), save(LineHeightStyle.Trim.m7859boximpl(lineHeightStyle.m7838getTrimEVpEnUU())), save(LineHeightStyle.Mode.m7850boximpl(lineHeightStyle.m7837getModelzQqcRY())));
+        return CollectionsKt.arrayListOf(save(LineHeightStyle.Alignment.m7840boximpl(lineHeightStyle.m7837getAlignmentPIaL0Z0())), save(LineHeightStyle.Trim.m7860boximpl(lineHeightStyle.m7839getTrimEVpEnUU())), save(LineHeightStyle.Mode.m7851boximpl(lineHeightStyle.m7838getModelzQqcRY())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1294,15 +1294,15 @@ public final class SaversKt {
         Object obj2 = list.get(0);
         LineHeightStyle.Alignment alignment = obj2 != null ? (LineHeightStyle.Alignment) obj2 : null;
         Intrinsics.checkNotNull(alignment);
-        float m7845unboximpl = alignment.m7845unboximpl();
+        float m7846unboximpl = alignment.m7846unboximpl();
         Object obj3 = list.get(1);
         LineHeightStyle.Trim trim = obj3 != null ? (LineHeightStyle.Trim) obj3 : null;
         Intrinsics.checkNotNull(trim);
-        int m7867unboximpl = trim.m7867unboximpl();
+        int m7868unboximpl = trim.m7868unboximpl();
         Object obj4 = list.get(2);
         LineHeightStyle.Mode mode = obj4 != null ? (LineHeightStyle.Mode) obj4 : null;
         Intrinsics.checkNotNull(mode);
-        return new LineHeightStyle(m7845unboximpl, m7867unboximpl, mode.m7856unboximpl(), null);
+        return new LineHeightStyle(m7846unboximpl, m7868unboximpl, mode.m7857unboximpl(), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

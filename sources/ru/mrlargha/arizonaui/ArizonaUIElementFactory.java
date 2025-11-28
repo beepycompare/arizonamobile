@@ -1,16 +1,13 @@
 package ru.mrlargha.arizonaui;
 
 import com.arizonagames.feature.arizona.cars.CarsScreen;
-import com.arizonagames.feature.arizona.certificate.CertificateScreen;
+import com.arizonagames.feature.arizona.family.FamilyScreen;
 import kotlin.Metadata;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
-import ru.mrlargha.arizona.promo.ArizonaPromoScreen;
 import ru.mrlargha.arizonaui.action.presentation.Action;
 import ru.mrlargha.arizonaui.container.presentation.CurrentContainer;
 import ru.mrlargha.arizonaui.container.presentation.CurrentContainerRewards;
-import ru.mrlargha.arizonaui.family.FamilyScreen;
-import ru.mrlargha.arizonaui.fishing.FishingScreen;
 import ru.mrlargha.arizonaui.ghetto.GhettoScreen;
 import ru.mrlargha.arizonaui.house.MyHouseScreen;
 import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
@@ -27,6 +24,6 @@ import ru.mrlargha.feature.selector.presentation.SelectorScreen;
 /* loaded from: classes5.dex */
 public final class ArizonaUIElementFactory extends UIElementFactory {
     public ArizonaUIElementFactory() {
-        getSpawnerMap().putAll(MapsKt.mapOf(TuplesKt.to(UIElementID.ARIZONA_CURRENT_CONTAINER, new CurrentContainer.Spawner()), TuplesKt.to(UIElementID.ARIZONA_CONTAINER_REWARDS, new CurrentContainerRewards.Spawner()), TuplesKt.to(UIElementID.ARIZONA_ACTION, new Action.Spawner()), TuplesKt.to(UIElementID.ARIZONA_MOBILE_PHONE, new MobilePhone.Spawner()), TuplesKt.to(UIElementID.ARIZONA_VEHICLE_PLATE, new LicensePlatesScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_SITUATION, new SituationScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_FISHING, new FishingScreen.Spawner()), TuplesKt.to(UIElementID.HOUSES, new MyHouseScreen.Spawner()), TuplesKt.to(UIElementID.FAMILY_ARIZONA, new FamilyScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_GHETTO, new GhettoScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_EVENT, new EventScreen.Spawner()), TuplesKt.to(UIElementID.SELECTOR, new SelectorScreen.Spawner()), TuplesKt.to(UIElementID.CASES, new CasesScreen.Spawner()), TuplesKt.to(UIElementID.EMPLOYMENT_CENTER, new EmploymentScreen.Spawner()), TuplesKt.to(UIElementID.RODINA_PROMO, new ArizonaPromoScreen.Spawner()), TuplesKt.to(UIElementID.CERTIFICATE, new CertificateScreen.Spawner()), TuplesKt.to(UIElementID.CARS, new CarsScreen.Spawner())));
+        getSpawnerMap().putAll(MapsKt.mapOf(TuplesKt.to(UIElementID.ARIZONA_CURRENT_CONTAINER, new CurrentContainer.Spawner()), TuplesKt.to(UIElementID.ARIZONA_CONTAINER_REWARDS, new CurrentContainerRewards.Spawner()), TuplesKt.to(UIElementID.ARIZONA_ACTION, new Action.Spawner()), TuplesKt.to(UIElementID.ARIZONA_MOBILE_PHONE, new MobilePhone.Spawner()), TuplesKt.to(UIElementID.ARIZONA_VEHICLE_PLATE, new LicensePlatesScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_SITUATION, new SituationScreen.Spawner()), TuplesKt.to(UIElementID.HOUSES, new MyHouseScreen.Spawner()), TuplesKt.to(UIElementID.FAMILY_ARIZONA, new FamilyScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_GHETTO, new GhettoScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_EVENT, new EventScreen.Spawner()), TuplesKt.to(UIElementID.SELECTOR, new SelectorScreen.Spawner()), TuplesKt.to(UIElementID.CASES, new CasesScreen.Spawner()), TuplesKt.to(UIElementID.EMPLOYMENT_CENTER, new EmploymentScreen.Spawner()), TuplesKt.to(UIElementID.CARS, new CarsScreen.Spawner())));
     }
 }

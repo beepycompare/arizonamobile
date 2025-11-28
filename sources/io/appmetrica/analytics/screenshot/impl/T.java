@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.screenshot.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface T {
     void a();
 

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.plugins.PluginErrorDetails;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Hj implements Xa {
 
     /* renamed from: a  reason: collision with root package name */

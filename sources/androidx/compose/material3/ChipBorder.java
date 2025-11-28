@@ -37,7 +37,7 @@ public final class ChipBorder {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1899621712, i, -1, "androidx.compose.material3.ChipBorder.borderStroke (Chip.kt:2915)");
         }
-        State<BorderStroke> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(BorderStrokeKt.m297BorderStrokecXLIe8U(this.borderWidth, z ? this.borderColor : this.disabledBorderColor), composer, 0);
+        State<BorderStroke> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(BorderStrokeKt.m298BorderStrokecXLIe8U(this.borderWidth, z ? this.borderColor : this.disabledBorderColor), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -53,10 +53,10 @@ public final class ChipBorder {
             return false;
         }
         ChipBorder chipBorder = (ChipBorder) obj;
-        return Color.m5280equalsimpl0(this.borderColor, chipBorder.borderColor) && Color.m5280equalsimpl0(this.disabledBorderColor, chipBorder.disabledBorderColor) && Dp.m8000equalsimpl0(this.borderWidth, chipBorder.borderWidth);
+        return Color.m5281equalsimpl0(this.borderColor, chipBorder.borderColor) && Color.m5281equalsimpl0(this.disabledBorderColor, chipBorder.disabledBorderColor) && Dp.m8001equalsimpl0(this.borderWidth, chipBorder.borderWidth);
     }
 
     public int hashCode() {
-        return (((Color.m5286hashCodeimpl(this.borderColor) * 31) + Color.m5286hashCodeimpl(this.disabledBorderColor)) * 31) + Dp.m8001hashCodeimpl(this.borderWidth);
+        return (((Color.m5287hashCodeimpl(this.borderColor) * 31) + Color.m5287hashCodeimpl(this.disabledBorderColor)) * 31) + Dp.m8002hashCodeimpl(this.borderWidth);
     }
 }

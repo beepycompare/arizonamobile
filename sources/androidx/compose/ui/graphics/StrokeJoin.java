@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class StrokeJoin {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Miter = m5653constructorimpl(0);
-    private static final int Round = m5653constructorimpl(1);
-    private static final int Bevel = m5653constructorimpl(2);
+    private static final int Miter = m5654constructorimpl(0);
+    private static final int Round = m5654constructorimpl(1);
+    private static final int Bevel = m5654constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StrokeJoin m5652boximpl(int i) {
+    public static final /* synthetic */ StrokeJoin m5653boximpl(int i) {
         return new StrokeJoin(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5653constructorimpl(int i) {
+    public static int m5654constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5654equalsimpl(int i, Object obj) {
-        return (obj instanceof StrokeJoin) && i == ((StrokeJoin) obj).m5658unboximpl();
+    public static boolean m5655equalsimpl(int i, Object obj) {
+        return (obj instanceof StrokeJoin) && i == ((StrokeJoin) obj).m5659unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5655equalsimpl0(int i, int i2) {
+    public static final boolean m5656equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5656hashCodeimpl(int i) {
+    public static int m5657hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5654equalsimpl(this.value, obj);
+        return m5655equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5656hashCodeimpl(this.value);
+        return m5657hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5658unboximpl() {
+    public final /* synthetic */ int m5659unboximpl() {
         return this.value;
     }
 
@@ -65,17 +65,17 @@ public final class StrokeJoin {
         }
 
         /* renamed from: getMiter-LxFBmk8  reason: not valid java name */
-        public final int m5660getMiterLxFBmk8() {
+        public final int m5661getMiterLxFBmk8() {
             return StrokeJoin.Miter;
         }
 
         /* renamed from: getRound-LxFBmk8  reason: not valid java name */
-        public final int m5661getRoundLxFBmk8() {
+        public final int m5662getRoundLxFBmk8() {
             return StrokeJoin.Round;
         }
 
         /* renamed from: getBevel-LxFBmk8  reason: not valid java name */
-        public final int m5659getBevelLxFBmk8() {
+        public final int m5660getBevelLxFBmk8() {
             return StrokeJoin.Bevel;
         }
     }
@@ -85,11 +85,11 @@ public final class StrokeJoin {
     }
 
     public String toString() {
-        return m5657toStringimpl(this.value);
+        return m5658toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5657toStringimpl(int i) {
-        return m5655equalsimpl0(i, Miter) ? "Miter" : m5655equalsimpl0(i, Round) ? "Round" : m5655equalsimpl0(i, Bevel) ? "Bevel" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5658toStringimpl(int i) {
+        return m5656equalsimpl0(i, Miter) ? "Miter" : m5656equalsimpl0(i, Round) ? "Round" : m5656equalsimpl0(i, Bevel) ? "Bevel" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

@@ -64,14 +64,14 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        Placeable mo6697measureBRTryo0;
+    public MeasureResult mo81measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        Placeable mo6698measureBRTryo0;
         if (measureScope.isLookingAhead()) {
-            this.lookaheadConstraints = Constraints.m7935boximpl(j);
+            this.lookaheadConstraints = Constraints.m7936boximpl(j);
         }
         if (!isEnabled().invoke().booleanValue()) {
-            final Placeable mo6697measureBRTryo02 = measurable.mo6697measureBRTryo0(j);
-            return MeasureScope.layout$default(measureScope, mo6697measureBRTryo02.getWidth(), mo6697measureBRTryo02.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$1$1
+            final Placeable mo6698measureBRTryo02 = measurable.mo6698measureBRTryo0(j);
+            return MeasureScope.layout$default(measureScope, mo6698measureBRTryo02.getWidth(), mo6698measureBRTryo02.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
@@ -90,16 +90,16 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
             }, 4, null);
         }
         if (measureScope.isLookingAhead()) {
-            mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
-            this.lookaheadSize = IntSize.m8161constructorimpl((mo6697measureBRTryo0.getWidth() << 32) | (mo6697measureBRTryo0.getHeight() & 4294967295L));
+            mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+            this.lookaheadSize = IntSize.m8162constructorimpl((mo6698measureBRTryo0.getWidth() << 32) | (mo6698measureBRTryo0.getHeight() & 4294967295L));
         } else {
             Constraints constraints = this.lookaheadConstraints;
             Intrinsics.checkNotNull(constraints);
-            mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(constraints.m7954unboximpl());
+            mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
         }
-        final long m7962constrain4WqzIAM = ConstraintsKt.m7962constrain4WqzIAM(j, this.lookaheadSize);
-        final Placeable placeable = mo6697measureBRTryo0;
-        return MeasureScope.layout$default(measureScope, (int) (m7962constrain4WqzIAM >> 32), (int) (4294967295L & m7962constrain4WqzIAM), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$2
+        final long m7963constrain4WqzIAM = ConstraintsKt.m7963constrain4WqzIAM(j, this.lookaheadSize);
+        final Placeable placeable = mo6698measureBRTryo0;
+        return MeasureScope.layout$default(measureScope, (int) (m7963constrain4WqzIAM >> 32), (int) (4294967295L & m7963constrain4WqzIAM), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -115,7 +115,7 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Placeable.PlacementScope placementScope) {
                 long j2;
-                final long m6781constructorimpl;
+                final long m6782constructorimpl;
                 long j3;
                 long j4;
                 long j5;
@@ -131,13 +131,13 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
                     j5 = SkipToLookaheadNode.this.lookaheadSize;
                     if (((int) (j5 & 4294967295L)) != 0) {
                         j6 = SkipToLookaheadNode.this.lookaheadSize;
-                        m6781constructorimpl = contentScale.mo6690computeScaleFactorH7hwNQA(IntSizeKt.m8178toSizeozmzZPI(j6), IntSizeKt.m8178toSizeozmzZPI(m7962constrain4WqzIAM));
+                        m6782constructorimpl = contentScale.mo6691computeScaleFactorH7hwNQA(IntSizeKt.m8179toSizeozmzZPI(j6), IntSizeKt.m8179toSizeozmzZPI(m7963constrain4WqzIAM));
                         Alignment alignment = scaleToBounds.getAlignment();
                         j3 = SkipToLookaheadNode.this.lookaheadSize;
-                        int roundToInt = MathKt.roundToInt(((int) (j3 >> 32)) * Float.intBitsToFloat((int) (m6781constructorimpl >> 32)));
+                        int roundToInt = MathKt.roundToInt(((int) (j3 >> 32)) * Float.intBitsToFloat((int) (m6782constructorimpl >> 32)));
                         j4 = SkipToLookaheadNode.this.lookaheadSize;
-                        long mo4758alignKFBX0sM = alignment.mo4758alignKFBX0sM(IntSize.m8161constructorimpl((MathKt.roundToInt(((int) (j4 & 4294967295L)) * Float.intBitsToFloat((int) (m6781constructorimpl & 4294967295L))) & 4294967295L) | (roundToInt << 32)), m7962constrain4WqzIAM, measureScope.getLayoutDirection());
-                        Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m8123getXimpl(mo4758alignKFBX0sM), IntOffset.m8124getYimpl(mo4758alignKFBX0sM), 0.0f, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$2.1
+                        long mo4759alignKFBX0sM = alignment.mo4759alignKFBX0sM(IntSize.m8162constructorimpl((MathKt.roundToInt(((int) (j4 & 4294967295L)) * Float.intBitsToFloat((int) (m6782constructorimpl & 4294967295L))) & 4294967295L) | (roundToInt << 32)), m7963constrain4WqzIAM, measureScope.getLayoutDirection());
+                        Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m8124getXimpl(mo4759alignKFBX0sM), IntOffset.m8125getYimpl(mo4759alignKFBX0sM), 0.0f, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$2.1
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             {
                                 super(1);
@@ -151,20 +151,20 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(GraphicsLayerScope graphicsLayerScope) {
-                                graphicsLayerScope.setScaleX(Float.intBitsToFloat((int) (m6781constructorimpl >> 32)));
-                                graphicsLayerScope.setScaleY(Float.intBitsToFloat((int) (m6781constructorimpl & 4294967295L)));
-                                graphicsLayerScope.mo5481setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.0f, 0.0f));
+                                graphicsLayerScope.setScaleX(Float.intBitsToFloat((int) (m6782constructorimpl >> 32)));
+                                graphicsLayerScope.setScaleY(Float.intBitsToFloat((int) (m6782constructorimpl & 4294967295L)));
+                                graphicsLayerScope.mo5482setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.0f, 0.0f));
                             }
                         }, 4, (Object) null);
                     }
                 }
-                m6781constructorimpl = ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
+                m6782constructorimpl = ScaleFactor.m6782constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
                 Alignment alignment2 = scaleToBounds.getAlignment();
                 j3 = SkipToLookaheadNode.this.lookaheadSize;
-                int roundToInt2 = MathKt.roundToInt(((int) (j3 >> 32)) * Float.intBitsToFloat((int) (m6781constructorimpl >> 32)));
+                int roundToInt2 = MathKt.roundToInt(((int) (j3 >> 32)) * Float.intBitsToFloat((int) (m6782constructorimpl >> 32)));
                 j4 = SkipToLookaheadNode.this.lookaheadSize;
-                long mo4758alignKFBX0sM2 = alignment2.mo4758alignKFBX0sM(IntSize.m8161constructorimpl((MathKt.roundToInt(((int) (j4 & 4294967295L)) * Float.intBitsToFloat((int) (m6781constructorimpl & 4294967295L))) & 4294967295L) | (roundToInt2 << 32)), m7962constrain4WqzIAM, measureScope.getLayoutDirection());
-                Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m8123getXimpl(mo4758alignKFBX0sM2), IntOffset.m8124getYimpl(mo4758alignKFBX0sM2), 0.0f, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$2.1
+                long mo4759alignKFBX0sM2 = alignment2.mo4759alignKFBX0sM(IntSize.m8162constructorimpl((MathKt.roundToInt(((int) (j4 & 4294967295L)) * Float.intBitsToFloat((int) (m6782constructorimpl & 4294967295L))) & 4294967295L) | (roundToInt2 << 32)), m7963constrain4WqzIAM, measureScope.getLayoutDirection());
+                Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m8124getXimpl(mo4759alignKFBX0sM2), IntOffset.m8125getYimpl(mo4759alignKFBX0sM2), 0.0f, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.animation.SkipToLookaheadNode$measure$2.1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
@@ -178,9 +178,9 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(GraphicsLayerScope graphicsLayerScope) {
-                        graphicsLayerScope.setScaleX(Float.intBitsToFloat((int) (m6781constructorimpl >> 32)));
-                        graphicsLayerScope.setScaleY(Float.intBitsToFloat((int) (m6781constructorimpl & 4294967295L)));
-                        graphicsLayerScope.mo5481setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.0f, 0.0f));
+                        graphicsLayerScope.setScaleX(Float.intBitsToFloat((int) (m6782constructorimpl >> 32)));
+                        graphicsLayerScope.setScaleY(Float.intBitsToFloat((int) (m6782constructorimpl & 4294967295L)));
+                        graphicsLayerScope.mo5482setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.0f, 0.0f));
                     }
                 }, 4, (Object) null);
             }
@@ -189,7 +189,7 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m84isValidozmzZPI(this.lookaheadSize)) {
+        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m85isValidozmzZPI(this.lookaheadSize)) {
             return (int) (this.lookaheadSize >> 32);
         }
         return intrinsicMeasurable.maxIntrinsicWidth(i);
@@ -197,7 +197,7 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m84isValidozmzZPI(this.lookaheadSize)) {
+        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m85isValidozmzZPI(this.lookaheadSize)) {
             return (int) (this.lookaheadSize >> 32);
         }
         return intrinsicMeasurable.minIntrinsicWidth(i);
@@ -205,7 +205,7 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m84isValidozmzZPI(this.lookaheadSize)) {
+        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m85isValidozmzZPI(this.lookaheadSize)) {
             return (int) (this.lookaheadSize & 4294967295L);
         }
         return intrinsicMeasurable.maxIntrinsicHeight(i);
@@ -213,7 +213,7 @@ public final class SkipToLookaheadNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
-        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m84isValidozmzZPI(this.lookaheadSize)) {
+        if (!intrinsicMeasureScope.isLookingAhead() && AnimationModifierKt.m85isValidozmzZPI(this.lookaheadSize)) {
             return (int) (this.lookaheadSize & 4294967295L);
         }
         return intrinsicMeasurable.minIntrinsicHeight(i);

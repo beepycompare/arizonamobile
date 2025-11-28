@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.k5  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0365k5 {
 
     /* renamed from: a  reason: collision with root package name */

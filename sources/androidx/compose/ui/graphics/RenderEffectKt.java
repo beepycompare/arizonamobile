@@ -7,19 +7,19 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class RenderEffectKt {
     /* renamed from: BlurEffect-3YTHUZs$default  reason: not valid java name */
-    public static /* synthetic */ BlurEffect m5600BlurEffect3YTHUZs$default(float f, float f2, int i, int i2, Object obj) {
+    public static /* synthetic */ BlurEffect m5601BlurEffect3YTHUZs$default(float f, float f2, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
-            i = TileMode.Companion.m5669getClamp3opZhB0();
+            i = TileMode.Companion.m5670getClamp3opZhB0();
         }
-        return m5599BlurEffect3YTHUZs(f, f2, i);
+        return m5600BlurEffect3YTHUZs(f, f2, i);
     }
 
     /* renamed from: BlurEffect-3YTHUZs  reason: not valid java name */
-    public static final BlurEffect m5599BlurEffect3YTHUZs(float f, float f2, int i) {
+    public static final BlurEffect m5600BlurEffect3YTHUZs(float f, float f2, int i) {
         return new BlurEffect(null, f, f2, i, null);
     }
 
     public static final OffsetEffect OffsetEffect(float f, float f2) {
-        return new OffsetEffect(null, Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), null);
+        return new OffsetEffect(null, Offset.m5028constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), null);
     }
 }

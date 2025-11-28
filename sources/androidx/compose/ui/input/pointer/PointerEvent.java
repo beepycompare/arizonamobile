@@ -25,10 +25,10 @@ public final class PointerEvent {
         this.internalPointerEvent = internalPointerEvent;
         this.classification = (Build.VERSION.SDK_INT < 29 || (motionEvent = getMotionEvent()) == null) ? 0 : motionEvent.getClassification();
         MotionEvent motionEvent2 = getMotionEvent();
-        this.buttons = PointerButtons.m6502constructorimpl(motionEvent2 != null ? motionEvent2.getButtonState() : 0);
+        this.buttons = PointerButtons.m6503constructorimpl(motionEvent2 != null ? motionEvent2.getButtonState() : 0);
         MotionEvent motionEvent3 = getMotionEvent();
-        this.keyboardModifiers = PointerKeyboardModifiers.m6631constructorimpl(motionEvent3 != null ? motionEvent3.getMetaState() : 0);
-        this.type = m6508calculatePointerEventType7fucELk();
+        this.keyboardModifiers = PointerKeyboardModifiers.m6632constructorimpl(motionEvent3 != null ? motionEvent3.getMetaState() : 0);
+        this.type = m6509calculatePointerEventType7fucELk();
     }
 
     public final List<PointerInputChange> getChanges() {
@@ -56,27 +56,27 @@ public final class PointerEvent {
     }
 
     /* renamed from: getButtons-ry648PA  reason: not valid java name */
-    public final int m6509getButtonsry648PA() {
+    public final int m6510getButtonsry648PA() {
         return this.buttons;
     }
 
     /* renamed from: getKeyboardModifiers-k7X9c1A  reason: not valid java name */
-    public final int m6510getKeyboardModifiersk7X9c1A() {
+    public final int m6511getKeyboardModifiersk7X9c1A() {
         return this.keyboardModifiers;
     }
 
     /* renamed from: getType-7fucELk  reason: not valid java name */
-    public final int m6511getType7fucELk() {
+    public final int m6512getType7fucELk() {
         return this.type;
     }
 
     /* renamed from: setType-EhbLWgg$ui_release  reason: not valid java name */
-    public final void m6512setTypeEhbLWgg$ui_release(int i) {
+    public final void m6513setTypeEhbLWgg$ui_release(int i) {
         this.type = i;
     }
 
     /* renamed from: calculatePointerEventType-7fucELk  reason: not valid java name */
-    private final int m6508calculatePointerEventType7fucELk() {
+    private final int m6509calculatePointerEventType7fucELk() {
         MotionEvent motionEvent = getMotionEvent();
         if (motionEvent != null) {
             int actionMasked = motionEvent.getActionMasked();
@@ -91,33 +91,33 @@ public final class PointerEvent {
                             case 7:
                                 break;
                             case 8:
-                                return PointerEventType.Companion.m6527getScroll7fucELk();
+                                return PointerEventType.Companion.m6528getScroll7fucELk();
                             case 9:
-                                return PointerEventType.Companion.m6522getEnter7fucELk();
+                                return PointerEventType.Companion.m6523getEnter7fucELk();
                             case 10:
-                                return PointerEventType.Companion.m6523getExit7fucELk();
+                                return PointerEventType.Companion.m6524getExit7fucELk();
                             default:
-                                return PointerEventType.Companion.m6528getUnknown7fucELk();
+                                return PointerEventType.Companion.m6529getUnknown7fucELk();
                         }
                     }
-                    return PointerEventType.Companion.m6524getMove7fucELk();
+                    return PointerEventType.Companion.m6525getMove7fucELk();
                 }
-                return PointerEventType.Companion.m6526getRelease7fucELk();
+                return PointerEventType.Companion.m6527getRelease7fucELk();
             }
-            return PointerEventType.Companion.m6525getPress7fucELk();
+            return PointerEventType.Companion.m6526getPress7fucELk();
         }
         List<PointerInputChange> list = this.changes;
         int size = list.size();
         for (int i = 0; i < size; i++) {
             PointerInputChange pointerInputChange = list.get(i);
             if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
-                return PointerEventType.Companion.m6526getRelease7fucELk();
+                return PointerEventType.Companion.m6527getRelease7fucELk();
             }
             if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange)) {
-                return PointerEventType.Companion.m6525getPress7fucELk();
+                return PointerEventType.Companion.m6526getPress7fucELk();
             }
         }
-        return PointerEventType.Companion.m6524getMove7fucELk();
+        return PointerEventType.Companion.m6525getMove7fucELk();
     }
 
     public final List<PointerInputChange> component1() {
@@ -137,19 +137,19 @@ public final class PointerEvent {
         int i = 0;
         while (i < size) {
             PointerInputChange pointerInputChange = list.get(i);
-            longSparseArray.put(pointerInputChange.m6567getIdJ3iCeTQ(), pointerInputChange);
+            longSparseArray.put(pointerInputChange.m6568getIdJ3iCeTQ(), pointerInputChange);
             ArrayList arrayList2 = arrayList;
-            long m6567getIdJ3iCeTQ = pointerInputChange.m6567getIdJ3iCeTQ();
+            long m6568getIdJ3iCeTQ = pointerInputChange.m6568getIdJ3iCeTQ();
             long uptimeMillis = pointerInputChange.getUptimeMillis();
-            long m6569getPositionF1C5BW0 = pointerInputChange.m6569getPositionF1C5BW0();
-            long m6569getPositionF1C5BW02 = pointerInputChange.m6569getPositionF1C5BW0();
+            long m6570getPositionF1C5BW0 = pointerInputChange.m6570getPositionF1C5BW0();
+            long m6570getPositionF1C5BW02 = pointerInputChange.m6570getPositionF1C5BW0();
             boolean pressed = pointerInputChange.getPressed();
             float pressure = pointerInputChange.getPressure();
-            int m6572getTypeT8wyACA = pointerInputChange.m6572getTypeT8wyACA();
+            int m6573getTypeT8wyACA = pointerInputChange.m6573getTypeT8wyACA();
             InternalPointerEvent internalPointerEvent = this.internalPointerEvent;
             ArrayList arrayList3 = arrayList;
             int i2 = size;
-            arrayList2.add(new PointerInputEventData(m6567getIdJ3iCeTQ, uptimeMillis, m6569getPositionF1C5BW0, m6569getPositionF1C5BW02, pressed, pressure, m6572getTypeT8wyACA, internalPointerEvent != null && internalPointerEvent.m6497activeHoverEvent0FcD4WY(pointerInputChange.m6567getIdJ3iCeTQ()), null, 0L, 0L, 1792, null));
+            arrayList2.add(new PointerInputEventData(m6568getIdJ3iCeTQ, uptimeMillis, m6570getPositionF1C5BW0, m6570getPositionF1C5BW02, pressed, pressure, m6573getTypeT8wyACA, internalPointerEvent != null && internalPointerEvent.m6498activeHoverEvent0FcD4WY(pointerInputChange.m6568getIdJ3iCeTQ()), null, 0L, 0L, 1792, null));
             i++;
             arrayList = arrayList3;
             size = i2;

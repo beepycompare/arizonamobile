@@ -9,7 +9,7 @@ import kotlin.Metadata;
 public final class CornerSizeKt$ZeroCornerSize$1 implements CornerSize, InspectableValue {
     @Override // androidx.compose.foundation.shape.CornerSize
     /* renamed from: toPx-TmRCtEA */
-    public float mo1198toPxTmRCtEA(long j, Density density) {
+    public float mo1199toPxTmRCtEA(long j, Density density) {
         return 0.0f;
     }
 

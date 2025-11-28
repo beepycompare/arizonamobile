@@ -13,7 +13,7 @@ import kotlin.Metadata;
 public final class SwitchDefaults {
     public static final int $stable = 0;
     public static final SwitchDefaults INSTANCE = new SwitchDefaults();
-    private static final float IconSize = Dp.m7995constructorimpl(16);
+    private static final float IconSize = Dp.m7996constructorimpl(16);
 
     private SwitchDefaults() {
     }
@@ -32,7 +32,7 @@ public final class SwitchDefaults {
     }
 
     /* renamed from: colors-V1nXRL4  reason: not valid java name */
-    public final SwitchColors m3031colorsV1nXRL4(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, Composer composer, int i, int i2, int i3) {
+    public final SwitchColors m3032colorsV1nXRL4(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, Composer composer, int i, int i2, int i3) {
         long j17;
         long j18;
         long j19;
@@ -41,38 +41,38 @@ public final class SwitchDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 1937926421, "C(colors)N(checkedThumbColor:c#ui.graphics.Color,checkedTrackColor:c#ui.graphics.Color,checkedBorderColor:c#ui.graphics.Color,checkedIconColor:c#ui.graphics.Color,uncheckedThumbColor:c#ui.graphics.Color,uncheckedTrackColor:c#ui.graphics.Color,uncheckedBorderColor:c#ui.graphics.Color,uncheckedIconColor:c#ui.graphics.Color,disabledCheckedThumbColor:c#ui.graphics.Color,disabledCheckedTrackColor:c#ui.graphics.Color,disabledCheckedBorderColor:c#ui.graphics.Color,disabledCheckedIconColor:c#ui.graphics.Color,disabledUncheckedThumbColor:c#ui.graphics.Color,disabledUncheckedTrackColor:c#ui.graphics.Color,disabledUncheckedBorderColor:c#ui.graphics.Color,disabledUncheckedIconColor:c#ui.graphics.Color)331@13608L5,332@13682L5,334@13809L5,335@13888L5,336@13966L5,337@14057L5,338@14133L5,340@14236L5,342@14361L11,344@14478L5,346@14594L11,349@14772L5,351@14895L11,353@15017L5,355@15144L11,357@15265L5,359@15381L11,361@15510L5,363@15626L11,365@15745L5,367@15870L11:Switch.kt#uh7d8r");
         long value = (i3 & 1) != 0 ? ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getSelectedHandleColor(), composer, 6) : j;
         long value2 = (i3 & 2) != 0 ? ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getSelectedTrackColor(), composer, 6) : j2;
-        long m5314getTransparent0d7_KjU = (i3 & 4) != 0 ? Color.Companion.m5314getTransparent0d7_KjU() : j3;
+        long m5315getTransparent0d7_KjU = (i3 & 4) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j3;
         long value3 = (i3 & 8) != 0 ? ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getSelectedIconColor(), composer, 6) : j4;
         long value4 = (i3 & 16) != 0 ? ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getUnselectedHandleColor(), composer, 6) : j5;
         long value5 = (i3 & 32) != 0 ? ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getUnselectedTrackColor(), composer, 6) : j6;
         long value6 = (i3 & 64) != 0 ? ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getUnselectedFocusTrackOutlineColor(), composer, 6) : j7;
         long value7 = (i3 & 128) != 0 ? ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getUnselectedIconColor(), composer, 6) : j8;
-        long m5324compositeOverOWjLjI = (i3 & 256) != 0 ? ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledSelectedHandleColor(), composer, 6), SwitchTokens.INSTANCE.getDisabledSelectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2111getSurface0d7_KjU()) : j9;
+        long m5325compositeOverOWjLjI = (i3 & 256) != 0 ? ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledSelectedHandleColor(), composer, 6), SwitchTokens.INSTANCE.getDisabledSelectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2112getSurface0d7_KjU()) : j9;
         if ((i3 & 512) != 0) {
             j17 = value;
-            j18 = ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledSelectedTrackColor(), composer, 6), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2111getSurface0d7_KjU());
+            j18 = ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledSelectedTrackColor(), composer, 6), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2112getSurface0d7_KjU());
         } else {
             j17 = value;
             j18 = j10;
         }
-        long m5314getTransparent0d7_KjU2 = (i3 & 1024) != 0 ? Color.Companion.m5314getTransparent0d7_KjU() : j11;
+        long m5315getTransparent0d7_KjU2 = (i3 & 1024) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j11;
         if ((i3 & 2048) != 0) {
             i4 = 6;
-            j19 = m5324compositeOverOWjLjI;
-            j20 = ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledSelectedIconColor(), composer, 6), SwitchTokens.INSTANCE.getDisabledSelectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2111getSurface0d7_KjU());
+            j19 = m5325compositeOverOWjLjI;
+            j20 = ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledSelectedIconColor(), composer, 6), SwitchTokens.INSTANCE.getDisabledSelectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2112getSurface0d7_KjU());
         } else {
-            j19 = m5324compositeOverOWjLjI;
+            j19 = m5325compositeOverOWjLjI;
             i4 = 6;
             j20 = j12;
         }
-        long m5324compositeOverOWjLjI2 = (i3 & 4096) != 0 ? ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedHandleColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledUnselectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2111getSurface0d7_KjU()) : j13;
-        long m5324compositeOverOWjLjI3 = (i3 & 8192) != 0 ? ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedTrackColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2111getSurface0d7_KjU()) : j14;
-        long m5324compositeOverOWjLjI4 = (i3 & 16384) != 0 ? ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedTrackOutlineColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2111getSurface0d7_KjU()) : j15;
-        long m5324compositeOverOWjLjI5 = (i3 & 32768) != 0 ? ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedIconColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledUnselectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2111getSurface0d7_KjU()) : j16;
+        long m5325compositeOverOWjLjI2 = (i3 & 4096) != 0 ? ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedHandleColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledUnselectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2112getSurface0d7_KjU()) : j13;
+        long m5325compositeOverOWjLjI3 = (i3 & 8192) != 0 ? ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedTrackColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2112getSurface0d7_KjU()) : j14;
+        long m5325compositeOverOWjLjI4 = (i3 & 16384) != 0 ? ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedTrackOutlineColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2112getSurface0d7_KjU()) : j15;
+        long m5325compositeOverOWjLjI5 = (i3 & 32768) != 0 ? ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(SwitchTokens.INSTANCE.getDisabledUnselectedIconColor(), composer, i4), SwitchTokens.INSTANCE.getDisabledUnselectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), MaterialTheme.INSTANCE.getColorScheme(composer, i4).m2112getSurface0d7_KjU()) : j16;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1937926421, i, i2, "androidx.compose.material3.SwitchDefaults.colors (Switch.kt:369)");
         }
-        SwitchColors switchColors = new SwitchColors(j17, value2, m5314getTransparent0d7_KjU, value3, value4, value5, value6, value7, j19, j18, m5314getTransparent0d7_KjU2, j20, m5324compositeOverOWjLjI2, m5324compositeOverOWjLjI3, m5324compositeOverOWjLjI4, m5324compositeOverOWjLjI5, null);
+        SwitchColors switchColors = new SwitchColors(j17, value2, m5315getTransparent0d7_KjU, value3, value4, value5, value6, value7, j19, j18, m5315getTransparent0d7_KjU2, j20, m5325compositeOverOWjLjI2, m5325compositeOverOWjLjI3, m5325compositeOverOWjLjI4, m5325compositeOverOWjLjI5, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -83,7 +83,7 @@ public final class SwitchDefaults {
     public final SwitchColors getDefaultSwitchColors$material3(ColorScheme colorScheme) {
         SwitchColors defaultSwitchColorsCached$material3 = colorScheme.getDefaultSwitchColorsCached$material3();
         if (defaultSwitchColorsCached$material3 == null) {
-            SwitchColors switchColors = new SwitchColors(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getSelectedHandleColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getSelectedTrackColor()), Color.Companion.m5314getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getSelectedIconColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedHandleColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedTrackColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedFocusTrackOutlineColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedIconColor()), ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledSelectedHandleColor()), SwitchTokens.INSTANCE.getDisabledSelectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU()), ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledSelectedTrackColor()), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU()), Color.Companion.m5314getTransparent0d7_KjU(), ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledSelectedIconColor()), SwitchTokens.INSTANCE.getDisabledSelectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU()), ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedHandleColor()), SwitchTokens.INSTANCE.getDisabledUnselectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU()), ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedTrackColor()), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU()), ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedTrackOutlineColor()), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU()), ColorKt.m5324compositeOverOWjLjI(Color.m5278copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedIconColor()), SwitchTokens.INSTANCE.getDisabledUnselectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2111getSurface0d7_KjU()), null);
+            SwitchColors switchColors = new SwitchColors(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getSelectedHandleColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getSelectedTrackColor()), Color.Companion.m5315getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getSelectedIconColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedHandleColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedTrackColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedFocusTrackOutlineColor()), ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getUnselectedIconColor()), ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledSelectedHandleColor()), SwitchTokens.INSTANCE.getDisabledSelectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2112getSurface0d7_KjU()), ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledSelectedTrackColor()), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2112getSurface0d7_KjU()), Color.Companion.m5315getTransparent0d7_KjU(), ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledSelectedIconColor()), SwitchTokens.INSTANCE.getDisabledSelectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2112getSurface0d7_KjU()), ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedHandleColor()), SwitchTokens.INSTANCE.getDisabledUnselectedHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2112getSurface0d7_KjU()), ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedTrackColor()), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2112getSurface0d7_KjU()), ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedTrackOutlineColor()), SwitchTokens.INSTANCE.getDisabledTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2112getSurface0d7_KjU()), ColorKt.m5325compositeOverOWjLjI(Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SwitchTokens.INSTANCE.getDisabledUnselectedIconColor()), SwitchTokens.INSTANCE.getDisabledUnselectedIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2112getSurface0d7_KjU()), null);
             colorScheme.setDefaultSwitchColorsCached$material3(switchColors);
             return switchColors;
         }
@@ -91,7 +91,7 @@ public final class SwitchDefaults {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3032getIconSizeD9Ej5fM() {
+    public final float m3033getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

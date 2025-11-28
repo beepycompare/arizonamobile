@@ -9,17 +9,17 @@ import kotlin.jvm.functions.Function3;
 public final class TransformedTextFieldStateKt {
     public static final <R> R getIndexTransformationType(TransformedTextFieldState transformedTextFieldState, int i, Function3<? super IndexTransformationType, ? super TextRange, ? super TextRange, ? extends R> function3) {
         IndexTransformationType indexTransformationType;
-        long m1598mapFromTransformedjx7JFs = transformedTextFieldState.m1598mapFromTransformedjx7JFs(i);
-        long m1601mapToTransformedGEjPoXI = transformedTextFieldState.m1601mapToTransformedGEjPoXI(m1598mapFromTransformedjx7JFs);
-        if (TextRange.m7451getCollapsedimpl(m1598mapFromTransformedjx7JFs) && TextRange.m7451getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
+        long m1599mapFromTransformedjx7JFs = transformedTextFieldState.m1599mapFromTransformedjx7JFs(i);
+        long m1602mapToTransformedGEjPoXI = transformedTextFieldState.m1602mapToTransformedGEjPoXI(m1599mapFromTransformedjx7JFs);
+        if (TextRange.m7452getCollapsedimpl(m1599mapFromTransformedjx7JFs) && TextRange.m7452getCollapsedimpl(m1602mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Untransformed;
-        } else if (!TextRange.m7451getCollapsedimpl(m1598mapFromTransformedjx7JFs) && !TextRange.m7451getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
+        } else if (!TextRange.m7452getCollapsedimpl(m1599mapFromTransformedjx7JFs) && !TextRange.m7452getCollapsedimpl(m1602mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Replacement;
-        } else if (TextRange.m7451getCollapsedimpl(m1598mapFromTransformedjx7JFs) && !TextRange.m7451getCollapsedimpl(m1601mapToTransformedGEjPoXI)) {
+        } else if (TextRange.m7452getCollapsedimpl(m1599mapFromTransformedjx7JFs) && !TextRange.m7452getCollapsedimpl(m1602mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Insertion;
         } else {
             indexTransformationType = IndexTransformationType.Deletion;
         }
-        return function3.invoke(indexTransformationType, TextRange.m7445boximpl(m1598mapFromTransformedjx7JFs), TextRange.m7445boximpl(m1601mapToTransformedGEjPoXI));
+        return function3.invoke(indexTransformationType, TextRange.m7446boximpl(m1599mapFromTransformedjx7JFs), TextRange.m7446boximpl(m1602mapToTransformedGEjPoXI));
     }
 }

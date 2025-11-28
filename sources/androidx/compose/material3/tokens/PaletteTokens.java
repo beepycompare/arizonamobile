@@ -109,457 +109,457 @@ public final class PaletteTokens {
     }
 
     /* renamed from: getBlack-0d7_KjU  reason: not valid java name */
-    public final long m4133getBlack0d7_KjU() {
+    public final long m4134getBlack0d7_KjU() {
         return Black;
     }
 
     /* renamed from: getError0-0d7_KjU  reason: not valid java name */
-    public final long m4134getError00d7_KjU() {
+    public final long m4135getError00d7_KjU() {
         return Error0;
     }
 
     /* renamed from: getError10-0d7_KjU  reason: not valid java name */
-    public final long m4135getError100d7_KjU() {
+    public final long m4136getError100d7_KjU() {
         return Error10;
     }
 
     /* renamed from: getError100-0d7_KjU  reason: not valid java name */
-    public final long m4136getError1000d7_KjU() {
+    public final long m4137getError1000d7_KjU() {
         return Error100;
     }
 
     /* renamed from: getError20-0d7_KjU  reason: not valid java name */
-    public final long m4137getError200d7_KjU() {
+    public final long m4138getError200d7_KjU() {
         return Error20;
     }
 
     /* renamed from: getError30-0d7_KjU  reason: not valid java name */
-    public final long m4138getError300d7_KjU() {
+    public final long m4139getError300d7_KjU() {
         return Error30;
     }
 
     /* renamed from: getError40-0d7_KjU  reason: not valid java name */
-    public final long m4139getError400d7_KjU() {
+    public final long m4140getError400d7_KjU() {
         return Error40;
     }
 
     /* renamed from: getError50-0d7_KjU  reason: not valid java name */
-    public final long m4140getError500d7_KjU() {
+    public final long m4141getError500d7_KjU() {
         return Error50;
     }
 
     /* renamed from: getError60-0d7_KjU  reason: not valid java name */
-    public final long m4141getError600d7_KjU() {
+    public final long m4142getError600d7_KjU() {
         return Error60;
     }
 
     /* renamed from: getError70-0d7_KjU  reason: not valid java name */
-    public final long m4142getError700d7_KjU() {
+    public final long m4143getError700d7_KjU() {
         return Error70;
     }
 
     /* renamed from: getError80-0d7_KjU  reason: not valid java name */
-    public final long m4143getError800d7_KjU() {
+    public final long m4144getError800d7_KjU() {
         return Error80;
     }
 
     /* renamed from: getError90-0d7_KjU  reason: not valid java name */
-    public final long m4144getError900d7_KjU() {
+    public final long m4145getError900d7_KjU() {
         return Error90;
     }
 
     /* renamed from: getError95-0d7_KjU  reason: not valid java name */
-    public final long m4145getError950d7_KjU() {
+    public final long m4146getError950d7_KjU() {
         return Error95;
     }
 
     /* renamed from: getError99-0d7_KjU  reason: not valid java name */
-    public final long m4146getError990d7_KjU() {
+    public final long m4147getError990d7_KjU() {
         return Error99;
     }
 
     /* renamed from: getNeutral0-0d7_KjU  reason: not valid java name */
-    public final long m4147getNeutral00d7_KjU() {
+    public final long m4148getNeutral00d7_KjU() {
         return Neutral0;
     }
 
     /* renamed from: getNeutral10-0d7_KjU  reason: not valid java name */
-    public final long m4148getNeutral100d7_KjU() {
+    public final long m4149getNeutral100d7_KjU() {
         return Neutral10;
     }
 
     /* renamed from: getNeutral100-0d7_KjU  reason: not valid java name */
-    public final long m4149getNeutral1000d7_KjU() {
+    public final long m4150getNeutral1000d7_KjU() {
         return Neutral100;
     }
 
     /* renamed from: getNeutral12-0d7_KjU  reason: not valid java name */
-    public final long m4150getNeutral120d7_KjU() {
+    public final long m4151getNeutral120d7_KjU() {
         return Neutral12;
     }
 
     /* renamed from: getNeutral17-0d7_KjU  reason: not valid java name */
-    public final long m4151getNeutral170d7_KjU() {
+    public final long m4152getNeutral170d7_KjU() {
         return Neutral17;
     }
 
     /* renamed from: getNeutral20-0d7_KjU  reason: not valid java name */
-    public final long m4152getNeutral200d7_KjU() {
+    public final long m4153getNeutral200d7_KjU() {
         return Neutral20;
     }
 
     /* renamed from: getNeutral22-0d7_KjU  reason: not valid java name */
-    public final long m4153getNeutral220d7_KjU() {
+    public final long m4154getNeutral220d7_KjU() {
         return Neutral22;
     }
 
     /* renamed from: getNeutral24-0d7_KjU  reason: not valid java name */
-    public final long m4154getNeutral240d7_KjU() {
+    public final long m4155getNeutral240d7_KjU() {
         return Neutral24;
     }
 
     /* renamed from: getNeutral30-0d7_KjU  reason: not valid java name */
-    public final long m4155getNeutral300d7_KjU() {
+    public final long m4156getNeutral300d7_KjU() {
         return Neutral30;
     }
 
     /* renamed from: getNeutral4-0d7_KjU  reason: not valid java name */
-    public final long m4156getNeutral40d7_KjU() {
+    public final long m4157getNeutral40d7_KjU() {
         return Neutral4;
     }
 
     /* renamed from: getNeutral40-0d7_KjU  reason: not valid java name */
-    public final long m4157getNeutral400d7_KjU() {
+    public final long m4158getNeutral400d7_KjU() {
         return Neutral40;
     }
 
     /* renamed from: getNeutral50-0d7_KjU  reason: not valid java name */
-    public final long m4158getNeutral500d7_KjU() {
+    public final long m4159getNeutral500d7_KjU() {
         return Neutral50;
     }
 
     /* renamed from: getNeutral6-0d7_KjU  reason: not valid java name */
-    public final long m4159getNeutral60d7_KjU() {
+    public final long m4160getNeutral60d7_KjU() {
         return Neutral6;
     }
 
     /* renamed from: getNeutral60-0d7_KjU  reason: not valid java name */
-    public final long m4160getNeutral600d7_KjU() {
+    public final long m4161getNeutral600d7_KjU() {
         return Neutral60;
     }
 
     /* renamed from: getNeutral70-0d7_KjU  reason: not valid java name */
-    public final long m4161getNeutral700d7_KjU() {
+    public final long m4162getNeutral700d7_KjU() {
         return Neutral70;
     }
 
     /* renamed from: getNeutral80-0d7_KjU  reason: not valid java name */
-    public final long m4162getNeutral800d7_KjU() {
+    public final long m4163getNeutral800d7_KjU() {
         return Neutral80;
     }
 
     /* renamed from: getNeutral87-0d7_KjU  reason: not valid java name */
-    public final long m4163getNeutral870d7_KjU() {
+    public final long m4164getNeutral870d7_KjU() {
         return Neutral87;
     }
 
     /* renamed from: getNeutral90-0d7_KjU  reason: not valid java name */
-    public final long m4164getNeutral900d7_KjU() {
+    public final long m4165getNeutral900d7_KjU() {
         return Neutral90;
     }
 
     /* renamed from: getNeutral92-0d7_KjU  reason: not valid java name */
-    public final long m4165getNeutral920d7_KjU() {
+    public final long m4166getNeutral920d7_KjU() {
         return Neutral92;
     }
 
     /* renamed from: getNeutral94-0d7_KjU  reason: not valid java name */
-    public final long m4166getNeutral940d7_KjU() {
+    public final long m4167getNeutral940d7_KjU() {
         return Neutral94;
     }
 
     /* renamed from: getNeutral95-0d7_KjU  reason: not valid java name */
-    public final long m4167getNeutral950d7_KjU() {
+    public final long m4168getNeutral950d7_KjU() {
         return Neutral95;
     }
 
     /* renamed from: getNeutral96-0d7_KjU  reason: not valid java name */
-    public final long m4168getNeutral960d7_KjU() {
+    public final long m4169getNeutral960d7_KjU() {
         return Neutral96;
     }
 
     /* renamed from: getNeutral98-0d7_KjU  reason: not valid java name */
-    public final long m4169getNeutral980d7_KjU() {
+    public final long m4170getNeutral980d7_KjU() {
         return Neutral98;
     }
 
     /* renamed from: getNeutral99-0d7_KjU  reason: not valid java name */
-    public final long m4170getNeutral990d7_KjU() {
+    public final long m4171getNeutral990d7_KjU() {
         return Neutral99;
     }
 
     /* renamed from: getNeutralVariant0-0d7_KjU  reason: not valid java name */
-    public final long m4171getNeutralVariant00d7_KjU() {
+    public final long m4172getNeutralVariant00d7_KjU() {
         return NeutralVariant0;
     }
 
     /* renamed from: getNeutralVariant10-0d7_KjU  reason: not valid java name */
-    public final long m4172getNeutralVariant100d7_KjU() {
+    public final long m4173getNeutralVariant100d7_KjU() {
         return NeutralVariant10;
     }
 
     /* renamed from: getNeutralVariant100-0d7_KjU  reason: not valid java name */
-    public final long m4173getNeutralVariant1000d7_KjU() {
+    public final long m4174getNeutralVariant1000d7_KjU() {
         return NeutralVariant100;
     }
 
     /* renamed from: getNeutralVariant20-0d7_KjU  reason: not valid java name */
-    public final long m4174getNeutralVariant200d7_KjU() {
+    public final long m4175getNeutralVariant200d7_KjU() {
         return NeutralVariant20;
     }
 
     /* renamed from: getNeutralVariant30-0d7_KjU  reason: not valid java name */
-    public final long m4175getNeutralVariant300d7_KjU() {
+    public final long m4176getNeutralVariant300d7_KjU() {
         return NeutralVariant30;
     }
 
     /* renamed from: getNeutralVariant40-0d7_KjU  reason: not valid java name */
-    public final long m4176getNeutralVariant400d7_KjU() {
+    public final long m4177getNeutralVariant400d7_KjU() {
         return NeutralVariant40;
     }
 
     /* renamed from: getNeutralVariant50-0d7_KjU  reason: not valid java name */
-    public final long m4177getNeutralVariant500d7_KjU() {
+    public final long m4178getNeutralVariant500d7_KjU() {
         return NeutralVariant50;
     }
 
     /* renamed from: getNeutralVariant60-0d7_KjU  reason: not valid java name */
-    public final long m4178getNeutralVariant600d7_KjU() {
+    public final long m4179getNeutralVariant600d7_KjU() {
         return NeutralVariant60;
     }
 
     /* renamed from: getNeutralVariant70-0d7_KjU  reason: not valid java name */
-    public final long m4179getNeutralVariant700d7_KjU() {
+    public final long m4180getNeutralVariant700d7_KjU() {
         return NeutralVariant70;
     }
 
     /* renamed from: getNeutralVariant80-0d7_KjU  reason: not valid java name */
-    public final long m4180getNeutralVariant800d7_KjU() {
+    public final long m4181getNeutralVariant800d7_KjU() {
         return NeutralVariant80;
     }
 
     /* renamed from: getNeutralVariant90-0d7_KjU  reason: not valid java name */
-    public final long m4181getNeutralVariant900d7_KjU() {
+    public final long m4182getNeutralVariant900d7_KjU() {
         return NeutralVariant90;
     }
 
     /* renamed from: getNeutralVariant95-0d7_KjU  reason: not valid java name */
-    public final long m4182getNeutralVariant950d7_KjU() {
+    public final long m4183getNeutralVariant950d7_KjU() {
         return NeutralVariant95;
     }
 
     /* renamed from: getNeutralVariant99-0d7_KjU  reason: not valid java name */
-    public final long m4183getNeutralVariant990d7_KjU() {
+    public final long m4184getNeutralVariant990d7_KjU() {
         return NeutralVariant99;
     }
 
     /* renamed from: getPrimary0-0d7_KjU  reason: not valid java name */
-    public final long m4184getPrimary00d7_KjU() {
+    public final long m4185getPrimary00d7_KjU() {
         return Primary0;
     }
 
     /* renamed from: getPrimary10-0d7_KjU  reason: not valid java name */
-    public final long m4185getPrimary100d7_KjU() {
+    public final long m4186getPrimary100d7_KjU() {
         return Primary10;
     }
 
     /* renamed from: getPrimary100-0d7_KjU  reason: not valid java name */
-    public final long m4186getPrimary1000d7_KjU() {
+    public final long m4187getPrimary1000d7_KjU() {
         return Primary100;
     }
 
     /* renamed from: getPrimary20-0d7_KjU  reason: not valid java name */
-    public final long m4187getPrimary200d7_KjU() {
+    public final long m4188getPrimary200d7_KjU() {
         return Primary20;
     }
 
     /* renamed from: getPrimary30-0d7_KjU  reason: not valid java name */
-    public final long m4188getPrimary300d7_KjU() {
+    public final long m4189getPrimary300d7_KjU() {
         return Primary30;
     }
 
     /* renamed from: getPrimary40-0d7_KjU  reason: not valid java name */
-    public final long m4189getPrimary400d7_KjU() {
+    public final long m4190getPrimary400d7_KjU() {
         return Primary40;
     }
 
     /* renamed from: getPrimary50-0d7_KjU  reason: not valid java name */
-    public final long m4190getPrimary500d7_KjU() {
+    public final long m4191getPrimary500d7_KjU() {
         return Primary50;
     }
 
     /* renamed from: getPrimary60-0d7_KjU  reason: not valid java name */
-    public final long m4191getPrimary600d7_KjU() {
+    public final long m4192getPrimary600d7_KjU() {
         return Primary60;
     }
 
     /* renamed from: getPrimary70-0d7_KjU  reason: not valid java name */
-    public final long m4192getPrimary700d7_KjU() {
+    public final long m4193getPrimary700d7_KjU() {
         return Primary70;
     }
 
     /* renamed from: getPrimary80-0d7_KjU  reason: not valid java name */
-    public final long m4193getPrimary800d7_KjU() {
+    public final long m4194getPrimary800d7_KjU() {
         return Primary80;
     }
 
     /* renamed from: getPrimary90-0d7_KjU  reason: not valid java name */
-    public final long m4194getPrimary900d7_KjU() {
+    public final long m4195getPrimary900d7_KjU() {
         return Primary90;
     }
 
     /* renamed from: getPrimary95-0d7_KjU  reason: not valid java name */
-    public final long m4195getPrimary950d7_KjU() {
+    public final long m4196getPrimary950d7_KjU() {
         return Primary95;
     }
 
     /* renamed from: getPrimary99-0d7_KjU  reason: not valid java name */
-    public final long m4196getPrimary990d7_KjU() {
+    public final long m4197getPrimary990d7_KjU() {
         return Primary99;
     }
 
     /* renamed from: getSecondary0-0d7_KjU  reason: not valid java name */
-    public final long m4197getSecondary00d7_KjU() {
+    public final long m4198getSecondary00d7_KjU() {
         return Secondary0;
     }
 
     /* renamed from: getSecondary10-0d7_KjU  reason: not valid java name */
-    public final long m4198getSecondary100d7_KjU() {
+    public final long m4199getSecondary100d7_KjU() {
         return Secondary10;
     }
 
     /* renamed from: getSecondary100-0d7_KjU  reason: not valid java name */
-    public final long m4199getSecondary1000d7_KjU() {
+    public final long m4200getSecondary1000d7_KjU() {
         return Secondary100;
     }
 
     /* renamed from: getSecondary20-0d7_KjU  reason: not valid java name */
-    public final long m4200getSecondary200d7_KjU() {
+    public final long m4201getSecondary200d7_KjU() {
         return Secondary20;
     }
 
     /* renamed from: getSecondary30-0d7_KjU  reason: not valid java name */
-    public final long m4201getSecondary300d7_KjU() {
+    public final long m4202getSecondary300d7_KjU() {
         return Secondary30;
     }
 
     /* renamed from: getSecondary40-0d7_KjU  reason: not valid java name */
-    public final long m4202getSecondary400d7_KjU() {
+    public final long m4203getSecondary400d7_KjU() {
         return Secondary40;
     }
 
     /* renamed from: getSecondary50-0d7_KjU  reason: not valid java name */
-    public final long m4203getSecondary500d7_KjU() {
+    public final long m4204getSecondary500d7_KjU() {
         return Secondary50;
     }
 
     /* renamed from: getSecondary60-0d7_KjU  reason: not valid java name */
-    public final long m4204getSecondary600d7_KjU() {
+    public final long m4205getSecondary600d7_KjU() {
         return Secondary60;
     }
 
     /* renamed from: getSecondary70-0d7_KjU  reason: not valid java name */
-    public final long m4205getSecondary700d7_KjU() {
+    public final long m4206getSecondary700d7_KjU() {
         return Secondary70;
     }
 
     /* renamed from: getSecondary80-0d7_KjU  reason: not valid java name */
-    public final long m4206getSecondary800d7_KjU() {
+    public final long m4207getSecondary800d7_KjU() {
         return Secondary80;
     }
 
     /* renamed from: getSecondary90-0d7_KjU  reason: not valid java name */
-    public final long m4207getSecondary900d7_KjU() {
+    public final long m4208getSecondary900d7_KjU() {
         return Secondary90;
     }
 
     /* renamed from: getSecondary95-0d7_KjU  reason: not valid java name */
-    public final long m4208getSecondary950d7_KjU() {
+    public final long m4209getSecondary950d7_KjU() {
         return Secondary95;
     }
 
     /* renamed from: getSecondary99-0d7_KjU  reason: not valid java name */
-    public final long m4209getSecondary990d7_KjU() {
+    public final long m4210getSecondary990d7_KjU() {
         return Secondary99;
     }
 
     /* renamed from: getTertiary0-0d7_KjU  reason: not valid java name */
-    public final long m4210getTertiary00d7_KjU() {
+    public final long m4211getTertiary00d7_KjU() {
         return Tertiary0;
     }
 
     /* renamed from: getTertiary10-0d7_KjU  reason: not valid java name */
-    public final long m4211getTertiary100d7_KjU() {
+    public final long m4212getTertiary100d7_KjU() {
         return Tertiary10;
     }
 
     /* renamed from: getTertiary100-0d7_KjU  reason: not valid java name */
-    public final long m4212getTertiary1000d7_KjU() {
+    public final long m4213getTertiary1000d7_KjU() {
         return Tertiary100;
     }
 
     /* renamed from: getTertiary20-0d7_KjU  reason: not valid java name */
-    public final long m4213getTertiary200d7_KjU() {
+    public final long m4214getTertiary200d7_KjU() {
         return Tertiary20;
     }
 
     /* renamed from: getTertiary30-0d7_KjU  reason: not valid java name */
-    public final long m4214getTertiary300d7_KjU() {
+    public final long m4215getTertiary300d7_KjU() {
         return Tertiary30;
     }
 
     /* renamed from: getTertiary40-0d7_KjU  reason: not valid java name */
-    public final long m4215getTertiary400d7_KjU() {
+    public final long m4216getTertiary400d7_KjU() {
         return Tertiary40;
     }
 
     /* renamed from: getTertiary50-0d7_KjU  reason: not valid java name */
-    public final long m4216getTertiary500d7_KjU() {
+    public final long m4217getTertiary500d7_KjU() {
         return Tertiary50;
     }
 
     /* renamed from: getTertiary60-0d7_KjU  reason: not valid java name */
-    public final long m4217getTertiary600d7_KjU() {
+    public final long m4218getTertiary600d7_KjU() {
         return Tertiary60;
     }
 
     /* renamed from: getTertiary70-0d7_KjU  reason: not valid java name */
-    public final long m4218getTertiary700d7_KjU() {
+    public final long m4219getTertiary700d7_KjU() {
         return Tertiary70;
     }
 
     /* renamed from: getTertiary80-0d7_KjU  reason: not valid java name */
-    public final long m4219getTertiary800d7_KjU() {
+    public final long m4220getTertiary800d7_KjU() {
         return Tertiary80;
     }
 
     /* renamed from: getTertiary90-0d7_KjU  reason: not valid java name */
-    public final long m4220getTertiary900d7_KjU() {
+    public final long m4221getTertiary900d7_KjU() {
         return Tertiary90;
     }
 
     /* renamed from: getTertiary95-0d7_KjU  reason: not valid java name */
-    public final long m4221getTertiary950d7_KjU() {
+    public final long m4222getTertiary950d7_KjU() {
         return Tertiary95;
     }
 
     /* renamed from: getTertiary99-0d7_KjU  reason: not valid java name */
-    public final long m4222getTertiary990d7_KjU() {
+    public final long m4223getTertiary990d7_KjU() {
         return Tertiary99;
     }
 
     /* renamed from: getWhite-0d7_KjU  reason: not valid java name */
-    public final long m4223getWhite0d7_KjU() {
+    public final long m4224getWhite0d7_KjU() {
         return White;
     }
 }

@@ -4,7 +4,7 @@ import android.util.Pair;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import java.util.ArrayList;
 /* renamed from: io.appmetrica.analytics.impl.v2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0637v2 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

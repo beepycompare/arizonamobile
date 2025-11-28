@@ -4,6 +4,7 @@ import androidx.collection.MutableScatterMap;
 import androidx.collection.MutableScatterSet;
 import androidx.collection.ScatterSetKt;
 import androidx.compose.runtime.collection.MultiValueMap;
+import androidx.compose.runtime.collection.ScopeMap;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.upstream.CmcdData;
@@ -253,7 +254,7 @@ public final class ComposerKt {
     }
 
     public static final <K, V> MutableScatterMap<Object, Object> multiMap(int i) {
-        return MultiValueMap.m4676constructorimpl(new MutableScatterMap(i));
+        return MultiValueMap.m4677constructorimpl(new MutableScatterMap(i));
     }
 
     public static final Object getKey(Object obj, Object obj2, Object obj3) {
@@ -474,7 +475,21 @@ public final class ComposerKt {
         return Intrinsics.compare(invalidation.getLocation(), invalidation2.getLocation());
     }
 
-    public static final MovableContentState extractMovableContentAtCurrent(final ControlledComposition controlledComposition, final MovableContentStateReference movableContentStateReference, SlotWriter slotWriter, Applier<?> applier) {
+    public static final MovableContentState extractMovableContentAtCurrent(final ControlledComposition controlledComposition, MovableContentStateReference movableContentStateReference, SlotWriter slotWriter, Applier<?> applier) {
+        final MovableContentStateReference movableContentStateReference2;
+        ArrayList emptyList;
+        long[] jArr;
+        int i;
+        long[] jArr2;
+        int i2;
+        long j;
+        int i3;
+        boolean z;
+        Object obj;
+        long j2;
+        int i4;
+        Object obj2;
+        boolean z2;
         SlotTable slotTable = new SlotTable();
         if (slotWriter.getCollectingSourceInformation()) {
             slotTable.collectSourceInformation();
@@ -490,30 +505,173 @@ public final class ComposerKt {
             }
             if (parent >= 0 && slotWriter.isNode(parent)) {
                 Object node = slotWriter.node(parent);
-                int i = parent + 1;
+                int i5 = parent + 1;
                 int groupSize = parent + slotWriter.groupSize(parent);
-                int i2 = 0;
-                while (i < groupSize) {
-                    int groupSize2 = slotWriter.groupSize(i) + i;
+                int i6 = 0;
+                while (i5 < groupSize) {
+                    int groupSize2 = slotWriter.groupSize(i5) + i5;
                     if (groupSize2 > currentGroup) {
                         break;
                     }
-                    i2 += slotWriter.isNode(i) ? 1 : slotWriter.nodeCount(i);
-                    i = groupSize2;
+                    i6 += slotWriter.isNode(i5) ? 1 : slotWriter.nodeCount(i5);
+                    i5 = groupSize2;
                 }
                 int nodeCount = slotWriter.isNode(currentGroup) ? 1 : slotWriter.nodeCount(currentGroup);
                 applier.down(node);
-                applier.remove(i2, nodeCount);
+                applier.remove(i6, nodeCount);
                 applier.up();
             }
+        }
+        Anchor anchor$runtime = movableContentStateReference.getAnchor$runtime();
+        if (anchor$runtime.getValid()) {
+            Intrinsics.checkNotNull(controlledComposition, "null cannot be cast to non-null type androidx.compose.runtime.CompositionImpl");
+            CompositionImpl compositionImpl = (CompositionImpl) controlledComposition;
+            if (ScopeMap.m4704getSizeimpl(compositionImpl.invalidations) > 0) {
+                emptyList = new ArrayList();
+                MutableScatterMap mutableScatterMap = compositionImpl.invalidations;
+                long[] jArr3 = mutableScatterMap.metadata;
+                int length = jArr3.length - 2;
+                if (length >= 0) {
+                    int i7 = 0;
+                    while (true) {
+                        long j3 = jArr3[i7];
+                        if ((((~j3) << 7) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
+                            int i8 = 8;
+                            int i9 = 8 - ((~(i7 - length)) >>> 31);
+                            int i10 = 0;
+                            while (i10 < i9) {
+                                if ((j3 & 255) < 128) {
+                                    int i11 = (i7 << 3) + i10;
+                                    int i12 = i8;
+                                    Object obj3 = mutableScatterMap.keys[i11];
+                                    i = i10;
+                                    Object obj4 = mutableScatterMap.values[i11];
+                                    jArr2 = jArr3;
+                                    Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type Key of androidx.compose.runtime.collection.ScopeMap");
+                                    if (obj4 instanceof MutableScatterSet) {
+                                        Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
+                                        MutableScatterSet mutableScatterSet = (MutableScatterSet) obj4;
+                                        Object[] objArr = mutableScatterSet.elements;
+                                        long[] jArr4 = mutableScatterSet.metadata;
+                                        j = j3;
+                                        int length2 = jArr4.length - 2;
+                                        if (length2 >= 0) {
+                                            int i13 = 0;
+                                            while (true) {
+                                                long j4 = jArr4[i13];
+                                                long[] jArr5 = jArr4;
+                                                i2 = length;
+                                                if ((((~j4) << 7) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                    int i14 = 8 - ((~(i13 - length2)) >>> 31);
+                                                    int i15 = 0;
+                                                    while (i15 < i14) {
+                                                        if ((j4 & 255) < 128) {
+                                                            j2 = j4;
+                                                            int i16 = (i13 << 3) + i15;
+                                                            Object obj5 = objArr[i16];
+                                                            i4 = i15;
+                                                            RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) obj3;
+                                                            obj2 = obj3;
+                                                            Anchor anchor = recomposeScopeImpl.getAnchor();
+                                                            if (anchor == null || !slotWriter.inGroup(anchor$runtime, anchor)) {
+                                                                z2 = false;
+                                                            } else {
+                                                                emptyList.add(TuplesKt.to(recomposeScopeImpl, obj5));
+                                                                z2 = true;
+                                                            }
+                                                            if (z2) {
+                                                                mutableScatterSet.removeElementAt(i16);
+                                                            }
+                                                        } else {
+                                                            j2 = j4;
+                                                            i4 = i15;
+                                                            obj2 = obj3;
+                                                        }
+                                                        j4 = j2 >> i12;
+                                                        i15 = i4 + 1;
+                                                        obj3 = obj2;
+                                                    }
+                                                    obj = obj3;
+                                                    if (i14 != i12) {
+                                                        break;
+                                                    }
+                                                } else {
+                                                    obj = obj3;
+                                                }
+                                                if (i13 == length2) {
+                                                    break;
+                                                }
+                                                i13++;
+                                                length = i2;
+                                                jArr4 = jArr5;
+                                                obj3 = obj;
+                                                i12 = 8;
+                                            }
+                                        } else {
+                                            i2 = length;
+                                        }
+                                        z = mutableScatterSet.isEmpty();
+                                    } else {
+                                        i2 = length;
+                                        j = j3;
+                                        Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
+                                        RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj3;
+                                        Anchor anchor2 = recomposeScopeImpl2.getAnchor();
+                                        if (anchor2 == null || !slotWriter.inGroup(anchor$runtime, anchor2)) {
+                                            z = false;
+                                        } else {
+                                            emptyList.add(TuplesKt.to(recomposeScopeImpl2, obj4));
+                                            z = true;
+                                        }
+                                    }
+                                    if (z) {
+                                        mutableScatterMap.removeValueAt(i11);
+                                    }
+                                    i3 = 8;
+                                } else {
+                                    i = i10;
+                                    jArr2 = jArr3;
+                                    i2 = length;
+                                    j = j3;
+                                    i3 = i8;
+                                }
+                                j3 = j >> i3;
+                                i10 = i + 1;
+                                i8 = i3;
+                                jArr3 = jArr2;
+                                length = i2;
+                            }
+                            jArr = jArr3;
+                            int i17 = length;
+                            if (i9 != i8) {
+                                break;
+                            }
+                            length = i17;
+                        } else {
+                            jArr = jArr3;
+                        }
+                        if (i7 == length) {
+                            break;
+                        }
+                        i7++;
+                        jArr3 = jArr;
+                    }
+                }
+            } else {
+                emptyList = CollectionsKt.emptyList();
+            }
+            movableContentStateReference2 = movableContentStateReference;
+            movableContentStateReference2.setInvalidations$runtime(CollectionsKt.plus((Collection) movableContentStateReference.getInvalidations$runtime(), (Iterable) emptyList));
+        } else {
+            movableContentStateReference2 = movableContentStateReference;
         }
         SlotWriter openWriter = slotTable.openWriter();
         try {
             openWriter.beginInsert();
-            openWriter.startGroup(MovableContentKt.movableContentKey, movableContentStateReference.getContent$runtime());
+            openWriter.startGroup(MovableContentKt.movableContentKey, movableContentStateReference2.getContent$runtime());
             SlotWriter.markGroup$default(openWriter, 0, 1, null);
-            openWriter.update(movableContentStateReference.getParameter$runtime());
-            List<Anchor> moveTo = slotWriter.moveTo(movableContentStateReference.getAnchor$runtime(), 1, openWriter);
+            openWriter.update(movableContentStateReference2.getParameter$runtime());
+            List<Anchor> moveTo = slotWriter.moveTo(movableContentStateReference2.getAnchor$runtime(), 1, openWriter);
             openWriter.skipGroup();
             openWriter.endGroup();
             openWriter.endInsert();
@@ -522,24 +680,24 @@ public final class ComposerKt {
             if (RecomposeScopeImpl.Companion.hasAnchoredRecomposeScopes$runtime(slotTable, moveTo)) {
                 RecomposeScopeOwner recomposeScopeOwner = new RecomposeScopeOwner() { // from class: androidx.compose.runtime.ComposerKt$extractMovableContentAtCurrent$movableContentRecomposeScopeOwner$1
                     @Override // androidx.compose.runtime.RecomposeScopeOwner
-                    public void recomposeScopeReleased(RecomposeScopeImpl recomposeScopeImpl) {
+                    public void recomposeScopeReleased(RecomposeScopeImpl recomposeScopeImpl3) {
                     }
 
                     @Override // androidx.compose.runtime.RecomposeScopeOwner
-                    public void recordReadOf(Object obj) {
+                    public void recordReadOf(Object obj6) {
                     }
 
                     @Override // androidx.compose.runtime.RecomposeScopeOwner
-                    public InvalidationResult invalidate(RecomposeScopeImpl recomposeScopeImpl, Object obj) {
+                    public InvalidationResult invalidate(RecomposeScopeImpl recomposeScopeImpl3, Object obj6) {
                         InvalidationResult invalidationResult;
                         ControlledComposition controlledComposition2 = ControlledComposition.this;
                         RecomposeScopeOwner recomposeScopeOwner2 = controlledComposition2 instanceof RecomposeScopeOwner ? (RecomposeScopeOwner) controlledComposition2 : null;
-                        if (recomposeScopeOwner2 == null || (invalidationResult = recomposeScopeOwner2.invalidate(recomposeScopeImpl, obj)) == null) {
+                        if (recomposeScopeOwner2 == null || (invalidationResult = recomposeScopeOwner2.invalidate(recomposeScopeImpl3, obj6)) == null) {
                             invalidationResult = InvalidationResult.IGNORED;
                         }
                         if (invalidationResult == InvalidationResult.IGNORED) {
-                            MovableContentStateReference movableContentStateReference2 = movableContentStateReference;
-                            movableContentStateReference2.setInvalidations$runtime(CollectionsKt.plus((Collection<? extends Pair>) movableContentStateReference2.getInvalidations$runtime(), TuplesKt.to(recomposeScopeImpl, obj)));
+                            MovableContentStateReference movableContentStateReference3 = movableContentStateReference2;
+                            movableContentStateReference3.setInvalidations$runtime(CollectionsKt.plus((Collection<? extends Pair>) movableContentStateReference3.getInvalidations$runtime(), TuplesKt.to(recomposeScopeImpl3, obj6)));
                             return InvalidationResult.SCHEDULED;
                         }
                         return invalidationResult;

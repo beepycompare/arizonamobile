@@ -133,7 +133,7 @@ public final class LabelKt {
                             startRestartGroup.endReplaceGroup();
                             mutableInteractionSource3 = mutableInteractionSource4;
                         }
-                        PopupPositionProvider m3365rememberTooltipPositionProviderHu5FAss = TooltipDefaults.INSTANCE.m3365rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3352getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2);
+                        PopupPositionProvider m3366rememberTooltipPositionProviderHu5FAss = TooltipDefaults.INSTANCE.m3366rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3353getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2);
                         if (z4) {
                             startRestartGroup.startReplaceGroup(857995293);
                             ComposerKt.sourceInformation(startRestartGroup, "76@3363L29");
@@ -146,11 +146,11 @@ public final class LabelKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             startRestartGroup.endReplaceGroup();
                             rememberBasicTooltipState = (LabelStateImpl) rememberedValue2;
-                            popupPositionProvider = m3365rememberTooltipPositionProviderHu5FAss;
+                            popupPositionProvider = m3366rememberTooltipPositionProviderHu5FAss;
                         } else {
                             startRestartGroup.startReplaceGroup(1690246656);
                             ComposerKt.sourceInformation(startRestartGroup, "77@3406L56");
-                            popupPositionProvider = m3365rememberTooltipPositionProviderHu5FAss;
+                            popupPositionProvider = m3366rememberTooltipPositionProviderHu5FAss;
                             rememberBasicTooltipState = BasicTooltipKt.rememberBasicTooltipState(false, false, new MutatorMutex(), startRestartGroup, 0, 3);
                             startRestartGroup.endReplaceGroup();
                         }

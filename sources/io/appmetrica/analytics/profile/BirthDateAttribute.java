@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BirthDateAttribute {
 
     /* renamed from: a  reason: collision with root package name */

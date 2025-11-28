@@ -47,28 +47,28 @@ public final class TextIndent {
     }
 
     /* renamed from: getFirstLine-XSAIIZE  reason: not valid java name */
-    public final long m7903getFirstLineXSAIIZE() {
+    public final long m7904getFirstLineXSAIIZE() {
         return this.firstLine;
     }
 
     /* renamed from: getRestLine-XSAIIZE  reason: not valid java name */
-    public final long m7904getRestLineXSAIIZE() {
+    public final long m7905getRestLineXSAIIZE() {
         return this.restLine;
     }
 
     /* renamed from: copy-NB67dxo$default  reason: not valid java name */
-    public static /* synthetic */ TextIndent m7901copyNB67dxo$default(TextIndent textIndent, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ TextIndent m7902copyNB67dxo$default(TextIndent textIndent, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
             j = textIndent.firstLine;
         }
         if ((i & 2) != 0) {
             j2 = textIndent.restLine;
         }
-        return textIndent.m7902copyNB67dxo(j, j2);
+        return textIndent.m7903copyNB67dxo(j, j2);
     }
 
     /* renamed from: copy-NB67dxo  reason: not valid java name */
-    public final TextIndent m7902copyNB67dxo(long j, long j2) {
+    public final TextIndent m7903copyNB67dxo(long j, long j2) {
         return new TextIndent(j, j2, null);
     }
 
@@ -78,16 +78,16 @@ public final class TextIndent {
         }
         if (obj instanceof TextIndent) {
             TextIndent textIndent = (TextIndent) obj;
-            return TextUnit.m8186equalsimpl0(this.firstLine, textIndent.firstLine) && TextUnit.m8186equalsimpl0(this.restLine, textIndent.restLine);
+            return TextUnit.m8187equalsimpl0(this.firstLine, textIndent.firstLine) && TextUnit.m8187equalsimpl0(this.restLine, textIndent.restLine);
         }
         return false;
     }
 
     public int hashCode() {
-        return (TextUnit.m8190hashCodeimpl(this.firstLine) * 31) + TextUnit.m8190hashCodeimpl(this.restLine);
+        return (TextUnit.m8191hashCodeimpl(this.firstLine) * 31) + TextUnit.m8191hashCodeimpl(this.restLine);
     }
 
     public String toString() {
-        return "TextIndent(firstLine=" + ((Object) TextUnit.m8196toStringimpl(this.firstLine)) + ", restLine=" + ((Object) TextUnit.m8196toStringimpl(this.restLine)) + ')';
+        return "TextIndent(firstLine=" + ((Object) TextUnit.m8197toStringimpl(this.firstLine)) + ", restLine=" + ((Object) TextUnit.m8197toStringimpl(this.restLine)) + ')';
     }
 }

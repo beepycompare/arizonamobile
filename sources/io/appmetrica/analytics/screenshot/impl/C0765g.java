@@ -2,7 +2,7 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 /* renamed from: io.appmetrica.analytics.screenshot.impl.g  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0765g implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

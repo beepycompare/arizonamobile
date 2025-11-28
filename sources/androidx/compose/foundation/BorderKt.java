@@ -33,24 +33,24 @@ public final class BorderKt {
     }
 
     public static final Modifier border(Modifier modifier, BorderStroke borderStroke, Shape shape) {
-        return m281borderziNgDLE(modifier, borderStroke.m296getWidthD9Ej5fM(), borderStroke.getBrush(), shape);
+        return m282borderziNgDLE(modifier, borderStroke.m297getWidthD9Ej5fM(), borderStroke.getBrush(), shape);
     }
 
     /* renamed from: border-xT4_qwU$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m280borderxT4_qwU$default(Modifier modifier, float f, long j, Shape shape, int i, Object obj) {
+    public static /* synthetic */ Modifier m281borderxT4_qwU$default(Modifier modifier, float f, long j, Shape shape, int i, Object obj) {
         if ((i & 4) != 0) {
             shape = RectangleShapeKt.getRectangleShape();
         }
-        return m279borderxT4_qwU(modifier, f, j, shape);
+        return m280borderxT4_qwU(modifier, f, j, shape);
     }
 
     /* renamed from: border-xT4_qwU  reason: not valid java name */
-    public static final Modifier m279borderxT4_qwU(Modifier modifier, float f, long j, Shape shape) {
-        return m281borderziNgDLE(modifier, f, new SolidColor(j, null), shape);
+    public static final Modifier m280borderxT4_qwU(Modifier modifier, float f, long j, Shape shape) {
+        return m282borderziNgDLE(modifier, f, new SolidColor(j, null), shape);
     }
 
     /* renamed from: border-ziNgDLE  reason: not valid java name */
-    public static final Modifier m281borderziNgDLE(Modifier modifier, float f, Brush brush, Shape shape) {
+    public static final Modifier m282borderziNgDLE(Modifier modifier, float f, Brush brush, Shape shape) {
         return modifier.then(new BorderModifierNodeElement(f, brush, shape, null));
     }
 
@@ -74,15 +74,15 @@ public final class BorderKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawRectBorder-NsqcLGU  reason: not valid java name */
-    public static final DrawResult m282drawRectBorderNsqcLGU(CacheDrawScope cacheDrawScope, final Brush brush, long j, long j2, boolean z, float f) {
-        final long m5051getZeroF1C5BW0 = z ? Offset.Companion.m5051getZeroF1C5BW0() : j;
-        final long m4819getSizeNHjbRc = z ? cacheDrawScope.m4819getSizeNHjbRc() : j2;
+    public static final DrawResult m283drawRectBorderNsqcLGU(CacheDrawScope cacheDrawScope, final Brush brush, long j, long j2, boolean z, float f) {
+        final long m5052getZeroF1C5BW0 = z ? Offset.Companion.m5052getZeroF1C5BW0() : j;
+        final long m4820getSizeNHjbRc = z ? cacheDrawScope.m4820getSizeNHjbRc() : j2;
         final DrawStyle stroke = z ? Fill.INSTANCE : new Stroke(f, 0.0f, 0, 0, null, 30, null);
         return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.BorderKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit drawRectBorder_NsqcLGU$lambda$1;
-                drawRectBorder_NsqcLGU$lambda$1 = BorderKt.drawRectBorder_NsqcLGU$lambda$1(Brush.this, m5051getZeroF1C5BW0, m4819getSizeNHjbRc, stroke, (ContentDrawScope) obj);
+                drawRectBorder_NsqcLGU$lambda$1 = BorderKt.drawRectBorder_NsqcLGU$lambda$1(Brush.this, m5052getZeroF1C5BW0, m4820getSizeNHjbRc, stroke, (ContentDrawScope) obj);
                 return drawRectBorder_NsqcLGU$lambda$1;
             }
         });
@@ -91,7 +91,7 @@ public final class BorderKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit drawRectBorder_NsqcLGU$lambda$1(Brush brush, long j, long j2, DrawStyle drawStyle, ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
-        DrawScope.m5851drawRectAsUm42w$default(contentDrawScope, brush, j, j2, 0.0f, drawStyle, null, 0, 104, null);
+        DrawScope.m5852drawRectAsUm42w$default(contentDrawScope, brush, j, j2, 0.0f, drawStyle, null, 0, 104, null);
         return Unit.INSTANCE;
     }
 
@@ -102,18 +102,18 @@ public final class BorderKt {
         if (!z) {
             Path Path = AndroidPath_androidKt.Path();
             Path.addRoundRect$default(Path, createInsetRoundedRect(f, roundRect), null, 2, null);
-            path.mo5169opN5in7k0(path, Path, PathOperation.Companion.m5583getDifferenceb3I0S0c());
+            path.mo5170opN5in7k0(path, Path, PathOperation.Companion.m5584getDifferenceb3I0S0c());
         }
         return path;
     }
 
     private static final RoundRect createInsetRoundedRect(float f, RoundRect roundRect) {
-        return new RoundRect(f, f, roundRect.getWidth() - f, roundRect.getHeight() - f, m283shrinkKibmq7A(roundRect.m5085getTopLeftCornerRadiuskKHJgLs(), f), m283shrinkKibmq7A(roundRect.m5086getTopRightCornerRadiuskKHJgLs(), f), m283shrinkKibmq7A(roundRect.m5084getBottomRightCornerRadiuskKHJgLs(), f), m283shrinkKibmq7A(roundRect.m5083getBottomLeftCornerRadiuskKHJgLs(), f), null);
+        return new RoundRect(f, f, roundRect.getWidth() - f, roundRect.getHeight() - f, m284shrinkKibmq7A(roundRect.m5086getTopLeftCornerRadiuskKHJgLs(), f), m284shrinkKibmq7A(roundRect.m5087getTopRightCornerRadiuskKHJgLs(), f), m284shrinkKibmq7A(roundRect.m5085getBottomRightCornerRadiuskKHJgLs(), f), m284shrinkKibmq7A(roundRect.m5084getBottomLeftCornerRadiuskKHJgLs(), f), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: shrink-Kibmq7A  reason: not valid java name */
-    public static final long m283shrinkKibmq7A(long j, float f) {
-        return CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - f)) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - f)) & 4294967295L));
+    public static final long m284shrinkKibmq7A(long j, float f) {
+        return CornerRadius.m4990constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - f)) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - f)) & 4294967295L));
     }
 }

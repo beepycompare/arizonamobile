@@ -3,7 +3,7 @@ package io.appmetrica.analytics.screenshot.impl;
 import android.os.Parcel;
 import android.os.Parcelable;
 /* renamed from: io.appmetrica.analytics.screenshot.impl.z  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0783z implements Parcelable {
     public static final C0782y CREATOR = new C0782y();
 

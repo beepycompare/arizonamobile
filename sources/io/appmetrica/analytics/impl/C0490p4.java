@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import kotlin.NoWhenBranchMatchedException;
 /* renamed from: io.appmetrica.analytics.impl.p4  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0490p4 {
     public static InterfaceC0440n4 a(X3 x3) {
         switch (AbstractC0465o4.f1034a[x3.e.ordinal()]) {

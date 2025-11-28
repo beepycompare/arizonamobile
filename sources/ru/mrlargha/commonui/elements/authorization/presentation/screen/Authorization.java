@@ -103,8 +103,8 @@ public final class Authorization implements InterfaceController {
         SharedPreferences sharedPreferences2 = targetActivity.getSharedPreferences("flavorType", 0);
         this.sharedPref = sharedPreferences2;
         this.isArizonaType = sharedPreferences2.getBoolean("isArizonaType", false);
-        this.arizonaLogotypeUri = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/project_icons/";
-        this.rodinaLogotypeUri = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/project_icons/";
+        this.arizonaLogotypeUri = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/project_icons/";
+        this.rodinaLogotypeUri = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/project_icons/";
         this.localPassword = getPassword();
         this.localUsername = getUsername();
         RegistrationAccount.ContainerData userAuthData = getUserAuthData();

@@ -8,7 +8,7 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* renamed from: io.appmetrica.analytics.impl.qf  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0526qf extends MessageNano {
     public static volatile C0526qf[] f;
 

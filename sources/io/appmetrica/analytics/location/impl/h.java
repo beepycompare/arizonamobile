@@ -2,7 +2,7 @@ package io.appmetrica.analytics.location.impl;
 
 import android.location.Location;
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class h implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */

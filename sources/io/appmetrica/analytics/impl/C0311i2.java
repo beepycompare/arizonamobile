@@ -4,7 +4,7 @@ import io.appmetrica.analytics.appsetid.internal.AppSetIdListener;
 import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetId;
 import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdScope;
 /* renamed from: io.appmetrica.analytics.impl.i2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0311i2 implements AppSetIdListener {
 
     /* renamed from: a  reason: collision with root package name */

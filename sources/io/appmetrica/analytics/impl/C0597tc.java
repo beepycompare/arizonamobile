@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* renamed from: io.appmetrica.analytics.impl.tc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0597tc extends AbstractC0230f {
     public C0597tc(Context context, Gg gg) {
         super(context, gg);

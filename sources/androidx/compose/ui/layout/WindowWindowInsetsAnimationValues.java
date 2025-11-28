@@ -99,42 +99,42 @@ public final class WindowWindowInsetsAnimationValues implements PlatformWindowIn
     }
 
     /* renamed from: getCurrent-hdzbrEE  reason: not valid java name */
-    public final long m6817getCurrenthdzbrEE() {
+    public final long m6818getCurrenthdzbrEE() {
         return this.current;
     }
 
     /* renamed from: setCurrent-Ynlvx88  reason: not valid java name */
-    public final void m6821setCurrentYnlvx88(long j) {
+    public final void m6822setCurrentYnlvx88(long j) {
         this.current = j;
     }
 
     /* renamed from: getMaximum-hdzbrEE  reason: not valid java name */
-    public final long m6818getMaximumhdzbrEE() {
+    public final long m6819getMaximumhdzbrEE() {
         return this.maximum;
     }
 
     /* renamed from: setMaximum-Ynlvx88  reason: not valid java name */
-    public final void m6822setMaximumYnlvx88(long j) {
+    public final void m6823setMaximumYnlvx88(long j) {
         this.maximum = j;
     }
 
     /* renamed from: getSourceValueInsets-hdzbrEE  reason: not valid java name */
-    public final long m6819getSourceValueInsetshdzbrEE() {
+    public final long m6820getSourceValueInsetshdzbrEE() {
         return this.sourceValueInsets;
     }
 
     /* renamed from: setSourceValueInsets-Ynlvx88  reason: not valid java name */
-    public final void m6823setSourceValueInsetsYnlvx88(long j) {
+    public final void m6824setSourceValueInsetsYnlvx88(long j) {
         this.sourceValueInsets = j;
     }
 
     /* renamed from: getTargetValueInsets-hdzbrEE  reason: not valid java name */
-    public final long m6820getTargetValueInsetshdzbrEE() {
+    public final long m6821getTargetValueInsetshdzbrEE() {
         return this.targetValueInsets;
     }
 
     /* renamed from: setTargetValueInsets-Ynlvx88  reason: not valid java name */
-    public final void m6824setTargetValueInsetsYnlvx88(long j) {
+    public final void m6825setTargetValueInsetsYnlvx88(long j) {
         this.targetValueInsets = j;
     }
 }

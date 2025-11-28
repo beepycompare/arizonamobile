@@ -25,7 +25,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AppMetricaService extends Service {
     private static L1 c;
 

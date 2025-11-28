@@ -4,18 +4,18 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int btn_account = 0x7f0804be;
-        public static int btn_discord = 0x7f0804d1;
-        public static int btn_forum = 0x7f0804d3;
-        public static int btn_notification = 0x7f0804f4;
-        public static int btn_notification_count = 0x7f0804f5;
-        public static int btn_telegram = 0x7f0804fd;
-        public static int btn_vk = 0x7f080503;
-        public static int messenger_ic = 0x7f080b0f;
-        public static int news_item_arrow = 0x7f080be2;
-        public static int server_button_arrow = 0x7f080d85;
-        public static int shop_notificaiotns_bg = 0x7f080d9e;
-        public static int update_home_screen = 0x7f080e3f;
+        public static int btn_account = 0x7f0804b0;
+        public static int btn_discord = 0x7f0804c3;
+        public static int btn_forum = 0x7f0804c5;
+        public static int btn_notification = 0x7f0804e6;
+        public static int btn_notification_count = 0x7f0804e7;
+        public static int btn_telegram = 0x7f0804ef;
+        public static int btn_vk = 0x7f0804f5;
+        public static int messenger_ic = 0x7f080aee;
+        public static int news_item_arrow = 0x7f080bc1;
+        public static int server_button_arrow = 0x7f080d4f;
+        public static int shop_notificaiotns_bg = 0x7f080d63;
+        public static int update_home_screen = 0x7f080dfb;
 
         private drawable() {
         }

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.internal;
 import android.os.Bundle;
 import io.appmetrica.analytics.impl.A1;
 import io.appmetrica.analytics.internal.IAppMetricaService;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class a extends IAppMetricaService.Stub {
     @Override // io.appmetrica.analytics.internal.IAppMetricaService
     public final void pauseUserSession(Bundle bundle) {

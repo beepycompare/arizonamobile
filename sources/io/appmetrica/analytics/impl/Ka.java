@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.plugins.IPluginReporter;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Ka extends Ya, IPluginReporter {
     void b(String str);
 

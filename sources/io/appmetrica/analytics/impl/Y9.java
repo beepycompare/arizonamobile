@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import com.facebook.internal.NativeProtocol;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Y9 {
 
     /* renamed from: a  reason: collision with root package name */

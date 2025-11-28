@@ -50,14 +50,14 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     }
 
     public /* synthetic */ FocusableNode(MutableInteractionSource mutableInteractionSource, int i, Function1 function1, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(mutableInteractionSource, (i2 & 2) != 0 ? Focusability.Companion.m4969getAlwaysLCbbffg() : i, (i2 & 4) != 0 ? null : function1, null);
+        this(mutableInteractionSource, (i2 & 2) != 0 ? Focusability.Companion.m4970getAlwaysLCbbffg() : i, (i2 & 4) != 0 ? null : function1, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     private FocusableNode(MutableInteractionSource mutableInteractionSource, int i, Function1<? super Boolean, Unit> function1) {
         this.interactionSource = mutableInteractionSource;
         this.onFocusChange = function1;
-        this.focusTargetNode = (FocusTargetModifierNode) delegate(FocusTargetModifierNodeKt.m4948FocusTargetModifierNodePYyLHbc(i, new FocusableNode$focusTargetNode$1(this)));
+        this.focusTargetNode = (FocusTargetModifierNode) delegate(FocusTargetModifierNodeKt.m4949FocusTargetModifierNodePYyLHbc(i, new FocusableNode$focusTargetNode$1(this)));
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -83,7 +83,7 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     }
 
     public final boolean requestFocus() {
-        return FocusTargetModifierNode.m4944requestFocus3ESFkO8$default(this.focusTargetNode, 0, 1, null);
+        return FocusTargetModifierNode.m4945requestFocus3ESFkO8$default(this.focusTargetNode, 0, 1, null);
     }
 
     private final FocusedBoundsObserverNode getFocusedBoundsObserver() {

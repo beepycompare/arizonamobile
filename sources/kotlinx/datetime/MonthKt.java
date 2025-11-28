@@ -9,12 +9,12 @@ public final class MonthKt {
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This overload is only kept for binary compatibility")
     public static final /* synthetic */ java.time.Month Month(int i) {
         java.time.Month javaMonth;
-        javaMonth = ConvertersKt.toJavaMonth(m11468Month(i));
+        javaMonth = ConvertersKt.toJavaMonth(m11526Month(i));
         return javaMonth;
     }
 
     /* renamed from: Month  reason: collision with other method in class */
-    public static final Month m11468Month(int i) {
+    public static final Month m11526Month(int i) {
         return MonthKt__MonthKt.Month(i);
     }
 

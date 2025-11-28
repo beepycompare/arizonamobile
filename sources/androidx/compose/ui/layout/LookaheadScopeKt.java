@@ -79,8 +79,8 @@ public final class LookaheadScopeKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4601initimpl(m4597constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$1
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4602initimpl(m4598constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode) {
                     invoke2(layoutNode);
@@ -92,7 +92,7 @@ public final class LookaheadScopeKt {
                     layoutNode.setVirtualLookaheadRoot$ui_release(true);
                 }
             });
-            Updater.m4604setimpl(m4597constructorimpl, lookaheadScopeImpl, new Function2<LayoutNode, LookaheadScopeImpl, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$2
+            Updater.m4605setimpl(m4598constructorimpl, lookaheadScopeImpl, new Function2<LayoutNode, LookaheadScopeImpl, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$2
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, LookaheadScopeImpl lookaheadScopeImpl2) {
                     invoke2(layoutNode, lookaheadScopeImpl2);
@@ -160,15 +160,15 @@ public final class LookaheadScopeKt {
     }
 
     /* renamed from: localLookaheadPositionOf-Fgt4K4Q  reason: not valid java name */
-    public static final long m6727localLookaheadPositionOfFgt4K4Q(LookaheadScope lookaheadScope, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+    public static final long m6728localLookaheadPositionOfFgt4K4Q(LookaheadScope lookaheadScope, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
         LayoutCoordinates lookaheadCoordinates = lookaheadScope.toLookaheadCoordinates(layoutCoordinates);
         LayoutCoordinates lookaheadCoordinates2 = lookaheadScope.toLookaheadCoordinates(layoutCoordinates2);
         if (lookaheadCoordinates instanceof LookaheadLayoutCoordinates) {
-            return ((LookaheadLayoutCoordinates) lookaheadCoordinates).mo6707localPositionOfS_NoaFU(lookaheadCoordinates2, j, z);
+            return ((LookaheadLayoutCoordinates) lookaheadCoordinates).mo6708localPositionOfS_NoaFU(lookaheadCoordinates2, j, z);
         }
         if (!(lookaheadCoordinates2 instanceof LookaheadLayoutCoordinates)) {
-            return lookaheadCoordinates.mo6707localPositionOfS_NoaFU(lookaheadCoordinates, j, z);
+            return lookaheadCoordinates.mo6708localPositionOfS_NoaFU(lookaheadCoordinates, j, z);
         }
-        return Offset.m5027constructorimpl(((LookaheadLayoutCoordinates) lookaheadCoordinates2).mo6707localPositionOfS_NoaFU(lookaheadCoordinates, j, z) ^ (-9223372034707292160L));
+        return Offset.m5028constructorimpl(((LookaheadLayoutCoordinates) lookaheadCoordinates2).mo6708localPositionOfS_NoaFU(lookaheadCoordinates, j, z) ^ (-9223372034707292160L));
     }
 }

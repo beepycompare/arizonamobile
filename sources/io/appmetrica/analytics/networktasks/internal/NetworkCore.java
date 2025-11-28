@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NetworkCore extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */

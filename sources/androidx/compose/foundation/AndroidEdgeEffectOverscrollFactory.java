@@ -45,13 +45,13 @@ public final class AndroidEdgeEffectOverscrollFactory implements OverscrollFacto
         if (Intrinsics.areEqual(getClass(), obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type androidx.compose.foundation.AndroidEdgeEffectOverscrollFactory");
             AndroidEdgeEffectOverscrollFactory androidEdgeEffectOverscrollFactory = (AndroidEdgeEffectOverscrollFactory) obj;
-            return Intrinsics.areEqual(this.context, androidEdgeEffectOverscrollFactory.context) && Intrinsics.areEqual(this.density, androidEdgeEffectOverscrollFactory.density) && Color.m5280equalsimpl0(this.glowColor, androidEdgeEffectOverscrollFactory.glowColor) && Intrinsics.areEqual(this.glowDrawPadding, androidEdgeEffectOverscrollFactory.glowDrawPadding);
+            return Intrinsics.areEqual(this.context, androidEdgeEffectOverscrollFactory.context) && Intrinsics.areEqual(this.density, androidEdgeEffectOverscrollFactory.density) && Color.m5281equalsimpl0(this.glowColor, androidEdgeEffectOverscrollFactory.glowColor) && Intrinsics.areEqual(this.glowDrawPadding, androidEdgeEffectOverscrollFactory.glowDrawPadding);
         }
         return false;
     }
 
     @Override // androidx.compose.foundation.OverscrollFactory
     public int hashCode() {
-        return (((((this.context.hashCode() * 31) + this.density.hashCode()) * 31) + Color.m5286hashCodeimpl(this.glowColor)) * 31) + this.glowDrawPadding.hashCode();
+        return (((((this.context.hashCode() * 31) + this.density.hashCode()) * 31) + Color.m5287hashCodeimpl(this.glowColor)) * 31) + this.glowDrawPadding.hashCode();
     }
 }

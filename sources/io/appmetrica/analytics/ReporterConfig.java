@@ -6,7 +6,7 @@ import io.appmetrica.analytics.impl.C0615u5;
 import io.appmetrica.analytics.impl.Gn;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class ReporterConfig {
     public final Map<String, Object> additionalConfig;
     public final String apiKey;
@@ -19,7 +19,7 @@ public class ReporterConfig {
     public final Integer sessionTimeout;
     public final String userProfileID;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
         private static final Gn l = new Gn(new C0283h0());
 

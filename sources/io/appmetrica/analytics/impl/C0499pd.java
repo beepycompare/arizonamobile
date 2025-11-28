@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.ModuleEvent;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* renamed from: io.appmetrica.analytics.impl.pd  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0499pd extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */

@@ -67,7 +67,7 @@ public final class LazyGridSpanLayoutProvider {
         }
         ArrayList arrayList = new ArrayList(i);
         for (int i2 = 0; i2 < i; i2++) {
-            arrayList.add(GridItemSpan.m982boximpl(LazyGridSpanKt.GridItemSpan(1)));
+            arrayList.add(GridItemSpan.m983boximpl(LazyGridSpanKt.GridItemSpan(1)));
         }
         ArrayList arrayList2 = arrayList;
         this.previousDefaultSpans = arrayList2;
@@ -191,7 +191,7 @@ public final class LazyGridSpanLayoutProvider {
                         break;
                     }
                     i10++;
-                    arrayList.add(GridItemSpan.m982boximpl(LazyGridSpanKt.GridItemSpan(firstItemKnownSpan)));
+                    arrayList.add(GridItemSpan.m983boximpl(LazyGridSpanKt.GridItemSpan(firstItemKnownSpan)));
                     firstItemKnownSpan = i4;
                 }
                 return new LineConfiguration(firstItemIndex, arrayList);
@@ -295,7 +295,7 @@ public final class LazyGridSpanLayoutProvider {
         lazyGridItemSpanScopeImpl.setMaxCurrentLineSpan(i2);
         lazyGridItemSpanScopeImpl.setMaxLineSpan(this.slotsPerLine);
         IntervalList.Interval<LazyGridInterval> interval = this.gridContent.getIntervals().get(i);
-        return GridItemSpan.m986getCurrentLineSpanimpl(interval.getValue().getSpan().invoke(lazyGridItemSpanScopeImpl, Integer.valueOf(i - interval.getStartIndex())).m989unboximpl());
+        return GridItemSpan.m987getCurrentLineSpanimpl(interval.getValue().getSpan().invoke(lazyGridItemSpanScopeImpl, Integer.valueOf(i - interval.getStartIndex())).m990unboximpl());
     }
 
     private final void invalidateCache() {

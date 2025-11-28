@@ -7,7 +7,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface TransformScope {
     /* renamed from: transformBy-d-4ec7I */
-    void mo474transformByd4ec7I(float f, long j, float f2);
+    void mo475transformByd4ec7I(float f, long j, float f2);
 
     /* compiled from: TransformableState.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -16,7 +16,7 @@ public interface TransformScope {
     }
 
     /* renamed from: transformBy-d-4ec7I$default  reason: not valid java name */
-    static /* synthetic */ void m614transformByd4ec7I$default(TransformScope transformScope, float f, long j, float f2, int i, Object obj) {
+    static /* synthetic */ void m615transformByd4ec7I$default(TransformScope transformScope, float f, long j, float f2, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: transformBy-d-4ec7I");
         }
@@ -24,11 +24,11 @@ public interface TransformScope {
             f = 1.0f;
         }
         if ((i & 2) != 0) {
-            j = Offset.Companion.m5051getZeroF1C5BW0();
+            j = Offset.Companion.m5052getZeroF1C5BW0();
         }
         if ((i & 4) != 0) {
             f2 = 0.0f;
         }
-        transformScope.mo474transformByd4ec7I(f, j, f2);
+        transformScope.mo475transformByd4ec7I(f, j, f2);
     }
 }

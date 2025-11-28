@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.wg  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0676wg {
     public static P7 a(String str) {
         HashMap hashMap;

@@ -12,7 +12,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.nb  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AbstractC0447nb {
     public static String a(HashMap hashMap) {
         if (hashMap == null) {

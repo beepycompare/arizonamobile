@@ -45,7 +45,7 @@ public final class GroupComponent extends VNode {
         super(null);
         this.children = new ArrayList();
         this.isTintable = true;
-        this.tintColor = Color.Companion.m5315getUnspecified0d7_KjU();
+        this.tintColor = Color.Companion.m5316getUnspecified0d7_KjU();
         this.clipPathData = VectorKt.getEmptyPath();
         this.isClipPathDirty = true;
         this.wrappedListener = new Function1<VNode, Unit>() { // from class: androidx.compose.ui.graphics.vector.GroupComponent$wrappedListener$1
@@ -80,14 +80,14 @@ public final class GroupComponent extends VNode {
     }
 
     /* renamed from: getTintColor-0d7_KjU  reason: not valid java name */
-    public final long m6010getTintColor0d7_KjU() {
+    public final long m6011getTintColor0d7_KjU() {
         return this.tintColor;
     }
 
     private final void markTintForBrush(Brush brush) {
         if (this.isTintable && brush != null) {
             if (brush instanceof SolidColor) {
-                m6009markTintForColor8_81llA(((SolidColor) brush).m5631getValue0d7_KjU());
+                m6010markTintForColor8_81llA(((SolidColor) brush).m5632getValue0d7_KjU());
             } else {
                 markNotTintable();
             }
@@ -95,12 +95,12 @@ public final class GroupComponent extends VNode {
     }
 
     /* renamed from: markTintForColor-8_81llA  reason: not valid java name */
-    private final void m6009markTintForColor8_81llA(long j) {
+    private final void m6010markTintForColor8_81llA(long j) {
         if (this.isTintable && j != 16) {
             long j2 = this.tintColor;
             if (j2 == 16) {
                 this.tintColor = j;
-            } else if (VectorKt.m6032rgbEqualOWjLjI(j2, j)) {
+            } else if (VectorKt.m6033rgbEqualOWjLjI(j2, j)) {
             } else {
                 markNotTintable();
             }
@@ -116,7 +116,7 @@ public final class GroupComponent extends VNode {
         } else if (vNode instanceof GroupComponent) {
             GroupComponent groupComponent = (GroupComponent) vNode;
             if (groupComponent.isTintable && this.isTintable) {
-                m6009markTintForColor8_81llA(groupComponent.tintColor);
+                m6010markTintForColor8_81llA(groupComponent.tintColor);
             } else {
                 markNotTintable();
             }
@@ -125,7 +125,7 @@ public final class GroupComponent extends VNode {
 
     private final void markNotTintable() {
         this.isTintable = false;
-        this.tintColor = Color.Companion.m5315getUnspecified0d7_KjU();
+        this.tintColor = Color.Companion.m5316getUnspecified0d7_KjU();
     }
 
     public final List<PathNode> getClipPathData() {
@@ -249,16 +249,16 @@ public final class GroupComponent extends VNode {
     private final void updateMatrix() {
         float[] fArr = this.groupMatrix;
         if (fArr == null) {
-            fArr = Matrix.m5521constructorimpl$default(null, 1, null);
+            fArr = Matrix.m5522constructorimpl$default(null, 1, null);
             this.groupMatrix = fArr;
         } else {
-            Matrix.m5530resetimpl(fArr);
+            Matrix.m5531resetimpl(fArr);
         }
         float[] fArr2 = fArr;
-        Matrix.m5543translateimpl$default(fArr2, this.pivotX + this.translationX, this.pivotY + this.translationY, 0.0f, 4, null);
-        Matrix.m5535rotateZimpl(fArr2, this.rotation);
-        Matrix.m5536scaleimpl(fArr2, this.scaleX, this.scaleY, 1.0f);
-        Matrix.m5543translateimpl$default(fArr2, -this.pivotX, -this.pivotY, 0.0f, 4, null);
+        Matrix.m5544translateimpl$default(fArr2, this.pivotX + this.translationX, this.pivotY + this.translationY, 0.0f, 4, null);
+        Matrix.m5536rotateZimpl(fArr2, this.rotation);
+        Matrix.m5537scaleimpl(fArr2, this.scaleX, this.scaleY, 1.0f);
+        Matrix.m5544translateimpl$default(fArr2, -this.pivotX, -this.pivotY, 0.0f, 4, null);
     }
 
     public final void insertAt(int i, VNode vNode) {
@@ -312,17 +312,17 @@ public final class GroupComponent extends VNode {
             this.isClipPathDirty = false;
         }
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+        long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             float[] fArr = this.groupMatrix;
             if (fArr != null) {
-                transform.mo5787transform58bKbWc((fArr != null ? Matrix.m5519boximpl(fArr) : null).m5544unboximpl());
+                transform.mo5788transform58bKbWc((fArr != null ? Matrix.m5520boximpl(fArr) : null).m5545unboximpl());
             }
             Path path = this.clipPath;
             if (getWillClipPath() && path != null) {
-                DrawTransform.m5914clipPathmtrdDE$default(transform, path, 0, 2, null);
+                DrawTransform.m5915clipPathmtrdDE$default(transform, path, 0, 2, null);
             }
             List<VNode> list = this.children;
             int size = list.size();
@@ -331,7 +331,7 @@ public final class GroupComponent extends VNode {
             }
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
         }
     }
 

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.modulesapi.internal.common.TableDescription;
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
 import java.sql.SQLException;
 /* renamed from: io.appmetrica.analytics.impl.c7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0161c7 extends DatabaseScript {
     @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
     public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {

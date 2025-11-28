@@ -9,13 +9,13 @@ import io.appmetrica.analytics.impl.C0739z4;
 import io.appmetrica.analytics.impl.Cl;
 import io.appmetrica.analytics.impl.Gi;
 import io.appmetrica.analytics.impl.InterfaceC0281go;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GenderAttribute {
 
     /* renamed from: a  reason: collision with root package name */
     private final A6 f1319a = new A6("appmetrica_gender", new C0265g8(), new Cl());
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum Gender {
         MALE("M"),
         FEMALE("F"),

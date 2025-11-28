@@ -16,18 +16,20 @@ public final class EventShopItemBinding implements ViewBinding {
     public final LinearLayout btnSelect;
     public final LinearLayout btnUnselect;
     public final TextView buyButton;
+    public final ImageView ivCurrency;
     public final ImageView ivName;
     public final TextView price;
     private final FrameLayout rootView;
     public final TextView tvTitle;
 
-    private EventShopItemBinding(FrameLayout frameLayout, ImageView imageView, LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, ImageView imageView2, TextView textView2, TextView textView3) {
+    private EventShopItemBinding(FrameLayout frameLayout, ImageView imageView, LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, ImageView imageView2, ImageView imageView3, TextView textView2, TextView textView3) {
         this.rootView = frameLayout;
         this.bg = imageView;
         this.btnSelect = linearLayout;
         this.btnUnselect = linearLayout2;
         this.buyButton = textView;
-        this.ivName = imageView2;
+        this.ivCurrency = imageView2;
+        this.ivName = imageView3;
         this.price = textView2;
         this.tvTitle = textView3;
     }
@@ -62,16 +64,20 @@ public final class EventShopItemBinding implements ViewBinding {
                     i = R.id.buy_button;
                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView != null) {
-                        i = R.id.iv_name;
+                        i = R.id.iv_currency;
                         ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
                         if (imageView2 != null) {
-                            i = R.id.price;
-                            TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
-                            if (textView2 != null) {
-                                i = R.id.tv_title;
-                                TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
-                                if (textView3 != null) {
-                                    return new EventShopItemBinding((FrameLayout) view, imageView, linearLayout, linearLayout2, textView, imageView2, textView2, textView3);
+                            i = R.id.iv_name;
+                            ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
+                            if (imageView3 != null) {
+                                i = R.id.price;
+                                TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
+                                if (textView2 != null) {
+                                    i = R.id.tv_title;
+                                    TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
+                                    if (textView3 != null) {
+                                        return new EventShopItemBinding((FrameLayout) view, imageView, linearLayout, linearLayout2, textView, imageView2, imageView3, textView2, textView3);
+                                    }
                                 }
                             }
                         }

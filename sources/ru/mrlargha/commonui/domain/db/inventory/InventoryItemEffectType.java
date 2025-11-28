@@ -7,8 +7,8 @@ import ru.mrlargha.commonui.R;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* compiled from: InventoryItemEntity.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\r\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u001b\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011¨\u0006\u0012"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEffectType;", "", "effectName", "", "resId", "", "<init>", "(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Integer;)V", "getEffectName", "()Ljava/lang/String;", "getResId", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "NONE", "DRUID", "BERSERK", "FIRE", "WHITE_FIRE", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u001b\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEffectType;", "", "effectName", "", "resId", "", "<init>", "(Ljava/lang/String;ILjava/lang/String;Ljava/lang/Integer;)V", "getEffectName", "()Ljava/lang/String;", "getResId", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "NONE", "DRUID", "BERSERK", "FIRE", "WHITE_FIRE", "BLUE_FIRE", "GREEN_FIRE", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes3.dex */
 public final class InventoryItemEffectType {
     private static final /* synthetic */ EnumEntries $ENTRIES;
     private static final /* synthetic */ InventoryItemEffectType[] $VALUES;
@@ -19,9 +19,11 @@ public final class InventoryItemEffectType {
     public static final InventoryItemEffectType BERSERK = new InventoryItemEffectType("BERSERK", 2, "berserk", Integer.valueOf(R.drawable.inventory_item_effect_berserk));
     public static final InventoryItemEffectType FIRE = new InventoryItemEffectType("FIRE", 3, "fire", Integer.valueOf(R.drawable.inventory_item_effect_fire));
     public static final InventoryItemEffectType WHITE_FIRE = new InventoryItemEffectType("WHITE_FIRE", 4, "white-fire", Integer.valueOf(R.drawable.inventory_item_effect_white_fire));
+    public static final InventoryItemEffectType BLUE_FIRE = new InventoryItemEffectType("BLUE_FIRE", 5, "blue-fire", Integer.valueOf(R.drawable.inventory_item_effect_blue_fire));
+    public static final InventoryItemEffectType GREEN_FIRE = new InventoryItemEffectType("GREEN_FIRE", 6, "green-fire", Integer.valueOf(R.drawable.inventory_item_effect_green_fire));
 
     private static final /* synthetic */ InventoryItemEffectType[] $values() {
-        return new InventoryItemEffectType[]{NONE, DRUID, BERSERK, FIRE, WHITE_FIRE};
+        return new InventoryItemEffectType[]{NONE, DRUID, BERSERK, FIRE, WHITE_FIRE, BLUE_FIRE, GREEN_FIRE};
     }
 
     public static EnumEntries<InventoryItemEffectType> getEntries() {

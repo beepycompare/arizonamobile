@@ -275,7 +275,7 @@ public final class DownloadHelper {
             this.callbackHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadHelper.this.m8706xe2e8f097(callback);
+                    DownloadHelper.this.m8707xe2e8f097(callback);
                 }
             });
         }
@@ -283,7 +283,7 @@ public final class DownloadHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$prepare$1$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8706xe2e8f097(Callback callback) {
+    public /* synthetic */ void m8707xe2e8f097(Callback callback) {
         callback.onPrepared(this, false);
     }
 
@@ -571,14 +571,14 @@ public final class DownloadHelper {
         ((Handler) Assertions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                DownloadHelper.this.m8705x26f1c63b(z);
+                DownloadHelper.this.m8706x26f1c63b(z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onMediaPrepared$2$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8705x26f1c63b(boolean z) {
+    public /* synthetic */ void m8706x26f1c63b(boolean z) {
         ((Callback) Assertions.checkNotNull(this.callback)).onPrepared(this, z);
     }
 
@@ -587,14 +587,14 @@ public final class DownloadHelper {
         ((Handler) Assertions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DownloadHelper.this.m8704x83f2c593(iOException);
+                DownloadHelper.this.m8705x83f2c593(iOException);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onMediaPreparationFailed$3$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8704x83f2c593(IOException iOException) {
+    public /* synthetic */ void m8705x83f2c593(IOException iOException) {
         ((Callback) Assertions.checkNotNull(this.callback)).onPrepareError(this, iOException);
     }
 

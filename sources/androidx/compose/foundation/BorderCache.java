@@ -106,26 +106,26 @@ final class BorderCache {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x003c, code lost:
-        if (androidx.compose.ui.graphics.ImageBitmapConfig.m5505equalsimpl(r9, r1 != null ? androidx.compose.ui.graphics.ImageBitmapConfig.m5503boximpl(r1.mo5144getConfig_sVssgQ()) : null) != false) goto L27;
+        if (androidx.compose.ui.graphics.ImageBitmapConfig.m5506equalsimpl(r9, r1 != null ? androidx.compose.ui.graphics.ImageBitmapConfig.m5504boximpl(r1.mo5145getConfig_sVssgQ()) : null) != false) goto L27;
      */
     /* renamed from: drawBorderCache-EMwLDEs  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final ImageBitmap m276drawBorderCacheEMwLDEs(CacheDrawScope cacheDrawScope, long j, int i, Function1<? super DrawScope, Unit> function1) {
+    public final ImageBitmap m277drawBorderCacheEMwLDEs(CacheDrawScope cacheDrawScope, long j, int i, Function1<? super DrawScope, Unit> function1) {
         int i2;
         ImageBitmap imageBitmap = this.imageBitmap;
         Canvas canvas = this.canvas;
-        ImageBitmapConfig m5503boximpl = imageBitmap != null ? ImageBitmapConfig.m5503boximpl(imageBitmap.mo5144getConfig_sVssgQ()) : null;
+        ImageBitmapConfig m5504boximpl = imageBitmap != null ? ImageBitmapConfig.m5504boximpl(imageBitmap.mo5145getConfig_sVssgQ()) : null;
         boolean z = false;
-        if (m5503boximpl == null ? false : ImageBitmapConfig.m5506equalsimpl0(m5503boximpl.m5509unboximpl(), ImageBitmapConfig.Companion.m5511getArgb8888_sVssgQ())) {
+        if (m5504boximpl == null ? false : ImageBitmapConfig.m5507equalsimpl0(m5504boximpl.m5510unboximpl(), ImageBitmapConfig.Companion.m5512getArgb8888_sVssgQ())) {
             i2 = i;
         } else {
             i2 = i;
         }
         z = true;
-        if (imageBitmap == null || canvas == null || Float.intBitsToFloat((int) (cacheDrawScope.m4819getSizeNHjbRc() >> 32)) > imageBitmap.getWidth() || Float.intBitsToFloat((int) (cacheDrawScope.m4819getSizeNHjbRc() & 4294967295L)) > imageBitmap.getHeight() || !z) {
-            imageBitmap = ImageBitmapKt.m5516ImageBitmapx__hDU$default((int) (j >> 32), (int) (j & 4294967295L), i2, false, null, 24, null);
+        if (imageBitmap == null || canvas == null || Float.intBitsToFloat((int) (cacheDrawScope.m4820getSizeNHjbRc() >> 32)) > imageBitmap.getWidth() || Float.intBitsToFloat((int) (cacheDrawScope.m4820getSizeNHjbRc() & 4294967295L)) > imageBitmap.getHeight() || !z) {
+            imageBitmap = ImageBitmapKt.m5517ImageBitmapx__hDU$default((int) (j >> 32), (int) (j & 4294967295L), i2, false, null, 24, null);
             this.imageBitmap = imageBitmap;
             canvas = androidx.compose.ui.graphics.CanvasKt.Canvas(imageBitmap);
             this.canvas = canvas;
@@ -135,29 +135,29 @@ final class BorderCache {
             canvasDrawScope = new CanvasDrawScope();
             this.canvasDrawScope = canvasDrawScope;
         }
-        long m8178toSizeozmzZPI = IntSizeKt.m8178toSizeozmzZPI(j);
+        long m8179toSizeozmzZPI = IntSizeKt.m8179toSizeozmzZPI(j);
         LayoutDirection layoutDirection = cacheDrawScope.getLayoutDirection();
         CanvasDrawScope.DrawParams drawParams = canvasDrawScope.getDrawParams();
         Density component1 = drawParams.component1();
         LayoutDirection component2 = drawParams.component2();
         Canvas component3 = drawParams.component3();
-        long m5775component4NHjbRc = drawParams.m5775component4NHjbRc();
+        long m5776component4NHjbRc = drawParams.m5776component4NHjbRc();
         CanvasDrawScope.DrawParams drawParams2 = canvasDrawScope.getDrawParams();
         drawParams2.setDensity(cacheDrawScope);
         drawParams2.setLayoutDirection(layoutDirection);
         drawParams2.setCanvas(canvas);
-        drawParams2.m5778setSizeuvyYCjk(m8178toSizeozmzZPI);
+        drawParams2.m5779setSizeuvyYCjk(m8179toSizeozmzZPI);
         canvas.save();
         CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
         ImageBitmap imageBitmap2 = imageBitmap;
-        DrawScope.m5852drawRectnJ9OG0$default(canvasDrawScope2, Color.Companion.m5305getBlack0d7_KjU(), 0L, m8178toSizeozmzZPI, 0.0f, null, null, BlendMode.Companion.m5193getClear0nO6VwU(), 58, null);
+        DrawScope.m5853drawRectnJ9OG0$default(canvasDrawScope2, Color.Companion.m5306getBlack0d7_KjU(), 0L, m8179toSizeozmzZPI, 0.0f, null, null, BlendMode.Companion.m5194getClear0nO6VwU(), 58, null);
         function1.invoke(canvasDrawScope2);
         canvas.restore();
         CanvasDrawScope.DrawParams drawParams3 = canvasDrawScope.getDrawParams();
         drawParams3.setDensity(component1);
         drawParams3.setLayoutDirection(component2);
         drawParams3.setCanvas(component3);
-        drawParams3.m5778setSizeuvyYCjk(m5775component4NHjbRc);
+        drawParams3.m5779setSizeuvyYCjk(m5776component4NHjbRc);
         imageBitmap2.prepareToDraw();
         return imageBitmap2;
     }

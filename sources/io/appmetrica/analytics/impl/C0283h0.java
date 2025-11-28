@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.text.TextUtils;
 import java.util.UUID;
 /* renamed from: io.appmetrica.analytics.impl.h0  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0283h0 implements uo {
     @Override // io.appmetrica.analytics.impl.uo
     public final so a(String str) {

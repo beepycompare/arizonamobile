@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.nh  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0453nh extends T5 {
     public final C0210e5 b;
     public final InterfaceC0428mh c;

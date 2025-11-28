@@ -55,12 +55,12 @@ public final class ImageVector {
     }
 
     /* renamed from: getDefaultWidth-D9Ej5fM  reason: not valid java name */
-    public final float m6012getDefaultWidthD9Ej5fM() {
+    public final float m6013getDefaultWidthD9Ej5fM() {
         return this.defaultWidth;
     }
 
     /* renamed from: getDefaultHeight-D9Ej5fM  reason: not valid java name */
-    public final float m6011getDefaultHeightD9Ej5fM() {
+    public final float m6012getDefaultHeightD9Ej5fM() {
         return this.defaultHeight;
     }
 
@@ -77,12 +77,12 @@ public final class ImageVector {
     }
 
     /* renamed from: getTintColor-0d7_KjU  reason: not valid java name */
-    public final long m6014getTintColor0d7_KjU() {
+    public final long m6015getTintColor0d7_KjU() {
         return this.tintColor;
     }
 
     /* renamed from: getTintBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m6013getTintBlendMode0nO6VwU() {
+    public final int m6014getTintBlendMode0nO6VwU() {
         return this.tintBlendMode;
     }
 
@@ -141,11 +141,11 @@ public final class ImageVector {
         }
 
         public /* synthetic */ Builder(String str, float f, float f2, float f3, float f4, long j, int i, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i2 & 1) != 0 ? "" : str, f, f2, f3, f4, (i2 & 32) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j, (i2 & 64) != 0 ? BlendMode.Companion.m5218getSrcIn0nO6VwU() : i, (i2 & 128) != 0 ? false : z, (DefaultConstructorMarker) null);
+            this((i2 & 1) != 0 ? "" : str, f, f2, f3, f4, (i2 & 32) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j, (i2 & 64) != 0 ? BlendMode.Companion.m5219getSrcIn0nO6VwU() : i, (i2 & 128) != 0 ? false : z, (DefaultConstructorMarker) null);
         }
 
         public /* synthetic */ Builder(String str, float f, float f2, float f3, float f4, long j, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i2 & 1) != 0 ? "" : str, f, f2, f3, f4, (i2 & 32) != 0 ? Color.Companion.m5315getUnspecified0d7_KjU() : j, (i2 & 64) != 0 ? BlendMode.Companion.m5218getSrcIn0nO6VwU() : i, (DefaultConstructorMarker) null);
+            this((i2 & 1) != 0 ? "" : str, f, f2, f3, f4, (i2 & 32) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j, (i2 & 64) != 0 ? BlendMode.Companion.m5219getSrcIn0nO6VwU() : i, (DefaultConstructorMarker) null);
         }
 
         private Builder(String str, float f, float f2, float f3, float f4, long j, int i) {
@@ -205,7 +205,7 @@ public final class ImageVector {
         }
 
         /* renamed from: addPath-oIyEayM  reason: not valid java name */
-        public final Builder m6016addPathoIyEayM(List<? extends PathNode> list, int i, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i2, int i3, float f4, float f5, float f6, float f7) {
+        public final Builder m6017addPathoIyEayM(List<? extends PathNode> list, int i, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i2, int i3, float f4, float f5, float f6, float f7) {
             ensureNotConsumed();
             getCurrentGroup().getChildren().add(new VectorPath(str, list, i, brush, f, brush2, f2, f3, i2, i3, f4, f5, f6, f7, null));
             return this;
@@ -384,12 +384,12 @@ public final class ImageVector {
         }
         if (obj instanceof ImageVector) {
             ImageVector imageVector = (ImageVector) obj;
-            return Intrinsics.areEqual(this.name, imageVector.name) && Dp.m8000equalsimpl0(this.defaultWidth, imageVector.defaultWidth) && Dp.m8000equalsimpl0(this.defaultHeight, imageVector.defaultHeight) && this.viewportWidth == imageVector.viewportWidth && this.viewportHeight == imageVector.viewportHeight && Intrinsics.areEqual(this.root, imageVector.root) && Color.m5280equalsimpl0(this.tintColor, imageVector.tintColor) && BlendMode.m5189equalsimpl0(this.tintBlendMode, imageVector.tintBlendMode) && this.autoMirror == imageVector.autoMirror;
+            return Intrinsics.areEqual(this.name, imageVector.name) && Dp.m8001equalsimpl0(this.defaultWidth, imageVector.defaultWidth) && Dp.m8001equalsimpl0(this.defaultHeight, imageVector.defaultHeight) && this.viewportWidth == imageVector.viewportWidth && this.viewportHeight == imageVector.viewportHeight && Intrinsics.areEqual(this.root, imageVector.root) && Color.m5281equalsimpl0(this.tintColor, imageVector.tintColor) && BlendMode.m5190equalsimpl0(this.tintBlendMode, imageVector.tintBlendMode) && this.autoMirror == imageVector.autoMirror;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((this.name.hashCode() * 31) + Dp.m8001hashCodeimpl(this.defaultWidth)) * 31) + Dp.m8001hashCodeimpl(this.defaultHeight)) * 31) + Float.hashCode(this.viewportWidth)) * 31) + Float.hashCode(this.viewportHeight)) * 31) + this.root.hashCode()) * 31) + Color.m5286hashCodeimpl(this.tintColor)) * 31) + BlendMode.m5190hashCodeimpl(this.tintBlendMode)) * 31) + Boolean.hashCode(this.autoMirror);
+        return (((((((((((((((this.name.hashCode() * 31) + Dp.m8002hashCodeimpl(this.defaultWidth)) * 31) + Dp.m8002hashCodeimpl(this.defaultHeight)) * 31) + Float.hashCode(this.viewportWidth)) * 31) + Float.hashCode(this.viewportHeight)) * 31) + this.root.hashCode()) * 31) + Color.m5287hashCodeimpl(this.tintColor)) * 31) + BlendMode.m5191hashCodeimpl(this.tintBlendMode)) * 31) + Boolean.hashCode(this.autoMirror);
     }
 }

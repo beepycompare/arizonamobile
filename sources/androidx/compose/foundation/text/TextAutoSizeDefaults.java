@@ -15,12 +15,12 @@ public final class TextAutoSizeDefaults {
     }
 
     /* renamed from: getMinFontSize-XSAIIZE  reason: not valid java name */
-    public final long m1340getMinFontSizeXSAIIZE() {
+    public final long m1341getMinFontSizeXSAIIZE() {
         return MinFontSize;
     }
 
     /* renamed from: getMaxFontSize-XSAIIZE  reason: not valid java name */
-    public final long m1339getMaxFontSizeXSAIIZE() {
+    public final long m1340getMaxFontSizeXSAIIZE() {
         return MaxFontSize;
     }
 }

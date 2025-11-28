@@ -31,10 +31,10 @@ public final class RoundedParallelogramLeftShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo332createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
-        float mo429toPx0680j_4 = density.mo429toPx0680j_4(this.cornerRadius);
+        float mo430toPx0680j_4 = density.mo430toPx0680j_4(this.cornerRadius);
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         float f = this.skewX * intBitsToFloat2;
@@ -43,22 +43,22 @@ public final class RoundedParallelogramLeftShape implements Shape {
         float f3 = degrees + 90.0f;
         Path Path = AndroidPath_androidKt.Path();
         Path.reset();
-        long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
-        long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat - f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
-        long m5027constructorimpl3 = Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L));
-        long m5027constructorimpl4 = Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
-        int i = (int) (m5027constructorimpl >> 32);
-        int i2 = (int) (m5027constructorimpl & 4294967295L);
-        Path.moveTo(Float.intBitsToFloat(i) + mo429toPx0680j_4, Float.intBitsToFloat(i2));
-        int i3 = (int) (m5027constructorimpl2 >> 32);
-        float f4 = 2 * mo429toPx0680j_4;
-        int i4 = (int) (m5027constructorimpl2 & 4294967295L);
+        long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+        long m5028constructorimpl2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat - f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+        long m5028constructorimpl3 = Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L));
+        long m5028constructorimpl4 = Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        int i = (int) (m5028constructorimpl >> 32);
+        int i2 = (int) (m5028constructorimpl & 4294967295L);
+        Path.moveTo(Float.intBitsToFloat(i) + mo430toPx0680j_4, Float.intBitsToFloat(i2));
+        int i3 = (int) (m5028constructorimpl2 >> 32);
+        float f4 = 2 * mo430toPx0680j_4;
+        int i4 = (int) (m5028constructorimpl2 & 4294967295L);
         Path.arcTo(new Rect(Float.intBitsToFloat(i3) - f4, Float.intBitsToFloat(i4), Float.intBitsToFloat(i3), Float.intBitsToFloat(i4) + f4), -90.0f, f2, false);
-        int i5 = (int) (m5027constructorimpl3 >> 32);
-        int i6 = (int) (m5027constructorimpl3 & 4294967295L);
+        int i5 = (int) (m5028constructorimpl3 >> 32);
+        int i6 = (int) (m5028constructorimpl3 & 4294967295L);
         Path.arcTo(new Rect(Float.intBitsToFloat(i5) - f4, Float.intBitsToFloat(i6) - f4, Float.intBitsToFloat(i5), Float.intBitsToFloat(i6)), 0.0f - degrees, f3, false);
-        int i7 = (int) (m5027constructorimpl4 >> 32);
-        int i8 = (int) (m5027constructorimpl4 & 4294967295L);
+        int i7 = (int) (m5028constructorimpl4 >> 32);
+        int i8 = (int) (m5028constructorimpl4 & 4294967295L);
         Path.arcTo(new Rect(Float.intBitsToFloat(i7), Float.intBitsToFloat(i8) - f4, Float.intBitsToFloat(i7) + f4, Float.intBitsToFloat(i8)), 90.0f, f2, false);
         Path.arcTo(new Rect(Float.intBitsToFloat(i), Float.intBitsToFloat(i2), Float.intBitsToFloat(i) + f4, Float.intBitsToFloat(i2) + f4), 180.0f - degrees, f3, false);
         Path.close();
@@ -66,6 +66,6 @@ public final class RoundedParallelogramLeftShape implements Shape {
     }
 
     public /* synthetic */ RoundedParallelogramLeftShape(float f, float f2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7995constructorimpl(8) : f, (i & 2) != 0 ? 0.45f : f2, null);
+        this((i & 1) != 0 ? Dp.m7996constructorimpl(8) : f, (i & 2) != 0 ? 0.45f : f2, null);
     }
 }

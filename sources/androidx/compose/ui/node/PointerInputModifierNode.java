@@ -14,7 +14,7 @@ public interface PointerInputModifierNode extends DelegatableNode {
     void onCancelPointerInput();
 
     /* renamed from: onPointerEvent-H0pRuoY */
-    void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j);
+    void mo238onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j);
 
     default boolean sharePointerInputWithSiblings() {
         return false;
@@ -30,7 +30,7 @@ public interface PointerInputModifierNode extends DelegatableNode {
     }
 
     /* renamed from: getTouchBoundsExpansion-RZrCHBk */
-    default long mo1431getTouchBoundsExpansionRZrCHBk() {
-        return TouchBoundsExpansion.Companion.m7085getNoneRZrCHBk();
+    default long mo1432getTouchBoundsExpansionRZrCHBk() {
+        return TouchBoundsExpansion.Companion.m7086getNoneRZrCHBk();
     }
 }

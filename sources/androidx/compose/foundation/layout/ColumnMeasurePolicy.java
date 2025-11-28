@@ -107,36 +107,36 @@ public final class ColumnMeasurePolicy implements MeasurePolicy, RowColumnMeasur
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy
     /* renamed from: createConstraints-xF2OJ5Q  reason: not valid java name */
-    public long mo736createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+    public long mo737createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
         return ColumnKt.createColumnConstraints(z, i, i2, i3, i4);
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         MeasureResult measure;
-        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m7949getMinHeightimpl(j), Constraints.m7950getMinWidthimpl(j), Constraints.m7947getMaxHeightimpl(j), Constraints.m7948getMaxWidthimpl(j), measureScope.mo423roundToPx0680j_4(this.verticalArrangement.mo708getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
+        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m7950getMinHeightimpl(j), Constraints.m7951getMinWidthimpl(j), Constraints.m7948getMaxHeightimpl(j), Constraints.m7949getMaxWidthimpl(j), measureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
         return measure;
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinWidth(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.verticalArrangement.mo708getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinWidth(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinHeight(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.verticalArrangement.mo708getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinHeight(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxWidth(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.verticalArrangement.mo708getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxWidth(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxHeight(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.verticalArrangement.mo708getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxHeight(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

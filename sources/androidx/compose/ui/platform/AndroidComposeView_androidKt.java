@@ -27,8 +27,8 @@ public final class AndroidComposeView_androidKt {
     }
 
     /* renamed from: access$preTranslate-cG2Xzmc */
-    public static final /* synthetic */ void m7108access$preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
-        m7111preTranslatecG2Xzmc(fArr, f, f2, fArr2);
+    public static final /* synthetic */ void m7109access$preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
+        m7112preTranslatecG2Xzmc(fArr, f, f2, fArr2);
     }
 
     public static final Function1<PlatformTextInputService, PlatformTextInputService> getPlatformTextInputServiceInterceptor() {
@@ -40,46 +40,46 @@ public final class AndroidComposeView_androidKt {
     }
 
     /* renamed from: preTransform-JiSxe2E */
-    public static final void m7110preTransformJiSxe2E(float[] fArr, float[] fArr2) {
-        float m7109dotp89u6pk = m7109dotp89u6pk(fArr2, 0, fArr, 0);
-        float m7109dotp89u6pk2 = m7109dotp89u6pk(fArr2, 0, fArr, 1);
-        float m7109dotp89u6pk3 = m7109dotp89u6pk(fArr2, 0, fArr, 2);
-        float m7109dotp89u6pk4 = m7109dotp89u6pk(fArr2, 0, fArr, 3);
-        float m7109dotp89u6pk5 = m7109dotp89u6pk(fArr2, 1, fArr, 0);
-        float m7109dotp89u6pk6 = m7109dotp89u6pk(fArr2, 1, fArr, 1);
-        float m7109dotp89u6pk7 = m7109dotp89u6pk(fArr2, 1, fArr, 2);
-        float m7109dotp89u6pk8 = m7109dotp89u6pk(fArr2, 1, fArr, 3);
-        float m7109dotp89u6pk9 = m7109dotp89u6pk(fArr2, 2, fArr, 0);
-        float m7109dotp89u6pk10 = m7109dotp89u6pk(fArr2, 2, fArr, 1);
-        float m7109dotp89u6pk11 = m7109dotp89u6pk(fArr2, 2, fArr, 2);
-        float m7109dotp89u6pk12 = m7109dotp89u6pk(fArr2, 2, fArr, 3);
-        float m7109dotp89u6pk13 = m7109dotp89u6pk(fArr2, 3, fArr, 0);
-        float m7109dotp89u6pk14 = m7109dotp89u6pk(fArr2, 3, fArr, 1);
-        float m7109dotp89u6pk15 = m7109dotp89u6pk(fArr2, 3, fArr, 2);
-        float m7109dotp89u6pk16 = m7109dotp89u6pk(fArr2, 3, fArr, 3);
-        fArr[0] = m7109dotp89u6pk;
-        fArr[1] = m7109dotp89u6pk2;
-        fArr[2] = m7109dotp89u6pk3;
-        fArr[3] = m7109dotp89u6pk4;
-        fArr[4] = m7109dotp89u6pk5;
-        fArr[5] = m7109dotp89u6pk6;
-        fArr[6] = m7109dotp89u6pk7;
-        fArr[7] = m7109dotp89u6pk8;
-        fArr[8] = m7109dotp89u6pk9;
-        fArr[9] = m7109dotp89u6pk10;
-        fArr[10] = m7109dotp89u6pk11;
-        fArr[11] = m7109dotp89u6pk12;
-        fArr[12] = m7109dotp89u6pk13;
-        fArr[13] = m7109dotp89u6pk14;
-        fArr[14] = m7109dotp89u6pk15;
-        fArr[15] = m7109dotp89u6pk16;
+    public static final void m7111preTransformJiSxe2E(float[] fArr, float[] fArr2) {
+        float m7110dotp89u6pk = m7110dotp89u6pk(fArr2, 0, fArr, 0);
+        float m7110dotp89u6pk2 = m7110dotp89u6pk(fArr2, 0, fArr, 1);
+        float m7110dotp89u6pk3 = m7110dotp89u6pk(fArr2, 0, fArr, 2);
+        float m7110dotp89u6pk4 = m7110dotp89u6pk(fArr2, 0, fArr, 3);
+        float m7110dotp89u6pk5 = m7110dotp89u6pk(fArr2, 1, fArr, 0);
+        float m7110dotp89u6pk6 = m7110dotp89u6pk(fArr2, 1, fArr, 1);
+        float m7110dotp89u6pk7 = m7110dotp89u6pk(fArr2, 1, fArr, 2);
+        float m7110dotp89u6pk8 = m7110dotp89u6pk(fArr2, 1, fArr, 3);
+        float m7110dotp89u6pk9 = m7110dotp89u6pk(fArr2, 2, fArr, 0);
+        float m7110dotp89u6pk10 = m7110dotp89u6pk(fArr2, 2, fArr, 1);
+        float m7110dotp89u6pk11 = m7110dotp89u6pk(fArr2, 2, fArr, 2);
+        float m7110dotp89u6pk12 = m7110dotp89u6pk(fArr2, 2, fArr, 3);
+        float m7110dotp89u6pk13 = m7110dotp89u6pk(fArr2, 3, fArr, 0);
+        float m7110dotp89u6pk14 = m7110dotp89u6pk(fArr2, 3, fArr, 1);
+        float m7110dotp89u6pk15 = m7110dotp89u6pk(fArr2, 3, fArr, 2);
+        float m7110dotp89u6pk16 = m7110dotp89u6pk(fArr2, 3, fArr, 3);
+        fArr[0] = m7110dotp89u6pk;
+        fArr[1] = m7110dotp89u6pk2;
+        fArr[2] = m7110dotp89u6pk3;
+        fArr[3] = m7110dotp89u6pk4;
+        fArr[4] = m7110dotp89u6pk5;
+        fArr[5] = m7110dotp89u6pk6;
+        fArr[6] = m7110dotp89u6pk7;
+        fArr[7] = m7110dotp89u6pk8;
+        fArr[8] = m7110dotp89u6pk9;
+        fArr[9] = m7110dotp89u6pk10;
+        fArr[10] = m7110dotp89u6pk11;
+        fArr[11] = m7110dotp89u6pk12;
+        fArr[12] = m7110dotp89u6pk13;
+        fArr[13] = m7110dotp89u6pk14;
+        fArr[14] = m7110dotp89u6pk15;
+        fArr[15] = m7110dotp89u6pk16;
     }
 
     /* renamed from: preTranslate-cG2Xzmc */
-    public static final void m7111preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
-        Matrix.m5530resetimpl(fArr2);
-        Matrix.m5543translateimpl$default(fArr2, f, f2, 0.0f, 4, null);
-        m7110preTransformJiSxe2E(fArr, fArr2);
+    public static final void m7112preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
+        Matrix.m5531resetimpl(fArr2);
+        Matrix.m5544translateimpl$default(fArr2, f, f2, 0.0f, 4, null);
+        m7111preTransformJiSxe2E(fArr, fArr2);
     }
 
     public static final boolean containsDescendant(View view, View view2) {
@@ -100,7 +100,7 @@ public final class AndroidComposeView_androidKt {
     }
 
     /* renamed from: dot-p89u6pk */
-    private static final float m7109dotp89u6pk(float[] fArr, int i, float[] fArr2, int i2) {
+    private static final float m7110dotp89u6pk(float[] fArr, int i, float[] fArr2, int i2) {
         int i3 = i * 4;
         return (fArr[i3] * fArr2[i2]) + (fArr[i3 + 1] * fArr2[4 + i2]) + (fArr[i3 + 2] * fArr2[8 + i2]) + (fArr[i3 + 3] * fArr2[12 + i2]);
     }

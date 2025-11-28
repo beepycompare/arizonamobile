@@ -21,33 +21,33 @@ final class DpLazyLayoutCacheWindow implements LazyLayoutCacheWindow {
     }
 
     /* renamed from: getAhead-D9Ej5fM  reason: not valid java name */
-    public final float m1017getAheadD9Ej5fM() {
+    public final float m1018getAheadD9Ej5fM() {
         return this.ahead;
     }
 
     /* renamed from: getBehind-D9Ej5fM  reason: not valid java name */
-    public final float m1018getBehindD9Ej5fM() {
+    public final float m1019getBehindD9Ej5fM() {
         return this.behind;
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow
     public int calculateAheadWindow(Density density, int i) {
-        return density.mo423roundToPx0680j_4(this.ahead);
+        return density.mo424roundToPx0680j_4(this.ahead);
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow
     public int calculateBehindWindow(Density density, int i) {
-        return density.mo423roundToPx0680j_4(this.behind);
+        return density.mo424roundToPx0680j_4(this.behind);
     }
 
     public int hashCode() {
-        return (Dp.m8001hashCodeimpl(this.ahead) * 31) + Dp.m8001hashCodeimpl(this.behind);
+        return (Dp.m8002hashCodeimpl(this.ahead) * 31) + Dp.m8002hashCodeimpl(this.behind);
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof DpLazyLayoutCacheWindow) {
             DpLazyLayoutCacheWindow dpLazyLayoutCacheWindow = (DpLazyLayoutCacheWindow) obj;
-            if (Dp.m8000equalsimpl0(dpLazyLayoutCacheWindow.ahead, this.ahead) && Dp.m8000equalsimpl0(dpLazyLayoutCacheWindow.behind, this.behind)) {
+            if (Dp.m8001equalsimpl0(dpLazyLayoutCacheWindow.ahead, this.ahead) && Dp.m8001equalsimpl0(dpLazyLayoutCacheWindow.behind, this.behind)) {
                 return true;
             }
         }

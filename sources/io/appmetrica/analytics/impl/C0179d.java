@@ -4,7 +4,7 @@ import android.os.Debug;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 /* renamed from: io.appmetrica.analytics.impl.d  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0179d extends Thread {
 
     /* renamed from: a  reason: collision with root package name */

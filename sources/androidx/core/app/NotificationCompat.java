@@ -3487,7 +3487,7 @@ public class NotificationCompat {
             }
 
             /* renamed from: clone */
-            public WearableExtender m8482clone() {
+            public WearableExtender m8483clone() {
                 WearableExtender wearableExtender = new WearableExtender();
                 wearableExtender.mFlags = this.mFlags;
                 wearableExtender.mInProgressLabel = this.mInProgressLabel;
@@ -3766,7 +3766,7 @@ public class NotificationCompat {
         }
 
         /* renamed from: clone */
-        public WearableExtender m8483clone() {
+        public WearableExtender m8484clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;

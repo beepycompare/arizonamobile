@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.lf  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0401lf implements F5 {
     @Override // kotlin.jvm.functions.Function1
     /* renamed from: a */

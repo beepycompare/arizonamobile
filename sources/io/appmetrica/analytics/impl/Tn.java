@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.text.TextUtils;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Tn implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */

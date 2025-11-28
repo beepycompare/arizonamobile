@@ -7,7 +7,7 @@ import kotlin.DeprecationLevel;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PickVisualMediaRequest.kt */
-@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0007\u001a\u001c\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u0005H\u0007\u001a.\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t\u001a:\u0010\u0000\u001a\u00020\u00012\b\u0010\f\u001a\u0004\u0018\u00010\r2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\tH\u0007\u001aB\u0010\u0000\u001a\u00020\u00012\b\u0010\f\u001a\u0004\u0018\u00010\r2\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\tH\u0007¨\u0006\u000e"}, d2 = {"PickVisualMediaRequest", "Landroidx/activity/result/PickVisualMediaRequest;", "mediaType", "Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;", "maxItems", "", "isOrderedSelection", "", "defaultTab", "Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$DefaultTab;", "accentColor", "", "mediaCapabilitiesForTranscoding", "Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$MediaCapabilities;", "activity_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0007\u001a\u001c\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u0005H\u0007\u001a.\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t\u001a:\u0010\u0000\u001a\u00020\u00012\b\u0010\f\u001a\u0004\u0018\u00010\r2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\tH\u0007\u001aB\u0010\u0000\u001a\u00020\u00012\b\u0010\f\u001a\u0004\u0018\u00010\r2\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\tH\u0007¨\u0006\u000e"}, d2 = {"PickVisualMediaRequest", "Landroidx/activity/result/PickVisualMediaRequest;", "mediaType", "Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;", "maxItems", "", "isOrderedSelection", "", "defaultTab", "Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$DefaultTab;", "accentColor", "", "mediaCapabilitiesForTranscoding", "Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$MediaCapabilities;", "activity"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PickVisualMediaRequestKt {
     public static /* synthetic */ PickVisualMediaRequest PickVisualMediaRequest$default(ActivityResultContracts.PickVisualMedia.VisualMediaType visualMediaType, int i, Object obj) {
@@ -28,7 +28,7 @@ public final class PickVisualMediaRequestKt {
             visualMediaType = ActivityResultContracts.PickVisualMedia.ImageAndVideo.INSTANCE;
         }
         if ((i2 & 2) != 0) {
-            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity_release();
+            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity();
         }
         return PickVisualMediaRequest(visualMediaType, i);
     }
@@ -44,7 +44,7 @@ public final class PickVisualMediaRequestKt {
             visualMediaType = ActivityResultContracts.PickVisualMedia.ImageAndVideo.INSTANCE;
         }
         if ((i2 & 2) != 0) {
-            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity_release();
+            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity();
         }
         if ((i2 & 4) != 0) {
             z = false;
@@ -67,7 +67,7 @@ public final class PickVisualMediaRequestKt {
         }
         ActivityResultContracts.PickVisualMedia.VisualMediaType visualMediaType2 = visualMediaType;
         if ((i2 & 4) != 0) {
-            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity_release();
+            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity();
         }
         int i3 = i;
         if ((i2 & 8) != 0) {
@@ -91,7 +91,7 @@ public final class PickVisualMediaRequestKt {
             visualMediaType = ActivityResultContracts.PickVisualMedia.ImageAndVideo.INSTANCE;
         }
         if ((i2 & 4) != 0) {
-            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity_release();
+            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity();
         }
         if ((i2 & 8) != 0) {
             z = false;
@@ -114,7 +114,7 @@ public final class PickVisualMediaRequestKt {
         }
         ActivityResultContracts.PickVisualMedia.VisualMediaType visualMediaType2 = visualMediaType;
         if ((i2 & 8) != 0) {
-            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity_release();
+            i = ActivityResultContracts.PickMultipleVisualMedia.Companion.getMaxItems$activity();
         }
         int i3 = i;
         if ((i2 & 16) != 0) {

@@ -135,7 +135,7 @@ public final class SubcomposeContentPainterElement extends ModifierNodeElement<S
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(SubcomposeContentPainterNode subcomposeContentPainterNode) {
-        boolean m5100equalsimpl0 = Size.m5100equalsimpl0(subcomposeContentPainterNode.getPainter().mo5978getIntrinsicSizeNHjbRc(), this.painter.mo5978getIntrinsicSizeNHjbRc());
+        boolean m5101equalsimpl0 = Size.m5101equalsimpl0(subcomposeContentPainterNode.getPainter().mo5979getIntrinsicSizeNHjbRc(), this.painter.mo5979getIntrinsicSizeNHjbRc());
         subcomposeContentPainterNode.setPainter(this.painter);
         subcomposeContentPainterNode.setAlignment(this.alignment);
         subcomposeContentPainterNode.setContentScale(this.contentScale);
@@ -146,7 +146,7 @@ public final class SubcomposeContentPainterElement extends ModifierNodeElement<S
             subcomposeContentPainterNode.setContentDescription(this.contentDescription);
             SemanticsModifierNodeKt.invalidateSemantics(subcomposeContentPainterNode);
         }
-        if (!m5100equalsimpl0) {
+        if (!m5101equalsimpl0) {
             LayoutModifierNodeKt.invalidateMeasurement(subcomposeContentPainterNode);
         }
         DrawModifierNodeKt.invalidateDraw(subcomposeContentPainterNode);

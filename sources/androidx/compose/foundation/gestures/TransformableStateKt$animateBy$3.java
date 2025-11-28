@@ -85,7 +85,7 @@ public final class TransformableStateKt$animateBy$3 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Type inference failed for: r7v1, types: [T, java.lang.Object] */
     public static final Unit invokeSuspend$lambda$0(Ref.ObjectRef objectRef, TransformScope transformScope, AnimationScope animationScope) {
-        transformScope.mo474transformByd4ec7I(((AnimationData) objectRef.element).getZoom() == 0.0f ? 1.0f : ((AnimationData) animationScope.getValue()).getZoom() / ((AnimationData) objectRef.element).getZoom(), Offset.m5039minusMKHz9U(((AnimationData) animationScope.getValue()).m461getOffsetF1C5BW0(), ((AnimationData) objectRef.element).m461getOffsetF1C5BW0()), ((AnimationData) animationScope.getValue()).getDegrees() - ((AnimationData) objectRef.element).getDegrees());
+        transformScope.mo475transformByd4ec7I(((AnimationData) objectRef.element).getZoom() == 0.0f ? 1.0f : ((AnimationData) animationScope.getValue()).getZoom() / ((AnimationData) objectRef.element).getZoom(), Offset.m5040minusMKHz9U(((AnimationData) animationScope.getValue()).m462getOffsetF1C5BW0(), ((AnimationData) objectRef.element).m462getOffsetF1C5BW0()), ((AnimationData) animationScope.getValue()).getDegrees() - ((AnimationData) objectRef.element).getDegrees());
         objectRef.element = animationScope.getValue();
         return Unit.INSTANCE;
     }

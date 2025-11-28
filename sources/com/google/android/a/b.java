@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: BaseStub.java */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class b extends Binder implements IInterface {
     /* JADX INFO: Access modifiers changed from: protected */
     public b() {

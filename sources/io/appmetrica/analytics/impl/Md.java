@@ -7,7 +7,7 @@ import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import kotlin.io.ByteStreamsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Md implements Function {
 
     /* renamed from: a  reason: collision with root package name */

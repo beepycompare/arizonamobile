@@ -41,7 +41,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Composition.kt */
-@Metadata(d1 = {"\u0000®\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\"\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0010\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006B'\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\n\u0010\t\u001a\u0006\u0012\u0002\b\u00030\n\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f¢\u0006\u0004\b\r\u0010\u000eJ \u0010g\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010aJ \u0010i\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010aJ \u0010j\u001a\u00020k2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010lJ \u0010m\u001a\u00020k2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010lJ\u001d\u0010n\u001a\u00020\\2\u000e\u0010o\u001a\n\u0012\u0004\u0012\u00020q\u0018\u00010pH\u0000¢\u0006\u0002\brJ \u0010s\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0002¢\u0006\u0002\u0010aJ(\u0010t\u001a\u00020k2\u0006\u0010u\u001a\u00020<2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0002¢\u0006\u0002\u0010vJ \u0010w\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0002¢\u0006\u0002\u0010aJ\b\u0010x\u001a\u00020\\H\u0002J\b\u0010y\u001a\u00020<H\u0002J\u0010\u0010z\u001a\u00020{2\u0006\u0010|\u001a\u00020}H\u0016J\u000e\u0010~\u001a\u00020\\2\u0006\u0010\u007f\u001a\u00020HJ\t\u0010\u0080\u0001\u001a\u00020\\H\u0002J\t\u0010\u0081\u0001\u001a\u00020\\H\u0002J\t\u0010\u0082\u0001\u001a\u00020\\H\u0002J!\u0010\u0083\u0001\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010aJ\u000f\u0010\u0084\u0001\u001a\u00020\\H\u0000¢\u0006\u0003\b\u0085\u0001J\t\u0010\u0086\u0001\u001a\u00020\\H\u0016J\u0018\u0010\u0089\u0001\u001a\u00020\\2\r\u0010\u008a\u0001\u001a\b\u0012\u0004\u0012\u00020\u00130(H\u0016J\u0018\u0010\u008b\u0001\u001a\u00020<2\r\u0010\u008a\u0001\u001a\b\u0012\u0004\u0012\u00020\u00130(H\u0016J\u0018\u0010\u008c\u0001\u001a\u00020\\2\r\u0010\u008d\u0001\u001a\b\u0012\u0004\u0012\u00020\\0[H\u0016J,\u0010\u008e\u0001\u001a\u0015\u0012\u0011\u0012\u000f\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130\u008f\u0001032\b\u0010\u0090\u0001\u001a\u00030\u0091\u0001H\u0000¢\u0006\u0003\b\u0092\u0001J\u001b\u0010\u0093\u0001\u001a\u00020\\2\u0007\u0010\u0094\u0001\u001a\u00020\u00132\u0007\u0010\u0095\u0001\u001a\u00020<H\u0002J!\u0010\u0093\u0001\u001a\u00020\\2\r\u0010\u008a\u0001\u001a\b\u0012\u0004\u0012\u00020\u00130(2\u0007\u0010\u0095\u0001\u001a\u00020<H\u0002J\t\u0010\u0096\u0001\u001a\u00020\\H\u0002J\u0012\u0010\u0097\u0001\u001a\u00020\\2\u0007\u0010\u0094\u0001\u001a\u00020\u0013H\u0016J\u0012\u0010\u0098\u0001\u001a\u00020\\2\u0007\u0010\u0094\u0001\u001a\u00020\u0013H\u0002J\u0012\u0010\u0099\u0001\u001a\u00020\\2\u0007\u0010\u0094\u0001\u001a\u00020\u0013H\u0016J\t\u0010\u009a\u0001\u001a\u00020<H\u0016J)\u0010\u009b\u0001\u001a\u00020\\2\u001e\u0010\u009c\u0001\u001a\u0019\u0012\u0015\u0012\u0013\u0012\u0005\u0012\u00030\u009d\u0001\u0012\u0007\u0012\u0005\u0018\u00010\u009d\u00010\u008f\u000103H\u0016J\u0012\u0010\u009e\u0001\u001a\u00020\\2\u0007\u0010W\u001a\u00030\u009f\u0001H\u0016J\u0011\u0010 \u0001\u001a\u00020\\2\u0006\u00106\u001a\u000207H\u0002J\t\u0010¡\u0001\u001a\u00020\\H\u0016J\t\u0010¢\u0001\u001a\u00020\\H\u0016J\t\u0010£\u0001\u001a\u00020\\H\u0016JL\u0010¤\u0001\u001a\u0003H¥\u0001\"\u0005\b\u0000\u0010¥\u000122\u0010\u008d\u0001\u001a-\u0012!\u0012\u001f\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130$¢\u0006\u000e\b§\u0001\u0012\t\b¨\u0001\u0012\u0004\b\b(6\u0012\u0005\u0012\u0003H¥\u00010¦\u0001H\u0082\b¢\u0006\u0003\u0010©\u0001J(\u0010ª\u0001\u001a\u0003H¥\u0001\"\u0005\b\u0000\u0010¥\u00012\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u0003H¥\u00010[H\u0082\b¢\u0006\u0003\u0010«\u0001J\t\u0010¬\u0001\u001a\u00020\\H\u0016J\t\u0010\u00ad\u0001\u001a\u00020\\H\u0016J\t\u0010®\u0001\u001a\u00020\\H\u0016J;\u0010¯\u0001\u001a\u0003H°\u0001\"\u0005\b\u0000\u0010°\u00012\t\u0010±\u0001\u001a\u0004\u0018\u00010\u00012\u0007\u0010²\u0001\u001a\u00020H2\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u0003H°\u00010[H\u0016¢\u0006\u0003\u0010³\u0001J\u0015\u0010´\u0001\u001a\u0004\u0018\u00010C2\b\u0010B\u001a\u0004\u0018\u00010CH\u0016J\u001e\u0010µ\u0001\u001a\u00030¶\u00012\u0007\u0010·\u0001\u001a\u00020%2\t\u0010¸\u0001\u001a\u0004\u0018\u00010\u0013H\u0016J\u0012\u0010¹\u0001\u001a\u00020\\2\u0007\u0010·\u0001\u001a\u00020%H\u0016J)\u0010º\u0001\u001a\u0005\u0018\u0001H¥\u0001\"\u0005\b\u0000\u0010¥\u00012\u000e\u0010\u007f\u001a\n\u0012\u0005\u0012\u0003H¥\u00010»\u0001H\u0016¢\u0006\u0003\u0010¼\u0001J\u001d\u0010½\u0001\u001a\u00020<2\u0007\u0010·\u0001\u001a\u00020%2\t\u0010¸\u0001\u001a\u0004\u0018\u00010\u0013H\u0002J(\u0010¾\u0001\u001a\u00030¶\u00012\u0007\u0010·\u0001\u001a\u00020%2\b\u0010\u0090\u0001\u001a\u00030\u0091\u00012\t\u0010¸\u0001\u001a\u0004\u0018\u00010\u0013H\u0002J!\u0010¿\u0001\u001a\u00020\\2\u0007\u0010¸\u0001\u001a\u00020\u00132\u0007\u0010·\u0001\u001a\u00020%H\u0000¢\u0006\u0003\bÀ\u0001J\u001b\u0010Á\u0001\u001a\u00020\\2\n\u0010W\u001a\u0006\u0012\u0002\b\u00030/H\u0000¢\u0006\u0003\bÂ\u0001J\u001e\u0010Ã\u0001\u001a\u000e\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130$H\u0002¢\u0006\u0006\bÄ\u0001\u0010Å\u0001J\u0011\u0010Æ\u0001\u001a\u00020\\2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002J(\u0010Ç\u0001\u001a\u0003H¥\u0001\"\u0005\b\u0000\u0010¥\u00012\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u0003H¥\u00010[H\u0082\b¢\u0006\u0003\u0010«\u0001J\n\u0010|\u001a\u0004\u0018\u00010}H\u0002J\t\u0010È\u0001\u001a\u00020\\H\u0016J\u000f\u0010É\u0001\u001a\u00020HH\u0000¢\u0006\u0003\bÊ\u0001R\u0013\u0010\u0007\u001a\u00020\b8G¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0012\u0010\t\u001a\u0006\u0012\u0002\b\u00030\nX\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u0011\u001a\u0016\u0012\u0006\u0012\u0004\u0018\u00010\u00130\u0012j\n\u0012\u0006\u0012\u0004\u0018\u00010\u0013`\u0014X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0015R\u0014\u0010\u0016\u001a\u00060\u0013j\u0002`\u0017X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001e\u001a\u00020\u001fX\u0080\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b \u0010\u001d\u001a\u0004\b!\u0010\"R\u001c\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u001a\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00130(8AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020%0,X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020%0,X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010.\u001a\u0012\u0012\u0004\u0012\u00020\u0013\u0012\b\u0012\u0006\u0012\u0002\b\u00030/0$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u001a\u00100\u001a\b\u0012\u0004\u0012\u00020\u00130(8AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b1\u0010*R\u001a\u00102\u001a\b\u0012\u0004\u0012\u00020%038AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b4\u00105R\u000e\u00106\u001a\u000207X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000207X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u00109\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u001c\u0010:\u001a\u000e\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130$X\u0082\u000e¢\u0006\u0004\n\u0002\u0010&R \u0010;\u001a\u00020<X\u0080\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b=\u0010\u001d\u001a\u0004\b>\u0010?\"\u0004\b@\u0010AR\u0010\u0010B\u001a\u0004\u0018\u00010CX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010D\u001a\u0004\u0018\u00010EX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010F\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020HX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010I\u001a\u00020JX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bK\u0010LR\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010O\u001a\u00020PX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bQ\u0010RR\u0010\u0010S\u001a\u0004\u0018\u00010\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000b\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\bT\u0010UR\u0011\u0010V\u001a\u00020<¢\u0006\b\n\u0000\u001a\u0004\bV\u0010?R\u000e\u0010W\u001a\u00020HX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010X\u001a\u00020<8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bY\u0010?R'\u0010Z\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]X\u0086\u000e¢\u0006\u0010\n\u0002\u0010b\u001a\u0004\b^\u0010_\"\u0004\b`\u0010aR\u0014\u0010c\u001a\u00020<8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bc\u0010?R\u0014\u0010d\u001a\u00020<8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bd\u0010?R\u0014\u0010e\u001a\u00020<8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bf\u0010?R\u0016\u0010\u0087\u0001\u001a\u00020<8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b\u0088\u0001\u0010?¨\u0006Ë\u0001"}, d2 = {"Landroidx/compose/runtime/CompositionImpl;", "Landroidx/compose/runtime/ControlledComposition;", "Landroidx/compose/runtime/ReusableComposition;", "Landroidx/compose/runtime/RecomposeScopeOwner;", "Landroidx/compose/runtime/CompositionServices;", "Landroidx/compose/runtime/PausableComposition;", "Landroidx/compose/runtime/tooling/ObservableComposition;", "parent", "Landroidx/compose/runtime/CompositionContext;", "applier", "Landroidx/compose/runtime/Applier;", "recomposeContext", "Lkotlin/coroutines/CoroutineContext;", "<init>", "(Landroidx/compose/runtime/CompositionContext;Landroidx/compose/runtime/Applier;Lkotlin/coroutines/CoroutineContext;)V", "getParent", "()Landroidx/compose/runtime/CompositionContext;", "pendingModifications", "Ljava/util/concurrent/atomic/AtomicReference;", "", "Landroidx/compose/runtime/internal/AtomicReference;", "Ljava/util/concurrent/atomic/AtomicReference;", "lock", "Landroidx/compose/runtime/platform/SynchronizedObject;", "Ljava/lang/Object;", "abandonSet", "", "Landroidx/compose/runtime/RememberObserver;", "getAbandonSet$annotations", "()V", "slotTable", "Landroidx/compose/runtime/SlotTable;", "getSlotTable$runtime$annotations", "getSlotTable$runtime", "()Landroidx/compose/runtime/SlotTable;", "observations", "Landroidx/compose/runtime/collection/ScopeMap;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "Landroidx/collection/MutableScatterMap;", "observedObjects", "", "getObservedObjects$runtime", "()Ljava/util/Set;", "invalidatedScopes", "Landroidx/collection/MutableScatterSet;", "conditionallyInvalidatedScopes", "derivedStates", "Landroidx/compose/runtime/DerivedState;", "derivedStateDependencies", "getDerivedStateDependencies$runtime", "conditionalScopes", "", "getConditionalScopes$runtime", "()Ljava/util/List;", "changes", "Landroidx/compose/runtime/changelist/ChangeList;", "lateChanges", "observationsProcessed", "invalidations", "pendingInvalidScopes", "", "getPendingInvalidScopes$runtime$annotations", "getPendingInvalidScopes$runtime", "()Z", "setPendingInvalidScopes$runtime", "(Z)V", "shouldPause", "Landroidx/compose/runtime/ShouldPauseCallback;", "pendingPausedComposition", "Landroidx/compose/runtime/PausedCompositionImpl;", "invalidationDelegate", "invalidationDelegateGroup", "", "observerHolder", "Landroidx/compose/runtime/CompositionObserverHolder;", "getObserverHolder$runtime", "()Landroidx/compose/runtime/CompositionObserverHolder;", "rememberManager", "Landroidx/compose/runtime/internal/RememberEventDispatcher;", "composer", "Landroidx/compose/runtime/ComposerImpl;", "getComposer$runtime", "()Landroidx/compose/runtime/ComposerImpl;", "_recomposeContext", "getRecomposeContext", "()Lkotlin/coroutines/CoroutineContext;", "isRoot", RemoteConfigConstants.ResponseFieldKey.STATE, "areChildrenComposing", "getAreChildrenComposing", ComposeNavigator.NAME, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "getComposable", "()Lkotlin/jvm/functions/Function2;", "setComposable", "(Lkotlin/jvm/functions/Function2;)V", "Lkotlin/jvm/functions/Function2;", "isComposing", "isDisposed", "hasPendingChanges", "getHasPendingChanges", "setContent", FirebaseAnalytics.Param.CONTENT, "setContentWithReuse", "setPausableContent", "Landroidx/compose/runtime/PausedComposition;", "(Lkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/PausedComposition;", "setPausableContentWithReuse", "pausedCompositionFinished", "ignoreSet", "Landroidx/collection/ScatterSet;", "Landroidx/compose/runtime/RememberObserverHolder;", "pausedCompositionFinished$runtime", "composeInitial", "composeInitialPaused", "reusable", "(ZLkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/PausedComposition;", "composeInitialWithReuse", "ensureRunning", "clearDeactivated", "setObserver", "Landroidx/compose/runtime/tooling/CompositionObserverHandle;", "observer", "Landroidx/compose/runtime/tooling/CompositionObserver;", "invalidateGroupsWithKey", "key", "drainPendingModificationsForCompositionLocked", "drainPendingModificationsLocked", "drainPendingModificationsOutOfBandLocked", "composeContent", "updateMovingInvalidations", "updateMovingInvalidations$runtime", "dispose", "hasInvalidations", "getHasInvalidations", "recordModificationsOf", "values", "observesAnyOf", "prepareCompose", "block", "extractInvalidationsOf", "Lkotlin/Pair;", "anchor", "Landroidx/compose/runtime/Anchor;", "extractInvalidationsOf$runtime", "addPendingInvalidationsLocked", "value", "forgetConditionalScopes", "cleanUpDerivedStateObservations", "recordReadOf", "invalidateScopeOfLocked", "recordWriteOf", "recompose", "insertMovableContent", "references", "Landroidx/compose/runtime/MovableContentStateReference;", "disposeUnusedMovableContent", "Landroidx/compose/runtime/MovableContentState;", "applyChangesInLocked", "applyChanges", "applyLateChanges", "changesApplied", "guardInvalidationsLocked", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "(Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "guardChanges", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "abandonChanges", "invalidateAll", "verifyConsistent", "delegateInvalidations", "R", TypedValues.TransitionType.S_TO, "groupIndex", "(Landroidx/compose/runtime/ControlledComposition;ILkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "getAndSetShouldPauseCallback", "invalidate", "Landroidx/compose/runtime/InvalidationResult;", "scope", "instance", "recomposeScopeReleased", "getCompositionService", "Landroidx/compose/runtime/CompositionServiceKey;", "(Landroidx/compose/runtime/CompositionServiceKey;)Ljava/lang/Object;", "tryImminentInvalidation", "invalidateChecked", "removeObservation", "removeObservation$runtime", "removeDerivedStateObservation", "removeDerivedStateObservation$runtime", "takeInvalidations", "takeInvalidations-afanTW4", "()Landroidx/collection/MutableScatterMap;", "validateRecomposeScopeAnchors", "trackAbandonedValues", "deactivate", "composerStacksSizes", "composerStacksSizes$runtime", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000®\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\"\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0011\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006B'\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\n\u0010\t\u001a\u0006\u0012\u0002\b\u00030\n\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f¢\u0006\u0004\b\r\u0010\u000eJ \u0010g\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010aJ \u0010i\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010aJ \u0010j\u001a\u00020k2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010lJ \u0010m\u001a\u00020k2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010lJ\u001d\u0010n\u001a\u00020\\2\u000e\u0010o\u001a\n\u0012\u0004\u0012\u00020q\u0018\u00010pH\u0000¢\u0006\u0002\brJ \u0010s\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0002¢\u0006\u0002\u0010aJ(\u0010t\u001a\u00020k2\u0006\u0010u\u001a\u00020<2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0002¢\u0006\u0002\u0010vJ \u0010w\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0002¢\u0006\u0002\u0010aJ\b\u0010x\u001a\u00020\\H\u0002J\b\u0010y\u001a\u00020<H\u0002J\u0010\u0010z\u001a\u00020{2\u0006\u0010|\u001a\u00020}H\u0016J\u000e\u0010~\u001a\u00020\\2\u0006\u0010\u007f\u001a\u00020HJ\t\u0010\u0080\u0001\u001a\u00020\\H\u0002J\t\u0010\u0081\u0001\u001a\u00020\\H\u0002J\t\u0010\u0082\u0001\u001a\u00020\\H\u0002J!\u0010\u0083\u0001\u001a\u00020\\2\u0011\u0010h\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]H\u0016¢\u0006\u0002\u0010aJ\u000f\u0010\u0084\u0001\u001a\u00020\\H\u0000¢\u0006\u0003\b\u0085\u0001J\t\u0010\u0086\u0001\u001a\u00020\\H\u0016J\u0018\u0010\u0089\u0001\u001a\u00020\\2\r\u0010\u008a\u0001\u001a\b\u0012\u0004\u0012\u00020\u00130(H\u0016J\u0018\u0010\u008b\u0001\u001a\u00020<2\r\u0010\u008a\u0001\u001a\b\u0012\u0004\u0012\u00020\u00130(H\u0016J\u0018\u0010\u008c\u0001\u001a\u00020\\2\r\u0010\u008d\u0001\u001a\b\u0012\u0004\u0012\u00020\\0[H\u0016J:\u0010\u008e\u0001\u001a\u0015\u0012\u0011\u0012\u000f\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130\u008f\u0001032\u0015\u0010\u0090\u0001\u001a\u0010\u0012\u0005\u0012\u00030\u0092\u0001\u0012\u0004\u0012\u00020<0\u0091\u0001H\u0080\b¢\u0006\u0003\b\u0093\u0001J\u001b\u0010\u0094\u0001\u001a\u00020\\2\u0007\u0010\u0095\u0001\u001a\u00020\u00132\u0007\u0010\u0096\u0001\u001a\u00020<H\u0002J!\u0010\u0094\u0001\u001a\u00020\\2\r\u0010\u008a\u0001\u001a\b\u0012\u0004\u0012\u00020\u00130(2\u0007\u0010\u0096\u0001\u001a\u00020<H\u0002J\t\u0010\u0097\u0001\u001a\u00020\\H\u0002J\u0012\u0010\u0098\u0001\u001a\u00020\\2\u0007\u0010\u0095\u0001\u001a\u00020\u0013H\u0016J\u0012\u0010\u0099\u0001\u001a\u00020\\2\u0007\u0010\u0095\u0001\u001a\u00020\u0013H\u0002J\u0012\u0010\u009a\u0001\u001a\u00020\\2\u0007\u0010\u0095\u0001\u001a\u00020\u0013H\u0016J\t\u0010\u009b\u0001\u001a\u00020<H\u0016J)\u0010\u009c\u0001\u001a\u00020\\2\u001e\u0010\u009d\u0001\u001a\u0019\u0012\u0015\u0012\u0013\u0012\u0005\u0012\u00030\u009e\u0001\u0012\u0007\u0012\u0005\u0018\u00010\u009e\u00010\u008f\u000103H\u0016J\u0012\u0010\u009f\u0001\u001a\u00020\\2\u0007\u0010W\u001a\u00030 \u0001H\u0016J\u0011\u0010¡\u0001\u001a\u00020\\2\u0006\u00106\u001a\u000207H\u0002J\t\u0010¢\u0001\u001a\u00020\\H\u0016J\t\u0010£\u0001\u001a\u00020\\H\u0016J\t\u0010¤\u0001\u001a\u00020\\H\u0016JL\u0010¥\u0001\u001a\u0003H¦\u0001\"\u0005\b\u0000\u0010¦\u000122\u0010\u008d\u0001\u001a-\u0012!\u0012\u001f\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130$¢\u0006\u000e\b§\u0001\u0012\t\b¨\u0001\u0012\u0004\b\b(6\u0012\u0005\u0012\u0003H¦\u00010\u0091\u0001H\u0082\b¢\u0006\u0003\u0010©\u0001J(\u0010ª\u0001\u001a\u0003H¦\u0001\"\u0005\b\u0000\u0010¦\u00012\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u0003H¦\u00010[H\u0082\b¢\u0006\u0003\u0010«\u0001J\t\u0010¬\u0001\u001a\u00020\\H\u0016J\t\u0010\u00ad\u0001\u001a\u00020\\H\u0016J\t\u0010®\u0001\u001a\u00020\\H\u0016J;\u0010¯\u0001\u001a\u0003H°\u0001\"\u0005\b\u0000\u0010°\u00012\t\u0010±\u0001\u001a\u0004\u0018\u00010\u00012\u0007\u0010²\u0001\u001a\u00020H2\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u0003H°\u00010[H\u0016¢\u0006\u0003\u0010³\u0001J\u0015\u0010´\u0001\u001a\u0004\u0018\u00010C2\b\u0010B\u001a\u0004\u0018\u00010CH\u0016J\u001e\u0010µ\u0001\u001a\u00030¶\u00012\u0007\u0010·\u0001\u001a\u00020%2\t\u0010¸\u0001\u001a\u0004\u0018\u00010\u0013H\u0016J\u0012\u0010¹\u0001\u001a\u00020\\2\u0007\u0010·\u0001\u001a\u00020%H\u0016J)\u0010º\u0001\u001a\u0005\u0018\u0001H¦\u0001\"\u0005\b\u0000\u0010¦\u00012\u000e\u0010\u007f\u001a\n\u0012\u0005\u0012\u0003H¦\u00010»\u0001H\u0016¢\u0006\u0003\u0010¼\u0001J\u001d\u0010½\u0001\u001a\u00020<2\u0007\u0010·\u0001\u001a\u00020%2\t\u0010¸\u0001\u001a\u0004\u0018\u00010\u0013H\u0002J(\u0010¾\u0001\u001a\u00030¶\u00012\u0007\u0010·\u0001\u001a\u00020%2\b\u0010¿\u0001\u001a\u00030\u0092\u00012\t\u0010¸\u0001\u001a\u0004\u0018\u00010\u0013H\u0002J!\u0010À\u0001\u001a\u00020\\2\u0007\u0010¸\u0001\u001a\u00020\u00132\u0007\u0010·\u0001\u001a\u00020%H\u0000¢\u0006\u0003\bÁ\u0001J\u001b\u0010Â\u0001\u001a\u00020\\2\n\u0010W\u001a\u0006\u0012\u0002\b\u00030/H\u0000¢\u0006\u0003\bÃ\u0001J\u001e\u0010Ä\u0001\u001a\u000e\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130$H\u0002¢\u0006\u0006\bÅ\u0001\u0010Æ\u0001J\u0011\u0010Ç\u0001\u001a\u00020\\2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002J(\u0010È\u0001\u001a\u0003H¦\u0001\"\u0005\b\u0000\u0010¦\u00012\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u0003H¦\u00010[H\u0082\b¢\u0006\u0003\u0010«\u0001J\n\u0010|\u001a\u0004\u0018\u00010}H\u0002J\t\u0010É\u0001\u001a\u00020\\H\u0016J\u000f\u0010Ê\u0001\u001a\u00020HH\u0000¢\u0006\u0003\bË\u0001R\u0013\u0010\u0007\u001a\u00020\b8G¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0012\u0010\t\u001a\u0006\u0012\u0002\b\u00030\nX\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u0011\u001a\u0016\u0012\u0006\u0012\u0004\u0018\u00010\u00130\u0012j\n\u0012\u0006\u0012\u0004\u0018\u00010\u0013`\u0014X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0015R\u0014\u0010\u0016\u001a\u00060\u0013j\u0002`\u0017X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001e\u001a\u00020\u001fX\u0080\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b \u0010\u001d\u001a\u0004\b!\u0010\"R\u001c\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u001a\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00130(8AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020%0,X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020%0,X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010.\u001a\u0012\u0012\u0004\u0012\u00020\u0013\u0012\b\u0012\u0006\u0012\u0002\b\u00030/0$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u001a\u00100\u001a\b\u0012\u0004\u0012\u00020\u00130(8AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b1\u0010*R\u001a\u00102\u001a\b\u0012\u0004\u0012\u00020%038AX\u0080\u0004¢\u0006\u0006\u001a\u0004\b4\u00105R\u000e\u00106\u001a\u000207X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000207X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u00109\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u001c\u0010:\u001a\u000e\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u00130$X\u0082\u000e¢\u0006\u0004\n\u0002\u0010&R \u0010;\u001a\u00020<X\u0080\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b=\u0010\u001d\u001a\u0004\b>\u0010?\"\u0004\b@\u0010AR\u0010\u0010B\u001a\u0004\u0018\u00010CX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010D\u001a\u0004\u0018\u00010EX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010F\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020HX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010I\u001a\u00020JX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bK\u0010LR\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010O\u001a\u00020PX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bQ\u0010RR\u0010\u0010S\u001a\u0004\u0018\u00010\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000b\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\bT\u0010UR\u0011\u0010V\u001a\u00020<¢\u0006\b\n\u0000\u001a\u0004\bV\u0010?R\u000e\u0010W\u001a\u00020HX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010X\u001a\u00020<8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bY\u0010?R'\u0010Z\u001a\r\u0012\u0004\u0012\u00020\\0[¢\u0006\u0002\b]X\u0086\u000e¢\u0006\u0010\n\u0002\u0010b\u001a\u0004\b^\u0010_\"\u0004\b`\u0010aR\u0014\u0010c\u001a\u00020<8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bc\u0010?R\u0014\u0010d\u001a\u00020<8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bd\u0010?R\u0014\u0010e\u001a\u00020<8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bf\u0010?R\u0016\u0010\u0087\u0001\u001a\u00020<8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b\u0088\u0001\u0010?¨\u0006Ì\u0001"}, d2 = {"Landroidx/compose/runtime/CompositionImpl;", "Landroidx/compose/runtime/ControlledComposition;", "Landroidx/compose/runtime/ReusableComposition;", "Landroidx/compose/runtime/RecomposeScopeOwner;", "Landroidx/compose/runtime/CompositionServices;", "Landroidx/compose/runtime/PausableComposition;", "Landroidx/compose/runtime/tooling/ObservableComposition;", "parent", "Landroidx/compose/runtime/CompositionContext;", "applier", "Landroidx/compose/runtime/Applier;", "recomposeContext", "Lkotlin/coroutines/CoroutineContext;", "<init>", "(Landroidx/compose/runtime/CompositionContext;Landroidx/compose/runtime/Applier;Lkotlin/coroutines/CoroutineContext;)V", "getParent", "()Landroidx/compose/runtime/CompositionContext;", "pendingModifications", "Ljava/util/concurrent/atomic/AtomicReference;", "", "Landroidx/compose/runtime/internal/AtomicReference;", "Ljava/util/concurrent/atomic/AtomicReference;", "lock", "Landroidx/compose/runtime/platform/SynchronizedObject;", "Ljava/lang/Object;", "abandonSet", "", "Landroidx/compose/runtime/RememberObserver;", "getAbandonSet$annotations", "()V", "slotTable", "Landroidx/compose/runtime/SlotTable;", "getSlotTable$runtime$annotations", "getSlotTable$runtime", "()Landroidx/compose/runtime/SlotTable;", "observations", "Landroidx/compose/runtime/collection/ScopeMap;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "Landroidx/collection/MutableScatterMap;", "observedObjects", "", "getObservedObjects$runtime", "()Ljava/util/Set;", "invalidatedScopes", "Landroidx/collection/MutableScatterSet;", "conditionallyInvalidatedScopes", "derivedStates", "Landroidx/compose/runtime/DerivedState;", "derivedStateDependencies", "getDerivedStateDependencies$runtime", "conditionalScopes", "", "getConditionalScopes$runtime", "()Ljava/util/List;", "changes", "Landroidx/compose/runtime/changelist/ChangeList;", "lateChanges", "observationsProcessed", "invalidations", "pendingInvalidScopes", "", "getPendingInvalidScopes$runtime$annotations", "getPendingInvalidScopes$runtime", "()Z", "setPendingInvalidScopes$runtime", "(Z)V", "shouldPause", "Landroidx/compose/runtime/ShouldPauseCallback;", "pendingPausedComposition", "Landroidx/compose/runtime/PausedCompositionImpl;", "invalidationDelegate", "invalidationDelegateGroup", "", "observerHolder", "Landroidx/compose/runtime/CompositionObserverHolder;", "getObserverHolder$runtime", "()Landroidx/compose/runtime/CompositionObserverHolder;", "rememberManager", "Landroidx/compose/runtime/internal/RememberEventDispatcher;", "composer", "Landroidx/compose/runtime/ComposerImpl;", "getComposer$runtime", "()Landroidx/compose/runtime/ComposerImpl;", "_recomposeContext", "getRecomposeContext", "()Lkotlin/coroutines/CoroutineContext;", "isRoot", RemoteConfigConstants.ResponseFieldKey.STATE, "areChildrenComposing", "getAreChildrenComposing", ComposeNavigator.NAME, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "getComposable", "()Lkotlin/jvm/functions/Function2;", "setComposable", "(Lkotlin/jvm/functions/Function2;)V", "Lkotlin/jvm/functions/Function2;", "isComposing", "isDisposed", "hasPendingChanges", "getHasPendingChanges", "setContent", FirebaseAnalytics.Param.CONTENT, "setContentWithReuse", "setPausableContent", "Landroidx/compose/runtime/PausedComposition;", "(Lkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/PausedComposition;", "setPausableContentWithReuse", "pausedCompositionFinished", "ignoreSet", "Landroidx/collection/ScatterSet;", "Landroidx/compose/runtime/RememberObserverHolder;", "pausedCompositionFinished$runtime", "composeInitial", "composeInitialPaused", "reusable", "(ZLkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/PausedComposition;", "composeInitialWithReuse", "ensureRunning", "clearDeactivated", "setObserver", "Landroidx/compose/runtime/tooling/CompositionObserverHandle;", "observer", "Landroidx/compose/runtime/tooling/CompositionObserver;", "invalidateGroupsWithKey", "key", "drainPendingModificationsForCompositionLocked", "drainPendingModificationsLocked", "drainPendingModificationsOutOfBandLocked", "composeContent", "updateMovingInvalidations", "updateMovingInvalidations$runtime", "dispose", "hasInvalidations", "getHasInvalidations", "recordModificationsOf", "values", "observesAnyOf", "prepareCompose", "block", "extractInvalidationsOfGroup", "Lkotlin/Pair;", "inGroup", "Lkotlin/Function1;", "Landroidx/compose/runtime/Anchor;", "extractInvalidationsOfGroup$runtime", "addPendingInvalidationsLocked", "value", "forgetConditionalScopes", "cleanUpDerivedStateObservations", "recordReadOf", "invalidateScopeOfLocked", "recordWriteOf", "recompose", "insertMovableContent", "references", "Landroidx/compose/runtime/MovableContentStateReference;", "disposeUnusedMovableContent", "Landroidx/compose/runtime/MovableContentState;", "applyChangesInLocked", "applyChanges", "applyLateChanges", "changesApplied", "guardInvalidationsLocked", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlin/ParameterName;", "name", "(Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "guardChanges", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "abandonChanges", "invalidateAll", "verifyConsistent", "delegateInvalidations", "R", TypedValues.TransitionType.S_TO, "groupIndex", "(Landroidx/compose/runtime/ControlledComposition;ILkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "getAndSetShouldPauseCallback", "invalidate", "Landroidx/compose/runtime/InvalidationResult;", "scope", "instance", "recomposeScopeReleased", "getCompositionService", "Landroidx/compose/runtime/CompositionServiceKey;", "(Landroidx/compose/runtime/CompositionServiceKey;)Ljava/lang/Object;", "tryImminentInvalidation", "invalidateChecked", "anchor", "removeObservation", "removeObservation$runtime", "removeDerivedStateObservation", "removeDerivedStateObservation$runtime", "takeInvalidations", "takeInvalidations-afanTW4", "()Landroidx/collection/MutableScatterMap;", "validateRecomposeScopeAnchors", "trackAbandonedValues", "deactivate", "composerStacksSizes", "composerStacksSizes$runtime", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CompositionImpl implements ControlledComposition, ReusableComposition, RecomposeScopeOwner, CompositionServices, PausableComposition, ObservableComposition {
     public static final int $stable = 8;
@@ -96,16 +96,16 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
             slotTable.collectSourceInformation();
         }
         this.slotTable = slotTable;
-        this.observations = ScopeMap.m4698constructorimpl$default(null, 1, null);
+        this.observations = ScopeMap.m4699constructorimpl$default(null, 1, null);
         this.invalidatedScopes = new MutableScatterSet<>(0, 1, null);
         this.conditionallyInvalidatedScopes = new MutableScatterSet<>(0, 1, null);
-        this.derivedStates = ScopeMap.m4698constructorimpl$default(null, 1, null);
+        this.derivedStates = ScopeMap.m4699constructorimpl$default(null, 1, null);
         ChangeList changeList = new ChangeList();
         this.changes = changeList;
         ChangeList changeList2 = new ChangeList();
         this.lateChanges = changeList2;
-        this.observationsProcessed = ScopeMap.m4698constructorimpl$default(null, 1, null);
-        this.invalidations = ScopeMap.m4698constructorimpl$default(null, 1, null);
+        this.observationsProcessed = ScopeMap.m4699constructorimpl$default(null, 1, null);
+        this.invalidations = ScopeMap.m4699constructorimpl$default(null, 1, null);
         CompositionObserverHolder compositionObserverHolder = new CompositionObserverHolder(null, false, compositionContext, 3, null);
         this.observerHolder = compositionObserverHolder;
         this.rememberManager = new RememberEventDispatcher();
@@ -334,9 +334,14 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     private final void drainPendingModificationsForCompositionLocked() {
-        Object andSet = this.pendingModifications.getAndSet(CompositionKt.access$getPendingApplyNoModifications$p());
+        Object obj;
+        Object obj2;
+        AtomicReference<Object> atomicReference = this.pendingModifications;
+        obj = CompositionKt.PendingApplyNoModifications;
+        Object andSet = atomicReference.getAndSet(obj);
         if (andSet != null) {
-            if (Intrinsics.areEqual(andSet, CompositionKt.access$getPendingApplyNoModifications$p())) {
+            obj2 = CompositionKt.PendingApplyNoModifications;
+            if (Intrinsics.areEqual(andSet, obj2)) {
                 ComposerKt.composeRuntimeError("pending composition has not been applied");
                 throw new KotlinNothingValueException();
             } else if (andSet instanceof Set) {
@@ -353,8 +358,10 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     private final void drainPendingModificationsLocked() {
+        Object obj;
         Object andSet = this.pendingModifications.getAndSet(null);
-        if (Intrinsics.areEqual(andSet, CompositionKt.access$getPendingApplyNoModifications$p())) {
+        obj = CompositionKt.PendingApplyNoModifications;
+        if (Intrinsics.areEqual(andSet, obj)) {
             return;
         }
         if (andSet instanceof Set) {
@@ -375,8 +382,10 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     private final void drainPendingModificationsOutOfBandLocked() {
+        Object obj;
         Object andSet = this.pendingModifications.getAndSet(SetsKt.emptySet());
-        if (Intrinsics.areEqual(andSet, CompositionKt.access$getPendingApplyNoModifications$p()) || andSet == null) {
+        obj = CompositionKt.PendingApplyNoModifications;
+        if (Intrinsics.areEqual(andSet, obj) || andSet == null) {
             return;
         }
         if (andSet instanceof Set) {
@@ -396,13 +405,13 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         try {
             synchronized (this.lock) {
                 drainPendingModificationsForCompositionLocked();
-                MutableScatterMap<Object, Object> m4530takeInvalidationsafanTW4 = m4530takeInvalidationsafanTW4();
+                MutableScatterMap<Object, Object> m4531takeInvalidationsafanTW4 = m4531takeInvalidationsafanTW4();
                 try {
-                    this.composer.m4525composeContentZbOJvo$runtime(m4530takeInvalidationsafanTW4, function2, this.shouldPause);
+                    this.composer.m4526composeContentZbOJvo$runtime(m4531takeInvalidationsafanTW4, function2, this.shouldPause);
                     Unit unit = Unit.INSTANCE;
                     Unit unit2 = Unit.INSTANCE;
                 } catch (Throwable th) {
-                    this.invalidations = m4530takeInvalidationsafanTW4;
+                    this.invalidations = m4531takeInvalidationsafanTW4;
                     throw th;
                 }
             }
@@ -426,7 +435,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     public final void updateMovingInvalidations$runtime() {
         synchronized (this.lock) {
             drainPendingModificationsOutOfBandLocked();
-            this.composer.m4527updateComposerInvalidationsRY85e9Y(m4530takeInvalidationsafanTW4());
+            this.composer.m4528updateComposerInvalidationsRY85e9Y(m4531takeInvalidationsafanTW4());
             Unit unit = Unit.INSTANCE;
             Unit unit2 = Unit.INSTANCE;
         }
@@ -473,7 +482,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     public boolean getHasInvalidations() {
         boolean z;
         synchronized (this.lock) {
-            z = ScopeMap.m4703getSizeimpl(this.invalidations) > 0;
+            z = ScopeMap.m4704getSizeimpl(this.invalidations) > 0;
         }
         return z;
     }
@@ -485,18 +494,23 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     public void recordModificationsOf(Set<? extends Object> set) {
         Object obj;
         Set<? extends Object> set2;
+        Object obj2;
         do {
             obj = this.pendingModifications.get();
-            if (obj == null || Intrinsics.areEqual(obj, CompositionKt.access$getPendingApplyNoModifications$p())) {
-                set2 = set;
-            } else if (obj instanceof Set) {
-                set2 = new Set[]{obj, set};
-            } else if (!(obj instanceof Object[])) {
-                throw new IllegalStateException(("corrupt pendingModifications: " + this.pendingModifications).toString());
-            } else {
-                Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.collections.Set<kotlin.Any>>");
-                set2 = ArraysKt.plus((Set<? extends Object>[]) obj, set);
+            if (obj != null) {
+                obj2 = CompositionKt.PendingApplyNoModifications;
+                if (!Intrinsics.areEqual(obj, obj2)) {
+                    if (obj instanceof Set) {
+                        set2 = new Set[]{obj, set};
+                    } else if (!(obj instanceof Object[])) {
+                        throw new IllegalStateException(("corrupt pendingModifications: " + this.pendingModifications).toString());
+                    } else {
+                        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.collections.Set<kotlin.Any>>");
+                        set2 = ArraysKt.plus((Set<? extends Object>[]) obj, set);
+                    }
+                }
             }
+            set2 = set;
         } while (!MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.pendingModifications, obj, set2));
         if (obj == null) {
             synchronized (this.lock) {
@@ -511,162 +525,153 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         this.composer.prepareCompose$runtime(function0);
     }
 
-    public final List<Pair<RecomposeScopeImpl, Object>> extractInvalidationsOf$runtime(Anchor anchor) {
+    public final List<Pair<RecomposeScopeImpl, Object>> extractInvalidationsOfGroup$runtime(Function1<? super Anchor, Boolean> function1) {
         long[] jArr;
         long[] jArr2;
-        int i;
-        int i2;
         long j;
         char c;
         long j2;
-        int i3;
+        int i;
+        int i2;
         boolean z;
-        Object[] objArr;
-        int i4;
+        Object obj;
         long j3;
-        Object[] objArr2;
+        Object obj2;
+        int i3;
         boolean z2;
-        if (ScopeMap.m4703getSizeimpl(this.invalidations) > 0) {
+        if (ScopeMap.m4704getSizeimpl(this.invalidations) > 0) {
             ArrayList arrayList = new ArrayList();
-            SlotTable slotTable = this.slotTable;
-            MutableScatterMap<Object, Object> mutableScatterMap = this.invalidations;
+            MutableScatterMap mutableScatterMap = this.invalidations;
             long[] jArr3 = mutableScatterMap.metadata;
             int length = jArr3.length - 2;
             if (length >= 0) {
-                int i5 = 0;
+                int i4 = 0;
                 while (true) {
-                    long j4 = jArr3[i5];
+                    long j4 = jArr3[i4];
                     char c2 = 7;
                     long j5 = -9187201950435737472L;
                     if ((((~j4) << 7) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
-                        int i6 = 8;
-                        int i7 = 8 - ((~(i5 - length)) >>> 31);
-                        int i8 = 0;
-                        while (i8 < i7) {
+                        int i5 = 8;
+                        int i6 = 8 - ((~(i4 - length)) >>> 31);
+                        int i7 = 0;
+                        while (i7 < i6) {
                             if ((j4 & 255) < 128) {
+                                int i8 = (i4 << 3) + i7;
                                 c = c2;
-                                int i9 = (i5 << 3) + i8;
+                                Object obj3 = mutableScatterMap.keys[i8];
                                 j2 = j5;
-                                Object obj = mutableScatterMap.keys[i9];
-                                Object obj2 = mutableScatterMap.values[i9];
-                                int i10 = i6;
-                                Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type Key of androidx.compose.runtime.collection.ScopeMap");
+                                Object obj4 = mutableScatterMap.values[i8];
+                                Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type Key of androidx.compose.runtime.collection.ScopeMap");
                                 boolean z3 = true;
-                                if (obj2 instanceof MutableScatterSet) {
-                                    Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
-                                    MutableScatterSet mutableScatterSet = (MutableScatterSet) obj2;
-                                    Object[] objArr3 = mutableScatterSet.elements;
+                                if (obj4 instanceof MutableScatterSet) {
+                                    Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type androidx.collection.MutableScatterSet<Scope of androidx.compose.runtime.collection.ScopeMap>");
+                                    MutableScatterSet mutableScatterSet = (MutableScatterSet) obj4;
+                                    Object[] objArr = mutableScatterSet.elements;
                                     long[] jArr4 = mutableScatterSet.metadata;
-                                    jArr2 = jArr3;
+                                    int i9 = i5;
                                     int length2 = jArr4.length - 2;
+                                    jArr2 = jArr3;
+                                    j = j4;
                                     if (length2 >= 0) {
-                                        j = j4;
-                                        int i11 = 0;
+                                        int i10 = 0;
                                         while (true) {
-                                            long j6 = jArr4[i11];
-                                            i = length;
-                                            i2 = i8;
+                                            long j6 = jArr4[i10];
+                                            Object[] objArr2 = objArr;
+                                            i = i7;
                                             if ((((~j6) << c) & j6 & j2) != j2) {
-                                                int i12 = 8 - ((~(i11 - length2)) >>> 31);
-                                                int i13 = 0;
-                                                while (i13 < i12) {
+                                                int i11 = 8 - ((~(i10 - length2)) >>> 31);
+                                                int i12 = 0;
+                                                while (i12 < i11) {
                                                     if ((j6 & 255) < 128) {
-                                                        i4 = i13;
-                                                        int i14 = (i11 << 3) + i4;
                                                         j3 = j6;
-                                                        Object obj3 = objArr3[i14];
-                                                        RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) obj;
-                                                        objArr2 = objArr3;
-                                                        Anchor anchor2 = recomposeScopeImpl.getAnchor();
-                                                        if (anchor2 == null || !slotTable.inGroup(anchor, anchor2)) {
+                                                        int i13 = (i10 << 3) + i12;
+                                                        Object obj5 = objArr2[i13];
+                                                        obj2 = obj3;
+                                                        RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) obj2;
+                                                        i3 = i12;
+                                                        Anchor anchor = recomposeScopeImpl.getAnchor();
+                                                        if (anchor == null || !function1.invoke(anchor).booleanValue()) {
                                                             z2 = false;
                                                         } else {
-                                                            arrayList.add(TuplesKt.to(recomposeScopeImpl, obj3));
+                                                            arrayList.add(TuplesKt.to(recomposeScopeImpl, obj5));
                                                             z2 = true;
                                                         }
                                                         if (z2) {
-                                                            mutableScatterSet.removeElementAt(i14);
+                                                            mutableScatterSet.removeElementAt(i13);
                                                         }
                                                     } else {
-                                                        i4 = i13;
                                                         j3 = j6;
-                                                        objArr2 = objArr3;
+                                                        obj2 = obj3;
+                                                        i3 = i12;
                                                     }
-                                                    j6 = j3 >> i10;
-                                                    i13 = i4 + 1;
-                                                    objArr3 = objArr2;
+                                                    j6 = j3 >> i9;
+                                                    i12 = i3 + 1;
+                                                    obj3 = obj2;
                                                 }
-                                                objArr = objArr3;
-                                                if (i12 != i10) {
+                                                obj = obj3;
+                                                if (i11 != i9) {
                                                     break;
                                                 }
                                             } else {
-                                                objArr = objArr3;
+                                                obj = obj3;
                                             }
-                                            if (i11 == length2) {
+                                            if (i10 == length2) {
                                                 break;
                                             }
-                                            i11++;
-                                            length = i;
-                                            i8 = i2;
-                                            objArr3 = objArr;
-                                            i10 = 8;
+                                            i10++;
+                                            i7 = i;
+                                            objArr = objArr2;
+                                            obj3 = obj;
+                                            i9 = 8;
                                         }
                                     } else {
-                                        i = length;
-                                        i2 = i8;
-                                        j = j4;
+                                        i = i7;
                                     }
                                     z = mutableScatterSet.isEmpty();
                                 } else {
                                     jArr2 = jArr3;
-                                    i = length;
-                                    i2 = i8;
                                     j = j4;
-                                    Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
-                                    RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj;
-                                    Anchor anchor3 = recomposeScopeImpl2.getAnchor();
-                                    if (anchor3 == null || !slotTable.inGroup(anchor, anchor3)) {
+                                    i = i7;
+                                    Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
+                                    RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj3;
+                                    Anchor anchor2 = recomposeScopeImpl2.getAnchor();
+                                    if (anchor2 == null || !function1.invoke(anchor2).booleanValue()) {
                                         z3 = false;
                                     } else {
-                                        arrayList.add(TuplesKt.to(recomposeScopeImpl2, obj2));
+                                        arrayList.add(TuplesKt.to(recomposeScopeImpl2, obj4));
                                     }
                                     z = z3;
                                 }
                                 if (z) {
-                                    mutableScatterMap.removeValueAt(i9);
+                                    mutableScatterMap.removeValueAt(i8);
                                 }
-                                i3 = 8;
+                                i2 = 8;
                             } else {
                                 jArr2 = jArr3;
-                                i = length;
-                                i2 = i8;
                                 j = j4;
                                 c = c2;
                                 j2 = j5;
-                                i3 = i6;
+                                i = i7;
+                                i2 = i5;
                             }
-                            j4 = j >> i3;
-                            i6 = i3;
+                            i7 = i + 1;
+                            i5 = i2;
+                            j4 = j >> i2;
                             c2 = c;
                             j5 = j2;
                             jArr3 = jArr2;
-                            length = i;
-                            i8 = i2 + 1;
                         }
                         jArr = jArr3;
-                        int i15 = length;
-                        if (i7 != i6) {
+                        if (i6 != i5) {
                             break;
                         }
-                        length = i15;
                     } else {
                         jArr = jArr3;
                     }
-                    if (i5 == length) {
+                    if (i4 == length) {
                         break;
                     }
-                    i5++;
+                    i4++;
                     jArr3 = jArr;
                 }
             }
@@ -696,7 +701,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                     for (int i3 = 0; i3 < i2; i3++) {
                         if ((255 & j) < 128) {
                             RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) objArr[(i << 3) + i3];
-                            if (!ScopeMap.m4705removeimpl(this.observationsProcessed, obj, recomposeScopeImpl) && recomposeScopeImpl.invalidateForResult(obj) != InvalidationResult.IGNORED) {
+                            if (!ScopeMap.m4706removeimpl(this.observationsProcessed, obj, recomposeScopeImpl) && recomposeScopeImpl.invalidateForResult(obj) != InvalidationResult.IGNORED) {
                                 if (recomposeScopeImpl.isConditional() && !z) {
                                     this.conditionallyInvalidatedScopes.add(recomposeScopeImpl);
                                 } else {
@@ -717,7 +722,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
             }
         } else {
             RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj2;
-            if (ScopeMap.m4705removeimpl(this.observationsProcessed, obj, recomposeScopeImpl2) || recomposeScopeImpl2.invalidateForResult(obj) == InvalidationResult.IGNORED) {
+            if (ScopeMap.m4706removeimpl(this.observationsProcessed, obj, recomposeScopeImpl2) || recomposeScopeImpl2.invalidateForResult(obj) == InvalidationResult.IGNORED) {
                 return;
             }
             if (recomposeScopeImpl2.isConditional() && !z) {
@@ -789,7 +794,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                                     int i14 = (i11 << 3) + i13;
                                                     i3 = i8;
                                                     i4 = i13;
-                                                    if (!ScopeMap.m4699containsimpl(this.observations, (DerivedState) objArr2[i14])) {
+                                                    if (!ScopeMap.m4700containsimpl(this.observations, (DerivedState) objArr2[i14])) {
                                                         mutableScatterSet.removeElementAt(i14);
                                                     }
                                                 } else {
@@ -832,7 +837,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                 i = i8;
                                 j5 = j7;
                                 Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
-                                if (ScopeMap.m4699containsimpl(this.observations, (DerivedState) obj2)) {
+                                if (ScopeMap.m4700containsimpl(this.observations, (DerivedState) obj2)) {
                                     z = false;
                                 }
                             }
@@ -941,13 +946,13 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         }
         if (obj instanceof StateObjectImpl) {
             ReaderKind.Companion companion = ReaderKind.Companion;
-            ((StateObjectImpl) obj).m4756recordReadInh_f27i8$runtime(ReaderKind.m4738constructorimpl(1));
+            ((StateObjectImpl) obj).m4757recordReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(1));
         }
-        ScopeMap.m4692addimpl(this.observations, obj, currentRecomposeScope$runtime);
+        ScopeMap.m4693addimpl(this.observations, obj, currentRecomposeScope$runtime);
         if (obj instanceof DerivedState) {
             DerivedState<?> derivedState = (DerivedState) obj;
             DerivedState.Record<?> currentRecord = derivedState.getCurrentRecord();
-            ScopeMap.m4707removeScopeimpl(this.derivedStates, obj);
+            ScopeMap.m4708removeScopeimpl(this.derivedStates, obj);
             ObjectIntMap<StateObject> dependencies = currentRecord.getDependencies();
             Object[] objArr = dependencies.keys;
             long[] jArr = dependencies.metadata;
@@ -967,11 +972,11 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                 if (stateObject instanceof StateObjectImpl) {
                                     ReaderKind.Companion companion2 = ReaderKind.Companion;
                                     i3 = i6;
-                                    ((StateObjectImpl) stateObject).m4756recordReadInh_f27i8$runtime(ReaderKind.m4738constructorimpl(i2));
+                                    ((StateObjectImpl) stateObject).m4757recordReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(i2));
                                 } else {
                                     i3 = i6;
                                 }
-                                ScopeMap.m4692addimpl(this.derivedStates, stateObject, obj);
+                                ScopeMap.m4693addimpl(this.derivedStates, stateObject, obj);
                             } else {
                                 i2 = i4;
                                 i3 = i6;
@@ -1021,7 +1026,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                         if ((255 & j) < 128) {
                             RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) objArr[(i << 3) + i3];
                             if (recomposeScopeImpl.invalidateForResult(obj) == InvalidationResult.IMMINENT) {
-                                ScopeMap.m4692addimpl(this.observationsProcessed, obj, recomposeScopeImpl);
+                                ScopeMap.m4693addimpl(this.observationsProcessed, obj, recomposeScopeImpl);
                             }
                         }
                         j >>= 8;
@@ -1038,7 +1043,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         } else {
             RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj2;
             if (recomposeScopeImpl2.invalidateForResult(obj) == InvalidationResult.IMMINENT) {
-                ScopeMap.m4692addimpl(this.observationsProcessed, obj, recomposeScopeImpl2);
+                ScopeMap.m4693addimpl(this.observationsProcessed, obj, recomposeScopeImpl2);
             }
         }
     }
@@ -1093,15 +1098,15 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 return false;
             }
             drainPendingModificationsForCompositionLocked();
-            MutableScatterMap<Object, Object> m4530takeInvalidationsafanTW4 = m4530takeInvalidationsafanTW4();
+            MutableScatterMap<Object, Object> m4531takeInvalidationsafanTW4 = m4531takeInvalidationsafanTW4();
             try {
-                boolean m4526recomposeaFTiNEg$runtime = this.composer.m4526recomposeaFTiNEg$runtime(m4530takeInvalidationsafanTW4, this.shouldPause);
-                if (!m4526recomposeaFTiNEg$runtime) {
+                boolean m4527recomposeaFTiNEg$runtime = this.composer.m4527recomposeaFTiNEg$runtime(m4531takeInvalidationsafanTW4, this.shouldPause);
+                if (!m4527recomposeaFTiNEg$runtime) {
                     drainPendingModificationsLocked();
                 }
-                return m4526recomposeaFTiNEg$runtime;
+                return m4527recomposeaFTiNEg$runtime;
             } catch (Throwable th) {
-                this.invalidations = m4530takeInvalidationsafanTW4;
+                this.invalidations = m4531takeInvalidationsafanTW4;
                 throw th;
             }
         }
@@ -1334,11 +1339,11 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     private final <T> T guardInvalidationsLocked(Function1<? super ScopeMap<RecomposeScopeImpl, Object>, ? extends T> function1) {
-        MutableScatterMap<Object, Object> m4530takeInvalidationsafanTW4 = m4530takeInvalidationsafanTW4();
+        MutableScatterMap<Object, Object> m4531takeInvalidationsafanTW4 = m4531takeInvalidationsafanTW4();
         try {
-            return function1.invoke(ScopeMap.m4695boximpl(m4530takeInvalidationsafanTW4));
+            return function1.invoke(ScopeMap.m4696boximpl(m4531takeInvalidationsafanTW4));
         } catch (Throwable th) {
-            this.invalidations = m4530takeInvalidationsafanTW4;
+            this.invalidations = m4531takeInvalidationsafanTW4;
             throw th;
         }
     }
@@ -1474,9 +1479,9 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 if (tryImminentInvalidation(recomposeScopeImpl, obj)) {
                     return InvalidationResult.IMMINENT;
                 } else if (obj == null) {
-                    ScopeMap.m4709setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
+                    ScopeMap.m4710setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
                 } else if (!(obj instanceof DerivedState)) {
-                    ScopeMap.m4709setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
+                    ScopeMap.m4710setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
                 } else {
                     Object obj2 = this.invalidations.get(recomposeScopeImpl);
                     if (obj2 != null) {
@@ -1519,7 +1524,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                         } else if (obj2 == ScopeInvalidated.INSTANCE) {
                         }
                     }
-                    ScopeMap.m4692addimpl(this.invalidations, recomposeScopeImpl, obj);
+                    ScopeMap.m4693addimpl(this.invalidations, recomposeScopeImpl, obj);
                 }
             }
             if (compositionImpl2 != null) {
@@ -1531,20 +1536,20 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     public final void removeObservation$runtime(Object obj, RecomposeScopeImpl recomposeScopeImpl) {
-        ScopeMap.m4705removeimpl(this.observations, obj, recomposeScopeImpl);
+        ScopeMap.m4706removeimpl(this.observations, obj, recomposeScopeImpl);
     }
 
     public final void removeDerivedStateObservation$runtime(DerivedState<?> derivedState) {
-        if (ScopeMap.m4699containsimpl(this.observations, derivedState)) {
+        if (ScopeMap.m4700containsimpl(this.observations, derivedState)) {
             return;
         }
-        ScopeMap.m4707removeScopeimpl(this.derivedStates, derivedState);
+        ScopeMap.m4708removeScopeimpl(this.derivedStates, derivedState);
     }
 
-    /* renamed from: takeInvalidations-afanTW4  reason: not valid java name */
-    private final MutableScatterMap<Object, Object> m4530takeInvalidationsafanTW4() {
+    /* renamed from: takeInvalidations-afanTW4 */
+    private final MutableScatterMap<Object, Object> m4531takeInvalidationsafanTW4() {
         MutableScatterMap<Object, Object> mutableScatterMap = this.invalidations;
-        this.invalidations = ScopeMap.m4698constructorimpl$default(null, 1, null);
+        this.invalidations = ScopeMap.m4699constructorimpl$default(null, 1, null);
         return mutableScatterMap;
     }
 
@@ -1619,9 +1624,9 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                     throw th;
                 }
             }
-            ScopeMap.m4696clearimpl(this.observations);
-            ScopeMap.m4696clearimpl(this.derivedStates);
-            ScopeMap.m4696clearimpl(this.invalidations);
+            ScopeMap.m4697clearimpl(this.observations);
+            ScopeMap.m4697clearimpl(this.derivedStates);
+            ScopeMap.m4697clearimpl(this.invalidations);
             this.changes.clear();
             this.lateChanges.clear();
             this.composer.deactivate$runtime();
@@ -1634,10 +1639,10 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         return this.composer.stacksSize$runtime();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0050, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0050, code lost:
         return true;
      */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0068  */
     @Override // androidx.compose.runtime.ControlledComposition
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1657,7 +1662,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                         for (int i3 = 0; i3 < i2; i3++) {
                             if ((255 & j) < 128) {
                                 Object obj = objArr[(i << 3) + i3];
-                                if (ScopeMap.m4699containsimpl(this.observations, obj) || ScopeMap.m4699containsimpl(this.derivedStates, obj)) {
+                                if (ScopeMap.m4700containsimpl(this.observations, obj) || ScopeMap.m4700containsimpl(this.derivedStates, obj)) {
                                     break loop0;
                                 }
                             }
@@ -1675,7 +1680,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
             }
         } else {
             for (Object obj2 : set) {
-                if (ScopeMap.m4699containsimpl(this.observations, obj2) || ScopeMap.m4699containsimpl(this.derivedStates, obj2)) {
+                if (ScopeMap.m4700containsimpl(this.observations, obj2) || ScopeMap.m4700containsimpl(this.derivedStates, obj2)) {
                     return true;
                 }
                 while (r15.hasNext()) {

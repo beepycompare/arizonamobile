@@ -163,7 +163,7 @@ public abstract class AppCompatDelegate {
                 this.mTasks.add(new Runnable() { // from class: androidx.appcompat.app.AppCompatDelegate$SerialExecutor$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AppCompatDelegate.SerialExecutor.this.m19x45c145d(runnable);
+                        AppCompatDelegate.SerialExecutor.this.m20x45c145d(runnable);
                     }
                 });
                 if (this.mActive == null) {
@@ -174,7 +174,7 @@ public abstract class AppCompatDelegate {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$execute$0$androidx-appcompat-app-AppCompatDelegate$SerialExecutor  reason: not valid java name */
-        public /* synthetic */ void m19x45c145d(Runnable runnable) {
+        public /* synthetic */ void m20x45c145d(Runnable runnable) {
             try {
                 runnable.run();
             } finally {

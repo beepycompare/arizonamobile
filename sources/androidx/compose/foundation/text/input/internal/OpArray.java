@@ -16,49 +16,49 @@ final class OpArray {
     private final int[] values;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ OpArray m1536boximpl(int[] iArr) {
+    public static final /* synthetic */ OpArray m1537boximpl(int[] iArr) {
         return new OpArray(iArr);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int[] m1538constructorimpl(int[] iArr) {
+    private static int[] m1539constructorimpl(int[] iArr) {
         return iArr;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1540equalsimpl(int[] iArr, Object obj) {
-        return (obj instanceof OpArray) && Intrinsics.areEqual(iArr, ((OpArray) obj).m1548unboximpl());
+    public static boolean m1541equalsimpl(int[] iArr, Object obj) {
+        return (obj instanceof OpArray) && Intrinsics.areEqual(iArr, ((OpArray) obj).m1549unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1541equalsimpl0(int[] iArr, int[] iArr2) {
+    public static final boolean m1542equalsimpl0(int[] iArr, int[] iArr2) {
         return Intrinsics.areEqual(iArr, iArr2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1545hashCodeimpl(int[] iArr) {
+    public static int m1546hashCodeimpl(int[] iArr) {
         return Arrays.hashCode(iArr);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1547toStringimpl(int[] iArr) {
+    public static String m1548toStringimpl(int[] iArr) {
         return "OpArray(values=" + Arrays.toString(iArr) + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1540equalsimpl(this.values, obj);
+        return m1541equalsimpl(this.values, obj);
     }
 
     public int hashCode() {
-        return m1545hashCodeimpl(this.values);
+        return m1546hashCodeimpl(this.values);
     }
 
     public String toString() {
-        return m1547toStringimpl(this.values);
+        return m1548toStringimpl(this.values);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int[] m1548unboximpl() {
+    public final /* synthetic */ int[] m1549unboximpl() {
         return this.values;
     }
 
@@ -67,17 +67,17 @@ final class OpArray {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int[] m1537constructorimpl(int i) {
-        return m1538constructorimpl(new int[i * 3]);
+    public static int[] m1538constructorimpl(int i) {
+        return m1539constructorimpl(new int[i * 3]);
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static final int m1544getSizeimpl(int[] iArr) {
+    public static final int m1545getSizeimpl(int[] iArr) {
         return iArr.length / 3;
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final void m1546setimpl(int[] iArr, int i, int i2, int i3, int i4) {
+    public static final void m1547setimpl(int[] iArr, int i, int i2, int i3, int i4) {
         int i5 = i * 3;
         iArr[i5] = i2;
         iArr[i5 + 1] = i3;
@@ -85,14 +85,14 @@ final class OpArray {
     }
 
     /* renamed from: copyOf-pSmdads  reason: not valid java name */
-    public static final int[] m1539copyOfpSmdads(int[] iArr, int i) {
+    public static final int[] m1540copyOfpSmdads(int[] iArr, int i) {
         int[] copyOf = Arrays.copyOf(iArr, i * 3);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return m1538constructorimpl(copyOf);
+        return m1539constructorimpl(copyOf);
     }
 
     /* renamed from: forEach-impl  reason: not valid java name */
-    public static final void m1542forEachimpl(int[] iArr, int i, boolean z, Function3<? super Integer, ? super Integer, ? super Integer, Unit> function3) {
+    public static final void m1543forEachimpl(int[] iArr, int i, boolean z, Function3<? super Integer, ? super Integer, ? super Integer, Unit> function3) {
         if (i < 0) {
             return;
         }
@@ -114,7 +114,7 @@ final class OpArray {
     }
 
     /* renamed from: forEach-impl$default  reason: not valid java name */
-    public static /* synthetic */ void m1543forEachimpl$default(int[] iArr, int i, boolean z, Function3 function3, int i2, Object obj) {
+    public static /* synthetic */ void m1544forEachimpl$default(int[] iArr, int i, boolean z, Function3 function3, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }

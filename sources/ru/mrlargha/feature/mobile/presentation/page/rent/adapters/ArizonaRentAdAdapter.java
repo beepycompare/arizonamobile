@@ -110,7 +110,7 @@ public final class ArizonaRentAdAdapter extends ListAdapter<ArizonaRentAdModel, 
             TextView tvDesc = mpArizonaRentAdItemBinding.tvDesc;
             Intrinsics.checkNotNullExpressionValue(tvDesc, "tvDesc");
             UtilsKt.setColoredTextBeforeDot(tvDesc, context.getString(arizonaRentAdModel.isFully() ? R.string.from_i_to_i_days : R.string.from_i_to_i_hours, Integer.valueOf(arizonaRentAdModel.getStartRent()), Integer.valueOf(arizonaRentAdModel.getEndRent())) + " " + arizonaRentAdModel.getDesc(), Color.parseColor("#FFBF00"));
-            Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/house_int/" + arizonaRentAdModel.getImage() + ".webp").into(mpArizonaRentAdItemBinding.ivHome);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/house_int/" + arizonaRentAdModel.getImage() + ".webp").into(mpArizonaRentAdItemBinding.ivHome);
             Intrinsics.checkNotNull(context);
             checkIsMyAd(arizonaRentAdModel.getIsMy(context));
         }

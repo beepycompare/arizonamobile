@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CounterConfiguration implements Parcelable {
     public static final Parcelable.Creator<CounterConfiguration> CREATOR = new b();
 

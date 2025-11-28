@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.text.TextUtils;
 import android.util.Base64;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Qf implements vo, D8 {
     @Override // io.appmetrica.analytics.impl.D8
     public final int a(N8 n8) {

@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import kotlin.collections.CollectionsKt;
 /* renamed from: io.appmetrica.analytics.impl.p5  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0491p5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProcessorsHolder {
 
     /* renamed from: a  reason: collision with root package name */

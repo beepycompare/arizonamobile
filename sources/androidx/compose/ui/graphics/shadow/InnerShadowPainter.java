@@ -38,13 +38,13 @@ public final class InnerShadowPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5978getIntrinsicSizeNHjbRc() {
-        return Size.Companion.m5112getUnspecifiedNHjbRc();
+    public long mo5979getIntrinsicSizeNHjbRc() {
+        return Size.Companion.m5113getUnspecifiedNHjbRc();
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     protected void onDraw(DrawScope drawScope) {
-        this.renderCreator.mo5986obtainInnerShadowRenderereZhPAX0(this.shape, drawScope.mo5858getSizeNHjbRc(), drawScope.getLayoutDirection(), drawScope, this.shadow).m6007drawShadowerFMhIw(drawScope, this.colorFilter, drawScope.mo5858getSizeNHjbRc(), this.shadow.m6002getColor0d7_KjU(), this.shadow.getBrush(), RangesKt.coerceIn(this.alpha * this.shadow.getAlpha(), 0.0f, 1.0f), this.shadow.m6001getBlendMode0nO6VwU());
+        this.renderCreator.mo5987obtainInnerShadowRenderereZhPAX0(this.shape, drawScope.mo5859getSizeNHjbRc(), drawScope.getLayoutDirection(), drawScope, this.shadow).m6008drawShadowerFMhIw(drawScope, this.colorFilter, drawScope.mo5859getSizeNHjbRc(), this.shadow.m6003getColor0d7_KjU(), this.shadow.getBrush(), RangesKt.coerceIn(this.alpha * this.shadow.getAlpha(), 0.0f, 1.0f), this.shadow.m6002getBlendMode0nO6VwU());
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter

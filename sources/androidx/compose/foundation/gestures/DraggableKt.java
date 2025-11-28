@@ -76,17 +76,17 @@ public final class DraggableKt {
     }
 
     /* renamed from: toFloat-3MmeM6k */
-    public static final float m514toFloat3MmeM6k(long j, Orientation orientation) {
+    public static final float m515toFloat3MmeM6k(long j, Orientation orientation) {
         return Float.intBitsToFloat((int) (orientation == Orientation.Vertical ? j & 4294967295L : j >> 32));
     }
 
     /* renamed from: toFloat-sF-c-tU */
-    public static final float m515toFloatsFctU(long j, Orientation orientation) {
-        return orientation == Orientation.Vertical ? Velocity.m8234getYimpl(j) : Velocity.m8233getXimpl(j);
+    public static final float m516toFloatsFctU(long j, Orientation orientation) {
+        return orientation == Orientation.Vertical ? Velocity.m8235getYimpl(j) : Velocity.m8234getXimpl(j);
     }
 
     /* renamed from: toValidVelocity-TH1AsA0 */
-    public static final long m516toValidVelocityTH1AsA0(long j) {
-        return VelocityKt.Velocity(Float.isNaN(Velocity.m8233getXimpl(j)) ? 0.0f : Velocity.m8233getXimpl(j), Float.isNaN(Velocity.m8234getYimpl(j)) ? 0.0f : Velocity.m8234getYimpl(j));
+    public static final long m517toValidVelocityTH1AsA0(long j) {
+        return VelocityKt.Velocity(Float.isNaN(Velocity.m8234getXimpl(j)) ? 0.0f : Velocity.m8234getXimpl(j), Float.isNaN(Velocity.m8235getYimpl(j)) ? 0.0f : Velocity.m8235getYimpl(j));
     }
 }

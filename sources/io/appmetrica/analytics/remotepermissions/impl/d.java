@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
 import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class d implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */

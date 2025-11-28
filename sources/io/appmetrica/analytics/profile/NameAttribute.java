@@ -3,7 +3,7 @@ package io.appmetrica.analytics.profile;
 import io.appmetrica.analytics.impl.C0125an;
 import io.appmetrica.analytics.impl.C0265g8;
 import io.appmetrica.analytics.impl.Cl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NameAttribute extends StringAttribute {
     /* JADX INFO: Access modifiers changed from: package-private */
     public NameAttribute() {

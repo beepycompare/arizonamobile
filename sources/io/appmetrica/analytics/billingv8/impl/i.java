@@ -6,7 +6,7 @@ import com.android.billingclient.api.PurchasesResponseListener;
 import io.appmetrica.analytics.billinginterface.internal.config.BillingConfig;
 import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class i implements PurchasesResponseListener {
 
     /* renamed from: a  reason: collision with root package name */

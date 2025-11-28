@@ -3,7 +3,7 @@ package io.appmetrica.analytics.logger.common.impl;
 import android.util.Log;
 import java.util.Arrays;
 import java.util.Locale;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class a {
     public static String a(String str, String str2, Object... objArr) {
         StringBuilder append = new StringBuilder().append(str).append(" ");

@@ -49,18 +49,18 @@ final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends Suspend
         return recomposer$runRecomposeConcurrentlyAndApplyChanges$2.invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x00c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x00c8, code lost:
         if (r10 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x01b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x01b7, code lost:
         if (kotlinx.coroutines.JobKt.cancelAndJoin(kotlinx.coroutines.JobKt.getJob(r9.getCoroutineContext()), r18) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x01c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01c5, code lost:
         if (kotlinx.coroutines.JobKt.cancelAndJoin(r2, r18) == r0) goto L15;
      */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x019f  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00c7 -> B:25:0x00cb). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01a0  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00c8 -> B:25:0x00cc). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -146,7 +146,7 @@ final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends Suspend
             }
             if (requestFrameLocked != null) {
                 Result.Companion companion = Result.Companion;
-                requestFrameLocked.resumeWith(Result.m9843constructorimpl(Unit.INSTANCE));
+                requestFrameLocked.resumeWith(Result.m9901constructorimpl(Unit.INSTANCE));
             }
             i3 = 0;
             shouldKeepRecomposing = this.this$0.getShouldKeepRecomposing();

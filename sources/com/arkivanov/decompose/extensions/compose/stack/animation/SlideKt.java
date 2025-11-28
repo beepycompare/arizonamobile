@@ -119,8 +119,8 @@ public final class SlideKt {
     public static final MeasureResult offsetXFactor$lambda$1(final float f, MeasureScope layout, Measurable measurable, Constraints constraints) {
         Intrinsics.checkNotNullParameter(layout, "$this$layout");
         Intrinsics.checkNotNullParameter(measurable, "measurable");
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(constraints.m7954unboximpl());
-        return MeasureScope.layout$default(layout, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda0
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
+        return MeasureScope.layout$default(layout, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit offsetXFactor$lambda$1$lambda$0;
@@ -153,8 +153,8 @@ public final class SlideKt {
     public static final MeasureResult offsetYFactor$lambda$3(final float f, MeasureScope layout, Measurable measurable, Constraints constraints) {
         Intrinsics.checkNotNullParameter(layout, "$this$layout");
         Intrinsics.checkNotNullParameter(measurable, "measurable");
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(constraints.m7954unboximpl());
-        return MeasureScope.layout$default(layout, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda3
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
+        return MeasureScope.layout$default(layout, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit offsetYFactor$lambda$3$lambda$2;

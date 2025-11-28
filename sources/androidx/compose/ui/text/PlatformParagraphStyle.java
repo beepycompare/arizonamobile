@@ -48,13 +48,13 @@ public final class PlatformParagraphStyle {
     }
 
     /* renamed from: getEmojiSupportMatch-_3YsG6Y  reason: not valid java name */
-    public final int m7366getEmojiSupportMatch_3YsG6Y() {
+    public final int m7367getEmojiSupportMatch_3YsG6Y() {
         return this.emojiSupportMatch;
     }
 
     public PlatformParagraphStyle(boolean z) {
         this.includeFontPadding = z;
-        this.emojiSupportMatch = EmojiSupportMatch.Companion.m7292getDefault_3YsG6Y();
+        this.emojiSupportMatch = EmojiSupportMatch.Companion.m7293getDefault_3YsG6Y();
     }
 
     public /* synthetic */ PlatformParagraphStyle(boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -62,7 +62,7 @@ public final class PlatformParagraphStyle {
     }
 
     public /* synthetic */ PlatformParagraphStyle(int i, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m7292getDefault_3YsG6Y() : i, (i2 & 2) != 0 ? false : z, (DefaultConstructorMarker) null);
+        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m7293getDefault_3YsG6Y() : i, (i2 & 2) != 0 ? false : z, (DefaultConstructorMarker) null);
     }
 
     private PlatformParagraphStyle(int i, boolean z) {
@@ -76,11 +76,11 @@ public final class PlatformParagraphStyle {
     }
 
     public /* synthetic */ PlatformParagraphStyle(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m7292getDefault_3YsG6Y() : i, (DefaultConstructorMarker) null);
+        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m7293getDefault_3YsG6Y() : i, (DefaultConstructorMarker) null);
     }
 
     public PlatformParagraphStyle() {
-        this(EmojiSupportMatch.Companion.m7292getDefault_3YsG6Y(), false, (DefaultConstructorMarker) null);
+        this(EmojiSupportMatch.Companion.m7293getDefault_3YsG6Y(), false, (DefaultConstructorMarker) null);
     }
 
     public boolean equals(Object obj) {
@@ -89,16 +89,16 @@ public final class PlatformParagraphStyle {
         }
         if (obj instanceof PlatformParagraphStyle) {
             PlatformParagraphStyle platformParagraphStyle = (PlatformParagraphStyle) obj;
-            return this.includeFontPadding == platformParagraphStyle.includeFontPadding && EmojiSupportMatch.m7287equalsimpl0(this.emojiSupportMatch, platformParagraphStyle.emojiSupportMatch);
+            return this.includeFontPadding == platformParagraphStyle.includeFontPadding && EmojiSupportMatch.m7288equalsimpl0(this.emojiSupportMatch, platformParagraphStyle.emojiSupportMatch);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Boolean.hashCode(this.includeFontPadding) * 31) + EmojiSupportMatch.m7288hashCodeimpl(this.emojiSupportMatch);
+        return (Boolean.hashCode(this.includeFontPadding) * 31) + EmojiSupportMatch.m7289hashCodeimpl(this.emojiSupportMatch);
     }
 
     public String toString() {
-        return "PlatformParagraphStyle(includeFontPadding=" + this.includeFontPadding + ", emojiSupportMatch=" + ((Object) EmojiSupportMatch.m7289toStringimpl(this.emojiSupportMatch)) + ')';
+        return "PlatformParagraphStyle(includeFontPadding=" + this.includeFontPadding + ", emojiSupportMatch=" + ((Object) EmojiSupportMatch.m7290toStringimpl(this.emojiSupportMatch)) + ')';
     }
 }

@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public final class OffsetKt {
     /* renamed from: offset-VpY3zN4  reason: not valid java name */
-    public static final Modifier m796offsetVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m797offsetVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new OffsetElement(f, f2, true, new Function1() { // from class: androidx.compose.foundation.layout.OffsetKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -28,13 +28,13 @@ public final class OffsetKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit offset_VpY3zN4$lambda$0(float f, float f2, InspectorInfo inspectorInfo) {
         inspectorInfo.setName(TypedValues.CycleType.S_WAVE_OFFSET);
-        inspectorInfo.getProperties().set("x", Dp.m7993boximpl(f));
-        inspectorInfo.getProperties().set("y", Dp.m7993boximpl(f2));
+        inspectorInfo.getProperties().set("x", Dp.m7994boximpl(f));
+        inspectorInfo.getProperties().set("y", Dp.m7994boximpl(f2));
         return Unit.INSTANCE;
     }
 
     /* renamed from: absoluteOffset-VpY3zN4  reason: not valid java name */
-    public static final Modifier m794absoluteOffsetVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m795absoluteOffsetVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new OffsetElement(f, f2, false, new Function1() { // from class: androidx.compose.foundation.layout.OffsetKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -48,8 +48,8 @@ public final class OffsetKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit absoluteOffset_VpY3zN4$lambda$1(float f, float f2, InspectorInfo inspectorInfo) {
         inspectorInfo.setName("absoluteOffset");
-        inspectorInfo.getProperties().set("x", Dp.m7993boximpl(f));
-        inspectorInfo.getProperties().set("y", Dp.m7993boximpl(f2));
+        inspectorInfo.getProperties().set("x", Dp.m7994boximpl(f));
+        inspectorInfo.getProperties().set("y", Dp.m7994boximpl(f2));
         return Unit.INSTANCE;
     }
 
@@ -90,24 +90,24 @@ public final class OffsetKt {
     }
 
     /* renamed from: offset-VpY3zN4$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m797offsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m798offsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
-        return m796offsetVpY3zN4(modifier, f, f2);
+        return m797offsetVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: absoluteOffset-VpY3zN4$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m795absoluteOffsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m796absoluteOffsetVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
-        return m794absoluteOffsetVpY3zN4(modifier, f, f2);
+        return m795absoluteOffsetVpY3zN4(modifier, f, f2);
     }
 }

@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
 import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ui {
 
     /* renamed from: a  reason: collision with root package name */

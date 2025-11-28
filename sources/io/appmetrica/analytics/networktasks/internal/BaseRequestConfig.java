@@ -11,7 +11,7 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BaseRequestConfig {
 
     /* renamed from: a  reason: collision with root package name */
@@ -21,11 +21,11 @@ public class BaseRequestConfig {
     private AppSetId d;
     private RetryPolicyConfig e;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static abstract class BaseRequestArguments<I, O> implements ArgumentsMerger<I, O> {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static abstract class ComponentLoader<T extends BaseRequestConfig, A extends BaseRequestArguments, D extends DataSource<A>> implements RequestConfigLoader<T, D> {
 
         /* renamed from: a  reason: collision with root package name */
@@ -64,7 +64,7 @@ public class BaseRequestConfig {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class DataSource<A> {
         public final A componentArguments;
         public final PlatformIdentifiers platformIdentifiers;
@@ -79,7 +79,7 @@ public class BaseRequestConfig {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface RequestConfigLoader<T extends BaseRequestConfig, D> {
         T load(D d);
     }

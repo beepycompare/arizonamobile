@@ -4,7 +4,7 @@ import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Yb extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */

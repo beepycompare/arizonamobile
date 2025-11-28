@@ -33,15 +33,15 @@ public final class HitPathTracker {
     }
 
     /* renamed from: addHitPath-QJqDSyo$default  reason: not valid java name */
-    public static /* synthetic */ void m6494addHitPathQJqDSyo$default(HitPathTracker hitPathTracker, long j, List list, boolean z, int i, Object obj) {
+    public static /* synthetic */ void m6495addHitPathQJqDSyo$default(HitPathTracker hitPathTracker, long j, List list, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             z = false;
         }
-        hitPathTracker.m6495addHitPathQJqDSyo(j, list, z);
+        hitPathTracker.m6496addHitPathQJqDSyo(j, list, z);
     }
 
     /* renamed from: addHitPath-QJqDSyo  reason: not valid java name */
-    public final void m6495addHitPathQJqDSyo(long j, List<? extends Modifier.Node> list, boolean z) {
+    public final void m6496addHitPathQJqDSyo(long j, List<? extends Modifier.Node> list, boolean z) {
         Node node;
         Node node2 = this.root;
         this.hitPointerIdsAndNodes.clear();

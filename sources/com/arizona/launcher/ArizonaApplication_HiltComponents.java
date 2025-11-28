@@ -58,7 +58,7 @@ public final class ArizonaApplication_HiltComponents {
 
     @Subcomponent(modules = {FragmentCBuilderModule.class, ViewCBuilderModule.class, HiltWrapper_ActivityModule.class, HiltWrapper_DefaultViewModelFactories_ActivityModule.class})
     /* loaded from: classes3.dex */
-    public static abstract class ActivityC implements MainActivity_GeneratedInjector, MainEntrench_GeneratedInjector, UpdateActivity_GeneratedInjector, ActivityComponent, DefaultViewModelFactories.ActivityEntryPoint, HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint, FragmentComponentManager.FragmentComponentBuilderEntryPoint, ViewComponentManager.ViewComponentBuilderEntryPoint, GeneratedComponent {
+    public static abstract class ActivityC implements MainEntrench_GeneratedInjector, UpdateActivity_GeneratedInjector, ActivityComponent, DefaultViewModelFactories.ActivityEntryPoint, HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint, FragmentComponentManager.FragmentComponentBuilderEntryPoint, ViewComponentManager.ViewComponentBuilderEntryPoint, GeneratedComponent {
 
         @Subcomponent.Builder
         /* loaded from: classes3.dex */

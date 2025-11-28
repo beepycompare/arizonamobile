@@ -98,7 +98,7 @@ public final class BannerElement {
         checkBannersType(data);
     }
 
-    /* JADX WARN: Type inference failed for: r6v2, types: [ru.mrlargha.commonui.elements.hud.presentation.hud_screens.banner.BannerElement$setBannerInfo$1$2] */
+    /* JADX WARN: Type inference failed for: r8v2, types: [ru.mrlargha.commonui.elements.hud.presentation.hud_screens.banner.BannerElement$setBannerInfo$1$2] */
     private final void setBannerInfo(Companion.BannerInfo bannerInfo) {
         CountDownTimer countDownTimer;
         if (bannerInfo.getTimer() != 0 && (countDownTimer = this.timerr) != null) {
@@ -119,9 +119,9 @@ public final class BannerElement {
         bannerElementBinding.timerCard.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(bannerInfo.getTimerColor())));
         bannerElementBinding.buttonCard.setCardBackgroundColor(Color.parseColor(bannerInfo.getButtonColor()));
         if (this.isArizonaType) {
-            Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/banner/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/banner/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
         } else {
-            Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/tpevent/images/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/tpevent/images/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
         }
         int typeButton = bannerInfo.getTypeButton();
         if (typeButton == 0) {

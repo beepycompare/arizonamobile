@@ -11,30 +11,30 @@ public final class BaselineButtonTokens {
     private static final float TrailingSpace;
     public static final BaselineButtonTokens INSTANCE = new BaselineButtonTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Primary;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 40.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 40.0d);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerMedium;
     private static final ColorSchemeKeyTokens DisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float DisabledContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float DisabledContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
     private static final float DisabledContainerOpacity = 0.1f;
     private static final ColorSchemeKeyTokens DisabledIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final float DisabledIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final float DisabledLabelTextOpacity = 0.38f;
-    private static final float FocusedContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float FocusedContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusedIconColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens FocusedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
-    private static final float HoveredContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+    private static final float HoveredContainerElevation = ElevationTokens.INSTANCE.m3890getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens HoveredIconColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens HoveredLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.OnPrimary;
-    private static final float IconLabelSpace = Dp.m7995constructorimpl((float) 8.0d);
-    private static final float IconSize = Dp.m7995constructorimpl((float) 20.0d);
+    private static final float IconLabelSpace = Dp.m7996constructorimpl((float) 8.0d);
+    private static final float IconSize = Dp.m7996constructorimpl((float) 20.0d);
     private static final ColorSchemeKeyTokens LabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens LabelTextSelectedColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens LabelTextUnselectedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens PressedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
@@ -62,8 +62,8 @@ public final class BaselineButtonTokens {
 
     static {
         float f = (float) 24.0d;
-        LeadingSpace = Dp.m7995constructorimpl(f);
-        TrailingSpace = Dp.m7995constructorimpl(f);
+        LeadingSpace = Dp.m7996constructorimpl(f);
+        TrailingSpace = Dp.m7996constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -71,12 +71,12 @@ public final class BaselineButtonTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3667getContainerElevationD9Ej5fM() {
+    public final float m3668getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3668getContainerHeightD9Ej5fM() {
+    public final float m3669getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -93,7 +93,7 @@ public final class BaselineButtonTokens {
     }
 
     /* renamed from: getDisabledContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3669getDisabledContainerElevationD9Ej5fM() {
+    public final float m3670getDisabledContainerElevationD9Ej5fM() {
         return DisabledContainerElevation;
     }
 
@@ -118,7 +118,7 @@ public final class BaselineButtonTokens {
     }
 
     /* renamed from: getFocusedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3670getFocusedContainerElevationD9Ej5fM() {
+    public final float m3671getFocusedContainerElevationD9Ej5fM() {
         return FocusedContainerElevation;
     }
 
@@ -131,7 +131,7 @@ public final class BaselineButtonTokens {
     }
 
     /* renamed from: getHoveredContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3671getHoveredContainerElevationD9Ej5fM() {
+    public final float m3672getHoveredContainerElevationD9Ej5fM() {
         return HoveredContainerElevation;
     }
 
@@ -148,12 +148,12 @@ public final class BaselineButtonTokens {
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3672getIconLabelSpaceD9Ej5fM() {
+    public final float m3673getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3673getIconSizeD9Ej5fM() {
+    public final float m3674getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -170,12 +170,12 @@ public final class BaselineButtonTokens {
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3674getLeadingSpaceD9Ej5fM() {
+    public final float m3675getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3675getPressedContainerElevationD9Ej5fM() {
+    public final float m3676getPressedContainerElevationD9Ej5fM() {
         return PressedContainerElevation;
     }
 
@@ -232,7 +232,7 @@ public final class BaselineButtonTokens {
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3676getTrailingSpaceD9Ej5fM() {
+    public final float m3677getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 

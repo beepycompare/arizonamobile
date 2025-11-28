@@ -4,7 +4,7 @@ import android.net.Uri;
 import io.appmetrica.analytics.networktasks.impl.c;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FullUrlFormer<T> {
 
     /* renamed from: a  reason: collision with root package name */

@@ -23,7 +23,7 @@ public final class PlatformMagnifierFactoryApi28Impl implements PlatformMagnifie
 
     @Override // androidx.compose.foundation.PlatformMagnifierFactory
     /* renamed from: create-nHHXs2Y */
-    public PlatformMagnifierImpl mo371createnHHXs2Y(View view, boolean z, long j, float f, float f2, boolean z2, Density density, float f3) {
+    public PlatformMagnifierImpl mo372createnHHXs2Y(View view, boolean z, long j, float f, float f2, boolean z2, Density density, float f3) {
         return new PlatformMagnifierImpl(new Magnifier(view));
     }
 
@@ -44,9 +44,9 @@ public final class PlatformMagnifierFactoryApi28Impl implements PlatformMagnifie
 
         @Override // androidx.compose.foundation.PlatformMagnifier
         /* renamed from: getSize-YbymL2g */
-        public long mo369getSizeYbymL2g() {
+        public long mo370getSizeYbymL2g() {
             int width = this.magnifier.getWidth();
-            return IntSize.m8161constructorimpl((this.magnifier.getHeight() & 4294967295L) | (width << 32));
+            return IntSize.m8162constructorimpl((this.magnifier.getHeight() & 4294967295L) | (width << 32));
         }
 
         @Override // androidx.compose.foundation.PlatformMagnifier
@@ -56,7 +56,7 @@ public final class PlatformMagnifierFactoryApi28Impl implements PlatformMagnifie
 
         @Override // androidx.compose.foundation.PlatformMagnifier
         /* renamed from: update-Wko1d7g */
-        public void mo370updateWko1d7g(long j, long j2, float f) {
+        public void mo371updateWko1d7g(long j, long j2, float f) {
             this.magnifier.show(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
         }
 

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.clientcomponents.ClientComponentsInitializer;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class N3 {
     public static ClientComponentsInitializer a() {
         if ("".length() > 0) {

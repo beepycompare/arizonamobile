@@ -2,7 +2,7 @@ package io.appmetrica.analytics.location.impl;
 
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class o implements LocationReceiverProviderFactory {
 
     /* renamed from: a  reason: collision with root package name */

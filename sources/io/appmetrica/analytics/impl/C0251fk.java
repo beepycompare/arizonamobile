@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceCompone
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleCounterReport;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* renamed from: io.appmetrica.analytics.impl.fk  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0251fk implements ServiceComponentModuleReporter {
 
     /* renamed from: a  reason: collision with root package name */

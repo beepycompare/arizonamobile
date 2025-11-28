@@ -26,7 +26,7 @@ public final class UserDataReader {
         ReorderingBufferQueue reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.ts.UserDataReader$$ExternalSyntheticLambda0
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                UserDataReader.this.m8787lambda$new$0$androidxmedia3extractortsUserDataReader(j, parsableByteArray);
+                UserDataReader.this.m8788lambda$new$0$androidxmedia3extractortsUserDataReader(j, parsableByteArray);
             }
         });
         this.reorderingBufferQueue = reorderingBufferQueue;
@@ -35,7 +35,7 @@ public final class UserDataReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-extractor-ts-UserDataReader  reason: not valid java name */
-    public /* synthetic */ void m8787lambda$new$0$androidxmedia3extractortsUserDataReader(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m8788lambda$new$0$androidxmedia3extractortsUserDataReader(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consumeCcData(j, parsableByteArray, this.outputs);
     }
 

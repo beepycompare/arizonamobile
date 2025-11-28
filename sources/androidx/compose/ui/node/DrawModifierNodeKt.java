@@ -7,7 +7,7 @@ import kotlin.Metadata;
 public final class DrawModifierNodeKt {
     public static final void invalidateDraw(DrawModifierNode drawModifierNode) {
         if (drawModifierNode.getNode().isAttached()) {
-            DelegatableNodeKt.m6842requireCoordinator64DMado(drawModifierNode, NodeKind.m6988constructorimpl(1)).invalidateLayer();
+            DelegatableNodeKt.m6843requireCoordinator64DMado(drawModifierNode, NodeKind.m6989constructorimpl(1)).invalidateLayer();
         }
     }
 }

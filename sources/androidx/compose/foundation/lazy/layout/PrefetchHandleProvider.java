@@ -67,7 +67,7 @@ public final class PrefetchHandleProvider {
     }
 
     /* renamed from: schedulePremeasure-m8Kt_7k  reason: not valid java name */
-    public final LazyLayoutPrefetchState.PrefetchHandle m1082schedulePremeasurem8Kt_7k(int i, long j, PrefetchMetrics prefetchMetrics, boolean z, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
+    public final LazyLayoutPrefetchState.PrefetchHandle m1083schedulePremeasurem8Kt_7k(int i, long j, PrefetchMetrics prefetchMetrics, boolean z, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
         PrefetchScheduler prefetchScheduler = this.executor;
         HandleAndRequestImpl handleAndRequestImpl = new HandleAndRequestImpl(this, i, j, prefetchMetrics, prefetchScheduler instanceof PriorityPrefetchScheduler ? (PriorityPrefetchScheduler) prefetchScheduler : null, function1, null);
         executeWithPriority(this.executor, handleAndRequestImpl, z);
@@ -86,7 +86,7 @@ public final class PrefetchHandleProvider {
     }
 
     /* renamed from: createNestedPrefetchRequest-VKLhPVY  reason: not valid java name */
-    public final PrefetchRequest m1081createNestedPrefetchRequestVKLhPVY(int i, long j, PrefetchMetrics prefetchMetrics) {
+    public final PrefetchRequest m1082createNestedPrefetchRequestVKLhPVY(int i, long j, PrefetchMetrics prefetchMetrics) {
         PrefetchScheduler prefetchScheduler = this.executor;
         return new HandleAndRequestImpl(this, i, j, prefetchMetrics, prefetchScheduler instanceof PriorityPrefetchScheduler ? (PriorityPrefetchScheduler) prefetchScheduler : null, null, null);
     }
@@ -130,7 +130,7 @@ public final class PrefetchHandleProvider {
             this.prefetchMetrics = prefetchMetrics;
             this.priorityPrefetchScheduler = priorityPrefetchScheduler;
             this.onItemPremeasured = function1;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11313markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11371markNowz9LOYto();
         }
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
@@ -140,7 +140,7 @@ public final class PrefetchHandleProvider {
 
         private HandleAndRequestImpl(PrefetchHandleProvider prefetchHandleProvider, int i, long j, PrefetchMetrics prefetchMetrics, PriorityPrefetchScheduler priorityPrefetchScheduler, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
             this(i, prefetchMetrics, priorityPrefetchScheduler, function1);
-            this.premeasureConstraints = Constraints.m7935boximpl(j);
+            this.premeasureConstraints = Constraints.m7936boximpl(j);
         }
 
         private final boolean isComposed() {
@@ -173,9 +173,9 @@ public final class PrefetchHandleProvider {
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
         /* renamed from: getSize-YEO4UFw */
-        public long mo1062getSizeYEO4UFw(int i) {
+        public long mo1063getSizeYEO4UFw(int i) {
             SubcomposeLayoutState.PrecomposedSlotHandle precomposedSlotHandle = this.precomposeHandle;
-            return precomposedSlotHandle != null ? precomposedSlotHandle.mo6723getSizeYEO4UFw(i) : IntSize.Companion.m8171getZeroYbymL2g();
+            return precomposedSlotHandle != null ? precomposedSlotHandle.mo6724getSizeYEO4UFw(i) : IntSize.Companion.m8172getZeroYbymL2g();
         }
 
         private final boolean shouldExecute(long j, long j2) {
@@ -187,18 +187,18 @@ public final class PrefetchHandleProvider {
 
         private final void resetAvailableTimeTo(long j) {
             this.availableTimeNanos = j;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11313markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11371markNowz9LOYto();
             this.elapsedTimeNanos = 0L;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
         private final void updateElapsedAndAvailableTime() {
-            long m11313markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11313markNowz9LOYto();
-            long m11213getInWholeNanosecondsimpl = Duration.m11213getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11324minus6eNON_k(m11313markNowz9LOYto, this.startTime));
-            this.elapsedTimeNanos = m11213getInWholeNanosecondsimpl;
-            long j = this.availableTimeNanos - m11213getInWholeNanosecondsimpl;
+            long m11371markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11371markNowz9LOYto();
+            long m11271getInWholeNanosecondsimpl = Duration.m11271getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11382minus6eNON_k(m11371markNowz9LOYto, this.startTime));
+            this.elapsedTimeNanos = m11271getInWholeNanosecondsimpl;
+            long j = this.availableTimeNanos - m11271getInWholeNanosecondsimpl;
             this.availableTimeNanos = j;
-            this.startTime = m11313markNowz9LOYto;
+            this.startTime = m11371markNowz9LOYto;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
@@ -324,7 +324,7 @@ public final class PrefetchHandleProvider {
                         }
                         Trace.beginSection("compose:lazy:prefetch:measure");
                         try {
-                            m1083performMeasureBRTryo0(constraints.m7954unboximpl());
+                            m1084performMeasureBRTryo0(constraints.m7955unboximpl());
                             Unit unit5 = Unit.INSTANCE;
                             Trace.endSection();
                             updateElapsedAndAvailableTime();
@@ -409,7 +409,7 @@ public final class PrefetchHandleProvider {
         }
 
         /* renamed from: performMeasure-BRTryo0  reason: not valid java name */
-        private final void m1083performMeasureBRTryo0(long j) {
+        private final void m1084performMeasureBRTryo0(long j) {
             if (this.isCanceled) {
                 InlineClassHelperKt.throwIllegalArgumentException("Callers should check whether the request is still valid before calling performMeasure()");
             }
@@ -421,7 +421,7 @@ public final class PrefetchHandleProvider {
             if (precomposedSlotHandle != null) {
                 int placeablesCount = precomposedSlotHandle.getPlaceablesCount();
                 for (int i = 0; i < placeablesCount; i++) {
-                    precomposedSlotHandle.mo6724premeasure0kLqBqw(i, j);
+                    precomposedSlotHandle.mo6725premeasure0kLqBqw(i, j);
                 }
                 return;
             }

@@ -21,12 +21,12 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
     }
 
     /* renamed from: getX-D9Ej5fM  reason: not valid java name */
-    public final float m792getXD9Ej5fM() {
+    public final float m793getXD9Ej5fM() {
         return this.x;
     }
 
     /* renamed from: getY-D9Ej5fM  reason: not valid java name */
-    public final float m793getYD9Ej5fM() {
+    public final float m794getYD9Ej5fM() {
         return this.y;
     }
 
@@ -54,7 +54,7 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(OffsetNode offsetNode) {
-        offsetNode.m803updateMdfbLM(this.x, this.y, this.rtlAware);
+        offsetNode.m804updateMdfbLM(this.x, this.y, this.rtlAware);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -63,16 +63,16 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
             return true;
         }
         OffsetElement offsetElement = obj instanceof OffsetElement ? (OffsetElement) obj : null;
-        return offsetElement != null && Dp.m8000equalsimpl0(this.x, offsetElement.x) && Dp.m8000equalsimpl0(this.y, offsetElement.y) && this.rtlAware == offsetElement.rtlAware;
+        return offsetElement != null && Dp.m8001equalsimpl0(this.x, offsetElement.x) && Dp.m8001equalsimpl0(this.y, offsetElement.y) && this.rtlAware == offsetElement.rtlAware;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((Dp.m8001hashCodeimpl(this.x) * 31) + Dp.m8001hashCodeimpl(this.y)) * 31) + Boolean.hashCode(this.rtlAware);
+        return (((Dp.m8002hashCodeimpl(this.x) * 31) + Dp.m8002hashCodeimpl(this.y)) * 31) + Boolean.hashCode(this.rtlAware);
     }
 
     public String toString() {
-        return "OffsetModifierElement(x=" + ((Object) Dp.m8006toStringimpl(this.x)) + ", y=" + ((Object) Dp.m8006toStringimpl(this.y)) + ", rtlAware=" + this.rtlAware + ')';
+        return "OffsetModifierElement(x=" + ((Object) Dp.m8007toStringimpl(this.x)) + ", y=" + ((Object) Dp.m8007toStringimpl(this.y)) + ", rtlAware=" + this.rtlAware + ')';
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement

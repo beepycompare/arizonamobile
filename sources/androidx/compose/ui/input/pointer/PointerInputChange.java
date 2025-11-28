@@ -66,13 +66,13 @@ public final class PointerInputChange {
         this.previousPressed = z2;
         this.type = i;
         this.scrollDelta = j6;
-        this.originalEventPosition = Offset.Companion.m5051getZeroF1C5BW0();
+        this.originalEventPosition = Offset.Companion.m5052getZeroF1C5BW0();
         this.downChange = z3;
         this.positionChange = z3;
     }
 
     /* renamed from: getId-J3iCeTQ  reason: not valid java name */
-    public final long m6567getIdJ3iCeTQ() {
+    public final long m6568getIdJ3iCeTQ() {
         return this.id;
     }
 
@@ -81,7 +81,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public final long m6569getPositionF1C5BW0() {
+    public final long m6570getPositionF1C5BW0() {
         return this.position;
     }
 
@@ -98,7 +98,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: getPreviousPosition-F1C5BW0  reason: not valid java name */
-    public final long m6570getPreviousPositionF1C5BW0() {
+    public final long m6571getPreviousPositionF1C5BW0() {
         return this.previousPosition;
     }
 
@@ -107,21 +107,21 @@ public final class PointerInputChange {
     }
 
     public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, z, f, j4, j5, z2, z3, (i2 & 512) != 0 ? PointerType.Companion.m6647getTouchT8wyACA() : i, (i2 & 1024) != 0 ? Offset.Companion.m5051getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, f, j4, j5, z2, z3, (i2 & 512) != 0 ? PointerType.Companion.m6648getTouchT8wyACA() : i, (i2 & 1024) != 0 ? Offset.Companion.m5052getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: getType-T8wyACA  reason: not valid java name */
-    public final int m6572getTypeT8wyACA() {
+    public final int m6573getTypeT8wyACA() {
         return this.type;
     }
 
     /* renamed from: getScrollDelta-F1C5BW0  reason: not valid java name */
-    public final long m6571getScrollDeltaF1C5BW0() {
+    public final long m6572getScrollDeltaF1C5BW0() {
         return this.scrollDelta;
     }
 
     public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, z, j4, j5, z2, z3, (i2 & 256) != 0 ? PointerType.Companion.m6647getTouchT8wyACA() : i, (i2 & 512) != 0 ? Offset.Companion.m5051getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, j4, j5, z2, z3, (i2 & 256) != 0 ? PointerType.Companion.m6648getTouchT8wyACA() : i, (i2 & 512) != 0 ? Offset.Companion.m5052getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
     }
 
     private PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6) {
@@ -129,11 +129,11 @@ public final class PointerInputChange {
     }
 
     public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, z, j4, j5, z2, consumedData, (i2 & 256) != 0 ? PointerType.Companion.m6647getTouchT8wyACA() : i, (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, j4, j5, z2, consumedData, (i2 & 256) != 0 ? PointerType.Companion.m6648getTouchT8wyACA() : i, (DefaultConstructorMarker) null);
     }
 
     private PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i) {
-        this(j, j2, j3, z, 1.0f, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, Offset.Companion.m5051getZeroF1C5BW0(), (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, 1.0f, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, Offset.Companion.m5052getZeroF1C5BW0(), (DefaultConstructorMarker) null);
     }
 
     private PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, List<HistoricalChange> list, long j6, long j7) {
@@ -148,12 +148,12 @@ public final class PointerInputChange {
     }
 
     /* renamed from: getOriginalEventPosition-F1C5BW0$ui_release  reason: not valid java name */
-    public final long m6568getOriginalEventPositionF1C5BW0$ui_release() {
+    public final long m6569getOriginalEventPositionF1C5BW0$ui_release() {
         return this.originalEventPosition;
     }
 
     /* renamed from: setOriginalEventPosition-k-4lQ0M$ui_release  reason: not valid java name */
-    public final void m6573setOriginalEventPositionk4lQ0M$ui_release(long j) {
+    public final void m6574setOriginalEventPositionk4lQ0M$ui_release(long j) {
         this.originalEventPosition = j;
     }
 
@@ -207,7 +207,7 @@ public final class PointerInputChange {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use another copy() method with scrollDelta parameter instead", replaceWith = @ReplaceWith(expression = "copy(id,currentTime, currentPosition, currentPressed, previousTime,previousPosition, previousPressed, consumed, type, this.scrollDelta)", imports = {}))
     /* renamed from: copy-Ezr-O64  reason: not valid java name */
-    public final /* synthetic */ PointerInputChange m6562copyEzrO64(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i) {
+    public final /* synthetic */ PointerInputChange m6563copyEzrO64(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i) {
         PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, this.pressure, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, getHistorical(), this.scrollDelta, this.originalEventPosition, null);
         pointerInputChange.positionChange = this.positionChange;
         pointerInputChange.downChange = this.downChange;
@@ -215,7 +215,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: copy-JKmWfYY$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6557copyJKmWfYY$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6558copyJKmWfYY$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
         long j7;
         long j8;
         long j9 = (i2 & 1) != 0 ? pointerInputChange.id : j;
@@ -233,22 +233,22 @@ public final class PointerInputChange {
             j7 = j6;
             j8 = j9;
         }
-        return pointerInputChange.m6563copyJKmWfYY(j8, j10, j11, z3, j12, j13, z4, i3, j7);
+        return pointerInputChange.m6564copyJKmWfYY(j8, j10, j11, z3, j12, j13, z4, i3, j7);
     }
 
     /* renamed from: copy-JKmWfYY  reason: not valid java name */
-    public final PointerInputChange m6563copyJKmWfYY(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6) {
-        PointerInputChange m6566copywbzehF4 = m6566copywbzehF4(j, j2, j3, z, this.pressure, j4, j5, z2, i, getHistorical(), j6);
+    public final PointerInputChange m6564copyJKmWfYY(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6) {
+        PointerInputChange m6567copywbzehF4 = m6567copywbzehF4(j, j2, j3, z, this.pressure, j4, j5, z2, i, getHistorical(), j6);
         PointerInputChange pointerInputChange = this.consumedDelegate;
         if (pointerInputChange == null) {
             pointerInputChange = this;
         }
-        m6566copywbzehF4.consumedDelegate = pointerInputChange;
-        return m6566copywbzehF4;
+        m6567copywbzehF4.consumedDelegate = pointerInputChange;
+        return m6567copywbzehF4;
     }
 
     /* renamed from: copy-0GkPj7c$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6555copy0GkPj7c$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6556copy0GkPj7c$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6, int i2, Object obj) {
         long j7;
         long j8 = (i2 & 1) != 0 ? pointerInputChange.id : j;
         long j9 = (i2 & 2) != 0 ? pointerInputChange.uptimeMillis : j2;
@@ -264,12 +264,12 @@ public final class PointerInputChange {
         } else {
             j7 = j6;
         }
-        return pointerInputChange.m6561copy0GkPj7c(j8, j9, j10, z3, j11, j12, z4, consumedData, i3, j7);
+        return pointerInputChange.m6562copy0GkPj7c(j8, j9, j10, z3, j11, j12, z4, consumedData, i3, j7);
     }
 
     @Deprecated(message = "Partial consumption has been deprecated. Use copy() instead without `consumed` parameter to create a shallow copy or a constructor to create a new PointerInputChange", replaceWith = @ReplaceWith(expression = "copy(id, currentTime, currentPosition, currentPressed, previousTime, previousPosition, previousPressed, type, scrollDelta)", imports = {}))
     /* renamed from: copy-0GkPj7c  reason: not valid java name */
-    public final PointerInputChange m6561copy0GkPj7c(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6) {
+    public final PointerInputChange m6562copy0GkPj7c(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6) {
         PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, this.pressure, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, getHistorical(), j6, this.originalEventPosition, null);
         pointerInputChange.positionChange = this.positionChange;
         pointerInputChange.downChange = this.downChange;
@@ -277,7 +277,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: copy-Tn9QgHE$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6559copyTn9QgHE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6560copyTn9QgHE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
         long j7;
         long j8;
         long j9 = (i2 & 1) != 0 ? pointerInputChange.id : j;
@@ -296,11 +296,11 @@ public final class PointerInputChange {
             j7 = j6;
             j8 = j9;
         }
-        return pointerInputChange.m6565copyTn9QgHE(j8, j10, j11, z3, f2, j12, j13, z4, i3, j7);
+        return pointerInputChange.m6566copyTn9QgHE(j8, j10, j11, z3, f2, j12, j13, z4, i3, j7);
     }
 
     /* renamed from: copy-Tn9QgHE  reason: not valid java name */
-    public final PointerInputChange m6565copyTn9QgHE(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6) {
+    public final PointerInputChange m6566copyTn9QgHE(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6) {
         PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, getHistorical(), j6, this.originalEventPosition, null);
         PointerInputChange pointerInputChange2 = this.consumedDelegate;
         if (pointerInputChange2 == null) {
@@ -311,7 +311,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: copy-OHpmEuE$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6558copyOHpmEuE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6559copyOHpmEuE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
         long j7;
         long j8 = (i2 & 1) != 0 ? pointerInputChange.id : j;
         long j9 = (i2 & 2) != 0 ? pointerInputChange.uptimeMillis : j2;
@@ -327,22 +327,22 @@ public final class PointerInputChange {
         } else {
             j7 = j6;
         }
-        return pointerInputChange.m6564copyOHpmEuE(j8, j9, j10, z3, j11, j12, z4, i3, list, j7);
+        return pointerInputChange.m6565copyOHpmEuE(j8, j9, j10, z3, j11, j12, z4, i3, list, j7);
     }
 
     /* renamed from: copy-OHpmEuE  reason: not valid java name */
-    public final PointerInputChange m6564copyOHpmEuE(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
-        PointerInputChange m6566copywbzehF4 = m6566copywbzehF4(j, j2, j3, z, this.pressure, j4, j5, z2, i, list, j6);
+    public final PointerInputChange m6565copyOHpmEuE(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
+        PointerInputChange m6567copywbzehF4 = m6567copywbzehF4(j, j2, j3, z, this.pressure, j4, j5, z2, i, list, j6);
         PointerInputChange pointerInputChange = this.consumedDelegate;
         if (pointerInputChange == null) {
             pointerInputChange = this;
         }
-        m6566copywbzehF4.consumedDelegate = pointerInputChange;
-        return m6566copywbzehF4;
+        m6567copywbzehF4.consumedDelegate = pointerInputChange;
+        return m6567copywbzehF4;
     }
 
     /* renamed from: copy-wbzehF4$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6560copywbzehF4$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6561copywbzehF4$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
         long j7;
         List list2;
         long j8 = (i2 & 1) != 0 ? pointerInputChange.id : j;
@@ -363,11 +363,11 @@ public final class PointerInputChange {
             j7 = j6;
             list2 = historical;
         }
-        return pointerInputChange.m6566copywbzehF4(j13, j9, j10, z3, f2, j11, j12, z4, i3, list2, j7);
+        return pointerInputChange.m6567copywbzehF4(j13, j9, j10, z3, f2, j11, j12, z4, i3, list2, j7);
     }
 
     /* renamed from: copy-wbzehF4  reason: not valid java name */
-    public final PointerInputChange m6566copywbzehF4(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
+    public final PointerInputChange m6567copywbzehF4(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
         PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, list, j6, this.originalEventPosition, null);
         PointerInputChange pointerInputChange2 = this.consumedDelegate;
         if (pointerInputChange2 == null) {
@@ -379,8 +379,8 @@ public final class PointerInputChange {
 
     public String toString() {
         StringBuilder sb = new StringBuilder("PointerInputChange(id=");
-        sb.append((Object) PointerId.m6553toStringimpl(this.id)).append(", uptimeMillis=").append(this.uptimeMillis).append(", position=").append((Object) Offset.m5043toStringimpl(this.position)).append(", pressed=").append(this.pressed).append(", pressure=").append(this.pressure).append(", previousUptimeMillis=").append(this.previousUptimeMillis).append(", previousPosition=").append((Object) Offset.m5043toStringimpl(this.previousPosition)).append(", previousPressed=").append(this.previousPressed).append(", isConsumed=").append(isConsumed()).append(", type=").append((Object) PointerType.m6642toStringimpl(this.type)).append(", historical=").append(getHistorical()).append(",scrollDelta=");
-        sb.append((Object) Offset.m5043toStringimpl(this.scrollDelta)).append(')');
+        sb.append((Object) PointerId.m6554toStringimpl(this.id)).append(", uptimeMillis=").append(this.uptimeMillis).append(", position=").append((Object) Offset.m5044toStringimpl(this.position)).append(", pressed=").append(this.pressed).append(", pressure=").append(this.pressure).append(", previousUptimeMillis=").append(this.previousUptimeMillis).append(", previousPosition=").append((Object) Offset.m5044toStringimpl(this.previousPosition)).append(", previousPressed=").append(this.previousPressed).append(", isConsumed=").append(isConsumed()).append(", type=").append((Object) PointerType.m6643toStringimpl(this.type)).append(", historical=").append(getHistorical()).append(",scrollDelta=");
+        sb.append((Object) Offset.m5044toStringimpl(this.scrollDelta)).append(')');
         return sb.toString();
     }
 }

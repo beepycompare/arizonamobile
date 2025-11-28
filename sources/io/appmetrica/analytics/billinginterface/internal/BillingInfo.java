@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.billinginterface.internal;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class BillingInfo {
     public final String productId;
     public final long purchaseTime;

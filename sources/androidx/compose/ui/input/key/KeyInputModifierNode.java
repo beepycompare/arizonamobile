@@ -8,8 +8,8 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface KeyInputModifierNode extends DelegatableNode {
     /* renamed from: onKeyEvent-ZmokQxo */
-    boolean mo236onKeyEventZmokQxo(android.view.KeyEvent keyEvent);
+    boolean mo237onKeyEventZmokQxo(android.view.KeyEvent keyEvent);
 
     /* renamed from: onPreKeyEvent-ZmokQxo */
-    boolean mo238onPreKeyEventZmokQxo(android.view.KeyEvent keyEvent);
+    boolean mo239onPreKeyEventZmokQxo(android.view.KeyEvent keyEvent);
 }

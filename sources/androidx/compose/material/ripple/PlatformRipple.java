@@ -29,7 +29,7 @@ public final class PlatformRipple extends Ripple {
 
     @Override // androidx.compose.material.ripple.Ripple
     /* renamed from: rememberUpdatedRippleInstance-942rkJo */
-    public RippleIndicationInstance mo1852rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
+    public RippleIndicationInstance mo1853rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
         ViewGroup findNearestViewGroup;
         composer.startReplaceGroup(331259447);
         ComposerKt.sourceInformation(composer, "C(rememberUpdatedRippleInstance)N(interactionSource,bounded,radius:c#ui.unit.Dp,color,rippleAlpha)85@3492L7,86@3516L138:Ripple.android.kt#vhb33q");

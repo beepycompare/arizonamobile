@@ -75,34 +75,34 @@ public final class ThumbNode extends Modifier.Node implements LayoutModifierNode
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         float thumbDiameter;
         float f;
         float f2;
         float f3;
-        boolean z = (measurable.maxIntrinsicHeight(Constraints.m7948getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m7947getMaxHeightimpl(j)) == 0) ? false : true;
+        boolean z = (measurable.maxIntrinsicHeight(Constraints.m7949getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m7948getMaxHeightimpl(j)) == 0) ? false : true;
         if (this.isPressed) {
-            thumbDiameter = SwitchTokens.INSTANCE.m4323getPressedHandleWidthD9Ej5fM();
+            thumbDiameter = SwitchTokens.INSTANCE.m4324getPressedHandleWidthD9Ej5fM();
         } else if (z || this.checked) {
             thumbDiameter = SwitchKt.getThumbDiameter();
         } else {
             thumbDiameter = SwitchKt.getUncheckedThumbDiameter();
         }
-        float f4 = measureScope.mo429toPx0680j_4(thumbDiameter);
+        float f4 = measureScope.mo430toPx0680j_4(thumbDiameter);
         Animatable<Float, AnimationVector1D> animatable = this.sizeAnim;
         int floatValue = (int) (animatable != null ? animatable.getValue().floatValue() : f4);
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(floatValue, floatValue));
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(Constraints.Companion.m7959fixedJhjzzOo(floatValue, floatValue));
         f = SwitchKt.SwitchHeight;
-        final float f5 = measureScope.mo429toPx0680j_4(Dp.m7995constructorimpl(Dp.m7995constructorimpl(f - measureScope.mo425toDpu2uoSUM(f4)) / 2.0f));
+        final float f5 = measureScope.mo430toPx0680j_4(Dp.m7996constructorimpl(Dp.m7996constructorimpl(f - measureScope.mo426toDpu2uoSUM(f4)) / 2.0f));
         f2 = SwitchKt.SwitchWidth;
-        float m7995constructorimpl = Dp.m7995constructorimpl(f2 - SwitchKt.getThumbDiameter());
+        float m7996constructorimpl = Dp.m7996constructorimpl(f2 - SwitchKt.getThumbDiameter());
         f3 = SwitchKt.ThumbPadding;
-        float f6 = measureScope.mo429toPx0680j_4(Dp.m7995constructorimpl(m7995constructorimpl - f3));
+        float f6 = measureScope.mo430toPx0680j_4(Dp.m7996constructorimpl(m7996constructorimpl - f3));
         boolean z2 = this.isPressed;
         if (z2 && this.checked) {
-            f5 = f6 - measureScope.mo429toPx0680j_4(SwitchTokens.INSTANCE.m4329getTrackOutlineWidthD9Ej5fM());
+            f5 = f6 - measureScope.mo430toPx0680j_4(SwitchTokens.INSTANCE.m4330getTrackOutlineWidthD9Ej5fM());
         } else if (z2 && !this.checked) {
-            f5 = measureScope.mo429toPx0680j_4(SwitchTokens.INSTANCE.m4329getTrackOutlineWidthD9Ej5fM());
+            f5 = measureScope.mo430toPx0680j_4(SwitchTokens.INSTANCE.m4330getTrackOutlineWidthD9Ej5fM());
         } else if (this.checked) {
             f5 = f6;
         }

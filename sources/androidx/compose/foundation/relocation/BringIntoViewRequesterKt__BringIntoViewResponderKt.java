@@ -17,6 +17,6 @@ public final /* synthetic */ class BringIntoViewRequesterKt__BringIntoViewRespon
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Rect localRectOf$BringIntoViewRequesterKt__BringIntoViewResponderKt(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, Rect rect) {
-        return rect.m5072translatek4lQ0M(layoutCoordinates.localBoundingBoxOf(layoutCoordinates2, false).m5070getTopLeftF1C5BW0());
+        return rect.m5073translatek4lQ0M(layoutCoordinates.localBoundingBoxOf(layoutCoordinates2, false).m5071getTopLeftF1C5BW0());
     }
 }

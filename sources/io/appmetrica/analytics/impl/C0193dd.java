@@ -4,7 +4,7 @@ import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerContext;
 import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter;
 /* renamed from: io.appmetrica.analytics.impl.dd  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0193dd implements ModuleEventServiceHandlerContext {
 
     /* renamed from: a  reason: collision with root package name */

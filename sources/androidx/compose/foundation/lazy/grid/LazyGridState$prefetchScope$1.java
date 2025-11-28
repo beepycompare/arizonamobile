@@ -57,9 +57,9 @@ public final class LazyGridState$prefetchScope$1 implements LazyGridPrefetchScop
                     Pair<Integer, Constraints> pair = invoke.get(i2);
                     LazyLayoutPrefetchState prefetchState$foundation_release = lazyGridState.getPrefetchState$foundation_release();
                     int intValue = pair.getFirst().intValue();
-                    long m7954unboximpl = pair.getSecond().m7954unboximpl();
+                    long m7955unboximpl = pair.getSecond().m7955unboximpl();
                     z = lazyGridState.executeRequestsInHighPriorityMode;
-                    arrayList.add(prefetchState$foundation_release.m1060schedulePrecompositionAndPremeasure_EkL_Y$foundation_release(intValue, m7954unboximpl, z, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridState$prefetchScope$1$$ExternalSyntheticLambda0
+                    arrayList.add(prefetchState$foundation_release.m1061schedulePrecompositionAndPremeasure_EkL_Y$foundation_release(intValue, m7955unboximpl, z, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridState$prefetchScope$1$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
                             Unit scheduleLinePrefetch$lambda$4$lambda$3$lambda$2$lambda$1;
@@ -78,16 +78,16 @@ public final class LazyGridState$prefetchScope$1 implements LazyGridPrefetchScop
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit scheduleLinePrefetch$lambda$4$lambda$3$lambda$2$lambda$1(List list, Ref.IntRef intRef, List list2, Function1 function1, int i, LazyGridMeasureResult lazyGridMeasureResult, LazyLayoutPrefetchState.PrefetchResultScope prefetchResultScope) {
-        long mo1062getSizeYEO4UFw;
+        long mo1063getSizeYEO4UFw;
         int placeablesCount = prefetchResultScope.getPlaceablesCount();
         int i2 = 0;
         for (int i3 = 0; i3 < placeablesCount; i3++) {
             if (lazyGridMeasureResult.getOrientation() == Orientation.Vertical) {
-                mo1062getSizeYEO4UFw = prefetchResultScope.mo1062getSizeYEO4UFw(i3) & 4294967295L;
+                mo1063getSizeYEO4UFw = prefetchResultScope.mo1063getSizeYEO4UFw(i3) & 4294967295L;
             } else {
-                mo1062getSizeYEO4UFw = prefetchResultScope.mo1062getSizeYEO4UFw(i3) >> 32;
+                mo1063getSizeYEO4UFw = prefetchResultScope.mo1063getSizeYEO4UFw(i3) >> 32;
             }
-            i2 += (int) mo1062getSizeYEO4UFw;
+            i2 += (int) mo1063getSizeYEO4UFw;
         }
         if (list != null) {
             list.add(Integer.valueOf(i2));

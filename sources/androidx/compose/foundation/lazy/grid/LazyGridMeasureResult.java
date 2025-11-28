@@ -182,9 +182,9 @@ public final class LazyGridMeasureResult implements LazyGridLayoutInfo, MeasureR
 
     @Override // androidx.compose.foundation.lazy.grid.LazyGridLayoutInfo
     /* renamed from: getViewportSize-YbymL2g */
-    public long mo1005getViewportSizeYbymL2g() {
+    public long mo1006getViewportSizeYbymL2g() {
         int width = getWidth();
-        return IntSize.m8161constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m8162constructorimpl((getHeight() & 4294967295L) | (width << 32));
     }
 
     @Override // androidx.compose.foundation.lazy.grid.LazyGridLayoutInfo

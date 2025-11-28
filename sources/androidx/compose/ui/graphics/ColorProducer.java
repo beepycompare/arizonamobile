@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface ColorProducer {
     /* renamed from: invoke-0d7_KjU */
-    long mo2299invoke0d7_KjU();
+    long mo2300invoke0d7_KjU();
 }

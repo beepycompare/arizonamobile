@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.networktasks.internal;
 
 import io.appmetrica.analytics.networktasks.internal.DefaultResponseParser;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DefaultNetworkResponseHandler implements NetworkResponseHandler<DefaultResponseParser.Response> {
 
     /* renamed from: a  reason: collision with root package name */

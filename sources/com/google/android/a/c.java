@@ -3,7 +3,7 @@ package com.google.android.a;
 import android.os.Parcel;
 import android.os.Parcelable;
 /* compiled from: Codecs.java */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class c {
     static {
         c.class.getClassLoader();

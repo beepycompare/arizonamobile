@@ -291,12 +291,12 @@ public final class SheetState {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final float Saver$lambda$3(Density density) {
-            return density.mo429toPx0680j_4(BottomSheetDefaults.INSTANCE.m1954getPositionalThresholdD9Ej5fM$material3());
+            return density.mo430toPx0680j_4(BottomSheetDefaults.INSTANCE.m1955getPositionalThresholdD9Ej5fM$material3());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final float Saver$lambda$5(Density density) {
-            return density.mo429toPx0680j_4(BottomSheetDefaults.INSTANCE.m1957getVelocityThresholdD9Ej5fM$material3());
+            return density.mo430toPx0680j_4(BottomSheetDefaults.INSTANCE.m1958getVelocityThresholdD9Ej5fM$material3());
         }
     }
 
@@ -332,11 +332,11 @@ public final class SheetState {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float _init_$lambda$9(Density density) {
-        return density.mo429toPx0680j_4(BottomSheetDefaults.INSTANCE.m1954getPositionalThresholdD9Ej5fM$material3());
+        return density.mo430toPx0680j_4(BottomSheetDefaults.INSTANCE.m1955getPositionalThresholdD9Ej5fM$material3());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float _init_$lambda$11(Density density) {
-        return density.mo429toPx0680j_4(BottomSheetDefaults.INSTANCE.m1957getVelocityThresholdD9Ej5fM$material3());
+        return density.mo430toPx0680j_4(BottomSheetDefaults.INSTANCE.m1958getVelocityThresholdD9Ej5fM$material3());
     }
 }

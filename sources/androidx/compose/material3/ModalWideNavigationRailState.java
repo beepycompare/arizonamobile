@@ -128,6 +128,6 @@ public final class ModalWideNavigationRailState implements WideNavigationRailSta
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float anchoredDraggableState$lambda$2(Density density) {
-        return density.mo429toPx0680j_4(Dp.m7995constructorimpl(400));
+        return density.mo430toPx0680j_4(Dp.m7996constructorimpl(400));
     }
 }

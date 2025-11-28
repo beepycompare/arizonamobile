@@ -148,7 +148,7 @@ public final class LazyStaggeredGridMeasureResult implements LazyStaggeredGridLa
 
     @Override // androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridLayoutInfo
     /* renamed from: getViewportSize-YbymL2g */
-    public long mo1102getViewportSizeYbymL2g() {
+    public long mo1103getViewportSizeYbymL2g() {
         return this.viewportSize;
     }
 
@@ -223,7 +223,7 @@ public final class LazyStaggeredGridMeasureResult implements LazyStaggeredGridLa
                 for (int i4 = 0; i4 < length; i4++) {
                     iArr2[i4] = this.firstVisibleItemScrollOffsets[i4] - i;
                 }
-                return new LazyStaggeredGridMeasureResult(iArr, iArr2, i, this.measureResult, this.scrollBackAmount, this.canScrollForward || i > 0, this.isVertical, this.remeasureNeeded, this.slots, this.spanProvider, this.density, getTotalItemsCount(), getVisibleItemsInfo(), mo1102getViewportSizeYbymL2g(), getViewportStartOffset(), getViewportEndOffset(), getBeforeContentPadding(), getAfterContentPadding(), getMainAxisItemSpacing(), this.coroutineScope, null);
+                return new LazyStaggeredGridMeasureResult(iArr, iArr2, i, this.measureResult, this.scrollBackAmount, this.canScrollForward || i > 0, this.isVertical, this.remeasureNeeded, this.slots, this.spanProvider, this.density, getTotalItemsCount(), getVisibleItemsInfo(), mo1103getViewportSizeYbymL2g(), getViewportStartOffset(), getViewportEndOffset(), getBeforeContentPadding(), getAfterContentPadding(), getMainAxisItemSpacing(), this.coroutineScope, null);
             }
             LazyStaggeredGridMeasuredItem lazyStaggeredGridMeasuredItem = visibleItemsInfo.get(i2);
             if (lazyStaggeredGridMeasuredItem.getNonScrollableItem()) {

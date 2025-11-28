@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.os.ResultReceiver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class D4 implements InterfaceC0376kg {
 
     /* renamed from: a  reason: collision with root package name */

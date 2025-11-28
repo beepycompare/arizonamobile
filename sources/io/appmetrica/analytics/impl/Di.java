@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Di implements InterfaceC0328ik {
     public static final Ci e = new Ci();
     public static final long f = TimeUnit.SECONDS.toMillis(4);

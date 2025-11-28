@@ -47,19 +47,19 @@ public final class TextLayoutResultProxy {
     }
 
     /* renamed from: getOffsetForPosition-3MmeM6k$default  reason: not valid java name */
-    public static /* synthetic */ int m1386getOffsetForPosition3MmeM6k$default(TextLayoutResultProxy textLayoutResultProxy, long j, boolean z, int i, Object obj) {
+    public static /* synthetic */ int m1387getOffsetForPosition3MmeM6k$default(TextLayoutResultProxy textLayoutResultProxy, long j, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
             z = true;
         }
-        return textLayoutResultProxy.m1387getOffsetForPosition3MmeM6k(j, z);
+        return textLayoutResultProxy.m1388getOffsetForPosition3MmeM6k(j, z);
     }
 
     /* renamed from: getOffsetForPosition-3MmeM6k  reason: not valid java name */
-    public final int m1387getOffsetForPosition3MmeM6k(long j, boolean z) {
+    public final int m1388getOffsetForPosition3MmeM6k(long j, boolean z) {
         if (z) {
-            j = m1385coercedInVisibleBoundsOfInputTextMKHz9U(j);
+            j = m1386coercedInVisibleBoundsOfInputTextMKHz9U(j);
         }
-        return this.value.m7427getOffsetForPositionk4lQ0M(m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release(j));
+        return this.value.m7428getOffsetForPositionk4lQ0M(m1390translateDecorationToInnerCoordinatesMKHz9U$foundation_release(j));
     }
 
     public static /* synthetic */ int getLineEnd$default(TextLayoutResultProxy textLayoutResultProxy, int i, boolean z, int i2, Object obj) {
@@ -74,15 +74,15 @@ public final class TextLayoutResultProxy {
     }
 
     /* renamed from: isPositionOnText-k-4lQ0M  reason: not valid java name */
-    public final boolean m1388isPositionOnTextk4lQ0M(long j) {
-        long m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release = m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release(m1385coercedInVisibleBoundsOfInputTextMKHz9U(j));
-        int lineForVerticalPosition = this.value.getLineForVerticalPosition(Float.intBitsToFloat((int) (4294967295L & m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release)));
-        int i = (int) (m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release >> 32);
+    public final boolean m1389isPositionOnTextk4lQ0M(long j) {
+        long m1390translateDecorationToInnerCoordinatesMKHz9U$foundation_release = m1390translateDecorationToInnerCoordinatesMKHz9U$foundation_release(m1386coercedInVisibleBoundsOfInputTextMKHz9U(j));
+        int lineForVerticalPosition = this.value.getLineForVerticalPosition(Float.intBitsToFloat((int) (4294967295L & m1390translateDecorationToInnerCoordinatesMKHz9U$foundation_release)));
+        int i = (int) (m1390translateDecorationToInnerCoordinatesMKHz9U$foundation_release >> 32);
         return Float.intBitsToFloat(i) >= this.value.getLineLeft(lineForVerticalPosition) && Float.intBitsToFloat(i) <= this.value.getLineRight(lineForVerticalPosition);
     }
 
     /* renamed from: translateDecorationToInnerCoordinates-MK-Hz9U$foundation_release  reason: not valid java name */
-    public final long m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release(long j) {
+    public final long m1390translateDecorationToInnerCoordinatesMKHz9U$foundation_release(long j) {
         LayoutCoordinates layoutCoordinates;
         LayoutCoordinates layoutCoordinates2 = this.innerTextFieldCoordinates;
         if (layoutCoordinates2 != null) {
@@ -93,13 +93,13 @@ public final class TextLayoutResultProxy {
                 return j;
             }
             LayoutCoordinates layoutCoordinates3 = layoutCoordinates.isAttached() ? layoutCoordinates : null;
-            return layoutCoordinates3 == null ? j : layoutCoordinates2.mo6706localPositionOfR5De75A(layoutCoordinates3, j);
+            return layoutCoordinates3 == null ? j : layoutCoordinates2.mo6707localPositionOfR5De75A(layoutCoordinates3, j);
         }
         return j;
     }
 
     /* renamed from: translateInnerToDecorationCoordinates-MK-Hz9U$foundation_release  reason: not valid java name */
-    public final long m1390translateInnerToDecorationCoordinatesMKHz9U$foundation_release(long j) {
+    public final long m1391translateInnerToDecorationCoordinatesMKHz9U$foundation_release(long j) {
         LayoutCoordinates layoutCoordinates;
         LayoutCoordinates layoutCoordinates2 = this.innerTextFieldCoordinates;
         if (layoutCoordinates2 != null) {
@@ -110,7 +110,7 @@ public final class TextLayoutResultProxy {
                 return j;
             }
             LayoutCoordinates layoutCoordinates3 = layoutCoordinates.isAttached() ? layoutCoordinates : null;
-            return layoutCoordinates3 == null ? j : layoutCoordinates3.mo6706localPositionOfR5De75A(layoutCoordinates2, j);
+            return layoutCoordinates3 == null ? j : layoutCoordinates3.mo6707localPositionOfR5De75A(layoutCoordinates2, j);
         }
         return j;
     }
@@ -122,9 +122,9 @@ public final class TextLayoutResultProxy {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final long m1385coercedInVisibleBoundsOfInputTextMKHz9U(long j) {
+    private final long m1386coercedInVisibleBoundsOfInputTextMKHz9U(long j) {
         Rect zero;
-        long m1392coerceIn3MmeM6k;
+        long m1393coerceIn3MmeM6k;
         LayoutCoordinates layoutCoordinates = this.innerTextFieldCoordinates;
         if (layoutCoordinates != null) {
             if (layoutCoordinates.isAttached()) {
@@ -138,11 +138,11 @@ public final class TextLayoutResultProxy {
             }
         }
         zero = Rect.Companion.getZero();
-        m1392coerceIn3MmeM6k = TextLayoutResultProxyKt.m1392coerceIn3MmeM6k(j, zero);
-        return m1392coerceIn3MmeM6k;
+        m1393coerceIn3MmeM6k = TextLayoutResultProxyKt.m1393coerceIn3MmeM6k(j, zero);
+        return m1393coerceIn3MmeM6k;
     }
 
     public final int getLineForVerticalPosition(float f) {
-        return this.value.getLineForVerticalPosition(Float.intBitsToFloat((int) (m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release(m1385coercedInVisibleBoundsOfInputTextMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)))) & 4294967295L)));
+        return this.value.getLineForVerticalPosition(Float.intBitsToFloat((int) (m1390translateDecorationToInnerCoordinatesMKHz9U$foundation_release(m1386coercedInVisibleBoundsOfInputTextMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)))) & 4294967295L)));
     }
 }

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.util.SparseArray;
 import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.fo  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0255fo {
     public static final int[] c = {0, 1, 2, 3};
 

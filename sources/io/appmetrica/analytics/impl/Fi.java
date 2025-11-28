@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Fi extends R2 {
     public Fi(InterfaceC0562s2 interfaceC0562s2) {
         super(interfaceC0562s2);

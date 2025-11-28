@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.coroutines.Pool", f = "ConnectionPoolImpl.kt", i = {}, l = {236}, m = "acquire", n = {}, s = {})
+@DebugMetadata(c = "androidx.room.coroutines.Pool", f = "ConnectionPoolImpl.kt", i = {}, l = {253}, m = "acquire", n = {}, s = {})
 /* loaded from: classes3.dex */
 public final class Pool$acquire$1 extends ContinuationImpl {
     int label;

@@ -77,7 +77,7 @@ public final class LegacyTextFieldState {
         this.keyboardController = softwareKeyboardController;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.hasFocus$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7993boximpl(Dp.m7995constructorimpl(0)), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7994boximpl(Dp.m7996constructorimpl(0)), null, 2, null);
         this.minHeightForSingleLineField$delegate = mutableStateOf$default2;
         mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.layoutResultState = mutableStateOf$default3;
@@ -132,10 +132,10 @@ public final class LegacyTextFieldState {
             }
         };
         this.highlightPaint = AndroidPaint_androidKt.Paint();
-        this.selectionBackgroundColor = Color.Companion.m5315getUnspecified0d7_KjU();
-        mutableStateOf$default12 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m7445boximpl(TextRange.Companion.m7462getZerod9O1mEE()), null, 2, null);
+        this.selectionBackgroundColor = Color.Companion.m5316getUnspecified0d7_KjU();
+        mutableStateOf$default12 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m7446boximpl(TextRange.Companion.m7463getZerod9O1mEE()), null, 2, null);
         this.selectionPreviewHighlightRange$delegate = mutableStateOf$default12;
-        mutableStateOf$default13 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m7445boximpl(TextRange.Companion.m7462getZerod9O1mEE()), null, 2, null);
+        mutableStateOf$default13 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m7446boximpl(TextRange.Companion.m7463getZerod9O1mEE()), null, 2, null);
         this.deletionPreviewHighlightRange$delegate = mutableStateOf$default13;
     }
 
@@ -176,13 +176,13 @@ public final class LegacyTextFieldState {
     }
 
     /* renamed from: getMinHeightForSingleLineField-D9Ej5fM  reason: not valid java name */
-    public final float m1287getMinHeightForSingleLineFieldD9Ej5fM() {
-        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m8009unboximpl();
+    public final float m1288getMinHeightForSingleLineFieldD9Ej5fM() {
+        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m8010unboximpl();
     }
 
     /* renamed from: setMinHeightForSingleLineField-0680j_4  reason: not valid java name */
-    public final void m1291setMinHeightForSingleLineField0680j_4(float f) {
-        this.minHeightForSingleLineField$delegate.setValue(Dp.m7993boximpl(f));
+    public final void m1292setMinHeightForSingleLineField0680j_4(float f) {
+        this.minHeightForSingleLineField$delegate.setValue(Dp.m7994boximpl(f));
     }
 
     public final LayoutCoordinates getLayoutCoordinates() {
@@ -303,8 +303,8 @@ public final class LegacyTextFieldState {
                 legacyTextFieldState.setAutofillHighlightOn(false);
             }
         }
-        legacyTextFieldState.m1293setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7462getZerod9O1mEE());
-        legacyTextFieldState.m1290setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7462getZerod9O1mEE());
+        legacyTextFieldState.m1294setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7463getZerod9O1mEE());
+        legacyTextFieldState.m1291setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7463getZerod9O1mEE());
         legacyTextFieldState.onValueChangeOriginal.invoke(textFieldValue);
         legacyTextFieldState.recomposeScope.invalidate();
         return Unit.INSTANCE;
@@ -316,7 +316,7 @@ public final class LegacyTextFieldState {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onImeActionPerformed$lambda$3(LegacyTextFieldState legacyTextFieldState, ImeAction imeAction) {
-        legacyTextFieldState.keyboardActionRunner.m1271runActionKlQnJC8(imeAction.m7629unboximpl());
+        legacyTextFieldState.keyboardActionRunner.m1272runActionKlQnJC8(imeAction.m7630unboximpl());
         return Unit.INSTANCE;
     }
 
@@ -326,7 +326,7 @@ public final class LegacyTextFieldState {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean onImeActionPerformedWithResult$lambda$4(LegacyTextFieldState legacyTextFieldState, ImeAction imeAction) {
-        return legacyTextFieldState.keyboardActionRunner.m1271runActionKlQnJC8(imeAction.m7629unboximpl());
+        return legacyTextFieldState.keyboardActionRunner.m1272runActionKlQnJC8(imeAction.m7630unboximpl());
     }
 
     public final Paint getHighlightPaint() {
@@ -334,51 +334,51 @@ public final class LegacyTextFieldState {
     }
 
     /* renamed from: getSelectionBackgroundColor-0d7_KjU  reason: not valid java name */
-    public final long m1288getSelectionBackgroundColor0d7_KjU() {
+    public final long m1289getSelectionBackgroundColor0d7_KjU() {
         return this.selectionBackgroundColor;
     }
 
     /* renamed from: setSelectionBackgroundColor-8_81llA  reason: not valid java name */
-    public final void m1292setSelectionBackgroundColor8_81llA(long j) {
+    public final void m1293setSelectionBackgroundColor8_81llA(long j) {
         this.selectionBackgroundColor = j;
     }
 
     /* renamed from: getSelectionPreviewHighlightRange-d9O1mEE  reason: not valid java name */
-    public final long m1289getSelectionPreviewHighlightRanged9O1mEE() {
-        return ((TextRange) this.selectionPreviewHighlightRange$delegate.getValue()).m7461unboximpl();
+    public final long m1290getSelectionPreviewHighlightRanged9O1mEE() {
+        return ((TextRange) this.selectionPreviewHighlightRange$delegate.getValue()).m7462unboximpl();
     }
 
     /* renamed from: setSelectionPreviewHighlightRange-5zc-tL8  reason: not valid java name */
-    public final void m1293setSelectionPreviewHighlightRange5zctL8(long j) {
-        this.selectionPreviewHighlightRange$delegate.setValue(TextRange.m7445boximpl(j));
+    public final void m1294setSelectionPreviewHighlightRange5zctL8(long j) {
+        this.selectionPreviewHighlightRange$delegate.setValue(TextRange.m7446boximpl(j));
     }
 
     /* renamed from: getDeletionPreviewHighlightRange-d9O1mEE  reason: not valid java name */
-    public final long m1286getDeletionPreviewHighlightRanged9O1mEE() {
-        return ((TextRange) this.deletionPreviewHighlightRange$delegate.getValue()).m7461unboximpl();
+    public final long m1287getDeletionPreviewHighlightRanged9O1mEE() {
+        return ((TextRange) this.deletionPreviewHighlightRange$delegate.getValue()).m7462unboximpl();
     }
 
     /* renamed from: setDeletionPreviewHighlightRange-5zc-tL8  reason: not valid java name */
-    public final void m1290setDeletionPreviewHighlightRange5zctL8(long j) {
-        this.deletionPreviewHighlightRange$delegate.setValue(TextRange.m7445boximpl(j));
+    public final void m1291setDeletionPreviewHighlightRange5zctL8(long j) {
+        this.deletionPreviewHighlightRange$delegate.setValue(TextRange.m7446boximpl(j));
     }
 
     public final boolean hasHighlight() {
-        return (TextRange.m7451getCollapsedimpl(m1289getSelectionPreviewHighlightRanged9O1mEE()) && TextRange.m7451getCollapsedimpl(m1286getDeletionPreviewHighlightRanged9O1mEE())) ? false : true;
+        return (TextRange.m7452getCollapsedimpl(m1290getSelectionPreviewHighlightRanged9O1mEE()) && TextRange.m7452getCollapsedimpl(m1287getDeletionPreviewHighlightRanged9O1mEE())) ? false : true;
     }
 
     /* renamed from: update-fnh65Uc  reason: not valid java name */
-    public final void m1294updatefnh65Uc(AnnotatedString annotatedString, AnnotatedString annotatedString2, TextStyle textStyle, boolean z, Density density, FontFamily.Resolver resolver, Function1<? super TextFieldValue, Unit> function1, KeyboardActions keyboardActions, FocusManager focusManager, long j) {
+    public final void m1295updatefnh65Uc(AnnotatedString annotatedString, AnnotatedString annotatedString2, TextStyle textStyle, boolean z, Density density, FontFamily.Resolver resolver, Function1<? super TextFieldValue, Unit> function1, KeyboardActions keyboardActions, FocusManager focusManager, long j) {
         this.onValueChangeOriginal = function1;
         this.selectionBackgroundColor = j;
         KeyboardActionRunner keyboardActionRunner = this.keyboardActionRunner;
         keyboardActionRunner.setKeyboardActions(keyboardActions);
         keyboardActionRunner.setFocusManager(focusManager);
         this.untransformedText = annotatedString;
-        TextDelegate m1346updateTextDelegaterm0N8CA$default = TextDelegateKt.m1346updateTextDelegaterm0N8CA$default(this.textDelegate, annotatedString2, textStyle, density, resolver, z, 0, 0, 0, CollectionsKt.emptyList(), 448, null);
-        if (this.textDelegate != m1346updateTextDelegaterm0N8CA$default) {
+        TextDelegate m1347updateTextDelegaterm0N8CA$default = TextDelegateKt.m1347updateTextDelegaterm0N8CA$default(this.textDelegate, annotatedString2, textStyle, density, resolver, z, 0, 0, 0, CollectionsKt.emptyList(), 448, null);
+        if (this.textDelegate != m1347updateTextDelegaterm0N8CA$default) {
             this.isLayoutResultStale = true;
         }
-        this.textDelegate = m1346updateTextDelegaterm0N8CA$default;
+        this.textDelegate = m1347updateTextDelegaterm0N8CA$default;
     }
 }

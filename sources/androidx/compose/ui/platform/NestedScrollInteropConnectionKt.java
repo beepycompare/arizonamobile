@@ -36,14 +36,14 @@ public final class NestedScrollInteropConnectionKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toViewType-GyEprt8  reason: not valid java name */
-    public static final int m7173toViewTypeGyEprt8(int i) {
-        return !NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6462getUserInputWNlRxjI()) ? 1 : 0;
+    public static final int m7174toViewTypeGyEprt8(int i) {
+        return !NestedScrollSource.m6451equalsimpl0(i, NestedScrollSource.Companion.m6463getUserInputWNlRxjI()) ? 1 : 0;
     }
 
     /* renamed from: scrollAxes-sF-c-tU  reason: not valid java name */
-    private static final int m7171scrollAxessFctU(long j, float f) {
-        int i = Math.abs(Velocity.m8233getXimpl(j)) >= f ? 1 : 0;
-        return Math.abs(Velocity.m8234getYimpl(j)) >= f ? i | 2 : i;
+    private static final int m7172scrollAxessFctU(long j, float f) {
+        int i = Math.abs(Velocity.m8234getXimpl(j)) >= f ? 1 : 0;
+        return Math.abs(Velocity.m8235getYimpl(j)) >= f ? i | 2 : i;
     }
 
     public static final NestedScrollConnection rememberNestedScrollInteropConnection(View view, Composer composer, int i, int i2) {
@@ -83,7 +83,7 @@ public final class NestedScrollInteropConnectionKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toOffset-Uv8p0NA  reason: not valid java name */
-    public static final long m7172toOffsetUv8p0NA(int[] iArr, long j) {
+    public static final long m7173toOffsetUv8p0NA(int[] iArr, long j) {
         float coerceAtLeast;
         float coerceAtLeast2;
         int i = (int) (j >> 32);
@@ -98,12 +98,12 @@ public final class NestedScrollInteropConnectionKt {
         } else {
             coerceAtLeast2 = RangesKt.coerceAtLeast(reverseAxis(iArr[1]), Float.intBitsToFloat(i2));
         }
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(coerceAtLeast) << 32) | (Float.floatToRawIntBits(coerceAtLeast2) & 4294967295L));
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(coerceAtLeast) << 32) | (Float.floatToRawIntBits(coerceAtLeast2) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getScrollAxes-k-4lQ0M  reason: not valid java name */
-    public static final int m7170getScrollAxesk4lQ0M(long j) {
+    public static final int m7171getScrollAxesk4lQ0M(long j) {
         int i = Math.abs(Float.intBitsToFloat((int) (j >> 32))) >= 0.5f ? 1 : 0;
         return Math.abs(Float.intBitsToFloat((int) (j & 4294967295L))) >= 0.5f ? i | 2 : i;
     }

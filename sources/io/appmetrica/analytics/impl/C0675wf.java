@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.wf  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0675wf implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */

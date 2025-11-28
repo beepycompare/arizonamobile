@@ -5,7 +5,7 @@ import android.net.NetworkInfo;
 import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ke implements FunctionWithThrowable {
     @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
     public final Object apply(Object obj) {

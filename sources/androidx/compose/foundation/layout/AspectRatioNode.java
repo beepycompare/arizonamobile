@@ -43,13 +43,13 @@ final class AspectRatioNode extends Modifier.Node implements LayoutModifierNode 
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        long m721findSizeToXhtMw = m721findSizeToXhtMw(j);
-        if (!IntSize.m8164equalsimpl0(m721findSizeToXhtMw, IntSize.Companion.m8171getZeroYbymL2g())) {
-            j = Constraints.Companion.m7958fixedJhjzzOo((int) (m721findSizeToXhtMw >> 32), (int) (m721findSizeToXhtMw & 4294967295L));
+    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        long m722findSizeToXhtMw = m722findSizeToXhtMw(j);
+        if (!IntSize.m8165equalsimpl0(m722findSizeToXhtMw, IntSize.Companion.m8172getZeroYbymL2g())) {
+            j = Constraints.Companion.m7959fixedJhjzzOo((int) (m722findSizeToXhtMw >> 32), (int) (m722findSizeToXhtMw & 4294967295L));
         }
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.AspectRatioNode$$ExternalSyntheticLambda0
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.AspectRatioNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
@@ -98,114 +98,114 @@ final class AspectRatioNode extends Modifier.Node implements LayoutModifierNode 
     }
 
     /* renamed from: findSize-ToXhtMw  reason: not valid java name */
-    private final long m721findSizeToXhtMw(long j) {
+    private final long m722findSizeToXhtMw(long j) {
         if (!this.matchHeightConstraintsFirst) {
-            long m723tryMaxWidthJN0ABg = m723tryMaxWidthJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m723tryMaxWidthJN0ABg, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m723tryMaxWidthJN0ABg;
+            long m724tryMaxWidthJN0ABg = m724tryMaxWidthJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m724tryMaxWidthJN0ABg, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m724tryMaxWidthJN0ABg;
             }
-            long m722tryMaxHeightJN0ABg = m722tryMaxHeightJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m722tryMaxHeightJN0ABg, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m722tryMaxHeightJN0ABg;
+            long m723tryMaxHeightJN0ABg = m723tryMaxHeightJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m723tryMaxHeightJN0ABg, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m723tryMaxHeightJN0ABg;
             }
-            long m725tryMinWidthJN0ABg = m725tryMinWidthJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m725tryMinWidthJN0ABg, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m725tryMinWidthJN0ABg;
+            long m726tryMinWidthJN0ABg = m726tryMinWidthJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m726tryMinWidthJN0ABg, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m726tryMinWidthJN0ABg;
             }
-            long m724tryMinHeightJN0ABg = m724tryMinHeightJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m724tryMinHeightJN0ABg, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m724tryMinHeightJN0ABg;
+            long m725tryMinHeightJN0ABg = m725tryMinHeightJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m725tryMinHeightJN0ABg, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m725tryMinHeightJN0ABg;
             }
-            long m723tryMaxWidthJN0ABg2 = m723tryMaxWidthJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m723tryMaxWidthJN0ABg2, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m723tryMaxWidthJN0ABg2;
+            long m724tryMaxWidthJN0ABg2 = m724tryMaxWidthJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m724tryMaxWidthJN0ABg2, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m724tryMaxWidthJN0ABg2;
             }
-            long m722tryMaxHeightJN0ABg2 = m722tryMaxHeightJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m722tryMaxHeightJN0ABg2, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m722tryMaxHeightJN0ABg2;
+            long m723tryMaxHeightJN0ABg2 = m723tryMaxHeightJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m723tryMaxHeightJN0ABg2, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m723tryMaxHeightJN0ABg2;
             }
-            long m725tryMinWidthJN0ABg2 = m725tryMinWidthJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m725tryMinWidthJN0ABg2, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m725tryMinWidthJN0ABg2;
+            long m726tryMinWidthJN0ABg2 = m726tryMinWidthJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m726tryMinWidthJN0ABg2, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m726tryMinWidthJN0ABg2;
             }
-            long m724tryMinHeightJN0ABg2 = m724tryMinHeightJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m724tryMinHeightJN0ABg2, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m724tryMinHeightJN0ABg2;
+            long m725tryMinHeightJN0ABg2 = m725tryMinHeightJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m725tryMinHeightJN0ABg2, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m725tryMinHeightJN0ABg2;
             }
         } else {
-            long m722tryMaxHeightJN0ABg3 = m722tryMaxHeightJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m722tryMaxHeightJN0ABg3, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m722tryMaxHeightJN0ABg3;
+            long m723tryMaxHeightJN0ABg3 = m723tryMaxHeightJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m723tryMaxHeightJN0ABg3, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m723tryMaxHeightJN0ABg3;
             }
-            long m723tryMaxWidthJN0ABg3 = m723tryMaxWidthJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m723tryMaxWidthJN0ABg3, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m723tryMaxWidthJN0ABg3;
+            long m724tryMaxWidthJN0ABg3 = m724tryMaxWidthJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m724tryMaxWidthJN0ABg3, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m724tryMaxWidthJN0ABg3;
             }
-            long m724tryMinHeightJN0ABg3 = m724tryMinHeightJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m724tryMinHeightJN0ABg3, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m724tryMinHeightJN0ABg3;
+            long m725tryMinHeightJN0ABg3 = m725tryMinHeightJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m725tryMinHeightJN0ABg3, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m725tryMinHeightJN0ABg3;
             }
-            long m725tryMinWidthJN0ABg3 = m725tryMinWidthJN0ABg(j, true);
-            if (!IntSize.m8164equalsimpl0(m725tryMinWidthJN0ABg3, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m725tryMinWidthJN0ABg3;
+            long m726tryMinWidthJN0ABg3 = m726tryMinWidthJN0ABg(j, true);
+            if (!IntSize.m8165equalsimpl0(m726tryMinWidthJN0ABg3, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m726tryMinWidthJN0ABg3;
             }
-            long m722tryMaxHeightJN0ABg4 = m722tryMaxHeightJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m722tryMaxHeightJN0ABg4, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m722tryMaxHeightJN0ABg4;
+            long m723tryMaxHeightJN0ABg4 = m723tryMaxHeightJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m723tryMaxHeightJN0ABg4, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m723tryMaxHeightJN0ABg4;
             }
-            long m723tryMaxWidthJN0ABg4 = m723tryMaxWidthJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m723tryMaxWidthJN0ABg4, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m723tryMaxWidthJN0ABg4;
+            long m724tryMaxWidthJN0ABg4 = m724tryMaxWidthJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m724tryMaxWidthJN0ABg4, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m724tryMaxWidthJN0ABg4;
             }
-            long m724tryMinHeightJN0ABg4 = m724tryMinHeightJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m724tryMinHeightJN0ABg4, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m724tryMinHeightJN0ABg4;
+            long m725tryMinHeightJN0ABg4 = m725tryMinHeightJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m725tryMinHeightJN0ABg4, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m725tryMinHeightJN0ABg4;
             }
-            long m725tryMinWidthJN0ABg4 = m725tryMinWidthJN0ABg(j, false);
-            if (!IntSize.m8164equalsimpl0(m725tryMinWidthJN0ABg4, IntSize.Companion.m8171getZeroYbymL2g())) {
-                return m725tryMinWidthJN0ABg4;
+            long m726tryMinWidthJN0ABg4 = m726tryMinWidthJN0ABg(j, false);
+            if (!IntSize.m8165equalsimpl0(m726tryMinWidthJN0ABg4, IntSize.Companion.m8172getZeroYbymL2g())) {
+                return m726tryMinWidthJN0ABg4;
             }
         }
-        return IntSize.Companion.m8171getZeroYbymL2g();
+        return IntSize.Companion.m8172getZeroYbymL2g();
     }
 
     /* renamed from: tryMaxWidth-JN-0ABg  reason: not valid java name */
-    private final long m723tryMaxWidthJN0ABg(long j, boolean z) {
+    private final long m724tryMaxWidthJN0ABg(long j, boolean z) {
         int round;
-        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
-        if (m7948getMaxWidthimpl == Integer.MAX_VALUE || (round = Math.round(m7948getMaxWidthimpl / this.aspectRatio)) <= 0 || (z && !AspectRatioKt.m719isSatisfiedByNN6EwU(j, m7948getMaxWidthimpl, round))) {
-            return IntSize.Companion.m8171getZeroYbymL2g();
+        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+        if (m7949getMaxWidthimpl == Integer.MAX_VALUE || (round = Math.round(m7949getMaxWidthimpl / this.aspectRatio)) <= 0 || (z && !AspectRatioKt.m720isSatisfiedByNN6EwU(j, m7949getMaxWidthimpl, round))) {
+            return IntSize.Companion.m8172getZeroYbymL2g();
         }
-        return IntSize.m8161constructorimpl((m7948getMaxWidthimpl << 32) | (round & 4294967295L));
+        return IntSize.m8162constructorimpl((m7949getMaxWidthimpl << 32) | (round & 4294967295L));
     }
 
     /* renamed from: tryMaxHeight-JN-0ABg  reason: not valid java name */
-    private final long m722tryMaxHeightJN0ABg(long j, boolean z) {
+    private final long m723tryMaxHeightJN0ABg(long j, boolean z) {
         int round;
-        int m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
-        if (m7947getMaxHeightimpl == Integer.MAX_VALUE || (round = Math.round(m7947getMaxHeightimpl * this.aspectRatio)) <= 0 || (z && !AspectRatioKt.m719isSatisfiedByNN6EwU(j, round, m7947getMaxHeightimpl))) {
-            return IntSize.Companion.m8171getZeroYbymL2g();
+        int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
+        if (m7948getMaxHeightimpl == Integer.MAX_VALUE || (round = Math.round(m7948getMaxHeightimpl * this.aspectRatio)) <= 0 || (z && !AspectRatioKt.m720isSatisfiedByNN6EwU(j, round, m7948getMaxHeightimpl))) {
+            return IntSize.Companion.m8172getZeroYbymL2g();
         }
-        return IntSize.m8161constructorimpl((round << 32) | (m7947getMaxHeightimpl & 4294967295L));
+        return IntSize.m8162constructorimpl((round << 32) | (m7948getMaxHeightimpl & 4294967295L));
     }
 
     /* renamed from: tryMinWidth-JN-0ABg  reason: not valid java name */
-    private final long m725tryMinWidthJN0ABg(long j, boolean z) {
-        int m7950getMinWidthimpl = Constraints.m7950getMinWidthimpl(j);
-        int round = Math.round(m7950getMinWidthimpl / this.aspectRatio);
-        if (round <= 0 || (z && !AspectRatioKt.m719isSatisfiedByNN6EwU(j, m7950getMinWidthimpl, round))) {
-            return IntSize.Companion.m8171getZeroYbymL2g();
+    private final long m726tryMinWidthJN0ABg(long j, boolean z) {
+        int m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
+        int round = Math.round(m7951getMinWidthimpl / this.aspectRatio);
+        if (round <= 0 || (z && !AspectRatioKt.m720isSatisfiedByNN6EwU(j, m7951getMinWidthimpl, round))) {
+            return IntSize.Companion.m8172getZeroYbymL2g();
         }
-        return IntSize.m8161constructorimpl((m7950getMinWidthimpl << 32) | (round & 4294967295L));
+        return IntSize.m8162constructorimpl((m7951getMinWidthimpl << 32) | (round & 4294967295L));
     }
 
     /* renamed from: tryMinHeight-JN-0ABg  reason: not valid java name */
-    private final long m724tryMinHeightJN0ABg(long j, boolean z) {
-        int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
-        int round = Math.round(m7949getMinHeightimpl * this.aspectRatio);
-        if (round <= 0 || (z && !AspectRatioKt.m719isSatisfiedByNN6EwU(j, round, m7949getMinHeightimpl))) {
-            return IntSize.Companion.m8171getZeroYbymL2g();
+    private final long m725tryMinHeightJN0ABg(long j, boolean z) {
+        int m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
+        int round = Math.round(m7950getMinHeightimpl * this.aspectRatio);
+        if (round <= 0 || (z && !AspectRatioKt.m720isSatisfiedByNN6EwU(j, round, m7950getMinHeightimpl))) {
+            return IntSize.Companion.m8172getZeroYbymL2g();
         }
-        return IntSize.m8161constructorimpl((round << 32) | (m7949getMinHeightimpl & 4294967295L));
+        return IntSize.m8162constructorimpl((round << 32) | (m7950getMinHeightimpl & 4294967295L));
     }
 }

@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 /* renamed from: io.appmetrica.analytics.impl.fa  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0241fa {
 
     /* renamed from: a  reason: collision with root package name */

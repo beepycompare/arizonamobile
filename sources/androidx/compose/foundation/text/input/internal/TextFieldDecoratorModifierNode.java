@@ -458,7 +458,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         }, 72, null));
         this.textFieldKeyEventHandler = TextFieldKeyEventHandler_androidKt.createTextFieldKeyEventHandler();
         this.keyboardActionScope = new TextFieldDecoratorModifierNode$keyboardActionScope$1(this);
-        this.clipboardKeyCommandsHandler = ClipboardKeyCommandsHandler.m1484constructorimpl(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda16
+        this.clipboardKeyCommandsHandler = ClipboardKeyCommandsHandler.m1485constructorimpl(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit clipboardKeyCommandsHandler$lambda$11;
@@ -541,12 +541,12 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit dragAndDropNode$lambda$8(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, Offset offset) {
-        long m1591fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1591fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m5045unboximpl());
-        int m1581getOffsetForPosition3MmeM6k$default = TextLayoutState.m1581getOffsetForPosition3MmeM6k$default(textFieldDecoratorModifierNode.textLayoutState, m1591fromWindowToDecorationUv8p0NA, false, 2, null);
-        if (m1581getOffsetForPosition3MmeM6k$default >= 0) {
-            textFieldDecoratorModifierNode.textFieldState.m1603selectCharsIn5zctL8(TextRangeKt.TextRange(m1581getOffsetForPosition3MmeM6k$default));
+        long m1592fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1592fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m5046unboximpl());
+        int m1582getOffsetForPosition3MmeM6k$default = TextLayoutState.m1582getOffsetForPosition3MmeM6k$default(textFieldDecoratorModifierNode.textLayoutState, m1592fromWindowToDecorationUv8p0NA, false, 2, null);
+        if (m1582getOffsetForPosition3MmeM6k$default >= 0) {
+            textFieldDecoratorModifierNode.textFieldState.m1604selectCharsIn5zctL8(TextRangeKt.TextRange(m1582getOffsetForPosition3MmeM6k$default));
         }
-        textFieldDecoratorModifierNode.textFieldSelectionState.m1655updateHandleDraggingUv8p0NA(Handle.Cursor, m1591fromWindowToDecorationUv8p0NA);
+        textFieldDecoratorModifierNode.textFieldSelectionState.m1656updateHandleDraggingUv8p0NA(Handle.Cursor, m1592fromWindowToDecorationUv8p0NA);
         return Unit.INSTANCE;
     }
 
@@ -558,7 +558,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         String readPlainText = TransferableContent_androidKt.readPlainText(clipEntry);
         ReceiveContentConfiguration receiveContentConfiguration = ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode);
         if (receiveContentConfiguration != null) {
-            TransferableContent onReceive = receiveContentConfiguration.getReceiveContentListener().onReceive(new TransferableContent(clipEntry, clipMetadata, TransferableContent.Source.Companion.m382getDragAndDropkB6V9T0(), null, 8, null));
+            TransferableContent onReceive = receiveContentConfiguration.getReceiveContentListener().onReceive(new TransferableContent(clipEntry, clipMetadata, TransferableContent.Source.Companion.m383getDragAndDropkB6V9T0(), null, 8, null));
             readPlainText = (onReceive == null || (clipEntry2 = onReceive.getClipEntry()) == null) ? null : TransferableContent_androidKt.readPlainText(clipEntry2);
         }
         if (readPlainText != null) {
@@ -615,7 +615,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     public void draw(ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
         if (getAutofillHighlightOn()) {
-            DrawScope.m5852drawRectnJ9OG0$default(contentDrawScope, ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, AutofillHighlightKt.getLocalAutofillHighlightColor())).m5289unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+            DrawScope.m5853drawRectnJ9OG0$default(contentDrawScope, ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, AutofillHighlightKt.getLocalAutofillHighlightColor())).m5290unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
     }
 
@@ -686,7 +686,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                 disposeInputSession();
             }
         }
-        if (z != z6 || z5 != z7 || !ImeAction.m7626equalsimpl0(keyboardOptions.m1284getImeActionOrDefaulteUduSuo$foundation_release(), keyboardOptions2.m1284getImeActionOrDefaulteUduSuo$foundation_release()) || z4 != z8) {
+        if (z != z6 || z5 != z7 || !ImeAction.m7627equalsimpl0(keyboardOptions.m1285getImeActionOrDefaulteUduSuo$foundation_release(), keyboardOptions2.m1285getImeActionOrDefaulteUduSuo$foundation_release()) || z4 != z8) {
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         if (!Intrinsics.areEqual(textFieldSelectionState, textFieldSelectionState2)) {
@@ -735,10 +735,10 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         TextFieldCharSequence outputText = this.textFieldState.getOutputText();
-        long m1446getSelectiond9O1mEE = outputText.m1446getSelectiond9O1mEE();
+        long m1447getSelectiond9O1mEE = outputText.m1447getSelectiond9O1mEE();
         SemanticsPropertiesKt.setInputText(semanticsPropertyReceiver, new AnnotatedString(this.textFieldState.getUntransformedText().toString(), null, 2, null));
         SemanticsPropertiesKt.setEditableText(semanticsPropertyReceiver, new AnnotatedString(outputText.toString(), null, 2, null));
-        SemanticsPropertiesKt.m7224setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1446getSelectiond9O1mEE);
+        SemanticsPropertiesKt.m7225setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1447getSelectiond9O1mEE);
         if (!this.enabled) {
             SemanticsPropertiesKt.disabled(semanticsPropertyReceiver);
         }
@@ -790,12 +790,12 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                 return Boolean.valueOf(applySemantics$lambda$20);
             }
         }, 1, null);
-        final int m1284getImeActionOrDefaulteUduSuo$foundation_release = this.keyboardOptions.m1284getImeActionOrDefaulteUduSuo$foundation_release();
-        SemanticsPropertiesKt.m7220onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1284getImeActionOrDefaulteUduSuo$foundation_release, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
+        final int m1285getImeActionOrDefaulteUduSuo$foundation_release = this.keyboardOptions.m1285getImeActionOrDefaulteUduSuo$foundation_release();
+        SemanticsPropertiesKt.m7221onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1285getImeActionOrDefaulteUduSuo$foundation_release, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 boolean applySemantics$lambda$21;
-                applySemantics$lambda$21 = TextFieldDecoratorModifierNode.applySemantics$lambda$21(TextFieldDecoratorModifierNode.this, m1284getImeActionOrDefaulteUduSuo$foundation_release);
+                applySemantics$lambda$21 = TextFieldDecoratorModifierNode.applySemantics$lambda$21(TextFieldDecoratorModifierNode.this, m1285getImeActionOrDefaulteUduSuo$foundation_release);
                 return Boolean.valueOf(applySemantics$lambda$21);
             }
         }, 2, null);
@@ -815,7 +815,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                 return Boolean.valueOf(applySemantics$lambda$23);
             }
         }, 1, null);
-        if (!TextRange.m7451getCollapsedimpl(m1446getSelectiond9O1mEE) && !this.isPassword) {
+        if (!TextRange.m7452getCollapsedimpl(m1447getSelectiond9O1mEE) && !this.isPassword) {
             SemanticsPropertiesKt.copyText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
@@ -900,11 +900,11 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         } else {
             visualText = textFieldDecoratorModifierNode.textFieldState.getVisualText();
         }
-        long m1446getSelectiond9O1mEE = visualText.m1446getSelectiond9O1mEE();
+        long m1447getSelectiond9O1mEE = visualText.m1447getSelectiond9O1mEE();
         if (!textFieldDecoratorModifierNode.enabled || Math.min(i, i2) < 0 || Math.max(i, i2) > visualText.length()) {
             return false;
         }
-        if (i == TextRange.m7457getStartimpl(m1446getSelectiond9O1mEE) && i2 == TextRange.m7452getEndimpl(m1446getSelectiond9O1mEE)) {
+        if (i == TextRange.m7458getStartimpl(m1447getSelectiond9O1mEE) && i2 == TextRange.m7453getEndimpl(m1447getSelectiond9O1mEE)) {
             return true;
         }
         long TextRange = TextRangeKt.TextRange(i, i2);
@@ -914,16 +914,16 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             textFieldDecoratorModifierNode.textFieldSelectionState.updateTextToolbarState(TextToolbarState.Selection);
         }
         if (z) {
-            textFieldDecoratorModifierNode.textFieldState.m1604selectUntransformedCharsIn5zctL8(TextRange);
+            textFieldDecoratorModifierNode.textFieldState.m1605selectUntransformedCharsIn5zctL8(TextRange);
         } else {
-            textFieldDecoratorModifierNode.textFieldState.m1603selectCharsIn5zctL8(TextRange);
+            textFieldDecoratorModifierNode.textFieldState.m1604selectCharsIn5zctL8(TextRange);
         }
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean applySemantics$lambda$21(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
-        textFieldDecoratorModifierNode.m1564onImeActionPerformedKlQnJC8(i);
+        textFieldDecoratorModifierNode.m1565onImeActionPerformedKlQnJC8(i);
         return true;
     }
 
@@ -1015,8 +1015,8 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.pointerInputNode.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo238onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.pointerInputNode.mo238onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -1026,14 +1026,14 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onPreKeyEvent-ZmokQxo */
-    public boolean mo238onPreKeyEventZmokQxo(KeyEvent keyEvent) {
-        return this.textFieldKeyEventHandler.mo1476onPreKeyEventMyFupTE(keyEvent, this.textFieldState, this.textFieldSelectionState, (FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager()), requireKeyboardController());
+    public boolean mo239onPreKeyEventZmokQxo(KeyEvent keyEvent) {
+        return this.textFieldKeyEventHandler.mo1477onPreKeyEventMyFupTE(keyEvent, this.textFieldState, this.textFieldSelectionState, (FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager()), requireKeyboardController());
     }
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onKeyEvent-ZmokQxo */
-    public boolean mo236onKeyEventZmokQxo(KeyEvent keyEvent) {
-        return this.textFieldKeyEventHandler.mo1475onKeyEvent8zsqlwg(keyEvent, this.textFieldState, this.textLayoutState, this.textFieldSelectionState, this.clipboardKeyCommandsHandler, requireKeyboardController(), this.enabled && !this.readOnly, this.singleLine, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda17
+    public boolean mo237onKeyEventZmokQxo(KeyEvent keyEvent) {
+        return this.textFieldKeyEventHandler.mo1476onKeyEvent8zsqlwg(keyEvent, this.textFieldState, this.textLayoutState, this.textFieldSelectionState, this.clipboardKeyCommandsHandler, requireKeyboardController(), this.enabled && !this.readOnly, this.singleLine, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 boolean onKeyEvent_ZmokQxo$lambda$30;
@@ -1045,7 +1045,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean onKeyEvent_ZmokQxo$lambda$30(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
-        return textFieldDecoratorModifierNode.m1564onImeActionPerformedKlQnJC8(textFieldDecoratorModifierNode.keyboardOptions.m1284getImeActionOrDefaulteUduSuo$foundation_release());
+        return textFieldDecoratorModifierNode.m1565onImeActionPerformedKlQnJC8(textFieldDecoratorModifierNode.keyboardOptions.m1285getImeActionOrDefaulteUduSuo$foundation_release());
     }
 
     @Override // androidx.compose.ui.node.ObserverModifierNode
@@ -1078,8 +1078,8 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo418onRemeasuredozmzZPI(long j) {
-        this.dragAndDropNode.mo418onRemeasuredozmzZPI(j);
+    public void mo419onRemeasuredozmzZPI(long j) {
+        this.dragAndDropNode.mo419onRemeasuredozmzZPI(j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1122,10 +1122,10 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onImeActionPerformed-KlQnJC8  reason: not valid java name */
-    public final boolean m1564onImeActionPerformedKlQnJC8(final int i) {
+    public final boolean m1565onImeActionPerformedKlQnJC8(final int i) {
         KeyboardActionHandler keyboardActionHandler;
-        if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7643getNoneeUduSuo()) || ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7639getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
-            return m1563defaultKeyboardActionWithResultKlQnJC8(i);
+        if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7644getNoneeUduSuo()) || ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7640getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
+            return m1564defaultKeyboardActionWithResultKlQnJC8(i);
         }
         if (keyboardActionHandler != null) {
             keyboardActionHandler.onKeyboardAction(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda18
@@ -1143,20 +1143,20 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onImeActionPerformed_KlQnJC8$lambda$33(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
-        textFieldDecoratorModifierNode.keyboardActionScope.mo1270defaultKeyboardActionKlQnJC8(i);
+        textFieldDecoratorModifierNode.keyboardActionScope.mo1271defaultKeyboardActionKlQnJC8(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: defaultKeyboardActionWithResult-KlQnJC8  reason: not valid java name */
-    public final boolean m1563defaultKeyboardActionWithResultKlQnJC8(int i) {
-        if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7642getNexteUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4922getNextdhqQ8s());
+    public final boolean m1564defaultKeyboardActionWithResultKlQnJC8(int i) {
+        if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7643getNexteUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4929moveFocus3ESFkO8(FocusDirection.Companion.m4923getNextdhqQ8s());
             return true;
-        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7644getPreviouseUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4928moveFocus3ESFkO8(FocusDirection.Companion.m4923getPreviousdhqQ8s());
+        } else if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7645getPreviouseUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4929moveFocus3ESFkO8(FocusDirection.Companion.m4924getPreviousdhqQ8s());
             return true;
-        } else if (ImeAction.m7626equalsimpl0(i, ImeAction.Companion.m7640getDoneeUduSuo())) {
+        } else if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7641getDoneeUduSuo())) {
             requireKeyboardController().hide();
             return true;
         } else {

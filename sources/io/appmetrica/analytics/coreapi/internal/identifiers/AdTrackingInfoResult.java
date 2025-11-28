@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.coreapi.internal.identifiers;
 
 import android.text.TextUtils;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AdTrackingInfoResult {
     public final AdTrackingInfo mAdTrackingInfo;
     public final String mErrorExplanation;

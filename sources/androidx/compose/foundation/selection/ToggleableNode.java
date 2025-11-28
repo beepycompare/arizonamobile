@@ -64,13 +64,13 @@ public final class ToggleableNode extends ClickableNode {
     }
 
     /* renamed from: update-O2vRcR0  reason: not valid java name */
-    public final void m1188updateO2vRcR0(boolean z, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z2, boolean z3, Role role, Function1<? super Boolean, Unit> function1) {
+    public final void m1189updateO2vRcR0(boolean z, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z2, boolean z3, Role role, Function1<? super Boolean, Unit> function1) {
         if (this.value != z) {
             this.value = z;
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         this.onValueChange = function1;
-        super.m323updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z2, z3, (String) null, role, this._onClick);
+        super.m324updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z2, z3, (String) null, role, this._onClick);
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode

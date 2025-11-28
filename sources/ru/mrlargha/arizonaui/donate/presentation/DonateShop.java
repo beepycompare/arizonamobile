@@ -403,16 +403,18 @@ public final class DonateShop extends SAMPUIElement {
         } else if (i == 2 && this.mapFromCDN.isEmpty()) {
             Companion.URLObj uRLObj = (Companion.URLObj) MapperKt.toModel(data, Companion.URLObj.class);
             DonateShopKt.setDONATE_URL(uRLObj.getDonateUrl());
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            DonateShopKt.setBASE_URL(resourceUrl + uRLObj.getBaseUrl());
+            Retrofit retrofit = null;
+            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            DonateShopKt.setBASE_URL(resourceUrl$default + uRLObj.getBaseUrl());
             Retrofit build = new Retrofit.Builder().baseUrl(DonateShopKt.getBASE_URL()).addConverterFactory(GsonConverterFactory.create()).build();
             Intrinsics.checkNotNullExpressionValue(build, "build(...)");
             this.retrofit = build;
             if (build == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("retrofit");
-                build = null;
+            } else {
+                retrofit = build;
             }
-            DonateApi donateApi = (DonateApi) build.create(DonateApi.class);
+            DonateApi donateApi = (DonateApi) retrofit.create(DonateApi.class);
             Intrinsics.checkNotNull(donateApi);
             sendRequest(donateApi);
         }

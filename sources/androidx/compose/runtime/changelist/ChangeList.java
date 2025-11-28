@@ -57,9 +57,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.Remember remember = Operation.Remember.INSTANCE;
         operations.pushOp(remember);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.Remember remember2 = Operation.Remember.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), rememberObserverHolder);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), rememberObserverHolder);
         operations.ensureAllArgumentsPushedFor(remember);
     }
 
@@ -67,9 +67,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.RememberPausingScope rememberPausingScope = Operation.RememberPausingScope.INSTANCE;
         operations.pushOp(rememberPausingScope);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.RememberPausingScope rememberPausingScope2 = Operation.RememberPausingScope.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), recomposeScopeImpl);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), recomposeScopeImpl);
         operations.ensureAllArgumentsPushedFor(rememberPausingScope);
     }
 
@@ -77,9 +77,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.StartResumingScope startResumingScope = Operation.StartResumingScope.INSTANCE;
         operations.pushOp(startResumingScope);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.StartResumingScope startResumingScope2 = Operation.StartResumingScope.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), recomposeScopeImpl);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), recomposeScopeImpl);
         operations.ensureAllArgumentsPushedFor(startResumingScope);
     }
 
@@ -87,9 +87,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.EndResumingScope endResumingScope = Operation.EndResumingScope.INSTANCE;
         operations.pushOp(endResumingScope);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.EndResumingScope endResumingScope2 = Operation.EndResumingScope.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), recomposeScopeImpl);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), recomposeScopeImpl);
         operations.ensureAllArgumentsPushedFor(endResumingScope);
     }
 
@@ -97,11 +97,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.UpdateValue updateValue = Operation.UpdateValue.INSTANCE;
         operations.pushOp(updateValue);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.UpdateValue updateValue2 = Operation.UpdateValue.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), obj);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), obj);
         Operation.UpdateValue updateValue3 = Operation.UpdateValue.INSTANCE;
-        m4659constructorimpl.intArgs[m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts()] = i;
+        m4660constructorimpl.intArgs[m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts()] = i;
         operations.ensureAllArgumentsPushedFor(updateValue);
     }
 
@@ -109,13 +109,13 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.UpdateAnchoredValue updateAnchoredValue = Operation.UpdateAnchoredValue.INSTANCE;
         operations.pushOp(updateAnchoredValue);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.UpdateAnchoredValue updateAnchoredValue2 = Operation.UpdateAnchoredValue.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.UpdateAnchoredValue updateAnchoredValue3 = Operation.UpdateAnchoredValue.INSTANCE;
-        Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, obj, Operation.ObjectParameter.m4635constructorimpl(1), anchor);
+        Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, obj, Operation.ObjectParameter.m4636constructorimpl(1), anchor);
         Operation.UpdateAnchoredValue updateAnchoredValue4 = Operation.UpdateAnchoredValue.INSTANCE;
-        m4659constructorimpl.intArgs[m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts()] = i;
+        m4660constructorimpl.intArgs[m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts()] = i;
         operations.ensureAllArgumentsPushedFor(updateAnchoredValue);
     }
 
@@ -123,11 +123,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.AppendValue appendValue = Operation.AppendValue.INSTANCE;
         operations.pushOp(appendValue);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.AppendValue appendValue2 = Operation.AppendValue.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.AppendValue appendValue3 = Operation.AppendValue.INSTANCE;
-        Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, anchor, Operation.ObjectParameter.m4635constructorimpl(1), obj);
+        Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, anchor, Operation.ObjectParameter.m4636constructorimpl(1), obj);
         operations.ensureAllArgumentsPushedFor(appendValue);
     }
 
@@ -135,9 +135,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.TrimParentValues trimParentValues = Operation.TrimParentValues.INSTANCE;
         operations.pushOp(trimParentValues);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.TrimParentValues trimParentValues2 = Operation.TrimParentValues.INSTANCE;
-        m4659constructorimpl.intArgs[m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts()] = i;
+        m4660constructorimpl.intArgs[m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts()] = i;
         operations.ensureAllArgumentsPushedFor(trimParentValues);
     }
 
@@ -153,9 +153,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.UpdateAuxData updateAuxData = Operation.UpdateAuxData.INSTANCE;
         operations.pushOp(updateAuxData);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.UpdateAuxData updateAuxData2 = Operation.UpdateAuxData.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), obj);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), obj);
         operations.ensureAllArgumentsPushedFor(updateAuxData);
     }
 
@@ -167,9 +167,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.EnsureGroupStarted ensureGroupStarted = Operation.EnsureGroupStarted.INSTANCE;
         operations.pushOp(ensureGroupStarted);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.EnsureGroupStarted ensureGroupStarted2 = Operation.EnsureGroupStarted.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), anchor);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), anchor);
         operations.ensureAllArgumentsPushedFor(ensureGroupStarted);
     }
 
@@ -189,11 +189,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.InsertSlots insertSlots = Operation.InsertSlots.INSTANCE;
         operations.pushOp(insertSlots);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.InsertSlots insertSlots2 = Operation.InsertSlots.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.InsertSlots insertSlots3 = Operation.InsertSlots.INSTANCE;
-        Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, anchor, Operation.ObjectParameter.m4635constructorimpl(1), slotTable);
+        Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, anchor, Operation.ObjectParameter.m4636constructorimpl(1), slotTable);
         operations.ensureAllArgumentsPushedFor(insertSlots);
     }
 
@@ -201,13 +201,13 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.InsertSlotsWithFixups insertSlotsWithFixups = Operation.InsertSlotsWithFixups.INSTANCE;
         operations.pushOp(insertSlotsWithFixups);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.InsertSlotsWithFixups insertSlotsWithFixups2 = Operation.InsertSlotsWithFixups.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.InsertSlotsWithFixups insertSlotsWithFixups3 = Operation.InsertSlotsWithFixups.INSTANCE;
-        int m4635constructorimpl2 = Operation.ObjectParameter.m4635constructorimpl(1);
+        int m4636constructorimpl2 = Operation.ObjectParameter.m4636constructorimpl(1);
         Operation.InsertSlotsWithFixups insertSlotsWithFixups4 = Operation.InsertSlotsWithFixups.INSTANCE;
-        Operations.WriteScope.m4670setObjectst7hvbck(m4659constructorimpl, m4635constructorimpl, anchor, m4635constructorimpl2, slotTable, Operation.ObjectParameter.m4635constructorimpl(2), fixupList);
+        Operations.WriteScope.m4671setObjectst7hvbck(m4660constructorimpl, m4636constructorimpl, anchor, m4636constructorimpl2, slotTable, Operation.ObjectParameter.m4636constructorimpl(2), fixupList);
         operations.ensureAllArgumentsPushedFor(insertSlotsWithFixups);
     }
 
@@ -215,9 +215,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.MoveCurrentGroup moveCurrentGroup = Operation.MoveCurrentGroup.INSTANCE;
         operations.pushOp(moveCurrentGroup);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.MoveCurrentGroup moveCurrentGroup2 = Operation.MoveCurrentGroup.INSTANCE;
-        m4659constructorimpl.intArgs[m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts()] = i;
+        m4660constructorimpl.intArgs[m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts()] = i;
         operations.ensureAllArgumentsPushedFor(moveCurrentGroup);
     }
 
@@ -225,11 +225,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.EndCompositionScope endCompositionScope = Operation.EndCompositionScope.INSTANCE;
         operations.pushOp(endCompositionScope);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.EndCompositionScope endCompositionScope2 = Operation.EndCompositionScope.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.EndCompositionScope endCompositionScope3 = Operation.EndCompositionScope.INSTANCE;
-        Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, function1, Operation.ObjectParameter.m4635constructorimpl(1), composition);
+        Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, function1, Operation.ObjectParameter.m4636constructorimpl(1), composition);
         operations.ensureAllArgumentsPushedFor(endCompositionScope);
     }
 
@@ -243,13 +243,13 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.UpdateNode updateNode = Operation.UpdateNode.INSTANCE;
         operations.pushOp(updateNode);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.UpdateNode updateNode2 = Operation.UpdateNode.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.UpdateNode updateNode3 = Operation.UpdateNode.INSTANCE;
-        int m4635constructorimpl2 = Operation.ObjectParameter.m4635constructorimpl(1);
+        int m4636constructorimpl2 = Operation.ObjectParameter.m4636constructorimpl(1);
         Intrinsics.checkNotNull(function2, "null cannot be cast to non-null type @[ExtensionFunctionType] kotlin.Function2<kotlin.Any?, kotlin.Any?, kotlin.Unit>");
-        Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, v, m4635constructorimpl2, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2));
+        Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, v, m4636constructorimpl2, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2));
         operations.ensureAllArgumentsPushedFor(updateNode);
     }
 
@@ -257,11 +257,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.RemoveNode removeNode = Operation.RemoveNode.INSTANCE;
         operations.pushOp(removeNode);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.RemoveNode removeNode2 = Operation.RemoveNode.INSTANCE;
         Operation.RemoveNode removeNode3 = Operation.RemoveNode.INSTANCE;
-        int ints = m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts();
-        int[] iArr = m4659constructorimpl.intArgs;
+        int ints = m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts();
+        int[] iArr = m4660constructorimpl.intArgs;
         iArr[ints] = i;
         iArr[ints + 1] = i2;
         operations.ensureAllArgumentsPushedFor(removeNode);
@@ -271,12 +271,12 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.MoveNode moveNode = Operation.MoveNode.INSTANCE;
         operations.pushOp(moveNode);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.MoveNode moveNode2 = Operation.MoveNode.INSTANCE;
         Operation.MoveNode moveNode3 = Operation.MoveNode.INSTANCE;
         Operation.MoveNode moveNode4 = Operation.MoveNode.INSTANCE;
-        int ints = m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts();
-        int[] iArr = m4659constructorimpl.intArgs;
+        int ints = m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts();
+        int[] iArr = m4660constructorimpl.intArgs;
         iArr[ints + 1] = i;
         iArr[ints] = i2;
         iArr[ints + 2] = i3;
@@ -287,9 +287,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.AdvanceSlotsBy advanceSlotsBy = Operation.AdvanceSlotsBy.INSTANCE;
         operations.pushOp(advanceSlotsBy);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.AdvanceSlotsBy advanceSlotsBy2 = Operation.AdvanceSlotsBy.INSTANCE;
-        m4659constructorimpl.intArgs[m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts()] = i;
+        m4660constructorimpl.intArgs[m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts()] = i;
         operations.ensureAllArgumentsPushedFor(advanceSlotsBy);
     }
 
@@ -297,9 +297,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.Ups ups = Operation.Ups.INSTANCE;
         operations.pushOp(ups);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.Ups ups2 = Operation.Ups.INSTANCE;
-        m4659constructorimpl.intArgs[m4659constructorimpl.intArgsSize - m4659constructorimpl.opCodes[m4659constructorimpl.opCodesSize - 1].getInts()] = i;
+        m4660constructorimpl.intArgs[m4660constructorimpl.intArgsSize - m4660constructorimpl.opCodes[m4660constructorimpl.opCodesSize - 1].getInts()] = i;
         operations.ensureAllArgumentsPushedFor(ups);
     }
 
@@ -310,9 +310,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.Downs downs = Operation.Downs.INSTANCE;
         operations.pushOp(downs);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.Downs downs2 = Operation.Downs.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), objArr);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), objArr);
         operations.ensureAllArgumentsPushedFor(downs);
     }
 
@@ -320,9 +320,9 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.SideEffect sideEffect = Operation.SideEffect.INSTANCE;
         operations.pushOp(sideEffect);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.SideEffect sideEffect2 = Operation.SideEffect.INSTANCE;
-        Operations.WriteScope.m4667setObjectDKhxnng(m4659constructorimpl, Operation.ObjectParameter.m4635constructorimpl(0), function0);
+        Operations.WriteScope.m4668setObjectDKhxnng(m4660constructorimpl, Operation.ObjectParameter.m4636constructorimpl(0), function0);
         operations.ensureAllArgumentsPushedFor(sideEffect);
     }
 
@@ -330,11 +330,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.DetermineMovableContentNodeIndex determineMovableContentNodeIndex = Operation.DetermineMovableContentNodeIndex.INSTANCE;
         operations.pushOp(determineMovableContentNodeIndex);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.DetermineMovableContentNodeIndex determineMovableContentNodeIndex2 = Operation.DetermineMovableContentNodeIndex.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.DetermineMovableContentNodeIndex determineMovableContentNodeIndex3 = Operation.DetermineMovableContentNodeIndex.INSTANCE;
-        Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, intRef, Operation.ObjectParameter.m4635constructorimpl(1), anchor);
+        Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, intRef, Operation.ObjectParameter.m4636constructorimpl(1), anchor);
         operations.ensureAllArgumentsPushedFor(determineMovableContentNodeIndex);
     }
 
@@ -345,11 +345,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.CopyNodesToNewAnchorLocation copyNodesToNewAnchorLocation = Operation.CopyNodesToNewAnchorLocation.INSTANCE;
         operations.pushOp(copyNodesToNewAnchorLocation);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.CopyNodesToNewAnchorLocation copyNodesToNewAnchorLocation2 = Operation.CopyNodesToNewAnchorLocation.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(1);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(1);
         Operation.CopyNodesToNewAnchorLocation copyNodesToNewAnchorLocation3 = Operation.CopyNodesToNewAnchorLocation.INSTANCE;
-        Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, list, Operation.ObjectParameter.m4635constructorimpl(0), intRef);
+        Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, list, Operation.ObjectParameter.m4636constructorimpl(0), intRef);
         operations.ensureAllArgumentsPushedFor(copyNodesToNewAnchorLocation);
     }
 
@@ -357,15 +357,15 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.CopySlotTableToAnchorLocation copySlotTableToAnchorLocation = Operation.CopySlotTableToAnchorLocation.INSTANCE;
         operations.pushOp(copySlotTableToAnchorLocation);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.CopySlotTableToAnchorLocation copySlotTableToAnchorLocation2 = Operation.CopySlotTableToAnchorLocation.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.CopySlotTableToAnchorLocation copySlotTableToAnchorLocation3 = Operation.CopySlotTableToAnchorLocation.INSTANCE;
-        int m4635constructorimpl2 = Operation.ObjectParameter.m4635constructorimpl(1);
+        int m4636constructorimpl2 = Operation.ObjectParameter.m4636constructorimpl(1);
         Operation.CopySlotTableToAnchorLocation copySlotTableToAnchorLocation4 = Operation.CopySlotTableToAnchorLocation.INSTANCE;
-        int m4635constructorimpl3 = Operation.ObjectParameter.m4635constructorimpl(3);
+        int m4636constructorimpl3 = Operation.ObjectParameter.m4636constructorimpl(3);
         Operation.CopySlotTableToAnchorLocation copySlotTableToAnchorLocation5 = Operation.CopySlotTableToAnchorLocation.INSTANCE;
-        Operations.WriteScope.m4669setObjectsOGa0p1M(m4659constructorimpl, m4635constructorimpl, movableContentState, m4635constructorimpl2, compositionContext, m4635constructorimpl3, movableContentStateReference2, Operation.ObjectParameter.m4635constructorimpl(2), movableContentStateReference);
+        Operations.WriteScope.m4670setObjectsOGa0p1M(m4660constructorimpl, m4636constructorimpl, movableContentState, m4636constructorimpl2, compositionContext, m4636constructorimpl3, movableContentStateReference2, Operation.ObjectParameter.m4636constructorimpl(2), movableContentStateReference);
         operations.ensureAllArgumentsPushedFor(copySlotTableToAnchorLocation);
     }
 
@@ -373,13 +373,13 @@ public final class ChangeList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.ReleaseMovableGroupAtCurrent releaseMovableGroupAtCurrent = Operation.ReleaseMovableGroupAtCurrent.INSTANCE;
         operations.pushOp(releaseMovableGroupAtCurrent);
-        Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+        Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
         Operation.ReleaseMovableGroupAtCurrent releaseMovableGroupAtCurrent2 = Operation.ReleaseMovableGroupAtCurrent.INSTANCE;
-        int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+        int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
         Operation.ReleaseMovableGroupAtCurrent releaseMovableGroupAtCurrent3 = Operation.ReleaseMovableGroupAtCurrent.INSTANCE;
-        int m4635constructorimpl2 = Operation.ObjectParameter.m4635constructorimpl(1);
+        int m4636constructorimpl2 = Operation.ObjectParameter.m4636constructorimpl(1);
         Operation.ReleaseMovableGroupAtCurrent releaseMovableGroupAtCurrent4 = Operation.ReleaseMovableGroupAtCurrent.INSTANCE;
-        Operations.WriteScope.m4670setObjectst7hvbck(m4659constructorimpl, m4635constructorimpl, controlledComposition, m4635constructorimpl2, compositionContext, Operation.ObjectParameter.m4635constructorimpl(2), movableContentStateReference);
+        Operations.WriteScope.m4671setObjectst7hvbck(m4660constructorimpl, m4636constructorimpl, controlledComposition, m4636constructorimpl2, compositionContext, Operation.ObjectParameter.m4636constructorimpl(2), movableContentStateReference);
         operations.ensureAllArgumentsPushedFor(releaseMovableGroupAtCurrent);
     }
 
@@ -399,11 +399,11 @@ public final class ChangeList extends OperationsDebugStringFormattable {
             Operations operations = this.operations;
             Operation.ApplyChangeList applyChangeList = Operation.ApplyChangeList.INSTANCE;
             operations.pushOp(applyChangeList);
-            Operations m4659constructorimpl = Operations.WriteScope.m4659constructorimpl(operations);
+            Operations m4660constructorimpl = Operations.WriteScope.m4660constructorimpl(operations);
             Operation.ApplyChangeList applyChangeList2 = Operation.ApplyChangeList.INSTANCE;
-            int m4635constructorimpl = Operation.ObjectParameter.m4635constructorimpl(0);
+            int m4636constructorimpl = Operation.ObjectParameter.m4636constructorimpl(0);
             Operation.ApplyChangeList applyChangeList3 = Operation.ApplyChangeList.INSTANCE;
-            Operations.WriteScope.m4668setObjects4uCC6AY(m4659constructorimpl, m4635constructorimpl, changeList, Operation.ObjectParameter.m4635constructorimpl(1), intRef);
+            Operations.WriteScope.m4669setObjects4uCC6AY(m4660constructorimpl, m4636constructorimpl, changeList, Operation.ObjectParameter.m4636constructorimpl(1), intRef);
             operations.ensureAllArgumentsPushedFor(applyChangeList);
         }
     }

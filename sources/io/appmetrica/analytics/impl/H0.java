@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.plugins.AppMetricaPlugins;
 import io.appmetrica.analytics.plugins.PluginErrorDetails;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class H0 implements AppMetricaPlugins {
 
     /* renamed from: a  reason: collision with root package name */

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Wj extends AbstractC0403lh {
     public Wj(L6 l6) {
         super(l6);

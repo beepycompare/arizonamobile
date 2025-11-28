@@ -28,28 +28,28 @@ public final class RippleKt {
     private static final TweenSpec<Float> DefaultTweenSpec = new TweenSpec<>(15, 0, EasingKt.getLinearEasing(), 2, null);
 
     /* renamed from: createRippleModifierNode-TDGSqEk */
-    public static final DelegatableNode m1863createRippleModifierNodeTDGSqEk(InteractionSource interactionSource, boolean z, float f, ColorProducer colorProducer, Function0<RippleAlpha> function0) {
-        return Ripple_androidKt.m1869createPlatformRippleNodeTDGSqEk(interactionSource, z, f, colorProducer, function0);
+    public static final DelegatableNode m1864createRippleModifierNodeTDGSqEk(InteractionSource interactionSource, boolean z, float f, ColorProducer colorProducer, Function0<RippleAlpha> function0) {
+        return Ripple_androidKt.m1870createPlatformRippleNodeTDGSqEk(interactionSource, z, f, colorProducer, function0);
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "rememberRipple has been deprecated - it returns an old Indication implementation that is not compatible with the new Indication APIs that provide notable performance improvements. Instead, use the new ripple APIs provided by design system libraries, such as material and material3. If you are implementing your own design system library, use createRippleNode to create your own custom ripple implementation that queries your own theme values. For a migration guide and background information, please visit developer.android.com")
     /* renamed from: rememberRipple-9IZ8Weo */
-    public static final Indication m1864rememberRipple9IZ8Weo(boolean z, float f, long j, Composer composer, int i, int i2) {
+    public static final Indication m1865rememberRipple9IZ8Weo(boolean z, float f, long j, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1635163520, "C(rememberRipple)N(bounded,radius:c#ui.unit.Dp,color:c#ui.graphics.Color)145@7588L27,146@7627L73:Ripple.kt#vhb33q");
         boolean z2 = true;
         if ((i2 & 1) != 0) {
             z = true;
         }
         if ((i2 & 2) != 0) {
-            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
         if ((i2 & 4) != 0) {
-            j = Color.Companion.m5315getUnspecified0d7_KjU();
+            j = Color.Companion.m5316getUnspecified0d7_KjU();
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1635163520, i, -1, "androidx.compose.material.ripple.rememberRipple (Ripple.kt:144)");
         }
-        State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5269boximpl(j), composer, (i >> 6) & 14);
+        State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5270boximpl(j), composer, (i >> 6) & 14);
         ComposerKt.sourceInformationMarkerStart(composer, -565857495, "CC(remember):Ripple.kt#9igjgp");
         boolean z3 = (((i & 14) ^ 6) > 4 && composer.changed(z)) || (i & 6) == 4;
         if ((((i & 112) ^ 48) <= 32 || !composer.changed(f)) && (i & 48) != 32) {

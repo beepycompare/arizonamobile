@@ -5,7 +5,7 @@ import io.appmetrica.analytics.ecommerce.ECommerceOrder;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.ue  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0624ue extends ECommerceEvent {
     public static final int d = 6;
     public static final int e = 7;

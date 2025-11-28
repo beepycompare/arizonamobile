@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class U5 extends BaseRequestConfig {
 
     /* renamed from: a  reason: collision with root package name */

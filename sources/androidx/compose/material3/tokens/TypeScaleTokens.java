@@ -168,8 +168,8 @@ public final class TypeScaleTokens {
 
     static {
         long sp = TextUnitKt.getSp(0.2d);
-        TextUnitKt.m8202checkArithmeticR2X_6o(sp);
-        DisplayLargeTracking = TextUnitKt.pack(TextUnit.m8187getRawTypeimpl(sp), -TextUnit.m8189getValueimpl(sp));
+        TextUnitKt.m8203checkArithmeticR2X_6o(sp);
+        DisplayLargeTracking = TextUnitKt.pack(TextUnit.m8188getRawTypeimpl(sp), -TextUnit.m8190getValueimpl(sp));
         DisplayLargeWeight = TypefaceTokens.INSTANCE.getWeightRegular();
         DisplayMediumFont = TypefaceTokens.INSTANCE.getBrand();
         DisplayMediumLineHeight = TextUnitKt.getSp(52.0d);
@@ -308,17 +308,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getBodyLargeLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4362getBodyLargeLineHeightXSAIIZE() {
+    public final long m4363getBodyLargeLineHeightXSAIIZE() {
         return BodyLargeLineHeight;
     }
 
     /* renamed from: getBodyLargeSize-XSAIIZE  reason: not valid java name */
-    public final long m4363getBodyLargeSizeXSAIIZE() {
+    public final long m4364getBodyLargeSizeXSAIIZE() {
         return BodyLargeSize;
     }
 
     /* renamed from: getBodyLargeTracking-XSAIIZE  reason: not valid java name */
-    public final long m4364getBodyLargeTrackingXSAIIZE() {
+    public final long m4365getBodyLargeTrackingXSAIIZE() {
         return BodyLargeTracking;
     }
 
@@ -331,17 +331,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getBodyMediumLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4368getBodyMediumLineHeightXSAIIZE() {
+    public final long m4369getBodyMediumLineHeightXSAIIZE() {
         return BodyMediumLineHeight;
     }
 
     /* renamed from: getBodyMediumSize-XSAIIZE  reason: not valid java name */
-    public final long m4369getBodyMediumSizeXSAIIZE() {
+    public final long m4370getBodyMediumSizeXSAIIZE() {
         return BodyMediumSize;
     }
 
     /* renamed from: getBodyMediumTracking-XSAIIZE  reason: not valid java name */
-    public final long m4370getBodyMediumTrackingXSAIIZE() {
+    public final long m4371getBodyMediumTrackingXSAIIZE() {
         return BodyMediumTracking;
     }
 
@@ -354,17 +354,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getBodySmallLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4374getBodySmallLineHeightXSAIIZE() {
+    public final long m4375getBodySmallLineHeightXSAIIZE() {
         return BodySmallLineHeight;
     }
 
     /* renamed from: getBodySmallSize-XSAIIZE  reason: not valid java name */
-    public final long m4375getBodySmallSizeXSAIIZE() {
+    public final long m4376getBodySmallSizeXSAIIZE() {
         return BodySmallSize;
     }
 
     /* renamed from: getBodySmallTracking-XSAIIZE  reason: not valid java name */
-    public final long m4376getBodySmallTrackingXSAIIZE() {
+    public final long m4377getBodySmallTrackingXSAIIZE() {
         return BodySmallTracking;
     }
 
@@ -377,17 +377,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getDisplayLargeLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4380getDisplayLargeLineHeightXSAIIZE() {
+    public final long m4381getDisplayLargeLineHeightXSAIIZE() {
         return DisplayLargeLineHeight;
     }
 
     /* renamed from: getDisplayLargeSize-XSAIIZE  reason: not valid java name */
-    public final long m4381getDisplayLargeSizeXSAIIZE() {
+    public final long m4382getDisplayLargeSizeXSAIIZE() {
         return DisplayLargeSize;
     }
 
     /* renamed from: getDisplayLargeTracking-XSAIIZE  reason: not valid java name */
-    public final long m4382getDisplayLargeTrackingXSAIIZE() {
+    public final long m4383getDisplayLargeTrackingXSAIIZE() {
         return DisplayLargeTracking;
     }
 
@@ -400,17 +400,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getDisplayMediumLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4386getDisplayMediumLineHeightXSAIIZE() {
+    public final long m4387getDisplayMediumLineHeightXSAIIZE() {
         return DisplayMediumLineHeight;
     }
 
     /* renamed from: getDisplayMediumSize-XSAIIZE  reason: not valid java name */
-    public final long m4387getDisplayMediumSizeXSAIIZE() {
+    public final long m4388getDisplayMediumSizeXSAIIZE() {
         return DisplayMediumSize;
     }
 
     /* renamed from: getDisplayMediumTracking-XSAIIZE  reason: not valid java name */
-    public final long m4388getDisplayMediumTrackingXSAIIZE() {
+    public final long m4389getDisplayMediumTrackingXSAIIZE() {
         return DisplayMediumTracking;
     }
 
@@ -423,17 +423,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getDisplaySmallLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4392getDisplaySmallLineHeightXSAIIZE() {
+    public final long m4393getDisplaySmallLineHeightXSAIIZE() {
         return DisplaySmallLineHeight;
     }
 
     /* renamed from: getDisplaySmallSize-XSAIIZE  reason: not valid java name */
-    public final long m4393getDisplaySmallSizeXSAIIZE() {
+    public final long m4394getDisplaySmallSizeXSAIIZE() {
         return DisplaySmallSize;
     }
 
     /* renamed from: getDisplaySmallTracking-XSAIIZE  reason: not valid java name */
-    public final long m4394getDisplaySmallTrackingXSAIIZE() {
+    public final long m4395getDisplaySmallTrackingXSAIIZE() {
         return DisplaySmallTracking;
     }
 
@@ -446,17 +446,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getHeadlineLargeLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4398getHeadlineLargeLineHeightXSAIIZE() {
+    public final long m4399getHeadlineLargeLineHeightXSAIIZE() {
         return HeadlineLargeLineHeight;
     }
 
     /* renamed from: getHeadlineLargeSize-XSAIIZE  reason: not valid java name */
-    public final long m4399getHeadlineLargeSizeXSAIIZE() {
+    public final long m4400getHeadlineLargeSizeXSAIIZE() {
         return HeadlineLargeSize;
     }
 
     /* renamed from: getHeadlineLargeTracking-XSAIIZE  reason: not valid java name */
-    public final long m4400getHeadlineLargeTrackingXSAIIZE() {
+    public final long m4401getHeadlineLargeTrackingXSAIIZE() {
         return HeadlineLargeTracking;
     }
 
@@ -469,17 +469,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getHeadlineMediumLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4404getHeadlineMediumLineHeightXSAIIZE() {
+    public final long m4405getHeadlineMediumLineHeightXSAIIZE() {
         return HeadlineMediumLineHeight;
     }
 
     /* renamed from: getHeadlineMediumSize-XSAIIZE  reason: not valid java name */
-    public final long m4405getHeadlineMediumSizeXSAIIZE() {
+    public final long m4406getHeadlineMediumSizeXSAIIZE() {
         return HeadlineMediumSize;
     }
 
     /* renamed from: getHeadlineMediumTracking-XSAIIZE  reason: not valid java name */
-    public final long m4406getHeadlineMediumTrackingXSAIIZE() {
+    public final long m4407getHeadlineMediumTrackingXSAIIZE() {
         return HeadlineMediumTracking;
     }
 
@@ -492,17 +492,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getHeadlineSmallLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4410getHeadlineSmallLineHeightXSAIIZE() {
+    public final long m4411getHeadlineSmallLineHeightXSAIIZE() {
         return HeadlineSmallLineHeight;
     }
 
     /* renamed from: getHeadlineSmallSize-XSAIIZE  reason: not valid java name */
-    public final long m4411getHeadlineSmallSizeXSAIIZE() {
+    public final long m4412getHeadlineSmallSizeXSAIIZE() {
         return HeadlineSmallSize;
     }
 
     /* renamed from: getHeadlineSmallTracking-XSAIIZE  reason: not valid java name */
-    public final long m4412getHeadlineSmallTrackingXSAIIZE() {
+    public final long m4413getHeadlineSmallTrackingXSAIIZE() {
         return HeadlineSmallTracking;
     }
 
@@ -515,17 +515,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getLabelLargeLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4416getLabelLargeLineHeightXSAIIZE() {
+    public final long m4417getLabelLargeLineHeightXSAIIZE() {
         return LabelLargeLineHeight;
     }
 
     /* renamed from: getLabelLargeSize-XSAIIZE  reason: not valid java name */
-    public final long m4417getLabelLargeSizeXSAIIZE() {
+    public final long m4418getLabelLargeSizeXSAIIZE() {
         return LabelLargeSize;
     }
 
     /* renamed from: getLabelLargeTracking-XSAIIZE  reason: not valid java name */
-    public final long m4418getLabelLargeTrackingXSAIIZE() {
+    public final long m4419getLabelLargeTrackingXSAIIZE() {
         return LabelLargeTracking;
     }
 
@@ -538,17 +538,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getLabelMediumLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4422getLabelMediumLineHeightXSAIIZE() {
+    public final long m4423getLabelMediumLineHeightXSAIIZE() {
         return LabelMediumLineHeight;
     }
 
     /* renamed from: getLabelMediumSize-XSAIIZE  reason: not valid java name */
-    public final long m4423getLabelMediumSizeXSAIIZE() {
+    public final long m4424getLabelMediumSizeXSAIIZE() {
         return LabelMediumSize;
     }
 
     /* renamed from: getLabelMediumTracking-XSAIIZE  reason: not valid java name */
-    public final long m4424getLabelMediumTrackingXSAIIZE() {
+    public final long m4425getLabelMediumTrackingXSAIIZE() {
         return LabelMediumTracking;
     }
 
@@ -561,17 +561,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getLabelSmallLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4428getLabelSmallLineHeightXSAIIZE() {
+    public final long m4429getLabelSmallLineHeightXSAIIZE() {
         return LabelSmallLineHeight;
     }
 
     /* renamed from: getLabelSmallSize-XSAIIZE  reason: not valid java name */
-    public final long m4429getLabelSmallSizeXSAIIZE() {
+    public final long m4430getLabelSmallSizeXSAIIZE() {
         return LabelSmallSize;
     }
 
     /* renamed from: getLabelSmallTracking-XSAIIZE  reason: not valid java name */
-    public final long m4430getLabelSmallTrackingXSAIIZE() {
+    public final long m4431getLabelSmallTrackingXSAIIZE() {
         return LabelSmallTracking;
     }
 
@@ -584,17 +584,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getTitleLargeLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4434getTitleLargeLineHeightXSAIIZE() {
+    public final long m4435getTitleLargeLineHeightXSAIIZE() {
         return TitleLargeLineHeight;
     }
 
     /* renamed from: getTitleLargeSize-XSAIIZE  reason: not valid java name */
-    public final long m4435getTitleLargeSizeXSAIIZE() {
+    public final long m4436getTitleLargeSizeXSAIIZE() {
         return TitleLargeSize;
     }
 
     /* renamed from: getTitleLargeTracking-XSAIIZE  reason: not valid java name */
-    public final long m4436getTitleLargeTrackingXSAIIZE() {
+    public final long m4437getTitleLargeTrackingXSAIIZE() {
         return TitleLargeTracking;
     }
 
@@ -607,17 +607,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getTitleMediumLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4440getTitleMediumLineHeightXSAIIZE() {
+    public final long m4441getTitleMediumLineHeightXSAIIZE() {
         return TitleMediumLineHeight;
     }
 
     /* renamed from: getTitleMediumSize-XSAIIZE  reason: not valid java name */
-    public final long m4441getTitleMediumSizeXSAIIZE() {
+    public final long m4442getTitleMediumSizeXSAIIZE() {
         return TitleMediumSize;
     }
 
     /* renamed from: getTitleMediumTracking-XSAIIZE  reason: not valid java name */
-    public final long m4442getTitleMediumTrackingXSAIIZE() {
+    public final long m4443getTitleMediumTrackingXSAIIZE() {
         return TitleMediumTracking;
     }
 
@@ -630,17 +630,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getTitleSmallLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4446getTitleSmallLineHeightXSAIIZE() {
+    public final long m4447getTitleSmallLineHeightXSAIIZE() {
         return TitleSmallLineHeight;
     }
 
     /* renamed from: getTitleSmallSize-XSAIIZE  reason: not valid java name */
-    public final long m4447getTitleSmallSizeXSAIIZE() {
+    public final long m4448getTitleSmallSizeXSAIIZE() {
         return TitleSmallSize;
     }
 
     /* renamed from: getTitleSmallTracking-XSAIIZE  reason: not valid java name */
-    public final long m4448getTitleSmallTrackingXSAIIZE() {
+    public final long m4449getTitleSmallTrackingXSAIIZE() {
         return TitleSmallTracking;
     }
 
@@ -653,17 +653,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getBodyLargeEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4359getBodyLargeEmphasizedLineHeightXSAIIZE() {
+    public final long m4360getBodyLargeEmphasizedLineHeightXSAIIZE() {
         return BodyLargeEmphasizedLineHeight;
     }
 
     /* renamed from: getBodyLargeEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4360getBodyLargeEmphasizedSizeXSAIIZE() {
+    public final long m4361getBodyLargeEmphasizedSizeXSAIIZE() {
         return BodyLargeEmphasizedSize;
     }
 
     /* renamed from: getBodyLargeEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4361getBodyLargeEmphasizedTrackingXSAIIZE() {
+    public final long m4362getBodyLargeEmphasizedTrackingXSAIIZE() {
         return BodyLargeEmphasizedTracking;
     }
 
@@ -676,17 +676,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getBodyMediumEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4365getBodyMediumEmphasizedLineHeightXSAIIZE() {
+    public final long m4366getBodyMediumEmphasizedLineHeightXSAIIZE() {
         return BodyMediumEmphasizedLineHeight;
     }
 
     /* renamed from: getBodyMediumEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4366getBodyMediumEmphasizedSizeXSAIIZE() {
+    public final long m4367getBodyMediumEmphasizedSizeXSAIIZE() {
         return BodyMediumEmphasizedSize;
     }
 
     /* renamed from: getBodyMediumEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4367getBodyMediumEmphasizedTrackingXSAIIZE() {
+    public final long m4368getBodyMediumEmphasizedTrackingXSAIIZE() {
         return BodyMediumEmphasizedTracking;
     }
 
@@ -699,17 +699,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getBodySmallEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4371getBodySmallEmphasizedLineHeightXSAIIZE() {
+    public final long m4372getBodySmallEmphasizedLineHeightXSAIIZE() {
         return BodySmallEmphasizedLineHeight;
     }
 
     /* renamed from: getBodySmallEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4372getBodySmallEmphasizedSizeXSAIIZE() {
+    public final long m4373getBodySmallEmphasizedSizeXSAIIZE() {
         return BodySmallEmphasizedSize;
     }
 
     /* renamed from: getBodySmallEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4373getBodySmallEmphasizedTrackingXSAIIZE() {
+    public final long m4374getBodySmallEmphasizedTrackingXSAIIZE() {
         return BodySmallEmphasizedTracking;
     }
 
@@ -722,17 +722,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getDisplayLargeEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4377getDisplayLargeEmphasizedLineHeightXSAIIZE() {
+    public final long m4378getDisplayLargeEmphasizedLineHeightXSAIIZE() {
         return DisplayLargeEmphasizedLineHeight;
     }
 
     /* renamed from: getDisplayLargeEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4378getDisplayLargeEmphasizedSizeXSAIIZE() {
+    public final long m4379getDisplayLargeEmphasizedSizeXSAIIZE() {
         return DisplayLargeEmphasizedSize;
     }
 
     /* renamed from: getDisplayLargeEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4379getDisplayLargeEmphasizedTrackingXSAIIZE() {
+    public final long m4380getDisplayLargeEmphasizedTrackingXSAIIZE() {
         return DisplayLargeEmphasizedTracking;
     }
 
@@ -745,17 +745,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getDisplayMediumEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4383getDisplayMediumEmphasizedLineHeightXSAIIZE() {
+    public final long m4384getDisplayMediumEmphasizedLineHeightXSAIIZE() {
         return DisplayMediumEmphasizedLineHeight;
     }
 
     /* renamed from: getDisplayMediumEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4384getDisplayMediumEmphasizedSizeXSAIIZE() {
+    public final long m4385getDisplayMediumEmphasizedSizeXSAIIZE() {
         return DisplayMediumEmphasizedSize;
     }
 
     /* renamed from: getDisplayMediumEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4385getDisplayMediumEmphasizedTrackingXSAIIZE() {
+    public final long m4386getDisplayMediumEmphasizedTrackingXSAIIZE() {
         return DisplayMediumEmphasizedTracking;
     }
 
@@ -768,17 +768,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getDisplaySmallEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4389getDisplaySmallEmphasizedLineHeightXSAIIZE() {
+    public final long m4390getDisplaySmallEmphasizedLineHeightXSAIIZE() {
         return DisplaySmallEmphasizedLineHeight;
     }
 
     /* renamed from: getDisplaySmallEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4390getDisplaySmallEmphasizedSizeXSAIIZE() {
+    public final long m4391getDisplaySmallEmphasizedSizeXSAIIZE() {
         return DisplaySmallEmphasizedSize;
     }
 
     /* renamed from: getDisplaySmallEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4391getDisplaySmallEmphasizedTrackingXSAIIZE() {
+    public final long m4392getDisplaySmallEmphasizedTrackingXSAIIZE() {
         return DisplaySmallEmphasizedTracking;
     }
 
@@ -791,17 +791,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getHeadlineLargeEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4395getHeadlineLargeEmphasizedLineHeightXSAIIZE() {
+    public final long m4396getHeadlineLargeEmphasizedLineHeightXSAIIZE() {
         return HeadlineLargeEmphasizedLineHeight;
     }
 
     /* renamed from: getHeadlineLargeEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4396getHeadlineLargeEmphasizedSizeXSAIIZE() {
+    public final long m4397getHeadlineLargeEmphasizedSizeXSAIIZE() {
         return HeadlineLargeEmphasizedSize;
     }
 
     /* renamed from: getHeadlineLargeEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4397getHeadlineLargeEmphasizedTrackingXSAIIZE() {
+    public final long m4398getHeadlineLargeEmphasizedTrackingXSAIIZE() {
         return HeadlineLargeEmphasizedTracking;
     }
 
@@ -814,17 +814,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getHeadlineMediumEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4401getHeadlineMediumEmphasizedLineHeightXSAIIZE() {
+    public final long m4402getHeadlineMediumEmphasizedLineHeightXSAIIZE() {
         return HeadlineMediumEmphasizedLineHeight;
     }
 
     /* renamed from: getHeadlineMediumEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4402getHeadlineMediumEmphasizedSizeXSAIIZE() {
+    public final long m4403getHeadlineMediumEmphasizedSizeXSAIIZE() {
         return HeadlineMediumEmphasizedSize;
     }
 
     /* renamed from: getHeadlineMediumEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4403getHeadlineMediumEmphasizedTrackingXSAIIZE() {
+    public final long m4404getHeadlineMediumEmphasizedTrackingXSAIIZE() {
         return HeadlineMediumEmphasizedTracking;
     }
 
@@ -837,17 +837,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getHeadlineSmallEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4407getHeadlineSmallEmphasizedLineHeightXSAIIZE() {
+    public final long m4408getHeadlineSmallEmphasizedLineHeightXSAIIZE() {
         return HeadlineSmallEmphasizedLineHeight;
     }
 
     /* renamed from: getHeadlineSmallEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4408getHeadlineSmallEmphasizedSizeXSAIIZE() {
+    public final long m4409getHeadlineSmallEmphasizedSizeXSAIIZE() {
         return HeadlineSmallEmphasizedSize;
     }
 
     /* renamed from: getHeadlineSmallEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4409getHeadlineSmallEmphasizedTrackingXSAIIZE() {
+    public final long m4410getHeadlineSmallEmphasizedTrackingXSAIIZE() {
         return HeadlineSmallEmphasizedTracking;
     }
 
@@ -860,17 +860,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getLabelLargeEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4413getLabelLargeEmphasizedLineHeightXSAIIZE() {
+    public final long m4414getLabelLargeEmphasizedLineHeightXSAIIZE() {
         return LabelLargeEmphasizedLineHeight;
     }
 
     /* renamed from: getLabelLargeEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4414getLabelLargeEmphasizedSizeXSAIIZE() {
+    public final long m4415getLabelLargeEmphasizedSizeXSAIIZE() {
         return LabelLargeEmphasizedSize;
     }
 
     /* renamed from: getLabelLargeEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4415getLabelLargeEmphasizedTrackingXSAIIZE() {
+    public final long m4416getLabelLargeEmphasizedTrackingXSAIIZE() {
         return LabelLargeEmphasizedTracking;
     }
 
@@ -883,17 +883,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getLabelMediumEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4419getLabelMediumEmphasizedLineHeightXSAIIZE() {
+    public final long m4420getLabelMediumEmphasizedLineHeightXSAIIZE() {
         return LabelMediumEmphasizedLineHeight;
     }
 
     /* renamed from: getLabelMediumEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4420getLabelMediumEmphasizedSizeXSAIIZE() {
+    public final long m4421getLabelMediumEmphasizedSizeXSAIIZE() {
         return LabelMediumEmphasizedSize;
     }
 
     /* renamed from: getLabelMediumEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4421getLabelMediumEmphasizedTrackingXSAIIZE() {
+    public final long m4422getLabelMediumEmphasizedTrackingXSAIIZE() {
         return LabelMediumEmphasizedTracking;
     }
 
@@ -906,17 +906,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getLabelSmallEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4425getLabelSmallEmphasizedLineHeightXSAIIZE() {
+    public final long m4426getLabelSmallEmphasizedLineHeightXSAIIZE() {
         return LabelSmallEmphasizedLineHeight;
     }
 
     /* renamed from: getLabelSmallEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4426getLabelSmallEmphasizedSizeXSAIIZE() {
+    public final long m4427getLabelSmallEmphasizedSizeXSAIIZE() {
         return LabelSmallEmphasizedSize;
     }
 
     /* renamed from: getLabelSmallEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4427getLabelSmallEmphasizedTrackingXSAIIZE() {
+    public final long m4428getLabelSmallEmphasizedTrackingXSAIIZE() {
         return LabelSmallEmphasizedTracking;
     }
 
@@ -929,17 +929,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getTitleLargeEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4431getTitleLargeEmphasizedLineHeightXSAIIZE() {
+    public final long m4432getTitleLargeEmphasizedLineHeightXSAIIZE() {
         return TitleLargeEmphasizedLineHeight;
     }
 
     /* renamed from: getTitleLargeEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4432getTitleLargeEmphasizedSizeXSAIIZE() {
+    public final long m4433getTitleLargeEmphasizedSizeXSAIIZE() {
         return TitleLargeEmphasizedSize;
     }
 
     /* renamed from: getTitleLargeEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4433getTitleLargeEmphasizedTrackingXSAIIZE() {
+    public final long m4434getTitleLargeEmphasizedTrackingXSAIIZE() {
         return TitleLargeEmphasizedTracking;
     }
 
@@ -952,17 +952,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getTitleMediumEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4437getTitleMediumEmphasizedLineHeightXSAIIZE() {
+    public final long m4438getTitleMediumEmphasizedLineHeightXSAIIZE() {
         return TitleMediumEmphasizedLineHeight;
     }
 
     /* renamed from: getTitleMediumEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4438getTitleMediumEmphasizedSizeXSAIIZE() {
+    public final long m4439getTitleMediumEmphasizedSizeXSAIIZE() {
         return TitleMediumEmphasizedSize;
     }
 
     /* renamed from: getTitleMediumEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4439getTitleMediumEmphasizedTrackingXSAIIZE() {
+    public final long m4440getTitleMediumEmphasizedTrackingXSAIIZE() {
         return TitleMediumEmphasizedTracking;
     }
 
@@ -975,17 +975,17 @@ public final class TypeScaleTokens {
     }
 
     /* renamed from: getTitleSmallEmphasizedLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m4443getTitleSmallEmphasizedLineHeightXSAIIZE() {
+    public final long m4444getTitleSmallEmphasizedLineHeightXSAIIZE() {
         return TitleSmallEmphasizedLineHeight;
     }
 
     /* renamed from: getTitleSmallEmphasizedSize-XSAIIZE  reason: not valid java name */
-    public final long m4444getTitleSmallEmphasizedSizeXSAIIZE() {
+    public final long m4445getTitleSmallEmphasizedSizeXSAIIZE() {
         return TitleSmallEmphasizedSize;
     }
 
     /* renamed from: getTitleSmallEmphasizedTracking-XSAIIZE  reason: not valid java name */
-    public final long m4445getTitleSmallEmphasizedTrackingXSAIIZE() {
+    public final long m4446getTitleSmallEmphasizedTrackingXSAIIZE() {
         return TitleSmallEmphasizedTracking;
     }
 

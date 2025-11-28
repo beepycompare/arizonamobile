@@ -54,7 +54,7 @@ public final class Rgb extends ColorSpace {
     }
 
     public Rgb(String str, float[] fArr, WhitePoint whitePoint, float[] fArr2, DoubleFunction doubleFunction, DoubleFunction doubleFunction2, float f, float f2, TransferParameters transferParameters, int i) {
-        super(str, ColorModel.Companion.m5711getRgbxdoWZVw(), i, null);
+        super(str, ColorModel.Companion.m5712getRgbxdoWZVw(), i, null);
         this.whitePoint = whitePoint;
         this.min = f;
         this.max = f2;
@@ -454,7 +454,7 @@ public final class Rgb extends ColorSpace {
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
     /* renamed from: xyzaToColor-JlNiLsg$ui_graphics_release */
-    public long mo5714xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
+    public long mo5715xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
         float[] fArr = this.inverseTransform;
         return ColorKt.Color((float) this.oetfFunc.invoke((fArr[0] * f) + (fArr[3] * f2) + (fArr[6] * f3)), (float) this.oetfFunc.invoke((fArr[1] * f) + (fArr[4] * f2) + (fArr[7] * f3)), (float) this.oetfFunc.invoke((fArr[2] * f) + (fArr[5] * f2) + (fArr[8] * f3)), f4, colorSpace);
     }

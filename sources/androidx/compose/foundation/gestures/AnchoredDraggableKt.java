@@ -58,7 +58,7 @@ public final class AnchoredDraggableKt {
             return Float.valueOf(GetOrNan$lambda$10);
         }
     };
-    private static final float AnchoredDraggableMinFlingVelocity = Dp.m7995constructorimpl(125);
+    private static final float AnchoredDraggableMinFlingVelocity = Dp.m7996constructorimpl(125);
     private static final DecayAnimationSpec<Float> NoOpDecayAnimationSpec = DecayAnimationSpecKt.generateDecayAnimationSpec(new FloatDecayAnimationSpec() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$NoOpDecayAnimationSpec$1
         private final float absVelocityThreshold;
 
@@ -532,6 +532,6 @@ public final class AnchoredDraggableKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float anchoredDraggableFlingBehavior$lambda$12(Density density) {
-        return density.mo429toPx0680j_4(Dp.m7995constructorimpl(125));
+        return density.mo430toPx0680j_4(Dp.m7996constructorimpl(125));
     }
 }

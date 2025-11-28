@@ -32,7 +32,7 @@ public final class AppBarDslKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        AppBarOverflowStateImpl appBarOverflowStateImpl = (AppBarOverflowStateImpl) RememberSaveableKt.m4725rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+        AppBarOverflowStateImpl appBarOverflowStateImpl = (AppBarOverflowStateImpl) RememberSaveableKt.m4726rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

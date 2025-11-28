@@ -29,25 +29,25 @@ public class ColorFilter {
         }
 
         /* renamed from: tint-xETnrds$default  reason: not valid java name */
-        public static /* synthetic */ ColorFilter m5320tintxETnrds$default(Companion companion, long j, int i, int i2, Object obj) {
+        public static /* synthetic */ ColorFilter m5321tintxETnrds$default(Companion companion, long j, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
-                i = BlendMode.Companion.m5218getSrcIn0nO6VwU();
+                i = BlendMode.Companion.m5219getSrcIn0nO6VwU();
             }
-            return companion.m5323tintxETnrds(j, i);
+            return companion.m5324tintxETnrds(j, i);
         }
 
         /* renamed from: tint-xETnrds  reason: not valid java name */
-        public final ColorFilter m5323tintxETnrds(long j, int i) {
+        public final ColorFilter m5324tintxETnrds(long j, int i) {
             return new BlendModeColorFilter(j, i, (DefaultConstructorMarker) null);
         }
 
         /* renamed from: colorMatrix-jHG-Opc  reason: not valid java name */
-        public final ColorFilter m5321colorMatrixjHGOpc(float[] fArr) {
+        public final ColorFilter m5322colorMatrixjHGOpc(float[] fArr) {
             return new ColorMatrixColorFilter(fArr, (DefaultConstructorMarker) null);
         }
 
         /* renamed from: lighting--OWjLjI  reason: not valid java name */
-        public final ColorFilter m5322lightingOWjLjI(long j, long j2) {
+        public final ColorFilter m5323lightingOWjLjI(long j, long j2) {
             return new LightingColorFilter(j, j2, (DefaultConstructorMarker) null);
         }
     }

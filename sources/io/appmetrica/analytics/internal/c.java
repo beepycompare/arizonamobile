@@ -3,7 +3,7 @@ package io.appmetrica.analytics.internal;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class c implements IAppMetricaService {
 
     /* renamed from: a  reason: collision with root package name */

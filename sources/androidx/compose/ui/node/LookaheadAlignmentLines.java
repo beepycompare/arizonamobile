@@ -34,10 +34,10 @@ public final class LookaheadAlignmentLines extends AlignmentLines {
 
     @Override // androidx.compose.ui.node.AlignmentLines
     /* renamed from: calculatePositionInParent-R5De75A */
-    protected long mo6826calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j) {
+    protected long mo6827calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j) {
         LookaheadDelegate lookaheadDelegate = nodeCoordinator.getLookaheadDelegate();
         Intrinsics.checkNotNull(lookaheadDelegate);
-        long mo6917getPositionnOccac = lookaheadDelegate.mo6917getPositionnOccac();
-        return Offset.m5040plusMKHz9U(Offset.m5027constructorimpl((Float.floatToRawIntBits(IntOffset.m8123getXimpl(mo6917getPositionnOccac)) << 32) | (Float.floatToRawIntBits(IntOffset.m8124getYimpl(mo6917getPositionnOccac)) & 4294967295L)), j);
+        long mo6918getPositionnOccac = lookaheadDelegate.mo6918getPositionnOccac();
+        return Offset.m5041plusMKHz9U(Offset.m5028constructorimpl((Float.floatToRawIntBits(IntOffset.m8124getXimpl(mo6918getPositionnOccac)) << 32) | (Float.floatToRawIntBits(IntOffset.m8125getYimpl(mo6918getPositionnOccac)) & 4294967295L)), j);
     }
 }

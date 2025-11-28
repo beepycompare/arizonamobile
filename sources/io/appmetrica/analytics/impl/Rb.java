@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.location.Location;
 import io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Rb extends Ub, LocationServiceApi {
     @Override // io.appmetrica.analytics.impl.Ub
     /* synthetic */ void a(Location location);

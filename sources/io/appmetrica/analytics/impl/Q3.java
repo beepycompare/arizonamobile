@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Q3 implements ModuleClientActivator {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator
     public final void activate(Context context) {

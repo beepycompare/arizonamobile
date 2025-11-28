@@ -6,6 +6,6 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class VelocityKt {
     public static final long Velocity(float f, float f2) {
-        return Velocity.m8227constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Velocity.m8228constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 }

@@ -17,13 +17,13 @@ public final class ProgressBarShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo332createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M 23.2111 0 H 19.3299 L 17.7386 3.5399 L 3.8031 34.5399 L 0 43 H 9.2756 H 859.3406 H 863.2216 L 864.8126 39.4601 L 878.7476 8.4601 L 882.5516 0 H 873.2756 H 23.2111 Z"), null, 1, null);
-        float[] m5521constructorimpl$default = Matrix.m5521constructorimpl$default(null, 1, null);
-        Matrix.m5537scaleimpl$default(m5521constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 864.0f, Float.intBitsToFloat((int) (j & 4294967295L)) / 31.0f, 0.0f, 4, null);
-        path$default.mo5171transform58bKbWc(m5521constructorimpl$default);
+        float[] m5522constructorimpl$default = Matrix.m5522constructorimpl$default(null, 1, null);
+        Matrix.m5538scaleimpl$default(m5522constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 864.0f, Float.intBitsToFloat((int) (j & 4294967295L)) / 31.0f, 0.0f, 4, null);
+        path$default.mo5172transform58bKbWc(m5522constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

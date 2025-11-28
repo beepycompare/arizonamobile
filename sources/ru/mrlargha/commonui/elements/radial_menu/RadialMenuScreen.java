@@ -473,9 +473,9 @@ public final class RadialMenuScreen extends SAMPUIElement {
 
     private final String setImage(String str) {
         if (this.isArizonaType) {
-            return FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/radial_menu_update/" + str + ".webp";
+            return FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/radial_menu_update/" + str + ".webp";
         }
-        return FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/radial_menu/" + str + ".webp";
+        return FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/radial_menu/" + str + ".webp";
     }
 
     /* compiled from: RadialMenuScreen.kt */

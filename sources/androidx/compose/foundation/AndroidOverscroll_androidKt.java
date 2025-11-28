@@ -17,11 +17,11 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class AndroidOverscroll_androidKt {
     private static final long DefaultGlowColor = ColorKt.Color(4284900966L);
-    private static final PaddingValues DefaultGlowPaddingValues = PaddingKt.m837PaddingValuesYgX7TsA$default(0.0f, 0.0f, 3, null);
+    private static final PaddingValues DefaultGlowPaddingValues = PaddingKt.m838PaddingValuesYgX7TsA$default(0.0f, 0.0f, 3, null);
     private static final float FlingDestretchFactor = 4.0f;
 
     /* renamed from: rememberPlatformOverscrollFactory-3J-VO9M */
-    public static final OverscrollFactory m265rememberPlatformOverscrollFactory3JVO9M(long j, PaddingValues paddingValues, Composer composer, int i, int i2) {
+    public static final OverscrollFactory m266rememberPlatformOverscrollFactory3JVO9M(long j, PaddingValues paddingValues, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -2017030679, "C(rememberPlatformOverscrollFactory)N(glowColor:c#ui.graphics.Color,glowDrawPadding)86@3975L7,87@4014L7:AndroidOverscroll.android.kt#71ulvw");
         if ((i2 & 1) != 0) {
             j = DefaultGlowColor;
@@ -56,7 +56,7 @@ public final class AndroidOverscroll_androidKt {
         if (overscrollConfiguration == null) {
             return null;
         }
-        return new AndroidEdgeEffectOverscrollFactory(context, density, overscrollConfiguration.m367getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
+        return new AndroidEdgeEffectOverscrollFactory(context, density, overscrollConfiguration.m368getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
     }
 
     public static final OverscrollEffect rememberPlatformOverscrollEffect(Composer composer, int i) {
@@ -88,7 +88,7 @@ public final class AndroidOverscroll_androidKt {
             boolean changed = composer.changed(context) | composer.changed(density) | composer.changed(overscrollConfiguration);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                Object androidEdgeEffectOverscrollEffect2 = new AndroidEdgeEffectOverscrollEffect(context, density, overscrollConfiguration.m367getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
+                Object androidEdgeEffectOverscrollEffect2 = new AndroidEdgeEffectOverscrollEffect(context, density, overscrollConfiguration.m368getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
                 composer.updateRememberedValue(androidEdgeEffectOverscrollEffect2);
                 rememberedValue = androidEdgeEffectOverscrollEffect2;
             }
@@ -104,7 +104,7 @@ public final class AndroidOverscroll_androidKt {
     }
 
     /* renamed from: destretchMultiplier-GyEprt8 */
-    public static final float m264destretchMultiplierGyEprt8(int i) {
-        return NestedScrollSource.m6450equalsimpl0(i, NestedScrollSource.Companion.m6461getSideEffectWNlRxjI()) ? 4.0f : 1.0f;
+    public static final float m265destretchMultiplierGyEprt8(int i) {
+        return NestedScrollSource.m6451equalsimpl0(i, NestedScrollSource.Companion.m6462getSideEffectWNlRxjI()) ? 4.0f : 1.0f;
     }
 }

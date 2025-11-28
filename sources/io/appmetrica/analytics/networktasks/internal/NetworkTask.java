@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Executor;
 import javax.net.ssl.SSLSocketFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
@@ -18,13 +18,13 @@ public class NetworkTask {
     private final List f;
     private final String g;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum Method {
         GET,
         POST
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface ShouldTryNextHostCondition {
         boolean shouldTryNextHost(int i);
     }

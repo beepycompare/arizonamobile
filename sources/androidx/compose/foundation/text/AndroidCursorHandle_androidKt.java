@@ -45,7 +45,7 @@ public final class AndroidCursorHandle_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit CursorHandle_USBMPiE$lambda$2(OffsetProvider offsetProvider, Modifier modifier, long j, int i, int i2, Composer composer, int i3) {
-        m1211CursorHandleUSBMPiE(offsetProvider, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m1212CursorHandleUSBMPiE(offsetProvider, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -70,7 +70,7 @@ public final class AndroidCursorHandle_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1211CursorHandleUSBMPiE(final OffsetProvider offsetProvider, final Modifier modifier, final long j, Composer composer, final int i, final int i2) {
+    public static final void m1212CursorHandleUSBMPiE(final OffsetProvider offsetProvider, final Modifier modifier, final long j, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(1776202187);
         ComposerKt.sourceInformation(startRestartGroup, "C(CursorHandle)N(offsetProvider,modifier,minTouchTargetSize:c#ui.unit.DpSize)53@2201L305,62@2602L492,62@2511L583:AndroidCursorHandle.android.kt#423gt5");
@@ -93,7 +93,7 @@ public final class AndroidCursorHandle_androidKt {
             startRestartGroup.startDefaults();
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 4) != 0) {
-                    j = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                    j = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
                     i3 &= -897;
                 }
                 startRestartGroup.endDefaults();
@@ -136,14 +136,14 @@ public final class AndroidCursorHandle_androidKt {
                         if (j != InlineClassHelperKt.UnspecifiedPackedFloats) {
                             composer2.startReplaceGroup(-1244013944);
                             ComposerKt.sourceInformation(composer2, "64@2662L352");
-                            Modifier m890requiredSizeInqDBjuR0$default = SizeKt.m890requiredSizeInqDBjuR0$default(semantics$default, DpSize.m8093getWidthD9Ej5fM(j), DpSize.m8091getHeightD9Ej5fM(j), 0.0f, 0.0f, 12, null);
+                            Modifier m891requiredSizeInqDBjuR0$default = SizeKt.m891requiredSizeInqDBjuR0$default(semantics$default, DpSize.m8094getWidthD9Ej5fM(j), DpSize.m8092getHeightD9Ej5fM(j), 0.0f, 0.0f, 12, null);
                             Alignment topCenter = Alignment.Companion.getTopCenter();
                             ComposerKt.sourceInformationMarkerStart(composer2, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(topCenter, false);
                             ComposerKt.sourceInformationMarkerStart(composer2, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
                             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer2, 0));
                             CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m890requiredSizeInqDBjuR0$default);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m891requiredSizeInqDBjuR0$default);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer2, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                             if (!(composer2.getApplier() instanceof Applier)) {
@@ -155,15 +155,15 @@ public final class AndroidCursorHandle_androidKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                             }
-                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, 922244333, "C72@2979L21:AndroidCursorHandle.android.kt#423gt5");
@@ -211,7 +211,7 @@ public final class AndroidCursorHandle_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit CursorHandle_USBMPiE$lambda$1$lambda$0(OffsetProvider offsetProvider, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        semanticsPropertyReceiver.set(SelectionHandlesKt.getSelectionHandleInfoKey(), new SelectionHandleInfo(Handle.Cursor, offsetProvider.mo1229provideF1C5BW0(), SelectionHandleAnchor.Middle, true, null));
+        semanticsPropertyReceiver.set(SelectionHandlesKt.getSelectionHandleInfoKey(), new SelectionHandleInfo(Handle.Cursor, offsetProvider.mo1230provideF1C5BW0(), SelectionHandleAnchor.Middle, true, null));
         return Unit.INSTANCE;
     }
 
@@ -237,7 +237,7 @@ public final class AndroidCursorHandle_androidKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(694251107, i3, -1, "androidx.compose.foundation.text.DefaultCursorHandle (AndroidCursorHandle.android.kt:82)");
             }
-            SpacerKt.Spacer(drawCursorHandle(SizeKt.m896sizeVpY3zN4(modifier, CursorHandleWidth, CursorHandleHeight)), startRestartGroup, 0);
+            SpacerKt.Spacer(drawCursorHandle(SizeKt.m897sizeVpY3zN4(modifier, CursorHandleWidth, CursorHandleHeight)), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -260,8 +260,8 @@ public final class AndroidCursorHandle_androidKt {
     }
 
     static {
-        float m7995constructorimpl = Dp.m7995constructorimpl(25);
-        CursorHandleHeight = m7995constructorimpl;
-        CursorHandleWidth = Dp.m7995constructorimpl(Dp.m7995constructorimpl(m7995constructorimpl * 2.0f) / 2.4142137f);
+        float m7996constructorimpl = Dp.m7996constructorimpl(25);
+        CursorHandleHeight = m7996constructorimpl;
+        CursorHandleWidth = Dp.m7996constructorimpl(Dp.m7996constructorimpl(m7996constructorimpl * 2.0f) / 2.4142137f);
     }
 }

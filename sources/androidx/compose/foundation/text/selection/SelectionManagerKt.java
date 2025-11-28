@@ -109,14 +109,14 @@ public final class SelectionManagerKt {
                     component42 = Math.max(component42, boundingBox.getBottom());
                     i2 = i3 + 1;
                 }
-                long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(component13) << 32) | (Float.floatToRawIntBits(component23) & 4294967295L));
-                long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(component42) & 4294967295L) | (Float.floatToRawIntBits(component32) << 32));
-                long mo6706localPositionOfR5De75A = layoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates2, m5027constructorimpl);
-                long mo6706localPositionOfR5De75A2 = layoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates2, m5027constructorimpl2);
-                component1 = Math.min(component1, Float.intBitsToFloat((int) (mo6706localPositionOfR5De75A >> 32)));
-                component2 = Math.min(component2, Float.intBitsToFloat((int) (mo6706localPositionOfR5De75A & 4294967295L)));
-                component3 = Math.max(component3, Float.intBitsToFloat((int) (mo6706localPositionOfR5De75A2 >> 32)));
-                component4 = Math.max(component4, Float.intBitsToFloat((int) (mo6706localPositionOfR5De75A2 & 4294967295L)));
+                long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(component13) << 32) | (Float.floatToRawIntBits(component23) & 4294967295L));
+                long m5028constructorimpl2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(component42) & 4294967295L) | (Float.floatToRawIntBits(component32) << 32));
+                long mo6707localPositionOfR5De75A = layoutCoordinates.mo6707localPositionOfR5De75A(layoutCoordinates2, m5028constructorimpl);
+                long mo6707localPositionOfR5De75A2 = layoutCoordinates.mo6707localPositionOfR5De75A(layoutCoordinates2, m5028constructorimpl2);
+                component1 = Math.min(component1, Float.intBitsToFloat((int) (mo6707localPositionOfR5De75A >> 32)));
+                component2 = Math.min(component2, Float.intBitsToFloat((int) (mo6707localPositionOfR5De75A & 4294967295L)));
+                component3 = Math.max(component3, Float.intBitsToFloat((int) (mo6707localPositionOfR5De75A2 >> 32)));
+                component4 = Math.max(component4, Float.intBitsToFloat((int) (mo6707localPositionOfR5De75A2 & 4294967295L)));
             }
             i++;
             list2 = list;
@@ -126,10 +126,10 @@ public final class SelectionManagerKt {
     }
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-O0kMr_c  reason: not valid java name */
-    public static final long m1801calculateSelectionMagnifierCenterAndroidO0kMr_c(SelectionManager selectionManager, long j) {
+    public static final long m1802calculateSelectionMagnifierCenterAndroidO0kMr_c(SelectionManager selectionManager, long j) {
         Selection selection = selectionManager.getSelection();
         if (selection == null) {
-            return Offset.Companion.m5050getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5051getUnspecifiedF1C5BW0();
         }
         Handle draggingHandle = selectionManager.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
@@ -141,54 +141,54 @@ public final class SelectionManagerKt {
                     }
                     throw new IllegalStateException("SelectionContainer does not support cursor".toString());
                 }
-                return m1803getMagnifierCenterJVtK1S4(selectionManager, j, selection.getEnd());
+                return m1804getMagnifierCenterJVtK1S4(selectionManager, j, selection.getEnd());
             }
-            return m1803getMagnifierCenterJVtK1S4(selectionManager, j, selection.getStart());
+            return m1804getMagnifierCenterJVtK1S4(selectionManager, j, selection.getStart());
         }
-        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5051getUnspecifiedF1C5BW0();
     }
 
     /* renamed from: getMagnifierCenter-JVtK1S4  reason: not valid java name */
-    private static final long m1803getMagnifierCenterJVtK1S4(SelectionManager selectionManager, long j, Selection.AnchorInfo anchorInfo) {
+    private static final long m1804getMagnifierCenterJVtK1S4(SelectionManager selectionManager, long j, Selection.AnchorInfo anchorInfo) {
         LayoutCoordinates containerLayoutCoordinates;
         LayoutCoordinates layoutCoordinates;
         int offset;
         float coerceIn;
         Selectable anchorSelectable$foundation_release = selectionManager.getAnchorSelectable$foundation_release(anchorInfo);
         if (anchorSelectable$foundation_release != null && (containerLayoutCoordinates = selectionManager.getContainerLayoutCoordinates()) != null && (layoutCoordinates = anchorSelectable$foundation_release.getLayoutCoordinates()) != null && (offset = anchorInfo.getOffset()) <= anchorSelectable$foundation_release.getLastVisibleOffset()) {
-            Offset m1792getCurrentDragPosition_m7T9E = selectionManager.m1792getCurrentDragPosition_m7T9E();
-            Intrinsics.checkNotNull(m1792getCurrentDragPosition_m7T9E);
-            float intBitsToFloat = Float.intBitsToFloat((int) (layoutCoordinates.mo6706localPositionOfR5De75A(containerLayoutCoordinates, m1792getCurrentDragPosition_m7T9E.m5045unboximpl()) >> 32));
-            long mo1740getRangeOfLineContainingjx7JFs = anchorSelectable$foundation_release.mo1740getRangeOfLineContainingjx7JFs(offset);
-            if (TextRange.m7451getCollapsedimpl(mo1740getRangeOfLineContainingjx7JFs)) {
+            Offset m1793getCurrentDragPosition_m7T9E = selectionManager.m1793getCurrentDragPosition_m7T9E();
+            Intrinsics.checkNotNull(m1793getCurrentDragPosition_m7T9E);
+            float intBitsToFloat = Float.intBitsToFloat((int) (layoutCoordinates.mo6707localPositionOfR5De75A(containerLayoutCoordinates, m1793getCurrentDragPosition_m7T9E.m5046unboximpl()) >> 32));
+            long mo1741getRangeOfLineContainingjx7JFs = anchorSelectable$foundation_release.mo1741getRangeOfLineContainingjx7JFs(offset);
+            if (TextRange.m7452getCollapsedimpl(mo1741getRangeOfLineContainingjx7JFs)) {
                 coerceIn = anchorSelectable$foundation_release.getLineLeft(offset);
             } else {
-                float lineLeft = anchorSelectable$foundation_release.getLineLeft(TextRange.m7457getStartimpl(mo1740getRangeOfLineContainingjx7JFs));
-                float lineRight = anchorSelectable$foundation_release.getLineRight(TextRange.m7452getEndimpl(mo1740getRangeOfLineContainingjx7JFs) - 1);
+                float lineLeft = anchorSelectable$foundation_release.getLineLeft(TextRange.m7458getStartimpl(mo1741getRangeOfLineContainingjx7JFs));
+                float lineRight = anchorSelectable$foundation_release.getLineRight(TextRange.m7453getEndimpl(mo1741getRangeOfLineContainingjx7JFs) - 1);
                 coerceIn = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
             }
             if (coerceIn == -1.0f) {
-                return Offset.Companion.m5050getUnspecifiedF1C5BW0();
+                return Offset.Companion.m5051getUnspecifiedF1C5BW0();
             }
-            if (!IntSize.m8164equalsimpl0(j, IntSize.Companion.m8171getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
-                return Offset.Companion.m5050getUnspecifiedF1C5BW0();
+            if (!IntSize.m8165equalsimpl0(j, IntSize.Companion.m8172getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
+                return Offset.Companion.m5051getUnspecifiedF1C5BW0();
             }
             float centerYForOffset = anchorSelectable$foundation_release.getCenterYForOffset(offset);
             if (centerYForOffset == -1.0f) {
-                return Offset.Companion.m5050getUnspecifiedF1C5BW0();
+                return Offset.Companion.m5051getUnspecifiedF1C5BW0();
             }
-            return containerLayoutCoordinates.mo6706localPositionOfR5De75A(layoutCoordinates, Offset.m5027constructorimpl((Float.floatToRawIntBits(coerceIn) << 32) | (4294967295L & Float.floatToRawIntBits(centerYForOffset))));
+            return containerLayoutCoordinates.mo6707localPositionOfR5De75A(layoutCoordinates, Offset.m5028constructorimpl((Float.floatToRawIntBits(coerceIn) << 32) | (4294967295L & Float.floatToRawIntBits(centerYForOffset))));
         }
-        return Offset.Companion.m5050getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5051getUnspecifiedF1C5BW0();
     }
 
     public static final Rect visibleBounds(LayoutCoordinates layoutCoordinates) {
         Rect boundsInWindow = LayoutCoordinatesKt.boundsInWindow(layoutCoordinates);
-        return RectKt.m5073Rect0a9Yr6o(layoutCoordinates.mo6714windowToLocalMKHz9U(boundsInWindow.m5070getTopLeftF1C5BW0()), layoutCoordinates.mo6714windowToLocalMKHz9U(boundsInWindow.m5064getBottomRightF1C5BW0()));
+        return RectKt.m5074Rect0a9Yr6o(layoutCoordinates.mo6715windowToLocalMKHz9U(boundsInWindow.m5071getTopLeftF1C5BW0()), layoutCoordinates.mo6715windowToLocalMKHz9U(boundsInWindow.m5065getBottomRightF1C5BW0()));
     }
 
     /* renamed from: containsInclusive-Uv8p0NA  reason: not valid java name */
-    public static final boolean m1802containsInclusiveUv8p0NA(Rect rect, long j) {
+    public static final boolean m1803containsInclusiveUv8p0NA(Rect rect, long j) {
         float left = rect.getLeft();
         float right = rect.getRight();
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));

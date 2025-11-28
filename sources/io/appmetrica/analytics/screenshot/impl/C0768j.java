@@ -2,7 +2,7 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import kotlin.jvm.internal.Intrinsics;
 /* renamed from: io.appmetrica.analytics.screenshot.impl.j  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0768j {
 
     /* renamed from: a  reason: collision with root package name */

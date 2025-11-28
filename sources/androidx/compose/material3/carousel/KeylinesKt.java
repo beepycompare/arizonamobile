@@ -12,11 +12,11 @@ import kotlin.ranges.RangesKt;
 public final class KeylinesKt {
     public static /* synthetic */ KeylineList multiBrowseKeylineList$default(Density density, float f, float f2, float f3, int i, float f4, float f5, int i2, Object obj) {
         if ((i2 & 32) != 0) {
-            f4 = density.mo429toPx0680j_4(CarouselDefaults.INSTANCE.m3461getMinSmallItemSizeD9Ej5fM());
+            f4 = density.mo430toPx0680j_4(CarouselDefaults.INSTANCE.m3462getMinSmallItemSizeD9Ej5fM());
         }
         float f6 = f4;
         if ((i2 & 64) != 0) {
-            f5 = density.mo429toPx0680j_4(CarouselDefaults.INSTANCE.m3460getMaxSmallItemSizeD9Ej5fM());
+            f5 = density.mo430toPx0680j_4(CarouselDefaults.INSTANCE.m3461getMaxSmallItemSizeD9Ej5fM());
         }
         return multiBrowseKeylineList(density, f, f2, f3, i, f6, f5);
     }
@@ -41,7 +41,7 @@ public final class KeylinesKt {
         for (int i2 = 0; i2 < max; i2++) {
             iArr4[i2] = ceil - i2;
         }
-        float mo429toPx0680j_4 = density.mo429toPx0680j_4(CarouselDefaults.INSTANCE.m3459getAnchorSizeD9Ej5fM$material3());
+        float mo430toPx0680j_4 = density.mo430toPx0680j_4(CarouselDefaults.INSTANCE.m3460getAnchorSizeD9Ej5fM$material3());
         Arrangement findLowestCostArrangement = Arrangement.Companion.findLowestCostArrangement(f, f3, coerceIn, f4, f5, iArr3, f7, iArr2, min, iArr4);
         if (findLowestCostArrangement == null || findLowestCostArrangement.itemCount() <= i) {
             f6 = f;
@@ -61,7 +61,7 @@ public final class KeylinesKt {
         if (findLowestCostArrangement == null) {
             return KeylineListKt.emptyKeylineList();
         }
-        return createLeftAlignedKeylineList(f6, f3, mo429toPx0680j_4, mo429toPx0680j_4, findLowestCostArrangement);
+        return createLeftAlignedKeylineList(f6, f3, mo430toPx0680j_4, mo430toPx0680j_4, findLowestCostArrangement);
     }
 
     public static final KeylineList uncontainedKeylineList(Density density, float f, float f2, float f3) {
@@ -72,9 +72,9 @@ public final class KeylinesKt {
         int max = Math.max(1, (int) Math.floor(f / min));
         float f4 = f - (max * min);
         int i = f4 <= 0.0f ? 0 : 1;
-        float mo429toPx0680j_4 = density.mo429toPx0680j_4(CarouselDefaults.INSTANCE.m3459getAnchorSizeD9Ej5fM$material3());
-        float calculateMediumChildSize = calculateMediumChildSize(mo429toPx0680j_4, min, f4);
-        return createLeftAlignedKeylineList(f, f3, Math.max(Math.min(mo429toPx0680j_4, f2), calculateMediumChildSize * 0.5f), mo429toPx0680j_4, new Arrangement(0, 0.0f, 0, calculateMediumChildSize, i, min, max));
+        float mo430toPx0680j_4 = density.mo430toPx0680j_4(CarouselDefaults.INSTANCE.m3460getAnchorSizeD9Ej5fM$material3());
+        float calculateMediumChildSize = calculateMediumChildSize(mo430toPx0680j_4, min, f4);
+        return createLeftAlignedKeylineList(f, f3, Math.max(Math.min(mo430toPx0680j_4, f2), calculateMediumChildSize * 0.5f), mo430toPx0680j_4, new Arrangement(0, 0.0f, 0, calculateMediumChildSize, i, min, max));
     }
 
     public static /* synthetic */ KeylineList heroKeylineList$default(Density density, float f, Float f2, float f3, int i, boolean z, float f4, float f5, int i2, Object obj) {
@@ -83,11 +83,11 @@ public final class KeylinesKt {
         }
         boolean z2 = z;
         if ((i2 & 64) != 0) {
-            f4 = density.mo429toPx0680j_4(CarouselDefaults.INSTANCE.m3461getMinSmallItemSizeD9Ej5fM());
+            f4 = density.mo430toPx0680j_4(CarouselDefaults.INSTANCE.m3462getMinSmallItemSizeD9Ej5fM());
         }
         float f6 = f4;
         if ((i2 & 128) != 0) {
-            f5 = density.mo429toPx0680j_4(CarouselDefaults.INSTANCE.m3460getMaxSmallItemSizeD9Ej5fM());
+            f5 = density.mo430toPx0680j_4(CarouselDefaults.INSTANCE.m3461getMaxSmallItemSizeD9Ej5fM());
         }
         return heroKeylineList(density, f, f2, f3, i, z2, f6, f5);
     }
@@ -114,19 +114,19 @@ public final class KeylinesKt {
         for (int i2 = 0; i2 < max; i2++) {
             iArr2[i2] = ceil - i2;
         }
-        float mo429toPx0680j_4 = density.mo429toPx0680j_4(CarouselDefaults.INSTANCE.m3459getAnchorSizeD9Ej5fM$material3());
+        float mo430toPx0680j_4 = density.mo430toPx0680j_4(CarouselDefaults.INSTANCE.m3460getAnchorSizeD9Ej5fM$material3());
         Arrangement findLowestCostArrangement = Arrangement.Companion.findLowestCostArrangement(f, f3, coerceIn, f4, f5, iArr, 0.0f, new int[]{0}, min, iArr2);
         if (findLowestCostArrangement == null) {
             return KeylineListKt.emptyKeylineList();
         }
         if (z2 && i >= findLowestCostArrangement.itemCount()) {
-            return createCenterAlignedKeylineList(f, f3, mo429toPx0680j_4, mo429toPx0680j_4, findLowestCostArrangement);
+            return createCenterAlignedKeylineList(f, f3, mo430toPx0680j_4, mo430toPx0680j_4, findLowestCostArrangement);
         }
-        return createLeftAlignedKeylineList(f, f3, mo429toPx0680j_4, mo429toPx0680j_4, findLowestCostArrangement);
+        return createLeftAlignedKeylineList(f, f3, mo430toPx0680j_4, mo430toPx0680j_4, findLowestCostArrangement);
     }
 
     public static final KeylineList createLeftAlignedKeylineList(float f, float f2, final float f3, final float f4, final Arrangement arrangement) {
-        return KeylineListKt.m3483keylineListOfWNYm7Xg(f, f2, CarouselAlignment.Companion.m3458getStartNUL3oTo(), new Function1() { // from class: androidx.compose.material3.carousel.KeylinesKt$$ExternalSyntheticLambda0
+        return KeylineListKt.m3484keylineListOfWNYm7Xg(f, f2, CarouselAlignment.Companion.m3459getStartNUL3oTo(), new Function1() { // from class: androidx.compose.material3.carousel.KeylinesKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit createLeftAlignedKeylineList$lambda$10;
@@ -156,7 +156,7 @@ public final class KeylinesKt {
     }
 
     public static final KeylineList createCenterAlignedKeylineList(float f, float f2, final float f3, final float f4, final Arrangement arrangement) {
-        return KeylineListKt.m3483keylineListOfWNYm7Xg(f, f2, CarouselAlignment.Companion.m3456getCenterNUL3oTo(), new Function1() { // from class: androidx.compose.material3.carousel.KeylinesKt$$ExternalSyntheticLambda1
+        return KeylineListKt.m3484keylineListOfWNYm7Xg(f, f2, CarouselAlignment.Companion.m3457getCenterNUL3oTo(), new Function1() { // from class: androidx.compose.material3.carousel.KeylinesKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit createCenterAlignedKeylineList$lambda$16;

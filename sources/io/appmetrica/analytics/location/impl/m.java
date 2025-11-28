@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.cache.SynchronizedDataCache;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class m extends SynchronizedDataCache {
     public static final long d = 200;
     public static final long e = 50;

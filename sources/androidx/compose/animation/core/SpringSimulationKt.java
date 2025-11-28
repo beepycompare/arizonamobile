@@ -7,6 +7,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class SpringSimulationKt {
     public static final long Motion(float f, float f2) {
-        return Motion.m182constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Motion.m183constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 }

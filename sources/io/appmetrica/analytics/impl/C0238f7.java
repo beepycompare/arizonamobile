@@ -8,7 +8,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.io.Closeable;
 import java.util.Collection;
 /* renamed from: io.appmetrica.analytics.impl.f7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0238f7 extends SQLiteOpenHelper implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */

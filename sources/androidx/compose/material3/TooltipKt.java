@@ -100,29 +100,29 @@ public final class TooltipKt {
     private static final float SpacingBetweenTooltipAndAnchor;
     private static final float TextBottomPadding;
     private static final float TooltipMinHeight;
-    private static final float TooltipMinWidth = Dp.m7995constructorimpl(40);
+    private static final float TooltipMinWidth = Dp.m7996constructorimpl(40);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit PlainTooltip_gv3ox5I$lambda$11(TooltipScope tooltipScope, Modifier modifier, Shape shape, float f, Shape shape2, long j, long j2, float f2, float f3, Function2 function2, int i, int i2, Composer composer, int i3) {
-        m3373PlainTooltipgv3ox5I(tooltipScope, modifier, shape, f, shape2, j, j2, f2, f3, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3374PlainTooltipgv3ox5I(tooltipScope, modifier, shape, f, shape2, j, j2, f2, f3, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit PlainTooltip_m9Er_Xc$lambda$6(TooltipScope tooltipScope, Modifier modifier, long j, float f, Shape shape, long j2, long j3, float f2, float f3, Function2 function2, int i, int i2, Composer composer, int i3) {
-        m3374PlainTooltipm9ErXc(tooltipScope, modifier, j, f, shape, j2, j3, f2, f3, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3375PlainTooltipm9ErXc(tooltipScope, modifier, j, f, shape, j2, j3, f2, f3, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit RichTooltip_EkvW5A0$lambda$17(TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, Shape shape, float f, Shape shape2, RichTooltipColors richTooltipColors, float f2, float f3, Function2 function23, int i, int i2, int i3, Composer composer, int i4) {
-        m3375RichTooltipEkvW5A0(tooltipScope, modifier, function2, function22, shape, f, shape2, richTooltipColors, f2, f3, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m3376RichTooltipEkvW5A0(tooltipScope, modifier, function2, function22, shape, f, shape2, richTooltipColors, f2, f3, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit RichTooltip_ZuUcA3Q$lambda$12(TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, long j, float f, Shape shape, RichTooltipColors richTooltipColors, float f2, float f3, Function2 function23, int i, int i2, int i3, Composer composer, int i4) {
-        m3376RichTooltipZuUcA3Q(tooltipScope, modifier, function2, function22, j, f, shape, richTooltipColors, f2, f3, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m3377RichTooltipZuUcA3Q(tooltipScope, modifier, function2, function22, j, f, shape, richTooltipColors, f2, f3, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -697,15 +697,15 @@ public final class TooltipKt {
                                         } else {
                                             composer2.useNode();
                                         }
-                                        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                                        Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                                        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer2, 1084289368, "C321@13984L9:Tooltip.kt#uh7d8r");
@@ -852,7 +852,7 @@ public final class TooltipKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m3374PlainTooltipm9ErXc(final TooltipScope tooltipScope, Modifier modifier, long j, float f, Shape shape, long j2, long j3, float f2, float f3, final Function2 function2, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m3375PlainTooltipm9ErXc(final TooltipScope tooltipScope, Modifier modifier, long j, float f, Shape shape, long j2, long j3, float f2, float f3, final Function2 function2, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         long j4;
@@ -877,7 +877,7 @@ public final class TooltipKt {
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
         long j9;
-        float m3361getPlainTooltipMaxWidthD9Ej5fM;
+        float m3362getPlainTooltipMaxWidthD9Ej5fM;
         Shape shape3;
         long j10;
         long j11;
@@ -885,7 +885,7 @@ public final class TooltipKt {
         Shape shape4;
         long j13;
         int i10;
-        float m7995constructorimpl;
+        float m7996constructorimpl;
         float f8;
         int i11;
         int i12;
@@ -990,19 +990,19 @@ public final class TooltipKt {
                                     }
                                     companion = obj;
                                     j12 = j4;
-                                    m3361getPlainTooltipMaxWidthD9Ej5fM = f4;
+                                    m3362getPlainTooltipMaxWidthD9Ej5fM = f4;
                                     shape4 = obj2;
                                     j10 = j5;
                                     j13 = j3;
                                 } else {
                                     companion = i13 != 0 ? Modifier.Companion : obj;
                                     if ((i2 & 2) != 0) {
-                                        j9 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                                        j9 = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
                                         i9 &= -897;
                                     } else {
                                         j9 = j4;
                                     }
-                                    m3361getPlainTooltipMaxWidthD9Ej5fM = i4 != 0 ? TooltipDefaults.INSTANCE.m3361getPlainTooltipMaxWidthD9Ej5fM() : f4;
+                                    m3362getPlainTooltipMaxWidthD9Ej5fM = i4 != 0 ? TooltipDefaults.INSTANCE.m3362getPlainTooltipMaxWidthD9Ej5fM() : f4;
                                     if ((i2 & 8) != 0) {
                                         shape3 = TooltipDefaults.INSTANCE.getPlainTooltipContainerShape(startRestartGroup, 6);
                                         i9 &= -57345;
@@ -1021,28 +1021,28 @@ public final class TooltipKt {
                                     } else {
                                         j11 = j3;
                                     }
-                                    float m7995constructorimpl2 = i6 != 0 ? Dp.m7995constructorimpl(0) : f5;
+                                    float m7996constructorimpl2 = i6 != 0 ? Dp.m7996constructorimpl(0) : f5;
                                     if (i8 != 0) {
-                                        f5 = m7995constructorimpl2;
+                                        f5 = m7996constructorimpl2;
                                         i10 = i9;
-                                        m7995constructorimpl = Dp.m7995constructorimpl(0);
+                                        m7996constructorimpl = Dp.m7996constructorimpl(0);
                                         j12 = j9;
                                         shape4 = shape3;
                                         j13 = j11;
                                         startRestartGroup.endDefaults();
                                         if (ComposerKt.isTraceInProgress()) {
-                                            f8 = m7995constructorimpl;
+                                            f8 = m7996constructorimpl;
                                         } else {
-                                            f8 = m7995constructorimpl;
+                                            f8 = m7996constructorimpl;
                                             ComposerKt.traceEventStart(-1881241092, i10, -1, "androidx.compose.material3.PlainTooltip (Tooltip.kt:389)");
                                         }
                                         int i15 = 2147482750 & i10;
                                         long j14 = j12;
-                                        float f9 = m3361getPlainTooltipMaxWidthD9Ej5fM;
+                                        float f9 = m3362getPlainTooltipMaxWidthD9Ej5fM;
                                         long j15 = j10;
                                         float f10 = f5;
                                         float f11 = f8;
-                                        m3373PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j12), f9, shape4, j15, j13, f10, f11, function2, startRestartGroup, i15, 0);
+                                        m3374PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j12), f9, shape4, j15, j13, f10, f11, function2, startRestartGroup, i15, 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -1056,24 +1056,24 @@ public final class TooltipKt {
                                         shape2 = shape4;
                                         j6 = j14;
                                     } else {
-                                        f5 = m7995constructorimpl2;
+                                        f5 = m7996constructorimpl2;
                                         j12 = j9;
                                         shape4 = shape3;
                                         j13 = j11;
                                     }
                                 }
                                 i10 = i9;
-                                m7995constructorimpl = f3;
+                                m7996constructorimpl = f3;
                                 startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 int i152 = 2147482750 & i10;
                                 long j142 = j12;
-                                float f92 = m3361getPlainTooltipMaxWidthD9Ej5fM;
+                                float f92 = m3362getPlainTooltipMaxWidthD9Ej5fM;
                                 long j152 = j10;
                                 float f102 = f5;
                                 float f112 = f8;
-                                m3373PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j12), f92, shape4, j152, j13, f102, f112, function2, startRestartGroup, i152, 0);
+                                m3374PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j12), f92, shape4, j152, j13, f102, f112, function2, startRestartGroup, i152, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 modifier2 = companion;
@@ -1220,7 +1220,7 @@ public final class TooltipKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3373PlainTooltipgv3ox5I(final TooltipScope tooltipScope, Modifier modifier, Shape shape, float f, Shape shape2, long j, long j2, float f2, float f3, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void m3374PlainTooltipgv3ox5I(final TooltipScope tooltipScope, Modifier modifier, Shape shape, float f, Shape shape2, long j, long j2, float f2, float f3, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -1243,7 +1243,7 @@ public final class TooltipKt {
         final long j5;
         ScopeUpdateScope endRestartGroup;
         long j6;
-        float m7995constructorimpl;
+        float m7996constructorimpl;
         int i9;
         int i10;
         long j7;
@@ -1343,7 +1343,7 @@ public final class TooltipKt {
                                 i8 &= -3670017;
                             }
                             j7 = j2;
-                            m7995constructorimpl = f3;
+                            m7996constructorimpl = f3;
                             j8 = j3;
                             f7 = f4;
                             i9 = 12582912;
@@ -1358,7 +1358,7 @@ public final class TooltipKt {
                                 obj = null;
                             }
                             if (i5 != 0) {
-                                f4 = TooltipDefaults.INSTANCE.m3361getPlainTooltipMaxWidthD9Ej5fM();
+                                f4 = TooltipDefaults.INSTANCE.m3362getPlainTooltipMaxWidthD9Ej5fM();
                             }
                             if ((i2 & 8) != 0) {
                                 shape3 = TooltipDefaults.INSTANCE.getPlainTooltipContainerShape(startRestartGroup, 6);
@@ -1374,13 +1374,13 @@ public final class TooltipKt {
                             } else {
                                 j6 = j2;
                             }
-                            float m7995constructorimpl2 = i6 != 0 ? Dp.m7995constructorimpl(0) : f2;
-                            m7995constructorimpl = i7 != 0 ? Dp.m7995constructorimpl(0) : f3;
+                            float m7996constructorimpl2 = i6 != 0 ? Dp.m7996constructorimpl(0) : f2;
+                            m7996constructorimpl = i7 != 0 ? Dp.m7996constructorimpl(0) : f3;
                             i9 = 12582912;
                             i10 = i8;
                             j7 = j6;
                             i11 = 2;
-                            f8 = m7995constructorimpl2;
+                            f8 = m7996constructorimpl2;
                             j8 = j3;
                             f7 = f4;
                         }
@@ -1397,7 +1397,7 @@ public final class TooltipKt {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 360143287, "CC(remember):Tooltip.kt#9igjgp");
                             Object rememberedValue3 = startRestartGroup.rememberedValue();
                             if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                                rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Matrix.m5519boximpl(Matrix.m5521constructorimpl$default(null, 1, null)), null, i11, null);
+                                rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Matrix.m5520boximpl(Matrix.m5522constructorimpl$default(null, 1, null)), null, i11, null);
                                 startRestartGroup.updateRememberedValue(rememberedValue3);
                             }
                             MutableState mutableState = (MutableState) rememberedValue3;
@@ -1409,7 +1409,7 @@ public final class TooltipKt {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                             Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalWindowInfo());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            long mo7150getContainerSizeYbymL2g = ((WindowInfo) consume2).mo7150getContainerSizeYbymL2g();
+                            long mo7151getContainerSizeYbymL2g = ((WindowInfo) consume2).mo7151getContainerSizeYbymL2g();
                             Modifier.Companion companion2 = Modifier.Companion;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 360154314, "CC(remember):Tooltip.kt#9igjgp");
                             if ((i10 & 14) != 4) {
@@ -1432,7 +1432,7 @@ public final class TooltipKt {
                                     startRestartGroup.updateRememberedValue(rememberedValue);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                Modifier then = m3377layoutCaretJ5j9r9c(companion2, mutableState, density, mo7150getContainerSizeYbymL2g, (Function1) rememberedValue, tooltipScope2.obtainPositionProvider()).then(companion);
+                                Modifier then = m3378layoutCaretJ5j9r9c(companion2, mutableState, density, mo7151getContainerSizeYbymL2g, (Function1) rememberedValue, tooltipScope2.obtainPositionProvider()).then(companion);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 360159432, "CC(remember):Tooltip.kt#9igjgp");
                                 z2 = ((((57344 & i10) ^ 24576) <= 16384 && startRestartGroup.changed(shape3)) || (i10 & 24576) == 16384) | ((i10 & 896) != 256);
                                 rememberedValue2 = startRestartGroup.rememberedValue();
@@ -1461,7 +1461,7 @@ public final class TooltipKt {
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            Modifier then2 = m3377layoutCaretJ5j9r9c(companion2, mutableState, density, mo7150getContainerSizeYbymL2g, (Function1) rememberedValue, tooltipScope2.obtainPositionProvider()).then(companion);
+                            Modifier then2 = m3378layoutCaretJ5j9r9c(companion2, mutableState, density, mo7151getContainerSizeYbymL2g, (Function1) rememberedValue, tooltipScope2.obtainPositionProvider()).then(companion);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 360159432, "CC(remember):Tooltip.kt#9igjgp");
                             z2 = ((((57344 & i10) ^ 24576) <= 16384 && startRestartGroup.changed(shape3)) || (i10 & 24576) == 16384) | ((i10 & 896) != 256);
                             rememberedValue2 = startRestartGroup.rememberedValue();
@@ -1481,7 +1481,7 @@ public final class TooltipKt {
                         }
                         int i15 = i10 >> 9;
                         composer2 = startRestartGroup;
-                        SurfaceKt.m2996SurfaceT9BRK9s(modifier3, tooltipCaretShape, j7, 0L, f8, m7995constructorimpl, null, ComposableLambdaKt.rememberComposableLambda(-1573998995, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TooltipKt$PlainTooltip$4
+                        SurfaceKt.m2997SurfaceT9BRK9s(modifier3, tooltipCaretShape, j7, 0L, f8, m7996constructorimpl, null, ComposableLambdaKt.rememberComposableLambda(-1573998995, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TooltipKt$PlainTooltip$4
                             @Override // kotlin.jvm.functions.Function2
                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                 invoke(composer3, num.intValue());
@@ -1497,7 +1497,7 @@ public final class TooltipKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-1573998995, i16, -1, "androidx.compose.material3.PlainTooltip.<anonymous> (Tooltip.kt:462)");
                                 }
-                                Modifier padding = PaddingKt.padding(SizeKt.m898sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), f7, 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
+                                Modifier padding = PaddingKt.padding(SizeKt.m899sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), f7, 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
                                 long j9 = j8;
                                 Function2<Composer, Integer, Unit> function22 = function2;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -1517,19 +1517,19 @@ public final class TooltipKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
-                                Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
+                                Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, -959381731, "C471@19730L5,473@19749L182:Tooltip.kt#uh7d8r");
-                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(j9)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
+                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(j9)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                 composer3.endNode();
@@ -1547,7 +1547,7 @@ public final class TooltipKt {
                         modifier2 = companion;
                         shape4 = obj;
                         f6 = f8;
-                        f5 = m7995constructorimpl;
+                        f5 = m7996constructorimpl;
                         j4 = j8;
                         shape5 = shape3;
                         j5 = j7;
@@ -1684,7 +1684,7 @@ public final class TooltipKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m3376RichTooltipZuUcA3Q(final TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, long j, float f, Shape shape, RichTooltipColors richTooltipColors, float f2, float f3, final Function2 function23, Composer composer, final int i, final int i2, final int i3) {
+    public static final /* synthetic */ void m3377RichTooltipZuUcA3Q(final TooltipScope tooltipScope, Modifier modifier, Function2 function2, Function2 function22, long j, float f, Shape shape, RichTooltipColors richTooltipColors, float f2, float f3, final Function2 function23, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -1835,13 +1835,13 @@ public final class TooltipKt {
                                     }
                                     Function2 function29 = i6 == 0 ? obj3 : null;
                                     if ((i3 & 8) != 0) {
-                                        j4 = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+                                        j4 = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
                                         i4 &= -57345;
                                     } else {
                                         j4 = j2;
                                     }
                                     if (i7 != 0) {
-                                        f4 = TooltipDefaults.INSTANCE.m3362getRichTooltipMaxWidthD9Ej5fM();
+                                        f4 = TooltipDefaults.INSTANCE.m3363getRichTooltipMaxWidthD9Ej5fM();
                                     }
                                     if ((i3 & 32) != 0) {
                                         shape3 = TooltipDefaults.INSTANCE.getRichTooltipContainerShape(startRestartGroup, 6);
@@ -1853,13 +1853,13 @@ public final class TooltipKt {
                                         richTooltipColors2 = TooltipDefaults.INSTANCE.richTooltipColors(startRestartGroup, 6);
                                         i4 = (-29360129) & i4;
                                     }
-                                    float m3888getLevel0D9Ej5fM = i9 != 0 ? ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM() : f2;
+                                    float m3889getLevel0D9Ej5fM = i9 != 0 ? ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM() : f2;
                                     if (i11 != 0) {
                                         long j6 = j4;
-                                        f10 = m3888getLevel0D9Ej5fM;
+                                        f10 = m3889getLevel0D9Ej5fM;
                                         richTooltipColors4 = richTooltipColors2;
                                         function27 = obj2;
-                                        f9 = RichTooltipTokens.INSTANCE.m4231getContainerElevationD9Ej5fM();
+                                        f9 = RichTooltipTokens.INSTANCE.m4232getContainerElevationD9Ej5fM();
                                         i13 = i4;
                                         function26 = function29;
                                         f8 = f4;
@@ -1871,7 +1871,7 @@ public final class TooltipKt {
                                         Function2 function210 = obj2;
                                         f9 = f3;
                                         long j7 = j4;
-                                        f10 = m3888getLevel0D9Ej5fM;
+                                        f10 = m3889getLevel0D9Ej5fM;
                                         richTooltipColors4 = richTooltipColors2;
                                         j5 = j7;
                                         function27 = function210;
@@ -1884,7 +1884,7 @@ public final class TooltipKt {
                                 long j8 = j5;
                                 float f11 = f8;
                                 Shape shape4 = shape3;
-                                m3375RichTooltipEkvW5A0(tooltipScope, companion, function27, function26, TooltipDefaults.INSTANCE.m3359caretShapeEaSLcWc(j5), f11, shape4, richTooltipColors4, f10, f9, function23, startRestartGroup, i13 & 2147426302, i12 & 14, 0);
+                                m3376RichTooltipEkvW5A0(tooltipScope, companion, function27, function26, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j5), f11, shape4, richTooltipColors4, f10, f9, function23, startRestartGroup, i13 & 2147426302, i12 & 14, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -2065,7 +2065,7 @@ public final class TooltipKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3375RichTooltipEkvW5A0(final TooltipScope tooltipScope, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Shape shape, float f, Shape shape2, RichTooltipColors richTooltipColors, float f2, float f3, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m3376RichTooltipEkvW5A0(final TooltipScope tooltipScope, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Shape shape, float f, Shape shape2, RichTooltipColors richTooltipColors, float f2, float f3, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -2092,7 +2092,7 @@ public final class TooltipKt {
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
         Shape shape5;
-        float m3362getRichTooltipMaxWidthD9Ej5fM;
+        float m3363getRichTooltipMaxWidthD9Ej5fM;
         Shape shape6;
         final RichTooltipColors richTooltipColors3;
         float f7;
@@ -2183,7 +2183,7 @@ public final class TooltipKt {
                                         i15 = i18;
                                         companion = obj;
                                         i16 = 2;
-                                        m3362getRichTooltipMaxWidthD9Ej5fM = f;
+                                        m3363getRichTooltipMaxWidthD9Ej5fM = f;
                                     } else {
                                         companion = i17 != 0 ? Modifier.Companion : obj;
                                         if (i5 != 0) {
@@ -2193,7 +2193,7 @@ public final class TooltipKt {
                                             obj3 = null;
                                         }
                                         shape5 = i7 != 0 ? null : shape;
-                                        m3362getRichTooltipMaxWidthD9Ej5fM = i8 != 0 ? TooltipDefaults.INSTANCE.m3362getRichTooltipMaxWidthD9Ej5fM() : f;
+                                        m3363getRichTooltipMaxWidthD9Ej5fM = i8 != 0 ? TooltipDefaults.INSTANCE.m3363getRichTooltipMaxWidthD9Ej5fM() : f;
                                         if ((i3 & 32) != 0) {
                                             shape6 = TooltipDefaults.INSTANCE.getRichTooltipContainerShape(startRestartGroup, 6);
                                             i14 &= -3670017;
@@ -2206,13 +2206,13 @@ public final class TooltipKt {
                                         } else {
                                             richTooltipColors3 = richTooltipColors;
                                         }
-                                        float m3888getLevel0D9Ej5fM = i10 != 0 ? ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM() : f2;
+                                        float m3889getLevel0D9Ej5fM = i10 != 0 ? ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM() : f2;
                                         if (i12 != 0) {
-                                            f8 = m3888getLevel0D9Ej5fM;
-                                            f7 = RichTooltipTokens.INSTANCE.m4231getContainerElevationD9Ej5fM();
+                                            f8 = m3889getLevel0D9Ej5fM;
+                                            f7 = RichTooltipTokens.INSTANCE.m4232getContainerElevationD9Ej5fM();
                                         } else {
                                             f7 = f3;
-                                            f8 = m3888getLevel0D9Ej5fM;
+                                            f8 = m3889getLevel0D9Ej5fM;
                                         }
                                         i15 = i14;
                                         i16 = 2;
@@ -2227,11 +2227,11 @@ public final class TooltipKt {
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -557800122, "CC(remember):Tooltip.kt#9igjgp");
                                         Object rememberedValue = startRestartGroup.rememberedValue();
                                         if (rememberedValue == Composer.Companion.getEmpty()) {
-                                            f9 = m3362getRichTooltipMaxWidthD9Ej5fM;
-                                            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Matrix.m5519boximpl(Matrix.m5521constructorimpl$default(null, 1, null)), null, i16, null);
+                                            f9 = m3363getRichTooltipMaxWidthD9Ej5fM;
+                                            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Matrix.m5520boximpl(Matrix.m5522constructorimpl$default(null, 1, null)), null, i16, null);
                                             startRestartGroup.updateRememberedValue(rememberedValue);
                                         } else {
-                                            f9 = m3362getRichTooltipMaxWidthD9Ej5fM;
+                                            f9 = m3363getRichTooltipMaxWidthD9Ej5fM;
                                         }
                                         MutableState mutableState = (MutableState) rememberedValue;
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -2242,7 +2242,7 @@ public final class TooltipKt {
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                         Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalWindowInfo());
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        long mo7150getContainerSizeYbymL2g = ((WindowInfo) consume2).mo7150getContainerSizeYbymL2g();
+                                        long mo7151getContainerSizeYbymL2g = ((WindowInfo) consume2).mo7151getContainerSizeYbymL2g();
                                         Modifier.Companion companion2 = Modifier.Companion;
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -557789095, "CC(remember):Tooltip.kt#9igjgp");
                                         boolean z = (i15 & 14) == 4 || ((i15 & 8) != 0 && startRestartGroup.changedInstance(tooltipScope));
@@ -2259,7 +2259,7 @@ public final class TooltipKt {
                                             startRestartGroup.updateRememberedValue(rememberedValue2);
                                         }
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier then = m3377layoutCaretJ5j9r9c(companion2, mutableState, density, mo7150getContainerSizeYbymL2g, (Function1) rememberedValue2, tooltipScope.obtainPositionProvider()).then(companion);
+                                        Modifier then = m3378layoutCaretJ5j9r9c(companion2, mutableState, density, mo7151getContainerSizeYbymL2g, (Function1) rememberedValue2, tooltipScope.obtainPositionProvider()).then(companion);
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -557783977, "CC(remember):Tooltip.kt#9igjgp");
                                         boolean z2 = ((((3670016 & i15) ^ 1572864) > 1048576 && startRestartGroup.changed(shape6)) || (i15 & 1572864) == 1048576) | ((57344 & i15) == 16384);
                                         Object rememberedValue3 = startRestartGroup.rememberedValue();
@@ -2272,7 +2272,7 @@ public final class TooltipKt {
                                         modifier3 = then;
                                         tooltipCaretShape = (TooltipCaretShape) rememberedValue3;
                                     } else {
-                                        f9 = m3362getRichTooltipMaxWidthD9Ej5fM;
+                                        f9 = m3363getRichTooltipMaxWidthD9Ej5fM;
                                         startRestartGroup.startReplaceGroup(-111306598);
                                         startRestartGroup.endReplaceGroup();
                                         modifier3 = companion;
@@ -2281,7 +2281,7 @@ public final class TooltipKt {
                                     float f10 = f9;
                                     int i19 = i15 >> 12;
                                     composer2 = startRestartGroup;
-                                    SurfaceKt.m2996SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier3, TooltipMinWidth, TooltipMinHeight, f9, 0.0f, 8, null), tooltipCaretShape, richTooltipColors3.m2774getContainerColor0d7_KjU(), 0L, f8, f7, null, ComposableLambdaKt.rememberComposableLambda(-1249811482, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TooltipKt$RichTooltip$4
+                                    SurfaceKt.m2997SurfaceT9BRK9s(SizeKt.m899sizeInqDBjuR0$default(modifier3, TooltipMinWidth, TooltipMinHeight, f9, 0.0f, 8, null), tooltipCaretShape, richTooltipColors3.m2775getContainerColor0d7_KjU(), 0L, f8, f7, null, ComposableLambdaKt.rememberComposableLambda(-1249811482, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TooltipKt$RichTooltip$4
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
@@ -2302,7 +2302,7 @@ public final class TooltipKt {
                                             TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
                                             TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
                                             TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                                            Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
+                                            Modifier m845paddingVpY3zN4$default = PaddingKt.m845paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
                                             Function2<Composer, Integer, Unit> function26 = obj2;
                                             Function2<Composer, Integer, Unit> function27 = obj3;
                                             RichTooltipColors richTooltipColors5 = richTooltipColors3;
@@ -2312,7 +2312,7 @@ public final class TooltipKt {
                                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
+                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m845paddingVpY3zN4$default);
                                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -2324,15 +2324,15 @@ public final class TooltipKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer3);
-                                            Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
+                                            Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 112071776, "C593@24412L320:Tooltip.kt#uh7d8r");
@@ -2346,13 +2346,13 @@ public final class TooltipKt {
                                                 ComposerKt.sourceInformation(composer3, "*585@24040L345");
                                                 function25 = function27;
                                                 richTooltipColors4 = richTooltipColors5;
-                                                Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
+                                                Modifier m673paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m673paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
                                                 ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                                 CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
+                                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m673paddingFromBaselineVpY3zN4$default);
                                                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                 if (!(composer3.getApplier() instanceof Applier)) {
@@ -2364,19 +2364,19 @@ public final class TooltipKt {
                                                 } else {
                                                     composer3.useNode();
                                                 }
-                                                Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer3);
-                                                Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer3);
+                                                Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                    m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                    m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                    m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                    m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                 }
-                                                Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer3, 1350098263, "C586@24139L228:Tooltip.kt#uh7d8r");
-                                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(richTooltipColors4.m2776getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function26, composer3, ProvidedValue.$stable);
+                                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(richTooltipColors4.m2777getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function26, composer3, ProvidedValue.$stable);
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                                 composer3.endNode();
@@ -2405,19 +2405,19 @@ public final class TooltipKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m4597constructorimpl3 = Updater.m4597constructorimpl(composer3);
-                                            Updater.m4604setimpl(m4597constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m4604setimpl(m4597constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m4598constructorimpl3 = Updater.m4598constructorimpl(composer3);
+                                            Updater.m4605setimpl(m4598constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m4605setimpl(m4598constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m4597constructorimpl3.getInserting() || !Intrinsics.areEqual(m4597constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                                m4597constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                                m4597constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                                            if (m4598constructorimpl3.getInserting() || !Intrinsics.areEqual(m4598constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                                m4598constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                                m4598constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                                             }
-                                            Updater.m4604setimpl(m4597constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m4605setimpl(m4598constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 97538765, "C594@24506L212:Tooltip.kt#uh7d8r");
-                                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(richTooltipColors4.m2775getContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value3)}, function28, composer3, ProvidedValue.$stable);
+                                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(richTooltipColors4.m2776getContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value3)}, function28, composer3, ProvidedValue.$stable);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                             composer3.endNode();
@@ -2430,13 +2430,13 @@ public final class TooltipKt {
                                             } else {
                                                 composer3.startReplaceGroup(112784837);
                                                 ComposerKt.sourceInformation(composer3, "*601@24775L477");
-                                                Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
+                                                Modifier m847paddingqDBjuR0$default = PaddingKt.m847paddingqDBjuR0$default(SizeKt.m886requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
                                                 ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                                 MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                                 CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                                                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
+                                                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m847paddingqDBjuR0$default);
                                                 Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                 if (!(composer3.getApplier() instanceof Applier)) {
@@ -2448,19 +2448,19 @@ public final class TooltipKt {
                                                 } else {
                                                     composer3.useNode();
                                                 }
-                                                Composer m4597constructorimpl4 = Updater.m4597constructorimpl(composer3);
-                                                Updater.m4604setimpl(m4597constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m4604setimpl(m4597constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4598constructorimpl4 = Updater.m4598constructorimpl(composer3);
+                                                Updater.m4605setimpl(m4598constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4605setimpl(m4598constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m4597constructorimpl4.getInserting() || !Intrinsics.areEqual(m4597constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                                    m4597constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                                    m4597constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                                                if (m4598constructorimpl4.getInserting() || !Intrinsics.areEqual(m4598constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                                                    m4598constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                                                    m4598constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                                                 }
-                                                Updater.m4604setimpl(m4597constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m4605setimpl(m4598constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -424550181, "C606@25001L233:Tooltip.kt#uh7d8r");
-                                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(richTooltipColors4.m2773getActionContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value)}, function25, composer3, ProvidedValue.$stable);
+                                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(richTooltipColors4.m2774getActionContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value)}, function25, composer3, ProvidedValue.$stable);
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                                 composer3.endNode();
@@ -2720,9 +2720,9 @@ public final class TooltipKt {
 
     public static final Modifier textVerticalPadding(Modifier modifier, boolean z, boolean z2) {
         if (!z && !z2) {
-            return PaddingKt.m844paddingVpY3zN4$default(modifier, 0.0f, PlainTooltipVerticalPadding, 1, null);
+            return PaddingKt.m845paddingVpY3zN4$default(modifier, 0.0f, PlainTooltipVerticalPadding, 1, null);
         }
-        return PaddingKt.m846paddingqDBjuR0$default(AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(modifier, HeightFromSubheadToTextFirstLine, 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TextBottomPadding, 7, null);
+        return PaddingKt.m847paddingqDBjuR0$default(AlignmentLineKt.m673paddingFromBaselineVpY3zN4$default(modifier, HeightFromSubheadToTextFirstLine, 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TextBottomPadding, 7, null);
     }
 
     public static final float caretX(float f, int i, Rect rect) {
@@ -2747,7 +2747,7 @@ public final class TooltipKt {
     }
 
     /* renamed from: layoutCaret-J5j9r9c  reason: not valid java name */
-    private static final Modifier m3377layoutCaretJ5j9r9c(Modifier modifier, final MutableState<Matrix> mutableState, final Density density, final long j, final Function1<? super MeasureScope, ? extends LayoutCoordinates> function1, final PopupPositionProvider popupPositionProvider) {
+    private static final Modifier m3378layoutCaretJ5j9r9c(Modifier modifier, final MutableState<Matrix> mutableState, final Density density, final long j, final Function1<? super MeasureScope, ? extends LayoutCoordinates> function1, final PopupPositionProvider popupPositionProvider) {
         return LayoutModifierKt.layout(modifier, new Function3() { // from class: androidx.compose.material3.TooltipKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -2774,17 +2774,17 @@ public final class TooltipKt {
     public static final MeasureResult layoutCaret_J5j9r9c$lambda$22(long j, Function1 function1, Density density, PopupPositionProvider popupPositionProvider, MutableState mutableState, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
         char c;
         float f;
-        long m5027constructorimpl;
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(constraints.m7954unboximpl());
-        int width = mo6697measureBRTryo0.getWidth();
-        int height = mo6697measureBRTryo0.getHeight();
+        long m5028constructorimpl;
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
+        int width = mo6698measureBRTryo0.getWidth();
+        int height = mo6698measureBRTryo0.getHeight();
         int i = (int) (j >> 32);
         int i2 = (int) (j & 4294967295L);
         float f2 = width;
         float f3 = height;
         LayoutCoordinates layoutCoordinates = (LayoutCoordinates) function1.invoke(measureScope);
         if (layoutCoordinates != null) {
-            int mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(SpacingBetweenTooltipAndAnchor);
+            int mo424roundToPx0680j_4 = density.mo424roundToPx0680j_4(SpacingBetweenTooltipAndAnchor);
             Rect boundsInWindow = LayoutCoordinatesKt.boundsInWindow(layoutCoordinates);
             float top = boundsInWindow.getTop();
             float bottom = boundsInWindow.getBottom();
@@ -2793,80 +2793,80 @@ public final class TooltipKt {
             boolean z = popupPositionProvider instanceof TooltipPositionProviderImpl;
             if (z) {
                 f = 0.0f;
-                int m3381getTypelOKsHw4 = ((TooltipPositionProviderImpl) popupPositionProvider).m3381getTypelOKsHw4();
+                int m3382getTypelOKsHw4 = ((TooltipPositionProviderImpl) popupPositionProvider).m3382getTypelOKsHw4();
                 c = ' ';
-                if (TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw4, TooltipAnchorPosition.Companion.m3355getLeftlOKsHw4()) || TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw4, TooltipAnchorPosition.Companion.m3356getRightlOKsHw4()) || TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw4, TooltipAnchorPosition.Companion.m3357getStartlOKsHw4()) || TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw4, TooltipAnchorPosition.Companion.m3354getEndlOKsHw4())) {
+                if (TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw4, TooltipAnchorPosition.Companion.m3356getLeftlOKsHw4()) || TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw4, TooltipAnchorPosition.Companion.m3357getRightlOKsHw4()) || TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw4, TooltipAnchorPosition.Companion.m3358getStartlOKsHw4()) || TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw4, TooltipAnchorPosition.Companion.m3355getEndlOKsHw4())) {
                     f3 /= 2;
-                } else if (!TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw4, TooltipAnchorPosition.Companion.m3352getAbovelOKsHw4())) {
+                } else if (!TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw4, TooltipAnchorPosition.Companion.m3353getAbovelOKsHw4())) {
                 }
                 if (z) {
-                    int m3381getTypelOKsHw42 = ((TooltipPositionProviderImpl) popupPositionProvider).m3381getTypelOKsHw4();
-                    if (!TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw42, TooltipAnchorPosition.Companion.m3355getLeftlOKsHw4())) {
-                        if (!TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw42, TooltipAnchorPosition.Companion.m3356getRightlOKsHw4())) {
-                            if (TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw42, TooltipAnchorPosition.Companion.m3357getStartlOKsHw4())) {
+                    int m3382getTypelOKsHw42 = ((TooltipPositionProviderImpl) popupPositionProvider).m3382getTypelOKsHw4();
+                    if (!TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw42, TooltipAnchorPosition.Companion.m3356getLeftlOKsHw4())) {
+                        if (!TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw42, TooltipAnchorPosition.Companion.m3357getRightlOKsHw4())) {
+                            if (TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw42, TooltipAnchorPosition.Companion.m3358getStartlOKsHw4())) {
                                 float f4 = measureScope.getLayoutDirection() == LayoutDirection.Ltr ? f : f;
-                                m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(f4) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
-                            } else if (TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw42, TooltipAnchorPosition.Companion.m3354getEndlOKsHw4())) {
-                                m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits((measureScope.getLayoutDirection() != LayoutDirection.Ltr ? (left - ((float) mo423roundToPx0680j_4)) - f2 >= f : (right + ((float) mo423roundToPx0680j_4)) + f2 > ((float) i)) ? f2 : f) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
+                                m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(f4) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
+                            } else if (TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw42, TooltipAnchorPosition.Companion.m3355getEndlOKsHw4())) {
+                                m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits((measureScope.getLayoutDirection() != LayoutDirection.Ltr ? (left - ((float) mo424roundToPx0680j_4)) - f2 >= f : (right + ((float) mo424roundToPx0680j_4)) + f2 > ((float) i)) ? f2 : f) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
                             } else {
-                                m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(caretX(f2, i, boundsInWindow)) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
+                                m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(caretX(f2, i, boundsInWindow)) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
                             }
                         } else {
-                            m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits((right + ((float) mo423roundToPx0680j_4)) + f2 > ((float) i) ? f2 : f) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
+                            m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits((right + ((float) mo424roundToPx0680j_4)) + f2 > ((float) i) ? f2 : f) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
                         }
                     } else {
-                        m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits((left - ((float) mo423roundToPx0680j_4)) - f2 < f ? f : f2) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
+                        m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits((left - ((float) mo424roundToPx0680j_4)) - f2 < f ? f : f2) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
                     }
                 } else {
-                    m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(caretX(f2, i, boundsInWindow)) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
+                    m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(caretX(f2, i, boundsInWindow)) << c) | (Float.floatToRawIntBits(f3) & 4294967295L));
                 }
-                float[] m5521constructorimpl$default = Matrix.m5521constructorimpl$default(null, 1, null);
-                Matrix.m5543translateimpl$default(m5521constructorimpl$default, Float.intBitsToFloat((int) (m5027constructorimpl >> c)), Float.intBitsToFloat((int) (m5027constructorimpl & 4294967295L)), 0.0f, 4, null);
+                float[] m5522constructorimpl$default = Matrix.m5522constructorimpl$default(null, 1, null);
+                Matrix.m5544translateimpl$default(m5522constructorimpl$default, Float.intBitsToFloat((int) (m5028constructorimpl >> c)), Float.intBitsToFloat((int) (m5028constructorimpl & 4294967295L)), 0.0f, 4, null);
                 if (z) {
-                    int m3381getTypelOKsHw43 = ((TooltipPositionProviderImpl) popupPositionProvider).m3381getTypelOKsHw4();
-                    if (TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw43, TooltipAnchorPosition.Companion.m3355getLeftlOKsHw4())) {
-                        if ((left - mo423roundToPx0680j_4) - f2 < f) {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, 90.0f);
+                    int m3382getTypelOKsHw43 = ((TooltipPositionProviderImpl) popupPositionProvider).m3382getTypelOKsHw4();
+                    if (TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw43, TooltipAnchorPosition.Companion.m3356getLeftlOKsHw4())) {
+                        if ((left - mo424roundToPx0680j_4) - f2 < f) {
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, 90.0f);
                         } else {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, -90.0f);
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, -90.0f);
                         }
-                    } else if (TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw43, TooltipAnchorPosition.Companion.m3356getRightlOKsHw4())) {
-                        if (right + mo423roundToPx0680j_4 + f2 > i) {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, -90.0f);
+                    } else if (TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw43, TooltipAnchorPosition.Companion.m3357getRightlOKsHw4())) {
+                        if (right + mo424roundToPx0680j_4 + f2 > i) {
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, -90.0f);
                         } else {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, 90.0f);
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, 90.0f);
                         }
-                    } else if (TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw43, TooltipAnchorPosition.Companion.m3357getStartlOKsHw4())) {
+                    } else if (TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw43, TooltipAnchorPosition.Companion.m3358getStartlOKsHw4())) {
                         if (measureScope.getLayoutDirection() == LayoutDirection.Ltr) {
-                            if ((left - mo423roundToPx0680j_4) - f2 < f) {
-                                Matrix.m5535rotateZimpl(m5521constructorimpl$default, 90.0f);
+                            if ((left - mo424roundToPx0680j_4) - f2 < f) {
+                                Matrix.m5536rotateZimpl(m5522constructorimpl$default, 90.0f);
                             } else {
-                                Matrix.m5535rotateZimpl(m5521constructorimpl$default, -90.0f);
+                                Matrix.m5536rotateZimpl(m5522constructorimpl$default, -90.0f);
                             }
-                        } else if (right + mo423roundToPx0680j_4 + f2 > i) {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, -90.0f);
+                        } else if (right + mo424roundToPx0680j_4 + f2 > i) {
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, -90.0f);
                         } else {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, 90.0f);
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, 90.0f);
                         }
-                    } else if (TooltipAnchorPosition.m3348equalsimpl0(m3381getTypelOKsHw43, TooltipAnchorPosition.Companion.m3354getEndlOKsHw4())) {
+                    } else if (TooltipAnchorPosition.m3349equalsimpl0(m3382getTypelOKsHw43, TooltipAnchorPosition.Companion.m3355getEndlOKsHw4())) {
                         if (measureScope.getLayoutDirection() == LayoutDirection.Ltr) {
-                            if (right + mo423roundToPx0680j_4 + f2 > i) {
-                                Matrix.m5535rotateZimpl(m5521constructorimpl$default, -90.0f);
+                            if (right + mo424roundToPx0680j_4 + f2 > i) {
+                                Matrix.m5536rotateZimpl(m5522constructorimpl$default, -90.0f);
                             } else {
-                                Matrix.m5535rotateZimpl(m5521constructorimpl$default, 90.0f);
+                                Matrix.m5536rotateZimpl(m5522constructorimpl$default, 90.0f);
                             }
-                        } else if ((left - mo423roundToPx0680j_4) - f2 < f) {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, 90.0f);
+                        } else if ((left - mo424roundToPx0680j_4) - f2 < f) {
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, 90.0f);
                         } else {
-                            Matrix.m5535rotateZimpl(m5521constructorimpl$default, -90.0f);
+                            Matrix.m5536rotateZimpl(m5522constructorimpl$default, -90.0f);
                         }
                     } else if (f3 == f) {
-                        Matrix.m5533rotateXimpl(m5521constructorimpl$default, 180.0f);
+                        Matrix.m5534rotateXimpl(m5522constructorimpl$default, 180.0f);
                     }
                 } else if (f3 == f) {
-                    Matrix.m5533rotateXimpl(m5521constructorimpl$default, 180.0f);
+                    Matrix.m5534rotateXimpl(m5522constructorimpl$default, 180.0f);
                 }
-                mutableState.setValue(Matrix.m5519boximpl(m5521constructorimpl$default));
+                mutableState.setValue(Matrix.m5520boximpl(m5522constructorimpl$default));
             } else {
                 c = ' ';
                 f = 0.0f;
@@ -2944,7 +2944,7 @@ public final class TooltipKt {
             }
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
-                Modifier m5442graphicsLayerAp8cVGQ;
+                Modifier m5443graphicsLayerAp8cVGQ;
                 composer.startReplaceGroup(-1498516085);
                 ComposerKt.sourceInformation(composer, "C1268@51666L14,1269@51753L14,1271@51812L197,1279@52055L193:Tooltip.kt#uh7d8r");
                 if (ComposerKt.isTraceInProgress()) {
@@ -3050,12 +3050,12 @@ public final class TooltipKt {
                 State createTransitionAnimation2 = TransitionKt.createTransitionAnimation(transition3, valueOf2, Float.valueOf(f4), function32.invoke(transition3.getSegment(), composer, 0), vectorConverter2, "tooltip transition: alpha", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
-                m5442graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m5442graphicsLayerAp8cVGQ(modifier2, (r41 & 1) != 0 ? 1.0f : invoke$lambda$1(createTransitionAnimation), (r41 & 2) != 0 ? 1.0f : invoke$lambda$1(createTransitionAnimation), (r41 & 4) == 0 ? invoke$lambda$3(createTransitionAnimation2) : 1.0f, (r41 & 8) != 0 ? 0.0f : 0.0f, (r41 & 16) != 0 ? 0.0f : 0.0f, (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5687getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : null, (r41 & 4096) != 0 ? false : false, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m5369getAutoNrFUSI() : 0);
+                m5443graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m5443graphicsLayerAp8cVGQ(modifier2, (r41 & 1) != 0 ? 1.0f : invoke$lambda$1(createTransitionAnimation), (r41 & 2) != 0 ? 1.0f : invoke$lambda$1(createTransitionAnimation), (r41 & 4) == 0 ? invoke$lambda$3(createTransitionAnimation2) : 1.0f, (r41 & 8) != 0 ? 0.0f : 0.0f, (r41 & 16) != 0 ? 0.0f : 0.0f, (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5688getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : null, (r41 & 4096) != 0 ? false : false, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m5370getAutoNrFUSI() : 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m5442graphicsLayerAp8cVGQ;
+                return m5443graphicsLayerAp8cVGQ;
             }
 
             private static final float invoke$lambda$1(State<Float> state) {
@@ -3070,21 +3070,21 @@ public final class TooltipKt {
 
     static {
         float f = 4;
-        SpacingBetweenTooltipAndAnchor = Dp.m7995constructorimpl(f);
+        SpacingBetweenTooltipAndAnchor = Dp.m7996constructorimpl(f);
         float f2 = 24;
-        TooltipMinHeight = Dp.m7995constructorimpl(f2);
-        float m7995constructorimpl = Dp.m7995constructorimpl(f);
-        PlainTooltipVerticalPadding = m7995constructorimpl;
+        TooltipMinHeight = Dp.m7996constructorimpl(f2);
+        float m7996constructorimpl = Dp.m7996constructorimpl(f);
+        PlainTooltipVerticalPadding = m7996constructorimpl;
         float f3 = 8;
-        float m7995constructorimpl2 = Dp.m7995constructorimpl(f3);
-        PlainTooltipHorizontalPadding = m7995constructorimpl2;
-        PlainTooltipContentPadding = PaddingKt.m836PaddingValuesYgX7TsA(m7995constructorimpl2, m7995constructorimpl);
+        float m7996constructorimpl2 = Dp.m7996constructorimpl(f3);
+        PlainTooltipHorizontalPadding = m7996constructorimpl2;
+        PlainTooltipContentPadding = PaddingKt.m837PaddingValuesYgX7TsA(m7996constructorimpl2, m7996constructorimpl);
         float f4 = 16;
-        RichTooltipHorizontalPadding = Dp.m7995constructorimpl(f4);
-        HeightToSubheadFirstLine = Dp.m7995constructorimpl(28);
-        HeightFromSubheadToTextFirstLine = Dp.m7995constructorimpl(f2);
-        TextBottomPadding = Dp.m7995constructorimpl(f4);
-        ActionLabelMinHeight = Dp.m7995constructorimpl(36);
-        ActionLabelBottomPadding = Dp.m7995constructorimpl(f3);
+        RichTooltipHorizontalPadding = Dp.m7996constructorimpl(f4);
+        HeightToSubheadFirstLine = Dp.m7996constructorimpl(28);
+        HeightFromSubheadToTextFirstLine = Dp.m7996constructorimpl(f2);
+        TextBottomPadding = Dp.m7996constructorimpl(f4);
+        ActionLabelMinHeight = Dp.m7996constructorimpl(36);
+        ActionLabelBottomPadding = Dp.m7996constructorimpl(f3);
     }
 }

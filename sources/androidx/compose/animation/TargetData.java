@@ -25,53 +25,53 @@ public final class TargetData {
         MutableState mutableStateOf$default2;
         MutableState mutableStateOf$default3;
         MutableState mutableStateOf$default4;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5092boximpl(j), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(j), null, 2, null);
         this.size$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5024boximpl(j2), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5025boximpl(j2), null, 2, null);
         this.initialMfrOffset$delegate = mutableStateOf$default2;
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5024boximpl(j3), null, 2, null);
+        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5025boximpl(j3), null, 2, null);
         this.targetStructuralOffset$delegate = mutableStateOf$default3;
-        mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5024boximpl(j2), null, 2, null);
+        mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5025boximpl(j2), null, 2, null);
         this.currentMfrOffset$delegate = mutableStateOf$default4;
     }
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    public final long m142getSizeNHjbRc() {
-        return ((Size) this.size$delegate.getValue()).m5109unboximpl();
+    public final long m143getSizeNHjbRc() {
+        return ((Size) this.size$delegate.getValue()).m5110unboximpl();
     }
 
     /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-    public final void m146setSizeuvyYCjk(long j) {
-        this.size$delegate.setValue(Size.m5092boximpl(j));
+    public final void m147setSizeuvyYCjk(long j) {
+        this.size$delegate.setValue(Size.m5093boximpl(j));
     }
 
     /* renamed from: getInitialMfrOffset-F1C5BW0  reason: not valid java name */
-    public final long m141getInitialMfrOffsetF1C5BW0() {
-        return ((Offset) this.initialMfrOffset$delegate.getValue()).m5045unboximpl();
+    public final long m142getInitialMfrOffsetF1C5BW0() {
+        return ((Offset) this.initialMfrOffset$delegate.getValue()).m5046unboximpl();
     }
 
     /* renamed from: setInitialMfrOffset-k-4lQ0M  reason: not valid java name */
-    public final void m145setInitialMfrOffsetk4lQ0M(long j) {
-        this.initialMfrOffset$delegate.setValue(Offset.m5024boximpl(j));
+    public final void m146setInitialMfrOffsetk4lQ0M(long j) {
+        this.initialMfrOffset$delegate.setValue(Offset.m5025boximpl(j));
     }
 
     /* renamed from: getTargetStructuralOffset-F1C5BW0  reason: not valid java name */
-    public final long m143getTargetStructuralOffsetF1C5BW0() {
-        return ((Offset) this.targetStructuralOffset$delegate.getValue()).m5045unboximpl();
+    public final long m144getTargetStructuralOffsetF1C5BW0() {
+        return ((Offset) this.targetStructuralOffset$delegate.getValue()).m5046unboximpl();
     }
 
     /* renamed from: setTargetStructuralOffset-k-4lQ0M  reason: not valid java name */
-    public final void m147setTargetStructuralOffsetk4lQ0M(long j) {
-        this.targetStructuralOffset$delegate.setValue(Offset.m5024boximpl(j));
+    public final void m148setTargetStructuralOffsetk4lQ0M(long j) {
+        this.targetStructuralOffset$delegate.setValue(Offset.m5025boximpl(j));
     }
 
     /* renamed from: getCurrentMfrOffset-F1C5BW0  reason: not valid java name */
-    public final long m140getCurrentMfrOffsetF1C5BW0() {
-        return ((Offset) this.currentMfrOffset$delegate.getValue()).m5045unboximpl();
+    public final long m141getCurrentMfrOffsetF1C5BW0() {
+        return ((Offset) this.currentMfrOffset$delegate.getValue()).m5046unboximpl();
     }
 
     /* renamed from: setCurrentMfrOffset-k-4lQ0M  reason: not valid java name */
-    public final void m144setCurrentMfrOffsetk4lQ0M(long j) {
-        this.currentMfrOffset$delegate.setValue(Offset.m5024boximpl(j));
+    public final void m145setCurrentMfrOffsetk4lQ0M(long j) {
+        this.currentMfrOffset$delegate.setValue(Offset.m5025boximpl(j));
     }
 }

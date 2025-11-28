@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleCounterReport;
 /* renamed from: io.appmetrica.analytics.impl.yk  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0730yk {
     public static W5 a(ServiceModuleCounterReport serviceModuleCounterReport) {
         String value;

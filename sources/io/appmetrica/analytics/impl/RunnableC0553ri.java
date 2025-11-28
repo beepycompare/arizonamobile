@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 /* renamed from: io.appmetrica.analytics.impl.ri  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class RunnableC0553ri implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */

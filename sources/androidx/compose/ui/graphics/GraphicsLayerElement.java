@@ -34,7 +34,7 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
     }
 
     /* renamed from: copy-cp5nf6A$default  reason: not valid java name */
-    public static /* synthetic */ GraphicsLayerElement m5428copycp5nf6A$default(GraphicsLayerElement graphicsLayerElement, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, long j, Shape shape, boolean z, RenderEffect renderEffect, long j2, long j3, int i, int i2, ColorFilter colorFilter, int i3, Object obj) {
+    public static /* synthetic */ GraphicsLayerElement m5429copycp5nf6A$default(GraphicsLayerElement graphicsLayerElement, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, long j, Shape shape, boolean z, RenderEffect renderEffect, long j2, long j3, int i, int i2, ColorFilter colorFilter, int i3, Object obj) {
         ColorFilter colorFilter2;
         int i4;
         float f11 = (i3 & 1) != 0 ? graphicsLayerElement.scaleX : f;
@@ -63,7 +63,7 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
             colorFilter2 = colorFilter;
             i4 = i5;
         }
-        return graphicsLayerElement.m5434copycp5nf6A(f21, f12, f13, f14, f15, f16, f17, f18, f19, f20, j4, shape2, z2, renderEffect2, j5, j6, i4, i6, colorFilter2);
+        return graphicsLayerElement.m5435copycp5nf6A(f21, f12, f13, f14, f15, f16, f17, f18, f19, f20, j4, shape2, z2, renderEffect2, j5, j6, i4, i6, colorFilter2);
     }
 
     public final float component1() {
@@ -75,7 +75,7 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
     }
 
     /* renamed from: component11-SzJe1aQ  reason: not valid java name */
-    public final long m5429component11SzJe1aQ() {
+    public final long m5430component11SzJe1aQ() {
         return this.transformOrigin;
     }
 
@@ -92,22 +92,22 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
     }
 
     /* renamed from: component15-0d7_KjU  reason: not valid java name */
-    public final long m5430component150d7_KjU() {
+    public final long m5431component150d7_KjU() {
         return this.ambientShadowColor;
     }
 
     /* renamed from: component16-0d7_KjU  reason: not valid java name */
-    public final long m5431component160d7_KjU() {
+    public final long m5432component160d7_KjU() {
         return this.spotShadowColor;
     }
 
     /* renamed from: component17--NrFUSI  reason: not valid java name */
-    public final int m5432component17NrFUSI() {
+    public final int m5433component17NrFUSI() {
         return this.compositingStrategy;
     }
 
     /* renamed from: component18-0nO6VwU  reason: not valid java name */
-    public final int m5433component180nO6VwU() {
+    public final int m5434component180nO6VwU() {
         return this.blendMode;
     }
 
@@ -148,7 +148,7 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
     }
 
     /* renamed from: copy-cp5nf6A  reason: not valid java name */
-    public final GraphicsLayerElement m5434copycp5nf6A(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, long j, Shape shape, boolean z, RenderEffect renderEffect, long j2, long j3, int i, int i2, ColorFilter colorFilter) {
+    public final GraphicsLayerElement m5435copycp5nf6A(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, long j, Shape shape, boolean z, RenderEffect renderEffect, long j2, long j3, int i, int i2, ColorFilter colorFilter) {
         return new GraphicsLayerElement(f, f2, f3, f4, f5, f6, f7, f8, f9, f10, j, shape, z, renderEffect, j2, j3, i, i2, colorFilter, null);
     }
 
@@ -159,24 +159,24 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
         }
         if (obj instanceof GraphicsLayerElement) {
             GraphicsLayerElement graphicsLayerElement = (GraphicsLayerElement) obj;
-            return Float.compare(this.scaleX, graphicsLayerElement.scaleX) == 0 && Float.compare(this.scaleY, graphicsLayerElement.scaleY) == 0 && Float.compare(this.alpha, graphicsLayerElement.alpha) == 0 && Float.compare(this.translationX, graphicsLayerElement.translationX) == 0 && Float.compare(this.translationY, graphicsLayerElement.translationY) == 0 && Float.compare(this.shadowElevation, graphicsLayerElement.shadowElevation) == 0 && Float.compare(this.rotationX, graphicsLayerElement.rotationX) == 0 && Float.compare(this.rotationY, graphicsLayerElement.rotationY) == 0 && Float.compare(this.rotationZ, graphicsLayerElement.rotationZ) == 0 && Float.compare(this.cameraDistance, graphicsLayerElement.cameraDistance) == 0 && TransformOrigin.m5681equalsimpl0(this.transformOrigin, graphicsLayerElement.transformOrigin) && Intrinsics.areEqual(this.shape, graphicsLayerElement.shape) && this.clip == graphicsLayerElement.clip && Intrinsics.areEqual(this.renderEffect, graphicsLayerElement.renderEffect) && Color.m5280equalsimpl0(this.ambientShadowColor, graphicsLayerElement.ambientShadowColor) && Color.m5280equalsimpl0(this.spotShadowColor, graphicsLayerElement.spotShadowColor) && CompositingStrategy.m5365equalsimpl0(this.compositingStrategy, graphicsLayerElement.compositingStrategy) && BlendMode.m5189equalsimpl0(this.blendMode, graphicsLayerElement.blendMode) && Intrinsics.areEqual(this.colorFilter, graphicsLayerElement.colorFilter);
+            return Float.compare(this.scaleX, graphicsLayerElement.scaleX) == 0 && Float.compare(this.scaleY, graphicsLayerElement.scaleY) == 0 && Float.compare(this.alpha, graphicsLayerElement.alpha) == 0 && Float.compare(this.translationX, graphicsLayerElement.translationX) == 0 && Float.compare(this.translationY, graphicsLayerElement.translationY) == 0 && Float.compare(this.shadowElevation, graphicsLayerElement.shadowElevation) == 0 && Float.compare(this.rotationX, graphicsLayerElement.rotationX) == 0 && Float.compare(this.rotationY, graphicsLayerElement.rotationY) == 0 && Float.compare(this.rotationZ, graphicsLayerElement.rotationZ) == 0 && Float.compare(this.cameraDistance, graphicsLayerElement.cameraDistance) == 0 && TransformOrigin.m5682equalsimpl0(this.transformOrigin, graphicsLayerElement.transformOrigin) && Intrinsics.areEqual(this.shape, graphicsLayerElement.shape) && this.clip == graphicsLayerElement.clip && Intrinsics.areEqual(this.renderEffect, graphicsLayerElement.renderEffect) && Color.m5281equalsimpl0(this.ambientShadowColor, graphicsLayerElement.ambientShadowColor) && Color.m5281equalsimpl0(this.spotShadowColor, graphicsLayerElement.spotShadowColor) && CompositingStrategy.m5366equalsimpl0(this.compositingStrategy, graphicsLayerElement.compositingStrategy) && BlendMode.m5190equalsimpl0(this.blendMode, graphicsLayerElement.blendMode) && Intrinsics.areEqual(this.colorFilter, graphicsLayerElement.colorFilter);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        int hashCode = ((((((((((((((((((((((((Float.hashCode(this.scaleX) * 31) + Float.hashCode(this.scaleY)) * 31) + Float.hashCode(this.alpha)) * 31) + Float.hashCode(this.translationX)) * 31) + Float.hashCode(this.translationY)) * 31) + Float.hashCode(this.shadowElevation)) * 31) + Float.hashCode(this.rotationX)) * 31) + Float.hashCode(this.rotationY)) * 31) + Float.hashCode(this.rotationZ)) * 31) + Float.hashCode(this.cameraDistance)) * 31) + TransformOrigin.m5684hashCodeimpl(this.transformOrigin)) * 31) + this.shape.hashCode()) * 31) + Boolean.hashCode(this.clip)) * 31;
+        int hashCode = ((((((((((((((((((((((((Float.hashCode(this.scaleX) * 31) + Float.hashCode(this.scaleY)) * 31) + Float.hashCode(this.alpha)) * 31) + Float.hashCode(this.translationX)) * 31) + Float.hashCode(this.translationY)) * 31) + Float.hashCode(this.shadowElevation)) * 31) + Float.hashCode(this.rotationX)) * 31) + Float.hashCode(this.rotationY)) * 31) + Float.hashCode(this.rotationZ)) * 31) + Float.hashCode(this.cameraDistance)) * 31) + TransformOrigin.m5685hashCodeimpl(this.transformOrigin)) * 31) + this.shape.hashCode()) * 31) + Boolean.hashCode(this.clip)) * 31;
         RenderEffect renderEffect = this.renderEffect;
-        int hashCode2 = (((((((((hashCode + (renderEffect == null ? 0 : renderEffect.hashCode())) * 31) + Color.m5286hashCodeimpl(this.ambientShadowColor)) * 31) + Color.m5286hashCodeimpl(this.spotShadowColor)) * 31) + CompositingStrategy.m5366hashCodeimpl(this.compositingStrategy)) * 31) + BlendMode.m5190hashCodeimpl(this.blendMode)) * 31;
+        int hashCode2 = (((((((((hashCode + (renderEffect == null ? 0 : renderEffect.hashCode())) * 31) + Color.m5287hashCodeimpl(this.ambientShadowColor)) * 31) + Color.m5287hashCodeimpl(this.spotShadowColor)) * 31) + CompositingStrategy.m5367hashCodeimpl(this.compositingStrategy)) * 31) + BlendMode.m5191hashCodeimpl(this.blendMode)) * 31;
         ColorFilter colorFilter = this.colorFilter;
         return hashCode2 + (colorFilter != null ? colorFilter.hashCode() : 0);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder("GraphicsLayerElement(scaleX=");
-        sb.append(this.scaleX).append(", scaleY=").append(this.scaleY).append(", alpha=").append(this.alpha).append(", translationX=").append(this.translationX).append(", translationY=").append(this.translationY).append(", shadowElevation=").append(this.shadowElevation).append(", rotationX=").append(this.rotationX).append(", rotationY=").append(this.rotationY).append(", rotationZ=").append(this.rotationZ).append(", cameraDistance=").append(this.cameraDistance).append(", transformOrigin=").append((Object) TransformOrigin.m5685toStringimpl(this.transformOrigin)).append(", shape=");
-        sb.append(this.shape).append(", clip=").append(this.clip).append(", renderEffect=").append(this.renderEffect).append(", ambientShadowColor=").append((Object) Color.m5287toStringimpl(this.ambientShadowColor)).append(", spotShadowColor=").append((Object) Color.m5287toStringimpl(this.spotShadowColor)).append(", compositingStrategy=").append((Object) CompositingStrategy.m5367toStringimpl(this.compositingStrategy)).append(", blendMode=").append((Object) BlendMode.m5191toStringimpl(this.blendMode)).append(", colorFilter=").append(this.colorFilter).append(')');
+        sb.append(this.scaleX).append(", scaleY=").append(this.scaleY).append(", alpha=").append(this.alpha).append(", translationX=").append(this.translationX).append(", translationY=").append(this.translationY).append(", shadowElevation=").append(this.shadowElevation).append(", rotationX=").append(this.rotationX).append(", rotationY=").append(this.rotationY).append(", rotationZ=").append(this.rotationZ).append(", cameraDistance=").append(this.cameraDistance).append(", transformOrigin=").append((Object) TransformOrigin.m5686toStringimpl(this.transformOrigin)).append(", shape=");
+        sb.append(this.shape).append(", clip=").append(this.clip).append(", renderEffect=").append(this.renderEffect).append(", ambientShadowColor=").append((Object) Color.m5288toStringimpl(this.ambientShadowColor)).append(", spotShadowColor=").append((Object) Color.m5288toStringimpl(this.spotShadowColor)).append(", compositingStrategy=").append((Object) CompositingStrategy.m5368toStringimpl(this.compositingStrategy)).append(", blendMode=").append((Object) BlendMode.m5192toStringimpl(this.blendMode)).append(", colorFilter=").append(this.colorFilter).append(')');
         return sb.toString();
     }
 
@@ -221,7 +221,7 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
     }
 
     /* renamed from: getTransformOrigin-SzJe1aQ  reason: not valid java name */
-    public final long m5439getTransformOriginSzJe1aQ() {
+    public final long m5440getTransformOriginSzJe1aQ() {
         return this.transformOrigin;
     }
 
@@ -238,22 +238,22 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
     }
 
     /* renamed from: getAmbientShadowColor-0d7_KjU  reason: not valid java name */
-    public final long m5435getAmbientShadowColor0d7_KjU() {
+    public final long m5436getAmbientShadowColor0d7_KjU() {
         return this.ambientShadowColor;
     }
 
     /* renamed from: getSpotShadowColor-0d7_KjU  reason: not valid java name */
-    public final long m5438getSpotShadowColor0d7_KjU() {
+    public final long m5439getSpotShadowColor0d7_KjU() {
         return this.spotShadowColor;
     }
 
     /* renamed from: getCompositingStrategy--NrFUSI  reason: not valid java name */
-    public final int m5437getCompositingStrategyNrFUSI() {
+    public final int m5438getCompositingStrategyNrFUSI() {
         return this.compositingStrategy;
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m5436getBlendMode0nO6VwU() {
+    public final int m5437getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
@@ -300,14 +300,14 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
         simpleGraphicsLayerModifier.setRotationY(this.rotationY);
         simpleGraphicsLayerModifier.setRotationZ(this.rotationZ);
         simpleGraphicsLayerModifier.setCameraDistance(this.cameraDistance);
-        simpleGraphicsLayerModifier.m5630setTransformOrigin__ExYCQ(this.transformOrigin);
+        simpleGraphicsLayerModifier.m5631setTransformOrigin__ExYCQ(this.transformOrigin);
         simpleGraphicsLayerModifier.setShape(this.shape);
         simpleGraphicsLayerModifier.setClip(this.clip);
         simpleGraphicsLayerModifier.setRenderEffect(this.renderEffect);
-        simpleGraphicsLayerModifier.m5626setAmbientShadowColor8_81llA(this.ambientShadowColor);
-        simpleGraphicsLayerModifier.m5629setSpotShadowColor8_81llA(this.spotShadowColor);
-        simpleGraphicsLayerModifier.m5628setCompositingStrategyaDBOjCE(this.compositingStrategy);
-        simpleGraphicsLayerModifier.m5627setBlendModes9anfk8(this.blendMode);
+        simpleGraphicsLayerModifier.m5627setAmbientShadowColor8_81llA(this.ambientShadowColor);
+        simpleGraphicsLayerModifier.m5630setSpotShadowColor8_81llA(this.spotShadowColor);
+        simpleGraphicsLayerModifier.m5629setCompositingStrategyaDBOjCE(this.compositingStrategy);
+        simpleGraphicsLayerModifier.m5628setBlendModes9anfk8(this.blendMode);
         simpleGraphicsLayerModifier.setColorFilter(this.colorFilter);
         simpleGraphicsLayerModifier.invalidateLayerBlock();
     }
@@ -325,14 +325,14 @@ final class GraphicsLayerElement extends ModifierNodeElement<SimpleGraphicsLayer
         inspectorInfo.getProperties().set("rotationY", Float.valueOf(this.rotationY));
         inspectorInfo.getProperties().set("rotationZ", Float.valueOf(this.rotationZ));
         inspectorInfo.getProperties().set("cameraDistance", Float.valueOf(this.cameraDistance));
-        inspectorInfo.getProperties().set("transformOrigin", TransformOrigin.m5674boximpl(this.transformOrigin));
+        inspectorInfo.getProperties().set("transformOrigin", TransformOrigin.m5675boximpl(this.transformOrigin));
         inspectorInfo.getProperties().set("shape", this.shape);
         inspectorInfo.getProperties().set("clip", Boolean.valueOf(this.clip));
         inspectorInfo.getProperties().set("renderEffect", this.renderEffect);
-        inspectorInfo.getProperties().set("ambientShadowColor", Color.m5269boximpl(this.ambientShadowColor));
-        inspectorInfo.getProperties().set("spotShadowColor", Color.m5269boximpl(this.spotShadowColor));
-        inspectorInfo.getProperties().set("compositingStrategy", CompositingStrategy.m5362boximpl(this.compositingStrategy));
-        inspectorInfo.getProperties().set("blendMode", BlendMode.m5186boximpl(this.blendMode));
+        inspectorInfo.getProperties().set("ambientShadowColor", Color.m5270boximpl(this.ambientShadowColor));
+        inspectorInfo.getProperties().set("spotShadowColor", Color.m5270boximpl(this.spotShadowColor));
+        inspectorInfo.getProperties().set("compositingStrategy", CompositingStrategy.m5363boximpl(this.compositingStrategy));
+        inspectorInfo.getProperties().set("blendMode", BlendMode.m5187boximpl(this.blendMode));
         inspectorInfo.getProperties().set("colorFilter", this.colorFilter);
     }
 }

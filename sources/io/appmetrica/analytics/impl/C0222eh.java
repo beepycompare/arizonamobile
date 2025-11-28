@@ -10,7 +10,7 @@ import io.appmetrica.analytics.networktasks.internal.IParamsAppender;
 import io.appmetrica.analytics.networktasks.internal.NetworkTaskForSendingDataParamsAppender;
 import io.appmetrica.analytics.networktasks.internal.RequestBodyEncrypter;
 /* renamed from: io.appmetrica.analytics.impl.eh  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0222eh implements IParamsAppender {
 
     /* renamed from: a  reason: collision with root package name */

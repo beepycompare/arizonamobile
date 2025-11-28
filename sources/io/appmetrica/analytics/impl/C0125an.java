@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* renamed from: io.appmetrica.analytics.impl.an  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0125an extends U2 {
     public C0125an(int i, String str) {
         this(i, str, PublicLogger.getAnonymousInstance());

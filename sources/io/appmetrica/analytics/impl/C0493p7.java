@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 import kotlin.jvm.internal.Ref;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.p7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0493p7 {
 
     /* renamed from: a  reason: collision with root package name */

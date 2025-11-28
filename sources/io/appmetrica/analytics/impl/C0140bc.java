@@ -5,7 +5,7 @@ import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
 /* renamed from: io.appmetrica.analytics.impl.bc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0140bc implements PermissionStrategy, LocationControllerObserver {
     public static final C0114ac b = new C0114ac();
     public static final List c = CollectionsKt.listOf((Object[]) new String[]{"android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION"});

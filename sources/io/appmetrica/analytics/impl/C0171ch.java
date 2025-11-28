@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.text.TextUtils;
 import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 /* renamed from: io.appmetrica.analytics.impl.ch  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0171ch extends Wg {
     public final R8 b;
 

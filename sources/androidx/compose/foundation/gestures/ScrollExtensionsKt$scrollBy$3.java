@@ -23,6 +23,6 @@ public final class ScrollExtensionsKt$scrollBy$3 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return ScrollExtensionsKt.m562scrollByd4ec7I(null, 0L, this);
+        return ScrollExtensionsKt.m563scrollByd4ec7I(null, 0L, this);
     }
 }

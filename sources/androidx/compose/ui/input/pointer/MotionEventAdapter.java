@@ -124,7 +124,7 @@ public final class MotionEventAdapter {
     }
 
     /* renamed from: getComposePointerId-_I2yYro  reason: not valid java name */
-    private final long m6499getComposePointerId_I2yYro(int i) {
+    private final long m6500getComposePointerId_I2yYro(int i) {
         long j;
         int indexOfKey = this.motionEventToComposePointerIdMap.indexOfKey(i);
         if (indexOfKey >= 0) {
@@ -134,7 +134,7 @@ public final class MotionEventAdapter {
             this.nextId = 1 + j;
             this.motionEventToComposePointerIdMap.put(i, j);
         }
-        return PointerId.m6549constructorimpl(j);
+        return PointerId.m6550constructorimpl(j);
     }
 
     private final void clearOnDeviceChange(MotionEvent motionEvent) {
@@ -155,43 +155,43 @@ public final class MotionEventAdapter {
     private final PointerInputEventData createPointerInputEventData(PositionCalculator positionCalculator, MotionEvent motionEvent, int i, boolean z) {
         long j;
         long j2;
-        int m6648getUnknownT8wyACA;
-        long m5051getZeroF1C5BW0;
+        int m6649getUnknownT8wyACA;
+        long m5052getZeroF1C5BW0;
         int i2;
-        long m6499getComposePointerId_I2yYro = m6499getComposePointerId_I2yYro(motionEvent.getPointerId(i));
+        long m6500getComposePointerId_I2yYro = m6500getComposePointerId_I2yYro(motionEvent.getPointerId(i));
         float pressure = motionEvent.getPressure(i);
         float x = motionEvent.getX(i);
         float y = motionEvent.getY(i);
         char c = ' ';
         long j3 = 4294967295L;
-        long m5027constructorimpl = Offset.m5027constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32));
-        long m5029copydBAh8RU$default = Offset.m5029copydBAh8RU$default(m5027constructorimpl, 0.0f, 0.0f, 3, null);
+        long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32));
+        long m5030copydBAh8RU$default = Offset.m5030copydBAh8RU$default(m5028constructorimpl, 0.0f, 0.0f, 3, null);
         if (i == 0) {
             float rawX = motionEvent.getRawX();
             float rawY = motionEvent.getRawY();
-            j2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(rawY) & 4294967295L) | (Float.floatToRawIntBits(rawX) << 32));
-            j = positionCalculator.mo6650screenToLocalMKHz9U(j2);
+            j2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(rawY) & 4294967295L) | (Float.floatToRawIntBits(rawX) << 32));
+            j = positionCalculator.mo6651screenToLocalMKHz9U(j2);
         } else if (Build.VERSION.SDK_INT >= 29) {
-            j2 = MotionEventHelper.INSTANCE.m6500toRawOffsetdBAh8RU(motionEvent, i);
-            j = positionCalculator.mo6650screenToLocalMKHz9U(j2);
+            j2 = MotionEventHelper.INSTANCE.m6501toRawOffsetdBAh8RU(motionEvent, i);
+            j = positionCalculator.mo6651screenToLocalMKHz9U(j2);
         } else {
-            long mo6649localToScreenMKHz9U = positionCalculator.mo6649localToScreenMKHz9U(m5027constructorimpl);
-            j = m5027constructorimpl;
-            j2 = mo6649localToScreenMKHz9U;
+            long mo6650localToScreenMKHz9U = positionCalculator.mo6650localToScreenMKHz9U(m5028constructorimpl);
+            j = m5028constructorimpl;
+            j2 = mo6650localToScreenMKHz9U;
         }
         int toolType = motionEvent.getToolType(i);
         if (toolType == 0) {
-            m6648getUnknownT8wyACA = PointerType.Companion.m6648getUnknownT8wyACA();
+            m6649getUnknownT8wyACA = PointerType.Companion.m6649getUnknownT8wyACA();
         } else if (toolType == 1) {
-            m6648getUnknownT8wyACA = PointerType.Companion.m6647getTouchT8wyACA();
+            m6649getUnknownT8wyACA = PointerType.Companion.m6648getTouchT8wyACA();
         } else if (toolType == 2) {
-            m6648getUnknownT8wyACA = PointerType.Companion.m6646getStylusT8wyACA();
+            m6649getUnknownT8wyACA = PointerType.Companion.m6647getStylusT8wyACA();
         } else if (toolType == 3) {
-            m6648getUnknownT8wyACA = PointerType.Companion.m6645getMouseT8wyACA();
+            m6649getUnknownT8wyACA = PointerType.Companion.m6646getMouseT8wyACA();
         } else if (toolType == 4) {
-            m6648getUnknownT8wyACA = PointerType.Companion.m6644getEraserT8wyACA();
+            m6649getUnknownT8wyACA = PointerType.Companion.m6645getEraserT8wyACA();
         } else {
-            m6648getUnknownT8wyACA = PointerType.Companion.m6648getUnknownT8wyACA();
+            m6649getUnknownT8wyACA = PointerType.Companion.m6649getUnknownT8wyACA();
         }
         ArrayList arrayList = new ArrayList(motionEvent.getHistorySize());
         int historySize = motionEvent.getHistorySize();
@@ -204,9 +204,9 @@ public final class MotionEventAdapter {
             if ((Float.floatToRawIntBits(historicalX) & Integer.MAX_VALUE) >= 2139095040 || (Float.floatToRawIntBits(historicalY) & Integer.MAX_VALUE) >= 2139095040) {
                 i2 = i3;
             } else {
-                long m5027constructorimpl2 = Offset.m5027constructorimpl((Float.floatToRawIntBits(historicalX) << c2) | (Float.floatToRawIntBits(historicalY) & j4));
+                long m5028constructorimpl2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(historicalX) << c2) | (Float.floatToRawIntBits(historicalY) & j4));
                 i2 = i3;
-                arrayList.add(new HistoricalChange(motionEvent.getHistoricalEventTime(i2), m5027constructorimpl2, m5027constructorimpl2, null));
+                arrayList.add(new HistoricalChange(motionEvent.getHistoricalEventTime(i2), m5028constructorimpl2, m5028constructorimpl2, null));
             }
             i3 = i2 + 1;
             c = c2;
@@ -215,11 +215,11 @@ public final class MotionEventAdapter {
         char c3 = c;
         long j5 = j3;
         if (motionEvent.getActionMasked() == 8) {
-            m5051getZeroF1C5BW0 = Offset.m5027constructorimpl((Float.floatToRawIntBits((-motionEvent.getAxisValue(9)) + 0.0f) & j5) | (Float.floatToRawIntBits(motionEvent.getAxisValue(10)) << c3));
+            m5052getZeroF1C5BW0 = Offset.m5028constructorimpl((Float.floatToRawIntBits((-motionEvent.getAxisValue(9)) + 0.0f) & j5) | (Float.floatToRawIntBits(motionEvent.getAxisValue(10)) << c3));
         } else {
-            m5051getZeroF1C5BW0 = Offset.Companion.m5051getZeroF1C5BW0();
+            m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
         }
-        long j6 = m5051getZeroF1C5BW0;
-        return new PointerInputEventData(m6499getComposePointerId_I2yYro, motionEvent.getEventTime(), j2, j, z, pressure, m6648getUnknownT8wyACA, this.activeHoverIds.get(motionEvent.getPointerId(i), false), arrayList, j6, m5029copydBAh8RU$default, null);
+        long j6 = m5052getZeroF1C5BW0;
+        return new PointerInputEventData(m6500getComposePointerId_I2yYro, motionEvent.getEventTime(), j2, j, z, pressure, m6649getUnknownT8wyACA, this.activeHoverIds.get(motionEvent.getPointerId(i), false), arrayList, j6, m5030copydBAh8RU$default, null);
     }
 }

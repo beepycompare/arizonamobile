@@ -56,7 +56,7 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         LocaleList androidLocalList;
-        Object m1748classifyTextM8tDOmk;
+        Object m1749classifyTextM8tDOmk;
         long j;
         Mutex mutex;
         CharSequence charSequence;
@@ -68,7 +68,7 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             TextClassifier textClassifier = (TextClassifier) this.L$0;
-            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m7455getMinimpl(this.$selection), TextRange.m7454getMaximpl(this.$selection));
+            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m7456getMinimpl(this.$selection), TextRange.m7455getMaximpl(this.$selection));
             androidLocalList = this.this$0.getAndroidLocalList();
             TextSelection.Request.Builder defaultLocales = builder.setDefaultLocales(androidLocalList);
             if (Build.VERSION.SDK_INT >= 31) {
@@ -79,8 +79,8 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
             if (Build.VERSION.SDK_INT < 31 || suggestSelection.getTextClassification() == null) {
                 this.J$0 = TextRange;
                 this.label = 2;
-                m1748classifyTextM8tDOmk = this.this$0.m1748classifyTextM8tDOmk(this.$text, TextRange, textClassifier, this);
-                if (m1748classifyTextM8tDOmk != coroutine_suspended) {
+                m1749classifyTextM8tDOmk = this.this$0.m1749classifyTextM8tDOmk(this.$text, TextRange, textClassifier, this);
+                if (m1749classifyTextM8tDOmk != coroutine_suspended) {
                     j = TextRange;
                     j2 = j;
                 }
@@ -129,6 +129,6 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
             ResultKt.throwOnFailure(obj);
             j2 = j;
         }
-        return TextRange.m7445boximpl(j2);
+        return TextRange.m7446boximpl(j2);
     }
 }

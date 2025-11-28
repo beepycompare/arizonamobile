@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
 import io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class F9 implements ExecutorProvider {
 
     /* renamed from: a  reason: collision with root package name */

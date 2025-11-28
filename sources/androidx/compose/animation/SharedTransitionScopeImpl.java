@@ -90,8 +90,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
 
     @Override // androidx.compose.ui.layout.LookaheadScope
     /* renamed from: localLookaheadPositionOf-au-aQtc  reason: not valid java name */
-    public long mo125localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
-        return this.$$delegate_0.mo125localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j, z);
+    public long mo126localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+        return this.$$delegate_0.mo126localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j, z);
     }
 
     @Override // androidx.compose.ui.layout.LookaheadScope
@@ -856,8 +856,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         @Override // androidx.compose.animation.SharedTransitionScope.OverlayClip
         public Path getClipPath(SharedTransitionScope.SharedContentState sharedContentState, Rect rect, LayoutDirection layoutDirection, Density density) {
             this.path.reset();
-            OutlineKt.addOutline(this.path, this.clipShape.mo331createOutlinePq9zytI(rect.m5068getSizeNHjbRc(), layoutDirection, density));
-            this.path.mo5172translatek4lQ0M(rect.m5070getTopLeftF1C5BW0());
+            OutlineKt.addOutline(this.path, this.clipShape.mo332createOutlinePq9zytI(rect.m5069getSizeNHjbRc(), layoutDirection, density));
+            this.path.mo5173translatek4lQ0M(rect.m5071getTopLeftF1C5BW0());
             return this.path;
         }
     }

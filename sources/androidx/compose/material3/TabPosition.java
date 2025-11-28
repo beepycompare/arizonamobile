@@ -24,23 +24,23 @@ public final class TabPosition {
     }
 
     /* renamed from: getContentWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3039getContentWidthD9Ej5fM() {
+    public final float m3040getContentWidthD9Ej5fM() {
         return this.contentWidth;
     }
 
     /* renamed from: getLeft-D9Ej5fM  reason: not valid java name */
-    public final float m3040getLeftD9Ej5fM() {
+    public final float m3041getLeftD9Ej5fM() {
         return this.left;
     }
 
     /* renamed from: getWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3042getWidthD9Ej5fM() {
+    public final float m3043getWidthD9Ej5fM() {
         return this.width;
     }
 
     /* renamed from: getRight-D9Ej5fM  reason: not valid java name */
-    public final float m3041getRightD9Ej5fM() {
-        return Dp.m7995constructorimpl(this.left + this.width);
+    public final float m3042getRightD9Ej5fM() {
+        return Dp.m7996constructorimpl(this.left + this.width);
     }
 
     public boolean equals(Object obj) {
@@ -49,16 +49,16 @@ public final class TabPosition {
         }
         if (obj instanceof TabPosition) {
             TabPosition tabPosition = (TabPosition) obj;
-            return Dp.m8000equalsimpl0(this.left, tabPosition.left) && Dp.m8000equalsimpl0(this.width, tabPosition.width) && Dp.m8000equalsimpl0(this.contentWidth, tabPosition.contentWidth);
+            return Dp.m8001equalsimpl0(this.left, tabPosition.left) && Dp.m8001equalsimpl0(this.width, tabPosition.width) && Dp.m8001equalsimpl0(this.contentWidth, tabPosition.contentWidth);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Dp.m8001hashCodeimpl(this.left) * 31) + Dp.m8001hashCodeimpl(this.width)) * 31) + Dp.m8001hashCodeimpl(this.contentWidth);
+        return (((Dp.m8002hashCodeimpl(this.left) * 31) + Dp.m8002hashCodeimpl(this.width)) * 31) + Dp.m8002hashCodeimpl(this.contentWidth);
     }
 
     public String toString() {
-        return "TabPosition(left=" + ((Object) Dp.m8006toStringimpl(this.left)) + ", right=" + ((Object) Dp.m8006toStringimpl(m3041getRightD9Ej5fM())) + ", width=" + ((Object) Dp.m8006toStringimpl(this.width)) + ", contentWidth=" + ((Object) Dp.m8006toStringimpl(this.contentWidth)) + ')';
+        return "TabPosition(left=" + ((Object) Dp.m8007toStringimpl(this.left)) + ", right=" + ((Object) Dp.m8007toStringimpl(m3042getRightD9Ej5fM())) + ", width=" + ((Object) Dp.m8007toStringimpl(this.width)) + ", contentWidth=" + ((Object) Dp.m8007toStringimpl(this.contentWidth)) + ')';
     }
 }

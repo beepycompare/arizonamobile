@@ -23,7 +23,7 @@ public final class LinearGradient extends ShaderBrush {
     }
 
     public /* synthetic */ LinearGradient(List list, List list2, long j, long j2, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(list, (i2 & 2) != 0 ? null : list2, j, j2, (i2 & 16) != 0 ? TileMode.Companion.m5669getClamp3opZhB0() : i, null);
+        this(list, (i2 & 2) != 0 ? null : list2, j, j2, (i2 & 16) != 0 ? TileMode.Companion.m5670getClamp3opZhB0() : i, null);
     }
 
     private LinearGradient(List<Color> list, List<Float> list2, long j, long j2, int i) {
@@ -36,7 +36,7 @@ public final class LinearGradient extends ShaderBrush {
 
     @Override // androidx.compose.ui.graphics.Brush
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5226getIntrinsicSizeNHjbRc() {
+    public long mo5227getIntrinsicSizeNHjbRc() {
         float f;
         float intBitsToFloat;
         float intBitsToFloat2;
@@ -53,7 +53,7 @@ public final class LinearGradient extends ShaderBrush {
                         f2 = Math.abs(Float.intBitsToFloat((int) (this.start & 4294967295L)) - Float.intBitsToFloat((int) (this.end & 4294967295L)));
                     }
                 }
-                return Size.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+                return Size.m5096constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
             }
         }
         f = Float.NaN;
@@ -64,19 +64,19 @@ public final class LinearGradient extends ShaderBrush {
                 f2 = Math.abs(Float.intBitsToFloat((int) (this.start & 4294967295L)) - Float.intBitsToFloat((int) (this.end & 4294967295L)));
             }
         }
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 
     @Override // androidx.compose.ui.graphics.ShaderBrush
     /* renamed from: createShader-uvyYCjk */
-    public Shader mo5248createShaderuvyYCjk(long j) {
+    public Shader mo5249createShaderuvyYCjk(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (Float.intBitsToFloat((int) (this.start >> 32)) == Float.POSITIVE_INFINITY ? j >> 32 : this.start >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (Float.intBitsToFloat((int) (this.start & 4294967295L)) == Float.POSITIVE_INFINITY ? j & 4294967295L : this.start & 4294967295L));
         float intBitsToFloat3 = Float.intBitsToFloat((int) (Float.intBitsToFloat((int) (this.end >> 32)) == Float.POSITIVE_INFINITY ? j >> 32 : this.end >> 32));
         float intBitsToFloat4 = Float.intBitsToFloat((int) (Float.intBitsToFloat((int) (this.end & 4294967295L)) == Float.POSITIVE_INFINITY ? j & 4294967295L : this.end & 4294967295L));
         List<Color> list = this.colors;
         List<Float> list2 = this.stops;
-        return ShaderKt.m5609LinearGradientShaderVjE6UOU(Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L)), Offset.m5027constructorimpl((Float.floatToRawIntBits(intBitsToFloat4) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat3) << 32)), list, list2, this.tileMode);
+        return ShaderKt.m5610LinearGradientShaderVjE6UOU(Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L)), Offset.m5028constructorimpl((Float.floatToRawIntBits(intBitsToFloat4) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat3) << 32)), list, list2, this.tileMode);
     }
 
     public boolean equals(Object obj) {
@@ -85,7 +85,7 @@ public final class LinearGradient extends ShaderBrush {
         }
         if (obj instanceof LinearGradient) {
             LinearGradient linearGradient = (LinearGradient) obj;
-            return Intrinsics.areEqual(this.colors, linearGradient.colors) && Intrinsics.areEqual(this.stops, linearGradient.stops) && Offset.m5032equalsimpl0(this.start, linearGradient.start) && Offset.m5032equalsimpl0(this.end, linearGradient.end) && TileMode.m5665equalsimpl0(this.tileMode, linearGradient.tileMode);
+            return Intrinsics.areEqual(this.colors, linearGradient.colors) && Intrinsics.areEqual(this.stops, linearGradient.stops) && Offset.m5033equalsimpl0(this.start, linearGradient.start) && Offset.m5033equalsimpl0(this.end, linearGradient.end) && TileMode.m5666equalsimpl0(this.tileMode, linearGradient.tileMode);
         }
         return false;
     }
@@ -93,10 +93,10 @@ public final class LinearGradient extends ShaderBrush {
     public int hashCode() {
         int hashCode = this.colors.hashCode() * 31;
         List<Float> list = this.stops;
-        return ((((((hashCode + (list != null ? list.hashCode() : 0)) * 31) + Offset.m5037hashCodeimpl(this.start)) * 31) + Offset.m5037hashCodeimpl(this.end)) * 31) + TileMode.m5666hashCodeimpl(this.tileMode);
+        return ((((((hashCode + (list != null ? list.hashCode() : 0)) * 31) + Offset.m5038hashCodeimpl(this.start)) * 31) + Offset.m5038hashCodeimpl(this.end)) * 31) + TileMode.m5667hashCodeimpl(this.tileMode);
     }
 
     public String toString() {
-        return "LinearGradient(colors=" + this.colors + ", stops=" + this.stops + ", " + (((((this.start & androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase) ^ androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase) - androidx.compose.ui.geometry.InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0 ? "start=" + ((Object) Offset.m5043toStringimpl(this.start)) + ", " : "") + ((((androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase ^ (this.end & androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase)) - androidx.compose.ui.geometry.InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0 ? "end=" + ((Object) Offset.m5043toStringimpl(this.end)) + ", " : "") + "tileMode=" + ((Object) TileMode.m5667toStringimpl(this.tileMode)) + ')';
+        return "LinearGradient(colors=" + this.colors + ", stops=" + this.stops + ", " + (((((this.start & androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase) ^ androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase) - androidx.compose.ui.geometry.InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0 ? "start=" + ((Object) Offset.m5044toStringimpl(this.start)) + ", " : "") + ((((androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase ^ (this.end & androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase)) - androidx.compose.ui.geometry.InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0 ? "end=" + ((Object) Offset.m5044toStringimpl(this.end)) + ", " : "") + "tileMode=" + ((Object) TileMode.m5668toStringimpl(this.tileMode)) + ')';
     }
 }

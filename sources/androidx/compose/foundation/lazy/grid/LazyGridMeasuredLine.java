@@ -68,7 +68,7 @@ public final class LazyGridMeasuredLine {
         while (i8 < length) {
             LazyGridMeasuredItem lazyGridMeasuredItem = lazyGridMeasuredItemArr[i8];
             int i11 = i9 + 1;
-            int m986getCurrentLineSpanimpl = GridItemSpan.m986getCurrentLineSpanimpl(this.spans.get(i9).m989unboximpl());
+            int m987getCurrentLineSpanimpl = GridItemSpan.m987getCurrentLineSpanimpl(this.spans.get(i9).m990unboximpl());
             int i12 = this.slots.getPositions()[i10];
             boolean z = this.isVertical;
             int i13 = z ? this.index : i10;
@@ -85,7 +85,7 @@ public final class LazyGridMeasuredLine {
             }
             lazyGridMeasuredItem.position(i7, i12, i5, i6, i13, i4);
             Unit unit = Unit.INSTANCE;
-            i10 += m986getCurrentLineSpanimpl;
+            i10 += m987getCurrentLineSpanimpl;
             i8++;
             i9 = i11;
         }

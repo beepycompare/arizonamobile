@@ -5,7 +5,7 @@ import android.content.Intent;
 import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 /* renamed from: io.appmetrica.analytics.impl.jn  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0357jn {
 
     /* renamed from: a  reason: collision with root package name */

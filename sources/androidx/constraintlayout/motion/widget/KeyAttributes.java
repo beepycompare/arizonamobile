@@ -157,7 +157,7 @@ public class KeyAttributes extends Key {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00e6, code lost:
         if (r1.equals("rotationY") == false) goto L12;
      */
     @Override // androidx.constraintlayout.motion.widget.Key
@@ -702,7 +702,7 @@ public class KeyAttributes extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo8478clone() {
+    public Key mo8479clone() {
         return new KeyAttributes().copy(this);
     }
 }

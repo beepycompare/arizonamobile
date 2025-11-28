@@ -8,7 +8,7 @@ import java.nio.charset.Charset;
 import java.util.Currency;
 import java.util.concurrent.TimeUnit;
 import kotlin.text.Charsets;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class o {
     public static byte[] a(ProductInfo productInfo) {
         String str;

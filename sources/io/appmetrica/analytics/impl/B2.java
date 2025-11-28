@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import io.appmetrica.analytics.coreapi.internal.backport.BiConsumer;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class B2 extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */

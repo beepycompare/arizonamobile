@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class style {
-        public static int Theme_ActivityLauncher_Transparent = 0x7f1402b5;
+        public static int Theme_ActivityLauncher_Transparent = 0x7f1302b5;
 
         private style() {
         }

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.os.Handler;
 import io.appmetrica.analytics.AppMetricaConfig;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Ia {
     C0390l4 a();
 

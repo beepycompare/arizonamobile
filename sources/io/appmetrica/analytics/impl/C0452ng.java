@@ -4,7 +4,7 @@ import android.content.Context;
 import com.android.installreferrer.api.InstallReferrerClient;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* renamed from: io.appmetrica.analytics.impl.ng  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0452ng implements Va {
 
     /* renamed from: a  reason: collision with root package name */

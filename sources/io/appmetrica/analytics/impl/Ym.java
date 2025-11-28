@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.text.TextUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.io.UnsupportedEncodingException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ym extends U2 {
     public Ym(int i, String str) {
         this(i, str, PublicLogger.getAnonymousInstance());

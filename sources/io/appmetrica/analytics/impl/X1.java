@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class X1 implements Thread.UncaughtExceptionHandler {
     public static final AtomicBoolean e = new AtomicBoolean();
 

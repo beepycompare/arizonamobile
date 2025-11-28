@@ -11,9 +11,9 @@ public final class InvalidationStrategySpecification {
     private int widthRateCount;
 
     /* renamed from: shouldInvalidateOnFixedWidth-SulIKG4  reason: not valid java name */
-    public final boolean m8375shouldInvalidateOnFixedWidthSulIKG4(long j, long j2, int i, int i2) {
-        if (Constraints.m7946getHasFixedWidthimpl(j) && Constraints.m7946getHasFixedWidthimpl(j2)) {
-            int abs = Math.abs(Constraints.m7948getMaxWidthimpl(j2) - Constraints.m7948getMaxWidthimpl(j));
+    public final boolean m8376shouldInvalidateOnFixedWidthSulIKG4(long j, long j2, int i, int i2) {
+        if (Constraints.m7947getHasFixedWidthimpl(j) && Constraints.m7947getHasFixedWidthimpl(j2)) {
+            int abs = Math.abs(Constraints.m7949getMaxWidthimpl(j2) - Constraints.m7949getMaxWidthimpl(j));
             if (abs >= i2) {
                 this.widthRateCount = 0;
                 return true;
@@ -32,9 +32,9 @@ public final class InvalidationStrategySpecification {
     }
 
     /* renamed from: shouldInvalidateOnFixedHeight-SulIKG4  reason: not valid java name */
-    public final boolean m8374shouldInvalidateOnFixedHeightSulIKG4(long j, long j2, int i, int i2) {
-        if (Constraints.m7945getHasFixedHeightimpl(j) && Constraints.m7945getHasFixedHeightimpl(j2)) {
-            int abs = Math.abs(Constraints.m7947getMaxHeightimpl(j2) - Constraints.m7947getMaxHeightimpl(j));
+    public final boolean m8375shouldInvalidateOnFixedHeightSulIKG4(long j, long j2, int i, int i2) {
+        if (Constraints.m7946getHasFixedHeightimpl(j) && Constraints.m7946getHasFixedHeightimpl(j2)) {
+            int abs = Math.abs(Constraints.m7948getMaxHeightimpl(j2) - Constraints.m7948getMaxHeightimpl(j));
             if (abs >= i2) {
                 this.heightRateCount = 0;
                 return true;

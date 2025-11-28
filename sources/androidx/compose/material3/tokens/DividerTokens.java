@@ -9,7 +9,7 @@ public final class DividerTokens {
     public static final int $stable = 0;
     public static final DividerTokens INSTANCE = new DividerTokens();
     private static final ColorSchemeKeyTokens Color = ColorSchemeKeyTokens.OutlineVariant;
-    private static final float Thickness = Dp.m7995constructorimpl((float) 1.0d);
+    private static final float Thickness = Dp.m7996constructorimpl((float) 1.0d);
 
     private DividerTokens() {
     }
@@ -19,7 +19,7 @@ public final class DividerTokens {
     }
 
     /* renamed from: getThickness-D9Ej5fM  reason: not valid java name */
-    public final float m3860getThicknessD9Ej5fM() {
+    public final float m3861getThicknessD9Ej5fM() {
         return Thickness;
     }
 }

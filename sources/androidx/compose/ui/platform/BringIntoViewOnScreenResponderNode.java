@@ -33,9 +33,9 @@ final class BringIntoViewOnScreenResponderNode extends Modifier.Node implements 
     public Object bringIntoView(LayoutCoordinates layoutCoordinates, Function0<Rect> function0, Continuation<? super Unit> continuation) {
         long positionInRoot = LayoutCoordinatesKt.positionInRoot(layoutCoordinates);
         Rect invoke = function0.invoke();
-        Rect m5072translatek4lQ0M = invoke != null ? invoke.m5072translatek4lQ0M(positionInRoot) : null;
-        if (m5072translatek4lQ0M != null) {
-            this.view.requestRectangleOnScreen(RectHelper_androidKt.toAndroidRect(m5072translatek4lQ0M), false);
+        Rect m5073translatek4lQ0M = invoke != null ? invoke.m5073translatek4lQ0M(positionInRoot) : null;
+        if (m5073translatek4lQ0M != null) {
+            this.view.requestRectangleOnScreen(RectHelper_androidKt.toAndroidRect(m5073translatek4lQ0M), false);
         }
         return Unit.INSTANCE;
     }

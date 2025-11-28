@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
 import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.of  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0476of implements Zi {
 
     /* renamed from: a  reason: collision with root package name */

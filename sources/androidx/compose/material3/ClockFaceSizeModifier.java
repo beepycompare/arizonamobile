@@ -19,25 +19,25 @@ public final class ClockFaceSizeModifier implements LayoutModifier {
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo748measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo749measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         float f;
         float f2;
         float clockDialMinContainerSize;
-        float f3 = measureScope.mo426toDpu2uoSUM(Constraints.m7947getMaxHeightimpl(j));
+        float f3 = measureScope.mo427toDpu2uoSUM(Constraints.m7948getMaxHeightimpl(j));
         f = TimePickerKt.TimePickerMaxHeight;
-        if (Dp.m7994compareTo0680j_4(f3, f) >= 0) {
-            clockDialMinContainerSize = TimePickerTokens.INSTANCE.m4341getClockDialContainerSizeD9Ej5fM();
+        if (Dp.m7995compareTo0680j_4(f3, f) >= 0) {
+            clockDialMinContainerSize = TimePickerTokens.INSTANCE.m4342getClockDialContainerSizeD9Ej5fM();
         } else {
             f2 = TimePickerKt.TimePickerMidHeight;
-            if (Dp.m7994compareTo0680j_4(f3, f2) >= 0) {
+            if (Dp.m7995compareTo0680j_4(f3, f2) >= 0) {
                 clockDialMinContainerSize = TimePickerKt.ClockDialMidContainerSize;
             } else {
                 clockDialMinContainerSize = TimePickerKt.getClockDialMinContainerSize();
             }
         }
-        int i = measureScope.mo423roundToPx0680j_4(clockDialMinContainerSize);
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.Companion.m7958fixedJhjzzOo(i, i));
-        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.ClockFaceSizeModifier$$ExternalSyntheticLambda0
+        int i = measureScope.mo424roundToPx0680j_4(clockDialMinContainerSize);
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(Constraints.Companion.m7959fixedJhjzzOo(i, i));
+        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.ClockFaceSizeModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;

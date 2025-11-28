@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializ
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import java.io.IOException;
 /* renamed from: io.appmetrica.analytics.impl.h2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0285h2 extends BaseProtobufStateSerializer {
     public final C0259g2 a() {
         return new C0259g2();

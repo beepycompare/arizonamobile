@@ -90,7 +90,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
         @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1$1", f = "FlowExtensions.kt", i = {0}, l = {43}, m = "invokeSuspend", n = {"$this$repeatOnLifecycle"}, s = {"L$0"}, v = 1)
         /* renamed from: com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes4.dex */
-        public static final class C00711 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        public static final class C00721 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ State<Function3<CoroutineScope, T, Continuation<? super Unit>, Object>> $currentCollector$delegate;
             final /* synthetic */ Flow<T> $flow;
             private /* synthetic */ Object L$0;
@@ -98,7 +98,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
-            C00711(Flow<? extends T> flow, State<? extends Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object>> state, Continuation<? super C00711> continuation) {
+            C00721(Flow<? extends T> flow, State<? extends Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object>> state, Continuation<? super C00721> continuation) {
                 super(2, continuation);
                 this.$flow = flow;
                 this.$currentCollector$delegate = state;
@@ -106,14 +106,14 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                C00711 c00711 = new C00711(this.$flow, this.$currentCollector$delegate, continuation);
-                c00711.L$0 = obj;
-                return c00711;
+                C00721 c00721 = new C00721(this.$flow, this.$currentCollector$delegate, continuation);
+                c00721.L$0 = obj;
+                return c00721;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((C00711) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00721) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -154,7 +154,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (RepeatOnLifecycleKt.repeatOnLifecycle(this.$lifecycle, this.$minActiveState, new C00711(this.$flow, this.$currentCollector$delegate, null), this) == coroutine_suspended) {
+                if (RepeatOnLifecycleKt.repeatOnLifecycle(this.$lifecycle, this.$minActiveState, new C00721(this.$flow, this.$currentCollector$delegate, null), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

@@ -18,12 +18,12 @@ public final class LightingColorFilter extends ColorFilter {
     }
 
     /* renamed from: getAdd-0d7_KjU  reason: not valid java name */
-    public final long m5517getAdd0d7_KjU() {
+    public final long m5518getAdd0d7_KjU() {
         return this.add;
     }
 
     /* renamed from: getMultiply-0d7_KjU  reason: not valid java name */
-    public final long m5518getMultiply0d7_KjU() {
+    public final long m5519getMultiply0d7_KjU() {
         return this.multiply;
     }
 
@@ -34,7 +34,7 @@ public final class LightingColorFilter extends ColorFilter {
     }
 
     private LightingColorFilter(long j, long j2) {
-        this(j, j2, AndroidColorFilter_androidKt.m5141actualLightingColorFilterOWjLjI(j, j2), null);
+        this(j, j2, AndroidColorFilter_androidKt.m5142actualLightingColorFilterOWjLjI(j, j2), null);
     }
 
     public boolean equals(Object obj) {
@@ -43,16 +43,16 @@ public final class LightingColorFilter extends ColorFilter {
         }
         if (obj instanceof LightingColorFilter) {
             LightingColorFilter lightingColorFilter = (LightingColorFilter) obj;
-            return Color.m5280equalsimpl0(this.multiply, lightingColorFilter.multiply) && Color.m5280equalsimpl0(this.add, lightingColorFilter.add);
+            return Color.m5281equalsimpl0(this.multiply, lightingColorFilter.multiply) && Color.m5281equalsimpl0(this.add, lightingColorFilter.add);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Color.m5286hashCodeimpl(this.multiply) * 31) + Color.m5286hashCodeimpl(this.add);
+        return (Color.m5287hashCodeimpl(this.multiply) * 31) + Color.m5287hashCodeimpl(this.add);
     }
 
     public String toString() {
-        return "LightingColorFilter(multiply=" + ((Object) Color.m5287toStringimpl(this.multiply)) + ", add=" + ((Object) Color.m5287toStringimpl(this.add)) + ')';
+        return "LightingColorFilter(multiply=" + ((Object) Color.m5288toStringimpl(this.multiply)) + ", add=" + ((Object) Color.m5288toStringimpl(this.add)) + ')';
     }
 }

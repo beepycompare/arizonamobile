@@ -121,14 +121,14 @@ public final class SwitchButtonKt {
                 ComposerKt.traceEventStart(-1706652927, i, -1, "com.miami.game.feature.settings.ui.compose.SwitchButton.<anonymous> (SwitchButton.kt:35)");
             }
             float f = 8;
-            Modifier m843paddingVpY3zN4 = PaddingKt.m843paddingVpY3zN4(BorderKt.m281borderziNgDLE(BackgroundKt.m266backgroundbw27NRU(SizeKt.m899width3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(260)), ColorKt.Color(3205437478L), RoundedCornerShapeKt.m1207RoundedCornerShape0680j_4(Dp.m7995constructorimpl(f))), Dp.m7995constructorimpl(1), Brush.Companion.m5229linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5269boximpl(Color.m5278copywmQWz5c$default(Color.Companion.m5316getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5269boximpl(Color.m5278copywmQWz5c$default(Color.Companion.m5316getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5269boximpl(Color.m5278copywmQWz5c$default(Color.Companion.m5305getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1207RoundedCornerShape0680j_4(Dp.m7995constructorimpl(f))), Dp.m7995constructorimpl(20), Dp.m7995constructorimpl(16));
+            Modifier m844paddingVpY3zN4 = PaddingKt.m844paddingVpY3zN4(BorderKt.m282borderziNgDLE(BackgroundKt.m267backgroundbw27NRU(SizeKt.m900width3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(260)), ColorKt.Color(3205437478L), RoundedCornerShapeKt.m1208RoundedCornerShape0680j_4(Dp.m7996constructorimpl(f))), Dp.m7996constructorimpl(1), Brush.Companion.m5230linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5270boximpl(Color.m5279copywmQWz5c$default(Color.Companion.m5317getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5270boximpl(Color.m5279copywmQWz5c$default(Color.Companion.m5317getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5270boximpl(Color.m5279copywmQWz5c$default(Color.Companion.m5306getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1208RoundedCornerShape0680j_4(Dp.m7996constructorimpl(f))), Dp.m7996constructorimpl(20), Dp.m7996constructorimpl(16));
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), centerVertically, composer, 54);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m843paddingVpY3zN4);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m844paddingVpY3zN4);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
@@ -140,15 +140,15 @@ public final class SwitchButtonKt {
             } else {
                 composer.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-            Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+            Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -246736908, "C57@2346L42,59@2401L27:SwitchButton.kt#1gr92h");
@@ -184,15 +184,15 @@ public final class SwitchButtonKt {
             }
             Color.Companion companion = Color.Companion;
             if (z) {
-                companion.m5305getBlack0d7_KjU();
+                companion.m5306getBlack0d7_KjU();
             } else {
-                companion.m5307getCyan0d7_KjU();
+                companion.m5308getCyan0d7_KjU();
             }
             Color.Companion companion2 = Color.Companion;
             if (z) {
-                companion2.m5306getBlue0d7_KjU();
+                companion2.m5307getBlue0d7_KjU();
             } else {
-                companion2.m5310getGreen0d7_KjU();
+                companion2.m5311getGreen0d7_KjU();
             }
             int i3 = z ? R.drawable.thumb_active : R.drawable.thumb_not_active;
             Alignment.Companion companion3 = Alignment.Companion;
@@ -214,20 +214,20 @@ public final class SwitchButtonKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -935852450, "C84@2959L37,84@2943L217,89@3185L24,89@3169L193:SwitchButton.kt#1gr92h");
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.switch_bg, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(12)), Alignment.Companion.getCenter()), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 24624, 104);
-            ImageKt.Image(PainterResources_androidKt.painterResource(i3, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(20)), centerEnd), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 24624, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.switch_bg, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m881height3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(12)), Alignment.Companion.getCenter()), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 24624, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(i3, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m881height3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(20)), centerEnd), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 24624, 104);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

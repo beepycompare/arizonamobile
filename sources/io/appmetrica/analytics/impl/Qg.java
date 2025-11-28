@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Qg extends Wg {
     public Qg(C0210e5 c0210e5) {
         super(c0210e5);

@@ -15,56 +15,56 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ScopeMap.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\u0010\"\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u0002*\b\b\u0001\u0010\u0003*\u00020\u00022\u00020\u0002B\u001d\u0012\u0014\b\u0002\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001d\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00028\u00002\u0006\u0010\u0011\u001a\u00028\u0001¢\u0006\u0004\b\u0012\u0010\u0013J\u001d\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00028\u00002\u0006\u0010\u0015\u001a\u00028\u0001¢\u0006\u0004\b\u0016\u0010\u0013J\u0018\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00028\u0000H\u0086\u0002¢\u0006\u0004\b\u001a\u0010\u001bJ;\u0010\u001c\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00028\u00002!\u0010\u001d\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u000f0\u001eH\u0086\b¢\u0006\u0004\b!\u0010\"J;\u0010#\u001a\u00020\u00182\u0006\u0010\u0010\u001a\u00028\u00002!\u0010\u001d\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u00180\u001eH\u0086\b¢\u0006\u0004\b$\u0010%J\r\u0010&\u001a\u00020\u000f¢\u0006\u0004\b'\u0010(J\u001d\u0010)\u001a\u00020\u00182\u0006\u0010\u0010\u001a\u00028\u00002\u0006\u0010\u0011\u001a\u00028\u0001¢\u0006\u0004\b*\u0010+J5\u0010,\u001a\u00020\u000f2#\b\u0004\u0010-\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u00180\u001eH\u0086\b¢\u0006\u0004\b.\u0010/J,\u00100\u001a\u00020\u000f2\u001a\b\u0004\u0010-\u001a\u0014\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00020\u001801H\u0086\b¢\u0006\u0004\b2\u00103J\u0015\u00104\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00028\u0001¢\u0006\u0004\b5\u00106J\u001f\u00107\u001a\u0014\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010908¢\u0006\u0004\b:\u0010;J\u0013\u0010<\u001a\u00020\u00182\b\u0010=\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010>\u001a\u00020\u000bHÖ\u0001J\t\u0010?\u001a\u00020@HÖ\u0001R\u001d\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\n\u001a\u00020\u000b8F¢\u0006\u0006\u001a\u0004\b\f\u0010\r\u0088\u0001\u0004¨\u0006A"}, d2 = {"Landroidx/compose/runtime/collection/ScopeMap;", "Key", "", "Scope", "map", "Landroidx/collection/MutableScatterMap;", "constructor-impl", "(Landroidx/collection/MutableScatterMap;)Landroidx/collection/MutableScatterMap;", "getMap", "()Landroidx/collection/MutableScatterMap;", "size", "", "getSize-impl", "(Landroidx/collection/MutableScatterMap;)I", "add", "", "key", "scope", "add-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Ljava/lang/Object;)V", "set", "value", "set-impl", "contains", "", "element", "contains-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Z", "forEachScopeOf", "block", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "forEachScopeOf-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V", "anyScopeOf", "anyScopeOf-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Z", "clear", "clear-impl", "(Landroidx/collection/MutableScatterMap;)V", "remove", "remove-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Ljava/lang/Object;)Z", "removeScopeIf", "predicate", "removeScopeIf-impl", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function1;)V", "removeIf", "Lkotlin/Function2;", "removeIf-impl", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function2;)V", "removeScope", "removeScope-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)V", "asMap", "", "", "asMap-impl", "(Landroidx/collection/MutableScatterMap;)Ljava/util/Map;", "equals", "other", "hashCode", "toString", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\u0010\"\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u0002*\b\b\u0001\u0010\u0003*\u00020\u00022\u00020\u0002B\u001d\u0012\u0014\b\u0002\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001d\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00028\u00002\u0006\u0010\u0011\u001a\u00028\u0001¢\u0006\u0004\b\u0012\u0010\u0013J\u001d\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00028\u00002\u0006\u0010\u0015\u001a\u00028\u0001¢\u0006\u0004\b\u0016\u0010\u0013J\u0018\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00028\u0000H\u0086\u0002¢\u0006\u0004\b\u001a\u0010\u001bJ;\u0010\u001c\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00028\u00002!\u0010\u001d\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u000f0\u001eH\u0086\b¢\u0006\u0004\b!\u0010\"J;\u0010#\u001a\u00020\u00182\u0006\u0010\u0010\u001a\u00028\u00002!\u0010\u001d\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u00180\u001eH\u0086\b¢\u0006\u0004\b$\u0010%J\r\u0010&\u001a\u00020\u000f¢\u0006\u0004\b'\u0010(J\u001d\u0010)\u001a\u00020\u00182\u0006\u0010\u0010\u001a\u00028\u00002\u0006\u0010\u0011\u001a\u00028\u0001¢\u0006\u0004\b*\u0010+J5\u0010,\u001a\u00020\u000f2#\b\u0004\u0010-\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\u00180\u001eH\u0086\b¢\u0006\u0004\b.\u0010/J*\u00100\u001a\u00020\u000f2\u0018\u0010-\u001a\u0014\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00020\u001801H\u0086\b¢\u0006\u0004\b2\u00103J\u0015\u00104\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00028\u0001¢\u0006\u0004\b5\u00106J\u001f\u00107\u001a\u0014\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010908¢\u0006\u0004\b:\u0010;J\u0013\u0010<\u001a\u00020\u00182\b\u0010=\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010>\u001a\u00020\u000bHÖ\u0001J\t\u0010?\u001a\u00020@HÖ\u0001R\u001d\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\n\u001a\u00020\u000b8F¢\u0006\u0006\u001a\u0004\b\f\u0010\r\u0088\u0001\u0004¨\u0006A"}, d2 = {"Landroidx/compose/runtime/collection/ScopeMap;", "Key", "", "Scope", "map", "Landroidx/collection/MutableScatterMap;", "constructor-impl", "(Landroidx/collection/MutableScatterMap;)Landroidx/collection/MutableScatterMap;", "getMap", "()Landroidx/collection/MutableScatterMap;", "size", "", "getSize-impl", "(Landroidx/collection/MutableScatterMap;)I", "add", "", "key", "scope", "add-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Ljava/lang/Object;)V", "set", "value", "set-impl", "contains", "", "element", "contains-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Z", "forEachScopeOf", "block", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "forEachScopeOf-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V", "anyScopeOf", "anyScopeOf-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Z", "clear", "clear-impl", "(Landroidx/collection/MutableScatterMap;)V", "remove", "remove-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Ljava/lang/Object;)Z", "removeScopeIf", "predicate", "removeScopeIf-impl", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function1;)V", "removeIf", "Lkotlin/Function2;", "removeIf-impl", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function2;)V", "removeScope", "removeScope-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)V", "asMap", "", "", "asMap-impl", "(Landroidx/collection/MutableScatterMap;)Ljava/util/Map;", "equals", "other", "hashCode", "toString", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class ScopeMap<Key, Scope> {
     private final MutableScatterMap<Object, Object> map;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ ScopeMap m4695boximpl(MutableScatterMap mutableScatterMap) {
+    public static final /* synthetic */ ScopeMap m4696boximpl(MutableScatterMap mutableScatterMap) {
         return new ScopeMap(mutableScatterMap);
     }
 
     /* renamed from: constructor-impl */
-    public static <Key, Scope> MutableScatterMap<Object, Object> m4697constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static <Key, Scope> MutableScatterMap<Object, Object> m4698constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m4700equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
-        return (obj instanceof ScopeMap) && Intrinsics.areEqual(mutableScatterMap, ((ScopeMap) obj).m4711unboximpl());
+    public static boolean m4701equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
+        return (obj instanceof ScopeMap) && Intrinsics.areEqual(mutableScatterMap, ((ScopeMap) obj).m4712unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m4701equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
+    public static final boolean m4702equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
         return Intrinsics.areEqual(mutableScatterMap, mutableScatterMap2);
     }
 
     /* renamed from: hashCode-impl */
-    public static int m4704hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static int m4705hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.hashCode();
     }
 
     /* renamed from: toString-impl */
-    public static String m4710toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static String m4711toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return "ScopeMap(map=" + mutableScatterMap + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4700equalsimpl(this.map, obj);
+        return m4701equalsimpl(this.map, obj);
     }
 
     public int hashCode() {
-        return m4704hashCodeimpl(this.map);
+        return m4705hashCodeimpl(this.map);
     }
 
     public String toString() {
-        return m4710toStringimpl(this.map);
+        return m4711toStringimpl(this.map);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ MutableScatterMap m4711unboximpl() {
+    public final /* synthetic */ MutableScatterMap m4712unboximpl() {
         return this.map;
     }
 
@@ -73,11 +73,11 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: constructor-impl$default */
-    public static /* synthetic */ MutableScatterMap m4698constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableScatterMap m4699constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableScatterMap = ScatterMapKt.mutableScatterMapOf();
         }
-        return m4697constructorimpl(mutableScatterMap);
+        return m4698constructorimpl(mutableScatterMap);
     }
 
     public final MutableScatterMap<Object, Object> getMap() {
@@ -85,22 +85,22 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: getSize-impl */
-    public static final int m4703getSizeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final int m4704getSizeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.getSize();
     }
 
     /* renamed from: set-impl */
-    public static final void m4709setimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
+    public static final void m4710setimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
         mutableScatterMap.set(key, scope);
     }
 
     /* renamed from: contains-impl */
-    public static final boolean m4699containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key) {
+    public static final boolean m4700containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key) {
         return mutableScatterMap.containsKey(key);
     }
 
     /* renamed from: forEachScopeOf-impl */
-    public static final void m4702forEachScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Unit> function1) {
+    public static final void m4703forEachScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Unit> function1) {
         Object obj = mutableScatterMap.get(key);
         if (obj == null) {
             return;
@@ -139,12 +139,12 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: clear-impl */
-    public static final void m4696clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final void m4697clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         mutableScatterMap.clear();
     }
 
     /* renamed from: remove-impl */
-    public static final boolean m4705removeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
+    public static final boolean m4706removeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
         Object obj = mutableScatterMap.get(key);
         if (obj == null) {
             return false;
@@ -165,7 +165,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: asMap-impl */
-    public static final Map<Key, Set<Scope>> m4694asMapimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final Map<Key, Set<Scope>> m4695asMapimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         Set mutableSetOf;
         HashMap hashMap = new HashMap();
         MutableScatterMap<Object, Object> mutableScatterMap2 = mutableScatterMap;
@@ -215,7 +215,7 @@ public final class ScopeMap<Key, Scope> {
     /* JADX WARN: Type inference failed for: r5v1 */
     /* JADX WARN: Type inference failed for: r6v1, types: [androidx.collection.MutableScatterSet] */
     /* renamed from: add-impl */
-    public static final void m4692addimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
+    public static final void m4693addimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
         int findInsertIndex = mutableScatterMap.findInsertIndex(key);
         boolean z = findInsertIndex < 0;
         Scope scope2 = z ? null : mutableScatterMap.values[findInsertIndex];
@@ -242,7 +242,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: anyScopeOf-impl */
-    public static final boolean m4693anyScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Boolean> function1) {
+    public static final boolean m4694anyScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Boolean> function1) {
         Object obj = mutableScatterMap.get(key);
         if (obj != null) {
             if (obj instanceof MutableScatterSet) {
@@ -280,7 +280,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: removeScopeIf-impl */
-    public static final void m4708removeScopeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super Scope, Boolean> function1) {
+    public static final void m4709removeScopeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super Scope, Boolean> function1) {
         long[] jArr;
         long[] jArr2;
         long j;
@@ -416,7 +416,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: removeIf-impl */
-    public static final void m4706removeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Key, ? super Scope, Boolean> function2) {
+    public static final void m4707removeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Key, ? super Scope, Boolean> function2) {
         long[] jArr;
         long[] jArr2;
         long j;
@@ -546,7 +546,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: removeScope-impl */
-    public static final void m4707removeScopeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Scope scope) {
+    public static final void m4708removeScopeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Scope scope) {
         boolean z;
         long[] jArr = mutableScatterMap.metadata;
         int length = jArr.length - 2;

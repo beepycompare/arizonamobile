@@ -31,7 +31,7 @@ public final class ComposableSingletons$TimePickerKt {
                 ComposerKt.traceEventStart(1425358052, i, -1, "androidx.compose.material3.ComposableSingletons$TimePickerKt.lambda$1425358052.<anonymous> (TimePicker.kt:1328)");
             }
             Strings.Companion companion = Strings.Companion;
-            TextKt.m3168TextNvy7gAk(Strings_androidKt.m3610getString2EP1pXo(Strings.m3531constructorimpl(R.string.m3c_time_picker_am), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
+            TextKt.m3169TextNvy7gAk(Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_time_picker_am), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -56,7 +56,7 @@ public final class ComposableSingletons$TimePickerKt {
                 ComposerKt.traceEventStart(-1179219109, i, -1, "androidx.compose.material3.ComposableSingletons$TimePickerKt.lambda$-1179219109.<anonymous> (TimePicker.kt:1346)");
             }
             Strings.Companion companion = Strings.Companion;
-            TextKt.m3168TextNvy7gAk(Strings_androidKt.m3610getString2EP1pXo(Strings.m3531constructorimpl(R.string.m3c_time_picker_pm), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
+            TextKt.m3169TextNvy7gAk(Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_time_picker_pm), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -64,7 +64,7 @@ public final class ComposableSingletons$TimePickerKt {
     });
 
     /* renamed from: getLambda$-1179219109$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2179getLambda$1179219109$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2180getLambda$1179219109$material3() {
         return f39lambda$1179219109;
     }
 

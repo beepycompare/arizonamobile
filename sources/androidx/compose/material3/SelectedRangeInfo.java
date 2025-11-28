@@ -28,12 +28,12 @@ public final class SelectedRangeInfo {
     }
 
     /* renamed from: getGridStartCoordinates-nOcc-ac  reason: not valid java name */
-    public final long m2879getGridStartCoordinatesnOccac() {
+    public final long m2880getGridStartCoordinatesnOccac() {
         return this.gridStartCoordinates;
     }
 
     /* renamed from: getGridEndCoordinates-nOcc-ac  reason: not valid java name */
-    public final long m2878getGridEndCoordinatesnOccac() {
+    public final long m2879getGridEndCoordinatesnOccac() {
         return this.gridEndCoordinates;
     }
 
@@ -74,7 +74,7 @@ public final class SelectedRangeInfo {
             } else {
                 daysFromStartOfWeekToFirstOfMonth2 = (calendarMonth.getDaysFromStartOfWeekToFirstOfMonth() + calendarMonth.getNumberOfDays()) - 1;
             }
-            return new SelectedRangeInfo(IntOffset.m8117constructorimpl(((daysFromStartOfWeekToFirstOfMonth % 7) << 32) | ((daysFromStartOfWeekToFirstOfMonth / 7) & 4294967295L)), IntOffset.m8117constructorimpl(((daysFromStartOfWeekToFirstOfMonth2 % 7) << 32) | ((daysFromStartOfWeekToFirstOfMonth2 / 7) & 4294967295L)), z, z2, null);
+            return new SelectedRangeInfo(IntOffset.m8118constructorimpl(((daysFromStartOfWeekToFirstOfMonth % 7) << 32) | ((daysFromStartOfWeekToFirstOfMonth / 7) & 4294967295L)), IntOffset.m8118constructorimpl(((daysFromStartOfWeekToFirstOfMonth2 % 7) << 32) | ((daysFromStartOfWeekToFirstOfMonth2 / 7) & 4294967295L)), z, z2, null);
         }
     }
 }

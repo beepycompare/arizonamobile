@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 /* renamed from: io.appmetrica.analytics.impl.r0  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0535r0 {
 
     /* renamed from: a  reason: collision with root package name */

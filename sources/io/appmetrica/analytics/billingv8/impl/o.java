@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class o implements UpdatePolicy {
 
     /* renamed from: a  reason: collision with root package name */

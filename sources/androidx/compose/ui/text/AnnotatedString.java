@@ -189,8 +189,8 @@ public final class AnnotatedString implements CharSequence {
     }
 
     /* renamed from: subSequence-5zc-tL8  reason: not valid java name */
-    public final AnnotatedString m7269subSequence5zctL8(long j) {
-        return subSequence(TextRange.m7455getMinimpl(j), TextRange.m7454getMaximpl(j));
+    public final AnnotatedString m7270subSequence5zctL8(long j) {
+        return subSequence(TextRange.m7456getMinimpl(j), TextRange.m7455getMaximpl(j));
     }
 
     public final AnnotatedString plus(AnnotatedString annotatedString) {
@@ -716,7 +716,7 @@ public final class AnnotatedString implements CharSequence {
         }
 
         public final void addStringAnnotation(String str, String str2, int i, int i2) {
-            this.annotations.add(new MutableRange<>(StringAnnotation.m7405boximpl(StringAnnotation.m7406constructorimpl(str2)), i, i2, str));
+            this.annotations.add(new MutableRange<>(StringAnnotation.m7406boximpl(StringAnnotation.m7407constructorimpl(str2)), i, i2, str));
         }
 
         public final void addTtsAnnotation(TtsAnnotation ttsAnnotation, int i, int i2) {
@@ -741,7 +741,7 @@ public final class AnnotatedString implements CharSequence {
         }
 
         /* renamed from: addBullet-r9BaKPg  reason: not valid java name */
-        public final void m7271addBulletr9BaKPg(Bullet bullet, long j, int i, int i2) {
+        public final void m7272addBulletr9BaKPg(Bullet bullet, long j, int i, int i2) {
             this.annotations.add(new MutableRange<>(new ParagraphStyle(0, 0, 0L, new TextIndent(j, j, null), (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_PERCENT_WIDTH, (DefaultConstructorMarker) null), i, i2, null, 8, null));
             this.annotations.add(new MutableRange<>(bullet, i, i2, null, 8, null));
         }
@@ -789,32 +789,32 @@ public final class AnnotatedString implements CharSequence {
         }
 
         /* renamed from: withBulletList-o2QH7mI$default  reason: not valid java name */
-        public static /* synthetic */ Object m7270withBulletListo2QH7mI$default(Builder builder, long j, Bullet bullet, Function1 function1, int i, Object obj) {
+        public static /* synthetic */ Object m7271withBulletListo2QH7mI$default(Builder builder, long j, Bullet bullet, Function1 function1, int i, Object obj) {
             if ((i & 1) != 0) {
-                j = Bullet.Companion.m7281getDefaultIndentationXSAIIZE();
+                j = Bullet.Companion.m7282getDefaultIndentationXSAIIZE();
             }
             if ((i & 2) != 0) {
                 bullet = Bullet.Companion.getDefault();
             }
-            return builder.m7272withBulletListo2QH7mI(j, bullet, function1);
+            return builder.m7273withBulletListo2QH7mI(j, bullet, function1);
         }
 
         /* renamed from: withBulletList-o2QH7mI  reason: not valid java name */
-        public final <R> R m7272withBulletListo2QH7mI(long j, Bullet bullet, Function1<? super BulletScope, ? extends R> function1) {
+        public final <R> R m7273withBulletListo2QH7mI(long j, Bullet bullet, Function1<? super BulletScope, ? extends R> function1) {
             long j2;
             Pair pair = (Pair) CollectionsKt.lastOrNull((List<? extends Object>) this.bulletScope.getBulletListSettingStack$ui_text());
             if (pair != null) {
-                long m8198unboximpl = ((TextUnit) pair.getFirst()).m8198unboximpl();
-                if (!TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(m8198unboximpl), TextUnit.m8188getTypeUIouoOA(j))) {
-                    InlineClassHelperKt.throwIllegalStateException("Indentation unit types of nested bullet lists must match. Current " + ((Object) TextUnit.m8196toStringimpl(m8198unboximpl)) + " and previous is " + ((Object) TextUnit.m8196toStringimpl(j)));
+                long m8199unboximpl = ((TextUnit) pair.getFirst()).m8199unboximpl();
+                if (!TextUnitType.m8218equalsimpl0(TextUnit.m8189getTypeUIouoOA(m8199unboximpl), TextUnit.m8189getTypeUIouoOA(j))) {
+                    InlineClassHelperKt.throwIllegalStateException("Indentation unit types of nested bullet lists must match. Current " + ((Object) TextUnit.m8197toStringimpl(m8199unboximpl)) + " and previous is " + ((Object) TextUnit.m8197toStringimpl(j)));
                 }
-                long m8188getTypeUIouoOA = TextUnit.m8188getTypeUIouoOA(j);
-                j2 = TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8222getSpUIouoOA()) ? TextUnitKt.getSp(TextUnit.m8189getValueimpl(j) + TextUnit.m8189getValueimpl(m8198unboximpl)) : TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8221getEmUIouoOA()) ? TextUnitKt.getEm(TextUnit.m8189getValueimpl(j) + TextUnit.m8189getValueimpl(m8198unboximpl)) : j;
+                long m8189getTypeUIouoOA = TextUnit.m8189getTypeUIouoOA(j);
+                j2 = TextUnitType.m8218equalsimpl0(m8189getTypeUIouoOA, TextUnitType.Companion.m8223getSpUIouoOA()) ? TextUnitKt.getSp(TextUnit.m8190getValueimpl(j) + TextUnit.m8190getValueimpl(m8199unboximpl)) : TextUnitType.m8218equalsimpl0(m8189getTypeUIouoOA, TextUnitType.Companion.m8222getEmUIouoOA()) ? TextUnitKt.getEm(TextUnit.m8190getValueimpl(j) + TextUnit.m8190getValueimpl(m8199unboximpl)) : j;
             } else {
                 j2 = j;
             }
             int pushStyle = pushStyle(new ParagraphStyle(0, 0, 0L, new TextIndent(j2, j2, null), (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_PERCENT_WIDTH, (DefaultConstructorMarker) null));
-            this.bulletScope.getBulletListSettingStack$ui_text().add(new Pair<>(TextUnit.m8179boximpl(j2), bullet));
+            this.bulletScope.getBulletListSettingStack$ui_text().add(new Pair<>(TextUnit.m8180boximpl(j2), bullet));
             try {
                 return function1.invoke(this.bulletScope);
             } finally {
@@ -835,13 +835,13 @@ public final class AnnotatedString implements CharSequence {
         public final <R> R withBulletListItem(BulletScope bulletScope, Bullet bullet, Function1<? super Builder, ? extends R> function1) {
             Bullet bullet2;
             Pair pair = (Pair) CollectionsKt.lastOrNull((List<? extends Object>) bulletScope.getBulletListSettingStack$ui_text());
-            long m8198unboximpl = pair != null ? ((TextUnit) pair.getFirst()).m8198unboximpl() : Bullet.Companion.m7281getDefaultIndentationXSAIIZE();
+            long m8199unboximpl = pair != null ? ((TextUnit) pair.getFirst()).m8199unboximpl() : Bullet.Companion.m7282getDefaultIndentationXSAIIZE();
             if (bullet != null) {
                 bullet2 = bullet;
             } else if (pair == null || (bullet2 = (Bullet) pair.getSecond()) == null) {
                 bullet2 = Bullet.Companion.getDefault();
             }
-            int pushStyle = bulletScope.getBuilder$ui_text().pushStyle(new ParagraphStyle(0, 0, 0L, new TextIndent(m8198unboximpl, m8198unboximpl, null), (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_PERCENT_WIDTH, (DefaultConstructorMarker) null));
+            int pushStyle = bulletScope.getBuilder$ui_text().pushStyle(new ParagraphStyle(0, 0, 0L, new TextIndent(m8199unboximpl, m8199unboximpl, null), (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_PERCENT_WIDTH, (DefaultConstructorMarker) null));
             int pushBullet = bulletScope.getBuilder$ui_text().pushBullet(bullet2);
             try {
                 return function1.invoke(bulletScope.getBuilder$ui_text());
@@ -852,7 +852,7 @@ public final class AnnotatedString implements CharSequence {
         }
 
         public final int pushStringAnnotation(String str, String str2) {
-            MutableRange<? extends Annotation> mutableRange = new MutableRange<>(StringAnnotation.m7405boximpl(StringAnnotation.m7406constructorimpl(str2)), this.text.length(), 0, str, 4, null);
+            MutableRange<? extends Annotation> mutableRange = new MutableRange<>(StringAnnotation.m7406boximpl(StringAnnotation.m7407constructorimpl(str2)), this.text.length(), 0, str, 4, null);
             this.styleStack.add(mutableRange);
             this.annotations.add(mutableRange);
             return this.styleStack.size() - 1;

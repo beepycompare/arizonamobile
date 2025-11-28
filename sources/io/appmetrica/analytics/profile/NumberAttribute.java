@@ -9,7 +9,7 @@ import io.appmetrica.analytics.impl.C0739z4;
 import io.appmetrica.analytics.impl.Gi;
 import io.appmetrica.analytics.impl.InterfaceC0281go;
 import io.appmetrica.analytics.impl.Nb;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class NumberAttribute {
 
     /* renamed from: a  reason: collision with root package name */

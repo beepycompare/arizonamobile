@@ -59,10 +59,10 @@ public interface Owner extends PositionCalculator {
     }
 
     /* renamed from: calculateLocalPosition-MK-Hz9U */
-    long mo7048calculateLocalPositionMKHz9U(long j);
+    long mo7049calculateLocalPositionMKHz9U(long j);
 
     /* renamed from: calculatePositionInWindow-MK-Hz9U */
-    long mo7049calculatePositionInWindowMKHz9U(long j);
+    long mo7050calculatePositionInWindowMKHz9U(long j);
 
     OwnedLayer createLayer(Function2<? super Canvas, ? super GraphicsLayer, Unit> function2, Function0<Unit> function0, GraphicsLayer graphicsLayer);
 
@@ -73,7 +73,7 @@ public interface Owner extends PositionCalculator {
     }
 
     /* renamed from: dispatchOnScrollChanged-k-4lQ0M */
-    default void mo7050dispatchOnScrollChangedk4lQ0M(long j) {
+    default void mo7051dispatchOnScrollChangedk4lQ0M(long j) {
     }
 
     void forceMeasureTheSubtree(LayoutNode layoutNode, boolean z);
@@ -155,7 +155,7 @@ public interface Owner extends PositionCalculator {
     void measureAndLayout(boolean z);
 
     /* renamed from: measureAndLayout-0kLqBqw */
-    void mo7051measureAndLayout0kLqBqw(LayoutNode layoutNode, long j);
+    void mo7052measureAndLayout0kLqBqw(LayoutNode layoutNode, long j);
 
     void onDetach(LayoutNode layoutNode);
 

@@ -12,7 +12,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Qd implements NativeCrashHandler {
 
     /* renamed from: a  reason: collision with root package name */

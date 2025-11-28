@@ -2,7 +2,7 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class M implements Converter {
 
     /* renamed from: a  reason: collision with root package name */

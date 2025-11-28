@@ -38,8 +38,8 @@ public interface LazyListLayoutInfo {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: getViewportSize-YbymL2g  reason: not valid java name */
-        public static long m963getViewportSizeYbymL2g(LazyListLayoutInfo lazyListLayoutInfo) {
-            return LazyListLayoutInfo.super.mo962getViewportSizeYbymL2g();
+        public static long m964getViewportSizeYbymL2g(LazyListLayoutInfo lazyListLayoutInfo) {
+            return LazyListLayoutInfo.super.mo963getViewportSizeYbymL2g();
         }
 
         @Deprecated
@@ -69,8 +69,8 @@ public interface LazyListLayoutInfo {
     }
 
     /* renamed from: getViewportSize-YbymL2g  reason: not valid java name */
-    default long mo962getViewportSizeYbymL2g() {
-        return IntSize.Companion.m8171getZeroYbymL2g();
+    default long mo963getViewportSizeYbymL2g() {
+        return IntSize.Companion.m8172getZeroYbymL2g();
     }
 
     default Orientation getOrientation() {

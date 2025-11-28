@@ -11,55 +11,55 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class DpSize {
     private final long packedValue;
     public static final Companion Companion = new Companion(null);
-    private static final long Zero = m8084constructorimpl(0);
-    private static final long Unspecified = m8084constructorimpl(androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats);
+    private static final long Zero = m8085constructorimpl(0);
+    private static final long Unspecified = m8085constructorimpl(androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ DpSize m8081boximpl(long j) {
+    public static final /* synthetic */ DpSize m8082boximpl(long j) {
         return new DpSize(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m8084constructorimpl(long j) {
+    public static long m8085constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8089equalsimpl(long j, Object obj) {
-        return (obj instanceof DpSize) && j == ((DpSize) obj).m8101unboximpl();
+    public static boolean m8090equalsimpl(long j, Object obj) {
+        return (obj instanceof DpSize) && j == ((DpSize) obj).m8102unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8090equalsimpl0(long j, long j2) {
+    public static final boolean m8091equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getHeight-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8092getHeightD9Ej5fM$annotations() {
+    public static /* synthetic */ void m8093getHeightD9Ej5fM$annotations() {
     }
 
     public static /* synthetic */ void getPackedValue$annotations() {
     }
 
     /* renamed from: getWidth-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8094getWidthD9Ej5fM$annotations() {
+    public static /* synthetic */ void m8095getWidthD9Ej5fM$annotations() {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8095hashCodeimpl(long j) {
+    public static int m8096hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m8089equalsimpl(this.packedValue, obj);
+        return m8090equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m8095hashCodeimpl(this.packedValue);
+        return m8096hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m8101unboximpl() {
+    public final /* synthetic */ long m8102unboximpl() {
         return this.packedValue;
     }
 
@@ -68,66 +68,66 @@ public final class DpSize {
     }
 
     /* renamed from: copy-DwJknco$default  reason: not valid java name */
-    public static /* synthetic */ long m8086copyDwJknco$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m8087copyDwJknco$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = m8093getWidthD9Ej5fM(j);
+            f = m8094getWidthD9Ej5fM(j);
         }
         if ((i & 2) != 0) {
-            f2 = m8091getHeightD9Ej5fM(j);
+            f2 = m8092getHeightD9Ej5fM(j);
         }
-        return m8085copyDwJknco(j, f, f2);
+        return m8086copyDwJknco(j, f, f2);
     }
 
     /* renamed from: minus-e_xh8Ic  reason: not valid java name */
-    public static final long m8096minuse_xh8Ic(long j, long j2) {
-        return m8084constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(m8093getWidthD9Ej5fM(j) - m8093getWidthD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7995constructorimpl(m8091getHeightD9Ej5fM(j) - m8091getHeightD9Ej5fM(j2)))));
+    public static final long m8097minuse_xh8Ic(long j, long j2) {
+        return m8085constructorimpl((Float.floatToRawIntBits(Dp.m7996constructorimpl(m8094getWidthD9Ej5fM(j) - m8094getWidthD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7996constructorimpl(m8092getHeightD9Ej5fM(j) - m8092getHeightD9Ej5fM(j2)))));
     }
 
     /* renamed from: plus-e_xh8Ic  reason: not valid java name */
-    public static final long m8097pluse_xh8Ic(long j, long j2) {
-        return m8084constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(m8093getWidthD9Ej5fM(j) + m8093getWidthD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7995constructorimpl(m8091getHeightD9Ej5fM(j) + m8091getHeightD9Ej5fM(j2)))));
+    public static final long m8098pluse_xh8Ic(long j, long j2) {
+        return m8085constructorimpl((Float.floatToRawIntBits(Dp.m7996constructorimpl(m8094getWidthD9Ej5fM(j) + m8094getWidthD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7996constructorimpl(m8092getHeightD9Ej5fM(j) + m8092getHeightD9Ej5fM(j2)))));
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public static final float m8082component1D9Ej5fM(long j) {
-        return m8093getWidthD9Ej5fM(j);
+    public static final float m8083component1D9Ej5fM(long j) {
+        return m8094getWidthD9Ej5fM(j);
     }
 
     /* renamed from: component2-D9Ej5fM  reason: not valid java name */
-    public static final float m8083component2D9Ej5fM(long j) {
-        return m8091getHeightD9Ej5fM(j);
+    public static final float m8084component2D9Ej5fM(long j) {
+        return m8092getHeightD9Ej5fM(j);
     }
 
     /* renamed from: times-Gh9hcWk  reason: not valid java name */
-    public static final long m8099timesGh9hcWk(long j, int i) {
+    public static final long m8100timesGh9hcWk(long j, int i) {
         float f = i;
-        return m8084constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(m8093getWidthD9Ej5fM(j) * f)) << 32) | (Float.floatToRawIntBits(Dp.m7995constructorimpl(m8091getHeightD9Ej5fM(j) * f)) & 4294967295L));
+        return m8085constructorimpl((Float.floatToRawIntBits(Dp.m7996constructorimpl(m8094getWidthD9Ej5fM(j) * f)) << 32) | (Float.floatToRawIntBits(Dp.m7996constructorimpl(m8092getHeightD9Ej5fM(j) * f)) & 4294967295L));
     }
 
     /* renamed from: times-Gh9hcWk  reason: not valid java name */
-    public static final long m8098timesGh9hcWk(long j, float f) {
-        return m8084constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(m8093getWidthD9Ej5fM(j) * f)) << 32) | (Float.floatToRawIntBits(Dp.m7995constructorimpl(m8091getHeightD9Ej5fM(j) * f)) & 4294967295L));
+    public static final long m8099timesGh9hcWk(long j, float f) {
+        return m8085constructorimpl((Float.floatToRawIntBits(Dp.m7996constructorimpl(m8094getWidthD9Ej5fM(j) * f)) << 32) | (Float.floatToRawIntBits(Dp.m7996constructorimpl(m8092getHeightD9Ej5fM(j) * f)) & 4294967295L));
     }
 
     /* renamed from: div-Gh9hcWk  reason: not valid java name */
-    public static final long m8088divGh9hcWk(long j, int i) {
+    public static final long m8089divGh9hcWk(long j, int i) {
         float f = i;
-        return m8084constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(m8093getWidthD9Ej5fM(j) / f)) << 32) | (Float.floatToRawIntBits(Dp.m7995constructorimpl(m8091getHeightD9Ej5fM(j) / f)) & 4294967295L));
+        return m8085constructorimpl((Float.floatToRawIntBits(Dp.m7996constructorimpl(m8094getWidthD9Ej5fM(j) / f)) << 32) | (Float.floatToRawIntBits(Dp.m7996constructorimpl(m8092getHeightD9Ej5fM(j) / f)) & 4294967295L));
     }
 
     /* renamed from: div-Gh9hcWk  reason: not valid java name */
-    public static final long m8087divGh9hcWk(long j, float f) {
-        return m8084constructorimpl((Float.floatToRawIntBits(Dp.m7995constructorimpl(m8093getWidthD9Ej5fM(j) / f)) << 32) | (Float.floatToRawIntBits(Dp.m7995constructorimpl(m8091getHeightD9Ej5fM(j) / f)) & 4294967295L));
+    public static final long m8088divGh9hcWk(long j, float f) {
+        return m8085constructorimpl((Float.floatToRawIntBits(Dp.m7996constructorimpl(m8094getWidthD9Ej5fM(j) / f)) << 32) | (Float.floatToRawIntBits(Dp.m7996constructorimpl(m8092getHeightD9Ej5fM(j) / f)) & 4294967295L));
     }
 
     public String toString() {
-        return m8100toStringimpl(this.packedValue);
+        return m8101toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8100toStringimpl(long j) {
+    public static String m8101toStringimpl(long j) {
         if (j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            return ((Object) Dp.m8006toStringimpl(m8093getWidthD9Ej5fM(j))) + " x " + ((Object) Dp.m8006toStringimpl(m8091getHeightD9Ej5fM(j)));
+            return ((Object) Dp.m8007toStringimpl(m8094getWidthD9Ej5fM(j))) + " x " + ((Object) Dp.m8007toStringimpl(m8092getHeightD9Ej5fM(j)));
         }
         return "DpSize.Unspecified";
     }
@@ -144,28 +144,28 @@ public final class DpSize {
         }
 
         /* renamed from: getZero-MYxV2XQ  reason: not valid java name */
-        public final long m8103getZeroMYxV2XQ() {
+        public final long m8104getZeroMYxV2XQ() {
             return DpSize.Zero;
         }
 
         /* renamed from: getUnspecified-MYxV2XQ  reason: not valid java name */
-        public final long m8102getUnspecifiedMYxV2XQ() {
+        public final long m8103getUnspecifiedMYxV2XQ() {
             return DpSize.Unspecified;
         }
     }
 
     /* renamed from: getWidth-D9Ej5fM  reason: not valid java name */
-    public static final float m8093getWidthD9Ej5fM(long j) {
-        return Dp.m7995constructorimpl(Float.intBitsToFloat((int) (j >> 32)));
+    public static final float m8094getWidthD9Ej5fM(long j) {
+        return Dp.m7996constructorimpl(Float.intBitsToFloat((int) (j >> 32)));
     }
 
     /* renamed from: getHeight-D9Ej5fM  reason: not valid java name */
-    public static final float m8091getHeightD9Ej5fM(long j) {
-        return Dp.m7995constructorimpl(Float.intBitsToFloat((int) (j & 4294967295L)));
+    public static final float m8092getHeightD9Ej5fM(long j) {
+        return Dp.m7996constructorimpl(Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 
     /* renamed from: copy-DwJknco  reason: not valid java name */
-    public static final long m8085copyDwJknco(long j, float f, float f2) {
-        return m8084constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+    public static final long m8086copyDwJknco(long j, float f, float f2) {
+        return m8085constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 }

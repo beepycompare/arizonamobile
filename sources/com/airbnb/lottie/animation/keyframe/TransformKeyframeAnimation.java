@@ -133,7 +133,7 @@ public class TransformKeyframeAnimation {
             this.rotationX.addUpdateListener(new BaseKeyframeAnimation.AnimationListener() { // from class: com.airbnb.lottie.animation.keyframe.TransformKeyframeAnimation$$ExternalSyntheticLambda0
                 @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
                 public final void onValueChanged() {
-                    TransformKeyframeAnimation.this.m9223xd9082fe7();
+                    TransformKeyframeAnimation.this.m9235xd9082fe7();
                 }
             });
         }
@@ -143,7 +143,7 @@ public class TransformKeyframeAnimation {
             this.rotationY.addUpdateListener(new BaseKeyframeAnimation.AnimationListener() { // from class: com.airbnb.lottie.animation.keyframe.TransformKeyframeAnimation$$ExternalSyntheticLambda1
                 @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
                 public final void onValueChanged() {
-                    TransformKeyframeAnimation.this.m9224x26c7a7e8();
+                    TransformKeyframeAnimation.this.m9236x26c7a7e8();
                 }
             });
         }
@@ -153,7 +153,7 @@ public class TransformKeyframeAnimation {
             this.rotationZ.addUpdateListener(new BaseKeyframeAnimation.AnimationListener() { // from class: com.airbnb.lottie.animation.keyframe.TransformKeyframeAnimation$$ExternalSyntheticLambda2
                 @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
                 public final void onValueChanged() {
-                    TransformKeyframeAnimation.this.m9225x74871fe9();
+                    TransformKeyframeAnimation.this.m9237x74871fe9();
                 }
             });
         }
@@ -161,19 +161,19 @@ public class TransformKeyframeAnimation {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addListener$0$com-airbnb-lottie-animation-keyframe-TransformKeyframeAnimation  reason: not valid java name */
-    public /* synthetic */ void m9223xd9082fe7() {
+    public /* synthetic */ void m9235xd9082fe7() {
         this.rotation3DCacheDirty = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addListener$1$com-airbnb-lottie-animation-keyframe-TransformKeyframeAnimation  reason: not valid java name */
-    public /* synthetic */ void m9224x26c7a7e8() {
+    public /* synthetic */ void m9236x26c7a7e8() {
         this.rotation3DCacheDirty = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addListener$2$com-airbnb-lottie-animation-keyframe-TransformKeyframeAnimation  reason: not valid java name */
-    public /* synthetic */ void m9225x74871fe9() {
+    public /* synthetic */ void m9237x74871fe9() {
         this.rotation3DCacheDirty = true;
     }
 

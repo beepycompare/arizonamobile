@@ -18,7 +18,7 @@ import java.util.Locale;
 import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class W5 implements CounterReportApi, Parcelable {
     public static final Parcelable.Creator<W5> CREATOR = new V5();
 

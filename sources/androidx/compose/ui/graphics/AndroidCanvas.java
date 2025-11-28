@@ -72,40 +72,40 @@ public final class AndroidCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: concat-58bKbWc  reason: not valid java name */
-    public void mo5131concat58bKbWc(float[] fArr) {
-        if (MatrixKt.m5546isIdentity58bKbWc(fArr)) {
+    public void mo5132concat58bKbWc(float[] fArr) {
+        if (MatrixKt.m5547isIdentity58bKbWc(fArr)) {
             return;
         }
         android.graphics.Matrix matrix = new android.graphics.Matrix();
-        AndroidMatrixConversions_androidKt.m5147setFromEL8BTi8(matrix, fArr);
+        AndroidMatrixConversions_androidKt.m5148setFromEL8BTi8(matrix, fArr);
         this.internalCanvas.concat(matrix);
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: clipRect-N_I0leg  reason: not valid java name */
-    public void mo5130clipRectN_I0leg(float f, float f2, float f3, float f4, int i) {
-        this.internalCanvas.clipRect(f, f2, f3, f4, m5139toRegionOp7u2Bmg(i));
+    public void mo5131clipRectN_I0leg(float f, float f2, float f3, float f4, int i) {
+        this.internalCanvas.clipRect(f, f2, f3, f4, m5140toRegionOp7u2Bmg(i));
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: clipPath-mtrdD-E  reason: not valid java name */
-    public void mo5129clipPathmtrdDE(Path path, int i) {
+    public void mo5130clipPathmtrdDE(Path path, int i) {
         android.graphics.Canvas canvas = this.internalCanvas;
         if (path instanceof AndroidPath) {
-            canvas.clipPath(((AndroidPath) path).getInternalPath(), m5139toRegionOp7u2Bmg(i));
+            canvas.clipPath(((AndroidPath) path).getInternalPath(), m5140toRegionOp7u2Bmg(i));
             return;
         }
         throw new UnsupportedOperationException("Unable to obtain android.graphics.Path");
     }
 
     /* renamed from: toRegionOp--7u2Bmg  reason: not valid java name */
-    public final Region.Op m5139toRegionOp7u2Bmg(int i) {
-        return ClipOp.m5263equalsimpl0(i, ClipOp.Companion.m5267getDifferencertfAjoo()) ? Region.Op.DIFFERENCE : Region.Op.INTERSECT;
+    public final Region.Op m5140toRegionOp7u2Bmg(int i) {
+        return ClipOp.m5264equalsimpl0(i, ClipOp.Companion.m5268getDifferencertfAjoo()) ? Region.Op.DIFFERENCE : Region.Op.INTERSECT;
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawLine-Wko1d7g  reason: not valid java name */
-    public void mo5135drawLineWko1d7g(long j, long j2, Paint paint) {
+    public void mo5136drawLineWko1d7g(long j, long j2, Paint paint) {
         this.internalCanvas.drawLine(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)), paint.asFrameworkPaint());
     }
 
@@ -126,7 +126,7 @@ public final class AndroidCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawCircle-9KIMszo  reason: not valid java name */
-    public void mo5132drawCircle9KIMszo(long j, float f, Paint paint) {
+    public void mo5133drawCircle9KIMszo(long j, float f, Paint paint) {
         this.internalCanvas.drawCircle(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), f, paint.asFrameworkPaint());
     }
 
@@ -147,13 +147,13 @@ public final class AndroidCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawImage-d-4ec7I  reason: not valid java name */
-    public void mo5133drawImaged4ec7I(ImageBitmap imageBitmap, long j, Paint paint) {
+    public void mo5134drawImaged4ec7I(ImageBitmap imageBitmap, long j, Paint paint) {
         this.internalCanvas.drawBitmap(AndroidImageBitmap_androidKt.asAndroidBitmap(imageBitmap), Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), paint.asFrameworkPaint());
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawImageRect-HPBpro0  reason: not valid java name */
-    public void mo5134drawImageRectHPBpro0(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint) {
+    public void mo5135drawImageRectHPBpro0(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint) {
         if (this.srcRect == null) {
             this.srcRect = new Rect();
             this.dstRect = new Rect();
@@ -162,29 +162,29 @@ public final class AndroidCanvas implements Canvas {
         Bitmap asAndroidBitmap = AndroidImageBitmap_androidKt.asAndroidBitmap(imageBitmap);
         Rect rect = this.srcRect;
         Intrinsics.checkNotNull(rect);
-        rect.left = IntOffset.m8123getXimpl(j);
-        rect.top = IntOffset.m8124getYimpl(j);
-        rect.right = IntOffset.m8123getXimpl(j) + ((int) (j2 >> 32));
-        rect.bottom = IntOffset.m8124getYimpl(j) + ((int) (j2 & 4294967295L));
+        rect.left = IntOffset.m8124getXimpl(j);
+        rect.top = IntOffset.m8125getYimpl(j);
+        rect.right = IntOffset.m8124getXimpl(j) + ((int) (j2 >> 32));
+        rect.bottom = IntOffset.m8125getYimpl(j) + ((int) (j2 & 4294967295L));
         Unit unit = Unit.INSTANCE;
         Rect rect2 = this.dstRect;
         Intrinsics.checkNotNull(rect2);
-        rect2.left = IntOffset.m8123getXimpl(j3);
-        rect2.top = IntOffset.m8124getYimpl(j3);
-        rect2.right = IntOffset.m8123getXimpl(j3) + ((int) (j4 >> 32));
-        rect2.bottom = IntOffset.m8124getYimpl(j3) + ((int) (j4 & 4294967295L));
+        rect2.left = IntOffset.m8124getXimpl(j3);
+        rect2.top = IntOffset.m8125getYimpl(j3);
+        rect2.right = IntOffset.m8124getXimpl(j3) + ((int) (j4 >> 32));
+        rect2.bottom = IntOffset.m8125getYimpl(j3) + ((int) (j4 & 4294967295L));
         Unit unit2 = Unit.INSTANCE;
         canvas.drawBitmap(asAndroidBitmap, rect, rect2, paint.asFrameworkPaint());
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawPoints-O7TthRY  reason: not valid java name */
-    public void mo5136drawPointsO7TthRY(int i, List<Offset> list, Paint paint) {
-        if (PointMode.m5592equalsimpl0(i, PointMode.Companion.m5596getLinesr_lszbg())) {
+    public void mo5137drawPointsO7TthRY(int i, List<Offset> list, Paint paint) {
+        if (PointMode.m5593equalsimpl0(i, PointMode.Companion.m5597getLinesr_lszbg())) {
             drawLines(list, paint, 2);
-        } else if (PointMode.m5592equalsimpl0(i, PointMode.Companion.m5598getPolygonr_lszbg())) {
+        } else if (PointMode.m5593equalsimpl0(i, PointMode.Companion.m5599getPolygonr_lszbg())) {
             drawLines(list, paint, 1);
-        } else if (PointMode.m5592equalsimpl0(i, PointMode.Companion.m5597getPointsr_lszbg())) {
+        } else if (PointMode.m5593equalsimpl0(i, PointMode.Companion.m5598getPointsr_lszbg())) {
             drawPoints(list, paint);
         }
     }
@@ -204,9 +204,9 @@ public final class AndroidCanvas implements Canvas {
             android.graphics.Paint asFrameworkPaint = paint.asFrameworkPaint();
             int i2 = 0;
             while (i2 < list.size() - 1) {
-                long m5045unboximpl = list.get(i2).m5045unboximpl();
-                long m5045unboximpl2 = list.get(i2 + 1).m5045unboximpl();
-                this.internalCanvas.drawLine(Float.intBitsToFloat((int) (m5045unboximpl >> 32)), Float.intBitsToFloat((int) (m5045unboximpl & 4294967295L)), Float.intBitsToFloat((int) (m5045unboximpl2 >> 32)), Float.intBitsToFloat((int) (m5045unboximpl2 & 4294967295L)), asFrameworkPaint);
+                long m5046unboximpl = list.get(i2).m5046unboximpl();
+                long m5046unboximpl2 = list.get(i2 + 1).m5046unboximpl();
+                this.internalCanvas.drawLine(Float.intBitsToFloat((int) (m5046unboximpl >> 32)), Float.intBitsToFloat((int) (m5046unboximpl & 4294967295L)), Float.intBitsToFloat((int) (m5046unboximpl2 >> 32)), Float.intBitsToFloat((int) (m5046unboximpl2 & 4294967295L)), asFrameworkPaint);
                 i2 += i;
             }
         }
@@ -214,15 +214,15 @@ public final class AndroidCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawRawPoints-O7TthRY  reason: not valid java name */
-    public void mo5137drawRawPointsO7TthRY(int i, float[] fArr, Paint paint) {
+    public void mo5138drawRawPointsO7TthRY(int i, float[] fArr, Paint paint) {
         if (fArr.length % 2 != 0) {
             throw new IllegalArgumentException("points must have an even number of values");
         }
-        if (PointMode.m5592equalsimpl0(i, PointMode.Companion.m5596getLinesr_lszbg())) {
+        if (PointMode.m5593equalsimpl0(i, PointMode.Companion.m5597getLinesr_lszbg())) {
             drawRawLines(fArr, paint, 2);
-        } else if (PointMode.m5592equalsimpl0(i, PointMode.Companion.m5598getPolygonr_lszbg())) {
+        } else if (PointMode.m5593equalsimpl0(i, PointMode.Companion.m5599getPolygonr_lszbg())) {
             drawRawLines(fArr, paint, 1);
-        } else if (PointMode.m5592equalsimpl0(i, PointMode.Companion.m5597getPointsr_lszbg())) {
+        } else if (PointMode.m5593equalsimpl0(i, PointMode.Companion.m5598getPointsr_lszbg())) {
             drawRawPoints(fArr, paint, 2);
         }
     }
@@ -252,15 +252,15 @@ public final class AndroidCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawVertices-TPEHhCM  reason: not valid java name */
-    public void mo5138drawVerticesTPEHhCM(Vertices vertices, int i, Paint paint) {
-        this.internalCanvas.drawVertices(AndroidVertexMode_androidKt.m5184toAndroidVertexModeJOOmi9M(vertices.m5699getVertexModec2xauaI()), vertices.getPositions().length, vertices.getPositions(), 0, vertices.getTextureCoordinates(), 0, vertices.getColors(), 0, vertices.getIndices(), 0, vertices.getIndices().length, paint.asFrameworkPaint());
+    public void mo5139drawVerticesTPEHhCM(Vertices vertices, int i, Paint paint) {
+        this.internalCanvas.drawVertices(AndroidVertexMode_androidKt.m5185toAndroidVertexModeJOOmi9M(vertices.m5700getVertexModec2xauaI()), vertices.getPositions().length, vertices.getPositions(), 0, vertices.getTextureCoordinates(), 0, vertices.getColors(), 0, vertices.getIndices(), 0, vertices.getIndices().length, paint.asFrameworkPaint());
     }
 
     private final void drawPoints(List<Offset> list, Paint paint) {
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            long m5045unboximpl = list.get(i).m5045unboximpl();
-            this.internalCanvas.drawPoint(Float.intBitsToFloat((int) (m5045unboximpl >> 32)), Float.intBitsToFloat((int) (m5045unboximpl & 4294967295L)), paint.asFrameworkPaint());
+            long m5046unboximpl = list.get(i).m5046unboximpl();
+            this.internalCanvas.drawPoint(Float.intBitsToFloat((int) (m5046unboximpl >> 32)), Float.intBitsToFloat((int) (m5046unboximpl & 4294967295L)), paint.asFrameworkPaint());
         }
     }
 }

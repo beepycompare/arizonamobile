@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* renamed from: io.appmetrica.analytics.impl.x7  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0692x7 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */

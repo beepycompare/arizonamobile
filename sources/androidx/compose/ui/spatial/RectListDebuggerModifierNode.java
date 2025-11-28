@@ -23,8 +23,8 @@ final class RectListDebuggerModifierNode extends Modifier.Node implements DrawMo
 
     public RectListDebuggerModifierNode() {
         androidx.compose.ui.graphics.Paint Paint = AndroidPaint_androidKt.Paint();
-        Paint.mo5156setColor8_81llA(Color.Companion.m5313getRed0d7_KjU());
-        Paint.mo5160setStylek9PVt8s(PaintingStyle.Companion.m5559getStrokeTiuSbCo());
+        Paint.mo5157setColor8_81llA(Color.Companion.m5314getRed0d7_KjU());
+        Paint.mo5161setStylek9PVt8s(PaintingStyle.Companion.m5560getStrokeTiuSbCo());
         this.paint = Paint.asFrameworkPaint();
     }
 

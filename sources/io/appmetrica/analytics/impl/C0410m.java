@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 import java.util.HashSet;
 import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.m  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0410m implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */

@@ -70,9 +70,9 @@ public final class VectorComponent extends VNode {
         };
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.intrinsicColorFilter$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5092boximpl(Size.Companion.m5113getZeroNHjbRc()), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(Size.Companion.m5114getZeroNHjbRc()), null, 2, null);
         this.viewportSize$delegate = mutableStateOf$default2;
-        this.previousDrawSize = Size.Companion.m5112getUnspecifiedNHjbRc();
+        this.previousDrawSize = Size.Companion.m5113getUnspecifiedNHjbRc();
         this.rootScaleX = 1.0f;
         this.rootScaleY = 1.0f;
         this.drawVectorBlock = new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComponent$drawVectorBlock$1
@@ -95,16 +95,16 @@ public final class VectorComponent extends VNode {
                 VectorComponent vectorComponent = VectorComponent.this;
                 f = vectorComponent.rootScaleX;
                 f2 = vectorComponent.rootScaleY;
-                long m5051getZeroF1C5BW0 = Offset.Companion.m5051getZeroF1C5BW0();
+                long m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
                 DrawContext drawContext = drawScope.getDrawContext();
-                long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+                long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
                 drawContext.getCanvas().save();
                 try {
-                    drawContext.getTransform().mo5786scale0AR0LA0(f, f2, m5051getZeroF1C5BW0);
+                    drawContext.getTransform().mo5787scale0AR0LA0(f, f2, m5052getZeroF1C5BW0);
                     root.draw(drawScope);
                 } finally {
                     drawContext.getCanvas().restore();
-                    drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+                    drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
                 }
             }
         };
@@ -129,9 +129,9 @@ public final class VectorComponent extends VNode {
     }
 
     /* renamed from: getCacheBitmapConfig-_sVssgQ$ui_release  reason: not valid java name */
-    public final int m6025getCacheBitmapConfig_sVssgQ$ui_release() {
+    public final int m6026getCacheBitmapConfig_sVssgQ$ui_release() {
         ImageBitmap mCachedImage = this.cacheDrawScope.getMCachedImage();
-        return mCachedImage != null ? mCachedImage.mo5144getConfig_sVssgQ() : ImageBitmapConfig.Companion.m5511getArgb8888_sVssgQ();
+        return mCachedImage != null ? mCachedImage.mo5145getConfig_sVssgQ() : ImageBitmapConfig.Companion.m5512getArgb8888_sVssgQ();
     }
 
     public final Function0<Unit> getInvalidateCallback$ui_release() {
@@ -151,30 +151,30 @@ public final class VectorComponent extends VNode {
     }
 
     /* renamed from: getViewportSize-NH-jbRc$ui_release  reason: not valid java name */
-    public final long m6026getViewportSizeNHjbRc$ui_release() {
-        return ((Size) this.viewportSize$delegate.getValue()).m5109unboximpl();
+    public final long m6027getViewportSizeNHjbRc$ui_release() {
+        return ((Size) this.viewportSize$delegate.getValue()).m5110unboximpl();
     }
 
     /* renamed from: setViewportSize-uvyYCjk$ui_release  reason: not valid java name */
-    public final void m6027setViewportSizeuvyYCjk$ui_release(long j) {
-        this.viewportSize$delegate.setValue(Size.m5092boximpl(j));
+    public final void m6028setViewportSizeuvyYCjk$ui_release(long j) {
+        this.viewportSize$delegate.setValue(Size.m5093boximpl(j));
     }
 
     public final void draw(DrawScope drawScope, float f, ColorFilter colorFilter) {
-        int m5511getArgb8888_sVssgQ;
-        if (this.root.isTintable() && this.root.m6010getTintColor0d7_KjU() != 16 && VectorKt.tintableWithAlphaMask(getIntrinsicColorFilter$ui_release()) && VectorKt.tintableWithAlphaMask(colorFilter)) {
-            m5511getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5510getAlpha8_sVssgQ();
+        int m5512getArgb8888_sVssgQ;
+        if (this.root.isTintable() && this.root.m6011getTintColor0d7_KjU() != 16 && VectorKt.tintableWithAlphaMask(getIntrinsicColorFilter$ui_release()) && VectorKt.tintableWithAlphaMask(colorFilter)) {
+            m5512getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5511getAlpha8_sVssgQ();
         } else {
-            m5511getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5511getArgb8888_sVssgQ();
+            m5512getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5512getArgb8888_sVssgQ();
         }
-        int i = m5511getArgb8888_sVssgQ;
-        if (this.isDirty || !Size.m5100equalsimpl0(this.previousDrawSize, drawScope.mo5858getSizeNHjbRc()) || !ImageBitmapConfig.m5506equalsimpl0(i, m6025getCacheBitmapConfig_sVssgQ$ui_release())) {
-            this.tintFilter = ImageBitmapConfig.m5506equalsimpl0(i, ImageBitmapConfig.Companion.m5510getAlpha8_sVssgQ()) ? ColorFilter.Companion.m5320tintxETnrds$default(ColorFilter.Companion, VectorKt.m6033toOpaque8_81llA(this.root.m6010getTintColor0d7_KjU()), 0, 2, null) : null;
-            this.rootScaleX = Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32)) / Float.intBitsToFloat((int) (m6026getViewportSizeNHjbRc$ui_release() >> 32));
-            this.rootScaleY = Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L)) / Float.intBitsToFloat((int) (m6026getViewportSizeNHjbRc$ui_release() & 4294967295L));
-            this.cacheDrawScope.m6008drawCachedImageFqjB98A(i, IntSize.m8161constructorimpl((((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L)))) & 4294967295L) | (((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32)))) << 32)), drawScope, drawScope.getLayoutDirection(), this.drawVectorBlock);
+        int i = m5512getArgb8888_sVssgQ;
+        if (this.isDirty || !Size.m5101equalsimpl0(this.previousDrawSize, drawScope.mo5859getSizeNHjbRc()) || !ImageBitmapConfig.m5507equalsimpl0(i, m6026getCacheBitmapConfig_sVssgQ$ui_release())) {
+            this.tintFilter = ImageBitmapConfig.m5507equalsimpl0(i, ImageBitmapConfig.Companion.m5511getAlpha8_sVssgQ()) ? ColorFilter.Companion.m5321tintxETnrds$default(ColorFilter.Companion, VectorKt.m6034toOpaque8_81llA(this.root.m6011getTintColor0d7_KjU()), 0, 2, null) : null;
+            this.rootScaleX = Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)) / Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() >> 32));
+            this.rootScaleY = Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)) / Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() & 4294967295L));
+            this.cacheDrawScope.m6009drawCachedImageFqjB98A(i, IntSize.m8162constructorimpl((((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)))) & 4294967295L) | (((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)))) << 32)), drawScope, drawScope.getLayoutDirection(), this.drawVectorBlock);
             this.isDirty = false;
-            this.previousDrawSize = drawScope.mo5858getSizeNHjbRc();
+            this.previousDrawSize = drawScope.mo5859getSizeNHjbRc();
         }
         if (colorFilter == null) {
             if (getIntrinsicColorFilter$ui_release() != null) {
@@ -194,8 +194,8 @@ public final class VectorComponent extends VNode {
     public String toString() {
         StringBuilder sb = new StringBuilder("Params: \tname: ");
         sb.append(this.name).append("\n\tviewportWidth: ");
-        sb.append(Float.intBitsToFloat((int) (m6026getViewportSizeNHjbRc$ui_release() >> 32))).append("\n\tviewportHeight: ");
-        sb.append(Float.intBitsToFloat((int) (m6026getViewportSizeNHjbRc$ui_release() & 4294967295L))).append("\n");
+        sb.append(Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() >> 32))).append("\n\tviewportHeight: ");
+        sb.append(Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() & 4294967295L))).append("\n");
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
         return sb2;

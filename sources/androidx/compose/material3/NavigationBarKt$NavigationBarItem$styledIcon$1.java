@@ -67,7 +67,7 @@ final class NavigationBarKt$NavigationBarItem$styledIcon$1 implements Function2<
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-876637252, i, -1, "androidx.compose.material3.NavigationBarItem.<anonymous> (NavigationBar.kt:212)");
         }
-        State<Color> m130animateColorAsStateeuL9pac = SingleValueAnimationKt.m130animateColorAsStateeuL9pac(this.$colors.m2597iconColorWaAFU9c$material3(this.$selected, this.$enabled), this.$colorAnimationSpec, null, null, composer, 0, 12);
+        State<Color> m131animateColorAsStateeuL9pac = SingleValueAnimationKt.m131animateColorAsStateeuL9pac(this.$colors.m2598iconColorWaAFU9c$material3(this.$selected, this.$enabled), this.$colorAnimationSpec, null, null, composer, 0, 12);
         if (this.$label == null || !(this.$alwaysShowLabel || this.$selected)) {
             composer.startReplaceGroup(-634793532);
             composer.endReplaceGroup();
@@ -111,19 +111,19 @@ final class NavigationBarKt$NavigationBarItem$styledIcon$1 implements Function2<
         } else {
             composer.useNode();
         }
-        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-        Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 192646451, "C220@10128L78:NavigationBar.kt#uh7d8r");
-        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(invoke$lambda$0(m130animateColorAsStateeuL9pac))), function2, composer, ProvidedValue.$stable);
+        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(invoke$lambda$0(m131animateColorAsStateeuL9pac))), function2, composer, ProvidedValue.$stable);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         composer.endNode();
@@ -141,6 +141,6 @@ final class NavigationBarKt$NavigationBarItem$styledIcon$1 implements Function2<
     }
 
     private static final long invoke$lambda$0(State<Color> state) {
-        return state.getValue().m5289unboximpl();
+        return state.getValue().m5290unboximpl();
     }
 }

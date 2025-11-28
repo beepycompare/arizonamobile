@@ -22,18 +22,18 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class AlignmentLineKt {
     /* renamed from: paddingFrom-4j6BHR0$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m668paddingFrom4j6BHR0$default(Modifier modifier, AlignmentLine alignmentLine, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m669paddingFrom4j6BHR0$default(Modifier modifier, AlignmentLine alignmentLine, float f, float f2, int i, Object obj) {
         if ((i & 2) != 0) {
-            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
         if ((i & 4) != 0) {
-            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
-        return m667paddingFrom4j6BHR0(modifier, alignmentLine, f, f2);
+        return m668paddingFrom4j6BHR0(modifier, alignmentLine, f, f2);
     }
 
     /* renamed from: paddingFrom-4j6BHR0  reason: not valid java name */
-    public static final Modifier m667paddingFrom4j6BHR0(Modifier modifier, final AlignmentLine alignmentLine, final float f, final float f2) {
+    public static final Modifier m668paddingFrom4j6BHR0(Modifier modifier, final AlignmentLine alignmentLine, final float f, final float f2) {
         return modifier.then(new AlignmentLineOffsetDpElement(alignmentLine, f, f2, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.AlignmentLineKt$paddingFrom-4j6BHR0$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -50,26 +50,26 @@ public final class AlignmentLineKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("paddingFrom");
                 inspectorInfo.getProperties().set("alignmentLine", AlignmentLine.this);
-                inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_BEFORE, Dp.m7993boximpl(f));
-                inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_AFTER, Dp.m7993boximpl(f2));
+                inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_BEFORE, Dp.m7994boximpl(f));
+                inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_AFTER, Dp.m7994boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
 
     /* renamed from: paddingFrom-Y_r0B1c$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m670paddingFromY_r0B1c$default(Modifier modifier, AlignmentLine alignmentLine, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ Modifier m671paddingFromY_r0B1c$default(Modifier modifier, AlignmentLine alignmentLine, long j, long j2, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
+            j = TextUnit.Companion.m8201getUnspecifiedXSAIIZE();
         }
         long j3 = j;
         if ((i & 4) != 0) {
-            j2 = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
+            j2 = TextUnit.Companion.m8201getUnspecifiedXSAIIZE();
         }
-        return m669paddingFromY_r0B1c(modifier, alignmentLine, j3, j2);
+        return m670paddingFromY_r0B1c(modifier, alignmentLine, j3, j2);
     }
 
     /* renamed from: paddingFrom-Y_r0B1c  reason: not valid java name */
-    public static final Modifier m669paddingFromY_r0B1c(Modifier modifier, final AlignmentLine alignmentLine, final long j, final long j2) {
+    public static final Modifier m670paddingFromY_r0B1c(Modifier modifier, final AlignmentLine alignmentLine, final long j, final long j2) {
         AlignmentLine alignmentLine2;
         long j3;
         long j4;
@@ -94,8 +94,8 @@ public final class AlignmentLineKt {
                 public final void invoke2(InspectorInfo inspectorInfo) {
                     inspectorInfo.setName("paddingFrom");
                     inspectorInfo.getProperties().set("alignmentLine", AlignmentLine.this);
-                    inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_BEFORE, TextUnit.m8179boximpl(j));
-                    inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_AFTER, TextUnit.m8179boximpl(j2));
+                    inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_BEFORE, TextUnit.m8180boximpl(j));
+                    inspectorInfo.getProperties().set(TtmlNode.ANNOTATION_POSITION_AFTER, TextUnit.m8180boximpl(j2));
                 }
             };
         } else {
@@ -108,58 +108,58 @@ public final class AlignmentLineKt {
     }
 
     /* renamed from: paddingFromBaseline-VpY3zN4$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m672paddingFromBaselineVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m673paddingFromBaselineVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
-        return m671paddingFromBaselineVpY3zN4(modifier, f, f2);
+        return m672paddingFromBaselineVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: paddingFromBaseline-wCyjxdI$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m674paddingFromBaselinewCyjxdI$default(Modifier modifier, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ Modifier m675paddingFromBaselinewCyjxdI$default(Modifier modifier, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
+            j = TextUnit.Companion.m8201getUnspecifiedXSAIIZE();
         }
         if ((i & 2) != 0) {
-            j2 = TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
+            j2 = TextUnit.Companion.m8201getUnspecifiedXSAIIZE();
         }
-        return m673paddingFromBaselinewCyjxdI(modifier, j, j2);
+        return m674paddingFromBaselinewCyjxdI(modifier, j, j2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: alignmentLineOffsetMeasure-tjqqzMA  reason: not valid java name */
-    public static final MeasureResult m666alignmentLineOffsetMeasuretjqqzMA(MeasureScope measureScope, final AlignmentLine alignmentLine, final float f, float f2, Measurable measurable, long j) {
+    public static final MeasureResult m667alignmentLineOffsetMeasuretjqqzMA(MeasureScope measureScope, final AlignmentLine alignmentLine, final float f, float f2, Measurable measurable, long j) {
         int max;
         int height;
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(getHorizontal(alignmentLine) ? Constraints.m7938copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null) : Constraints.m7938copyZbe2FdA$default(j, 0, 0, 0, 0, 14, null));
-        int i = mo6697measureBRTryo0.get(alignmentLine);
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(getHorizontal(alignmentLine) ? Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null) : Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 14, null));
+        int i = mo6698measureBRTryo0.get(alignmentLine);
         if (i == Integer.MIN_VALUE) {
             i = 0;
         }
-        int height2 = getHorizontal(alignmentLine) ? mo6697measureBRTryo0.getHeight() : mo6697measureBRTryo0.getWidth();
-        int m7947getMaxHeightimpl = (getHorizontal(alignmentLine) ? Constraints.m7947getMaxHeightimpl(j) : Constraints.m7948getMaxWidthimpl(j)) - height2;
-        final int coerceIn = RangesKt.coerceIn((!Float.isNaN(f) ? measureScope.mo423roundToPx0680j_4(f) : 0) - i, 0, m7947getMaxHeightimpl);
-        final int coerceIn2 = RangesKt.coerceIn(((!Float.isNaN(f2) ? measureScope.mo423roundToPx0680j_4(f2) : 0) - height2) + i, 0, m7947getMaxHeightimpl - coerceIn);
+        int height2 = getHorizontal(alignmentLine) ? mo6698measureBRTryo0.getHeight() : mo6698measureBRTryo0.getWidth();
+        int m7948getMaxHeightimpl = (getHorizontal(alignmentLine) ? Constraints.m7948getMaxHeightimpl(j) : Constraints.m7949getMaxWidthimpl(j)) - height2;
+        final int coerceIn = RangesKt.coerceIn((!Float.isNaN(f) ? measureScope.mo424roundToPx0680j_4(f) : 0) - i, 0, m7948getMaxHeightimpl);
+        final int coerceIn2 = RangesKt.coerceIn(((!Float.isNaN(f2) ? measureScope.mo424roundToPx0680j_4(f2) : 0) - height2) + i, 0, m7948getMaxHeightimpl - coerceIn);
         if (getHorizontal(alignmentLine)) {
-            max = mo6697measureBRTryo0.getWidth();
+            max = mo6698measureBRTryo0.getWidth();
         } else {
-            max = Math.max(mo6697measureBRTryo0.getWidth() + coerceIn + coerceIn2, Constraints.m7950getMinWidthimpl(j));
+            max = Math.max(mo6698measureBRTryo0.getWidth() + coerceIn + coerceIn2, Constraints.m7951getMinWidthimpl(j));
         }
         final int i2 = max;
         if (getHorizontal(alignmentLine)) {
-            height = Math.max(mo6697measureBRTryo0.getHeight() + coerceIn + coerceIn2, Constraints.m7949getMinHeightimpl(j));
+            height = Math.max(mo6698measureBRTryo0.getHeight() + coerceIn + coerceIn2, Constraints.m7950getMinHeightimpl(j));
         } else {
-            height = mo6697measureBRTryo0.getHeight();
+            height = mo6698measureBRTryo0.getHeight();
         }
         final int i3 = height;
         return MeasureScope.layout$default(measureScope, i2, i3, null, new Function1() { // from class: androidx.compose.foundation.layout.AlignmentLineKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit alignmentLineOffsetMeasure_tjqqzMA$lambda$3;
-                alignmentLineOffsetMeasure_tjqqzMA$lambda$3 = AlignmentLineKt.alignmentLineOffsetMeasure_tjqqzMA$lambda$3(AlignmentLine.this, f, coerceIn, i2, coerceIn2, mo6697measureBRTryo0, i3, (Placeable.PlacementScope) obj);
+                alignmentLineOffsetMeasure_tjqqzMA$lambda$3 = AlignmentLineKt.alignmentLineOffsetMeasure_tjqqzMA$lambda$3(AlignmentLine.this, f, coerceIn, i2, coerceIn2, mo6698measureBRTryo0, i3, (Placeable.PlacementScope) obj);
                 return alignmentLineOffsetMeasure_tjqqzMA$lambda$3;
             }
         }, 4, null);
@@ -172,10 +172,10 @@ public final class AlignmentLineKt {
         if (getHorizontal(alignmentLine)) {
             width = 0;
         } else {
-            width = !Dp.m8000equalsimpl0(f, Dp.Companion.m8015getUnspecifiedD9Ej5fM()) ? i : (i2 - i3) - placeable.getWidth();
+            width = !Dp.m8001equalsimpl0(f, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) ? i : (i2 - i3) - placeable.getWidth();
         }
         if (getHorizontal(alignmentLine)) {
-            if (Dp.m8000equalsimpl0(f, Dp.Companion.m8015getUnspecifiedD9Ej5fM())) {
+            if (Dp.m8001equalsimpl0(f, Dp.Companion.m8016getUnspecifiedD9Ej5fM())) {
                 i = (i4 - i3) - placeable.getHeight();
             }
             i5 = i;
@@ -191,17 +191,17 @@ public final class AlignmentLineKt {
     }
 
     /* renamed from: paddingFromBaseline-VpY3zN4  reason: not valid java name */
-    public static final Modifier m671paddingFromBaselineVpY3zN4(Modifier modifier, float f, float f2) {
+    public static final Modifier m672paddingFromBaselineVpY3zN4(Modifier modifier, float f, float f2) {
         Modifier.Companion companion;
         Modifier.Companion companion2;
         if (!Float.isNaN(f)) {
-            companion = m668paddingFrom4j6BHR0$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getFirstBaseline(), f, 0.0f, 4, null);
+            companion = m669paddingFrom4j6BHR0$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getFirstBaseline(), f, 0.0f, 4, null);
         } else {
             companion = Modifier.Companion;
         }
         Modifier then = modifier.then(companion);
         if (!Float.isNaN(f2)) {
-            companion2 = m668paddingFrom4j6BHR0$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getLastBaseline(), 0.0f, f2, 2, null);
+            companion2 = m669paddingFrom4j6BHR0$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getLastBaseline(), 0.0f, f2, 2, null);
         } else {
             companion2 = Modifier.Companion;
         }
@@ -209,14 +209,14 @@ public final class AlignmentLineKt {
     }
 
     /* renamed from: paddingFromBaseline-wCyjxdI  reason: not valid java name */
-    public static final Modifier m673paddingFromBaselinewCyjxdI(Modifier modifier, long j, long j2) {
-        Modifier.Companion m670paddingFromY_r0B1c$default;
-        Modifier then = modifier.then(TextUnit.m8187getRawTypeimpl(j) == 0 ? Modifier.Companion : m670paddingFromY_r0B1c$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getFirstBaseline(), j, 0L, 4, null));
-        if (TextUnit.m8187getRawTypeimpl(j2) != 0) {
-            m670paddingFromY_r0B1c$default = m670paddingFromY_r0B1c$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getLastBaseline(), 0L, j2, 2, null);
+    public static final Modifier m674paddingFromBaselinewCyjxdI(Modifier modifier, long j, long j2) {
+        Modifier.Companion m671paddingFromY_r0B1c$default;
+        Modifier then = modifier.then(TextUnit.m8188getRawTypeimpl(j) == 0 ? Modifier.Companion : m671paddingFromY_r0B1c$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getFirstBaseline(), j, 0L, 4, null));
+        if (TextUnit.m8188getRawTypeimpl(j2) != 0) {
+            m671paddingFromY_r0B1c$default = m671paddingFromY_r0B1c$default(Modifier.Companion, androidx.compose.ui.layout.AlignmentLineKt.getLastBaseline(), 0L, j2, 2, null);
         } else {
-            m670paddingFromY_r0B1c$default = Modifier.Companion;
+            m671paddingFromY_r0B1c$default = Modifier.Companion;
         }
-        return then.then(m670paddingFromY_r0B1c$default);
+        return then.then(m671paddingFromY_r0B1c$default);
     }
 }

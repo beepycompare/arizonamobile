@@ -3,7 +3,7 @@ package io.appmetrica.analytics.screenshot.impl;
 import android.os.Bundle;
 import io.appmetrica.analytics.modulesapi.internal.client.BundleToServiceConfigConverter;
 /* renamed from: io.appmetrica.analytics.screenshot.impl.h  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0766h implements BundleToServiceConfigConverter {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.BundleToServiceConfigConverter
     /* renamed from: a */

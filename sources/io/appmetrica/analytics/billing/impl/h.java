@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.billing.impl;
 
 import io.appmetrica.analytics.billinginterface.internal.ProductType;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class h {
 
     /* renamed from: a  reason: collision with root package name */

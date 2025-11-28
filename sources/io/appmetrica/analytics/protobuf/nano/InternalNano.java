@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class InternalNano {
     public static final int TYPE_BOOL = 8;
     public static final int TYPE_BYTES = 12;
@@ -41,7 +41,7 @@ public final class InternalNano {
     public static void cloneUnknownFieldData(ExtendableMessageNano extendableMessageNano, ExtendableMessageNano extendableMessageNano2) {
         FieldArray fieldArray = extendableMessageNano.unknownFieldData;
         if (fieldArray != null) {
-            extendableMessageNano2.unknownFieldData = fieldArray.m9837clone();
+            extendableMessageNano2.unknownFieldData = fieldArray.m9895clone();
         }
     }
 

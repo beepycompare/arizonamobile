@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.coroutines.PooledConnectionImpl", f = "ConnectionPoolImpl.kt", i = {0, 1, 4}, l = {392, 396, 410, 410, 410}, m = "transaction", n = {"block", FirebaseAnalytics.Param.SUCCESS, "exception"}, s = {"L$0", "I$0", "L$0"})
+@DebugMetadata(c = "androidx.room.coroutines.PooledConnectionImpl", f = "ConnectionPoolImpl.kt", i = {0, 1, 4}, l = {464, 468, 482, 482, 482}, m = "transaction", n = {"block", FirebaseAnalytics.Param.SUCCESS, "exception"}, s = {"L$0", "I$0", "L$0"})
 /* loaded from: classes3.dex */
 public final class PooledConnectionImpl$transaction$1<R> extends ContinuationImpl {
     int I$0;

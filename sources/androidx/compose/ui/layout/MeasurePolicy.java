@@ -9,7 +9,7 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface MeasurePolicy {
     /* renamed from: measure-3p2s80s */
-    MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j);
+    MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j);
 
     /* compiled from: MeasurePolicy.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -43,7 +43,7 @@ public interface MeasurePolicy {
             arrayList.add(new DefaultIntrinsicMeasurable(list.get(i2), IntrinsicMinMax.Min, IntrinsicWidthHeight.Width));
         }
         long Constraints$default = ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null);
-        return mo52measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getWidth();
+        return mo53measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getWidth();
     }
 
     default int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
@@ -53,7 +53,7 @@ public interface MeasurePolicy {
             arrayList.add(new DefaultIntrinsicMeasurable(list.get(i2), IntrinsicMinMax.Min, IntrinsicWidthHeight.Height));
         }
         long Constraints$default = ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null);
-        return mo52measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getHeight();
+        return mo53measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getHeight();
     }
 
     default int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
@@ -63,7 +63,7 @@ public interface MeasurePolicy {
             arrayList.add(new DefaultIntrinsicMeasurable(list.get(i2), IntrinsicMinMax.Max, IntrinsicWidthHeight.Width));
         }
         long Constraints$default = ConstraintsKt.Constraints$default(0, 0, 0, i, 7, null);
-        return mo52measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getWidth();
+        return mo53measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getWidth();
     }
 
     default int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
@@ -73,6 +73,6 @@ public interface MeasurePolicy {
             arrayList.add(new DefaultIntrinsicMeasurable(list.get(i2), IntrinsicMinMax.Max, IntrinsicWidthHeight.Height));
         }
         long Constraints$default = ConstraintsKt.Constraints$default(0, i, 0, 0, 13, null);
-        return mo52measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getHeight();
+        return mo53measure3p2s80s(new IntrinsicsMeasureScope(intrinsicMeasureScope, intrinsicMeasureScope.getLayoutDirection()), arrayList, Constraints$default).getHeight();
     }
 }

@@ -20,7 +20,7 @@ public final class CancelIndicatingFocusBoundaryScope implements FocusEnterExitS
 
     @Override // androidx.compose.ui.focus.FocusEnterExitScope
     /* renamed from: getRequestedFocusDirection-dhqQ-8s  reason: not valid java name */
-    public int mo4910getRequestedFocusDirectiondhqQ8s() {
+    public int mo4911getRequestedFocusDirectiondhqQ8s() {
         return this.requestedFocusDirection;
     }
 

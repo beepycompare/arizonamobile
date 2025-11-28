@@ -4,7 +4,7 @@ import android.content.Intent;
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController;
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleObserver;
 /* renamed from: io.appmetrica.analytics.impl.hd  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0296hd implements ModuleServiceLifecycleController {
 
     /* renamed from: a  reason: collision with root package name */

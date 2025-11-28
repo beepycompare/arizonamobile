@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.coroutines.PooledConnectionImpl", f = "ConnectionPoolImpl.kt", i = {0, 0, 0}, l = {568}, m = "usePrepared", n = {"sql", "block", "$this$withLock_u24default$iv"}, s = {"L$0", "L$1", "L$2"})
+@DebugMetadata(c = "androidx.room.coroutines.PooledConnectionImpl", f = "ConnectionPoolImpl.kt", i = {0, 0, 0}, l = {640}, m = "usePrepared", n = {"sql", "block", "$this$withLock_u24default$iv"}, s = {"L$0", "L$1", "L$2"})
 /* loaded from: classes3.dex */
 public final class PooledConnectionImpl$usePrepared$1<R> extends ContinuationImpl {
     Object L$0;

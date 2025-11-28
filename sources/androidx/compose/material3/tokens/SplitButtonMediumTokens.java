@@ -13,25 +13,25 @@ public final class SplitButtonMediumTokens {
     private static final float TrailingButtonLeadingSpace;
     private static final float TrailingButtonTrailingSpace;
     public static final SplitButtonMediumTokens INSTANCE = new SplitButtonMediumTokens();
-    private static final float BetweenSpace = Dp.m7995constructorimpl((float) 2.0d);
-    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 56.0d);
+    private static final float BetweenSpace = Dp.m7996constructorimpl((float) 2.0d);
+    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 56.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final CornerSize InnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueExtraSmall();
     private static final CornerSize InnerHoveredCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueMedium();
     private static final CornerSize InnerPressedCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueMedium();
-    private static final float TrailingIconSize = Dp.m7995constructorimpl((float) 26.0d);
+    private static final float TrailingIconSize = Dp.m7996constructorimpl((float) 26.0d);
     private static final float TrailingInnerSelectedCornerCornerSizePercent = 50.0f;
 
     private SplitButtonMediumTokens() {
     }
 
     /* renamed from: getBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4282getBetweenSpaceD9Ej5fM() {
+    public final float m4283getBetweenSpaceD9Ej5fM() {
         return BetweenSpace;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4283getContainerHeightD9Ej5fM() {
+    public final float m4284getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -52,17 +52,17 @@ public final class SplitButtonMediumTokens {
     }
 
     /* renamed from: getLeadingButtonLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4284getLeadingButtonLeadingSpaceD9Ej5fM() {
+    public final float m4285getLeadingButtonLeadingSpaceD9Ej5fM() {
         return LeadingButtonLeadingSpace;
     }
 
     /* renamed from: getLeadingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4285getLeadingButtonTrailingSpaceD9Ej5fM() {
+    public final float m4286getLeadingButtonTrailingSpaceD9Ej5fM() {
         return LeadingButtonTrailingSpace;
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4288getTrailingIconSizeD9Ej5fM() {
+    public final float m4289getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 
@@ -71,21 +71,21 @@ public final class SplitButtonMediumTokens {
     }
 
     /* renamed from: getTrailingButtonLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4286getTrailingButtonLeadingSpaceD9Ej5fM() {
+    public final float m4287getTrailingButtonLeadingSpaceD9Ej5fM() {
         return TrailingButtonLeadingSpace;
     }
 
     /* renamed from: getTrailingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4287getTrailingButtonTrailingSpaceD9Ej5fM() {
+    public final float m4288getTrailingButtonTrailingSpaceD9Ej5fM() {
         return TrailingButtonTrailingSpace;
     }
 
     static {
         float f = (float) 24.0d;
-        LeadingButtonLeadingSpace = Dp.m7995constructorimpl(f);
-        LeadingButtonTrailingSpace = Dp.m7995constructorimpl(f);
+        LeadingButtonLeadingSpace = Dp.m7996constructorimpl(f);
+        LeadingButtonTrailingSpace = Dp.m7996constructorimpl(f);
         float f2 = (float) 15.0d;
-        TrailingButtonLeadingSpace = Dp.m7995constructorimpl(f2);
-        TrailingButtonTrailingSpace = Dp.m7995constructorimpl(f2);
+        TrailingButtonLeadingSpace = Dp.m7996constructorimpl(f2);
+        TrailingButtonTrailingSpace = Dp.m7996constructorimpl(f2);
     }
 }

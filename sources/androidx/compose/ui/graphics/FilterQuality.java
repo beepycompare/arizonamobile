@@ -11,46 +11,46 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FilterQuality {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m5373constructorimpl(0);
-    private static final int Low = m5373constructorimpl(1);
-    private static final int Medium = m5373constructorimpl(2);
-    private static final int High = m5373constructorimpl(3);
+    private static final int None = m5374constructorimpl(0);
+    private static final int Low = m5374constructorimpl(1);
+    private static final int Medium = m5374constructorimpl(2);
+    private static final int High = m5374constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FilterQuality m5372boximpl(int i) {
+    public static final /* synthetic */ FilterQuality m5373boximpl(int i) {
         return new FilterQuality(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5373constructorimpl(int i) {
+    public static int m5374constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5374equalsimpl(int i, Object obj) {
-        return (obj instanceof FilterQuality) && i == ((FilterQuality) obj).m5378unboximpl();
+    public static boolean m5375equalsimpl(int i, Object obj) {
+        return (obj instanceof FilterQuality) && i == ((FilterQuality) obj).m5379unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5375equalsimpl0(int i, int i2) {
+    public static final boolean m5376equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5376hashCodeimpl(int i) {
+    public static int m5377hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5374equalsimpl(this.value, obj);
+        return m5375equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5376hashCodeimpl(this.value);
+        return m5377hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5378unboximpl() {
+    public final /* synthetic */ int m5379unboximpl() {
         return this.value;
     }
 
@@ -74,32 +74,32 @@ public final class FilterQuality {
         }
 
         /* renamed from: getNone-f-v9h1I  reason: not valid java name */
-        public final int m5382getNonefv9h1I() {
+        public final int m5383getNonefv9h1I() {
             return FilterQuality.None;
         }
 
         /* renamed from: getLow-f-v9h1I  reason: not valid java name */
-        public final int m5380getLowfv9h1I() {
+        public final int m5381getLowfv9h1I() {
             return FilterQuality.Low;
         }
 
         /* renamed from: getMedium-f-v9h1I  reason: not valid java name */
-        public final int m5381getMediumfv9h1I() {
+        public final int m5382getMediumfv9h1I() {
             return FilterQuality.Medium;
         }
 
         /* renamed from: getHigh-f-v9h1I  reason: not valid java name */
-        public final int m5379getHighfv9h1I() {
+        public final int m5380getHighfv9h1I() {
             return FilterQuality.High;
         }
     }
 
     public String toString() {
-        return m5377toStringimpl(this.value);
+        return m5378toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5377toStringimpl(int i) {
-        return m5375equalsimpl0(i, None) ? "None" : m5375equalsimpl0(i, Low) ? "Low" : m5375equalsimpl0(i, Medium) ? "Medium" : m5375equalsimpl0(i, High) ? "High" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5378toStringimpl(int i) {
+        return m5376equalsimpl0(i, None) ? "None" : m5376equalsimpl0(i, Low) ? "Low" : m5376equalsimpl0(i, Medium) ? "Medium" : m5376equalsimpl0(i, High) ? "High" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

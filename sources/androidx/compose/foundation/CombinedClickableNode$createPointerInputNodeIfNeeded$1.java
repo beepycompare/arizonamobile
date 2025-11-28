@@ -131,7 +131,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
             function0.invoke();
         }
         if (combinedClickableNode.getHapticFeedbackEnabled()) {
-            ((HapticFeedback) CompositionLocalConsumerModifierNodeKt.currentValueOf(combinedClickableNode, CompositionLocalsKt.getLocalHapticFeedback())).mo6053performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6066getLongPress5zf0vsI());
+            ((HapticFeedback) CompositionLocalConsumerModifierNodeKt.currentValueOf(combinedClickableNode, CompositionLocalsKt.getLocalHapticFeedback())).mo6054performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6067getLongPress5zf0vsI());
         }
         return Unit.INSTANCE;
     }
@@ -155,11 +155,11 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m328invoked4ec7I(pressGestureScope, offset.m5045unboximpl(), continuation);
+            return m329invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m328invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m329invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.this$0, continuation);
             anonymousClass3.L$0 = pressGestureScope;
             anonymousClass3.J$0 = j;
@@ -176,7 +176,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                 long j = this.J$0;
                 if (this.this$0.getEnabled()) {
                     this.label = 1;
-                    if (this.this$0.m231handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
+                    if (this.this$0.m232handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }

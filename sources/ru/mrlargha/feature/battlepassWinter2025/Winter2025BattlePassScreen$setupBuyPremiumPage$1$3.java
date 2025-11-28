@@ -3,6 +3,7 @@ package ru.mrlargha.feature.battlepassWinter2025;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -21,7 +22,7 @@ import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassBuyP
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Winter2025BattlePass.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$setupBuyPremiumPage$1$3", f = "Winter2025BattlePass.kt", i = {1, 2, 2}, l = {431, 438, 445}, m = "invokeSuspend", n = {"bitmap1", "bitmap1", "bitmap2"}, s = {"L$0", "L$0", "L$1"}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$setupBuyPremiumPage$1$3", f = "Winter2025BattlePass.kt", i = {1, 2, 2}, l = {413, TypedValues.CycleType.TYPE_EASING, 427}, m = "invokeSuspend", n = {"bitmap1", "bitmap1", "bitmap2"}, s = {"L$0", "L$0", "L$1"}, v = 1)
 /* loaded from: classes6.dex */
 public final class Winter2025BattlePassScreen$setupBuyPremiumPage$1$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ WinterBattlepassBuyPremiumLayoutBinding $this_apply;

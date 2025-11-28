@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.PlatformIdentifiers;
 import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class S5 extends BaseRequestConfig.DataSource {
 
     /* renamed from: a  reason: collision with root package name */

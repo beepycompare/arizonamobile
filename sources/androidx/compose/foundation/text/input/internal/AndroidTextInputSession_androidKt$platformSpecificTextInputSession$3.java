@@ -131,15 +131,15 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void invokeSuspend$lambda$0(ComposeInputMethodManager composeInputMethodManager, TextFieldCharSequence textFieldCharSequence, TextFieldCharSequence textFieldCharSequence2, boolean z) {
-            long m1446getSelectiond9O1mEE = textFieldCharSequence.m1446getSelectiond9O1mEE();
-            TextRange m1445getCompositionMzsxiRA = textFieldCharSequence.m1445getCompositionMzsxiRA();
-            long m1446getSelectiond9O1mEE2 = textFieldCharSequence2.m1446getSelectiond9O1mEE();
-            TextRange m1445getCompositionMzsxiRA2 = textFieldCharSequence2.m1445getCompositionMzsxiRA();
+            long m1447getSelectiond9O1mEE = textFieldCharSequence.m1447getSelectiond9O1mEE();
+            TextRange m1446getCompositionMzsxiRA = textFieldCharSequence.m1446getCompositionMzsxiRA();
+            long m1447getSelectiond9O1mEE2 = textFieldCharSequence2.m1447getSelectiond9O1mEE();
+            TextRange m1446getCompositionMzsxiRA2 = textFieldCharSequence2.m1446getCompositionMzsxiRA();
             if (z) {
                 composeInputMethodManager.restartInput();
-            } else if (TextRange.m7450equalsimpl0(m1446getSelectiond9O1mEE, m1446getSelectiond9O1mEE2) && Intrinsics.areEqual(m1445getCompositionMzsxiRA, m1445getCompositionMzsxiRA2)) {
+            } else if (TextRange.m7451equalsimpl0(m1447getSelectiond9O1mEE, m1447getSelectiond9O1mEE2) && Intrinsics.areEqual(m1446getCompositionMzsxiRA, m1446getCompositionMzsxiRA2)) {
             } else {
-                composeInputMethodManager.updateSelection(TextRange.m7455getMinimpl(m1446getSelectiond9O1mEE2), TextRange.m7454getMaximpl(m1446getSelectiond9O1mEE2), m1445getCompositionMzsxiRA2 != null ? TextRange.m7455getMinimpl(m1445getCompositionMzsxiRA2.m7461unboximpl()) : -1, m1445getCompositionMzsxiRA2 != null ? TextRange.m7454getMaximpl(m1445getCompositionMzsxiRA2.m7461unboximpl()) : -1);
+                composeInputMethodManager.updateSelection(TextRange.m7456getMinimpl(m1447getSelectiond9O1mEE2), TextRange.m7455getMaximpl(m1447getSelectiond9O1mEE2), m1446getCompositionMzsxiRA2 != null ? TextRange.m7456getMinimpl(m1446getCompositionMzsxiRA2.m7462unboximpl()) : -1, m1446getCompositionMzsxiRA2 != null ? TextRange.m7455getMaximpl(m1446getCompositionMzsxiRA2.m7462unboximpl()) : -1);
             }
         }
     }
@@ -196,7 +196,7 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
             }
         }, 1, null);
         AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1 androidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1 = new AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1(new DefaultImeEditCommandScope(transformedTextFieldState), transformedTextFieldState, composeInputMethodManager, function1, receiveContentConfiguration, cursorAnchorInfoController, textLayoutState, function0, viewConfiguration);
-        EditorInfo_androidKt.m1499updatepLxbY9I(editorInfo, transformedTextFieldState.getVisualText(), transformedTextFieldState.getVisualText().m1446getSelectiond9O1mEE(), imeOptions, receiveContentConfiguration != null ? AndroidTextInputSession_androidKt.ALL_MIME_TYPES : null);
+        EditorInfo_androidKt.m1500updatepLxbY9I(editorInfo, transformedTextFieldState.getVisualText(), transformedTextFieldState.getVisualText().m1447getSelectiond9O1mEE(), imeOptions, receiveContentConfiguration != null ? AndroidTextInputSession_androidKt.ALL_MIME_TYPES : null);
         return new StatelessInputConnection(androidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1, editorInfo);
     }
 

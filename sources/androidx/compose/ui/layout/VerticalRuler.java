@@ -26,7 +26,7 @@ public final class VerticalRuler extends Ruler {
 
     @Override // androidx.compose.ui.layout.Ruler
     public float calculateCoordinate$ui_release(float f, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2) {
-        return Float.intBitsToFloat((int) (layoutCoordinates2.mo6706localPositionOfR5De75A(layoutCoordinates, Offset.m5027constructorimpl((Float.floatToRawIntBits(((int) (layoutCoordinates.mo6705getSizeYbymL2g() & 4294967295L)) / 2.0f) & 4294967295L) | (Float.floatToRawIntBits(f) << 32))) >> 32));
+        return Float.intBitsToFloat((int) (layoutCoordinates2.mo6707localPositionOfR5De75A(layoutCoordinates, Offset.m5028constructorimpl((Float.floatToRawIntBits(((int) (layoutCoordinates.mo6706getSizeYbymL2g() & 4294967295L)) / 2.0f) & 4294967295L) | (Float.floatToRawIntBits(f) << 32))) >> 32));
     }
 
     /* compiled from: Ruler.kt */

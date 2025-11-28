@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.io.Closeable;
 /* renamed from: io.appmetrica.analytics.impl.gc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0269gc implements F6 {
 
     /* renamed from: a  reason: collision with root package name */

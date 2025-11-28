@@ -10,54 +10,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class BaselineShift {
     private final float multiplier;
     public static final Companion Companion = new Companion(null);
-    private static final float Superscript = m7752constructorimpl(0.5f);
-    private static final float Subscript = m7752constructorimpl(-0.5f);
-    private static final float None = m7752constructorimpl(0.0f);
+    private static final float Superscript = m7753constructorimpl(0.5f);
+    private static final float Subscript = m7753constructorimpl(-0.5f);
+    private static final float None = m7753constructorimpl(0.0f);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BaselineShift m7751boximpl(float f) {
+    public static final /* synthetic */ BaselineShift m7752boximpl(float f) {
         return new BaselineShift(f);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static float m7752constructorimpl(float f) {
+    public static float m7753constructorimpl(float f) {
         return f;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7753equalsimpl(float f, Object obj) {
-        return (obj instanceof BaselineShift) && Float.compare(f, ((BaselineShift) obj).m7757unboximpl()) == 0;
+    public static boolean m7754equalsimpl(float f, Object obj) {
+        return (obj instanceof BaselineShift) && Float.compare(f, ((BaselineShift) obj).m7758unboximpl()) == 0;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7754equalsimpl0(float f, float f2) {
+    public static final boolean m7755equalsimpl0(float f, float f2) {
         return Float.compare(f, f2) == 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7755hashCodeimpl(float f) {
+    public static int m7756hashCodeimpl(float f) {
         return Float.hashCode(f);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7756toStringimpl(float f) {
+    public static String m7757toStringimpl(float f) {
         return "BaselineShift(multiplier=" + f + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7753equalsimpl(this.multiplier, obj);
+        return m7754equalsimpl(this.multiplier, obj);
     }
 
     public int hashCode() {
-        return m7755hashCodeimpl(this.multiplier);
+        return m7756hashCodeimpl(this.multiplier);
     }
 
     public String toString() {
-        return m7756toStringimpl(this.multiplier);
+        return m7757toStringimpl(this.multiplier);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float m7757unboximpl() {
+    public final /* synthetic */ float m7758unboximpl() {
         return this.multiplier;
     }
 
@@ -70,32 +70,32 @@ public final class BaselineShift {
         }
 
         /* renamed from: getNone-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7758getNoney9eOQZs$annotations() {
+        public static /* synthetic */ void m7759getNoney9eOQZs$annotations() {
         }
 
         /* renamed from: getSubscript-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7759getSubscripty9eOQZs$annotations() {
+        public static /* synthetic */ void m7760getSubscripty9eOQZs$annotations() {
         }
 
         /* renamed from: getSuperscript-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7760getSuperscripty9eOQZs$annotations() {
+        public static /* synthetic */ void m7761getSuperscripty9eOQZs$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getSuperscript-y9eOQZs  reason: not valid java name */
-        public final float m7763getSuperscripty9eOQZs() {
+        public final float m7764getSuperscripty9eOQZs() {
             return BaselineShift.Superscript;
         }
 
         /* renamed from: getSubscript-y9eOQZs  reason: not valid java name */
-        public final float m7762getSubscripty9eOQZs() {
+        public final float m7763getSubscripty9eOQZs() {
             return BaselineShift.Subscript;
         }
 
         /* renamed from: getNone-y9eOQZs  reason: not valid java name */
-        public final float m7761getNoney9eOQZs() {
+        public final float m7762getNoney9eOQZs() {
             return BaselineShift.None;
         }
     }

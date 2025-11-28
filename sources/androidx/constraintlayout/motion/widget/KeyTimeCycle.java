@@ -157,7 +157,7 @@ public class KeyTimeCycle extends Key {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x00d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x00d3, code lost:
         if (r1.equals("rotationY") == false) goto L12;
      */
     /*
@@ -552,7 +552,7 @@ public class KeyTimeCycle extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo8478clone() {
+    public Key mo8479clone() {
         return new KeyTimeCycle().copy(this);
     }
 

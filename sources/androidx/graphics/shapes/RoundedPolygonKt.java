@@ -137,7 +137,7 @@ public final class RoundedPolygonKt {
             int i7 = i5 + 1;
             int i8 = (i7 % length) * 2;
             int i9 = i5 * 2;
-            arrayList2.add(new RoundedCorner(FloatFloatPair.m24constructorimpl(vertices[i6], vertices[i6 + 1]), FloatFloatPair.m24constructorimpl(vertices[i9], vertices[i9 + 1]), FloatFloatPair.m24constructorimpl(vertices[i8], vertices[i8 + 1]), cornerRounding2, null));
+            arrayList2.add(new RoundedCorner(FloatFloatPair.m25constructorimpl(vertices[i6], vertices[i6 + 1]), FloatFloatPair.m25constructorimpl(vertices[i9], vertices[i9 + 1]), FloatFloatPair.m25constructorimpl(vertices[i8], vertices[i8 + 1]), cornerRounding2, null));
             i5 = i7;
         }
         IntRange until = RangesKt.until(0, length);
@@ -173,11 +173,11 @@ public final class RoundedPolygonKt {
         while (i4 < length) {
             int i15 = i4 + 1;
             int i16 = i4 * 2;
-            long m24constructorimpl = FloatFloatPair.m24constructorimpl(vertices[i16], vertices[i16 + i3]);
+            long m25constructorimpl = FloatFloatPair.m25constructorimpl(vertices[i16], vertices[i16 + i3]);
             int i17 = (((i4 + length) - i3) % length) * i2;
-            long m24constructorimpl2 = FloatFloatPair.m24constructorimpl(vertices[i17], vertices[i17 + i3]);
+            long m25constructorimpl2 = FloatFloatPair.m25constructorimpl(vertices[i17], vertices[i17 + i3]);
             int i18 = (i15 % length) * 2;
-            arrayList5.add(new Feature.Corner((List) arrayList.get(i4), m24constructorimpl, ((RoundedCorner) arrayList2.get(i4)).m8564getCenter1ufDz9w(), PointKt.m8543clockwiseybeJwSQ(PointKt.m8555minusybeJwSQ(m24constructorimpl, m24constructorimpl2), PointKt.m8555minusybeJwSQ(FloatFloatPair.m24constructorimpl(vertices[i18], vertices[i18 + i3]), m24constructorimpl)), null));
+            arrayList5.add(new Feature.Corner((List) arrayList.get(i4), m25constructorimpl, ((RoundedCorner) arrayList2.get(i4)).m8565getCenter1ufDz9w(), PointKt.m8544clockwiseybeJwSQ(PointKt.m8556minusybeJwSQ(m25constructorimpl, m25constructorimpl2), PointKt.m8556minusybeJwSQ(FloatFloatPair.m25constructorimpl(vertices[i18], vertices[i18 + i3]), m25constructorimpl)), null));
             arrayList5.add(new Feature.Edge(CollectionsKt.listOf(Cubic.Companion.straightLine(((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i4))).getAnchor1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i4))).getAnchor1Y(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0X(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0Y()))));
             i4 = i15;
             i2 = 2;
@@ -186,7 +186,7 @@ public final class RoundedPolygonKt {
         if (f == Float.MIN_VALUE || f2 == Float.MIN_VALUE) {
             calculateCenter = calculateCenter(vertices);
         } else {
-            calculateCenter = FloatFloatPair.m24constructorimpl(f, f2);
+            calculateCenter = FloatFloatPair.m25constructorimpl(f, f2);
         }
         return new RoundedPolygon(arrayList5, Float.intBitsToFloat((int) (calculateCenter >> 32)), Float.intBitsToFloat((int) (calculateCenter & 4294967295L)));
     }
@@ -202,7 +202,7 @@ public final class RoundedPolygonKt {
             f2 += fArr[i2];
         }
         float f3 = 2;
-        return FloatFloatPair.m24constructorimpl((f / fArr.length) / f3, (f2 / fArr.length) / f3);
+        return FloatFloatPair.m25constructorimpl((f / fArr.length) / f3, (f2 / fArr.length) / f3);
     }
 
     private static final float[] verticesFromNumVerts(int i, float f, float f2, float f3) {
@@ -211,11 +211,11 @@ public final class RoundedPolygonKt {
         int i3 = 0;
         while (i2 < i) {
             float f4 = f;
-            long m8556plusybeJwSQ = PointKt.m8556plusybeJwSQ(Utils.m8572radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2 * i2, 0L, 4, null), FloatFloatPair.m24constructorimpl(f2, f3));
+            long m8557plusybeJwSQ = PointKt.m8557plusybeJwSQ(Utils.m8573radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2 * i2, 0L, 4, null), FloatFloatPair.m25constructorimpl(f2, f3));
             int i4 = i3 + 1;
-            fArr[i3] = PointKt.m8552getXDnnuFBc(m8556plusybeJwSQ);
+            fArr[i3] = PointKt.m8553getXDnnuFBc(m8557plusybeJwSQ);
             i3 += 2;
-            fArr[i4] = PointKt.m8553getYDnnuFBc(m8556plusybeJwSQ);
+            fArr[i4] = PointKt.m8554getYDnnuFBc(m8557plusybeJwSQ);
             i2++;
             f = f4;
         }

@@ -14,59 +14,59 @@ public final class DebugFlags {
     private static final int PATHS_FLAG = 2;
     private final int flags;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m8338constructorimpl(0);
-    private static final int All = m8338constructorimpl(-1);
+    private static final int None = m8339constructorimpl(0);
+    private static final int All = m8339constructorimpl(-1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ DebugFlags m8337boximpl(int i) {
+    public static final /* synthetic */ DebugFlags m8338boximpl(int i) {
         return new DebugFlags(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m8338constructorimpl(int i) {
+    public static int m8339constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8341equalsimpl(int i, Object obj) {
-        return (obj instanceof DebugFlags) && i == ((DebugFlags) obj).m8348unboximpl();
+    public static boolean m8342equalsimpl(int i, Object obj) {
+        return (obj instanceof DebugFlags) && i == ((DebugFlags) obj).m8349unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8342equalsimpl0(int i, int i2) {
+    public static final boolean m8343equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: getShowBounds-impl  reason: not valid java name */
-    public static final boolean m8343getShowBoundsimpl(int i) {
+    public static final boolean m8344getShowBoundsimpl(int i) {
         return (i & 1) > 0;
     }
 
     /* renamed from: getShowKeyPositions-impl  reason: not valid java name */
-    public static final boolean m8344getShowKeyPositionsimpl(int i) {
+    public static final boolean m8345getShowKeyPositionsimpl(int i) {
         return (i & 4) > 0;
     }
 
     /* renamed from: getShowPaths-impl  reason: not valid java name */
-    public static final boolean m8345getShowPathsimpl(int i) {
+    public static final boolean m8346getShowPathsimpl(int i) {
         return (i & 2) > 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8346hashCodeimpl(int i) {
+    public static int m8347hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m8341equalsimpl(this.flags, obj);
+        return m8342equalsimpl(this.flags, obj);
     }
 
     public int hashCode() {
-        return m8346hashCodeimpl(this.flags);
+        return m8347hashCodeimpl(this.flags);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m8348unboximpl() {
+    public final /* synthetic */ int m8349unboximpl() {
         return this.flags;
     }
 
@@ -75,7 +75,7 @@ public final class DebugFlags {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ int m8340constructorimpl$default(boolean z, boolean z2, boolean z3, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ int m8341constructorimpl$default(boolean z, boolean z2, boolean z3, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             z = false;
         }
@@ -85,21 +85,21 @@ public final class DebugFlags {
         if ((i & 4) != 0) {
             z3 = false;
         }
-        return m8339constructorimpl(z, z2, z3);
+        return m8340constructorimpl(z, z2, z3);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m8339constructorimpl(boolean z, boolean z2, boolean z3) {
-        return m8338constructorimpl((z ? 1 : 0) | (z2 ? 2 : 0) | (z3 ? 4 : 0));
+    public static int m8340constructorimpl(boolean z, boolean z2, boolean z3) {
+        return m8339constructorimpl((z ? 1 : 0) | (z2 ? 2 : 0) | (z3 ? 4 : 0));
     }
 
     public String toString() {
-        return m8347toStringimpl(this.flags);
+        return m8348toStringimpl(this.flags);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8347toStringimpl(int i) {
-        return "DebugFlags(showBounds = " + m8343getShowBoundsimpl(i) + ", showPaths = " + m8345getShowPathsimpl(i) + ", showKeyPositions = " + m8344getShowKeyPositionsimpl(i) + ')';
+    public static String m8348toStringimpl(int i) {
+        return "DebugFlags(showBounds = " + m8344getShowBoundsimpl(i) + ", showPaths = " + m8346getShowPathsimpl(i) + ", showKeyPositions = " + m8345getShowKeyPositionsimpl(i) + ')';
     }
 
     /* compiled from: MotionLayout.kt */
@@ -114,12 +114,12 @@ public final class DebugFlags {
         }
 
         /* renamed from: getNone-bfy_xzQ  reason: not valid java name */
-        public final int m8350getNonebfy_xzQ() {
+        public final int m8351getNonebfy_xzQ() {
             return DebugFlags.None;
         }
 
         /* renamed from: getAll-bfy_xzQ  reason: not valid java name */
-        public final int m8349getAllbfy_xzQ() {
+        public final int m8350getAllbfy_xzQ() {
             return DebugFlags.All;
         }
     }

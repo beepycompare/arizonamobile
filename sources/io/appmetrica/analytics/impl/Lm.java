@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Lm implements ProtobufConverter {
     public final C0757zm a(Km km) {
         C0757zm c0757zm = new C0757zm();

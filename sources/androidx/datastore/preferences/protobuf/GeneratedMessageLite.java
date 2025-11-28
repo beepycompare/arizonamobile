@@ -335,7 +335,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo8516clone() {
+        public BuilderType mo8517clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.instance = buildPartial();
             return buildertype;
@@ -437,7 +437,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         protected final void mergeExtensionFields(final MessageType other) {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m8517clone();
+                this.extensions = this.extensions.m8518clone();
             }
             this.extensions.mergeFrom(other.extensions);
         }
@@ -587,7 +587,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         /* JADX INFO: Access modifiers changed from: package-private */
         public FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m8517clone();
+                this.extensions = this.extensions.m8518clone();
             }
             return this.extensions;
         }
@@ -727,16 +727,16 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         protected void copyOnWriteInternal() {
             super.copyOnWriteInternal();
             if (((ExtendableMessage) this.instance).extensions != FieldSet.emptySet()) {
-                ((ExtendableMessage) this.instance).extensions = ((ExtendableMessage) this.instance).extensions.m8517clone();
+                ((ExtendableMessage) this.instance).extensions = ((ExtendableMessage) this.instance).extensions.m8518clone();
             }
         }
 
         private FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             FieldSet<ExtensionDescriptor> fieldSet = ((ExtendableMessage) this.instance).extensions;
             if (fieldSet.isImmutable()) {
-                FieldSet<ExtensionDescriptor> m8517clone = fieldSet.m8517clone();
-                ((ExtendableMessage) this.instance).extensions = m8517clone;
-                return m8517clone;
+                FieldSet<ExtensionDescriptor> m8518clone = fieldSet.m8518clone();
+                ((ExtendableMessage) this.instance).extensions = m8518clone;
+                return m8518clone;
             }
             return fieldSet;
         }

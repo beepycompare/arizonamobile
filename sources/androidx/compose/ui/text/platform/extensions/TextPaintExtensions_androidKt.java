@@ -44,11 +44,11 @@ public final class TextPaintExtensions_androidKt {
     }
 
     public static final SpanStyle applySpanStyle(AndroidTextPaint androidTextPaint, SpanStyle spanStyle, Function4<? super FontFamily, ? super FontWeight, ? super FontStyle, ? super FontSynthesis, ? extends Typeface> function4, Density density, boolean z) {
-        long m8188getTypeUIouoOA = TextUnit.m8188getTypeUIouoOA(spanStyle.m7399getFontSizeXSAIIZE());
-        if (TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8222getSpUIouoOA())) {
-            androidTextPaint.setTextSize(density.mo428toPxR2X_6o(spanStyle.m7399getFontSizeXSAIIZE()));
-        } else if (TextUnitType.m8217equalsimpl0(m8188getTypeUIouoOA, TextUnitType.Companion.m8221getEmUIouoOA())) {
-            androidTextPaint.setTextSize(androidTextPaint.getTextSize() * TextUnit.m8189getValueimpl(spanStyle.m7399getFontSizeXSAIIZE()));
+        long m8189getTypeUIouoOA = TextUnit.m8189getTypeUIouoOA(spanStyle.m7400getFontSizeXSAIIZE());
+        if (TextUnitType.m8218equalsimpl0(m8189getTypeUIouoOA, TextUnitType.Companion.m8223getSpUIouoOA())) {
+            androidTextPaint.setTextSize(density.mo429toPxR2X_6o(spanStyle.m7400getFontSizeXSAIIZE()));
+        } else if (TextUnitType.m8218equalsimpl0(m8189getTypeUIouoOA, TextUnitType.Companion.m8222getEmUIouoOA())) {
+            androidTextPaint.setTextSize(androidTextPaint.getTextSize() * TextUnit.m8190getValueimpl(spanStyle.m7400getFontSizeXSAIIZE()));
         }
         if (hasFontAttributes(spanStyle)) {
             FontFamily fontFamily = spanStyle.getFontFamily();
@@ -56,10 +56,10 @@ public final class TextPaintExtensions_androidKt {
             if (fontWeight == null) {
                 fontWeight = FontWeight.Companion.getNormal();
             }
-            FontStyle m7400getFontStyle4Lr2A7w = spanStyle.m7400getFontStyle4Lr2A7w();
-            FontStyle m7567boximpl = FontStyle.m7567boximpl(m7400getFontStyle4Lr2A7w != null ? m7400getFontStyle4Lr2A7w.m7573unboximpl() : FontStyle.Companion.m7577getNormal_LCdwA());
-            FontSynthesis m7401getFontSynthesisZQGJjVo = spanStyle.m7401getFontSynthesisZQGJjVo();
-            androidTextPaint.setTypeface(function4.invoke(fontFamily, fontWeight, m7567boximpl, FontSynthesis.m7578boximpl(m7401getFontSynthesisZQGJjVo != null ? m7401getFontSynthesisZQGJjVo.m7586unboximpl() : FontSynthesis.Companion.m7587getAllGVVA2EU())));
+            FontStyle m7401getFontStyle4Lr2A7w = spanStyle.m7401getFontStyle4Lr2A7w();
+            FontStyle m7568boximpl = FontStyle.m7568boximpl(m7401getFontStyle4Lr2A7w != null ? m7401getFontStyle4Lr2A7w.m7574unboximpl() : FontStyle.Companion.m7578getNormal_LCdwA());
+            FontSynthesis m7402getFontSynthesisZQGJjVo = spanStyle.m7402getFontSynthesisZQGJjVo();
+            androidTextPaint.setTypeface(function4.invoke(fontFamily, fontWeight, m7568boximpl, FontSynthesis.m7579boximpl(m7402getFontSynthesisZQGJjVo != null ? m7402getFontSynthesisZQGJjVo.m7587unboximpl() : FontSynthesis.Companion.m7588getAllGVVA2EU())));
         }
         if (spanStyle.getLocaleList() != null && !Intrinsics.areEqual(spanStyle.getLocaleList(), LocaleList.Companion.getCurrent())) {
             LocaleListHelperMethods.INSTANCE.setTextLocales(androidTextPaint, spanStyle.getLocaleList());
@@ -71,44 +71,44 @@ public final class TextPaintExtensions_androidKt {
             androidTextPaint.setTextScaleX(androidTextPaint.getTextScaleX() * spanStyle.getTextGeometricTransform().getScaleX());
             androidTextPaint.setTextSkewX(androidTextPaint.getTextSkewX() + spanStyle.getTextGeometricTransform().getSkewX());
         }
-        androidTextPaint.m7729setColor8_81llA(spanStyle.m7398getColor0d7_KjU());
-        androidTextPaint.m7727setBrush12SF9DM(spanStyle.getBrush(), Size.Companion.m5112getUnspecifiedNHjbRc(), spanStyle.getAlpha());
+        androidTextPaint.m7730setColor8_81llA(spanStyle.m7399getColor0d7_KjU());
+        androidTextPaint.m7728setBrush12SF9DM(spanStyle.getBrush(), Size.Companion.m5113getUnspecifiedNHjbRc(), spanStyle.getAlpha());
         androidTextPaint.setShadow(spanStyle.getShadow());
         androidTextPaint.setTextDecoration(spanStyle.getTextDecoration());
         androidTextPaint.setDrawStyle(spanStyle.getDrawStyle());
-        if (TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(spanStyle.m7402getLetterSpacingXSAIIZE()), TextUnitType.Companion.m8222getSpUIouoOA()) && TextUnit.m8189getValueimpl(spanStyle.m7402getLetterSpacingXSAIIZE()) != 0.0f) {
+        if (TextUnitType.m8218equalsimpl0(TextUnit.m8189getTypeUIouoOA(spanStyle.m7403getLetterSpacingXSAIIZE()), TextUnitType.Companion.m8223getSpUIouoOA()) && TextUnit.m8190getValueimpl(spanStyle.m7403getLetterSpacingXSAIIZE()) != 0.0f) {
             float textSize = androidTextPaint.getTextSize() * androidTextPaint.getTextScaleX();
-            float mo428toPxR2X_6o = density.mo428toPxR2X_6o(spanStyle.m7402getLetterSpacingXSAIIZE());
+            float mo429toPxR2X_6o = density.mo429toPxR2X_6o(spanStyle.m7403getLetterSpacingXSAIIZE());
             if (textSize != 0.0f) {
-                androidTextPaint.setLetterSpacing(mo428toPxR2X_6o / textSize);
+                androidTextPaint.setLetterSpacing(mo429toPxR2X_6o / textSize);
             }
-        } else if (TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(spanStyle.m7402getLetterSpacingXSAIIZE()), TextUnitType.Companion.m8221getEmUIouoOA())) {
-            androidTextPaint.setLetterSpacing(TextUnit.m8189getValueimpl(spanStyle.m7402getLetterSpacingXSAIIZE()));
+        } else if (TextUnitType.m8218equalsimpl0(TextUnit.m8189getTypeUIouoOA(spanStyle.m7403getLetterSpacingXSAIIZE()), TextUnitType.Companion.m8222getEmUIouoOA())) {
+            androidTextPaint.setLetterSpacing(TextUnit.m8190getValueimpl(spanStyle.m7403getLetterSpacingXSAIIZE()));
         }
-        return m7744generateFallbackSpanStyle62GTOB8(spanStyle.m7402getLetterSpacingXSAIIZE(), z, spanStyle.m7396getBackground0d7_KjU(), spanStyle.m7397getBaselineShift5SSeXJ0());
+        return m7745generateFallbackSpanStyle62GTOB8(spanStyle.m7403getLetterSpacingXSAIIZE(), z, spanStyle.m7397getBackground0d7_KjU(), spanStyle.m7398getBaselineShift5SSeXJ0());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x004e, code lost:
-        if (androidx.compose.ui.text.style.BaselineShift.m7754equalsimpl0(r36.m7757unboximpl(), androidx.compose.ui.text.style.BaselineShift.Companion.m7761getNoney9eOQZs()) == false) goto L16;
+        if (androidx.compose.ui.text.style.BaselineShift.m7755equalsimpl0(r36.m7758unboximpl(), androidx.compose.ui.text.style.BaselineShift.Companion.m7762getNoney9eOQZs()) == false) goto L16;
      */
     /* renamed from: generateFallbackSpanStyle-62GTOB8  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final SpanStyle m7744generateFallbackSpanStyle62GTOB8(long j, boolean z, long j2, BaselineShift baselineShift) {
+    private static final SpanStyle m7745generateFallbackSpanStyle62GTOB8(long j, boolean z, long j2, BaselineShift baselineShift) {
         long j3 = j2;
         boolean z2 = true;
-        boolean z3 = z && TextUnitType.m8217equalsimpl0(TextUnit.m8188getTypeUIouoOA(j), TextUnitType.Companion.m8222getSpUIouoOA()) && TextUnit.m8189getValueimpl(j) != 0.0f;
-        boolean z4 = (Color.m5280equalsimpl0(j3, Color.Companion.m5315getUnspecified0d7_KjU()) || Color.m5280equalsimpl0(j3, Color.Companion.m5314getTransparent0d7_KjU())) ? false : true;
+        boolean z3 = z && TextUnitType.m8218equalsimpl0(TextUnit.m8189getTypeUIouoOA(j), TextUnitType.Companion.m8223getSpUIouoOA()) && TextUnit.m8190getValueimpl(j) != 0.0f;
+        boolean z4 = (Color.m5281equalsimpl0(j3, Color.Companion.m5316getUnspecified0d7_KjU()) || Color.m5281equalsimpl0(j3, Color.Companion.m5315getTransparent0d7_KjU())) ? false : true;
         if (baselineShift != null) {
         }
         z2 = false;
         if (z3 || z4 || z2) {
-            long m8200getUnspecifiedXSAIIZE = z3 ? j : TextUnit.Companion.m8200getUnspecifiedXSAIIZE();
+            long m8201getUnspecifiedXSAIIZE = z3 ? j : TextUnit.Companion.m8201getUnspecifiedXSAIIZE();
             if (!z4) {
-                j3 = Color.Companion.m5315getUnspecified0d7_KjU();
+                j3 = Color.Companion.m5316getUnspecified0d7_KjU();
             }
-            return new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, m8200getUnspecifiedXSAIIZE, z2 ? baselineShift : null, (TextGeometricTransform) null, (LocaleList) null, j3, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 63103, (DefaultConstructorMarker) null);
+            return new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, m8201getUnspecifiedXSAIIZE, z2 ? baselineShift : null, (TextGeometricTransform) null, (LocaleList) null, j3, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 63103, (DefaultConstructorMarker) null);
         }
         return null;
     }
@@ -124,14 +124,14 @@ public final class TextPaintExtensions_androidKt {
             flags = androidTextPaint.getFlags() & (-129);
         }
         androidTextPaint.setFlags(flags);
-        int m7907getLinearity4e0Vf04$ui_text = textMotion.m7907getLinearity4e0Vf04$ui_text();
-        if (TextMotion.Linearity.m7911equalsimpl0(m7907getLinearity4e0Vf04$ui_text, TextMotion.Linearity.Companion.m7916getLinear4e0Vf04())) {
+        int m7908getLinearity4e0Vf04$ui_text = textMotion.m7908getLinearity4e0Vf04$ui_text();
+        if (TextMotion.Linearity.m7912equalsimpl0(m7908getLinearity4e0Vf04$ui_text, TextMotion.Linearity.Companion.m7917getLinear4e0Vf04())) {
             androidTextPaint.setFlags(androidTextPaint.getFlags() | 64);
             androidTextPaint.setHinting(0);
-        } else if (TextMotion.Linearity.m7911equalsimpl0(m7907getLinearity4e0Vf04$ui_text, TextMotion.Linearity.Companion.m7915getFontHinting4e0Vf04())) {
+        } else if (TextMotion.Linearity.m7912equalsimpl0(m7908getLinearity4e0Vf04$ui_text, TextMotion.Linearity.Companion.m7916getFontHinting4e0Vf04())) {
             androidTextPaint.getFlags();
             androidTextPaint.setHinting(1);
-        } else if (TextMotion.Linearity.m7911equalsimpl0(m7907getLinearity4e0Vf04$ui_text, TextMotion.Linearity.Companion.m7917getNone4e0Vf04())) {
+        } else if (TextMotion.Linearity.m7912equalsimpl0(m7908getLinearity4e0Vf04$ui_text, TextMotion.Linearity.Companion.m7918getNone4e0Vf04())) {
             androidTextPaint.getFlags();
             androidTextPaint.setHinting(0);
         } else {
@@ -140,6 +140,6 @@ public final class TextPaintExtensions_androidKt {
     }
 
     public static final boolean hasFontAttributes(SpanStyle spanStyle) {
-        return (spanStyle.getFontFamily() == null && spanStyle.m7400getFontStyle4Lr2A7w() == null && spanStyle.getFontWeight() == null) ? false : true;
+        return (spanStyle.getFontFamily() == null && spanStyle.m7401getFontStyle4Lr2A7w() == null && spanStyle.getFontWeight() == null) ? false : true;
     }
 }

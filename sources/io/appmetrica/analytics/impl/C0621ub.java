@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import io.appmetrica.analytics.coreapi.internal.backport.Function;
 import java.io.File;
 /* renamed from: io.appmetrica.analytics.impl.ub  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0621ub implements Function, Consumer {
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
     /* renamed from: a */

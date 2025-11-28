@@ -56,9 +56,9 @@ public final class GasStationAdapter extends RecyclerView.Adapter<GasStationView
         String title = this.shopList.get(i).getTitle();
         String str3 = this.shopList.get(i).getPrice() + str;
         if (this.isArizonaType) {
-            str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate/";
+            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/";
         } else {
-            str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/items/";
+            str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/items/";
         }
         Picasso.get().load(str2 + this.shopList.get(i).getImage() + ".webp").into(holder.getGasStationItem().gsShopItemImg);
         holder.getGasStationItem().gsShopItemTitle.setText(title);

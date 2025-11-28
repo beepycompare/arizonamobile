@@ -11,7 +11,7 @@ import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class r extends u implements LocationReceiver {
     public final Looper e;
     public final long f;

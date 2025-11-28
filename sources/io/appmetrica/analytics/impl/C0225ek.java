@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* renamed from: io.appmetrica.analytics.impl.ek  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0225ek implements ServiceComponentModuleConfig {
 
     /* renamed from: a  reason: collision with root package name */

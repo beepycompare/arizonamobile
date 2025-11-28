@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.Collection;
 /* renamed from: io.appmetrica.analytics.impl.fe  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0245fe implements uo {
 
     /* renamed from: a  reason: collision with root package name */

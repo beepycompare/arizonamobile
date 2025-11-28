@@ -72,13 +72,13 @@ final class DraggableNode$drag$2 extends SuspendLambda implements Function2<Drag
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(DragScope dragScope, DraggableNode draggableNode, DragEvent.DragDelta dragDelta) {
-        long m521reverseIfNeededMKHz9U;
+        long m522reverseIfNeededMKHz9U;
         Orientation orientation;
-        float m514toFloat3MmeM6k;
-        m521reverseIfNeededMKHz9U = draggableNode.m521reverseIfNeededMKHz9U(dragDelta.m475getDeltaF1C5BW0());
+        float m515toFloat3MmeM6k;
+        m522reverseIfNeededMKHz9U = draggableNode.m522reverseIfNeededMKHz9U(dragDelta.m476getDeltaF1C5BW0());
         orientation = draggableNode.orientation;
-        m514toFloat3MmeM6k = DraggableKt.m514toFloat3MmeM6k(m521reverseIfNeededMKHz9U, orientation);
-        dragScope.dragBy(m514toFloat3MmeM6k);
+        m515toFloat3MmeM6k = DraggableKt.m515toFloat3MmeM6k(m522reverseIfNeededMKHz9U, orientation);
+        dragScope.dragBy(m515toFloat3MmeM6k);
         return Unit.INSTANCE;
     }
 }

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 /* renamed from: io.appmetrica.analytics.impl.qn  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0534qn {
 
     /* renamed from: a  reason: collision with root package name */

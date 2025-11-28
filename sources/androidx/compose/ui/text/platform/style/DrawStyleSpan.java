@@ -39,8 +39,8 @@ public final class DrawStyleSpan extends CharacterStyle implements UpdateAppeara
                 textPaint.setStyle(Paint.Style.STROKE);
                 textPaint.setStrokeWidth(((Stroke) this.drawStyle).getWidth());
                 textPaint.setStrokeMiter(((Stroke) this.drawStyle).getMiter());
-                textPaint.setStrokeJoin(DrawStyleSpan_androidKt.m7748toAndroidJoinWw9F2mQ(((Stroke) this.drawStyle).m5928getJoinLxFBmk8()));
-                textPaint.setStrokeCap(DrawStyleSpan_androidKt.m7747toAndroidCapBeK7IIE(((Stroke) this.drawStyle).m5927getCapKaPHkGw()));
+                textPaint.setStrokeJoin(DrawStyleSpan_androidKt.m7749toAndroidJoinWw9F2mQ(((Stroke) this.drawStyle).m5929getJoinLxFBmk8()));
+                textPaint.setStrokeCap(DrawStyleSpan_androidKt.m7748toAndroidCapBeK7IIE(((Stroke) this.drawStyle).m5928getCapKaPHkGw()));
                 PathEffect pathEffect = ((Stroke) this.drawStyle).getPathEffect();
                 textPaint.setPathEffect(pathEffect != null ? AndroidPathEffect_androidKt.asAndroidPathEffect(pathEffect) : null);
             }

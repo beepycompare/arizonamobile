@@ -2,7 +2,7 @@ package io.appmetrica.analytics.internal.js;
 
 import android.webkit.JavascriptInterface;
 import io.appmetrica.analytics.impl.C0561s1;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AppMetricaJsInterface {
 
     /* renamed from: a  reason: collision with root package name */

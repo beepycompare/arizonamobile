@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class O6 {
 
     /* renamed from: a  reason: collision with root package name */
@@ -25,12 +25,12 @@ public final class O6 {
         this(counterConfigurationReporterType, C0620ua.k().w());
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(12:1|2|3|(3:63|64|(9:66|(2:69|67)|70|6|7|8|(8:18|79|26|27|(4:30|(5:34|35|(1:37)(1:41)|38|39)|40|28)|44|45|(2:49|50))|59|60))|5|6|7|8|(5:10|12|16|18|79)|59|60|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005e, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(12:1|2|3|(3:63|64|(9:66|(2:69|67)|70|6|7|8|(8:18|78|26|27|(4:30|(5:34|35|(1:37)(1:41)|38|39)|40|28)|44|45|(2:49|50))|59|60))|5|6|7|8|(5:10|12|16|18|78)|59|60|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
         r10 = 0;
      */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x007a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0079 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

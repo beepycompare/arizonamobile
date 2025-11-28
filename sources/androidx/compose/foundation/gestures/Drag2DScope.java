@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface Drag2DScope {
     /* renamed from: dragBy-k-4lQ0M */
-    void mo470dragByk4lQ0M(long j);
+    void mo471dragByk4lQ0M(long j);
 }

@@ -25,26 +25,26 @@ import kotlin.jvm.functions.Function3;
 /* loaded from: classes.dex */
 public final class SelectableKt {
     /* renamed from: selectable-XHw0xAI$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1172selectableXHw0xAI$default(Modifier modifier, boolean z, boolean z2, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1173selectableXHw0xAI$default(Modifier modifier, boolean z, boolean z2, Role role, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
             z2 = true;
         }
         if ((i & 4) != 0) {
             role = null;
         }
-        return m1171selectableXHw0xAI(modifier, z, z2, role, function0);
+        return m1172selectableXHw0xAI(modifier, z, z2, role, function0);
     }
 
     /* renamed from: selectable-oSLSa3U$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1174selectableoSLSa3U$default(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1175selectableoSLSa3U$default(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
             z2 = true;
         }
-        return m1173selectableoSLSa3U(modifier, z, z2, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function0);
+        return m1174selectableoSLSa3U(modifier, z, z2, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function0);
     }
 
     /* renamed from: selectable-oSLSa3U  reason: not valid java name */
-    public static final Modifier m1173selectableoSLSa3U(Modifier modifier, final boolean z, final boolean z2, final Role role, final MutableInteractionSource mutableInteractionSource, final Function0<Unit> function0) {
+    public static final Modifier m1174selectableoSLSa3U(Modifier modifier, final boolean z, final boolean z2, final Role role, final MutableInteractionSource mutableInteractionSource, final Function0<Unit> function0) {
         if (ComposeFoundationFlags.isNonComposedClickableEnabled) {
             return modifier.then(new SelectableElement(z, mutableInteractionSource, null, true, z2, role, function0, null));
         }
@@ -104,18 +104,18 @@ public final class SelectableKt {
                         composer.endReplaceGroup();
                     }
                 }
-                Modifier m1169selectableO2vRcR0 = SelectableKt.m1169selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource2, indication, z2, role, function0);
+                Modifier m1170selectableO2vRcR0 = SelectableKt.m1170selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource2, indication, z2, role, function0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m1169selectableO2vRcR0;
+                return m1170selectableO2vRcR0;
             }
         });
     }
 
     /* renamed from: selectable-O2vRcR0$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1170selectableO2vRcR0$default(Modifier modifier, boolean z, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z2, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1171selectableO2vRcR0$default(Modifier modifier, boolean z, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z2, Role role, Function0 function0, int i, Object obj) {
         if ((i & 8) != 0) {
             z2 = true;
         }
@@ -123,12 +123,12 @@ public final class SelectableKt {
         if ((i & 16) != 0) {
             role = null;
         }
-        return m1169selectableO2vRcR0(modifier, z, mutableInteractionSource, indication, z3, role, function0);
+        return m1170selectableO2vRcR0(modifier, z, mutableInteractionSource, indication, z3, role, function0);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replaced with new overload that only supports IndicationNodeFactory instances inside LocalIndication, and does not use composed")
     /* renamed from: selectable-XHw0xAI  reason: not valid java name */
-    public static final /* synthetic */ Modifier m1171selectableXHw0xAI(Modifier modifier, final boolean z, final boolean z2, final Role role, final Function0 function0) {
+    public static final /* synthetic */ Modifier m1172selectableXHw0xAI(Modifier modifier, final boolean z, final boolean z2, final Role role, final Function0 function0) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.selection.SelectableKt$selectable-XHw0xAI$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -183,18 +183,18 @@ public final class SelectableKt {
                     ComposerKt.sourceInformationMarkerEnd(composer);
                     composer.endReplaceGroup();
                 }
-                Modifier m1169selectableO2vRcR0 = SelectableKt.m1169selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource, indication, z2, role, function0);
+                Modifier m1170selectableO2vRcR0 = SelectableKt.m1170selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource, indication, z2, role, function0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m1169selectableO2vRcR0;
+                return m1170selectableO2vRcR0;
             }
         });
     }
 
     /* renamed from: selectable-O2vRcR0  reason: not valid java name */
-    public static final Modifier m1169selectableO2vRcR0(Modifier modifier, final boolean z, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z2, final Role role, final Function0<Unit> function0) {
+    public static final Modifier m1170selectableO2vRcR0(Modifier modifier, final boolean z, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z2, final Role role, final Function0<Unit> function0) {
         SelectableElement composed$default;
         if (indication instanceof IndicationNodeFactory) {
             composed$default = new SelectableElement(z, mutableInteractionSource, (IndicationNodeFactory) indication, false, z2, role, function0, null);

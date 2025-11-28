@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvide
 import io.appmetrica.analytics.coreutils.internal.services.WaitForActivationDelayBarrier;
 import io.appmetrica.analytics.locationapi.internal.LocationClient;
 /* renamed from: io.appmetrica.analytics.impl.ua  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0620ua {
     public static volatile C0620ua H;
     public volatile T9 C;

@@ -78,8 +78,8 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
         int imageType = bonusItem.getImageType();
         if (imageType == 0) {
             Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            RequestCreator load = picasso.load(resourceUrl + "projects/arizona-rp/assets/images/donate/" + bonusItem.getImage() + ".webp");
+            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            RequestCreator load = picasso.load(resourceUrl$default + "projects/arizona-rp/assets/images/donate/" + bonusItem.getImage() + ".webp");
             Target picassoTarget = holder.getPicassoTarget();
             if (picassoTarget == null) {
                 return;
@@ -87,8 +87,8 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
             load.into(picassoTarget);
         } else if (imageType == 1) {
             Picasso picasso2 = Picasso.get();
-            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            RequestCreator load2 = picasso2.load(resourceUrl2 + "projects/arizona-rp/systems/employment_center/bonuses/" + bonusItem.getImage() + ".webp");
+            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            RequestCreator load2 = picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/employment_center/bonuses/" + bonusItem.getImage() + ".webp");
             Target picassoTarget2 = holder.getPicassoTarget();
             if (picassoTarget2 == null) {
                 return;
@@ -113,8 +113,8 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
             }
         } else if (imageType == 3) {
             Picasso picasso3 = Picasso.get();
-            String resourceUrl3 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            RequestCreator load3 = picasso3.load(resourceUrl3 + "projects/arizona-rp/assets/images/inventory/vehicles/256/" + bonusItem.getImage() + ".webp");
+            String resourceUrl$default3 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            RequestCreator load3 = picasso3.load(resourceUrl$default3 + "projects/arizona-rp/assets/images/inventory/vehicles/256/" + bonusItem.getImage() + ".webp");
             Target picassoTarget3 = holder.getPicassoTarget();
             if (picassoTarget3 == null) {
                 return;
@@ -122,7 +122,10 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
             load3.into(picassoTarget3);
         }
         binding.text.setText(bonusItem.getName());
-        if (bonusItem.getValue() <= 0) {
+        String valueString = bonusItem.getValueString();
+        if (valueString != null && valueString.length() != 0) {
+            binding.label1.text.setText(bonusItem.getValueString());
+        } else if (bonusItem.getValue() <= 0) {
             binding.label1.getRoot().setVisibility(8);
         } else if (bonusItem.getValueMax() > bonusItem.getValue()) {
             TextView textView = binding.label1.text;

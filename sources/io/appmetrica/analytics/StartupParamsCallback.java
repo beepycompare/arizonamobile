@@ -1,13 +1,13 @@
 package io.appmetrica.analytics;
 
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface StartupParamsCallback {
     public static final String APPMETRICA_DEVICE_ID = "appmetrica_device_id";
     public static final String APPMETRICA_DEVICE_ID_HASH = "appmetrica_device_id_hash";
     public static final String APPMETRICA_UUID = "appmetrica_uuid";
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Reason {
         public final String value;
         public static Reason UNKNOWN = new Reason("UNKNOWN");
@@ -37,7 +37,7 @@ public interface StartupParamsCallback {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Result {
         public final Map<String, StartupParamsItem> parameters;
         public final String uuid = parameterForKey(StartupParamsCallback.APPMETRICA_UUID);

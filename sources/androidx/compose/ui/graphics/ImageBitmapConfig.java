@@ -11,47 +11,47 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class ImageBitmapConfig {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Argb8888 = m5504constructorimpl(0);
-    private static final int Alpha8 = m5504constructorimpl(1);
-    private static final int Rgb565 = m5504constructorimpl(2);
-    private static final int F16 = m5504constructorimpl(3);
-    private static final int Gpu = m5504constructorimpl(4);
+    private static final int Argb8888 = m5505constructorimpl(0);
+    private static final int Alpha8 = m5505constructorimpl(1);
+    private static final int Rgb565 = m5505constructorimpl(2);
+    private static final int F16 = m5505constructorimpl(3);
+    private static final int Gpu = m5505constructorimpl(4);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ImageBitmapConfig m5503boximpl(int i) {
+    public static final /* synthetic */ ImageBitmapConfig m5504boximpl(int i) {
         return new ImageBitmapConfig(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5504constructorimpl(int i) {
+    public static int m5505constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5505equalsimpl(int i, Object obj) {
-        return (obj instanceof ImageBitmapConfig) && i == ((ImageBitmapConfig) obj).m5509unboximpl();
+    public static boolean m5506equalsimpl(int i, Object obj) {
+        return (obj instanceof ImageBitmapConfig) && i == ((ImageBitmapConfig) obj).m5510unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5506equalsimpl0(int i, int i2) {
+    public static final boolean m5507equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5507hashCodeimpl(int i) {
+    public static int m5508hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5505equalsimpl(this.value, obj);
+        return m5506equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5507hashCodeimpl(this.value);
+        return m5508hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5509unboximpl() {
+    public final /* synthetic */ int m5510unboximpl() {
         return this.value;
     }
 
@@ -67,27 +67,27 @@ public final class ImageBitmapConfig {
         }
 
         /* renamed from: getArgb8888-_sVssgQ  reason: not valid java name */
-        public final int m5511getArgb8888_sVssgQ() {
+        public final int m5512getArgb8888_sVssgQ() {
             return ImageBitmapConfig.Argb8888;
         }
 
         /* renamed from: getAlpha8-_sVssgQ  reason: not valid java name */
-        public final int m5510getAlpha8_sVssgQ() {
+        public final int m5511getAlpha8_sVssgQ() {
             return ImageBitmapConfig.Alpha8;
         }
 
         /* renamed from: getRgb565-_sVssgQ  reason: not valid java name */
-        public final int m5514getRgb565_sVssgQ() {
+        public final int m5515getRgb565_sVssgQ() {
             return ImageBitmapConfig.Rgb565;
         }
 
         /* renamed from: getF16-_sVssgQ  reason: not valid java name */
-        public final int m5512getF16_sVssgQ() {
+        public final int m5513getF16_sVssgQ() {
             return ImageBitmapConfig.F16;
         }
 
         /* renamed from: getGpu-_sVssgQ  reason: not valid java name */
-        public final int m5513getGpu_sVssgQ() {
+        public final int m5514getGpu_sVssgQ() {
             return ImageBitmapConfig.Gpu;
         }
     }
@@ -101,11 +101,11 @@ public final class ImageBitmapConfig {
     }
 
     public String toString() {
-        return m5508toStringimpl(this.value);
+        return m5509toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5508toStringimpl(int i) {
-        return m5506equalsimpl0(i, Argb8888) ? "Argb8888" : m5506equalsimpl0(i, Alpha8) ? "Alpha8" : m5506equalsimpl0(i, Rgb565) ? "Rgb565" : m5506equalsimpl0(i, F16) ? "F16" : m5506equalsimpl0(i, Gpu) ? "Gpu" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5509toStringimpl(int i) {
+        return m5507equalsimpl0(i, Argb8888) ? "Argb8888" : m5507equalsimpl0(i, Alpha8) ? "Alpha8" : m5507equalsimpl0(i, Rgb565) ? "Rgb565" : m5507equalsimpl0(i, F16) ? "F16" : m5507equalsimpl0(i, Gpu) ? "Gpu" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

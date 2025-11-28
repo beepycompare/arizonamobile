@@ -16,7 +16,7 @@ public final class LayerPositionalProperties {
     private float scaleX = 1.0f;
     private float scaleY = 1.0f;
     private float cameraDistance = 8.0f;
-    private long transformOrigin = TransformOrigin.Companion.m5687getCenterSzJe1aQ();
+    private long transformOrigin = TransformOrigin.Companion.m5688getCenterSzJe1aQ();
 
     public final void copyFrom(LayerPositionalProperties layerPositionalProperties) {
         this.scaleX = layerPositionalProperties.scaleX;
@@ -39,10 +39,10 @@ public final class LayerPositionalProperties {
         this.rotationY = graphicsLayerScope.getRotationY();
         this.rotationZ = graphicsLayerScope.getRotationZ();
         this.cameraDistance = graphicsLayerScope.getCameraDistance();
-        this.transformOrigin = graphicsLayerScope.mo5476getTransformOriginSzJe1aQ();
+        this.transformOrigin = graphicsLayerScope.mo5477getTransformOriginSzJe1aQ();
     }
 
     public final boolean hasSameValuesAs(LayerPositionalProperties layerPositionalProperties) {
-        return this.scaleX == layerPositionalProperties.scaleX && this.scaleY == layerPositionalProperties.scaleY && this.translationX == layerPositionalProperties.translationX && this.translationY == layerPositionalProperties.translationY && this.rotationX == layerPositionalProperties.rotationX && this.rotationY == layerPositionalProperties.rotationY && this.rotationZ == layerPositionalProperties.rotationZ && this.cameraDistance == layerPositionalProperties.cameraDistance && TransformOrigin.m5681equalsimpl0(this.transformOrigin, layerPositionalProperties.transformOrigin);
+        return this.scaleX == layerPositionalProperties.scaleX && this.scaleY == layerPositionalProperties.scaleY && this.translationX == layerPositionalProperties.translationX && this.translationY == layerPositionalProperties.translationY && this.rotationX == layerPositionalProperties.rotationX && this.rotationY == layerPositionalProperties.rotationY && this.rotationZ == layerPositionalProperties.rotationZ && this.cameraDistance == layerPositionalProperties.cameraDistance && TransformOrigin.m5682equalsimpl0(this.transformOrigin, layerPositionalProperties.transformOrigin);
     }
 }

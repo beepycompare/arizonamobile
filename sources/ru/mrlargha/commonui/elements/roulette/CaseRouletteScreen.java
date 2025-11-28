@@ -105,9 +105,9 @@ public final class CaseRouletteScreen extends SAMPUIElement {
         caseRouletteBinding.casePage.setVisibility(0);
         caseRouletteBinding.caseName.setText(rouletteResponse.getName());
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate/";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/";
         } else {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/battlepass/items/";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/items/";
         }
         Picasso.get().load(str + rouletteResponse.getSysName() + ".webp").into(caseRouletteBinding.caseIc);
         this.possibleAwardsAdapter.clearAwards();
@@ -194,7 +194,7 @@ public final class CaseRouletteScreen extends SAMPUIElement {
             caseRouletteBinding.prizeJoke.setText((CharSequence) CollectionsKt.listOf((Object[]) new String[]{"ААААААААА!!!", "Ограбление\nбанкомата", "Фортуна на вашей стороне!"}).get(Random.Default.nextInt(0, 3)));
         }
         caseRouletteBinding.prizeName.setText(caseAward.getName());
-        Picasso.get().load((this.isArizonaType ? FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate/" : FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/battlepass/items/") + caseAward.getUrl()).into(caseRouletteBinding.prizeIc);
+        Picasso.get().load((this.isArizonaType ? FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/" : FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/items/") + caseAward.getUrl()).into(caseRouletteBinding.prizeIc);
     }
 
     private final void addExtraAwards(List<CaseAward> list) {

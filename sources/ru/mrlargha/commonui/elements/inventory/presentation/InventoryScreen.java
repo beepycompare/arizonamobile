@@ -1517,9 +1517,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
             rvGuardInventory.setVisibility(8);
             if (this.isArizonaType) {
-                str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
+                str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
             } else {
-                str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
+                str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/inventory/skins/512/" + guardInfo.getSkin() + ".webp";
             }
             String str2 = str;
             AppCompatImageView ivGuardSkin = this.binding.layoutGuards.ivGuardSkin;
@@ -3189,9 +3189,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private final void addTopBars(Skin skin) {
         String str;
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
         } else {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
         }
         String str2 = str;
         AppCompatImageView ivCharacterImage = this.binding.ivCharacterImage;
@@ -3245,9 +3245,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         this.binding.layoutVehicle.ivEngineBar.setProgress((int) ((vehicleInfoBars.getHealth() / vehicleInfoBars.getMaxHealth()) * 100));
         this.binding.layoutVehicle.tvEngineCount.setText(String.valueOf(vehicleInfoBars.getHealth()));
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
         } else {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/inventory/vehicles/512/" + vehicleInfoBars.getSkin().getModel() + ".webp";
         }
         AppCompatImageView ivVehicleBg = this.binding.layoutVehicle.ivVehicleBg;
         Intrinsics.checkNotNullExpressionValue(ivVehicleBg, "ivVehicleBg");

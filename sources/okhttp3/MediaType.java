@@ -103,13 +103,13 @@ public final class MediaType {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "type", imports = {}))
     /* renamed from: -deprecated_type  reason: not valid java name */
-    public final String m11682deprecated_type() {
+    public final String m11740deprecated_type() {
         return this.type;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "subtype", imports = {}))
     /* renamed from: -deprecated_subtype  reason: not valid java name */
-    public final String m11681deprecated_subtype() {
+    public final String m11739deprecated_subtype() {
         return this.subtype;
     }
 
@@ -201,14 +201,14 @@ public final class MediaType {
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "mediaType.toMediaType()", imports = {"okhttp3.MediaType.Companion.toMediaType"}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final MediaType m11683deprecated_get(String mediaType) {
+        public final MediaType m11741deprecated_get(String mediaType) {
             Intrinsics.checkNotNullParameter(mediaType, "mediaType");
             return get(mediaType);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "mediaType.toMediaTypeOrNull()", imports = {"okhttp3.MediaType.Companion.toMediaTypeOrNull"}))
         /* renamed from: -deprecated_parse  reason: not valid java name */
-        public final MediaType m11684deprecated_parse(String mediaType) {
+        public final MediaType m11742deprecated_parse(String mediaType) {
             Intrinsics.checkNotNullParameter(mediaType, "mediaType");
             return parse(mediaType);
         }

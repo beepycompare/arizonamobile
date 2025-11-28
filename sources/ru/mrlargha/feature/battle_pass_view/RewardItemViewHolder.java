@@ -48,9 +48,9 @@ public final class RewardItemViewHolder extends RecyclerView.ViewHolder {
             }
         }
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/battle_pass_sound/image/";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/battle_pass_sound/image/";
         } else {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/training/image/";
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/training/image/";
         }
         itemRewardBinding.tvRewardDesc.setText(item.getTitle());
         ViewTarget<ImageView, Drawable> into = Glide.with(this.context).load(str + item.getSysName() + ".webp").fitCenter().diskCacheStrategy(DiskCacheStrategy.ALL).into(itemRewardBinding.ivReward);

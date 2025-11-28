@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Hc extends J2 {
     public static final Gc b = new Gc();
 

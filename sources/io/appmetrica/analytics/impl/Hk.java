@@ -6,7 +6,7 @@ import android.content.ServiceConnection;
 import io.appmetrica.analytics.internal.AppMetricaService;
 import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
 import java.util.HashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Hk implements ServiceWakeLock {
 
     /* renamed from: a  reason: collision with root package name */

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.StateSerializer;
 import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class G8 implements StateSerializer {
 
     /* renamed from: a  reason: collision with root package name */

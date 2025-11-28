@@ -86,12 +86,12 @@ public final class TextContextMenuHelperApi28 {
             ContextMenuScope.item$default(contextMenuScope, function2, null, false, icon != null ? ComposableLambdaKt.composableLambdaInstance(-1123224187, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$textClassificationItem$2$1
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                    m1420invokeek8zF_U(color.m5289unboximpl(), composer, num.intValue());
+                    m1421invokeek8zF_U(color.m5290unboximpl(), composer, num.intValue());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-ek8zF_U  reason: not valid java name */
-                public final void m1420invokeek8zF_U(long j, Composer composer, int i) {
+                public final void m1421invokeek8zF_U(long j, Composer composer, int i) {
                     ComposerKt.sourceInformation(composer, "CN(color:c#ui.graphics.Color)247@9913L13:DefaultTextContextMenuDropdownProvider.android.kt#18dpbw");
                     if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
                         composer.skipToGroupEnd();
@@ -140,12 +140,12 @@ public final class TextContextMenuHelperApi28 {
             r3 = ComposableLambdaKt.composableLambdaInstance(-1261173016, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$textClassificationItem$5
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                    m1421invokeek8zF_U(color.m5289unboximpl(), composer, num.intValue());
+                    m1422invokeek8zF_U(color.m5290unboximpl(), composer, num.intValue());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-ek8zF_U  reason: not valid java name */
-                public final void m1421invokeek8zF_U(long j, Composer composer, int i) {
+                public final void m1422invokeek8zF_U(long j, Composer composer, int i) {
                     ComposerKt.sourceInformation(composer, "CN(it:c#ui.graphics.Color)257@10329L20:DefaultTextContextMenuDropdownProvider.android.kt#18dpbw");
                     if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
                         composer.skipToGroupEnd();
@@ -271,7 +271,7 @@ public final class TextContextMenuHelperApi28 {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(257732500, i2, -1, "androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28.IconBox (DefaultTextContextMenuDropdownProvider.android.kt:274)");
             }
-            Modifier m894size3ABfNKs = SizeKt.m894size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m401getIconSizeD9Ej5fM());
+            Modifier m895size3ABfNKs = SizeKt.m895size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m402getIconSizeD9Ej5fM());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1427166163, "CC(remember):DefaultTextContextMenuDropdownProvider.android.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(drawable);
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -287,7 +287,7 @@ public final class TextContextMenuHelperApi28 {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BoxKt.Box(DrawModifierKt.drawBehind(m894size3ABfNKs, (Function1) rememberedValue), startRestartGroup, 0);
+            BoxKt.Box(DrawModifierKt.drawBehind(m895size3ABfNKs, (Function1) rememberedValue), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -308,7 +308,7 @@ public final class TextContextMenuHelperApi28 {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit IconBox$lambda$8$lambda$7(Drawable drawable, DrawScope drawScope) {
         Canvas canvas = drawScope.getDrawContext().getCanvas();
-        drawable.setBounds(0, 0, (int) Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() >> 32)), (int) Float.intBitsToFloat((int) (drawScope.mo5858getSizeNHjbRc() & 4294967295L)));
+        drawable.setBounds(0, 0, (int) Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)), (int) Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)));
         drawable.draw(AndroidCanvas_androidKt.getNativeCanvas(canvas));
         return Unit.INSTANCE;
     }

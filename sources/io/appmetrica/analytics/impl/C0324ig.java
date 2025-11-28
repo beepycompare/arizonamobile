@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* renamed from: io.appmetrica.analytics.impl.ig  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0324ig extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */

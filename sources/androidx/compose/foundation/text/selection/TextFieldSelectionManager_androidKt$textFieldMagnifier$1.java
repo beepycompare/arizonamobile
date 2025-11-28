@@ -47,7 +47,7 @@ public final class TextFieldSelectionManager_androidKt$textFieldMagnifier$1 impl
         ComposerKt.sourceInformationMarkerStart(composer, 667107648, "CC(remember):TextFieldSelectionManager.android.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8158boximpl(IntSize.Companion.m8171getZeroYbymL2g()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8159boximpl(IntSize.Companion.m8172getZeroYbymL2g()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
@@ -93,21 +93,21 @@ public final class TextFieldSelectionManager_androidKt$textFieldMagnifier$1 impl
     }
 
     private static final long invoke$lambda$1(MutableState<IntSize> mutableState) {
-        return mutableState.getValue().m8170unboximpl();
+        return mutableState.getValue().m8171unboximpl();
     }
 
     private static final void invoke$lambda$2(MutableState<IntSize> mutableState, long j) {
-        mutableState.setValue(IntSize.m8158boximpl(j));
+        mutableState.setValue(IntSize.m8159boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset invoke$lambda$4$lambda$3(TextFieldSelectionManager textFieldSelectionManager, MutableState mutableState) {
-        return Offset.m5024boximpl(TextFieldSelectionManagerKt.m1842calculateSelectionMagnifierCenterAndroidO0kMr_c(textFieldSelectionManager, invoke$lambda$1(mutableState)));
+        return Offset.m5025boximpl(TextFieldSelectionManagerKt.m1843calculateSelectionMagnifierCenterAndroidO0kMr_c(textFieldSelectionManager, invoke$lambda$1(mutableState)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Modifier invoke$lambda$9$lambda$8(final Density density, final MutableState mutableState, final Function0 function0) {
-        return Magnifier_androidKt.m348magnifierjPUL71Q$default(Modifier.Companion, new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$textFieldMagnifier$1$$ExternalSyntheticLambda0
+        return Magnifier_androidKt.m349magnifierjPUL71Q$default(Modifier.Companion, new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$textFieldMagnifier$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Offset invoke$lambda$9$lambda$8$lambda$5;
@@ -131,7 +131,7 @@ public final class TextFieldSelectionManager_androidKt$textFieldMagnifier$1 impl
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invoke$lambda$9$lambda$8$lambda$7(Density density, MutableState mutableState, DpSize dpSize) {
-        invoke$lambda$2(mutableState, IntSize.m8161constructorimpl((density.mo423roundToPx0680j_4(DpSize.m8093getWidthD9Ej5fM(dpSize.m8101unboximpl())) << 32) | (density.mo423roundToPx0680j_4(DpSize.m8091getHeightD9Ej5fM(dpSize.m8101unboximpl())) & 4294967295L)));
+        invoke$lambda$2(mutableState, IntSize.m8162constructorimpl((density.mo424roundToPx0680j_4(DpSize.m8094getWidthD9Ej5fM(dpSize.m8102unboximpl())) << 32) | (density.mo424roundToPx0680j_4(DpSize.m8092getHeightD9Ej5fM(dpSize.m8102unboximpl())) & 4294967295L)));
         return Unit.INSTANCE;
     }
 }

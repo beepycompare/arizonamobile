@@ -45,7 +45,7 @@ final class ScrollableNode$onDragStopped$1 extends SuspendLambda implements Func
             ResultKt.throwOnFailure(obj);
             scrollingLogic = this.this$0.scrollingLogic;
             this.label = 1;
-            if (scrollingLogic.m590onScrollStoppedBMRW4eQ(this.$velocity, false, this) == coroutine_suspended) {
+            if (scrollingLogic.m591onScrollStoppedBMRW4eQ(this.$velocity, false, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

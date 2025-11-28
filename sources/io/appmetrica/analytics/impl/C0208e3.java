@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 /* renamed from: io.appmetrica.analytics.impl.e3  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0208e3 extends Hi {
     public C0208e3(Context context, String str) {
         super(context, str, "bool");

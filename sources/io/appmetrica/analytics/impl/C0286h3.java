@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* renamed from: io.appmetrica.analytics.impl.h3  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0286h3 extends U2 {
     public C0286h3(int i, String str, PublicLogger publicLogger) {
         super(i, str, publicLogger);

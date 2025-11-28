@@ -118,8 +118,8 @@ public final class TextFieldImplKt {
     public static final String TextFieldId = "TextField";
     private static final float TextFieldPadding;
     public static final String TrailingId = "Trailing";
-    private static final float PrefixSuffixTextPadding = Dp.m7995constructorimpl(2);
-    private static final float MinTextLineHeight = Dp.m7995constructorimpl(24);
+    private static final float PrefixSuffixTextPadding = Dp.m7996constructorimpl(2);
+    private static final float MinTextLineHeight = Dp.m7996constructorimpl(24);
 
     /* compiled from: TextFieldImpl.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -164,13 +164,13 @@ public final class TextFieldImplKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Decoration_3J_VO9M$lambda$20(long j, TextStyle textStyle, Function2 function2, int i, Composer composer, int i2) {
-        m3613Decoration3JVO9M(j, textStyle, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m3614Decoration3JVO9M(j, textStyle, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Decoration_Iv8Zu3U$lambda$21(long j, Function2 function2, int i, Composer composer, int i2) {
-        m3614DecorationIv8Zu3U(j, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m3615DecorationIv8Zu3U(j, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
@@ -375,21 +375,21 @@ public final class TextFieldImplKt {
             }
             boolean booleanValue = FocusInteractionKt.collectIsFocusedAsState(interactionSource, startRestartGroup, (i18 >> 12) & 14).getValue().booleanValue();
             InputPhase inputPhase6 = booleanValue ? InputPhase.Focused : charSequence.length() == 0 ? InputPhase.UnfocusedEmpty : InputPhase.UnfocusedNotEmpty;
-            long m3118labelColorXeAY9LY$material3 = textFieldColors2.m3118labelColorXeAY9LY$material3(z2, z3, booleanValue);
+            long m3119labelColorXeAY9LY$material3 = textFieldColors2.m3119labelColorXeAY9LY$material3(z2, z3, booleanValue);
             Typography typography = MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6);
             final TextStyle bodyLarge = typography.getBodyLarge();
             TextStyle bodySmall = typography.getBodySmall();
-            boolean z8 = (Color.m5280equalsimpl0(bodyLarge.m7487getColor0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU()) && !Color.m5280equalsimpl0(bodySmall.m7487getColor0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU())) || (!Color.m5280equalsimpl0(bodyLarge.m7487getColor0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU()) && Color.m5280equalsimpl0(bodySmall.m7487getColor0d7_KjU(), Color.Companion.m5315getUnspecified0d7_KjU()));
-            long m7487getColor0d7_KjU = bodySmall.m7487getColor0d7_KjU();
-            if (z8 && m7487getColor0d7_KjU == 16) {
-                m7487getColor0d7_KjU = m3118labelColorXeAY9LY$material3;
+            boolean z8 = (Color.m5281equalsimpl0(bodyLarge.m7488getColor0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU()) && !Color.m5281equalsimpl0(bodySmall.m7488getColor0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU())) || (!Color.m5281equalsimpl0(bodyLarge.m7488getColor0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU()) && Color.m5281equalsimpl0(bodySmall.m7488getColor0d7_KjU(), Color.Companion.m5316getUnspecified0d7_KjU()));
+            long m7488getColor0d7_KjU = bodySmall.m7488getColor0d7_KjU();
+            if (z8 && m7488getColor0d7_KjU == 16) {
+                m7488getColor0d7_KjU = m3119labelColorXeAY9LY$material3;
             }
-            long m7487getColor0d7_KjU2 = bodyLarge.m7487getColor0d7_KjU();
-            if (z8 && m7487getColor0d7_KjU2 == 16) {
-                m7487getColor0d7_KjU2 = m3118labelColorXeAY9LY$material3;
+            long m7488getColor0d7_KjU2 = bodyLarge.m7488getColor0d7_KjU();
+            if (z8 && m7488getColor0d7_KjU2 == 16) {
+                m7488getColor0d7_KjU2 = m3119labelColorXeAY9LY$material3;
             }
             boolean z9 = function3 != null && getShowExpandedLabel(textFieldLabelPosition);
-            long j2 = m7487getColor0d7_KjU;
+            long j2 = m7488getColor0d7_KjU;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2132505973, "CC(TextFieldTransitionScope)N(inputState,focusedLabelTextStyleColor:c#ui.graphics.Color,unfocusedLabelTextStyleColor:c#ui.graphics.Color,labelColor:c#ui.graphics.Color,showExpandedLabel,content)385@16247L59,388@16444L14,390@16502L300,398@16874L14,399@16959L14,401@17022L830,424@17903L347,435@18316L14,437@18380L288,449@18771L167,455@18944L150:TextFieldImpl.kt#mqatfk");
             Transition updateTransition = TransitionKt.updateTransition(inputPhase6, "TextFieldInputState", startRestartGroup, 48, 0);
             TextFieldImplKt$TextFieldTransitionScope$labelProgress$1 textFieldImplKt$TextFieldTransitionScope$labelProgress$1 = new TextFieldImplKt$TextFieldTransitionScope$labelProgress$1(MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6));
@@ -455,11 +455,11 @@ public final class TextFieldImplKt {
                             ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
                             if (ComposerKt.isTraceInProgress()) {
                                 inputPhase2 = inputPhase9;
-                                j = m7487getColor0d7_KjU2;
+                                j = m7488getColor0d7_KjU2;
                                 ComposerKt.traceEventStart(-1093194547, 0, -1, "androidx.compose.material3.internal.TextFieldTransitionScope.<anonymous> (TextFieldImpl.kt:416)");
                             } else {
                                 inputPhase2 = inputPhase9;
-                                j = m7487getColor0d7_KjU2;
+                                j = m7488getColor0d7_KjU2;
                             }
                             i8 = WhenMappings.$EnumSwitchMapping$1[inputPhase2.ordinal()];
                             if (i8 != 1) {
@@ -560,12 +560,12 @@ public final class TextFieldImplKt {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             startRestartGroup.endReplaceGroup();
-                                            ColorSpace m5283getColorSpaceimpl = Color.m5283getColorSpaceimpl(j3);
+                                            ColorSpace m5284getColorSpaceimpl = Color.m5284getColorSpaceimpl(j3);
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                            changed = startRestartGroup.changed(m5283getColorSpaceimpl);
+                                            changed = startRestartGroup.changed(m5284getColorSpaceimpl);
                                             rememberedValue = startRestartGroup.rememberedValue();
                                             if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
-                                                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl);
+                                                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl);
                                                 startRestartGroup.updateRememberedValue(rememberedValue);
                                             }
                                             TwoWayConverter twoWayConverter = (TwoWayConverter) rememberedValue;
@@ -585,7 +585,7 @@ public final class TextFieldImplKt {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             startRestartGroup.endReplaceGroup();
-                                            Color m5269boximpl = Color.m5269boximpl(j4);
+                                            Color m5270boximpl = Color.m5270boximpl(j4);
                                             InputPhase inputPhase15 = (InputPhase) updateTransition.getTargetState();
                                             startRestartGroup.startReplaceGroup(-12973394);
                                             ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -602,7 +602,7 @@ public final class TextFieldImplKt {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             startRestartGroup.endReplaceGroup();
-                                            final State createTransitionAnimation4 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl, Color.m5269boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                            final State createTransitionAnimation4 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl, Color.m5270boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$1 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value2);
@@ -617,12 +617,12 @@ public final class TextFieldImplKt {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             startRestartGroup.endReplaceGroup();
-                                            ColorSpace m5283getColorSpaceimpl2 = Color.m5283getColorSpaceimpl(m3118labelColorXeAY9LY$material3);
+                                            ColorSpace m5284getColorSpaceimpl2 = Color.m5284getColorSpaceimpl(m3119labelColorXeAY9LY$material3);
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                            changed2 = startRestartGroup.changed(m5283getColorSpaceimpl2);
+                                            changed2 = startRestartGroup.changed(m5284getColorSpaceimpl2);
                                             rememberedValue2 = startRestartGroup.rememberedValue();
                                             if (!changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                                                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl2);
+                                                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl2);
                                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                                             }
                                             TwoWayConverter twoWayConverter2 = (TwoWayConverter) rememberedValue2;
@@ -638,7 +638,7 @@ public final class TextFieldImplKt {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             startRestartGroup.endReplaceGroup();
-                                            Color m5269boximpl2 = Color.m5269boximpl(m3118labelColorXeAY9LY$material3);
+                                            Color m5270boximpl2 = Color.m5270boximpl(m3119labelColorXeAY9LY$material3);
                                             InputPhase inputPhase18 = (InputPhase) updateTransition.getTargetState();
                                             startRestartGroup.startReplaceGroup(-464752477);
                                             ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -652,7 +652,7 @@ public final class TextFieldImplKt {
                                                 ComposerKt.traceEventEnd();
                                             }
                                             startRestartGroup.endReplaceGroup();
-                                            final State createTransitionAnimation5 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl2, Color.m5269boximpl(m3118labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter2, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                            final State createTransitionAnimation5 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl2, Color.m5270boximpl(m3119labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter2, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891788529, "CN(labelProgress,labelTextStyleColor,labelContentColor,placeholderAlpha,prefixSuffixAlpha)130@5443L184,155@6570L107,172@7353L108:TextFieldImpl.kt#mqatfk");
@@ -721,12 +721,12 @@ public final class TextFieldImplKt {
                                                         boolean z11 = z10;
                                                         State<Color> state7 = createTransitionAnimation4;
                                                         if (z11) {
-                                                            lerp = TextStyle.m7470copyp1EtxEg$default(lerp, state7.getValue().m5289unboximpl(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, null, 0, 0, null, 16777214, null);
+                                                            lerp = TextStyle.m7471copyp1EtxEg$default(lerp, state7.getValue().m5290unboximpl(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, null, 0, 0, null, 16777214, null);
                                                         }
-                                                        long m5289unboximpl = createTransitionAnimation5.getValue().m5289unboximpl();
+                                                        long m5290unboximpl = createTransitionAnimation5.getValue().m5290unboximpl();
                                                         final Function3<TextFieldLabelScope, Composer, Integer, Unit> function32 = function3;
                                                         final TextFieldImplKt$CommonDecorationBox$3$labelScope$1$1 textFieldImplKt$CommonDecorationBox$3$labelScope$1$12 = textFieldImplKt$CommonDecorationBox$3$labelScope$1$1;
-                                                        TextFieldImplKt.m3613Decoration3JVO9M(m5289unboximpl, lerp, ComposableLambdaKt.rememberComposableLambda(1157484991, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.internal.TextFieldImplKt$CommonDecorationBox$3$decoratedLabel$1$1.1
+                                                        TextFieldImplKt.m3614Decoration3JVO9M(m5290unboximpl, lerp, ComposableLambdaKt.rememberComposableLambda(1157484991, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.internal.TextFieldImplKt$CommonDecorationBox$3$decoratedLabel$1$1.1
                                                             @Override // kotlin.jvm.functions.Function2
                                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
                                                                 invoke(composer5, num.intValue());
@@ -760,7 +760,7 @@ public final class TextFieldImplKt {
                                                 composer3.endReplaceGroup();
                                             }
                                             ComposableLambda composableLambda6 = composableLambda5;
-                                            long m3120placeholderColorXeAY9LY$material3 = textFieldColors3.m3120placeholderColorXeAY9LY$material3(z5, z6, z7);
+                                            long m3121placeholderColorXeAY9LY$material3 = textFieldColors3.m3121placeholderColorXeAY9LY$material3(z5, z6, z7);
                                             ComposerKt.sourceInformationMarkerStart(composer3, 493193214, str);
                                             rememberedValue4 = composer3.rememberedValue();
                                             if (rememberedValue4 != Composer.Companion.getEmpty()) {
@@ -783,13 +783,13 @@ public final class TextFieldImplKt {
                                                 composer3.startReplaceGroup(-1890614312);
                                                 ComposerKt.sourceInformation(composer3, "160@6858L363");
                                                 composer3.endReplaceGroup();
-                                                composableLambda = ComposableLambdaKt.rememberComposableLambda(1405547205, true, new TextFieldImplKt$CommonDecorationBox$3$decoratedPlaceholder$1(state4, m3120placeholderColorXeAY9LY$material3, textStyle2, function22), composer3, i14);
+                                                composableLambda = ComposableLambdaKt.rememberComposableLambda(1405547205, true, new TextFieldImplKt$CommonDecorationBox$3$decoratedPlaceholder$1(state4, m3121placeholderColorXeAY9LY$material3, textStyle2, function22), composer3, i14);
                                             } else {
                                                 composer3.startReplaceGroup(-1890217110);
                                                 composer3.endReplaceGroup();
                                                 composableLambda = null;
                                             }
-                                            long m3121prefixColorXeAY9LY$material3 = textFieldColors3.m3121prefixColorXeAY9LY$material3(z5, z6, z7);
+                                            long m3122prefixColorXeAY9LY$material3 = textFieldColors3.m3122prefixColorXeAY9LY$material3(z5, z6, z7);
                                             ComposerKt.sourceInformationMarkerStart(composer3, 493218271, str);
                                             rememberedValue5 = composer3.rememberedValue();
                                             if (rememberedValue5 != Composer.Companion.getEmpty()) {
@@ -813,25 +813,25 @@ public final class TextFieldImplKt {
                                                 ComposerKt.sourceInformation(composer3, "177@7601L342");
                                                 state6 = state5;
                                                 composer3.endReplaceGroup();
-                                                composableLambda2 = ComposableLambdaKt.rememberComposableLambda(606594655, true, new TextFieldImplKt$CommonDecorationBox$3$decoratedPrefix$1(state6, m3121prefixColorXeAY9LY$material3, textStyle2, function25), composer3, i14);
+                                                composableLambda2 = ComposableLambdaKt.rememberComposableLambda(606594655, true, new TextFieldImplKt$CommonDecorationBox$3$decoratedPrefix$1(state6, m3122prefixColorXeAY9LY$material3, textStyle2, function25), composer3, i14);
                                             } else {
                                                 state6 = state5;
                                                 composer3.startReplaceGroup(-1889500886);
                                                 composer3.endReplaceGroup();
                                                 composableLambda2 = null;
                                             }
-                                            long m3122suffixColorXeAY9LY$material3 = textFieldColors3.m3122suffixColorXeAY9LY$material3(z5, z6, z7);
+                                            long m3123suffixColorXeAY9LY$material3 = textFieldColors3.m3123suffixColorXeAY9LY$material3(z5, z6, z7);
                                             if (function26 == null && CommonDecorationBox$lambda$18$lambda$11(state8)) {
                                                 composer3.startReplaceGroup(-1889301555);
                                                 ComposerKt.sourceInformation(composer3, "191@8182L342");
-                                                composableLambda3 = ComposableLambdaKt.rememberComposableLambda(-45078754, true, new TextFieldImplKt$CommonDecorationBox$3$decoratedSuffix$1(state6, m3122suffixColorXeAY9LY$material3, textStyle2, function26), composer3, i14);
+                                                composableLambda3 = ComposableLambdaKt.rememberComposableLambda(-45078754, true, new TextFieldImplKt$CommonDecorationBox$3$decoratedSuffix$1(state6, m3123suffixColorXeAY9LY$material3, textStyle2, function26), composer3, i14);
                                                 composer3.endReplaceGroup();
                                             } else {
                                                 composer3.startReplaceGroup(-1888924534);
                                                 composer3.endReplaceGroup();
                                                 composableLambda3 = null;
                                             }
-                                            final long m3119leadingIconColorXeAY9LY$material3 = textFieldColors3.m3119leadingIconColorXeAY9LY$material3(z5, z6, z7);
+                                            final long m3120leadingIconColorXeAY9LY$material3 = textFieldColors3.m3120leadingIconColorXeAY9LY$material3(z5, z6, z7);
                                             if (function23 != null) {
                                                 composer3.startReplaceGroup(-1888749663);
                                                 composer3.endReplaceGroup();
@@ -855,7 +855,7 @@ public final class TextFieldImplKt {
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventStart(-1736293487, i20, -1, "androidx.compose.material3.internal.CommonDecorationBox.<anonymous>.<anonymous>.<anonymous> (TextFieldImpl.kt:205)");
                                                         }
-                                                        TextFieldImplKt.m3614DecorationIv8Zu3U(m3119leadingIconColorXeAY9LY$material3, function23, composer4, 0);
+                                                        TextFieldImplKt.m3615DecorationIv8Zu3U(m3120leadingIconColorXeAY9LY$material3, function23, composer4, 0);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
                                                         }
@@ -863,7 +863,7 @@ public final class TextFieldImplKt {
                                                 }, composer3, i14);
                                                 composer3.endReplaceGroup();
                                             }
-                                            final long m3125trailingIconColorXeAY9LY$material3 = textFieldColors3.m3125trailingIconColorXeAY9LY$material3(z5, z6, z7);
+                                            final long m3126trailingIconColorXeAY9LY$material3 = textFieldColors3.m3126trailingIconColorXeAY9LY$material3(z5, z6, z7);
                                             if (function24 != null) {
                                                 composer3.startReplaceGroup(-1888469888);
                                                 composer3.endReplaceGroup();
@@ -890,14 +890,14 @@ public final class TextFieldImplKt {
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventStart(1334518521, i20, -1, "androidx.compose.material3.internal.CommonDecorationBox.<anonymous>.<anonymous>.<anonymous> (TextFieldImpl.kt:211)");
                                                         }
-                                                        TextFieldImplKt.m3614DecorationIv8Zu3U(m3125trailingIconColorXeAY9LY$material3, function24, composer4, 0);
+                                                        TextFieldImplKt.m3615DecorationIv8Zu3U(m3126trailingIconColorXeAY9LY$material3, function24, composer4, 0);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
                                                         }
                                                     }
                                                 }, composer3, 54);
                                             }
-                                            final long m3123supportingTextColorXeAY9LY$material3 = textFieldColors3.m3123supportingTextColorXeAY9LY$material3(z5, z6, z7);
+                                            final long m3124supportingTextColorXeAY9LY$material3 = textFieldColors3.m3124supportingTextColorXeAY9LY$material3(z5, z6, z7);
                                             if (function27 != null) {
                                                 composer3.startReplaceGroup(-1888176380);
                                                 composer3.endReplaceGroup();
@@ -919,7 +919,7 @@ public final class TextFieldImplKt {
                                                             if (ComposerKt.isTraceInProgress()) {
                                                                 ComposerKt.traceEventStart(837168720, i20, -1, "androidx.compose.material3.internal.CommonDecorationBox.<anonymous>.<anonymous>.<anonymous> (TextFieldImpl.kt:218)");
                                                             }
-                                                            TextFieldImplKt.m3613Decoration3JVO9M(m3123supportingTextColorXeAY9LY$material3, textStyle3, function27, composer4, 0);
+                                                            TextFieldImplKt.m3614Decoration3JVO9M(m3124supportingTextColorXeAY9LY$material3, textStyle3, function27, composer4, 0);
                                                             if (ComposerKt.isTraceInProgress()) {
                                                                 ComposerKt.traceEventEnd();
                                                                 return;
@@ -978,15 +978,15 @@ public final class TextFieldImplKt {
                                                         } else {
                                                             composer5.useNode();
                                                         }
-                                                        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer5);
-                                                        Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer5);
+                                                        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                         }
-                                                        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                         ComposerKt.sourceInformationMarkerStart(composer5, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                         ComposerKt.sourceInformationMarkerStart(composer5, 2113149629, "C230@9796L11:TextFieldImpl.kt#mqatfk");
@@ -1016,7 +1016,7 @@ public final class TextFieldImplKt {
                                                 ComposerKt.sourceInformationMarkerStart(composer3, 493325625, str);
                                                 Object rememberedValue6 = composer3.rememberedValue();
                                                 if (rememberedValue6 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue6 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5092boximpl(Size.Companion.m5113getZeroNHjbRc()), null, 2, null);
+                                                    rememberedValue6 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(Size.Companion.m5114getZeroNHjbRc()), null, 2, null);
                                                     composer3.updateRememberedValue(rememberedValue6);
                                                 }
                                                 final MutableState mutableState = (MutableState) rememberedValue6;
@@ -1068,15 +1068,15 @@ public final class TextFieldImplKt {
                                                         } else {
                                                             composer6.useNode();
                                                         }
-                                                        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer6);
-                                                        Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer6);
+                                                        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                         }
-                                                        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                         ComposerKt.sourceInformationMarkerStart(composer6, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                         ComposerKt.sourceInformationMarkerStart(composer6, 1233755264, "C264@11283L11:TextFieldImpl.kt#mqatfk");
@@ -1161,13 +1161,13 @@ public final class TextFieldImplKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    ColorSpace m5283getColorSpaceimpl3 = Color.m5283getColorSpaceimpl(j3);
+                                    ColorSpace m5284getColorSpaceimpl3 = Color.m5284getColorSpaceimpl(j3);
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                    changed = startRestartGroup.changed(m5283getColorSpaceimpl3);
+                                    changed = startRestartGroup.changed(m5284getColorSpaceimpl3);
                                     rememberedValue = startRestartGroup.rememberedValue();
                                     if (!changed) {
                                     }
-                                    rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl3);
+                                    rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl3);
                                     startRestartGroup.updateRememberedValue(rememberedValue);
                                     TwoWayConverter twoWayConverter3 = (TwoWayConverter) rememberedValue;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1182,7 +1182,7 @@ public final class TextFieldImplKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    Color m5269boximpl3 = Color.m5269boximpl(j4);
+                                    Color m5270boximpl3 = Color.m5270boximpl(j4);
                                     InputPhase inputPhase152 = (InputPhase) updateTransition.getTargetState();
                                     startRestartGroup.startReplaceGroup(-12973394);
                                     ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1193,7 +1193,7 @@ public final class TextFieldImplKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    final State<Color> createTransitionAnimation42 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl3, Color.m5269boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter3, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                    final State<Color> createTransitionAnimation42 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl3, Color.m5270boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter3, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$12 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value22);
@@ -1206,13 +1206,13 @@ public final class TextFieldImplKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    ColorSpace m5283getColorSpaceimpl22 = Color.m5283getColorSpaceimpl(m3118labelColorXeAY9LY$material3);
+                                    ColorSpace m5284getColorSpaceimpl22 = Color.m5284getColorSpaceimpl(m3119labelColorXeAY9LY$material3);
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                    changed2 = startRestartGroup.changed(m5283getColorSpaceimpl22);
+                                    changed2 = startRestartGroup.changed(m5284getColorSpaceimpl22);
                                     rememberedValue2 = startRestartGroup.rememberedValue();
                                     if (!changed2) {
                                     }
-                                    rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl22);
+                                    rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl22);
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
                                     TwoWayConverter twoWayConverter22 = (TwoWayConverter) rememberedValue2;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1225,7 +1225,7 @@ public final class TextFieldImplKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    Color m5269boximpl22 = Color.m5269boximpl(m3118labelColorXeAY9LY$material3);
+                                    Color m5270boximpl22 = Color.m5270boximpl(m3119labelColorXeAY9LY$material3);
                                     InputPhase inputPhase182 = (InputPhase) updateTransition.getTargetState();
                                     startRestartGroup.startReplaceGroup(-464752477);
                                     ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1234,7 +1234,7 @@ public final class TextFieldImplKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
                                     startRestartGroup.endReplaceGroup();
-                                    final State<Color> createTransitionAnimation52 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl22, Color.m5269boximpl(m3118labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter22, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                    final State<Color> createTransitionAnimation52 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl22, Color.m5270boximpl(m3119labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter22, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891788529, "CN(labelProgress,labelTextStyleColor,labelContentColor,placeholderAlpha,prefixSuffixAlpha)130@5443L184,155@6570L107,172@7353L108:TextFieldImpl.kt#mqatfk");
@@ -1248,7 +1248,7 @@ public final class TextFieldImplKt {
                                     if (function3 != null) {
                                     }
                                     ComposableLambda composableLambda62 = composableLambda52;
-                                    long m3120placeholderColorXeAY9LY$material32 = textFieldColors3.m3120placeholderColorXeAY9LY$material3(z5, z6, z7);
+                                    long m3121placeholderColorXeAY9LY$material32 = textFieldColors3.m3121placeholderColorXeAY9LY$material3(z5, z6, z7);
                                     ComposerKt.sourceInformationMarkerStart(composer3, 493193214, str);
                                     rememberedValue4 = composer3.rememberedValue();
                                     if (rememberedValue4 != Composer.Companion.getEmpty()) {
@@ -1260,7 +1260,7 @@ public final class TextFieldImplKt {
                                     composer3.startReplaceGroup(-1890217110);
                                     composer3.endReplaceGroup();
                                     composableLambda = null;
-                                    long m3121prefixColorXeAY9LY$material32 = textFieldColors3.m3121prefixColorXeAY9LY$material3(z5, z6, z7);
+                                    long m3122prefixColorXeAY9LY$material32 = textFieldColors3.m3122prefixColorXeAY9LY$material3(z5, z6, z7);
                                     ComposerKt.sourceInformationMarkerStart(composer3, 493218271, str);
                                     rememberedValue5 = composer3.rememberedValue();
                                     if (rememberedValue5 != Composer.Companion.getEmpty()) {
@@ -1273,19 +1273,19 @@ public final class TextFieldImplKt {
                                     composer3.startReplaceGroup(-1889500886);
                                     composer3.endReplaceGroup();
                                     composableLambda2 = null;
-                                    long m3122suffixColorXeAY9LY$material32 = textFieldColors3.m3122suffixColorXeAY9LY$material3(z5, z6, z7);
+                                    long m3123suffixColorXeAY9LY$material32 = textFieldColors3.m3123suffixColorXeAY9LY$material3(z5, z6, z7);
                                     if (function26 == null) {
                                     }
                                     composer3.startReplaceGroup(-1888924534);
                                     composer3.endReplaceGroup();
                                     composableLambda3 = null;
-                                    final long m3119leadingIconColorXeAY9LY$material32 = textFieldColors3.m3119leadingIconColorXeAY9LY$material3(z5, z6, z7);
+                                    final long m3120leadingIconColorXeAY9LY$material32 = textFieldColors3.m3120leadingIconColorXeAY9LY$material3(z5, z6, z7);
                                     if (function23 != null) {
                                     }
-                                    final long m3125trailingIconColorXeAY9LY$material32 = textFieldColors3.m3125trailingIconColorXeAY9LY$material3(z5, z6, z7);
+                                    final long m3126trailingIconColorXeAY9LY$material32 = textFieldColors3.m3126trailingIconColorXeAY9LY$material3(z5, z6, z7);
                                     if (function24 != null) {
                                     }
-                                    final long m3123supportingTextColorXeAY9LY$material32 = textFieldColors3.m3123supportingTextColorXeAY9LY$material3(z5, z6, z7);
+                                    final long m3124supportingTextColorXeAY9LY$material32 = textFieldColors3.m3124supportingTextColorXeAY9LY$material3(z5, z6, z7);
                                     if (function27 != null) {
                                     }
                                     i16 = WhenMappings.$EnumSwitchMapping$0[textFieldType.ordinal()];
@@ -1347,13 +1347,13 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 startRestartGroup.endReplaceGroup();
-                                ColorSpace m5283getColorSpaceimpl32 = Color.m5283getColorSpaceimpl(j3);
+                                ColorSpace m5284getColorSpaceimpl32 = Color.m5284getColorSpaceimpl(j3);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                changed = startRestartGroup.changed(m5283getColorSpaceimpl32);
+                                changed = startRestartGroup.changed(m5284getColorSpaceimpl32);
                                 rememberedValue = startRestartGroup.rememberedValue();
                                 if (!changed) {
                                 }
-                                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl32);
+                                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl32);
                                 startRestartGroup.updateRememberedValue(rememberedValue);
                                 TwoWayConverter twoWayConverter32 = (TwoWayConverter) rememberedValue;
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1368,7 +1368,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 startRestartGroup.endReplaceGroup();
-                                Color m5269boximpl32 = Color.m5269boximpl(j4);
+                                Color m5270boximpl32 = Color.m5270boximpl(j4);
                                 InputPhase inputPhase1522 = (InputPhase) updateTransition.getTargetState();
                                 startRestartGroup.startReplaceGroup(-12973394);
                                 ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1379,7 +1379,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 startRestartGroup.endReplaceGroup();
-                                final State<Color> createTransitionAnimation422 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl32, Color.m5269boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter32, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                final State<Color> createTransitionAnimation422 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl32, Color.m5270boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter32, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$122 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value222);
@@ -1392,13 +1392,13 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 startRestartGroup.endReplaceGroup();
-                                ColorSpace m5283getColorSpaceimpl222 = Color.m5283getColorSpaceimpl(m3118labelColorXeAY9LY$material3);
+                                ColorSpace m5284getColorSpaceimpl222 = Color.m5284getColorSpaceimpl(m3119labelColorXeAY9LY$material3);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                changed2 = startRestartGroup.changed(m5283getColorSpaceimpl222);
+                                changed2 = startRestartGroup.changed(m5284getColorSpaceimpl222);
                                 rememberedValue2 = startRestartGroup.rememberedValue();
                                 if (!changed2) {
                                 }
-                                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl222);
+                                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl222);
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                                 TwoWayConverter twoWayConverter222 = (TwoWayConverter) rememberedValue2;
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1411,7 +1411,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 startRestartGroup.endReplaceGroup();
-                                Color m5269boximpl222 = Color.m5269boximpl(m3118labelColorXeAY9LY$material3);
+                                Color m5270boximpl222 = Color.m5270boximpl(m3119labelColorXeAY9LY$material3);
                                 InputPhase inputPhase1822 = (InputPhase) updateTransition.getTargetState();
                                 startRestartGroup.startReplaceGroup(-464752477);
                                 ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1420,7 +1420,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 startRestartGroup.endReplaceGroup();
-                                final State<Color> createTransitionAnimation522 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl222, Color.m5269boximpl(m3118labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                final State<Color> createTransitionAnimation522 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl222, Color.m5270boximpl(m3119labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891788529, "CN(labelProgress,labelTextStyleColor,labelContentColor,placeholderAlpha,prefixSuffixAlpha)130@5443L184,155@6570L107,172@7353L108:TextFieldImpl.kt#mqatfk");
@@ -1434,7 +1434,7 @@ public final class TextFieldImplKt {
                                 if (function3 != null) {
                                 }
                                 ComposableLambda composableLambda622 = composableLambda522;
-                                long m3120placeholderColorXeAY9LY$material322 = textFieldColors3.m3120placeholderColorXeAY9LY$material3(z5, z6, z7);
+                                long m3121placeholderColorXeAY9LY$material322 = textFieldColors3.m3121placeholderColorXeAY9LY$material3(z5, z6, z7);
                                 ComposerKt.sourceInformationMarkerStart(composer3, 493193214, str);
                                 rememberedValue4 = composer3.rememberedValue();
                                 if (rememberedValue4 != Composer.Companion.getEmpty()) {
@@ -1446,7 +1446,7 @@ public final class TextFieldImplKt {
                                 composer3.startReplaceGroup(-1890217110);
                                 composer3.endReplaceGroup();
                                 composableLambda = null;
-                                long m3121prefixColorXeAY9LY$material322 = textFieldColors3.m3121prefixColorXeAY9LY$material3(z5, z6, z7);
+                                long m3122prefixColorXeAY9LY$material322 = textFieldColors3.m3122prefixColorXeAY9LY$material3(z5, z6, z7);
                                 ComposerKt.sourceInformationMarkerStart(composer3, 493218271, str);
                                 rememberedValue5 = composer3.rememberedValue();
                                 if (rememberedValue5 != Composer.Companion.getEmpty()) {
@@ -1459,19 +1459,19 @@ public final class TextFieldImplKt {
                                 composer3.startReplaceGroup(-1889500886);
                                 composer3.endReplaceGroup();
                                 composableLambda2 = null;
-                                long m3122suffixColorXeAY9LY$material322 = textFieldColors3.m3122suffixColorXeAY9LY$material3(z5, z6, z7);
+                                long m3123suffixColorXeAY9LY$material322 = textFieldColors3.m3123suffixColorXeAY9LY$material3(z5, z6, z7);
                                 if (function26 == null) {
                                 }
                                 composer3.startReplaceGroup(-1888924534);
                                 composer3.endReplaceGroup();
                                 composableLambda3 = null;
-                                final long m3119leadingIconColorXeAY9LY$material322 = textFieldColors3.m3119leadingIconColorXeAY9LY$material3(z5, z6, z7);
+                                final long m3120leadingIconColorXeAY9LY$material322 = textFieldColors3.m3120leadingIconColorXeAY9LY$material3(z5, z6, z7);
                                 if (function23 != null) {
                                 }
-                                final long m3125trailingIconColorXeAY9LY$material322 = textFieldColors3.m3125trailingIconColorXeAY9LY$material3(z5, z6, z7);
+                                final long m3126trailingIconColorXeAY9LY$material322 = textFieldColors3.m3126trailingIconColorXeAY9LY$material3(z5, z6, z7);
                                 if (function24 != null) {
                                 }
-                                final long m3123supportingTextColorXeAY9LY$material322 = textFieldColors3.m3123supportingTextColorXeAY9LY$material3(z5, z6, z7);
+                                final long m3124supportingTextColorXeAY9LY$material322 = textFieldColors3.m3124supportingTextColorXeAY9LY$material3(z5, z6, z7);
                                 if (function27 != null) {
                                 }
                                 i16 = WhenMappings.$EnumSwitchMapping$0[textFieldType.ordinal()];
@@ -1546,13 +1546,13 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             startRestartGroup.endReplaceGroup();
-                            ColorSpace m5283getColorSpaceimpl322 = Color.m5283getColorSpaceimpl(j3);
+                            ColorSpace m5284getColorSpaceimpl322 = Color.m5284getColorSpaceimpl(j3);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                            changed = startRestartGroup.changed(m5283getColorSpaceimpl322);
+                            changed = startRestartGroup.changed(m5284getColorSpaceimpl322);
                             rememberedValue = startRestartGroup.rememberedValue();
                             if (!changed) {
                             }
-                            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl322);
+                            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl322);
                             startRestartGroup.updateRememberedValue(rememberedValue);
                             TwoWayConverter twoWayConverter322 = (TwoWayConverter) rememberedValue;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1567,7 +1567,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             startRestartGroup.endReplaceGroup();
-                            Color m5269boximpl322 = Color.m5269boximpl(j4);
+                            Color m5270boximpl322 = Color.m5270boximpl(j4);
                             InputPhase inputPhase15222 = (InputPhase) updateTransition.getTargetState();
                             startRestartGroup.startReplaceGroup(-12973394);
                             ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1578,7 +1578,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             startRestartGroup.endReplaceGroup();
-                            final State<Color> createTransitionAnimation4222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl322, Color.m5269boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter322, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                            final State<Color> createTransitionAnimation4222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl322, Color.m5270boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter322, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$1222 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value2222);
@@ -1591,13 +1591,13 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             startRestartGroup.endReplaceGroup();
-                            ColorSpace m5283getColorSpaceimpl2222 = Color.m5283getColorSpaceimpl(m3118labelColorXeAY9LY$material3);
+                            ColorSpace m5284getColorSpaceimpl2222 = Color.m5284getColorSpaceimpl(m3119labelColorXeAY9LY$material3);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                            changed2 = startRestartGroup.changed(m5283getColorSpaceimpl2222);
+                            changed2 = startRestartGroup.changed(m5284getColorSpaceimpl2222);
                             rememberedValue2 = startRestartGroup.rememberedValue();
                             if (!changed2) {
                             }
-                            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl2222);
+                            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl2222);
                             startRestartGroup.updateRememberedValue(rememberedValue2);
                             TwoWayConverter twoWayConverter2222 = (TwoWayConverter) rememberedValue2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1610,7 +1610,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             startRestartGroup.endReplaceGroup();
-                            Color m5269boximpl2222 = Color.m5269boximpl(m3118labelColorXeAY9LY$material3);
+                            Color m5270boximpl2222 = Color.m5270boximpl(m3119labelColorXeAY9LY$material3);
                             InputPhase inputPhase18222 = (InputPhase) updateTransition.getTargetState();
                             startRestartGroup.startReplaceGroup(-464752477);
                             ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1619,7 +1619,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             startRestartGroup.endReplaceGroup();
-                            final State<Color> createTransitionAnimation5222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl2222, Color.m5269boximpl(m3118labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter2222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                            final State<Color> createTransitionAnimation5222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl2222, Color.m5270boximpl(m3119labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter2222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891788529, "CN(labelProgress,labelTextStyleColor,labelContentColor,placeholderAlpha,prefixSuffixAlpha)130@5443L184,155@6570L107,172@7353L108:TextFieldImpl.kt#mqatfk");
@@ -1633,7 +1633,7 @@ public final class TextFieldImplKt {
                             if (function3 != null) {
                             }
                             ComposableLambda composableLambda6222 = composableLambda5222;
-                            long m3120placeholderColorXeAY9LY$material3222 = textFieldColors3.m3120placeholderColorXeAY9LY$material3(z5, z6, z7);
+                            long m3121placeholderColorXeAY9LY$material3222 = textFieldColors3.m3121placeholderColorXeAY9LY$material3(z5, z6, z7);
                             ComposerKt.sourceInformationMarkerStart(composer3, 493193214, str);
                             rememberedValue4 = composer3.rememberedValue();
                             if (rememberedValue4 != Composer.Companion.getEmpty()) {
@@ -1645,7 +1645,7 @@ public final class TextFieldImplKt {
                             composer3.startReplaceGroup(-1890217110);
                             composer3.endReplaceGroup();
                             composableLambda = null;
-                            long m3121prefixColorXeAY9LY$material3222 = textFieldColors3.m3121prefixColorXeAY9LY$material3(z5, z6, z7);
+                            long m3122prefixColorXeAY9LY$material3222 = textFieldColors3.m3122prefixColorXeAY9LY$material3(z5, z6, z7);
                             ComposerKt.sourceInformationMarkerStart(composer3, 493218271, str);
                             rememberedValue5 = composer3.rememberedValue();
                             if (rememberedValue5 != Composer.Companion.getEmpty()) {
@@ -1658,19 +1658,19 @@ public final class TextFieldImplKt {
                             composer3.startReplaceGroup(-1889500886);
                             composer3.endReplaceGroup();
                             composableLambda2 = null;
-                            long m3122suffixColorXeAY9LY$material3222 = textFieldColors3.m3122suffixColorXeAY9LY$material3(z5, z6, z7);
+                            long m3123suffixColorXeAY9LY$material3222 = textFieldColors3.m3123suffixColorXeAY9LY$material3(z5, z6, z7);
                             if (function26 == null) {
                             }
                             composer3.startReplaceGroup(-1888924534);
                             composer3.endReplaceGroup();
                             composableLambda3 = null;
-                            final long m3119leadingIconColorXeAY9LY$material3222 = textFieldColors3.m3119leadingIconColorXeAY9LY$material3(z5, z6, z7);
+                            final long m3120leadingIconColorXeAY9LY$material3222 = textFieldColors3.m3120leadingIconColorXeAY9LY$material3(z5, z6, z7);
                             if (function23 != null) {
                             }
-                            final long m3125trailingIconColorXeAY9LY$material3222 = textFieldColors3.m3125trailingIconColorXeAY9LY$material3(z5, z6, z7);
+                            final long m3126trailingIconColorXeAY9LY$material3222 = textFieldColors3.m3126trailingIconColorXeAY9LY$material3(z5, z6, z7);
                             if (function24 != null) {
                             }
-                            final long m3123supportingTextColorXeAY9LY$material3222 = textFieldColors3.m3123supportingTextColorXeAY9LY$material3(z5, z6, z7);
+                            final long m3124supportingTextColorXeAY9LY$material3222 = textFieldColors3.m3124supportingTextColorXeAY9LY$material3(z5, z6, z7);
                             if (function27 != null) {
                             }
                             i16 = WhenMappings.$EnumSwitchMapping$0[textFieldType.ordinal()];
@@ -1766,13 +1766,13 @@ public final class TextFieldImplKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     startRestartGroup.endReplaceGroup();
-                    ColorSpace m5283getColorSpaceimpl3222 = Color.m5283getColorSpaceimpl(j3);
+                    ColorSpace m5284getColorSpaceimpl3222 = Color.m5284getColorSpaceimpl(j3);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                    changed = startRestartGroup.changed(m5283getColorSpaceimpl3222);
+                    changed = startRestartGroup.changed(m5284getColorSpaceimpl3222);
                     rememberedValue = startRestartGroup.rememberedValue();
                     if (!changed) {
                     }
-                    rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl3222);
+                    rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl3222);
                     startRestartGroup.updateRememberedValue(rememberedValue);
                     TwoWayConverter twoWayConverter3222 = (TwoWayConverter) rememberedValue;
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1787,7 +1787,7 @@ public final class TextFieldImplKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     startRestartGroup.endReplaceGroup();
-                    Color m5269boximpl3222 = Color.m5269boximpl(j4);
+                    Color m5270boximpl3222 = Color.m5270boximpl(j4);
                     InputPhase inputPhase152222 = (InputPhase) updateTransition.getTargetState();
                     startRestartGroup.startReplaceGroup(-12973394);
                     ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1798,7 +1798,7 @@ public final class TextFieldImplKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     startRestartGroup.endReplaceGroup();
-                    final State<Color> createTransitionAnimation42222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl3222, Color.m5269boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter3222, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                    final State<Color> createTransitionAnimation42222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl3222, Color.m5270boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter3222, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$12222 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value22222);
@@ -1811,13 +1811,13 @@ public final class TextFieldImplKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     startRestartGroup.endReplaceGroup();
-                    ColorSpace m5283getColorSpaceimpl22222 = Color.m5283getColorSpaceimpl(m3118labelColorXeAY9LY$material3);
+                    ColorSpace m5284getColorSpaceimpl22222 = Color.m5284getColorSpaceimpl(m3119labelColorXeAY9LY$material3);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                    changed2 = startRestartGroup.changed(m5283getColorSpaceimpl22222);
+                    changed2 = startRestartGroup.changed(m5284getColorSpaceimpl22222);
                     rememberedValue2 = startRestartGroup.rememberedValue();
                     if (!changed2) {
                     }
-                    rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl22222);
+                    rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl22222);
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                     TwoWayConverter twoWayConverter22222 = (TwoWayConverter) rememberedValue2;
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1830,7 +1830,7 @@ public final class TextFieldImplKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     startRestartGroup.endReplaceGroup();
-                    Color m5269boximpl22222 = Color.m5269boximpl(m3118labelColorXeAY9LY$material3);
+                    Color m5270boximpl22222 = Color.m5270boximpl(m3119labelColorXeAY9LY$material3);
                     InputPhase inputPhase182222 = (InputPhase) updateTransition.getTargetState();
                     startRestartGroup.startReplaceGroup(-464752477);
                     ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -1839,7 +1839,7 @@ public final class TextFieldImplKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     startRestartGroup.endReplaceGroup();
-                    final State<Color> createTransitionAnimation52222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl22222, Color.m5269boximpl(m3118labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter22222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                    final State<Color> createTransitionAnimation52222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl22222, Color.m5270boximpl(m3119labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter22222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891788529, "CN(labelProgress,labelTextStyleColor,labelContentColor,placeholderAlpha,prefixSuffixAlpha)130@5443L184,155@6570L107,172@7353L108:TextFieldImpl.kt#mqatfk");
@@ -1853,7 +1853,7 @@ public final class TextFieldImplKt {
                     if (function3 != null) {
                     }
                     ComposableLambda composableLambda62222 = composableLambda52222;
-                    long m3120placeholderColorXeAY9LY$material32222 = textFieldColors3.m3120placeholderColorXeAY9LY$material3(z5, z6, z7);
+                    long m3121placeholderColorXeAY9LY$material32222 = textFieldColors3.m3121placeholderColorXeAY9LY$material3(z5, z6, z7);
                     ComposerKt.sourceInformationMarkerStart(composer3, 493193214, str);
                     rememberedValue4 = composer3.rememberedValue();
                     if (rememberedValue4 != Composer.Companion.getEmpty()) {
@@ -1865,7 +1865,7 @@ public final class TextFieldImplKt {
                     composer3.startReplaceGroup(-1890217110);
                     composer3.endReplaceGroup();
                     composableLambda = null;
-                    long m3121prefixColorXeAY9LY$material32222 = textFieldColors3.m3121prefixColorXeAY9LY$material3(z5, z6, z7);
+                    long m3122prefixColorXeAY9LY$material32222 = textFieldColors3.m3122prefixColorXeAY9LY$material3(z5, z6, z7);
                     ComposerKt.sourceInformationMarkerStart(composer3, 493218271, str);
                     rememberedValue5 = composer3.rememberedValue();
                     if (rememberedValue5 != Composer.Companion.getEmpty()) {
@@ -1878,19 +1878,19 @@ public final class TextFieldImplKt {
                     composer3.startReplaceGroup(-1889500886);
                     composer3.endReplaceGroup();
                     composableLambda2 = null;
-                    long m3122suffixColorXeAY9LY$material32222 = textFieldColors3.m3122suffixColorXeAY9LY$material3(z5, z6, z7);
+                    long m3123suffixColorXeAY9LY$material32222 = textFieldColors3.m3123suffixColorXeAY9LY$material3(z5, z6, z7);
                     if (function26 == null) {
                     }
                     composer3.startReplaceGroup(-1888924534);
                     composer3.endReplaceGroup();
                     composableLambda3 = null;
-                    final long m3119leadingIconColorXeAY9LY$material32222 = textFieldColors3.m3119leadingIconColorXeAY9LY$material3(z5, z6, z7);
+                    final long m3120leadingIconColorXeAY9LY$material32222 = textFieldColors3.m3120leadingIconColorXeAY9LY$material3(z5, z6, z7);
                     if (function23 != null) {
                     }
-                    final long m3125trailingIconColorXeAY9LY$material32222 = textFieldColors3.m3125trailingIconColorXeAY9LY$material3(z5, z6, z7);
+                    final long m3126trailingIconColorXeAY9LY$material32222 = textFieldColors3.m3126trailingIconColorXeAY9LY$material3(z5, z6, z7);
                     if (function24 != null) {
                     }
-                    final long m3123supportingTextColorXeAY9LY$material32222 = textFieldColors3.m3123supportingTextColorXeAY9LY$material3(z5, z6, z7);
+                    final long m3124supportingTextColorXeAY9LY$material32222 = textFieldColors3.m3124supportingTextColorXeAY9LY$material3(z5, z6, z7);
                     if (function27 != null) {
                     }
                     i16 = WhenMappings.$EnumSwitchMapping$0[textFieldType.ordinal()];
@@ -1999,13 +1999,13 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             startRestartGroup.endReplaceGroup();
-            ColorSpace m5283getColorSpaceimpl32222 = Color.m5283getColorSpaceimpl(j3);
+            ColorSpace m5284getColorSpaceimpl32222 = Color.m5284getColorSpaceimpl(j3);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-            changed = startRestartGroup.changed(m5283getColorSpaceimpl32222);
+            changed = startRestartGroup.changed(m5284getColorSpaceimpl32222);
             rememberedValue = startRestartGroup.rememberedValue();
             if (!changed) {
             }
-            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl32222);
+            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl32222);
             startRestartGroup.updateRememberedValue(rememberedValue);
             TwoWayConverter twoWayConverter32222 = (TwoWayConverter) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -2020,7 +2020,7 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             startRestartGroup.endReplaceGroup();
-            Color m5269boximpl32222 = Color.m5269boximpl(j4);
+            Color m5270boximpl32222 = Color.m5270boximpl(j4);
             InputPhase inputPhase1522222 = (InputPhase) updateTransition.getTargetState();
             startRestartGroup.startReplaceGroup(-12973394);
             ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2031,7 +2031,7 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             startRestartGroup.endReplaceGroup();
-            final State<Color> createTransitionAnimation422222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl32222, Color.m5269boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter32222, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+            final State<Color> createTransitionAnimation422222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl32222, Color.m5270boximpl(j), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) 0), twoWayConverter32222, "LabelTextStyleColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$122222 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value222222);
@@ -2044,13 +2044,13 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             startRestartGroup.endReplaceGroup();
-            ColorSpace m5283getColorSpaceimpl222222 = Color.m5283getColorSpaceimpl(m3118labelColorXeAY9LY$material3);
+            ColorSpace m5284getColorSpaceimpl222222 = Color.m5284getColorSpaceimpl(m3119labelColorXeAY9LY$material3);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1918408359, "CC(remember):Transition.kt#9igjgp");
-            changed2 = startRestartGroup.changed(m5283getColorSpaceimpl222222);
+            changed2 = startRestartGroup.changed(m5284getColorSpaceimpl222222);
             rememberedValue2 = startRestartGroup.rememberedValue();
             if (!changed2) {
             }
-            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl222222);
+            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl222222);
             startRestartGroup.updateRememberedValue(rememberedValue2);
             TwoWayConverter twoWayConverter222222 = (TwoWayConverter) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -2063,7 +2063,7 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             startRestartGroup.endReplaceGroup();
-            Color m5269boximpl222222 = Color.m5269boximpl(m3118labelColorXeAY9LY$material3);
+            Color m5270boximpl222222 = Color.m5270boximpl(m3119labelColorXeAY9LY$material3);
             InputPhase inputPhase1822222 = (InputPhase) updateTransition.getTargetState();
             startRestartGroup.startReplaceGroup(-464752477);
             ComposerKt.sourceInformation(startRestartGroup, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2072,7 +2072,7 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             startRestartGroup.endReplaceGroup();
-            final State<Color> createTransitionAnimation522222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl222222, Color.m5269boximpl(m3118labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter222222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+            final State<Color> createTransitionAnimation522222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl222222, Color.m5270boximpl(m3119labelColorXeAY9LY$material3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) startRestartGroup, (Composer) Integer.valueOf(i12)), twoWayConverter222222, "LabelContentColor", startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891788529, "CN(labelProgress,labelTextStyleColor,labelContentColor,placeholderAlpha,prefixSuffixAlpha)130@5443L184,155@6570L107,172@7353L108:TextFieldImpl.kt#mqatfk");
@@ -2086,7 +2086,7 @@ public final class TextFieldImplKt {
             if (function3 != null) {
             }
             ComposableLambda composableLambda622222 = composableLambda522222;
-            long m3120placeholderColorXeAY9LY$material322222 = textFieldColors3.m3120placeholderColorXeAY9LY$material3(z5, z6, z7);
+            long m3121placeholderColorXeAY9LY$material322222 = textFieldColors3.m3121placeholderColorXeAY9LY$material3(z5, z6, z7);
             ComposerKt.sourceInformationMarkerStart(composer3, 493193214, str);
             rememberedValue4 = composer3.rememberedValue();
             if (rememberedValue4 != Composer.Companion.getEmpty()) {
@@ -2098,7 +2098,7 @@ public final class TextFieldImplKt {
             composer3.startReplaceGroup(-1890217110);
             composer3.endReplaceGroup();
             composableLambda = null;
-            long m3121prefixColorXeAY9LY$material322222 = textFieldColors3.m3121prefixColorXeAY9LY$material3(z5, z6, z7);
+            long m3122prefixColorXeAY9LY$material322222 = textFieldColors3.m3122prefixColorXeAY9LY$material3(z5, z6, z7);
             ComposerKt.sourceInformationMarkerStart(composer3, 493218271, str);
             rememberedValue5 = composer3.rememberedValue();
             if (rememberedValue5 != Composer.Companion.getEmpty()) {
@@ -2111,19 +2111,19 @@ public final class TextFieldImplKt {
             composer3.startReplaceGroup(-1889500886);
             composer3.endReplaceGroup();
             composableLambda2 = null;
-            long m3122suffixColorXeAY9LY$material322222 = textFieldColors3.m3122suffixColorXeAY9LY$material3(z5, z6, z7);
+            long m3123suffixColorXeAY9LY$material322222 = textFieldColors3.m3123suffixColorXeAY9LY$material3(z5, z6, z7);
             if (function26 == null) {
             }
             composer3.startReplaceGroup(-1888924534);
             composer3.endReplaceGroup();
             composableLambda3 = null;
-            final long m3119leadingIconColorXeAY9LY$material322222 = textFieldColors3.m3119leadingIconColorXeAY9LY$material3(z5, z6, z7);
+            final long m3120leadingIconColorXeAY9LY$material322222 = textFieldColors3.m3120leadingIconColorXeAY9LY$material3(z5, z6, z7);
             if (function23 != null) {
             }
-            final long m3125trailingIconColorXeAY9LY$material322222 = textFieldColors3.m3125trailingIconColorXeAY9LY$material3(z5, z6, z7);
+            final long m3126trailingIconColorXeAY9LY$material322222 = textFieldColors3.m3126trailingIconColorXeAY9LY$material3(z5, z6, z7);
             if (function24 != null) {
             }
-            final long m3123supportingTextColorXeAY9LY$material322222 = textFieldColors3.m3123supportingTextColorXeAY9LY$material3(z5, z6, z7);
+            final long m3124supportingTextColorXeAY9LY$material322222 = textFieldColors3.m3124supportingTextColorXeAY9LY$material3(z5, z6, z7);
             if (function27 != null) {
             }
             i16 = WhenMappings.$EnumSwitchMapping$0[textFieldType.ordinal()];
@@ -2166,10 +2166,10 @@ public final class TextFieldImplKt {
             return Unit.INSTANCE;
         }
         float floatValue = ((Number) state.getValue()).floatValue();
-        float intBitsToFloat = Float.intBitsToFloat((int) (size.m5109unboximpl() >> 32)) * floatValue;
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (size.m5109unboximpl() & 4294967295L)) * floatValue;
-        if (Float.intBitsToFloat((int) (((Size) mutableState.getValue()).m5109unboximpl() >> 32)) != intBitsToFloat || Float.intBitsToFloat((int) (((Size) mutableState.getValue()).m5109unboximpl() & 4294967295L)) != intBitsToFloat2) {
-            mutableState.setValue(Size.m5092boximpl(Size.m5095constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L))));
+        float intBitsToFloat = Float.intBitsToFloat((int) (size.m5110unboximpl() >> 32)) * floatValue;
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (size.m5110unboximpl() & 4294967295L)) * floatValue;
+        if (Float.intBitsToFloat((int) (((Size) mutableState.getValue()).m5110unboximpl() >> 32)) != intBitsToFloat || Float.intBitsToFloat((int) (((Size) mutableState.getValue()).m5110unboximpl() & 4294967295L)) != intBitsToFloat2) {
+            mutableState.setValue(Size.m5093boximpl(Size.m5096constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L))));
         }
         return Unit.INSTANCE;
     }
@@ -2200,7 +2200,7 @@ public final class TextFieldImplKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: Decoration-3J-VO9M  reason: not valid java name */
-    public static final void m3613Decoration3JVO9M(long j, TextStyle textStyle, Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    public static final void m3614Decoration3JVO9M(long j, TextStyle textStyle, Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         final Function2<? super Composer, ? super Integer, Unit> function22;
         final TextStyle textStyle2;
@@ -2222,7 +2222,7 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(396611577, i2, -1, "androidx.compose.material3.internal.Decoration (TextFieldImpl.kt:325)");
             }
-            ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(j, textStyle, function2, startRestartGroup, i2 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
+            ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j, textStyle, function2, startRestartGroup, i2 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
             j2 = j;
             textStyle2 = textStyle;
             function22 = function2;
@@ -2250,7 +2250,7 @@ public final class TextFieldImplKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: Decoration-Iv8Zu3U  reason: not valid java name */
-    public static final void m3614DecorationIv8Zu3U(final long j, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    public static final void m3615DecorationIv8Zu3U(final long j, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(590397809);
         ComposerKt.sourceInformation(startRestartGroup, "C(Decoration)N(contentColor:c#ui.graphics.Color,content)330@14001L84:TextFieldImpl.kt#mqatfk");
@@ -2266,7 +2266,7 @@ public final class TextFieldImplKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(590397809, i2, -1, "androidx.compose.material3.internal.Decoration (TextFieldImpl.kt:330)");
             }
-            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(j)), function2, startRestartGroup, (i2 & 112) | ProvidedValue.$stable);
+            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(j)), function2, startRestartGroup, (i2 & 112) | ProvidedValue.$stable);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -2316,7 +2316,7 @@ public final class TextFieldImplKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final DrawResult textFieldBackground$lambda$24(Shape shape, final ColorProducer colorProducer, CacheDrawScope cacheDrawScope) {
-        final Outline mo331createOutlinePq9zytI = shape.mo331createOutlinePq9zytI(cacheDrawScope.m4819getSizeNHjbRc(), cacheDrawScope.getLayoutDirection(), cacheDrawScope);
+        final Outline mo332createOutlinePq9zytI = shape.mo332createOutlinePq9zytI(cacheDrawScope.m4820getSizeNHjbRc(), cacheDrawScope.getLayoutDirection(), cacheDrawScope);
         return cacheDrawScope.onDrawBehind(new Function1() { // from class: androidx.compose.material3.internal.TextFieldImplKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -2329,7 +2329,7 @@ public final class TextFieldImplKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit textFieldBackground$lambda$24$lambda$23(Outline outline, ColorProducer colorProducer, DrawScope drawScope) {
-        OutlineKt.m5550drawOutlinewDX37Ww$default(drawScope, outline, colorProducer.mo2299invoke0d7_KjU(), 0.0f, null, null, 0, 60, null);
+        OutlineKt.m5551drawOutlinewDX37Ww$default(drawScope, outline, colorProducer.mo2300invoke0d7_KjU(), 0.0f, null, null, 0, 60, null);
         return Unit.INSTANCE;
     }
 
@@ -2346,9 +2346,9 @@ public final class TextFieldImplKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult textFieldLabelMinHeight$lambda$26(Function0 function0, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        float m8009unboximpl = ((Dp) function0.invoke()).m8009unboximpl();
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(Constraints.m7938copyZbe2FdA$default(constraints.m7954unboximpl(), 0, 0, ConstraintsKt.m7964constrainHeightK40F9xA(constraints.m7954unboximpl(), !Dp.m8000equalsimpl0(m8009unboximpl, Dp.Companion.m8015getUnspecifiedD9Ej5fM()) ? measureScope.mo423roundToPx0680j_4(m8009unboximpl) : 0), 0, 11, null));
-        return MeasureScope.layout$default(measureScope, mo6697measureBRTryo0.getWidth(), mo6697measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.TextFieldImplKt$$ExternalSyntheticLambda0
+        float m8010unboximpl = ((Dp) function0.invoke()).m8010unboximpl();
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(constraints.m7955unboximpl(), 0, 0, ConstraintsKt.m7965constrainHeightK40F9xA(constraints.m7955unboximpl(), !Dp.m8001equalsimpl0(m8010unboximpl, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) ? measureScope.mo424roundToPx0680j_4(m8010unboximpl) : 0), 0, 11, null));
+        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.TextFieldImplKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit textFieldLabelMinHeight$lambda$26$lambda$25;
@@ -2414,7 +2414,7 @@ public final class TextFieldImplKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final void m3615TextFieldTransitionScopeJy8F4Js(InputPhase inputPhase, long j, long j2, long j3, boolean z, Function7<? super State<Float>, ? super State<Color>, ? super State<Color>, ? super State<Float>, ? super State<Float>, ? super Composer, ? super Integer, Unit> function7, Composer composer, int i) {
+    private static final void m3616TextFieldTransitionScopeJy8F4Js(InputPhase inputPhase, long j, long j2, long j3, boolean z, Function7<? super State<Float>, ? super State<Color>, ? super State<Color>, ? super State<Float>, ? super State<Float>, ? super Composer, ? super Integer, Unit> function7, Composer composer, int i) {
         float f;
         int i2;
         float f2;
@@ -2584,12 +2584,12 @@ public final class TextFieldImplKt {
                                             ComposerKt.traceEventEnd();
                                         }
                                         composer.endReplaceGroup();
-                                        ColorSpace m5283getColorSpaceimpl = Color.m5283getColorSpaceimpl(j4);
+                                        ColorSpace m5284getColorSpaceimpl = Color.m5284getColorSpaceimpl(j4);
                                         ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                        changed = composer.changed(m5283getColorSpaceimpl);
+                                        changed = composer.changed(m5284getColorSpaceimpl);
                                         rememberedValue = composer.rememberedValue();
                                         if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
-                                            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl);
+                                            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl);
                                             composer.updateRememberedValue(rememberedValue);
                                         }
                                         TwoWayConverter twoWayConverter = (TwoWayConverter) rememberedValue;
@@ -2606,7 +2606,7 @@ public final class TextFieldImplKt {
                                             ComposerKt.traceEventEnd();
                                         }
                                         composer.endReplaceGroup();
-                                        Color m5269boximpl = Color.m5269boximpl(j5);
+                                        Color m5270boximpl = Color.m5270boximpl(j5);
                                         InputPhase inputPhase10 = (InputPhase) updateTransition.getTargetState();
                                         composer.startReplaceGroup(-12973394);
                                         ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2618,7 +2618,7 @@ public final class TextFieldImplKt {
                                             ComposerKt.traceEventEnd();
                                         }
                                         composer.endReplaceGroup();
-                                        State createTransitionAnimation4 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl, Color.m5269boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                        State createTransitionAnimation4 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl, Color.m5270boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                         ComposerKt.sourceInformationMarkerEnd(composer);
                                         ComposerKt.sourceInformationMarkerEnd(composer);
                                         TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$1 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value2);
@@ -2633,12 +2633,12 @@ public final class TextFieldImplKt {
                                             ComposerKt.traceEventEnd();
                                         }
                                         composer.endReplaceGroup();
-                                        ColorSpace m5283getColorSpaceimpl2 = Color.m5283getColorSpaceimpl(j3);
+                                        ColorSpace m5284getColorSpaceimpl2 = Color.m5284getColorSpaceimpl(j3);
                                         ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                        changed2 = composer.changed(m5283getColorSpaceimpl2);
+                                        changed2 = composer.changed(m5284getColorSpaceimpl2);
                                         rememberedValue2 = composer.rememberedValue();
                                         if (!changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                                            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl2);
+                                            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl2);
                                             composer.updateRememberedValue(rememberedValue2);
                                         }
                                         TwoWayConverter twoWayConverter2 = (TwoWayConverter) rememberedValue2;
@@ -2654,7 +2654,7 @@ public final class TextFieldImplKt {
                                             ComposerKt.traceEventEnd();
                                         }
                                         composer.endReplaceGroup();
-                                        Color m5269boximpl2 = Color.m5269boximpl(j3);
+                                        Color m5270boximpl2 = Color.m5270boximpl(j3);
                                         InputPhase inputPhase13 = (InputPhase) updateTransition.getTargetState();
                                         composer.startReplaceGroup(-464752477);
                                         ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2665,7 +2665,7 @@ public final class TextFieldImplKt {
                                             ComposerKt.traceEventEnd();
                                         }
                                         composer.endReplaceGroup();
-                                        State createTransitionAnimation5 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl2, Color.m5269boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter2, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                        State createTransitionAnimation5 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl2, Color.m5270boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter2, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                         ComposerKt.sourceInformationMarkerEnd(composer);
                                         ComposerKt.sourceInformationMarkerEnd(composer);
                                         function7.invoke(createTransitionAnimation, createTransitionAnimation4, createTransitionAnimation5, createTransitionAnimation2, createTransitionAnimation3, composer, Integer.valueOf(i & 458752));
@@ -2705,13 +2705,13 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 composer.endReplaceGroup();
-                                ColorSpace m5283getColorSpaceimpl3 = Color.m5283getColorSpaceimpl(j4);
+                                ColorSpace m5284getColorSpaceimpl3 = Color.m5284getColorSpaceimpl(j4);
                                 ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                changed = composer.changed(m5283getColorSpaceimpl3);
+                                changed = composer.changed(m5284getColorSpaceimpl3);
                                 rememberedValue = composer.rememberedValue();
                                 if (!changed) {
                                 }
-                                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl3);
+                                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl3);
                                 composer.updateRememberedValue(rememberedValue);
                                 TwoWayConverter twoWayConverter3 = (TwoWayConverter) rememberedValue;
                                 ComposerKt.sourceInformationMarkerEnd(composer);
@@ -2726,7 +2726,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 composer.endReplaceGroup();
-                                Color m5269boximpl3 = Color.m5269boximpl(j5);
+                                Color m5270boximpl3 = Color.m5270boximpl(j5);
                                 InputPhase inputPhase102 = (InputPhase) updateTransition.getTargetState();
                                 composer.startReplaceGroup(-12973394);
                                 ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2737,7 +2737,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 composer.endReplaceGroup();
-                                State createTransitionAnimation42 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl3, Color.m5269boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter3, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                State createTransitionAnimation42 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl3, Color.m5270boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter3, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                 ComposerKt.sourceInformationMarkerEnd(composer);
                                 ComposerKt.sourceInformationMarkerEnd(composer);
                                 TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$12 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value22);
@@ -2750,13 +2750,13 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 composer.endReplaceGroup();
-                                ColorSpace m5283getColorSpaceimpl22 = Color.m5283getColorSpaceimpl(j3);
+                                ColorSpace m5284getColorSpaceimpl22 = Color.m5284getColorSpaceimpl(j3);
                                 ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                                changed2 = composer.changed(m5283getColorSpaceimpl22);
+                                changed2 = composer.changed(m5284getColorSpaceimpl22);
                                 rememberedValue2 = composer.rememberedValue();
                                 if (!changed2) {
                                 }
-                                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl22);
+                                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl22);
                                 composer.updateRememberedValue(rememberedValue2);
                                 TwoWayConverter twoWayConverter22 = (TwoWayConverter) rememberedValue2;
                                 ComposerKt.sourceInformationMarkerEnd(composer);
@@ -2769,7 +2769,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 composer.endReplaceGroup();
-                                Color m5269boximpl22 = Color.m5269boximpl(j3);
+                                Color m5270boximpl22 = Color.m5270boximpl(j3);
                                 InputPhase inputPhase132 = (InputPhase) updateTransition.getTargetState();
                                 composer.startReplaceGroup(-464752477);
                                 ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2778,7 +2778,7 @@ public final class TextFieldImplKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 composer.endReplaceGroup();
-                                State createTransitionAnimation52 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl22, Color.m5269boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter22, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                                State createTransitionAnimation52 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl22, Color.m5270boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter22, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                                 ComposerKt.sourceInformationMarkerEnd(composer);
                                 ComposerKt.sourceInformationMarkerEnd(composer);
                                 function7.invoke(createTransitionAnimation, createTransitionAnimation42, createTransitionAnimation52, createTransitionAnimation2, createTransitionAnimation32, composer, Integer.valueOf(i & 458752));
@@ -2836,13 +2836,13 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer.endReplaceGroup();
-                            ColorSpace m5283getColorSpaceimpl32 = Color.m5283getColorSpaceimpl(j4);
+                            ColorSpace m5284getColorSpaceimpl32 = Color.m5284getColorSpaceimpl(j4);
                             ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                            changed = composer.changed(m5283getColorSpaceimpl32);
+                            changed = composer.changed(m5284getColorSpaceimpl32);
                             rememberedValue = composer.rememberedValue();
                             if (!changed) {
                             }
-                            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl32);
+                            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl32);
                             composer.updateRememberedValue(rememberedValue);
                             TwoWayConverter twoWayConverter32 = (TwoWayConverter) rememberedValue;
                             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -2857,7 +2857,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer.endReplaceGroup();
-                            Color m5269boximpl32 = Color.m5269boximpl(j5);
+                            Color m5270boximpl32 = Color.m5270boximpl(j5);
                             InputPhase inputPhase1022 = (InputPhase) updateTransition.getTargetState();
                             composer.startReplaceGroup(-12973394);
                             ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2868,7 +2868,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer.endReplaceGroup();
-                            State createTransitionAnimation422 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl32, Color.m5269boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter32, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                            State createTransitionAnimation422 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl32, Color.m5270boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter32, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                             ComposerKt.sourceInformationMarkerEnd(composer);
                             ComposerKt.sourceInformationMarkerEnd(composer);
                             TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$122 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value222);
@@ -2881,13 +2881,13 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer.endReplaceGroup();
-                            ColorSpace m5283getColorSpaceimpl222 = Color.m5283getColorSpaceimpl(j3);
+                            ColorSpace m5284getColorSpaceimpl222 = Color.m5284getColorSpaceimpl(j3);
                             ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                            changed2 = composer.changed(m5283getColorSpaceimpl222);
+                            changed2 = composer.changed(m5284getColorSpaceimpl222);
                             rememberedValue2 = composer.rememberedValue();
                             if (!changed2) {
                             }
-                            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl222);
+                            rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl222);
                             composer.updateRememberedValue(rememberedValue2);
                             TwoWayConverter twoWayConverter222 = (TwoWayConverter) rememberedValue2;
                             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -2900,7 +2900,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer.endReplaceGroup();
-                            Color m5269boximpl222 = Color.m5269boximpl(j3);
+                            Color m5270boximpl222 = Color.m5270boximpl(j3);
                             InputPhase inputPhase1322 = (InputPhase) updateTransition.getTargetState();
                             composer.startReplaceGroup(-464752477);
                             ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -2909,7 +2909,7 @@ public final class TextFieldImplKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer.endReplaceGroup();
-                            State createTransitionAnimation522 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl222, Color.m5269boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                            State createTransitionAnimation522 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl222, Color.m5270boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                             ComposerKt.sourceInformationMarkerEnd(composer);
                             ComposerKt.sourceInformationMarkerEnd(composer);
                             function7.invoke(createTransitionAnimation, createTransitionAnimation422, createTransitionAnimation522, createTransitionAnimation22, createTransitionAnimation322, composer, Integer.valueOf(i & 458752));
@@ -2981,13 +2981,13 @@ public final class TextFieldImplKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer.endReplaceGroup();
-                        ColorSpace m5283getColorSpaceimpl322 = Color.m5283getColorSpaceimpl(j4);
+                        ColorSpace m5284getColorSpaceimpl322 = Color.m5284getColorSpaceimpl(j4);
                         ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                        changed = composer.changed(m5283getColorSpaceimpl322);
+                        changed = composer.changed(m5284getColorSpaceimpl322);
                         rememberedValue = composer.rememberedValue();
                         if (!changed) {
                         }
-                        rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl322);
+                        rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl322);
                         composer.updateRememberedValue(rememberedValue);
                         TwoWayConverter twoWayConverter322 = (TwoWayConverter) rememberedValue;
                         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -3002,7 +3002,7 @@ public final class TextFieldImplKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer.endReplaceGroup();
-                        Color m5269boximpl322 = Color.m5269boximpl(j5);
+                        Color m5270boximpl322 = Color.m5270boximpl(j5);
                         InputPhase inputPhase10222 = (InputPhase) updateTransition.getTargetState();
                         composer.startReplaceGroup(-12973394);
                         ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -3013,7 +3013,7 @@ public final class TextFieldImplKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer.endReplaceGroup();
-                        State createTransitionAnimation4222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl322, Color.m5269boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter322, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                        State createTransitionAnimation4222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl322, Color.m5270boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter322, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                         ComposerKt.sourceInformationMarkerEnd(composer);
                         ComposerKt.sourceInformationMarkerEnd(composer);
                         TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$1222 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value2222);
@@ -3026,13 +3026,13 @@ public final class TextFieldImplKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer.endReplaceGroup();
-                        ColorSpace m5283getColorSpaceimpl2222 = Color.m5283getColorSpaceimpl(j3);
+                        ColorSpace m5284getColorSpaceimpl2222 = Color.m5284getColorSpaceimpl(j3);
                         ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                        changed2 = composer.changed(m5283getColorSpaceimpl2222);
+                        changed2 = composer.changed(m5284getColorSpaceimpl2222);
                         rememberedValue2 = composer.rememberedValue();
                         if (!changed2) {
                         }
-                        rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl2222);
+                        rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl2222);
                         composer.updateRememberedValue(rememberedValue2);
                         TwoWayConverter twoWayConverter2222 = (TwoWayConverter) rememberedValue2;
                         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -3045,7 +3045,7 @@ public final class TextFieldImplKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer.endReplaceGroup();
-                        Color m5269boximpl2222 = Color.m5269boximpl(j3);
+                        Color m5270boximpl2222 = Color.m5270boximpl(j3);
                         InputPhase inputPhase13222 = (InputPhase) updateTransition.getTargetState();
                         composer.startReplaceGroup(-464752477);
                         ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -3054,7 +3054,7 @@ public final class TextFieldImplKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer.endReplaceGroup();
-                        State createTransitionAnimation5222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl2222, Color.m5269boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter2222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                        State createTransitionAnimation5222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl2222, Color.m5270boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$1222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter2222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                         ComposerKt.sourceInformationMarkerEnd(composer);
                         ComposerKt.sourceInformationMarkerEnd(composer);
                         function7.invoke(createTransitionAnimation, createTransitionAnimation4222, createTransitionAnimation5222, createTransitionAnimation222, createTransitionAnimation3222, composer, Integer.valueOf(i & 458752));
@@ -3146,13 +3146,13 @@ public final class TextFieldImplKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer.endReplaceGroup();
-                ColorSpace m5283getColorSpaceimpl3222 = Color.m5283getColorSpaceimpl(j4);
+                ColorSpace m5284getColorSpaceimpl3222 = Color.m5284getColorSpaceimpl(j4);
                 ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                changed = composer.changed(m5283getColorSpaceimpl3222);
+                changed = composer.changed(m5284getColorSpaceimpl3222);
                 rememberedValue = composer.rememberedValue();
                 if (!changed) {
                 }
-                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl3222);
+                rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl3222);
                 composer.updateRememberedValue(rememberedValue);
                 TwoWayConverter twoWayConverter3222 = (TwoWayConverter) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(composer);
@@ -3167,7 +3167,7 @@ public final class TextFieldImplKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer.endReplaceGroup();
-                Color m5269boximpl3222 = Color.m5269boximpl(j5);
+                Color m5270boximpl3222 = Color.m5270boximpl(j5);
                 InputPhase inputPhase102222 = (InputPhase) updateTransition.getTargetState();
                 composer.startReplaceGroup(-12973394);
                 ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -3178,7 +3178,7 @@ public final class TextFieldImplKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer.endReplaceGroup();
-                State createTransitionAnimation42222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl3222, Color.m5269boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter3222, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                State createTransitionAnimation42222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl3222, Color.m5270boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter3222, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$12222 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value22222);
@@ -3191,13 +3191,13 @@ public final class TextFieldImplKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer.endReplaceGroup();
-                ColorSpace m5283getColorSpaceimpl22222 = Color.m5283getColorSpaceimpl(j3);
+                ColorSpace m5284getColorSpaceimpl22222 = Color.m5284getColorSpaceimpl(j3);
                 ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-                changed2 = composer.changed(m5283getColorSpaceimpl22222);
+                changed2 = composer.changed(m5284getColorSpaceimpl22222);
                 rememberedValue2 = composer.rememberedValue();
                 if (!changed2) {
                 }
-                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl22222);
+                rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl22222);
                 composer.updateRememberedValue(rememberedValue2);
                 TwoWayConverter twoWayConverter22222 = (TwoWayConverter) rememberedValue2;
                 ComposerKt.sourceInformationMarkerEnd(composer);
@@ -3210,7 +3210,7 @@ public final class TextFieldImplKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer.endReplaceGroup();
-                Color m5269boximpl22222 = Color.m5269boximpl(j3);
+                Color m5270boximpl22222 = Color.m5270boximpl(j3);
                 InputPhase inputPhase132222 = (InputPhase) updateTransition.getTargetState();
                 composer.startReplaceGroup(-464752477);
                 ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -3219,7 +3219,7 @@ public final class TextFieldImplKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer.endReplaceGroup();
-                State createTransitionAnimation52222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl22222, Color.m5269boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter22222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+                State createTransitionAnimation52222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl22222, Color.m5270boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$12222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter22222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 function7.invoke(createTransitionAnimation6, createTransitionAnimation42222, createTransitionAnimation52222, createTransitionAnimation2222, createTransitionAnimation32222, composer, Integer.valueOf(i & 458752));
@@ -3324,13 +3324,13 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer.endReplaceGroup();
-        ColorSpace m5283getColorSpaceimpl32222 = Color.m5283getColorSpaceimpl(j4);
+        ColorSpace m5284getColorSpaceimpl32222 = Color.m5284getColorSpaceimpl(j4);
         ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-        changed = composer.changed(m5283getColorSpaceimpl32222);
+        changed = composer.changed(m5284getColorSpaceimpl32222);
         rememberedValue = composer.rememberedValue();
         if (!changed) {
         }
-        rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl32222);
+        rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl32222);
         composer.updateRememberedValue(rememberedValue);
         TwoWayConverter twoWayConverter32222 = (TwoWayConverter) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -3345,7 +3345,7 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer.endReplaceGroup();
-        Color m5269boximpl32222 = Color.m5269boximpl(j5);
+        Color m5270boximpl32222 = Color.m5270boximpl(j5);
         InputPhase inputPhase1022222 = (InputPhase) updateTransition.getTargetState();
         composer.startReplaceGroup(-12973394);
         ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -3356,7 +3356,7 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer.endReplaceGroup();
-        State createTransitionAnimation422222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl32222, Color.m5269boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter32222, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+        State createTransitionAnimation422222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl32222, Color.m5270boximpl(j6), textFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelTextStyleColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter32222, "LabelTextStyleColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1 textFieldImplKt$TextFieldTransitionScope$labelContentColor$122222 = new TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1(value222222);
@@ -3369,13 +3369,13 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer.endReplaceGroup();
-        ColorSpace m5283getColorSpaceimpl222222 = Color.m5283getColorSpaceimpl(j3);
+        ColorSpace m5284getColorSpaceimpl222222 = Color.m5284getColorSpaceimpl(j3);
         ComposerKt.sourceInformationMarkerStart(composer, 1918408359, "CC(remember):Transition.kt#9igjgp");
-        changed2 = composer.changed(m5283getColorSpaceimpl222222);
+        changed2 = composer.changed(m5284getColorSpaceimpl222222);
         rememberedValue2 = composer.rememberedValue();
         if (!changed2) {
         }
-        rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl222222);
+        rememberedValue2 = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl222222);
         composer.updateRememberedValue(rememberedValue2);
         TwoWayConverter twoWayConverter222222 = (TwoWayConverter) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -3388,7 +3388,7 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer.endReplaceGroup();
-        Color m5269boximpl222222 = Color.m5269boximpl(j3);
+        Color m5270boximpl222222 = Color.m5270boximpl(j3);
         InputPhase inputPhase1322222 = (InputPhase) updateTransition.getTargetState();
         composer.startReplaceGroup(-464752477);
         ComposerKt.sourceInformation(composer, "CN(it):TextFieldImpl.kt#mqatfk");
@@ -3397,7 +3397,7 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer.endReplaceGroup();
-        State createTransitionAnimation522222 = TransitionKt.createTransitionAnimation(updateTransition, m5269boximpl222222, Color.m5269boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter222222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
+        State createTransitionAnimation522222 = TransitionKt.createTransitionAnimation(updateTransition, m5270boximpl222222, Color.m5270boximpl(j3), textFieldImplKt$TextFieldTransitionScope$labelContentColor$122222.invoke((TextFieldImplKt$TextFieldTransitionScope$labelContentColor$1) updateTransition.getSegment(), (Transition.Segment) composer, (Composer) 0), twoWayConverter222222, "LabelContentColor", composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         function7.invoke(createTransitionAnimation62, createTransitionAnimation422222, createTransitionAnimation522222, createTransitionAnimation22222, createTransitionAnimation322222, composer, Integer.valueOf(i & 458752));
@@ -3405,7 +3405,7 @@ public final class TextFieldImplKt {
     }
 
     /* renamed from: animateBorderStrokeAsState-NuRrP5Q  reason: not valid java name */
-    public static final State<BorderStroke> m3618animateBorderStrokeAsStateNuRrP5Q(boolean z, boolean z2, boolean z3, TextFieldColors textFieldColors, float f, float f2, Composer composer, int i) {
+    public static final State<BorderStroke> m3619animateBorderStrokeAsStateNuRrP5Q(boolean z, boolean z2, boolean z3, TextFieldColors textFieldColors, float f, float f2, Composer composer, int i) {
         State<Color> rememberUpdatedState;
         State<Dp> rememberUpdatedState2;
         Composer composer2 = composer;
@@ -3413,33 +3413,33 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(2047013045, i, -1, "androidx.compose.material3.internal.animateBorderStrokeAsState (TextFieldImpl.kt:472)");
         }
-        long m3117indicatorColorXeAY9LY$material3 = textFieldColors.m3117indicatorColorXeAY9LY$material3(z, z2, z3);
+        long m3118indicatorColorXeAY9LY$material3 = textFieldColors.m3118indicatorColorXeAY9LY$material3(z, z2, z3);
         FiniteAnimationSpec value = MotionSchemeKt.value(MotionSchemeKeyTokens.FastEffects, composer2, 6);
         if (z) {
             composer2.startReplaceGroup(-1674507999);
             ComposerKt.sourceInformation(composer2, "478@19618L52");
-            rememberUpdatedState = SingleValueAnimationKt.m130animateColorAsStateeuL9pac(m3117indicatorColorXeAY9LY$material3, value, null, null, composer, 0, 12);
+            rememberUpdatedState = SingleValueAnimationKt.m131animateColorAsStateeuL9pac(m3118indicatorColorXeAY9LY$material3, value, null, null, composer, 0, 12);
             composer2 = composer;
             composer2.endReplaceGroup();
         } else {
             composer2.startReplaceGroup(-1674427244);
             ComposerKt.sourceInformation(composer2, "480@19700L33");
-            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5269boximpl(m3117indicatorColorXeAY9LY$material3), composer2, 0);
+            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5270boximpl(m3118indicatorColorXeAY9LY$material3), composer2, 0);
             composer2.endReplaceGroup();
         }
         FiniteAnimationSpec value2 = MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, composer2, 6);
         if (z) {
             composer2.startReplaceGroup(-1674245832);
             ComposerKt.sourceInformation(composer2, "487@19979L57");
-            rememberUpdatedState2 = AnimateAsStateKt.m150animateDpAsStateAjpBEmI(z3 ? f : f2, value2, null, null, composer2, 0, 12);
+            rememberUpdatedState2 = AnimateAsStateKt.m151animateDpAsStateAjpBEmI(z3 ? f : f2, value2, null, null, composer2, 0, 12);
             composer2.endReplaceGroup();
         } else {
             composer2.startReplaceGroup(-1674063769);
             ComposerKt.sourceInformation(composer2, "489@20066L46");
-            rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(Dp.m7993boximpl(f2), composer2, (i >> 15) & 14);
+            rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(Dp.m7994boximpl(f2), composer2, (i >> 15) & 14);
             composer2.endReplaceGroup();
         }
-        State<BorderStroke> rememberUpdatedState3 = SnapshotStateKt.rememberUpdatedState(BorderStrokeKt.m297BorderStrokecXLIe8U(rememberUpdatedState2.getValue().m8009unboximpl(), rememberUpdatedState.getValue().m5289unboximpl()), composer2, 0);
+        State<BorderStroke> rememberUpdatedState3 = SnapshotStateKt.rememberUpdatedState(BorderStrokeKt.m298BorderStrokecXLIe8U(rememberUpdatedState2.getValue().m8010unboximpl(), rememberUpdatedState.getValue().m5290unboximpl()), composer2, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -3455,16 +3455,16 @@ public final class TextFieldImplKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float m8009unboximpl = ((Dp) consume).m8009unboximpl();
-        if (Float.isNaN(m8009unboximpl)) {
-            m8009unboximpl = Dp.m7995constructorimpl(0);
+        float m8010unboximpl = ((Dp) consume).m8010unboximpl();
+        if (Float.isNaN(m8010unboximpl)) {
+            m8010unboximpl = Dp.m7996constructorimpl(0);
         }
-        float m7995constructorimpl = Dp.m7995constructorimpl(RangesKt.coerceAtLeast(Dp.m7995constructorimpl(Dp.m7995constructorimpl(m8009unboximpl - SmallIconButtonTokens.INSTANCE.m4265getIconSizeD9Ej5fM()) / 2), Dp.m7995constructorimpl(0)));
+        float m7996constructorimpl = Dp.m7996constructorimpl(RangesKt.coerceAtLeast(Dp.m7996constructorimpl(Dp.m7996constructorimpl(m8010unboximpl - SmallIconButtonTokens.INSTANCE.m4266getIconSizeD9Ej5fM()) / 2), Dp.m7996constructorimpl(0)));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m7995constructorimpl;
+        return m7996constructorimpl;
     }
 
     public static final float minimizedLabelHalfHeight(Composer composer, int i) {
@@ -3472,20 +3472,20 @@ public final class TextFieldImplKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1251545215, i, -1, "androidx.compose.material3.internal.minimizedLabelHalfHeight (TextFieldImpl.kt:527)");
         }
-        long m7496getLineHeightXSAIIZE = MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall().m7496getLineHeightXSAIIZE();
-        long m4374getBodySmallLineHeightXSAIIZE = TypeScaleTokens.INSTANCE.m4374getBodySmallLineHeightXSAIIZE();
-        if (!TextUnit.m8192isSpimpl(m7496getLineHeightXSAIIZE)) {
-            m7496getLineHeightXSAIIZE = m4374getBodySmallLineHeightXSAIIZE;
+        long m7497getLineHeightXSAIIZE = MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall().m7497getLineHeightXSAIIZE();
+        long m4375getBodySmallLineHeightXSAIIZE = TypeScaleTokens.INSTANCE.m4375getBodySmallLineHeightXSAIIZE();
+        if (!TextUnit.m8193isSpimpl(m7497getLineHeightXSAIIZE)) {
+            m7497getLineHeightXSAIIZE = m4375getBodySmallLineHeightXSAIIZE;
         }
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float m7995constructorimpl = Dp.m7995constructorimpl(((Density) consume).mo424toDpGaN1DYA(m7496getLineHeightXSAIIZE) / 2);
+        float m7996constructorimpl = Dp.m7996constructorimpl(((Density) consume).mo425toDpGaN1DYA(m7497getLineHeightXSAIIZE) / 2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m7995constructorimpl;
+        return m7996constructorimpl;
     }
 
     public static final float getTextFieldPadding() {
@@ -3530,12 +3530,12 @@ public final class TextFieldImplKt {
 
     static {
         float f = 16;
-        TextFieldPadding = Dp.m7995constructorimpl(f);
+        TextFieldPadding = Dp.m7996constructorimpl(f);
         float f2 = 4;
-        AboveLabelHorizontalPadding = Dp.m7995constructorimpl(f2);
-        AboveLabelBottomPadding = Dp.m7995constructorimpl(f2);
-        SupportingTopPadding = Dp.m7995constructorimpl(f2);
-        MinFocusedLabelLineHeight = Dp.m7995constructorimpl(f);
-        MinSupportingTextLineHeight = Dp.m7995constructorimpl(f);
+        AboveLabelHorizontalPadding = Dp.m7996constructorimpl(f2);
+        AboveLabelBottomPadding = Dp.m7996constructorimpl(f2);
+        SupportingTopPadding = Dp.m7996constructorimpl(f2);
+        MinFocusedLabelLineHeight = Dp.m7996constructorimpl(f);
+        MinSupportingTextLineHeight = Dp.m7996constructorimpl(f);
     }
 }

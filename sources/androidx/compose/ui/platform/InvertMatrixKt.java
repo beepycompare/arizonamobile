@@ -6,7 +6,7 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class InvertMatrixKt {
     /* renamed from: invertTo-JiSxe2E  reason: not valid java name */
-    public static final boolean m7144invertToJiSxe2E(float[] fArr, float[] fArr2) {
+    public static final boolean m7145invertToJiSxe2E(float[] fArr, float[] fArr2) {
         if (fArr.length < 16 || fArr2.length < 16) {
             return false;
         }

@@ -48,8 +48,8 @@ final class ApproachLayoutModifierNodeImpl extends Modifier.Node implements Appr
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     /* renamed from: isMeasurementApproachInProgress-ozmzZPI */
-    public boolean mo86isMeasurementApproachInProgressozmzZPI(long j) {
-        return this.isMeasurementApproachInProgress.invoke(IntSize.m8158boximpl(j)).booleanValue();
+    public boolean mo87isMeasurementApproachInProgressozmzZPI(long j) {
+        return this.isMeasurementApproachInProgress.invoke(IntSize.m8159boximpl(j)).booleanValue();
     }
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
@@ -59,7 +59,7 @@ final class ApproachLayoutModifierNodeImpl extends Modifier.Node implements Appr
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     /* renamed from: approachMeasure-3p2s80s */
-    public MeasureResult mo85approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
-        return this.measureBlock.invoke(approachMeasureScope, measurable, Constraints.m7935boximpl(j));
+    public MeasureResult mo86approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+        return this.measureBlock.invoke(approachMeasureScope, measurable, Constraints.m7936boximpl(j));
     }
 }

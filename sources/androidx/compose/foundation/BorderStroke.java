@@ -27,7 +27,7 @@ public final class BorderStroke {
     }
 
     /* renamed from: getWidth-D9Ej5fM  reason: not valid java name */
-    public final float m296getWidthD9Ej5fM() {
+    public final float m297getWidthD9Ej5fM() {
         return this.width;
     }
 
@@ -37,32 +37,32 @@ public final class BorderStroke {
         }
         if (obj instanceof BorderStroke) {
             BorderStroke borderStroke = (BorderStroke) obj;
-            return Dp.m8000equalsimpl0(this.width, borderStroke.width) && Intrinsics.areEqual(this.brush, borderStroke.brush);
+            return Dp.m8001equalsimpl0(this.width, borderStroke.width) && Intrinsics.areEqual(this.brush, borderStroke.brush);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Dp.m8001hashCodeimpl(this.width) * 31) + this.brush.hashCode();
+        return (Dp.m8002hashCodeimpl(this.width) * 31) + this.brush.hashCode();
     }
 
     public String toString() {
-        return "BorderStroke(width=" + ((Object) Dp.m8006toStringimpl(this.width)) + ", brush=" + this.brush + ')';
+        return "BorderStroke(width=" + ((Object) Dp.m8007toStringimpl(this.width)) + ", brush=" + this.brush + ')';
     }
 
     /* renamed from: copy-D5KLDUw$default  reason: not valid java name */
-    public static /* synthetic */ BorderStroke m294copyD5KLDUw$default(BorderStroke borderStroke, float f, Brush brush, int i, Object obj) {
+    public static /* synthetic */ BorderStroke m295copyD5KLDUw$default(BorderStroke borderStroke, float f, Brush brush, int i, Object obj) {
         if ((i & 1) != 0) {
             f = borderStroke.width;
         }
         if ((i & 2) != 0) {
             brush = borderStroke.brush;
         }
-        return borderStroke.m295copyD5KLDUw(f, brush);
+        return borderStroke.m296copyD5KLDUw(f, brush);
     }
 
     /* renamed from: copy-D5KLDUw  reason: not valid java name */
-    public final BorderStroke m295copyD5KLDUw(float f, Brush brush) {
+    public final BorderStroke m296copyD5KLDUw(float f, Brush brush) {
         return new BorderStroke(f, brush, null);
     }
 }

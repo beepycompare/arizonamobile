@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Jd implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */

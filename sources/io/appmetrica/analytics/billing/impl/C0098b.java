@@ -7,7 +7,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* renamed from: io.appmetrica.analytics.billing.impl.b  reason: case insensitive filesystem */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class C0098b implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */

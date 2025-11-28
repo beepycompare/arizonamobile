@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.text.TextUtils;
 /* renamed from: io.appmetrica.analytics.impl.co  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0178co extends Wg {
     public C0178co(C0210e5 c0210e5) {
         super(c0210e5);

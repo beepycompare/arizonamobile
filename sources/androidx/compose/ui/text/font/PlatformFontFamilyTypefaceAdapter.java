@@ -15,19 +15,19 @@ public final class PlatformFontFamilyTypefaceAdapter implements FontFamilyTypefa
 
     @Override // androidx.compose.ui.text.font.FontFamilyTypefaceAdapter
     public TypefaceResult resolve(TypefaceRequest typefaceRequest, PlatformFontLoader platformFontLoader, Function1<? super TypefaceResult.Immutable, Unit> function1, Function1<? super TypefaceRequest, ? extends Object> function12) {
-        android.graphics.Typeface mo7598createDefaultFO1MlWM;
+        android.graphics.Typeface mo7599createDefaultFO1MlWM;
         FontFamily fontFamily = typefaceRequest.getFontFamily();
         if (fontFamily == null || (fontFamily instanceof DefaultFontFamily)) {
-            mo7598createDefaultFO1MlWM = this.platformTypefaceResolver.mo7598createDefaultFO1MlWM(typefaceRequest.getFontWeight(), typefaceRequest.m7616getFontStyle_LCdwA());
+            mo7599createDefaultFO1MlWM = this.platformTypefaceResolver.mo7599createDefaultFO1MlWM(typefaceRequest.getFontWeight(), typefaceRequest.m7617getFontStyle_LCdwA());
         } else if (fontFamily instanceof GenericFontFamily) {
-            mo7598createDefaultFO1MlWM = this.platformTypefaceResolver.mo7599createNamedRetOiIg((GenericFontFamily) typefaceRequest.getFontFamily(), typefaceRequest.getFontWeight(), typefaceRequest.m7616getFontStyle_LCdwA());
+            mo7599createDefaultFO1MlWM = this.platformTypefaceResolver.mo7600createNamedRetOiIg((GenericFontFamily) typefaceRequest.getFontFamily(), typefaceRequest.getFontWeight(), typefaceRequest.m7617getFontStyle_LCdwA());
         } else if (!(fontFamily instanceof LoadedFontFamily)) {
             return null;
         } else {
             Typeface typeface = ((LoadedFontFamily) typefaceRequest.getFontFamily()).getTypeface();
             Intrinsics.checkNotNull(typeface, "null cannot be cast to non-null type androidx.compose.ui.text.platform.AndroidTypeface");
-            mo7598createDefaultFO1MlWM = ((AndroidTypeface) typeface).mo7713getNativeTypefacePYhJU0U(typefaceRequest.getFontWeight(), typefaceRequest.m7616getFontStyle_LCdwA(), typefaceRequest.m7617getFontSynthesisGVVA2EU());
+            mo7599createDefaultFO1MlWM = ((AndroidTypeface) typeface).mo7714getNativeTypefacePYhJU0U(typefaceRequest.getFontWeight(), typefaceRequest.m7617getFontStyle_LCdwA(), typefaceRequest.m7618getFontSynthesisGVVA2EU());
         }
-        return new TypefaceResult.Immutable(mo7598createDefaultFO1MlWM, false, 2, null);
+        return new TypefaceResult.Immutable(mo7599createDefaultFO1MlWM, false, 2, null);
     }
 }

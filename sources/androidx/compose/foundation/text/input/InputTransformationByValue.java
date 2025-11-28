@@ -47,9 +47,9 @@ final class InputTransformationByValue implements InputTransformation {
 
     @Override // androidx.compose.foundation.text.input.InputTransformation
     public void transformInput(TextFieldBuffer textFieldBuffer) {
-        TextFieldCharSequence m1435toTextFieldCharSequencewFTz33Y$foundation_release$default = TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer, 0L, null, null, null, 15, null);
-        CharSequence invoke = this.transformation.invoke(textFieldBuffer.getOriginalValue$foundation_release(), m1435toTextFieldCharSequencewFTz33Y$foundation_release$default);
-        if (invoke == m1435toTextFieldCharSequencewFTz33Y$foundation_release$default) {
+        TextFieldCharSequence m1436toTextFieldCharSequencewFTz33Y$foundation_release$default = TextFieldBuffer.m1436toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer, 0L, null, null, null, 15, null);
+        CharSequence invoke = this.transformation.invoke(textFieldBuffer.getOriginalValue$foundation_release(), m1436toTextFieldCharSequencewFTz33Y$foundation_release$default);
+        if (invoke == m1436toTextFieldCharSequencewFTz33Y$foundation_release$default) {
             return;
         }
         if (invoke == textFieldBuffer.getOriginalValue$foundation_release()) {

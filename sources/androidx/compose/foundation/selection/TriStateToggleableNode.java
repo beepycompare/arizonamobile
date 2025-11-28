@@ -29,12 +29,12 @@ final class TriStateToggleableNode extends ClickableNode {
     }
 
     /* renamed from: update-O2vRcR0  reason: not valid java name */
-    public final void m1189updateO2vRcR0(ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, Role role, Function0<Unit> function0) {
+    public final void m1190updateO2vRcR0(ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, Role role, Function0<Unit> function0) {
         if (this.state != toggleableState) {
             this.state = toggleableState;
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
-        super.m323updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, (String) null, role, function0);
+        super.m324updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, (String) null, role, function0);
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode

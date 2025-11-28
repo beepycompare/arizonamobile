@@ -15,7 +15,7 @@ import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class AppMetrica {
     public static void activate(Context context, AppMetricaConfig appMetricaConfig) {
         AbstractC0586t1.f1122a.a(context, appMetricaConfig);

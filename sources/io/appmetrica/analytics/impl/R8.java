@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class R8 {
 
     /* renamed from: a  reason: collision with root package name */

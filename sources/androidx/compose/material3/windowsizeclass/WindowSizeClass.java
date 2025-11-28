@@ -23,12 +23,12 @@ public final class WindowSizeClass {
     }
 
     /* renamed from: getWidthSizeClass-Y0FxcvE  reason: not valid java name */
-    public final int m4483getWidthSizeClassY0FxcvE() {
+    public final int m4484getWidthSizeClassY0FxcvE() {
         return this.widthSizeClass;
     }
 
     /* renamed from: getHeightSizeClass-Pt018CI  reason: not valid java name */
-    public final int m4482getHeightSizeClassPt018CI() {
+    public final int m4483getHeightSizeClassPt018CI() {
         return this.heightSizeClass;
     }
 
@@ -45,7 +45,7 @@ public final class WindowSizeClass {
 
         /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: calculateFromSize-qzXmJYc$default  reason: not valid java name */
-        public static /* synthetic */ WindowSizeClass m4484calculateFromSizeqzXmJYc$default(Companion companion, long j, Set set, Set set2, int i, Object obj) {
+        public static /* synthetic */ WindowSizeClass m4485calculateFromSizeqzXmJYc$default(Companion companion, long j, Set set, Set set2, int i, Object obj) {
             Set<WindowWidthSizeClass> set3 = set;
             if ((i & 2) != 0) {
                 set3 = WindowWidthSizeClass.Companion.getDefaultSizeClasses();
@@ -54,12 +54,12 @@ public final class WindowSizeClass {
             if ((i & 4) != 0) {
                 set4 = WindowHeightSizeClass.Companion.getDefaultSizeClasses();
             }
-            return companion.m4485calculateFromSizeqzXmJYc(j, set3, set4);
+            return companion.m4486calculateFromSizeqzXmJYc(j, set3, set4);
         }
 
         /* renamed from: calculateFromSize-qzXmJYc  reason: not valid java name */
-        public final WindowSizeClass m4485calculateFromSizeqzXmJYc(long j, Set<WindowWidthSizeClass> set, Set<WindowHeightSizeClass> set2) {
-            return new WindowSizeClass(WindowWidthSizeClass.Companion.m4497fromWidthLJjiCC4$material3_window_size_class(DpSize.m8093getWidthD9Ej5fM(j), set), WindowHeightSizeClass.Companion.m4478fromHeightBkRwncw$material3_window_size_class(DpSize.m8091getHeightD9Ej5fM(j), set2), null);
+        public final WindowSizeClass m4486calculateFromSizeqzXmJYc(long j, Set<WindowWidthSizeClass> set, Set<WindowHeightSizeClass> set2) {
+            return new WindowSizeClass(WindowWidthSizeClass.Companion.m4498fromWidthLJjiCC4$material3_window_size_class(DpSize.m8094getWidthD9Ej5fM(j), set), WindowHeightSizeClass.Companion.m4479fromHeightBkRwncw$material3_window_size_class(DpSize.m8092getHeightD9Ej5fM(j), set2), null);
         }
     }
 
@@ -71,14 +71,14 @@ public final class WindowSizeClass {
             return false;
         }
         WindowSizeClass windowSizeClass = (WindowSizeClass) obj;
-        return WindowWidthSizeClass.m4490equalsimpl0(this.widthSizeClass, windowSizeClass.widthSizeClass) && WindowHeightSizeClass.m4471equalsimpl0(this.heightSizeClass, windowSizeClass.heightSizeClass);
+        return WindowWidthSizeClass.m4491equalsimpl0(this.widthSizeClass, windowSizeClass.widthSizeClass) && WindowHeightSizeClass.m4472equalsimpl0(this.heightSizeClass, windowSizeClass.heightSizeClass);
     }
 
     public int hashCode() {
-        return (WindowWidthSizeClass.m4491hashCodeimpl(this.widthSizeClass) * 31) + WindowHeightSizeClass.m4472hashCodeimpl(this.heightSizeClass);
+        return (WindowWidthSizeClass.m4492hashCodeimpl(this.widthSizeClass) * 31) + WindowHeightSizeClass.m4473hashCodeimpl(this.heightSizeClass);
     }
 
     public String toString() {
-        return "WindowSizeClass(" + ((Object) WindowWidthSizeClass.m4492toStringimpl(this.widthSizeClass)) + ", " + ((Object) WindowHeightSizeClass.m4473toStringimpl(this.heightSizeClass)) + ')';
+        return "WindowSizeClass(" + ((Object) WindowWidthSizeClass.m4493toStringimpl(this.widthSizeClass)) + ", " + ((Object) WindowHeightSizeClass.m4474toStringimpl(this.heightSizeClass)) + ')';
     }
 }

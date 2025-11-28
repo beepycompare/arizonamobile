@@ -10,7 +10,7 @@ public final class LayoutModifierNodeKt {
     }
 
     public static final void invalidateLayer(LayoutModifierNode layoutModifierNode) {
-        DelegatableNodeKt.m6842requireCoordinator64DMado(layoutModifierNode, NodeKind.m6988constructorimpl(2)).invalidateLayer();
+        DelegatableNodeKt.m6843requireCoordinator64DMado(layoutModifierNode, NodeKind.m6989constructorimpl(2)).invalidateLayer();
     }
 
     public static final void invalidatePlacement(LayoutModifierNode layoutModifierNode) {

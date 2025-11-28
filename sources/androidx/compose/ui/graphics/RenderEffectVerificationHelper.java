@@ -12,18 +12,18 @@ final class RenderEffectVerificationHelper {
     }
 
     /* renamed from: createBlurEffect-8A-3gB4  reason: not valid java name */
-    public final android.graphics.RenderEffect m5601createBlurEffect8A3gB4(RenderEffect renderEffect, float f, float f2, int i) {
+    public final android.graphics.RenderEffect m5602createBlurEffect8A3gB4(RenderEffect renderEffect, float f, float f2, int i) {
         if (f == 0.0f && f2 == 0.0f) {
             return android.graphics.RenderEffect.createOffsetEffect(0.0f, 0.0f);
         }
         if (renderEffect == null) {
-            return android.graphics.RenderEffect.createBlurEffect(f, f2, AndroidTileMode_androidKt.m5183toAndroidTileMode0vamqd0(i));
+            return android.graphics.RenderEffect.createBlurEffect(f, f2, AndroidTileMode_androidKt.m5184toAndroidTileMode0vamqd0(i));
         }
-        return android.graphics.RenderEffect.createBlurEffect(f, f2, renderEffect.asAndroidRenderEffect(), AndroidTileMode_androidKt.m5183toAndroidTileMode0vamqd0(i));
+        return android.graphics.RenderEffect.createBlurEffect(f, f2, renderEffect.asAndroidRenderEffect(), AndroidTileMode_androidKt.m5184toAndroidTileMode0vamqd0(i));
     }
 
     /* renamed from: createOffsetEffect-Uv8p0NA  reason: not valid java name */
-    public final android.graphics.RenderEffect m5602createOffsetEffectUv8p0NA(RenderEffect renderEffect, long j) {
+    public final android.graphics.RenderEffect m5603createOffsetEffectUv8p0NA(RenderEffect renderEffect, long j) {
         if (renderEffect == null) {
             return android.graphics.RenderEffect.createOffsetEffect(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
         }

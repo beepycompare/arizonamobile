@@ -4,7 +4,7 @@ import androidx.core.view.InputDeviceCompat;
 import androidx.fragment.app.FragmentTransaction;
 import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.ib  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum EnumC0320ib {
     EVENT_TYPE_UNDEFINED(-1, "Unrecognized action"),
     EVENT_TYPE_INIT(0, "First initialization event"),

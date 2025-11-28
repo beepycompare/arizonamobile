@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 /* renamed from: io.appmetrica.analytics.impl.h  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0282h extends AbstractC0645va {
     public C0282h(C0678wi c0678wi) {
         super(c0678wi);

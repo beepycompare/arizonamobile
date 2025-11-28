@@ -12,7 +12,7 @@ import kotlin.Metadata;
 public final class AlertDialogDefaults {
     public static final int $stable = 0;
     public static final AlertDialogDefaults INSTANCE = new AlertDialogDefaults();
-    private static final float TonalElevation = Dp.m7995constructorimpl(0);
+    private static final float TonalElevation = Dp.m7996constructorimpl(0);
 
     private AlertDialogDefaults() {
     }
@@ -83,7 +83,7 @@ public final class AlertDialogDefaults {
     }
 
     /* renamed from: getTonalElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1873getTonalElevationD9Ej5fM() {
+    public final float m1874getTonalElevationD9Ej5fM() {
         return TonalElevation;
     }
 }

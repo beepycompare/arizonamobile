@@ -140,11 +140,11 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         String str = "projects/arizona-rp/systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
         String str2 = "projects/rodina-rp/systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         if (!UtilsKt.isArizonaType()) {
             str = str2;
         }
-        picasso.load(resourceUrl + str).into(starterPackBinding.bg1);
+        picasso.load(resourceUrl$default + str).into(starterPackBinding.bg1);
     }
 
     private final void setRich(StarterPackModel starterPackModel) {
@@ -156,11 +156,11 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         String str = "projects/arizona-rp/systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
         String str2 = "projects/rodina-rp/systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         if (!UtilsKt.isArizonaType()) {
             str = str2;
         }
-        picasso.load(resourceUrl + str).into(starterPackBinding.bg2);
+        picasso.load(resourceUrl$default + str).into(starterPackBinding.bg2);
         if (starterPackModel.getOldPrice() > 0) {
             starterPackBinding.price2Old.setVisibility(0);
         } else {

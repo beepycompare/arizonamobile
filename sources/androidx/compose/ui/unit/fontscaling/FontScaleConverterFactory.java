@@ -111,9 +111,9 @@ public final class FontScaleConverterFactory {
     private final void put(float f, FontScaleConverter fontScaleConverter) {
         synchronized (LookupTablesWriteLock) {
             FontScaleConverterFactory fontScaleConverterFactory = INSTANCE;
-            SparseArrayCompat<FontScaleConverter> m46clone = sLookupTables.m46clone();
-            fontScaleConverterFactory.putInto(m46clone, f, fontScaleConverter);
-            sLookupTables = m46clone;
+            SparseArrayCompat<FontScaleConverter> m47clone = sLookupTables.m47clone();
+            fontScaleConverterFactory.putInto(m47clone, f, fontScaleConverter);
+            sLookupTables = m47clone;
             Unit unit = Unit.INSTANCE;
         }
     }

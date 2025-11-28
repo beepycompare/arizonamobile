@@ -10,6 +10,7 @@
     <include android:id="@+id/pipe_three" android:visibility="gone" layout="@layout/blueprint_pipe_three"/>
     <include android:id="@+id/pipe_four" android:visibility="gone" layout="@layout/blueprint_pipe_four"/>
     <include android:id="@+id/pipe_five" android:visibility="gone" layout="@layout/blueprint_pipe_five"/>
+    <include android:id="@+id/halloween" android:visibility="visible" layout="@layout/blueprint_halloween"/>
     <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_close" android:background="@drawable/btn_close" android:layout_width="@dimen/_30sdp" android:layout_height="@dimen/_30sdp" android:layout_marginTop="@dimen/_15sdp" android:layout_marginEnd="@dimen/_20sdp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="0"/>
     <TextView android:textSize="24sp" android:textColor="@color/white" android:id="@+id/weapon_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="РУЧНОЙ ПРОТИВОТАНКОВЫЙ ГРАНАТОМЕТ" android:fontFamily="@font/din_pro_condensed_black" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
     <LinearLayout android:orientation="vertical" android:background="@drawable/blueprint_info_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginStart="24dp" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">

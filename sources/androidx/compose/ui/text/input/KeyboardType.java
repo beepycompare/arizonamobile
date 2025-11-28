@@ -10,52 +10,52 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class KeyboardType {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unspecified = m7677constructorimpl(0);
-    private static final int Text = m7677constructorimpl(1);
-    private static final int Ascii = m7677constructorimpl(2);
-    private static final int Number = m7677constructorimpl(3);
-    private static final int Phone = m7677constructorimpl(4);
-    private static final int Uri = m7677constructorimpl(5);
-    private static final int Email = m7677constructorimpl(6);
-    private static final int Password = m7677constructorimpl(7);
-    private static final int NumberPassword = m7677constructorimpl(8);
-    private static final int Decimal = m7677constructorimpl(9);
+    private static final int Unspecified = m7678constructorimpl(0);
+    private static final int Text = m7678constructorimpl(1);
+    private static final int Ascii = m7678constructorimpl(2);
+    private static final int Number = m7678constructorimpl(3);
+    private static final int Phone = m7678constructorimpl(4);
+    private static final int Uri = m7678constructorimpl(5);
+    private static final int Email = m7678constructorimpl(6);
+    private static final int Password = m7678constructorimpl(7);
+    private static final int NumberPassword = m7678constructorimpl(8);
+    private static final int Decimal = m7678constructorimpl(9);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ KeyboardType m7676boximpl(int i) {
+    public static final /* synthetic */ KeyboardType m7677boximpl(int i) {
         return new KeyboardType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7677constructorimpl(int i) {
+    private static int m7678constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7678equalsimpl(int i, Object obj) {
-        return (obj instanceof KeyboardType) && i == ((KeyboardType) obj).m7682unboximpl();
+    public static boolean m7679equalsimpl(int i, Object obj) {
+        return (obj instanceof KeyboardType) && i == ((KeyboardType) obj).m7683unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7679equalsimpl0(int i, int i2) {
+    public static final boolean m7680equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7680hashCodeimpl(int i) {
+    public static int m7681hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7678equalsimpl(this.value, obj);
+        return m7679equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7680hashCodeimpl(this.value);
+        return m7681hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7682unboximpl() {
+    public final /* synthetic */ int m7683unboximpl() {
         return this.value;
     }
 
@@ -64,12 +64,12 @@ public final class KeyboardType {
     }
 
     public String toString() {
-        return m7681toStringimpl(this.value);
+        return m7682toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7681toStringimpl(int i) {
-        return m7679equalsimpl0(i, Unspecified) ? "Unspecified" : m7679equalsimpl0(i, Text) ? "Text" : m7679equalsimpl0(i, Ascii) ? "Ascii" : m7679equalsimpl0(i, Number) ? "Number" : m7679equalsimpl0(i, Phone) ? "Phone" : m7679equalsimpl0(i, Uri) ? "Uri" : m7679equalsimpl0(i, Email) ? "Email" : m7679equalsimpl0(i, Password) ? "Password" : m7679equalsimpl0(i, NumberPassword) ? "NumberPassword" : m7679equalsimpl0(i, Decimal) ? "Decimal" : "Invalid";
+    public static String m7682toStringimpl(int i) {
+        return m7680equalsimpl0(i, Unspecified) ? "Unspecified" : m7680equalsimpl0(i, Text) ? "Text" : m7680equalsimpl0(i, Ascii) ? "Ascii" : m7680equalsimpl0(i, Number) ? "Number" : m7680equalsimpl0(i, Phone) ? "Phone" : m7680equalsimpl0(i, Uri) ? "Uri" : m7680equalsimpl0(i, Email) ? "Email" : m7680equalsimpl0(i, Password) ? "Password" : m7680equalsimpl0(i, NumberPassword) ? "NumberPassword" : m7680equalsimpl0(i, Decimal) ? "Decimal" : "Invalid";
     }
 
     /* compiled from: KeyboardType.kt */
@@ -81,95 +81,95 @@ public final class KeyboardType {
         }
 
         /* renamed from: getAscii-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7683getAsciiPjHm6EE$annotations() {
+        public static /* synthetic */ void m7684getAsciiPjHm6EE$annotations() {
         }
 
         /* renamed from: getDecimal-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7684getDecimalPjHm6EE$annotations() {
+        public static /* synthetic */ void m7685getDecimalPjHm6EE$annotations() {
         }
 
         /* renamed from: getEmail-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7685getEmailPjHm6EE$annotations() {
+        public static /* synthetic */ void m7686getEmailPjHm6EE$annotations() {
         }
 
         /* renamed from: getNumber-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7686getNumberPjHm6EE$annotations() {
+        public static /* synthetic */ void m7687getNumberPjHm6EE$annotations() {
         }
 
         /* renamed from: getNumberPassword-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7687getNumberPasswordPjHm6EE$annotations() {
+        public static /* synthetic */ void m7688getNumberPasswordPjHm6EE$annotations() {
         }
 
         /* renamed from: getPassword-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7688getPasswordPjHm6EE$annotations() {
+        public static /* synthetic */ void m7689getPasswordPjHm6EE$annotations() {
         }
 
         /* renamed from: getPhone-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7689getPhonePjHm6EE$annotations() {
+        public static /* synthetic */ void m7690getPhonePjHm6EE$annotations() {
         }
 
         /* renamed from: getText-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7690getTextPjHm6EE$annotations() {
+        public static /* synthetic */ void m7691getTextPjHm6EE$annotations() {
         }
 
         /* renamed from: getUnspecified-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7691getUnspecifiedPjHm6EE$annotations() {
+        public static /* synthetic */ void m7692getUnspecifiedPjHm6EE$annotations() {
         }
 
         /* renamed from: getUri-PjHm6EE$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7692getUriPjHm6EE$annotations() {
+        public static /* synthetic */ void m7693getUriPjHm6EE$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getUnspecified-PjHm6EE  reason: not valid java name */
-        public final int m7701getUnspecifiedPjHm6EE() {
+        public final int m7702getUnspecifiedPjHm6EE() {
             return KeyboardType.Unspecified;
         }
 
         /* renamed from: getText-PjHm6EE  reason: not valid java name */
-        public final int m7700getTextPjHm6EE() {
+        public final int m7701getTextPjHm6EE() {
             return KeyboardType.Text;
         }
 
         /* renamed from: getAscii-PjHm6EE  reason: not valid java name */
-        public final int m7693getAsciiPjHm6EE() {
+        public final int m7694getAsciiPjHm6EE() {
             return KeyboardType.Ascii;
         }
 
         /* renamed from: getNumber-PjHm6EE  reason: not valid java name */
-        public final int m7696getNumberPjHm6EE() {
+        public final int m7697getNumberPjHm6EE() {
             return KeyboardType.Number;
         }
 
         /* renamed from: getPhone-PjHm6EE  reason: not valid java name */
-        public final int m7699getPhonePjHm6EE() {
+        public final int m7700getPhonePjHm6EE() {
             return KeyboardType.Phone;
         }
 
         /* renamed from: getUri-PjHm6EE  reason: not valid java name */
-        public final int m7702getUriPjHm6EE() {
+        public final int m7703getUriPjHm6EE() {
             return KeyboardType.Uri;
         }
 
         /* renamed from: getEmail-PjHm6EE  reason: not valid java name */
-        public final int m7695getEmailPjHm6EE() {
+        public final int m7696getEmailPjHm6EE() {
             return KeyboardType.Email;
         }
 
         /* renamed from: getPassword-PjHm6EE  reason: not valid java name */
-        public final int m7698getPasswordPjHm6EE() {
+        public final int m7699getPasswordPjHm6EE() {
             return KeyboardType.Password;
         }
 
         /* renamed from: getNumberPassword-PjHm6EE  reason: not valid java name */
-        public final int m7697getNumberPasswordPjHm6EE() {
+        public final int m7698getNumberPasswordPjHm6EE() {
             return KeyboardType.NumberPassword;
         }
 
         /* renamed from: getDecimal-PjHm6EE  reason: not valid java name */
-        public final int m7694getDecimalPjHm6EE() {
+        public final int m7695getDecimalPjHm6EE() {
             return KeyboardType.Decimal;
         }
     }

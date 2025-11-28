@@ -25,12 +25,12 @@ public final class OutlineKt {
         } else if (!(outline instanceof Outline.Generic)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            Path.m5561addPathUv8p0NA$default(path, ((Outline.Generic) outline).getPath(), 0L, 2, null);
+            Path.m5562addPathUv8p0NA$default(path, ((Outline.Generic) outline).getPath(), 0L, 2, null);
         }
     }
 
     /* renamed from: drawOutline-wDX37Ww$default */
-    public static /* synthetic */ void m5550drawOutlinewDX37Ww$default(DrawScope drawScope, Outline outline, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    public static /* synthetic */ void m5551drawOutlinewDX37Ww$default(DrawScope drawScope, Outline outline, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             f = 1.0f;
         }
@@ -42,11 +42,11 @@ public final class OutlineKt {
         if ((i2 & 16) != 0) {
             colorFilter = null;
         }
-        m5549drawOutlinewDX37Ww(drawScope, outline, j, f2, drawStyle2, colorFilter, (i2 & 32) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i);
+        m5550drawOutlinewDX37Ww(drawScope, outline, j, f2, drawStyle2, colorFilter, (i2 & 32) != 0 ? DrawScope.Companion.m5861getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawOutline-hn5TExg$default */
-    public static /* synthetic */ void m5548drawOutlinehn5TExg$default(DrawScope drawScope, Outline outline, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    public static /* synthetic */ void m5549drawOutlinehn5TExg$default(DrawScope drawScope, Outline outline, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             f = 1.0f;
         }
@@ -60,21 +60,21 @@ public final class OutlineKt {
         }
         ColorFilter colorFilter2 = colorFilter;
         if ((i2 & 32) != 0) {
-            i = DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU();
+            i = DrawScope.Companion.m5861getDefaultBlendMode0nO6VwU();
         }
-        m5547drawOutlinehn5TExg(drawScope, outline, brush, f2, drawStyle2, colorFilter2, i);
+        m5548drawOutlinehn5TExg(drawScope, outline, brush, f2, drawStyle2, colorFilter2, i);
     }
 
     private static final long topLeft(Rect rect) {
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(rect.getLeft()) << 32) | (Float.floatToRawIntBits(rect.getTop()) & 4294967295L));
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(rect.getLeft()) << 32) | (Float.floatToRawIntBits(rect.getTop()) & 4294967295L));
     }
 
     private static final long topLeft(RoundRect roundRect) {
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(roundRect.getLeft()) << 32) | (Float.floatToRawIntBits(roundRect.getTop()) & 4294967295L));
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(roundRect.getLeft()) << 32) | (Float.floatToRawIntBits(roundRect.getTop()) & 4294967295L));
     }
 
     private static final long size(RoundRect roundRect) {
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(roundRect.getWidth()) << 32) | (Float.floatToRawIntBits(roundRect.getHeight()) & 4294967295L));
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(roundRect.getWidth()) << 32) | (Float.floatToRawIntBits(roundRect.getHeight()) & 4294967295L));
     }
 
     private static final void drawOutlineHelper(DrawScope drawScope, Outline outline, Function2<? super DrawScope, ? super Rect, Unit> function2, Function2<? super DrawScope, ? super RoundRect, Unit> function22, Function2<? super DrawScope, ? super Path, Unit> function23) {
@@ -104,7 +104,7 @@ public final class OutlineKt {
             if (roundRectPath$ui_graphics_release != null) {
                 canvas.drawPath(roundRectPath$ui_graphics_release, paint);
             } else {
-                canvas.drawRoundRect(rounded.getRoundRect().getLeft(), rounded.getRoundRect().getTop(), rounded.getRoundRect().getRight(), rounded.getRoundRect().getBottom(), Float.intBitsToFloat((int) (rounded.getRoundRect().m5083getBottomLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (rounded.getRoundRect().m5083getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)), paint);
+                canvas.drawRoundRect(rounded.getRoundRect().getLeft(), rounded.getRoundRect().getTop(), rounded.getRoundRect().getRight(), rounded.getRoundRect().getBottom(), Float.intBitsToFloat((int) (rounded.getRoundRect().m5084getBottomLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (rounded.getRoundRect().m5084getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)), paint);
             }
         } else if (!(outline instanceof Outline.Generic)) {
             throw new NoWhenBranchMatchedException();
@@ -114,48 +114,48 @@ public final class OutlineKt {
     }
 
     private static final boolean hasSameCornerRadius(RoundRect roundRect) {
-        return ((Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32)) > Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() >> 32)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32)) == Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() >> 32)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() >> 32)) > Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() >> 32)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() >> 32)) == Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() >> 32)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() >> 32)) > Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() >> 32)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() >> 32)) == Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() >> 32)) ? 0 : -1)) == 0) && ((Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) > Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) == Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) > Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 4294967295L)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5084getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) == Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 4294967295L)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 4294967295L)) > Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5086getTopRightCornerRadiuskKHJgLs() & 4294967295L)) == Float.intBitsToFloat((int) (roundRect.m5085getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) ? 0 : -1)) == 0);
+        return ((Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32)) > Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() >> 32)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32)) == Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() >> 32)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() >> 32)) > Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() >> 32)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() >> 32)) == Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() >> 32)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() >> 32)) > Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() >> 32)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() >> 32)) == Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() >> 32)) ? 0 : -1)) == 0) && ((Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) > Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) == Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) > Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 4294967295L)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) == Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 4294967295L)) ? 0 : -1)) == 0 && (Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 4294967295L)) > Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) ? 1 : (Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 4294967295L)) == Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) ? 0 : -1)) == 0);
     }
 
     /* renamed from: drawOutline-wDX37Ww */
-    public static final void m5549drawOutlinewDX37Ww(DrawScope drawScope, Outline outline, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public static final void m5550drawOutlinewDX37Ww(DrawScope drawScope, Outline outline, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         if (outline instanceof Outline.Rectangle) {
             Rect rect = ((Outline.Rectangle) outline).getRect();
-            drawScope.mo5771drawRectnJ9OG0(j, topLeft(rect), size(rect), f, drawStyle, colorFilter, i);
+            drawScope.mo5772drawRectnJ9OG0(j, topLeft(rect), size(rect), f, drawStyle, colorFilter, i);
         } else if (outline instanceof Outline.Rounded) {
             Outline.Rounded rounded = (Outline.Rounded) outline;
             Path roundRectPath$ui_graphics_release = rounded.getRoundRectPath$ui_graphics_release();
             if (roundRectPath$ui_graphics_release != null) {
-                drawScope.mo5767drawPathLG529CI(roundRectPath$ui_graphics_release, j, f, drawStyle, colorFilter, i);
+                drawScope.mo5768drawPathLG529CI(roundRectPath$ui_graphics_release, j, f, drawStyle, colorFilter, i);
                 return;
             }
             RoundRect roundRect = rounded.getRoundRect();
-            float intBitsToFloat = Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32));
-            drawScope.mo5773drawRoundRectuAw5IA(j, topLeft(roundRect), size(roundRect), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32)), drawStyle, f, colorFilter, i);
+            float intBitsToFloat = Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32));
+            drawScope.mo5774drawRoundRectuAw5IA(j, topLeft(roundRect), size(roundRect), CornerRadius.m4990constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32)), drawStyle, f, colorFilter, i);
         } else if (outline instanceof Outline.Generic) {
-            drawScope.mo5767drawPathLG529CI(((Outline.Generic) outline).getPath(), j, f, drawStyle, colorFilter, i);
+            drawScope.mo5768drawPathLG529CI(((Outline.Generic) outline).getPath(), j, f, drawStyle, colorFilter, i);
         } else {
             throw new NoWhenBranchMatchedException();
         }
     }
 
     /* renamed from: drawOutline-hn5TExg */
-    public static final void m5547drawOutlinehn5TExg(DrawScope drawScope, Outline outline, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public static final void m5548drawOutlinehn5TExg(DrawScope drawScope, Outline outline, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         if (outline instanceof Outline.Rectangle) {
             Rect rect = ((Outline.Rectangle) outline).getRect();
-            drawScope.mo5770drawRectAsUm42w(brush, topLeft(rect), size(rect), f, drawStyle, colorFilter, i);
+            drawScope.mo5771drawRectAsUm42w(brush, topLeft(rect), size(rect), f, drawStyle, colorFilter, i);
         } else if (outline instanceof Outline.Rounded) {
             Outline.Rounded rounded = (Outline.Rounded) outline;
             Path roundRectPath$ui_graphics_release = rounded.getRoundRectPath$ui_graphics_release();
             if (roundRectPath$ui_graphics_release != null) {
-                drawScope.mo5766drawPathGBMwjPU(roundRectPath$ui_graphics_release, brush, f, drawStyle, colorFilter, i);
+                drawScope.mo5767drawPathGBMwjPU(roundRectPath$ui_graphics_release, brush, f, drawStyle, colorFilter, i);
                 return;
             }
             RoundRect roundRect = rounded.getRoundRect();
-            float intBitsToFloat = Float.intBitsToFloat((int) (roundRect.m5083getBottomLeftCornerRadiuskKHJgLs() >> 32));
-            drawScope.mo5772drawRoundRectZuiqVtQ(brush, topLeft(roundRect), size(roundRect), CornerRadius.m4989constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32)), f, drawStyle, colorFilter, i);
+            float intBitsToFloat = Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32));
+            drawScope.mo5773drawRoundRectZuiqVtQ(brush, topLeft(roundRect), size(roundRect), CornerRadius.m4990constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32)), f, drawStyle, colorFilter, i);
         } else if (outline instanceof Outline.Generic) {
-            drawScope.mo5766drawPathGBMwjPU(((Outline.Generic) outline).getPath(), brush, f, drawStyle, colorFilter, i);
+            drawScope.mo5767drawPathGBMwjPU(((Outline.Generic) outline).getPath(), brush, f, drawStyle, colorFilter, i);
         } else {
             throw new NoWhenBranchMatchedException();
         }
@@ -164,6 +164,6 @@ public final class OutlineKt {
     private static final long size(Rect rect) {
         float right = rect.getRight() - rect.getLeft();
         float bottom = rect.getBottom() - rect.getTop();
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
     }
 }

@@ -29,7 +29,7 @@ public final class AndroidFontLoader_androidKt {
             @Override // androidx.core.content.res.ResourcesCompat.FontCallback
             public void onFontRetrieved(android.graphics.Typeface typeface) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(typeface));
+                cancellableContinuationImpl2.resumeWith(Result.m9901constructorimpl(typeface));
             }
 
             @Override // androidx.core.content.res.ResourcesCompat.FontCallback

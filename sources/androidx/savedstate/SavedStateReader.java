@@ -30,50 +30,50 @@ public final class SavedStateReader {
     private final Bundle source;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ SavedStateReader m8901boximpl(Bundle bundle) {
+    public static final /* synthetic */ SavedStateReader m8913boximpl(Bundle bundle) {
         return new SavedStateReader(bundle);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Bundle m8902constructorimpl(Bundle source) {
+    public static Bundle m8914constructorimpl(Bundle source) {
         Intrinsics.checkNotNullParameter(source, "source");
         return source;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8907equalsimpl(Bundle bundle, Object obj) {
-        return (obj instanceof SavedStateReader) && Intrinsics.areEqual(bundle, ((SavedStateReader) obj).m8985unboximpl());
+    public static boolean m8919equalsimpl(Bundle bundle, Object obj) {
+        return (obj instanceof SavedStateReader) && Intrinsics.areEqual(bundle, ((SavedStateReader) obj).m8997unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8908equalsimpl0(Bundle bundle, Bundle bundle2) {
+    public static final boolean m8920equalsimpl0(Bundle bundle, Bundle bundle2) {
         return Intrinsics.areEqual(bundle, bundle2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8979hashCodeimpl(Bundle bundle) {
+    public static int m8991hashCodeimpl(Bundle bundle) {
         return bundle.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8984toStringimpl(Bundle bundle) {
+    public static String m8996toStringimpl(Bundle bundle) {
         return "SavedStateReader(source=" + bundle + ')';
     }
 
     public boolean equals(Object obj) {
-        return m8907equalsimpl(this.source, obj);
+        return m8919equalsimpl(this.source, obj);
     }
 
     public int hashCode() {
-        return m8979hashCodeimpl(this.source);
+        return m8991hashCodeimpl(this.source);
     }
 
     public String toString() {
-        return m8984toStringimpl(this.source);
+        return m8996toStringimpl(this.source);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Bundle m8985unboximpl() {
+    public final /* synthetic */ Bundle m8997unboximpl() {
         return this.source;
     }
 
@@ -82,7 +82,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getBinder-impl  reason: not valid java name */
-    public static final IBinder m8909getBinderimpl(Bundle bundle, String key) {
+    public static final IBinder m8921getBinderimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         IBinder binder = bundle.getBinder(key);
         if (binder != null) {
@@ -93,13 +93,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getBinderOrNull-impl  reason: not valid java name */
-    public static final IBinder m8910getBinderOrNullimpl(Bundle bundle, String key) {
+    public static final IBinder m8922getBinderOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getBinder(key);
     }
 
     /* renamed from: getBoolean-impl  reason: not valid java name */
-    public static final boolean m8911getBooleanimpl(Bundle bundle, String key) {
+    public static final boolean m8923getBooleanimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         boolean z = bundle.getBoolean(key, false);
         if (z || !bundle.getBoolean(key, true)) {
@@ -110,7 +110,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getBooleanOrNull-impl  reason: not valid java name */
-    public static final Boolean m8914getBooleanOrNullimpl(Bundle bundle, String key) {
+    public static final Boolean m8926getBooleanOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         boolean z = bundle.getBoolean(key, false);
         if (z || !bundle.getBoolean(key, true)) {
@@ -120,7 +120,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getChar-impl  reason: not valid java name */
-    public static final char m8915getCharimpl(Bundle bundle, String key) {
+    public static final char m8927getCharimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         char c = bundle.getChar(key, (char) 0);
         if (c == 0 && bundle.getChar(key, CharCompanionObject.MAX_VALUE) == 65535) {
@@ -131,7 +131,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getCharOrNull-impl  reason: not valid java name */
-    public static final Character m8918getCharOrNullimpl(Bundle bundle, String key) {
+    public static final Character m8930getCharOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         char c = bundle.getChar(key, (char) 0);
         if (c == 0 && bundle.getChar(key, CharCompanionObject.MAX_VALUE) == 65535) {
@@ -141,7 +141,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getCharSequence-impl  reason: not valid java name */
-    public static final CharSequence m8919getCharSequenceimpl(Bundle bundle, String key) {
+    public static final CharSequence m8931getCharSequenceimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         CharSequence charSequence = bundle.getCharSequence(key);
         if (charSequence != null) {
@@ -152,13 +152,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getCharSequenceOrNull-impl  reason: not valid java name */
-    public static final CharSequence m8924getCharSequenceOrNullimpl(Bundle bundle, String key) {
+    public static final CharSequence m8936getCharSequenceOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getCharSequence(key);
     }
 
     /* renamed from: getDouble-impl  reason: not valid java name */
-    public static final double m8925getDoubleimpl(Bundle bundle, String key) {
+    public static final double m8937getDoubleimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         double d = bundle.getDouble(key, Double.MIN_VALUE);
         if (d == Double.MIN_VALUE && bundle.getDouble(key, Double.MAX_VALUE) == Double.MAX_VALUE) {
@@ -169,7 +169,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getDoubleOrNull-impl  reason: not valid java name */
-    public static final Double m8928getDoubleOrNullimpl(Bundle bundle, String key) {
+    public static final Double m8940getDoubleOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         double d = bundle.getDouble(key, Double.MIN_VALUE);
         if (d == Double.MIN_VALUE && bundle.getDouble(key, Double.MAX_VALUE) == Double.MAX_VALUE) {
@@ -179,7 +179,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getFloat-impl  reason: not valid java name */
-    public static final float m8929getFloatimpl(Bundle bundle, String key) {
+    public static final float m8941getFloatimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         float f = bundle.getFloat(key, Float.MIN_VALUE);
         if (f == Float.MIN_VALUE && bundle.getFloat(key, Float.MAX_VALUE) == Float.MAX_VALUE) {
@@ -190,7 +190,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getFloatOrNull-impl  reason: not valid java name */
-    public static final Float m8932getFloatOrNullimpl(Bundle bundle, String key) {
+    public static final Float m8944getFloatOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         float f = bundle.getFloat(key, Float.MIN_VALUE);
         if (f == Float.MIN_VALUE && bundle.getFloat(key, Float.MAX_VALUE) == Float.MAX_VALUE) {
@@ -200,7 +200,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getInt-impl  reason: not valid java name */
-    public static final int m8933getIntimpl(Bundle bundle, String key) {
+    public static final int m8945getIntimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         int i = bundle.getInt(key, Integer.MIN_VALUE);
         if (i == Integer.MIN_VALUE && bundle.getInt(key, Integer.MAX_VALUE) == Integer.MAX_VALUE) {
@@ -211,7 +211,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getIntOrNull-impl  reason: not valid java name */
-    public static final Integer m8938getIntOrNullimpl(Bundle bundle, String key) {
+    public static final Integer m8950getIntOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         int i = bundle.getInt(key, Integer.MIN_VALUE);
         if (i == Integer.MIN_VALUE && bundle.getInt(key, Integer.MAX_VALUE) == Integer.MAX_VALUE) {
@@ -221,7 +221,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getLong-impl  reason: not valid java name */
-    public static final long m8943getLongimpl(Bundle bundle, String key) {
+    public static final long m8955getLongimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         long j = bundle.getLong(key, Long.MIN_VALUE);
         if (j == Long.MIN_VALUE && bundle.getLong(key, Long.MAX_VALUE) == Long.MAX_VALUE) {
@@ -232,7 +232,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getLongOrNull-impl  reason: not valid java name */
-    public static final Long m8946getLongOrNullimpl(Bundle bundle, String key) {
+    public static final Long m8958getLongOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         long j = bundle.getLong(key, Long.MIN_VALUE);
         if (j == Long.MIN_VALUE && bundle.getLong(key, Long.MAX_VALUE) == Long.MAX_VALUE) {
@@ -242,7 +242,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getParcelable-impl  reason: not valid java name */
-    public static final <T extends Parcelable> T m8948getParcelableimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> T m8960getParcelableimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
         T t = (T) BundleCompat.getParcelable(bundle, key, JvmClassMappingKt.getJavaClass((KClass) parcelableClass));
@@ -254,28 +254,28 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getParcelable-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> T m8947getParcelableimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> T m8959getParcelableimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return (T) m8948getParcelableimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return (T) m8960getParcelableimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getParcelableOrNull-impl  reason: not valid java name */
-    public static final <T extends Parcelable> T m8958getParcelableOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> T m8970getParcelableOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
         return (T) BundleCompat.getParcelable(bundle, key, JvmClassMappingKt.getJavaClass((KClass) parcelableClass));
     }
 
     /* renamed from: getParcelableOrNull-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> T m8957getParcelableOrNullimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> T m8969getParcelableOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return (T) m8958getParcelableOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return (T) m8970getParcelableOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getJavaSerializable-impl  reason: not valid java name */
-    public static final <T extends Serializable> T m8940getJavaSerializableimpl(Bundle bundle, String key, KClass<T> serializableClass) {
+    public static final <T extends Serializable> T m8952getJavaSerializableimpl(Bundle bundle, String key, KClass<T> serializableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(serializableClass, "serializableClass");
         T t = (T) BundleCompat.getSerializable(bundle, key, JvmClassMappingKt.getJavaClass((KClass) serializableClass));
@@ -287,28 +287,28 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getJavaSerializable-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Serializable> T m8939getJavaSerializableimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Serializable> T m8951getJavaSerializableimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return (T) m8940getJavaSerializableimpl(bundle, key, Reflection.getOrCreateKotlinClass(Serializable.class));
+        return (T) m8952getJavaSerializableimpl(bundle, key, Reflection.getOrCreateKotlinClass(Serializable.class));
     }
 
     /* renamed from: getJavaSerializableOrNull-impl  reason: not valid java name */
-    public static final <T extends Serializable> T m8942getJavaSerializableOrNullimpl(Bundle bundle, String key, KClass<T> serializableClass) {
+    public static final <T extends Serializable> T m8954getJavaSerializableOrNullimpl(Bundle bundle, String key, KClass<T> serializableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(serializableClass, "serializableClass");
         return (T) BundleCompat.getSerializable(bundle, key, JvmClassMappingKt.getJavaClass((KClass) serializableClass));
     }
 
     /* renamed from: getJavaSerializableOrNull-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Serializable> T m8941getJavaSerializableOrNullimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Serializable> T m8953getJavaSerializableOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return (T) m8942getJavaSerializableOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Serializable.class));
+        return (T) m8954getJavaSerializableOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Serializable.class));
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static final Size m8965getSizeimpl(Bundle bundle, String key) {
+    public static final Size m8977getSizeimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Size size = bundle.getSize(key);
         if (size != null) {
@@ -319,13 +319,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getSizeOrNull-impl  reason: not valid java name */
-    public static final Size m8968getSizeOrNullimpl(Bundle bundle, String key) {
+    public static final Size m8980getSizeOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getSize(key);
     }
 
     /* renamed from: getSizeF-impl  reason: not valid java name */
-    public static final SizeF m8966getSizeFimpl(Bundle bundle, String key) {
+    public static final SizeF m8978getSizeFimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         SizeF sizeF = bundle.getSizeF(key);
         if (sizeF != null) {
@@ -336,13 +336,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getSizeFOrNull-impl  reason: not valid java name */
-    public static final SizeF m8967getSizeFOrNullimpl(Bundle bundle, String key) {
+    public static final SizeF m8979getSizeFOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getSizeF(key);
     }
 
     /* renamed from: getString-impl  reason: not valid java name */
-    public static final String m8973getStringimpl(Bundle bundle, String key) {
+    public static final String m8985getStringimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         String string = bundle.getString(key);
         if (string != null) {
@@ -353,13 +353,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getStringOrNull-impl  reason: not valid java name */
-    public static final String m8978getStringOrNullimpl(Bundle bundle, String key) {
+    public static final String m8990getStringOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getString(key);
     }
 
     /* renamed from: getIntList-impl  reason: not valid java name */
-    public static final List<Integer> m8936getIntListimpl(Bundle bundle, String key) {
+    public static final List<Integer> m8948getIntListimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         ArrayList<Integer> integerArrayList = bundle.getIntegerArrayList(key);
         if (integerArrayList != null) {
@@ -370,13 +370,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getIntListOrNull-impl  reason: not valid java name */
-    public static final List<Integer> m8937getIntListOrNullimpl(Bundle bundle, String key) {
+    public static final List<Integer> m8949getIntListOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getIntegerArrayList(key);
     }
 
     /* renamed from: getCharSequenceList-impl  reason: not valid java name */
-    public static final List<CharSequence> m8922getCharSequenceListimpl(Bundle bundle, String key) {
+    public static final List<CharSequence> m8934getCharSequenceListimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         ArrayList<CharSequence> charSequenceArrayList = bundle.getCharSequenceArrayList(key);
         if (charSequenceArrayList != null) {
@@ -387,13 +387,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getCharSequenceListOrNull-impl  reason: not valid java name */
-    public static final List<CharSequence> m8923getCharSequenceListOrNullimpl(Bundle bundle, String key) {
+    public static final List<CharSequence> m8935getCharSequenceListOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getCharSequenceArrayList(key);
     }
 
     /* renamed from: getStringList-impl  reason: not valid java name */
-    public static final List<String> m8976getStringListimpl(Bundle bundle, String key) {
+    public static final List<String> m8988getStringListimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         ArrayList<String> stringArrayList = bundle.getStringArrayList(key);
         if (stringArrayList != null) {
@@ -404,13 +404,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getStringListOrNull-impl  reason: not valid java name */
-    public static final List<String> m8977getStringListOrNullimpl(Bundle bundle, String key) {
+    public static final List<String> m8989getStringListOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getStringArrayList(key);
     }
 
     /* renamed from: getParcelableList-impl  reason: not valid java name */
-    public static final <T extends Parcelable> List<T> m8954getParcelableListimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> List<T> m8966getParcelableListimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
         ArrayList parcelableArrayList = BundleCompat.getParcelableArrayList(bundle, key, JvmClassMappingKt.getJavaClass((KClass) parcelableClass));
@@ -422,28 +422,28 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getParcelableList-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> List<T> m8953getParcelableListimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> List<T> m8965getParcelableListimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return m8954getParcelableListimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return m8966getParcelableListimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getParcelableListOrNull-impl  reason: not valid java name */
-    public static final <T extends Parcelable> List<T> m8956getParcelableListOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> List<T> m8968getParcelableListOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
         return BundleCompat.getParcelableArrayList(bundle, key, JvmClassMappingKt.getJavaClass((KClass) parcelableClass));
     }
 
     /* renamed from: getParcelableListOrNull-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> List<T> m8955getParcelableListOrNullimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> List<T> m8967getParcelableListOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return m8956getParcelableListOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return m8968getParcelableListOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getBooleanArray-impl  reason: not valid java name */
-    public static final boolean[] m8912getBooleanArrayimpl(Bundle bundle, String key) {
+    public static final boolean[] m8924getBooleanArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         boolean[] booleanArray = bundle.getBooleanArray(key);
         if (booleanArray != null) {
@@ -454,13 +454,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getBooleanArrayOrNull-impl  reason: not valid java name */
-    public static final boolean[] m8913getBooleanArrayOrNullimpl(Bundle bundle, String key) {
+    public static final boolean[] m8925getBooleanArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getBooleanArray(key);
     }
 
     /* renamed from: getCharArray-impl  reason: not valid java name */
-    public static final char[] m8916getCharArrayimpl(Bundle bundle, String key) {
+    public static final char[] m8928getCharArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         char[] charArray = bundle.getCharArray(key);
         if (charArray != null) {
@@ -471,13 +471,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getCharArrayOrNull-impl  reason: not valid java name */
-    public static final char[] m8917getCharArrayOrNullimpl(Bundle bundle, String key) {
+    public static final char[] m8929getCharArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getCharArray(key);
     }
 
     /* renamed from: getCharSequenceArray-impl  reason: not valid java name */
-    public static final CharSequence[] m8920getCharSequenceArrayimpl(Bundle bundle, String key) {
+    public static final CharSequence[] m8932getCharSequenceArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         CharSequence[] charSequenceArray = bundle.getCharSequenceArray(key);
         if (charSequenceArray != null) {
@@ -488,13 +488,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getCharSequenceArrayOrNull-impl  reason: not valid java name */
-    public static final CharSequence[] m8921getCharSequenceArrayOrNullimpl(Bundle bundle, String key) {
+    public static final CharSequence[] m8933getCharSequenceArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getCharSequenceArray(key);
     }
 
     /* renamed from: getDoubleArray-impl  reason: not valid java name */
-    public static final double[] m8926getDoubleArrayimpl(Bundle bundle, String key) {
+    public static final double[] m8938getDoubleArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         double[] doubleArray = bundle.getDoubleArray(key);
         if (doubleArray != null) {
@@ -505,13 +505,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getDoubleArrayOrNull-impl  reason: not valid java name */
-    public static final double[] m8927getDoubleArrayOrNullimpl(Bundle bundle, String key) {
+    public static final double[] m8939getDoubleArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getDoubleArray(key);
     }
 
     /* renamed from: getFloatArray-impl  reason: not valid java name */
-    public static final float[] m8930getFloatArrayimpl(Bundle bundle, String key) {
+    public static final float[] m8942getFloatArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         float[] floatArray = bundle.getFloatArray(key);
         if (floatArray != null) {
@@ -522,13 +522,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getFloatArrayOrNull-impl  reason: not valid java name */
-    public static final float[] m8931getFloatArrayOrNullimpl(Bundle bundle, String key) {
+    public static final float[] m8943getFloatArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getFloatArray(key);
     }
 
     /* renamed from: getIntArray-impl  reason: not valid java name */
-    public static final int[] m8934getIntArrayimpl(Bundle bundle, String key) {
+    public static final int[] m8946getIntArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         int[] intArray = bundle.getIntArray(key);
         if (intArray != null) {
@@ -539,13 +539,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getIntArrayOrNull-impl  reason: not valid java name */
-    public static final int[] m8935getIntArrayOrNullimpl(Bundle bundle, String key) {
+    public static final int[] m8947getIntArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getIntArray(key);
     }
 
     /* renamed from: getLongArray-impl  reason: not valid java name */
-    public static final long[] m8944getLongArrayimpl(Bundle bundle, String key) {
+    public static final long[] m8956getLongArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         long[] longArray = bundle.getLongArray(key);
         if (longArray != null) {
@@ -556,13 +556,13 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getLongArrayOrNull-impl  reason: not valid java name */
-    public static final long[] m8945getLongArrayOrNullimpl(Bundle bundle, String key) {
+    public static final long[] m8957getLongArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getLongArray(key);
     }
 
     /* renamed from: getStringArray-impl  reason: not valid java name */
-    public static final String[] m8974getStringArrayimpl(Bundle bundle, String key) {
+    public static final String[] m8986getStringArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         String[] stringArray = bundle.getStringArray(key);
         if (stringArray != null) {
@@ -573,16 +573,16 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getStringArrayOrNull-impl  reason: not valid java name */
-    public static final String[] m8975getStringArrayOrNullimpl(Bundle bundle, String key) {
+    public static final String[] m8987getStringArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getStringArray(key);
     }
 
     /* renamed from: getParcelableArray-impl  reason: not valid java name */
-    public static final <T extends Parcelable> T[] m8950getParcelableArrayimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> T[] m8962getParcelableArrayimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
-        T[] tArr = (T[]) m8952getParcelableArrayOrNullimpl(bundle, key, parcelableClass);
+        T[] tArr = (T[]) m8964getParcelableArrayOrNullimpl(bundle, key, parcelableClass);
         if (tArr != null) {
             return tArr;
         }
@@ -591,14 +591,14 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getParcelableArray-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> T[] m8949getParcelableArrayimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> T[] m8961getParcelableArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return (T[]) m8950getParcelableArrayimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return (T[]) m8962getParcelableArrayimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getParcelableArrayOrNull-impl  reason: not valid java name */
-    public static final <T extends Parcelable> T[] m8952getParcelableArrayOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> T[] m8964getParcelableArrayOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
         T[] tArr = (T[]) BundleCompat.getParcelableArray(bundle, key, JvmClassMappingKt.getJavaClass((KClass) parcelableClass));
@@ -609,47 +609,47 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getParcelableArrayOrNull-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> T[] m8951getParcelableArrayOrNullimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> T[] m8963getParcelableArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return (T[]) m8952getParcelableArrayOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return (T[]) m8964getParcelableArrayOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getSparseParcelableArray-impl  reason: not valid java name */
-    public static final <T extends Parcelable> SparseArray<T> m8970getSparseParcelableArrayimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> SparseArray<T> m8982getSparseParcelableArrayimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
-        SparseArray<T> m8972getSparseParcelableArrayOrNullimpl = m8972getSparseParcelableArrayOrNullimpl(bundle, key, parcelableClass);
-        if (m8972getSparseParcelableArrayOrNullimpl != null) {
-            return m8972getSparseParcelableArrayOrNullimpl;
+        SparseArray<T> m8984getSparseParcelableArrayOrNullimpl = m8984getSparseParcelableArrayOrNullimpl(bundle, key, parcelableClass);
+        if (m8984getSparseParcelableArrayOrNullimpl != null) {
+            return m8984getSparseParcelableArrayOrNullimpl;
         }
         SavedStateReaderKt.keyOrValueNotFoundError(key);
         throw new KotlinNothingValueException();
     }
 
     /* renamed from: getSparseParcelableArray-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> SparseArray<T> m8969getSparseParcelableArrayimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> SparseArray<T> m8981getSparseParcelableArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return m8970getSparseParcelableArrayimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return m8982getSparseParcelableArrayimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getSparseParcelableArrayOrNull-impl  reason: not valid java name */
-    public static final <T extends Parcelable> SparseArray<T> m8972getSparseParcelableArrayOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
+    public static final <T extends Parcelable> SparseArray<T> m8984getSparseParcelableArrayOrNullimpl(Bundle bundle, String key, KClass<T> parcelableClass) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(parcelableClass, "parcelableClass");
         return BundleCompat.getSparseParcelableArray(bundle, key, JvmClassMappingKt.getJavaClass((KClass) parcelableClass));
     }
 
     /* renamed from: getSparseParcelableArrayOrNull-impl  reason: not valid java name */
-    public static final /* synthetic */ <T extends Parcelable> SparseArray<T> m8971getSparseParcelableArrayOrNullimpl(Bundle bundle, String key) {
+    public static final /* synthetic */ <T extends Parcelable> SparseArray<T> m8983getSparseParcelableArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        return m8972getSparseParcelableArrayOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return m8984getSparseParcelableArrayOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 
     /* renamed from: getSavedState-impl  reason: not valid java name */
-    public static final Bundle m8959getSavedStateimpl(Bundle bundle, String key) {
+    public static final Bundle m8971getSavedStateimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         Bundle bundle2 = bundle.getBundle(key);
         if (bundle2 != null) {
@@ -660,46 +660,46 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getSavedStateOrNull-impl  reason: not valid java name */
-    public static final Bundle m8964getSavedStateOrNullimpl(Bundle bundle, String key) {
+    public static final Bundle m8976getSavedStateOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.getBundle(key);
     }
 
     /* renamed from: size-impl  reason: not valid java name */
-    public static final int m8982sizeimpl(Bundle bundle) {
+    public static final int m8994sizeimpl(Bundle bundle) {
         return bundle.size();
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static final boolean m8980isEmptyimpl(Bundle bundle) {
+    public static final boolean m8992isEmptyimpl(Bundle bundle) {
         return bundle.isEmpty();
     }
 
     /* renamed from: isNull-impl  reason: not valid java name */
-    public static final boolean m8981isNullimpl(Bundle bundle, String key) {
+    public static final boolean m8993isNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return m8903containsimpl(bundle, key) && bundle.get(key) == null;
+        return m8915containsimpl(bundle, key) && bundle.get(key) == null;
     }
 
     /* renamed from: contains-impl  reason: not valid java name */
-    public static final boolean m8903containsimpl(Bundle bundle, String key) {
+    public static final boolean m8915containsimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return bundle.containsKey(key);
     }
 
     /* renamed from: contentDeepEquals-impl  reason: not valid java name */
-    public static final boolean m8904contentDeepEqualsimpl(Bundle bundle, Bundle other) {
+    public static final boolean m8916contentDeepEqualsimpl(Bundle bundle, Bundle other) {
         Intrinsics.checkNotNullParameter(other, "other");
         return SavedStateReaderKt__SavedStateReader_androidKt.access$contentDeepEquals(bundle, other);
     }
 
     /* renamed from: contentDeepHashCode-impl  reason: not valid java name */
-    public static final int m8905contentDeepHashCodeimpl(Bundle bundle) {
+    public static final int m8917contentDeepHashCodeimpl(Bundle bundle) {
         return SavedStateReaderKt__SavedStateReader_androidKt.access$contentDeepHashCode(bundle);
     }
 
     /* renamed from: contentDeepToString-impl  reason: not valid java name */
-    public static final String m8906contentDeepToStringimpl(Bundle bundle) {
+    public static final String m8918contentDeepToStringimpl(Bundle bundle) {
         StringBuilder sb = new StringBuilder((RangesKt.coerceAtMost(bundle.size(), 429496729) * 5) + 2);
         SavedStateReaderKt__SavedStateReader_androidKt.access$contentDeepToString(bundle, sb, new ArrayList());
         String sb2 = sb.toString();
@@ -708,7 +708,7 @@ public final class SavedStateReader {
     }
 
     /* renamed from: toMap-impl  reason: not valid java name */
-    public static final Map<String, Object> m8983toMapimpl(Bundle bundle) {
+    public static final Map<String, Object> m8995toMapimpl(Bundle bundle) {
         Map createMapBuilder = MapsKt.createMapBuilder(bundle.size());
         for (String str : bundle.keySet()) {
             Intrinsics.checkNotNull(str);
@@ -718,26 +718,26 @@ public final class SavedStateReader {
     }
 
     /* renamed from: getSavedStateArray-impl  reason: not valid java name */
-    public static final Bundle[] m8960getSavedStateArrayimpl(Bundle bundle, String key) {
+    public static final Bundle[] m8972getSavedStateArrayimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return (Bundle[]) m8950getParcelableArrayimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
+        return (Bundle[]) m8962getParcelableArrayimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
     }
 
     /* renamed from: getSavedStateArrayOrNull-impl  reason: not valid java name */
-    public static final Bundle[] m8961getSavedStateArrayOrNullimpl(Bundle bundle, String key) {
+    public static final Bundle[] m8973getSavedStateArrayOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return (Bundle[]) m8952getParcelableArrayOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
+        return (Bundle[]) m8964getParcelableArrayOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
     }
 
     /* renamed from: getSavedStateList-impl  reason: not valid java name */
-    public static final List<Bundle> m8962getSavedStateListimpl(Bundle bundle, String key) {
+    public static final List<Bundle> m8974getSavedStateListimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return m8954getParcelableListimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
+        return m8966getParcelableListimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
     }
 
     /* renamed from: getSavedStateListOrNull-impl  reason: not valid java name */
-    public static final List<Bundle> m8963getSavedStateListOrNullimpl(Bundle bundle, String key) {
+    public static final List<Bundle> m8975getSavedStateListOrNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return m8956getParcelableListOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
+        return m8968getParcelableListOrNullimpl(bundle, key, Reflection.getOrCreateKotlinClass(Bundle.class));
     }
 }

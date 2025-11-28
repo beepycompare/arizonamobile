@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.util.SparseArray;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Nc {
     public static final SparseArray c;
 

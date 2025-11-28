@@ -70,11 +70,11 @@ public final class AndroidPaint_androidKt {
     }
 
     /* renamed from: setNativeBlendMode-GB0RdKg  reason: not valid java name */
-    public static final void m5161setNativeBlendModeGB0RdKg(android.graphics.Paint paint, int i) {
+    public static final void m5162setNativeBlendModeGB0RdKg(android.graphics.Paint paint, int i) {
         if (Build.VERSION.SDK_INT >= 29) {
-            WrapperVerificationHelperMethods.INSTANCE.m5700setBlendModeGB0RdKg(paint, i);
+            WrapperVerificationHelperMethods.INSTANCE.m5701setBlendModeGB0RdKg(paint, i);
         } else {
-            paint.setXfermode(new PorterDuffXfermode(AndroidBlendMode_androidKt.m5128toPorterDuffModes9anfk8(i)));
+            paint.setXfermode(new PorterDuffXfermode(AndroidBlendMode_androidKt.m5129toPorterDuffModes9anfk8(i)));
         }
     }
 
@@ -103,21 +103,21 @@ public final class AndroidPaint_androidKt {
     }
 
     /* renamed from: setNativeColor-4WTKRHQ  reason: not valid java name */
-    public static final void m5162setNativeColor4WTKRHQ(android.graphics.Paint paint, long j) {
-        paint.setColor(ColorKt.m5333toArgb8_81llA(j));
+    public static final void m5163setNativeColor4WTKRHQ(android.graphics.Paint paint, long j) {
+        paint.setColor(ColorKt.m5334toArgb8_81llA(j));
     }
 
     /* renamed from: setNativeStyle--5YerkU  reason: not valid java name */
-    public static final void m5166setNativeStyle5YerkU(android.graphics.Paint paint, int i) {
-        paint.setStyle(PaintingStyle.m5554equalsimpl0(i, PaintingStyle.Companion.m5559getStrokeTiuSbCo()) ? Paint.Style.STROKE : Paint.Style.FILL);
+    public static final void m5167setNativeStyle5YerkU(android.graphics.Paint paint, int i) {
+        paint.setStyle(PaintingStyle.m5555equalsimpl0(i, PaintingStyle.Companion.m5560getStrokeTiuSbCo()) ? Paint.Style.STROKE : Paint.Style.FILL);
     }
 
     public static final int getNativeStyle(android.graphics.Paint paint) {
         Paint.Style style = paint.getStyle();
         if ((style == null ? -1 : WhenMappings.$EnumSwitchMapping$0[style.ordinal()]) == 1) {
-            return PaintingStyle.Companion.m5559getStrokeTiuSbCo();
+            return PaintingStyle.Companion.m5560getStrokeTiuSbCo();
         }
-        return PaintingStyle.Companion.m5558getFillTiuSbCo();
+        return PaintingStyle.Companion.m5559getFillTiuSbCo();
     }
 
     public static final float getNativeStrokeWidth(android.graphics.Paint paint) {
@@ -134,24 +134,24 @@ public final class AndroidPaint_androidKt {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return StrokeCap.Companion.m5651getSquareKaPHkGw();
+                    return StrokeCap.Companion.m5652getSquareKaPHkGw();
                 }
-                return StrokeCap.Companion.m5649getButtKaPHkGw();
+                return StrokeCap.Companion.m5650getButtKaPHkGw();
             }
-            return StrokeCap.Companion.m5650getRoundKaPHkGw();
+            return StrokeCap.Companion.m5651getRoundKaPHkGw();
         }
-        return StrokeCap.Companion.m5649getButtKaPHkGw();
+        return StrokeCap.Companion.m5650getButtKaPHkGw();
     }
 
     /* renamed from: setNativeStrokeCap-CSYIeUk  reason: not valid java name */
-    public static final void m5164setNativeStrokeCapCSYIeUk(android.graphics.Paint paint, int i) {
+    public static final void m5165setNativeStrokeCapCSYIeUk(android.graphics.Paint paint, int i) {
         Paint.Cap cap;
-        if (StrokeCap.m5645equalsimpl0(i, StrokeCap.Companion.m5651getSquareKaPHkGw())) {
+        if (StrokeCap.m5646equalsimpl0(i, StrokeCap.Companion.m5652getSquareKaPHkGw())) {
             cap = Paint.Cap.SQUARE;
-        } else if (StrokeCap.m5645equalsimpl0(i, StrokeCap.Companion.m5650getRoundKaPHkGw())) {
+        } else if (StrokeCap.m5646equalsimpl0(i, StrokeCap.Companion.m5651getRoundKaPHkGw())) {
             cap = Paint.Cap.ROUND;
         } else {
-            cap = StrokeCap.m5645equalsimpl0(i, StrokeCap.Companion.m5649getButtKaPHkGw()) ? Paint.Cap.BUTT : Paint.Cap.BUTT;
+            cap = StrokeCap.m5646equalsimpl0(i, StrokeCap.Companion.m5650getButtKaPHkGw()) ? Paint.Cap.BUTT : Paint.Cap.BUTT;
         }
         paint.setStrokeCap(cap);
     }
@@ -162,24 +162,24 @@ public final class AndroidPaint_androidKt {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return StrokeJoin.Companion.m5661getRoundLxFBmk8();
+                    return StrokeJoin.Companion.m5662getRoundLxFBmk8();
                 }
-                return StrokeJoin.Companion.m5660getMiterLxFBmk8();
+                return StrokeJoin.Companion.m5661getMiterLxFBmk8();
             }
-            return StrokeJoin.Companion.m5659getBevelLxFBmk8();
+            return StrokeJoin.Companion.m5660getBevelLxFBmk8();
         }
-        return StrokeJoin.Companion.m5660getMiterLxFBmk8();
+        return StrokeJoin.Companion.m5661getMiterLxFBmk8();
     }
 
     /* renamed from: setNativeStrokeJoin-kLtJ_vA  reason: not valid java name */
-    public static final void m5165setNativeStrokeJoinkLtJ_vA(android.graphics.Paint paint, int i) {
+    public static final void m5166setNativeStrokeJoinkLtJ_vA(android.graphics.Paint paint, int i) {
         Paint.Join join;
-        if (StrokeJoin.m5655equalsimpl0(i, StrokeJoin.Companion.m5660getMiterLxFBmk8())) {
+        if (StrokeJoin.m5656equalsimpl0(i, StrokeJoin.Companion.m5661getMiterLxFBmk8())) {
             join = Paint.Join.MITER;
-        } else if (StrokeJoin.m5655equalsimpl0(i, StrokeJoin.Companion.m5659getBevelLxFBmk8())) {
+        } else if (StrokeJoin.m5656equalsimpl0(i, StrokeJoin.Companion.m5660getBevelLxFBmk8())) {
             join = Paint.Join.BEVEL;
         } else {
-            join = StrokeJoin.m5655equalsimpl0(i, StrokeJoin.Companion.m5661getRoundLxFBmk8()) ? Paint.Join.ROUND : Paint.Join.MITER;
+            join = StrokeJoin.m5656equalsimpl0(i, StrokeJoin.Companion.m5662getRoundLxFBmk8()) ? Paint.Join.ROUND : Paint.Join.MITER;
         }
         paint.setStrokeJoin(join);
     }
@@ -194,14 +194,14 @@ public final class AndroidPaint_androidKt {
 
     public static final int getNativeFilterQuality(android.graphics.Paint paint) {
         if (!paint.isFilterBitmap()) {
-            return FilterQuality.Companion.m5382getNonefv9h1I();
+            return FilterQuality.Companion.m5383getNonefv9h1I();
         }
-        return FilterQuality.Companion.m5380getLowfv9h1I();
+        return FilterQuality.Companion.m5381getLowfv9h1I();
     }
 
     /* renamed from: setNativeFilterQuality-50PEsBU  reason: not valid java name */
-    public static final void m5163setNativeFilterQuality50PEsBU(android.graphics.Paint paint, int i) {
-        paint.setFilterBitmap(!FilterQuality.m5375equalsimpl0(i, FilterQuality.Companion.m5382getNonefv9h1I()));
+    public static final void m5164setNativeFilterQuality50PEsBU(android.graphics.Paint paint, int i) {
+        paint.setFilterBitmap(!FilterQuality.m5376equalsimpl0(i, FilterQuality.Companion.m5383getNonefv9h1I()));
     }
 
     public static final void setNativeShader(android.graphics.Paint paint, Shader shader) {

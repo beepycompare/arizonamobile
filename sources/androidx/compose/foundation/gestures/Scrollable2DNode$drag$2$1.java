@@ -71,7 +71,7 @@ final class Scrollable2DNode$drag$2$1 extends SuspendLambda implements Function2
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(NestedScrollScope nestedScrollScope, DragEvent.DragDelta dragDelta) {
-        nestedScrollScope.mo534scrollByWithOverscrollOzD1aCk(dragDelta.m475getDeltaF1C5BW0(), NestedScrollSource.Companion.m6462getUserInputWNlRxjI());
+        nestedScrollScope.mo535scrollByWithOverscrollOzD1aCk(dragDelta.m476getDeltaF1C5BW0(), NestedScrollSource.Companion.m6463getUserInputWNlRxjI());
         return Unit.INSTANCE;
     }
 }

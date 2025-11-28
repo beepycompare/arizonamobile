@@ -31,8 +31,8 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes.dex */
 public final class SelectionManager_androidKt {
     /* renamed from: isCopyKeyEvent-ZmokQxo  reason: not valid java name */
-    public static final boolean m1806isCopyKeyEventZmokQxo(KeyEvent keyEvent) {
-        return KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1268mapZmokQxo(keyEvent) == KeyCommand.COPY;
+    public static final boolean m1807isCopyKeyEventZmokQxo(KeyEvent keyEvent) {
+        return KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1269mapZmokQxo(keyEvent) == KeyCommand.COPY;
     }
 
     public static final Modifier selectionMagnifier(Modifier modifier, SelectionManager selectionManager) {
@@ -125,7 +125,7 @@ public final class SelectionManager_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit addSelectionContainerTextContextMenuComponents$lambda$9(final SelectionManager selectionManager, TextContextMenuBuilderScope textContextMenuBuilderScope, final Context context) {
         Pair<AnnotatedString, TextRange> contextTextAndSelection$foundation_release = selectionManager.getContextTextAndSelection$foundation_release();
-        PlatformSelectionBehaviors_androidKt.m1753addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, false, contextTextAndSelection$foundation_release != null ? contextTextAndSelection$foundation_release.getFirst() : null, contextTextAndSelection$foundation_release != null ? contextTextAndSelection$foundation_release.getSecond() : null, selectionManager.getPlatformSelectionBehaviors$foundation_release(), new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda3
+        PlatformSelectionBehaviors_androidKt.m1754addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, false, contextTextAndSelection$foundation_release != null ? contextTextAndSelection$foundation_release.getFirst() : null, contextTextAndSelection$foundation_release != null ? contextTextAndSelection$foundation_release.getSecond() : null, selectionManager.getPlatformSelectionBehaviors$foundation_release(), new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit addSelectionContainerTextContextMenuComponents$lambda$9$lambda$8;

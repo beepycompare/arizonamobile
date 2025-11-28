@@ -70,12 +70,12 @@ public final class CustomBulletSpan implements LeadingMarginSpan {
         BulletSpan_androidKt.setDrawStyle(paint, this.drawStyle);
         float f2 = this.bulletWidthPx;
         float f3 = this.bulletHeightPx;
-        final long m5095constructorimpl = Size.m5095constructorimpl((Float.floatToRawIntBits(f3) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
-        BulletSpan_androidKt.m7746setBrushAndDrawyzxVdVo(paint, this.brush, this.alpha, m5095constructorimpl, new Function0() { // from class: androidx.compose.ui.text.platform.style.CustomBulletSpan$$ExternalSyntheticLambda0
+        final long m5096constructorimpl = Size.m5096constructorimpl((Float.floatToRawIntBits(f3) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
+        BulletSpan_androidKt.m7747setBrushAndDrawyzxVdVo(paint, this.brush, this.alpha, m5096constructorimpl, new Function0() { // from class: androidx.compose.ui.text.platform.style.CustomBulletSpan$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit drawLeadingMargin$lambda$1$lambda$0;
-                drawLeadingMargin$lambda$1$lambda$0 = CustomBulletSpan.drawLeadingMargin$lambda$1$lambda$0(CustomBulletSpan.this, m5095constructorimpl, i2, canvas, paint, coerceAtLeast, f);
+                drawLeadingMargin$lambda$1$lambda$0 = CustomBulletSpan.drawLeadingMargin$lambda$1$lambda$0(CustomBulletSpan.this, m5096constructorimpl, i2, canvas, paint, coerceAtLeast, f);
                 return drawLeadingMargin$lambda$1$lambda$0;
             }
         });
@@ -84,7 +84,7 @@ public final class CustomBulletSpan implements LeadingMarginSpan {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit drawLeadingMargin$lambda$1$lambda$0(CustomBulletSpan customBulletSpan, long j, int i, Canvas canvas, Paint paint, int i2, float f) {
-        BulletSpan_androidKt.draw(customBulletSpan.shape.mo331createOutlinePq9zytI(j, i > 0 ? LayoutDirection.Ltr : LayoutDirection.Rtl, customBulletSpan.density), canvas, paint, i2, f, i);
+        BulletSpan_androidKt.draw(customBulletSpan.shape.mo332createOutlinePq9zytI(j, i > 0 ? LayoutDirection.Ltr : LayoutDirection.Rtl, customBulletSpan.density), canvas, paint, i2, f, i);
         return Unit.INSTANCE;
     }
 }

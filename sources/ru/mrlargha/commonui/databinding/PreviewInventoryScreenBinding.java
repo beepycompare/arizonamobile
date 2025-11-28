@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class PreviewInventoryScreenBinding implements ViewBinding {
     public final AppCompatImageView btnBack;
     public final Guideline guidelineHor1;

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
 /* renamed from: io.appmetrica.analytics.impl.dc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0192dc implements LocationReceiverProviderFactory {
 
     /* renamed from: a  reason: collision with root package name */

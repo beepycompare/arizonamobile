@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class B extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */

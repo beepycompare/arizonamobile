@@ -88,26 +88,26 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                 binding.card1.setVisibility(8);
                 binding.card2.setVisibility(0);
                 if (intValue == 0) {
-                    i3 = R.drawable.family_war_ic_1;
+                    i3 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_1;
                 } else if (intValue == 1) {
-                    i3 = R.drawable.family_war_ic_2;
+                    i3 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_2;
                 } else if (intValue == 2) {
-                    i3 = R.drawable.family_war_ic_3;
+                    i3 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_3;
                 } else if (intValue == 3) {
-                    i3 = R.drawable.family_war_ic_1;
+                    i3 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_1;
                 } else {
-                    i3 = R.drawable.family_menu_ic_info;
+                    i3 = com.arizonagames.feature.arizona.family.R.drawable.family_menu_ic_info;
                 }
                 if (intValue == 0) {
-                    i4 = R.drawable.family_war_ic_bg1;
+                    i4 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_bg1;
                 } else if (intValue == 1) {
-                    i4 = R.drawable.family_war_ic_bg2;
+                    i4 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_bg2;
                 } else if (intValue == 2) {
-                    i4 = R.drawable.family_war_ic_bg3;
+                    i4 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_bg3;
                 } else if (intValue == 3) {
-                    i4 = R.drawable.family_war_ic_bg1;
+                    i4 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_bg1;
                 } else {
-                    i4 = R.drawable.family_estate_ic_adi_kit;
+                    i4 = com.arizonagames.feature.arizona.family.R.drawable.family_estate_ic_adi_kit;
                 }
                 if (intValue == 0) {
                     str2 = "Предстоящие капты";
@@ -222,9 +222,9 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
                 binding.card2.setVisibility(8);
                 binding.card1.setVisibility(0);
                 if (intValue == 4) {
-                    i2 = R.drawable.family_war_ic_map;
+                    i2 = com.arizonagames.feature.arizona.family.R.drawable.family_war_ic_map;
                 } else {
-                    i2 = R.drawable.family_menu_ic_info;
+                    i2 = com.arizonagames.feature.arizona.family.R.drawable.family_menu_ic_info;
                 }
                 if (intValue != 4) {
                     str = "???";

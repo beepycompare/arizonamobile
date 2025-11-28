@@ -59,7 +59,7 @@ public final class FavoriteButtonKt {
         Object obj;
         final Modifier.Companion companion;
         ScopeUpdateScope endRestartGroup;
-        long m5278copywmQWz5c$default;
+        long m5279copywmQWz5c$default;
         Composer startRestartGroup = composer.startRestartGroup(-932208314);
         ComposerKt.sourceInformation(startRestartGroup, "C(FavoriteButton)N(isFavorite,modifier)26@1165L925:FavoriteButton.kt#2ojkxh");
         if ((i & 6) == 0) {
@@ -84,21 +84,21 @@ public final class FavoriteButtonKt {
                 if (z) {
                     startRestartGroup.startReplaceGroup(1795979405);
                     ComposerKt.sourceInformation(startRestartGroup, "25@1105L11");
-                    m5278copywmQWz5c$default = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2102getPrimary0d7_KjU();
+                    m5279copywmQWz5c$default = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2103getPrimary0d7_KjU();
                     startRestartGroup.endReplaceGroup();
                 } else {
                     startRestartGroup.startReplaceGroup(1795980216);
                     startRestartGroup.endReplaceGroup();
-                    m5278copywmQWz5c$default = Color.m5278copywmQWz5c$default(Color.Companion.m5305getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
+                    m5279copywmQWz5c$default = Color.m5279copywmQWz5c$default(Color.Companion.m5306getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
                 }
-                Modifier m281borderziNgDLE = BorderKt.m281borderziNgDLE(BackgroundKt.m266backgroundbw27NRU(SizeKt.m896sizeVpY3zN4(OffsetKt.m796offsetVpY3zN4(companion, Dp.m7995constructorimpl(-Dp.m7995constructorimpl(14)), Dp.m7995constructorimpl(4)), Dp.m7995constructorimpl(40), Dp.m7995constructorimpl(26)), m5278copywmQWz5c$default, new FavoriteButtonShape()), Dp.m7995constructorimpl(2), Brush.Companion.m5235verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5269boximpl(Color.m5278copywmQWz5c$default(Color.Companion.m5311getLightGray0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5269boximpl(Color.Companion.m5314getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new FavoriteButtonShape());
+                Modifier m282borderziNgDLE = BorderKt.m282borderziNgDLE(BackgroundKt.m267backgroundbw27NRU(SizeKt.m897sizeVpY3zN4(OffsetKt.m797offsetVpY3zN4(companion, Dp.m7996constructorimpl(-Dp.m7996constructorimpl(14)), Dp.m7996constructorimpl(4)), Dp.m7996constructorimpl(40), Dp.m7996constructorimpl(26)), m5279copywmQWz5c$default, new FavoriteButtonShape()), Dp.m7996constructorimpl(2), Brush.Companion.m5236verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5270boximpl(Color.m5279copywmQWz5c$default(Color.Companion.m5312getLightGray0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5270boximpl(Color.Companion.m5315getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new FavoriteButtonShape());
                 Alignment center = Alignment.Companion.getCenter();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
                 int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                 CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m281borderziNgDLE);
+                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m282borderziNgDLE);
                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -110,19 +110,19 @@ public final class FavoriteButtonKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                    m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                 }
-                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1128560934, "C46@1899L19,46@1883L201:FavoriteButton.kt#2ojkxh");
-                ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.select_server_favorite_true : R.drawable.select_server_favorite_false, startRestartGroup, 0), (String) null, OffsetKt.m797offsetVpY3zN4$default(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7995constructorimpl(18)), Dp.m7995constructorimpl(-Dp.m7995constructorimpl(1)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
+                ImageKt.Image(PainterResources_androidKt.painterResource(z ? R.drawable.select_server_favorite_true : R.drawable.select_server_favorite_false, startRestartGroup, 0), (String) null, OffsetKt.m798offsetVpY3zN4$default(SizeKt.m881height3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(18)), Dp.m7996constructorimpl(-Dp.m7996constructorimpl(1)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();

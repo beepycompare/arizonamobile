@@ -44,7 +44,7 @@ final class ClickableTextKt$ClickableText$pressIndicator$1$1 implements PointerI
     public static final Unit invoke$lambda$1(MutableState mutableState, Function1 function1, Offset offset) {
         TextLayoutResult textLayoutResult = (TextLayoutResult) mutableState.getValue();
         if (textLayoutResult != null) {
-            function1.invoke(Integer.valueOf(textLayoutResult.m7427getOffsetForPositionk4lQ0M(offset.m5045unboximpl())));
+            function1.invoke(Integer.valueOf(textLayoutResult.m7428getOffsetForPositionk4lQ0M(offset.m5046unboximpl())));
         }
         return Unit.INSTANCE;
     }

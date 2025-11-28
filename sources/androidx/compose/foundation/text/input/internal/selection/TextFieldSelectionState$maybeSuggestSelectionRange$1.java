@@ -52,7 +52,7 @@ public final class TextFieldSelectionState$maybeSuggestSelectionRange$1 extends 
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = this.$platformSelectionBehaviors.mo1746suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$selection, this);
+            obj = this.$platformSelectionBehaviors.mo1747suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$selection, this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -63,9 +63,9 @@ public final class TextFieldSelectionState$maybeSuggestSelectionRange$1 extends 
         }
         TextRange textRange = (TextRange) obj;
         z = this.this$0.isPassword;
-        if (!z && textRange != null && Intrinsics.areEqual(this.this$0.getTextFieldState$foundation_release().getVisualText().getText(), this.$text) && TextRange.m7450equalsimpl0(this.this$0.getTextFieldState$foundation_release().getVisualText().m1446getSelectiond9O1mEE(), this.$selection)) {
-            if (!TextRange.m7450equalsimpl0(textRange.m7461unboximpl(), this.this$0.getTextFieldState$foundation_release().getVisualText().m1446getSelectiond9O1mEE())) {
-                this.this$0.getTextFieldState$foundation_release().m1603selectCharsIn5zctL8(textRange.m7461unboximpl());
+        if (!z && textRange != null && Intrinsics.areEqual(this.this$0.getTextFieldState$foundation_release().getVisualText().getText(), this.$text) && TextRange.m7451equalsimpl0(this.this$0.getTextFieldState$foundation_release().getVisualText().m1447getSelectiond9O1mEE(), this.$selection)) {
+            if (!TextRange.m7451equalsimpl0(textRange.m7462unboximpl(), this.this$0.getTextFieldState$foundation_release().getVisualText().m1447getSelectiond9O1mEE())) {
+                this.this$0.getTextFieldState$foundation_release().m1604selectCharsIn5zctL8(textRange.m7462unboximpl());
             }
         }
         return Unit.INSTANCE;

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.logger.common.impl;
 
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */

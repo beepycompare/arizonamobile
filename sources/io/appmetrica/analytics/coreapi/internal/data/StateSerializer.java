@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.coreapi.internal.data;
 
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface StateSerializer<T> {
     T defaultValue();
 

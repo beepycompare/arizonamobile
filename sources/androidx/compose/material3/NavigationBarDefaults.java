@@ -15,13 +15,13 @@ import kotlin.Metadata;
 public final class NavigationBarDefaults {
     public static final int $stable = 0;
     public static final NavigationBarDefaults INSTANCE = new NavigationBarDefaults();
-    private static final float Elevation = ElevationTokens.INSTANCE.m3888getLevel0D9Ej5fM();
+    private static final float Elevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
 
     private NavigationBarDefaults() {
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2586getElevationD9Ej5fM() {
+    public final float m2587getElevationD9Ej5fM() {
         return Elevation;
     }
 
@@ -43,11 +43,11 @@ public final class NavigationBarDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1938678202, i, -1, "androidx.compose.material3.NavigationBarDefaults.<get-windowInsets> (NavigationBar.kt:332)");
         }
-        WindowInsets m922onlybOOhFvg = WindowInsetsKt.m922onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m936plusgK_yJZ4(WindowInsetsSides.Companion.m946getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m944getBottomJoeWqyM()));
+        WindowInsets m923onlybOOhFvg = WindowInsetsKt.m923onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m937plusgK_yJZ4(WindowInsetsSides.Companion.m947getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m945getBottomJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m922onlybOOhFvg;
+        return m923onlybOOhFvg;
     }
 }

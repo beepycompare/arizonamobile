@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.os.Looper;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.f0  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0231f0 {
 
     /* renamed from: a  reason: collision with root package name */

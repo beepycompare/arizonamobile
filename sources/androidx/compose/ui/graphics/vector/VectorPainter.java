@@ -36,7 +36,7 @@ public final class VectorPainter extends Painter {
     public VectorPainter(GroupComponent groupComponent) {
         MutableState mutableStateOf$default;
         MutableState mutableStateOf$default2;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5092boximpl(Size.Companion.m5113getZeroNHjbRc()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(Size.Companion.m5114getZeroNHjbRc()), null, 2, null);
         this.size$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.autoMirror$delegate = mutableStateOf$default2;
@@ -77,13 +77,13 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getSize-NH-jbRc$ui_release  reason: not valid java name */
-    public final long m6035getSizeNHjbRc$ui_release() {
-        return ((Size) this.size$delegate.getValue()).m5109unboximpl();
+    public final long m6036getSizeNHjbRc$ui_release() {
+        return ((Size) this.size$delegate.getValue()).m5110unboximpl();
     }
 
     /* renamed from: setSize-uvyYCjk$ui_release  reason: not valid java name */
-    public final void m6037setSizeuvyYCjk$ui_release(long j) {
-        this.size$delegate.setValue(Size.m5092boximpl(j));
+    public final void m6038setSizeuvyYCjk$ui_release(long j) {
+        this.size$delegate.setValue(Size.m5093boximpl(j));
     }
 
     public final boolean getAutoMirror$ui_release() {
@@ -103,13 +103,13 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getViewportSize-NH-jbRc$ui_release  reason: not valid java name */
-    public final long m6036getViewportSizeNHjbRc$ui_release() {
-        return this.vector.m6026getViewportSizeNHjbRc$ui_release();
+    public final long m6037getViewportSizeNHjbRc$ui_release() {
+        return this.vector.m6027getViewportSizeNHjbRc$ui_release();
     }
 
     /* renamed from: setViewportSize-uvyYCjk$ui_release  reason: not valid java name */
-    public final void m6038setViewportSizeuvyYCjk$ui_release(long j) {
-        this.vector.m6027setViewportSizeuvyYCjk$ui_release(j);
+    public final void m6039setViewportSizeuvyYCjk$ui_release(long j) {
+        this.vector.m6028setViewportSizeuvyYCjk$ui_release(j);
     }
 
     public final String getName$ui_release() {
@@ -125,8 +125,8 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getBitmapConfig-_sVssgQ$ui_release  reason: not valid java name */
-    public final int m6034getBitmapConfig_sVssgQ$ui_release() {
-        return this.vector.m6025getCacheBitmapConfig_sVssgQ$ui_release();
+    public final int m6035getBitmapConfig_sVssgQ$ui_release() {
+        return this.vector.m6026getCacheBitmapConfig_sVssgQ$ui_release();
     }
 
     public final Composition getComposition$ui_release() {
@@ -149,8 +149,8 @@ public final class VectorPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5978getIntrinsicSizeNHjbRc() {
-        return m6035getSizeNHjbRc$ui_release();
+    public long mo5979getIntrinsicSizeNHjbRc() {
+        return m6036getSizeNHjbRc$ui_release();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -164,16 +164,16 @@ public final class VectorPainter extends Painter {
         if (!getAutoMirror$ui_release() || drawScope.getLayoutDirection() != LayoutDirection.Rtl) {
             vectorComponent.draw(drawScope, this.currentAlpha, colorFilter);
         } else {
-            long mo5857getCenterF1C5BW0 = drawScope.mo5857getCenterF1C5BW0();
+            long mo5858getCenterF1C5BW0 = drawScope.mo5858getCenterF1C5BW0();
             DrawContext drawContext = drawScope.getDrawContext();
-            long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+            long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5786scale0AR0LA0(-1.0f, 1.0f, mo5857getCenterF1C5BW0);
+                drawContext.getTransform().mo5787scale0AR0LA0(-1.0f, 1.0f, mo5858getCenterF1C5BW0);
                 vectorComponent.draw(drawScope, this.currentAlpha, colorFilter);
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+                drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
             }
         }
         this.drawCount = getInvalidateCount();

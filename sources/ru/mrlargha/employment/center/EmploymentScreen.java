@@ -426,8 +426,8 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         EmploymentCenterMainBinding employmentCenterMainBinding = this.binding.main;
         employmentCenterMainBinding.title.setText(job.getName());
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + "projects/arizona-rp/systems/employment_center/banners/mobile/" + job.getId() + ".webp").into(employmentCenterMainBinding.image);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + "projects/arizona-rp/systems/employment_center/banners/mobile/" + job.getId() + ".webp").into(employmentCenterMainBinding.image);
         employmentCenterMainBinding.labelBonus.setText("+" + job.getBonusSalary().getPercent() + "%");
         employmentCenterMainBinding.timer.setText(TimeConverterKt.taskPageTimeConvert(job.getBonusSalary().getEndUnixTime()));
         if (job.getBonusSalary().getPercent() > 0 || job.getBonusSalary().getEndUnixTime() - System.currentTimeMillis() > 0) {

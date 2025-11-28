@@ -45,7 +45,7 @@ public class FloatingActionButtonElevation {
     }
 
     /* renamed from: tonalElevation-D9Ej5fM$material3  reason: not valid java name */
-    public final float m2396tonalElevationD9Ej5fM$material3() {
+    public final float m2397tonalElevationD9Ej5fM$material3() {
         return this.defaultElevation;
     }
 
@@ -100,13 +100,13 @@ public class FloatingActionButtonElevation {
             return false;
         }
         FloatingActionButtonElevation floatingActionButtonElevation = (FloatingActionButtonElevation) obj;
-        if (Dp.m8000equalsimpl0(this.defaultElevation, floatingActionButtonElevation.defaultElevation) && Dp.m8000equalsimpl0(this.pressedElevation, floatingActionButtonElevation.pressedElevation) && Dp.m8000equalsimpl0(this.focusedElevation, floatingActionButtonElevation.focusedElevation)) {
-            return Dp.m8000equalsimpl0(this.hoveredElevation, floatingActionButtonElevation.hoveredElevation);
+        if (Dp.m8001equalsimpl0(this.defaultElevation, floatingActionButtonElevation.defaultElevation) && Dp.m8001equalsimpl0(this.pressedElevation, floatingActionButtonElevation.pressedElevation) && Dp.m8001equalsimpl0(this.focusedElevation, floatingActionButtonElevation.focusedElevation)) {
+            return Dp.m8001equalsimpl0(this.hoveredElevation, floatingActionButtonElevation.hoveredElevation);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Dp.m8001hashCodeimpl(this.defaultElevation) * 31) + Dp.m8001hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8001hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8001hashCodeimpl(this.hoveredElevation);
+        return (((((Dp.m8002hashCodeimpl(this.defaultElevation) * 31) + Dp.m8002hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8002hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8002hashCodeimpl(this.hoveredElevation);
     }
 }

@@ -58,7 +58,7 @@ public final class LazyListStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4725rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4726rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -114,7 +114,7 @@ public final class LazyListStateKt {
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4725rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue2, composer, 0);
+        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4726rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue2, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -160,7 +160,7 @@ public final class LazyListStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4725rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4726rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

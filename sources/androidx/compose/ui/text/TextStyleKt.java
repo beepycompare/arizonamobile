@@ -39,25 +39,25 @@ public final class TextStyleKt {
     }
 
     /* renamed from: resolveTextDirection-IhaHGbI */
-    public static final int m7503resolveTextDirectionIhaHGbI(LayoutDirection layoutDirection, int i) {
-        if (TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7893getContents_7Xco())) {
+    public static final int m7504resolveTextDirectionIhaHGbI(LayoutDirection layoutDirection, int i) {
+        if (TextDirection.m7890equalsimpl0(i, TextDirection.Companion.m7894getContents_7Xco())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
             if (i2 != 1) {
                 if (i2 != 2) {
                     throw new NoWhenBranchMatchedException();
                 }
-                return TextDirection.Companion.m7895getContentOrRtls_7Xco();
+                return TextDirection.Companion.m7896getContentOrRtls_7Xco();
             }
-            return TextDirection.Companion.m7894getContentOrLtrs_7Xco();
-        } else if (TextDirection.m7889equalsimpl0(i, TextDirection.Companion.m7898getUnspecifieds_7Xco())) {
+            return TextDirection.Companion.m7895getContentOrLtrs_7Xco();
+        } else if (TextDirection.m7890equalsimpl0(i, TextDirection.Companion.m7899getUnspecifieds_7Xco())) {
             int i3 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
             if (i3 != 1) {
                 if (i3 != 2) {
                     throw new NoWhenBranchMatchedException();
                 }
-                return TextDirection.Companion.m7897getRtls_7Xco();
+                return TextDirection.Companion.m7898getRtls_7Xco();
             }
-            return TextDirection.Companion.m7896getLtrs_7Xco();
+            return TextDirection.Companion.m7897getLtrs_7Xco();
         } else {
             return i;
         }

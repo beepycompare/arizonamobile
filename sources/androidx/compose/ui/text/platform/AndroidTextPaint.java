@@ -49,7 +49,7 @@ public final class AndroidTextPaint extends TextPaint {
     }
 
     /* renamed from: getBrushSize-VsRJwc0$ui_text$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7722getBrushSizeVsRJwc0$ui_text$annotations() {
+    public static /* synthetic */ void m7723getBrushSizeVsRJwc0$ui_text$annotations() {
     }
 
     public static /* synthetic */ void getShadow$ui_text$annotations() {
@@ -59,7 +59,7 @@ public final class AndroidTextPaint extends TextPaint {
         super(i);
         this.density = f;
         this.textDecoration = TextDecoration.Companion.getNone();
-        this.backingBlendMode = DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU();
+        this.backingBlendMode = DrawScope.Companion.m5861getDefaultBlendMode0nO6VwU();
         this.shadow = Shadow.Companion.getNone();
     }
 
@@ -98,12 +98,12 @@ public final class AndroidTextPaint extends TextPaint {
     }
 
     /* renamed from: getBrushSize-VsRJwc0$ui_text  reason: not valid java name */
-    public final Size m7725getBrushSizeVsRJwc0$ui_text() {
+    public final Size m7726getBrushSizeVsRJwc0$ui_text() {
         return this.brushSize;
     }
 
     /* renamed from: setBrushSize-iaC8Vc4$ui_text  reason: not valid java name */
-    public final void m7728setBrushSizeiaC8Vc4$ui_text(Size size) {
+    public final void m7729setBrushSizeiaC8Vc4$ui_text(Size size) {
         this.brushSize = size;
     }
 
@@ -124,43 +124,43 @@ public final class AndroidTextPaint extends TextPaint {
         if (Intrinsics.areEqual(shadow, Shadow.Companion.getNone())) {
             clearShadowLayer();
         } else {
-            setShadowLayer(TextPaintExtensions_androidKt.correctBlurRadius(this.shadow.getBlurRadius()), Float.intBitsToFloat((int) (this.shadow.m5620getOffsetF1C5BW0() >> 32)), Float.intBitsToFloat((int) (this.shadow.m5620getOffsetF1C5BW0() & 4294967295L)), ColorKt.m5333toArgb8_81llA(this.shadow.m5619getColor0d7_KjU()));
+            setShadowLayer(TextPaintExtensions_androidKt.correctBlurRadius(this.shadow.getBlurRadius()), Float.intBitsToFloat((int) (this.shadow.m5621getOffsetF1C5BW0() >> 32)), Float.intBitsToFloat((int) (this.shadow.m5621getOffsetF1C5BW0() & 4294967295L)), ColorKt.m5334toArgb8_81llA(this.shadow.m5620getColor0d7_KjU()));
         }
     }
 
     /* renamed from: setColor-8_81llA  reason: not valid java name */
-    public final void m7729setColor8_81llA(long j) {
+    public final void m7730setColor8_81llA(long j) {
         Color color = this.lastColor;
-        if (color == null ? false : Color.m5280equalsimpl0(color.m5289unboximpl(), j)) {
+        if (color == null ? false : Color.m5281equalsimpl0(color.m5290unboximpl(), j)) {
             return;
         }
         if (j != 16) {
-            this.lastColor = Color.m5269boximpl(j);
-            setColor(ColorKt.m5333toArgb8_81llA(j));
+            this.lastColor = Color.m5270boximpl(j);
+            setColor(ColorKt.m5334toArgb8_81llA(j));
             clearShader();
         }
     }
 
     /* renamed from: setBrush-12SF9DM$default  reason: not valid java name */
-    public static /* synthetic */ void m7723setBrush12SF9DM$default(AndroidTextPaint androidTextPaint, Brush brush, long j, float f, int i, Object obj) {
+    public static /* synthetic */ void m7724setBrush12SF9DM$default(AndroidTextPaint androidTextPaint, Brush brush, long j, float f, int i, Object obj) {
         if ((i & 4) != 0) {
             f = Float.NaN;
         }
-        androidTextPaint.m7727setBrush12SF9DM(brush, j, f);
+        androidTextPaint.m7728setBrush12SF9DM(brush, j, f);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0032, code lost:
-        if ((r0 == null ? false : androidx.compose.ui.geometry.Size.m5100equalsimpl0(r0.m5109unboximpl(), r4)) == false) goto L24;
+        if ((r0 == null ? false : androidx.compose.ui.geometry.Size.m5101equalsimpl0(r0.m5110unboximpl(), r4)) == false) goto L24;
      */
     /* renamed from: setBrush-12SF9DM  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m7727setBrush12SF9DM(final Brush brush, final long j, float f) {
+    public final void m7728setBrush12SF9DM(final Brush brush, final long j, float f) {
         if (brush == null) {
             clearShader();
         } else if (brush instanceof SolidColor) {
-            m7729setColor8_81llA(TextDrawStyleKt.m7899modulateDxMtmZc(((SolidColor) brush).m5631getValue0d7_KjU(), f));
+            m7730setColor8_81llA(TextDrawStyleKt.m7900modulateDxMtmZc(((SolidColor) brush).m5632getValue0d7_KjU(), f));
         } else if (!(brush instanceof ShaderBrush)) {
             throw new NoWhenBranchMatchedException();
         } else {
@@ -169,7 +169,7 @@ public final class AndroidTextPaint extends TextPaint {
             }
             if (j != InlineClassHelperKt.UnspecifiedPackedFloats) {
                 this.brush = brush;
-                this.brushSize = Size.m5092boximpl(j);
+                this.brushSize = Size.m5093boximpl(j);
                 this.shaderState = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.ui.text.platform.AndroidTextPaint$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
@@ -189,7 +189,7 @@ public final class AndroidTextPaint extends TextPaint {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Shader setBrush_12SF9DM$lambda$1(Brush brush, long j) {
-        return ((ShaderBrush) brush).mo5248createShaderuvyYCjk(j);
+        return ((ShaderBrush) brush).mo5249createShaderuvyYCjk(j);
     }
 
     public final void setDrawStyle(DrawStyle drawStyle) {
@@ -202,27 +202,27 @@ public final class AndroidTextPaint extends TextPaint {
         } else if (!(drawStyle instanceof Stroke)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            getComposePaint().mo5160setStylek9PVt8s(PaintingStyle.Companion.m5559getStrokeTiuSbCo());
+            getComposePaint().mo5161setStylek9PVt8s(PaintingStyle.Companion.m5560getStrokeTiuSbCo());
             Stroke stroke = (Stroke) drawStyle;
             getComposePaint().setStrokeWidth(stroke.getWidth());
             getComposePaint().setStrokeMiterLimit(stroke.getMiter());
-            getComposePaint().mo5159setStrokeJoinWw9F2mQ(stroke.m5928getJoinLxFBmk8());
-            getComposePaint().mo5158setStrokeCapBeK7IIE(stroke.m5927getCapKaPHkGw());
+            getComposePaint().mo5160setStrokeJoinWw9F2mQ(stroke.m5929getJoinLxFBmk8());
+            getComposePaint().mo5159setStrokeCapBeK7IIE(stroke.m5928getCapKaPHkGw());
             getComposePaint().setPathEffect(stroke.getPathEffect());
         }
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m7724getBlendMode0nO6VwU() {
+    public final int m7725getBlendMode0nO6VwU() {
         return this.backingBlendMode;
     }
 
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    public final void m7726setBlendModes9anfk8(int i) {
-        if (BlendMode.m5189equalsimpl0(i, this.backingBlendMode)) {
+    public final void m7727setBlendModes9anfk8(int i) {
+        if (BlendMode.m5190equalsimpl0(i, this.backingBlendMode)) {
             return;
         }
-        getComposePaint().mo5155setBlendModes9anfk8(i);
+        getComposePaint().mo5156setBlendModes9anfk8(i);
         this.backingBlendMode = i;
     }
 

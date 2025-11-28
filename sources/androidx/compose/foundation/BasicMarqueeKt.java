@@ -13,42 +13,42 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class BasicMarqueeKt {
     /* renamed from: basicMarquee-1Mj1MLw$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m273basicMarquee1Mj1MLw$default(Modifier modifier, int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f, int i5, Object obj) {
+    public static /* synthetic */ Modifier m274basicMarquee1Mj1MLw$default(Modifier modifier, int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f, int i5, Object obj) {
         if ((i5 & 1) != 0) {
             i = MarqueeDefaults.INSTANCE.getIterations();
         }
         if ((i5 & 2) != 0) {
-            i2 = MarqueeAnimationMode.Companion.m356getImmediatelyZbEOnfQ();
+            i2 = MarqueeAnimationMode.Companion.m357getImmediatelyZbEOnfQ();
         }
         if ((i5 & 4) != 0) {
             i3 = MarqueeDefaults.INSTANCE.getRepeatDelayMillis();
         }
         if ((i5 & 8) != 0) {
-            i4 = MarqueeAnimationMode.m352equalsimpl0(i2, MarqueeAnimationMode.Companion.m356getImmediatelyZbEOnfQ()) ? i3 : 0;
+            i4 = MarqueeAnimationMode.m353equalsimpl0(i2, MarqueeAnimationMode.Companion.m357getImmediatelyZbEOnfQ()) ? i3 : 0;
         }
         if ((i5 & 16) != 0) {
             marqueeSpacing = MarqueeDefaults.INSTANCE.getSpacing();
         }
         if ((i5 & 32) != 0) {
-            f = MarqueeDefaults.INSTANCE.m358getVelocityD9Ej5fM();
+            f = MarqueeDefaults.INSTANCE.m359getVelocityD9Ej5fM();
         }
-        return m272basicMarquee1Mj1MLw(modifier, i, i2, i3, i4, marqueeSpacing, f);
+        return m273basicMarquee1Mj1MLw(modifier, i, i2, i3, i4, marqueeSpacing, f);
     }
 
     /* renamed from: basicMarquee-1Mj1MLw  reason: not valid java name */
-    public static final Modifier m272basicMarquee1Mj1MLw(Modifier modifier, int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
+    public static final Modifier m273basicMarquee1Mj1MLw(Modifier modifier, int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
         return modifier.then(new MarqueeModifierElement(i, i2, i3, i4, marqueeSpacing, f, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: createMarqueeAnimationSpec-Z4HSEVQ  reason: not valid java name */
-    public static final AnimationSpec<Float> m274createMarqueeAnimationSpecZ4HSEVQ(int i, float f, int i2, int i3, float f2, Density density) {
-        TweenSpec<Float> velocityBasedTween = velocityBasedTween(Math.abs(density.mo429toPx0680j_4(f2)), f, i3);
-        long m196constructorimpl$default = StartOffset.m196constructorimpl$default((-i3) + i2, 0, 2, null);
+    public static final AnimationSpec<Float> m275createMarqueeAnimationSpecZ4HSEVQ(int i, float f, int i2, int i3, float f2, Density density) {
+        TweenSpec<Float> velocityBasedTween = velocityBasedTween(Math.abs(density.mo430toPx0680j_4(f2)), f, i3);
+        long m197constructorimpl$default = StartOffset.m197constructorimpl$default((-i3) + i2, 0, 2, null);
         if (i == Integer.MAX_VALUE) {
-            return AnimationSpecKt.m161infiniteRepeatable9IiC70o$default(velocityBasedTween, null, m196constructorimpl$default, 2, null);
+            return AnimationSpecKt.m162infiniteRepeatable9IiC70o$default(velocityBasedTween, null, m197constructorimpl$default, 2, null);
         }
-        return AnimationSpecKt.m163repeatable91I0pcU$default(i, velocityBasedTween, null, m196constructorimpl$default, 4, null);
+        return AnimationSpecKt.m164repeatable91I0pcU$default(i, velocityBasedTween, null, m197constructorimpl$default, 4, null);
     }
 
     private static final TweenSpec<Float> velocityBasedTween(float f, float f2, int i) {
@@ -56,7 +56,7 @@ public final class BasicMarqueeKt {
     }
 
     /* renamed from: MarqueeSpacing-0680j_4  reason: not valid java name */
-    public static final MarqueeSpacing m270MarqueeSpacing0680j_4(final float f) {
+    public static final MarqueeSpacing m271MarqueeSpacing0680j_4(final float f) {
         return new MarqueeSpacing() { // from class: androidx.compose.foundation.BasicMarqueeKt$$ExternalSyntheticLambda0
             @Override // androidx.compose.foundation.MarqueeSpacing
             public final int calculateSpacing(Density density, int i, int i2) {
@@ -69,6 +69,6 @@ public final class BasicMarqueeKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final int MarqueeSpacing_0680j_4$lambda$1(float f, Density density, int i, int i2) {
-        return density.mo423roundToPx0680j_4(f);
+        return density.mo424roundToPx0680j_4(f);
     }
 }

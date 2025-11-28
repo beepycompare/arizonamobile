@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 import kotlin.text.Charsets;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class G0 {
     public static String a(F0 f0) {
         try {

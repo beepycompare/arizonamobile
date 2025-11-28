@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 import java.util.Locale;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Le {
 
     /* renamed from: a  reason: collision with root package name */

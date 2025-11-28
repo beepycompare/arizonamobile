@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.ExternalAttribution;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import kotlin.text.Charsets;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class J2 implements ExternalAttribution {
 
     /* renamed from: a  reason: collision with root package name */

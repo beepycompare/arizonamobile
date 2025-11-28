@@ -10,7 +10,7 @@ import io.appmetrica.analytics.impl.InterfaceC0281go;
 import io.appmetrica.analytics.impl.InterfaceC0562s2;
 import io.appmetrica.analytics.impl.Nn;
 import io.appmetrica.analytics.impl.uo;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StringAttribute {
 
     /* renamed from: a  reason: collision with root package name */

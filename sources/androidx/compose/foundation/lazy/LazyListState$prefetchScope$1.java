@@ -33,9 +33,9 @@ public final class LazyListState$prefetchScope$1 implements LazyListPrefetchScop
             final LazyListMeasureResult lazyListMeasureResult = (LazyListMeasureResult) mutableState.getValue();
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
             LazyLayoutPrefetchState prefetchState$foundation_release = this.this$0.getPrefetchState$foundation_release();
-            long m967getChildConstraintsmsEJaDk = lazyListMeasureResult.m967getChildConstraintsmsEJaDk();
+            long m968getChildConstraintsmsEJaDk = lazyListMeasureResult.m968getChildConstraintsmsEJaDk();
             z = this.this$0.executeRequestsInHighPriorityMode;
-            return prefetchState$foundation_release.m1060schedulePrecompositionAndPremeasure_EkL_Y$foundation_release(i, m967getChildConstraintsmsEJaDk, z, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$prefetchScope$1$$ExternalSyntheticLambda0
+            return prefetchState$foundation_release.m1061schedulePrecompositionAndPremeasure_EkL_Y$foundation_release(i, m968getChildConstraintsmsEJaDk, z, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$prefetchScope$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit schedulePrefetch$lambda$2;
@@ -51,17 +51,17 @@ public final class LazyListState$prefetchScope$1 implements LazyListPrefetchScop
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit schedulePrefetch$lambda$2(Function1 function1, int i, LazyListMeasureResult lazyListMeasureResult, LazyLayoutPrefetchState.PrefetchResultScope prefetchResultScope) {
-        long mo1062getSizeYEO4UFw;
+        long mo1063getSizeYEO4UFw;
         if (function1 != null) {
             int placeablesCount = prefetchResultScope.getPlaceablesCount();
             int i2 = 0;
             for (int i3 = 0; i3 < placeablesCount; i3++) {
                 if (lazyListMeasureResult.getOrientation() == Orientation.Vertical) {
-                    mo1062getSizeYEO4UFw = prefetchResultScope.mo1062getSizeYEO4UFw(i3) & 4294967295L;
+                    mo1063getSizeYEO4UFw = prefetchResultScope.mo1063getSizeYEO4UFw(i3) & 4294967295L;
                 } else {
-                    mo1062getSizeYEO4UFw = prefetchResultScope.mo1062getSizeYEO4UFw(i3) >> 32;
+                    mo1063getSizeYEO4UFw = prefetchResultScope.mo1063getSizeYEO4UFw(i3) >> 32;
                 }
-                i2 += (int) mo1062getSizeYEO4UFw;
+                i2 += (int) mo1063getSizeYEO4UFw;
             }
             function1.invoke(new LazyListPrefetchResultScopeImpl(i, i2));
         }

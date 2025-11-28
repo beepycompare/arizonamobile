@@ -4,10 +4,10 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int graphPackage = 0x7f0402c8;
-        public static int graphResName = 0x7f0402cd;
-        public static int moduleName = 0x7f040465;
-        public static int progressDestination = 0x7f040503;
+        public static int graphPackage = 0x7f0402c2;
+        public static int graphResName = 0x7f0402c7;
+        public static int moduleName = 0x7f04045c;
+        public static int progressDestination = 0x7f0404fa;
 
         private attr() {
         }
@@ -15,7 +15,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class raw {
-        public static int navigation_keep_all = 0x7f12001e;
+        public static int navigation_keep_all = 0x7f11000e;
 
         private raw() {
         }

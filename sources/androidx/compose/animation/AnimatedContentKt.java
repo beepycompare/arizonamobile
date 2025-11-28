@@ -163,7 +163,7 @@ public final class AnimatedContentKt {
                                                 }
 
                                                 public final ContentTransform invoke(AnimatedContentTransitionScope<S> animatedContentTransitionScope) {
-                                                    return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m96scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
+                                                    return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m97scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
                                                 }
                                             };
                                             startRestartGroup.updateRememberedValue(rememberedValue);
@@ -343,12 +343,12 @@ public final class AnimatedContentKt {
             function2 = new Function2<IntSize, IntSize, SpringSpec<IntSize>>() { // from class: androidx.compose.animation.AnimatedContentKt$SizeTransform$1
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ SpringSpec<IntSize> invoke(IntSize intSize, IntSize intSize2) {
-                    return m51invokeTemP2vQ(intSize.m8170unboximpl(), intSize2.m8170unboximpl());
+                    return m52invokeTemP2vQ(intSize.m8171unboximpl(), intSize2.m8171unboximpl());
                 }
 
                 /* renamed from: invoke-TemP2vQ  reason: not valid java name */
-                public final SpringSpec<IntSize> m51invokeTemP2vQ(long j, long j2) {
-                    return AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8158boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+                public final SpringSpec<IntSize> m52invokeTemP2vQ(long j, long j2) {
+                    return AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8159boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
                 }
             };
         }
@@ -461,7 +461,7 @@ public final class AnimatedContentKt {
                                             }
 
                                             public final ContentTransform invoke(AnimatedContentTransitionScope<S> animatedContentTransitionScope) {
-                                                return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m96scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
+                                                return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m97scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -653,14 +653,14 @@ public final class AnimatedContentKt {
 
                                                         @Override // kotlin.jvm.functions.Function3
                                                         public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                                                            return m50invoke3p2s80s(measureScope, measurable, constraints.m7954unboximpl());
+                                                            return m51invoke3p2s80s(measureScope, measurable, constraints.m7955unboximpl());
                                                         }
 
                                                         /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                                                        public final MeasureResult m50invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                                                            final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(j);
-                                                            int width = mo6697measureBRTryo0.getWidth();
-                                                            int height = mo6697measureBRTryo0.getHeight();
+                                                        public final MeasureResult m51invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                                                            final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+                                                            int width = mo6698measureBRTryo0.getWidth();
+                                                            int height = mo6698measureBRTryo0.getHeight();
                                                             final ContentTransform contentTransform2 = ContentTransform.this;
                                                             return MeasureScope.layout$default(measureScope, width, height, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$1$1.1
                                                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -881,15 +881,15 @@ public final class AnimatedContentKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-                                Updater.m4604setimpl(m4597constructorimpl, animatedContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+                                Updater.m4605setimpl(m4598constructorimpl, animatedContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                    m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                 }
-                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -895590996, "C:AnimatedContent.kt#xbi5r1");
                                 startRestartGroup.startReplaceGroup(-860173498);
                                 ComposerKt.sourceInformation(startRestartGroup, "");
@@ -1032,6 +1032,6 @@ public final class AnimatedContentKt {
 
     static {
         long j = Integer.MIN_VALUE;
-        UnspecifiedSize = IntSize.m8161constructorimpl((j & 4294967295L) | (j << 32));
+        UnspecifiedSize = IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

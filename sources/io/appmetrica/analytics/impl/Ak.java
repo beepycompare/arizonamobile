@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleReporter;
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentContext;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ak implements ServiceModuleReporterComponentContext {
 
     /* renamed from: a  reason: collision with root package name */

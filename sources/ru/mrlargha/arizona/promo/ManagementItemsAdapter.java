@@ -48,8 +48,8 @@ public final class ManagementItemsAdapter extends RecyclerView.Adapter<Managemen
             BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new ManagementItemsAdapter$onBindViewHolder$1$1(promoReward, binding, null), 3, null);
         } else {
             Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "projects/arizona-rp/assets/images/donate/" + StringsKt.substringBeforeLast$default(promoReward.getImage(), ".", (String) null, 2, (Object) null) + ".webp").into(binding.image);
+            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(resourceUrl$default + "projects/arizona-rp/assets/images/donate/" + StringsKt.substringBeforeLast$default(promoReward.getImage(), ".", (String) null, 2, (Object) null) + ".webp").into(binding.image);
         }
         binding.image.setBackground(new RadialBottomCenterCircleDrawable(Color.parseColor(promoReward.getColor()), 0));
     }

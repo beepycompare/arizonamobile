@@ -12,19 +12,28 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
 import androidx.lifecycle.ViewTreeLifecycleOwner;
+import androidx.navigationevent.DirectNavigationEventInput;
+import androidx.navigationevent.NavigationEventDispatcher;
+import androidx.navigationevent.NavigationEventDispatcherOwner;
+import androidx.navigationevent.ViewTreeNavigationEventDispatcherOwner;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryController;
 import androidx.savedstate.SavedStateRegistryOwner;
 import androidx.savedstate.ViewTreeSavedStateRegistryOwner;
+import kotlin.Deprecated;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 import kotlin.Metadata;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ComponentDialog.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0016\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B\u001b\b\u0007\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0003\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\b\u0010\u001a\u001a\u00020\u001bH\u0016J\u0012\u0010\u001c\u001a\u00020\u001d2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001bH\u0015J\b\u0010\u001f\u001a\u00020\u001dH\u0015J\b\u0010 \u001a\u00020\u001dH\u0015J\b\u0010'\u001a\u00020\u001dH\u0017J\u0010\u0010(\u001a\u00020\u001d2\u0006\u0010)\u001a\u00020\bH\u0016J\u0010\u0010(\u001a\u00020\u001d2\u0006\u0010*\u001a\u00020+H\u0016J\u001a\u0010(\u001a\u00020\u001d2\u0006\u0010*\u001a\u00020+2\b\u0010,\u001a\u0004\u0018\u00010-H\u0016J\u001a\u0010.\u001a\u00020\u001d2\u0006\u0010*\u001a\u00020+2\b\u0010,\u001a\u0004\u0018\u00010-H\u0016J\b\u0010/\u001a\u00020\u001dH\u0017R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00020\f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u00178VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u0017\u0010!\u001a\u00020\"¢\u0006\u000e\n\u0000\u0012\u0004\b#\u0010$\u001a\u0004\b%\u0010&¨\u00060"}, d2 = {"Landroidx/activity/ComponentDialog;", "Landroid/app/Dialog;", "Landroidx/lifecycle/LifecycleOwner;", "Landroidx/activity/OnBackPressedDispatcherOwner;", "Landroidx/savedstate/SavedStateRegistryOwner;", "context", "Landroid/content/Context;", "themeResId", "", "<init>", "(Landroid/content/Context;I)V", "_lifecycleRegistry", "Landroidx/lifecycle/LifecycleRegistry;", "lifecycleRegistry", "getLifecycleRegistry", "()Landroidx/lifecycle/LifecycleRegistry;", "savedStateRegistryController", "Landroidx/savedstate/SavedStateRegistryController;", "savedStateRegistry", "Landroidx/savedstate/SavedStateRegistry;", "getSavedStateRegistry", "()Landroidx/savedstate/SavedStateRegistry;", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "getLifecycle", "()Landroidx/lifecycle/Lifecycle;", "onSaveInstanceState", "Landroid/os/Bundle;", "onCreate", "", "savedInstanceState", "onStart", "onStop", "onBackPressedDispatcher", "Landroidx/activity/OnBackPressedDispatcher;", "getOnBackPressedDispatcher$annotations", "()V", "getOnBackPressedDispatcher", "()Landroidx/activity/OnBackPressedDispatcher;", "onBackPressed", "setContentView", "layoutResID", "view", "Landroid/view/View;", "params", "Landroid/view/ViewGroup$LayoutParams;", "addContentView", "initializeViewTreeOwners", "activity_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0016\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005B\u001b\b\u0007\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0003\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010!\u001a\u00020\"H\u0016J\u0012\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010\"H\u0015J\b\u0010&\u001a\u00020$H\u0015J\b\u0010'\u001a\u00020$H\u0015J\b\u00103\u001a\u00020$H\u0017J\u0010\u00104\u001a\u00020$2\u0006\u00105\u001a\u00020\tH\u0016J\u0010\u00104\u001a\u00020$2\u0006\u00106\u001a\u000207H\u0016J\u001a\u00104\u001a\u00020$2\u0006\u00106\u001a\u0002072\b\u00108\u001a\u0004\u0018\u000109H\u0016J\u001a\u0010:\u001a\u00020$2\u0006\u00106\u001a\u0002072\b\u00108\u001a\u0004\u0018\u000109H\u0016J\b\u0010;\u001a\u00020$H\u0017R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\u00020\u00148VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\u00188VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u001aR\u001b\u0010\u001b\u001a\u00020\u001c8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u001f\u0010 \u001a\u0004\b\u001d\u0010\u001eR!\u0010(\u001a\u00020)8FX\u0086\u0084\u0002¢\u0006\u0012\n\u0004\b.\u0010 \u0012\u0004\b*\u0010+\u001a\u0004\b,\u0010-R\u0014\u0010/\u001a\u0002008VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u00102¨\u0006<"}, d2 = {"Landroidx/activity/ComponentDialog;", "Landroid/app/Dialog;", "Landroidx/lifecycle/LifecycleOwner;", "Landroidx/activity/OnBackPressedDispatcherOwner;", "Landroidx/navigationevent/NavigationEventDispatcherOwner;", "Landroidx/savedstate/SavedStateRegistryOwner;", "context", "Landroid/content/Context;", "themeResId", "", "<init>", "(Landroid/content/Context;I)V", "_lifecycleRegistry", "Landroidx/lifecycle/LifecycleRegistry;", "lifecycleRegistry", "getLifecycleRegistry", "()Landroidx/lifecycle/LifecycleRegistry;", "savedStateRegistryController", "Landroidx/savedstate/SavedStateRegistryController;", "savedStateRegistry", "Landroidx/savedstate/SavedStateRegistry;", "getSavedStateRegistry", "()Landroidx/savedstate/SavedStateRegistry;", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "getLifecycle", "()Landroidx/lifecycle/Lifecycle;", "onBackPressedInput", "Landroidx/navigationevent/DirectNavigationEventInput;", "getOnBackPressedInput", "()Landroidx/navigationevent/DirectNavigationEventInput;", "onBackPressedInput$delegate", "Lkotlin/Lazy;", "onSaveInstanceState", "Landroid/os/Bundle;", "onCreate", "", "savedInstanceState", "onStart", "onStop", "onBackPressedDispatcher", "Landroidx/activity/OnBackPressedDispatcher;", "getOnBackPressedDispatcher$annotations", "()V", "getOnBackPressedDispatcher", "()Landroidx/activity/OnBackPressedDispatcher;", "onBackPressedDispatcher$delegate", "navigationEventDispatcher", "Landroidx/navigationevent/NavigationEventDispatcher;", "getNavigationEventDispatcher", "()Landroidx/navigationevent/NavigationEventDispatcher;", "onBackPressed", "setContentView", "layoutResID", "view", "Landroid/view/View;", "params", "Landroid/view/ViewGroup$LayoutParams;", "addContentView", "initializeViewTreeOwners", "activity"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPressedDispatcherOwner, SavedStateRegistryOwner {
+public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPressedDispatcherOwner, NavigationEventDispatcherOwner, SavedStateRegistryOwner {
     private LifecycleRegistry _lifecycleRegistry;
-    private final OnBackPressedDispatcher onBackPressedDispatcher;
+    private final Lazy onBackPressedDispatcher$delegate;
+    private final Lazy onBackPressedInput$delegate;
     private final SavedStateRegistryController savedStateRegistryController;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -36,21 +45,31 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
     public static /* synthetic */ void getOnBackPressedDispatcher$annotations() {
     }
 
-    public /* synthetic */ ComponentDialog(Context context, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i2 & 2) != 0 ? 0 : i);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ComponentDialog(Context context, int i) {
         super(context, i);
         Intrinsics.checkNotNullParameter(context, "context");
         this.savedStateRegistryController = SavedStateRegistryController.Companion.create(this);
-        this.onBackPressedDispatcher = new OnBackPressedDispatcher(new Runnable() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                super/*android.app.Dialog*/.onBackPressed();
+        this.onBackPressedInput$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                DirectNavigationEventInput onBackPressedInput_delegate$lambda$0;
+                onBackPressedInput_delegate$lambda$0 = ComponentDialog.onBackPressedInput_delegate$lambda$0(ComponentDialog.this);
+                return onBackPressedInput_delegate$lambda$0;
             }
         });
+        this.onBackPressedDispatcher$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0;
+                onBackPressedDispatcher_delegate$lambda$0 = ComponentDialog.onBackPressedDispatcher_delegate$lambda$0(ComponentDialog.this);
+                return onBackPressedDispatcher_delegate$lambda$0;
+            }
+        });
+    }
+
+    public /* synthetic */ ComponentDialog(Context context, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i2 & 2) != 0 ? 0 : i);
     }
 
     private final LifecycleRegistry getLifecycleRegistry() {
@@ -73,6 +92,17 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
         return getLifecycleRegistry();
     }
 
+    private final DirectNavigationEventInput getOnBackPressedInput() {
+        return (DirectNavigationEventInput) this.onBackPressedInput$delegate.getValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final DirectNavigationEventInput onBackPressedInput_delegate$lambda$0(ComponentDialog componentDialog) {
+        DirectNavigationEventInput directNavigationEventInput = new DirectNavigationEventInput();
+        componentDialog.getNavigationEventDispatcher().addInput(directNavigationEventInput);
+        return directNavigationEventInput;
+    }
+
     @Override // android.app.Dialog
     public Bundle onSaveInstanceState() {
         Bundle onSaveInstanceState = super.onSaveInstanceState();
@@ -86,7 +116,7 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (Build.VERSION.SDK_INT >= 33) {
-            OnBackPressedDispatcher onBackPressedDispatcher = this.onBackPressedDispatcher;
+            OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
             OnBackInvokedDispatcher onBackInvokedDispatcher = getOnBackInvokedDispatcher();
             Intrinsics.checkNotNullExpressionValue(onBackInvokedDispatcher, "getOnBackInvokedDispatcher(...)");
             onBackPressedDispatcher.setOnBackInvokedDispatcher(onBackInvokedDispatcher);
@@ -112,12 +142,28 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
 
     @Override // androidx.activity.OnBackPressedDispatcherOwner
     public final OnBackPressedDispatcher getOnBackPressedDispatcher() {
-        return this.onBackPressedDispatcher;
+        return (OnBackPressedDispatcher) this.onBackPressedDispatcher$delegate.getValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0(final ComponentDialog componentDialog) {
+        return new OnBackPressedDispatcher(new Runnable() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                super/*android.app.Dialog*/.onBackPressed();
+            }
+        });
+    }
+
+    @Override // androidx.navigationevent.NavigationEventDispatcherOwner
+    public NavigationEventDispatcher getNavigationEventDispatcher() {
+        return getOnBackPressedDispatcher().getEventDispatcher$activity();
     }
 
     @Override // android.app.Dialog
+    @Deprecated(message = "This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
     public void onBackPressed() {
-        this.onBackPressedDispatcher.onBackPressed();
+        getOnBackPressedInput().backCompleted();
     }
 
     @Override // android.app.Dialog
@@ -163,5 +209,10 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
         View decorView3 = window3.getDecorView();
         Intrinsics.checkNotNullExpressionValue(decorView3, "getDecorView(...)");
         ViewTreeSavedStateRegistryOwner.set(decorView3, this);
+        Window window4 = getWindow();
+        Intrinsics.checkNotNull(window4);
+        View decorView4 = window4.getDecorView();
+        Intrinsics.checkNotNullExpressionValue(decorView4, "getDecorView(...)");
+        ViewTreeNavigationEventDispatcherOwner.set(decorView4, this);
     }
 }

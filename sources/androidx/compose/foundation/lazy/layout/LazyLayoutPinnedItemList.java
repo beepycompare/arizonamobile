@@ -150,7 +150,7 @@ public final class LazyLayoutPinnedItemList implements List<PinnedItem>, KMapped
     }
 
     /* renamed from: removeFirst  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m1055removeFirst() {
+    public /* bridge */ /* synthetic */ Object m1056removeFirst() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -159,7 +159,7 @@ public final class LazyLayoutPinnedItemList implements List<PinnedItem>, KMapped
     }
 
     /* renamed from: removeLast  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m1056removeLast() {
+    public /* bridge */ /* synthetic */ Object m1057removeLast() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 

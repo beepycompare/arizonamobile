@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.internal.IAppMetricaService;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Ug extends Ch {
     public final Ah e;
 

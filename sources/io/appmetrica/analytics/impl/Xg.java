@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import android.os.Bundle;
 import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Xg implements InterfaceC0366k6 {
 
     /* renamed from: a  reason: collision with root package name */

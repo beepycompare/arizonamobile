@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Fg extends AbstractC0230f {
     public Fg(Context context, Gg gg) {
         super(context, gg);

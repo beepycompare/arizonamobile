@@ -98,20 +98,20 @@ public final class FontMatcher {
     }
 
     /* renamed from: matchFont-RetOiIg  reason: not valid java name */
-    public final List<Font> m7564matchFontRetOiIg(FontFamily fontFamily, FontWeight fontWeight, int i) {
+    public final List<Font> m7565matchFontRetOiIg(FontFamily fontFamily, FontWeight fontWeight, int i) {
         if (!(fontFamily instanceof FontListFontFamily)) {
             throw new IllegalArgumentException("Only FontFamily instances that presents a list of Fonts can be used");
         }
-        return m7565matchFontRetOiIg((FontListFontFamily) fontFamily, fontWeight, i);
+        return m7566matchFontRetOiIg((FontListFontFamily) fontFamily, fontWeight, i);
     }
 
     /* renamed from: matchFont-RetOiIg  reason: not valid java name */
-    public final List<Font> m7565matchFontRetOiIg(FontListFontFamily fontListFontFamily, FontWeight fontWeight, int i) {
-        return m7566matchFontRetOiIg(fontListFontFamily.getFonts(), fontWeight, i);
+    public final List<Font> m7566matchFontRetOiIg(FontListFontFamily fontListFontFamily, FontWeight fontWeight, int i) {
+        return m7567matchFontRetOiIg(fontListFontFamily.getFonts(), fontWeight, i);
     }
 
     /* renamed from: matchFont-RetOiIg  reason: not valid java name */
-    public final List<Font> m7566matchFontRetOiIg(List<? extends Font> list, FontWeight fontWeight, int i) {
+    public final List<Font> m7567matchFontRetOiIg(List<? extends Font> list, FontWeight fontWeight, int i) {
         ArrayList arrayList = new ArrayList(list.size());
         List<? extends Font> list2 = list;
         int size = list2.size();
@@ -119,7 +119,7 @@ public final class FontMatcher {
         for (int i3 = 0; i3 < size; i3++) {
             Font font = list.get(i3);
             Font font2 = font;
-            if (Intrinsics.areEqual(font2.getWeight(), fontWeight) && FontStyle.m7570equalsimpl0(font2.mo7522getStyle_LCdwA(), i)) {
+            if (Intrinsics.areEqual(font2.getWeight(), fontWeight) && FontStyle.m7571equalsimpl0(font2.mo7523getStyle_LCdwA(), i)) {
                 arrayList.add(font);
             }
         }
@@ -129,7 +129,7 @@ public final class FontMatcher {
             int size2 = list2.size();
             for (int i4 = 0; i4 < size2; i4++) {
                 Font font3 = list.get(i4);
-                if (FontStyle.m7570equalsimpl0(font3.mo7522getStyle_LCdwA(), i)) {
+                if (FontStyle.m7571equalsimpl0(font3.mo7523getStyle_LCdwA(), i)) {
                     arrayList3.add(font3);
                 }
             }

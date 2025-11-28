@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ie extends Kc {
     public Ie(NetworkType networkType) {
         super(networkType);

@@ -44,12 +44,12 @@ public class Connector {
     }
 
     /* renamed from: getRenderIntent-uksYyKA  reason: not valid java name */
-    public final int m5719getRenderIntentuksYyKA() {
+    public final int m5720getRenderIntentuksYyKA() {
         return this.renderIntent;
     }
 
     private Connector(ColorSpace colorSpace, ColorSpace colorSpace2, int i) {
-        this(colorSpace, colorSpace2, ColorModel.m5704equalsimpl0(colorSpace.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw()) ? ColorSpaceKt.adapt$default(colorSpace, Illuminant.INSTANCE.getD50(), null, 2, null) : colorSpace, ColorModel.m5704equalsimpl0(colorSpace2.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw()) ? ColorSpaceKt.adapt$default(colorSpace2, Illuminant.INSTANCE.getD50(), null, 2, null) : colorSpace2, i, Companion.m5722computeTransformYBCOT_4(colorSpace, colorSpace2, i), null);
+        this(colorSpace, colorSpace2, ColorModel.m5705equalsimpl0(colorSpace.m5714getModelxdoWZVw(), ColorModel.Companion.m5712getRgbxdoWZVw()) ? ColorSpaceKt.adapt$default(colorSpace, Illuminant.INSTANCE.getD50(), null, 2, null) : colorSpace, ColorModel.m5705equalsimpl0(colorSpace2.m5714getModelxdoWZVw(), ColorModel.Companion.m5712getRgbxdoWZVw()) ? ColorSpaceKt.adapt$default(colorSpace2, Illuminant.INSTANCE.getD50(), null, 2, null) : colorSpace2, i, Companion.m5723computeTransformYBCOT_4(colorSpace, colorSpace2, i), null);
     }
 
     public final float[] transform(float f, float f2, float f3) {
@@ -89,7 +89,7 @@ public class Connector {
             Rgb rgb4 = rgb2;
             this.mSource = rgb;
             this.mDestination = rgb2;
-            this.mTransform = m5723computeTransformYBCOT_4(rgb, rgb2, i);
+            this.mTransform = m5724computeTransformYBCOT_4(rgb, rgb2, i);
         }
 
         @Override // androidx.compose.ui.graphics.colorspace.Connector
@@ -105,7 +105,7 @@ public class Connector {
         }
 
         /* renamed from: computeTransform-YBCOT_4  reason: not valid java name */
-        private final float[] m5723computeTransformYBCOT_4(Rgb rgb, Rgb rgb2, int i) {
+        private final float[] m5724computeTransformYBCOT_4(Rgb rgb, Rgb rgb2, int i) {
             if (ColorSpaceKt.compare(rgb.getWhitePoint(), rgb2.getWhitePoint())) {
                 return ColorSpaceKt.mul3x3(rgb2.getInverseTransform$ui_graphics_release(), rgb.getTransform$ui_graphics_release());
             }
@@ -119,7 +119,7 @@ public class Connector {
             if (!ColorSpaceKt.compare(rgb2.getWhitePoint(), Illuminant.INSTANCE.getD50())) {
                 inverseTransform$ui_graphics_release = ColorSpaceKt.inverse3x3(ColorSpaceKt.mul3x3(ColorSpaceKt.chromaticAdaptation(Adaptation.Companion.getBradford().getTransform$ui_graphics_release(), xyz$ui_graphics_release2, Illuminant.INSTANCE.newD50Xyz$ui_graphics_release()), rgb2.getTransform$ui_graphics_release()));
             }
-            if (RenderIntent.m5728equalsimpl0(i, RenderIntent.Companion.m5732getAbsoluteuksYyKA())) {
+            if (RenderIntent.m5729equalsimpl0(i, RenderIntent.Companion.m5733getAbsoluteuksYyKA())) {
                 transform$ui_graphics_release = ColorSpaceKt.mul3x3Diag(new float[]{xyz$ui_graphics_release[0] / xyz$ui_graphics_release2[0], xyz$ui_graphics_release[1] / xyz$ui_graphics_release2[1], xyz$ui_graphics_release[2] / xyz$ui_graphics_release2[2]}, transform$ui_graphics_release);
             }
             return ColorSpaceKt.mul3x3(inverseTransform$ui_graphics_release, transform$ui_graphics_release);
@@ -127,16 +127,16 @@ public class Connector {
 
         @Override // androidx.compose.ui.graphics.colorspace.Connector
         /* renamed from: transformToColor-l2rxGTc$ui_graphics_release */
-        public long mo5720transformToColorl2rxGTc$ui_graphics_release(long j) {
-            float m5285getRedimpl = Color.m5285getRedimpl(j);
-            float m5284getGreenimpl = Color.m5284getGreenimpl(j);
-            float m5282getBlueimpl = Color.m5282getBlueimpl(j);
-            float m5281getAlphaimpl = Color.m5281getAlphaimpl(j);
-            float invoke = (float) this.mSource.getEotfFunc$ui_graphics_release().invoke(m5285getRedimpl);
-            float invoke2 = (float) this.mSource.getEotfFunc$ui_graphics_release().invoke(m5284getGreenimpl);
-            float invoke3 = (float) this.mSource.getEotfFunc$ui_graphics_release().invoke(m5282getBlueimpl);
+        public long mo5721transformToColorl2rxGTc$ui_graphics_release(long j) {
+            float m5286getRedimpl = Color.m5286getRedimpl(j);
+            float m5285getGreenimpl = Color.m5285getGreenimpl(j);
+            float m5283getBlueimpl = Color.m5283getBlueimpl(j);
+            float m5282getAlphaimpl = Color.m5282getAlphaimpl(j);
+            float invoke = (float) this.mSource.getEotfFunc$ui_graphics_release().invoke(m5286getRedimpl);
+            float invoke2 = (float) this.mSource.getEotfFunc$ui_graphics_release().invoke(m5285getGreenimpl);
+            float invoke3 = (float) this.mSource.getEotfFunc$ui_graphics_release().invoke(m5283getBlueimpl);
             float[] fArr = this.mTransform;
-            return ColorKt.Color((float) this.mDestination.getOetfFunc$ui_graphics_release().invoke((fArr[0] * invoke) + (fArr[3] * invoke2) + (fArr[6] * invoke3)), (float) this.mDestination.getOetfFunc$ui_graphics_release().invoke((fArr[1] * invoke) + (fArr[4] * invoke2) + (fArr[7] * invoke3)), (float) this.mDestination.getOetfFunc$ui_graphics_release().invoke((fArr[2] * invoke) + (fArr[5] * invoke2) + (fArr[8] * invoke3)), m5281getAlphaimpl, this.mDestination);
+            return ColorKt.Color((float) this.mDestination.getOetfFunc$ui_graphics_release().invoke((fArr[0] * invoke) + (fArr[3] * invoke2) + (fArr[6] * invoke3)), (float) this.mDestination.getOetfFunc$ui_graphics_release().invoke((fArr[1] * invoke) + (fArr[4] * invoke2) + (fArr[7] * invoke3)), (float) this.mDestination.getOetfFunc$ui_graphics_release().invoke((fArr[2] * invoke) + (fArr[5] * invoke2) + (fArr[8] * invoke3)), m5282getAlphaimpl, this.mDestination);
         }
     }
 
@@ -153,21 +153,21 @@ public class Connector {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: computeTransform-YBCOT_4  reason: not valid java name */
-        public final float[] m5722computeTransformYBCOT_4(ColorSpace colorSpace, ColorSpace colorSpace2, int i) {
-            if (RenderIntent.m5728equalsimpl0(i, RenderIntent.Companion.m5732getAbsoluteuksYyKA())) {
-                boolean m5704equalsimpl0 = ColorModel.m5704equalsimpl0(colorSpace.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw());
-                boolean m5704equalsimpl02 = ColorModel.m5704equalsimpl0(colorSpace2.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw());
-                if (m5704equalsimpl0 && m5704equalsimpl02) {
+        public final float[] m5723computeTransformYBCOT_4(ColorSpace colorSpace, ColorSpace colorSpace2, int i) {
+            if (RenderIntent.m5729equalsimpl0(i, RenderIntent.Companion.m5733getAbsoluteuksYyKA())) {
+                boolean m5705equalsimpl0 = ColorModel.m5705equalsimpl0(colorSpace.m5714getModelxdoWZVw(), ColorModel.Companion.m5712getRgbxdoWZVw());
+                boolean m5705equalsimpl02 = ColorModel.m5705equalsimpl0(colorSpace2.m5714getModelxdoWZVw(), ColorModel.Companion.m5712getRgbxdoWZVw());
+                if (m5705equalsimpl0 && m5705equalsimpl02) {
                     return null;
                 }
-                if (m5704equalsimpl0 || m5704equalsimpl02) {
-                    if (!m5704equalsimpl0) {
+                if (m5705equalsimpl0 || m5705equalsimpl02) {
+                    if (!m5705equalsimpl0) {
                         colorSpace = colorSpace2;
                     }
                     Intrinsics.checkNotNull(colorSpace, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb");
                     Rgb rgb = (Rgb) colorSpace;
-                    float[] xyz$ui_graphics_release = m5704equalsimpl0 ? rgb.getWhitePoint().toXyz$ui_graphics_release() : Illuminant.INSTANCE.getD50Xyz$ui_graphics_release();
-                    float[] xyz$ui_graphics_release2 = m5704equalsimpl02 ? rgb.getWhitePoint().toXyz$ui_graphics_release() : Illuminant.INSTANCE.getD50Xyz$ui_graphics_release();
+                    float[] xyz$ui_graphics_release = m5705equalsimpl0 ? rgb.getWhitePoint().toXyz$ui_graphics_release() : Illuminant.INSTANCE.getD50Xyz$ui_graphics_release();
+                    float[] xyz$ui_graphics_release2 = m5705equalsimpl02 ? rgb.getWhitePoint().toXyz$ui_graphics_release() : Illuminant.INSTANCE.getD50Xyz$ui_graphics_release();
                     return new float[]{xyz$ui_graphics_release[0] / xyz$ui_graphics_release2[0], xyz$ui_graphics_release[1] / xyz$ui_graphics_release2[1], xyz$ui_graphics_release[2] / xyz$ui_graphics_release2[2]};
                 }
                 return null;
@@ -176,8 +176,8 @@ public class Connector {
         }
 
         public final Connector identity$ui_graphics_release(final ColorSpace colorSpace) {
-            final int m5734getRelativeuksYyKA = RenderIntent.Companion.m5734getRelativeuksYyKA();
-            return new Connector(colorSpace, m5734getRelativeuksYyKA) { // from class: androidx.compose.ui.graphics.colorspace.Connector$Companion$identity$1
+            final int m5735getRelativeuksYyKA = RenderIntent.Companion.m5735getRelativeuksYyKA();
+            return new Connector(colorSpace, m5735getRelativeuksYyKA) { // from class: androidx.compose.ui.graphics.colorspace.Connector$Companion$identity$1
                 @Override // androidx.compose.ui.graphics.colorspace.Connector
                 public float[] transform(float[] fArr) {
                     return fArr;
@@ -185,28 +185,28 @@ public class Connector {
 
                 @Override // androidx.compose.ui.graphics.colorspace.Connector
                 /* renamed from: transformToColor-l2rxGTc$ui_graphics_release */
-                public long mo5720transformToColorl2rxGTc$ui_graphics_release(long j) {
+                public long mo5721transformToColorl2rxGTc$ui_graphics_release(long j) {
                     return j;
                 }
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
-                    super(colorSpace, colorSpace, m5734getRelativeuksYyKA, null);
+                    super(colorSpace, colorSpace, m5735getRelativeuksYyKA, null);
                 }
             };
         }
     }
 
     /* renamed from: transformToColor-l2rxGTc$ui_graphics_release  reason: not valid java name */
-    public long mo5720transformToColorl2rxGTc$ui_graphics_release(long j) {
-        float m5285getRedimpl = Color.m5285getRedimpl(j);
-        float m5284getGreenimpl = Color.m5284getGreenimpl(j);
-        float m5282getBlueimpl = Color.m5282getBlueimpl(j);
-        float m5281getAlphaimpl = Color.m5281getAlphaimpl(j);
-        long xy$ui_graphics_release = this.transformSource.toXy$ui_graphics_release(m5285getRedimpl, m5284getGreenimpl, m5282getBlueimpl);
+    public long mo5721transformToColorl2rxGTc$ui_graphics_release(long j) {
+        float m5286getRedimpl = Color.m5286getRedimpl(j);
+        float m5285getGreenimpl = Color.m5285getGreenimpl(j);
+        float m5283getBlueimpl = Color.m5283getBlueimpl(j);
+        float m5282getAlphaimpl = Color.m5282getAlphaimpl(j);
+        long xy$ui_graphics_release = this.transformSource.toXy$ui_graphics_release(m5286getRedimpl, m5285getGreenimpl, m5283getBlueimpl);
         float intBitsToFloat = Float.intBitsToFloat((int) (xy$ui_graphics_release >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (xy$ui_graphics_release & 4294967295L));
-        float z$ui_graphics_release = this.transformSource.toZ$ui_graphics_release(m5285getRedimpl, m5284getGreenimpl, m5282getBlueimpl);
+        float z$ui_graphics_release = this.transformSource.toZ$ui_graphics_release(m5286getRedimpl, m5285getGreenimpl, m5283getBlueimpl);
         float[] fArr = this.transform;
         if (fArr != null) {
             intBitsToFloat *= fArr[0];
@@ -214,6 +214,6 @@ public class Connector {
             z$ui_graphics_release *= fArr[2];
         }
         float f = intBitsToFloat;
-        return this.transformDestination.mo5714xyzaToColorJlNiLsg$ui_graphics_release(f, intBitsToFloat2, z$ui_graphics_release, m5281getAlphaimpl, this.destination);
+        return this.transformDestination.mo5715xyzaToColorJlNiLsg$ui_graphics_release(f, intBitsToFloat2, z$ui_graphics_release, m5282getAlphaimpl, this.destination);
     }
 }

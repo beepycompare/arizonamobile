@@ -40,7 +40,7 @@ public final class DefaultNavigationRailOverride implements NavigationRailOverri
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-433653496, i2, -1, "androidx.compose.material3.DefaultNavigationRailOverride.NavigationRail (NavigationRail.kt:147)");
             }
-            SurfaceKt.m2996SurfaceT9BRK9s(navigationRailOverrideScope.getModifier(), null, navigationRailOverrideScope.m2700getContainerColor0d7_KjU(), navigationRailOverrideScope.m2701getContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1027527987, true, new DefaultNavigationRailOverride$NavigationRail$1(navigationRailOverrideScope), startRestartGroup, 54), startRestartGroup, 12582912, 114);
+            SurfaceKt.m2997SurfaceT9BRK9s(navigationRailOverrideScope.getModifier(), null, navigationRailOverrideScope.m2701getContainerColor0d7_KjU(), navigationRailOverrideScope.m2702getContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1027527987, true, new DefaultNavigationRailOverride$NavigationRail$1(navigationRailOverrideScope), startRestartGroup, 54), startRestartGroup, 12582912, 114);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

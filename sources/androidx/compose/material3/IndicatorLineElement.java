@@ -26,7 +26,7 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
     }
 
     /* renamed from: copy-gv0btCI$default  reason: not valid java name */
-    public static /* synthetic */ IndicatorLineElement m2472copygv0btCI$default(IndicatorLineElement indicatorLineElement, boolean z, boolean z2, InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ IndicatorLineElement m2473copygv0btCI$default(IndicatorLineElement indicatorLineElement, boolean z, boolean z2, InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
             z = indicatorLineElement.enabled;
         }
@@ -52,7 +52,7 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
         float f4 = f2;
         Shape shape2 = shape;
         InteractionSource interactionSource2 = interactionSource;
-        return indicatorLineElement.m2475copygv0btCI(z, z2, interactionSource2, textFieldColors, shape2, f3, f4);
+        return indicatorLineElement.m2476copygv0btCI(z, z2, interactionSource2, textFieldColors, shape2, f3, f4);
     }
 
     public final boolean component1() {
@@ -76,17 +76,17 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
     }
 
     /* renamed from: component6-D9Ej5fM  reason: not valid java name */
-    public final float m2473component6D9Ej5fM() {
+    public final float m2474component6D9Ej5fM() {
         return this.focusedIndicatorLineThickness;
     }
 
     /* renamed from: component7-D9Ej5fM  reason: not valid java name */
-    public final float m2474component7D9Ej5fM() {
+    public final float m2475component7D9Ej5fM() {
         return this.unfocusedIndicatorLineThickness;
     }
 
     /* renamed from: copy-gv0btCI  reason: not valid java name */
-    public final IndicatorLineElement m2475copygv0btCI(boolean z, boolean z2, InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2) {
+    public final IndicatorLineElement m2476copygv0btCI(boolean z, boolean z2, InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2) {
         return new IndicatorLineElement(z, z2, interactionSource, textFieldColors, shape, f, f2, null);
     }
 
@@ -97,7 +97,7 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
         }
         if (obj instanceof IndicatorLineElement) {
             IndicatorLineElement indicatorLineElement = (IndicatorLineElement) obj;
-            return this.enabled == indicatorLineElement.enabled && this.isError == indicatorLineElement.isError && Intrinsics.areEqual(this.interactionSource, indicatorLineElement.interactionSource) && Intrinsics.areEqual(this.colors, indicatorLineElement.colors) && Intrinsics.areEqual(this.textFieldShape, indicatorLineElement.textFieldShape) && Dp.m8000equalsimpl0(this.focusedIndicatorLineThickness, indicatorLineElement.focusedIndicatorLineThickness) && Dp.m8000equalsimpl0(this.unfocusedIndicatorLineThickness, indicatorLineElement.unfocusedIndicatorLineThickness);
+            return this.enabled == indicatorLineElement.enabled && this.isError == indicatorLineElement.isError && Intrinsics.areEqual(this.interactionSource, indicatorLineElement.interactionSource) && Intrinsics.areEqual(this.colors, indicatorLineElement.colors) && Intrinsics.areEqual(this.textFieldShape, indicatorLineElement.textFieldShape) && Dp.m8001equalsimpl0(this.focusedIndicatorLineThickness, indicatorLineElement.focusedIndicatorLineThickness) && Dp.m8001equalsimpl0(this.unfocusedIndicatorLineThickness, indicatorLineElement.unfocusedIndicatorLineThickness);
         }
         return false;
     }
@@ -108,11 +108,11 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
         TextFieldColors textFieldColors = this.colors;
         int hashCode2 = (hashCode + (textFieldColors == null ? 0 : textFieldColors.hashCode())) * 31;
         Shape shape = this.textFieldShape;
-        return ((((hashCode2 + (shape != null ? shape.hashCode() : 0)) * 31) + Dp.m8001hashCodeimpl(this.focusedIndicatorLineThickness)) * 31) + Dp.m8001hashCodeimpl(this.unfocusedIndicatorLineThickness);
+        return ((((hashCode2 + (shape != null ? shape.hashCode() : 0)) * 31) + Dp.m8002hashCodeimpl(this.focusedIndicatorLineThickness)) * 31) + Dp.m8002hashCodeimpl(this.unfocusedIndicatorLineThickness);
     }
 
     public String toString() {
-        return "IndicatorLineElement(enabled=" + this.enabled + ", isError=" + this.isError + ", interactionSource=" + this.interactionSource + ", colors=" + this.colors + ", textFieldShape=" + this.textFieldShape + ", focusedIndicatorLineThickness=" + ((Object) Dp.m8006toStringimpl(this.focusedIndicatorLineThickness)) + ", unfocusedIndicatorLineThickness=" + ((Object) Dp.m8006toStringimpl(this.unfocusedIndicatorLineThickness)) + ')';
+        return "IndicatorLineElement(enabled=" + this.enabled + ", isError=" + this.isError + ", interactionSource=" + this.interactionSource + ", colors=" + this.colors + ", textFieldShape=" + this.textFieldShape + ", focusedIndicatorLineThickness=" + ((Object) Dp.m8007toStringimpl(this.focusedIndicatorLineThickness)) + ", unfocusedIndicatorLineThickness=" + ((Object) Dp.m8007toStringimpl(this.unfocusedIndicatorLineThickness)) + ')';
     }
 
     public final boolean getEnabled() {
@@ -136,12 +136,12 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
     }
 
     /* renamed from: getFocusedIndicatorLineThickness-D9Ej5fM  reason: not valid java name */
-    public final float m2476getFocusedIndicatorLineThicknessD9Ej5fM() {
+    public final float m2477getFocusedIndicatorLineThicknessD9Ej5fM() {
         return this.focusedIndicatorLineThickness;
     }
 
     /* renamed from: getUnfocusedIndicatorLineThickness-D9Ej5fM  reason: not valid java name */
-    public final float m2477getUnfocusedIndicatorLineThicknessD9Ej5fM() {
+    public final float m2478getUnfocusedIndicatorLineThicknessD9Ej5fM() {
         return this.unfocusedIndicatorLineThickness;
     }
 
@@ -163,7 +163,7 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(IndicatorLineNode indicatorLineNode) {
-        indicatorLineNode.m2479updategv0btCI(this.enabled, this.isError, this.interactionSource, this.colors, this.textFieldShape, this.focusedIndicatorLineThickness, this.unfocusedIndicatorLineThickness);
+        indicatorLineNode.m2480updategv0btCI(this.enabled, this.isError, this.interactionSource, this.colors, this.textFieldShape, this.focusedIndicatorLineThickness, this.unfocusedIndicatorLineThickness);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -174,7 +174,7 @@ public final class IndicatorLineElement extends ModifierNodeElement<IndicatorLin
         inspectorInfo.getProperties().set("interactionSource", this.interactionSource);
         inspectorInfo.getProperties().set("colors", this.colors);
         inspectorInfo.getProperties().set("textFieldShape", this.textFieldShape);
-        inspectorInfo.getProperties().set("focusedIndicatorLineThickness", Dp.m7993boximpl(this.focusedIndicatorLineThickness));
-        inspectorInfo.getProperties().set("unfocusedIndicatorLineThickness", Dp.m7993boximpl(this.unfocusedIndicatorLineThickness));
+        inspectorInfo.getProperties().set("focusedIndicatorLineThickness", Dp.m7994boximpl(this.focusedIndicatorLineThickness));
+        inspectorInfo.getProperties().set("unfocusedIndicatorLineThickness", Dp.m7994boximpl(this.unfocusedIndicatorLineThickness));
     }
 }

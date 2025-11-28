@@ -11,35 +11,35 @@ public final class NavigationRailHorizontalItemTokens {
     private static final float FullWidthTrailingSpace;
     private static final float LeadingSpace;
     public static final NavigationRailHorizontalItemTokens INSTANCE = new NavigationRailHorizontalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7995constructorimpl((float) 56.0d);
-    private static final float IconLabelSpace = Dp.m7995constructorimpl((float) 8.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7996constructorimpl((float) 56.0d);
+    private static final float IconLabelSpace = Dp.m7996constructorimpl((float) 8.0d);
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
 
     private NavigationRailHorizontalItemTokens() {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4098getActiveIndicatorHeightD9Ej5fM() {
+    public final float m4099getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
     /* renamed from: getFullWidthLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4099getFullWidthLeadingSpaceD9Ej5fM() {
+    public final float m4100getFullWidthLeadingSpaceD9Ej5fM() {
         return FullWidthLeadingSpace;
     }
 
     /* renamed from: getFullWidthTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4100getFullWidthTrailingSpaceD9Ej5fM() {
+    public final float m4101getFullWidthTrailingSpaceD9Ej5fM() {
         return FullWidthTrailingSpace;
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4101getIconLabelSpaceD9Ej5fM() {
+    public final float m4102getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4102getLeadingSpaceD9Ej5fM() {
+    public final float m4103getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
@@ -49,8 +49,8 @@ public final class NavigationRailHorizontalItemTokens {
 
     static {
         float f = (float) 16.0d;
-        FullWidthLeadingSpace = Dp.m7995constructorimpl(f);
-        FullWidthTrailingSpace = Dp.m7995constructorimpl(f);
-        LeadingSpace = Dp.m7995constructorimpl(f);
+        FullWidthLeadingSpace = Dp.m7996constructorimpl(f);
+        FullWidthTrailingSpace = Dp.m7996constructorimpl(f);
+        LeadingSpace = Dp.m7996constructorimpl(f);
     }
 }

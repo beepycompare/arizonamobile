@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* renamed from: io.appmetrica.analytics.impl.o4  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract /* synthetic */ class AbstractC0465o4 {
 
     /* renamed from: a  reason: collision with root package name */

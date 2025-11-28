@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Y4 {
 
     /* renamed from: a  reason: collision with root package name */

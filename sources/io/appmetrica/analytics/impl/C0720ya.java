@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* renamed from: io.appmetrica.analytics.impl.ya  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0720ya extends C0695xa {
     public C0720ya(int i, int i2) {
         this(i, new C0745za(i2));

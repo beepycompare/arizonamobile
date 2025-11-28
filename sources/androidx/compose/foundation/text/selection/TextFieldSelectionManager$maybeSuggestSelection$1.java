@@ -53,13 +53,13 @@ public final class TextFieldSelectionManager$maybeSuggestSelection$1 extends Sus
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        TextFieldValue m1825createTextFieldValueFDrldGo;
+        TextFieldValue m1826createTextFieldValueFDrldGo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = this.$platformSelectionBehaviors.mo1746suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$transformedSelection, this);
+            obj = this.$platformSelectionBehaviors.mo1747suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$transformedSelection, this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -71,14 +71,14 @@ public final class TextFieldSelectionManager$maybeSuggestSelection$1 extends Sus
         TextRange textRange = (TextRange) obj;
         if (textRange != null) {
             OffsetMapping offsetMapping = this.$offsetMapping;
-            long m7461unboximpl = textRange.m7461unboximpl();
-            long TextRange = TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextRange.m7457getStartimpl(m7461unboximpl)), offsetMapping.transformedToOriginal(TextRange.m7452getEndimpl(m7461unboximpl)));
-            if (!TextRange.m7449equalsimpl(TextRange, this.$selection) && Intrinsics.areEqual(this.this$0.getValue$foundation_release().getText(), this.$text) && this.$offsetMapping == this.this$0.getOffsetMapping$foundation_release()) {
+            long m7462unboximpl = textRange.m7462unboximpl();
+            long TextRange = TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextRange.m7458getStartimpl(m7462unboximpl)), offsetMapping.transformedToOriginal(TextRange.m7453getEndimpl(m7462unboximpl)));
+            if (!TextRange.m7450equalsimpl(TextRange, this.$selection) && Intrinsics.areEqual(this.this$0.getValue$foundation_release().getText(), this.$text) && this.$offsetMapping == this.this$0.getOffsetMapping$foundation_release()) {
                 Function1<TextFieldValue, Unit> onValueChange$foundation_release = this.this$0.getOnValueChange$foundation_release();
                 TextFieldSelectionManager textFieldSelectionManager = this.this$0;
-                m1825createTextFieldValueFDrldGo = textFieldSelectionManager.m1825createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRange);
-                onValueChange$foundation_release.invoke(m1825createTextFieldValueFDrldGo);
-                this.this$0.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m7445boximpl(TextRange));
+                m1826createTextFieldValueFDrldGo = textFieldSelectionManager.m1826createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRange);
+                onValueChange$foundation_release.invoke(m1826createTextFieldValueFDrldGo);
+                this.this$0.m1838setLatestSelectionOEnZFl4$foundation_release(TextRange.m7446boximpl(TextRange));
             }
             return Unit.INSTANCE;
         }

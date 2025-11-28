@@ -50,8 +50,8 @@ public final class AnalogTimePickerState implements TimePickerState {
 
     @Override // androidx.compose.material3.TimePickerState
     /* renamed from: getSelection-yecRtBI  reason: not valid java name */
-    public int mo1882getSelectionyecRtBI() {
-        return this.state.mo1882getSelectionyecRtBI();
+    public int mo1883getSelectionyecRtBI() {
+        return this.state.mo1883getSelectionyecRtBI();
     }
 
     @Override // androidx.compose.material3.TimePickerState
@@ -66,15 +66,15 @@ public final class AnalogTimePickerState implements TimePickerState {
 
     @Override // androidx.compose.material3.TimePickerState
     /* renamed from: setSelection-6_8s6DQ  reason: not valid java name */
-    public void mo1884setSelection6_8s6DQ(int i) {
-        this.state.mo1884setSelection6_8s6DQ(i);
+    public void mo1885setSelection6_8s6DQ(int i) {
+        this.state.mo1885setSelection6_8s6DQ(i);
     }
 
     public AnalogTimePickerState(TimePickerState timePickerState, Ref<Boolean> ref) {
         MutableState mutableStateOf$default;
         this.state = timePickerState;
         this.userOverride = ref;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7993boximpl(Dp.m7995constructorimpl(0)), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7994boximpl(Dp.m7996constructorimpl(0)), null, 2, null);
         this.currentDiameter$delegate = mutableStateOf$default;
         this.hourAngle = ((timePickerState.getHour() % 12) * 0.5235988f) - 1.5707964f;
         this.minuteAngle = (timePickerState.getMinute() * 0.10471976f) - 1.5707964f;
@@ -95,13 +95,13 @@ public final class AnalogTimePickerState implements TimePickerState {
     }
 
     /* renamed from: getCurrentDiameter-D9Ej5fM  reason: not valid java name */
-    public final float m1881getCurrentDiameterD9Ej5fM() {
-        return ((Dp) this.currentDiameter$delegate.getValue()).m8009unboximpl();
+    public final float m1882getCurrentDiameterD9Ej5fM() {
+        return ((Dp) this.currentDiameter$delegate.getValue()).m8010unboximpl();
     }
 
     /* renamed from: setCurrentDiameter-0680j_4  reason: not valid java name */
-    public final void m1883setCurrentDiameter0680j_4(float f) {
-        this.currentDiameter$delegate.setValue(Dp.m7993boximpl(f));
+    public final void m1884setCurrentDiameter0680j_4(float f) {
+        this.currentDiameter$delegate.setValue(Dp.m7994boximpl(f));
     }
 
     public final float getCurrentAngle() {
@@ -113,7 +113,7 @@ public final class AnalogTimePickerState implements TimePickerState {
         if (!isUpdated()) {
             return Unit.INSTANCE;
         }
-        if (TimePickerSelectionMode.m3251equalsimpl0(mo1882getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3255getHouryecRtBI())) {
+        if (TimePickerSelectionMode.m3252equalsimpl0(mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getHouryecRtBI())) {
             endValueForAnimation = endValueForAnimation(this.hourAngle);
         } else {
             endValueForAnimation = endValueForAnimation(this.minuteAngle);
@@ -123,16 +123,16 @@ public final class AnalogTimePickerState implements TimePickerState {
     }
 
     private final boolean isUpdated() {
-        if (TimePickerSelectionMode.m3251equalsimpl0(mo1882getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3255getHouryecRtBI()) && normalize(this.anim.getTargetValue().floatValue()) == normalize(this.hourAngle)) {
+        if (TimePickerSelectionMode.m3252equalsimpl0(mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getHouryecRtBI()) && normalize(this.anim.getTargetValue().floatValue()) == normalize(this.hourAngle)) {
             return false;
         }
-        return (TimePickerSelectionMode.m3251equalsimpl0(mo1882getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getMinuteyecRtBI()) && normalize(this.anim.getTargetValue().floatValue()) == normalize(this.minuteAngle)) ? false : true;
+        return (TimePickerSelectionMode.m3252equalsimpl0(mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3257getMinuteyecRtBI()) && normalize(this.anim.getTargetValue().floatValue()) == normalize(this.minuteAngle)) ? false : true;
     }
 
     public final IntList getClockFaceValues() {
         IntList intList;
         IntList intList2;
-        if (TimePickerSelectionMode.m3251equalsimpl0(mo1882getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getMinuteyecRtBI())) {
+        if (TimePickerSelectionMode.m3252equalsimpl0(mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3257getMinuteyecRtBI())) {
             intList2 = TimePickerKt.Minutes;
             return intList2;
         }
@@ -154,7 +154,7 @@ public final class AnalogTimePickerState implements TimePickerState {
 
     public final Object onGestureEnd(AnimationSpec<Float> animationSpec, Continuation<? super Unit> continuation) {
         float f;
-        if (TimePickerSelectionMode.m3251equalsimpl0(mo1882getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3255getHouryecRtBI())) {
+        if (TimePickerSelectionMode.m3252equalsimpl0(mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getHouryecRtBI())) {
             f = this.hourAngle;
         } else {
             f = this.minuteAngle;
@@ -185,7 +185,7 @@ public final class AnalogTimePickerState implements TimePickerState {
     public void setMinute(int i) {
         this.minuteAngle = (i * 0.10471976f) - 1.5707964f;
         this.state.setMinute(i);
-        if (TimePickerSelectionMode.m3251equalsimpl0(mo1882getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getMinuteyecRtBI())) {
+        if (TimePickerSelectionMode.m3252equalsimpl0(mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3257getMinuteyecRtBI())) {
             this.anim = AnimatableKt.Animatable$default(this.minuteAngle, 0.0f, 2, null);
         }
         updateBaseStateMinute();
@@ -213,7 +213,7 @@ public final class AnalogTimePickerState implements TimePickerState {
     public void setHour(int i) {
         this.hourAngle = ((i % 12) * 0.5235988f) - 1.5707964f;
         this.state.setHour(i);
-        if (TimePickerSelectionMode.m3251equalsimpl0(mo1882getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3255getHouryecRtBI())) {
+        if (TimePickerSelectionMode.m3252equalsimpl0(mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getHouryecRtBI())) {
             this.anim = AnimatableKt.Animatable$default(this.hourAngle, 0.0f, 2, null);
         }
     }

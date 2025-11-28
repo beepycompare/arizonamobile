@@ -2,7 +2,7 @@ package io.appmetrica.analytics.billinginterface.internal;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class Period {
 
     /* renamed from: a  reason: collision with root package name */
@@ -10,7 +10,7 @@ public class Period {
     public final int number;
     public final TimeUnit timeUnit;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public enum TimeUnit {
         TIME_UNIT_UNKNOWN,
         DAY,

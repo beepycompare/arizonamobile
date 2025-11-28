@@ -92,16 +92,16 @@ public final class HintsScreen extends SAMPUIElement {
             hintsScreenBinding.leftHint.setVisibility(0);
             hintsScreenBinding.leftHintContainerText.setText(spannable);
             Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.leftHintPerson);
+            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso.load(resourceUrl$default + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.leftHintPerson);
         } else if (position != 1) {
         } else {
             hintsScreenBinding.leftHint.setVisibility(8);
             hintsScreenBinding.rightHint.setVisibility(0);
             hintsScreenBinding.rightHintContainerText.setText(spannable);
             Picasso picasso2 = Picasso.get();
-            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso2.load(resourceUrl2 + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.rightHintPerson);
+            String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/quest_notify/" + hintInfo.getBackgroundImage()).into(hintsScreenBinding.rightHintPerson);
         }
     }
 

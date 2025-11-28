@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.plugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StackTraceItem {
 
     /* renamed from: a  reason: collision with root package name */
@@ -9,7 +9,7 @@ public class StackTraceItem {
     private final Integer d;
     private final String e;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */

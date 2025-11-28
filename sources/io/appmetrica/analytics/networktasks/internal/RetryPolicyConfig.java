@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.networktasks.internal;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RetryPolicyConfig {
     public final int exponentialMultiplier;
     public final int maxIntervalSeconds;

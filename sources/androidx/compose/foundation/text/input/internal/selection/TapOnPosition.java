@@ -7,5 +7,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface TapOnPosition {
     /* renamed from: onEvent-k-4lQ0M  reason: not valid java name */
-    void mo1625onEventk4lQ0M(long j);
+    void mo1626onEventk4lQ0M(long j);
 }

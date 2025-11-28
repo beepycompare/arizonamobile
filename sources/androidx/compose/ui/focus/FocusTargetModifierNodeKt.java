@@ -15,18 +15,18 @@ public final class FocusTargetModifierNodeKt {
     }
 
     /* renamed from: FocusTargetModifierNode-PYyLHbc$default  reason: not valid java name */
-    public static /* synthetic */ FocusTargetModifierNode m4949FocusTargetModifierNodePYyLHbc$default(int i, Function2 function2, int i2, Object obj) {
+    public static /* synthetic */ FocusTargetModifierNode m4950FocusTargetModifierNodePYyLHbc$default(int i, Function2 function2, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = Focusability.Companion.m4969getAlwaysLCbbffg();
+            i = Focusability.Companion.m4970getAlwaysLCbbffg();
         }
         if ((i2 & 2) != 0) {
             function2 = null;
         }
-        return m4948FocusTargetModifierNodePYyLHbc(i, function2);
+        return m4949FocusTargetModifierNodePYyLHbc(i, function2);
     }
 
     /* renamed from: FocusTargetModifierNode-PYyLHbc  reason: not valid java name */
-    public static final FocusTargetModifierNode m4948FocusTargetModifierNodePYyLHbc(int i, Function2<? super FocusState, ? super FocusState, Unit> function2) {
+    public static final FocusTargetModifierNode m4949FocusTargetModifierNodePYyLHbc(int i, Function2<? super FocusState, ? super FocusState, Unit> function2) {
         return new FocusTargetNode(i, function2, null, 4, null);
     }
 }

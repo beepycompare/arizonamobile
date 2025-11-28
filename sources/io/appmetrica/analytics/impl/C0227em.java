@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.em  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0227em extends T5 {
     public final H3 b;
 

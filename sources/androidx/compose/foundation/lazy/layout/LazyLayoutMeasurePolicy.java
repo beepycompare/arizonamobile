@@ -7,5 +7,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface LazyLayoutMeasurePolicy {
     /* renamed from: measure-0kLqBqw */
-    MeasureResult mo959measure0kLqBqw(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j);
+    MeasureResult mo960measure0kLqBqw(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j);
 }

@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public enum ChargeType {
     UNKNOWN(-1),
     NONE(0),

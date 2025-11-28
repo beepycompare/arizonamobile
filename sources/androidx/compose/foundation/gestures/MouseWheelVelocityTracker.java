@@ -11,13 +11,13 @@ final class MouseWheelVelocityTracker {
     private final VelocityTracker1D yVelocityTracker = new VelocityTracker1D(true);
 
     /* renamed from: addDelta-Uv8p0NA  reason: not valid java name */
-    public final void m531addDeltaUv8p0NA(long j, long j2) {
+    public final void m532addDeltaUv8p0NA(long j, long j2) {
         this.xVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 >> 32)));
         this.yVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 & 4294967295L)));
     }
 
     /* renamed from: calculateVelocity-9UxMQ8M  reason: not valid java name */
-    public final long m532calculateVelocity9UxMQ8M() {
+    public final long m533calculateVelocity9UxMQ8M() {
         return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Float.MAX_VALUE), this.yVelocityTracker.calculateVelocity(Float.MAX_VALUE));
     }
 }

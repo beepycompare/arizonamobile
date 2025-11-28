@@ -62,13 +62,9 @@ public final class RouletteAwardsAdapter extends RecyclerView.Adapter<RouletteAw
             binding.itemRarityGlow.setImageResource(R.drawable.case_roulette_rarity_4_glow);
         }
         if (z) {
-            Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "projects/arizona-rp/assets/images/donate/" + caseAward2.getUrl()).into(binding.itemIc);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/" + caseAward2.getUrl()).into(binding.itemIc);
         } else {
-            Picasso picasso2 = Picasso.get();
-            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso2.load(resourceUrl2 + "projects/rodina-rp/systems/battlepass/items/" + caseAward2.getUrl()).into(binding.itemIc);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/items/" + caseAward2.getUrl()).into(binding.itemIc);
         }
         binding.itemName.setText(caseAward2.getName());
     }

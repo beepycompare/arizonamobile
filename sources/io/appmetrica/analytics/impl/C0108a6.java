@@ -9,7 +9,7 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
 /* renamed from: io.appmetrica.analytics.impl.a6  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0108a6 extends MessageNano {
     public static volatile C0108a6[] c;
 

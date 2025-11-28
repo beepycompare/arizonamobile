@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import java.nio.charset.Charset;
 import java.util.Map;
 import kotlin.text.Charsets;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ne implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.screenshot.impl;
 import android.app.Activity;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class f0 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */

@@ -59,8 +59,8 @@ public final class HandwritingDetectorNode extends DelegatingNode implements Poi
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.pointerInputNode.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo238onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.pointerInputNode.mo238onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -81,7 +81,7 @@ public final class HandwritingDetectorNode extends DelegatingNode implements Poi
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: getTouchBoundsExpansion-RZrCHBk  reason: not valid java name */
-    public long mo1431getTouchBoundsExpansionRZrCHBk() {
-        return this.pointerInputNode.mo1431getTouchBoundsExpansionRZrCHBk();
+    public long mo1432getTouchBoundsExpansionRZrCHBk() {
+        return this.pointerInputNode.mo1432getTouchBoundsExpansionRZrCHBk();
     }
 }

@@ -48,13 +48,13 @@ public final class LazySemanticsKt {
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
                 public int getViewport() {
-                    long mo1005getViewportSizeYbymL2g;
+                    long mo1006getViewportSizeYbymL2g;
                     if (LazyGridState.this.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-                        mo1005getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1005getViewportSizeYbymL2g() & 4294967295L;
+                        mo1006getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1006getViewportSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo1005getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1005getViewportSizeYbymL2g() >> 32;
+                        mo1006getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1006getViewportSizeYbymL2g() >> 32;
                     }
-                    return (int) mo1005getViewportSizeYbymL2g;
+                    return (int) mo1006getViewportSizeYbymL2g;
                 }
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

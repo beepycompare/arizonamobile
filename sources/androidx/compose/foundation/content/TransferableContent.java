@@ -39,7 +39,7 @@ public final class TransferableContent {
     }
 
     /* renamed from: getSource-kB6V9T0  reason: not valid java name */
-    public final int m373getSourcekB6V9T0() {
+    public final int m374getSourcekB6V9T0() {
         return this.source;
     }
 
@@ -54,45 +54,45 @@ public final class TransferableContent {
     public static final class Source {
         private final int value;
         public static final Companion Companion = new Companion(null);
-        private static final int Keyboard = m375constructorimpl(0);
-        private static final int DragAndDrop = m375constructorimpl(1);
-        private static final int Clipboard = m375constructorimpl(2);
+        private static final int Keyboard = m376constructorimpl(0);
+        private static final int DragAndDrop = m376constructorimpl(1);
+        private static final int Clipboard = m376constructorimpl(2);
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Source m374boximpl(int i) {
+        public static final /* synthetic */ Source m375boximpl(int i) {
             return new Source(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m375constructorimpl(int i) {
+        public static int m376constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m376equalsimpl(int i, Object obj) {
-            return (obj instanceof Source) && i == ((Source) obj).m380unboximpl();
+        public static boolean m377equalsimpl(int i, Object obj) {
+            return (obj instanceof Source) && i == ((Source) obj).m381unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m377equalsimpl0(int i, int i2) {
+        public static final boolean m378equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m378hashCodeimpl(int i) {
+        public static int m379hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m376equalsimpl(this.value, obj);
+            return m377equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m378hashCodeimpl(this.value);
+            return m379hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m380unboximpl() {
+        public final /* synthetic */ int m381unboximpl() {
             return this.value;
         }
 
@@ -112,28 +112,28 @@ public final class TransferableContent {
             }
 
             /* renamed from: getKeyboard-kB6V9T0  reason: not valid java name */
-            public final int m383getKeyboardkB6V9T0() {
+            public final int m384getKeyboardkB6V9T0() {
                 return Source.Keyboard;
             }
 
             /* renamed from: getDragAndDrop-kB6V9T0  reason: not valid java name */
-            public final int m382getDragAndDropkB6V9T0() {
+            public final int m383getDragAndDropkB6V9T0() {
                 return Source.DragAndDrop;
             }
 
             /* renamed from: getClipboard-kB6V9T0  reason: not valid java name */
-            public final int m381getClipboardkB6V9T0() {
+            public final int m382getClipboardkB6V9T0() {
                 return Source.Clipboard;
             }
         }
 
         public String toString() {
-            return m379toStringimpl(this.value);
+            return m380toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m379toStringimpl(int i) {
-            return m377equalsimpl0(i, Keyboard) ? "Source.Keyboard" : m377equalsimpl0(i, DragAndDrop) ? "Source.DragAndDrop" : m377equalsimpl0(i, Clipboard) ? "Source.Clipboard" : "Invalid (" + i + ')';
+        public static String m380toStringimpl(int i) {
+            return m378equalsimpl0(i, Keyboard) ? "Source.Keyboard" : m378equalsimpl0(i, DragAndDrop) ? "Source.DragAndDrop" : m378equalsimpl0(i, Clipboard) ? "Source.Clipboard" : "Invalid (" + i + ')';
         }
     }
 }

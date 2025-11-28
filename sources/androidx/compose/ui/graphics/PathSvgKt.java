@@ -69,7 +69,7 @@ public final class PathSvgKt {
         PathSegment.Type type = PathSegment.Type.Done;
         if (it.hasNext()) {
             if (z) {
-                if (PathFillType.m5569equalsimpl0(path.mo5168getFillTypeRgk1Os(), PathFillType.Companion.m5573getEvenOddRgk1Os())) {
+                if (PathFillType.m5570equalsimpl0(path.mo5169getFillTypeRgk1Os(), PathFillType.Companion.m5574getEvenOddRgk1Os())) {
                     sb.append("  <path fill-rule=\"evenodd\" d=\"");
                 } else {
                     sb.append("  <path d=\"");

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ee implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

@@ -44,7 +44,7 @@ final class TransformableStateKt$rotateBy$2 extends SuspendLambda implements Fun
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        ((TransformScope) this.L$0).mo474transformByd4ec7I(1.0f, Offset.Companion.m5051getZeroF1C5BW0(), this.$degrees);
+        ((TransformScope) this.L$0).mo475transformByd4ec7I(1.0f, Offset.Companion.m5052getZeroF1C5BW0(), this.$degrees);
         return Unit.INSTANCE;
     }
 }

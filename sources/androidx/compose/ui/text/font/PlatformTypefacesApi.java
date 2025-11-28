@@ -12,47 +12,47 @@ import kotlin.jvm.internal.Intrinsics;
 public final class PlatformTypefacesApi implements PlatformTypefaces {
     @Override // androidx.compose.ui.text.font.PlatformTypefaces
     /* renamed from: createDefault-FO1MlWM */
-    public android.graphics.Typeface mo7598createDefaultFO1MlWM(FontWeight fontWeight, int i) {
-        return m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg(null, fontWeight, i);
+    public android.graphics.Typeface mo7599createDefaultFO1MlWM(FontWeight fontWeight, int i) {
+        return m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg(null, fontWeight, i);
     }
 
     @Override // androidx.compose.ui.text.font.PlatformTypefaces
     /* renamed from: createNamed-RetOiIg */
-    public android.graphics.Typeface mo7599createNamedRetOiIg(GenericFontFamily genericFontFamily, FontWeight fontWeight, int i) {
-        android.graphics.Typeface m7603loadNamedFromTypefaceCacheOrNullRetOiIg = m7603loadNamedFromTypefaceCacheOrNullRetOiIg(PlatformTypefaces_androidKt.getWeightSuffixForFallbackFamilyName(genericFontFamily.getName(), fontWeight), fontWeight, i);
-        return m7603loadNamedFromTypefaceCacheOrNullRetOiIg == null ? m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg(genericFontFamily.getName(), fontWeight, i) : m7603loadNamedFromTypefaceCacheOrNullRetOiIg;
+    public android.graphics.Typeface mo7600createNamedRetOiIg(GenericFontFamily genericFontFamily, FontWeight fontWeight, int i) {
+        android.graphics.Typeface m7604loadNamedFromTypefaceCacheOrNullRetOiIg = m7604loadNamedFromTypefaceCacheOrNullRetOiIg(PlatformTypefaces_androidKt.getWeightSuffixForFallbackFamilyName(genericFontFamily.getName(), fontWeight), fontWeight, i);
+        return m7604loadNamedFromTypefaceCacheOrNullRetOiIg == null ? m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg(genericFontFamily.getName(), fontWeight, i) : m7604loadNamedFromTypefaceCacheOrNullRetOiIg;
     }
 
     @Override // androidx.compose.ui.text.font.PlatformTypefaces
     /* renamed from: optionalOnDeviceFontFamilyByName-78DK7lM */
-    public android.graphics.Typeface mo7600optionalOnDeviceFontFamilyByName78DK7lM(String str, FontWeight fontWeight, int i, FontVariation.Settings settings, Context context) {
-        android.graphics.Typeface mo7599createNamedRetOiIg;
+    public android.graphics.Typeface mo7601optionalOnDeviceFontFamilyByName78DK7lM(String str, FontWeight fontWeight, int i, FontVariation.Settings settings, Context context) {
+        android.graphics.Typeface mo7600createNamedRetOiIg;
         if (Intrinsics.areEqual(str, FontFamily.Companion.getSansSerif().getName())) {
-            mo7599createNamedRetOiIg = mo7599createNamedRetOiIg(FontFamily.Companion.getSansSerif(), fontWeight, i);
+            mo7600createNamedRetOiIg = mo7600createNamedRetOiIg(FontFamily.Companion.getSansSerif(), fontWeight, i);
         } else if (Intrinsics.areEqual(str, FontFamily.Companion.getSerif().getName())) {
-            mo7599createNamedRetOiIg = mo7599createNamedRetOiIg(FontFamily.Companion.getSerif(), fontWeight, i);
+            mo7600createNamedRetOiIg = mo7600createNamedRetOiIg(FontFamily.Companion.getSerif(), fontWeight, i);
         } else if (Intrinsics.areEqual(str, FontFamily.Companion.getMonospace().getName())) {
-            mo7599createNamedRetOiIg = mo7599createNamedRetOiIg(FontFamily.Companion.getMonospace(), fontWeight, i);
+            mo7600createNamedRetOiIg = mo7600createNamedRetOiIg(FontFamily.Companion.getMonospace(), fontWeight, i);
         } else {
-            mo7599createNamedRetOiIg = Intrinsics.areEqual(str, FontFamily.Companion.getCursive().getName()) ? mo7599createNamedRetOiIg(FontFamily.Companion.getCursive(), fontWeight, i) : m7603loadNamedFromTypefaceCacheOrNullRetOiIg(str, fontWeight, i);
+            mo7600createNamedRetOiIg = Intrinsics.areEqual(str, FontFamily.Companion.getCursive().getName()) ? mo7600createNamedRetOiIg(FontFamily.Companion.getCursive(), fontWeight, i) : m7604loadNamedFromTypefaceCacheOrNullRetOiIg(str, fontWeight, i);
         }
-        return PlatformTypefaces_androidKt.setFontVariationSettings(mo7599createNamedRetOiIg, settings, context);
+        return PlatformTypefaces_androidKt.setFontVariationSettings(mo7600createNamedRetOiIg, settings, context);
     }
 
     /* renamed from: loadNamedFromTypefaceCacheOrNull-RetOiIg  reason: not valid java name */
-    private final android.graphics.Typeface m7603loadNamedFromTypefaceCacheOrNullRetOiIg(String str, FontWeight fontWeight, int i) {
+    private final android.graphics.Typeface m7604loadNamedFromTypefaceCacheOrNullRetOiIg(String str, FontWeight fontWeight, int i) {
         if (str.length() == 0) {
             return null;
         }
-        android.graphics.Typeface m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg = m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg(str, fontWeight, i);
-        if (Intrinsics.areEqual(m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg, android.graphics.Typeface.create(android.graphics.Typeface.DEFAULT, AndroidFontUtils_androidKt.m7521getAndroidTypefaceStyleFO1MlWM(fontWeight, i))) || Intrinsics.areEqual(m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg, m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg(null, fontWeight, i))) {
+        android.graphics.Typeface m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg = m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg(str, fontWeight, i);
+        if (Intrinsics.areEqual(m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg, android.graphics.Typeface.create(android.graphics.Typeface.DEFAULT, AndroidFontUtils_androidKt.m7522getAndroidTypefaceStyleFO1MlWM(fontWeight, i))) || Intrinsics.areEqual(m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg, m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg(null, fontWeight, i))) {
             return null;
         }
-        return m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg;
+        return m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg;
     }
 
     /* renamed from: createAndroidTypefaceUsingTypefaceStyle-RetOiIg$default  reason: not valid java name */
-    static /* synthetic */ android.graphics.Typeface m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg$default(PlatformTypefacesApi platformTypefacesApi, String str, FontWeight fontWeight, int i, int i2, Object obj) {
+    static /* synthetic */ android.graphics.Typeface m7603createAndroidTypefaceUsingTypefaceStyleRetOiIg$default(PlatformTypefacesApi platformTypefacesApi, String str, FontWeight fontWeight, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             str = null;
         }
@@ -60,22 +60,22 @@ public final class PlatformTypefacesApi implements PlatformTypefaces {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i2 & 4) != 0) {
-            i = FontStyle.Companion.m7577getNormal_LCdwA();
+            i = FontStyle.Companion.m7578getNormal_LCdwA();
         }
-        return platformTypefacesApi.m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg(str, fontWeight, i);
+        return platformTypefacesApi.m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg(str, fontWeight, i);
     }
 
     /* renamed from: createAndroidTypefaceUsingTypefaceStyle-RetOiIg  reason: not valid java name */
-    private final android.graphics.Typeface m7601createAndroidTypefaceUsingTypefaceStyleRetOiIg(String str, FontWeight fontWeight, int i) {
+    private final android.graphics.Typeface m7602createAndroidTypefaceUsingTypefaceStyleRetOiIg(String str, FontWeight fontWeight, int i) {
         String str2;
-        if (FontStyle.m7570equalsimpl0(i, FontStyle.Companion.m7577getNormal_LCdwA()) && Intrinsics.areEqual(fontWeight, FontWeight.Companion.getNormal()) && ((str2 = str) == null || str2.length() == 0)) {
+        if (FontStyle.m7571equalsimpl0(i, FontStyle.Companion.m7578getNormal_LCdwA()) && Intrinsics.areEqual(fontWeight, FontWeight.Companion.getNormal()) && ((str2 = str) == null || str2.length() == 0)) {
             return android.graphics.Typeface.DEFAULT;
         }
-        int m7521getAndroidTypefaceStyleFO1MlWM = AndroidFontUtils_androidKt.m7521getAndroidTypefaceStyleFO1MlWM(fontWeight, i);
+        int m7522getAndroidTypefaceStyleFO1MlWM = AndroidFontUtils_androidKt.m7522getAndroidTypefaceStyleFO1MlWM(fontWeight, i);
         String str3 = str;
         if (str3 == null || str3.length() == 0) {
-            return android.graphics.Typeface.defaultFromStyle(m7521getAndroidTypefaceStyleFO1MlWM);
+            return android.graphics.Typeface.defaultFromStyle(m7522getAndroidTypefaceStyleFO1MlWM);
         }
-        return android.graphics.Typeface.create(str, m7521getAndroidTypefaceStyleFO1MlWM);
+        return android.graphics.Typeface.create(str, m7522getAndroidTypefaceStyleFO1MlWM);
     }
 }

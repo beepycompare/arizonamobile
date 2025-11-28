@@ -11,47 +11,47 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class PointerType {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unknown = m6638constructorimpl(0);
-    private static final int Touch = m6638constructorimpl(1);
-    private static final int Mouse = m6638constructorimpl(2);
-    private static final int Stylus = m6638constructorimpl(3);
-    private static final int Eraser = m6638constructorimpl(4);
+    private static final int Unknown = m6639constructorimpl(0);
+    private static final int Touch = m6639constructorimpl(1);
+    private static final int Mouse = m6639constructorimpl(2);
+    private static final int Stylus = m6639constructorimpl(3);
+    private static final int Eraser = m6639constructorimpl(4);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PointerType m6637boximpl(int i) {
+    public static final /* synthetic */ PointerType m6638boximpl(int i) {
         return new PointerType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6638constructorimpl(int i) {
+    private static int m6639constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6639equalsimpl(int i, Object obj) {
-        return (obj instanceof PointerType) && i == ((PointerType) obj).m6643unboximpl();
+    public static boolean m6640equalsimpl(int i, Object obj) {
+        return (obj instanceof PointerType) && i == ((PointerType) obj).m6644unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6640equalsimpl0(int i, int i2) {
+    public static final boolean m6641equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6641hashCodeimpl(int i) {
+    public static int m6642hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6639equalsimpl(this.value, obj);
+        return m6640equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6641hashCodeimpl(this.value);
+        return m6642hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6643unboximpl() {
+    public final /* synthetic */ int m6644unboximpl() {
         return this.value;
     }
 
@@ -60,11 +60,11 @@ public final class PointerType {
     }
 
     public String toString() {
-        return m6642toStringimpl(this.value);
+        return m6643toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6642toStringimpl(int i) {
+    public static String m6643toStringimpl(int i) {
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -92,27 +92,27 @@ public final class PointerType {
         }
 
         /* renamed from: getUnknown-T8wyACA  reason: not valid java name */
-        public final int m6648getUnknownT8wyACA() {
+        public final int m6649getUnknownT8wyACA() {
             return PointerType.Unknown;
         }
 
         /* renamed from: getTouch-T8wyACA  reason: not valid java name */
-        public final int m6647getTouchT8wyACA() {
+        public final int m6648getTouchT8wyACA() {
             return PointerType.Touch;
         }
 
         /* renamed from: getMouse-T8wyACA  reason: not valid java name */
-        public final int m6645getMouseT8wyACA() {
+        public final int m6646getMouseT8wyACA() {
             return PointerType.Mouse;
         }
 
         /* renamed from: getStylus-T8wyACA  reason: not valid java name */
-        public final int m6646getStylusT8wyACA() {
+        public final int m6647getStylusT8wyACA() {
             return PointerType.Stylus;
         }
 
         /* renamed from: getEraser-T8wyACA  reason: not valid java name */
-        public final int m6644getEraserT8wyACA() {
+        public final int m6645getEraserT8wyACA() {
             return PointerType.Eraser;
         }
     }

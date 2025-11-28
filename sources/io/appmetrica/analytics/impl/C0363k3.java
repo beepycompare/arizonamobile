@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.util.Base64;
 /* renamed from: io.appmetrica.analytics.impl.k3  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0363k3 implements vo {
 
     /* renamed from: a  reason: collision with root package name */

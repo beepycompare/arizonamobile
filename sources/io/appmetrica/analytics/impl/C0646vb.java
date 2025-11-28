@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import com.google.firebase.messaging.ServiceStarter;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* renamed from: io.appmetrica.analytics.impl.vb  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0646vb {
 
     /* renamed from: a  reason: collision with root package name */

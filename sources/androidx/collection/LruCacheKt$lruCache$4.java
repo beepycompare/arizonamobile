@@ -37,8 +37,9 @@ public final class LruCacheKt$lruCache$4<K, V> extends LruCache<K, V> {
         return this.$create.invoke(key);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.collection.LruCache
-    protected void entryRemoved(boolean z, K key, V oldValue, V v) {
+    public void entryRemoved(boolean z, K key, V oldValue, V v) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(oldValue, "oldValue");
         this.$onEntryRemoved.invoke(Boolean.valueOf(z), key, oldValue, v);

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class L2 implements ModulePreferences {
 
     /* renamed from: a  reason: collision with root package name */

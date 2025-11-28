@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Jm {
     public static HashMap b(Map map) {
         HashMap hashMap = new HashMap();

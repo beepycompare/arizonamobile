@@ -231,7 +231,7 @@ public interface Modifier {
         }
 
         /* renamed from: isKind-H91voCI$ui_release  reason: not valid java name */
-        public final boolean m4770isKindH91voCI$ui_release(int i) {
+        public final boolean m4771isKindH91voCI$ui_release(int i) {
             return (i & getKindSet$ui_release()) != 0;
         }
 

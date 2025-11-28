@@ -8,10 +8,10 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface BaselineAnchorable {
     /* renamed from: linkTo-VpY3zN4  reason: not valid java name */
-    void mo8257linkToVpY3zN4(ConstraintLayoutBaseScope.BaselineAnchor baselineAnchor, float f, float f2);
+    void mo8258linkToVpY3zN4(ConstraintLayoutBaseScope.BaselineAnchor baselineAnchor, float f, float f2);
 
     /* renamed from: linkTo-VpY3zN4  reason: not valid java name */
-    void mo8258linkToVpY3zN4(ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, float f, float f2);
+    void mo8259linkToVpY3zN4(ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, float f, float f2);
 
     /* compiled from: ConstraintScopeCommon.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
@@ -20,30 +20,30 @@ public interface BaselineAnchorable {
     }
 
     /* renamed from: linkTo-VpY3zN4$default  reason: not valid java name */
-    static /* synthetic */ void m8255linkToVpY3zN4$default(BaselineAnchorable baselineAnchorable, ConstraintLayoutBaseScope.BaselineAnchor baselineAnchor, float f, float f2, int i, Object obj) {
+    static /* synthetic */ void m8256linkToVpY3zN4$default(BaselineAnchorable baselineAnchorable, ConstraintLayoutBaseScope.BaselineAnchor baselineAnchor, float f, float f2, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: linkTo-VpY3zN4");
         }
         if ((i & 2) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
-        baselineAnchorable.mo8257linkToVpY3zN4(baselineAnchor, f, f2);
+        baselineAnchorable.mo8258linkToVpY3zN4(baselineAnchor, f, f2);
     }
 
     /* renamed from: linkTo-VpY3zN4$default  reason: not valid java name */
-    static /* synthetic */ void m8256linkToVpY3zN4$default(BaselineAnchorable baselineAnchorable, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, float f, float f2, int i, Object obj) {
+    static /* synthetic */ void m8257linkToVpY3zN4$default(BaselineAnchorable baselineAnchorable, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, float f, float f2, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: linkTo-VpY3zN4");
         }
         if ((i & 2) != 0) {
-            f = Dp.m7995constructorimpl(0);
+            f = Dp.m7996constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7995constructorimpl(0);
+            f2 = Dp.m7996constructorimpl(0);
         }
-        baselineAnchorable.mo8258linkToVpY3zN4(horizontalAnchor, f, f2);
+        baselineAnchorable.mo8259linkToVpY3zN4(horizontalAnchor, f, f2);
     }
 }

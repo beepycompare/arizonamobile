@@ -28,6 +28,6 @@ public final class DragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancell
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorCopyKt.m3517awaitHorizontalPointerSlopOrCancellationgDDlDlE(null, 0L, 0, null, this);
+        return DragGestureDetectorCopyKt.m3518awaitHorizontalPointerSlopOrCancellationgDDlDlE(null, 0L, 0, null, this);
     }
 }

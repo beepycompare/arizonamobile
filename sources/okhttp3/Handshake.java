@@ -88,19 +88,19 @@ public final class Handshake {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "tlsVersion", imports = {}))
     /* renamed from: -deprecated_tlsVersion  reason: not valid java name */
-    public final TlsVersion m11652deprecated_tlsVersion() {
+    public final TlsVersion m11710deprecated_tlsVersion() {
         return this.tlsVersion;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cipherSuite", imports = {}))
     /* renamed from: -deprecated_cipherSuite  reason: not valid java name */
-    public final CipherSuite m11647deprecated_cipherSuite() {
+    public final CipherSuite m11705deprecated_cipherSuite() {
         return this.cipherSuite;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "peerCertificates", imports = {}))
     /* renamed from: -deprecated_peerCertificates  reason: not valid java name */
-    public final List<Certificate> m11650deprecated_peerCertificates() {
+    public final List<Certificate> m11708deprecated_peerCertificates() {
         return peerCertificates();
     }
 
@@ -112,13 +112,13 @@ public final class Handshake {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "peerPrincipal", imports = {}))
     /* renamed from: -deprecated_peerPrincipal  reason: not valid java name */
-    public final Principal m11651deprecated_peerPrincipal() {
+    public final Principal m11709deprecated_peerPrincipal() {
         return peerPrincipal();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "localCertificates", imports = {}))
     /* renamed from: -deprecated_localCertificates  reason: not valid java name */
-    public final List<Certificate> m11648deprecated_localCertificates() {
+    public final List<Certificate> m11706deprecated_localCertificates() {
         return this.localCertificates;
     }
 
@@ -130,7 +130,7 @@ public final class Handshake {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "localPrincipal", imports = {}))
     /* renamed from: -deprecated_localPrincipal  reason: not valid java name */
-    public final Principal m11649deprecated_localPrincipal() {
+    public final Principal m11707deprecated_localPrincipal() {
         return localPrincipal();
     }
 
@@ -228,7 +228,7 @@ public final class Handshake {
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "sslSession.handshake()", imports = {}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final Handshake m11654deprecated_get(SSLSession sslSession) throws IOException {
+        public final Handshake m11712deprecated_get(SSLSession sslSession) throws IOException {
             Intrinsics.checkNotNullParameter(sslSession, "sslSession");
             return get(sslSession);
         }

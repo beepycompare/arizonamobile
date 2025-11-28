@@ -4,7 +4,7 @@ import io.appmetrica.analytics.billinginterface.internal.BillingInfo;
 import io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class k implements BillingInfoStorage {
 
     /* renamed from: a  reason: collision with root package name */

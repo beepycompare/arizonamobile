@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.os.Bundle;
 import android.os.ResultReceiver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ei extends H4 {
     public Ei(E4 e4) {
         super(e4);

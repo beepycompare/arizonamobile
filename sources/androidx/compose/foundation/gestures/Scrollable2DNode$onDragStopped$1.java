@@ -46,7 +46,7 @@ final class Scrollable2DNode$onDragStopped$1 extends SuspendLambda implements Fu
             ResultKt.throwOnFailure(obj);
             scrollingLogic2D = this.this$0.scrollingLogic;
             this.label = 1;
-            if (scrollingLogic2D.m602onScrollStoppedsFctU(this.$velocity, this) == coroutine_suspended) {
+            if (scrollingLogic2D.m603onScrollStoppedsFctU(this.$velocity, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

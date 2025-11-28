@@ -16,10 +16,10 @@ interface SideCalculator {
     Insets adjustInsets(Insets insets, int i);
 
     /* renamed from: consumedOffsets-MK-Hz9U  reason: not valid java name */
-    long mo875consumedOffsetsMKHz9U(long j);
+    long mo876consumedOffsetsMKHz9U(long j);
 
     /* renamed from: consumedVelocity-QWom1Mo  reason: not valid java name */
-    long mo876consumedVelocityQWom1Mo(long j, float f);
+    long mo877consumedVelocityQWom1Mo(long j, float f);
 
     float motionOf(float f, float f2);
 
@@ -56,14 +56,14 @@ interface SideCalculator {
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
-            public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(Velocity.m8233getXimpl(j) - f, 0.0f);
+            public long mo877consumedVelocityQWom1Mo(long j, float f) {
+                return VelocityKt.Velocity(Velocity.m8234getXimpl(j) - f, 0.0f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
-            public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            public long mo876consumedOffsetsMKHz9U(long j) {
+                return Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
             }
         };
         private static final SideCalculator$Companion$TopSideCalculator$1 TopSideCalculator = new SideCalculator() { // from class: androidx.compose.foundation.layout.SideCalculator$Companion$TopSideCalculator$1
@@ -84,14 +84,14 @@ interface SideCalculator {
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
-            public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(0.0f, Velocity.m8234getYimpl(j) - f);
+            public long mo877consumedVelocityQWom1Mo(long j, float f) {
+                return VelocityKt.Velocity(0.0f, Velocity.m8235getYimpl(j) - f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
-            public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+            public long mo876consumedOffsetsMKHz9U(long j) {
+                return Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
             }
         };
         private static final SideCalculator$Companion$RightSideCalculator$1 RightSideCalculator = new SideCalculator() { // from class: androidx.compose.foundation.layout.SideCalculator$Companion$RightSideCalculator$1
@@ -112,14 +112,14 @@ interface SideCalculator {
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
-            public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(Velocity.m8233getXimpl(j) + f, 0.0f);
+            public long mo877consumedVelocityQWom1Mo(long j, float f) {
+                return VelocityKt.Velocity(Velocity.m8234getXimpl(j) + f, 0.0f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
-            public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            public long mo876consumedOffsetsMKHz9U(long j) {
+                return Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
             }
         };
         private static final SideCalculator$Companion$BottomSideCalculator$1 BottomSideCalculator = new SideCalculator() { // from class: androidx.compose.foundation.layout.SideCalculator$Companion$BottomSideCalculator$1
@@ -140,14 +140,14 @@ interface SideCalculator {
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedVelocity-QWom1Mo */
-            public long mo876consumedVelocityQWom1Mo(long j, float f) {
-                return VelocityKt.Velocity(0.0f, Velocity.m8234getYimpl(j) + f);
+            public long mo877consumedVelocityQWom1Mo(long j, float f) {
+                return VelocityKt.Velocity(0.0f, Velocity.m8235getYimpl(j) + f);
             }
 
             @Override // androidx.compose.foundation.layout.SideCalculator
             /* renamed from: consumedOffsets-MK-Hz9U */
-            public long mo875consumedOffsetsMKHz9U(long j) {
-                return Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+            public long mo876consumedOffsetsMKHz9U(long j) {
+                return Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
             }
         };
 
@@ -155,25 +155,25 @@ interface SideCalculator {
         }
 
         /* renamed from: chooseCalculator-ni1skBw  reason: not valid java name */
-        public final SideCalculator m877chooseCalculatorni1skBw(int i, LayoutDirection layoutDirection) {
-            if (WindowInsetsSides.m933equalsimpl0(i, WindowInsetsSides.Companion.m947getLeftJoeWqyM())) {
+        public final SideCalculator m878chooseCalculatorni1skBw(int i, LayoutDirection layoutDirection) {
+            if (WindowInsetsSides.m934equalsimpl0(i, WindowInsetsSides.Companion.m948getLeftJoeWqyM())) {
                 return LeftSideCalculator;
             }
-            if (WindowInsetsSides.m933equalsimpl0(i, WindowInsetsSides.Companion.m950getTopJoeWqyM())) {
+            if (WindowInsetsSides.m934equalsimpl0(i, WindowInsetsSides.Companion.m951getTopJoeWqyM())) {
                 return TopSideCalculator;
             }
-            if (WindowInsetsSides.m933equalsimpl0(i, WindowInsetsSides.Companion.m948getRightJoeWqyM())) {
+            if (WindowInsetsSides.m934equalsimpl0(i, WindowInsetsSides.Companion.m949getRightJoeWqyM())) {
                 return RightSideCalculator;
             }
-            if (WindowInsetsSides.m933equalsimpl0(i, WindowInsetsSides.Companion.m944getBottomJoeWqyM())) {
+            if (WindowInsetsSides.m934equalsimpl0(i, WindowInsetsSides.Companion.m945getBottomJoeWqyM())) {
                 return BottomSideCalculator;
             }
-            if (WindowInsetsSides.m933equalsimpl0(i, WindowInsetsSides.Companion.m949getStartJoeWqyM())) {
+            if (WindowInsetsSides.m934equalsimpl0(i, WindowInsetsSides.Companion.m950getStartJoeWqyM())) {
                 if (layoutDirection == LayoutDirection.Ltr) {
                     return LeftSideCalculator;
                 }
                 return RightSideCalculator;
-            } else if (WindowInsetsSides.m933equalsimpl0(i, WindowInsetsSides.Companion.m945getEndJoeWqyM())) {
+            } else if (WindowInsetsSides.m934equalsimpl0(i, WindowInsetsSides.Companion.m946getEndJoeWqyM())) {
                 if (layoutDirection == LayoutDirection.Ltr) {
                     return RightSideCalculator;
                 }

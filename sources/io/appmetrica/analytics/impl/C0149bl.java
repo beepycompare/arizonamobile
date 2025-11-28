@@ -4,7 +4,7 @@ import android.app.Activity;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
 /* renamed from: io.appmetrica.analytics.impl.bl  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0149bl {
 
     /* renamed from: a  reason: collision with root package name */

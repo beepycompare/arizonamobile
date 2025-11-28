@@ -37,12 +37,12 @@ public final class ComposableSingletons$RepairGameDialogKt {
     });
 
     /* renamed from: getLambda$-1796529959$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9722getLambda$1796529959$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9780getLambda$1796529959$dialogs_release() {
         return f57lambda$1796529959;
     }
 
     /* renamed from: getLambda$-277375600$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9723getLambda$277375600$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9781getLambda$277375600$dialogs_release() {
         return f58lambda$277375600;
     }
 
@@ -56,7 +56,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1796529959, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt.lambda$-1796529959.<anonymous> (RepairGameDialog.kt:75)");
             }
-            TextKt.m3168TextNvy7gAk("НЕТ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3169TextNvy7gAk("НЕТ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -74,7 +74,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-277375600, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt.lambda$-277375600.<anonymous> (RepairGameDialog.kt:81)");
             }
-            TextKt.m3168TextNvy7gAk("ДА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3169TextNvy7gAk("ДА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

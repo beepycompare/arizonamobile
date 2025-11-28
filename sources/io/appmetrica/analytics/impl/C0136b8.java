@@ -1,6 +1,6 @@
 package io.appmetrica.analytics.impl;
 /* renamed from: io.appmetrica.analytics.impl.b8  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0136b8 implements L8 {
     @Override // io.appmetrica.analytics.impl.L8
     public final byte[] a(byte[] bArr) {

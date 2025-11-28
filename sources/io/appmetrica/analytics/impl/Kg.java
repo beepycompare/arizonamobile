@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Kg extends AbstractC0159c5 {
     public Kg(Em em) {
         super(em);

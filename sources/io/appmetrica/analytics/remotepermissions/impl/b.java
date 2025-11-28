@@ -2,7 +2,7 @@ package io.appmetrica.analytics.remotepermissions.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class b implements Converter {
 
     /* renamed from: a  reason: collision with root package name */

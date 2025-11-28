@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class R3 implements ProcessDetector {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector
     public final boolean isMainProcess() {

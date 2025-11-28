@@ -15,7 +15,7 @@ public final class TextFieldDecoratorModifierNode$keyboardActionScope$1 implemen
 
     @Override // androidx.compose.foundation.text.KeyboardActionScope
     /* renamed from: defaultKeyboardAction-KlQnJC8 */
-    public void mo1270defaultKeyboardActionKlQnJC8(int i) {
-        this.this$0.m1563defaultKeyboardActionWithResultKlQnJC8(i);
+    public void mo1271defaultKeyboardActionKlQnJC8(int i) {
+        this.this$0.m1564defaultKeyboardActionWithResultKlQnJC8(i);
     }
 }

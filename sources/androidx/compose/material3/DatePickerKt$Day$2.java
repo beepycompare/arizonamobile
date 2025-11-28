@@ -61,7 +61,7 @@ public final class DatePickerKt$Day$2 implements Function2<Composer, Integer, Un
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1126347158, i, -1, "androidx.compose.material3.Day.<anonymous> (DatePicker.kt:2032)");
         }
-        Modifier m888requiredSizeVpY3zN4 = SizeKt.m888requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3845getDateContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3844getDateContainerHeightD9Ej5fM());
+        Modifier m889requiredSizeVpY3zN4 = SizeKt.m889requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3846getDateContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3845getDateContainerHeightD9Ej5fM());
         Alignment center = Alignment.Companion.getCenter();
         String str = this.$text;
         DatePickerColors datePickerColors = this.$colors;
@@ -74,7 +74,7 @@ public final class DatePickerKt$Day$2 implements Function2<Composer, Integer, Un
         ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
-        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m888requiredSizeVpY3zN4);
+        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m889requiredSizeVpY3zN4);
         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
         ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
         if (!(composer.getApplier() instanceof Applier)) {
@@ -86,15 +86,15 @@ public final class DatePickerKt$Day$2 implements Function2<Composer, Integer, Un
         } else {
             composer.useNode();
         }
-        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-        Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 781235302, "C2043@93376L2,2046@93456L230,2040@93221L557:DatePicker.kt#uh7d8r");
@@ -113,7 +113,7 @@ public final class DatePickerKt$Day$2 implements Function2<Composer, Integer, Un
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3168TextNvy7gAk(str, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue), datePickerColors.dayContentColor$material3(z, z2, z3, z4, composer, 0).getValue().m5289unboximpl(), null, 0L, null, null, null, 0L, null, TextAlign.m7872boximpl(TextAlign.Companion.m7879getCentere0LSkKk()), 0L, 0, false, 0, 0, null, null, composer, 0, 0, 261112);
+        TextKt.m3169TextNvy7gAk(str, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue), datePickerColors.dayContentColor$material3(z, z2, z3, z4, composer, 0).getValue().m5290unboximpl(), null, 0L, null, null, null, 0L, null, TextAlign.m7873boximpl(TextAlign.Companion.m7880getCentere0LSkKk()), 0L, 0, false, 0, 0, null, null, composer, 0, 0, 261112);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         composer.endNode();

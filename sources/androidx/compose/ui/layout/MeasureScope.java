@@ -29,50 +29,50 @@ public interface MeasureScope extends IntrinsicMeasureScope {
 
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m6740roundToPxR2X_6o(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo422roundToPxR2X_6o(j);
+        public static int m6741roundToPxR2X_6o(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo423roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m6741roundToPx0680j_4(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo423roundToPx0680j_4(f);
+        public static int m6742roundToPx0680j_4(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo424roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m6742toDpGaN1DYA(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo424toDpGaN1DYA(j);
+        public static float m6743toDpGaN1DYA(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo425toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m6743toDpu2uoSUM(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo425toDpu2uoSUM(f);
+        public static float m6744toDpu2uoSUM(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo426toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m6744toDpu2uoSUM(MeasureScope measureScope, int i) {
-            return MeasureScope.super.mo426toDpu2uoSUM(i);
+        public static float m6745toDpu2uoSUM(MeasureScope measureScope, int i) {
+            return MeasureScope.super.mo427toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m6745toDpSizekrfVVM(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo427toDpSizekrfVVM(j);
+        public static long m6746toDpSizekrfVVM(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo428toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m6746toPxR2X_6o(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo428toPxR2X_6o(j);
+        public static float m6747toPxR2X_6o(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo429toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m6747toPx0680j_4(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo429toPx0680j_4(f);
+        public static float m6748toPx0680j_4(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo430toPx0680j_4(f);
         }
 
         @Deprecated
@@ -82,26 +82,26 @@ public interface MeasureScope extends IntrinsicMeasureScope {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m6748toSizeXkaWNTQ(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo430toSizeXkaWNTQ(j);
+        public static long m6749toSizeXkaWNTQ(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo431toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m6749toSp0xMU5do(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo431toSp0xMU5do(f);
+        public static long m6750toSp0xMU5do(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo432toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m6750toSpkPz2Gy4(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo432toSpkPz2Gy4(f);
+        public static long m6751toSpkPz2Gy4(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo433toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m6751toSpkPz2Gy4(MeasureScope measureScope, int i) {
-            return MeasureScope.super.mo433toSpkPz2Gy4(i);
+        public static long m6752toSpkPz2Gy4(MeasureScope measureScope, int i) {
+            return MeasureScope.super.mo434toSpkPz2Gy4(i);
         }
 
         @Deprecated

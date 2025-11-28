@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
 import io.appmetrica.analytics.coreutils.internal.permission.SinglePermissionStrategy;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class c implements LastKnownLocationExtractorProvider {
 
     /* renamed from: a  reason: collision with root package name */

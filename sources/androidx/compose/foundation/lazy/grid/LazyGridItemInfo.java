@@ -21,12 +21,12 @@ public interface LazyGridItemInfo {
     Object getKey();
 
     /* renamed from: getOffset-nOcc-ac  reason: not valid java name */
-    long mo1000getOffsetnOccac();
+    long mo1001getOffsetnOccac();
 
     int getRow();
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    long mo1001getSizeYbymL2g();
+    long mo1002getSizeYbymL2g();
 
     int getSpan();
 

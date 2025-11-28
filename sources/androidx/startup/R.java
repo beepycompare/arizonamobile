@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int androidx_startup = 0x7f130022;
+        public static int androidx_startup = 0x7f120022;
 
         private string() {
         }

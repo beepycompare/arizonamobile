@@ -30,7 +30,7 @@ public final class ContextMenuGestures_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit contextMenuGestures$lambda$0(ContextMenuState contextMenuState, Offset offset) {
-        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m5045unboximpl(), null));
+        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m5046unboximpl(), null));
         return Unit.INSTANCE;
     }
 

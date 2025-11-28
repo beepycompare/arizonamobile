@@ -36,7 +36,7 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
     });
 
     /* renamed from: getLambda$-1131826196$ui_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m8249getLambda$1131826196$ui_release() {
+    public final Function2<Composer, Integer, Unit> m8250getLambda$1131826196$ui_release() {
         return f42lambda$1131826196;
     }
 }

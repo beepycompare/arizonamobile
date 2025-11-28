@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* renamed from: io.appmetrica.analytics.impl.sb  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0571sb implements Converter {
 
     /* renamed from: a  reason: collision with root package name */

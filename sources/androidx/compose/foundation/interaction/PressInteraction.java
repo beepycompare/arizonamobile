@@ -23,7 +23,7 @@ public interface PressInteraction extends Interaction {
         }
 
         /* renamed from: getPressPosition-F1C5BW0  reason: not valid java name */
-        public final long m638getPressPositionF1C5BW0() {
+        public final long m639getPressPositionF1C5BW0() {
             return this.pressPosition;
         }
     }

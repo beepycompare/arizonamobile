@@ -14,45 +14,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FontStyle {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Normal = m7568constructorimpl(0);
-    private static final int Italic = m7568constructorimpl(1);
+    private static final int Normal = m7569constructorimpl(0);
+    private static final int Italic = m7569constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FontStyle m7567boximpl(int i) {
+    public static final /* synthetic */ FontStyle m7568boximpl(int i) {
         return new FontStyle(i);
     }
 
     @Deprecated(message = "Please use FontStyle.Normal or FontStyle.Italic", replaceWith = @ReplaceWith(expression = "FontStyle.", imports = {}))
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m7568constructorimpl(int i) {
+    public static int m7569constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7569equalsimpl(int i, Object obj) {
-        return (obj instanceof FontStyle) && i == ((FontStyle) obj).m7573unboximpl();
+    public static boolean m7570equalsimpl(int i, Object obj) {
+        return (obj instanceof FontStyle) && i == ((FontStyle) obj).m7574unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7570equalsimpl0(int i, int i2) {
+    public static final boolean m7571equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7571hashCodeimpl(int i) {
+    public static int m7572hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7569equalsimpl(this.value, obj);
+        return m7570equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7571hashCodeimpl(this.value);
+        return m7572hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7573unboximpl() {
+    public final /* synthetic */ int m7574unboximpl() {
         return this.value;
     }
 
@@ -66,12 +66,12 @@ public final class FontStyle {
     }
 
     public String toString() {
-        return m7572toStringimpl(this.value);
+        return m7573toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7572toStringimpl(int i) {
-        return m7570equalsimpl0(i, Normal) ? "Normal" : m7570equalsimpl0(i, Italic) ? "Italic" : "Invalid";
+    public static String m7573toStringimpl(int i) {
+        return m7571equalsimpl0(i, Normal) ? "Normal" : m7571equalsimpl0(i, Italic) ? "Italic" : "Invalid";
     }
 
     /* compiled from: FontStyle.kt */
@@ -83,28 +83,28 @@ public final class FontStyle {
         }
 
         /* renamed from: getItalic-_-LCdwA$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7574getItalic_LCdwA$annotations() {
+        public static /* synthetic */ void m7575getItalic_LCdwA$annotations() {
         }
 
         /* renamed from: getNormal-_-LCdwA$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7575getNormal_LCdwA$annotations() {
+        public static /* synthetic */ void m7576getNormal_LCdwA$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getNormal-_-LCdwA  reason: not valid java name */
-        public final int m7577getNormal_LCdwA() {
+        public final int m7578getNormal_LCdwA() {
             return FontStyle.Normal;
         }
 
         /* renamed from: getItalic-_-LCdwA  reason: not valid java name */
-        public final int m7576getItalic_LCdwA() {
+        public final int m7577getItalic_LCdwA() {
             return FontStyle.Italic;
         }
 
         public final List<FontStyle> values() {
-            return CollectionsKt.listOf((Object[]) new FontStyle[]{FontStyle.m7567boximpl(m7577getNormal_LCdwA()), FontStyle.m7567boximpl(m7576getItalic_LCdwA())});
+            return CollectionsKt.listOf((Object[]) new FontStyle[]{FontStyle.m7568boximpl(m7578getNormal_LCdwA()), FontStyle.m7568boximpl(m7577getItalic_LCdwA())});
         }
     }
 }

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 /* renamed from: io.appmetrica.analytics.impl.ba  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0138ba implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {

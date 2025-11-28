@@ -52,15 +52,15 @@ public final class LayoutKt {
         } else {
             composer.useNode();
         }
-        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-        Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+        Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
-        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         function2.invoke(composer, Integer.valueOf((i3 >> 6) & 14));
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -86,14 +86,14 @@ public final class LayoutKt {
         } else {
             composer.useNode();
         }
-        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-        Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+        Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -130,15 +130,15 @@ public final class LayoutKt {
         } else {
             composer.useNode();
         }
-        Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-        Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+        Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
-        Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         combineAsVirtualLayouts.invoke(composer, 0);
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -186,11 +186,11 @@ public final class LayoutKt {
                     } else {
                         composer.useNode();
                     }
-                    Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
+                    Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                        m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                        m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                     }
                     function2.invoke(composer, 0);
                     composer.endNode();
@@ -212,12 +212,12 @@ public final class LayoutKt {
 
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ Unit invoke(SkippableUpdater<ComposeUiNode> skippableUpdater, Composer composer, Integer num) {
-                m6721invokeDeg8D_g(skippableUpdater.m4574unboximpl(), composer, num.intValue());
+                m6722invokeDeg8D_g(skippableUpdater.m4575unboximpl(), composer, num.intValue());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-Deg8D_g  reason: not valid java name */
-            public final void m6721invokeDeg8D_g(Composer composer, Composer composer2, int i) {
+            public final void m6722invokeDeg8D_g(Composer composer, Composer composer2, int i) {
                 ComposerKt.sourceInformation(composer2, "C197@7987L27:Layout.kt#80mrfh");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-511438721, i, -1, "androidx.compose.ui.layout.materializerOf.<anonymous> (Layout.kt:197)");
@@ -225,12 +225,12 @@ public final class LayoutKt {
                 int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer2, 0));
                 Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, Modifier.this);
                 composer.startReplaceableGroup(509942095);
-                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                    m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                 }
                 composer.endReplaceableGroup();
                 if (ComposerKt.isTraceInProgress()) {
@@ -250,12 +250,12 @@ public final class LayoutKt {
 
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ Unit invoke(SkippableUpdater<ComposeUiNode> skippableUpdater, Composer composer, Integer num) {
-                m6722invokeDeg8D_g(skippableUpdater.m4574unboximpl(), composer, num.intValue());
+                m6723invokeDeg8D_g(skippableUpdater.m4575unboximpl(), composer, num.intValue());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-Deg8D_g  reason: not valid java name */
-            public final void m6722invokeDeg8D_g(Composer composer, Composer composer2, int i) {
+            public final void m6723invokeDeg8D_g(Composer composer, Composer composer2, int i) {
                 ComposerKt.sourceInformation(composer2, "C219@8795L23:Layout.kt#80mrfh");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-2123382363, i, -1, "androidx.compose.ui.layout.materializerOfWithCompositionLocalInjection.<anonymous> (Layout.kt:219)");
@@ -263,12 +263,12 @@ public final class LayoutKt {
                 int hashCode = Integer.hashCode(ComposablesKt.getCurrentCompositeKeyHash(composer2, 0));
                 Modifier materializeWithCompositionLocalInjectionInternal = ComposedModifierKt.materializeWithCompositionLocalInjectionInternal(composer2, Modifier.this);
                 composer.startReplaceableGroup(509942095);
-                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer);
-                Updater.m4604setimpl(m4597constructorimpl, materializeWithCompositionLocalInjectionInternal, ComposeUiNode.Companion.getSetModifier());
+                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
+                Updater.m4605setimpl(m4598constructorimpl, materializeWithCompositionLocalInjectionInternal, ComposeUiNode.Companion.getSetModifier());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                    m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                    m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                 }
                 composer.endReplaceableGroup();
                 if (ComposerKt.isTraceInProgress()) {
@@ -325,10 +325,10 @@ public final class LayoutKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4601initimpl(m4597constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.LayoutKt$MultiMeasureLayout$1$1
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4602initimpl(m4598constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.LayoutKt$MultiMeasureLayout$1$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode) {
                     invoke2(layoutNode);
@@ -340,11 +340,11 @@ public final class LayoutKt {
                     layoutNode.setCanMultiMeasure$ui_release(true);
                 }
             });
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4597constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
             function2.invoke(startRestartGroup, Integer.valueOf((i5 >> 6) & 14));
             startRestartGroup.endNode();

@@ -43,13 +43,13 @@ public final class TextFieldSelectionState_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit contextMenuBuilder$lambda$1(State state, ContextMenuState contextMenuState, Function2 function2, TextFieldSelectionState textFieldSelectionState, ContextMenuScope contextMenuScope) {
-        int m1335unboximpl = ((MenuItemsAvailability) state.getValue()).m1335unboximpl();
-        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Cut, MenuItemsAvailability.m1330getCanCutimpl(m1335unboximpl));
-        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Copy, MenuItemsAvailability.m1329getCanCopyimpl(m1335unboximpl));
-        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Paste, MenuItemsAvailability.m1331getCanPasteimpl(m1335unboximpl));
-        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1332getCanSelectAllimpl(m1335unboximpl));
+        int m1336unboximpl = ((MenuItemsAvailability) state.getValue()).m1336unboximpl();
+        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Cut, MenuItemsAvailability.m1331getCanCutimpl(m1336unboximpl));
+        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Copy, MenuItemsAvailability.m1330getCanCopyimpl(m1336unboximpl));
+        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Paste, MenuItemsAvailability.m1332getCanPasteimpl(m1336unboximpl));
+        contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1333getCanSelectAllimpl(m1336unboximpl));
         if (Build.VERSION.SDK_INT >= 26) {
-            contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1328getCanAutofillimpl(m1335unboximpl));
+            contextMenuBuilder$lambda$1$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1329getCanAutofillimpl(m1336unboximpl));
         }
         return Unit.INSTANCE;
     }
@@ -116,7 +116,7 @@ public final class TextFieldSelectionState_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit addBasicTextFieldTextContextMenuComponents$lambda$10(final TextFieldSelectionState textFieldSelectionState, final CoroutineScope coroutineScope, TextContextMenuBuilderScope textContextMenuBuilderScope, final Context context) {
-        PlatformSelectionBehaviors_androidKt.m1753addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, textFieldSelectionState.getEditable$foundation_release(), textFieldSelectionState.getTextFieldState$foundation_release().getVisualText().getText(), TextRange.m7445boximpl(textFieldSelectionState.getTextFieldState$foundation_release().getVisualText().m1446getSelectiond9O1mEE()), textFieldSelectionState.getPlatformSelectionBehaviors$foundation_release(), new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState_androidKt$$ExternalSyntheticLambda3
+        PlatformSelectionBehaviors_androidKt.m1754addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, textFieldSelectionState.getEditable$foundation_release(), textFieldSelectionState.getTextFieldState$foundation_release().getVisualText().getText(), TextRange.m7446boximpl(textFieldSelectionState.getTextFieldState$foundation_release().getVisualText().m1447getSelectiond9O1mEE()), textFieldSelectionState.getPlatformSelectionBehaviors$foundation_release(), new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState_androidKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit addBasicTextFieldTextContextMenuComponents$lambda$10$lambda$9;

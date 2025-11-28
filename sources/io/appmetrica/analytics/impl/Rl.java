@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.os.Bundle;
 import io.appmetrica.analytics.StartupParamsCallback;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Rl implements H6 {
 
     /* renamed from: a  reason: collision with root package name */

@@ -53,12 +53,12 @@ public final class TransitionKt {
             }
         } : function3;
         String str2 = (i2 & 2) != 0 ? "ColorAnimation" : str;
-        ColorSpace m5283getColorSpaceimpl = Color.m5283getColorSpaceimpl(function32.invoke(transition.getTargetState(), composer, Integer.valueOf((i >> 6) & 112)).m5289unboximpl());
+        ColorSpace m5284getColorSpaceimpl = Color.m5284getColorSpaceimpl(function32.invoke(transition.getTargetState(), composer, Integer.valueOf((i >> 6) & 112)).m5290unboximpl());
         ComposerKt.sourceInformationMarkerStart(composer, -1791410757, "CC(remember):Transition.kt#9igjgp");
-        boolean changed = composer.changed(m5283getColorSpaceimpl);
+        boolean changed = composer.changed(m5284getColorSpaceimpl);
         TwoWayConverter<Color, AnimationVector4D> rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5283getColorSpaceimpl);
+            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5284getColorSpaceimpl);
             composer.updateRememberedValue(rememberedValue);
         }
         TwoWayConverter twoWayConverter = (TwoWayConverter) rememberedValue;
@@ -132,7 +132,7 @@ public final class TransitionKt {
     }
 
     /* renamed from: animateColor-DTcfvLk  reason: not valid java name */
-    public static final State<Color> m148animateColorDTcfvLk(InfiniteTransition infiniteTransition, long j, long j2, InfiniteRepeatableSpec<Color> infiniteRepeatableSpec, String str, Composer composer, int i, int i2) {
+    public static final State<Color> m149animateColorDTcfvLk(InfiniteTransition infiniteTransition, long j, long j2, InfiniteRepeatableSpec<Color> infiniteRepeatableSpec, String str, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1901963533, "C(animateColor)P(1:c#ui.graphics.Color,3:c#ui.graphics.Color)98@4599L60,99@4671L72:Transition.kt#xbi5r1");
         if ((i2 & 8) != 0) {
             str = "ColorAnimation";
@@ -144,12 +144,12 @@ public final class TransitionKt {
         ComposerKt.sourceInformationMarkerStart(composer, -1869105431, "CC(remember):Transition.kt#9igjgp");
         TwoWayConverter<Color, AnimationVector4D> rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m5283getColorSpaceimpl(j2));
+            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m5284getColorSpaceimpl(j2));
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i3 = i << 3;
-        State<Color> animateValue = InfiniteTransitionKt.animateValue(infiniteTransition, Color.m5269boximpl(j), Color.m5269boximpl(j2), (TwoWayConverter) rememberedValue, infiniteRepeatableSpec, str2, composer, InfiniteTransition.$stable | (i & 14) | (i & 112) | (i & 896) | (InfiniteRepeatableSpec.$stable << 12) | (57344 & i3) | (i3 & 458752), 0);
+        State<Color> animateValue = InfiniteTransitionKt.animateValue(infiniteTransition, Color.m5270boximpl(j), Color.m5270boximpl(j2), (TwoWayConverter) rememberedValue, infiniteRepeatableSpec, str2, composer, InfiniteTransition.$stable | (i & 14) | (i & 112) | (i & 896) | (InfiniteRepeatableSpec.$stable << 12) | (57344 & i3) | (i3 & 458752), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -159,16 +159,16 @@ public final class TransitionKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "animateColor APIs now have a new label parameter added.")
     /* renamed from: animateColor-RIQooxk  reason: not valid java name */
-    public static final /* synthetic */ State m149animateColorRIQooxk(InfiniteTransition infiniteTransition, long j, long j2, InfiniteRepeatableSpec infiniteRepeatableSpec, Composer composer, int i) {
+    public static final /* synthetic */ State m150animateColorRIQooxk(InfiniteTransition infiniteTransition, long j, long j2, InfiniteRepeatableSpec infiniteRepeatableSpec, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 1400583834, "C(animateColor)P(1:c#ui.graphics.Color,2:c#ui.graphics.Color)112@5044L164:Transition.kt#xbi5r1");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1400583834, i, -1, "androidx.compose.animation.animateColor (Transition.kt:112)");
         }
-        State<Color> m148animateColorDTcfvLk = m148animateColorDTcfvLk(infiniteTransition, j, j2, infiniteRepeatableSpec, "ColorAnimation", composer, InfiniteTransition.$stable | 24576 | (i & 14) | (i & 112) | (i & 896) | (InfiniteRepeatableSpec.$stable << 9) | (i & 7168), 0);
+        State<Color> m149animateColorDTcfvLk = m149animateColorDTcfvLk(infiniteTransition, j, j2, infiniteRepeatableSpec, "ColorAnimation", composer, InfiniteTransition.$stable | 24576 | (i & 14) | (i & 112) | (i & 896) | (InfiniteRepeatableSpec.$stable << 9) | (i & 7168), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m148animateColorDTcfvLk;
+        return m149animateColorDTcfvLk;
     }
 }

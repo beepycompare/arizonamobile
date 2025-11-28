@@ -58,7 +58,7 @@ public final class ChainedPlatformTextInputInterceptor$textInputSession$2$scope$
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     chainedPlatformTextInputInterceptor$textInputSession$2$scope$1$startInputMethod$1.label = 1;
-                    if (SessionMutex.m4779withSessionCancellingPreviousimpl(this.$inputMethodMutex, new Function1<CoroutineScope, Unit>() { // from class: androidx.compose.ui.platform.ChainedPlatformTextInputInterceptor$textInputSession$2$scope$1$startInputMethod$2
+                    if (SessionMutex.m4780withSessionCancellingPreviousimpl(this.$inputMethodMutex, new Function1<CoroutineScope, Unit>() { // from class: androidx.compose.ui.platform.ChainedPlatformTextInputInterceptor$textInputSession$2$scope$1$startInputMethod$2
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(CoroutineScope coroutineScope) {
                         }

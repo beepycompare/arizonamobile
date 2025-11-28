@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class R5 implements Q5 {
 
     /* renamed from: a  reason: collision with root package name */

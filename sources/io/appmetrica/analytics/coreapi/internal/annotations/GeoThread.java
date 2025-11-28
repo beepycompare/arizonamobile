@@ -6,6 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public @interface GeoThread {
 }

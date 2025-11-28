@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.permission.AlwaysAllowPermissi
 import io.appmetrica.analytics.coreutils.internal.permission.SinglePermissionStrategy;
 import io.appmetrica.analytics.coreutils.internal.services.telephony.CellularNetworkTypeExtractor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Sc implements InterfaceC0608tn {
 
     /* renamed from: a  reason: collision with root package name */

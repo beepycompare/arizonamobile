@@ -22,18 +22,18 @@ public final class ColorPainter extends Painter {
     private ColorPainter(long j) {
         this.color = j;
         this.alpha = 1.0f;
-        this.intrinsicSize = Size.Companion.m5112getUnspecifiedNHjbRc();
+        this.intrinsicSize = Size.Companion.m5113getUnspecifiedNHjbRc();
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m5982getColor0d7_KjU() {
+    public final long m5983getColor0d7_KjU() {
         return this.color;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.graphics.painter.Painter
     public void onDraw(DrawScope drawScope) {
-        DrawScope.m5852drawRectnJ9OG0$default(drawScope, this.color, 0L, 0L, this.alpha, null, this.colorFilter, 0, 86, null);
+        DrawScope.m5853drawRectnJ9OG0$default(drawScope, this.color, 0L, 0L, this.alpha, null, this.colorFilter, 0, 86, null);
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
@@ -52,20 +52,20 @@ public final class ColorPainter extends Painter {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof ColorPainter) && Color.m5280equalsimpl0(this.color, ((ColorPainter) obj).color);
+        return (obj instanceof ColorPainter) && Color.m5281equalsimpl0(this.color, ((ColorPainter) obj).color);
     }
 
     public int hashCode() {
-        return Color.m5286hashCodeimpl(this.color);
+        return Color.m5287hashCodeimpl(this.color);
     }
 
     public String toString() {
-        return "ColorPainter(color=" + ((Object) Color.m5287toStringimpl(this.color)) + ')';
+        return "ColorPainter(color=" + ((Object) Color.m5288toStringimpl(this.color)) + ')';
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5978getIntrinsicSizeNHjbRc() {
+    public long mo5979getIntrinsicSizeNHjbRc() {
         return this.intrinsicSize;
     }
 }

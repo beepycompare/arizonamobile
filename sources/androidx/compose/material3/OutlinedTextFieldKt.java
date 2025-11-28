@@ -87,7 +87,7 @@ import kotlin.ranges.RangesKt;
 @Metadata(d1 = {"\u0000Ö\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a£\u0003\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2 \b\u0002\u0010\r\u001a\u001a\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000e¢\u0006\u0002\b\u0010¢\u0006\u0002\b\u00112\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!2\b\b\u0002\u0010\"\u001a\u00020#28\b\u0002\u0010$\u001a2\u0012\u0004\u0012\u00020&\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010'0\u0013¢\u0006\f\b(\u0012\b\b)\u0012\u0004\b\b(*\u0012\u0004\u0012\u00020\u0001\u0018\u00010%¢\u0006\u0002\b\u00112\b\b\u0002\u0010+\u001a\u00020,2\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u0002002\b\b\u0002\u00101\u001a\u0002022\n\b\u0002\u00103\u001a\u0004\u0018\u000104H\u0007¢\u0006\u0002\u00105\u001aØ\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u00106\u001a\u0002072\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020\u00010\u000e2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0015\b\u0002\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\b\b\u0002\u00109\u001a\u00020:2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010;\u001a\u00020<2\b\b\u0002\u0010=\u001a\u00020\u00072\b\b\u0002\u0010>\u001a\u00020?2\b\b\u0002\u0010@\u001a\u00020?2\n\b\u0002\u00103\u001a\u0004\u0018\u0001042\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u000200H\u0007¢\u0006\u0002\u0010A\u001aØ\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u00106\u001a\u00020B2\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020\u00010\u000e2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0015\b\u0002\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\b\b\u0002\u00109\u001a\u00020:2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010;\u001a\u00020<2\b\b\u0002\u0010=\u001a\u00020\u00072\b\b\u0002\u0010>\u001a\u00020?2\b\b\u0002\u0010@\u001a\u00020?2\n\b\u0002\u00103\u001a\u0004\u0018\u0001042\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u000200H\u0007¢\u0006\u0002\u0010C\u001a\u0088\u0002\u0010D\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0011\u0010E\u001a\r\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00102\u0019\u0010\u0012\u001a\u0015\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000e¢\u0006\u0002\b\u00102\u0013\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010F\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010G\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0006\u0010=\u001a\u00020\u00072\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010H\u001a\u00020I2\u0012\u0010J\u001a\u000e\u0012\u0004\u0012\u00020K\u0012\u0004\u0012\u00020\u00010\u000e2\u0011\u0010L\u001a\r\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010M\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0006\u0010N\u001a\u000202H\u0001¢\u0006\u0002\u0010O\u001a*\u0010P\u001a\u00020\u0005*\u00020\u00052\f\u0010Q\u001a\b\u0012\u0004\u0012\u00020K0\u00132\u0006\u0010R\u001a\u00020S2\u0006\u0010N\u001a\u000202H\u0000\"\u0010\u0010T\u001a\u00020UX\u0082\u0004¢\u0006\u0004\n\u0002\u0010V¨\u0006W"}, d2 = {"OutlinedTextField", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/input/TextFieldState;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "readOnly", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "labelPosition", "Landroidx/compose/material3/TextFieldLabelPosition;", Constants.ScionAnalytics.PARAM_LABEL, "Lkotlin/Function1;", "Landroidx/compose/material3/TextFieldLabelScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "placeholder", "Lkotlin/Function0;", "leadingIcon", "trailingIcon", "prefix", "suffix", "supportingText", "isError", "inputTransformation", "Landroidx/compose/foundation/text/input/InputTransformation;", "outputTransformation", "Landroidx/compose/foundation/text/input/OutputTransformation;", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "onKeyboardAction", "Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "lineLimits", "Landroidx/compose/foundation/text/input/TextFieldLineLimits;", "onTextLayout", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/text/TextLayoutResult;", "Lkotlin/ParameterName;", "name", "getResult", "scrollState", "Landroidx/compose/foundation/ScrollState;", "shape", "Landroidx/compose/ui/graphics/Shape;", "colors", "Landroidx/compose/material3/TextFieldColors;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Landroidx/compose/material3/TextFieldLabelPosition;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/foundation/text/input/OutputTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Landroidx/compose/foundation/text/input/TextFieldLineLimits;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/ScrollState;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;IIII)V", "value", "", "onValueChange", "visualTransformation", "Landroidx/compose/ui/text/input/VisualTransformation;", "keyboardActions", "Landroidx/compose/foundation/text/KeyboardActions;", "singleLine", "maxLines", "", "minLines", "(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/text/input/VisualTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;ZIILandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/runtime/Composer;IIII)V", "Landroidx/compose/ui/text/input/TextFieldValue;", "(Landroidx/compose/ui/text/input/TextFieldValue;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/text/input/VisualTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;ZIILandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/runtime/Composer;IIII)V", "OutlinedTextFieldLayout", "textField", "leading", "trailing", "labelProgress", "Landroidx/compose/material3/internal/FloatProducer;", "onLabelMeasured", "Landroidx/compose/ui/geometry/Size;", TtmlNode.RUBY_CONTAINER, "supporting", "paddingValues", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/material3/TextFieldLabelPosition;Landroidx/compose/material3/internal/FloatProducer;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/runtime/Composer;II)V", "outlineCutout", "labelSize", "alignment", "Landroidx/compose/ui/Alignment$Horizontal;", "OutlinedTextFieldInnerPadding", "Landroidx/compose/ui/unit/Dp;", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class OutlinedTextFieldKt {
-    private static final float OutlinedTextFieldInnerPadding = Dp.m7995constructorimpl(4);
+    private static final float OutlinedTextFieldInnerPadding = Dp.m7996constructorimpl(4);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit OutlinedTextField$lambda$2(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3 function3, Function2 function2, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Function2 function26, boolean z3, InputTransformation inputTransformation, OutputTransformation outputTransformation, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, TextFieldLineLimits textFieldLineLimits, Function2 function27, ScrollState scrollState, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, int i, int i2, int i3, int i4, Composer composer, int i5) {
@@ -535,7 +535,7 @@ public final class OutlinedTextFieldKt {
                                             ScrollState rememberScrollState = (i4 & 1048576) != 0 ? ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1) : scrollState;
                                             Shape shape4 = (i4 & 2097152) != 0 ? OutlinedTextFieldDefaults.INSTANCE.getShape(startRestartGroup, 6) : shape;
                                             TextFieldColors colors = (i4 & 4194304) != 0 ? OutlinedTextFieldDefaults.INSTANCE.colors(startRestartGroup, 6) : textFieldColors;
-                                            PaddingValues m2704contentPaddinga9UjIt4$default = (i4 & 8388608) != 0 ? OutlinedTextFieldDefaults.m2704contentPaddinga9UjIt4$default(OutlinedTextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null) : paddingValues;
+                                            PaddingValues m2705contentPaddinga9UjIt4$default = (i4 & 8388608) != 0 ? OutlinedTextFieldDefaults.m2705contentPaddinga9UjIt4$default(OutlinedTextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null) : paddingValues;
                                             if (i31 != 0) {
                                                 Function3<? super TextFieldLabelScope, ? super Composer, ? super Integer, Unit> function34 = obj2;
                                                 textFieldColors3 = colors;
@@ -544,7 +544,7 @@ public final class OutlinedTextFieldKt {
                                                 textFieldLabelPosition3 = attached;
                                                 function33 = function34;
                                                 shape3 = shape4;
-                                                paddingValues3 = m2704contentPaddinga9UjIt4$default;
+                                                paddingValues3 = m2705contentPaddinga9UjIt4$default;
                                                 inputTransformation3 = inputTransformation4;
                                                 z9 = z5;
                                                 outputTransformation3 = outputTransformation4;
@@ -569,7 +569,7 @@ public final class OutlinedTextFieldKt {
                                                 textFieldLabelPosition3 = attached;
                                                 function33 = function35;
                                                 shape3 = shape4;
-                                                paddingValues3 = m2704contentPaddinga9UjIt4$default;
+                                                paddingValues3 = m2705contentPaddinga9UjIt4$default;
                                                 inputTransformation3 = inputTransformation4;
                                                 z9 = z5;
                                                 outputTransformation3 = outputTransformation4;
@@ -614,12 +614,12 @@ public final class OutlinedTextFieldKt {
                                         }
                                         startRestartGroup.startReplaceGroup(-362494116);
                                         ComposerKt.sourceInformation(startRestartGroup, "*234@13742L25");
-                                        long m7487getColor0d7_KjU = textStyle3.m7487getColor0d7_KjU();
-                                        if (m7487getColor0d7_KjU == 16) {
-                                            m7487getColor0d7_KjU = textFieldColors3.m3124textColorXeAY9LY$material3(z10, z11, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                        long m7488getColor0d7_KjU = textStyle3.m7488getColor0d7_KjU();
+                                        if (m7488getColor0d7_KjU == 16) {
+                                            m7488getColor0d7_KjU = textFieldColors3.m3125textColorXeAY9LY$material3(z10, z11, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(-416142558, true, new OutlinedTextFieldKt$OutlinedTextField$1(modifier3, function33, textFieldLabelPosition3, z11, textFieldColors3, textFieldState2, z10, textFieldLineLimits4, outputTransformation3, mutableInteractionSource4, function216, function217, function218, function221, function219, function220, paddingValues3, z9, inputTransformation3, textStyle3.merge(new TextStyle(m7487getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActionHandler3, function215, scrollState3, shape3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
+                                        CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(-416142558, true, new OutlinedTextFieldKt$OutlinedTextField$1(modifier3, function33, textFieldLabelPosition3, z11, textFieldColors3, textFieldState2, z10, textFieldLineLimits4, outputTransformation3, mutableInteractionSource4, function216, function217, function218, function221, function219, function220, paddingValues3, z9, inputTransformation3, textStyle3.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActionHandler3, function215, scrollState3, shape3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -1498,12 +1498,12 @@ public final class OutlinedTextFieldKt {
                                         }
                                         startRestartGroup.startReplaceGroup(1981927842);
                                         ComposerKt.sourceInformation(startRestartGroup, "*399@22855L25");
-                                        long m7487getColor0d7_KjU = textStyle3.m7487getColor0d7_KjU();
-                                        if (m7487getColor0d7_KjU == 16) {
-                                            m7487getColor0d7_KjU = textFieldColors3.m3124textColorXeAY9LY$material3(z13, z11, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                        long m7488getColor0d7_KjU = textStyle3.m7488getColor0d7_KjU();
+                                        if (m7488getColor0d7_KjU == 16) {
+                                            m7488getColor0d7_KjU = textFieldColors3.m3125textColorXeAY9LY$material3(z13, z11, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(1874034984, true, new OutlinedTextFieldKt$OutlinedTextField$3(modifier3, obj2, z11, textFieldColors3, str2, function12, z13, z14, textStyle3.merge(new TextStyle(m7487getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActions3, z12, i39, i40, visualTransformation3, mutableInteractionSource4, function218, function215, function216, function217, function219, function220, shape3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
+                                        CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(1874034984, true, new OutlinedTextFieldKt$OutlinedTextField$3(modifier3, obj2, z11, textFieldColors3, str2, function12, z13, z14, textStyle3.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActions3, z12, i39, i40, visualTransformation3, mutableInteractionSource4, function218, function215, function216, function217, function219, function220, shape3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -2338,12 +2338,12 @@ public final class OutlinedTextFieldKt {
                                         }
                                         startRestartGroup.startReplaceGroup(1369277167);
                                         ComposerKt.sourceInformation(startRestartGroup, "*566@32118L25");
-                                        long m7487getColor0d7_KjU = textStyle3.m7487getColor0d7_KjU();
-                                        if (m7487getColor0d7_KjU == 16) {
-                                            m7487getColor0d7_KjU = textFieldColors3.m3124textColorXeAY9LY$material3(z13, z11, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                        long m7488getColor0d7_KjU = textStyle3.m7488getColor0d7_KjU();
+                                        if (m7488getColor0d7_KjU == 16) {
+                                            m7488getColor0d7_KjU = textFieldColors3.m3125textColorXeAY9LY$material3(z13, z11, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(-2094276683, true, new OutlinedTextFieldKt$OutlinedTextField$5(modifier3, obj2, z11, textFieldColors3, textFieldValue2, function12, z13, z14, textStyle3.merge(new TextStyle(m7487getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActions3, z12, i39, i40, visualTransformation3, mutableInteractionSource4, function218, function215, function216, function217, function219, function220, shape3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
+                                        CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(-2094276683, true, new OutlinedTextFieldKt$OutlinedTextField$5(modifier3, obj2, z11, textFieldColors3, textFieldValue2, function12, z13, z14, textStyle3.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null)), keyboardOptions3, keyboardActions3, z12, i39, i40, visualTransformation3, mutableInteractionSource4, function218, function215, function216, function217, function219, function220, shape3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -2753,7 +2753,7 @@ public final class OutlinedTextFieldKt {
         boolean z2;
         Object rememberedValue;
         int currentCompositeKeyHash;
-        Composer m4597constructorimpl;
+        Composer m4598constructorimpl;
         Composer startRestartGroup = composer.startRestartGroup(753699262);
         ComposerKt.sourceInformation(startRestartGroup, "C(OutlinedTextFieldLayout)N(modifier,textField,placeholder,label,leading,trailing,prefix,suffix,singleLine,labelPosition,labelProgress,onLabelMeasured,container,supporting,paddingValues)660@36112L32,662@36177L554,679@36779L7,680@36791L4040:OutlinedTextField.kt#uh7d8r");
         if ((i & 6) == 0) {
@@ -2860,15 +2860,15 @@ public final class OutlinedTextFieldKt {
             } else {
                 composer2.useNode();
             }
-            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer2);
-            Updater.m4604setimpl(m4597constructorimpl2, outlinedTextFieldMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer2);
+            Updater.m4605setimpl(m4598constructorimpl2, outlinedTextFieldMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash);
+            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, 2145696067, "C683@36860L11,751@39346L187:OutlinedTextField.kt#uh7d8r");
             function27.invoke(composer2, Integer.valueOf((i6 >> 6) & 14));
             if (function23 != null) {
@@ -2893,15 +2893,15 @@ public final class OutlinedTextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4597constructorimpl3 = Updater.m4597constructorimpl(composer2);
-                Updater.m4604setimpl(m4597constructorimpl3, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl3, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl3 = Updater.m4598constructorimpl(composer2);
+                Updater.m4605setimpl(m4598constructorimpl3, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl3, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl3.getInserting() || !Intrinsics.areEqual(m4597constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                    m4597constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m4597constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash2);
+                if (m4598constructorimpl3.getInserting() || !Intrinsics.areEqual(m4598constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                    m4598constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m4598constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash2);
                 }
-                Updater.m4604setimpl(m4597constructorimpl3, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl3, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 227456132, "C690@37121L9:OutlinedTextField.kt#uh7d8r");
@@ -2939,15 +2939,15 @@ public final class OutlinedTextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4597constructorimpl4 = Updater.m4597constructorimpl(composer2);
-                Updater.m4604setimpl(m4597constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl4, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl4 = Updater.m4598constructorimpl(composer2);
+                Updater.m4605setimpl(m4598constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl4, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl4.getInserting() || !Intrinsics.areEqual(m4597constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                    m4597constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                    m4597constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash3);
+                if (m4598constructorimpl4.getInserting() || !Intrinsics.areEqual(m4598constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                    m4598constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                    m4598constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash3);
                 }
-                Updater.m4604setimpl(m4597constructorimpl4, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl4, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 531295628, "C698@37413L10:OutlinedTextField.kt#uh7d8r");
@@ -2967,24 +2967,24 @@ public final class OutlinedTextFieldKt {
             float calculateEndPadding = PaddingKt.calculateEndPadding(paddingValues2, layoutDirection);
             if (function23 != null) {
                 i8 = 0;
-                calculateStartPadding = Dp.m7995constructorimpl(RangesKt.coerceAtLeast(Dp.m7995constructorimpl(calculateStartPadding - textFieldHorizontalIconPadding), Dp.m7995constructorimpl(0)));
+                calculateStartPadding = Dp.m7996constructorimpl(RangesKt.coerceAtLeast(Dp.m7996constructorimpl(calculateStartPadding - textFieldHorizontalIconPadding), Dp.m7996constructorimpl(0)));
             } else {
                 i8 = 0;
             }
             float f2 = calculateStartPadding;
             if (function24 != null) {
-                calculateEndPadding = Dp.m7995constructorimpl(RangesKt.coerceAtLeast(Dp.m7995constructorimpl(calculateEndPadding - textFieldHorizontalIconPadding), Dp.m7995constructorimpl(i8)));
+                calculateEndPadding = Dp.m7996constructorimpl(RangesKt.coerceAtLeast(Dp.m7996constructorimpl(calculateEndPadding - textFieldHorizontalIconPadding), Dp.m7996constructorimpl(i8)));
             }
             if (function25 != null) {
                 composer2.startReplaceGroup(2146868920);
                 ComposerKt.sourceInformation(composer2, "719@38172L309");
-                Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m882heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PrefixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), f2, 0.0f, TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, 10, null);
+                Modifier m847paddingqDBjuR0$default = PaddingKt.m847paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PrefixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), f2, 0.0f, TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, 10, null);
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash5 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                 CompositionLocalMap currentCompositionLocalMap4 = composer2.getCurrentCompositionLocalMap();
-                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer2, m846paddingqDBjuR0$default);
+                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer2, m847paddingqDBjuR0$default);
                 Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -2996,15 +2996,15 @@ public final class OutlinedTextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4597constructorimpl5 = Updater.m4597constructorimpl(composer2);
-                Updater.m4604setimpl(m4597constructorimpl5, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl5, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl5 = Updater.m4598constructorimpl(composer2);
+                Updater.m4605setimpl(m4598constructorimpl5, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl5, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl5.getInserting() || !Intrinsics.areEqual(m4597constructorimpl5.rememberedValue(), Integer.valueOf(currentCompositeKeyHash5))) {
-                    m4597constructorimpl5.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash5));
-                    m4597constructorimpl5.apply(Integer.valueOf(currentCompositeKeyHash5), setCompositeKeyHash4);
+                if (m4598constructorimpl5.getInserting() || !Intrinsics.areEqual(m4598constructorimpl5.rememberedValue(), Integer.valueOf(currentCompositeKeyHash5))) {
+                    m4598constructorimpl5.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash5));
+                    m4598constructorimpl5.apply(Integer.valueOf(currentCompositeKeyHash5), setCompositeKeyHash4);
                 }
-                Updater.m4604setimpl(m4597constructorimpl5, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl5, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 843401773, "C725@38455L8:OutlinedTextField.kt#uh7d8r");
@@ -3024,13 +3024,13 @@ public final class OutlinedTextFieldKt {
                 composer2.startReplaceGroup(2147239866);
                 ComposerKt.sourceInformation(composer2, "729@38546L307");
                 f = calculateEndPadding;
-                Modifier m846paddingqDBjuR0$default2 = PaddingKt.m846paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m882heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SuffixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, f, 0.0f, 10, null);
+                Modifier m847paddingqDBjuR0$default2 = PaddingKt.m847paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SuffixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, f, 0.0f, 10, null);
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy4 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash6 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                 CompositionLocalMap currentCompositionLocalMap5 = composer2.getCurrentCompositionLocalMap();
-                Modifier materializeModifier5 = ComposedModifierKt.materializeModifier(composer2, m846paddingqDBjuR0$default2);
+                Modifier materializeModifier5 = ComposedModifierKt.materializeModifier(composer2, m847paddingqDBjuR0$default2);
                 Function0<ComposeUiNode> constructor5 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -3042,15 +3042,15 @@ public final class OutlinedTextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4597constructorimpl6 = Updater.m4597constructorimpl(composer2);
-                Updater.m4604setimpl(m4597constructorimpl6, maybeCachedBoxMeasurePolicy4, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl6, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl6 = Updater.m4598constructorimpl(composer2);
+                Updater.m4605setimpl(m4598constructorimpl6, maybeCachedBoxMeasurePolicy4, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl6, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash5 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl6.getInserting() || !Intrinsics.areEqual(m4597constructorimpl6.rememberedValue(), Integer.valueOf(currentCompositeKeyHash6))) {
-                    m4597constructorimpl6.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash6));
-                    m4597constructorimpl6.apply(Integer.valueOf(currentCompositeKeyHash6), setCompositeKeyHash5);
+                if (m4598constructorimpl6.getInserting() || !Intrinsics.areEqual(m4598constructorimpl6.rememberedValue(), Integer.valueOf(currentCompositeKeyHash6))) {
+                    m4598constructorimpl6.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash6));
+                    m4598constructorimpl6.apply(Integer.valueOf(currentCompositeKeyHash6), setCompositeKeyHash5);
                 }
-                Updater.m4604setimpl(m4597constructorimpl6, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl6, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance4 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 1155507980, "C735@38827L8:OutlinedTextField.kt#uh7d8r");
@@ -3067,21 +3067,21 @@ public final class OutlinedTextFieldKt {
                 composer2.startReplaceGroup(-2147401651);
                 composer2.endReplaceGroup();
             }
-            Modifier wrapContentHeight$default = SizeKt.wrapContentHeight$default(SizeKt.m882heightInVpY3zN4$default(Modifier.Companion, TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null);
+            Modifier wrapContentHeight$default = SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(Modifier.Companion, TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null);
             if (function25 != null) {
-                f2 = Dp.m7995constructorimpl(0);
+                f2 = Dp.m7996constructorimpl(0);
             }
-            Modifier m846paddingqDBjuR0$default3 = PaddingKt.m846paddingqDBjuR0$default(wrapContentHeight$default, f2, 0.0f, function26 == null ? f : Dp.m7995constructorimpl(0), 0.0f, 10, null);
+            Modifier m847paddingqDBjuR0$default3 = PaddingKt.m847paddingqDBjuR0$default(wrapContentHeight$default, f2, 0.0f, function26 == null ? f : Dp.m7996constructorimpl(0), 0.0f, 10, null);
             if (function3 != null) {
                 composer2.startReplaceGroup(-2147031666);
                 ComposerKt.sourceInformation(composer2, "748@39255L63");
-                function3.invoke(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PlaceholderId).then(m846paddingqDBjuR0$default3), composer2, Integer.valueOf((i7 >> 3) & 112));
+                function3.invoke(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PlaceholderId).then(m847paddingqDBjuR0$default3), composer2, Integer.valueOf((i7 >> 3) & 112));
                 composer2.endReplaceGroup();
             } else {
                 composer2.startReplaceGroup(-2146940371);
                 composer2.endReplaceGroup();
             }
-            Modifier then = LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.TextFieldId).then(m846paddingqDBjuR0$default3);
+            Modifier then = LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.TextFieldId).then(m847paddingqDBjuR0$default3);
             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy5 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -3099,15 +3099,15 @@ public final class OutlinedTextFieldKt {
             } else {
                 composer2.useNode();
             }
-            Composer m4597constructorimpl7 = Updater.m4597constructorimpl(composer2);
-            Updater.m4604setimpl(m4597constructorimpl7, maybeCachedBoxMeasurePolicy5, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl7, currentCompositionLocalMap6, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl7 = Updater.m4598constructorimpl(composer2);
+            Updater.m4605setimpl(m4598constructorimpl7, maybeCachedBoxMeasurePolicy5, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl7, currentCompositionLocalMap6, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash6 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl7.getInserting() || !Intrinsics.areEqual(m4597constructorimpl7.rememberedValue(), Integer.valueOf(currentCompositeKeyHash7))) {
-                m4597constructorimpl7.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash7));
-                m4597constructorimpl7.apply(Integer.valueOf(currentCompositeKeyHash7), setCompositeKeyHash6);
+            if (m4598constructorimpl7.getInserting() || !Intrinsics.areEqual(m4598constructorimpl7.rememberedValue(), Integer.valueOf(currentCompositeKeyHash7))) {
+                m4598constructorimpl7.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash7));
+                m4598constructorimpl7.apply(Integer.valueOf(currentCompositeKeyHash7), setCompositeKeyHash6);
             }
-            Updater.m4604setimpl(m4597constructorimpl7, materializeModifier6, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl7, materializeModifier6, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance5 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, -332553027, "C755@39508L11:OutlinedTextField.kt#uh7d8r");
@@ -3120,7 +3120,7 @@ public final class OutlinedTextFieldKt {
             ComposerKt.sourceInformationMarkerEnd(composer2);
             textFieldLabelPosition2 = textFieldLabelPosition;
             if (textFieldLabelPosition2 instanceof TextFieldLabelPosition.Above) {
-                companion = PaddingKt.m846paddingqDBjuR0$default(Modifier.Companion, TextFieldImplKt.getAboveLabelHorizontalPadding(), 0.0f, TextFieldImplKt.getAboveLabelHorizontalPadding(), TextFieldImplKt.getAboveLabelBottomPadding(), 2, null);
+                companion = PaddingKt.m847paddingqDBjuR0$default(Modifier.Companion, TextFieldImplKt.getAboveLabelHorizontalPadding(), 0.0f, TextFieldImplKt.getAboveLabelHorizontalPadding(), TextFieldImplKt.getAboveLabelBottomPadding(), 2, null);
             } else {
                 companion = Modifier.Companion;
             }
@@ -3167,15 +3167,15 @@ public final class OutlinedTextFieldKt {
                     } else {
                         composer2.useNode();
                     }
-                    m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                    Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy6, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap7, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                    Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy6, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap7, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash7 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash7);
+                    if (!m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash7);
                     }
-                    Updater.m4604setimpl(m4597constructorimpl, materializeModifier7, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier7, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance6 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, 1779720363, "C778@40349L7:OutlinedTextField.kt#uh7d8r");
@@ -3218,15 +3218,15 @@ public final class OutlinedTextFieldKt {
                 composer2.startReusableNode();
                 if (!composer2.getInserting()) {
                 }
-                m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy62, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap72, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy62, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap72, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash72 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m4597constructorimpl.getInserting()) {
+                if (!m4598constructorimpl.getInserting()) {
                 }
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash72);
-                Updater.m4604setimpl(m4597constructorimpl, materializeModifier72, ComposeUiNode.Companion.getSetModifier());
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash72);
+                Updater.m4605setimpl(m4598constructorimpl, materializeModifier72, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance62 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 1779720363, "C778@40349L7:OutlinedTextField.kt#uh7d8r");
@@ -3246,7 +3246,7 @@ public final class OutlinedTextFieldKt {
             if (function28 != null) {
                 composer2.startReplaceGroup(-2145844304);
                 ComposerKt.sourceInformation(composer2, "783@40444L317");
-                Modifier padding = PaddingKt.padding(SizeKt.wrapContentHeight$default(SizeKt.m882heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SupportingId), TextFieldImplKt.getMinSupportingTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldDefaults.m3135supportingTextPaddinga9UjIt4$material3$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null));
+                Modifier padding = PaddingKt.padding(SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SupportingId), TextFieldImplKt.getMinSupportingTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldDefaults.m3136supportingTextPaddinga9UjIt4$material3$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null));
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy7 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -3264,15 +3264,15 @@ public final class OutlinedTextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4597constructorimpl8 = Updater.m4597constructorimpl(composer2);
-                Updater.m4604setimpl(m4597constructorimpl8, maybeCachedBoxMeasurePolicy7, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4604setimpl(m4597constructorimpl8, currentCompositionLocalMap8, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4598constructorimpl8 = Updater.m4598constructorimpl(composer2);
+                Updater.m4605setimpl(m4598constructorimpl8, maybeCachedBoxMeasurePolicy7, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4605setimpl(m4598constructorimpl8, currentCompositionLocalMap8, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash8 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4597constructorimpl8.getInserting() || !Intrinsics.areEqual(m4597constructorimpl8.rememberedValue(), Integer.valueOf(currentCompositeKeyHash8))) {
-                    m4597constructorimpl8.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash8));
-                    m4597constructorimpl8.apply(Integer.valueOf(currentCompositeKeyHash8), setCompositeKeyHash8);
+                if (m4598constructorimpl8.getInserting() || !Intrinsics.areEqual(m4598constructorimpl8.rememberedValue(), Integer.valueOf(currentCompositeKeyHash8))) {
+                    m4598constructorimpl8.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash8));
+                    m4598constructorimpl8.apply(Integer.valueOf(currentCompositeKeyHash8), setCompositeKeyHash8);
                 }
-                Updater.m4604setimpl(m4597constructorimpl8, materializeModifier8, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4605setimpl(m4598constructorimpl8, materializeModifier8, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance7 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 2091826725, "C789@40731L12:OutlinedTextField.kt#uh7d8r");
@@ -3317,7 +3317,7 @@ public final class OutlinedTextFieldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Dp OutlinedTextFieldLayout$lambda$19$lambda$16$lambda$15(FloatProducer floatProducer) {
-        return Dp.m7993boximpl(DpKt.m8038lerpMdfbLM(TextFieldImplKt.getMinTextLineHeight(), TextFieldImplKt.getMinFocusedLabelLineHeight(), floatProducer.invoke()));
+        return Dp.m7994boximpl(DpKt.m8039lerpMdfbLM(TextFieldImplKt.getMinTextLineHeight(), TextFieldImplKt.getMinFocusedLabelLineHeight(), floatProducer.invoke()));
     }
 
     public static final Modifier outlineCutout(Modifier modifier, final Function0<Size> function0, final Alignment.Horizontal horizontal, final PaddingValues paddingValues) {
@@ -3334,28 +3334,28 @@ public final class OutlinedTextFieldKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit outlineCutout$lambda$22(Function0 function0, PaddingValues paddingValues, Alignment.Horizontal horizontal, ContentDrawScope contentDrawScope) {
         float f;
-        long m5109unboximpl = ((Size) function0.invoke()).m5109unboximpl();
-        float intBitsToFloat = Float.intBitsToFloat((int) (m5109unboximpl >> 32));
+        long m5110unboximpl = ((Size) function0.invoke()).m5110unboximpl();
+        float intBitsToFloat = Float.intBitsToFloat((int) (m5110unboximpl >> 32));
         if (intBitsToFloat > 0.0f) {
-            float f2 = contentDrawScope.mo429toPx0680j_4(OutlinedTextFieldInnerPadding);
+            float f2 = contentDrawScope.mo430toPx0680j_4(OutlinedTextFieldInnerPadding);
             float f3 = 2;
             float f4 = intBitsToFloat / f3;
-            float align = horizontal.align(MathKt.roundToInt(intBitsToFloat), MathKt.roundToInt((Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> 32)) - f) - contentDrawScope.mo429toPx0680j_4(paddingValues.mo787calculateRightPaddingu2uoSUM(contentDrawScope.getLayoutDirection()))), contentDrawScope.getLayoutDirection()) + contentDrawScope.mo429toPx0680j_4(paddingValues.mo786calculateLeftPaddingu2uoSUM(contentDrawScope.getLayoutDirection())) + f4;
+            float align = horizontal.align(MathKt.roundToInt(intBitsToFloat), MathKt.roundToInt((Float.intBitsToFloat((int) (contentDrawScope.mo5859getSizeNHjbRc() >> 32)) - f) - contentDrawScope.mo430toPx0680j_4(paddingValues.mo788calculateRightPaddingu2uoSUM(contentDrawScope.getLayoutDirection()))), contentDrawScope.getLayoutDirection()) + contentDrawScope.mo430toPx0680j_4(paddingValues.mo787calculateLeftPaddingu2uoSUM(contentDrawScope.getLayoutDirection())) + f4;
             float coerceAtLeast = RangesKt.coerceAtLeast((align - f4) - f2, 0.0f);
-            float coerceAtMost = RangesKt.coerceAtMost(align + f4 + f2, Float.intBitsToFloat((int) (contentDrawScope.mo5858getSizeNHjbRc() >> 32)));
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (4294967295L & m5109unboximpl));
+            float coerceAtMost = RangesKt.coerceAtMost(align + f4 + f2, Float.intBitsToFloat((int) (contentDrawScope.mo5859getSizeNHjbRc() >> 32)));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (4294967295L & m5110unboximpl));
             float f5 = (-intBitsToFloat2) / f3;
             float f6 = intBitsToFloat2 / f3;
-            int m5267getDifferencertfAjoo = ClipOp.Companion.m5267getDifferencertfAjoo();
+            int m5268getDifferencertfAjoo = ClipOp.Companion.m5268getDifferencertfAjoo();
             DrawContext drawContext = contentDrawScope.getDrawContext();
-            long mo5779getSizeNHjbRc = drawContext.mo5779getSizeNHjbRc();
+            long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5782clipRectN_I0leg(coerceAtLeast, f5, coerceAtMost, f6, m5267getDifferencertfAjoo);
+                drawContext.getTransform().mo5783clipRectN_I0leg(coerceAtLeast, f5, coerceAtMost, f6, m5268getDifferencertfAjoo);
                 contentDrawScope.drawContent();
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5780setSizeuvyYCjk(mo5779getSizeNHjbRc);
+                drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
             }
         } else {
             contentDrawScope.drawContent();

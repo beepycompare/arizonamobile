@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.mb  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0422mb extends JSONObject {
     public C0422mb() {
     }

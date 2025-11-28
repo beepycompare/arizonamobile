@@ -14,7 +14,7 @@ final class CalculateMatrixToWindowApi29 implements CalculateMatrixToWindow {
 
     @Override // androidx.compose.ui.platform.CalculateMatrixToWindow
     /* renamed from: calculateMatrixToWindow-EL8BTi8 */
-    public void mo7112calculateMatrixToWindowEL8BTi8(View view, float[] fArr) {
+    public void mo7113calculateMatrixToWindowEL8BTi8(View view, float[] fArr) {
         this.tmpMatrix.reset();
         view.transformMatrixToGlobal(this.tmpMatrix);
         ViewParent parent = view.getParent();
@@ -29,6 +29,6 @@ final class CalculateMatrixToWindowApi29 implements CalculateMatrixToWindow {
         view.getLocationInWindow(iArr);
         int[] iArr2 = this.tmpPosition;
         this.tmpMatrix.postTranslate(iArr2[0] - i, iArr2[1] - i2);
-        AndroidMatrixConversions_androidKt.m5148setFromtUYjHk(fArr, this.tmpMatrix);
+        AndroidMatrixConversions_androidKt.m5149setFromtUYjHk(fArr, this.tmpMatrix);
     }
 }

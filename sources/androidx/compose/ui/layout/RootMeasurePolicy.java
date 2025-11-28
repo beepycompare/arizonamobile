@@ -22,12 +22,12 @@ public final class RootMeasurePolicy extends LayoutNode.NoIntrinsicsMeasurePolic
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         int size = list.size();
         if (size != 0) {
             if (size == 1) {
-                final Placeable mo6697measureBRTryo0 = list.get(0).mo6697measureBRTryo0(j);
-                return MeasureScope.layout$default(measureScope, ConstraintsKt.m7965constrainWidthK40F9xA(j, mo6697measureBRTryo0.getWidth()), ConstraintsKt.m7964constrainHeightK40F9xA(j, mo6697measureBRTryo0.getHeight()), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RootMeasurePolicy$measure$2
+                final Placeable mo6698measureBRTryo0 = list.get(0).mo6698measureBRTryo0(j);
+                return MeasureScope.layout$default(measureScope, ConstraintsKt.m7966constrainWidthK40F9xA(j, mo6698measureBRTryo0.getWidth()), ConstraintsKt.m7965constrainHeightK40F9xA(j, mo6698measureBRTryo0.getHeight()), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RootMeasurePolicy$measure$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     {
                         super(1);
@@ -50,13 +50,13 @@ public final class RootMeasurePolicy extends LayoutNode.NoIntrinsicsMeasurePolic
             int i = 0;
             int i2 = 0;
             for (int i3 = 0; i3 < size2; i3++) {
-                Placeable mo6697measureBRTryo02 = list.get(i3).mo6697measureBRTryo0(j);
-                i = Math.max(mo6697measureBRTryo02.getWidth(), i);
-                i2 = Math.max(mo6697measureBRTryo02.getHeight(), i2);
-                arrayList.add(mo6697measureBRTryo02);
+                Placeable mo6698measureBRTryo02 = list.get(i3).mo6698measureBRTryo0(j);
+                i = Math.max(mo6698measureBRTryo02.getWidth(), i);
+                i2 = Math.max(mo6698measureBRTryo02.getHeight(), i2);
+                arrayList.add(mo6698measureBRTryo02);
             }
             final ArrayList arrayList2 = arrayList;
-            return MeasureScope.layout$default(measureScope, ConstraintsKt.m7965constrainWidthK40F9xA(j, i), ConstraintsKt.m7964constrainHeightK40F9xA(j, i2), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RootMeasurePolicy$measure$3
+            return MeasureScope.layout$default(measureScope, ConstraintsKt.m7966constrainWidthK40F9xA(j, i), ConstraintsKt.m7965constrainHeightK40F9xA(j, i2), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RootMeasurePolicy$measure$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -80,7 +80,7 @@ public final class RootMeasurePolicy extends LayoutNode.NoIntrinsicsMeasurePolic
                 }
             }, 4, null);
         }
-        return MeasureScope.layout$default(measureScope, Constraints.m7950getMinWidthimpl(j), Constraints.m7949getMinHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RootMeasurePolicy$measure$1
+        return MeasureScope.layout$default(measureScope, Constraints.m7951getMinWidthimpl(j), Constraints.m7950getMinHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RootMeasurePolicy$measure$1
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Placeable.PlacementScope placementScope) {
             }

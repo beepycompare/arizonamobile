@@ -181,15 +181,15 @@ public final class CasesMainPage implements CasesBasePage {
         this.isHasCost = false;
         arizonaCasesMainPageBinding.animateContainer.setVisibility(4);
         this.baseModel = casesInfoModel;
-        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m12060getCountLeft());
+        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m12069getCountLeft());
         setSelectXType(true);
         hidePrizePage$default(this, false, 1, null);
         Picasso picasso = Picasso.get();
-        String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso.load(resourceUrl + "projects/arizona-rp/systems/cases/" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCase);
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + "projects/arizona-rp/systems/cases/" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCase);
         Picasso picasso2 = Picasso.get();
-        String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso2.load(resourceUrl2 + "projects/arizona-rp/systems/cases/logo_" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCaseLogo, new Callback() { // from class: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$initialize$1$1
+        String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/cases/logo_" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCaseLogo, new Callback() { // from class: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$initialize$1$1
             @Override // com.squareup.picasso.Callback
             public void onError(Exception exc) {
             }
@@ -202,7 +202,7 @@ public final class CasesMainPage implements CasesBasePage {
                 ArizonaCasesMainPageBinding.this.animateContainer.animate().translationY(0.0f).alpha(1.0f).setDuration(400L).setInterpolator(new DecelerateInterpolator()).start();
             }
         });
-        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m12061getCurrency().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m12070getCurrency().ordinal()];
         if (i == 1) {
             arizonaCasesMainPageBinding.ivMoneyIc.setImageResource(R.drawable.ic_rubble);
             arizonaCasesMainPageBinding.ivMoneyIc.setImageTintList(ColorStateList.valueOf(ViewCompat.MEASURED_STATE_MASK));

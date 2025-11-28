@@ -120,7 +120,7 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
                     } else {
                         userBattlepassBinding2.tvTitleText.setTextColor(Color.parseColor("#CEFF2C"));
                     }
-                    this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), this.isArizonaType ? ru.mrlargha.commonui.R.drawable.event_icon : ru.mrlargha.commonui.R.drawable.event_pirates_icon));
+                    this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), this.isArizonaType ? ru.mrlargha.feature.event.R.drawable.event_icon : ru.mrlargha.commonui.R.drawable.event_pirates_icon));
                     Unit unit = Unit.INSTANCE;
                 } catch (Exception e) {
                     Integer.valueOf(Log.e("Exception", String.valueOf(e.getMessage())));

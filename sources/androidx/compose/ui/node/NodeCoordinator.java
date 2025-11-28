@@ -131,7 +131,7 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     };
     private static final ReusableGraphicsLayerScope graphicsLayerScope = new ReusableGraphicsLayerScope();
     private static final LayerPositionalProperties tmpLayerPositionalProperties = new LayerPositionalProperties();
-    private static final float[] tmpMatrix = Matrix.m5521constructorimpl$default(null, 1, null);
+    private static final float[] tmpMatrix = Matrix.m5522constructorimpl$default(null, 1, null);
     private static final HitTestSource PointerInputSource = new HitTestSource() { // from class: androidx.compose.ui.node.NodeCoordinator$Companion$PointerInputSource$1
         @Override // androidx.compose.ui.node.NodeCoordinator.HitTestSource
         public boolean shouldHitTestChildren(LayoutNode layoutNode) {
@@ -140,29 +140,29 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
         @Override // androidx.compose.ui.node.NodeCoordinator.HitTestSource
         /* renamed from: childHitTest-qzLsGqo  reason: not valid java name */
-        public void mo6983childHitTestqzLsGqo(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z) {
-            layoutNode.m6897hitTest6fMxITs$ui_release(j, hitTestResult, i, z);
+        public void mo6984childHitTestqzLsGqo(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z) {
+            layoutNode.m6898hitTest6fMxITs$ui_release(j, hitTestResult, i, z);
         }
 
         @Override // androidx.compose.ui.node.NodeCoordinator.HitTestSource
         /* renamed from: entityType-OLwlOKw  reason: not valid java name */
-        public int mo6984entityTypeOLwlOKw() {
-            return NodeKind.m6988constructorimpl(16);
+        public int mo6985entityTypeOLwlOKw() {
+            return NodeKind.m6989constructorimpl(16);
         }
 
         @Override // androidx.compose.ui.node.NodeCoordinator.HitTestSource
         public boolean interceptOutOfBoundsChildEvents(Modifier.Node node) {
-            int m6988constructorimpl = NodeKind.m6988constructorimpl(16);
+            int m6989constructorimpl = NodeKind.m6989constructorimpl(16);
             MutableVector mutableVector = null;
             while (node != null) {
                 if (node instanceof PointerInputModifierNode) {
                     if (((PointerInputModifierNode) node).interceptOutOfBoundsChildEvents()) {
                         return true;
                     }
-                } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                     int i = 0;
                     for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                        if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                        if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                             i++;
                             if (i == 1) {
                                 node = delegate$ui_release;
@@ -208,20 +208,20 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
         @Override // androidx.compose.ui.node.NodeCoordinator.HitTestSource
         /* renamed from: childHitTest-qzLsGqo */
-        public void mo6983childHitTestqzLsGqo(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z) {
-            layoutNode.m6898hitTestSemantics6fMxITs$ui_release(j, hitTestResult, i, z);
+        public void mo6984childHitTestqzLsGqo(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z) {
+            layoutNode.m6899hitTestSemantics6fMxITs$ui_release(j, hitTestResult, i, z);
         }
 
         @Override // androidx.compose.ui.node.NodeCoordinator.HitTestSource
         /* renamed from: entityType-OLwlOKw */
-        public int mo6984entityTypeOLwlOKw() {
-            return NodeKind.m6988constructorimpl(8);
+        public int mo6985entityTypeOLwlOKw() {
+            return NodeKind.m6989constructorimpl(8);
         }
     };
     private Density layerDensity = getLayoutNode().getDensity();
     private LayoutDirection layerLayoutDirection = getLayoutNode().getLayoutDirection();
     private float lastLayerAlpha = 0.8f;
-    private long position = IntOffset.Companion.m8134getZeronOccac();
+    private long position = IntOffset.Companion.m8135getZeronOccac();
     private final Function0<Unit> invalidateParentLayer = new Function0<Unit>() { // from class: androidx.compose.ui.node.NodeCoordinator$invalidateParentLayer$1
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -248,10 +248,10 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     /* loaded from: classes2.dex */
     public interface HitTestSource {
         /* renamed from: childHitTest-qzLsGqo */
-        void mo6983childHitTestqzLsGqo(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z);
+        void mo6984childHitTestqzLsGqo(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z);
 
         /* renamed from: entityType-OLwlOKw */
-        int mo6984entityTypeOLwlOKw();
+        int mo6985entityTypeOLwlOKw();
 
         boolean interceptOutOfBoundsChildEvents(Modifier.Node node);
 
@@ -372,13 +372,13 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: visitNodes-aLcG6gQ */
-    public final /* synthetic */ <T> void m6981visitNodesaLcG6gQ(int i, Function1<? super T, Unit> function1) {
-        boolean m6997getIncludeSelfInTraversalH91voCI = NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(i);
+    public final /* synthetic */ <T> void m6982visitNodesaLcG6gQ(int i, Function1<? super T, Unit> function1) {
+        boolean m6998getIncludeSelfInTraversalH91voCI = NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(i);
         Modifier.Node tail = getTail();
-        if (!m6997getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
+        if (!m6998getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
             return;
         }
-        for (Modifier.Node headNode = headNode(m6997getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & i) != 0; headNode = headNode.getChild$ui_release()) {
+        for (Modifier.Node headNode = headNode(m6998getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & i) != 0; headNode = headNode.getChild$ui_release()) {
             if ((headNode.getKindSet$ui_release() & i) != 0) {
                 Modifier.Node node = headNode;
                 MutableVector mutableVector = null;
@@ -422,19 +422,19 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: hasNode-H91voCI */
-    private final boolean m6958hasNodeH91voCI(int i) {
-        Modifier.Node headNode = headNode(NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(i));
-        return headNode != null && DelegatableNodeKt.m6840has64DMado(headNode, i);
+    private final boolean m6959hasNodeH91voCI(int i) {
+        Modifier.Node headNode = headNode(NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(i));
+        return headNode != null && DelegatableNodeKt.m6841has64DMado(headNode, i);
     }
 
     /* renamed from: head-H91voCI */
-    public final Modifier.Node m6974headH91voCI(int i) {
-        boolean m6997getIncludeSelfInTraversalH91voCI = NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(i);
+    public final Modifier.Node m6975headH91voCI(int i) {
+        boolean m6998getIncludeSelfInTraversalH91voCI = NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(i);
         Modifier.Node tail = getTail();
-        if (!m6997getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
+        if (!m6998getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
             return null;
         }
-        for (Modifier.Node headNode = headNode(m6997getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & i) != 0; headNode = headNode.getChild$ui_release()) {
+        for (Modifier.Node headNode = headNode(m6998getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & i) != 0; headNode = headNode.getChild$ui_release()) {
             if ((headNode.getKindSet$ui_release() & i) != 0) {
                 return headNode;
             }
@@ -447,8 +447,8 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: getSize-YbymL2g */
-    public final long mo6705getSizeYbymL2g() {
-        return m6757getMeasuredSizeYbymL2g();
+    public final long mo6706getSizeYbymL2g() {
+        return m6758getMeasuredSizeYbymL2g();
     }
 
     protected final Function1<GraphicsLayerScope, Unit> getLayerBlock() {
@@ -480,9 +480,9 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     public void replace$ui_release() {
         GraphicsLayer graphicsLayer = this.explicitLayer;
         if (graphicsLayer != null) {
-            mo6759placeAtf8xVGno(mo6917getPositionnOccac(), this.zIndex, graphicsLayer);
+            mo6760placeAtf8xVGno(mo6918getPositionnOccac(), this.zIndex, graphicsLayer);
         } else {
-            mo6698placeAtf8xVGno(mo6917getPositionnOccac(), this.zIndex, this.layerBlock);
+            mo6699placeAtf8xVGno(mo6918getPositionnOccac(), this.zIndex, this.layerBlock);
         }
     }
 
@@ -563,29 +563,29 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         NodeCoordinator nodeCoordinator;
         OwnedLayer ownedLayer = this.layer;
         if (ownedLayer != null) {
-            ownedLayer.mo7046resizeozmzZPI(IntSize.m8161constructorimpl((i << 32) | (i2 & 4294967295L)));
+            ownedLayer.mo7047resizeozmzZPI(IntSize.m8162constructorimpl((i << 32) | (i2 & 4294967295L)));
         } else if (getLayoutNode().isPlaced() && (nodeCoordinator = this.wrappedBy) != null) {
             nodeCoordinator.invalidateLayer();
         }
-        m6760setMeasuredSizeozmzZPI(IntSize.m8161constructorimpl((i2 & 4294967295L) | (i << 32)));
+        m6761setMeasuredSizeozmzZPI(IntSize.m8162constructorimpl((i2 & 4294967295L) | (i << 32)));
         if (this.layerBlock != null) {
             updateLayerParameters(false);
         }
-        int m6988constructorimpl = NodeKind.m6988constructorimpl(4);
-        boolean m6997getIncludeSelfInTraversalH91voCI = NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(m6988constructorimpl);
+        int m6989constructorimpl = NodeKind.m6989constructorimpl(4);
+        boolean m6998getIncludeSelfInTraversalH91voCI = NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(m6989constructorimpl);
         Modifier.Node tail = getTail();
-        if (m6997getIncludeSelfInTraversalH91voCI || (tail = tail.getParent$ui_release()) != null) {
-            for (Modifier.Node headNode = headNode(m6997getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
-                if ((headNode.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+        if (m6998getIncludeSelfInTraversalH91voCI || (tail = tail.getParent$ui_release()) != null) {
+            for (Modifier.Node headNode = headNode(m6998getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6989constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
+                if ((headNode.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                     Modifier.Node node = headNode;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof DrawModifierNode) {
                             ((DrawModifierNode) node).onMeasureResultChanged();
-                        } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i3 = 0;
                             for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                                if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                     i3++;
                                     if (i3 == 1) {
                                         node = delegate$ui_release;
@@ -624,12 +624,12 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
     @Override // androidx.compose.ui.node.LookaheadCapablePlaceable
     /* renamed from: getPosition-nOcc-ac */
-    public long mo6917getPositionnOccac() {
+    public long mo6918getPositionnOccac() {
         return this.position;
     }
 
     /* renamed from: setPosition--gyyYBs */
-    protected void m6979setPositiongyyYBs(long j) {
+    protected void m6980setPositiongyyYBs(long j) {
         this.position = j;
     }
 
@@ -644,21 +644,21 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     /* JADX WARN: Type inference failed for: r5v4, types: [T, java.lang.Object] */
     @Override // androidx.compose.ui.layout.Measured, androidx.compose.ui.layout.IntrinsicMeasurable
     public Object getParentData() {
-        if (getLayoutNode().getNodes$ui_release().m6949hasH91voCI$ui_release(NodeKind.m6988constructorimpl(64))) {
+        if (getLayoutNode().getNodes$ui_release().m6950hasH91voCI$ui_release(NodeKind.m6989constructorimpl(64))) {
             getTail();
             Ref.ObjectRef objectRef = new Ref.ObjectRef();
             for (Modifier.Node tail$ui_release = getLayoutNode().getNodes$ui_release().getTail$ui_release(); tail$ui_release != null; tail$ui_release = tail$ui_release.getParent$ui_release()) {
-                if ((NodeKind.m6988constructorimpl(64) & tail$ui_release.getKindSet$ui_release()) != 0) {
-                    int m6988constructorimpl = NodeKind.m6988constructorimpl(64);
+                if ((NodeKind.m6989constructorimpl(64) & tail$ui_release.getKindSet$ui_release()) != 0) {
+                    int m6989constructorimpl = NodeKind.m6989constructorimpl(64);
                     MutableVector mutableVector = null;
                     Modifier.Node node = tail$ui_release;
                     while (node != null) {
                         if (node instanceof ParentDataModifierNode) {
                             objectRef.element = ((ParentDataModifierNode) node).modifyParentData(getLayoutNode().getDensity(), objectRef.element);
-                        } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                                if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui_release;
@@ -727,42 +727,42 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: getLastMeasurementConstraints-msEJaDk$ui_release */
-    public final long m6972getLastMeasurementConstraintsmsEJaDk$ui_release() {
-        return m6758getMeasurementConstraintsmsEJaDk();
+    public final long m6973getLastMeasurementConstraintsmsEJaDk$ui_release() {
+        return m6759getMeasurementConstraintsmsEJaDk();
     }
 
     /* renamed from: performingMeasure-K40F9xA */
-    protected final Placeable m6977performingMeasureK40F9xA(long j, Function0<? extends Placeable> function0) {
-        m6761setMeasurementConstraintsBRTryo0(j);
+    protected final Placeable m6978performingMeasureK40F9xA(long j, Function0<? extends Placeable> function0) {
+        m6762setMeasurementConstraintsBRTryo0(j);
         return function0.invoke();
     }
 
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo6698placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+    public void mo6699placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
         if (this.forcePlaceWithLookaheadOffset) {
             LookaheadDelegate lookaheadDelegate = getLookaheadDelegate();
             Intrinsics.checkNotNull(lookaheadDelegate);
-            m6964placeSelfMLgxB_4(lookaheadDelegate.mo6917getPositionnOccac(), f, function1, null);
+            m6965placeSelfMLgxB_4(lookaheadDelegate.mo6918getPositionnOccac(), f, function1, null);
             return;
         }
-        m6964placeSelfMLgxB_4(j, f, function1, null);
+        m6965placeSelfMLgxB_4(j, f, function1, null);
     }
 
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo6759placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
+    public void mo6760placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
         if (this.forcePlaceWithLookaheadOffset) {
             LookaheadDelegate lookaheadDelegate = getLookaheadDelegate();
             Intrinsics.checkNotNull(lookaheadDelegate);
-            m6964placeSelfMLgxB_4(lookaheadDelegate.mo6917getPositionnOccac(), f, null, graphicsLayer);
+            m6965placeSelfMLgxB_4(lookaheadDelegate.mo6918getPositionnOccac(), f, null, graphicsLayer);
             return;
         }
-        m6964placeSelfMLgxB_4(j, f, null, graphicsLayer);
+        m6965placeSelfMLgxB_4(j, f, null, graphicsLayer);
     }
 
     /* renamed from: placeSelf-MLgxB_4 */
-    private final void m6964placeSelfMLgxB_4(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
+    private final void m6965placeSelfMLgxB_4(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
         if (graphicsLayer != null) {
             if (!(function1 == null)) {
                 InlineClassHelperKt.throwIllegalArgumentException("both ways to create layers shouldn't be used together");
@@ -774,8 +774,8 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
             }
             if (this.layer == null) {
                 OwnedLayer createLayer = LayoutNodeKt.requireOwner(getLayoutNode()).createLayer(getDrawBlock(), this.invalidateParentLayer, graphicsLayer);
-                createLayer.mo7046resizeozmzZPI(m6757getMeasuredSizeYbymL2g());
-                createLayer.mo7045movegyyYBs(j);
+                createLayer.mo7047resizeozmzZPI(m6758getMeasuredSizeYbymL2g());
+                createLayer.mo7046movegyyYBs(j);
                 this.layer = createLayer;
                 getLayoutNode().setInnerLayerCoordinatorIsDirty$ui_release(true);
                 this.invalidateParentLayer.invoke();
@@ -787,13 +787,13 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
             }
             updateLayerBlock$default(this, function1, false, 2, null);
         }
-        if (!IntOffset.m8122equalsimpl0(mo6917getPositionnOccac(), j)) {
-            LayoutNodeKt.requireOwner(getLayoutNode()).voteFrameRate(FrameRateCategory.Companion.m4767getHighNSsRyOo());
-            m6979setPositiongyyYBs(j);
+        if (!IntOffset.m8123equalsimpl0(mo6918getPositionnOccac(), j)) {
+            LayoutNodeKt.requireOwner(getLayoutNode()).voteFrameRate(FrameRateCategory.Companion.m4768getHighNSsRyOo());
+            m6980setPositiongyyYBs(j);
             getLayoutNode().getLayoutDelegate$ui_release().getMeasurePassDelegate$ui_release().notifyChildrenUsingCoordinatesWhilePlacing();
             OwnedLayer ownedLayer = this.layer;
             if (ownedLayer != null) {
-                ownedLayer.mo7045movegyyYBs(j);
+                ownedLayer.mo7046movegyyYBs(j);
             } else {
                 NodeCoordinator nodeCoordinator = this.wrappedBy;
                 if (nodeCoordinator != null) {
@@ -827,8 +827,8 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: placeSelfApparentToRealOffset-MLgxB_4 */
-    public final void m6978placeSelfApparentToRealOffsetMLgxB_4(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
-        m6964placeSelfMLgxB_4(IntOffset.m8127plusqkQi6aY(j, m6756getApparentToRealOffsetnOccac()), f, function1, graphicsLayer);
+    public final void m6979placeSelfApparentToRealOffsetMLgxB_4(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
+        m6965placeSelfMLgxB_4(IntOffset.m8128plusqkQi6aY(j, m6757getApparentToRealOffsetnOccac()), f, function1, graphicsLayer);
     }
 
     public final void draw(Canvas canvas, GraphicsLayer graphicsLayer) {
@@ -837,11 +837,11 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
             ownedLayer.drawLayer(canvas, graphicsLayer);
             return;
         }
-        float m8123getXimpl = IntOffset.m8123getXimpl(mo6917getPositionnOccac());
-        float m8124getYimpl = IntOffset.m8124getYimpl(mo6917getPositionnOccac());
-        canvas.translate(m8123getXimpl, m8124getYimpl);
+        float m8124getXimpl = IntOffset.m8124getXimpl(mo6918getPositionnOccac());
+        float m8125getYimpl = IntOffset.m8125getYimpl(mo6918getPositionnOccac());
+        canvas.translate(m8124getXimpl, m8125getYimpl);
         drawContainedDrawModifiers(canvas, graphicsLayer);
-        canvas.translate(-m8123getXimpl, -m8124getYimpl);
+        canvas.translate(-m8124getXimpl, -m8125getYimpl);
     }
 
     public void performDraw(Canvas canvas, GraphicsLayer graphicsLayer) {
@@ -935,8 +935,8 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
             this.layerBlock = function1;
             if (this.layer == null) {
                 OwnedLayer createLayer$default = Owner.createLayer$default(LayoutNodeKt.requireOwner(layoutNode), getDrawBlock(), this.invalidateParentLayer, null, 4, null);
-                createLayer$default.mo7046resizeozmzZPI(m6757getMeasuredSizeYbymL2g());
-                createLayer$default.mo7045movegyyYBs(mo6917getPositionnOccac());
+                createLayer$default.mo7047resizeozmzZPI(m6758getMeasuredSizeYbymL2g());
+                createLayer$default.mo7046movegyyYBs(mo6918getPositionnOccac());
                 this.layer = createLayer$default;
                 updateLayerParameters$default(this, false, 1, null);
                 layoutNode.setInnerLayerCoordinatorIsDirty$ui_release(true);
@@ -953,7 +953,7 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         this.layerBlock = null;
         OwnedLayer ownedLayer = this.layer;
         if (ownedLayer != null) {
-            if (!MatrixKt.m5546isIdentity58bKbWc(ownedLayer.mo7041getUnderlyingMatrixsQKQjiQ())) {
+            if (!MatrixKt.m5547isIdentity58bKbWc(ownedLayer.mo7042getUnderlyingMatrixsQKQjiQ())) {
                 layoutNode.onCoordinatorPositionChanged$ui_release();
             }
             ownedLayer.destroy();
@@ -990,7 +990,7 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
                 reusableGraphicsLayerScope.reset();
                 reusableGraphicsLayerScope.setGraphicsDensity$ui_release(getLayoutNode().getDensity());
                 reusableGraphicsLayerScope.setLayoutDirection$ui_release(getLayoutNode().getLayoutDirection());
-                reusableGraphicsLayerScope.m5603setSizeuvyYCjk(IntSizeKt.m8178toSizeozmzZPI(mo6705getSizeYbymL2g()));
+                reusableGraphicsLayerScope.m5604setSizeuvyYCjk(IntSizeKt.m8179toSizeozmzZPI(mo6706getSizeYbymL2g()));
                 getSnapshotObserver().observeReads$ui_release(this, onCommitAffectingLayerParams, new Function0<Unit>() { // from class: androidx.compose.ui.node.NodeCoordinator$updateLayerParameters$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1058,45 +1058,45 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: getMinimumTouchTargetSize-NH-jbRc */
-    public final long m6973getMinimumTouchTargetSizeNHjbRc() {
-        return this.layerDensity.mo430toSizeXkaWNTQ(getLayoutNode().getViewConfiguration().mo6904getMinimumTouchTargetSizeMYxV2XQ());
+    public final long m6974getMinimumTouchTargetSizeNHjbRc() {
+        return this.layerDensity.mo431toSizeXkaWNTQ(getLayoutNode().getViewConfiguration().mo6905getMinimumTouchTargetSizeMYxV2XQ());
     }
 
     /* renamed from: hitTest-qzLsGqo */
-    public final void m6975hitTestqzLsGqo(HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
+    public final void m6976hitTestqzLsGqo(HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
         boolean z2;
-        Modifier.Node m6974headH91voCI = m6974headH91voCI(hitTestSource.mo6984entityTypeOLwlOKw());
+        Modifier.Node m6975headH91voCI = m6975headH91voCI(hitTestSource.mo6985entityTypeOLwlOKw());
         boolean z3 = false;
-        if (!m6982withinLayerBoundsk4lQ0M(j)) {
-            if (PointerType.m6640equalsimpl0(i, PointerType.Companion.m6647getTouchT8wyACA())) {
-                float m6970distanceInMinimumTouchTargettz77jQw = m6970distanceInMinimumTouchTargettz77jQw(j, m6973getMinimumTouchTargetSizeNHjbRc());
-                if ((Float.floatToRawIntBits(m6970distanceInMinimumTouchTargettz77jQw) & Integer.MAX_VALUE) >= 2139095040 || !hitTestResult.isHitInMinimumTouchTargetBetter(m6970distanceInMinimumTouchTargettz77jQw, false)) {
+        if (!m6983withinLayerBoundsk4lQ0M(j)) {
+            if (PointerType.m6641equalsimpl0(i, PointerType.Companion.m6648getTouchT8wyACA())) {
+                float m6971distanceInMinimumTouchTargettz77jQw = m6971distanceInMinimumTouchTargettz77jQw(j, m6974getMinimumTouchTargetSizeNHjbRc());
+                if ((Float.floatToRawIntBits(m6971distanceInMinimumTouchTargettz77jQw) & Integer.MAX_VALUE) >= 2139095040 || !hitTestResult.isHitInMinimumTouchTargetBetter(m6971distanceInMinimumTouchTargettz77jQw, false)) {
                     return;
                 }
-                m6960hitNearFh5PU_I(m6974headH91voCI, hitTestSource, j, hitTestResult, i, false, m6970distanceInMinimumTouchTargettz77jQw);
+                m6961hitNearFh5PU_I(m6975headH91voCI, hitTestSource, j, hitTestResult, i, false, m6971distanceInMinimumTouchTargettz77jQw);
             }
-        } else if (m6974headH91voCI == null) {
-            mo6886hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
-        } else if (m6976isPointerInBoundsk4lQ0M(j)) {
-            m6959hit5ShdDok(m6974headH91voCI, hitTestSource, j, hitTestResult, i, z);
+        } else if (m6975headH91voCI == null) {
+            mo6887hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
+        } else if (m6977isPointerInBoundsk4lQ0M(j)) {
+            m6960hit5ShdDok(m6975headH91voCI, hitTestSource, j, hitTestResult, i, z);
         } else {
-            float m6970distanceInMinimumTouchTargettz77jQw2 = !PointerType.m6640equalsimpl0(i, PointerType.Companion.m6647getTouchT8wyACA()) ? Float.POSITIVE_INFINITY : m6970distanceInMinimumTouchTargettz77jQw(j, m6973getMinimumTouchTargetSizeNHjbRc());
-            if ((Float.floatToRawIntBits(m6970distanceInMinimumTouchTargettz77jQw2) & Integer.MAX_VALUE) < 2139095040) {
+            float m6971distanceInMinimumTouchTargettz77jQw2 = !PointerType.m6641equalsimpl0(i, PointerType.Companion.m6648getTouchT8wyACA()) ? Float.POSITIVE_INFINITY : m6971distanceInMinimumTouchTargettz77jQw(j, m6974getMinimumTouchTargetSizeNHjbRc());
+            if ((Float.floatToRawIntBits(m6971distanceInMinimumTouchTargettz77jQw2) & Integer.MAX_VALUE) < 2139095040) {
                 z2 = z;
-                if (hitTestResult.isHitInMinimumTouchTargetBetter(m6970distanceInMinimumTouchTargettz77jQw2, z2)) {
+                if (hitTestResult.isHitInMinimumTouchTargetBetter(m6971distanceInMinimumTouchTargettz77jQw2, z2)) {
                     z3 = true;
                 }
             } else {
                 z2 = z;
             }
-            m6963outOfBoundsHit8NAm7pk(m6974headH91voCI, hitTestSource, j, hitTestResult, i, z2, m6970distanceInMinimumTouchTargettz77jQw2, z3);
+            m6964outOfBoundsHit8NAm7pk(m6975headH91voCI, hitTestSource, j, hitTestResult, i, z2, m6971distanceInMinimumTouchTargettz77jQw2, z3);
         }
     }
 
     /* renamed from: hit-5ShdDok */
-    private final void m6959hit5ShdDok(Modifier.Node node, HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
+    private final void m6960hit5ShdDok(Modifier.Node node, HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
         long DistanceAndFlags;
-        Modifier.Node m6986nextUntilhw7D004;
+        Modifier.Node m6987nextUntilhw7D004;
         if (node != null) {
             int i2 = hitTestResult.hitDepth;
             hitTestResult.removeNodesInRange(hitTestResult.hitDepth + 1, hitTestResult.size());
@@ -1105,19 +1105,19 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
             MutableLongList mutableLongList = hitTestResult.distanceFromEdgeAndFlags;
             DistanceAndFlags = HitTestResultKt.DistanceAndFlags(-1.0f, z, false);
             mutableLongList.add(DistanceAndFlags);
-            m6986nextUntilhw7D004 = NodeCoordinatorKt.m6986nextUntilhw7D004(node, hitTestSource.mo6984entityTypeOLwlOKw(), NodeKind.m6988constructorimpl(2));
-            m6959hit5ShdDok(m6986nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z);
+            m6987nextUntilhw7D004 = NodeCoordinatorKt.m6987nextUntilhw7D004(node, hitTestSource.mo6985entityTypeOLwlOKw(), NodeKind.m6989constructorimpl(2));
+            m6960hit5ShdDok(m6987nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z);
             hitTestResult.hitDepth = i2;
             return;
         }
-        mo6886hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
+        mo6887hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
     }
 
     /* renamed from: outOfBoundsHit-8NAm7pk */
-    public final void m6963outOfBoundsHit8NAm7pk(final Modifier.Node node, final HitTestSource hitTestSource, final long j, final HitTestResult hitTestResult, final int i, final boolean z, final float f, final boolean z2) {
+    public final void m6964outOfBoundsHit8NAm7pk(final Modifier.Node node, final HitTestSource hitTestSource, final long j, final HitTestResult hitTestResult, final int i, final boolean z, final float f, final boolean z2) {
         if (node == null) {
-            mo6886hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
-        } else if (m6961isInExpandedTouchBoundsThDn1k(node, j, i)) {
+            mo6887hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
+        } else if (m6962isInExpandedTouchBoundsThDn1k(node, j, i)) {
             hitTestResult.hitExpandedTouchBounds(node, z, new Function0<Unit>() { // from class: androidx.compose.ui.node.NodeCoordinator$outOfBoundsHit$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1133,23 +1133,23 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    Modifier.Node m6986nextUntilhw7D004;
+                    Modifier.Node m6987nextUntilhw7D004;
                     NodeCoordinator nodeCoordinator = NodeCoordinator.this;
-                    m6986nextUntilhw7D004 = NodeCoordinatorKt.m6986nextUntilhw7D004(node, hitTestSource.mo6984entityTypeOLwlOKw(), NodeKind.m6988constructorimpl(2));
-                    nodeCoordinator.m6963outOfBoundsHit8NAm7pk(m6986nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z, f, z2);
+                    m6987nextUntilhw7D004 = NodeCoordinatorKt.m6987nextUntilhw7D004(node, hitTestSource.mo6985entityTypeOLwlOKw(), NodeKind.m6989constructorimpl(2));
+                    nodeCoordinator.m6964outOfBoundsHit8NAm7pk(m6987nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z, f, z2);
                 }
             });
         } else if (z2) {
-            m6960hitNearFh5PU_I(node, hitTestSource, j, hitTestResult, i, z, f);
+            m6961hitNearFh5PU_I(node, hitTestSource, j, hitTestResult, i, z, f);
         } else {
-            m6965speculativeHitFh5PU_I(node, hitTestSource, j, hitTestResult, i, z, f);
+            m6966speculativeHitFh5PU_I(node, hitTestSource, j, hitTestResult, i, z, f);
         }
     }
 
     /* renamed from: hitNear-Fh5PU_I */
-    private final void m6960hitNearFh5PU_I(Modifier.Node node, HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z, float f) {
+    private final void m6961hitNearFh5PU_I(Modifier.Node node, HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z, float f) {
         long DistanceAndFlags;
-        Modifier.Node m6986nextUntilhw7D004;
+        Modifier.Node m6987nextUntilhw7D004;
         if (node != null) {
             int i2 = hitTestResult.hitDepth;
             hitTestResult.removeNodesInRange(hitTestResult.hitDepth + 1, hitTestResult.size());
@@ -1158,22 +1158,22 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
             MutableLongList mutableLongList = hitTestResult.distanceFromEdgeAndFlags;
             DistanceAndFlags = HitTestResultKt.DistanceAndFlags(f, z, false);
             mutableLongList.add(DistanceAndFlags);
-            m6986nextUntilhw7D004 = NodeCoordinatorKt.m6986nextUntilhw7D004(node, hitTestSource.mo6984entityTypeOLwlOKw(), NodeKind.m6988constructorimpl(2));
-            m6963outOfBoundsHit8NAm7pk(m6986nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z, f, true);
+            m6987nextUntilhw7D004 = NodeCoordinatorKt.m6987nextUntilhw7D004(node, hitTestSource.mo6985entityTypeOLwlOKw(), NodeKind.m6989constructorimpl(2));
+            m6964outOfBoundsHit8NAm7pk(m6987nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z, f, true);
             hitTestResult.hitDepth = i2;
             return;
         }
-        mo6886hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
+        mo6887hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
     }
 
     /* renamed from: speculativeHit-Fh5PU_I */
-    private final void m6965speculativeHitFh5PU_I(final Modifier.Node node, final HitTestSource hitTestSource, final long j, final HitTestResult hitTestResult, final int i, final boolean z, final float f) {
-        Modifier.Node m6986nextUntilhw7D004;
+    private final void m6966speculativeHitFh5PU_I(final Modifier.Node node, final HitTestSource hitTestSource, final long j, final HitTestResult hitTestResult, final int i, final boolean z, final float f) {
+        Modifier.Node m6987nextUntilhw7D004;
         if (node == null) {
-            mo6886hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
+            mo6887hitTestChildqzLsGqo(hitTestSource, j, hitTestResult, i, z);
         } else if (!hitTestSource.interceptOutOfBoundsChildEvents(node)) {
-            m6986nextUntilhw7D004 = NodeCoordinatorKt.m6986nextUntilhw7D004(node, hitTestSource.mo6984entityTypeOLwlOKw(), NodeKind.m6988constructorimpl(2));
-            m6963outOfBoundsHit8NAm7pk(m6986nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z, f, false);
+            m6987nextUntilhw7D004 = NodeCoordinatorKt.m6987nextUntilhw7D004(node, hitTestSource.mo6985entityTypeOLwlOKw(), NodeKind.m6989constructorimpl(2));
+            m6964outOfBoundsHit8NAm7pk(m6987nextUntilhw7D004, hitTestSource, j, hitTestResult, i, z, f, false);
         } else {
             hitTestResult.speculativeHit(node, f, z, new Function0<Unit>() { // from class: androidx.compose.ui.node.NodeCoordinator$speculativeHit$1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -1190,39 +1190,39 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    Modifier.Node m6986nextUntilhw7D0042;
+                    Modifier.Node m6987nextUntilhw7D0042;
                     NodeCoordinator nodeCoordinator = NodeCoordinator.this;
-                    m6986nextUntilhw7D0042 = NodeCoordinatorKt.m6986nextUntilhw7D004(node, hitTestSource.mo6984entityTypeOLwlOKw(), NodeKind.m6988constructorimpl(2));
-                    nodeCoordinator.m6963outOfBoundsHit8NAm7pk(m6986nextUntilhw7D0042, hitTestSource, j, hitTestResult, i, z, f, false);
+                    m6987nextUntilhw7D0042 = NodeCoordinatorKt.m6987nextUntilhw7D004(node, hitTestSource.mo6985entityTypeOLwlOKw(), NodeKind.m6989constructorimpl(2));
+                    nodeCoordinator.m6964outOfBoundsHit8NAm7pk(m6987nextUntilhw7D0042, hitTestSource, j, hitTestResult, i, z, f, false);
                 }
             });
         }
     }
 
     /* renamed from: isInExpandedTouchBounds-ThD-n1k */
-    private final boolean m6961isInExpandedTouchBoundsThDn1k(Modifier.Node node, long j, int i) {
+    private final boolean m6962isInExpandedTouchBoundsThDn1k(Modifier.Node node, long j, int i) {
         if (node == null) {
             return false;
         }
-        if (PointerType.m6640equalsimpl0(i, PointerType.Companion.m6646getStylusT8wyACA()) || PointerType.m6640equalsimpl0(i, PointerType.Companion.m6644getEraserT8wyACA())) {
-            int m6988constructorimpl = NodeKind.m6988constructorimpl(16);
+        if (PointerType.m6641equalsimpl0(i, PointerType.Companion.m6647getStylusT8wyACA()) || PointerType.m6641equalsimpl0(i, PointerType.Companion.m6645getEraserT8wyACA())) {
+            int m6989constructorimpl = NodeKind.m6989constructorimpl(16);
             MutableVector mutableVector = null;
             while (node != null) {
                 if (node instanceof PointerInputModifierNode) {
-                    long mo1431getTouchBoundsExpansionRZrCHBk = ((PointerInputModifierNode) node).mo1431getTouchBoundsExpansionRZrCHBk();
+                    long mo1432getTouchBoundsExpansionRZrCHBk = ((PointerInputModifierNode) node).mo1432getTouchBoundsExpansionRZrCHBk();
                     int i2 = (int) (j >> 32);
-                    if (Float.intBitsToFloat(i2) >= (-TouchBoundsExpansion.m7070computeLeftimpl$ui_release(mo1431getTouchBoundsExpansionRZrCHBk, getLayoutDirection())) && Float.intBitsToFloat(i2) < getMeasuredWidth() + TouchBoundsExpansion.m7071computeRightimpl$ui_release(mo1431getTouchBoundsExpansionRZrCHBk, getLayoutDirection())) {
+                    if (Float.intBitsToFloat(i2) >= (-TouchBoundsExpansion.m7071computeLeftimpl$ui_release(mo1432getTouchBoundsExpansionRZrCHBk, getLayoutDirection())) && Float.intBitsToFloat(i2) < getMeasuredWidth() + TouchBoundsExpansion.m7072computeRightimpl$ui_release(mo1432getTouchBoundsExpansionRZrCHBk, getLayoutDirection())) {
                         int i3 = (int) (j & 4294967295L);
-                        if (Float.intBitsToFloat(i3) >= (-TouchBoundsExpansion.m7078getTopimpl(mo1431getTouchBoundsExpansionRZrCHBk)) && Float.intBitsToFloat(i3) < getMeasuredHeight() + TouchBoundsExpansion.m7075getBottomimpl(mo1431getTouchBoundsExpansionRZrCHBk)) {
+                        if (Float.intBitsToFloat(i3) >= (-TouchBoundsExpansion.m7079getTopimpl(mo1432getTouchBoundsExpansionRZrCHBk)) && Float.intBitsToFloat(i3) < getMeasuredHeight() + TouchBoundsExpansion.m7076getBottomimpl(mo1432getTouchBoundsExpansionRZrCHBk)) {
                             return true;
                         }
                     }
                     return false;
                 }
-                if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                     int i4 = 0;
                     for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                        if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                        if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                             i4++;
                             if (i4 == 1) {
                                 node = delegate$ui_release;
@@ -1253,10 +1253,10 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: hitTestChild-qzLsGqo */
-    public void mo6886hitTestChildqzLsGqo(HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
+    public void mo6887hitTestChildqzLsGqo(HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
         NodeCoordinator nodeCoordinator = this.wrapped;
         if (nodeCoordinator != null) {
-            nodeCoordinator.m6975hitTestqzLsGqo(hitTestSource, m6957fromParentPosition8S9VItk$default(nodeCoordinator, j, false, 2, null), hitTestResult, i, z);
+            nodeCoordinator.m6976hitTestqzLsGqo(hitTestSource, m6958fromParentPosition8S9VItk$default(nodeCoordinator, j, false, 2, null), hitTestResult, i, z);
         }
     }
 
@@ -1266,10 +1266,10 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         }
         LayoutCoordinates findRootCoordinates = LayoutCoordinatesKt.findRootCoordinates(this);
         MutableRect rectCache = getRectCache();
-        long m6969calculateMinimumTouchTargetPaddingE7KxVPU = m6969calculateMinimumTouchTargetPaddingE7KxVPU(m6973getMinimumTouchTargetSizeNHjbRc());
-        int i = (int) (m6969calculateMinimumTouchTargetPaddingE7KxVPU >> 32);
+        long m6970calculateMinimumTouchTargetPaddingE7KxVPU = m6970calculateMinimumTouchTargetPaddingE7KxVPU(m6974getMinimumTouchTargetSizeNHjbRc());
+        int i = (int) (m6970calculateMinimumTouchTargetPaddingE7KxVPU >> 32);
         rectCache.setLeft(-Float.intBitsToFloat(i));
-        int i2 = (int) (m6969calculateMinimumTouchTargetPaddingE7KxVPU & 4294967295L);
+        int i2 = (int) (m6970calculateMinimumTouchTargetPaddingE7KxVPU & 4294967295L);
         rectCache.setTop(-Float.intBitsToFloat(i2));
         rectCache.setRight(getMeasuredWidth() + Float.intBitsToFloat(i));
         rectCache.setBottom(getMeasuredHeight() + Float.intBitsToFloat(i2));
@@ -1287,36 +1287,36 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: screenToLocal-MK-Hz9U */
-    public long mo6711screenToLocalMKHz9U(long j) {
+    public long mo6712screenToLocalMKHz9U(long j) {
         if (!isAttached()) {
             InlineClassHelperKt.throwIllegalStateException(ExpectAttachedLayoutCoordinates);
         }
-        return mo6706localPositionOfR5De75A(LayoutCoordinatesKt.findRootCoordinates(this), LayoutNodeKt.requireOwner(getLayoutNode()).mo6650screenToLocalMKHz9U(j));
+        return mo6707localPositionOfR5De75A(LayoutCoordinatesKt.findRootCoordinates(this), LayoutNodeKt.requireOwner(getLayoutNode()).mo6651screenToLocalMKHz9U(j));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToScreen-MK-Hz9U */
-    public long mo6709localToScreenMKHz9U(long j) {
+    public long mo6710localToScreenMKHz9U(long j) {
         if (!isAttached()) {
             InlineClassHelperKt.throwIllegalStateException(ExpectAttachedLayoutCoordinates);
         }
-        return LayoutNodeKt.requireOwner(getLayoutNode()).mo6649localToScreenMKHz9U(mo6708localToRootMKHz9U(j));
+        return LayoutNodeKt.requireOwner(getLayoutNode()).mo6650localToScreenMKHz9U(mo6709localToRootMKHz9U(j));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: windowToLocal-MK-Hz9U */
-    public long mo6714windowToLocalMKHz9U(long j) {
+    public long mo6715windowToLocalMKHz9U(long j) {
         if (!isAttached()) {
             InlineClassHelperKt.throwIllegalStateException(ExpectAttachedLayoutCoordinates);
         }
         LayoutCoordinates findRootCoordinates = LayoutCoordinatesKt.findRootCoordinates(this);
-        return mo6706localPositionOfR5De75A(findRootCoordinates, Offset.m5039minusMKHz9U(LayoutNodeKt.requireOwner(getLayoutNode()).mo7048calculateLocalPositionMKHz9U(j), LayoutCoordinatesKt.positionInRoot(findRootCoordinates)));
+        return mo6707localPositionOfR5De75A(findRootCoordinates, Offset.m5040minusMKHz9U(LayoutNodeKt.requireOwner(getLayoutNode()).mo7049calculateLocalPositionMKHz9U(j), LayoutCoordinatesKt.positionInRoot(findRootCoordinates)));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToWindow-MK-Hz9U */
-    public long mo6710localToWindowMKHz9U(long j) {
-        return LayoutNodeKt.requireOwner(getLayoutNode()).mo7049calculatePositionInWindowMKHz9U(mo6708localToRootMKHz9U(j));
+    public long mo6711localToWindowMKHz9U(long j) {
+        return LayoutNodeKt.requireOwner(getLayoutNode()).mo7050calculatePositionInWindowMKHz9U(mo6709localToRootMKHz9U(j));
     }
 
     private final NodeCoordinator toCoordinator(LayoutCoordinates layoutCoordinates) {
@@ -1331,70 +1331,70 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localPositionOf-R5De75A */
-    public long mo6706localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j) {
-        return mo6707localPositionOfS_NoaFU(layoutCoordinates, j, true);
+    public long mo6707localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j) {
+        return mo6708localPositionOfS_NoaFU(layoutCoordinates, j, true);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localPositionOf-S_NoaFU */
-    public long mo6707localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
+    public long mo6708localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
         if (layoutCoordinates instanceof LookaheadLayoutCoordinates) {
             LookaheadLayoutCoordinates lookaheadLayoutCoordinates = (LookaheadLayoutCoordinates) layoutCoordinates;
             lookaheadLayoutCoordinates.getCoordinator().onCoordinatesUsed$ui_release();
-            return Offset.m5027constructorimpl(lookaheadLayoutCoordinates.mo6707localPositionOfS_NoaFU(this, Offset.m5027constructorimpl(j ^ (-9223372034707292160L)), z) ^ (-9223372034707292160L));
+            return Offset.m5028constructorimpl(lookaheadLayoutCoordinates.mo6708localPositionOfS_NoaFU(this, Offset.m5028constructorimpl(j ^ (-9223372034707292160L)), z) ^ (-9223372034707292160L));
         }
         NodeCoordinator coordinator = toCoordinator(layoutCoordinates);
         coordinator.onCoordinatesUsed$ui_release();
         NodeCoordinator findCommonAncestor$ui_release = findCommonAncestor$ui_release(coordinator);
         while (coordinator != findCommonAncestor$ui_release) {
-            j = coordinator.m6980toParentPosition8S9VItk(j, z);
+            j = coordinator.m6981toParentPosition8S9VItk(j, z);
             coordinator = coordinator.wrappedBy;
             Intrinsics.checkNotNull(coordinator);
         }
-        return m6956ancestorToLocalS_NoaFU(findCommonAncestor$ui_release, j, z);
+        return m6957ancestorToLocalS_NoaFU(findCommonAncestor$ui_release, j, z);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: transformFrom-EL8BTi8 */
-    public void mo6712transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
+    public void mo6713transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
         NodeCoordinator coordinator = toCoordinator(layoutCoordinates);
         coordinator.onCoordinatesUsed$ui_release();
         NodeCoordinator findCommonAncestor$ui_release = findCommonAncestor$ui_release(coordinator);
-        Matrix.m5530resetimpl(fArr);
-        coordinator.m6968transformToAncestorEL8BTi8(findCommonAncestor$ui_release, fArr);
-        m6967transformFromAncestorEL8BTi8(findCommonAncestor$ui_release, fArr);
+        Matrix.m5531resetimpl(fArr);
+        coordinator.m6969transformToAncestorEL8BTi8(findCommonAncestor$ui_release, fArr);
+        m6968transformFromAncestorEL8BTi8(findCommonAncestor$ui_release, fArr);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: transformToScreen-58bKbWc */
-    public void mo6713transformToScreen58bKbWc(float[] fArr) {
+    public void mo6714transformToScreen58bKbWc(float[] fArr) {
         Owner requireOwner = LayoutNodeKt.requireOwner(getLayoutNode());
         NodeCoordinator coordinator = toCoordinator(LayoutCoordinatesKt.findRootCoordinates(this));
-        m6968transformToAncestorEL8BTi8(coordinator, fArr);
+        m6969transformToAncestorEL8BTi8(coordinator, fArr);
         if (requireOwner instanceof MatrixPositionCalculator) {
-            ((MatrixPositionCalculator) requireOwner).mo6498localToScreen58bKbWc(fArr);
+            ((MatrixPositionCalculator) requireOwner).mo6499localToScreen58bKbWc(fArr);
             return;
         }
         long positionOnScreen = LayoutCoordinatesKt.positionOnScreen(coordinator);
         if ((9223372034707292159L & positionOnScreen) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            Matrix.m5542translateimpl(fArr, Float.intBitsToFloat((int) (positionOnScreen >> 32)), Float.intBitsToFloat((int) (positionOnScreen & 4294967295L)), 0.0f);
+            Matrix.m5543translateimpl(fArr, Float.intBitsToFloat((int) (positionOnScreen >> 32)), Float.intBitsToFloat((int) (positionOnScreen & 4294967295L)), 0.0f);
         }
     }
 
     /* renamed from: transformToAncestor-EL8BTi8 */
-    private final void m6968transformToAncestorEL8BTi8(NodeCoordinator nodeCoordinator, float[] fArr) {
+    private final void m6969transformToAncestorEL8BTi8(NodeCoordinator nodeCoordinator, float[] fArr) {
         NodeCoordinator nodeCoordinator2 = this;
         while (!Intrinsics.areEqual(nodeCoordinator2, nodeCoordinator)) {
             OwnedLayer ownedLayer = nodeCoordinator2.layer;
             if (ownedLayer != null) {
-                ownedLayer.mo7047transform58bKbWc(fArr);
+                ownedLayer.mo7048transform58bKbWc(fArr);
             }
-            long mo6917getPositionnOccac = nodeCoordinator2.mo6917getPositionnOccac();
-            if (!IntOffset.m8122equalsimpl0(mo6917getPositionnOccac, IntOffset.Companion.m8134getZeronOccac())) {
+            long mo6918getPositionnOccac = nodeCoordinator2.mo6918getPositionnOccac();
+            if (!IntOffset.m8123equalsimpl0(mo6918getPositionnOccac, IntOffset.Companion.m8135getZeronOccac())) {
                 float[] fArr2 = tmpMatrix;
-                Matrix.m5530resetimpl(fArr2);
-                Matrix.m5543translateimpl$default(fArr2, IntOffset.m8123getXimpl(mo6917getPositionnOccac), IntOffset.m8124getYimpl(mo6917getPositionnOccac), 0.0f, 4, null);
-                Matrix.m5540timesAssign58bKbWc(fArr, fArr2);
+                Matrix.m5531resetimpl(fArr2);
+                Matrix.m5544translateimpl$default(fArr2, IntOffset.m8124getXimpl(mo6918getPositionnOccac), IntOffset.m8125getYimpl(mo6918getPositionnOccac), 0.0f, 4, null);
+                Matrix.m5541timesAssign58bKbWc(fArr, fArr2);
             }
             nodeCoordinator2 = nodeCoordinator2.wrappedBy;
             Intrinsics.checkNotNull(nodeCoordinator2);
@@ -1402,22 +1402,22 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: transformFromAncestor-EL8BTi8 */
-    private final void m6967transformFromAncestorEL8BTi8(NodeCoordinator nodeCoordinator, float[] fArr) {
+    private final void m6968transformFromAncestorEL8BTi8(NodeCoordinator nodeCoordinator, float[] fArr) {
         if (Intrinsics.areEqual(nodeCoordinator, this)) {
             return;
         }
         NodeCoordinator nodeCoordinator2 = this.wrappedBy;
         Intrinsics.checkNotNull(nodeCoordinator2);
-        nodeCoordinator2.m6967transformFromAncestorEL8BTi8(nodeCoordinator, fArr);
-        if (!IntOffset.m8122equalsimpl0(mo6917getPositionnOccac(), IntOffset.Companion.m8134getZeronOccac())) {
+        nodeCoordinator2.m6968transformFromAncestorEL8BTi8(nodeCoordinator, fArr);
+        if (!IntOffset.m8123equalsimpl0(mo6918getPositionnOccac(), IntOffset.Companion.m8135getZeronOccac())) {
             float[] fArr2 = tmpMatrix;
-            Matrix.m5530resetimpl(fArr2);
-            Matrix.m5543translateimpl$default(fArr2, -IntOffset.m8123getXimpl(mo6917getPositionnOccac()), -IntOffset.m8124getYimpl(mo6917getPositionnOccac()), 0.0f, 4, null);
-            Matrix.m5540timesAssign58bKbWc(fArr, fArr2);
+            Matrix.m5531resetimpl(fArr2);
+            Matrix.m5544translateimpl$default(fArr2, -IntOffset.m8124getXimpl(mo6918getPositionnOccac()), -IntOffset.m8125getYimpl(mo6918getPositionnOccac()), 0.0f, 4, null);
+            Matrix.m5541timesAssign58bKbWc(fArr, fArr2);
         }
         OwnedLayer ownedLayer = this.layer;
         if (ownedLayer != null) {
-            ownedLayer.mo7042inverseTransform58bKbWc(fArr);
+            ownedLayer.mo7043inverseTransform58bKbWc(fArr);
         }
     }
 
@@ -1435,8 +1435,8 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         MutableRect rectCache = getRectCache();
         rectCache.setLeft(0.0f);
         rectCache.setTop(0.0f);
-        rectCache.setRight((int) (layoutCoordinates.mo6705getSizeYbymL2g() >> 32));
-        rectCache.setBottom((int) (layoutCoordinates.mo6705getSizeYbymL2g() & 4294967295L));
+        rectCache.setRight((int) (layoutCoordinates.mo6706getSizeYbymL2g() >> 32));
+        rectCache.setBottom((int) (layoutCoordinates.mo6706getSizeYbymL2g() & 4294967295L));
         NodeCoordinator nodeCoordinator = coordinator;
         while (nodeCoordinator != findCommonAncestor$ui_release) {
             boolean z2 = z;
@@ -1453,15 +1453,15 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: ancestorToLocal-S_NoaFU */
-    private final long m6956ancestorToLocalS_NoaFU(NodeCoordinator nodeCoordinator, long j, boolean z) {
+    private final long m6957ancestorToLocalS_NoaFU(NodeCoordinator nodeCoordinator, long j, boolean z) {
         if (nodeCoordinator == this) {
             return j;
         }
         NodeCoordinator nodeCoordinator2 = this.wrappedBy;
         if (nodeCoordinator2 == null || Intrinsics.areEqual(nodeCoordinator, nodeCoordinator2)) {
-            return m6971fromParentPosition8S9VItk(j, z);
+            return m6972fromParentPosition8S9VItk(j, z);
         }
-        return m6971fromParentPosition8S9VItk(nodeCoordinator2.m6956ancestorToLocalS_NoaFU(nodeCoordinator, j, z), z);
+        return m6972fromParentPosition8S9VItk(nodeCoordinator2.m6957ancestorToLocalS_NoaFU(nodeCoordinator, j, z), z);
     }
 
     private final void ancestorToLocal(NodeCoordinator nodeCoordinator, MutableRect mutableRect, boolean z) {
@@ -1477,68 +1477,68 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToRoot-MK-Hz9U */
-    public long mo6708localToRootMKHz9U(long j) {
+    public long mo6709localToRootMKHz9U(long j) {
         if (!isAttached()) {
             InlineClassHelperKt.throwIllegalStateException(ExpectAttachedLayoutCoordinates);
         }
         onCoordinatesUsed$ui_release();
         long j2 = j;
         for (NodeCoordinator nodeCoordinator = this; nodeCoordinator != null; nodeCoordinator = nodeCoordinator.wrappedBy) {
-            j2 = m6966toParentPosition8S9VItk$default(nodeCoordinator, j2, false, 2, null);
+            j2 = m6967toParentPosition8S9VItk$default(nodeCoordinator, j2, false, 2, null);
         }
         return j2;
     }
 
     protected final void withPositionTranslation(Canvas canvas, Function1<? super Canvas, Unit> function1) {
-        float m8123getXimpl = IntOffset.m8123getXimpl(mo6917getPositionnOccac());
-        float m8124getYimpl = IntOffset.m8124getYimpl(mo6917getPositionnOccac());
-        canvas.translate(m8123getXimpl, m8124getYimpl);
+        float m8124getXimpl = IntOffset.m8124getXimpl(mo6918getPositionnOccac());
+        float m8125getYimpl = IntOffset.m8125getYimpl(mo6918getPositionnOccac());
+        canvas.translate(m8124getXimpl, m8125getYimpl);
         function1.invoke(canvas);
-        canvas.translate(-m8123getXimpl, -m8124getYimpl);
+        canvas.translate(-m8124getXimpl, -m8125getYimpl);
     }
 
     /* renamed from: toParentPosition-8S9VItk$default */
-    public static /* synthetic */ long m6966toParentPosition8S9VItk$default(NodeCoordinator nodeCoordinator, long j, boolean z, int i, Object obj) {
+    public static /* synthetic */ long m6967toParentPosition8S9VItk$default(NodeCoordinator nodeCoordinator, long j, boolean z, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
                 z = true;
             }
-            return nodeCoordinator.m6980toParentPosition8S9VItk(j, z);
+            return nodeCoordinator.m6981toParentPosition8S9VItk(j, z);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: toParentPosition-8S9VItk");
     }
 
     /* renamed from: toParentPosition-8S9VItk */
-    public long m6980toParentPosition8S9VItk(long j, boolean z) {
+    public long m6981toParentPosition8S9VItk(long j, boolean z) {
         OwnedLayer ownedLayer = this.layer;
         if (ownedLayer != null) {
-            j = ownedLayer.mo7044mapOffset8S9VItk(j, false);
+            j = ownedLayer.mo7045mapOffset8S9VItk(j, false);
         }
-        return (z || !isPlacedUnderMotionFrameOfReference()) ? IntOffsetKt.m8138plusNvtHpc(j, mo6917getPositionnOccac()) : j;
+        return (z || !isPlacedUnderMotionFrameOfReference()) ? IntOffsetKt.m8139plusNvtHpc(j, mo6918getPositionnOccac()) : j;
     }
 
     /* renamed from: fromParentPosition-8S9VItk$default */
-    public static /* synthetic */ long m6957fromParentPosition8S9VItk$default(NodeCoordinator nodeCoordinator, long j, boolean z, int i, Object obj) {
+    public static /* synthetic */ long m6958fromParentPosition8S9VItk$default(NodeCoordinator nodeCoordinator, long j, boolean z, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
                 z = true;
             }
-            return nodeCoordinator.m6971fromParentPosition8S9VItk(j, z);
+            return nodeCoordinator.m6972fromParentPosition8S9VItk(j, z);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: fromParentPosition-8S9VItk");
     }
 
     /* renamed from: fromParentPosition-8S9VItk */
-    public long m6971fromParentPosition8S9VItk(long j, boolean z) {
+    public long m6972fromParentPosition8S9VItk(long j, boolean z) {
         if (z || !isPlacedUnderMotionFrameOfReference()) {
-            j = IntOffsetKt.m8136minusNvtHpc(j, mo6917getPositionnOccac());
+            j = IntOffsetKt.m8137minusNvtHpc(j, mo6918getPositionnOccac());
         }
         OwnedLayer ownedLayer = this.layer;
-        return ownedLayer != null ? ownedLayer.mo7044mapOffset8S9VItk(j, true) : j;
+        return ownedLayer != null ? ownedLayer.mo7045mapOffset8S9VItk(j, true) : j;
     }
 
     public final void drawBorder(Canvas canvas, Paint paint) {
-        canvas.drawRect(0.5f, 0.5f, ((int) (m6757getMeasuredSizeYbymL2g() >> 32)) - 0.5f, ((int) (m6757getMeasuredSizeYbymL2g() & 4294967295L)) - 0.5f, paint);
+        canvas.drawRect(0.5f, 0.5f, ((int) (m6758getMeasuredSizeYbymL2g() >> 32)) - 0.5f, ((int) (m6758getMeasuredSizeYbymL2g() & 4294967295L)) - 0.5f, paint);
     }
 
     public final void onLayoutNodeDetach() {
@@ -1549,7 +1549,7 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         this.released = true;
         this.invalidateParentLayer.invoke();
         releaseLayer();
-        if (IntOffset.m8122equalsimpl0(mo6917getPositionnOccac(), IntOffset.Companion.m8134getZeronOccac())) {
+        if (IntOffset.m8123equalsimpl0(mo6918getPositionnOccac(), IntOffset.Companion.m8135getZeronOccac())) {
             return;
         }
         getLayoutNode().onCoordinatorPositionChanged$ui_release();
@@ -1570,12 +1570,12 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         if (ownedLayer != null) {
             if (this.isClipping) {
                 if (z2) {
-                    long m6973getMinimumTouchTargetSizeNHjbRc = m6973getMinimumTouchTargetSizeNHjbRc();
-                    float intBitsToFloat = Float.intBitsToFloat((int) (m6973getMinimumTouchTargetSizeNHjbRc >> 32)) / 2.0f;
-                    float intBitsToFloat2 = Float.intBitsToFloat((int) (m6973getMinimumTouchTargetSizeNHjbRc & 4294967295L)) / 2.0f;
-                    mutableRect.intersect(-intBitsToFloat, -intBitsToFloat2, ((int) (mo6705getSizeYbymL2g() >> 32)) + intBitsToFloat, ((int) (4294967295L & mo6705getSizeYbymL2g())) + intBitsToFloat2);
+                    long m6974getMinimumTouchTargetSizeNHjbRc = m6974getMinimumTouchTargetSizeNHjbRc();
+                    float intBitsToFloat = Float.intBitsToFloat((int) (m6974getMinimumTouchTargetSizeNHjbRc >> 32)) / 2.0f;
+                    float intBitsToFloat2 = Float.intBitsToFloat((int) (m6974getMinimumTouchTargetSizeNHjbRc & 4294967295L)) / 2.0f;
+                    mutableRect.intersect(-intBitsToFloat, -intBitsToFloat2, ((int) (mo6706getSizeYbymL2g() >> 32)) + intBitsToFloat, ((int) (4294967295L & mo6706getSizeYbymL2g())) + intBitsToFloat2);
                 } else if (z) {
-                    mutableRect.intersect(0.0f, 0.0f, (int) (mo6705getSizeYbymL2g() >> 32), (int) (4294967295L & mo6705getSizeYbymL2g()));
+                    mutableRect.intersect(0.0f, 0.0f, (int) (mo6706getSizeYbymL2g() >> 32), (int) (4294967295L & mo6706getSizeYbymL2g()));
                 }
                 if (mutableRect.isEmpty()) {
                     return;
@@ -1583,36 +1583,36 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
             }
             ownedLayer.mapBounds(mutableRect, false);
         }
-        float m8123getXimpl = IntOffset.m8123getXimpl(mo6917getPositionnOccac());
-        mutableRect.setLeft(mutableRect.getLeft() + m8123getXimpl);
-        mutableRect.setRight(mutableRect.getRight() + m8123getXimpl);
-        float m8124getYimpl = IntOffset.m8124getYimpl(mo6917getPositionnOccac());
-        mutableRect.setTop(mutableRect.getTop() + m8124getYimpl);
-        mutableRect.setBottom(mutableRect.getBottom() + m8124getYimpl);
+        float m8124getXimpl = IntOffset.m8124getXimpl(mo6918getPositionnOccac());
+        mutableRect.setLeft(mutableRect.getLeft() + m8124getXimpl);
+        mutableRect.setRight(mutableRect.getRight() + m8124getXimpl);
+        float m8125getYimpl = IntOffset.m8125getYimpl(mo6918getPositionnOccac());
+        mutableRect.setTop(mutableRect.getTop() + m8125getYimpl);
+        mutableRect.setBottom(mutableRect.getBottom() + m8125getYimpl);
     }
 
     private final void fromParentRect(MutableRect mutableRect, boolean z) {
-        float m8123getXimpl = IntOffset.m8123getXimpl(mo6917getPositionnOccac());
-        mutableRect.setLeft(mutableRect.getLeft() - m8123getXimpl);
-        mutableRect.setRight(mutableRect.getRight() - m8123getXimpl);
-        float m8124getYimpl = IntOffset.m8124getYimpl(mo6917getPositionnOccac());
-        mutableRect.setTop(mutableRect.getTop() - m8124getYimpl);
-        mutableRect.setBottom(mutableRect.getBottom() - m8124getYimpl);
+        float m8124getXimpl = IntOffset.m8124getXimpl(mo6918getPositionnOccac());
+        mutableRect.setLeft(mutableRect.getLeft() - m8124getXimpl);
+        mutableRect.setRight(mutableRect.getRight() - m8124getXimpl);
+        float m8125getYimpl = IntOffset.m8125getYimpl(mo6918getPositionnOccac());
+        mutableRect.setTop(mutableRect.getTop() - m8125getYimpl);
+        mutableRect.setBottom(mutableRect.getBottom() - m8125getYimpl);
         OwnedLayer ownedLayer = this.layer;
         if (ownedLayer != null) {
             ownedLayer.mapBounds(mutableRect, true);
             if (this.isClipping && z) {
-                mutableRect.intersect(0.0f, 0.0f, (int) (mo6705getSizeYbymL2g() >> 32), (int) (mo6705getSizeYbymL2g() & 4294967295L));
+                mutableRect.intersect(0.0f, 0.0f, (int) (mo6706getSizeYbymL2g() >> 32), (int) (mo6706getSizeYbymL2g() & 4294967295L));
                 mutableRect.isEmpty();
             }
         }
     }
 
     /* renamed from: withinLayerBounds-k-4lQ0M */
-    public final boolean m6982withinLayerBoundsk4lQ0M(long j) {
+    public final boolean m6983withinLayerBoundsk4lQ0M(long j) {
         if ((((androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase ^ (j & androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase)) - androidx.compose.ui.geometry.InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0) {
             OwnedLayer ownedLayer = this.layer;
-            return ownedLayer == null || !this.isClipping || ownedLayer.mo7043isInLayerk4lQ0M(j);
+            return ownedLayer == null || !this.isClipping || ownedLayer.mo7044isInLayerk4lQ0M(j);
         }
         return false;
     }
@@ -1642,12 +1642,12 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
         if (layoutNode == layoutNode2) {
             Modifier.Node tail = nodeCoordinator.getTail();
             Modifier.Node tail2 = getTail();
-            int m6988constructorimpl = NodeKind.m6988constructorimpl(2);
+            int m6989constructorimpl = NodeKind.m6989constructorimpl(2);
             if (!tail2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitLocalAncestors called on an unattached node");
             }
             for (Modifier.Node parent$ui_release = tail2.getNode().getParent$ui_release(); parent$ui_release != null; parent$ui_release = parent$ui_release.getParent$ui_release()) {
-                if ((parent$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0 && parent$ui_release == tail) {
+                if ((parent$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0 && parent$ui_release == tail) {
                     return nodeCoordinator;
                 }
             }
@@ -1680,14 +1680,14 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: distanceInMinimumTouchTarget-tz77jQw */
-    public final float m6970distanceInMinimumTouchTargettz77jQw(long j, long j2) {
+    public final float m6971distanceInMinimumTouchTargettz77jQw(long j, long j2) {
         if (getMeasuredWidth() < Float.intBitsToFloat((int) (j2 >> 32)) || getMeasuredHeight() < Float.intBitsToFloat((int) (j2 & 4294967295L))) {
-            long m6969calculateMinimumTouchTargetPaddingE7KxVPU = m6969calculateMinimumTouchTargetPaddingE7KxVPU(j2);
-            float intBitsToFloat = Float.intBitsToFloat((int) (m6969calculateMinimumTouchTargetPaddingE7KxVPU >> 32));
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (m6969calculateMinimumTouchTargetPaddingE7KxVPU & 4294967295L));
-            long m6962offsetFromEdgeMKHz9U = m6962offsetFromEdgeMKHz9U(j);
-            if ((intBitsToFloat > 0.0f || intBitsToFloat2 > 0.0f) && Float.intBitsToFloat((int) (m6962offsetFromEdgeMKHz9U >> 32)) <= intBitsToFloat && Float.intBitsToFloat((int) (m6962offsetFromEdgeMKHz9U & 4294967295L)) <= intBitsToFloat2) {
-                return Offset.m5034getDistanceSquaredimpl(m6962offsetFromEdgeMKHz9U);
+            long m6970calculateMinimumTouchTargetPaddingE7KxVPU = m6970calculateMinimumTouchTargetPaddingE7KxVPU(j2);
+            float intBitsToFloat = Float.intBitsToFloat((int) (m6970calculateMinimumTouchTargetPaddingE7KxVPU >> 32));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (m6970calculateMinimumTouchTargetPaddingE7KxVPU & 4294967295L));
+            long m6963offsetFromEdgeMKHz9U = m6963offsetFromEdgeMKHz9U(j);
+            if ((intBitsToFloat > 0.0f || intBitsToFloat2 > 0.0f) && Float.intBitsToFloat((int) (m6963offsetFromEdgeMKHz9U >> 32)) <= intBitsToFloat && Float.intBitsToFloat((int) (m6963offsetFromEdgeMKHz9U & 4294967295L)) <= intBitsToFloat2) {
+                return Offset.m5035getDistanceSquaredimpl(m6963offsetFromEdgeMKHz9U);
             }
             return Float.POSITIVE_INFINITY;
         }
@@ -1716,15 +1716,15 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
 
     public final void onMeasured() {
         Modifier.Node parent$ui_release;
-        if (m6958hasNodeH91voCI(NodeKind.m6988constructorimpl(128))) {
+        if (m6959hasNodeH91voCI(NodeKind.m6989constructorimpl(128))) {
             Snapshot.Companion companion = Snapshot.Companion;
             Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
             Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
             Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
             try {
-                int m6988constructorimpl = NodeKind.m6988constructorimpl(128);
-                boolean m6997getIncludeSelfInTraversalH91voCI = NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(m6988constructorimpl);
-                if (m6997getIncludeSelfInTraversalH91voCI) {
+                int m6989constructorimpl = NodeKind.m6989constructorimpl(128);
+                boolean m6998getIncludeSelfInTraversalH91voCI = NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(m6989constructorimpl);
+                if (m6998getIncludeSelfInTraversalH91voCI) {
                     parent$ui_release = getTail();
                 } else {
                     parent$ui_release = getTail().getParent$ui_release();
@@ -1732,17 +1732,17 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
                         Unit unit = Unit.INSTANCE;
                     }
                 }
-                for (Modifier.Node headNode = headNode(m6997getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
-                    if ((headNode.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                for (Modifier.Node headNode = headNode(m6998getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6989constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
+                    if ((headNode.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                         MutableVector mutableVector = null;
                         Modifier.Node node = headNode;
                         while (node != null) {
                             if (node instanceof LayoutAwareModifierNode) {
-                                ((LayoutAwareModifierNode) node).mo418onRemeasuredozmzZPI(m6757getMeasuredSizeYbymL2g());
-                            } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                ((LayoutAwareModifierNode) node).mo419onRemeasuredozmzZPI(m6758getMeasuredSizeYbymL2g());
+                            } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui_release;
@@ -1780,24 +1780,24 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     public final void onUnplaced() {
-        if (m6958hasNodeH91voCI(NodeKind.m6988constructorimpl(1048576))) {
-            int m6988constructorimpl = NodeKind.m6988constructorimpl(1048576);
-            boolean m6997getIncludeSelfInTraversalH91voCI = NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(m6988constructorimpl);
+        if (m6959hasNodeH91voCI(NodeKind.m6989constructorimpl(1048576))) {
+            int m6989constructorimpl = NodeKind.m6989constructorimpl(1048576);
+            boolean m6998getIncludeSelfInTraversalH91voCI = NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(m6989constructorimpl);
             Modifier.Node tail = getTail();
-            if (!m6997getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
+            if (!m6998getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
                 return;
             }
-            for (Modifier.Node headNode = headNode(m6997getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
-                if ((headNode.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+            for (Modifier.Node headNode = headNode(m6998getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6989constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
+                if ((headNode.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                     Modifier.Node node = headNode;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof OnUnplacedModifierNode) {
                             ((OnUnplacedModifierNode) node).onUnplaced();
-                        } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                                if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui_release;
@@ -1831,32 +1831,32 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     public final void drawContainedDrawModifiers(Canvas canvas, GraphicsLayer graphicsLayer) {
-        Modifier.Node m6974headH91voCI = m6974headH91voCI(NodeKind.m6988constructorimpl(4));
-        if (m6974headH91voCI == null) {
+        Modifier.Node m6975headH91voCI = m6975headH91voCI(NodeKind.m6989constructorimpl(4));
+        if (m6975headH91voCI == null) {
             performDraw(canvas, graphicsLayer);
         } else {
-            getLayoutNode().getMDrawScope$ui_release().m6910draweZhPAX0$ui_release(canvas, IntSizeKt.m8178toSizeozmzZPI(mo6705getSizeYbymL2g()), this, m6974headH91voCI, graphicsLayer);
+            getLayoutNode().getMDrawScope$ui_release().m6911draweZhPAX0$ui_release(canvas, IntSizeKt.m8179toSizeozmzZPI(mo6706getSizeYbymL2g()), this, m6975headH91voCI, graphicsLayer);
         }
     }
 
     public final void onPlaced() {
-        int m6988constructorimpl = NodeKind.m6988constructorimpl(128);
-        boolean m6997getIncludeSelfInTraversalH91voCI = NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(m6988constructorimpl);
+        int m6989constructorimpl = NodeKind.m6989constructorimpl(128);
+        boolean m6998getIncludeSelfInTraversalH91voCI = NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(m6989constructorimpl);
         Modifier.Node tail = getTail();
-        if (!m6997getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
+        if (!m6998getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui_release()) == null) {
             return;
         }
-        for (Modifier.Node headNode = headNode(m6997getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
-            if ((headNode.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+        for (Modifier.Node headNode = headNode(m6998getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui_release() & m6989constructorimpl) != 0; headNode = headNode.getChild$ui_release()) {
+            if ((headNode.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                 Modifier.Node node = headNode;
                 MutableVector mutableVector = null;
                 while (node != null) {
                     if (node instanceof LayoutAwareModifierNode) {
                         ((LayoutAwareModifierNode) node).onPlaced(this);
-                    } else if ((node.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                    } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                         int i = 0;
                         for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                            if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                            if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                 i++;
                                 if (i == 1) {
                                     node = delegate$ui_release;
@@ -1889,24 +1889,24 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: isPointerInBounds-k-4lQ0M */
-    protected final boolean m6976isPointerInBoundsk4lQ0M(long j) {
+    protected final boolean m6977isPointerInBoundsk4lQ0M(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         return intBitsToFloat >= 0.0f && intBitsToFloat2 >= 0.0f && intBitsToFloat < ((float) getMeasuredWidth()) && intBitsToFloat2 < ((float) getMeasuredHeight());
     }
 
     public final boolean shouldSharePointerInputWithSiblings() {
-        Modifier.Node headNode = headNode(NodeKindKt.m6997getIncludeSelfInTraversalH91voCI(NodeKind.m6988constructorimpl(16)));
+        Modifier.Node headNode = headNode(NodeKindKt.m6998getIncludeSelfInTraversalH91voCI(NodeKind.m6989constructorimpl(16)));
         if (headNode != null && headNode.isAttached()) {
             Modifier.Node node = headNode;
-            int m6988constructorimpl = NodeKind.m6988constructorimpl(16);
+            int m6989constructorimpl = NodeKind.m6989constructorimpl(16);
             if (!node.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
             }
             Modifier.Node node2 = node.getNode();
-            if ((node2.getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0) {
+            if ((node2.getAggregateChildKindSet$ui_release() & m6989constructorimpl) != 0) {
                 while (node2 != null) {
-                    if ((node2.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                    if ((node2.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                         Modifier.Node node3 = node2;
                         MutableVector mutableVector = null;
                         while (node3 != null) {
@@ -1914,10 +1914,10 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
                                 if (((PointerInputModifierNode) node3).sharePointerInputWithSiblings()) {
                                     return true;
                                 }
-                            } else if ((node3.getKindSet$ui_release() & m6988constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                            } else if ((node3.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node3).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node3 = delegate$ui_release;
@@ -1952,16 +1952,16 @@ public abstract class NodeCoordinator extends LookaheadCapablePlaceable implemen
     }
 
     /* renamed from: offsetFromEdge-MK-Hz9U */
-    private final long m6962offsetFromEdgeMKHz9U(long j) {
+    private final long m6963offsetFromEdgeMKHz9U(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float max = Math.max(0.0f, intBitsToFloat < 0.0f ? -intBitsToFloat : intBitsToFloat - getMeasuredWidth());
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, intBitsToFloat2 < 0.0f ? -intBitsToFloat2 : intBitsToFloat2 - getMeasuredHeight())) & 4294967295L) | (Float.floatToRawIntBits(max) << 32));
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, intBitsToFloat2 < 0.0f ? -intBitsToFloat2 : intBitsToFloat2 - getMeasuredHeight())) & 4294967295L) | (Float.floatToRawIntBits(max) << 32));
     }
 
     /* renamed from: calculateMinimumTouchTargetPadding-E7KxVPU */
-    protected final long m6969calculateMinimumTouchTargetPaddingE7KxVPU(long j) {
+    protected final long m6970calculateMinimumTouchTargetPaddingE7KxVPU(long j) {
         float max = Math.max(0.0f, (Float.intBitsToFloat((int) (j >> 32)) - getMeasuredWidth()) / 2.0f);
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, (Float.intBitsToFloat((int) (j & 4294967295L)) - getMeasuredHeight()) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(max) << 32));
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, (Float.intBitsToFloat((int) (j & 4294967295L)) - getMeasuredHeight()) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(max) << 32));
     }
 }

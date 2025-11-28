@@ -6,11 +6,11 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface IAppMetricaService extends IInterface {
     public static final String DESCRIPTOR = "io.appmetrica.analytics.internal.IAppMetricaService";
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class Default implements IAppMetricaService {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -30,7 +30,7 @@ public interface IAppMetricaService extends IInterface {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Stub extends Binder implements IAppMetricaService {
         public Stub() {
             attachInterface(this, IAppMetricaService.DESCRIPTOR);
@@ -74,7 +74,7 @@ public interface IAppMetricaService extends IInterface {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class _Parcel {
     }
 

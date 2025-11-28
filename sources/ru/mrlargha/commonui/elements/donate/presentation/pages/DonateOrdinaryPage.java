@@ -115,8 +115,7 @@ public final class DonateOrdinaryPage extends DonatePage {
     }
 
     private final void setOrdinaryItemList(List<DonateItemModelUi> list) {
-        Log.d(DonateUtilsKt.DONATE_TAG, "setOrdinaryItemList: itemSize: " + list.size());
-        Log.d(DonateUtilsKt.DONATE_TAG, "setOrdinaryItemList: categoryId: " + list.get(0).getCategoryId());
+        Log.i(DonateUtilsKt.DONATE_TAG, "getItem: initData: " + list.size());
         this.page = 0;
         this.allItemList.clear();
         this.allItemList.addAll(list);
@@ -155,7 +154,7 @@ public final class DonateOrdinaryPage extends DonatePage {
             Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         Log.i(DonateUtilsKt.DONATE_TAG, "itemAdapterSize: " + list.size());
-        launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getMain(), null, new DonateOrdinaryPage$renderListGradually$1(this, list, null), 2, null);
+        launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getMain(), null, new DonateOrdinaryPage$renderListGradually$1(list, this, null), 2, null);
         this.renderJob = launch$default;
         Log.i(DonateUtilsKt.DONATE_TAG, "itemAdapterSize: " + (launch$default != null ? Boolean.valueOf(launch$default.isActive()) : null));
     }

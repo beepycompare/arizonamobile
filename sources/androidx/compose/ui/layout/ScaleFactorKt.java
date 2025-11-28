@@ -10,49 +10,49 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes2.dex */
 public final class ScaleFactorKt {
     /* renamed from: isSpecified-FK8aYYs$annotations  reason: not valid java name */
-    public static /* synthetic */ void m6797isSpecifiedFK8aYYs$annotations(long j) {
+    public static /* synthetic */ void m6798isSpecifiedFK8aYYs$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-FK8aYYs$annotations  reason: not valid java name */
-    public static /* synthetic */ void m6799isUnspecifiedFK8aYYs$annotations(long j) {
+    public static /* synthetic */ void m6800isUnspecifiedFK8aYYs$annotations(long j) {
     }
 
     /* renamed from: isSpecified-FK8aYYs  reason: not valid java name */
-    public static final boolean m6796isSpecifiedFK8aYYs(long j) {
-        return j != ScaleFactor.Companion.m6794getUnspecified_hLwfpc();
+    public static final boolean m6797isSpecifiedFK8aYYs(long j) {
+        return j != ScaleFactor.Companion.m6795getUnspecified_hLwfpc();
     }
 
     /* renamed from: isUnspecified-FK8aYYs  reason: not valid java name */
-    public static final boolean m6798isUnspecifiedFK8aYYs(long j) {
-        return j == ScaleFactor.Companion.m6794getUnspecified_hLwfpc();
+    public static final boolean m6799isUnspecifiedFK8aYYs(long j) {
+        return j == ScaleFactor.Companion.m6795getUnspecified_hLwfpc();
     }
 
     /* renamed from: times-m-w2e94  reason: not valid java name */
-    public static final long m6803timesmw2e94(long j, long j2) {
-        return m6802timesUQTWf7w(j2, j);
+    public static final long m6804timesmw2e94(long j, long j2) {
+        return m6803timesUQTWf7w(j2, j);
     }
 
     public static final long ScaleFactor(float f, float f2) {
-        return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return ScaleFactor.m6782constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: takeOrElse-oyDd2qo  reason: not valid java name */
-    public static final long m6801takeOrElseoyDd2qo(long j, Function0<ScaleFactor> function0) {
-        return j != ScaleFactor.Companion.m6794getUnspecified_hLwfpc() ? j : function0.invoke().m6792unboximpl();
+    public static final long m6802takeOrElseoyDd2qo(long j, Function0<ScaleFactor> function0) {
+        return j != ScaleFactor.Companion.m6795getUnspecified_hLwfpc() ? j : function0.invoke().m6793unboximpl();
     }
 
     /* renamed from: times-UQTWf7w  reason: not valid java name */
-    public static final long m6802timesUQTWf7w(long j, long j2) {
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m6803timesUQTWf7w(long j, long j2) {
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: div-UQTWf7w  reason: not valid java name */
-    public static final long m6795divUQTWf7w(long j, long j2) {
-        return Size.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m6796divUQTWf7w(long j, long j2) {
+        return Size.m5096constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: lerp--bDIf60  reason: not valid java name */
-    public static final long m6800lerpbDIf60(long j, long j2, float f) {
-        return ScaleFactor.m6781constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
+    public static final long m6801lerpbDIf60(long j, long j2, float f) {
+        return ScaleFactor.m6782constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
     }
 }

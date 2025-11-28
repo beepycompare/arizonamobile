@@ -452,10 +452,6 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
         Provider<MainComponent.Factory> factoryProvider8;
         private final SingletonCImpl singletonCImpl;
 
-        @Override // com.arizona.launcher.MainActivity_GeneratedInjector
-        public void injectMainActivity(MainActivity mainActivity) {
-        }
-
         ActivityCImpl(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl, Activity activityParam) {
             this.singletonCImpl = singletonCImpl;
             this.activityRetainedCImpl = activityRetainedCImpl;

@@ -52,15 +52,11 @@ public final class QuestAwardsAdapter extends RecyclerView.Adapter<QuestAwardsVi
         QuestAwards questAwards2 = questAwards;
         if (z) {
             binding.rodinaQuestInfoTitle.setText(questAwards2.getTitle());
-            Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-            picasso.load(resourceUrl + "projects/arizona-rp/assets/images/donate/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
+            Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
             return;
         }
         binding.rodinaQuestInfoTitle.setText(questAwards2.getTitle());
-        Picasso picasso2 = Picasso.get();
-        String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
-        picasso2.load(resourceUrl2 + "projects/rodina-rp/assets/images/other/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/other/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
     }
 
     public final void addQuestAwards(List<QuestAwards> questAwards) {

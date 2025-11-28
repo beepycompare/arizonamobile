@@ -5,7 +5,7 @@ import android.content.pm.ApplicationInfo;
 import android.text.TextUtils;
 import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class T5 extends BaseRequestConfig.ComponentLoader {
 
     /* renamed from: a  reason: collision with root package name */

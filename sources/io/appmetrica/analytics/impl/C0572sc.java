@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 /* renamed from: io.appmetrica.analytics.impl.sc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0572sc implements InterfaceC0440n4 {
     @Override // io.appmetrica.analytics.impl.InterfaceC0440n4
     /* renamed from: b */

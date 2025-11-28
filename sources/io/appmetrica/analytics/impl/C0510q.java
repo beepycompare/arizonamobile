@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.app.Activity;
 import java.util.WeakHashMap;
 /* renamed from: io.appmetrica.analytics.impl.q  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0510q {
 
     /* renamed from: a  reason: collision with root package name */

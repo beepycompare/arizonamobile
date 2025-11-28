@@ -11,7 +11,7 @@ import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 import io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import java.io.File;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Dk implements ServiceStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */

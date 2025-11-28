@@ -17,8 +17,8 @@ public final class NavGraphViewModelLazyKt$navGraphViewModels$1 implements Funct
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final CreationExtras invoke() {
-        NavBackStackEntry m8818navGraphViewModels$lambda0;
-        m8818navGraphViewModels$lambda0 = NavGraphViewModelLazyKt.m8818navGraphViewModels$lambda0(this.$backStackEntry$delegate);
-        return m8818navGraphViewModels$lambda0.getDefaultViewModelCreationExtras();
+        NavBackStackEntry m8819navGraphViewModels$lambda0;
+        m8819navGraphViewModels$lambda0 = NavGraphViewModelLazyKt.m8819navGraphViewModels$lambda0(this.$backStackEntry$delegate);
+        return m8819navGraphViewModels$lambda0.getDefaultViewModelCreationExtras();
     }
 }

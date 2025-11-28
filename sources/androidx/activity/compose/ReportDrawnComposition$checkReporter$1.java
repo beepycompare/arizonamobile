@@ -9,7 +9,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: ReportDrawn.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public /* synthetic */ class ReportDrawnComposition$checkReporter$1 extends FunctionReferenceImpl implements Function1<Function0<? extends Boolean>, Unit> {
+public final /* synthetic */ class ReportDrawnComposition$checkReporter$1 extends FunctionReferenceImpl implements Function1<Function0<? extends Boolean>, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ReportDrawnComposition$checkReporter$1(Object obj) {
         super(1, obj, ReportDrawnComposition.class, "observeReporter", "observeReporter(Lkotlin/jvm/functions/Function0;)V", 0);

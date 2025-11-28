@@ -7,7 +7,7 @@ import com.android.billingclient.api.QueryProductDetailsResult;
 import io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider;
 import java.util.List;
 import kotlin.jvm.functions.Function0;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class f implements ProductDetailsResponseListener {
 
     /* renamed from: a  reason: collision with root package name */

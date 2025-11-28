@@ -4,7 +4,7 @@ import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
 import java.util.List;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.jm  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0356jm {
     public final Map A;
     public final I9 B;

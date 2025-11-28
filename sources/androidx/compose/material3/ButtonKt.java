@@ -281,7 +281,7 @@ public final class ButtonKt {
                                 int i17 = i3;
                                 if ((i2 & 32) != 0) {
                                     modifier3 = companion;
-                                    buttonElevation2 = ButtonDefaults.INSTANCE.m1974buttonElevationR_JCAzs(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+                                    buttonElevation2 = ButtonDefaults.INSTANCE.m1975buttonElevationR_JCAzs(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
                                     i10 = i17 & (-458753);
                                 } else {
                                     modifier3 = companion;
@@ -329,9 +329,9 @@ public final class ButtonKt {
                                 startRestartGroup.endReplaceGroup();
                                 mutableInteractionSource4 = mutableInteractionSource3;
                             }
-                            long m1966containerColorvNxB06k$material3 = buttonColors2.m1966containerColorvNxB06k$material3(z4);
+                            long m1967containerColorvNxB06k$material3 = buttonColors2.m1967containerColorvNxB06k$material3(z4);
                             Modifier modifier5 = modifier4;
-                            final long m1967contentColorvNxB06k$material3 = buttonColors2.m1967contentColorvNxB06k$material3(z4);
+                            final long m1968contentColorvNxB06k$material3 = buttonColors2.m1968contentColorvNxB06k$material3(z4);
                             if (buttonElevation2 == null) {
                                 startRestartGroup.startReplaceGroup(1691921830);
                                 startRestartGroup.endReplaceGroup();
@@ -344,7 +344,7 @@ public final class ButtonKt {
                                 shadowElevation$material3 = buttonElevation2.shadowElevation$material3(z4, mutableInteractionSource4, startRestartGroup, ((i11 >> 6) & 14) | ((i11 >> 9) & 896));
                                 startRestartGroup.endReplaceGroup();
                             }
-                            float m8009unboximpl = shadowElevation$material3 != null ? shadowElevation$material3.getValue().m8009unboximpl() : Dp.m7995constructorimpl(0);
+                            float m8010unboximpl = shadowElevation$material3 != null ? shadowElevation$material3.getValue().m8010unboximpl() : Dp.m7996constructorimpl(0);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -499606842, "CC(remember):Button.kt#9igjgp");
                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                             if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -360,7 +360,7 @@ public final class ButtonKt {
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             ButtonColors buttonColors5 = buttonColors2;
-                            SurfaceKt.m2999Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier5, false, (Function1) rememberedValue2, 1, null), z4, shape4, m1966containerColorvNxB06k$material3, m1967contentColorvNxB06k$material3, 0.0f, m8009unboximpl, borderStroke3, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-535639973, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ButtonKt$Button$2
+                            SurfaceKt.m3000Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier5, false, (Function1) rememberedValue2, 1, null), z4, shape4, m1967containerColorvNxB06k$material3, m1968contentColorvNxB06k$material3, 0.0f, m8010unboximpl, borderStroke3, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-535639973, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ButtonKt$Button$2
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -376,11 +376,11 @@ public final class ButtonKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-535639973, i18, -1, "androidx.compose.material3.Button.<anonymous> (Button.kt:138)");
                                     }
-                                    long j = m1967contentColorvNxB06k$material3;
+                                    long j = m1968contentColorvNxB06k$material3;
                                     TextStyle labelLarge = MaterialTheme.INSTANCE.getTypography(composer3, 6).getLabelLarge();
                                     final PaddingValues paddingValues3 = contentPadding;
                                     final Function3<RowScope, Composer, Integer, Unit> function32 = function3;
-                                    ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(j, labelLarge, ComposableLambdaKt.rememberComposableLambda(417635459, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ButtonKt$Button$2.1
+                                    ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j, labelLarge, ComposableLambdaKt.rememberComposableLambda(417635459, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ButtonKt$Button$2.1
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
                                             invoke(composer4, num.intValue());
@@ -396,7 +396,7 @@ public final class ButtonKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(417635459, i19, -1, "androidx.compose.material3.Button.<anonymous>.<anonymous> (Button.kt:142)");
                                             }
-                                            Modifier padding = PaddingKt.padding(SizeKt.m878defaultMinSizeVpY3zN4(Modifier.Companion, ButtonDefaults.INSTANCE.m1982getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m1981getMinHeightD9Ej5fM()), PaddingValues.this);
+                                            Modifier padding = PaddingKt.padding(SizeKt.m879defaultMinSizeVpY3zN4(Modifier.Companion, ButtonDefaults.INSTANCE.m1983getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m1982getMinHeightD9Ej5fM()), PaddingValues.this);
                                             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                             Function3<RowScope, Composer, Integer, Unit> function33 = function32;
                                             ComposerKt.sourceInformationMarkerStart(composer4, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
@@ -416,15 +416,15 @@ public final class ButtonKt {
                                             } else {
                                                 composer4.useNode();
                                             }
-                                            Composer m4597constructorimpl = Updater.m4597constructorimpl(composer4);
-                                            Updater.m4604setimpl(m4597constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m4598constructorimpl = Updater.m4598constructorimpl(composer4);
+                                            Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer4, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                                             function33.invoke(RowScopeInstance.INSTANCE, composer4, 6);
                                             ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -563,7 +563,7 @@ public final class ButtonKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Button$lambda$2$lambda$1(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m7223setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7204getButtono7Vup1c());
+        SemanticsPropertiesKt.m7224setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7205getButtono7Vup1c());
         return Unit.INSTANCE;
     }
 
@@ -762,7 +762,7 @@ public final class ButtonKt {
                                     }
                                     int i14 = i3;
                                     if ((i2 & 32) != 0) {
-                                        obj4 = ButtonDefaults.INSTANCE.m1976elevatedButtonElevationR_JCAzs(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+                                        obj4 = ButtonDefaults.INSTANCE.m1977elevatedButtonElevationR_JCAzs(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
                                         i3 = i14 & (-458753);
                                     } else {
                                         i3 = i14;
@@ -1113,7 +1113,7 @@ public final class ButtonKt {
                                     }
                                     int i14 = i3;
                                     if ((i2 & 32) != 0) {
-                                        obj4 = ButtonDefaults.INSTANCE.m1978filledTonalButtonElevationR_JCAzs(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+                                        obj4 = ButtonDefaults.INSTANCE.m1979filledTonalButtonElevationR_JCAzs(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
                                         i3 = i14 & (-458753);
                                     } else {
                                         i3 = i14;

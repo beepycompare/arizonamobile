@@ -39,7 +39,7 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStarted-k-4lQ0M  reason: not valid java name */
-    public void mo448onDragStartedk4lQ0M(long j) {
+    public void mo449onDragStartedk4lQ0M(long j) {
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -121,7 +121,7 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStopped-TH1AsA0  reason: not valid java name */
-    public void mo449onDragStoppedTH1AsA0(long j) {
+    public void mo450onDragStoppedTH1AsA0(long j) {
         if (isAttached()) {
             BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AnchoredDraggableNode$onDragStopped$1(this, j, null), 3, null);
         }
@@ -219,17 +219,17 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toOffset-tuRUvjQ  reason: not valid java name */
-    public final long m446toOffsettuRUvjQ(float f) {
+    public final long m447toOffsettuRUvjQ(float f) {
         float f2 = this.orientation == Orientation.Horizontal ? f : 0.0f;
         if (this.orientation != Orientation.Vertical) {
             f = 0.0f;
         }
-        return Offset.m5027constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return Offset.m5028constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toVelocity-adjELrA  reason: not valid java name */
-    public final long m447toVelocityadjELrA(float f) {
+    public final long m448toVelocityadjELrA(float f) {
         float f2 = this.orientation == Orientation.Horizontal ? f : 0.0f;
         if (this.orientation != Orientation.Vertical) {
             f = 0.0f;
@@ -239,25 +239,25 @@ public final class AnchoredDraggableNode<T> extends DragGestureNode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toFloat-TH1AsA0  reason: not valid java name */
-    public final float m444toFloatTH1AsA0(long j) {
-        return this.orientation == Orientation.Vertical ? Velocity.m8234getYimpl(j) : Velocity.m8233getXimpl(j);
+    public final float m445toFloatTH1AsA0(long j) {
+        return this.orientation == Orientation.Vertical ? Velocity.m8235getYimpl(j) : Velocity.m8234getXimpl(j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toFloat-k-4lQ0M  reason: not valid java name */
-    public final float m445toFloatk4lQ0M(long j) {
+    public final float m446toFloatk4lQ0M(long j) {
         return Float.intBitsToFloat((int) (this.orientation == Orientation.Vertical ? j & 4294967295L : j >> 32));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-AH228Gc  reason: not valid java name */
-    public final long m442reverseIfNeededAH228Gc(long j) {
-        return Velocity.m8239timesadjELrA(j, isReverseDirection() ? -1.0f : 1.0f);
+    public final long m443reverseIfNeededAH228Gc(long j) {
+        return Velocity.m8240timesadjELrA(j, isReverseDirection() ? -1.0f : 1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
-    public final long m443reverseIfNeededMKHz9U(long j) {
-        return Offset.m5042timestuRUvjQ(j, isReverseDirection() ? -1.0f : 1.0f);
+    public final long m444reverseIfNeededMKHz9U(long j) {
+        return Offset.m5043timestuRUvjQ(j, isReverseDirection() ? -1.0f : 1.0f);
     }
 }

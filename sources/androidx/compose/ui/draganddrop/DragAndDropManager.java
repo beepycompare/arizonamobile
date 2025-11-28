@@ -16,5 +16,5 @@ public interface DragAndDropManager {
     void registerTargetInterest(DragAndDropTarget dragAndDropTarget);
 
     /* renamed from: requestDragAndDropTransfer-Uv8p0NA */
-    void mo4788requestDragAndDropTransferUv8p0NA(DragAndDropNode dragAndDropNode, long j);
+    void mo4789requestDragAndDropTransferUv8p0NA(DragAndDropNode dragAndDropNode, long j);
 }

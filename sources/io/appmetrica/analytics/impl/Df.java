@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Df extends C0695xa {
     public Df(int i) {
         super(i);

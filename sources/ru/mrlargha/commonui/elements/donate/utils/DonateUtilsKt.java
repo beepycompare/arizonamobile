@@ -328,8 +328,8 @@ public final class DonateUtilsKt {
 
     public static final void setImageSdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_shop/" + i + ".webp";
-        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/items/" + i + ".webp";
+        String str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate_shop/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/items/" + i + ".webp";
         Context context = imageView.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
         if (!UtilsKt.getArizonaType(context)) {
@@ -340,13 +340,13 @@ public final class DonateUtilsKt {
 
     public static final void setGifSdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Glide.with(imageView.getContext()).asGif().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_shop/" + i + ".gif").error(defaultImageInt).into(imageView);
+        Glide.with(imageView.getContext()).asGif().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate_shop/" + i + ".gif").error(defaultImageInt).into(imageView);
     }
 
     public static final void setImageItemBgSdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_background/" + i + ".webp";
-        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/donate_background/" + i + ".webp";
+        String str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate_background/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/donate_background/" + i + ".webp";
         Context context = imageView.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
         if (!UtilsKt.getArizonaType(context)) {
@@ -357,8 +357,8 @@ public final class DonateUtilsKt {
 
     public static final void setImageCategorySdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_category/mobile_icons/" + i + ".webp";
-        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/donate_category/" + i + ".webp";
+        String str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate_category/mobile_icons/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/donate_category/" + i + ".webp";
         Context context = imageView.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
         if (!UtilsKt.getArizonaType(context)) {
@@ -369,8 +369,8 @@ public final class DonateUtilsKt {
 
     public static final void setBackgroundCategorySdn(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
-        String str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/donate_category/mobile/" + i + ".webp";
-        String str2 = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/donate_category/" + i + ".webp";
+        String str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/donate_category/mobile/" + i + ".webp";
+        String str2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/donate_category/" + i + ".webp";
         Context context = imageView.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
         if (!UtilsKt.getArizonaType(context)) {

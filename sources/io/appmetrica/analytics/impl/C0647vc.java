@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import androidx.fragment.app.FragmentTransaction;
 /* renamed from: io.appmetrica.analytics.impl.vc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0647vc implements InterfaceC0502pg {
 
     /* renamed from: a  reason: collision with root package name */

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import java.util.Collection;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Cf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */

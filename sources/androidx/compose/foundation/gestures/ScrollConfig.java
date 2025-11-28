@@ -9,7 +9,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface ScrollConfig {
     /* renamed from: calculateMouseWheelScroll-8xgXZGE */
-    long mo457calculateMouseWheelScroll8xgXZGE(Density density, PointerEvent pointerEvent, long j);
+    long mo458calculateMouseWheelScroll8xgXZGE(Density density, PointerEvent pointerEvent, long j);
 
     default boolean isPreciseWheelScroll(PointerEvent pointerEvent) {
         return false;

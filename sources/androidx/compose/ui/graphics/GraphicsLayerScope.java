@@ -40,7 +40,7 @@ public interface GraphicsLayerScope extends Density {
     Shape getShape();
 
     /* renamed from: getTransformOrigin-SzJe1aQ  reason: not valid java name */
-    long mo5476getTransformOriginSzJe1aQ();
+    long mo5477getTransformOriginSzJe1aQ();
 
     float getTranslationX();
 
@@ -49,11 +49,11 @@ public interface GraphicsLayerScope extends Density {
     void setAlpha(float f);
 
     /* renamed from: setAmbientShadowColor-8_81llA  reason: not valid java name */
-    default void mo5477setAmbientShadowColor8_81llA(long j) {
+    default void mo5478setAmbientShadowColor8_81llA(long j) {
     }
 
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    default void mo5478setBlendModes9anfk8(int i) {
+    default void mo5479setBlendModes9anfk8(int i) {
     }
 
     void setCameraDistance(float f);
@@ -64,7 +64,7 @@ public interface GraphicsLayerScope extends Density {
     }
 
     /* renamed from: setCompositingStrategy-aDBOjCE  reason: not valid java name */
-    default void mo5479setCompositingStrategyaDBOjCE(int i) {
+    default void mo5480setCompositingStrategyaDBOjCE(int i) {
     }
 
     default void setRenderEffect(RenderEffect renderEffect) {
@@ -85,11 +85,11 @@ public interface GraphicsLayerScope extends Density {
     void setShape(Shape shape);
 
     /* renamed from: setSpotShadowColor-8_81llA  reason: not valid java name */
-    default void mo5480setSpotShadowColor8_81llA(long j) {
+    default void mo5481setSpotShadowColor8_81llA(long j) {
     }
 
     /* renamed from: setTransformOrigin-__ExYCQ  reason: not valid java name */
-    void mo5481setTransformOrigin__ExYCQ(long j);
+    void mo5482setTransformOrigin__ExYCQ(long j);
 
     void setTranslationX(float f);
 
@@ -104,50 +104,50 @@ public interface GraphicsLayerScope extends Density {
 
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m5487roundToPxR2X_6o(GraphicsLayerScope graphicsLayerScope, long j) {
-            return GraphicsLayerScope.super.mo422roundToPxR2X_6o(j);
+        public static int m5488roundToPxR2X_6o(GraphicsLayerScope graphicsLayerScope, long j) {
+            return GraphicsLayerScope.super.mo423roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m5488roundToPx0680j_4(GraphicsLayerScope graphicsLayerScope, float f) {
-            return GraphicsLayerScope.super.mo423roundToPx0680j_4(f);
+        public static int m5489roundToPx0680j_4(GraphicsLayerScope graphicsLayerScope, float f) {
+            return GraphicsLayerScope.super.mo424roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m5493toDpGaN1DYA(GraphicsLayerScope graphicsLayerScope, long j) {
-            return GraphicsLayerScope.super.mo424toDpGaN1DYA(j);
+        public static float m5494toDpGaN1DYA(GraphicsLayerScope graphicsLayerScope, long j) {
+            return GraphicsLayerScope.super.mo425toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5494toDpu2uoSUM(GraphicsLayerScope graphicsLayerScope, float f) {
-            return GraphicsLayerScope.super.mo425toDpu2uoSUM(f);
+        public static float m5495toDpu2uoSUM(GraphicsLayerScope graphicsLayerScope, float f) {
+            return GraphicsLayerScope.super.mo426toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5495toDpu2uoSUM(GraphicsLayerScope graphicsLayerScope, int i) {
-            return GraphicsLayerScope.super.mo426toDpu2uoSUM(i);
+        public static float m5496toDpu2uoSUM(GraphicsLayerScope graphicsLayerScope, int i) {
+            return GraphicsLayerScope.super.mo427toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m5496toDpSizekrfVVM(GraphicsLayerScope graphicsLayerScope, long j) {
-            return GraphicsLayerScope.super.mo427toDpSizekrfVVM(j);
+        public static long m5497toDpSizekrfVVM(GraphicsLayerScope graphicsLayerScope, long j) {
+            return GraphicsLayerScope.super.mo428toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m5497toPxR2X_6o(GraphicsLayerScope graphicsLayerScope, long j) {
-            return GraphicsLayerScope.super.mo428toPxR2X_6o(j);
+        public static float m5498toPxR2X_6o(GraphicsLayerScope graphicsLayerScope, long j) {
+            return GraphicsLayerScope.super.mo429toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m5498toPx0680j_4(GraphicsLayerScope graphicsLayerScope, float f) {
-            return GraphicsLayerScope.super.mo429toPx0680j_4(f);
+        public static float m5499toPx0680j_4(GraphicsLayerScope graphicsLayerScope, float f) {
+            return GraphicsLayerScope.super.mo430toPx0680j_4(f);
         }
 
         @Deprecated
@@ -157,50 +157,50 @@ public interface GraphicsLayerScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m5499toSizeXkaWNTQ(GraphicsLayerScope graphicsLayerScope, long j) {
-            return GraphicsLayerScope.super.mo430toSizeXkaWNTQ(j);
+        public static long m5500toSizeXkaWNTQ(GraphicsLayerScope graphicsLayerScope, long j) {
+            return GraphicsLayerScope.super.mo431toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m5500toSp0xMU5do(GraphicsLayerScope graphicsLayerScope, float f) {
-            return GraphicsLayerScope.super.mo431toSp0xMU5do(f);
+        public static long m5501toSp0xMU5do(GraphicsLayerScope graphicsLayerScope, float f) {
+            return GraphicsLayerScope.super.mo432toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5501toSpkPz2Gy4(GraphicsLayerScope graphicsLayerScope, float f) {
-            return GraphicsLayerScope.super.mo432toSpkPz2Gy4(f);
+        public static long m5502toSpkPz2Gy4(GraphicsLayerScope graphicsLayerScope, float f) {
+            return GraphicsLayerScope.super.mo433toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5502toSpkPz2Gy4(GraphicsLayerScope graphicsLayerScope, int i) {
-            return GraphicsLayerScope.super.mo433toSpkPz2Gy4(i);
+        public static long m5503toSpkPz2Gy4(GraphicsLayerScope graphicsLayerScope, int i) {
+            return GraphicsLayerScope.super.mo434toSpkPz2Gy4(i);
         }
 
         @Deprecated
         /* renamed from: getAmbientShadowColor-0d7_KjU  reason: not valid java name */
-        public static long m5482getAmbientShadowColor0d7_KjU(GraphicsLayerScope graphicsLayerScope) {
-            return GraphicsLayerScope.super.mo5471getAmbientShadowColor0d7_KjU();
+        public static long m5483getAmbientShadowColor0d7_KjU(GraphicsLayerScope graphicsLayerScope) {
+            return GraphicsLayerScope.super.mo5472getAmbientShadowColor0d7_KjU();
         }
 
         @Deprecated
         /* renamed from: setAmbientShadowColor-8_81llA  reason: not valid java name */
-        public static void m5489setAmbientShadowColor8_81llA(GraphicsLayerScope graphicsLayerScope, long j) {
-            GraphicsLayerScope.super.mo5477setAmbientShadowColor8_81llA(j);
+        public static void m5490setAmbientShadowColor8_81llA(GraphicsLayerScope graphicsLayerScope, long j) {
+            GraphicsLayerScope.super.mo5478setAmbientShadowColor8_81llA(j);
         }
 
         @Deprecated
         /* renamed from: getSpotShadowColor-0d7_KjU  reason: not valid java name */
-        public static long m5486getSpotShadowColor0d7_KjU(GraphicsLayerScope graphicsLayerScope) {
-            return GraphicsLayerScope.super.mo5475getSpotShadowColor0d7_KjU();
+        public static long m5487getSpotShadowColor0d7_KjU(GraphicsLayerScope graphicsLayerScope) {
+            return GraphicsLayerScope.super.mo5476getSpotShadowColor0d7_KjU();
         }
 
         @Deprecated
         /* renamed from: setSpotShadowColor-8_81llA  reason: not valid java name */
-        public static void m5492setSpotShadowColor8_81llA(GraphicsLayerScope graphicsLayerScope, long j) {
-            GraphicsLayerScope.super.mo5480setSpotShadowColor8_81llA(j);
+        public static void m5493setSpotShadowColor8_81llA(GraphicsLayerScope graphicsLayerScope, long j) {
+            GraphicsLayerScope.super.mo5481setSpotShadowColor8_81llA(j);
         }
 
         @Deprecated
@@ -215,14 +215,14 @@ public interface GraphicsLayerScope extends Density {
 
         @Deprecated
         /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-        public static int m5483getBlendMode0nO6VwU(GraphicsLayerScope graphicsLayerScope) {
-            return GraphicsLayerScope.super.mo5472getBlendMode0nO6VwU();
+        public static int m5484getBlendMode0nO6VwU(GraphicsLayerScope graphicsLayerScope) {
+            return GraphicsLayerScope.super.mo5473getBlendMode0nO6VwU();
         }
 
         @Deprecated
         /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-        public static void m5490setBlendModes9anfk8(GraphicsLayerScope graphicsLayerScope, int i) {
-            GraphicsLayerScope.super.mo5478setBlendModes9anfk8(i);
+        public static void m5491setBlendModes9anfk8(GraphicsLayerScope graphicsLayerScope, int i) {
+            GraphicsLayerScope.super.mo5479setBlendModes9anfk8(i);
         }
 
         @Deprecated
@@ -237,45 +237,45 @@ public interface GraphicsLayerScope extends Density {
 
         @Deprecated
         /* renamed from: getCompositingStrategy--NrFUSI  reason: not valid java name */
-        public static int m5484getCompositingStrategyNrFUSI(GraphicsLayerScope graphicsLayerScope) {
-            return GraphicsLayerScope.super.mo5473getCompositingStrategyNrFUSI();
+        public static int m5485getCompositingStrategyNrFUSI(GraphicsLayerScope graphicsLayerScope) {
+            return GraphicsLayerScope.super.mo5474getCompositingStrategyNrFUSI();
         }
 
         @Deprecated
         /* renamed from: setCompositingStrategy-aDBOjCE  reason: not valid java name */
-        public static void m5491setCompositingStrategyaDBOjCE(GraphicsLayerScope graphicsLayerScope, int i) {
-            GraphicsLayerScope.super.mo5479setCompositingStrategyaDBOjCE(i);
+        public static void m5492setCompositingStrategyaDBOjCE(GraphicsLayerScope graphicsLayerScope, int i) {
+            GraphicsLayerScope.super.mo5480setCompositingStrategyaDBOjCE(i);
         }
 
         @Deprecated
         /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-        public static long m5485getSizeNHjbRc(GraphicsLayerScope graphicsLayerScope) {
-            return GraphicsLayerScope.super.mo5474getSizeNHjbRc();
+        public static long m5486getSizeNHjbRc(GraphicsLayerScope graphicsLayerScope) {
+            return GraphicsLayerScope.super.mo5475getSizeNHjbRc();
         }
     }
 
     /* renamed from: getAmbientShadowColor-0d7_KjU  reason: not valid java name */
-    default long mo5471getAmbientShadowColor0d7_KjU() {
+    default long mo5472getAmbientShadowColor0d7_KjU() {
         return GraphicsLayerScopeKt.getDefaultShadowColor();
     }
 
     /* renamed from: getSpotShadowColor-0d7_KjU  reason: not valid java name */
-    default long mo5475getSpotShadowColor0d7_KjU() {
+    default long mo5476getSpotShadowColor0d7_KjU() {
         return GraphicsLayerScopeKt.getDefaultShadowColor();
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    default int mo5472getBlendMode0nO6VwU() {
-        return BlendMode.Companion.m5220getSrcOver0nO6VwU();
+    default int mo5473getBlendMode0nO6VwU() {
+        return BlendMode.Companion.m5221getSrcOver0nO6VwU();
     }
 
     /* renamed from: getCompositingStrategy--NrFUSI  reason: not valid java name */
-    default int mo5473getCompositingStrategyNrFUSI() {
-        return CompositingStrategy.Companion.m5369getAutoNrFUSI();
+    default int mo5474getCompositingStrategyNrFUSI() {
+        return CompositingStrategy.Companion.m5370getAutoNrFUSI();
     }
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    default long mo5474getSizeNHjbRc() {
-        return Size.Companion.m5112getUnspecifiedNHjbRc();
+    default long mo5475getSizeNHjbRc() {
+        return Size.Companion.m5113getUnspecifiedNHjbRc();
     }
 }

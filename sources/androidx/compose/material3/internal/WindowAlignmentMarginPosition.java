@@ -73,7 +73,7 @@ public final class WindowAlignmentMarginPosition {
 
         @Override // androidx.compose.material3.internal.MenuPosition.Horizontal
         /* renamed from: position-95KtPRI */
-        public int mo3490position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection) {
+        public int mo3491position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection) {
             int i2 = (int) (j >> 32);
             if (i >= i2 - (this.margin * 2)) {
                 return Alignment.Companion.getCenterHorizontally().align(i, i2, layoutDirection);
@@ -140,7 +140,7 @@ public final class WindowAlignmentMarginPosition {
 
         @Override // androidx.compose.material3.internal.MenuPosition.Vertical
         /* renamed from: position-JVtK1S4 */
-        public int mo3491positionJVtK1S4(IntRect intRect, long j, int i) {
+        public int mo3492positionJVtK1S4(IntRect intRect, long j, int i) {
             int i2 = (int) (j & 4294967295L);
             if (i >= i2 - (this.margin * 2)) {
                 return Alignment.Companion.getCenterVertically().align(i, i2);

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.networktasks.internal.NetworkServiceLocator;
 import io.appmetrica.analytics.networktasks.internal.NetworkTask;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ng implements Ol {
 
     /* renamed from: a  reason: collision with root package name */

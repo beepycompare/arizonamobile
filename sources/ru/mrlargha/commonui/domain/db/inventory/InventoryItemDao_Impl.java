@@ -23,7 +23,7 @@ import kotlin.reflect.KClass;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: InventoryItemDao_Impl.kt */
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0005\u0018\u0000 \u001b2\u00020\u0001:\u0001\u001bB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0016\u0010\u000f\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0014\u0010\u0010\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00120\u0011H\u0016J\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\b0\u0012H\u0096@¢\u0006\u0002\u0010\u0014J\u0016\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\u0017H\u0096@¢\u0006\u0002\u0010\u0018J\u0010\u0010\u0019\u001a\u00020\f2\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u001a\u001a\u00020\fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao_Impl;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfInventoryItemEntity", "Landroidx/room/EntityInsertAdapter;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEntity;", "__updateAdapterOfInventoryItemEntity", "Landroidx/room/EntityDeleteOrUpdateAdapter;", "insertAll", "", "info", "(Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEntity;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateInfo", "getCollectInventoryList", "Lkotlinx/coroutines/flow/Flow;", "", "getAll", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "findByItem", "item", "", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "deleteByItem", "deleteAllItems", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class InventoryItemDao_Impl implements InventoryItemDao {
     public static final Companion Companion = new Companion(null);
     private final RoomDatabase __db;
@@ -44,106 +44,106 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             public void bind(SQLiteStatement statement, InventoryItemEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo8890bindLong(1, entity.getSlot());
+                statement.mo8902bindLong(1, entity.getSlot());
                 Integer item = entity.getItem();
                 if (item == null) {
-                    statement.mo8891bindNull(2);
+                    statement.mo8903bindNull(2);
                 } else {
-                    statement.mo8890bindLong(2, item.intValue());
+                    statement.mo8902bindLong(2, item.intValue());
                 }
-                statement.mo8890bindLong(3, entity.getId());
+                statement.mo8902bindLong(3, entity.getId());
                 String text = entity.getText();
                 if (text == null) {
-                    statement.mo8891bindNull(4);
+                    statement.mo8903bindNull(4);
                 } else {
-                    statement.mo8892bindText(4, text);
+                    statement.mo8904bindText(4, text);
                 }
                 Integer item_type = entity.getItem_type();
                 if (item_type == null) {
-                    statement.mo8891bindNull(5);
+                    statement.mo8903bindNull(5);
                 } else {
-                    statement.mo8890bindLong(5, item_type.intValue());
+                    statement.mo8902bindLong(5, item_type.intValue());
                 }
                 Integer amount = entity.getAmount();
                 if (amount == null) {
-                    statement.mo8891bindNull(6);
+                    statement.mo8903bindNull(6);
                 } else {
-                    statement.mo8890bindLong(6, amount.intValue());
+                    statement.mo8902bindLong(6, amount.intValue());
                 }
                 Integer background = entity.getBackground();
                 if (background == null) {
-                    statement.mo8891bindNull(7);
+                    statement.mo8903bindNull(7);
                 } else {
-                    statement.mo8890bindLong(7, background.intValue());
+                    statement.mo8902bindLong(7, background.intValue());
                 }
                 Integer color = entity.getColor();
                 if (color == null) {
-                    statement.mo8891bindNull(8);
+                    statement.mo8903bindNull(8);
                 } else {
-                    statement.mo8890bindLong(8, color.intValue());
+                    statement.mo8902bindLong(8, color.intValue());
                 }
                 Integer bits = entity.getBits();
                 if (bits == null) {
-                    statement.mo8891bindNull(9);
+                    statement.mo8903bindNull(9);
                 } else {
-                    statement.mo8890bindLong(9, bits.intValue());
+                    statement.mo8902bindLong(9, bits.intValue());
                 }
                 Integer available = entity.getAvailable();
                 if (available == null) {
-                    statement.mo8891bindNull(10);
+                    statement.mo8903bindNull(10);
                 } else {
-                    statement.mo8890bindLong(10, available.intValue());
+                    statement.mo8902bindLong(10, available.intValue());
                 }
                 Integer enchant = entity.getEnchant();
                 if (enchant == null) {
-                    statement.mo8891bindNull(11);
+                    statement.mo8903bindNull(11);
                 } else {
-                    statement.mo8890bindLong(11, enchant.intValue());
+                    statement.mo8902bindLong(11, enchant.intValue());
                 }
                 Integer breaks = entity.getBreaks();
                 if (breaks == null) {
-                    statement.mo8891bindNull(12);
+                    statement.mo8903bindNull(12);
                 } else {
-                    statement.mo8890bindLong(12, breaks.intValue());
+                    statement.mo8902bindLong(12, breaks.intValue());
                 }
                 Integer isActive = entity.isActive();
                 if (isActive == null) {
-                    statement.mo8891bindNull(13);
+                    statement.mo8903bindNull(13);
                 } else {
-                    statement.mo8890bindLong(13, isActive.intValue());
+                    statement.mo8902bindLong(13, isActive.intValue());
                 }
                 Integer itemStrength = entity.getItemStrength();
                 if (itemStrength == null) {
-                    statement.mo8891bindNull(14);
+                    statement.mo8903bindNull(14);
                 } else {
-                    statement.mo8890bindLong(14, itemStrength.intValue());
+                    statement.mo8902bindLong(14, itemStrength.intValue());
                 }
                 Integer blackout = entity.getBlackout();
                 if (blackout == null) {
-                    statement.mo8891bindNull(15);
+                    statement.mo8903bindNull(15);
                 } else {
-                    statement.mo8890bindLong(15, blackout.intValue());
+                    statement.mo8902bindLong(15, blackout.intValue());
                 }
                 Long time = entity.getTime();
                 if (time == null) {
-                    statement.mo8891bindNull(16);
+                    statement.mo8903bindNull(16);
                 } else {
-                    statement.mo8890bindLong(16, time.longValue());
+                    statement.mo8902bindLong(16, time.longValue());
                 }
                 Integer acsSlot = entity.getAcsSlot();
                 if (acsSlot == null) {
-                    statement.mo8891bindNull(17);
+                    statement.mo8903bindNull(17);
                 } else {
-                    statement.mo8890bindLong(17, acsSlot.intValue());
+                    statement.mo8902bindLong(17, acsSlot.intValue());
                 }
-                statement.mo8890bindLong(18, entity.getInventoryType());
-                statement.mo8890bindLong(19, entity.isColored() ? 1L : 0L);
-                statement.mo8890bindLong(20, entity.isLocked() ? 1L : 0L);
+                statement.mo8902bindLong(18, entity.getInventoryType());
+                statement.mo8902bindLong(19, entity.isColored() ? 1L : 0L);
+                statement.mo8902bindLong(20, entity.isLocked() ? 1L : 0L);
                 String effect = entity.getEffect();
                 if (effect == null) {
-                    statement.mo8891bindNull(21);
+                    statement.mo8903bindNull(21);
                 } else {
-                    statement.mo8892bindText(21, effect);
+                    statement.mo8904bindText(21, effect);
                 }
             }
         };
@@ -158,108 +158,108 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             public void bind(SQLiteStatement statement, InventoryItemEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo8890bindLong(1, entity.getSlot());
+                statement.mo8902bindLong(1, entity.getSlot());
                 Integer item = entity.getItem();
                 if (item == null) {
-                    statement.mo8891bindNull(2);
+                    statement.mo8903bindNull(2);
                 } else {
-                    statement.mo8890bindLong(2, item.intValue());
+                    statement.mo8902bindLong(2, item.intValue());
                 }
-                statement.mo8890bindLong(3, entity.getId());
+                statement.mo8902bindLong(3, entity.getId());
                 String text = entity.getText();
                 if (text == null) {
-                    statement.mo8891bindNull(4);
+                    statement.mo8903bindNull(4);
                 } else {
-                    statement.mo8892bindText(4, text);
+                    statement.mo8904bindText(4, text);
                 }
                 Integer item_type = entity.getItem_type();
                 if (item_type == null) {
-                    statement.mo8891bindNull(5);
+                    statement.mo8903bindNull(5);
                 } else {
-                    statement.mo8890bindLong(5, item_type.intValue());
+                    statement.mo8902bindLong(5, item_type.intValue());
                 }
                 Integer amount = entity.getAmount();
                 if (amount == null) {
-                    statement.mo8891bindNull(6);
+                    statement.mo8903bindNull(6);
                 } else {
-                    statement.mo8890bindLong(6, amount.intValue());
+                    statement.mo8902bindLong(6, amount.intValue());
                 }
                 Integer background = entity.getBackground();
                 if (background == null) {
-                    statement.mo8891bindNull(7);
+                    statement.mo8903bindNull(7);
                 } else {
-                    statement.mo8890bindLong(7, background.intValue());
+                    statement.mo8902bindLong(7, background.intValue());
                 }
                 Integer color = entity.getColor();
                 if (color == null) {
-                    statement.mo8891bindNull(8);
+                    statement.mo8903bindNull(8);
                 } else {
-                    statement.mo8890bindLong(8, color.intValue());
+                    statement.mo8902bindLong(8, color.intValue());
                 }
                 Integer bits = entity.getBits();
                 if (bits == null) {
-                    statement.mo8891bindNull(9);
+                    statement.mo8903bindNull(9);
                 } else {
-                    statement.mo8890bindLong(9, bits.intValue());
+                    statement.mo8902bindLong(9, bits.intValue());
                 }
                 Integer available = entity.getAvailable();
                 if (available == null) {
-                    statement.mo8891bindNull(10);
+                    statement.mo8903bindNull(10);
                 } else {
-                    statement.mo8890bindLong(10, available.intValue());
+                    statement.mo8902bindLong(10, available.intValue());
                 }
                 Integer enchant = entity.getEnchant();
                 if (enchant == null) {
-                    statement.mo8891bindNull(11);
+                    statement.mo8903bindNull(11);
                 } else {
-                    statement.mo8890bindLong(11, enchant.intValue());
+                    statement.mo8902bindLong(11, enchant.intValue());
                 }
                 Integer breaks = entity.getBreaks();
                 if (breaks == null) {
-                    statement.mo8891bindNull(12);
+                    statement.mo8903bindNull(12);
                 } else {
-                    statement.mo8890bindLong(12, breaks.intValue());
+                    statement.mo8902bindLong(12, breaks.intValue());
                 }
                 Integer isActive = entity.isActive();
                 if (isActive == null) {
-                    statement.mo8891bindNull(13);
+                    statement.mo8903bindNull(13);
                 } else {
-                    statement.mo8890bindLong(13, isActive.intValue());
+                    statement.mo8902bindLong(13, isActive.intValue());
                 }
                 Integer itemStrength = entity.getItemStrength();
                 if (itemStrength == null) {
-                    statement.mo8891bindNull(14);
+                    statement.mo8903bindNull(14);
                 } else {
-                    statement.mo8890bindLong(14, itemStrength.intValue());
+                    statement.mo8902bindLong(14, itemStrength.intValue());
                 }
                 Integer blackout = entity.getBlackout();
                 if (blackout == null) {
-                    statement.mo8891bindNull(15);
+                    statement.mo8903bindNull(15);
                 } else {
-                    statement.mo8890bindLong(15, blackout.intValue());
+                    statement.mo8902bindLong(15, blackout.intValue());
                 }
                 Long time = entity.getTime();
                 if (time == null) {
-                    statement.mo8891bindNull(16);
+                    statement.mo8903bindNull(16);
                 } else {
-                    statement.mo8890bindLong(16, time.longValue());
+                    statement.mo8902bindLong(16, time.longValue());
                 }
                 Integer acsSlot = entity.getAcsSlot();
                 if (acsSlot == null) {
-                    statement.mo8891bindNull(17);
+                    statement.mo8903bindNull(17);
                 } else {
-                    statement.mo8890bindLong(17, acsSlot.intValue());
+                    statement.mo8902bindLong(17, acsSlot.intValue());
                 }
-                statement.mo8890bindLong(18, entity.getInventoryType());
-                statement.mo8890bindLong(19, entity.isColored() ? 1L : 0L);
-                statement.mo8890bindLong(20, entity.isLocked() ? 1L : 0L);
+                statement.mo8902bindLong(18, entity.getInventoryType());
+                statement.mo8902bindLong(19, entity.isColored() ? 1L : 0L);
+                statement.mo8902bindLong(20, entity.isLocked() ? 1L : 0L);
                 String effect = entity.getEffect();
                 if (effect == null) {
-                    statement.mo8891bindNull(21);
+                    statement.mo8903bindNull(21);
                 } else {
-                    statement.mo8892bindText(21, effect);
+                    statement.mo8904bindText(21, effect);
                 }
-                statement.mo8890bindLong(22, entity.getSlot());
+                statement.mo8902bindLong(22, entity.getSlot());
             }
         };
     }
@@ -591,7 +591,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo8890bindLong(1, i);
+            prepare.mo8902bindLong(1, i);
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "slot");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
@@ -647,7 +647,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo8890bindLong(1, i);
+            prepare.mo8902bindLong(1, i);
             prepare.step();
             prepare.close();
             return Unit.INSTANCE;
@@ -685,7 +685,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
 
     /* compiled from: InventoryItemDao_Impl.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

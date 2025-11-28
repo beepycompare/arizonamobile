@@ -119,7 +119,7 @@ public final class OutlinedTextFieldKt$OutlinedTextField$5 implements Function2<
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            companion = PaddingKt.m846paddingqDBjuR0$default(SemanticsModifierKt.semantics(companion2, true, (Function1) rememberedValue), 0.0f, TextFieldImplKt.minimizedLabelHalfHeight(composer, 0), 0.0f, 0.0f, 13, null);
+            companion = PaddingKt.m847paddingqDBjuR0$default(SemanticsModifierKt.semantics(companion2, true, (Function1) rememberedValue), 0.0f, TextFieldImplKt.minimizedLabelHalfHeight(composer, 0), 0.0f, 0.0f, 13, null);
             composer.endReplaceGroup();
         } else {
             composer.startReplaceGroup(-1901156115);
@@ -129,8 +129,8 @@ public final class OutlinedTextFieldKt$OutlinedTextField$5 implements Function2<
         Modifier then = modifier.then(companion);
         boolean z = this.$isError;
         Strings.Companion companion3 = Strings.Companion;
-        Modifier m878defaultMinSizeVpY3zN4 = SizeKt.m878defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(then, z, Strings_androidKt.m3610getString2EP1pXo(Strings.m3531constructorimpl(androidx.compose.ui.R.string.default_error_message), composer, 0)), OutlinedTextFieldDefaults.INSTANCE.m2711getMinWidthD9Ej5fM(), OutlinedTextFieldDefaults.INSTANCE.m2710getMinHeightD9Ej5fM());
-        SolidColor solidColor = new SolidColor(this.$colors.m3074cursorColorvNxB06k$material3(this.$isError), null);
+        Modifier m879defaultMinSizeVpY3zN4 = SizeKt.m879defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(then, z, Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(androidx.compose.ui.R.string.default_error_message), composer, 0)), OutlinedTextFieldDefaults.INSTANCE.m2712getMinWidthD9Ej5fM(), OutlinedTextFieldDefaults.INSTANCE.m2711getMinHeightD9Ej5fM());
+        SolidColor solidColor = new SolidColor(this.$colors.m3075cursorColorvNxB06k$material3(this.$isError), null);
         TextFieldValue textFieldValue = this.$value;
         Function1<TextFieldValue, Unit> function1 = this.$onValueChange;
         boolean z2 = this.$enabled;
@@ -159,7 +159,7 @@ public final class OutlinedTextFieldKt$OutlinedTextField$5 implements Function2<
         final Function2<Composer, Integer, Unit> function27 = this.$supportingText;
         final TextFieldColors textFieldColors = this.$colors;
         final Shape shape = this.$shape;
-        BasicTextFieldKt.BasicTextField(textFieldValue, function1, m878defaultMinSizeVpY3zN4, z2, z3, textStyle, keyboardOptions, keyboardActions, z4, i2, i3, visualTransformation, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource, solidColor2, ComposableLambdaKt.rememberComposableLambda(674541106, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.OutlinedTextFieldKt$OutlinedTextField$5.2
+        BasicTextFieldKt.BasicTextField(textFieldValue, function1, m879defaultMinSizeVpY3zN4, z2, z3, textStyle, keyboardOptions, keyboardActions, z4, i2, i3, visualTransformation, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource, solidColor2, ComposableLambdaKt.rememberComposableLambda(674541106, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.OutlinedTextFieldKt$OutlinedTextField$5.2
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ Unit invoke(Function2<? super Composer, ? super Integer, ? extends Unit> function28, Composer composer2, Integer num) {
                 invoke((Function2<? super Composer, ? super Integer, Unit>) function28, composer2, num.intValue());
@@ -218,7 +218,7 @@ public final class OutlinedTextFieldKt$OutlinedTextField$5 implements Function2<
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(1409265477, i7, -1, "androidx.compose.material3.OutlinedTextField.<anonymous>.<anonymous>.<anonymous> (OutlinedTextField.kt:623)");
                         }
-                        OutlinedTextFieldDefaults.INSTANCE.m2705Container4EFweAY(z11, z12, mutableInteractionSource4, null, textFieldColors3, shape2, 0.0f, 0.0f, composer3, 100663296, 200);
+                        OutlinedTextFieldDefaults.INSTANCE.m2706Container4EFweAY(z11, z12, mutableInteractionSource4, null, textFieldColors3, shape2, 0.0f, 0.0f, composer3, 100663296, 200);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }

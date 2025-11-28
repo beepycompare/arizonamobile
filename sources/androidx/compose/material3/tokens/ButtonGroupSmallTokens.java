@@ -8,19 +8,19 @@ import kotlin.Metadata;
 public final class ButtonGroupSmallTokens {
     public static final int $stable = 0;
     public static final ButtonGroupSmallTokens INSTANCE = new ButtonGroupSmallTokens();
-    private static final float BetweenSpace = Dp.m7995constructorimpl((float) 12.0d);
-    private static final float ContainerHeight = Dp.m7995constructorimpl((float) 40.0d);
+    private static final float BetweenSpace = Dp.m7996constructorimpl((float) 12.0d);
+    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 40.0d);
 
     private ButtonGroupSmallTokens() {
     }
 
     /* renamed from: getBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3679getBetweenSpaceD9Ej5fM() {
+    public final float m3680getBetweenSpaceD9Ej5fM() {
         return BetweenSpace;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3680getContainerHeightD9Ej5fM() {
+    public final float m3681getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 }

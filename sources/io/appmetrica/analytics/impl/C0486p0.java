@@ -6,7 +6,7 @@ import io.appmetrica.analytics.internal.IAppMetricaService;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.p0  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0486p0 {
     public static final long j = TimeUnit.SECONDS.toMillis(10);
 

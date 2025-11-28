@@ -82,7 +82,7 @@ public final class SingleRowTopAppBarOverrideScope {
     }
 
     /* renamed from: getExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m2902getExpandedHeightD9Ej5fM() {
+    public final float m2903getExpandedHeightD9Ej5fM() {
         return this.expandedHeight;
     }
 

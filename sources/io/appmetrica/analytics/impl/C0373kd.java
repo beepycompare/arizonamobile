@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import java.util.Comparator;
 import kotlin.comparisons.ComparisonsKt;
 /* renamed from: io.appmetrica.analytics.impl.kd  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0373kd implements Comparator {
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {

@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import kotlin.Pair;
 import kotlin.TuplesKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class D7 implements ProtobufConverter {
     public final BigDecimal a(C0419m8 c0419m8) {
         throw new UnsupportedOperationException();

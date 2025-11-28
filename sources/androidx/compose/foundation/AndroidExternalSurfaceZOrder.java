@@ -10,54 +10,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class AndroidExternalSurfaceZOrder {
     private final int zOrder;
     public static final Companion Companion = new Companion(null);
-    private static final int Behind = m252constructorimpl(0);
-    private static final int MediaOverlay = m252constructorimpl(1);
-    private static final int OnTop = m252constructorimpl(2);
+    private static final int Behind = m253constructorimpl(0);
+    private static final int MediaOverlay = m253constructorimpl(1);
+    private static final int OnTop = m253constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ AndroidExternalSurfaceZOrder m251boximpl(int i) {
+    public static final /* synthetic */ AndroidExternalSurfaceZOrder m252boximpl(int i) {
         return new AndroidExternalSurfaceZOrder(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m252constructorimpl(int i) {
+    private static int m253constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m253equalsimpl(int i, Object obj) {
-        return (obj instanceof AndroidExternalSurfaceZOrder) && i == ((AndroidExternalSurfaceZOrder) obj).m257unboximpl();
+    public static boolean m254equalsimpl(int i, Object obj) {
+        return (obj instanceof AndroidExternalSurfaceZOrder) && i == ((AndroidExternalSurfaceZOrder) obj).m258unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m254equalsimpl0(int i, int i2) {
+    public static final boolean m255equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m255hashCodeimpl(int i) {
+    public static int m256hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m256toStringimpl(int i) {
+    public static String m257toStringimpl(int i) {
         return "AndroidExternalSurfaceZOrder(zOrder=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m253equalsimpl(this.zOrder, obj);
+        return m254equalsimpl(this.zOrder, obj);
     }
 
     public int hashCode() {
-        return m255hashCodeimpl(this.zOrder);
+        return m256hashCodeimpl(this.zOrder);
     }
 
     public String toString() {
-        return m256toStringimpl(this.zOrder);
+        return m257toStringimpl(this.zOrder);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m257unboximpl() {
+    public final /* synthetic */ int m258unboximpl() {
         return this.zOrder;
     }
 
@@ -73,17 +73,17 @@ public final class AndroidExternalSurfaceZOrder {
         }
 
         /* renamed from: getBehind-B_4ceCc  reason: not valid java name */
-        public final int m258getBehindB_4ceCc() {
+        public final int m259getBehindB_4ceCc() {
             return AndroidExternalSurfaceZOrder.Behind;
         }
 
         /* renamed from: getMediaOverlay-B_4ceCc  reason: not valid java name */
-        public final int m259getMediaOverlayB_4ceCc() {
+        public final int m260getMediaOverlayB_4ceCc() {
             return AndroidExternalSurfaceZOrder.MediaOverlay;
         }
 
         /* renamed from: getOnTop-B_4ceCc  reason: not valid java name */
-        public final int m260getOnTopB_4ceCc() {
+        public final int m261getOnTopB_4ceCc() {
             return AndroidExternalSurfaceZOrder.OnTop;
         }
     }

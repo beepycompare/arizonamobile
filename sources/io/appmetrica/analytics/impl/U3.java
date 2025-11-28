@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import java.util.HashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class U3 extends W5 {
     public HashMap q;
     public C0125an r;

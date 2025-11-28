@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class X5 extends A4 {
     public X5(String str, double d) {
         super(2, str, Double.valueOf(d), new C0696xb(), new C0739z4(new Nb(new C0589t4(100))));

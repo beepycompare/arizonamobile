@@ -42,25 +42,25 @@ import kotlinx.coroutines.CoroutineScope;
 public final class PagerKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit HorizontalPager__8jOkeI$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1146HorizontalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1147HorizontalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit HorizontalPager_oI3XNZo$lambda$1(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1147HorizontalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1148HorizontalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit VerticalPager__8jOkeI$lambda$2(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1148VerticalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1149VerticalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit VerticalPager_oI3XNZo$lambda$3(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1149VerticalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1150VerticalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
@@ -106,7 +106,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1146HorizontalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1147HorizontalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -327,10 +327,10 @@ public final class PagerKt {
                                             snapPosition3 = snapPosition;
                                         } else {
                                             Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                            PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
+                                            PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
                                             PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                             int i33 = i8 != 0 ? 0 : i9;
-                                            float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
+                                            float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
                                             if (i11 != 0) {
                                                 vertical2 = Alignment.Companion.getCenterVertically();
                                             }
@@ -367,11 +367,11 @@ public final class PagerKt {
                                                 function13 = function14;
                                                 nestedScrollConnection4 = nestedScrollConnection3;
                                                 composer2 = startRestartGroup;
-                                                paddingValues3 = m835PaddingValues0680j_4;
+                                                paddingValues3 = m836PaddingValues0680j_4;
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7995constructorimpl;
+                                                f4 = m7996constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 modifier3 = companion;
@@ -380,12 +380,12 @@ public final class PagerKt {
                                                 nestedScrollConnection4 = nestedScrollConnection3;
                                                 i25 = i24;
                                                 composer2 = startRestartGroup;
-                                                paddingValues3 = m835PaddingValues0680j_4;
+                                                paddingValues3 = m836PaddingValues0680j_4;
                                                 targetedFlingBehavior3 = obj2;
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7995constructorimpl;
+                                                f4 = m7996constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 snapPosition3 = start;
@@ -404,7 +404,7 @@ public final class PagerKt {
                                         int i37 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i35 & 458752) | (i35 & 3670016) | ((i34 << 12) & 29360128) | (i36 & 234881024) | (i36 & 1879048192);
                                         int i38 = ((i27 >> 9) & 14) | 3072 | (i34 & 112);
                                         int i39 = i34 << 6;
-                                        LazyLayoutPagerKt.m1138PagereLwUrMk(modifier4, pagerState, paddingValues3, z6, Orientation.Horizontal, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, Alignment.Companion.getCenterHorizontally(), vertical2, snapPosition3, function4, composer2, i37, i38 | (i39 & 896) | (i35 & 57344) | ((i34 << 9) & 458752) | (i39 & 3670016), 0);
+                                        LazyLayoutPagerKt.m1139PagereLwUrMk(modifier4, pagerState, paddingValues3, z6, Orientation.Horizontal, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, Alignment.Companion.getCenterHorizontally(), vertical2, snapPosition3, function4, composer2, i37, i38 | (i39 & 896) | (i35 & 57344) | ((i34 << 9) & 458752) | (i39 & 3670016), 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -669,7 +669,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1147HorizontalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1148HorizontalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -867,10 +867,10 @@ public final class PagerKt {
                                     pageSize3 = pageSize;
                                 } else {
                                     companion = i27 != 0 ? Modifier.Companion : obj;
-                                    PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
+                                    PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
                                     PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                     i21 = i8 != 0 ? 0 : i9;
-                                    float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
+                                    float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
                                     if (i11 != 0) {
                                         obj2 = Alignment.Companion.getCenterVertically();
                                     }
@@ -911,8 +911,8 @@ public final class PagerKt {
                                     i20 = i23;
                                     pageSize3 = fill;
                                     z6 = z7;
-                                    f3 = m7995constructorimpl;
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    f3 = m7996constructorimpl;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     i24 = i15;
                                 }
                                 composer2.endDefaults();
@@ -926,7 +926,7 @@ public final class PagerKt {
                                 Alignment.Vertical vertical3 = obj2;
                                 Modifier modifier3 = companion;
                                 int i31 = i21;
-                                m1146HorizontalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i31, f3, vertical3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, OverscrollKt.rememberOverscrollEffect(composer2, i22), function4, startRestartGroup, i24 & 2147483646, i30, 0);
+                                m1147HorizontalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i31, f3, vertical3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, OverscrollKt.rememberOverscrollEffect(composer2, i22), function4, startRestartGroup, i24 & 2147483646, i30, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1162,7 +1162,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1148VerticalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1149VerticalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -1385,10 +1385,10 @@ public final class PagerKt {
                                             snapPosition3 = snapPosition;
                                         } else {
                                             Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                            PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
+                                            PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
                                             PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                             int i33 = i8 != 0 ? 0 : i9;
-                                            float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
+                                            float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
                                             if (i11 != 0) {
                                                 obj2 = Alignment.Companion.getCenterHorizontally();
                                             }
@@ -1425,12 +1425,12 @@ public final class PagerKt {
                                                 function13 = function14;
                                                 nestedScrollConnection4 = nestedScrollConnection3;
                                                 composer2 = startRestartGroup;
-                                                paddingValues3 = m835PaddingValues0680j_4;
+                                                paddingValues3 = m836PaddingValues0680j_4;
                                                 horizontal3 = obj2;
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7995constructorimpl;
+                                                f4 = m7996constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 modifier3 = companion;
@@ -1439,13 +1439,13 @@ public final class PagerKt {
                                                 nestedScrollConnection4 = nestedScrollConnection3;
                                                 i25 = i24;
                                                 composer2 = startRestartGroup;
-                                                paddingValues3 = m835PaddingValues0680j_4;
+                                                paddingValues3 = m836PaddingValues0680j_4;
                                                 horizontal3 = obj2;
                                                 targetedFlingBehavior3 = obj3;
                                                 pageSize3 = fill;
                                                 z5 = z7;
                                                 i26 = i33;
-                                                f4 = m7995constructorimpl;
+                                                f4 = m7996constructorimpl;
                                                 i27 = i15;
                                                 z6 = z8;
                                                 snapPosition3 = start;
@@ -1466,7 +1466,7 @@ public final class PagerKt {
                                         int i39 = i27 >> 9;
                                         int i40 = i34 << 6;
                                         PaddingValues paddingValues4 = paddingValues3;
-                                        LazyLayoutPagerKt.m1138PagereLwUrMk(modifier4, pagerState, paddingValues4, z6, Orientation.Vertical, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, horizontal3, Alignment.Companion.getCenterVertically(), snapPosition3, function4, composer2, i38, (i39 & 7168) | (i40 & 896) | (i39 & 14) | 24576 | (i34 & 112) | ((i34 << 9) & 458752) | (i40 & 3670016), 0);
+                                        LazyLayoutPagerKt.m1139PagereLwUrMk(modifier4, pagerState, paddingValues4, z6, Orientation.Vertical, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, horizontal3, Alignment.Companion.getCenterVertically(), snapPosition3, function4, composer2, i38, (i39 & 7168) | (i40 & 896) | (i39 & 14) | 24576 | (i34 & 112) | ((i34 << 9) & 458752) | (i40 & 3670016), 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -1730,7 +1730,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1149VerticalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1150VerticalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -1928,10 +1928,10 @@ public final class PagerKt {
                                     pageSize3 = pageSize;
                                 } else {
                                     companion = i27 != 0 ? Modifier.Companion : obj;
-                                    PaddingValues m835PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)) : paddingValues;
+                                    PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
                                     PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                     i21 = i8 != 0 ? 0 : i9;
-                                    float m7995constructorimpl = i10 != 0 ? Dp.m7995constructorimpl(0) : f2;
+                                    float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
                                     if (i11 != 0) {
                                         obj2 = Alignment.Companion.getCenterHorizontally();
                                     }
@@ -1972,8 +1972,8 @@ public final class PagerKt {
                                     i20 = i23;
                                     pageSize3 = fill;
                                     z6 = z7;
-                                    f3 = m7995constructorimpl;
-                                    paddingValues3 = m835PaddingValues0680j_4;
+                                    f3 = m7996constructorimpl;
+                                    paddingValues3 = m836PaddingValues0680j_4;
                                     i24 = i15;
                                 }
                                 composer2.endDefaults();
@@ -1987,7 +1987,7 @@ public final class PagerKt {
                                 Alignment.Horizontal horizontal3 = obj2;
                                 Modifier modifier3 = companion;
                                 int i31 = i21;
-                                m1148VerticalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i31, f3, horizontal3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, OverscrollKt.rememberOverscrollEffect(composer2, i22), function4, startRestartGroup, i24 & 2147483646, i30, 0);
+                                m1149VerticalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i31, f3, horizontal3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, OverscrollKt.rememberOverscrollEffect(composer2, i22), function4, startRestartGroup, i24 & 2147483646, i30, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }

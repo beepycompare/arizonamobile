@@ -14,29 +14,29 @@ import kotlin.collections.CollectionsKt;
 /* loaded from: classes.dex */
 public final class AndroidShader_androidKt {
     /* renamed from: ActualLinearGradientShader-VjE6UOU  reason: not valid java name */
-    public static final Shader m5179ActualLinearGradientShaderVjE6UOU(long j, long j2, List<Color> list, List<Float> list2, int i) {
+    public static final Shader m5180ActualLinearGradientShaderVjE6UOU(long j, long j2, List<Color> list, List<Float> list2, int i) {
         validateColorStops(list, list2);
         int countTransparentColors = countTransparentColors(list);
-        return new android.graphics.LinearGradient(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)), makeTransparentColors(list, countTransparentColors), makeTransparentStops(list2, list, countTransparentColors), AndroidTileMode_androidKt.m5183toAndroidTileMode0vamqd0(i));
+        return new android.graphics.LinearGradient(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)), makeTransparentColors(list, countTransparentColors), makeTransparentStops(list2, list, countTransparentColors), AndroidTileMode_androidKt.m5184toAndroidTileMode0vamqd0(i));
     }
 
     /* renamed from: ActualRadialGradientShader-8uybcMk  reason: not valid java name */
-    public static final Shader m5180ActualRadialGradientShader8uybcMk(long j, float f, List<Color> list, List<Float> list2, int i) {
+    public static final Shader m5181ActualRadialGradientShader8uybcMk(long j, float f, List<Color> list, List<Float> list2, int i) {
         validateColorStops(list, list2);
         int countTransparentColors = countTransparentColors(list);
-        return new android.graphics.RadialGradient(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), f, makeTransparentColors(list, countTransparentColors), makeTransparentStops(list2, list, countTransparentColors), AndroidTileMode_androidKt.m5183toAndroidTileMode0vamqd0(i));
+        return new android.graphics.RadialGradient(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), f, makeTransparentColors(list, countTransparentColors), makeTransparentStops(list2, list, countTransparentColors), AndroidTileMode_androidKt.m5184toAndroidTileMode0vamqd0(i));
     }
 
     /* renamed from: ActualSweepGradientShader-9KIMszo  reason: not valid java name */
-    public static final Shader m5181ActualSweepGradientShader9KIMszo(long j, List<Color> list, List<Float> list2) {
+    public static final Shader m5182ActualSweepGradientShader9KIMszo(long j, List<Color> list, List<Float> list2) {
         validateColorStops(list, list2);
         int countTransparentColors = countTransparentColors(list);
         return new android.graphics.SweepGradient(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), makeTransparentColors(list, countTransparentColors), makeTransparentStops(list2, list, countTransparentColors));
     }
 
     /* renamed from: ActualImageShader-F49vj9s  reason: not valid java name */
-    public static final Shader m5178ActualImageShaderF49vj9s(ImageBitmap imageBitmap, int i, int i2) {
-        return new BitmapShader(AndroidImageBitmap_androidKt.asAndroidBitmap(imageBitmap), AndroidTileMode_androidKt.m5183toAndroidTileMode0vamqd0(i), AndroidTileMode_androidKt.m5183toAndroidTileMode0vamqd0(i2));
+    public static final Shader m5179ActualImageShaderF49vj9s(ImageBitmap imageBitmap, int i, int i2) {
+        return new BitmapShader(AndroidImageBitmap_androidKt.asAndroidBitmap(imageBitmap), AndroidTileMode_androidKt.m5184toAndroidTileMode0vamqd0(i), AndroidTileMode_androidKt.m5184toAndroidTileMode0vamqd0(i2));
     }
 
     public static final int countTransparentColors(List<Color> list) {
@@ -46,7 +46,7 @@ public final class AndroidShader_androidKt {
         }
         int lastIndex = CollectionsKt.getLastIndex(list);
         for (int i2 = 1; i2 < lastIndex; i2++) {
-            if (Color.m5281getAlphaimpl(list.get(i2).m5289unboximpl()) == 0.0f) {
+            if (Color.m5282getAlphaimpl(list.get(i2).m5290unboximpl()) == 0.0f) {
                 i++;
             }
         }
@@ -60,7 +60,7 @@ public final class AndroidShader_androidKt {
             int size = list.size();
             int[] iArr = new int[size];
             while (i3 < size) {
-                iArr[i3] = ColorKt.m5333toArgb8_81llA(list.get(i3).m5289unboximpl());
+                iArr[i3] = ColorKt.m5334toArgb8_81llA(list.get(i3).m5290unboximpl());
                 i3++;
             }
             return iArr;
@@ -70,23 +70,23 @@ public final class AndroidShader_androidKt {
         int size2 = list.size();
         int i4 = 0;
         while (i3 < size2) {
-            long m5289unboximpl = list.get(i3).m5289unboximpl();
-            if (Color.m5281getAlphaimpl(m5289unboximpl) == 0.0f) {
+            long m5290unboximpl = list.get(i3).m5290unboximpl();
+            if (Color.m5282getAlphaimpl(m5290unboximpl) == 0.0f) {
                 if (i3 == 0) {
                     i2 = i4 + 1;
-                    iArr2[i4] = ColorKt.m5333toArgb8_81llA(Color.m5278copywmQWz5c$default(list.get(1).m5289unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
+                    iArr2[i4] = ColorKt.m5334toArgb8_81llA(Color.m5279copywmQWz5c$default(list.get(1).m5290unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
                 } else if (i3 == lastIndex) {
                     i2 = i4 + 1;
-                    iArr2[i4] = ColorKt.m5333toArgb8_81llA(Color.m5278copywmQWz5c$default(list.get(i3 - 1).m5289unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
+                    iArr2[i4] = ColorKt.m5334toArgb8_81llA(Color.m5279copywmQWz5c$default(list.get(i3 - 1).m5290unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
                 } else {
                     int i5 = i4 + 1;
-                    iArr2[i4] = ColorKt.m5333toArgb8_81llA(Color.m5278copywmQWz5c$default(list.get(i3 - 1).m5289unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
+                    iArr2[i4] = ColorKt.m5334toArgb8_81llA(Color.m5279copywmQWz5c$default(list.get(i3 - 1).m5290unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
                     i4 += 2;
-                    iArr2[i5] = ColorKt.m5333toArgb8_81llA(Color.m5278copywmQWz5c$default(list.get(i3 + 1).m5289unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
+                    iArr2[i5] = ColorKt.m5334toArgb8_81llA(Color.m5279copywmQWz5c$default(list.get(i3 + 1).m5290unboximpl(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null));
                 }
                 i4 = i2;
             } else {
-                iArr2[i4] = ColorKt.m5333toArgb8_81llA(m5289unboximpl);
+                iArr2[i4] = ColorKt.m5334toArgb8_81llA(m5290unboximpl);
                 i4++;
             }
             i3++;
@@ -106,11 +106,11 @@ public final class AndroidShader_androidKt {
         int lastIndex = CollectionsKt.getLastIndex(list2);
         int i2 = 1;
         for (int i3 = 1; i3 < lastIndex; i3++) {
-            long m5289unboximpl = list2.get(i3).m5289unboximpl();
+            long m5290unboximpl = list2.get(i3).m5290unboximpl();
             float floatValue = list != null ? list.get(i3).floatValue() : i3 / CollectionsKt.getLastIndex(list2);
             int i4 = i2 + 1;
             fArr[i2] = floatValue;
-            if (Color.m5281getAlphaimpl(m5289unboximpl) == 0.0f) {
+            if (Color.m5282getAlphaimpl(m5290unboximpl) == 0.0f) {
                 i2 += 2;
                 fArr[i4] = floatValue;
             } else {
@@ -132,10 +132,10 @@ public final class AndroidShader_androidKt {
     }
 
     /* renamed from: ActualCompositeShader-7EN7VTw  reason: not valid java name */
-    public static final Shader m5177ActualCompositeShader7EN7VTw(Shader shader, Shader shader2, int i) {
+    public static final Shader m5178ActualCompositeShader7EN7VTw(Shader shader, Shader shader2, int i) {
         if (Build.VERSION.SDK_INT >= 29) {
-            return new ComposeShader(shader, shader2, AndroidBlendMode_androidKt.m5127toAndroidBlendModes9anfk8(i));
+            return new ComposeShader(shader, shader2, AndroidBlendMode_androidKt.m5128toAndroidBlendModes9anfk8(i));
         }
-        return new ComposeShader(shader, shader2, AndroidBlendMode_androidKt.m5128toPorterDuffModes9anfk8(i));
+        return new ComposeShader(shader, shader2, AndroidBlendMode_androidKt.m5129toPorterDuffModes9anfk8(i));
     }
 }

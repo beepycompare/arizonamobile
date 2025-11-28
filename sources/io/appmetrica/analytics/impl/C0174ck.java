@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.ck  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0174ck {
 
     /* renamed from: a  reason: collision with root package name */

@@ -4,7 +4,7 @@ import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
 import java.math.BigDecimal;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.s3  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0563s3 {
 
     /* renamed from: a  reason: collision with root package name */

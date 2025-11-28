@@ -4,7 +4,7 @@ import android.content.res.Configuration;
 import android.os.LocaleList;
 import java.util.ArrayList;
 import java.util.Locale;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Qb {
     public static final ArrayList a(Configuration configuration) {
         ArrayList arrayList = new ArrayList();

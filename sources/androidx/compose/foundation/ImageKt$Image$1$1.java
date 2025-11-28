@@ -26,8 +26,8 @@ final class ImageKt$Image$1$1 implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        return MeasureScope.layout$default(measureScope, Constraints.m7950getMinWidthimpl(j), Constraints.m7949getMinHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.ImageKt$Image$1$1$$ExternalSyntheticLambda0
+    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        return MeasureScope.layout$default(measureScope, Constraints.m7951getMinWidthimpl(j), Constraints.m7950getMinHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.ImageKt$Image$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;

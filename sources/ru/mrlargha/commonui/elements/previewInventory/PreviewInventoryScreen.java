@@ -247,9 +247,9 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
             Skin skin = (Skin) fromJson;
             this.binding.tvScreenTitle.setText("обзор — " + skin.getName());
             if (this.isArizonaType) {
-                str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
+                str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
             } else {
-                str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
+                str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
             }
             AppCompatImageView ivCharacterImage = this.binding.ivCharacterImage;
             Intrinsics.checkNotNullExpressionValue(ivCharacterImage, "ivCharacterImage");

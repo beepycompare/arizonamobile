@@ -10,7 +10,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EdgeToEdge.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a%\u0010\u000b\u001a\u00020\f*\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000fH\u0007¢\u0006\u0002\b\u0011\"\u001c\u0010\u0000\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0002\u0010\u0003\u001a\u0004\b\u0004\u0010\u0005\"\u001c\u0010\u0006\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0007\u0010\u0003\u001a\u0004\b\b\u0010\u0005\"\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"DefaultLightScrim", "", "getDefaultLightScrim$annotations", "()V", "getDefaultLightScrim", "()I", "DefaultDarkScrim", "getDefaultDarkScrim$annotations", "getDefaultDarkScrim", "Impl", "Landroidx/activity/EdgeToEdgeImpl;", "enableEdgeToEdge", "", "Landroidx/activity/ComponentActivity;", "statusBarStyle", "Landroidx/activity/SystemBarStyle;", "navigationBarStyle", "enable", "activity_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a%\u0010\u000b\u001a\u00020\f*\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000fH\u0007¢\u0006\u0002\b\u0011\"\u001c\u0010\u0000\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0002\u0010\u0003\u001a\u0004\b\u0004\u0010\u0005\"\u001c\u0010\u0006\u001a\u00020\u00018\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0007\u0010\u0003\u001a\u0004\b\b\u0010\u0005\"\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"DefaultLightScrim", "", "getDefaultLightScrim$annotations", "()V", "getDefaultLightScrim", "()I", "DefaultDarkScrim", "getDefaultDarkScrim$annotations", "getDefaultDarkScrim", "Impl", "Landroidx/activity/EdgeToEdgeImpl;", "enableEdgeToEdge", "", "Landroidx/activity/ComponentActivity;", "statusBarStyle", "Landroidx/activity/SystemBarStyle;", "navigationBarStyle", "enable", "activity"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class EdgeToEdge {
     private static EdgeToEdgeImpl Impl;
@@ -59,17 +59,19 @@ public final class EdgeToEdge {
         Intrinsics.checkNotNullParameter(navigationBarStyle, "navigationBarStyle");
         View decorView = componentActivity.getWindow().getDecorView();
         Intrinsics.checkNotNullExpressionValue(decorView, "getDecorView(...)");
-        Function1<Resources, Boolean> detectDarkMode$activity_release = statusBarStyle.getDetectDarkMode$activity_release();
+        Function1<Resources, Boolean> detectDarkMode$activity = statusBarStyle.getDetectDarkMode$activity();
         Resources resources = decorView.getResources();
         Intrinsics.checkNotNullExpressionValue(resources, "getResources(...)");
-        boolean booleanValue = detectDarkMode$activity_release.invoke(resources).booleanValue();
-        Function1<Resources, Boolean> detectDarkMode$activity_release2 = navigationBarStyle.getDetectDarkMode$activity_release();
+        boolean booleanValue = detectDarkMode$activity.invoke(resources).booleanValue();
+        Function1<Resources, Boolean> detectDarkMode$activity2 = navigationBarStyle.getDetectDarkMode$activity();
         Resources resources2 = decorView.getResources();
         Intrinsics.checkNotNullExpressionValue(resources2, "getResources(...)");
-        boolean booleanValue2 = detectDarkMode$activity_release2.invoke(resources2).booleanValue();
+        boolean booleanValue2 = detectDarkMode$activity2.invoke(resources2).booleanValue();
         EdgeToEdgeImpl edgeToEdgeImpl = Impl;
         if (edgeToEdgeImpl == null) {
-            if (Build.VERSION.SDK_INT >= 30) {
+            if (Build.VERSION.SDK_INT >= 35) {
+                edgeToEdgeApi23 = new EdgeToEdgeApi35();
+            } else if (Build.VERSION.SDK_INT >= 30) {
                 edgeToEdgeApi23 = new EdgeToEdgeApi30();
             } else if (Build.VERSION.SDK_INT >= 29) {
                 edgeToEdgeApi23 = new EdgeToEdgeApi29();
@@ -81,6 +83,7 @@ public final class EdgeToEdge {
                 edgeToEdgeApi23 = new EdgeToEdgeApi23();
             }
             edgeToEdgeImpl = edgeToEdgeApi23;
+            Impl = edgeToEdgeImpl;
         }
         EdgeToEdgeImpl edgeToEdgeImpl2 = edgeToEdgeImpl;
         Window window = componentActivity.getWindow();

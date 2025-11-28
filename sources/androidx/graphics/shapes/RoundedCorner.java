@@ -37,20 +37,20 @@ public final class RoundedCorner {
         this.p1 = j2;
         this.p2 = j3;
         this.rounding = cornerRounding;
-        long m8549getDirectionDnnuFBc = PointKt.m8549getDirectionDnnuFBc(PointKt.m8555minusybeJwSQ(j, j2));
-        this.d1 = m8549getDirectionDnnuFBc;
-        long m8549getDirectionDnnuFBc2 = PointKt.m8549getDirectionDnnuFBc(PointKt.m8555minusybeJwSQ(j3, j2));
-        this.d2 = m8549getDirectionDnnuFBc2;
+        long m8550getDirectionDnnuFBc = PointKt.m8550getDirectionDnnuFBc(PointKt.m8556minusybeJwSQ(j, j2));
+        this.d1 = m8550getDirectionDnnuFBc;
+        long m8550getDirectionDnnuFBc2 = PointKt.m8550getDirectionDnnuFBc(PointKt.m8556minusybeJwSQ(j3, j2));
+        this.d2 = m8550getDirectionDnnuFBc2;
         float radius = cornerRounding != null ? cornerRounding.getRadius() : 0.0f;
         this.cornerRadius = radius;
         this.smoothing = cornerRounding != null ? cornerRounding.getSmoothing() : 0.0f;
-        float m8548dotProductybeJwSQ = PointKt.m8548dotProductybeJwSQ(m8549getDirectionDnnuFBc, m8549getDirectionDnnuFBc2);
-        this.cosAngle = m8548dotProductybeJwSQ;
+        float m8549dotProductybeJwSQ = PointKt.m8549dotProductybeJwSQ(m8550getDirectionDnnuFBc, m8550getDirectionDnnuFBc2);
+        this.cosAngle = m8549dotProductybeJwSQ;
         float f = 1;
-        float sqrt = (float) Math.sqrt(f - Utils.square(m8548dotProductybeJwSQ));
+        float sqrt = (float) Math.sqrt(f - Utils.square(m8549dotProductybeJwSQ));
         this.sinAngle = sqrt;
-        this.expectedRoundCut = ((double) sqrt) > 0.001d ? (radius * (m8548dotProductybeJwSQ + f)) / sqrt : 0.0f;
-        this.center = FloatFloatPair.m24constructorimpl(0.0f, 0.0f);
+        this.expectedRoundCut = ((double) sqrt) > 0.001d ? (radius * (m8549dotProductybeJwSQ + f)) / sqrt : 0.0f;
+        this.center = FloatFloatPair.m25constructorimpl(0.0f, 0.0f);
     }
 
     public /* synthetic */ RoundedCorner(long j, long j2, long j3, CornerRounding cornerRounding, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -58,17 +58,17 @@ public final class RoundedCorner {
     }
 
     /* renamed from: getP0-1ufDz9w  reason: not valid java name */
-    public final long m8567getP01ufDz9w() {
+    public final long m8568getP01ufDz9w() {
         return this.p0;
     }
 
     /* renamed from: getP1-1ufDz9w  reason: not valid java name */
-    public final long m8568getP11ufDz9w() {
+    public final long m8569getP11ufDz9w() {
         return this.p1;
     }
 
     /* renamed from: getP2-1ufDz9w  reason: not valid java name */
-    public final long m8569getP21ufDz9w() {
+    public final long m8570getP21ufDz9w() {
         return this.p2;
     }
 
@@ -77,12 +77,12 @@ public final class RoundedCorner {
     }
 
     /* renamed from: getD1-1ufDz9w  reason: not valid java name */
-    public final long m8565getD11ufDz9w() {
+    public final long m8566getD11ufDz9w() {
         return this.d1;
     }
 
     /* renamed from: getD2-1ufDz9w  reason: not valid java name */
-    public final long m8566getD21ufDz9w() {
+    public final long m8567getD21ufDz9w() {
         return this.d2;
     }
 
@@ -111,12 +111,12 @@ public final class RoundedCorner {
     }
 
     /* renamed from: getCenter-1ufDz9w  reason: not valid java name */
-    public final long m8564getCenter1ufDz9w() {
+    public final long m8565getCenter1ufDz9w() {
         return this.center;
     }
 
     /* renamed from: setCenter-DnnuFBc  reason: not valid java name */
-    public final void m8570setCenterDnnuFBc(long j) {
+    public final void m8571setCenterDnnuFBc(long j) {
         this.center = j;
     }
 
@@ -132,18 +132,18 @@ public final class RoundedCorner {
         float f3 = this.expectedRoundCut;
         if (f3 < 1.0E-4f || min < 1.0E-4f || this.cornerRadius < 1.0E-4f) {
             this.center = this.p1;
-            return CollectionsKt.listOf(Cubic.Companion.straightLine(PointKt.m8552getXDnnuFBc(this.p1), PointKt.m8553getYDnnuFBc(this.p1), PointKt.m8552getXDnnuFBc(this.p1), PointKt.m8553getYDnnuFBc(this.p1)));
+            return CollectionsKt.listOf(Cubic.Companion.straightLine(PointKt.m8553getXDnnuFBc(this.p1), PointKt.m8554getYDnnuFBc(this.p1), PointKt.m8553getXDnnuFBc(this.p1), PointKt.m8554getYDnnuFBc(this.p1)));
         }
         float min2 = Math.min(min, f3);
         float calculateActualSmoothingValue = calculateActualSmoothingValue(f);
         float calculateActualSmoothingValue2 = calculateActualSmoothingValue(f2);
         float f4 = (this.cornerRadius * min2) / this.expectedRoundCut;
-        this.center = PointKt.m8556plusybeJwSQ(this.p1, PointKt.m8558timesso9K2fw(PointKt.m8549getDirectionDnnuFBc(PointKt.m8546divso9K2fw(PointKt.m8556plusybeJwSQ(this.d1, this.d2), 2.0f)), (float) Math.sqrt(Utils.square(f4) + Utils.square(min2))));
-        long m8556plusybeJwSQ = PointKt.m8556plusybeJwSQ(this.p1, PointKt.m8558timesso9K2fw(this.d1, min2));
-        long m8556plusybeJwSQ2 = PointKt.m8556plusybeJwSQ(this.p1, PointKt.m8558timesso9K2fw(this.d2, min2));
-        Cubic m8562computeFlankingCurveoAJzIJU = m8562computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue, this.p1, this.p0, m8556plusybeJwSQ, m8556plusybeJwSQ2, this.center, f4);
-        Cubic reverse = m8562computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue2, this.p1, this.p2, m8556plusybeJwSQ2, m8556plusybeJwSQ, this.center, f4).reverse();
-        return CollectionsKt.listOf((Object[]) new Cubic[]{m8562computeFlankingCurveoAJzIJU, Cubic.Companion.circularArc(PointKt.m8552getXDnnuFBc(this.center), PointKt.m8553getYDnnuFBc(this.center), m8562computeFlankingCurveoAJzIJU.getAnchor1X(), m8562computeFlankingCurveoAJzIJU.getAnchor1Y(), reverse.getAnchor0X(), reverse.getAnchor0Y()), reverse});
+        this.center = PointKt.m8557plusybeJwSQ(this.p1, PointKt.m8559timesso9K2fw(PointKt.m8550getDirectionDnnuFBc(PointKt.m8547divso9K2fw(PointKt.m8557plusybeJwSQ(this.d1, this.d2), 2.0f)), (float) Math.sqrt(Utils.square(f4) + Utils.square(min2))));
+        long m8557plusybeJwSQ = PointKt.m8557plusybeJwSQ(this.p1, PointKt.m8559timesso9K2fw(this.d1, min2));
+        long m8557plusybeJwSQ2 = PointKt.m8557plusybeJwSQ(this.p1, PointKt.m8559timesso9K2fw(this.d2, min2));
+        Cubic m8563computeFlankingCurveoAJzIJU = m8563computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue, this.p1, this.p0, m8557plusybeJwSQ, m8557plusybeJwSQ2, this.center, f4);
+        Cubic reverse = m8563computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue2, this.p1, this.p2, m8557plusybeJwSQ2, m8557plusybeJwSQ, this.center, f4).reverse();
+        return CollectionsKt.listOf((Object[]) new Cubic[]{m8563computeFlankingCurveoAJzIJU, Cubic.Companion.circularArc(PointKt.m8553getXDnnuFBc(this.center), PointKt.m8554getYDnnuFBc(this.center), m8563computeFlankingCurveoAJzIJU.getAnchor1X(), m8563computeFlankingCurveoAJzIJU.getAnchor1Y(), reverse.getAnchor0X(), reverse.getAnchor0Y()), reverse});
     }
 
     private final float calculateActualSmoothingValue(float f) {
@@ -158,30 +158,30 @@ public final class RoundedCorner {
     }
 
     /* renamed from: computeFlankingCurve-oAJzIJU  reason: not valid java name */
-    private final Cubic m8562computeFlankingCurveoAJzIJU(float f, float f2, long j, long j2, long j3, long j4, long j5, float f3) {
-        long m8549getDirectionDnnuFBc = PointKt.m8549getDirectionDnnuFBc(PointKt.m8555minusybeJwSQ(j2, j));
-        long m8556plusybeJwSQ = PointKt.m8556plusybeJwSQ(j, PointKt.m8558timesso9K2fw(PointKt.m8558timesso9K2fw(m8549getDirectionDnnuFBc, f), 1 + f2));
+    private final Cubic m8563computeFlankingCurveoAJzIJU(float f, float f2, long j, long j2, long j3, long j4, long j5, float f3) {
+        long m8550getDirectionDnnuFBc = PointKt.m8550getDirectionDnnuFBc(PointKt.m8556minusybeJwSQ(j2, j));
+        long m8557plusybeJwSQ = PointKt.m8557plusybeJwSQ(j, PointKt.m8559timesso9K2fw(PointKt.m8559timesso9K2fw(m8550getDirectionDnnuFBc, f), 1 + f2));
         long j6 = j3;
-        long m8554interpolatedLqxh1s = PointKt.m8554interpolatedLqxh1s(j6, PointKt.m8546divso9K2fw(PointKt.m8556plusybeJwSQ(j3, j4), 2.0f), f2);
-        long m8556plusybeJwSQ2 = PointKt.m8556plusybeJwSQ(j5, PointKt.m8558timesso9K2fw(Utils.directionVector(PointKt.m8552getXDnnuFBc(m8554interpolatedLqxh1s) - PointKt.m8552getXDnnuFBc(j5), PointKt.m8553getYDnnuFBc(m8554interpolatedLqxh1s) - PointKt.m8553getYDnnuFBc(j5)), f3));
-        FloatFloatPair m8563lineIntersectionCBFvKDc = m8563lineIntersectionCBFvKDc(j2, m8549getDirectionDnnuFBc, m8556plusybeJwSQ2, Utils.m8573rotate90DnnuFBc(PointKt.m8555minusybeJwSQ(m8556plusybeJwSQ2, j5)));
-        if (m8563lineIntersectionCBFvKDc != null) {
-            j6 = m8563lineIntersectionCBFvKDc.m32unboximpl();
+        long m8555interpolatedLqxh1s = PointKt.m8555interpolatedLqxh1s(j6, PointKt.m8547divso9K2fw(PointKt.m8557plusybeJwSQ(j3, j4), 2.0f), f2);
+        long m8557plusybeJwSQ2 = PointKt.m8557plusybeJwSQ(j5, PointKt.m8559timesso9K2fw(Utils.directionVector(PointKt.m8553getXDnnuFBc(m8555interpolatedLqxh1s) - PointKt.m8553getXDnnuFBc(j5), PointKt.m8554getYDnnuFBc(m8555interpolatedLqxh1s) - PointKt.m8554getYDnnuFBc(j5)), f3));
+        FloatFloatPair m8564lineIntersectionCBFvKDc = m8564lineIntersectionCBFvKDc(j2, m8550getDirectionDnnuFBc, m8557plusybeJwSQ2, Utils.m8574rotate90DnnuFBc(PointKt.m8556minusybeJwSQ(m8557plusybeJwSQ2, j5)));
+        if (m8564lineIntersectionCBFvKDc != null) {
+            j6 = m8564lineIntersectionCBFvKDc.m33unboximpl();
         }
-        return new Cubic(m8556plusybeJwSQ, PointKt.m8546divso9K2fw(PointKt.m8556plusybeJwSQ(m8556plusybeJwSQ, PointKt.m8558timesso9K2fw(j6, 2.0f)), 3.0f), j6, m8556plusybeJwSQ2, null);
+        return new Cubic(m8557plusybeJwSQ, PointKt.m8547divso9K2fw(PointKt.m8557plusybeJwSQ(m8557plusybeJwSQ, PointKt.m8559timesso9K2fw(j6, 2.0f)), 3.0f), j6, m8557plusybeJwSQ2, null);
     }
 
     /* renamed from: lineIntersection-CBFvKDc  reason: not valid java name */
-    private final FloatFloatPair m8563lineIntersectionCBFvKDc(long j, long j2, long j3, long j4) {
-        long m8573rotate90DnnuFBc = Utils.m8573rotate90DnnuFBc(j4);
-        float m8548dotProductybeJwSQ = PointKt.m8548dotProductybeJwSQ(j2, m8573rotate90DnnuFBc);
-        if (Math.abs(m8548dotProductybeJwSQ) < 1.0E-4f) {
+    private final FloatFloatPair m8564lineIntersectionCBFvKDc(long j, long j2, long j3, long j4) {
+        long m8574rotate90DnnuFBc = Utils.m8574rotate90DnnuFBc(j4);
+        float m8549dotProductybeJwSQ = PointKt.m8549dotProductybeJwSQ(j2, m8574rotate90DnnuFBc);
+        if (Math.abs(m8549dotProductybeJwSQ) < 1.0E-4f) {
             return null;
         }
-        float m8548dotProductybeJwSQ2 = PointKt.m8548dotProductybeJwSQ(PointKt.m8555minusybeJwSQ(j3, j), m8573rotate90DnnuFBc);
-        if (Math.abs(m8548dotProductybeJwSQ) < Math.abs(m8548dotProductybeJwSQ2) * 1.0E-4f) {
+        float m8549dotProductybeJwSQ2 = PointKt.m8549dotProductybeJwSQ(PointKt.m8556minusybeJwSQ(j3, j), m8574rotate90DnnuFBc);
+        if (Math.abs(m8549dotProductybeJwSQ) < Math.abs(m8549dotProductybeJwSQ2) * 1.0E-4f) {
             return null;
         }
-        return FloatFloatPair.m21boximpl(PointKt.m8556plusybeJwSQ(j, PointKt.m8558timesso9K2fw(j2, m8548dotProductybeJwSQ2 / m8548dotProductybeJwSQ)));
+        return FloatFloatPair.m22boximpl(PointKt.m8557plusybeJwSQ(j, PointKt.m8559timesso9K2fw(j2, m8549dotProductybeJwSQ2 / m8549dotProductybeJwSQ)));
     }
 }

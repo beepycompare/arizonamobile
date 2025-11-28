@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.Ch
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeChangeListener;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class X2 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */

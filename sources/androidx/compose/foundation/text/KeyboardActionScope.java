@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface KeyboardActionScope {
     /* renamed from: defaultKeyboardAction-KlQnJC8 */
-    void mo1270defaultKeyboardActionKlQnJC8(int i);
+    void mo1271defaultKeyboardActionKlQnJC8(int i);
 }

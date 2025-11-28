@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int coil3_request_manager = 0x7f0a036c;
+        public static int coil3_request_manager = 0x7f0a0362;
 
         private id() {
         }

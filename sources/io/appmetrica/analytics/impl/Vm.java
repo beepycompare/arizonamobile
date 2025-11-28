@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.Context;
 import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Vm implements Um {
     public abstract IBinaryDataHelper a(Context context);
 

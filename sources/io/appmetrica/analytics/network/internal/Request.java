@@ -6,7 +6,7 @@ import io.appmetrica.analytics.network.impl.e;
 import java.util.HashMap;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Request {
 
     /* renamed from: a  reason: collision with root package name */
@@ -15,7 +15,7 @@ public class Request {
     private final byte[] c;
     private final Map d;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */

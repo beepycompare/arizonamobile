@@ -16,49 +16,49 @@ public final class Stack<T> {
     private final ArrayList<T> backing;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Stack m4578boximpl(ArrayList arrayList) {
+    public static final /* synthetic */ Stack m4579boximpl(ArrayList arrayList) {
         return new Stack(arrayList);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> ArrayList<T> m4580constructorimpl(ArrayList<T> arrayList) {
+    public static <T> ArrayList<T> m4581constructorimpl(ArrayList<T> arrayList) {
         return arrayList;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4582equalsimpl(ArrayList<T> arrayList, Object obj) {
-        return (obj instanceof Stack) && Intrinsics.areEqual(arrayList, ((Stack) obj).m4594unboximpl());
+    public static boolean m4583equalsimpl(ArrayList<T> arrayList, Object obj) {
+        return (obj instanceof Stack) && Intrinsics.areEqual(arrayList, ((Stack) obj).m4595unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4583equalsimpl0(ArrayList<T> arrayList, ArrayList<T> arrayList2) {
+    public static final boolean m4584equalsimpl0(ArrayList<T> arrayList, ArrayList<T> arrayList2) {
         return Intrinsics.areEqual(arrayList, arrayList2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4585hashCodeimpl(ArrayList<T> arrayList) {
+    public static int m4586hashCodeimpl(ArrayList<T> arrayList) {
         return arrayList.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4593toStringimpl(ArrayList<T> arrayList) {
+    public static String m4594toStringimpl(ArrayList<T> arrayList) {
         return "Stack(backing=" + arrayList + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4582equalsimpl(this.backing, obj);
+        return m4583equalsimpl(this.backing, obj);
     }
 
     public int hashCode() {
-        return m4585hashCodeimpl(this.backing);
+        return m4586hashCodeimpl(this.backing);
     }
 
     public String toString() {
-        return m4593toStringimpl(this.backing);
+        return m4594toStringimpl(this.backing);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ ArrayList m4594unboximpl() {
+    public final /* synthetic */ ArrayList m4595unboximpl() {
         return this.backing;
     }
 
@@ -67,55 +67,55 @@ public final class Stack<T> {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ ArrayList m4581constructorimpl$default(ArrayList arrayList, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ ArrayList m4582constructorimpl$default(ArrayList arrayList, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             arrayList = new ArrayList();
         }
-        return m4580constructorimpl(arrayList);
+        return m4581constructorimpl(arrayList);
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static final int m4584getSizeimpl(ArrayList<T> arrayList) {
+    public static final int m4585getSizeimpl(ArrayList<T> arrayList) {
         return arrayList.size();
     }
 
     /* renamed from: push-impl  reason: not valid java name */
-    public static final boolean m4591pushimpl(ArrayList<T> arrayList, T t) {
+    public static final boolean m4592pushimpl(ArrayList<T> arrayList, T t) {
         return arrayList.add(t);
     }
 
     /* renamed from: pop-impl  reason: not valid java name */
-    public static final T m4590popimpl(ArrayList<T> arrayList) {
-        return arrayList.remove(m4584getSizeimpl(arrayList) - 1);
+    public static final T m4591popimpl(ArrayList<T> arrayList) {
+        return arrayList.remove(m4585getSizeimpl(arrayList) - 1);
     }
 
     /* renamed from: peek-impl  reason: not valid java name */
-    public static final T m4588peekimpl(ArrayList<T> arrayList) {
-        return arrayList.get(m4584getSizeimpl(arrayList) - 1);
+    public static final T m4589peekimpl(ArrayList<T> arrayList) {
+        return arrayList.get(m4585getSizeimpl(arrayList) - 1);
     }
 
     /* renamed from: peek-impl  reason: not valid java name */
-    public static final T m4589peekimpl(ArrayList<T> arrayList, int i) {
+    public static final T m4590peekimpl(ArrayList<T> arrayList, int i) {
         return arrayList.get(i);
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static final boolean m4586isEmptyimpl(ArrayList<T> arrayList) {
+    public static final boolean m4587isEmptyimpl(ArrayList<T> arrayList) {
         return arrayList.isEmpty();
     }
 
     /* renamed from: isNotEmpty-impl  reason: not valid java name */
-    public static final boolean m4587isNotEmptyimpl(ArrayList<T> arrayList) {
-        return !m4586isEmptyimpl(arrayList);
+    public static final boolean m4588isNotEmptyimpl(ArrayList<T> arrayList) {
+        return !m4587isEmptyimpl(arrayList);
     }
 
     /* renamed from: clear-impl  reason: not valid java name */
-    public static final void m4579clearimpl(ArrayList<T> arrayList) {
+    public static final void m4580clearimpl(ArrayList<T> arrayList) {
         arrayList.clear();
     }
 
     /* renamed from: toArray-impl  reason: not valid java name */
-    public static final T[] m4592toArrayimpl(ArrayList<T> arrayList) {
+    public static final T[] m4593toArrayimpl(ArrayList<T> arrayList) {
         int size = arrayList.size();
         T[] tArr = (T[]) new Object[size];
         for (int i = 0; i < size; i++) {

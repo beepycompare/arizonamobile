@@ -9,7 +9,7 @@ import io.appmetrica.analytics.ModuleEvent;
 import io.appmetrica.analytics.plugins.PluginErrorDetails;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ec extends C0429mi implements Pa {
     @Override // io.appmetrica.analytics.impl.Pa
     public final void a(Activity activity) {

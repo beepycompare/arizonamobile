@@ -6,6 +6,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TransformOriginKt {
     public static final long TransformOrigin(float f, float f2) {
-        return TransformOrigin.m5677constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return TransformOrigin.m5678constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 }

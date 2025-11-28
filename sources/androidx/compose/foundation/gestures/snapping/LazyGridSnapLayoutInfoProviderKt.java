@@ -65,7 +65,7 @@ public final class LazyGridSnapLayoutInfoProviderKt {
                         f3 = calculateDistanceToDesiredSnapPosition;
                     }
                 }
-                return SnapFlingBehaviorKt.m637calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyGridState.this.getDensity$foundation_release(), f), f2, f3);
+                return SnapFlingBehaviorKt.m638calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyGridState.this.getDensity$foundation_release(), f), f2, f3);
             }
         };
     }
@@ -95,29 +95,29 @@ public final class LazyGridSnapLayoutInfoProviderKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
-        long mo1005getViewportSizeYbymL2g;
+        long mo1006getViewportSizeYbymL2g;
         if (lazyGridLayoutInfo.getOrientation() == Orientation.Vertical) {
-            mo1005getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1005getViewportSizeYbymL2g() & 4294967295L;
+            mo1006getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1006getViewportSizeYbymL2g() & 4294967295L;
         } else {
-            mo1005getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1005getViewportSizeYbymL2g() >> 32;
+            mo1006getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1006getViewportSizeYbymL2g() >> 32;
         }
-        return (int) mo1005getViewportSizeYbymL2g;
+        return (int) mo1006getViewportSizeYbymL2g;
     }
 
     public static final int sizeOnMainAxis(LazyGridItemInfo lazyGridItemInfo, Orientation orientation) {
-        long mo1001getSizeYbymL2g;
+        long mo1002getSizeYbymL2g;
         if (orientation == Orientation.Vertical) {
-            mo1001getSizeYbymL2g = lazyGridItemInfo.mo1001getSizeYbymL2g() & 4294967295L;
+            mo1002getSizeYbymL2g = lazyGridItemInfo.mo1002getSizeYbymL2g() & 4294967295L;
         } else {
-            mo1001getSizeYbymL2g = lazyGridItemInfo.mo1001getSizeYbymL2g() >> 32;
+            mo1002getSizeYbymL2g = lazyGridItemInfo.mo1002getSizeYbymL2g() >> 32;
         }
-        return (int) mo1001getSizeYbymL2g;
+        return (int) mo1002getSizeYbymL2g;
     }
 
     public static final int offsetOnMainAxis(LazyGridItemInfo lazyGridItemInfo, Orientation orientation) {
         if (orientation == Orientation.Vertical) {
-            return IntOffset.m8124getYimpl(lazyGridItemInfo.mo1000getOffsetnOccac());
+            return IntOffset.m8125getYimpl(lazyGridItemInfo.mo1001getOffsetnOccac());
         }
-        return IntOffset.m8123getXimpl(lazyGridItemInfo.mo1000getOffsetnOccac());
+        return IntOffset.m8124getXimpl(lazyGridItemInfo.mo1001getOffsetnOccac());
     }
 }

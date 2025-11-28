@@ -5,7 +5,7 @@ import android.content.Intent;
 import io.appmetrica.analytics.coreapi.internal.backport.BiConsumer;
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class V2 implements BiConsumer {
 
     /* renamed from: a  reason: collision with root package name */

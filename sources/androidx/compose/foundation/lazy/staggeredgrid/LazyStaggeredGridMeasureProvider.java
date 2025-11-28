@@ -21,7 +21,7 @@ public abstract class LazyStaggeredGridMeasureProvider extends LazyLayoutMeasure
     private final LazyStaggeredGridSlots resolvedSlots;
 
     /* renamed from: createItem-pitSLOA */
-    public abstract LazyStaggeredGridMeasuredItem mo1108createItempitSLOA(int i, int i2, int i3, Object obj, Object obj2, List<? extends Placeable> list, long j);
+    public abstract LazyStaggeredGridMeasuredItem mo1109createItempitSLOA(int i, int i2, int i3, Object obj, Object obj2, List<? extends Placeable> list, long j);
 
     public LazyStaggeredGridMeasureProvider(boolean z, LazyStaggeredGridItemProvider lazyStaggeredGridItemProvider, LazyLayoutMeasureScope lazyLayoutMeasureScope, LazyStaggeredGridSlots lazyStaggeredGridSlots) {
         this.isVertical = z;
@@ -31,7 +31,7 @@ public abstract class LazyStaggeredGridMeasureProvider extends LazyLayoutMeasure
     }
 
     /* renamed from: childConstraints-JhjzzOo  reason: not valid java name */
-    private final long m1113childConstraintsJhjzzOo(int i, int i2) {
+    private final long m1114childConstraintsJhjzzOo(int i, int i2) {
         int i3;
         if (i2 == 1) {
             i3 = this.resolvedSlots.getSizes()[i];
@@ -41,27 +41,27 @@ public abstract class LazyStaggeredGridMeasureProvider extends LazyLayoutMeasure
             i3 = (this.resolvedSlots.getPositions()[i5] + this.resolvedSlots.getSizes()[i5]) - i4;
         }
         if (this.isVertical) {
-            return Constraints.Companion.m7960fixedWidthOenEA2s(i3);
+            return Constraints.Companion.m7961fixedWidthOenEA2s(i3);
         }
-        return Constraints.Companion.m7959fixedHeightOenEA2s(i3);
+        return Constraints.Companion.m7960fixedHeightOenEA2s(i3);
     }
 
     /* renamed from: getAndMeasure-jy6DScQ  reason: not valid java name */
-    public final LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ(int i, long j) {
+    public final LazyStaggeredGridMeasuredItem m1115getAndMeasurejy6DScQ(int i, long j) {
         Object key = this.itemProvider.getKey(i);
         Object contentType = this.itemProvider.getContentType(i);
         int length = this.resolvedSlots.getSizes().length;
         int i2 = (int) (j >> 32);
         int coerceAtMost = RangesKt.coerceAtMost(i2, length - 1);
         int coerceAtMost2 = RangesKt.coerceAtMost(((int) (j & 4294967295L)) - i2, length - coerceAtMost);
-        long m1113childConstraintsJhjzzOo = m1113childConstraintsJhjzzOo(coerceAtMost, coerceAtMost2);
-        return mo1108createItempitSLOA(i, coerceAtMost, coerceAtMost2, key, contentType, m1052getPlaceables3p2s80s(this.measureScope, i, m1113childConstraintsJhjzzOo), m1113childConstraintsJhjzzOo);
+        long m1114childConstraintsJhjzzOo = m1114childConstraintsJhjzzOo(coerceAtMost, coerceAtMost2);
+        return mo1109createItempitSLOA(i, coerceAtMost, coerceAtMost2, key, contentType, m1053getPlaceables3p2s80s(this.measureScope, i, m1114childConstraintsJhjzzOo), m1114childConstraintsJhjzzOo);
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItemProvider
     /* renamed from: getAndMeasure--hBUhpc  reason: avoid collision after fix types in other method */
-    public LazyStaggeredGridMeasuredItem mo973getAndMeasurehBUhpc(int i, int i2, int i3, long j) {
-        return mo1108createItempitSLOA(i, i2, i3, this.itemProvider.getKey(i), this.itemProvider.getContentType(i), m1052getPlaceables3p2s80s(this.measureScope, i, j), j);
+    public LazyStaggeredGridMeasuredItem mo974getAndMeasurehBUhpc(int i, int i2, int i3, long j) {
+        return mo1109createItempitSLOA(i, i2, i3, this.itemProvider.getKey(i), this.itemProvider.getContentType(i), m1053getPlaceables3p2s80s(this.measureScope, i, j), j);
     }
 
     public final LazyLayoutKeyIndexMap getKeyIndexMap() {

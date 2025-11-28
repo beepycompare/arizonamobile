@@ -74,8 +74,8 @@ public final class ModalWideNavigationRailDialogWrapper extends ComponentDialog 
         this.onDismissRequest = function0;
         this.properties = modalWideNavigationRailProperties;
         this.composeView = view;
-        float m7995constructorimpl = Dp.m7995constructorimpl(8);
-        this.maxSupportedElevation = m7995constructorimpl;
+        float m7996constructorimpl = Dp.m7996constructorimpl(8);
+        this.maxSupportedElevation = m7996constructorimpl;
         Window window = getWindow();
         if (window == null) {
             throw new IllegalStateException("Dialog has no window".toString());
@@ -86,7 +86,7 @@ public final class ModalWideNavigationRailDialogWrapper extends ComponentDialog 
         ModalWideNavigationRailDialogLayout modalWideNavigationRailDialogLayout = new ModalWideNavigationRailDialogLayout(getContext(), window, this.properties.getShouldDismissOnBackPress(), this.onDismissRequest, function1, function02, railPredictiveBackState, layoutDirection);
         modalWideNavigationRailDialogLayout.setTag(androidx.compose.ui.R.id.compose_view_saveable_id_tag, "Dialog:" + uuid);
         modalWideNavigationRailDialogLayout.setClipChildren(false);
-        modalWideNavigationRailDialogLayout.setElevation(density.mo429toPx0680j_4(m7995constructorimpl));
+        modalWideNavigationRailDialogLayout.setElevation(density.mo430toPx0680j_4(m7996constructorimpl));
         modalWideNavigationRailDialogLayout.setOutlineProvider(new ViewOutlineProvider() { // from class: androidx.compose.material3.ModalWideNavigationRailDialogWrapper$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view2, Outline outline) {

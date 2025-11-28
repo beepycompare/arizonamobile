@@ -25,10 +25,10 @@ public final class EnterAlwaysSearchBarScrollBehavior$settleSearchBar$1 extends 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m2335settleSearchBarOhffZ5M;
+        Object m2336settleSearchBarOhffZ5M;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m2335settleSearchBarOhffZ5M = this.this$0.m2335settleSearchBarOhffZ5M(0.0f, this);
-        return m2335settleSearchBarOhffZ5M;
+        m2336settleSearchBarOhffZ5M = this.this$0.m2336settleSearchBarOhffZ5M(0.0f, this);
+        return m2336settleSearchBarOhffZ5M;
     }
 }

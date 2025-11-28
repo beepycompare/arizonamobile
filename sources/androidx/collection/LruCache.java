@@ -30,7 +30,8 @@ public class LruCache<K, V> {
         return null;
     }
 
-    protected void entryRemoved(boolean z, K key, V oldValue, V v) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void entryRemoved(boolean z, K key, V oldValue, V v) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(oldValue, "oldValue");
     }

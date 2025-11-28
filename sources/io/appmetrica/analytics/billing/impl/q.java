@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class q implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */

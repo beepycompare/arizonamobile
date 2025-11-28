@@ -108,7 +108,7 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
         });
         binding.carName.setText(carInfoListItem.getTitle());
         String str = UtilsKt.isArizonaType() ? "projects/arizona-rp/assets/images/inventory/vehicles/256/" : "projects/rodina-rp/assets/images/inventory/vehicles/512/";
-        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl() + str + carInfoListItem.getSysName()).into(binding.carIc);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str + carInfoListItem.getSysName()).into(binding.carIc);
         String status = carInfoListItem.getStatus();
         switch (status.hashCode()) {
             case -2058533514:
@@ -310,11 +310,8 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
             Iterator<T> it = this.qualityTypeList.iterator();
             while (true) {
                 if (it.hasNext()) {
-                    obj = it.next();
-                    if (((QualityType) obj).getId() == carInfoListItem.getRarity().intValue()) {
-                    }
-                } else {
-                    obj = null;
+                    Object next = it.next();
+                    obj = ((QualityType) next).getId() == carInfoListItem.getRarity().intValue() ? next : null;
                 }
             }
             QualityType qualityType = (QualityType) obj;

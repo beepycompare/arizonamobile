@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate;
 
 import io.appmetrica.analytics.impl.H2;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public enum ApplicationState {
     UNKNOWN("unknown"),
     BACKGROUND(H2.g),

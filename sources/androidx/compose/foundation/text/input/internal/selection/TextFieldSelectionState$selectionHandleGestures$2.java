@@ -156,9 +156,9 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                 if (PressDownGestureKt.detectPressDownGesture(pointerInputScope, new TapOnPosition() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState.selectionHandleGestures.2.2.1
                     @Override // androidx.compose.foundation.text.input.internal.selection.TapOnPosition
                     /* renamed from: onEvent-k-4lQ0M */
-                    public final void mo1625onEventk4lQ0M(long j) {
+                    public final void mo1626onEventk4lQ0M(long j) {
                         Handle handle;
-                        long m1645getHandlePositiontuRUvjQ;
+                        long m1646getHandlePositiontuRUvjQ;
                         TextFieldSelectionState.this.markStartContentVisibleOffset();
                         TextFieldSelectionState textFieldSelectionState3 = TextFieldSelectionState.this;
                         if (z) {
@@ -166,8 +166,8 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                         } else {
                             handle = Handle.SelectionEnd;
                         }
-                        m1645getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1645getHandlePositiontuRUvjQ(z);
-                        textFieldSelectionState3.m1655updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m1767getAdjustedCoordinatesk4lQ0M(m1645getHandlePositiontuRUvjQ));
+                        m1646getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1646getHandlePositiontuRUvjQ(z);
+                        textFieldSelectionState3.m1656updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m1768getAdjustedCoordinatesk4lQ0M(m1646getHandlePositiontuRUvjQ));
                     }
                 }, new Function0() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0

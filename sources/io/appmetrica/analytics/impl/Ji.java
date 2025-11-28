@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.os.Bundle;
 import io.appmetrica.analytics.internal.IAppMetricaService;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Ji extends Ch {
     public final Gf e;
 

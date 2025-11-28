@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.os.Bundle;
 import io.appmetrica.analytics.internal.IAppMetricaService;
 /* renamed from: io.appmetrica.analytics.impl.xe  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0699xe extends Ch {
     public final Gf e;
 

@@ -92,7 +92,7 @@ public final class SelectionGesturesKt$selectionGesturePointerInputBtf2$2 extend
         PointerEvent pointerEvent = (PointerEvent) obj;
         this.$clicksCounter.update(pointerEvent);
         boolean isPrecisePointer = SelectionGesturesKt.isPrecisePointer(pointerEvent);
-        if (isPrecisePointer && PointerEvent_androidKt.m6542isPrimaryPressedaHzCxE(pointerEvent.m6509getButtonsry648PA())) {
+        if (isPrecisePointer && PointerEvent_androidKt.m6543isPrimaryPressedaHzCxE(pointerEvent.m6510getButtonsry648PA())) {
             List<PointerInputChange> changes = pointerEvent.getChanges();
             int size = changes.size();
             for (int i2 = 0; i2 < size; i2++) {

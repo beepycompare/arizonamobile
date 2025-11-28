@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationsta
 import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver;
 import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
 import kotlin.Unit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class xo extends SimpleThreadSafeToggle implements ApplicationStateObserver {
     public xo() {
         super(false, "[VisibleAppStateOnlyTrackingStatusToggle]");

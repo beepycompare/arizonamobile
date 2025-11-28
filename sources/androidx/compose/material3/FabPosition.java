@@ -10,46 +10,46 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FabPosition {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Start = m2374constructorimpl(0);
-    private static final int Center = m2374constructorimpl(1);
-    private static final int End = m2374constructorimpl(2);
-    private static final int EndOverlay = m2374constructorimpl(3);
+    private static final int Start = m2375constructorimpl(0);
+    private static final int Center = m2375constructorimpl(1);
+    private static final int End = m2375constructorimpl(2);
+    private static final int EndOverlay = m2375constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FabPosition m2373boximpl(int i) {
+    public static final /* synthetic */ FabPosition m2374boximpl(int i) {
         return new FabPosition(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m2374constructorimpl(int i) {
+    public static int m2375constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2375equalsimpl(int i, Object obj) {
-        return (obj instanceof FabPosition) && i == ((FabPosition) obj).m2379unboximpl();
+    public static boolean m2376equalsimpl(int i, Object obj) {
+        return (obj instanceof FabPosition) && i == ((FabPosition) obj).m2380unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2376equalsimpl0(int i, int i2) {
+    public static final boolean m2377equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2377hashCodeimpl(int i) {
+    public static int m2378hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2375equalsimpl(this.value, obj);
+        return m2376equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2377hashCodeimpl(this.value);
+        return m2378hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2379unboximpl() {
+    public final /* synthetic */ int m2380unboximpl() {
         return this.value;
     }
 
@@ -65,22 +65,22 @@ public final class FabPosition {
         }
 
         /* renamed from: getStart-ERTFSPs  reason: not valid java name */
-        public final int m2383getStartERTFSPs() {
+        public final int m2384getStartERTFSPs() {
             return FabPosition.Start;
         }
 
         /* renamed from: getCenter-ERTFSPs  reason: not valid java name */
-        public final int m2380getCenterERTFSPs() {
+        public final int m2381getCenterERTFSPs() {
             return FabPosition.Center;
         }
 
         /* renamed from: getEnd-ERTFSPs  reason: not valid java name */
-        public final int m2381getEndERTFSPs() {
+        public final int m2382getEndERTFSPs() {
             return FabPosition.End;
         }
 
         /* renamed from: getEndOverlay-ERTFSPs  reason: not valid java name */
-        public final int m2382getEndOverlayERTFSPs() {
+        public final int m2383getEndOverlayERTFSPs() {
             return FabPosition.EndOverlay;
         }
     }
@@ -90,11 +90,11 @@ public final class FabPosition {
     }
 
     public String toString() {
-        return m2378toStringimpl(this.value);
+        return m2379toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2378toStringimpl(int i) {
-        return m2376equalsimpl0(i, Start) ? "FabPosition.Start" : m2376equalsimpl0(i, Center) ? "FabPosition.Center" : m2376equalsimpl0(i, End) ? "FabPosition.End" : "FabPosition.EndOverlay";
+    public static String m2379toStringimpl(int i) {
+        return m2377equalsimpl0(i, Start) ? "FabPosition.Start" : m2377equalsimpl0(i, Center) ? "FabPosition.Center" : m2377equalsimpl0(i, End) ? "FabPosition.End" : "FabPosition.EndOverlay";
     }
 }

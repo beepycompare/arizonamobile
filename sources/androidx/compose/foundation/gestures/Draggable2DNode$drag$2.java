@@ -73,11 +73,11 @@ final class Draggable2DNode$drag$2 extends SuspendLambda implements Function2<Dr
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Drag2DScope drag2DScope, Draggable2DNode draggable2DNode, DragEvent.DragDelta dragDelta) {
-        long m475getDeltaF1C5BW0 = dragDelta.m475getDeltaF1C5BW0();
+        long m476getDeltaF1C5BW0 = dragDelta.m476getDeltaF1C5BW0();
         if (draggable2DNode.reverseDirection) {
-            m475getDeltaF1C5BW0 = Offset.m5027constructorimpl((-9223372034707292160L) ^ m475getDeltaF1C5BW0);
+            m476getDeltaF1C5BW0 = Offset.m5028constructorimpl((-9223372034707292160L) ^ m476getDeltaF1C5BW0);
         }
-        drag2DScope.mo470dragByk4lQ0M(m475getDeltaF1C5BW0);
+        drag2DScope.mo471dragByk4lQ0M(m476getDeltaF1C5BW0);
         return Unit.INSTANCE;
     }
 }

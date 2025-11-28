@@ -59,7 +59,7 @@ public final class TextFieldSelectionManager$paste$1 extends SuspendLambda imple
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        TextFieldValue m1825createTextFieldValueFDrldGo;
+        TextFieldValue m1826createTextFieldValueFDrldGo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -76,10 +76,10 @@ public final class TextFieldSelectionManager$paste$1 extends SuspendLambda imple
                 AnnotatedString annotatedString = (AnnotatedString) obj;
                 if (annotatedString != null) {
                     AnnotatedString plus = TextFieldValueKt.getTextBeforeSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()).plus(annotatedString).plus(TextFieldValueKt.getTextAfterSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()));
-                    int m7455getMinimpl = TextRange.m7455getMinimpl(this.this$0.getValue$foundation_release().m7708getSelectiond9O1mEE()) + annotatedString.length();
-                    m1825createTextFieldValueFDrldGo = this.this$0.m1825createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m7455getMinimpl, m7455getMinimpl));
-                    this.this$0.getOnValueChange$foundation_release().invoke(m1825createTextFieldValueFDrldGo);
-                    this.this$0.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m7445boximpl(m1825createTextFieldValueFDrldGo.m7708getSelectiond9O1mEE()));
+                    int m7456getMinimpl = TextRange.m7456getMinimpl(this.this$0.getValue$foundation_release().m7709getSelectiond9O1mEE()) + annotatedString.length();
+                    m1826createTextFieldValueFDrldGo = this.this$0.m1826createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m7456getMinimpl, m7456getMinimpl));
+                    this.this$0.getOnValueChange$foundation_release().invoke(m1826createTextFieldValueFDrldGo);
+                    this.this$0.m1838setLatestSelectionOEnZFl4$foundation_release(TextRange.m7446boximpl(m1826createTextFieldValueFDrldGo.m7709getSelectiond9O1mEE()));
                     this.this$0.setHandleState(HandleState.None);
                     UndoManager undoManager = this.this$0.getUndoManager();
                     if (undoManager != null) {

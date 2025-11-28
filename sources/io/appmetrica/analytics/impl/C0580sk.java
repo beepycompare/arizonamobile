@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreutils.internal.io.CloseableUtilsKt;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* renamed from: io.appmetrica.analytics.impl.sk  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0580sk implements Pc {
 
     /* renamed from: a  reason: collision with root package name */

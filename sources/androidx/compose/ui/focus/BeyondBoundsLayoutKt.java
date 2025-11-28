@@ -18,13 +18,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class BeyondBoundsLayoutKt {
     /* renamed from: searchBeyondBounds--OM-vw8  reason: not valid java name */
-    public static final <T> T m4909searchBeyondBoundsOMvw8(FocusTargetNode focusTargetNode, int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
+    public static final <T> T m4910searchBeyondBoundsOMvw8(FocusTargetNode focusTargetNode, int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
         FocusTargetNode focusTargetNode2;
         BeyondBoundsLayout beyondBoundsLayoutParent;
-        int m6686getBeforehoxUOeE;
+        int m6687getBeforehoxUOeE;
         NodeChain nodes$ui_release;
         FocusTargetNode focusTargetNode3 = focusTargetNode;
-        int m6988constructorimpl = NodeKind.m6988constructorimpl(1024);
+        int m6989constructorimpl = NodeKind.m6989constructorimpl(1024);
         if (!focusTargetNode3.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
@@ -35,19 +35,19 @@ public final class BeyondBoundsLayoutKt {
                 focusTargetNode2 = null;
                 break;
             }
-            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6988constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6989constructorimpl) != 0) {
                 while (parent$ui_release != null) {
-                    if ((parent$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                    if ((parent$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                         focusTargetNode2 = parent$ui_release;
                         MutableVector mutableVector = null;
                         while (focusTargetNode2 != null) {
                             if (focusTargetNode2 instanceof FocusTargetNode) {
                                 break loop0;
                             }
-                            if ((focusTargetNode2.getKindSet$ui_release() & m6988constructorimpl) != 0 && (focusTargetNode2 instanceof DelegatingNode)) {
+                            if ((focusTargetNode2.getKindSet$ui_release() & m6989constructorimpl) != 0 && (focusTargetNode2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) focusTargetNode2).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6988constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             focusTargetNode2 = delegate$ui_release;
@@ -82,22 +82,22 @@ public final class BeyondBoundsLayoutKt {
         }
         FocusTargetNode focusTargetNode4 = focusTargetNode2;
         if ((focusTargetNode4 == null || !Intrinsics.areEqual(focusTargetNode4.getBeyondBoundsLayoutParent(), focusTargetNode.getBeyondBoundsLayoutParent())) && (beyondBoundsLayoutParent = focusTargetNode.getBeyondBoundsLayoutParent()) != null) {
-            if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4925getUpdhqQ8s())) {
-                m6686getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6684getAbovehoxUOeE();
-            } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4918getDowndhqQ8s())) {
-                m6686getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6687getBelowhoxUOeE();
-            } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4921getLeftdhqQ8s())) {
-                m6686getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6688getLefthoxUOeE();
-            } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4924getRightdhqQ8s())) {
-                m6686getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6689getRighthoxUOeE();
-            } else if (FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4922getNextdhqQ8s())) {
-                m6686getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6685getAfterhoxUOeE();
-            } else if (!FocusDirection.m4914equalsimpl0(i, FocusDirection.Companion.m4923getPreviousdhqQ8s())) {
+            if (FocusDirection.m4915equalsimpl0(i, FocusDirection.Companion.m4926getUpdhqQ8s())) {
+                m6687getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6685getAbovehoxUOeE();
+            } else if (FocusDirection.m4915equalsimpl0(i, FocusDirection.Companion.m4919getDowndhqQ8s())) {
+                m6687getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6688getBelowhoxUOeE();
+            } else if (FocusDirection.m4915equalsimpl0(i, FocusDirection.Companion.m4922getLeftdhqQ8s())) {
+                m6687getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6689getLefthoxUOeE();
+            } else if (FocusDirection.m4915equalsimpl0(i, FocusDirection.Companion.m4925getRightdhqQ8s())) {
+                m6687getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6690getRighthoxUOeE();
+            } else if (FocusDirection.m4915equalsimpl0(i, FocusDirection.Companion.m4923getNextdhqQ8s())) {
+                m6687getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6686getAfterhoxUOeE();
+            } else if (!FocusDirection.m4915equalsimpl0(i, FocusDirection.Companion.m4924getPreviousdhqQ8s())) {
                 throw new IllegalStateException("Unsupported direction for beyond bounds layout".toString());
             } else {
-                m6686getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6686getBeforehoxUOeE();
+                m6687getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6687getBeforehoxUOeE();
             }
-            return (T) beyondBoundsLayoutParent.mo1025layouto7g1Pn8(m6686getBeforehoxUOeE, function1);
+            return (T) beyondBoundsLayoutParent.mo1026layouto7g1Pn8(m6687getBeforehoxUOeE, function1);
         }
         return null;
     }

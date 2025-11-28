@@ -14,24 +14,24 @@ public abstract class ShaderBrush extends Brush {
     private float[] transform;
 
     /* renamed from: createShader-uvyYCjk */
-    public abstract Shader mo5248createShaderuvyYCjk(long j);
+    public abstract Shader mo5249createShaderuvyYCjk(long j);
 
     public ShaderBrush() {
         super(null);
-        this.createdSize = Size.Companion.m5112getUnspecifiedNHjbRc();
+        this.createdSize = Size.Companion.m5113getUnspecifiedNHjbRc();
     }
 
     /* renamed from: getTransform-3i98HWw  reason: not valid java name */
-    public final float[] m5604getTransform3i98HWw() {
+    public final float[] m5605getTransform3i98HWw() {
         return this.transform;
     }
 
     /* renamed from: setTransform-Q8lPUPs  reason: not valid java name */
-    public final void m5605setTransformQ8lPUPs(float[] fArr) {
+    public final void m5606setTransformQ8lPUPs(float[] fArr) {
         this.transform = fArr;
         TransformShader transformShader = this.internalTransformShader;
         if (transformShader != null) {
-            transformShader.m5688transformQ8lPUPs(fArr);
+            transformShader.m5689transformQ8lPUPs(fArr);
         }
     }
 
@@ -47,26 +47,26 @@ public abstract class ShaderBrush extends Brush {
 
     @Override // androidx.compose.ui.graphics.Brush
     /* renamed from: applyTo-Pq9zytI */
-    public final void mo5225applyToPq9zytI(long j, Paint paint, float f) {
+    public final void mo5226applyToPq9zytI(long j, Paint paint, float f) {
         TransformShader transformShader = this.internalTransformShader;
-        if (transformShader == null || !Size.m5100equalsimpl0(this.createdSize, j)) {
-            if (Size.m5106isEmptyimpl(j)) {
+        if (transformShader == null || !Size.m5101equalsimpl0(this.createdSize, j)) {
+            if (Size.m5107isEmptyimpl(j)) {
                 this.internalTransformShader = null;
-                this.createdSize = Size.Companion.m5112getUnspecifiedNHjbRc();
+                this.createdSize = Size.Companion.m5113getUnspecifiedNHjbRc();
                 transformShader = null;
             } else {
                 transformShader = obtainTransformShader();
                 float[] fArr = this.transform;
                 if (fArr != null) {
-                    transformShader.m5688transformQ8lPUPs(fArr);
+                    transformShader.m5689transformQ8lPUPs(fArr);
                 }
-                transformShader.setShader(mo5248createShaderuvyYCjk(j));
+                transformShader.setShader(mo5249createShaderuvyYCjk(j));
                 this.internalTransformShader = transformShader;
                 this.createdSize = j;
             }
         }
-        if (!Color.m5280equalsimpl0(paint.mo5150getColor0d7_KjU(), Color.Companion.m5305getBlack0d7_KjU())) {
-            paint.mo5156setColor8_81llA(Color.Companion.m5305getBlack0d7_KjU());
+        if (!Color.m5281equalsimpl0(paint.mo5151getColor0d7_KjU(), Color.Companion.m5306getBlack0d7_KjU())) {
+            paint.mo5157setColor8_81llA(Color.Companion.m5306getBlack0d7_KjU());
         }
         if (!Intrinsics.areEqual(paint.getShader(), transformShader != null ? transformShader.getShader() : null)) {
             paint.setShader(transformShader != null ? transformShader.getShader() : null);

@@ -9,7 +9,7 @@ import io.appmetrica.analytics.impl.D0;
 import io.appmetrica.analytics.impl.Ib;
 import io.appmetrica.analytics.impl.Jb;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class AppMetricaLibraryAdapter {
 
     /* renamed from: a  reason: collision with root package name */

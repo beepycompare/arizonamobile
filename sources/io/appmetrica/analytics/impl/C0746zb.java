@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 /* renamed from: io.appmetrica.analytics.impl.zb  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0746zb implements Oa, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
@@ -31,8 +31,8 @@ public final class C0746zb implements Oa, Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0084 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x002b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0081 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0029 A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r8v10, types: [java.lang.Long] */
     /* JADX WARN: Type inference failed for: r8v11, types: [java.lang.Float] */
     /* JADX WARN: Type inference failed for: r8v5, types: [java.lang.Boolean] */

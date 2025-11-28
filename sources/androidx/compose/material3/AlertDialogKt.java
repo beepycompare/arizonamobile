@@ -52,10 +52,10 @@ public final class AlertDialogKt {
     private static final PaddingValues IconPadding;
     private static final PaddingValues TextPadding;
     private static final PaddingValues TitlePadding;
-    private static final float DialogMinWidth = Dp.m7995constructorimpl((float) RouletteView.DEFAULT_ROULETTE_WIDTH);
-    private static final float DialogMaxWidth = Dp.m7995constructorimpl(560);
-    private static final float ButtonsMainAxisSpacing = Dp.m7995constructorimpl(8);
-    private static final float ButtonsCrossAxisSpacing = Dp.m7995constructorimpl(12);
+    private static final float DialogMinWidth = Dp.m7996constructorimpl((float) RouletteView.DEFAULT_ROULETTE_WIDTH);
+    private static final float DialogMaxWidth = Dp.m7996constructorimpl(560);
+    private static final float ButtonsMainAxisSpacing = Dp.m7996constructorimpl(8);
+    private static final float ButtonsCrossAxisSpacing = Dp.m7996constructorimpl(12);
     private static final ProvidableCompositionLocal<BasicAlertDialogOverride> LocalBasicAlertDialogOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.AlertDialogKt$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
@@ -73,19 +73,19 @@ public final class AlertDialogKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AlertDialogContent_4hvqGtA$lambda$4(Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function2 function24, Shape shape, long j, float f, long j2, long j3, long j4, long j5, int i, int i2, int i3, Composer composer, int i4) {
-        m1877AlertDialogContent4hvqGtA(function2, modifier, function22, function23, function24, shape, j, f, j2, j3, j4, j5, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m1878AlertDialogContent4hvqGtA(function2, modifier, function22, function23, function24, shape, j, f, j2, j3, j4, j5, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AlertDialogFlowRow_ixp7dh8$lambda$6(float f, float f2, Function2 function2, int i, Composer composer, int i2) {
-        m1878AlertDialogFlowRowixp7dh8(f, f2, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m1879AlertDialogFlowRowixp7dh8(f, f2, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AlertDialogImpl_wrnwzgE$lambda$3(Function0 function0, Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Shape shape, long j, long j2, long j3, long j4, float f, DialogProperties dialogProperties, int i, int i2, Composer composer, int i3) {
-        m1879AlertDialogImplwrnwzgE(function0, function2, modifier, function22, function23, function24, function25, shape, j, j2, j3, j4, f, dialogProperties, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
+        m1880AlertDialogImplwrnwzgE(function0, function2, modifier, function22, function23, function24, function25, shape, j, j2, j3, j4, f, dialogProperties, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
         return Unit.INSTANCE;
     }
 
@@ -309,7 +309,7 @@ public final class AlertDialogKt {
     }
 
     /* renamed from: AlertDialogImpl-wrnwzgE  reason: not valid java name */
-    public static final void m1879AlertDialogImplwrnwzgE(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final Function2<? super Composer, ? super Integer, Unit> function25, final Shape shape, final long j, final long j2, final long j3, final long j4, final float f, final DialogProperties dialogProperties, Composer composer, final int i, final int i2) {
+    public static final void m1880AlertDialogImplwrnwzgE(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final Function2<? super Composer, ? super Integer, Unit> function25, final Shape shape, final long j, final long j2, final long j3, final long j4, final float f, final DialogProperties dialogProperties, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         Object obj2;
@@ -405,7 +405,7 @@ public final class AlertDialogKt {
                     }
                     final Function2<Composer, Integer, Unit> function29 = function27;
                     final Function2<Composer, Integer, Unit> function210 = function26;
-                    AlertDialogKt.m1877AlertDialogContent4hvqGtA(ComposableLambdaKt.rememberComposableLambda(1367541877, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogImpl$1.1
+                    AlertDialogKt.m1878AlertDialogContent4hvqGtA(ComposableLambdaKt.rememberComposableLambda(1367541877, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogImpl$1.1
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                             invoke(composer3, num.intValue());
@@ -424,7 +424,7 @@ public final class AlertDialogKt {
                                 f5 = AlertDialogKt.ButtonsCrossAxisSpacing;
                                 final Function2<Composer, Integer, Unit> function211 = function29;
                                 final Function2<Composer, Integer, Unit> function212 = function210;
-                                AlertDialogKt.m1878AlertDialogFlowRowixp7dh8(f4, f5, ComposableLambdaKt.rememberComposableLambda(-459506658, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt.AlertDialogImpl.1.1.1
+                                AlertDialogKt.m1879AlertDialogFlowRowixp7dh8(f4, f5, ComposableLambdaKt.rememberComposableLambda(-459506658, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt.AlertDialogImpl.1.1.1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
                                         invoke(composer4, num.intValue());
@@ -515,7 +515,7 @@ public final class AlertDialogKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1877AlertDialogContent4hvqGtA(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final Shape shape, final long j, final float f, final long j2, final long j3, final long j4, final long j5, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m1878AlertDialogContent4hvqGtA(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final Shape shape, final long j, final float f, final long j2, final long j3, final long j4, final long j5, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         final Function2<? super Composer, ? super Integer, Unit> function25;
@@ -608,7 +608,7 @@ public final class AlertDialogKt {
                                     final Function2<? super Composer, ? super Integer, Unit> function26 = obj2;
                                     final Function2<? super Composer, ? super Integer, Unit> function27 = obj3;
                                     int i7 = i4 >> 12;
-                                    SurfaceKt.m2996SurfaceT9BRK9s(companion, shape, j6, 0L, f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-652798794, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1
+                                    SurfaceKt.m2997SurfaceT9BRK9s(companion, shape, j6, 0L, f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-652798794, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                                             invoke(composer2, num.intValue());
@@ -652,15 +652,15 @@ public final class AlertDialogKt {
                                                 } else {
                                                     composer2.useNode();
                                                 }
-                                                Composer m4597constructorimpl = Updater.m4597constructorimpl(composer2);
-                                                Updater.m4604setimpl(m4597constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer2);
+                                                Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                    m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                 }
-                                                Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                                 final ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer2, 346139169, "C358@14708L333:AlertDialog.kt#uh7d8r");
@@ -669,7 +669,7 @@ public final class AlertDialogKt {
                                                 } else {
                                                     composer2.startReplaceGroup(346092327);
                                                     ComposerKt.sourceInformation(composer2, "*317@13165L165,317@13095L235");
-                                                    CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5269boximpl(j7)), ComposableLambdaKt.rememberComposableLambda(-1128150638, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$1$1
+                                                    CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(j7)), ComposableLambdaKt.rememberComposableLambda(-1128150638, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$1$1
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                             invoke(composer3, num.intValue());
@@ -707,15 +707,15 @@ public final class AlertDialogKt {
                                                             } else {
                                                                 composer3.useNode();
                                                             }
-                                                            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer3);
-                                                            Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer3);
+                                                            Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                                m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                             }
-                                                            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -1288652187, "C319@13284L6:AlertDialog.kt#uh7d8r");
@@ -745,7 +745,7 @@ public final class AlertDialogKt {
                                                     function28 = function212;
                                                     str = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
                                                     i9 = -692256719;
-                                                    ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(j8, TypographyKt.getValue(DialogTokens.INSTANCE.getHeadlineFont(), composer2, 6), ComposableLambdaKt.rememberComposableLambda(71284337, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$2$1
+                                                    ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j8, TypographyKt.getValue(DialogTokens.INSTANCE.getHeadlineFont(), composer2, 6), ComposableLambdaKt.rememberComposableLambda(71284337, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$2$1
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                             invoke(composer3, num.intValue());
@@ -790,15 +790,15 @@ public final class AlertDialogKt {
                                                             } else {
                                                                 composer3.useNode();
                                                             }
-                                                            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer3);
-                                                            Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer3);
+                                                            Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                                m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                             }
-                                                            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                             ComposerKt.sourceInformationMarkerStart(composer3, 1971616197, "C339@14075L7:AlertDialog.kt#uh7d8r");
@@ -821,7 +821,7 @@ public final class AlertDialogKt {
                                                 } else {
                                                     composer2.startReplaceGroup(347174010);
                                                     ComposerKt.sourceInformation(composer2, "*344@14225L5,348@14391L290,345@14247L434");
-                                                    ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(j9, TypographyKt.getValue(DialogTokens.INSTANCE.getSupportingTextFont(), composer2, 6), ComposableLambdaKt.rememberComposableLambda(705583346, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$3$1
+                                                    ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j9, TypographyKt.getValue(DialogTokens.INSTANCE.getSupportingTextFont(), composer2, 6), ComposableLambdaKt.rememberComposableLambda(705583346, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogContent$1$1$3$1
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                             invoke(composer3, num.intValue());
@@ -860,15 +860,15 @@ public final class AlertDialogKt {
                                                             } else {
                                                                 composer3.useNode();
                                                             }
-                                                            Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer3);
-                                                            Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                            Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer3);
+                                                            Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                            if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                                m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                                m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                             }
-                                                            Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                             ComposerKt.sourceInformationMarkerStart(composer3, 517290885, "C354@14635L6:AlertDialog.kt#uh7d8r");
@@ -904,19 +904,19 @@ public final class AlertDialogKt {
                                                 } else {
                                                     composer2.useNode();
                                                 }
-                                                Composer m4597constructorimpl2 = Updater.m4597constructorimpl(composer2);
-                                                Updater.m4604setimpl(m4597constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m4604setimpl(m4597constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer2);
+                                                Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m4597constructorimpl2.getInserting() || !Intrinsics.areEqual(m4597constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                    m4597constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                    m4597constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                    m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                    m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                 }
-                                                Updater.m4604setimpl(m4597constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer2, 200047666, "C359@14821L5,360@14843L184:AlertDialog.kt#uh7d8r");
-                                                ProvideContentColorTextStyleKt.m3529ProvideContentColorTextStyle3JVO9M(j10, TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer2, 6), function28, composer2, 0);
+                                                ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j10, TypographyKt.getValue(DialogTokens.INSTANCE.getActionLabelTextFont(), composer2, 6), function28, composer2, 0);
                                                 ComposerKt.sourceInformationMarkerEnd(composer2);
                                                 ComposerKt.sourceInformationMarkerEnd(composer2);
                                                 composer2.endNode();
@@ -1071,7 +1071,7 @@ public final class AlertDialogKt {
     }
 
     /* renamed from: AlertDialogFlowRow-ixp7dh8  reason: not valid java name */
-    public static final void m1878AlertDialogFlowRowixp7dh8(final float f, final float f2, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    public static final void m1879AlertDialogFlowRowixp7dh8(final float f, final float f2, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-917637668);
         ComposerKt.sourceInformation(startRestartGroup, "C(AlertDialogFlowRow)N(mainAxisSpacing:c#ui.unit.Dp,crossAxisSpacing:c#ui.unit.Dp,content)380@15332L3365,380@15316L3381:AlertDialog.kt#uh7d8r");
@@ -1117,15 +1117,15 @@ public final class AlertDialogKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             function2.invoke(startRestartGroup, Integer.valueOf((i3 >> 6) & 14));
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1166,10 +1166,10 @@ public final class AlertDialogKt {
 
     static {
         float f = 24;
-        DialogPadding = PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(f));
+        DialogPadding = PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(f));
         float f2 = 16;
-        IconPadding = PaddingKt.m839PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7995constructorimpl(f2), 7, null);
-        TitlePadding = PaddingKt.m839PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7995constructorimpl(f2), 7, null);
-        TextPadding = PaddingKt.m839PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7995constructorimpl(f), 7, null);
+        IconPadding = PaddingKt.m840PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7996constructorimpl(f2), 7, null);
+        TitlePadding = PaddingKt.m840PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7996constructorimpl(f2), 7, null);
+        TextPadding = PaddingKt.m840PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, Dp.m7996constructorimpl(f), 7, null);
     }
 }

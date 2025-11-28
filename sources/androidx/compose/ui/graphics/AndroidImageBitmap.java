@@ -32,7 +32,7 @@ public final class AndroidImageBitmap implements ImageBitmap {
 
     @Override // androidx.compose.ui.graphics.ImageBitmap
     /* renamed from: getConfig-_sVssgQ  reason: not valid java name */
-    public int mo5144getConfig_sVssgQ() {
+    public int mo5145getConfig_sVssgQ() {
         Bitmap.Config config = this.bitmap.getConfig();
         Intrinsics.checkNotNull(config);
         return AndroidImageBitmap_androidKt.toImageConfig(config);

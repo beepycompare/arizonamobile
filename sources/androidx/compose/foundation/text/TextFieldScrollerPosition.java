@@ -54,7 +54,7 @@ public final class TextFieldScrollerPosition {
         this.maximum$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
         this.viewportSize$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
         this.previousCursorRect = Rect.Companion.getZero();
-        this.previousSelection = TextRange.Companion.m7462getZerod9O1mEE();
+        this.previousSelection = TextRange.Companion.m7463getZerod9O1mEE();
         this.orientation$delegate = SnapshotStateKt.mutableStateOf(orientation, SnapshotStateKt.structuralEqualityPolicy());
     }
 
@@ -91,12 +91,12 @@ public final class TextFieldScrollerPosition {
     }
 
     /* renamed from: getPreviousSelection-d9O1mEE  reason: not valid java name */
-    public final long m1379getPreviousSelectiond9O1mEE() {
+    public final long m1380getPreviousSelectiond9O1mEE() {
         return this.previousSelection;
     }
 
     /* renamed from: setPreviousSelection-5zc-tL8  reason: not valid java name */
-    public final void m1380setPreviousSelection5zctL8(long j) {
+    public final void m1381setPreviousSelection5zctL8(long j) {
         this.previousSelection = j;
     }
 
@@ -129,8 +129,8 @@ public final class TextFieldScrollerPosition {
     }
 
     /* renamed from: getOffsetToFollow-5zc-tL8  reason: not valid java name */
-    public final int m1378getOffsetToFollow5zctL8(long j) {
-        return TextRange.m7457getStartimpl(j) != TextRange.m7457getStartimpl(this.previousSelection) ? TextRange.m7457getStartimpl(j) : TextRange.m7452getEndimpl(j) != TextRange.m7452getEndimpl(this.previousSelection) ? TextRange.m7452getEndimpl(j) : TextRange.m7455getMinimpl(j);
+    public final int m1379getOffsetToFollow5zctL8(long j) {
+        return TextRange.m7458getStartimpl(j) != TextRange.m7458getStartimpl(this.previousSelection) ? TextRange.m7458getStartimpl(j) : TextRange.m7453getEndimpl(j) != TextRange.m7453getEndimpl(this.previousSelection) ? TextRange.m7453getEndimpl(j) : TextRange.m7456getMinimpl(j);
     }
 
     /* compiled from: TextFieldScroll.kt */

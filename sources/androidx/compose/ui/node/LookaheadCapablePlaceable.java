@@ -76,7 +76,7 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
     public abstract LookaheadCapablePlaceable getParent();
 
     /* renamed from: getPosition-nOcc-ac  reason: not valid java name */
-    public abstract long mo6917getPositionnOccac();
+    public abstract long mo6918getPositionnOccac();
 
     @Override // androidx.compose.ui.layout.IntrinsicMeasureScope
     public boolean isLookingAhead() {
@@ -124,14 +124,14 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
     @Override // androidx.compose.ui.layout.Measured
     public final int get(AlignmentLine alignmentLine) {
         int calculateAlignmentLine;
-        int m8124getYimpl;
+        int m8125getYimpl;
         if (getHasMeasureResult() && (calculateAlignmentLine = calculateAlignmentLine(alignmentLine)) != Integer.MIN_VALUE) {
             if (alignmentLine instanceof VerticalAlignmentLine) {
-                m8124getYimpl = IntOffset.m8123getXimpl(m6756getApparentToRealOffsetnOccac());
+                m8125getYimpl = IntOffset.m8124getXimpl(m6757getApparentToRealOffsetnOccac());
             } else {
-                m8124getYimpl = IntOffset.m8124getYimpl(m6756getApparentToRealOffsetnOccac());
+                m8125getYimpl = IntOffset.m8125getYimpl(m6757getApparentToRealOffsetnOccac());
             }
-            return calculateAlignmentLine + m8124getYimpl;
+            return calculateAlignmentLine + m8125getYimpl;
         }
         return Integer.MIN_VALUE;
     }
@@ -453,16 +453,16 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
             Function1<RulerScope, Unit> rulers = measureResult.getRulers();
             if (rulers != null) {
                 boolean z2 = this.rulersLambda != rulers;
-                long m8133getMaxnOccac = IntOffset.Companion.m8133getMaxnOccac();
-                long m8171getZeroYbymL2g = IntSize.Companion.m8171getZeroYbymL2g();
+                long m8134getMaxnOccac = IntOffset.Companion.m8134getMaxnOccac();
+                long m8172getZeroYbymL2g = IntSize.Companion.m8172getZeroYbymL2g();
                 if (!z2 && getRulerScope().getCoordinatesAccessed()) {
                     LayoutCoordinates coordinates = getCoordinates();
-                    m8133getMaxnOccac = IntOffsetKt.m8140roundk4lQ0M(LayoutCoordinatesKt.positionOnScreen(coordinates));
-                    m8171getZeroYbymL2g = coordinates.mo6705getSizeYbymL2g();
-                    z2 = (IntOffset.m8122equalsimpl0(m8133getMaxnOccac, getRulerScope().m6918getPositionOnScreennOccac()) && IntSize.m8164equalsimpl0(m8171getZeroYbymL2g, getRulerScope().m6919getSizeYbymL2g())) ? true : true;
+                    m8134getMaxnOccac = IntOffsetKt.m8141roundk4lQ0M(LayoutCoordinatesKt.positionOnScreen(coordinates));
+                    m8172getZeroYbymL2g = coordinates.mo6706getSizeYbymL2g();
+                    z2 = (IntOffset.m8123equalsimpl0(m8134getMaxnOccac, getRulerScope().m6919getPositionOnScreennOccac()) && IntSize.m8165equalsimpl0(m8172getZeroYbymL2g, getRulerScope().m6920getSizeYbymL2g())) ? true : true;
                 }
-                long j = m8133getMaxnOccac;
-                long j2 = m8171getZeroYbymL2g;
+                long j = m8134getMaxnOccac;
+                long j2 = m8172getZeroYbymL2g;
                 if (z2) {
                     PlaceableResult placeableResult = this.cachedRulerPlaceableResult;
                     if (placeableResult != null) {
@@ -471,7 +471,7 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
                         placeableResult = new PlaceableResult(measureResult, this);
                         this.cachedRulerPlaceableResult = placeableResult;
                     }
-                    m6915captureRulersOSxE8f4(placeableResult, j, j2);
+                    m6916captureRulersOSxE8f4(placeableResult, j, j2);
                     this.rulersLambda = measureResult.getRulers();
                     return;
                 }
@@ -557,22 +557,22 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
     }
 
     /* renamed from: captureRulers-OSxE8f4$default  reason: not valid java name */
-    static /* synthetic */ void m6916captureRulersOSxE8f4$default(LookaheadCapablePlaceable lookaheadCapablePlaceable, PlaceableResult placeableResult, long j, long j2, int i, Object obj) {
+    static /* synthetic */ void m6917captureRulersOSxE8f4$default(LookaheadCapablePlaceable lookaheadCapablePlaceable, PlaceableResult placeableResult, long j, long j2, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: captureRulers-OSxE8f4");
         }
         if ((i & 2) != 0) {
-            j = IntOffset.Companion.m8133getMaxnOccac();
+            j = IntOffset.Companion.m8134getMaxnOccac();
         }
         long j3 = j;
         if ((i & 4) != 0) {
-            j2 = IntSize.Companion.m8171getZeroYbymL2g();
+            j2 = IntSize.Companion.m8172getZeroYbymL2g();
         }
-        lookaheadCapablePlaceable.m6915captureRulersOSxE8f4(placeableResult, j3, j2);
+        lookaheadCapablePlaceable.m6916captureRulersOSxE8f4(placeableResult, j3, j2);
     }
 
     /* renamed from: captureRulers-OSxE8f4  reason: not valid java name */
-    private final void m6915captureRulersOSxE8f4(final PlaceableResult placeableResult, final long j, final long j2) {
+    private final void m6916captureRulersOSxE8f4(final PlaceableResult placeableResult, final long j, final long j2) {
         OwnerSnapshotObserver snapshotObserver;
         MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap = this.rulerReaders;
         RulerTrackingMap rulerTrackingMap = this.rulerValues;
@@ -604,9 +604,9 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
                     rulerScope = LookaheadCapablePlaceable.this.getRulerScope();
                     rulerScope.setCoordinatesAccessed(false);
                     rulerScope2 = LookaheadCapablePlaceable.this.getRulerScope();
-                    rulerScope2.m6920setPositionOnScreengyyYBs(j);
+                    rulerScope2.m6921setPositionOnScreengyyYBs(j);
                     rulerScope3 = LookaheadCapablePlaceable.this.getRulerScope();
-                    rulerScope3.m6921setSizeozmzZPI(j2);
+                    rulerScope3.m6922setSizeozmzZPI(j2);
                     Function1<RulerScope, Unit> rulers = placeableResult.getResult().getRulers();
                     if (rulers != null) {
                         rulerScope4 = LookaheadCapablePlaceable.this.getRulerScope();
@@ -626,7 +626,7 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         Function1<RulerScope, Unit> rulers = placeableResult.getResult().getRulers();
         MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap = this.rulerReaders;
         if (rulers != null) {
-            m6916captureRulersOSxE8f4$default(this, placeableResult, 0L, 0L, 6, null);
+            m6917captureRulersOSxE8f4$default(this, placeableResult, 0L, 0L, 6, null);
             this.rulersLambda = rulers;
         } else if (mutableScatterMap != null) {
             MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap2 = mutableScatterMap;
@@ -721,8 +721,8 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
     /* loaded from: classes2.dex */
     public final class ResettableRulerScope implements RulerScope {
         private boolean coordinatesAccessed;
-        private long positionOnScreen = IntOffset.Companion.m8133getMaxnOccac();
-        private long size = IntSize.Companion.m8171getZeroYbymL2g();
+        private long positionOnScreen = IntOffset.Companion.m8134getMaxnOccac();
+        private long size = IntSize.Companion.m8172getZeroYbymL2g();
 
         public ResettableRulerScope() {
         }
@@ -736,22 +736,22 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         }
 
         /* renamed from: getPositionOnScreen-nOcc-ac  reason: not valid java name */
-        public final long m6918getPositionOnScreennOccac() {
+        public final long m6919getPositionOnScreennOccac() {
             return this.positionOnScreen;
         }
 
         /* renamed from: setPositionOnScreen--gyyYBs  reason: not valid java name */
-        public final void m6920setPositionOnScreengyyYBs(long j) {
+        public final void m6921setPositionOnScreengyyYBs(long j) {
             this.positionOnScreen = j;
         }
 
         /* renamed from: getSize-YbymL2g  reason: not valid java name */
-        public final long m6919getSizeYbymL2g() {
+        public final long m6920getSizeYbymL2g() {
             return this.size;
         }
 
         /* renamed from: setSize-ozmzZPI  reason: not valid java name */
-        public final void m6921setSizeozmzZPI(long j) {
+        public final void m6922setSizeozmzZPI(long j) {
             this.size = j;
         }
 
@@ -759,9 +759,9 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         public LayoutCoordinates getCoordinates() {
             this.coordinatesAccessed = true;
             LayoutCoordinates coordinates = LookaheadCapablePlaceable.this.getCoordinates();
-            if (IntOffset.m8122equalsimpl0(this.positionOnScreen, IntOffset.Companion.m8133getMaxnOccac())) {
-                this.positionOnScreen = IntOffsetKt.m8140roundk4lQ0M(LayoutCoordinatesKt.positionOnScreen(coordinates));
-                this.size = coordinates.mo6705getSizeYbymL2g();
+            if (IntOffset.m8123equalsimpl0(this.positionOnScreen, IntOffset.Companion.m8134getMaxnOccac())) {
+                this.positionOnScreen = IntOffsetKt.m8141roundk4lQ0M(LayoutCoordinatesKt.positionOnScreen(coordinates));
+                this.size = coordinates.mo6706getSizeYbymL2g();
             }
             LookaheadCapablePlaceable.this.getLayoutNode().getLayoutDelegate$ui_release().onCoordinatesUsed();
             return coordinates;

@@ -7,6 +7,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class PagerLayoutInfoKt {
     public static final int getMainAxisViewportSize(PagerLayoutInfo pagerLayoutInfo) {
-        return (int) (pagerLayoutInfo.getOrientation() == Orientation.Vertical ? pagerLayoutInfo.mo1150getViewportSizeYbymL2g() & 4294967295L : pagerLayoutInfo.mo1150getViewportSizeYbymL2g() >> 32);
+        return (int) (pagerLayoutInfo.getOrientation() == Orientation.Vertical ? pagerLayoutInfo.mo1151getViewportSizeYbymL2g() & 4294967295L : pagerLayoutInfo.mo1151getViewportSizeYbymL2g() >> 32);
     }
 }

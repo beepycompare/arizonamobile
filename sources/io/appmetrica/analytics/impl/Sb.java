@@ -13,7 +13,7 @@ import io.appmetrica.analytics.locationapi.internal.LocationProvider;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSourcesServiceController;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Sb implements Rb, InterfaceC0483om, LocationProvider {
 
     /* renamed from: a  reason: collision with root package name */

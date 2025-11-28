@@ -10,5 +10,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface TextAutoSizeLayoutScope extends Density {
     /* renamed from: performLayout-5ZSfY2I */
-    TextLayoutResult mo1712performLayout5ZSfY2I(long j, AnnotatedString annotatedString, long j2);
+    TextLayoutResult mo1713performLayout5ZSfY2I(long j, AnnotatedString annotatedString, long j2);
 }

@@ -30,7 +30,7 @@ public final class InfiniteRepeatableSpec<T> implements AnimationSpec<T> {
     }
 
     public /* synthetic */ InfiniteRepeatableSpec(DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode, long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(durationBasedAnimationSpec, (i & 2) != 0 ? RepeatMode.Restart : repeatMode, (i & 4) != 0 ? StartOffset.m196constructorimpl$default(0, 0, 2, null) : j, (DefaultConstructorMarker) null);
+        this(durationBasedAnimationSpec, (i & 2) != 0 ? RepeatMode.Restart : repeatMode, (i & 4) != 0 ? StartOffset.m197constructorimpl$default(0, 0, 2, null) : j, (DefaultConstructorMarker) null);
     }
 
     public final RepeatMode getRepeatMode() {
@@ -38,7 +38,7 @@ public final class InfiniteRepeatableSpec<T> implements AnimationSpec<T> {
     }
 
     /* renamed from: getInitialStartOffset-Rmkjzm4  reason: not valid java name */
-    public final long m176getInitialStartOffsetRmkjzm4() {
+    public final long m177getInitialStartOffsetRmkjzm4() {
         return this.initialStartOffset;
     }
 
@@ -48,7 +48,7 @@ public final class InfiniteRepeatableSpec<T> implements AnimationSpec<T> {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This constructor has been deprecated")
     public /* synthetic */ InfiniteRepeatableSpec(DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode) {
-        this(durationBasedAnimationSpec, repeatMode, StartOffset.m196constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
+        this(durationBasedAnimationSpec, repeatMode, StartOffset.m197constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
     }
 
     @Override // androidx.compose.animation.core.AnimationSpec
@@ -59,7 +59,7 @@ public final class InfiniteRepeatableSpec<T> implements AnimationSpec<T> {
     public boolean equals(Object obj) {
         if (obj instanceof InfiniteRepeatableSpec) {
             InfiniteRepeatableSpec infiniteRepeatableSpec = (InfiniteRepeatableSpec) obj;
-            if (Intrinsics.areEqual(infiniteRepeatableSpec.animation, this.animation) && infiniteRepeatableSpec.repeatMode == this.repeatMode && StartOffset.m198equalsimpl0(infiniteRepeatableSpec.initialStartOffset, this.initialStartOffset)) {
+            if (Intrinsics.areEqual(infiniteRepeatableSpec.animation, this.animation) && infiniteRepeatableSpec.repeatMode == this.repeatMode && StartOffset.m199equalsimpl0(infiniteRepeatableSpec.initialStartOffset, this.initialStartOffset)) {
                 return true;
             }
         }
@@ -67,6 +67,6 @@ public final class InfiniteRepeatableSpec<T> implements AnimationSpec<T> {
     }
 
     public int hashCode() {
-        return (((this.animation.hashCode() * 31) + this.repeatMode.hashCode()) * 31) + StartOffset.m201hashCodeimpl(this.initialStartOffset);
+        return (((this.animation.hashCode() * 31) + this.repeatMode.hashCode()) * 31) + StartOffset.m202hashCodeimpl(this.initialStartOffset);
     }
 }

@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Fa implements Callable {
 
     /* renamed from: a  reason: collision with root package name */

@@ -26,6 +26,6 @@ public final class AndroidEdgeEffectOverscrollEffect$applyToFling$1 extends Cont
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo245applyToFlingBMRW4eQ(0L, null, this);
+        return this.this$0.mo246applyToFlingBMRW4eQ(0L, null, this);
     }
 }

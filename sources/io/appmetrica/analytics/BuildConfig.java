@@ -1,5 +1,5 @@
 package io.appmetrica.analytics;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class BuildConfig {
     public static final int API_LEVEL = 116;
     public static final String BUILD_DATE = "17.10.2025";

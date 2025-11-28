@@ -120,7 +120,7 @@ final class PointerMoveDetectorKt$detectMoves$2 extends SuspendLambda implements
         public final Object invokeSuspend(Object obj) {
             Ref.ObjectRef objectRef;
             AwaitPointerEventScope awaitPointerEventScope;
-            Offset m5024boximpl;
+            Offset m5025boximpl;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
@@ -136,17 +136,17 @@ final class PointerMoveDetectorKt$detectMoves$2 extends SuspendLambda implements
                 awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 PointerEvent pointerEvent = (PointerEvent) obj;
-                int m6511getType7fucELk = pointerEvent.m6511getType7fucELk();
-                if (!PointerEventType.m6518equalsimpl0(m6511getType7fucELk, PointerEventType.Companion.m6524getMove7fucELk()) || PointerEventType.m6518equalsimpl0(m6511getType7fucELk, PointerEventType.Companion.m6522getEnter7fucELk()) || PointerEventType.m6518equalsimpl0(m6511getType7fucELk, PointerEventType.Companion.m6523getExit7fucELk())) {
-                    m5024boximpl = Offset.m5024boximpl(((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).m6569getPositionF1C5BW0());
-                    if (Offset.m5031equalsimpl(m5024boximpl.m5045unboximpl(), objectRef.element)) {
-                        m5024boximpl = null;
+                int m6512getType7fucELk = pointerEvent.m6512getType7fucELk();
+                if (!PointerEventType.m6519equalsimpl0(m6512getType7fucELk, PointerEventType.Companion.m6525getMove7fucELk()) || PointerEventType.m6519equalsimpl0(m6512getType7fucELk, PointerEventType.Companion.m6523getEnter7fucELk()) || PointerEventType.m6519equalsimpl0(m6512getType7fucELk, PointerEventType.Companion.m6524getExit7fucELk())) {
+                    m5025boximpl = Offset.m5025boximpl(((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).m6570getPositionF1C5BW0());
+                    if (Offset.m5032equalsimpl(m5025boximpl.m5046unboximpl(), objectRef.element)) {
+                        m5025boximpl = null;
                     }
-                    if (m5024boximpl != null) {
+                    if (m5025boximpl != null) {
                         Function1<Offset, Unit> function1 = this.$onMove;
-                        long m5045unboximpl = m5024boximpl.m5045unboximpl();
-                        objectRef.element = Offset.m5024boximpl(m5045unboximpl);
-                        function1.invoke(Offset.m5024boximpl(m5045unboximpl));
+                        long m5046unboximpl = m5025boximpl.m5046unboximpl();
+                        objectRef.element = Offset.m5025boximpl(m5046unboximpl);
+                        function1.invoke(Offset.m5025boximpl(m5046unboximpl));
                     }
                 }
                 if (JobKt.isActive(this.$currentContext)) {
@@ -158,13 +158,13 @@ final class PointerMoveDetectorKt$detectMoves$2 extends SuspendLambda implements
                         return coroutine_suspended;
                     }
                     PointerEvent pointerEvent2 = (PointerEvent) obj;
-                    int m6511getType7fucELk2 = pointerEvent2.m6511getType7fucELk();
-                    if (!PointerEventType.m6518equalsimpl0(m6511getType7fucELk2, PointerEventType.Companion.m6524getMove7fucELk())) {
+                    int m6512getType7fucELk2 = pointerEvent2.m6512getType7fucELk();
+                    if (!PointerEventType.m6519equalsimpl0(m6512getType7fucELk2, PointerEventType.Companion.m6525getMove7fucELk())) {
                     }
-                    m5024boximpl = Offset.m5024boximpl(((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent2.getChanges())).m6569getPositionF1C5BW0());
-                    if (Offset.m5031equalsimpl(m5024boximpl.m5045unboximpl(), objectRef.element)) {
+                    m5025boximpl = Offset.m5025boximpl(((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent2.getChanges())).m6570getPositionF1C5BW0());
+                    if (Offset.m5032equalsimpl(m5025boximpl.m5046unboximpl(), objectRef.element)) {
                     }
-                    if (m5024boximpl != null) {
+                    if (m5025boximpl != null) {
                     }
                     if (JobKt.isActive(this.$currentContext)) {
                         return Unit.INSTANCE;

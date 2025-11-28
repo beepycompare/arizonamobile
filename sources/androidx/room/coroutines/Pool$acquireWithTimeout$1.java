@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.coroutines.Pool", f = "ConnectionPoolImpl.kt", i = {0, 0, 0}, l = {214}, m = "acquireWithTimeout-KLykuaI", n = {"onTimeout", "connection", "timeout"}, s = {"L$0", "L$1", "J$0"})
+@DebugMetadata(c = "androidx.room.coroutines.Pool", f = "ConnectionPoolImpl.kt", i = {0, 0, 0}, l = {231}, m = "acquireWithTimeout-KLykuaI", n = {"onTimeout", "connection", "timeout"}, s = {"L$0", "L$1", "J$0"})
 /* loaded from: classes3.dex */
 public final class Pool$acquireWithTimeout$1 extends ContinuationImpl {
     long J$0;
@@ -28,6 +28,6 @@ public final class Pool$acquireWithTimeout$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m8887acquireWithTimeoutKLykuaI(0L, null, this);
+        return this.this$0.m8899acquireWithTimeoutKLykuaI(0L, null, this);
     }
 }

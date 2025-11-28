@@ -4,7 +4,7 @@ import io.appmetrica.analytics.network.impl.c;
 import io.appmetrica.analytics.network.impl.d;
 import javax.net.ssl.SSLSocketFactory;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NetworkClient {
 
     /* renamed from: a  reason: collision with root package name */
@@ -15,7 +15,7 @@ public class NetworkClient {
     private final Boolean e;
     private final int f;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */

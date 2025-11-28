@@ -42,7 +42,7 @@ public class LongSparseArray<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public LongSparseArray<E> m45clone() {
+    public LongSparseArray<E> m46clone() {
         Object clone = super.clone();
         Intrinsics.checkNotNull(clone, "null cannot be cast to non-null type androidx.collection.LongSparseArray<E of androidx.collection.LongSparseArray>");
         LongSparseArray<E> longSparseArray = (LongSparseArray) clone;

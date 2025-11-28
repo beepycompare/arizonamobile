@@ -6,7 +6,7 @@ import io.appmetrica.analytics.logger.common.impl.b;
 import io.appmetrica.analytics.logger.common.impl.c;
 import io.appmetrica.analytics.logger.common.impl.d;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BaseImportantLogger {
 
     /* renamed from: a  reason: collision with root package name */

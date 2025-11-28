@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class U8 implements ProtobufConverter {
     public static B9 a(T8 t8) {
         B9 b9 = new B9();

@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class InputIdentifier {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int SingleDateInput = m2487constructorimpl(0);
-    private static final int StartDateInput = m2487constructorimpl(1);
-    private static final int EndDateInput = m2487constructorimpl(2);
+    private static final int SingleDateInput = m2488constructorimpl(0);
+    private static final int StartDateInput = m2488constructorimpl(1);
+    private static final int EndDateInput = m2488constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ InputIdentifier m2486boximpl(int i) {
+    public static final /* synthetic */ InputIdentifier m2487boximpl(int i) {
         return new InputIdentifier(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m2487constructorimpl(int i) {
+    public static int m2488constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2488equalsimpl(int i, Object obj) {
-        return (obj instanceof InputIdentifier) && i == ((InputIdentifier) obj).m2492unboximpl();
+    public static boolean m2489equalsimpl(int i, Object obj) {
+        return (obj instanceof InputIdentifier) && i == ((InputIdentifier) obj).m2493unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2489equalsimpl0(int i, int i2) {
+    public static final boolean m2490equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2490hashCodeimpl(int i) {
+    public static int m2491hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2488equalsimpl(this.value, obj);
+        return m2489equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2490hashCodeimpl(this.value);
+        return m2491hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2492unboximpl() {
+    public final /* synthetic */ int m2493unboximpl() {
         return this.value;
     }
 
@@ -69,27 +69,27 @@ public final class InputIdentifier {
         }
 
         /* renamed from: getSingleDateInput-J2x2o4M  reason: not valid java name */
-        public final int m2494getSingleDateInputJ2x2o4M() {
+        public final int m2495getSingleDateInputJ2x2o4M() {
             return InputIdentifier.SingleDateInput;
         }
 
         /* renamed from: getStartDateInput-J2x2o4M  reason: not valid java name */
-        public final int m2495getStartDateInputJ2x2o4M() {
+        public final int m2496getStartDateInputJ2x2o4M() {
             return InputIdentifier.StartDateInput;
         }
 
         /* renamed from: getEndDateInput-J2x2o4M  reason: not valid java name */
-        public final int m2493getEndDateInputJ2x2o4M() {
+        public final int m2494getEndDateInputJ2x2o4M() {
             return InputIdentifier.EndDateInput;
         }
     }
 
     public String toString() {
-        return m2491toStringimpl(this.value);
+        return m2492toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2491toStringimpl(int i) {
-        return m2489equalsimpl0(i, SingleDateInput) ? "SingleDateInput" : m2489equalsimpl0(i, StartDateInput) ? "StartDateInput" : m2489equalsimpl0(i, EndDateInput) ? "EndDateInput" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m2492toStringimpl(int i) {
+        return m2490equalsimpl0(i, SingleDateInput) ? "SingleDateInput" : m2490equalsimpl0(i, StartDateInput) ? "StartDateInput" : m2490equalsimpl0(i, EndDateInput) ? "EndDateInput" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

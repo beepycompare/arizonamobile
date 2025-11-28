@@ -20,15 +20,15 @@ import kotlin.ranges.RangesKt;
 final class CenteredContentMeasurePolicy implements MeasurePolicy {
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         int calculateCenteredContentHorizontalPadding;
         final ArrayList arrayList;
         int i;
-        int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
-        int m7949getMinHeightimpl = Constraints.m7949getMinHeightimpl(j);
+        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+        int m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
         int size = list.size();
         if (size < 1) {
-            return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7949getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$$ExternalSyntheticLambda0
+            return MeasureScope.layout$default(measureScope, m7949getMaxWidthimpl, m7950getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measure_3p2s80s$lambda$0;
@@ -39,17 +39,17 @@ final class CenteredContentMeasurePolicy implements MeasurePolicy {
         }
         final Ref.IntRef intRef = new Ref.IntRef();
         int i2 = 0;
-        if (Constraints.m7944getHasBoundedWidthimpl(j)) {
-            int i3 = m7948getMaxWidthimpl / size;
-            calculateCenteredContentHorizontalPadding = ShortNavigationBarKt.calculateCenteredContentHorizontalPadding(size, m7948getMaxWidthimpl);
+        if (Constraints.m7945getHasBoundedWidthimpl(j)) {
+            int i3 = m7949getMaxWidthimpl / size;
+            calculateCenteredContentHorizontalPadding = ShortNavigationBarKt.calculateCenteredContentHorizontalPadding(size, m7949getMaxWidthimpl);
             intRef.element = calculateCenteredContentHorizontalPadding;
-            int i4 = (m7948getMaxWidthimpl - (intRef.element * 2)) / size;
+            int i4 = (m7949getMaxWidthimpl - (intRef.element * 2)) / size;
             List<? extends Measurable> list2 = list;
             int size2 = list2.size();
             for (int i5 = 0; i5 < size2; i5++) {
                 int maxIntrinsicHeight = list.get(i5).maxIntrinsicHeight(i4);
-                if (m7949getMinHeightimpl < maxIntrinsicHeight) {
-                    m7949getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m7947getMaxHeightimpl(j));
+                if (m7950getMinHeightimpl < maxIntrinsicHeight) {
+                    m7950getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m7948getMaxHeightimpl(j));
                 }
             }
             ArrayList arrayList2 = new ArrayList(list.size());
@@ -57,14 +57,14 @@ final class CenteredContentMeasurePolicy implements MeasurePolicy {
             while (i2 < size3) {
                 ArrayList arrayList3 = arrayList2;
                 Measurable measurable = list.get(i2);
-                int maxIntrinsicWidth = measurable.maxIntrinsicWidth(Constraints.m7949getMinHeightimpl(j));
+                int maxIntrinsicWidth = measurable.maxIntrinsicWidth(Constraints.m7950getMinHeightimpl(j));
                 if (i4 < maxIntrinsicWidth) {
                     i = RangesKt.coerceAtMost(maxIntrinsicWidth, i3);
                     intRef.element -= (i - i4) / 2;
                 } else {
                     i = i4;
                 }
-                arrayList3.add(measurable.mo6697measureBRTryo0(ConstraintsKt.m7963constrainN9IONVI(j, Constraints.Companion.m7958fixedJhjzzOo(i, m7949getMinHeightimpl))));
+                arrayList3.add(measurable.mo6698measureBRTryo0(ConstraintsKt.m7964constrainN9IONVI(j, Constraints.Companion.m7959fixedJhjzzOo(i, m7950getMinHeightimpl))));
                 i2++;
             }
             arrayList = arrayList2;
@@ -72,12 +72,12 @@ final class CenteredContentMeasurePolicy implements MeasurePolicy {
             ArrayList arrayList4 = new ArrayList(list.size());
             int size4 = list.size();
             while (i2 < size4) {
-                arrayList4.add(list.get(i2).mo6697measureBRTryo0(ConstraintsKt.m7963constrainN9IONVI(j, Constraints.Companion.m7959fixedHeightOenEA2s(m7949getMinHeightimpl))));
+                arrayList4.add(list.get(i2).mo6698measureBRTryo0(ConstraintsKt.m7964constrainN9IONVI(j, Constraints.Companion.m7960fixedHeightOenEA2s(m7950getMinHeightimpl))));
                 i2++;
             }
             arrayList = arrayList4;
         }
-        return MeasureScope.layout$default(measureScope, m7948getMaxWidthimpl, m7949getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$$ExternalSyntheticLambda1
+        return MeasureScope.layout$default(measureScope, m7949getMaxWidthimpl, m7950getMinHeightimpl, null, new Function1() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$5;

@@ -62,7 +62,7 @@ public final class LazyGridStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4725rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4726rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -117,7 +117,7 @@ public final class LazyGridStateKt {
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4725rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue2, composer, 0);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4726rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue2, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -162,7 +162,7 @@ public final class LazyGridStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4725rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4726rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

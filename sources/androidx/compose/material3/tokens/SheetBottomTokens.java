@@ -11,11 +11,11 @@ public final class SheetBottomTokens {
     private static final ColorSchemeKeyTokens DockedContainerColor = ColorSchemeKeyTokens.SurfaceContainerLow;
     private static final ShapeKeyTokens DockedContainerShape = ShapeKeyTokens.CornerExtraLargeTop;
     private static final ColorSchemeKeyTokens DockedDragHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float DockedDragHandleHeight = Dp.m7995constructorimpl((float) 4.0d);
-    private static final float DockedDragHandleWidth = Dp.m7995constructorimpl((float) 32.0d);
+    private static final float DockedDragHandleHeight = Dp.m7996constructorimpl((float) 4.0d);
+    private static final float DockedDragHandleWidth = Dp.m7996constructorimpl((float) 32.0d);
     private static final ShapeKeyTokens DockedMinimizedContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float DockedModalContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
-    private static final float DockedStandardContainerElevation = ElevationTokens.INSTANCE.m3889getLevel1D9Ej5fM();
+    private static final float DockedModalContainerElevation = ElevationTokens.INSTANCE.m3890getLevel1D9Ej5fM();
+    private static final float DockedStandardContainerElevation = ElevationTokens.INSTANCE.m3890getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
 
     private SheetBottomTokens() {
@@ -34,12 +34,12 @@ public final class SheetBottomTokens {
     }
 
     /* renamed from: getDockedDragHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4242getDockedDragHandleHeightD9Ej5fM() {
+    public final float m4243getDockedDragHandleHeightD9Ej5fM() {
         return DockedDragHandleHeight;
     }
 
     /* renamed from: getDockedDragHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4243getDockedDragHandleWidthD9Ej5fM() {
+    public final float m4244getDockedDragHandleWidthD9Ej5fM() {
         return DockedDragHandleWidth;
     }
 
@@ -48,12 +48,12 @@ public final class SheetBottomTokens {
     }
 
     /* renamed from: getDockedModalContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4244getDockedModalContainerElevationD9Ej5fM() {
+    public final float m4245getDockedModalContainerElevationD9Ej5fM() {
         return DockedModalContainerElevation;
     }
 
     /* renamed from: getDockedStandardContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4245getDockedStandardContainerElevationD9Ej5fM() {
+    public final float m4246getDockedStandardContainerElevationD9Ej5fM() {
         return DockedStandardContainerElevation;
     }
 

@@ -38,7 +38,7 @@ import okio.Sink;
 public final class _UtilCommonKt {
     public static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
     private static final Options UNICODE_BOMS = Options.Companion.of(ByteString.Companion.decodeHex("efbbbf"), ByteString.Companion.decodeHex("feff"), ByteString.Companion.decodeHex("fffe0000"), ByteString.Companion.decodeHex("fffe"), ByteString.Companion.decodeHex("0000feff"));
-    public static final String USER_AGENT = "okhttp/5.3.0";
+    public static final String USER_AGENT = "okhttp/5.3.2";
 
     public static final int and(byte b, int i) {
         return b & i;

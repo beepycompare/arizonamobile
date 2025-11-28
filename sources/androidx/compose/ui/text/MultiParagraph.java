@@ -70,11 +70,11 @@ public final class MultiParagraph {
     }
 
     private MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, int i2) {
-        int m7947getMaxHeightimpl;
+        int m7948getMaxHeightimpl;
         this.intrinsics = multiParagraphIntrinsics;
         this.maxLines = i;
         boolean z = true;
-        if (!(Constraints.m7950getMinWidthimpl(j) == 0 && Constraints.m7949getMinHeightimpl(j) == 0)) {
+        if (!(Constraints.m7951getMinWidthimpl(j) == 0 && Constraints.m7950getMinHeightimpl(j) == 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("Setting Constraints.minWidth and Constraints.minHeight is not supported, these should be the default zero values instead.");
         }
         ArrayList arrayList = new ArrayList();
@@ -86,17 +86,17 @@ public final class MultiParagraph {
         while (i4 < size) {
             ParagraphIntrinsicInfo paragraphIntrinsicInfo = infoList$ui_text.get(i4);
             ParagraphIntrinsics intrinsics = paragraphIntrinsicInfo.getIntrinsics();
-            int m7948getMaxWidthimpl = Constraints.m7948getMaxWidthimpl(j);
-            if (Constraints.m7943getHasBoundedHeightimpl(j)) {
-                m7947getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m7947getMaxHeightimpl(j) - ParagraphKt.ceilToInt(f), 0);
+            int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+            if (Constraints.m7944getHasBoundedHeightimpl(j)) {
+                m7948getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m7948getMaxHeightimpl(j) - ParagraphKt.ceilToInt(f), 0);
             } else {
-                m7947getMaxHeightimpl = Constraints.m7947getMaxHeightimpl(j);
+                m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
             }
-            Paragraph m7321ParagraphczeNHc = ParagraphKt.m7321ParagraphczeNHc(intrinsics, ConstraintsKt.Constraints$default(0, m7948getMaxWidthimpl, 0, m7947getMaxHeightimpl, 5, null), this.maxLines - i3, i2);
-            float height = f + m7321ParagraphczeNHc.getHeight();
-            int lineCount = i3 + m7321ParagraphczeNHc.getLineCount();
-            arrayList.add(new ParagraphInfo(m7321ParagraphczeNHc, paragraphIntrinsicInfo.getStartIndex(), paragraphIntrinsicInfo.getEndIndex(), i3, lineCount, f, height));
-            if (m7321ParagraphczeNHc.getDidExceedMaxLines() || (lineCount == this.maxLines && i4 != CollectionsKt.getLastIndex(this.intrinsics.getInfoList$ui_text()))) {
+            Paragraph m7322ParagraphczeNHc = ParagraphKt.m7322ParagraphczeNHc(intrinsics, ConstraintsKt.Constraints$default(0, m7949getMaxWidthimpl, 0, m7948getMaxHeightimpl, 5, null), this.maxLines - i3, i2);
+            float height = f + m7322ParagraphczeNHc.getHeight();
+            int lineCount = i3 + m7322ParagraphczeNHc.getLineCount();
+            arrayList.add(new ParagraphInfo(m7322ParagraphczeNHc, paragraphIntrinsicInfo.getStartIndex(), paragraphIntrinsicInfo.getEndIndex(), i3, lineCount, f, height));
+            if (m7322ParagraphczeNHc.getDidExceedMaxLines() || (lineCount == this.maxLines && i4 != CollectionsKt.getLastIndex(this.intrinsics.getInfoList$ui_text()))) {
                 i3 = lineCount;
                 f = height;
                 break;
@@ -110,7 +110,7 @@ public final class MultiParagraph {
         this.lineCount = i3;
         this.didExceedMaxLines = z;
         this.paragraphInfoList = arrayList;
-        this.width = Constraints.m7948getMaxWidthimpl(j);
+        this.width = Constraints.m7949getMaxWidthimpl(j);
         ArrayList arrayList2 = new ArrayList(arrayList.size());
         int size2 = arrayList.size();
         for (int i5 = 0; i5 < size2; i5++) {
@@ -147,7 +147,7 @@ public final class MultiParagraph {
     }
 
     public /* synthetic */ MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(multiParagraphIntrinsics, j, (i3 & 4) != 0 ? Integer.MAX_VALUE : i, (i3 & 8) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
+        this(multiParagraphIntrinsics, j, (i3 & 4) != 0 ? Integer.MAX_VALUE : i, (i3 & 8) != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -155,7 +155,7 @@ public final class MultiParagraph {
     }
 
     private MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, boolean z) {
-        this(multiParagraphIntrinsics, j, i, z ? TextOverflow.Companion.m7931getEllipsisgIe3tQ8() : TextOverflow.Companion.m7930getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(multiParagraphIntrinsics, j, i, z ? TextOverflow.Companion.m7932getEllipsisgIe3tQ8() : TextOverflow.Companion.m7931getClipgIe3tQ8(), (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, int i, boolean z, float f, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -168,7 +168,7 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, int i, boolean z, float f) {
-        this(multiParagraphIntrinsics, r8, i, z ? r0.m7931getEllipsisgIe3tQ8() : r0.m7930getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(multiParagraphIntrinsics, r8, i, z ? r0.m7932getEllipsisgIe3tQ8() : r0.m7931getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         long Constraints$default = ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null);
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
@@ -183,7 +183,7 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z, float f, Density density, Font.ResourceLoader resourceLoader) {
-        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r13.m7931getEllipsisgIe3tQ8() : r13.m7930getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r13.m7932getEllipsisgIe3tQ8() : r13.m7931getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         MultiParagraphIntrinsics multiParagraphIntrinsics = new MultiParagraphIntrinsics(annotatedString, textStyle, list, density, DelegatingFontLoaderForDeprecatedUsage_androidKt.createFontFamilyResolver(resourceLoader));
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
@@ -198,7 +198,7 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, float f, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z) {
-        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r7.m7931getEllipsisgIe3tQ8() : r7.m7930getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r7.m7932getEllipsisgIe3tQ8() : r7.m7931getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         MultiParagraphIntrinsics multiParagraphIntrinsics = new MultiParagraphIntrinsics(annotatedString, textStyle, list, density, resolver);
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
@@ -212,13 +212,13 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z) {
-        this(r0, j, i, z ? r7.m7931getEllipsisgIe3tQ8() : r7.m7930getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(r0, j, i, z ? r7.m7932getEllipsisgIe3tQ8() : r7.m7931getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         MultiParagraphIntrinsics multiParagraphIntrinsics = new MultiParagraphIntrinsics(annotatedString, textStyle, list, density, resolver);
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
 
     public /* synthetic */ MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List list, int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, textStyle, j, density, resolver, (i3 & 32) != 0 ? CollectionsKt.emptyList() : list, (i3 & 64) != 0 ? Integer.MAX_VALUE : i, (i3 & 128) != 0 ? TextOverflow.Companion.m7930getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
+        this(annotatedString, textStyle, j, density, resolver, (i3 & 32) != 0 ? CollectionsKt.emptyList() : list, (i3 & 64) != 0 ? Integer.MAX_VALUE : i, (i3 & 128) != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
     }
 
     private MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, int i, int i2) {
@@ -277,51 +277,51 @@ public final class MultiParagraph {
     }
 
     /* renamed from: paint-RPmYEkk$default  reason: not valid java name */
-    public static /* synthetic */ void m7295paintRPmYEkk$default(MultiParagraph multiParagraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, int i, Object obj) {
+    public static /* synthetic */ void m7296paintRPmYEkk$default(MultiParagraph multiParagraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = Color.Companion.m5315getUnspecified0d7_KjU();
+            j = Color.Companion.m5316getUnspecified0d7_KjU();
         }
-        multiParagraph.m7302paintRPmYEkk(canvas, j, (i & 4) != 0 ? null : shadow, (i & 8) != 0 ? null : textDecoration);
+        multiParagraph.m7303paintRPmYEkk(canvas, j, (i & 4) != 0 ? null : shadow, (i & 8) != 0 ? null : textDecoration);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the new paint function that takes canvas as the only required parameter.")
     /* renamed from: paint-RPmYEkk  reason: not valid java name */
-    public final /* synthetic */ void m7302paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
+    public final /* synthetic */ void m7303paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
         canvas.save();
         List<ParagraphInfo> list = this.paragraphInfoList;
         int size = list.size();
         for (int i = 0; i < size; i++) {
             ParagraphInfo paragraphInfo = list.get(i);
-            Paragraph.m7306paintLG529CI$default(paragraphInfo.getParagraph(), canvas, j, shadow, textDecoration, null, 0, 48, null);
+            Paragraph.m7307paintLG529CI$default(paragraphInfo.getParagraph(), canvas, j, shadow, textDecoration, null, 0, 48, null);
             canvas.translate(0.0f, paragraphInfo.getParagraph().getHeight());
         }
         canvas.restore();
     }
 
     /* renamed from: paint-LG529CI  reason: not valid java name */
-    public final void m7301paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+    public final void m7302paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
         canvas.save();
         List<ParagraphInfo> list = this.paragraphInfoList;
         int size = list.size();
         for (int i2 = 0; i2 < size; i2++) {
             ParagraphInfo paragraphInfo = list.get(i2);
-            paragraphInfo.getParagraph().mo7254paintLG529CI(canvas, j, shadow, textDecoration, drawStyle, i);
+            paragraphInfo.getParagraph().mo7255paintLG529CI(canvas, j, shadow, textDecoration, drawStyle, i);
             canvas.translate(0.0f, paragraphInfo.getParagraph().getHeight());
         }
         canvas.restore();
     }
 
     /* renamed from: paint-hn5TExg$default  reason: not valid java name */
-    public static /* synthetic */ void m7296painthn5TExg$default(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
+    public static /* synthetic */ void m7297painthn5TExg$default(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             f = Float.NaN;
         }
-        multiParagraph.m7303painthn5TExg(canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? DrawScope.Companion.m5860getDefaultBlendMode0nO6VwU() : i);
+        multiParagraph.m7304painthn5TExg(canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? DrawScope.Companion.m5861getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: paint-hn5TExg  reason: not valid java name */
-    public final void m7303painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
-        AndroidMultiParagraphDraw_androidKt.m7715drawMultiParagraph7AXcY_I(this, canvas, brush, f, shadow, textDecoration, drawStyle, i);
+    public final void m7304painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+        AndroidMultiParagraphDraw_androidKt.m7716drawMultiParagraph7AXcY_I(this, canvas, brush, f, shadow, textDecoration, drawStyle, i);
     }
 
     public final Path getPathForRange(final int i, final int i2) {
@@ -332,7 +332,7 @@ public final class MultiParagraph {
             return AndroidPath_androidKt.Path();
         }
         final Path Path = AndroidPath_androidKt.Path();
-        MultiParagraphKt.m7305findParagraphsByRangeSbBc2M(this.paragraphInfoList, TextRangeKt.TextRange(i, i2), new Function1() { // from class: androidx.compose.ui.text.MultiParagraph$$ExternalSyntheticLambda1
+        MultiParagraphKt.m7306findParagraphsByRangeSbBc2M(this.paragraphInfoList, TextRangeKt.TextRange(i, i2), new Function1() { // from class: androidx.compose.ui.text.MultiParagraph$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit pathForRange$lambda$11;
@@ -345,7 +345,7 @@ public final class MultiParagraph {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit getPathForRange$lambda$11(Path path, int i, int i2, ParagraphInfo paragraphInfo) {
-        Path.m5561addPathUv8p0NA$default(path, paragraphInfo.toGlobal(paragraphInfo.getParagraph().getPathForRange(paragraphInfo.toLocalIndex(i), paragraphInfo.toLocalIndex(i2))), 0L, 2, null);
+        Path.m5562addPathUv8p0NA$default(path, paragraphInfo.toGlobal(paragraphInfo.getParagraph().getPathForRange(paragraphInfo.toLocalIndex(i), paragraphInfo.toLocalIndex(i2))), 0L, 2, null);
         return Unit.INSTANCE;
     }
 
@@ -358,38 +358,38 @@ public final class MultiParagraph {
     }
 
     /* renamed from: getOffsetForPosition-k-4lQ0M  reason: not valid java name */
-    public final int m7298getOffsetForPositionk4lQ0M(long j) {
+    public final int m7299getOffsetForPositionk4lQ0M(long j) {
         ParagraphInfo paragraphInfo = this.paragraphInfoList.get(MultiParagraphKt.findParagraphByY(this.paragraphInfoList, Float.intBitsToFloat((int) (4294967295L & j))));
         if (paragraphInfo.getLength() == 0) {
             return paragraphInfo.getStartIndex();
         }
-        return paragraphInfo.toGlobalIndex(paragraphInfo.getParagraph().mo7250getOffsetForPositionk4lQ0M(paragraphInfo.m7314toLocalMKHz9U(j)));
+        return paragraphInfo.toGlobalIndex(paragraphInfo.getParagraph().mo7251getOffsetForPositionk4lQ0M(paragraphInfo.m7315toLocalMKHz9U(j)));
     }
 
     /* renamed from: getRangeForRect-8-6BmAI  reason: not valid java name */
-    public final long m7299getRangeForRect86BmAI(Rect rect, int i, TextInclusionStrategy textInclusionStrategy) {
+    public final long m7300getRangeForRect86BmAI(Rect rect, int i, TextInclusionStrategy textInclusionStrategy) {
         int findParagraphByY = MultiParagraphKt.findParagraphByY(this.paragraphInfoList, rect.getTop());
         if (this.paragraphInfoList.get(findParagraphByY).getBottom() >= rect.getBottom() || findParagraphByY == CollectionsKt.getLastIndex(this.paragraphInfoList)) {
             ParagraphInfo paragraphInfo = this.paragraphInfoList.get(findParagraphByY);
-            return ParagraphInfo.m7312toGlobalxdX6G0$default(paragraphInfo, paragraphInfo.getParagraph().mo7252getRangeForRect86BmAI(paragraphInfo.toLocal(rect), i, textInclusionStrategy), false, 1, null);
+            return ParagraphInfo.m7313toGlobalxdX6G0$default(paragraphInfo, paragraphInfo.getParagraph().mo7253getRangeForRect86BmAI(paragraphInfo.toLocal(rect), i, textInclusionStrategy), false, 1, null);
         }
         int findParagraphByY2 = MultiParagraphKt.findParagraphByY(this.paragraphInfoList, rect.getBottom());
-        long m7462getZerod9O1mEE = TextRange.Companion.m7462getZerod9O1mEE();
-        while (TextRange.m7450equalsimpl0(m7462getZerod9O1mEE, TextRange.Companion.m7462getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
+        long m7463getZerod9O1mEE = TextRange.Companion.m7463getZerod9O1mEE();
+        while (TextRange.m7451equalsimpl0(m7463getZerod9O1mEE, TextRange.Companion.m7463getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
             ParagraphInfo paragraphInfo2 = this.paragraphInfoList.get(findParagraphByY);
-            m7462getZerod9O1mEE = ParagraphInfo.m7312toGlobalxdX6G0$default(paragraphInfo2, paragraphInfo2.getParagraph().mo7252getRangeForRect86BmAI(paragraphInfo2.toLocal(rect), i, textInclusionStrategy), false, 1, null);
+            m7463getZerod9O1mEE = ParagraphInfo.m7313toGlobalxdX6G0$default(paragraphInfo2, paragraphInfo2.getParagraph().mo7253getRangeForRect86BmAI(paragraphInfo2.toLocal(rect), i, textInclusionStrategy), false, 1, null);
             findParagraphByY++;
         }
-        if (TextRange.m7450equalsimpl0(m7462getZerod9O1mEE, TextRange.Companion.m7462getZerod9O1mEE())) {
-            return TextRange.Companion.m7462getZerod9O1mEE();
+        if (TextRange.m7451equalsimpl0(m7463getZerod9O1mEE, TextRange.Companion.m7463getZerod9O1mEE())) {
+            return TextRange.Companion.m7463getZerod9O1mEE();
         }
-        long m7462getZerod9O1mEE2 = TextRange.Companion.m7462getZerod9O1mEE();
-        while (TextRange.m7450equalsimpl0(m7462getZerod9O1mEE2, TextRange.Companion.m7462getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
+        long m7463getZerod9O1mEE2 = TextRange.Companion.m7463getZerod9O1mEE();
+        while (TextRange.m7451equalsimpl0(m7463getZerod9O1mEE2, TextRange.Companion.m7463getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
             ParagraphInfo paragraphInfo3 = this.paragraphInfoList.get(findParagraphByY2);
-            m7462getZerod9O1mEE2 = ParagraphInfo.m7312toGlobalxdX6G0$default(paragraphInfo3, paragraphInfo3.getParagraph().mo7252getRangeForRect86BmAI(paragraphInfo3.toLocal(rect), i, textInclusionStrategy), false, 1, null);
+            m7463getZerod9O1mEE2 = ParagraphInfo.m7313toGlobalxdX6G0$default(paragraphInfo3, paragraphInfo3.getParagraph().mo7253getRangeForRect86BmAI(paragraphInfo3.toLocal(rect), i, textInclusionStrategy), false, 1, null);
             findParagraphByY2--;
         }
-        return TextRange.m7450equalsimpl0(m7462getZerod9O1mEE2, TextRange.Companion.m7462getZerod9O1mEE()) ? m7462getZerod9O1mEE : TextRangeKt.TextRange(TextRange.m7457getStartimpl(m7462getZerod9O1mEE), TextRange.m7452getEndimpl(m7462getZerod9O1mEE2));
+        return TextRange.m7451equalsimpl0(m7463getZerod9O1mEE2, TextRange.Companion.m7463getZerod9O1mEE()) ? m7463getZerod9O1mEE : TextRangeKt.TextRange(TextRange.m7458getStartimpl(m7463getZerod9O1mEE), TextRange.m7453getEndimpl(m7463getZerod9O1mEE2));
     }
 
     public final Rect getBoundingBox(int i) {
@@ -399,13 +399,13 @@ public final class MultiParagraph {
     }
 
     /* renamed from: fillBoundingBoxes-8ffj60Q  reason: not valid java name */
-    public final float[] m7297fillBoundingBoxes8ffj60Q(final long j, final float[] fArr, int i) {
-        requireIndexInRange(TextRange.m7455getMinimpl(j));
-        requireIndexInRangeInclusiveEnd(TextRange.m7454getMaximpl(j));
+    public final float[] m7298fillBoundingBoxes8ffj60Q(final long j, final float[] fArr, int i) {
+        requireIndexInRange(TextRange.m7456getMinimpl(j));
+        requireIndexInRangeInclusiveEnd(TextRange.m7455getMaximpl(j));
         final Ref.IntRef intRef = new Ref.IntRef();
         intRef.element = i;
         final Ref.FloatRef floatRef = new Ref.FloatRef();
-        MultiParagraphKt.m7305findParagraphsByRangeSbBc2M(this.paragraphInfoList, j, new Function1() { // from class: androidx.compose.ui.text.MultiParagraph$$ExternalSyntheticLambda0
+        MultiParagraphKt.m7306findParagraphsByRangeSbBc2M(this.paragraphInfoList, j, new Function1() { // from class: androidx.compose.ui.text.MultiParagraph$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit fillBoundingBoxes_8ffj60Q$lambda$19;
@@ -418,16 +418,16 @@ public final class MultiParagraph {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit fillBoundingBoxes_8ffj60Q$lambda$19(long j, float[] fArr, Ref.IntRef intRef, Ref.FloatRef floatRef, ParagraphInfo paragraphInfo) {
-        long TextRange = TextRangeKt.TextRange(paragraphInfo.toLocalIndex(paragraphInfo.getStartIndex() > TextRange.m7455getMinimpl(j) ? paragraphInfo.getStartIndex() : TextRange.m7455getMinimpl(j)), paragraphInfo.toLocalIndex(paragraphInfo.getEndIndex() < TextRange.m7454getMaximpl(j) ? paragraphInfo.getEndIndex() : TextRange.m7454getMaximpl(j)));
-        paragraphInfo.getParagraph().mo7248fillBoundingBoxes8ffj60Q(TextRange, fArr, intRef.element);
-        int m7453getLengthimpl = intRef.element + (TextRange.m7453getLengthimpl(TextRange) * 4);
-        for (int i = intRef.element; i < m7453getLengthimpl; i += 4) {
+        long TextRange = TextRangeKt.TextRange(paragraphInfo.toLocalIndex(paragraphInfo.getStartIndex() > TextRange.m7456getMinimpl(j) ? paragraphInfo.getStartIndex() : TextRange.m7456getMinimpl(j)), paragraphInfo.toLocalIndex(paragraphInfo.getEndIndex() < TextRange.m7455getMaximpl(j) ? paragraphInfo.getEndIndex() : TextRange.m7455getMaximpl(j)));
+        paragraphInfo.getParagraph().mo7249fillBoundingBoxes8ffj60Q(TextRange, fArr, intRef.element);
+        int m7454getLengthimpl = intRef.element + (TextRange.m7454getLengthimpl(TextRange) * 4);
+        for (int i = intRef.element; i < m7454getLengthimpl; i += 4) {
             int i2 = i + 1;
             fArr[i2] = fArr[i2] + floatRef.element;
             int i3 = i + 3;
             fArr[i3] = fArr[i3] + floatRef.element;
         }
-        intRef.element = m7453getLengthimpl;
+        intRef.element = m7454getLengthimpl;
         floatRef.element += paragraphInfo.getParagraph().getHeight();
         return Unit.INSTANCE;
     }
@@ -469,7 +469,7 @@ public final class MultiParagraph {
     }
 
     /* renamed from: getWordBoundary--jx7JFs  reason: not valid java name */
-    public final long m7300getWordBoundaryjx7JFs(int i) {
+    public final long m7301getWordBoundaryjx7JFs(int i) {
         int findParagraphByIndex;
         requireIndexInRangeInclusiveEnd(i);
         if (i == getAnnotatedString().length()) {
@@ -478,7 +478,7 @@ public final class MultiParagraph {
             findParagraphByIndex = MultiParagraphKt.findParagraphByIndex(this.paragraphInfoList, i);
         }
         ParagraphInfo paragraphInfo = this.paragraphInfoList.get(findParagraphByIndex);
-        return paragraphInfo.m7313toGlobalxdX6G0(paragraphInfo.getParagraph().mo7253getWordBoundaryjx7JFs(paragraphInfo.toLocalIndex(i)), false);
+        return paragraphInfo.m7314toGlobalxdX6G0(paragraphInfo.getParagraph().mo7254getWordBoundaryjx7JFs(paragraphInfo.toLocalIndex(i)), false);
     }
 
     public final Rect getCursorRect(int i) {

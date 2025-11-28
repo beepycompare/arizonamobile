@@ -6,7 +6,7 @@ import io.appmetrica.analytics.ecommerce.ECommerceScreen;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.fl  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0252fl extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */

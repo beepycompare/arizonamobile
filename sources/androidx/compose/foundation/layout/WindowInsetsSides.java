@@ -25,45 +25,45 @@ public final class WindowInsetsSides {
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ WindowInsetsSides m930boximpl(int i) {
+    public static final /* synthetic */ WindowInsetsSides m931boximpl(int i) {
         return new WindowInsetsSides(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m931constructorimpl(int i) {
+    private static int m932constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m932equalsimpl(int i, Object obj) {
-        return (obj instanceof WindowInsetsSides) && i == ((WindowInsetsSides) obj).m939unboximpl();
+    public static boolean m933equalsimpl(int i, Object obj) {
+        return (obj instanceof WindowInsetsSides) && i == ((WindowInsetsSides) obj).m940unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m933equalsimpl0(int i, int i2) {
+    public static final boolean m934equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hasAny-bkgdKaI$foundation_layout  reason: not valid java name */
-    public static final boolean m934hasAnybkgdKaI$foundation_layout(int i, int i2) {
+    public static final boolean m935hasAnybkgdKaI$foundation_layout(int i, int i2) {
         return (i & i2) != 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m935hashCodeimpl(int i) {
+    public static int m936hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m932equalsimpl(this.value, obj);
+        return m933equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m935hashCodeimpl(this.value);
+        return m936hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m939unboximpl() {
+    public final /* synthetic */ int m940unboximpl() {
         return this.value;
     }
 
@@ -72,21 +72,21 @@ public final class WindowInsetsSides {
     }
 
     /* renamed from: plus-gK_yJZ4  reason: not valid java name */
-    public static final int m936plusgK_yJZ4(int i, int i2) {
-        return m931constructorimpl(i | i2);
+    public static final int m937plusgK_yJZ4(int i, int i2) {
+        return m932constructorimpl(i | i2);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m937toStringimpl(int i) {
-        return "WindowInsetsSides(" + m938valueToStringimpl(i) + ')';
+    public static String m938toStringimpl(int i) {
+        return "WindowInsetsSides(" + m939valueToStringimpl(i) + ')';
     }
 
     public String toString() {
-        return m937toStringimpl(this.value);
+        return m938toStringimpl(this.value);
     }
 
     /* renamed from: valueToString-impl  reason: not valid java name */
-    private static final String m938valueToStringimpl(int i) {
+    private static final String m939valueToStringimpl(int i) {
         StringBuilder sb = new StringBuilder();
         int i2 = Start;
         if ((i & i2) == i2) {
@@ -136,86 +136,86 @@ public final class WindowInsetsSides {
         }
 
         /* renamed from: getAllowLeftInLtr-JoeWqyM$foundation_layout  reason: not valid java name */
-        public final int m940getAllowLeftInLtrJoeWqyM$foundation_layout() {
+        public final int m941getAllowLeftInLtrJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowLeftInLtr;
         }
 
         /* renamed from: getAllowRightInLtr-JoeWqyM$foundation_layout  reason: not valid java name */
-        public final int m942getAllowRightInLtrJoeWqyM$foundation_layout() {
+        public final int m943getAllowRightInLtrJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowRightInLtr;
         }
 
         /* renamed from: getAllowLeftInRtl-JoeWqyM$foundation_layout  reason: not valid java name */
-        public final int m941getAllowLeftInRtlJoeWqyM$foundation_layout() {
+        public final int m942getAllowLeftInRtlJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowLeftInRtl;
         }
 
         /* renamed from: getAllowRightInRtl-JoeWqyM$foundation_layout  reason: not valid java name */
-        public final int m943getAllowRightInRtlJoeWqyM$foundation_layout() {
+        public final int m944getAllowRightInRtlJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowRightInRtl;
         }
 
         /* renamed from: getStart-JoeWqyM  reason: not valid java name */
-        public final int m949getStartJoeWqyM() {
+        public final int m950getStartJoeWqyM() {
             return WindowInsetsSides.Start;
         }
 
         /* renamed from: getEnd-JoeWqyM  reason: not valid java name */
-        public final int m945getEndJoeWqyM() {
+        public final int m946getEndJoeWqyM() {
             return WindowInsetsSides.End;
         }
 
         /* renamed from: getTop-JoeWqyM  reason: not valid java name */
-        public final int m950getTopJoeWqyM() {
+        public final int m951getTopJoeWqyM() {
             return WindowInsetsSides.Top;
         }
 
         /* renamed from: getBottom-JoeWqyM  reason: not valid java name */
-        public final int m944getBottomJoeWqyM() {
+        public final int m945getBottomJoeWqyM() {
             return WindowInsetsSides.Bottom;
         }
 
         /* renamed from: getLeft-JoeWqyM  reason: not valid java name */
-        public final int m947getLeftJoeWqyM() {
+        public final int m948getLeftJoeWqyM() {
             return WindowInsetsSides.Left;
         }
 
         /* renamed from: getRight-JoeWqyM  reason: not valid java name */
-        public final int m948getRightJoeWqyM() {
+        public final int m949getRightJoeWqyM() {
             return WindowInsetsSides.Right;
         }
 
         /* renamed from: getHorizontal-JoeWqyM  reason: not valid java name */
-        public final int m946getHorizontalJoeWqyM() {
+        public final int m947getHorizontalJoeWqyM() {
             return WindowInsetsSides.Horizontal;
         }
 
         /* renamed from: getVertical-JoeWqyM  reason: not valid java name */
-        public final int m951getVerticalJoeWqyM() {
+        public final int m952getVerticalJoeWqyM() {
             return WindowInsetsSides.Vertical;
         }
     }
 
     static {
-        int m931constructorimpl = m931constructorimpl(8);
-        AllowLeftInLtr = m931constructorimpl;
-        int m931constructorimpl2 = m931constructorimpl(4);
-        AllowRightInLtr = m931constructorimpl2;
-        int m931constructorimpl3 = m931constructorimpl(2);
-        AllowLeftInRtl = m931constructorimpl3;
-        int m931constructorimpl4 = m931constructorimpl(1);
-        AllowRightInRtl = m931constructorimpl4;
-        Start = m936plusgK_yJZ4(m931constructorimpl, m931constructorimpl4);
-        End = m936plusgK_yJZ4(m931constructorimpl2, m931constructorimpl3);
-        int m931constructorimpl5 = m931constructorimpl(16);
-        Top = m931constructorimpl5;
-        int m931constructorimpl6 = m931constructorimpl(32);
-        Bottom = m931constructorimpl6;
-        int m936plusgK_yJZ4 = m936plusgK_yJZ4(m931constructorimpl, m931constructorimpl3);
-        Left = m936plusgK_yJZ4;
-        int m936plusgK_yJZ42 = m936plusgK_yJZ4(m931constructorimpl2, m931constructorimpl4);
-        Right = m936plusgK_yJZ42;
-        Horizontal = m936plusgK_yJZ4(m936plusgK_yJZ4, m936plusgK_yJZ42);
-        Vertical = m936plusgK_yJZ4(m931constructorimpl5, m931constructorimpl6);
+        int m932constructorimpl = m932constructorimpl(8);
+        AllowLeftInLtr = m932constructorimpl;
+        int m932constructorimpl2 = m932constructorimpl(4);
+        AllowRightInLtr = m932constructorimpl2;
+        int m932constructorimpl3 = m932constructorimpl(2);
+        AllowLeftInRtl = m932constructorimpl3;
+        int m932constructorimpl4 = m932constructorimpl(1);
+        AllowRightInRtl = m932constructorimpl4;
+        Start = m937plusgK_yJZ4(m932constructorimpl, m932constructorimpl4);
+        End = m937plusgK_yJZ4(m932constructorimpl2, m932constructorimpl3);
+        int m932constructorimpl5 = m932constructorimpl(16);
+        Top = m932constructorimpl5;
+        int m932constructorimpl6 = m932constructorimpl(32);
+        Bottom = m932constructorimpl6;
+        int m937plusgK_yJZ4 = m937plusgK_yJZ4(m932constructorimpl, m932constructorimpl3);
+        Left = m937plusgK_yJZ4;
+        int m937plusgK_yJZ42 = m937plusgK_yJZ4(m932constructorimpl2, m932constructorimpl4);
+        Right = m937plusgK_yJZ42;
+        Horizontal = m937plusgK_yJZ4(m937plusgK_yJZ4, m937plusgK_yJZ42);
+        Vertical = m937plusgK_yJZ4(m932constructorimpl5, m932constructorimpl6);
     }
 }

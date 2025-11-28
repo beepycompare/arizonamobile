@@ -22,24 +22,24 @@ public final class ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 imp
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreScroll-OzD1aCk */
-    public long mo928onPreScrollOzD1aCk(long j, int i) {
+    public long mo929onPreScrollOzD1aCk(long j, int i) {
         if (this.this$0.getCanScroll().invoke().booleanValue()) {
             int i2 = (int) (4294967295L & j);
             if (Float.intBitsToFloat(i2) <= 0.0f) {
                 float heightOffset = this.this$0.getState().getHeightOffset();
                 this.this$0.getState().setHeightOffset(this.this$0.getState().getHeightOffset() + Float.intBitsToFloat(i2));
                 if (heightOffset != this.this$0.getState().getHeightOffset()) {
-                    return Offset.m5029copydBAh8RU$default(j, 0.0f, 0.0f, 2, null);
+                    return Offset.m5030copydBAh8RU$default(j, 0.0f, 0.0f, 2, null);
                 }
-                return Offset.Companion.m5051getZeroF1C5BW0();
+                return Offset.Companion.m5052getZeroF1C5BW0();
             }
         }
-        return Offset.Companion.m5051getZeroF1C5BW0();
+        return Offset.Companion.m5052getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostScroll-DzOQY0M */
-    public long mo577onPostScrollDzOQY0M(long j, long j2, int i) {
+    public long mo578onPostScrollDzOQY0M(long j, long j2, int i) {
         if (this.this$0.getCanScroll().invoke().booleanValue()) {
             TopAppBarState state = this.this$0.getState();
             int i2 = (int) (j & 4294967295L);
@@ -48,17 +48,17 @@ public final class ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 imp
             if (Float.intBitsToFloat(i3) < 0.0f || Float.intBitsToFloat(i2) < 0.0f) {
                 float heightOffset = this.this$0.getState().getHeightOffset();
                 this.this$0.getState().setHeightOffset(this.this$0.getState().getHeightOffset() + Float.intBitsToFloat(i2));
-                return Offset.m5027constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(this.this$0.getState().getHeightOffset() - heightOffset) & 4294967295L));
+                return Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(this.this$0.getState().getHeightOffset() - heightOffset) & 4294967295L));
             } else if (Float.intBitsToFloat(i3) > 0.0f) {
                 float heightOffset2 = this.this$0.getState().getHeightOffset();
                 this.this$0.getState().setHeightOffset(this.this$0.getState().getHeightOffset() + Float.intBitsToFloat(i3));
                 float heightOffset3 = this.this$0.getState().getHeightOffset() - heightOffset2;
-                return Offset.m5027constructorimpl((Float.floatToRawIntBits(heightOffset3) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+                return Offset.m5028constructorimpl((Float.floatToRawIntBits(heightOffset3) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
             } else {
-                return Offset.Companion.m5051getZeroF1C5BW0();
+                return Offset.Companion.m5052getZeroF1C5BW0();
             }
         }
-        return Offset.Companion.m5051getZeroF1C5BW0();
+        return Offset.Companion.m5052getZeroF1C5BW0();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0088, code lost:
@@ -71,12 +71,12 @@ public final class ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 imp
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo576onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+    public Object mo577onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
         ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1 exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1;
         int i;
         ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 exitUntilCollapsedScrollBehavior$nestedScrollConnection$1;
         long j3;
-        long m8242unboximpl;
+        long m8243unboximpl;
         if (continuation instanceof ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1) {
             exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1 = (ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1) continuation;
             if ((exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -87,22 +87,22 @@ public final class ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 imp
                 i = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    if (Velocity.m8234getYimpl(j2) > 0.0f) {
+                    if (Velocity.m8235getYimpl(j2) > 0.0f) {
                         this.this$0.getState().setContentOffset(0.0f);
                     }
                     exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.J$0 = j2;
                     exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.label = 1;
                     exitUntilCollapsedScrollBehavior$nestedScrollConnection$1 = this;
-                    obj = super.mo576onPostFlingRZ2iAVY(j, j2, exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12);
+                    obj = super.mo577onPostFlingRZ2iAVY(j, j2, exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12);
                     if (obj != coroutine_suspended) {
                         j3 = j2;
                     }
                     return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        m8242unboximpl = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.J$0;
+                        m8243unboximpl = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.J$0;
                         ResultKt.throwOnFailure(obj);
-                        return Velocity.m8224boximpl(Velocity.m8237plusAH228Gc(m8242unboximpl, ((Velocity) obj).m8242unboximpl()));
+                        return Velocity.m8225boximpl(Velocity.m8238plusAH228Gc(m8243unboximpl, ((Velocity) obj).m8243unboximpl()));
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -110,14 +110,14 @@ public final class ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 imp
                     ResultKt.throwOnFailure(obj);
                     exitUntilCollapsedScrollBehavior$nestedScrollConnection$1 = this;
                 }
-                m8242unboximpl = ((Velocity) obj).m8242unboximpl();
+                m8243unboximpl = ((Velocity) obj).m8243unboximpl();
                 TopAppBarState state = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1.this$0.getState();
-                float m8234getYimpl = Velocity.m8234getYimpl(j3);
+                float m8235getYimpl = Velocity.m8235getYimpl(j3);
                 DecayAnimationSpec<Float> flingAnimationSpec = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1.this$0.getFlingAnimationSpec();
                 AnimationSpec<Float> snapAnimationSpec = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1.this$0.getSnapAnimationSpec();
-                exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.J$0 = m8242unboximpl;
+                exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.J$0 = m8243unboximpl;
                 exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12.label = 2;
-                obj = AppBarKt.settleAppBar(state, m8234getYimpl, flingAnimationSpec, snapAnimationSpec, exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12);
+                obj = AppBarKt.settleAppBar(state, m8235getYimpl, flingAnimationSpec, snapAnimationSpec, exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$12);
             }
         }
         exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1 = new ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$1(this, continuation);
@@ -127,13 +127,13 @@ public final class ExitUntilCollapsedScrollBehavior$nestedScrollConnection$1 imp
         i = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$122.label;
         if (i != 0) {
         }
-        m8242unboximpl = ((Velocity) obj2).m8242unboximpl();
+        m8243unboximpl = ((Velocity) obj2).m8243unboximpl();
         TopAppBarState state2 = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1.this$0.getState();
-        float m8234getYimpl2 = Velocity.m8234getYimpl(j3);
+        float m8235getYimpl2 = Velocity.m8235getYimpl(j3);
         DecayAnimationSpec<Float> flingAnimationSpec2 = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1.this$0.getFlingAnimationSpec();
         AnimationSpec<Float> snapAnimationSpec2 = exitUntilCollapsedScrollBehavior$nestedScrollConnection$1.this$0.getSnapAnimationSpec();
-        exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$122.J$0 = m8242unboximpl;
+        exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$122.J$0 = m8243unboximpl;
         exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$122.label = 2;
-        obj2 = AppBarKt.settleAppBar(state2, m8234getYimpl2, flingAnimationSpec2, snapAnimationSpec2, exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$122);
+        obj2 = AppBarKt.settleAppBar(state2, m8235getYimpl2, flingAnimationSpec2, snapAnimationSpec2, exitUntilCollapsedScrollBehavior$nestedScrollConnection$1$onPostFling$122);
     }
 }

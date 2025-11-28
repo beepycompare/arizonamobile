@@ -107,52 +107,52 @@ public final class TextFieldColors {
     }
 
     /* renamed from: getFocusedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3105getFocusedTextColor0d7_KjU() {
+    public final long m3106getFocusedTextColor0d7_KjU() {
         return this.focusedTextColor;
     }
 
     /* renamed from: getUnfocusedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3115getUnfocusedTextColor0d7_KjU() {
+    public final long m3116getUnfocusedTextColor0d7_KjU() {
         return this.unfocusedTextColor;
     }
 
     /* renamed from: getDisabledTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3084getDisabledTextColor0d7_KjU() {
+    public final long m3085getDisabledTextColor0d7_KjU() {
         return this.disabledTextColor;
     }
 
     /* renamed from: getErrorTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3095getErrorTextColor0d7_KjU() {
+    public final long m3096getErrorTextColor0d7_KjU() {
         return this.errorTextColor;
     }
 
     /* renamed from: getFocusedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m3097getFocusedContainerColor0d7_KjU() {
+    public final long m3098getFocusedContainerColor0d7_KjU() {
         return this.focusedContainerColor;
     }
 
     /* renamed from: getUnfocusedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m3107getUnfocusedContainerColor0d7_KjU() {
+    public final long m3108getUnfocusedContainerColor0d7_KjU() {
         return this.unfocusedContainerColor;
     }
 
     /* renamed from: getDisabledContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m3076getDisabledContainerColor0d7_KjU() {
+    public final long m3077getDisabledContainerColor0d7_KjU() {
         return this.disabledContainerColor;
     }
 
     /* renamed from: getErrorContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m3086getErrorContainerColor0d7_KjU() {
+    public final long m3087getErrorContainerColor0d7_KjU() {
         return this.errorContainerColor;
     }
 
     /* renamed from: getCursorColor-0d7_KjU  reason: not valid java name */
-    public final long m3075getCursorColor0d7_KjU() {
+    public final long m3076getCursorColor0d7_KjU() {
         return this.cursorColor;
     }
 
     /* renamed from: getErrorCursorColor-0d7_KjU  reason: not valid java name */
-    public final long m3087getErrorCursorColor0d7_KjU() {
+    public final long m3088getErrorCursorColor0d7_KjU() {
         return this.errorCursorColor;
     }
 
@@ -161,167 +161,167 @@ public final class TextFieldColors {
     }
 
     /* renamed from: getFocusedIndicatorColor-0d7_KjU  reason: not valid java name */
-    public final long m3098getFocusedIndicatorColor0d7_KjU() {
+    public final long m3099getFocusedIndicatorColor0d7_KjU() {
         return this.focusedIndicatorColor;
     }
 
     /* renamed from: getUnfocusedIndicatorColor-0d7_KjU  reason: not valid java name */
-    public final long m3108getUnfocusedIndicatorColor0d7_KjU() {
+    public final long m3109getUnfocusedIndicatorColor0d7_KjU() {
         return this.unfocusedIndicatorColor;
     }
 
     /* renamed from: getDisabledIndicatorColor-0d7_KjU  reason: not valid java name */
-    public final long m3077getDisabledIndicatorColor0d7_KjU() {
+    public final long m3078getDisabledIndicatorColor0d7_KjU() {
         return this.disabledIndicatorColor;
     }
 
     /* renamed from: getErrorIndicatorColor-0d7_KjU  reason: not valid java name */
-    public final long m3088getErrorIndicatorColor0d7_KjU() {
+    public final long m3089getErrorIndicatorColor0d7_KjU() {
         return this.errorIndicatorColor;
     }
 
     /* renamed from: getFocusedLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3100getFocusedLeadingIconColor0d7_KjU() {
+    public final long m3101getFocusedLeadingIconColor0d7_KjU() {
         return this.focusedLeadingIconColor;
     }
 
     /* renamed from: getUnfocusedLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3110getUnfocusedLeadingIconColor0d7_KjU() {
+    public final long m3111getUnfocusedLeadingIconColor0d7_KjU() {
         return this.unfocusedLeadingIconColor;
     }
 
     /* renamed from: getDisabledLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3079getDisabledLeadingIconColor0d7_KjU() {
+    public final long m3080getDisabledLeadingIconColor0d7_KjU() {
         return this.disabledLeadingIconColor;
     }
 
     /* renamed from: getErrorLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3090getErrorLeadingIconColor0d7_KjU() {
+    public final long m3091getErrorLeadingIconColor0d7_KjU() {
         return this.errorLeadingIconColor;
     }
 
     /* renamed from: getFocusedTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3106getFocusedTrailingIconColor0d7_KjU() {
+    public final long m3107getFocusedTrailingIconColor0d7_KjU() {
         return this.focusedTrailingIconColor;
     }
 
     /* renamed from: getUnfocusedTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3116getUnfocusedTrailingIconColor0d7_KjU() {
+    public final long m3117getUnfocusedTrailingIconColor0d7_KjU() {
         return this.unfocusedTrailingIconColor;
     }
 
     /* renamed from: getDisabledTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3085getDisabledTrailingIconColor0d7_KjU() {
+    public final long m3086getDisabledTrailingIconColor0d7_KjU() {
         return this.disabledTrailingIconColor;
     }
 
     /* renamed from: getErrorTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m3096getErrorTrailingIconColor0d7_KjU() {
+    public final long m3097getErrorTrailingIconColor0d7_KjU() {
         return this.errorTrailingIconColor;
     }
 
     /* renamed from: getFocusedLabelColor-0d7_KjU  reason: not valid java name */
-    public final long m3099getFocusedLabelColor0d7_KjU() {
+    public final long m3100getFocusedLabelColor0d7_KjU() {
         return this.focusedLabelColor;
     }
 
     /* renamed from: getUnfocusedLabelColor-0d7_KjU  reason: not valid java name */
-    public final long m3109getUnfocusedLabelColor0d7_KjU() {
+    public final long m3110getUnfocusedLabelColor0d7_KjU() {
         return this.unfocusedLabelColor;
     }
 
     /* renamed from: getDisabledLabelColor-0d7_KjU  reason: not valid java name */
-    public final long m3078getDisabledLabelColor0d7_KjU() {
+    public final long m3079getDisabledLabelColor0d7_KjU() {
         return this.disabledLabelColor;
     }
 
     /* renamed from: getErrorLabelColor-0d7_KjU  reason: not valid java name */
-    public final long m3089getErrorLabelColor0d7_KjU() {
+    public final long m3090getErrorLabelColor0d7_KjU() {
         return this.errorLabelColor;
     }
 
     /* renamed from: getFocusedPlaceholderColor-0d7_KjU  reason: not valid java name */
-    public final long m3101getFocusedPlaceholderColor0d7_KjU() {
+    public final long m3102getFocusedPlaceholderColor0d7_KjU() {
         return this.focusedPlaceholderColor;
     }
 
     /* renamed from: getUnfocusedPlaceholderColor-0d7_KjU  reason: not valid java name */
-    public final long m3111getUnfocusedPlaceholderColor0d7_KjU() {
+    public final long m3112getUnfocusedPlaceholderColor0d7_KjU() {
         return this.unfocusedPlaceholderColor;
     }
 
     /* renamed from: getDisabledPlaceholderColor-0d7_KjU  reason: not valid java name */
-    public final long m3080getDisabledPlaceholderColor0d7_KjU() {
+    public final long m3081getDisabledPlaceholderColor0d7_KjU() {
         return this.disabledPlaceholderColor;
     }
 
     /* renamed from: getErrorPlaceholderColor-0d7_KjU  reason: not valid java name */
-    public final long m3091getErrorPlaceholderColor0d7_KjU() {
+    public final long m3092getErrorPlaceholderColor0d7_KjU() {
         return this.errorPlaceholderColor;
     }
 
     /* renamed from: getFocusedSupportingTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3104getFocusedSupportingTextColor0d7_KjU() {
+    public final long m3105getFocusedSupportingTextColor0d7_KjU() {
         return this.focusedSupportingTextColor;
     }
 
     /* renamed from: getUnfocusedSupportingTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3114getUnfocusedSupportingTextColor0d7_KjU() {
+    public final long m3115getUnfocusedSupportingTextColor0d7_KjU() {
         return this.unfocusedSupportingTextColor;
     }
 
     /* renamed from: getDisabledSupportingTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3083getDisabledSupportingTextColor0d7_KjU() {
+    public final long m3084getDisabledSupportingTextColor0d7_KjU() {
         return this.disabledSupportingTextColor;
     }
 
     /* renamed from: getErrorSupportingTextColor-0d7_KjU  reason: not valid java name */
-    public final long m3094getErrorSupportingTextColor0d7_KjU() {
+    public final long m3095getErrorSupportingTextColor0d7_KjU() {
         return this.errorSupportingTextColor;
     }
 
     /* renamed from: getFocusedPrefixColor-0d7_KjU  reason: not valid java name */
-    public final long m3102getFocusedPrefixColor0d7_KjU() {
+    public final long m3103getFocusedPrefixColor0d7_KjU() {
         return this.focusedPrefixColor;
     }
 
     /* renamed from: getUnfocusedPrefixColor-0d7_KjU  reason: not valid java name */
-    public final long m3112getUnfocusedPrefixColor0d7_KjU() {
+    public final long m3113getUnfocusedPrefixColor0d7_KjU() {
         return this.unfocusedPrefixColor;
     }
 
     /* renamed from: getDisabledPrefixColor-0d7_KjU  reason: not valid java name */
-    public final long m3081getDisabledPrefixColor0d7_KjU() {
+    public final long m3082getDisabledPrefixColor0d7_KjU() {
         return this.disabledPrefixColor;
     }
 
     /* renamed from: getErrorPrefixColor-0d7_KjU  reason: not valid java name */
-    public final long m3092getErrorPrefixColor0d7_KjU() {
+    public final long m3093getErrorPrefixColor0d7_KjU() {
         return this.errorPrefixColor;
     }
 
     /* renamed from: getFocusedSuffixColor-0d7_KjU  reason: not valid java name */
-    public final long m3103getFocusedSuffixColor0d7_KjU() {
+    public final long m3104getFocusedSuffixColor0d7_KjU() {
         return this.focusedSuffixColor;
     }
 
     /* renamed from: getUnfocusedSuffixColor-0d7_KjU  reason: not valid java name */
-    public final long m3113getUnfocusedSuffixColor0d7_KjU() {
+    public final long m3114getUnfocusedSuffixColor0d7_KjU() {
         return this.unfocusedSuffixColor;
     }
 
     /* renamed from: getDisabledSuffixColor-0d7_KjU  reason: not valid java name */
-    public final long m3082getDisabledSuffixColor0d7_KjU() {
+    public final long m3083getDisabledSuffixColor0d7_KjU() {
         return this.disabledSuffixColor;
     }
 
     /* renamed from: getErrorSuffixColor-0d7_KjU  reason: not valid java name */
-    public final long m3093getErrorSuffixColor0d7_KjU() {
+    public final long m3094getErrorSuffixColor0d7_KjU() {
         return this.errorSuffixColor;
     }
 
     /* renamed from: copy-ejIjP34$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldColors m3071copyejIjP34$default(TextFieldColors textFieldColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, int i, int i2, Object obj) {
+    public static /* synthetic */ TextFieldColors m3072copyejIjP34$default(TextFieldColors textFieldColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, int i, int i2, Object obj) {
         long j43;
         long j44;
         long j45 = (i & 1) != 0 ? textFieldColors.focusedTextColor : j;
@@ -337,11 +337,11 @@ public final class TextFieldColors {
             j43 = j45;
             j44 = j7;
         }
-        return textFieldColors.m3073copyejIjP34(j43, j46, j47, j48, j49, j50, j44, (i & 128) != 0 ? textFieldColors.errorContainerColor : j8, (i & 256) != 0 ? textFieldColors.cursorColor : j9, (i & 512) != 0 ? textFieldColors.errorCursorColor : j10, (i & 1024) != 0 ? textFieldColors.textSelectionColors : textSelectionColors, (i & 2048) != 0 ? textFieldColors.focusedIndicatorColor : j11, (i & 4096) != 0 ? textFieldColors.unfocusedIndicatorColor : j12, (i & 8192) != 0 ? textFieldColors.disabledIndicatorColor : j13, (i & 16384) != 0 ? textFieldColors.errorIndicatorColor : j14, (i & 32768) != 0 ? textFieldColors.focusedLeadingIconColor : j15, (i & 65536) != 0 ? textFieldColors.unfocusedLeadingIconColor : j16, (i & 131072) != 0 ? textFieldColors.disabledLeadingIconColor : j17, (i & 262144) != 0 ? textFieldColors.errorLeadingIconColor : j18, (i & 524288) != 0 ? textFieldColors.focusedTrailingIconColor : j19, (i & 1048576) != 0 ? textFieldColors.unfocusedTrailingIconColor : j20, (i & 2097152) != 0 ? textFieldColors.disabledTrailingIconColor : j21, (i & 4194304) != 0 ? textFieldColors.errorTrailingIconColor : j22, (i & 8388608) != 0 ? textFieldColors.focusedLabelColor : j23, (i & 16777216) != 0 ? textFieldColors.unfocusedLabelColor : j24, (i & 33554432) != 0 ? textFieldColors.disabledLabelColor : j25, (i & 67108864) != 0 ? textFieldColors.errorLabelColor : j26, (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? textFieldColors.focusedPlaceholderColor : j27, (i & 268435456) != 0 ? textFieldColors.unfocusedPlaceholderColor : j28, (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? textFieldColors.disabledPlaceholderColor : j29, (i & 1073741824) != 0 ? textFieldColors.errorPlaceholderColor : j30, (i & Integer.MIN_VALUE) != 0 ? textFieldColors.focusedSupportingTextColor : j31, (i2 & 1) != 0 ? textFieldColors.unfocusedSupportingTextColor : j32, (i2 & 2) != 0 ? textFieldColors.disabledSupportingTextColor : j33, (i2 & 4) != 0 ? textFieldColors.errorSupportingTextColor : j34, (i2 & 8) != 0 ? textFieldColors.focusedPrefixColor : j35, (i2 & 16) != 0 ? textFieldColors.unfocusedPrefixColor : j36, (i2 & 32) != 0 ? textFieldColors.disabledPrefixColor : j37, (i2 & 64) != 0 ? textFieldColors.errorPrefixColor : j38, (i2 & 128) != 0 ? textFieldColors.focusedSuffixColor : j39, (i2 & 256) != 0 ? textFieldColors.unfocusedSuffixColor : j40, (i2 & 512) != 0 ? textFieldColors.disabledSuffixColor : j41, (i2 & 1024) != 0 ? textFieldColors.errorSuffixColor : j42);
+        return textFieldColors.m3074copyejIjP34(j43, j46, j47, j48, j49, j50, j44, (i & 128) != 0 ? textFieldColors.errorContainerColor : j8, (i & 256) != 0 ? textFieldColors.cursorColor : j9, (i & 512) != 0 ? textFieldColors.errorCursorColor : j10, (i & 1024) != 0 ? textFieldColors.textSelectionColors : textSelectionColors, (i & 2048) != 0 ? textFieldColors.focusedIndicatorColor : j11, (i & 4096) != 0 ? textFieldColors.unfocusedIndicatorColor : j12, (i & 8192) != 0 ? textFieldColors.disabledIndicatorColor : j13, (i & 16384) != 0 ? textFieldColors.errorIndicatorColor : j14, (i & 32768) != 0 ? textFieldColors.focusedLeadingIconColor : j15, (i & 65536) != 0 ? textFieldColors.unfocusedLeadingIconColor : j16, (i & 131072) != 0 ? textFieldColors.disabledLeadingIconColor : j17, (i & 262144) != 0 ? textFieldColors.errorLeadingIconColor : j18, (i & 524288) != 0 ? textFieldColors.focusedTrailingIconColor : j19, (i & 1048576) != 0 ? textFieldColors.unfocusedTrailingIconColor : j20, (i & 2097152) != 0 ? textFieldColors.disabledTrailingIconColor : j21, (i & 4194304) != 0 ? textFieldColors.errorTrailingIconColor : j22, (i & 8388608) != 0 ? textFieldColors.focusedLabelColor : j23, (i & 16777216) != 0 ? textFieldColors.unfocusedLabelColor : j24, (i & 33554432) != 0 ? textFieldColors.disabledLabelColor : j25, (i & 67108864) != 0 ? textFieldColors.errorLabelColor : j26, (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? textFieldColors.focusedPlaceholderColor : j27, (i & 268435456) != 0 ? textFieldColors.unfocusedPlaceholderColor : j28, (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? textFieldColors.disabledPlaceholderColor : j29, (i & 1073741824) != 0 ? textFieldColors.errorPlaceholderColor : j30, (i & Integer.MIN_VALUE) != 0 ? textFieldColors.focusedSupportingTextColor : j31, (i2 & 1) != 0 ? textFieldColors.unfocusedSupportingTextColor : j32, (i2 & 2) != 0 ? textFieldColors.disabledSupportingTextColor : j33, (i2 & 4) != 0 ? textFieldColors.errorSupportingTextColor : j34, (i2 & 8) != 0 ? textFieldColors.focusedPrefixColor : j35, (i2 & 16) != 0 ? textFieldColors.unfocusedPrefixColor : j36, (i2 & 32) != 0 ? textFieldColors.disabledPrefixColor : j37, (i2 & 64) != 0 ? textFieldColors.errorPrefixColor : j38, (i2 & 128) != 0 ? textFieldColors.focusedSuffixColor : j39, (i2 & 256) != 0 ? textFieldColors.unfocusedSuffixColor : j40, (i2 & 512) != 0 ? textFieldColors.disabledSuffixColor : j41, (i2 & 1024) != 0 ? textFieldColors.errorSuffixColor : j42);
     }
 
     /* renamed from: copy-ejIjP34  reason: not valid java name */
-    public final TextFieldColors m3073copyejIjP34(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42) {
+    public final TextFieldColors m3074copyejIjP34(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42) {
         return new TextFieldColors(j != 16 ? j : this.focusedTextColor, j2 != 16 ? j2 : this.unfocusedTextColor, j3 != 16 ? j3 : this.disabledTextColor, j4 != 16 ? j4 : this.errorTextColor, j5 != 16 ? j5 : this.focusedContainerColor, j6 != 16 ? j6 : this.unfocusedContainerColor, j7 != 16 ? j7 : this.disabledContainerColor, j8 != 16 ? j8 : this.errorContainerColor, j9 != 16 ? j9 : this.cursorColor, j10 != 16 ? j10 : this.errorCursorColor, takeOrElse$material3(textSelectionColors, new Function0() { // from class: androidx.compose.material3.TextFieldColors$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
@@ -357,7 +357,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: leadingIconColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3119leadingIconColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3120leadingIconColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorLeadingIconColor;
@@ -371,7 +371,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: trailingIconColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3125trailingIconColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3126trailingIconColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorTrailingIconColor;
@@ -385,7 +385,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: indicatorColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3117indicatorColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3118indicatorColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorIndicatorColor;
@@ -399,7 +399,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: containerColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3072containerColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3073containerColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorContainerColor;
@@ -413,7 +413,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: placeholderColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3120placeholderColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3121placeholderColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorPlaceholderColor;
@@ -427,7 +427,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: labelColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3118labelColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3119labelColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorLabelColor;
@@ -441,7 +441,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: textColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3124textColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3125textColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorTextColor;
@@ -455,7 +455,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: supportingTextColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3123supportingTextColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3124supportingTextColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorSupportingTextColor;
@@ -469,7 +469,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: prefixColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3121prefixColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3122prefixColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorPrefixColor;
@@ -483,7 +483,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: suffixColor-XeAY9LY$material3  reason: not valid java name */
-    public final long m3122suffixColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
+    public final long m3123suffixColorXeAY9LY$material3(boolean z, boolean z2, boolean z3) {
         if (z) {
             if (z2) {
                 return this.errorSuffixColor;
@@ -497,7 +497,7 @@ public final class TextFieldColors {
     }
 
     /* renamed from: cursorColor-vNxB06k$material3  reason: not valid java name */
-    public final long m3074cursorColorvNxB06k$material3(boolean z) {
+    public final long m3075cursorColorvNxB06k$material3(boolean z) {
         return z ? this.errorCursorColor : this.cursorColor;
     }
 
@@ -509,10 +509,10 @@ public final class TextFieldColors {
             return false;
         }
         TextFieldColors textFieldColors = (TextFieldColors) obj;
-        return Color.m5280equalsimpl0(this.focusedTextColor, textFieldColors.focusedTextColor) && Color.m5280equalsimpl0(this.unfocusedTextColor, textFieldColors.unfocusedTextColor) && Color.m5280equalsimpl0(this.disabledTextColor, textFieldColors.disabledTextColor) && Color.m5280equalsimpl0(this.errorTextColor, textFieldColors.errorTextColor) && Color.m5280equalsimpl0(this.focusedContainerColor, textFieldColors.focusedContainerColor) && Color.m5280equalsimpl0(this.unfocusedContainerColor, textFieldColors.unfocusedContainerColor) && Color.m5280equalsimpl0(this.disabledContainerColor, textFieldColors.disabledContainerColor) && Color.m5280equalsimpl0(this.errorContainerColor, textFieldColors.errorContainerColor) && Color.m5280equalsimpl0(this.cursorColor, textFieldColors.cursorColor) && Color.m5280equalsimpl0(this.errorCursorColor, textFieldColors.errorCursorColor) && Intrinsics.areEqual(this.textSelectionColors, textFieldColors.textSelectionColors) && Color.m5280equalsimpl0(this.focusedIndicatorColor, textFieldColors.focusedIndicatorColor) && Color.m5280equalsimpl0(this.unfocusedIndicatorColor, textFieldColors.unfocusedIndicatorColor) && Color.m5280equalsimpl0(this.disabledIndicatorColor, textFieldColors.disabledIndicatorColor) && Color.m5280equalsimpl0(this.errorIndicatorColor, textFieldColors.errorIndicatorColor) && Color.m5280equalsimpl0(this.focusedLeadingIconColor, textFieldColors.focusedLeadingIconColor) && Color.m5280equalsimpl0(this.unfocusedLeadingIconColor, textFieldColors.unfocusedLeadingIconColor) && Color.m5280equalsimpl0(this.disabledLeadingIconColor, textFieldColors.disabledLeadingIconColor) && Color.m5280equalsimpl0(this.errorLeadingIconColor, textFieldColors.errorLeadingIconColor) && Color.m5280equalsimpl0(this.focusedTrailingIconColor, textFieldColors.focusedTrailingIconColor) && Color.m5280equalsimpl0(this.unfocusedTrailingIconColor, textFieldColors.unfocusedTrailingIconColor) && Color.m5280equalsimpl0(this.disabledTrailingIconColor, textFieldColors.disabledTrailingIconColor) && Color.m5280equalsimpl0(this.errorTrailingIconColor, textFieldColors.errorTrailingIconColor) && Color.m5280equalsimpl0(this.focusedLabelColor, textFieldColors.focusedLabelColor) && Color.m5280equalsimpl0(this.unfocusedLabelColor, textFieldColors.unfocusedLabelColor) && Color.m5280equalsimpl0(this.disabledLabelColor, textFieldColors.disabledLabelColor) && Color.m5280equalsimpl0(this.errorLabelColor, textFieldColors.errorLabelColor) && Color.m5280equalsimpl0(this.focusedPlaceholderColor, textFieldColors.focusedPlaceholderColor) && Color.m5280equalsimpl0(this.unfocusedPlaceholderColor, textFieldColors.unfocusedPlaceholderColor) && Color.m5280equalsimpl0(this.disabledPlaceholderColor, textFieldColors.disabledPlaceholderColor) && Color.m5280equalsimpl0(this.errorPlaceholderColor, textFieldColors.errorPlaceholderColor) && Color.m5280equalsimpl0(this.focusedSupportingTextColor, textFieldColors.focusedSupportingTextColor) && Color.m5280equalsimpl0(this.unfocusedSupportingTextColor, textFieldColors.unfocusedSupportingTextColor) && Color.m5280equalsimpl0(this.disabledSupportingTextColor, textFieldColors.disabledSupportingTextColor) && Color.m5280equalsimpl0(this.errorSupportingTextColor, textFieldColors.errorSupportingTextColor) && Color.m5280equalsimpl0(this.focusedPrefixColor, textFieldColors.focusedPrefixColor) && Color.m5280equalsimpl0(this.unfocusedPrefixColor, textFieldColors.unfocusedPrefixColor) && Color.m5280equalsimpl0(this.disabledPrefixColor, textFieldColors.disabledPrefixColor) && Color.m5280equalsimpl0(this.errorPrefixColor, textFieldColors.errorPrefixColor) && Color.m5280equalsimpl0(this.focusedSuffixColor, textFieldColors.focusedSuffixColor) && Color.m5280equalsimpl0(this.unfocusedSuffixColor, textFieldColors.unfocusedSuffixColor) && Color.m5280equalsimpl0(this.disabledSuffixColor, textFieldColors.disabledSuffixColor) && Color.m5280equalsimpl0(this.errorSuffixColor, textFieldColors.errorSuffixColor);
+        return Color.m5281equalsimpl0(this.focusedTextColor, textFieldColors.focusedTextColor) && Color.m5281equalsimpl0(this.unfocusedTextColor, textFieldColors.unfocusedTextColor) && Color.m5281equalsimpl0(this.disabledTextColor, textFieldColors.disabledTextColor) && Color.m5281equalsimpl0(this.errorTextColor, textFieldColors.errorTextColor) && Color.m5281equalsimpl0(this.focusedContainerColor, textFieldColors.focusedContainerColor) && Color.m5281equalsimpl0(this.unfocusedContainerColor, textFieldColors.unfocusedContainerColor) && Color.m5281equalsimpl0(this.disabledContainerColor, textFieldColors.disabledContainerColor) && Color.m5281equalsimpl0(this.errorContainerColor, textFieldColors.errorContainerColor) && Color.m5281equalsimpl0(this.cursorColor, textFieldColors.cursorColor) && Color.m5281equalsimpl0(this.errorCursorColor, textFieldColors.errorCursorColor) && Intrinsics.areEqual(this.textSelectionColors, textFieldColors.textSelectionColors) && Color.m5281equalsimpl0(this.focusedIndicatorColor, textFieldColors.focusedIndicatorColor) && Color.m5281equalsimpl0(this.unfocusedIndicatorColor, textFieldColors.unfocusedIndicatorColor) && Color.m5281equalsimpl0(this.disabledIndicatorColor, textFieldColors.disabledIndicatorColor) && Color.m5281equalsimpl0(this.errorIndicatorColor, textFieldColors.errorIndicatorColor) && Color.m5281equalsimpl0(this.focusedLeadingIconColor, textFieldColors.focusedLeadingIconColor) && Color.m5281equalsimpl0(this.unfocusedLeadingIconColor, textFieldColors.unfocusedLeadingIconColor) && Color.m5281equalsimpl0(this.disabledLeadingIconColor, textFieldColors.disabledLeadingIconColor) && Color.m5281equalsimpl0(this.errorLeadingIconColor, textFieldColors.errorLeadingIconColor) && Color.m5281equalsimpl0(this.focusedTrailingIconColor, textFieldColors.focusedTrailingIconColor) && Color.m5281equalsimpl0(this.unfocusedTrailingIconColor, textFieldColors.unfocusedTrailingIconColor) && Color.m5281equalsimpl0(this.disabledTrailingIconColor, textFieldColors.disabledTrailingIconColor) && Color.m5281equalsimpl0(this.errorTrailingIconColor, textFieldColors.errorTrailingIconColor) && Color.m5281equalsimpl0(this.focusedLabelColor, textFieldColors.focusedLabelColor) && Color.m5281equalsimpl0(this.unfocusedLabelColor, textFieldColors.unfocusedLabelColor) && Color.m5281equalsimpl0(this.disabledLabelColor, textFieldColors.disabledLabelColor) && Color.m5281equalsimpl0(this.errorLabelColor, textFieldColors.errorLabelColor) && Color.m5281equalsimpl0(this.focusedPlaceholderColor, textFieldColors.focusedPlaceholderColor) && Color.m5281equalsimpl0(this.unfocusedPlaceholderColor, textFieldColors.unfocusedPlaceholderColor) && Color.m5281equalsimpl0(this.disabledPlaceholderColor, textFieldColors.disabledPlaceholderColor) && Color.m5281equalsimpl0(this.errorPlaceholderColor, textFieldColors.errorPlaceholderColor) && Color.m5281equalsimpl0(this.focusedSupportingTextColor, textFieldColors.focusedSupportingTextColor) && Color.m5281equalsimpl0(this.unfocusedSupportingTextColor, textFieldColors.unfocusedSupportingTextColor) && Color.m5281equalsimpl0(this.disabledSupportingTextColor, textFieldColors.disabledSupportingTextColor) && Color.m5281equalsimpl0(this.errorSupportingTextColor, textFieldColors.errorSupportingTextColor) && Color.m5281equalsimpl0(this.focusedPrefixColor, textFieldColors.focusedPrefixColor) && Color.m5281equalsimpl0(this.unfocusedPrefixColor, textFieldColors.unfocusedPrefixColor) && Color.m5281equalsimpl0(this.disabledPrefixColor, textFieldColors.disabledPrefixColor) && Color.m5281equalsimpl0(this.errorPrefixColor, textFieldColors.errorPrefixColor) && Color.m5281equalsimpl0(this.focusedSuffixColor, textFieldColors.focusedSuffixColor) && Color.m5281equalsimpl0(this.unfocusedSuffixColor, textFieldColors.unfocusedSuffixColor) && Color.m5281equalsimpl0(this.disabledSuffixColor, textFieldColors.disabledSuffixColor) && Color.m5281equalsimpl0(this.errorSuffixColor, textFieldColors.errorSuffixColor);
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((Color.m5286hashCodeimpl(this.focusedTextColor) * 31) + Color.m5286hashCodeimpl(this.unfocusedTextColor)) * 31) + Color.m5286hashCodeimpl(this.disabledTextColor)) * 31) + Color.m5286hashCodeimpl(this.errorTextColor)) * 31) + Color.m5286hashCodeimpl(this.focusedContainerColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedContainerColor)) * 31) + Color.m5286hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m5286hashCodeimpl(this.errorContainerColor)) * 31) + Color.m5286hashCodeimpl(this.cursorColor)) * 31) + Color.m5286hashCodeimpl(this.errorCursorColor)) * 31) + this.textSelectionColors.hashCode()) * 31) + Color.m5286hashCodeimpl(this.focusedIndicatorColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedIndicatorColor)) * 31) + Color.m5286hashCodeimpl(this.disabledIndicatorColor)) * 31) + Color.m5286hashCodeimpl(this.errorIndicatorColor)) * 31) + Color.m5286hashCodeimpl(this.focusedLeadingIconColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedLeadingIconColor)) * 31) + Color.m5286hashCodeimpl(this.disabledLeadingIconColor)) * 31) + Color.m5286hashCodeimpl(this.errorLeadingIconColor)) * 31) + Color.m5286hashCodeimpl(this.focusedTrailingIconColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedTrailingIconColor)) * 31) + Color.m5286hashCodeimpl(this.disabledTrailingIconColor)) * 31) + Color.m5286hashCodeimpl(this.errorTrailingIconColor)) * 31) + Color.m5286hashCodeimpl(this.focusedLabelColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedLabelColor)) * 31) + Color.m5286hashCodeimpl(this.disabledLabelColor)) * 31) + Color.m5286hashCodeimpl(this.errorLabelColor)) * 31) + Color.m5286hashCodeimpl(this.focusedPlaceholderColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedPlaceholderColor)) * 31) + Color.m5286hashCodeimpl(this.disabledPlaceholderColor)) * 31) + Color.m5286hashCodeimpl(this.errorPlaceholderColor)) * 31) + Color.m5286hashCodeimpl(this.focusedSupportingTextColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedSupportingTextColor)) * 31) + Color.m5286hashCodeimpl(this.disabledSupportingTextColor)) * 31) + Color.m5286hashCodeimpl(this.errorSupportingTextColor)) * 31) + Color.m5286hashCodeimpl(this.focusedPrefixColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedPrefixColor)) * 31) + Color.m5286hashCodeimpl(this.disabledPrefixColor)) * 31) + Color.m5286hashCodeimpl(this.errorPrefixColor)) * 31) + Color.m5286hashCodeimpl(this.focusedSuffixColor)) * 31) + Color.m5286hashCodeimpl(this.unfocusedSuffixColor)) * 31) + Color.m5286hashCodeimpl(this.disabledSuffixColor)) * 31) + Color.m5286hashCodeimpl(this.errorSuffixColor);
+        return (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((Color.m5287hashCodeimpl(this.focusedTextColor) * 31) + Color.m5287hashCodeimpl(this.unfocusedTextColor)) * 31) + Color.m5287hashCodeimpl(this.disabledTextColor)) * 31) + Color.m5287hashCodeimpl(this.errorTextColor)) * 31) + Color.m5287hashCodeimpl(this.focusedContainerColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedContainerColor)) * 31) + Color.m5287hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m5287hashCodeimpl(this.errorContainerColor)) * 31) + Color.m5287hashCodeimpl(this.cursorColor)) * 31) + Color.m5287hashCodeimpl(this.errorCursorColor)) * 31) + this.textSelectionColors.hashCode()) * 31) + Color.m5287hashCodeimpl(this.focusedIndicatorColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedIndicatorColor)) * 31) + Color.m5287hashCodeimpl(this.disabledIndicatorColor)) * 31) + Color.m5287hashCodeimpl(this.errorIndicatorColor)) * 31) + Color.m5287hashCodeimpl(this.focusedLeadingIconColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedLeadingIconColor)) * 31) + Color.m5287hashCodeimpl(this.disabledLeadingIconColor)) * 31) + Color.m5287hashCodeimpl(this.errorLeadingIconColor)) * 31) + Color.m5287hashCodeimpl(this.focusedTrailingIconColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedTrailingIconColor)) * 31) + Color.m5287hashCodeimpl(this.disabledTrailingIconColor)) * 31) + Color.m5287hashCodeimpl(this.errorTrailingIconColor)) * 31) + Color.m5287hashCodeimpl(this.focusedLabelColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedLabelColor)) * 31) + Color.m5287hashCodeimpl(this.disabledLabelColor)) * 31) + Color.m5287hashCodeimpl(this.errorLabelColor)) * 31) + Color.m5287hashCodeimpl(this.focusedPlaceholderColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedPlaceholderColor)) * 31) + Color.m5287hashCodeimpl(this.disabledPlaceholderColor)) * 31) + Color.m5287hashCodeimpl(this.errorPlaceholderColor)) * 31) + Color.m5287hashCodeimpl(this.focusedSupportingTextColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedSupportingTextColor)) * 31) + Color.m5287hashCodeimpl(this.disabledSupportingTextColor)) * 31) + Color.m5287hashCodeimpl(this.errorSupportingTextColor)) * 31) + Color.m5287hashCodeimpl(this.focusedPrefixColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedPrefixColor)) * 31) + Color.m5287hashCodeimpl(this.disabledPrefixColor)) * 31) + Color.m5287hashCodeimpl(this.errorPrefixColor)) * 31) + Color.m5287hashCodeimpl(this.focusedSuffixColor)) * 31) + Color.m5287hashCodeimpl(this.unfocusedSuffixColor)) * 31) + Color.m5287hashCodeimpl(this.disabledSuffixColor)) * 31) + Color.m5287hashCodeimpl(this.errorSuffixColor);
     }
 }

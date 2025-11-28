@@ -4,7 +4,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.text.Charsets;
 import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.kb  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0371kb {
     public static final H9 a(C0371kb c0371kb, Q9 q9, JSONObject jSONObject) {
         int i;

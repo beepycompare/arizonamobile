@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.telephony.TelephonyManager;
 import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 /* renamed from: io.appmetrica.analytics.impl.ql  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0532ql implements FunctionWithThrowable {
 
     /* renamed from: a  reason: collision with root package name */

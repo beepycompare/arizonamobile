@@ -6,7 +6,7 @@ import io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoMana
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class m {
     public static void a(Map map, Map map2, String str, BillingInfoManager billingInfoManager) {
         long currentTimeMillis = new SystemTimeProvider().currentTimeMillis();

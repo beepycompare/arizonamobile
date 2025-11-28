@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.AppMetricaConfig;
 /* renamed from: io.appmetrica.analytics.impl.mc  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0423mc extends Yn {
     public final AppMetricaConfig b;
 

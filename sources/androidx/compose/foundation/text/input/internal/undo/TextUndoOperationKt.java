@@ -13,15 +13,15 @@ public final class TextUndoOperationKt {
         textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
         TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
         mainBuffer$foundation_release.replace(textUndoOperation.getIndex(), textUndoOperation.getIndex() + textUndoOperation.getPostText().length(), textUndoOperation.getPreText());
-        TextFieldBufferKt.setSelectionCoerced(mainBuffer$foundation_release, TextRange.m7457getStartimpl(textUndoOperation.m1672getPreSelectiond9O1mEE()), TextRange.m7452getEndimpl(textUndoOperation.m1672getPreSelectiond9O1mEE()));
-        textFieldState.updateValueAndNotifyListeners(textFieldState.getValue$foundation_release(), TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldState.getMainBuffer$foundation_release(), 0L, null, null, null, 15, null), true);
+        TextFieldBufferKt.setSelectionCoerced(mainBuffer$foundation_release, TextRange.m7458getStartimpl(textUndoOperation.m1673getPreSelectiond9O1mEE()), TextRange.m7453getEndimpl(textUndoOperation.m1673getPreSelectiond9O1mEE()));
+        textFieldState.updateValueAndNotifyListeners(textFieldState.getValue$foundation_release(), TextFieldBuffer.m1436toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldState.getMainBuffer$foundation_release(), 0L, null, null, null, 15, null), true);
     }
 
     public static final void redo(TextFieldState textFieldState, TextUndoOperation textUndoOperation) {
         textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
         TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
         mainBuffer$foundation_release.replace(textUndoOperation.getIndex(), textUndoOperation.getIndex() + textUndoOperation.getPreText().length(), textUndoOperation.getPostText());
-        TextFieldBufferKt.setSelectionCoerced(mainBuffer$foundation_release, TextRange.m7457getStartimpl(textUndoOperation.m1671getPostSelectiond9O1mEE()), TextRange.m7452getEndimpl(textUndoOperation.m1671getPostSelectiond9O1mEE()));
-        textFieldState.updateValueAndNotifyListeners(textFieldState.getValue$foundation_release(), TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldState.getMainBuffer$foundation_release(), 0L, null, null, null, 15, null), true);
+        TextFieldBufferKt.setSelectionCoerced(mainBuffer$foundation_release, TextRange.m7458getStartimpl(textUndoOperation.m1672getPostSelectiond9O1mEE()), TextRange.m7453getEndimpl(textUndoOperation.m1672getPostSelectiond9O1mEE()));
+        textFieldState.updateValueAndNotifyListeners(textFieldState.getValue$foundation_release(), TextFieldBuffer.m1436toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldState.getMainBuffer$foundation_release(), 0L, null, null, null, 15, null), true);
     }
 }

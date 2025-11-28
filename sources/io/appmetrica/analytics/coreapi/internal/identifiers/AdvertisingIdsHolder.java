@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.coreapi.internal.identifiers;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AdvertisingIdsHolder {
 
     /* renamed from: a  reason: collision with root package name */

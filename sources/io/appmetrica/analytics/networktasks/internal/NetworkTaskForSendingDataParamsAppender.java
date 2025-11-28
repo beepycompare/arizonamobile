@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.networktasks.internal;
 
 import android.net.Uri;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NetworkTaskForSendingDataParamsAppender {
 
     /* renamed from: a  reason: collision with root package name */

@@ -81,7 +81,7 @@ public final class ContextMenuState {
             }
 
             /* renamed from: getOffset-F1C5BW0  reason: not valid java name */
-            public final long m409getOffsetF1C5BW0() {
+            public final long m410getOffsetF1C5BW0() {
                 return this.offset;
             }
 
@@ -95,11 +95,11 @@ public final class ContextMenuState {
             }
 
             public String toString() {
-                return "Open(offset=" + ((Object) Offset.m5043toStringimpl(this.offset)) + ')';
+                return "Open(offset=" + ((Object) Offset.m5044toStringimpl(this.offset)) + ')';
             }
 
             public int hashCode() {
-                return Offset.m5037hashCodeimpl(this.offset);
+                return Offset.m5038hashCodeimpl(this.offset);
             }
 
             public boolean equals(Object obj) {
@@ -107,7 +107,7 @@ public final class ContextMenuState {
                     return true;
                 }
                 if (obj instanceof Open) {
-                    return Offset.m5032equalsimpl0(this.offset, ((Open) obj).offset);
+                    return Offset.m5033equalsimpl0(this.offset, ((Open) obj).offset);
                 }
                 return false;
             }

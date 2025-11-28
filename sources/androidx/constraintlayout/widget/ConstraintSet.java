@@ -1779,7 +1779,7 @@ public class ConstraintSet {
         }
 
         /* renamed from: clone */
-        public Constraint m8481clone() {
+        public Constraint m8482clone() {
             Constraint constraint = new Constraint();
             constraint.layout.copyFrom(this.layout);
             constraint.motion.copyFrom(this.motion);
@@ -1955,7 +1955,7 @@ public class ConstraintSet {
         for (Integer num : constraintSet.mConstraints.keySet()) {
             Constraint constraint = constraintSet.mConstraints.get(num);
             if (constraint != null) {
-                this.mConstraints.put(num, constraint.m8481clone());
+                this.mConstraints.put(num, constraint.m8482clone());
             }
         }
     }

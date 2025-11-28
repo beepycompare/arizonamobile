@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface HapticFeedback {
     /* renamed from: performHapticFeedback-CdsT49E  reason: not valid java name */
-    void mo6053performHapticFeedbackCdsT49E(int i);
+    void mo6054performHapticFeedbackCdsT49E(int i);
 }

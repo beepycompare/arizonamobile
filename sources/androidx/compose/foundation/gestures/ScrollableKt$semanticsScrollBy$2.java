@@ -51,11 +51,11 @@ public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implem
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
-            float m593toFloatk4lQ0M = this.$this_semanticsScrollBy.m593toFloatk4lQ0M(this.$offset);
+            float m594toFloatk4lQ0M = this.$this_semanticsScrollBy.m594toFloatk4lQ0M(this.$offset);
             final Ref.FloatRef floatRef = this.$previousValue;
             final ScrollingLogic scrollingLogic = this.$this_semanticsScrollBy;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(0.0f, m593toFloatk4lQ0M, 0.0f, null, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animate$default(0.0f, m594toFloatk4lQ0M, 0.0f, null, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     Unit invokeSuspend$lambda$0;
@@ -75,7 +75,7 @@ public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, ScrollingLogic scrollingLogic, NestedScrollScope nestedScrollScope, float f, float f2) {
-        floatRef.element += scrollingLogic.reverseIfNeeded(scrollingLogic.m593toFloatk4lQ0M(nestedScrollScope.mo533scrollByOzD1aCk(scrollingLogic.m594toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f - floatRef.element)), NestedScrollSource.Companion.m6462getUserInputWNlRxjI())));
+        floatRef.element += scrollingLogic.reverseIfNeeded(scrollingLogic.m594toFloatk4lQ0M(nestedScrollScope.mo534scrollByOzD1aCk(scrollingLogic.m595toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f - floatRef.element)), NestedScrollSource.Companion.m6463getUserInputWNlRxjI())));
         return Unit.INSTANCE;
     }
 }

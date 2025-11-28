@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 import android.os.ResultReceiver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class B4 implements InterfaceC0415m4 {
 
     /* renamed from: a  reason: collision with root package name */

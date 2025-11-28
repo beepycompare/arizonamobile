@@ -5,7 +5,7 @@ import android.os.Bundle;
 import io.appmetrica.analytics.AppMetrica;
 import io.appmetrica.analytics.internal.CounterConfiguration;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class P3 {
 
     /* renamed from: a  reason: collision with root package name */

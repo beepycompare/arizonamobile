@@ -345,7 +345,7 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
                     }
 
                     public final Object emit(Unit unit, Continuation<? super Unit> continuation) {
-                        channel.mo8867trySendJP2dKIU(unit);
+                        channel.mo8879trySendJP2dKIU(unit);
                         return Unit.INSTANCE;
                     }
                 }, this) == coroutine_suspended) {

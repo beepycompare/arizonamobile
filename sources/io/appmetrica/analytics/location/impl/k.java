@@ -12,7 +12,7 @@ import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 import java.util.HashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class k implements ILastKnownUpdater, LocationControllerObserver {
 
     /* renamed from: a  reason: collision with root package name */

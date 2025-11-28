@@ -33,7 +33,7 @@ public class MotionKeyAttributes extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo8475clone() {
+    public MotionKey mo8476clone() {
         return null;
     }
 
@@ -95,7 +95,7 @@ public class MotionKeyAttributes extends MotionKey {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00e6, code lost:
         if (r1.equals("rotationY") == false) goto L12;
      */
     @Override // androidx.constraintlayout.core.motion.key.MotionKey

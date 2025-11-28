@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 import io.appmetrica.analytics.coreapi.internal.permission.PermissionResolutionStrategy;
 import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class u implements LastKnownLocationExtractor {
 
     /* renamed from: a  reason: collision with root package name */

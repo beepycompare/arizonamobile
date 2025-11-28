@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Me implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

@@ -57,7 +57,7 @@ final class DateInputKt$DateInputContent$2 implements Function2<Composer, Intege
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3168TextNvy7gAk(str, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262140);
+        TextKt.m3169TextNvy7gAk(str, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262140);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

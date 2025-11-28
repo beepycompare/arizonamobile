@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Je extends Kc {
     public Je(Integer num) {
         super(num);

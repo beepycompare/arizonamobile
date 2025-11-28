@@ -38,14 +38,14 @@ public abstract class AbstractIdleService implements Service {
             MoreExecutors.renamingDecorator(AbstractIdleService.this.executor(), AbstractIdleService.this.threadNameSupplier).execute(new Runnable() { // from class: com.google.common.util.concurrent.AbstractIdleService$DelegateService$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AbstractIdleService.DelegateService.this.m9555x2ed323e8();
+                    AbstractIdleService.DelegateService.this.m9613x2ed323e8();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$doStart$0$com-google-common-util-concurrent-AbstractIdleService$DelegateService  reason: not valid java name */
-        public /* synthetic */ void m9555x2ed323e8() {
+        public /* synthetic */ void m9613x2ed323e8() {
             try {
                 AbstractIdleService.this.startUp();
                 notifyStarted();
@@ -60,14 +60,14 @@ public abstract class AbstractIdleService implements Service {
             MoreExecutors.renamingDecorator(AbstractIdleService.this.executor(), AbstractIdleService.this.threadNameSupplier).execute(new Runnable() { // from class: com.google.common.util.concurrent.AbstractIdleService$DelegateService$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AbstractIdleService.DelegateService.this.m9556xb13e6319();
+                    AbstractIdleService.DelegateService.this.m9614xb13e6319();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$doStop$1$com-google-common-util-concurrent-AbstractIdleService$DelegateService  reason: not valid java name */
-        public /* synthetic */ void m9556xb13e6319() {
+        public /* synthetic */ void m9614xb13e6319() {
             try {
                 AbstractIdleService.this.shutDown();
                 notifyStopped();
@@ -90,14 +90,14 @@ public abstract class AbstractIdleService implements Service {
         return new Executor() { // from class: com.google.common.util.concurrent.AbstractIdleService$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Executor
             public final void execute(Runnable runnable) {
-                AbstractIdleService.this.m9554xc998c392(runnable);
+                AbstractIdleService.this.m9612xc998c392(runnable);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$executor$0$com-google-common-util-concurrent-AbstractIdleService  reason: not valid java name */
-    public /* synthetic */ void m9554xc998c392(Runnable runnable) {
+    public /* synthetic */ void m9612xc998c392(Runnable runnable) {
         MoreExecutors.newThread(this.threadNameSupplier.get(), runnable).start();
     }
 

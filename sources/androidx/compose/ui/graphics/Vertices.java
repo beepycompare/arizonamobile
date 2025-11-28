@@ -46,7 +46,7 @@ public final class Vertices {
     }
 
     /* renamed from: getVertexMode-c2xauaI  reason: not valid java name */
-    public final int m5699getVertexModec2xauaI() {
+    public final int m5700getVertexModec2xauaI() {
         return this.vertexMode;
     }
 
@@ -70,7 +70,7 @@ public final class Vertices {
         int size = list.size();
         int[] iArr = new int[size];
         for (int i = 0; i < size; i++) {
-            iArr[i] = ColorKt.m5333toArgb8_81llA(list.get(i).m5289unboximpl());
+            iArr[i] = ColorKt.m5334toArgb8_81llA(list.get(i).m5290unboximpl());
         }
         return iArr;
     }
@@ -80,11 +80,11 @@ public final class Vertices {
         int size = list.size() * 2;
         float[] fArr = new float[size];
         for (int i = 0; i < size; i++) {
-            long m5045unboximpl = list.get(i / 2).m5045unboximpl();
+            long m5046unboximpl = list.get(i / 2).m5046unboximpl();
             if (i % 2 == 0) {
-                intBitsToFloat = Float.intBitsToFloat((int) (m5045unboximpl >> 32));
+                intBitsToFloat = Float.intBitsToFloat((int) (m5046unboximpl >> 32));
             } else {
-                intBitsToFloat = Float.intBitsToFloat((int) (m5045unboximpl & 4294967295L));
+                intBitsToFloat = Float.intBitsToFloat((int) (m5046unboximpl & 4294967295L));
             }
             fArr[i] = intBitsToFloat;
         }

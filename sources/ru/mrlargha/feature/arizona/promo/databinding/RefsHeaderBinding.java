@@ -3,6 +3,7 @@ package ru.mrlargha.feature.arizona.promo.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
@@ -12,12 +13,16 @@ import ru.mrlargha.feature.arizona.promo.R;
 public final class RefsHeaderBinding implements ViewBinding {
     public final TextView cash;
     public final TextView count;
+    public final TextView currency;
+    public final ImageView projectImg;
     private final LinearLayout rootView;
 
-    private RefsHeaderBinding(LinearLayout linearLayout, TextView textView, TextView textView2) {
+    private RefsHeaderBinding(LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, ImageView imageView) {
         this.rootView = linearLayout;
         this.cash = textView;
         this.count = textView2;
+        this.currency = textView3;
+        this.projectImg = imageView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -44,7 +49,15 @@ public final class RefsHeaderBinding implements ViewBinding {
             i = R.id.count;
             TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView2 != null) {
-                return new RefsHeaderBinding((LinearLayout) view, textView, textView2);
+                i = R.id.currency;
+                TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
+                if (textView3 != null) {
+                    i = R.id.project_img;
+                    ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
+                    if (imageView != null) {
+                        return new RefsHeaderBinding((LinearLayout) view, textView, textView2, textView3, imageView);
+                    }
+                }
             }
         }
         throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));

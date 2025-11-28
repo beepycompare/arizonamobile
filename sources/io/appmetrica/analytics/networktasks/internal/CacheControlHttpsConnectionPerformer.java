@@ -6,14 +6,14 @@ import io.appmetrica.analytics.network.internal.Response;
 import io.appmetrica.analytics.networktasks.impl.a;
 import java.util.List;
 import javax.net.ssl.SSLSocketFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CacheControlHttpsConnectionPerformer {
 
     /* renamed from: a  reason: collision with root package name */
     private final a f1298a;
     private final SSLSocketFactory b;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface Client {
         String getOldETag();
 

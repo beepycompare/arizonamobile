@@ -49,11 +49,11 @@ public final class StarterPackAdapter extends ListAdapter<StarterPackRewardsMode
             String str = "projects/arizona-rp/systems/starter_packs/items/" + model.getIcon() + ".webp";
             String str2 = "projects/rodina-rp/systems/starter-packs/images/" + model.getIcon() + ".webp";
             Picasso picasso = Picasso.get();
-            String resourceUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+            String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             if (!UtilsKt.isArizonaType()) {
                 str = str2;
             }
-            picasso.load(resourceUrl + str).into(starterpackItemBinding.imagePrise);
+            picasso.load(resourceUrl$default + str).into(starterpackItemBinding.imagePrise);
             starterpackItemBinding.bg.setForeground(new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{Color.parseColor("#80" + StringsKt.removePrefix(model.getColor(), (CharSequence) "#")), 0}));
         }
     }

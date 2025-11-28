@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 /* renamed from: io.appmetrica.analytics.impl.p2  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0488p2 implements InterfaceC0506pk, ApplicationStateProvider {
 
     /* renamed from: a  reason: collision with root package name */

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.screenshot.impl;
 
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 /* renamed from: io.appmetrica.analytics.screenshot.impl.b  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract /* synthetic */ class AbstractC0760b {
 
     /* renamed from: a  reason: collision with root package name */

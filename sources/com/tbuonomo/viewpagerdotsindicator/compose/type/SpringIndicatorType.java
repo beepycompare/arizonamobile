@@ -60,7 +60,7 @@ public final class SpringIndicatorType extends IndicatorType {
     }
 
     public /* synthetic */ SpringIndicatorType(DotGraphic dotGraphic, DotGraphic dotGraphic2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new DotGraphic(0.0f, 0L, null, null, 0L, 31, null) : dotGraphic, (i & 2) != 0 ? new DotGraphic(0.0f, Color.Companion.m5305getBlack0d7_KjU(), null, null, 0L, 29, null) : dotGraphic2);
+        this((i & 1) != 0 ? new DotGraphic(0.0f, 0L, null, null, 0L, 31, null) : dotGraphic, (i & 2) != 0 ? new DotGraphic(0.0f, Color.Companion.m5306getBlack0d7_KjU(), null, null, 0L, 29, null) : dotGraphic2);
     }
 
     public SpringIndicatorType(DotGraphic dotsGraphic, DotGraphic selectorDotGraphic) {
@@ -72,7 +72,7 @@ public final class SpringIndicatorType extends IndicatorType {
 
     @Override // com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType
     /* renamed from: IndicatorTypeComposable--jt2gSs */
-    public void mo9823IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
+    public void mo9881IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
         int i3;
         final MutableState mutableState;
         final MutableState mutableState2;
@@ -147,20 +147,20 @@ public final class SpringIndicatorType extends IndicatorType {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4597constructorimpl = Updater.m4597constructorimpl(startRestartGroup);
-            Updater.m4604setimpl(m4597constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4604setimpl(m4597constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
+            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4597constructorimpl.getInserting() || !Intrinsics.areEqual(m4597constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4597constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4597constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4604setimpl(m4597constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null);
-            Arrangement.Horizontal m702spacedByD5KLDUw = Arrangement.INSTANCE.m702spacedByD5KLDUw(f, Alignment.Companion.getCenterHorizontally());
-            PaddingValues m839PaddingValuesa9UjIt4$default = PaddingKt.m839PaddingValuesa9UjIt4$default(f, 0.0f, f, 0.0f, 10, null);
+            Arrangement.Horizontal m703spacedByD5KLDUw = Arrangement.INSTANCE.m703spacedByD5KLDUw(f, Alignment.Companion.getCenterHorizontally());
+            PaddingValues m840PaddingValuesa9UjIt4$default = PaddingKt.m840PaddingValuesa9UjIt4$default(f, 0.0f, f, 0.0f, 10, null);
             startRestartGroup.startReplaceGroup(-1014803039);
             boolean changed3 = startRestartGroup.changed(mutableState3) | (i6 == 256) | startRestartGroup.changed(mutableState4) | ((i7 & 458752) == 131072) | ((i7 & 57344) == 16384);
             Object rememberedValue3 = startRestartGroup.rememberedValue();
@@ -241,7 +241,7 @@ public final class SpringIndicatorType extends IndicatorType {
                                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                 public final void invoke2(LayoutCoordinates it) {
                                                     Intrinsics.checkNotNullParameter(it, "it");
-                                                    SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$2(mutableState7, Offset.m5035getXimpl(LayoutCoordinatesKt.positionInParent(it)));
+                                                    SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$2(mutableState7, Offset.m5036getXimpl(LayoutCoordinatesKt.positionInParent(it)));
                                                 }
                                             };
                                             composer3.updateRememberedValue(rememberedValue4);
@@ -273,7 +273,7 @@ public final class SpringIndicatorType extends IndicatorType {
                                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                 public final void invoke2(LayoutCoordinates it) {
                                                     Intrinsics.checkNotNullParameter(it, "it");
-                                                    SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$5(mutableState8, Offset.m5035getXimpl(LayoutCoordinatesKt.positionInParent(it)));
+                                                    SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$5(mutableState8, Offset.m5036getXimpl(LayoutCoordinatesKt.positionInParent(it)));
                                                 }
                                             };
                                             composer3.updateRememberedValue(rememberedValue5);
@@ -318,7 +318,7 @@ public final class SpringIndicatorType extends IndicatorType {
                                         composer3.updateRememberedValue(rememberedValue6);
                                     }
                                     composer3.endReplaceGroup();
-                                    DotKt.Dot(dotGraphic3, ClickableKt.m306clickableXHw0xAI$default(modifier2, false, null, null, (Function0) rememberedValue6, 7, null), composer3, 0);
+                                    DotKt.Dot(dotGraphic3, ClickableKt.m307clickableXHw0xAI$default(modifier2, false, null, null, (Function0) rememberedValue6, 7, null), composer3, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                         return;
@@ -340,7 +340,7 @@ public final class SpringIndicatorType extends IndicatorType {
                 i5 = 4;
             }
             startRestartGroup.endReplaceGroup();
-            LazyDslKt.LazyRow(fillMaxWidth$default, null, m839PaddingValuesa9UjIt4$default, false, m702spacedByD5KLDUw, null, null, false, function12, startRestartGroup, 6, 234);
+            LazyDslKt.LazyRow(fillMaxWidth$default, null, m840PaddingValuesa9UjIt4$default, false, m703spacedByD5KLDUw, null, null, false, function12, startRestartGroup, 6, 234);
             composer2 = startRestartGroup;
             composer2.startReplaceGroup(-1014767024);
             if (IndicatorTypeComposable__jt2gSs$lambda$1(mutableState) != -1.0f && IndicatorTypeComposable__jt2gSs$lambda$4(mutableState2) != -1.0f) {
@@ -355,17 +355,17 @@ public final class SpringIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m7993boximpl(m9829invokeD9Ej5fM());
+                            return Dp.m7994boximpl(m9887invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9829invokeD9Ej5fM() {
+                        public final float m9887invokeD9Ej5fM() {
                             DotGraphic dotGraphic3;
                             DotGraphic dotGraphic4;
                             dotGraphic3 = SpringIndicatorType.this.dotsGraphic;
-                            float m9822getSizeD9Ej5fM = dotGraphic3.m9822getSizeD9Ej5fM();
+                            float m9880getSizeD9Ej5fM = dotGraphic3.m9880getSizeD9Ej5fM();
                             dotGraphic4 = SpringIndicatorType.this.selectorDotGraphic;
-                            return Dp.m7995constructorimpl(Dp.m7995constructorimpl(m9822getSizeD9Ej5fM - dotGraphic4.m9822getSizeD9Ej5fM()) / 2);
+                            return Dp.m7996constructorimpl(Dp.m7996constructorimpl(m9880getSizeD9Ej5fM - dotGraphic4.m9880getSizeD9Ej5fM()) / 2);
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue4);
@@ -391,15 +391,15 @@ public final class SpringIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m7993boximpl(m9830invokeD9Ej5fM());
+                            return Dp.m7994boximpl(m9888invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9830invokeD9Ej5fM() {
+                        public final float m9888invokeD9Ej5fM() {
                             float IndicatorTypeComposable__jt2gSs$lambda$1;
                             float IndicatorTypeComposable__jt2gSs$lambda$4;
                             float IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8;
-                            float m9828computeSelectorDotPositionDptILSbM;
+                            float m9886computeSelectorDotPositionDptILSbM;
                             SpringIndicatorType springIndicatorType2 = SpringIndicatorType.this;
                             IndicatorTypeComposable__jt2gSs$lambda$1 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$1(mutableState6);
                             IndicatorTypeComposable__jt2gSs$lambda$4 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$4(mutableState5);
@@ -407,14 +407,14 @@ public final class SpringIndicatorType extends IndicatorType {
                             float floatValue = globalOffsetProvider.invoke().floatValue();
                             float f2 = density;
                             IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8(state);
-                            m9828computeSelectorDotPositionDptILSbM = springIndicatorType2.m9828computeSelectorDotPositionDptILSbM(IndicatorTypeComposable__jt2gSs$lambda$1, IndicatorTypeComposable__jt2gSs$lambda$4, i8, floatValue, f2, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8);
-                            return m9828computeSelectorDotPositionDptILSbM;
+                            m9886computeSelectorDotPositionDptILSbM = springIndicatorType2.m9886computeSelectorDotPositionDptILSbM(IndicatorTypeComposable__jt2gSs$lambda$1, IndicatorTypeComposable__jt2gSs$lambda$4, i8, floatValue, f2, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8);
+                            return m9886computeSelectorDotPositionDptILSbM;
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue5);
                 }
                 composer2.endReplaceGroup();
-                DotKt.Dot(springIndicatorType.selectorDotGraphic, OffsetKt.m796offsetVpY3zN4(Modifier.Companion, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$10((State) rememberedValue5), IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8(state)), composer2, 0);
+                DotKt.Dot(springIndicatorType.selectorDotGraphic, OffsetKt.m797offsetVpY3zN4(Modifier.Companion, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$10((State) rememberedValue5), IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8(state)), composer2, 0);
             }
             composer2.endReplaceGroup();
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -446,7 +446,7 @@ public final class SpringIndicatorType extends IndicatorType {
                 }
 
                 public final void invoke(Composer composer3, int i8) {
-                    SpringIndicatorType.this.mo9823IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    SpringIndicatorType.this.mo9881IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }
@@ -474,16 +474,16 @@ public final class SpringIndicatorType extends IndicatorType {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: computeSelectorDotPositionDp-tI-LSbM  reason: not valid java name */
-    public final float m9828computeSelectorDotPositionDptILSbM(float f, float f2, int i, float f3, float f4, float f5) {
-        return Dp.m7995constructorimpl(Dp.m7995constructorimpl((f + (((f2 - f) / (i - 1)) * f3)) / f4) + f5);
+    public final float m9886computeSelectorDotPositionDptILSbM(float f, float f2, int i, float f3, float f4, float f5) {
+        return Dp.m7996constructorimpl(Dp.m7996constructorimpl((f + (((f2 - f) / (i - 1)) * f3)) / f4) + f5);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8(State<Dp> state) {
-        return state.getValue().m8009unboximpl();
+        return state.getValue().m8010unboximpl();
     }
 
     private static final float IndicatorTypeComposable__jt2gSs$lambda$11$lambda$10(State<Dp> state) {
-        return state.getValue().m8009unboximpl();
+        return state.getValue().m8010unboximpl();
     }
 }

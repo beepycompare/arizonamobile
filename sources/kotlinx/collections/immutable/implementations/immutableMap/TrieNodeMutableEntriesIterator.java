@@ -18,7 +18,7 @@ public final class TrieNodeMutableEntriesIterator<K, V> extends TrieNodeBaseIter
 
     @Override // java.util.Iterator
     public Map.Entry<K, V> next() {
-        CommonFunctionsKt.m11343assert(hasNextKey());
+        CommonFunctionsKt.m11401assert(hasNextKey());
         setIndex(getIndex() + 2);
         return new MutableMapEntry(this.parentIterator, getBuffer()[getIndex() - 2], getBuffer()[getIndex() - 1]);
     }

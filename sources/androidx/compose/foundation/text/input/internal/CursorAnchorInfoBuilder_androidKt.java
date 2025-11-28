@@ -15,7 +15,7 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class CursorAnchorInfoBuilder_androidKt {
     /* renamed from: build-vxqZcH0$default  reason: not valid java name */
-    public static /* synthetic */ CursorAnchorInfo m1497buildvxqZcH0$default(CursorAnchorInfo.Builder builder, CharSequence charSequence, long j, TextRange textRange, TextLayoutResult textLayoutResult, Matrix matrix, Rect rect, Rect rect2, boolean z, boolean z2, boolean z3, boolean z4, int i, Object obj) {
+    public static /* synthetic */ CursorAnchorInfo m1498buildvxqZcH0$default(CursorAnchorInfo.Builder builder, CharSequence charSequence, long j, TextRange textRange, TextLayoutResult textLayoutResult, Matrix matrix, Rect rect, Rect rect2, boolean z, boolean z2, boolean z3, boolean z4, int i, Object obj) {
         if ((i & 128) != 0) {
             z = true;
         }
@@ -28,24 +28,24 @@ public final class CursorAnchorInfoBuilder_androidKt {
         if ((i & 1024) != 0) {
             z4 = true;
         }
-        return m1496buildvxqZcH0(builder, charSequence, j, textRange, textLayoutResult, matrix, rect, rect2, z, z2, z3, z4);
+        return m1497buildvxqZcH0(builder, charSequence, j, textRange, textLayoutResult, matrix, rect, rect2, z, z2, z3, z4);
     }
 
     /* renamed from: build-vxqZcH0  reason: not valid java name */
-    public static final CursorAnchorInfo m1496buildvxqZcH0(CursorAnchorInfo.Builder builder, CharSequence charSequence, long j, TextRange textRange, TextLayoutResult textLayoutResult, Matrix matrix, Rect rect, Rect rect2, boolean z, boolean z2, boolean z3, boolean z4) {
+    public static final CursorAnchorInfo m1497buildvxqZcH0(CursorAnchorInfo.Builder builder, CharSequence charSequence, long j, TextRange textRange, TextLayoutResult textLayoutResult, Matrix matrix, Rect rect, Rect rect2, boolean z, boolean z2, boolean z3, boolean z4) {
         builder.reset();
         builder.setMatrix(matrix);
-        int m7455getMinimpl = TextRange.m7455getMinimpl(j);
-        builder.setSelectionRange(m7455getMinimpl, TextRange.m7454getMaximpl(j));
+        int m7456getMinimpl = TextRange.m7456getMinimpl(j);
+        builder.setSelectionRange(m7456getMinimpl, TextRange.m7455getMaximpl(j));
         if (z) {
-            setInsertionMarker(builder, m7455getMinimpl, textLayoutResult, rect);
+            setInsertionMarker(builder, m7456getMinimpl, textLayoutResult, rect);
         }
         if (z2) {
-            int m7455getMinimpl2 = textRange != null ? TextRange.m7455getMinimpl(textRange.m7461unboximpl()) : -1;
-            int m7454getMaximpl = textRange != null ? TextRange.m7454getMaximpl(textRange.m7461unboximpl()) : -1;
-            if (m7455getMinimpl2 >= 0 && m7455getMinimpl2 < m7454getMaximpl) {
-                builder.setComposingText(m7455getMinimpl2, charSequence.subSequence(m7455getMinimpl2, m7454getMaximpl));
-                addCharacterBounds(builder, m7455getMinimpl2, m7454getMaximpl, textLayoutResult, rect);
+            int m7456getMinimpl2 = textRange != null ? TextRange.m7456getMinimpl(textRange.m7462unboximpl()) : -1;
+            int m7455getMaximpl = textRange != null ? TextRange.m7455getMaximpl(textRange.m7462unboximpl()) : -1;
+            if (m7456getMinimpl2 >= 0 && m7456getMinimpl2 < m7455getMaximpl) {
+                builder.setComposingText(m7456getMinimpl2, charSequence.subSequence(m7456getMinimpl2, m7455getMaximpl));
+                addCharacterBounds(builder, m7456getMinimpl2, m7455getMaximpl, textLayoutResult, rect);
             }
         }
         if (Build.VERSION.SDK_INT >= 33 && z3) {
@@ -62,7 +62,7 @@ public final class CursorAnchorInfoBuilder_androidKt {
             return builder;
         }
         Rect cursorRect = textLayoutResult.getCursorRect(i);
-        float coerceIn = RangesKt.coerceIn(cursorRect.getLeft(), 0.0f, (int) (textLayoutResult.m7428getSizeYbymL2g() >> 32));
+        float coerceIn = RangesKt.coerceIn(cursorRect.getLeft(), 0.0f, (int) (textLayoutResult.m7429getSizeYbymL2g() >> 32));
         boolean containsInclusive = LegacyCursorAnchorInfoBuilder_androidKt.containsInclusive(rect, coerceIn, cursorRect.getTop());
         boolean containsInclusive2 = LegacyCursorAnchorInfoBuilder_androidKt.containsInclusive(rect, coerceIn, cursorRect.getBottom());
         int i2 = 1;
@@ -85,7 +85,7 @@ public final class CursorAnchorInfoBuilder_androidKt {
     /* JADX WARN: Type inference failed for: r3v9 */
     private static final CursorAnchorInfo.Builder addCharacterBounds(CursorAnchorInfo.Builder builder, int i, int i2, TextLayoutResult textLayoutResult, Rect rect) {
         float[] fArr = new float[(i2 - i) * 4];
-        textLayoutResult.getMultiParagraph().m7297fillBoundingBoxes8ffj60Q(TextRangeKt.TextRange(i, i2), fArr, 0);
+        textLayoutResult.getMultiParagraph().m7298fillBoundingBoxes8ffj60Q(TextRangeKt.TextRange(i, i2), fArr, 0);
         for (int i3 = i; i3 < i2; i3++) {
             int i4 = (i3 - i) * 4;
             Rect rect2 = new Rect(fArr[i4], fArr[i4 + 1], fArr[i4 + 2], fArr[i4 + 3]);

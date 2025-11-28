@@ -4,7 +4,7 @@ import com.android.installreferrer.api.InstallReferrerStateListener;
 import com.android.installreferrer.api.ReferrerDetails;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* renamed from: io.appmetrica.analytics.impl.mg  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0427mg implements InstallReferrerStateListener {
 
     /* renamed from: a  reason: collision with root package name */

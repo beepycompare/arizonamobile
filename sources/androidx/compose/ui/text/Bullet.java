@@ -47,17 +47,17 @@ public final class Bullet implements AnnotatedString.Annotation {
     }
 
     /* renamed from: getWidth-XSAIIZE  reason: not valid java name */
-    public final long m7280getWidthXSAIIZE() {
+    public final long m7281getWidthXSAIIZE() {
         return this.width;
     }
 
     /* renamed from: getHeight-XSAIIZE  reason: not valid java name */
-    public final long m7278getHeightXSAIIZE() {
+    public final long m7279getHeightXSAIIZE() {
         return this.height;
     }
 
     /* renamed from: getPadding-XSAIIZE  reason: not valid java name */
-    public final long m7279getPaddingXSAIIZE() {
+    public final long m7280getPaddingXSAIIZE() {
         return this.padding;
     }
 
@@ -78,7 +78,7 @@ public final class Bullet implements AnnotatedString.Annotation {
     }
 
     /* renamed from: copy-w_4Rhrw$default  reason: not valid java name */
-    public static /* synthetic */ Bullet m7276copyw_4Rhrw$default(Bullet bullet, Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle, int i, Object obj) {
+    public static /* synthetic */ Bullet m7277copyw_4Rhrw$default(Bullet bullet, Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle, int i, Object obj) {
         if ((i & 1) != 0) {
             shape = bullet.shape;
         }
@@ -104,11 +104,11 @@ public final class Bullet implements AnnotatedString.Annotation {
         Brush brush2 = brush;
         long j4 = j3;
         long j5 = j2;
-        return bullet.m7277copyw_4Rhrw(shape, j, j5, j4, brush2, f, drawStyle2);
+        return bullet.m7278copyw_4Rhrw(shape, j, j5, j4, brush2, f, drawStyle2);
     }
 
     /* renamed from: copy-w_4Rhrw  reason: not valid java name */
-    public final Bullet m7277copyw_4Rhrw(Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle) {
+    public final Bullet m7278copyw_4Rhrw(Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle) {
         return new Bullet(shape, j, j2, j3, brush, f, drawStyle, null);
     }
 
@@ -118,19 +118,19 @@ public final class Bullet implements AnnotatedString.Annotation {
         }
         if (obj != null && (obj instanceof Bullet)) {
             Bullet bullet = (Bullet) obj;
-            return Intrinsics.areEqual(this.shape, bullet.shape) && TextUnit.m8186equalsimpl0(this.width, bullet.width) && TextUnit.m8186equalsimpl0(this.height, bullet.height) && TextUnit.m8186equalsimpl0(this.padding, bullet.padding) && Intrinsics.areEqual(this.brush, bullet.brush) && this.alpha == bullet.alpha && Intrinsics.areEqual(this.drawStyle, bullet.drawStyle);
+            return Intrinsics.areEqual(this.shape, bullet.shape) && TextUnit.m8187equalsimpl0(this.width, bullet.width) && TextUnit.m8187equalsimpl0(this.height, bullet.height) && TextUnit.m8187equalsimpl0(this.padding, bullet.padding) && Intrinsics.areEqual(this.brush, bullet.brush) && this.alpha == bullet.alpha && Intrinsics.areEqual(this.drawStyle, bullet.drawStyle);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((this.shape.hashCode() * 31) + TextUnit.m8190hashCodeimpl(this.width)) * 31) + TextUnit.m8190hashCodeimpl(this.height)) * 31) + TextUnit.m8190hashCodeimpl(this.padding)) * 31;
+        int hashCode = ((((((this.shape.hashCode() * 31) + TextUnit.m8191hashCodeimpl(this.width)) * 31) + TextUnit.m8191hashCodeimpl(this.height)) * 31) + TextUnit.m8191hashCodeimpl(this.padding)) * 31;
         Brush brush = this.brush;
         return ((((hashCode + (brush != null ? brush.hashCode() : 0)) * 31) + Float.hashCode(this.alpha)) * 31) + this.drawStyle.hashCode();
     }
 
     public String toString() {
-        return "Bullet(shape=" + this.shape + ", size=(" + ((Object) TextUnit.m8196toStringimpl(this.width)) + ", " + ((Object) TextUnit.m8196toStringimpl(this.height)) + "), padding=" + ((Object) TextUnit.m8196toStringimpl(this.padding)) + ", brush=" + this.brush + ", alpha=" + this.alpha + ", drawStyle=" + this.drawStyle + ')';
+        return "Bullet(shape=" + this.shape + ", size=(" + ((Object) TextUnit.m8197toStringimpl(this.width)) + ", " + ((Object) TextUnit.m8197toStringimpl(this.height)) + "), padding=" + ((Object) TextUnit.m8197toStringimpl(this.padding)) + ", brush=" + this.brush + ", alpha=" + this.alpha + ", drawStyle=" + this.drawStyle + ')';
     }
 
     /* compiled from: Bullet.kt */
@@ -145,17 +145,17 @@ public final class Bullet implements AnnotatedString.Annotation {
         }
 
         /* renamed from: getDefaultIndentation-XSAIIZE  reason: not valid java name */
-        public final long m7281getDefaultIndentationXSAIIZE() {
+        public final long m7282getDefaultIndentationXSAIIZE() {
             return Bullet.DefaultIndentation;
         }
 
         /* renamed from: getDefaultSize-XSAIIZE  reason: not valid java name */
-        public final long m7283getDefaultSizeXSAIIZE() {
+        public final long m7284getDefaultSizeXSAIIZE() {
             return Bullet.DefaultSize;
         }
 
         /* renamed from: getDefaultPadding-XSAIIZE  reason: not valid java name */
-        public final long m7282getDefaultPaddingXSAIIZE() {
+        public final long m7283getDefaultPaddingXSAIIZE() {
             return Bullet.DefaultPadding;
         }
 

@@ -4,17 +4,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.utils.ui.GradientText.ArizonaGradientTextView;
 import ru.mrlargha.feature.arizona.promo.R;
 /* loaded from: classes6.dex */
 public final class LevelLockerBinding implements ViewBinding {
+    public final ImageView bgImage;
     private final FrameLayout rootView;
     public final ArizonaGradientTextView text;
 
-    private LevelLockerBinding(FrameLayout frameLayout, ArizonaGradientTextView arizonaGradientTextView) {
+    private LevelLockerBinding(FrameLayout frameLayout, ImageView imageView, ArizonaGradientTextView arizonaGradientTextView) {
         this.rootView = frameLayout;
+        this.bgImage = imageView;
         this.text = arizonaGradientTextView;
     }
 
@@ -36,10 +39,14 @@ public final class LevelLockerBinding implements ViewBinding {
     }
 
     public static LevelLockerBinding bind(View view) {
-        int i = R.id.text;
-        ArizonaGradientTextView arizonaGradientTextView = (ArizonaGradientTextView) ViewBindings.findChildViewById(view, i);
-        if (arizonaGradientTextView != null) {
-            return new LevelLockerBinding((FrameLayout) view, arizonaGradientTextView);
+        int i = R.id.bg_image;
+        ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
+        if (imageView != null) {
+            i = R.id.text;
+            ArizonaGradientTextView arizonaGradientTextView = (ArizonaGradientTextView) ViewBindings.findChildViewById(view, i);
+            if (arizonaGradientTextView != null) {
+                return new LevelLockerBinding((FrameLayout) view, imageView, arizonaGradientTextView);
+            }
         }
         throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));
     }

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.os.Bundle;
 /* renamed from: io.appmetrica.analytics.impl.na  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0446na extends H4 {
     public C0446na(E4 e4) {
         super(e4);

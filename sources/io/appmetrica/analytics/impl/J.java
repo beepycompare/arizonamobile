@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.toggle.OuterStateToggle;
 import io.appmetrica.analytics.coreutils.internal.toggle.SavableToggle;
 import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
 import kotlin.collections.CollectionsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class J {
 
     /* renamed from: a  reason: collision with root package name */

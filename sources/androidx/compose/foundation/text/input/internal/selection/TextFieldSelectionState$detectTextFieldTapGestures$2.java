@@ -35,11 +35,11 @@ public final class TextFieldSelectionState$detectTextFieldTapGestures$2 extends 
 
     @Override // kotlin.jvm.functions.Function3
     public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-        return m1663invoked4ec7I(pressGestureScope, offset.m5045unboximpl(), continuation);
+        return m1664invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
     }
 
     /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-    public final Object m1663invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+    public final Object m1664invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
         TextFieldSelectionState$detectTextFieldTapGestures$2 textFieldSelectionState$detectTextFieldTapGestures$2 = new TextFieldSelectionState$detectTextFieldTapGestures$2(this.$interactionSource, this.this$0, continuation);
         textFieldSelectionState$detectTextFieldTapGestures$2.L$0 = pressGestureScope;
         textFieldSelectionState$detectTextFieldTapGestures$2.J$0 = j;

@@ -268,7 +268,7 @@ public final class ColorSpaces {
     public final ColorSpace match(float[] fArr, TransferParameters transferParameters) {
         ColorSpace[] colorSpaceArr;
         for (ColorSpace colorSpace : ColorSpacesArray) {
-            if (ColorModel.m5704equalsimpl0(colorSpace.m5713getModelxdoWZVw(), ColorModel.Companion.m5711getRgbxdoWZVw())) {
+            if (ColorModel.m5705equalsimpl0(colorSpace.m5714getModelxdoWZVw(), ColorModel.Companion.m5712getRgbxdoWZVw())) {
                 ColorSpace adapt$default = ColorSpaceKt.adapt$default(colorSpace, Illuminant.INSTANCE.getD50(), null, 2, null);
                 Intrinsics.checkNotNull(adapt$default, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb");
                 Rgb rgb = (Rgb) adapt$default;

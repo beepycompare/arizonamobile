@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import kotlin.io.CloseableKt;
 import kotlin.jvm.functions.Function0;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class e {
     public static byte[] a(int i, Function0 function0) {
         try {

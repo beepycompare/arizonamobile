@@ -9,10 +9,10 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class SharedElementKt {
     public static final Rect getTargetBounds(TargetData targetData) {
-        return RectKt.m5075Recttz77jQw(Offset.m5040plusMKHz9U(targetData.m141getInitialMfrOffsetF1C5BW0(), targetData.m143getTargetStructuralOffsetF1C5BW0()), targetData.m142getSizeNHjbRc());
+        return RectKt.m5076Recttz77jQw(Offset.m5041plusMKHz9U(targetData.m142getInitialMfrOffsetF1C5BW0(), targetData.m144getTargetStructuralOffsetF1C5BW0()), targetData.m143getSizeNHjbRc());
     }
 
     public static final long calculateOffsetFromDirectManipulation(TargetData targetData, Rect rect) {
-        return Offset.m5040plusMKHz9U(Offset.m5039minusMKHz9U(rect.m5070getTopLeftF1C5BW0(), targetData.m141getInitialMfrOffsetF1C5BW0()), targetData.m140getCurrentMfrOffsetF1C5BW0());
+        return Offset.m5041plusMKHz9U(Offset.m5040minusMKHz9U(rect.m5071getTopLeftF1C5BW0(), targetData.m142getInitialMfrOffsetF1C5BW0()), targetData.m141getCurrentMfrOffsetF1C5BW0());
     }
 }

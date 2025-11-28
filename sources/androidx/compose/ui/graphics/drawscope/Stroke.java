@@ -11,8 +11,8 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class Stroke extends DrawStyle {
     public static final Companion Companion = new Companion(null);
-    private static final int DefaultCap = StrokeCap.Companion.m5649getButtKaPHkGw();
-    private static final int DefaultJoin = StrokeJoin.Companion.m5660getMiterLxFBmk8();
+    private static final int DefaultCap = StrokeCap.Companion.m5650getButtKaPHkGw();
+    private static final int DefaultJoin = StrokeJoin.Companion.m5661getMiterLxFBmk8();
     public static final float DefaultMiter = 4.0f;
     public static final float HairlineWidth = 0.0f;
     private final int cap;
@@ -38,12 +38,12 @@ public final class Stroke extends DrawStyle {
     }
 
     /* renamed from: getCap-KaPHkGw  reason: not valid java name */
-    public final int m5927getCapKaPHkGw() {
+    public final int m5928getCapKaPHkGw() {
         return this.cap;
     }
 
     /* renamed from: getJoin-LxFBmk8  reason: not valid java name */
-    public final int m5928getJoinLxFBmk8() {
+    public final int m5929getJoinLxFBmk8() {
         return this.join;
     }
 
@@ -63,12 +63,12 @@ public final class Stroke extends DrawStyle {
         }
 
         /* renamed from: getDefaultCap-KaPHkGw  reason: not valid java name */
-        public final int m5929getDefaultCapKaPHkGw() {
+        public final int m5930getDefaultCapKaPHkGw() {
             return Stroke.DefaultCap;
         }
 
         /* renamed from: getDefaultJoin-LxFBmk8  reason: not valid java name */
-        public final int m5930getDefaultJoinLxFBmk8() {
+        public final int m5931getDefaultJoinLxFBmk8() {
             return Stroke.DefaultJoin;
         }
     }
@@ -88,18 +88,18 @@ public final class Stroke extends DrawStyle {
         }
         if (obj instanceof Stroke) {
             Stroke stroke = (Stroke) obj;
-            return this.width == stroke.width && this.miter == stroke.miter && StrokeCap.m5645equalsimpl0(this.cap, stroke.cap) && StrokeJoin.m5655equalsimpl0(this.join, stroke.join) && Intrinsics.areEqual(this.pathEffect, stroke.pathEffect);
+            return this.width == stroke.width && this.miter == stroke.miter && StrokeCap.m5646equalsimpl0(this.cap, stroke.cap) && StrokeJoin.m5656equalsimpl0(this.join, stroke.join) && Intrinsics.areEqual(this.pathEffect, stroke.pathEffect);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((Float.hashCode(this.width) * 31) + Float.hashCode(this.miter)) * 31) + StrokeCap.m5646hashCodeimpl(this.cap)) * 31) + StrokeJoin.m5656hashCodeimpl(this.join)) * 31;
+        int hashCode = ((((((Float.hashCode(this.width) * 31) + Float.hashCode(this.miter)) * 31) + StrokeCap.m5647hashCodeimpl(this.cap)) * 31) + StrokeJoin.m5657hashCodeimpl(this.join)) * 31;
         PathEffect pathEffect = this.pathEffect;
         return hashCode + (pathEffect != null ? pathEffect.hashCode() : 0);
     }
 
     public String toString() {
-        return "Stroke(width=" + this.width + ", miter=" + this.miter + ", cap=" + ((Object) StrokeCap.m5647toStringimpl(this.cap)) + ", join=" + ((Object) StrokeJoin.m5657toStringimpl(this.join)) + ", pathEffect=" + this.pathEffect + ')';
+        return "Stroke(width=" + this.width + ", miter=" + this.miter + ", cap=" + ((Object) StrokeCap.m5648toStringimpl(this.cap)) + ", join=" + ((Object) StrokeJoin.m5658toStringimpl(this.join)) + ", pathEffect=" + this.pathEffect + ')';
     }
 }

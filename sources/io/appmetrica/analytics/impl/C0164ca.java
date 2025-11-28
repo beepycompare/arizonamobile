@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 import kotlin.jvm.internal.Intrinsics;
 /* renamed from: io.appmetrica.analytics.impl.ca  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0164ca implements Parcelable {
     public static final C0138ba CREATOR = new C0138ba();
 

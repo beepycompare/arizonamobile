@@ -42,10 +42,10 @@ public final class TextFieldBuffer implements Appendable {
         int getChangeCount();
 
         /* renamed from: getOriginalRange--jx7JFs  reason: not valid java name */
-        long mo1442getOriginalRangejx7JFs(int i);
+        long mo1443getOriginalRangejx7JFs(int i);
 
         /* renamed from: getRange--jx7JFs  reason: not valid java name */
-        long mo1443getRangejx7JFs(int i);
+        long mo1444getRangejx7JFs(int i);
     }
 
     public static /* synthetic */ void getChanges$annotations() {
@@ -58,8 +58,8 @@ public final class TextFieldBuffer implements Appendable {
         this.buffer = new PartialGapBuffer(textFieldCharSequence);
         MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = null;
         this.backingChangeTracker = changeTracker != null ? new ChangeTracker(changeTracker) : null;
-        this.selectionInChars = textFieldCharSequence.m1446getSelectiond9O1mEE();
-        this.composition = textFieldCharSequence.m1445getCompositionMzsxiRA();
+        this.selectionInChars = textFieldCharSequence.m1447getSelectiond9O1mEE();
+        this.composition = textFieldCharSequence.m1446getCompositionMzsxiRA();
         List<AnnotatedString.Range<AnnotatedString.Annotation>> composingAnnotations = textFieldCharSequence.getComposingAnnotations();
         if (composingAnnotations != null && !composingAnnotations.isEmpty()) {
             int size = textFieldCharSequence.getComposingAnnotations().size();
@@ -108,8 +108,8 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: getOriginalSelection-d9O1mEE  reason: not valid java name */
-    public final long m1437getOriginalSelectiond9O1mEE() {
-        return this.originalValue.m1446getSelectiond9O1mEE();
+    public final long m1438getOriginalSelectiond9O1mEE() {
+        return this.originalValue.m1447getSelectiond9O1mEE();
     }
 
     public final ChangeList getChanges() {
@@ -117,29 +117,29 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     public final boolean hasSelection() {
-        return !TextRange.m7451getCollapsedimpl(m1438getSelectiond9O1mEE());
+        return !TextRange.m7452getCollapsedimpl(m1439getSelectiond9O1mEE());
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m1438getSelectiond9O1mEE() {
+    public final long m1439getSelectiond9O1mEE() {
         return this.selectionInChars;
     }
 
     /* renamed from: setSelection-5zc-tL8  reason: not valid java name */
-    public final void m1440setSelection5zctL8(long j) {
-        m1433requireValidRange5zctL8(j);
+    public final void m1441setSelection5zctL8(long j) {
+        m1434requireValidRange5zctL8(j);
         this.selectionInChars = j;
         this.highlight = null;
     }
 
     /* renamed from: getComposition-MzsxiRA$foundation_release  reason: not valid java name */
-    public final TextRange m1436getCompositionMzsxiRA$foundation_release() {
+    public final TextRange m1437getCompositionMzsxiRA$foundation_release() {
         return this.composition;
     }
 
     /* renamed from: setComposition-OEnZFl4  reason: not valid java name */
-    private final void m1434setCompositionOEnZFl4(TextRange textRange) {
-        if (textRange == null || TextRange.m7451getCollapsedimpl(textRange.m7461unboximpl())) {
+    private final void m1435setCompositionOEnZFl4(TextRange textRange) {
+        if (textRange == null || TextRange.m7452getCollapsedimpl(textRange.m7462unboximpl())) {
             this.composition = null;
             MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
             if (mutableVector != null) {
@@ -165,7 +165,7 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     public final void commitComposition$foundation_release() {
-        m1434setCompositionOEnZFl4(null);
+        m1435setCompositionOEnZFl4(null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -186,7 +186,7 @@ public final class TextFieldBuffer implements Appendable {
         if (i >= i2) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i + " > " + i2);
         }
-        m1434setCompositionOEnZFl4(TextRange.m7445boximpl(TextRangeKt.TextRange(i, i2)));
+        m1435setCompositionOEnZFl4(TextRange.m7446boximpl(TextRangeKt.TextRange(i, i2)));
         MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
         if (mutableVector != null) {
             mutableVector.clear();
@@ -213,11 +213,11 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: setHighlight-K7f2yys$foundation_release  reason: not valid java name */
-    public final void m1439setHighlightK7f2yys$foundation_release(int i, int i2, int i3) {
+    public final void m1440setHighlightK7f2yys$foundation_release(int i, int i2, int i3) {
         if (i2 >= i3) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i2 + " > " + i3);
         }
-        this.highlight = new Pair<>(TextHighlightType.m1453boximpl(i), TextRange.m7445boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
+        this.highlight = new Pair<>(TextHighlightType.m1454boximpl(i), TextRange.m7446boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
     }
 
     public final void clearHighlight$foundation_release() {
@@ -331,7 +331,7 @@ public final class TextFieldBuffer implements Appendable {
         if (offsetMappingCalculator != null) {
             offsetMappingCalculator.recordEditOperation(i, i2, i3);
         }
-        this.selectionInChars = TextFieldBufferKt.m1444adjustTextRangevJH6DeI(m1438getSelectiond9O1mEE(), i, i2, i3);
+        this.selectionInChars = TextFieldBufferKt.m1445adjustTextRangevJH6DeI(m1439getSelectiond9O1mEE(), i, i2, i3);
     }
 
     public final char charAt(int i) {
@@ -352,7 +352,7 @@ public final class TextFieldBuffer implements Appendable {
 
     public final void revertAllChanges() {
         replace(0, getLength(), this.originalValue.toString());
-        m1440setSelection5zctL8(this.originalValue.m1446getSelectiond9O1mEE());
+        m1441setSelection5zctL8(this.originalValue.m1447getSelectiond9O1mEE());
         clearChangeList();
     }
 
@@ -367,10 +367,10 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: toTextFieldCharSequence-wFTz33Y$foundation_release$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldCharSequence m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(TextFieldBuffer textFieldBuffer, long j, TextRange textRange, List list, List list2, int i, Object obj) {
+    public static /* synthetic */ TextFieldCharSequence m1436toTextFieldCharSequencewFTz33Y$foundation_release$default(TextFieldBuffer textFieldBuffer, long j, TextRange textRange, List list, List list2, int i, Object obj) {
         List<AnnotatedString.Range<AnnotatedString.Annotation>> asMutableList;
         if ((i & 1) != 0) {
-            j = textFieldBuffer.m1438getSelectiond9O1mEE();
+            j = textFieldBuffer.m1439getSelectiond9O1mEE();
         }
         long j2 = j;
         if ((i & 2) != 0) {
@@ -381,11 +381,11 @@ public final class TextFieldBuffer implements Appendable {
             MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = textFieldBuffer.composingAnnotations;
             list = (mutableVector == null || (asMutableList = mutableVector.asMutableList()) == null || asMutableList.isEmpty()) ? null : asMutableList;
         }
-        return textFieldBuffer.m1441toTextFieldCharSequencewFTz33Y$foundation_release(j2, textRange2, list, (i & 8) != 0 ? null : list2);
+        return textFieldBuffer.m1442toTextFieldCharSequencewFTz33Y$foundation_release(j2, textRange2, list, (i & 8) != 0 ? null : list2);
     }
 
     /* renamed from: toTextFieldCharSequence-wFTz33Y$foundation_release  reason: not valid java name */
-    public final TextFieldCharSequence m1441toTextFieldCharSequencewFTz33Y$foundation_release(long j, TextRange textRange, List<AnnotatedString.Range<AnnotatedString.Annotation>> list, List<AnnotatedString.Range<AnnotatedString.Annotation>> list2) {
+    public final TextFieldCharSequence m1442toTextFieldCharSequencewFTz33Y$foundation_release(long j, TextRange textRange, List<AnnotatedString.Range<AnnotatedString.Annotation>> list, List<AnnotatedString.Range<AnnotatedString.Annotation>> list2) {
         return new TextFieldCharSequence(this.buffer.toString(), j, textRange, null, list, list2, 8, null);
     }
 
@@ -403,12 +403,12 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: requireValidRange-5zc-tL8  reason: not valid java name */
-    private final void m1433requireValidRange5zctL8(long j) {
+    private final void m1434requireValidRange5zctL8(long j) {
         long TextRange = TextRangeKt.TextRange(0, getLength());
-        if (TextRange.m7447contains5zctL8(TextRange, j)) {
+        if (TextRange.m7448contains5zctL8(TextRange, j)) {
             return;
         }
-        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m7460toStringimpl(j)) + " to be in " + ((Object) TextRange.m7460toStringimpl(TextRange)));
+        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m7461toStringimpl(j)) + " to be in " + ((Object) TextRange.m7461toStringimpl(TextRange)));
     }
 
     public final boolean getCanCallAddStyle$foundation_release() {

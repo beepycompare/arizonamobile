@@ -16,7 +16,7 @@ public final class ScaffoldKt$ScaffoldLayout$contentPadding$1$1 implements Paddi
     /* JADX INFO: Access modifiers changed from: package-private */
     public ScaffoldKt$ScaffoldLayout$contentPadding$1$1() {
         MutableState mutableStateOf$default;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(PaddingKt.m835PaddingValues0680j_4(Dp.m7995constructorimpl(0)), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)), null, 2, null);
         this.paddingHolder$delegate = mutableStateOf$default;
     }
 
@@ -30,25 +30,25 @@ public final class ScaffoldKt$ScaffoldLayout$contentPadding$1$1 implements Paddi
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateLeftPadding-u2uoSUM */
-    public float mo786calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
-        return getPaddingHolder().mo786calculateLeftPaddingu2uoSUM(layoutDirection);
+    public float mo787calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
+        return getPaddingHolder().mo787calculateLeftPaddingu2uoSUM(layoutDirection);
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateTopPadding-D9Ej5fM */
-    public float mo788calculateTopPaddingD9Ej5fM() {
-        return getPaddingHolder().mo788calculateTopPaddingD9Ej5fM();
+    public float mo789calculateTopPaddingD9Ej5fM() {
+        return getPaddingHolder().mo789calculateTopPaddingD9Ej5fM();
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateRightPadding-u2uoSUM */
-    public float mo787calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
-        return getPaddingHolder().mo787calculateRightPaddingu2uoSUM(layoutDirection);
+    public float mo788calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
+        return getPaddingHolder().mo788calculateRightPaddingu2uoSUM(layoutDirection);
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateBottomPadding-D9Ej5fM */
-    public float mo785calculateBottomPaddingD9Ej5fM() {
-        return getPaddingHolder().mo785calculateBottomPaddingD9Ej5fM();
+    public float mo786calculateBottomPaddingD9Ej5fM() {
+        return getPaddingHolder().mo786calculateBottomPaddingD9Ej5fM();
     }
 }

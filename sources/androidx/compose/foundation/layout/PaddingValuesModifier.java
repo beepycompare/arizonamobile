@@ -33,21 +33,21 @@ public final class PaddingValuesModifier extends Modifier.Node implements Layout
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        float mo786calculateLeftPaddingu2uoSUM = this.paddingValues.mo786calculateLeftPaddingu2uoSUM(measureScope.getLayoutDirection());
-        float mo788calculateTopPaddingD9Ej5fM = this.paddingValues.mo788calculateTopPaddingD9Ej5fM();
-        float mo787calculateRightPaddingu2uoSUM = this.paddingValues.mo787calculateRightPaddingu2uoSUM(measureScope.getLayoutDirection());
-        float mo785calculateBottomPaddingD9Ej5fM = this.paddingValues.mo785calculateBottomPaddingD9Ej5fM();
+    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        float mo787calculateLeftPaddingu2uoSUM = this.paddingValues.mo787calculateLeftPaddingu2uoSUM(measureScope.getLayoutDirection());
+        float mo789calculateTopPaddingD9Ej5fM = this.paddingValues.mo789calculateTopPaddingD9Ej5fM();
+        float mo788calculateRightPaddingu2uoSUM = this.paddingValues.mo788calculateRightPaddingu2uoSUM(measureScope.getLayoutDirection());
+        float mo786calculateBottomPaddingD9Ej5fM = this.paddingValues.mo786calculateBottomPaddingD9Ej5fM();
         float f = 0;
-        if (!((Dp.m7994compareTo0680j_4(mo785calculateBottomPaddingD9Ej5fM, Dp.m7995constructorimpl(f)) >= 0) & (Dp.m7994compareTo0680j_4(mo786calculateLeftPaddingu2uoSUM, Dp.m7995constructorimpl(f)) >= 0) & (Dp.m7994compareTo0680j_4(mo788calculateTopPaddingD9Ej5fM, Dp.m7995constructorimpl(f)) >= 0) & (Dp.m7994compareTo0680j_4(mo787calculateRightPaddingu2uoSUM, Dp.m7995constructorimpl(f)) >= 0))) {
+        if (!((Dp.m7995compareTo0680j_4(mo786calculateBottomPaddingD9Ej5fM, Dp.m7996constructorimpl(f)) >= 0) & (Dp.m7995compareTo0680j_4(mo787calculateLeftPaddingu2uoSUM, Dp.m7996constructorimpl(f)) >= 0) & (Dp.m7995compareTo0680j_4(mo789calculateTopPaddingD9Ej5fM, Dp.m7996constructorimpl(f)) >= 0) & (Dp.m7995compareTo0680j_4(mo788calculateRightPaddingu2uoSUM, Dp.m7996constructorimpl(f)) >= 0))) {
             InlineClassHelperKt.throwIllegalArgumentException("Padding must be non-negative");
         }
-        final int i = measureScope.mo423roundToPx0680j_4(mo786calculateLeftPaddingu2uoSUM);
-        int i2 = measureScope.mo423roundToPx0680j_4(mo787calculateRightPaddingu2uoSUM) + i;
-        final int i3 = measureScope.mo423roundToPx0680j_4(mo788calculateTopPaddingD9Ej5fM);
-        int i4 = measureScope.mo423roundToPx0680j_4(mo785calculateBottomPaddingD9Ej5fM) + i3;
-        final Placeable mo6697measureBRTryo0 = measurable.mo6697measureBRTryo0(ConstraintsKt.m7967offsetNN6EwU(j, -i2, -i4));
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7965constrainWidthK40F9xA(j, mo6697measureBRTryo0.getWidth() + i2), ConstraintsKt.m7964constrainHeightK40F9xA(j, mo6697measureBRTryo0.getHeight() + i4), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingValuesModifier$$ExternalSyntheticLambda0
+        final int i = measureScope.mo424roundToPx0680j_4(mo787calculateLeftPaddingu2uoSUM);
+        int i2 = measureScope.mo424roundToPx0680j_4(mo788calculateRightPaddingu2uoSUM) + i;
+        final int i3 = measureScope.mo424roundToPx0680j_4(mo789calculateTopPaddingD9Ej5fM);
+        int i4 = measureScope.mo424roundToPx0680j_4(mo786calculateBottomPaddingD9Ej5fM) + i3;
+        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU(j, -i2, -i4));
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7966constrainWidthK40F9xA(j, mo6698measureBRTryo0.getWidth() + i2), ConstraintsKt.m7965constrainHeightK40F9xA(j, mo6698measureBRTryo0.getHeight() + i4), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingValuesModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1;

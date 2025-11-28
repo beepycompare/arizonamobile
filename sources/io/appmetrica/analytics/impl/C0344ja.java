@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
 import java.io.File;
 import kotlin.Unit;
 /* renamed from: io.appmetrica.analytics.impl.ja  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0344ja {
 
     /* renamed from: a  reason: collision with root package name */

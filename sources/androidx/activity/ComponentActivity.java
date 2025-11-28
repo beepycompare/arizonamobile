@@ -1,6 +1,5 @@
 package androidx.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -55,6 +54,10 @@ import androidx.lifecycle.ViewTreeLifecycleOwner;
 import androidx.lifecycle.ViewTreeViewModelStoreOwner;
 import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.lifecycle.viewmodel.MutableCreationExtras;
+import androidx.navigationevent.DirectNavigationEventInput;
+import androidx.navigationevent.NavigationEventDispatcher;
+import androidx.navigationevent.NavigationEventDispatcherOwner;
+import androidx.navigationevent.ViewTreeNavigationEventDispatcherOwner;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryController;
 import androidx.savedstate.SavedStateRegistryOwner;
@@ -77,9 +80,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ComponentActivity.kt */
-@Metadata(d1 = {"\u0000è\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0011\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001e\b\u0016\u0018\u0000 À\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b2\u00020\t2\u00020\n2\u00020\u000b2\u00020\f2\u00020\r2\u00020\u000e2\u00020\u000f2\u00020\u00102\u00020\u0011:\n¼\u0001½\u0001¾\u0001¿\u0001À\u0001B\u0007¢\u0006\u0004\b\u0012\u0010\u0013B\u0013\b\u0017\u0012\b\b\u0001\u0010\u0014\u001a\u00020\u0015¢\u0006\u0004\b\u0012\u0010\u0016J\u0012\u0010>\u001a\u00020?2\b\u0010@\u001a\u0004\u0018\u00010AH\u0014J\u0010\u0010B\u001a\u00020?2\u0006\u0010C\u001a\u00020AH\u0015J\b\u0010D\u001a\u0004\u0018\u00010EJ\n\u0010F\u001a\u0004\u0018\u00010EH\u0017J\u0012\u0010J\u001a\u00020?2\b\b\u0001\u0010K\u001a\u00020\u0015H\u0016J\u0012\u0010J\u001a\u00020?2\b\u0010L\u001a\u0004\u0018\u00010MH\u0016J\u001c\u0010J\u001a\u00020?2\b\u0010L\u001a\u0004\u0018\u00010M2\b\u0010N\u001a\u0004\u0018\u00010OH\u0016J\u001c\u0010P\u001a\u00020?2\b\u0010L\u001a\u0004\u0018\u00010M2\b\u0010N\u001a\u0004\u0018\u00010OH\u0016J\b\u0010Q\u001a\u00020?H\u0017J\n\u0010R\u001a\u0004\u0018\u00010SH\u0016J\u000e\u0010T\u001a\u00020?2\u0006\u0010U\u001a\u00020VJ\u000e\u0010W\u001a\u00020?2\u0006\u0010U\u001a\u00020VJ\"\u0010X\u001a\u00020<2\u0006\u0010Y\u001a\u00020\u00152\b\u0010L\u001a\u0004\u0018\u00010M2\u0006\u0010Z\u001a\u00020[H\u0016J\u0018\u0010\\\u001a\u00020<2\u0006\u0010Y\u001a\u00020\u00152\u0006\u0010Z\u001a\u00020[H\u0016J\u0018\u0010]\u001a\u00020<2\u0006\u0010Y\u001a\u00020\u00152\u0006\u0010^\u001a\u00020_H\u0016J\u0018\u0010`\u001a\u00020?2\u0006\u0010Y\u001a\u00020\u00152\u0006\u0010Z\u001a\u00020[H\u0016J\u0010\u0010a\u001a\u00020?2\u0006\u0010b\u001a\u00020cH\u0016J\u0018\u0010a\u001a\u00020?2\u0006\u0010b\u001a\u00020c2\u0006\u0010d\u001a\u00020\u0003H\u0016J \u0010a\u001a\u00020?2\u0006\u0010b\u001a\u00020c2\u0006\u0010d\u001a\u00020\u00032\u0006\u0010e\u001a\u00020fH\u0017J\u0010\u0010g\u001a\u00020?2\u0006\u0010b\u001a\u00020cH\u0016J\b\u0010h\u001a\u00020?H\u0016J\b\u0010p\u001a\u00020?H\u0002J\b\u0010z\u001a\u00020?H\u0017J\u0012\u0010\u0081\u0001\u001a\u00020?2\u0007\u0010\u0082\u0001\u001a\u00020|H\u0003J\u001b\u0010\u0087\u0001\u001a\u00020?2\u0007\u0010\u0088\u0001\u001a\u0002042\u0007\u0010\u0089\u0001\u001a\u00020\u0015H\u0017J&\u0010\u0087\u0001\u001a\u00020?2\u0007\u0010\u0088\u0001\u001a\u0002042\u0007\u0010\u0089\u0001\u001a\u00020\u00152\t\u0010\u008a\u0001\u001a\u0004\u0018\u00010AH\u0017JB\u0010\u008b\u0001\u001a\u00020?2\b\u0010\u0088\u0001\u001a\u00030\u008c\u00012\u0007\u0010\u0089\u0001\u001a\u00020\u00152\t\u0010\u008d\u0001\u001a\u0004\u0018\u0001042\u0007\u0010\u008e\u0001\u001a\u00020\u00152\u0007\u0010\u008f\u0001\u001a\u00020\u00152\u0007\u0010\u0090\u0001\u001a\u00020\u0015H\u0017JM\u0010\u008b\u0001\u001a\u00020?2\b\u0010\u0088\u0001\u001a\u00030\u008c\u00012\u0007\u0010\u0089\u0001\u001a\u00020\u00152\t\u0010\u008d\u0001\u001a\u0004\u0018\u0001042\u0007\u0010\u008e\u0001\u001a\u00020\u00152\u0007\u0010\u008f\u0001\u001a\u00020\u00152\u0007\u0010\u0090\u0001\u001a\u00020\u00152\t\u0010\u008a\u0001\u001a\u0004\u0018\u00010AH\u0017J&\u0010\u0091\u0001\u001a\u00020?2\u0007\u0010\u0089\u0001\u001a\u00020\u00152\u0007\u0010\u0092\u0001\u001a\u00020\u00152\t\u0010\u0093\u0001\u001a\u0004\u0018\u000104H\u0015J3\u0010\u0094\u0001\u001a\u00020?2\u0007\u0010\u0089\u0001\u001a\u00020\u00152\u000f\u0010\u0095\u0001\u001a\n\u0012\u0005\u0012\u00030\u0097\u00010\u0096\u00012\b\u0010\u0098\u0001\u001a\u00030\u0099\u0001H\u0017¢\u0006\u0003\u0010\u009a\u0001JO\u0010\u009b\u0001\u001a\n\u0012\u0005\u0012\u0003H\u009d\u00010\u009c\u0001\"\u0005\b\u0000\u0010\u009d\u0001\"\u0005\b\u0001\u0010\u009e\u00012\u0016\u0010\u009f\u0001\u001a\u0011\u0012\u0005\u0012\u0003H\u009d\u0001\u0012\u0005\u0012\u0003H\u009e\u00010 \u00012\u0007\u0010¡\u0001\u001a\u00020+2\u000f\u0010¢\u0001\u001a\n\u0012\u0005\u0012\u0003H\u009e\u00010£\u0001JF\u0010\u009b\u0001\u001a\n\u0012\u0005\u0012\u0003H\u009d\u00010\u009c\u0001\"\u0005\b\u0000\u0010\u009d\u0001\"\u0005\b\u0001\u0010\u009e\u00012\u0016\u0010\u009f\u0001\u001a\u0011\u0012\u0005\u0012\u0003H\u009d\u0001\u0012\u0005\u0012\u0003H\u009e\u00010 \u00012\u000f\u0010¢\u0001\u001a\n\u0012\u0005\u0012\u0003H\u009e\u00010£\u0001J\u0012\u0010¤\u0001\u001a\u00020?2\u0007\u0010¥\u0001\u001a\u000201H\u0017J\u0015\u0010¦\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020100J\u0015\u0010§\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020100J\u0012\u0010¨\u0001\u001a\u00020?2\u0007\u0010©\u0001\u001a\u00020\u0015H\u0017J\u0015\u0010ª\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020\u001500J\u0015\u0010«\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020\u001500J\u0012\u0010¬\u0001\u001a\u00020?2\u0007\u0010\u0088\u0001\u001a\u000204H\u0015J\u0015\u0010\u00ad\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020400J\u0015\u0010®\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020400J\u0012\u0010¯\u0001\u001a\u00020?2\u0007\u0010°\u0001\u001a\u00020<H\u0017J\u001b\u0010¯\u0001\u001a\u00020?2\u0007\u0010°\u0001\u001a\u00020<2\u0007\u0010¥\u0001\u001a\u000201H\u0017J\u0015\u0010±\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020600J\u0015\u0010²\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020600J\u0012\u0010³\u0001\u001a\u00020?2\u0007\u0010´\u0001\u001a\u00020<H\u0017J\u001b\u0010³\u0001\u001a\u00020?2\u0007\u0010´\u0001\u001a\u00020<2\u0007\u0010¥\u0001\u001a\u000201H\u0017J\u0015\u0010µ\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020800J\u0015\u0010¶\u0001\u001a\u00020?2\f\u0010U\u001a\b\u0012\u0004\u0012\u00020800J\t\u0010·\u0001\u001a\u00020?H\u0015J\u000f\u0010¸\u0001\u001a\u00020?2\u0006\u0010U\u001a\u00020:J\u000f\u0010¹\u0001\u001a\u00020?2\u0006\u0010U\u001a\u00020:J\t\u0010º\u0001\u001a\u00020?H\u0016J\t\u0010»\u0001\u001a\u00020!H\u0002R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001d\u0010\u0013R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\"\u001a\u00020#8VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b&\u0010'\u001a\u0004\b$\u0010%R\u0012\u0010\u0014\u001a\u00020\u00158\u0002@\u0002X\u0083\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010*\u001a\u00020+¢\u0006\b\n\u0000\u001a\u0004\b,\u0010-R\u001a\u0010.\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u000201000/X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00102\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u0015000/X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00103\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u000204000/X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00105\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u000206000/X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00107\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u000208000/X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020:0/X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020<X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020<X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010G\u001a\u0004\u0018\u00010E8WX\u0096\u0004¢\u0006\u0006\u001a\u0004\bH\u0010IR\u0014\u0010i\u001a\u00020j8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bk\u0010lR\u0014\u0010m\u001a\u00020\u001f8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bn\u0010oR\u001b\u0010q\u001a\u00020r8VX\u0096\u0084\u0002¢\u0006\f\n\u0004\bu\u0010'\u001a\u0004\bs\u0010tR\u0014\u0010v\u001a\u00020w8WX\u0096\u0004¢\u0006\u0006\u001a\u0004\bx\u0010yR\"\u0010{\u001a\u00020|8FX\u0086\u0084\u0002¢\u0006\u0013\n\u0005\b\u0080\u0001\u0010'\u0012\u0004\b}\u0010\u0013\u001a\u0004\b~\u0010\u007fR\u0015\u0010\u0083\u0001\u001a\u00030\u0084\u00018F¢\u0006\b\u001a\u0006\b\u0085\u0001\u0010\u0086\u0001¨\u0006Á\u0001"}, d2 = {"Landroidx/activity/ComponentActivity;", "Landroidx/core/app/ComponentActivity;", "Landroidx/activity/contextaware/ContextAware;", "Landroidx/lifecycle/LifecycleOwner;", "Landroidx/lifecycle/ViewModelStoreOwner;", "Landroidx/lifecycle/HasDefaultViewModelProviderFactory;", "Landroidx/savedstate/SavedStateRegistryOwner;", "Landroidx/activity/OnBackPressedDispatcherOwner;", "Landroidx/activity/result/ActivityResultRegistryOwner;", "Landroidx/activity/result/ActivityResultCaller;", "Landroidx/core/content/OnConfigurationChangedProvider;", "Landroidx/core/content/OnTrimMemoryProvider;", "Landroidx/core/app/OnNewIntentProvider;", "Landroidx/core/app/OnMultiWindowModeChangedProvider;", "Landroidx/core/app/OnPictureInPictureModeChangedProvider;", "Landroidx/core/app/OnUserLeaveHintProvider;", "Landroidx/core/view/MenuHost;", "Landroidx/activity/FullyDrawnReporterOwner;", "<init>", "()V", "contentLayoutId", "", "(I)V", "contextAwareHelper", "Landroidx/activity/contextaware/ContextAwareHelper;", "menuHostHelper", "Landroidx/core/view/MenuHostHelper;", "savedStateRegistryController", "Landroidx/savedstate/SavedStateRegistryController;", "getSavedStateRegistryController$annotations", "_viewModelStore", "Landroidx/lifecycle/ViewModelStore;", "reportFullyDrawnExecutor", "Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;", "fullyDrawnReporter", "Landroidx/activity/FullyDrawnReporter;", "getFullyDrawnReporter", "()Landroidx/activity/FullyDrawnReporter;", "fullyDrawnReporter$delegate", "Lkotlin/Lazy;", "nextLocalRequestCode", "Ljava/util/concurrent/atomic/AtomicInteger;", "activityResultRegistry", "Landroidx/activity/result/ActivityResultRegistry;", "getActivityResultRegistry", "()Landroidx/activity/result/ActivityResultRegistry;", "onConfigurationChangedListeners", "Ljava/util/concurrent/CopyOnWriteArrayList;", "Landroidx/core/util/Consumer;", "Landroid/content/res/Configuration;", "onTrimMemoryListeners", "onNewIntentListeners", "Landroid/content/Intent;", "onMultiWindowModeChangedListeners", "Landroidx/core/app/MultiWindowModeChangedInfo;", "onPictureInPictureModeChangedListeners", "Landroidx/core/app/PictureInPictureModeChangedInfo;", "onUserLeaveHintListeners", "Ljava/lang/Runnable;", "dispatchingOnMultiWindowModeChanged", "", "dispatchingOnPictureInPictureModeChanged", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onSaveInstanceState", "outState", "onRetainNonConfigurationInstance", "", "onRetainCustomNonConfigurationInstance", "lastCustomNonConfigurationInstance", "getLastCustomNonConfigurationInstance", "()Ljava/lang/Object;", "setContentView", "layoutResID", "view", "Landroid/view/View;", "params", "Landroid/view/ViewGroup$LayoutParams;", "addContentView", "initializeViewTreeOwners", "peekAvailableContext", "Landroid/content/Context;", "addOnContextAvailableListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Landroidx/activity/contextaware/OnContextAvailableListener;", "removeOnContextAvailableListener", "onPreparePanel", "featureId", "menu", "Landroid/view/Menu;", "onCreatePanelMenu", "onMenuItemSelected", "item", "Landroid/view/MenuItem;", "onPanelClosed", "addMenuProvider", "provider", "Landroidx/core/view/MenuProvider;", "owner", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/lifecycle/Lifecycle$State;", "removeMenuProvider", "invalidateMenu", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "getLifecycle", "()Landroidx/lifecycle/Lifecycle;", "viewModelStore", "getViewModelStore", "()Landroidx/lifecycle/ViewModelStore;", "ensureViewModelStore", "defaultViewModelProviderFactory", "Landroidx/lifecycle/ViewModelProvider$Factory;", "getDefaultViewModelProviderFactory", "()Landroidx/lifecycle/ViewModelProvider$Factory;", "defaultViewModelProviderFactory$delegate", "defaultViewModelCreationExtras", "Landroidx/lifecycle/viewmodel/CreationExtras;", "getDefaultViewModelCreationExtras", "()Landroidx/lifecycle/viewmodel/CreationExtras;", "onBackPressed", "onBackPressedDispatcher", "Landroidx/activity/OnBackPressedDispatcher;", "getOnBackPressedDispatcher$annotations", "getOnBackPressedDispatcher", "()Landroidx/activity/OnBackPressedDispatcher;", "onBackPressedDispatcher$delegate", "addObserverForBackInvoker", "dispatcher", "savedStateRegistry", "Landroidx/savedstate/SavedStateRegistry;", "getSavedStateRegistry", "()Landroidx/savedstate/SavedStateRegistry;", "startActivityForResult", "intent", "requestCode", "options", "startIntentSenderForResult", "Landroid/content/IntentSender;", "fillInIntent", "flagsMask", "flagsValues", "extraFlags", "onActivityResult", "resultCode", "data", "onRequestPermissionsResult", "permissions", "", "", "grantResults", "", "(I[Ljava/lang/String;[I)V", "registerForActivityResult", "Landroidx/activity/result/ActivityResultLauncher;", "I", "O", "contract", "Landroidx/activity/result/contract/ActivityResultContract;", "registry", "callback", "Landroidx/activity/result/ActivityResultCallback;", "onConfigurationChanged", "newConfig", "addOnConfigurationChangedListener", "removeOnConfigurationChangedListener", "onTrimMemory", FirebaseAnalytics.Param.LEVEL, "addOnTrimMemoryListener", "removeOnTrimMemoryListener", "onNewIntent", "addOnNewIntentListener", "removeOnNewIntentListener", "onMultiWindowModeChanged", "isInMultiWindowMode", "addOnMultiWindowModeChangedListener", "removeOnMultiWindowModeChangedListener", "onPictureInPictureModeChanged", "isInPictureInPictureMode", "addOnPictureInPictureModeChangedListener", "removeOnPictureInPictureModeChangedListener", "onUserLeaveHint", "addOnUserLeaveHintListener", "removeOnUserLeaveHintListener", "reportFullyDrawn", "createFullyDrawnExecutor", "NonConfigurationInstances", "Api33Impl", "ReportFullyDrawnExecutor", "ReportFullyDrawnExecutorImpl", "Companion", "activity_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ü\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0011\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001d\b\u0016\u0018\u0000 È\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b2\u00020\t2\u00020\n2\u00020\u000b2\u00020\f2\u00020\r2\u00020\u000e2\u00020\u000f2\u00020\u00102\u00020\u00112\u00020\u0012:\bÅ\u0001Æ\u0001Ç\u0001È\u0001B\u0007¢\u0006\u0004\b\u0013\u0010\u0014B\u0013\b\u0017\u0012\b\b\u0001\u0010\u0015\u001a\u00020\u0016¢\u0006\u0004\b\u0013\u0010\u0017J\u0012\u0010D\u001a\u00020E2\b\u0010F\u001a\u0004\u0018\u00010GH\u0014J\u0010\u0010H\u001a\u00020E2\u0006\u0010I\u001a\u00020GH\u0015J\b\u0010J\u001a\u0004\u0018\u00010KJ\n\u0010L\u001a\u0004\u0018\u00010KH\u0017J\u0012\u0010P\u001a\u00020E2\b\b\u0001\u0010Q\u001a\u00020\u0016H\u0016J\u0012\u0010P\u001a\u00020E2\b\u0010R\u001a\u0004\u0018\u00010SH\u0016J\u001c\u0010P\u001a\u00020E2\b\u0010R\u001a\u0004\u0018\u00010S2\b\u0010T\u001a\u0004\u0018\u00010UH\u0016J\u001c\u0010V\u001a\u00020E2\b\u0010R\u001a\u0004\u0018\u00010S2\b\u0010T\u001a\u0004\u0018\u00010UH\u0016J\b\u0010W\u001a\u00020EH\u0017J\n\u0010X\u001a\u0004\u0018\u00010YH\u0016J\u000e\u0010Z\u001a\u00020E2\u0006\u0010[\u001a\u00020\\J\u000e\u0010]\u001a\u00020E2\u0006\u0010[\u001a\u00020\\J\"\u0010^\u001a\u00020=2\u0006\u0010_\u001a\u00020\u00162\b\u0010R\u001a\u0004\u0018\u00010S2\u0006\u0010`\u001a\u00020aH\u0016J\u0018\u0010b\u001a\u00020=2\u0006\u0010_\u001a\u00020\u00162\u0006\u0010`\u001a\u00020aH\u0016J\u0018\u0010c\u001a\u00020=2\u0006\u0010_\u001a\u00020\u00162\u0006\u0010d\u001a\u00020eH\u0016J\u0018\u0010f\u001a\u00020E2\u0006\u0010_\u001a\u00020\u00162\u0006\u0010`\u001a\u00020aH\u0016J\u0010\u0010g\u001a\u00020E2\u0006\u0010h\u001a\u00020iH\u0016J\u0018\u0010g\u001a\u00020E2\u0006\u0010h\u001a\u00020i2\u0006\u0010j\u001a\u00020\u0003H\u0016J \u0010g\u001a\u00020E2\u0006\u0010h\u001a\u00020i2\u0006\u0010j\u001a\u00020\u00032\u0006\u0010k\u001a\u00020lH\u0017J\u0010\u0010m\u001a\u00020E2\u0006\u0010h\u001a\u00020iH\u0016J\b\u0010n\u001a\u00020EH\u0016J\b\u0010v\u001a\u00020EH\u0002J\t\u0010\u0080\u0001\u001a\u00020EH\u0017J\u0013\u0010\u008a\u0001\u001a\u00020E2\b\u0010\u008b\u0001\u001a\u00030\u0082\u0001H\u0003J\u001b\u0010\u0090\u0001\u001a\u00020E2\u0007\u0010\u0091\u0001\u001a\u0002052\u0007\u0010\u0092\u0001\u001a\u00020\u0016H\u0017J&\u0010\u0090\u0001\u001a\u00020E2\u0007\u0010\u0091\u0001\u001a\u0002052\u0007\u0010\u0092\u0001\u001a\u00020\u00162\t\u0010\u0093\u0001\u001a\u0004\u0018\u00010GH\u0017JB\u0010\u0094\u0001\u001a\u00020E2\b\u0010\u0091\u0001\u001a\u00030\u0095\u00012\u0007\u0010\u0092\u0001\u001a\u00020\u00162\t\u0010\u0096\u0001\u001a\u0004\u0018\u0001052\u0007\u0010\u0097\u0001\u001a\u00020\u00162\u0007\u0010\u0098\u0001\u001a\u00020\u00162\u0007\u0010\u0099\u0001\u001a\u00020\u0016H\u0017JM\u0010\u0094\u0001\u001a\u00020E2\b\u0010\u0091\u0001\u001a\u00030\u0095\u00012\u0007\u0010\u0092\u0001\u001a\u00020\u00162\t\u0010\u0096\u0001\u001a\u0004\u0018\u0001052\u0007\u0010\u0097\u0001\u001a\u00020\u00162\u0007\u0010\u0098\u0001\u001a\u00020\u00162\u0007\u0010\u0099\u0001\u001a\u00020\u00162\t\u0010\u0093\u0001\u001a\u0004\u0018\u00010GH\u0017J&\u0010\u009a\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\u00162\u0007\u0010\u009b\u0001\u001a\u00020\u00162\t\u0010\u009c\u0001\u001a\u0004\u0018\u000105H\u0015J3\u0010\u009d\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\u00162\u000f\u0010\u009e\u0001\u001a\n\u0012\u0005\u0012\u00030 \u00010\u009f\u00012\b\u0010¡\u0001\u001a\u00030¢\u0001H\u0017¢\u0006\u0003\u0010£\u0001JO\u0010¤\u0001\u001a\n\u0012\u0005\u0012\u0003H¦\u00010¥\u0001\"\u0005\b\u0000\u0010¦\u0001\"\u0005\b\u0001\u0010§\u00012\u0016\u0010¨\u0001\u001a\u0011\u0012\u0005\u0012\u0003H¦\u0001\u0012\u0005\u0012\u0003H§\u00010©\u00012\u0007\u0010ª\u0001\u001a\u00020,2\u000f\u0010«\u0001\u001a\n\u0012\u0005\u0012\u0003H§\u00010¬\u0001JF\u0010¤\u0001\u001a\n\u0012\u0005\u0012\u0003H¦\u00010¥\u0001\"\u0005\b\u0000\u0010¦\u0001\"\u0005\b\u0001\u0010§\u00012\u0016\u0010¨\u0001\u001a\u0011\u0012\u0005\u0012\u0003H¦\u0001\u0012\u0005\u0012\u0003H§\u00010©\u00012\u000f\u0010«\u0001\u001a\n\u0012\u0005\u0012\u0003H§\u00010¬\u0001J\u0012\u0010\u00ad\u0001\u001a\u00020E2\u0007\u0010®\u0001\u001a\u000202H\u0017J\u0015\u0010¯\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020201J\u0015\u0010°\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020201J\u0012\u0010±\u0001\u001a\u00020E2\u0007\u0010²\u0001\u001a\u00020\u0016H\u0017J\u0015\u0010³\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020\u001601J\u0015\u0010´\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020\u001601J\u0012\u0010µ\u0001\u001a\u00020E2\u0007\u0010\u0091\u0001\u001a\u000205H\u0015J\u0015\u0010¶\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020501J\u0015\u0010·\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020501J\u0012\u0010¸\u0001\u001a\u00020E2\u0007\u0010¹\u0001\u001a\u00020=H\u0017J\u001b\u0010¸\u0001\u001a\u00020E2\u0007\u0010¹\u0001\u001a\u00020=2\u0007\u0010®\u0001\u001a\u000202H\u0017J\u0015\u0010º\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020701J\u0015\u0010»\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020701J\u0012\u0010¼\u0001\u001a\u00020E2\u0007\u0010½\u0001\u001a\u00020=H\u0017J\u001b\u0010¼\u0001\u001a\u00020E2\u0007\u0010½\u0001\u001a\u00020=2\u0007\u0010®\u0001\u001a\u000202H\u0017J\u0015\u0010¾\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020901J\u0015\u0010¿\u0001\u001a\u00020E2\f\u0010[\u001a\b\u0012\u0004\u0012\u00020901J\t\u0010À\u0001\u001a\u00020EH\u0015J\u000f\u0010Á\u0001\u001a\u00020E2\u0006\u0010[\u001a\u00020;J\u000f\u0010Â\u0001\u001a\u00020E2\u0006\u0010[\u001a\u00020;J\t\u0010Ã\u0001\u001a\u00020EH\u0016J\t\u0010Ä\u0001\u001a\u00020\"H\u0002R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001e\u0010\u0014R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010#\u001a\u00020$8VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b'\u0010(\u001a\u0004\b%\u0010&R\u0012\u0010\u0015\u001a\u00020\u00168\u0002@\u0002X\u0083\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010+\u001a\u00020,¢\u0006\b\n\u0000\u001a\u0004\b-\u0010.R\u001a\u0010/\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002020100X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00103\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160100X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00104\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002050100X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00106\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002070100X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00108\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002090100X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010:\u001a\b\u0012\u0004\u0012\u00020;00X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020=X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020=X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010?\u001a\u00020@8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bC\u0010(\u001a\u0004\bA\u0010BR\u0016\u0010M\u001a\u0004\u0018\u00010K8WX\u0096\u0004¢\u0006\u0006\u001a\u0004\bN\u0010OR\u0014\u0010o\u001a\u00020p8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bq\u0010rR\u0014\u0010s\u001a\u00020 8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bt\u0010uR\u001b\u0010w\u001a\u00020x8VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b{\u0010(\u001a\u0004\by\u0010zR\u0014\u0010|\u001a\u00020}8WX\u0096\u0004¢\u0006\u0006\u001a\u0004\b~\u0010\u007fR \u0010\u0081\u0001\u001a\u00030\u0082\u00018FX\u0086\u0084\u0002¢\u0006\u000f\n\u0005\b\u0085\u0001\u0010(\u001a\u0006\b\u0083\u0001\u0010\u0084\u0001R\u0018\u0010\u0086\u0001\u001a\u00030\u0087\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u0088\u0001\u0010\u0089\u0001R\u0015\u0010\u008c\u0001\u001a\u00030\u008d\u00018F¢\u0006\b\u001a\u0006\b\u008e\u0001\u0010\u008f\u0001¨\u0006É\u0001"}, d2 = {"Landroidx/activity/ComponentActivity;", "Landroidx/core/app/ComponentActivity;", "Landroidx/activity/contextaware/ContextAware;", "Landroidx/lifecycle/LifecycleOwner;", "Landroidx/lifecycle/ViewModelStoreOwner;", "Landroidx/lifecycle/HasDefaultViewModelProviderFactory;", "Landroidx/savedstate/SavedStateRegistryOwner;", "Landroidx/activity/OnBackPressedDispatcherOwner;", "Landroidx/navigationevent/NavigationEventDispatcherOwner;", "Landroidx/activity/result/ActivityResultRegistryOwner;", "Landroidx/activity/result/ActivityResultCaller;", "Landroidx/core/content/OnConfigurationChangedProvider;", "Landroidx/core/content/OnTrimMemoryProvider;", "Landroidx/core/app/OnNewIntentProvider;", "Landroidx/core/app/OnMultiWindowModeChangedProvider;", "Landroidx/core/app/OnPictureInPictureModeChangedProvider;", "Landroidx/core/app/OnUserLeaveHintProvider;", "Landroidx/core/view/MenuHost;", "Landroidx/activity/FullyDrawnReporterOwner;", "<init>", "()V", "contentLayoutId", "", "(I)V", "contextAwareHelper", "Landroidx/activity/contextaware/ContextAwareHelper;", "menuHostHelper", "Landroidx/core/view/MenuHostHelper;", "savedStateRegistryController", "Landroidx/savedstate/SavedStateRegistryController;", "getSavedStateRegistryController$annotations", "_viewModelStore", "Landroidx/lifecycle/ViewModelStore;", "reportFullyDrawnExecutor", "Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;", "fullyDrawnReporter", "Landroidx/activity/FullyDrawnReporter;", "getFullyDrawnReporter", "()Landroidx/activity/FullyDrawnReporter;", "fullyDrawnReporter$delegate", "Lkotlin/Lazy;", "nextLocalRequestCode", "Ljava/util/concurrent/atomic/AtomicInteger;", "activityResultRegistry", "Landroidx/activity/result/ActivityResultRegistry;", "getActivityResultRegistry", "()Landroidx/activity/result/ActivityResultRegistry;", "onConfigurationChangedListeners", "Ljava/util/concurrent/CopyOnWriteArrayList;", "Landroidx/core/util/Consumer;", "Landroid/content/res/Configuration;", "onTrimMemoryListeners", "onNewIntentListeners", "Landroid/content/Intent;", "onMultiWindowModeChangedListeners", "Landroidx/core/app/MultiWindowModeChangedInfo;", "onPictureInPictureModeChangedListeners", "Landroidx/core/app/PictureInPictureModeChangedInfo;", "onUserLeaveHintListeners", "Ljava/lang/Runnable;", "dispatchingOnMultiWindowModeChanged", "", "dispatchingOnPictureInPictureModeChanged", "onBackPressedInput", "Landroidx/navigationevent/DirectNavigationEventInput;", "getOnBackPressedInput", "()Landroidx/navigationevent/DirectNavigationEventInput;", "onBackPressedInput$delegate", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onSaveInstanceState", "outState", "onRetainNonConfigurationInstance", "", "onRetainCustomNonConfigurationInstance", "lastCustomNonConfigurationInstance", "getLastCustomNonConfigurationInstance", "()Ljava/lang/Object;", "setContentView", "layoutResID", "view", "Landroid/view/View;", "params", "Landroid/view/ViewGroup$LayoutParams;", "addContentView", "initializeViewTreeOwners", "peekAvailableContext", "Landroid/content/Context;", "addOnContextAvailableListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Landroidx/activity/contextaware/OnContextAvailableListener;", "removeOnContextAvailableListener", "onPreparePanel", "featureId", "menu", "Landroid/view/Menu;", "onCreatePanelMenu", "onMenuItemSelected", "item", "Landroid/view/MenuItem;", "onPanelClosed", "addMenuProvider", "provider", "Landroidx/core/view/MenuProvider;", "owner", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/lifecycle/Lifecycle$State;", "removeMenuProvider", "invalidateMenu", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "getLifecycle", "()Landroidx/lifecycle/Lifecycle;", "viewModelStore", "getViewModelStore", "()Landroidx/lifecycle/ViewModelStore;", "ensureViewModelStore", "defaultViewModelProviderFactory", "Landroidx/lifecycle/ViewModelProvider$Factory;", "getDefaultViewModelProviderFactory", "()Landroidx/lifecycle/ViewModelProvider$Factory;", "defaultViewModelProviderFactory$delegate", "defaultViewModelCreationExtras", "Landroidx/lifecycle/viewmodel/CreationExtras;", "getDefaultViewModelCreationExtras", "()Landroidx/lifecycle/viewmodel/CreationExtras;", "onBackPressed", "onBackPressedDispatcher", "Landroidx/activity/OnBackPressedDispatcher;", "getOnBackPressedDispatcher", "()Landroidx/activity/OnBackPressedDispatcher;", "onBackPressedDispatcher$delegate", "navigationEventDispatcher", "Landroidx/navigationevent/NavigationEventDispatcher;", "getNavigationEventDispatcher", "()Landroidx/navigationevent/NavigationEventDispatcher;", "addObserverForBackInvoker", "dispatcher", "savedStateRegistry", "Landroidx/savedstate/SavedStateRegistry;", "getSavedStateRegistry", "()Landroidx/savedstate/SavedStateRegistry;", "startActivityForResult", "intent", "requestCode", "options", "startIntentSenderForResult", "Landroid/content/IntentSender;", "fillInIntent", "flagsMask", "flagsValues", "extraFlags", "onActivityResult", "resultCode", "data", "onRequestPermissionsResult", "permissions", "", "", "grantResults", "", "(I[Ljava/lang/String;[I)V", "registerForActivityResult", "Landroidx/activity/result/ActivityResultLauncher;", "I", "O", "contract", "Landroidx/activity/result/contract/ActivityResultContract;", "registry", "callback", "Landroidx/activity/result/ActivityResultCallback;", "onConfigurationChanged", "newConfig", "addOnConfigurationChangedListener", "removeOnConfigurationChangedListener", "onTrimMemory", FirebaseAnalytics.Param.LEVEL, "addOnTrimMemoryListener", "removeOnTrimMemoryListener", "onNewIntent", "addOnNewIntentListener", "removeOnNewIntentListener", "onMultiWindowModeChanged", "isInMultiWindowMode", "addOnMultiWindowModeChangedListener", "removeOnMultiWindowModeChangedListener", "onPictureInPictureModeChanged", "isInPictureInPictureMode", "addOnPictureInPictureModeChangedListener", "removeOnPictureInPictureModeChangedListener", "onUserLeaveHint", "addOnUserLeaveHintListener", "removeOnUserLeaveHintListener", "reportFullyDrawn", "createFullyDrawnExecutor", "NonConfigurationInstances", "ReportFullyDrawnExecutor", "ReportFullyDrawnExecutorImpl", "Companion", "activity"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public class ComponentActivity extends androidx.core.app.ComponentActivity implements ContextAware, LifecycleOwner, ViewModelStoreOwner, HasDefaultViewModelProviderFactory, SavedStateRegistryOwner, OnBackPressedDispatcherOwner, ActivityResultRegistryOwner, ActivityResultCaller, OnConfigurationChangedProvider, OnTrimMemoryProvider, OnNewIntentProvider, OnMultiWindowModeChangedProvider, OnPictureInPictureModeChangedProvider, OnUserLeaveHintProvider, MenuHost, FullyDrawnReporterOwner {
+public class ComponentActivity extends androidx.core.app.ComponentActivity implements ContextAware, LifecycleOwner, ViewModelStoreOwner, HasDefaultViewModelProviderFactory, SavedStateRegistryOwner, OnBackPressedDispatcherOwner, NavigationEventDispatcherOwner, ActivityResultRegistryOwner, ActivityResultCaller, OnConfigurationChangedProvider, OnTrimMemoryProvider, OnNewIntentProvider, OnMultiWindowModeChangedProvider, OnPictureInPictureModeChangedProvider, OnUserLeaveHintProvider, MenuHost, FullyDrawnReporterOwner {
     private static final String ACTIVITY_RESULT_TAG = "android:support:activity-result";
     private static final Companion Companion = new Companion(null);
     private ViewModelStore _viewModelStore;
@@ -93,6 +96,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     private final MenuHostHelper menuHostHelper;
     private final AtomicInteger nextLocalRequestCode;
     private final Lazy onBackPressedDispatcher$delegate;
+    private final Lazy onBackPressedInput$delegate;
     private final CopyOnWriteArrayList<Consumer<Configuration>> onConfigurationChangedListeners;
     private final CopyOnWriteArrayList<Consumer<MultiWindowModeChangedInfo>> onMultiWindowModeChangedListeners;
     private final CopyOnWriteArrayList<Consumer<Intent>> onNewIntentListeners;
@@ -104,15 +108,12 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: ComponentActivity.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bb\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\b\u0010\u0006\u001a\u00020\u0003H&ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0007À\u0006\u0001"}, d2 = {"Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;", "Ljava/util/concurrent/Executor;", "viewCreated", "", "view", "Landroid/view/View;", "activityDestroyed", "activity_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bb\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\b\u0010\u0006\u001a\u00020\u0003H&ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0007À\u0006\u0001"}, d2 = {"Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;", "Ljava/util/concurrent/Executor;", "viewCreated", "", "view", "Landroid/view/View;", "activityDestroyed", "activity"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public interface ReportFullyDrawnExecutor extends Executor {
         void activityDestroyed();
 
         void viewCreated(View view);
-    }
-
-    public static /* synthetic */ void getOnBackPressedDispatcher$annotations() {
     }
 
     private static /* synthetic */ void getSavedStateRegistryController$annotations() {
@@ -135,12 +136,12 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         SavedStateRegistryController create = SavedStateRegistryController.Companion.create(componentActivity);
         this.savedStateRegistryController = create;
         this.reportFullyDrawnExecutor = createFullyDrawnExecutor();
-        this.fullyDrawnReporter$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda3
+        this.fullyDrawnReporter$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                FullyDrawnReporter fullyDrawnReporter_delegate$lambda$2;
-                fullyDrawnReporter_delegate$lambda$2 = ComponentActivity.fullyDrawnReporter_delegate$lambda$2(ComponentActivity.this);
-                return fullyDrawnReporter_delegate$lambda$2;
+                FullyDrawnReporter fullyDrawnReporter_delegate$lambda$0;
+                fullyDrawnReporter_delegate$lambda$0 = ComponentActivity.fullyDrawnReporter_delegate$lambda$0(ComponentActivity.this);
+                return fullyDrawnReporter_delegate$lambda$0;
             }
         });
         this.nextLocalRequestCode = new AtomicInteger();
@@ -151,19 +152,27 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         this.onMultiWindowModeChangedListeners = new CopyOnWriteArrayList<>();
         this.onPictureInPictureModeChangedListeners = new CopyOnWriteArrayList<>();
         this.onUserLeaveHintListeners = new CopyOnWriteArrayList<>();
+        this.onBackPressedInput$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda5
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                DirectNavigationEventInput onBackPressedInput_delegate$lambda$0;
+                onBackPressedInput_delegate$lambda$0 = ComponentActivity.onBackPressedInput_delegate$lambda$0(ComponentActivity.this);
+                return onBackPressedInput_delegate$lambda$0;
+            }
+        });
         if (getLifecycle() == null) {
             throw new IllegalStateException("getLifecycle() returned null in ComponentActivity's constructor. Please make sure you are lazily constructing your Lifecycle in the first call to getLifecycle() rather than relying on field initialization.".toString());
         }
-        getLifecycle().addObserver(new LifecycleEventObserver() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda4
+        getLifecycle().addObserver(new LifecycleEventObserver() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                ComponentActivity._init_$lambda$4(ComponentActivity.this, lifecycleOwner, event);
+                ComponentActivity._init_$lambda$1(ComponentActivity.this, lifecycleOwner, event);
             }
         });
-        getLifecycle().addObserver(new LifecycleEventObserver() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda5
+        getLifecycle().addObserver(new LifecycleEventObserver() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda7
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                ComponentActivity._init_$lambda$5(ComponentActivity.this, lifecycleOwner, event);
+                ComponentActivity._init_$lambda$2(ComponentActivity.this, lifecycleOwner, event);
             }
         });
         getLifecycle().addObserver(new LifecycleEventObserver() { // from class: androidx.activity.ComponentActivity.4
@@ -177,40 +186,40 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         });
         create.performAttach();
         SavedStateHandleSupport.enableSavedStateHandles(componentActivity);
-        getSavedStateRegistry().registerSavedStateProvider(ACTIVITY_RESULT_TAG, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda6
+        getSavedStateRegistry().registerSavedStateProvider(ACTIVITY_RESULT_TAG, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda8
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle _init_$lambda$6;
-                _init_$lambda$6 = ComponentActivity._init_$lambda$6(ComponentActivity.this);
-                return _init_$lambda$6;
+                Bundle _init_$lambda$3;
+                _init_$lambda$3 = ComponentActivity._init_$lambda$3(ComponentActivity.this);
+                return _init_$lambda$3;
             }
         });
-        addOnContextAvailableListener(new OnContextAvailableListener() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda7
+        addOnContextAvailableListener(new OnContextAvailableListener() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda9
             @Override // androidx.activity.contextaware.OnContextAvailableListener
             public final void onContextAvailable(Context context) {
-                ComponentActivity._init_$lambda$7(ComponentActivity.this, context);
+                ComponentActivity._init_$lambda$4(ComponentActivity.this, context);
             }
         });
-        this.defaultViewModelProviderFactory$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda8
+        this.defaultViewModelProviderFactory$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SavedStateViewModelFactory defaultViewModelProviderFactory_delegate$lambda$9;
-                defaultViewModelProviderFactory_delegate$lambda$9 = ComponentActivity.defaultViewModelProviderFactory_delegate$lambda$9(ComponentActivity.this);
-                return defaultViewModelProviderFactory_delegate$lambda$9;
+                SavedStateViewModelFactory defaultViewModelProviderFactory_delegate$lambda$0;
+                defaultViewModelProviderFactory_delegate$lambda$0 = ComponentActivity.defaultViewModelProviderFactory_delegate$lambda$0(ComponentActivity.this);
+                return defaultViewModelProviderFactory_delegate$lambda$0;
             }
         });
-        this.onBackPressedDispatcher$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda9
+        this.onBackPressedDispatcher$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$13;
-                onBackPressedDispatcher_delegate$lambda$13 = ComponentActivity.onBackPressedDispatcher_delegate$lambda$13(ComponentActivity.this);
-                return onBackPressedDispatcher_delegate$lambda$13;
+                OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0;
+                onBackPressedDispatcher_delegate$lambda$0 = ComponentActivity.onBackPressedDispatcher_delegate$lambda$0(ComponentActivity.this);
+                return onBackPressedDispatcher_delegate$lambda$0;
             }
         });
     }
 
     /* compiled from: ComponentActivity.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u0004\u0018\u00010\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Landroidx/activity/ComponentActivity$NonConfigurationInstances;", "", "<init>", "()V", SchedulerSupport.CUSTOM, "getCustom", "()Ljava/lang/Object;", "setCustom", "(Ljava/lang/Object;)V", "viewModelStore", "Landroidx/lifecycle/ViewModelStore;", "getViewModelStore", "()Landroidx/lifecycle/ViewModelStore;", "setViewModelStore", "(Landroidx/lifecycle/ViewModelStore;)V", "activity_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u0004\u0018\u00010\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Landroidx/activity/ComponentActivity$NonConfigurationInstances;", "", "<init>", "()V", SchedulerSupport.CUSTOM, "getCustom", "()Ljava/lang/Object;", "setCustom", "(Ljava/lang/Object;)V", "viewModelStore", "Landroidx/lifecycle/ViewModelStore;", "getViewModelStore", "()Landroidx/lifecycle/ViewModelStore;", "setViewModelStore", "(Landroidx/lifecycle/ViewModelStore;)V", "activity"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class NonConfigurationInstances {
         private Object custom;
@@ -239,19 +248,19 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final FullyDrawnReporter fullyDrawnReporter_delegate$lambda$2(final ComponentActivity componentActivity) {
-        return new FullyDrawnReporter(componentActivity.reportFullyDrawnExecutor, new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda2
+    public static final FullyDrawnReporter fullyDrawnReporter_delegate$lambda$0(final ComponentActivity componentActivity) {
+        return new FullyDrawnReporter(componentActivity.reportFullyDrawnExecutor, new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit fullyDrawnReporter_delegate$lambda$2$lambda$1;
-                fullyDrawnReporter_delegate$lambda$2$lambda$1 = ComponentActivity.fullyDrawnReporter_delegate$lambda$2$lambda$1(ComponentActivity.this);
-                return fullyDrawnReporter_delegate$lambda$2$lambda$1;
+                Unit fullyDrawnReporter_delegate$lambda$0$0;
+                fullyDrawnReporter_delegate$lambda$0$0 = ComponentActivity.fullyDrawnReporter_delegate$lambda$0$0(ComponentActivity.this);
+                return fullyDrawnReporter_delegate$lambda$0$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit fullyDrawnReporter_delegate$lambda$2$lambda$1(ComponentActivity componentActivity) {
+    public static final Unit fullyDrawnReporter_delegate$lambda$0$0(ComponentActivity componentActivity) {
         componentActivity.reportFullyDrawn();
         return Unit.INSTANCE;
     }
@@ -261,8 +270,19 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         return this.activityResultRegistry;
     }
 
+    private final DirectNavigationEventInput getOnBackPressedInput() {
+        return (DirectNavigationEventInput) this.onBackPressedInput$delegate.getValue();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final DirectNavigationEventInput onBackPressedInput_delegate$lambda$0(ComponentActivity componentActivity) {
+        DirectNavigationEventInput directNavigationEventInput = new DirectNavigationEventInput();
+        componentActivity.getNavigationEventDispatcher().addInput(directNavigationEventInput);
+        return directNavigationEventInput;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void _init_$lambda$1(ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Window window;
         View peekDecorView;
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
@@ -274,7 +294,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final void _init_$lambda$2(ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
         if (event == Lifecycle.Event.ON_DESTROY) {
@@ -287,14 +307,14 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Bundle _init_$lambda$6(ComponentActivity componentActivity) {
+    public static final Bundle _init_$lambda$3(ComponentActivity componentActivity) {
         Bundle bundle = new Bundle();
         componentActivity.activityResultRegistry.onSaveInstanceState(bundle);
         return bundle;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(ComponentActivity componentActivity, Context it) {
+    public static final void _init_$lambda$4(ComponentActivity componentActivity, Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         Bundle consumeRestoredStateForKey = componentActivity.getSavedStateRegistry().consumeRestoredStateForKey(ACTIVITY_RESULT_TAG);
         if (consumeRestoredStateForKey != null) {
@@ -414,6 +434,9 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         View decorView5 = getWindow().getDecorView();
         Intrinsics.checkNotNullExpressionValue(decorView5, "getDecorView(...)");
         ViewTreeFullyDrawnReporterOwner.set(decorView5, this);
+        View decorView6 = getWindow().getDecorView();
+        Intrinsics.checkNotNullExpressionValue(decorView6, "getDecorView(...)");
+        ViewTreeNavigationEventDispatcherOwner.set(decorView6, this);
     }
 
     @Override // androidx.activity.contextaware.ContextAware
@@ -541,7 +564,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final SavedStateViewModelFactory defaultViewModelProviderFactory_delegate$lambda$9(ComponentActivity componentActivity) {
+    public static final SavedStateViewModelFactory defaultViewModelProviderFactory_delegate$lambda$0(ComponentActivity componentActivity) {
         return new SavedStateViewModelFactory(componentActivity.getApplication(), componentActivity, componentActivity.getIntent() != null ? componentActivity.getIntent().getExtras() : null);
     }
 
@@ -564,7 +587,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     @Override // android.app.Activity
     @Deprecated(message = "This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
     public void onBackPressed() {
-        getOnBackPressedDispatcher().onBackPressed();
+        getOnBackPressedInput().backCompleted();
     }
 
     @Override // androidx.activity.OnBackPressedDispatcherOwner
@@ -573,16 +596,16 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$13(final ComponentActivity componentActivity) {
-        final OnBackPressedDispatcher onBackPressedDispatcher = new OnBackPressedDispatcher(new Runnable() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda10
+    public static final OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0(final ComponentActivity componentActivity) {
+        final OnBackPressedDispatcher onBackPressedDispatcher = new OnBackPressedDispatcher(new Runnable() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                ComponentActivity.onBackPressedDispatcher_delegate$lambda$13$lambda$10(ComponentActivity.this);
+                ComponentActivity.onBackPressedDispatcher_delegate$lambda$0$0(ComponentActivity.this);
             }
         });
         if (Build.VERSION.SDK_INT >= 33) {
             if (!Intrinsics.areEqual(Looper.myLooper(), Looper.getMainLooper())) {
-                new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda11
+                new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
                         ComponentActivity.this.addObserverForBackInvoker(onBackPressedDispatcher);
@@ -596,7 +619,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackPressedDispatcher_delegate$lambda$13$lambda$10(ComponentActivity componentActivity) {
+    public static final void onBackPressedDispatcher_delegate$lambda$0$0(ComponentActivity componentActivity) {
         try {
             super.onBackPressed();
         } catch (IllegalStateException e) {
@@ -610,22 +633,29 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         }
     }
 
+    @Override // androidx.navigationevent.NavigationEventDispatcherOwner
+    public NavigationEventDispatcher getNavigationEventDispatcher() {
+        return getOnBackPressedDispatcher().getEventDispatcher$activity();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public final void addObserverForBackInvoker(final OnBackPressedDispatcher onBackPressedDispatcher) {
-        getLifecycle().addObserver(new LifecycleEventObserver() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda1
+        getLifecycle().addObserver(new LifecycleEventObserver() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                ComponentActivity.addObserverForBackInvoker$lambda$14(OnBackPressedDispatcher.this, this, lifecycleOwner, event);
+                ComponentActivity.addObserverForBackInvoker$lambda$0(OnBackPressedDispatcher.this, this, lifecycleOwner, event);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addObserverForBackInvoker$lambda$14(OnBackPressedDispatcher onBackPressedDispatcher, ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final void addObserverForBackInvoker$lambda$0(OnBackPressedDispatcher onBackPressedDispatcher, ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
         if (event == Lifecycle.Event.ON_CREATE) {
-            onBackPressedDispatcher.setOnBackInvokedDispatcher(Api33Impl.INSTANCE.getOnBackInvokedDispatcher(componentActivity));
+            OnBackInvokedDispatcher onBackInvokedDispatcher = componentActivity.getOnBackInvokedDispatcher();
+            Intrinsics.checkNotNullExpressionValue(onBackInvokedDispatcher, "getOnBackInvokedDispatcher(...)");
+            onBackPressedDispatcher.setOnBackInvokedDispatcher(onBackInvokedDispatcher);
         }
     }
 
@@ -893,25 +923,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: ComponentActivity.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¨\u0006\b"}, d2 = {"Landroidx/activity/ComponentActivity$Api33Impl;", "", "<init>", "()V", "getOnBackInvokedDispatcher", "Landroid/window/OnBackInvokedDispatcher;", "activity", "Landroid/app/Activity;", "activity_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
-    public static final class Api33Impl {
-        public static final Api33Impl INSTANCE = new Api33Impl();
-
-        private Api33Impl() {
-        }
-
-        public final OnBackInvokedDispatcher getOnBackInvokedDispatcher(Activity activity) {
-            Intrinsics.checkNotNullParameter(activity, "activity");
-            OnBackInvokedDispatcher onBackInvokedDispatcher = activity.getOnBackInvokedDispatcher();
-            Intrinsics.checkNotNullExpressionValue(onBackInvokedDispatcher, "getOnBackInvokedDispatcher(...)");
-            return onBackInvokedDispatcher;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: ComponentActivity.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0082\u0004\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0016J\b\u0010\u0019\u001a\u00020\u0016H\u0016J\u0010\u0010\u001a\u001a\u00020\u00162\u0006\u0010\u001b\u001a\u00020\u0003H\u0016J\b\u0010\u001c\u001a\u00020\u0016H\u0016J\b\u0010\u001d\u001a\u00020\u0016H\u0016R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001c\u0010\n\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014¨\u0006\u001e"}, d2 = {"Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutorImpl;", "Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;", "Landroid/view/ViewTreeObserver$OnDrawListener;", "Ljava/lang/Runnable;", "<init>", "(Landroidx/activity/ComponentActivity;)V", "endWatchTimeMillis", "", "getEndWatchTimeMillis", "()J", "currentRunnable", "getCurrentRunnable", "()Ljava/lang/Runnable;", "setCurrentRunnable", "(Ljava/lang/Runnable;)V", "onDrawScheduled", "", "getOnDrawScheduled", "()Z", "setOnDrawScheduled", "(Z)V", "viewCreated", "", "view", "Landroid/view/View;", "activityDestroyed", "execute", "runnable", "onDraw", "run", "activity_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0082\u0004\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0016J\b\u0010\u0019\u001a\u00020\u0016H\u0016J\u0010\u0010\u001a\u001a\u00020\u00162\u0006\u0010\u001b\u001a\u00020\u0003H\u0016J\b\u0010\u001c\u001a\u00020\u0016H\u0016J\b\u0010\u001d\u001a\u00020\u0016H\u0016R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001c\u0010\n\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014¨\u0006\u001e"}, d2 = {"Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutorImpl;", "Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;", "Landroid/view/ViewTreeObserver$OnDrawListener;", "Ljava/lang/Runnable;", "<init>", "(Landroidx/activity/ComponentActivity;)V", "endWatchTimeMillis", "", "getEndWatchTimeMillis", "()J", "currentRunnable", "getCurrentRunnable", "()Ljava/lang/Runnable;", "setCurrentRunnable", "(Ljava/lang/Runnable;)V", "onDrawScheduled", "", "getOnDrawScheduled", "()Z", "setOnDrawScheduled", "(Z)V", "viewCreated", "", "view", "Landroid/view/View;", "activityDestroyed", "execute", "runnable", "onDraw", "run", "activity"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public final class ReportFullyDrawnExecutorImpl implements ReportFullyDrawnExecutor, ViewTreeObserver.OnDrawListener, Runnable {
         private Runnable currentRunnable;
@@ -1013,7 +1025,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     }
 
     /* compiled from: ComponentActivity.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Landroidx/activity/ComponentActivity$Companion;", "", "<init>", "()V", "ACTIVITY_RESULT_TAG", "", "activity_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Landroidx/activity/ComponentActivity$Companion;", "", "<init>", "()V", "ACTIVITY_RESULT_TAG", "", "activity"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

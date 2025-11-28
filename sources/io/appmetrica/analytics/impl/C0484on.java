@@ -5,7 +5,7 @@ import io.appmetrica.analytics.networktasks.internal.NetworkTask;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 /* renamed from: io.appmetrica.analytics.impl.on  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class C0484on implements InterfaceC0506pk, C9 {
 
     /* renamed from: a  reason: collision with root package name */

@@ -27,9 +27,9 @@ public final class PointerInputTestUtilKt {
     }
 
     public static final PointerInputChange down(long j, long j2, float f, float f2, List<HistoricalChange> list) {
-        PointerInputChange pointerInputChange = new PointerInputChange(PointerId.m6549constructorimpl(j), j2, Offset.m5027constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, j2, Offset.m5027constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), false, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        PointerInputChange pointerInputChange = new PointerInputChange(PointerId.m6550constructorimpl(j), j2, Offset.m5028constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, j2, Offset.m5028constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), false, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
         List<HistoricalChange> list2 = list;
-        return (list2 == null || list2.isEmpty()) ? pointerInputChange : PointerInputChange.m6558copyOHpmEuE$default(pointerInputChange, 0L, 0L, 0L, false, 0L, 0L, false, 0, list, 0L, 767, null);
+        return (list2 == null || list2.isEmpty()) ? pointerInputChange : PointerInputChange.m6559copyOHpmEuE$default(pointerInputChange, 0L, 0L, 0L, false, 0L, 0L, false, 0, list, 0L, 767, null);
     }
 
     public static /* synthetic */ PointerInputChange moveTo$default(PointerInputChange pointerInputChange, long j, float f, float f2, int i, Object obj) {
@@ -43,10 +43,10 @@ public final class PointerInputTestUtilKt {
     }
 
     public static final PointerInputChange moveTo(PointerInputChange pointerInputChange, long j, float f, float f2) {
-        long m6567getIdJ3iCeTQ = pointerInputChange.m6567getIdJ3iCeTQ();
+        long m6568getIdJ3iCeTQ = pointerInputChange.m6568getIdJ3iCeTQ();
         long uptimeMillis = pointerInputChange.getUptimeMillis();
         boolean pressed = pointerInputChange.getPressed();
-        return new PointerInputChange(m6567getIdJ3iCeTQ, j, Offset.m5027constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, uptimeMillis, pointerInputChange.m6569getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        return new PointerInputChange(m6568getIdJ3iCeTQ, j, Offset.m5028constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, uptimeMillis, pointerInputChange.m6570getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
     }
 
     public static /* synthetic */ PointerInputChange moveBy$default(PointerInputChange pointerInputChange, long j, float f, float f2, int i, Object obj) {
@@ -60,36 +60,36 @@ public final class PointerInputTestUtilKt {
     }
 
     public static final PointerInputChange moveBy(PointerInputChange pointerInputChange, long j, float f, float f2) {
-        long m6567getIdJ3iCeTQ = pointerInputChange.m6567getIdJ3iCeTQ();
+        long m6568getIdJ3iCeTQ = pointerInputChange.m6568getIdJ3iCeTQ();
         long uptimeMillis = pointerInputChange.getUptimeMillis();
         boolean pressed = pointerInputChange.getPressed();
-        return new PointerInputChange(m6567getIdJ3iCeTQ, pointerInputChange.getUptimeMillis() + j, Offset.m5027constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6569getPositionF1C5BW0() & 4294967295L)) + f2) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6569getPositionF1C5BW0() >> 32)) + f) << 32)), true, 1.0f, uptimeMillis, pointerInputChange.m6569getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        return new PointerInputChange(m6568getIdJ3iCeTQ, pointerInputChange.getUptimeMillis() + j, Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6570getPositionF1C5BW0() & 4294967295L)) + f2) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6570getPositionF1C5BW0() >> 32)) + f) << 32)), true, 1.0f, uptimeMillis, pointerInputChange.m6570getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
     }
 
     public static final PointerInputChange up(PointerInputChange pointerInputChange, long j) {
-        long m6567getIdJ3iCeTQ = pointerInputChange.m6567getIdJ3iCeTQ();
+        long m6568getIdJ3iCeTQ = pointerInputChange.m6568getIdJ3iCeTQ();
         long uptimeMillis = pointerInputChange.getUptimeMillis();
         boolean pressed = pointerInputChange.getPressed();
-        return new PointerInputChange(m6567getIdJ3iCeTQ, j, pointerInputChange.m6569getPositionF1C5BW0(), false, 1.0f, uptimeMillis, pointerInputChange.m6569getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        return new PointerInputChange(m6568getIdJ3iCeTQ, j, pointerInputChange.m6570getPositionF1C5BW0(), false, 1.0f, uptimeMillis, pointerInputChange.m6570getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: invokeOverAllPasses-H0pRuoY  reason: not valid java name */
-    public static final void m6619invokeOverAllPassesH0pRuoY(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, long j) {
-        m6623invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf((Object[]) new PointerEventPass[]{PointerEventPass.Initial, PointerEventPass.Main, PointerEventPass.Final}), j);
+    public static final void m6620invokeOverAllPassesH0pRuoY(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, long j) {
+        m6624invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf((Object[]) new PointerEventPass[]{PointerEventPass.Initial, PointerEventPass.Main, PointerEventPass.Final}), j);
     }
 
     /* renamed from: invokeOverPass-hUlJWOE  reason: not valid java name */
-    public static final void m6621invokeOverPasshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        m6623invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf(pointerEventPass), j);
+    public static final void m6622invokeOverPasshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        m6624invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf(pointerEventPass), j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE  reason: not valid java name */
-    public static final void m6624invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j) {
-        m6623invokeOverPasseshUlJWOE(function3, pointerEvent, ArraysKt.toList(pointerEventPassArr), j);
+    public static final void m6625invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j) {
+        m6624invokeOverPasseshUlJWOE(function3, pointerEvent, ArraysKt.toList(pointerEventPassArr), j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE  reason: not valid java name */
-    public static final void m6623invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, List<? extends PointerEventPass> list, long j) {
+    public static final void m6624invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, List<? extends PointerEventPass> list, long j) {
         if (pointerEvent.getChanges().isEmpty()) {
             throw new IllegalArgumentException("invokeOverPasses called with no changes".toString());
         }
@@ -99,43 +99,43 @@ public final class PointerInputTestUtilKt {
         }
         int size = list2.size();
         for (int i = 0; i < size; i++) {
-            function3.invoke(pointerEvent, list.get(i), IntSize.m8158boximpl(j));
+            function3.invoke(pointerEvent, list.get(i), IntSize.m8159boximpl(j));
         }
     }
 
     /* renamed from: invokeOverAllPasses-H0pRuoY$default  reason: not valid java name */
-    public static /* synthetic */ void m6620invokeOverAllPassesH0pRuoY$default(Function3 function3, PointerEvent pointerEvent, long j, int i, Object obj) {
+    public static /* synthetic */ void m6621invokeOverAllPassesH0pRuoY$default(Function3 function3, PointerEvent pointerEvent, long j, int i, Object obj) {
         if ((i & 2) != 0) {
             long j2 = Integer.MAX_VALUE;
-            j = IntSize.m8161constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m8162constructorimpl((j2 & 4294967295L) | (j2 << 32));
         }
-        m6619invokeOverAllPassesH0pRuoY(function3, pointerEvent, j);
+        m6620invokeOverAllPassesH0pRuoY(function3, pointerEvent, j);
     }
 
     /* renamed from: invokeOverPass-hUlJWOE$default  reason: not valid java name */
-    public static /* synthetic */ void m6622invokeOverPasshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j, int i, Object obj) {
+    public static /* synthetic */ void m6623invokeOverPasshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j, int i, Object obj) {
         if ((i & 4) != 0) {
             long j2 = Integer.MAX_VALUE;
-            j = IntSize.m8161constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m8162constructorimpl((j2 & 4294967295L) | (j2 << 32));
         }
-        m6621invokeOverPasshUlJWOE(function3, pointerEvent, pointerEventPass, j);
+        m6622invokeOverPasshUlJWOE(function3, pointerEvent, pointerEventPass, j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE$default  reason: not valid java name */
-    public static /* synthetic */ void m6626invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j, int i, Object obj) {
+    public static /* synthetic */ void m6627invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j, int i, Object obj) {
         if ((i & 4) != 0) {
             long j2 = Integer.MAX_VALUE;
-            j = IntSize.m8161constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m8162constructorimpl((j2 & 4294967295L) | (j2 << 32));
         }
-        m6624invokeOverPasseshUlJWOE(function3, pointerEvent, pointerEventPassArr, j);
+        m6625invokeOverPasseshUlJWOE(function3, pointerEvent, pointerEventPassArr, j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE$default  reason: not valid java name */
-    public static /* synthetic */ void m6625invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, List list, long j, int i, Object obj) {
+    public static /* synthetic */ void m6626invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, List list, long j, int i, Object obj) {
         if ((i & 4) != 0) {
             long j2 = Integer.MAX_VALUE;
-            j = IntSize.m8161constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            j = IntSize.m8162constructorimpl((j2 & 4294967295L) | (j2 << 32));
         }
-        m6623invokeOverPasseshUlJWOE(function3, pointerEvent, list, j);
+        m6624invokeOverPasseshUlJWOE(function3, pointerEvent, list, j);
     }
 }

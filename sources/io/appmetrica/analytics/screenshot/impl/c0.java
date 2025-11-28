@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.screenshot.impl;
 
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class c0 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

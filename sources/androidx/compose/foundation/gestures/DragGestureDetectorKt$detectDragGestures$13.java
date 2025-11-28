@@ -81,7 +81,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
         if (r3 == r1) goto L32;
      */
     /* JADX WARN: Code restructure failed: missing block: B:169:0x04d2, code lost:
-        if (androidx.compose.foundation.gestures.DragGestureDetectorKt.m499isPointerUpDmW0f2w(r10.getCurrentEvent(), r2) != false) goto L17;
+        if (androidx.compose.foundation.gestures.DragGestureDetectorKt.m500isPointerUpDmW0f2w(r10.getCurrentEvent(), r2) != false) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:173:0x04fd, code lost:
         if (r7 != r1) goto L7;
@@ -152,7 +152,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
         AwaitPointerEventScope awaitPointerEventScope5;
         PointerInputChange pointerInputChange4;
         PointerInputChange pointerInputChange5;
-        long m6567getIdJ3iCeTQ;
+        long m6568getIdJ3iCeTQ;
         PointerInputChange pointerInputChange6;
         PointerInputChange pointerInputChange7;
         AwaitPointerEventScope awaitPointerEventScope6;
@@ -168,7 +168,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
         Ref.LongRef longRef5;
         PointerInputChange pointerInputChange9;
         PointerInputChange pointerInputChange10;
-        long m6567getIdJ3iCeTQ2;
+        long m6568getIdJ3iCeTQ2;
         Function2<PointerInputChange, Offset, Unit> function2;
         Orientation orientation;
         int size;
@@ -216,7 +216,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                 awaitPointerEventScope2 = (AwaitPointerEventScope) this.L$0;
                 awaitFirstDown$default = obj;
                 pointerInputChange2 = (PointerInputChange) awaitFirstDown$default;
-                this.$overSlop.element = Offset.Companion.m5051getZeroF1C5BW0();
+                this.$overSlop.element = Offset.Companion.m5052getZeroF1C5BW0();
                 if (!booleanValue) {
                     j2 = 9223372034707292159L;
                     if (ComposeFoundationFlags.DragGesturePickUpEnabled && pointerInputChange == null) {
@@ -241,38 +241,38 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                         }
                     }
                     if (pointerInputChange != null) {
-                        this.$onDragStart.invoke(pointerInputChange2, pointerInputChange, Offset.m5024boximpl(this.$overSlop.element));
-                        this.$onDrag.invoke(pointerInputChange, Offset.m5024boximpl(this.$overSlop.element));
-                        m6567getIdJ3iCeTQ2 = pointerInputChange.m6567getIdJ3iCeTQ();
+                        this.$onDragStart.invoke(pointerInputChange2, pointerInputChange, Offset.m5025boximpl(this.$overSlop.element));
+                        this.$onDrag.invoke(pointerInputChange, Offset.m5025boximpl(this.$overSlop.element));
+                        m6568getIdJ3iCeTQ2 = pointerInputChange.m6568getIdJ3iCeTQ();
                         function2 = this.$onDrag;
                         orientation = ComposeFoundationFlags.DragGesturePickUpEnabled ? null : this.$orientationLock;
                         break;
                     }
                     return Unit.INSTANCE;
                 }
-                m6567getIdJ3iCeTQ = pointerInputChange2.m6567getIdJ3iCeTQ();
-                int m6572getTypeT8wyACA = pointerInputChange2.m6572getTypeT8wyACA();
+                m6568getIdJ3iCeTQ = pointerInputChange2.m6568getIdJ3iCeTQ();
+                int m6573getTypeT8wyACA = pointerInputChange2.m6573getTypeT8wyACA();
                 Orientation orientation2 = this.$orientationLock;
                 longRef2 = this.$overSlop;
-                long m5051getZeroF1C5BW0 = Offset.Companion.m5051getZeroF1C5BW0();
+                long m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
                 j2 = 9223372034707292159L;
-                if (DragGestureDetectorKt.m499isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6567getIdJ3iCeTQ)) {
+                if (DragGestureDetectorKt.m500isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6568getIdJ3iCeTQ)) {
                     pointerInputChange = defaultConstructorMarker;
                     if (pointerInputChange != null && !pointerInputChange.isConsumed()) {
                         i2 = 0;
                         i3 = 1;
                         defaultConstructorMarker = null;
-                        m6567getIdJ3iCeTQ = pointerInputChange2.m6567getIdJ3iCeTQ();
-                        int m6572getTypeT8wyACA2 = pointerInputChange2.m6572getTypeT8wyACA();
+                        m6568getIdJ3iCeTQ = pointerInputChange2.m6568getIdJ3iCeTQ();
+                        int m6573getTypeT8wyACA2 = pointerInputChange2.m6573getTypeT8wyACA();
                         Orientation orientation22 = this.$orientationLock;
                         longRef2 = this.$overSlop;
-                        long m5051getZeroF1C5BW02 = Offset.Companion.m5051getZeroF1C5BW0();
+                        long m5052getZeroF1C5BW02 = Offset.Companion.m5052getZeroF1C5BW0();
                         j2 = 9223372034707292159L;
-                        if (DragGestureDetectorKt.m499isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6567getIdJ3iCeTQ)) {
-                            f = DragGestureDetectorKt.m500pointerSlopE8SPZFQ(awaitPointerEventScope2.getViewConfiguration(), m6572getTypeT8wyACA2);
+                        if (DragGestureDetectorKt.m500isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6568getIdJ3iCeTQ)) {
+                            f = DragGestureDetectorKt.m501pointerSlopE8SPZFQ(awaitPointerEventScope2.getViewConfiguration(), m6573getTypeT8wyACA2);
                             longRef = new Ref.LongRef();
-                            longRef.element = m6567getIdJ3iCeTQ;
-                            touchSlopDetector = new TouchSlopDetector(orientation22, m5051getZeroF1C5BW02, defaultConstructorMarker);
+                            longRef.element = m6568getIdJ3iCeTQ;
+                            touchSlopDetector = new TouchSlopDetector(orientation22, m5052getZeroF1C5BW02, defaultConstructorMarker);
                             awaitPointerEventScope3 = awaitPointerEventScope2;
                             pointerEventPass = defaultConstructorMarker;
                             this.L$0 = awaitPointerEventScope3;
@@ -320,7 +320,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                     if (i4 < size2) {
                         pointerInputChange3 = changes3.get(i4);
                         awaitPointerEventScope4 = awaitPointerEventScope2;
-                        if (!PointerId.m6551equalsimpl0(pointerInputChange3.m6567getIdJ3iCeTQ(), longRef.element)) {
+                        if (!PointerId.m6552equalsimpl0(pointerInputChange3.m6568getIdJ3iCeTQ(), longRef.element)) {
                             i4++;
                             awaitPointerEventScope2 = awaitPointerEventScope4;
                         }
@@ -332,8 +332,8 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                 PointerInputChange pointerInputChange15 = pointerInputChange3;
                 if (pointerInputChange15 != null && !pointerInputChange15.isConsumed()) {
                     if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange15)) {
-                        long m609addPointerInputChangedBAh8RU = touchSlopDetector.m609addPointerInputChangedBAh8RU(pointerInputChange15, f);
-                        if ((m609addPointerInputChangedBAh8RU & j2) == j) {
+                        long m610addPointerInputChangedBAh8RU = touchSlopDetector.m610addPointerInputChangedBAh8RU(pointerInputChange15, f);
+                        if ((m610addPointerInputChangedBAh8RU & j2) == j) {
                             this.L$0 = awaitPointerEventScope3;
                             this.L$1 = pointerInputChange2;
                             awaitPointerEventScope2 = awaitPointerEventScope4;
@@ -376,7 +376,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                             }
                         } else {
                             pointerInputChange15.consume();
-                            longRef2.element = m609addPointerInputChangedBAh8RU;
+                            longRef2.element = m610addPointerInputChangedBAh8RU;
                             if (pointerInputChange15.isConsumed()) {
                                 awaitPointerEventScope2 = awaitPointerEventScope3;
                                 pointerInputChange = pointerInputChange15;
@@ -384,13 +384,13 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                                     i2 = 0;
                                     i3 = 1;
                                     defaultConstructorMarker = null;
-                                    m6567getIdJ3iCeTQ = pointerInputChange2.m6567getIdJ3iCeTQ();
-                                    int m6572getTypeT8wyACA22 = pointerInputChange2.m6572getTypeT8wyACA();
+                                    m6568getIdJ3iCeTQ = pointerInputChange2.m6568getIdJ3iCeTQ();
+                                    int m6573getTypeT8wyACA22 = pointerInputChange2.m6573getTypeT8wyACA();
                                     Orientation orientation222 = this.$orientationLock;
                                     longRef2 = this.$overSlop;
-                                    long m5051getZeroF1C5BW022 = Offset.Companion.m5051getZeroF1C5BW0();
+                                    long m5052getZeroF1C5BW022 = Offset.Companion.m5052getZeroF1C5BW0();
                                     j2 = 9223372034707292159L;
-                                    if (DragGestureDetectorKt.m499isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6567getIdJ3iCeTQ)) {
+                                    if (DragGestureDetectorKt.m500isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6568getIdJ3iCeTQ)) {
                                     }
                                     break;
                                 }
@@ -418,7 +418,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                         }
                         PointerInputChange pointerInputChange16 = pointerInputChange5;
                         if (pointerInputChange16 != null) {
-                            longRef.element = pointerInputChange16.m6567getIdJ3iCeTQ();
+                            longRef.element = pointerInputChange16.m6568getIdJ3iCeTQ();
                         }
                     }
                     awaitPointerEventScope2 = awaitPointerEventScope4;
@@ -493,12 +493,12 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                 for (int i8 = 0; i8 < size6; i8++) {
                     if (changes7.get(i8).getPressed()) {
                         PointerInputChange pointerInputChange17 = (PointerInputChange) CollectionsKt.firstOrNull((List<? extends Object>) pointerEvent2.getChanges());
-                        long m5039minusMKHz9U = Offset.m5039minusMKHz9U(pointerInputChange17 != null ? pointerInputChange17.m6569getPositionF1C5BW0() : Offset.Companion.m5051getZeroF1C5BW0(), pointerInputChange7.m6569getPositionF1C5BW0());
-                        long m6567getIdJ3iCeTQ3 = pointerInputChange7.m6567getIdJ3iCeTQ();
-                        int m6572getTypeT8wyACA3 = pointerInputChange7.m6572getTypeT8wyACA();
+                        long m5040minusMKHz9U = Offset.m5040minusMKHz9U(pointerInputChange17 != null ? pointerInputChange17.m6570getPositionF1C5BW0() : Offset.Companion.m5052getZeroF1C5BW0(), pointerInputChange7.m6570getPositionF1C5BW0());
+                        long m6568getIdJ3iCeTQ3 = pointerInputChange7.m6568getIdJ3iCeTQ();
+                        int m6573getTypeT8wyACA3 = pointerInputChange7.m6573getTypeT8wyACA();
                         Orientation orientation3 = this.$orientationLock;
                         longRef3 = this.$overSlop;
-                        if (DragGestureDetectorKt.m499isPointerUpDmW0f2w(awaitPointerEventScope6.getCurrentEvent(), m6567getIdJ3iCeTQ3)) {
+                        if (DragGestureDetectorKt.m500isPointerUpDmW0f2w(awaitPointerEventScope6.getCurrentEvent(), m6568getIdJ3iCeTQ3)) {
                             awaitPointerEventScope2 = awaitPointerEventScope6;
                             pointerInputChange2 = pointerInputChange7;
                             pointerInputChange = null;
@@ -508,11 +508,11 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                             }
                             return Unit.INSTANCE;
                         }
-                        f2 = DragGestureDetectorKt.m500pointerSlopE8SPZFQ(awaitPointerEventScope6.getViewConfiguration(), m6572getTypeT8wyACA3);
+                        f2 = DragGestureDetectorKt.m501pointerSlopE8SPZFQ(awaitPointerEventScope6.getViewConfiguration(), m6573getTypeT8wyACA3);
                         longRef4 = new Ref.LongRef();
-                        longRef4.element = m6567getIdJ3iCeTQ3;
+                        longRef4.element = m6568getIdJ3iCeTQ3;
                         pointerEventPass2 = null;
-                        touchSlopDetector2 = new TouchSlopDetector(orientation3, m5039minusMKHz9U, null);
+                        touchSlopDetector2 = new TouchSlopDetector(orientation3, m5040minusMKHz9U, null);
                         awaitPointerEventScope7 = awaitPointerEventScope6;
                         this.L$0 = awaitPointerEventScope7;
                         this.L$1 = pointerInputChange7;
@@ -557,7 +557,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                         pointerInputChange8 = changes8.get(i9);
                         List<PointerInputChange> list = changes8;
                         int i10 = size7;
-                        if (!PointerId.m6551equalsimpl0(pointerInputChange8.m6567getIdJ3iCeTQ(), longRef4.element)) {
+                        if (!PointerId.m6552equalsimpl0(pointerInputChange8.m6568getIdJ3iCeTQ(), longRef4.element)) {
                             i9++;
                             changes8 = list;
                             size7 = i10;
@@ -584,9 +584,9 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                         }
                         PointerInputChange pointerInputChange19 = pointerInputChange10;
                         if (pointerInputChange19 != null) {
-                            longRef4.element = pointerInputChange19.m6567getIdJ3iCeTQ();
+                            longRef4.element = pointerInputChange19.m6568getIdJ3iCeTQ();
                         }
-                    } else if ((touchSlopDetector2.m609addPointerInputChangedBAh8RU(pointerInputChange18, f2) & j2) != j) {
+                    } else if ((touchSlopDetector2.m610addPointerInputChangedBAh8RU(pointerInputChange18, f2) & j2) != j) {
                         pointerInputChange18.consume();
                         longRef3.element = PointerEventKt.positionChange(pointerInputChange18);
                         if (pointerInputChange18.isConsumed()) {
@@ -676,7 +676,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                 while (true) {
                     if (i12 < size9) {
                         pointerInputChange12 = changes10.get(i12);
-                        if (!PointerId.m6551equalsimpl0(pointerInputChange12.m6567getIdJ3iCeTQ(), longRef6.element)) {
+                        if (!PointerId.m6552equalsimpl0(pointerInputChange12.m6568getIdJ3iCeTQ(), longRef6.element)) {
                             i12++;
                         }
                     } else {
@@ -688,7 +688,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                     pointerInputChange13 = null;
                 } else if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange20)) {
                     long positionChangeIgnoreConsumed = PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange20);
-                    if ((orientation4 != null ? Float.intBitsToFloat((int) (orientation4 == Orientation.Vertical ? positionChangeIgnoreConsumed & 4294967295L : positionChangeIgnoreConsumed >> 32)) : Offset.m5033getDistanceimpl(positionChangeIgnoreConsumed)) == 0.0f) {
+                    if ((orientation4 != null ? Float.intBitsToFloat((int) (orientation4 == Orientation.Vertical ? positionChangeIgnoreConsumed & 4294967295L : positionChangeIgnoreConsumed >> 32)) : Offset.m5034getDistanceimpl(positionChangeIgnoreConsumed)) == 0.0f) {
                         z = true;
                         break;
                     } else {
@@ -713,7 +713,7 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                     }
                     PointerInputChange pointerInputChange22 = pointerInputChange14;
                     if (pointerInputChange22 != null) {
-                        longRef6.element = pointerInputChange22.m6567getIdJ3iCeTQ();
+                        longRef6.element = pointerInputChange22.m6568getIdJ3iCeTQ();
                         this.L$0 = awaitPointerEventScope10;
                         this.L$1 = function22;
                         this.L$2 = orientation4;
@@ -737,14 +737,14 @@ public final class DragGestureDetectorKt$detectDragGestures$13 extends Restricte
                         }
                         return Unit.INSTANCE;
                     }
-                    function22.invoke(pointerInputChange13, Offset.m5024boximpl(PointerEventKt.positionChange(pointerInputChange13)));
+                    function22.invoke(pointerInputChange13, Offset.m5025boximpl(PointerEventKt.positionChange(pointerInputChange13)));
                     pointerInputChange13.consume();
-                    m6567getIdJ3iCeTQ2 = pointerInputChange13.m6567getIdJ3iCeTQ();
+                    m6568getIdJ3iCeTQ2 = pointerInputChange13.m6568getIdJ3iCeTQ();
                     orientation = orientation4;
                     function2 = function22;
                     awaitPointerEventScope2 = awaitPointerEventScope10;
                     Ref.LongRef longRef7 = new Ref.LongRef();
-                    longRef7.element = m6567getIdJ3iCeTQ2;
+                    longRef7.element = m6568getIdJ3iCeTQ2;
                     longRef6 = longRef7;
                     awaitPointerEventScope9 = awaitPointerEventScope2;
                     awaitPointerEventScope10 = awaitPointerEventScope9;

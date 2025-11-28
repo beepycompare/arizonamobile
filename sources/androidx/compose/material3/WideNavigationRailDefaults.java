@@ -46,12 +46,12 @@ public final class WideNavigationRailDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1769402286, i, -1, "androidx.compose.material3.WideNavigationRailDefaults.<get-windowInsets> (WideNavigationRail.kt:800)");
         }
-        WindowInsets m922onlybOOhFvg = WindowInsetsKt.m922onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m936plusgK_yJZ4(WindowInsetsSides.Companion.m951getVerticalJoeWqyM(), WindowInsetsSides.Companion.m949getStartJoeWqyM()));
+        WindowInsets m923onlybOOhFvg = WindowInsetsKt.m923onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m937plusgK_yJZ4(WindowInsetsSides.Companion.m952getVerticalJoeWqyM(), WindowInsetsSides.Companion.m950getStartJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m922onlybOOhFvg;
+        return m923onlybOOhFvg;
     }
 
     public final Shape getModalCollapsedShape(Composer composer, int i) {
@@ -98,22 +98,22 @@ public final class WideNavigationRailDefaults {
     }
 
     /* renamed from: colors-zjMxDiM  reason: not valid java name */
-    public final WideNavigationRailColors m3431colorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
+    public final WideNavigationRailColors m3432colorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 239918099, "C(colors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,modalContainerColor:c#ui.graphics.Color,modalScrimColor:c#ui.graphics.Color,modalContentColor:c#ui.graphics.Color)839@40157L14,840@40203L31,841@40322L5,843@40401L5,844@40478L36,846@40572L11,846@40584L35:WideNavigationRail.kt#uh7d8r");
         long containerColor = (i2 & 1) != 0 ? INSTANCE.getContainerColor(composer, 6) : j;
-        long m2129contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2129contentColorForek8zF_U(containerColor, composer, i & 14) : j2;
+        long m2130contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2130contentColorForek8zF_U(containerColor, composer, i & 14) : j2;
         long value = (i2 & 4) != 0 ? ColorSchemeKt.getValue(NavigationRailExpandedTokens.INSTANCE.getModalContainerColor(), composer, 6) : j3;
-        long m5278copywmQWz5c$default = (i2 & 8) != 0 ? Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
-        long m2129contentColorForek8zF_U2 = (i2 & 16) != 0 ? ColorSchemeKt.m2129contentColorForek8zF_U(value, composer, (i >> 6) & 14) : j5;
+        long m5279copywmQWz5c$default = (i2 & 8) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        long m2130contentColorForek8zF_U2 = (i2 & 16) != 0 ? ColorSchemeKt.m2130contentColorForek8zF_U(value, composer, (i >> 6) & 14) : j5;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(239918099, i, -1, "androidx.compose.material3.WideNavigationRailDefaults.colors (WideNavigationRail.kt:846)");
         }
-        WideNavigationRailColors m3425copyt635Npw = getDefaultWideWideNavigationRailColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i >> 12) & 112).m3425copyt635Npw(containerColor, m2129contentColorForek8zF_U, value, m5278copywmQWz5c$default, m2129contentColorForek8zF_U2);
+        WideNavigationRailColors m3426copyt635Npw = getDefaultWideWideNavigationRailColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i >> 12) & 112).m3426copyt635Npw(containerColor, m2130contentColorForek8zF_U, value, m5279copywmQWz5c$default, m2130contentColorForek8zF_U2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3425copyt635Npw;
+        return m3426copyt635Npw;
     }
 
     private final long getContainerColor(Composer composer, int i) {
@@ -155,7 +155,7 @@ public final class WideNavigationRailDefaults {
             composer.startReplaceGroup(1297532678);
             ComposerKt.sourceInformation(composer, "865@41394L14,866@41465L14,867@41528L19,868@41609L19,870@41728L5");
             int i2 = (i >> 3) & 14;
-            defaultWideWideNavigationRailColorsCached$material3 = new WideNavigationRailColors(getContainerColor(composer, i2), ColorSchemeKt.m2128contentColorFor4WTKRHQ(colorScheme, getContainerColor(composer, i2)), getModalContainerColor(composer, i2), Color.m5278copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.m2128contentColorFor4WTKRHQ(colorScheme, getModalContainerColor(composer, i2)), null);
+            defaultWideWideNavigationRailColorsCached$material3 = new WideNavigationRailColors(getContainerColor(composer, i2), ColorSchemeKt.m2129contentColorFor4WTKRHQ(colorScheme, getContainerColor(composer, i2)), getModalContainerColor(composer, i2), Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.m2129contentColorFor4WTKRHQ(colorScheme, getModalContainerColor(composer, i2)), null);
             colorScheme.setDefaultWideWideNavigationRailColorsCached$material3(defaultWideWideNavigationRailColorsCached$material3);
             composer.endReplaceGroup();
         }

@@ -10,56 +10,56 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FontSynthesis {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m7579constructorimpl(0);
-    private static final int Weight = m7579constructorimpl(1);
-    private static final int Style = m7579constructorimpl(2);
-    private static final int All = m7579constructorimpl(65535);
+    private static final int None = m7580constructorimpl(0);
+    private static final int Weight = m7580constructorimpl(1);
+    private static final int Style = m7580constructorimpl(2);
+    private static final int All = m7580constructorimpl(65535);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FontSynthesis m7578boximpl(int i) {
+    public static final /* synthetic */ FontSynthesis m7579boximpl(int i) {
         return new FontSynthesis(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m7579constructorimpl(int i) {
+    public static int m7580constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7580equalsimpl(int i, Object obj) {
-        return (obj instanceof FontSynthesis) && i == ((FontSynthesis) obj).m7586unboximpl();
+    public static boolean m7581equalsimpl(int i, Object obj) {
+        return (obj instanceof FontSynthesis) && i == ((FontSynthesis) obj).m7587unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7581equalsimpl0(int i, int i2) {
+    public static final boolean m7582equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7582hashCodeimpl(int i) {
+    public static int m7583hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: isStyleOn-impl$ui_text  reason: not valid java name */
-    public static final boolean m7583isStyleOnimpl$ui_text(int i) {
+    public static final boolean m7584isStyleOnimpl$ui_text(int i) {
         return (i & 2) != 0;
     }
 
     /* renamed from: isWeightOn-impl$ui_text  reason: not valid java name */
-    public static final boolean m7584isWeightOnimpl$ui_text(int i) {
+    public static final boolean m7585isWeightOnimpl$ui_text(int i) {
         return (i & 1) != 0;
     }
 
     public boolean equals(Object obj) {
-        return m7580equalsimpl(this.value, obj);
+        return m7581equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7582hashCodeimpl(this.value);
+        return m7583hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7586unboximpl() {
+    public final /* synthetic */ int m7587unboximpl() {
         return this.value;
     }
 
@@ -68,12 +68,12 @@ public final class FontSynthesis {
     }
 
     public String toString() {
-        return m7585toStringimpl(this.value);
+        return m7586toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7585toStringimpl(int i) {
-        return m7581equalsimpl0(i, None) ? "None" : m7581equalsimpl0(i, Weight) ? "Weight" : m7581equalsimpl0(i, Style) ? "Style" : m7581equalsimpl0(i, All) ? "All" : "Invalid";
+    public static String m7586toStringimpl(int i) {
+        return m7582equalsimpl0(i, None) ? "None" : m7582equalsimpl0(i, Weight) ? "Weight" : m7582equalsimpl0(i, Style) ? "Style" : m7582equalsimpl0(i, All) ? "All" : "Invalid";
     }
 
     /* compiled from: FontSynthesis.kt */
@@ -88,22 +88,22 @@ public final class FontSynthesis {
         }
 
         /* renamed from: getNone-GVVA2EU  reason: not valid java name */
-        public final int m7588getNoneGVVA2EU() {
+        public final int m7589getNoneGVVA2EU() {
             return FontSynthesis.None;
         }
 
         /* renamed from: getWeight-GVVA2EU  reason: not valid java name */
-        public final int m7590getWeightGVVA2EU() {
+        public final int m7591getWeightGVVA2EU() {
             return FontSynthesis.Weight;
         }
 
         /* renamed from: getStyle-GVVA2EU  reason: not valid java name */
-        public final int m7589getStyleGVVA2EU() {
+        public final int m7590getStyleGVVA2EU() {
             return FontSynthesis.Style;
         }
 
         /* renamed from: getAll-GVVA2EU  reason: not valid java name */
-        public final int m7587getAllGVVA2EU() {
+        public final int m7588getAllGVVA2EU() {
             return FontSynthesis.All;
         }
     }

@@ -52,7 +52,7 @@ public final class SpringSimulation {
     }
 
     /* renamed from: updateValues-IJZedt4$animation_core  reason: not valid java name */
-    public final long m192updateValuesIJZedt4$animation_core(float f, float f2, long j) {
+    public final long m193updateValuesIJZedt4$animation_core(float f, float f2, long j) {
         double exp;
         double d;
         float f3 = f - this.finalPosition;
@@ -90,6 +90,6 @@ public final class SpringSimulation {
             exp = (d5 * exp2) + (Math.exp(d21) * (((-sqrt2) * d18 * Math.sin(d20)) + (sqrt2 * d19 * Math.cos(d20))));
             d = exp2;
         }
-        return Motion.m182constructorimpl((Float.floatToRawIntBits((float) exp) & 4294967295L) | (Float.floatToRawIntBits((float) (d + this.finalPosition)) << 32));
+        return Motion.m183constructorimpl((Float.floatToRawIntBits((float) exp) & 4294967295L) | (Float.floatToRawIntBits((float) (d + this.finalPosition)) << 32));
     }
 }

@@ -44,7 +44,7 @@ final class SelectableElement extends ModifierNodeElement<SelectableNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(SelectableNode selectableNode) {
-        selectableNode.m1175updateO2vRcR0(this.selected, this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.role, this.onClick);
+        selectableNode.m1176updateO2vRcR0(this.selected, this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.role, this.onClick);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -78,6 +78,6 @@ final class SelectableElement extends ModifierNodeElement<SelectableNode> {
         IndicationNodeFactory indicationNodeFactory = this.indicationNodeFactory;
         int hashCode3 = (((((hashCode2 + (indicationNodeFactory != null ? indicationNodeFactory.hashCode() : 0)) * 31) + Boolean.hashCode(this.useLocalIndication)) * 31) + Boolean.hashCode(this.enabled)) * 31;
         Role role = this.role;
-        return ((hashCode3 + (role != null ? Role.m7201hashCodeimpl(role.m7203unboximpl()) : 0)) * 31) + this.onClick.hashCode();
+        return ((hashCode3 + (role != null ? Role.m7202hashCodeimpl(role.m7204unboximpl()) : 0)) * 31) + this.onClick.hashCode();
     }
 }

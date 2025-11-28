@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Rf implements ProtobufStateStorage {
 
     /* renamed from: a  reason: collision with root package name */

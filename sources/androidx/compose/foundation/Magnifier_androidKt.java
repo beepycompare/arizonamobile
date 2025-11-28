@@ -29,7 +29,7 @@ public final class Magnifier_androidKt {
     }
 
     /* renamed from: magnifier-UpNRX3w$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m346magnifierUpNRX3w$default(Modifier modifier, Function1 function1, Function1 function12, Function1 function13, float f, long j, float f2, float f3, boolean z, int i, Object obj) {
+    public static /* synthetic */ Modifier m347magnifierUpNRX3w$default(Modifier modifier, Function1 function1, Function1 function12, Function1 function13, float f, long j, float f2, float f3, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
             function12 = null;
         }
@@ -40,27 +40,27 @@ public final class Magnifier_androidKt {
             f = Float.NaN;
         }
         if ((i & 16) != 0) {
-            j = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+            j = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
         }
         if ((i & 32) != 0) {
-            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
         if ((i & 64) != 0) {
-            f3 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
         if ((i & 128) != 0) {
             z = true;
         }
-        return m345magnifierUpNRX3w(modifier, function1, function12, function13, f, j, f2, f3, z);
+        return m346magnifierUpNRX3w(modifier, function1, function12, function13, f, j, f2, f3, z);
     }
 
     /* renamed from: magnifier-UpNRX3w  reason: not valid java name */
-    public static final Modifier m345magnifierUpNRX3w(Modifier modifier, Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, Function1<? super DpSize, Unit> function13, float f, long j, float f2, float f3, boolean z) {
-        return m348magnifierjPUL71Q$default(modifier, function1, function12, function13, f, false, j, f2, f3, z, null, 512, null);
+    public static final Modifier m346magnifierUpNRX3w(Modifier modifier, Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, Function1<? super DpSize, Unit> function13, float f, long j, float f2, float f3, boolean z) {
+        return m349magnifierjPUL71Q$default(modifier, function1, function12, function13, f, false, j, f2, f3, z, null, 512, null);
     }
 
     /* renamed from: magnifier-jPUL71Q$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m348magnifierjPUL71Q$default(Modifier modifier, Function1 function1, Function1 function12, Function1 function13, float f, boolean z, long j, float f2, float f3, boolean z2, PlatformMagnifierFactory platformMagnifierFactory, int i, Object obj) {
+    public static /* synthetic */ Modifier m349magnifierjPUL71Q$default(Modifier modifier, Function1 function1, Function1 function12, Function1 function13, float f, boolean z, long j, float f2, float f3, boolean z2, PlatformMagnifierFactory platformMagnifierFactory, int i, Object obj) {
         if ((i & 2) != 0) {
             function12 = null;
         }
@@ -74,13 +74,13 @@ public final class Magnifier_androidKt {
             z = false;
         }
         if ((i & 32) != 0) {
-            j = DpSize.Companion.m8102getUnspecifiedMYxV2XQ();
+            j = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
         }
         if ((i & 64) != 0) {
-            f2 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
         if ((i & 128) != 0) {
-            f3 = Dp.Companion.m8015getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m8016getUnspecifiedD9Ej5fM();
         }
         if ((i & 256) != 0) {
             z2 = true;
@@ -88,11 +88,11 @@ public final class Magnifier_androidKt {
         if ((i & 512) != 0) {
             platformMagnifierFactory = null;
         }
-        return m347magnifierjPUL71Q(modifier, function1, function12, function13, f, z, j, f2, f3, z2, platformMagnifierFactory);
+        return m348magnifierjPUL71Q(modifier, function1, function12, function13, f, z, j, f2, f3, z2, platformMagnifierFactory);
     }
 
     /* renamed from: magnifier-jPUL71Q  reason: not valid java name */
-    public static final Modifier m347magnifierjPUL71Q(Modifier modifier, Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, Function1<? super DpSize, Unit> function13, float f, boolean z, long j, float f2, float f3, boolean z2, PlatformMagnifierFactory platformMagnifierFactory) {
+    public static final Modifier m348magnifierjPUL71Q(Modifier modifier, Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, Function1<? super DpSize, Unit> function13, float f, boolean z, long j, float f2, float f3, boolean z2, PlatformMagnifierFactory platformMagnifierFactory) {
         if (isPlatformMagnifierSupported$default(0, 1, null)) {
             return modifier.then(new MagnifierElement(function1, function12, function13, f, z, j, f2, f3, z2, platformMagnifierFactory == null ? PlatformMagnifierFactory.Companion.getForCurrentPlatform() : platformMagnifierFactory, null));
         }

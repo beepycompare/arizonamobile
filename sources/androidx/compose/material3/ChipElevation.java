@@ -49,32 +49,32 @@ public final class ChipElevation {
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2042getElevationD9Ej5fM() {
+    public final float m2043getElevationD9Ej5fM() {
         return this.elevation;
     }
 
     /* renamed from: getPressedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2045getPressedElevationD9Ej5fM() {
+    public final float m2046getPressedElevationD9Ej5fM() {
         return this.pressedElevation;
     }
 
     /* renamed from: getFocusedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2043getFocusedElevationD9Ej5fM() {
+    public final float m2044getFocusedElevationD9Ej5fM() {
         return this.focusedElevation;
     }
 
     /* renamed from: getHoveredElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2044getHoveredElevationD9Ej5fM() {
+    public final float m2045getHoveredElevationD9Ej5fM() {
         return this.hoveredElevation;
     }
 
     /* renamed from: getDraggedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2041getDraggedElevationD9Ej5fM() {
+    public final float m2042getDraggedElevationD9Ej5fM() {
         return this.draggedElevation;
     }
 
     /* renamed from: getDisabledElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2040getDisabledElevationD9Ej5fM() {
+    public final float m2041getDisabledElevationD9Ej5fM() {
         return this.disabledElevation;
     }
 
@@ -139,13 +139,13 @@ public final class ChipElevation {
         ComposerKt.sourceInformationMarkerStart(composer, -2141153151, "CC(remember):Chip.kt#9igjgp");
         Object rememberedValue4 = composer.rememberedValue();
         if (rememberedValue4 == Composer.Companion.getEmpty()) {
-            Object animatable2 = new Animatable(Dp.m7993boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+            Object animatable2 = new Animatable(Dp.m7994boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
             composer.updateRememberedValue(animatable2);
             rememberedValue4 = animatable2;
         }
         Object obj = (Animatable) rememberedValue4;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Dp m7993boximpl = Dp.m7993boximpl(f);
+        Dp m7994boximpl = Dp.m7994boximpl(f);
         ComposerKt.sourceInformationMarkerStart(composer, -2141149999, "CC(remember):Chip.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(obj) | composer.changed(f);
         if ((((i & 14) ^ 6) <= 4 || !composer.changed(z)) && (i & 6) != 4) {
@@ -161,7 +161,7 @@ public final class ChipElevation {
             animatable = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        EffectsKt.LaunchedEffect(m7993boximpl, (Function2) rememberedValue5, composer, 0);
+        EffectsKt.LaunchedEffect(m7994boximpl, (Function2) rememberedValue5, composer, 0);
         State<Dp> asState = animatable.asState();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -183,10 +183,10 @@ public final class ChipElevation {
             return false;
         }
         ChipElevation chipElevation = (ChipElevation) obj;
-        return Dp.m8000equalsimpl0(this.elevation, chipElevation.elevation) && Dp.m8000equalsimpl0(this.pressedElevation, chipElevation.pressedElevation) && Dp.m8000equalsimpl0(this.focusedElevation, chipElevation.focusedElevation) && Dp.m8000equalsimpl0(this.hoveredElevation, chipElevation.hoveredElevation) && Dp.m8000equalsimpl0(this.disabledElevation, chipElevation.disabledElevation);
+        return Dp.m8001equalsimpl0(this.elevation, chipElevation.elevation) && Dp.m8001equalsimpl0(this.pressedElevation, chipElevation.pressedElevation) && Dp.m8001equalsimpl0(this.focusedElevation, chipElevation.focusedElevation) && Dp.m8001equalsimpl0(this.hoveredElevation, chipElevation.hoveredElevation) && Dp.m8001equalsimpl0(this.disabledElevation, chipElevation.disabledElevation);
     }
 
     public int hashCode() {
-        return (((((((Dp.m8001hashCodeimpl(this.elevation) * 31) + Dp.m8001hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8001hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8001hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m8001hashCodeimpl(this.disabledElevation);
+        return (((((((Dp.m8002hashCodeimpl(this.elevation) * 31) + Dp.m8002hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8002hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8002hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m8002hashCodeimpl(this.disabledElevation);
     }
 }

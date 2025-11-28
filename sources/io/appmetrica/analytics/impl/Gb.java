@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Gb extends L2 {
     public Gb(InterfaceC0731yl interfaceC0731yl) {
         super(interfaceC0731yl);

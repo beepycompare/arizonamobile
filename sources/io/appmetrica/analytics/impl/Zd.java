@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
 import io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider;
 import io.appmetrica.analytics.modulesapi.internal.network.SimpleNetworkApi;
 import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Zd implements ServiceNetworkContext {
 
     /* renamed from: a  reason: collision with root package name */

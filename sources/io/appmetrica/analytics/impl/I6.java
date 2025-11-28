@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class I6 extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */

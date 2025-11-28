@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import okhttp3.internal.connection.RealConnection;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Vk {
 
     /* renamed from: a  reason: collision with root package name */

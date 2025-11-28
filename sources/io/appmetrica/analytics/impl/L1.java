@@ -5,7 +5,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class L1 implements A1 {
 
     /* renamed from: a  reason: collision with root package name */

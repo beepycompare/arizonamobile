@@ -54,12 +54,12 @@ public final class LayerSnapshotV22 implements LayerSnapshotImpl {
                 i = layerSnapshotV22$toBitmap$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    long m5949getSizeYbymL2g = graphicsLayer.m5949getSizeYbymL2g();
+                    long m5950getSizeYbymL2g = graphicsLayer.m5950getSizeYbymL2g();
                     Looper myLooper = Looper.myLooper();
                     if (myLooper == null) {
                         myLooper = Looper.getMainLooper();
                     }
-                    ImageReader newInstance = ImageReader.newInstance((int) (m5949getSizeYbymL2g >> 32), (int) (m5949getSizeYbymL2g & 4294967295L), 1, 1);
+                    ImageReader newInstance = ImageReader.newInstance((int) (m5950getSizeYbymL2g >> 32), (int) (m5950getSizeYbymL2g & 4294967295L), 1, 1);
                     try {
                         ImageReader imageReader2 = newInstance;
                         layerSnapshotV22$toBitmap$1.L$0 = graphicsLayer;
@@ -75,12 +75,12 @@ public final class LayerSnapshotV22 implements LayerSnapshotImpl {
                             @Override // android.media.ImageReader.OnImageAvailableListener
                             public final void onImageAvailable(ImageReader imageReader3) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(imageReader3.acquireLatestImage()));
+                                cancellableContinuationImpl2.resumeWith(Result.m9901constructorimpl(imageReader3.acquireLatestImage()));
                             }
                         }, HandlerCompat.createAsync(myLooper));
                         Surface surface = imageReader2.getSurface();
                         Canvas lockCanvas = SurfaceUtils.INSTANCE.lockCanvas(surface);
-                        lockCanvas.drawColor(ColorKt.m5333toArgb8_81llA(Color.Companion.m5305getBlack0d7_KjU()), PorterDuff.Mode.CLEAR);
+                        lockCanvas.drawColor(ColorKt.m5334toArgb8_81llA(Color.Companion.m5306getBlack0d7_KjU()), PorterDuff.Mode.CLEAR);
                         graphicsLayer.draw$ui_graphics_release(AndroidCanvas_androidKt.Canvas(lockCanvas), null);
                         surface.unlockCanvasAndPost(lockCanvas);
                         obj = cancellableContinuationImpl.getResult();

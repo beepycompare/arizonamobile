@@ -3,7 +3,7 @@ package io.appmetrica.analytics.screenshot.impl;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class I implements InterfaceC0767i {
 
     /* renamed from: a  reason: collision with root package name */

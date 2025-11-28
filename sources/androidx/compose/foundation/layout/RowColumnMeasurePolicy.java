@@ -9,7 +9,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface RowColumnMeasurePolicy {
     /* renamed from: createConstraints-xF2OJ5Q */
-    long mo736createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z);
+    long mo737createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z);
 
     int crossAxisSize(Placeable placeable);
 
@@ -20,12 +20,12 @@ public interface RowColumnMeasurePolicy {
     void populateMainAxisPositions(int i, int[] iArr, int[] iArr2, MeasureScope measureScope);
 
     /* renamed from: createConstraints-xF2OJ5Q$default  reason: not valid java name */
-    static /* synthetic */ long m872createConstraintsxF2OJ5Q$default(RowColumnMeasurePolicy rowColumnMeasurePolicy, int i, int i2, int i3, int i4, boolean z, int i5, Object obj) {
+    static /* synthetic */ long m873createConstraintsxF2OJ5Q$default(RowColumnMeasurePolicy rowColumnMeasurePolicy, int i, int i2, int i3, int i4, boolean z, int i5, Object obj) {
         if (obj == null) {
             if ((i5 & 16) != 0) {
                 z = false;
             }
-            return rowColumnMeasurePolicy.mo736createConstraintsxF2OJ5Q(i, i2, i3, i4, z);
+            return rowColumnMeasurePolicy.mo737createConstraintsxF2OJ5Q(i, i2, i3, i4, z);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createConstraints-xF2OJ5Q");
     }

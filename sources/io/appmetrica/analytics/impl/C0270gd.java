@@ -4,7 +4,7 @@ import io.appmetrica.analytics.ModuleEvent;
 import io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.gd  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0270gd implements ModuleSelfReporter {
 
     /* renamed from: a  reason: collision with root package name */

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.screenshot.impl;
 import android.os.Handler;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class g0 implements T {
 
     /* renamed from: a  reason: collision with root package name */
