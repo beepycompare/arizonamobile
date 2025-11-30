@@ -1,13 +1,19 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
 /* loaded from: classes5.dex */
-public final class De {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final long f441a;
-    public final long b;
-
-    public De(long j, long j2) {
-        this.f441a = j;
-        this.b = j2;
+public final class De extends Ec {
+    public De(NetworkType networkType) {
+        super(networkType);
+        a(1, NetworkType.WIFI);
+        a(0, NetworkType.CELL);
+        a(7, NetworkType.BLUETOOTH);
+        a(9, NetworkType.ETHERNET);
+        a(4, NetworkType.MOBILE_DUN);
+        a(5, NetworkType.MOBILE_HIPRI);
+        a(2, NetworkType.MOBILE_MMS);
+        a(3, NetworkType.MOBILE_SUPL);
+        a(6, NetworkType.WIMAX);
+        a(17, NetworkType.VPN);
     }
 }

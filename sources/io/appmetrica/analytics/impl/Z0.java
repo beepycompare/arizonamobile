@@ -1,22 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.DeferredDeeplinkListener;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 /* loaded from: classes5.dex */
 public final class Z0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ DeferredDeeplinkListener f778a;
-    public final /* synthetic */ C0561s1 b;
+    public final /* synthetic */ ECommerceEvent f771a;
+    public final /* synthetic */ C0611u1 b;
 
-    public Z0(C0561s1 c0561s1, DeferredDeeplinkListener deferredDeeplinkListener) {
-        this.b = c0561s1;
-        this.f778a = deferredDeeplinkListener;
+    public Z0(C0611u1 c0611u1, ECommerceEvent eCommerceEvent) {
+        this.b = c0611u1;
+        this.f771a = eCommerceEvent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.b.f1103a.getClass();
-        C0660w0 c0660w0 = C0660w0.e;
-        c0660w0.f().a(this.f778a);
+        C0611u1.a(this.b).reportECommerce(this.f771a);
     }
 }

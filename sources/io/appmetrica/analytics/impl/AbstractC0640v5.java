@@ -1,60 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.networktasks.internal.ArgumentsMerger;
-import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
+import java.util.Locale;
 /* renamed from: io.appmetrica.analytics.impl.v5  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public abstract class AbstractC0640v5 implements InterfaceC0327ij {
+public abstract class AbstractC0640v5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public BaseRequestConfig f1163a;
-    public final BaseRequestConfig.RequestConfigLoader b;
-    public S5 c;
+    public static final List f1162a = CollectionUtils.createSortedListWithoutRepetitions("id", "type", "report_request_parameters", "session_description");
+    public static final String b;
+    public static final String c;
 
-    public AbstractC0640v5(BaseRequestConfig.RequestConfigLoader<Object, S5> requestConfigLoader, C0356jm c0356jm, ArgumentsMerger<Object, Object> argumentsMerger) {
-        this.b = requestConfigLoader;
-        C0620ua.k().v().a(this);
-        a(new S5(c0356jm, C0620ua.k().v(), C0620ua.k().s(), argumentsMerger));
-    }
-
-    public final synchronized void a(S5 s5) {
-        this.c = s5;
-    }
-
-    public final synchronized ArgumentsMerger<Object, Object> b() {
-        return (ArgumentsMerger) this.c.componentArguments;
-    }
-
-    public final synchronized C0356jm c() {
-        return this.c.f677a;
-    }
-
-    public final void d() {
-        synchronized (this) {
-            this.f1163a = null;
-        }
-    }
-
-    public final synchronized void e() {
-        this.f1163a = null;
-    }
-
-    public synchronized void a(Object obj) {
-        if (!((ArgumentsMerger) this.c.componentArguments).compareWithOtherArguments(obj)) {
-            a(new S5(c(), C0620ua.H.v(), C0620ua.H.s(), (ArgumentsMerger) ((ArgumentsMerger) this.c.componentArguments).mergeFrom(obj)));
-            e();
-        }
-    }
-
-    public final synchronized void a(C0356jm c0356jm) {
-        a(new S5(c0356jm, C0620ua.H.v(), C0620ua.H.s(), b()));
-        e();
-    }
-
-    public final synchronized BaseRequestConfig a() {
-        if (this.f1163a == null) {
-            this.f1163a = this.b.load(this.c);
-        }
-        return this.f1163a;
+    static {
+        Locale locale = Locale.US;
+        b = String.format(locale, "SELECT DISTINCT %s  FROM %s WHERE %s >=0 AND (SELECT count() FROM %5$s WHERE %5$s.%6$s = %2$s.%3$s AND %5$s.%7$s = %2$s.%4$s) > 0 ORDER BY %3$s LIMIT 1", "report_request_parameters", "sessions", "id", "type", "events", "session_id", "session_type");
+        c = String.format(locale, "(select count(%s.%s) from %s where %s.%s = %s.%s) = 0 and cast(%s as integer) < ?", "events", "id", "events", "events", "session_id", "sessions", "id", "id");
     }
 }

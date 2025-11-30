@@ -1,10 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.pm.FeatureInfo;
+import android.os.Parcel;
+import android.os.Parcelable;
+import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 /* loaded from: classes5.dex */
-public final class V9 extends X9 {
-    @Override // io.appmetrica.analytics.impl.X9
-    public final Y9 b(FeatureInfo featureInfo) {
-        return new Y9(featureInfo.name, featureInfo.version, (featureInfo.flags & 1) != 0);
+public final class V9 implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        Object readValue = parcel.readValue(Boolean.TYPE.getClassLoader());
+        return new W9(readValue instanceof Boolean ? (Boolean) readValue : null, IdentifierStatus.Companion.from(parcel.readString()), parcel.readString());
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new W9[i];
     }
 }

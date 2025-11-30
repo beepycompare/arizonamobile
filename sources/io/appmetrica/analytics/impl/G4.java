@@ -1,28 +1,17 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.internal.CounterConfiguration;
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes5.dex */
-public final class G4 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Mb f485a;
-
-    public G4() {
-        this(C0620ua.k().l());
+public final class G4 extends Gh {
+    public G4(Cf cf) {
+        super(cf, new CounterConfiguration(), new E8(new C0581sl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment")));
+        b().setReporterType(CounterConfigurationReporterType.COMMUTATION);
     }
 
-    public static L4 a(E4 e4) {
-        return new L4(new J4(e4), e4);
-    }
-
-    public G4(Mb mb) {
-        this.f485a = mb;
-    }
-
-    public final C0484on a(E4 e4, Em em) {
-        C0484on c0484on = new C0484on(e4, new Ng(em));
-        Mb mb = this.f485a;
-        synchronized (mb) {
-            mb.c.add(c0484on);
-        }
-        return c0484on;
+    @Override // io.appmetrica.analytics.impl.Gh
+    public final boolean f() {
+        return true;
     }
 }

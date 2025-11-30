@@ -1,11 +1,14 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.internal.PreloadInfoContentProvider;
-import java.util.concurrent.CountDownLatch;
+import android.content.BroadcastReceiver;
 /* loaded from: classes5.dex */
-public abstract class H5 {
+public final class H5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile CountDownLatch f502a;
-    public static volatile PreloadInfoContentProvider b;
+    public final BroadcastReceiver f502a;
+    public boolean b = false;
+
+    public H5(C0612u2 c0612u2) {
+        this.f502a = c0612u2;
+    }
 }

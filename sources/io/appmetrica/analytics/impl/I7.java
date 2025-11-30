@@ -1,15 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
-import io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider;
 /* loaded from: classes5.dex */
-public final class I7 implements AskForPermissionStrategyModuleProvider {
+public final class I7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0194de f522a = new C0194de();
+    public final Um f521a;
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider
-    public final PermissionStrategy getAskForPermissionStrategy() {
-        return this.f522a;
+    public I7(Um um) {
+        this.f521a = um;
+    }
+
+    public I7() {
+        this(new Um(C0471oa.k().g(), "appmetrica_startup_hosts"));
     }
 }

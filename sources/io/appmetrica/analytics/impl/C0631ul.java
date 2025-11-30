@@ -1,27 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.coreutils.internal.services.ContextPermissionChecker;
 /* renamed from: io.appmetrica.analytics.impl.ul  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0631ul implements F6 {
+public final class C0631ul implements PermissionExtractor {
+    public static final String b = "[SimplePermissionExtractor]";
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0238f7 f1156a;
+    public final PermissionStrategy f1153a;
 
-    public C0631ul(C0238f7 c0238f7) {
-        this.f1156a = c0238f7;
+    public C0631ul(PermissionStrategy permissionStrategy) {
+        this.f1153a = permissionStrategy;
     }
 
-    @Override // io.appmetrica.analytics.impl.F6
-    public final void a(SQLiteDatabase sQLiteDatabase) {
+    public final PermissionStrategy a() {
+        return this.f1153a;
     }
 
-    @Override // io.appmetrica.analytics.impl.F6
-    public final SQLiteDatabase a() {
-        try {
-            return this.f1156a.getWritableDatabase();
-        } catch (Throwable unused) {
-            return null;
+    @Override // io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor
+    public final boolean hasPermission(Context context, String str) {
+        if (this.f1153a.forbidUsePermission(str)) {
+            return false;
         }
+        return ContextPermissionChecker.hasPermission(context, str);
     }
 }

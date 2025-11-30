@@ -8,13 +8,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ScreenInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f275a;
+    private final int f278a;
     private final int b;
     private final int c;
     private final float d;
 
     public ScreenInfo(int i, int i2, int i3, float f) {
-        this.f275a = i;
+        this.f278a = i;
         this.b = i2;
         this.c = i3;
         this.d = f;
@@ -22,7 +22,7 @@ public final class ScreenInfo {
 
     public static /* synthetic */ ScreenInfo copy$default(ScreenInfo screenInfo, int i, int i2, int i3, float f, int i4, Object obj) {
         if ((i4 & 1) != 0) {
-            i = screenInfo.f275a;
+            i = screenInfo.f278a;
         }
         if ((i4 & 2) != 0) {
             i2 = screenInfo.b;
@@ -37,7 +37,7 @@ public final class ScreenInfo {
     }
 
     public final int component1() {
-        return this.f275a;
+        return this.f278a;
     }
 
     public final int component2() {
@@ -62,7 +62,7 @@ public final class ScreenInfo {
         }
         if (obj instanceof ScreenInfo) {
             ScreenInfo screenInfo = (ScreenInfo) obj;
-            return this.f275a == screenInfo.f275a && this.b == screenInfo.b && this.c == screenInfo.c && Intrinsics.areEqual((Object) Float.valueOf(this.d), (Object) Float.valueOf(screenInfo.d));
+            return this.f278a == screenInfo.f278a && this.b == screenInfo.b && this.c == screenInfo.c && Intrinsics.areEqual((Object) Float.valueOf(this.d), (Object) Float.valueOf(screenInfo.d));
         }
         return false;
     }
@@ -80,16 +80,16 @@ public final class ScreenInfo {
     }
 
     public final int getWidth() {
-        return this.f275a;
+        return this.f278a;
     }
 
     public int hashCode() {
         int hashCode = Integer.hashCode(this.b);
         int hashCode2 = Integer.hashCode(this.c);
-        return Float.hashCode(this.d) + ((hashCode2 + ((hashCode + (Integer.hashCode(this.f275a) * 31)) * 31)) * 31);
+        return Float.hashCode(this.d) + ((hashCode2 + ((hashCode + (Integer.hashCode(this.f278a) * 31)) * 31)) * 31);
     }
 
     public String toString() {
-        return "ScreenInfo(width=" + this.f275a + ", height=" + this.b + ", dpi=" + this.c + ", scaleFactor=" + this.d + ')';
+        return "ScreenInfo(width=" + this.f278a + ", height=" + this.b + ", dpi=" + this.c + ", scaleFactor=" + this.d + ')';
     }
 }

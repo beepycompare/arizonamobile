@@ -5,34 +5,34 @@ import android.util.Base64;
 import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 /* renamed from: io.appmetrica.analytics.impl.b  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0127b implements L8 {
+public final class C0127b implements H8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AESEncrypter f807a;
+    public final AESEncrypter f805a;
 
     public C0127b() {
-        this(new C0101a(C0620ua.k().g()));
+        this(new C0101a(C0471oa.k().g()));
     }
 
-    @Override // io.appmetrica.analytics.impl.L8
-    public final E8 a(W5 w5) {
+    @Override // io.appmetrica.analytics.impl.H8
+    public final A8 a(Q5 q5) {
         byte[] encrypt;
         String encodeToString;
-        String value = w5.getValue();
+        String value = q5.getValue();
         if (!TextUtils.isEmpty(value)) {
             try {
-                encrypt = this.f807a.encrypt(value.getBytes("UTF-8"));
+                encrypt = this.f805a.encrypt(value.getBytes("UTF-8"));
             } catch (Throwable unused) {
             }
             if (encrypt != null) {
                 encodeToString = Base64.encodeToString(encrypt, 0);
-                w5.setValue(encodeToString);
-                return new E8(w5, N8.AES_VALUE_ENCRYPTION);
+                q5.setValue(encodeToString);
+                return new A8(q5, J8.AES_VALUE_ENCRYPTION);
             }
         }
         encodeToString = null;
-        w5.setValue(encodeToString);
-        return new E8(w5, N8.AES_VALUE_ENCRYPTION);
+        q5.setValue(encodeToString);
+        return new A8(q5, J8.AES_VALUE_ENCRYPTION);
     }
 
     public C0127b(C0101a c0101a) {
@@ -40,22 +40,22 @@ public final class C0127b implements L8 {
     }
 
     public C0127b(AESEncrypter aESEncrypter) {
-        this.f807a = aESEncrypter;
+        this.f805a = aESEncrypter;
     }
 
-    @Override // io.appmetrica.analytics.impl.L8
+    @Override // io.appmetrica.analytics.impl.H8
     public final byte[] a(byte[] bArr) {
         byte[] bArr2 = new byte[0];
         if (bArr != null && bArr.length > 0) {
             try {
-                return this.f807a.decrypt(Base64.decode(bArr, 0));
+                return this.f805a.decrypt(Base64.decode(bArr, 0));
             } catch (Throwable unused) {
             }
         }
         return bArr2;
     }
 
-    public final N8 a() {
-        return N8.AES_VALUE_ENCRYPTION;
+    public final J8 a() {
+        return J8.AES_VALUE_ENCRYPTION;
     }
 }

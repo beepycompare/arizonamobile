@@ -10,42 +10,42 @@ import java.util.concurrent.TimeUnit;
 public final class C0128b0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0685x0 f808a;
-    public final C0149bl b;
-    public final Z3 c;
+    public final C0735z0 f806a;
+    public final Xk b;
+    public final S3 c;
     public final long d = TimeUnit.SECONDS.toMillis(10);
 
-    public C0128b0(C0685x0 c0685x0, C0149bl c0149bl, Z3 z3) {
-        this.f808a = c0685x0;
-        this.b = c0149bl;
-        this.c = z3;
+    public C0128b0(C0735z0 c0735z0, Xk xk, S3 s3) {
+        this.f806a = c0735z0;
+        this.b = xk;
+        this.c = s3;
     }
 
     public final synchronized void a(final Context context, final AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        this.f808a.getClass();
-        if (C0685x0.a()) {
+        this.f806a.getClass();
+        if (C0735z0.a()) {
             return;
         }
         LoggerStorage.getMainPublicOrAnonymousLogger().info("Session autotracking enabled", new Object[0]);
         this.b.a();
-        this.f808a.getClass();
-        C0660w0 a2 = C0660w0.a(context);
+        this.f806a.getClass();
+        C0710y0 a2 = C0710y0.a(context);
         a2.d.a(null, a2);
         IHandlerExecutor a3 = this.c.a();
-        ((G9) a3).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.b0$$ExternalSyntheticLambda0
+        ((A9) a3).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.b0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 C0128b0.a(C0128b0.this, context, appMetricaLibraryAdapterConfig);
             }
         });
-        this.f808a.getClass();
-        C0685x0.b();
+        this.f806a.getClass();
+        C0735z0.b();
     }
 
     public static final void a(C0128b0 c0128b0, Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        c0128b0.f808a.getClass();
-        C0660w0 a2 = C0660w0.a(context);
+        c0128b0.f806a.getClass();
+        C0710y0 a2 = C0710y0.a(context);
         a2.f().a(appMetricaLibraryAdapterConfig);
-        C0338j4.l().c.a().execute(new RunnableC0636v1(a2.f1177a));
+        C0158c4.l().c.a().execute(new RunnableC0686x1(a2.f1208a));
     }
 }

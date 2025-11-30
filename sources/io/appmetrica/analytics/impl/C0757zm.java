@@ -1,75 +1,132 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import com.google.common.net.HttpHeaders;
+import io.appmetrica.analytics.networktasks.internal.ConfigProvider;
+import io.appmetrica.analytics.networktasks.internal.FullUrlFormer;
+import io.appmetrica.analytics.networktasks.internal.RequestDataHolder;
+import io.appmetrica.analytics.networktasks.internal.ResponseDataHolder;
+import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
+import io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask;
+import javax.net.ssl.SSLSocketFactory;
 /* renamed from: io.appmetrica.analytics.impl.zm  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0757zm extends MessageNano {
-    public static volatile C0757zm[] b;
+public final class C0757zm implements UnderlyingNetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1236a;
+    public final Bm f1236a;
+    public C0227em b;
+    public Kl c;
+    public final RequestDataHolder d;
+    public final ConfigProvider e;
+    public final ResponseDataHolder f;
+    public final FullUrlFormer g;
+    public final Sl h;
 
-    public C0757zm() {
-        a();
+    public C0757zm(Bm bm, FullUrlFormer<C0176cm> fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider<C0176cm> configProvider) {
+        this(bm, new Sl(), fullUrlFormer, requestDataHolder, responseDataHolder, configProvider);
     }
 
-    public static C0757zm[] b() {
-        if (b == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (b == null) {
-                    b = new C0757zm[0];
-                }
-            }
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final String description() {
+        return "Startup task for component: " + this.f1236a.f415a.f.toString();
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final FullUrlFormer<?> getFullUrlFormer() {
+        return this.g;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final RequestDataHolder getRequestDataHolder() {
+        return this.d;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final ResponseDataHolder getResponseDataHolder() {
+        return this.f;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final RetryPolicyConfig getRetryPolicyConfig() {
+        return ((C0176cm) this.e.getConfig()).getRetryPolicyConfig();
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final SSLSocketFactory getSslSocketFactory() {
+        ((Bl) C0471oa.I.z()).getClass();
+        return null;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final boolean onCreateTask() {
+        this.d.setHeader(HttpHeaders.ACCEPT_ENCODING, "encrypted");
+        return this.f1236a.g();
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onPerformRequest() {
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onPostRequestComplete(boolean z) {
+        if (z) {
+            return;
         }
-        return b;
+        this.c = Kl.PARSE;
     }
 
-    public final C0757zm a() {
-        this.f1236a = 18000000L;
-        this.cachedSize = -1;
-        return this;
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final boolean onRequestComplete() {
+        C0227em handle = this.h.handle(this.f);
+        this.b = handle;
+        return handle != null;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt64Size(1, this.f1236a) + super.computeSerializedSize();
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onRequestError(Throwable th) {
+        this.c = Kl.NETWORK;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt64(1, this.f1236a);
-        super.writeTo(codedOutputByteBufferNano);
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onShouldNotExecute() {
+        this.c = Kl.NETWORK;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final C0757zm mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag != 8) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.f1236a = codedInputByteBufferNano.readInt64();
-            }
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onSuccessfulTaskFinished() {
+        if (this.b == null || this.f.getResponseHeaders() == null) {
+            return;
         }
-        return this;
+        this.f1236a.a(this.b, (C0176cm) this.e.getConfig(), this.f.getResponseHeaders());
     }
 
-    public static C0757zm b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C0757zm().mergeFrom(codedInputByteBufferNano);
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onTaskAdded() {
     }
 
-    public static C0757zm a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C0757zm) MessageNano.mergeFrom(new C0757zm(), bArr);
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onTaskFinished() {
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onTaskRemoved() {
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
+    public final void onUnsuccessfulTaskFinished() {
+        if (this.c == null) {
+            this.c = Kl.UNKNOWN;
+        }
+        this.f1236a.a(this.c);
+    }
+
+    public C0757zm(Bm bm, Sl sl, FullUrlFormer fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider configProvider) {
+        this.f1236a = bm;
+        this.h = sl;
+        this.d = requestDataHolder;
+        this.f = responseDataHolder;
+        this.e = configProvider;
+        this.g = fullUrlFormer;
+        fullUrlFormer.setHosts(((C0176cm) configProvider.getConfig()).k());
     }
 }

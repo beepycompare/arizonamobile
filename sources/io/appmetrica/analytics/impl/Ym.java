@@ -1,46 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.io.UnsupportedEncodingException;
 /* loaded from: classes5.dex */
-public final class Ym extends U2 {
+public final class Ym extends N2 {
     public Ym(int i, String str) {
         this(i, str, PublicLogger.getAnonymousInstance());
     }
 
     public final int b() {
-        return this.f715a;
+        return this.f596a;
     }
 
     public Ym(int i, String str, PublicLogger publicLogger) {
         super(i, str, publicLogger);
     }
 
-    public final String a() {
-        return this.b;
+    @Override // io.appmetrica.analytics.impl.Mn
+    public final String a(String str) {
+        if (str != null) {
+            int length = str.length();
+            int i = this.f596a;
+            if (length > i) {
+                String substring = str.substring(0, i);
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f596a));
+                return substring;
+            }
+        }
+        return str;
     }
 
-    @Override // io.appmetrica.analytics.impl.Nn
-    public final String a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return str;
-        }
-        try {
-            byte[] bytes = str.getBytes("UTF-8");
-            int length = bytes.length;
-            int i = this.f715a;
-            if (length > i) {
-                String str2 = new String(bytes, 0, i, "UTF-8");
-                try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f715a));
-                } catch (UnsupportedEncodingException unused) {
-                }
-                return str2;
-            }
-            return str;
-        } catch (UnsupportedEncodingException unused2) {
-            return str;
-        }
+    public final String a() {
+        return this.b;
     }
 }

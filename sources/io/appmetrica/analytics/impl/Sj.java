@@ -1,16 +1,14 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes5.dex */
-public final class Sj implements Xa {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f687a;
-
-    public Sj(String str) {
-        this.f687a = str;
+public final class Sj extends AbstractC0300hh {
+    public Sj(F6 f6) {
+        super(f6);
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.reportEvent(this.f687a);
+    @Override // io.appmetrica.analytics.impl.AbstractC0300hh, io.appmetrica.analytics.impl.InterfaceC0325ih
+    public final boolean a(Boolean bool) {
+        return !this.f925a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
     }
 }

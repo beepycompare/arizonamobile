@@ -13,22 +13,22 @@ import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 /* loaded from: classes5.dex */
 public final class CompletionStateKt {
     public static final <T> Object toState(Object obj) {
-        Throwable m9904exceptionOrNullimpl = Result.m9904exceptionOrNullimpl(obj);
-        return m9904exceptionOrNullimpl == null ? obj : new CompletedExceptionally(m9904exceptionOrNullimpl, false, 2, null);
+        Throwable m9905exceptionOrNullimpl = Result.m9905exceptionOrNullimpl(obj);
+        return m9905exceptionOrNullimpl == null ? obj : new CompletedExceptionally(m9905exceptionOrNullimpl, false, 2, null);
     }
 
     public static final <T> Object toState(Object obj, CancellableContinuation<?> cancellableContinuation) {
-        Throwable m9904exceptionOrNullimpl = Result.m9904exceptionOrNullimpl(obj);
-        if (m9904exceptionOrNullimpl == null) {
+        Throwable m9905exceptionOrNullimpl = Result.m9905exceptionOrNullimpl(obj);
+        if (m9905exceptionOrNullimpl == null) {
             return obj;
         }
         if (DebugKt.getRECOVER_STACK_TRACES()) {
             CancellableContinuation<?> cancellableContinuation2 = cancellableContinuation;
             if (cancellableContinuation2 instanceof CoroutineStackFrame) {
-                m9904exceptionOrNullimpl = StackTraceRecoveryKt.recoverFromStackFrame(m9904exceptionOrNullimpl, (CoroutineStackFrame) cancellableContinuation2);
+                m9905exceptionOrNullimpl = StackTraceRecoveryKt.recoverFromStackFrame(m9905exceptionOrNullimpl, (CoroutineStackFrame) cancellableContinuation2);
             }
         }
-        return new CompletedExceptionally(m9904exceptionOrNullimpl, false, 2, null);
+        return new CompletedExceptionally(m9905exceptionOrNullimpl, false, 2, null);
     }
 
     public static final <T> Object recoverResult(Object obj, Continuation<? super T> continuation) {
@@ -38,9 +38,9 @@ public final class CompletionStateKt {
             if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
                 th = StackTraceRecoveryKt.recoverFromStackFrame(th, (CoroutineStackFrame) continuation);
             }
-            return Result.m9901constructorimpl(ResultKt.createFailure(th));
+            return Result.m9902constructorimpl(ResultKt.createFailure(th));
         }
         Result.Companion companion2 = Result.Companion;
-        return Result.m9901constructorimpl(obj);
+        return Result.m9902constructorimpl(obj);
     }
 }

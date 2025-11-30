@@ -1,39 +1,70 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
+import android.location.Location;
+import android.os.Bundle;
+import io.appmetrica.analytics.AdvIdentifiersResult;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
+import io.appmetrica.analytics.DeferredDeeplinkListener;
+import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
+import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.StartupParamsCallback;
+import java.util.List;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Da implements HostRetryInfoProvider {
+public interface Da extends Ic, B6, Ua {
+    /* synthetic */ Ta a();
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0220ef f439a;
-    public final EnumC0116ae b;
+    /* synthetic */ void a(int i, Bundle bundle);
 
-    public Da(C0220ef c0220ef, EnumC0116ae enumC0116ae) {
-        this.f439a = c0220ef;
-        this.b = enumC0116ae;
-    }
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void a(Location location);
 
-    public final EnumC0116ae a() {
-        return this.b;
-    }
+    void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig);
 
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final long getLastAttemptTimeSeconds() {
-        return this.f439a.a(this.b, 0L);
-    }
+    void a(DeferredDeeplinkListener deferredDeeplinkListener);
 
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final int getNextSendAttemptNumber() {
-        return this.f439a.a(this.b, 1);
-    }
+    void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener);
 
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final void saveLastAttemptTimeSeconds(long j) {
-        this.f439a.b(this.b, j).b();
-    }
+    void a(ReporterConfig reporterConfig);
 
-    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
-    public final void saveNextSendAttemptNumber(int i) {
-        this.f439a.b(this.b, i).b();
-    }
+    void a(StartupParamsCallback startupParamsCallback, List<String> list);
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void a(String str);
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void a(String str, String str2);
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void a(boolean z);
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void a(boolean z, boolean z2);
+
+    void b(AppMetricaConfig appMetricaConfig);
+
+    Sa c(ReporterConfig reporterConfig);
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void clearAppEnvironment();
+
+    Y9 d();
+
+    String e();
+
+    Map<String, String> g();
+
+    AdvIdentifiersResult h();
+
+    C0372kc i();
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void putAppEnvironmentValue(String str, String str2);
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void setDataSendingEnabled(boolean z);
+
+    @Override // io.appmetrica.analytics.impl.Ic
+    /* synthetic */ void setUserProfileID(String str);
 }

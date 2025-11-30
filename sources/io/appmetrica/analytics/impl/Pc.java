@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public interface Pc {
-    void a(Context context);
+public final class Pc {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Qd f633a = new Qd();
 }

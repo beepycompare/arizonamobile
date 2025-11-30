@@ -1,66 +1,36 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.util.ArrayList;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.jvm.internal.Intrinsics;
+import com.android.installreferrer.api.InstallReferrerClient;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* renamed from: io.appmetrica.analytics.impl.jg  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0350jg {
+public final class C0350jg implements Pa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0527qg f954a;
-    public final Ga b;
-    public final Bg c;
-    public final Lazy d = LazyKt.lazy(new C0273gg(this));
-    public final Lazy e = LazyKt.lazy(new C0221eg(this));
-    public final Lazy f = LazyKt.lazy(new C0324ig(this));
-    public final ArrayList g = new ArrayList();
+    public final ICommonExecutor f957a;
+    public final InstallReferrerClient b;
 
-    public C0350jg(C0527qg c0527qg, Ag ag, Ga ga, Bg bg) {
-        this.f954a = c0527qg;
-        this.b = ga;
-        this.c = bg;
+    public C0350jg(Context context, ICommonExecutor iCommonExecutor) {
+        this.f957a = iCommonExecutor;
+        this.b = InstallReferrerClient.newBuilder(context).build();
     }
 
-    public static final InterfaceC0144bg a(C0350jg c0350jg) {
-        return (InterfaceC0144bg) c0350jg.d.getValue();
+    public static final void b(InterfaceC0601tg interfaceC0601tg, Throwable th) {
+        interfaceC0601tg.a(th);
     }
 
-    public static final void a(C0350jg c0350jg, C0576sg c0576sg, InterfaceC0144bg interfaceC0144bg) {
-        boolean areEqual;
-        c0350jg.g.add(c0576sg);
-        Bg bg = c0350jg.c;
-        if (c0576sg == null) {
-            bg.getClass();
-        } else {
-            SafePackageManager safePackageManager = bg.b;
-            Context context = bg.f413a;
-            String installerPackageName = safePackageManager.getInstallerPackageName(context, context.getPackageName());
-            int ordinal = c0576sg.d.ordinal();
-            if (ordinal == 1) {
-                areEqual = Intrinsics.areEqual(bg.f, installerPackageName);
-            } else if (ordinal == 2) {
-                areEqual = Intrinsics.areEqual(bg.g, installerPackageName);
+    @Override // io.appmetrica.analytics.impl.Pa
+    public final void a(InterfaceC0601tg interfaceC0601tg) throws Throwable {
+        this.b.startConnection(new C0324ig(this, interfaceC0601tg));
+    }
+
+    public final void a(final InterfaceC0601tg interfaceC0601tg, final Throwable th) {
+        this.f957a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.jg$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                C0350jg.b(InterfaceC0601tg.this, th);
             }
-            if (areEqual) {
-                c0350jg.a(c0576sg);
-                return;
-            }
-        }
-        interfaceC0144bg.a();
-    }
-
-    public final void a(C0576sg c0576sg) {
-        C0527qg c0527qg = this.f954a;
-        synchronized (c0527qg) {
-            c0527qg.b = c0576sg;
-            c0527qg.c = true;
-            c0527qg.d.a(c0576sg);
-            c0527qg.d.d();
-            c0527qg.a(c0527qg.b);
-        }
+        });
     }
 }

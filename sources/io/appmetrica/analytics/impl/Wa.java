@@ -1,13 +1,10 @@
 package io.appmetrica.analytics.impl;
+
+import kotlin.jvm.functions.Function0;
 /* loaded from: classes5.dex */
-public interface Wa extends Ul {
-    @Override // io.appmetrica.analytics.impl.Ul
-    /* synthetic */ void a(Nl nl, C0356jm c0356jm);
-
-    void a(W5 w5);
-
-    @Override // io.appmetrica.analytics.impl.Ul
-    /* synthetic */ void a(C0356jm c0356jm);
-
-    void a(C0639v4 c0639v4);
+public final class Wa implements Function0 {
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        return C0471oa.I.f();
+    }
 }

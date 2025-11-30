@@ -62,7 +62,7 @@ public final class HudTimer {
         Intrinsics.checkNotNullExpressionValue(tvTime, "tvTime");
         UtilsKt.setTextTimeFormat(tvTime, hudTimerModel.getTime());
         int i = DEFAULT_CONTAINER_COLOR;
-        int i2 = WhenMappings.$EnumSwitchMapping$0[hudTimerModel.m11957getType().ordinal()];
+        int i2 = WhenMappings.$EnumSwitchMapping$0[hudTimerModel.m11958getType().ordinal()];
         if (i2 == 1) {
             str = DEFAULT_COLOR;
         } else if (i2 == 2) {

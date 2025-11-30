@@ -1,73 +1,115 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.pm.Signature;
-import android.content.pm.SigningInfo;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.security.MessageDigest;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt;
+import kotlin.ranges.RangesKt;
 /* renamed from: io.appmetrica.analytics.impl.u3  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0613u3 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f1143a;
-    public final C0143bf b;
-    public final String c;
-    public final SafePackageManager d;
-
-    public C0613u3(Context context, C0143bf c0143bf, String str, SafePackageManager safePackageManager) {
-        this.f1143a = context;
-        this.b = c0143bf;
-        this.c = str;
-        this.d = safePackageManager;
+public final class C0613u3 implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0713y3 fromModel(C0588t3 c0588t3) {
+        C0713y3 c0713y3 = new C0713y3();
+        c0713y3.f1210a = a(c0588t3.f1128a);
+        int size = c0588t3.b.size();
+        C0638v3[] c0638v3Arr = new C0638v3[size];
+        for (int i = 0; i < size; i++) {
+            c0638v3Arr[i] = a((C0563s3) c0588t3.b.get(i));
+        }
+        c0713y3.b = c0638v3Arr;
+        return c0713y3;
     }
 
-    public final List a() {
-        Signature[] signatureArr;
-        String str;
-        List<String> g = this.b.g();
-        boolean isEmpty = g.isEmpty();
-        ArrayList arrayList = g;
-        if (isEmpty) {
-            ArrayList arrayList2 = new ArrayList();
-            try {
-                if (AndroidUtils.isApiAchieved(28)) {
-                    SigningInfo signingInfo = this.d.getPackageInfo(this.f1143a, this.c, androidx.media3.common.C.BUFFER_FLAG_FIRST_SAMPLE).signingInfo;
-                    if (signingInfo.hasMultipleSigners()) {
-                        signatureArr = signingInfo.getApkContentsSigners();
-                    } else {
-                        signatureArr = signingInfo.getSigningCertificateHistory();
-                    }
-                } else {
-                    signatureArr = this.d.getPackageInfo(this.f1143a, this.c, 64).signatures;
-                }
-                if (signatureArr != null) {
-                    for (Signature signature : signatureArr) {
-                        try {
-                            str = StringUtils.formatSha1(MessageDigest.getInstance("SHA1").digest(signature.toByteArray()));
-                        } catch (Throwable unused) {
-                            str = null;
-                        }
-                        if (str != null) {
-                            arrayList2.add(str);
-                        }
-                    }
-                }
-            } catch (Throwable unused2) {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0588t3 toModel(C0713y3 c0713y3) {
+        C0638v3 c0638v3 = c0713y3.f1210a;
+        if (c0638v3 == null) {
+            c0638v3 = new C0638v3();
+        }
+        C0563s3 a2 = a(c0638v3);
+        C0638v3[] c0638v3Arr = c0713y3.b;
+        ArrayList arrayList = new ArrayList(c0638v3Arr.length);
+        for (C0638v3 c0638v32 : c0638v3Arr) {
+            arrayList.add(a(c0638v32));
+        }
+        return new C0588t3(a2, arrayList);
+    }
+
+    public static C0638v3 a(C0563s3 c0563s3) {
+        C0688x3 c0688x3;
+        C0638v3 c0638v3 = new C0638v3();
+        Map map = c0563s3.f1111a;
+        int i = 0;
+        if (map != null) {
+            c0688x3 = new C0688x3();
+            int size = map.size();
+            C0663w3[] c0663w3Arr = new C0663w3[size];
+            for (int i2 = 0; i2 < size; i2++) {
+                c0663w3Arr[i2] = new C0663w3();
             }
-            Collections.sort(arrayList2);
-            boolean isEmpty2 = arrayList2.isEmpty();
-            arrayList = arrayList2;
-            if (!isEmpty2) {
-                this.b.a(arrayList2).b();
-                arrayList = arrayList2;
+            c0688x3.f1193a = c0663w3Arr;
+            int i3 = 0;
+            for (Map.Entry entry : map.entrySet()) {
+                C0663w3 c0663w3 = c0688x3.f1193a[i3];
+                c0663w3.f1179a = (String) entry.getKey();
+                c0663w3.b = (String) entry.getValue();
+                i3++;
+            }
+        } else {
+            c0688x3 = null;
+        }
+        c0638v3.f1160a = c0688x3;
+        int ordinal = c0563s3.b.ordinal();
+        if (ordinal != 0) {
+            if (ordinal != 1) {
+                i = 2;
+                if (ordinal != 2) {
+                    i = 3;
+                    if (ordinal != 3) {
+                        throw new NoWhenBranchMatchedException();
+                    }
+                }
+            } else {
+                i = 1;
             }
         }
-        return arrayList;
+        c0638v3.b = i;
+        return c0638v3;
+    }
+
+    public static C0563s3 a(C0638v3 c0638v3) {
+        LinkedHashMap linkedHashMap;
+        T7 t7;
+        C0688x3 c0688x3 = c0638v3.f1160a;
+        if (c0688x3 != null) {
+            C0663w3[] c0663w3Arr = c0688x3.f1193a;
+            linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(c0663w3Arr.length), 16));
+            for (C0663w3 c0663w3 : c0663w3Arr) {
+                Pair pair = TuplesKt.to(c0663w3.f1179a, c0663w3.b);
+                linkedHashMap.put(pair.getFirst(), pair.getSecond());
+            }
+        } else {
+            linkedHashMap = null;
+        }
+        int i = c0638v3.b;
+        if (i == 0) {
+            t7 = T7.b;
+        } else if (i == 1) {
+            t7 = T7.c;
+        } else if (i == 2) {
+            t7 = T7.d;
+        } else if (i != 3) {
+            t7 = T7.b;
+        } else {
+            t7 = T7.e;
+        }
+        return new C0563s3(linkedHashMap, t7);
     }
 }

@@ -1,20 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes5.dex */
-public final class Hj implements Xa {
+public final class Hj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f510a;
-    public final /* synthetic */ String b;
+    public final /* synthetic */ String f510a;
+    public final /* synthetic */ byte[] b;
 
-    public Hj(PluginErrorDetails pluginErrorDetails, String str) {
-        this.f510a = pluginErrorDetails;
-        this.b = str;
+    public Hj(String str, byte[] bArr) {
+        this.f510a = str;
+        this.b = bArr;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.getPluginExtension().reportError(this.f510a, this.b);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.setSessionExtra(this.f510a, this.b);
     }
 }

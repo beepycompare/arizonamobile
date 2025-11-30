@@ -327,26 +327,26 @@ public abstract class AbstractJsonTreeEncoder extends NamedValueEncoder implemen
 
             @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
             public void encodeInt(int i) {
-                String m9971m;
-                m9971m = UByte$$ExternalSyntheticBackport0.m9971m(UInt.m10001constructorimpl(i), 10);
-                putUnquotedString(m9971m);
+                String m9972m;
+                m9972m = UByte$$ExternalSyntheticBackport0.m9972m(UInt.m10002constructorimpl(i), 10);
+                putUnquotedString(m9972m);
             }
 
             @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
             public void encodeLong(long j) {
                 String m;
-                m = UByte$$ExternalSyntheticBackport0.m(ULong.m10080constructorimpl(j), 10);
+                m = UByte$$ExternalSyntheticBackport0.m(ULong.m10081constructorimpl(j), 10);
                 putUnquotedString(m);
             }
 
             @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
             public void encodeByte(byte b) {
-                putUnquotedString(UByte.m9963toStringimpl(UByte.m9919constructorimpl(b)));
+                putUnquotedString(UByte.m9964toStringimpl(UByte.m9920constructorimpl(b)));
             }
 
             @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
             public void encodeShort(short s) {
-                putUnquotedString(UShort.m10231toStringimpl(UShort.m10187constructorimpl(s)));
+                putUnquotedString(UShort.m10232toStringimpl(UShort.m10188constructorimpl(s)));
             }
         };
     }

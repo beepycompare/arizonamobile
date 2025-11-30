@@ -1,124 +1,154 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
+import com.google.android.vending.expansion.downloader.Constants;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.MatchResult;
+import kotlin.text.Regex;
+import kotlin.text.StringsKt;
 /* renamed from: io.appmetrica.analytics.impl.w8  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0668w8 extends MessageNano {
-    public static volatile C0668w8[] e;
+public final class C0668w8 implements InterfaceC0388l2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f1182a;
-    public C0394l8 b;
-    public byte[] c;
-    public C0543r8 d;
+    public final int f1182a = 5;
+    public final int b = 100;
+    public final int c = 255;
+    public final int d = 2;
+    public final int e = 63;
+    public final int f = 1;
+    public final int g = 2;
+    public final int h = 1;
+    public final int i = 64;
+    public final Regex j = new Regex("^[a-zA-Z0-9'!#$%&*+-/=?^_`{|}~]+$");
+    public final Regex k = new Regex("(?:^|\\.)(?:(ya\\.ru)|(?:yandex)\\.(\\w+|com?\\.\\w+))$");
+    public final List l = CollectionsKt.listOf((Object[]) new String[]{"ru", "by", "kz", "az", "kg", "lv", "md", "tj", "tm", "uz", "ee", "fr", "lt", "com", "co.il", "com.ge", "com.am", "com.tr", "com.ru"});
+    public final String m = "yandex.ru";
+    public final String n = "gmail.com";
+    public final String o = "googlemail.com";
 
-    public C0668w8() {
-        a();
-    }
-
-    public static C0668w8[] b() {
-        if (e == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (e == null) {
-                    e = new C0668w8[0];
+    @Override // io.appmetrica.analytics.impl.InterfaceC0388l2
+    public final String a(String str) {
+        Character lastOrNull;
+        String lowerCase = new Regex("^\\++").replace(StringsKt.trim((CharSequence) str).toString(), "").toLowerCase(Locale.ROOT);
+        int lastIndexOf$default = StringsKt.lastIndexOf$default((CharSequence) lowerCase, '@', 0, false, 6, (Object) null);
+        if (lastIndexOf$default == -1) {
+            return null;
+        }
+        String substring = lowerCase.substring(0, lastIndexOf$default);
+        String substring2 = lowerCase.substring(lastIndexOf$default + 1);
+        int length = substring.length();
+        if (length >= this.h && length <= this.i) {
+            List split$default = StringsKt.split$default((CharSequence) substring, new char[]{'.'}, false, 0, 6, (Object) null);
+            if (!(split$default instanceof Collection) || !split$default.isEmpty()) {
+                Iterator it = split$default.iterator();
+                while (true) {
+                    if (!it.hasNext()) {
+                        break;
+                    }
+                    String str2 = (String) it.next();
+                    int length2 = str2.length();
+                    if (length2 < this.h) {
+                        break;
+                    }
+                    Character firstOrNull = StringsKt.firstOrNull(str2);
+                    if (firstOrNull != null && firstOrNull.charValue() == '\"' && (lastOrNull = StringsKt.lastOrNull(str2)) != null && lastOrNull.charValue() == '\"' && length2 > 2) {
+                        int i = 1;
+                        while (true) {
+                            int i2 = i + 2;
+                            if (i2 >= str2.length()) {
+                                break;
+                            }
+                            char charAt = str2.charAt(i);
+                            if (charAt < ' ' || charAt == '\"' || charAt > '~') {
+                                break;
+                            }
+                            if (charAt == '\\') {
+                                if (i2 == str2.length()) {
+                                    break;
+                                }
+                                i++;
+                                if (str2.charAt(i) < ' ') {
+                                    break;
+                                }
+                            }
+                            i++;
+                        }
+                    } else if (!this.j.matches(str2)) {
+                        break;
+                    }
+                }
+            }
+            if (substring2.length() <= this.c) {
+                List split$default2 = StringsKt.split$default((CharSequence) substring2, new String[]{"."}, false, 0, 6, (Object) null);
+                if (split$default2.size() >= this.d) {
+                    List<String> dropLast = CollectionsKt.dropLast(split$default2, 1);
+                    if (!(dropLast instanceof Collection) || !dropLast.isEmpty()) {
+                        for (String str3 : dropLast) {
+                            if (!b(str3)) {
+                                break;
+                            }
+                        }
+                    }
+                    String str4 = (String) CollectionsKt.last((List<? extends Object>) split$default2);
+                    if (str4.length() >= this.g && b(str4)) {
+                        for (int i3 = 0; i3 < str4.length(); i3++) {
+                            if (!Character.isDigit(str4.charAt(i3))) {
+                                String replace$default = StringsKt.replace$default(substring2, this.o, this.n, false, 4, (Object) null);
+                                MatchResult find$default = Regex.find$default(this.k, replace$default, 0, 2, null);
+                                if (find$default != null) {
+                                    List<String> groupValues = find$default.getGroupValues();
+                                    String str5 = groupValues.get(1);
+                                    String str6 = groupValues.get(2);
+                                    if (str6.length() <= 0 ? str5.length() > 0 : this.l.contains(str6)) {
+                                        replace$default = this.m;
+                                    }
+                                }
+                                if (Intrinsics.areEqual(replace$default, this.m)) {
+                                    substring = StringsKt.replace$default(substring, ".", Constants.FILENAME_SEQUENCE_SEPARATOR, false, 4, (Object) null);
+                                } else if (Intrinsics.areEqual(replace$default, this.n)) {
+                                    substring = StringsKt.replace$default(substring, ".", "", false, 4, (Object) null);
+                                }
+                                int length3 = substring.length();
+                                int i4 = 0;
+                                while (true) {
+                                    if (i4 >= length3) {
+                                        break;
+                                    }
+                                    if (substring.charAt(i4) == '+') {
+                                        substring = substring.substring(0, i4);
+                                        break;
+                                    }
+                                    i4++;
+                                }
+                                String str7 = substring + '@' + replace$default;
+                                if (str7.length() < this.f1182a || str7.length() > this.b) {
+                                    return null;
+                                }
+                                return str7;
+                            }
+                        }
+                    }
                 }
             }
         }
-        return e;
+        return null;
     }
 
-    public final C0668w8 a() {
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f1182a = bArr;
-        this.b = null;
-        this.c = bArr;
-        this.d = null;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f1182a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1182a);
+    public final boolean b(String str) {
+        if (str.length() > this.e || str.length() < this.f || !Character.isLetterOrDigit(StringsKt.first(str)) || !Character.isLetterOrDigit(StringsKt.last(str))) {
+            return false;
         }
-        C0394l8 c0394l8 = this.b;
-        if (c0394l8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, c0394l8);
-        }
-        if (!Arrays.equals(this.c, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(3, this.c);
-        }
-        C0543r8 c0543r8 = this.d;
-        return c0543r8 != null ? CodedOutputByteBufferNano.computeMessageSize(4, c0543r8) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f1182a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f1182a);
-        }
-        C0394l8 c0394l8 = this.b;
-        if (c0394l8 != null) {
-            codedOutputByteBufferNano.writeMessage(2, c0394l8);
-        }
-        if (!Arrays.equals(this.c, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(3, this.c);
-        }
-        C0543r8 c0543r8 = this.d;
-        if (c0543r8 != null) {
-            codedOutputByteBufferNano.writeMessage(4, c0543r8);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final C0668w8 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f1182a = codedInputByteBufferNano.readBytes();
-            } else if (readTag == 18) {
-                if (this.b == null) {
-                    this.b = new C0394l8();
-                }
-                codedInputByteBufferNano.readMessage(this.b);
-            } else if (readTag == 26) {
-                this.c = codedInputByteBufferNano.readBytes();
-            } else if (readTag != 34) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                if (this.d == null) {
-                    this.d = new C0543r8();
-                }
-                codedInputByteBufferNano.readMessage(this.d);
+        for (int i = 0; i < str.length(); i++) {
+            char charAt = str.charAt(i);
+            if (!Character.isLetterOrDigit(charAt) && charAt != '-') {
+                return false;
             }
         }
-        return this;
-    }
-
-    public static C0668w8 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C0668w8().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static C0668w8 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C0668w8) MessageNano.mergeFrom(new C0668w8(), bArr);
+        return true;
     }
 }

@@ -1,44 +1,59 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Process;
-import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import io.appmetrica.analytics.internal.AppMetricaService;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import java.util.concurrent.atomic.AtomicLong;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public abstract class Ek {
+public final class Ek {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SafePackageManager f463a = new SafePackageManager();
+    public final Y4 f465a;
+    public final Vk b;
+    public final Hk c;
+    public long d;
+    public long e;
+    public AtomicLong f;
+    public boolean g;
+    public volatile Tk h;
+    public long i;
+    public long j;
+    public final SystemTimeProvider k;
 
-    public static Intent a(Context context) {
-        Bundle bundle;
-        C0276gj c0276gj;
-        Intent addFlags = new Intent(context, AppMetricaService.class).setAction("io.appmetrica.analytics.IAppMetricaService").setData(new Uri.Builder().scheme("appmetrica").authority(context.getPackageName()).build()).addFlags(32);
-        try {
-            bundle = f463a.getApplicationInfo(context, context.getPackageName(), 128).metaData;
-            if (bundle == null) {
-                bundle = new Bundle();
-            }
-        } catch (Throwable unused) {
-            bundle = new Bundle();
+    public Ek(Y4 y4, Vk vk, Hk hk, SystemTimeProvider systemTimeProvider) {
+        this.f465a = y4;
+        this.b = vk;
+        this.c = hk;
+        this.k = systemTimeProvider;
+        a();
+    }
+
+    public final void a() {
+        Hk hk = this.c;
+        long elapsedRealtime = this.k.elapsedRealtime();
+        Long l = hk.c;
+        if (l != null) {
+            elapsedRealtime = l.longValue();
         }
-        Intent putExtras = addFlags.putExtras(bundle);
-        putExtras.setData(putExtras.getData().buildUpon().path("client").appendQueryParameter("pid", String.valueOf(Process.myPid())).appendQueryParameter("psid", Gf.c).build());
-        C0338j4 l = C0338j4.l();
-        synchronized (l) {
-            if (l.o == null) {
-                C0276gj c0276gj2 = new C0276gj();
-                l.o = c0276gj2;
-                l.h.a(c0276gj2);
-            }
-            c0276gj = l.o;
+        this.e = elapsedRealtime;
+        Long l2 = this.c.b;
+        this.d = l2 == null ? -1L : l2.longValue();
+        Long l3 = this.c.e;
+        this.f = new AtomicLong(l3 == null ? 0L : l3.longValue());
+        Boolean bool = this.c.f;
+        this.g = bool == null ? true : bool.booleanValue();
+        Long l4 = this.c.g;
+        long longValue = l4 != null ? l4.longValue() : 0L;
+        this.i = longValue;
+        Hk hk2 = this.c;
+        long j = longValue - this.e;
+        Long l5 = hk2.h;
+        if (l5 != null) {
+            j = l5.longValue();
         }
-        ScreenInfo a2 = c0276gj.a(context);
-        putExtras.putExtra("screen_size", a2 == null ? null : AbstractC0447nb.a(a2));
-        return putExtras.setPackage(context.getApplicationContext().getPackageName());
+        this.j = j;
+    }
+
+    public final String toString() {
+        return "Session{id=" + this.d + ", creationTime=" + this.e + ", currentReportId=" + this.f + ", sessionRequestParams=" + this.h + ", sleepStart=" + this.i + AbstractJsonLexerKt.END_OBJ;
     }
 }

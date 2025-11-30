@@ -1,23 +1,23 @@
 package io.appmetrica.analytics.ecommerce;
 
-import io.appmetrica.analytics.impl.no;
+import io.appmetrica.analytics.impl.mo;
 import java.math.BigDecimal;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes3.dex */
 public class ECommerceCartItem {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ECommerceProduct f331a;
+    private final ECommerceProduct f334a;
     private final BigDecimal b;
     private final ECommercePrice c;
     private ECommerceReferrer d;
 
     public ECommerceCartItem(ECommerceProduct eCommerceProduct, ECommercePrice eCommercePrice, long j) {
-        this(eCommerceProduct, eCommercePrice, no.a(j));
+        this(eCommerceProduct, eCommercePrice, mo.a(j));
     }
 
     public ECommerceProduct getProduct() {
-        return this.f331a;
+        return this.f334a;
     }
 
     public BigDecimal getQuantity() {
@@ -38,15 +38,15 @@ public class ECommerceCartItem {
     }
 
     public String toString() {
-        return "ECommerceCartItem{product=" + this.f331a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceCartItem{product=" + this.f334a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     public ECommerceCartItem(ECommerceProduct eCommerceProduct, ECommercePrice eCommercePrice, double d) {
-        this(eCommerceProduct, eCommercePrice, new BigDecimal(no.a(d)));
+        this(eCommerceProduct, eCommercePrice, new BigDecimal(mo.a(d)));
     }
 
     public ECommerceCartItem(ECommerceProduct eCommerceProduct, ECommercePrice eCommercePrice, BigDecimal bigDecimal) {
-        this.f331a = eCommerceProduct;
+        this.f334a = eCommerceProduct;
         this.b = bigDecimal;
         this.c = eCommercePrice;
     }

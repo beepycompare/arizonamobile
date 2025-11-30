@@ -6,29 +6,29 @@ import android.util.Pair;
 public final class C0334j0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Mc f942a;
+    public Gc f947a;
     public long b;
     public boolean c;
-    public final C0656vl d;
+    public final C0581sl d;
 
-    public C0334j0(String str, long j, C0656vl c0656vl) {
+    public C0334j0(String str, long j, C0581sl c0581sl) {
         this.b = j;
         try {
-            this.f942a = new Mc(str);
+            this.f947a = new Gc(str);
         } catch (Throwable unused) {
-            this.f942a = new Mc();
+            this.f947a = new Gc();
         }
-        this.d = c0656vl;
+        this.d = c0581sl;
     }
 
     public final synchronized void a(Pair pair) {
-        if (this.d.b(this.f942a, (String) pair.first, (String) pair.second)) {
+        if (this.d.b(this.f947a, (String) pair.first, (String) pair.second)) {
             this.c = true;
         }
     }
 
     public final synchronized String toString() {
-        return "Map size " + this.f942a.size() + ". Is changed " + this.c + ". Current revision " + this.b;
+        return "Map size " + this.f947a.size() + ". Is changed " + this.c + ". Current revision " + this.b;
     }
 
     public final synchronized C0309i0 a() {
@@ -36,6 +36,6 @@ public final class C0334j0 {
             this.b++;
             this.c = false;
         }
-        return new C0309i0(AbstractC0447nb.b(this.f942a), this.b);
+        return new C0309i0(AbstractC0294hb.b(this.f947a), this.b);
     }
 }

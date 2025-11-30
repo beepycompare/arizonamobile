@@ -119,7 +119,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
             long m5040minusMKHz9U = Offset.m5040minusMKHz9U(pointerInputChange2.m6570getPositionF1C5BW0(), offset.m5046unboximpl());
             channel = dragGestureNode.channel;
             if (channel != null) {
-                ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragStarted(m5040minusMKHz9U, null)));
+                ChannelResult.m11433boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragStarted(m5040minusMKHz9U, null)));
             }
         }
         return Unit.INSTANCE;
@@ -136,7 +136,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         channel = dragGestureNode.channel;
         if (channel != null) {
             m517toValidVelocityTH1AsA0 = DraggableKt.m517toValidVelocityTH1AsA0(m6669calculateVelocityAH228Gc);
-            ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragStopped(m517toValidVelocityTH1AsA0, null)));
+            ChannelResult.m11433boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragStopped(m517toValidVelocityTH1AsA0, null)));
         }
         return Unit.INSTANCE;
     }
@@ -146,7 +146,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         Channel channel;
         channel = dragGestureNode.channel;
         if (channel != null) {
-            ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+            ChannelResult.m11433boximpl(channel.mo8879trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
         }
         return Unit.INSTANCE;
     }
@@ -174,7 +174,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         VelocityTrackerKt.m6672addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, j);
         channel = dragGestureNode.channel;
         if (channel != null) {
-            ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragDelta(offset.m5046unboximpl(), null)));
+            ChannelResult.m11433boximpl(channel.mo8879trySendJP2dKIU(new DragEvent.DragDelta(offset.m5046unboximpl(), null)));
         }
         return Unit.INSTANCE;
     }
@@ -254,7 +254,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
             } catch (CancellationException e) {
                 channel = this.this$0.channel;
                 if (channel != null) {
-                    ChannelResult.m11432boximpl(channel.mo8879trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+                    ChannelResult.m11433boximpl(channel.mo8879trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
                 }
                 if (!CoroutineScopeKt.isActive(r1)) {
                     throw e;

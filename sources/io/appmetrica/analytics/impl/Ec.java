@@ -1,107 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import android.app.Activity;
-import android.location.Location;
-import io.appmetrica.analytics.AdRevenue;
-import io.appmetrica.analytics.AnrListener;
-import io.appmetrica.analytics.ExternalAttribution;
-import io.appmetrica.analytics.ModuleEvent;
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Ec extends C0429mi implements Pa {
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void a(Activity activity) {
+public class Ec {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Map f460a;
+    public final Object b;
+
+    public Ec(Object obj) {
+        this(new HashMap(), obj);
     }
 
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
-    public final void a(Location location) {
+    public final void a(Object obj, Object obj2) {
+        this.f460a.put(obj, obj2);
     }
 
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void a(AnrListener anrListener) {
+    public Ec(HashMap hashMap, Object obj) {
+        this.f460a = hashMap;
+        this.b = obj;
     }
 
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void a(ExternalAttribution externalAttribution) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void a(Io io2) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void a(EnumC0435n enumC0435n) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
-    public final void a(String str) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
-    public final void a(String str, String str2) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void a(String str, boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
-    public final void a(boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Oc
-    public final void a(boolean z, boolean z2) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void b(Activity activity) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Ka
-    public final void b(String str) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Ka
-    public final void b(String str, String str2) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa, io.appmetrica.analytics.impl.Ka
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void c() {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final void c(String str) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Pa
-    public final List<String> f() {
-        return new ArrayList();
-    }
-
-    @Override // io.appmetrica.analytics.impl.C0429mi, io.appmetrica.analytics.IModuleReporter
-    public final void reportAdRevenue(AdRevenue adRevenue, boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-    }
-
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.C0429mi, io.appmetrica.analytics.IModuleReporter
-    public final void reportEvent(ModuleEvent moduleEvent) {
-    }
-
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
+    public final Object a(Object obj) {
+        Object obj2 = this.f460a.get(obj);
+        return obj2 == null ? this.b : obj2;
     }
 }

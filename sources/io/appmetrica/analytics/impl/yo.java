@@ -1,19 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import android.util.Base64;
-import com.adjust.sdk.Constants;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import kotlin.text.Charsets;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ao f1220a;
+    public final zo f1225a;
 
-    public yo(C0220ef c0220ef, C0319ia c0319ia) {
-        this.f1220a = new Ao(c0220ef, c0319ia, new Bo() { // from class: io.appmetrica.analytics.impl.yo$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.Bo
+    public yo(Xe xe, Co co, String str) {
+        this.f1225a = new zo(xe, co, new Ao() { // from class: io.appmetrica.analytics.impl.yo$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.Ao
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return yo.a(jSONObject, jSONObject2);
             }
@@ -22,56 +19,59 @@ public final class yo {
 
     public static final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
         JSONObject jSONObject3 = new JSONObject();
-        jSONObject3.put("device_id", JsonUtils.optStringOrNullable(jSONObject2, "device_id", JsonUtils.optStringOrNull(jSONObject, "device_id")));
-        jSONObject3.put("device_id_hash", JsonUtils.optStringOrNullable(jSONObject2, "device_id_hash", JsonUtils.optStringOrNull(jSONObject, "device_id_hash")));
-        jSONObject3.put(Constants.REFERRER, JsonUtils.optStringOrNullable(jSONObject2, Constants.REFERRER, JsonUtils.optStringOrNull(jSONObject, Constants.REFERRER)));
-        jSONObject3.put("referrer_checked", JsonUtils.optBooleanOrNullable(jSONObject2, "referrer_checked", JsonUtils.optBooleanOrNullable(jSONObject, "referrer_checked", Boolean.FALSE)));
-        jSONObject3.put("last_migration_api_level", AbstractC0447nb.a(jSONObject2, "last_migration_api_level", AbstractC0447nb.a(jSONObject, "last_migration_api_level", -1)));
+        Boolean bool = Boolean.FALSE;
+        jSONObject3.put("first_event_done", JsonUtils.optBooleanOrNullable(jSONObject2, "first_event_done", JsonUtils.optBooleanOrNullable(jSONObject, "first_event_done", bool)));
+        jSONObject3.put("init_event_done", JsonUtils.optBooleanOrNullable(jSONObject2, "init_event_done", JsonUtils.optBooleanOrNullable(jSONObject, "init_event_done", bool)));
+        jSONObject3.put("report_request_id", AbstractC0294hb.a(jSONObject2, "report_request_id", AbstractC0294hb.a(jSONObject, "report_request_id", -1)));
+        jSONObject3.put("global_number", JsonUtils.optLongOrDefault(jSONObject2, "global_number", JsonUtils.optLongOrDefault(jSONObject, "global_number", 0L)));
+        jSONObject3.put("session_id", JsonUtils.optLongOrDefault(jSONObject2, "session_id", JsonUtils.optLongOrDefault(jSONObject, "session_id", -1L)));
+        jSONObject3.put("referrer_handled", JsonUtils.optBooleanOrNullable(jSONObject2, "referrer_handled", JsonUtils.optBooleanOrNullable(jSONObject, "referrer_handled", bool)));
+        jSONObject3.put("numbers_of_type", JsonUtils.optJsonObjectOrNullable(jSONObject2, "numbers_of_type", JsonUtils.optJsonObjectOrNull(jSONObject, "numbers_of_type")));
+        jSONObject3.put("open_id", AbstractC0294hb.a(jSONObject2, "open_id", AbstractC0294hb.a(jSONObject, "open_id", 1)));
+        jSONObject3.put("attribution_id", AbstractC0294hb.a(jSONObject2, "attribution_id", AbstractC0294hb.a(jSONObject, "attribution_id", 1)));
+        jSONObject3.put("last_migration_api_level", AbstractC0294hb.a(jSONObject2, "last_migration_api_level", AbstractC0294hb.a(jSONObject, "last_migration_api_level", 0)));
+        jSONObject3.put("external_attribution_window_start", JsonUtils.optLongOrDefault(jSONObject2, "external_attribution_window_start", JsonUtils.optLongOrDefault(jSONObject, "external_attribution_window_start", -1L)));
         return jSONObject3;
     }
 
-    public final synchronized void b(String str) {
-        Ao ao = this.f1220a;
-        ao.a(ao.a().put("device_id_hash", str));
+    public final synchronized void b(long j) {
+        zo zoVar = this.f1225a;
+        zoVar.a(zoVar.a().put("session_id", j));
     }
 
     public final synchronized boolean c() {
-        return this.f1220a.a().optBoolean("referrer_checked", false);
+        return this.f1225a.a().optBoolean("first_event_done", false);
     }
 
-    public final synchronized void d() {
-        Ao ao = this.f1220a;
-        ao.a(ao.a().put("referrer_checked", true));
+    public final synchronized boolean d() {
+        return this.f1225a.a().optBoolean("init_event_done", false);
     }
 
-    public final synchronized C0576sg b() {
-        byte[] decode;
-        C0576sg c0576sg;
-        String optStringOrNull = JsonUtils.optStringOrNull(this.f1220a.a(), Constants.REFERRER);
-        if (optStringOrNull != null) {
-            try {
-                decode = Base64.decode(optStringOrNull.getBytes(Charsets.UTF_8), 0);
-            } catch (Throwable unused) {
-            }
-            if (decode != null && decode.length != 0) {
-                c0576sg = new C0576sg(decode);
-            }
-        }
-        c0576sg = null;
-        return c0576sg;
+    public final synchronized int b() {
+        return this.f1225a.a().optInt("open_id", 1);
     }
 
-    public final synchronized void a(String str) {
-        Ao ao = this.f1220a;
-        ao.a(ao.a().put("device_id", str));
+    public final synchronized void c(int i) {
+        zo zoVar = this.f1225a;
+        zoVar.a(zoVar.a().put("open_id", i));
     }
 
-    public final synchronized String a() {
-        return JsonUtils.optStringOrNull(this.f1220a.a(), "device_id_hash");
+    public final synchronized void b(int i) {
+        zo zoVar = this.f1225a;
+        zoVar.a(zoVar.a().put("last_migration_api_level", i));
     }
 
-    public final synchronized void a(C0576sg c0576sg) {
-        Ao ao = this.f1220a;
-        ao.a(ao.a().put(Constants.REFERRER, c0576sg != null ? new String(Base64.encode(c0576sg.a(), 0), Charsets.UTF_8) : null));
+    public final synchronized int a() {
+        return this.f1225a.a().optInt("attribution_id", 1);
+    }
+
+    public final synchronized void a(int i) {
+        zo zoVar = this.f1225a;
+        zoVar.a(zoVar.a().put("attribution_id", i));
+    }
+
+    public final synchronized void a(long j) {
+        zo zoVar = this.f1225a;
+        zoVar.a(zoVar.a().put("external_attribution_window_start", j));
     }
 }

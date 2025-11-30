@@ -3,9 +3,17 @@ package io.appmetrica.analytics.impl;
 public final class Gk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V1 f495a;
+    public Long f495a;
+    public final Wk b;
+    public Long c;
+    public Long d;
+    public final Integer e;
+    public Long f;
+    public Boolean g;
+    public Long h;
 
-    public Gk(V1 v1) {
-        this.f495a = v1;
+    public Gk(Qk qk) {
+        this.b = qk.b();
+        this.e = qk.a();
     }
 }

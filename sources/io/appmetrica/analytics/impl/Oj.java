@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Oj implements Xa {
+public final class Oj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ V f623a;
+    public final /* synthetic */ String f624a;
 
-    public Oj(V v) {
-        this.f623a = v;
+    public Oj(String str) {
+        this.f624a = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.a(this.f623a);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.reportEvent(this.f624a);
     }
 }

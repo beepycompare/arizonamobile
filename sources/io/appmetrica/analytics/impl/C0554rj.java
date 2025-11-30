@@ -1,18 +1,21 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.rj  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0554rj {
+public final class C0554rj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0579sj f1098a;
-    public final Context b;
-    public final HashMap c = new HashMap();
+    public final /* synthetic */ String f1104a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Throwable c;
 
-    public C0554rj(Context context, C0579sj c0579sj) {
-        this.b = context;
-        this.f1098a = c0579sj;
+    public C0554rj(String str, String str2, Throwable th) {
+        this.f1104a = str;
+        this.b = str2;
+        this.c = th;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.reportError(this.f1104a, this.b, this.c);
     }
 }

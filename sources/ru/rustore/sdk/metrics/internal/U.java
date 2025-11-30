@@ -8,13 +8,13 @@ public final class U {
     public static final Object c = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public final N f1484a;
+    public final N f1486a;
     public final T b;
 
     public U(N persistentMetricsEventRepository, T sendMetricsEventBatchUseCase) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventRepository, "persistentMetricsEventRepository");
         Intrinsics.checkNotNullParameter(sendMetricsEventBatchUseCase, "sendMetricsEventBatchUseCase");
-        this.f1484a = persistentMetricsEventRepository;
+        this.f1486a = persistentMetricsEventRepository;
         this.b = sendMetricsEventBatchUseCase;
     }
 
@@ -22,10 +22,10 @@ public final class U {
         synchronized (c) {
             while (true) {
                 W a2 = this.b.a();
-                if (Intrinsics.areEqual(a2, W.a.f1486a)) {
+                if (Intrinsics.areEqual(a2, W.a.f1488a)) {
                     Unit unit = Unit.INSTANCE;
                 } else if (a2 instanceof W.b) {
-                    this.f1484a.a(((W.b) a2).f1487a);
+                    this.f1486a.a(((W.b) a2).f1489a);
                 }
             }
         }

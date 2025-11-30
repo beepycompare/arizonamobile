@@ -1,24 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 /* loaded from: classes5.dex */
-public final class Ee implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0707xm fromModel(De de) {
-        C0707xm c0707xm = new C0707xm();
-        c0707xm.f1204a = de.f441a;
-        c0707xm.b = de.b;
-        return c0707xm;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        C0707xm c0707xm = (C0707xm) obj;
-        return new De(c0707xm.f1204a, c0707xm.b);
-    }
-
-    public final De a(C0707xm c0707xm) {
-        return new De(c0707xm.f1204a, c0707xm.b);
+public final class Ee extends Ec {
+    public Ee(NetworkType networkType) {
+        super(networkType);
+        a(1, NetworkType.WIFI);
+        a(0, NetworkType.CELL);
+        a(3, NetworkType.ETHERNET);
+        a(2, NetworkType.BLUETOOTH);
+        a(4, NetworkType.VPN);
+        if (AndroidUtils.isApiAchieved(27)) {
+            a(6, NetworkType.LOWPAN);
+        }
+        if (AndroidUtils.isApiAchieved(26)) {
+            a(5, NetworkType.WIFI_AWARE);
+        }
     }
 }

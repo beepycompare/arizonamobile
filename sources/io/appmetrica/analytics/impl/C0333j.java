@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 public final class C0333j implements ActiveNetworkTypeProvider {
     @Override // io.appmetrica.analytics.coreapi.internal.system.ActiveNetworkTypeProvider
     public final NetworkType getNetworkType(Context context) {
-        He he = Le.f575a;
-        return (NetworkType) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", NetworkType.UNDEFINED, new Ke());
+        De de = He.f507a;
+        return (NetworkType) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", NetworkType.UNDEFINED, new Ge());
     }
 }

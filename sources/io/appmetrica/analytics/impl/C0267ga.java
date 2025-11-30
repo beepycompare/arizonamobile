@@ -1,52 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import java.util.HashMap;
-import kotlin.Unit;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Reflection;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* renamed from: io.appmetrica.analytics.impl.ga  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0267ga {
-    public static volatile C0267ga c;
+public final class C0267ga implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f891a;
-    public final HashMap b = new HashMap();
+    public final AbstractC0450ne f904a;
 
-    public C0267ga(Context context) {
-        this.f891a = context;
+    public C0267ga() {
+        this(new Tl());
     }
 
-    public static final C0267ga a(Context context) {
-        if (c == null) {
-            synchronized (Reflection.getOrCreateKotlinClass(C0267ga.class)) {
-                if (c == null) {
-                    c = new C0267ga(context);
-                }
-                Unit unit = Unit.INSTANCE;
-            }
-        }
-        C0267ga c0267ga = c;
-        if (c0267ga == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
-            return null;
-        }
-        return c0267ga;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0582sm fromModel(C0415m4 c0415m4) {
+        C0582sm c0582sm = new C0582sm();
+        c0582sm.b = c0415m4.b;
+        c0582sm.f1124a = c0415m4.f1003a;
+        c0582sm.c = c0415m4.c;
+        c0582sm.d = c0415m4.d;
+        c0582sm.e = c0415m4.e;
+        c0582sm.f = this.f904a.a(c0415m4.f);
+        return c0582sm;
     }
 
-    public final synchronized E9 b(String str) {
-        Object obj;
-        HashMap hashMap = this.b;
-        obj = hashMap.get(str);
-        if (obj == null) {
-            obj = new E9(this.f891a, str);
-            hashMap.put(str, obj);
-        }
-        return (E9) obj;
+    public C0267ga(Tl tl) {
+        this.f904a = tl;
     }
 
-    public final synchronized void a(String str) {
-        this.b.remove(str);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0415m4 toModel(C0582sm c0582sm) {
+        C0364k4 c0364k4 = new C0364k4();
+        c0364k4.d = c0582sm.d;
+        c0364k4.c = c0582sm.c;
+        c0364k4.b = c0582sm.b;
+        c0364k4.f968a = c0582sm.f1124a;
+        c0364k4.e = c0582sm.e;
+        c0364k4.f = this.f904a.a(c0582sm.f);
+        return new C0415m4(c0364k4);
     }
 }

@@ -1,26 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.Charsets;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes5.dex */
-public final class Me implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final byte[] fromModel(String str) {
-        if (Intrinsics.areEqual("native", str)) {
-            str = "JVM";
-        }
-        return str.getBytes(Charsets.UTF_8);
+public final class Me implements Runnable {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ PluginErrorDetails f590a;
+    public final /* synthetic */ Pe b;
+
+    public Me(Pe pe, PluginErrorDetails pluginErrorDetails) {
+        this.b = pe;
+        this.f590a = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        byte[] bArr = (byte[]) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final String a(byte[] bArr) {
-        throw new UnsupportedOperationException();
+    @Override // java.lang.Runnable
+    public final void run() {
+        ((Sa) this.b.d.get()).getPluginExtension().reportUnhandledException(this.f590a);
     }
 }

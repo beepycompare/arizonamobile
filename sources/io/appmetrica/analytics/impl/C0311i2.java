@@ -1,27 +1,46 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.appsetid.internal.AppSetIdListener;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetId;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdScope;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import java.util.HashSet;
 /* renamed from: io.appmetrica.analytics.impl.i2  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0311i2 implements AppSetIdListener {
+public final class C0311i2 extends Sg {
+    public final yo b;
+    public final Yj c;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0336j2 f922a;
-
-    public C0311i2(C0336j2 c0336j2) {
-        this.f922a = c0336j2;
+    public C0311i2(Y4 y4) {
+        this(y4, y4.u(), Yj.c());
     }
 
-    @Override // io.appmetrica.analytics.appsetid.internal.AppSetIdListener
-    public final void onAppSetIdRetrieved(String str, AppSetIdScope appSetIdScope) {
-        this.f922a.c = new AppSetId(str, appSetIdScope);
-        this.f922a.d.countDown();
+    @Override // io.appmetrica.analytics.impl.Sg
+    public final boolean a(Q5 q5) {
+        Y4 y4 = this.f679a;
+        if (!this.b.c() && !this.b.d()) {
+            if (((C0403lh) y4.k.a()).e) {
+                this.c.b();
+            }
+            N8 n8 = this.f679a.l;
+            if (n8.c == null) {
+                n8.a();
+            }
+            P8 p8 = n8.c;
+            p8.getClass();
+            p8.b = new HashSet();
+            p8.d = 0;
+            P8 p82 = n8.c;
+            p82.f632a = true;
+            S8 s8 = n8.b;
+            IBinaryDataHelper iBinaryDataHelper = s8.c;
+            R8 r8 = s8.b;
+            s8.f675a.getClass();
+            iBinaryDataHelper.insert("event_hashes", r8.toByteArray((R8) Q8.a(p82)));
+        }
+        return false;
     }
 
-    @Override // io.appmetrica.analytics.appsetid.internal.AppSetIdListener
-    public final void onFailure(Throwable th) {
-        this.f922a.d.countDown();
+    public C0311i2(Y4 y4, yo yoVar, Yj yj) {
+        super(y4);
+        this.b = yoVar;
+        this.c = yj;
     }
 }

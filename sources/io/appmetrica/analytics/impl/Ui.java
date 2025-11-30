@@ -1,41 +1,73 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.util.ArrayList;
+import android.database.Cursor;
+import android.net.Uri;
+import android.text.TextUtils;
+import com.facebook.internal.NativeProtocol;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
+import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
+import java.util.LinkedHashMap;
 /* loaded from: classes5.dex */
-public final class Ui {
+public final class Ui implements Vi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f721a;
-    public final SafePackageManager b;
+    public final Context f713a;
+    public final String b = NativeProtocol.CONTENT_SCHEME + a() + "/clids";
+    public final String c = "clid_key";
+    public final String d = "clid_value";
 
-    public Ui(Context context, SafePackageManager safePackageManager) {
-        this.f721a = context;
-        this.b = safePackageManager;
+    public Ui(Context context) {
+        this.f713a = context;
     }
 
-    public final ArrayList a() {
-        ArrayList arrayList = new ArrayList();
-        SafePackageManager safePackageManager = this.b;
-        Context context = this.f721a;
-        PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 4096);
-        if (packageInfo != null) {
-            String[] strArr = packageInfo.requestedPermissions;
-            int[] iArr = packageInfo.requestedPermissionsFlags;
-            if (strArr != null) {
-                for (int i = 0; i < strArr.length; i++) {
-                    String str = strArr[i];
-                    if (iArr != null && iArr.length > i && (iArr[i] & 2) != 0) {
-                        arrayList.add(new PermissionState(str, true));
-                    } else {
-                        arrayList.add(new PermissionState(str, false));
-                    }
+    public final String a() {
+        return "com.yandex.preinstallsatellite.appmetrica.provider";
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    /* renamed from: b */
+    public final C0563s3 invoke() {
+        Cursor cursor;
+        if (!PackageManagerUtils.hasContentProvider(this.f713a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
+            AbstractC0276gj.a("Satellite content provider with clids was not found.", new Object[0]);
+            return null;
+        }
+        try {
+            cursor = this.f713a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
+            try {
+            } catch (Throwable th) {
+                th = th;
+                try {
+                    ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format("Error while getting satellite clids", new Object[0]) + "\n" + StringUtils.throwableToString(th), new Object[0]);
+                    return null;
+                } finally {
+                    mo.a(cursor);
                 }
             }
+        } catch (Throwable th2) {
+            th = th2;
+            cursor = null;
         }
-        return arrayList;
+        if (cursor != null) {
+            LinkedHashMap linkedHashMap = new LinkedHashMap();
+            while (cursor.moveToNext()) {
+                try {
+                    String string = cursor.getString(cursor.getColumnIndexOrThrow(this.c));
+                    String string2 = cursor.getString(cursor.getColumnIndexOrThrow(this.d));
+                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                        linkedHashMap.put(string, string2);
+                    } else {
+                        AbstractC0276gj.a("Invalid clid {%s : %s}", string, string2);
+                    }
+                } catch (Throwable unused) {
+                }
+            }
+            AbstractC0276gj.a("Clids from satellite: %s", linkedHashMap);
+            return new C0563s3(linkedHashMap, T7.d);
+        }
+        AbstractC0276gj.a("No Satellite content provider found", new Object[0]);
+        return null;
     }
 }

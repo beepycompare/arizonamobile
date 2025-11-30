@@ -1,17 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.Comparator;
-import java.util.Map;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
 /* loaded from: classes5.dex */
-public final class Ba implements Comparator {
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int utf8BytesLength = StringUtils.getUtf8BytesLength((String) ((Map.Entry) obj).getValue());
-        int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) ((Map.Entry) obj2).getValue());
-        if (utf8BytesLength < utf8BytesLength2) {
-            return -1;
-        }
-        return utf8BytesLength == utf8BytesLength2 ? 0 : 1;
-    }
+public interface Ba extends SimpleAdvertisingIdGetter, InterfaceC0408lm {
+    AdvertisingIdsHolder a();
+
+    AdvertisingIdsHolder a(Hi hi);
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0408lm
+    /* synthetic */ void a(C0279gm c0279gm);
+
+    void b(boolean z);
+
+    void c(boolean z);
+
+    AdvertisingIdsHolder getIdentifiers();
+
+    void init();
 }

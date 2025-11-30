@@ -1,29 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import android.text.TextUtils;
 /* renamed from: io.appmetrica.analytics.impl.bo  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0152bo extends H4 {
-    public final L6 b;
-
-    public C0152bo(E4 e4, L6 l6) {
-        super(e4);
-        this.b = l6;
+public final class C0152bo extends Sg {
+    public C0152bo(Y4 y4) {
+        super(y4);
     }
 
-    @Override // io.appmetrica.analytics.impl.H4
-    public final boolean a(W5 w5, B4 b4) {
-        C0639v4 c0639v4 = b4.b.d.f461a;
-        this.b.a(c0639v4.i);
-        Rb m = C0620ua.H.m();
-        if (Boolean.TRUE.equals(c0639v4.b)) {
-            m.a(true);
-        } else {
-            if (Boolean.FALSE.equals(c0639v4.b)) {
-                m.a(false);
-            }
+    @Override // io.appmetrica.analytics.impl.Sg
+    public final boolean a(Q5 q5) {
+        String j = this.f679a.c.j();
+        String str = q5.h;
+        this.f679a.c.j(str).b();
+        if (TextUtils.equals(j, str)) {
+            return false;
         }
-        m.a(c0639v4.c);
-        Boolean bool = c0639v4.n;
-        C0620ua.H.c().b(bool != null ? bool.booleanValue() : true);
+        this.f679a.a(N3.o());
         return false;
     }
 }

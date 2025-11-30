@@ -1,18 +1,17 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Tj implements Xa {
+public final class Tj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f709a;
-    public final /* synthetic */ String b;
+    public final String f696a;
+    public final String b;
 
     public Tj(String str, String str2) {
-        this.f709a = str;
+        this.f696a = str;
         this.b = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.reportEvent(this.f709a, this.b);
+    public final String toString() {
+        return "SelfReportingLazyEvent(eventName='" + this.f696a + "', eventValue='" + this.b + "')";
     }
 }

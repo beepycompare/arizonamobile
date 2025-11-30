@@ -9,19 +9,19 @@ import kotlin.jvm.internal.Lambda;
 public final class C0822l extends Lambda implements Function1<Unit, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0824n f1504a;
+    public final /* synthetic */ C0824n f1506a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0822l(C0824n c0824n) {
         super(1);
-        this.f1504a = c0824n;
+        this.f1506a = c0824n;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Unit invoke(Unit unit) {
         Unit it = unit;
         Intrinsics.checkNotNullParameter(it, "it");
-        this.f1504a.e.a(C0821k.f1503a);
+        this.f1506a.e.a(C0821k.f1505a);
         return Unit.INSTANCE;
     }
 }

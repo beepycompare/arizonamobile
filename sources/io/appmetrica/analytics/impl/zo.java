@@ -1,87 +1,55 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import kotlin.jvm.internal.Intrinsics;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class zo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ao f1238a;
+    public final Co f1238a;
+    public final Co b;
+    public final Ao c;
+    public JSONObject d;
 
-    public zo(C0143bf c0143bf, Do r3, String str) {
-        this.f1238a = new Ao(c0143bf, r3, new Bo() { // from class: io.appmetrica.analytics.impl.zo$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.Bo
-            public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
-                return zo.a(jSONObject, jSONObject2);
-            }
-        });
+    public zo(Co co, Co co2, Ao ao) {
+        this.f1238a = co;
+        this.b = co2;
+        this.c = ao;
     }
 
-    public static final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
-        JSONObject jSONObject3 = new JSONObject();
-        Boolean bool = Boolean.FALSE;
-        jSONObject3.put("first_event_done", JsonUtils.optBooleanOrNullable(jSONObject2, "first_event_done", JsonUtils.optBooleanOrNullable(jSONObject, "first_event_done", bool)));
-        jSONObject3.put("init_event_done", JsonUtils.optBooleanOrNullable(jSONObject2, "init_event_done", JsonUtils.optBooleanOrNullable(jSONObject, "init_event_done", bool)));
-        jSONObject3.put("report_request_id", AbstractC0447nb.a(jSONObject2, "report_request_id", AbstractC0447nb.a(jSONObject, "report_request_id", -1)));
-        jSONObject3.put("global_number", JsonUtils.optLongOrDefault(jSONObject2, "global_number", JsonUtils.optLongOrDefault(jSONObject, "global_number", 0L)));
-        jSONObject3.put("session_id", JsonUtils.optLongOrDefault(jSONObject2, "session_id", JsonUtils.optLongOrDefault(jSONObject, "session_id", -1L)));
-        jSONObject3.put("referrer_handled", JsonUtils.optBooleanOrNullable(jSONObject2, "referrer_handled", JsonUtils.optBooleanOrNullable(jSONObject, "referrer_handled", bool)));
-        jSONObject3.put("numbers_of_type", JsonUtils.optJsonObjectOrNullable(jSONObject2, "numbers_of_type", JsonUtils.optJsonObjectOrNull(jSONObject, "numbers_of_type")));
-        jSONObject3.put("open_id", AbstractC0447nb.a(jSONObject2, "open_id", AbstractC0447nb.a(jSONObject, "open_id", 1)));
-        jSONObject3.put("attribution_id", AbstractC0447nb.a(jSONObject2, "attribution_id", AbstractC0447nb.a(jSONObject, "attribution_id", 1)));
-        jSONObject3.put("last_migration_api_level", AbstractC0447nb.a(jSONObject2, "last_migration_api_level", AbstractC0447nb.a(jSONObject, "last_migration_api_level", 0)));
-        jSONObject3.put("external_attribution_window_start", JsonUtils.optLongOrDefault(jSONObject2, "external_attribution_window_start", JsonUtils.optLongOrDefault(jSONObject, "external_attribution_window_start", -1L)));
-        return jSONObject3;
+    public final synchronized JSONObject a() {
+        JSONObject jSONObject;
+        if (this.d == null) {
+            JSONObject a2 = this.c.a(a(this.f1238a), a(this.b));
+            this.d = a2;
+            a(a2);
+        }
+        jSONObject = this.d;
+        if (jSONObject == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("fileContents");
+            jSONObject = null;
+        }
+        return jSONObject;
     }
 
-    public final synchronized void b(long j) {
-        Ao ao = this.f1238a;
-        ao.a(ao.a().put("global_number", j));
-    }
-
-    public final synchronized boolean c() {
-        return this.f1238a.a().optBoolean("first_event_done", false);
-    }
-
-    public final synchronized boolean d() {
-        return this.f1238a.a().optBoolean("init_event_done", false);
-    }
-
-    public final synchronized int b() {
-        return this.f1238a.a().optInt("open_id", 1);
-    }
-
-    public final synchronized void c(long j) {
-        Ao ao = this.f1238a;
-        ao.a(ao.a().put("session_id", j));
-    }
-
-    public final synchronized void b(int i) {
-        Ao ao = this.f1238a;
-        ao.a(ao.a().put("last_migration_api_level", i));
-    }
-
-    public final synchronized void c(int i) {
-        Ao ao = this.f1238a;
-        ao.a(ao.a().put("open_id", i));
+    public static JSONObject a(Co co) {
+        try {
+            String a2 = co.a();
+            return a2 != null ? new JSONObject(a2) : new JSONObject();
+        } catch (Throwable unused) {
+            return new JSONObject();
+        }
     }
 
     public final synchronized void a(JSONObject jSONObject) {
-        Ao ao = this.f1238a;
-        ao.a(ao.a().put("numbers_of_type", jSONObject));
-    }
-
-    public final synchronized int a() {
-        return this.f1238a.a().optInt("attribution_id", 1);
-    }
-
-    public final synchronized void a(int i) {
-        Ao ao = this.f1238a;
-        ao.a(ao.a().put("attribution_id", i));
-    }
-
-    public final synchronized void a(long j) {
-        Ao ao = this.f1238a;
-        ao.a(ao.a().put("external_attribution_window_start", j));
+        String jSONObject2 = jSONObject.toString();
+        try {
+            this.f1238a.a(jSONObject2);
+        } catch (Throwable unused) {
+        }
+        try {
+            this.b.a(jSONObject2);
+        } catch (Throwable unused2) {
+        }
     }
 }

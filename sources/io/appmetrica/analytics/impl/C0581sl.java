@@ -1,64 +1,69 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.telephony.SubscriptionInfo;
-import android.telephony.SubscriptionManager;
-import androidx.media3.exoplayer.upstream.CmcdData;
-import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
-import java.util.ArrayList;
-import java.util.List;
-import kotlin.Metadata;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.JvmStatic;
-@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0007\u0010\bJ\u0016\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0003\u001a\u00020\u0002H\u0007¨\u0006\t"}, d2 = {"Lio/appmetrica/analytics/impl/sl;", "", "Landroid/content/Context;", "context", "", "Lio/appmetrica/analytics/impl/ml;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "<init>", "()V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* renamed from: io.appmetrica.analytics.impl.sl  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0581sl {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0581sl f1118a = new C0581sl();
+    public final Dc f1123a;
+    public final Cc b;
 
-    private C0581sl() {
+    public C0581sl(PublicLogger publicLogger, String str) {
+        this(new Dc(str, publicLogger), new Cc(str, publicLogger));
     }
 
-    @JvmStatic
-    public static final List<C0432ml> a(Context context) {
-        Integer valueOf;
-        Integer valueOf2;
-        List<SubscriptionInfo> list = (List) SystemServiceUtils.accessSystemServiceByNameSafely(context, "telephony_subscription_service", "getting active subcription info list", "SubscriptionManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.sl$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
-            public final Object apply(Object obj) {
-                List a2;
-                a2 = C0581sl.a((SubscriptionManager) obj);
-                return a2;
-            }
-        });
-        if (list != null) {
-            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            for (SubscriptionInfo subscriptionInfo : list) {
-                if (AndroidUtils.isApiAchieved(29)) {
-                    valueOf = C0606tl.a(subscriptionInfo);
-                } else {
-                    valueOf = Integer.valueOf(subscriptionInfo.getMcc());
-                }
-                if (AndroidUtils.isApiAchieved(29)) {
-                    valueOf2 = C0606tl.b(subscriptionInfo);
-                } else {
-                    valueOf2 = Integer.valueOf(subscriptionInfo.getMnc());
-                }
-                boolean z = subscriptionInfo.getDataRoaming() == 1;
-                CharSequence carrierName = subscriptionInfo.getCarrierName();
-                arrayList.add(new C0432ml(valueOf, valueOf2, z, carrierName != null ? carrierName.toString() : null));
-            }
-            return arrayList;
+    public final synchronized boolean a(Gc gc, String str, String str2) {
+        int size = gc.size();
+        int i = this.f1123a.c.f1022a;
+        if (size >= i && (i != gc.size() || !gc.containsKey(str))) {
+            Dc dc = this.f1123a;
+            dc.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", dc.e, Integer.valueOf(dc.c.f1022a), str);
+            return false;
         }
-        return CollectionsKt.emptyList();
+        this.b.getClass();
+        int i2 = gc.f492a;
+        if (str2 != null) {
+            i2 += str2.length();
+        }
+        if (gc.containsKey(str)) {
+            String str3 = (String) gc.get(str);
+            if (str3 != null) {
+                i2 -= str3.length();
+            }
+        } else {
+            i2 += str.length();
+        }
+        if (i2 > 4500) {
+            Cc cc = this.b;
+            cc.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", cc.f429a, 4500, str);
+            return false;
+        }
+        gc.put(str, str2);
+        return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List a(SubscriptionManager subscriptionManager) {
-        return subscriptionManager.getActiveSubscriptionInfoList();
+    public final boolean b(Gc gc, String str, String str2) {
+        if (gc != null) {
+            String a2 = this.f1123a.f443a.a(str);
+            String a3 = this.f1123a.b.a(str2);
+            if (!gc.containsKey(a2)) {
+                if (a3 != null) {
+                    return a(gc, a2, a3);
+                }
+                return false;
+            }
+            String str3 = (String) gc.get(a2);
+            if (a3 == null || !a3.equals(str3)) {
+                return a(gc, a2, a3);
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public C0581sl(Dc dc, Cc cc) {
+        this.f1123a = dc;
+        this.b = cc;
     }
 }

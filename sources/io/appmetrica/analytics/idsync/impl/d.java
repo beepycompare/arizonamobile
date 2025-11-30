@@ -7,24 +7,24 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class d implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final e f361a;
+    public final e f364a;
 
     public d(e eVar) {
-        this.f361a = eVar;
+        this.f364a = eVar;
     }
 
     public final byte[] a(IdSyncConfig idSyncConfig) {
-        return MessageNano.toByteArray(this.f361a.fromModel(idSyncConfig));
+        return MessageNano.toByteArray(this.f364a.fromModel(idSyncConfig));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f361a.fromModel((IdSyncConfig) obj));
+        return MessageNano.toByteArray(this.f364a.fromModel((IdSyncConfig) obj));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final IdSyncConfig toModel(byte[] bArr) {
-        return this.f361a.toModel((o) MessageNano.mergeFrom(new o(), bArr));
+        return this.f364a.toModel((o) MessageNano.mergeFrom(new o(), bArr));
     }
 }

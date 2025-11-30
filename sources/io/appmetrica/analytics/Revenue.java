@@ -1,7 +1,7 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0323ie;
-import io.appmetrica.analytics.impl.Gn;
+import io.appmetrica.analytics.impl.C0168ce;
+import io.appmetrica.analytics.impl.Fn;
 import java.util.Currency;
 /* loaded from: classes2.dex */
 public class Revenue {
@@ -14,7 +14,7 @@ public class Revenue {
 
     /* loaded from: classes2.dex */
     public static class Builder {
-        private static final Gn g = new Gn(new C0323ie("revenue currency"));
+        private static final Fn g = new Fn(new C0168ce("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
         final long f190a;

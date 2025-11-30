@@ -25,7 +25,7 @@ import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
 public final class C0789e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0798n f1424a;
+    public final C0798n f1426a;
     public final a0 b;
     public final L c;
     public final AnalyticsEventProvider d;
@@ -60,7 +60,7 @@ public final class C0789e {
     public static final class b extends Lambda implements Function1<Unit, Unit> {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f1426a = new b();
+        public static final b f1428a = new b();
 
         public b() {
             super(1);
@@ -84,10 +84,10 @@ public final class C0789e {
         @Override // kotlin.jvm.functions.Function0
         public final Map<String, ? extends String> invoke() {
             a0 a0Var = C0789e.this.b;
-            a0Var.f1419a.getClass();
+            a0Var.f1421a.getClass();
             c0 c0Var = a0Var.b;
             c0Var.getClass();
-            String type = RuStoreInternalConfig.Companion.create(c0Var.f1422a).getSdkType().getValue();
+            String type = RuStoreInternalConfig.Companion.create(c0Var.f1424a).getSdkType().getValue();
             a0Var.c.getClass();
             Intrinsics.checkNotNullParameter("ru.rustore.sdk:appupdate", "value");
             Intrinsics.checkNotNullParameter(type, "value");
@@ -105,7 +105,7 @@ public final class C0789e {
         Intrinsics.checkNotNullParameter(appVersionNameRepository, "appVersionNameRepository");
         Intrinsics.checkNotNullParameter(analyticsEventProvider, "analyticsEventProvider");
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1424a = analyticsRepository;
+        this.f1426a = analyticsRepository;
         this.b = sdkInfoRepository;
         this.c = appVersionNameRepository;
         this.d = analyticsEventProvider;
@@ -115,7 +115,7 @@ public final class C0789e {
 
     public final LinkedHashMap a(int i) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        String value = (String) this.c.f1405a.b.getValue();
+        String value = (String) this.c.f1407a.b.getValue();
         if (value != null) {
             Intrinsics.checkNotNullParameter(value, "value");
         } else {
@@ -136,6 +136,6 @@ public final class C0789e {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         linkedHashMap.putAll(a(i));
         linkedHashMap.put("errorCode", errorCode);
-        SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new a(new C0793i("updateStart.error", linkedHashMap))), Dispatchers.INSTANCE.getIo()), null, b.f1426a, 1, null);
+        SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new a(new C0793i("updateStart.error", linkedHashMap))), Dispatchers.INSTANCE.getIo()), null, b.f1428a, 1, null);
     }
 }

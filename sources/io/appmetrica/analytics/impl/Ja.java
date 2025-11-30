@@ -1,70 +1,53 @@
 package io.appmetrica.analytics.impl;
 
+import android.app.Activity;
 import android.location.Location;
-import android.os.Bundle;
-import io.appmetrica.analytics.AdvIdentifiersResult;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
-import io.appmetrica.analytics.DeferredDeeplinkListener;
-import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.StartupParamsCallback;
+import io.appmetrica.analytics.AnrListener;
+import io.appmetrica.analytics.ExternalAttribution;
 import java.util.List;
-import java.util.Map;
 /* loaded from: classes5.dex */
-public interface Ja extends Oc, H6, InterfaceC0113ab {
-    /* synthetic */ Za a();
+public interface Ja extends Ea, Ic {
+    void a(Activity activity);
 
-    /* synthetic */ void a(int i, Bundle bundle);
-
-    @Override // io.appmetrica.analytics.impl.Oc
+    @Override // io.appmetrica.analytics.impl.Ic
     /* synthetic */ void a(Location location);
 
-    void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig);
+    void a(AnrListener anrListener);
 
-    void a(DeferredDeeplinkListener deferredDeeplinkListener);
+    void a(ExternalAttribution externalAttribution);
 
-    void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener);
+    void a(Io io2);
 
-    void a(ReporterConfig reporterConfig);
+    void a(EnumC0435n enumC0435n);
 
-    void a(StartupParamsCallback startupParamsCallback, List<String> list);
-
-    @Override // io.appmetrica.analytics.impl.Oc
+    @Override // io.appmetrica.analytics.impl.Ic
     /* synthetic */ void a(String str);
 
-    @Override // io.appmetrica.analytics.impl.Oc
+    @Override // io.appmetrica.analytics.impl.Ic
     /* synthetic */ void a(String str, String str2);
 
-    @Override // io.appmetrica.analytics.impl.Oc
+    void a(String str, boolean z);
+
+    @Override // io.appmetrica.analytics.impl.Ic
     /* synthetic */ void a(boolean z);
 
-    @Override // io.appmetrica.analytics.impl.Oc
+    @Override // io.appmetrica.analytics.impl.Ic
     /* synthetic */ void a(boolean z, boolean z2);
 
-    void b(AppMetricaConfig appMetricaConfig);
+    void b(Activity activity);
 
-    Ya c(ReporterConfig reporterConfig);
+    @Override // io.appmetrica.analytics.impl.Ea
+    /* synthetic */ void b(String str);
 
-    @Override // io.appmetrica.analytics.impl.Oc
-    /* synthetic */ void clearAppEnvironment();
+    @Override // io.appmetrica.analytics.impl.Ea
+    /* synthetic */ void b(String str, String str2);
 
-    C0215ea d();
+    @Override // io.appmetrica.analytics.impl.Ea
+    /* synthetic */ boolean b();
 
-    String e();
+    void c();
 
-    Map<String, String> g();
+    void c(String str);
 
-    AdvIdentifiersResult h();
-
-    C0523qc i();
-
-    @Override // io.appmetrica.analytics.impl.Oc
-    /* synthetic */ void putAppEnvironmentValue(String str, String str2);
-
-    @Override // io.appmetrica.analytics.impl.Oc
-    /* synthetic */ void setDataSendingEnabled(boolean z);
-
-    @Override // io.appmetrica.analytics.impl.Oc
-    /* synthetic */ void setUserProfileID(String str);
+    List<String> f();
 }

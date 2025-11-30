@@ -1,28 +1,18 @@
 package io.appmetrica.analytics.internal;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.impl.A1;
-import io.appmetrica.analytics.internal.IAppMetricaService;
+import android.content.ContentValues;
+import android.os.Parcel;
+import android.os.Parcelable;
+import io.appmetrica.analytics.impl.C6;
 /* loaded from: classes5.dex */
-public final class a extends IAppMetricaService.Stub {
-    @Override // io.appmetrica.analytics.internal.IAppMetricaService
-    public final void pauseUserSession(Bundle bundle) {
-        A1 a1;
-        a1 = AppMetricaService.c;
-        a1.pauseUserSession(bundle);
+public final class a implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        return new CounterConfiguration((ContentValues) parcel.readBundle(C6.class.getClassLoader()).getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.data"), 0);
     }
 
-    @Override // io.appmetrica.analytics.internal.IAppMetricaService
-    public final void reportData(int i, Bundle bundle) {
-        A1 a1;
-        a1 = AppMetricaService.c;
-        a1.reportData(i, bundle);
-    }
-
-    @Override // io.appmetrica.analytics.internal.IAppMetricaService
-    public final void resumeUserSession(Bundle bundle) {
-        A1 a1;
-        a1 = AppMetricaService.c;
-        a1.resumeUserSession(bundle);
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new CounterConfiguration[i];
     }
 }

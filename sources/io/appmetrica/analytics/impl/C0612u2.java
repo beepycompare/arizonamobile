@@ -1,20 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import io.appmetrica.analytics.coreapi.internal.backport.BiConsumer;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* renamed from: io.appmetrica.analytics.impl.u2  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0612u2 {
+public final class C0612u2 extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1142a;
+    public final BiConsumer f1142a;
+    public final ICommonExecutor b;
 
-    public C0612u2(ArrayList arrayList) {
-        this.f1142a = arrayList;
+    public C0612u2(O2 o2, ICommonExecutor iCommonExecutor) {
+        this.f1142a = o2;
+        this.b = iCommonExecutor;
     }
 
-    public final String toString() {
-        return "AttributionConfig{deeplinkConditions=" + this.f1142a + AbstractJsonLexerKt.END_OBJ;
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        this.b.execute(new RunnableC0587t2(this, context, intent));
     }
 }

@@ -8,6 +8,10 @@ public class WrapUtils {
         return Double.isFinite(d) ? d : d2;
     }
 
+    public static double getFiniteDoubleOrDefaultNullable(Double d, double d2) {
+        return d == null ? d2 : getFiniteDoubleOrDefault(d.doubleValue(), d2);
+    }
+
     public static long getMillisOrDefault(Long l, TimeUnit timeUnit, long j) {
         return l == null ? j : timeUnit.toMillis(l.longValue());
     }

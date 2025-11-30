@@ -1,62 +1,39 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import io.appmetrica.analytics.internal.AppMetricaService;
-import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
-import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Hk implements ServiceWakeLock {
+public final class Hk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f511a;
-    public final Gk b;
-    public final HashMap c = new HashMap();
+    public final Wk f511a;
+    public final Long b;
+    public final Long c;
+    public final Integer d;
+    public final Long e;
+    public final Boolean f;
+    public final Long g;
+    public final Long h;
 
-    public Hk(Context context, Gk gk) {
-        this.f511a = context;
-        this.b = gk;
-    }
-
-    public final String a(String str) {
-        return "io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK." + str;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized boolean acquireWakeLock(String str) {
-        if (this.c.get(str) == null) {
-            HashMap hashMap = this.c;
-            Gk gk = this.b;
-            Context context = this.f511a;
-            String a2 = a(str);
-            gk.f495a.getClass();
-            Intent intent = new Intent(context, AppMetricaService.class);
-            intent.setAction(a2);
-            Fk fk = new Fk();
-            try {
-                context.bindService(intent, fk, 1);
-            } catch (Throwable unused) {
-                fk = null;
-            }
-            hashMap.put(str, fk);
-        }
-        return this.c.get(str) != null;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized void releaseWakeLock(String str) {
-        ServiceConnection serviceConnection = (ServiceConnection) this.c.get(str);
-        if (serviceConnection != null) {
-            Gk gk = this.b;
-            a(str);
-            Context context = this.f511a;
-            gk.getClass();
-            try {
-                context.unbindService(serviceConnection);
-            } catch (Throwable unused) {
-            }
-            ServiceConnection serviceConnection2 = (ServiceConnection) this.c.remove(str);
-        }
+    public Hk(Gk gk) {
+        Wk wk;
+        Integer num;
+        Long l;
+        Long l2;
+        Long l3;
+        Boolean bool;
+        Long l4;
+        wk = gk.b;
+        this.f511a = wk;
+        num = gk.e;
+        this.d = num;
+        l = gk.c;
+        this.b = l;
+        l2 = gk.d;
+        this.c = l2;
+        l3 = gk.f;
+        this.e = l3;
+        bool = gk.g;
+        this.f = bool;
+        l4 = gk.h;
+        this.g = l4;
+        this.h = gk.f495a;
     }
 }

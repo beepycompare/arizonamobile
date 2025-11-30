@@ -1,24 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
 /* renamed from: io.appmetrica.analytics.impl.i5  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0314i5 {
+public final class C0314i5 extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X4 f925a;
-    public final C0264g7 b;
+    public static final C0314i5 f935a = new C0314i5();
 
-    public C0314i5(Context context, X4 x4) {
-        this(x4, C0264g7.a(context));
+    public C0314i5() {
+        super(1);
     }
 
-    public final C0143bf a() {
-        return new C0143bf(this.b.b(this.f925a));
-    }
-
-    public C0314i5(X4 x4, C0264g7 c0264g7) {
-        this.f925a = x4;
-        this.b = c0264g7;
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Object obj) {
+        return ((ModuleAdRevenueProcessor) obj).getDescription();
     }
 }

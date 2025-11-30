@@ -1,23 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.ya  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0720ya extends C0695xa {
-    public C0720ya(int i, int i2) {
-        this(i, new C0745za(i2));
+public final class C0720ya {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final HashSet f1216a;
+
+    static {
+        HashSet hashSet = new HashSet();
+        f1216a = hashSet;
+        hashSet.add("get_ad");
+        hashSet.add("report");
+        hashSet.add("report_ad");
+        hashSet.add("startup");
+        hashSet.add("diagnostic");
     }
 
-    public final int a(String str) {
-        return StringUtils.getUTF8Bytes(str).length;
-    }
-
-    @Override // io.appmetrica.analytics.impl.C0695xa
-    public final int b(Object obj) {
-        return StringUtils.getUTF8Bytes((String) obj).length;
-    }
-
-    public C0720ya(int i, C0745za c0745za) {
-        super(i, c0745za);
+    public static ArrayList a(JSONObject jSONObject, String str) {
+        try {
+            JSONObject optJSONObject = jSONObject.optJSONObject(str);
+            if (optJSONObject != null) {
+                return AbstractC0294hb.a(optJSONObject.getJSONArray("urls"));
+            }
+            return null;
+        } catch (Throwable unused) {
+            return null;
+        }
     }
 }

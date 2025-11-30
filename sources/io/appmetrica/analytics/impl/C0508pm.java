@@ -1,5 +1,6 @@
 package io.appmetrica.analytics.impl;
 
+import androidx.media3.exoplayer.Renderer;
 import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.InternalNano;
@@ -13,7 +14,7 @@ public final class C0508pm extends MessageNano {
     public static volatile C0508pm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1059a;
+    public long f1074a;
 
     public C0508pm() {
         a();
@@ -31,7 +32,7 @@ public final class C0508pm extends MessageNano {
     }
 
     public final C0508pm a() {
-        this.f1059a = "";
+        this.f1074a = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
         this.cachedSize = -1;
         return this;
     }
@@ -39,13 +40,15 @@ public final class C0508pm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        return !this.f1059a.equals("") ? CodedOutputByteBufferNano.computeStringSize(1, this.f1059a) + computeSerializedSize : computeSerializedSize;
+        long j = this.f1074a;
+        return j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US ? CodedOutputByteBufferNano.computeInt64Size(1, j) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f1059a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f1059a);
+        long j = this.f1074a;
+        if (j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US) {
+            codedOutputByteBufferNano.writeInt64(1, j);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -57,12 +60,12 @@ public final class C0508pm extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag != 10) {
+            } else if (readTag != 8) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.f1059a = codedInputByteBufferNano.readString();
+                this.f1074a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

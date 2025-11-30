@@ -1,37 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
-import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import android.content.Context;
 /* renamed from: io.appmetrica.analytics.impl.bc  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0140bc implements PermissionStrategy, LocationControllerObserver {
-    public static final C0114ac b = new C0114ac();
-    public static final List c = CollectionsKt.listOf((Object[]) new String[]{"android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION"});
-
-    /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f815a;
-
-    @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
-    public final boolean forbidUsePermission(String str) {
-        if (c.contains(str)) {
-            return !this.f815a;
+public final class C0140bc implements InterfaceC0287h4 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0287h4
+    /* renamed from: b */
+    public final C0639v4 a(Context context, C0210e5 c0210e5, Q3 q3, C0515q4 c0515q4) {
+        C0714y4 c0714y4;
+        C0664w4 c0664w4 = new C0664w4(q3.b);
+        C0739z4 c0739z4 = new C0739z4();
+        synchronized (c0210e5) {
+            c0714y4 = (C0714y4) c0210e5.a(c0664w4, c0515q4, c0739z4, c0210e5.b);
         }
-        return false;
-    }
-
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
-    public final void startLocationTracking() {
-        this.f815a = true;
-    }
-
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
-    public final void stopLocationTracking() {
-        this.f815a = false;
-    }
-
-    public final String toString() {
-        return "LocationFlagStrategy(enabled=" + this.f815a + ", locationPermissions=" + c + ')';
+        return new C0639v4(context, c0714y4, c0515q4);
     }
 }

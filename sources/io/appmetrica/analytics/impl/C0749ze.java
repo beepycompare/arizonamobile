@@ -1,37 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* renamed from: io.appmetrica.analytics.impl.ze  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0749ze implements X8, Ae {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final S6 f1230a;
-    public final AtomicLong b;
-
-    public C0749ze(S6 s6) {
-        this.f1230a = s6;
-        this.b = new AtomicLong(s6.b());
-        s6.a(this);
+public final class C0749ze implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0632um fromModel(C0724ye c0724ye) {
+        C0632um c0632um = new C0632um();
+        c0632um.f1154a = c0724ye.f1218a;
+        c0632um.b = c0724ye.b;
+        return c0632um;
     }
 
-    @Override // io.appmetrica.analytics.impl.X8
-    public final void a(List<Integer> list) {
-        this.b.addAndGet(list.size());
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0632um c0632um = (C0632um) obj;
+        return new C0724ye(c0632um.f1154a, c0632um.b);
     }
 
-    @Override // io.appmetrica.analytics.impl.X8
-    public final void b(List<Integer> list) {
-        this.b.addAndGet(-list.size());
-    }
-
-    @Override // io.appmetrica.analytics.impl.X8
-    public final void a() {
-        this.b.set(this.f1230a.b());
-    }
-
-    public final long b() {
-        return this.b.get();
+    public final C0724ye a(C0632um c0632um) {
+        return new C0724ye(c0632um.f1154a, c0632um.b);
     }
 }

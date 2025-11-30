@@ -11,19 +11,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: classes5.dex */
 public final class C0204e {
     public static final long g = TimeUnit.SECONDS.toMillis(1);
-    public static final String h = "WatchDog-" + Gd.f490a.incrementAndGet();
+    public static final String h = "WatchDog-" + Ad.f395a.incrementAndGet();
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f852a;
+    public final CopyOnWriteArrayList f859a;
     public final AtomicInteger b;
     public final Handler c;
     public C0179d d;
     public final AtomicBoolean e;
     public final Runnable f;
 
-    public C0204e(Kb kb) {
+    public C0204e(Eb eb) {
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
-        this.f852a = copyOnWriteArrayList;
+        this.f859a = copyOnWriteArrayList;
         this.b = new AtomicInteger();
         this.c = new Handler(Looper.getMainLooper());
         this.e = new AtomicBoolean();
@@ -33,7 +33,7 @@ public final class C0204e {
                 C0204e.this.a();
             }
         };
-        copyOnWriteArrayList.add(kb);
+        copyOnWriteArrayList.add(eb);
     }
 
     public final /* synthetic */ void a() {
@@ -43,7 +43,7 @@ public final class C0204e {
     public final synchronized void b() {
         C0179d c0179d = this.d;
         if (c0179d != null) {
-            c0179d.f835a.set(false);
+            c0179d.f838a.set(false);
             this.d = null;
             PublicLogger.getAnonymousInstance().info("Stop ANR monitoring", new Object[0]);
         }

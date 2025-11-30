@@ -1,18 +1,19 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes5.dex */
-public final class Fj implements Xa {
+public final class Fj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f477a;
+    public final /* synthetic */ Uj f481a;
 
-    public Fj(AdRevenue adRevenue) {
-        this.f477a = adRevenue;
+    public Fj(Uj uj) {
+        this.f481a = uj;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.reportAdRevenue(this.f477a);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        Tj a2 = ((C0244fd) this.f481a).a();
+        if (a2 != null) {
+            sa.reportEvent(a2.f696a, a2.b);
+        }
     }
 }

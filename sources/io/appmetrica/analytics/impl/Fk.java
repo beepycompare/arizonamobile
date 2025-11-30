@@ -1,15 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.ComponentName;
-import android.content.ServiceConnection;
-import android.os.IBinder;
 /* loaded from: classes5.dex */
-public final class Fk implements ServiceConnection {
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-    }
+public final class Fk {
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
+    /* renamed from: a  reason: collision with root package name */
+    public final long f482a;
+    public final long b;
+
+    public Fk(long j, long j2) {
+        this.f482a = j;
+        this.b = j2;
     }
 }

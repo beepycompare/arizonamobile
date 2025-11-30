@@ -5,12 +5,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class G {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f482a;
+    public final int f486a;
     public final int b;
     public final int c;
 
     public G(int i, int i2, int i3) {
-        this.f482a = i;
+        this.f486a = i;
         this.b = i2;
         this.c = i3;
     }
@@ -22,7 +22,7 @@ public final class G {
         if (Intrinsics.areEqual(G.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
                 G g = (G) obj;
-                return this.f482a == g.f482a && this.b == g.b && this.c == g.c;
+                return this.f486a == g.f486a && this.b == g.b && this.c == g.c;
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.impl.id.AdvIdGetterController.CanTrackIdentifiers");
         }
@@ -30,11 +30,11 @@ public final class G {
     }
 
     public final int hashCode() {
-        int a2 = Q7.a(this.b);
-        return Q7.a(this.c) + ((a2 + (Q7.a(this.f482a) * 31)) * 31);
+        int a2 = L7.a(this.b);
+        return L7.a(this.c) + ((a2 + (L7.a(this.f486a) * 31)) * 31);
     }
 
     public final String toString() {
-        return "CanTrackIdentifiers(canTrackGaid=" + H.a(this.f482a) + ", canTrackHoaid=" + H.a(this.b) + ", canTrackYandexAdvId=" + H.a(this.c) + ')';
+        return "CanTrackIdentifiers(canTrackGaid=" + H.a(this.f486a) + ", canTrackHoaid=" + H.a(this.b) + ", canTrackYandexAdvId=" + H.a(this.c) + ')';
     }
 }

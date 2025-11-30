@@ -1,45 +1,107 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public abstract class T5 extends BaseRequestConfig.ComponentLoader {
+public final class T5 extends MessageNano {
+    public static volatile T5[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final SafePackageManager f698a;
+    public S5 f689a;
+    public String b;
+    public int c;
 
-    public T5(Context context, String str) {
-        this(context, str, new SafePackageManager());
+    public T5() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.ComponentLoader, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.RequestConfigLoader
-    /* renamed from: a */
-    public U5 load(S5 s5) {
-        U5 u5 = (U5) super.load((T5) s5);
-        String packageName = getContext().getPackageName();
-        ApplicationInfo applicationInfo = this.f698a.getApplicationInfo(getContext(), getPackageName(), 0);
-        if (applicationInfo != null) {
-            int i = applicationInfo.flags;
-            u5.f717a = (i & 2) != 0 ? "1" : "0";
-            u5.b = (i & 1) == 0 ? "0" : "1";
-        } else if (TextUtils.equals(packageName, getPackageName())) {
-            u5.f717a = (getContext().getApplicationInfo().flags & 2) != 0 ? "1" : "0";
-            u5.b = (getContext().getApplicationInfo().flags & 1) == 0 ? "0" : "1";
-        } else {
-            u5.f717a = "0";
-            u5.b = "0";
+    public static T5[] b() {
+        if (d == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (d == null) {
+                    d = new T5[0];
+                }
+            }
         }
-        C0356jm c0356jm = s5.f677a;
-        u5.c = c0356jm;
-        u5.setRetryPolicyConfig(c0356jm.t);
-        return u5;
+        return d;
     }
 
-    public T5(Context context, String str, SafePackageManager safePackageManager) {
-        super(context, str);
-        this.f698a = safePackageManager;
+    public final T5 a() {
+        this.f689a = null;
+        this.b = "";
+        this.c = -1;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        S5 s5 = this.f689a;
+        if (s5 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, s5);
+        }
+        if (!this.b.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
+        }
+        int i = this.c;
+        return i != -1 ? CodedOutputByteBufferNano.computeInt32Size(3, i) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        S5 s5 = this.f689a;
+        if (s5 != null) {
+            codedOutputByteBufferNano.writeMessage(1, s5);
+        }
+        if (!this.b.equals("")) {
+            codedOutputByteBufferNano.writeString(2, this.b);
+        }
+        int i = this.c;
+        if (i != -1) {
+            codedOutputByteBufferNano.writeInt32(3, i);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final T5 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                if (this.f689a == null) {
+                    this.f689a = new S5();
+                }
+                codedInputByteBufferNano.readMessage(this.f689a);
+            } else if (readTag == 18) {
+                this.b = codedInputByteBufferNano.readString();
+            } else if (readTag != 24) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                int readInt32 = codedInputByteBufferNano.readInt32();
+                if (readInt32 == -1 || readInt32 == 0 || readInt32 == 1) {
+                    this.c = readInt32;
+                }
+            }
+        }
+        return this;
+    }
+
+    public static T5 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new T5().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static T5 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (T5) MessageNano.mergeFrom(new T5(), bArr);
     }
 }

@@ -1,11 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.ModuleEvent;
 /* loaded from: classes5.dex */
-public final class F8 extends G8 implements ProtobufStateSerializer {
-    public F8(ProtobufStateSerializer<MessageNano> protobufStateSerializer, AESEncrypter aESEncrypter) {
-        super(protobufStateSerializer, aESEncrypter);
+public abstract /* synthetic */ class F8 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final /* synthetic */ int[] f476a;
+
+    static {
+        int[] iArr = new int[ModuleEvent.Category.values().length];
+        iArr[ModuleEvent.Category.GENERAL.ordinal()] = 1;
+        iArr[ModuleEvent.Category.SYSTEM.ordinal()] = 2;
+        f476a = iArr;
     }
 }

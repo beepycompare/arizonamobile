@@ -1,53 +1,51 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionResolutionStrategy;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreutils.internal.cache.CachedDataProvider;
+import io.appmetrica.analytics.coreutils.internal.permission.AlwaysAllowPermissionStrategy;
+import io.appmetrica.analytics.coreutils.internal.permission.SinglePermissionStrategy;
+import io.appmetrica.analytics.coreutils.internal.services.telephony.CellularNetworkTypeExtractor;
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public final class Mc extends HashMap {
+public final class Mc implements InterfaceC0583sn {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f590a;
+    public final Context f588a;
+    public final PermissionResolutionStrategy b;
+    public final CellularNetworkTypeExtractor c;
+    public final CachedDataProvider.CachedData d;
 
-    public Mc() {
-        this.f590a = 0;
+    public Mc(Context context) {
+        PermissionResolutionStrategy alwaysAllowPermissionStrategy;
+        this.f588a = context;
+        if (AndroidUtils.isApiAchieved(29)) {
+            alwaysAllowPermissionStrategy = new SinglePermissionStrategy(C0471oa.k().j(), "android.permission.READ_PHONE_STATE");
+        } else {
+            alwaysAllowPermissionStrategy = new AlwaysAllowPermissionStrategy();
+        }
+        this.b = alwaysAllowPermissionStrategy;
+        this.c = new CellularNetworkTypeExtractor(context);
+        long millis = TimeUnit.SECONDS.toMillis(20L);
+        this.d = new CachedDataProvider.CachedData(millis, millis * 2, "mobile-connection");
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    /* renamed from: a */
-    public final String put(String str, String str2) {
-        if (!containsKey(str)) {
-            if (str2 != null) {
-                this.f590a = str2.length() + str.length() + this.f590a;
-                return (String) super.put(str, str2);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sn
+    /* renamed from: b */
+    public final synchronized Lc a() {
+        Lc lc;
+        String str;
+        lc = (Lc) this.d.getData();
+        if (lc == null || this.d.shouldUpdateData()) {
+            if (this.b.hasNecessaryPermissions(this.f588a)) {
+                str = this.c.getNetworkType();
+            } else {
+                str = "unknown";
             }
-            return null;
+            lc = new Lc(str);
+            this.d.setData(lc);
         }
-        if (str2 == null) {
-            if (containsKey(str)) {
-                String str3 = (String) get(str);
-                this.f590a -= str.length() + (str3 != null ? str3.length() : 0);
-            }
-            return (String) super.remove(str);
-        }
-        String str4 = (String) get(str);
-        this.f590a = (str2.length() - (str4 != null ? str4.length() : 0)) + this.f590a;
-        return (String) super.put(str, str2);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        if (containsKey(obj)) {
-            String str = (String) get(obj);
-            this.f590a -= ((String) obj).length() + (str == null ? 0 : str.length());
-        }
-        return (String) super.remove(obj);
-    }
-
-    public Mc(String str) {
-        super(AbstractC0447nb.d(str));
-        this.f590a = 0;
-        for (String str2 : keySet()) {
-            String str3 = (String) get(str2);
-            this.f590a = str2.length() + (str3 == null ? 0 : str3.length()) + this.f590a;
-        }
+        return lc;
     }
 }

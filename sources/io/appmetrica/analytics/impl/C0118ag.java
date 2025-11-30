@@ -1,115 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Lambda;
 /* renamed from: io.appmetrica.analytics.impl.ag  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0118ag extends MessageNano {
-    public static final int e = 0;
-    public static final int f = 1;
-    public static final int g = 2;
-    public static volatile C0118ag[] h;
+public final class C0118ag extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f803a;
-    public long b;
-    public long c;
-    public int d;
+    public final /* synthetic */ C0247fg f800a;
 
-    public C0118ag() {
-        a();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public C0118ag(C0247fg c0247fg) {
+        super(0);
+        this.f800a = c0247fg;
     }
 
-    public static C0118ag[] b() {
-        if (h == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (h == null) {
-                    h = new C0118ag[0];
-                }
-            }
-        }
-        return h;
-    }
-
-    public final C0118ag a() {
-        this.f803a = WireFormatNano.EMPTY_BYTES;
-        this.b = 0L;
-        this.c = 0L;
-        this.d = 0;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeBytesSize = CodedOutputByteBufferNano.computeBytesSize(1, this.f803a) + super.computeSerializedSize();
-        long j = this.b;
-        if (j != 0) {
-            computeBytesSize += CodedOutputByteBufferNano.computeUInt64Size(2, j);
-        }
-        long j2 = this.c;
-        if (j2 != 0) {
-            computeBytesSize += CodedOutputByteBufferNano.computeUInt64Size(3, j2);
-        }
-        int i = this.d;
-        return i != 0 ? CodedOutputByteBufferNano.computeInt32Size(4, i) + computeBytesSize : computeBytesSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeBytes(1, this.f803a);
-        long j = this.b;
-        if (j != 0) {
-            codedOutputByteBufferNano.writeUInt64(2, j);
-        }
-        long j2 = this.c;
-        if (j2 != 0) {
-            codedOutputByteBufferNano.writeUInt64(3, j2);
-        }
-        int i = this.d;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeInt32(4, i);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final C0118ag mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f803a = codedInputByteBufferNano.readBytes();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readUInt64();
-            } else if (readTag == 24) {
-                this.c = codedInputByteBufferNano.readUInt64();
-            } else if (readTag != 32) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2) {
-                    this.d = readInt32;
-                }
-            }
-        }
-        return this;
-    }
-
-    public static C0118ag b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C0118ag().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static C0118ag a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C0118ag) MessageNano.mergeFrom(new C0118ag(), bArr);
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        return new Zf(this.f800a);
     }
 }

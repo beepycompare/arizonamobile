@@ -1,7 +1,7 @@
 package com.google.android.material.color.utilities;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import io.appmetrica.analytics.impl.H2;
+import io.appmetrica.analytics.impl.A2;
 import java.util.function.Function;
 /* loaded from: classes4.dex */
 public final class MaterialDynamicColors {
@@ -110,7 +110,7 @@ public final class MaterialDynamicColors {
     }
 
     public DynamicColor background() {
-        return new DynamicColor(H2.g, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda100
+        return new DynamicColor(A2.g, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda100
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 TonalPalette tonalPalette;

@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.ModuleEvent;
 /* loaded from: classes5.dex */
-public final class Gj implements Xa {
+public final class Gj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f494a;
+    public final /* synthetic */ ModuleEvent f494a;
 
-    public Gj(PluginErrorDetails pluginErrorDetails) {
-        this.f494a = pluginErrorDetails;
+    public Gj(ModuleEvent moduleEvent) {
+        this.f494a = moduleEvent;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.getPluginExtension().reportUnhandledException(this.f494a);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.reportEvent(this.f494a);
     }
 }

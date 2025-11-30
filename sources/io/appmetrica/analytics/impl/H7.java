@@ -1,11 +1,14 @@
 package io.appmetrica.analytics.impl;
 
-import android.app.Activity;
-import android.app.Application;
-import android.os.Bundle;
+import android.content.Context;
 /* loaded from: classes5.dex */
-public abstract class H7 implements Application.ActivityLifecycleCallbacks {
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+public final class H7 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final G7 f503a = new G7();
+    public static final String b = "appmetrica";
+
+    public final C0328ik a(Context context) {
+        return new C0328ik(context.getPackageName());
     }
 }

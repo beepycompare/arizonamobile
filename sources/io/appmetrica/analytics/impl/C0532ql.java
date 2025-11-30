@@ -1,25 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import android.telephony.TelephonyManager;
-import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
+import android.telephony.SubscriptionInfo;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
+import kotlin.Metadata;
+import kotlin.jvm.JvmStatic;
+@Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\b\u0010\tJ\u0019\u0010\u0005\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0003\u001a\u00020\u0002H\u0007¢\u0006\u0004\b\u0005\u0010\u0006J\u0019\u0010\u0007\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0003\u001a\u00020\u0002H\u0007¢\u0006\u0004\b\u0007\u0010\u0006¨\u0006\n"}, d2 = {"Lio/appmetrica/analytics/impl/ql;", "", "Landroid/telephony/SubscriptionInfo;", "subscriptionInfo", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "(Landroid/telephony/SubscriptionInfo;)Ljava/lang/Integer;", "b", "<init>", "()V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
 /* renamed from: io.appmetrica.analytics.impl.ql  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0532ql implements FunctionWithThrowable {
+public final class C0532ql {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0556rl f1079a;
+    public static final C0532ql f1092a = new C0532ql();
 
-    public C0532ql(C0556rl c0556rl) {
-        this.f1079a = c0556rl;
+    private C0532ql() {
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
-    public final Object apply(Object obj) {
-        TelephonyManager telephonyManager = (TelephonyManager) obj;
-        C0556rl c0556rl = this.f1079a;
-        if (c0556rl.b.hasPermission(c0556rl.f1100a, "android.permission.READ_PHONE_STATE")) {
-            return Boolean.valueOf(telephonyManager.isNetworkRoaming());
-        }
-        return null;
+    @JvmStatic
+    public static final Integer a(SubscriptionInfo subscriptionInfo) {
+        return ParseUtils.intValueOf(subscriptionInfo.getMccString());
+    }
+
+    @JvmStatic
+    public static final Integer b(SubscriptionInfo subscriptionInfo) {
+        return ParseUtils.intValueOf(subscriptionInfo.getMncString());
     }
 }

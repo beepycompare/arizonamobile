@@ -1,21 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.Charsets;
 /* loaded from: classes5.dex */
-public final class Ie extends Kc {
-    public Ie(NetworkType networkType) {
-        super(networkType);
-        a(1, NetworkType.WIFI);
-        a(0, NetworkType.CELL);
-        a(3, NetworkType.ETHERNET);
-        a(2, NetworkType.BLUETOOTH);
-        a(4, NetworkType.VPN);
-        if (AndroidUtils.isApiAchieved(27)) {
-            a(6, NetworkType.LOWPAN);
+public final class Ie implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final byte[] fromModel(String str) {
+        if (Intrinsics.areEqual("native", str)) {
+            str = "JVM";
         }
-        if (AndroidUtils.isApiAchieved(26)) {
-            a(5, NetworkType.WIFI_AWARE);
-        }
+        return str.getBytes(Charsets.UTF_8);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        byte[] bArr = (byte[]) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public final String a(byte[] bArr) {
+        throw new UnsupportedOperationException();
     }
 }

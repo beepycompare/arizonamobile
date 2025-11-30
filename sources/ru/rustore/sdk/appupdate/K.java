@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Lambda;
 public final class K {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1403a;
+    public final Context f1405a;
     public final Lazy b;
 
     /* loaded from: classes6.dex */
@@ -26,29 +26,29 @@ public final class K {
 
         @Override // kotlin.jvm.functions.Function0
         public final String invoke() {
-            Object m9901constructorimpl;
+            Object m9902constructorimpl;
             K k = K.this;
             try {
                 Result.Companion companion = Result.Companion;
-                PackageManager packageManager = k.f1403a.getPackageManager();
+                PackageManager packageManager = k.f1405a.getPackageManager();
                 Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
-                String packageName = k.f1403a.getPackageName();
+                String packageName = k.f1405a.getPackageName();
                 Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
-                m9901constructorimpl = Result.m9901constructorimpl(K.a(k, packageManager, packageName).versionName);
+                m9902constructorimpl = Result.m9902constructorimpl(K.a(k, packageManager, packageName).versionName);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9901constructorimpl = Result.m9901constructorimpl(ResultKt.createFailure(th));
+                m9902constructorimpl = Result.m9902constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9907isFailureimpl(m9901constructorimpl)) {
-                m9901constructorimpl = null;
+            if (Result.m9908isFailureimpl(m9902constructorimpl)) {
+                m9902constructorimpl = null;
             }
-            return (String) m9901constructorimpl;
+            return (String) m9902constructorimpl;
         }
     }
 
     public K(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1403a = context;
+        this.f1405a = context;
         this.b = LazyKt.lazy(new a());
     }
 

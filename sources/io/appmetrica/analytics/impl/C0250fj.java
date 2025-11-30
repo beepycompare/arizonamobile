@@ -1,69 +1,143 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Point;
-import android.util.DisplayMetrics;
-import android.view.Display;
-import android.view.WindowManager;
+import io.appmetrica.analytics.coreapi.internal.model.AppVersionInfo;
 import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import io.appmetrica.analytics.coreapi.internal.model.SdkEnvironment;
+import io.appmetrica.analytics.coreapi.internal.model.SdkInfo;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider;
+import io.appmetrica.analytics.coreutils.internal.services.FrameworkDetector;
+import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt;
 /* renamed from: io.appmetrica.analytics.impl.fj  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0250fj {
-    /* JADX WARN: Removed duplicated region for block: B:11:0x001f A[Catch: all -> 0x002f, TRY_LEAVE, TryCatch #3 {all -> 0x002f, blocks: (B:3:0x0003, B:9:0x0011, B:11:0x001f), top: B:33:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0032 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0011 A[Catch: all -> 0x002f, TRY_ENTER, TryCatch #3 {all -> 0x002f, blocks: (B:3:0x0003, B:9:0x0011, B:11:0x001f), top: B:33:0x0003 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static ScreenInfo a(Context context) {
-        Point point;
-        int i;
+public final class C0250fj implements SdkEnvironmentProvider {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f893a;
+    public final Jb b = new Jb();
+    public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
+    public SdkEnvironment d;
+    public String e;
+
+    public C0250fj(Context context) {
+        this.f893a = context;
+        this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("7.14.0", "50145656", AbstractC0276gj.a()), "phone", Jb.a(context.getResources().getConfiguration()));
+    }
+
+    public final synchronized void a(ScreenInfo screenInfo) {
         float f;
-        DisplayMetrics displayMetrics;
-        Display display;
-        if (AndroidUtils.isApiAchieved(30)) {
+        if (screenInfo != null) {
+            if (!Intrinsics.areEqual(screenInfo, getSdkEnvironment().getScreenInfo())) {
+                String str = this.e;
+                if (str == null) {
+                    Context context = this.f893a;
+                    Point point = new Point(screenInfo.getWidth(), screenInfo.getHeight());
+                    SafePackageManager safePackageManager = O7.f618a;
+                    try {
+                        f = context.getResources().getDisplayMetrics().density;
+                    } catch (Throwable unused) {
+                        f = 0.0f;
+                    }
+                    if (!Float.isNaN(f) && f != 0.0f) {
+                        int i = point.x;
+                        int i2 = point.y;
+                        if (O7.a(context)) {
+                            str = "tv";
+                        } else {
+                            float f2 = 160 * f;
+                            float f3 = i;
+                            float f4 = f3 / f2;
+                            float f5 = i2;
+                            float f6 = f5 / f2;
+                            double sqrt = Math.sqrt((f6 * f6) + (f4 * f4));
+                            float coerceAtMost = RangesKt.coerceAtMost(f3 / f, f5 / f);
+                            if (sqrt < 7 && coerceAtMost < 600) {
+                                str = "phone";
+                            }
+                            str = "tablet";
+                        }
+                    }
+                    str = "phone";
+                }
+                this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, screenInfo, null, str, null, 43, null);
+                Iterator it = this.c.iterator();
+                while (it.hasNext()) {
+                    ((AbstractC0491p5) ((InterfaceC0224ej) it.next())).d();
+                }
+            }
+        }
+    }
+
+    public final void b(InterfaceC0224ej interfaceC0224ej) {
+        this.c.remove(interfaceC0224ej);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider
+    public final SdkEnvironment getSdkEnvironment() {
+        SdkEnvironment sdkEnvironment = this.d;
+        if (sdkEnvironment != null) {
+            return sdkEnvironment;
+        }
+        Intrinsics.throwUninitializedPropertyAccessException("sdkEnvironment");
+        return null;
+    }
+
+    public final synchronized void a(String str) {
+        if (str != null) {
+            if (!Intrinsics.areEqual(str, this.e)) {
+                this.e = str;
+                if (!Intrinsics.areEqual(str, getSdkEnvironment().getDeviceType())) {
+                    this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, null, null, str, null, 47, null);
+                    Iterator it = this.c.iterator();
+                    while (it.hasNext()) {
+                        ((AbstractC0491p5) ((InterfaceC0224ej) it.next())).d();
+                    }
+                }
+            }
+        }
+    }
+
+    public final synchronized void a(String str, String str2) {
+        if (str == null) {
             try {
-                display = context.getDisplay();
-            } catch (Throwable unused) {
-            }
-            if (display == null) {
-                display = ((WindowManager) context.getSystemService("window")).getDefaultDisplay();
-            }
-            if (display != null) {
-                point = (Point) SystemServiceUtils.accessSystemServiceSafely(display, "getting display metrics", "Display", new C0224ej());
-                if (point == null) {
-                    return null;
-                }
-                int max = Math.max(point.x, point.y);
-                int min = Math.min(point.x, point.y);
-                try {
-                    displayMetrics = context.getResources().getDisplayMetrics();
-                    i = displayMetrics.densityDpi;
-                } catch (Throwable unused2) {
-                    i = 0;
-                }
-                try {
-                    f = displayMetrics.density;
-                } catch (Throwable unused3) {
-                    f = 0.0f;
-                    return new ScreenInfo(max, min, i, f);
-                }
-                return new ScreenInfo(max, min, i, f);
-            }
-            point = null;
-            if (point == null) {
+                str = getSdkEnvironment().getAppVersionInfo().getAppVersionName();
+            } finally {
             }
         }
-        display = null;
-        if (display == null) {
+        if (str2 == null) {
+            str2 = getSdkEnvironment().getAppVersionInfo().getAppBuildNumber();
         }
-        if (display != null) {
+        AppVersionInfo appVersionInfo = getSdkEnvironment().getAppVersionInfo();
+        if (!Intrinsics.areEqual(appVersionInfo.getAppVersionName(), str) || !Intrinsics.areEqual(appVersionInfo.getAppBuildNumber(), str2)) {
+            this.d = SdkEnvironment.copy$default(getSdkEnvironment(), new AppVersionInfo(str, str2), null, null, null, null, null, 62, null);
+            Iterator it = this.c.iterator();
+            while (it.hasNext()) {
+                ((AbstractC0491p5) ((InterfaceC0224ej) it.next())).d();
+            }
         }
-        point = null;
-        if (point == null) {
+    }
+
+    public final synchronized void a(Configuration configuration) {
+        this.b.getClass();
+        List a2 = Jb.a(configuration);
+        if (!Intrinsics.areEqual(getSdkEnvironment().getLocales(), a2)) {
+            this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, null, null, null, a2, 31, null);
+            Iterator it = this.c.iterator();
+            while (it.hasNext()) {
+                ((AbstractC0491p5) ((InterfaceC0224ej) it.next())).d();
+            }
         }
+    }
+
+    public final void a(InterfaceC0224ej interfaceC0224ej) {
+        this.c.add(interfaceC0224ej);
     }
 }

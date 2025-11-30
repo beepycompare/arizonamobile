@@ -7,37 +7,32 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
+import java.util.Arrays;
 /* renamed from: io.appmetrica.analytics.impl.o9  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0470o9 extends MessageNano {
-    public static volatile C0470o9[] e;
+    public static volatile C0470o9[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1038a;
-    public int b;
-    public String c;
-    public boolean d;
+    public byte[] f1045a;
 
     public C0470o9() {
         a();
     }
 
     public static C0470o9[] b() {
-        if (e == null) {
+        if (b == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (e == null) {
-                    e = new C0470o9[0];
+                if (b == null) {
+                    b = new C0470o9[0];
                 }
             }
         }
-        return e;
+        return b;
     }
 
     public final C0470o9 a() {
-        this.f1038a = 0;
-        this.b = 0;
-        this.c = "";
-        this.d = false;
+        this.f1045a = WireFormatNano.EMPTY_BYTES;
         this.cachedSize = -1;
         return this;
     }
@@ -45,37 +40,13 @@ public final class C0470o9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f1038a;
-        if (i != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
-        }
-        int i2 = this.b;
-        if (i2 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(2, i2);
-        }
-        if (!this.c.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(3, this.c);
-        }
-        boolean z = this.d;
-        return z ? CodedOutputByteBufferNano.computeBoolSize(4, z) + computeSerializedSize : computeSerializedSize;
+        return !Arrays.equals(this.f1045a, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(1, this.f1045a) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f1038a;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeUInt32(1, i);
-        }
-        int i2 = this.b;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeUInt32(2, i2);
-        }
-        if (!this.c.equals("")) {
-            codedOutputByteBufferNano.writeString(3, this.c);
-        }
-        boolean z = this.d;
-        if (z) {
-            codedOutputByteBufferNano.writeBool(4, z);
+        if (!Arrays.equals(this.f1045a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f1045a);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -87,18 +58,12 @@ public final class C0470o9 extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == 8) {
-                this.f1038a = codedInputByteBufferNano.readUInt32();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readUInt32();
-            } else if (readTag == 26) {
-                this.c = codedInputByteBufferNano.readString();
-            } else if (readTag != 32) {
+            } else if (readTag != 10) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.d = codedInputByteBufferNano.readBool();
+                this.f1045a = codedInputByteBufferNano.readBytes();
             }
         }
         return this;

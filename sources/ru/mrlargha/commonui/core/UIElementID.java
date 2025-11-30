@@ -97,7 +97,7 @@ public final class UIElementID {
     public static final UIElementID SHOOTING_GALLERY = new UIElementID("SHOOTING_GALLERY", 75, 78, ProjectType.RODINA);
     public static final UIElementID FRACTION_STAT = new UIElementID("FRACTION_STAT", 76, 79, ProjectType.RODINA);
     public static final UIElementID ARIZONA_SITUATION = new UIElementID("ARIZONA_SITUATION", 77, 80, ProjectType.ARIZONA);
-    public static final UIElementID ARIZONA_FISHING = new UIElementID("ARIZONA_FISHING", 78, 81, ProjectType.ARIZONA);
+    public static final UIElementID ARIZONA_FISHING = new UIElementID("ARIZONA_FISHING", 78, 81, ProjectType.COMMON);
     public static final UIElementID ARIZONA_NEW_CONTAINER = new UIElementID("ARIZONA_NEW_CONTAINER", 79, 82, ProjectType.COMMON);
     public static final UIElementID ARIZONA_BANNERS = new UIElementID("ARIZONA_BANNERS", 80, 83, ProjectType.COMMON);
     public static final UIElementID ARIZONA_BUSINESS = new UIElementID("ARIZONA_BUSINESS", 81, 84, ProjectType.COMMON);

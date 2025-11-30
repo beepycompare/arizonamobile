@@ -1,21 +1,17 @@
 package io.appmetrica.analytics.impl;
 /* renamed from: io.appmetrica.analytics.impl.vj  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0654vj implements Xa {
+public final class C0654vj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f1173a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ Throwable c;
+    public final /* synthetic */ String f1172a;
 
-    public C0654vj(String str, String str2, Throwable th) {
-        this.f1173a = str;
-        this.b = str2;
-        this.c = th;
+    public C0654vj(String str) {
+        this.f1172a = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.reportError(this.f1173a, this.b, this.c);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.setUserProfileID(this.f1172a);
     }
 }

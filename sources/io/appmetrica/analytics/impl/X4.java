@@ -1,68 +1,11 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 /* loaded from: classes5.dex */
-public class X4 {
+public final class X4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f752a;
-    public final String b;
+    public final /* synthetic */ Y4 f746a;
 
-    public X4(String str, String str2) {
-        this.f752a = str;
-        this.b = str2;
-    }
-
-    public final String a() {
-        return ApiKeyUtils.createPartialApiKey(this.b);
-    }
-
-    public final String b() {
-        return this.b;
-    }
-
-    public final String c() {
-        return this.f752a;
-    }
-
-    public boolean d() {
-        return false;
-    }
-
-    public String e() {
-        return this.f752a + "_" + ApiKeyUtils.createPartialApiKey(this.b);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && getClass() == obj.getClass()) {
-            X4 x4 = (X4) obj;
-            String str = this.f752a;
-            if (str == null ? x4.f752a != null : !str.equals(x4.f752a)) {
-                return false;
-            }
-            String str2 = this.b;
-            String str3 = x4.b;
-            if (str2 != null) {
-                return str2.equals(str3);
-            }
-            if (str3 == null) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        String str = this.f752a;
-        int hashCode = (str != null ? str.hashCode() : 0) * 31;
-        String str2 = this.b;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
-    }
-
-    public String toString() {
-        return this.f752a + "_" + this.b;
+    public X4(Y4 y4) {
+        this.f746a = y4;
     }
 }

@@ -1,42 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.ContentValues;
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
-import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
-import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.lf  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0401lf implements F5 {
-    @Override // kotlin.jvm.functions.Function1
-    /* renamed from: a */
-    public final C0650vf invoke(ContentValues contentValues) {
-        String asString = contentValues.getAsString("tracking_id");
-        if (TextUtils.isEmpty(asString)) {
-            AbstractC0379kj.a("Tracking id is empty", new Object[0]);
-            return null;
-        } else if (ParseUtils.parseLong(asString) == null) {
-            AbstractC0379kj.a("Tracking id from preload info content provider is not a number", new Object[0]);
-            return null;
-        } else {
-            try {
-                String asString2 = contentValues.getAsString("additional_params");
-                if (TextUtils.isEmpty(asString2)) {
-                    AbstractC0379kj.a("No additional params", new Object[0]);
-                    return null;
-                }
-                JSONObject jSONObject = new JSONObject(asString2);
-                if (jSONObject.length() == 0) {
-                    AbstractC0379kj.a("Additional params are empty", new Object[0]);
-                    return null;
-                }
-                AbstractC0379kj.a("Successfully parsed preload info. Tracking id = %s, additionalParams = %s", asString, jSONObject);
-                return new C0650vf(asString, jSONObject, true, false, Y7.e);
-            } catch (Throwable th) {
-                ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format("Could not parse additional parameters", new Object[0]) + "\n" + StringUtils.throwableToString(th), new Object[0]);
-                return null;
-            }
+public final class C0401lf extends S7 {
+    @Override // io.appmetrica.analytics.impl.S7
+    public final boolean a(C0550rf c0550rf, C0550rf c0550rf2) {
+        if (c0550rf.c) {
+            return !c0550rf2.c || ((Number) this.f674a.a(c0550rf.e)).intValue() > ((Number) this.f674a.a(c0550rf2.e)).intValue();
         }
+        return false;
     }
 }

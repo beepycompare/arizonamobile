@@ -1,17 +1,21 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes5.dex */
-public abstract class H4 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final E4 f501a;
-
-    public H4(E4 e4) {
-        this.f501a = e4;
+public abstract class H4 extends AbstractC0491p5 {
+    public H4(BaseRequestConfig.ComponentLoader<Object, Object, M5> componentLoader, C0279gm c0279gm, BaseRequestConfig.BaseRequestArguments<C0490p4, Object> baseRequestArguments) {
+        super(componentLoader, c0279gm, baseRequestArguments);
     }
 
-    public final E4 a() {
-        return this.f501a;
+    @Override // io.appmetrica.analytics.impl.AbstractC0491p5
+    public final void a(Object obj) {
+        C0490p4 c0490p4 = (C0490p4) obj;
+        synchronized (this) {
+            super.a((Object) c0490p4);
+        }
     }
 
-    public abstract boolean a(W5 w5, B4 b4);
+    public final synchronized void a(C0490p4 c0490p4) {
+        super.a((Object) c0490p4);
+    }
 }

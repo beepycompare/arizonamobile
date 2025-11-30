@@ -1,131 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import com.google.common.net.HttpHeaders;
-import io.appmetrica.analytics.networktasks.internal.ConfigProvider;
-import io.appmetrica.analytics.networktasks.internal.FullUrlFormer;
-import io.appmetrica.analytics.networktasks.internal.RequestDataHolder;
-import io.appmetrica.analytics.networktasks.internal.ResponseDataHolder;
-import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
-import io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask;
-import javax.net.ssl.SSLSocketFactory;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes5.dex */
-public final class Cm implements UnderlyingNetworkTask {
+public final class Cm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Em f430a;
-    public C0305hm b;
-    public Nl c;
-    public final RequestDataHolder d;
-    public final ConfigProvider e;
-    public final ResponseDataHolder f;
-    public final FullUrlFormer g;
-    public final Vl h;
+    public final Context f437a;
+    public final String b;
+    public final C0124am c;
+    public final Gl d;
+    public final C0330im e;
+    public final C0664w4 f;
+    public final C0253fm g;
+    public final N7 h;
+    public final SystemTimeProvider i;
+    public final A3 j;
+    public final D3 k;
+    public final Jl l;
+    public final C0673wd m;
+    public final qo n;
 
-    public Cm(Em em, FullUrlFormer<C0253fm> fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider<C0253fm> configProvider) {
-        this(em, new Vl(), fullUrlFormer, requestDataHolder, responseDataHolder, configProvider);
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final String description() {
-        return "Startup task for component: " + this.f430a.f465a.f.toString();
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final FullUrlFormer<?> getFullUrlFormer() {
-        return this.g;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final RequestDataHolder getRequestDataHolder() {
-        return this.d;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final ResponseDataHolder getResponseDataHolder() {
-        return this.f;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final RetryPolicyConfig getRetryPolicyConfig() {
-        return ((C0253fm) this.e.getConfig()).getRetryPolicyConfig();
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final SSLSocketFactory getSslSocketFactory() {
-        ((El) C0620ua.H.A()).getClass();
-        return null;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final boolean onCreateTask() {
-        this.d.setHeader(HttpHeaders.ACCEPT_ENCODING, "encrypted");
-        return this.f430a.g();
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onPerformRequest() {
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onPostRequestComplete(boolean z) {
-        if (z) {
-            return;
-        }
-        this.c = Nl.PARSE;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final boolean onRequestComplete() {
-        C0305hm handle = this.h.handle(this.f);
-        this.b = handle;
-        return handle != null;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onRequestError(Throwable th) {
-        this.c = Nl.NETWORK;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onShouldNotExecute() {
-        this.c = Nl.NETWORK;
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onSuccessfulTaskFinished() {
-        if (this.b == null || this.f.getResponseHeaders() == null) {
-            return;
-        }
-        this.f430a.a(this.b, (C0253fm) this.e.getConfig(), this.f.getResponseHeaders());
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onTaskAdded() {
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onTaskFinished() {
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onTaskRemoved() {
-    }
-
-    @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
-    public final void onUnsuccessfulTaskFinished() {
-        if (this.c == null) {
-            this.c = Nl.UNKNOWN;
-        }
-        this.f430a.a(this.c);
-    }
-
-    public Cm(Em em, Vl vl, FullUrlFormer fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider configProvider) {
-        this.f430a = em;
-        this.h = vl;
-        this.d = requestDataHolder;
-        this.f = responseDataHolder;
-        this.e = configProvider;
-        this.g = fullUrlFormer;
-        fullUrlFormer.setHosts(((C0253fm) configProvider.getConfig()).k());
+    public Cm(Context context, String str, C0124am c0124am, Gl gl) {
+        this.f437a = context;
+        this.b = str;
+        this.c = c0124am;
+        this.d = gl;
+        C0330im A = C0471oa.k().A();
+        this.e = A;
+        C0279gm b = A.b();
+        this.f = new C0664w4(str);
+        this.g = new C0253fm(context);
+        this.h = new N7();
+        this.i = new SystemTimeProvider();
+        this.j = C0471oa.k().f();
+        this.k = new D3();
+        this.l = new Jl(new C0150bm(context, str), b, c0124am);
+        this.m = C0471oa.k().q();
+        this.n = new qo();
     }
 }

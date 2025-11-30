@@ -1,22 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.internal.IAppMetricaService;
+import io.appmetrica.analytics.IReporter;
+import java.util.HashMap;
 /* loaded from: classes5.dex */
-public class Ug extends Ch {
-    public final Ah e;
+public final class Ug extends Sg {
+    public final IReporter b;
 
-    public Ug(C0486p0 c0486p0, InterfaceC0201dl interfaceC0201dl, Ah ah) {
-        super(c0486p0, interfaceC0201dl);
-        this.e = ah;
+    public Ug(Y4 y4, IReporter iReporter) {
+        super(y4);
+        this.b = iReporter;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ch
-    public final void a(Throwable th) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ch
-    public final void a(IAppMetricaService iAppMetricaService) {
-        Ah ah = this.e;
-        iAppMetricaService.reportData(ah.c, ah.f397a.d(ah.e.c()));
+    @Override // io.appmetrica.analytics.impl.Sg
+    public final boolean a(Q5 q5) {
+        Hc hc = (Hc) Hc.c.get(q5.d);
+        HashMap hashMap = new HashMap();
+        hashMap.put("type", hc.f505a);
+        hashMap.put("delivery_method", hc.b);
+        this.b.reportEvent("crash_saved", hashMap);
+        return false;
     }
 }

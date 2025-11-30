@@ -1,13 +1,74 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class X5 extends A4 {
-    public X5(String str, double d) {
-        super(2, str, Double.valueOf(d), new C0696xb(), new C0739z4(new Nb(new C0589t4(100))));
+public final class X5 extends MessageNano {
+    public static volatile X5[] b;
+
+    /* renamed from: a  reason: collision with root package name */
+    public String f747a;
+
+    public X5() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.A4
-    public final void a(C0307ho c0307ho) {
-        C0358jo c0358jo = c0307ho.d;
-        c0358jo.c = ((Double) this.f).doubleValue() + c0358jo.c;
+    public static X5[] b() {
+        if (b == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (b == null) {
+                    b = new X5[0];
+                }
+            }
+        }
+        return b;
+    }
+
+    public final X5 a() {
+        this.f747a = "";
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        return CodedOutputByteBufferNano.computeStringSize(1, this.f747a) + super.computeSerializedSize();
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        codedOutputByteBufferNano.writeString(1, this.f747a);
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final X5 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag != 10) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.f747a = codedInputByteBufferNano.readString();
+            }
+        }
+        return this;
+    }
+
+    public static X5 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new X5().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static X5 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (X5) MessageNano.mergeFrom(new X5(), bArr);
     }
 }

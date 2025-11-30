@@ -1,16 +1,8 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public enum Y7 {
-    b("UNDEFINED"),
-    c("APP"),
-    d("SATELLITE"),
-    e("RETAIL");
-    
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f767a;
-
-    Y7(String str) {
-        this.f767a = str;
+public final class Y7 implements Vd {
+    @Override // io.appmetrica.analytics.impl.Vd
+    public final C0214e9 a(Integer num, String str) {
+        return null;
     }
 }

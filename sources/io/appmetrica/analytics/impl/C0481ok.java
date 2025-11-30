@@ -1,93 +1,46 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Handler;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import java.util.HashMap;
+import android.util.SparseArray;
 /* renamed from: io.appmetrica.analytics.impl.ok  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0481ok {
+public final class C0481ok extends Kc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0456nk f1044a;
-    public volatile G9 b;
-    public volatile G9 c;
-    public volatile G9 d;
-    public volatile G9 e;
-    public volatile G9 f;
-    public volatile G9 g;
-    public volatile ExecutorC0431mk h;
+    public final xo f1053a;
 
     public C0481ok() {
-        this(new C0456nk());
+        this(C0471oa.k().D().b());
     }
 
-    public final IHandlerExecutor a() {
-        if (this.g == null) {
-            synchronized (this) {
-                if (this.g == null) {
-                    this.f1044a.getClass();
-                    HandlerThreadC0345jb a2 = G9.a("IAA-SDE");
-                    this.g = new G9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
-            }
+    @Override // io.appmetrica.analytics.impl.Kc
+    public final void a(int i) {
+        xo xoVar = this.f1053a;
+        synchronized (xoVar) {
+            zo zoVar = xoVar.f1206a;
+            zoVar.a(zoVar.a().put("last_migration_api_level", i));
         }
-        return this.g;
     }
 
-    public final IHandlerExecutor b() {
-        if (this.b == null) {
-            synchronized (this) {
-                if (this.b == null) {
-                    this.f1044a.getClass();
-                    HandlerThreadC0345jb a2 = G9.a("IAA-SC");
-                    this.b = new G9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
-            }
+    @Override // io.appmetrica.analytics.impl.Kc
+    public final int b() {
+        int optInt;
+        xo xoVar = this.f1053a;
+        synchronized (xoVar) {
+            optInt = xoVar.f1206a.a().optInt("last_migration_api_level", -1);
         }
-        return this.b;
+        return optInt;
     }
 
-    public final IHandlerExecutor c() {
-        if (this.d == null) {
-            synchronized (this) {
-                if (this.d == null) {
-                    this.f1044a.getClass();
-                    HandlerThreadC0345jb a2 = G9.a("IAA-SMH-1");
-                    this.d = new G9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
-            }
-        }
-        return this.d;
+    @Override // io.appmetrica.analytics.impl.Kc
+    public final SparseArray<Jc> c() {
+        SparseArray<Jc> sparseArray = new SparseArray<>(1);
+        sparseArray.put(112, new C0506pk(this.f1053a));
+        sparseArray.put(115, new C0531qk());
+        sparseArray.put(116, new C0605tk());
+        return sparseArray;
     }
 
-    public final IHandlerExecutor d() {
-        if (this.e == null) {
-            synchronized (this) {
-                if (this.e == null) {
-                    this.f1044a.getClass();
-                    HandlerThreadC0345jb a2 = G9.a("IAA-SNTPE");
-                    this.e = new G9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
-            }
-        }
-        return this.e;
-    }
-
-    public final IHandlerExecutor e() {
-        if (this.c == null) {
-            synchronized (this) {
-                if (this.c == null) {
-                    this.f1044a.getClass();
-                    HandlerThreadC0345jb a2 = G9.a("IAA-STE");
-                    this.c = new G9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
-            }
-        }
-        return this.c;
-    }
-
-    public C0481ok(C0456nk c0456nk) {
-        new HashMap();
-        this.f1044a = c0456nk;
+    public C0481ok(xo xoVar) {
+        this.f1053a = xoVar;
     }
 }

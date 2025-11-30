@@ -13,10 +13,10 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class U implements Ha {
+public final class U implements Ba {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f713a;
+    public final Context f700a;
     public final ICommonExecutor b;
     public FutureTask i;
     public final J j;
@@ -24,20 +24,20 @@ public final class U implements Ha {
     public final String c = "advertising identifiers collecting is forbidden by client configuration";
     public final String d = "advertising identifiers collecting is forbidden by startup";
     public final String e = "advertising identifiers collecting is forbidden by unknown reason";
-    public final N f = new N(new Eg(Constants.REFERRER_API_GOOGLE));
-    public final N g = new N(new Eg("huawei"));
-    public final N h = new N(new Eg("yandex"));
+    public final N f = new N(new Ag(Constants.REFERRER_API_GOOGLE));
+    public final N g = new N(new Ag("huawei"));
+    public final N h = new N(new Ag("yandex"));
     public volatile AdvertisingIdsHolder k = new AdvertisingIdsHolder();
     public G l = new G(4, 4, 4);
 
-    public U(Context context, ICommonExecutor iCommonExecutor, C0356jm c0356jm) {
-        this.f713a = context;
+    public U(Context context, ICommonExecutor iCommonExecutor, C0279gm c0279gm) {
+        this.f700a = context;
         this.b = iCommonExecutor;
-        this.j = new J(c0356jm);
+        this.j = new J(c0279gm);
     }
 
     public static final Void e(U u) {
-        u.k = new AdvertisingIdsHolder(u.a(u.l.f482a, new Q(u)), u.a(u.l.b, new S(u)), u.a(u.l.c, new T(u, new C0219ee())));
+        u.k = new AdvertisingIdsHolder(u.a(u.l.f486a, new Q(u)), u.a(u.l.b, new S(u)), u.a(u.l.c, new T(u, new Yd())));
         return null;
     }
 
@@ -46,7 +46,7 @@ public final class U implements Ha {
         return getIdentifiers();
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha
+    @Override // io.appmetrica.analytics.impl.Ba
     public final synchronized void init() {
         if (this.i == null) {
             this.l = this.j.a();
@@ -61,27 +61,27 @@ public final class U implements Ha {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha, io.appmetrica.analytics.impl.InterfaceC0483om
-    public final synchronized void a(C0356jm c0356jm) {
-        this.j.a(c0356jm);
-        a((Li) new C0219ee(), false);
+    @Override // io.appmetrica.analytics.impl.Ba, io.appmetrica.analytics.impl.InterfaceC0408lm
+    public final synchronized void a(C0279gm c0279gm) {
+        this.j.a(c0279gm);
+        a((Hi) new Yd(), false);
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha
+    @Override // io.appmetrica.analytics.impl.Ba
     public final synchronized void b(boolean z) {
         this.m = true;
         this.j.b.update(z);
-        a((Li) new C0219ee(), false);
+        a((Hi) new Yd(), false);
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha
+    @Override // io.appmetrica.analytics.impl.Ba
     public final synchronized void c(boolean z) {
         if (!this.m) {
             b(z);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha
+    @Override // io.appmetrica.analytics.impl.Ba
     public final synchronized AdvertisingIdsHolder getIdentifiers() {
         FutureTask futureTask = this.i;
         if (futureTask == null) {
@@ -95,26 +95,26 @@ public final class U implements Ha {
         return this.k;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha
+    @Override // io.appmetrica.analytics.impl.Ba
     public final synchronized AdvertisingIdsHolder a() {
-        return a(new C0219ee());
+        return a(new Yd());
     }
 
-    @Override // io.appmetrica.analytics.impl.Ha
-    public final synchronized AdvertisingIdsHolder a(Li li) {
+    @Override // io.appmetrica.analytics.impl.Ba
+    public final synchronized AdvertisingIdsHolder a(Hi hi) {
         try {
-            a(li, true).get();
+            a(hi, true).get();
         } catch (InterruptedException | ExecutionException unused) {
         }
         return this.k;
     }
 
-    public final FutureTask a(final Li li, final boolean z) {
+    public final FutureTask a(final Hi hi, final boolean z) {
         final G a2 = this.j.a();
         FutureTask futureTask = new FutureTask(new Callable() { // from class: io.appmetrica.analytics.impl.U$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return U.a(z, a2, this, li);
+                return U.a(z, a2, this, hi);
             }
         });
         this.i = futureTask;
@@ -127,10 +127,10 @@ public final class U implements Ha {
         return futureTask2;
     }
 
-    public static final Void a(boolean z, G g, U u, Li li) {
+    public static final Void a(boolean z, G g, U u, Hi hi) {
         if (z || !Intrinsics.areEqual(g, u.l)) {
             AdvertisingIdsHolder advertisingIdsHolder = u.k;
-            AdTrackingInfoResult a2 = u.a(g.f482a, new Q(u));
+            AdTrackingInfoResult a2 = u.a(g.f486a, new Q(u));
             AdTrackingInfoResult google = advertisingIdsHolder.getGoogle();
             IdentifierStatus identifierStatus = a2.mStatus;
             IdentifierStatus identifierStatus2 = IdentifierStatus.UNKNOWN;
@@ -142,7 +142,7 @@ public final class U implements Ha {
             if (a3.mStatus == identifierStatus2) {
                 a3 = new AdTrackingInfoResult(huawei.mAdTrackingInfo, a3.mStatus, a3.mErrorExplanation);
             }
-            AdTrackingInfoResult a4 = u.a(g.c, new T(u, li));
+            AdTrackingInfoResult a4 = u.a(g.c, new T(u, hi));
             AdTrackingInfoResult yandex = advertisingIdsHolder.getYandex();
             if (a4.mStatus == identifierStatus2) {
                 a4 = new AdTrackingInfoResult(yandex.mAdTrackingInfo, a4.mStatus, a4.mErrorExplanation);

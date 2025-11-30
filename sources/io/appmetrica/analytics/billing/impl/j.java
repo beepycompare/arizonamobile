@@ -11,18 +11,18 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class j implements BillingInfoSender {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceComponentModuleReporter f212a;
+    public final ServiceComponentModuleReporter f215a;
     public final Executor b;
     public final o c;
 
     public j(ServiceComponentModuleReporter serviceComponentModuleReporter, Executor executor, o oVar) {
-        this.f212a = serviceComponentModuleReporter;
+        this.f215a = serviceComponentModuleReporter;
         this.b = executor;
         this.c = oVar;
     }
 
     public static final void a(j jVar, ProductInfo productInfo) {
-        ServiceComponentModuleReporter serviceComponentModuleReporter = jVar.f212a;
+        ServiceComponentModuleReporter serviceComponentModuleReporter = jVar.f215a;
         ServiceModuleCounterReport.Builder withType = ServiceModuleCounterReport.Companion.newBuilder().withType(40976);
         jVar.c.getClass();
         serviceComponentModuleReporter.handleReport(withType.withValueBytes(o.a(productInfo)).build());

@@ -11,13 +11,13 @@ public enum AppSetIdScope {
     
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f269a;
+    private final String f272a;
 
     AppSetIdScope(String str) {
-        this.f269a = str;
+        this.f272a = str;
     }
 
     public final String getValue() {
-        return this.f269a;
+        return this.f272a;
     }
 }

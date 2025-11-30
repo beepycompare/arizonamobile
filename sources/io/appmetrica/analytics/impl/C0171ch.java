@@ -1,57 +1,84 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 /* renamed from: io.appmetrica.analytics.impl.ch  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0171ch extends Wg {
-    public final R8 b;
+public final class C0171ch extends Sg {
+    public final C0699xe b;
+    public final ProtobufStateStorage c;
+    public final C0737z2 d;
+    public final C0182d2 e;
+    public final C0562s2 f;
 
-    public C0171ch(C0210e5 c0210e5) {
-        this(c0210e5, c0210e5.j());
+    public C0171ch(Y4 y4, C0699xe c0699xe) {
+        this(y4, c0699xe, ((Sm) Qm.a(U1.class)).create(y4.getContext()), new C0737z2(y4.getContext()), new C0182d2(), new C0562s2(y4.getContext()));
     }
 
-    @Override // io.appmetrica.analytics.impl.Wg
-    public final boolean a(W5 w5) {
-        EnumC0370ka enumC0370ka;
-        EnumC0370ka enumC0370ka2;
-        if (!TextUtils.isEmpty(w5.getName())) {
-            R8 r8 = this.b;
-            String name = w5.getName();
-            if (r8.c == null) {
-                r8.a();
+    @Override // io.appmetrica.analytics.impl.Sg
+    public final boolean a(Q5 q5) {
+        Y4 y4 = this.f679a;
+        y4.b.toString();
+        if (y4.t.c() && y4.x()) {
+            U1 u1 = (U1) this.c.read();
+            List list = u1.f702a;
+            C0712y2 c0712y2 = u1.b;
+            C0737z2 c0737z2 = this.d;
+            c0737z2.getClass();
+            U1 u12 = null;
+            C0712y2 a2 = AndroidUtils.isApiAchieved(28) ? C0637v2.a(c0737z2.f1228a, c0737z2.b) : null;
+            List list2 = u1.c;
+            List list3 = (List) SystemServiceUtils.accessSystemServiceSafelyOrDefault(this.f.f1110a, "getting available providers", "location manager", Collections.emptyList(), new C0537r2());
+            C0699xe c0699xe = this.b;
+            Context context = this.f679a.f760a;
+            c0699xe.getClass();
+            ArrayList a3 = new Qi(context, new SafePackageManager()).a();
+            if (CollectionUtils.areCollectionsEqual(a3, list)) {
+                a3 = null;
             }
-            int hashCode = name.hashCode();
-            if (r8.c.b.contains(Integer.valueOf(hashCode))) {
-                enumC0370ka2 = EnumC0370ka.NON_FIRST_OCCURENCE;
-            } else {
-                T8 t8 = r8.c;
-                if (t8.f701a) {
-                    enumC0370ka = EnumC0370ka.FIRST_OCCURRENCE;
-                } else {
-                    enumC0370ka = EnumC0370ka.UNKNOWN;
+            if (a3 != null || !mo.a(c0712y2, a2) || !CollectionUtils.areCollectionsEqual(list2, list3)) {
+                if (a3 != null) {
+                    list = a3;
                 }
-                if (t8.d < 1000) {
-                    t8.b.add(Integer.valueOf(hashCode));
-                    t8.d++;
-                } else {
-                    t8.f701a = false;
-                }
-                W8 w8 = r8.b;
-                T8 t82 = r8.c;
-                IBinaryDataHelper iBinaryDataHelper = w8.c;
-                V8 v8 = w8.b;
-                w8.f742a.getClass();
-                iBinaryDataHelper.insert("event_hashes", v8.toByteArray((V8) U8.a(t82)));
-                enumC0370ka2 = enumC0370ka;
+                u12 = new U1(list, a2, list3);
             }
-            w5.k = enumC0370ka2;
+            if (u12 == null) {
+                if (y4.A()) {
+                    C0395l9 c0395l9 = y4.n;
+                    Q5 a4 = Q5.a(q5, u1.f702a, u1.b, this.e, u1.c);
+                    c0395l9.a(a4, Sk.a(c0395l9.c.b(a4), a4.i));
+                    long currentTimeSeconds = c0395l9.i.currentTimeSeconds();
+                    c0395l9.k = currentTimeSeconds;
+                    c0395l9.f991a.a(currentTimeSeconds).b();
+                    return false;
+                }
+                return false;
+            }
+            C0395l9 c0395l92 = y4.n;
+            Q5 a5 = Q5.a(q5, u12.f702a, u12.b, this.e, u12.c);
+            c0395l92.a(a5, Sk.a(c0395l92.c.b(a5), a5.i));
+            long currentTimeSeconds2 = c0395l92.i.currentTimeSeconds();
+            c0395l92.k = currentTimeSeconds2;
+            c0395l92.f991a.a(currentTimeSeconds2).b();
+            this.c.save(u12);
+            return false;
         }
         return false;
     }
 
-    public C0171ch(C0210e5 c0210e5, R8 r8) {
-        super(c0210e5);
-        this.b = r8;
+    public C0171ch(Y4 y4, C0699xe c0699xe, ProtobufStateStorage protobufStateStorage, C0737z2 c0737z2, C0182d2 c0182d2, C0562s2 c0562s2) {
+        super(y4);
+        this.b = c0699xe;
+        this.c = protobufStateStorage;
+        this.d = c0737z2;
+        this.e = c0182d2;
+        this.f = c0562s2;
     }
 }

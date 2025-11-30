@@ -3,18 +3,18 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class k0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final h0 f1368a;
+    public final h0 f1370a;
     public final l0 b;
     public final i0 c;
 
     public k0(h0 h0Var, l0 l0Var, i0 i0Var) {
-        this.f1368a = h0Var;
+        this.f1370a = h0Var;
         this.b = l0Var;
         this.c = i0Var;
     }
 
     public final h0 a() {
-        return this.f1368a;
+        return this.f1370a;
     }
 
     public final i0 b() {
@@ -26,7 +26,7 @@ public final class k0 {
     }
 
     public final String toString() {
-        return "ServiceSideScreenshotConfig(apiCaptorConfig=" + this.f1368a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ServiceSideScreenshotConfig(apiCaptorConfig=" + this.f1370a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     /* JADX WARN: Illegal instructions before constructor call */

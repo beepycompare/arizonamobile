@@ -1,14 +1,72 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleRegistry;
+import io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorProvider;
+import io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext;
+import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade;
 /* loaded from: classes5.dex */
-public final class L3 implements Mm {
-    public final A3 a(C0738z3 c0738z3, List<C0738z3> list) {
-        return new A3(c0738z3, list);
+public final class L3 implements I5 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f563a;
+    public final L5 b = new L5(new C0339j5());
+    public final C0209e4 c = new C0209e4(C0158c4.l().b(getContext()));
+    public final C0139bb d = new C0139bb();
+    public final C0460o e = C0158c4.l().a();
+    public final J3 f = new J3();
+    public final Rc g = new Rc();
+    public final K3 h = new K3();
+
+    public L3(Context context) {
+        this.f563a = context;
     }
 
-    @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(Object obj, Object obj2) {
-        return new A3((C0738z3) obj, (List) obj2);
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ActivityLifecycleRegistry getActivityLifecycleRegistry() {
+        return this.e;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ModuleClientActivator getClientActivator() {
+        return this.f;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ModuleClientExecutorProvider getClientExecutorProvider() {
+        return this.g;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ClientStorageProvider getClientStorageProvider() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final Context getContext() {
+        return this.f563a;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final InternalClientModuleFacade getInternalClientModuleFacade() {
+        return this.d;
+    }
+
+    @Override // io.appmetrica.analytics.impl.I5, io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final K5 getModuleAdRevenueContext() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ProcessDetector getProcessDetector() {
+        return this.h;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
+    public final ModuleAdRevenueContext getModuleAdRevenueContext() {
+        return this.b;
     }
 }

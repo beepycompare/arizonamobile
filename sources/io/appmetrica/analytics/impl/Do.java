@@ -1,7 +1,6 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes5.dex */
-public interface Do {
-    String a();
 
-    void a(String str);
+import android.os.Binder;
+/* loaded from: classes5.dex */
+public final class Do extends Binder {
 }

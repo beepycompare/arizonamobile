@@ -1,20 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
+import android.util.SparseArray;
 /* loaded from: classes5.dex */
-public final class Pn extends Ch {
-    public final int e;
-    public final Bundle f;
+public abstract class Pn {
 
-    public Pn(C0486p0 c0486p0, InterfaceC0201dl interfaceC0201dl, int i, Bundle bundle) {
-        super(c0486p0, interfaceC0201dl);
-        this.e = i;
-        this.f = bundle;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public static final SparseArray f642a;
 
-    @Override // io.appmetrica.analytics.impl.Ch
-    public final void a(IAppMetricaService iAppMetricaService) {
-        iAppMetricaService.reportData(this.e, this.f);
+    static {
+        SparseArray sparseArray = new SparseArray();
+        f642a = sparseArray;
+        sparseArray.put(0, "String");
+        sparseArray.put(1, "Number");
+        sparseArray.put(2, "Counter");
     }
 }

@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes5.dex */
-public final class Cj implements Xa {
+public final class Cj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ECommerceEvent f428a;
+    public final /* synthetic */ PluginErrorDetails f434a;
 
-    public Cj(ECommerceEvent eCommerceEvent) {
-        this.f428a = eCommerceEvent;
+    public Cj(PluginErrorDetails pluginErrorDetails) {
+        this.f434a = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.reportECommerce(this.f428a);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.getPluginExtension().reportUnhandledException(this.f434a);
     }
 }

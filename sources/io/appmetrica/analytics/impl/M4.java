@@ -1,17 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.internal.CounterConfiguration;
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Lambda;
 /* loaded from: classes5.dex */
-public final class M4 extends Kh {
-    public M4(Gf gf) {
-        super(gf, new CounterConfiguration(), new I8(new C0656vl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment")));
-        b().setReporterType(CounterConfigurationReporterType.COMMUTATION);
+public final class M4 extends Lambda implements Function0 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final M4 f582a = new M4();
+
+    public M4() {
+        super(0);
     }
 
-    @Override // io.appmetrica.analytics.impl.Kh
-    public final boolean f() {
-        return true;
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        return 1;
     }
 }

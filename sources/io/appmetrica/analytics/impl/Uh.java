@@ -1,21 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AdRevenue;
+import android.content.Context;
+import io.appmetrica.analytics.ReporterConfig;
 /* loaded from: classes5.dex */
 public final class Uh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f720a;
-    public final /* synthetic */ C0404li b;
+    public final /* synthetic */ ReporterConfig f712a;
+    public final /* synthetic */ C0301hi b;
 
-    public Uh(C0404li c0404li, AdRevenue adRevenue) {
-        this.b = c0404li;
-        this.f720a = adRevenue;
+    public Uh(C0301hi c0301hi, ReporterConfig reporterConfig) {
+        this.b = c0301hi;
+        this.f712a = reporterConfig;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0404li c0404li = this.b;
-        C0404li.a(c0404li.f993a, c0404li.d, c0404li.e).reportAdRevenue(this.f720a);
+        C0301hi c0301hi = this.b;
+        ReporterConfig reporterConfig = this.f712a;
+        C0735z0 c0735z0 = c0301hi.f926a;
+        Context context = c0301hi.d;
+        c0735z0.getClass();
+        C0710y0.a(context).f().a(reporterConfig);
     }
 }

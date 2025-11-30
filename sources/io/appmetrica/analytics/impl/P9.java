@@ -1,15 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import android.content.pm.FeatureInfo;
 /* loaded from: classes5.dex */
-public final class P9 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0210e5 f634a;
-    public final TimeProvider b;
-
-    public P9(C0210e5 c0210e5, TimeProvider timeProvider) {
-        this.f634a = c0210e5;
-        this.b = timeProvider;
+public final class P9 extends R9 {
+    @Override // io.appmetrica.analytics.impl.R9
+    public final S9 b(FeatureInfo featureInfo) {
+        return new S9(featureInfo.name, featureInfo.version, (featureInfo.flags & 1) != 0);
     }
 }

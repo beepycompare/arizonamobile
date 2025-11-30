@@ -1,58 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
 /* renamed from: io.appmetrica.analytics.impl.xa  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public class C0695xa extends K2 {
-    public final Aa b;
+public final class C0695xa implements HostRetryInfoProvider {
 
-    public C0695xa(int i) {
-        this(i, null);
+    /* renamed from: a  reason: collision with root package name */
+    public final C0117af f1198a;
+    public final Ud b;
+
+    public C0695xa(C0117af c0117af, Ud ud) {
+        this.f1198a = c0117af;
+        this.b = ud;
     }
 
-    public int b(Object obj) {
-        return 0;
-    }
-
-    public C0695xa(int i, Aa aa) {
-        super(i);
-        this.b = aa;
-    }
-
-    @Override // io.appmetrica.analytics.impl.K2, io.appmetrica.analytics.impl.Aa
-    public final On a(List<Object> list) {
-        int i;
-        int i2 = 0;
-        if (list == null || (list.size() <= this.f554a && this.b == null)) {
-            i = 0;
-        } else {
-            ArrayList arrayList = new ArrayList();
-            i = 0;
-            int i3 = 0;
-            for (Object obj : list) {
-                if (i3 < this.f554a) {
-                    Aa aa = this.b;
-                    if (aa != null) {
-                        On a2 = aa.a(obj);
-                        Object obj2 = a2.f625a;
-                        i += a2.b.getBytesTruncated();
-                        no.a(obj, a2.f625a);
-                        obj = obj2;
-                    }
-                    arrayList.add(obj);
-                } else {
-                    i2++;
-                    i += b(obj);
-                }
-                i3++;
-            }
-            list = arrayList;
-        }
-        return new On(list, new C0614u4(i2, i));
-    }
-
-    public final Aa b() {
+    public final Ud a() {
         return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final long getLastAttemptTimeSeconds() {
+        return this.f1198a.a(this.b, 0L);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final int getNextSendAttemptNumber() {
+        return this.f1198a.a(this.b, 1);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final void saveLastAttemptTimeSeconds(long j) {
+        this.f1198a.b(this.b, j).b();
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final void saveNextSendAttemptNumber(int i) {
+        this.f1198a.b(this.b, i).b();
     }
 }

@@ -1,43 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.event.CounterReportApi;
-import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter;
+import kotlin.jvm.internal.Intrinsics;
 /* renamed from: io.appmetrica.analytics.impl.cd  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0167cd implements ModuleEventServiceHandlerReporter {
+public final class C0167cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f828a;
-    public final C0544r9 b;
-    public final W5 c;
+    public final String f831a;
+    public final boolean b;
 
-    public C0167cd(boolean z, C0544r9 c0544r9, W5 w5) {
-        this.f828a = z;
-        this.b = c0544r9;
-        this.c = w5;
+    public C0167cd(String str, boolean z) {
+        this.f831a = str;
+        this.b = z;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter
-    public final boolean isMain() {
-        return this.f828a;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof C0167cd) {
+            C0167cd c0167cd = (C0167cd) obj;
+            return Intrinsics.areEqual(this.f831a, c0167cd.f831a) && this.b == c0167cd.b;
+        }
+        return false;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter
-    public final void report(CounterReportApi counterReportApi) {
-        W5 d = W5.d(this.c);
-        d.d = counterReportApi.getType();
-        d.e = counterReportApi.getCustomType();
-        d.setName(counterReportApi.getName());
-        String value = counterReportApi.getValue();
-        if (value != null) {
-            d.setValue(value);
+    /* JADX WARN: Multi-variable type inference failed */
+    public final int hashCode() {
+        int hashCode = this.f831a.hashCode() * 31;
+        boolean z = this.b;
+        int i = z;
+        if (z != 0) {
+            i = 1;
         }
-        byte[] valueBytes = counterReportApi.getValueBytes();
-        if (valueBytes != null) {
-            d.setValueBytes(valueBytes);
-        }
-        d.g = counterReportApi.getBytesTruncated();
-        C0544r9 c0544r9 = this.b;
-        c0544r9.a(d, Wk.a(c0544r9.c.b(d), d.i));
+        return hashCode + i;
+    }
+
+    public final String toString() {
+        return "ModuleStatus(moduleName=" + this.f831a + ", loaded=" + this.b + ')';
     }
 }

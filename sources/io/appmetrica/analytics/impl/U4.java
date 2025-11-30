@@ -1,27 +1,30 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
-import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class U4 {
+public abstract class U4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final E5 f716a;
-    public final Lc b;
-    public final Lc c;
+    public final Y4 f705a;
+    public final String b = "[ComponentMigrationToV113]";
 
-    public U4(S6 s6, Vg vg) {
-        C0749ze c0749ze = new C0749ze(s6);
-        this.f716a = new E5(s6);
-        this.b = new Lc(c0749ze, new T4(vg));
-        this.c = new Lc(c0749ze, S4.f676a);
+    public U4(Y4 y4) {
+        this.f705a = y4;
     }
 
-    public final List<K8> a() {
-        return CollectionsKt.listOf((Object[]) new K8[]{this.f716a, this.b});
+    public final Y4 a() {
+        return this.f705a;
     }
 
-    public final List<K8> b() {
-        return CollectionsKt.listOf(this.c);
+    public final String b() {
+        return this.b;
+    }
+
+    public abstract boolean b(int i);
+
+    public abstract void c();
+
+    public final void a(int i) {
+        if (b(i)) {
+            c();
+        }
     }
 }

@@ -1,14 +1,17 @@
 package io.appmetrica.analytics.impl;
 /* renamed from: io.appmetrica.analytics.impl.fh  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0248fh extends Wg {
-    public C0248fh(C0210e5 c0210e5) {
-        super(c0210e5);
+public final class C0248fh extends Sg {
+    public C0248fh(Y4 y4) {
+        super(y4);
     }
 
-    @Override // io.appmetrica.analytics.impl.Wg
-    public final boolean a(W5 w5) {
-        this.f744a.j.c(w5);
+    @Override // io.appmetrica.analytics.impl.Sg
+    public final boolean a(Q5 q5) {
+        Y4 y4 = this.f679a;
+        synchronized (y4) {
+            ((C0391l5) y4.p).d();
+        }
         return false;
     }
 }

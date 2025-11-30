@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESRSAEncrypter;
 public class AESRSARequestBodyEncrypter implements RequestBodyEncrypter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AESRSAEncrypter f1294a;
+    private final AESRSAEncrypter f1293a;
 
     public AESRSARequestBodyEncrypter() {
         this(new AESRSAEncrypter());
@@ -13,7 +13,7 @@ public class AESRSARequestBodyEncrypter implements RequestBodyEncrypter {
 
     @Override // io.appmetrica.analytics.networktasks.internal.RequestBodyEncrypter
     public byte[] encrypt(byte[] bArr) {
-        return this.f1294a.encrypt(bArr);
+        return this.f1293a.encrypt(bArr);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.RequestBodyEncrypter
@@ -22,6 +22,6 @@ public class AESRSARequestBodyEncrypter implements RequestBodyEncrypter {
     }
 
     AESRSARequestBodyEncrypter(AESRSAEncrypter aESRSAEncrypter) {
-        this.f1294a = aESRSAEncrypter;
+        this.f1293a = aESRSAEncrypter;
     }
 }

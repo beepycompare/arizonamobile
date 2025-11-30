@@ -1,15 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AppMetrica;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 /* loaded from: classes5.dex */
-public abstract class D5 {
+public abstract /* synthetic */ class D5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f437a = Boolean.FALSE;
-    public static final int b = AppMetrica.getLibraryApiLevel();
-    public static final T6 c = new T6(new C0187d7(), new C7(), new C0383kn());
+    public static final /* synthetic */ int[] f441a;
 
-    public static T6 a() {
-        return c;
+    static {
+        int[] iArr = new int[ActivityEvent.values().length];
+        iArr[ActivityEvent.RESUMED.ordinal()] = 1;
+        iArr[ActivityEvent.PAUSED.ordinal()] = 2;
+        f441a = iArr;
     }
 }

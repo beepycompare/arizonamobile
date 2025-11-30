@@ -6,38 +6,38 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class C0180d0 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final W f836a;
-    public final C0467o6 b;
+    public final W f839a;
+    public final C0315i6 b;
 
     public C0180d0() {
-        this(new W(new C0758zn()), new C0467o6());
+        this(new W(new C0733yn()), new C0315i6());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Z5 fromModel(C0154c0 c0154c0) {
-        Z5 z5 = new Z5();
-        z5.f781a = this.f836a.fromModel(c0154c0.f821a);
+    public final T5 fromModel(C0154c0 c0154c0) {
+        T5 t5 = new T5();
+        t5.f689a = this.f839a.fromModel(c0154c0.f821a);
         String str = c0154c0.b;
         if (str != null) {
-            z5.b = str;
+            t5.b = str;
         }
-        z5.c = this.b.a(c0154c0.c);
-        return z5;
+        t5.c = this.b.a(c0154c0.c);
+        return t5;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        Z5 z5 = (Z5) obj;
+        T5 t5 = (T5) obj;
         throw new UnsupportedOperationException();
     }
 
-    public C0180d0(W w, C0467o6 c0467o6) {
-        this.f836a = w;
-        this.b = c0467o6;
+    public C0180d0(W w, C0315i6 c0315i6) {
+        this.f839a = w;
+        this.b = c0315i6;
     }
 
-    public final C0154c0 a(Z5 z5) {
+    public final C0154c0 a(T5 t5) {
         throw new UnsupportedOperationException();
     }
 }

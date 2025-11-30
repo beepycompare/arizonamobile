@@ -1,30 +1,28 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.HashMap;
 /* loaded from: classes5.dex */
-public abstract class A4 extends Hd {
-    public final Object f;
+public final class A4 {
 
-    public A4(int i, String str, Object obj, uo uoVar, R2 r2) {
-        super(i, str, uoVar, r2);
-        this.f = obj;
+    /* renamed from: a  reason: collision with root package name */
+    public final Gb f391a;
+
+    public A4() {
+        this(C0471oa.k().l());
     }
 
-    @Override // io.appmetrica.analytics.impl.Hd, io.appmetrica.analytics.impl.InterfaceC0281go
-    public final void a(C0255fo c0255fo) {
-        if (f()) {
-            R2 r2 = this.d;
-            int i = this.b;
-            C0307ho a2 = r2.a(c0255fo, (C0307ho) ((HashMap) c0255fo.f882a.get(i)).get(this.f506a), this);
-            if (a2 != null) {
-                a(a2);
-            }
+    public static F4 a(C0714y4 c0714y4) {
+        return new F4(new D4(c0714y4), c0714y4);
+    }
+
+    public A4(Gb gb) {
+        this.f391a = gb;
+    }
+
+    public final C0434mn a(C0714y4 c0714y4, Bm bm) {
+        C0434mn c0434mn = new C0434mn(c0714y4, new Jg(bm));
+        Gb gb = this.f391a;
+        synchronized (gb) {
+            gb.c.add(c0434mn);
         }
-    }
-
-    public abstract void a(C0307ho c0307ho);
-
-    public final Object g() {
-        return this.f;
+        return c0434mn;
     }
 }

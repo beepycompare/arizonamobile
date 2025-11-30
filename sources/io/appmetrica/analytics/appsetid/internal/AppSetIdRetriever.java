@@ -15,7 +15,7 @@ import kotlin.Metadata;
 public final class AppSetIdRetriever implements IAppSetIdRetriever {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f203a = new Object();
+    private final Object f206a = new Object();
     private final ArrayList b = new ArrayList();
 
     public static final AppSetIdScope access$convertScope(AppSetIdRetriever appSetIdRetriever, int i) {
@@ -37,7 +37,7 @@ public final class AppSetIdRetriever implements IAppSetIdRetriever {
             public void onComplete(Task<AppSetIdInfo> task) {
                 Object obj;
                 List list;
-                obj = AppSetIdRetriever.this.f203a;
+                obj = AppSetIdRetriever.this.f206a;
                 AppSetIdRetriever appSetIdRetriever = AppSetIdRetriever.this;
                 synchronized (obj) {
                     list = appSetIdRetriever.b;
@@ -50,7 +50,7 @@ public final class AppSetIdRetriever implements IAppSetIdRetriever {
                 }
             }
         };
-        synchronized (this.f203a) {
+        synchronized (this.f206a) {
             this.b.add(onCompleteListener);
         }
         appSetIdInfo.addOnCompleteListener(onCompleteListener);

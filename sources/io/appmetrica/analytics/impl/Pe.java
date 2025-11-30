@@ -1,34 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
-import java.util.concurrent.TimeUnit;
+import io.appmetrica.analytics.coreapi.internal.backport.Provider;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.plugins.IPluginReporter;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import java.util.Collection;
 /* loaded from: classes5.dex */
-public final class Pe implements Bc, ActivationBarrierCallback {
+public final class Pe implements IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0719y9 f636a;
-    public final Ac b;
-    public final Ac c;
+    public final Se f635a = new Se();
+    public final Te b = new Te();
+    public final IHandlerExecutor c = C0158c4.l().g().a();
+    public final Provider d;
 
-    public Pe(InterfaceC0719y9 interfaceC0719y9, Vg vg, C0639v4 c0639v4, C0143bf c0143bf) {
-        this.f636a = interfaceC0719y9;
-        Ac ac = new Ac(vg, c0639v4, c0143bf);
-        this.b = ac;
-        this.c = ac;
-        if (ac.b()) {
-            return;
+    public Pe(Provider<Sa> provider) {
+        this.d = provider;
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
+        Se se = this.f635a;
+        se.f678a.a(pluginErrorDetails);
+        if (se.c.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1107a) {
+            this.b.getClass();
+            this.c.execute(new Ne(this, pluginErrorDetails, str));
         }
-        C0620ua.k().a().subscribe(TimeUnit.SECONDS.toMillis(O7.f618a.longValue()), C0620ua.k().x().e(), this);
     }
 
-    @Override // io.appmetrica.analytics.impl.Bc
-    public final K8 a() {
-        return this.c;
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
+        this.f635a.f678a.a(pluginErrorDetails);
+        this.b.getClass();
+        this.c.execute(new Me(this, pluginErrorDetails));
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
-    public final void onWaitFinished() {
-        this.b.a();
-        ((C0540r5) this.f636a.a()).e();
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        this.f635a.b.a(str);
+        this.b.getClass();
+        this.c.execute(new Oe(this, str, str2, pluginErrorDetails));
     }
 }

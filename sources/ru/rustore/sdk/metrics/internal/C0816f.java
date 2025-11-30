@@ -6,10 +6,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0816f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0815e f1499a;
+    public final C0815e f1501a;
 
     public C0816f(C0815e jobRepeatIntervalDataSource) {
         Intrinsics.checkNotNullParameter(jobRepeatIntervalDataSource, "jobRepeatIntervalDataSource");
-        this.f1499a = jobRepeatIntervalDataSource;
+        this.f1501a = jobRepeatIntervalDataSource;
     }
 }

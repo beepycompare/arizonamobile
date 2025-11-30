@@ -1,19 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Handler;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import java.util.Set;
 /* loaded from: classes5.dex */
 public interface Ia {
-    C0390l4 a();
+    Ia a(int i, String str);
 
-    void a(AppMetricaConfig appMetricaConfig, InterfaceC0113ab interfaceC0113ab);
+    Ia a(String str, float f);
 
-    Handler b();
+    Ia a(String str, long j);
 
-    C0130b2 c();
+    Ia a(String str, String str2);
 
-    C0546rb d();
+    Ia a(String str, boolean z);
 
-    ICommonExecutor getDefaultExecutor();
+    Set a();
+
+    boolean a(String str);
+
+    void b();
+
+    boolean getBoolean(String str, boolean z);
+
+    int getInt(String str, int i);
+
+    long getLong(String str, long j);
+
+    String getString(String str, String str2);
+
+    Ia remove(String str);
 }

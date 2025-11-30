@@ -1,19 +1,12 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.internal.IdentifiersResult;
+import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.fb  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0242fb implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        return new IdentifiersResult(parcel.readString(), IdentifierStatus.from(parcel.readString()), parcel.readString());
-    }
+public final class C0242fb extends C2 {
+    public static final C0216eb b = new C0216eb();
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i) {
-        return new IdentifiersResult[i];
+    public C0242fb(K9 k9, JSONObject jSONObject) {
+        super(C0216eb.a(b, k9, jSONObject));
     }
 }

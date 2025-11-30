@@ -6,15 +6,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class g implements ActivationBarrierCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ h f364a;
+    public final /* synthetic */ h f367a;
 
     public g(h hVar) {
-        this.f364a = hVar;
+        this.f367a = hVar;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
     public final void onWaitFinished() {
-        f fVar = this.f364a.g;
+        f fVar = this.f367a.g;
         if (fVar == null) {
             Intrinsics.throwUninitializedPropertyAccessException("syncRunnable");
             fVar = null;

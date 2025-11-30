@@ -1,18 +1,72 @@
 package io.appmetrica.analytics.internal;
 
-import android.content.ContentValues;
+import android.os.Bundle;
+import android.os.IBinder;
 import android.os.Parcel;
-import android.os.Parcelable;
-import io.appmetrica.analytics.impl.I6;
 /* loaded from: classes5.dex */
-public final class b implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        return new CounterConfiguration((ContentValues) parcel.readBundle(I6.class.getClassLoader()).getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.data"), 0);
+public final class b implements IAppMetricaService {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final IBinder f1242a;
+
+    public b(IBinder iBinder) {
+        this.f1242a = iBinder;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i) {
-        return new CounterConfiguration[i];
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.f1242a;
+    }
+
+    @Override // io.appmetrica.analytics.internal.IAppMetricaService
+    public final void pauseUserSession(Bundle bundle) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken(IAppMetricaService.DESCRIPTOR);
+            if (bundle != null) {
+                obtain.writeInt(1);
+                bundle.writeToParcel(obtain, 0);
+            } else {
+                obtain.writeInt(0);
+            }
+            this.f1242a.transact(2, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // io.appmetrica.analytics.internal.IAppMetricaService
+    public final void reportData(int i, Bundle bundle) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken(IAppMetricaService.DESCRIPTOR);
+            obtain.writeInt(i);
+            if (bundle != null) {
+                obtain.writeInt(1);
+                bundle.writeToParcel(obtain, 0);
+            } else {
+                obtain.writeInt(0);
+            }
+            this.f1242a.transact(3, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // io.appmetrica.analytics.internal.IAppMetricaService
+    public final void resumeUserSession(Bundle bundle) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken(IAppMetricaService.DESCRIPTOR);
+            if (bundle != null) {
+                obtain.writeInt(1);
+                bundle.writeToParcel(obtain, 0);
+            } else {
+                obtain.writeInt(0);
+            }
+            this.f1242a.transact(1, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
     }
 }

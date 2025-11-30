@@ -6,10 +6,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0813c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final N f1494a;
+    public final N f1496a;
 
     public C0813c(N persistentMetricsEventRepository) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventRepository, "persistentMetricsEventRepository");
-        this.f1494a = persistentMetricsEventRepository;
+        this.f1496a = persistentMetricsEventRepository;
     }
 }

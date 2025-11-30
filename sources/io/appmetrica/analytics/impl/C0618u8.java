@@ -7,14 +7,13 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-import java.util.Arrays;
 /* renamed from: io.appmetrica.analytics.impl.u8  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0618u8 extends MessageNano {
     public static volatile C0618u8[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f1147a;
+    public C0543r8 f1146a;
 
     public C0618u8() {
         a();
@@ -32,7 +31,7 @@ public final class C0618u8 extends MessageNano {
     }
 
     public final C0618u8 a() {
-        this.f1147a = WireFormatNano.EMPTY_BYTES;
+        this.f1146a = null;
         this.cachedSize = -1;
         return this;
     }
@@ -40,13 +39,15 @@ public final class C0618u8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        return !Arrays.equals(this.f1147a, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(1, this.f1147a) + computeSerializedSize : computeSerializedSize;
+        C0543r8 c0543r8 = this.f1146a;
+        return c0543r8 != null ? CodedOutputByteBufferNano.computeMessageSize(1, c0543r8) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!Arrays.equals(this.f1147a, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f1147a);
+        C0543r8 c0543r8 = this.f1146a;
+        if (c0543r8 != null) {
+            codedOutputByteBufferNano.writeMessage(1, c0543r8);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -63,7 +64,10 @@ public final class C0618u8 extends MessageNano {
                     break;
                 }
             } else {
-                this.f1147a = codedInputByteBufferNano.readBytes();
+                if (this.f1146a == null) {
+                    this.f1146a = new C0543r8();
+                }
+                codedInputByteBufferNano.readMessage(this.f1146a);
             }
         }
         return this;

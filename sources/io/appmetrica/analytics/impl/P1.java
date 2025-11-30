@@ -1,20 +1,50 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import java.lang.Thread;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 /* loaded from: classes5.dex */
-public final class P1 implements InterfaceC0328ik {
-    public static final O1 b = new O1();
-    public static final int c = 1;
+public final class P1 implements Thread.UncaughtExceptionHandler {
+    public static final AtomicBoolean e = new AtomicBoolean();
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0560s0 f627a;
+    public final Ga f629a;
+    public final C0566s6 b = C0158c4.l().n();
+    public final C0492p6 c = new C0492p6();
+    public final En d = new En();
 
-    public P1(InterfaceC0560s0 interfaceC0560s0) {
-        this.f627a = interfaceC0560s0;
+    public P1(C0392l6 c0392l6) {
+        this.f629a = c0392l6;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0328ik
-    public final void reportData(int i, Bundle bundle) {
-        ((M1) this.f627a).a(bundle);
+    @Override // java.lang.Thread.UncaughtExceptionHandler
+    public final void uncaughtException(Thread thread, Throwable th) {
+        StackTraceElement[] stackTraceElementArr;
+        try {
+            e.set(true);
+            Ga ga = this.f629a;
+            C0708xn apply = this.c.apply(thread);
+            En en = this.d;
+            Thread a2 = en.f467a.a();
+            ArrayList a3 = en.a(a2, thread);
+            if (thread != a2) {
+                try {
+                    stackTraceElementArr = en.f467a.b();
+                    if (stackTraceElementArr == null) {
+                        try {
+                            stackTraceElementArr = a2.getStackTrace();
+                        } catch (SecurityException unused) {
+                        }
+                    }
+                } catch (SecurityException unused2) {
+                    stackTraceElementArr = null;
+                }
+                a3.add(0, (C0708xn) en.b.apply(a2, stackTraceElementArr));
+            }
+            ga.a(th, new V(apply, a3, this.b.f1114a.a()));
+        } catch (Throwable th2) {
+            LoggerStorage.getMainPublicOrAnonymousLogger().error(th2, th2.getMessage(), new Object[0]);
+        }
     }
 }

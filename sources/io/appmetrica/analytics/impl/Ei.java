@@ -1,17 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import android.os.ResultReceiver;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Ei extends H4 {
-    public Ei(E4 e4) {
-        super(e4);
+public final class Ei implements InterfaceC0157c3 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Object f463a;
+    public final InterfaceC0157c3 b;
+
+    public Ei(Object obj, InterfaceC0157c3 interfaceC0157c3) {
+        this.f463a = obj;
+        this.b = interfaceC0157c3;
     }
 
-    @Override // io.appmetrica.analytics.impl.H4
-    public final boolean a(W5 w5, B4 b4) {
-        Bundle bundle = w5.m;
-        this.f501a.k.a(new D4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
-        return false;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0157c3
+    public final int getBytesTruncated() {
+        return this.b.getBytesTruncated();
+    }
+
+    public final String toString() {
+        return "Result{result=" + this.f463a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

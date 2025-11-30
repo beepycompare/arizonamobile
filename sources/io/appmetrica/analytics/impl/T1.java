@@ -1,148 +1,62 @@
 package io.appmetrica.analytics.impl;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.net.Uri;
 import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import kotlin.jvm.internal.Intrinsics;
+import java.util.Iterator;
 /* loaded from: classes5.dex */
-public final class T1 {
+public final class T1 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0670wa f694a = new C0670wa();
-    public final LinkedHashMap b = new LinkedHashMap();
-    public final LinkedHashMap c = new LinkedHashMap();
+    public final ArrayList f686a = new ArrayList();
+    public volatile C0742z7 b = null;
 
-    public final void a() {
-    }
-
-    public final void a(Intent intent, int i) {
-    }
-
-    public final void a(Intent intent, int i, int i2) {
-    }
-
-    public final void a(Configuration configuration) {
+    public final void a(C0742z7 c0742z7) {
+        ArrayList a2;
+        synchronized (this) {
+            this.b = c0742z7;
+            a2 = a();
+        }
+        Iterator it = a2.iterator();
+        while (it.hasNext()) {
+            ((InterfaceC0142be) it.next()).consume(c0742z7);
+        }
     }
 
     public final void b() {
+        C0158c4.l().e.registerListener(this, ActivityEvent.CREATED);
     }
 
-    public final void c(Intent intent) {
-        if (intent != null) {
-            String action = intent.getAction();
-            if (!TextUtils.isEmpty(action)) {
-                this.f694a.a(action, Integer.valueOf(a(intent)));
-            }
-            for (Map.Entry entry : this.b.entrySet()) {
-                S1 s1 = (S1) entry.getKey();
-                if (((R1) entry.getValue()).a(intent)) {
-                    s1.a(intent);
-                }
+    public final void c() {
+        C0158c4.l().e.unregisterListener(this, ActivityEvent.CREATED);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
+    public final void onEvent(Activity activity, ActivityEvent activityEvent) {
+        Intent intent = (Intent) SystemServiceUtils.accessSystemServiceSafely(activity, "getting intent", "activity", new R1());
+        String dataString = intent == null ? null : intent.getDataString();
+        if (TextUtils.isEmpty(dataString)) {
+            return;
+        }
+        S1 s1 = new S1(dataString);
+        synchronized (this) {
+            C0742z7 c0742z7 = this.b;
+            if (c0742z7 == null) {
+                this.f686a.add(s1);
+            } else {
+                ((A9) C0158c4.l().c.a()).b.post(new Q1(s1, c0742z7));
             }
         }
     }
 
-    public final void d(Intent intent) {
-        if (intent != null) {
-            String action = intent.getAction();
-            if (!TextUtils.isEmpty(action)) {
-                C0670wa c0670wa = this.f694a;
-                Integer valueOf = Integer.valueOf(a(intent));
-                Collection collection = (Collection) c0670wa.f1183a.get(action);
-                if (collection != null && collection.remove(valueOf)) {
-                    if (collection.isEmpty() && c0670wa.b) {
-                        c0670wa.f1183a.remove(action);
-                    }
-                    new ArrayList(collection);
-                }
-            }
-            for (Map.Entry entry : this.c.entrySet()) {
-                S1 s1 = (S1) entry.getKey();
-                if (((R1) entry.getValue()).a(intent)) {
-                    s1.a(intent);
-                }
-            }
-        }
-    }
-
-    public final void b(Intent intent) {
-        if (intent != null) {
-            String action = intent.getAction();
-            if (!TextUtils.isEmpty(action)) {
-                this.f694a.a(action, Integer.valueOf(a(intent)));
-            }
-            for (Map.Entry entry : this.b.entrySet()) {
-                S1 s1 = (S1) entry.getKey();
-                if (((R1) entry.getValue()).a(intent)) {
-                    s1.a(intent);
-                }
-            }
-        }
-    }
-
-    public final void a(S1 s1) {
-        this.c.put(s1, new R1() { // from class: io.appmetrica.analytics.impl.T1$$ExternalSyntheticLambda2
-            @Override // io.appmetrica.analytics.impl.R1
-            public final boolean a(Intent intent) {
-                return T1.a(T1.this, intent);
-            }
-        });
-    }
-
-    public static final boolean a(T1 t1, Intent intent) {
-        t1.getClass();
-        if (Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction())) {
-            Collection collection = (Collection) t1.f694a.f1183a.get("io.appmetrica.analytics.IAppMetricaService");
-            return collection == null || collection.size() == 0;
-        }
-        return false;
-    }
-
-    public static int a(Intent intent) {
-        Uri data = intent.getData();
-        if (data == null || !Intrinsics.areEqual(data.getPath(), "/client")) {
-            return -1;
-        }
-        try {
-            String queryParameter = data.getQueryParameter("pid");
-            Intrinsics.checkNotNull(queryParameter);
-            return Integer.parseInt(queryParameter);
-        } catch (Throwable unused) {
-            return -1;
-        }
-    }
-
-    public final void c(S1 s1) {
-        this.b.put(s1, new R1() { // from class: io.appmetrica.analytics.impl.T1$$ExternalSyntheticLambda1
-            @Override // io.appmetrica.analytics.impl.R1
-            public final boolean a(Intent intent) {
-                return T1.c(T1.this, intent);
-            }
-        });
-    }
-
-    public static final boolean c(T1 t1, Intent intent) {
-        t1.getClass();
-        return Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction());
-    }
-
-    public final void b(S1 s1) {
-        this.b.put(s1, new R1() { // from class: io.appmetrica.analytics.impl.T1$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.R1
-            public final boolean a(Intent intent) {
-                return T1.b(T1.this, intent);
-            }
-        });
-    }
-
-    public static final boolean b(T1 t1, Intent intent) {
-        Collection collection;
-        t1.getClass();
-        return Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction()) && (collection = (Collection) t1.f694a.f1183a.get("io.appmetrica.analytics.IAppMetricaService")) != null && collection.size() == 1;
+    public final synchronized ArrayList a() {
+        ArrayList arrayList;
+        arrayList = new ArrayList(this.f686a);
+        this.f686a.clear();
+        return arrayList;
     }
 }

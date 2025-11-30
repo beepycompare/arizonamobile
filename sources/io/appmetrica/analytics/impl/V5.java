@@ -1,59 +1,93 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes5.dex */
-public final class V5 implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        EnumC0594t9 enumC0594t9;
-        Bundle readBundle = parcel.readBundle(I6.class.getClassLoader());
-        if (readBundle.containsKey("CounterReport.Source")) {
-            int i = readBundle.getInt("CounterReport.Source");
-            EnumC0594t9[] values = EnumC0594t9.values();
-            int length = values.length;
-            int i2 = 0;
-            while (true) {
-                if (i2 < length) {
-                    enumC0594t9 = values[i2];
-                    if (enumC0594t9.f1130a == i) {
-                        break;
-                    }
-                    i2++;
-                } else {
-                    enumC0594t9 = EnumC0594t9.NATIVE;
-                    break;
-                }
-            }
-        } else {
-            enumC0594t9 = null;
-        }
-        W5 w5 = new W5("", "", 0);
-        EnumC0320ib enumC0320ib = EnumC0320ib.EVENT_TYPE_UNDEFINED;
-        w5.d = readBundle.getInt("CounterReport.Type", -1);
-        w5.e = readBundle.getInt("CounterReport.CustomType");
-        w5.b = StringUtils.ifIsNullToDef(readBundle.getString("CounterReport.Value"), "");
-        w5.c = readBundle.getString("CounterReport.Environment");
-        w5.f741a = readBundle.getString("CounterReport.Event");
-        w5.f = W5.a(readBundle);
-        w5.g = readBundle.getInt("CounterReport.TRUNCATED");
-        w5.h = readBundle.getString("CounterReport.ProfileID");
-        w5.i = readBundle.getLong("CounterReport.CreationElapsedRealtime");
-        w5.j = readBundle.getLong("CounterReport.CreationTimestamp");
-        w5.k = EnumC0370ka.a(Integer.valueOf(readBundle.getInt("CounterReport.UniquenessStatus")));
-        w5.l = enumC0594t9;
-        w5.m = readBundle.getBundle("CounterReport.Payload");
-        w5.n = readBundle.containsKey("CounterReport.AttributionIdChanged") ? Boolean.valueOf(readBundle.getBoolean("CounterReport.AttributionIdChanged")) : null;
-        w5.o = readBundle.containsKey("CounterReport.OpenId") ? Integer.valueOf(readBundle.getInt("CounterReport.OpenId")) : null;
-        w5.p = CollectionUtils.bundleToMap(readBundle.getBundle("CounterReport.Extras"));
-        return w5;
+public final class V5 extends MessageNano {
+    public static volatile V5[] c;
+
+    /* renamed from: a  reason: collision with root package name */
+    public byte[] f719a;
+    public Z5 b;
+
+    public V5() {
+        a();
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i) {
-        return new W5[i];
+    public static V5[] b() {
+        if (c == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (c == null) {
+                    c = new V5[0];
+                }
+            }
+        }
+        return c;
+    }
+
+    public final V5 a() {
+        this.f719a = WireFormatNano.EMPTY_BYTES;
+        this.b = null;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        if (!Arrays.equals(this.f719a, WireFormatNano.EMPTY_BYTES)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f719a);
+        }
+        Z5 z5 = this.b;
+        return z5 != null ? CodedOutputByteBufferNano.computeMessageSize(2, z5) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!Arrays.equals(this.f719a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f719a);
+        }
+        Z5 z5 = this.b;
+        if (z5 != null) {
+            codedOutputByteBufferNano.writeMessage(2, z5);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final V5 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f719a = codedInputByteBufferNano.readBytes();
+            } else if (readTag != 18) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                if (this.b == null) {
+                    this.b = new Z5();
+                }
+                codedInputByteBufferNano.readMessage(this.b);
+            }
+        }
+        return this;
+    }
+
+    public static V5 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new V5().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static V5 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (V5) MessageNano.mergeFrom(new V5(), bArr);
     }
 }

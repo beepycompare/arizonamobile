@@ -1,21 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
+import java.util.Map;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
 /* renamed from: io.appmetrica.analytics.impl.rd  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0548rd extends SafeRunnable {
+public final class C0548rd extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0623ud f1093a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ C0268gb f1100a;
 
-    public C0548rd(C0623ud c0623ud, boolean z) {
-        this.f1093a = c0623ud;
-        this.b = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public C0548rd(C0268gb c0268gb) {
+        super(1);
+        this.f1100a = c0268gb;
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        C0623ud.a(this.f1093a).a(this.b, false);
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Object obj) {
+        return ((Zc) ((Map.Entry) obj).getValue()).b.parse(this.f1100a);
     }
 }

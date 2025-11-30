@@ -250,7 +250,7 @@ public final class WithLifecycleStateKt {
         final ?? r2 = new LifecycleEventObserver() { // from class: androidx.lifecycle.WithLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$observer$1
             @Override // androidx.lifecycle.LifecycleEventObserver
             public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-                Object m9901constructorimpl;
+                Object m9902constructorimpl;
                 Intrinsics.checkNotNullParameter(source, "source");
                 Intrinsics.checkNotNullParameter(event, "event");
                 if (event == Lifecycle.Event.Companion.upTo(Lifecycle.State.this)) {
@@ -259,21 +259,21 @@ public final class WithLifecycleStateKt {
                     Function0<R> function02 = function0;
                     try {
                         Result.Companion companion = Result.Companion;
-                        m9901constructorimpl = Result.m9901constructorimpl(function02.invoke());
+                        m9902constructorimpl = Result.m9902constructorimpl(function02.invoke());
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        m9901constructorimpl = Result.m9901constructorimpl(ResultKt.createFailure(th));
+                        m9902constructorimpl = Result.m9902constructorimpl(ResultKt.createFailure(th));
                     }
-                    continuation2.resumeWith(m9901constructorimpl);
+                    continuation2.resumeWith(m9902constructorimpl);
                 } else if (event == Lifecycle.Event.ON_DESTROY) {
                     lifecycle.removeObserver(this);
                     Result.Companion companion3 = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9901constructorimpl(ResultKt.createFailure(new LifecycleDestroyedException())));
+                    cancellableContinuationImpl2.resumeWith(Result.m9902constructorimpl(ResultKt.createFailure(new LifecycleDestroyedException())));
                 }
             }
         };
         if (z) {
-            coroutineDispatcher.mo11485dispatch(EmptyCoroutineContext.INSTANCE, new Runnable() { // from class: androidx.lifecycle.WithLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$1
+            coroutineDispatcher.mo11486dispatch(EmptyCoroutineContext.INSTANCE, new Runnable() { // from class: androidx.lifecycle.WithLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$1
                 @Override // java.lang.Runnable
                 public final void run() {
                     Lifecycle.this.addObserver(r2);
@@ -294,7 +294,7 @@ public final class WithLifecycleStateKt {
                 if (CoroutineDispatcher.this.isDispatchNeeded(EmptyCoroutineContext.INSTANCE)) {
                     final Lifecycle lifecycle2 = lifecycle;
                     final WithLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$observer$1 withLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$observer$1 = r2;
-                    CoroutineDispatcher.this.mo11485dispatch(EmptyCoroutineContext.INSTANCE, new Runnable() { // from class: androidx.lifecycle.WithLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$2.1
+                    CoroutineDispatcher.this.mo11486dispatch(EmptyCoroutineContext.INSTANCE, new Runnable() { // from class: androidx.lifecycle.WithLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$2.1
                         @Override // java.lang.Runnable
                         public final void run() {
                             Lifecycle.this.removeObserver(withLifecycleStateKt$suspendWithStateAtLeastUnchecked$2$observer$1);

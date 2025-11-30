@@ -1,13 +1,7 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Rg extends Wg {
-    public Rg(C0210e5 c0210e5) {
-        super(c0210e5);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Wg
-    public final boolean a(W5 w5) {
-        this.f744a.b(w5);
-        return false;
+public final class Rg extends H4 {
+    public Rg(C0351jh c0351jh, C0279gm c0279gm, C0274gh c0274gh) {
+        super(c0351jh, c0279gm, c0274gh);
     }
 }

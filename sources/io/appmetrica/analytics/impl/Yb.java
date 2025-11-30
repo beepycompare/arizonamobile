@@ -1,22 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Lambda;
+import android.content.Context;
+import android.location.LocationListener;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 /* loaded from: classes5.dex */
-public final class Yb extends Lambda implements Function1 {
+public final class Yb implements LocationReceiverProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Yb f770a = new Yb();
+    public final String f764a = "Location receiver stub";
 
-    public Yb() {
-        super(1);
+    @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
+    public final String getIdentifier() {
+        return this.f764a;
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public final Object invoke(Object obj) {
-        ((LocationControllerObserver) obj).stopLocationTracking();
-        return Unit.INSTANCE;
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider
+    public final LocationReceiver getLocationReceiver(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
+        return new Zb();
     }
 }

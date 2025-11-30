@@ -1,33 +1,47 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.AppMetricaPlugins;
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class H0 implements AppMetricaPlugins {
+public final class H0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final J0 f499a;
+    public final String f499a;
+    public final String b;
+    public final CounterConfigurationReporterType c;
+    public final int d;
+    public final String e;
+    public final String f;
 
-    public H0(J0 j0) {
-        this.f499a = j0;
+    public H0(String str, String str2, CounterConfigurationReporterType counterConfigurationReporterType, int i, String str3, String str4) {
+        this.f499a = str;
+        this.b = str2;
+        this.c = counterConfigurationReporterType;
+        this.d = i;
+        this.e = str3;
+        this.f = str4;
     }
 
-    @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
-    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        this.f499a.a(pluginErrorDetails, str);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof H0) {
+            H0 h0 = (H0) obj;
+            return Intrinsics.areEqual(this.f499a, h0.f499a) && Intrinsics.areEqual(this.b, h0.b) && this.c == h0.c && this.d == h0.d && Intrinsics.areEqual(this.e, h0.e) && Intrinsics.areEqual(this.f, h0.f);
+        }
+        return false;
     }
 
-    @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
-    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        this.f499a.a(pluginErrorDetails);
+    public final int hashCode() {
+        int hashCode = this.b.hashCode();
+        int hashCode2 = this.c.hashCode();
+        int hashCode3 = (this.e.hashCode() + ((Integer.hashCode(this.d) + ((hashCode2 + ((hashCode + (this.f499a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31;
+        String str = this.f;
+        return hashCode3 + (str == null ? 0 : str.hashCode());
     }
 
-    public H0() {
-        this(new J0());
-    }
-
-    @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
-    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f499a.a(str, str2, pluginErrorDetails);
+    public final String toString() {
+        return "AppMetricaNativeCrashMetadata(apiKey=" + this.f499a + ", packageName=" + this.b + ", reporterType=" + this.c + ", processID=" + this.d + ", processSessionID=" + this.e + ", errorEnvironment=" + this.f + ')';
     }
 }

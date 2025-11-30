@@ -1,22 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController;
+import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
 /* renamed from: io.appmetrica.analytics.impl.qi  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0529qi implements uo {
+public final class C0529qi implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f1077a;
+    public final DataSendingRestrictionController f1090a;
+    public final String b = "data restriction based";
 
-    public C0529qi(Map<String, ?> map) {
-        this.f1077a = map;
+    public C0529qi(DataSendingRestrictionController dataSendingRestrictionController) {
+        this.f1090a = dataSendingRestrictionController;
     }
 
-    @Override // io.appmetrica.analytics.impl.uo
-    public final so a(String str) {
-        if (this.f1077a.containsKey(str)) {
-            return new so(this, false, String.format("Failed to activate AppMetrica with provided apiKey ApiKey %s has already been used by another reporter.", str));
-        }
-        return new so(this, true, "");
+    @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
+    public final boolean canBeExecuted() {
+        return !this.f1090a.isRestrictedForSdk();
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
+    public final String description() {
+        return this.b;
     }
 }

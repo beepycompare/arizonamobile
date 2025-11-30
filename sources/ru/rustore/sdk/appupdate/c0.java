@@ -5,9 +5,9 @@ import java.util.Map;
 public final class c0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map<String, Object> f1422a;
+    public final Map<String, Object> f1424a;
 
     public c0(Map<String, ? extends Object> map) {
-        this.f1422a = map;
+        this.f1424a = map;
     }
 }

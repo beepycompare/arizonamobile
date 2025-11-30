@@ -1,26 +1,58 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.util.Map;
+import kotlin.text.Charsets;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class I9 {
+public final class I9 extends Sg {
+    public final J9 b;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final long f524a;
-
-    public I9(long j) {
-        this.f524a = j;
+    public I9(Y4 y4, TimeProvider timeProvider) {
+        super(y4);
+        this.b = new J9(y4, timeProvider);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // io.appmetrica.analytics.impl.Sg
+    public final boolean a(Q5 q5) {
+        long optLong;
+        J9 j9 = this.b;
+        C9 c9 = j9.f538a.t().B;
+        Long valueOf = c9 != null ? Long.valueOf(c9.f427a) : null;
+        if (valueOf != null) {
+            yo yoVar = j9.f538a.t;
+            synchronized (yoVar) {
+                optLong = yoVar.f1225a.a().optLong("external_attribution_window_start", -1L);
+            }
+            if (optLong < 0) {
+                optLong = j9.b.currentTimeMillis();
+                j9.f538a.t.a(optLong);
+            }
+            if (j9.b.currentTimeMillis() - optLong <= valueOf.longValue()) {
+                B9 b9 = (B9) MessageNano.mergeFrom(new B9(), q5.getValueBytes());
+                int i = b9.f408a;
+                String str = new String(b9.b, Charsets.UTF_8);
+                String str2 = this.b.f538a.c.k().get(Integer.valueOf(i));
+                if (str2 != null) {
+                    try {
+                        if (JsonUtils.isEqualTo(new JSONObject(str), new JSONObject(str2))) {
+                            this.f679a.m.info("Ignoring attribution of type `" + L9.a(i) + "` with value `" + str + "` since it is not new", new Object[0]);
+                            return true;
+                        }
+                    } catch (Throwable unused) {
+                    }
+                }
+                J9 j92 = this.b;
+                Map<Integer, String> k = j92.f538a.c.k();
+                k.put(Integer.valueOf(i), str);
+                j92.f538a.c.b(k);
+                this.f679a.m.info("Handling attribution of type `" + L9.a(i) + '`', new Object[0]);
+                return false;
+            }
         }
-        return (obj instanceof I9) && this.f524a == ((I9) obj).f524a;
-    }
-
-    public final int hashCode() {
-        return Long.hashCode(this.f524a);
-    }
-
-    public final String toString() {
-        return "ExternalAttributionConfig(collectingInterval=" + this.f524a + ')';
+        this.f679a.m.info("Ignoring attribution since out of collecting interval", new Object[0]);
+        return true;
     }
 }

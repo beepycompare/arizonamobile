@@ -1,4 +1,4 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public interface Tl {
+public final class Tl extends AbstractC0450ne {
 }

@@ -1,14 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AppMetricaConfig;
+import java.util.HashMap;
 import java.util.Map;
-import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class K7 {
-    public final void a(JSONObject jSONObject, AppMetricaConfig.Builder builder) {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Map f551a;
+    public final String b;
+    public final String c;
+
+    public K7(String str, HashMap hashMap, String str2) {
+        this.b = str;
+        this.f551a = hashMap;
+        this.c = str2;
     }
 
-    public final JSONObject a(Map<String, ? extends Object> map) {
-        return new JSONObject();
+    public final String toString() {
+        return "DeferredDeeplinkState{mParameters=" + this.f551a + ", mDeeplink='" + this.b + "', mUnparsedReferrer='" + this.c + "'}";
     }
 }

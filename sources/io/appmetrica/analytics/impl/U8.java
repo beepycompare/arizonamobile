@@ -1,31 +1,23 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 /* loaded from: classes5.dex */
-public final class U8 implements ProtobufConverter {
-    public static B9 a(T8 t8) {
-        B9 b9 = new B9();
-        b9.d = new int[t8.b.size()];
-        int i = 0;
-        for (Integer num : t8.b) {
-            b9.d[i] = num.intValue();
-            i++;
-        }
-        b9.c = t8.d;
-        b9.b = t8.c;
-        b9.f410a = t8.f701a;
-        return b9;
-    }
+public final class U8 {
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final /* bridge */ /* synthetic */ Object fromModel(Object obj) {
-        return a((T8) obj);
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public InterfaceC0723yd f707a;
+    public uo b;
+    public InterfaceC0743z8 c;
+    public InterfaceC0619u9 d;
+    public Wb e;
+    public Vd f;
+    public final O9 g;
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        B9 b9 = (B9) obj;
-        return new T8(b9.f410a, b9.b, b9.c, CollectionUtils.hashSetFromIntArray(b9.d));
+    public U8(V8 v8) {
+        this.f707a = V8.a(v8);
+        this.b = V8.b(v8);
+        this.c = V8.c(v8);
+        this.d = V8.d(v8);
+        this.e = V8.e(v8);
+        this.f = V8.f(v8);
+        this.g = V8.g(v8);
     }
 }

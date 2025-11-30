@@ -1,60 +1,48 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import kotlin.jvm.internal.Intrinsics;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import java.io.File;
+import kotlin.io.FilesKt;
 /* renamed from: io.appmetrica.analytics.impl.ca  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0164ca implements Parcelable {
-    public static final C0138ba CREATOR = new C0138ba();
+public final class C0164ca implements Co {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Boolean f827a;
-    public final IdentifierStatus b;
-    public final String c;
+    public final Context f828a;
+    public final String b;
 
-    public C0164ca(Boolean bool, IdentifierStatus identifierStatus, String str) {
-        this.f827a = bool;
-        this.b = identifierStatus;
-        this.c = str;
+    public C0164ca(Context context, String str) {
+        this.f828a = context;
+        this.b = str;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // io.appmetrica.analytics.impl.Co
+    public final String a() {
+        try {
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f828a, this.b);
+            if (fileFromSdkStorage != null) {
+                fileFromSdkStorage.exists();
+                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f828a, this.b);
+                if (fileFromAppStorage != null) {
+                    FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
+                }
+                return FilesKt.readText$default(fileFromSdkStorage, null, 1, null);
+            }
+            return null;
+        } catch (Throwable unused) {
+            return null;
         }
-        if (obj instanceof C0164ca) {
-            C0164ca c0164ca = (C0164ca) obj;
-            return Intrinsics.areEqual(this.f827a, c0164ca.f827a) && this.b == c0164ca.b && Intrinsics.areEqual(this.c, c0164ca.c);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Co
+    public final void a(String str) {
+        try {
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f828a, this.b);
+            if (fileFromSdkStorage != null) {
+                FilesKt.writeText$default(fileFromSdkStorage, str, null, 2, null);
+            }
+        } catch (Throwable unused) {
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        Boolean bool = this.f827a;
-        int hashCode = (this.b.hashCode() + ((bool == null ? 0 : bool.hashCode()) * 31)) * 31;
-        String str = this.c;
-        return hashCode + (str != null ? str.hashCode() : 0);
-    }
-
-    public final String toString() {
-        return "FeaturesInternal(sslPinning=" + this.f827a + ", status=" + this.b + ", errorExplanation=" + this.c + ')';
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeValue(this.f827a);
-        parcel.writeString(this.b.getValue());
-        parcel.writeString(this.c);
-    }
-
-    public C0164ca() {
-        this(null, IdentifierStatus.UNKNOWN, null);
     }
 }

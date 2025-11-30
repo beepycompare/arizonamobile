@@ -5,12 +5,12 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 public abstract /* synthetic */ class e0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1360a;
+    public static final /* synthetic */ int[] f1362a;
 
     static {
         int[] iArr = new int[ActivityEvent.values().length];
         iArr[ActivityEvent.RESUMED.ordinal()] = 1;
         iArr[ActivityEvent.PAUSED.ordinal()] = 2;
-        f1360a = iArr;
+        f1362a = iArr;
     }
 }

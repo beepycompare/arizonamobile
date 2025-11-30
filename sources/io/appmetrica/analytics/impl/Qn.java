@@ -1,17 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import android.util.SparseArray;
+import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
 /* loaded from: classes5.dex */
-public abstract class Qn {
+public final class Qn implements uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SparseArray f656a;
+    public final I8 f656a;
 
-    static {
-        SparseArray sparseArray = new SparseArray();
-        f656a = sparseArray;
-        sparseArray.put(0, "String");
-        sparseArray.put(1, "Number");
-        sparseArray.put(2, "Counter");
+    public Qn() {
+        this(new I8());
+    }
+
+    @Override // io.appmetrica.analytics.impl.uo
+    public final byte[] a(O8 o8, C0403lh c0403lh) {
+        byte[] bArr = new byte[0];
+        try {
+            bArr = Base64Utils.decompressBase64GzipAsBytes(o8.b);
+        } catch (Throwable unused) {
+        }
+        byte[] a2 = ((H8) this.f656a.f522a.a(o8.o)).a(bArr);
+        return a2 == null ? new byte[0] : a2;
+    }
+
+    public Qn(I8 i8) {
+        this.f656a = i8;
+    }
+
+    public final I8 a() {
+        return this.f656a;
     }
 }

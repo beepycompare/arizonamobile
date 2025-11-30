@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public final class F4 implements U7 {
-    @Override // io.appmetrica.analytics.impl.U7
-    /* renamed from: b */
-    public final E4 a(Context context, X4 x4, C0664w4 c0664w4) {
-        return new E4(context, Kl.f563a, x4, c0664w4, C0620ua.H.u());
+public final class F4 extends G2 {
+    public F4(Gf gf, C0714y4 c0714y4) {
+        super(gf, c0714y4);
+    }
+
+    public final boolean a(Q5 q5, C0639v4 c0639v4) {
+        return a(q5, new E4(c0639v4));
     }
 }

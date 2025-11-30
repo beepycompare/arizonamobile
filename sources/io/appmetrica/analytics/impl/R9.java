@@ -1,22 +1,18 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.pm.FeatureInfo;
 /* loaded from: classes5.dex */
 public abstract class R9 {
-    public static final String a(int i) {
-        switch (i) {
-            case 1:
-                return "APPSFLYER";
-            case 2:
-                return "ADJUST";
-            case 3:
-                return "KOCHAVA";
-            case 4:
-                return "TENJIN";
-            case 5:
-                return "AIRBRIDGE";
-            case 6:
-                return "SINGULAR";
-            default:
-                return "UNKNOWN";
+    public final S9 a(FeatureInfo featureInfo) {
+        if (featureInfo.name == null) {
+            int i = featureInfo.reqGlEsVersion;
+            if (i == 0) {
+                return b(featureInfo);
+            }
+            return new S9("openGlFeature", i, (featureInfo.flags & 1) != 0);
         }
+        return b(featureInfo);
     }
+
+    public abstract S9 b(FeatureInfo featureInfo);
 }

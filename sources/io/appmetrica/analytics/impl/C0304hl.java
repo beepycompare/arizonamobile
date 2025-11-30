@@ -1,44 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.ecommerce.ECommerceProduct;
-import io.appmetrica.analytics.ecommerce.ECommerceReferrer;
+import java.util.Collections;
 import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.hl  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0304hl extends ECommerceEvent {
+public final class C0304hl implements InterfaceC0162c8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Mf f916a;
-    public final Cg b;
-    public final InterfaceC0291h8 c;
+    public final Zi f927a;
 
-    public C0304hl(ECommerceProduct eCommerceProduct, ECommerceReferrer eCommerceReferrer) {
-        this(new Mf(eCommerceProduct), eCommerceReferrer == null ? null : new Cg(eCommerceReferrer), new C0329il());
+    public C0304hl() {
+        this(new Zi());
     }
 
-    public final InterfaceC0291h8 a() {
-        return this.c;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final List<Ei> fromModel(C0278gl c0278gl) {
+        C0643v8 c0643v8 = new C0643v8();
+        c0643v8.f1165a = 1;
+        c0643v8.b = new C0618u8();
+        Ei fromModel = this.f927a.fromModel(c0278gl.f910a);
+        c0643v8.b.f1146a = (C0543r8) fromModel.f463a;
+        C0131b3 c0131b3 = new C0131b3(C0131b3.b(fromModel));
+        fromModel.b.getBytesTruncated();
+        return Collections.singletonList(new Ei(c0643v8, c0131b3));
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
-    public final String getPublicDescription() {
-        return "shown product details info";
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        List list = (List) obj;
+        throw new UnsupportedOperationException();
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.Pf
-    public final List<Ii> toProto() {
-        return (List) this.c.fromModel(this);
+    public C0304hl(Zi zi) {
+        this.f927a = zi;
     }
 
-    public final String toString() {
-        return "ShownProductDetailInfoEvent{product=" + this.f916a + ", referrer=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public C0304hl(Mf mf, Cg cg, InterfaceC0291h8 interfaceC0291h8) {
-        this.f916a = mf;
-        this.b = cg;
-        this.c = interfaceC0291h8;
+    public final C0278gl a(List<Ei> list) {
+        throw new UnsupportedOperationException();
     }
 }

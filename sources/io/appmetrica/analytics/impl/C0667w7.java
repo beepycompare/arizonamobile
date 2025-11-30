@@ -1,107 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import kotlin.Pair;
+import kotlin.TuplesKt;
 /* renamed from: io.appmetrica.analytics.impl.w7  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0667w7 extends MessageNano {
-    public static volatile C0667w7[] d;
-
-    /* renamed from: a  reason: collision with root package name */
-    public long f1181a;
-    public long b;
-    public int c;
-
-    public C0667w7() {
-        a();
+public final class C0667w7 implements ProtobufConverter {
+    public final BigDecimal a(C0291h8 c0291h8) {
+        throw new UnsupportedOperationException();
     }
 
-    public static C0667w7[] b() {
-        if (d == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new C0667w7[0];
-                }
-            }
-        }
-        return d;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0291h8 c0291h8 = (C0291h8) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public final C0667w7 a() {
-        this.f1181a = -1L;
-        this.b = -1L;
-        this.c = -1;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f1181a;
-        if (j != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(1, j);
-        }
-        long j2 = this.b;
-        if (j2 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(2, j2);
-        }
-        int i = this.c;
-        return i != -1 ? CodedOutputByteBufferNano.computeInt32Size(3, i) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f1181a;
-        if (j != -1) {
-            codedOutputByteBufferNano.writeInt64(1, j);
-        }
-        long j2 = this.b;
-        if (j2 != -1) {
-            codedOutputByteBufferNano.writeInt64(2, j2);
-        }
-        int i = this.c;
-        if (i != -1) {
-            codedOutputByteBufferNano.writeInt32(3, i);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0667w7 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+    public final C0291h8 fromModel(BigDecimal bigDecimal) {
+        BigInteger bigInteger = AbstractC0717y7.f1214a;
+        int i = -bigDecimal.scale();
+        BigInteger unscaledValue = bigDecimal.unscaledValue();
         while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f1181a = codedInputByteBufferNano.readInt64();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readInt64();
-            } else if (readTag != 24) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == -1 || readInt32 == 0 || readInt32 == 1) {
-                    this.c = readInt32;
-                }
+            if (unscaledValue.compareTo(AbstractC0717y7.f1214a) <= 0 && unscaledValue.compareTo(AbstractC0717y7.b) >= 0) {
+                Pair pair = TuplesKt.to(Long.valueOf(unscaledValue.longValue()), Integer.valueOf(i));
+                C0692x7 c0692x7 = new C0692x7(((Number) pair.getFirst()).longValue(), ((Number) pair.getSecond()).intValue());
+                C0291h8 c0291h8 = new C0291h8();
+                c0291h8.f920a = c0692x7.f1196a;
+                c0291h8.b = c0692x7.b;
+                return c0291h8;
             }
+            unscaledValue = unscaledValue.divide(BigInteger.TEN);
+            i++;
         }
-        return this;
-    }
-
-    public static C0667w7 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C0667w7().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static C0667w7 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C0667w7) MessageNano.mergeFrom(new C0667w7(), bArr);
     }
 }

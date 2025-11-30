@@ -14,7 +14,7 @@ class USequencesKt___USequencesKt {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         int i = 0;
         for (UInt uInt : sequence) {
-            i = UInt.m10001constructorimpl(i + uInt.m10053unboximpl());
+            i = UInt.m10002constructorimpl(i + uInt.m10054unboximpl());
         }
         return i;
     }
@@ -23,7 +23,7 @@ class USequencesKt___USequencesKt {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         long j = 0;
         for (ULong uLong : sequence) {
-            j = ULong.m10080constructorimpl(j + uLong.m10132unboximpl());
+            j = ULong.m10081constructorimpl(j + uLong.m10133unboximpl());
         }
         return j;
     }
@@ -32,7 +32,7 @@ class USequencesKt___USequencesKt {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         int i = 0;
         for (UByte uByte : sequence) {
-            i = UInt.m10001constructorimpl(i + UInt.m10001constructorimpl(uByte.m9969unboximpl() & 255));
+            i = UInt.m10002constructorimpl(i + UInt.m10002constructorimpl(uByte.m9970unboximpl() & 255));
         }
         return i;
     }
@@ -41,7 +41,7 @@ class USequencesKt___USequencesKt {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         int i = 0;
         for (UShort uShort : sequence) {
-            i = UInt.m10001constructorimpl(i + UInt.m10001constructorimpl(uShort.m10237unboximpl() & UShort.MAX_VALUE));
+            i = UInt.m10002constructorimpl(i + UInt.m10002constructorimpl(uShort.m10238unboximpl() & UShort.MAX_VALUE));
         }
         return i;
     }

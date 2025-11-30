@@ -1,95 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 /* renamed from: io.appmetrica.analytics.impl.e2  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0207e2 extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static final int g = 4;
-    public static final int h = 5;
-    public static final int i = -1;
-    public static final int j = 0;
-    public static final int k = 1;
-    public static volatile C0207e2[] l;
+public final class C0207e2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f855a;
-    public int b;
-
-    public C0207e2() {
-        a();
-    }
-
-    public static C0207e2[] b() {
-        if (l == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (l == null) {
-                    l = new C0207e2[0];
-                }
-            }
+    public final C0295hc f862a;
+    public final ICommonExecutor b;
+    public final long c;
+    public boolean d = true;
+    public final Runnable e = new Runnable() { // from class: io.appmetrica.analytics.impl.e2$$ExternalSyntheticLambda0
+        @Override // java.lang.Runnable
+        public final void run() {
+            C0207e2.a(C0207e2.this);
         }
-        return l;
+    };
+
+    public C0207e2(C0295hc c0295hc, IHandlerExecutor iHandlerExecutor, long j) {
+        this.f862a = c0295hc;
+        this.b = iHandlerExecutor;
+        this.c = j;
     }
 
-    public final C0207e2 a() {
-        this.f855a = 0;
-        this.b = -1;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt32Size(3, this.b) + CodedOutputByteBufferNano.computeInt32Size(2, this.f855a) + super.computeSerializedSize();
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt32(2, this.f855a);
-        codedOutputByteBufferNano.writeInt32(3, this.b);
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final C0207e2 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 16) {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3 || readInt32 == 4 || readInt32 == 5) {
-                    this.f855a = readInt32;
-                }
-            } else if (readTag != 24) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt322 = codedInputByteBufferNano.readInt32();
-                if (readInt322 == -1 || readInt322 == 0 || readInt322 == 1) {
-                    this.b = readInt322;
-                }
-            }
-        }
-        return this;
-    }
-
-    public static C0207e2 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C0207e2().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static C0207e2 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C0207e2) MessageNano.mergeFrom(new C0207e2(), bArr);
+    public static final void a(C0207e2 c0207e2) {
+        C0321ic c0321ic = c0207e2.f862a.f922a;
+        C0703xi c0703xi = c0321ic.h;
+        c0703xi.c.a(c0321ic.b.f518a);
     }
 }

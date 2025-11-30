@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class d0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1496a;
+    public final String f1498a;
 
     public final boolean equals(Object obj) {
-        return (obj instanceof d0) && Intrinsics.areEqual(this.f1496a, ((d0) obj).f1496a);
+        return (obj instanceof d0) && Intrinsics.areEqual(this.f1498a, ((d0) obj).f1498a);
     }
 
     public final int hashCode() {
-        return this.f1496a.hashCode();
+        return this.f1498a.hashCode();
     }
 
     public final String toString() {
-        return "VersionName(value=" + this.f1496a + ')';
+        return "VersionName(value=" + this.f1498a + ')';
     }
 }

@@ -1,66 +1,74 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import java.io.Closeable;
-import java.io.File;
-import java.io.RandomAccessFile;
-import java.nio.channels.FileChannel;
-import java.nio.channels.FileLock;
+import android.os.Handler;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceEntryPoint;
+import java.util.ArrayList;
+import java.util.List;
+import kotlin.collections.CollectionsKt;
 /* renamed from: io.appmetrica.analytics.impl.fa  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0241fa {
+    public static final C0241fa d = new C0241fa();
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f874a;
-    public FileLock b;
-    public RandomAccessFile c;
-    public FileChannel d;
-    public int e;
+    public final C0598td f889a = new C0598td();
+    public final ServiceComponentsInitializer b = AbstractC0174ck.a();
+    public boolean c = false;
 
-    public C0241fa(Context context, String str) {
-        this(a(context, str));
-    }
-
-    public final synchronized void a() {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(this.f874a, "rw");
-        this.c = randomAccessFile;
-        FileChannel channel = randomAccessFile.getChannel();
-        this.d = channel;
-        if (this.e == 0) {
-            this.b = channel.lock();
+    public final void a(Context context) {
+        C0167cd c0167cd;
+        C0471oa.a(context);
+        this.b.onCreate(context);
+        this.f889a.getClass();
+        List<String> a2 = C0471oa.I.s.a();
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(a2, 10));
+        for (String str : a2) {
+            ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
+            Object loadAndInstantiateClassWithDefaultConstructor = ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor(str, ModuleServiceEntryPoint.class);
+            if (loadAndInstantiateClassWithDefaultConstructor == null) {
+                c0167cd = new C0167cd(str, false);
+            } else {
+                C0471oa.I.p().a((ModuleServiceEntryPoint) loadAndInstantiateClassWithDefaultConstructor);
+                c0167cd = new C0167cd(str, true);
+            }
+            arrayList.add(c0167cd);
         }
-        this.e++;
-    }
-
-    public final synchronized void b() {
-        this.f874a.getAbsolutePath();
-        int i = this.e - 1;
-        this.e = i;
-        if (i == 0) {
-            Qa.a(this.b);
+        new C0481ok(C0471oa.I.D().d).a(context);
+        xo xoVar = C0471oa.I.D().c;
+        synchronized (xoVar) {
+            xoVar.f1206a.a();
         }
-        no.a((Closeable) this.c);
-        no.a((Closeable) this.d);
-        this.c = null;
-        this.b = null;
-        this.d = null;
+        C0471oa.I.q().a();
+        a().a(arrayList);
     }
 
-    public C0241fa(String str) {
-        this(FileUtils.getFileFromPath(str + ".lock"));
-    }
-
-    public C0241fa(File file) {
-        this.e = 0;
-        this.f874a = file;
-    }
-
-    public static File a(Context context, String str) {
-        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(context, str + ".lock");
-        if (fileFromSdkStorage != null) {
-            return fileFromSdkStorage;
+    public final void b(Context context) {
+        if (this.c) {
+            return;
         }
-        throw new IllegalStateException("Cannot create lock file");
+        synchronized (this) {
+            if (!this.c) {
+                a(context);
+                this.c = true;
+            }
+        }
+    }
+
+    public static C0193dd a() {
+        C0406lk c0406lk = C0471oa.I.d;
+        if (c0406lk.b == null) {
+            synchronized (c0406lk) {
+                if (c0406lk.b == null) {
+                    c0406lk.f996a.getClass();
+                    HandlerThreadC0191db a2 = A9.a("IAA-SC");
+                    c0406lk.b = new A9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                }
+            }
+        }
+        return new C0193dd(c0406lk.b, C0471oa.I.y(), "service_modules", new SystemTimeProvider());
     }
 }

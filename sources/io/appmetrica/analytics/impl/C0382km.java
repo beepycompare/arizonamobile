@@ -1,173 +1,144 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.km  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0382km implements ProtobufConverter {
+public final class C0382km {
+    public final Map A;
+    public final C9 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ee f978a = new Ee();
-    public final C0421ma b = new C0421ma();
-    public final Lm c = new Lm();
-    public final C0439n3 d = new C0439n3();
-    public final C0637v2 e = new C0637v2();
-    public final D6 f = new D6();
-    public final Hm g = new Hm();
-    public final C0673wd h = new C0673wd();
-    public final J9 i = new J9();
+    public final String f981a;
+    public final List b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final List f;
+    public final List g;
+    public final List h;
+    public final Map i;
+    public final String j;
+    public final String k;
+    public final String l;
+    public final C0415m4 m;
+    public final long n;
+    public final boolean o;
+    public final boolean p;
+    public final String q;
+    public final Hm r;
+    public final C0724ye s;
+    public final RetryPolicyConfig t;
+    public final long u;
+    public final long v;
+    public final boolean w;
+    public final C0208e3 x;
+    public final C0438n2 y;
+    public final Dm z;
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Am fromModel(C0458nm c0458nm) {
-        Am am = new Am();
-        am.s = c0458nm.u;
-        am.t = c0458nm.v;
-        String str = c0458nm.f1028a;
-        if (str != null) {
-            am.f400a = str;
+    public C0382km(C0356jm c0356jm) {
+        String str;
+        long j;
+        long j2;
+        Dm dm;
+        Dm dm2;
+        Map map;
+        Map map2;
+        C9 c9;
+        this.f981a = c0356jm.f961a;
+        List list = c0356jm.b;
+        this.b = list == null ? null : CollectionUtils.unmodifiableListCopy(list);
+        this.c = c0356jm.c;
+        this.d = c0356jm.d;
+        this.e = c0356jm.e;
+        List list2 = c0356jm.f;
+        this.f = list2 == null ? null : CollectionUtils.unmodifiableListCopy(list2);
+        List list3 = c0356jm.g;
+        this.g = list3 == null ? null : CollectionUtils.unmodifiableListCopy(list3);
+        List list4 = c0356jm.h;
+        this.h = list4 == null ? null : CollectionUtils.unmodifiableListCopy(list4);
+        Map map3 = c0356jm.i;
+        this.i = map3 != null ? CollectionUtils.unmodifiableMapCopy(map3) : null;
+        this.j = c0356jm.j;
+        this.k = c0356jm.k;
+        this.m = c0356jm.m;
+        this.s = c0356jm.n;
+        this.n = c0356jm.o;
+        this.o = c0356jm.p;
+        this.l = c0356jm.l;
+        this.p = c0356jm.q;
+        str = c0356jm.r;
+        this.q = str;
+        this.r = c0356jm.s;
+        j = c0356jm.t;
+        this.u = j;
+        j2 = c0356jm.u;
+        this.v = j2;
+        this.w = c0356jm.v;
+        RetryPolicyConfig retryPolicyConfig = c0356jm.w;
+        if (retryPolicyConfig == null) {
+            C0707xm c0707xm = new C0707xm();
+            this.t = new RetryPolicyConfig(c0707xm.w, c0707xm.x);
+        } else {
+            this.t = retryPolicyConfig;
         }
-        List list = c0458nm.f;
-        if (list != null) {
-            am.f = (String[]) list.toArray(new String[list.size()]);
+        this.x = c0356jm.x;
+        this.y = c0356jm.y;
+        dm = c0356jm.z;
+        if (dm != null) {
+            dm2 = c0356jm.z;
+        } else {
+            dm2 = new Dm(J7.b.f1174a);
         }
-        List list2 = c0458nm.g;
-        if (list2 != null) {
-            am.g = (String[]) list2.toArray(new String[list2.size()]);
-        }
-        List list3 = c0458nm.b;
-        if (list3 != null) {
-            am.c = (String[]) list3.toArray(new String[list3.size()]);
-        }
-        List list4 = c0458nm.h;
-        if (list4 != null) {
-            am.o = (String[]) list4.toArray(new String[list4.size()]);
-        }
-        Map<String, ? extends List<String>> map = c0458nm.i;
+        this.z = dm2;
+        map = c0356jm.A;
         if (map != null) {
-            am.h = this.f.fromModel(map);
+            map2 = c0356jm.A;
+        } else {
+            map2 = Collections.emptyMap();
         }
-        De de = c0458nm.s;
-        if (de != null) {
-            am.v = this.f978a.fromModel(de);
-        }
-        String str2 = c0458nm.j;
-        if (str2 != null) {
-            am.j = str2;
-        }
-        String str3 = c0458nm.c;
-        if (str3 != null) {
-            am.d = str3;
-        }
-        String str4 = c0458nm.d;
-        if (str4 != null) {
-            am.e = str4;
-        }
-        String str5 = c0458nm.e;
-        if (str5 != null) {
-            am.r = str5;
-        }
-        am.i = this.b.fromModel(c0458nm.m);
-        String str6 = c0458nm.k;
-        if (str6 != null) {
-            am.k = str6;
-        }
-        String str7 = c0458nm.l;
-        if (str7 != null) {
-            am.l = str7;
-        }
-        am.m = c0458nm.p;
-        am.b = c0458nm.n;
-        am.q = c0458nm.o;
-        RetryPolicyConfig retryPolicyConfig = c0458nm.t;
-        am.w = retryPolicyConfig.maxIntervalSeconds;
-        am.x = retryPolicyConfig.exponentialMultiplier;
-        String str8 = c0458nm.q;
-        if (str8 != null) {
-            am.n = str8;
-        }
-        Km km = c0458nm.r;
-        if (km != null) {
-            this.c.getClass();
-            C0757zm c0757zm = new C0757zm();
-            c0757zm.f1236a = km.f564a;
-            am.p = c0757zm;
-        }
-        am.u = c0458nm.w;
-        C0389l3 c0389l3 = c0458nm.x;
-        if (c0389l3 != null) {
-            this.d.getClass();
-            C0582sm c0582sm = new C0582sm();
-            c0582sm.f1119a = c0389l3.f982a;
-            am.y = c0582sm;
-        }
-        C0612u2 c0612u2 = c0458nm.y;
-        if (c0612u2 != null) {
-            am.z = this.e.fromModel(c0612u2);
-        }
-        am.A = this.g.fromModel(c0458nm.z);
-        am.B = this.h.fromModel(c0458nm.A);
-        am.C = this.i.fromModel(c0458nm.B);
-        return am;
+        this.A = map2;
+        c9 = c0356jm.B;
+        this.B = c9;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0458nm toModel(Am am) {
-        C0433mm c0433mm = new C0433mm(this.b.toModel(am.i));
-        c0433mm.f1014a = am.f400a;
-        c0433mm.j = am.j;
-        c0433mm.c = am.d;
-        c0433mm.b = Arrays.asList(am.c);
-        c0433mm.g = Arrays.asList(am.g);
-        c0433mm.f = Arrays.asList(am.f);
-        c0433mm.d = am.e;
-        c0433mm.e = am.r;
-        c0433mm.h = Arrays.asList(am.o);
-        c0433mm.k = am.k;
-        c0433mm.l = am.l;
-        c0433mm.q = am.m;
-        c0433mm.o = am.b;
-        c0433mm.p = am.q;
-        c0433mm.t = am.s;
-        c0433mm.u = am.t;
-        c0433mm.r = am.n;
-        c0433mm.v = am.u;
-        c0433mm.w = new RetryPolicyConfig(am.w, am.x);
-        c0433mm.i = this.f.toModel(am.h);
-        C0707xm c0707xm = am.v;
-        if (c0707xm != null) {
-            this.f978a.getClass();
-            c0433mm.n = new De(c0707xm.f1204a, c0707xm.b);
-        }
-        C0757zm c0757zm = am.p;
-        if (c0757zm != null) {
-            this.c.getClass();
-            c0433mm.s = new Km(c0757zm.f1236a);
-        }
-        C0582sm c0582sm = am.y;
-        if (c0582sm != null) {
-            this.d.getClass();
-            c0433mm.x = new C0389l3(c0582sm.f1119a);
-        }
-        C0557rm c0557rm = am.z;
-        if (c0557rm != null) {
-            c0433mm.y = this.e.toModel(c0557rm);
-        }
-        C0732ym c0732ym = am.A;
-        if (c0732ym != null) {
-            this.g.getClass();
-            c0433mm.z = new Gm(c0732ym.f1218a);
-        }
-        c0433mm.A = this.h.toModel(am.B);
-        C0632um c0632um = am.C;
-        if (c0632um != null) {
-            this.i.getClass();
-            c0433mm.B = new I9(c0632um.f1157a);
-        }
-        return new C0458nm(c0433mm);
+    public final C0356jm a(C0415m4 c0415m4) {
+        C0356jm c0356jm = new C0356jm(c0415m4);
+        c0356jm.f961a = this.f981a;
+        c0356jm.f = this.f;
+        c0356jm.g = this.g;
+        c0356jm.j = this.j;
+        c0356jm.b = this.b;
+        c0356jm.c = this.c;
+        c0356jm.d = this.d;
+        c0356jm.e = this.e;
+        c0356jm.h = this.h;
+        c0356jm.i = this.i;
+        c0356jm.k = this.k;
+        c0356jm.l = this.l;
+        c0356jm.q = this.p;
+        c0356jm.o = this.n;
+        c0356jm.p = this.o;
+        c0356jm.r = this.q;
+        c0356jm.n = this.s;
+        c0356jm.t = this.u;
+        c0356jm.u = this.v;
+        c0356jm.s = this.r;
+        c0356jm.v = this.w;
+        c0356jm.w = this.t;
+        c0356jm.x = this.x;
+        c0356jm.y = this.y;
+        c0356jm.z = this.z;
+        c0356jm.A = this.A;
+        c0356jm.B = this.B;
+        return c0356jm;
+    }
+
+    public final String toString() {
+        return "StartupStateModel{uuid='" + this.f981a + "', reportUrls=" + this.b + ", getAdUrl='" + this.c + "', reportAdUrl='" + this.d + "', certificateUrl='" + this.e + "', hostUrlsFromStartup=" + this.f + ", hostUrlsFromClient=" + this.g + ", diagnosticUrls=" + this.h + ", customSdkHosts=" + this.i + ", encodedClidsFromResponse='" + this.j + "', lastClientClidsForStartupRequest='" + this.k + "', lastChosenForRequestClids='" + this.l + "', collectingFlags=" + this.m + ", obtainTime=" + this.n + ", hadFirstStartup=" + this.o + ", startupDidNotOverrideClids=" + this.p + ", countryInit='" + this.q + "', statSending=" + this.r + ", permissionsCollectingConfig=" + this.s + ", retryPolicyConfig=" + this.t + ", obtainServerTime=" + this.u + ", firstStartupServerTime=" + this.v + ", outdated=" + this.w + ", cacheControl=" + this.x + ", attributionConfig=" + this.y + ", startupUpdateConfig=" + this.z + ", modulesRemoteConfigs=" + this.A + ", externalAttributionConfig=" + this.B + AbstractJsonLexerKt.END_OBJ;
     }
 }

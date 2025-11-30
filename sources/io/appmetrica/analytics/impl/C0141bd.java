@@ -1,22 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerFactory;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import kotlin.collections.MapsKt;
+import android.content.Intent;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleObserver;
 /* renamed from: io.appmetrica.analytics.impl.bd  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0141bd {
+public final class C0141bd implements ModuleServiceLifecycleController {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinkedHashMap f816a = new LinkedHashMap();
+    public final K1 f816a;
 
-    public final LinkedHashMap a(String str) {
-        LinkedHashMap linkedHashMap = this.f816a;
-        LinkedHashMap linkedHashMap2 = new LinkedHashMap(MapsKt.mapCapacity(linkedHashMap.size()));
-        for (Map.Entry entry : linkedHashMap.entrySet()) {
-            linkedHashMap2.put(entry.getKey(), ((ModuleEventServiceHandlerFactory) entry.getValue()).createEventHandler(str));
-        }
-        return linkedHashMap2;
+    public C0141bd(K1 k1) {
+        this.f816a = k1;
+    }
+
+    public static final void a(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
+        moduleServiceLifecycleObserver.onFirstClientConnected();
+    }
+
+    public static final void b(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
+        moduleServiceLifecycleObserver.onAllClientsDisconnected();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController
+    public final void registerObserver(final ModuleServiceLifecycleObserver moduleServiceLifecycleObserver) {
+        this.f816a.b(new J1() { // from class: io.appmetrica.analytics.impl.bd$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.J1
+            public final void a(Intent intent) {
+                C0141bd.a(ModuleServiceLifecycleObserver.this, intent);
+            }
+        });
+        this.f816a.a(new J1() { // from class: io.appmetrica.analytics.impl.bd$$ExternalSyntheticLambda1
+            @Override // io.appmetrica.analytics.impl.J1
+            public final void a(Intent intent) {
+                C0141bd.b(ModuleServiceLifecycleObserver.this, intent);
+            }
+        });
     }
 }

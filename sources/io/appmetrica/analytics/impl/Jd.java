@@ -1,48 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.Set;
+import android.content.Context;
+import kotlin.jvm.functions.Function1;
 /* loaded from: classes5.dex */
-public final class Jd implements Consumer {
+public final class Jd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Xg f546a;
-    public final F0 b;
-    public final Sd c;
+    public final Function1 f539a;
 
-    public Jd(Xg xg, F0 f0, Sd sd) {
-        this.f546a = xg;
-        this.b = f0;
-        this.c = sd;
+    public Jd(Od od) {
+        this.f539a = od;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    /* renamed from: a */
-    public final void consume(String str) {
-        Xg xg = this.f546a;
-        F0 f0 = this.b;
-        String str2 = f0.f468a;
-        String str3 = f0.b;
-        Integer valueOf = Integer.valueOf(f0.d);
-        F0 f02 = this.b;
-        X3 x3 = new X3(str2, str3, valueOf, f02.e, f02.c);
-        Sd sd = this.c;
-        EnumC0320ib enumC0320ib = sd.b;
-        E0 e0 = sd.f683a;
-        String str4 = e0.c;
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(e0.f.f468a);
-        Set set = D9.f438a;
-        Bundle bundle = new Bundle();
-        bundle.putString("payload_crash_id", str4);
-        U3 u3 = new U3("", "", enumC0320ib.f931a, orCreatePublicLogger);
-        if (str != null) {
-            u3.f(str);
-        }
-        u3.m = bundle;
-        u3.c = sd.f683a.f.f;
-        xg.a(x3, u3, new C0664w4(new C0202dm(), new C0639v4(), null));
+    public final Kd a(Context context, Tg tg) {
+        return new Kd(context, tg, this.f539a, new Sd() { // from class: io.appmetrica.analytics.impl.Jd$$ExternalSyntheticLambda1
+            @Override // io.appmetrica.analytics.impl.Sd
+            public final InterfaceC0149bl a(G0 g0) {
+                return Jd.a(g0);
+            }
+        }, EnumC0165cb.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF, "actual");
+    }
+
+    public final Kd b(Context context, Tg tg) {
+        return new Kd(context, tg, this.f539a, new Sd() { // from class: io.appmetrica.analytics.impl.Jd$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.Sd
+            public final InterfaceC0149bl a(G0 g0) {
+                return Jd.b(g0);
+            }
+        }, EnumC0165cb.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF, "prev session");
+    }
+
+    public static final InterfaceC0149bl a(G0 g0) {
+        return new Hd(g0.f.d);
+    }
+
+    public static final InterfaceC0149bl b(G0 g0) {
+        return new X();
     }
 }

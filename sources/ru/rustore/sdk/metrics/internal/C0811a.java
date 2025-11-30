@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Lambda;
 public final class C0811a extends Lambda implements Function1<Byte, CharSequence> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0811a f1492a = new C0811a();
+    public static final C0811a f1494a = new C0811a();
 
     public C0811a() {
         super(1);

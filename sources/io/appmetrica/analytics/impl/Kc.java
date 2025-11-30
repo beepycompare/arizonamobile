@@ -1,29 +1,38 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
-import java.util.Map;
+import android.content.Context;
+import android.util.SparseArray;
+import io.appmetrica.analytics.AppMetrica;
 /* loaded from: classes5.dex */
-public class Kc {
+public abstract class Kc {
+    public abstract void a(int i);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Map f560a;
-    public final Object b;
-
-    public Kc(Object obj) {
-        this(new HashMap(), obj);
+    public final synchronized void a(Context context) {
+        int b = b();
+        int libraryApiLevel = AppMetrica.getLibraryApiLevel();
+        if (b != libraryApiLevel) {
+            if (b < libraryApiLevel) {
+                SparseArray c = c();
+                while (true) {
+                    b++;
+                    if (b > libraryApiLevel) {
+                        break;
+                    }
+                    Jc jc = (Jc) c.get(b);
+                    if (jc != null) {
+                        jc.a(context);
+                    }
+                }
+            }
+            a(libraryApiLevel);
+        }
     }
 
-    public final void a(Object obj, Object obj2) {
-        this.f560a.put(obj, obj2);
-    }
+    public abstract int b();
 
-    public Kc(HashMap hashMap, Object obj) {
-        this.f560a = hashMap;
-        this.b = obj;
-    }
+    public abstract SparseArray c();
 
-    public final Object a(Object obj) {
-        Object obj2 = this.f560a.get(obj);
-        return obj2 == null ? this.b : obj2;
+    public final int a() {
+        return AppMetrica.getLibraryApiLevel();
     }
 }

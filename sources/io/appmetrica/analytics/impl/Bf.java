@@ -1,16 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import android.content.ContentValues;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.ResultReceiver;
 /* loaded from: classes5.dex */
-public final class Bf extends AbstractC0645va {
-    public Bf(C0678wi c0678wi) {
-        super(c0678wi);
+public final class Bf implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        Bundle readBundle = parcel.readBundle(C6.class.getClassLoader());
+        return new Cf((ContentValues) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT"), (ResultReceiver) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER"));
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0645va
-    public final void a(List<Wg> list) {
-        list.add(this.f1167a.n);
-        list.add(this.f1167a.h);
-        list.add(this.f1167a.d);
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new Cf[i];
     }
 }

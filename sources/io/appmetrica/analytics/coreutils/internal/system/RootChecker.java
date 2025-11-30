@@ -7,7 +7,7 @@ import java.io.File;
 public final class RootChecker {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f324a = {"/sbin/", "/system/bin/", "/system/xbin/", "/data/local/xbin/", "/data/local/bin/", "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"};
+    private static final String[] f327a = {"/sbin/", "/system/bin/", "/system/xbin/", "/data/local/xbin/", "/data/local/bin/", "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"};
 
     /* loaded from: classes3.dex */
     public static final class RootStatus {
@@ -28,7 +28,7 @@ public final class RootChecker {
     }
 
     public static boolean isSuperuserNativeLibExists() {
-        String[] strArr = f324a;
+        String[] strArr = f327a;
         for (int i = 0; i < 8; i++) {
             String str = strArr[i];
             try {

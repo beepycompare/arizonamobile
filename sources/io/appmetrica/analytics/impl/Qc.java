@@ -1,38 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.util.SparseArray;
-import io.appmetrica.analytics.AppMetrica;
+import android.location.Location;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import io.appmetrica.analytics.coreapi.internal.control.Toggle;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSourcesServiceController;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
+import java.util.List;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public abstract class Qc {
-    public abstract void a(int i);
+public interface Qc extends InterfaceC0499pd {
+    List<ModuleServicesDatabase> b();
 
-    public final synchronized void a(Context context) {
-        int b = b();
-        int libraryApiLevel = AppMetrica.getLibraryApiLevel();
-        if (b != libraryApiLevel) {
-            if (b < libraryApiLevel) {
-                SparseArray c = c();
-                while (true) {
-                    b++;
-                    if (b > libraryApiLevel) {
-                        break;
-                    }
-                    Pc pc = (Pc) c.get(b);
-                    if (pc != null) {
-                        pc.a(context);
-                    }
-                }
-            }
-            a(libraryApiLevel);
-        }
-    }
+    /* synthetic */ Map c();
 
-    public abstract int b();
+    /* synthetic */ Map d();
 
-    public abstract SparseArray c();
+    List<Consumer<Location>> e();
 
-    public final int a() {
-        return AppMetrica.getLibraryApiLevel();
-    }
+    ModuleLocationSourcesServiceController f();
+
+    Toggle g();
+
+    /* synthetic */ List h();
 }

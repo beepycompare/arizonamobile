@@ -1,21 +1,48 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Intent;
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
+import android.content.Context;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class G1 extends SafeRunnable {
+public final class G1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Intent f483a;
-    public final /* synthetic */ L1 b;
+    public final C0138ba f488a;
+    public boolean b;
 
-    public G1(L1 l1, Intent intent) {
-        this.b = l1;
-        this.f483a = intent;
+    public G1() {
+        this(new C0138ba());
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        this.b.b.c(this.f483a);
+    public final synchronized long a(Context context) {
+        String a2;
+        try {
+            this.f488a.getClass();
+            a2 = Ka.a(FileUtils.getFileFromAppStorage(context, "metrica_service_settings.dat"));
+        } catch (Throwable unused) {
+        }
+        return TextUtils.isEmpty(a2) ? 0L : new JSONObject(a2).optLong("delay");
+    }
+
+    public final void b(Context context) {
+        synchronized (this) {
+        }
+        if (this.b) {
+            return;
+        }
+        long a2 = a(context);
+        if (a2 > 0) {
+            try {
+                Thread.sleep(a2);
+            } catch (Throwable unused) {
+            }
+        }
+        this.b = true;
+    }
+
+    public G1(C0138ba c0138ba) {
+        this.b = false;
+        this.f488a = c0138ba;
     }
 }

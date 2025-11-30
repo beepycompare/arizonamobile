@@ -1,27 +1,25 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import javax.net.ssl.SSLSocketFactory;
 /* loaded from: classes5.dex */
-public final class El implements S2 {
+public final class El {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f464a;
+    public final String f466a;
+    public final String b;
+    public final Integer c;
+    public final Integer d;
+    public final String e;
+    public final Boolean f;
 
-    public El(Context context) {
-        this.f464a = context;
+    public El(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
+        this.f466a = str;
+        this.b = str2;
+        this.c = num;
+        this.d = num2;
+        this.e = str3;
+        this.f = bool;
     }
 
-    @Override // io.appmetrica.analytics.impl.S2, io.appmetrica.analytics.impl.InterfaceC0483om
-    public final void a(C0356jm c0356jm) {
-    }
-
-    public final Context b() {
-        return this.f464a;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider
-    public final SSLSocketFactory getSslSocketFactory() {
-        return null;
+    public El(StackTraceElement stackTraceElement) {
+        this(stackTraceElement.getClassName(), stackTraceElement.getFileName(), Integer.valueOf(stackTraceElement.getLineNumber()), null, stackTraceElement.getMethodName(), Boolean.valueOf(stackTraceElement.isNativeMethod()));
     }
 }

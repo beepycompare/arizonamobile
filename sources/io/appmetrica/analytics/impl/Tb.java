@@ -1,87 +1,91 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
-import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
-import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory;
+import io.appmetrica.analytics.coreapi.internal.control.Toggle;
+import io.appmetrica.analytics.coreapi.internal.control.ToggleObserver;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
-import io.appmetrica.analytics.locationapi.internal.LocationFilter;
-import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
-import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
+import java.util.ArrayList;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Tb implements Rb {
+public final class Tb implements Qb, ToggleObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Be f703a = new Be();
-    public final Bb b = new Bb();
-    public final C0192dc c = new C0192dc();
+    public final ArrayList f691a = new ArrayList();
+    public final IHandlerExecutor b = C0471oa.k().w().b();
+    public Ln c;
+    public boolean d;
 
-    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
-    public final void a(Location location) {
+    public final void a(Toggle toggle) {
+        Ln ln = new Ln(toggle);
+        this.c = ln;
+        ln.c.registerObserver(this, true);
     }
 
-    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
-    public final void a(Object obj) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
-    public final void a(boolean z) {
-    }
-
-    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
     public final void b(Object obj) {
+        Ln ln = this.c;
+        if (ln == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("togglesHolder");
+            ln = null;
+        }
+        ln.b.b(obj);
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final LastKnownLocationExtractorProviderFactory getLastKnownExtractorProviderFactory() {
-        return this.b;
+    @Override // io.appmetrica.analytics.coreapi.internal.control.ToggleObserver
+    public final void onStateChanged(final boolean z) {
+        this.b.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Tb$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                Tb.a(Tb.this, z);
+            }
+        });
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final LocationReceiverProviderFactory getLocationReceiverProviderFactory() {
-        return this.c;
+    public final void a(final LocationControllerObserver locationControllerObserver, final boolean z) {
+        this.b.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Tb$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                Tb.a(Tb.this, locationControllerObserver, z);
+            }
+        });
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final PermissionExtractor getPermissionExtractor() {
-        return this.f703a;
+    public static final void a(Tb tb, LocationControllerObserver locationControllerObserver, boolean z) {
+        tb.f691a.add(locationControllerObserver);
+        if (z) {
+            if (tb.d) {
+                locationControllerObserver.startLocationTracking();
+            } else {
+                locationControllerObserver.stopLocationTracking();
+            }
+        }
     }
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
-    public final Location getSystemLocation() {
-        return null;
+    public static final void a(Tb tb, boolean z) {
+        if (tb.d != z) {
+            tb.d = z;
+            Function1 function1 = z ? Rb.f660a : Sb.f677a;
+            for (LocationControllerObserver locationControllerObserver : tb.f691a) {
+                function1.invoke(locationControllerObserver);
+            }
+        }
     }
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
-    public final Location getUserLocation() {
-        return null;
+    public final void a(Object obj) {
+        Ln ln = this.c;
+        if (ln == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("togglesHolder");
+            ln = null;
+        }
+        ln.b.a(obj);
     }
 
-    @Override // io.appmetrica.analytics.impl.Rb, io.appmetrica.analytics.impl.Ub
-    public final void init() {
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final void registerControllerObserver(LocationControllerObserver locationControllerObserver) {
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final void registerSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final void registerSource(LocationReceiverProvider locationReceiverProvider) {
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final void unregisterSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final void unregisterSource(LocationReceiverProvider locationReceiverProvider) {
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
-    public final void updateLocationFilter(LocationFilter locationFilter) {
+    public final void a(boolean z) {
+        Ln ln = this.c;
+        if (ln == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("togglesHolder");
+            ln = null;
+        }
+        ln.f576a.a(z);
     }
 }

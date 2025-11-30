@@ -1,42 +1,72 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.ArrayList;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import java.util.List;
-import java.util.Map;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Sn {
+public final class Sn implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final In f691a;
-    public final V b;
-    public final List c;
-    public final String d;
-    public final String e;
-    public final Map f;
-    public final String g;
-    public final Boolean h;
+    public final Gn f683a;
+    public final W b;
+    public final C0315i6 c;
+    public final Cl d;
+    public final Ie e;
+    public final Je f;
 
-    public Sn(In in, V v, ArrayList arrayList, String str, String str2, Map map, String str3, Boolean bool) {
-        this.f691a = in;
-        this.b = v;
-        this.c = arrayList;
-        this.d = str;
-        this.e = str2;
-        this.f = map;
-        this.g = str3;
-        this.h = bool;
+    public Sn() {
+        this(new Gn(), new W(new C0733yn()), new C0315i6(), new Cl(), new Ie(), new Je());
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        In in = this.f691a;
-        if (in != null) {
-            for (Hl hl : in.c) {
-                sb.append("at " + hl.f512a + "." + hl.e + "(" + hl.b + StringUtils.PROCESS_POSTFIX_DELIMITER + hl.c + StringUtils.PROCESS_POSTFIX_DELIMITER + hl.d + ")\n");
-            }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final W5 fromModel(Rn rn) {
+        W5 w5 = new W5();
+        Hn hn = rn.f666a;
+        if (hn != null) {
+            w5.f735a = this.f683a.fromModel(hn);
         }
-        return "UnhandledException{exception=" + this.f691a + "\n" + sb.toString() + AbstractJsonLexerKt.END_OBJ;
+        V v = rn.b;
+        if (v != null) {
+            w5.b = this.b.fromModel(v);
+        }
+        List<El> list = rn.c;
+        if (list != null) {
+            w5.e = this.d.fromModel(list);
+        }
+        String str = rn.g;
+        if (str != null) {
+            w5.c = str;
+        }
+        w5.d = this.c.a(rn.h);
+        if (!TextUtils.isEmpty(rn.d)) {
+            w5.h = this.e.fromModel(rn.d);
+        }
+        if (!TextUtils.isEmpty(rn.e)) {
+            w5.i = rn.e.getBytes();
+        }
+        if (!mo.a(rn.f)) {
+            w5.j = this.f.fromModel(rn.f);
+        }
+        return w5;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        W5 w5 = (W5) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Sn(Gn gn, W w, C0315i6 c0315i6, Cl cl, Ie ie, Je je) {
+        this.b = w;
+        this.f683a = gn;
+        this.c = c0315i6;
+        this.d = cl;
+        this.e = ie;
+        this.f = je;
+    }
+
+    public final Rn a(W5 w5) {
+        throw new UnsupportedOperationException();
     }
 }

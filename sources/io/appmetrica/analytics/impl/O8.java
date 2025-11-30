@@ -1,47 +1,54 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
-import kotlin.ranges.RangesKt;
+import android.content.ContentValues;
 /* loaded from: classes5.dex */
-public final class O8 implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final byte[] fromModel(Map<String, byte[]> map) {
-        Q8 q8 = new Q8();
-        P8[] p8Arr = new P8[map.size()];
-        int i = 0;
-        for (Object obj : map.entrySet()) {
-            int i2 = i + 1;
-            if (i < 0) {
-                CollectionsKt.throwIndexOverflow();
-            }
-            Map.Entry entry = (Map.Entry) obj;
-            P8 p8 = new P8();
-            p8.f633a = (String) entry.getKey();
-            p8.b = (byte[]) entry.getValue();
-            p8Arr[i] = p8;
-            i = i2;
-        }
-        q8.f648a = p8Arr;
-        return MessageNano.toByteArray(q8);
-    }
+public final class O8 {
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Map<String, byte[]> toModel(byte[] bArr) {
-        P8[] p8Arr = ((Q8) MessageNano.mergeFrom(new Q8(), bArr)).f648a;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(p8Arr.length), 16));
-        for (P8 p8 : p8Arr) {
-            Pair pair = TuplesKt.to(p8.f633a, p8.b);
-            linkedHashMap.put(pair.getFirst(), pair.getSecond());
-        }
-        return linkedHashMap;
+    /* renamed from: a  reason: collision with root package name */
+    public final String f619a;
+    public String b;
+    public final Long c;
+    public final Long d;
+    public final Long e;
+    public final Long f;
+    public final C0341j7 g;
+    public final EnumC0165cb h;
+    public final Integer i;
+    public final String j;
+    public final Integer k;
+    public final Integer l;
+    public final String m;
+    public final String n;
+    public final J8 o;
+    public final EnumC0215ea p;
+    public final EnumC0445n9 q;
+    public final Boolean r;
+    public final Integer s;
+    public final byte[] t;
+
+    public O8(ContentValues contentValues) {
+        C0238f7 model = new C0264g7(null, 1, null).toModel(contentValues);
+        this.f619a = model.a().j();
+        this.b = model.a().p();
+        this.c = model.c();
+        this.d = model.b();
+        this.e = model.a().k();
+        this.f = model.d();
+        this.g = model.a().i();
+        this.h = model.e();
+        this.i = model.a().d();
+        this.j = model.a().f();
+        this.k = model.a().o();
+        this.l = model.a().c();
+        this.m = model.a().b();
+        this.n = model.a().m();
+        J8 e = model.a().e();
+        this.o = e == null ? J8.a(null) : e;
+        EnumC0215ea h = model.a().h();
+        this.p = h == null ? EnumC0215ea.a(null) : h;
+        this.q = model.a().n();
+        this.r = model.a().a();
+        this.s = model.a().l();
+        this.t = model.a().g();
     }
 }

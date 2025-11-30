@@ -1,23 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
+import android.content.Intent;
 /* loaded from: classes5.dex */
 public final class O0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Location f614a;
-    public final /* synthetic */ C0561s1 b;
+    public final /* synthetic */ Intent f613a;
+    public final /* synthetic */ C0611u1 b;
 
-    public O0(C0561s1 c0561s1, Location location) {
-        this.b = c0561s1;
-        this.f614a = location;
+    public O0(C0611u1 c0611u1, Intent intent) {
+        this.b = c0611u1;
+        this.f613a = intent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0685x0 c0685x0 = this.b.f1103a;
-        Location location = this.f614a;
-        c0685x0.getClass();
-        C0660w0.c().a(location);
+        C0742z7 c0742z7 = this.b.d().b;
+        Intent intent = this.f613a;
+        c0742z7.getClass();
+        if (intent != null) {
+            c0742z7.a(intent.getDataString(), false);
+        }
     }
 }

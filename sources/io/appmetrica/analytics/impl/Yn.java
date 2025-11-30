@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.UserManager;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 /* loaded from: classes5.dex */
-public abstract class Yn {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0113ab f776a;
-
-    public Yn(InterfaceC0113ab interfaceC0113ab) {
-        this.f776a = interfaceC0113ab;
+public final class Yn implements FunctionWithThrowable {
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+    public final Object apply(Object obj) {
+        return Boolean.valueOf(((UserManager) obj).isUserUnlocked());
     }
 }

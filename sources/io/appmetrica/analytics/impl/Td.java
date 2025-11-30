@@ -1,21 +1,39 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
+import io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider;
+import io.appmetrica.analytics.modulesapi.internal.network.SimpleNetworkApi;
+import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext;
 /* loaded from: classes5.dex */
-public final class Td {
+public final class Td implements ServiceNetworkContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f705a;
-    public final Xg b;
-    public final Yd c;
-    public final EnumC0320ib d;
-    public final C0293ha e = new C0293ha();
-    public final Ld f = new Ld();
+    public final C0262g5 f693a;
+    public final String b = new Cdo().a();
+    public final C0606tl c = new C0606tl();
 
-    public Td(Context context, Xg xg, Yd yd, EnumC0320ib enumC0320ib) {
-        this.f705a = context;
-        this.b = xg;
-        this.c = yd;
-        this.d = enumC0320ib;
+    public Td(Context context) {
+        this.f693a = new C0262g5(new C0516q5(context), new C0529qi(C0471oa.k().h()));
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
+    public final IExecutionPolicy getExecutionPolicy() {
+        return this.f693a;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
+    public final SimpleNetworkApi getNetworkApi() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
+    public final SslSocketFactoryProvider getSslSocketFactoryProvider() {
+        return C0471oa.I.z();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
+    public final String getUserAgent() {
+        return this.b;
     }
 }

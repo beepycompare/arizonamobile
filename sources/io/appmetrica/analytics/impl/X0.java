@@ -1,20 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.Revenue;
 /* loaded from: classes5.dex */
 public final class X0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ECommerceEvent f748a;
-    public final /* synthetic */ C0561s1 b;
+    public final /* synthetic */ Revenue f743a;
+    public final /* synthetic */ C0611u1 b;
 
-    public X0(C0561s1 c0561s1, ECommerceEvent eCommerceEvent) {
-        this.b = c0561s1;
-        this.f748a = eCommerceEvent;
+    public X0(C0611u1 c0611u1, Revenue revenue) {
+        this.b = c0611u1;
+        this.f743a = revenue;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0561s1.a(this.b).reportECommerce(this.f748a);
+        C0611u1.a(this.b).reportRevenue(this.f743a);
     }
 }

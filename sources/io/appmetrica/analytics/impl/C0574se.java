@@ -1,42 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.jvm.internal.Intrinsics;
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.IAppMetricaService;
 /* renamed from: io.appmetrica.analytics.impl.se  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0574se implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Integer fromModel(Boolean bool) {
-        int i;
-        if (bool == null) {
-            i = -1;
-        } else if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
-            i = 1;
-        } else if (!Intrinsics.areEqual(bool, Boolean.FALSE)) {
-            throw new NoWhenBranchMatchedException();
-        } else {
-            i = 0;
-        }
-        return Integer.valueOf(i);
+public final class C0574se extends AbstractCallableC0727yh {
+    public final Cf e;
+
+    public C0574se(C0486p0 c0486p0, InterfaceC0123al interfaceC0123al, Cf cf) {
+        super(c0486p0, interfaceC0123al);
+        this.e = cf;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final /* bridge */ /* synthetic */ Object toModel(Object obj) {
-        return a(((Number) obj).intValue());
-    }
-
-    public final Boolean a(int i) {
-        if (i != -1) {
-            if (i != 0) {
-                if (i != 1) {
-                    return null;
-                }
-                return Boolean.TRUE;
-            }
-            return Boolean.FALSE;
+    @Override // io.appmetrica.analytics.impl.AbstractCallableC0727yh
+    public final void a(IAppMetricaService iAppMetricaService) {
+        Bundle bundle = new Bundle();
+        Cf cf = this.e;
+        synchronized (cf) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", cf);
         }
-        return null;
+        iAppMetricaService.pauseUserSession(bundle);
     }
 }

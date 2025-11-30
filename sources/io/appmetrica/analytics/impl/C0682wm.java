@@ -7,55 +7,43 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-import java.util.Arrays;
 /* renamed from: io.appmetrica.analytics.impl.wm  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0682wm extends MessageNano {
-    public static volatile C0682wm[] c;
+    public static volatile C0682wm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1192a;
-    public byte[] b;
+    public long f1187a;
 
     public C0682wm() {
         a();
     }
 
     public static C0682wm[] b() {
-        if (c == null) {
+        if (b == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new C0682wm[0];
+                if (b == null) {
+                    b = new C0682wm[0];
                 }
             }
         }
-        return c;
+        return b;
     }
 
     public final C0682wm a() {
-        this.f1192a = "";
-        this.b = WireFormatNano.EMPTY_BYTES;
+        this.f1187a = 18000000L;
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f1192a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1192a);
-        }
-        return !Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
+        return CodedOutputByteBufferNano.computeInt64Size(1, this.f1187a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f1192a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f1192a);
-        }
-        if (!Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
-        }
+        codedOutputByteBufferNano.writeInt64(1, this.f1187a);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -66,14 +54,12 @@ public final class C0682wm extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == 10) {
-                this.f1192a = codedInputByteBufferNano.readString();
-            } else if (readTag != 18) {
+            } else if (readTag != 8) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.b = codedInputByteBufferNano.readBytes();
+                this.f1187a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

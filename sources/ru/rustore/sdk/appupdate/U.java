@@ -8,17 +8,17 @@ import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 public final class U extends Lambda implements Function0<C0802r> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f1414a;
+    public final /* synthetic */ Context f1416a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public U(Context context) {
         super(0);
-        this.f1414a = context;
+        this.f1416a = context;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final C0802r invoke() {
         i0 i0Var = new i0();
-        return new C0802r(this.f1414a, new C0799o(new AppUpdateInfo.Factory(i0Var), i0Var));
+        return new C0802r(this.f1416a, new C0799o(new AppUpdateInfo.Factory(i0Var), i0Var));
     }
 }

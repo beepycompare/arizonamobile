@@ -1,4 +1,4 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class O1 {
+public final class O1 extends Throwable {
 }

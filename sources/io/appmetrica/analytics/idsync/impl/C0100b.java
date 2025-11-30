@@ -7,14 +7,14 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
 public final class C0100b implements t {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f359a;
+    public final ServiceContext f362a;
 
     public C0100b(ServiceContext serviceContext) {
-        this.f359a = serviceContext;
+        this.f362a = serviceContext;
     }
 
     @Override // io.appmetrica.analytics.idsync.impl.t
     public final boolean a() {
-        return this.f359a.getActiveNetworkTypeProvider().getNetworkType(this.f359a.getContext()) == NetworkType.CELL;
+        return this.f362a.getActiveNetworkTypeProvider().getNetworkType(this.f362a.getContext()) == NetworkType.CELL;
     }
 }

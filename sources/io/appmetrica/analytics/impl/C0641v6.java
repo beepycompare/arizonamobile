@@ -1,16 +1,14 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.backport.Function;
 /* renamed from: io.appmetrica.analytics.impl.v6  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0641v6 implements Function {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
-    /* renamed from: a */
-    public final C0733yn apply(Thread thread) {
-        String name = thread.getName();
-        int priority = thread.getPriority();
-        long id = thread.getId();
-        ThreadGroup threadGroup = thread.getThreadGroup();
-        return new C0733yn(name, priority, id, threadGroup != null ? threadGroup.getName() : "", null, null);
+public final class C0641v6 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Eg f1163a;
+    public final String b;
+
+    public C0641v6(Eg eg, String str) {
+        this.f1163a = eg;
+        this.b = str;
     }
 }

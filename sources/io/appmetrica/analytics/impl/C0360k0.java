@@ -7,20 +7,20 @@ import java.util.HashMap;
 public final class C0360k0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f963a = new HashMap();
+    public final HashMap f965a = new HashMap();
 
-    public final synchronized C0334j0 a(X4 x4, PublicLogger publicLogger, C0143bf c0143bf) {
+    public final synchronized C0334j0 a(R4 r4, PublicLogger publicLogger, Xe xe) {
         C0334j0 c0334j0;
-        c0334j0 = (C0334j0) this.f963a.get(x4.toString());
+        c0334j0 = (C0334j0) this.f965a.get(r4.toString());
         if (c0334j0 == null) {
-            C0309i0 d = c0143bf.d();
-            c0334j0 = new C0334j0(d.f920a, d.b, new C0656vl(publicLogger, "[App Environment]"));
-            this.f963a.put(x4.toString(), c0334j0);
+            C0309i0 d = xe.d();
+            c0334j0 = new C0334j0(d.f931a, d.b, new C0581sl(publicLogger, "[App Environment]"));
+            this.f965a.put(r4.toString(), c0334j0);
         }
         return c0334j0;
     }
 
-    public final synchronized void a(C0309i0 c0309i0, C0143bf c0143bf) {
-        c0143bf.a(c0309i0).b();
+    public final synchronized void a(C0309i0 c0309i0, Xe xe) {
+        xe.a(c0309i0).b();
     }
 }

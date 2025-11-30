@@ -21,7 +21,7 @@ public final class AndroidFontLoader implements PlatformFontLoader {
 
     @Override // androidx.compose.ui.text.font.PlatformFontLoader
     public android.graphics.Typeface loadBlocking(Font font) {
-        Object m9901constructorimpl;
+        Object m9902constructorimpl;
         android.graphics.Typeface typeface;
         android.graphics.Typeface load;
         if (font instanceof AndroidFont) {
@@ -38,12 +38,12 @@ public final class AndroidFontLoader implements PlatformFontLoader {
                     Result.Companion companion = Result.Companion;
                     AndroidFontLoader androidFontLoader = this;
                     load = AndroidFontLoader_androidKt.load((ResourceFont) font, this.context);
-                    m9901constructorimpl = Result.m9901constructorimpl(load);
+                    m9902constructorimpl = Result.m9902constructorimpl(load);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9901constructorimpl = Result.m9901constructorimpl(ResultKt.createFailure(th));
+                    m9902constructorimpl = Result.m9902constructorimpl(ResultKt.createFailure(th));
                 }
-                typeface = Result.m9907isFailureimpl(m9901constructorimpl) ? null : m9901constructorimpl;
+                typeface = Result.m9908isFailureimpl(m9902constructorimpl) ? null : m9902constructorimpl;
             } else if (FontLoadingStrategy.m7558equalsimpl0(mo7515getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m7562getAsyncPKNRLFQ())) {
                 throw new UnsupportedOperationException("Unsupported Async font load path");
             } else {

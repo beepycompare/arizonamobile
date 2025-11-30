@@ -1,50 +1,79 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import java.lang.Thread;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class X1 implements Thread.UncaughtExceptionHandler {
-    public static final AtomicBoolean e = new AtomicBoolean();
+public final class X1 extends MessageNano {
+    public static volatile X1[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ma f749a;
-    public final C0716y6 b = C0338j4.l().n();
-    public final C0641v6 c = new C0641v6();
-    public final Fn d = new Fn();
+    public String f744a;
+    public boolean b;
 
-    public X1(C0541r6 c0541r6) {
-        this.f749a = c0541r6;
+    public X1() {
+        a();
     }
 
-    @Override // java.lang.Thread.UncaughtExceptionHandler
-    public final void uncaughtException(Thread thread, Throwable th) {
-        StackTraceElement[] stackTraceElementArr;
-        try {
-            e.set(true);
-            Ma ma = this.f749a;
-            C0733yn apply = this.c.apply(thread);
-            Fn fn = this.d;
-            Thread a2 = fn.f480a.a();
-            ArrayList a3 = fn.a(a2, thread);
-            if (thread != a2) {
-                try {
-                    stackTraceElementArr = fn.f480a.b();
-                    if (stackTraceElementArr == null) {
-                        try {
-                            stackTraceElementArr = a2.getStackTrace();
-                        } catch (SecurityException unused) {
-                        }
-                    }
-                } catch (SecurityException unused2) {
-                    stackTraceElementArr = null;
+    public static X1[] b() {
+        if (c == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (c == null) {
+                    c = new X1[0];
                 }
-                a3.add(0, (C0733yn) fn.b.apply(a2, stackTraceElementArr));
             }
-            ma.a(th, new V(apply, a3, this.b.f1210a.a()));
-        } catch (Throwable th2) {
-            LoggerStorage.getMainPublicOrAnonymousLogger().error(th2, th2.getMessage(), new Object[0]);
         }
+        return c;
+    }
+
+    public final X1 a() {
+        this.f744a = "";
+        this.b = false;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        return CodedOutputByteBufferNano.computeBoolSize(2, this.b) + CodedOutputByteBufferNano.computeStringSize(1, this.f744a) + super.computeSerializedSize();
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        codedOutputByteBufferNano.writeString(1, this.f744a);
+        codedOutputByteBufferNano.writeBool(2, this.b);
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final X1 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f744a = codedInputByteBufferNano.readString();
+            } else if (readTag != 16) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.b = codedInputByteBufferNano.readBool();
+            }
+        }
+        return this;
+    }
+
+    public static X1 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new X1().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static X1 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (X1) MessageNano.mergeFrom(new X1(), bArr);
     }
 }

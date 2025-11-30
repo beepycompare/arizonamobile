@@ -1,32 +1,85 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.backport.Function;
-import java.io.File;
+import java.util.Set;
 /* renamed from: io.appmetrica.analytics.impl.ub  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0621ub implements Function, Consumer {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
-    /* renamed from: a */
-    public final C0522qb apply(File file) {
-        String a2 = Qa.a(file);
-        if (!TextUtils.isEmpty(a2)) {
-            try {
-                return new C0522qb(a2);
-            } catch (Throwable unused) {
-                return null;
-            }
-        }
-        return null;
+public final class C0621ub implements Ia {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Ia f1147a;
+
+    public C0621ub(Ia ia) {
+        this.f1147a = ia;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    /* renamed from: b */
-    public final void consume(File file) {
-        try {
-            file.delete();
-        } catch (Throwable unused) {
-        }
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final Ia a(String str, String str2) {
+        this.f1147a.a(str, str2);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final void b() {
+        this.f1147a.b();
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final boolean getBoolean(String str, boolean z) {
+        return this.f1147a.getBoolean(str, z);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final int getInt(String str, int i) {
+        return this.f1147a.getInt(str, i);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final long getLong(String str, long j) {
+        return this.f1147a.getLong(str, j);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final String getString(String str, String str2) {
+        return this.f1147a.getString(str, str2);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final Ia remove(String str) {
+        this.f1147a.remove(str);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final Ia a(String str, long j) {
+        this.f1147a.a(str, j);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final Ia a(int i, String str) {
+        this.f1147a.a(i, str);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final Ia a(String str, boolean z) {
+        this.f1147a.a(str, z);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final Ia a(String str, float f) {
+        this.f1147a.a(str, f);
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final boolean a(String str) {
+        return this.f1147a.a(str);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ia
+    public final Set a() {
+        return this.f1147a.a();
     }
 }

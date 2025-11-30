@@ -1,20 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 /* renamed from: io.appmetrica.analytics.impl.aj  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0121aj extends Wg {
-    public C0121aj(C0210e5 c0210e5) {
-        super(c0210e5);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Wg
-    public final boolean a(W5 w5) {
-        String str = w5.h;
-        if (TextUtils.isEmpty(str)) {
-            return false;
-        }
-        this.f744a.c.j(str).b();
-        return false;
+public final class C0121aj implements FunctionWithThrowable {
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+    public final Object apply(Object obj) {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        ((Display) obj).getRealMetrics(displayMetrics);
+        return new Point(displayMetrics.widthPixels, displayMetrics.heightPixels);
     }
 }

@@ -1,21 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType;
 /* loaded from: classes5.dex */
-public abstract /* synthetic */ class Uc {
+public final class Uc {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f718a;
+    public final Ab f709a;
+    public final Yc b;
+    public final C0395l9 c;
+    public final boolean d;
 
-    static {
-        int[] iArr = new int[ModuleAdType.values().length];
-        iArr[ModuleAdType.NATIVE.ordinal()] = 1;
-        iArr[ModuleAdType.BANNER.ordinal()] = 2;
-        iArr[ModuleAdType.REWARDED.ordinal()] = 3;
-        iArr[ModuleAdType.INTERSTITIAL.ordinal()] = 4;
-        iArr[ModuleAdType.MREC.ordinal()] = 5;
-        iArr[ModuleAdType.APP_OPEN.ordinal()] = 6;
-        iArr[ModuleAdType.OTHER.ordinal()] = 7;
-        f718a = iArr;
+    public Uc(Y4 y4, String str) {
+        this.f709a = new Ab(y4.h());
+        this.b = new Yc(str, y4.h());
+        this.c = y4.l();
+        this.d = y4.b().d();
     }
 }

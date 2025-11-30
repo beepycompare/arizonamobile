@@ -22,7 +22,7 @@ public final class C0410m implements ActivityLifecycleListener {
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
     public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        C0338j4.l().c.a().execute(new RunnableC0359k(this, activity));
+        C0158c4.l().c.a().execute(new RunnableC0359k(this, activity));
     }
 
     public final void a(Activity activity) {
@@ -32,7 +32,7 @@ public final class C0410m implements ActivityLifecycleListener {
         }
         Iterator it = hashSet.iterator();
         while (it.hasNext()) {
-            ((C0276gj) ((InterfaceC0385l) it.next())).a(activity);
+            ((C0173cj) ((InterfaceC0385l) it.next())).a(activity);
         }
     }
 }

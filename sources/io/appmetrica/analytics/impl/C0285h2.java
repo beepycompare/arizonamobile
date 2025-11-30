@@ -1,28 +1,76 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import java.io.IOException;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationState;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateProvider;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArraySet;
 /* renamed from: io.appmetrica.analytics.impl.h2  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0285h2 extends BaseProtobufStateSerializer {
-    public final C0259g2 a() {
-        return new C0259g2();
+public final class C0285h2 implements InterfaceC0431mk, ApplicationStateProvider {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final HashSet f915a = new HashSet();
+    public final HashSet b = new HashSet();
+    public volatile ApplicationState c = ApplicationState.UNKNOWN;
+    public final CopyOnWriteArraySet d = new CopyOnWriteArraySet();
+
+    public final void a(int i) {
+        this.f915a.remove(Integer.valueOf(i));
+        a();
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final MessageNano defaultValue() {
-        return new C0259g2();
+    public final void b(int i) {
+        this.b.add(Integer.valueOf(i));
+        this.f915a.remove(Integer.valueOf(i));
+        a();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: a */
-    public final C0259g2 toState(byte[] bArr) throws IOException {
-        return (C0259g2) MessageNano.mergeFrom(new C0259g2(), bArr);
+    public final void c(int i) {
+        this.f915a.add(Integer.valueOf(i));
+        this.b.remove(Integer.valueOf(i));
+        a();
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return new C0259g2();
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateProvider
+    public final ApplicationState getCurrentState() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431mk
+    public final void onCreate() {
+        a();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431mk
+    public final void onDestroy() {
+        if (this.c == ApplicationState.VISIBLE) {
+            this.c = ApplicationState.BACKGROUND;
+        }
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateProvider
+    public final ApplicationState registerStickyObserver(ApplicationStateObserver applicationStateObserver) {
+        if (applicationStateObserver != null) {
+            this.d.add(applicationStateObserver);
+        }
+        return this.c;
+    }
+
+    public final void a() {
+        ApplicationState applicationState = ApplicationState.UNKNOWN;
+        if (!this.f915a.isEmpty()) {
+            applicationState = ApplicationState.VISIBLE;
+        } else if (!this.b.isEmpty()) {
+            applicationState = ApplicationState.BACKGROUND;
+        }
+        if (this.c != applicationState) {
+            this.c = applicationState;
+            Iterator it = this.d.iterator();
+            while (it.hasNext()) {
+                ((ApplicationStateObserver) it.next()).onApplicationStateChanged(this.c);
+            }
+        }
     }
 }

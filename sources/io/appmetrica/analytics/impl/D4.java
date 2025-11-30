@@ -1,18 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.ResultReceiver;
+import java.util.ArrayList;
 /* loaded from: classes5.dex */
-public final class D4 implements InterfaceC0376kg {
+public final class D4 extends Gf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ResultReceiver f436a;
+    public final C4 f440a;
 
-    public D4(ResultReceiver resultReceiver) {
-        this.f436a = resultReceiver;
+    public D4(C0714y4 c0714y4) {
+        this.f440a = new C4(c0714y4);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0376kg
-    public final void a(C0576sg c0576sg) {
-        ResultReceiverC0726yg.a(this.f436a, c0576sg);
+    @Override // io.appmetrica.analytics.impl.Gf
+    public final X8 a(int i) {
+        ArrayList arrayList = new ArrayList();
+        int ordinal = EnumC0165cb.a(i).ordinal();
+        if (ordinal == 12) {
+            arrayList.add(this.f440a.f422a);
+        } else if (ordinal == 14) {
+            arrayList.add(this.f440a.b);
+        } else if (ordinal == 34) {
+            arrayList.add(this.f440a.c);
+        }
+        return new W8(arrayList);
     }
 }

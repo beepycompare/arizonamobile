@@ -1,15 +1,12 @@
 package io.appmetrica.analytics.impl;
+
+import android.database.sqlite.SQLiteDatabase;
+import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
+import java.sql.SQLException;
 /* loaded from: classes5.dex */
-public final class T6 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0187d7 f699a;
-    public final C7 b;
-    public final C0383kn c;
-
-    public T6(C0187d7 c0187d7, C7 c7, C0383kn c0383kn) {
-        this.f699a = c0187d7;
-        this.b = c7;
-        this.c = c0383kn;
+public final class T6 extends DatabaseScript {
+    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
+    public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {
+        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS preferences (key TEXT PRIMARY KEY,value TEXT,type INTEGER)");
     }
 }

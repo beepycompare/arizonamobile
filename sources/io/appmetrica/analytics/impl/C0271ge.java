@@ -1,22 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import android.text.TextUtils;
 /* renamed from: io.appmetrica.analytics.impl.ge  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0271ge implements uo {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f895a;
-
-    public C0271ge(String str) {
-        this.f895a = str;
+public final class C0271ge extends AbstractC0614u4 {
+    public C0271ge(String str, double d, to toVar, K2 k2) {
+        super(1, str, Double.valueOf(d), toVar, k2);
     }
 
-    @Override // io.appmetrica.analytics.impl.uo
-    public final so a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return new so(this, false, this.f895a + " is empty.");
-        }
-        return new so(this, true, "");
+    @Override // io.appmetrica.analytics.impl.AbstractC0614u4
+    public final void a(C0281go c0281go) {
+        c0281go.d.b = ((Double) this.f).doubleValue();
     }
 }

@@ -38,18 +38,18 @@ public final /* synthetic */ class JobKt__JobKt {
     }
 
     /* renamed from: Job$default */
-    public static /* synthetic */ Job m11411Job$default(Job job, int i, Object obj) {
-        Job m11410Job;
+    public static /* synthetic */ Job m11412Job$default(Job job, int i, Object obj) {
+        Job m11411Job;
         if ((i & 1) != 0) {
             job = null;
         }
-        m11410Job = m11410Job(job);
-        return m11410Job;
+        m11411Job = m11411Job(job);
+        return m11411Job;
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Since 1.2.0, binary compatibility with versions <= 1.1.x")
     /* renamed from: Job */
-    public static final /* synthetic */ Job m11410Job(Job job) {
+    public static final /* synthetic */ Job m11411Job(Job job) {
         return JobKt.Job(job);
     }
 

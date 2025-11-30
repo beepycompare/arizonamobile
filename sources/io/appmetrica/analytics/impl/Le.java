@@ -1,57 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
-import android.net.NetworkInfo;
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import java.util.Locale;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public abstract class Le {
+public final class Le implements InterfaceC0647vc, ActivationBarrierCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final He f575a;
-    public static final Ie b;
-    public static final Je c;
+    public final InterfaceC0569s9 f570a;
+    public final C0622uc b;
+    public final C0622uc c;
 
-    static {
-        NetworkType networkType = NetworkType.UNDEFINED;
-        f575a = new He(networkType);
-        b = new Ie(networkType);
-        c = new Je(2);
+    public Le(InterfaceC0569s9 interfaceC0569s9, Rg rg, C0490p4 c0490p4, Xe xe) {
+        this.f570a = interfaceC0569s9;
+        C0622uc c0622uc = new C0622uc(rg, c0490p4, xe);
+        this.b = c0622uc;
+        this.c = c0622uc;
+        if (c0622uc.b()) {
+            return;
+        }
+        C0471oa.k().a().subscribe(TimeUnit.SECONDS.toMillis(J7.f536a.longValue()), C0471oa.k().w().d(), this);
     }
 
-    public static String a(Locale locale) {
-        String language = locale.getLanguage();
-        String country = locale.getCountry();
-        StringBuilder sb = new StringBuilder(language);
-        String script = locale.getScript();
-        if (!TextUtils.isEmpty(script)) {
-            sb.append('-').append(script);
-        }
-        if (!TextUtils.isEmpty(country)) {
-            sb.append('_').append(country);
-        }
-        return sb.toString();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0647vc
+    public final G8 a() {
+        return this.c;
     }
 
-    public static NetworkType a(ConnectivityManager connectivityManager) {
-        NetworkInfo networkInfo;
-        NetworkType networkType = NetworkType.UNDEFINED;
-        Network activeNetwork = connectivityManager.getActiveNetwork();
-        if (!AndroidUtils.isApiAchieved(29) ? !(activeNetwork != null && ((networkInfo = connectivityManager.getNetworkInfo(activeNetwork)) == null || networkInfo.isConnected())) : activeNetwork == null) {
-            return NetworkType.OFFLINE;
-        }
-        NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
-        if (networkCapabilities != null) {
-            for (Integer num : b.f560a.keySet()) {
-                if (networkCapabilities.hasTransport(num.intValue())) {
-                    return (NetworkType) b.a(num);
-                }
-            }
-        }
-        return networkType;
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
+    public final void onWaitFinished() {
+        this.b.a();
+        ((C0391l5) this.f570a.a()).e();
     }
 }

@@ -1,41 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.IReporter;
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
 /* loaded from: classes5.dex */
-public final class L5 {
+public final class L5 implements K5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0460o f569a;
-    public final IReporter b;
-    public Context c;
-    public final K5 d;
+    public final C0339j5 f565a;
 
-    public L5(C0460o c0460o) {
-        this(c0460o, 0);
+    public L5(C0339j5 c0339j5) {
+        this.f565a = c0339j5;
     }
 
-    public final synchronized void a(Context context) {
-        if (this.c == null) {
-            Context applicationContext = context.getApplicationContext();
-            this.f569a.a(applicationContext);
-            this.f569a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
-            this.c = applicationContext;
-        }
+    @Override // io.appmetrica.analytics.impl.K5, io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
+    public final C0339j5 getAdRevenueProcessorsHolder() {
+        return this.f565a;
     }
 
-    public L5(C0460o c0460o, IReporter iReporter) {
-        this.f569a = c0460o;
-        this.b = iReporter;
-        this.d = new K5(this);
-    }
-
-    public /* synthetic */ L5(C0460o c0460o, int i) {
-        this(c0460o, AbstractC0661w1.a());
-    }
-
-    public final synchronized Context a() {
-        return this.c;
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
+    public final ModuleAdRevenueProcessorsHolder getAdRevenueProcessorsHolder() {
+        return this.f565a;
     }
 }

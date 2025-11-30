@@ -11,17 +11,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 /* renamed from: io.appmetrica.analytics.impl.o  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0460o extends H7 implements ActivityLifecycleRegistry {
+public final class C0460o extends A7 implements ActivityLifecycleRegistry {
 
     /* renamed from: a  reason: collision with root package name */
-    public Application f1030a;
+    public Application f1038a;
     public volatile EnumC0435n b = EnumC0435n.d;
-    public final C0670wa c = new C0670wa(true);
+    public final C0521qa c = new C0521qa(true);
 
     public final synchronized void a(Context context) {
-        if (this.f1030a == null) {
+        if (this.f1038a == null) {
             try {
-                this.f1030a = (Application) context.getApplicationContext();
+                this.f1038a = (Application) context.getApplicationContext();
             } catch (Throwable unused) {
             }
         }
@@ -31,20 +31,20 @@ public final class C0460o extends H7 implements ActivityLifecycleRegistry {
     public final synchronized void b() {
         EnumC0435n enumC0435n = this.b;
         EnumC0435n enumC0435n2 = EnumC0435n.b;
-        if (enumC0435n != enumC0435n2 && !this.c.f1183a.isEmpty()) {
-            if (this.f1030a == null) {
+        if (enumC0435n != enumC0435n2 && !this.c.f1085a.isEmpty()) {
+            if (this.f1038a == null) {
                 this.b = EnumC0435n.c;
                 return;
             }
             this.b = enumC0435n2;
-            this.f1030a.registerActivityLifecycleCallbacks(this);
+            this.f1038a.registerActivityLifecycleCallbacks(this);
         }
     }
 
     public final synchronized void c() {
-        if (this.b == EnumC0435n.b && this.c.f1183a.isEmpty()) {
+        if (this.b == EnumC0435n.b && this.c.f1085a.isEmpty()) {
             this.b = EnumC0435n.d;
-            Application application = this.f1030a;
+            Application application = this.f1038a;
             if (application != null) {
                 application.unregisterActivityLifecycleCallbacks(this);
             }
@@ -110,11 +110,11 @@ public final class C0460o extends H7 implements ActivityLifecycleRegistry {
         }
         activityEventArr = ActivityEvent.values();
         for (ActivityEvent activityEvent : activityEventArr) {
-            C0670wa c0670wa = this.c;
-            Collection collection = (Collection) c0670wa.f1183a.get(activityEvent);
+            C0521qa c0521qa = this.c;
+            Collection collection = (Collection) c0521qa.f1085a.get(activityEvent);
             if (collection != null && collection.remove(activityLifecycleListener)) {
-                if (collection.isEmpty() && c0670wa.b) {
-                    c0670wa.f1183a.remove(activityEvent);
+                if (collection.isEmpty() && c0521qa.b) {
+                    c0521qa.f1085a.remove(activityEvent);
                 }
                 new ArrayList(collection);
             }
@@ -123,8 +123,8 @@ public final class C0460o extends H7 implements ActivityLifecycleRegistry {
     }
 
     public final synchronized void a(Application application) {
-        if (this.f1030a == null) {
-            this.f1030a = application;
+        if (this.f1038a == null) {
+            this.f1038a = application;
         }
         b();
     }
@@ -136,7 +136,7 @@ public final class C0460o extends H7 implements ActivityLifecycleRegistry {
     public final void a(Activity activity, ActivityEvent activityEvent) {
         Collection<ActivityLifecycleListener> collection;
         synchronized (this) {
-            collection = (Collection) this.c.f1183a.get(activityEvent);
+            collection = (Collection) this.c.f1085a.get(activityEvent);
         }
         if (collection != null) {
             for (ActivityLifecycleListener activityLifecycleListener : collection) {

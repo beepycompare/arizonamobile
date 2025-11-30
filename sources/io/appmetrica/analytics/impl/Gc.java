@@ -1,74 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
-import kotlin.ranges.RangesKt;
-import kotlin.text.Charsets;
-import org.json.JSONObject;
+import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Gc {
-    public static final H9 a(Gc gc, Q9 q9, Map map) {
-        int i;
-        Object value;
-        gc.getClass();
-        H9 h9 = new H9();
-        switch (q9.ordinal()) {
-            case 0:
-                i = 0;
-                break;
-            case 1:
-                i = 1;
-                break;
-            case 2:
-                i = 2;
-                break;
-            case 3:
-                i = 3;
-                break;
-            case 4:
-                i = 4;
-                break;
-            case 5:
-                i = 5;
-                break;
-            case 6:
-                i = 6;
-                break;
-            default:
-                throw new NoWhenBranchMatchedException();
-        }
-        h9.f504a = i;
-        Hc.b.getClass();
-        Set<Map.Entry> entrySet = map.entrySet();
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entrySet, 10)), 16));
-        for (Map.Entry entry : entrySet) {
-            Object key = entry.getKey();
-            if (entry.getValue() instanceof Number) {
-                Object value2 = entry.getValue();
-                if (value2 == null) {
-                    throw new NullPointerException("null cannot be cast to non-null type kotlin.Number");
-                }
-                double doubleValue = ((Number) value2).doubleValue();
-                if (Double.isInfinite(doubleValue) || Double.isNaN(doubleValue)) {
-                    value = null;
-                    Pair pair = TuplesKt.to(key, value);
-                    linkedHashMap.put(pair.getFirst(), pair.getSecond());
-                }
+public final class Gc extends HashMap {
+
+    /* renamed from: a  reason: collision with root package name */
+    public int f492a;
+
+    public Gc() {
+        this.f492a = 0;
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    /* renamed from: a */
+    public final String put(String str, String str2) {
+        if (!containsKey(str)) {
+            if (str2 != null) {
+                this.f492a = str2.length() + str.length() + this.f492a;
+                return (String) super.put(str, str2);
             }
-            value = entry.getValue();
-            Pair pair2 = TuplesKt.to(key, value);
-            linkedHashMap.put(pair2.getFirst(), pair2.getSecond());
+            return null;
         }
-        String jSONObject = new JSONObject(linkedHashMap).toString();
-        if (jSONObject != null) {
-            h9.b = jSONObject.getBytes(Charsets.UTF_8);
+        if (str2 == null) {
+            if (containsKey(str)) {
+                String str3 = (String) get(str);
+                this.f492a -= str.length() + (str3 != null ? str3.length() : 0);
+            }
+            return (String) super.remove(str);
         }
-        return h9;
+        String str4 = (String) get(str);
+        this.f492a = (str2.length() - (str4 != null ? str4.length() : 0)) + this.f492a;
+        return (String) super.put(str, str2);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        if (containsKey(obj)) {
+            String str = (String) get(obj);
+            this.f492a -= ((String) obj).length() + (str == null ? 0 : str.length());
+        }
+        return (String) super.remove(obj);
+    }
+
+    public Gc(String str) {
+        super(AbstractC0294hb.d(str));
+        this.f492a = 0;
+        for (String str2 : keySet()) {
+            String str3 = (String) get(str2);
+            this.f492a = str2.length() + (str3 == null ? 0 : str3.length()) + this.f492a;
+        }
     }
 }

@@ -4,9 +4,13 @@ package io.appmetrica.analytics.impl;
 public final class C0567s7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0503ph f1108a;
+    public final Long f1115a;
+    public final Long b;
+    public final Boolean c;
 
-    public C0567s7(C0503ph c0503ph) {
-        this.f1108a = c0503ph;
+    public C0567s7(Long l, Long l2, Boolean bool) {
+        this.f1115a = l;
+        this.b = l2;
+        this.c = bool;
     }
 }

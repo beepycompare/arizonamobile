@@ -1,29 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AnrListener;
+import androidx.fragment.app.FragmentTransaction;
 /* renamed from: io.appmetrica.analytics.impl.pc  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0498pc {
+public final class C0498pc implements InterfaceC0402lg {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1056a = 5;
-    public final C0204e b;
+    public final /* synthetic */ C0523qc f1066a;
 
-    public C0498pc(InterfaceC0257g0 interfaceC0257g0) {
-        this.b = new C0204e(new Kb(interfaceC0257g0));
+    public C0498pc(C0523qc c0523qc) {
+        this.f1066a = c0523qc;
     }
 
-    public static final void b(AnrListener anrListener) {
-        anrListener.onAppNotResponding();
-    }
-
-    public final void a(final AnrListener anrListener) {
-        C0204e c0204e = this.b;
-        c0204e.f852a.add(new InterfaceC0153c() { // from class: io.appmetrica.analytics.impl.pc$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.InterfaceC0153c
-            public final void onAppNotResponding() {
-                C0498pc.b(AnrListener.this);
-            }
-        });
+    @Override // io.appmetrica.analytics.impl.InterfaceC0402lg
+    public final void a(C0477og c0477og) {
+        if (c0477og == null) {
+            return;
+        }
+        Q5 q5 = new Q5("", "", 0);
+        q5.setValueBytes(c0477og.a());
+        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        q5.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
+        this.f1066a.a(q5);
     }
 }

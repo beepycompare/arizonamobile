@@ -1,15 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes5.dex */
-public final class Sg extends AbstractC0645va {
-    public Sg(C0678wi c0678wi) {
-        super(c0678wi);
+public abstract class Sg {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Y4 f679a;
+
+    public Sg(Y4 y4) {
+        this.f679a = y4;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0645va
-    public final void a(List<Wg> list) {
-        list.add(this.f1167a.l);
-        list.add(this.f1167a.b);
+    public final Y4 a() {
+        return this.f679a;
     }
+
+    public abstract boolean a(Q5 q5);
 }

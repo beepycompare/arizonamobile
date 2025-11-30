@@ -1,16 +1,20 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes5.dex */
-public final class Dj implements Xa {
+public final class Dj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ boolean f443a;
+    public final /* synthetic */ PluginErrorDetails f448a;
+    public final /* synthetic */ String b;
 
-    public Dj(boolean z) {
-        this.f443a = z;
+    public Dj(PluginErrorDetails pluginErrorDetails, String str) {
+        this.f448a = pluginErrorDetails;
+        this.b = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.setDataSendingEnabled(this.f443a);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.getPluginExtension().reportError(this.f448a, this.b);
     }
 }

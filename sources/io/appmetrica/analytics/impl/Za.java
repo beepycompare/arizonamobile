@@ -1,20 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import android.os.Parcel;
+import android.os.Parcelable;
+import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
+import io.appmetrica.analytics.internal.IdentifiersResult;
 /* loaded from: classes5.dex */
-public interface Za extends InterfaceC0113ab {
-    Pa a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0386l0 c0386l0);
+public final class Za implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        return new IdentifiersResult(parcel.readString(), IdentifierStatus.from(parcel.readString()), parcel.readString());
+    }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0113ab
-    /* synthetic */ Za a();
-
-    InterfaceC0139bb a(AppMetricaConfig appMetricaConfig);
-
-    void a(ReporterConfig reporterConfig);
-
-    Pa b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0386l0 c0386l0);
-
-    Ya b(ReporterConfig reporterConfig);
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new IdentifiersResult[i];
+    }
 }

@@ -1,11 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes5.dex */
-public final class H2 extends AbstractC0256g {
-    public static final String g = "background";
-
-    public H2(C0210e5 c0210e5, Vk vk, Zk zk, Vj vj, SystemTimeProvider systemTimeProvider) {
-        super(c0210e5, vk, zk, Uk.a(EnumC0123al.BACKGROUND).b().a(), vj, systemTimeProvider);
+public final class H2 implements to {
+    @Override // io.appmetrica.analytics.impl.to
+    public final ro a(Object obj) {
+        C0281go[] c0281goArr = ((C0358jo) obj).f963a;
+        if (c0281goArr != null && c0281goArr.length != 0) {
+            return new ro(this, true, "");
+        }
+        return new ro(this, false, "attributes list is empty");
     }
 }

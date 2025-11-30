@@ -1,31 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 /* loaded from: classes5.dex */
-public final class Jl {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ll f550a;
-
-    public Jl(Ll ll) {
-        this.f550a = ll;
+public final class Jl extends AbstractC0491p5 {
+    public Jl(C0150bm c0150bm, C0279gm c0279gm, C0124am c0124am) {
+        super(c0150bm, c0279gm, c0124am);
     }
 
-    public final void a(String str, Nl nl, C0356jm c0356jm) {
-        ArrayList arrayList;
-        synchronized (this.f550a.b) {
-            Collection collection = (Collection) this.f550a.f580a.f1183a.get(str);
-            if (collection == null) {
-                arrayList = new ArrayList();
-            } else {
-                arrayList = new ArrayList(collection);
-            }
-        }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            ((Ul) it.next()).a(nl, c0356jm);
-        }
+    @Override // io.appmetrica.analytics.impl.AbstractC0491p5
+    public final synchronized void a(C0124am c0124am) {
+        a(new M5(c(), C0471oa.I.v(), C0471oa.I.s(), ((C0124am) b()).mergeFrom(c0124am)));
+        e();
     }
 }

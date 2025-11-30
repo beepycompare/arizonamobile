@@ -1,42 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.internal.Intrinsics;
+import io.appmetrica.analytics.AdRevenue;
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* renamed from: io.appmetrica.analytics.impl.id  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0322id {
+public final class C0322id extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f933a;
-    public final boolean b;
+    public final /* synthetic */ C0474od f939a;
+    public final /* synthetic */ AdRevenue b;
+    public final /* synthetic */ boolean c;
 
-    public C0322id(String str, boolean z) {
-        this.f933a = str;
-        this.b = z;
+    public C0322id(C0474od c0474od, AdRevenue adRevenue, boolean z) {
+        this.f939a = c0474od;
+        this.b = adRevenue;
+        this.c = z;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof C0322id) {
-            C0322id c0322id = (C0322id) obj;
-            return Intrinsics.areEqual(this.f933a, c0322id.f933a) && this.b == c0322id.b;
-        }
-        return false;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final int hashCode() {
-        int hashCode = this.f933a.hashCode() * 31;
-        boolean z = this.b;
-        int i = z;
-        if (z != 0) {
-            i = 1;
-        }
-        return hashCode + i;
-    }
-
-    public final String toString() {
-        return "ModuleStatus(moduleName=" + this.f933a + ", loaded=" + this.b + ')';
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        C0474od.a(this.f939a).reportAdRevenue(this.b, this.c);
     }
 }

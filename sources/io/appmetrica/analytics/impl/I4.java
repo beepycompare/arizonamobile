@@ -1,15 +1,32 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.Arrays;
+import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 /* loaded from: classes5.dex */
-public final class I4 {
+public final class I4 implements Y6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0446na f519a;
-    public final Ei b;
-    public final C0152bo c;
+    public final String f519a;
+    public final String b;
 
-    public I4(E4 e4) {
-        this.f519a = new C0446na(e4);
-        this.b = new Ei(e4);
-        this.c = new C0152bo(e4, C0620ua.k().h());
+    public I4(R4 r4) {
+        String b;
+        if (r4.d()) {
+            b = JvmProtoBufUtil.DEFAULT_MODULE_NAME;
+        } else {
+            b = r4.b();
+        }
+        this.f519a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
+        this.b = "db_metrica_" + r4;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Y6
+    public final String a() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Y6
+    public final String b() {
+        return this.f519a;
     }
 }

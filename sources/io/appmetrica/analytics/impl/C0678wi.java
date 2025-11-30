@@ -1,54 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.wi  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0678wi {
+public final class C0678wi extends C0434mn {
+    public final RunnableC0653vi d;
+    public final ICommonExecutor e;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0351jh f1189a;
-    public final C0577sh b;
-    public final C0627uh c;
-    public final C0652vh d;
-    public final Rg e;
-    public final Qg f;
-    public final C0145bh g;
-    public final C0300hh h;
-    public final C0274gh i;
-    public final C0119ah j;
-    public final C0178co k;
-    public final Tg l;
-    public final C0171ch m;
-    public final Yg n;
-    public final C0147bj o;
-    public final C0513q2 p;
-    public final C0254fn q;
-    public final C0121aj r;
-    public final C0449nd s;
-    public final C0173cj t;
-    public final O9 u;
+    public C0678wi(Y4 y4, Ll ll, ICommonExecutor iCommonExecutor) {
+        super(y4, ll);
+        this.d = new RunnableC0653vi(this);
+        this.e = iCommonExecutor;
+    }
 
-    public C0678wi(C0210e5 c0210e5) {
-        this.f1189a = new C0351jh(c0210e5);
-        this.b = new C0577sh(c0210e5);
-        this.c = new C0627uh(c0210e5);
-        this.d = new C0652vh(c0210e5);
-        this.e = new Rg(c0210e5);
-        this.f = new Qg(c0210e5);
-        this.g = new C0145bh(c0210e5);
-        this.h = new C0300hh(c0210e5);
-        this.i = new C0274gh(c0210e5, new Ce());
-        this.j = new C0119ah(c0210e5);
-        this.k = new C0178co(c0210e5);
-        this.l = new Tg(c0210e5);
-        this.m = new C0171ch(c0210e5);
-        this.n = new Yg(c0210e5, AbstractC0661w1.a());
-        this.o = new C0147bj(c0210e5);
-        this.p = new C0513q2(c0210e5);
-        this.q = new C0254fn(c0210e5);
-        this.r = new C0121aj(c0210e5);
-        this.s = new C0449nd(c0210e5);
-        this.t = new C0173cj(c0210e5);
-        this.u = new O9(c0210e5, new SystemTimeProvider());
+    @Override // io.appmetrica.analytics.impl.C0434mn
+    public final void a() {
+        this.e.remove(this.d);
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0434mn
+    public final void f() {
+        this.b.a();
+        C0403lh c0403lh = (C0403lh) ((Y4) this.f1016a).k.a();
+        if (c0403lh.k.a(c0403lh.j)) {
+            String str = c0403lh.m;
+            if (TextUtils.isEmpty(str) || "-1".equals(str)) {
+                return;
+            }
+            try {
+                a(Wd.a((Y4) this.f1016a));
+            } catch (Throwable unused) {
+            }
+        }
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0434mn
+    public final void g() {
+        this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(1L));
+    }
+
+    public final void h() {
+        if (this.c.get()) {
+            return;
+        }
+        this.e.remove(this.d);
+        if (((C0403lh) ((Y4) this.f1016a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0403lh) ((Y4) this.f1016a).k.a()).g));
+        }
     }
 }

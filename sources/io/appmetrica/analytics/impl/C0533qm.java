@@ -13,8 +13,8 @@ public final class C0533qm extends MessageNano {
     public static volatile C0533qm[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1080a;
-    public C0508pm b;
+    public String f1093a;
+    public String[] b;
 
     public C0533qm() {
         a();
@@ -32,8 +32,8 @@ public final class C0533qm extends MessageNano {
     }
 
     public final C0533qm a() {
-        this.f1080a = "";
-        this.b = null;
+        this.f1093a = "";
+        this.b = WireFormatNano.EMPTY_STRING_ARRAY;
         this.cachedSize = -1;
         return this;
     }
@@ -41,21 +41,49 @@ public final class C0533qm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f1080a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1080a);
+        if (!this.f1093a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1093a);
         }
-        C0508pm c0508pm = this.b;
-        return c0508pm != null ? CodedOutputByteBufferNano.computeMessageSize(2, c0508pm) + computeSerializedSize : computeSerializedSize;
+        String[] strArr = this.b;
+        if (strArr == null || strArr.length <= 0) {
+            return computeSerializedSize;
+        }
+        int i = 0;
+        int i2 = 0;
+        int i3 = 0;
+        while (true) {
+            String[] strArr2 = this.b;
+            if (i >= strArr2.length) {
+                return computeSerializedSize + i2 + i3;
+            }
+            String str = strArr2[i];
+            if (str != null) {
+                i3++;
+                i2 = CodedOutputByteBufferNano.computeStringSizeNoTag(str) + i2;
+            }
+            i++;
+        }
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f1080a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f1080a);
+        if (!this.f1093a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f1093a);
         }
-        C0508pm c0508pm = this.b;
-        if (c0508pm != null) {
-            codedOutputByteBufferNano.writeMessage(2, c0508pm);
+        String[] strArr = this.b;
+        if (strArr != null && strArr.length > 0) {
+            int i = 0;
+            while (true) {
+                String[] strArr2 = this.b;
+                if (i >= strArr2.length) {
+                    break;
+                }
+                String str = strArr2[i];
+                if (str != null) {
+                    codedOutputByteBufferNano.writeString(2, str);
+                }
+                i++;
+            }
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -68,16 +96,27 @@ public final class C0533qm extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f1080a = codedInputByteBufferNano.readString();
+                this.f1093a = codedInputByteBufferNano.readString();
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                if (this.b == null) {
-                    this.b = new C0508pm();
+                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
+                String[] strArr = this.b;
+                int length = strArr == null ? 0 : strArr.length;
+                int i = repeatedFieldArrayLength + length;
+                String[] strArr2 = new String[i];
+                if (length != 0) {
+                    System.arraycopy(strArr, 0, strArr2, 0, length);
                 }
-                codedInputByteBufferNano.readMessage(this.b);
+                while (length < i - 1) {
+                    strArr2[length] = codedInputByteBufferNano.readString();
+                    codedInputByteBufferNano.readTag();
+                    length++;
+                }
+                strArr2[length] = codedInputByteBufferNano.readString();
+                this.b = strArr2;
             }
         }
         return this;

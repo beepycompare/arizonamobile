@@ -1,21 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public abstract class Vn {
-    public static final Sn a(Throwable th, V v, List list, String str, Boolean bool) {
-        ArrayList arrayList = null;
-        In a2 = th != null ? Jn.a(th, 1, 0) : null;
-        if (list != null) {
-            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                arrayList.add(new Hl((StackTraceElement) it.next()));
-            }
-        }
-        return new Sn(a2, v, arrayList, null, null, null, str, bool);
+public final class Vn extends AbstractC0496pa {
+    public Vn(C0578si c0578si) {
+        super(c0578si);
+    }
+
+    @Override // io.appmetrica.analytics.impl.AbstractC0496pa
+    public final void a(List<Sg> list) {
+        list.add(this.f1064a.f1121a);
+        list.add(this.f1064a.b);
+        list.add(this.f1064a.n);
+        list.add(this.f1064a.d);
     }
 }

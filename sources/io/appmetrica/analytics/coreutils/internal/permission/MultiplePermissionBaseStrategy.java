@@ -10,17 +10,17 @@ import kotlin.Metadata;
 public abstract class MultiplePermissionBaseStrategy implements PermissionResolutionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    private final PermissionExtractor f306a;
+    private final PermissionExtractor f309a;
     private final List b;
 
     public MultiplePermissionBaseStrategy(PermissionExtractor permissionExtractor, List<String> list) {
-        this.f306a = permissionExtractor;
+        this.f309a = permissionExtractor;
         this.b = list;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionResolutionStrategy
     public boolean hasNecessaryPermissions(Context context) {
-        return this.b.isEmpty() || hasNecessaryPermissions(context, this.f306a, this.b);
+        return this.b.isEmpty() || hasNecessaryPermissions(context, this.f309a, this.b);
     }
 
     public abstract boolean hasNecessaryPermissions(Context context, PermissionExtractor permissionExtractor, List<String> list);

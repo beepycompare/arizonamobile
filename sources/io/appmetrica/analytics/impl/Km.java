@@ -1,29 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 /* loaded from: classes5.dex */
-public final class Km {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final long f564a;
-
-    public Km(long j) {
-        this.f564a = j;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public final class Km extends Sm {
+    @Override // io.appmetrica.analytics.impl.Sm
+    public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
+        byte[] bArr;
+        byte[] bArr2;
+        C0732ym c0732ym = new C0732ym();
+        try {
+            bArr = AbstractC0302hj.a(context.getPackageName());
+        } catch (Throwable unused) {
+            bArr = new byte[16];
         }
-        return obj != null && Km.class == obj.getClass() && this.f564a == ((Km) obj).f564a;
+        try {
+            bArr2 = AbstractC0302hj.a(new StringBuilder(context.getPackageName()).reverse().toString());
+        } catch (Throwable unused2) {
+            bArr2 = new byte[16];
+        }
+        return new Nf("startup_state", iBinaryDataHelper, new B8(c0732ym, new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bArr, bArr2)), new C0305hm());
     }
 
-    public final int hashCode() {
-        long j = this.f564a;
-        return (int) (j ^ (j >>> 32));
+    @Override // io.appmetrica.analytics.impl.Sm
+    public final IBinaryDataHelper b(Context context) {
+        IBinaryDataHelper a2;
+        C0755zk B = C0471oa.I.B();
+        synchronized (B) {
+            a2 = B.a(context);
+        }
+        return a2;
     }
 
-    public final String toString() {
-        return "StatSending{disabledReportingInterval=" + this.f564a + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.impl.Sm
+    public final IBinaryDataHelper a(Context context) {
+        return C0471oa.I.B().b(context);
     }
 }

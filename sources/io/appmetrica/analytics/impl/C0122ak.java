@@ -1,22 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
-import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* renamed from: io.appmetrica.analytics.impl.ak  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0122ak extends C0210e5 {
-    public C0122ak(Context context, C0356jm c0356jm, X4 x4, C0639v4 c0639v4, InterfaceC0428mh interfaceC0428mh, AbstractC0159c5 abstractC0159c5, W4 w4) {
-        this(context, x4, new C0360k0(), new TimePassedChecker(), new C0339j5(context, x4, c0639v4, abstractC0159c5, c0356jm, interfaceC0428mh, C0620ua.k().x().d(), PackageManagerUtils.getAppVersionCodeInt(context), C0620ua.k().l(), w4), c0639v4);
+public final class C0122ak implements ServiceComponentModuleConfig {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0490p4 f803a;
+
+    public C0122ak(C0490p4 c0490p4) {
+        this.f803a = c0490p4;
     }
 
-    @Override // io.appmetrica.analytics.impl.C0210e5, io.appmetrica.analytics.impl.La
-    public final CounterConfigurationReporterType c() {
-        return CounterConfigurationReporterType.SELF_SDK;
-    }
-
-    public C0122ak(Context context, X4 x4, C0360k0 c0360k0, TimePassedChecker timePassedChecker, C0339j5 c0339j5, C0639v4 c0639v4) {
-        super(context, x4, c0360k0, timePassedChecker, c0339j5, c0639v4);
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig
+    public final boolean isRevenueAutoTrackingEnabled() {
+        return ((Boolean) WrapUtils.getOrDefault(this.f803a.m, Boolean.TRUE)).booleanValue();
     }
 }

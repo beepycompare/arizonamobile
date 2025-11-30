@@ -26,7 +26,7 @@ public final class BufferedChannel$receiveCatching$1<E> extends ContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        Object m11422receiveCatchingJP2dKIU$suspendImpl = BufferedChannel.m11422receiveCatchingJP2dKIU$suspendImpl(this.this$0, this);
-        return m11422receiveCatchingJP2dKIU$suspendImpl == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m11422receiveCatchingJP2dKIU$suspendImpl : ChannelResult.m11432boximpl(m11422receiveCatchingJP2dKIU$suspendImpl);
+        Object m11423receiveCatchingJP2dKIU$suspendImpl = BufferedChannel.m11423receiveCatchingJP2dKIU$suspendImpl(this.this$0, this);
+        return m11423receiveCatchingJP2dKIU$suspendImpl == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m11423receiveCatchingJP2dKIU$suspendImpl : ChannelResult.m11433boximpl(m11423receiveCatchingJP2dKIU$suspendImpl);
     }
 }

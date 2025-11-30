@@ -1,21 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Lambda;
 /* loaded from: classes5.dex */
-public abstract class N4 extends AbstractC0640v5 {
-    public N4(BaseRequestConfig.ComponentLoader<Object, Object, S5> componentLoader, C0356jm c0356jm, BaseRequestConfig.BaseRequestArguments<C0639v4, Object> baseRequestArguments) {
-        super(componentLoader, c0356jm, baseRequestArguments);
+public final class N4 extends Lambda implements Function0 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ Rg f597a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public N4(Rg rg) {
+        super(0);
+        this.f597a = rg;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0640v5
-    public final void a(Object obj) {
-        C0639v4 c0639v4 = (C0639v4) obj;
-        synchronized (this) {
-            super.a((Object) c0639v4);
-        }
-    }
-
-    public final synchronized void a(C0639v4 c0639v4) {
-        super.a((Object) c0639v4);
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        return Integer.valueOf(((C0403lh) this.f597a.a()).i);
     }
 }

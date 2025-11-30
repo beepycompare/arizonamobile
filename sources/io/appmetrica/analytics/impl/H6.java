@@ -1,7 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
 /* loaded from: classes5.dex */
-public interface H6 {
-    void a(int i, Bundle bundle);
+public abstract /* synthetic */ class H6 {
+    public static /* synthetic */ String a(int i) {
+        if (i != 1) {
+            if (i == 2) {
+                return "db_overflow";
+            }
+            throw null;
+        }
+        return "bad_request";
+    }
 }

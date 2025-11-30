@@ -1,43 +1,52 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.internal.IdentifiersResult;
+import android.content.Context;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.NoWhenBranchMatchedException;
+import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 /* renamed from: io.appmetrica.analytics.impl.aa  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0112aa {
+    public static volatile C0112aa c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Xl f800a = new Xl();
-    public C0164ca b = new C0164ca();
+    public final Context f795a;
+    public final HashMap b = new HashMap();
 
-    public final synchronized void a(C0164ca c0164ca) {
-        this.b = c0164ca;
+    public C0112aa(Context context) {
+        this.f795a = context;
     }
 
-    public final synchronized void a(List list, HashMap hashMap) {
-        Boolean bool;
-        String str;
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            if (Intrinsics.areEqual((String) it.next(), "appmetrica_lib_ssl_enabled") && (bool = this.b.f827a) != null) {
-                boolean booleanValue = bool.booleanValue();
-                C0164ca c0164ca = this.b;
-                IdentifierStatus identifierStatus = c0164ca.b;
-                String str2 = c0164ca.c;
-                if (booleanValue) {
-                    str = "true";
-                } else if (!booleanValue) {
-                    str = "false";
-                } else {
-                    throw new NoWhenBranchMatchedException();
+    public static final C0112aa a(Context context) {
+        if (c == null) {
+            synchronized (Reflection.getOrCreateKotlinClass(C0112aa.class)) {
+                if (c == null) {
+                    c = new C0112aa(context);
                 }
-                hashMap.put("appmetrica_lib_ssl_enabled", this.f800a.a(new IdentifiersResult(str, identifierStatus, str2)));
+                Unit unit = Unit.INSTANCE;
             }
         }
+        C0112aa c0112aa = c;
+        if (c0112aa == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
+            return null;
+        }
+        return c0112aa;
+    }
+
+    public final synchronized C0719y9 b(String str) {
+        Object obj;
+        HashMap hashMap = this.b;
+        obj = hashMap.get(str);
+        if (obj == null) {
+            obj = new C0719y9(this.f795a, str);
+            hashMap.put(str, obj);
+        }
+        return (C0719y9) obj;
+    }
+
+    public final synchronized void a(String str) {
+        this.b.remove(str);
     }
 }

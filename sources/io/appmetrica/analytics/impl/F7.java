@@ -1,10 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import java.math.BigInteger;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public abstract class F7 {
+public final class F7 implements ServiceComponentsInitializer {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final BigInteger f472a = BigInteger.valueOf(Long.MAX_VALUE);
-    public static final BigInteger b = BigInteger.valueOf(Long.MIN_VALUE);
+    public final List f475a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.remotepermissions.internal.RemotePermissionsModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudServiceModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotServiceModuleEntryPoint", "io.appmetrica.analytics.billing.internal.BillingServiceModuleEntryPoint", "io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint"});
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer
+    public final void onCreate(Context context) {
+        Tc tc = C0471oa.I.s;
+        List<String> list = this.f475a;
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+        for (String str : list) {
+            arrayList.add(new C0540r5(str));
+        }
+        Object[] array = arrayList.toArray(new C0540r5[0]);
+        if (array != null) {
+            C0540r5[] c0540r5Arr = (C0540r5[]) array;
+            Sc[] scArr = (Sc[]) Arrays.copyOf(c0540r5Arr, c0540r5Arr.length);
+            synchronized (tc) {
+                CollectionsKt.addAll(tc.f692a, scArr);
+            }
+            C0471oa.I.s.a(new Ve(context, "io.appmetrica.analytics.modules.ads", "lsm"));
+            return;
+        }
+        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
+    }
 }

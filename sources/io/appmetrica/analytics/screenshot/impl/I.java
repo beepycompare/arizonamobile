@@ -7,16 +7,16 @@ import kotlin.collections.CollectionsKt;
 public final class I implements InterfaceC0767i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1338a;
+    public final ClientContext f1340a;
     public final U b;
 
     public I(ClientContext clientContext, U u) {
-        this.f1338a = clientContext;
+        this.f1340a = clientContext;
         this.b = u;
     }
 
     @Override // io.appmetrica.analytics.screenshot.impl.InterfaceC0767i
     public final List<T> a() {
-        return CollectionsKt.listOf((Object[]) new T[]{new C0779v(this.f1338a, this.b), new g0(this.f1338a, this.b)});
+        return CollectionsKt.listOf((Object[]) new T[]{new C0779v(this.f1340a, this.b), new g0(this.f1340a, this.b)});
     }
 }

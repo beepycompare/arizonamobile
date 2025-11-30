@@ -53,7 +53,7 @@ public final class PersistentHashSetMutableIterator<E> extends PersistentHashSet
     private final void resetPath(int i, TrieNode<?> trieNode, E e, int i2) {
         if (isCollision(trieNode)) {
             int indexOf = ArraysKt.indexOf((E[]) trieNode.getBuffer(), e);
-            CommonFunctionsKt.m11401assert(indexOf != -1);
+            CommonFunctionsKt.m11402assert(indexOf != -1);
             getPath().get(i2).reset(trieNode.getBuffer(), indexOf);
             setPathLastIndex(i2);
             return;

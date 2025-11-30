@@ -1,24 +1,17 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* renamed from: io.appmetrica.analytics.impl.mj  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0430mj implements InterfaceC0415m4 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Gg f1011a;
-
-    public C0430mj(Gg gg) {
-        this.f1011a = gg;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0415m4
-    public final void a() {
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0415m4
-    public final void a(W5 w5, C0664w4 c0664w4) {
-        Gg gg = this.f1011a;
-        if (gg != null) {
-            gg.a(w5, c0664w4);
+public final class C0430mj implements InterfaceC0287h4 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0287h4
+    /* renamed from: b */
+    public final C0327ij a(Context context, C0210e5 c0210e5, Q3 q3, C0515q4 c0515q4) {
+        Cg cg;
+        R4 r4 = new R4(q3.b, q3.f647a);
+        synchronized (c0210e5) {
+            cg = (Cg) c0210e5.f865a.get(r4.toString());
         }
+        return new C0327ij(cg);
     }
 }

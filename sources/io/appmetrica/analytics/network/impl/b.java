@@ -7,16 +7,16 @@ import kotlin.jvm.internal.Lambda;
 public final class b extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ HttpsURLConnection f1283a;
+    public final /* synthetic */ HttpsURLConnection f1282a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public b(HttpsURLConnection httpsURLConnection) {
         super(0);
-        this.f1283a = httpsURLConnection;
+        this.f1282a = httpsURLConnection;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return this.f1283a.getErrorStream();
+        return this.f1282a.getErrorStream();
     }
 }

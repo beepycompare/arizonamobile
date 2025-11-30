@@ -8,23 +8,22 @@ import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.p0  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0486p0 {
-    public static final long j = TimeUnit.SECONDS.toMillis(10);
+    public static final long k = TimeUnit.SECONDS.toMillis(10);
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1047a;
+    public final Context f1057a;
     public final ICommonExecutor b;
+    public boolean c;
+    public IAppMetricaService d;
     public CountDownLatch e;
-    public final Q1 g;
-    public IAppMetricaService d = null;
-    public final Object f = new Object();
-    public final RunnableC0436n0 h = new RunnableC0436n0(this);
-    public final ServiceConnectionC0461o0 i = new ServiceConnectionC0461o0(this);
-    public boolean c = false;
+    public final Object f;
+    public final G1 g;
+    public final H1 h;
+    public final RunnableC0436n0 i;
+    public final ServiceConnectionC0461o0 j;
 
-    public C0486p0(Context context, ICommonExecutor iCommonExecutor, Q1 q1) {
-        this.f1047a = context.getApplicationContext();
-        this.b = iCommonExecutor;
-        this.g = q1;
+    public C0486p0(Context context, ICommonExecutor iCommonExecutor) {
+        this(context, iCommonExecutor, C0158c4.l().e(), new H1());
     }
 
     public final synchronized boolean a() {
@@ -33,16 +32,16 @@ public final class C0486p0 {
 
     public final void b() {
         synchronized (this.f) {
-            this.b.remove(this.h);
+            this.b.remove(this.i);
         }
     }
 
     public final void c() {
         ICommonExecutor iCommonExecutor = this.b;
         synchronized (this.f) {
-            iCommonExecutor.remove(this.h);
+            iCommonExecutor.remove(this.i);
             if (!this.c) {
-                iCommonExecutor.executeDelayed(this.h, j);
+                iCommonExecutor.executeDelayed(this.i, k);
             }
         }
     }
@@ -58,5 +57,17 @@ public final class C0486p0 {
             }
         } catch (InterruptedException unused) {
         }
+    }
+
+    public C0486p0(Context context, ICommonExecutor iCommonExecutor, G1 g1, H1 h1) {
+        this.d = null;
+        this.f = new Object();
+        this.i = new RunnableC0436n0(this);
+        this.j = new ServiceConnectionC0461o0(this);
+        this.f1057a = context.getApplicationContext();
+        this.b = iCommonExecutor;
+        this.c = false;
+        this.g = g1;
+        this.h = h1;
     }
 }

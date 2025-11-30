@@ -1,48 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Q1 {
+public final class Q1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0293ha f644a;
-    public boolean b;
+    public final /* synthetic */ InterfaceC0142be f645a;
+    public final /* synthetic */ C0742z7 b;
 
-    public Q1() {
-        this(new C0293ha());
+    public Q1(S1 s1, C0742z7 c0742z7) {
+        this.f645a = s1;
+        this.b = c0742z7;
     }
 
-    public final synchronized long a(Context context) {
-        String a2;
-        try {
-            this.f644a.getClass();
-            a2 = Qa.a(FileUtils.getFileFromAppStorage(context, "metrica_service_settings.dat"));
-        } catch (Throwable unused) {
-        }
-        return TextUtils.isEmpty(a2) ? 0L : new JSONObject(a2).optLong("delay");
-    }
-
-    public final void b(Context context) {
-        synchronized (this) {
-        }
-        if (this.b) {
-            return;
-        }
-        long a2 = a(context);
-        if (a2 > 0) {
-            try {
-                Thread.sleep(a2);
-            } catch (Throwable unused) {
-            }
-        }
-        this.b = true;
-    }
-
-    public Q1(C0293ha c0293ha) {
-        this.b = false;
-        this.f644a = c0293ha;
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.f645a.consume(this.b);
     }
 }

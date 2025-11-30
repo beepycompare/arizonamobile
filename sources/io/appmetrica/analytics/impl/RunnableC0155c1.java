@@ -6,16 +6,20 @@ public final class RunnableC0155c1 implements Runnable {
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ String f822a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ C0561s1 c;
+    public final /* synthetic */ C0611u1 c;
 
-    public RunnableC0155c1(C0561s1 c0561s1, String str, String str2) {
-        this.c = c0561s1;
+    public RunnableC0155c1(C0611u1 c0611u1, String str, String str2) {
+        this.c = c0611u1;
         this.f822a = str;
         this.b = str2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0561s1.a(this.c).b(this.f822a, this.b);
+        C0735z0 c0735z0 = this.c.f1141a;
+        String str = this.f822a;
+        String str2 = this.b;
+        c0735z0.getClass();
+        C0710y0.c().a(str, str2);
     }
 }

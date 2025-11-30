@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Context;
 import android.os.UserManager;
-import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 /* loaded from: classes5.dex */
-public final class Zn implements FunctionWithThrowable {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
-    public final Object apply(Object obj) {
-        return Boolean.valueOf(((UserManager) obj).isUserUnlocked());
+public final class Zn {
+    public static boolean a(Context context) {
+        return ((Boolean) SystemServiceUtils.accessSystemServiceSafelyOrDefault((UserManager) context.getSystemService(UserManager.class), "detect unlocked user state", "User manager", Boolean.TRUE, new Yn())).booleanValue();
     }
 }

@@ -1,14 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* renamed from: io.appmetrica.analytics.impl.th  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0602th extends Wg {
-    public C0602th(C0210e5 c0210e5) {
-        super(c0210e5);
-    }
+public final class C0602th {
 
-    @Override // io.appmetrica.analytics.impl.Wg
-    public final boolean a(W5 w5) {
-        this.f744a.j.c(w5);
-        return false;
+    /* renamed from: a  reason: collision with root package name */
+    public final C0292h9 f1135a;
+    public final C0309i0 b;
+    public final boolean c;
+
+    public C0602th(C0292h9 c0292h9, C0309i0 c0309i0, boolean z) {
+        this.f1135a = c0292h9;
+        this.b = c0309i0;
+        this.c = z;
     }
 }

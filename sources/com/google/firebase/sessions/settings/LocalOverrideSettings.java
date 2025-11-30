@@ -57,7 +57,7 @@ public final class LocalOverrideSettings implements SettingsProvider {
     /* renamed from: getSessionRestartTimeout-FghU774  reason: not valid java name */
     public Duration mo9716getSessionRestartTimeoutFghU774() {
         if (this.metadata.containsKey(SESSION_RESTART_TIMEOUT)) {
-            return Duration.m11256boximpl(DurationKt.toDuration(this.metadata.getInt(SESSION_RESTART_TIMEOUT), DurationUnit.SECONDS));
+            return Duration.m11257boximpl(DurationKt.toDuration(this.metadata.getInt(SESSION_RESTART_TIMEOUT), DurationUnit.SECONDS));
         }
         return null;
     }

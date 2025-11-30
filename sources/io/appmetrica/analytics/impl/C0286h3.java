@@ -1,33 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* renamed from: io.appmetrica.analytics.impl.h3  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0286h3 extends U2 {
-    public C0286h3(int i, String str, PublicLogger publicLogger) {
-        super(i, str, publicLogger);
+public final class C0286h3 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0260g3 f916a;
+
+    public C0286h3() {
+        this(new C0260g3());
     }
 
-    public final int b() {
-        return this.f715a;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Nn
-    public final byte[] a(byte[] bArr) {
-        if (bArr != null) {
-            int length = bArr.length;
-            int i = this.f715a;
-            if (length > i) {
-                byte[] bArr2 = new byte[i];
-                System.arraycopy(bArr, 0, bArr2, 0, i);
-                this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, bArr, Integer.valueOf(this.f715a));
-                return bArr2;
-            }
-        }
-        return bArr;
-    }
-
-    public final String a() {
-        return this.b;
+    public C0286h3(C0260g3 c0260g3) {
+        this.f916a = c0260g3;
     }
 }

@@ -1,18 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.pm.FeatureInfo;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public abstract class X9 {
-    public final Y9 a(FeatureInfo featureInfo) {
-        if (featureInfo.name == null) {
-            int i = featureInfo.reqGlEsVersion;
-            if (i == 0) {
-                return b(featureInfo);
-            }
-            return new Y9("openGlFeature", i, (featureInfo.flags & 1) != 0);
-        }
-        return b(featureInfo);
+public final class X9 {
+    public static boolean a(JSONObject jSONObject, String str, boolean z) {
+        return ((Boolean) WrapUtils.getOrDefault(jSONObject.has(str) ? Boolean.valueOf(jSONObject.getJSONObject(str).getBoolean("enabled")) : null, Boolean.valueOf(z))).booleanValue();
     }
-
-    public abstract Y9 b(FeatureInfo featureInfo);
 }

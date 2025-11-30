@@ -1,25 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class Hh implements InterfaceC0440n4 {
+public final class Hh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0236f5 f508a;
+    public final /* synthetic */ String f509a;
+    public final /* synthetic */ List b;
+    public final /* synthetic */ C0301hi c;
 
-    public Hh(InterfaceC0236f5 interfaceC0236f5) {
-        this.f508a = interfaceC0236f5;
+    public Hh(C0301hi c0301hi, String str, List list) {
+        this.c = c0301hi;
+        this.f509a = str;
+        this.b = list;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0440n4
-    /* renamed from: b */
-    public final Fg a(Context context, C0365k5 c0365k5, X3 x3, C0664w4 c0664w4) {
-        Gg gg;
-        X4 x4 = new X4(x3.b, x3.f751a);
-        Hg hg = new Hg(this.f508a);
-        synchronized (c0365k5) {
-            gg = (Gg) c0365k5.a(x4, c0664w4, hg, c0365k5.f967a);
-        }
-        return new Fg(context, gg);
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0301hi c0301hi = this.c;
+        C0301hi.a(c0301hi.f926a, c0301hi.d, c0301hi.e).reportEvent(this.f509a, CollectionUtils.getMapFromList(this.b));
     }
 }

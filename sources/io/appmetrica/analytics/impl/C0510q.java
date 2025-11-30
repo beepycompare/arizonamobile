@@ -7,12 +7,12 @@ import java.util.WeakHashMap;
 public final class C0510q {
 
     /* renamed from: a  reason: collision with root package name */
-    public final WeakHashMap f1061a = new WeakHashMap();
+    public final WeakHashMap f1076a = new WeakHashMap();
 
     public final boolean a(Activity activity, EnumC0485p enumC0485p) {
-        if (activity == null || this.f1061a.get(activity) != enumC0485p) {
+        if (activity == null || this.f1076a.get(activity) != enumC0485p) {
             if (activity != null) {
-                this.f1061a.put(activity, enumC0485p);
+                this.f1076a.put(activity, enumC0485p);
                 return true;
             }
             return true;

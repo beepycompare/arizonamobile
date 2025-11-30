@@ -1,15 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import android.location.Location;
 /* loaded from: classes5.dex */
-public final class Ic {
+public interface Ic {
+    void a(Location location);
 
-    /* renamed from: a  reason: collision with root package name */
-    public final String f526a;
-    public final PublicLogger b;
+    void a(String str);
 
-    public Ic(String str, PublicLogger publicLogger) {
-        this.f526a = str;
-        this.b = publicLogger;
-    }
+    void a(String str, String str2);
+
+    void a(boolean z);
+
+    void a(boolean z, boolean z2);
+
+    void clearAppEnvironment();
+
+    void putAppEnvironmentValue(String str, String str2);
+
+    void setDataSendingEnabled(boolean z);
+
+    void setUserProfileID(String str);
 }

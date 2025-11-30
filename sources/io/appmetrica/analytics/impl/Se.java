@@ -1,24 +1,9 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes5.dex */
-public final class Se implements Runnable {
+public final class Se {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f684a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ PluginErrorDetails c;
-    public final /* synthetic */ Te d;
-
-    public Se(Te te, String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.d = te;
-        this.f684a = str;
-        this.b = str2;
-        this.c = pluginErrorDetails;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        ((Ya) this.d.d.get()).getPluginExtension().reportError(this.f684a, this.b, this.c);
-    }
+    public final Fn f678a = new Fn(new C0168ce("Error details"));
+    public final Fn b = new Fn(new C0116ae("Error identifier"));
+    public final Zd c = new Zd("Stacktrace");
 }

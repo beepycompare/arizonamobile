@@ -7,28 +7,28 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 public final class C0535r0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0126ao f1083a;
+    public final Zn f1095a;
     public volatile Boolean b;
-    public Ia c;
-    public Ja d;
+    public Ca c;
+    public Da d;
 
     public C0535r0() {
-        this(new C0126ao());
+        this(new Zn());
     }
 
-    public final synchronized Ia a(Context context, Z3 z3) {
+    public final synchronized Ca a(Context context, S3 s3) {
         if (this.c == null) {
             if (a(context)) {
-                this.c = new C0585t0();
+                this.c = new C0635v0();
             } else {
-                this.c = new C0511q0(context, z3);
+                this.c = new C0511q0(context, s3);
             }
         }
         return this.c;
     }
 
-    public C0535r0(C0126ao c0126ao) {
-        this.f1083a = c0126ao;
+    public C0535r0(Zn zn) {
+        this.f1095a = zn;
     }
 
     public final boolean a(Context context) {
@@ -37,8 +37,8 @@ public final class C0535r0 {
             synchronized (this) {
                 bool = this.b;
                 if (bool == null) {
-                    this.f1083a.getClass();
-                    Boolean valueOf = Boolean.valueOf(!C0126ao.a(context));
+                    this.f1095a.getClass();
+                    Boolean valueOf = Boolean.valueOf(!Zn.a(context));
                     this.b = valueOf;
                     if (valueOf.booleanValue()) {
                         ImportantLogger.INSTANCE.info("AppMetrica", "User is locked. So use stubs. Events will not be sent.", new Object[0]);

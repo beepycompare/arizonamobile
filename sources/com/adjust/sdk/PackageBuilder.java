@@ -5,7 +5,7 @@ import com.adjust.sdk.ActivityHandler;
 import com.facebook.AppEventsLogger;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import io.appmetrica.analytics.impl.H2;
+import io.appmetrica.analytics.impl.A2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Date;
 import java.util.HashMap;
@@ -895,7 +895,7 @@ public class PackageBuilder {
             if (this.internalState.isInForeground()) {
                 addBoolean(map, "foreground", Boolean.TRUE);
             } else {
-                addBoolean(map, H2.g, Boolean.TRUE);
+                addBoolean(map, A2.g, Boolean.TRUE);
             }
         }
         if (this.adjustConfig.playStoreKidsComplianceEnabled) {

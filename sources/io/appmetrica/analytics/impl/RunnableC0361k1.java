@@ -1,22 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
+import io.appmetrica.analytics.AnrListener;
 /* renamed from: io.appmetrica.analytics.impl.k1  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class RunnableC0361k1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ List f964a;
-    public final /* synthetic */ C0561s1 b;
+    public final /* synthetic */ AnrListener f966a;
+    public final /* synthetic */ C0611u1 b;
 
-    public RunnableC0361k1(C0561s1 c0561s1, List list) {
-        this.b = c0561s1;
-        this.f964a = list;
+    public RunnableC0361k1(C0611u1 c0611u1, AnrListener anrListener) {
+        this.b = c0611u1;
+        this.f966a = anrListener;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0561s1.a(this.b).reportAnr(CollectionUtils.getMapFromList(this.f964a));
+        C0611u1.a(this.b).a(this.f966a);
     }
 }

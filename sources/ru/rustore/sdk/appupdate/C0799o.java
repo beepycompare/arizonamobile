@@ -13,13 +13,13 @@ import ru.rustore.sdk.core.util.PrimitivesExtensionKt;
 public final class C0799o {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AppUpdateInfo.Factory f1450a;
+    public final AppUpdateInfo.Factory f1452a;
     public final i0 b;
 
     public C0799o(AppUpdateInfo.Factory appUpdateInfoFactory, i0 timeProvider) {
         Intrinsics.checkNotNullParameter(appUpdateInfoFactory, "appUpdateInfoFactory");
         Intrinsics.checkNotNullParameter(timeProvider, "timeProvider");
-        this.f1450a = appUpdateInfoFactory;
+        this.f1452a = appUpdateInfoFactory;
         this.b = timeProvider;
     }
 
@@ -31,7 +31,7 @@ public final class C0799o {
         long j2;
         int i;
         Intrinsics.checkNotNullParameter(bundle, "bundle");
-        AppUpdateInfo.Factory factory = this.f1450a;
+        AppUpdateInfo.Factory factory = this.f1452a;
         long j3 = bundle.getLong("APPLICATION_ID", 0L);
         String string = bundle.getString("APP_NAME");
         if (string == null) {
@@ -55,7 +55,7 @@ public final class C0799o {
         String str4 = string;
         int i3 = bundle.getInt("UPDATE_AVAILABILITY", 0);
         int coerceIn = RangesKt.coerceIn(bundle.getInt("UPDATE_PRIORITY", 0), (ClosedRange<Integer>) new IntRange(0, 5));
-        Date time = this.b.f1443a.getTime();
+        Date time = this.b.f1445a.getTime();
         Intrinsics.checkNotNullExpressionValue(time, "calendar.time");
         String string5 = bundle.getString("UPDATED_AT", time.toString());
         Intrinsics.checkNotNullExpressionValue(string5, "bundle.getString(\n      …w().toString(),\n        )");

@@ -1,22 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes5.dex */
-public final class Ij implements Xa {
+public final class Ij implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f531a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ PluginErrorDetails c;
+    public final /* synthetic */ AdRevenue f527a;
+    public final /* synthetic */ boolean b;
 
-    public Ij(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f531a = str;
-        this.b = str2;
-        this.c = pluginErrorDetails;
+    public Ij(AdRevenue adRevenue, boolean z) {
+        this.f527a = adRevenue;
+        this.b = z;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.getPluginExtension().reportError(this.f531a, this.b, this.c);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.reportAdRevenue(this.f527a, this.b);
     }
 }

@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class RequestConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f385a;
+    private final String f388a;
     private final String b;
     private final Preconditions c;
     private final Map d;
@@ -19,7 +19,7 @@ public final class RequestConfig {
     private final List g;
 
     public RequestConfig(String str, String str2, Preconditions preconditions, Map<String, ? extends List<String>> map, long j, long j2, List<Integer> list) {
-        this.f385a = str;
+        this.f388a = str;
         this.b = str2;
         this.c = preconditions;
         this.d = map;
@@ -35,7 +35,7 @@ public final class RequestConfig {
         if (Intrinsics.areEqual(RequestConfig.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
                 RequestConfig requestConfig = (RequestConfig) obj;
-                return this.e == requestConfig.e && this.f == requestConfig.f && Intrinsics.areEqual(this.f385a, requestConfig.f385a) && Intrinsics.areEqual(this.b, requestConfig.b) && Intrinsics.areEqual(this.c, requestConfig.c) && Intrinsics.areEqual(this.d, requestConfig.d) && Intrinsics.areEqual(this.g, requestConfig.g);
+                return this.e == requestConfig.e && this.f == requestConfig.f && Intrinsics.areEqual(this.f388a, requestConfig.f388a) && Intrinsics.areEqual(this.b, requestConfig.b) && Intrinsics.areEqual(this.c, requestConfig.c) && Intrinsics.areEqual(this.d, requestConfig.d) && Intrinsics.areEqual(this.g, requestConfig.g);
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.idsync.internal.model.RequestConfig");
         }
@@ -59,7 +59,7 @@ public final class RequestConfig {
     }
 
     public final String getType() {
-        return this.f385a;
+        return this.f388a;
     }
 
     public final String getUrl() {
@@ -72,7 +72,7 @@ public final class RequestConfig {
 
     public int hashCode() {
         int hashCode = Long.hashCode(this.f);
-        int hashCode2 = this.f385a.hashCode();
+        int hashCode2 = this.f388a.hashCode();
         int hashCode3 = this.b.hashCode();
         int hashCode4 = this.c.hashCode();
         int hashCode5 = this.d.hashCode();
@@ -80,6 +80,6 @@ public final class RequestConfig {
     }
 
     public String toString() {
-        return "RequestConfig(type='" + this.f385a + "', url='" + this.b + "', preconditions=" + this.c + ", headers=" + this.d + ", resendIntervalForValidResponse=" + this.e + ", resendIntervalForInvalidResponse=" + this.f + ", validResponseCodes=" + this.g + ')';
+        return "RequestConfig(type='" + this.f388a + "', url='" + this.b + "', preconditions=" + this.c + ", headers=" + this.d + ", resendIntervalForValidResponse=" + this.e + ", resendIntervalForInvalidResponse=" + this.f + ", validResponseCodes=" + this.g + ')';
     }
 }

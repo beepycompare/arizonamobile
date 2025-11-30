@@ -1,48 +1,51 @@
 package io.appmetrica.analytics.impl;
 
-import com.android.installreferrer.api.InstallReferrerStateListener;
-import com.android.installreferrer.api.ReferrerDetails;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import android.content.Context;
+import java.util.HashSet;
+import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.mg  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0427mg implements InstallReferrerStateListener {
+public final class C0427mg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0452ng f1009a;
-    public final /* synthetic */ InterfaceC0701xg b;
+    public final HashSet f1012a = new HashSet();
+    public C0477og b;
+    public boolean c;
+    public final xo d;
+    public final Context e;
 
-    public C0427mg(C0452ng c0452ng, InterfaceC0701xg interfaceC0701xg) {
-        this.f1009a = c0452ng;
-        this.b = interfaceC0701xg;
+    public C0427mg(Context context, xo xoVar) {
+        this.e = context;
+        this.d = xoVar;
+        this.b = xoVar.b();
+        this.c = xoVar.c();
     }
 
-    public static final void a(C0452ng c0452ng, InterfaceC0701xg interfaceC0701xg) {
-        try {
-            ReferrerDetails installReferrer = c0452ng.b.getInstallReferrer();
-            interfaceC0701xg.a(new C0576sg(installReferrer.getInstallReferrer(), installReferrer.getReferrerClickTimestampSeconds(), installReferrer.getInstallBeginTimestampSeconds(), EnumC0551rg.c));
-            c0452ng.b.endConnection();
-        } catch (Throwable unused) {
-        }
-    }
-
-    @Override // com.android.installreferrer.api.InstallReferrerStateListener
-    public final void onInstallReferrerServiceDisconnected() {
-    }
-
-    @Override // com.android.installreferrer.api.InstallReferrerStateListener
-    public final void onInstallReferrerSetupFinished(int i) {
-        if (i == 0) {
-            final C0452ng c0452ng = this.f1009a;
-            ICommonExecutor iCommonExecutor = c0452ng.f1026a;
-            final InterfaceC0701xg interfaceC0701xg = this.b;
-            iCommonExecutor.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.mg$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    C0427mg.a(C0452ng.this, interfaceC0701xg);
-                }
-            });
+    public final void a() {
+        if (this.c) {
             return;
         }
-        this.f1009a.a(this.b, new IllegalStateException("Referrer check failed with error " + i));
+        Context context = this.e;
+        Pa a2 = C0676wg.a(context, C0471oa.I.d.a());
+        InterfaceC0601tg interfaceC0601tg = (InterfaceC0601tg) new C0247fg(this, new C0676wg(a2), new Aa(context), new C0701xg(context)).f.getValue();
+        try {
+            a2.a(interfaceC0601tg);
+        } catch (Throwable th) {
+            interfaceC0601tg.a(th);
+        }
+    }
+
+    public final synchronized void a(C0527qg c0527qg) {
+        this.f1012a.add(c0527qg);
+        if (this.c) {
+            c0527qg.a(this.b);
+        }
+    }
+
+    public final synchronized void a(C0477og c0477og) {
+        Iterator it = this.f1012a.iterator();
+        while (it.hasNext()) {
+            ((C0527qg) it.next()).a(c0477og);
+        }
     }
 }

@@ -11,18 +11,18 @@ import ru.rustore.sdk.reactive.single.Single;
 public final class C0796l extends Lambda implements Function1<MetricsEvent, Single<Unit>> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0798n f1445a;
+    public final /* synthetic */ C0798n f1447a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0796l(C0798n c0798n) {
         super(1);
-        this.f1445a = c0798n;
+        this.f1447a = c0798n;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Single<Unit> invoke(MetricsEvent metricsEvent) {
         MetricsEvent dto = metricsEvent;
         Intrinsics.checkNotNullParameter(dto, "dto");
-        return this.f1445a.b.send(dto);
+        return this.f1447a.b.send(dto);
     }
 }

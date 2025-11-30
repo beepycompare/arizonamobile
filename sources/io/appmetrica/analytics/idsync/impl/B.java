@@ -11,20 +11,20 @@ import kotlin.ranges.RangesKt;
 public final class B {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ModulePreferences f358a;
+    public final ModulePreferences f361a;
     public final A b = new A();
     public final String c = "request_state";
     public final Map d = MapsKt.toMutableMap(a());
 
     public B(ModulePreferences modulePreferences) {
-        this.f358a = modulePreferences;
+        this.f361a = modulePreferences;
     }
 
     public final LinkedHashMap a() {
-        List<z> model = this.b.toModel(this.f358a.getString(this.c, null));
+        List<z> model = this.b.toModel(this.f361a.getString(this.c, null));
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(model, 10)), 16));
         for (Object obj : model) {
-            linkedHashMap.put(((z) obj).f379a, obj);
+            linkedHashMap.put(((z) obj).f382a, obj);
         }
         return linkedHashMap;
     }

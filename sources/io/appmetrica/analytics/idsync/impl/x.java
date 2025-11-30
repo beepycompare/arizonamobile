@@ -24,9 +24,9 @@ public final class x implements ProtobufConverter {
         m mVar = new m();
         String type = requestConfig.getType();
         Charset charset = Charsets.UTF_8;
-        mVar.f369a = type.getBytes(charset);
+        mVar.f372a = type.getBytes(charset);
         l lVar = new l();
-        lVar.f368a = w.f377a[requestConfig.getPreconditions().getNetworkType().ordinal()] != 1 ? 0 : 1;
+        lVar.f371a = w.f380a[requestConfig.getPreconditions().getNetworkType().ordinal()] != 1 ? 0 : 1;
         mVar.b = lVar;
         mVar.c = requestConfig.getUrl().getBytes(charset);
         Map<String, List<String>> headers = requestConfig.getHeaders();
@@ -34,7 +34,7 @@ public final class x implements ProtobufConverter {
         for (Map.Entry<String, List<String>> entry : headers.entrySet()) {
             List<String> value = entry.getValue();
             k kVar = new k();
-            kVar.f367a = entry.getKey().getBytes(Charsets.UTF_8);
+            kVar.f370a = entry.getKey().getBytes(Charsets.UTF_8);
             int size = value.size();
             byte[][] bArr = new byte[size];
             for (int i = 0; i < size; i++) {
@@ -64,12 +64,12 @@ public final class x implements ProtobufConverter {
     */
     public final RequestConfig toModel(m mVar) {
         NetworkType networkType;
-        byte[] bArr = mVar.f369a;
+        byte[] bArr = mVar.f372a;
         Charset charset = Charsets.UTF_8;
         String str = new String(bArr, charset);
         l lVar = mVar.b;
         if (lVar != null) {
-            if (lVar.f368a == 1) {
+            if (lVar.f371a == 1) {
                 networkType = NetworkType.CELL;
             } else {
                 networkType = NetworkType.ANY;
@@ -81,7 +81,7 @@ public final class x implements ProtobufConverter {
         k[] kVarArr = mVar.d;
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(kVarArr.length), 16));
         for (k kVar : kVarArr) {
-            String str3 = new String(kVar.f367a, Charsets.UTF_8);
+            String str3 = new String(kVar.f370a, Charsets.UTF_8);
             byte[][] bArr2 = kVar.b;
             ArrayList arrayList = new ArrayList(bArr2.length);
             for (byte[] bArr3 : bArr2) {

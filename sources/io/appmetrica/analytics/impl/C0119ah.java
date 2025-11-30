@@ -1,116 +1,88 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.pm.FeatureInfo;
-import android.content.pm.PackageInfo;
+import android.net.Uri;
 import android.text.TextUtils;
-import com.facebook.internal.NativeProtocol;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import io.appmetrica.analytics.networktasks.internal.AdvIdWithLimitedAppender;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import io.appmetrica.analytics.networktasks.internal.IParamsAppender;
+import io.appmetrica.analytics.networktasks.internal.NetworkTaskForSendingDataParamsAppender;
+import io.appmetrica.analytics.networktasks.internal.RequestBodyEncrypter;
 /* renamed from: io.appmetrica.analytics.impl.ah  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0119ah extends Wg {
-    public final SafePackageManager b;
+public final class C0119ah implements IParamsAppender {
 
-    public C0119ah(C0210e5 c0210e5) {
-        this(c0210e5, new SafePackageManager());
+    /* renamed from: a  reason: collision with root package name */
+    public final AdvIdWithLimitedAppender f801a;
+    public final NetworkTaskForSendingDataParamsAppender b;
+    public C0418m7 c;
+    public final Ib d;
+    public long e;
+
+    public C0119ah(RequestBodyEncrypter requestBodyEncrypter) {
+        this(new AdvIdWithLimitedAppender(), new NetworkTaskForSendingDataParamsAppender(requestBodyEncrypter), new Ib());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
-    @Override // io.appmetrica.analytics.impl.Wg
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a(W5 w5) {
-        HashSet hashSet;
-        ArrayList b;
-        C0210e5 c0210e5 = this.f744a;
-        if (c0210e5.t.c() && c0210e5.y()) {
-            C0143bf c0143bf = c0210e5.c;
-            String e = this.f744a.c.e();
-            try {
-                if (!TextUtils.isEmpty(e)) {
-                    try {
-                        hashSet = new HashSet();
-                        JSONArray jSONArray = new JSONArray(e);
-                        for (int i = 0; i < jSONArray.length(); i++) {
-                            hashSet.add(new Y9(jSONArray.getJSONObject(i)));
-                        }
-                    } catch (Throwable unused) {
-                        hashSet = null;
-                    }
-                    b = b();
-                    if (!CollectionUtils.areCollectionsEqual(hashSet, b)) {
-                        C0544r9 c0544r9 = c0210e5.n;
-                        int i2 = c0544r9.k;
-                        c0544r9.m = i2;
-                        c0544r9.f1091a.a(i2).b();
-                    } else {
-                        JSONArray jSONArray2 = new JSONArray();
-                        Iterator it = b.iterator();
-                        while (it.hasNext()) {
-                            Y9 y9 = (Y9) it.next();
-                            y9.getClass();
-                            JSONObject put = new JSONObject().put("name", y9.f769a).put("required", y9.c);
-                            int i3 = y9.b;
-                            if (i3 != -1) {
-                                put.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, i3);
-                            }
-                            jSONArray2.put(put);
-                        }
-                        W5 a2 = W5.a(w5, new JSONObject().put("features", jSONArray2).toString());
-                        C0544r9 c0544r92 = c0210e5.n;
-                        c0544r92.a(a2, Wk.a(c0544r92.c.b(a2), a2.i));
-                        int i4 = c0544r92.k;
-                        c0544r92.m = i4;
-                        c0544r92.f1091a.a(i4).b();
-                        c0143bf.i(jSONArray2.toString());
-                    }
-                }
-                b = b();
-                if (!CollectionUtils.areCollectionsEqual(hashSet, b)) {
-                }
-            } catch (Throwable unused2) {
-            }
-            hashSet = null;
+    public final void a(C0418m7 c0418m7) {
+        this.c = c0418m7;
+    }
+
+    public C0119ah(AdvIdWithLimitedAppender advIdWithLimitedAppender, NetworkTaskForSendingDataParamsAppender networkTaskForSendingDataParamsAppender, Ib ib) {
+        this.f801a = advIdWithLimitedAppender;
+        this.b = networkTaskForSendingDataParamsAppender;
+        this.d = ib;
+    }
+
+    public final void a(long j) {
+        this.e = j;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.IParamsAppender
+    /* renamed from: a */
+    public final void appendParams(Uri.Builder builder, C0403lh c0403lh) {
+        builder.path("report");
+        this.b.appendEncryptedData(builder);
+        C0418m7 c0418m7 = this.c;
+        if (c0418m7 != null) {
+            builder.appendQueryParameter(CommonUrlParts.DEVICE_ID, StringUtils.ifIsEmptyToDef(c0418m7.f1006a, c0403lh.getDeviceId()));
+            builder.appendQueryParameter(CommonUrlParts.UUID, StringUtils.ifIsEmptyToDef(this.c.b, c0403lh.getUuid()));
+            a(builder, CommonUrlParts.ANALYTICS_SDK_VERSION_NAME, this.c.c);
+            builder.appendQueryParameter(CommonUrlParts.APP_VERSION, StringUtils.ifIsEmptyToDef(this.c.f, c0403lh.getAppVersion()));
+            builder.appendQueryParameter(CommonUrlParts.APP_VERSION_CODE, StringUtils.ifIsEmptyToDef(this.c.h, c0403lh.getAppBuildNumber()));
+            builder.appendQueryParameter(CommonUrlParts.OS_VERSION, StringUtils.ifIsEmptyToDef(this.c.i, c0403lh.getOsVersion()));
+            a(builder, CommonUrlParts.OS_API_LEVEL, this.c.j);
+            a(builder, CommonUrlParts.ANALYTICS_SDK_BUILD_NUMBER, this.c.d);
+            a(builder, CommonUrlParts.ANALYTICS_SDK_BUILD_TYPE, this.c.e);
+            a(builder, "app_debuggable", this.c.g);
+            builder.appendQueryParameter(CommonUrlParts.LOCALE, StringUtils.ifIsEmptyToDef(this.c.k, c0403lh.getLocale()));
+            builder.appendQueryParameter(CommonUrlParts.ROOT_STATUS, StringUtils.ifIsEmptyToDef(this.c.l, c0403lh.getDeviceRootStatus()));
+            builder.appendQueryParameter(CommonUrlParts.APP_FRAMEWORK, StringUtils.ifIsEmptyToDef(this.c.m, c0403lh.getAppFramework()));
+            a(builder, "attribution_id", this.c.n);
         }
-        return false;
+        builder.appendQueryParameter("api_key_128", c0403lh.m);
+        builder.appendQueryParameter("app_id", c0403lh.getPackageName());
+        builder.appendQueryParameter(CommonUrlParts.APP_PLATFORM, c0403lh.getAppPlatform());
+        builder.appendQueryParameter(CommonUrlParts.MODEL, c0403lh.getModel());
+        builder.appendQueryParameter(CommonUrlParts.MANUFACTURER, c0403lh.getManufacturer());
+        builder.appendQueryParameter(CommonUrlParts.SCREEN_WIDTH, String.valueOf(c0403lh.getScreenWidth()));
+        builder.appendQueryParameter(CommonUrlParts.SCREEN_HEIGHT, String.valueOf(c0403lh.getScreenHeight()));
+        builder.appendQueryParameter(CommonUrlParts.SCREEN_DPI, String.valueOf(c0403lh.getScreenDpi()));
+        builder.appendQueryParameter(CommonUrlParts.SCALE_FACTOR, String.valueOf(c0403lh.getScaleFactor()));
+        builder.appendQueryParameter(CommonUrlParts.DEVICE_TYPE, c0403lh.getDeviceType());
+        a(builder, "clids_set", (String) WrapUtils.getOrDefault(c0403lh.p, ""));
+        builder.appendQueryParameter(CommonUrlParts.APP_SET_ID, c0403lh.getAppSetId());
+        builder.appendQueryParameter(CommonUrlParts.APP_SET_ID_SCOPE, c0403lh.getAppSetIdScope());
+        AdvIdWithLimitedAppender advIdWithLimitedAppender = this.f801a;
+        this.d.getClass();
+        advIdWithLimitedAppender.appendParams(builder, C0471oa.I.c().getIdentifiers());
+        builder.appendQueryParameter(CommonUrlParts.REQUEST_ID, String.valueOf(this.e));
     }
 
-    public final ArrayList b() {
-        X9 w9;
-        FeatureInfo[] featureInfoArr;
-        try {
-            C0210e5 c0210e5 = this.f744a;
-            SafePackageManager safePackageManager = this.b;
-            Context context = c0210e5.f857a;
-            PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 16384);
-            ArrayList arrayList = new ArrayList();
-            if (AndroidUtils.isApiAchieved(24)) {
-                w9 = new V9();
-            } else {
-                w9 = new W9();
-            }
-            if (packageInfo != null && (featureInfoArr = packageInfo.reqFeatures) != null) {
-                for (FeatureInfo featureInfo : featureInfoArr) {
-                    arrayList.add(w9.a(featureInfo));
-                }
-            }
-            return arrayList;
-        } catch (Throwable unused) {
-            return null;
+    public static void a(Uri.Builder builder, String str, String str2) {
+        if (TextUtils.isEmpty(str2)) {
+            return;
         }
-    }
-
-    public C0119ah(C0210e5 c0210e5, SafePackageManager safePackageManager) {
-        super(c0210e5);
-        this.b = safePackageManager;
+        builder.appendQueryParameter(str, str2);
     }
 }

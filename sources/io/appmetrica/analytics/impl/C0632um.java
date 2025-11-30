@@ -10,45 +10,43 @@ import java.io.IOException;
 /* renamed from: io.appmetrica.analytics.impl.um  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0632um extends MessageNano {
-    public static volatile C0632um[] b;
+    public static volatile C0632um[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1157a;
+    public long f1154a;
+    public long b;
 
     public C0632um() {
         a();
     }
 
     public static C0632um[] b() {
-        if (b == null) {
+        if (c == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (b == null) {
-                    b = new C0632um[0];
+                if (c == null) {
+                    c = new C0632um[0];
                 }
             }
         }
-        return b;
+        return c;
     }
 
     public final C0632um a() {
-        this.f1157a = 864000000L;
+        this.f1154a = 86400L;
+        this.b = 432000L;
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f1157a;
-        return j != 864000000 ? CodedOutputByteBufferNano.computeInt64Size(1, j) + computeSerializedSize : computeSerializedSize;
+        return CodedOutputByteBufferNano.computeInt64Size(2, this.b) + CodedOutputByteBufferNano.computeInt64Size(1, this.f1154a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f1157a;
-        if (j != 864000000) {
-            codedOutputByteBufferNano.writeInt64(1, j);
-        }
+        codedOutputByteBufferNano.writeInt64(1, this.f1154a);
+        codedOutputByteBufferNano.writeInt64(2, this.b);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -59,12 +57,14 @@ public final class C0632um extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag != 8) {
+            } else if (readTag == 8) {
+                this.f1154a = codedInputByteBufferNano.readInt64();
+            } else if (readTag != 16) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.f1157a = codedInputByteBufferNano.readInt64();
+                this.b = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

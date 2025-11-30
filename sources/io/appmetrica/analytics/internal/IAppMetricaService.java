@@ -44,7 +44,7 @@ public interface IAppMetricaService extends IInterface {
             if (queryLocalInterface != null && (queryLocalInterface instanceof IAppMetricaService)) {
                 return (IAppMetricaService) queryLocalInterface;
             }
-            return new c(iBinder);
+            return new b(iBinder);
         }
 
         @Override // android.os.IInterface

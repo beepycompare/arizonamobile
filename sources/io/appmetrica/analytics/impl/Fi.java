@@ -1,14 +1,23 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes5.dex */
-public final class Fi extends R2 {
-    public Fi(InterfaceC0562s2 interfaceC0562s2) {
-        super(interfaceC0562s2);
+public final class Fi extends AbstractCallableC0727yh {
+    public final Cf e;
+
+    public Fi(C0486p0 c0486p0, InterfaceC0123al interfaceC0123al, Cf cf) {
+        super(c0486p0, interfaceC0123al);
+        this.e = cf;
     }
 
-    @Override // io.appmetrica.analytics.impl.R2
-    public final C0307ho a(C0255fo c0255fo, C0307ho c0307ho, InterfaceC0537r2 interfaceC0537r2) {
-        C0307ho a2 = ((Hd) interfaceC0537r2).a();
-        a2.c.b = true;
-        return this.f658a.a(c0255fo, a2);
+    @Override // io.appmetrica.analytics.impl.AbstractCallableC0727yh
+    public final void a(IAppMetricaService iAppMetricaService) {
+        Bundle bundle = new Bundle();
+        Cf cf = this.e;
+        synchronized (cf) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", cf);
+        }
+        iAppMetricaService.resumeUserSession(bundle);
     }
 }

@@ -1,19 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceConfiguration;
-import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvider;
+import io.appmetrica.analytics.networktasks.internal.NetworkTask;
 /* loaded from: classes5.dex */
-public final class lo implements InterfaceC0483om {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final UtilityServiceProvider f997a;
-
-    public lo(UtilityServiceProvider utilityServiceProvider) {
-        this.f997a = utilityServiceProvider;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0483om
-    public final void a(C0356jm c0356jm) {
-        this.f997a.updateConfiguration(new UtilityServiceConfiguration(c0356jm.v, c0356jm.u));
+public final class lo implements NetworkTask.ShouldTryNextHostCondition {
+    @Override // io.appmetrica.analytics.networktasks.internal.NetworkTask.ShouldTryNextHostCondition
+    public final boolean shouldTryNextHost(int i) {
+        return !(i == 400);
     }
 }

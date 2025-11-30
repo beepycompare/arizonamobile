@@ -1,84 +1,94 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.gh  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0274gh extends Wg {
-    public final Ce b;
-    public final ProtobufStateStorage c;
-    public final G2 d;
-    public final C0388l2 e;
-    public final C0737z2 f;
+public final class C0274gh extends BaseRequestConfig.BaseRequestArguments {
 
-    public C0274gh(C0210e5 c0210e5, Ce ce) {
-        this(c0210e5, ce, ((Vm) Tm.a(C0156c2.class)).create(c0210e5.getContext()), new G2(c0210e5.getContext()), new C0388l2(), new C0737z2(c0210e5.getContext()));
+    /* renamed from: a  reason: collision with root package name */
+    public final String f907a;
+    public final boolean b;
+    public final boolean c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final boolean g;
+    public final boolean h;
+    public final Map<String, String> i;
+    public final int j;
+
+    public C0274gh(C0490p4 c0490p4) {
+        this(c0490p4.f1059a, c0490p4.b, c0490p4.d, c0490p4.e, c0490p4.f, c0490p4.g, c0490p4.h, c0490p4.i, c0490p4.j, c0490p4.k);
     }
 
-    @Override // io.appmetrica.analytics.impl.Wg
-    public final boolean a(W5 w5) {
-        C0210e5 c0210e5 = this.f744a;
-        c0210e5.b.toString();
-        if (c0210e5.t.c() && c0210e5.x()) {
-            C0156c2 c0156c2 = (C0156c2) this.c.read();
-            List list = c0156c2.f823a;
-            F2 f2 = c0156c2.b;
-            G2 g2 = this.d;
-            g2.getClass();
-            C0156c2 c0156c22 = null;
-            F2 a2 = AndroidUtils.isApiAchieved(28) ? C2.a(g2.f484a, g2.b) : null;
-            List list2 = c0156c2.c;
-            List list3 = (List) SystemServiceUtils.accessSystemServiceSafelyOrDefault(this.f.f1223a, "getting available providers", "location manager", Collections.emptyList(), new C0712y2());
-            Ce ce = this.b;
-            Context context = this.f744a.f857a;
-            ce.getClass();
-            ArrayList a3 = new Ui(context, new SafePackageManager()).a();
-            if (CollectionUtils.areCollectionsEqual(a3, list)) {
-                a3 = null;
-            }
-            if (a3 != null || !no.a(f2, a2) || !CollectionUtils.areCollectionsEqual(list2, list3)) {
-                if (a3 != null) {
-                    list = a3;
-                }
-                c0156c22 = new C0156c2(list, a2, list3);
-            }
-            if (c0156c22 == null) {
-                if (c0210e5.A()) {
-                    C0544r9 c0544r9 = c0210e5.n;
-                    W5 a4 = W5.a(w5, c0156c2.f823a, c0156c2.b, this.e, c0156c2.c);
-                    c0544r9.a(a4, Wk.a(c0544r9.c.b(a4), a4.i));
-                    long currentTimeSeconds = c0544r9.j.currentTimeSeconds();
-                    c0544r9.l = currentTimeSeconds;
-                    c0544r9.f1091a.a(currentTimeSeconds).b();
+    public static C0274gh a() {
+        return new C0274gh(null, null, null, null, null, null, null, null, null, null);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
+    /* renamed from: b */
+    public final C0274gh mergeFrom(C0490p4 c0490p4) {
+        return new C0274gh((String) WrapUtils.getOrDefaultNullable(c0490p4.f1059a, this.f907a), (Boolean) WrapUtils.getOrDefaultNullable(c0490p4.b, Boolean.valueOf(this.b)), (Boolean) WrapUtils.getOrDefaultNullable(c0490p4.d, Boolean.valueOf(this.c)), (Integer) WrapUtils.getOrDefaultNullable(c0490p4.e, Integer.valueOf(this.d)), (Integer) WrapUtils.getOrDefaultNullable(c0490p4.f, Integer.valueOf(this.e)), (Integer) WrapUtils.getOrDefaultNullable(c0490p4.g, Integer.valueOf(this.f)), (Boolean) WrapUtils.getOrDefaultNullable(c0490p4.h, Boolean.valueOf(this.g)), (Boolean) WrapUtils.getOrDefaultNullable(c0490p4.i, Boolean.valueOf(this.h)), (Map) WrapUtils.getOrDefaultNullable(c0490p4.j, this.i), (Integer) WrapUtils.getOrDefaultNullable(c0490p4.k, Integer.valueOf(this.j)));
+    }
+
+    public C0274gh(String str, Boolean bool, Boolean bool2, Integer num, Integer num2, Integer num3, Boolean bool3, Boolean bool4, Map map, Integer num4) {
+        this.f907a = str;
+        Boolean bool5 = Boolean.FALSE;
+        this.b = ((Boolean) WrapUtils.getOrDefault(bool, bool5)).booleanValue();
+        this.c = ((Boolean) WrapUtils.getOrDefault(bool2, bool5)).booleanValue();
+        this.d = Math.max(10, ((Integer) WrapUtils.getOrDefault(num, 10)).intValue());
+        this.e = ((Integer) WrapUtils.getOrDefault(num2, 7)).intValue();
+        this.f = ((Integer) WrapUtils.getOrDefault(num3, 90)).intValue();
+        this.g = ((Boolean) WrapUtils.getOrDefault(bool3, bool5)).booleanValue();
+        this.h = ((Boolean) WrapUtils.getOrDefault(bool4, Boolean.TRUE)).booleanValue();
+        this.i = map;
+        this.j = ((Integer) WrapUtils.getOrDefault(num4, 1000)).intValue();
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
+    /* renamed from: a */
+    public final boolean compareWithOtherArguments(C0490p4 c0490p4) {
+        Map<String, String> map;
+        String str;
+        Boolean bool = c0490p4.b;
+        if (bool == null || this.b == bool.booleanValue()) {
+            Boolean bool2 = c0490p4.d;
+            if (bool2 == null || this.c == bool2.booleanValue()) {
+                Integer num = c0490p4.e;
+                if (num == null || this.d == num.intValue()) {
+                    Integer num2 = c0490p4.f;
+                    if (num2 == null || this.e == num2.intValue()) {
+                        Integer num3 = c0490p4.g;
+                        if (num3 == null || this.f == num3.intValue()) {
+                            Boolean bool3 = c0490p4.h;
+                            if (bool3 == null || this.g == bool3.booleanValue()) {
+                                Boolean bool4 = c0490p4.i;
+                                if (bool4 == null || this.h == bool4.booleanValue()) {
+                                    String str2 = c0490p4.f1059a;
+                                    if (str2 == null || ((str = this.f907a) != null && str.equals(str2))) {
+                                        Map<String, String> map2 = c0490p4.j;
+                                        if (map2 == null || ((map = this.i) != null && map.equals(map2))) {
+                                            Integer num4 = c0490p4.k;
+                                            return num4 == null || this.j == num4.intValue();
+                                        }
+                                        return false;
+                                    }
+                                    return false;
+                                }
+                                return false;
+                            }
+                            return false;
+                        }
+                        return false;
+                    }
                     return false;
                 }
                 return false;
             }
-            C0544r9 c0544r92 = c0210e5.n;
-            W5 a5 = W5.a(w5, c0156c22.f823a, c0156c22.b, this.e, c0156c22.c);
-            c0544r92.a(a5, Wk.a(c0544r92.c.b(a5), a5.i));
-            long currentTimeSeconds2 = c0544r92.j.currentTimeSeconds();
-            c0544r92.l = currentTimeSeconds2;
-            c0544r92.f1091a.a(currentTimeSeconds2).b();
-            this.c.save(c0156c22);
             return false;
         }
         return false;
-    }
-
-    public C0274gh(C0210e5 c0210e5, Ce ce, ProtobufStateStorage protobufStateStorage, G2 g2, C0388l2 c0388l2, C0737z2 c0737z2) {
-        super(c0210e5);
-        this.b = ce;
-        this.c = protobufStateStorage;
-        this.d = g2;
-        this.e = c0388l2;
-        this.f = c0737z2;
     }
 }

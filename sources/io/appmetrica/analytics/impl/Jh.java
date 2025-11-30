@@ -1,11 +1,23 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Jh implements InterfaceC0236f5 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0236f5
-    /* renamed from: b */
-    public final Ih a(Context context, X4 x4, C0639v4 c0639v4, Em em) {
-        return new Ih(context, x4, c0639v4, C0620ua.H.h(), em.e(), new Kg(em), new W4());
+public final class Jh implements Runnable {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ String f542a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Throwable c;
+    public final /* synthetic */ C0301hi d;
+
+    public Jh(C0301hi c0301hi, String str, String str2, Throwable th) {
+        this.d = c0301hi;
+        this.f542a = str;
+        this.b = str2;
+        this.c = th;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0301hi c0301hi = this.d;
+        C0301hi.a(c0301hi.f926a, c0301hi.d, c0301hi.e).reportError(this.f542a, this.b, this.c);
     }
 }

@@ -129,7 +129,7 @@ public class LockFreeLinkedListNode {
     }
 
     /* renamed from: remove */
-    public boolean mo11484remove() {
+    public boolean mo11485remove() {
         return removeOrNext() == null;
     }
 

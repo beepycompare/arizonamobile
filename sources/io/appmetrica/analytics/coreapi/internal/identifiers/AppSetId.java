@@ -8,17 +8,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AppSetId {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f268a;
+    private final String f271a;
     private final AppSetIdScope b;
 
     public AppSetId(String str, AppSetIdScope appSetIdScope) {
-        this.f268a = str;
+        this.f271a = str;
         this.b = appSetIdScope;
     }
 
     public static /* synthetic */ AppSetId copy$default(AppSetId appSetId, String str, AppSetIdScope appSetIdScope, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = appSetId.f268a;
+            str = appSetId.f271a;
         }
         if ((i & 2) != 0) {
             appSetIdScope = appSetId.b;
@@ -27,7 +27,7 @@ public final class AppSetId {
     }
 
     public final String component1() {
-        return this.f268a;
+        return this.f271a;
     }
 
     public final AppSetIdScope component2() {
@@ -44,13 +44,13 @@ public final class AppSetId {
         }
         if (obj instanceof AppSetId) {
             AppSetId appSetId = (AppSetId) obj;
-            return Intrinsics.areEqual(this.f268a, appSetId.f268a) && this.b == appSetId.b;
+            return Intrinsics.areEqual(this.f271a, appSetId.f271a) && this.b == appSetId.b;
         }
         return false;
     }
 
     public final String getId() {
-        return this.f268a;
+        return this.f271a;
     }
 
     public final AppSetIdScope getScope() {
@@ -58,11 +58,11 @@ public final class AppSetId {
     }
 
     public int hashCode() {
-        String str = this.f268a;
+        String str = this.f271a;
         return this.b.hashCode() + ((str == null ? 0 : str.hashCode()) * 31);
     }
 
     public String toString() {
-        return "AppSetId(id=" + this.f268a + ", scope=" + this.b + ')';
+        return "AppSetId(id=" + this.f271a + ", scope=" + this.b + ')';
     }
 }

@@ -1,7 +1,15 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public abstract class Kl {
+public enum Kl {
+    UNKNOWN(0),
+    NETWORK(1),
+    PARSE(2);
+    
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ll f563a = new Ll();
+    public final int f559a;
+
+    Kl(int i) {
+        this.f559a = i;
+    }
 }

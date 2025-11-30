@@ -1,19 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Set;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class T8 {
+public interface T8 {
+    void a();
 
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f701a;
-    public Set b;
-    public int c;
-    public int d;
+    void a(List list);
 
-    public T8(boolean z, int i, int i2, Set set) {
-        this.f701a = z;
-        this.b = set;
-        this.c = i;
-        this.d = i2;
-    }
+    void b(List list);
 }

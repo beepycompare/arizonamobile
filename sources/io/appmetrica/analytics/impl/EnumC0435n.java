@@ -8,9 +8,9 @@ public enum EnumC0435n {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1015a;
+    public final String f1017a;
 
     EnumC0435n(String str) {
-        this.f1015a = str;
+        this.f1017a = str;
     }
 }

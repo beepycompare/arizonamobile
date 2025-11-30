@@ -1,15 +1,11 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes5.dex */
-public final class Xn extends AbstractC0645va {
-    public Xn(C0678wi c0678wi) {
-        super(c0678wi);
-    }
+public abstract class Xn {
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0645va
-    public final void a(List<Wg> list) {
-        list.add(this.f1167a.h);
-        list.add(this.f1167a.n);
+    /* renamed from: a  reason: collision with root package name */
+    public final Ua f756a;
+
+    public Xn(Ua ua) {
+        this.f756a = ua;
     }
 }

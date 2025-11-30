@@ -1,99 +1,89 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.rf  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0550rf extends MessageNano {
-    public static volatile C0550rf[] d;
+public final class C0550rf implements U7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1095a;
-    public String b;
-    public int c;
+    public final String f1102a;
+    public final JSONObject b;
+    public final boolean c;
+    public final boolean d;
+    public final T7 e;
 
-    public C0550rf() {
-        a();
+    public C0550rf(String str, JSONObject jSONObject, boolean z, boolean z2, T7 t7) {
+        this.f1102a = str;
+        this.b = jSONObject;
+        this.c = z;
+        this.d = z2;
+        this.e = t7;
     }
 
-    public static C0550rf[] b() {
-        if (d == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new C0550rf[0];
+    @Override // io.appmetrica.analytics.impl.U7
+    public final T7 a() {
+        return this.e;
+    }
+
+    public final JSONObject b() {
+        if (this.c) {
+            JSONObject jSONObject = new JSONObject();
+            try {
+                jSONObject.put("trackingId", this.f1102a);
+                if (this.b.length() > 0) {
+                    jSONObject.put("additionalParams", this.b);
                 }
+            } catch (Throwable unused) {
             }
+            return jSONObject;
         }
-        return d;
+        return null;
     }
 
-    public final C0550rf a() {
-        this.f1095a = "";
-        this.b = "";
-        this.c = 0;
-        this.cachedSize = -1;
-        return this;
+    public final JSONObject c() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("trackingId", this.f1102a);
+            jSONObject.put("additionalParams", this.b);
+            jSONObject.put("wasSet", this.c);
+            jSONObject.put("autoTracking", this.d);
+            jSONObject.put("source", this.e.f690a);
+        } catch (Throwable unused) {
+        }
+        return jSONObject;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f1095a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1095a);
-        }
-        if (!this.b.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
-        }
-        return CodedOutputByteBufferNano.computeInt32Size(3, this.c) + computeSerializedSize;
+    public final String toString() {
+        return "PreloadInfoState{trackingId='" + this.f1102a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f1095a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f1095a);
-        }
-        if (!this.b.equals("")) {
-            codedOutputByteBufferNano.writeString(2, this.b);
-        }
-        codedOutputByteBufferNano.writeInt32(3, this.c);
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final C0550rf mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+    public static C0550rf a(JSONObject jSONObject) {
+        T7 t7;
+        String optStringOrNull = JsonUtils.optStringOrNull(jSONObject, "trackingId");
+        JSONObject optJsonObjectOrDefault = JsonUtils.optJsonObjectOrDefault(jSONObject, "additionalParams", new JSONObject());
+        int i = 0;
+        boolean optBooleanOrDefault = JsonUtils.optBooleanOrDefault(jSONObject, "wasSet", false);
+        boolean optBooleanOrDefault2 = JsonUtils.optBooleanOrDefault(jSONObject, "autoTracking", false);
+        String optStringOrNull2 = JsonUtils.optStringOrNull(jSONObject, "source");
+        T7[] values = T7.values();
+        int length = values.length;
         while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
+            if (i >= length) {
+                t7 = null;
                 break;
-            } else if (readTag == 10) {
-                this.f1095a = codedInputByteBufferNano.readString();
-            } else if (readTag == 18) {
-                this.b = codedInputByteBufferNano.readString();
-            } else if (readTag != 24) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
-                    this.c = readInt32;
-                }
             }
+            t7 = values[i];
+            if (Intrinsics.areEqual(t7.f690a, optStringOrNull2)) {
+                break;
+            }
+            i++;
         }
-        return this;
-    }
-
-    public static C0550rf b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C0550rf().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static C0550rf a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C0550rf) MessageNano.mergeFrom(new C0550rf(), bArr);
+        if (t7 == null) {
+            t7 = T7.b;
+        }
+        return new C0550rf(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, t7);
     }
 }

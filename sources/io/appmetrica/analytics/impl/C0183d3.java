@@ -1,37 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import io.appmetrica.analytics.coreutils.internal.io.GZIPCompressor;
-import java.util.Arrays;
+import android.util.Base64;
 /* renamed from: io.appmetrica.analytics.impl.d3  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0183d3 {
+public final class C0183d3 implements uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0157c3 f839a;
-    public final GZIPCompressor b;
+    public final I8 f841a;
 
     public C0183d3() {
-        this(new C0157c3(), new GZIPCompressor());
+        this(new I8());
     }
 
-    public final byte[] a(byte[] bArr) {
-        try {
-            byte[] copyOfRange = Arrays.copyOfRange(bArr, 0, 16);
-            C0157c3 c0157c3 = this.f839a;
-            byte[] bytes = "hBnBQbZrmjPXEWVJ".getBytes();
-            c0157c3.getClass();
-            AESEncrypter aESEncrypter = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bytes, copyOfRange);
-            if (bArr != null && bArr.length != 0) {
-                return this.b.uncompress(aESEncrypter.decrypt(bArr, 16, bArr.length - 16));
+    @Override // io.appmetrica.analytics.impl.uo
+    public final byte[] a(O8 o8, C0403lh c0403lh) {
+        byte[] bArr = new byte[0];
+        String str = o8.b;
+        if (str != null) {
+            try {
+                bArr = Base64.decode(str, 0);
+            } catch (Throwable unused) {
             }
-        } catch (Throwable unused) {
         }
-        return null;
+        I8 i8 = this.f841a;
+        return ((H8) i8.f522a.a(o8.o)).a(bArr);
     }
 
-    public C0183d3(C0157c3 c0157c3, GZIPCompressor gZIPCompressor) {
-        this.f839a = c0157c3;
-        this.b = gZIPCompressor;
+    public C0183d3(I8 i8) {
+        this.f841a = i8;
     }
 }

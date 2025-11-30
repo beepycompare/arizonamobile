@@ -1,18 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.profile.UserProfile;
 /* loaded from: classes5.dex */
-public final class Aj implements Xa {
+public final class Aj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UserProfile f398a;
+    public final /* synthetic */ Rn f399a;
 
-    public Aj(UserProfile userProfile) {
-        this.f398a = userProfile;
+    public Aj(Rn rn) {
+        this.f399a = rn;
     }
 
-    @Override // io.appmetrica.analytics.impl.Xa
-    public final void a(Ya ya) {
-        ya.reportUserProfile(this.f398a);
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(Sa sa) {
+        sa.a(this.f399a);
     }
 }

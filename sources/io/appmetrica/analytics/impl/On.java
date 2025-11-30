@@ -1,24 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes5.dex */
-public final class On implements InterfaceC0337j3 {
+public final class On extends AbstractCallableC0727yh {
+    public final int e;
+    public final Bundle f;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Object f625a;
-    public final InterfaceC0337j3 b;
-
-    public On(Object obj, InterfaceC0337j3 interfaceC0337j3) {
-        this.f625a = obj;
-        this.b = interfaceC0337j3;
+    public On(C0486p0 c0486p0, InterfaceC0123al interfaceC0123al, int i, Bundle bundle) {
+        super(c0486p0, interfaceC0123al);
+        this.e = i;
+        this.f = bundle;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0337j3
-    public final int getBytesTruncated() {
-        return this.b.getBytesTruncated();
-    }
-
-    public final String toString() {
-        return "TrimmingResult{value=" + this.f625a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.impl.AbstractCallableC0727yh
+    public final void a(IAppMetricaService iAppMetricaService) {
+        iAppMetricaService.reportData(this.e, this.f);
     }
 }

@@ -1,50 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.net.Uri;
-import android.text.TextUtils;
-import java.util.HashMap;
-import java.util.Map;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 /* renamed from: io.appmetrica.analytics.impl.wg  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0676wg {
-    public static P7 a(String str) {
-        HashMap hashMap;
-        HashMap b = b(str);
-        if (b.isEmpty()) {
-            b = b(Uri.decode(str));
-        }
-        String decode = Uri.decode((String) b.get("appmetrica_deep_link"));
-        if (TextUtils.isEmpty(decode)) {
-            hashMap = null;
-        } else {
-            HashMap b2 = b(decode);
-            hashMap = new HashMap(b2.size());
-            for (Map.Entry entry : b2.entrySet()) {
-                hashMap.put(Uri.decode((String) entry.getKey()), Uri.decode((String) entry.getValue()));
-            }
-        }
-        return new P7(decode, hashMap, str);
+    public C0676wg(Pa pa) {
     }
 
-    public static HashMap b(String str) {
-        String[] split;
-        HashMap hashMap = new HashMap();
-        if (str != null) {
-            int lastIndexOf = str.lastIndexOf(63);
-            if (lastIndexOf >= 0) {
-                str = str.substring(lastIndexOf + 1);
+    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0011  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Pa a(Context context, IHandlerExecutor iHandlerExecutor) {
+        C0350jg c0350jg;
+        if (ReflectionUtils.detectClassExists("com.android.installreferrer.api.InstallReferrerClient")) {
+            try {
+                c0350jg = new C0350jg(context, iHandlerExecutor);
+            } catch (Throwable unused) {
             }
-            if (str.contains("=")) {
-                for (String str2 : str.split("&")) {
-                    int indexOf = str2.indexOf("=");
-                    if (indexOf >= 0) {
-                        hashMap.put(str2.substring(0, indexOf), str2.substring(indexOf + 1));
-                    } else {
-                        hashMap.put(str2, "");
-                    }
-                }
-            }
+            return c0350jg != null ? new C0651vg() : c0350jg;
         }
-        return hashMap;
+        c0350jg = null;
+        if (c0350jg != null) {
+        }
     }
 }

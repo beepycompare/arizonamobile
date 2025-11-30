@@ -1,5 +1,7 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public interface Yd {
-    InterfaceC0226el a(E0 e0);
+public final class Yd extends Kn {
+    public Yd() {
+        super(1, 0);
+    }
 }

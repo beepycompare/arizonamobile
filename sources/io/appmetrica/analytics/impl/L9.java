@@ -1,15 +1,22 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes5.dex */
-public final class L9 extends C0497pb {
-    public L9(C0678wi c0678wi) {
-        super(c0678wi);
-    }
-
-    @Override // io.appmetrica.analytics.impl.C0497pb, io.appmetrica.analytics.impl.AbstractC0645va
-    public final void a(List<Wg> list) {
-        list.add(this.f1167a.u);
-        super.a(list);
+public abstract class L9 {
+    public static final String a(int i) {
+        switch (i) {
+            case 1:
+                return "APPSFLYER";
+            case 2:
+                return "ADJUST";
+            case 3:
+                return "KOCHAVA";
+            case 4:
+                return "TENJIN";
+            case 5:
+                return "AIRBRIDGE";
+            case 6:
+                return "SINGULAR";
+            default:
+                return "UNKNOWN";
+        }
     }
 }

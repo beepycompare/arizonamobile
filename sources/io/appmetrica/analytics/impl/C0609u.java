@@ -12,7 +12,7 @@ public final class C0609u implements InterfaceC0659w {
 
     public final String a() {
         try {
-            return new JSONArray((Collection) CollectionsKt.plus((Collection) CollectionsKt.listOf(this.f1139a), (Iterable) C0338j4.l().m().d)).toString();
+            return new JSONArray((Collection) CollectionsKt.plus((Collection) CollectionsKt.listOf(this.f1139a), (Iterable) C0158c4.l().m().d)).toString();
         } catch (Throwable unused) {
             return null;
         }

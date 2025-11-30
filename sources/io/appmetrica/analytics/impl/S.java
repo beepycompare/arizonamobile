@@ -7,19 +7,19 @@ import kotlin.jvm.internal.Lambda;
 public final class S extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ U f673a;
+    public final /* synthetic */ U f667a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public S(U u) {
         super(0);
-        this.f673a = u;
+        this.f667a = u;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        U u = this.f673a;
+        U u = this.f667a;
         N n = u.g;
-        Context context = u.f713a;
+        Context context = u.f700a;
         n.getClass();
         return N.a(new L(n, context));
     }

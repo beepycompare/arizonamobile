@@ -1,29 +1,64 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
-import io.appmetrica.analytics.internal.IdentifiersResult;
+import android.content.Context;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.b4  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0132b4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Em f812a;
-    public final U b;
+    public final Object f810a;
+    public final C0210e5 b;
+    public final HashMap c;
+    public final C0521qa d;
+    public final Context e;
+    public final C0338j4 f;
 
-    public C0132b4(Em em, U u) {
-        this.f812a = em;
-        this.b = u;
+    public C0132b4(Context context, C0210e5 c0210e5) {
+        this(context, c0210e5, new C0338j4());
     }
 
-    public final C0106a4 a(HashMap hashMap) {
-        AdvertisingIdsHolder a2;
-        C0356jm e = this.f812a.e();
-        U u = this.b;
-        synchronized (u) {
-            a2 = u.a(new C0219ee());
+    public final InterfaceC0261g4 a(Q3 q3, C0515q4 c0515q4) {
+        InterfaceC0261g4 interfaceC0261g4;
+        synchronized (this.f810a) {
+            interfaceC0261g4 = (InterfaceC0261g4) this.c.get(q3);
+            if (interfaceC0261g4 == null) {
+                this.f.getClass();
+                interfaceC0261g4 = C0338j4.a(q3).a(this.e, this.b, q3, c0515q4);
+                this.c.put(q3, interfaceC0261g4);
+                this.d.a(new C0106a4(q3.b, q3.c, q3.d), q3);
+            }
         }
-        return new C0106a4(C0106a4.a(e.d), C0106a4.a(e.f959a), C0106a4.a(e.b), C0106a4.a(e.j), C0106a4.a(e.i), C0106a4.a(AbstractC0447nb.a(Jm.a(e.k))), C0106a4.a(AbstractC0447nb.a(hashMap)), new IdentifiersResult(a2.getGoogle().mAdTrackingInfo == null ? null : a2.getGoogle().mAdTrackingInfo.advId, a2.getGoogle().mStatus, a2.getGoogle().mErrorExplanation), new IdentifiersResult(a2.getHuawei().mAdTrackingInfo == null ? null : a2.getHuawei().mAdTrackingInfo.advId, a2.getHuawei().mStatus, a2.getHuawei().mErrorExplanation), new IdentifiersResult(a2.getYandex().mAdTrackingInfo == null ? null : a2.getYandex().mAdTrackingInfo.advId, a2.getYandex().mStatus, a2.getYandex().mErrorExplanation), C0106a4.a(AbstractC0447nb.a(e.h)), Kn.a(), e.o + e.z.f496a, C0106a4.a(e.n.f), new Bundle());
+        return interfaceC0261g4;
+    }
+
+    public C0132b4(Context context, C0210e5 c0210e5, C0338j4 c0338j4) {
+        this.f810a = new Object();
+        this.c = new HashMap();
+        this.d = new C0521qa();
+        this.e = context.getApplicationContext();
+        this.b = c0210e5;
+        this.f = c0338j4;
+    }
+
+    public final void a(String str, Integer num, String str2) {
+        synchronized (this.f810a) {
+            C0521qa c0521qa = this.d;
+            Collection<Q3> collection = (Collection) c0521qa.f1085a.remove(new C0106a4(str, num, str2));
+            if (!mo.a(collection)) {
+                collection.size();
+                ArrayList arrayList = new ArrayList(collection.size());
+                for (Q3 q3 : collection) {
+                    arrayList.add((InterfaceC0261g4) this.c.remove(q3));
+                }
+                Iterator it = arrayList.iterator();
+                while (it.hasNext()) {
+                    ((InterfaceC0261g4) it.next()).a();
+                }
+            }
+        }
     }
 }

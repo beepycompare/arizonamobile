@@ -1,12 +1,12 @@
 package io.appmetrica.analytics.impl;
 /* renamed from: io.appmetrica.analytics.impl.i  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0308i extends Gn {
-    public C0308i(C0685x0 c0685x0) {
-        super(new C0407ll(c0685x0));
+public final class C0308i extends Fn {
+    public C0308i(C0735z0 c0735z0) {
+        super(new C0329il(c0735z0));
     }
 
-    public final so b() {
+    public final ro b() {
         return a(null);
     }
 }

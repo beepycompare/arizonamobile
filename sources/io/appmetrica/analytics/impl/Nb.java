@@ -1,29 +1,87 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
+import android.location.Location;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory;
+import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
+import io.appmetrica.analytics.locationapi.internal.LocationFilter;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
 /* loaded from: classes5.dex */
-public final class Nb implements InterfaceC0562s2 {
+public final class Nb implements Lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0589t4 f604a;
+    public final C0674we f603a = new C0674we();
+    public final C0646vb b = new C0646vb();
+    public final Xb c = new Xb();
 
-    public Nb(C0589t4 c0589t4) {
-        this.f604a = c0589t4;
+    @Override // io.appmetrica.analytics.impl.Lb, io.appmetrica.analytics.impl.Ob
+    public final void a(Location location) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0562s2
-    public final C0307ho a(C0255fo c0255fo, C0307ho c0307ho) {
-        int i = c0255fo.b;
-        int i2 = this.f604a.f1125a;
-        if (i == i2) {
-            if (((C0307ho) ((HashMap) c0255fo.f882a.get(c0307ho.b)).get(new String(c0307ho.f919a))) != null) {
-                ((HashMap) c0255fo.f882a.get(c0307ho.b)).put(new String(c0307ho.f919a), c0307ho);
-                return c0307ho;
-            }
-        } else if (i < i2) {
-            ((HashMap) c0255fo.f882a.get(c0307ho.b)).put(new String(c0307ho.f919a), c0307ho);
-            c0255fo.b++;
-        }
-        return c0307ho;
+    @Override // io.appmetrica.analytics.impl.Lb, io.appmetrica.analytics.impl.Ob
+    public final void a(Object obj) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Lb, io.appmetrica.analytics.impl.Ob
+    public final void a(boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.Lb, io.appmetrica.analytics.impl.Ob
+    public final void b(Object obj) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final LastKnownLocationExtractorProviderFactory getLastKnownExtractorProviderFactory() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final LocationReceiverProviderFactory getLocationReceiverProviderFactory() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final PermissionExtractor getPermissionExtractor() {
+        return this.f603a;
+    }
+
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
+    public final Location getSystemLocation() {
+        return null;
+    }
+
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
+    public final Location getUserLocation() {
+        return null;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Lb, io.appmetrica.analytics.impl.Ob
+    public final void init() {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerControllerObserver(LocationControllerObserver locationControllerObserver) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void registerSource(LocationReceiverProvider locationReceiverProvider) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void unregisterSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void unregisterSource(LocationReceiverProvider locationReceiverProvider) {
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
+    public final void updateLocationFilter(LocationFilter locationFilter) {
     }
 }

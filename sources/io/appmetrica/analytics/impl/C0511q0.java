@@ -11,19 +11,19 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 import io.appmetrica.analytics.logger.common.BaseReleaseLogger;
 /* renamed from: io.appmetrica.analytics.impl.q0  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0511q0 implements Ia {
+public final class C0511q0 implements Ca {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1062a;
+    public final Context f1077a;
     public final IHandlerExecutor b;
-    public final C0390l4 c = new C0390l4();
+    public final C0235f4 c = new C0235f4();
     public final Handler d = f().getHandler();
-    public final C0130b2 e = new C0130b2();
-    public final C0546rb f = new C0546rb();
+    public final T1 e = new T1();
+    public final C0397lb f = new C0397lb();
 
-    public C0511q0(Context context, Z3 z3) {
-        this.f1062a = context;
-        this.b = z3.a();
+    public C0511q0(Context context, S3 s3) {
+        this.f1077a = context;
+        this.b = s3.a();
         BaseReleaseLogger.init(context);
         f().execute(new Runnable() { // from class: io.appmetrica.analytics.impl.q0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
@@ -32,30 +32,30 @@ public final class C0511q0 implements Ia {
             }
         });
         a().a();
-        N3.a().onCreate();
+        G3.a().onCreate();
     }
 
     public static final void e() {
-        ImportantLogger.INSTANCE.info("AppMetrica", "Initializing of AppMetrica, " + StringUtils.capitalize("release") + " type, Version 7.13.0, API Level " + AppMetrica.getLibraryApiLevel() + ", Dated 17.10.2025.", new Object[0]);
+        ImportantLogger.INSTANCE.info("AppMetrica", "Initializing of AppMetrica, " + StringUtils.capitalize("release") + " type, Version 7.14.0, API Level " + AppMetrica.getLibraryApiLevel() + ", Dated 26.11.2025.", new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.Ia
-    public final C0390l4 a() {
+    @Override // io.appmetrica.analytics.impl.Ca
+    public final C0235f4 a() {
         return this.c;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ia
+    @Override // io.appmetrica.analytics.impl.Ca
     public final Handler b() {
         return this.d;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ia
-    public final C0130b2 c() {
+    @Override // io.appmetrica.analytics.impl.Ca
+    public final T1 c() {
         return this.e;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ia
-    public final C0546rb d() {
+    @Override // io.appmetrica.analytics.impl.Ca
+    public final C0397lb d() {
         return this.f;
     }
 
@@ -63,19 +63,19 @@ public final class C0511q0 implements Ia {
         return this.b;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ia
+    @Override // io.appmetrica.analytics.impl.Ca
     public final ICommonExecutor getDefaultExecutor() {
         return this.b;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0031 A[Catch: all -> 0x0052, TryCatch #0 {, blocks: (B:3:0x0001, B:6:0x0007, B:8:0x000b, B:10:0x000f, B:13:0x0016, B:18:0x0031, B:20:0x0035, B:22:0x0039, B:25:0x0040, B:28:0x004d, B:26:0x0046, B:14:0x001c, B:16:0x0028), top: B:34:0x0001 }] */
     /* JADX WARN: Removed duplicated region for block: B:28:0x004d A[Catch: all -> 0x0052, TRY_LEAVE, TryCatch #0 {, blocks: (B:3:0x0001, B:6:0x0007, B:8:0x000b, B:10:0x000f, B:13:0x0016, B:18:0x0031, B:20:0x0035, B:22:0x0039, B:25:0x0040, B:28:0x004d, B:26:0x0046, B:14:0x001c, B:16:0x0028), top: B:34:0x0001 }] */
-    @Override // io.appmetrica.analytics.impl.Ia
+    @Override // io.appmetrica.analytics.impl.Ca
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void a(AppMetricaConfig appMetricaConfig, InterfaceC0113ab interfaceC0113ab) {
-        if (!C0660w0.g) {
+    public final synchronized void a(AppMetricaConfig appMetricaConfig, Ua ua) {
+        if (!C0710y0.g) {
             if (appMetricaConfig != null) {
                 Boolean bool = appMetricaConfig.crashReporting;
                 if (bool == null) {
@@ -91,7 +91,7 @@ public final class C0511q0 implements Ia {
                         if (bool2 != null && !bool2.booleanValue()) {
                             this.e.c();
                             if (appMetricaConfig != null) {
-                                C0660w0.g = true;
+                                C0710y0.g = true;
                             }
                         }
                     }
@@ -103,7 +103,7 @@ public final class C0511q0 implements Ia {
             this.f.c();
             this.f.b();
             if (appMetricaConfig != null) {
-                this.f.a(this.f1062a, appMetricaConfig, interfaceC0113ab);
+                this.f.a(this.f1077a, appMetricaConfig, ua);
             }
             if (appMetricaConfig != null) {
             }

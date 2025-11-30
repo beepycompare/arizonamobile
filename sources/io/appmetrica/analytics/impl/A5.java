@@ -1,10 +1,6 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
+import kotlin.jvm.functions.Function1;
 /* loaded from: classes5.dex */
-public interface A5 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final List f390a = CollectionUtils.createSortedListWithoutRepetitions("key", "value", "type");
+public interface A5 extends Function1 {
 }

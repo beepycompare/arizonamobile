@@ -1,25 +1,22 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import android.location.LocationListener;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
-import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
-import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 /* renamed from: io.appmetrica.analytics.impl.ec  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0217ec implements LocationReceiverProvider {
+public final class C0217ec implements InterfaceC0569s9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f861a = "Location receiver stub";
+    public final C0391l5 f870a;
 
-    @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
-    public final String getIdentifier() {
-        return this.f861a;
+    public C0217ec(InterfaceC0669w9 interfaceC0669w9, M6 m6, Rg rg, C0490p4 c0490p4, R4 r4, Xe xe) {
+        C0192dc c0192dc = new C0192dc(m6, rg, this, c0490p4, xe);
+        this.f870a = new C0391l5(interfaceC0669w9, c0192dc.a(), c0192dc.b(), r4);
     }
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider
-    public final LocationReceiver getLocationReceiver(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
-        return new C0243fc();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0569s9
+    public final InterfaceC0544r9 a() {
+        return this.f870a;
+    }
+
+    public final C0391l5 b() {
+        return this.f870a;
     }
 }

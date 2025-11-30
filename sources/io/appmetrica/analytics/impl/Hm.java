@@ -1,22 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Hm implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0732ym fromModel(Gm gm) {
-        C0732ym c0732ym = new C0732ym();
-        c0732ym.f1218a = gm.f496a;
-        return c0732ym;
+public final class Hm {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final long f513a;
+
+    public Hm(long j) {
+        this.f513a = j;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        return new Gm(((C0732ym) obj).f1218a);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return obj != null && Hm.class == obj.getClass() && this.f513a == ((Hm) obj).f513a;
     }
 
-    public final Gm a(C0732ym c0732ym) {
-        return new Gm(c0732ym.f1218a);
+    public final int hashCode() {
+        long j = this.f513a;
+        return (int) (j ^ (j >>> 32));
+    }
+
+    public final String toString() {
+        return "StatSending{disabledReportingInterval=" + this.f513a + AbstractJsonLexerKt.END_OBJ;
     }
 }

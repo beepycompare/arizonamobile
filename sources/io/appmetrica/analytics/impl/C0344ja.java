@@ -1,35 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import java.io.File;
-import kotlin.Unit;
+import java.util.Map;
+import kotlin.collections.CollectionsKt;
+import kotlin.text.Charsets;
 /* renamed from: io.appmetrica.analytics.impl.ja  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0344ja {
+public final class C0344ja implements O9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile Boolean f950a;
+    public final K8 f954a = new K8();
 
-    public final void a(Context context) {
-        if (this.f950a == null) {
-            synchronized (this) {
-                if (this.f950a == null) {
-                    boolean z = false;
-                    try {
-                        File fileFromAppStorage = FileUtils.getFileFromAppStorage(context, "uuid.dat");
-                        boolean exists = fileFromAppStorage != null ? fileFromAppStorage.exists() : false;
-                        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(context, "uuid.dat");
-                        boolean exists2 = fileFromSdkStorage != null ? fileFromSdkStorage.exists() : false;
-                        if (exists || exists2) {
-                            z = true;
-                        }
-                    } catch (Throwable unused) {
-                    }
-                    this.f950a = Boolean.valueOf(z);
+    public final C0189d9[] a(byte[] bArr) {
+        int i = 0;
+        if (bArr != null) {
+            Map<String, byte[]> model = this.f954a.toModel(bArr);
+            C0189d9[] c0189d9Arr = new C0189d9[model.size()];
+            for (Object obj : model.entrySet()) {
+                int i2 = i + 1;
+                if (i < 0) {
+                    CollectionsKt.throwIndexOverflow();
                 }
-                Unit unit = Unit.INSTANCE;
+                Map.Entry entry = (Map.Entry) obj;
+                C0189d9 c0189d9 = new C0189d9();
+                c0189d9.f846a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
+                c0189d9.b = (byte[]) entry.getValue();
+                c0189d9Arr[i] = c0189d9;
+                i = i2;
             }
+            return c0189d9Arr;
         }
+        return new C0189d9[0];
     }
 }

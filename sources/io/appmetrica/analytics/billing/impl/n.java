@@ -6,14 +6,14 @@ import io.appmetrica.analytics.billinginterface.internal.ProductType;
 public abstract /* synthetic */ class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f216a;
+    public static final /* synthetic */ int[] f219a;
     public static final /* synthetic */ int[] b;
 
     static {
         int[] iArr = new int[ProductType.values().length];
         iArr[ProductType.INAPP.ordinal()] = 1;
         iArr[ProductType.SUBS.ordinal()] = 2;
-        f216a = iArr;
+        f219a = iArr;
         int[] iArr2 = new int[Period.TimeUnit.values().length];
         iArr2[Period.TimeUnit.DAY.ordinal()] = 1;
         iArr2[Period.TimeUnit.WEEK.ordinal()] = 2;

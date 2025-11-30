@@ -1,39 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.ResultReceiver;
 /* loaded from: classes5.dex */
-public final class C6 implements ProtobufConverter {
+public final class C6 extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Jg f422a;
+    public final B6 f424a;
 
-    public C6() {
-        this(new Jg());
+    public C6(Handler handler, B6 b6) {
+        super(handler);
+        this.f424a = b6;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0211e6 fromModel(B6 b6) {
-        C0211e6 fromModel = this.f422a.fromModel(b6.f408a);
-        fromModel.g = 1;
-        C0186d6 c0186d6 = new C0186d6();
-        fromModel.h = c0186d6;
-        c0186d6.f842a = StringUtils.correctIllFormedString(b6.b);
-        return fromModel;
+    public static void a(ResultReceiver resultReceiver, T3 t3) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            t3.b(bundle);
+            resultReceiver.send(1, bundle);
+        }
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        C0211e6 c0211e6 = (C0211e6) obj;
-        throw new UnsupportedOperationException();
+    @Override // android.os.ResultReceiver
+    public final void onReceiveResult(int i, Bundle bundle) {
+        if (bundle == null) {
+            bundle = new Bundle();
+        }
+        this.f424a.a(i, bundle);
     }
 
-    public C6(Jg jg) {
-        this.f422a = jg;
-    }
-
-    public final B6 a(C0211e6 c0211e6) {
-        throw new UnsupportedOperationException();
+    public static void a(ResultReceiver resultReceiver, Kl kl, T3 t3) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("startup_error_key_code", kl.f559a);
+            t3.b(bundle);
+            resultReceiver.send(2, bundle);
+        }
     }
 }

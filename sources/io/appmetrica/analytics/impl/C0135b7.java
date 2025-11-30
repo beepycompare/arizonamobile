@@ -1,22 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import android.database.sqlite.SQLiteDatabase;
-import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
-import io.appmetrica.analytics.modulesapi.internal.common.TableDescription;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
-import java.sql.SQLException;
+import java.io.File;
+import java.util.ArrayList;
 /* renamed from: io.appmetrica.analytics.impl.b7  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0135b7 extends DatabaseScript {
-    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
-    public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS preferences (key TEXT PRIMARY KEY,value TEXT,type INTEGER)");
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS binary_data (data_key TEXT PRIMARY KEY,value BLOB)");
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS temp_cache (id INTEGER PRIMARY KEY,scope TEXT,data BLOB,timestamp INTEGER)");
-        for (ModuleServicesDatabase moduleServicesDatabase : C0620ua.H.p().b()) {
-            for (TableDescription tableDescription : moduleServicesDatabase.getTables()) {
-                sQLiteDatabase.execSQL(tableDescription.getCreateTableScript());
-            }
+public final class C0135b7 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final J6 f813a;
+    public final ArrayList b;
+
+    public C0135b7(File file) {
+        ArrayList arrayList = new ArrayList();
+        this.b = arrayList;
+        if (file != null) {
+            this.f813a = new C0549re(file, new O6());
+            arrayList.add(new C0549re(file, new C0374ke()));
+        } else {
+            this.f813a = new K6(new O6());
         }
+        arrayList.add(new K6(new C0374ke()));
     }
 }

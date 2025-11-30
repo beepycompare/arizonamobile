@@ -3,19 +3,19 @@ package io.appmetrica.analytics.impl;
 public final class S0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f674a;
-    public final /* synthetic */ C0561s1 b;
+    public final /* synthetic */ boolean f668a;
+    public final /* synthetic */ C0611u1 b;
 
-    public S0(C0561s1 c0561s1, String str) {
-        this.b = c0561s1;
-        this.f674a = str;
+    public S0(C0611u1 c0611u1, boolean z) {
+        this.b = c0611u1;
+        this.f668a = z;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0685x0 c0685x0 = this.b.f1103a;
-        String str = this.f674a;
-        c0685x0.getClass();
-        C0660w0.c().setUserProfileID(str);
+        C0735z0 c0735z0 = this.b.f1141a;
+        boolean z = this.f668a;
+        c0735z0.getClass();
+        C0710y0.c().a(z, true);
     }
 }

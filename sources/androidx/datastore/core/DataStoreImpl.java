@@ -337,7 +337,7 @@ public final class DataStoreImpl<T> implements DataStore<T> {
     public final Object handleUpdate(Message.Update<T> update, Continuation<? super Unit> continuation) {
         DataStoreImpl$handleUpdate$1 dataStoreImpl$handleUpdate$1;
         int i;
-        Object m9901constructorimpl;
+        Object m9902constructorimpl;
         CompletableDeferred<T> completableDeferred;
         CompletableDeferred<T> ack;
         State<T> currentState;
@@ -363,9 +363,9 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                         th = th;
                         update = ack;
                         Result.Companion companion2 = Result.Companion;
-                        m9901constructorimpl = Result.m9901constructorimpl(ResultKt.createFailure(th));
+                        m9902constructorimpl = Result.m9902constructorimpl(ResultKt.createFailure(th));
                         completableDeferred = update;
-                        CompletableDeferredKt.completeWith(completableDeferred, m9901constructorimpl);
+                        CompletableDeferredKt.completeWith(completableDeferred, m9902constructorimpl);
                         return Unit.INSTANCE;
                     }
                     if (currentState instanceof Data) {
@@ -379,9 +379,9 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                         CompletableDeferred<T> completableDeferred2 = ack;
                         obj = transformAndWrite;
                         update = (Message.Update<T>) completableDeferred2;
-                        m9901constructorimpl = Result.m9901constructorimpl(obj);
+                        m9902constructorimpl = Result.m9902constructorimpl(obj);
                         completableDeferred = update;
-                        CompletableDeferredKt.completeWith(completableDeferred, m9901constructorimpl);
+                        CompletableDeferredKt.completeWith(completableDeferred, m9902constructorimpl);
                         return Unit.INSTANCE;
                     }
                     if (!(currentState instanceof ReadException)) {
@@ -423,9 +423,9 @@ public final class DataStoreImpl<T> implements DataStore<T> {
                 Message.Update<T> update4 = (Message.Update<T>) ((CompletableDeferred) dataStoreImpl$handleUpdate$1.L$0);
                 ResultKt.throwOnFailure(obj);
                 update = update4;
-                m9901constructorimpl = Result.m9901constructorimpl(obj);
+                m9902constructorimpl = Result.m9902constructorimpl(obj);
                 completableDeferred = update;
-                CompletableDeferredKt.completeWith(completableDeferred, m9901constructorimpl);
+                CompletableDeferredKt.completeWith(completableDeferred, m9902constructorimpl);
                 return Unit.INSTANCE;
                 Function2<T, Continuation<? super T>, Object> transform2 = update2.getTransform();
                 CoroutineContext callerContext2 = update2.getCallerContext();

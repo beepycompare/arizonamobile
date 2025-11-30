@@ -1,21 +1,12 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
 /* loaded from: classes5.dex */
-public final class J3 implements Xi {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0220ef f540a;
-
-    public J3(C0220ef c0220ef) {
-        this.f540a = c0220ef;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Xi
-    public final boolean a() {
-        return this.f540a.j();
-    }
-
-    @Override // io.appmetrica.analytics.impl.Xi
-    public final void b() {
-        this.f540a.g().b();
+public final class J3 implements ModuleClientActivator {
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator
+    public final void activate(Context context) {
+        C0128b0 b = C0158c4.l().b();
+        b.c.a().executeDelayed(new C0102a0(b, context), b.d);
     }
 }

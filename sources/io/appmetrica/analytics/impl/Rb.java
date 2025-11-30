@@ -1,21 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi;
+import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
 /* loaded from: classes5.dex */
-public interface Rb extends Ub, LocationServiceApi {
-    @Override // io.appmetrica.analytics.impl.Ub
-    /* synthetic */ void a(Location location);
+public final class Rb extends Lambda implements Function1 {
 
-    @Override // io.appmetrica.analytics.impl.Ub
-    /* synthetic */ void a(Object obj);
+    /* renamed from: a  reason: collision with root package name */
+    public static final Rb f660a = new Rb();
 
-    @Override // io.appmetrica.analytics.impl.Ub
-    /* synthetic */ void a(boolean z);
+    public Rb() {
+        super(1);
+    }
 
-    @Override // io.appmetrica.analytics.impl.Ub
-    /* synthetic */ void b(Object obj);
-
-    @Override // io.appmetrica.analytics.impl.Ub
-    /* synthetic */ void init();
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Object obj) {
+        ((LocationControllerObserver) obj).startLocationTracking();
+        return Unit.INSTANCE;
+    }
 }

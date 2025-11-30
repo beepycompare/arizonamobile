@@ -1,21 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import java.nio.charset.Charset;
+import java.util.Map;
+import kotlin.text.Charsets;
 /* loaded from: classes5.dex */
-public final class Je extends Kc {
-    public Je(Integer num) {
-        super(num);
-        a(NetworkType.CELL, 0);
-        a(NetworkType.WIFI, 1);
-        a(NetworkType.BLUETOOTH, 3);
-        a(NetworkType.ETHERNET, 4);
-        a(NetworkType.MOBILE_DUN, 5);
-        a(NetworkType.MOBILE_HIPRI, 6);
-        a(NetworkType.MOBILE_MMS, 7);
-        a(NetworkType.MOBILE_SUPL, 8);
-        a(NetworkType.VPN, 9);
-        a(NetworkType.WIMAX, 10);
-        a(NetworkType.LOWPAN, 11);
-        a(NetworkType.WIFI_AWARE, 12);
+public final class Je implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final U5[] fromModel(Map<String, String> map) {
+        int size = map.size();
+        U5[] u5Arr = new U5[size];
+        int i = 0;
+        for (int i2 = 0; i2 < size; i2++) {
+            u5Arr[i2] = new U5();
+        }
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            U5 u5 = u5Arr[i];
+            Charset charset = Charsets.UTF_8;
+            u5.f706a = entry.getKey().getBytes(charset);
+            u5Arr[i].b = entry.getValue().getBytes(charset);
+            i++;
+        }
+        return u5Arr;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        U5[] u5Arr = (U5[]) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public final Map<String, String> a(U5[] u5Arr) {
+        throw new UnsupportedOperationException();
     }
 }

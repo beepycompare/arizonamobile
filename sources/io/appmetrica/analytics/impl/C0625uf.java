@@ -1,38 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* renamed from: io.appmetrica.analytics.impl.uf  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0625uf implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Integer fromModel(Y7 y7) {
-        int ordinal = y7.ordinal();
-        if (ordinal != 1) {
-            if (ordinal != 2) {
-                if (ordinal != 3) {
-                    return 0;
-                }
-                return 2;
-            }
-            return 3;
-        }
-        return 1;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Y7 toModel(Integer num) {
-        int intValue = num.intValue();
-        if (intValue != 1) {
-            if (intValue != 2) {
-                if (intValue != 3) {
-                    return Y7.b;
-                }
-                return Y7.d;
-            }
-            return Y7.e;
-        }
-        return Y7.c;
+public final class C0625uf extends Q7 {
+    public C0625uf(Context context, ProtobufStateStorage<C0220ef> protobufStateStorage, S7 s7, InterfaceC0178co interfaceC0178co, Jm jm, Vi vi, Ti ti, A6 a6, C0220ef c0220ef, String str) {
+        super(context, protobufStateStorage, s7, interfaceC0178co, jm, vi, ti, a6, c0220ef);
     }
 }

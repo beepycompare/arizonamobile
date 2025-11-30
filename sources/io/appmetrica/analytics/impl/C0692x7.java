@@ -1,54 +1,33 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 /* renamed from: io.appmetrica.analytics.impl.x7  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0692x7 implements ProtobufConverter {
+public final class C0692x7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0574se f1199a;
+    public final long f1196a;
+    public final int b;
 
-    public C0692x7() {
-        this(null, 1, null);
+    public C0692x7(long j, int i) {
+        this.f1196a = j;
+        this.b = i;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0667w7 fromModel(C0742z7 c0742z7) {
-        C0667w7 c0667w7 = new C0667w7();
-        Long l = c0742z7.f1226a;
-        if (l != null) {
-            c0667w7.f1181a = l.longValue();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        Long l2 = c0742z7.b;
-        if (l2 != null) {
-            c0667w7.b = l2.longValue();
+        if (obj instanceof C0692x7) {
+            C0692x7 c0692x7 = (C0692x7) obj;
+            return this.f1196a == c0692x7.f1196a && this.b == c0692x7.b;
         }
-        Boolean bool = c0742z7.c;
-        if (bool != null) {
-            c0667w7.c = this.f1199a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
-        }
-        return c0667w7;
+        return false;
     }
 
-    public C0692x7(C0574se c0574se) {
-        this.f1199a = c0574se;
+    public final int hashCode() {
+        return Integer.hashCode(this.b) + (Long.hashCode(this.f1196a) * 31);
     }
 
-    public /* synthetic */ C0692x7(C0574se c0574se, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new C0574se() : c0574se);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0742z7 toModel(C0667w7 c0667w7) {
-        C0667w7 c0667w72 = new C0667w7();
-        Long valueOf = Long.valueOf(c0667w7.f1181a);
-        if (valueOf.longValue() == c0667w72.f1181a) {
-            valueOf = null;
-        }
-        Long valueOf2 = Long.valueOf(c0667w7.b);
-        return new C0742z7(valueOf, valueOf2.longValue() != c0667w72.b ? valueOf2 : null, this.f1199a.a(c0667w7.c));
+    public final String toString() {
+        return "DecimalProtoModel(mantissa=" + this.f1196a + ", exponent=" + this.b + ')';
     }
 }

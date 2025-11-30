@@ -1,93 +1,79 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import android.os.Handler;
-import androidx.core.view.InputDeviceCompat;
-import io.appmetrica.analytics.DeferredDeeplinkListener;
-import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.Map;
-import java.util.Set;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.og  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0477og implements InterfaceC0376kg {
+public final class C0477og {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1041a;
-    public final Bi b;
-    public final C0117af c;
-    public final R7 d;
-    public final C0676wg e;
-    public final Handler f;
+    public final String f1050a;
+    public final long b;
+    public final long c;
+    public final EnumC0452ng d;
 
-    public C0477og(Bi bi, C0117af c0117af, Handler handler) {
-        this(bi, c0117af, handler, c0117af.s());
+    public C0477og(byte[] bArr) {
+        C0502pg a2 = C0502pg.a(bArr);
+        this.f1050a = a2.f1069a;
+        this.b = a2.c;
+        this.c = a2.b;
+        this.d = a(a2.d);
     }
 
-    public final void a() {
-        if (this.f1041a) {
-            return;
+    public final byte[] a() {
+        C0502pg c0502pg = new C0502pg();
+        c0502pg.f1069a = this.f1050a;
+        c0502pg.c = this.b;
+        c0502pg.b = this.c;
+        int ordinal = this.d.ordinal();
+        int i = 1;
+        if (ordinal != 1) {
+            i = 2;
+            if (ordinal != 2) {
+                i = 0;
+            }
         }
-        Bi bi = this.b;
-        ResultReceiverC0726yg resultReceiverC0726yg = new ResultReceiverC0726yg(this.f, this);
-        bi.getClass();
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver", resultReceiverC0726yg);
-        PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = D9.f438a;
-        EnumC0320ib enumC0320ib = EnumC0320ib.EVENT_TYPE_UNDEFINED;
-        U3 u3 = new U3("", "", InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
-        u3.m = bundle;
-        M4 m4 = bi.f414a;
-        bi.a(Bi.a(u3, m4), m4, 1, (Map) null);
+        c0502pg.d = i;
+        return MessageNano.toByteArray(c0502pg);
     }
 
-    public C0477og(Bi bi, C0117af c0117af, Handler handler, boolean z) {
-        this(bi, c0117af, handler, z, new R7(z), new C0676wg());
-    }
-
-    public C0477og(Bi bi, C0117af c0117af, Handler handler, boolean z, R7 r7, C0676wg c0676wg) {
-        this.b = bi;
-        this.c = c0117af;
-        this.f1041a = z;
-        this.d = r7;
-        this.e = c0676wg;
-        this.f = handler;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0376kg
-    public final void a(C0576sg c0576sg) {
-        String str = c0576sg == null ? null : c0576sg.f1114a;
-        if (this.f1041a) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        synchronized (this) {
-            R7 r7 = this.d;
-            this.e.getClass();
-            r7.d = C0676wg.a(str);
-            r7.a();
+        if (obj != null && C0477og.class == obj.getClass()) {
+            C0477og c0477og = (C0477og) obj;
+            if (this.b == c0477og.b && this.c == c0477og.c && this.f1050a.equals(c0477og.f1050a) && this.d == c0477og.d) {
+                return true;
+            }
         }
+        return false;
     }
 
-    public final synchronized void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
-        R7 r7 = this.d;
-        r7.c = deferredDeeplinkParametersListener;
-        if (r7.f662a) {
-            r7.a(1);
-        } else {
-            r7.a();
-        }
-        this.c.u();
+    public final int hashCode() {
+        long j = this.b;
+        long j2 = this.c;
+        return this.d.hashCode() + (((((this.f1050a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
     }
 
-    public final synchronized void a(DeferredDeeplinkListener deferredDeeplinkListener) {
-        R7 r7 = this.d;
-        r7.b = deferredDeeplinkListener;
-        if (r7.f662a) {
-            r7.a(1);
-        } else {
-            r7.a();
+    public final String toString() {
+        return "ReferrerInfo{installReferrer='" + this.f1050a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + this.d + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public C0477og(String str, long j, long j2, EnumC0452ng enumC0452ng) {
+        this.f1050a = str;
+        this.b = j;
+        this.c = j2;
+        this.d = enumC0452ng;
+    }
+
+    public static EnumC0452ng a(int i) {
+        if (i != 1) {
+            if (i != 2) {
+                return EnumC0452ng.b;
+            }
+            return EnumC0452ng.d;
         }
-        this.c.u();
+        return EnumC0452ng.c;
     }
 }

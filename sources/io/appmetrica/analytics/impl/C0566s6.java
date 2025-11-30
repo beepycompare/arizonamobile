@@ -1,49 +1,63 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import java.util.Map;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.text.StringsKt;
 /* renamed from: io.appmetrica.analytics.impl.s6  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
-public final class C0566s6 implements InterfaceC0139bb {
+public final class C0566s6 implements Df {
+    public static final C0541r6 b = new C0541r6();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0591t6 f1107a;
-    public final Kh b;
+    public final Df f1114a;
 
-    public C0566s6(C0591t6 c0591t6) {
-        this.f1107a = c0591t6;
-        this.b = c0591t6.a();
-        C0338j4.l().getClass();
+    public C0566s6() {
+        this(null, 1, null);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0139bb
-    public final void a(Sn sn) {
-        Bi bi = this.f1107a.f1127a;
-        Ah a2 = bi.a(sn, this.b);
-        Kh kh = a2.e;
-        Tl tl = bi.e;
-        if (tl != null) {
-            kh.b.setUuid(((Sl) tl).g());
-        } else {
-            kh.getClass();
+    @Override // io.appmetrica.analytics.impl.Df
+    public final String a() {
+        return this.f1114a.a();
+    }
+
+    public final boolean b() {
+        try {
+            String a2 = this.f1114a.a();
+            if (a2 != null && a2.length() > 0) {
+                return !StringsKt.contains$default((CharSequence) a2, (CharSequence) StringUtils.PROCESS_POSTFIX_DELIMITER, false, 2, (Object) null);
+            }
+            return false;
+        } catch (Throwable unused) {
+            return false;
         }
-        bi.c.b(a2);
-        LoggerStorage.getMainPublicOrAnonymousLogger().info("Unhandled exception received: " + sn, new Object[0]);
     }
 
-    public final void a(AppMetricaConfig appMetricaConfig) {
-        Map<String, String> map = appMetricaConfig.errorEnvironment;
-        if (map != null) {
-            for (Map.Entry<String, String> entry : map.entrySet()) {
-                Kh kh = this.b;
-                String key = entry.getKey();
-                String value = entry.getValue();
-                synchronized (kh) {
-                    I8 i8 = kh.c;
-                    i8.b.b(i8.f523a, key, value);
+    public C0566s6(Df df) {
+        this.f1114a = df;
+    }
+
+    public final boolean a(String str) {
+        try {
+            String a2 = this.f1114a.a();
+            if (a2 != null && a2.length() > 0) {
+                if (StringsKt.endsWith$default(a2, StringUtils.PROCESS_POSTFIX_DELIMITER + str, false, 2, (Object) null)) {
+                    return true;
                 }
             }
+        } catch (Throwable unused) {
+        }
+        return false;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public /* synthetic */ C0566s6(Df df, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(df);
+        if ((i & 1) != 0) {
+            b.getClass();
+            df = C0541r6.a();
         }
     }
 }

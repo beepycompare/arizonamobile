@@ -1,32 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Rn implements vo {
+public final class Rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final M8 f672a;
+    public final Hn f666a;
+    public final V b;
+    public final List c;
+    public final String d;
+    public final String e;
+    public final Map f;
+    public final String g;
+    public final Boolean h;
 
-    public Rn() {
-        this(new M8());
+    public Rn(Hn hn, V v, ArrayList arrayList, String str, String str2, Map map, String str3, Boolean bool) {
+        this.f666a = hn;
+        this.b = v;
+        this.c = arrayList;
+        this.d = str;
+        this.e = str2;
+        this.f = map;
+        this.g = str3;
+        this.h = bool;
     }
 
-    @Override // io.appmetrica.analytics.impl.vo
-    public final byte[] a(S8 s8, C0503ph c0503ph) {
-        byte[] bArr = new byte[0];
-        try {
-            bArr = Base64Utils.decompressBase64GzipAsBytes(s8.b);
-        } catch (Throwable unused) {
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        Hn hn = this.f666a;
+        if (hn != null) {
+            for (El el : hn.c) {
+                sb.append("at " + el.f466a + "." + el.e + "(" + el.b + StringUtils.PROCESS_POSTFIX_DELIMITER + el.c + StringUtils.PROCESS_POSTFIX_DELIMITER + el.d + ")\n");
+            }
         }
-        byte[] a2 = ((L8) this.f672a.f588a.a(s8.o)).a(bArr);
-        return a2 == null ? new byte[0] : a2;
-    }
-
-    public Rn(M8 m8) {
-        this.f672a = m8;
-    }
-
-    public final M8 a() {
-        return this.f672a;
+        return "UnhandledException{exception=" + this.f666a + "\n" + sb.toString() + AbstractJsonLexerKt.END_OBJ;
     }
 }
