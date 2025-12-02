@@ -158,7 +158,7 @@ public final class NewsItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1397241035, "C61@2381L28:NewsItem.kt#dswm0d");
-            AnimatedLoadingKt.m9735AnimatedLoadinguFdPcIQ(true, Dp.m7996constructorimpl(30), null, startRestartGroup, 54, 4);
+            AnimatedLoadingKt.m9737AnimatedLoadinguFdPcIQ(true, Dp.m7996constructorimpl(30), null, startRestartGroup, 54, 4);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -198,9 +198,9 @@ public final class NewsItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 241766860, "C88@3248L10,90@3337L13,91@3381L13,86@3153L430,100@3690L10,102@3776L13,103@3820L13,98@3596L336:NewsItem.kt#dswm0d");
             float f2 = 16;
             float f3 = 2;
-            TextKt.m3169TextNvy7gAk(String.valueOf(newsModel.getTitle()), OffsetKt.m798offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7996constructorimpl(-Dp.m7996constructorimpl(f3)), 1, null), Color.Companion.m5317getWhite0d7_KjU(), null, TypeKt.m9855dpToSp8Feqmps(Dp.m7996constructorimpl(f2), startRestartGroup, 6), null, FontWeight.Companion.getBold(), null, TextUnitKt.getSp(-0.0d), null, null, TypeKt.m9855dpToSp8Feqmps(Dp.m7996constructorimpl(f2), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getDisplaySmall(), startRestartGroup, 1573296, 24576, 112296);
+            TextKt.m3169TextNvy7gAk(String.valueOf(newsModel.getTitle()), OffsetKt.m798offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7996constructorimpl(-Dp.m7996constructorimpl(f3)), 1, null), Color.Companion.m5317getWhite0d7_KjU(), null, TypeKt.m9857dpToSp8Feqmps(Dp.m7996constructorimpl(f2), startRestartGroup, 6), null, FontWeight.Companion.getBold(), null, TextUnitKt.getSp(-0.0d), null, null, TypeKt.m9857dpToSp8Feqmps(Dp.m7996constructorimpl(f2), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getDisplaySmall(), startRestartGroup, 1573296, 24576, 112296);
             float f4 = 12;
-            TextKt.m3169TextNvy7gAk(String.valueOf(newsModel.getDate()), OffsetKt.m798offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7996constructorimpl(-Dp.m7996constructorimpl(f3)), 1, null), Color.Companion.m5310getGray0d7_KjU(), null, TypeKt.m9855dpToSp8Feqmps(Dp.m7996constructorimpl(f4), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9855dpToSp8Feqmps(Dp.m7996constructorimpl(f4), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelSmall(), startRestartGroup, 432, 24576, 112616);
+            TextKt.m3169TextNvy7gAk(String.valueOf(newsModel.getDate()), OffsetKt.m798offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7996constructorimpl(-Dp.m7996constructorimpl(f3)), 1, null), Color.Companion.m5310getGray0d7_KjU(), null, TypeKt.m9857dpToSp8Feqmps(Dp.m7996constructorimpl(f4), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9857dpToSp8Feqmps(Dp.m7996constructorimpl(f4), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelSmall(), startRestartGroup, 432, 24576, 112616);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

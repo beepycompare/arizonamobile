@@ -23,7 +23,7 @@ public class URangesKt___URangesKt {
         if (uIntProgression.isEmpty()) {
             throw new NoSuchElementException("Progression " + uIntProgression + " is empty.");
         }
-        return uIntProgression.m11144getFirstpVg5ArA();
+        return uIntProgression.m11146getFirstpVg5ArA();
     }
 
     public static final long first(ULongProgression uLongProgression) {
@@ -31,7 +31,7 @@ public class URangesKt___URangesKt {
         if (uLongProgression.isEmpty()) {
             throw new NoSuchElementException("Progression " + uLongProgression + " is empty.");
         }
-        return uLongProgression.m11153getFirstsVKNKU();
+        return uLongProgression.m11155getFirstsVKNKU();
     }
 
     public static final UInt firstOrNull(UIntProgression uIntProgression) {
@@ -39,7 +39,7 @@ public class URangesKt___URangesKt {
         if (uIntProgression.isEmpty()) {
             return null;
         }
-        return UInt.m9996boximpl(uIntProgression.m11144getFirstpVg5ArA());
+        return UInt.m9998boximpl(uIntProgression.m11146getFirstpVg5ArA());
     }
 
     public static final ULong firstOrNull(ULongProgression uLongProgression) {
@@ -47,7 +47,7 @@ public class URangesKt___URangesKt {
         if (uLongProgression.isEmpty()) {
             return null;
         }
-        return ULong.m10075boximpl(uLongProgression.m11153getFirstsVKNKU());
+        return ULong.m10077boximpl(uLongProgression.m11155getFirstsVKNKU());
     }
 
     public static final int last(UIntProgression uIntProgression) {
@@ -55,7 +55,7 @@ public class URangesKt___URangesKt {
         if (uIntProgression.isEmpty()) {
             throw new NoSuchElementException("Progression " + uIntProgression + " is empty.");
         }
-        return uIntProgression.m11145getLastpVg5ArA();
+        return uIntProgression.m11147getLastpVg5ArA();
     }
 
     public static final long last(ULongProgression uLongProgression) {
@@ -63,7 +63,7 @@ public class URangesKt___URangesKt {
         if (uLongProgression.isEmpty()) {
             throw new NoSuchElementException("Progression " + uLongProgression + " is empty.");
         }
-        return uLongProgression.m11154getLastsVKNKU();
+        return uLongProgression.m11156getLastsVKNKU();
     }
 
     public static final UInt lastOrNull(UIntProgression uIntProgression) {
@@ -71,7 +71,7 @@ public class URangesKt___URangesKt {
         if (uIntProgression.isEmpty()) {
             return null;
         }
-        return UInt.m9996boximpl(uIntProgression.m11145getLastpVg5ArA());
+        return UInt.m9998boximpl(uIntProgression.m11147getLastpVg5ArA());
     }
 
     public static final ULong lastOrNull(ULongProgression uLongProgression) {
@@ -79,7 +79,7 @@ public class URangesKt___URangesKt {
         if (uLongProgression.isEmpty()) {
             return null;
         }
-        return ULong.m10075boximpl(uLongProgression.m11154getLastsVKNKU());
+        return ULong.m10077boximpl(uLongProgression.m11156getLastsVKNKU());
     }
 
     private static final int random(UIntRange uIntRange) {
@@ -128,7 +128,7 @@ public class URangesKt___URangesKt {
         if (uIntRange.isEmpty()) {
             return null;
         }
-        return UInt.m9996boximpl(URandomKt.nextUInt(random, uIntRange));
+        return UInt.m9998boximpl(URandomKt.nextUInt(random, uIntRange));
     }
 
     public static final ULong randomOrNull(ULongRange uLongRange, Random random) {
@@ -137,193 +137,193 @@ public class URangesKt___URangesKt {
         if (uLongRange.isEmpty()) {
             return null;
         }
-        return ULong.m10075boximpl(URandomKt.nextULong(random, uLongRange));
+        return ULong.m10077boximpl(URandomKt.nextULong(random, uLongRange));
     }
 
     /* renamed from: contains-biwQdVI  reason: not valid java name */
-    private static final boolean m11181containsbiwQdVI(UIntRange contains, UInt uInt) {
+    private static final boolean m11183containsbiwQdVI(UIntRange contains, UInt uInt) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return uInt != null && contains.m11149containsWZ4Q5Ns(uInt.m10054unboximpl());
+        return uInt != null && contains.m11151containsWZ4Q5Ns(uInt.m10056unboximpl());
     }
 
     /* renamed from: contains-GYNo2lE  reason: not valid java name */
-    private static final boolean m11177containsGYNo2lE(ULongRange contains, ULong uLong) {
+    private static final boolean m11179containsGYNo2lE(ULongRange contains, ULong uLong) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return uLong != null && contains.m11158containsVKZWuLQ(uLong.m10133unboximpl());
+        return uLong != null && contains.m11160containsVKZWuLQ(uLong.m10135unboximpl());
     }
 
     /* renamed from: contains-68kG9v0  reason: not valid java name */
-    public static final boolean m11176contains68kG9v0(UIntRange contains, byte b) {
+    public static final boolean m11178contains68kG9v0(UIntRange contains, byte b) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return contains.m11149containsWZ4Q5Ns(UInt.m10002constructorimpl(b & 255));
+        return contains.m11151containsWZ4Q5Ns(UInt.m10004constructorimpl(b & 255));
     }
 
     /* renamed from: contains-ULb-yJY  reason: not valid java name */
-    public static final boolean m11179containsULbyJY(ULongRange contains, byte b) {
+    public static final boolean m11181containsULbyJY(ULongRange contains, byte b) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return contains.m11158containsVKZWuLQ(ULong.m10081constructorimpl(b & 255));
+        return contains.m11160containsVKZWuLQ(ULong.m10083constructorimpl(b & 255));
     }
 
     /* renamed from: contains-Gab390E  reason: not valid java name */
-    public static final boolean m11178containsGab390E(ULongRange contains, int i) {
+    public static final boolean m11180containsGab390E(ULongRange contains, int i) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return contains.m11158containsVKZWuLQ(ULong.m10081constructorimpl(i & 4294967295L));
+        return contains.m11160containsVKZWuLQ(ULong.m10083constructorimpl(i & 4294967295L));
     }
 
     /* renamed from: contains-fz5IDCE  reason: not valid java name */
-    public static final boolean m11182containsfz5IDCE(UIntRange contains, long j) {
+    public static final boolean m11184containsfz5IDCE(UIntRange contains, long j) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return ULong.m10081constructorimpl(j >>> 32) == 0 && contains.m11149containsWZ4Q5Ns(UInt.m10002constructorimpl((int) j));
+        return ULong.m10083constructorimpl(j >>> 32) == 0 && contains.m11151containsWZ4Q5Ns(UInt.m10004constructorimpl((int) j));
     }
 
     /* renamed from: contains-ZsK3CEQ  reason: not valid java name */
-    public static final boolean m11180containsZsK3CEQ(UIntRange contains, short s) {
+    public static final boolean m11182containsZsK3CEQ(UIntRange contains, short s) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return contains.m11149containsWZ4Q5Ns(UInt.m10002constructorimpl(s & UShort.MAX_VALUE));
+        return contains.m11151containsWZ4Q5Ns(UInt.m10004constructorimpl(s & UShort.MAX_VALUE));
     }
 
     /* renamed from: contains-uhHAxoY  reason: not valid java name */
-    public static final boolean m11183containsuhHAxoY(ULongRange contains, short s) {
+    public static final boolean m11185containsuhHAxoY(ULongRange contains, short s) {
         Intrinsics.checkNotNullParameter(contains, "$this$contains");
-        return contains.m11158containsVKZWuLQ(ULong.m10081constructorimpl(s & WebSocketProtocol.PAYLOAD_SHORT_MAX));
+        return contains.m11160containsVKZWuLQ(ULong.m10083constructorimpl(s & WebSocketProtocol.PAYLOAD_SHORT_MAX));
     }
 
     /* renamed from: downTo-Kr8caGY  reason: not valid java name */
-    public static final UIntProgression m11186downToKr8caGY(byte b, byte b2) {
-        return UIntProgression.Companion.m11146fromClosedRangeNkh28Cs(UInt.m10002constructorimpl(b & 255), UInt.m10002constructorimpl(b2 & 255), -1);
+    public static final UIntProgression m11188downToKr8caGY(byte b, byte b2) {
+        return UIntProgression.Companion.m11148fromClosedRangeNkh28Cs(UInt.m10004constructorimpl(b & 255), UInt.m10004constructorimpl(b2 & 255), -1);
     }
 
     /* renamed from: downTo-J1ME1BU  reason: not valid java name */
-    public static final UIntProgression m11185downToJ1ME1BU(int i, int i2) {
-        return UIntProgression.Companion.m11146fromClosedRangeNkh28Cs(i, i2, -1);
+    public static final UIntProgression m11187downToJ1ME1BU(int i, int i2) {
+        return UIntProgression.Companion.m11148fromClosedRangeNkh28Cs(i, i2, -1);
     }
 
     /* renamed from: downTo-eb3DHEI  reason: not valid java name */
-    public static final ULongProgression m11187downToeb3DHEI(long j, long j2) {
-        return ULongProgression.Companion.m11155fromClosedRange7ftBX0g(j, j2, -1L);
+    public static final ULongProgression m11189downToeb3DHEI(long j, long j2) {
+        return ULongProgression.Companion.m11157fromClosedRange7ftBX0g(j, j2, -1L);
     }
 
     /* renamed from: downTo-5PvTz6A  reason: not valid java name */
-    public static final UIntProgression m11184downTo5PvTz6A(short s, short s2) {
-        return UIntProgression.Companion.m11146fromClosedRangeNkh28Cs(UInt.m10002constructorimpl(s & UShort.MAX_VALUE), UInt.m10002constructorimpl(s2 & UShort.MAX_VALUE), -1);
+    public static final UIntProgression m11186downTo5PvTz6A(short s, short s2) {
+        return UIntProgression.Companion.m11148fromClosedRangeNkh28Cs(UInt.m10004constructorimpl(s & UShort.MAX_VALUE), UInt.m10004constructorimpl(s2 & UShort.MAX_VALUE), -1);
     }
 
     public static final UIntProgression reversed(UIntProgression uIntProgression) {
         Intrinsics.checkNotNullParameter(uIntProgression, "<this>");
-        return UIntProgression.Companion.m11146fromClosedRangeNkh28Cs(uIntProgression.m11145getLastpVg5ArA(), uIntProgression.m11144getFirstpVg5ArA(), -uIntProgression.getStep());
+        return UIntProgression.Companion.m11148fromClosedRangeNkh28Cs(uIntProgression.m11147getLastpVg5ArA(), uIntProgression.m11146getFirstpVg5ArA(), -uIntProgression.getStep());
     }
 
     public static final ULongProgression reversed(ULongProgression uLongProgression) {
         Intrinsics.checkNotNullParameter(uLongProgression, "<this>");
-        return ULongProgression.Companion.m11155fromClosedRange7ftBX0g(uLongProgression.m11154getLastsVKNKU(), uLongProgression.m11153getFirstsVKNKU(), -uLongProgression.getStep());
+        return ULongProgression.Companion.m11157fromClosedRange7ftBX0g(uLongProgression.m11156getLastsVKNKU(), uLongProgression.m11155getFirstsVKNKU(), -uLongProgression.getStep());
     }
 
     public static final UIntProgression step(UIntProgression uIntProgression, int i) {
         Intrinsics.checkNotNullParameter(uIntProgression, "<this>");
         RangesKt.checkStepIsPositive(i > 0, Integer.valueOf(i));
         UIntProgression.Companion companion = UIntProgression.Companion;
-        int m11144getFirstpVg5ArA = uIntProgression.m11144getFirstpVg5ArA();
-        int m11145getLastpVg5ArA = uIntProgression.m11145getLastpVg5ArA();
+        int m11146getFirstpVg5ArA = uIntProgression.m11146getFirstpVg5ArA();
+        int m11147getLastpVg5ArA = uIntProgression.m11147getLastpVg5ArA();
         if (uIntProgression.getStep() <= 0) {
             i = -i;
         }
-        return companion.m11146fromClosedRangeNkh28Cs(m11144getFirstpVg5ArA, m11145getLastpVg5ArA, i);
+        return companion.m11148fromClosedRangeNkh28Cs(m11146getFirstpVg5ArA, m11147getLastpVg5ArA, i);
     }
 
     public static final ULongProgression step(ULongProgression uLongProgression, long j) {
         Intrinsics.checkNotNullParameter(uLongProgression, "<this>");
         RangesKt.checkStepIsPositive(j > 0, Long.valueOf(j));
         ULongProgression.Companion companion = ULongProgression.Companion;
-        long m11153getFirstsVKNKU = uLongProgression.m11153getFirstsVKNKU();
-        long m11154getLastsVKNKU = uLongProgression.m11154getLastsVKNKU();
+        long m11155getFirstsVKNKU = uLongProgression.m11155getFirstsVKNKU();
+        long m11156getLastsVKNKU = uLongProgression.m11156getLastsVKNKU();
         if (uLongProgression.getStep() <= 0) {
             j = -j;
         }
-        return companion.m11155fromClosedRange7ftBX0g(m11153getFirstsVKNKU, m11154getLastsVKNKU, j);
+        return companion.m11157fromClosedRange7ftBX0g(m11155getFirstsVKNKU, m11156getLastsVKNKU, j);
     }
 
     /* renamed from: until-Kr8caGY  reason: not valid java name */
-    public static final UIntRange m11190untilKr8caGY(byte b, byte b2) {
+    public static final UIntRange m11192untilKr8caGY(byte b, byte b2) {
         int i = b2 & 255;
-        return Intrinsics.compare(i, 0) <= 0 ? UIntRange.Companion.getEMPTY() : new UIntRange(UInt.m10002constructorimpl(b & 255), UInt.m10002constructorimpl(UInt.m10002constructorimpl(i) - 1), null);
+        return Intrinsics.compare(i, 0) <= 0 ? UIntRange.Companion.getEMPTY() : new UIntRange(UInt.m10004constructorimpl(b & 255), UInt.m10004constructorimpl(UInt.m10004constructorimpl(i) - 1), null);
     }
 
     /* renamed from: until-J1ME1BU  reason: not valid java name */
-    public static final UIntRange m11189untilJ1ME1BU(int i, int i2) {
+    public static final UIntRange m11191untilJ1ME1BU(int i, int i2) {
         int compare;
         compare = Integer.compare(i2 ^ Integer.MIN_VALUE, 0 ^ Integer.MIN_VALUE);
-        return compare <= 0 ? UIntRange.Companion.getEMPTY() : new UIntRange(i, UInt.m10002constructorimpl(i2 - 1), null);
+        return compare <= 0 ? UIntRange.Companion.getEMPTY() : new UIntRange(i, UInt.m10004constructorimpl(i2 - 1), null);
     }
 
     /* renamed from: until-eb3DHEI  reason: not valid java name */
-    public static final ULongRange m11191untileb3DHEI(long j, long j2) {
+    public static final ULongRange m11193untileb3DHEI(long j, long j2) {
         int compare;
         compare = Long.compare(j2 ^ Long.MIN_VALUE, 0 ^ Long.MIN_VALUE);
-        return compare <= 0 ? ULongRange.Companion.getEMPTY() : new ULongRange(j, ULong.m10081constructorimpl(j2 - ULong.m10081constructorimpl(1 & 4294967295L)), null);
+        return compare <= 0 ? ULongRange.Companion.getEMPTY() : new ULongRange(j, ULong.m10083constructorimpl(j2 - ULong.m10083constructorimpl(1 & 4294967295L)), null);
     }
 
     /* renamed from: until-5PvTz6A  reason: not valid java name */
-    public static final UIntRange m11188until5PvTz6A(short s, short s2) {
+    public static final UIntRange m11190until5PvTz6A(short s, short s2) {
         int i = s2 & UShort.MAX_VALUE;
-        return Intrinsics.compare(i, 0) <= 0 ? UIntRange.Companion.getEMPTY() : new UIntRange(UInt.m10002constructorimpl(s & UShort.MAX_VALUE), UInt.m10002constructorimpl(UInt.m10002constructorimpl(i) - 1), null);
+        return Intrinsics.compare(i, 0) <= 0 ? UIntRange.Companion.getEMPTY() : new UIntRange(UInt.m10004constructorimpl(s & UShort.MAX_VALUE), UInt.m10004constructorimpl(UInt.m10004constructorimpl(i) - 1), null);
     }
 
     /* renamed from: coerceAtLeast-J1ME1BU  reason: not valid java name */
-    public static final int m11163coerceAtLeastJ1ME1BU(int i, int i2) {
+    public static final int m11165coerceAtLeastJ1ME1BU(int i, int i2) {
         int compare;
         compare = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
         return compare < 0 ? i2 : i;
     }
 
     /* renamed from: coerceAtLeast-eb3DHEI  reason: not valid java name */
-    public static final long m11165coerceAtLeasteb3DHEI(long j, long j2) {
+    public static final long m11167coerceAtLeasteb3DHEI(long j, long j2) {
         int compare;
         compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
         return compare < 0 ? j2 : j;
     }
 
     /* renamed from: coerceAtLeast-Kr8caGY  reason: not valid java name */
-    public static final byte m11164coerceAtLeastKr8caGY(byte b, byte b2) {
+    public static final byte m11166coerceAtLeastKr8caGY(byte b, byte b2) {
         return Intrinsics.compare(b & 255, b2 & 255) < 0 ? b2 : b;
     }
 
     /* renamed from: coerceAtLeast-5PvTz6A  reason: not valid java name */
-    public static final short m11162coerceAtLeast5PvTz6A(short s, short s2) {
+    public static final short m11164coerceAtLeast5PvTz6A(short s, short s2) {
         return Intrinsics.compare(s & UShort.MAX_VALUE, 65535 & s2) < 0 ? s2 : s;
     }
 
     /* renamed from: coerceAtMost-J1ME1BU  reason: not valid java name */
-    public static final int m11167coerceAtMostJ1ME1BU(int i, int i2) {
+    public static final int m11169coerceAtMostJ1ME1BU(int i, int i2) {
         int compare;
         compare = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
         return compare > 0 ? i2 : i;
     }
 
     /* renamed from: coerceAtMost-eb3DHEI  reason: not valid java name */
-    public static final long m11169coerceAtMosteb3DHEI(long j, long j2) {
+    public static final long m11171coerceAtMosteb3DHEI(long j, long j2) {
         int compare;
         compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
         return compare > 0 ? j2 : j;
     }
 
     /* renamed from: coerceAtMost-Kr8caGY  reason: not valid java name */
-    public static final byte m11168coerceAtMostKr8caGY(byte b, byte b2) {
+    public static final byte m11170coerceAtMostKr8caGY(byte b, byte b2) {
         return Intrinsics.compare(b & 255, b2 & 255) > 0 ? b2 : b;
     }
 
     /* renamed from: coerceAtMost-5PvTz6A  reason: not valid java name */
-    public static final short m11166coerceAtMost5PvTz6A(short s, short s2) {
+    public static final short m11168coerceAtMost5PvTz6A(short s, short s2) {
         return Intrinsics.compare(s & UShort.MAX_VALUE, 65535 & s2) > 0 ? s2 : s;
     }
 
     /* renamed from: coerceIn-WZ9TVnA  reason: not valid java name */
-    public static final int m11172coerceInWZ9TVnA(int i, int i2, int i3) {
+    public static final int m11174coerceInWZ9TVnA(int i, int i2, int i3) {
         int compare;
         int compare2;
         int compare3;
         compare = Integer.compare(i2 ^ Integer.MIN_VALUE, i3 ^ Integer.MIN_VALUE);
         if (compare > 0) {
-            throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) UInt.m10048toStringimpl(i3)) + " is less than minimum " + ((Object) UInt.m10048toStringimpl(i2)) + '.');
+            throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) UInt.m10050toStringimpl(i3)) + " is less than minimum " + ((Object) UInt.m10050toStringimpl(i2)) + '.');
         }
         compare2 = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
         if (compare2 < 0) {
@@ -334,13 +334,13 @@ public class URangesKt___URangesKt {
     }
 
     /* renamed from: coerceIn-sambcqE  reason: not valid java name */
-    public static final long m11174coerceInsambcqE(long j, long j2, long j3) {
+    public static final long m11176coerceInsambcqE(long j, long j2, long j3) {
         int compare;
         int compare2;
         int compare3;
         compare = Long.compare(j2 ^ Long.MIN_VALUE, j3 ^ Long.MIN_VALUE);
         if (compare > 0) {
-            throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) ULong.m10127toStringimpl(j3)) + " is less than minimum " + ((Object) ULong.m10127toStringimpl(j2)) + '.');
+            throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) ULong.m10129toStringimpl(j3)) + " is less than minimum " + ((Object) ULong.m10129toStringimpl(j2)) + '.');
         }
         compare2 = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
         if (compare2 < 0) {
@@ -351,62 +351,62 @@ public class URangesKt___URangesKt {
     }
 
     /* renamed from: coerceIn-b33U2AM  reason: not valid java name */
-    public static final byte m11173coerceInb33U2AM(byte b, byte b2, byte b3) {
+    public static final byte m11175coerceInb33U2AM(byte b, byte b2, byte b3) {
         int i = b2 & 255;
         int i2 = b3 & 255;
         if (Intrinsics.compare(i, i2) <= 0) {
             int i3 = b & 255;
             return Intrinsics.compare(i3, i) < 0 ? b2 : Intrinsics.compare(i3, i2) > 0 ? b3 : b;
         }
-        throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) UByte.m9964toStringimpl(b3)) + " is less than minimum " + ((Object) UByte.m9964toStringimpl(b2)) + '.');
+        throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) UByte.m9966toStringimpl(b3)) + " is less than minimum " + ((Object) UByte.m9966toStringimpl(b2)) + '.');
     }
 
     /* renamed from: coerceIn-VKSA0NQ  reason: not valid java name */
-    public static final short m11171coerceInVKSA0NQ(short s, short s2, short s3) {
+    public static final short m11173coerceInVKSA0NQ(short s, short s2, short s3) {
         int i = s2 & UShort.MAX_VALUE;
         int i2 = s3 & UShort.MAX_VALUE;
         if (Intrinsics.compare(i, i2) <= 0) {
             int i3 = 65535 & s;
             return Intrinsics.compare(i3, i) < 0 ? s2 : Intrinsics.compare(i3, i2) > 0 ? s3 : s;
         }
-        throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) UShort.m10232toStringimpl(s3)) + " is less than minimum " + ((Object) UShort.m10232toStringimpl(s2)) + '.');
+        throw new IllegalArgumentException("Cannot coerce value to an empty range: maximum " + ((Object) UShort.m10234toStringimpl(s3)) + " is less than minimum " + ((Object) UShort.m10234toStringimpl(s2)) + '.');
     }
 
     /* renamed from: coerceIn-wuiCnnA  reason: not valid java name */
-    public static final int m11175coerceInwuiCnnA(int i, ClosedRange<UInt> range) {
+    public static final int m11177coerceInwuiCnnA(int i, ClosedRange<UInt> range) {
         int compare;
         int compare2;
         Intrinsics.checkNotNullParameter(range, "range");
         if (range instanceof ClosedFloatingPointRange) {
-            return ((UInt) RangesKt.coerceIn(UInt.m9996boximpl(i), (ClosedFloatingPointRange<UInt>) range)).m10054unboximpl();
+            return ((UInt) RangesKt.coerceIn(UInt.m9998boximpl(i), (ClosedFloatingPointRange<UInt>) range)).m10056unboximpl();
         }
         if (range.isEmpty()) {
             throw new IllegalArgumentException("Cannot coerce value to an empty range: " + range + '.');
         }
-        compare = Integer.compare(i ^ Integer.MIN_VALUE, range.getStart().m10054unboximpl() ^ Integer.MIN_VALUE);
+        compare = Integer.compare(i ^ Integer.MIN_VALUE, range.getStart().m10056unboximpl() ^ Integer.MIN_VALUE);
         if (compare < 0) {
-            return range.getStart().m10054unboximpl();
+            return range.getStart().m10056unboximpl();
         }
-        compare2 = Integer.compare(i ^ Integer.MIN_VALUE, range.getEndInclusive().m10054unboximpl() ^ Integer.MIN_VALUE);
-        return compare2 > 0 ? range.getEndInclusive().m10054unboximpl() : i;
+        compare2 = Integer.compare(i ^ Integer.MIN_VALUE, range.getEndInclusive().m10056unboximpl() ^ Integer.MIN_VALUE);
+        return compare2 > 0 ? range.getEndInclusive().m10056unboximpl() : i;
     }
 
     /* renamed from: coerceIn-JPwROB0  reason: not valid java name */
-    public static final long m11170coerceInJPwROB0(long j, ClosedRange<ULong> range) {
+    public static final long m11172coerceInJPwROB0(long j, ClosedRange<ULong> range) {
         int compare;
         int compare2;
         Intrinsics.checkNotNullParameter(range, "range");
         if (range instanceof ClosedFloatingPointRange) {
-            return ((ULong) RangesKt.coerceIn(ULong.m10075boximpl(j), (ClosedFloatingPointRange<ULong>) range)).m10133unboximpl();
+            return ((ULong) RangesKt.coerceIn(ULong.m10077boximpl(j), (ClosedFloatingPointRange<ULong>) range)).m10135unboximpl();
         }
         if (range.isEmpty()) {
             throw new IllegalArgumentException("Cannot coerce value to an empty range: " + range + '.');
         }
-        compare = Long.compare(j ^ Long.MIN_VALUE, range.getStart().m10133unboximpl() ^ Long.MIN_VALUE);
+        compare = Long.compare(j ^ Long.MIN_VALUE, range.getStart().m10135unboximpl() ^ Long.MIN_VALUE);
         if (compare < 0) {
-            return range.getStart().m10133unboximpl();
+            return range.getStart().m10135unboximpl();
         }
-        compare2 = Long.compare(j ^ Long.MIN_VALUE, range.getEndInclusive().m10133unboximpl() ^ Long.MIN_VALUE);
-        return compare2 > 0 ? range.getEndInclusive().m10133unboximpl() : j;
+        compare2 = Long.compare(j ^ Long.MIN_VALUE, range.getEndInclusive().m10135unboximpl() ^ Long.MIN_VALUE);
+        return compare2 > 0 ? range.getEndInclusive().m10135unboximpl() : j;
     }
 }

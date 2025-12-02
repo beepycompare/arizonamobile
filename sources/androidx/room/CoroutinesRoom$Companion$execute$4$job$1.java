@@ -50,10 +50,10 @@ final class CoroutinesRoom$Companion$execute$4$job$1 extends SuspendLambda imple
         try {
             Object call = this.$callable.call();
             Result.Companion companion = Result.Companion;
-            this.$continuation.resumeWith(Result.m9902constructorimpl(call));
+            this.$continuation.resumeWith(Result.m9904constructorimpl(call));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            this.$continuation.resumeWith(Result.m9902constructorimpl(ResultKt.createFailure(th)));
+            this.$continuation.resumeWith(Result.m9904constructorimpl(ResultKt.createFailure(th)));
         }
         return Unit.INSTANCE;
     }

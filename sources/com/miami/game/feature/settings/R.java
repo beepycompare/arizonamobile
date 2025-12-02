@@ -8,16 +8,16 @@ public final class R {
         public static int check_files_button = 0x7f080571;
         public static int keyboard_button = 0x7f080ab2;
         public static int keyboard_button_active = 0x7f080ab3;
-        public static int nubmer_button_active = 0x7f080bd5;
-        public static int number_button_png = 0x7f080bda;
-        public static int privacy_policy = 0x7f080cc2;
-        public static int settings_label = 0x7f080d53;
-        public static int share_logs = 0x7f080d58;
-        public static int support_button = 0x7f080de2;
-        public static int switch_bg = 0x7f080de4;
-        public static int tech_button = 0x7f080deb;
-        public static int thumb_active = 0x7f080ded;
-        public static int thumb_not_active = 0x7f080dee;
+        public static int nubmer_button_active = 0x7f080bd6;
+        public static int number_button_png = 0x7f080bdb;
+        public static int privacy_policy = 0x7f080cc3;
+        public static int settings_label = 0x7f080d54;
+        public static int share_logs = 0x7f080d59;
+        public static int support_button = 0x7f080de3;
+        public static int switch_bg = 0x7f080de5;
+        public static int tech_button = 0x7f080dec;
+        public static int thumb_active = 0x7f080dee;
+        public static int thumb_not_active = 0x7f080def;
 
         private drawable() {
         }

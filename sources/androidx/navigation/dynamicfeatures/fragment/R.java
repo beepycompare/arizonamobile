@@ -37,7 +37,7 @@ public final class R {
         public static int installing_module = 0x7f120104;
         public static int ok = 0x7f1201e7;
         public static int progress = 0x7f120200;
-        public static int retry = 0x7f12021e;
+        public static int retry = 0x7f12021f;
 
         private string() {
         }

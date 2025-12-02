@@ -605,9 +605,9 @@ public final class R {
         public static int btn_radio_off_to_on_mtrl_animation = 0x7f0804e9;
         public static int btn_radio_on_mtrl = 0x7f0804ea;
         public static int btn_radio_on_to_off_mtrl_animation = 0x7f0804eb;
-        public static int test_level_drawable = 0x7f080dec;
-        public static int tooltip_frame_dark = 0x7f080def;
-        public static int tooltip_frame_light = 0x7f080df0;
+        public static int test_level_drawable = 0x7f080ded;
+        public static int tooltip_frame_dark = 0x7f080df0;
+        public static int tooltip_frame_light = 0x7f080df1;
 
         private drawable() {
         }
@@ -791,7 +791,7 @@ public final class R {
         public static int abc_shareactionprovider_share_with = 0x7f120019;
         public static int abc_shareactionprovider_share_with_application = 0x7f12001a;
         public static int abc_toolbar_collapse_description = 0x7f12001b;
-        public static int search_menu_title = 0x7f120226;
+        public static int search_menu_title = 0x7f120227;
 
         private string() {
         }

@@ -59,7 +59,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int arizona_backgournd_home = 0x7f08031a;
-        public static int rodina_backgournd_home = 0x7f080d10;
+        public static int rodina_backgournd_home = 0x7f080d11;
 
         private drawable() {
         }
@@ -161,42 +161,42 @@ public final class R {
         public static int prepare_data = 0x7f1201ff;
         public static int project_id = 0x7f120201;
         public static int public_debug = 0x7f120203;
-        public static int rcon_password = 0x7f12020a;
-        public static int release = 0x7f12020f;
-        public static int release_hw = 0x7f120210;
-        public static int release_old = 0x7f120211;
-        public static int release_ru = 0x7f120212;
-        public static int release_web = 0x7f120213;
-        public static int repeat = 0x7f120218;
-        public static int report = 0x7f12021b;
-        public static int report_an_error = 0x7f12021c;
-        public static int samp_mobile = 0x7f120222;
-        public static int save = 0x7f120223;
-        public static int separator = 0x7f12022e;
-        public static int server_info_title = 0x7f12022f;
-        public static int server_list = 0x7f120230;
-        public static int server_password = 0x7f120231;
-        public static int server_unreachable = 0x7f120232;
-        public static int settings = 0x7f120234;
-        public static int speed_update_default = 0x7f12023f;
-        public static int staging = 0x7f120240;
-        public static int string_count_in_chat = 0x7f120246;
-        public static int test_server = 0x7f120252;
-        public static int unknown = 0x7f120260;
-        public static int unsupported_version = 0x7f120262;
-        public static int unsupported_version_info = 0x7f120263;
-        public static int update = 0x7f120265;
-        public static int update_btn = 0x7f120266;
-        public static int update_data = 0x7f120267;
-        public static int update_game = 0x7f120268;
-        public static int update_game_data = 0x7f120269;
-        public static int update_game_error = 0x7f12026a;
-        public static int update_server_connection_refused = 0x7f12026b;
-        public static int update_server_error = 0x7f12026c;
-        public static int waiting = 0x7f120276;
-        public static int warning_title = 0x7f120284;
-        public static int welcome_text = 0x7f120287;
-        public static int you_have_installed = 0x7f12028a;
+        public static int rcon_password = 0x7f12020b;
+        public static int release = 0x7f120210;
+        public static int release_hw = 0x7f120211;
+        public static int release_old = 0x7f120212;
+        public static int release_ru = 0x7f120213;
+        public static int release_web = 0x7f120214;
+        public static int repeat = 0x7f120219;
+        public static int report = 0x7f12021c;
+        public static int report_an_error = 0x7f12021d;
+        public static int samp_mobile = 0x7f120223;
+        public static int save = 0x7f120224;
+        public static int separator = 0x7f12022f;
+        public static int server_info_title = 0x7f120230;
+        public static int server_list = 0x7f120231;
+        public static int server_password = 0x7f120232;
+        public static int server_unreachable = 0x7f120233;
+        public static int settings = 0x7f120235;
+        public static int speed_update_default = 0x7f120240;
+        public static int staging = 0x7f120241;
+        public static int string_count_in_chat = 0x7f120247;
+        public static int test_server = 0x7f120253;
+        public static int unknown = 0x7f120261;
+        public static int unsupported_version = 0x7f120263;
+        public static int unsupported_version_info = 0x7f120264;
+        public static int update = 0x7f120266;
+        public static int update_btn = 0x7f120267;
+        public static int update_data = 0x7f120268;
+        public static int update_game = 0x7f120269;
+        public static int update_game_data = 0x7f12026a;
+        public static int update_game_error = 0x7f12026b;
+        public static int update_server_connection_refused = 0x7f12026c;
+        public static int update_server_error = 0x7f12026d;
+        public static int waiting = 0x7f120277;
+        public static int warning_title = 0x7f120285;
+        public static int welcome_text = 0x7f120288;
+        public static int you_have_installed = 0x7f12028b;
 
         private string() {
         }

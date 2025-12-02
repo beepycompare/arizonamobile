@@ -65,15 +65,15 @@ public final class R {
         public static int blueprint_pipe_two_stage_one = 0x7f08046d;
         public static int blueprint_pipe_two_stage_three = 0x7f08046e;
         public static int blueprint_pipe_two_stage_two = 0x7f08046f;
-        public static int pm_empty = 0x7f080cb5;
-        public static int pm_stage_1 = 0x7f080cb6;
-        public static int pm_stage_2 = 0x7f080cb7;
-        public static int pm_stage_3 = 0x7f080cb8;
-        public static int rpg_empty = 0x7f080d2b;
-        public static int rpg_stage_1 = 0x7f080d2c;
-        public static int rpg_stage_2 = 0x7f080d2d;
-        public static int rpg_stage_3 = 0x7f080d2e;
-        public static int rpg_stage_4 = 0x7f080d2f;
+        public static int pm_empty = 0x7f080cb6;
+        public static int pm_stage_1 = 0x7f080cb7;
+        public static int pm_stage_2 = 0x7f080cb8;
+        public static int pm_stage_3 = 0x7f080cb9;
+        public static int rpg_empty = 0x7f080d2c;
+        public static int rpg_stage_1 = 0x7f080d2d;
+        public static int rpg_stage_2 = 0x7f080d2e;
+        public static int rpg_stage_3 = 0x7f080d2f;
+        public static int rpg_stage_4 = 0x7f080d30;
 
         private drawable() {
         }

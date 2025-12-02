@@ -134,30 +134,30 @@ public final class R {
         public static int ic_battlepass_tasks_timer = 0x7f0809d5;
         public static int ic_battlepass_title_2 = 0x7f0809d7;
         public static int ic_bp_complated = 0x7f0809dc;
-        public static int repetition_ic = 0x7f080d09;
-        public static int winter_battlepass_old_item_prem = 0x7f080e10;
-        public static int winter_battlepass_old_item_usual = 0x7f080e11;
-        public static int winter_battlepass_roulette_arrow_back = 0x7f080e12;
-        public static int winter_battlepass_roulette_arrow_left = 0x7f080e13;
-        public static int winter_battlepass_roulette_arrow_right = 0x7f080e14;
-        public static int winter_battlepass_roulette_bg_default_roulette = 0x7f080e15;
-        public static int winter_battlepass_roulette_bg_gradient_transparent = 0x7f080e16;
-        public static int winter_battlepass_roulette_bg_premium_blue = 0x7f080e17;
-        public static int winter_battlepass_roulette_bg_premium_roulette = 0x7f080e18;
-        public static int winter_battlepass_roulette_bg_premium_transparent_blue = 0x7f080e19;
-        public static int winter_battlepass_roulette_bg_transparent_dark_blue = 0x7f080e1a;
-        public static int winter_battlepass_roulette_bg_transparent_white = 0x7f080e1b;
-        public static int winter_battlepass_roulette_bg_transparent_white_selected = 0x7f080e1c;
-        public static int winter_battlepass_roulette_bg_white = 0x7f080e1d;
-        public static int winter_battlepass_roulette_bg_white_transparent = 0x7f080e1e;
-        public static int winter_battlepass_roulette_custom_scrollbar_thumb = 0x7f080e1f;
-        public static int winter_battlepass_roulette_custom_scrollbar_track = 0x7f080e20;
-        public static int winter_battlepass_roulette_empty_list_bg = 0x7f080e21;
-        public static int winter_battlepass_roulette_img_money_snow = 0x7f080e22;
-        public static int winter_battlepass_roulette_img_prise_bag = 0x7f080e23;
-        public static int winter_battlepass_roulette_img_prise_chicken = 0x7f080e24;
-        public static int winter_battlepass_roulette_img_prise_dog = 0x7f080e25;
-        public static int winter_battlepass_roulette_img_prise_just_dog = 0x7f080e26;
+        public static int repetition_ic = 0x7f080d0a;
+        public static int winter_battlepass_old_item_prem = 0x7f080e11;
+        public static int winter_battlepass_old_item_usual = 0x7f080e12;
+        public static int winter_battlepass_roulette_arrow_back = 0x7f080e13;
+        public static int winter_battlepass_roulette_arrow_left = 0x7f080e14;
+        public static int winter_battlepass_roulette_arrow_right = 0x7f080e15;
+        public static int winter_battlepass_roulette_bg_default_roulette = 0x7f080e16;
+        public static int winter_battlepass_roulette_bg_gradient_transparent = 0x7f080e17;
+        public static int winter_battlepass_roulette_bg_premium_blue = 0x7f080e18;
+        public static int winter_battlepass_roulette_bg_premium_roulette = 0x7f080e19;
+        public static int winter_battlepass_roulette_bg_premium_transparent_blue = 0x7f080e1a;
+        public static int winter_battlepass_roulette_bg_transparent_dark_blue = 0x7f080e1b;
+        public static int winter_battlepass_roulette_bg_transparent_white = 0x7f080e1c;
+        public static int winter_battlepass_roulette_bg_transparent_white_selected = 0x7f080e1d;
+        public static int winter_battlepass_roulette_bg_white = 0x7f080e1e;
+        public static int winter_battlepass_roulette_bg_white_transparent = 0x7f080e1f;
+        public static int winter_battlepass_roulette_custom_scrollbar_thumb = 0x7f080e20;
+        public static int winter_battlepass_roulette_custom_scrollbar_track = 0x7f080e21;
+        public static int winter_battlepass_roulette_empty_list_bg = 0x7f080e22;
+        public static int winter_battlepass_roulette_img_money_snow = 0x7f080e23;
+        public static int winter_battlepass_roulette_img_prise_bag = 0x7f080e24;
+        public static int winter_battlepass_roulette_img_prise_chicken = 0x7f080e25;
+        public static int winter_battlepass_roulette_img_prise_dog = 0x7f080e26;
+        public static int winter_battlepass_roulette_img_prise_just_dog = 0x7f080e27;
 
         private drawable() {
         }
@@ -434,7 +434,7 @@ public final class R {
     public static final class string {
         public static int bp_completed = 0x7f120037;
         public static int i_times = 0x7f1200ee;
-        public static int until_the_end = 0x7f120264;
+        public static int until_the_end = 0x7f120265;
 
         private string() {
         }

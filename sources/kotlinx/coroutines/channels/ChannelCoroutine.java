@@ -51,8 +51,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public void mo11502invokeOnClose(Function1<? super Throwable, Unit> function1) {
-        this._channel.mo11502invokeOnClose(function1);
+    public void mo11504invokeOnClose(Function1<? super Throwable, Unit> function1) {
+        this._channel.mo11504invokeOnClose(function1);
     }
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
@@ -94,8 +94,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     /* renamed from: receiveCatching-JP2dKIU */
-    public Object mo11425receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
-        Object obj = this._channel.mo11425receiveCatchingJP2dKIU(continuation);
+    public Object mo11427receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
+        Object obj = this._channel.mo11427receiveCatchingJP2dKIU(continuation);
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         return obj;
     }
@@ -113,8 +113,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     /* renamed from: tryReceive-PtdJZtk */
-    public Object mo11426tryReceivePtdJZtk() {
-        return this._channel.mo11426tryReceivePtdJZtk();
+    public Object mo11428tryReceivePtdJZtk() {
+        return this._channel.mo11428tryReceivePtdJZtk();
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel

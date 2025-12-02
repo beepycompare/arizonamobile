@@ -14,7 +14,7 @@ public final class R {
         public static int network_error_message_data_format = 0x7f1201d1;
         public static int network_error_message_http_unknown = 0x7f1201d2;
         public static int password_fields_are_not_equal = 0x7f1201f2;
-        public static int required_field = 0x7f12021d;
+        public static int required_field = 0x7f12021e;
 
         private string() {
         }

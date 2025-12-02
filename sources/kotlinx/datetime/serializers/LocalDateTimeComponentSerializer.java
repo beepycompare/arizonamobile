@@ -111,7 +111,7 @@ public final class LocalDateTimeComponentSerializer implements KSerializer<Local
         CompositeEncoder beginStructure = encoder.beginStructure(descriptor2);
         LocalDateTimeComponentSerializer localDateTimeComponentSerializer = INSTANCE;
         beginStructure.encodeIntElement(localDateTimeComponentSerializer.getDescriptor(), 0, value.getYear());
-        beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 1, (short) MonthKt.getNumber(value.m11526getMonth()));
+        beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 1, (short) MonthKt.getNumber(value.m11528getMonth()));
         beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 2, (short) value.getDay());
         beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 3, (short) value.getHour());
         beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 4, (short) value.getMinute());

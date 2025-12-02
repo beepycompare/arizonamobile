@@ -24,10 +24,6 @@ public final class zzfr extends zzmf implements zznn {
         return zzh;
     }
 
-    public static /* synthetic */ zzfr zzi() {
-        return zzh;
-    }
-
     public final boolean zza() {
         return (this.zzb & 1) != 0;
     }

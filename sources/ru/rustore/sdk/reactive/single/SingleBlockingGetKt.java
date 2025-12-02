@@ -37,7 +37,7 @@ public final class SingleBlockingGetKt {
                 Intrinsics.checkNotNullParameter(error, "error");
                 Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                 Result.Companion companion = Result.Companion;
-                objectRef2.element = Result.m9901boximpl(Result.m9902constructorimpl(ResultKt.createFailure(error)));
+                objectRef2.element = Result.m9903boximpl(Result.m9904constructorimpl(ResultKt.createFailure(error)));
                 countDownLatch.countDown();
             }
         }, new Function1<T, Unit>() { // from class: ru.rustore.sdk.reactive.single.SingleBlockingGetKt$blockingGet$disposable$2
@@ -58,7 +58,7 @@ public final class SingleBlockingGetKt {
             public final void invoke2(T t) {
                 Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                 Result.Companion companion = Result.Companion;
-                objectRef2.element = (T) Result.m9901boximpl(Result.m9902constructorimpl(t));
+                objectRef2.element = (T) Result.m9903boximpl(Result.m9904constructorimpl(t));
                 countDownLatch.countDown();
             }
         });
@@ -67,7 +67,7 @@ public final class SingleBlockingGetKt {
             subscribe.dispose();
             T t = objectRef.element;
             if (t != null) {
-                return ((Result) t).m9911unboximpl();
+                return ((Result) t).m9913unboximpl();
             }
             throw new IllegalArgumentException("Required value was null.".toString());
         } catch (Throwable th) {

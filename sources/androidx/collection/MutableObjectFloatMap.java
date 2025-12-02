@@ -233,7 +233,7 @@ public final class MutableObjectFloatMap<K> extends ObjectFloatMap<K> {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m10081constructorimpl(ULong.m10081constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10081constructorimpl(ULong.m10081constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m10083constructorimpl(ULong.m10083constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10083constructorimpl(ULong.m10083constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

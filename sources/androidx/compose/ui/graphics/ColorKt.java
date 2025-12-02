@@ -104,7 +104,7 @@ public final class ColorKt {
                 f8 = 1.0f;
             }
             int i13 = i12 | (((int) ((f8 * 255.0f) + 0.5f)) << 8);
-            return Color.m5276constructorimpl(ULong.m10081constructorimpl(ULong.m10081constructorimpl(i13 | ((int) ((((f3 >= 0.0f ? f3 : 0.0f) <= 1.0f ? f5 : 1.0f) * 255.0f) + 0.5f))) << 32));
+            return Color.m5276constructorimpl(ULong.m10083constructorimpl(ULong.m10083constructorimpl(i13 | ((int) ((((f3 >= 0.0f ? f3 : 0.0f) <= 1.0f ? f5 : 1.0f) * 255.0f) + 0.5f))) << 32));
         }
         if (!(colorSpace.getComponentCount() == 3)) {
             InlineClassHelperKt.throwIllegalArgumentException("Color only works with ColorSpaces with 3 components");
@@ -187,7 +187,7 @@ public final class ColorKt {
                                         int i24 = i22 >> 13;
                                         if ((floatToRawIntBits3 & 4096) != 0) {
                                             i10 = (((i23 << 10) | i24) + 1) | (i21 << 15);
-                                            return Color.m5276constructorimpl(ULong.m10081constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+                                            return Color.m5276constructorimpl(ULong.m10083constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
                                         }
                                         i9 = i24;
                                         r8 = i23;
@@ -204,7 +204,7 @@ public final class ColorKt {
                                 i10 = i9 | (i21 << 15) | (r8 << 10);
                                 if (f4 >= 0.0f) {
                                 }
-                                return Color.m5276constructorimpl(ULong.m10081constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+                                return Color.m5276constructorimpl(ULong.m10083constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
                             }
                             i6 = i20;
                         } else if (i5 >= -10) {
@@ -236,7 +236,7 @@ public final class ColorKt {
                     i10 = i9 | (i212 << 15) | (r8 << 10);
                     if (f4 >= 0.0f) {
                     }
-                    return Color.m5276constructorimpl(ULong.m10081constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+                    return Color.m5276constructorimpl(ULong.m10083constructorimpl((id$ui_graphics_release & 63) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
                 }
                 i2 = i17;
             } else if (i >= -10) {
@@ -282,7 +282,7 @@ public final class ColorKt {
         i10 = i9 | (i2122 << 15) | (r8 << 10);
         if (f4 >= 0.0f) {
         }
-        return Color.m5276constructorimpl(ULong.m10081constructorimpl((id$ui_graphics_release & 63) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
+        return Color.m5276constructorimpl(ULong.m10083constructorimpl((id$ui_graphics_release & 63) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((WebSocketProtocol.PAYLOAD_SHORT_MAX & ((short) i10)) << 16) | ((((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? f5 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6)));
     }
 
     public static /* synthetic */ long UncheckedColor$default(float f, float f2, float f3, float f4, ColorSpace colorSpace, int i, Object obj) {
@@ -313,7 +313,7 @@ public final class ColorKt {
         int i8;
         int i9;
         if (colorSpace.isSrgb()) {
-            return Color.m5276constructorimpl(ULong.m10081constructorimpl(ULong.m10081constructorimpl((((((int) ((f4 * 255.0f) + 0.5f)) << 24) | (((int) ((f * 255.0f) + 0.5f)) << 16)) | (((int) ((f2 * 255.0f) + 0.5f)) << 8)) | ((int) ((255.0f * f3) + 0.5f))) << 32));
+            return Color.m5276constructorimpl(ULong.m10083constructorimpl(ULong.m10083constructorimpl((((((int) ((f4 * 255.0f) + 0.5f)) << 24) | (((int) ((f * 255.0f) + 0.5f)) << 16)) | (((int) ((f2 * 255.0f) + 0.5f)) << 8)) | ((int) ((255.0f * f3) + 0.5f))) << 32));
         }
         int floatToRawIntBits = Float.floatToRawIntBits(f);
         int i10 = floatToRawIntBits >>> 31;
@@ -365,7 +365,7 @@ public final class ColorKt {
                                             i14 = i20 >> 13;
                                             if ((floatToRawIntBits3 & 4096) != 0) {
                                                 i9 = (((i21 << 10) | i14) + 1) | (i19 << 15);
-                                                return Color.m5276constructorimpl(ULong.m10081constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+                                                return Color.m5276constructorimpl(ULong.m10083constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
                                             }
                                             i13 = i21;
                                         } else if (i21 >= -10) {
@@ -381,7 +381,7 @@ public final class ColorKt {
                                     }
                                 }
                                 i9 = (i19 << 15) | (i13 << 10) | i14;
-                                return Color.m5276constructorimpl(ULong.m10081constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+                                return Color.m5276constructorimpl(ULong.m10083constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s2 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
                             }
                             i6 = i18;
                         } else if (i5 >= -10) {
@@ -405,7 +405,7 @@ public final class ColorKt {
                     if (i8 == 255) {
                     }
                     i9 = (i192 << 15) | (i13 << 10) | i14;
-                    return Color.m5276constructorimpl(ULong.m10081constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+                    return Color.m5276constructorimpl(ULong.m10083constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s22 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
                 }
                 i2 = i15;
             } else if (i >= -10) {
@@ -437,15 +437,15 @@ public final class ColorKt {
         if (i8 == 255) {
         }
         i9 = (i1922 << 15) | (i13 << 10) | i14;
-        return Color.m5276constructorimpl(ULong.m10081constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
+        return Color.m5276constructorimpl(ULong.m10083constructorimpl(((((short) i9) & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 16) | ((s3 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 48) | ((s222 & WebSocketProtocol.PAYLOAD_SHORT_MAX) << 32) | ((((int) ((Math.max(0.0f, Math.min(f4, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (colorSpace.getId$ui_graphics_release() & 63)));
     }
 
     public static final long Color(int i) {
-        return Color.m5276constructorimpl(ULong.m10081constructorimpl(ULong.m10081constructorimpl(i) << 32));
+        return Color.m5276constructorimpl(ULong.m10083constructorimpl(ULong.m10083constructorimpl(i) << 32));
     }
 
     public static final long Color(long j) {
-        return Color.m5276constructorimpl(ULong.m10081constructorimpl(j << 32));
+        return Color.m5276constructorimpl(ULong.m10083constructorimpl(j << 32));
     }
 
     public static /* synthetic */ long Color$default(int i, int i2, int i3, int i4, int i5, Object obj) {
@@ -517,7 +517,7 @@ public final class ColorKt {
 
     /* renamed from: toArgb-8_81llA  reason: not valid java name */
     public static final int m5334toArgb8_81llA(long j) {
-        return (int) ULong.m10081constructorimpl(Color.m5277convertvNxB06k(j, ColorSpaces.INSTANCE.getSrgb()) >>> 32);
+        return (int) ULong.m10083constructorimpl(Color.m5277convertvNxB06k(j, ColorSpaces.INSTANCE.getSrgb()) >>> 32);
     }
 
     /* renamed from: takeOrElse-DxMtmZc  reason: not valid java name */

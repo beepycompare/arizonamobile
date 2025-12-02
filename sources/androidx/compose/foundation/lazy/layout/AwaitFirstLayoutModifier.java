@@ -104,7 +104,7 @@ public final class AwaitFirstLayoutModifier implements OnGloballyPositionedModif
         int size = list.size();
         for (int i = 0; i < size; i++) {
             Result.Companion companion = Result.Companion;
-            list.get(i).resumeWith(Result.m9902constructorimpl(Unit.INSTANCE));
+            list.get(i).resumeWith(Result.m9904constructorimpl(Unit.INSTANCE));
         }
         this.continuations.clear();
     }

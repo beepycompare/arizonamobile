@@ -256,7 +256,7 @@ public final class ProgressBarKt {
         Path.lineTo(intBitsToFloat2 - intBitsToFloat, Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)));
         Path.lineTo(0.0f, Float.intBitsToFloat((int) (4294967295L & drawScope.mo5859getSizeNHjbRc())));
         Path.close();
-        DrawScope.m5849drawPathLG529CI$default(drawScope, Path, border.m9797getColor0d7_KjU(), 0.0f, new Stroke(border.getWight(), 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
+        DrawScope.m5849drawPathLG529CI$default(drawScope, Path, border.m9799getColor0d7_KjU(), 0.0f, new Stroke(border.getWight(), 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
         DrawScope.m5848drawPathGBMwjPU$default(drawScope, Path, brush, 0.0f, Fill.INSTANCE, null, 0, 52, null);
     }
 

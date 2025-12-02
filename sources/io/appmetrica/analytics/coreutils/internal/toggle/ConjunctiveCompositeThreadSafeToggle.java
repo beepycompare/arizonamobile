@@ -73,19 +73,19 @@ public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
             try {
                 Result.Companion companion = Result.Companion;
                 z = conjunctiveCompositeThreadSafeToggle.d.tryLock(100L, TimeUnit.MILLISECONDS);
-                Result.m9902constructorimpl(Unit.INSTANCE);
+                Result.m9904constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                Result.m9902constructorimpl(ResultKt.createFailure(th));
+                Result.m9904constructorimpl(ResultKt.createFailure(th));
             }
             if (!z) {
                 try {
                     Result.Companion companion3 = Result.Companion;
                     Thread.sleep(100L);
-                    Result.m9902constructorimpl(Unit.INSTANCE);
+                    Result.m9904constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th2) {
                     Result.Companion companion4 = Result.Companion;
-                    Result.m9902constructorimpl(ResultKt.createFailure(th2));
+                    Result.m9904constructorimpl(ResultKt.createFailure(th2));
                 }
             }
         }

@@ -1111,7 +1111,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOrThrow */
-    public static final float m11208maxOrThrow(Sequence<Float> sequence) {
+    public static final float m11210maxOrThrow(Sequence<Float> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<Float> it = sequence.iterator();
         if (!it.hasNext()) {
@@ -1125,7 +1125,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOrThrow */
-    public static final <T extends Comparable<? super T>> T m11209maxOrThrow(Sequence<? extends T> sequence) {
+    public static final <T extends Comparable<? super T>> T m11211maxOrThrow(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<? extends T> it = sequence.iterator();
         if (!it.hasNext()) {
@@ -1214,7 +1214,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOf */
-    private static final <T> float m11202maxOf(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
+    private static final <T> float m11204maxOf(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1229,7 +1229,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOf */
-    private static final <T, R extends Comparable<? super R>> R m11203maxOf(Sequence<? extends T> sequence, Function1<? super T, ? extends R> selector) {
+    private static final <T, R extends Comparable<? super R>> R m11205maxOf(Sequence<? extends T> sequence, Function1<? super T, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1247,7 +1247,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOfOrNull */
-    private static final <T> Double m11204maxOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Double> selector) {
+    private static final <T> Double m11206maxOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Double> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1262,7 +1262,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOfOrNull */
-    private static final <T> Float m11205maxOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
+    private static final <T> Float m11207maxOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1332,7 +1332,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOrNull */
-    public static final Double m11206maxOrNull(Sequence<Double> sequence) {
+    public static final Double m11208maxOrNull(Sequence<Double> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<Double> it = sequence.iterator();
         if (it.hasNext()) {
@@ -1346,7 +1346,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: maxOrNull */
-    public static final Float m11207maxOrNull(Sequence<Float> sequence) {
+    public static final Float m11209maxOrNull(Sequence<Float> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<Float> it = sequence.iterator();
         if (it.hasNext()) {
@@ -1425,7 +1425,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOrThrow */
-    public static final float m11216minOrThrow(Sequence<Float> sequence) {
+    public static final float m11218minOrThrow(Sequence<Float> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<Float> it = sequence.iterator();
         if (!it.hasNext()) {
@@ -1439,7 +1439,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOrThrow */
-    public static final <T extends Comparable<? super T>> T m11217minOrThrow(Sequence<? extends T> sequence) {
+    public static final <T extends Comparable<? super T>> T m11219minOrThrow(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<? extends T> it = sequence.iterator();
         if (!it.hasNext()) {
@@ -1528,7 +1528,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOf */
-    private static final <T> float m11210minOf(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
+    private static final <T> float m11212minOf(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1543,7 +1543,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOf */
-    private static final <T, R extends Comparable<? super R>> R m11211minOf(Sequence<? extends T> sequence, Function1<? super T, ? extends R> selector) {
+    private static final <T, R extends Comparable<? super R>> R m11213minOf(Sequence<? extends T> sequence, Function1<? super T, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1561,7 +1561,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOfOrNull */
-    private static final <T> Double m11212minOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Double> selector) {
+    private static final <T> Double m11214minOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Double> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1576,7 +1576,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOfOrNull */
-    private static final <T> Float m11213minOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
+    private static final <T> Float m11215minOfOrNull(Sequence<? extends T> sequence, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         Iterator<? extends T> it = sequence.iterator();
@@ -1646,7 +1646,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOrNull */
-    public static final Double m11214minOrNull(Sequence<Double> sequence) {
+    public static final Double m11216minOrNull(Sequence<Double> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<Double> it = sequence.iterator();
         if (it.hasNext()) {
@@ -1660,7 +1660,7 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     /* renamed from: minOrNull */
-    public static final Float m11215minOrNull(Sequence<Float> sequence) {
+    public static final Float m11217minOrNull(Sequence<Float> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Iterator<Float> it = sequence.iterator();
         if (it.hasNext()) {
@@ -1948,23 +1948,23 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     private static final <T> int sumOfUInt(Sequence<? extends T> sequence, Function1<? super T, UInt> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10002constructorimpl = UInt.m10002constructorimpl(0);
+        int m10004constructorimpl = UInt.m10004constructorimpl(0);
         Iterator<? extends T> it = sequence.iterator();
         while (it.hasNext()) {
-            m10002constructorimpl = UInt.m10002constructorimpl(m10002constructorimpl + selector.invoke((T) it.next()).m10054unboximpl());
+            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke((T) it.next()).m10056unboximpl());
         }
-        return m10002constructorimpl;
+        return m10004constructorimpl;
     }
 
     private static final <T> long sumOfULong(Sequence<? extends T> sequence, Function1<? super T, ULong> selector) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10081constructorimpl = ULong.m10081constructorimpl(0L);
+        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
         Iterator<? extends T> it = sequence.iterator();
         while (it.hasNext()) {
-            m10081constructorimpl = ULong.m10081constructorimpl(m10081constructorimpl + selector.invoke((T) it.next()).m10133unboximpl());
+            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke((T) it.next()).m10135unboximpl());
         }
-        return m10081constructorimpl;
+        return m10083constructorimpl;
     }
 
     public static final <T> Sequence<T> requireNoNulls(final Sequence<? extends T> sequence) {

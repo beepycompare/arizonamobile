@@ -23,7 +23,7 @@ final class AdjustedTimeMark implements TimeMark {
     }
 
     /* renamed from: getAdjustment-UwyO8pc  reason: not valid java name */
-    public final long m11253getAdjustmentUwyO8pc() {
+    public final long m11255getAdjustmentUwyO8pc() {
         return this.adjustment;
     }
 
@@ -43,19 +43,19 @@ final class AdjustedTimeMark implements TimeMark {
 
     @Override // kotlin.time.TimeMark
     /* renamed from: minus-LRDsOJo */
-    public /* bridge */ TimeMark mo11250minusLRDsOJo(long j) {
-        return TimeMark.DefaultImpls.m11370minusLRDsOJo(this, j);
+    public /* bridge */ TimeMark mo11252minusLRDsOJo(long j) {
+        return TimeMark.DefaultImpls.m11372minusLRDsOJo(this, j);
     }
 
     @Override // kotlin.time.TimeMark
     /* renamed from: elapsedNow-UwyO8pc */
-    public long mo11249elapsedNowUwyO8pc() {
-        return Duration.m11287minusLRDsOJo(this.mark.mo11249elapsedNowUwyO8pc(), this.adjustment);
+    public long mo11251elapsedNowUwyO8pc() {
+        return Duration.m11289minusLRDsOJo(this.mark.mo11251elapsedNowUwyO8pc(), this.adjustment);
     }
 
     @Override // kotlin.time.TimeMark
     /* renamed from: plus-LRDsOJo */
-    public TimeMark mo11252plusLRDsOJo(long j) {
-        return new AdjustedTimeMark(this.mark, Duration.m11288plusLRDsOJo(this.adjustment, j), null);
+    public TimeMark mo11254plusLRDsOJo(long j) {
+        return new AdjustedTimeMark(this.mark, Duration.m11290plusLRDsOJo(this.adjustment, j), null);
     }
 }

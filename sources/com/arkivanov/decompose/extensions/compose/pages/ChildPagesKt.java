@@ -54,11 +54,11 @@ public final class ChildPagesKt {
     }
 
     public static final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> defaultHorizontalPager() {
-        return ComposableSingletons$ChildPagesKt.INSTANCE.m9375getLambda1$extensions_compose_release();
+        return ComposableSingletons$ChildPagesKt.INSTANCE.m9377getLambda1$extensions_compose_release();
     }
 
     public static final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> defaultVerticalPager() {
-        return ComposableSingletons$ChildPagesKt.INSTANCE.m9376getLambda2$extensions_compose_release();
+        return ComposableSingletons$ChildPagesKt.INSTANCE.m9378getLambda2$extensions_compose_release();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0124  */

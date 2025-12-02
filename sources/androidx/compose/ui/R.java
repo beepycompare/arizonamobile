@@ -70,14 +70,14 @@ public final class R {
         public static int not_selected = 0x7f1201df;
         public static int range_end = 0x7f120208;
         public static int range_start = 0x7f120209;
-        public static int selected = 0x7f12022a;
-        public static int snackbar_pane_title = 0x7f12023d;
-        public static int state_empty = 0x7f120242;
-        public static int state_off = 0x7f120243;
-        public static int state_on = 0x7f120244;
-        public static int switch_role = 0x7f12024b;
-        public static int tab = 0x7f12024c;
-        public static int template_percent = 0x7f120251;
+        public static int selected = 0x7f12022b;
+        public static int snackbar_pane_title = 0x7f12023e;
+        public static int state_empty = 0x7f120243;
+        public static int state_off = 0x7f120244;
+        public static int state_on = 0x7f120245;
+        public static int switch_role = 0x7f12024c;
+        public static int tab = 0x7f12024d;
+        public static int template_percent = 0x7f120252;
 
         private string() {
         }

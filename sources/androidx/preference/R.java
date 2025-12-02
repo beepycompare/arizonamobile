@@ -104,7 +104,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int ic_arrow_down_24dp = 0x7f0809c2;
-        public static int preference_list_divider_material = 0x7f080cbd;
+        public static int preference_list_divider_material = 0x7f080cbe;
 
         private drawable() {
         }
@@ -166,9 +166,9 @@ public final class R {
         public static int expand_button_title = 0x7f1200ca;
         public static int not_set = 0x7f1201e0;
         public static int preference_copied = 0x7f1201fe;
-        public static int summary_collapsed_preference_list = 0x7f12024a;
-        public static int v7_preference_off = 0x7f120273;
-        public static int v7_preference_on = 0x7f120274;
+        public static int summary_collapsed_preference_list = 0x7f12024b;
+        public static int v7_preference_off = 0x7f120274;
+        public static int v7_preference_on = 0x7f120275;
 
         private string() {
         }

@@ -61,7 +61,7 @@ public final class DispatchQueue {
         Intrinsics.checkNotNullParameter(runnable, "runnable");
         MainCoroutineDispatcher immediate = Dispatchers.getMain().getImmediate();
         if (immediate.isDispatchNeeded(context) || canRun()) {
-            immediate.mo11486dispatch(context, new Runnable() { // from class: androidx.lifecycle.DispatchQueue$$ExternalSyntheticLambda0
+            immediate.mo11488dispatch(context, new Runnable() { // from class: androidx.lifecycle.DispatchQueue$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     DispatchQueue.this.enqueue(runnable);

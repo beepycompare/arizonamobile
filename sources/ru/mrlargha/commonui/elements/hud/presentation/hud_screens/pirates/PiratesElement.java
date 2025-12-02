@@ -8,7 +8,6 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.HudElementPiratesBinding;
-import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: Pirates.kt */
 @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tJ\u0010\u0010\n\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J\u000e\u0010\u000b\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¨\u0006\f"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/pirates/PiratesElement;", "", "<init>", "()V", "showInfo", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementPiratesBinding;", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/pirates/SquidHpModel;", "setType", "hide", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
@@ -33,23 +32,13 @@ public final class PiratesElement {
     }
 
     private final void setType(HudElementPiratesBinding hudElementPiratesBinding) {
-        if (!UtilsKt.isArizonaType()) {
-            hudElementPiratesBinding.ivBg.setImageResource(R.drawable.hud_element_cyber_bg);
-            hudElementPiratesBinding.ivImage.setImageResource(R.drawable.hud_element_cyber_image);
-            hudElementPiratesBinding.tvTitle.setText("космический корабль");
-            hudElementPiratesBinding.progressBarBg.setBackground(Color.parseColor("#4DFFFFFF"));
-            CustomCardView progressBar = hudElementPiratesBinding.progressBar;
-            Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
-            CustomCardView.setBackground$default(progressBar, Color.parseColor("#008666"), Color.parseColor("#30FFE7"), null, null, 12, null);
-            return;
-        }
         hudElementPiratesBinding.ivBg.setImageResource(R.drawable.hud_element_franclin_stein_bg);
         hudElementPiratesBinding.ivImage.setImageResource(R.drawable.hud_element_franclin_stein);
         hudElementPiratesBinding.tvTitle.setText("Франкенштейн");
         hudElementPiratesBinding.progressBarBg.setBackground(Color.parseColor("#4DB21E2D"));
-        CustomCardView progressBar2 = hudElementPiratesBinding.progressBar;
-        Intrinsics.checkNotNullExpressionValue(progressBar2, "progressBar");
-        CustomCardView.setBackground$default(progressBar2, Color.parseColor("#B21E2D"), Color.parseColor("#E84C59"), null, null, 12, null);
+        CustomCardView progressBar = hudElementPiratesBinding.progressBar;
+        Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
+        CustomCardView.setBackground$default(progressBar, Color.parseColor("#B21E2D"), Color.parseColor("#E84C59"), null, null, 12, null);
     }
 
     public final void hide(HudElementPiratesBinding binding) {

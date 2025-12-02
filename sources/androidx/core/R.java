@@ -77,19 +77,19 @@ public final class R {
         public static int ic_call_answer_video_low = 0x7f0809fb;
         public static int ic_call_decline = 0x7f0809fc;
         public static int ic_call_decline_low = 0x7f0809fd;
-        public static int notification_action_background = 0x7f080bc6;
-        public static int notification_bg = 0x7f080bc7;
-        public static int notification_bg_low = 0x7f080bc8;
-        public static int notification_bg_low_normal = 0x7f080bc9;
-        public static int notification_bg_low_pressed = 0x7f080bca;
-        public static int notification_bg_normal = 0x7f080bcb;
-        public static int notification_bg_normal_pressed = 0x7f080bcc;
-        public static int notification_icon_background = 0x7f080bcd;
-        public static int notification_oversize_large_icon_bg = 0x7f080bce;
-        public static int notification_template_icon_bg = 0x7f080bcf;
-        public static int notification_template_icon_low_bg = 0x7f080bd0;
-        public static int notification_tile_bg = 0x7f080bd2;
-        public static int notify_panel_notification_icon_bg = 0x7f080bd4;
+        public static int notification_action_background = 0x7f080bc7;
+        public static int notification_bg = 0x7f080bc8;
+        public static int notification_bg_low = 0x7f080bc9;
+        public static int notification_bg_low_normal = 0x7f080bca;
+        public static int notification_bg_low_pressed = 0x7f080bcb;
+        public static int notification_bg_normal = 0x7f080bcc;
+        public static int notification_bg_normal_pressed = 0x7f080bcd;
+        public static int notification_icon_background = 0x7f080bce;
+        public static int notification_oversize_large_icon_bg = 0x7f080bcf;
+        public static int notification_template_icon_bg = 0x7f080bd0;
+        public static int notification_template_icon_low_bg = 0x7f080bd1;
+        public static int notification_tile_bg = 0x7f080bd3;
+        public static int notify_panel_notification_icon_bg = 0x7f080bd5;
 
         private drawable() {
         }
@@ -211,7 +211,7 @@ public final class R {
         public static int call_notification_incoming_text = 0x7f12003d;
         public static int call_notification_ongoing_text = 0x7f12003e;
         public static int call_notification_screening_text = 0x7f12003f;
-        public static int status_bar_notification_info_overflow = 0x7f120245;
+        public static int status_bar_notification_info_overflow = 0x7f120246;
 
         private string() {
         }
