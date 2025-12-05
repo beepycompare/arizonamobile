@@ -2,6 +2,7 @@ package androidx.compose.foundation.gestures;
 
 import androidx.compose.foundation.gestures.MouseWheelScrollingLogic;
 import androidx.compose.ui.unit.Density;
+import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,7 +17,7 @@ import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MouseWheelScrollable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1", f = "MouseWheelScrollable.kt", i = {0, 1}, l = {107, 110}, m = "invokeSuspend", n = {"$this$launch", "$this$launch"}, s = {"L$0", "L$0"})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1", f = "MouseWheelScrollable.kt", i = {0, 1}, l = {TsExtractor.TS_STREAM_TYPE_E_AC3, TsExtractor.TS_STREAM_TYPE_DTS}, m = "invokeSuspend", n = {"$this$launch", "$this$launch"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -75,15 +76,15 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
                 ResultKt.throwOnFailure(obj);
                 density = this.this$0.density;
                 f = MouseWheelScrollableKt.AnimationThreshold;
-                float mo430toPx0680j_4 = density.mo430toPx0680j_4(f);
+                float mo464toPx0680j_4 = density.mo464toPx0680j_4(f);
                 density2 = this.this$0.density;
                 f2 = MouseWheelScrollableKt.AnimationSpeed;
-                float mo430toPx0680j_42 = density2.mo430toPx0680j_4(f2);
+                float mo464toPx0680j_42 = density2.mo464toPx0680j_4(f2);
                 MouseWheelScrollingLogic mouseWheelScrollingLogic = this.this$0;
                 scrollingLogic = mouseWheelScrollingLogic.scrollingLogic;
                 this.L$0 = coroutineScope2;
                 this.label = 2;
-                dispatchMouseWheelScroll = mouseWheelScrollingLogic.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo430toPx0680j_4, mo430toPx0680j_42, this);
+                dispatchMouseWheelScroll = mouseWheelScrollingLogic.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo464toPx0680j_4, mo464toPx0680j_42, this);
             } else if (i != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
@@ -102,15 +103,15 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
                     obj = receive;
                     density = this.this$0.density;
                     f = MouseWheelScrollableKt.AnimationThreshold;
-                    float mo430toPx0680j_43 = density.mo430toPx0680j_4(f);
+                    float mo464toPx0680j_43 = density.mo464toPx0680j_4(f);
                     density2 = this.this$0.density;
                     f2 = MouseWheelScrollableKt.AnimationSpeed;
-                    float mo430toPx0680j_422 = density2.mo430toPx0680j_4(f2);
+                    float mo464toPx0680j_422 = density2.mo464toPx0680j_4(f2);
                     MouseWheelScrollingLogic mouseWheelScrollingLogic2 = this.this$0;
                     scrollingLogic = mouseWheelScrollingLogic2.scrollingLogic;
                     this.L$0 = coroutineScope2;
                     this.label = 2;
-                    dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo430toPx0680j_43, mo430toPx0680j_422, this);
+                    dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo464toPx0680j_43, mo464toPx0680j_422, this);
                 } else {
                     this.this$0.receivingMouseWheelEventsJob = null;
                     return Unit.INSTANCE;

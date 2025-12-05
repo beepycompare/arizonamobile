@@ -9,7 +9,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.widget.EditText;
-import androidx.core.view.ViewCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.Flow;
@@ -32,7 +31,7 @@ public final class UtilsKt {
         Canvas canvas = new Canvas(createBitmap);
         canvas.drawBitmap(original, 0.0f, 0.0f, (Paint) null);
         float f = width;
-        LinearGradient linearGradient = new LinearGradient(f, 0.0f, 0.0f, 0.0f, 0, (int) ViewCompat.MEASURED_STATE_MASK, Shader.TileMode.CLAMP);
+        LinearGradient linearGradient = new LinearGradient(f, 0.0f, 0.0f, 0.0f, 0, -16777216, Shader.TileMode.CLAMP);
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setColor(Color.parseColor("#99202325"));

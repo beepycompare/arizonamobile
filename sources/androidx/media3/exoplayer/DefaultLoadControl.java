@@ -13,7 +13,7 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.DefaultAllocator;
 import java.util.HashMap;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class DefaultLoadControl implements LoadControl {
     public static final int DEFAULT_AUDIO_BUFFER_SIZE = 13107200;
     public static final int DEFAULT_BACK_BUFFER_DURATION_MS = 0;
@@ -43,7 +43,7 @@ public class DefaultLoadControl implements LoadControl {
     private final int targetBufferBytesOverwrite;
     private long threadId;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Builder {
         private DefaultAllocator allocator;
         private boolean buildCalled;
@@ -304,7 +304,7 @@ public class DefaultLoadControl implements LoadControl {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static class PlayerLoadingState {
         public boolean isLoading;
         public int targetBufferBytes;

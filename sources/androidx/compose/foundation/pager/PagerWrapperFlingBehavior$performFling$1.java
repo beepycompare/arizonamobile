@@ -1,5 +1,6 @@
 package androidx.compose.foundation.pager;
 
+import androidx.media3.exoplayer.RendererCapabilities;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayoutPager.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.pager.PagerWrapperFlingBehavior", f = "LazyLayoutPager.kt", i = {}, l = {385}, m = "performFling", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.pager.PagerWrapperFlingBehavior", f = "LazyLayoutPager.kt", i = {}, l = {RendererCapabilities.DECODER_SUPPORT_MASK}, m = "performFling", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class PagerWrapperFlingBehavior$performFling$1 extends ContinuationImpl {
     int label;

@@ -23,7 +23,7 @@ public final class Pg extends Sg {
         try {
             JSONObject jSONObject = new JSONObject(value);
             if (TtmlNode.TEXT_EMPHASIS_MARK_OPEN.equals(jSONObject.optString("type"))) {
-                yo yoVar = this.f679a.t;
+                yo yoVar = this.f762a.t;
                 synchronized (yoVar) {
                     yoVar.c(yoVar.b() + 1);
                 }
@@ -41,12 +41,12 @@ public final class Pg extends Sg {
     }
 
     public final void b() {
-        yo yoVar = this.f679a.t;
+        yo yoVar = this.f762a.t;
         synchronized (yoVar) {
             yoVar.a(yoVar.a() + 1);
         }
-        this.f679a.z();
-        N8 n8 = this.f679a.l;
+        this.f762a.z();
+        N8 n8 = this.f762a.l;
         if (n8.c == null) {
             n8.a();
         }
@@ -55,11 +55,11 @@ public final class Pg extends Sg {
         p8.b = new HashSet();
         p8.d = 0;
         P8 p82 = n8.c;
-        p82.f632a = true;
+        p82.f715a = true;
         S8 s8 = n8.b;
         IBinaryDataHelper iBinaryDataHelper = s8.c;
         R8 r8 = s8.b;
-        s8.f675a.getClass();
+        s8.f758a.getClass();
         iBinaryDataHelper.insert("event_hashes", r8.toByteArray((R8) Q8.a(p82)));
     }
 
@@ -68,11 +68,11 @@ public final class Pg extends Sg {
             try {
                 String queryParameter = Uri.parse(str).getQueryParameter(Constants.REFERRER);
                 if (!TextUtils.isEmpty(queryParameter)) {
-                    C0438n2 c0438n2 = this.f679a.t().y;
+                    C0437n2 c0437n2 = this.f762a.t().y;
                     for (String str2 : Uri.decode(queryParameter).split("&")) {
                         String decode = Uri.decode(str2);
                         int indexOf = decode.indexOf("=");
-                        if (indexOf >= 0 && a(Uri.decode(decode.substring(0, indexOf)), Uri.decode(decode.substring(indexOf + 1)), c0438n2)) {
+                        if (indexOf >= 0 && a(Uri.decode(decode.substring(0, indexOf)), Uri.decode(decode.substring(indexOf + 1)), c0437n2)) {
                             return true;
                         }
                     }
@@ -83,14 +83,14 @@ public final class Pg extends Sg {
         return false;
     }
 
-    public static boolean a(String str, String str2, C0438n2 c0438n2) {
+    public static boolean a(String str, String str2, C0437n2 c0437n2) {
         Object obj;
         if ("reattribution".equals(str) && "1".equals(str2)) {
             return true;
         }
-        if (c0438n2 != null) {
-            for (Pair pair : c0438n2.f1020a) {
-                if (mo.a(pair.first, str) && ((obj = pair.second) == null || ((C0413m2) obj).f1001a.equals(str2))) {
+        if (c0437n2 != null) {
+            for (Pair pair : c0437n2.f1103a) {
+                if (mo.a(pair.first, str) && ((obj = pair.second) == null || ((C0412m2) obj).f1084a.equals(str2))) {
                     return true;
                 }
             }

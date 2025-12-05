@@ -16,7 +16,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineStart;
 /* compiled from: BasicTextField.kt */
-@Metadata(d1 = {"\u0000\u001f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u001e\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\bJ\b\u0010\t\u001a\u00020\u0003H\u0016¨\u0006\n"}, d2 = {"androidx/compose/foundation/text/BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1", "Landroidx/compose/foundation/text/input/internal/selection/TextToolbarHandler;", "showTextToolbar", "", "selectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "rect", "Landroidx/compose/ui/geometry/Rect;", "(Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/geometry/Rect;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "hideTextToolbar", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u001e\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\bJ\b\u0010\t\u001a\u00020\u0003H\u0016¨\u0006\n"}, d2 = {"androidx/compose/foundation/text/BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1", "Landroidx/compose/foundation/text/input/internal/selection/TextToolbarHandler;", "showTextToolbar", "", "selectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "rect", "Landroidx/compose/ui/geometry/Rect;", "(Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/geometry/Rect;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "hideTextToolbar", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implements TextToolbarHandler {
     final /* synthetic */ CoroutineScope $coroutineScope;
@@ -81,9 +81,9 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
                     rect2 = (Rect) basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.L$0;
                     textToolbar = textToolbar3;
                 }
-                boolean canCopy = textFieldSelectionState.canCopy();
+                boolean canShowCopyMenuItem = textFieldSelectionState.canShowCopyMenuItem();
                 final TextToolbarState textToolbarState = TextToolbarState.None;
-                Function0<Unit> function0 = canCopy ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$5$$inlined$menuItem$1
+                Function0<Unit> function0 = canShowCopyMenuItem ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$0$$inlined$menuItem$1
                     @Override // kotlin.jvm.functions.Function0
                     public /* bridge */ /* synthetic */ Unit invoke() {
                         invoke2();
@@ -96,9 +96,9 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
                         TextFieldSelectionState.this.updateTextToolbarState(textToolbarState);
                     }
                 };
-                boolean canPaste = textFieldSelectionState.canPaste();
+                boolean canShowPasteMenuItem = textFieldSelectionState.canShowPasteMenuItem();
                 final TextToolbarState textToolbarState2 = TextToolbarState.None;
-                Function0<Unit> function02 = canPaste ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$5$$inlined$menuItem$2
+                Function0<Unit> function02 = canShowPasteMenuItem ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$0$$inlined$menuItem$2
                     @Override // kotlin.jvm.functions.Function0
                     public /* bridge */ /* synthetic */ Unit invoke() {
                         invoke2();
@@ -111,9 +111,9 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
                         TextFieldSelectionState.this.updateTextToolbarState(textToolbarState2);
                     }
                 };
-                boolean canCut = textFieldSelectionState.canCut();
+                boolean canShowCutMenuItem = textFieldSelectionState.canShowCutMenuItem();
                 final TextToolbarState textToolbarState3 = TextToolbarState.None;
-                Function0<Unit> function03 = canCut ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$5$$inlined$menuItem$3
+                Function0<Unit> function03 = canShowCutMenuItem ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$0$$inlined$menuItem$3
                     @Override // kotlin.jvm.functions.Function0
                     public /* bridge */ /* synthetic */ Unit invoke() {
                         invoke2();
@@ -126,9 +126,9 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
                         TextFieldSelectionState.this.updateTextToolbarState(textToolbarState3);
                     }
                 };
-                boolean canSelectAll = textFieldSelectionState.canSelectAll();
+                boolean canShowSelectAllMenuItem = textFieldSelectionState.canShowSelectAllMenuItem();
                 final TextToolbarState textToolbarState4 = TextToolbarState.Selection;
-                Function0<Unit> function04 = canSelectAll ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$5$$inlined$menuItem$4
+                Function0<Unit> function04 = canShowSelectAllMenuItem ? null : new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$0$$inlined$menuItem$4
                     @Override // kotlin.jvm.functions.Function0
                     public /* bridge */ /* synthetic */ Unit invoke() {
                         invoke2();
@@ -141,9 +141,9 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
                         TextFieldSelectionState.this.updateTextToolbarState(textToolbarState4);
                     }
                 };
-                boolean canAutofill = textFieldSelectionState.canAutofill();
+                boolean canShowAutofillMenuItem = textFieldSelectionState.canShowAutofillMenuItem();
                 final TextToolbarState textToolbarState5 = TextToolbarState.None;
-                textToolbar.showMenu(rect2, function0, function02, function03, function04, canAutofill ? new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$5$$inlined$menuItem$5
+                textToolbar.showMenu(rect2, function0, function02, function03, function04, canShowAutofillMenuItem ? new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$0$$inlined$menuItem$5
                     @Override // kotlin.jvm.functions.Function0
                     public /* bridge */ /* synthetic */ Unit invoke() {
                         invoke2();
@@ -165,25 +165,25 @@ public final class BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1 implem
         i = basicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$1.label;
         if (i != 0) {
         }
-        boolean canCopy2 = textFieldSelectionState.canCopy();
+        boolean canShowCopyMenuItem2 = textFieldSelectionState.canShowCopyMenuItem();
         final TextToolbarState textToolbarState6 = TextToolbarState.None;
-        if (canCopy2) {
+        if (canShowCopyMenuItem2) {
         }
-        boolean canPaste2 = textFieldSelectionState.canPaste();
+        boolean canShowPasteMenuItem2 = textFieldSelectionState.canShowPasteMenuItem();
         final TextToolbarState textToolbarState22 = TextToolbarState.None;
-        if (canPaste2) {
+        if (canShowPasteMenuItem2) {
         }
-        boolean canCut2 = textFieldSelectionState.canCut();
+        boolean canShowCutMenuItem2 = textFieldSelectionState.canShowCutMenuItem();
         final TextToolbarState textToolbarState32 = TextToolbarState.None;
-        if (canCut2) {
+        if (canShowCutMenuItem2) {
         }
-        boolean canSelectAll2 = textFieldSelectionState.canSelectAll();
+        boolean canShowSelectAllMenuItem2 = textFieldSelectionState.canShowSelectAllMenuItem();
         final TextToolbarState textToolbarState42 = TextToolbarState.Selection;
-        if (canSelectAll2) {
+        if (canShowSelectAllMenuItem2) {
         }
-        boolean canAutofill2 = textFieldSelectionState.canAutofill();
+        boolean canShowAutofillMenuItem2 = textFieldSelectionState.canShowAutofillMenuItem();
         final TextToolbarState textToolbarState52 = TextToolbarState.None;
-        textToolbar.showMenu(rect2, function0, function02, function03, function04, canAutofill2 ? new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$5$$inlined$menuItem$5
+        textToolbar.showMenu(rect2, function0, function02, function03, function04, canShowAutofillMenuItem2 ? new Function0<Unit>() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$BasicTextField$textToolbarHandler$1$1$showTextToolbar$lambda$0$$inlined$menuItem$5
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();

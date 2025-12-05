@@ -23,6 +23,14 @@ public final class EnterExitState {
         return $ENTRIES;
     }
 
+    public static EnterExitState valueOf(String str) {
+        return (EnterExitState) Enum.valueOf(EnterExitState.class, str);
+    }
+
+    public static EnterExitState[] values() {
+        return (EnterExitState[]) $VALUES.clone();
+    }
+
     private EnterExitState(String str, int i) {
     }
 
@@ -30,13 +38,5 @@ public final class EnterExitState {
         EnterExitState[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static EnterExitState valueOf(String str) {
-        return (EnterExitState) Enum.valueOf(EnterExitState.class, str);
-    }
-
-    public static EnterExitState[] values() {
-        return (EnterExitState[]) $VALUES.clone();
     }
 }

@@ -123,14 +123,14 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.video.spherical.SphericalGLSurfaceView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SphericalGLSurfaceView.this.m8779x99583d2c();
+                SphericalGLSurfaceView.this.m9043x99583d2c();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onDetachedFromWindow$0$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView  reason: not valid java name */
-    public /* synthetic */ void m8779x99583d2c() {
+    public /* synthetic */ void m9043x99583d2c() {
         Surface surface = this.surface;
         if (surface != null) {
             Iterator<VideoSurfaceListener> it = this.videoSurfaceListeners.iterator();
@@ -162,14 +162,14 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.video.spherical.SphericalGLSurfaceView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SphericalGLSurfaceView.this.m8780x24c550f4(surfaceTexture);
+                SphericalGLSurfaceView.this.m9044x24c550f4(surfaceTexture);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSurfaceTextureAvailable$1$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView  reason: not valid java name */
-    public /* synthetic */ void m8780x24c550f4(SurfaceTexture surfaceTexture) {
+    public /* synthetic */ void m9044x24c550f4(SurfaceTexture surfaceTexture) {
         SurfaceTexture surfaceTexture2 = this.surfaceTexture;
         Surface surface = this.surface;
         Surface surface2 = new Surface(surfaceTexture);

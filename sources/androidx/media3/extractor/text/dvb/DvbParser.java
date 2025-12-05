@@ -6,7 +6,6 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.util.SparseArray;
-import androidx.core.view.ViewCompat;
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.util.Consumer;
@@ -423,7 +422,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     private static int[] generateDefault2BitClutEntries() {
-        return new int[]{0, -1, ViewCompat.MEASURED_STATE_MASK, -8421505};
+        return new int[]{0, -1, -16777216, -8421505};
     }
 
     private static int[] generateDefault4BitClutEntries() {

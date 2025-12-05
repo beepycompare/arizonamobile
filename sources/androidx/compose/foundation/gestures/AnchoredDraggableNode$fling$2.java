@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Ref;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: AnchoredDraggable.kt */
 @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0005H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/foundation/gestures/AnchoredDragScope;", "it", "Landroidx/compose/foundation/gestures/DraggableAnchors;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$fling$2", f = "AnchoredDraggable.kt", i = {}, l = {470}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$fling$2", f = "AnchoredDraggable.kt", i = {}, l = {471}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class AnchoredDraggableNode$fling$2<T> extends SuspendLambda implements Function3<AnchoredDragScope, DraggableAnchors<T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Ref.FloatRef $leftoverVelocity;
@@ -57,10 +57,10 @@ final class AnchoredDraggableNode$fling$2<T> extends SuspendLambda implements Fu
                     AnchoredDraggableState anchoredDraggableState;
                     AnchoredDraggableState anchoredDraggableState2;
                     anchoredDraggableState = ((AnchoredDraggableNode) anchoredDraggableNode).state;
-                    float newOffsetForDelta$foundation_release = anchoredDraggableState.newOffsetForDelta$foundation_release(f);
+                    float newOffsetForDelta$foundation = anchoredDraggableState.newOffsetForDelta$foundation(f);
                     anchoredDraggableState2 = ((AnchoredDraggableNode) anchoredDraggableNode).state;
-                    float offset = newOffsetForDelta$foundation_release - anchoredDraggableState2.getOffset();
-                    AnchoredDragScope.dragTo$default(anchoredDragScope, newOffsetForDelta$foundation_release, 0.0f, 2, null);
+                    float offset = newOffsetForDelta$foundation - anchoredDraggableState2.getOffset();
+                    AnchoredDragScope.dragTo$default(anchoredDragScope, newOffsetForDelta$foundation, 0.0f, 2, null);
                     return offset;
                 }
             };

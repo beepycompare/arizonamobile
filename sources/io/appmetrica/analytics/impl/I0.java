@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public final class I0 {
     public static String a(H0 h0) {
         try {
-            return Base64.encodeToString(new JSONObject().put("apiKey", h0.f499a).put(RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, h0.b).put("reporterType", h0.c.getStringValue()).put("processID", h0.d).put("processSessionID", h0.e).put("errorEnvironment", h0.f).toString().getBytes(Charsets.UTF_8), 0);
+            return Base64.encodeToString(new JSONObject().put("apiKey", h0.f582a).put(RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, h0.b).put("reporterType", h0.c.getStringValue()).put("processID", h0.d).put("processSessionID", h0.e).put("errorEnvironment", h0.f).toString().getBytes(Charsets.UTF_8), 0);
         } catch (Throwable unused) {
             return "";
         }

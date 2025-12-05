@@ -6,17 +6,17 @@ import java.util.ArrayList;
 public class FirstSessionDelayManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ActivityHandler f133a;
+    public final ActivityHandler f216a;
     public final ArrayList b = new ArrayList();
     public int c = 0;
 
     public FirstSessionDelayManager(ActivityHandler activityHandler) {
-        this.f133a = activityHandler;
+        this.f216a = activityHandler;
     }
 
     public final void a(Runnable runnable, String str) {
         if (this.c == 3) {
-            this.f133a.getAdjustConfig().getLogger().debug("Enqueuing \"" + str + "\" action to be executed after first session delay ends", new Object[0]);
+            this.f216a.getAdjustConfig().getLogger().debug("Enqueuing \"" + str + "\" action to be executed after first session delay ends", new Object[0]);
             this.b.add(runnable);
             return;
         }
@@ -25,10 +25,10 @@ public class FirstSessionDelayManager {
 
     public final void a(String str, IRunActivityHandler iRunActivityHandler) {
         if (this.c == 3) {
-            this.f133a.getAdjustConfig().getLogger().debug("Enqueuing \"" + str + "\" action to be executed after first session delay ends", new Object[0]);
-            this.f133a.getAdjustConfig().preLaunchActions.preLaunchActionsArray.add(iRunActivityHandler);
+            this.f216a.getAdjustConfig().getLogger().debug("Enqueuing \"" + str + "\" action to be executed after first session delay ends", new Object[0]);
+            this.f216a.getAdjustConfig().preLaunchActions.preLaunchActionsArray.add(iRunActivityHandler);
             return;
         }
-        iRunActivityHandler.run(this.f133a);
+        iRunActivityHandler.run(this.f216a);
     }
 }

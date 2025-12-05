@@ -37,7 +37,7 @@ final class DateRangePickerKt$DateRangePicker$5 implements Function2<Composer, I
             ComposerKt.traceEventStart(1343236786, i, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:139)");
         }
         Modifier padding = PaddingKt.padding(Modifier.Companion, DatePickerKt.getDatePickerModeTogglePadding());
-        int mo2273getDisplayModejFl4v0 = this.$state.mo2273getDisplayModejFl4v0();
+        int mo2359getDisplayModejFl4v0 = this.$state.mo2359getDisplayModejFl4v0();
         ComposerKt.sourceInformationMarkerStart(composer, -1934597276, "CC(remember):DateRangePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$state);
         final DateRangePickerState dateRangePickerState = this.$state;
@@ -54,7 +54,7 @@ final class DateRangePickerKt$DateRangePicker$5 implements Function2<Composer, I
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DatePickerKt.m2234DisplayModeToggleButtoniUJLfQg(padding, mo2273getDisplayModejFl4v0, (Function1) rememberedValue, this.$colors, composer, 6);
+        DatePickerKt.m2320DisplayModeToggleButtoniUJLfQg(padding, mo2359getDisplayModejFl4v0, (Function1) rememberedValue, this.$colors, composer, 6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -62,7 +62,7 @@ final class DateRangePickerKt$DateRangePicker$5 implements Function2<Composer, I
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invoke$lambda$1$lambda$0(DateRangePickerState dateRangePickerState, DisplayMode displayMode) {
-        dateRangePickerState.mo2274setDisplayModevCnGnXg(displayMode.m2307unboximpl());
+        dateRangePickerState.mo2360setDisplayModevCnGnXg(displayMode.m2393unboximpl());
         return Unit.INSTANCE;
     }
 }

@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import androidx.window.core.layout.WindowSizeClass;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,7 +72,7 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
     int vidViewWidth = 1024;
     int vidViewHeight = 600;
     int mVideoWidth = 640;
-    int mVideoHeight = 480;
+    int mVideoHeight = WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND;
     boolean InVideview = false;
     ViewGroup.LayoutParams myLayout = new ViewGroup.LayoutParams(-2, -2);
     protected boolean wantsAccelerometer = false;

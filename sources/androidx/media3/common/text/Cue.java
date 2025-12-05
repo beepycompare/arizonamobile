@@ -8,7 +8,6 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.SpannedString;
 import android.text.TextUtils;
-import androidx.core.view.ViewCompat;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import java.io.ByteArrayOutputStream;
@@ -195,7 +194,7 @@ public final class Cue {
             this.size = -3.4028235E38f;
             this.bitmapHeight = -3.4028235E38f;
             this.windowColorSet = false;
-            this.windowColor = ViewCompat.MEASURED_STATE_MASK;
+            this.windowColor = -16777216;
             this.verticalType = Integer.MIN_VALUE;
         }
 

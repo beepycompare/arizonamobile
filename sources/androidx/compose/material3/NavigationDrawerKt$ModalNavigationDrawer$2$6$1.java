@@ -37,13 +37,13 @@ public final class NavigationDrawerKt$ModalNavigationDrawer$2$6$1 implements Mea
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         Integer valueOf;
-        long m7939copyZbe2FdA$default = Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        long m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            arrayList.add(list.get(i).mo6698measureBRTryo0(m7939copyZbe2FdA$default));
+            arrayList.add(list.get(i).mo6875measureBRTryo0(m8201copyZbe2FdA$default));
         }
         final ArrayList arrayList2 = arrayList;
         Integer num = null;

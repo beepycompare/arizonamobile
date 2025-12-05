@@ -26,14 +26,14 @@ public final class WindowInsetsKt {
     }
 
     /* renamed from: only-bOOhFvg  reason: not valid java name */
-    public static final WindowInsets m923onlybOOhFvg(WindowInsets windowInsets, int i) {
+    public static final WindowInsets m1004onlybOOhFvg(WindowInsets windowInsets, int i) {
         return new LimitInsets(windowInsets, i, null);
     }
 
     public static final PaddingValues asPaddingValues(WindowInsets windowInsets, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1485016250, "C(asPaddingValues)220@9077L7:WindowInsets.kt#2w3rfo");
+        ComposerKt.sourceInformationMarkerStart(composer, -1485016250, "C(asPaddingValues)221@9118L7:WindowInsets.kt#2w3rfo");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1485016250, i, -1, "androidx.compose.foundation.layout.asPaddingValues (WindowInsets.kt:220)");
+            ComposerKt.traceEventStart(-1485016250, i, -1, "androidx.compose.foundation.layout.asPaddingValues (WindowInsets.kt:221)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
@@ -79,24 +79,24 @@ public final class WindowInsetsKt {
     }
 
     /* renamed from: WindowInsets-a9UjIt4  reason: not valid java name */
-    public static final WindowInsets m921WindowInsetsa9UjIt4(float f, float f2, float f3, float f4) {
+    public static final WindowInsets m1002WindowInsetsa9UjIt4(float f, float f2, float f3, float f4) {
         return new FixedDpInsets(f, f2, f3, f4, null);
     }
 
     /* renamed from: WindowInsets-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ WindowInsets m922WindowInsetsa9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ WindowInsets m1003WindowInsetsa9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7996constructorimpl(0);
+            f = Dp.m8258constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7996constructorimpl(0);
+            f2 = Dp.m8258constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7996constructorimpl(0);
+            f3 = Dp.m8258constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7996constructorimpl(0);
+            f4 = Dp.m8258constructorimpl(0);
         }
-        return m921WindowInsetsa9UjIt4(f, f2, f3, f4);
+        return m1002WindowInsetsa9UjIt4(f, f2, f3, f4);
     }
 }

@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function0;
 public final class ActualJvm_jvmKt {
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "not expected to be referenced directly as the old version had to be inlined")
     /* renamed from: synchronized  reason: not valid java name */
-    public static final /* synthetic */ <R> R m4503synchronized(Object obj, Function0<? extends R> function0) {
-        return (R) ActualJvm_jvmKt__OldSynchronization_jvmKt.m4504synchronized(obj, function0);
+    public static final /* synthetic */ <R> R m4589synchronized(Object obj, Function0<? extends R> function0) {
+        return (R) ActualJvm_jvmKt__OldSynchronization_jvmKt.m4590synchronized(obj, function0);
     }
 }

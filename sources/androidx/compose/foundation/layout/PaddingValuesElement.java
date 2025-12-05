@@ -14,18 +14,18 @@ public final class PaddingValuesElement extends ModifierNodeElement<PaddingValue
     private final Function1<InspectorInfo, Unit> inspectorInfo;
     private final PaddingValues paddingValues;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public PaddingValuesElement(PaddingValues paddingValues, Function1<? super InspectorInfo, Unit> function1) {
+        this.paddingValues = paddingValues;
+        this.inspectorInfo = function1;
+    }
+
     public final PaddingValues getPaddingValues() {
         return this.paddingValues;
     }
 
     public final Function1<InspectorInfo, Unit> getInspectorInfo() {
         return this.inspectorInfo;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public PaddingValuesElement(PaddingValues paddingValues, Function1<? super InspectorInfo, Unit> function1) {
-        this.paddingValues = paddingValues;
-        this.inspectorInfo = function1;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

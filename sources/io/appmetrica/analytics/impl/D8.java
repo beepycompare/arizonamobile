@@ -5,14 +5,14 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class D8 implements uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I8 f442a;
+    public final I8 f525a;
 
     public D8() {
         this(new I8());
     }
 
     @Override // io.appmetrica.analytics.impl.uo
-    public final byte[] a(O8 o8, C0403lh c0403lh) {
+    public final byte[] a(O8 o8, C0402lh c0402lh) {
         byte[] bArr;
         String str = o8.b;
         if (str != null) {
@@ -20,11 +20,11 @@ public final class D8 implements uo {
         } else {
             bArr = new byte[0];
         }
-        I8 i8 = this.f442a;
-        return ((H8) i8.f522a.a(o8.o)).a(bArr);
+        I8 i8 = this.f525a;
+        return ((H8) i8.f605a.a(o8.o)).a(bArr);
     }
 
     public D8(I8 i8) {
-        this.f442a = i8;
+        this.f525a = i8;
     }
 }

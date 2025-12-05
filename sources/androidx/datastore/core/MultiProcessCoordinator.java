@@ -1,6 +1,5 @@
 package androidx.datastore.core;
 
-import androidx.datastore.core.SharedCounter;
 import androidx.exifinterface.media.ExifInterface;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,7 +27,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 /* compiled from: MultiProcessCoordinator.android.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\b\u0000\u0018\u0000 42\u00020\u0001:\u00014B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006J\u0010\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\bH\u0002J\u000e\u0010\"\u001a\u00020#H\u0096@¢\u0006\u0002\u0010$J\u000e\u0010%\u001a\u00020#H\u0096@¢\u0006\u0002\u0010$J2\u0010&\u001a\u0002H'\"\u0004\b\u0000\u0010'2\u001c\u0010(\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H'0*\u0012\u0006\u0012\u0004\u0018\u00010+0)H\u0096@¢\u0006\u0002\u0010,J8\u0010-\u001a\u0002H'\"\u0004\b\u0000\u0010'2\"\u0010(\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020/\u0012\n\u0012\b\u0012\u0004\u0012\u0002H'0*\u0012\u0006\u0012\u0004\u0018\u00010+0.H\u0096@¢\u0006\u0002\u00100J:\u00101\u001a\u0002H'\"\u0004\b\u0000\u0010'2$\b\u0004\u0010(\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u0011\u0012\n\u0012\b\u0012\u0004\u0012\u0002H'0*\u0012\u0006\u0012\u0004\u0018\u00010+0.H\u0082H¢\u0006\u0002\u00100J\f\u00102\u001a\u00020\u001d*\u00020\u0005H\u0002J\f\u00103\u001a\u00020\u001d*\u00020\u0005H\u0002R\u000e\u0010\u0007\u001a\u00020\bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\u00020\u0005X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0012\u001a\u00020\u00058BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0014\u0010\u0015\u001a\u0004\b\u0013\u0010\fR\u001b\u0010\u0016\u001a\u00020\u00118BX\u0082\u0084\u0002¢\u0006\f\u001a\u0004\b\u0019\u0010\u001a*\u0004\b\u0017\u0010\u0018R\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u00065"}, d2 = {"Landroidx/datastore/core/MultiProcessCoordinator;", "Landroidx/datastore/core/InterProcessCoordinator;", "context", "Lkotlin/coroutines/CoroutineContext;", "file", "Ljava/io/File;", "(Lkotlin/coroutines/CoroutineContext;Ljava/io/File;)V", "LOCK_ERROR_MESSAGE", "", "LOCK_SUFFIX", "VERSION_SUFFIX", "getFile", "()Ljava/io/File;", "inMemoryMutex", "Lkotlinx/coroutines/sync/Mutex;", "lazySharedCounter", "Lkotlin/Lazy;", "Landroidx/datastore/core/SharedCounter;", "lockFile", "getLockFile", "lockFile$delegate", "Lkotlin/Lazy;", "sharedCounter", "getSharedCounter$delegate", "(Landroidx/datastore/core/MultiProcessCoordinator;)Ljava/lang/Object;", "getSharedCounter", "()Landroidx/datastore/core/SharedCounter;", "updateNotifications", "Lkotlinx/coroutines/flow/Flow;", "", "getUpdateNotifications", "()Lkotlinx/coroutines/flow/Flow;", "fileWithSuffix", "suffix", "getVersion", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "incrementAndGetVersion", "lock", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "tryLock", "Lkotlin/Function2;", "", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withLazyCounter", "createIfNotExists", "createParentDirectories", "Companion", "datastore-core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\b\u0000\u0018\u0000 52\u00020\u0001:\u00015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J2\u0010\u000f\u001a\u0002H\u0010\"\u0004\b\u0000\u0010\u00102\u001c\u0010\u0011\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00100\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00140\u0012H\u0096@¢\u0006\u0002\u0010\u0015J8\u0010\u0016\u001a\u0002H\u0010\"\u0004\b\u0000\u0010\u00102\"\u0010\u0011\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u0018\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00100\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00140\u0017H\u0096@¢\u0006\u0002\u0010\u0019J\u000e\u0010\u001a\u001a\u00020\u001bH\u0096@¢\u0006\u0002\u0010\u001cJ\u000e\u0010\u001d\u001a\u00020\u001bH\u0096@¢\u0006\u0002\u0010\u001cJ\u0010\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u001fH\u0002J\f\u00102\u001a\u00020\f*\u00020\u0005H\u0002J\f\u00103\u001a\u00020\f*\u00020\u0005H\u0002J:\u00104\u001a\u0002H\u0010\"\u0004\b\u0000\u0010\u00102$\b\u0004\u0010\u0011\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020*\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00100\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00140\u0017H\u0082H¢\u0006\u0002\u0010\u0019R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\u00020\u0005X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u001e\u001a\u00020\u001fX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u001fX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u001fX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010$\u001a\u00020\u00058BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b&\u0010'\u001a\u0004\b%\u0010\tR\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010+\u001a\u00020*8BX\u0082\u0084\u0002¢\u0006\f\u001a\u0004\b.\u0010/*\u0004\b,\u0010-¨\u00066"}, d2 = {"Landroidx/datastore/core/MultiProcessCoordinator;", "Landroidx/datastore/core/InterProcessCoordinator;", "context", "Lkotlin/coroutines/CoroutineContext;", "file", "Ljava/io/File;", "<init>", "(Lkotlin/coroutines/CoroutineContext;Ljava/io/File;)V", "getFile", "()Ljava/io/File;", "updateNotifications", "Lkotlinx/coroutines/flow/Flow;", "", "getUpdateNotifications", "()Lkotlinx/coroutines/flow/Flow;", "lock", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "tryLock", "Lkotlin/Function2;", "", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVersion", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "incrementAndGetVersion", "LOCK_SUFFIX", "", "VERSION_SUFFIX", "LOCK_ERROR_MESSAGE", "inMemoryMutex", "Lkotlinx/coroutines/sync/Mutex;", "lockFile", "getLockFile", "lockFile$delegate", "Lkotlin/Lazy;", "lazySharedCounter", "Lkotlin/Lazy;", "Landroidx/datastore/core/SharedCounter;", "sharedCounter", "getSharedCounter$delegate", "(Landroidx/datastore/core/MultiProcessCoordinator;)Ljava/lang/Object;", "getSharedCounter", "()Landroidx/datastore/core/SharedCounter;", "fileWithSuffix", "suffix", "createIfNotExists", "createParentDirectories", "withLazyCounter", "Companion", "datastore-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MultiProcessCoordinator implements InterProcessCoordinator {
     public static final Companion Companion = new Companion(null);
@@ -55,53 +54,20 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         this.VERSION_SUFFIX = ".version";
         this.LOCK_ERROR_MESSAGE = "fcntl failed: EAGAIN";
         this.inMemoryMutex = MutexKt.Mutex$default(false, 1, null);
-        this.lockFile$delegate = LazyKt.lazy(new Function0<File>() { // from class: androidx.datastore.core.MultiProcessCoordinator$lockFile$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.lockFile$delegate = LazyKt.lazy(new Function0() { // from class: androidx.datastore.core.MultiProcessCoordinator$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public final File invoke() {
-                String str;
-                File fileWithSuffix;
-                MultiProcessCoordinator multiProcessCoordinator = MultiProcessCoordinator.this;
-                str = multiProcessCoordinator.LOCK_SUFFIX;
-                fileWithSuffix = multiProcessCoordinator.fileWithSuffix(str);
-                MultiProcessCoordinator.this.createIfNotExists(fileWithSuffix);
-                return fileWithSuffix;
+            public final Object invoke() {
+                File lockFile_delegate$lambda$0;
+                lockFile_delegate$lambda$0 = MultiProcessCoordinator.lockFile_delegate$lambda$0(MultiProcessCoordinator.this);
+                return lockFile_delegate$lambda$0;
             }
         });
-        this.lazySharedCounter = LazyKt.lazy(new Function0<SharedCounter>() { // from class: androidx.datastore.core.MultiProcessCoordinator$lazySharedCounter$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.lazySharedCounter = LazyKt.lazy(new Function0() { // from class: androidx.datastore.core.MultiProcessCoordinator$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public final SharedCounter invoke() {
-                SharedCounter.Factory.loadLib();
-                SharedCounter.Factory factory = SharedCounter.Factory;
-                final MultiProcessCoordinator multiProcessCoordinator = MultiProcessCoordinator.this;
-                return factory.create$datastore_core_release(new Function0<File>() { // from class: androidx.datastore.core.MultiProcessCoordinator$lazySharedCounter$1.1
-                    {
-                        super(0);
-                    }
-
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // kotlin.jvm.functions.Function0
-                    public final File invoke() {
-                        String str;
-                        File fileWithSuffix;
-                        MultiProcessCoordinator multiProcessCoordinator2 = MultiProcessCoordinator.this;
-                        str = multiProcessCoordinator2.VERSION_SUFFIX;
-                        fileWithSuffix = multiProcessCoordinator2.fileWithSuffix(str);
-                        MultiProcessCoordinator.this.createIfNotExists(fileWithSuffix);
-                        return fileWithSuffix;
-                    }
-                });
+            public final Object invoke() {
+                SharedCounter lazySharedCounter$lambda$0;
+                lazySharedCounter$lambda$0 = MultiProcessCoordinator.lazySharedCounter$lambda$0(MultiProcessCoordinator.this);
+                return lazySharedCounter$lambda$0;
             }
         });
     }
@@ -115,13 +81,16 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         return this.updateNotifications;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x007c, code lost:
+        if (r11.lock(null, r0) == r1) goto L41;
+     */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00c1 A[Catch: all -> 0x00df, TRY_ENTER, TRY_LEAVE, TryCatch #8 {all -> 0x00df, blocks: (B:43:0x00c1, B:54:0x00db, B:57:0x00e3), top: B:80:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00db A[Catch: all -> 0x00df, TRY_ENTER, TryCatch #8 {all -> 0x00df, blocks: (B:43:0x00c1, B:54:0x00db, B:57:0x00e3), top: B:80:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00ba A[Catch: all -> 0x00d8, TRY_ENTER, TRY_LEAVE, TryCatch #3 {all -> 0x00d8, blocks: (B:42:0x00ba, B:53:0x00d4, B:56:0x00dc), top: B:69:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00d4 A[Catch: all -> 0x00d8, TRY_ENTER, TryCatch #3 {all -> 0x00d8, blocks: (B:42:0x00ba, B:53:0x00d4, B:56:0x00dc), top: B:69:0x0025 }] */
     /* JADX WARN: Type inference failed for: r11v3 */
     /* JADX WARN: Type inference failed for: r11v4 */
     /* JADX WARN: Type inference failed for: r11v5, types: [kotlinx.coroutines.sync.Mutex] */
@@ -134,7 +103,6 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         Object coroutine_suspended;
         int i;
         Mutex mutex;
-        MultiProcessCoordinator multiProcessCoordinator;
         Throwable th;
         Object exclusiveFileLockWithRetryIfDeadlock;
         Function1<? super Continuation<? super T>, ? extends Object> function12;
@@ -159,14 +127,9 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
                                 if (i != 0) {
                                     ResultKt.throwOnFailure(obj);
                                     mutex = this.inMemoryMutex;
-                                    multiProcessCoordinator$lock$1.L$0 = this;
-                                    multiProcessCoordinator$lock$1.L$1 = function1;
-                                    multiProcessCoordinator$lock$1.L$2 = mutex;
+                                    multiProcessCoordinator$lock$1.L$0 = function1;
+                                    multiProcessCoordinator$lock$1.L$1 = mutex;
                                     multiProcessCoordinator$lock$1.label = 1;
-                                    if (mutex.lock(null, multiProcessCoordinator$lock$1) != coroutine_suspended) {
-                                        multiProcessCoordinator = this;
-                                    }
-                                    return coroutine_suspended;
                                 } else if (i != 1) {
                                     if (i != 2) {
                                         if (i == 3) {
@@ -203,45 +166,45 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
                                     try {
                                         ResultKt.throwOnFailure(obj);
                                         fileLock2 = (FileLock) obj;
-                                    } catch (Throwable th4) {
-                                        th = th4;
+                                        try {
+                                            multiProcessCoordinator$lock$1.L$0 = mutex2;
+                                            multiProcessCoordinator$lock$1.L$1 = closeable;
+                                            multiProcessCoordinator$lock$1.L$2 = fileLock2;
+                                            multiProcessCoordinator$lock$1.label = 3;
+                                            invoke = function12.invoke(multiProcessCoordinator$lock$1);
+                                            if (invoke != coroutine_suspended) {
+                                                closeable2 = closeable;
+                                                fileLock = fileLock2;
+                                                obj = invoke;
+                                                mutex3 = mutex2;
+                                                if (fileLock != null) {
+                                                }
+                                                kotlin.io.CloseableKt.closeFinally(closeable2, null);
+                                                mutex3.unlock(null);
+                                                return obj;
+                                            }
+                                            return coroutine_suspended;
+                                        } catch (Throwable th4) {
+                                            fileLock = fileLock2;
+                                            th = th4;
+                                            if (fileLock != null) {
+                                                fileLock.release();
+                                            }
+                                            throw th;
+                                        }
+                                    } catch (Throwable th5) {
+                                        th = th5;
                                         fileLock = null;
                                         if (fileLock != null) {
                                         }
                                         throw th;
                                     }
-                                    try {
-                                        multiProcessCoordinator$lock$1.L$0 = mutex2;
-                                        multiProcessCoordinator$lock$1.L$1 = closeable;
-                                        multiProcessCoordinator$lock$1.L$2 = fileLock2;
-                                        multiProcessCoordinator$lock$1.label = 3;
-                                        invoke = function12.invoke(multiProcessCoordinator$lock$1);
-                                        if (invoke != coroutine_suspended) {
-                                            closeable2 = closeable;
-                                            fileLock = fileLock2;
-                                            obj = invoke;
-                                            mutex3 = mutex2;
-                                            if (fileLock != null) {
-                                            }
-                                            kotlin.io.CloseableKt.closeFinally(closeable2, null);
-                                            mutex3.unlock(null);
-                                            return obj;
-                                        }
-                                        return coroutine_suspended;
-                                    } catch (Throwable th5) {
-                                        fileLock = fileLock2;
-                                        th = th5;
-                                        if (fileLock != null) {
-                                        }
-                                        throw th;
-                                    }
                                 } else {
-                                    multiProcessCoordinator = (MultiProcessCoordinator) multiProcessCoordinator$lock$1.L$0;
                                     ResultKt.throwOnFailure(obj);
-                                    mutex = (Mutex) multiProcessCoordinator$lock$1.L$2;
-                                    function1 = (Function1) multiProcessCoordinator$lock$1.L$1;
+                                    mutex = (Mutex) multiProcessCoordinator$lock$1.L$1;
+                                    function1 = (Function1) multiProcessCoordinator$lock$1.L$0;
                                 }
-                                FileOutputStream fileOutputStream = new FileOutputStream(multiProcessCoordinator.getLockFile());
+                                FileOutputStream fileOutputStream = new FileOutputStream(getLockFile());
                                 FileOutputStream fileOutputStream2 = fileOutputStream;
                                 Companion companion = Companion;
                                 multiProcessCoordinator$lock$1.L$0 = function1;
@@ -279,7 +242,6 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
                         th = th6;
                         fileLock = null;
                         if (fileLock != null) {
-                            fileLock.release();
                         }
                         throw th;
                     }
@@ -288,7 +250,7 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
                     th = th7;
                     throw th;
                 }
-                FileOutputStream fileOutputStream3 = new FileOutputStream(multiProcessCoordinator.getLockFile());
+                FileOutputStream fileOutputStream3 = new FileOutputStream(getLockFile());
             } catch (Throwable th8) {
                 th = th8;
                 mutex.unlock(null);
@@ -505,17 +467,41 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final File lockFile_delegate$lambda$0(MultiProcessCoordinator multiProcessCoordinator) {
+        File fileWithSuffix = multiProcessCoordinator.fileWithSuffix(multiProcessCoordinator.LOCK_SUFFIX);
+        multiProcessCoordinator.createIfNotExists(fileWithSuffix);
+        return fileWithSuffix;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final SharedCounter lazySharedCounter$lambda$0(final MultiProcessCoordinator multiProcessCoordinator) {
+        return SharedCounter.Factory.create$datastore_core(new Function0() { // from class: androidx.datastore.core.MultiProcessCoordinator$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                File lazySharedCounter$lambda$0$0;
+                lazySharedCounter$lambda$0$0 = MultiProcessCoordinator.lazySharedCounter$lambda$0$0(MultiProcessCoordinator.this);
+                return lazySharedCounter$lambda$0$0;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final File lazySharedCounter$lambda$0$0(MultiProcessCoordinator multiProcessCoordinator) {
+        File fileWithSuffix = multiProcessCoordinator.fileWithSuffix(multiProcessCoordinator.VERSION_SUFFIX);
+        multiProcessCoordinator.createIfNotExists(fileWithSuffix);
+        return fileWithSuffix;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public final SharedCounter getSharedCounter() {
         return this.lazySharedCounter.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final File fileWithSuffix(String str) {
+    private final File fileWithSuffix(String str) {
         return new File(this.file.getAbsolutePath() + str);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void createIfNotExists(File file) {
+    private final void createIfNotExists(File file) {
         createParentDirectories(file);
         if (file.exists()) {
             return;
@@ -541,7 +527,7 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
     }
 
     /* compiled from: MultiProcessCoordinator.android.kt */
-    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0082@¢\u0006\u0002\u0010\fR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Landroidx/datastore/core/MultiProcessCoordinator$Companion;", "", "()V", "DEADLOCK_ERROR_MESSAGE", "", "INITIAL_WAIT_MILLIS", "", "MAX_WAIT_MILLIS", "getExclusiveFileLockWithRetryIfDeadlock", "Ljava/nio/channels/FileLock;", "lockFileStream", "Ljava/io/FileOutputStream;", "(Ljava/io/FileOutputStream;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "datastore-core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010\bR\u000e\u0010\t\u001a\u00020\nX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082D¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Landroidx/datastore/core/MultiProcessCoordinator$Companion;", "", "<init>", "()V", "getExclusiveFileLockWithRetryIfDeadlock", "Ljava/nio/channels/FileLock;", "lockFileStream", "Ljava/io/FileOutputStream;", "(Ljava/io/FileOutputStream;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "DEADLOCK_ERROR_MESSAGE", "", "INITIAL_WAIT_MILLIS", "", "MAX_WAIT_MILLIS", "datastore-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -594,11 +580,11 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
                                     }
                                 }
                                 FileLock lock = fileOutputStream.getChannel().lock(0L, Long.MAX_VALUE, false);
-                                Intrinsics.checkNotNullExpressionValue(lock, "lockFileStream.getChanne…LUE, /* shared= */ false)");
+                                Intrinsics.checkNotNullExpressionValue(lock, "lock(...)");
                                 return lock;
                             }
                             FileLock lock2 = fileOutputStream.getChannel().lock(0L, Long.MAX_VALUE, false);
-                            Intrinsics.checkNotNullExpressionValue(lock2, "lockFileStream.getChanne…LUE, /* shared= */ false)");
+                            Intrinsics.checkNotNullExpressionValue(lock2, "lock(...)");
                             return lock2;
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

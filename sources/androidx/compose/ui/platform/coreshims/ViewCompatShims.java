@@ -4,6 +4,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.autofill.AutofillId;
 import android.view.contentcapture.ContentCaptureSession;
+import androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper;
 /* loaded from: classes2.dex */
 public class ViewCompatShims {
     public static final int IMPORTANT_FOR_CONTENT_CAPTURE_AUTO = 0;
@@ -21,7 +22,7 @@ public class ViewCompatShims {
         }
     }
 
-    public static ContentCaptureSessionCompat getContentCaptureSession(View view) {
+    public static ContentCaptureSessionWrapper getContentCaptureSession(View view) {
         ContentCaptureSession contentCaptureSession;
         if (Build.VERSION.SDK_INT < 29 || (contentCaptureSession = Api29Impl.getContentCaptureSession(view)) == null) {
             return null;

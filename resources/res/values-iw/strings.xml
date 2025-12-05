@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">שיתוף עם</string>
     <string name="abc_shareactionprovider_share_with_application">שיתוף עם %s</string>
     <string name="abc_toolbar_collapse_description">כיווץ</string>
-    <string name="autofill">מילוי אוטומטי</string>
+    <string name="androidx_compose_foundation_autofill">מילוי אוטומטי</string>
+    <string name="androidx_compose_ui_autofill">מילוי אוטומטי</string>
     <string name="bottomsheet_action_collapse">כיווץ הגיליון התחתון</string>
     <string name="bottomsheet_action_expand">הרחבת הגיליון התחתון</string>
     <string name="bottomsheet_action_expand_halfway">הרחבה עד האמצע</string>

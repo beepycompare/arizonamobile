@@ -26,7 +26,7 @@ import org.json.JSONObject;
 public final class M6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ReentrantReadWriteLock.ReadLock f584a;
+    public final ReentrantReadWriteLock.ReadLock f667a;
     public final ReentrantReadWriteLock.WriteLock b;
     public final Z6 c;
     public final L6 d;
@@ -37,18 +37,18 @@ public final class M6 {
     public final AtomicLong i;
     public final ArrayList j;
     public final I6 k;
-    public final C0264g7 l;
+    public final C0263g7 l;
 
     static {
         HashSet hashSet = new HashSet();
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         hashSet.add(0);
         hashSet.add(6400);
     }
 
-    public M6(Y4 y4, Z6 z6, I6 i6, C0264g7 c0264g7) {
+    public M6(Y4 y4, Z6 z6, I6 i6, C0263g7 c0263g7) {
         ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
-        this.f584a = reentrantReadWriteLock.readLock();
+        this.f667a = reentrantReadWriteLock.readLock();
         this.b = reentrantReadWriteLock.writeLock();
         this.e = new Object();
         this.f = new ArrayList(3);
@@ -59,7 +59,7 @@ public final class M6 {
         this.g = y4.getContext();
         this.h = y4;
         this.k = i6;
-        this.l = c0264g7;
+        this.l = c0263g7;
         atomicLong.set(c());
         L6 l6 = new L6(this, y4);
         this.d = l6;
@@ -67,7 +67,7 @@ public final class M6 {
     }
 
     public final long a(Set set) {
-        this.f584a.lock();
+        this.f667a.lock();
         Cursor cursor = null;
         long j = 0;
         try {
@@ -95,41 +95,41 @@ public final class M6 {
         } catch (Throwable unused) {
         }
         mo.a(cursor);
-        this.f584a.unlock();
+        this.f667a.unlock();
         return j;
     }
 
     public final long b() {
-        this.f584a.lock();
+        this.f667a.lock();
         try {
             return this.i.get();
         } finally {
-            this.f584a.unlock();
+            this.f667a.unlock();
         }
     }
 
     public final long c() {
         long j;
         SQLiteDatabase readableDatabase;
-        this.f584a.lock();
+        this.f667a.lock();
         try {
             readableDatabase = this.c.getReadableDatabase();
         } catch (Throwable unused) {
         }
         if (readableDatabase != null) {
             j = DBUtils.queryRowsCount(readableDatabase, "events");
-            this.f584a.unlock();
+            this.f667a.unlock();
             return j;
         }
         j = 0;
-        this.f584a.unlock();
+        this.f667a.unlock();
         return j;
     }
 
     public final void d() {
         Cursor cursor;
         Cursor cursor2;
-        this.f584a.lock();
+        this.f667a.lock();
         Cursor cursor3 = null;
         try {
             SQLiteDatabase readableDatabase = this.c.getReadableDatabase();
@@ -152,7 +152,7 @@ public final class M6 {
                     cursor3 = cursor2;
                     cursor2 = cursor3;
                     cursor3 = cursor;
-                    this.f584a.unlock();
+                    this.f667a.unlock();
                     mo.a(cursor2);
                     mo.a(cursor3);
                 }
@@ -162,7 +162,7 @@ public final class M6 {
         } catch (Throwable unused2) {
             cursor = null;
         }
-        this.f584a.unlock();
+        this.f667a.unlock();
         mo.a(cursor2);
         mo.a(cursor3);
     }
@@ -182,22 +182,22 @@ public final class M6 {
     public final void a(long j, Wk wk, long j2) {
         JSONObject jSONObject;
         boolean b;
-        C0617u7 c0617u7 = new C0617u7(null, 1, null);
-        C0403lh c0403lh = (C0403lh) this.h.k.a();
+        C0616u7 c0616u7 = new C0616u7(null, 1, null);
+        C0402lh c0402lh = (C0402lh) this.h.k.a();
         Long valueOf = Long.valueOf(j);
         Long valueOf2 = Long.valueOf(j2);
         try {
-            jSONObject = new JSONObject().put("dId", c0403lh.getDeviceId()).put("uId", c0403lh.getUuid()).put("appVer", c0403lh.getAppVersion()).put(RemoteConfigConstants.RequestFieldKey.APP_BUILD, c0403lh.getAppBuildNumber()).put("kitBuildType", c0403lh.getAnalyticsSdkBuildType()).put("osVer", c0403lh.getOsVersion()).put("osApiLev", c0403lh.getOsApiLevel()).put("lang", c0403lh.getLocale()).put("root", c0403lh.getDeviceRootStatus()).put("app_debuggable", ((O5) c0403lh).f617a).put(CommonUrlParts.APP_FRAMEWORK, c0403lh.getAppFramework()).put("attribution_id", c0403lh.r).put("analyticsSdkVersionName", c0403lh.getAnalyticsSdkVersionName()).put("kitBuildNumber", c0403lh.getAnalyticsSdkBuildNumber());
+            jSONObject = new JSONObject().put("dId", c0402lh.getDeviceId()).put("uId", c0402lh.getUuid()).put("appVer", c0402lh.getAppVersion()).put(RemoteConfigConstants.RequestFieldKey.APP_BUILD, c0402lh.getAppBuildNumber()).put("kitBuildType", c0402lh.getAnalyticsSdkBuildType()).put("osVer", c0402lh.getOsVersion()).put("osApiLev", c0402lh.getOsApiLevel()).put("lang", c0402lh.getLocale()).put("root", c0402lh.getDeviceRootStatus()).put("app_debuggable", ((O5) c0402lh).f700a).put(CommonUrlParts.APP_FRAMEWORK, c0402lh.getAppFramework()).put("attribution_id", c0402lh.r).put("analyticsSdkVersionName", c0402lh.getAnalyticsSdkVersionName()).put("kitBuildNumber", c0402lh.getAnalyticsSdkBuildNumber());
         } catch (Throwable unused) {
             jSONObject = new JSONObject();
         }
         String jSONObject2 = jSONObject.toString();
         Long valueOf3 = Long.valueOf(Jn.a());
-        Yj yj = Xj.f752a;
+        Yj yj = Xj.f835a;
         synchronized (yj) {
             b = yj.b.b(true);
         }
-        ContentValues fromModel = c0617u7.fromModel(new C0592t7(valueOf, wk, jSONObject2, new C0567s7(valueOf2, valueOf3, Boolean.valueOf(b))));
+        ContentValues fromModel = c0616u7.fromModel(new C0591t7(valueOf, wk, jSONObject2, new C0566s7(valueOf2, valueOf3, Boolean.valueOf(b))));
         if (fromModel == null) {
             return;
         }
@@ -225,7 +225,7 @@ public final class M6 {
         SQLiteDatabase writableDatabase;
         try {
             this.b.lock();
-            if (this.i.get() > ((C0403lh) this.h.k.a()).v && (writableDatabase = this.c.getWritableDatabase()) != null) {
+            if (this.i.get() > ((C0402lh) this.h.k.a()).v && (writableDatabase = this.c.getWritableDatabase()) != null) {
                 int a2 = a(writableDatabase);
                 this.i.addAndGet(-a2);
                 if (a2 != 0) {
@@ -242,11 +242,11 @@ public final class M6 {
 
     public final int a(SQLiteDatabase sQLiteDatabase) {
         try {
-            return this.k.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", TextUtils.join(", ", AbstractC0694x9.i), TextUtils.join(", ", AbstractC0694x9.j), 10), 2, this.h.b.b, true).b;
+            return this.k.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", TextUtils.join(", ", AbstractC0693x9.i), TextUtils.join(", ", AbstractC0693x9.j), 10), 2, this.h.b.b, true).b;
         } catch (Throwable th) {
-            Rj rj = AbstractC0505pj.f1071a;
+            Rj rj = AbstractC0504pj.f1154a;
             rj.getClass();
-            rj.a(new C0530qj("deleteExcessiveReports exception", th));
+            rj.a(new C0529qj("deleteExcessiveReports exception", th));
             return 0;
         }
     }
@@ -261,9 +261,9 @@ public final class M6 {
             SQLiteDatabase writableDatabase = this.c.getWritableDatabase();
             if (writableDatabase != null) {
                 G6 a2 = this.k.a(writableDatabase, format, 1, this.h.b.b, z);
-                if (a2.f490a != null) {
+                if (a2.f573a != null) {
                     ArrayList arrayList = new ArrayList();
-                    for (ContentValues contentValues : a2.f490a) {
+                    for (ContentValues contentValues : a2.f573a) {
                         arrayList.add(Integer.valueOf(contentValues.getAsInteger("type").intValue()));
                     }
                     Iterator it = this.j.iterator();
@@ -271,7 +271,7 @@ public final class M6 {
                         ((T8) it.next()).b(arrayList);
                     }
                 }
-                List list = a2.f490a;
+                List list = a2.f573a;
                 if (list != null) {
                     for (int i3 = 0; i3 < list.size(); i3++) {
                         a((ContentValues) list.get(i3), "Event removed from db");
@@ -286,12 +286,12 @@ public final class M6 {
 
     public final ContentValues a(long j, Wk wk) {
         ContentValues contentValues = new ContentValues();
-        this.f584a.lock();
+        this.f667a.lock();
         Cursor cursor = null;
         try {
             SQLiteDatabase readableDatabase = this.c.getReadableDatabase();
             if (readableDatabase != null) {
-                cursor = readableDatabase.rawQuery(String.format(Locale.US, "SELECT report_request_parameters FROM sessions WHERE id = %s AND type = %s ORDER BY id DESC LIMIT 1", Long.valueOf(j), Integer.valueOf(wk.f742a)), null);
+                cursor = readableDatabase.rawQuery(String.format(Locale.US, "SELECT report_request_parameters FROM sessions WHERE id = %s AND type = %s ORDER BY id DESC LIMIT 1", Long.valueOf(j), Integer.valueOf(wk.f825a)), null);
                 if (cursor.moveToNext()) {
                     ContentValues contentValues2 = new ContentValues();
                     DatabaseUtils.cursorRowToContentValues(cursor, contentValues2);
@@ -301,7 +301,7 @@ public final class M6 {
         } catch (Throwable unused) {
         }
         mo.a(cursor);
-        this.f584a.unlock();
+        this.f667a.unlock();
         return contentValues;
     }
 
@@ -328,12 +328,12 @@ public final class M6 {
 
     public final void a(ContentValues contentValues, String str) {
         Integer asInteger = contentValues.getAsInteger("type");
-        if (AbstractC0694x9.d.contains(EnumC0165cb.a(asInteger != null ? asInteger.intValue() : -1))) {
-            C0238f7 model = new C0264g7(null, 1, null).toModel(contentValues);
+        if (AbstractC0693x9.d.contains(EnumC0164cb.a(asInteger != null ? asInteger.intValue() : -1))) {
+            C0237f7 model = new C0263g7(null, 1, null).toModel(contentValues);
             PublicLogger publicLogger = this.h.m;
-            EnumC0165cb enumC0165cb = model.d;
-            C0212e7 c0212e7 = model.g;
-            publicLogger.info(Rf.a(str, enumC0165cb, c0212e7.b, c0212e7.c), new Object[0]);
+            EnumC0164cb enumC0164cb = model.d;
+            C0211e7 c0211e7 = model.g;
+            publicLogger.info(Rf.a(str, enumC0164cb, c0211e7.b, c0211e7.c), new Object[0]);
         }
     }
 

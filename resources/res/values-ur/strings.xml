@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">اس کے ساتھ اشتراک کریں</string>
     <string name="abc_shareactionprovider_share_with_application">%s کے ساتھ اشتراک کریں</string>
     <string name="abc_toolbar_collapse_description">سکیڑیں</string>
-    <string name="autofill">آٹو فل</string>
+    <string name="androidx_compose_foundation_autofill">آٹو فل</string>
+    <string name="androidx_compose_ui_autofill">آٹو فل</string>
     <string name="bottomsheet_action_collapse">نیچے کی شیٹ کو سکیڑیں</string>
     <string name="bottomsheet_action_expand">نیچے کی شیٹ کو پھیلائیں</string>
     <string name="bottomsheet_action_expand_halfway">نصف تک پھیلائیں</string>

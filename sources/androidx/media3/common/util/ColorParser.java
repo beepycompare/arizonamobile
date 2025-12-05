@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.text.TextUtils;
 import androidx.core.internal.view.SupportMenu;
 import androidx.core.view.InputDeviceCompat;
-import androidx.core.view.ViewCompat;
 import com.google.common.base.Ascii;
 import com.tbuonomo.viewpagerdotsindicator.BaseDotsIndicator;
 import java.util.HashMap;
@@ -32,7 +31,7 @@ public final class ColorParser {
         hashMap.put("azure", -983041);
         hashMap.put("beige", -657956);
         hashMap.put("bisque", -6972);
-        hashMap.put("black", Integer.valueOf((int) ViewCompat.MEASURED_STATE_MASK));
+        hashMap.put("black", -16777216);
         hashMap.put("blanchedalmond", -5171);
         hashMap.put("blue", -16776961);
         hashMap.put("blueviolet", -7722014);

@@ -1,96 +1,45 @@
 package androidx.compose.ui.platform;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.Rect;
-import android.view.Display;
-import android.view.DisplayCutout;
+import android.inputmethodservice.InputMethodService;
+import android.view.View;
+import androidx.compose.ui.unit.AndroidDensity_androidKt;
+import androidx.compose.ui.unit.Dp;
+import androidx.compose.ui.unit.DpKt;
 import androidx.compose.ui.unit.IntSize;
-import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import androidx.window.layout.WindowMetrics;
+import androidx.window.layout.WindowMetricsCalculator;
 import kotlin.Metadata;
 /* compiled from: AndroidWindowInfo.android.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0000¢\u0006\u0002\u0010\u0004\u001a\u000f\u0010\u0005\u001a\u0004\u0018\u00010\u0006*\u00020\u0007H\u0082\u0010\u001a\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u0007H\u0002\u001a\u0018\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\u000fH\u0002\u001a\u0012\u0010\u0010\u001a\u0004\u0018\u00010\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0003¨\u0006\u0014"}, d2 = {"calculateWindowSize", "Landroidx/compose/ui/unit/IntSize;", "androidComposeView", "Landroidx/compose/ui/platform/AndroidComposeView;", "(Landroidx/compose/ui/platform/AndroidComposeView;)J", "findActivity", "Landroid/app/Activity;", "Landroid/content/Context;", "getNavigationBarHeight", "", "context", "getRectSizeFromDisplay", "", "activity", "bounds", "Landroid/graphics/Rect;", "getCutoutForDisplay", "Landroid/view/DisplayCutout;", "display", "Landroid/view/Display;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0000\u001a\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002¨\u0006\u0007"}, d2 = {"calculateWindowSize", "Landroidx/compose/ui/platform/DerivedSize;", "view", "Landroid/view/View;", "tryUnwrapContext", "Landroid/content/Context;", "context", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidWindowInfo_androidKt {
-    public static final /* synthetic */ DisplayCutout access$getCutoutForDisplay(Display display) {
-        return getCutoutForDisplay(display);
-    }
-
-    public static final /* synthetic */ int access$getNavigationBarHeight(Context context) {
-        return getNavigationBarHeight(context);
-    }
-
-    public static final /* synthetic */ void access$getRectSizeFromDisplay(Activity activity, Rect rect) {
-        getRectSizeFromDisplay(activity, rect);
-    }
-
-    public static final long calculateWindowSize(AndroidComposeView androidComposeView) {
-        Context context = androidComposeView.getContext();
-        Activity findActivity = findActivity(context);
-        if (findActivity != null) {
-            Rect currentWindowBounds = BoundsHelper.Companion.getInstance().currentWindowBounds(findActivity);
-            int width = currentWindowBounds.width();
-            return IntSize.m8162constructorimpl((currentWindowBounds.height() & 4294967295L) | (width << 32));
+    public static final DerivedSize calculateWindowSize(View view) {
+        Context context = view.getContext();
+        Context tryUnwrapContext = tryUnwrapContext(context);
+        if (tryUnwrapContext != null) {
+            WindowMetrics computeCurrentWindowMetrics = WindowMetricsCalculator.Companion.getOrCreate().computeCurrentWindowMetrics(tryUnwrapContext);
+            return DerivedSize.Companion.m7355fromPxSizeviCIZxY(IntSize.m8424constructorimpl((computeCurrentWindowMetrics.getBounds().width() << 32) | (computeCurrentWindowMetrics.getBounds().height() & 4294967295L)), AndroidDensity_androidKt.Density(tryUnwrapContext));
         }
         Configuration configuration = context.getResources().getConfiguration();
-        float f = context.getResources().getDisplayMetrics().density;
-        int round = Math.round(configuration.screenWidthDp * f);
-        return IntSize.m8162constructorimpl((Math.round(configuration.screenHeightDp * f) & 4294967295L) | (round << 32));
+        return DerivedSize.Companion.m7354fromDpSizeitqla9I(DpKt.m8280DpSizeYgX7TsA(Dp.m8258constructorimpl(configuration.screenWidthDp), Dp.m8258constructorimpl(configuration.screenHeightDp)), AndroidDensity_androidKt.Density(context));
     }
 
-    private static final Activity findActivity(Context context) {
-        while (!(context instanceof Activity)) {
-            if (!(context instanceof ContextWrapper)) {
+    private static final Context tryUnwrapContext(Context context) {
+        while (context instanceof ContextWrapper) {
+            if ((context instanceof Activity) || (context instanceof InputMethodService) || (context instanceof Application)) {
+                return context;
+            }
+            ContextWrapper contextWrapper = (ContextWrapper) context;
+            if (contextWrapper.getBaseContext() == null) {
                 return null;
             }
-            context = ((ContextWrapper) context).getBaseContext();
+            context = contextWrapper.getBaseContext();
         }
-        return (Activity) context;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int getNavigationBarHeight(Context context) {
-        Resources resources = context.getResources();
-        int identifier = resources.getIdentifier("navigation_bar_height", "dimen", ConstantDeviceInfo.APP_PLATFORM);
-        if (identifier > 0) {
-            return resources.getDimensionPixelSize(identifier);
-        }
-        return 0;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void getRectSizeFromDisplay(Activity activity, Rect rect) {
-        activity.getWindowManager().getDefaultDisplay().getRectSize(rect);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final DisplayCutout getCutoutForDisplay(Display display) {
-        try {
-            Constructor<?> constructor = Class.forName("android.view.DisplayInfo").getConstructor(new Class[0]);
-            constructor.setAccessible(true);
-            Object newInstance = constructor.newInstance(new Object[0]);
-            Method declaredMethod = display.getClass().getDeclaredMethod("getDisplayInfo", newInstance.getClass());
-            declaredMethod.setAccessible(true);
-            declaredMethod.invoke(display, newInstance);
-            Field declaredField = newInstance.getClass().getDeclaredField("displayCutout");
-            declaredField.setAccessible(true);
-            Object obj = declaredField.get(newInstance);
-            if (obj instanceof DisplayCutout) {
-                return (DisplayCutout) obj;
-            }
-            return null;
-        } catch (Exception e) {
-            if ((e instanceof ClassNotFoundException) || (e instanceof NoSuchMethodException) || (e instanceof NoSuchFieldException) || (e instanceof IllegalAccessException) || (e instanceof InvocationTargetException) || (e instanceof InstantiationException)) {
-                return null;
-            }
-            throw e;
-        }
+        return null;
     }
 }

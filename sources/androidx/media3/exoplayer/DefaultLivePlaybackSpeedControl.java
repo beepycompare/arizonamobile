@@ -6,7 +6,7 @@ import androidx.media3.common.MediaItem;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import com.google.common.primitives.Longs;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedControl {
     public static final float DEFAULT_FALLBACK_MAX_PLAYBACK_SPEED = 1.03f;
     public static final float DEFAULT_FALLBACK_MIN_PLAYBACK_SPEED = 0.97f;
@@ -39,7 +39,7 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
         return (((float) j) * f) + ((1.0f - f) * ((float) j2));
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Builder {
         private float fallbackMinPlaybackSpeed = 0.97f;
         private float fallbackMaxPlaybackSpeed = 1.03f;

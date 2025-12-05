@@ -31,47 +31,47 @@ public final class NavigationBarItemColors {
     }
 
     /* renamed from: getSelectedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2593getSelectedIconColor0d7_KjU() {
+    public final long m2679getSelectedIconColor0d7_KjU() {
         return this.selectedIconColor;
     }
 
     /* renamed from: getSelectedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2595getSelectedTextColor0d7_KjU() {
+    public final long m2681getSelectedTextColor0d7_KjU() {
         return this.selectedTextColor;
     }
 
     /* renamed from: getSelectedIndicatorColor-0d7_KjU  reason: not valid java name */
-    public final long m2594getSelectedIndicatorColor0d7_KjU() {
+    public final long m2680getSelectedIndicatorColor0d7_KjU() {
         return this.selectedIndicatorColor;
     }
 
     /* renamed from: getUnselectedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2596getUnselectedIconColor0d7_KjU() {
+    public final long m2682getUnselectedIconColor0d7_KjU() {
         return this.unselectedIconColor;
     }
 
     /* renamed from: getUnselectedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2597getUnselectedTextColor0d7_KjU() {
+    public final long m2683getUnselectedTextColor0d7_KjU() {
         return this.unselectedTextColor;
     }
 
     /* renamed from: getDisabledIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2590getDisabledIconColor0d7_KjU() {
+    public final long m2676getDisabledIconColor0d7_KjU() {
         return this.disabledIconColor;
     }
 
     /* renamed from: getDisabledTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2591getDisabledTextColor0d7_KjU() {
+    public final long m2677getDisabledTextColor0d7_KjU() {
         return this.disabledTextColor;
     }
 
     /* renamed from: copy-4JmcsL4  reason: not valid java name */
-    public final NavigationBarItemColors m2589copy4JmcsL4(long j, long j2, long j3, long j4, long j5, long j6, long j7) {
+    public final NavigationBarItemColors m2675copy4JmcsL4(long j, long j2, long j3, long j4, long j5, long j6, long j7) {
         return new NavigationBarItemColors(j != 16 ? j : this.selectedIconColor, j2 != 16 ? j2 : this.selectedTextColor, j3 != 16 ? j3 : this.selectedIndicatorColor, j4 != 16 ? j4 : this.unselectedIconColor, j5 != 16 ? j5 : this.unselectedTextColor, j6 != 16 ? j6 : this.disabledIconColor, j7 != 16 ? j7 : this.disabledTextColor, null);
     }
 
     /* renamed from: iconColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m2598iconColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m2684iconColorWaAFU9c$material3(boolean z, boolean z2) {
         if (z2) {
             if (z) {
                 return this.selectedIconColor;
@@ -82,7 +82,7 @@ public final class NavigationBarItemColors {
     }
 
     /* renamed from: textColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m2599textColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m2685textColorWaAFU9c$material3(boolean z, boolean z2) {
         if (z2) {
             if (z) {
                 return this.selectedTextColor;
@@ -93,7 +93,7 @@ public final class NavigationBarItemColors {
     }
 
     /* renamed from: getIndicatorColor-0d7_KjU$material3  reason: not valid java name */
-    public final long m2592getIndicatorColor0d7_KjU$material3() {
+    public final long m2678getIndicatorColor0d7_KjU$material3() {
         return this.selectedIndicatorColor;
     }
 
@@ -105,10 +105,10 @@ public final class NavigationBarItemColors {
             return false;
         }
         NavigationBarItemColors navigationBarItemColors = (NavigationBarItemColors) obj;
-        return Color.m5281equalsimpl0(this.selectedIconColor, navigationBarItemColors.selectedIconColor) && Color.m5281equalsimpl0(this.unselectedIconColor, navigationBarItemColors.unselectedIconColor) && Color.m5281equalsimpl0(this.selectedTextColor, navigationBarItemColors.selectedTextColor) && Color.m5281equalsimpl0(this.unselectedTextColor, navigationBarItemColors.unselectedTextColor) && Color.m5281equalsimpl0(this.selectedIndicatorColor, navigationBarItemColors.selectedIndicatorColor) && Color.m5281equalsimpl0(this.disabledIconColor, navigationBarItemColors.disabledIconColor) && Color.m5281equalsimpl0(this.disabledTextColor, navigationBarItemColors.disabledTextColor);
+        return Color.m5425equalsimpl0(this.selectedIconColor, navigationBarItemColors.selectedIconColor) && Color.m5425equalsimpl0(this.unselectedIconColor, navigationBarItemColors.unselectedIconColor) && Color.m5425equalsimpl0(this.selectedTextColor, navigationBarItemColors.selectedTextColor) && Color.m5425equalsimpl0(this.unselectedTextColor, navigationBarItemColors.unselectedTextColor) && Color.m5425equalsimpl0(this.selectedIndicatorColor, navigationBarItemColors.selectedIndicatorColor) && Color.m5425equalsimpl0(this.disabledIconColor, navigationBarItemColors.disabledIconColor) && Color.m5425equalsimpl0(this.disabledTextColor, navigationBarItemColors.disabledTextColor);
     }
 
     public int hashCode() {
-        return (((((((((((Color.m5287hashCodeimpl(this.selectedIconColor) * 31) + Color.m5287hashCodeimpl(this.unselectedIconColor)) * 31) + Color.m5287hashCodeimpl(this.selectedTextColor)) * 31) + Color.m5287hashCodeimpl(this.unselectedTextColor)) * 31) + Color.m5287hashCodeimpl(this.selectedIndicatorColor)) * 31) + Color.m5287hashCodeimpl(this.disabledIconColor)) * 31) + Color.m5287hashCodeimpl(this.disabledTextColor);
+        return (((((((((((Color.m5431hashCodeimpl(this.selectedIconColor) * 31) + Color.m5431hashCodeimpl(this.unselectedIconColor)) * 31) + Color.m5431hashCodeimpl(this.selectedTextColor)) * 31) + Color.m5431hashCodeimpl(this.unselectedTextColor)) * 31) + Color.m5431hashCodeimpl(this.selectedIndicatorColor)) * 31) + Color.m5431hashCodeimpl(this.disabledIconColor)) * 31) + Color.m5431hashCodeimpl(this.disabledTextColor);
     }
 }

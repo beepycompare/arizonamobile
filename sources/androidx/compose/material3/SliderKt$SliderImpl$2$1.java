@@ -40,8 +40,8 @@ public final class SliderKt$SliderImpl$2$1 implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        Placeable mo6698measureBRTryo0;
+    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        Placeable mo6875measureBRTryo0;
         int width;
         int max;
         int width2;
@@ -55,29 +55,29 @@ public final class SliderKt$SliderImpl$2$1 implements MeasurePolicy {
             Measurable measurable = list.get(i2);
             if (LayoutIdKt.getLayoutId(measurable) == SliderComponents.THUMB) {
                 long j2 = j;
-                final Placeable mo6698measureBRTryo02 = measurable.mo6698measureBRTryo0(j2);
+                final Placeable mo6875measureBRTryo02 = measurable.mo6875measureBRTryo0(j2);
                 int size2 = list2.size();
                 int i3 = 0;
                 while (i3 < size2) {
                     Measurable measurable2 = list.get(i3);
                     if (LayoutIdKt.getLayoutId(measurable2) == SliderComponents.TRACK) {
                         if (this.$state.getOrientation$material3() == Orientation.Vertical) {
-                            mo6698measureBRTryo0 = measurable2.mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(ConstraintsKt.m7969offsetNN6EwU$default(j2, 0, -mo6698measureBRTryo02.getHeight(), 1, null), 0, 0, 0, 0, 14, null));
+                            mo6875measureBRTryo0 = measurable2.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(ConstraintsKt.m8231offsetNN6EwU$default(j2, 0, -mo6875measureBRTryo02.getHeight(), 1, null), 0, 0, 0, 0, 14, null));
                         } else {
-                            mo6698measureBRTryo0 = measurable2.mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(ConstraintsKt.m7969offsetNN6EwU$default(j, -mo6698measureBRTryo02.getWidth(), 0, 2, null), 0, 0, 0, 0, 11, null));
+                            mo6875measureBRTryo0 = measurable2.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(ConstraintsKt.m8231offsetNN6EwU$default(j, -mo6875measureBRTryo02.getWidth(), 0, 2, null), 0, 0, 0, 0, 11, null));
                         }
-                        final Placeable placeable = mo6698measureBRTryo0;
+                        final Placeable placeable = mo6875measureBRTryo0;
                         final Ref.IntRef intRef = new Ref.IntRef();
                         float coercedValueAsFraction = this.$state.getCoercedValueAsFraction();
                         boolean z = Intrinsics.areEqual(coercedValueAsFraction, ArraysKt.firstOrNull(this.$state.getTickFractions$material3())) || Intrinsics.areEqual(coercedValueAsFraction, ArraysKt.lastOrNull(this.$state.getTickFractions$material3()));
                         int i4 = placeable.get(SliderKt.getCornerSizeAlignmentLine());
                         int i5 = i4 != Integer.MIN_VALUE ? i4 : 0;
                         if (this.$state.getOrientation$material3() == Orientation.Vertical) {
-                            width = Math.max(placeable.getWidth(), mo6698measureBRTryo02.getWidth());
-                            max = mo6698measureBRTryo02.getHeight() + placeable.getHeight();
+                            width = Math.max(placeable.getWidth(), mo6875measureBRTryo02.getWidth());
+                            max = mo6875measureBRTryo02.getHeight() + placeable.getHeight();
                             width2 = (width - placeable.getWidth()) / 2;
-                            height = mo6698measureBRTryo02.getHeight() / 2;
-                            i = (width - mo6698measureBRTryo02.getWidth()) / 2;
+                            height = mo6875measureBRTryo02.getHeight() / 2;
+                            i = (width - mo6875measureBRTryo02.getWidth()) / 2;
                             if (this.$state.getSteps() > 0 && !z) {
                                 roundToInt2 = MathKt.roundToInt((placeable.getHeight() - (i5 * 2)) * coercedValueAsFraction) + i5;
                             } else {
@@ -88,9 +88,9 @@ public final class SliderKt$SliderImpl$2$1 implements MeasurePolicy {
                                 intRef.element = placeable.getHeight() - intRef.element;
                             }
                         } else {
-                            width = mo6698measureBRTryo02.getWidth() + placeable.getWidth();
-                            max = Math.max(placeable.getHeight(), mo6698measureBRTryo02.getHeight());
-                            width2 = mo6698measureBRTryo02.getWidth() / 2;
+                            width = mo6875measureBRTryo02.getWidth() + placeable.getWidth();
+                            max = Math.max(placeable.getHeight(), mo6875measureBRTryo02.getHeight());
+                            width2 = mo6875measureBRTryo02.getWidth() / 2;
                             height = (max - placeable.getHeight()) / 2;
                             if (this.$state.getSteps() > 0 && !z) {
                                 roundToInt = MathKt.roundToInt((placeable.getWidth() - (i5 * 2)) * coercedValueAsFraction) + i5;
@@ -98,7 +98,7 @@ public final class SliderKt$SliderImpl$2$1 implements MeasurePolicy {
                                 roundToInt = MathKt.roundToInt(placeable.getWidth() * coercedValueAsFraction);
                             }
                             i = roundToInt;
-                            intRef.element = (max - mo6698measureBRTryo02.getHeight()) / 2;
+                            intRef.element = (max - mo6875measureBRTryo02.getHeight()) / 2;
                         }
                         final int i6 = height;
                         final int i7 = i;
@@ -108,7 +108,7 @@ public final class SliderKt$SliderImpl$2$1 implements MeasurePolicy {
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
                                 Unit measure_3p2s80s$lambda$3;
-                                measure_3p2s80s$lambda$3 = SliderKt$SliderImpl$2$1.measure_3p2s80s$lambda$3(Placeable.this, i8, i6, mo6698measureBRTryo02, i7, intRef, (Placeable.PlacementScope) obj);
+                                measure_3p2s80s$lambda$3 = SliderKt$SliderImpl$2$1.measure_3p2s80s$lambda$3(Placeable.this, i8, i6, mo6875measureBRTryo02, i7, intRef, (Placeable.PlacementScope) obj);
                                 return measure_3p2s80s$lambda$3;
                             }
                         }, 4, null);

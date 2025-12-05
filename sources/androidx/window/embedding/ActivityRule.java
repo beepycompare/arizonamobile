@@ -1,56 +1,88 @@
 package androidx.window.embedding;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 import kotlin.Metadata;
-import kotlin.collections.CollectionsKt;
+import kotlin.collections.SetsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ActivityRule.kt */
-@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001B\u001d\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006¢\u0006\u0002\u0010\u0007J\u0013\u0010\f\u001a\u00020\u00062\b\u0010\r\u001a\u0004\u0018\u00010\u000eH\u0096\u0002J\b\u0010\u000f\u001a\u00020\u0010H\u0016J\u0016\u0010\u0011\u001a\u00020\u00002\u0006\u0010\u0012\u001a\u00020\u0004H\u0080\u0002¢\u0006\u0002\b\u0013R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0017\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0014"}, d2 = {"Landroidx/window/embedding/ActivityRule;", "Landroidx/window/embedding/EmbeddingRule;", "filters", "", "Landroidx/window/embedding/ActivityFilter;", "alwaysExpand", "", "(Ljava/util/Set;Z)V", "getAlwaysExpand", "()Z", "getFilters", "()Ljava/util/Set;", "equals", "other", "", "hashCode", "", "plus", "filter", "plus$window_release", "window_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001\u0018B+\b\u0000\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\u0016\u0010\u000f\u001a\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u0006H\u0080\u0002¢\u0006\u0002\b\u0011J\u0013\u0010\u0012\u001a\u00020\b2\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014H\u0096\u0002J\b\u0010\u0015\u001a\u00020\u0016H\u0016J\b\u0010\u0017\u001a\u00020\u0003H\u0016R\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u0019"}, d2 = {"Landroidx/window/embedding/ActivityRule;", "Landroidx/window/embedding/EmbeddingRule;", "tag", "", "filters", "", "Landroidx/window/embedding/ActivityFilter;", "alwaysExpand", "", "<init>", "(Ljava/lang/String;Ljava/util/Set;Z)V", "getFilters", "()Ljava/util/Set;", "getAlwaysExpand", "()Z", "plus", "filter", "plus$window_release", "equals", "other", "", "hashCode", "", "toString", "Builder", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ActivityRule extends EmbeddingRule {
     private final boolean alwaysExpand;
     private final Set<ActivityFilter> filters;
 
-    public /* synthetic */ ActivityRule(Set set, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(set, (i & 2) != 0 ? false : z);
-    }
-
-    public final boolean getAlwaysExpand() {
-        return this.alwaysExpand;
-    }
-
-    public ActivityRule(Set<ActivityFilter> filters, boolean z) {
-        Intrinsics.checkNotNullParameter(filters, "filters");
-        this.alwaysExpand = z;
-        this.filters = CollectionsKt.toSet(filters);
+    public /* synthetic */ ActivityRule(String str, Set set, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, set, (i & 4) != 0 ? false : z);
     }
 
     public final Set<ActivityFilter> getFilters() {
         return this.filters;
     }
 
-    public final ActivityRule plus$window_release(ActivityFilter filter) {
-        Intrinsics.checkNotNullParameter(filter, "filter");
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        linkedHashSet.addAll(this.filters);
-        linkedHashSet.add(filter);
-        return new ActivityRule(CollectionsKt.toSet(linkedHashSet), this.alwaysExpand);
+    public final boolean getAlwaysExpand() {
+        return this.alwaysExpand;
     }
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ActivityRule(String str, Set<ActivityFilter> filters, boolean z) {
+        super(str);
+        Intrinsics.checkNotNullParameter(filters, "filters");
+        this.filters = filters;
+        this.alwaysExpand = z;
+    }
+
+    /* compiled from: ActivityRule.kt */
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u000b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\nJ\u0010\u0010\f\u001a\u00020\u00002\b\u0010\u0007\u001a\u0004\u0018\u00010\bJ\u0006\u0010\r\u001a\u00020\u000eR\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Landroidx/window/embedding/ActivityRule$Builder;", "", "filters", "", "Landroidx/window/embedding/ActivityFilter;", "<init>", "(Ljava/util/Set;)V", "tag", "", "alwaysExpand", "", "setAlwaysExpand", "setTag", "build", "Landroidx/window/embedding/ActivityRule;", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes3.dex */
+    public static final class Builder {
+        private boolean alwaysExpand;
+        private final Set<ActivityFilter> filters;
+        private String tag;
+
+        public Builder(Set<ActivityFilter> filters) {
+            Intrinsics.checkNotNullParameter(filters, "filters");
+            this.filters = filters;
+        }
+
+        public final Builder setAlwaysExpand(boolean z) {
+            this.alwaysExpand = z;
+            return this;
+        }
+
+        public final Builder setTag(String str) {
+            this.tag = str;
+            return this;
+        }
+
+        public final ActivityRule build() {
+            return new ActivityRule(this.tag, this.filters, this.alwaysExpand);
+        }
+    }
+
+    public final ActivityRule plus$window_release(ActivityFilter filter) {
+        Intrinsics.checkNotNullParameter(filter, "filter");
+        return new ActivityRule(getTag(), SetsKt.plus(this.filters, filter), this.alwaysExpand);
+    }
+
+    @Override // androidx.window.embedding.EmbeddingRule
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof ActivityRule) {
+        if ((obj instanceof ActivityRule) && super.equals(obj)) {
             ActivityRule activityRule = (ActivityRule) obj;
             return Intrinsics.areEqual(this.filters, activityRule.filters) && this.alwaysExpand == activityRule.alwaysExpand;
         }
         return false;
     }
 
+    @Override // androidx.window.embedding.EmbeddingRule
     public int hashCode() {
-        return (this.filters.hashCode() * 31) + Boolean.hashCode(this.alwaysExpand);
+        return (((super.hashCode() * 31) + this.filters.hashCode()) * 31) + Boolean.hashCode(this.alwaysExpand);
+    }
+
+    public String toString() {
+        return "ActivityRule:{tag={" + getTag() + "},filters={" + this.filters + "}, alwaysExpand={" + this.alwaysExpand + "}}";
     }
 }

@@ -16,23 +16,23 @@ import kotlin.jvm.internal.Reflection;
 public final class Kd implements NativeCrashHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f553a;
-    public final IHandlerExecutor b = C0471oa.k().w().d();
+    public final Function1 f636a;
+    public final IHandlerExecutor b = C0470oa.k().w().d();
     public final Nd c;
 
-    public Kd(Context context, Tg tg, Function1<? super String, Unit> function1, Sd sd, EnumC0165cb enumC0165cb, String str) {
-        this.f553a = function1;
-        this.c = new Nd(context, tg, sd, enumC0165cb);
+    public Kd(Context context, Tg tg, Function1<? super String, Unit> function1, Sd sd, EnumC0164cb enumC0164cb, String str) {
+        this.f636a = function1;
+        this.c = new Nd(context, tg, sd, enumC0164cb);
     }
 
     public static final void a(Kd kd, NativeCrash nativeCrash, File file) {
-        kd.f553a.invoke(nativeCrash.getUuid());
+        kd.f636a.invoke(nativeCrash.getUuid());
     }
 
     @Override // io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashHandler
     public final void newCrash(final NativeCrash nativeCrash) {
         G0 g0;
-        C0112aa c0112aa;
+        C0111aa c0111aa;
         try {
             NativeCrashSource source = nativeCrash.getSource();
             String handlerVersion = nativeCrash.getHandlerVersion();
@@ -46,7 +46,7 @@ public final class Kd implements NativeCrashHandler {
             g0 = null;
         }
         if (g0 != null) {
-            LoggerStorage.getOrCreatePublicLogger(g0.f.f499a).info("Detected native crash with uuid = " + g0.c, new Object[0]);
+            LoggerStorage.getOrCreatePublicLogger(g0.f.f582a).info("Detected native crash with uuid = " + g0.c, new Object[0]);
             IHandlerExecutor iHandlerExecutor = this.b;
             Nd nd = this.c;
             Consumer consumer = new Consumer() { // from class: io.appmetrica.analytics.impl.Kd$$ExternalSyntheticLambda0
@@ -56,31 +56,31 @@ public final class Kd implements NativeCrashHandler {
                 }
             };
             nd.getClass();
-            Gd gd = new Gd(new Id(g0.f487a, g0.b), nd.f);
+            Gd gd = new Gd(new Id(g0.f570a, g0.b), nd.f);
             Dd dd = new Dd(nd.b, g0.f, new Md(g0, nd.d));
-            C0138ba c0138ba = nd.e;
+            C0137ba c0137ba = nd.e;
             String str = g0.d;
-            c0138ba.getClass();
+            c0137ba.getClass();
             File file = new File(str);
-            Context context = nd.f605a;
-            if (C0112aa.c == null) {
-                synchronized (Reflection.getOrCreateKotlinClass(C0112aa.class)) {
-                    if (C0112aa.c == null) {
-                        C0112aa.c = new C0112aa(context);
+            Context context = nd.f688a;
+            if (C0111aa.c == null) {
+                synchronized (Reflection.getOrCreateKotlinClass(C0111aa.class)) {
+                    if (C0111aa.c == null) {
+                        C0111aa.c = new C0111aa(context);
                     }
                     Unit unit = Unit.INSTANCE;
                 }
             }
-            C0112aa c0112aa2 = C0112aa.c;
-            if (c0112aa2 == null) {
+            C0111aa c0111aa2 = C0111aa.c;
+            if (c0111aa2 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
-                c0112aa = null;
+                c0111aa = null;
             } else {
-                c0112aa = c0112aa2;
+                c0111aa = c0111aa2;
             }
-            iHandlerExecutor.execute(new Uf(file, gd, consumer, dd, c0112aa, nd.c.a(g0)));
+            iHandlerExecutor.execute(new Uf(file, gd, consumer, dd, c0111aa, nd.c.a(g0)));
             return;
         }
-        this.f553a.invoke(nativeCrash.getUuid());
+        this.f636a.invoke(nativeCrash.getUuid());
     }
 }

@@ -187,37 +187,37 @@ public final class ParagraphInfo {
     }
 
     public final Rect toGlobal(Rect rect) {
-        return rect.m5073translatek4lQ0M(Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(this.top) & 4294967295L)));
+        return rect.m5216translatek4lQ0M(Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(this.top) & 4294967295L)));
     }
 
     public final Rect toLocal(Rect rect) {
-        return rect.m5073translatek4lQ0M(Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(-this.top) & 4294967295L)));
+        return rect.m5216translatek4lQ0M(Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(-this.top) & 4294967295L)));
     }
 
     public final Path toGlobal(Path path) {
-        path.mo5173translatek4lQ0M(Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(this.top) & 4294967295L)));
+        path.mo5316translatek4lQ0M(Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(this.top) & 4294967295L)));
         return path;
     }
 
     /* renamed from: toGlobal-xdX6-G0$default  reason: not valid java name */
-    public static /* synthetic */ long m7313toGlobalxdX6G0$default(ParagraphInfo paragraphInfo, long j, boolean z, int i, Object obj) {
+    public static /* synthetic */ long m7549toGlobalxdX6G0$default(ParagraphInfo paragraphInfo, long j, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
         }
-        return paragraphInfo.m7314toGlobalxdX6G0(j, z);
+        return paragraphInfo.m7550toGlobalxdX6G0(j, z);
     }
 
     /* renamed from: toGlobal-xdX6-G0  reason: not valid java name */
-    public final long m7314toGlobalxdX6G0(long j, boolean z) {
-        if (z && TextRange.m7451equalsimpl0(j, TextRange.Companion.m7463getZerod9O1mEE())) {
-            return TextRange.Companion.m7463getZerod9O1mEE();
+    public final long m7550toGlobalxdX6G0(long j, boolean z) {
+        if (z && TextRange.m7694equalsimpl0(j, TextRange.Companion.m7706getZerod9O1mEE())) {
+            return TextRange.Companion.m7706getZerod9O1mEE();
         }
-        return TextRangeKt.TextRange(toGlobalIndex(TextRange.m7458getStartimpl(j)), toGlobalIndex(TextRange.m7453getEndimpl(j)));
+        return TextRangeKt.TextRange(toGlobalIndex(TextRange.m7701getStartimpl(j)), toGlobalIndex(TextRange.m7696getEndimpl(j)));
     }
 
     /* renamed from: toLocal-MK-Hz9U  reason: not valid java name */
-    public final long m7315toLocalMKHz9U(long j) {
+    public final long m7551toLocalMKHz9U(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
-        return Offset.m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - this.top) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+        return Offset.m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - this.top) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
     }
 }

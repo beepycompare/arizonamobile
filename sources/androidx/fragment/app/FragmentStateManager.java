@@ -559,9 +559,9 @@ public class FragmentStateManager {
             if (!bundle3.isEmpty()) {
                 bundle.putBundle(REGISTRY_STATE_KEY, bundle3);
             }
-            Bundle m8530lambda$attachController$4$androidxfragmentappFragmentManager = this.mFragment.mChildFragmentManager.m8530lambda$attachController$4$androidxfragmentappFragmentManager();
-            if (!m8530lambda$attachController$4$androidxfragmentappFragmentManager.isEmpty()) {
-                bundle.putBundle(CHILD_FRAGMENT_MANAGER_KEY, m8530lambda$attachController$4$androidxfragmentappFragmentManager);
+            Bundle m8799lambda$attachController$4$androidxfragmentappFragmentManager = this.mFragment.mChildFragmentManager.m8799lambda$attachController$4$androidxfragmentappFragmentManager();
+            if (!m8799lambda$attachController$4$androidxfragmentappFragmentManager.isEmpty()) {
+                bundle.putBundle(CHILD_FRAGMENT_MANAGER_KEY, m8799lambda$attachController$4$androidxfragmentappFragmentManager);
             }
             if (this.mFragment.mView != null) {
                 saveViewState();

@@ -42,368 +42,503 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Savers.kt */
-@Metadata(d1 = {"\u0000\u0094\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aI\u0010\u0000\u001a\u00020\u0001\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\u0004\b\u0002\u0010\u00052\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00042\u0006\u0010\u0007\u001a\u0002H\u00022\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0002\u0010\n\u001aL\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\u0004\b\u0002\u0010\u0005\"\u0006\b\u0003\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00052\u0006\u0010\u0007\u001a\u0002H\u0002H\u0080\b¢\u0006\u0002\u0010\r\u001ay\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u000f\"\u0004\b\u0000\u0010\u0004\"\b\b\u0001\u0010\u0005*\u00020\u00012.\u0010\u0000\u001a*\u0012\u0004\u0012\u00020\t\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00050\u0010¢\u0006\u0002\b\u00132#\u0010\u000b\u001a\u001f\u0012\u0013\u0012\u0011H\u0005¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00040\u0014H\u0002\u001a\u001f\u0010\u0000\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u00022\b\u0010\u0006\u001a\u0004\u0018\u0001H\u0002H\u0000¢\u0006\u0002\u0010\u0015\u001a\"\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0006\b\u0000\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0001H\u0080\b¢\u0006\u0002\u0010\u0015\" \u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"(\u0010\u001a\u001a\u001c\u0012\u0012\u0012\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c0\u001b\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"(\u0010\u001d\u001a\u0016\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001e\u0010\u001f\"\u001a\u0010 \u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010\"\u001a\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b$\u0010\u001f\"\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010)\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0019\" \u0010,\u001a\u000e\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u0019\" \u0010/\u001a\u000e\u0012\u0004\u0012\u000200\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003*\u0002048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u00106\"\u001a\u00107\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003*\u0002098@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010:\"\u001a\u0010;\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003*\u00020=8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010>\"\u001a\u0010?\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003*\u00020A8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010B\"\u001a\u0010C\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003*\u00020E8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010F\"\u001a\u0010G\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003*\u00020I8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010J\"\u001a\u0010K\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003*\u00020M8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010N\"\u001a\u0010O\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Q8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010R\"\u001a\u0010S\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u0003*\u00020U8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010V\"\u001a\u0010W\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010Z\"\u001a\u0010[\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u0003*\u00020]8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010^\"\u001a\u0010_\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003*\u00020a8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010b\"\u001a\u0010c\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020d\u0012\u0004\u0012\u00020\u00010\u0003*\u00020e8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010f\"\u001a\u0010g\u001a\u000e\u0012\u0004\u0012\u00020d\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006h"}, d2 = {"save", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/saveable/Saver;", "Original", "Saveable", "value", "saver", "scope", "Landroidx/compose/runtime/saveable/SaverScope;", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;Landroidx/compose/runtime/saveable/SaverScope;)Ljava/lang/Object;", "restore", "Result", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;)Ljava/lang/Object;", "NonNullValueClassSaver", "Landroidx/compose/ui/text/NonNullValueClassSaver;", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "Lkotlin/Function1;", "(Ljava/lang/Object;)Ljava/lang/Object;", "AnnotatedStringSaver", "Landroidx/compose/ui/text/AnnotatedString;", "getAnnotatedStringSaver", "()Landroidx/compose/runtime/saveable/Saver;", "AnnotationRangeListSaver", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "AnnotationRangeSaver", "getAnnotationRangeSaver$annotations", "()V", "VerbatimTtsAnnotationSaver", "Landroidx/compose/ui/text/VerbatimTtsAnnotation;", "UrlAnnotationSaver", "Landroidx/compose/ui/text/UrlAnnotation;", "getUrlAnnotationSaver$annotations", "LinkSaver", "Landroidx/compose/ui/text/LinkAnnotation$Url;", "ClickableSaver", "Landroidx/compose/ui/text/LinkAnnotation$Clickable;", "ParagraphStyleSaver", "Landroidx/compose/ui/text/ParagraphStyle;", "getParagraphStyleSaver", "SpanStyleSaver", "Landroidx/compose/ui/text/SpanStyle;", "getSpanStyleSaver", "TextLinkStylesSaver", "Landroidx/compose/ui/text/TextLinkStyles;", "getTextLinkStylesSaver", "Saver", "Landroidx/compose/ui/text/style/TextDecoration;", "Landroidx/compose/ui/text/style/TextDecoration$Companion;", "getSaver", "(Landroidx/compose/ui/text/style/TextDecoration$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextDecorationSaver", "Landroidx/compose/ui/text/style/TextGeometricTransform;", "Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;", "(Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextGeometricTransformSaver", "Landroidx/compose/ui/text/style/TextIndent;", "Landroidx/compose/ui/text/style/TextIndent$Companion;", "(Landroidx/compose/ui/text/style/TextIndent$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextIndentSaver", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontWeight$Companion;", "(Landroidx/compose/ui/text/font/FontWeight$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontWeightSaver", "Landroidx/compose/ui/text/style/BaselineShift;", "Landroidx/compose/ui/text/style/BaselineShift$Companion;", "(Landroidx/compose/ui/text/style/BaselineShift$Companion;)Landroidx/compose/runtime/saveable/Saver;", "BaselineShiftSaver", "Landroidx/compose/ui/text/TextRange;", "Landroidx/compose/ui/text/TextRange$Companion;", "(Landroidx/compose/ui/text/TextRange$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextRangeSaver", "Landroidx/compose/ui/graphics/Shadow;", "Landroidx/compose/ui/graphics/Shadow$Companion;", "(Landroidx/compose/ui/graphics/Shadow$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ShadowSaver", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/ui/graphics/Color$Companion;", "(Landroidx/compose/ui/graphics/Color$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ColorSaver", "Landroidx/compose/ui/unit/TextUnit;", "Landroidx/compose/ui/unit/TextUnit$Companion;", "(Landroidx/compose/ui/unit/TextUnit$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextUnitSaver", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/ui/geometry/Offset$Companion;", "(Landroidx/compose/ui/geometry/Offset$Companion;)Landroidx/compose/runtime/saveable/Saver;", "OffsetSaver", "Landroidx/compose/ui/text/intl/LocaleList;", "Landroidx/compose/ui/text/intl/LocaleList$Companion;", "(Landroidx/compose/ui/text/intl/LocaleList$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleListSaver", "Landroidx/compose/ui/text/intl/Locale;", "Landroidx/compose/ui/text/intl/Locale$Companion;", "(Landroidx/compose/ui/text/intl/Locale$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleSaver", "Landroidx/compose/ui/text/style/LineHeightStyle;", "Landroidx/compose/ui/text/style/LineHeightStyle$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleSaver", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0080\u0003\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aI\u0010\u0000\u001a\u00020\u0001\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\u0004\b\u0002\u0010\u00052\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00042\u0006\u0010\u0007\u001a\u0002H\u00022\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0002\u0010\n\u001aL\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\u0004\b\u0002\u0010\u0005\"\u0006\b\u0003\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00052\u0006\u0010\u0007\u001a\u0002H\u0002H\u0080\b¢\u0006\u0002\u0010\r\u001ay\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u000f\"\u0004\b\u0000\u0010\u0004\"\b\b\u0001\u0010\u0005*\u00020\u00012.\u0010\u0000\u001a*\u0012\u0004\u0012\u00020\t\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00050\u0010¢\u0006\u0002\b\u00132#\u0010\u000b\u001a\u001f\u0012\u0013\u0012\u0011H\u0005¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00040\u0014H\u0002\u001a\u001f\u0010\u0000\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u00022\b\u0010\u0006\u001a\u0004\u0018\u0001H\u0002H\u0000¢\u0006\u0002\u0010\u0015\u001a\"\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0006\b\u0000\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0001H\u0080\b¢\u0006\u0002\u0010\u0015\" \u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"(\u0010\u001a\u001a\u001c\u0012\u0012\u0012\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c0\u001b\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"(\u0010\u001d\u001a\u0016\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001e\u0010\u001f\"\u001a\u0010 \u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010\"\u001a\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b$\u0010\u001f\"\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010)\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0019\" \u0010,\u001a\u000e\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u0019\" \u0010/\u001a\u000e\u0012\u0004\u0012\u000200\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003*\u0002048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u00106\"\u001a\u00107\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003*\u0002098@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010:\"\u001a\u0010;\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003*\u00020=8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010>\"\u001a\u0010?\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003*\u00020A8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010B\"\u001a\u0010C\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003*\u00020E8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010F\"\u001a\u0010G\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003*\u00020I8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010J\"\u001a\u0010K\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003*\u00020M8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010N\"\u001a\u0010O\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Q8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010R\"\u001a\u0010S\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u0003*\u00020U8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010V\"\u001a\u0010W\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010Z\"\u001a\u0010[\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u0003*\u00020]8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010^\"\u001a\u0010_\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003*\u00020a8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010b\" \u0010c\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bd\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020e\u0012\u0004\u0012\u00020\u00010\u0003*\u00020f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010g\" \u0010h\u001a\u000e\u0012\u0004\u0012\u00020e\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bi\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020j\u0012\u0004\u0012\u00020\u00010\u0003*\u00020k8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010l\"\u001a\u0010m\u001a\u000e\u0012\u0004\u0012\u00020j\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020n\u0012\u0004\u0012\u00020\u00010\u0003*\u00020o8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010p\" \u0010q\u001a\u000e\u0012\u0004\u0012\u00020n\u0012\u0004\u0012\u00020\u00010\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\br\u0010s\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020t\u0012\u0004\u0012\u00020\u00010\u0003*\u00020u8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010v\"\u001a\u0010w\u001a\u000e\u0012\u0004\u0012\u00020t\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020x\u0012\u0004\u0012\u00020\u00010\u0003*\u00020y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010z\"\u001a\u0010{\u001a\u000e\u0012\u0004\u0012\u00020x\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020|\u0012\u0004\u0012\u00020\u00010\u0003*\u00020}8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010~\"\u001a\u0010\u007f\u001a\u000e\u0012\u0004\u0012\u00020|\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0080\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0081\u00018@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u0082\u0001\"\u001c\u0010\u0083\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0080\u0001\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0084\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0085\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u0086\u0001\"\u001c\u0010\u0087\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0084\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0088\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0089\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u008a\u0001\"\u001c\u0010\u008b\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0088\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u008c\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u008d\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u008e\u0001\"\u001c\u0010\u008f\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u008c\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0090\u0001"}, d2 = {"save", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/saveable/Saver;", "Original", "Saveable", "value", "saver", "scope", "Landroidx/compose/runtime/saveable/SaverScope;", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;Landroidx/compose/runtime/saveable/SaverScope;)Ljava/lang/Object;", "restore", "Result", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;)Ljava/lang/Object;", "NonNullValueClassSaver", "Landroidx/compose/ui/text/NonNullValueClassSaver;", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "Lkotlin/Function1;", "(Ljava/lang/Object;)Ljava/lang/Object;", "AnnotatedStringSaver", "Landroidx/compose/ui/text/AnnotatedString;", "getAnnotatedStringSaver", "()Landroidx/compose/runtime/saveable/Saver;", "AnnotationRangeListSaver", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "AnnotationRangeSaver", "getAnnotationRangeSaver$annotations", "()V", "VerbatimTtsAnnotationSaver", "Landroidx/compose/ui/text/VerbatimTtsAnnotation;", "UrlAnnotationSaver", "Landroidx/compose/ui/text/UrlAnnotation;", "getUrlAnnotationSaver$annotations", "LinkSaver", "Landroidx/compose/ui/text/LinkAnnotation$Url;", "ClickableSaver", "Landroidx/compose/ui/text/LinkAnnotation$Clickable;", "ParagraphStyleSaver", "Landroidx/compose/ui/text/ParagraphStyle;", "getParagraphStyleSaver", "SpanStyleSaver", "Landroidx/compose/ui/text/SpanStyle;", "getSpanStyleSaver", "TextLinkStylesSaver", "Landroidx/compose/ui/text/TextLinkStyles;", "getTextLinkStylesSaver", "Saver", "Landroidx/compose/ui/text/style/TextDecoration;", "Landroidx/compose/ui/text/style/TextDecoration$Companion;", "getSaver", "(Landroidx/compose/ui/text/style/TextDecoration$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextDecorationSaver", "Landroidx/compose/ui/text/style/TextGeometricTransform;", "Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;", "(Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextGeometricTransformSaver", "Landroidx/compose/ui/text/style/TextIndent;", "Landroidx/compose/ui/text/style/TextIndent$Companion;", "(Landroidx/compose/ui/text/style/TextIndent$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextIndentSaver", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontWeight$Companion;", "(Landroidx/compose/ui/text/font/FontWeight$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontWeightSaver", "Landroidx/compose/ui/text/style/BaselineShift;", "Landroidx/compose/ui/text/style/BaselineShift$Companion;", "(Landroidx/compose/ui/text/style/BaselineShift$Companion;)Landroidx/compose/runtime/saveable/Saver;", "BaselineShiftSaver", "Landroidx/compose/ui/text/TextRange;", "Landroidx/compose/ui/text/TextRange$Companion;", "(Landroidx/compose/ui/text/TextRange$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextRangeSaver", "Landroidx/compose/ui/graphics/Shadow;", "Landroidx/compose/ui/graphics/Shadow$Companion;", "(Landroidx/compose/ui/graphics/Shadow$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ShadowSaver", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/ui/graphics/Color$Companion;", "(Landroidx/compose/ui/graphics/Color$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ColorSaver", "Landroidx/compose/ui/text/style/TextAlign;", "Landroidx/compose/ui/text/style/TextAlign$Companion;", "(Landroidx/compose/ui/text/style/TextAlign$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextAlignSaver", "Landroidx/compose/ui/text/style/TextDirection;", "Landroidx/compose/ui/text/style/TextDirection$Companion;", "(Landroidx/compose/ui/text/style/TextDirection$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextDirectionSaver", "Landroidx/compose/ui/text/style/Hyphens;", "Landroidx/compose/ui/text/style/Hyphens$Companion;", "(Landroidx/compose/ui/text/style/Hyphens$Companion;)Landroidx/compose/runtime/saveable/Saver;", "HyphensSaver", "Landroidx/compose/ui/text/font/FontStyle;", "Landroidx/compose/ui/text/font/FontStyle$Companion;", "(Landroidx/compose/ui/text/font/FontStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontStyleSaver", "getFontStyleSaver", "Landroidx/compose/ui/text/font/FontSynthesis;", "Landroidx/compose/ui/text/font/FontSynthesis$Companion;", "(Landroidx/compose/ui/text/font/FontSynthesis$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontSynthesisSaver", "getFontSynthesisSaver", "Landroidx/compose/ui/unit/TextUnit;", "Landroidx/compose/ui/unit/TextUnit$Companion;", "(Landroidx/compose/ui/unit/TextUnit$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextUnitSaver", "Landroidx/compose/ui/unit/TextUnitType;", "Landroidx/compose/ui/unit/TextUnitType$Companion;", "(Landroidx/compose/ui/unit/TextUnitType$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextUnitTypeSaver", "getTextUnitTypeSaver", "()Landroidx/compose/ui/text/NonNullValueClassSaver;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/ui/geometry/Offset$Companion;", "(Landroidx/compose/ui/geometry/Offset$Companion;)Landroidx/compose/runtime/saveable/Saver;", "OffsetSaver", "Landroidx/compose/ui/text/intl/LocaleList;", "Landroidx/compose/ui/text/intl/LocaleList$Companion;", "(Landroidx/compose/ui/text/intl/LocaleList$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleListSaver", "Landroidx/compose/ui/text/intl/Locale;", "Landroidx/compose/ui/text/intl/Locale$Companion;", "(Landroidx/compose/ui/text/intl/Locale$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleSaver", "Landroidx/compose/ui/text/style/LineHeightStyle;", "Landroidx/compose/ui/text/style/LineHeightStyle$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Alignment;", "Landroidx/compose/ui/text/style/LineHeightStyle$Alignment$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Alignment$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleAlignmentSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Trim;", "Landroidx/compose/ui/text/style/LineHeightStyle$Trim$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Trim$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleTrimSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Mode;", "Landroidx/compose/ui/text/style/LineHeightStyle$Mode$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Mode$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleModeSaver", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class SaversKt {
     private static final Saver<AnnotatedString, Object> AnnotatedStringSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object AnnotatedStringSaver$lambda$5;
-            AnnotatedStringSaver$lambda$5 = SaversKt.AnnotatedStringSaver$lambda$5((SaverScope) obj, (AnnotatedString) obj2);
-            return AnnotatedStringSaver$lambda$5;
+            Object AnnotatedStringSaver$lambda$0;
+            AnnotatedStringSaver$lambda$0 = SaversKt.AnnotatedStringSaver$lambda$0((SaverScope) obj, (AnnotatedString) obj2);
+            return AnnotatedStringSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnnotatedString AnnotatedStringSaver$lambda$6;
-            AnnotatedStringSaver$lambda$6 = SaversKt.AnnotatedStringSaver$lambda$6(obj);
-            return AnnotatedStringSaver$lambda$6;
+            AnnotatedString AnnotatedStringSaver$lambda$1;
+            AnnotatedStringSaver$lambda$1 = SaversKt.AnnotatedStringSaver$lambda$1(obj);
+            return AnnotatedStringSaver$lambda$1;
         }
     });
     private static final Saver<List<AnnotatedString.Range<? extends Object>>, Object> AnnotationRangeListSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda14
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object AnnotationRangeListSaver$lambda$8;
-            AnnotationRangeListSaver$lambda$8 = SaversKt.AnnotationRangeListSaver$lambda$8((SaverScope) obj, (List) obj2);
-            return AnnotationRangeListSaver$lambda$8;
+            Object AnnotationRangeListSaver$lambda$0;
+            AnnotationRangeListSaver$lambda$0 = SaversKt.AnnotationRangeListSaver$lambda$0((SaverScope) obj, (List) obj2);
+            return AnnotationRangeListSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda26
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            List AnnotationRangeListSaver$lambda$10;
-            AnnotationRangeListSaver$lambda$10 = SaversKt.AnnotationRangeListSaver$lambda$10(obj);
-            return AnnotationRangeListSaver$lambda$10;
+            List AnnotationRangeListSaver$lambda$1;
+            AnnotationRangeListSaver$lambda$1 = SaversKt.AnnotationRangeListSaver$lambda$1(obj);
+            return AnnotationRangeListSaver$lambda$1;
         }
     });
-    private static final Saver<AnnotatedString.Range<? extends Object>, Object> AnnotationRangeSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda31
+    private static final Saver<AnnotatedString.Range<? extends Object>, Object> AnnotationRangeSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda38
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object AnnotationRangeSaver$lambda$11;
-            AnnotationRangeSaver$lambda$11 = SaversKt.AnnotationRangeSaver$lambda$11((SaverScope) obj, (AnnotatedString.Range) obj2);
-            return AnnotationRangeSaver$lambda$11;
+            Object AnnotationRangeSaver$lambda$0;
+            AnnotationRangeSaver$lambda$0 = SaversKt.AnnotationRangeSaver$lambda$0((SaverScope) obj, (AnnotatedString.Range) obj2);
+            return AnnotationRangeSaver$lambda$0;
         }
-    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda32
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda50
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnnotatedString.Range AnnotationRangeSaver$lambda$12;
-            AnnotationRangeSaver$lambda$12 = SaversKt.AnnotationRangeSaver$lambda$12(obj);
-            return AnnotationRangeSaver$lambda$12;
+            AnnotatedString.Range AnnotationRangeSaver$lambda$1;
+            AnnotationRangeSaver$lambda$1 = SaversKt.AnnotationRangeSaver$lambda$1(obj);
+            return AnnotationRangeSaver$lambda$1;
         }
     });
-    private static final Saver<VerbatimTtsAnnotation, Object> VerbatimTtsAnnotationSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda34
+    private static final Saver<VerbatimTtsAnnotation, Object> VerbatimTtsAnnotationSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda53
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object VerbatimTtsAnnotationSaver$lambda$13;
-            VerbatimTtsAnnotationSaver$lambda$13 = SaversKt.VerbatimTtsAnnotationSaver$lambda$13((SaverScope) obj, (VerbatimTtsAnnotation) obj2);
-            return VerbatimTtsAnnotationSaver$lambda$13;
+            Object VerbatimTtsAnnotationSaver$lambda$0;
+            VerbatimTtsAnnotationSaver$lambda$0 = SaversKt.VerbatimTtsAnnotationSaver$lambda$0((SaverScope) obj, (VerbatimTtsAnnotation) obj2);
+            return VerbatimTtsAnnotationSaver$lambda$0;
         }
-    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda35
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda54
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            VerbatimTtsAnnotation VerbatimTtsAnnotationSaver$lambda$14;
-            VerbatimTtsAnnotationSaver$lambda$14 = SaversKt.VerbatimTtsAnnotationSaver$lambda$14(obj);
-            return VerbatimTtsAnnotationSaver$lambda$14;
+            VerbatimTtsAnnotation VerbatimTtsAnnotationSaver$lambda$1;
+            VerbatimTtsAnnotationSaver$lambda$1 = SaversKt.VerbatimTtsAnnotationSaver$lambda$1(obj);
+            return VerbatimTtsAnnotationSaver$lambda$1;
         }
     });
-    private static final Saver<UrlAnnotation, Object> UrlAnnotationSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda36
+    private static final Saver<UrlAnnotation, Object> UrlAnnotationSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda56
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object UrlAnnotationSaver$lambda$15;
-            UrlAnnotationSaver$lambda$15 = SaversKt.UrlAnnotationSaver$lambda$15((SaverScope) obj, (UrlAnnotation) obj2);
-            return UrlAnnotationSaver$lambda$15;
+            Object UrlAnnotationSaver$lambda$0;
+            UrlAnnotationSaver$lambda$0 = SaversKt.UrlAnnotationSaver$lambda$0((SaverScope) obj, (UrlAnnotation) obj2);
+            return UrlAnnotationSaver$lambda$0;
         }
-    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda37
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda57
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            UrlAnnotation UrlAnnotationSaver$lambda$16;
-            UrlAnnotationSaver$lambda$16 = SaversKt.UrlAnnotationSaver$lambda$16(obj);
-            return UrlAnnotationSaver$lambda$16;
+            UrlAnnotation UrlAnnotationSaver$lambda$1;
+            UrlAnnotationSaver$lambda$1 = SaversKt.UrlAnnotationSaver$lambda$1(obj);
+            return UrlAnnotationSaver$lambda$1;
         }
     });
     private static final Saver<LinkAnnotation.Url, Object> LinkSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda11
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object LinkSaver$lambda$17;
-            LinkSaver$lambda$17 = SaversKt.LinkSaver$lambda$17((SaverScope) obj, (LinkAnnotation.Url) obj2);
-            return LinkSaver$lambda$17;
+            Object LinkSaver$lambda$0;
+            LinkSaver$lambda$0 = SaversKt.LinkSaver$lambda$0((SaverScope) obj, (LinkAnnotation.Url) obj2);
+            return LinkSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda22
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            LinkAnnotation.Url LinkSaver$lambda$18;
-            LinkSaver$lambda$18 = SaversKt.LinkSaver$lambda$18(obj);
-            return LinkSaver$lambda$18;
+            LinkAnnotation.Url LinkSaver$lambda$1;
+            LinkSaver$lambda$1 = SaversKt.LinkSaver$lambda$1(obj);
+            return LinkSaver$lambda$1;
         }
     });
     private static final Saver<LinkAnnotation.Clickable, Object> ClickableSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda33
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object ClickableSaver$lambda$19;
-            ClickableSaver$lambda$19 = SaversKt.ClickableSaver$lambda$19((SaverScope) obj, (LinkAnnotation.Clickable) obj2);
-            return ClickableSaver$lambda$19;
+            Object ClickableSaver$lambda$0;
+            ClickableSaver$lambda$0 = SaversKt.ClickableSaver$lambda$0((SaverScope) obj, (LinkAnnotation.Clickable) obj2);
+            return ClickableSaver$lambda$0;
         }
-    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda38
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda44
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            LinkAnnotation.Clickable ClickableSaver$lambda$20;
-            ClickableSaver$lambda$20 = SaversKt.ClickableSaver$lambda$20(obj);
-            return ClickableSaver$lambda$20;
+            LinkAnnotation.Clickable ClickableSaver$lambda$1;
+            ClickableSaver$lambda$1 = SaversKt.ClickableSaver$lambda$1(obj);
+            return ClickableSaver$lambda$1;
         }
     });
-    private static final Saver<ParagraphStyle, Object> ParagraphStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda39
+    private static final Saver<ParagraphStyle, Object> ParagraphStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda55
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object ParagraphStyleSaver$lambda$21;
-            ParagraphStyleSaver$lambda$21 = SaversKt.ParagraphStyleSaver$lambda$21((SaverScope) obj, (ParagraphStyle) obj2);
-            return ParagraphStyleSaver$lambda$21;
+            Object ParagraphStyleSaver$lambda$0;
+            ParagraphStyleSaver$lambda$0 = SaversKt.ParagraphStyleSaver$lambda$0((SaverScope) obj, (ParagraphStyle) obj2);
+            return ParagraphStyleSaver$lambda$0;
         }
-    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda40
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda58
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            ParagraphStyle ParagraphStyleSaver$lambda$22;
-            ParagraphStyleSaver$lambda$22 = SaversKt.ParagraphStyleSaver$lambda$22(obj);
-            return ParagraphStyleSaver$lambda$22;
+            ParagraphStyle ParagraphStyleSaver$lambda$1;
+            ParagraphStyleSaver$lambda$1 = SaversKt.ParagraphStyleSaver$lambda$1(obj);
+            return ParagraphStyleSaver$lambda$1;
         }
     });
-    private static final Saver<SpanStyle, Object> SpanStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda41
+    private static final Saver<SpanStyle, Object> SpanStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda59
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object SpanStyleSaver$lambda$23;
-            SpanStyleSaver$lambda$23 = SaversKt.SpanStyleSaver$lambda$23((SaverScope) obj, (SpanStyle) obj2);
-            return SpanStyleSaver$lambda$23;
+            Object SpanStyleSaver$lambda$0;
+            SpanStyleSaver$lambda$0 = SaversKt.SpanStyleSaver$lambda$0((SaverScope) obj, (SpanStyle) obj2);
+            return SpanStyleSaver$lambda$0;
         }
-    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda42
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda60
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            SpanStyle SpanStyleSaver$lambda$24;
-            SpanStyleSaver$lambda$24 = SaversKt.SpanStyleSaver$lambda$24(obj);
-            return SpanStyleSaver$lambda$24;
+            SpanStyle SpanStyleSaver$lambda$1;
+            SpanStyleSaver$lambda$1 = SaversKt.SpanStyleSaver$lambda$1(obj);
+            return SpanStyleSaver$lambda$1;
         }
     });
-    private static final Saver<TextLinkStyles, Object> TextLinkStylesSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda43
+    private static final Saver<TextLinkStyles, Object> TextLinkStylesSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda61
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object TextLinkStylesSaver$lambda$25;
-            TextLinkStylesSaver$lambda$25 = SaversKt.TextLinkStylesSaver$lambda$25((SaverScope) obj, (TextLinkStyles) obj2);
-            return TextLinkStylesSaver$lambda$25;
+            Object TextLinkStylesSaver$lambda$0;
+            TextLinkStylesSaver$lambda$0 = SaversKt.TextLinkStylesSaver$lambda$0((SaverScope) obj, (TextLinkStyles) obj2);
+            return TextLinkStylesSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TextLinkStyles TextLinkStylesSaver$lambda$26;
-            TextLinkStylesSaver$lambda$26 = SaversKt.TextLinkStylesSaver$lambda$26(obj);
-            return TextLinkStylesSaver$lambda$26;
+            TextLinkStyles TextLinkStylesSaver$lambda$1;
+            TextLinkStylesSaver$lambda$1 = SaversKt.TextLinkStylesSaver$lambda$1(obj);
+            return TextLinkStylesSaver$lambda$1;
         }
     });
     private static final Saver<TextDecoration, Object> TextDecorationSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object TextDecorationSaver$lambda$27;
-            TextDecorationSaver$lambda$27 = SaversKt.TextDecorationSaver$lambda$27((SaverScope) obj, (TextDecoration) obj2);
-            return TextDecorationSaver$lambda$27;
+            Object TextDecorationSaver$lambda$0;
+            TextDecorationSaver$lambda$0 = SaversKt.TextDecorationSaver$lambda$0((SaverScope) obj, (TextDecoration) obj2);
+            return TextDecorationSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TextDecoration TextDecorationSaver$lambda$28;
-            TextDecorationSaver$lambda$28 = SaversKt.TextDecorationSaver$lambda$28(obj);
-            return TextDecorationSaver$lambda$28;
+            TextDecoration TextDecorationSaver$lambda$1;
+            TextDecorationSaver$lambda$1 = SaversKt.TextDecorationSaver$lambda$1(obj);
+            return TextDecorationSaver$lambda$1;
         }
     });
     private static final Saver<TextGeometricTransform, Object> TextGeometricTransformSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object TextGeometricTransformSaver$lambda$29;
-            TextGeometricTransformSaver$lambda$29 = SaversKt.TextGeometricTransformSaver$lambda$29((SaverScope) obj, (TextGeometricTransform) obj2);
-            return TextGeometricTransformSaver$lambda$29;
+            Object TextGeometricTransformSaver$lambda$0;
+            TextGeometricTransformSaver$lambda$0 = SaversKt.TextGeometricTransformSaver$lambda$0((SaverScope) obj, (TextGeometricTransform) obj2);
+            return TextGeometricTransformSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda6
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TextGeometricTransform TextGeometricTransformSaver$lambda$30;
-            TextGeometricTransformSaver$lambda$30 = SaversKt.TextGeometricTransformSaver$lambda$30(obj);
-            return TextGeometricTransformSaver$lambda$30;
+            TextGeometricTransform TextGeometricTransformSaver$lambda$1;
+            TextGeometricTransformSaver$lambda$1 = SaversKt.TextGeometricTransformSaver$lambda$1(obj);
+            return TextGeometricTransformSaver$lambda$1;
         }
     });
     private static final Saver<TextIndent, Object> TextIndentSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda7
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object TextIndentSaver$lambda$31;
-            TextIndentSaver$lambda$31 = SaversKt.TextIndentSaver$lambda$31((SaverScope) obj, (TextIndent) obj2);
-            return TextIndentSaver$lambda$31;
+            Object TextIndentSaver$lambda$0;
+            TextIndentSaver$lambda$0 = SaversKt.TextIndentSaver$lambda$0((SaverScope) obj, (TextIndent) obj2);
+            return TextIndentSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda8
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TextIndent TextIndentSaver$lambda$32;
-            TextIndentSaver$lambda$32 = SaversKt.TextIndentSaver$lambda$32(obj);
-            return TextIndentSaver$lambda$32;
+            TextIndent TextIndentSaver$lambda$1;
+            TextIndentSaver$lambda$1 = SaversKt.TextIndentSaver$lambda$1(obj);
+            return TextIndentSaver$lambda$1;
         }
     });
     private static final Saver<FontWeight, Object> FontWeightSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda9
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object FontWeightSaver$lambda$33;
-            FontWeightSaver$lambda$33 = SaversKt.FontWeightSaver$lambda$33((SaverScope) obj, (FontWeight) obj2);
-            return FontWeightSaver$lambda$33;
+            Object FontWeightSaver$lambda$0;
+            FontWeightSaver$lambda$0 = SaversKt.FontWeightSaver$lambda$0((SaverScope) obj, (FontWeight) obj2);
+            return FontWeightSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda10
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            FontWeight FontWeightSaver$lambda$34;
-            FontWeightSaver$lambda$34 = SaversKt.FontWeightSaver$lambda$34(obj);
-            return FontWeightSaver$lambda$34;
+            FontWeight FontWeightSaver$lambda$1;
+            FontWeightSaver$lambda$1 = SaversKt.FontWeightSaver$lambda$1(obj);
+            return FontWeightSaver$lambda$1;
         }
     });
     private static final Saver<BaselineShift, Object> BaselineShiftSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda12
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object BaselineShiftSaver$lambda$35;
-            BaselineShiftSaver$lambda$35 = SaversKt.BaselineShiftSaver$lambda$35((SaverScope) obj, (BaselineShift) obj2);
-            return BaselineShiftSaver$lambda$35;
+            Object BaselineShiftSaver$lambda$0;
+            BaselineShiftSaver$lambda$0 = SaversKt.BaselineShiftSaver$lambda$0((SaverScope) obj, (BaselineShift) obj2);
+            return BaselineShiftSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda13
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            BaselineShift BaselineShiftSaver$lambda$36;
-            BaselineShiftSaver$lambda$36 = SaversKt.BaselineShiftSaver$lambda$36(obj);
-            return BaselineShiftSaver$lambda$36;
+            BaselineShift BaselineShiftSaver$lambda$1;
+            BaselineShiftSaver$lambda$1 = SaversKt.BaselineShiftSaver$lambda$1(obj);
+            return BaselineShiftSaver$lambda$1;
         }
     });
     private static final Saver<TextRange, Object> TextRangeSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda15
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object TextRangeSaver$lambda$37;
-            TextRangeSaver$lambda$37 = SaversKt.TextRangeSaver$lambda$37((SaverScope) obj, (TextRange) obj2);
-            return TextRangeSaver$lambda$37;
+            Object TextRangeSaver$lambda$0;
+            TextRangeSaver$lambda$0 = SaversKt.TextRangeSaver$lambda$0((SaverScope) obj, (TextRange) obj2);
+            return TextRangeSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda16
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TextRange TextRangeSaver$lambda$38;
-            TextRangeSaver$lambda$38 = SaversKt.TextRangeSaver$lambda$38(obj);
-            return TextRangeSaver$lambda$38;
+            TextRange TextRangeSaver$lambda$1;
+            TextRangeSaver$lambda$1 = SaversKt.TextRangeSaver$lambda$1(obj);
+            return TextRangeSaver$lambda$1;
         }
     });
     private static final Saver<Shadow, Object> ShadowSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda17
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object ShadowSaver$lambda$39;
-            ShadowSaver$lambda$39 = SaversKt.ShadowSaver$lambda$39((SaverScope) obj, (Shadow) obj2);
-            return ShadowSaver$lambda$39;
+            Object ShadowSaver$lambda$0;
+            ShadowSaver$lambda$0 = SaversKt.ShadowSaver$lambda$0((SaverScope) obj, (Shadow) obj2);
+            return ShadowSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda18
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Shadow ShadowSaver$lambda$40;
-            ShadowSaver$lambda$40 = SaversKt.ShadowSaver$lambda$40(obj);
-            return ShadowSaver$lambda$40;
+            Shadow ShadowSaver$lambda$1;
+            ShadowSaver$lambda$1 = SaversKt.ShadowSaver$lambda$1(obj);
+            return ShadowSaver$lambda$1;
         }
     });
     private static final NonNullValueClassSaver<Color, Object> ColorSaver = NonNullValueClassSaver(new Function2<SaverScope, Color, Object>() { // from class: androidx.compose.ui.text.SaversKt$ColorSaver$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Object invoke(SaverScope saverScope, Color color) {
-            return m7387invoke4WTKRHQ(saverScope, color.m5290unboximpl());
+            return m7627invoke4WTKRHQ(saverScope, color.m5434unboximpl());
         }
 
         /* renamed from: invoke-4WTKRHQ  reason: not valid java name */
-        public final Object m7387invoke4WTKRHQ(SaverScope saverScope, long j) {
+        public final Object m7627invoke4WTKRHQ(SaverScope saverScope, long j) {
             if (j == 16) {
                 return false;
             }
-            return Integer.valueOf(ColorKt.m5334toArgb8_81llA(j));
+            return Integer.valueOf(ColorKt.m5478toArgb8_81llA(j));
         }
     }, new Function1<Object, Color>() { // from class: androidx.compose.ui.text.SaversKt$ColorSaver$2
         @Override // kotlin.jvm.functions.Function1
         /* renamed from: invoke-ijrfgN4  reason: not valid java name */
         public final Color invoke(Object obj) {
             if (Intrinsics.areEqual(obj, (Object) false)) {
-                return Color.m5270boximpl(Color.Companion.m5316getUnspecified0d7_KjU());
+                return Color.m5414boximpl(Color.Companion.m5460getUnspecified0d7_KjU());
             }
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-            return Color.m5270boximpl(ColorKt.Color(((Integer) obj).intValue()));
+            return Color.m5414boximpl(ColorKt.Color(((Integer) obj).intValue()));
         }
     });
-    private static final NonNullValueClassSaver<TextUnit, Object> TextUnitSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda19
+    private static final NonNullValueClassSaver<TextAlign, Object> TextAlignSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda19
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object TextUnitSaver$lambda$41;
-            TextUnitSaver$lambda$41 = SaversKt.TextUnitSaver$lambda$41((SaverScope) obj, (TextUnit) obj2);
-            return TextUnitSaver$lambda$41;
+            Object TextAlignSaver$lambda$0;
+            TextAlignSaver$lambda$0 = SaversKt.TextAlignSaver$lambda$0((SaverScope) obj, (TextAlign) obj2);
+            return TextAlignSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda20
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TextUnit TextUnitSaver$lambda$42;
-            TextUnitSaver$lambda$42 = SaversKt.TextUnitSaver$lambda$42(obj);
-            return TextUnitSaver$lambda$42;
+            TextAlign TextAlignSaver$lambda$1;
+            TextAlignSaver$lambda$1 = SaversKt.TextAlignSaver$lambda$1(obj);
+            return TextAlignSaver$lambda$1;
         }
     });
-    private static final NonNullValueClassSaver<Offset, Object> OffsetSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda21
+    private static final NonNullValueClassSaver<TextDirection, Object> TextDirectionSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda21
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object OffsetSaver$lambda$43;
-            OffsetSaver$lambda$43 = SaversKt.OffsetSaver$lambda$43((SaverScope) obj, (Offset) obj2);
-            return OffsetSaver$lambda$43;
+            Object TextDirectionSaver$lambda$0;
+            TextDirectionSaver$lambda$0 = SaversKt.TextDirectionSaver$lambda$0((SaverScope) obj, (TextDirection) obj2);
+            return TextDirectionSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda23
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Offset OffsetSaver$lambda$44;
-            OffsetSaver$lambda$44 = SaversKt.OffsetSaver$lambda$44(obj);
-            return OffsetSaver$lambda$44;
+            TextDirection TextDirectionSaver$lambda$1;
+            TextDirectionSaver$lambda$1 = SaversKt.TextDirectionSaver$lambda$1(obj);
+            return TextDirectionSaver$lambda$1;
         }
     });
-    private static final Saver<LocaleList, Object> LocaleListSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda24
+    private static final NonNullValueClassSaver<Hyphens, Object> HyphensSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda24
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object LocaleListSaver$lambda$46;
-            LocaleListSaver$lambda$46 = SaversKt.LocaleListSaver$lambda$46((SaverScope) obj, (LocaleList) obj2);
-            return LocaleListSaver$lambda$46;
+            Object HyphensSaver$lambda$0;
+            HyphensSaver$lambda$0 = SaversKt.HyphensSaver$lambda$0((SaverScope) obj, (Hyphens) obj2);
+            return HyphensSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda25
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            LocaleList LocaleListSaver$lambda$48;
-            LocaleListSaver$lambda$48 = SaversKt.LocaleListSaver$lambda$48(obj);
-            return LocaleListSaver$lambda$48;
+            Hyphens HyphensSaver$lambda$1;
+            HyphensSaver$lambda$1 = SaversKt.HyphensSaver$lambda$1(obj);
+            return HyphensSaver$lambda$1;
         }
     });
-    private static final Saver<Locale, Object> LocaleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda27
+    private static final Saver<FontStyle, Object> FontStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda27
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object LocaleSaver$lambda$49;
-            LocaleSaver$lambda$49 = SaversKt.LocaleSaver$lambda$49((SaverScope) obj, (Locale) obj2);
-            return LocaleSaver$lambda$49;
+            Object FontStyleSaver$lambda$0;
+            FontStyleSaver$lambda$0 = SaversKt.FontStyleSaver$lambda$0((SaverScope) obj, (FontStyle) obj2);
+            return FontStyleSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda28
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Locale LocaleSaver$lambda$50;
-            LocaleSaver$lambda$50 = SaversKt.LocaleSaver$lambda$50(obj);
-            return LocaleSaver$lambda$50;
+            FontStyle FontStyleSaver$lambda$1;
+            FontStyleSaver$lambda$1 = SaversKt.FontStyleSaver$lambda$1(obj);
+            return FontStyleSaver$lambda$1;
         }
     });
-    private static final Saver<LineHeightStyle, Object> LineHeightStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda29
+    private static final Saver<FontSynthesis, Object> FontSynthesisSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda29
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object LineHeightStyleSaver$lambda$51;
-            LineHeightStyleSaver$lambda$51 = SaversKt.LineHeightStyleSaver$lambda$51((SaverScope) obj, (LineHeightStyle) obj2);
-            return LineHeightStyleSaver$lambda$51;
+            Object FontSynthesisSaver$lambda$0;
+            FontSynthesisSaver$lambda$0 = SaversKt.FontSynthesisSaver$lambda$0((SaverScope) obj, (FontSynthesis) obj2);
+            return FontSynthesisSaver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda30
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            LineHeightStyle LineHeightStyleSaver$lambda$52;
-            LineHeightStyleSaver$lambda$52 = SaversKt.LineHeightStyleSaver$lambda$52(obj);
-            return LineHeightStyleSaver$lambda$52;
+            FontSynthesis FontSynthesisSaver$lambda$1;
+            FontSynthesisSaver$lambda$1 = SaversKt.FontSynthesisSaver$lambda$1(obj);
+            return FontSynthesisSaver$lambda$1;
+        }
+    });
+    private static final NonNullValueClassSaver<TextUnit, Object> TextUnitSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda31
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object TextUnitSaver$lambda$0;
+            TextUnitSaver$lambda$0 = SaversKt.TextUnitSaver$lambda$0((SaverScope) obj, (TextUnit) obj2);
+            return TextUnitSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda32
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            TextUnit TextUnitSaver$lambda$1;
+            TextUnitSaver$lambda$1 = SaversKt.TextUnitSaver$lambda$1(obj);
+            return TextUnitSaver$lambda$1;
+        }
+    });
+    private static final NonNullValueClassSaver<TextUnitType, Object> TextUnitTypeSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda34
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object TextUnitTypeSaver$lambda$0;
+            TextUnitTypeSaver$lambda$0 = SaversKt.TextUnitTypeSaver$lambda$0((SaverScope) obj, (TextUnitType) obj2);
+            return TextUnitTypeSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda35
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            TextUnitType TextUnitTypeSaver$lambda$1;
+            TextUnitTypeSaver$lambda$1 = SaversKt.TextUnitTypeSaver$lambda$1(obj);
+            return TextUnitTypeSaver$lambda$1;
+        }
+    });
+    private static final NonNullValueClassSaver<Offset, Object> OffsetSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda36
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object OffsetSaver$lambda$0;
+            OffsetSaver$lambda$0 = SaversKt.OffsetSaver$lambda$0((SaverScope) obj, (Offset) obj2);
+            return OffsetSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda37
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            Offset OffsetSaver$lambda$1;
+            OffsetSaver$lambda$1 = SaversKt.OffsetSaver$lambda$1(obj);
+            return OffsetSaver$lambda$1;
+        }
+    });
+    private static final Saver<LocaleList, Object> LocaleListSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda39
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object LocaleListSaver$lambda$0;
+            LocaleListSaver$lambda$0 = SaversKt.LocaleListSaver$lambda$0((SaverScope) obj, (LocaleList) obj2);
+            return LocaleListSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda40
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            LocaleList LocaleListSaver$lambda$1;
+            LocaleListSaver$lambda$1 = SaversKt.LocaleListSaver$lambda$1(obj);
+            return LocaleListSaver$lambda$1;
+        }
+    });
+    private static final Saver<Locale, Object> LocaleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda41
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object LocaleSaver$lambda$0;
+            LocaleSaver$lambda$0 = SaversKt.LocaleSaver$lambda$0((SaverScope) obj, (Locale) obj2);
+            return LocaleSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda42
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            Locale LocaleSaver$lambda$1;
+            LocaleSaver$lambda$1 = SaversKt.LocaleSaver$lambda$1(obj);
+            return LocaleSaver$lambda$1;
+        }
+    });
+    private static final Saver<LineHeightStyle, Object> LineHeightStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda43
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object LineHeightStyleSaver$lambda$0;
+            LineHeightStyleSaver$lambda$0 = SaversKt.LineHeightStyleSaver$lambda$0((SaverScope) obj, (LineHeightStyle) obj2);
+            return LineHeightStyleSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda45
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            LineHeightStyle LineHeightStyleSaver$lambda$1;
+            LineHeightStyleSaver$lambda$1 = SaversKt.LineHeightStyleSaver$lambda$1(obj);
+            return LineHeightStyleSaver$lambda$1;
+        }
+    });
+    private static final NonNullValueClassSaver<LineHeightStyle.Alignment, Object> LineHeightStyleAlignmentSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda46
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object LineHeightStyleAlignmentSaver$lambda$0;
+            LineHeightStyleAlignmentSaver$lambda$0 = SaversKt.LineHeightStyleAlignmentSaver$lambda$0((SaverScope) obj, (LineHeightStyle.Alignment) obj2);
+            return LineHeightStyleAlignmentSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda47
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            LineHeightStyle.Alignment LineHeightStyleAlignmentSaver$lambda$1;
+            LineHeightStyleAlignmentSaver$lambda$1 = SaversKt.LineHeightStyleAlignmentSaver$lambda$1(obj);
+            return LineHeightStyleAlignmentSaver$lambda$1;
+        }
+    });
+    private static final NonNullValueClassSaver<LineHeightStyle.Trim, Object> LineHeightStyleTrimSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda48
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object LineHeightStyleTrimSaver$lambda$0;
+            LineHeightStyleTrimSaver$lambda$0 = SaversKt.LineHeightStyleTrimSaver$lambda$0((SaverScope) obj, (LineHeightStyle.Trim) obj2);
+            return LineHeightStyleTrimSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda49
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            LineHeightStyle.Trim LineHeightStyleTrimSaver$lambda$1;
+            LineHeightStyleTrimSaver$lambda$1 = SaversKt.LineHeightStyleTrimSaver$lambda$1(obj);
+            return LineHeightStyleTrimSaver$lambda$1;
+        }
+    });
+    private static final NonNullValueClassSaver<LineHeightStyle.Mode, Object> LineHeightStyleModeSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda51
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            Object LineHeightStyleModeSaver$lambda$0;
+            LineHeightStyleModeSaver$lambda$0 = SaversKt.LineHeightStyleModeSaver$lambda$0((SaverScope) obj, (LineHeightStyle.Mode) obj2);
+            return LineHeightStyleModeSaver$lambda$0;
+        }
+    }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda52
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            LineHeightStyle.Mode LineHeightStyleModeSaver$lambda$1;
+            LineHeightStyleModeSaver$lambda$1 = SaversKt.LineHeightStyleModeSaver$lambda$1(obj);
+            return LineHeightStyleModeSaver$lambda$1;
         }
     });
 
     /* compiled from: Savers.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -495,12 +630,12 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object AnnotatedStringSaver$lambda$5(SaverScope saverScope, AnnotatedString annotatedString) {
+    public static final Object AnnotatedStringSaver$lambda$0(SaverScope saverScope, AnnotatedString annotatedString) {
         return CollectionsKt.arrayListOf(save(annotatedString.getText()), save(annotatedString.getAnnotations$ui_text(), AnnotationRangeListSaver, saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnnotatedString AnnotatedStringSaver$lambda$6(Object obj) {
+    public static final AnnotatedString AnnotatedStringSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
         Object obj2 = list.get(1);
@@ -513,7 +648,7 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List AnnotationRangeListSaver$lambda$10(Object obj) {
+    public static final List AnnotationRangeListSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         ArrayList arrayList = new ArrayList(list.size());
@@ -533,7 +668,7 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object AnnotationRangeSaver$lambda$11(SaverScope saverScope, AnnotatedString.Range range) {
+    public static final Object AnnotationRangeSaver$lambda$0(SaverScope saverScope, AnnotatedString.Range range) {
         AnnotationType annotationType;
         Object save;
         Object item = range.getItem();
@@ -588,7 +723,7 @@ public final class SaversKt {
             case 7:
                 Object item8 = range.getItem();
                 Intrinsics.checkNotNull(item8, "null cannot be cast to non-null type androidx.compose.ui.text.StringAnnotation");
-                save = save(((StringAnnotation) item8).m7412unboximpl());
+                save = save(((StringAnnotation) item8).m7654unboximpl());
                 break;
             default:
                 throw new NoWhenBranchMatchedException();
@@ -597,7 +732,7 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnnotatedString.Range AnnotationRangeSaver$lambda$12(Object obj) {
+    public static final AnnotatedString.Range AnnotationRangeSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         Object obj2 = list.get(0);
@@ -679,43 +814,43 @@ public final class SaversKt {
                 Object obj12 = list.get(1);
                 String str2 = obj12 != null ? (String) obj12 : null;
                 Intrinsics.checkNotNull(str2);
-                return new AnnotatedString.Range(StringAnnotation.m7406boximpl(StringAnnotation.m7407constructorimpl(str2)), intValue, intValue2, str);
+                return new AnnotatedString.Range(StringAnnotation.m7648boximpl(StringAnnotation.m7649constructorimpl(str2)), intValue, intValue2, str);
             default:
                 throw new NoWhenBranchMatchedException();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object VerbatimTtsAnnotationSaver$lambda$13(SaverScope saverScope, VerbatimTtsAnnotation verbatimTtsAnnotation) {
+    public static final Object VerbatimTtsAnnotationSaver$lambda$0(SaverScope saverScope, VerbatimTtsAnnotation verbatimTtsAnnotation) {
         return save(verbatimTtsAnnotation.getVerbatim());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final VerbatimTtsAnnotation VerbatimTtsAnnotationSaver$lambda$14(Object obj) {
+    public static final VerbatimTtsAnnotation VerbatimTtsAnnotationSaver$lambda$1(Object obj) {
         String str = obj != null ? (String) obj : null;
         Intrinsics.checkNotNull(str);
         return new VerbatimTtsAnnotation(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object UrlAnnotationSaver$lambda$15(SaverScope saverScope, UrlAnnotation urlAnnotation) {
+    public static final Object UrlAnnotationSaver$lambda$0(SaverScope saverScope, UrlAnnotation urlAnnotation) {
         return save(urlAnnotation.getUrl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final UrlAnnotation UrlAnnotationSaver$lambda$16(Object obj) {
+    public static final UrlAnnotation UrlAnnotationSaver$lambda$1(Object obj) {
         String str = obj != null ? (String) obj : null;
         Intrinsics.checkNotNull(str);
         return new UrlAnnotation(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object LinkSaver$lambda$17(SaverScope saverScope, LinkAnnotation.Url url) {
+    public static final Object LinkSaver$lambda$0(SaverScope saverScope, LinkAnnotation.Url url) {
         return CollectionsKt.arrayListOf(save(url.getUrl()), save(url.getStyles(), TextLinkStylesSaver, saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LinkAnnotation.Url LinkSaver$lambda$18(Object obj) {
+    public static final LinkAnnotation.Url LinkSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
         Object obj2 = list.get(0);
@@ -731,12 +866,12 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object ClickableSaver$lambda$19(SaverScope saverScope, LinkAnnotation.Clickable clickable) {
+    public static final Object ClickableSaver$lambda$0(SaverScope saverScope, LinkAnnotation.Clickable clickable) {
         return CollectionsKt.arrayListOf(save(clickable.getTag()), save(clickable.getStyles(), TextLinkStylesSaver, saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LinkAnnotation.Clickable ClickableSaver$lambda$20(Object obj) {
+    public static final LinkAnnotation.Clickable ClickableSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
         Object obj2 = list.get(0);
@@ -752,52 +887,55 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object ParagraphStyleSaver$lambda$21(SaverScope saverScope, ParagraphStyle paragraphStyle) {
-        return CollectionsKt.arrayListOf(save(TextAlign.m7873boximpl(paragraphStyle.m7344getTextAligne0LSkKk())), save(TextDirection.m7887boximpl(paragraphStyle.m7346getTextDirections_7Xco())), save(TextUnit.m8180boximpl(paragraphStyle.m7342getLineHeightXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(paragraphStyle.getTextIndent(), getSaver(TextIndent.Companion), saverScope), save(paragraphStyle.getPlatformStyle(), Savers_androidKt.getSaver(PlatformParagraphStyle.Companion), saverScope), save(paragraphStyle.getLineHeightStyle(), getSaver(LineHeightStyle.Companion), saverScope), save(LineBreak.m7781boximpl(paragraphStyle.m7341getLineBreakrAG3T2k()), Savers_androidKt.getSaver(LineBreak.Companion), saverScope), save(Hyphens.m7771boximpl(paragraphStyle.m7339getHyphensvmbZdU8())), save(paragraphStyle.getTextMotion(), Savers_androidKt.getSaver(TextMotion.Companion), saverScope));
+    public static final Object ParagraphStyleSaver$lambda$0(SaverScope saverScope, ParagraphStyle paragraphStyle) {
+        return CollectionsKt.arrayListOf(save(TextAlign.m8129boximpl(paragraphStyle.m7580getTextAligne0LSkKk()), getSaver(TextAlign.Companion), saverScope), save(TextDirection.m8146boximpl(paragraphStyle.m7582getTextDirections_7Xco()), getSaver(TextDirection.Companion), saverScope), save(TextUnit.m8442boximpl(paragraphStyle.m7578getLineHeightXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(paragraphStyle.getTextIndent(), getSaver(TextIndent.Companion), saverScope), save(paragraphStyle.getPlatformStyle(), Savers_androidKt.getSaver(PlatformParagraphStyle.Companion), saverScope), save(paragraphStyle.getLineHeightStyle(), getSaver(LineHeightStyle.Companion), saverScope), save(LineBreak.m8034boximpl(paragraphStyle.m7577getLineBreakrAG3T2k()), Savers_androidKt.getSaver(LineBreak.Companion), saverScope), save(Hyphens.m8021boximpl(paragraphStyle.m7575getHyphensvmbZdU8()), getSaver(Hyphens.Companion), saverScope), save(paragraphStyle.getTextMotion(), Savers_androidKt.getSaver(TextMotion.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ParagraphStyle ParagraphStyleSaver$lambda$22(Object obj) {
+    public static final ParagraphStyle ParagraphStyleSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
         Object obj2 = list.get(0);
+        Saver<TextAlign, Object> saver = getSaver(TextAlign.Companion);
         TextMotion textMotion = null;
-        TextAlign textAlign = obj2 != null ? (TextAlign) obj2 : null;
-        Intrinsics.checkNotNull(textAlign);
-        int m7879unboximpl = textAlign.m7879unboximpl();
-        Object obj3 = list.get(1);
-        TextDirection textDirection = obj3 != null ? (TextDirection) obj3 : null;
-        Intrinsics.checkNotNull(textDirection);
-        int m7893unboximpl = textDirection.m7893unboximpl();
-        Object obj4 = list.get(2);
-        Saver<TextUnit, Object> saver = getSaver(TextUnit.Companion);
-        TextUnit restore = ((!Intrinsics.areEqual(obj4, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj4 != null) ? saver.restore(obj4) : null;
+        TextAlign restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        long m8199unboximpl = restore.m8199unboximpl();
+        int m8135unboximpl = restore.m8135unboximpl();
+        Object obj3 = list.get(1);
+        Saver<TextDirection, Object> saver2 = getSaver(TextDirection.Companion);
+        TextDirection restore2 = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) ? saver2.restore(obj3) : null;
+        Intrinsics.checkNotNull(restore2);
+        int m8152unboximpl = restore2.m8152unboximpl();
+        Object obj4 = list.get(2);
+        Saver<TextUnit, Object> saver3 = getSaver(TextUnit.Companion);
+        TextUnit restore3 = ((!Intrinsics.areEqual(obj4, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj4 != null) ? saver3.restore(obj4) : null;
+        Intrinsics.checkNotNull(restore3);
+        long m8461unboximpl = restore3.m8461unboximpl();
         Object obj5 = list.get(3);
-        Saver<TextIndent, Object> saver2 = getSaver(TextIndent.Companion);
-        TextIndent restore2 = ((!Intrinsics.areEqual(obj5, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj5 != null) ? saver2.restore(obj5) : null;
+        Saver<TextIndent, Object> saver4 = getSaver(TextIndent.Companion);
+        TextIndent restore4 = ((!Intrinsics.areEqual(obj5, (Object) false) || (saver4 instanceof NonNullValueClassSaver)) && obj5 != null) ? saver4.restore(obj5) : null;
         Object obj6 = list.get(4);
-        Saver<PlatformParagraphStyle, Object> saver3 = Savers_androidKt.getSaver(PlatformParagraphStyle.Companion);
-        PlatformParagraphStyle restore3 = ((!Intrinsics.areEqual(obj6, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj6 != null) ? saver3.restore(obj6) : null;
+        Saver<PlatformParagraphStyle, Object> saver5 = Savers_androidKt.getSaver(PlatformParagraphStyle.Companion);
+        PlatformParagraphStyle restore5 = ((!Intrinsics.areEqual(obj6, (Object) false) || (saver5 instanceof NonNullValueClassSaver)) && obj6 != null) ? saver5.restore(obj6) : null;
         Object obj7 = list.get(5);
-        Saver<LineHeightStyle, Object> saver4 = getSaver(LineHeightStyle.Companion);
-        LineHeightStyle restore4 = ((!Intrinsics.areEqual(obj7, (Object) false) || (saver4 instanceof NonNullValueClassSaver)) && obj7 != null) ? saver4.restore(obj7) : null;
+        Saver<LineHeightStyle, Object> saver6 = getSaver(LineHeightStyle.Companion);
+        LineHeightStyle restore6 = ((!Intrinsics.areEqual(obj7, (Object) false) || (saver6 instanceof NonNullValueClassSaver)) && obj7 != null) ? saver6.restore(obj7) : null;
         Object obj8 = list.get(6);
-        Saver<LineBreak, Object> saver5 = Savers_androidKt.getSaver(LineBreak.Companion);
-        LineBreak restore5 = ((!Intrinsics.areEqual(obj8, (Object) false) || (saver5 instanceof NonNullValueClassSaver)) && obj8 != null) ? saver5.restore(obj8) : null;
-        Intrinsics.checkNotNull(restore5);
-        int m7793unboximpl = restore5.m7793unboximpl();
+        Saver<LineBreak, Object> saver7 = Savers_androidKt.getSaver(LineBreak.Companion);
+        LineBreak restore7 = ((!Intrinsics.areEqual(obj8, (Object) false) || (saver7 instanceof NonNullValueClassSaver)) && obj8 != null) ? saver7.restore(obj8) : null;
+        Intrinsics.checkNotNull(restore7);
+        int m8046unboximpl = restore7.m8046unboximpl();
         Object obj9 = list.get(7);
-        Hyphens hyphens = obj9 != null ? (Hyphens) obj9 : null;
-        Intrinsics.checkNotNull(hyphens);
-        int m7777unboximpl = hyphens.m7777unboximpl();
+        Saver<Hyphens, Object> saver8 = getSaver(Hyphens.Companion);
+        Hyphens restore8 = ((!Intrinsics.areEqual(obj9, (Object) false) || (saver8 instanceof NonNullValueClassSaver)) && obj9 != null) ? saver8.restore(obj9) : null;
+        Intrinsics.checkNotNull(restore8);
+        int m8027unboximpl = restore8.m8027unboximpl();
         Object obj10 = list.get(8);
-        Saver<TextMotion, Object> saver6 = Savers_androidKt.getSaver(TextMotion.Companion);
-        if ((!Intrinsics.areEqual(obj10, (Object) false) || (saver6 instanceof NonNullValueClassSaver)) && obj10 != null) {
-            textMotion = saver6.restore(obj10);
+        Saver<TextMotion, Object> saver9 = Savers_androidKt.getSaver(TextMotion.Companion);
+        if ((!Intrinsics.areEqual(obj10, (Object) false) || (saver9 instanceof NonNullValueClassSaver)) && obj10 != null) {
+            textMotion = saver9.restore(obj10);
         }
-        return new ParagraphStyle(m7879unboximpl, m7893unboximpl, m8199unboximpl, restore2, restore3, restore4, m7793unboximpl, m7777unboximpl, textMotion, (DefaultConstructorMarker) null);
+        return new ParagraphStyle(m8135unboximpl, m8152unboximpl, m8461unboximpl, restore4, restore5, restore6, m8046unboximpl, m8027unboximpl, textMotion, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<SpanStyle, Object> getSpanStyleSaver() {
@@ -805,37 +943,37 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object SpanStyleSaver$lambda$23(SaverScope saverScope, SpanStyle spanStyle) {
-        return CollectionsKt.arrayListOf(save(Color.m5270boximpl(spanStyle.m7399getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(TextUnit.m8180boximpl(spanStyle.m7400getFontSizeXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.getFontWeight(), getSaver(FontWeight.Companion), saverScope), save(spanStyle.m7401getFontStyle4Lr2A7w()), save(spanStyle.m7402getFontSynthesisZQGJjVo()), save(-1), save(spanStyle.getFontFeatureSettings()), save(TextUnit.m8180boximpl(spanStyle.m7403getLetterSpacingXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.m7398getBaselineShift5SSeXJ0(), getSaver(BaselineShift.Companion), saverScope), save(spanStyle.getTextGeometricTransform(), getSaver(TextGeometricTransform.Companion), saverScope), save(spanStyle.getLocaleList(), getSaver(LocaleList.Companion), saverScope), save(Color.m5270boximpl(spanStyle.m7397getBackground0d7_KjU()), getSaver(Color.Companion), saverScope), save(spanStyle.getTextDecoration(), getSaver(TextDecoration.Companion), saverScope), save(spanStyle.getShadow(), getSaver(Shadow.Companion), saverScope));
+    public static final Object SpanStyleSaver$lambda$0(SaverScope saverScope, SpanStyle spanStyle) {
+        return CollectionsKt.arrayListOf(save(Color.m5414boximpl(spanStyle.m7641getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(TextUnit.m8442boximpl(spanStyle.m7642getFontSizeXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.getFontWeight(), getSaver(FontWeight.Companion), saverScope), save(spanStyle.m7643getFontStyle4Lr2A7w(), getSaver(FontStyle.Companion), saverScope), save(spanStyle.m7644getFontSynthesisZQGJjVo(), getSaver(FontSynthesis.Companion), saverScope), save(-1), save(spanStyle.getFontFeatureSettings()), save(TextUnit.m8442boximpl(spanStyle.m7645getLetterSpacingXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(spanStyle.m7640getBaselineShift5SSeXJ0(), getSaver(BaselineShift.Companion), saverScope), save(spanStyle.getTextGeometricTransform(), getSaver(TextGeometricTransform.Companion), saverScope), save(spanStyle.getLocaleList(), getSaver(LocaleList.Companion), saverScope), save(Color.m5414boximpl(spanStyle.m7639getBackground0d7_KjU()), getSaver(Color.Companion), saverScope), save(spanStyle.getTextDecoration(), getSaver(TextDecoration.Companion), saverScope), save(spanStyle.getShadow(), getSaver(Shadow.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x00fc, code lost:
-        if ((r15 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L75;
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0126, code lost:
+        if ((r15 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L79;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0122, code lost:
-        if ((r15 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L73;
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x014c, code lost:
+        if ((r15 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L77;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0148, code lost:
-        if ((r2 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L71;
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x0172, code lost:
+        if ((r2 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0174, code lost:
-        if ((r5 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L69;
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x019e, code lost:
+        if ((r5 instanceof androidx.compose.ui.text.NonNullValueClassSaver) == false) goto L73;
      */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0170  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0177  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x017b  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0153  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0175  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0179  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01a1  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01a5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final SpanStyle SpanStyleSaver$lambda$24(Object obj) {
+    public static final SpanStyle SpanStyleSaver$lambda$1(Object obj) {
         SpanStyle spanStyle;
         SpanStyle spanStyle2;
         TextGeometricTransform textGeometricTransform;
@@ -854,146 +992,148 @@ public final class SaversKt {
         Saver<Color, Object> saver = getSaver(Color.Companion);
         Color restore = ((!Intrinsics.areEqual(obj5, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj5 != null) ? saver.restore(obj5) : null;
         Intrinsics.checkNotNull(restore);
-        long m5290unboximpl = restore.m5290unboximpl();
+        long m5434unboximpl = restore.m5434unboximpl();
         Object obj6 = list.get(1);
         Saver<TextUnit, Object> saver2 = getSaver(TextUnit.Companion);
         TextUnit restore2 = ((!Intrinsics.areEqual(obj6, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj6 != null) ? saver2.restore(obj6) : null;
         Intrinsics.checkNotNull(restore2);
-        long m8199unboximpl = restore2.m8199unboximpl();
+        long m8461unboximpl = restore2.m8461unboximpl();
         Object obj7 = list.get(2);
         Saver<FontWeight, Object> saver3 = getSaver(FontWeight.Companion);
         FontWeight restore3 = ((!Intrinsics.areEqual(obj7, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj7 != null) ? saver3.restore(obj7) : null;
         Object obj8 = list.get(3);
-        FontStyle fontStyle = obj8 != null ? (FontStyle) obj8 : null;
+        Saver<FontStyle, Object> saver4 = getSaver(FontStyle.Companion);
+        FontStyle restore4 = ((!Intrinsics.areEqual(obj8, (Object) false) || (saver4 instanceof NonNullValueClassSaver)) && obj8 != null) ? saver4.restore(obj8) : null;
         Object obj9 = list.get(4);
-        FontSynthesis fontSynthesis = obj9 != null ? (FontSynthesis) obj9 : null;
+        Saver<FontSynthesis, Object> saver5 = getSaver(FontSynthesis.Companion);
+        FontSynthesis restore5 = ((!Intrinsics.areEqual(obj9, (Object) false) || (saver5 instanceof NonNullValueClassSaver)) && obj9 != null) ? saver5.restore(obj9) : null;
         Object obj10 = list.get(6);
         String str = obj10 != null ? (String) obj10 : null;
         Object obj11 = list.get(7);
-        Saver<TextUnit, Object> saver4 = getSaver(TextUnit.Companion);
-        TextUnit restore4 = ((!Intrinsics.areEqual(obj11, (Object) false) || (saver4 instanceof NonNullValueClassSaver)) && obj11 != null) ? saver4.restore(obj11) : null;
-        Intrinsics.checkNotNull(restore4);
-        long m8199unboximpl2 = restore4.m8199unboximpl();
+        Saver<TextUnit, Object> saver6 = getSaver(TextUnit.Companion);
+        TextUnit restore6 = ((!Intrinsics.areEqual(obj11, (Object) false) || (saver6 instanceof NonNullValueClassSaver)) && obj11 != null) ? saver6.restore(obj11) : null;
+        Intrinsics.checkNotNull(restore6);
+        long m8461unboximpl2 = restore6.m8461unboximpl();
         Object obj12 = list.get(8);
-        Saver<BaselineShift, Object> saver5 = getSaver(BaselineShift.Companion);
-        BaselineShift restore5 = ((!Intrinsics.areEqual(obj12, (Object) false) || (saver5 instanceof NonNullValueClassSaver)) && obj12 != null) ? saver5.restore(obj12) : null;
+        Saver<BaselineShift, Object> saver7 = getSaver(BaselineShift.Companion);
+        BaselineShift restore7 = ((!Intrinsics.areEqual(obj12, (Object) false) || (saver7 instanceof NonNullValueClassSaver)) && obj12 != null) ? saver7.restore(obj12) : null;
         Object obj13 = list.get(9);
-        Saver<TextGeometricTransform, Object> saver6 = getSaver(TextGeometricTransform.Companion);
+        Saver<TextGeometricTransform, Object> saver8 = getSaver(TextGeometricTransform.Companion);
         if (Intrinsics.areEqual(obj13, (Object) false)) {
             spanStyle2 = spanStyle;
         } else {
             spanStyle2 = spanStyle;
         }
         if (obj13 != null) {
-            textGeometricTransform = saver6.restore(obj13);
+            textGeometricTransform = saver8.restore(obj13);
             obj2 = list.get(10);
-            Saver<LocaleList, Object> saver7 = getSaver(LocaleList.Companion);
+            Saver<LocaleList, Object> saver9 = getSaver(LocaleList.Companion);
             if (Intrinsics.areEqual(obj2, (Object) false)) {
                 fontWeight = restore3;
             } else {
                 fontWeight = restore3;
             }
             if (obj2 != null) {
-                localeList = saver7.restore(obj2);
+                localeList = saver9.restore(obj2);
                 obj3 = list.get(11);
-                Saver<Color, Object> saver8 = getSaver(Color.Companion);
+                Saver<Color, Object> saver10 = getSaver(Color.Companion);
                 if (Intrinsics.areEqual(obj3, (Object) false)) {
-                    j = m5290unboximpl;
+                    j = m5434unboximpl;
                 } else {
-                    j = m5290unboximpl;
+                    j = m5434unboximpl;
                 }
                 if (obj3 != null) {
-                    color = saver8.restore(obj3);
+                    color = saver10.restore(obj3);
                     Intrinsics.checkNotNull(color);
-                    long m5290unboximpl2 = color.m5290unboximpl();
+                    long m5434unboximpl2 = color.m5434unboximpl();
                     obj4 = list.get(12);
-                    Saver<TextDecoration, Object> saver9 = getSaver(TextDecoration.Companion);
+                    Saver<TextDecoration, Object> saver11 = getSaver(TextDecoration.Companion);
                     if (Intrinsics.areEqual(obj4, (Object) false)) {
-                        j2 = m5290unboximpl2;
+                        j2 = m5434unboximpl2;
                     } else {
-                        j2 = m5290unboximpl2;
+                        j2 = m5434unboximpl2;
                     }
                     if (obj4 != null) {
-                        textDecoration = saver9.restore(obj4);
+                        textDecoration = saver11.restore(obj4);
                         Object obj14 = list.get(13);
-                        Saver<Shadow, Object> saver10 = getSaver(Shadow.Companion);
-                        return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14, (Object) false) || (saver10 instanceof NonNullValueClassSaver)) && obj14 != null) ? saver10.restore(obj14) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                        Saver<Shadow, Object> saver12 = getSaver(Shadow.Companion);
+                        return new SpanStyle(j, m8461unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8461unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14, (Object) false) || (saver12 instanceof NonNullValueClassSaver)) && obj14 != null) ? saver12.restore(obj14) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
                     }
                     textDecoration = null;
                     Object obj142 = list.get(13);
-                    Saver<Shadow, Object> saver102 = getSaver(Shadow.Companion);
+                    Saver<Shadow, Object> saver122 = getSaver(Shadow.Companion);
                     if (Intrinsics.areEqual(obj142, (Object) false)) {
                     }
-                    return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142, (Object) false) || (saver102 instanceof NonNullValueClassSaver)) && obj142 != null) ? saver102.restore(obj142) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                    return new SpanStyle(j, m8461unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8461unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142, (Object) false) || (saver122 instanceof NonNullValueClassSaver)) && obj142 != null) ? saver122.restore(obj142) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
                 }
                 color = null;
                 Intrinsics.checkNotNull(color);
-                long m5290unboximpl22 = color.m5290unboximpl();
+                long m5434unboximpl22 = color.m5434unboximpl();
                 obj4 = list.get(12);
-                Saver<TextDecoration, Object> saver92 = getSaver(TextDecoration.Companion);
+                Saver<TextDecoration, Object> saver112 = getSaver(TextDecoration.Companion);
                 if (Intrinsics.areEqual(obj4, (Object) false)) {
                 }
                 if (obj4 != null) {
                 }
                 textDecoration = null;
                 Object obj1422 = list.get(13);
-                Saver<Shadow, Object> saver1022 = getSaver(Shadow.Companion);
+                Saver<Shadow, Object> saver1222 = getSaver(Shadow.Companion);
                 if (Intrinsics.areEqual(obj1422, (Object) false)) {
                 }
-                return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj1422, (Object) false) || (saver1022 instanceof NonNullValueClassSaver)) && obj1422 != null) ? saver1022.restore(obj1422) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                return new SpanStyle(j, m8461unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8461unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj1422, (Object) false) || (saver1222 instanceof NonNullValueClassSaver)) && obj1422 != null) ? saver1222.restore(obj1422) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
             }
             localeList = null;
             obj3 = list.get(11);
-            Saver<Color, Object> saver82 = getSaver(Color.Companion);
+            Saver<Color, Object> saver102 = getSaver(Color.Companion);
             if (Intrinsics.areEqual(obj3, (Object) false)) {
             }
             if (obj3 != null) {
             }
             color = null;
             Intrinsics.checkNotNull(color);
-            long m5290unboximpl222 = color.m5290unboximpl();
+            long m5434unboximpl222 = color.m5434unboximpl();
             obj4 = list.get(12);
-            Saver<TextDecoration, Object> saver922 = getSaver(TextDecoration.Companion);
+            Saver<TextDecoration, Object> saver1122 = getSaver(TextDecoration.Companion);
             if (Intrinsics.areEqual(obj4, (Object) false)) {
             }
             if (obj4 != null) {
             }
             textDecoration = null;
             Object obj14222 = list.get(13);
-            Saver<Shadow, Object> saver10222 = getSaver(Shadow.Companion);
+            Saver<Shadow, Object> saver12222 = getSaver(Shadow.Companion);
             if (Intrinsics.areEqual(obj14222, (Object) false)) {
             }
-            return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14222, (Object) false) || (saver10222 instanceof NonNullValueClassSaver)) && obj14222 != null) ? saver10222.restore(obj14222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+            return new SpanStyle(j, m8461unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8461unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14222, (Object) false) || (saver12222 instanceof NonNullValueClassSaver)) && obj14222 != null) ? saver12222.restore(obj14222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
         }
         textGeometricTransform = null;
         obj2 = list.get(10);
-        Saver<LocaleList, Object> saver72 = getSaver(LocaleList.Companion);
+        Saver<LocaleList, Object> saver92 = getSaver(LocaleList.Companion);
         if (Intrinsics.areEqual(obj2, (Object) false)) {
         }
         if (obj2 != null) {
         }
         localeList = null;
         obj3 = list.get(11);
-        Saver<Color, Object> saver822 = getSaver(Color.Companion);
+        Saver<Color, Object> saver1022 = getSaver(Color.Companion);
         if (Intrinsics.areEqual(obj3, (Object) false)) {
         }
         if (obj3 != null) {
         }
         color = null;
         Intrinsics.checkNotNull(color);
-        long m5290unboximpl2222 = color.m5290unboximpl();
+        long m5434unboximpl2222 = color.m5434unboximpl();
         obj4 = list.get(12);
-        Saver<TextDecoration, Object> saver9222 = getSaver(TextDecoration.Companion);
+        Saver<TextDecoration, Object> saver11222 = getSaver(TextDecoration.Companion);
         if (Intrinsics.areEqual(obj4, (Object) false)) {
         }
         if (obj4 != null) {
         }
         textDecoration = null;
         Object obj142222 = list.get(13);
-        Saver<Shadow, Object> saver102222 = getSaver(Shadow.Companion);
+        Saver<Shadow, Object> saver122222 = getSaver(Shadow.Companion);
         if (Intrinsics.areEqual(obj142222, (Object) false)) {
         }
-        return new SpanStyle(j, m8199unboximpl, fontWeight, fontStyle, fontSynthesis, (FontFamily) null, str, m8199unboximpl2, restore5, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142222, (Object) false) || (saver102222 instanceof NonNullValueClassSaver)) && obj142222 != null) ? saver102222.restore(obj142222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+        return new SpanStyle(j, m8461unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8461unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142222, (Object) false) || (saver122222 instanceof NonNullValueClassSaver)) && obj142222 != null) ? saver122222.restore(obj142222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<TextLinkStyles, Object> getTextLinkStylesSaver() {
@@ -1001,14 +1141,14 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object TextLinkStylesSaver$lambda$25(SaverScope saverScope, TextLinkStyles textLinkStyles) {
+    public static final Object TextLinkStylesSaver$lambda$0(SaverScope saverScope, TextLinkStyles textLinkStyles) {
         SpanStyle style = textLinkStyles.getStyle();
         Saver<SpanStyle, Object> saver = SpanStyleSaver;
         return CollectionsKt.arrayListOf(save(style, saver, saverScope), save(textLinkStyles.getFocusedStyle(), saver, saverScope), save(textLinkStyles.getHoveredStyle(), saver, saverScope), save(textLinkStyles.getPressedStyle(), saver, saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TextLinkStyles TextLinkStylesSaver$lambda$26(Object obj) {
+    public static final TextLinkStyles TextLinkStylesSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
         Object obj2 = list.get(0);
@@ -1031,12 +1171,12 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object TextDecorationSaver$lambda$27(SaverScope saverScope, TextDecoration textDecoration) {
+    public static final Object TextDecorationSaver$lambda$0(SaverScope saverScope, TextDecoration textDecoration) {
         return Integer.valueOf(textDecoration.getMask());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TextDecoration TextDecorationSaver$lambda$28(Object obj) {
+    public static final TextDecoration TextDecorationSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
         return new TextDecoration(((Integer) obj).intValue());
     }
@@ -1046,12 +1186,12 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object TextGeometricTransformSaver$lambda$29(SaverScope saverScope, TextGeometricTransform textGeometricTransform) {
+    public static final Object TextGeometricTransformSaver$lambda$0(SaverScope saverScope, TextGeometricTransform textGeometricTransform) {
         return CollectionsKt.arrayListOf(Float.valueOf(textGeometricTransform.getScaleX()), Float.valueOf(textGeometricTransform.getSkewX()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TextGeometricTransform TextGeometricTransformSaver$lambda$30(Object obj) {
+    public static final TextGeometricTransform TextGeometricTransformSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Float>");
         List list = (List) obj;
         return new TextGeometricTransform(((Number) list.get(0)).floatValue(), ((Number) list.get(1)).floatValue());
@@ -1062,12 +1202,12 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object TextIndentSaver$lambda$31(SaverScope saverScope, TextIndent textIndent) {
-        return CollectionsKt.arrayListOf(save(TextUnit.m8180boximpl(textIndent.m7904getFirstLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(TextUnit.m8180boximpl(textIndent.m7905getRestLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope));
+    public static final Object TextIndentSaver$lambda$0(SaverScope saverScope, TextIndent textIndent) {
+        return CollectionsKt.arrayListOf(save(TextUnit.m8442boximpl(textIndent.m8166getFirstLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope), save(TextUnit.m8442boximpl(textIndent.m8167getRestLineXSAIIZE()), getSaver(TextUnit.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TextIndent TextIndentSaver$lambda$32(Object obj) {
+    public static final TextIndent TextIndentSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         Object obj2 = list.get(0);
@@ -1075,14 +1215,14 @@ public final class SaversKt {
         TextUnit textUnit = null;
         TextUnit restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        long m8199unboximpl = restore.m8199unboximpl();
+        long m8461unboximpl = restore.m8461unboximpl();
         Object obj3 = list.get(1);
         Saver<TextUnit, Object> saver2 = getSaver(TextUnit.Companion);
         if ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) {
             textUnit = saver2.restore(obj3);
         }
         Intrinsics.checkNotNull(textUnit);
-        return new TextIndent(m8199unboximpl, textUnit.m8199unboximpl(), null);
+        return new TextIndent(m8461unboximpl, textUnit.m8461unboximpl(), null);
     }
 
     public static final Saver<FontWeight, Object> getSaver(FontWeight.Companion companion) {
@@ -1090,12 +1230,12 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object FontWeightSaver$lambda$33(SaverScope saverScope, FontWeight fontWeight) {
+    public static final Object FontWeightSaver$lambda$0(SaverScope saverScope, FontWeight fontWeight) {
         return Integer.valueOf(fontWeight.getWeight());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final FontWeight FontWeightSaver$lambda$34(Object obj) {
+    public static final FontWeight FontWeightSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
         return new FontWeight(((Integer) obj).intValue());
     }
@@ -1105,14 +1245,14 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object BaselineShiftSaver$lambda$35(SaverScope saverScope, BaselineShift baselineShift) {
-        return Float.valueOf(baselineShift.m7758unboximpl());
+    public static final Object BaselineShiftSaver$lambda$0(SaverScope saverScope, BaselineShift baselineShift) {
+        return Float.valueOf(baselineShift.m8004unboximpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final BaselineShift BaselineShiftSaver$lambda$36(Object obj) {
+    public static final BaselineShift BaselineShiftSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");
-        return BaselineShift.m7752boximpl(BaselineShift.m7753constructorimpl(((Float) obj).floatValue()));
+        return BaselineShift.m7998boximpl(BaselineShift.m7999constructorimpl(((Float) obj).floatValue()));
     }
 
     public static final Saver<TextRange, Object> getSaver(TextRange.Companion companion) {
@@ -1121,12 +1261,12 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static final Object TextRangeSaver$lambda$37(SaverScope saverScope, TextRange textRange) {
-        return CollectionsKt.arrayListOf(save(Integer.valueOf(TextRange.m7458getStartimpl(textRange.m7462unboximpl()))), save(Integer.valueOf(TextRange.m7453getEndimpl(textRange.m7462unboximpl()))));
+    public static final Object TextRangeSaver$lambda$0(SaverScope saverScope, TextRange textRange) {
+        return CollectionsKt.arrayListOf(save(Integer.valueOf(TextRange.m7701getStartimpl(textRange.m7705unboximpl()))), save(Integer.valueOf(TextRange.m7696getEndimpl(textRange.m7705unboximpl()))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TextRange TextRangeSaver$lambda$38(Object obj) {
+    public static final TextRange TextRangeSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         Object obj2 = list.get(0);
@@ -1136,7 +1276,7 @@ public final class SaversKt {
         Object obj3 = list.get(1);
         Integer num2 = obj3 != null ? (Integer) obj3 : null;
         Intrinsics.checkNotNull(num2);
-        return TextRange.m7446boximpl(TextRangeKt.TextRange(intValue, num2.intValue()));
+        return TextRange.m7689boximpl(TextRangeKt.TextRange(intValue, num2.intValue()));
     }
 
     public static final Saver<Shadow, Object> getSaver(Shadow.Companion companion) {
@@ -1144,32 +1284,115 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object ShadowSaver$lambda$39(SaverScope saverScope, Shadow shadow) {
-        return CollectionsKt.arrayListOf(save(Color.m5270boximpl(shadow.m5620getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(Offset.m5025boximpl(shadow.m5621getOffsetF1C5BW0()), getSaver(Offset.Companion), saverScope), save(Float.valueOf(shadow.getBlurRadius())));
+    public static final Object ShadowSaver$lambda$0(SaverScope saverScope, Shadow shadow) {
+        return CollectionsKt.arrayListOf(save(Color.m5414boximpl(shadow.m5770getColor0d7_KjU()), getSaver(Color.Companion), saverScope), save(Offset.m5168boximpl(shadow.m5771getOffsetF1C5BW0()), getSaver(Offset.Companion), saverScope), save(Float.valueOf(shadow.getBlurRadius())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Shadow ShadowSaver$lambda$40(Object obj) {
+    public static final Shadow ShadowSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         Object obj2 = list.get(0);
         Saver<Color, Object> saver = getSaver(Color.Companion);
         Color restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        long m5290unboximpl = restore.m5290unboximpl();
+        long m5434unboximpl = restore.m5434unboximpl();
         Object obj3 = list.get(1);
         Saver<Offset, Object> saver2 = getSaver(Offset.Companion);
         Offset restore2 = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) ? saver2.restore(obj3) : null;
         Intrinsics.checkNotNull(restore2);
-        long m5046unboximpl = restore2.m5046unboximpl();
+        long m5189unboximpl = restore2.m5189unboximpl();
         Object obj4 = list.get(2);
         Float f = obj4 != null ? (Float) obj4 : null;
         Intrinsics.checkNotNull(f);
-        return new Shadow(m5290unboximpl, m5046unboximpl, f.floatValue(), null);
+        return new Shadow(m5434unboximpl, m5189unboximpl, f.floatValue(), null);
     }
 
     public static final Saver<Color, Object> getSaver(Color.Companion companion) {
         return ColorSaver;
+    }
+
+    public static final Saver<TextAlign, Object> getSaver(TextAlign.Companion companion) {
+        return TextAlignSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object TextAlignSaver$lambda$0(SaverScope saverScope, TextAlign textAlign) {
+        return Integer.valueOf(textAlign.m8135unboximpl());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final TextAlign TextAlignSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+        return TextAlign.m8129boximpl(TextAlign.m8130constructorimpl(((Integer) obj).intValue()));
+    }
+
+    public static final Saver<TextDirection, Object> getSaver(TextDirection.Companion companion) {
+        return TextDirectionSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object TextDirectionSaver$lambda$0(SaverScope saverScope, TextDirection textDirection) {
+        return Integer.valueOf(textDirection.m8152unboximpl());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final TextDirection TextDirectionSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+        return TextDirection.m8146boximpl(TextDirection.m8147constructorimpl(((Integer) obj).intValue()));
+    }
+
+    public static final Saver<Hyphens, Object> getSaver(Hyphens.Companion companion) {
+        return HyphensSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object HyphensSaver$lambda$0(SaverScope saverScope, Hyphens hyphens) {
+        return Integer.valueOf(hyphens.m8027unboximpl());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Hyphens HyphensSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+        return Hyphens.m8021boximpl(Hyphens.m8022constructorimpl(((Integer) obj).intValue()));
+    }
+
+    public static final Saver<FontStyle, Object> getSaver(FontStyle.Companion companion) {
+        return FontStyleSaver;
+    }
+
+    public static final Saver<FontStyle, Object> getFontStyleSaver() {
+        return FontStyleSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object FontStyleSaver$lambda$0(SaverScope saverScope, FontStyle fontStyle) {
+        return save(Integer.valueOf(fontStyle.m7818unboximpl()));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final FontStyle FontStyleSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+        return FontStyle.m7812boximpl(FontStyle.m7813constructorimpl(((Integer) obj).intValue()));
+    }
+
+    public static final Saver<FontSynthesis, Object> getSaver(FontSynthesis.Companion companion) {
+        return FontSynthesisSaver;
+    }
+
+    public static final Saver<FontSynthesis, Object> getFontSynthesisSaver() {
+        return FontSynthesisSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object FontSynthesisSaver$lambda$0(SaverScope saverScope, FontSynthesis fontSynthesis) {
+        return Integer.valueOf(fontSynthesis.m7831unboximpl());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final FontSynthesis FontSynthesisSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+        return FontSynthesis.m7823boximpl(FontSynthesis.m7824constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<TextUnit, Object> getSaver(TextUnit.Companion companion) {
@@ -1177,28 +1400,54 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object TextUnitSaver$lambda$41(SaverScope saverScope, TextUnit textUnit) {
-        if (textUnit == null ? false : TextUnit.m8187equalsimpl0(textUnit.m8199unboximpl(), TextUnit.Companion.m8201getUnspecifiedXSAIIZE())) {
+    public static final Object TextUnitSaver$lambda$0(SaverScope saverScope, TextUnit textUnit) {
+        if (textUnit == null ? false : TextUnit.m8449equalsimpl0(textUnit.m8461unboximpl(), TextUnit.Companion.m8463getUnspecifiedXSAIIZE())) {
             return (Serializable) false;
         }
-        return CollectionsKt.arrayListOf(save(Float.valueOf(TextUnit.m8190getValueimpl(textUnit.m8199unboximpl()))), save(TextUnitType.m8215boximpl(TextUnit.m8189getTypeUIouoOA(textUnit.m8199unboximpl()))));
+        return CollectionsKt.arrayListOf(save(Float.valueOf(TextUnit.m8452getValueimpl(textUnit.m8461unboximpl()))), save(TextUnitType.m8477boximpl(TextUnit.m8451getTypeUIouoOA(textUnit.m8461unboximpl())), getSaver(TextUnitType.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TextUnit TextUnitSaver$lambda$42(Object obj) {
+    public static final TextUnit TextUnitSaver$lambda$1(Object obj) {
         if (Intrinsics.areEqual(obj, (Object) false)) {
-            return TextUnit.m8180boximpl(TextUnit.Companion.m8201getUnspecifiedXSAIIZE());
+            return TextUnit.m8442boximpl(TextUnit.Companion.m8463getUnspecifiedXSAIIZE());
         }
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         Object obj2 = list.get(0);
+        TextUnitType textUnitType = null;
         Float f = obj2 != null ? (Float) obj2 : null;
         Intrinsics.checkNotNull(f);
         float floatValue = f.floatValue();
         Object obj3 = list.get(1);
-        TextUnitType textUnitType = obj3 != null ? (TextUnitType) obj3 : null;
+        Saver<TextUnitType, Object> saver = getSaver(TextUnitType.Companion);
+        if ((!Intrinsics.areEqual(obj3, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj3 != null) {
+            textUnitType = saver.restore(obj3);
+        }
         Intrinsics.checkNotNull(textUnitType);
-        return TextUnit.m8180boximpl(TextUnitKt.m8202TextUnitanM5pPY(floatValue, textUnitType.m8221unboximpl()));
+        return TextUnit.m8442boximpl(TextUnitKt.m8464TextUnitanM5pPY(floatValue, textUnitType.m8483unboximpl()));
+    }
+
+    public static final Saver<TextUnitType, Object> getSaver(TextUnitType.Companion companion) {
+        return TextUnitTypeSaver;
+    }
+
+    public static final NonNullValueClassSaver<TextUnitType, Object> getTextUnitTypeSaver() {
+        return TextUnitTypeSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object TextUnitTypeSaver$lambda$0(SaverScope saverScope, TextUnitType textUnitType) {
+        long m8483unboximpl = textUnitType.m8483unboximpl();
+        if (TextUnitType.m8480equalsimpl0(m8483unboximpl, TextUnitType.Companion.m8484getEmUIouoOA())) {
+            return 0;
+        }
+        return TextUnitType.m8480equalsimpl0(m8483unboximpl, TextUnitType.Companion.m8485getSpUIouoOA()) ? 1 : false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final TextUnitType TextUnitTypeSaver$lambda$1(Object obj) {
+        return Intrinsics.areEqual(obj, (Object) 0) ? TextUnitType.m8477boximpl(TextUnitType.Companion.m8484getEmUIouoOA()) : Intrinsics.areEqual(obj, (Object) 1) ? TextUnitType.m8477boximpl(TextUnitType.Companion.m8485getSpUIouoOA()) : TextUnitType.m8477boximpl(TextUnitType.Companion.m8486getUnspecifiedUIouoOA());
     }
 
     public static final Saver<Offset, Object> getSaver(Offset.Companion companion) {
@@ -1207,14 +1456,14 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static final Object OffsetSaver$lambda$43(SaverScope saverScope, Offset offset) {
-        return offset == null ? false : Offset.m5033equalsimpl0(offset.m5046unboximpl(), Offset.Companion.m5051getUnspecifiedF1C5BW0()) ? (Serializable) false : CollectionsKt.arrayListOf(save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5046unboximpl() >> 32)))), save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5046unboximpl() & 4294967295L)))));
+    public static final Object OffsetSaver$lambda$0(SaverScope saverScope, Offset offset) {
+        return offset == null ? false : Offset.m5176equalsimpl0(offset.m5189unboximpl(), Offset.Companion.m5194getUnspecifiedF1C5BW0()) ? (Serializable) false : CollectionsKt.arrayListOf(save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5189unboximpl() >> 32)))), save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5189unboximpl() & 4294967295L)))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Offset OffsetSaver$lambda$44(Object obj) {
+    public static final Offset OffsetSaver$lambda$1(Object obj) {
         if (Intrinsics.areEqual(obj, (Object) false)) {
-            return Offset.m5025boximpl(Offset.Companion.m5051getUnspecifiedF1C5BW0());
+            return Offset.m5168boximpl(Offset.Companion.m5194getUnspecifiedF1C5BW0());
         }
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
@@ -1225,7 +1474,7 @@ public final class SaversKt {
         Object obj3 = list.get(1);
         Float f2 = obj3 != null ? (Float) obj3 : null;
         Intrinsics.checkNotNull(f2);
-        return Offset.m5025boximpl(Offset.m5028constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(f2.floatValue()) & 4294967295L)));
+        return Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(f2.floatValue()) & 4294967295L)));
     }
 
     public static final Saver<LocaleList, Object> getSaver(LocaleList.Companion companion) {
@@ -1233,7 +1482,7 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object LocaleListSaver$lambda$46(SaverScope saverScope, LocaleList localeList) {
+    public static final Object LocaleListSaver$lambda$0(SaverScope saverScope, LocaleList localeList) {
         List<Locale> localeList2 = localeList.getLocaleList();
         ArrayList arrayList = new ArrayList(localeList2.size());
         int size = localeList2.size();
@@ -1244,7 +1493,7 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LocaleList LocaleListSaver$lambda$48(Object obj) {
+    public static final LocaleList LocaleListSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         ArrayList arrayList = new ArrayList(list.size());
@@ -1268,12 +1517,12 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object LocaleSaver$lambda$49(SaverScope saverScope, Locale locale) {
+    public static final Object LocaleSaver$lambda$0(SaverScope saverScope, Locale locale) {
         return locale.toLanguageTag();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Locale LocaleSaver$lambda$50(Object obj) {
+    public static final Locale LocaleSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.String");
         return new Locale((String) obj);
     }
@@ -1283,30 +1532,78 @@ public final class SaversKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object LineHeightStyleSaver$lambda$51(SaverScope saverScope, LineHeightStyle lineHeightStyle) {
-        return CollectionsKt.arrayListOf(save(LineHeightStyle.Alignment.m7840boximpl(lineHeightStyle.m7837getAlignmentPIaL0Z0())), save(LineHeightStyle.Trim.m7860boximpl(lineHeightStyle.m7839getTrimEVpEnUU())), save(LineHeightStyle.Mode.m7851boximpl(lineHeightStyle.m7838getModelzQqcRY())));
+    public static final Object LineHeightStyleSaver$lambda$0(SaverScope saverScope, LineHeightStyle lineHeightStyle) {
+        return CollectionsKt.arrayListOf(save(LineHeightStyle.Alignment.m8095boximpl(lineHeightStyle.m8092getAlignmentPIaL0Z0()), getSaver(LineHeightStyle.Alignment.Companion), saverScope), save(LineHeightStyle.Trim.m8116boximpl(lineHeightStyle.m8094getTrimEVpEnUU()), getSaver(LineHeightStyle.Trim.Companion), saverScope), save(LineHeightStyle.Mode.m8106boximpl(lineHeightStyle.m8093getModelzQqcRY()), getSaver(LineHeightStyle.Mode.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LineHeightStyle LineHeightStyleSaver$lambda$52(Object obj) {
+    public static final LineHeightStyle LineHeightStyleSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
         Object obj2 = list.get(0);
-        LineHeightStyle.Alignment alignment = obj2 != null ? (LineHeightStyle.Alignment) obj2 : null;
-        Intrinsics.checkNotNull(alignment);
-        float m7846unboximpl = alignment.m7846unboximpl();
+        Saver<LineHeightStyle.Alignment, Object> saver = getSaver(LineHeightStyle.Alignment.Companion);
+        LineHeightStyle.Alignment restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
+        Intrinsics.checkNotNull(restore);
+        float m8101unboximpl = restore.m8101unboximpl();
         Object obj3 = list.get(1);
-        LineHeightStyle.Trim trim = obj3 != null ? (LineHeightStyle.Trim) obj3 : null;
-        Intrinsics.checkNotNull(trim);
-        int m7868unboximpl = trim.m7868unboximpl();
+        Saver<LineHeightStyle.Trim, Object> saver2 = getSaver(LineHeightStyle.Trim.Companion);
+        LineHeightStyle.Trim restore2 = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) ? saver2.restore(obj3) : null;
+        Intrinsics.checkNotNull(restore2);
+        int m8124unboximpl = restore2.m8124unboximpl();
         Object obj4 = list.get(2);
-        LineHeightStyle.Mode mode = obj4 != null ? (LineHeightStyle.Mode) obj4 : null;
-        Intrinsics.checkNotNull(mode);
-        return new LineHeightStyle(m7846unboximpl, m7868unboximpl, mode.m7857unboximpl(), null);
+        Saver<LineHeightStyle.Mode, Object> saver3 = getSaver(LineHeightStyle.Mode.Companion);
+        LineHeightStyle.Mode restore3 = ((!Intrinsics.areEqual(obj4, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj4 != null) ? saver3.restore(obj4) : null;
+        Intrinsics.checkNotNull(restore3);
+        return new LineHeightStyle(m8101unboximpl, m8124unboximpl, restore3.m8112unboximpl(), null);
+    }
+
+    private static final Saver<LineHeightStyle.Alignment, Object> getSaver(LineHeightStyle.Alignment.Companion companion) {
+        return LineHeightStyleAlignmentSaver;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object AnnotationRangeListSaver$lambda$8(SaverScope saverScope, List list) {
+    public static final Object LineHeightStyleAlignmentSaver$lambda$0(SaverScope saverScope, LineHeightStyle.Alignment alignment) {
+        return Float.valueOf(alignment.m8101unboximpl());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final LineHeightStyle.Alignment LineHeightStyleAlignmentSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");
+        return LineHeightStyle.Alignment.m8095boximpl(LineHeightStyle.Alignment.m8096constructorimpl(((Float) obj).floatValue()));
+    }
+
+    private static final Saver<LineHeightStyle.Trim, Object> getSaver(LineHeightStyle.Trim.Companion companion) {
+        return LineHeightStyleTrimSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object LineHeightStyleTrimSaver$lambda$0(SaverScope saverScope, LineHeightStyle.Trim trim) {
+        return Integer.valueOf(trim.m8124unboximpl());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final LineHeightStyle.Trim LineHeightStyleTrimSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+        return LineHeightStyle.Trim.m8116boximpl(LineHeightStyle.Trim.m8117constructorimpl(((Integer) obj).intValue()));
+    }
+
+    private static final Saver<LineHeightStyle.Mode, Object> getSaver(LineHeightStyle.Mode.Companion companion) {
+        return LineHeightStyleModeSaver;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object LineHeightStyleModeSaver$lambda$0(SaverScope saverScope, LineHeightStyle.Mode mode) {
+        return Integer.valueOf(mode.m8112unboximpl());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final LineHeightStyle.Mode LineHeightStyleModeSaver$lambda$1(Object obj) {
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+        return LineHeightStyle.Mode.m8106boximpl(LineHeightStyle.Mode.m8107constructorimpl(((Integer) obj).intValue()));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Object AnnotationRangeListSaver$lambda$0(SaverScope saverScope, List list) {
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         for (int i = 0; i < size; i++) {

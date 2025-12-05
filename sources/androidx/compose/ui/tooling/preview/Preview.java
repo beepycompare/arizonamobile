@@ -13,7 +13,7 @@ import kotlin.annotation.AnnotationTarget;
 import kotlin.annotation.MustBeDocumented;
 import kotlin.annotation.Repeatable;
 import kotlin.jvm.internal.RepeatableContainer;
-/* compiled from: Preview.android.kt */
+/* compiled from: Preview.kt */
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.FUNCTION})
 @Retention(RetentionPolicy.CLASS)
@@ -26,7 +26,7 @@ import kotlin.jvm.internal.RepeatableContainer;
 /* loaded from: classes2.dex */
 public @interface Preview {
 
-    /* compiled from: Preview.android.kt */
+    /* compiled from: Preview.kt */
     @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.FUNCTION})

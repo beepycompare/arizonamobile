@@ -31,7 +31,7 @@ public final class ComposableSingletons$SocialContentKt {
     });
 
     /* renamed from: lambda$-2110633905  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f61lambda$2110633905 = ComposableLambdaKt.composableLambdaInstance(-2110633905, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda2
+    private static Function3<BoxScope, Composer, Integer, Unit> f142lambda$2110633905 = ComposableLambdaKt.composableLambdaInstance(-2110633905, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__2110633905$lambda$0;
@@ -41,8 +41,8 @@ public final class ComposableSingletons$SocialContentKt {
     });
 
     /* renamed from: getLambda$-2110633905$home_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9811getLambda$2110633905$home_release() {
-        return f61lambda$2110633905;
+    public final Function3<BoxScope, Composer, Integer, Unit> m10106getLambda$2110633905$home_release() {
+        return f142lambda$2110633905;
     }
 
     public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1688114711$home_release() {

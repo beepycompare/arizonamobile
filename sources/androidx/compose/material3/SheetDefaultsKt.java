@@ -48,7 +48,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000V\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\u001a$\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0011\u0010\u0003\u001a\r\u0012\u0004\u0012\u00020\u00010\u0004¢\u0006\u0002\b\u0005H\u0001¢\u0006\u0002\u0010\u0006\u001a;\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2!\u0010\r\u001a\u001d\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u00010\u000eH\u0000\u001aW\u0010\u0013\u001a\u00020\n2\b\b\u0002\u0010\u0014\u001a\u00020\u00152\u0014\b\u0002\u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00150\u000e2\b\b\u0002\u0010\u0018\u001a\u00020\u00172\b\b\u0002\u0010\u0019\u001a\u00020\u00152\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001bH\u0001¢\u0006\u0004\b\u001d\u0010\u001e\"\u0010\u0010\u001f\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010 \"\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000f0\"X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"DragHandleWithTooltip", "", "Landroidx/compose/foundation/layout/ColumnScope;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/foundation/layout/ColumnScope;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "ConsumeSwipeWithinBottomSheetBoundsNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "sheetState", "Landroidx/compose/material3/SheetState;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "onFling", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "velocity", "rememberSheetState", "skipPartiallyExpanded", "", "confirmValueChange", "Landroidx/compose/material3/SheetValue;", "initialValue", "skipHiddenState", "positionalThreshold", "Landroidx/compose/ui/unit/Dp;", "velocityThreshold", "rememberSheetState-AGcomas", "(ZLkotlin/jvm/functions/Function1;Landroidx/compose/material3/SheetValue;ZFFLandroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SheetState;", "DragHandleVerticalPadding", "F", "BottomSheetAnimationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SheetDefaultsKt {
-    private static final float DragHandleVerticalPadding = Dp.m7996constructorimpl(22);
+    private static final float DragHandleVerticalPadding = Dp.m8258constructorimpl(22);
     private static final AnimationSpec<Float> BottomSheetAnimationSpec = AnimationSpecKt.tween$default(300, 0, EasingKt.getFastOutSlowInEasing(), 2, null);
 
     public static final Unit DragHandleWithTooltip$lambda$1(ColumnScope columnScope, Function2 function2, int i, Composer composer, int i2) {
@@ -84,7 +84,7 @@ public final class SheetDefaultsKt {
                 ComposerKt.traceEventStart(1033612924, i3, -1, "androidx.compose.material3.DragHandleWithTooltip (SheetDefaults.kt:432)");
             }
             Strings.Companion companion = Strings.Companion;
-            final String m3611getString2EP1pXo = Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
+            final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
             Modifier align = columnScope.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -103,19 +103,19 @@ public final class SheetDefaultsKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 772858620, "C438@18272L60,439@18356L48,440@18426L22,436@18197L293:SheetDefaults.kt#uh7d8r");
-            TooltipKt.TooltipBox(TooltipDefaults.INSTANCE.m3366rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3353getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2), ComposableLambdaKt.rememberComposableLambda(2059851063, true, new Function3<TooltipScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.SheetDefaultsKt$DragHandleWithTooltip$1$1
+            TooltipKt.TooltipBox(TooltipDefaults.INSTANCE.m3452rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3439getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2), ComposableLambdaKt.rememberComposableLambda(2059851063, true, new Function3<TooltipScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.SheetDefaultsKt$DragHandleWithTooltip$1$1
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(TooltipScope tooltipScope, Composer composer2, Integer num) {
                     invoke(tooltipScope, composer2, num.intValue());
@@ -137,8 +137,8 @@ public final class SheetDefaultsKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(2059851063, i5, -1, "androidx.compose.material3.DragHandleWithTooltip.<anonymous>.<anonymous> (SheetDefaults.kt:439)");
                     }
-                    final String str = m3611getString2EP1pXo;
-                    TooltipKt.m3374PlainTooltipgv3ox5I(tooltipScope, null, null, 0.0f, null, 0L, 0L, 0.0f, 0.0f, ComposableLambdaKt.rememberComposableLambda(-999924215, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SheetDefaultsKt$DragHandleWithTooltip$1$1.1
+                    final String str = m3697getString2EP1pXo;
+                    TooltipKt.m3460PlainTooltipgv3ox5I(tooltipScope, null, null, 0.0f, null, 0L, 0L, 0.0f, 0.0f, ComposableLambdaKt.rememberComposableLambda(-999924215, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SheetDefaultsKt$DragHandleWithTooltip$1$1.1
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                             invoke(composer3, num.intValue());
@@ -154,7 +154,7 @@ public final class SheetDefaultsKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-999924215, i6, -1, "androidx.compose.material3.DragHandleWithTooltip.<anonymous>.<anonymous>.<anonymous> (SheetDefaults.kt:439)");
                             }
-                            TextKt.m3169TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer3, 0, 0, 262142);
+                            TextKt.m3255TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer3, 0, 0, 262142);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -193,42 +193,42 @@ public final class SheetDefaultsKt {
         return new NestedScrollConnection() { // from class: androidx.compose.material3.SheetDefaultsKt$ConsumeSwipeWithinBottomSheetBoundsNestedScrollConnection$1
             @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
             /* renamed from: onPreScroll-OzD1aCk */
-            public long mo929onPreScrollOzD1aCk(long j, int i) {
+            public long mo1009onPreScrollOzD1aCk(long j, int i) {
                 float offsetToFloat = offsetToFloat(j);
-                if (offsetToFloat < 0.0f && NestedScrollSource.m6451equalsimpl0(i, NestedScrollSource.Companion.m6463getUserInputWNlRxjI())) {
+                if (offsetToFloat < 0.0f && NestedScrollSource.m6612equalsimpl0(i, NestedScrollSource.Companion.m6624getUserInputWNlRxjI())) {
                     return toOffset(SheetState.this.getAnchoredDraggableState$material3().dispatchRawDelta(offsetToFloat));
                 }
-                return Offset.Companion.m5052getZeroF1C5BW0();
+                return Offset.Companion.m5195getZeroF1C5BW0();
             }
 
             @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
             /* renamed from: onPostScroll-DzOQY0M */
-            public long mo578onPostScrollDzOQY0M(long j, long j2, int i) {
-                if (NestedScrollSource.m6451equalsimpl0(i, NestedScrollSource.Companion.m6463getUserInputWNlRxjI())) {
+            public long mo656onPostScrollDzOQY0M(long j, long j2, int i) {
+                if (NestedScrollSource.m6612equalsimpl0(i, NestedScrollSource.Companion.m6624getUserInputWNlRxjI())) {
                     return toOffset(SheetState.this.getAnchoredDraggableState$material3().dispatchRawDelta(offsetToFloat(j2)));
                 }
-                return Offset.Companion.m5052getZeroF1C5BW0();
+                return Offset.Companion.m5195getZeroF1C5BW0();
             }
 
             @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
             /* renamed from: onPreFling-QWom1Mo */
-            public Object mo928onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+            public Object mo1008onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
                 float velocityToFloat = velocityToFloat(j);
                 float requireOffset = SheetState.this.requireOffset();
                 float minAnchor = SheetState.this.getAnchoredDraggableState$material3().getAnchors().minAnchor();
                 if (velocityToFloat < 0.0f && requireOffset > minAnchor) {
                     function1.invoke(Boxing.boxFloat(velocityToFloat));
                 } else {
-                    j = Velocity.Companion.m8245getZero9UxMQ8M();
+                    j = Velocity.Companion.m8507getZero9UxMQ8M();
                 }
-                return Velocity.m8225boximpl(j);
+                return Velocity.m8487boximpl(j);
             }
 
             @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
             /* renamed from: onPostFling-RZ2iAVY */
-            public Object mo577onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+            public Object mo655onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
                 function1.invoke(Boxing.boxFloat(velocityToFloat(j2)));
-                return Velocity.m8225boximpl(j2);
+                return Velocity.m8487boximpl(j2);
             }
 
             private final long toOffset(float f) {
@@ -236,11 +236,11 @@ public final class SheetDefaultsKt {
                 if (orientation != Orientation.Vertical) {
                     f = 0.0f;
                 }
-                return Offset.m5028constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+                return Offset.m5171constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
             }
 
             private final float velocityToFloat(long j) {
-                return orientation == Orientation.Horizontal ? Velocity.m8234getXimpl(j) : Velocity.m8235getYimpl(j);
+                return orientation == Orientation.Horizontal ? Velocity.m8496getXimpl(j) : Velocity.m8497getYimpl(j);
             }
 
             private final float offsetToFloat(long j) {
@@ -253,7 +253,7 @@ public final class SheetDefaultsKt {
     /* JADX WARN: Type inference failed for: r12v13 */
     /* JADX WARN: Type inference failed for: r22v0, types: [androidx.compose.runtime.Composer] */
     /* renamed from: rememberSheetState-AGcomas */
-    public static final SheetState m2881rememberSheetStateAGcomas(boolean z, Function1<? super SheetValue, Boolean> function1, SheetValue sheetValue, boolean z2, float f, float f2, Composer composer, int i, int i2) {
+    public static final SheetState m2967rememberSheetStateAGcomas(boolean z, Function1<? super SheetValue, Boolean> function1, SheetValue sheetValue, boolean z2, float f, float f2, Composer composer, int i, int i2) {
         final Function1<? super SheetValue, Boolean> function12;
         ComposerKt.sourceInformationMarkerStart(composer, -20307384, "C(rememberSheetState)N(skipPartiallyExpanded,confirmValueChange,initialValue,skipHiddenState,positionalThreshold:c#ui.unit.Dp,velocityThreshold:c#ui.unit.Dp)509@20940L8,515@21212L7,516@21254L48,517@21335L46,530@21855L231,518@21393L693:SheetDefaults.kt#uh7d8r");
         final boolean z3 = (i2 & 1) != 0 ? false : z;
@@ -278,8 +278,8 @@ public final class SheetDefaultsKt {
         }
         final SheetValue sheetValue2 = (i2 & 4) != 0 ? SheetValue.Hidden : sheetValue;
         final boolean z4 = (i2 & 8) != 0 ? false : z2;
-        final float m1955getPositionalThresholdD9Ej5fM$material3 = (i2 & 16) != 0 ? BottomSheetDefaults.INSTANCE.m1955getPositionalThresholdD9Ej5fM$material3() : f;
-        final float m1958getVelocityThresholdD9Ej5fM$material3 = (i2 & 32) != 0 ? BottomSheetDefaults.INSTANCE.m1958getVelocityThresholdD9Ej5fM$material3() : f2;
+        final float m2041getPositionalThresholdD9Ej5fM$material3 = (i2 & 16) != 0 ? BottomSheetDefaults.INSTANCE.m2041getPositionalThresholdD9Ej5fM$material3() : f;
+        final float m2044getVelocityThresholdD9Ej5fM$material3 = (i2 & 32) != 0 ? BottomSheetDefaults.INSTANCE.m2044getVelocityThresholdD9Ej5fM$material3() : f2;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-20307384, i, -1, "androidx.compose.material3.rememberSheetState (SheetDefaults.kt:514)");
         }
@@ -289,15 +289,15 @@ public final class SheetDefaultsKt {
         final Density density = (Density) consume;
         ComposerKt.sourceInformationMarkerStart(composer, 1959455832, "CC(remember):SheetDefaults.kt#9igjgp");
         boolean z5 = true;
-        boolean changed = composer.changed(density) | ((((57344 & i) ^ 24576) > 16384 && composer.changed(m1955getPositionalThresholdD9Ej5fM$material3)) || (i & 24576) == 16384);
+        boolean changed = composer.changed(density) | ((((57344 & i) ^ 24576) > 16384 && composer.changed(m2041getPositionalThresholdD9Ej5fM$material3)) || (i & 24576) == 16384);
         Object rememberedValue2 = composer.rememberedValue();
         if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
             rememberedValue2 = new Function0() { // from class: androidx.compose.material3.SheetDefaultsKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    float mo430toPx0680j_4;
-                    mo430toPx0680j_4 = Density.this.mo430toPx0680j_4(m1955getPositionalThresholdD9Ej5fM$material3);
-                    return Float.valueOf(mo430toPx0680j_4);
+                    float mo464toPx0680j_4;
+                    mo464toPx0680j_4 = Density.this.mo464toPx0680j_4(m2041getPositionalThresholdD9Ej5fM$material3);
+                    return Float.valueOf(mo464toPx0680j_4);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -305,15 +305,15 @@ public final class SheetDefaultsKt {
         final Function0<Float> function0 = (Function0) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerStart(composer, 1959458422, "CC(remember):SheetDefaults.kt#9igjgp");
-        boolean changed2 = composer.changed(density) | ((((458752 & i) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(m1958getVelocityThresholdD9Ej5fM$material3)) || (i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072);
+        boolean changed2 = composer.changed(density) | ((((458752 & i) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(m2044getVelocityThresholdD9Ej5fM$material3)) || (i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072);
         Object rememberedValue3 = composer.rememberedValue();
         if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
             rememberedValue3 = new Function0() { // from class: androidx.compose.material3.SheetDefaultsKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    float mo430toPx0680j_4;
-                    mo430toPx0680j_4 = Density.this.mo430toPx0680j_4(m1958getVelocityThresholdD9Ej5fM$material3);
-                    return Float.valueOf(mo430toPx0680j_4);
+                    float mo464toPx0680j_4;
+                    mo464toPx0680j_4 = Density.this.mo464toPx0680j_4(m2044getVelocityThresholdD9Ej5fM$material3);
+                    return Float.valueOf(mo464toPx0680j_4);
                 }
             };
             composer.updateRememberedValue(rememberedValue3);
@@ -341,7 +341,7 @@ public final class SheetDefaultsKt {
             composer.updateRememberedValue(rememberedValue4);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SheetState sheetState = (SheetState) RememberSaveableKt.m4726rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue4, (Composer) composer, 0);
+        SheetState sheetState = (SheetState) RememberSaveableKt.m4857rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue4, (Composer) composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

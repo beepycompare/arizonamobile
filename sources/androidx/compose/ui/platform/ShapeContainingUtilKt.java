@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.PathOperation;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 /* compiled from: ShapeContainingUtil.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b2\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\bH\u0000\u001a \u0010\n\u001a\u00020\u00012\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002\u001a4\u0010\r\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u000e2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\b\u0010\u000f\u001a\u0004\u0018\u00010\b2\b\u0010\u0010\u001a\u0004\u0018\u00010\bH\u0002\u001a\f\u0010\u0011\u001a\u00020\u0001*\u00020\u0012H\u0002\u001a7\u0010\u0013\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\u0018\u0010\u0019\u001a4\u0010\u001a\u001a\u00020\u00012\u0006\u0010\u001b\u001a\u00020\b2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\b\u0010\t\u001a\u0004\u0018\u00010\bH\u0002¨\u0006\u001c"}, d2 = {"isInOutline", "", "outline", "Landroidx/compose/ui/graphics/Outline;", "x", "", "y", "tmpTouchPointPath", "Landroidx/compose/ui/graphics/Path;", "tmpOpPath", "isInRectangle", "rect", "Landroidx/compose/ui/geometry/Rect;", "isInRoundedRect", "Landroidx/compose/ui/graphics/Outline$Rounded;", "touchPointPath", "opPath", "cornersFit", "Landroidx/compose/ui/geometry/RoundRect;", "isWithinEllipse", "cornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "centerX", "centerY", "isWithinEllipse-VE1yxkc", "(FFJFF)Z", "isInPath", "path", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b2\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\bH\u0000\u001a \u0010\n\u001a\u00020\u00012\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002\u001a4\u0010\r\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u000e2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\b\u0010\u000f\u001a\u0004\u0018\u00010\b2\b\u0010\u0010\u001a\u0004\u0018\u00010\bH\u0002\u001a\f\u0010\u0011\u001a\u00020\u0001*\u00020\u0012H\u0002\u001a7\u0010\u0013\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u0005H\u0002¢\u0006\u0004\b\u0018\u0010\u0019\u001a4\u0010\u001a\u001a\u00020\u00012\u0006\u0010\u001b\u001a\u00020\b2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\b\u0010\t\u001a\u0004\u0018\u00010\bH\u0002¨\u0006\u001c"}, d2 = {"isInOutline", "", "outline", "Landroidx/compose/ui/graphics/Outline;", "x", "", "y", "tmpTouchPointPath", "Landroidx/compose/ui/graphics/Path;", "tmpOpPath", "isInRectangle", "rect", "Landroidx/compose/ui/geometry/Rect;", "isInRoundedRect", "Landroidx/compose/ui/graphics/Outline$Rounded;", "touchPointPath", "opPath", "cornersFit", "Landroidx/compose/ui/geometry/RoundRect;", "isWithinEllipse", "cornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "centerX", "centerY", "isWithinEllipse-VE1yxkc", "(FFJFF)Z", "isInPath", "path", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ShapeContainingUtilKt {
     public static /* synthetic */ boolean isInOutline$default(Outline outline, float f, float f2, Path path, Path path2, int i, Object obj) {
@@ -49,31 +49,31 @@ public final class ShapeContainingUtilKt {
             Path.addRoundRect$default(Path, roundRect, null, 2, null);
             return isInPath(Path, f, f2, path, path2);
         }
-        float left = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() >> 32));
-        float top = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() & 4294967295L));
-        float right = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() >> 32));
-        float top2 = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 4294967295L));
-        float right2 = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() >> 32));
-        float bottom = roundRect.getBottom() - Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 4294967295L));
-        float bottom2 = roundRect.getBottom() - Float.intBitsToFloat((int) (4294967295L & roundRect.m5084getBottomLeftCornerRadiuskKHJgLs()));
-        float left2 = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32));
+        float left = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m5229getTopLeftCornerRadiuskKHJgLs() >> 32));
+        float top = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m5229getTopLeftCornerRadiuskKHJgLs() & 4294967295L));
+        float right = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m5230getTopRightCornerRadiuskKHJgLs() >> 32));
+        float top2 = roundRect.getTop() + Float.intBitsToFloat((int) (roundRect.m5230getTopRightCornerRadiuskKHJgLs() & 4294967295L));
+        float right2 = roundRect.getRight() - Float.intBitsToFloat((int) (roundRect.m5228getBottomRightCornerRadiuskKHJgLs() >> 32));
+        float bottom = roundRect.getBottom() - Float.intBitsToFloat((int) (roundRect.m5228getBottomRightCornerRadiuskKHJgLs() & 4294967295L));
+        float bottom2 = roundRect.getBottom() - Float.intBitsToFloat((int) (4294967295L & roundRect.m5227getBottomLeftCornerRadiuskKHJgLs()));
+        float left2 = roundRect.getLeft() + Float.intBitsToFloat((int) (roundRect.m5227getBottomLeftCornerRadiuskKHJgLs() >> 32));
         if (f >= left || f2 >= top) {
             if (f >= left2 || f2 <= bottom2) {
                 if (f <= right || f2 >= top2) {
                     if (f <= right2 || f2 <= bottom) {
                         return true;
                     }
-                    return m7181isWithinEllipseVE1yxkc(f, f2, roundRect.m5085getBottomRightCornerRadiuskKHJgLs(), right2, bottom);
+                    return m7417isWithinEllipseVE1yxkc(f, f2, roundRect.m5228getBottomRightCornerRadiuskKHJgLs(), right2, bottom);
                 }
-                return m7181isWithinEllipseVE1yxkc(f, f2, roundRect.m5087getTopRightCornerRadiuskKHJgLs(), right, top2);
+                return m7417isWithinEllipseVE1yxkc(f, f2, roundRect.m5230getTopRightCornerRadiuskKHJgLs(), right, top2);
             }
-            return m7181isWithinEllipseVE1yxkc(f, f2, roundRect.m5084getBottomLeftCornerRadiuskKHJgLs(), left2, bottom2);
+            return m7417isWithinEllipseVE1yxkc(f, f2, roundRect.m5227getBottomLeftCornerRadiuskKHJgLs(), left2, bottom2);
         }
-        return m7181isWithinEllipseVE1yxkc(f, f2, roundRect.m5086getTopLeftCornerRadiuskKHJgLs(), left, top);
+        return m7417isWithinEllipseVE1yxkc(f, f2, roundRect.m5229getTopLeftCornerRadiuskKHJgLs(), left, top);
     }
 
     private static final boolean cornersFit(RoundRect roundRect) {
-        return Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m5086getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m5084getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight() && Float.intBitsToFloat((int) (roundRect.m5087getTopRightCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m5085getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight();
+        return Float.intBitsToFloat((int) (roundRect.m5229getTopLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m5230getTopRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m5227getBottomLeftCornerRadiuskKHJgLs() >> 32)) + Float.intBitsToFloat((int) (roundRect.m5228getBottomRightCornerRadiuskKHJgLs() >> 32)) <= roundRect.getWidth() && Float.intBitsToFloat((int) (roundRect.m5229getTopLeftCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m5227getBottomLeftCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight() && Float.intBitsToFloat((int) (roundRect.m5230getTopRightCornerRadiuskKHJgLs() & 4294967295L)) + Float.intBitsToFloat((int) (roundRect.m5228getBottomRightCornerRadiuskKHJgLs() & 4294967295L)) <= roundRect.getHeight();
     }
 
     private static final boolean isInPath(Path path, float f, float f2, Path path2, Path path3) {
@@ -85,7 +85,7 @@ public final class ShapeContainingUtilKt {
         if (path3 == null) {
             path3 = AndroidPath_androidKt.Path();
         }
-        path3.mo5170opN5in7k0(path, path2, PathOperation.Companion.m5585getIntersectb3I0S0c());
+        path3.mo5313opN5in7k0(path, path2, PathOperation.Companion.m5733getIntersectb3I0S0c());
         boolean isEmpty = path3.isEmpty();
         path3.reset();
         path2.reset();
@@ -93,7 +93,7 @@ public final class ShapeContainingUtilKt {
     }
 
     /* renamed from: isWithinEllipse-VE1yxkc  reason: not valid java name */
-    private static final boolean m7181isWithinEllipseVE1yxkc(float f, float f2, long j, float f3, float f4) {
+    private static final boolean m7417isWithinEllipseVE1yxkc(float f, float f2, long j, float f3, float f4) {
         float f5 = f - f3;
         float f6 = f2 - f4;
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));

@@ -6,12 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: OkioStorage.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.okio.OkioStorageConnection", f = "OkioStorage.kt", i = {0, 0, 0}, l = {113}, m = "readScope", n = {"this", "$this$use$iv", "lock"}, s = {"L$0", "L$1", "Z$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.okio.OkioStorageConnection", f = "OkioStorage.kt", i = {0, 0}, l = {113}, m = "readScope", n = {"$this$use$iv", "lock"}, s = {"L$0", "Z$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class OkioStorageConnection$readScope$1<R> extends ContinuationImpl {
     Object L$0;
-    Object L$1;
     boolean Z$0;
     int label;
     /* synthetic */ Object result;

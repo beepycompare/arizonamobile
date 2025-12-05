@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Kopīgot ar:</string>
     <string name="abc_shareactionprovider_share_with_application">Kopīgot ar lietojumprogrammu %s</string>
     <string name="abc_toolbar_collapse_description">Sakļaut</string>
-    <string name="autofill">Automātiskā aizpilde</string>
+    <string name="androidx_compose_foundation_autofill">Automātiskā aizpilde</string>
+    <string name="androidx_compose_ui_autofill">Automātiskā aizpilde</string>
     <string name="bottomsheet_action_collapse">Sakļaut ekrāna apakšdaļas lapu</string>
     <string name="bottomsheet_action_expand">Izvērst ekrāna apakšdaļas lapu</string>
     <string name="bottomsheet_action_expand_halfway">Izvērst līdz pusei</string>

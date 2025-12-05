@@ -10,41 +10,41 @@ public final class ExtendedFabMediumTokens {
     private static final float LeadingSpace;
     private static final float TrailingSpace;
     public static final ExtendedFabMediumTokens INSTANCE = new ExtendedFabMediumTokens();
-    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 80.0d);
-    private static final float IconLabelSpace = Dp.m7996constructorimpl((float) 16.0d);
-    private static final float IconSize = Dp.m7996constructorimpl((float) 28.0d);
+    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 80.0d);
+    private static final float IconLabelSpace = Dp.m8258constructorimpl((float) 16.0d);
+    private static final float IconSize = Dp.m8258constructorimpl((float) 28.0d);
 
     private ExtendedFabMediumTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3900getContainerHeightD9Ej5fM() {
+    public final float m3986getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3901getIconLabelSpaceD9Ej5fM() {
+    public final float m3987getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3902getIconSizeD9Ej5fM() {
+    public final float m3988getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3903getLeadingSpaceD9Ej5fM() {
+    public final float m3989getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3904getTrailingSpaceD9Ej5fM() {
+    public final float m3990getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 
     static {
         float f = (float) 26.0d;
-        LeadingSpace = Dp.m7996constructorimpl(f);
-        TrailingSpace = Dp.m7996constructorimpl(f);
+        LeadingSpace = Dp.m8258constructorimpl(f);
+        TrailingSpace = Dp.m8258constructorimpl(f);
     }
 }

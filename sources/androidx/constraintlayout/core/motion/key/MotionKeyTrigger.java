@@ -211,7 +211,7 @@ public class MotionKeyTrigger extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo8476clone() {
+    public MotionKey mo8738clone() {
         return new MotionKeyTrigger().copy((MotionKey) this);
     }
 

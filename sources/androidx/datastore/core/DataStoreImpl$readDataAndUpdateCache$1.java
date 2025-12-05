@@ -6,12 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DataStoreImpl.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl", f = "DataStoreImpl.kt", i = {0, 0, 0, 1, 2}, l = {287, 296, 304}, m = "readDataAndUpdateCache", n = {"this", "currentState", "requireLock", "this", "this"}, s = {"L$0", "L$1", "Z$0", "L$0", "L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl", f = "DataStoreImpl.kt", i = {0, 0}, l = {305, 314, 322}, m = "readDataAndUpdateCache", n = {"currentState", "requireLock"}, s = {"L$0", "Z$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class DataStoreImpl$readDataAndUpdateCache$1 extends ContinuationImpl {
     Object L$0;
-    Object L$1;
     boolean Z$0;
     int label;
     /* synthetic */ Object result;

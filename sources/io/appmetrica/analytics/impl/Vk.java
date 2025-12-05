@@ -11,22 +11,22 @@ public final class Vk {
     public static final String i = "SESSION_IS_ALIVE_REPORT_NEEDED";
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f727a;
+    public final String f810a;
     protected final Xe b;
-    public C0268gb c;
+    public C0267gb c;
 
     public Vk(Xe xe, String str) {
         this.b = xe;
-        this.f727a = str;
-        C0268gb c0268gb = new C0268gb();
+        this.f810a = str;
+        C0267gb c0267gb = new C0267gb();
         try {
             String h2 = xe.h(str);
             if (!TextUtils.isEmpty(h2)) {
-                c0268gb = new C0268gb(h2);
+                c0267gb = new C0267gb(h2);
             }
         } catch (Throwable unused) {
         }
-        this.c = c0268gb;
+        this.c = c0267gb;
     }
 
     public final Vk a(long j) {
@@ -65,10 +65,10 @@ public final class Vk {
     }
 
     public final Boolean i() {
-        C0268gb c0268gb = this.c;
-        c0268gb.getClass();
+        C0267gb c0267gb = this.c;
+        c0267gb.getClass();
         try {
-            return Boolean.valueOf(c0268gb.getBoolean(i));
+            return Boolean.valueOf(c0267gb.getBoolean(i));
         } catch (Throwable unused) {
             return null;
         }
@@ -80,7 +80,7 @@ public final class Vk {
     }
 
     public final void b() {
-        this.b.e(this.f727a, this.c.toString());
+        this.b.e(this.f810a, this.c.toString());
         this.b.b();
     }
 
@@ -106,7 +106,7 @@ public final class Vk {
     }
 
     public final void a() {
-        this.c = new C0268gb();
+        this.c = new C0267gb();
         b();
     }
 }

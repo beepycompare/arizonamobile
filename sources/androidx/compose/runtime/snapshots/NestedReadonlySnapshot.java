@@ -45,6 +45,13 @@ public final class NestedReadonlySnapshot extends Snapshot {
     public void notifyObjectsInitialized$runtime() {
     }
 
+    public NestedReadonlySnapshot(long j, SnapshotIdSet snapshotIdSet, Function1<Object, Unit> function1, Snapshot snapshot) {
+        super(j, snapshotIdSet, (DefaultConstructorMarker) null);
+        this.readObserver = function1;
+        this.parent = snapshot;
+        snapshot.mo4864nestedActivated$runtime(this);
+    }
+
     @Override // androidx.compose.runtime.snapshots.Snapshot
     public /* bridge */ /* synthetic */ Snapshot takeNestedSnapshot(Function1 function1) {
         return takeNestedSnapshot((Function1<Object, Unit>) function1);
@@ -60,16 +67,31 @@ public final class NestedReadonlySnapshot extends Snapshot {
         return this.parent;
     }
 
-    public NestedReadonlySnapshot(long j, SnapshotIdSet snapshotIdSet, Function1<Object, Unit> function1, Snapshot snapshot) {
-        super(j, snapshotIdSet, (DefaultConstructorMarker) null);
-        this.readObserver = function1;
-        this.parent = snapshot;
-        snapshot.mo4735nestedActivated$runtime(this);
-    }
-
     @Override // androidx.compose.runtime.snapshots.Snapshot
     public Snapshot getRoot() {
         return this.parent.getRoot();
+    }
+
+    @Override // androidx.compose.runtime.snapshots.Snapshot
+    public NestedReadonlySnapshot takeNestedSnapshot(Function1<Object, Unit> function1) {
+        Map<SnapshotObserver, SnapshotInstanceObservers> map;
+        NestedReadonlySnapshot nestedReadonlySnapshot = this;
+        PersistentList persistentList = SnapshotObserverKt.observers;
+        if (persistentList != null) {
+            Pair<SnapshotInstanceObservers, Map<SnapshotObserver, SnapshotInstanceObservers>> mergeObservers = SnapshotObserverKt.mergeObservers(persistentList, nestedReadonlySnapshot, true, function1, null);
+            SnapshotInstanceObservers first = mergeObservers.getFirst();
+            Function1<Object, Unit> readObserver = first.getReadObserver();
+            first.getWriteObserver();
+            map = mergeObservers.getSecond();
+            function1 = readObserver;
+        } else {
+            map = null;
+        }
+        NestedReadonlySnapshot nestedReadonlySnapshot2 = new NestedReadonlySnapshot(getSnapshotId(), getInvalid$runtime(), SnapshotKt.mergedReadObserver$default(function1, getReadObserver(), false, 4, null), getParent());
+        if (persistentList != null) {
+            SnapshotObserverKt.dispatchCreatedObservers(persistentList, nestedReadonlySnapshot, nestedReadonlySnapshot2, map);
+        }
+        return nestedReadonlySnapshot2;
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
@@ -81,50 +103,29 @@ public final class NestedReadonlySnapshot extends Snapshot {
             closeAndReleasePinning$runtime();
         }
         NestedReadonlySnapshot nestedReadonlySnapshot = this;
-        this.parent.mo4736nestedDeactivated$runtime(nestedReadonlySnapshot);
+        this.parent.mo4865nestedDeactivated$runtime(nestedReadonlySnapshot);
         super.dispose();
         SnapshotObserverKt.dispatchObserverOnPreDispose(nestedReadonlySnapshot);
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: recordModified$runtime */
-    public Void mo4737recordModified$runtime(StateObject stateObject) {
+    public Void mo4866recordModified$runtime(StateObject stateObject) {
         SnapshotKt.reportReadonlySnapshotWrite();
         throw new KotlinNothingValueException();
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public Void mo4736nestedDeactivated$runtime(Snapshot snapshot) {
+    public Void mo4865nestedDeactivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public Void mo4735nestedActivated$runtime(Snapshot snapshot) {
+    public Void mo4864nestedActivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
-    }
-
-    @Override // androidx.compose.runtime.snapshots.Snapshot
-    public NestedReadonlySnapshot takeNestedSnapshot(Function1<Object, Unit> function1) {
-        Map<SnapshotObserver, SnapshotInstanceObservers> map;
-        PersistentList persistentList = SnapshotObserverKt.observers;
-        if (persistentList != null) {
-            Pair<SnapshotInstanceObservers, Map<SnapshotObserver, SnapshotInstanceObservers>> mergeObservers = SnapshotObserverKt.mergeObservers(persistentList, this, true, function1, null);
-            SnapshotInstanceObservers first = mergeObservers.getFirst();
-            Function1<Object, Unit> readObserver = first.getReadObserver();
-            first.getWriteObserver();
-            map = mergeObservers.getSecond();
-            function1 = readObserver;
-        } else {
-            map = null;
-        }
-        NestedReadonlySnapshot nestedReadonlySnapshot = new NestedReadonlySnapshot(getSnapshotId(), getInvalid$runtime(), SnapshotKt.mergedReadObserver$default(function1, getReadObserver(), false, 4, null), getParent());
-        if (persistentList != null) {
-            SnapshotObserverKt.dispatchCreatedObservers(persistentList, this, nestedReadonlySnapshot, map);
-        }
-        return nestedReadonlySnapshot;
     }
 }

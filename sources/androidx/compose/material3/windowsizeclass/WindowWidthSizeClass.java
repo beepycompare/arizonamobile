@@ -23,46 +23,46 @@ public final class WindowWidthSizeClass implements Comparable<WindowWidthSizeCla
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ WindowWidthSizeClass m4487boximpl(int i) {
+    public static final /* synthetic */ WindowWidthSizeClass m4573boximpl(int i) {
         return new WindowWidthSizeClass(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m4489constructorimpl(int i) {
+    private static int m4575constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4490equalsimpl(int i, Object obj) {
-        return (obj instanceof WindowWidthSizeClass) && i == ((WindowWidthSizeClass) obj).m4495unboximpl();
+    public static boolean m4576equalsimpl(int i, Object obj) {
+        return (obj instanceof WindowWidthSizeClass) && i == ((WindowWidthSizeClass) obj).m4581unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4491equalsimpl0(int i, int i2) {
+    public static final boolean m4577equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4492hashCodeimpl(int i) {
+    public static int m4578hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4490equalsimpl(this.value, obj);
+        return m4576equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4492hashCodeimpl(this.value);
+        return m4578hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4495unboximpl() {
+    public final /* synthetic */ int m4581unboximpl() {
         return this.value;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(WindowWidthSizeClass windowWidthSizeClass) {
-        return m4494compareToGxU_lZo(windowWidthSizeClass.m4495unboximpl());
+        return m4580compareToGxU_lZo(windowWidthSizeClass.m4581unboximpl());
     }
 
     private /* synthetic */ WindowWidthSizeClass(int i) {
@@ -70,29 +70,29 @@ public final class WindowWidthSizeClass implements Comparable<WindowWidthSizeCla
     }
 
     /* renamed from: compareTo-GxU_lZo  reason: not valid java name */
-    public int m4494compareToGxU_lZo(int i) {
-        return m4488compareToGxU_lZo(this.value, i);
+    public int m4580compareToGxU_lZo(int i) {
+        return m4574compareToGxU_lZo(this.value, i);
     }
 
     /* renamed from: compareTo-GxU_lZo  reason: not valid java name */
-    public static int m4488compareToGxU_lZo(int i, int i2) {
+    public static int m4574compareToGxU_lZo(int i, int i2) {
         Companion companion = Companion;
-        return Dp.m7995compareTo0680j_4(companion.m4497breakpointfhkHA5s(i), companion.m4497breakpointfhkHA5s(i2));
+        return Dp.m8257compareTo0680j_4(companion.m4583breakpointfhkHA5s(i), companion.m4583breakpointfhkHA5s(i2));
     }
 
     public String toString() {
-        return m4493toStringimpl(this.value);
+        return m4579toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4493toStringimpl(int i) {
+    public static String m4579toStringimpl(int i) {
         String str;
-        if (m4491equalsimpl0(i, Compact)) {
+        if (m4577equalsimpl0(i, Compact)) {
             str = "Compact";
-        } else if (m4491equalsimpl0(i, Medium)) {
+        } else if (m4577equalsimpl0(i, Medium)) {
             str = "Medium";
         } else {
-            str = m4491equalsimpl0(i, Expanded) ? "Expanded" : "";
+            str = m4577equalsimpl0(i, Expanded) ? "Expanded" : "";
         }
         return "WindowWidthSizeClass.".concat(str);
     }
@@ -118,17 +118,17 @@ public final class WindowWidthSizeClass implements Comparable<WindowWidthSizeCla
         }
 
         /* renamed from: getCompact-Y0FxcvE  reason: not valid java name */
-        public final int m4499getCompactY0FxcvE() {
+        public final int m4585getCompactY0FxcvE() {
             return WindowWidthSizeClass.Compact;
         }
 
         /* renamed from: getMedium-Y0FxcvE  reason: not valid java name */
-        public final int m4501getMediumY0FxcvE() {
+        public final int m4587getMediumY0FxcvE() {
             return WindowWidthSizeClass.Medium;
         }
 
         /* renamed from: getExpanded-Y0FxcvE  reason: not valid java name */
-        public final int m4500getExpandedY0FxcvE() {
+        public final int m4586getExpandedY0FxcvE() {
             return WindowWidthSizeClass.Expanded;
         }
 
@@ -142,49 +142,49 @@ public final class WindowWidthSizeClass implements Comparable<WindowWidthSizeCla
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: breakpoint-fhkHA5s  reason: not valid java name */
-        public final float m4497breakpointfhkHA5s(int i) {
-            if (!WindowWidthSizeClass.m4491equalsimpl0(i, m4500getExpandedY0FxcvE())) {
-                if (WindowWidthSizeClass.m4491equalsimpl0(i, m4501getMediumY0FxcvE())) {
-                    return Dp.m7996constructorimpl(600);
+        public final float m4583breakpointfhkHA5s(int i) {
+            if (!WindowWidthSizeClass.m4577equalsimpl0(i, m4586getExpandedY0FxcvE())) {
+                if (WindowWidthSizeClass.m4577equalsimpl0(i, m4587getMediumY0FxcvE())) {
+                    return Dp.m8258constructorimpl(600);
                 }
-                return Dp.m7996constructorimpl(0);
+                return Dp.m8258constructorimpl(0);
             }
-            return Dp.m7996constructorimpl(840);
+            return Dp.m8258constructorimpl((float) androidx.window.core.layout.WindowSizeClass.WIDTH_DP_EXPANDED_LOWER_BOUND);
         }
 
         /* renamed from: fromWidth-LJjiCC4$material3_window_size_class  reason: not valid java name */
-        public final int m4498fromWidthLJjiCC4$material3_window_size_class(float f, Set<WindowWidthSizeClass> set) {
-            if (Dp.m7995compareTo0680j_4(f, Dp.m7996constructorimpl(0)) < 0) {
+        public final int m4584fromWidthLJjiCC4$material3_window_size_class(float f, Set<WindowWidthSizeClass> set) {
+            if (Dp.m8257compareTo0680j_4(f, Dp.m8258constructorimpl(0)) < 0) {
                 throw new IllegalArgumentException("Width must not be negative".toString());
             }
             if (set.isEmpty()) {
                 throw new IllegalArgumentException("Must support at least one size class".toString());
             }
-            int m4499getCompactY0FxcvE = m4499getCompactY0FxcvE();
+            int m4585getCompactY0FxcvE = m4585getCompactY0FxcvE();
             List list = WindowWidthSizeClass.AllSizeClassList;
             int size = list.size();
             for (int i = 0; i < size; i++) {
-                int m4495unboximpl = ((WindowWidthSizeClass) list.get(i)).m4495unboximpl();
-                if (set.contains(WindowWidthSizeClass.m4487boximpl(m4495unboximpl))) {
-                    if (Dp.m7995compareTo0680j_4(f, WindowWidthSizeClass.Companion.m4497breakpointfhkHA5s(m4495unboximpl)) >= 0) {
-                        return m4495unboximpl;
+                int m4581unboximpl = ((WindowWidthSizeClass) list.get(i)).m4581unboximpl();
+                if (set.contains(WindowWidthSizeClass.m4573boximpl(m4581unboximpl))) {
+                    if (Dp.m8257compareTo0680j_4(f, WindowWidthSizeClass.Companion.m4583breakpointfhkHA5s(m4581unboximpl)) >= 0) {
+                        return m4581unboximpl;
                     }
-                    m4499getCompactY0FxcvE = m4495unboximpl;
+                    m4585getCompactY0FxcvE = m4581unboximpl;
                 }
             }
-            return m4499getCompactY0FxcvE;
+            return m4585getCompactY0FxcvE;
         }
     }
 
     static {
-        int m4489constructorimpl = m4489constructorimpl(0);
-        Compact = m4489constructorimpl;
-        int m4489constructorimpl2 = m4489constructorimpl(1);
-        Medium = m4489constructorimpl2;
-        int m4489constructorimpl3 = m4489constructorimpl(2);
-        Expanded = m4489constructorimpl3;
-        DefaultSizeClasses = SetsKt.setOf((Object[]) new WindowWidthSizeClass[]{m4487boximpl(m4489constructorimpl), m4487boximpl(m4489constructorimpl2), m4487boximpl(m4489constructorimpl3)});
-        List<WindowWidthSizeClass> listOf = CollectionsKt.listOf((Object[]) new WindowWidthSizeClass[]{m4487boximpl(m4489constructorimpl3), m4487boximpl(m4489constructorimpl2), m4487boximpl(m4489constructorimpl)});
+        int m4575constructorimpl = m4575constructorimpl(0);
+        Compact = m4575constructorimpl;
+        int m4575constructorimpl2 = m4575constructorimpl(1);
+        Medium = m4575constructorimpl2;
+        int m4575constructorimpl3 = m4575constructorimpl(2);
+        Expanded = m4575constructorimpl3;
+        DefaultSizeClasses = SetsKt.setOf((Object[]) new WindowWidthSizeClass[]{m4573boximpl(m4575constructorimpl), m4573boximpl(m4575constructorimpl2), m4573boximpl(m4575constructorimpl3)});
+        List<WindowWidthSizeClass> listOf = CollectionsKt.listOf((Object[]) new WindowWidthSizeClass[]{m4573boximpl(m4575constructorimpl3), m4573boximpl(m4575constructorimpl2), m4573boximpl(m4575constructorimpl)});
         AllSizeClassList = listOf;
         AllSizeClasses = CollectionsKt.toSet(listOf);
     }

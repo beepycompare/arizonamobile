@@ -1,75 +1,34 @@
 package androidx.compose.ui.input.pointer.util;
 
-import androidx.compose.ui.geometry.Offset;
-import androidx.compose.ui.input.pointer.util.VelocityTracker1D;
-import androidx.compose.ui.internal.InlineClassHelperKt;
-import androidx.compose.ui.unit.Velocity;
 import androidx.compose.ui.unit.VelocityKt;
 import kotlin.Metadata;
 /* compiled from: VelocityTracker.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00112\u0006\u0010\u0017\u001a\u00020\n¢\u0006\u0004\b\u0018\u0010\u0019J\r\u0010\u001a\u001a\u00020\u001b¢\u0006\u0004\b\u001c\u0010\fJ\u0015\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001d\u001a\u00020\u001b¢\u0006\u0004\b\u001e\u0010\u001fJ\u0006\u0010 \u001a\u00020\u0015R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\t\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u000f\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u0010\u001a\u00020\u0011X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\f\"\u0004\b\u0013\u0010\u000e¨\u0006!"}, d2 = {"Landroidx/compose/ui/input/pointer/util/VelocityTracker;", "", "<init>", "()V", "strategy", "Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;", "xVelocityTracker", "Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;", "yVelocityTracker", "currentPointerPositionAccumulator", "Landroidx/compose/ui/geometry/Offset;", "getCurrentPointerPositionAccumulator-F1C5BW0$ui_release", "()J", "setCurrentPointerPositionAccumulator-k-4lQ0M$ui_release", "(J)V", "J", "lastMoveEventTimeStamp", "", "getLastMoveEventTimeStamp$ui_release", "setLastMoveEventTimeStamp$ui_release", "addPosition", "", "timeMillis", "position", "addPosition-Uv8p0NA", "(JJ)V", "calculateVelocity", "Landroidx/compose/ui/unit/Velocity;", "calculateVelocity-9UxMQ8M", "maximumVelocity", "calculateVelocity-AH228Gc", "(J)J", "resetTracking", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\r\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\u0015\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0011¢\u0006\u0004\b\u0015\u0010\u0016J\u0006\u0010\u0017\u001a\u00020\tR\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0018"}, d2 = {"Landroidx/compose/ui/input/pointer/util/VelocityTracker;", "", "<init>", "()V", "platformVelocityTracker", "Landroidx/compose/ui/input/pointer/util/PlatformVelocityTracker;", "getPlatformVelocityTracker$ui", "()Landroidx/compose/ui/input/pointer/util/PlatformVelocityTracker;", "addPosition", "", "timeMillis", "", "position", "Landroidx/compose/ui/geometry/Offset;", "addPosition-Uv8p0NA", "(JJ)V", "calculateVelocity", "Landroidx/compose/ui/unit/Velocity;", "calculateVelocity-9UxMQ8M", "()J", "maximumVelocity", "calculateVelocity-AH228Gc", "(J)J", "resetTracking", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class VelocityTracker {
     public static final int $stable = 8;
-    private long currentPointerPositionAccumulator;
-    private long lastMoveEventTimeStamp;
-    private final VelocityTracker1D.Strategy strategy;
-    private final VelocityTracker1D xVelocityTracker;
-    private final VelocityTracker1D yVelocityTracker;
+    private final PlatformVelocityTracker platformVelocityTracker = PlatformVelocityTracker_androidKt.PlatformVelocityTracker();
 
-    public VelocityTracker() {
-        VelocityTracker1D.Strategy strategy;
-        if (VelocityTrackerKt.getVelocityTrackerStrategyUseImpulse()) {
-            strategy = VelocityTracker1D.Strategy.Impulse;
-        } else {
-            strategy = VelocityTracker1D.Strategy.Lsq2;
-        }
-        this.strategy = strategy;
-        this.xVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
-        this.yVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
-        this.currentPointerPositionAccumulator = Offset.Companion.m5052getZeroF1C5BW0();
-    }
-
-    /* renamed from: getCurrentPointerPositionAccumulator-F1C5BW0$ui_release  reason: not valid java name */
-    public final long m6670getCurrentPointerPositionAccumulatorF1C5BW0$ui_release() {
-        return this.currentPointerPositionAccumulator;
-    }
-
-    /* renamed from: setCurrentPointerPositionAccumulator-k-4lQ0M$ui_release  reason: not valid java name */
-    public final void m6671setCurrentPointerPositionAccumulatork4lQ0M$ui_release(long j) {
-        this.currentPointerPositionAccumulator = j;
-    }
-
-    public final long getLastMoveEventTimeStamp$ui_release() {
-        return this.lastMoveEventTimeStamp;
-    }
-
-    public final void setLastMoveEventTimeStamp$ui_release(long j) {
-        this.lastMoveEventTimeStamp = j;
+    public final PlatformVelocityTracker getPlatformVelocityTracker$ui() {
+        return this.platformVelocityTracker;
     }
 
     /* renamed from: addPosition-Uv8p0NA  reason: not valid java name */
-    public final void m6667addPositionUv8p0NA(long j, long j2) {
-        this.xVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 >> 32)));
-        this.yVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 & 4294967295L)));
+    public final void m6848addPositionUv8p0NA(long j, long j2) {
+        this.platformVelocityTracker.mo6839addPositionUv8p0NA(j, j2);
     }
 
     /* renamed from: calculateVelocity-9UxMQ8M  reason: not valid java name */
-    public final long m6668calculateVelocity9UxMQ8M() {
-        return m6669calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
+    public final long m6849calculateVelocity9UxMQ8M() {
+        return m6850calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
     }
 
     /* renamed from: calculateVelocity-AH228Gc  reason: not valid java name */
-    public final long m6669calculateVelocityAH228Gc(long j) {
-        if (!(Velocity.m8234getXimpl(j) > 0.0f && Velocity.m8235getYimpl(j) > 0.0f)) {
-            InlineClassHelperKt.throwIllegalStateException("maximumVelocity should be a positive value. You specified=" + ((Object) Velocity.m8241toStringimpl(j)));
-        }
-        return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Velocity.m8234getXimpl(j)), this.yVelocityTracker.calculateVelocity(Velocity.m8235getYimpl(j)));
+    public final long m6850calculateVelocityAH228Gc(long j) {
+        return this.platformVelocityTracker.mo6840calculateVelocityAH228Gc(j);
     }
 
     public final void resetTracking() {
-        this.xVelocityTracker.resetTracking();
-        this.yVelocityTracker.resetTracking();
-        this.lastMoveEventTimeStamp = 0L;
+        this.platformVelocityTracker.resetTracking();
     }
 }

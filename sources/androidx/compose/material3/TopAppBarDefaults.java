@@ -30,15 +30,15 @@ import kotlin.jvm.functions.Function0;
 public final class TopAppBarDefaults {
     public static final int $stable = 0;
     public static final TopAppBarDefaults INSTANCE = new TopAppBarDefaults();
-    private static final float TopAppBarExpandedHeight = AppBarSmallTokens.INSTANCE.m3648getContainerHeightD9Ej5fM();
-    private static final float MediumAppBarCollapsedHeight = AppBarSmallTokens.INSTANCE.m3648getContainerHeightD9Ej5fM();
-    private static final float MediumAppBarExpandedHeight = AppBarMediumTokens.INSTANCE.m3647getContainerHeightD9Ej5fM();
-    private static final float MediumFlexibleAppBarWithoutSubtitleExpandedHeight = AppBarMediumFlexibleTokens.INSTANCE.m3645getContainerHeightD9Ej5fM();
-    private static final float MediumFlexibleAppBarWithSubtitleExpandedHeight = AppBarMediumFlexibleTokens.INSTANCE.m3646getLargeContainerHeightD9Ej5fM();
-    private static final float LargeAppBarCollapsedHeight = AppBarSmallTokens.INSTANCE.m3648getContainerHeightD9Ej5fM();
-    private static final float LargeAppBarExpandedHeight = AppBarLargeTokens.INSTANCE.m3644getContainerHeightD9Ej5fM();
-    private static final float LargeFlexibleAppBarWithoutSubtitleExpandedHeight = AppBarLargeFlexibleTokens.INSTANCE.m3642getContainerHeightD9Ej5fM();
-    private static final float LargeFlexibleAppBarWithSubtitleExpandedHeight = AppBarLargeFlexibleTokens.INSTANCE.m3643getLargeContainerHeightD9Ej5fM();
+    private static final float TopAppBarExpandedHeight = AppBarSmallTokens.INSTANCE.m3734getContainerHeightD9Ej5fM();
+    private static final float MediumAppBarCollapsedHeight = AppBarSmallTokens.INSTANCE.m3734getContainerHeightD9Ej5fM();
+    private static final float MediumAppBarExpandedHeight = AppBarMediumTokens.INSTANCE.m3733getContainerHeightD9Ej5fM();
+    private static final float MediumFlexibleAppBarWithoutSubtitleExpandedHeight = AppBarMediumFlexibleTokens.INSTANCE.m3731getContainerHeightD9Ej5fM();
+    private static final float MediumFlexibleAppBarWithSubtitleExpandedHeight = AppBarMediumFlexibleTokens.INSTANCE.m3732getLargeContainerHeightD9Ej5fM();
+    private static final float LargeAppBarCollapsedHeight = AppBarSmallTokens.INSTANCE.m3734getContainerHeightD9Ej5fM();
+    private static final float LargeAppBarExpandedHeight = AppBarLargeTokens.INSTANCE.m3730getContainerHeightD9Ej5fM();
+    private static final float LargeFlexibleAppBarWithoutSubtitleExpandedHeight = AppBarLargeFlexibleTokens.INSTANCE.m3728getContainerHeightD9Ej5fM();
+    private static final float LargeFlexibleAppBarWithSubtitleExpandedHeight = AppBarLargeFlexibleTokens.INSTANCE.m3729getLargeContainerHeightD9Ej5fM();
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean enterAlwaysScrollBehavior$lambda$5$lambda$4() {
@@ -77,43 +77,43 @@ public final class TopAppBarDefaults {
     }
 
     /* renamed from: topAppBarColors-5tl4gsc  reason: not valid java name */
-    public final TopAppBarColors m3409topAppBarColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+    public final TopAppBarColors m3495topAppBarColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1325733438, "C(topAppBarColors)N(containerColor:c#ui.graphics.Color,scrolledContainerColor:c#ui.graphics.Color,navigationIconContentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionIconContentColor:c#ui.graphics.Color,subtitleContentColor:c#ui.graphics.Color)1467@73186L11:AppBar.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
-        long m5316getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j5;
-        long m5316getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j6;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j5;
+        long m5460getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j6;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1325733438, i, -1, "androidx.compose.material3.TopAppBarDefaults.topAppBarColors (AppBar.kt:1467)");
         }
-        TopAppBarColors m3388copytNS2XkQ = getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m3388copytNS2XkQ(m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4, m5316getUnspecified0d7_KjU5, m5316getUnspecified0d7_KjU6);
+        TopAppBarColors m3474copytNS2XkQ = getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m3474copytNS2XkQ(m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4, m5460getUnspecified0d7_KjU5, m5460getUnspecified0d7_KjU6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3388copytNS2XkQ;
+        return m3474copytNS2XkQ;
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility in favor of topAppBarColors with subtitleContentColor")
     /* renamed from: topAppBarColors-zjMxDiM  reason: not valid java name */
-    public final /* synthetic */ TopAppBarColors m3410topAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
+    public final /* synthetic */ TopAppBarColors m3496topAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 2142919275, "C(topAppBarColors)N(containerColor:c#ui.graphics.Color,scrolledContainerColor:c#ui.graphics.Color,navigationIconContentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionIconContentColor:c#ui.graphics.Color)1499@74610L367:AppBar.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
-        long m5316getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j5;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j5;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(2142919275, i, -1, "androidx.compose.material3.TopAppBarDefaults.topAppBarColors (AppBar.kt:1499)");
         }
-        TopAppBarColors m3409topAppBarColors5tl4gsc = m3409topAppBarColors5tl4gsc(m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4, m5316getUnspecified0d7_KjU5, m5316getUnspecified0d7_KjU4, composer, (65534 & i) | ((i << 6) & 458752) | ((i << 3) & 3670016), 0);
+        TopAppBarColors m3495topAppBarColors5tl4gsc = m3495topAppBarColors5tl4gsc(m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4, m5460getUnspecified0d7_KjU5, m5460getUnspecified0d7_KjU4, composer, (65534 & i) | ((i << 6) & 458752) | ((i << 3) & 3670016), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3409topAppBarColors5tl4gsc;
+        return m3495topAppBarColors5tl4gsc;
     }
 
     public final TopAppBarColors getDefaultTopAppBarColors$material3(ColorScheme colorScheme) {
@@ -131,12 +131,12 @@ public final class TopAppBarDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(2143182847, i, -1, "androidx.compose.material3.TopAppBarDefaults.<get-windowInsets> (AppBar.kt:1526)");
         }
-        WindowInsets m923onlybOOhFvg = WindowInsetsKt.m923onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m937plusgK_yJZ4(WindowInsetsSides.Companion.m947getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m951getTopJoeWqyM()));
+        WindowInsets m1004onlybOOhFvg = WindowInsetsKt.m1004onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m1021plusgK_yJZ4(WindowInsetsSides.Companion.m1031getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m1035getTopJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m923onlybOOhFvg;
+        return m1004onlybOOhFvg;
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use topAppBarColors instead", replaceWith = @ReplaceWith(expression = "topAppBarColors()", imports = {}))
@@ -155,22 +155,22 @@ public final class TopAppBarDefaults {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use topAppBarColors instead", replaceWith = @ReplaceWith(expression = "topAppBarColors(containerColor, scrolledContainerColor, navigationIconContentColor, titleContentColor, actionIconContentColor)", imports = {}))
     /* renamed from: centerAlignedTopAppBarColors-zjMxDiM  reason: not valid java name */
-    public final TopAppBarColors m3397centerAlignedTopAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
+    public final TopAppBarColors m3483centerAlignedTopAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1896017784, "C(centerAlignedTopAppBarColors)N(containerColor:c#ui.graphics.Color,scrolledContainerColor:c#ui.graphics.Color,navigationIconContentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionIconContentColor:c#ui.graphics.Color)1570@77887L11:AppBar.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
-        long m5316getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j5;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j5;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1896017784, i, -1, "androidx.compose.material3.TopAppBarDefaults.centerAlignedTopAppBarColors (AppBar.kt:1570)");
         }
-        TopAppBarColors m3386copytNS2XkQ$default = TopAppBarColors.m3386copytNS2XkQ$default(getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)), m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4, m5316getUnspecified0d7_KjU5, 0L, 32, null);
+        TopAppBarColors m3472copytNS2XkQ$default = TopAppBarColors.m3472copytNS2XkQ$default(getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)), m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4, m5460getUnspecified0d7_KjU5, 0L, 32, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3386copytNS2XkQ$default;
+        return m3472copytNS2XkQ$default;
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use topAppBarColors instead", replaceWith = @ReplaceWith(expression = "topAppBarColors()", imports = {}))
@@ -189,22 +189,22 @@ public final class TopAppBarDefaults {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use topAppBarColors instead", replaceWith = @ReplaceWith(expression = "topAppBarColors(containerColor, scrolledContainerColor, navigationIconContentColor, titleContentColor, actionIconContentColor)", imports = {}))
     /* renamed from: mediumTopAppBarColors-zjMxDiM  reason: not valid java name */
-    public final TopAppBarColors m3408mediumTopAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
+    public final TopAppBarColors m3494mediumTopAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -582474442, "C(mediumTopAppBarColors)N(containerColor:c#ui.graphics.Color,scrolledContainerColor:c#ui.graphics.Color,navigationIconContentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionIconContentColor:c#ui.graphics.Color)1620@79983L11:AppBar.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
-        long m5316getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j5;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j5;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-582474442, i, -1, "androidx.compose.material3.TopAppBarDefaults.mediumTopAppBarColors (AppBar.kt:1620)");
         }
-        TopAppBarColors m3386copytNS2XkQ$default = TopAppBarColors.m3386copytNS2XkQ$default(getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)), m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4, m5316getUnspecified0d7_KjU5, 0L, 32, null);
+        TopAppBarColors m3472copytNS2XkQ$default = TopAppBarColors.m3472copytNS2XkQ$default(getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)), m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4, m5460getUnspecified0d7_KjU5, 0L, 32, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3386copytNS2XkQ$default;
+        return m3472copytNS2XkQ$default;
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use topAppBarColors instead", replaceWith = @ReplaceWith(expression = "topAppBarColors()", imports = {}))
@@ -223,22 +223,22 @@ public final class TopAppBarDefaults {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use topAppBarColors instead", replaceWith = @ReplaceWith(expression = "topAppBarColors(containerColor, scrolledContainerColor, navigationIconContentColor, titleContentColor, actionIconContentColor)", imports = {}))
     /* renamed from: largeTopAppBarColors-zjMxDiM  reason: not valid java name */
-    public final TopAppBarColors m3407largeTopAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
+    public final TopAppBarColors m3493largeTopAppBarColorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1471507700, "C(largeTopAppBarColors)N(containerColor:c#ui.graphics.Color,scrolledContainerColor:c#ui.graphics.Color,navigationIconContentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionIconContentColor:c#ui.graphics.Color)1670@82075L11:AppBar.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
-        long m5316getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j5;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j5;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1471507700, i, -1, "androidx.compose.material3.TopAppBarDefaults.largeTopAppBarColors (AppBar.kt:1670)");
         }
-        TopAppBarColors m3386copytNS2XkQ$default = TopAppBarColors.m3386copytNS2XkQ$default(getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)), m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4, m5316getUnspecified0d7_KjU5, 0L, 32, null);
+        TopAppBarColors m3472copytNS2XkQ$default = TopAppBarColors.m3472copytNS2XkQ$default(getDefaultTopAppBarColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)), m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4, m5460getUnspecified0d7_KjU5, 0L, 32, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3386copytNS2XkQ$default;
+        return m3472copytNS2XkQ$default;
     }
 
     public final TopAppBarScrollBehavior pinnedScrollBehavior(TopAppBarState topAppBarState, Function0<Boolean> function0, Composer composer, int i, int i2) {
@@ -425,47 +425,47 @@ public final class TopAppBarDefaults {
     }
 
     /* renamed from: getTopAppBarExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3406getTopAppBarExpandedHeightD9Ej5fM() {
+    public final float m3492getTopAppBarExpandedHeightD9Ej5fM() {
         return TopAppBarExpandedHeight;
     }
 
     /* renamed from: getMediumAppBarCollapsedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3402getMediumAppBarCollapsedHeightD9Ej5fM() {
+    public final float m3488getMediumAppBarCollapsedHeightD9Ej5fM() {
         return MediumAppBarCollapsedHeight;
     }
 
     /* renamed from: getMediumAppBarExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3403getMediumAppBarExpandedHeightD9Ej5fM() {
+    public final float m3489getMediumAppBarExpandedHeightD9Ej5fM() {
         return MediumAppBarExpandedHeight;
     }
 
     /* renamed from: getMediumFlexibleAppBarWithoutSubtitleExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM() {
+    public final float m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM() {
         return MediumFlexibleAppBarWithoutSubtitleExpandedHeight;
     }
 
     /* renamed from: getMediumFlexibleAppBarWithSubtitleExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3404getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM() {
+    public final float m3490getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM() {
         return MediumFlexibleAppBarWithSubtitleExpandedHeight;
     }
 
     /* renamed from: getLargeAppBarCollapsedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3398getLargeAppBarCollapsedHeightD9Ej5fM() {
+    public final float m3484getLargeAppBarCollapsedHeightD9Ej5fM() {
         return LargeAppBarCollapsedHeight;
     }
 
     /* renamed from: getLargeAppBarExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3399getLargeAppBarExpandedHeightD9Ej5fM() {
+    public final float m3485getLargeAppBarExpandedHeightD9Ej5fM() {
         return LargeAppBarExpandedHeight;
     }
 
     /* renamed from: getLargeFlexibleAppBarWithoutSubtitleExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3401getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM() {
+    public final float m3487getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM() {
         return LargeFlexibleAppBarWithoutSubtitleExpandedHeight;
     }
 
     /* renamed from: getLargeFlexibleAppBarWithSubtitleExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3400getLargeFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM() {
+    public final float m3486getLargeFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM() {
         return LargeFlexibleAppBarWithSubtitleExpandedHeight;
     }
 }

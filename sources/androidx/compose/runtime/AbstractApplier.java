@@ -15,7 +15,7 @@ public abstract class AbstractApplier<T> implements Applier<T> {
     public static final int $stable = 8;
     private T current;
     private final T root;
-    private final ArrayList<T> stack = Stack.m4582constructorimpl$default(null, 1, null);
+    private final ArrayList<T> stack = Stack.m4656constructorimpl$default(null, 1, null);
 
     protected abstract void onClear();
 
@@ -39,19 +39,19 @@ public abstract class AbstractApplier<T> implements Applier<T> {
 
     @Override // androidx.compose.runtime.Applier
     public void down(T t) {
-        Stack.m4592pushimpl(this.stack, getCurrent());
+        Stack.m4666pushimpl(this.stack, getCurrent());
         setCurrent(t);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.compose.runtime.Applier
     public void up() {
-        setCurrent(Stack.m4591popimpl(this.stack));
+        setCurrent(Stack.m4665popimpl(this.stack));
     }
 
     @Override // androidx.compose.runtime.Applier
     public final void clear() {
-        Stack.m4580clearimpl(this.stack);
+        Stack.m4654clearimpl(this.stack);
         setCurrent(this.root);
         onClear();
     }

@@ -13,6 +13,13 @@ public final class ShadowSpan extends CharacterStyle {
     private final float offsetY;
     private final float radius;
 
+    public ShadowSpan(int i, float f, float f2, float f3) {
+        this.color = i;
+        this.offsetX = f;
+        this.offsetY = f2;
+        this.radius = f3;
+    }
+
     public final int getColor() {
         return this.color;
     }
@@ -27,13 +34,6 @@ public final class ShadowSpan extends CharacterStyle {
 
     public final float getRadius() {
         return this.radius;
-    }
-
-    public ShadowSpan(int i, float f, float f2, float f3) {
-        this.color = i;
-        this.offsetX = f;
-        this.offsetY = f2;
-        this.radius = f3;
     }
 
     @Override // android.text.style.CharacterStyle

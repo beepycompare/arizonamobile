@@ -9,27 +9,27 @@ import java.util.List;
 public final class Fg implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gn f480a;
+    public final Gn f563a;
     public final W b;
-    public final C0315i6 c;
+    public final C0314i6 c;
     public final Cl d;
     public final Ie e;
     public final Je f;
 
     public Fg() {
-        this(new Gn(), new W(new C0733yn()), new C0315i6(), new Cl(), new Ie(), new Je());
+        this(new Gn(), new W(new C0732yn()), new C0314i6(), new Cl(), new Ie(), new Je());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Y5 fromModel(Eg eg) {
         Y5 y5 = new Y5();
-        y5.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(eg.f462a, y5.f));
+        y5.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(eg.f545a, y5.f));
         Rn rn = eg.b;
         if (rn != null) {
-            Hn hn = rn.f666a;
+            Hn hn = rn.f749a;
             if (hn != null) {
-                y5.f761a = this.f480a.fromModel(hn);
+                y5.f844a = this.f563a.fromModel(hn);
             }
             V v = rn.b;
             if (v != null) {
@@ -60,10 +60,10 @@ public final class Fg implements ProtobufConverter {
         throw new UnsupportedOperationException();
     }
 
-    public Fg(Gn gn, W w, C0315i6 c0315i6, Cl cl, Ie ie, Je je) {
-        this.f480a = gn;
+    public Fg(Gn gn, W w, C0314i6 c0314i6, Cl cl, Ie ie, Je je) {
+        this.f563a = gn;
         this.b = w;
-        this.c = c0315i6;
+        this.c = c0314i6;
         this.d = cl;
         this.e = ie;
         this.f = je;

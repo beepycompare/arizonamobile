@@ -6,7 +6,7 @@ import android.os.Parcelable;
 public final class E implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        return new F((C0783z) parcel.readParcelable(C0783z.class.getClassLoader()), (H) parcel.readParcelable(H.class.getClassLoader()), (B) parcel.readParcelable(B.class.getClassLoader()));
+        return new F((C0782z) parcel.readParcelable(C0782z.class.getClassLoader()), (H) parcel.readParcelable(H.class.getClassLoader()), (B) parcel.readParcelable(B.class.getClassLoader()));
     }
 
     @Override // android.os.Parcelable.Creator

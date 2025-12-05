@@ -185,7 +185,7 @@ public final class LocalDate implements Comparable<LocalDate>, java.io.Serializa
     }
 
     /* renamed from: getMonth  reason: collision with other method in class */
-    public final Month m11524getMonth() {
+    public final Month m11819getMonth() {
         java.time.Month month = this.value.getMonth();
         Intrinsics.checkNotNullExpressionValue(month, "getMonth(...)");
         return ConvertersKt.toKotlinMonth(month);
@@ -206,7 +206,7 @@ public final class LocalDate implements Comparable<LocalDate>, java.io.Serializa
     }
 
     /* renamed from: getDayOfWeek  reason: collision with other method in class */
-    public final DayOfWeek m11523getDayOfWeek() {
+    public final DayOfWeek m11818getDayOfWeek() {
         java.time.DayOfWeek dayOfWeek = this.value.getDayOfWeek();
         Intrinsics.checkNotNullExpressionValue(dayOfWeek, "getDayOfWeek(...)");
         return ConvertersKt.toKotlinDayOfWeek(dayOfWeek);
@@ -256,7 +256,7 @@ public final class LocalDate implements Comparable<LocalDate>, java.io.Serializa
     }
 
     /* renamed from: toEpochDays  reason: collision with other method in class */
-    public final long m11525toEpochDays() {
+    public final long m11820toEpochDays() {
         return this.value.toEpochDay();
     }
 

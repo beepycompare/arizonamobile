@@ -53,10 +53,10 @@ public final class CardElevation$animateElevation$2$1 extends SuspendLambda impl
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0048, code lost:
-        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m7994boximpl(r6.$target), r6) == r0) goto L17;
+        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m8256boximpl(r6.$target), r6) == r0) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x00c1, code lost:
-        if (androidx.compose.material3.internal.ElevationKt.m3526animateElevationrAjV9yQ(r6.$animatable, r6.$target, r3, r6.$interaction, r6) == r0) goto L17;
+        if (androidx.compose.material3.internal.ElevationKt.m3612animateElevationrAjV9yQ(r6.$animatable, r6.$target, r3, r6.$interaction, r6) == r0) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:31:0x00c3, code lost:
         return r0;
@@ -74,24 +74,24 @@ public final class CardElevation$animateElevation$2$1 extends SuspendLambda impl
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!Dp.m8001equalsimpl0(this.$animatable.getTargetValue().m8010unboximpl(), this.$target)) {
+            if (!Dp.m8263equalsimpl0(this.$animatable.getTargetValue().m8272unboximpl(), this.$target)) {
                 if (this.$enabled) {
-                    float m8010unboximpl = this.$animatable.getTargetValue().m8010unboximpl();
+                    float m8272unboximpl = this.$animatable.getTargetValue().m8272unboximpl();
                     f = this.this$0.pressedElevation;
                     DragInteraction.Start start = null;
-                    if (Dp.m8001equalsimpl0(m8010unboximpl, f)) {
-                        start = new PressInteraction.Press(Offset.Companion.m5052getZeroF1C5BW0(), null);
+                    if (Dp.m8263equalsimpl0(m8272unboximpl, f)) {
+                        start = new PressInteraction.Press(Offset.Companion.m5195getZeroF1C5BW0(), null);
                     } else {
                         f2 = this.this$0.hoveredElevation;
-                        if (Dp.m8001equalsimpl0(m8010unboximpl, f2)) {
+                        if (Dp.m8263equalsimpl0(m8272unboximpl, f2)) {
                             start = new HoverInteraction.Enter();
                         } else {
                             f3 = this.this$0.focusedElevation;
-                            if (Dp.m8001equalsimpl0(m8010unboximpl, f3)) {
+                            if (Dp.m8263equalsimpl0(m8272unboximpl, f3)) {
                                 start = new FocusInteraction.Focus();
                             } else {
                                 f4 = this.this$0.draggedElevation;
-                                if (Dp.m8001equalsimpl0(m8010unboximpl, f4)) {
+                                if (Dp.m8263equalsimpl0(m8272unboximpl, f4)) {
                                     start = new DragInteraction.Start();
                                 }
                             }

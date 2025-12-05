@@ -16,16 +16,6 @@ public final class LifecycleCoroutineScopeImpl extends LifecycleCoroutineScope i
     private final CoroutineContext coroutineContext;
     private final Lifecycle lifecycle;
 
-    @Override // androidx.lifecycle.LifecycleCoroutineScope
-    public Lifecycle getLifecycle$lifecycle_common() {
-        return this.lifecycle;
-    }
-
-    @Override // kotlinx.coroutines.CoroutineScope
-    public CoroutineContext getCoroutineContext() {
-        return this.coroutineContext;
-    }
-
     public LifecycleCoroutineScopeImpl(Lifecycle lifecycle, CoroutineContext coroutineContext) {
         Intrinsics.checkNotNullParameter(lifecycle, "lifecycle");
         Intrinsics.checkNotNullParameter(coroutineContext, "coroutineContext");
@@ -34,6 +24,16 @@ public final class LifecycleCoroutineScopeImpl extends LifecycleCoroutineScope i
         if (getLifecycle$lifecycle_common().getCurrentState() == Lifecycle.State.DESTROYED) {
             JobKt__JobKt.cancel$default(getCoroutineContext(), (CancellationException) null, 1, (Object) null);
         }
+    }
+
+    @Override // androidx.lifecycle.LifecycleCoroutineScope
+    public Lifecycle getLifecycle$lifecycle_common() {
+        return this.lifecycle;
+    }
+
+    @Override // kotlinx.coroutines.CoroutineScope
+    public CoroutineContext getCoroutineContext() {
+        return this.coroutineContext;
     }
 
     public final void register() {

@@ -10,27 +10,27 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes2.dex */
 public final class TextUnit {
     public static final Companion Companion = new Companion(null);
-    private static final TextUnitType[] TextUnitTypes = {TextUnitType.m8215boximpl(TextUnitType.Companion.m8224getUnspecifiedUIouoOA()), TextUnitType.m8215boximpl(TextUnitType.Companion.m8223getSpUIouoOA()), TextUnitType.m8215boximpl(TextUnitType.Companion.m8222getEmUIouoOA())};
+    private static final TextUnitType[] TextUnitTypes = {TextUnitType.m8477boximpl(TextUnitType.Companion.m8486getUnspecifiedUIouoOA()), TextUnitType.m8477boximpl(TextUnitType.Companion.m8485getSpUIouoOA()), TextUnitType.m8477boximpl(TextUnitType.Companion.m8484getEmUIouoOA())};
     private static final long Unspecified = TextUnitKt.pack(0, Float.NaN);
     private final long packedValue;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ TextUnit m8180boximpl(long j) {
+    public static final /* synthetic */ TextUnit m8442boximpl(long j) {
         return new TextUnit(j);
     }
 
     /* renamed from: constructor-impl */
-    public static long m8182constructorimpl(long j) {
+    public static long m8444constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m8186equalsimpl(long j, Object obj) {
-        return (obj instanceof TextUnit) && j == ((TextUnit) obj).m8199unboximpl();
+    public static boolean m8448equalsimpl(long j, Object obj) {
+        return (obj instanceof TextUnit) && j == ((TextUnit) obj).m8461unboximpl();
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m8187equalsimpl0(long j, long j2) {
+    public static final boolean m8449equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -38,25 +38,25 @@ public final class TextUnit {
     }
 
     /* renamed from: getRawType-impl */
-    public static final long m8188getRawTypeimpl(long j) {
+    public static final long m8450getRawTypeimpl(long j) {
         return j & 1095216660480L;
     }
 
     /* renamed from: hashCode-impl */
-    public static int m8191hashCodeimpl(long j) {
+    public static int m8453hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m8186equalsimpl(this.packedValue, obj);
+        return m8448equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m8191hashCodeimpl(this.packedValue);
+        return m8453hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ long m8199unboximpl() {
+    public final /* synthetic */ long m8461unboximpl() {
         return this.packedValue;
     }
 
@@ -65,61 +65,61 @@ public final class TextUnit {
     }
 
     /* renamed from: unaryMinus-XSAIIZE */
-    public static final long m8198unaryMinusXSAIIZE(long j) {
-        TextUnitKt.m8203checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m8188getRawTypeimpl(j), -m8190getValueimpl(j));
+    public static final long m8460unaryMinusXSAIIZE(long j) {
+        TextUnitKt.m8465checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8450getRawTypeimpl(j), -m8452getValueimpl(j));
     }
 
     /* renamed from: div-kPz2Gy4 */
-    public static final long m8184divkPz2Gy4(long j, float f) {
-        TextUnitKt.m8203checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m8188getRawTypeimpl(j), m8190getValueimpl(j) / f);
+    public static final long m8446divkPz2Gy4(long j, float f) {
+        TextUnitKt.m8465checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8450getRawTypeimpl(j), m8452getValueimpl(j) / f);
     }
 
     /* renamed from: div-kPz2Gy4 */
-    public static final long m8183divkPz2Gy4(long j, double d) {
-        TextUnitKt.m8203checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m8188getRawTypeimpl(j), (float) (m8190getValueimpl(j) / d));
+    public static final long m8445divkPz2Gy4(long j, double d) {
+        TextUnitKt.m8465checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8450getRawTypeimpl(j), (float) (m8452getValueimpl(j) / d));
     }
 
     /* renamed from: div-kPz2Gy4 */
-    public static final long m8185divkPz2Gy4(long j, int i) {
-        TextUnitKt.m8203checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m8188getRawTypeimpl(j), m8190getValueimpl(j) / i);
+    public static final long m8447divkPz2Gy4(long j, int i) {
+        TextUnitKt.m8465checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8450getRawTypeimpl(j), m8452getValueimpl(j) / i);
     }
 
     /* renamed from: times-kPz2Gy4 */
-    public static final long m8195timeskPz2Gy4(long j, float f) {
-        TextUnitKt.m8203checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m8188getRawTypeimpl(j), m8190getValueimpl(j) * f);
+    public static final long m8457timeskPz2Gy4(long j, float f) {
+        TextUnitKt.m8465checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8450getRawTypeimpl(j), m8452getValueimpl(j) * f);
     }
 
     /* renamed from: times-kPz2Gy4 */
-    public static final long m8194timeskPz2Gy4(long j, double d) {
-        TextUnitKt.m8203checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m8188getRawTypeimpl(j), (float) (m8190getValueimpl(j) * d));
+    public static final long m8456timeskPz2Gy4(long j, double d) {
+        TextUnitKt.m8465checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8450getRawTypeimpl(j), (float) (m8452getValueimpl(j) * d));
     }
 
     /* renamed from: times-kPz2Gy4 */
-    public static final long m8196timeskPz2Gy4(long j, int i) {
-        TextUnitKt.m8203checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m8188getRawTypeimpl(j), m8190getValueimpl(j) * i);
+    public static final long m8458timeskPz2Gy4(long j, int i) {
+        TextUnitKt.m8465checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8450getRawTypeimpl(j), m8452getValueimpl(j) * i);
     }
 
     /* renamed from: compareTo--R2X_6o */
-    public static final int m8181compareToR2X_6o(long j, long j2) {
-        TextUnitKt.m8204checkArithmeticNB67dxo(j, j2);
-        return Float.compare(m8190getValueimpl(j), m8190getValueimpl(j2));
+    public static final int m8443compareToR2X_6o(long j, long j2) {
+        TextUnitKt.m8466checkArithmeticNB67dxo(j, j2);
+        return Float.compare(m8452getValueimpl(j), m8452getValueimpl(j2));
     }
 
     public String toString() {
-        return m8197toStringimpl(this.packedValue);
+        return m8459toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl */
-    public static String m8197toStringimpl(long j) {
-        long m8189getTypeUIouoOA = m8189getTypeUIouoOA(j);
-        return TextUnitType.m8218equalsimpl0(m8189getTypeUIouoOA, TextUnitType.Companion.m8224getUnspecifiedUIouoOA()) ? "Unspecified" : TextUnitType.m8218equalsimpl0(m8189getTypeUIouoOA, TextUnitType.Companion.m8223getSpUIouoOA()) ? m8190getValueimpl(j) + ".sp" : TextUnitType.m8218equalsimpl0(m8189getTypeUIouoOA, TextUnitType.Companion.m8222getEmUIouoOA()) ? m8190getValueimpl(j) + ".em" : "Invalid";
+    public static String m8459toStringimpl(long j) {
+        long m8451getTypeUIouoOA = m8451getTypeUIouoOA(j);
+        return TextUnitType.m8480equalsimpl0(m8451getTypeUIouoOA, TextUnitType.Companion.m8486getUnspecifiedUIouoOA()) ? "Unspecified" : TextUnitType.m8480equalsimpl0(m8451getTypeUIouoOA, TextUnitType.Companion.m8485getSpUIouoOA()) ? m8452getValueimpl(j) + ".sp" : TextUnitType.m8480equalsimpl0(m8451getTypeUIouoOA, TextUnitType.Companion.m8484getEmUIouoOA()) ? m8452getValueimpl(j) + ".em" : "Invalid";
     }
 
     /* compiled from: TextUnit.kt */
@@ -131,7 +131,7 @@ public final class TextUnit {
         }
 
         /* renamed from: getUnspecified-XSAIIZE$annotations */
-        public static /* synthetic */ void m8200getUnspecifiedXSAIIZE$annotations() {
+        public static /* synthetic */ void m8462getUnspecifiedXSAIIZE$annotations() {
         }
 
         private Companion() {
@@ -142,28 +142,28 @@ public final class TextUnit {
         }
 
         /* renamed from: getUnspecified-XSAIIZE */
-        public final long m8201getUnspecifiedXSAIIZE() {
+        public final long m8463getUnspecifiedXSAIIZE() {
             return TextUnit.Unspecified;
         }
     }
 
     /* renamed from: getType-UIouoOA */
-    public static final long m8189getTypeUIouoOA(long j) {
-        return TextUnitTypes[(int) (m8188getRawTypeimpl(j) >>> 32)].m8221unboximpl();
+    public static final long m8451getTypeUIouoOA(long j) {
+        return TextUnitTypes[(int) (m8450getRawTypeimpl(j) >>> 32)].m8483unboximpl();
     }
 
     /* renamed from: isSp-impl */
-    public static final boolean m8193isSpimpl(long j) {
-        return m8188getRawTypeimpl(j) == 4294967296L;
+    public static final boolean m8455isSpimpl(long j) {
+        return m8450getRawTypeimpl(j) == 4294967296L;
     }
 
     /* renamed from: isEm-impl */
-    public static final boolean m8192isEmimpl(long j) {
-        return m8188getRawTypeimpl(j) == 8589934592L;
+    public static final boolean m8454isEmimpl(long j) {
+        return m8450getRawTypeimpl(j) == 8589934592L;
     }
 
     /* renamed from: getValue-impl */
-    public static final float m8190getValueimpl(long j) {
+    public static final float m8452getValueimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 }

@@ -19,7 +19,7 @@ public final class MotionDragState {
     }
 
     /* renamed from: copy-dhPbTwU$default  reason: not valid java name */
-    public static /* synthetic */ MotionDragState m8402copydhPbTwU$default(MotionDragState motionDragState, boolean z, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ MotionDragState m8664copydhPbTwU$default(MotionDragState motionDragState, boolean z, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
             z = motionDragState.isDragging;
         }
@@ -29,7 +29,7 @@ public final class MotionDragState {
         if ((i & 4) != 0) {
             j2 = motionDragState.velocity;
         }
-        return motionDragState.m8405copydhPbTwU(z, j, j2);
+        return motionDragState.m8667copydhPbTwU(z, j, j2);
     }
 
     public final boolean component1() {
@@ -37,17 +37,17 @@ public final class MotionDragState {
     }
 
     /* renamed from: component2-F1C5BW0  reason: not valid java name */
-    public final long m8403component2F1C5BW0() {
+    public final long m8665component2F1C5BW0() {
         return this.dragAmount;
     }
 
     /* renamed from: component3-9UxMQ8M  reason: not valid java name */
-    public final long m8404component39UxMQ8M() {
+    public final long m8666component39UxMQ8M() {
         return this.velocity;
     }
 
     /* renamed from: copy-dhPbTwU  reason: not valid java name */
-    public final MotionDragState m8405copydhPbTwU(boolean z, long j, long j2) {
+    public final MotionDragState m8667copydhPbTwU(boolean z, long j, long j2) {
         return new MotionDragState(z, j, j2, null);
     }
 
@@ -57,17 +57,17 @@ public final class MotionDragState {
         }
         if (obj instanceof MotionDragState) {
             MotionDragState motionDragState = (MotionDragState) obj;
-            return this.isDragging == motionDragState.isDragging && Offset.m5033equalsimpl0(this.dragAmount, motionDragState.dragAmount) && Velocity.m8233equalsimpl0(this.velocity, motionDragState.velocity);
+            return this.isDragging == motionDragState.isDragging && Offset.m5176equalsimpl0(this.dragAmount, motionDragState.dragAmount) && Velocity.m8495equalsimpl0(this.velocity, motionDragState.velocity);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Boolean.hashCode(this.isDragging) * 31) + Offset.m5038hashCodeimpl(this.dragAmount)) * 31) + Velocity.m8236hashCodeimpl(this.velocity);
+        return (((Boolean.hashCode(this.isDragging) * 31) + Offset.m5181hashCodeimpl(this.dragAmount)) * 31) + Velocity.m8498hashCodeimpl(this.velocity);
     }
 
     public String toString() {
-        return "MotionDragState(isDragging=" + this.isDragging + ", dragAmount=" + ((Object) Offset.m5044toStringimpl(this.dragAmount)) + ", velocity=" + ((Object) Velocity.m8241toStringimpl(this.velocity)) + ')';
+        return "MotionDragState(isDragging=" + this.isDragging + ", dragAmount=" + ((Object) Offset.m5187toStringimpl(this.dragAmount)) + ", velocity=" + ((Object) Velocity.m8503toStringimpl(this.velocity)) + ')';
     }
 
     private MotionDragState(boolean z, long j, long j2) {
@@ -81,12 +81,12 @@ public final class MotionDragState {
     }
 
     /* renamed from: getDragAmount-F1C5BW0  reason: not valid java name */
-    public final long m8406getDragAmountF1C5BW0() {
+    public final long m8668getDragAmountF1C5BW0() {
         return this.dragAmount;
     }
 
     /* renamed from: getVelocity-9UxMQ8M  reason: not valid java name */
-    public final long m8407getVelocity9UxMQ8M() {
+    public final long m8669getVelocity9UxMQ8M() {
         return this.velocity;
     }
 
@@ -102,13 +102,13 @@ public final class MotionDragState {
         }
 
         /* renamed from: onDrag-k-4lQ0M  reason: not valid java name */
-        public final MotionDragState m8408onDragk4lQ0M(long j) {
-            return new MotionDragState(true, j, Velocity.Companion.m8245getZero9UxMQ8M(), null);
+        public final MotionDragState m8670onDragk4lQ0M(long j) {
+            return new MotionDragState(true, j, Velocity.Companion.m8507getZero9UxMQ8M(), null);
         }
 
         /* renamed from: onDragEnd-TH1AsA0  reason: not valid java name */
-        public final MotionDragState m8409onDragEndTH1AsA0(long j) {
-            return new MotionDragState(false, Offset.Companion.m5051getUnspecifiedF1C5BW0(), j, null);
+        public final MotionDragState m8671onDragEndTH1AsA0(long j) {
+            return new MotionDragState(false, Offset.Companion.m5194getUnspecifiedF1C5BW0(), j, null);
         }
     }
 }

@@ -23,12 +23,12 @@ import kotlin.text.StringsKt;
 public final class h implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NetworkTask f1292a;
+    public final NetworkTask f1375a;
     public final InterruptionSafeThread b;
     public final f c;
 
     public h(NetworkTask networkTask, InterruptionSafeThread interruptionSafeThread, f fVar) {
-        this.f1292a = networkTask;
+        this.f1375a = networkTask;
         this.b = interruptionSafeThread;
         this.c = fVar;
     }
@@ -37,15 +37,15 @@ public final class h implements Runnable {
     public final void run() {
         boolean z;
         byte[] postData;
-        ExponentialBackoffPolicy exponentialBackoffPolicy = this.f1292a.getExponentialBackoffPolicy();
-        boolean canBeExecuted = this.f1292a.getConnectionExecutionPolicy().canBeExecuted();
-        boolean canBeExecuted2 = this.f1292a.getExponentialBackoffPolicy().canBeExecuted(this.f1292a.getRetryPolicyConfig());
+        ExponentialBackoffPolicy exponentialBackoffPolicy = this.f1375a.getExponentialBackoffPolicy();
+        boolean canBeExecuted = this.f1375a.getConnectionExecutionPolicy().canBeExecuted();
+        boolean canBeExecuted2 = this.f1375a.getExponentialBackoffPolicy().canBeExecuted(this.f1375a.getRetryPolicyConfig());
         if (this.b.isRunning() && canBeExecuted && canBeExecuted2) {
-            boolean onCreateNetworkTask = this.f1292a.onCreateNetworkTask();
+            boolean onCreateNetworkTask = this.f1375a.onCreateNetworkTask();
             Boolean bool = null;
-            while (this.b.isRunning() && onCreateNetworkTask && exponentialBackoffPolicy.canBeExecuted(this.f1292a.getRetryPolicyConfig())) {
+            while (this.b.isRunning() && onCreateNetworkTask && exponentialBackoffPolicy.canBeExecuted(this.f1375a.getRetryPolicyConfig())) {
                 f fVar = this.c;
-                NetworkTask networkTask = this.f1292a;
+                NetworkTask networkTask = this.f1375a;
                 fVar.getClass();
                 if (networkTask.onPerformRequest()) {
                     String url = networkTask.getUrl();
@@ -71,7 +71,7 @@ public final class h implements Runnable {
                             }
                         }
                         NetworkClient.Builder builder = new NetworkClient.Builder();
-                        int i = b.f1289a;
+                        int i = b.f1372a;
                         Response execute = builder.withConnectTimeout(i).withReadTimeout(i).withSslSocketFactory(networkTask.getSslSocketFactory()).build().newCall(addHeader.build()).execute();
                         int code = execute.getCode();
                         ResponseDataHolder responseDataHolder = networkTask.getResponseDataHolder();
@@ -83,7 +83,7 @@ public final class h implements Runnable {
                         if (execute.isCompleted()) {
                             z = networkTask.onRequestComplete();
                             bool = Boolean.valueOf(z);
-                            onCreateNetworkTask = bool.booleanValue() && this.f1292a.shouldTryNextHost();
+                            onCreateNetworkTask = bool.booleanValue() && this.f1375a.shouldTryNextHost();
                             exponentialBackoffPolicy.onHostAttemptFinished(bool.booleanValue());
                         } else {
                             networkTask.onRequestError(execute.getException());
@@ -105,6 +105,6 @@ public final class h implements Runnable {
             exponentialBackoffPolicy.onAllHostsAttemptsFinished(Intrinsics.areEqual(bool, Boolean.TRUE));
             return;
         }
-        this.f1292a.onShouldNotExecute();
+        this.f1375a.onShouldNotExecute();
     }
 }

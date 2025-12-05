@@ -17,13 +17,13 @@ public final class DialogButtonShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo332createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M 56.01 125.71 L 5.52 49.71 C -8.61 28.44 6.64 0 32.17 0 H 419.34 C 430.06 0 440.06 5.37 445.99 14.29 L 496.48 90.29 C 510.61 111.56 495.36 140 469.83 140 H 82.66 C 71.94 140 61.94 134.63 56.01 125.71 Z"), null, 1, null);
-        float[] m5522constructorimpl$default = Matrix.m5522constructorimpl$default(null, 1, null);
-        Matrix.m5538scaleimpl$default(m5522constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 520.0f, Float.intBitsToFloat((int) (j & 4294967295L)) / 141.0f, 0.0f, 4, null);
-        path$default.mo5172transform58bKbWc(m5522constructorimpl$default);
+        float[] m5670constructorimpl$default = Matrix.m5670constructorimpl$default(null, 1, null);
+        Matrix.m5686scaleimpl$default(m5670constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 520.0f, Float.intBitsToFloat((int) (j & 4294967295L)) / 141.0f, 0.0f, 4, null);
+        path$default.mo5315transform58bKbWc(m5670constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

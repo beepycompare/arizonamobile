@@ -16,8 +16,8 @@ import kotlinx.coroutines.BuildersKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: DataStoreImpl.kt */
-@Metadata(d1 = {"\u0000\u0004\n\u0002\b\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001H\u008a@"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$transformAndWrite$2", f = "DataStoreImpl.kt", i = {1, 2}, l = {330, 331, 337}, m = "invokeSuspend", n = {"curData", "newData"}, s = {"L$0", "L$0"})
+@Metadata(d1 = {"\u0000\u0004\n\u0002\b\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$transformAndWrite$2", f = "DataStoreImpl.kt", i = {1, 2}, l = {350, 351, 357}, m = "invokeSuspend", n = {"curData", "newData"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class DataStoreImpl$transformAndWrite$2<T> extends SuspendLambda implements Function1<Continuation<? super T>, Object> {
     final /* synthetic */ CoroutineContext $callerContext;
@@ -84,7 +84,7 @@ public final class DataStoreImpl$transformAndWrite$2<T> extends SuspendLambda im
             if (!Intrinsics.areEqual(data.getValue(), obj)) {
                 this.L$0 = obj;
                 this.label = 3;
-                if (this.this$0.writeData$datastore_core_release(obj, true, this) == coroutine_suspended) {
+                if (this.this$0.writeData$datastore_core(obj, true, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             }

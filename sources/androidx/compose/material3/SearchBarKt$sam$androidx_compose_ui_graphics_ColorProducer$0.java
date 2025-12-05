@@ -36,7 +36,7 @@ final class SearchBarKt$sam$androidx_compose_ui_graphics_ColorProducer$0 impleme
 
     @Override // androidx.compose.ui.graphics.ColorProducer
     /* renamed from: invoke-0d7_KjU */
-    public final /* synthetic */ long mo2300invoke0d7_KjU() {
-        return ((Color) this.function.invoke()).m5290unboximpl();
+    public final /* synthetic */ long mo2386invoke0d7_KjU() {
+        return ((Color) this.function.invoke()).m5434unboximpl();
     }
 }

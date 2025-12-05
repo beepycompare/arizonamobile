@@ -18,7 +18,6 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.ws.WebSocketProtocol;
@@ -43,7 +42,7 @@ public final class RowKt {
             vertical = Alignment.Companion.getTop();
         }
         MeasurePolicy rowMeasurePolicy = rowMeasurePolicy(horizontal, vertical, composer, (i >> 3) & WebSocketProtocol.PAYLOAD_SHORT);
-        ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+        ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
         int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, modifier);
@@ -58,15 +57,12 @@ public final class RowKt {
         } else {
             composer.useNode();
         }
-        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-        Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
-        }
-        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+        Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+        Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
         function3.invoke(RowScopeInstance.INSTANCE, composer, Integer.valueOf(((i >> 6) & 112) | 6));
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -87,13 +83,13 @@ public final class RowKt {
             ComposerKt.traceEventStart(-837807694, i, -1, "androidx.compose.foundation.layout.rowMeasurePolicy (Row.kt:118)");
         }
         if (Intrinsics.areEqual(horizontal, Arrangement.INSTANCE.getStart()) && Intrinsics.areEqual(vertical, Alignment.Companion.getTop())) {
-            composer.startReplaceGroup(-1073795767);
+            composer.startReplaceGroup(-1073830487);
             composer.endReplaceGroup();
             rowMeasurePolicy = DefaultRowMeasurePolicy;
         } else {
-            composer.startReplaceGroup(-1073744896);
+            composer.startReplaceGroup(-1073779616);
             ComposerKt.sourceInformation(composer, "121@5901L224");
-            ComposerKt.sourceInformationMarkerStart(composer, -1974299278, "CC(remember):Row.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1974300398, "CC(remember):Row.kt#9igjgp");
             boolean z = ((((i & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(vertical)) || (i & 48) == 32);
             Object rememberedValue = composer.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -115,6 +111,6 @@ public final class RowKt {
         if (!z) {
             return ConstraintsKt.Constraints(i, i3, i2, i4);
         }
-        return Constraints.Companion.m7958fitPrioritizingWidthZbe2FdA(i, i3, i2, i4);
+        return Constraints.Companion.m8220fitPrioritizingWidthZbe2FdA(i, i3, i2, i4);
     }
 }

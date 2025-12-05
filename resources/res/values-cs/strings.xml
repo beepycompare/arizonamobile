@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Sdílet s</string>
     <string name="abc_shareactionprovider_share_with_application">Sdílet s aplikací %s</string>
     <string name="abc_toolbar_collapse_description">Sbalit</string>
-    <string name="autofill">Automatické vyplňování</string>
+    <string name="androidx_compose_foundation_autofill">Automatické vyplňování</string>
+    <string name="androidx_compose_ui_autofill">Automatické vyplňování</string>
     <string name="bottomsheet_action_collapse">Sbalit spodní tabulku</string>
     <string name="bottomsheet_action_expand">Rozbalit spodní tabulku</string>
     <string name="bottomsheet_action_expand_halfway">Rozbalit napůl</string>

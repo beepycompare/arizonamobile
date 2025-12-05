@@ -21,9 +21,9 @@ public final class SaveableHolder<T> implements SaverScope, RememberObserver {
     private final Function0<Object> valueProvider = new Function0() { // from class: androidx.compose.runtime.saveable.SaveableHolder$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Object valueProvider$lambda$2;
-            valueProvider$lambda$2 = SaveableHolder.valueProvider$lambda$2(SaveableHolder.this);
-            return valueProvider$lambda$2;
+            Object valueProvider$lambda$0;
+            valueProvider$lambda$0 = SaveableHolder.valueProvider$lambda$0(SaveableHolder.this);
+            return valueProvider$lambda$0;
         }
     };
 
@@ -36,7 +36,7 @@ public final class SaveableHolder<T> implements SaverScope, RememberObserver {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object valueProvider$lambda$2(SaveableHolder saveableHolder) {
+    public static final Object valueProvider$lambda$0(SaveableHolder saveableHolder) {
         Saver<T, Object> saver = saveableHolder.saver;
         SaveableHolder saveableHolder2 = saveableHolder;
         T t = saveableHolder.value;

@@ -25,6 +25,12 @@ public final class PersistentOrderedSet<E> extends AbstractSet<E> implements Per
     public static final int $stable = 8;
     private static final PersistentOrderedSet EMPTY = new PersistentOrderedSet(EndOfChain.INSTANCE, EndOfChain.INSTANCE, PersistentHashMap.Companion.emptyOf$runtime());
 
+    public PersistentOrderedSet(Object obj, Object obj2, PersistentHashMap<E, Links> persistentHashMap) {
+        this.firstElement = obj;
+        this.lastElement = obj2;
+        this.hashMap = persistentHashMap;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.util.Collection, java.util.Set, androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentCollection
     public /* bridge */ /* synthetic */ PersistentCollection add(Object obj) {
@@ -47,12 +53,6 @@ public final class PersistentOrderedSet<E> extends AbstractSet<E> implements Per
 
     public final PersistentHashMap<E, Links> getHashMap$runtime() {
         return this.hashMap;
-    }
-
-    public PersistentOrderedSet(Object obj, Object obj2, PersistentHashMap<E, Links> persistentHashMap) {
-        this.firstElement = obj;
-        this.lastElement = obj2;
-        this.hashMap = persistentHashMap;
     }
 
     @Override // kotlin.collections.AbstractCollection

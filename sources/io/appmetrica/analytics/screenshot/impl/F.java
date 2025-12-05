@@ -7,18 +7,18 @@ public final class F implements Parcelable {
     public static final E CREATOR = new E();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0783z f1338a;
+    public final C0782z f1421a;
     public final H b;
     public final B c;
 
-    public F(C0783z c0783z, H h, B b) {
-        this.f1338a = c0783z;
+    public F(C0782z c0782z, H h, B b) {
+        this.f1421a = c0782z;
         this.b = h;
         this.c = b;
     }
 
-    public final C0783z a() {
-        return this.f1338a;
+    public final C0782z a() {
+        return this.f1421a;
     }
 
     public final B b() {
@@ -35,12 +35,12 @@ public final class F implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1338a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1421a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f1338a, i);
+        parcel.writeParcelable(this.f1421a, i);
         parcel.writeParcelable(this.b, i);
         parcel.writeParcelable(this.c, i);
     }
@@ -52,7 +52,7 @@ public final class F implements Parcelable {
     public F(k0 k0Var) {
         this(r2, r3, r5 != null ? new B(r5) : null);
         h0 a2 = k0Var.a();
-        C0783z c0783z = a2 != null ? new C0783z(a2) : null;
+        C0782z c0782z = a2 != null ? new C0782z(a2) : null;
         l0 c = k0Var.c();
         H h = c != null ? new H(c) : null;
         i0 b = k0Var.b();

@@ -168,7 +168,7 @@ public abstract class Protection {
         this.mUserAlphaAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.core.view.insets.Protection$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                Protection.this.m8509lambda$animateAlpha$0$androidxcoreviewinsetsProtection(valueAnimator);
+                Protection.this.m8771lambda$animateAlpha$0$androidxcoreviewinsetsProtection(valueAnimator);
             }
         });
         this.mUserAlphaAnimator.start();
@@ -176,7 +176,7 @@ public abstract class Protection {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$animateAlpha$0$androidx-core-view-insets-Protection  reason: not valid java name */
-    public /* synthetic */ void m8509lambda$animateAlpha$0$androidxcoreviewinsetsProtection(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8771lambda$animateAlpha$0$androidxcoreviewinsetsProtection(ValueAnimator valueAnimator) {
         setAlphaInternal(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
@@ -248,7 +248,7 @@ public abstract class Protection {
         this.mUserInsetAmountAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.core.view.insets.Protection$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                Protection.this.m8510x124db077(valueAnimator);
+                Protection.this.m8772x124db077(valueAnimator);
             }
         });
         this.mUserInsetAmountAnimator.start();
@@ -256,7 +256,7 @@ public abstract class Protection {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$animateInsetsAmount$1$androidx-core-view-insets-Protection  reason: not valid java name */
-    public /* synthetic */ void m8510x124db077(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8772x124db077(ValueAnimator valueAnimator) {
         setAlphaInternal(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 

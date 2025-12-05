@@ -13,12 +13,12 @@ public final class WithAlignmentLineElement extends ModifierNodeElement<Siblings
     public static final int $stable = 0;
     private final AlignmentLine alignmentLine;
 
-    public final AlignmentLine getAlignmentLine() {
-        return this.alignmentLine;
-    }
-
     public WithAlignmentLineElement(AlignmentLine alignmentLine) {
         this.alignmentLine = alignmentLine;
+    }
+
+    public final AlignmentLine getAlignmentLine() {
+        return this.alignmentLine;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Shiriki na</string>
     <string name="abc_shareactionprovider_share_with_application">Shiriki ukitumia %s</string>
     <string name="abc_toolbar_collapse_description">Kunja</string>
-    <string name="autofill">Jaza kiotomatiki</string>
+    <string name="androidx_compose_foundation_autofill">Jaza kiotomatiki</string>
+    <string name="androidx_compose_ui_autofill">Jaza kiotomatiki</string>
     <string name="bottomsheet_action_collapse">Kunja safu ya chini</string>
     <string name="bottomsheet_action_expand">Panua safu ya chini</string>
     <string name="bottomsheet_action_expand_halfway">Panua nusu</string>

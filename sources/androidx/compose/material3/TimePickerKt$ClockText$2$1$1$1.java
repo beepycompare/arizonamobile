@@ -52,7 +52,7 @@ public final class TimePickerKt$ClockText$2$1$1$1 extends SuspendLambda implemen
         long ClockText$lambda$64;
         long ClockText$lambda$642;
         long ClockText$lambda$67;
-        Object m3231onTapuYHVD98;
+        Object m3317onTapuYHVD98;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -66,8 +66,8 @@ public final class TimePickerKt$ClockText$2$1$1$1 extends SuspendLambda implemen
             boolean z = this.$autoSwitchToMinute;
             ClockText$lambda$67 = TimePickerKt.ClockText$lambda$67(this.$parentCenter$delegate);
             this.label = 1;
-            m3231onTapuYHVD98 = TimePickerKt.m3231onTapuYHVD98(analogTimePickerState, intBitsToFloat, intBitsToFloat2, f, z, ClockText$lambda$67, new SnapSpec(0, 1, null), this);
-            if (m3231onTapuYHVD98 == coroutine_suspended) {
+            m3317onTapuYHVD98 = TimePickerKt.m3317onTapuYHVD98(analogTimePickerState, intBitsToFloat, intBitsToFloat2, f, z, ClockText$lambda$67, new SnapSpec(0, 1, null), this);
+            if (m3317onTapuYHVD98 == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

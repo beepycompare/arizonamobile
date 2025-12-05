@@ -7,7 +7,7 @@ public final class Ng extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        this.f679a.b(q5);
+        this.f762a.b(q5);
         return false;
     }
 }

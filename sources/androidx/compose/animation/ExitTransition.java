@@ -10,8 +10,8 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class ExitTransition {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final ExitTransition None = new ExitTransitionImpl(new TransitionData(null, null, null, null, false, null, 63, null));
-    private static final ExitTransition KeepUntilTransitionsFinished = new ExitTransitionImpl(new TransitionData(null, null, null, null, true, null, 47, null));
+    private static final ExitTransition None = new ExitTransitionImpl(new TransitionData(null, null, null, null, null, false, null, 127, null));
+    private static final ExitTransition KeepUntilTransitionsFinished = new ExitTransitionImpl(new TransitionData(null, null, null, null, null, true, null, 95, null));
 
     public /* synthetic */ ExitTransition(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -39,7 +39,11 @@ public abstract class ExitTransition {
         if (scale == null) {
             scale = getData$animation().getScale();
         }
-        return new ExitTransitionImpl(new TransitionData(fade, slide, changeSize, scale, exitTransition.getData$animation().getHold() || getData$animation().getHold(), MapsKt.plus(getData$animation().getEffectsMap(), exitTransition.getData$animation().getEffectsMap())));
+        Veil veil = exitTransition.getData$animation().getVeil();
+        if (veil == null) {
+            veil = getData$animation().getVeil();
+        }
+        return new ExitTransitionImpl(new TransitionData(fade, slide, changeSize, scale, veil, exitTransition.getData$animation().getHold() || getData$animation().getHold(), MapsKt.plus(getData$animation().getEffectsMap(), exitTransition.getData$animation().getEffectsMap())));
     }
 
     public boolean equals(Object obj) {

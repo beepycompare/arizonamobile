@@ -17,17 +17,17 @@ public final class WindowInsetsSizeKt {
     private static final Function3<WindowInsets, LayoutDirection, Density, Integer> startCalc = new Function3() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            int startCalc$lambda$1;
-            startCalc$lambda$1 = WindowInsetsSizeKt.startCalc$lambda$1((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3);
-            return Integer.valueOf(startCalc$lambda$1);
+            int startCalc$lambda$0;
+            startCalc$lambda$0 = WindowInsetsSizeKt.startCalc$lambda$0((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3);
+            return Integer.valueOf(startCalc$lambda$0);
         }
     };
     private static final Function3<WindowInsets, LayoutDirection, Density, Integer> endCalc = new Function3() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            int endCalc$lambda$3;
-            endCalc$lambda$3 = WindowInsetsSizeKt.endCalc$lambda$3((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3);
-            return Integer.valueOf(endCalc$lambda$3);
+            int endCalc$lambda$0;
+            endCalc$lambda$0 = WindowInsetsSizeKt.endCalc$lambda$0((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3);
+            return Integer.valueOf(endCalc$lambda$0);
         }
     };
     private static final Function2<WindowInsets, Density, Integer> topCalc = new Function2() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$$ExternalSyntheticLambda2
@@ -48,7 +48,7 @@ public final class WindowInsetsSizeKt {
     };
 
     public static final Modifier windowInsetsStartWidth(Modifier modifier, final WindowInsets windowInsets) {
-        return modifier.then(new DerivedWidthModifier(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsStartWidth$$inlined$debugInspectorInfo$1
+        return modifier.then(new DerivedWidthModifierElement(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsStartWidth$$inlined$debugInspectorInfo$1
             {
                 super(1);
             }
@@ -68,7 +68,7 @@ public final class WindowInsetsSizeKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int startCalc$lambda$1(WindowInsets windowInsets, LayoutDirection layoutDirection, Density density) {
+    public static final int startCalc$lambda$0(WindowInsets windowInsets, LayoutDirection layoutDirection, Density density) {
         if (layoutDirection == LayoutDirection.Ltr) {
             return windowInsets.getLeft(density, layoutDirection);
         }
@@ -76,7 +76,7 @@ public final class WindowInsetsSizeKt {
     }
 
     public static final Modifier windowInsetsEndWidth(Modifier modifier, final WindowInsets windowInsets) {
-        return modifier.then(new DerivedWidthModifier(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsEndWidth$$inlined$debugInspectorInfo$1
+        return modifier.then(new DerivedWidthModifierElement(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsEndWidth$$inlined$debugInspectorInfo$1
             {
                 super(1);
             }
@@ -96,7 +96,7 @@ public final class WindowInsetsSizeKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int endCalc$lambda$3(WindowInsets windowInsets, LayoutDirection layoutDirection, Density density) {
+    public static final int endCalc$lambda$0(WindowInsets windowInsets, LayoutDirection layoutDirection, Density density) {
         if (layoutDirection == LayoutDirection.Rtl) {
             return windowInsets.getLeft(density, layoutDirection);
         }
@@ -104,7 +104,7 @@ public final class WindowInsetsSizeKt {
     }
 
     public static final Modifier windowInsetsTopHeight(Modifier modifier, final WindowInsets windowInsets) {
-        return modifier.then(new DerivedHeightModifier(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsTopHeight$$inlined$debugInspectorInfo$1
+        return modifier.then(new DerivedHeightModifierElement(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsTopHeight$$inlined$debugInspectorInfo$1
             {
                 super(1);
             }
@@ -124,7 +124,7 @@ public final class WindowInsetsSizeKt {
     }
 
     public static final Modifier windowInsetsBottomHeight(Modifier modifier, final WindowInsets windowInsets) {
-        return modifier.then(new DerivedHeightModifier(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsBottomHeight$$inlined$debugInspectorInfo$1
+        return modifier.then(new DerivedHeightModifierElement(windowInsets, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$windowInsetsBottomHeight$$inlined$debugInspectorInfo$1
             {
                 super(1);
             }

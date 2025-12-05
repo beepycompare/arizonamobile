@@ -9,18 +9,18 @@ import java.util.ArrayList;
 public final class Qi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f652a;
+    public final Context f735a;
     public final SafePackageManager b;
 
     public Qi(Context context, SafePackageManager safePackageManager) {
-        this.f652a = context;
+        this.f735a = context;
         this.b = safePackageManager;
     }
 
     public final ArrayList a() {
         ArrayList arrayList = new ArrayList();
         SafePackageManager safePackageManager = this.b;
-        Context context = this.f652a;
+        Context context = this.f735a;
         PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 4096);
         if (packageInfo != null) {
             String[] strArr = packageInfo.requestedPermissions;

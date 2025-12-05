@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function3;
 import kotlin.ranges.RangesKt;
 /* compiled from: PagerSnapLayoutInfoProvider.kt */
-@Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u001e\u0010\u0006\u001a\u001a\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b0\u0007H\u0000\u001a\u0014\u0010\t\u001a\u00020\n*\u00020\u00032\u0006\u0010\u000b\u001a\u00020\bH\u0002\u001a\f\u0010\f\u001a\u00020\b*\u00020\u0003H\u0002\u001a\u0017\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0082\b\u001a8\u0010\u0006\u001a\u00020\b2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bH\u0000¨\u0006\u0018"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "pagerSnapDistance", "Landroidx/compose/foundation/pager/PagerSnapDistance;", "calculateFinalSnappingBound", "Lkotlin/Function3;", "", "isScrollingForward", "", "velocity", "dragGestureDelta", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "snapPositionalThreshold", "flingVelocity", "lowerBoundOffset", "upperBoundOffset", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u001e\u0010\u0006\u001a\u001a\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b0\u0007H\u0000\u001a\u0014\u0010\t\u001a\u00020\n*\u00020\u00032\u0006\u0010\u000b\u001a\u00020\bH\u0002\u001a\f\u0010\f\u001a\u00020\b*\u00020\u0003H\u0002\u001a\u0017\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0082\b\u001a8\u0010\u0006\u001a\u00020\b2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bH\u0000¨\u0006\u0018"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "pagerSnapDistance", "Landroidx/compose/foundation/pager/PagerSnapDistance;", "calculateFinalSnappingBound", "Lkotlin/Function3;", "", "isScrollingForward", "", "velocity", "dragGestureDelta", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "snapPositionalThreshold", "flingVelocity", "lowerBoundOffset", "upperBoundOffset", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PagerSnapLayoutInfoProviderKt {
     private static final void debugLog(Function0<String> function0) {
@@ -49,18 +49,18 @@ public final class PagerSnapLayoutInfoProviderKt {
 
             @Override // androidx.compose.foundation.gestures.snapping.SnapLayoutInfoProvider
             public float calculateApproachOffset(float f, float f2) {
-                int firstVisiblePage$foundation_release;
-                int pageSize$foundation_release = PagerState.this.getPageSize$foundation_release() + PagerState.this.getPageSpacing$foundation_release();
-                if (pageSize$foundation_release == 0) {
+                int firstVisiblePage$foundation;
+                int pageSize$foundation = PagerState.this.getPageSize$foundation() + PagerState.this.getPageSpacing$foundation();
+                if (pageSize$foundation == 0) {
                     return 0.0f;
                 }
                 if (f < 0.0f) {
-                    firstVisiblePage$foundation_release = PagerState.this.getFirstVisiblePage$foundation_release() + 1;
+                    firstVisiblePage$foundation = PagerState.this.getFirstVisiblePage$foundation() + 1;
                 } else {
-                    firstVisiblePage$foundation_release = PagerState.this.getFirstVisiblePage$foundation_release();
+                    firstVisiblePage$foundation = PagerState.this.getFirstVisiblePage$foundation();
                 }
-                int i = firstVisiblePage$foundation_release;
-                int coerceAtLeast = RangesKt.coerceAtLeast(Math.abs((RangesKt.coerceIn(pagerSnapDistance.calculateTargetPage(i, RangesKt.coerceIn(((int) (f2 / pageSize$foundation_release)) + i, 0, PagerState.this.getPageCount()), f, PagerState.this.getPageSize$foundation_release(), PagerState.this.getPageSpacing$foundation_release()), 0, PagerState.this.getPageCount()) - i) * pageSize$foundation_release) - pageSize$foundation_release, 0);
+                int i = firstVisiblePage$foundation;
+                int coerceAtLeast = RangesKt.coerceAtLeast(Math.abs((RangesKt.coerceIn(pagerSnapDistance.calculateTargetPage(i, RangesKt.coerceIn(((int) (f2 / pageSize$foundation)) + i, 0, PagerState.this.getPageCount()), f, PagerState.this.getPageSize$foundation(), PagerState.this.getPageSpacing$foundation()), 0, PagerState.this.getPageCount()) - i) * pageSize$foundation) - pageSize$foundation, 0);
                 return coerceAtLeast == 0 ? coerceAtLeast : coerceAtLeast * Math.signum(f);
             }
 
@@ -120,15 +120,15 @@ public final class PagerSnapLayoutInfoProviderKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean isScrollingForward(PagerState pagerState, float f) {
         boolean reverseLayout = pagerState.getLayoutInfo().getReverseLayout();
-        boolean z = (pagerState.isNotGestureAction$foundation_release() ? -f : dragGestureDelta(pagerState)) > 0.0f;
+        boolean z = (pagerState.isNotGestureAction$foundation() ? -f : dragGestureDelta(pagerState)) > 0.0f;
         return (z && reverseLayout) || !(z || reverseLayout);
     }
 
     private static final float dragGestureDelta(PagerState pagerState) {
         if (pagerState.getLayoutInfo().getOrientation() == Orientation.Horizontal) {
-            return Float.intBitsToFloat((int) (pagerState.m1162getUpDownDifferenceF1C5BW0$foundation_release() >> 32));
+            return Float.intBitsToFloat((int) (pagerState.m1236getUpDownDifferenceF1C5BW0$foundation() >> 32));
         }
-        return Float.intBitsToFloat((int) (pagerState.m1162getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L));
+        return Float.intBitsToFloat((int) (pagerState.m1236getUpDownDifferenceF1C5BW0$foundation() & 4294967295L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x008a A[RETURN] */
@@ -143,12 +143,12 @@ public final class PagerSnapLayoutInfoProviderKt {
         int pageSize = pagerState.getLayoutInfo().getPageSize();
         float dragGestureDelta = pageSize == 0 ? 0.0f : dragGestureDelta(pagerState) / pageSize;
         float f5 = dragGestureDelta - ((int) dragGestureDelta);
-        int calculateFinalSnappingItem = LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(pagerState.getDensity$foundation_release(), f2);
-        if (FinalSnappingItem.m629equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m633getClosestItembbeMdSM())) {
-            return (Math.abs(f5) <= f ? Math.abs(dragGestureDelta) < Math.abs(pagerState.getPositionThresholdFraction$foundation_release()) ? Math.abs(f3) >= Math.abs(f4) : !isScrollingForward : isScrollingForward) ? f4 : f3;
+        int calculateFinalSnappingItem = LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(pagerState.getDensity$foundation(), f2);
+        if (FinalSnappingItem.m709equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m713getClosestItembbeMdSM())) {
+            return (Math.abs(f5) <= f ? Math.abs(dragGestureDelta) < Math.abs(pagerState.getPositionThresholdFraction$foundation()) ? Math.abs(f3) >= Math.abs(f4) : !isScrollingForward : isScrollingForward) ? f4 : f3;
         }
-        if (!FinalSnappingItem.m629equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m634getNextItembbeMdSM())) {
-            if (!FinalSnappingItem.m629equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m635getPreviousItembbeMdSM())) {
+        if (!FinalSnappingItem.m709equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m714getNextItembbeMdSM())) {
+            if (!FinalSnappingItem.m709equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m715getPreviousItembbeMdSM())) {
                 return 0.0f;
             }
         }

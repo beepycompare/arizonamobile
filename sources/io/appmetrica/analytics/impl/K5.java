@@ -4,5 +4,5 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdReve
 /* loaded from: classes5.dex */
 public interface K5 extends ModuleAdRevenueContext {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
-    C0339j5 getAdRevenueProcessorsHolder();
+    C0338j5 getAdRevenueProcessorsHolder();
 }

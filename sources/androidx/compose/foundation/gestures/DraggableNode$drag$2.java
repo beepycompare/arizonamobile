@@ -1,6 +1,7 @@
 package androidx.compose.foundation.gestures;
 
 import androidx.compose.foundation.gestures.DragEvent;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Draggable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/DragScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DraggableNode$drag$2", f = "Draggable.kt", i = {}, l = {303}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DraggableNode$drag$2", f = "Draggable.kt", i = {}, l = {TypedValues.AttributesType.TYPE_EASING}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class DraggableNode$drag$2 extends SuspendLambda implements Function2<DragScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<Function1<? super DragEvent.DragDelta, Unit>, Continuation<? super Unit>, Object> $forEachDelta;
@@ -72,13 +73,11 @@ final class DraggableNode$drag$2 extends SuspendLambda implements Function2<Drag
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(DragScope dragScope, DraggableNode draggableNode, DragEvent.DragDelta dragDelta) {
-        long m522reverseIfNeededMKHz9U;
+        long m573reverseIfNeededMKHz9U;
         Orientation orientation;
-        float m515toFloat3MmeM6k;
-        m522reverseIfNeededMKHz9U = draggableNode.m522reverseIfNeededMKHz9U(dragDelta.m476getDeltaF1C5BW0());
+        m573reverseIfNeededMKHz9U = draggableNode.m573reverseIfNeededMKHz9U(dragDelta.m523getDeltaF1C5BW0());
         orientation = draggableNode.orientation;
-        m515toFloat3MmeM6k = DraggableKt.m515toFloat3MmeM6k(m522reverseIfNeededMKHz9U, orientation);
-        dragScope.dragBy(m515toFloat3MmeM6k);
+        dragScope.dragBy(DraggableKt.m566toFloat3MmeM6k(m573reverseIfNeededMKHz9U, orientation));
         return Unit.INSTANCE;
     }
 }

@@ -25,7 +25,7 @@ public final class ComposableSingletons$SubcomposeLayoutKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(641200809, i, -1, "androidx.compose.ui.layout.ComposableSingletons$SubcomposeLayoutKt.lambda$641200809.<anonymous> (SubcomposeLayout.kt:623)");
+                ComposerKt.traceEventStart(641200809, i, -1, "androidx.compose.ui.layout.ComposableSingletons$SubcomposeLayoutKt.lambda$641200809.<anonymous> (SubcomposeLayout.kt:640)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -33,7 +33,7 @@ public final class ComposableSingletons$SubcomposeLayoutKt {
         }
     });
 
-    public final Function2<Composer, Integer, Unit> getLambda$641200809$ui_release() {
+    public final Function2<Composer, Integer, Unit> getLambda$641200809$ui() {
         return lambda$641200809;
     }
 }

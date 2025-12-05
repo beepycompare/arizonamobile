@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">مشاركة مع</string>
     <string name="abc_shareactionprovider_share_with_application">مشاركة مع %s</string>
     <string name="abc_toolbar_collapse_description">تصغير</string>
-    <string name="autofill">الملء التلقائي</string>
+    <string name="androidx_compose_foundation_autofill">الملء التلقائي</string>
+    <string name="androidx_compose_ui_autofill">الملء التلقائي</string>
     <string name="bottomsheet_action_collapse">تصغير البطاقة السفلية</string>
     <string name="bottomsheet_action_expand">توسيع البطاقة السفلية</string>
     <string name="bottomsheet_action_expand_halfway">توسيع البطاقة السفلية</string>

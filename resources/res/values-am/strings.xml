@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">አጋራ በ</string>
     <string name="abc_shareactionprovider_share_with_application">ለ%s አጋራ</string>
     <string name="abc_toolbar_collapse_description">ሰብስብ</string>
-    <string name="autofill">ራስ-ሙላ</string>
+    <string name="androidx_compose_foundation_autofill">ራስ-ሙላ</string>
+    <string name="androidx_compose_ui_autofill">ራስ-ሙላ</string>
     <string name="bottomsheet_action_collapse">የግርጌ ሉሁን ይሰብስቡ</string>
     <string name="bottomsheet_action_expand">የግርጌ ሉሁን ይዘርጉ</string>
     <string name="bottomsheet_action_expand_halfway">ግማሽ መንገድ ዘርጋ</string>

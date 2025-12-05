@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.LayoutDirection;
 import kotlin.Metadata;
 /* compiled from: TextMeasurerHelper.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0017\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0005\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082D¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"DefaultCacheSize", "", "rememberTextMeasurer", "Landroidx/compose/ui/text/TextMeasurer;", "cacheSize", "(ILandroidx/compose/runtime/Composer;II)Landroidx/compose/ui/text/TextMeasurer;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0017\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0005\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082D¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"DefaultCacheSize", "", "rememberTextMeasurer", "Landroidx/compose/ui/text/TextMeasurer;", "cacheSize", "(ILandroidx/compose/runtime/Composer;II)Landroidx/compose/ui/text/TextMeasurer;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class TextMeasurerHelperKt {
     private static final int DefaultCacheSize = 8;
@@ -34,7 +34,7 @@ public final class TextMeasurerHelperKt {
         Object consume3 = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
         ComposerKt.sourceInformationMarkerEnd(composer);
         LayoutDirection layoutDirection = (LayoutDirection) consume3;
-        ComposerKt.sourceInformationMarkerStart(composer, 709621518, "CC(remember):TextMeasurerHelper.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 709621134, "CC(remember):TextMeasurerHelper.kt#9igjgp");
         boolean changed = composer.changed(resolver) | composer.changed(density) | composer.changed(layoutDirection.ordinal());
         if ((((i2 & 14) ^ 6) <= 4 || !composer.changed(i)) && (i2 & 6) != 4) {
             z = false;

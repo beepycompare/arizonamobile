@@ -11,7 +11,7 @@ public final class ServiceModuleCounterReport {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f281a;
+    private final String f364a;
     private final String b;
     private final byte[] c;
     private final int d;
@@ -21,17 +21,17 @@ public final class ServiceModuleCounterReport {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f282a;
+        private String f365a;
         private String b;
         private byte[] c;
         private int d;
 
         public final ServiceModuleCounterReport build() {
-            return new ServiceModuleCounterReport(this.f282a, this.b, this.c, this.d);
+            return new ServiceModuleCounterReport(this.f365a, this.b, this.c, this.d);
         }
 
         public final Builder withName(String str) {
-            this.f282a = str;
+            this.f365a = str;
             return this;
         }
 
@@ -67,7 +67,7 @@ public final class ServiceModuleCounterReport {
     }
 
     public ServiceModuleCounterReport(String str, String str2, byte[] bArr, int i) {
-        this.f281a = str;
+        this.f364a = str;
         this.b = str2;
         this.c = bArr;
         this.d = i;
@@ -75,7 +75,7 @@ public final class ServiceModuleCounterReport {
 
     public static /* synthetic */ ServiceModuleCounterReport copy$default(ServiceModuleCounterReport serviceModuleCounterReport, String str, String str2, byte[] bArr, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            str = serviceModuleCounterReport.f281a;
+            str = serviceModuleCounterReport.f364a;
         }
         if ((i2 & 2) != 0) {
             str2 = serviceModuleCounterReport.b;
@@ -90,7 +90,7 @@ public final class ServiceModuleCounterReport {
     }
 
     public final String component1() {
-        return this.f281a;
+        return this.f364a;
     }
 
     public final String component2() {
@@ -115,13 +115,13 @@ public final class ServiceModuleCounterReport {
         }
         if (obj instanceof ServiceModuleCounterReport) {
             ServiceModuleCounterReport serviceModuleCounterReport = (ServiceModuleCounterReport) obj;
-            return this.d == serviceModuleCounterReport.d && Intrinsics.areEqual(this.f281a, serviceModuleCounterReport.f281a) && Intrinsics.areEqual(this.b, serviceModuleCounterReport.b) && Arrays.equals(this.c, serviceModuleCounterReport.c);
+            return this.d == serviceModuleCounterReport.d && Intrinsics.areEqual(this.f364a, serviceModuleCounterReport.f364a) && Intrinsics.areEqual(this.b, serviceModuleCounterReport.b) && Arrays.equals(this.c, serviceModuleCounterReport.c);
         }
         return false;
     }
 
     public final String getName() {
-        return this.f281a;
+        return this.f364a;
     }
 
     public final int getType() {
@@ -138,7 +138,7 @@ public final class ServiceModuleCounterReport {
 
     public int hashCode() {
         int i = this.d * 31;
-        String str = this.f281a;
+        String str = this.f364a;
         int hashCode = (i + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.b;
         int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
@@ -147,6 +147,6 @@ public final class ServiceModuleCounterReport {
     }
 
     public String toString() {
-        return "ServiceModuleCounterReport(name=" + this.f281a + ", value=" + this.b + ", valueBytes=" + Arrays.toString(this.c) + ", type=" + this.d + ')';
+        return "ServiceModuleCounterReport(name=" + this.f364a + ", value=" + this.b + ", valueBytes=" + Arrays.toString(this.c) + ", type=" + this.d + ')';
     }
 }

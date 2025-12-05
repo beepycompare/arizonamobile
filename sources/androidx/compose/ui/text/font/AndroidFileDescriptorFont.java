@@ -18,18 +18,18 @@ public final class AndroidFileDescriptorFont extends AndroidPreloadedFont {
         this(parcelFileDescriptor, fontWeight, i, settings);
     }
 
+    private AndroidFileDescriptorFont(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings) {
+        super(fontWeight, i, settings, null);
+        this.fileDescriptor = parcelFileDescriptor;
+        setTypeface$ui_text(doLoad$ui_text(null));
+    }
+
     public final ParcelFileDescriptor getFileDescriptor() {
         return this.fileDescriptor;
     }
 
     public /* synthetic */ AndroidFileDescriptorFont(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(parcelFileDescriptor, (i2 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 4) != 0 ? FontStyle.Companion.m7578getNormal_LCdwA() : i, settings, null);
-    }
-
-    private AndroidFileDescriptorFont(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings) {
-        super(fontWeight, i, settings, null);
-        this.fileDescriptor = parcelFileDescriptor;
-        setTypeface$ui_text(doLoad$ui_text(null));
+        this(parcelFileDescriptor, (i2 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 4) != 0 ? FontStyle.Companion.m7822getNormal_LCdwA() : i, settings, null);
     }
 
     @Override // androidx.compose.ui.text.font.AndroidPreloadedFont
@@ -46,6 +46,6 @@ public final class AndroidFileDescriptorFont extends AndroidPreloadedFont {
     }
 
     public String toString() {
-        return "Font(fileDescriptor=" + this.fileDescriptor + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7573toStringimpl(mo7523getStyle_LCdwA())) + ')';
+        return "Font(fileDescriptor=" + this.fileDescriptor + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7817toStringimpl(mo7767getStyle_LCdwA())) + ')';
     }
 }

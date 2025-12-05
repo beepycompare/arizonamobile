@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Compartir con</string>
     <string name="abc_shareactionprovider_share_with_application">Compartir con %s</string>
     <string name="abc_toolbar_collapse_description">Contraer</string>
-    <string name="autofill">Autocompletar</string>
+    <string name="androidx_compose_foundation_autofill">Autocompletar</string>
+    <string name="androidx_compose_ui_autofill">Autocompletar</string>
     <string name="bottomsheet_action_collapse">Contraer la hoja inferior</string>
     <string name="bottomsheet_action_expand">Expandir la hoja inferior</string>
     <string name="bottomsheet_action_expand_halfway">Expandir hasta la mitad</string>

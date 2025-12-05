@@ -12,8 +12,14 @@ import androidx.core.os.BundleKt;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.savedstate.SavedStateRegistry;
+import androidx.savedstate.SavedStateWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.TuplesKt;
+import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
@@ -24,11 +30,11 @@ import kotlin.properties.ReadOnlyProperty;
 import kotlin.properties.ReadWriteProperty;
 import kotlin.reflect.KProperty;
 /* compiled from: SavedStateHandleSaver.android.kt */
-@Metadata(d1 = {"\u00006\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aI\u0010\u0000\u001a\u0002H\u0001\"\b\b\u0000\u0010\u0001*\u00020\u0002*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0016\b\u0002\u0010\u0006\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u0002H\u00010\tH\u0007¢\u0006\u0002\u0010\n\u001aJ\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00010\u000b\"\u0004\b\u0000\u0010\u0001*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0014\u0010\f\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\u0012\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u000b0\tH\u0007\u001aX\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00010\u000e0\r\"\b\b\u0000\u0010\u0001*\u00020\u0002*\u00020\u00032\u0016\b\u0002\u0010\u0006\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u0002H\u00010\tH\u0007\u001ai\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00010\u000f0\r\"\u0004\b\u0000\u0010\u0001\"\u000e\b\u0001\u0010\u0010*\b\u0012\u0004\u0012\u0002H\u00010\u000b*\u00020\u00032\u0016\b\u0002\u0010\f\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u0002H\u00100\tH\u0007¢\u0006\u0002\b\u0011\u001a>\u0010\u0012\u001a\u001c\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u000b\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u000b0\u0007\"\u0004\b\u0000\u0010\u00012\u0014\u0010\u0013\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u0007H\u0002¨\u0006\u0014"}, d2 = {"saveable", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/lifecycle/SavedStateHandle;", "key", "", "saver", "Landroidx/compose/runtime/saveable/Saver;", "init", "Lkotlin/Function0;", "(Landroidx/lifecycle/SavedStateHandle;Ljava/lang/String;Landroidx/compose/runtime/saveable/Saver;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "Landroidx/compose/runtime/MutableState;", "stateSaver", "Lkotlin/properties/PropertyDelegateProvider;", "Lkotlin/properties/ReadOnlyProperty;", "Lkotlin/properties/ReadWriteProperty;", "M", "saveableMutableState", "mutableStateSaver", "inner", "lifecycle-viewmodel-compose_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aI\u0010\u0000\u001a\u0002H\u0001\"\b\b\u0000\u0010\u0001*\u00020\u0002*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0016\b\u0002\u0010\u0006\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u0002H\u00010\tH\u0007¢\u0006\u0002\u0010\n\u001aJ\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00010\u000b\"\u0004\b\u0000\u0010\u0001*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0014\u0010\f\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\u0012\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u000b0\tH\u0007\u001aX\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00010\u000e0\r\"\b\b\u0000\u0010\u0001*\u00020\u0002*\u00020\u00032\u0016\b\u0002\u0010\u0006\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u0002H\u00010\tH\u0007\u001ai\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00010\u000f0\r\"\u0004\b\u0000\u0010\u0001\"\u000e\b\u0001\u0010\u0010*\b\u0012\u0004\u0012\u0002H\u00010\u000b*\u00020\u00032\u0016\b\u0002\u0010\f\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u0002H\u00100\tH\u0007¢\u0006\u0002\b\u0011\u001a>\u0010\u0012\u001a\u001c\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u000b\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u000b0\u0007\"\u0004\b\u0000\u0010\u00012\u0014\u0010\u0013\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0006\b\u0001\u0012\u00020\u00020\u0007H\u0002¨\u0006\u0014"}, d2 = {"saveable", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/lifecycle/SavedStateHandle;", "key", "", "saver", "Landroidx/compose/runtime/saveable/Saver;", "init", "Lkotlin/Function0;", "(Landroidx/lifecycle/SavedStateHandle;Ljava/lang/String;Landroidx/compose/runtime/saveable/Saver;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "Landroidx/compose/runtime/MutableState;", "stateSaver", "Lkotlin/properties/PropertyDelegateProvider;", "Lkotlin/properties/ReadOnlyProperty;", "Lkotlin/properties/ReadWriteProperty;", "M", "saveableMutableState", "mutableStateSaver", "inner", "lifecycle-viewmodel-compose"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class SavedStateHandleSaverKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object saveable$lambda$3$lambda$2(Object obj, Object obj2, KProperty kProperty) {
+    public static final Object saveable$lambda$1$0(Object obj, Object obj2, KProperty kProperty) {
         return obj;
     }
 
@@ -36,11 +42,11 @@ public final class SavedStateHandleSaverKt {
         if ((i & 2) != 0) {
             saver = SaverKt.autoSaver();
         }
-        return m8595saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
+        return m8859saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
     }
 
     /* renamed from: saveable  reason: collision with other method in class */
-    public static final <T> T m8595saveable(SavedStateHandle savedStateHandle, String str, final Saver<T, ? extends Object> saver, Function0<? extends T> function0) {
+    public static final <T> T m8859saveable(SavedStateHandle savedStateHandle, String str, final Saver<T, ? extends Object> saver, Function0<? extends T> function0) {
         final T invoke;
         Object obj;
         Intrinsics.checkNotNull(saver, "null cannot be cast to non-null type androidx.compose.runtime.saveable.Saver<T of androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt.saveable, kotlin.Any>");
@@ -48,24 +54,37 @@ public final class SavedStateHandleSaverKt {
         if (bundle == null || (obj = bundle.get("value")) == null || (invoke = saver.restore(obj)) == null) {
             invoke = function0.invoke();
         }
-        savedStateHandle.setSavedStateProvider(str, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda2
+        savedStateHandle.setSavedStateProvider(str, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda3
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle saveable$lambda$1;
-                saveable$lambda$1 = SavedStateHandleSaverKt.saveable$lambda$1(Saver.this, invoke);
-                return saveable$lambda$1;
+                Bundle saveable$lambda$0;
+                saveable$lambda$0 = SavedStateHandleSaverKt.saveable$lambda$0(Saver.this, invoke);
+                return saveable$lambda$0;
             }
         });
         return invoke;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Bundle saveable$lambda$1(Saver saver, Object obj) {
-        return BundleKt.bundleOf(TuplesKt.to("value", saver.save(new SavedStateHandleSaverKt$saveable$1$1$1(SavedStateHandle.Companion), obj)));
+    public static final Bundle saveable$lambda$0(Saver saver, Object obj) {
+        Pair[] pairArr;
+        Map mapOf = MapsKt.mapOf(TuplesKt.to("value", saver.save(new SavedStateHandleSaverKt$saveable$1$1$1(SavedStateHandle.Companion), obj)));
+        if (mapOf.isEmpty()) {
+            pairArr = new Pair[0];
+        } else {
+            ArrayList arrayList = new ArrayList(mapOf.size());
+            for (Map.Entry entry : mapOf.entrySet()) {
+                arrayList.add(TuplesKt.to((String) entry.getKey(), entry.getValue()));
+            }
+            pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
+        }
+        Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
+        SavedStateWriter.m9264constructorimpl(bundleOf);
+        return bundleOf;
     }
 
     public static final <T> MutableState<T> saveable(SavedStateHandle savedStateHandle, String str, Saver<T, ? extends Object> saver, Function0<? extends MutableState<T>> function0) {
-        return (MutableState) m8595saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) mutableStateSaver(saver), (Function0<? extends Object>) function0);
+        return (MutableState) m8859saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) mutableStateSaver(saver), (Function0<? extends Object>) function0);
     }
 
     public static /* synthetic */ PropertyDelegateProvider saveable$default(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, int i, Object obj) {
@@ -76,25 +95,25 @@ public final class SavedStateHandleSaverKt {
     }
 
     public static final <T> PropertyDelegateProvider<Object, ReadOnlyProperty<Object, T>> saveable(final SavedStateHandle savedStateHandle, final Saver<T, ? extends Object> saver, final Function0<? extends T> function0) {
-        return new PropertyDelegateProvider() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda1
+        return new PropertyDelegateProvider() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda2
             @Override // kotlin.properties.PropertyDelegateProvider
             public final Object provideDelegate(Object obj, KProperty kProperty) {
-                ReadOnlyProperty saveable$lambda$3;
-                saveable$lambda$3 = SavedStateHandleSaverKt.saveable$lambda$3(SavedStateHandle.this, saver, function0, obj, kProperty);
-                return saveable$lambda$3;
+                ReadOnlyProperty saveable$lambda$1;
+                saveable$lambda$1 = SavedStateHandleSaverKt.saveable$lambda$1(SavedStateHandle.this, saver, function0, obj, kProperty);
+                return saveable$lambda$1;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ReadOnlyProperty saveable$lambda$3(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, Object obj, KProperty kProperty) {
-        final Object m8595saveable = m8595saveable(savedStateHandle, (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName(), (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
+    public static final ReadOnlyProperty saveable$lambda$1(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, Object obj, KProperty kProperty) {
+        final Object m8859saveable = m8859saveable(savedStateHandle, (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName(), (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
         return new ReadOnlyProperty() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda4
             @Override // kotlin.properties.ReadOnlyProperty
             public final Object getValue(Object obj2, KProperty kProperty2) {
-                Object saveable$lambda$3$lambda$2;
-                saveable$lambda$3$lambda$2 = SavedStateHandleSaverKt.saveable$lambda$3$lambda$2(m8595saveable, obj2, kProperty2);
-                return saveable$lambda$3$lambda$2;
+                Object saveable$lambda$1$0;
+                saveable$lambda$1$0 = SavedStateHandleSaverKt.saveable$lambda$1$0(m8859saveable, obj2, kProperty2);
+                return saveable$lambda$1$0;
             }
         };
     }
@@ -107,18 +126,18 @@ public final class SavedStateHandleSaverKt {
     }
 
     public static final <T, M extends MutableState<T>> PropertyDelegateProvider<Object, ReadWriteProperty<Object, T>> saveableMutableState(final SavedStateHandle savedStateHandle, final Saver<T, ? extends Object> saver, final Function0<? extends M> function0) {
-        return new PropertyDelegateProvider() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda3
+        return new PropertyDelegateProvider() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda5
             @Override // kotlin.properties.PropertyDelegateProvider
             public final Object provideDelegate(Object obj, KProperty kProperty) {
-                ReadWriteProperty saveable$lambda$4;
-                saveable$lambda$4 = SavedStateHandleSaverKt.saveable$lambda$4(SavedStateHandle.this, saver, function0, obj, kProperty);
-                return saveable$lambda$4;
+                ReadWriteProperty saveable$lambda$2;
+                saveable$lambda$2 = SavedStateHandleSaverKt.saveable$lambda$2(SavedStateHandle.this, saver, function0, obj, kProperty);
+                return saveable$lambda$2;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ReadWriteProperty saveable$lambda$4(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, Object obj, KProperty kProperty) {
+    public static final ReadWriteProperty saveable$lambda$2(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, Object obj, KProperty kProperty) {
         final MutableState saveable = saveable(savedStateHandle, (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName(), saver, function0);
         return new ReadWriteProperty<Object, T>() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$saveable$3$1
             @Override // kotlin.properties.ReadWriteProperty, kotlin.properties.ReadOnlyProperty
@@ -138,37 +157,22 @@ public final class SavedStateHandleSaverKt {
         return SaverKt.Saver(new Function2() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                MutableState mutableStateSaver$lambda$7$lambda$6;
-                mutableStateSaver$lambda$7$lambda$6 = SavedStateHandleSaverKt.mutableStateSaver$lambda$7$lambda$6(Saver.this, (SaverScope) obj, (MutableState) obj2);
-                return mutableStateSaver$lambda$7$lambda$6;
+                MutableState mutableStateSaver$lambda$0$0;
+                mutableStateSaver$lambda$0$0 = SavedStateHandleSaverKt.mutableStateSaver$lambda$0$0(Saver.this, (SaverScope) obj, (MutableState) obj2);
+                return mutableStateSaver$lambda$0$0;
             }
-        }, new Function1<MutableState<Object>, MutableState<T>>() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$mutableStateSaver$1$2
+        }, new Function1() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public final MutableState<T> invoke(MutableState<Object> mutableState) {
-                T t;
-                if (!(mutableState instanceof SnapshotMutableState)) {
-                    throw new IllegalArgumentException("Failed requirement.".toString());
-                }
-                SnapshotMutableState snapshotMutableState = (SnapshotMutableState) mutableState;
-                if (snapshotMutableState.getValue() != null) {
-                    Saver<T, Object> saver2 = saver;
-                    T value = snapshotMutableState.getValue();
-                    Intrinsics.checkNotNull(value);
-                    t = saver2.restore(value);
-                } else {
-                    t = null;
-                }
-                SnapshotMutationPolicy<T> policy = snapshotMutableState.getPolicy();
-                Intrinsics.checkNotNull(policy, "null cannot be cast to non-null type androidx.compose.runtime.SnapshotMutationPolicy<T of androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt.mutableStateSaver?>");
-                MutableState<T> mutableStateOf = SnapshotStateKt.mutableStateOf(t, policy);
-                Intrinsics.checkNotNull(mutableStateOf, "null cannot be cast to non-null type androidx.compose.runtime.MutableState<T of androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt.mutableStateSaver>");
-                return mutableStateOf;
+            public final Object invoke(Object obj) {
+                MutableState mutableStateSaver$lambda$0$1;
+                mutableStateSaver$lambda$0$1 = SavedStateHandleSaverKt.mutableStateSaver$lambda$0$1(Saver.this, (MutableState) obj);
+                return mutableStateSaver$lambda$0$1;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final MutableState mutableStateSaver$lambda$7$lambda$6(Saver saver, SaverScope saverScope, MutableState mutableState) {
+    public static final MutableState mutableStateSaver$lambda$0$0(Saver saver, SaverScope saverScope, MutableState mutableState) {
         if (!(mutableState instanceof SnapshotMutableState)) {
             throw new IllegalArgumentException("If you use a custom MutableState implementation you have to write a custom Saver and pass it as a saver param to rememberSaveable()".toString());
         }
@@ -177,5 +181,26 @@ public final class SavedStateHandleSaverKt {
         SnapshotMutationPolicy policy = snapshotMutableState.getPolicy();
         Intrinsics.checkNotNull(policy, "null cannot be cast to non-null type androidx.compose.runtime.SnapshotMutationPolicy<kotlin.Any?>");
         return SnapshotStateKt.mutableStateOf(save, policy);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final MutableState mutableStateSaver$lambda$0$1(Saver saver, MutableState mutableState) {
+        Object obj;
+        if (!(mutableState instanceof SnapshotMutableState)) {
+            throw new IllegalArgumentException("Failed requirement.".toString());
+        }
+        SnapshotMutableState snapshotMutableState = (SnapshotMutableState) mutableState;
+        if (snapshotMutableState.getValue() != 0) {
+            T value = snapshotMutableState.getValue();
+            Intrinsics.checkNotNull(value);
+            obj = saver.restore(value);
+        } else {
+            obj = null;
+        }
+        SnapshotMutationPolicy policy = snapshotMutableState.getPolicy();
+        Intrinsics.checkNotNull(policy, "null cannot be cast to non-null type androidx.compose.runtime.SnapshotMutationPolicy<T of androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt.mutableStateSaver?>");
+        MutableState mutableStateOf = SnapshotStateKt.mutableStateOf(obj, policy);
+        Intrinsics.checkNotNull(mutableStateOf, "null cannot be cast to non-null type androidx.compose.runtime.MutableState<T of androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt.mutableStateSaver>");
+        return mutableStateOf;
     }
 }

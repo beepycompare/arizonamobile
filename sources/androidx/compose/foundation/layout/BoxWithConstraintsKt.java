@@ -23,7 +23,7 @@ import kotlin.jvm.functions.Function3;
 /* loaded from: classes.dex */
 public final class BoxWithConstraintsKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit BoxWithConstraints$lambda$3(Modifier modifier, Alignment alignment, boolean z, Function3 function3, int i, int i2, Composer composer, int i3) {
+    public static final Unit BoxWithConstraints$lambda$1(Modifier modifier, Alignment alignment, boolean z, Function3 function3, int i, int i2, Composer composer, int i3) {
         BoxWithConstraints(modifier, alignment, z, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -31,13 +31,12 @@ public final class BoxWithConstraintsKt {
     /* JADX WARN: Removed duplicated region for block: B:26:0x0050  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:79:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:76:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -51,7 +50,7 @@ public final class BoxWithConstraintsKt {
         Alignment alignment2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(380139498);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BoxWithConstraints)N(modifier,contentAlignment,propagateMinConstraints,content)63@3275L218,63@3248L245:BoxWithConstraints.kt#2w3rfo");
+        ComposerKt.sourceInformation(startRestartGroup, "C(BoxWithConstraints)N(modifier,contentAlignment,propagateMinConstraints,content)63@3275L271,63@3248L298:BoxWithConstraints.kt#2w3rfo");
         int i5 = i2 & 1;
         if (i5 != 0) {
             i3 = i | 6;
@@ -75,9 +74,7 @@ public final class BoxWithConstraintsKt {
             } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                 z2 = z;
                 i3 |= startRestartGroup.changed(z2) ? 256 : 128;
-                if ((i2 & 8) != 0) {
-                    i3 |= 3072;
-                } else if ((i & 3072) == 0) {
+                if ((i & 3072) == 0) {
                     i3 |= startRestartGroup.changedInstance(function3) ? 2048 : 1024;
                 }
                 if (!startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
@@ -94,16 +91,16 @@ public final class BoxWithConstraintsKt {
                         ComposerKt.traceEventStart(380139498, i3, -1, "androidx.compose.foundation.layout.BoxWithConstraints (BoxWithConstraints.kt:61)");
                     }
                     final MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(alignment2, z2);
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 241850116, "CC(remember):BoxWithConstraints.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 241849337, "CC(remember):BoxWithConstraints.kt#9igjgp");
                     boolean changed = startRestartGroup.changed(maybeCachedBoxMeasurePolicy) | ((i3 & 7168) == 2048);
                     Object rememberedValue = startRestartGroup.rememberedValue();
                     if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                         rememberedValue = new Function2() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                MeasureResult BoxWithConstraints$lambda$2$lambda$1;
-                                BoxWithConstraints$lambda$2$lambda$1 = BoxWithConstraintsKt.BoxWithConstraints$lambda$2$lambda$1(MeasurePolicy.this, function3, (SubcomposeMeasureScope) obj3, (Constraints) obj4);
-                                return BoxWithConstraints$lambda$2$lambda$1;
+                                MeasureResult BoxWithConstraints$lambda$0$0;
+                                BoxWithConstraints$lambda$0$0 = BoxWithConstraintsKt.BoxWithConstraints$lambda$0$0(MeasurePolicy.this, function3, (SubcomposeMeasureScope) obj3, (Constraints) obj4);
+                                return BoxWithConstraints$lambda$0$0;
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -122,9 +119,9 @@ public final class BoxWithConstraintsKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit BoxWithConstraints$lambda$3;
-                            BoxWithConstraints$lambda$3 = BoxWithConstraintsKt.BoxWithConstraints$lambda$3(Modifier.this, alignment3, z3, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                            return BoxWithConstraints$lambda$3;
+                            Unit BoxWithConstraints$lambda$1;
+                            BoxWithConstraints$lambda$1 = BoxWithConstraintsKt.BoxWithConstraints$lambda$1(Modifier.this, alignment3, z3, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                            return BoxWithConstraints$lambda$1;
                         }
                     });
                     return;
@@ -132,7 +129,7 @@ public final class BoxWithConstraintsKt {
                 return;
             }
             z2 = z;
-            if ((i2 & 8) != 0) {
+            if ((i & 3072) == 0) {
             }
             if (!startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
             }
@@ -145,7 +142,7 @@ public final class BoxWithConstraintsKt {
         if (i4 == 0) {
         }
         z2 = z;
-        if ((i2 & 8) != 0) {
+        if ((i & 3072) == 0) {
         }
         if (!startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
         }
@@ -155,29 +152,32 @@ public final class BoxWithConstraintsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final MeasureResult BoxWithConstraints$lambda$2$lambda$1(MeasurePolicy measurePolicy, final Function3 function3, SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-        final BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = new BoxWithConstraintsScopeImpl(subcomposeMeasureScope, constraints.m7955unboximpl(), null);
-        return measurePolicy.mo53measure3p2s80s(subcomposeMeasureScope, subcomposeMeasureScope.subcompose(Unit.INSTANCE, ComposableLambdaKt.composableLambdaInstance(-431986394, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$BoxWithConstraints$1$1$measurables$1
+    public static final MeasureResult BoxWithConstraints$lambda$0$0(MeasurePolicy measurePolicy, final Function3 function3, SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
+        final BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = new BoxWithConstraintsScopeImpl(subcomposeMeasureScope, constraints.m8217unboximpl(), null);
+        return measurePolicy.mo54measure3p2s80s(subcomposeMeasureScope, subcomposeMeasureScope.subcompose(Unit.INSTANCE, ComposableLambdaKt.composableLambdaInstance(-431986394, true, new Function2() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
-                invoke(composer, num.intValue());
-                return Unit.INSTANCE;
+            public final Object invoke(Object obj, Object obj2) {
+                Unit BoxWithConstraints$lambda$0$0$0;
+                BoxWithConstraints$lambda$0$0$0 = BoxWithConstraintsKt.BoxWithConstraints$lambda$0$0$0(Function3.this, boxWithConstraintsScopeImpl, (Composer) obj, ((Integer) obj2).intValue());
+                return BoxWithConstraints$lambda$0$0$0;
             }
+        })), constraints.m8217unboximpl());
+    }
 
-            public final void invoke(Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C65@3410L9:BoxWithConstraints.kt#2w3rfo");
-                if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-431986394, i, -1, "androidx.compose.foundation.layout.BoxWithConstraints.<anonymous>.<anonymous>.<anonymous> (BoxWithConstraints.kt:65)");
-                }
-                function3.invoke(boxWithConstraintsScopeImpl, composer, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit BoxWithConstraints$lambda$0$0$0(Function3 function3, BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C66@3463L9:BoxWithConstraints.kt#2w3rfo");
+        if (composer.shouldExecute((i & 3) != 2, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-431986394, i, -1, "androidx.compose.foundation.layout.BoxWithConstraints.<anonymous>.<anonymous>.<anonymous> (BoxWithConstraints.kt:66)");
             }
-        })), constraints.m7955unboximpl());
+            function3.invoke(boxWithConstraintsScopeImpl, composer, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
     }
 }

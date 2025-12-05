@@ -9,9 +9,9 @@ import java.util.Collection;
 public final class Pe implements IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Se f635a = new Se();
+    public final Se f718a = new Se();
     public final Te b = new Te();
-    public final IHandlerExecutor c = C0158c4.l().g().a();
+    public final IHandlerExecutor c = C0157c4.l().g().a();
     public final Provider d;
 
     public Pe(Provider<Sa> provider) {
@@ -20,9 +20,9 @@ public final class Pe implements IPluginReporter {
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        Se se = this.f635a;
-        se.f678a.a(pluginErrorDetails);
-        if (se.c.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1107a) {
+        Se se = this.f718a;
+        se.f761a.a(pluginErrorDetails);
+        if (se.c.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1190a) {
             this.b.getClass();
             this.c.execute(new Ne(this, pluginErrorDetails, str));
         }
@@ -30,14 +30,14 @@ public final class Pe implements IPluginReporter {
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        this.f635a.f678a.a(pluginErrorDetails);
+        this.f718a.f761a.a(pluginErrorDetails);
         this.b.getClass();
         this.c.execute(new Me(this, pluginErrorDetails));
     }
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f635a.b.a(str);
+        this.f718a.b.a(str);
         this.b.getClass();
         this.c.execute(new Oe(this, str, str2, pluginErrorDetails));
     }

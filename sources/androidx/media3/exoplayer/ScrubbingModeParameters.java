@@ -6,7 +6,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ScrubbingModeParameters {
     public static final ScrubbingModeParameters DEFAULT = new Builder().build();
     public final boolean allowSkippingMediaCodecFlush;
@@ -19,7 +19,7 @@ public final class ScrubbingModeParameters {
     public final boolean shouldIncreaseCodecOperatingRate;
     public final boolean useDecodeOnlyFlag;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Builder {
         private boolean allowSkippingMediaCodecFlush;
         private ImmutableSet<Integer> disabledTrackTypes;

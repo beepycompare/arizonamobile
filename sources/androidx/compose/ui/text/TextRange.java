@@ -15,50 +15,50 @@ public final class TextRange {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextRange m7446boximpl(long j) {
+    public static final /* synthetic */ TextRange m7689boximpl(long j) {
         return new TextRange(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m7447constructorimpl(long j) {
+    public static long m7690constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7450equalsimpl(long j, Object obj) {
-        return (obj instanceof TextRange) && j == ((TextRange) obj).m7462unboximpl();
+    public static boolean m7693equalsimpl(long j, Object obj) {
+        return (obj instanceof TextRange) && j == ((TextRange) obj).m7705unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7451equalsimpl0(long j, long j2) {
+    public static final boolean m7694equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getEnd-impl  reason: not valid java name */
-    public static final int m7453getEndimpl(long j) {
+    public static final int m7696getEndimpl(long j) {
         return (int) (j & 4294967295L);
     }
 
     /* renamed from: getStart-impl  reason: not valid java name */
-    public static final int m7458getStartimpl(long j) {
+    public static final int m7701getStartimpl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7459hashCodeimpl(long j) {
+    public static int m7702hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m7450equalsimpl(this.packedValue, obj);
+        return m7693equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m7459hashCodeimpl(this.packedValue);
+        return m7702hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m7462unboximpl() {
+    public final /* synthetic */ long m7705unboximpl() {
         return this.packedValue;
     }
 
@@ -67,52 +67,52 @@ public final class TextRange {
     }
 
     /* renamed from: getMin-impl  reason: not valid java name */
-    public static final int m7456getMinimpl(long j) {
-        return Math.min(m7458getStartimpl(j), m7453getEndimpl(j));
+    public static final int m7699getMinimpl(long j) {
+        return Math.min(m7701getStartimpl(j), m7696getEndimpl(j));
     }
 
     /* renamed from: getMax-impl  reason: not valid java name */
-    public static final int m7455getMaximpl(long j) {
-        return Math.max(m7458getStartimpl(j), m7453getEndimpl(j));
+    public static final int m7698getMaximpl(long j) {
+        return Math.max(m7701getStartimpl(j), m7696getEndimpl(j));
     }
 
     /* renamed from: getCollapsed-impl  reason: not valid java name */
-    public static final boolean m7452getCollapsedimpl(long j) {
-        return m7458getStartimpl(j) == m7453getEndimpl(j);
+    public static final boolean m7695getCollapsedimpl(long j) {
+        return m7701getStartimpl(j) == m7696getEndimpl(j);
     }
 
     /* renamed from: getReversed-impl  reason: not valid java name */
-    public static final boolean m7457getReversedimpl(long j) {
-        return m7458getStartimpl(j) > m7453getEndimpl(j);
+    public static final boolean m7700getReversedimpl(long j) {
+        return m7701getStartimpl(j) > m7696getEndimpl(j);
     }
 
     /* renamed from: getLength-impl  reason: not valid java name */
-    public static final int m7454getLengthimpl(long j) {
-        return m7455getMaximpl(j) - m7456getMinimpl(j);
+    public static final int m7697getLengthimpl(long j) {
+        return m7698getMaximpl(j) - m7699getMinimpl(j);
     }
 
     /* renamed from: intersects-5zc-tL8  reason: not valid java name */
-    public static final boolean m7460intersects5zctL8(long j, long j2) {
-        return (m7456getMinimpl(j) < m7455getMaximpl(j2)) & (m7456getMinimpl(j2) < m7455getMaximpl(j));
+    public static final boolean m7703intersects5zctL8(long j, long j2) {
+        return (m7699getMinimpl(j) < m7698getMaximpl(j2)) & (m7699getMinimpl(j2) < m7698getMaximpl(j));
     }
 
     /* renamed from: contains-5zc-tL8  reason: not valid java name */
-    public static final boolean m7448contains5zctL8(long j, long j2) {
-        return (m7456getMinimpl(j) <= m7456getMinimpl(j2)) & (m7455getMaximpl(j2) <= m7455getMaximpl(j));
+    public static final boolean m7691contains5zctL8(long j, long j2) {
+        return (m7699getMinimpl(j) <= m7699getMinimpl(j2)) & (m7698getMaximpl(j2) <= m7698getMaximpl(j));
     }
 
     /* renamed from: contains-impl  reason: not valid java name */
-    public static final boolean m7449containsimpl(long j, int i) {
-        return i < m7455getMaximpl(j) && m7456getMinimpl(j) <= i;
+    public static final boolean m7692containsimpl(long j, int i) {
+        return i < m7698getMaximpl(j) && m7699getMinimpl(j) <= i;
     }
 
     public String toString() {
-        return m7461toStringimpl(this.packedValue);
+        return m7704toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7461toStringimpl(long j) {
-        return "TextRange(" + m7458getStartimpl(j) + ", " + m7453getEndimpl(j) + ')';
+    public static String m7704toStringimpl(long j) {
+        return "TextRange(" + m7701getStartimpl(j) + ", " + m7696getEndimpl(j) + ')';
     }
 
     /* compiled from: TextRange.kt */
@@ -127,7 +127,7 @@ public final class TextRange {
         }
 
         /* renamed from: getZero-d9O1mEE  reason: not valid java name */
-        public final long m7463getZerod9O1mEE() {
+        public final long m7706getZerod9O1mEE() {
             return TextRange.Zero;
         }
     }

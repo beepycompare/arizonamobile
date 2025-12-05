@@ -45,11 +45,11 @@ public final class AccessibilityUtilKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult IncreaseHorizontalSemanticsBounds$lambda$1(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final int i = measureScope.mo424roundToPx0680j_4(HorizontalSemanticsBoundsPadding);
-        long m7955unboximpl = constraints.m7955unboximpl();
+        final int i = measureScope.mo458roundToPx0680j_4(HorizontalSemanticsBoundsPadding);
+        long m8217unboximpl = constraints.m8217unboximpl();
         int i2 = i * 2;
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU(m7955unboximpl, i2, 0));
-        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth() - i2, mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda5
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(ConstraintsKt.m8230offsetNN6EwU(m8217unboximpl, i2, 0));
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth() - i2, mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit IncreaseHorizontalSemanticsBounds$lambda$1$lambda$0;
@@ -76,11 +76,11 @@ public final class AccessibilityUtilKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult IncreaseVerticalSemanticsBounds$lambda$4(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final int i = measureScope.mo424roundToPx0680j_4(VerticalSemanticsBoundsPadding);
-        long m7955unboximpl = constraints.m7955unboximpl();
+        final int i = measureScope.mo458roundToPx0680j_4(VerticalSemanticsBoundsPadding);
+        long m8217unboximpl = constraints.m8217unboximpl();
         int i2 = i * 2;
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(ConstraintsKt.m7968offsetNN6EwU(m7955unboximpl, 0, i2));
-        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight() - i2, null, new Function1() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda0
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(ConstraintsKt.m8230offsetNN6EwU(m8217unboximpl, 0, i2));
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight() - i2, null, new Function1() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit IncreaseVerticalSemanticsBounds$lambda$4$lambda$3;
@@ -103,11 +103,11 @@ public final class AccessibilityUtilKt {
 
     static {
         float f = 10;
-        float m7996constructorimpl = Dp.m7996constructorimpl(f);
-        HorizontalSemanticsBoundsPadding = m7996constructorimpl;
-        float m7996constructorimpl2 = Dp.m7996constructorimpl(f);
-        VerticalSemanticsBoundsPadding = m7996constructorimpl2;
-        IncreaseHorizontalSemanticsBounds = PaddingKt.m845paddingVpY3zN4$default(SemanticsModifierKt.semantics(LayoutModifierKt.layout(Modifier.Companion, new Function3() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda1
+        float m8258constructorimpl = Dp.m8258constructorimpl(f);
+        HorizontalSemanticsBoundsPadding = m8258constructorimpl;
+        float m8258constructorimpl2 = Dp.m8258constructorimpl(f);
+        VerticalSemanticsBoundsPadding = m8258constructorimpl2;
+        IncreaseHorizontalSemanticsBounds = PaddingKt.m930paddingVpY3zN4$default(SemanticsModifierKt.semantics(LayoutModifierKt.layout(Modifier.Companion, new Function3() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
                 MeasureResult IncreaseHorizontalSemanticsBounds$lambda$1;
@@ -121,8 +121,8 @@ public final class AccessibilityUtilKt {
                 IncreaseHorizontalSemanticsBounds$lambda$2 = AccessibilityUtilKt.IncreaseHorizontalSemanticsBounds$lambda$2((SemanticsPropertyReceiver) obj);
                 return IncreaseHorizontalSemanticsBounds$lambda$2;
             }
-        }), m7996constructorimpl, 0.0f, 2, null);
-        IncreaseVerticalSemanticsBounds = PaddingKt.m845paddingVpY3zN4$default(SemanticsModifierKt.semantics(LayoutModifierKt.layout(Modifier.Companion, new Function3() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda3
+        }), m8258constructorimpl, 0.0f, 2, null);
+        IncreaseVerticalSemanticsBounds = PaddingKt.m930paddingVpY3zN4$default(SemanticsModifierKt.semantics(LayoutModifierKt.layout(Modifier.Companion, new Function3() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
                 MeasureResult IncreaseVerticalSemanticsBounds$lambda$4;
@@ -136,6 +136,6 @@ public final class AccessibilityUtilKt {
                 IncreaseVerticalSemanticsBounds$lambda$5 = AccessibilityUtilKt.IncreaseVerticalSemanticsBounds$lambda$5((SemanticsPropertyReceiver) obj);
                 return IncreaseVerticalSemanticsBounds$lambda$5;
             }
-        }), 0.0f, m7996constructorimpl2, 1, null);
+        }), 0.0f, m8258constructorimpl2, 1, null);
     }
 }

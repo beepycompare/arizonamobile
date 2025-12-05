@@ -13,30 +13,30 @@ import kotlin.collections.ArraysKt;
 public final class UArraysKt___UArraysJvmKt$asList$3 extends AbstractList<UByte> implements RandomAccess {
 
     /* renamed from: $$v$c$kotlin-UByteArray$-$this$asList$0  reason: not valid java name */
-    final /* synthetic */ byte[] f72$$v$c$kotlinUByteArray$$this$asList$0;
+    final /* synthetic */ byte[] f153$$v$c$kotlinUByteArray$$this$asList$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public UArraysKt___UArraysJvmKt$asList$3(byte[] bArr) {
-        this.f72$$v$c$kotlinUByteArray$$this$asList$0 = bArr;
+        this.f153$$v$c$kotlinUByteArray$$this$asList$0 = bArr;
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof UByte) {
-            return m10429contains7apg3OU(((UByte) obj).m9972unboximpl());
+            return m10724contains7apg3OU(((UByte) obj).m10267unboximpl());
         }
         return false;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public /* bridge */ /* synthetic */ Object get(int i) {
-        return UByte.m9916boximpl(m10430getw2LRezQ(i));
+        return UByte.m10211boximpl(m10725getw2LRezQ(i));
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int indexOf(Object obj) {
         if (obj instanceof UByte) {
-            return m10431indexOf7apg3OU(((UByte) obj).m9972unboximpl());
+            return m10726indexOf7apg3OU(((UByte) obj).m10267unboximpl());
         }
         return -1;
     }
@@ -44,38 +44,38 @@ public final class UArraysKt___UArraysJvmKt$asList$3 extends AbstractList<UByte>
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int lastIndexOf(Object obj) {
         if (obj instanceof UByte) {
-            return m10432lastIndexOf7apg3OU(((UByte) obj).m9972unboximpl());
+            return m10727lastIndexOf7apg3OU(((UByte) obj).m10267unboximpl());
         }
         return -1;
     }
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return UByteArray.m9986getSizeimpl(this.f72$$v$c$kotlinUByteArray$$this$asList$0);
+        return UByteArray.m10281getSizeimpl(this.f153$$v$c$kotlinUByteArray$$this$asList$0);
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return UByteArray.m9988isEmptyimpl(this.f72$$v$c$kotlinUByteArray$$this$asList$0);
+        return UByteArray.m10283isEmptyimpl(this.f153$$v$c$kotlinUByteArray$$this$asList$0);
     }
 
     /* renamed from: contains-7apg3OU  reason: not valid java name */
-    public boolean m10429contains7apg3OU(byte b) {
-        return UByteArray.m9981contains7apg3OU(this.f72$$v$c$kotlinUByteArray$$this$asList$0, b);
+    public boolean m10724contains7apg3OU(byte b) {
+        return UByteArray.m10276contains7apg3OU(this.f153$$v$c$kotlinUByteArray$$this$asList$0, b);
     }
 
     /* renamed from: get-w2LRezQ  reason: not valid java name */
-    public byte m10430getw2LRezQ(int i) {
-        return UByteArray.m9985getw2LRezQ(this.f72$$v$c$kotlinUByteArray$$this$asList$0, i);
+    public byte m10725getw2LRezQ(int i) {
+        return UByteArray.m10280getw2LRezQ(this.f153$$v$c$kotlinUByteArray$$this$asList$0, i);
     }
 
     /* renamed from: indexOf-7apg3OU  reason: not valid java name */
-    public int m10431indexOf7apg3OU(byte b) {
-        return ArraysKt.indexOf(this.f72$$v$c$kotlinUByteArray$$this$asList$0, b);
+    public int m10726indexOf7apg3OU(byte b) {
+        return ArraysKt.indexOf(this.f153$$v$c$kotlinUByteArray$$this$asList$0, b);
     }
 
     /* renamed from: lastIndexOf-7apg3OU  reason: not valid java name */
-    public int m10432lastIndexOf7apg3OU(byte b) {
-        return ArraysKt.lastIndexOf(this.f72$$v$c$kotlinUByteArray$$this$asList$0, b);
+    public int m10727lastIndexOf7apg3OU(byte b) {
+        return ArraysKt.lastIndexOf(this.f153$$v$c$kotlinUByteArray$$this$asList$0, b);
     }
 }

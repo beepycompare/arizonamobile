@@ -11,7 +11,7 @@ import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Xe extends AbstractC0748zd implements Co {
+public final class Xe extends AbstractC0747zd implements Co {
     public static final long d = 0;
     public static final int e = -1;
     public static final String f = "";
@@ -33,10 +33,10 @@ public final class Xe extends AbstractC0748zd implements Co {
         super(ia);
     }
 
-    public final Xe a(C0309i0 c0309i0) {
+    public final Xe a(C0308i0 c0308i0) {
         synchronized (this) {
-            b(j.b, c0309i0.f931a);
-            b(k.b, c0309i0.b);
+            b(j.b, c0308i0.f1014a);
+            b(k.b, c0308i0.b);
         }
         return this;
     }
@@ -47,25 +47,25 @@ public final class Xe extends AbstractC0748zd implements Co {
 
     @Override // io.appmetrica.analytics.impl.Ye
     public final Set<String> c() {
-        return this.f765a.a();
+        return this.f848a.a();
     }
 
-    public final C0309i0 d() {
-        C0309i0 c0309i0;
+    public final C0308i0 d() {
+        C0308i0 c0308i0;
         synchronized (this) {
-            c0309i0 = new C0309i0(this.f765a.getString(j.b, "{}"), this.f765a.getLong(k.b, 0L));
+            c0308i0 = new C0308i0(this.f848a.getString(j.b, "{}"), this.f848a.getLong(k.b, 0L));
         }
-        return c0309i0;
+        return c0308i0;
     }
 
     public final String e() {
-        return this.f765a.getString(m.b, "");
+        return this.f848a.getString(m.b, "");
     }
 
     public final Map<String, Long> f() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f765a.getString(q.b, null);
+            String string = this.f848a.getString(q.b, null);
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -83,7 +83,7 @@ public final class Xe extends AbstractC0748zd implements Co {
         String str = n.b;
         List emptyList = Collections.emptyList();
         String[] strArr = emptyList == null ? null : (String[]) emptyList.toArray(new String[emptyList.size()]);
-        String string = this.f765a.getString(str, null);
+        String string = this.f848a.getString(str, null);
         if (!TextUtils.isEmpty(string)) {
             try {
                 JSONArray jSONArray = new JSONArray(string);
@@ -101,21 +101,21 @@ public final class Xe extends AbstractC0748zd implements Co {
     }
 
     public final int h() {
-        return this.f765a.getInt(l.b, -1);
+        return this.f848a.getInt(l.b, -1);
     }
 
     public final long i() {
-        return this.f765a.getLong(h.b, 0L);
+        return this.f848a.getLong(h.b, 0L);
     }
 
     public final String j() {
-        return this.f765a.getString(i.b, null);
+        return this.f848a.getString(i.b, null);
     }
 
     public final Map<Integer, String> k() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f765a.getString(p.b, null);
+            String string = this.f848a.getString(p.b, null);
             if (string != null) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -141,7 +141,7 @@ public final class Xe extends AbstractC0748zd implements Co {
     }
 
     public final String h(String str) {
-        return this.f765a.getString(new Ze(r, str).b, "");
+        return this.f848a.getString(new Ze(r, str).b, "");
     }
 
     public final Xe i(String str) {
@@ -160,7 +160,7 @@ public final class Xe extends AbstractC0748zd implements Co {
         return (Xe) b(h.b, j2);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0748zd
+    @Override // io.appmetrica.analytics.impl.AbstractC0747zd
     public final String f(String str) {
         return new Ze(str, null).b;
     }
@@ -174,12 +174,12 @@ public final class Xe extends AbstractC0748zd implements Co {
     }
 
     public final boolean a(boolean z) {
-        return this.f765a.getBoolean(s.b, z);
+        return this.f848a.getBoolean(s.b, z);
     }
 
     @Override // io.appmetrica.analytics.impl.Co
     public final String a() {
-        return this.f765a.getString(o.b, null);
+        return this.f848a.getString(o.b, null);
     }
 
     @Override // io.appmetrica.analytics.impl.Co

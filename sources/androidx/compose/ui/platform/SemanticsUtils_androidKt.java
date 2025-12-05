@@ -16,7 +16,7 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: SemanticsUtils.android.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0000\u001a\u0017\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0002\u001a\u00020\u0003H\u0001¢\u0006\u0002\u0010\u0006\u001a\u001c\u0010\u0007\u001a\u0004\u0018\u00010\b*\b\u0012\u0004\u0012\u00020\b0\t2\u0006\u0010\n\u001a\u00020\u000bH\u0000\u001a\u0015\u0010\f\u001a\u0004\u0018\u00010\r*\u00020\u000eH\u0000¢\u0006\u0004\b\u000f\u0010\u0010\u001a\u0016\u0010\u0011\u001a\u0004\u0018\u00010\u0012*\u00020\u00132\u0006\u0010\n\u001a\u00020\u000bH\u0000¨\u0006\u0014"}, d2 = {"getTextLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "configuration", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "getScrollViewportLength", "", "(Landroidx/compose/ui/semantics/SemanticsConfiguration;)Ljava/lang/Float;", "findById", "Landroidx/compose/ui/platform/ScrollObservationScope;", "", "id", "", "toLegacyClassName", "", "Landroidx/compose/ui/semantics/Role;", "toLegacyClassName-V4PA4sw", "(I)Ljava/lang/String;", "semanticsIdToView", "Landroid/view/View;", "Landroidx/compose/ui/platform/AndroidViewsHandler;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0000\u001a\u0017\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0002\u001a\u00020\u0003H\u0001¢\u0006\u0002\u0010\u0006\u001a\u001c\u0010\u0007\u001a\u0004\u0018\u00010\b*\b\u0012\u0004\u0012\u00020\b0\t2\u0006\u0010\n\u001a\u00020\u000bH\u0000\u001a\u0015\u0010\f\u001a\u0004\u0018\u00010\r*\u00020\u000eH\u0000¢\u0006\u0004\b\u000f\u0010\u0010\u001a\u0016\u0010\u0011\u001a\u0004\u0018\u00010\u0012*\u00020\u00132\u0006\u0010\n\u001a\u00020\u000bH\u0000¨\u0006\u0014"}, d2 = {"getTextLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "configuration", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "getScrollViewportLength", "", "(Landroidx/compose/ui/semantics/SemanticsConfiguration;)Ljava/lang/Float;", "findById", "Landroidx/compose/ui/platform/ScrollObservationScope;", "", "id", "", "toLegacyClassName", "", "Landroidx/compose/ui/semantics/Role;", "toLegacyClassName-V4PA4sw", "(I)Ljava/lang/String;", "semanticsIdToView", "Landroid/view/View;", "Landroidx/compose/ui/platform/AndroidViewsHandler;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class SemanticsUtils_androidKt {
     public static final TextLayoutResult getTextLayoutResult(SemanticsConfiguration semanticsConfiguration) {
@@ -50,23 +50,23 @@ public final class SemanticsUtils_androidKt {
     }
 
     /* renamed from: toLegacyClassName-V4PA4sw  reason: not valid java name */
-    public static final String m7180toLegacyClassNameV4PA4sw(int i) {
-        if (Role.m7201equalsimpl0(i, Role.Companion.m7205getButtono7Vup1c())) {
+    public static final String m7416toLegacyClassNameV4PA4sw(int i) {
+        if (Role.m7438equalsimpl0(i, Role.Companion.m7442getButtono7Vup1c())) {
             return "android.widget.Button";
         }
-        if (Role.m7201equalsimpl0(i, Role.Companion.m7207getCheckboxo7Vup1c())) {
+        if (Role.m7438equalsimpl0(i, Role.Companion.m7444getCheckboxo7Vup1c())) {
             return "android.widget.CheckBox";
         }
-        if (Role.m7201equalsimpl0(i, Role.Companion.m7210getRadioButtono7Vup1c())) {
+        if (Role.m7438equalsimpl0(i, Role.Companion.m7447getRadioButtono7Vup1c())) {
             return "android.widget.RadioButton";
         }
-        if (Role.m7201equalsimpl0(i, Role.Companion.m7209getImageo7Vup1c())) {
+        if (Role.m7438equalsimpl0(i, Role.Companion.m7446getImageo7Vup1c())) {
             return "android.widget.ImageView";
         }
-        if (Role.m7201equalsimpl0(i, Role.Companion.m7208getDropdownListo7Vup1c())) {
+        if (Role.m7438equalsimpl0(i, Role.Companion.m7445getDropdownListo7Vup1c())) {
             return "android.widget.Spinner";
         }
-        if (Role.m7201equalsimpl0(i, Role.Companion.m7213getValuePickero7Vup1c())) {
+        if (Role.m7438equalsimpl0(i, Role.Companion.m7450getValuePickero7Vup1c())) {
             return "android.widget.NumberPicker";
         }
         return null;

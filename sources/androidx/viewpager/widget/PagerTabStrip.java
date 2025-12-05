@@ -130,7 +130,7 @@ public class PagerTabStrip extends PagerTitleStrip {
         if (this.mDrawFullUnderlineSet) {
             return;
         }
-        this.mDrawFullUnderline = (i & ViewCompat.MEASURED_STATE_MASK) == 0;
+        this.mDrawFullUnderline = (i & (-16777216)) == 0;
     }
 
     @Override // android.view.View
@@ -192,7 +192,7 @@ public class PagerTabStrip extends PagerTitleStrip {
         float f = height;
         canvas.drawRect(left, height - this.mIndicatorHeight, right, f, this.mTabPaint);
         if (this.mDrawFullUnderline) {
-            this.mTabPaint.setColor((this.mIndicatorColor & ViewCompat.MEASURED_SIZE_MASK) | ViewCompat.MEASURED_STATE_MASK);
+            this.mTabPaint.setColor((this.mIndicatorColor & ViewCompat.MEASURED_SIZE_MASK) | (-16777216));
             canvas.drawRect(getPaddingLeft(), height - this.mFullUnderlineHeight, getWidth() - getPaddingRight(), f, this.mTabPaint);
         }
     }

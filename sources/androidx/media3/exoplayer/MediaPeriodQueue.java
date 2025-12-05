@@ -14,7 +14,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MediaPeriodQueue {
     public static final long INITIAL_RENDERER_POSITION_OFFSET_US = 1000000000000L;
     private static final int MAXIMUM_BUFFER_AHEAD_PERIODS = 100;
@@ -464,14 +464,14 @@ public final class MediaPeriodQueue {
         this.analyticsCollectorHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.MediaPeriodQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaPeriodQueue.this.m8635x6b40a91a(builder, mediaPeriodId);
+                MediaPeriodQueue.this.m8899x6b40a91a(builder, mediaPeriodId);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$notifyQueueUpdate$0$androidx-media3-exoplayer-MediaPeriodQueue  reason: not valid java name */
-    public /* synthetic */ void m8635x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
+    public /* synthetic */ void m8899x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
         this.analyticsCollector.updateMediaPeriodQueueInfo(builder.build(), mediaPeriodId);
     }
 

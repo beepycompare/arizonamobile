@@ -78,14 +78,14 @@ public final class SnapshotObserverKt {
         return new Function1() { // from class: androidx.compose.runtime.snapshots.tooling.SnapshotObserverKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mergeObservers$lambda$6;
-                mergeObservers$lambda$6 = SnapshotObserverKt.mergeObservers$lambda$6(Function1.this, function12, obj);
-                return mergeObservers$lambda$6;
+                Unit mergeObservers$lambda$1;
+                mergeObservers$lambda$1 = SnapshotObserverKt.mergeObservers$lambda$1(Function1.this, function12, obj);
+                return mergeObservers$lambda$1;
             }
         };
     }
 
-    public static final Unit mergeObservers$lambda$6(Function1 function1, Function1 function12, Object obj) {
+    public static final Unit mergeObservers$lambda$1(Function1 function1, Function1 function12, Object obj) {
         function1.invoke(obj);
         function12.invoke(obj);
         return Unit.INSTANCE;
@@ -140,12 +140,12 @@ public final class SnapshotObserverKt {
         return new ObserverHandle() { // from class: androidx.compose.runtime.snapshots.tooling.SnapshotObserverKt$$ExternalSyntheticLambda1
             @Override // androidx.compose.runtime.snapshots.ObserverHandle
             public final void dispose() {
-                SnapshotObserverKt.observeSnapshots$lambda$3(SnapshotObserver.this);
+                SnapshotObserverKt.observeSnapshots$lambda$1(SnapshotObserver.this);
             }
         };
     }
 
-    public static final void observeSnapshots$lambda$3(SnapshotObserver snapshotObserver) {
+    public static final void observeSnapshots$lambda$1(SnapshotObserver snapshotObserver) {
         synchronized (SnapshotKt.getLock()) {
             PersistentList<? extends SnapshotObserver> persistentList = observers;
             PersistentList<? extends SnapshotObserver> persistentList2 = null;

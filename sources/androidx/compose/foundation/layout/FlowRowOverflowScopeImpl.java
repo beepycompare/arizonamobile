@@ -61,9 +61,9 @@ public final class FlowRowOverflowScopeImpl implements FlowRowScope, FlowRowOver
         this.shownItemCount$delegate = FlowLayoutOverflowKt.lazyInt(flowLayoutOverflowState.getShownItemLazyErrorMessage$foundation_layout(), new Function0() { // from class: androidx.compose.foundation.layout.FlowRowOverflowScopeImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int shownItemCount_delegate$lambda$1;
-                shownItemCount_delegate$lambda$1 = FlowRowOverflowScopeImpl.shownItemCount_delegate$lambda$1(FlowRowOverflowScopeImpl.this);
-                return Integer.valueOf(shownItemCount_delegate$lambda$1);
+                int shownItemCount_delegate$lambda$0;
+                shownItemCount_delegate$lambda$0 = FlowRowOverflowScopeImpl.shownItemCount_delegate$lambda$0(FlowRowOverflowScopeImpl.this);
+                return Integer.valueOf(shownItemCount_delegate$lambda$0);
             }
         });
     }
@@ -79,7 +79,7 @@ public final class FlowRowOverflowScopeImpl implements FlowRowScope, FlowRowOver
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int shownItemCount_delegate$lambda$1(FlowRowOverflowScopeImpl flowRowOverflowScopeImpl) {
+    public static final int shownItemCount_delegate$lambda$0(FlowRowOverflowScopeImpl flowRowOverflowScopeImpl) {
         return flowRowOverflowScopeImpl.state.getItemShown$foundation_layout();
     }
 

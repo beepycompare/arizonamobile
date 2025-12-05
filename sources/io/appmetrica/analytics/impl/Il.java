@@ -6,41 +6,41 @@ import java.util.HashMap;
 public final class Il {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0521qa f529a = new C0521qa();
+    public final C0520qa f612a = new C0520qa();
     public final HashMap b = new HashMap();
-    public C0279gm c = null;
+    public C0278gm c = null;
     public final Gl d = new Gl(this);
 
     public static final Il a() {
-        return Hl.f512a;
+        return Hl.f595a;
     }
 
-    public final Bm a(Context context, R4 r4, C0124am c0124am) {
-        Bm bm = (Bm) this.b.get(r4.f659a);
+    public final Bm a(Context context, R4 r4, C0123am c0123am) {
+        Bm bm = (Bm) this.b.get(r4.f742a);
         boolean z = true;
         if (bm == null) {
             synchronized (this.b) {
-                bm = (Bm) this.b.get(r4.f659a);
+                bm = (Bm) this.b.get(r4.f742a);
                 if (bm == null) {
-                    bm = new Bm(new Cm(context, r4.f659a, c0124am, this.d));
+                    bm = new Bm(new Cm(context, r4.f742a, c0123am, this.d));
                     bm.f();
-                    this.b.put(r4.f659a, bm);
+                    this.b.put(r4.f742a, bm);
                     z = false;
                 }
             }
         }
         if (z) {
-            bm.a(c0124am);
+            bm.a(c0123am);
         }
         return bm;
     }
 
     public final void a(R4 r4, Rl rl) {
         synchronized (this.b) {
-            this.f529a.a(r4.f659a, rl);
-            C0279gm c0279gm = this.c;
-            if (c0279gm != null) {
-                rl.a(c0279gm);
+            this.f612a.a(r4.f742a, rl);
+            C0278gm c0278gm = this.c;
+            if (c0278gm != null) {
+                rl.a(c0278gm);
             }
         }
     }

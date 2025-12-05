@@ -9,7 +9,7 @@ import android.view.Surface;
 import androidx.media3.decoder.CryptoInfo;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ForwardingMediaCodecAdapter implements MediaCodecAdapter {
     private final MediaCodecAdapter delegate;
 

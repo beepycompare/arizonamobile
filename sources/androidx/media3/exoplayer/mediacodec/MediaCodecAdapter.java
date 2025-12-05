@@ -12,10 +12,10 @@ import androidx.media3.common.Format;
 import androidx.media3.decoder.CryptoInfo;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface MediaCodecAdapter {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface OnBufferAvailableListener {
         default void onInputBufferAvailable() {
         }
@@ -24,7 +24,7 @@ public interface MediaCodecAdapter {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface OnFrameRenderedListener {
         void onFrameRendered(MediaCodecAdapter mediaCodecAdapter, long j, long j2);
     }
@@ -69,7 +69,7 @@ public interface MediaCodecAdapter {
 
     void setVideoScalingMode(int i);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Configuration {
         public final MediaCodecInfo codecInfo;
         public final MediaCrypto crypto;
@@ -96,7 +96,7 @@ public interface MediaCodecAdapter {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Factory {
         @Deprecated
         public static final Factory DEFAULT = new DefaultMediaCodecAdapterFactory();

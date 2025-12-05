@@ -39,7 +39,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class DefaultAnalyticsCollector implements AnalyticsCollector {
     private final Clock clock;
     private final SparseArray<AnalyticsListener.EventTime> eventTimes;
@@ -110,14 +110,14 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         this.listeners = this.listeners.copy(looper, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda16
             @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
             public final void invoke(Object obj, FlagSet flagSet) {
-                DefaultAnalyticsCollector.this.m8666xfeaa50a6(player, (AnalyticsListener) obj, flagSet);
+                DefaultAnalyticsCollector.this.m8930xfeaa50a6(player, (AnalyticsListener) obj, flagSet);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setPlayer$1$androidx-media3-exoplayer-analytics-DefaultAnalyticsCollector  reason: not valid java name */
-    public /* synthetic */ void m8666xfeaa50a6(Player player, AnalyticsListener analyticsListener, FlagSet flagSet) {
+    public /* synthetic */ void m8930xfeaa50a6(Player player, AnalyticsListener analyticsListener, FlagSet flagSet) {
         analyticsListener.onEvents(player, new AnalyticsListener.Events(flagSet, this.eventTimes));
     }
 
@@ -883,7 +883,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
     public final void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, AnalyticsListener.EVENT_DRM_KEYS_LOADED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda62
+        sendEvent(generateMediaPeriodEventTime, 1023, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda62
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDrmKeysLoaded(AnalyticsListener.EventTime.this);
@@ -1026,7 +1026,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class MediaPeriodQueueTracker {
         private MediaSource.MediaPeriodId currentPlayerMediaPeriod;
         private ImmutableList<MediaSource.MediaPeriodId> mediaPeriodQueue = ImmutableList.of();

@@ -13,13 +13,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class d0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ g0 f1360a;
+    public final /* synthetic */ g0 f1443a;
 
     public d0(g0 g0Var) {
-        this.f1360a = g0Var;
+        this.f1443a = g0Var;
     }
 
-    public static final Boolean a(g0 g0Var, d0 d0Var, C0772n c0772n, ActivityManager activityManager) {
+    public static final Boolean a(g0 g0Var, d0 d0Var, C0771n c0771n, ActivityManager activityManager) {
         Object obj;
         List<ActivityManager.RunningServiceInfo> runningServices = activityManager.getRunningServices(200);
         if (runningServices == null) {
@@ -39,23 +39,23 @@ public final class d0 implements Runnable {
             }
         }
         if (((ActivityManager.RunningServiceInfo) obj) != null) {
-            ((C0781x) g0Var.b).a("ServiceScreenshotCaptor");
+            ((C0780x) g0Var.b).a("ServiceScreenshotCaptor");
         }
-        return Boolean.valueOf(g0Var.c.postDelayed(d0Var, TimeUnit.SECONDS.toMillis(c0772n.b)));
+        return Boolean.valueOf(g0Var.c.postDelayed(d0Var, TimeUnit.SECONDS.toMillis(c0771n.b)));
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        final C0772n c0772n = this.f1360a.e;
-        if (this.f1360a.d || c0772n == null || !c0772n.f1374a) {
+        final C0771n c0771n = this.f1443a.e;
+        if (this.f1443a.d || c0771n == null || !c0771n.f1457a) {
             return;
         }
-        Context context = this.f1360a.f1364a.getContext();
-        final g0 g0Var = this.f1360a;
+        Context context = this.f1443a.f1447a.getContext();
+        final g0 g0Var = this.f1443a;
         SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "running service screenshot captor", "ActivityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.screenshot.impl.d0$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
             public final Object apply(Object obj) {
-                return d0.a(g0.this, this, c0772n, (ActivityManager) obj);
+                return d0.a(g0.this, this, c0771n, (ActivityManager) obj);
             }
         });
     }

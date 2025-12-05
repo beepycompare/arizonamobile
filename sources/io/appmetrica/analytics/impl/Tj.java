@@ -3,15 +3,15 @@ package io.appmetrica.analytics.impl;
 public final class Tj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f696a;
+    public final String f779a;
     public final String b;
 
     public Tj(String str, String str2) {
-        this.f696a = str;
+        this.f779a = str;
         this.b = str2;
     }
 
     public final String toString() {
-        return "SelfReportingLazyEvent(eventName='" + this.f696a + "', eventValue='" + this.b + "')";
+        return "SelfReportingLazyEvent(eventName='" + this.f779a + "', eventValue='" + this.b + "')";
     }
 }

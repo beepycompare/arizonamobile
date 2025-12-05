@@ -14,6 +14,17 @@ final class AspectRatioElement extends ModifierNodeElement<AspectRatioNode> {
     private final Function1<InspectorInfo, Unit> inspectorInfo;
     private final boolean matchHeightConstraintsFirst;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public AspectRatioElement(float f, boolean z, Function1<? super InspectorInfo, Unit> function1) {
+        this.aspectRatio = f;
+        this.matchHeightConstraintsFirst = z;
+        this.inspectorInfo = function1;
+        if (f > 0.0f) {
+            return;
+        }
+        InlineClassHelperKt.throwIllegalArgumentException("aspectRatio " + f + " must be > 0");
+    }
+
     public final float getAspectRatio() {
         return this.aspectRatio;
     }
@@ -24,17 +35,6 @@ final class AspectRatioElement extends ModifierNodeElement<AspectRatioNode> {
 
     public final Function1<InspectorInfo, Unit> getInspectorInfo() {
         return this.inspectorInfo;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public AspectRatioElement(float f, boolean z, Function1<? super InspectorInfo, Unit> function1) {
-        this.aspectRatio = f;
-        this.matchHeightConstraintsFirst = z;
-        this.inspectorInfo = function1;
-        if (f > 0.0f) {
-            return;
-        }
-        InlineClassHelperKt.throwIllegalArgumentException("aspectRatio " + f + " must be > 0");
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

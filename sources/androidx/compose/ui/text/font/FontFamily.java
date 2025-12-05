@@ -10,7 +10,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: FontFamily.kt */
-@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b7\u0018\u0000 \u000b2\u00020\u0001:\u0002\n\u000bB\u0011\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0019\u0010\u0002\u001a\u00020\u00038G¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0007\u001a\u0004\b\b\u0010\t\u0082\u0001\u0003\f\r\u000e¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/text/font/FontFamily;", "", "canLoadSynchronously", "", "<init>", "(Z)V", "getCanLoadSynchronously$annotations", "()V", "getCanLoadSynchronously", "()Z", "Resolver", "Companion", "Landroidx/compose/ui/text/font/FileBasedFontFamily;", "Landroidx/compose/ui/text/font/LoadedFontFamily;", "Landroidx/compose/ui/text/font/SystemFontFamily;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b7\u0018\u0000 \u000b2\u00020\u0001:\u0002\n\u000bB\u0011\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0019\u0010\u0002\u001a\u00020\u00038\u0007¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0007\u001a\u0004\b\b\u0010\t\u0082\u0001\u0003\f\r\u000e¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/text/font/FontFamily;", "", "canLoadSynchronously", "", "<init>", "(Z)V", "getCanLoadSynchronously$annotations", "()V", "getCanLoadSynchronously", "()Z", "Resolver", "Companion", "Landroidx/compose/ui/text/font/FileBasedFontFamily;", "Landroidx/compose/ui/text/font/LoadedFontFamily;", "Landroidx/compose/ui/text/font/SystemFontFamily;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public abstract class FontFamily {
     public static final int $stable = 0;
@@ -40,10 +40,10 @@ public abstract class FontFamily {
         Object preload(FontFamily fontFamily, Continuation<? super Unit> continuation);
 
         /* renamed from: resolve-DPcqOEQ  reason: not valid java name */
-        State<Object> mo7543resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2);
+        State<Object> mo7787resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2);
 
         /* renamed from: resolve-DPcqOEQ$default  reason: not valid java name */
-        static /* synthetic */ State m7542resolveDPcqOEQ$default(Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, int i3, Object obj) {
+        static /* synthetic */ State m7786resolveDPcqOEQ$default(Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, int i3, Object obj) {
             if (obj == null) {
                 if ((i3 & 1) != 0) {
                     fontFamily = null;
@@ -52,12 +52,12 @@ public abstract class FontFamily {
                     fontWeight = FontWeight.Companion.getNormal();
                 }
                 if ((i3 & 4) != 0) {
-                    i = FontStyle.Companion.m7578getNormal_LCdwA();
+                    i = FontStyle.Companion.m7822getNormal_LCdwA();
                 }
                 if ((i3 & 8) != 0) {
-                    i2 = FontSynthesis.Companion.m7588getAllGVVA2EU();
+                    i2 = FontSynthesis.Companion.m7832getAllGVVA2EU();
                 }
-                return resolver.mo7543resolveDPcqOEQ(fontFamily, fontWeight, i, i2);
+                return resolver.mo7787resolveDPcqOEQ(fontFamily, fontWeight, i, i2);
             }
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: resolve-DPcqOEQ");
         }

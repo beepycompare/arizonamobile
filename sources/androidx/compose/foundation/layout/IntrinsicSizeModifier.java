@@ -18,19 +18,19 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 abstract class IntrinsicSizeModifier extends Modifier.Node implements LayoutModifierNode {
     /* renamed from: calculateContentConstraints-l58MMJ0 */
-    public abstract long mo790calculateContentConstraintsl58MMJ0(MeasureScope measureScope, Measurable measurable, long j);
+    public abstract long mo876calculateContentConstraintsl58MMJ0(MeasureScope measureScope, Measurable measurable, long j);
 
     public abstract boolean getEnforceIncoming();
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        long mo790calculateContentConstraintsl58MMJ0 = mo790calculateContentConstraintsl58MMJ0(measureScope, measurable, j);
+    public final MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        long mo876calculateContentConstraintsl58MMJ0 = mo876calculateContentConstraintsl58MMJ0(measureScope, measurable, j);
         if (getEnforceIncoming()) {
-            mo790calculateContentConstraintsl58MMJ0 = ConstraintsKt.m7964constrainN9IONVI(j, mo790calculateContentConstraintsl58MMJ0);
+            mo876calculateContentConstraintsl58MMJ0 = ConstraintsKt.m8226constrainN9IONVI(j, mo876calculateContentConstraintsl58MMJ0);
         }
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(mo790calculateContentConstraintsl58MMJ0);
-        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.IntrinsicSizeModifier$$ExternalSyntheticLambda0
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(mo876calculateContentConstraintsl58MMJ0);
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.IntrinsicSizeModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
@@ -42,7 +42,7 @@ abstract class IntrinsicSizeModifier extends Modifier.Node implements LayoutModi
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, Placeable.PlacementScope placementScope) {
-        Placeable.PlacementScope.m6764placeRelative70tqf50$default(placementScope, placeable, IntOffset.Companion.m8135getZeronOccac(), 0.0f, 2, null);
+        Placeable.PlacementScope.m6942placeRelative70tqf50$default(placementScope, placeable, IntOffset.Companion.m8397getZeronOccac(), 0.0f, 2, null);
         return Unit.INSTANCE;
     }
 

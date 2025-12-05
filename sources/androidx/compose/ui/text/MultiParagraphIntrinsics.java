@@ -35,17 +35,17 @@ public final class MultiParagraphIntrinsics implements ParagraphIntrinsics {
         this.minIntrinsicWidth$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.ui.text.MultiParagraphIntrinsics$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float minIntrinsicWidth_delegate$lambda$1;
-                minIntrinsicWidth_delegate$lambda$1 = MultiParagraphIntrinsics.minIntrinsicWidth_delegate$lambda$1(MultiParagraphIntrinsics.this);
-                return Float.valueOf(minIntrinsicWidth_delegate$lambda$1);
+                float minIntrinsicWidth_delegate$lambda$0;
+                minIntrinsicWidth_delegate$lambda$0 = MultiParagraphIntrinsics.minIntrinsicWidth_delegate$lambda$0(MultiParagraphIntrinsics.this);
+                return Float.valueOf(minIntrinsicWidth_delegate$lambda$0);
             }
         });
         this.maxIntrinsicWidth$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.ui.text.MultiParagraphIntrinsics$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float maxIntrinsicWidth_delegate$lambda$3;
-                maxIntrinsicWidth_delegate$lambda$3 = MultiParagraphIntrinsics.maxIntrinsicWidth_delegate$lambda$3(MultiParagraphIntrinsics.this);
-                return Float.valueOf(maxIntrinsicWidth_delegate$lambda$3);
+                float maxIntrinsicWidth_delegate$lambda$0;
+                maxIntrinsicWidth_delegate$lambda$0 = MultiParagraphIntrinsics.maxIntrinsicWidth_delegate$lambda$0(MultiParagraphIntrinsics.this);
+                return Float.valueOf(maxIntrinsicWidth_delegate$lambda$0);
             }
         });
         ParagraphStyle paragraphStyle = textStyle.toParagraphStyle();
@@ -91,7 +91,7 @@ public final class MultiParagraphIntrinsics implements ParagraphIntrinsics {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final float minIntrinsicWidth_delegate$lambda$1(MultiParagraphIntrinsics multiParagraphIntrinsics) {
+    public static final float minIntrinsicWidth_delegate$lambda$0(MultiParagraphIntrinsics multiParagraphIntrinsics) {
         ParagraphIntrinsicInfo paragraphIntrinsicInfo;
         ParagraphIntrinsics intrinsics;
         List<ParagraphIntrinsicInfo> list = multiParagraphIntrinsics.infoList;
@@ -131,7 +131,7 @@ public final class MultiParagraphIntrinsics implements ParagraphIntrinsics {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final float maxIntrinsicWidth_delegate$lambda$3(MultiParagraphIntrinsics multiParagraphIntrinsics) {
+    public static final float maxIntrinsicWidth_delegate$lambda$0(MultiParagraphIntrinsics multiParagraphIntrinsics) {
         ParagraphIntrinsicInfo paragraphIntrinsicInfo;
         ParagraphIntrinsics intrinsics;
         List<ParagraphIntrinsicInfo> list = multiParagraphIntrinsics.infoList;
@@ -183,6 +183,6 @@ public final class MultiParagraphIntrinsics implements ParagraphIntrinsics {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final ParagraphStyle resolveTextDirection(ParagraphStyle paragraphStyle, ParagraphStyle paragraphStyle2) {
-        return !TextDirection.m7890equalsimpl0(paragraphStyle.m7346getTextDirections_7Xco(), TextDirection.Companion.m7899getUnspecifieds_7Xco()) ? paragraphStyle : ParagraphStyle.m7328copyykzQM6k$default(paragraphStyle, 0, paragraphStyle2.m7346getTextDirections_7Xco(), 0L, null, null, null, 0, 0, null, 509, null);
+        return !TextDirection.m8149equalsimpl0(paragraphStyle.m7582getTextDirections_7Xco(), TextDirection.Companion.m8158getUnspecifieds_7Xco()) ? paragraphStyle : ParagraphStyle.m7564copyykzQM6k$default(paragraphStyle, 0, paragraphStyle2.m7582getTextDirections_7Xco(), 0L, null, null, null, 0, 0, null, 509, null);
     }
 }

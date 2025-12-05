@@ -79,6 +79,6 @@ public final class DrawablePainterKt {
         if (drawable.getIntrinsicWidth() >= 0 && drawable.getIntrinsicHeight() >= 0) {
             return SizeKt.Size(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         }
-        return Size.Companion.m5113getUnspecifiedNHjbRc();
+        return Size.Companion.m5256getUnspecifiedNHjbRc();
     }
 }

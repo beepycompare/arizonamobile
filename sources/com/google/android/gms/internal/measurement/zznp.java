@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.measurement;
 
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
 import java.io.IOException;
@@ -9,7 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.RandomAccess;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
@@ -1199,8 +1199,8 @@ public final class zznp<T> implements zznx<T> {
                 case 58:
                 case 59:
                 case 60:
-                case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
-                case 62:
+                case 61:
+                case RectListKt.BitOffsetForGesturable /* 62 */:
                 case 63:
                 case 64:
                 case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT /* 65 */:
@@ -1492,7 +1492,7 @@ public final class zznp<T> implements zznx<T> {
                             i4 = i + floatToIntBits;
                             break;
                         }
-                    case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                    case 61:
                         if (!zzL(obj, i6, i3)) {
                             break;
                         } else {
@@ -1501,7 +1501,7 @@ public final class zznp<T> implements zznx<T> {
                             i4 = i + floatToIntBits;
                             break;
                         }
-                    case 62:
+                    case RectListKt.BitOffsetForGesturable /* 62 */:
                         if (!zzL(obj, i6, i3)) {
                             break;
                         } else {
@@ -1795,8 +1795,8 @@ public final class zznp<T> implements zznx<T> {
                     case 60:
                         zzo(obj, obj2, i);
                         break;
-                    case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
-                    case 62:
+                    case 61:
+                    case RectListKt.BitOffsetForGesturable /* 62 */:
                     case 63:
                     case 64:
                     case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT /* 65 */:
@@ -2534,7 +2534,7 @@ public final class zznp<T> implements zznx<T> {
                         } else {
                             break;
                         }
-                    case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                    case 61:
                         if (zznpVar.zzL(obj2, i8, i4)) {
                             zzz15 = zzlm.zzz(i8 << 3);
                             zzc2 = ((zzlh) unsafe.getObject(obj2, j)).zzc();
@@ -2545,7 +2545,7 @@ public final class zznp<T> implements zznx<T> {
                         } else {
                             break;
                         }
-                    case 62:
+                    case RectListKt.BitOffsetForGesturable /* 62 */:
                         if (zznpVar.zzL(obj2, i8, i4)) {
                             int zzE = zzE(obj2, j);
                             zzp = zzlm.zzz(i8 << 3);
@@ -3077,13 +3077,13 @@ public final class zznp<T> implements zznx<T> {
                                     break;
                                 }
                                 break;
-                            case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                            case 61:
                                 if (zznpVar.zzL(obj, i7, i)) {
                                     zzovVar.zzn(i7, (zzlh) unsafe.getObject(obj, j));
                                     break;
                                 }
                                 break;
-                            case 62:
+                            case RectListKt.BitOffsetForGesturable /* 62 */:
                                 if (zznpVar.zzL(obj, i7, i)) {
                                     zzovVar.zzo(i7, zzE(obj, j));
                                     break;
@@ -4714,7 +4714,7 @@ public final class zznp<T> implements zznx<T> {
                                                         i36 = i19;
                                                         break;
                                                     case ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE /* 55 */:
-                                                    case 62:
+                                                    case RectListKt.BitOffsetForGesturable /* 62 */:
                                                         bArr2 = bArr;
                                                         i17 = i15;
                                                         i18 = i35;
@@ -4838,7 +4838,7 @@ public final class zznp<T> implements zznx<T> {
                                                             i36 = zzj2;
                                                             break;
                                                         }
-                                                    case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                                                    case 61:
                                                         bArr7 = bArr;
                                                         zzkwVar7 = zzkwVar;
                                                         i9 = i14;

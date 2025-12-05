@@ -27,17 +27,17 @@ public interface TextInclusionStrategy {
         private static final TextInclusionStrategy ContainsAll = new TextInclusionStrategy() { // from class: androidx.compose.ui.text.TextInclusionStrategy$Companion$$ExternalSyntheticLambda1
             @Override // androidx.compose.ui.text.TextInclusionStrategy
             public final boolean isIncluded(Rect rect, Rect rect2) {
-                boolean ContainsAll$lambda$1;
-                ContainsAll$lambda$1 = TextInclusionStrategy.Companion.ContainsAll$lambda$1(rect, rect2);
-                return ContainsAll$lambda$1;
+                boolean ContainsAll$lambda$0;
+                ContainsAll$lambda$0 = TextInclusionStrategy.Companion.ContainsAll$lambda$0(rect, rect2);
+                return ContainsAll$lambda$0;
             }
         };
         private static final TextInclusionStrategy ContainsCenter = new TextInclusionStrategy() { // from class: androidx.compose.ui.text.TextInclusionStrategy$Companion$$ExternalSyntheticLambda2
             @Override // androidx.compose.ui.text.TextInclusionStrategy
             public final boolean isIncluded(Rect rect, Rect rect2) {
-                boolean ContainsCenter$lambda$2;
-                ContainsCenter$lambda$2 = TextInclusionStrategy.Companion.ContainsCenter$lambda$2(rect, rect2);
-                return ContainsCenter$lambda$2;
+                boolean ContainsCenter$lambda$0;
+                ContainsCenter$lambda$0 = TextInclusionStrategy.Companion.ContainsCenter$lambda$0(rect, rect2);
+                return ContainsCenter$lambda$0;
             }
         };
 
@@ -53,7 +53,7 @@ public interface TextInclusionStrategy {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final boolean ContainsAll$lambda$1(Rect rect, Rect rect2) {
+        public static final boolean ContainsAll$lambda$0(Rect rect, Rect rect2) {
             return !rect2.isEmpty() && rect.getLeft() >= rect2.getLeft() && rect.getRight() <= rect2.getRight() && rect.getTop() >= rect2.getTop() && rect.getBottom() <= rect2.getBottom();
         }
 
@@ -62,8 +62,8 @@ public interface TextInclusionStrategy {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final boolean ContainsCenter$lambda$2(Rect rect, Rect rect2) {
-            return rect2.m5062containsk4lQ0M(rect.m5066getCenterF1C5BW0());
+        public static final boolean ContainsCenter$lambda$0(Rect rect, Rect rect2) {
+            return rect2.m5205containsk4lQ0M(rect.m5209getCenterF1C5BW0());
         }
     }
 }

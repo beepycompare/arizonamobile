@@ -7,25 +7,25 @@ import java.util.concurrent.TimeUnit;
 public final class Zf implements Xf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0247fg f780a;
+    public final /* synthetic */ C0246fg f863a;
 
-    public Zf(C0247fg c0247fg) {
-        this.f780a = c0247fg;
+    public Zf(C0246fg c0246fg) {
+        this.f863a = c0246fg;
     }
 
     @Override // io.appmetrica.analytics.impl.Xf
     public final void a() {
-        C0247fg c0247fg = this.f780a;
-        Aa aa = c0247fg.b;
-        Yf yf = new Yf(c0247fg);
+        C0246fg c0246fg = this.f863a;
+        Aa aa = c0246fg.b;
+        Yf yf = new Yf(c0246fg);
         aa.getClass();
         try {
-            FutureTask futureTask = new FutureTask(new CallableC0745za(aa));
-            C0471oa.I.d.f996a.getClass();
-            new InterruptionSafeThread(futureTask, "IAA-SHMSR-" + Ad.f395a.incrementAndGet()).start();
-            C0477og c0477og = (C0477og) futureTask.get(5L, TimeUnit.SECONDS);
+            FutureTask futureTask = new FutureTask(new CallableC0744za(aa));
+            C0470oa.I.d.f1079a.getClass();
+            new InterruptionSafeThread(futureTask, "IAA-SHMSR-" + Ad.f478a.incrementAndGet()).start();
+            C0476og c0476og = (C0476og) futureTask.get(5L, TimeUnit.SECONDS);
             mo.a(aa.b);
-            C0247fg.a(c0247fg, c0477og, C0247fg.a(c0247fg));
+            C0246fg.a(c0246fg, c0476og, C0246fg.a(c0246fg));
         } catch (Throwable th) {
             try {
                 yf.a(th);

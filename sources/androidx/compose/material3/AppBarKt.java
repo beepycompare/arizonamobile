@@ -113,31 +113,31 @@ public final class AppBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BottomAppBarLayout_t5fmz9U$lambda$24(float f, Arrangement.Horizontal horizontal, Modifier modifier, long j, long j2, float f2, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m1923BottomAppBarLayoutt5fmz9U(f, horizontal, modifier, j, j2, f2, paddingValues, windowInsets, bottomAppBarScrollBehavior, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2009BottomAppBarLayoutt5fmz9U(f, horizontal, modifier, j, j2, f2, paddingValues, windowInsets, bottomAppBarScrollBehavior, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BottomAppBar_1oL4kX8$lambda$14(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m1919BottomAppBar1oL4kX8(modifier, j, j2, f, paddingValues, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2005BottomAppBar1oL4kX8(modifier, j, j2, f, paddingValues, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BottomAppBar_Snr_uVM$lambda$12(Function3 function3, Modifier modifier, Function2 function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, int i, int i2, Composer composer, int i3) {
-        m1920BottomAppBarSnr_uVM(function3, modifier, function2, j, j2, f, paddingValues, windowInsets, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2006BottomAppBarSnr_uVM(function3, modifier, function2, j, j2, f, paddingValues, windowInsets, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BottomAppBar_e_3WI5M$lambda$15(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m1921BottomAppBare3WI5M(modifier, j, j2, f, paddingValues, windowInsets, bottomAppBarScrollBehavior, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2007BottomAppBare3WI5M(modifier, j, j2, f, paddingValues, windowInsets, bottomAppBarScrollBehavior, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BottomAppBar_qhFBPw4$lambda$13(Function3 function3, Modifier modifier, Function2 function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, int i, int i2, Composer composer, int i3) {
-        m1922BottomAppBarqhFBPw4(function3, modifier, function2, j, j2, f, paddingValues, windowInsets, bottomAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2008BottomAppBarqhFBPw4(function3, modifier, function2, j, j2, f, paddingValues, windowInsets, bottomAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -149,19 +149,19 @@ public final class AppBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit CenterAlignedTopAppBar_GHTll3U$lambda$3(Function2 function2, Modifier modifier, Function2 function22, Function3 function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, Composer composer, int i3) {
-        m1924CenterAlignedTopAppBarGHTll3U(function2, modifier, function22, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2010CenterAlignedTopAppBarGHTll3U(function2, modifier, function22, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit FlexibleBottomAppBar_wBhsO_E$lambda$16(Modifier modifier, long j, long j2, PaddingValues paddingValues, Arrangement.Horizontal horizontal, float f, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m1925FlexibleBottomAppBarwBhsO_E(modifier, j, j2, paddingValues, horizontal, f, windowInsets, bottomAppBarScrollBehavior, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2011FlexibleBottomAppBarwBhsO_E(modifier, j, j2, paddingValues, horizontal, f, windowInsets, bottomAppBarScrollBehavior, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit LargeFlexibleTopAppBar_eXZ4JBQ$lambda$10(Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function3 function3, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, int i3, Composer composer, int i4) {
-        m1926LargeFlexibleTopAppBareXZ4JBQ(function2, modifier, function22, function23, function3, horizontal, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2012LargeFlexibleTopAppBareXZ4JBQ(function2, modifier, function22, function23, function3, horizontal, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -173,13 +173,13 @@ public final class AppBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit LargeTopAppBar_oKE7A98$lambda$9(Function2 function2, Modifier modifier, Function2 function22, Function3 function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, Composer composer, int i3) {
-        m1927LargeTopAppBaroKE7A98(function2, modifier, function22, function3, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2013LargeTopAppBaroKE7A98(function2, modifier, function22, function3, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit MediumFlexibleTopAppBar_eXZ4JBQ$lambda$7(Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function3 function3, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, int i3, Composer composer, int i4) {
-        m1928MediumFlexibleTopAppBareXZ4JBQ(function2, modifier, function22, function23, function3, horizontal, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2014MediumFlexibleTopAppBareXZ4JBQ(function2, modifier, function22, function23, function3, horizontal, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -191,13 +191,13 @@ public final class AppBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit MediumTopAppBar_oKE7A98$lambda$6(Function2 function2, Modifier modifier, Function2 function22, Function3 function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, Composer composer, int i3) {
-        m1929MediumTopAppBaroKE7A98(function2, modifier, function22, function3, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2015MediumTopAppBaroKE7A98(function2, modifier, function22, function3, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SingleRowTopAppBar_wn8IZOc$lambda$32(Modifier modifier, Function2 function2, TextStyle textStyle, Function2 function22, TextStyle textStyle2, Alignment.Horizontal horizontal, Function2 function23, Function3 function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, int i3, Composer composer, int i4) {
-        m1930SingleRowTopAppBarwn8IZOc(modifier, function2, textStyle, function22, textStyle2, horizontal, function23, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2016SingleRowTopAppBarwn8IZOc(modifier, function2, textStyle, function22, textStyle2, horizontal, function23, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -209,31 +209,31 @@ public final class AppBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TopAppBarLayout_lyUyIHI$lambda$53(Modifier modifier, FloatProducer floatProducer, long j, long j2, long j3, long j4, Function2 function2, TextStyle textStyle, Function2 function22, TextStyle textStyle2, Function0 function0, Arrangement.Vertical vertical, Alignment.Horizontal horizontal, int i, boolean z, Function2 function23, Function2 function24, float f, int i2, int i3, Composer composer, int i4) {
-        m1933TopAppBarLayoutlyUyIHI(modifier, floatProducer, j, j2, j3, j4, function2, textStyle, function22, textStyle2, function0, vertical, horizontal, i, z, function23, function24, f, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
+        m2019TopAppBarLayoutlyUyIHI(modifier, floatProducer, j, j2, j3, j4, function2, textStyle, function22, textStyle2, function0, vertical, horizontal, i, z, function23, function24, f, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TopAppBar_GHTll3U$lambda$1(Function2 function2, Modifier modifier, Function2 function22, Function3 function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, Composer composer, int i3) {
-        m1931TopAppBarGHTll3U(function2, modifier, function22, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2017TopAppBarGHTll3U(function2, modifier, function22, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TopAppBar_cJHQLPU$lambda$4(Function2 function2, Function2 function22, Modifier modifier, Function2 function23, Function3 function3, Alignment.Horizontal horizontal, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, Composer composer, int i3) {
-        m1932TopAppBarcJHQLPU(function2, function22, modifier, function23, function3, horizontal, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2018TopAppBarcJHQLPU(function2, function22, modifier, function23, function3, horizontal, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TwoRowsTopAppBar_eXZ4JBQ$lambda$11(Function3 function3, Modifier modifier, Function3 function32, Function2 function2, Function3 function33, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, int i3, Composer composer, int i4) {
-        m1934TwoRowsTopAppBareXZ4JBQ(function3, modifier, function32, function2, function33, horizontal, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2020TwoRowsTopAppBareXZ4JBQ(function3, modifier, function32, function2, function33, horizontal, f, f2, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TwoRowsTopAppBar_pJA5dT0$lambda$35(Modifier modifier, Function2 function2, TextStyle textStyle, float f, Function2 function22, TextStyle textStyle2, Function2 function23, TextStyle textStyle3, Function2 function24, TextStyle textStyle4, Alignment.Horizontal horizontal, Function2 function25, Function3 function3, float f2, float f3, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, int i, int i2, int i3, Composer composer, int i4) {
-        m1935TwoRowsTopAppBarpJA5dT0(modifier, function2, textStyle, f, function22, textStyle2, function23, textStyle3, function24, textStyle4, horizontal, function25, function3, f2, f3, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2021TwoRowsTopAppBarpJA5dT0(modifier, function2, textStyle, f, function22, textStyle2, function23, textStyle3, function24, textStyle4, horizontal, function25, function3, f2, f3, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -380,7 +380,7 @@ public final class AppBarKt {
                             } else {
                                 Modifier.Companion companion = i10 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2163getLambda$944449303$material3();
+                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2249getLambda$944449303$material3();
                                 }
                                 if (i5 != 0) {
                                     function32 = ComposableSingletons$AppBarKt.INSTANCE.getLambda$917296843$material3();
@@ -416,7 +416,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 3;
                             composer2 = startRestartGroup;
-                            m1931TopAppBarGHTll3U(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
+                            m2017TopAppBarGHTll3U(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -537,7 +537,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1931TopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m2017TopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Object obj;
@@ -668,10 +668,10 @@ public final class AppBarKt {
                                         function24 = ComposableSingletons$AppBarKt.INSTANCE.getLambda$657782987$material3();
                                     }
                                     if (i5 != 0) {
-                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2147getLambda$1270442071$material3();
+                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2233getLambda$1270442071$material3();
                                     }
                                     if (i6 != 0) {
-                                        f2 = TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM();
+                                        f2 = TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM();
                                     }
                                     if ((i2 & 32) != 0) {
                                         i10 = i9 & (-458753);
@@ -702,7 +702,7 @@ public final class AppBarKt {
                                 }
                                 int i15 = i10 << 12;
                                 composer2 = startRestartGroup;
-                                m1930SingleRowTopAppBarwn8IZOc(modifier3, function23, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), Alignment.Companion.getStart(), function26, function34, (Dp.m8001equalsimpl0(f4, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f4, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM() : f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, ((i10 >> 3) & 14) | 224256 | ((i10 << 3) & 112) | (3670016 & i15) | (29360128 & i15) | (i15 & 1879048192), (i10 >> 18) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                                m2016SingleRowTopAppBarwn8IZOc(modifier3, function23, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), Alignment.Companion.getStart(), function26, function34, (Dp.m8263equalsimpl0(f4, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f4, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM() : f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, ((i10 >> 3) & 14) | 224256 | ((i10 << 3) & 112) | (3670016 & i15) | (29360128 & i15) | (i15 & 1879048192), (i10 >> 18) & WebSocketProtocol.PAYLOAD_SHORT, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -975,7 +975,7 @@ public final class AppBarKt {
                                     function24 = ComposableSingletons$AppBarKt.INSTANCE.getLambda$1866429650$material3();
                                 }
                                 if (i5 != 0) {
-                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2157getLambda$541682128$material3();
+                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2243getLambda$541682128$material3();
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -1008,7 +1008,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 3;
                             composer2 = startRestartGroup;
-                            m1924CenterAlignedTopAppBarGHTll3U(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
+                            m2010CenterAlignedTopAppBarGHTll3U(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1129,7 +1129,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1924CenterAlignedTopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m2010CenterAlignedTopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Object obj;
@@ -1260,10 +1260,10 @@ public final class AppBarKt {
                                         function24 = ComposableSingletons$AppBarKt.INSTANCE.getLambda$575301698$material3();
                                     }
                                     if (i5 != 0) {
-                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2158getLambda$643931612$material3();
+                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2244getLambda$643931612$material3();
                                     }
                                     if (i6 != 0) {
-                                        f2 = TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM();
+                                        f2 = TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM();
                                     }
                                     if ((i2 & 32) != 0) {
                                         i10 = i9 & (-458753);
@@ -1294,7 +1294,7 @@ public final class AppBarKt {
                                 }
                                 int i15 = i10 << 12;
                                 composer2 = startRestartGroup;
-                                m1930SingleRowTopAppBarwn8IZOc(modifier3, function23, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), Alignment.Companion.getCenterHorizontally(), function26, function34, (Dp.m8001equalsimpl0(f4, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f4, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM() : f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, ((i10 >> 3) & 14) | 224256 | ((i10 << 3) & 112) | (3670016 & i15) | (29360128 & i15) | (i15 & 1879048192), (i10 >> 18) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                                m2016SingleRowTopAppBarwn8IZOc(modifier3, function23, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), Alignment.Companion.getCenterHorizontally(), function26, function34, (Dp.m8263equalsimpl0(f4, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f4, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM() : f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, ((i10 >> 3) & 14) | 224256 | ((i10 << 3) & 112) | (3670016 & i15) | (29360128 & i15) | (i15 & 1879048192), (i10 >> 18) & WebSocketProtocol.PAYLOAD_SHORT, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1453,7 +1453,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1932TopAppBarcJHQLPU(final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function23, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Alignment.Horizontal horizontal, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m2018TopAppBarcJHQLPU(final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function23, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Alignment.Horizontal horizontal, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function24;
         int i3;
         Object obj;
@@ -1479,7 +1479,7 @@ public final class AppBarKt {
         final float f2;
         final TopAppBarColors topAppBarColors2;
         ScopeUpdateScope endRestartGroup;
-        float m3406getTopAppBarExpandedHeightD9Ej5fM;
+        float m3492getTopAppBarExpandedHeightD9Ej5fM;
         WindowInsets windowInsets3;
         int i12;
         TopAppBarColors topAppBarColors3;
@@ -1578,21 +1578,21 @@ public final class AppBarKt {
                                         function27 = function25;
                                         function34 = function32;
                                         horizontal3 = obj2;
-                                        m3406getTopAppBarExpandedHeightD9Ej5fM = f;
+                                        m3492getTopAppBarExpandedHeightD9Ej5fM = f;
                                     } else {
                                         if (i4 != 0) {
                                             companion = Modifier.Companion;
                                         }
                                         if (i5 != 0) {
-                                            function25 = ComposableSingletons$AppBarKt.INSTANCE.m2145getLambda$1168245838$material3();
+                                            function25 = ComposableSingletons$AppBarKt.INSTANCE.m2231getLambda$1168245838$material3();
                                         }
                                         if (i6 != 0) {
-                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2149getLambda$1401945836$material3();
+                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2235getLambda$1401945836$material3();
                                         }
                                         if (i7 != 0) {
                                             obj2 = Alignment.Companion.getStart();
                                         }
-                                        m3406getTopAppBarExpandedHeightD9Ej5fM = i8 != 0 ? TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM() : f;
+                                        m3492getTopAppBarExpandedHeightD9Ej5fM = i8 != 0 ? TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM() : f;
                                         if ((i2 & 128) != 0) {
                                             windowInsets3 = TopAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
                                             i12 = i11 & (-29360129);
@@ -1629,11 +1629,11 @@ public final class AppBarKt {
                                     int i16 = i12 << 6;
                                     int i17 = i12 << 9;
                                     composer2 = startRestartGroup;
-                                    m1930SingleRowTopAppBarwn8IZOc(modifier3, function24, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), obj, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6), horizontal3, function27, function34, (Dp.m8001equalsimpl0(m3406getTopAppBarExpandedHeightD9Ej5fM, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(m3406getTopAppBarExpandedHeightD9Ej5fM, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3406getTopAppBarExpandedHeightD9Ej5fM() : m3406getTopAppBarExpandedHeightD9Ej5fM, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i12 >> 6) & 14) | ((i12 << 3) & 112) | (i16 & 7168) | (458752 & i12) | (3670016 & i17) | (i17 & 29360128) | (i16 & 1879048192), (i12 >> 24) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                                    m2016SingleRowTopAppBarwn8IZOc(modifier3, function24, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), obj, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6), horizontal3, function27, function34, (Dp.m8263equalsimpl0(m3492getTopAppBarExpandedHeightD9Ej5fM, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(m3492getTopAppBarExpandedHeightD9Ej5fM, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3492getTopAppBarExpandedHeightD9Ej5fM() : m3492getTopAppBarExpandedHeightD9Ej5fM, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i12 >> 6) & 14) | ((i12 << 3) & 112) | (i16 & 7168) | (458752 & i12) | (3670016 & i17) | (i17 & 29360128) | (i16 & 1879048192), (i12 >> 24) & WebSocketProtocol.PAYLOAD_SHORT, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    f2 = m3406getTopAppBarExpandedHeightD9Ej5fM;
+                                    f2 = m3492getTopAppBarExpandedHeightD9Ej5fM;
                                     modifier2 = modifier3;
                                     horizontal2 = horizontal3;
                                     function26 = function27;
@@ -1949,7 +1949,7 @@ public final class AppBarKt {
                                     function24 = ComposableSingletons$AppBarKt.INSTANCE.getLambda$1152131198$material3();
                                 }
                                 if (i5 != 0) {
-                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2150getLambda$1707954976$material3();
+                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2236getLambda$1707954976$material3();
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -1978,7 +1978,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 6;
                             composer2 = startRestartGroup;
-                            m1929MediumTopAppBaroKE7A98(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3402getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m3403getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
+                            m2015MediumTopAppBaroKE7A98(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3488getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m3489getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2101,7 +2101,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1929MediumTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m2015MediumTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Modifier.Companion companion;
@@ -2207,16 +2207,16 @@ public final class AppBarKt {
                                             companion = Modifier.Companion;
                                         }
                                         if (i4 != 0) {
-                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2155getLambda$229000834$material3();
+                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2241getLambda$229000834$material3();
                                         }
                                         if (i5 != 0) {
-                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2148getLambda$1276513184$material3();
+                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2234getLambda$1276513184$material3();
                                         }
                                         if (i6 != 0) {
-                                            f3 = TopAppBarDefaults.INSTANCE.m3402getMediumAppBarCollapsedHeightD9Ej5fM();
+                                            f3 = TopAppBarDefaults.INSTANCE.m3488getMediumAppBarCollapsedHeightD9Ej5fM();
                                         }
                                         if (i7 != 0) {
-                                            f4 = TopAppBarDefaults.INSTANCE.m3403getMediumAppBarExpandedHeightD9Ej5fM();
+                                            f4 = TopAppBarDefaults.INSTANCE.m3489getMediumAppBarExpandedHeightD9Ej5fM();
                                         }
                                         if ((i2 & 64) != 0) {
                                             windowInsets3 = TopAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
@@ -2269,7 +2269,7 @@ public final class AppBarKt {
                                     }
                                     int i16 = i12 >> 3;
                                     composer2 = startRestartGroup;
-                                    m1935TwoRowsTopAppBarpJA5dT0(modifier3, function23, TypographyKt.getValue(AppBarMediumTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), null, TextStyle.Companion.getDefault(), Alignment.Companion.getStart(), function26, function34, (Dp.m8001equalsimpl0(f7, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f7, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3402getMediumAppBarCollapsedHeightD9Ej5fM() : f7, (Dp.m8001equalsimpl0(f8, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f8, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3403getMediumAppBarExpandedHeightD9Ej5fM() : f8, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, (i16 & 14) | 920128512 | ((i12 << 3) & 112) | ((i12 << 12) & 57344), 6 | (i16 & 112) | (i16 & 896) | (458752 & i16) | (3670016 & i16) | (29360128 & i16), 0);
+                                    m2021TwoRowsTopAppBarpJA5dT0(modifier3, function23, TypographyKt.getValue(AppBarMediumTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), null, TextStyle.Companion.getDefault(), Alignment.Companion.getStart(), function26, function34, (Dp.m8263equalsimpl0(f7, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f7, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3488getMediumAppBarCollapsedHeightD9Ej5fM() : f7, (Dp.m8263equalsimpl0(f8, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f8, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3489getMediumAppBarExpandedHeightD9Ej5fM() : f8, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, (i16 & 14) | 920128512 | ((i12 << 3) & 112) | ((i12 << 12) & 57344), 6 | (i16 & 112) | (i16 & 896) | (458752 & i16) | (3670016 & i16) | (29360128 & i16), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -2463,7 +2463,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1928MediumFlexibleTopAppBareXZ4JBQ(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2014MediumFlexibleTopAppBareXZ4JBQ(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -2490,7 +2490,7 @@ public final class AppBarKt {
         final WindowInsets windowInsets2;
         final TopAppBarScrollBehavior topAppBarScrollBehavior2;
         ScopeUpdateScope endRestartGroup;
-        float m3402getMediumAppBarCollapsedHeightD9Ej5fM;
+        float m3488getMediumAppBarCollapsedHeightD9Ej5fM;
         WindowInsets windowInsets3;
         TopAppBarColors topAppBarColors3;
         TopAppBarScrollBehavior topAppBarScrollBehavior3;
@@ -2500,7 +2500,7 @@ public final class AppBarKt {
         WindowInsets windowInsets4;
         TopAppBarColors topAppBarColors4;
         Modifier modifier3;
-        float m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
+        float m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
         float f6;
         int i13;
         int i14;
@@ -2612,22 +2612,22 @@ public final class AppBarKt {
                                 topAppBarScrollBehavior3 = topAppBarScrollBehavior;
                                 function26 = obj3;
                                 function33 = obj4;
-                                m3402getMediumAppBarCollapsedHeightD9Ej5fM = f;
+                                m3488getMediumAppBarCollapsedHeightD9Ej5fM = f;
                                 modifier3 = obj;
                             } else {
                                 Modifier.Companion companion = i16 != 0 ? Modifier.Companion : obj;
                                 if (i5 != 0) {
                                     obj2 = null;
                                 }
-                                Function2<Composer, Integer, Unit> m2152getLambda$185842620$material3 = i6 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2152getLambda$185842620$material3() : obj3;
+                                Function2<Composer, Integer, Unit> m2238getLambda$185842620$material3 = i6 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2238getLambda$185842620$material3() : obj3;
                                 Function3<RowScope, Composer, Integer, Unit> lambda$1113419554$material3 = i7 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.getLambda$1113419554$material3() : obj4;
                                 Alignment.Horizontal start = i8 != 0 ? Alignment.Companion.getStart() : horizontal;
-                                m3402getMediumAppBarCollapsedHeightD9Ej5fM = i9 != 0 ? TopAppBarDefaults.INSTANCE.m3402getMediumAppBarCollapsedHeightD9Ej5fM() : f;
+                                m3488getMediumAppBarCollapsedHeightD9Ej5fM = i9 != 0 ? TopAppBarDefaults.INSTANCE.m3488getMediumAppBarCollapsedHeightD9Ej5fM() : f;
                                 if ((i3 & 128) != 0) {
                                     if (obj2 != null) {
-                                        f3 = TopAppBarDefaults.INSTANCE.m3404getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
+                                        f3 = TopAppBarDefaults.INSTANCE.m3490getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
                                     } else {
-                                        f3 = TopAppBarDefaults.INSTANCE.m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
+                                        f3 = TopAppBarDefaults.INSTANCE.m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
                                     }
                                     i4 &= -29360129;
                                 }
@@ -2644,7 +2644,7 @@ public final class AppBarKt {
                                     topAppBarColors3 = topAppBarColors;
                                 }
                                 topAppBarScrollBehavior3 = i11 != 0 ? null : topAppBarScrollBehavior;
-                                function26 = m2152getLambda$185842620$material3;
+                                function26 = m2238getLambda$185842620$material3;
                                 function33 = lambda$1113419554$material3;
                                 horizontal3 = start;
                                 windowInsets4 = windowInsets3;
@@ -2658,18 +2658,18 @@ public final class AppBarKt {
                             TextStyle value = TypographyKt.getValue(AppBarMediumFlexibleTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
                             TextStyle value2 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
                             float f7 = MediumTitleBottomPadding;
-                            Function2<Composer, Integer, Unit> m2162getLambda$790317886$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2162getLambda$790317886$material3() : obj2;
+                            Function2<Composer, Integer, Unit> m2248getLambda$790317886$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2248getLambda$790317886$material3() : obj2;
                             TextStyle value3 = TypographyKt.getValue(AppBarMediumFlexibleTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
-                            Function2<Composer, Integer, Unit> m2153getLambda$1926007989$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2153getLambda$1926007989$material3() : obj2;
+                            Function2<Composer, Integer, Unit> m2239getLambda$1926007989$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2239getLambda$1926007989$material3() : obj2;
                             TextStyle value4 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
-                            float m3402getMediumAppBarCollapsedHeightD9Ej5fM2 = (Dp.m8001equalsimpl0(m3402getMediumAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(m3402getMediumAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3402getMediumAppBarCollapsedHeightD9Ej5fM() : m3402getMediumAppBarCollapsedHeightD9Ej5fM;
-                            if (Dp.m8001equalsimpl0(f3, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f3, Dp.Companion.m8015getInfinityD9Ej5fM())) {
+                            float m3488getMediumAppBarCollapsedHeightD9Ej5fM2 = (Dp.m8263equalsimpl0(m3488getMediumAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(m3488getMediumAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3488getMediumAppBarCollapsedHeightD9Ej5fM() : m3488getMediumAppBarCollapsedHeightD9Ej5fM;
+                            if (Dp.m8263equalsimpl0(f3, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f3, Dp.Companion.m8277getInfinityD9Ej5fM())) {
                                 if (obj2 != null) {
-                                    m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3404getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
+                                    m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3490getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
                                 } else {
-                                    m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
+                                    m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
                                 }
-                                f6 = m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
+                                f6 = m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
                             } else {
                                 f6 = f3;
                             }
@@ -2677,13 +2677,13 @@ public final class AppBarKt {
                             int i18 = ((i4 >> 15) & 14) | (i17 & 112) | (i17 & 896);
                             int i19 = i4 >> 9;
                             composer2 = startRestartGroup;
-                            m1935TwoRowsTopAppBarpJA5dT0(modifier3, function2, value, f7, function2, value2, m2162getLambda$790317886$material3, value3, m2153getLambda$1926007989$material3, value4, horizontal3, function26, function33, m3402getMediumAppBarCollapsedHeightD9Ej5fM2, f6, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i4 >> 3) & 14) | 3072 | ((i4 << 3) & 112) | ((i4 << 12) & 57344), i18 | (458752 & i19) | (i19 & 3670016) | ((i12 << 21) & 29360128), 0);
+                            m2021TwoRowsTopAppBarpJA5dT0(modifier3, function2, value, f7, function2, value2, m2248getLambda$790317886$material3, value3, m2239getLambda$1926007989$material3, value4, horizontal3, function26, function33, m3488getMediumAppBarCollapsedHeightD9Ej5fM2, f6, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i4 >> 3) & 14) | 3072 | ((i4 << 3) & 112) | ((i4 << 12) & 57344), i18 | (458752 & i19) | (i19 & 3670016) | ((i12 << 21) & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
                             f4 = f3;
                             function24 = obj2;
-                            f5 = m3402getMediumAppBarCollapsedHeightD9Ej5fM;
+                            f5 = m3488getMediumAppBarCollapsedHeightD9Ej5fM;
                             modifier2 = modifier3;
                             horizontal2 = horizontal3;
                             function25 = function26;
@@ -2967,7 +2967,7 @@ public final class AppBarKt {
                             } else {
                                 Modifier.Companion companion = i10 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2160getLambda$699106370$material3();
+                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2246getLambda$699106370$material3();
                                 }
                                 if (i5 != 0) {
                                     function32 = ComposableSingletons$AppBarKt.INSTANCE.getLambda$1702484764$material3();
@@ -2999,7 +2999,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 6;
                             composer2 = startRestartGroup;
-                            m1927LargeTopAppBaroKE7A98(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3398getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m3399getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
+                            m2013LargeTopAppBaroKE7A98(function23, modifier3, function26, function34, TopAppBarDefaults.INSTANCE.m3484getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m3485getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -3122,7 +3122,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1927LargeTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m2013LargeTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Modifier.Companion companion;
@@ -3228,16 +3228,16 @@ public final class AppBarKt {
                                             companion = Modifier.Companion;
                                         }
                                         if (i4 != 0) {
-                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2146getLambda$1230986050$material3();
+                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2232getLambda$1230986050$material3();
                                         }
                                         if (i5 != 0) {
                                             function32 = ComposableSingletons$AppBarKt.INSTANCE.getLambda$1921811868$material3();
                                         }
                                         if (i6 != 0) {
-                                            f3 = TopAppBarDefaults.INSTANCE.m3398getLargeAppBarCollapsedHeightD9Ej5fM();
+                                            f3 = TopAppBarDefaults.INSTANCE.m3484getLargeAppBarCollapsedHeightD9Ej5fM();
                                         }
                                         if (i7 != 0) {
-                                            f4 = TopAppBarDefaults.INSTANCE.m3399getLargeAppBarExpandedHeightD9Ej5fM();
+                                            f4 = TopAppBarDefaults.INSTANCE.m3485getLargeAppBarExpandedHeightD9Ej5fM();
                                         }
                                         if ((i2 & 64) != 0) {
                                             windowInsets3 = TopAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
@@ -3290,7 +3290,7 @@ public final class AppBarKt {
                                     }
                                     int i16 = i12 >> 3;
                                     composer2 = startRestartGroup;
-                                    m1935TwoRowsTopAppBarpJA5dT0(modifier3, function23, TypographyKt.getValue(AppBarLargeTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), null, TextStyle.Companion.getDefault(), Alignment.Companion.getStart(), function26, function34, (Dp.m8001equalsimpl0(f7, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f7, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3398getLargeAppBarCollapsedHeightD9Ej5fM() : f7, (Dp.m8001equalsimpl0(f8, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f8, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3399getLargeAppBarExpandedHeightD9Ej5fM() : f8, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, (i16 & 14) | 920128512 | ((i12 << 3) & 112) | ((i12 << 12) & 57344), 6 | (i16 & 112) | (i16 & 896) | (458752 & i16) | (3670016 & i16) | (29360128 & i16), 0);
+                                    m2021TwoRowsTopAppBarpJA5dT0(modifier3, function23, TypographyKt.getValue(AppBarLargeTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6), null, TextStyle.Companion.getDefault(), null, TextStyle.Companion.getDefault(), Alignment.Companion.getStart(), function26, function34, (Dp.m8263equalsimpl0(f7, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f7, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3484getLargeAppBarCollapsedHeightD9Ej5fM() : f7, (Dp.m8263equalsimpl0(f8, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f8, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3485getLargeAppBarExpandedHeightD9Ej5fM() : f8, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, (i16 & 14) | 920128512 | ((i12 << 3) & 112) | ((i12 << 12) & 57344), 6 | (i16 & 112) | (i16 & 896) | (458752 & i16) | (3670016 & i16) | (29360128 & i16), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -3484,7 +3484,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1926LargeFlexibleTopAppBareXZ4JBQ(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2012LargeFlexibleTopAppBareXZ4JBQ(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -3511,7 +3511,7 @@ public final class AppBarKt {
         final WindowInsets windowInsets2;
         final TopAppBarScrollBehavior topAppBarScrollBehavior2;
         ScopeUpdateScope endRestartGroup;
-        float m3398getLargeAppBarCollapsedHeightD9Ej5fM;
+        float m3484getLargeAppBarCollapsedHeightD9Ej5fM;
         WindowInsets windowInsets3;
         TopAppBarColors topAppBarColors3;
         TopAppBarScrollBehavior topAppBarScrollBehavior3;
@@ -3521,7 +3521,7 @@ public final class AppBarKt {
         WindowInsets windowInsets4;
         TopAppBarColors topAppBarColors4;
         Modifier modifier3;
-        float m3401getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
+        float m3487getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
         float f6;
         int i13;
         int i14;
@@ -3633,22 +3633,22 @@ public final class AppBarKt {
                                 topAppBarScrollBehavior3 = topAppBarScrollBehavior;
                                 function26 = obj3;
                                 function33 = obj4;
-                                m3398getLargeAppBarCollapsedHeightD9Ej5fM = f;
+                                m3484getLargeAppBarCollapsedHeightD9Ej5fM = f;
                                 modifier3 = obj;
                             } else {
                                 Modifier.Companion companion = i16 != 0 ? Modifier.Companion : obj;
                                 if (i5 != 0) {
                                     obj2 = null;
                                 }
-                                Function2<Composer, Integer, Unit> m2161getLambda$780193532$material3 = i6 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2161getLambda$780193532$material3() : obj3;
-                                Function3<RowScope, Composer, Integer, Unit> m2151getLambda$1846660506$material3 = i7 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2151getLambda$1846660506$material3() : obj4;
+                                Function2<Composer, Integer, Unit> m2247getLambda$780193532$material3 = i6 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2247getLambda$780193532$material3() : obj3;
+                                Function3<RowScope, Composer, Integer, Unit> m2237getLambda$1846660506$material3 = i7 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2237getLambda$1846660506$material3() : obj4;
                                 Alignment.Horizontal start = i8 != 0 ? Alignment.Companion.getStart() : horizontal;
-                                m3398getLargeAppBarCollapsedHeightD9Ej5fM = i9 != 0 ? TopAppBarDefaults.INSTANCE.m3398getLargeAppBarCollapsedHeightD9Ej5fM() : f;
+                                m3484getLargeAppBarCollapsedHeightD9Ej5fM = i9 != 0 ? TopAppBarDefaults.INSTANCE.m3484getLargeAppBarCollapsedHeightD9Ej5fM() : f;
                                 if ((i3 & 128) != 0) {
                                     if (obj2 != null) {
-                                        f3 = TopAppBarDefaults.INSTANCE.m3400getLargeFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
+                                        f3 = TopAppBarDefaults.INSTANCE.m3486getLargeFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
                                     } else {
-                                        f3 = TopAppBarDefaults.INSTANCE.m3401getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
+                                        f3 = TopAppBarDefaults.INSTANCE.m3487getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
                                     }
                                     i4 &= -29360129;
                                 }
@@ -3665,8 +3665,8 @@ public final class AppBarKt {
                                     topAppBarColors3 = topAppBarColors;
                                 }
                                 topAppBarScrollBehavior3 = i11 != 0 ? null : topAppBarScrollBehavior;
-                                function26 = m2161getLambda$780193532$material3;
-                                function33 = m2151getLambda$1846660506$material3;
+                                function26 = m2247getLambda$780193532$material3;
+                                function33 = m2237getLambda$1846660506$material3;
                                 horizontal3 = start;
                                 windowInsets4 = windowInsets3;
                                 topAppBarColors4 = topAppBarColors3;
@@ -3679,18 +3679,18 @@ public final class AppBarKt {
                             TextStyle value = TypographyKt.getValue(AppBarLargeFlexibleTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
                             TextStyle value2 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
                             float f7 = LargeTitleBottomPadding;
-                            Function2<Composer, Integer, Unit> m2159getLambda$661145402$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2159getLambda$661145402$material3() : obj2;
+                            Function2<Composer, Integer, Unit> m2245getLambda$661145402$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2245getLambda$661145402$material3() : obj2;
                             TextStyle value3 = TypographyKt.getValue(AppBarLargeFlexibleTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
-                            Function2<Composer, Integer, Unit> m2144getLambda$1113422563$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2144getLambda$1113422563$material3() : obj2;
+                            Function2<Composer, Integer, Unit> m2230getLambda$1113422563$material3 = obj2 == null ? ComposableSingletons$AppBarKt.INSTANCE.m2230getLambda$1113422563$material3() : obj2;
                             TextStyle value4 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
-                            float m3398getLargeAppBarCollapsedHeightD9Ej5fM2 = (Dp.m8001equalsimpl0(m3398getLargeAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(m3398getLargeAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3398getLargeAppBarCollapsedHeightD9Ej5fM() : m3398getLargeAppBarCollapsedHeightD9Ej5fM;
-                            if (Dp.m8001equalsimpl0(f3, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(f3, Dp.Companion.m8015getInfinityD9Ej5fM())) {
+                            float m3484getLargeAppBarCollapsedHeightD9Ej5fM2 = (Dp.m8263equalsimpl0(m3484getLargeAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(m3484getLargeAppBarCollapsedHeightD9Ej5fM, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3484getLargeAppBarCollapsedHeightD9Ej5fM() : m3484getLargeAppBarCollapsedHeightD9Ej5fM;
+                            if (Dp.m8263equalsimpl0(f3, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(f3, Dp.Companion.m8277getInfinityD9Ej5fM())) {
                                 if (obj2 != null) {
-                                    m3401getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3400getLargeFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
+                                    m3487getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3486getLargeFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
                                 } else {
-                                    m3401getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3401getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
+                                    m3487getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3487getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
                                 }
-                                f6 = m3401getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
+                                f6 = m3487getLargeFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
                             } else {
                                 f6 = f3;
                             }
@@ -3698,13 +3698,13 @@ public final class AppBarKt {
                             int i18 = ((i4 >> 15) & 14) | (i17 & 112) | (i17 & 896);
                             int i19 = i4 >> 9;
                             composer2 = startRestartGroup;
-                            m1935TwoRowsTopAppBarpJA5dT0(modifier3, function2, value, f7, function2, value2, m2159getLambda$661145402$material3, value3, m2144getLambda$1113422563$material3, value4, horizontal3, function26, function33, m3398getLargeAppBarCollapsedHeightD9Ej5fM2, f6, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i4 >> 3) & 14) | 3072 | ((i4 << 3) & 112) | ((i4 << 12) & 57344), i18 | (458752 & i19) | (i19 & 3670016) | ((i12 << 21) & 29360128), 0);
+                            m2021TwoRowsTopAppBarpJA5dT0(modifier3, function2, value, f7, function2, value2, m2245getLambda$661145402$material3, value3, m2230getLambda$1113422563$material3, value4, horizontal3, function26, function33, m3484getLargeAppBarCollapsedHeightD9Ej5fM2, f6, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i4 >> 3) & 14) | 3072 | ((i4 << 3) & 112) | ((i4 << 12) & 57344), i18 | (458752 & i19) | (i19 & 3670016) | ((i12 << 21) & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
                             f4 = f3;
                             function24 = obj2;
-                            f5 = m3398getLargeAppBarCollapsedHeightD9Ej5fM;
+                            f5 = m3484getLargeAppBarCollapsedHeightD9Ej5fM;
                             modifier2 = modifier3;
                             horizontal2 = horizontal3;
                             function25 = function26;
@@ -3880,7 +3880,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1934TwoRowsTopAppBareXZ4JBQ(final Function3<? super Boolean, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function3<? super Boolean, ? super Composer, ? super Integer, Unit> function32, Function2<? super Composer, ? super Integer, Unit> function2, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function33, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2020TwoRowsTopAppBareXZ4JBQ(final Function3<? super Boolean, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function3<? super Boolean, ? super Composer, ? super Integer, Unit> function32, Function2<? super Composer, ? super Integer, Unit> function2, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function33, Alignment.Horizontal horizontal, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -3908,8 +3908,8 @@ public final class AppBarKt {
         final WindowInsets windowInsets2;
         final TopAppBarScrollBehavior topAppBarScrollBehavior2;
         ScopeUpdateScope endRestartGroup;
-        float m8016getUnspecifiedD9Ej5fM;
-        float m8016getUnspecifiedD9Ej5fM2;
+        float m8278getUnspecifiedD9Ej5fM;
+        float m8278getUnspecifiedD9Ej5fM2;
         WindowInsets windowInsets3;
         int i15;
         TopAppBarColors topAppBarColors3;
@@ -3921,7 +3921,7 @@ public final class AppBarKt {
         WindowInsets windowInsets4;
         Modifier modifier3;
         int i16;
-        float m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
+        float m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
         float f5;
         int i17;
         int i18;
@@ -4014,13 +4014,13 @@ public final class AppBarKt {
                                     i16 &= -1879048193;
                                 }
                                 horizontal3 = horizontal;
-                                m8016getUnspecifiedD9Ej5fM2 = f2;
+                                m8278getUnspecifiedD9Ej5fM2 = f2;
                                 windowInsets4 = windowInsets;
                                 topAppBarColors4 = topAppBarColors;
                                 topAppBarScrollBehavior3 = topAppBarScrollBehavior;
                                 function23 = obj3;
                                 function36 = obj4;
-                                m8016getUnspecifiedD9Ej5fM = f;
+                                m8278getUnspecifiedD9Ej5fM = f;
                                 modifier3 = obj;
                             } else {
                                 Modifier.Companion companion = i19 != 0 ? Modifier.Companion : obj;
@@ -4028,10 +4028,10 @@ public final class AppBarKt {
                                     obj2 = null;
                                 }
                                 Function2<Composer, Integer, Unit> lambda$1767216677$material3 = i6 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.getLambda$1767216677$material3() : obj3;
-                                Function3<RowScope, Composer, Integer, Unit> m2156getLambda$470693625$material3 = i7 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2156getLambda$470693625$material3() : obj4;
+                                Function3<RowScope, Composer, Integer, Unit> m2242getLambda$470693625$material3 = i7 != 0 ? ComposableSingletons$AppBarKt.INSTANCE.m2242getLambda$470693625$material3() : obj4;
                                 Alignment.Horizontal start = i8 != 0 ? Alignment.Companion.getStart() : horizontal;
-                                m8016getUnspecifiedD9Ej5fM = i9 != 0 ? Dp.Companion.m8016getUnspecifiedD9Ej5fM() : f;
-                                m8016getUnspecifiedD9Ej5fM2 = i10 != 0 ? Dp.Companion.m8016getUnspecifiedD9Ej5fM() : f2;
+                                m8278getUnspecifiedD9Ej5fM = i9 != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f;
+                                m8278getUnspecifiedD9Ej5fM2 = i10 != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f2;
                                 if ((i3 & 256) != 0) {
                                     windowInsets3 = TopAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
                                     i15 = i14 & (-234881025);
@@ -4048,7 +4048,7 @@ public final class AppBarKt {
                                 if (i12 != 0) {
                                     topAppBarColors4 = topAppBarColors3;
                                     function23 = lambda$1767216677$material3;
-                                    function36 = m2156getLambda$470693625$material3;
+                                    function36 = m2242getLambda$470693625$material3;
                                     horizontal3 = start;
                                     windowInsets4 = windowInsets3;
                                     topAppBarScrollBehavior3 = null;
@@ -4056,7 +4056,7 @@ public final class AppBarKt {
                                     topAppBarScrollBehavior3 = topAppBarScrollBehavior;
                                     topAppBarColors4 = topAppBarColors3;
                                     function23 = lambda$1767216677$material3;
-                                    function36 = m2156getLambda$470693625$material3;
+                                    function36 = m2242getLambda$470693625$material3;
                                     horizontal3 = start;
                                     windowInsets4 = windowInsets3;
                                 }
@@ -4069,24 +4069,24 @@ public final class AppBarKt {
                             }
                             TextStyle value = TypographyKt.getValue(AppBarMediumFlexibleTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
                             TextStyle value2 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getTitleFont(), startRestartGroup, 6);
-                            float m7996constructorimpl = Dp.m7996constructorimpl(0);
+                            float m8258constructorimpl = Dp.m8258constructorimpl(0);
                             TextStyle value3 = TypographyKt.getValue(AppBarMediumFlexibleTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
                             TextStyle value4 = TypographyKt.getValue(AppBarSmallTokens.INSTANCE.getSubtitleFont(), startRestartGroup, 6);
-                            float m3402getMediumAppBarCollapsedHeightD9Ej5fM = (Dp.m8001equalsimpl0(m8016getUnspecifiedD9Ej5fM, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(m8016getUnspecifiedD9Ej5fM, Dp.Companion.m8015getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3402getMediumAppBarCollapsedHeightD9Ej5fM() : m8016getUnspecifiedD9Ej5fM;
-                            if (Dp.m8001equalsimpl0(m8016getUnspecifiedD9Ej5fM2, Dp.Companion.m8016getUnspecifiedD9Ej5fM()) || Dp.m8001equalsimpl0(m8016getUnspecifiedD9Ej5fM2, Dp.Companion.m8015getInfinityD9Ej5fM())) {
+                            float m3488getMediumAppBarCollapsedHeightD9Ej5fM = (Dp.m8263equalsimpl0(m8278getUnspecifiedD9Ej5fM, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(m8278getUnspecifiedD9Ej5fM, Dp.Companion.m8277getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m3488getMediumAppBarCollapsedHeightD9Ej5fM() : m8278getUnspecifiedD9Ej5fM;
+                            if (Dp.m8263equalsimpl0(m8278getUnspecifiedD9Ej5fM2, Dp.Companion.m8278getUnspecifiedD9Ej5fM()) || Dp.m8263equalsimpl0(m8278getUnspecifiedD9Ej5fM2, Dp.Companion.m8277getInfinityD9Ej5fM())) {
                                 if (obj2 != null) {
-                                    m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3404getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
+                                    m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3490getMediumFlexibleAppBarWithSubtitleExpandedHeightD9Ej5fM();
                                 } else {
-                                    m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
+                                    m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM = TopAppBarDefaults.INSTANCE.m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM();
                                 }
-                                f5 = m3405getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
+                                f5 = m3491getMediumFlexibleAppBarWithoutSubtitleExpandedHeightD9Ej5fM;
                             } else {
-                                f5 = m8016getUnspecifiedD9Ej5fM2;
+                                f5 = m8278getUnspecifiedD9Ej5fM2;
                             }
                             int i20 = i16 >> 6;
                             int i21 = i16 >> 9;
                             composer2 = startRestartGroup;
-                            m1935TwoRowsTopAppBarpJA5dT0(modifier3, ComposableLambdaKt.rememberComposableLambda(-1674885936, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$TwoRowsTopAppBar$1
+                            m2021TwoRowsTopAppBarpJA5dT0(modifier3, ComposableLambdaKt.rememberComposableLambda(-1674885936, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$TwoRowsTopAppBar$1
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -4107,7 +4107,7 @@ public final class AppBarKt {
                                         ComposerKt.traceEventEnd();
                                     }
                                 }
-                            }, startRestartGroup, 54), value, m7996constructorimpl, ComposableLambdaKt.rememberComposableLambda(1295408045, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$TwoRowsTopAppBar$2
+                            }, startRestartGroup, 54), value, m8258constructorimpl, ComposableLambdaKt.rememberComposableLambda(1295408045, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$TwoRowsTopAppBar$2
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -4186,13 +4186,13 @@ public final class AppBarKt {
                                         ComposerKt.traceEventEnd();
                                     }
                                 }
-                            }, startRestartGroup, 54), value4, horizontal3, function23, function36, m3402getMediumAppBarCollapsedHeightD9Ej5fM, f5, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i16 >> 3) & 14) | 102263856, (i21 & 3670016) | ((i16 >> 15) & 14) | (i20 & 112) | (i20 & 896) | (458752 & i21) | ((i13 << 21) & 29360128), 0);
+                            }, startRestartGroup, 54), value4, horizontal3, function23, function36, m3488getMediumAppBarCollapsedHeightD9Ej5fM, f5, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer2, ((i16 >> 3) & 14) | 102263856, (i21 & 3670016) | ((i16 >> 15) & 14) | (i20 & 112) | (i20 & 896) | (458752 & i21) | ((i13 << 21) & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
                             function34 = obj2;
-                            f4 = m8016getUnspecifiedD9Ej5fM;
-                            f3 = m8016getUnspecifiedD9Ej5fM2;
+                            f4 = m8278getUnspecifiedD9Ej5fM;
+                            f3 = m8278getUnspecifiedD9Ej5fM2;
                             modifier2 = modifier3;
                             horizontal2 = horizontal3;
                             function22 = function23;
@@ -4373,7 +4373,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1920BottomAppBarSnr_uVM(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, Composer composer, final int i, final int i2) {
+    public static final void m2006BottomAppBarSnr_uVM(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, Composer composer, final int i, final int i2) {
         Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function32;
         int i3;
         Modifier.Companion companion;
@@ -4502,11 +4502,11 @@ public final class AppBarKt {
                                 i3 &= -7169;
                             }
                             if ((i2 & 16) != 0) {
-                                j4 = ColorSchemeKt.m2130contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
+                                j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
                                 i3 &= -57345;
                             }
                             if (i5 != 0) {
-                                f2 = BottomAppBarDefaults.INSTANCE.m1950getContainerElevationD9Ej5fM();
+                                f2 = BottomAppBarDefaults.INSTANCE.m2036getContainerElevationD9Ej5fM();
                             }
                             PaddingValues contentPadding = i6 != 0 ? BottomAppBarDefaults.INSTANCE.getContentPadding() : paddingValues;
                             if ((i2 & 128) != 0) {
@@ -4523,7 +4523,7 @@ public final class AppBarKt {
                                     ComposerKt.traceEventStart(-2144093983, i3, -1, "androidx.compose.material3.BottomAppBar (AppBar.kt:1044)");
                                 }
                                 composer2 = startRestartGroup;
-                                m1922BottomAppBarqhFBPw4(function32, modifier3, function23, j7, j8, f4, paddingValues3, windowInsets3, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
+                                m2008BottomAppBarqhFBPw4(function32, modifier3, function23, j7, j8, f4, paddingValues3, windowInsets3, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -4548,7 +4548,7 @@ public final class AppBarKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer2 = startRestartGroup;
-                        m1922BottomAppBarqhFBPw4(function32, modifier3, function232, j72, j82, f42, paddingValues3, windowInsets3, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
+                        m2008BottomAppBarqhFBPw4(function32, modifier3, function232, j72, j82, f42, paddingValues3, windowInsets3, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier2 = modifier3;
@@ -4664,7 +4664,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1922BottomAppBarqhFBPw4(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m2008BottomAppBarqhFBPw4(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         int i3;
         int i4;
         final Object obj;
@@ -4805,10 +4805,10 @@ public final class AppBarKt {
                                     i3 &= -7169;
                                 }
                                 if ((i2 & 16) != 0) {
-                                    j4 = ColorSchemeKt.m2130contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
+                                    j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
                                     i3 &= -57345;
                                 }
-                                float m1950getContainerElevationD9Ej5fM = i5 != 0 ? BottomAppBarDefaults.INSTANCE.m1950getContainerElevationD9Ej5fM() : f2;
+                                float m2036getContainerElevationD9Ej5fM = i5 != 0 ? BottomAppBarDefaults.INSTANCE.m2036getContainerElevationD9Ej5fM() : f2;
                                 PaddingValues contentPadding = i6 != 0 ? BottomAppBarDefaults.INSTANCE.getContentPadding() : paddingValues;
                                 if ((i2 & 128) != 0) {
                                     windowInsets3 = BottomAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
@@ -4817,7 +4817,7 @@ public final class AppBarKt {
                                     windowInsets3 = windowInsets;
                                 }
                                 bottomAppBarScrollBehavior3 = i8 == 0 ? bottomAppBarScrollBehavior : null;
-                                f4 = m1950getContainerElevationD9Ej5fM;
+                                f4 = m2036getContainerElevationD9Ej5fM;
                                 paddingValues3 = contentPadding;
                                 windowInsets4 = windowInsets3;
                                 i9 = 272234465;
@@ -4832,7 +4832,7 @@ public final class AppBarKt {
                             }
                             int i15 = i3 >> 6;
                             composer2 = startRestartGroup;
-                            m1921BottomAppBare3WI5M(modifier3, j7, j8, f4, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, ComposableLambdaKt.rememberComposableLambda(-1943077286, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
+                            m2007BottomAppBare3WI5M(modifier3, j7, j8, f4, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, ComposableLambdaKt.rememberComposableLambda(-1943077286, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
                                 @Override // kotlin.jvm.functions.Function3
                                 public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer3, Integer num) {
                                     invoke(rowScope, composer3, num.intValue());
@@ -4877,15 +4877,15 @@ public final class AppBarKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
-                                    Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
+                                    Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                                     function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -4899,7 +4899,7 @@ public final class AppBarKt {
                                         Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
                                         f5 = AppBarKt.FABVerticalPadding;
                                         f6 = AppBarKt.FABHorizontalPadding;
-                                        Modifier m847paddingqDBjuR0$default = PaddingKt.m847paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
+                                        Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
                                         Alignment topStart = Alignment.Companion.getTopStart();
                                         Function2<Composer, Integer, Unit> function23 = obj;
                                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -4907,7 +4907,7 @@ public final class AppBarKt {
                                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                         int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                         CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m847paddingqDBjuR0$default);
+                                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m932paddingqDBjuR0$default);
                                         Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -4919,15 +4919,15 @@ public final class AppBarKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer3);
-                                        Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m4673constructorimpl2 = Updater.m4673constructorimpl(composer3);
+                                        Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                            m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                            m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                        if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                            m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                            m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                         }
-                                        Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer3, 1457541364, "C1131@57776L22:AppBar.kt#uh7d8r");
@@ -5076,7 +5076,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1919BottomAppBar1oL4kX8(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2005BottomAppBar1oL4kX8(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j3;
@@ -5207,11 +5207,11 @@ public final class AppBarKt {
                                 i3 &= -113;
                             }
                             if ((i2 & 4) != 0) {
-                                j4 = ColorSchemeKt.m2130contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
+                                j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
                                 i3 &= -897;
                             }
                             if (i11 != 0) {
-                                f2 = BottomAppBarDefaults.INSTANCE.m1950getContainerElevationD9Ej5fM();
+                                f2 = BottomAppBarDefaults.INSTANCE.m2036getContainerElevationD9Ej5fM();
                             }
                             if (i4 != 0) {
                                 obj2 = BottomAppBarDefaults.INSTANCE.getContentPadding();
@@ -5244,7 +5244,7 @@ public final class AppBarKt {
                             ComposerKt.traceEventStart(i6, i3, -1, "androidx.compose.material3.BottomAppBar (AppBar.kt:1173)");
                         }
                         composer2 = startRestartGroup;
-                        m1921BottomAppBare3WI5M(modifier3, j7, j8, f4, paddingValues3, windowInsets3, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
+                        m2007BottomAppBare3WI5M(modifier3, j7, j8, f4, paddingValues3, windowInsets3, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -5331,7 +5331,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1921BottomAppBare3WI5M(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2007BottomAppBare3WI5M(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Modifier.Companion companion;
         int i3;
         long j3;
@@ -5446,11 +5446,11 @@ public final class AppBarKt {
                                 i3 &= -113;
                             }
                             if ((i2 & 4) != 0) {
-                                j4 = ColorSchemeKt.m2130contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
+                                j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
                                 i3 &= -897;
                             }
                             if (i10 != 0) {
-                                f2 = BottomAppBarDefaults.INSTANCE.m1950getContainerElevationD9Ej5fM();
+                                f2 = BottomAppBarDefaults.INSTANCE.m2036getContainerElevationD9Ej5fM();
                             }
                             if (i4 != 0) {
                                 obj = BottomAppBarDefaults.INSTANCE.getContentPadding();
@@ -5473,7 +5473,7 @@ public final class AppBarKt {
                                 }
                                 int i11 = i3 << 6;
                                 composer2 = startRestartGroup;
-                                m1923BottomAppBarLayoutt5fmz9U(BottomAppBarTokens.INSTANCE.m3679getContainerHeightD9Ej5fM(), Arrangement.INSTANCE.getStart(), modifier3, j7, j8, f4, paddingValues3, windowInsets3, bottomAppBarScrollBehavior3, function3, composer2, (i11 & 896) | 54 | (i11 & 7168) | (57344 & i11) | (458752 & i11) | (3670016 & i11) | (29360128 & i11) | (234881024 & i11) | (i11 & 1879048192), 0);
+                                m2009BottomAppBarLayoutt5fmz9U(BottomAppBarTokens.INSTANCE.m3765getContainerHeightD9Ej5fM(), Arrangement.INSTANCE.getStart(), modifier3, j7, j8, f4, paddingValues3, windowInsets3, bottomAppBarScrollBehavior3, function3, composer2, (i11 & 896) | 54 | (i11 & 7168) | (57344 & i11) | (458752 & i11) | (3670016 & i11) | (29360128 & i11) | (234881024 & i11) | (i11 & 1879048192), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -5509,7 +5509,7 @@ public final class AppBarKt {
                         }
                         int i112 = i3 << 6;
                         composer2 = startRestartGroup;
-                        m1923BottomAppBarLayoutt5fmz9U(BottomAppBarTokens.INSTANCE.m3679getContainerHeightD9Ej5fM(), Arrangement.INSTANCE.getStart(), modifier32, j72, j82, f42, paddingValues32, windowInsets32, bottomAppBarScrollBehavior3, function3, composer2, (i112 & 896) | 54 | (i112 & 7168) | (57344 & i112) | (458752 & i112) | (3670016 & i112) | (29360128 & i112) | (234881024 & i112) | (i112 & 1879048192), 0);
+                        m2009BottomAppBarLayoutt5fmz9U(BottomAppBarTokens.INSTANCE.m3765getContainerHeightD9Ej5fM(), Arrangement.INSTANCE.getStart(), modifier32, j72, j82, f42, paddingValues32, windowInsets32, bottomAppBarScrollBehavior3, function3, composer2, (i112 & 896) | 54 | (i112 & 7168) | (57344 & i112) | (458752 & i112) | (3670016 & i112) | (29360128 & i112) | (234881024 & i112) | (i112 & 1879048192), 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier2 = modifier32;
@@ -5603,7 +5603,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1925FlexibleBottomAppBarwBhsO_E(Modifier modifier, long j, long j2, PaddingValues paddingValues, Arrangement.Horizontal horizontal, float f, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2011FlexibleBottomAppBarwBhsO_E(Modifier modifier, long j, long j2, PaddingValues paddingValues, Arrangement.Horizontal horizontal, float f, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         long j3;
         long j4;
@@ -5624,7 +5624,7 @@ public final class AppBarKt {
         final BottomAppBarScrollBehavior bottomAppBarScrollBehavior2;
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
-        float m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3;
+        float m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3;
         WindowInsets windowInsets3;
         BottomAppBarScrollBehavior bottomAppBarScrollBehavior3;
         WindowInsets windowInsets4;
@@ -5720,7 +5720,7 @@ public final class AppBarKt {
                                     i3 &= -3670017;
                                 }
                                 companion = modifier;
-                                m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3 = f;
+                                m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3 = f;
                                 windowInsets4 = windowInsets;
                                 bottomAppBarScrollBehavior3 = bottomAppBarScrollBehavior;
                                 j7 = j3;
@@ -5734,12 +5734,12 @@ public final class AppBarKt {
                                     i3 &= -113;
                                 }
                                 if ((i2 & 4) != 0) {
-                                    j4 = ColorSchemeKt.m2130contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
+                                    j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
                                     i3 &= -897;
                                 }
                                 PaddingValues flexibleContentPadding$material3 = i11 != 0 ? BottomAppBarDefaults.INSTANCE.getFlexibleContentPadding$material3() : obj;
                                 Arrangement.Horizontal flexibleHorizontalArrangement$material3 = i4 != 0 ? BottomAppBarDefaults.INSTANCE.getFlexibleHorizontalArrangement$material3() : obj2;
-                                m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3 = i5 != 0 ? BottomAppBarDefaults.INSTANCE.m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3() : f;
+                                m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3 = i5 != 0 ? BottomAppBarDefaults.INSTANCE.m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3() : f;
                                 if ((i2 & 64) != 0) {
                                     windowInsets3 = BottomAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
                                     i3 &= -3670017;
@@ -5766,18 +5766,18 @@ public final class AppBarKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1717957447, i3, -1, "androidx.compose.material3.FlexibleBottomAppBar (AppBar.kt:1297)");
                             }
-                            float m1951getFlexibleBottomAppBarHeightD9Ej5fM$material32 = ((Float.floatToRawIntBits(m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3) & Integer.MAX_VALUE) >= 2139095040 || Float.isNaN(m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3) || Dp.m7995compareTo0680j_4(m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3, Dp.m7996constructorimpl((float) 0)) <= 0) ? BottomAppBarDefaults.INSTANCE.m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3() : m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3;
-                            float m3650getContainerElevationD9Ej5fM = AppBarTokens.INSTANCE.m3650getContainerElevationD9Ej5fM();
+                            float m2037getFlexibleBottomAppBarHeightD9Ej5fM$material32 = ((Float.floatToRawIntBits(m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3) & Integer.MAX_VALUE) >= 2139095040 || Float.isNaN(m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3) || Dp.m8257compareTo0680j_4(m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3, Dp.m8258constructorimpl((float) 0)) <= 0) ? BottomAppBarDefaults.INSTANCE.m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3() : m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3;
+                            float m3736getContainerElevationD9Ej5fM = AppBarTokens.INSTANCE.m3736getContainerElevationD9Ej5fM();
                             int i12 = i3 << 6;
                             int i13 = ((i3 >> 9) & 112) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i12 & 896) | (i12 & 7168) | (i12 & 57344) | (3670016 & (i3 << 9));
                             int i14 = i3 << 3;
                             Modifier modifier3 = companion;
                             composer2 = startRestartGroup;
-                            m1923BottomAppBarLayoutt5fmz9U(m1951getFlexibleBottomAppBarHeightD9Ej5fM$material32, horizontal3, modifier3, j7, j8, m3650getContainerElevationD9Ej5fM, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, function3, composer2, i13 | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), 0);
+                            m2009BottomAppBarLayoutt5fmz9U(m2037getFlexibleBottomAppBarHeightD9Ej5fM$material32, horizontal3, modifier3, j7, j8, m3736getContainerElevationD9Ej5fM, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, function3, composer2, i13 | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
-                            f2 = m1951getFlexibleBottomAppBarHeightD9Ej5fM$material3;
+                            f2 = m2037getFlexibleBottomAppBarHeightD9Ej5fM$material3;
                             horizontal2 = horizontal3;
                             modifier2 = modifier3;
                             j5 = j7;
@@ -5894,7 +5894,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final void m1923BottomAppBarLayoutt5fmz9U(final float f, final Arrangement.Horizontal horizontal, Modifier modifier, final long j, final long j2, final float f2, final PaddingValues paddingValues, final WindowInsets windowInsets, final BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    private static final void m2009BottomAppBarLayoutt5fmz9U(final float f, final Arrangement.Horizontal horizontal, Modifier modifier, final long j, final long j2, final float f2, final PaddingValues paddingValues, final WindowInsets windowInsets, final BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         final Arrangement.Horizontal horizontal2;
         long j3;
@@ -6047,7 +6047,7 @@ public final class AppBarKt {
                                 int i6 = i4 >> 3;
                                 composer2 = startRestartGroup;
                                 long j5 = j3;
-                                SurfaceKt.m2997SurfaceT9BRK9s(LayoutModifierKt.layout(companion3, (Function3) rememberedValue3).then(companion), value, j5, j4, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1054101083, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBarLayout$2
+                                SurfaceKt.m3083SurfaceT9BRK9s(LayoutModifierKt.layout(companion3, (Function3) rememberedValue3).then(companion), value, j5, j4, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1054101083, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBarLayout$2
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                         invoke(composer3, num.intValue());
@@ -6063,7 +6063,7 @@ public final class AppBarKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(1054101083, i7, -1, "androidx.compose.material3.BottomAppBarLayout.<anonymous> (AppBar.kt:1380)");
                                         }
-                                        Modifier padding = PaddingKt.padding(SizeKt.m881height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), f), paddingValues);
+                                        Modifier padding = PaddingKt.padding(SizeKt.m962height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), f), paddingValues);
                                         Arrangement.Horizontal horizontal3 = horizontal2;
                                         Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                         Function3<RowScope, Composer, Integer, Unit> function32 = function3;
@@ -6084,15 +6084,15 @@ public final class AppBarKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
-                                        Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
+                                        Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                                         function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -6195,11 +6195,11 @@ public final class AppBarKt {
     public static final MeasureResult BottomAppBarLayout_t5fmz9U$lambda$23$lambda$22(BottomAppBarScrollBehavior bottomAppBarScrollBehavior, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
         BottomAppBarState state;
         BottomAppBarState state2;
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(constraints.m8217unboximpl());
         if (bottomAppBarScrollBehavior != null && (state2 = bottomAppBarScrollBehavior.getState()) != null) {
-            state2.setHeightOffsetLimit(-mo6698measureBRTryo0.getHeight());
+            state2.setHeightOffsetLimit(-mo6875measureBRTryo0.getHeight());
         }
-        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), MathKt.roundToInt(RangesKt.coerceAtLeast(mo6698measureBRTryo0.getHeight() + ((bottomAppBarScrollBehavior == null || (state = bottomAppBarScrollBehavior.getState()) == null) ? 0.0f : state.getHeightOffset()), 0.0f)), null, new Function1() { // from class: androidx.compose.material3.AppBarKt$$ExternalSyntheticLambda27
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), MathKt.roundToInt(RangesKt.coerceAtLeast(mo6875measureBRTryo0.getHeight() + ((bottomAppBarScrollBehavior == null || (state = bottomAppBarScrollBehavior.getState()) == null) ? 0.0f : state.getHeightOffset()), 0.0f)), null, new Function1() { // from class: androidx.compose.material3.AppBarKt$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit BottomAppBarLayout_t5fmz9U$lambda$23$lambda$22$lambda$21;
@@ -6251,7 +6251,7 @@ public final class AppBarKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TopAppBarState topAppBarState = (TopAppBarState) RememberSaveableKt.m4726rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        TopAppBarState topAppBarState = (TopAppBarState) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -6300,7 +6300,7 @@ public final class AppBarKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        BottomAppBarState bottomAppBarState = (BottomAppBarState) RememberSaveableKt.m4726rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        BottomAppBarState bottomAppBarState = (BottomAppBarState) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -6348,7 +6348,7 @@ public final class AppBarKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     if (bottomAppBarState2.getCollapsedFraction() < 0.01f || bottomAppBarState2.getCollapsedFraction() == 1.0f) {
-                        return Velocity.m8225boximpl(Velocity.Companion.m8245getZero9UxMQ8M());
+                        return Velocity.m8487boximpl(Velocity.Companion.m8507getZero9UxMQ8M());
                     }
                     floatRef = new Ref.FloatRef();
                     floatRef.element = f;
@@ -6376,7 +6376,7 @@ public final class AppBarKt {
                         floatRef2 = (Ref.FloatRef) appBarKt$settleAppBarBottom$12.L$0;
                         ResultKt.throwOnFailure(obj);
                         floatRef = floatRef2;
-                        return Velocity.m8225boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                        return Velocity.m8487boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -6407,7 +6407,7 @@ public final class AppBarKt {
                     }
                     return coroutine_suspended;
                 }
-                return Velocity.m8225boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                return Velocity.m8487boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
             }
         }
         appBarKt$settleAppBarBottom$1 = new AppBarKt$settleAppBarBottom$1(continuation);
@@ -6437,7 +6437,7 @@ public final class AppBarKt {
             }
             return coroutine_suspended;
         }
-        return Velocity.m8225boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+        return Velocity.m8487boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6493,7 +6493,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final void m1930SingleRowTopAppBarwn8IZOc(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Alignment.Horizontal horizontal, final Function2<? super Composer, ? super Integer, Unit> function23, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
+    private static final void m2016SingleRowTopAppBarwn8IZOc(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Alignment.Horizontal horizontal, final Function2<? super Composer, ? super Integer, Unit> function23, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
         Object obj;
         int i4;
         Object obj2;
@@ -6842,7 +6842,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final void m1935TwoRowsTopAppBarpJA5dT0(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final float f, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Function2<? super Composer, ? super Integer, Unit> function23, final TextStyle textStyle3, final Function2<? super Composer, ? super Integer, Unit> function24, final TextStyle textStyle4, final Alignment.Horizontal horizontal, final Function2<? super Composer, ? super Integer, Unit> function25, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f2, final float f3, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
+    private static final void m2021TwoRowsTopAppBarpJA5dT0(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final float f, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Function2<? super Composer, ? super Integer, Unit> function23, final TextStyle textStyle3, final Function2<? super Composer, ? super Integer, Unit> function24, final TextStyle textStyle4, final Alignment.Horizontal horizontal, final Function2<? super Composer, ? super Integer, Unit> function25, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f2, final float f3, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
         Object obj;
         int i4;
         Function2<? super Composer, ? super Integer, Unit> function26;
@@ -7275,13 +7275,13 @@ public final class AppBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit adjustHeightOffsetLimit$lambda$38$lambda$37(TopAppBarState topAppBarState, IntSize intSize) {
-        topAppBarState.setHeightOffsetLimit(-(((int) (intSize.m8171unboximpl() & 4294967295L)) - topAppBarState.getHeightOffset()));
+        topAppBarState.setHeightOffsetLimit(-(((int) (intSize.m8433unboximpl() & 4294967295L)) - topAppBarState.getHeightOffset()));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: TopAppBarLayout-lyUyIHI  reason: not valid java name */
-    public static final void m1933TopAppBarLayoutlyUyIHI(final Modifier modifier, final FloatProducer floatProducer, final long j, final long j2, final long j3, final long j4, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Function0<Float> function0, final Arrangement.Vertical vertical, Alignment.Horizontal horizontal, final int i, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final float f, Composer composer, final int i2, final int i3) {
+    public static final void m2019TopAppBarLayoutlyUyIHI(final Modifier modifier, final FloatProducer floatProducer, final long j, final long j2, final long j3, final long j4, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Function0<Float> function0, final Arrangement.Vertical vertical, Alignment.Horizontal horizontal, final int i, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final float f, Composer composer, final int i2, final int i3) {
         int i4;
         int i5;
         int i6;
@@ -7411,25 +7411,25 @@ public final class AppBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-            Updater.m4605setimpl(m4598constructorimpl, topAppBarMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+            Updater.m4681setimpl(m4673constructorimpl, topAppBarMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1360991215, "C2997@141514L281,3044@143662L265:AppBar.kt#uh7d8r");
             Modifier layoutId = LayoutIdKt.layoutId(Modifier.Companion, "navigationIcon");
             float f2 = TopAppBarHorizontalPadding;
-            Modifier m847paddingqDBjuR0$default = PaddingKt.m847paddingqDBjuR0$default(layoutId, f2, 0.0f, 0.0f, 0.0f, 14, null);
+            Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(layoutId, f2, 0.0f, 0.0f, 0.0f, 14, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m847paddingqDBjuR0$default);
+            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m932paddingqDBjuR0$default);
             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -7441,19 +7441,19 @@ public final class AppBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(startRestartGroup);
-            Updater.m4605setimpl(m4598constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
+            Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1301830080, "C2998@141617L164:AppBar.kt#uh7d8r");
-            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(j)), function25, startRestartGroup, ProvidedValue.$stable | ((i8 >> 12) & 112));
+            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5414boximpl(j)), function25, startRestartGroup, ProvidedValue.$stable | ((i8 >> 12) & 112));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -7463,7 +7463,7 @@ public final class AppBarKt {
             if (function22 != null) {
                 startRestartGroup.startReplaceGroup(-1360720648);
                 ComposerKt.sourceInformation(startRestartGroup, "3012@142259L24,3004@141848L997");
-                Modifier m845paddingVpY3zN4$default = PaddingKt.m845paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "title"), f2, 0.0f, 2, null);
+                Modifier m930paddingVpY3zN4$default = PaddingKt.m930paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "title"), f2, 0.0f, 2, null);
                 if (z) {
                     startRestartGroup.startReplaceGroup(510303260);
                     ComposerKt.sourceInformation(startRestartGroup, "3009@142137L2");
@@ -7491,7 +7491,7 @@ public final class AppBarKt {
                     startRestartGroup.endReplaceGroup();
                     companion2 = Modifier.Companion;
                 }
-                Modifier then = m845paddingVpY3zN4$default.then(companion2);
+                Modifier then = m930paddingVpY3zN4$default.then(companion2);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 510307837, str5);
                 z2 = (i8 & 14) == 4;
                 Object rememberedValue3 = startRestartGroup.rememberedValue();
@@ -7525,25 +7525,25 @@ public final class AppBarKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4598constructorimpl3 = Updater.m4598constructorimpl(startRestartGroup);
-                Updater.m4605setimpl(m4598constructorimpl3, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
+                Updater.m4681setimpl(m4673constructorimpl3, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl3.getInserting() || !Intrinsics.areEqual(m4598constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                    m4598constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m4598constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                if (m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                    m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                 }
-                Updater.m4605setimpl(m4598constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -190335683, "C3015@142393L202,3020@142616L211:AppBar.kt#uh7d8r");
                 int i13 = i9 >> 18;
                 int i14 = i9 >> 12;
-                ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j2, textStyle, function2, startRestartGroup, ((i9 >> 9) & 14) | (i13 & 112) | (i14 & 896));
+                ProvideContentColorTextStyleKt.m3616ProvideContentColorTextStyle3JVO9M(j2, textStyle, function2, startRestartGroup, ((i9 >> 9) & 14) | (i13 & 112) | (i14 & 896));
                 composer2 = startRestartGroup;
                 str2 = "C72@3468L9:Box.kt#2w3rfo";
                 str3 = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
-                ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j3, textStyle2, function22, composer2, (i14 & 14) | ((i9 >> 24) & 112) | (i13 & 896));
+                ProvideContentColorTextStyleKt.m3616ProvideContentColorTextStyle3JVO9M(j3, textStyle2, function22, composer2, (i14 & 14) | ((i9 >> 24) & 112) | (i13 & 896));
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 composer2.endNode();
@@ -7559,7 +7559,7 @@ public final class AppBarKt {
                 str3 = "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo";
                 composer2.startReplaceGroup(-1359701523);
                 ComposerKt.sourceInformation(composer2, "3035@143350L24,3027@142942L693");
-                Modifier m845paddingVpY3zN4$default2 = PaddingKt.m845paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "title"), f2, 0.0f, 2, null);
+                Modifier m930paddingVpY3zN4$default2 = PaddingKt.m930paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "title"), f2, 0.0f, 2, null);
                 if (z) {
                     composer2.startReplaceGroup(510338172);
                     ComposerKt.sourceInformation(composer2, "3032@143228L2");
@@ -7585,7 +7585,7 @@ public final class AppBarKt {
                     composer2.endReplaceGroup();
                     companion = Modifier.Companion;
                 }
-                Modifier then2 = m845paddingVpY3zN4$default2.then(companion);
+                Modifier then2 = m930paddingVpY3zN4$default2.then(companion);
                 ComposerKt.sourceInformationMarkerStart(composer2, 510342749, str6);
                 z2 = (i8 & 14) == 4;
                 Object rememberedValue5 = composer2.rememberedValue();
@@ -7620,19 +7620,19 @@ public final class AppBarKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4598constructorimpl4 = Updater.m4598constructorimpl(composer2);
-                Updater.m4605setimpl(m4598constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl4 = Updater.m4673constructorimpl(composer2);
+                Updater.m4681setimpl(m4673constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl4.getInserting() || !Intrinsics.areEqual(m4598constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                    m4598constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                    m4598constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                if (m4673constructorimpl4.getInserting() || !Intrinsics.areEqual(m4673constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                    m4673constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                    m4673constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                 }
-                Updater.m4605setimpl(m4598constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, str2);
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, -314975490, "C3037@143415L202:AppBar.kt#uh7d8r");
-                ProvideContentColorTextStyleKt.m3530ProvideContentColorTextStyle3JVO9M(j2, textStyle, function2, composer2, ((i9 >> 9) & 14) | ((i9 >> 18) & 112) | ((i9 >> 12) & 896));
+                ProvideContentColorTextStyleKt.m3616ProvideContentColorTextStyle3JVO9M(j2, textStyle, function2, composer2, ((i9 >> 9) & 14) | ((i9 >> 18) & 112) | ((i9 >> 12) & 896));
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 composer2.endNode();
@@ -7641,13 +7641,13 @@ public final class AppBarKt {
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 composer2.endReplaceGroup();
             }
-            Modifier m847paddingqDBjuR0$default2 = PaddingKt.m847paddingqDBjuR0$default(LayoutIdKt.layoutId(Modifier.Companion, "actionIcons"), 0.0f, 0.0f, f2, 0.0f, 11, null);
+            Modifier m932paddingqDBjuR0$default2 = PaddingKt.m932paddingqDBjuR0$default(LayoutIdKt.layoutId(Modifier.Companion, "actionIcons"), 0.0f, 0.0f, f2, 0.0f, 11, null);
             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, str3);
             MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, str4);
             int currentCompositeKeyHash5 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
             CompositionLocalMap currentCompositionLocalMap5 = composer2.getCurrentCompositionLocalMap();
-            Modifier materializeModifier5 = ComposedModifierKt.materializeModifier(composer2, m847paddingqDBjuR0$default2);
+            Modifier materializeModifier5 = ComposedModifierKt.materializeModifier(composer2, m932paddingqDBjuR0$default2);
             Function0<ComposeUiNode> constructor5 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
             if (!(composer2.getApplier() instanceof Applier)) {
@@ -7659,19 +7659,19 @@ public final class AppBarKt {
             } else {
                 composer2.useNode();
             }
-            Composer m4598constructorimpl5 = Updater.m4598constructorimpl(composer2);
-            Updater.m4605setimpl(m4598constructorimpl5, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl5, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4673constructorimpl5 = Updater.m4673constructorimpl(composer2);
+            Updater.m4681setimpl(m4673constructorimpl5, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl5, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash5 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl5.getInserting() || !Intrinsics.areEqual(m4598constructorimpl5.rememberedValue(), Integer.valueOf(currentCompositeKeyHash5))) {
-                m4598constructorimpl5.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash5));
-                m4598constructorimpl5.apply(Integer.valueOf(currentCompositeKeyHash5), setCompositeKeyHash5);
+            if (m4673constructorimpl5.getInserting() || !Intrinsics.areEqual(m4673constructorimpl5.rememberedValue(), Integer.valueOf(currentCompositeKeyHash5))) {
+                m4673constructorimpl5.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash5));
+                m4673constructorimpl5.apply(Integer.valueOf(currentCompositeKeyHash5), setCompositeKeyHash5);
             }
-            Updater.m4605setimpl(m4598constructorimpl5, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl5, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, str2);
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, -1525354718, "C3045@143760L153:AppBar.kt#uh7d8r");
-            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(j4)), function24, composer2, ProvidedValue.$stable | ((i8 >> 15) & 112));
+            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5414boximpl(j4)), function24, composer2, ProvidedValue.$stable | ((i8 >> 15) & 112));
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -7758,7 +7758,7 @@ public final class AppBarKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     if (topAppBarState2.getCollapsedFraction() < 0.01f || topAppBarState2.getCollapsedFraction() == 1.0f) {
-                        return Velocity.m8225boximpl(Velocity.Companion.m8245getZero9UxMQ8M());
+                        return Velocity.m8487boximpl(Velocity.Companion.m8507getZero9UxMQ8M());
                     }
                     floatRef = new Ref.FloatRef();
                     floatRef.element = f;
@@ -7786,7 +7786,7 @@ public final class AppBarKt {
                         floatRef2 = (Ref.FloatRef) appBarKt$settleAppBar$12.L$0;
                         ResultKt.throwOnFailure(obj);
                         floatRef = floatRef2;
-                        return Velocity.m8225boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                        return Velocity.m8487boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -7817,7 +7817,7 @@ public final class AppBarKt {
                     }
                     return coroutine_suspended;
                 }
-                return Velocity.m8225boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                return Velocity.m8487boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
             }
         }
         appBarKt$settleAppBar$1 = new AppBarKt$settleAppBar$1(continuation);
@@ -7847,7 +7847,7 @@ public final class AppBarKt {
             }
             return coroutine_suspended;
         }
-        return Velocity.m8225boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+        return Velocity.m8487boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -7894,12 +7894,12 @@ public final class AppBarKt {
     static {
         float f = 16;
         float f2 = 12;
-        float m7996constructorimpl = Dp.m7996constructorimpl(Dp.m7996constructorimpl(f) - Dp.m7996constructorimpl(f2));
-        BottomAppBarHorizontalPadding = m7996constructorimpl;
-        float m7996constructorimpl2 = Dp.m7996constructorimpl(Dp.m7996constructorimpl(f) - Dp.m7996constructorimpl(f2));
-        BottomAppBarVerticalPadding = m7996constructorimpl2;
-        FABHorizontalPadding = Dp.m7996constructorimpl(Dp.m7996constructorimpl(f) - m7996constructorimpl);
-        FABVerticalPadding = Dp.m7996constructorimpl(Dp.m7996constructorimpl(f2) - m7996constructorimpl2);
+        float m8258constructorimpl = Dp.m8258constructorimpl(Dp.m8258constructorimpl(f) - Dp.m8258constructorimpl(f2));
+        BottomAppBarHorizontalPadding = m8258constructorimpl;
+        float m8258constructorimpl2 = Dp.m8258constructorimpl(Dp.m8258constructorimpl(f) - Dp.m8258constructorimpl(f2));
+        BottomAppBarVerticalPadding = m8258constructorimpl2;
+        FABHorizontalPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(f) - m8258constructorimpl);
+        FABVerticalPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(f2) - m8258constructorimpl2);
         LocalSingleRowTopAppBarOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.AppBarKt$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
@@ -7917,10 +7917,10 @@ public final class AppBarKt {
             }
         }, 1, null);
         TopTitleAlphaEasing = new CubicBezierEasing(0.8f, 0.0f, 0.8f, 0.15f);
-        MediumTitleBottomPadding = Dp.m7996constructorimpl(24);
-        LargeTitleBottomPadding = Dp.m7996constructorimpl(28);
-        float m7996constructorimpl3 = Dp.m7996constructorimpl(4);
-        TopAppBarHorizontalPadding = m7996constructorimpl3;
-        TopAppBarTitleInset = Dp.m7996constructorimpl(Dp.m7996constructorimpl(f) - m7996constructorimpl3);
+        MediumTitleBottomPadding = Dp.m8258constructorimpl(24);
+        LargeTitleBottomPadding = Dp.m8258constructorimpl(28);
+        float m8258constructorimpl3 = Dp.m8258constructorimpl(4);
+        TopAppBarHorizontalPadding = m8258constructorimpl3;
+        TopAppBarTitleInset = Dp.m8258constructorimpl(Dp.m8258constructorimpl(f) - m8258constructorimpl3);
     }
 }

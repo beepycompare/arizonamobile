@@ -41,7 +41,7 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
     }
 
     /* renamed from: getThreshold-D9Ej5fM  reason: not valid java name */
-    public final float m3630getThresholdD9Ej5fM() {
+    public final float m3716getThresholdD9Ej5fM() {
         return this.threshold;
     }
 
@@ -64,7 +64,7 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
         pullToRefreshModifierNode.setOnRefresh(this.onRefresh);
         pullToRefreshModifierNode.setEnabled(this.enabled);
         pullToRefreshModifierNode.setState(this.state);
-        pullToRefreshModifierNode.m3641setThreshold0680j_4(this.threshold);
+        pullToRefreshModifierNode.m3727setThreshold0680j_4(this.threshold);
         boolean isRefreshing = pullToRefreshModifierNode.isRefreshing();
         boolean z = this.isRefreshing;
         if (isRefreshing != z) {
@@ -80,7 +80,7 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
         inspectorInfo.getProperties().set("onRefresh", this.onRefresh);
         inspectorInfo.getProperties().set("enabled", Boolean.valueOf(this.enabled));
         inspectorInfo.getProperties().set(RemoteConfigConstants.ResponseFieldKey.STATE, this.state);
-        inspectorInfo.getProperties().set("threshold", Dp.m7994boximpl(this.threshold));
+        inspectorInfo.getProperties().set("threshold", Dp.m8256boximpl(this.threshold));
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -90,13 +90,13 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
         }
         if (obj instanceof PullToRefreshElement) {
             PullToRefreshElement pullToRefreshElement = (PullToRefreshElement) obj;
-            return this.isRefreshing == pullToRefreshElement.isRefreshing && this.enabled == pullToRefreshElement.enabled && this.onRefresh == pullToRefreshElement.onRefresh && Intrinsics.areEqual(this.state, pullToRefreshElement.state) && Dp.m8001equalsimpl0(this.threshold, pullToRefreshElement.threshold);
+            return this.isRefreshing == pullToRefreshElement.isRefreshing && this.enabled == pullToRefreshElement.enabled && this.onRefresh == pullToRefreshElement.onRefresh && Intrinsics.areEqual(this.state, pullToRefreshElement.state) && Dp.m8263equalsimpl0(this.threshold, pullToRefreshElement.threshold);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Boolean.hashCode(this.isRefreshing) * 31) + Boolean.hashCode(this.enabled)) * 31) + this.onRefresh.hashCode()) * 31) + this.state.hashCode()) * 31) + Dp.m8002hashCodeimpl(this.threshold);
+        return (((((((Boolean.hashCode(this.isRefreshing) * 31) + Boolean.hashCode(this.enabled)) * 31) + this.onRefresh.hashCode()) * 31) + this.state.hashCode()) * 31) + Dp.m8264hashCodeimpl(this.threshold);
     }
 }

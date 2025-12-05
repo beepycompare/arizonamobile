@@ -24,19 +24,11 @@ public final class ShaderBrushSpan extends CharacterStyle implements UpdateAppea
     private final State<Shader> shaderState;
     private final MutableState size$delegate;
 
-    public final float getAlpha() {
-        return this.alpha;
-    }
-
-    public final ShaderBrush getShaderBrush() {
-        return this.shaderBrush;
-    }
-
     public ShaderBrushSpan(ShaderBrush shaderBrush, float f) {
         MutableState mutableStateOf$default;
         this.shaderBrush = shaderBrush;
         this.alpha = f;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(Size.Companion.m5113getUnspecifiedNHjbRc()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5236boximpl(Size.Companion.m5256getUnspecifiedNHjbRc()), null, 2, null);
         this.size$delegate = mutableStateOf$default;
         this.shaderState = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.ui.text.platform.style.ShaderBrushSpan$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
@@ -48,22 +40,30 @@ public final class ShaderBrushSpan extends CharacterStyle implements UpdateAppea
         });
     }
 
+    public final float getAlpha() {
+        return this.alpha;
+    }
+
+    public final ShaderBrush getShaderBrush() {
+        return this.shaderBrush;
+    }
+
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    public final long m7750getSizeNHjbRc() {
-        return ((Size) this.size$delegate.getValue()).m5110unboximpl();
+    public final long m7996getSizeNHjbRc() {
+        return ((Size) this.size$delegate.getValue()).m5253unboximpl();
     }
 
     /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-    public final void m7751setSizeuvyYCjk(long j) {
-        this.size$delegate.setValue(Size.m5093boximpl(j));
+    public final void m7997setSizeuvyYCjk(long j) {
+        this.size$delegate.setValue(Size.m5236boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Shader shaderState$lambda$0(ShaderBrushSpan shaderBrushSpan) {
-        if (shaderBrushSpan.m7750getSizeNHjbRc() == InlineClassHelperKt.UnspecifiedPackedFloats || Size.m5107isEmptyimpl(shaderBrushSpan.m7750getSizeNHjbRc())) {
+        if (shaderBrushSpan.m7996getSizeNHjbRc() == InlineClassHelperKt.UnspecifiedPackedFloats || Size.m5250isEmptyimpl(shaderBrushSpan.m7996getSizeNHjbRc())) {
             return null;
         }
-        return shaderBrushSpan.shaderBrush.mo5249createShaderuvyYCjk(shaderBrushSpan.m7750getSizeNHjbRc());
+        return shaderBrushSpan.shaderBrush.mo5393createShaderuvyYCjk(shaderBrushSpan.m7996getSizeNHjbRc());
     }
 
     @Override // android.text.style.CharacterStyle

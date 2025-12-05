@@ -24,7 +24,7 @@ public final class TooltipPositionProviderImpl implements PopupPositionProvider 
     }
 
     /* renamed from: getType-lOKsHw4  reason: not valid java name */
-    public final int m3382getTypelOKsHw4() {
+    public final int m3468getTypelOKsHw4() {
         return this.type;
     }
 
@@ -34,50 +34,50 @@ public final class TooltipPositionProviderImpl implements PopupPositionProvider 
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
-    public long mo394calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+    public long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
         int i = this.type;
-        if (TooltipAnchorPosition.m3349equalsimpl0(i, TooltipAnchorPosition.Companion.m3356getLeftlOKsHw4())) {
-            return m3383leftPositioningoFUgxo0(intRect, j2);
+        if (TooltipAnchorPosition.m3435equalsimpl0(i, TooltipAnchorPosition.Companion.m3442getLeftlOKsHw4())) {
+            return m3469leftPositioningoFUgxo0(intRect, j2);
         }
-        if (TooltipAnchorPosition.m3349equalsimpl0(i, TooltipAnchorPosition.Companion.m3357getRightlOKsHw4())) {
-            return m3384rightPositioninguHY26d4(intRect, j2, j);
+        if (TooltipAnchorPosition.m3435equalsimpl0(i, TooltipAnchorPosition.Companion.m3443getRightlOKsHw4())) {
+            return m3470rightPositioninguHY26d4(intRect, j2, j);
         }
-        if (TooltipAnchorPosition.m3349equalsimpl0(i, TooltipAnchorPosition.Companion.m3353getAbovelOKsHw4())) {
-            return m3379abovePositioninguHY26d4(intRect, j2, j);
+        if (TooltipAnchorPosition.m3435equalsimpl0(i, TooltipAnchorPosition.Companion.m3439getAbovelOKsHw4())) {
+            return m3465abovePositioninguHY26d4(intRect, j2, j);
         }
-        if (TooltipAnchorPosition.m3349equalsimpl0(i, TooltipAnchorPosition.Companion.m3354getBelowlOKsHw4())) {
-            return m3380belowPositioninguHY26d4(intRect, j2, j);
+        if (TooltipAnchorPosition.m3435equalsimpl0(i, TooltipAnchorPosition.Companion.m3440getBelowlOKsHw4())) {
+            return m3466belowPositioninguHY26d4(intRect, j2, j);
         }
-        if (TooltipAnchorPosition.m3349equalsimpl0(i, TooltipAnchorPosition.Companion.m3358getStartlOKsHw4())) {
-            return m3385startPositioning_JLpSYE(layoutDirection, intRect, j2, j);
+        if (TooltipAnchorPosition.m3435equalsimpl0(i, TooltipAnchorPosition.Companion.m3444getStartlOKsHw4())) {
+            return m3471startPositioning_JLpSYE(layoutDirection, intRect, j2, j);
         }
-        if (TooltipAnchorPosition.m3349equalsimpl0(i, TooltipAnchorPosition.Companion.m3355getEndlOKsHw4())) {
-            return m3381endPositioning_JLpSYE(layoutDirection, intRect, j2, j);
+        if (TooltipAnchorPosition.m3435equalsimpl0(i, TooltipAnchorPosition.Companion.m3441getEndlOKsHw4())) {
+            return m3467endPositioning_JLpSYE(layoutDirection, intRect, j2, j);
         }
-        return m3379abovePositioninguHY26d4(intRect, j2, j);
+        return m3465abovePositioninguHY26d4(intRect, j2, j);
     }
 
     /* renamed from: leftPositioning-oFUgxo0  reason: not valid java name */
-    public final long m3383leftPositioningoFUgxo0(IntRect intRect, long j) {
+    public final long m3469leftPositioningoFUgxo0(IntRect intRect, long j) {
         int left = intRect.getLeft() - (((int) (j >> 32)) + this.tooltipAnchorSpacing);
         if (left < 0) {
             left = intRect.getRight() + this.tooltipAnchorSpacing;
         }
-        return IntOffset.m8118constructorimpl((left << 32) | ((((intRect.getTop() + intRect.getBottom()) - ((int) (j & 4294967295L))) / 2) & 4294967295L));
+        return IntOffset.m8380constructorimpl((left << 32) | ((((intRect.getTop() + intRect.getBottom()) - ((int) (j & 4294967295L))) / 2) & 4294967295L));
     }
 
     /* renamed from: rightPositioning-uHY26d4  reason: not valid java name */
-    public final long m3384rightPositioninguHY26d4(IntRect intRect, long j, long j2) {
+    public final long m3470rightPositioninguHY26d4(IntRect intRect, long j, long j2) {
         int right = intRect.getRight() + this.tooltipAnchorSpacing;
         int i = (int) (j >> 32);
         if (right + i > ((int) (j2 >> 32))) {
             right = intRect.getLeft() - (i + this.tooltipAnchorSpacing);
         }
-        return IntOffset.m8118constructorimpl((right << 32) | ((((intRect.getTop() + intRect.getBottom()) - ((int) (j & 4294967295L))) / 2) & 4294967295L));
+        return IntOffset.m8380constructorimpl((right << 32) | ((((intRect.getTop() + intRect.getBottom()) - ((int) (j & 4294967295L))) / 2) & 4294967295L));
     }
 
     /* renamed from: abovePositioning-uHY26d4  reason: not valid java name */
-    public final long m3379abovePositioninguHY26d4(IntRect intRect, long j, long j2) {
+    public final long m3465abovePositioninguHY26d4(IntRect intRect, long j, long j2) {
         int i = (int) (j >> 32);
         int left = intRect.getLeft() + ((intRect.getWidth() - i) / 2);
         if (left < 0) {
@@ -89,11 +89,11 @@ public final class TooltipPositionProviderImpl implements PopupPositionProvider 
         if (top < 0) {
             top = intRect.getBottom() + this.tooltipAnchorSpacing;
         }
-        return IntOffset.m8118constructorimpl((left << 32) | (top & 4294967295L));
+        return IntOffset.m8380constructorimpl((left << 32) | (top & 4294967295L));
     }
 
     /* renamed from: belowPositioning-uHY26d4  reason: not valid java name */
-    public final long m3380belowPositioninguHY26d4(IntRect intRect, long j, long j2) {
+    public final long m3466belowPositioninguHY26d4(IntRect intRect, long j, long j2) {
         int i = (int) (j >> 32);
         int left = intRect.getLeft() + ((intRect.getWidth() - i) / 2);
         if (left < 0) {
@@ -106,22 +106,22 @@ public final class TooltipPositionProviderImpl implements PopupPositionProvider 
         if (bottom + i2 > ((int) (j2 & 4294967295L))) {
             bottom = (intRect.getTop() - i2) - this.tooltipAnchorSpacing;
         }
-        return IntOffset.m8118constructorimpl((left << 32) | (bottom & 4294967295L));
+        return IntOffset.m8380constructorimpl((left << 32) | (bottom & 4294967295L));
     }
 
     /* renamed from: startPositioning-_JLpSYE  reason: not valid java name */
-    public final long m3385startPositioning_JLpSYE(LayoutDirection layoutDirection, IntRect intRect, long j, long j2) {
+    public final long m3471startPositioning_JLpSYE(LayoutDirection layoutDirection, IntRect intRect, long j, long j2) {
         if (layoutDirection == LayoutDirection.Ltr) {
-            return m3383leftPositioningoFUgxo0(intRect, j);
+            return m3469leftPositioningoFUgxo0(intRect, j);
         }
-        return m3384rightPositioninguHY26d4(intRect, j, j2);
+        return m3470rightPositioninguHY26d4(intRect, j, j2);
     }
 
     /* renamed from: endPositioning-_JLpSYE  reason: not valid java name */
-    public final long m3381endPositioning_JLpSYE(LayoutDirection layoutDirection, IntRect intRect, long j, long j2) {
+    public final long m3467endPositioning_JLpSYE(LayoutDirection layoutDirection, IntRect intRect, long j, long j2) {
         if (layoutDirection == LayoutDirection.Ltr) {
-            return m3384rightPositioninguHY26d4(intRect, j, j2);
+            return m3470rightPositioninguHY26d4(intRect, j, j2);
         }
-        return m3383leftPositioningoFUgxo0(intRect, j);
+        return m3469leftPositioningoFUgxo0(intRect, j);
     }
 }

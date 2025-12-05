@@ -9,10 +9,10 @@ public final class X2 extends Di {
 
     @Override // io.appmetrica.analytics.impl.Di
     public final Object a(int i) {
-        return Boolean.valueOf(this.f447a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f530a.getResources().getBoolean(i));
     }
 
     public final Boolean b(int i) {
-        return Boolean.valueOf(this.f447a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f530a.getResources().getBoolean(i));
     }
 }

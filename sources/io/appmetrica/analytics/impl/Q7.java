@@ -8,21 +8,21 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class Q7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f649a;
+    public final Context f732a;
     public final ProtobufStateStorage b;
     public final S7 c;
-    public final InterfaceC0178co d;
+    public final InterfaceC0177co d;
     public final Jm e;
     public final Vi f;
     public final Ti g;
     public final A6 h;
     public R7 i;
 
-    public Q7(Context context, ProtobufStateStorage protobufStateStorage, S7 s7, InterfaceC0178co interfaceC0178co, Jm jm, Vi vi, Ti ti, A6 a6, R7 r7) {
-        this.f649a = context;
+    public Q7(Context context, ProtobufStateStorage protobufStateStorage, S7 s7, InterfaceC0177co interfaceC0177co, Jm jm, Vi vi, Ti ti, A6 a6, R7 r7) {
+        this.f732a = context;
         this.b = protobufStateStorage;
         this.c = s7;
-        this.d = interfaceC0178co;
+        this.d = interfaceC0177co;
         this.e = jm;
         this.f = vi;
         this.g = ti;
@@ -57,7 +57,7 @@ public abstract class Q7 {
             R7 r72 = (R7) this.e.invoke(u7, list);
             this.i = r72;
             this.b.save(r72);
-            AbstractC0276gj.a("Update distribution data: %s -> %s", r7, this.i);
+            AbstractC0275gj.a("Update distribution data: %s -> %s", r7, this.i);
         }
         return z;
     }
@@ -75,7 +75,7 @@ public abstract class Q7 {
 
     public final U7 a(U7 u7) {
         U7 c;
-        this.h.a(this.f649a);
+        this.h.a(this.f732a);
         synchronized (this) {
             b(u7);
             c = c();
@@ -84,7 +84,7 @@ public abstract class Q7 {
     }
 
     public final U7 b() {
-        this.h.a(this.f649a);
+        this.h.a(this.f732a);
         return c();
     }
 }

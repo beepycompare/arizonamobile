@@ -27,40 +27,39 @@ import kotlin.jvm.functions.Function4;
 /* loaded from: classes.dex */
 public final class ContextualFlowLayoutKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ContextualFlowColumn$lambda$5(int i, Modifier modifier, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, Alignment.Horizontal horizontal2, int i2, int i3, ContextualFlowColumnOverflow contextualFlowColumnOverflow, Function4 function4, int i4, int i5, Composer composer, int i6) {
+    public static final Unit ContextualFlowColumn$lambda$3(int i, Modifier modifier, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, Alignment.Horizontal horizontal2, int i2, int i3, ContextualFlowColumnOverflow contextualFlowColumnOverflow, Function4 function4, int i4, int i5, Composer composer, int i6) {
         ContextualFlowColumn(i, modifier, vertical, horizontal, horizontal2, i2, i3, contextualFlowColumnOverflow, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ContextualFlowRow$lambda$2(int i, Modifier modifier, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, Alignment.Vertical vertical2, int i2, int i3, ContextualFlowRowOverflow contextualFlowRowOverflow, Function4 function4, int i4, int i5, Composer composer, int i6) {
+    public static final Unit ContextualFlowRow$lambda$3(int i, Modifier modifier, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, Alignment.Vertical vertical2, int i2, int i3, ContextualFlowRowOverflow contextualFlowRowOverflow, Function4 function4, int i4, int i5, Composer composer, int i6) {
         ContextualFlowRow(i, modifier, horizontal, vertical, vertical2, i2, i3, contextualFlowRowOverflow, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), i5);
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x01c9, code lost:
-        if (r6 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L80;
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x01ba, code lost:
+        if (r6 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L87;
      */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x012e  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x022f  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:154:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0220  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0234  */
+    /* JADX WARN: Removed duplicated region for block: B:148:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00fa  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x011f  */
     @Deprecated(message = "ContextualFlowLayouts are no longer maintained")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -87,9 +86,7 @@ public final class ContextualFlowLayoutKt {
         ArrayList arrayList;
         Composer startRestartGroup = composer.startRestartGroup(-294153140);
         ComposerKt.sourceInformation(startRestartGroup, "C(ContextualFlowRow)N(itemCount,modifier,horizontalArrangement,verticalArrangement,itemVerticalAlignment,maxItemsInEachRow,maxLines,overflow,content)80@3819L53,82@3926L209,97@4434L336,88@4168L602,107@4775L68:ContextualFlowLayout.kt#2w3rfo");
-        if ((i5 & 1) != 0) {
-            i6 = i4 | 6;
-        } else if ((i4 & 6) == 0) {
+        if ((i4 & 6) == 0) {
             i6 = (startRestartGroup.changed(i) ? 4 : 2) | i4;
         } else {
             i6 = i4;
@@ -137,13 +134,11 @@ public final class ContextualFlowLayoutKt {
                         } else if ((i4 & 12582912) == 0) {
                             i6 |= startRestartGroup.changed(contextualFlowRowOverflow) ? 8388608 : 4194304;
                         }
-                        if ((i5 & 256) != 0) {
-                            i6 |= 100663296;
-                        } else if ((i4 & 100663296) == 0) {
+                        if ((i4 & 100663296) == 0) {
                             i6 |= startRestartGroup.changedInstance(function4) ? 67108864 : 33554432;
                         }
                         companion = companion;
-                        if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+                        if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
                             startRestartGroup.skipToGroupEnd();
                             vertical4 = vertical;
                             i13 = i2;
@@ -171,7 +166,7 @@ public final class ContextualFlowLayoutKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-294153140, i6, -1, "androidx.compose.foundation.layout.ContextualFlowRow (ContextualFlowLayout.kt:79)");
                             }
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 786694049, "CC(remember):ContextualFlowLayout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 786690945, "CC(remember):ContextualFlowLayout.kt#9igjgp");
                             int i19 = 29360128 & i6;
                             boolean z = i19 == 8388608;
                             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -181,7 +176,7 @@ public final class ContextualFlowLayoutKt {
                             }
                             FlowLayoutOverflowState flowLayoutOverflowState = (FlowLayoutOverflowState) rememberedValue;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 786697629, "CC(remember):ContextualFlowLayout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 786694525, "CC(remember):ContextualFlowLayout.kt#9igjgp");
                             boolean z2 = i19 == 8388608;
                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                             if (!z2) {
@@ -193,22 +188,12 @@ public final class ContextualFlowLayoutKt {
                             arrayList = arrayList2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             int i20 = i6 >> 6;
-                            SubcomposeLayoutKt.SubcomposeLayout(companion, contextualRowMeasurementHelper(start, vertical5, vertical3, i17, i18, flowLayoutOverflowState, i, (List) arrayList, ComposableLambdaKt.rememberComposableLambda(-1677845586, true, new Function4<Integer, FlowLineInfo, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$ContextualFlowRow$measurePolicy$1
+                            SubcomposeLayoutKt.SubcomposeLayout(companion, contextualRowMeasurementHelper(start, vertical5, vertical3, i17, i18, flowLayoutOverflowState, i, (List) arrayList, ComposableLambdaKt.rememberComposableLambda(-1677845586, true, new Function4() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$$ExternalSyntheticLambda0
                                 @Override // kotlin.jvm.functions.Function4
-                                public /* bridge */ /* synthetic */ Unit invoke(Integer num, FlowLineInfo flowLineInfo, Composer composer2, Integer num2) {
-                                    invoke(num.intValue(), flowLineInfo, composer2, num2.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(int i21, FlowLineInfo flowLineInfo, Composer composer2, int i22) {
-                                    ComposerKt.sourceInformation(composer2, "CN(index,info)105@4746L14:ContextualFlowLayout.kt#2w3rfo");
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-1677845586, i22, -1, "androidx.compose.foundation.layout.ContextualFlowRow.<anonymous> (ContextualFlowLayout.kt:98)");
-                                    }
-                                    function4.invoke(new ContextualFlowRowScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m768getMaxMainAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m767getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i21), composer2, Integer.valueOf((i22 << 3) & 112));
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
+                                public final Object invoke(Object obj4, Object obj5, Object obj6, Object obj7) {
+                                    Unit ContextualFlowRow$lambda$2;
+                                    ContextualFlowRow$lambda$2 = ContextualFlowLayoutKt.ContextualFlowRow$lambda$2(Function4.this, ((Integer) obj4).intValue(), (FlowLineInfo) obj5, (Composer) obj6, ((Integer) obj7).intValue());
+                                    return ContextualFlowRow$lambda$2;
                                 }
                             }, startRestartGroup, 54), startRestartGroup, (i20 & 57344) | (i20 & 14) | 100663296 | (i20 & 112) | (i20 & 896) | (i20 & 7168) | ((i6 << 18) & 3670016)), startRestartGroup, (i6 >> 3) & 14, 0);
                             if (ComposerKt.isTraceInProgress()) {
@@ -224,12 +209,12 @@ public final class ContextualFlowLayoutKt {
                         final Alignment.Vertical vertical6 = vertical3;
                         endRestartGroup = startRestartGroup.endRestartGroup();
                         if (endRestartGroup != null) {
-                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$$ExternalSyntheticLambda0
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj4, Object obj5) {
-                                    Unit ContextualFlowRow$lambda$2;
-                                    ContextualFlowRow$lambda$2 = ContextualFlowLayoutKt.ContextualFlowRow$lambda$2(i, modifier2, horizontal2, vertical4, vertical6, i13, i14, contextualFlowRowOverflow2, function4, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
-                                    return ContextualFlowRow$lambda$2;
+                                    Unit ContextualFlowRow$lambda$3;
+                                    ContextualFlowRow$lambda$3 = ContextualFlowLayoutKt.ContextualFlowRow$lambda$3(i, modifier2, horizontal2, vertical4, vertical6, i13, i14, contextualFlowRowOverflow2, function4, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
+                                    return ContextualFlowRow$lambda$3;
                                 }
                             });
                             return;
@@ -246,10 +231,10 @@ public final class ContextualFlowLayoutKt {
                     i12 = i5 & 128;
                     if (i12 != 0) {
                     }
-                    if ((i5 & 256) != 0) {
+                    if ((i4 & 100663296) == 0) {
                     }
                     companion = companion;
-                    if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+                    if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
                     }
                     final Modifier modifier22 = companion;
                     final Alignment.Vertical vertical62 = vertical3;
@@ -270,10 +255,10 @@ public final class ContextualFlowLayoutKt {
                 i12 = i5 & 128;
                 if (i12 != 0) {
                 }
-                if ((i5 & 256) != 0) {
+                if ((i4 & 100663296) == 0) {
                 }
                 companion = companion;
-                if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+                if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
                 }
                 final Modifier modifier222 = companion;
                 final Alignment.Vertical vertical622 = vertical3;
@@ -298,10 +283,10 @@ public final class ContextualFlowLayoutKt {
             i12 = i5 & 128;
             if (i12 != 0) {
             }
-            if ((i5 & 256) != 0) {
+            if ((i4 & 100663296) == 0) {
             }
             companion = companion;
-            if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+            if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
             }
             final Modifier modifier2222 = companion;
             final Alignment.Vertical vertical6222 = vertical3;
@@ -330,10 +315,10 @@ public final class ContextualFlowLayoutKt {
         i12 = i5 & 128;
         if (i12 != 0) {
         }
-        if ((i5 & 256) != 0) {
+        if ((i4 & 100663296) == 0) {
         }
         companion = companion;
-        if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+        if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
         }
         final Modifier modifier22222 = companion;
         final Alignment.Vertical vertical62222 = vertical3;
@@ -342,29 +327,41 @@ public final class ContextualFlowLayoutKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x01c9, code lost:
-        if (r6 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L80;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ContextualFlowRow$lambda$2(Function4 function4, int i, FlowLineInfo flowLineInfo, Composer composer, int i2) {
+        ComposerKt.sourceInformation(composer, "CN(index,info)105@4746L14:ContextualFlowLayout.kt#2w3rfo");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-1677845586, i2, -1, "androidx.compose.foundation.layout.ContextualFlowRow.<anonymous> (ContextualFlowLayout.kt:98)");
+        }
+        function4.invoke(new ContextualFlowRowScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m850getMaxMainAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m849getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i), composer, Integer.valueOf((i2 << 3) & 112));
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x01ba, code lost:
+        if (r6 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L87;
      */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x012e  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x022f  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:154:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0220  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0234  */
+    /* JADX WARN: Removed duplicated region for block: B:148:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00fa  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x011f  */
     @Deprecated(message = "ContextualFlowLayouts are no longer maintained")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -391,9 +388,7 @@ public final class ContextualFlowLayoutKt {
         ArrayList arrayList;
         Composer startRestartGroup = composer.startRestartGroup(1986851536);
         ComposerKt.sourceInformation(startRestartGroup, "C(ContextualFlowColumn)N(itemCount,modifier,verticalArrangement,horizontalArrangement,itemHorizontalAlignment,maxItemsInEachColumn,maxLines,overflow,content)155@7415L53,157@7522L209,172@8034L339,163@7764L609,183@8379L68:ContextualFlowLayout.kt#2w3rfo");
-        if ((i5 & 1) != 0) {
-            i6 = i4 | 6;
-        } else if ((i4 & 6) == 0) {
+        if ((i4 & 6) == 0) {
             i6 = (startRestartGroup.changed(i) ? 4 : 2) | i4;
         } else {
             i6 = i4;
@@ -441,13 +436,11 @@ public final class ContextualFlowLayoutKt {
                         } else if ((i4 & 12582912) == 0) {
                             i6 |= startRestartGroup.changed(contextualFlowColumnOverflow) ? 8388608 : 4194304;
                         }
-                        if ((i5 & 256) != 0) {
-                            i6 |= 100663296;
-                        } else if ((i4 & 100663296) == 0) {
+                        if ((i4 & 100663296) == 0) {
                             i6 |= startRestartGroup.changedInstance(function4) ? 67108864 : 33554432;
                         }
                         companion = companion;
-                        if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+                        if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
                             startRestartGroup.skipToGroupEnd();
                             horizontal4 = horizontal;
                             i13 = i2;
@@ -475,7 +468,7 @@ public final class ContextualFlowLayoutKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(1986851536, i6, -1, "androidx.compose.foundation.layout.ContextualFlowColumn (ContextualFlowLayout.kt:154)");
                             }
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1896099899, "CC(remember):ContextualFlowLayout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1896103003, "CC(remember):ContextualFlowLayout.kt#9igjgp");
                             int i19 = 29360128 & i6;
                             boolean z = i19 == 8388608;
                             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -485,7 +478,7 @@ public final class ContextualFlowLayoutKt {
                             }
                             FlowLayoutOverflowState flowLayoutOverflowState = (FlowLayoutOverflowState) rememberedValue;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1896096319, "CC(remember):ContextualFlowLayout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1896099423, "CC(remember):ContextualFlowLayout.kt#9igjgp");
                             boolean z2 = i19 == 8388608;
                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                             if (!z2) {
@@ -497,22 +490,12 @@ public final class ContextualFlowLayoutKt {
                             arrayList = arrayList2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             int i20 = i6 >> 6;
-                            SubcomposeLayoutKt.SubcomposeLayout(companion, contextualColumnMeasureHelper(top, horizontal5, horizontal3, i17, i18, flowLayoutOverflowState, i, (List) arrayList, ComposableLambdaKt.rememberComposableLambda(620176540, true, new Function4<Integer, FlowLineInfo, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$ContextualFlowColumn$measurePolicy$1
+                            SubcomposeLayoutKt.SubcomposeLayout(companion, contextualColumnMeasureHelper(top, horizontal5, horizontal3, i17, i18, flowLayoutOverflowState, i, (List) arrayList, ComposableLambdaKt.rememberComposableLambda(620176540, true, new Function4() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function4
-                                public /* bridge */ /* synthetic */ Unit invoke(Integer num, FlowLineInfo flowLineInfo, Composer composer2, Integer num2) {
-                                    invoke(num.intValue(), flowLineInfo, composer2, num2.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(int i21, FlowLineInfo flowLineInfo, Composer composer2, int i22) {
-                                    ComposerKt.sourceInformation(composer2, "CN(index,info)180@8349L14:ContextualFlowLayout.kt#2w3rfo");
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(620176540, i22, -1, "androidx.compose.foundation.layout.ContextualFlowColumn.<anonymous> (ContextualFlowLayout.kt:173)");
-                                    }
-                                    function4.invoke(new ContextualFlowColumnScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m767getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m768getMaxMainAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i21), composer2, Integer.valueOf((i22 << 3) & 112));
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
+                                public final Object invoke(Object obj4, Object obj5, Object obj6, Object obj7) {
+                                    Unit ContextualFlowColumn$lambda$2;
+                                    ContextualFlowColumn$lambda$2 = ContextualFlowLayoutKt.ContextualFlowColumn$lambda$2(Function4.this, ((Integer) obj4).intValue(), (FlowLineInfo) obj5, (Composer) obj6, ((Integer) obj7).intValue());
+                                    return ContextualFlowColumn$lambda$2;
                                 }
                             }, startRestartGroup, 54), startRestartGroup, (i20 & 57344) | (i20 & 14) | 100663296 | (i20 & 112) | (i20 & 896) | (i20 & 7168) | ((i6 << 18) & 3670016)), startRestartGroup, (i6 >> 3) & 14, 0);
                             if (ComposerKt.isTraceInProgress()) {
@@ -528,12 +511,12 @@ public final class ContextualFlowLayoutKt {
                         final Alignment.Horizontal horizontal6 = horizontal3;
                         endRestartGroup = startRestartGroup.endRestartGroup();
                         if (endRestartGroup != null) {
-                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$$ExternalSyntheticLambda1
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.ContextualFlowLayoutKt$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj4, Object obj5) {
-                                    Unit ContextualFlowColumn$lambda$5;
-                                    ContextualFlowColumn$lambda$5 = ContextualFlowLayoutKt.ContextualFlowColumn$lambda$5(i, modifier2, vertical2, horizontal4, horizontal6, i13, i14, contextualFlowColumnOverflow2, function4, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
-                                    return ContextualFlowColumn$lambda$5;
+                                    Unit ContextualFlowColumn$lambda$3;
+                                    ContextualFlowColumn$lambda$3 = ContextualFlowLayoutKt.ContextualFlowColumn$lambda$3(i, modifier2, vertical2, horizontal4, horizontal6, i13, i14, contextualFlowColumnOverflow2, function4, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
+                                    return ContextualFlowColumn$lambda$3;
                                 }
                             });
                             return;
@@ -550,10 +533,10 @@ public final class ContextualFlowLayoutKt {
                     i12 = i5 & 128;
                     if (i12 != 0) {
                     }
-                    if ((i5 & 256) != 0) {
+                    if ((i4 & 100663296) == 0) {
                     }
                     companion = companion;
-                    if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+                    if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
                     }
                     final Modifier modifier22 = companion;
                     final Alignment.Horizontal horizontal62 = horizontal3;
@@ -574,10 +557,10 @@ public final class ContextualFlowLayoutKt {
                 i12 = i5 & 128;
                 if (i12 != 0) {
                 }
-                if ((i5 & 256) != 0) {
+                if ((i4 & 100663296) == 0) {
                 }
                 companion = companion;
-                if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+                if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
                 }
                 final Modifier modifier222 = companion;
                 final Alignment.Horizontal horizontal622 = horizontal3;
@@ -602,10 +585,10 @@ public final class ContextualFlowLayoutKt {
             i12 = i5 & 128;
             if (i12 != 0) {
             }
-            if ((i5 & 256) != 0) {
+            if ((i4 & 100663296) == 0) {
             }
             companion = companion;
-            if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+            if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
             }
             final Modifier modifier2222 = companion;
             final Alignment.Horizontal horizontal6222 = horizontal3;
@@ -634,16 +617,29 @@ public final class ContextualFlowLayoutKt {
         i12 = i5 & 128;
         if (i12 != 0) {
         }
-        if ((i5 & 256) != 0) {
+        if ((i4 & 100663296) == 0) {
         }
         companion = companion;
-        if (!startRestartGroup.shouldExecute((38347923 & i6) != 38347922, i6 & 1)) {
+        if (!startRestartGroup.shouldExecute((i6 & 38347923) != 38347922, i6 & 1)) {
         }
         final Modifier modifier22222 = companion;
         final Alignment.Horizontal horizontal62222 = horizontal3;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ContextualFlowColumn$lambda$2(Function4 function4, int i, FlowLineInfo flowLineInfo, Composer composer, int i2) {
+        ComposerKt.sourceInformation(composer, "CN(index,info)180@8349L14:ContextualFlowLayout.kt#2w3rfo");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(620176540, i2, -1, "androidx.compose.foundation.layout.ContextualFlowColumn.<anonymous> (ContextualFlowLayout.kt:173)");
+        }
+        function4.invoke(new ContextualFlowColumnScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m849getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m850getMaxMainAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i), composer, Integer.valueOf((i2 << 3) & 112));
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:32:0x0076, code lost:
@@ -669,7 +665,7 @@ public final class ContextualFlowLayoutKt {
         if (r3 != androidx.compose.runtime.Composer.Companion.getEmpty()) goto L43;
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x00e7, code lost:
-        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(true, r21, r22, r21.mo709getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.vertical$foundation_layout(r23), r22.mo709getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
+        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(true, r21, r22, r21.mo789getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.vertical$foundation_layout(r23), r22.mo789getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
         r30.updateRememberedValue(r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x010c, code lost:
@@ -700,7 +696,7 @@ public final class ContextualFlowLayoutKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(962906403, i4, -1, "androidx.compose.foundation.layout.contextualRowMeasurementHelper (ContextualFlowLayout.kt:384)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1935102030, "CC(remember):ContextualFlowLayout.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1935101358, "CC(remember):ContextualFlowLayout.kt#9igjgp");
         boolean z2 = false;
         boolean z3 = ((((i4 & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i4 & 6) == 4) | ((((i4 & 112) ^ 48) > 32 && composer.changed(vertical)) || (i4 & 48) == 32) | ((((i4 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(vertical2)) || (i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         if (((i4 & 7168) ^ 3072) > 2048) {
@@ -743,7 +739,7 @@ public final class ContextualFlowLayoutKt {
         if (r3 != androidx.compose.runtime.Composer.Companion.getEmpty()) goto L43;
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x00e7, code lost:
-        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(false, r22, r21, r21.mo709getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.horizontal$foundation_layout(r23), r22.mo709getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
+        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(false, r22, r21, r21.mo789getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.horizontal$foundation_layout(r23), r22.mo789getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
         r30.updateRememberedValue(r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x010c, code lost:
@@ -774,7 +770,7 @@ public final class ContextualFlowLayoutKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-676633639, i4, -1, "androidx.compose.foundation.layout.contextualColumnMeasureHelper (ContextualFlowLayout.kt:424)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1704847893, "CC(remember):ContextualFlowLayout.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1704848565, "CC(remember):ContextualFlowLayout.kt#9igjgp");
         boolean z2 = false;
         boolean z3 = ((((i4 & 14) ^ 6) > 4 && composer.changed(vertical)) || (i4 & 6) == 4) | ((((i4 & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i4 & 48) == 32) | ((((i4 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(horizontal2)) || (i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         if (((i4 & 7168) ^ 3072) > 2048) {

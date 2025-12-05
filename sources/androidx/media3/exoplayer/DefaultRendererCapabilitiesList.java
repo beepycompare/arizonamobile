@@ -13,11 +13,11 @@ import androidx.media3.exoplayer.metadata.MetadataOutput;
 import androidx.media3.exoplayer.text.TextOutput;
 import androidx.media3.exoplayer.video.VideoRendererEventListener;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DefaultRendererCapabilitiesList implements RendererCapabilitiesList {
     private final Renderer[] renderers;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Factory implements RendererCapabilitiesList.Factory {
         private final RenderersFactory renderersFactory;
 

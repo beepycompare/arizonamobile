@@ -45,12 +45,14 @@ public class SnapshotMutableFloatStateImpl extends StateObjectImpl implements Mu
             return;
         }
         FloatStateStateRecord floatStateStateRecord2 = this.next;
+        SnapshotMutableFloatStateImpl snapshotMutableFloatStateImpl = this;
+        FloatStateStateRecord floatStateStateRecord3 = floatStateStateRecord;
         synchronized (SnapshotKt.getLock()) {
             current = Snapshot.Companion.getCurrent();
-            ((FloatStateStateRecord) SnapshotKt.overwritableRecord(floatStateStateRecord2, this, current, floatStateStateRecord)).setValue(f);
+            ((FloatStateStateRecord) SnapshotKt.overwritableRecord(floatStateStateRecord2, snapshotMutableFloatStateImpl, current, floatStateStateRecord3)).setValue(f);
             Unit unit = Unit.INSTANCE;
         }
-        SnapshotKt.notifyWrite(current, this);
+        SnapshotKt.notifyWrite(current, snapshotMutableFloatStateImpl);
     }
 
     @Override // androidx.compose.runtime.snapshots.SnapshotMutableState
@@ -65,7 +67,7 @@ public class SnapshotMutableFloatStateImpl extends StateObjectImpl implements Mu
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit component2$lambda$4(SnapshotMutableFloatStateImpl snapshotMutableFloatStateImpl, float f) {
+    public static final Unit component2$lambda$0(SnapshotMutableFloatStateImpl snapshotMutableFloatStateImpl, float f) {
         snapshotMutableFloatStateImpl.setFloatValue(f);
         return Unit.INSTANCE;
     }
@@ -75,9 +77,9 @@ public class SnapshotMutableFloatStateImpl extends StateObjectImpl implements Mu
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableFloatStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$4;
-                component2$lambda$4 = SnapshotMutableFloatStateImpl.component2$lambda$4(SnapshotMutableFloatStateImpl.this, ((Float) obj).floatValue());
-                return component2$lambda$4;
+                Unit component2$lambda$0;
+                component2$lambda$0 = SnapshotMutableFloatStateImpl.component2$lambda$0(SnapshotMutableFloatStateImpl.this, ((Float) obj).floatValue());
+                return component2$lambda$0;
             }
         };
     }
@@ -109,16 +111,16 @@ public class SnapshotMutableFloatStateImpl extends StateObjectImpl implements Mu
     public static final class FloatStateStateRecord extends StateRecord {
         private float value;
 
+        public FloatStateStateRecord(long j, float f) {
+            super(j);
+            this.value = f;
+        }
+
         public final float getValue() {
             return this.value;
         }
 
         public final void setValue(float f) {
-            this.value = f;
-        }
-
-        public FloatStateStateRecord(long j, float f) {
-            super(j);
             this.value = f;
         }
 

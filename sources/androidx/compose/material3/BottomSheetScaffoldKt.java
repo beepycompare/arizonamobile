@@ -108,13 +108,13 @@ public final class BottomSheetScaffoldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BottomSheetScaffold_sdMYb0k$lambda$1(Function3 function3, Modifier modifier, BottomSheetScaffoldState bottomSheetScaffoldState, float f, float f2, Shape shape, long j, long j2, float f3, float f4, Function2 function2, boolean z, Function2 function22, Function3 function32, long j3, long j4, Function3 function33, int i, int i2, int i3, Composer composer, int i4) {
-        m1960BottomSheetScaffoldsdMYb0k(function3, modifier, bottomSheetScaffoldState, f, f2, shape, j, j2, f3, f4, function2, z, function22, function32, j3, j4, function33, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2046BottomSheetScaffoldsdMYb0k(function3, modifier, bottomSheetScaffoldState, f, f2, shape, j, j2, f3, f4, function2, z, function22, function32, j3, j4, function33, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit StandardBottomSheet_w7I5h1o$lambda$14(SheetState sheetState, float f, float f2, boolean z, Shape shape, long j, long j2, float f3, float f4, Function2 function2, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m1961StandardBottomSheetw7I5h1o(sheetState, f, f2, z, shape, j, j2, f3, f4, function2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
+        m2047StandardBottomSheetw7I5h1o(sheetState, f, f2, z, shape, j, j2, f3, f4, function2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
         return Unit.INSTANCE;
     }
 
@@ -162,7 +162,7 @@ public final class BottomSheetScaffoldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1960BottomSheetScaffoldsdMYb0k(final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, BottomSheetScaffoldState bottomSheetScaffoldState, float f, float f2, Shape shape, long j, long j2, float f3, float f4, Function2<? super Composer, ? super Integer, Unit> function2, boolean z, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super SnackbarHostState, ? super Composer, ? super Integer, Unit> function32, long j3, long j4, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function33, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2046BottomSheetScaffoldsdMYb0k(final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, BottomSheetScaffoldState bottomSheetScaffoldState, float f, float f2, Shape shape, long j, long j2, float f3, float f4, Function2<? super Composer, ? super Integer, Unit> function2, boolean z, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super SnackbarHostState, ? super Composer, ? super Integer, Unit> function32, long j3, long j4, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function33, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -203,8 +203,8 @@ public final class BottomSheetScaffoldKt {
         final Function2<? super Composer, ? super Integer, Unit> function24;
         ScopeUpdateScope endRestartGroup;
         BottomSheetScaffoldState bottomSheetScaffoldState3;
-        float m7996constructorimpl;
-        float m1954getElevationD9Ej5fM;
+        float m8258constructorimpl;
+        float m2040getElevationD9Ej5fM;
         Function2<Composer, Integer, Unit> lambda$1392012807$material3;
         boolean z3;
         Function2<? super Composer, ? super Integer, Unit> function25;
@@ -371,7 +371,7 @@ public final class BottomSheetScaffoldKt {
                                     i19 &= -458753;
                                 }
                                 modifier4 = modifier;
-                                m1954getElevationD9Ej5fM = f4;
+                                m2040getElevationD9Ej5fM = f4;
                                 lambda$1392012807$material3 = function2;
                                 z3 = z;
                                 function25 = function22;
@@ -380,7 +380,7 @@ public final class BottomSheetScaffoldKt {
                                 j12 = j4;
                                 bottomSheetScaffoldState3 = obj;
                                 i20 = i19;
-                                m7996constructorimpl = f3;
+                                m8258constructorimpl = f3;
                             } else {
                                 Modifier.Companion companion = i22 != 0 ? Modifier.Companion : modifier;
                                 if ((i3 & 4) != 0) {
@@ -390,10 +390,10 @@ public final class BottomSheetScaffoldKt {
                                     bottomSheetScaffoldState3 = obj;
                                 }
                                 if (i7 != 0) {
-                                    f5 = BottomSheetDefaults.INSTANCE.m1957getSheetPeekHeightD9Ej5fM();
+                                    f5 = BottomSheetDefaults.INSTANCE.m2043getSheetPeekHeightD9Ej5fM();
                                 }
                                 if (i6 != 0) {
-                                    f6 = BottomSheetDefaults.INSTANCE.m1956getSheetMaxWidthD9Ej5fM();
+                                    f6 = BottomSheetDefaults.INSTANCE.m2042getSheetMaxWidthD9Ej5fM();
                                 }
                                 if ((i3 & 32) != 0) {
                                     shape2 = BottomSheetDefaults.INSTANCE.getExpandedShape(startRestartGroup, 6);
@@ -404,11 +404,11 @@ public final class BottomSheetScaffoldKt {
                                     i4 &= -3670017;
                                 }
                                 if ((i3 & 128) != 0) {
-                                    j6 = ColorSchemeKt.m2130contentColorForek8zF_U(j5, startRestartGroup, (i4 >> 18) & 14);
+                                    j6 = ColorSchemeKt.m2216contentColorForek8zF_U(j5, startRestartGroup, (i4 >> 18) & 14);
                                     i4 &= -29360129;
                                 }
-                                m7996constructorimpl = i8 != 0 ? Dp.m7996constructorimpl(0) : f3;
-                                m1954getElevationD9Ej5fM = i10 != 0 ? BottomSheetDefaults.INSTANCE.m1954getElevationD9Ej5fM() : f4;
+                                m8258constructorimpl = i8 != 0 ? Dp.m8258constructorimpl(0) : f3;
+                                m2040getElevationD9Ej5fM = i10 != 0 ? BottomSheetDefaults.INSTANCE.m2040getElevationD9Ej5fM() : f4;
                                 lambda$1392012807$material3 = i12 != 0 ? ComposableSingletons$BottomSheetScaffoldKt.INSTANCE.getLambda$1392012807$material3() : function2;
                                 z3 = i15 != 0 ? true : z;
                                 function25 = i16 != 0 ? null : function22;
@@ -416,14 +416,14 @@ public final class BottomSheetScaffoldKt {
                                 if ((i3 & 16384) != 0) {
                                     i19 &= -57345;
                                     modifier3 = companion;
-                                    j11 = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2112getSurface0d7_KjU();
+                                    j11 = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2198getSurface0d7_KjU();
                                 } else {
                                     modifier3 = companion;
                                     j11 = j3;
                                 }
                                 if ((32768 & i3) != 0) {
                                     i19 &= -458753;
-                                    j12 = ColorSchemeKt.m2130contentColorForek8zF_U(j11, startRestartGroup, (i19 >> 12) & 14);
+                                    j12 = ColorSchemeKt.m2216contentColorForek8zF_U(j11, startRestartGroup, (i19 >> 12) & 14);
                                 } else {
                                     j12 = j4;
                                 }
@@ -436,14 +436,14 @@ public final class BottomSheetScaffoldKt {
                                 ComposerKt.traceEventStart(920075480, i4, i20, "androidx.compose.material3.BottomSheetScaffold (BottomSheetScaffold.kt:135)");
                             }
                             long j14 = j13;
-                            Modifier m268backgroundbw27NRU$default = BackgroundKt.m268backgroundbw27NRU$default(SizeKt.fillMaxSize$default(modifier4, 0.0f, 1, null), j14, null, 2, null);
+                            Modifier m299backgroundbw27NRU$default = BackgroundKt.m299backgroundbw27NRU$default(SizeKt.fillMaxSize$default(modifier4, 0.0f, 1, null), j14, null, 2, null);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                             Modifier modifier5 = modifier4;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m268backgroundbw27NRU$default);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m299backgroundbw27NRU$default);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             float f11 = f5;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
@@ -456,19 +456,19 @@ public final class BottomSheetScaffoldKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-                            Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+                            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1080463218, "C139@7540L1141,139@7474L1207:BottomSheetScaffold.kt#uh7d8r");
-                            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(j12)), ComposableLambdaKt.rememberComposableLambda(999829022, true, new BottomSheetScaffoldKt$BottomSheetScaffold$1$1(bottomSheetScaffoldState3, function25, function33, f11, f6, z3, shape2, j5, j6, m7996constructorimpl, m1954getElevationD9Ej5fM, lambda$1392012807$material3, function3, lambda$1768941633$material3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
+                            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5414boximpl(j12)), ComposableLambdaKt.rememberComposableLambda(999829022, true, new BottomSheetScaffoldKt$BottomSheetScaffold$1$1(bottomSheetScaffoldState3, function25, function33, f11, f6, z3, shape2, j5, j6, m8258constructorimpl, m2040getElevationD9Ej5fM, lambda$1392012807$material3, function3, lambda$1768941633$material3), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             startRestartGroup.endNode();
@@ -484,8 +484,8 @@ public final class BottomSheetScaffoldKt {
                             bottomSheetScaffoldState2 = bottomSheetScaffoldState3;
                             shape3 = shape2;
                             j9 = j5;
-                            f9 = m7996constructorimpl;
-                            f10 = m1954getElevationD9Ej5fM;
+                            f9 = m8258constructorimpl;
+                            f10 = m2040getElevationD9Ej5fM;
                             j10 = j6;
                             modifier2 = modifier5;
                             function34 = lambda$1768941633$material3;
@@ -751,12 +751,12 @@ public final class BottomSheetScaffoldKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(678511581, i, -1, "androidx.compose.material3.rememberStandardBottomSheetState (BottomSheetScaffold.kt:215)");
         }
-        SheetState m2881rememberSheetStateAGcomas = SheetDefaultsKt.m2881rememberSheetStateAGcomas(false, function12, sheetValue2, z2, 0.0f, 0.0f, composer, (i & 112) | ((i << 6) & 896) | ((i << 3) & 7168), 49);
+        SheetState m2967rememberSheetStateAGcomas = SheetDefaultsKt.m2967rememberSheetStateAGcomas(false, function12, sheetValue2, z2, 0.0f, 0.0f, composer, (i & 112) | ((i << 6) & 896) | ((i << 3) & 7168), 49);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2881rememberSheetStateAGcomas;
+        return m2967rememberSheetStateAGcomas;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -767,7 +767,7 @@ public final class BottomSheetScaffoldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1961StandardBottomSheetw7I5h1o(final SheetState sheetState, final float f, final float f2, final boolean z, final Shape shape, final long j, final long j2, final float f3, final float f4, final Function2<? super Composer, ? super Integer, Unit> function2, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2047StandardBottomSheetw7I5h1o(final SheetState sheetState, final float f, final float f2, final boolean z, final Shape shape, final long j, final long j2, final float f3, final float f4, final Function2<? super Composer, ? super Integer, Unit> function2, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         int i4;
         Composer composer2;
@@ -857,7 +857,7 @@ public final class BottomSheetScaffoldKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final float mo430toPx0680j_4 = ((Density) consume).mo430toPx0680j_4(f);
+            final float mo464toPx0680j_4 = ((Density) consume).mo464toPx0680j_4(f);
             if (z) {
                 startRestartGroup.startReplaceGroup(2049456610);
                 ComposerKt.sourceInformation(startRestartGroup, "254@11804L327");
@@ -887,17 +887,17 @@ public final class BottomSheetScaffoldKt {
                 startRestartGroup.endReplaceGroup();
                 companion = Modifier.Companion;
             }
-            Modifier then = SizeKt.m886requiredHeightInVpY3zN4$default(SizeKt.fillMaxWidth$default(SizeKt.m902widthInVpY3zN4$default(Modifier.Companion, 0.0f, f2, 1, null), 0.0f, 1, null), f, 0.0f, 2, null).then(companion);
+            Modifier then = SizeKt.m967requiredHeightInVpY3zN4$default(SizeKt.fillMaxWidth$default(SizeKt.m983widthInVpY3zN4$default(Modifier.Companion, 0.0f, f2, 1, null), 0.0f, 1, null), f, 0.0f, 2, null).then(companion);
             AnchoredDraggableState<SheetValue> anchoredDraggableState$material32 = sheetState.getAnchoredDraggableState$material3();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 620325470, "CC(remember):BottomSheetScaffold.kt#9igjgp");
-            boolean changed2 = (i6 == 4) | startRestartGroup.changed(mo430toPx0680j_4);
+            boolean changed2 = (i6 == 4) | startRestartGroup.changed(mo464toPx0680j_4);
             Object rememberedValue4 = startRestartGroup.rememberedValue();
             if (changed2 || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new Function2() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
                         Pair StandardBottomSheet_w7I5h1o$lambda$13$lambda$12;
-                        StandardBottomSheet_w7I5h1o$lambda$13$lambda$12 = BottomSheetScaffoldKt.StandardBottomSheet_w7I5h1o$lambda$13$lambda$12(SheetState.this, mo430toPx0680j_4, (IntSize) obj, (Constraints) obj2);
+                        StandardBottomSheet_w7I5h1o$lambda$13$lambda$12 = BottomSheetScaffoldKt.StandardBottomSheet_w7I5h1o$lambda$13$lambda$12(SheetState.this, mo464toPx0680j_4, (IntSize) obj, (Constraints) obj2);
                         return StandardBottomSheet_w7I5h1o$lambda$13$lambda$12;
                     }
                 };
@@ -908,7 +908,7 @@ public final class BottomSheetScaffoldKt {
             final CoroutineScope coroutineScope3 = coroutineScope;
             int i7 = i5 >> 9;
             composer2 = startRestartGroup;
-            SurfaceKt.m2997SurfaceT9BRK9s(verticalScaleUp, shape, j, j2, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(1508311921, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$StandardBottomSheet$3
+            SurfaceKt.m3083SurfaceT9BRK9s(verticalScaleUp, shape, j, j2, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(1508311921, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$StandardBottomSheet$3
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                     invoke(composer3, num.intValue());
@@ -947,15 +947,15 @@ public final class BottomSheetScaffoldKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m4598constructorimpl = Updater.m4598constructorimpl(composer3);
-                    Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
+                    Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                     ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, -1044090540, "C399@19569L9:BottomSheetScaffold.kt#uh7d8r");
@@ -963,11 +963,11 @@ public final class BottomSheetScaffoldKt {
                         composer3.startReplaceGroup(-1044068159);
                         ComposerKt.sourceInformation(composer3, "332@15663L54,333@15759L48,334@15848L47,335@15934L3608,335@15912L3630");
                         Strings.Companion companion3 = Strings.Companion;
-                        String m3611getString2EP1pXo = Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                        String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                         Strings.Companion companion4 = Strings.Companion;
-                        String m3611getString2EP1pXo2 = Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                        String m3697getString2EP1pXo2 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                         Strings.Companion companion5 = Strings.Companion;
-                        SheetDefaultsKt.DragHandleWithTooltip(columnScopeInstance, ComposableLambdaKt.rememberComposableLambda(-511691176, true, new BottomSheetScaffoldKt$StandardBottomSheet$3$1$1(sheetState2, coroutineScope4, z2, Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0), m3611getString2EP1pXo, m3611getString2EP1pXo2, function22), composer3, 54), composer3, 54);
+                        SheetDefaultsKt.DragHandleWithTooltip(columnScopeInstance, ComposableLambdaKt.rememberComposableLambda(-511691176, true, new BottomSheetScaffoldKt$StandardBottomSheet$3$1$1(sheetState2, coroutineScope4, z2, Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0), m3697getString2EP1pXo, m3697getString2EP1pXo2, function22), composer3, 54), composer3, 54);
                         composer3.endReplaceGroup();
                     } else {
                         composer3.startReplaceGroup(-1040260677);
@@ -1018,13 +1018,13 @@ public final class BottomSheetScaffoldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Pair StandardBottomSheet_w7I5h1o$lambda$13$lambda$12(final SheetState sheetState, final float f, IntSize intSize, Constraints constraints) {
-        final float m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(constraints.m7955unboximpl());
-        final float m8171unboximpl = (int) (intSize.m8171unboximpl() & 4294967295L);
+        final float m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(constraints.m8217unboximpl());
+        final float m8433unboximpl = (int) (intSize.m8433unboximpl() & 4294967295L);
         DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit StandardBottomSheet_w7I5h1o$lambda$13$lambda$12$lambda$11;
-                StandardBottomSheet_w7I5h1o$lambda$13$lambda$12$lambda$11 = BottomSheetScaffoldKt.StandardBottomSheet_w7I5h1o$lambda$13$lambda$12$lambda$11(SheetState.this, m7948getMaxHeightimpl, f, m8171unboximpl, (DraggableAnchorsConfig) obj);
+                StandardBottomSheet_w7I5h1o$lambda$13$lambda$12$lambda$11 = BottomSheetScaffoldKt.StandardBottomSheet_w7I5h1o$lambda$13$lambda$12$lambda$11(SheetState.this, m8210getMaxHeightimpl, f, m8433unboximpl, (DraggableAnchorsConfig) obj);
                 return StandardBottomSheet_w7I5h1o$lambda$13$lambda$12$lambda$11;
             }
         });
@@ -1101,7 +1101,7 @@ public final class BottomSheetScaffoldKt {
                 ComposerKt.traceEventStart(-1217723575, i2, -1, "androidx.compose.material3.BottomSheetScaffoldLayout (BottomSheetScaffold.kt:413)");
             }
             Function2[] function2Arr = new Function2[4];
-            function2Arr[0] = function2 == null ? ComposableSingletons$BottomSheetScaffoldKt.INSTANCE.m2164getLambda$788244078$material3() : function2;
+            function2Arr[0] = function2 == null ? ComposableSingletons$BottomSheetScaffoldKt.INSTANCE.m2250getLambda$788244078$material3() : function2;
             function2Arr[1] = function22;
             function2Arr[2] = function23;
             function2Arr[3] = function24;
@@ -1142,15 +1142,15 @@ public final class BottomSheetScaffoldKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1189,8 +1189,8 @@ public final class BottomSheetScaffoldKt {
         float offset = sheetState.getAnchoredDraggableState$material3().getOffset();
         float minAnchor = sheetState.getAnchoredDraggableState$material3().getAnchors().minAnchor();
         float f = offset < minAnchor ? minAnchor - offset : 0.0f;
-        graphicsLayerScope.setScaleY(f > 0.0f ? (Float.intBitsToFloat((int) (graphicsLayerScope.mo5475getSizeNHjbRc() & 4294967295L)) + f) / Float.intBitsToFloat((int) (4294967295L & graphicsLayerScope.mo5475getSizeNHjbRc())) : 1.0f);
-        graphicsLayerScope.mo5482setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, 0.0f));
+        graphicsLayerScope.setScaleY(f > 0.0f ? (Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() & 4294967295L)) + f) / Float.intBitsToFloat((int) (4294967295L & graphicsLayerScope.mo5620getSizeNHjbRc())) : 1.0f);
+        graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, 0.0f));
         return Unit.INSTANCE;
     }
 
@@ -1210,8 +1210,8 @@ public final class BottomSheetScaffoldKt {
         float offset = sheetState.getAnchoredDraggableState$material3().getOffset();
         float minAnchor = sheetState.getAnchoredDraggableState$material3().getAnchors().minAnchor();
         float f = offset < minAnchor ? minAnchor - offset : 0.0f;
-        graphicsLayerScope.setScaleY(f > 0.0f ? 1 / ((Float.intBitsToFloat((int) (graphicsLayerScope.mo5475getSizeNHjbRc() & 4294967295L)) + f) / Float.intBitsToFloat((int) (graphicsLayerScope.mo5475getSizeNHjbRc() & 4294967295L))) : 1.0f);
-        graphicsLayerScope.mo5482setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, 0.0f));
+        graphicsLayerScope.setScaleY(f > 0.0f ? 1 / ((Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() & 4294967295L)) + f) / Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() & 4294967295L))) : 1.0f);
+        graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, 0.0f));
         return Unit.INSTANCE;
     }
 }

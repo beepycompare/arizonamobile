@@ -21,9 +21,9 @@ public final class GlobalSnapshot extends MutableSnapshot {
         super(j, snapshotIdSet, null, new Function1() { // from class: androidx.compose.runtime.snapshots.GlobalSnapshot$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$2;
-                _init_$lambda$2 = GlobalSnapshot._init_$lambda$2(obj);
-                return _init_$lambda$2;
+                Unit _init_$lambda$0;
+                _init_$lambda$0 = GlobalSnapshot._init_$lambda$0(obj);
+                return _init_$lambda$0;
             }
         });
     }
@@ -35,14 +35,14 @@ public final class GlobalSnapshot extends MutableSnapshot {
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot, androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public Void mo4736nestedDeactivated$runtime(Snapshot snapshot) {
+    public Void mo4865nestedDeactivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot, androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public Void mo4735nestedActivated$runtime(Snapshot snapshot) {
+    public Void mo4864nestedActivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }
@@ -134,7 +134,7 @@ public final class GlobalSnapshot extends MutableSnapshot {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit _init_$lambda$2(Object obj) {
+    public static final Unit _init_$lambda$0(Object obj) {
         List list;
         synchronized (SnapshotKt.getLock()) {
             list = SnapshotKt.globalWriteObservers;

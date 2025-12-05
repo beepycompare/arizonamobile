@@ -1,7 +1,6 @@
 package okhttp3.internal.idn;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -352,7 +351,7 @@ public final class Punycode {
                 if (Character.isLowSurrogate(charAt) || !Character.isLowSurrogate(charAt2)) {
                     charAt = 63;
                 } else {
-                    charAt = 65536 + (((charAt & AnalyticsListener.EVENT_DRM_KEYS_LOADED) << 10) | (charAt2 & 1023));
+                    charAt = 65536 + (((charAt & 1023) << 10) | (charAt2 & 1023));
                     i = i3;
                 }
             }

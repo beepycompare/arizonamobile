@@ -1,6 +1,7 @@
 package kotlinx.datetime;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.window.core.layout.WindowSizeClass;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -116,7 +117,7 @@ public abstract class DateTimeUnit {
         }
 
         /* renamed from: getDuration-UwyO8pc  reason: not valid java name */
-        public final long m11518getDurationUwyO8pc() {
+        public final long m11813getDurationUwyO8pc() {
             Duration.Companion companion = Duration.Companion;
             return DurationKt.toDuration(this.nanoseconds, DurationUnit.NANOSECONDS);
         }
@@ -285,7 +286,7 @@ public abstract class DateTimeUnit {
 
         public String toString() {
             int i = this.months;
-            return i % 1200 == 0 ? formatToString(i / 1200, "CENTURY") : i % 12 == 0 ? formatToString(i / 12, "YEAR") : i % 3 == 0 ? formatToString(i / 3, "QUARTER") : formatToString(i, "MONTH");
+            return i % WindowSizeClass.WIDTH_DP_LARGE_LOWER_BOUND == 0 ? formatToString(i / WindowSizeClass.WIDTH_DP_LARGE_LOWER_BOUND, "CENTURY") : i % 12 == 0 ? formatToString(i / 12, "YEAR") : i % 3 == 0 ? formatToString(i / 3, "QUARTER") : formatToString(i, "MONTH");
         }
     }
 

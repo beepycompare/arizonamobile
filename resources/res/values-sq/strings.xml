@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Ndaje me</string>
     <string name="abc_shareactionprovider_share_with_application">Ndaje me %s</string>
     <string name="abc_toolbar_collapse_description">Palos</string>
-    <string name="autofill">Plotësimi automatik</string>
+    <string name="androidx_compose_foundation_autofill">Plotësimi automatik</string>
+    <string name="androidx_compose_ui_autofill">Plotësimi automatik</string>
     <string name="bottomsheet_action_collapse">Palos fletën e poshtme</string>
     <string name="bottomsheet_action_expand">Zgjero fletën e poshtme</string>
     <string name="bottomsheet_action_expand_halfway">Zgjeroje deri në gjysmë</string>

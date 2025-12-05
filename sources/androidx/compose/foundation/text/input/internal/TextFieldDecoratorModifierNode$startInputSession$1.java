@@ -23,10 +23,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.AdaptedFunctionReference;
 import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.flow.MutableSharedFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldDecoratorModifier.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1", f = "TextFieldDecoratorModifier.kt", i = {}, l = {771}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1", f = "TextFieldDecoratorModifier.kt", i = {}, l = {810}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldDecoratorModifierNode$startInputSession$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ReceiveContentConfiguration $receiveContentConfiguration;
@@ -72,7 +73,7 @@ public final class TextFieldDecoratorModifierNode$startInputSession$1 extends Su
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldDecoratorModifier.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/platform/PlatformTextInputSessionScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1", f = "TextFieldDecoratorModifier.kt", i = {}, l = {772}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1", f = "TextFieldDecoratorModifier.kt", i = {}, l = {811}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<PlatformTextInputSessionScope, Continuation<?>, Object> {
@@ -109,19 +110,30 @@ public final class TextFieldDecoratorModifierNode$startInputSession$1 extends Su
                 PlatformTextInputSessionScope platformTextInputSessionScope = (PlatformTextInputSessionScope) this.L$0;
                 TransformedTextFieldState textFieldState = this.this$0.getTextFieldState();
                 TextLayoutState textLayoutState = this.this$0.getTextLayoutState();
-                ImeOptions imeOptions$foundation_release = this.this$0.getKeyboardOptions().toImeOptions$foundation_release(this.this$0.getSingleLine());
+                ImeOptions imeOptions$foundation = this.this$0.getKeyboardOptions().toImeOptions$foundation(this.this$0.getSingleLine());
                 ReceiveContentConfiguration receiveContentConfiguration = this.$receiveContentConfiguration;
-                C00171 c00171 = new C00171(this.this$0);
+                C00161 c00161 = new C00161(this.this$0);
                 final TextFieldDecoratorModifierNode textFieldDecoratorModifierNode = this.this$0;
-                this.label = 1;
-                if (AndroidTextInputSession_androidKt.platformSpecificTextInputSession(platformTextInputSessionScope, textFieldState, textLayoutState, imeOptions$foundation_release, receiveContentConfiguration, c00171, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1$$ExternalSyntheticLambda0
+                Function0 function0 = new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         Unit invokeSuspend$lambda$0;
                         invokeSuspend$lambda$0 = TextFieldDecoratorModifierNode$startInputSession$1.AnonymousClass1.invokeSuspend$lambda$0(TextFieldDecoratorModifierNode.this);
                         return invokeSuspend$lambda$0;
                     }
-                }, this.this$0.getStylusHandwritingTrigger(), (ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.this$0, CompositionLocalsKt.getLocalViewConfiguration()), this) == coroutine_suspended) {
+                };
+                MutableSharedFlow<Unit> stylusHandwritingTrigger = this.this$0.getStylusHandwritingTrigger();
+                ViewConfiguration viewConfiguration = (ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.this$0, CompositionLocalsKt.getLocalViewConfiguration());
+                final TextFieldDecoratorModifierNode textFieldDecoratorModifierNode2 = this.this$0;
+                this.label = 1;
+                if (AndroidTextInputSession_androidKt.platformSpecificTextInputSession(platformTextInputSessionScope, textFieldState, textLayoutState, imeOptions$foundation, receiveContentConfiguration, c00161, function0, stylusHandwritingTrigger, viewConfiguration, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1$$ExternalSyntheticLambda1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj2) {
+                        Unit invokeSuspend$lambda$1;
+                        invokeSuspend$lambda$1 = TextFieldDecoratorModifierNode$startInputSession$1.AnonymousClass1.invokeSuspend$lambda$1(TextFieldDecoratorModifierNode.this, ((Boolean) obj2).booleanValue());
+                        return invokeSuspend$lambda$1;
+                    }
+                }, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -137,26 +149,32 @@ public final class TextFieldDecoratorModifierNode$startInputSession$1 extends Su
         @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
         /* renamed from: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes.dex */
-        public /* synthetic */ class C00171 extends AdaptedFunctionReference implements Function1<ImeAction, Unit> {
-            C00171(Object obj) {
+        public static final /* synthetic */ class C00161 extends AdaptedFunctionReference implements Function1<ImeAction, Unit> {
+            C00161(Object obj) {
                 super(1, obj, TextFieldDecoratorModifierNode.class, "onImeActionPerformed", "onImeActionPerformed-KlQnJC8(I)Z", 8);
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m1569invokeKlQnJC8(imeAction.m7630unboximpl());
+                m1660invokeKlQnJC8(imeAction.m7876unboximpl());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m1569invokeKlQnJC8(int i) {
-                ((TextFieldDecoratorModifierNode) this.receiver).m1565onImeActionPerformedKlQnJC8(i);
+            public final void m1660invokeKlQnJC8(int i) {
+                ((TextFieldDecoratorModifierNode) this.receiver).m1655onImeActionPerformedKlQnJC8(i);
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final Unit invokeSuspend$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
             textFieldDecoratorModifierNode.getTextFieldSelectionState().updateTextToolbarState(TextToolbarState.Selection);
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit invokeSuspend$lambda$1(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, boolean z) {
+            textFieldDecoratorModifierNode.getTextFieldSelectionState().setInTouchMode(z);
             return Unit.INSTANCE;
         }
     }

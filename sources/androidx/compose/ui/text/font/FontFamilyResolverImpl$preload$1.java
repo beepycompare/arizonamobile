@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FontFamilyResolver.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.text.font.FontFamilyResolverImpl", f = "FontFamilyResolver.kt", i = {0}, l = {43}, m = "preload", n = {TtmlNode.ATTR_TTS_FONT_FAMILY}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.ui.text.font.FontFamilyResolverImpl", f = "FontFamilyResolver.kt", i = {0}, l = {43}, m = "preload", n = {TtmlNode.ATTR_TTS_FONT_FAMILY}, s = {"L$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class FontFamilyResolverImpl$preload$1 extends ContinuationImpl {
     Object L$0;

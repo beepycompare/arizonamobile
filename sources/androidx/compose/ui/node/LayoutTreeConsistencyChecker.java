@@ -7,7 +7,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: LayoutTreeConsistencyChecker.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u0006\u0010\u000b\u001a\u00020\fJ\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0003H\u0002J\f\u0010\u0010\u001a\u00020\u000e*\u00020\u0003H\u0002J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u000f\u001a\u00020\u0003H\u0002J\b\u0010\u0013\u001a\u00020\u0012H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/node/LayoutTreeConsistencyChecker;", "", "root", "Landroidx/compose/ui/node/LayoutNode;", "relayoutNodes", "Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;", "postponedMeasureRequests", "", "Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;Ljava/util/List;)V", "assertConsistent", "", "isTreeConsistent", "", "node", "consistentLayoutState", "nodeToString", "", "logTree", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u0006\u0010\u000b\u001a\u00020\fJ\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0003H\u0002J\f\u0010\u0010\u001a\u00020\u000e*\u00020\u0003H\u0002J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u000f\u001a\u00020\u0003H\u0002J\b\u0010\u0013\u001a\u00020\u0012H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/node/LayoutTreeConsistencyChecker;", "", "root", "Landroidx/compose/ui/node/LayoutNode;", "relayoutNodes", "Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;", "postponedMeasureRequests", "", "Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;Ljava/util/List;)V", "assertConsistent", "", "isTreeConsistent", "", "node", "consistentLayoutState", "nodeToString", "", "logTree", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LayoutTreeConsistencyChecker {
     public static final int $stable = 8;
@@ -31,10 +31,10 @@ public final class LayoutTreeConsistencyChecker {
 
     private final boolean isTreeConsistent(LayoutNode layoutNode) {
         if (consistentLayoutState(layoutNode)) {
-            List<LayoutNode> children$ui_release = layoutNode.getChildren$ui_release();
-            int size = children$ui_release.size();
+            List<LayoutNode> children$ui = layoutNode.getChildren$ui();
+            int size = children$ui.size();
             for (int i = 0; i < size; i++) {
-                if (!isTreeConsistent(children$ui_release.get(i))) {
+                if (!isTreeConsistent(children$ui.get(i))) {
                     return false;
                 }
             }
@@ -45,11 +45,11 @@ public final class LayoutTreeConsistencyChecker {
 
     private final boolean consistentLayoutState(LayoutNode layoutNode) {
         MeasureAndLayoutDelegate.PostponedRequest postponedRequest;
-        LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
+        LayoutNode parent$ui = layoutNode.getParent$ui();
         MeasureAndLayoutDelegate.PostponedRequest postponedRequest2 = null;
-        LayoutNode.LayoutState layoutState$ui_release = parent$ui_release != null ? parent$ui_release.getLayoutState$ui_release() : null;
-        if (layoutNode.isPlaced() || (layoutNode.getPlaceOrder$ui_release() != Integer.MAX_VALUE && parent$ui_release != null && parent$ui_release.isPlaced())) {
-            if (layoutNode.getMeasurePending$ui_release()) {
+        LayoutNode.LayoutState layoutState$ui = parent$ui != null ? parent$ui.getLayoutState$ui() : null;
+        if (layoutNode.isPlaced() || (layoutNode.getPlaceOrder$ui() != Integer.MAX_VALUE && parent$ui != null && parent$ui.isPlaced())) {
+            if (layoutNode.getMeasurePending$ui()) {
                 List<MeasureAndLayoutDelegate.PostponedRequest> list = this.postponedMeasureRequests;
                 int size = list.size();
                 int i = 0;
@@ -72,10 +72,10 @@ public final class LayoutTreeConsistencyChecker {
             if (layoutNode.isDeactivated()) {
                 return true;
             }
-            if (layoutNode.getMeasurePending$ui_release()) {
-                return this.relayoutNodes.contains(layoutNode) || layoutNode.getLayoutState$ui_release() == LayoutNode.LayoutState.LookaheadMeasuring || (parent$ui_release != null && parent$ui_release.getMeasurePending$ui_release()) || ((parent$ui_release != null && parent$ui_release.getLookaheadMeasurePending$ui_release()) || layoutState$ui_release == LayoutNode.LayoutState.Measuring);
-            } else if (layoutNode.getLayoutPending$ui_release()) {
-                if (!this.relayoutNodes.contains(layoutNode) && parent$ui_release != null && !parent$ui_release.getMeasurePending$ui_release() && !parent$ui_release.getLayoutPending$ui_release() && layoutState$ui_release != LayoutNode.LayoutState.Measuring && layoutState$ui_release != LayoutNode.LayoutState.LayingOut) {
+            if (layoutNode.getMeasurePending$ui()) {
+                return this.relayoutNodes.contains(layoutNode) || layoutNode.getLayoutState$ui() == LayoutNode.LayoutState.LookaheadMeasuring || (parent$ui != null && parent$ui.getMeasurePending$ui()) || ((parent$ui != null && parent$ui.getLookaheadMeasurePending$ui()) || layoutState$ui == LayoutNode.LayoutState.Measuring);
+            } else if (layoutNode.getLayoutPending$ui()) {
+                if (!this.relayoutNodes.contains(layoutNode) && parent$ui != null && !parent$ui.getMeasurePending$ui() && !parent$ui.getLayoutPending$ui() && layoutState$ui != LayoutNode.LayoutState.Measuring && layoutState$ui != LayoutNode.LayoutState.LayingOut) {
                     List<MeasureAndLayoutDelegate.PostponedRequest> list2 = this.postponedMeasureRequests;
                     int size2 = list2.size();
                     int i2 = 0;
@@ -85,7 +85,7 @@ public final class LayoutTreeConsistencyChecker {
                                 break;
                             }
                             i2++;
-                        } else if (layoutNode.getLayoutState$ui_release() == LayoutNode.LayoutState.Measuring) {
+                        } else if (layoutNode.getLayoutState$ui() == LayoutNode.LayoutState.Measuring || layoutNode.getLayoutState$ui() == LayoutNode.LayoutState.LayingOut) {
                             break;
                         } else {
                             return false;
@@ -96,7 +96,7 @@ public final class LayoutTreeConsistencyChecker {
             }
         }
         if (Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true)) {
-            if (layoutNode.getLookaheadMeasurePending$ui_release()) {
+            if (layoutNode.getLookaheadMeasurePending$ui()) {
                 List<MeasureAndLayoutDelegate.PostponedRequest> list3 = this.postponedMeasureRequests;
                 int size3 = list3.size();
                 int i3 = 0;
@@ -116,9 +116,9 @@ public final class LayoutTreeConsistencyChecker {
                     return true;
                 }
             }
-            if (layoutNode.getLookaheadMeasurePending$ui_release()) {
-                return this.relayoutNodes.contains(layoutNode, true) || (parent$ui_release != null && parent$ui_release.getLookaheadMeasurePending$ui_release()) || layoutState$ui_release == LayoutNode.LayoutState.LookaheadMeasuring || (parent$ui_release != null && parent$ui_release.getMeasurePending$ui_release() && Intrinsics.areEqual(layoutNode.getLookaheadRoot$ui_release(), layoutNode));
-            } else if (layoutNode.getLookaheadLayoutPending$ui_release() && !this.relayoutNodes.contains(layoutNode, true) && parent$ui_release != null && !parent$ui_release.getLookaheadMeasurePending$ui_release() && !parent$ui_release.getLookaheadLayoutPending$ui_release() && layoutState$ui_release != LayoutNode.LayoutState.LookaheadMeasuring && layoutState$ui_release != LayoutNode.LayoutState.LookaheadLayingOut && (!parent$ui_release.getLayoutPending$ui_release() || !Intrinsics.areEqual(layoutNode.getLookaheadRoot$ui_release(), layoutNode))) {
+            if (layoutNode.getLookaheadMeasurePending$ui()) {
+                return this.relayoutNodes.contains(layoutNode, true) || (parent$ui != null && parent$ui.getLookaheadMeasurePending$ui()) || layoutState$ui == LayoutNode.LayoutState.LookaheadMeasuring || (parent$ui != null && parent$ui.getMeasurePending$ui() && Intrinsics.areEqual(layoutNode.getLookaheadRoot$ui(), layoutNode));
+            } else if (layoutNode.getLookaheadLayoutPending$ui() && !this.relayoutNodes.contains(layoutNode, true) && parent$ui != null && !parent$ui.getLookaheadMeasurePending$ui() && !parent$ui.getLookaheadLayoutPending$ui() && layoutState$ui != LayoutNode.LayoutState.LookaheadMeasuring && layoutState$ui != LayoutNode.LayoutState.LookaheadLayingOut && (!parent$ui.getLayoutPending$ui() || !Intrinsics.areEqual(layoutNode.getLookaheadRoot$ui(), layoutNode))) {
                 return false;
             }
         }
@@ -128,11 +128,11 @@ public final class LayoutTreeConsistencyChecker {
     private final String nodeToString(LayoutNode layoutNode) {
         StringBuilder sb = new StringBuilder();
         sb.append(layoutNode);
-        sb.append("[" + layoutNode.getLayoutState$ui_release() + AbstractJsonLexerKt.END_LIST);
+        sb.append("[" + layoutNode.getLayoutState$ui() + AbstractJsonLexerKt.END_LIST);
         if (!layoutNode.isPlaced()) {
             sb.append("[!isPlaced]");
         }
-        sb.append("[measuredByParent=" + layoutNode.getMeasuredByParent$ui_release() + AbstractJsonLexerKt.END_LIST);
+        sb.append("[measuredByParent=" + layoutNode.getMeasuredByParent$ui() + AbstractJsonLexerKt.END_LIST);
         if (!consistentLayoutState(layoutNode)) {
             sb.append("[INCONSISTENT]");
         }
@@ -159,10 +159,10 @@ public final class LayoutTreeConsistencyChecker {
             Intrinsics.checkNotNullExpressionValue(append.append('\n'), "append(...)");
             i++;
         }
-        List<LayoutNode> children$ui_release = layoutNode.getChildren$ui_release();
-        int size = children$ui_release.size();
+        List<LayoutNode> children$ui = layoutNode.getChildren$ui();
+        int size = children$ui.size();
         for (int i3 = 0; i3 < size; i3++) {
-            logTree$printSubTree(layoutTreeConsistencyChecker, sb, children$ui_release.get(i3), i);
+            logTree$printSubTree(layoutTreeConsistencyChecker, sb, children$ui.get(i3), i);
         }
     }
 }

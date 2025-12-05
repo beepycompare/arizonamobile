@@ -20,7 +20,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HitPathTracker.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001e\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001a2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00000\u001cH\u0016J.\u0010\u001d\u001a\u00020\u00142\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0014H\u0016J\u0010\u0010#\u001a\u00020\u00142\u0006\u0010 \u001a\u00020!H\u0016J.\u0010$\u001a\u00020\u00142\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0014H\u0016J\u001a\u0010%\u001a\u00020\u00142\b\u0010&\u001a\u0004\u0018\u00010\u00122\u0006\u0010'\u001a\u00020\u0012H\u0002J\b\u0010(\u001a\u00020\u0018H\u0002J\u0017\u0010)\u001a\u00020\u00142\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00180+H\u0082\bJ\b\u0010,\u001a\u00020\u0018H\u0016J\u0006\u0010-\u001a\u00020\u0018J\u0010\u0010.\u001a\u00020\u00182\u0006\u0010 \u001a\u00020!H\u0016J\b\u0010/\u001a\u000200H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Landroidx/compose/ui/input/pointer/Node;", "Landroidx/compose/ui/input/pointer/NodeParent;", "modifierNode", "Landroidx/compose/ui/Modifier$Node;", "<init>", "(Landroidx/compose/ui/Modifier$Node;)V", "getModifierNode", "()Landroidx/compose/ui/Modifier$Node;", "pointerIds", "Landroidx/compose/ui/input/pointer/util/PointerIdArray;", "getPointerIds", "()Landroidx/compose/ui/input/pointer/util/PointerIdArray;", "relevantChanges", "Landroidx/collection/LongSparseArray;", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "wasIn", "", "isIn", "hasExited", "removeInvalidPointerIdsAndChanges", "", "pointerIdValue", "", "hitNodes", "Landroidx/collection/MutableObjectList;", "dispatchMainEventPass", "changes", "parentCoordinates", "internalPointerEvent", "Landroidx/compose/ui/input/pointer/InternalPointerEvent;", "isInBounds", "dispatchFinalEventPass", "buildCache", "hasPositionChanged", "oldEvent", "newEvent", "clearCache", "dispatchIfNeeded", "block", "Lkotlin/Function0;", "dispatchCancel", "markIsIn", "cleanUpHits", "toString", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001e\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001a2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00000\u001cH\u0016J.\u0010\u001d\u001a\u00020\u00142\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0014H\u0016J\u0010\u0010#\u001a\u00020\u00142\u0006\u0010 \u001a\u00020!H\u0016J.\u0010$\u001a\u00020\u00142\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0014H\u0016J\u001a\u0010%\u001a\u00020\u00142\b\u0010&\u001a\u0004\u0018\u00010\u00122\u0006\u0010'\u001a\u00020\u0012H\u0002J\b\u0010(\u001a\u00020\u0018H\u0002J\u0017\u0010)\u001a\u00020\u00142\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00180+H\u0082\bJ\b\u0010,\u001a\u00020\u0018H\u0016J\u0006\u0010-\u001a\u00020\u0018J\u0010\u0010.\u001a\u00020\u00182\u0006\u0010 \u001a\u00020!H\u0016J\b\u0010/\u001a\u000200H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Landroidx/compose/ui/input/pointer/Node;", "Landroidx/compose/ui/input/pointer/NodeParent;", "modifierNode", "Landroidx/compose/ui/Modifier$Node;", "<init>", "(Landroidx/compose/ui/Modifier$Node;)V", "getModifierNode", "()Landroidx/compose/ui/Modifier$Node;", "pointerIds", "Landroidx/compose/ui/input/pointer/util/PointerIdArray;", "getPointerIds", "()Landroidx/compose/ui/input/pointer/util/PointerIdArray;", "relevantChanges", "Landroidx/collection/LongSparseArray;", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "wasIn", "", "isIn", "hasExited", "removeInvalidPointerIdsAndChanges", "", "pointerIdValue", "", "hitNodes", "Landroidx/collection/MutableObjectList;", "dispatchMainEventPass", "changes", "parentCoordinates", "internalPointerEvent", "Landroidx/compose/ui/input/pointer/InternalPointerEvent;", "isInBounds", "dispatchFinalEventPass", "buildCache", "hasPositionChanged", "oldEvent", "newEvent", "clearCache", "dispatchIfNeeded", "block", "Lkotlin/Function0;", "dispatchCancel", "markIsIn", "cleanUpHits", "toString", "", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class Node extends NodeParent {
     public static final int $stable = 8;
@@ -64,7 +64,7 @@ public final class Node extends NodeParent {
         PointerInputChange pointerInputChange;
         boolean z2;
         LayoutCoordinates layoutCoordinates2;
-        int m6524getExit7fucELk;
+        int m6698getExit7fucELk;
         boolean z3;
         int i;
         boolean z4;
@@ -74,18 +74,18 @@ public final class Node extends NodeParent {
         boolean z5 = true;
         if (this.modifierNode.isAttached()) {
             Modifier.Node node = this.modifierNode;
-            int m6989constructorimpl = NodeKind.m6989constructorimpl(16);
+            int m7195constructorimpl = NodeKind.m7195constructorimpl(16);
             MutableVector mutableVector = null;
             while (node != null) {
                 if (node instanceof PointerInputModifierNode) {
                     this.coordinates = PointerInputModifierNodeKt.getLayoutCoordinates((PointerInputModifierNode) node);
-                } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                     int i4 = 0;
-                    for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                        if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                    for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                             i4++;
                             if (i4 == 1) {
-                                node = delegate$ui_release;
+                                node = delegate$ui;
                             } else {
                                 if (mutableVector == null) {
                                     mutableVector = new MutableVector(new Modifier.Node[16], 0);
@@ -97,7 +97,7 @@ public final class Node extends NodeParent {
                                     node = null;
                                 }
                                 if (mutableVector != null) {
-                                    mutableVector.add(delegate$ui_release);
+                                    mutableVector.add(delegate$ui);
                                 }
                             }
                         }
@@ -118,10 +118,10 @@ public final class Node extends NodeParent {
                 if (this.pointerIds.contains(keyAt)) {
                     boolean z6 = z5;
                     int i6 = i5;
-                    long m6571getPreviousPositionF1C5BW0 = valueAt.m6571getPreviousPositionF1C5BW0();
+                    long m6745getPreviousPositionF1C5BW0 = valueAt.m6745getPreviousPositionF1C5BW0();
                     z4 = z6;
-                    long m6570getPositionF1C5BW0 = valueAt.m6570getPositionF1C5BW0();
-                    if ((((m6571getPreviousPositionF1C5BW0 & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0 && (((m6570getPositionF1C5BW0 & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0) {
+                    long m6744getPositionF1C5BW0 = valueAt.m6744getPositionF1C5BW0();
+                    if ((((m6745getPreviousPositionF1C5BW0 & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0 && (((m6744getPositionF1C5BW0 & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0) {
                         ArrayList arrayList = new ArrayList(valueAt.getHistorical().size());
                         List<HistoricalChange> historical = valueAt.getHistorical();
                         z3 = buildCache;
@@ -132,13 +132,13 @@ public final class Node extends NodeParent {
                             HistoricalChange historicalChange = historical.get(i7);
                             int i8 = size2;
                             int i9 = i7;
-                            long m6494getPositionF1C5BW0 = historicalChange.m6494getPositionF1C5BW0();
-                            if ((((m6494getPositionF1C5BW0 & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0) {
+                            long m6655getPositionF1C5BW0 = historicalChange.m6655getPositionF1C5BW0();
+                            if ((((m6655getPositionF1C5BW0 & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0) {
                                 long uptimeMillis = historicalChange.getUptimeMillis();
                                 i3 = i6;
                                 LayoutCoordinates layoutCoordinates3 = this.coordinates;
                                 Intrinsics.checkNotNull(layoutCoordinates3);
-                                arrayList.add(new HistoricalChange(uptimeMillis, layoutCoordinates3.mo6707localPositionOfR5De75A(layoutCoordinates, m6494getPositionF1C5BW0), historicalChange.m6493getOriginalEventPositionF1C5BW0$ui_release(), null));
+                                arrayList.add(new HistoricalChange(uptimeMillis, layoutCoordinates3.mo6884localPositionOfR5De75A(layoutCoordinates, m6655getPositionF1C5BW0), historicalChange.m6654getOriginalEventPositionF1C5BW0$ui(), null));
                             } else {
                                 i3 = i6;
                             }
@@ -150,10 +150,10 @@ public final class Node extends NodeParent {
                         LongSparseArray<PointerInputChange> longSparseArray2 = this.relevantChanges;
                         LayoutCoordinates layoutCoordinates4 = this.coordinates;
                         Intrinsics.checkNotNull(layoutCoordinates4);
-                        long mo6707localPositionOfR5De75A = layoutCoordinates4.mo6707localPositionOfR5De75A(layoutCoordinates, m6571getPreviousPositionF1C5BW0);
+                        long mo6884localPositionOfR5De75A = layoutCoordinates4.mo6884localPositionOfR5De75A(layoutCoordinates, m6745getPreviousPositionF1C5BW0);
                         LayoutCoordinates layoutCoordinates5 = this.coordinates;
                         Intrinsics.checkNotNull(layoutCoordinates5);
-                        longSparseArray2.put(keyAt, PointerInputChange.m6559copyOHpmEuE$default(valueAt, 0L, 0L, layoutCoordinates5.mo6707localPositionOfR5De75A(layoutCoordinates, m6570getPositionF1C5BW0), false, 0L, mo6707localPositionOfR5De75A, false, 0, arrayList, 0L, 731, null));
+                        longSparseArray2.put(keyAt, PointerInputChange.m6733copyOHpmEuE$default(valueAt, 0L, 0L, layoutCoordinates5.mo6884localPositionOfR5De75A(layoutCoordinates, m6744getPositionF1C5BW0), false, 0L, mo6884localPositionOfR5De75A, false, 0, arrayList, 0L, 731, null));
                     } else {
                         z3 = buildCache;
                         i = size;
@@ -182,7 +182,7 @@ public final class Node extends NodeParent {
                 size3--;
                 if (-1 >= size3) {
                     break;
-                } else if (!longSparseArray.containsKey(this.pointerIds.m6664get_I2yYro(size3))) {
+                } else if (!longSparseArray.containsKey(this.pointerIds.m6845get_I2yYro(size3))) {
                     this.pointerIds.removeAt(size3);
                 }
             }
@@ -201,7 +201,7 @@ public final class Node extends NodeParent {
                     break;
                 }
                 PointerInputChange pointerInputChange2 = changes.get(i11);
-                if (internalPointerEvent.m6498activeHoverEvent0FcD4WY(pointerInputChange2.m6568getIdJ3iCeTQ())) {
+                if (internalPointerEvent.m6659activeHoverEvent0FcD4WY(pointerInputChange2.m6742getIdJ3iCeTQ())) {
                     pointerInputChange = pointerInputChange2;
                     break;
                 }
@@ -216,25 +216,25 @@ public final class Node extends NodeParent {
                     z2 = false;
                     if (!this.isIn && (pointerInputChange3.getPressed() || pointerInputChange3.getPreviousPressed())) {
                         Intrinsics.checkNotNull(this.coordinates);
-                        this.isIn = !PointerEventKt.m6514isOutOfBoundsO0kMr_c(pointerInputChange3, layoutCoordinates2.mo6706getSizeYbymL2g());
+                        this.isIn = !PointerEventKt.m6688isOutOfBoundsO0kMr_c(pointerInputChange3, layoutCoordinates2.mo6883getSizeYbymL2g());
                     }
                 }
-                if (this.isIn != this.wasIn && (PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6525getMove7fucELk()) || PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6523getEnter7fucELk()) || PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6524getExit7fucELk()))) {
+                if (this.isIn != this.wasIn && (PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6699getMove7fucELk()) || PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6697getEnter7fucELk()) || PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6698getExit7fucELk()))) {
                     if (this.isIn) {
-                        m6524getExit7fucELk = PointerEventType.Companion.m6523getEnter7fucELk();
+                        m6698getExit7fucELk = PointerEventType.Companion.m6697getEnter7fucELk();
                     } else {
-                        m6524getExit7fucELk = PointerEventType.Companion.m6524getExit7fucELk();
+                        m6698getExit7fucELk = PointerEventType.Companion.m6698getExit7fucELk();
                     }
-                    pointerEvent.m6513setTypeEhbLWgg$ui_release(m6524getExit7fucELk);
-                } else if (PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6523getEnter7fucELk()) && this.wasIn && !this.hasExited) {
-                    pointerEvent.m6513setTypeEhbLWgg$ui_release(PointerEventType.Companion.m6525getMove7fucELk());
-                } else if (PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6524getExit7fucELk()) && this.isIn && pointerInputChange3.getPressed()) {
-                    pointerEvent.m6513setTypeEhbLWgg$ui_release(PointerEventType.Companion.m6525getMove7fucELk());
+                    pointerEvent.m6687setTypeEhbLWgg$ui(m6698getExit7fucELk);
+                } else if (PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6697getEnter7fucELk()) && this.wasIn && !this.hasExited) {
+                    pointerEvent.m6687setTypeEhbLWgg$ui(PointerEventType.Companion.m6699getMove7fucELk());
+                } else if (PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6698getExit7fucELk()) && this.isIn && pointerInputChange3.getPressed()) {
+                    pointerEvent.m6687setTypeEhbLWgg$ui(PointerEventType.Companion.m6699getMove7fucELk());
                 }
             } else {
                 z2 = false;
             }
-            boolean z9 = (z7 || !PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6525getMove7fucELk()) || hasPositionChanged(this.pointerEvent, pointerEvent)) ? z8 : z2;
+            boolean z9 = (z7 || !PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6699getMove7fucELk()) || hasPositionChanged(this.pointerEvent, pointerEvent)) ? z8 : z2;
             this.pointerEvent = pointerEvent;
             return z9;
         }
@@ -247,7 +247,7 @@ public final class Node extends NodeParent {
         }
         int size = pointerEvent2.getChanges().size();
         for (int i = 0; i < size; i++) {
-            if (!Offset.m5033equalsimpl0(pointerEvent.getChanges().get(i).m6570getPositionF1C5BW0(), pointerEvent2.getChanges().get(i).m6570getPositionF1C5BW0())) {
+            if (!Offset.m5176equalsimpl0(pointerEvent.getChanges().get(i).m6744getPositionF1C5BW0(), pointerEvent2.getChanges().get(i).m6744getPositionF1C5BW0())) {
                 return true;
             }
         }
@@ -276,18 +276,18 @@ public final class Node extends NodeParent {
             nodeArr[i].dispatchCancel();
         }
         Modifier.Node node = this.modifierNode;
-        int m6989constructorimpl = NodeKind.m6989constructorimpl(16);
+        int m7195constructorimpl = NodeKind.m7195constructorimpl(16);
         MutableVector mutableVector = null;
         while (node != null) {
             if (node instanceof PointerInputModifierNode) {
                 ((PointerInputModifierNode) node).onCancelPointerInput();
-            } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i2 = 0;
-                for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                    if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                         i2++;
                         if (i2 == 1) {
-                            node = delegate$ui_release;
+                            node = delegate$ui;
                         } else {
                             if (mutableVector == null) {
                                 mutableVector = new MutableVector(new Modifier.Node[16], 0);
@@ -299,7 +299,7 @@ public final class Node extends NodeParent {
                                 node = null;
                             }
                             if (mutableVector != null) {
-                                mutableVector.add(delegate$ui_release);
+                                mutableVector.add(delegate$ui);
                             }
                         }
                     }
@@ -328,14 +328,14 @@ public final class Node extends NodeParent {
         for (int i = 0; i < size; i++) {
             PointerInputChange pointerInputChange = changes.get(i);
             boolean pressed = pointerInputChange.getPressed();
-            boolean m6498activeHoverEvent0FcD4WY = internalPointerEvent.m6498activeHoverEvent0FcD4WY(pointerInputChange.m6568getIdJ3iCeTQ());
+            boolean m6659activeHoverEvent0FcD4WY = internalPointerEvent.m6659activeHoverEvent0FcD4WY(pointerInputChange.m6742getIdJ3iCeTQ());
             boolean z = this.isIn;
-            if ((!pressed && !m6498activeHoverEvent0FcD4WY) || (!pressed && !z)) {
-                this.pointerIds.remove(pointerInputChange.m6568getIdJ3iCeTQ());
+            if ((!pressed && !m6659activeHoverEvent0FcD4WY) || (!pressed && !z)) {
+                this.pointerIds.remove(pointerInputChange.m6742getIdJ3iCeTQ());
             }
         }
         this.isIn = false;
-        this.hasExited = PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6524getExit7fucELk());
+        this.hasExited = PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6698getExit7fucELk());
     }
 
     public String toString() {
@@ -349,20 +349,20 @@ public final class Node extends NodeParent {
             Intrinsics.checkNotNull(pointerEvent);
             LayoutCoordinates layoutCoordinates2 = this.coordinates;
             Intrinsics.checkNotNull(layoutCoordinates2);
-            long mo6706getSizeYbymL2g = layoutCoordinates2.mo6706getSizeYbymL2g();
+            long mo6883getSizeYbymL2g = layoutCoordinates2.mo6883getSizeYbymL2g();
             Modifier.Node node = this.modifierNode;
-            int m6989constructorimpl = NodeKind.m6989constructorimpl(16);
+            int m7195constructorimpl = NodeKind.m7195constructorimpl(16);
             MutableVector mutableVector = null;
             while (node != null) {
                 if (node instanceof PointerInputModifierNode) {
-                    ((PointerInputModifierNode) node).mo238onPointerEventH0pRuoY(pointerEvent, PointerEventPass.Initial, mo6706getSizeYbymL2g);
-                } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                    ((PointerInputModifierNode) node).mo266onPointerEventH0pRuoY(pointerEvent, PointerEventPass.Initial, mo6883getSizeYbymL2g);
+                } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                     int i = 0;
-                    for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                        if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                    for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                             i++;
                             if (i == 1) {
-                                node = delegate$ui_release;
+                                node = delegate$ui;
                             } else {
                                 if (mutableVector == null) {
                                     mutableVector = new MutableVector(new Modifier.Node[16], 0);
@@ -374,7 +374,7 @@ public final class Node extends NodeParent {
                                     node = null;
                                 }
                                 if (mutableVector != null) {
-                                    mutableVector.add(delegate$ui_release);
+                                    mutableVector.add(delegate$ui);
                                 }
                             }
                         }
@@ -397,18 +397,18 @@ public final class Node extends NodeParent {
             }
             if (this.modifierNode.isAttached()) {
                 Modifier.Node node2 = this.modifierNode;
-                int m6989constructorimpl2 = NodeKind.m6989constructorimpl(16);
+                int m7195constructorimpl2 = NodeKind.m7195constructorimpl(16);
                 MutableVector mutableVector2 = null;
                 while (node2 != null) {
                     if (node2 instanceof PointerInputModifierNode) {
-                        ((PointerInputModifierNode) node2).mo238onPointerEventH0pRuoY(pointerEvent, PointerEventPass.Main, mo6706getSizeYbymL2g);
-                    } else if ((node2.getKindSet$ui_release() & m6989constructorimpl2) != 0 && (node2 instanceof DelegatingNode)) {
+                        ((PointerInputModifierNode) node2).mo266onPointerEventH0pRuoY(pointerEvent, PointerEventPass.Main, mo6883getSizeYbymL2g);
+                    } else if ((node2.getKindSet$ui() & m7195constructorimpl2) != 0 && (node2 instanceof DelegatingNode)) {
                         int i3 = 0;
-                        for (Modifier.Node delegate$ui_release2 = ((DelegatingNode) node2).getDelegate$ui_release(); delegate$ui_release2 != null; delegate$ui_release2 = delegate$ui_release2.getChild$ui_release()) {
-                            if ((delegate$ui_release2.getKindSet$ui_release() & m6989constructorimpl2) != 0) {
+                        for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
+                            if ((delegate$ui2.getKindSet$ui() & m7195constructorimpl2) != 0) {
                                 i3++;
                                 if (i3 == 1) {
-                                    node2 = delegate$ui_release2;
+                                    node2 = delegate$ui2;
                                 } else {
                                     if (mutableVector2 == null) {
                                         mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
@@ -420,7 +420,7 @@ public final class Node extends NodeParent {
                                         node2 = null;
                                     }
                                     if (mutableVector2 != null) {
-                                        mutableVector2.add(delegate$ui_release2);
+                                        mutableVector2.add(delegate$ui2);
                                     }
                                 }
                             }
@@ -445,20 +445,20 @@ public final class Node extends NodeParent {
             Intrinsics.checkNotNull(pointerEvent);
             LayoutCoordinates layoutCoordinates = this.coordinates;
             Intrinsics.checkNotNull(layoutCoordinates);
-            long mo6706getSizeYbymL2g = layoutCoordinates.mo6706getSizeYbymL2g();
+            long mo6883getSizeYbymL2g = layoutCoordinates.mo6883getSizeYbymL2g();
             Modifier.Node node = this.modifierNode;
-            int m6989constructorimpl = NodeKind.m6989constructorimpl(16);
+            int m7195constructorimpl = NodeKind.m7195constructorimpl(16);
             MutableVector mutableVector = null;
             while (node != null) {
                 if (node instanceof PointerInputModifierNode) {
-                    ((PointerInputModifierNode) node).mo238onPointerEventH0pRuoY(pointerEvent, PointerEventPass.Final, mo6706getSizeYbymL2g);
-                } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                    ((PointerInputModifierNode) node).mo266onPointerEventH0pRuoY(pointerEvent, PointerEventPass.Final, mo6883getSizeYbymL2g);
+                } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                     int i = 0;
-                    for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                        if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                    for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                             i++;
                             if (i == 1) {
-                                node = delegate$ui_release;
+                                node = delegate$ui;
                             } else {
                                 if (mutableVector == null) {
                                     mutableVector = new MutableVector(new Modifier.Node[16], 0);
@@ -470,7 +470,7 @@ public final class Node extends NodeParent {
                                     node = null;
                                 }
                                 if (mutableVector != null) {
-                                    mutableVector.add(delegate$ui_release);
+                                    mutableVector.add(delegate$ui);
                                 }
                             }
                         }

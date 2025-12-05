@@ -6,7 +6,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PointerInputEventProcessor.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001\u000fB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fJ\u0006\u0010\r\u001a\u00020\u000eR\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;", "", "<init>", "()V", "previousPointerInputData", "Landroidx/collection/LongSparseArray;", "Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;", "produce", "Landroidx/compose/ui/input/pointer/InternalPointerEvent;", "pointerInputEvent", "Landroidx/compose/ui/input/pointer/PointerInputEvent;", "positionCalculator", "Landroidx/compose/ui/input/pointer/PositionCalculator;", "clear", "", "PointerInputData", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001\u000fB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fJ\u0006\u0010\r\u001a\u00020\u000eR\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;", "", "<init>", "()V", "previousPointerInputData", "Landroidx/collection/LongSparseArray;", "Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;", "produce", "Landroidx/compose/ui/input/pointer/InternalPointerEvent;", "pointerInputEvent", "Landroidx/compose/ui/input/pointer/PointerInputEvent;", "positionCalculator", "Landroidx/compose/ui/input/pointer/PositionCalculator;", "clear", "", "PointerInputData", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class PointerInputChangeEventProducer {
     private final LongSparseArray<PointerInputData> previousPointerInputData = new LongSparseArray<>(0, 1, null);
@@ -14,27 +14,27 @@ public final class PointerInputChangeEventProducer {
     public final InternalPointerEvent produce(PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator) {
         long uptime;
         boolean down;
-        long mo6651screenToLocalMKHz9U;
+        long mo6825screenToLocalMKHz9U;
         LongSparseArray longSparseArray = new LongSparseArray(pointerInputEvent.getPointers().size());
         List<PointerInputEventData> pointers = pointerInputEvent.getPointers();
         int size = pointers.size();
         for (int i = 0; i < size; i++) {
             PointerInputEventData pointerInputEventData = pointers.get(i);
-            PointerInputData pointerInputData = this.previousPointerInputData.get(pointerInputEventData.m6584getIdJ3iCeTQ());
+            PointerInputData pointerInputData = this.previousPointerInputData.get(pointerInputEventData.m6758getIdJ3iCeTQ());
             if (pointerInputData == null) {
                 down = false;
                 uptime = pointerInputEventData.getUptime();
-                mo6651screenToLocalMKHz9U = pointerInputEventData.m6586getPositionF1C5BW0();
+                mo6825screenToLocalMKHz9U = pointerInputEventData.m6760getPositionF1C5BW0();
             } else {
                 uptime = pointerInputData.getUptime();
                 down = pointerInputData.getDown();
-                mo6651screenToLocalMKHz9U = positionCalculator.mo6651screenToLocalMKHz9U(pointerInputData.m6575getPositionOnScreenF1C5BW0());
+                mo6825screenToLocalMKHz9U = positionCalculator.mo6825screenToLocalMKHz9U(pointerInputData.m6749getPositionOnScreenF1C5BW0());
             }
-            longSparseArray.put(pointerInputEventData.m6584getIdJ3iCeTQ(), new PointerInputChange(pointerInputEventData.m6584getIdJ3iCeTQ(), pointerInputEventData.getUptime(), pointerInputEventData.m6586getPositionF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.getPressure(), uptime, mo6651screenToLocalMKHz9U, down, false, pointerInputEventData.m6589getTypeT8wyACA(), pointerInputEventData.getHistorical(), pointerInputEventData.m6588getScrollDeltaF1C5BW0(), pointerInputEventData.m6585getOriginalEventPositionF1C5BW0(), null));
+            longSparseArray.put(pointerInputEventData.m6758getIdJ3iCeTQ(), new PointerInputChange(pointerInputEventData.m6758getIdJ3iCeTQ(), pointerInputEventData.getUptime(), pointerInputEventData.m6760getPositionF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.getPressure(), uptime, mo6825screenToLocalMKHz9U, down, false, pointerInputEventData.m6763getTypeT8wyACA(), pointerInputEventData.getHistorical(), pointerInputEventData.m6762getScrollDeltaF1C5BW0(), pointerInputEventData.m6759getOriginalEventPositionF1C5BW0(), null));
             if (pointerInputEventData.getDown()) {
-                this.previousPointerInputData.put(pointerInputEventData.m6584getIdJ3iCeTQ(), new PointerInputData(pointerInputEventData.getUptime(), pointerInputEventData.m6587getPositionOnScreenF1C5BW0(), pointerInputEventData.getDown(), null));
+                this.previousPointerInputData.put(pointerInputEventData.m6758getIdJ3iCeTQ(), new PointerInputData(pointerInputEventData.getUptime(), pointerInputEventData.m6761getPositionOnScreenF1C5BW0(), pointerInputEventData.getDown(), null));
             } else {
-                this.previousPointerInputData.remove(pointerInputEventData.m6584getIdJ3iCeTQ());
+                this.previousPointerInputData.remove(pointerInputEventData.m6758getIdJ3iCeTQ());
             }
         }
         return new InternalPointerEvent(longSparseArray, pointerInputEvent);
@@ -45,7 +45,7 @@ public final class PointerInputChangeEventProducer {
     }
 
     /* compiled from: PointerInputEventProcessor.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\b\u0002\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\f\u0010\u000bR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;", "", "uptime", "", "positionOnScreen", "Landroidx/compose/ui/geometry/Offset;", "down", "", "<init>", "(JJZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getUptime", "()J", "getPositionOnScreen-F1C5BW0", "J", "getDown", "()Z", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\b\u0002\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\f\u0010\u000bR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;", "", "uptime", "", "positionOnScreen", "Landroidx/compose/ui/geometry/Offset;", "down", "", "<init>", "(JJZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getUptime", "()J", "getPositionOnScreen-F1C5BW0", "J", "getDown", "()Z", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     private static final class PointerInputData {
         private final boolean down;
@@ -67,7 +67,7 @@ public final class PointerInputChangeEventProducer {
         }
 
         /* renamed from: getPositionOnScreen-F1C5BW0  reason: not valid java name */
-        public final long m6575getPositionOnScreenF1C5BW0() {
+        public final long m6749getPositionOnScreenF1C5BW0() {
             return this.positionOnScreen;
         }
 

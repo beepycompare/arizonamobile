@@ -22,14 +22,14 @@ import org.json.JSONArray;
 public final class Cf implements Parcelable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ContentValues f432a;
+    public final ContentValues f515a;
     public final ResultReceiver b;
     public static final String c = UUID.randomUUID().toString();
     public static final Parcelable.Creator<Cf> CREATOR = new Bf();
 
     public Cf(Context context, ResultReceiver resultReceiver) {
         ContentValues contentValues = new ContentValues();
-        this.f432a = contentValues;
+        this.f515a = contentValues;
         contentValues.put("PROCESS_CFG_PROCESS_ID", Integer.valueOf(Process.myPid()));
         contentValues.put("PROCESS_CFG_PROCESS_SESSION_ID", c);
         contentValues.put("PROCESS_CFG_SDK_API_LEVEL", Integer.valueOf(AppMetrica.getLibraryApiLevel()));
@@ -43,7 +43,7 @@ public final class Cf implements Parcelable {
         if (map != null) {
             HashMap b = Gm.b(map);
             synchronized (this) {
-                this.f432a.put("PROCESS_CFG_CLIDS", AbstractC0294hb.b(b));
+                this.f515a.put("PROCESS_CFG_CLIDS", AbstractC0293hb.b(b));
             }
         }
     }
@@ -52,7 +52,7 @@ public final class Cf implements Parcelable {
         List<String> list = appMetricaConfig.customHosts;
         if (list != null) {
             synchronized (this) {
-                this.f432a.put("PROCESS_CFG_CUSTOM_HOSTS", mo.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
+                this.f515a.put("PROCESS_CFG_CUSTOM_HOSTS", mo.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
             }
         }
     }
@@ -61,7 +61,7 @@ public final class Cf implements Parcelable {
         String str = (String) appMetricaConfig.additionalConfig.get("YMM_distributionReferrer");
         if (str != null) {
             synchronized (this) {
-                this.f432a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
+                this.f515a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
             }
             i();
         }
@@ -83,66 +83,66 @@ public final class Cf implements Parcelable {
     }
 
     public final String e() {
-        return this.f432a.getAsString("PROCESS_CFG_PACKAGE_NAME");
+        return this.f515a.getAsString("PROCESS_CFG_PACKAGE_NAME");
     }
 
     public final Integer f() {
-        return this.f432a.getAsInteger("PROCESS_CFG_PROCESS_ID");
+        return this.f515a.getAsInteger("PROCESS_CFG_PROCESS_ID");
     }
 
     public final String g() {
-        return this.f432a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+        return this.f515a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
     }
 
     public final boolean h() {
-        return this.f432a.containsKey("PROCESS_CFG_CUSTOM_HOSTS");
+        return this.f515a.containsKey("PROCESS_CFG_CUSTOM_HOSTS");
     }
 
     public final synchronized void i() {
-        this.f432a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", "api");
+        this.f515a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", "api");
     }
 
     public final String toString() {
-        return "ProcessConfiguration{mParamsMapping=" + this.f432a + ", mDataResultReceiver=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ProcessConfiguration{mParamsMapping=" + this.f515a + ", mDataResultReceiver=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putParcelable("CFG_KEY_PROCESS_ENVIRONMENT", this.f432a);
+        bundle.putParcelable("CFG_KEY_PROCESS_ENVIRONMENT", this.f515a);
         bundle.putParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER", this.b);
         parcel.writeBundle(bundle);
     }
 
     public final HashMap a() {
-        return AbstractC0294hb.c(this.f432a.getAsString("PROCESS_CFG_CLIDS"));
+        return AbstractC0293hb.c(this.f515a.getAsString("PROCESS_CFG_CLIDS"));
     }
 
     public final String c() {
-        return this.f432a.getAsString("PROCESS_CFG_DISTRIBUTION_REFERRER");
+        return this.f515a.getAsString("PROCESS_CFG_DISTRIBUTION_REFERRER");
     }
 
     public final String d() {
-        return this.f432a.getAsString("PROCESS_CFG_INSTALL_REFERRER_SOURCE");
+        return this.f515a.getAsString("PROCESS_CFG_INSTALL_REFERRER_SOURCE");
     }
 
     public Cf(Cf cf) {
         synchronized (cf) {
-            this.f432a = new ContentValues(cf.f432a);
+            this.f515a = new ContentValues(cf.f515a);
             this.b = cf.b;
         }
     }
 
     public final ArrayList b() {
-        String asString = this.f432a.getAsString("PROCESS_CFG_CUSTOM_HOSTS");
+        String asString = this.f515a.getAsString("PROCESS_CFG_CUSTOM_HOSTS");
         if (TextUtils.isEmpty(asString)) {
             return null;
         }
-        return AbstractC0294hb.b(asString);
+        return AbstractC0293hb.b(asString);
     }
 
     public Cf(ContentValues contentValues, ResultReceiver resultReceiver) {
-        this.f432a = contentValues == null ? new ContentValues() : contentValues;
+        this.f515a = contentValues == null ? new ContentValues() : contentValues;
         this.b = resultReceiver;
     }
 }

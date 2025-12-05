@@ -25,27 +25,27 @@ public final class IconButtonColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2422getContainerColor0d7_KjU() {
+    public final long m2508getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2423getContentColor0d7_KjU() {
+    public final long m2509getContentColor0d7_KjU() {
         return this.contentColor;
     }
 
     /* renamed from: getDisabledContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2424getDisabledContainerColor0d7_KjU() {
+    public final long m2510getDisabledContainerColor0d7_KjU() {
         return this.disabledContainerColor;
     }
 
     /* renamed from: getDisabledContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2425getDisabledContentColor0d7_KjU() {
+    public final long m2511getDisabledContentColor0d7_KjU() {
         return this.disabledContentColor;
     }
 
     /* renamed from: copy-jRlVdoo$default  reason: not valid java name */
-    public static /* synthetic */ IconButtonColors m2418copyjRlVdoo$default(IconButtonColors iconButtonColors, long j, long j2, long j3, long j4, int i, Object obj) {
+    public static /* synthetic */ IconButtonColors m2504copyjRlVdoo$default(IconButtonColors iconButtonColors, long j, long j2, long j3, long j4, int i, Object obj) {
         if ((i & 1) != 0) {
             j = iconButtonColors.containerColor;
         }
@@ -57,21 +57,21 @@ public final class IconButtonColors {
         if ((i & 4) != 0) {
             j3 = iconButtonColors.disabledContainerColor;
         }
-        return iconButtonColors.m2421copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? iconButtonColors.disabledContentColor : j4);
+        return iconButtonColors.m2507copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? iconButtonColors.disabledContentColor : j4);
     }
 
     /* renamed from: copy-jRlVdoo  reason: not valid java name */
-    public final IconButtonColors m2421copyjRlVdoo(long j, long j2, long j3, long j4) {
+    public final IconButtonColors m2507copyjRlVdoo(long j, long j2, long j3, long j4) {
         return new IconButtonColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.contentColor, j3 != 16 ? j3 : this.disabledContainerColor, j4 != 16 ? j4 : this.disabledContentColor, null);
     }
 
     /* renamed from: containerColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2419containerColorvNxB06k$material3(boolean z) {
+    public final long m2505containerColorvNxB06k$material3(boolean z) {
         return z ? this.containerColor : this.disabledContainerColor;
     }
 
     /* renamed from: contentColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2420contentColorvNxB06k$material3(boolean z) {
+    public final long m2506contentColorvNxB06k$material3(boolean z) {
         return z ? this.contentColor : this.disabledContentColor;
     }
 
@@ -83,10 +83,10 @@ public final class IconButtonColors {
             return false;
         }
         IconButtonColors iconButtonColors = (IconButtonColors) obj;
-        return Color.m5281equalsimpl0(this.containerColor, iconButtonColors.containerColor) && Color.m5281equalsimpl0(this.contentColor, iconButtonColors.contentColor) && Color.m5281equalsimpl0(this.disabledContainerColor, iconButtonColors.disabledContainerColor) && Color.m5281equalsimpl0(this.disabledContentColor, iconButtonColors.disabledContentColor);
+        return Color.m5425equalsimpl0(this.containerColor, iconButtonColors.containerColor) && Color.m5425equalsimpl0(this.contentColor, iconButtonColors.contentColor) && Color.m5425equalsimpl0(this.disabledContainerColor, iconButtonColors.disabledContainerColor) && Color.m5425equalsimpl0(this.disabledContentColor, iconButtonColors.disabledContentColor);
     }
 
     public int hashCode() {
-        return (((((Color.m5287hashCodeimpl(this.containerColor) * 31) + Color.m5287hashCodeimpl(this.contentColor)) * 31) + Color.m5287hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m5287hashCodeimpl(this.disabledContentColor);
+        return (((((Color.m5431hashCodeimpl(this.containerColor) * 31) + Color.m5431hashCodeimpl(this.contentColor)) * 31) + Color.m5431hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m5431hashCodeimpl(this.disabledContentColor);
     }
 }

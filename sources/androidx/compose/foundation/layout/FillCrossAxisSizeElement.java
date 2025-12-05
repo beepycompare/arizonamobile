@@ -10,12 +10,12 @@ public final class FillCrossAxisSizeElement extends ModifierNodeElement<FillCros
     public static final int $stable = 0;
     private final float fraction;
 
-    public final float getFraction() {
-        return this.fraction;
-    }
-
     public FillCrossAxisSizeElement(float f) {
         this.fraction = f;
+    }
+
+    public final float getFraction() {
+        return this.fraction;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

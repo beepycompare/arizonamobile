@@ -37,30 +37,30 @@ import kotlin.math.MathKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Pager.kt */
-@Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\u001aë\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b'\u0010(\u001aß\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b)\u0010*\u001aë\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b.\u0010/\u001aß\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b0\u00101\u001aL\u00102\u001a\u00020\u000b*\u00020\u001e2\u0006\u00103\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\u000b2\u0006\u00104\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u00106\u001a\u00020\u000b2\u0006\u00107\u001a\u00020\u000b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u000bH\u0000\u001a,\u0010;\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010<\u001a\u00020\u00132\u0006\u0010=\u001a\u00020>2\u0006\u0010\u0012\u001a\u00020\u0013H\u0000\u001a\u0017\u0010?\u001a\u00020\u00012\f\u0010@\u001a\b\u0012\u0004\u0012\u00020B0AH\u0082\b¨\u0006C"}, d2 = {"HorizontalPager", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "modifier", "Landroidx/compose/ui/Modifier;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "pageSize", "Landroidx/compose/foundation/pager/PageSize;", "beyondViewportPageCount", "", "pageSpacing", "Landroidx/compose/ui/unit/Dp;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "flingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "userScrollEnabled", "", "reverseLayout", "key", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "", "pageNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "pageContent", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "page", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "HorizontalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "HorizontalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "VerticalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "currentPageOffset", "layoutSize", "spaceBetweenPages", "beforeContentPadding", "afterContentPadding", "currentPage", "currentPageOffsetFraction", "", "pageCount", "pagerSemantics", "isVertical", "scope", "Lkotlinx/coroutines/CoroutineScope;", "debugLog", "generateMsg", "Lkotlin/Function0;", "", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\u001aë\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b'\u0010(\u001aß\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b)\u0010*\u001aë\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b.\u0010/\u001aß\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b0\u00101\u001aL\u00102\u001a\u00020\u000b*\u00020\u001e2\u0006\u00103\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\u000b2\u0006\u00104\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u00106\u001a\u00020\u000b2\u0006\u00107\u001a\u00020\u000b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u000bH\u0000\u001a,\u0010;\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010<\u001a\u00020\u00132\u0006\u0010=\u001a\u00020>2\u0006\u0010\u0012\u001a\u00020\u0013H\u0000\u001a\u0017\u0010?\u001a\u00020\u00012\f\u0010@\u001a\b\u0012\u0004\u0012\u00020B0AH\u0082\b¨\u0006C"}, d2 = {"HorizontalPager", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "modifier", "Landroidx/compose/ui/Modifier;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "pageSize", "Landroidx/compose/foundation/pager/PageSize;", "beyondViewportPageCount", "", "pageSpacing", "Landroidx/compose/ui/unit/Dp;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "flingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "userScrollEnabled", "", "reverseLayout", "key", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "", "pageNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "pageContent", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "page", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "HorizontalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "HorizontalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "VerticalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "currentPageOffset", "layoutSize", "spaceBetweenPages", "beforeContentPadding", "afterContentPadding", "currentPage", "currentPageOffsetFraction", "", "pageCount", "pagerSemantics", "isVertical", "scope", "Lkotlinx/coroutines/CoroutineScope;", "debugLog", "generateMsg", "Lkotlin/Function0;", "", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PagerKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit HorizontalPager__8jOkeI$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1147HorizontalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1221HorizontalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit HorizontalPager_oI3XNZo$lambda$1(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1148HorizontalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+    public static final Unit HorizontalPager_oI3XNZo$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
+        m1222HorizontalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit VerticalPager__8jOkeI$lambda$2(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1149VerticalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+    public static final Unit VerticalPager__8jOkeI$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
+        m1223VerticalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit VerticalPager_oI3XNZo$lambda$3(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1150VerticalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+    public static final Unit VerticalPager_oI3XNZo$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
+        m1224VerticalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
@@ -68,37 +68,37 @@ public final class PagerKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x01cd  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x01f3  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x03cf  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x03ee  */
-    /* JADX WARN: Removed duplicated region for block: B:241:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0189  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01c4  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x01e5  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x03c1  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x03e0  */
+    /* JADX WARN: Removed duplicated region for block: B:235:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0128  */
     /* JADX WARN: Type inference failed for: r4v10 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4, types: [int] */
@@ -106,7 +106,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1147HorizontalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1221HorizontalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -167,10 +167,8 @@ public final class PagerKt {
         int i29;
         Object obj4;
         Composer startRestartGroup = composer.startRestartGroup(1860873769);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)130@7468L707:Pager.kt#g6yjnt");
-        if ((i4 & 1) != 0) {
-            i5 = i2 | 6;
-        } else if ((i2 & 6) == 0) {
+        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)131@7501L707:Pager.kt#g6yjnt");
+        if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
             i5 = i2;
@@ -291,186 +289,181 @@ public final class PagerKt {
                                     }
                                     i20 |= i31;
                                 }
-                                i21 = i20;
-                                if ((i4 & 16384) == 0) {
-                                    i21 |= 24576;
-                                } else if ((i3 & 24576) == 0) {
-                                    i21 |= startRestartGroup.changedInstance(function4) ? 16384 : 8192;
-                                    if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
-                                        startRestartGroup.startDefaults();
-                                        ComposerKt.sourceInformation(startRestartGroup, "120@6993L28,125@7217L57,127@7371L26");
-                                        if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
-                                            startRestartGroup.skipToGroupEnd();
-                                            if ((i4 & 128) != 0) {
-                                                i15 &= -29360129;
-                                            }
-                                            if ((i4 & 2048) != 0) {
-                                                i21 &= -113;
-                                            }
-                                            if ((i4 & 8192) != 0) {
-                                                i21 &= -7169;
-                                            }
-                                            paddingValues3 = paddingValues;
-                                            pageSize3 = pageSize;
-                                            z6 = z2;
-                                            function13 = function1;
-                                            nestedScrollConnection4 = nestedScrollConnection;
-                                            i25 = i21;
-                                            composer2 = startRestartGroup;
-                                            f4 = f2;
-                                            modifier3 = obj;
-                                            i27 = i15;
-                                            z5 = z;
-                                            overscrollEffect3 = overscrollEffect;
-                                            i26 = i9;
-                                            targetedFlingBehavior3 = obj2;
-                                            snapPosition3 = snapPosition;
-                                        } else {
-                                            Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                            PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
-                                            PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
-                                            int i33 = i8 != 0 ? 0 : i9;
-                                            float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
-                                            if (i11 != 0) {
-                                                vertical2 = Alignment.Companion.getCenterVertically();
-                                            }
-                                            if ((i4 & 128) != 0) {
-                                                i22 = i19;
-                                                i23 = i21;
-                                                pagerState2 = pagerState;
-                                                i15 &= -29360129;
-                                                r4 = 0;
-                                                obj2 = PagerDefaults.INSTANCE.flingBehavior(pagerState2, null, null, null, 0.0f, startRestartGroup, (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 30);
-                                            } else {
-                                                pagerState2 = pagerState;
-                                                r4 = 0;
-                                                i22 = i19;
-                                                i23 = i21;
-                                            }
-                                            boolean z7 = i12 == 0 ? z : true;
-                                            boolean z8 = i14 != 0 ? r4 : z2;
-                                            Function1<? super Integer, ? extends Object> function14 = i18 != 0 ? null : function1;
-                                            if ((i4 & 2048) != 0) {
-                                                nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Horizontal, startRestartGroup, (i15 & 14) | 432);
-                                                i24 = i23 & (-113);
-                                            } else {
-                                                nestedScrollConnection3 = nestedScrollConnection;
-                                                i24 = i23;
-                                            }
-                                            SnapPosition.Start start = i22 != 0 ? SnapPosition.Start.INSTANCE : snapPosition;
-                                            if ((i4 & 8192) != 0) {
-                                                SnapPosition snapPosition4 = start;
-                                                overscrollEffect3 = OverscrollKt.rememberOverscrollEffect(startRestartGroup, r4);
-                                                i25 = i24 & (-7169);
-                                                targetedFlingBehavior3 = obj2;
-                                                snapPosition3 = snapPosition4;
-                                                function13 = function14;
-                                                nestedScrollConnection4 = nestedScrollConnection3;
-                                                composer2 = startRestartGroup;
-                                                paddingValues3 = m836PaddingValues0680j_4;
-                                                pageSize3 = fill;
-                                                z5 = z7;
-                                                i26 = i33;
-                                                f4 = m7996constructorimpl;
-                                                i27 = i15;
-                                                z6 = z8;
-                                                modifier3 = companion;
-                                            } else {
-                                                function13 = function14;
-                                                nestedScrollConnection4 = nestedScrollConnection3;
-                                                i25 = i24;
-                                                composer2 = startRestartGroup;
-                                                paddingValues3 = m836PaddingValues0680j_4;
-                                                targetedFlingBehavior3 = obj2;
-                                                pageSize3 = fill;
-                                                z5 = z7;
-                                                i26 = i33;
-                                                f4 = m7996constructorimpl;
-                                                i27 = i15;
-                                                z6 = z8;
-                                                snapPosition3 = start;
-                                                modifier3 = companion;
-                                                overscrollEffect3 = overscrollEffect;
-                                            }
-                                        }
-                                        composer2.endDefaults();
-                                        Modifier modifier4 = modifier3;
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(1860873769, i27, i25, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:129)");
-                                        }
-                                        int i34 = i25;
-                                        int i35 = i27 >> 6;
-                                        int i36 = i27 << 12;
-                                        int i37 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i35 & 458752) | (i35 & 3670016) | ((i34 << 12) & 29360128) | (i36 & 234881024) | (i36 & 1879048192);
-                                        int i38 = ((i27 >> 9) & 14) | 3072 | (i34 & 112);
-                                        int i39 = i34 << 6;
-                                        LazyLayoutPagerKt.m1139PagereLwUrMk(modifier4, pagerState, paddingValues3, z6, Orientation.Horizontal, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, Alignment.Companion.getCenterHorizontally(), vertical2, snapPosition3, function4, composer2, i37, i38 | (i39 & 896) | (i35 & 57344) | ((i34 << 9) & 458752) | (i39 & 3670016), 0);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                        }
-                                        int i40 = i26;
-                                        targetedFlingBehavior2 = targetedFlingBehavior3;
-                                        i9 = i40;
-                                        float f5 = f4;
-                                        z3 = z5;
-                                        f3 = f5;
-                                        Alignment.Vertical vertical4 = vertical2;
-                                        overscrollEffect2 = overscrollEffect3;
-                                        vertical3 = vertical4;
-                                        Function1<? super Integer, ? extends Object> function15 = function13;
-                                        nestedScrollConnection2 = nestedScrollConnection4;
-                                        function12 = function15;
-                                        pageSize2 = pageSize3;
-                                        snapPosition2 = snapPosition3;
-                                        z4 = z6;
-                                        paddingValues2 = paddingValues3;
-                                        modifier2 = modifier4;
-                                    } else {
-                                        composer2 = startRestartGroup;
-                                        composer2.skipToGroupEnd();
-                                        paddingValues2 = paddingValues;
-                                        pageSize2 = pageSize;
-                                        z3 = z;
-                                        z4 = z2;
-                                        function12 = function1;
-                                        nestedScrollConnection2 = nestedScrollConnection;
-                                        snapPosition2 = snapPosition;
-                                        f3 = f2;
-                                        modifier2 = obj;
-                                        vertical3 = vertical2;
-                                        targetedFlingBehavior2 = obj2;
-                                        overscrollEffect2 = overscrollEffect;
-                                    }
-                                    endRestartGroup = composer2.endRestartGroup();
-                                    if (endRestartGroup != null) {
-                                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda8
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public final Object invoke(Object obj6, Object obj7) {
-                                                Unit HorizontalPager__8jOkeI$lambda$0;
-                                                HorizontalPager__8jOkeI$lambda$0 = PagerKt.HorizontalPager__8jOkeI$lambda$0(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f3, vertical3, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, overscrollEffect2, function4, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
-                                                return HorizontalPager__8jOkeI$lambda$0;
-                                            }
-                                        });
-                                        return;
-                                    }
-                                    return;
+                                if ((i3 & 24576) == 0) {
+                                    i20 |= startRestartGroup.changedInstance(function4) ? 16384 : 8192;
                                 }
-                                if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                                i21 = i20;
+                                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                                    startRestartGroup.startDefaults();
+                                    ComposerKt.sourceInformation(startRestartGroup, "121@7026L28,126@7250L57,128@7404L26");
+                                    if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i4 & 128) != 0) {
+                                            i15 &= -29360129;
+                                        }
+                                        if ((i4 & 2048) != 0) {
+                                            i21 &= -113;
+                                        }
+                                        if ((i4 & 8192) != 0) {
+                                            i21 &= -7169;
+                                        }
+                                        pageSize3 = pageSize;
+                                        z6 = z2;
+                                        function13 = function1;
+                                        nestedScrollConnection4 = nestedScrollConnection;
+                                        i25 = i21;
+                                        composer2 = startRestartGroup;
+                                        f4 = f2;
+                                        modifier3 = obj;
+                                        i27 = i15;
+                                        paddingValues3 = paddingValues;
+                                        z5 = z;
+                                        overscrollEffect3 = overscrollEffect;
+                                        i26 = i9;
+                                        targetedFlingBehavior3 = obj2;
+                                        snapPosition3 = snapPosition;
+                                    } else {
+                                        Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
+                                        PaddingValues m921PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : paddingValues;
+                                        PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
+                                        int i33 = i8 != 0 ? 0 : i9;
+                                        float m8258constructorimpl = i10 != 0 ? Dp.m8258constructorimpl(0) : f2;
+                                        if (i11 != 0) {
+                                            vertical2 = Alignment.Companion.getCenterVertically();
+                                        }
+                                        if ((i4 & 128) != 0) {
+                                            PagerDefaults pagerDefaults = PagerDefaults.INSTANCE;
+                                            int i34 = (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                                            i22 = i19;
+                                            i23 = i21;
+                                            pagerState2 = pagerState;
+                                            i15 &= -29360129;
+                                            r4 = 0;
+                                            obj2 = pagerDefaults.flingBehavior(pagerState2, null, null, null, 0.0f, startRestartGroup, i34, 30);
+                                        } else {
+                                            pagerState2 = pagerState;
+                                            r4 = 0;
+                                            i22 = i19;
+                                            i23 = i21;
+                                        }
+                                        boolean z7 = i12 == 0 ? z : true;
+                                        boolean z8 = i14 != 0 ? r4 : z2;
+                                        Function1<? super Integer, ? extends Object> function14 = i18 != 0 ? null : function1;
+                                        if ((i4 & 2048) != 0) {
+                                            nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Horizontal, startRestartGroup, (i15 & 14) | 432);
+                                            i24 = i23 & (-113);
+                                        } else {
+                                            nestedScrollConnection3 = nestedScrollConnection;
+                                            i24 = i23;
+                                        }
+                                        SnapPosition.Start start = i22 != 0 ? SnapPosition.Start.INSTANCE : snapPosition;
+                                        if ((i4 & 8192) != 0) {
+                                            SnapPosition snapPosition4 = start;
+                                            overscrollEffect3 = OverscrollKt.rememberOverscrollEffect(startRestartGroup, r4);
+                                            i25 = i24 & (-7169);
+                                            targetedFlingBehavior3 = obj2;
+                                            snapPosition3 = snapPosition4;
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                            composer2 = startRestartGroup;
+                                            paddingValues3 = m921PaddingValues0680j_4;
+                                            pageSize3 = fill;
+                                            z5 = z7;
+                                            i26 = i33;
+                                            f4 = m8258constructorimpl;
+                                            i27 = i15;
+                                            z6 = z8;
+                                            modifier3 = companion;
+                                        } else {
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                            i25 = i24;
+                                            composer2 = startRestartGroup;
+                                            paddingValues3 = m921PaddingValues0680j_4;
+                                            targetedFlingBehavior3 = obj2;
+                                            pageSize3 = fill;
+                                            z5 = z7;
+                                            i26 = i33;
+                                            f4 = m8258constructorimpl;
+                                            i27 = i15;
+                                            z6 = z8;
+                                            snapPosition3 = start;
+                                            modifier3 = companion;
+                                            overscrollEffect3 = overscrollEffect;
+                                        }
+                                    }
+                                    composer2.endDefaults();
+                                    Modifier modifier4 = modifier3;
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(1860873769, i27, i25, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:130)");
+                                    }
+                                    int i35 = i25;
+                                    int i36 = i27 >> 6;
+                                    int i37 = i27 << 12;
+                                    int i38 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i36 & 458752) | (i36 & 3670016) | ((i35 << 12) & 29360128) | (i37 & 234881024) | (i37 & 1879048192);
+                                    int i39 = ((i27 >> 9) & 14) | 3072 | (i35 & 112);
+                                    int i40 = i35 << 6;
+                                    LazyLayoutPagerKt.m1214PagereLwUrMk(modifier4, pagerState, paddingValues3, z6, Orientation.Horizontal, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, Alignment.Companion.getCenterHorizontally(), vertical2, snapPosition3, function4, composer2, i38, i39 | (i40 & 896) | (i36 & 57344) | ((i35 << 9) & 458752) | (i40 & 3670016), 0);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
+                                    }
+                                    int i41 = i26;
+                                    targetedFlingBehavior2 = targetedFlingBehavior3;
+                                    i9 = i41;
+                                    float f5 = f4;
+                                    z3 = z5;
+                                    f3 = f5;
+                                    Alignment.Vertical vertical4 = vertical2;
+                                    overscrollEffect2 = overscrollEffect3;
+                                    vertical3 = vertical4;
+                                    Function1<? super Integer, ? extends Object> function15 = function13;
+                                    nestedScrollConnection2 = nestedScrollConnection4;
+                                    function12 = function15;
+                                    pageSize2 = pageSize3;
+                                    snapPosition2 = snapPosition3;
+                                    z4 = z6;
+                                    paddingValues2 = paddingValues3;
+                                    modifier2 = modifier4;
+                                } else {
+                                    composer2 = startRestartGroup;
+                                    composer2.skipToGroupEnd();
+                                    paddingValues2 = paddingValues;
+                                    pageSize2 = pageSize;
+                                    z3 = z;
+                                    z4 = z2;
+                                    function12 = function1;
+                                    nestedScrollConnection2 = nestedScrollConnection;
+                                    snapPosition2 = snapPosition;
+                                    f3 = f2;
+                                    modifier2 = obj;
+                                    vertical3 = vertical2;
+                                    targetedFlingBehavior2 = obj2;
+                                    overscrollEffect2 = overscrollEffect;
                                 }
                                 endRestartGroup = composer2.endRestartGroup();
-                                if (endRestartGroup != null) {
+                                if (endRestartGroup == null) {
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda8
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public final Object invoke(Object obj6, Object obj7) {
+                                            Unit HorizontalPager__8jOkeI$lambda$0;
+                                            HorizontalPager__8jOkeI$lambda$0 = PagerKt.HorizontalPager__8jOkeI$lambda$0(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f3, vertical3, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, overscrollEffect2, function4, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
+                                            return HorizontalPager__8jOkeI$lambda$0;
+                                        }
+                                    });
+                                    return;
                                 }
+                                return;
                             }
                         }
                         if ((i3 & 3072) == 0) {
                         }
-                        i21 = i20;
-                        if ((i4 & 16384) == 0) {
+                        if ((i3 & 24576) == 0) {
                         }
-                        if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                        i21 = i20;
+                        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                         }
                         endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
+                        if (endRestartGroup == null) {
                         }
                     }
                     i9 = i;
@@ -499,13 +492,13 @@ public final class PagerKt {
                     }
                     if ((i3 & 3072) == 0) {
                     }
-                    i21 = i20;
-                    if ((i4 & 16384) == 0) {
+                    if ((i3 & 24576) == 0) {
                     }
-                    if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                    i21 = i20;
+                    if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                     }
                     endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    if (endRestartGroup == null) {
                     }
                 }
                 i8 = i4 & 16;
@@ -537,13 +530,13 @@ public final class PagerKt {
                 }
                 if ((i3 & 3072) == 0) {
                 }
-                i21 = i20;
-                if ((i4 & 16384) == 0) {
+                if ((i3 & 24576) == 0) {
                 }
-                if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                i21 = i20;
+                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             i7 = i4 & 8;
@@ -579,13 +572,13 @@ public final class PagerKt {
             }
             if ((i3 & 3072) == 0) {
             }
-            i21 = i20;
-            if ((i4 & 16384) == 0) {
+            if ((i3 & 24576) == 0) {
             }
-            if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+            i21 = i20;
+            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         obj = modifier;
@@ -625,51 +618,51 @@ public final class PagerKt {
         }
         if ((i3 & 3072) == 0) {
         }
-        i21 = i20;
-        if ((i4 & 16384) == 0) {
+        if ((i3 & 24576) == 0) {
         }
-        if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+        i21 = i20;
+        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0182  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x018f  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x01e5  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0336  */
-    /* JADX WARN: Removed duplicated region for block: B:225:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01a6  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x01b3  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x0310  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:218:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0124  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the non deprecated overload")
     /* renamed from: HorizontalPager-oI3XNZo  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1148HorizontalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1222HorizontalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -690,6 +683,7 @@ public final class PagerKt {
         int i18;
         int i19;
         int i20;
+        int i21;
         final PaddingValues paddingValues2;
         final PageSize pageSize2;
         final boolean z3;
@@ -702,11 +696,11 @@ public final class PagerKt {
         final SnapPosition snapPosition2;
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
-        int i21;
-        PagerState pagerState2;
         int i22;
-        Composer composer2;
+        PagerState pagerState2;
         int i23;
+        Composer composer2;
+        int i24;
         NestedScrollConnection nestedScrollConnection3;
         SnapPosition.Start start;
         boolean z5;
@@ -717,20 +711,18 @@ public final class PagerKt {
         boolean z6;
         float f3;
         PaddingValues paddingValues3;
-        int i24;
         int i25;
         int i26;
+        int i27;
         Composer startRestartGroup = composer.startRestartGroup(1163833967);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)184@9636L26,170@9083L621:Pager.kt#g6yjnt");
-        if ((i4 & 1) != 0) {
-            i5 = i2 | 6;
-        } else if ((i2 & 6) == 0) {
+        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)185@9669L26,171@9116L621:Pager.kt#g6yjnt");
+        if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
             i5 = i2;
         }
-        int i27 = i4 & 2;
-        if (i27 != 0) {
+        int i28 = i4 & 2;
+        if (i28 != 0) {
             i5 |= 48;
         } else if ((i2 & 48) == 0) {
             obj = modifier;
@@ -775,14 +767,14 @@ public final class PagerKt {
                             if ((i4 & 128) == 0) {
                                 obj3 = targetedFlingBehavior;
                                 if (startRestartGroup.changed(obj3)) {
-                                    i26 = 8388608;
-                                    i5 |= i26;
+                                    i27 = 8388608;
+                                    i5 |= i27;
                                 }
                             } else {
                                 obj3 = targetedFlingBehavior;
                             }
-                            i26 = 4194304;
-                            i5 |= i26;
+                            i27 = 4194304;
+                            i5 |= i27;
                         } else {
                             obj3 = targetedFlingBehavior;
                         }
@@ -816,160 +808,165 @@ public final class PagerKt {
                         if ((i3 & 48) == 0) {
                             i18 = i16;
                             if ((i4 & 2048) == 0 && startRestartGroup.changedInstance(nestedScrollConnection)) {
-                                i25 = 32;
-                                i17 |= i25;
+                                i26 = 32;
+                                i17 |= i26;
                             }
-                            i25 = 16;
-                            i17 |= i25;
+                            i26 = 16;
+                            i17 |= i26;
                         } else {
                             i18 = i16;
                         }
-                        int i28 = i17;
+                        int i29 = i17;
                         i19 = i4 & 4096;
                         if (i19 != 0) {
-                            i20 = i28 | RendererCapabilities.DECODER_SUPPORT_MASK;
+                            i20 = i29 | RendererCapabilities.DECODER_SUPPORT_MASK;
                         } else {
-                            int i29 = i28;
-                            if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                                i29 |= startRestartGroup.changed(snapPosition) ? 256 : 128;
-                            }
                             i20 = i29;
-                        }
-                        if ((i4 & 8192) != 0) {
-                            i20 |= 3072;
-                        } else if ((i3 & 3072) == 0) {
-                            i20 |= startRestartGroup.changedInstance(function4) ? 2048 : 1024;
-                            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
-                                startRestartGroup.startDefaults();
-                                ComposerKt.sourceInformation(startRestartGroup, "161@8678L28,166@8902L57");
-                                if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
-                                    startRestartGroup.skipToGroupEnd();
-                                    if ((i4 & 128) != 0) {
-                                        i15 &= -29360129;
-                                    }
-                                    if ((i4 & 2048) != 0) {
-                                        i20 &= -113;
-                                    }
-                                    pagerState2 = pagerState;
-                                    paddingValues3 = paddingValues;
-                                    z6 = z;
-                                    z5 = z2;
-                                    function13 = function1;
-                                    nestedScrollConnection4 = nestedScrollConnection;
-                                    start = snapPosition;
-                                    i22 = 0;
-                                    i21 = i9;
-                                    f3 = f2;
-                                    companion = obj;
-                                    targetedFlingBehavior3 = obj3;
-                                    composer2 = startRestartGroup;
-                                    i24 = i15;
-                                    pageSize3 = pageSize;
-                                } else {
-                                    companion = i27 != 0 ? Modifier.Companion : obj;
-                                    PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
-                                    PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
-                                    i21 = i8 != 0 ? 0 : i9;
-                                    float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
-                                    if (i11 != 0) {
-                                        obj2 = Alignment.Companion.getCenterVertically();
-                                    }
-                                    if ((i4 & 128) != 0) {
-                                        composer2 = startRestartGroup;
-                                        i23 = i20;
+                            if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                                i20 |= startRestartGroup.changed(snapPosition) ? 256 : 128;
+                                if ((i3 & 3072) == 0) {
+                                    i20 |= startRestartGroup.changedInstance(function4) ? 2048 : 1024;
+                                }
+                                i21 = i20;
+                                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
+                                    startRestartGroup.startDefaults();
+                                    ComposerKt.sourceInformation(startRestartGroup, "162@8711L28,167@8935L57");
+                                    if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i4 & 128) != 0) {
+                                            i15 &= -29360129;
+                                        }
+                                        if ((i4 & 2048) != 0) {
+                                            i21 &= -113;
+                                        }
                                         pagerState2 = pagerState;
-                                        i15 &= -29360129;
-                                        i22 = 0;
-                                        obj3 = PagerDefaults.INSTANCE.flingBehavior(pagerState2, null, null, null, 0.0f, composer2, (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 30);
-                                    } else {
-                                        pagerState2 = pagerState;
-                                        i22 = 0;
-                                        composer2 = startRestartGroup;
-                                        i23 = i20;
-                                    }
-                                    boolean z7 = i12 == 0 ? z : true;
-                                    boolean z8 = i14 != 0 ? i22 == 1 ? 1 : 0 : z2;
-                                    Function1 function14 = i18 != 0 ? null : function1;
-                                    if ((i4 & 2048) != 0) {
-                                        nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Horizontal, composer2, (i15 & 14) | 432);
-                                        i23 &= -113;
-                                    } else {
-                                        nestedScrollConnection3 = nestedScrollConnection;
-                                    }
-                                    if (i19 != 0) {
-                                        z5 = z8;
-                                        function13 = function14;
-                                        nestedScrollConnection4 = nestedScrollConnection3;
-                                        start = SnapPosition.Start.INSTANCE;
-                                    } else {
+                                        z6 = z;
+                                        z5 = z2;
+                                        function13 = function1;
+                                        nestedScrollConnection4 = nestedScrollConnection;
                                         start = snapPosition;
-                                        z5 = z8;
-                                        function13 = function14;
-                                        nestedScrollConnection4 = nestedScrollConnection3;
+                                        i23 = 0;
+                                        i22 = i9;
+                                        f3 = f2;
+                                        companion = obj;
+                                        targetedFlingBehavior3 = obj3;
+                                        composer2 = startRestartGroup;
+                                        i25 = i15;
+                                        pageSize3 = pageSize;
+                                        i24 = i21;
+                                        paddingValues3 = paddingValues;
+                                    } else {
+                                        companion = i28 != 0 ? Modifier.Companion : obj;
+                                        PaddingValues m921PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : paddingValues;
+                                        PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
+                                        i22 = i8 != 0 ? 0 : i9;
+                                        float m8258constructorimpl = i10 != 0 ? Dp.m8258constructorimpl(0) : f2;
+                                        if (i11 != 0) {
+                                            obj2 = Alignment.Companion.getCenterVertically();
+                                        }
+                                        if ((i4 & 128) != 0) {
+                                            PagerDefaults pagerDefaults = PagerDefaults.INSTANCE;
+                                            int i30 = (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                                            composer2 = startRestartGroup;
+                                            i24 = i21;
+                                            pagerState2 = pagerState;
+                                            i15 &= -29360129;
+                                            i23 = 0;
+                                            obj3 = pagerDefaults.flingBehavior(pagerState2, null, null, null, 0.0f, composer2, i30, 30);
+                                        } else {
+                                            pagerState2 = pagerState;
+                                            i23 = 0;
+                                            composer2 = startRestartGroup;
+                                            i24 = i21;
+                                        }
+                                        boolean z7 = i12 == 0 ? z : true;
+                                        boolean z8 = i14 != 0 ? i23 == 1 ? 1 : 0 : z2;
+                                        Function1 function14 = i18 != 0 ? null : function1;
+                                        if ((i4 & 2048) != 0) {
+                                            nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Horizontal, composer2, (i15 & 14) | 432);
+                                            i24 &= -113;
+                                        } else {
+                                            nestedScrollConnection3 = nestedScrollConnection;
+                                        }
+                                        if (i19 != 0) {
+                                            z5 = z8;
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                            start = SnapPosition.Start.INSTANCE;
+                                        } else {
+                                            start = snapPosition;
+                                            z5 = z8;
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                        }
+                                        targetedFlingBehavior3 = obj3;
+                                        pageSize3 = fill;
+                                        z6 = z7;
+                                        f3 = m8258constructorimpl;
+                                        paddingValues3 = m921PaddingValues0680j_4;
+                                        i25 = i15;
                                     }
-                                    targetedFlingBehavior3 = obj3;
-                                    i20 = i23;
-                                    pageSize3 = fill;
-                                    z6 = z7;
-                                    f3 = m7996constructorimpl;
-                                    paddingValues3 = m836PaddingValues0680j_4;
-                                    i24 = i15;
-                                }
-                                composer2.endDefaults();
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(1163833967, i24, i20, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:169)");
-                                    i22 = 0;
-                                }
-                                int i30 = (i20 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | ((i20 << 3) & 57344);
-                                PagerState pagerState3 = pagerState2;
-                                startRestartGroup = composer2;
-                                Alignment.Vertical vertical3 = obj2;
-                                Modifier modifier3 = companion;
-                                int i31 = i21;
-                                m1147HorizontalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i31, f3, vertical3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, OverscrollKt.rememberOverscrollEffect(composer2, i22), function4, startRestartGroup, i24 & 2147483646, i30, 0);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                }
-                                snapPosition2 = start;
-                                nestedScrollConnection2 = nestedScrollConnection4;
-                                function12 = function13;
-                                z4 = z5;
-                                z3 = z6;
-                                targetedFlingBehavior2 = targetedFlingBehavior3;
-                                vertical2 = vertical3;
-                                f2 = f3;
-                                i9 = i31;
-                                pageSize2 = pageSize3;
-                                paddingValues2 = paddingValues3;
-                                modifier2 = modifier3;
-                            } else {
-                                startRestartGroup.skipToGroupEnd();
-                                paddingValues2 = paddingValues;
-                                pageSize2 = pageSize;
-                                z3 = z;
-                                z4 = z2;
-                                function12 = function1;
-                                nestedScrollConnection2 = nestedScrollConnection;
-                                modifier2 = obj;
-                                vertical2 = obj2;
-                                targetedFlingBehavior2 = obj3;
-                                snapPosition2 = snapPosition;
-                            }
-                            endRestartGroup = startRestartGroup.endRestartGroup();
-                            if (endRestartGroup == null) {
-                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda7
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public final Object invoke(Object obj4, Object obj5) {
-                                        Unit HorizontalPager_oI3XNZo$lambda$1;
-                                        HorizontalPager_oI3XNZo$lambda$1 = PagerKt.HorizontalPager_oI3XNZo$lambda$1(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f2, vertical2, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, function4, i2, i3, i4, (Composer) obj4, ((Integer) obj5).intValue());
-                                        return HorizontalPager_oI3XNZo$lambda$1;
+                                    composer2.endDefaults();
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(1163833967, i25, i24, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:170)");
+                                        i23 = 0;
                                     }
-                                });
+                                    OverscrollEffect rememberOverscrollEffect = OverscrollKt.rememberOverscrollEffect(composer2, i23);
+                                    int i31 = i25 & 2147483646;
+                                    int i32 = (i24 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | ((i24 << 3) & 57344);
+                                    PagerState pagerState3 = pagerState2;
+                                    startRestartGroup = composer2;
+                                    Alignment.Vertical vertical3 = obj2;
+                                    Modifier modifier3 = companion;
+                                    int i33 = i22;
+                                    m1221HorizontalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i33, f3, vertical3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, rememberOverscrollEffect, function4, startRestartGroup, i31, i32, 0);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
+                                    }
+                                    snapPosition2 = start;
+                                    nestedScrollConnection2 = nestedScrollConnection4;
+                                    function12 = function13;
+                                    z4 = z5;
+                                    z3 = z6;
+                                    targetedFlingBehavior2 = targetedFlingBehavior3;
+                                    vertical2 = vertical3;
+                                    f2 = f3;
+                                    i9 = i33;
+                                    pageSize2 = pageSize3;
+                                    paddingValues2 = paddingValues3;
+                                    modifier2 = modifier3;
+                                } else {
+                                    startRestartGroup.skipToGroupEnd();
+                                    paddingValues2 = paddingValues;
+                                    pageSize2 = pageSize;
+                                    z3 = z;
+                                    z4 = z2;
+                                    function12 = function1;
+                                    nestedScrollConnection2 = nestedScrollConnection;
+                                    modifier2 = obj;
+                                    vertical2 = obj2;
+                                    targetedFlingBehavior2 = obj3;
+                                    snapPosition2 = snapPosition;
+                                }
+                                endRestartGroup = startRestartGroup.endRestartGroup();
+                                if (endRestartGroup == null) {
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda7
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public final Object invoke(Object obj4, Object obj5) {
+                                            Unit HorizontalPager_oI3XNZo$lambda$0;
+                                            HorizontalPager_oI3XNZo$lambda$0 = PagerKt.HorizontalPager_oI3XNZo$lambda$0(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f2, vertical2, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, function4, i2, i3, i4, (Composer) obj4, ((Integer) obj5).intValue());
+                                            return HorizontalPager_oI3XNZo$lambda$0;
+                                        }
+                                    });
+                                    return;
+                                }
                                 return;
                             }
-                            return;
                         }
-                        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+                        if ((i3 & 3072) == 0) {
+                        }
+                        i21 = i20;
+                        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                         }
                         endRestartGroup = startRestartGroup.endRestartGroup();
                         if (endRestartGroup == null) {
@@ -995,13 +992,14 @@ public final class PagerKt {
                     }
                     if ((i3 & 48) == 0) {
                     }
-                    int i282 = i17;
+                    int i292 = i17;
                     i19 = i4 & 4096;
                     if (i19 != 0) {
                     }
-                    if ((i4 & 8192) != 0) {
+                    if ((i3 & 3072) == 0) {
                     }
-                    if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+                    i21 = i20;
+                    if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                     }
                     endRestartGroup = startRestartGroup.endRestartGroup();
                     if (endRestartGroup == null) {
@@ -1030,13 +1028,14 @@ public final class PagerKt {
                 }
                 if ((i3 & 48) == 0) {
                 }
-                int i2822 = i17;
+                int i2922 = i17;
                 i19 = i4 & 4096;
                 if (i19 != 0) {
                 }
-                if ((i4 & 8192) != 0) {
+                if ((i3 & 3072) == 0) {
                 }
-                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+                i21 = i20;
+                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                 }
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup == null) {
@@ -1068,13 +1067,14 @@ public final class PagerKt {
             }
             if ((i3 & 48) == 0) {
             }
-            int i28222 = i17;
+            int i29222 = i17;
             i19 = i4 & 4096;
             if (i19 != 0) {
             }
-            if ((i4 & 8192) != 0) {
+            if ((i3 & 3072) == 0) {
             }
-            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+            i21 = i20;
+            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
             }
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
@@ -1110,13 +1110,14 @@ public final class PagerKt {
         }
         if ((i3 & 48) == 0) {
         }
-        int i282222 = i17;
+        int i292222 = i17;
         i19 = i4 & 4096;
         if (i19 != 0) {
         }
-        if ((i4 & 8192) != 0) {
+        if ((i3 & 3072) == 0) {
         }
-        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+        i21 = i20;
+        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
         }
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
@@ -1124,37 +1125,37 @@ public final class PagerKt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x01cd  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x01f3  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x03cf  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x03ee  */
-    /* JADX WARN: Removed duplicated region for block: B:241:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0189  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01c4  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x01e5  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x03c1  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x03e0  */
+    /* JADX WARN: Removed duplicated region for block: B:235:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0128  */
     /* JADX WARN: Type inference failed for: r4v10 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4, types: [int] */
@@ -1162,7 +1163,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1149VerticalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1223VerticalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -1224,10 +1225,8 @@ public final class PagerKt {
         int i29;
         Object obj5;
         Composer startRestartGroup = composer.startRestartGroup(-1590376023);
-        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)260@14397L705:Pager.kt#g6yjnt");
-        if ((i4 & 1) != 0) {
-            i5 = i2 | 6;
-        } else if ((i2 & 6) == 0) {
+        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)261@14430L705:Pager.kt#g6yjnt");
+        if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
             i5 = i2;
@@ -1348,190 +1347,185 @@ public final class PagerKt {
                                     }
                                     i20 |= i31;
                                 }
-                                i21 = i20;
-                                if ((i4 & 16384) == 0) {
-                                    i21 |= 24576;
-                                } else if ((i3 & 24576) == 0) {
-                                    i21 |= startRestartGroup.changedInstance(function4) ? 16384 : 8192;
-                                    if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
-                                        startRestartGroup.startDefaults();
-                                        ComposerKt.sourceInformation(startRestartGroup, "250@13924L28,255@14148L55,257@14300L26");
-                                        if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
-                                            startRestartGroup.skipToGroupEnd();
-                                            if ((i4 & 128) != 0) {
-                                                i15 &= -29360129;
-                                            }
-                                            if ((i4 & 2048) != 0) {
-                                                i21 &= -113;
-                                            }
-                                            if ((i4 & 8192) != 0) {
-                                                i21 &= -7169;
-                                            }
-                                            paddingValues3 = paddingValues;
-                                            pageSize3 = pageSize;
-                                            z6 = z2;
-                                            function13 = function1;
-                                            nestedScrollConnection4 = nestedScrollConnection;
-                                            i25 = i21;
-                                            composer2 = startRestartGroup;
-                                            f4 = f2;
-                                            modifier3 = obj;
-                                            horizontal3 = obj2;
-                                            i27 = i15;
-                                            z5 = z;
-                                            overscrollEffect3 = overscrollEffect;
-                                            i26 = i9;
-                                            targetedFlingBehavior3 = obj3;
-                                            snapPosition3 = snapPosition;
-                                        } else {
-                                            Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                            PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
-                                            PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
-                                            int i33 = i8 != 0 ? 0 : i9;
-                                            float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
-                                            if (i11 != 0) {
-                                                obj2 = Alignment.Companion.getCenterHorizontally();
-                                            }
-                                            if ((i4 & 128) != 0) {
-                                                i22 = i19;
-                                                i23 = i21;
-                                                pagerState2 = pagerState;
-                                                i15 &= -29360129;
-                                                r4 = 0;
-                                                obj3 = PagerDefaults.INSTANCE.flingBehavior(pagerState2, null, null, null, 0.0f, startRestartGroup, (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 30);
-                                            } else {
-                                                pagerState2 = pagerState;
-                                                r4 = 0;
-                                                i22 = i19;
-                                                i23 = i21;
-                                            }
-                                            boolean z7 = i12 == 0 ? z : true;
-                                            boolean z8 = i14 != 0 ? r4 : z2;
-                                            Function1<? super Integer, ? extends Object> function14 = i18 != 0 ? null : function1;
-                                            if ((i4 & 2048) != 0) {
-                                                nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Vertical, startRestartGroup, (i15 & 14) | 432);
-                                                i24 = i23 & (-113);
-                                            } else {
-                                                nestedScrollConnection3 = nestedScrollConnection;
-                                                i24 = i23;
-                                            }
-                                            SnapPosition.Start start = i22 != 0 ? SnapPosition.Start.INSTANCE : snapPosition;
-                                            if ((i4 & 8192) != 0) {
-                                                SnapPosition snapPosition4 = start;
-                                                overscrollEffect3 = OverscrollKt.rememberOverscrollEffect(startRestartGroup, r4);
-                                                i25 = i24 & (-7169);
-                                                targetedFlingBehavior3 = obj3;
-                                                snapPosition3 = snapPosition4;
-                                                function13 = function14;
-                                                nestedScrollConnection4 = nestedScrollConnection3;
-                                                composer2 = startRestartGroup;
-                                                paddingValues3 = m836PaddingValues0680j_4;
-                                                horizontal3 = obj2;
-                                                pageSize3 = fill;
-                                                z5 = z7;
-                                                i26 = i33;
-                                                f4 = m7996constructorimpl;
-                                                i27 = i15;
-                                                z6 = z8;
-                                                modifier3 = companion;
-                                            } else {
-                                                function13 = function14;
-                                                nestedScrollConnection4 = nestedScrollConnection3;
-                                                i25 = i24;
-                                                composer2 = startRestartGroup;
-                                                paddingValues3 = m836PaddingValues0680j_4;
-                                                horizontal3 = obj2;
-                                                targetedFlingBehavior3 = obj3;
-                                                pageSize3 = fill;
-                                                z5 = z7;
-                                                i26 = i33;
-                                                f4 = m7996constructorimpl;
-                                                i27 = i15;
-                                                z6 = z8;
-                                                snapPosition3 = start;
-                                                modifier3 = companion;
-                                                overscrollEffect3 = overscrollEffect;
-                                            }
-                                        }
-                                        composer2.endDefaults();
-                                        Modifier modifier4 = modifier3;
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-1590376023, i27, i25, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:259)");
-                                        }
-                                        int i34 = i25;
-                                        int i35 = i27 >> 6;
-                                        int i36 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i35 & 458752) | (i35 & 3670016) | ((i34 << 12) & 29360128);
-                                        int i37 = i27 << 12;
-                                        int i38 = i36 | (i37 & 234881024) | (i37 & 1879048192);
-                                        int i39 = i27 >> 9;
-                                        int i40 = i34 << 6;
-                                        PaddingValues paddingValues4 = paddingValues3;
-                                        LazyLayoutPagerKt.m1139PagereLwUrMk(modifier4, pagerState, paddingValues4, z6, Orientation.Vertical, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, horizontal3, Alignment.Companion.getCenterVertically(), snapPosition3, function4, composer2, i38, (i39 & 7168) | (i40 & 896) | (i39 & 14) | 24576 | (i34 & 112) | ((i34 << 9) & 458752) | (i40 & 3670016), 0);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                        }
-                                        int i41 = i26;
-                                        targetedFlingBehavior2 = targetedFlingBehavior3;
-                                        i9 = i41;
-                                        float f5 = f4;
-                                        z3 = z5;
-                                        f3 = f5;
-                                        Function1<? super Integer, ? extends Object> function15 = function13;
-                                        nestedScrollConnection2 = nestedScrollConnection4;
-                                        function12 = function15;
-                                        overscrollEffect2 = overscrollEffect3;
-                                        pageSize2 = pageSize3;
-                                        horizontal2 = horizontal3;
-                                        snapPosition2 = snapPosition3;
-                                        z4 = z6;
-                                        paddingValues2 = paddingValues4;
-                                        modifier2 = modifier4;
-                                    } else {
-                                        composer2 = startRestartGroup;
-                                        composer2.skipToGroupEnd();
-                                        paddingValues2 = paddingValues;
-                                        pageSize2 = pageSize;
-                                        z3 = z;
-                                        z4 = z2;
-                                        function12 = function1;
-                                        nestedScrollConnection2 = nestedScrollConnection;
-                                        snapPosition2 = snapPosition;
-                                        f3 = f2;
-                                        modifier2 = obj;
-                                        horizontal2 = obj2;
-                                        targetedFlingBehavior2 = obj3;
-                                        overscrollEffect2 = overscrollEffect;
-                                    }
-                                    endRestartGroup = composer2.endRestartGroup();
-                                    if (endRestartGroup != null) {
-                                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda6
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public final Object invoke(Object obj7, Object obj8) {
-                                                Unit VerticalPager__8jOkeI$lambda$2;
-                                                VerticalPager__8jOkeI$lambda$2 = PagerKt.VerticalPager__8jOkeI$lambda$2(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f3, horizontal2, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, overscrollEffect2, function4, i2, i3, i4, (Composer) obj7, ((Integer) obj8).intValue());
-                                                return VerticalPager__8jOkeI$lambda$2;
-                                            }
-                                        });
-                                        return;
-                                    }
-                                    return;
+                                if ((i3 & 24576) == 0) {
+                                    i20 |= startRestartGroup.changedInstance(function4) ? 16384 : 8192;
                                 }
-                                if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                                i21 = i20;
+                                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                                    startRestartGroup.startDefaults();
+                                    ComposerKt.sourceInformation(startRestartGroup, "251@13957L28,256@14181L55,258@14333L26");
+                                    if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i4 & 128) != 0) {
+                                            i15 &= -29360129;
+                                        }
+                                        if ((i4 & 2048) != 0) {
+                                            i21 &= -113;
+                                        }
+                                        if ((i4 & 8192) != 0) {
+                                            i21 &= -7169;
+                                        }
+                                        pageSize3 = pageSize;
+                                        z6 = z2;
+                                        function13 = function1;
+                                        nestedScrollConnection4 = nestedScrollConnection;
+                                        i25 = i21;
+                                        composer2 = startRestartGroup;
+                                        f4 = f2;
+                                        modifier3 = obj;
+                                        horizontal3 = obj2;
+                                        i27 = i15;
+                                        paddingValues3 = paddingValues;
+                                        z5 = z;
+                                        overscrollEffect3 = overscrollEffect;
+                                        i26 = i9;
+                                        targetedFlingBehavior3 = obj3;
+                                        snapPosition3 = snapPosition;
+                                    } else {
+                                        Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
+                                        PaddingValues m921PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : paddingValues;
+                                        PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
+                                        int i33 = i8 != 0 ? 0 : i9;
+                                        float m8258constructorimpl = i10 != 0 ? Dp.m8258constructorimpl(0) : f2;
+                                        if (i11 != 0) {
+                                            obj2 = Alignment.Companion.getCenterHorizontally();
+                                        }
+                                        if ((i4 & 128) != 0) {
+                                            PagerDefaults pagerDefaults = PagerDefaults.INSTANCE;
+                                            int i34 = (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                                            i22 = i19;
+                                            i23 = i21;
+                                            pagerState2 = pagerState;
+                                            i15 &= -29360129;
+                                            r4 = 0;
+                                            obj3 = pagerDefaults.flingBehavior(pagerState2, null, null, null, 0.0f, startRestartGroup, i34, 30);
+                                        } else {
+                                            pagerState2 = pagerState;
+                                            r4 = 0;
+                                            i22 = i19;
+                                            i23 = i21;
+                                        }
+                                        boolean z7 = i12 == 0 ? z : true;
+                                        boolean z8 = i14 != 0 ? r4 : z2;
+                                        Function1<? super Integer, ? extends Object> function14 = i18 != 0 ? null : function1;
+                                        if ((i4 & 2048) != 0) {
+                                            nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Vertical, startRestartGroup, (i15 & 14) | 432);
+                                            i24 = i23 & (-113);
+                                        } else {
+                                            nestedScrollConnection3 = nestedScrollConnection;
+                                            i24 = i23;
+                                        }
+                                        SnapPosition.Start start = i22 != 0 ? SnapPosition.Start.INSTANCE : snapPosition;
+                                        if ((i4 & 8192) != 0) {
+                                            SnapPosition snapPosition4 = start;
+                                            overscrollEffect3 = OverscrollKt.rememberOverscrollEffect(startRestartGroup, r4);
+                                            i25 = i24 & (-7169);
+                                            targetedFlingBehavior3 = obj3;
+                                            snapPosition3 = snapPosition4;
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                            composer2 = startRestartGroup;
+                                            paddingValues3 = m921PaddingValues0680j_4;
+                                            horizontal3 = obj2;
+                                            pageSize3 = fill;
+                                            z5 = z7;
+                                            i26 = i33;
+                                            f4 = m8258constructorimpl;
+                                            i27 = i15;
+                                            z6 = z8;
+                                            modifier3 = companion;
+                                        } else {
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                            i25 = i24;
+                                            composer2 = startRestartGroup;
+                                            paddingValues3 = m921PaddingValues0680j_4;
+                                            horizontal3 = obj2;
+                                            targetedFlingBehavior3 = obj3;
+                                            pageSize3 = fill;
+                                            z5 = z7;
+                                            i26 = i33;
+                                            f4 = m8258constructorimpl;
+                                            i27 = i15;
+                                            z6 = z8;
+                                            snapPosition3 = start;
+                                            modifier3 = companion;
+                                            overscrollEffect3 = overscrollEffect;
+                                        }
+                                    }
+                                    composer2.endDefaults();
+                                    Modifier modifier4 = modifier3;
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(-1590376023, i27, i25, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:260)");
+                                    }
+                                    int i35 = i25;
+                                    int i36 = i27 >> 6;
+                                    int i37 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i36 & 458752) | (i36 & 3670016) | ((i35 << 12) & 29360128);
+                                    int i38 = i27 << 12;
+                                    int i39 = i37 | (i38 & 234881024) | (i38 & 1879048192);
+                                    int i40 = i27 >> 9;
+                                    int i41 = i35 << 6;
+                                    PaddingValues paddingValues4 = paddingValues3;
+                                    LazyLayoutPagerKt.m1214PagereLwUrMk(modifier4, pagerState, paddingValues4, z6, Orientation.Vertical, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, horizontal3, Alignment.Companion.getCenterVertically(), snapPosition3, function4, composer2, i39, (i40 & 7168) | (i41 & 896) | (i40 & 14) | 24576 | (i35 & 112) | ((i35 << 9) & 458752) | (i41 & 3670016), 0);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
+                                    }
+                                    int i42 = i26;
+                                    targetedFlingBehavior2 = targetedFlingBehavior3;
+                                    i9 = i42;
+                                    float f5 = f4;
+                                    z3 = z5;
+                                    f3 = f5;
+                                    Function1<? super Integer, ? extends Object> function15 = function13;
+                                    nestedScrollConnection2 = nestedScrollConnection4;
+                                    function12 = function15;
+                                    overscrollEffect2 = overscrollEffect3;
+                                    pageSize2 = pageSize3;
+                                    horizontal2 = horizontal3;
+                                    snapPosition2 = snapPosition3;
+                                    z4 = z6;
+                                    paddingValues2 = paddingValues4;
+                                    modifier2 = modifier4;
+                                } else {
+                                    composer2 = startRestartGroup;
+                                    composer2.skipToGroupEnd();
+                                    paddingValues2 = paddingValues;
+                                    pageSize2 = pageSize;
+                                    z3 = z;
+                                    z4 = z2;
+                                    function12 = function1;
+                                    nestedScrollConnection2 = nestedScrollConnection;
+                                    snapPosition2 = snapPosition;
+                                    f3 = f2;
+                                    modifier2 = obj;
+                                    horizontal2 = obj2;
+                                    targetedFlingBehavior2 = obj3;
+                                    overscrollEffect2 = overscrollEffect;
                                 }
                                 endRestartGroup = composer2.endRestartGroup();
-                                if (endRestartGroup != null) {
+                                if (endRestartGroup == null) {
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda6
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public final Object invoke(Object obj7, Object obj8) {
+                                            Unit VerticalPager__8jOkeI$lambda$0;
+                                            VerticalPager__8jOkeI$lambda$0 = PagerKt.VerticalPager__8jOkeI$lambda$0(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f3, horizontal2, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, overscrollEffect2, function4, i2, i3, i4, (Composer) obj7, ((Integer) obj8).intValue());
+                                            return VerticalPager__8jOkeI$lambda$0;
+                                        }
+                                    });
+                                    return;
                                 }
+                                return;
                             }
                         }
                         if ((i3 & 3072) == 0) {
                         }
-                        i21 = i20;
-                        if ((i4 & 16384) == 0) {
+                        if ((i3 & 24576) == 0) {
                         }
-                        if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                        i21 = i20;
+                        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                         }
                         endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
+                        if (endRestartGroup == null) {
                         }
                     }
                     i9 = i;
@@ -1560,13 +1554,13 @@ public final class PagerKt {
                     }
                     if ((i3 & 3072) == 0) {
                     }
-                    i21 = i20;
-                    if ((i4 & 16384) == 0) {
+                    if ((i3 & 24576) == 0) {
                     }
-                    if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                    i21 = i20;
+                    if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                     }
                     endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    if (endRestartGroup == null) {
                     }
                 }
                 i8 = i4 & 16;
@@ -1598,13 +1592,13 @@ public final class PagerKt {
                 }
                 if ((i3 & 3072) == 0) {
                 }
-                i21 = i20;
-                if ((i4 & 16384) == 0) {
+                if ((i3 & 24576) == 0) {
                 }
-                if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+                i21 = i20;
+                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             i7 = i4 & 8;
@@ -1640,13 +1634,13 @@ public final class PagerKt {
             }
             if ((i3 & 3072) == 0) {
             }
-            i21 = i20;
-            if ((i4 & 16384) == 0) {
+            if ((i3 & 24576) == 0) {
             }
-            if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+            i21 = i20;
+            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         obj = modifier;
@@ -1686,51 +1680,51 @@ public final class PagerKt {
         }
         if ((i3 & 3072) == 0) {
         }
-        i21 = i20;
-        if ((i4 & 16384) == 0) {
+        if ((i3 & 24576) == 0) {
         }
-        if (startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
+        i21 = i20;
+        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0182  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x018f  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x01e5  */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0336  */
-    /* JADX WARN: Removed duplicated region for block: B:225:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01a6  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x01b3  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x0310  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:218:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0124  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the non deprecated overload")
     /* renamed from: VerticalPager-oI3XNZo  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1150VerticalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1224VerticalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -1751,6 +1745,7 @@ public final class PagerKt {
         int i18;
         int i19;
         int i20;
+        int i21;
         final PaddingValues paddingValues2;
         final PageSize pageSize2;
         final boolean z3;
@@ -1763,11 +1758,11 @@ public final class PagerKt {
         final SnapPosition snapPosition2;
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
-        int i21;
-        PagerState pagerState2;
         int i22;
-        Composer composer2;
+        PagerState pagerState2;
         int i23;
+        Composer composer2;
+        int i24;
         NestedScrollConnection nestedScrollConnection3;
         SnapPosition.Start start;
         boolean z5;
@@ -1778,20 +1773,18 @@ public final class PagerKt {
         boolean z6;
         float f3;
         PaddingValues paddingValues3;
-        int i24;
         int i25;
         int i26;
+        int i27;
         Composer startRestartGroup = composer.startRestartGroup(-1474550033);
-        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)314@16567L26,300@16012L623:Pager.kt#g6yjnt");
-        if ((i4 & 1) != 0) {
-            i5 = i2 | 6;
-        } else if ((i2 & 6) == 0) {
+        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)315@16600L26,301@16045L623:Pager.kt#g6yjnt");
+        if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
             i5 = i2;
         }
-        int i27 = i4 & 2;
-        if (i27 != 0) {
+        int i28 = i4 & 2;
+        if (i28 != 0) {
             i5 |= 48;
         } else if ((i2 & 48) == 0) {
             obj = modifier;
@@ -1836,14 +1829,14 @@ public final class PagerKt {
                             if ((i4 & 128) == 0) {
                                 obj3 = targetedFlingBehavior;
                                 if (startRestartGroup.changed(obj3)) {
-                                    i26 = 8388608;
-                                    i5 |= i26;
+                                    i27 = 8388608;
+                                    i5 |= i27;
                                 }
                             } else {
                                 obj3 = targetedFlingBehavior;
                             }
-                            i26 = 4194304;
-                            i5 |= i26;
+                            i27 = 4194304;
+                            i5 |= i27;
                         } else {
                             obj3 = targetedFlingBehavior;
                         }
@@ -1877,160 +1870,165 @@ public final class PagerKt {
                         if ((i3 & 48) == 0) {
                             i18 = i16;
                             if ((i4 & 2048) == 0 && startRestartGroup.changedInstance(nestedScrollConnection)) {
-                                i25 = 32;
-                                i17 |= i25;
+                                i26 = 32;
+                                i17 |= i26;
                             }
-                            i25 = 16;
-                            i17 |= i25;
+                            i26 = 16;
+                            i17 |= i26;
                         } else {
                             i18 = i16;
                         }
-                        int i28 = i17;
+                        int i29 = i17;
                         i19 = i4 & 4096;
                         if (i19 != 0) {
-                            i20 = i28 | RendererCapabilities.DECODER_SUPPORT_MASK;
+                            i20 = i29 | RendererCapabilities.DECODER_SUPPORT_MASK;
                         } else {
-                            int i29 = i28;
-                            if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                                i29 |= startRestartGroup.changed(snapPosition) ? 256 : 128;
-                            }
                             i20 = i29;
-                        }
-                        if ((i4 & 8192) != 0) {
-                            i20 |= 3072;
-                        } else if ((i3 & 3072) == 0) {
-                            i20 |= startRestartGroup.changedInstance(function4) ? 2048 : 1024;
-                            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
-                                startRestartGroup.startDefaults();
-                                ComposerKt.sourceInformation(startRestartGroup, "291@15609L28,296@15833L55");
-                                if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
-                                    startRestartGroup.skipToGroupEnd();
-                                    if ((i4 & 128) != 0) {
-                                        i15 &= -29360129;
-                                    }
-                                    if ((i4 & 2048) != 0) {
-                                        i20 &= -113;
-                                    }
-                                    pagerState2 = pagerState;
-                                    paddingValues3 = paddingValues;
-                                    z6 = z;
-                                    z5 = z2;
-                                    function13 = function1;
-                                    nestedScrollConnection4 = nestedScrollConnection;
-                                    start = snapPosition;
-                                    i22 = 0;
-                                    i21 = i9;
-                                    f3 = f2;
-                                    companion = obj;
-                                    targetedFlingBehavior3 = obj3;
-                                    composer2 = startRestartGroup;
-                                    i24 = i15;
-                                    pageSize3 = pageSize;
-                                } else {
-                                    companion = i27 != 0 ? Modifier.Companion : obj;
-                                    PaddingValues m836PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : paddingValues;
-                                    PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
-                                    i21 = i8 != 0 ? 0 : i9;
-                                    float m7996constructorimpl = i10 != 0 ? Dp.m7996constructorimpl(0) : f2;
-                                    if (i11 != 0) {
-                                        obj2 = Alignment.Companion.getCenterHorizontally();
-                                    }
-                                    if ((i4 & 128) != 0) {
-                                        composer2 = startRestartGroup;
-                                        i23 = i20;
+                            if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                                i20 |= startRestartGroup.changed(snapPosition) ? 256 : 128;
+                                if ((i3 & 3072) == 0) {
+                                    i20 |= startRestartGroup.changedInstance(function4) ? 2048 : 1024;
+                                }
+                                i21 = i20;
+                                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
+                                    startRestartGroup.startDefaults();
+                                    ComposerKt.sourceInformation(startRestartGroup, "292@15642L28,297@15866L55");
+                                    if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i4 & 128) != 0) {
+                                            i15 &= -29360129;
+                                        }
+                                        if ((i4 & 2048) != 0) {
+                                            i21 &= -113;
+                                        }
                                         pagerState2 = pagerState;
-                                        i15 &= -29360129;
-                                        i22 = 0;
-                                        obj3 = PagerDefaults.INSTANCE.flingBehavior(pagerState2, null, null, null, 0.0f, composer2, (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 30);
-                                    } else {
-                                        pagerState2 = pagerState;
-                                        i22 = 0;
-                                        composer2 = startRestartGroup;
-                                        i23 = i20;
-                                    }
-                                    boolean z7 = i12 == 0 ? z : true;
-                                    boolean z8 = i14 != 0 ? i22 == 1 ? 1 : 0 : z2;
-                                    Function1 function14 = i18 != 0 ? null : function1;
-                                    if ((i4 & 2048) != 0) {
-                                        nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Vertical, composer2, (i15 & 14) | 432);
-                                        i23 &= -113;
-                                    } else {
-                                        nestedScrollConnection3 = nestedScrollConnection;
-                                    }
-                                    if (i19 != 0) {
-                                        z5 = z8;
-                                        function13 = function14;
-                                        nestedScrollConnection4 = nestedScrollConnection3;
-                                        start = SnapPosition.Start.INSTANCE;
-                                    } else {
+                                        z6 = z;
+                                        z5 = z2;
+                                        function13 = function1;
+                                        nestedScrollConnection4 = nestedScrollConnection;
                                         start = snapPosition;
-                                        z5 = z8;
-                                        function13 = function14;
-                                        nestedScrollConnection4 = nestedScrollConnection3;
+                                        i23 = 0;
+                                        i22 = i9;
+                                        f3 = f2;
+                                        companion = obj;
+                                        targetedFlingBehavior3 = obj3;
+                                        composer2 = startRestartGroup;
+                                        i25 = i15;
+                                        pageSize3 = pageSize;
+                                        i24 = i21;
+                                        paddingValues3 = paddingValues;
+                                    } else {
+                                        companion = i28 != 0 ? Modifier.Companion : obj;
+                                        PaddingValues m921PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : paddingValues;
+                                        PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
+                                        i22 = i8 != 0 ? 0 : i9;
+                                        float m8258constructorimpl = i10 != 0 ? Dp.m8258constructorimpl(0) : f2;
+                                        if (i11 != 0) {
+                                            obj2 = Alignment.Companion.getCenterHorizontally();
+                                        }
+                                        if ((i4 & 128) != 0) {
+                                            PagerDefaults pagerDefaults = PagerDefaults.INSTANCE;
+                                            int i30 = (i15 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                                            composer2 = startRestartGroup;
+                                            i24 = i21;
+                                            pagerState2 = pagerState;
+                                            i15 &= -29360129;
+                                            i23 = 0;
+                                            obj3 = pagerDefaults.flingBehavior(pagerState2, null, null, null, 0.0f, composer2, i30, 30);
+                                        } else {
+                                            pagerState2 = pagerState;
+                                            i23 = 0;
+                                            composer2 = startRestartGroup;
+                                            i24 = i21;
+                                        }
+                                        boolean z7 = i12 == 0 ? z : true;
+                                        boolean z8 = i14 != 0 ? i23 == 1 ? 1 : 0 : z2;
+                                        Function1 function14 = i18 != 0 ? null : function1;
+                                        if ((i4 & 2048) != 0) {
+                                            nestedScrollConnection3 = PagerDefaults.INSTANCE.pageNestedScrollConnection(pagerState2, Orientation.Vertical, composer2, (i15 & 14) | 432);
+                                            i24 &= -113;
+                                        } else {
+                                            nestedScrollConnection3 = nestedScrollConnection;
+                                        }
+                                        if (i19 != 0) {
+                                            z5 = z8;
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                            start = SnapPosition.Start.INSTANCE;
+                                        } else {
+                                            start = snapPosition;
+                                            z5 = z8;
+                                            function13 = function14;
+                                            nestedScrollConnection4 = nestedScrollConnection3;
+                                        }
+                                        targetedFlingBehavior3 = obj3;
+                                        pageSize3 = fill;
+                                        z6 = z7;
+                                        f3 = m8258constructorimpl;
+                                        paddingValues3 = m921PaddingValues0680j_4;
+                                        i25 = i15;
                                     }
-                                    targetedFlingBehavior3 = obj3;
-                                    i20 = i23;
-                                    pageSize3 = fill;
-                                    z6 = z7;
-                                    f3 = m7996constructorimpl;
-                                    paddingValues3 = m836PaddingValues0680j_4;
-                                    i24 = i15;
-                                }
-                                composer2.endDefaults();
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(-1474550033, i24, i20, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:299)");
-                                    i22 = 0;
-                                }
-                                int i30 = (i20 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | ((i20 << 3) & 57344);
-                                PagerState pagerState3 = pagerState2;
-                                startRestartGroup = composer2;
-                                Alignment.Horizontal horizontal3 = obj2;
-                                Modifier modifier3 = companion;
-                                int i31 = i21;
-                                m1149VerticalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i31, f3, horizontal3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, OverscrollKt.rememberOverscrollEffect(composer2, i22), function4, startRestartGroup, i24 & 2147483646, i30, 0);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
-                                }
-                                snapPosition2 = start;
-                                nestedScrollConnection2 = nestedScrollConnection4;
-                                function12 = function13;
-                                z4 = z5;
-                                z3 = z6;
-                                targetedFlingBehavior2 = targetedFlingBehavior3;
-                                horizontal2 = horizontal3;
-                                f2 = f3;
-                                i9 = i31;
-                                pageSize2 = pageSize3;
-                                paddingValues2 = paddingValues3;
-                                modifier2 = modifier3;
-                            } else {
-                                startRestartGroup.skipToGroupEnd();
-                                paddingValues2 = paddingValues;
-                                pageSize2 = pageSize;
-                                z3 = z;
-                                z4 = z2;
-                                function12 = function1;
-                                nestedScrollConnection2 = nestedScrollConnection;
-                                modifier2 = obj;
-                                horizontal2 = obj2;
-                                targetedFlingBehavior2 = obj3;
-                                snapPosition2 = snapPosition;
-                            }
-                            endRestartGroup = startRestartGroup.endRestartGroup();
-                            if (endRestartGroup == null) {
-                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda1
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public final Object invoke(Object obj4, Object obj5) {
-                                        Unit VerticalPager_oI3XNZo$lambda$3;
-                                        VerticalPager_oI3XNZo$lambda$3 = PagerKt.VerticalPager_oI3XNZo$lambda$3(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f2, horizontal2, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, function4, i2, i3, i4, (Composer) obj4, ((Integer) obj5).intValue());
-                                        return VerticalPager_oI3XNZo$lambda$3;
+                                    composer2.endDefaults();
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(-1474550033, i25, i24, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:300)");
+                                        i23 = 0;
                                     }
-                                });
+                                    OverscrollEffect rememberOverscrollEffect = OverscrollKt.rememberOverscrollEffect(composer2, i23);
+                                    int i31 = i25 & 2147483646;
+                                    int i32 = (i24 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | ((i24 << 3) & 57344);
+                                    PagerState pagerState3 = pagerState2;
+                                    startRestartGroup = composer2;
+                                    Alignment.Horizontal horizontal3 = obj2;
+                                    Modifier modifier3 = companion;
+                                    int i33 = i22;
+                                    m1223VerticalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i33, f3, horizontal3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, rememberOverscrollEffect, function4, startRestartGroup, i31, i32, 0);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
+                                    }
+                                    snapPosition2 = start;
+                                    nestedScrollConnection2 = nestedScrollConnection4;
+                                    function12 = function13;
+                                    z4 = z5;
+                                    z3 = z6;
+                                    targetedFlingBehavior2 = targetedFlingBehavior3;
+                                    horizontal2 = horizontal3;
+                                    f2 = f3;
+                                    i9 = i33;
+                                    pageSize2 = pageSize3;
+                                    paddingValues2 = paddingValues3;
+                                    modifier2 = modifier3;
+                                } else {
+                                    startRestartGroup.skipToGroupEnd();
+                                    paddingValues2 = paddingValues;
+                                    pageSize2 = pageSize;
+                                    z3 = z;
+                                    z4 = z2;
+                                    function12 = function1;
+                                    nestedScrollConnection2 = nestedScrollConnection;
+                                    modifier2 = obj;
+                                    horizontal2 = obj2;
+                                    targetedFlingBehavior2 = obj3;
+                                    snapPosition2 = snapPosition;
+                                }
+                                endRestartGroup = startRestartGroup.endRestartGroup();
+                                if (endRestartGroup == null) {
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda1
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public final Object invoke(Object obj4, Object obj5) {
+                                            Unit VerticalPager_oI3XNZo$lambda$0;
+                                            VerticalPager_oI3XNZo$lambda$0 = PagerKt.VerticalPager_oI3XNZo$lambda$0(PagerState.this, modifier2, paddingValues2, pageSize2, i9, f2, horizontal2, targetedFlingBehavior2, z3, z4, function12, nestedScrollConnection2, snapPosition2, function4, i2, i3, i4, (Composer) obj4, ((Integer) obj5).intValue());
+                                            return VerticalPager_oI3XNZo$lambda$0;
+                                        }
+                                    });
+                                    return;
+                                }
                                 return;
                             }
-                            return;
                         }
-                        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+                        if ((i3 & 3072) == 0) {
+                        }
+                        i21 = i20;
+                        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                         }
                         endRestartGroup = startRestartGroup.endRestartGroup();
                         if (endRestartGroup == null) {
@@ -2056,13 +2054,14 @@ public final class PagerKt {
                     }
                     if ((i3 & 48) == 0) {
                     }
-                    int i282 = i17;
+                    int i292 = i17;
                     i19 = i4 & 4096;
                     if (i19 != 0) {
                     }
-                    if ((i4 & 8192) != 0) {
+                    if ((i3 & 3072) == 0) {
                     }
-                    if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+                    i21 = i20;
+                    if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                     }
                     endRestartGroup = startRestartGroup.endRestartGroup();
                     if (endRestartGroup == null) {
@@ -2091,13 +2090,14 @@ public final class PagerKt {
                 }
                 if ((i3 & 48) == 0) {
                 }
-                int i2822 = i17;
+                int i2922 = i17;
                 i19 = i4 & 4096;
                 if (i19 != 0) {
                 }
-                if ((i4 & 8192) != 0) {
+                if ((i3 & 3072) == 0) {
                 }
-                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+                i21 = i20;
+                if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                 }
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup == null) {
@@ -2129,13 +2129,14 @@ public final class PagerKt {
             }
             if ((i3 & 48) == 0) {
             }
-            int i28222 = i17;
+            int i29222 = i17;
             i19 = i4 & 4096;
             if (i19 != 0) {
             }
-            if ((i4 & 8192) != 0) {
+            if ((i3 & 3072) == 0) {
             }
-            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+            i21 = i20;
+            if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
             }
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
@@ -2171,13 +2172,14 @@ public final class PagerKt {
         }
         if ((i3 & 48) == 0) {
         }
-        int i282222 = i17;
+        int i292222 = i17;
         i19 = i4 & 4096;
         if (i19 != 0) {
         }
-        if ((i4 & 8192) != 0) {
+        if ((i3 & 3072) == 0) {
         }
-        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i20 & 1171) != 1170, i15 & 1)) {
+        i21 = i20;
+        if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
         }
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
@@ -2211,9 +2213,9 @@ public final class PagerKt {
             return modifier.then(SemanticsModifierKt.semantics$default(Modifier.Companion, false, new Function1() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit pagerSemantics$lambda$8;
-                    pagerSemantics$lambda$8 = PagerKt.pagerSemantics$lambda$8(z, pagerState, coroutineScope, (SemanticsPropertyReceiver) obj);
-                    return pagerSemantics$lambda$8;
+                    Unit pagerSemantics$lambda$0;
+                    pagerSemantics$lambda$0 = PagerKt.pagerSemantics$lambda$0(z, pagerState, coroutineScope, (SemanticsPropertyReceiver) obj);
+                    return pagerSemantics$lambda$0;
                 }
             }, 1, null));
         }
@@ -2221,7 +2223,7 @@ public final class PagerKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit pagerSemantics$lambda$8(boolean z, final PagerState pagerState, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
+    public static final Unit pagerSemantics$lambda$0(boolean z, final PagerState pagerState, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         if (z) {
             SemanticsPropertiesKt.pageUp$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.pager.PagerKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0

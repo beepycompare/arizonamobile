@@ -35,7 +35,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ViewLayer.android.kt */
-@Metadata(d1 = {"\u0000È\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\n\b\u0001\u0018\u0000 {2\u00020\u00012\u00020\u00022\u00020\u0003:\u0002z{B_\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u00128\u0010\b\u001a4\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\t\u0012\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\u0004\b\u0013\u0010\u0014J\u0010\u0010J\u001a\u00020\u00102\u0006\u0010K\u001a\u00020LH\u0016J\b\u0010M\u001a\u00020)H\u0002J\b\u0010N\u001a\u00020\u001cH\u0016J\u0017\u0010O\u001a\u00020\u001c2\u0006\u0010P\u001a\u00020QH\u0016¢\u0006\u0004\bR\u0010SJ\b\u0010T\u001a\u00020\u0010H\u0002J\b\u0010U\u001a\u00020\u0010H\u0002J\u0017\u0010V\u001a\u00020\u00102\u0006\u0010W\u001a\u00020XH\u0016¢\u0006\u0004\bY\u0010ZJ\u0017\u0010[\u001a\u00020\u00102\u0006\u0010P\u001a\u00020\\H\u0016¢\u0006\u0004\b]\u0010ZJ\u001a\u0010^\u001a\u00020\u00102\u0006\u0010\r\u001a\u00020\n2\b\u0010\u000f\u001a\u0004\u0018\u00010\u000eH\u0016J\u0010\u0010_\u001a\u00020\u00102\u0006\u0010\r\u001a\u00020`H\u0014J\b\u0010a\u001a\u00020\u0010H\u0016J0\u0010b\u001a\u00020\u00102\u0006\u0010c\u001a\u00020\u001c2\u0006\u0010d\u001a\u00020I2\u0006\u0010e\u001a\u00020I2\u0006\u0010f\u001a\u00020I2\u0006\u0010g\u001a\u00020IH\u0014J\b\u0010h\u001a\u00020\u0010H\u0016J\b\u0010i\u001a\u00020\u0010H\u0016J\b\u0010j\u001a\u00020\u0010H\u0016J\u001f\u0010k\u001a\u00020Q2\u0006\u0010l\u001a\u00020Q2\u0006\u0010m\u001a\u00020\u001cH\u0016¢\u0006\u0004\bn\u0010oJ\u0018\u0010p\u001a\u00020\u00102\u0006\u0010q\u001a\u00020r2\u0006\u0010m\u001a\u00020\u001cH\u0016JP\u0010s\u001a\u00020\u001028\u0010\b\u001a4\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\t2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012H\u0016J\u0017\u0010t\u001a\u00020\u00102\u0006\u0010u\u001a\u000200H\u0016¢\u0006\u0004\bv\u0010wJ\u0017\u0010x\u001a\u00020\u00102\u0006\u0010u\u001a\u000200H\u0016¢\u0006\u0004\by\u0010wR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018RB\u0010\b\u001a6\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u0010\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n\u0012\u0004\u0012\u00020\u0010\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001f\u001a\u0004\u0018\u00010 8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R$\u0010$\u001a\u00020\u001c2\u0006\u0010#\u001a\u00020\u001c@BX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00010.X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\u0002008VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u00102R\u001a\u00103\u001a\u000204X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b5\u00106\"\u0004\b7\u00108R\u001a\u00109\u001a\u00020\u001cX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b9\u0010%\"\u0004\b:\u0010'R\u0010\u0010;\u001a\u00020<X\u0082\u000e¢\u0006\u0004\n\u0002\u0010=R\u000e\u0010>\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010?\u001a\u00020@X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bA\u0010BR\u0014\u0010C\u001a\u00020@8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bD\u0010BR$\u0010E\u001a\u0002042\u0006\u0010#\u001a\u0002048F@FX\u0086\u000e¢\u0006\f\u001a\u0004\bF\u00106\"\u0004\bG\u00108R\u000e\u0010H\u001a\u00020IX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006|"}, d2 = {"Landroidx/compose/ui/platform/ViewLayer;", "Landroid/view/View;", "Landroidx/compose/ui/node/OwnedLayer;", "Landroidx/compose/ui/layout/GraphicLayerInfo;", "ownerView", "Landroidx/compose/ui/platform/AndroidComposeView;", TtmlNode.RUBY_CONTAINER, "Landroidx/compose/ui/platform/DrawChildContainer;", "drawBlock", "Lkotlin/Function2;", "Landroidx/compose/ui/graphics/Canvas;", "Lkotlin/ParameterName;", "name", "canvas", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "parentLayer", "", "invalidateParentLayer", "Lkotlin/Function0;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/ui/platform/DrawChildContainer;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;)V", "getOwnerView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "getContainer", "()Landroidx/compose/ui/platform/DrawChildContainer;", "outlineResolver", "Landroidx/compose/ui/platform/OutlineResolver;", "clipToBounds", "", "clipBoundsCache", "Landroid/graphics/Rect;", "manualClipPath", "Landroidx/compose/ui/graphics/Path;", "getManualClipPath", "()Landroidx/compose/ui/graphics/Path;", "value", "isInvalidated", "()Z", "setInvalidated", "(Z)V", "layerPaint", "Landroidx/compose/ui/graphics/Paint;", "drawnWithZ", "canvasHolder", "Landroidx/compose/ui/graphics/CanvasHolder;", "matrixCache", "Landroidx/compose/ui/platform/LayerMatrixCache;", "underlyingMatrix", "Landroidx/compose/ui/graphics/Matrix;", "getUnderlyingMatrix-sQKQjiQ", "()[F", "frameRate", "", "getFrameRate", "()F", "setFrameRate", "(F)V", "isFrameRateFromParent", "setFrameRateFromParent", "mTransformOrigin", "Landroidx/compose/ui/graphics/TransformOrigin;", "J", "mHasOverlappingRendering", "layerId", "", "getLayerId", "()J", "ownerViewId", "getOwnerViewId", "cameraDistancePx", "getCameraDistancePx", "setCameraDistancePx", "mutatedFields", "", "updateLayerProperties", "scope", "Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;", "obtainLayerPaint", "hasOverlappingRendering", "isInLayer", "position", "Landroidx/compose/ui/geometry/Offset;", "isInLayer-k-4lQ0M", "(J)Z", "updateOutlineResolver", "resetClipBounds", "resize", "size", "Landroidx/compose/ui/unit/IntSize;", "resize-ozmzZPI", "(J)V", "move", "Landroidx/compose/ui/unit/IntOffset;", "move--gyyYBs", "drawLayer", "dispatchDraw", "Landroid/graphics/Canvas;", "invalidate", "onLayout", "changed", CmcdData.STREAM_TYPE_LIVE, "t", "r", "b", "destroy", "updateDisplayList", "forceLayout", "mapOffset", "point", "inverse", "mapOffset-8S9VItk", "(JZ)J", "mapBounds", "rect", "Landroidx/compose/ui/geometry/MutableRect;", "reuseLayer", "transform", "matrix", "transform-58bKbWc", "([F)V", "inverseTransform", "inverseTransform-58bKbWc", "UniqueDrawingIdApi29", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000È\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\n\b\u0001\u0018\u0000 {2\u00020\u00012\u00020\u00022\u00020\u0003:\u0002z{B_\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u00128\u0010\b\u001a4\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\t\u0012\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\u0004\b\u0013\u0010\u0014J\u0010\u0010J\u001a\u00020\u00102\u0006\u0010K\u001a\u00020LH\u0016J\b\u0010M\u001a\u00020)H\u0002J\b\u0010N\u001a\u00020\u001cH\u0016J\u0017\u0010O\u001a\u00020\u001c2\u0006\u0010P\u001a\u00020QH\u0016¢\u0006\u0004\bR\u0010SJ\b\u0010T\u001a\u00020\u0010H\u0002J\b\u0010U\u001a\u00020\u0010H\u0002J\u0017\u0010V\u001a\u00020\u00102\u0006\u0010W\u001a\u00020XH\u0016¢\u0006\u0004\bY\u0010ZJ\u0017\u0010[\u001a\u00020\u00102\u0006\u0010P\u001a\u00020\\H\u0016¢\u0006\u0004\b]\u0010ZJ\u001a\u0010^\u001a\u00020\u00102\u0006\u0010\r\u001a\u00020\n2\b\u0010\u000f\u001a\u0004\u0018\u00010\u000eH\u0016J\u0010\u0010_\u001a\u00020\u00102\u0006\u0010\r\u001a\u00020`H\u0014J\b\u0010a\u001a\u00020\u0010H\u0016J0\u0010b\u001a\u00020\u00102\u0006\u0010c\u001a\u00020\u001c2\u0006\u0010d\u001a\u00020I2\u0006\u0010e\u001a\u00020I2\u0006\u0010f\u001a\u00020I2\u0006\u0010g\u001a\u00020IH\u0014J\b\u0010h\u001a\u00020\u0010H\u0016J\b\u0010i\u001a\u00020\u0010H\u0016J\b\u0010j\u001a\u00020\u0010H\u0016J\u001f\u0010k\u001a\u00020Q2\u0006\u0010l\u001a\u00020Q2\u0006\u0010m\u001a\u00020\u001cH\u0016¢\u0006\u0004\bn\u0010oJ\u0018\u0010p\u001a\u00020\u00102\u0006\u0010q\u001a\u00020r2\u0006\u0010m\u001a\u00020\u001cH\u0016JP\u0010s\u001a\u00020\u001028\u0010\b\u001a4\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\t2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012H\u0016J\u0017\u0010t\u001a\u00020\u00102\u0006\u0010u\u001a\u000200H\u0016¢\u0006\u0004\bv\u0010wJ\u0017\u0010x\u001a\u00020\u00102\u0006\u0010u\u001a\u000200H\u0016¢\u0006\u0004\by\u0010wR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018RB\u0010\b\u001a6\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u0010\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n\u0012\u0004\u0012\u00020\u0010\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001f\u001a\u0004\u0018\u00010 8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R$\u0010$\u001a\u00020\u001c2\u0006\u0010#\u001a\u00020\u001c@BX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00010.X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\u0002008VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u00102R\u001a\u00103\u001a\u000204X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b5\u00106\"\u0004\b7\u00108R\u001a\u00109\u001a\u00020\u001cX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b9\u0010%\"\u0004\b:\u0010'R\u0010\u0010;\u001a\u00020<X\u0082\u000e¢\u0006\u0004\n\u0002\u0010=R\u000e\u0010>\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010?\u001a\u00020@X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bA\u0010BR\u0014\u0010C\u001a\u00020@8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bD\u0010BR$\u0010E\u001a\u0002042\u0006\u0010#\u001a\u0002048F@FX\u0086\u000e¢\u0006\f\u001a\u0004\bF\u00106\"\u0004\bG\u00108R\u000e\u0010H\u001a\u00020IX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006|"}, d2 = {"Landroidx/compose/ui/platform/ViewLayer;", "Landroid/view/View;", "Landroidx/compose/ui/node/OwnedLayer;", "Landroidx/compose/ui/layout/GraphicLayerInfo;", "ownerView", "Landroidx/compose/ui/platform/AndroidComposeView;", TtmlNode.RUBY_CONTAINER, "Landroidx/compose/ui/platform/DrawChildContainer;", "drawBlock", "Lkotlin/Function2;", "Landroidx/compose/ui/graphics/Canvas;", "Lkotlin/ParameterName;", "name", "canvas", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "parentLayer", "", "invalidateParentLayer", "Lkotlin/Function0;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/ui/platform/DrawChildContainer;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;)V", "getOwnerView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "getContainer", "()Landroidx/compose/ui/platform/DrawChildContainer;", "outlineResolver", "Landroidx/compose/ui/platform/OutlineResolver;", "clipToBounds", "", "clipBoundsCache", "Landroid/graphics/Rect;", "manualClipPath", "Landroidx/compose/ui/graphics/Path;", "getManualClipPath", "()Landroidx/compose/ui/graphics/Path;", "value", "isInvalidated", "()Z", "setInvalidated", "(Z)V", "layerPaint", "Landroidx/compose/ui/graphics/Paint;", "drawnWithZ", "canvasHolder", "Landroidx/compose/ui/graphics/CanvasHolder;", "matrixCache", "Landroidx/compose/ui/platform/LayerMatrixCache;", "underlyingMatrix", "Landroidx/compose/ui/graphics/Matrix;", "getUnderlyingMatrix-sQKQjiQ", "()[F", "frameRate", "", "getFrameRate", "()F", "setFrameRate", "(F)V", "isFrameRateFromParent", "setFrameRateFromParent", "mTransformOrigin", "Landroidx/compose/ui/graphics/TransformOrigin;", "J", "mHasOverlappingRendering", "layerId", "", "getLayerId", "()J", "ownerViewId", "getOwnerViewId", "cameraDistancePx", "getCameraDistancePx", "setCameraDistancePx", "mutatedFields", "", "updateLayerProperties", "scope", "Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;", "obtainLayerPaint", "hasOverlappingRendering", "isInLayer", "position", "Landroidx/compose/ui/geometry/Offset;", "isInLayer-k-4lQ0M", "(J)Z", "updateOutlineResolver", "resetClipBounds", "resize", "size", "Landroidx/compose/ui/unit/IntSize;", "resize-ozmzZPI", "(J)V", "move", "Landroidx/compose/ui/unit/IntOffset;", "move--gyyYBs", "drawLayer", "dispatchDraw", "Landroid/graphics/Canvas;", "invalidate", "onLayout", "changed", CmcdData.STREAM_TYPE_LIVE, "t", "r", "b", "destroy", "updateDisplayList", "forceLayout", "mapOffset", "point", "inverse", "mapOffset-8S9VItk", "(JZ)J", "mapBounds", "rect", "Landroidx/compose/ui/geometry/MutableRect;", "reuseLayer", "transform", "matrix", "transform-58bKbWc", "([F)V", "inverseTransform", "inverseTransform-58bKbWc", "UniqueDrawingIdApi29", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInfo {
     private static boolean hasRetrievedMethod;
@@ -111,7 +111,7 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
         this.outlineResolver = new OutlineResolver();
         this.canvasHolder = new CanvasHolder();
         this.matrixCache = new LayerMatrixCache<>(getMatrix);
-        this.mTransformOrigin = TransformOrigin.Companion.m5688getCenterSzJe1aQ();
+        this.mTransformOrigin = TransformOrigin.Companion.m5839getCenterSzJe1aQ();
         this.mHasOverlappingRendering = true;
         setWillNotDraw(false);
         drawChildContainer.addView(this);
@@ -132,14 +132,14 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
     private final void setInvalidated(boolean z) {
         if (z != this.isInvalidated) {
             this.isInvalidated = z;
-            this.ownerView.notifyLayerIsDirty$ui_release(this, z);
+            this.ownerView.notifyLayerIsDirty$ui(this, z);
         }
     }
 
     @Override // androidx.compose.ui.node.OwnedLayer
     /* renamed from: getUnderlyingMatrix-sQKQjiQ */
-    public float[] mo7042getUnderlyingMatrixsQKQjiQ() {
-        return this.matrixCache.m7148calculateMatrixGrdbGEg(this);
+    public float[] mo7252getUnderlyingMatrixsQKQjiQ() {
+        return this.matrixCache.m7383calculateMatrixGrdbGEg(this);
     }
 
     @Override // androidx.compose.ui.node.OwnedLayer
@@ -176,7 +176,7 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
     }
 
     /* compiled from: ViewLayer.android.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/platform/ViewLayer$UniqueDrawingIdApi29;", "", "<init>", "()V", "getUniqueDrawingId", "", "view", "Landroid/view/View;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/platform/ViewLayer$UniqueDrawingIdApi29;", "", "<init>", "()V", "getUniqueDrawingId", "", "view", "Landroid/view/View;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     private static final class UniqueDrawingIdApi29 {
         public static final UniqueDrawingIdApi29 INSTANCE = new UniqueDrawingIdApi29();
@@ -200,95 +200,95 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
 
     @Override // androidx.compose.ui.node.OwnedLayer
     public void updateLayerProperties(ReusableGraphicsLayerScope reusableGraphicsLayerScope) {
-        int mo5474getCompositingStrategyNrFUSI;
+        int mo5619getCompositingStrategyNrFUSI;
         Function0<Unit> function0;
-        int mutatedFields$ui_release = reusableGraphicsLayerScope.getMutatedFields$ui_release() | this.mutatedFields;
-        if ((mutatedFields$ui_release & 4096) != 0) {
-            long mo5477getTransformOriginSzJe1aQ = reusableGraphicsLayerScope.mo5477getTransformOriginSzJe1aQ();
-            this.mTransformOrigin = mo5477getTransformOriginSzJe1aQ;
-            setPivotX(TransformOrigin.m5683getPivotFractionXimpl(mo5477getTransformOriginSzJe1aQ) * getWidth());
-            setPivotY(TransformOrigin.m5684getPivotFractionYimpl(this.mTransformOrigin) * getHeight());
+        int mutatedFields$ui = reusableGraphicsLayerScope.getMutatedFields$ui() | this.mutatedFields;
+        if ((mutatedFields$ui & 4096) != 0) {
+            long mo5622getTransformOriginSzJe1aQ = reusableGraphicsLayerScope.mo5622getTransformOriginSzJe1aQ();
+            this.mTransformOrigin = mo5622getTransformOriginSzJe1aQ;
+            setPivotX(TransformOrigin.m5834getPivotFractionXimpl(mo5622getTransformOriginSzJe1aQ) * getWidth());
+            setPivotY(TransformOrigin.m5835getPivotFractionYimpl(this.mTransformOrigin) * getHeight());
         }
-        if ((mutatedFields$ui_release & 1) != 0) {
+        if ((mutatedFields$ui & 1) != 0) {
             setScaleX(reusableGraphicsLayerScope.getScaleX());
         }
-        if ((mutatedFields$ui_release & 2) != 0) {
+        if ((mutatedFields$ui & 2) != 0) {
             setScaleY(reusableGraphicsLayerScope.getScaleY());
         }
-        if ((mutatedFields$ui_release & 4) != 0) {
+        if ((mutatedFields$ui & 4) != 0) {
             setAlpha(reusableGraphicsLayerScope.getAlpha());
         }
-        if ((mutatedFields$ui_release & 8) != 0) {
+        if ((mutatedFields$ui & 8) != 0) {
             setTranslationX(reusableGraphicsLayerScope.getTranslationX());
         }
-        if ((mutatedFields$ui_release & 16) != 0) {
+        if ((mutatedFields$ui & 16) != 0) {
             setTranslationY(reusableGraphicsLayerScope.getTranslationY());
         }
-        if ((mutatedFields$ui_release & 32) != 0) {
+        if ((mutatedFields$ui & 32) != 0) {
             setElevation(reusableGraphicsLayerScope.getShadowElevation());
         }
-        if ((mutatedFields$ui_release & 1024) != 0) {
+        if ((mutatedFields$ui & 1024) != 0) {
             setRotation(reusableGraphicsLayerScope.getRotationZ());
         }
-        if ((mutatedFields$ui_release & 256) != 0) {
+        if ((mutatedFields$ui & 256) != 0) {
             setRotationX(reusableGraphicsLayerScope.getRotationX());
         }
-        if ((mutatedFields$ui_release & 512) != 0) {
+        if ((mutatedFields$ui & 512) != 0) {
             setRotationY(reusableGraphicsLayerScope.getRotationY());
         }
-        if ((mutatedFields$ui_release & 2048) != 0) {
+        if ((mutatedFields$ui & 2048) != 0) {
             setCameraDistancePx(reusableGraphicsLayerScope.getCameraDistance());
         }
         boolean z = false;
         boolean z2 = getManualClipPath() != null;
         boolean z3 = reusableGraphicsLayerScope.getClip() && reusableGraphicsLayerScope.getShape() != RectangleShapeKt.getRectangleShape();
-        if ((mutatedFields$ui_release & 24576) != 0) {
+        if ((mutatedFields$ui & 24576) != 0) {
             this.clipToBounds = reusableGraphicsLayerScope.getClip() && reusableGraphicsLayerScope.getShape() == RectangleShapeKt.getRectangleShape();
             resetClipBounds();
             setClipToOutline(z3);
         }
-        boolean m7177updateS_szKao = this.outlineResolver.m7177updateS_szKao(reusableGraphicsLayerScope.getOutline$ui_release(), reusableGraphicsLayerScope.getAlpha(), z3, reusableGraphicsLayerScope.getShadowElevation(), reusableGraphicsLayerScope.mo5475getSizeNHjbRc());
-        if (this.outlineResolver.getCacheIsDirty$ui_release()) {
+        boolean m7413updateS_szKao = this.outlineResolver.m7413updateS_szKao(reusableGraphicsLayerScope.getOutline$ui(), reusableGraphicsLayerScope.getAlpha(), z3, reusableGraphicsLayerScope.getShadowElevation(), reusableGraphicsLayerScope.mo5620getSizeNHjbRc());
+        if (this.outlineResolver.getCacheIsDirty$ui()) {
             updateOutlineResolver();
         }
         boolean z4 = getManualClipPath() != null;
-        if (z2 != z4 || (z4 && m7177updateS_szKao)) {
+        if (z2 != z4 || (z4 && m7413updateS_szKao)) {
             invalidate();
         }
         if (!this.drawnWithZ && getElevation() > 0.0f && (function0 = this.invalidateParentLayer) != null) {
             function0.invoke();
         }
-        if ((mutatedFields$ui_release & Fields.MatrixAffectingFields) != 0) {
+        if ((mutatedFields$ui & Fields.MatrixAffectingFields) != 0) {
             this.matrixCache.invalidate();
         }
         if (Build.VERSION.SDK_INT >= 28) {
-            if ((mutatedFields$ui_release & 64) != 0) {
-                ViewLayerVerificationHelper28.INSTANCE.setOutlineAmbientShadowColor(this, ColorKt.m5334toArgb8_81llA(reusableGraphicsLayerScope.mo5472getAmbientShadowColor0d7_KjU()));
+            if ((mutatedFields$ui & 64) != 0) {
+                ViewLayerVerificationHelper28.INSTANCE.setOutlineAmbientShadowColor(this, ColorKt.m5478toArgb8_81llA(reusableGraphicsLayerScope.mo5617getAmbientShadowColor0d7_KjU()));
             }
-            if ((mutatedFields$ui_release & 128) != 0) {
-                ViewLayerVerificationHelper28.INSTANCE.setOutlineSpotShadowColor(this, ColorKt.m5334toArgb8_81llA(reusableGraphicsLayerScope.mo5476getSpotShadowColor0d7_KjU()));
+            if ((mutatedFields$ui & 128) != 0) {
+                ViewLayerVerificationHelper28.INSTANCE.setOutlineSpotShadowColor(this, ColorKt.m5478toArgb8_81llA(reusableGraphicsLayerScope.mo5621getSpotShadowColor0d7_KjU()));
             }
         }
-        if (Build.VERSION.SDK_INT >= 31 && (131072 & mutatedFields$ui_release) != 0) {
+        if (Build.VERSION.SDK_INT >= 31 && (131072 & mutatedFields$ui) != 0) {
             ViewLayerVerificationHelper31.INSTANCE.setRenderEffect(this, reusableGraphicsLayerScope.getRenderEffect());
         }
-        boolean z5 = ((262144 & mutatedFields$ui_release) == 0 && (524288 & mutatedFields$ui_release) == 0) ? false : true;
-        if ((mutatedFields$ui_release & 32768) != 0 || z5) {
+        boolean z5 = ((262144 & mutatedFields$ui) == 0 && (524288 & mutatedFields$ui) == 0) ? false : true;
+        if ((mutatedFields$ui & 32768) != 0 || z5) {
             if (z5) {
-                mo5474getCompositingStrategyNrFUSI = CompositingStrategy.Companion.m5372getOffscreenNrFUSI();
+                mo5619getCompositingStrategyNrFUSI = CompositingStrategy.Companion.m5517getOffscreenNrFUSI();
             } else {
-                mo5474getCompositingStrategyNrFUSI = reusableGraphicsLayerScope.mo5474getCompositingStrategyNrFUSI();
+                mo5619getCompositingStrategyNrFUSI = reusableGraphicsLayerScope.mo5619getCompositingStrategyNrFUSI();
             }
             android.graphics.Paint paint = null;
-            if (CompositingStrategy.m5366equalsimpl0(mo5474getCompositingStrategyNrFUSI, CompositingStrategy.Companion.m5372getOffscreenNrFUSI())) {
+            if (CompositingStrategy.m5511equalsimpl0(mo5619getCompositingStrategyNrFUSI, CompositingStrategy.Companion.m5517getOffscreenNrFUSI())) {
                 if (z5) {
                     Paint obtainLayerPaint = obtainLayerPaint();
                     obtainLayerPaint.setColorFilter(reusableGraphicsLayerScope.getColorFilter());
-                    obtainLayerPaint.mo5156setBlendModes9anfk8(reusableGraphicsLayerScope.mo5473getBlendMode0nO6VwU());
+                    obtainLayerPaint.mo5299setBlendModes9anfk8(reusableGraphicsLayerScope.mo5618getBlendMode0nO6VwU());
                     paint = obtainLayerPaint.asFrameworkPaint();
                 }
                 setLayerType(2, paint);
-            } else if (CompositingStrategy.m5366equalsimpl0(mo5474getCompositingStrategyNrFUSI, CompositingStrategy.Companion.m5371getModulateAlphaNrFUSI())) {
+            } else if (CompositingStrategy.m5511equalsimpl0(mo5619getCompositingStrategyNrFUSI, CompositingStrategy.Companion.m5516getModulateAlphaNrFUSI())) {
                 setLayerType(0, null);
                 this.mHasOverlappingRendering = z;
             } else {
@@ -297,7 +297,7 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
             z = true;
             this.mHasOverlappingRendering = z;
         }
-        this.mutatedFields = reusableGraphicsLayerScope.getMutatedFields$ui_release();
+        this.mutatedFields = reusableGraphicsLayerScope.getMutatedFields$ui();
     }
 
     private final Paint obtainLayerPaint() {
@@ -338,14 +338,14 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
 
     @Override // androidx.compose.ui.node.OwnedLayer
     /* renamed from: resize-ozmzZPI */
-    public void mo7047resizeozmzZPI(long j) {
+    public void mo7257resizeozmzZPI(long j) {
         int i = (int) (j >> 32);
         int i2 = (int) (j & 4294967295L);
         if (i == getWidth() && i2 == getHeight()) {
             return;
         }
-        setPivotX(TransformOrigin.m5683getPivotFractionXimpl(this.mTransformOrigin) * i);
-        setPivotY(TransformOrigin.m5684getPivotFractionYimpl(this.mTransformOrigin) * i2);
+        setPivotX(TransformOrigin.m5834getPivotFractionXimpl(this.mTransformOrigin) * i);
+        setPivotY(TransformOrigin.m5835getPivotFractionYimpl(this.mTransformOrigin) * i2);
         updateOutlineResolver();
         layout(getLeft(), getTop(), getLeft() + i, getTop() + i2);
         resetClipBounds();
@@ -354,15 +354,15 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
 
     @Override // androidx.compose.ui.node.OwnedLayer
     /* renamed from: move--gyyYBs */
-    public void mo7046movegyyYBs(long j) {
-        int m8124getXimpl = IntOffset.m8124getXimpl(j);
-        if (m8124getXimpl != getLeft()) {
-            offsetLeftAndRight(m8124getXimpl - getLeft());
+    public void mo7256movegyyYBs(long j) {
+        int m8386getXimpl = IntOffset.m8386getXimpl(j);
+        if (m8386getXimpl != getLeft()) {
+            offsetLeftAndRight(m8386getXimpl - getLeft());
             this.matrixCache.invalidate();
         }
-        int m8125getYimpl = IntOffset.m8125getYimpl(j);
-        if (m8125getYimpl != getTop()) {
-            offsetTopAndBottom(m8125getYimpl - getTop());
+        int m8387getYimpl = IntOffset.m8387getYimpl(j);
+        if (m8387getYimpl != getTop()) {
+            offsetTopAndBottom(m8387getYimpl - getTop());
             this.matrixCache.invalidate();
         }
     }
@@ -374,7 +374,7 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
         if (z) {
             canvas.enableZ();
         }
-        this.container.drawChild$ui_release(canvas, this, getDrawingTime());
+        this.container.drawChild$ui(canvas, this, getDrawingTime());
         if (this.drawnWithZ) {
             canvas.disableZ();
         }
@@ -421,7 +421,7 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
         this.ownerView.requestClearInvalidObservations();
         this.drawBlock = null;
         this.invalidateParentLayer = null;
-        this.ownerView.recycle$ui_release(this);
+        this.ownerView.recycle$ui(this);
         this.container.removeViewInLayout(this);
     }
 
@@ -436,11 +436,11 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
 
     @Override // androidx.compose.ui.node.OwnedLayer
     /* renamed from: mapOffset-8S9VItk */
-    public long mo7045mapOffset8S9VItk(long j, boolean z) {
+    public long mo7255mapOffset8S9VItk(long j, boolean z) {
         if (z) {
-            return this.matrixCache.m7150mapInverseR5De75A(this, j);
+            return this.matrixCache.m7385mapInverseR5De75A(this, j);
         }
-        return this.matrixCache.m7149mapR5De75A(this, j);
+        return this.matrixCache.m7384mapR5De75A(this, j);
     }
 
     @Override // androidx.compose.ui.node.OwnedLayer
@@ -458,7 +458,7 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
         this.matrixCache.reset();
         this.clipToBounds = false;
         this.drawnWithZ = false;
-        this.mTransformOrigin = TransformOrigin.Companion.m5688getCenterSzJe1aQ();
+        this.mTransformOrigin = TransformOrigin.Companion.m5839getCenterSzJe1aQ();
         this.drawBlock = function2;
         this.invalidateParentLayer = function0;
         setInvalidated(false);
@@ -466,21 +466,21 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
 
     @Override // androidx.compose.ui.node.OwnedLayer
     /* renamed from: transform-58bKbWc */
-    public void mo7048transform58bKbWc(float[] fArr) {
-        androidx.compose.ui.graphics.Matrix.m5541timesAssign58bKbWc(fArr, this.matrixCache.m7148calculateMatrixGrdbGEg(this));
+    public void mo7258transform58bKbWc(float[] fArr) {
+        androidx.compose.ui.graphics.Matrix.m5689timesAssign58bKbWc(fArr, this.matrixCache.m7383calculateMatrixGrdbGEg(this));
     }
 
     @Override // androidx.compose.ui.node.OwnedLayer
     /* renamed from: inverseTransform-58bKbWc */
-    public void mo7043inverseTransform58bKbWc(float[] fArr) {
-        float[] m7147calculateInverseMatrixbWbORWo = this.matrixCache.m7147calculateInverseMatrixbWbORWo(this);
-        if (m7147calculateInverseMatrixbWbORWo != null) {
-            androidx.compose.ui.graphics.Matrix.m5541timesAssign58bKbWc(fArr, m7147calculateInverseMatrixbWbORWo);
+    public void mo7253inverseTransform58bKbWc(float[] fArr) {
+        float[] m7382calculateInverseMatrixbWbORWo = this.matrixCache.m7382calculateInverseMatrixbWbORWo(this);
+        if (m7382calculateInverseMatrixbWbORWo != null) {
+            androidx.compose.ui.graphics.Matrix.m5689timesAssign58bKbWc(fArr, m7382calculateInverseMatrixbWbORWo);
         }
     }
 
     /* compiled from: ViewLayer.android.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\n\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u001a\u001a\u00020\b2\u0006\u0010\u001b\u001a\u00020\u0006H\u0007R \u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R$\u0010\u0016\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u0012@@X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0015\"\u0004\b\u0018\u0010\u0019¨\u0006\u001c"}, d2 = {"Landroidx/compose/ui/platform/ViewLayer$Companion;", "", "<init>", "()V", "getMatrix", "Lkotlin/Function2;", "Landroid/view/View;", "Landroid/graphics/Matrix;", "", "OutlineProvider", "Landroid/view/ViewOutlineProvider;", "getOutlineProvider", "()Landroid/view/ViewOutlineProvider;", "updateDisplayListIfDirtyMethod", "Ljava/lang/reflect/Method;", "recreateDisplayList", "Ljava/lang/reflect/Field;", "value", "", "hasRetrievedMethod", "getHasRetrievedMethod", "()Z", "shouldUseDispatchDraw", "getShouldUseDispatchDraw", "setShouldUseDispatchDraw$ui_release", "(Z)V", "updateDisplayList", "view", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\n\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u001a\u001a\u00020\b2\u0006\u0010\u001b\u001a\u00020\u0006H\u0007R \u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R$\u0010\u0016\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u0012@@X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0015\"\u0004\b\u0018\u0010\u0019¨\u0006\u001c"}, d2 = {"Landroidx/compose/ui/platform/ViewLayer$Companion;", "", "<init>", "()V", "getMatrix", "Lkotlin/Function2;", "Landroid/view/View;", "Landroid/graphics/Matrix;", "", "OutlineProvider", "Landroid/view/ViewOutlineProvider;", "getOutlineProvider", "()Landroid/view/ViewOutlineProvider;", "updateDisplayListIfDirtyMethod", "Ljava/lang/reflect/Method;", "recreateDisplayList", "Ljava/lang/reflect/Field;", "value", "", "hasRetrievedMethod", "getHasRetrievedMethod", "()Z", "shouldUseDispatchDraw", "getShouldUseDispatchDraw", "setShouldUseDispatchDraw$ui", "(Z)V", "updateDisplayList", "view", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -502,7 +502,7 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
             return ViewLayer.shouldUseDispatchDraw;
         }
 
-        public final void setShouldUseDispatchDraw$ui_release(boolean z) {
+        public final void setShouldUseDispatchDraw$ui(boolean z) {
             ViewLayer.shouldUseDispatchDraw = z;
         }
 
@@ -535,20 +535,20 @@ public final class ViewLayer extends View implements OwnedLayer, GraphicLayerInf
                     method2.invoke(view, new Object[0]);
                 }
             } catch (Throwable unused) {
-                setShouldUseDispatchDraw$ui_release(true);
+                setShouldUseDispatchDraw$ui(true);
             }
         }
     }
 
     @Override // androidx.compose.ui.node.OwnedLayer
     /* renamed from: isInLayer-k-4lQ0M */
-    public boolean mo7044isInLayerk4lQ0M(long j) {
+    public boolean mo7254isInLayerk4lQ0M(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (4294967295L & j));
         if (this.clipToBounds) {
             return 0.0f <= intBitsToFloat && intBitsToFloat < ((float) getWidth()) && 0.0f <= intBitsToFloat2 && intBitsToFloat2 < ((float) getHeight());
         } else if (getClipToOutline()) {
-            return this.outlineResolver.m7176isInOutlinek4lQ0M(j);
+            return this.outlineResolver.m7412isInOutlinek4lQ0M(j);
         } else {
             return true;
         }

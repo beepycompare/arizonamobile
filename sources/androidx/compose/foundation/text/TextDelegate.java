@@ -18,14 +18,13 @@ import androidx.compose.ui.unit.ConstraintsKt;
 import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.LayoutDirection;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.ranges.RangesKt;
 /* compiled from: TextDelegate.kt */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000 H2\u00020\u0001:\u0001HBe\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\u0007\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0014\b\u0002\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u00130\u0012¢\u0006\u0004\b\u0015\u0010\u0016J\u000e\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020/J\u001f\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020@2\u0006\u0010<\u001a\u00020/H\u0002¢\u0006\u0004\bA\u0010BJ)\u0010C\u001a\u00020D2\u0006\u0010?\u001a\u00020@2\u0006\u0010<\u001a\u00020/2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010D¢\u0006\u0004\bF\u0010GR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0011\u0010\b\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001cR\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0013\u0010\u000b\u001a\u00020\f¢\u0006\n\n\u0002\u0010!\u001a\u0004\b \u0010\u001cR\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u001d\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u00130\u0012¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u001c\u0010(\u001a\u0004\u0018\u00010)X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u001c\u0010.\u001a\u0004\u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103R\u0014\u00104\u001a\u00020)8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b5\u0010+R\u0011\u00106\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b7\u0010\u001cR\u0011\u00108\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b9\u0010\u001c¨\u0006I"}, d2 = {"Landroidx/compose/foundation/text/TextDelegate;", "", "text", "Landroidx/compose/ui/text/AnnotatedString;", "style", "Landroidx/compose/ui/text/TextStyle;", "maxLines", "", "minLines", "softWrap", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "density", "Landroidx/compose/ui/unit/Density;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;IIZILandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getText", "()Landroidx/compose/ui/text/AnnotatedString;", "getStyle", "()Landroidx/compose/ui/text/TextStyle;", "getMaxLines", "()I", "getMinLines", "getSoftWrap", "()Z", "getOverflow-gIe3tQ8", "I", "getDensity", "()Landroidx/compose/ui/unit/Density;", "getFontFamilyResolver", "()Landroidx/compose/ui/text/font/FontFamily$Resolver;", "getPlaceholders", "()Ljava/util/List;", "paragraphIntrinsics", "Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "getParagraphIntrinsics$foundation_release", "()Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "setParagraphIntrinsics$foundation_release", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;)V", "intrinsicsLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getIntrinsicsLayoutDirection$foundation_release", "()Landroidx/compose/ui/unit/LayoutDirection;", "setIntrinsicsLayoutDirection$foundation_release", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "nonNullIntrinsics", "getNonNullIntrinsics", "minIntrinsicWidth", "getMinIntrinsicWidth", "maxIntrinsicWidth", "getMaxIntrinsicWidth", "layoutIntrinsics", "", "layoutDirection", "layoutText", "Landroidx/compose/ui/text/MultiParagraph;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "layoutText-K40F9xA", "(JLandroidx/compose/ui/unit/LayoutDirection;)Landroidx/compose/ui/text/MultiParagraph;", TtmlNode.TAG_LAYOUT, "Landroidx/compose/ui/text/TextLayoutResult;", "prevResult", "layout-NN6Ew-U", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/text/TextLayoutResult;)Landroidx/compose/ui/text/TextLayoutResult;", "Companion", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000 H2\u00020\u0001:\u0001HBe\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\u0007\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0014\b\u0002\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u00130\u0012¢\u0006\u0004\b\u0015\u0010\u0016J\u000e\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020/J\u001f\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020@2\u0006\u0010<\u001a\u00020/H\u0002¢\u0006\u0004\bA\u0010BJ)\u0010C\u001a\u00020D2\u0006\u0010?\u001a\u00020@2\u0006\u0010<\u001a\u00020/2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010D¢\u0006\u0004\bF\u0010GR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0011\u0010\b\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001cR\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0013\u0010\u000b\u001a\u00020\f¢\u0006\n\n\u0002\u0010!\u001a\u0004\b \u0010\u001cR\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u001d\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u00130\u0012¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u001c\u0010(\u001a\u0004\u0018\u00010)X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u001c\u0010.\u001a\u0004\u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103R\u0014\u00104\u001a\u00020)8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b5\u0010+R\u0011\u00106\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b7\u0010\u001cR\u0011\u00108\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b9\u0010\u001c¨\u0006I"}, d2 = {"Landroidx/compose/foundation/text/TextDelegate;", "", "text", "Landroidx/compose/ui/text/AnnotatedString;", "style", "Landroidx/compose/ui/text/TextStyle;", "maxLines", "", "minLines", "softWrap", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "density", "Landroidx/compose/ui/unit/Density;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;IIZILandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getText", "()Landroidx/compose/ui/text/AnnotatedString;", "getStyle", "()Landroidx/compose/ui/text/TextStyle;", "getMaxLines", "()I", "getMinLines", "getSoftWrap", "()Z", "getOverflow-gIe3tQ8", "I", "getDensity", "()Landroidx/compose/ui/unit/Density;", "getFontFamilyResolver", "()Landroidx/compose/ui/text/font/FontFamily$Resolver;", "getPlaceholders", "()Ljava/util/List;", "paragraphIntrinsics", "Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "getParagraphIntrinsics$foundation", "()Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "setParagraphIntrinsics$foundation", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;)V", "intrinsicsLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getIntrinsicsLayoutDirection$foundation", "()Landroidx/compose/ui/unit/LayoutDirection;", "setIntrinsicsLayoutDirection$foundation", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "nonNullIntrinsics", "getNonNullIntrinsics", "minIntrinsicWidth", "getMinIntrinsicWidth", "maxIntrinsicWidth", "getMaxIntrinsicWidth", "layoutIntrinsics", "", "layoutDirection", "layoutText", "Landroidx/compose/ui/text/MultiParagraph;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "layoutText-K40F9xA", "(JLandroidx/compose/ui/unit/LayoutDirection;)Landroidx/compose/ui/text/MultiParagraph;", "layout", "Landroidx/compose/ui/text/TextLayoutResult;", "prevResult", "layout-NN6Ew-U", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/text/TextLayoutResult;)Landroidx/compose/ui/text/TextLayoutResult;", "Companion", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextDelegate {
     public static final int $stable = 0;
@@ -89,11 +88,11 @@ public final class TextDelegate {
     }
 
     public /* synthetic */ TextDelegate(AnnotatedString annotatedString, TextStyle textStyle, int i, int i2, boolean z, int i3, Density density, FontFamily.Resolver resolver, List list, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, textStyle, (i4 & 4) != 0 ? Integer.MAX_VALUE : i, (i4 & 8) != 0 ? 1 : i2, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? TextOverflow.Companion.m7931getClipgIe3tQ8() : i3, density, resolver, (i4 & 256) != 0 ? CollectionsKt.emptyList() : list, null);
+        this(annotatedString, textStyle, (i4 & 4) != 0 ? Integer.MAX_VALUE : i, (i4 & 8) != 0 ? 1 : i2, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? TextOverflow.Companion.m8193getClipgIe3tQ8() : i3, density, resolver, (i4 & 256) != 0 ? CollectionsKt.emptyList() : list, null);
     }
 
     /* renamed from: getOverflow-gIe3tQ8  reason: not valid java name */
-    public final int m1344getOverflowgIe3tQ8() {
+    public final int m1423getOverflowgIe3tQ8() {
         return this.overflow;
     }
 
@@ -109,19 +108,19 @@ public final class TextDelegate {
         return this.placeholders;
     }
 
-    public final MultiParagraphIntrinsics getParagraphIntrinsics$foundation_release() {
+    public final MultiParagraphIntrinsics getParagraphIntrinsics$foundation() {
         return this.paragraphIntrinsics;
     }
 
-    public final void setParagraphIntrinsics$foundation_release(MultiParagraphIntrinsics multiParagraphIntrinsics) {
+    public final void setParagraphIntrinsics$foundation(MultiParagraphIntrinsics multiParagraphIntrinsics) {
         this.paragraphIntrinsics = multiParagraphIntrinsics;
     }
 
-    public final LayoutDirection getIntrinsicsLayoutDirection$foundation_release() {
+    public final LayoutDirection getIntrinsicsLayoutDirection$foundation() {
         return this.intrinsicsLayoutDirection;
     }
 
-    public final void setIntrinsicsLayoutDirection$foundation_release(LayoutDirection layoutDirection) {
+    public final void setIntrinsicsLayoutDirection$foundation(LayoutDirection layoutDirection) {
         this.intrinsicsLayoutDirection = layoutDirection;
     }
 
@@ -151,39 +150,39 @@ public final class TextDelegate {
     }
 
     /* renamed from: layoutText-K40F9xA  reason: not valid java name */
-    private final MultiParagraph m1343layoutTextK40F9xA(long j, LayoutDirection layoutDirection) {
+    private final MultiParagraph m1422layoutTextK40F9xA(long j, LayoutDirection layoutDirection) {
         layoutIntrinsics(layoutDirection);
-        int m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
-        int m7949getMaxWidthimpl = ((this.softWrap || TextOverflow.m7922equalsimpl0(this.overflow, TextOverflow.Companion.m7932getEllipsisgIe3tQ8())) && Constraints.m7945getHasBoundedWidthimpl(j)) ? Constraints.m7949getMaxWidthimpl(j) : Integer.MAX_VALUE;
-        int i = (this.softWrap || !TextOverflow.m7922equalsimpl0(this.overflow, TextOverflow.Companion.m7932getEllipsisgIe3tQ8())) ? this.maxLines : 1;
-        if (m7951getMinWidthimpl != m7949getMaxWidthimpl) {
-            m7949getMaxWidthimpl = RangesKt.coerceIn(getMaxIntrinsicWidth(), m7951getMinWidthimpl, m7949getMaxWidthimpl);
+        int m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
+        int m8211getMaxWidthimpl = ((this.softWrap || TextOverflow.m8184equalsimpl0(this.overflow, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) && Constraints.m8207getHasBoundedWidthimpl(j)) ? Constraints.m8211getMaxWidthimpl(j) : Integer.MAX_VALUE;
+        int i = (this.softWrap || !TextOverflow.m8184equalsimpl0(this.overflow, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) ? this.maxLines : 1;
+        if (m8213getMinWidthimpl != m8211getMaxWidthimpl) {
+            m8211getMaxWidthimpl = RangesKt.coerceIn(getMaxIntrinsicWidth(), m8213getMinWidthimpl, m8211getMaxWidthimpl);
         }
-        return new MultiParagraph(getNonNullIntrinsics(), Constraints.Companion.m7958fitPrioritizingWidthZbe2FdA(0, m7949getMaxWidthimpl, 0, Constraints.m7948getMaxHeightimpl(j)), i, this.overflow, (DefaultConstructorMarker) null);
+        return new MultiParagraph(getNonNullIntrinsics(), Constraints.Companion.m8220fitPrioritizingWidthZbe2FdA(0, m8211getMaxWidthimpl, 0, Constraints.m8210getMaxHeightimpl(j)), i, this.overflow, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: layout-NN6Ew-U$default  reason: not valid java name */
-    public static /* synthetic */ TextLayoutResult m1342layoutNN6EwU$default(TextDelegate textDelegate, long j, LayoutDirection layoutDirection, TextLayoutResult textLayoutResult, int i, Object obj) {
+    public static /* synthetic */ TextLayoutResult m1421layoutNN6EwU$default(TextDelegate textDelegate, long j, LayoutDirection layoutDirection, TextLayoutResult textLayoutResult, int i, Object obj) {
         if ((i & 4) != 0) {
             textLayoutResult = null;
         }
-        return textDelegate.m1345layoutNN6EwU(j, layoutDirection, textLayoutResult);
+        return textDelegate.m1424layoutNN6EwU(j, layoutDirection, textLayoutResult);
     }
 
     /* renamed from: layout-NN6Ew-U  reason: not valid java name */
-    public final TextLayoutResult m1345layoutNN6EwU(long j, LayoutDirection layoutDirection, TextLayoutResult textLayoutResult) {
-        if (textLayoutResult != null && TextLayoutHelperKt.m1384canReuse7_7YC6M(textLayoutResult, this.text, this.style, this.placeholders, this.maxLines, this.softWrap, this.overflow, this.density, layoutDirection, this.fontFamilyResolver, j)) {
-            TextLayoutInput textLayoutInput = new TextLayoutInput(textLayoutResult.getLayoutInput().getText(), this.style, textLayoutResult.getLayoutInput().getPlaceholders(), textLayoutResult.getLayoutInput().getMaxLines(), textLayoutResult.getLayoutInput().getSoftWrap(), textLayoutResult.getLayoutInput().m7425getOverflowgIe3tQ8(), textLayoutResult.getLayoutInput().getDensity(), textLayoutResult.getLayoutInput().getLayoutDirection(), textLayoutResult.getLayoutInput().getFontFamilyResolver(), j, (DefaultConstructorMarker) null);
+    public final TextLayoutResult m1424layoutNN6EwU(long j, LayoutDirection layoutDirection, TextLayoutResult textLayoutResult) {
+        if (textLayoutResult != null && TextLayoutHelperKt.m1466canReuse7_7YC6M(textLayoutResult, this.text, this.style, this.placeholders, this.maxLines, this.softWrap, this.overflow, this.density, layoutDirection, this.fontFamilyResolver, j)) {
+            TextLayoutInput textLayoutInput = new TextLayoutInput(textLayoutResult.getLayoutInput().getText(), this.style, textLayoutResult.getLayoutInput().getPlaceholders(), textLayoutResult.getLayoutInput().getMaxLines(), textLayoutResult.getLayoutInput().getSoftWrap(), textLayoutResult.getLayoutInput().m7668getOverflowgIe3tQ8(), textLayoutResult.getLayoutInput().getDensity(), textLayoutResult.getLayoutInput().getLayoutDirection(), textLayoutResult.getLayoutInput().getFontFamilyResolver(), j, (DefaultConstructorMarker) null);
             int ceilToIntPx = TextDelegateKt.ceilToIntPx(textLayoutResult.getMultiParagraph().getWidth());
-            return textLayoutResult.m7427copyO0kMr_c(textLayoutInput, ConstraintsKt.m7963constrain4WqzIAM(j, IntSize.m8162constructorimpl((TextDelegateKt.ceilToIntPx(textLayoutResult.getMultiParagraph().getHeight()) & 4294967295L) | (ceilToIntPx << 32))));
+            return textLayoutResult.m7670copyO0kMr_c(textLayoutInput, ConstraintsKt.m8225constrain4WqzIAM(j, IntSize.m8424constructorimpl((TextDelegateKt.ceilToIntPx(textLayoutResult.getMultiParagraph().getHeight()) & 4294967295L) | (ceilToIntPx << 32))));
         }
-        MultiParagraph m1343layoutTextK40F9xA = m1343layoutTextK40F9xA(j, layoutDirection);
-        int ceilToIntPx2 = TextDelegateKt.ceilToIntPx(m1343layoutTextK40F9xA.getWidth());
-        return new TextLayoutResult(new TextLayoutInput(this.text, this.style, this.placeholders, this.maxLines, this.softWrap, this.overflow, this.density, layoutDirection, this.fontFamilyResolver, j, (DefaultConstructorMarker) null), m1343layoutTextK40F9xA, ConstraintsKt.m7963constrain4WqzIAM(j, IntSize.m8162constructorimpl((TextDelegateKt.ceilToIntPx(m1343layoutTextK40F9xA.getHeight()) & 4294967295L) | (ceilToIntPx2 << 32))), null);
+        MultiParagraph m1422layoutTextK40F9xA = m1422layoutTextK40F9xA(j, layoutDirection);
+        int ceilToIntPx2 = TextDelegateKt.ceilToIntPx(m1422layoutTextK40F9xA.getWidth());
+        return new TextLayoutResult(new TextLayoutInput(this.text, this.style, this.placeholders, this.maxLines, this.softWrap, this.overflow, this.density, layoutDirection, this.fontFamilyResolver, j, (DefaultConstructorMarker) null), m1422layoutTextK40F9xA, ConstraintsKt.m8225constrain4WqzIAM(j, IntSize.m8424constructorimpl((TextDelegateKt.ceilToIntPx(m1422layoutTextK40F9xA.getHeight()) & 4294967295L) | (ceilToIntPx2 << 32))), null);
     }
 
     /* compiled from: TextDelegate.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t¨\u0006\n"}, d2 = {"Landroidx/compose/foundation/text/TextDelegate$Companion;", "", "<init>", "()V", "paint", "", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t¨\u0006\n"}, d2 = {"Landroidx/compose/foundation/text/TextDelegate$Companion;", "", "<init>", "()V", "paint", "", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

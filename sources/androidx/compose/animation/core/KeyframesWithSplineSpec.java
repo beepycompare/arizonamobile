@@ -34,14 +34,14 @@ public final class KeyframesWithSplineSpec<T> implements DurationBasedAnimationS
     public static final class KeyframesWithSplineSpecConfig<T> extends KeyframesSpecBaseConfig<T, KeyframesSpec.KeyframeEntity<T>> {
         public static final int $stable = 8;
 
+        public KeyframesWithSplineSpecConfig() {
+            super(null);
+        }
+
         /* JADX WARN: Multi-variable type inference failed */
         @Override // androidx.compose.animation.core.KeyframesSpecBaseConfig
         public /* bridge */ /* synthetic */ KeyframeBaseEntity createEntityFor$animation_core(Object obj) {
             return createEntityFor$animation_core((KeyframesWithSplineSpecConfig<T>) obj);
-        }
-
-        public KeyframesWithSplineSpecConfig() {
-            super(null);
         }
 
         @Override // androidx.compose.animation.core.KeyframesSpecBaseConfig

@@ -31,24 +31,24 @@ import kotlin.jvm.functions.Function2;
 public final class TabRowDefaults {
     public static final int $stable = 0;
     public static final TabRowDefaults INSTANCE = new TabRowDefaults();
-    private static final float ScrollableTabRowMinTabWidth = Dp.m7996constructorimpl(90);
-    private static final float ScrollableTabRowEdgeStartPadding = Dp.m7996constructorimpl(52);
+    private static final float ScrollableTabRowMinTabWidth = Dp.m8258constructorimpl(90);
+    private static final float ScrollableTabRowEdgeStartPadding = Dp.m8258constructorimpl(52);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Indicator_9IZ8Weo$lambda$0(TabRowDefaults tabRowDefaults, Modifier modifier, float f, long j, int i, int i2, Composer composer, int i3) {
-        tabRowDefaults.m3045Indicator9IZ8Weo(modifier, f, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        tabRowDefaults.m3131Indicator9IZ8Weo(modifier, f, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit PrimaryIndicator_10LGxhE$lambda$1(TabRowDefaults tabRowDefaults, Modifier modifier, float f, float f2, long j, Shape shape, int i, int i2, Composer composer, int i3) {
-        tabRowDefaults.m3046PrimaryIndicator10LGxhE(modifier, f, f2, j, shape, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        tabRowDefaults.m3132PrimaryIndicator10LGxhE(modifier, f, f2, j, shape, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SecondaryIndicator_9IZ8Weo$lambda$2(TabRowDefaults tabRowDefaults, Modifier modifier, float f, long j, int i, int i2, Composer composer, int i3) {
-        tabRowDefaults.m3047SecondaryIndicator9IZ8Weo(modifier, f, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        tabRowDefaults.m3133SecondaryIndicator9IZ8Weo(modifier, f, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -64,12 +64,12 @@ public final class TabRowDefaults {
     }
 
     /* renamed from: getScrollableTabRowMinTabWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3049getScrollableTabRowMinTabWidthD9Ej5fM() {
+    public final float m3135getScrollableTabRowMinTabWidthD9Ej5fM() {
         return ScrollableTabRowMinTabWidth;
     }
 
     /* renamed from: getScrollableTabRowEdgeStartPadding-D9Ej5fM  reason: not valid java name */
-    public final float m3048getScrollableTabRowEdgeStartPaddingD9Ej5fM() {
+    public final float m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM() {
         return ScrollableTabRowEdgeStartPadding;
     }
 
@@ -166,7 +166,7 @@ public final class TabRowDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m3045Indicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
+    public final void m3131Indicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         float f2;
@@ -223,7 +223,7 @@ public final class TabRowDefaults {
                     f3 = f2;
                 } else {
                     companion = i5 != 0 ? Modifier.Companion : obj;
-                    f3 = i6 != 0 ? PrimaryNavigationTabTokens.INSTANCE.m4225getActiveIndicatorHeightD9Ej5fM() : f2;
+                    f3 = i6 != 0 ? PrimaryNavigationTabTokens.INSTANCE.m4311getActiveIndicatorHeightD9Ej5fM() : f2;
                     if ((i2 & 4) != 0) {
                         i3 &= -897;
                         fromToken = ColorSchemeKt.fromToken(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), PrimaryNavigationTabTokens.INSTANCE.getActiveIndicatorColor());
@@ -231,7 +231,7 @@ public final class TabRowDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(1454716052, i3, -1, "androidx.compose.material3.TabRowDefaults.Indicator (TabRow.kt:1038)");
                         }
-                        BoxKt.Box(BackgroundKt.m268backgroundbw27NRU$default(SizeKt.m881height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), fromToken, null, 2, null), startRestartGroup, 0);
+                        BoxKt.Box(BackgroundKt.m299backgroundbw27NRU$default(SizeKt.m962height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), fromToken, null, 2, null), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -242,7 +242,7 @@ public final class TabRowDefaults {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                BoxKt.Box(BackgroundKt.m268backgroundbw27NRU$default(SizeKt.m881height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), fromToken, null, 2, null), startRestartGroup, 0);
+                BoxKt.Box(BackgroundKt.m299backgroundbw27NRU$default(SizeKt.m962height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), fromToken, null, 2, null), startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 j3 = fromToken;
@@ -292,7 +292,7 @@ public final class TabRowDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m3046PrimaryIndicator10LGxhE(Modifier modifier, float f, float f2, long j, Shape shape, Composer composer, final int i, final int i2) {
+    public final void m3132PrimaryIndicator10LGxhE(Modifier modifier, float f, float f2, long j, Shape shape, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         float f3;
@@ -362,10 +362,10 @@ public final class TabRowDefaults {
                         } else {
                             companion = i7 != 0 ? Modifier.Companion : obj;
                             if (i8 != 0) {
-                                f3 = Dp.m7996constructorimpl(24);
+                                f3 = Dp.m8258constructorimpl(24);
                             }
                             if (i4 != 0) {
-                                f4 = PrimaryNavigationTabTokens.INSTANCE.m4225getActiveIndicatorHeightD9Ej5fM();
+                                f4 = PrimaryNavigationTabTokens.INSTANCE.m4311getActiveIndicatorHeightD9Ej5fM();
                             }
                             if ((i2 & 8) != 0) {
                                 j2 = ColorSchemeKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getActiveIndicatorColor(), startRestartGroup, 6);
@@ -379,7 +379,7 @@ public final class TabRowDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1895596205, i3, -1, "androidx.compose.material3.TabRowDefaults.PrimaryIndicator (TabRow.kt:1059)");
                         }
-                        SpacerKt.Spacer(BackgroundKt.m267backgroundbw27NRU(SizeKt.m892requiredWidth3ABfNKs(SizeKt.m884requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
+                        SpacerKt.Spacer(BackgroundKt.m298backgroundbw27NRU(SizeKt.m973requiredWidth3ABfNKs(SizeKt.m965requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -469,7 +469,7 @@ public final class TabRowDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m3047SecondaryIndicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
+    public final void m3133SecondaryIndicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         float f2;
@@ -526,7 +526,7 @@ public final class TabRowDefaults {
                     f3 = f2;
                 } else {
                     companion = i5 != 0 ? Modifier.Companion : obj;
-                    f3 = i6 != 0 ? PrimaryNavigationTabTokens.INSTANCE.m4225getActiveIndicatorHeightD9Ej5fM() : f2;
+                    f3 = i6 != 0 ? PrimaryNavigationTabTokens.INSTANCE.m4311getActiveIndicatorHeightD9Ej5fM() : f2;
                     if ((i2 & 4) != 0) {
                         i3 &= -897;
                         value = ColorSchemeKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getActiveIndicatorColor(), startRestartGroup, 6);
@@ -534,7 +534,7 @@ public final class TabRowDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1498258020, i3, -1, "androidx.compose.material3.TabRowDefaults.SecondaryIndicator (TabRow.kt:1081)");
                         }
-                        BoxKt.Box(BackgroundKt.m268backgroundbw27NRU$default(SizeKt.m881height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), value, null, 2, null), startRestartGroup, 0);
+                        BoxKt.Box(BackgroundKt.m299backgroundbw27NRU$default(SizeKt.m962height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), value, null, 2, null), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -545,7 +545,7 @@ public final class TabRowDefaults {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                BoxKt.Box(BackgroundKt.m268backgroundbw27NRU$default(SizeKt.m881height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), value, null, 2, null), startRestartGroup, 0);
+                BoxKt.Box(BackgroundKt.m299backgroundbw27NRU$default(SizeKt.m962height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), f3), value, null, 2, null), startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 j3 = value;

@@ -100,18 +100,18 @@ final class SearchBarKt$SearchBarImpl$wrappedContent$1 implements Function2<Comp
         } else {
             composer.useNode();
         }
-        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-        Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+        Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
         ComposerKt.sourceInformationMarkerStart(composer, 355522356, "C2136@100236L46,2137@100303L9:SearchBar.kt#uh7d8r");
-        DividerKt.m2316HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors.m2790getDividerColor0d7_KjU(), composer, 0, 3);
+        DividerKt.m2402HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors.m2876getDividerColor0d7_KjU(), composer, 0, 3);
         function3.invoke(ColumnScopeInstance.INSTANCE, composer, 6);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);

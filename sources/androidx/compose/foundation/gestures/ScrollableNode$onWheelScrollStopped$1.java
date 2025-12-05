@@ -12,10 +12,12 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNode$onWheelScrollStopped$1", f = "Scrollable.kt", i = {}, l = {357}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNode$onWheelScrollStopped$1", f = "Scrollable.kt", i = {}, l = {404}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class ScrollableNode$onWheelScrollStopped$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-    final /* synthetic */ long $velocity;
+
+    /* renamed from: $$v$c$androidx-compose-ui-unit-Velocity$-velocity$0  reason: not valid java name */
+    final /* synthetic */ long f15$$v$c$androidxcomposeuiunitVelocity$velocity$0;
     int label;
     final /* synthetic */ ScrollableNode this$0;
 
@@ -24,12 +26,12 @@ public final class ScrollableNode$onWheelScrollStopped$1 extends SuspendLambda i
     public ScrollableNode$onWheelScrollStopped$1(ScrollableNode scrollableNode, long j, Continuation<? super ScrollableNode$onWheelScrollStopped$1> continuation) {
         super(2, continuation);
         this.this$0 = scrollableNode;
-        this.$velocity = j;
+        this.f15$$v$c$androidxcomposeuiunitVelocity$velocity$0 = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new ScrollableNode$onWheelScrollStopped$1(this.this$0, this.$velocity, continuation);
+        return new ScrollableNode$onWheelScrollStopped$1(this.this$0, this.f15$$v$c$androidxcomposeuiunitVelocity$velocity$0, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -46,7 +48,7 @@ public final class ScrollableNode$onWheelScrollStopped$1 extends SuspendLambda i
             ResultKt.throwOnFailure(obj);
             scrollingLogic = this.this$0.scrollingLogic;
             this.label = 1;
-            if (scrollingLogic.m591onScrollStoppedBMRW4eQ(this.$velocity, true, this) == coroutine_suspended) {
+            if (scrollingLogic.m669onScrollStoppedBMRW4eQ(this.f15$$v$c$androidxcomposeuiunitVelocity$velocity$0, true, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

@@ -332,7 +332,7 @@ public final class InventoryItemEntity {
     }
 
     /* renamed from: getEffect  reason: collision with other method in class */
-    public final InventoryItemEffectType m11887getEffect() {
+    public final InventoryItemEffectType m12182getEffect() {
         Object obj;
         Iterator<E> it = InventoryItemEffectType.getEntries().iterator();
         while (true) {

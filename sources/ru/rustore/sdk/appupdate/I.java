@@ -10,13 +10,13 @@ import ru.rustore.sdk.reactive.single.Single;
 public final class I extends Lambda implements Function1<Unit, Single<Integer>> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0802r f1403a;
+    public final /* synthetic */ C0801r f1486a;
     public final /* synthetic */ AppUpdateInfo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public I(C0802r c0802r, AppUpdateInfo appUpdateInfo) {
+    public I(C0801r c0801r, AppUpdateInfo appUpdateInfo) {
         super(1);
-        this.f1403a = c0802r;
+        this.f1486a = c0801r;
         this.b = appUpdateInfo;
     }
 
@@ -24,9 +24,9 @@ public final class I extends Lambda implements Function1<Unit, Single<Integer>> 
     public final Single<Integer> invoke(Unit unit) {
         Unit it = unit;
         Intrinsics.checkNotNullParameter(it, "it");
-        C0802r c0802r = this.f1403a;
+        C0801r c0801r = this.f1486a;
         AppUpdateInfo appUpdateInfo = this.b;
-        c0802r.getClass();
-        return Single.Companion.create(new C(c0802r, appUpdateInfo));
+        c0801r.getClass();
+        return Single.Companion.create(new C(c0801r, appUpdateInfo));
     }
 }

@@ -16,6 +16,13 @@ final class OffsetPxElement extends ModifierNodeElement<OffsetPxNode> {
     private final Function1<Density, IntOffset> offset;
     private final boolean rtlAware;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public OffsetPxElement(Function1<? super Density, IntOffset> function1, boolean z, Function1<? super InspectorInfo, Unit> function12) {
+        this.offset = function1;
+        this.rtlAware = z;
+        this.inspectorInfo = function12;
+    }
+
     public final Function1<Density, IntOffset> getOffset() {
         return this.offset;
     }
@@ -26,13 +33,6 @@ final class OffsetPxElement extends ModifierNodeElement<OffsetPxNode> {
 
     public final Function1<InspectorInfo, Unit> getInspectorInfo() {
         return this.inspectorInfo;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public OffsetPxElement(Function1<? super Density, IntOffset> function1, boolean z, Function1<? super InspectorInfo, Unit> function12) {
-        this.offset = function1;
-        this.rtlAware = z;
-        this.inspectorInfo = function12;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

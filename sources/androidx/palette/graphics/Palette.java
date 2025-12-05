@@ -8,7 +8,6 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import androidx.collection.ArrayMap;
 import androidx.core.graphics.ColorUtils;
-import androidx.core.view.ViewCompat;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -303,24 +302,24 @@ public final class Palette {
                 this.mGeneratedTextColors = true;
                 return;
             }
-            int calculateMinimumAlpha3 = ColorUtils.calculateMinimumAlpha(ViewCompat.MEASURED_STATE_MASK, this.mRgb, Palette.MIN_CONTRAST_BODY_TEXT);
-            int calculateMinimumAlpha4 = ColorUtils.calculateMinimumAlpha(ViewCompat.MEASURED_STATE_MASK, this.mRgb, Palette.MIN_CONTRAST_TITLE_TEXT);
+            int calculateMinimumAlpha3 = ColorUtils.calculateMinimumAlpha(-16777216, this.mRgb, Palette.MIN_CONTRAST_BODY_TEXT);
+            int calculateMinimumAlpha4 = ColorUtils.calculateMinimumAlpha(-16777216, this.mRgb, Palette.MIN_CONTRAST_TITLE_TEXT);
             if (calculateMinimumAlpha3 != -1 && calculateMinimumAlpha4 != -1) {
-                this.mBodyTextColor = ColorUtils.setAlphaComponent(ViewCompat.MEASURED_STATE_MASK, calculateMinimumAlpha3);
-                this.mTitleTextColor = ColorUtils.setAlphaComponent(ViewCompat.MEASURED_STATE_MASK, calculateMinimumAlpha4);
+                this.mBodyTextColor = ColorUtils.setAlphaComponent(-16777216, calculateMinimumAlpha3);
+                this.mTitleTextColor = ColorUtils.setAlphaComponent(-16777216, calculateMinimumAlpha4);
                 this.mGeneratedTextColors = true;
                 return;
             }
             if (calculateMinimumAlpha != -1) {
                 alphaComponent = ColorUtils.setAlphaComponent(-1, calculateMinimumAlpha);
             } else {
-                alphaComponent = ColorUtils.setAlphaComponent(ViewCompat.MEASURED_STATE_MASK, calculateMinimumAlpha3);
+                alphaComponent = ColorUtils.setAlphaComponent(-16777216, calculateMinimumAlpha3);
             }
             this.mBodyTextColor = alphaComponent;
             if (calculateMinimumAlpha2 != -1) {
                 alphaComponent2 = ColorUtils.setAlphaComponent(-1, calculateMinimumAlpha2);
             } else {
-                alphaComponent2 = ColorUtils.setAlphaComponent(ViewCompat.MEASURED_STATE_MASK, calculateMinimumAlpha4);
+                alphaComponent2 = ColorUtils.setAlphaComponent(-16777216, calculateMinimumAlpha4);
             }
             this.mTitleTextColor = alphaComponent2;
             this.mGeneratedTextColors = true;

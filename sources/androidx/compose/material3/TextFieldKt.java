@@ -85,7 +85,7 @@ import kotlin.ranges.RangesKt;
 @Metadata(d1 = {"\u0000Ê\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a£\u0003\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2 \b\u0002\u0010\r\u001a\u001a\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000e¢\u0006\u0002\b\u0010¢\u0006\u0002\b\u00112\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!2\b\b\u0002\u0010\"\u001a\u00020#28\b\u0002\u0010$\u001a2\u0012\u0004\u0012\u00020&\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010'0\u0013¢\u0006\f\b(\u0012\b\b)\u0012\u0004\b\b(*\u0012\u0004\u0012\u00020\u0001\u0018\u00010%¢\u0006\u0002\b\u00112\b\b\u0002\u0010+\u001a\u00020,2\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u0002002\b\b\u0002\u00101\u001a\u0002022\n\b\u0002\u00103\u001a\u0004\u0018\u000104H\u0007¢\u0006\u0002\u00105\u001aØ\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u00106\u001a\u0002072\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020\u00010\u000e2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0015\b\u0002\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\b\b\u0002\u00109\u001a\u00020:2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010;\u001a\u00020<2\b\b\u0002\u0010=\u001a\u00020\u00072\b\b\u0002\u0010>\u001a\u00020?2\b\b\u0002\u0010@\u001a\u00020?2\n\b\u0002\u00103\u001a\u0004\u0018\u0001042\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u000200H\u0007¢\u0006\u0002\u0010A\u001aØ\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u00106\u001a\u00020B2\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020\u00010\u000e2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0015\b\u0002\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0012\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0015\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0015\b\u0002\u0010\u0018\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\b\b\u0002\u0010\u0019\u001a\u00020\u00072\b\b\u0002\u00109\u001a\u00020:2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010;\u001a\u00020<2\b\b\u0002\u0010=\u001a\u00020\u00072\b\b\u0002\u0010>\u001a\u00020?2\b\b\u0002\u0010@\u001a\u00020?2\n\b\u0002\u00103\u001a\u0004\u0018\u0001042\b\b\u0002\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u000200H\u0007¢\u0006\u0002\u0010C\u001aô\u0001\u0010D\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0011\u0010E\u001a\r\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\r\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0019\u0010\u0012\u001a\u0015\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000e¢\u0006\u0002\b\u00102\u0013\u0010F\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010G\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0006\u0010=\u001a\u00020\u00072\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010H\u001a\u00020I2\u0011\u0010J\u001a\r\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00102\u0013\u0010K\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013¢\u0006\u0002\b\u00102\u0006\u0010L\u001a\u000202H\u0001¢\u0006\u0002\u0010M\"\u0016\u0010N\u001a\u00020OX\u0080\u0004¢\u0006\n\n\u0002\u0010R\u001a\u0004\bP\u0010Q¨\u0006S"}, d2 = {TextFieldImplKt.TextFieldId, "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/input/TextFieldState;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "readOnly", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "labelPosition", "Landroidx/compose/material3/TextFieldLabelPosition;", Constants.ScionAnalytics.PARAM_LABEL, "Lkotlin/Function1;", "Landroidx/compose/material3/TextFieldLabelScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "placeholder", "Lkotlin/Function0;", "leadingIcon", "trailingIcon", "prefix", "suffix", "supportingText", "isError", "inputTransformation", "Landroidx/compose/foundation/text/input/InputTransformation;", "outputTransformation", "Landroidx/compose/foundation/text/input/OutputTransformation;", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "onKeyboardAction", "Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "lineLimits", "Landroidx/compose/foundation/text/input/TextFieldLineLimits;", "onTextLayout", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/text/TextLayoutResult;", "Lkotlin/ParameterName;", "name", "getResult", "scrollState", "Landroidx/compose/foundation/ScrollState;", "shape", "Landroidx/compose/ui/graphics/Shape;", "colors", "Landroidx/compose/material3/TextFieldColors;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Landroidx/compose/material3/TextFieldLabelPosition;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/foundation/text/input/OutputTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Landroidx/compose/foundation/text/input/TextFieldLineLimits;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/ScrollState;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;IIII)V", "value", "", "onValueChange", "visualTransformation", "Landroidx/compose/ui/text/input/VisualTransformation;", "keyboardActions", "Landroidx/compose/foundation/text/KeyboardActions;", "singleLine", "maxLines", "", "minLines", "(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/text/input/VisualTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;ZIILandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/runtime/Composer;IIII)V", "Landroidx/compose/ui/text/input/TextFieldValue;", "(Landroidx/compose/ui/text/input/TextFieldValue;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/ui/text/TextStyle;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/ui/text/input/VisualTransformation;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;ZIILandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/TextFieldColors;Landroidx/compose/runtime/Composer;IIII)V", "TextFieldLayout", "textField", "leading", "trailing", "labelProgress", "Landroidx/compose/material3/internal/FloatProducer;", TtmlNode.RUBY_CONTAINER, "supporting", "paddingValues", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ZLandroidx/compose/material3/TextFieldLabelPosition;Landroidx/compose/material3/internal/FloatProducer;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/runtime/Composer;II)V", "TextFieldWithLabelVerticalPadding", "Landroidx/compose/ui/unit/Dp;", "getTextFieldWithLabelVerticalPadding", "()F", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldKt {
-    private static final float TextFieldWithLabelVerticalPadding = Dp.m7996constructorimpl(8);
+    private static final float TextFieldWithLabelVerticalPadding = Dp.m8258constructorimpl(8);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TextField$lambda$2(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, TextStyle textStyle, TextFieldLabelPosition textFieldLabelPosition, Function3 function3, Function2 function2, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Function2 function26, boolean z3, InputTransformation inputTransformation, OutputTransformation outputTransformation, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, TextFieldLineLimits textFieldLineLimits, Function2 function27, ScrollState scrollState, Shape shape, TextFieldColors textFieldColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, int i, int i2, int i3, int i4, Composer composer, int i5) {
@@ -537,9 +537,9 @@ public final class TextFieldKt {
                                             if ((i4 & 8388608) == 0) {
                                                 paddingValues3 = paddingValues;
                                             } else if (obj2 == null || (attached instanceof TextFieldLabelPosition.Above)) {
-                                                paddingValues3 = TextFieldDefaults.m3130contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
+                                                paddingValues3 = TextFieldDefaults.m3216contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
                                             } else {
-                                                paddingValues3 = TextFieldDefaults.m3129contentPaddingWithLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
+                                                paddingValues3 = TextFieldDefaults.m3215contentPaddingWithLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
                                             }
                                             if (i31 != 0) {
                                                 Modifier modifier4 = companion;
@@ -621,12 +621,12 @@ public final class TextFieldKt {
                                         }
                                         startRestartGroup.startReplaceGroup(-1345763848);
                                         ComposerKt.sourceInformation(startRestartGroup, "*293@16149L25");
-                                        long m7488getColor0d7_KjU = textStyle3.m7488getColor0d7_KjU();
-                                        if (m7488getColor0d7_KjU == 16) {
-                                            m7488getColor0d7_KjU = textFieldColors3.m3125textColorXeAY9LY$material3(z11, z10, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                        long m7731getColor0d7_KjU = textStyle3.m7731getColor0d7_KjU();
+                                        if (m7731getColor0d7_KjU == 16) {
+                                            m7731getColor0d7_KjU = textFieldColors3.m3211textColorXeAY9LY$material3(z11, z10, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        final TextStyle merge = textStyle3.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
+                                        final TextStyle merge = textStyle3.merge(new TextStyle(m7731getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
                                         CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(484558238, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$1
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -646,8 +646,8 @@ public final class TextFieldKt {
                                                 Modifier modifier6 = Modifier.this;
                                                 boolean z13 = z10;
                                                 Strings.Companion companion2 = Strings.Companion;
-                                                Modifier m879defaultMinSizeVpY3zN4 = SizeKt.m879defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier6, z13, Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3146getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3145getMinHeightD9Ej5fM());
-                                                SolidColor solidColor = new SolidColor(textFieldColors3.m3075cursorColorvNxB06k$material3(z10), null);
+                                                Modifier m960defaultMinSizeVpY3zN4 = SizeKt.m960defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier6, z13, Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3232getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3231getMinHeightD9Ej5fM());
+                                                SolidColor solidColor = new SolidColor(textFieldColors3.m3161cursorColorvNxB06k$material3(z10), null);
                                                 TextFieldDefaults textFieldDefaults = TextFieldDefaults.INSTANCE;
                                                 TextFieldState textFieldState3 = textFieldState2;
                                                 boolean z14 = z11;
@@ -670,7 +670,7 @@ public final class TextFieldKt {
                                                 final MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource4;
                                                 final TextFieldColors textFieldColors5 = textFieldColors3;
                                                 final Shape shape5 = shape3;
-                                                BasicTextFieldKt.BasicTextField(textFieldState2, m879defaultMinSizeVpY3zN4, z11, z9, inputTransformation3, merge, keyboardOptions3, keyboardActionHandler3, textFieldLineLimits4, function215, mutableInteractionSource4, solidColor, outputTransformation3, textFieldDefaults.decorator(textFieldState3, z14, textFieldLineLimits5, outputTransformation5, mutableInteractionSource5, textFieldLabelPosition4, function34, function229, function230, function231, function232, function233, function234, z15, textFieldColors4, paddingValues5, ComposableLambdaKt.rememberComposableLambda(-2009308227, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$1.1
+                                                BasicTextFieldKt.BasicTextField(textFieldState2, m960defaultMinSizeVpY3zN4, z11, z9, inputTransformation3, merge, keyboardOptions3, keyboardActionHandler3, textFieldLineLimits4, function215, mutableInteractionSource4, solidColor, outputTransformation3, textFieldDefaults.decorator(textFieldState3, z14, textFieldLineLimits5, outputTransformation5, mutableInteractionSource5, textFieldLabelPosition4, function34, function229, function230, function231, function232, function233, function234, z15, textFieldColors4, paddingValues5, ComposableLambdaKt.rememberComposableLambda(-2009308227, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$1.1
                                                     @Override // kotlin.jvm.functions.Function2
                                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
                                                         invoke(composer4, num.intValue());
@@ -686,7 +686,7 @@ public final class TextFieldKt {
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventStart(-2009308227, i45, -1, "androidx.compose.material3.TextField.<anonymous>.<anonymous> (TextField.kt:339)");
                                                         }
-                                                        TextFieldDefaults.INSTANCE.m3139Container4EFweAY(z16, z17, mutableInteractionSource6, null, textFieldColors5, shape5, 0.0f, 0.0f, composer4, 100663296, 200);
+                                                        TextFieldDefaults.INSTANCE.m3225Container4EFweAY(z16, z17, mutableInteractionSource6, null, textFieldColors5, shape5, 0.0f, 0.0f, composer4, 100663296, 200);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
                                                         }
@@ -1579,12 +1579,12 @@ public final class TextFieldKt {
                                         }
                                         startRestartGroup.startReplaceGroup(1401227490);
                                         ComposerKt.sourceInformation(startRestartGroup, "*448@24595L25");
-                                        long m7488getColor0d7_KjU = textStyle3.m7488getColor0d7_KjU();
-                                        if (m7488getColor0d7_KjU == 16) {
-                                            m7488getColor0d7_KjU = textFieldColors3.m3125textColorXeAY9LY$material3(z12, z14, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                        long m7731getColor0d7_KjU = textStyle3.m7731getColor0d7_KjU();
+                                        if (m7731getColor0d7_KjU == 16) {
+                                            m7731getColor0d7_KjU = textFieldColors3.m3211textColorXeAY9LY$material3(z12, z14, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        final TextStyle merge = textStyle3.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
+                                        final TextStyle merge = textStyle3.merge(new TextStyle(m7731getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
                                         CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(1459735400, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$3
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -1604,8 +1604,8 @@ public final class TextFieldKt {
                                                 Modifier modifier4 = Modifier.this;
                                                 boolean z17 = z14;
                                                 Strings.Companion companion2 = Strings.Companion;
-                                                Modifier m879defaultMinSizeVpY3zN4 = SizeKt.m879defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z17, Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3146getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3145getMinHeightD9Ej5fM());
-                                                SolidColor solidColor = new SolidColor(textFieldColors3.m3075cursorColorvNxB06k$material3(z14), null);
+                                                Modifier m960defaultMinSizeVpY3zN4 = SizeKt.m960defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z17, Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3232getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3231getMinHeightD9Ej5fM());
+                                                SolidColor solidColor = new SolidColor(textFieldColors3.m3161cursorColorvNxB06k$material3(z14), null);
                                                 String str3 = str2;
                                                 Function1<String, Unit> function13 = function12;
                                                 boolean z18 = z12;
@@ -1634,7 +1634,7 @@ public final class TextFieldKt {
                                                 final Function2<Composer, Integer, Unit> function233 = function220;
                                                 final Shape shape5 = shape3;
                                                 final TextFieldColors textFieldColors4 = textFieldColors3;
-                                                BasicTextFieldKt.BasicTextField(str3, function13, m879defaultMinSizeVpY3zN4, z18, z19, textStyle4, keyboardOptions5, keyboardActions5, z20, i49, i50, visualTransformation4, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource6, solidColor2, ComposableLambdaKt.rememberComposableLambda(1451491557, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$3.1
+                                                BasicTextFieldKt.BasicTextField(str3, function13, m960defaultMinSizeVpY3zN4, z18, z19, textStyle4, keyboardOptions5, keyboardActions5, z20, i49, i50, visualTransformation4, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource6, solidColor2, ComposableLambdaKt.rememberComposableLambda(1451491557, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$3.1
                                                     @Override // kotlin.jvm.functions.Function3
                                                     public /* bridge */ /* synthetic */ Unit invoke(Function2<? super Composer, ? super Integer, ? extends Unit> function234, Composer composer4, Integer num) {
                                                         invoke((Function2<? super Composer, ? super Integer, Unit>) function234, composer4, num.intValue());
@@ -2505,12 +2505,12 @@ public final class TextFieldKt {
                                         }
                                         startRestartGroup.startReplaceGroup(-705366737);
                                         ComposerKt.sourceInformation(startRestartGroup, "*598@32954L25");
-                                        long m7488getColor0d7_KjU = textStyle3.m7488getColor0d7_KjU();
-                                        if (m7488getColor0d7_KjU == 16) {
-                                            m7488getColor0d7_KjU = textFieldColors3.m3125textColorXeAY9LY$material3(z12, z14, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
+                                        long m7731getColor0d7_KjU = textStyle3.m7731getColor0d7_KjU();
+                                        if (m7731getColor0d7_KjU == 16) {
+                                            m7731getColor0d7_KjU = textFieldColors3.m3211textColorXeAY9LY$material3(z12, z14, FocusInteractionKt.collectIsFocusedAsState(mutableInteractionSource4, startRestartGroup, 0).getValue().booleanValue());
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        final TextStyle merge = textStyle3.merge(new TextStyle(m7488getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
+                                        final TextStyle merge = textStyle3.merge(new TextStyle(m7731getColor0d7_KjU, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
                                         CompositionLocalKt.CompositionLocalProvider(TextSelectionColorsKt.getLocalTextSelectionColors().provides(textFieldColors3.getTextSelectionColors()), ComposableLambdaKt.rememberComposableLambda(-306109195, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$5
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -2530,8 +2530,8 @@ public final class TextFieldKt {
                                                 Modifier modifier4 = Modifier.this;
                                                 boolean z17 = z14;
                                                 Strings.Companion companion2 = Strings.Companion;
-                                                Modifier m879defaultMinSizeVpY3zN4 = SizeKt.m879defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z17, Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3146getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3145getMinHeightD9Ej5fM());
-                                                SolidColor solidColor = new SolidColor(textFieldColors3.m3075cursorColorvNxB06k$material3(z14), null);
+                                                Modifier m960defaultMinSizeVpY3zN4 = SizeKt.m960defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(modifier4, z17, Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.default_error_message), composer3, 0)), TextFieldDefaults.INSTANCE.m3232getMinWidthD9Ej5fM(), TextFieldDefaults.INSTANCE.m3231getMinHeightD9Ej5fM());
+                                                SolidColor solidColor = new SolidColor(textFieldColors3.m3161cursorColorvNxB06k$material3(z14), null);
                                                 TextFieldValue textFieldValue3 = textFieldValue2;
                                                 Function1<TextFieldValue, Unit> function13 = function12;
                                                 boolean z18 = z12;
@@ -2560,7 +2560,7 @@ public final class TextFieldKt {
                                                 final Function2<Composer, Integer, Unit> function233 = function220;
                                                 final Shape shape5 = shape3;
                                                 final TextFieldColors textFieldColors4 = textFieldColors3;
-                                                BasicTextFieldKt.BasicTextField(textFieldValue3, function13, m879defaultMinSizeVpY3zN4, z18, z19, textStyle4, keyboardOptions5, keyboardActions5, z20, i49, i50, visualTransformation4, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource6, solidColor2, ComposableLambdaKt.rememberComposableLambda(-609710734, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$5.1
+                                                BasicTextFieldKt.BasicTextField(textFieldValue3, function13, m960defaultMinSizeVpY3zN4, z18, z19, textStyle4, keyboardOptions5, keyboardActions5, z20, i49, i50, visualTransformation4, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource6, solidColor2, ComposableLambdaKt.rememberComposableLambda(-609710734, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TextFieldKt$TextField$5.1
                                                     @Override // kotlin.jvm.functions.Function3
                                                     public /* bridge */ /* synthetic */ Unit invoke(Function2<? super Composer, ? super Integer, ? extends Unit> function234, Composer composer4, Integer num) {
                                                         invoke((Function2<? super Composer, ? super Integer, Unit>) function234, composer4, num.intValue());
@@ -2994,11 +2994,11 @@ public final class TextFieldKt {
         TextFieldMeasurePolicy textFieldMeasurePolicy;
         int i6;
         float f;
-        Modifier m847paddingqDBjuR0$default;
+        Modifier m932paddingqDBjuR0$default;
         boolean z2;
         Object rememberedValue;
         int currentCompositeKeyHash;
-        Composer m4598constructorimpl;
+        Composer m4673constructorimpl;
         Composer startRestartGroup = composer.startRestartGroup(-1086465551);
         ComposerKt.sourceInformation(startRestartGroup, "C(TextFieldLayout)N(modifier,textField,label,placeholder,leading,trailing,prefix,suffix,singleLine,labelPosition,labelProgress,container,supporting,paddingValues)672@35929L26,674@35988L475,689@36511L7,690@36523L4465:TextField.kt#uh7d8r");
         if ((i & 6) == 0) {
@@ -3101,16 +3101,16 @@ public final class TextFieldKt {
             } else {
                 composer2.useNode();
             }
-            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer2);
+            Composer m4673constructorimpl2 = Updater.m4673constructorimpl(composer2);
             int i10 = i5;
-            Updater.m4605setimpl(m4598constructorimpl2, textFieldMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4681setimpl(m4673constructorimpl2, textFieldMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash);
+            if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash);
             }
-            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, -1445107871, "C696@36842L11,718@37662L32,787@40302L187:TextField.kt#uh7d8r");
             function27.invoke(composer2, Integer.valueOf((i8 >> 3) & 14));
             if (function23 != null) {
@@ -3135,15 +3135,15 @@ public final class TextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4598constructorimpl3 = Updater.m4598constructorimpl(composer2);
-                Updater.m4605setimpl(m4598constructorimpl3, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl3, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl3 = Updater.m4673constructorimpl(composer2);
+                Updater.m4681setimpl(m4673constructorimpl3, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl3.getInserting() || !Intrinsics.areEqual(m4598constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                    m4598constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m4598constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash2);
+                if (m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                    m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash2);
                 }
-                Updater.m4605setimpl(m4598constructorimpl3, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl3, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, -130017935, "C703@37103L9:TextField.kt#uh7d8r");
@@ -3181,15 +3181,15 @@ public final class TextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4598constructorimpl4 = Updater.m4598constructorimpl(composer2);
-                Updater.m4605setimpl(m4598constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl4, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl4 = Updater.m4673constructorimpl(composer2);
+                Updater.m4681setimpl(m4673constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl4, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl4.getInserting() || !Intrinsics.areEqual(m4598constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                    m4598constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                    m4598constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash3);
+                if (m4673constructorimpl4.getInserting() || !Intrinsics.areEqual(m4673constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                    m4673constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                    m4673constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash3);
                 }
-                Updater.m4605setimpl(m4598constructorimpl4, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl4, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 385425337, "C711@37395L10:TextField.kt#uh7d8r");
@@ -3209,22 +3209,22 @@ public final class TextFieldKt {
             float calculateEndPadding = PaddingKt.calculateEndPadding(paddingValues2, layoutDirection);
             float textFieldHorizontalIconPadding = TextFieldImplKt.textFieldHorizontalIconPadding(composer2, 0);
             if (function23 != null) {
-                calculateStartPadding = Dp.m7996constructorimpl(RangesKt.coerceAtLeast(Dp.m7996constructorimpl(calculateStartPadding - textFieldHorizontalIconPadding), Dp.m7996constructorimpl(0)));
+                calculateStartPadding = Dp.m8258constructorimpl(RangesKt.coerceAtLeast(Dp.m8258constructorimpl(calculateStartPadding - textFieldHorizontalIconPadding), Dp.m8258constructorimpl(0)));
             }
             float f2 = calculateStartPadding;
             if (function24 != null) {
-                calculateEndPadding = Dp.m7996constructorimpl(RangesKt.coerceAtLeast(Dp.m7996constructorimpl(calculateEndPadding - textFieldHorizontalIconPadding), Dp.m7996constructorimpl(0)));
+                calculateEndPadding = Dp.m8258constructorimpl(RangesKt.coerceAtLeast(Dp.m8258constructorimpl(calculateEndPadding - textFieldHorizontalIconPadding), Dp.m8258constructorimpl(0)));
             }
             if (function25 != null) {
                 composer2.startReplaceGroup(-1443868027);
                 ComposerKt.sourceInformation(composer2, "733@38227L309");
-                Modifier m847paddingqDBjuR0$default2 = PaddingKt.m847paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PrefixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), f2, 0.0f, TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, 10, null);
+                Modifier m932paddingqDBjuR0$default2 = PaddingKt.m932paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m964heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PrefixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), f2, 0.0f, TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, 10, null);
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash5 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                 CompositionLocalMap currentCompositionLocalMap4 = composer2.getCurrentCompositionLocalMap();
-                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer2, m847paddingqDBjuR0$default2);
+                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer2, m932paddingqDBjuR0$default2);
                 Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -3236,15 +3236,15 @@ public final class TextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4598constructorimpl5 = Updater.m4598constructorimpl(composer2);
-                Updater.m4605setimpl(m4598constructorimpl5, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl5, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl5 = Updater.m4673constructorimpl(composer2);
+                Updater.m4681setimpl(m4673constructorimpl5, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl5, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl5.getInserting() || !Intrinsics.areEqual(m4598constructorimpl5.rememberedValue(), Integer.valueOf(currentCompositeKeyHash5))) {
-                    m4598constructorimpl5.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash5));
-                    m4598constructorimpl5.apply(Integer.valueOf(currentCompositeKeyHash5), setCompositeKeyHash4);
+                if (m4673constructorimpl5.getInserting() || !Intrinsics.areEqual(m4673constructorimpl5.rememberedValue(), Integer.valueOf(currentCompositeKeyHash5))) {
+                    m4673constructorimpl5.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash5));
+                    m4673constructorimpl5.apply(Integer.valueOf(currentCompositeKeyHash5), setCompositeKeyHash4);
                 }
-                Updater.m4605setimpl(m4598constructorimpl5, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl5, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, -1325247206, "C739@38510L8:TextField.kt#uh7d8r");
@@ -3264,13 +3264,13 @@ public final class TextFieldKt {
                 composer2.startReplaceGroup(-1443497081);
                 ComposerKt.sourceInformation(composer2, "743@38601L307");
                 f = calculateEndPadding;
-                Modifier m847paddingqDBjuR0$default3 = PaddingKt.m847paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SuffixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, f, 0.0f, 10, null);
+                Modifier m932paddingqDBjuR0$default3 = PaddingKt.m932paddingqDBjuR0$default(SizeKt.wrapContentHeight$default(SizeKt.m964heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SuffixId), TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldImplKt.getPrefixSuffixTextPadding(), 0.0f, f, 0.0f, 10, null);
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy4 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash6 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                 CompositionLocalMap currentCompositionLocalMap5 = composer2.getCurrentCompositionLocalMap();
-                Modifier materializeModifier5 = ComposedModifierKt.materializeModifier(composer2, m847paddingqDBjuR0$default3);
+                Modifier materializeModifier5 = ComposedModifierKt.materializeModifier(composer2, m932paddingqDBjuR0$default3);
                 Function0<ComposeUiNode> constructor5 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -3282,15 +3282,15 @@ public final class TextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4598constructorimpl6 = Updater.m4598constructorimpl(composer2);
-                Updater.m4605setimpl(m4598constructorimpl6, maybeCachedBoxMeasurePolicy4, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl6, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl6 = Updater.m4673constructorimpl(composer2);
+                Updater.m4681setimpl(m4673constructorimpl6, maybeCachedBoxMeasurePolicy4, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl6, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash5 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl6.getInserting() || !Intrinsics.areEqual(m4598constructorimpl6.rememberedValue(), Integer.valueOf(currentCompositeKeyHash6))) {
-                    m4598constructorimpl6.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash6));
-                    m4598constructorimpl6.apply(Integer.valueOf(currentCompositeKeyHash6), setCompositeKeyHash5);
+                if (m4673constructorimpl6.getInserting() || !Intrinsics.areEqual(m4673constructorimpl6.rememberedValue(), Integer.valueOf(currentCompositeKeyHash6))) {
+                    m4673constructorimpl6.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash6));
+                    m4673constructorimpl6.apply(Integer.valueOf(currentCompositeKeyHash6), setCompositeKeyHash5);
                 }
-                Updater.m4605setimpl(m4598constructorimpl6, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl6, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance4 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 1259047609, "C749@38882L8:TextField.kt#uh7d8r");
@@ -3309,10 +3309,10 @@ public final class TextFieldKt {
             }
             textFieldLabelPosition2 = textFieldLabelPosition;
             if (textFieldLabelPosition2 instanceof TextFieldLabelPosition.Above) {
-                m847paddingqDBjuR0$default = PaddingKt.m847paddingqDBjuR0$default(Modifier.Companion, TextFieldImplKt.getAboveLabelHorizontalPadding(), 0.0f, TextFieldImplKt.getAboveLabelHorizontalPadding(), TextFieldImplKt.getAboveLabelBottomPadding(), 2, null);
+                m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, TextFieldImplKt.getAboveLabelHorizontalPadding(), 0.0f, TextFieldImplKt.getAboveLabelHorizontalPadding(), TextFieldImplKt.getAboveLabelBottomPadding(), 2, null);
             } else {
                 float f3 = f;
-                m847paddingqDBjuR0$default = PaddingKt.m847paddingqDBjuR0$default(Modifier.Companion, f2, 0.0f, f3, 0.0f, 10, null);
+                m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, f2, 0.0f, f3, 0.0f, 10, null);
                 f = f3;
             }
             if (function22 != null) {
@@ -3337,7 +3337,7 @@ public final class TextFieldKt {
                             composer2.updateRememberedValue(rememberedValue);
                         }
                         ComposerKt.sourceInformationMarkerEnd(composer2);
-                        Modifier then = SizeKt.wrapContentHeight$default(TextFieldImplKt.textFieldLabelMinHeight(layoutId, (Function0) rememberedValue), null, false, 3, null).then(m847paddingqDBjuR0$default);
+                        Modifier then = SizeKt.wrapContentHeight$default(TextFieldImplKt.textFieldLabelMinHeight(layoutId, (Function0) rememberedValue), null, false, 3, null).then(m932paddingqDBjuR0$default);
                         ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                         MeasurePolicy maybeCachedBoxMeasurePolicy5 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -3355,15 +3355,15 @@ public final class TextFieldKt {
                         } else {
                             composer2.useNode();
                         }
-                        m4598constructorimpl = Updater.m4598constructorimpl(composer2);
-                        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy5, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap6, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m4673constructorimpl = Updater.m4673constructorimpl(composer2);
+                        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy5, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap6, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash6 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash6);
+                        if (!m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash6);
                         }
-                        Updater.m4605setimpl(m4598constructorimpl, materializeModifier6, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m4681setimpl(m4673constructorimpl, materializeModifier6, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance5 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, -451624903, "C772@39785L7:TextField.kt#uh7d8r");
@@ -3393,7 +3393,7 @@ public final class TextFieldKt {
                 };
                 composer2.updateRememberedValue(rememberedValue);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
-                Modifier then2 = SizeKt.wrapContentHeight$default(TextFieldImplKt.textFieldLabelMinHeight(layoutId, (Function0) rememberedValue), null, false, 3, null).then(m847paddingqDBjuR0$default);
+                Modifier then2 = SizeKt.wrapContentHeight$default(TextFieldImplKt.textFieldLabelMinHeight(layoutId, (Function0) rememberedValue), null, false, 3, null).then(m932paddingqDBjuR0$default);
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy52 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -3407,15 +3407,15 @@ public final class TextFieldKt {
                 composer2.startReusableNode();
                 if (!composer2.getInserting()) {
                 }
-                m4598constructorimpl = Updater.m4598constructorimpl(composer2);
-                Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy52, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap62, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m4673constructorimpl = Updater.m4673constructorimpl(composer2);
+                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy52, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap62, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash62 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m4598constructorimpl.getInserting()) {
+                if (!m4673constructorimpl.getInserting()) {
                 }
-                m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash62);
-                Updater.m4605setimpl(m4598constructorimpl, materializeModifier62, ComposeUiNode.Companion.getSetModifier());
+                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash62);
+                Updater.m4681setimpl(m4673constructorimpl, materializeModifier62, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance52 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, -451624903, "C772@39785L7:TextField.kt#uh7d8r");
@@ -3432,23 +3432,23 @@ public final class TextFieldKt {
                 composer2.startReplaceGroup(-1442276518);
                 composer2.endReplaceGroup();
             }
-            Modifier wrapContentHeight$default = SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(Modifier.Companion, TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null);
+            Modifier wrapContentHeight$default = SizeKt.wrapContentHeight$default(SizeKt.m964heightInVpY3zN4$default(Modifier.Companion, TextFieldImplKt.getMinTextLineHeight(), 0.0f, 2, null), null, false, 3, null);
             if (function25 != null) {
-                f2 = Dp.m7996constructorimpl(0);
+                f2 = Dp.m8258constructorimpl(0);
             }
-            Modifier m847paddingqDBjuR0$default4 = PaddingKt.m847paddingqDBjuR0$default(wrapContentHeight$default, f2, 0.0f, function26 == null ? f : Dp.m7996constructorimpl(0), 0.0f, 10, null);
+            Modifier m932paddingqDBjuR0$default4 = PaddingKt.m932paddingqDBjuR0$default(wrapContentHeight$default, f2, 0.0f, function26 == null ? f : Dp.m8258constructorimpl(0), 0.0f, 10, null);
             if (function3 != null) {
                 composer2.startReplaceGroup(-1441906533);
                 ComposerKt.sourceInformation(composer2, "785@40212L63");
                 function32 = function3;
-                function32.invoke(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PlaceholderId).then(m847paddingqDBjuR0$default4), composer2, Integer.valueOf((i6 >> 6) & 112));
+                function32.invoke(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.PlaceholderId).then(m932paddingqDBjuR0$default4), composer2, Integer.valueOf((i6 >> 6) & 112));
                 composer2.endReplaceGroup();
             } else {
                 function32 = function3;
                 composer2.startReplaceGroup(-1441815238);
                 composer2.endReplaceGroup();
             }
-            Modifier then3 = LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.TextFieldId).then(m847paddingqDBjuR0$default4);
+            Modifier then3 = LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.TextFieldId).then(m932paddingqDBjuR0$default4);
             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy6 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -3466,15 +3466,15 @@ public final class TextFieldKt {
             } else {
                 composer2.useNode();
             }
-            Composer m4598constructorimpl7 = Updater.m4598constructorimpl(composer2);
-            Updater.m4605setimpl(m4598constructorimpl7, maybeCachedBoxMeasurePolicy6, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl7, currentCompositionLocalMap7, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4673constructorimpl7 = Updater.m4673constructorimpl(composer2);
+            Updater.m4681setimpl(m4673constructorimpl7, maybeCachedBoxMeasurePolicy6, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl7, currentCompositionLocalMap7, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash7 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl7.getInserting() || !Intrinsics.areEqual(m4598constructorimpl7.rememberedValue(), Integer.valueOf(currentCompositeKeyHash7))) {
-                m4598constructorimpl7.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash7));
-                m4598constructorimpl7.apply(Integer.valueOf(currentCompositeKeyHash7), setCompositeKeyHash7);
+            if (m4673constructorimpl7.getInserting() || !Intrinsics.areEqual(m4673constructorimpl7.rememberedValue(), Integer.valueOf(currentCompositeKeyHash7))) {
+                m4673constructorimpl7.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash7));
+                m4673constructorimpl7.apply(Integer.valueOf(currentCompositeKeyHash7), setCompositeKeyHash7);
             }
-            Updater.m4605setimpl(m4598constructorimpl7, materializeModifier7, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl7, materializeModifier7, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance6 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, -275388054, "C791@40464L11:TextField.kt#uh7d8r");
@@ -3488,7 +3488,7 @@ public final class TextFieldKt {
             if (function28 != null) {
                 composer2.startReplaceGroup(-1441566587);
                 ComposerKt.sourceInformation(composer2, "796@40601L317");
-                Modifier padding = PaddingKt.padding(SizeKt.wrapContentHeight$default(SizeKt.m883heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SupportingId), TextFieldImplKt.getMinSupportingTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldDefaults.m3136supportingTextPaddinga9UjIt4$material3$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null));
+                Modifier padding = PaddingKt.padding(SizeKt.wrapContentHeight$default(SizeKt.m964heightInVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, TextFieldImplKt.SupportingId), TextFieldImplKt.getMinSupportingTextLineHeight(), 0.0f, 2, null), null, false, 3, null), TextFieldDefaults.m3222supportingTextPaddinga9UjIt4$material3$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null));
                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy7 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -3506,15 +3506,15 @@ public final class TextFieldKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m4598constructorimpl8 = Updater.m4598constructorimpl(composer2);
-                Updater.m4605setimpl(m4598constructorimpl8, maybeCachedBoxMeasurePolicy7, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl8, currentCompositionLocalMap8, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl8 = Updater.m4673constructorimpl(composer2);
+                Updater.m4681setimpl(m4673constructorimpl8, maybeCachedBoxMeasurePolicy7, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl8, currentCompositionLocalMap8, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash8 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl8.getInserting() || !Intrinsics.areEqual(m4598constructorimpl8.rememberedValue(), Integer.valueOf(currentCompositeKeyHash8))) {
-                    m4598constructorimpl8.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash8));
-                    m4598constructorimpl8.apply(Integer.valueOf(currentCompositeKeyHash8), setCompositeKeyHash8);
+                if (m4673constructorimpl8.getInserting() || !Intrinsics.areEqual(m4673constructorimpl8.rememberedValue(), Integer.valueOf(currentCompositeKeyHash8))) {
+                    m4673constructorimpl8.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash8));
+                    m4673constructorimpl8.apply(Integer.valueOf(currentCompositeKeyHash8), setCompositeKeyHash8);
                 }
-                Updater.m4605setimpl(m4598constructorimpl8, materializeModifier8, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl8, materializeModifier8, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance7 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 421997586, "C802@40888L12:TextField.kt#uh7d8r");
@@ -3559,7 +3559,7 @@ public final class TextFieldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Dp TextFieldLayout$lambda$19$lambda$15$lambda$14(FloatProducer floatProducer) {
-        return Dp.m7994boximpl(DpKt.m8039lerpMdfbLM(TextFieldImplKt.getMinTextLineHeight(), TextFieldImplKt.getMinFocusedLabelLineHeight(), floatProducer.invoke()));
+        return Dp.m8256boximpl(DpKt.m8301lerpMdfbLM(TextFieldImplKt.getMinTextLineHeight(), TextFieldImplKt.getMinFocusedLabelLineHeight(), floatProducer.invoke()));
     }
 
     public static final float getTextFieldWithLabelVerticalPadding() {

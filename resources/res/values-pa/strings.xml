@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">ਇਸ ਨਾਲ ਸਾਂਝਾ ਕਰੋ</string>
     <string name="abc_shareactionprovider_share_with_application">%s ਨਾਲ ਸਾਂਝਾ ਕਰੋ</string>
     <string name="abc_toolbar_collapse_description">ਸਮੇਟੋ</string>
-    <string name="autofill">ਆਟੋਫਿਲ</string>
+    <string name="androidx_compose_foundation_autofill">ਆਟੋਫਿਲ</string>
+    <string name="androidx_compose_ui_autofill">ਆਟੋਫਿਲ</string>
     <string name="bottomsheet_action_collapse">ਹੇਠਲੀ ਸ਼ੀਟ ਨੂੰ ਸਮੇਟੋ</string>
     <string name="bottomsheet_action_expand">ਹੇਠਲੀ ਸ਼ੀਟ ਦਾ ਵਿਸਤਾਰ ਕਰੋ</string>
     <string name="bottomsheet_action_expand_halfway">ਅੱਧ ਤੱਕ ਵਿਸਤਾਰ ਕਰੋ</string>

@@ -49,21 +49,21 @@ public final class TransitionKt {
     private static final Function1<SeekableTransitionState<?>, Unit> SeekableTransitionStateTotalDurationChanged = new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit SeekableTransitionStateTotalDurationChanged$lambda$4;
-            SeekableTransitionStateTotalDurationChanged$lambda$4 = TransitionKt.SeekableTransitionStateTotalDurationChanged$lambda$4((SeekableTransitionState) obj);
-            return SeekableTransitionStateTotalDurationChanged$lambda$4;
+            Unit SeekableTransitionStateTotalDurationChanged$lambda$0;
+            SeekableTransitionStateTotalDurationChanged$lambda$0 = TransitionKt.SeekableTransitionStateTotalDurationChanged$lambda$0((SeekableTransitionState) obj);
+            return SeekableTransitionStateTotalDurationChanged$lambda$0;
         }
     };
     private static final Lazy SeekableStateObserver$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            SnapshotStateObserver SeekableStateObserver_delegate$lambda$7;
-            SeekableStateObserver_delegate$lambda$7 = TransitionKt.SeekableStateObserver_delegate$lambda$7();
-            return SeekableStateObserver_delegate$lambda$7;
+            SnapshotStateObserver SeekableStateObserver_delegate$lambda$0;
+            SeekableStateObserver_delegate$lambda$0 = TransitionKt.SeekableStateObserver_delegate$lambda$0();
+            return SeekableStateObserver_delegate$lambda$0;
         }
     });
 
-    public static final Unit UpdateInitialAndTargetValues$lambda$32(Transition transition, Transition.TransitionAnimationState transitionAnimationState, Object obj, Object obj2, FiniteAnimationSpec finiteAnimationSpec, int i, Composer composer, int i2) {
+    public static final Unit UpdateInitialAndTargetValues$lambda$0(Transition transition, Transition.TransitionAnimationState transitionAnimationState, Object obj, Object obj2, FiniteAnimationSpec finiteAnimationSpec, int i, Composer composer, int i2) {
         UpdateInitialAndTargetValues(transition, transitionAnimationState, obj, obj2, finiteAnimationSpec, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -76,7 +76,7 @@ public final class TransitionKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(2029166765, i, -1, "androidx.compose.animation.core.updateTransition (Transition.kt:87)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 114112704, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 114112096, "CC(remember):Transition.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new Transition(t, str);
@@ -85,15 +85,15 @@ public final class TransitionKt {
         final Transition<T> transition = (Transition) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         transition.animateTo$animation_core(t, composer, (i & 8) | 48 | (i & 14));
-        ComposerKt.sourceInformationMarkerStart(composer, 114116779, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 114116171, "CC(remember):Transition.kt#9igjgp");
         Object rememberedValue2 = composer.rememberedValue();
         if (rememberedValue2 == Composer.Companion.getEmpty()) {
             rememberedValue2 = new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult updateTransition$lambda$3$lambda$2;
-                    updateTransition$lambda$3$lambda$2 = TransitionKt.updateTransition$lambda$3$lambda$2(Transition.this, (DisposableEffectScope) obj);
-                    return updateTransition$lambda$3$lambda$2;
+                    DisposableEffectResult updateTransition$lambda$1$0;
+                    updateTransition$lambda$1$0 = TransitionKt.updateTransition$lambda$1$0(Transition.this, (DisposableEffectScope) obj);
+                    return updateTransition$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -107,25 +107,25 @@ public final class TransitionKt {
         return transition;
     }
 
-    public static final Unit SeekableTransitionStateTotalDurationChanged$lambda$4(SeekableTransitionState seekableTransitionState) {
+    public static final Unit SeekableTransitionStateTotalDurationChanged$lambda$0(SeekableTransitionState seekableTransitionState) {
         seekableTransitionState.onTotalDurationChanged$animation_core();
         return Unit.INSTANCE;
     }
 
-    public static final SnapshotStateObserver SeekableStateObserver_delegate$lambda$7() {
+    public static final SnapshotStateObserver SeekableStateObserver_delegate$lambda$0() {
         SnapshotStateObserver snapshotStateObserver = new SnapshotStateObserver(new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit SeekableStateObserver_delegate$lambda$7$lambda$5;
-                SeekableStateObserver_delegate$lambda$7$lambda$5 = TransitionKt.SeekableStateObserver_delegate$lambda$7$lambda$5((Function0) obj);
-                return SeekableStateObserver_delegate$lambda$7$lambda$5;
+                Unit SeekableStateObserver_delegate$lambda$0$0;
+                SeekableStateObserver_delegate$lambda$0$0 = TransitionKt.SeekableStateObserver_delegate$lambda$0$0((Function0) obj);
+                return SeekableStateObserver_delegate$lambda$0$0;
             }
         });
         snapshotStateObserver.start();
         return snapshotStateObserver;
     }
 
-    public static final Unit SeekableStateObserver_delegate$lambda$7$lambda$5(Function0 function0) {
+    public static final Unit SeekableStateObserver_delegate$lambda$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
@@ -142,7 +142,7 @@ public final class TransitionKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1643203617, i, -1, "androidx.compose.animation.core.rememberTransition (Transition.kt:804)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1429283303, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1429283911, "CC(remember):Transition.kt#9igjgp");
         int i3 = (i & 14) ^ 6;
         boolean z = true;
         boolean z2 = (i3 > 4 && composer.changed(transitionState)) || (i & 6) == 4;
@@ -165,12 +165,12 @@ public final class TransitionKt {
         final Transition<T> transition2 = (Transition) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         if (transitionState instanceof SeekableTransitionState) {
-            composer.startReplaceGroup(-1357588631);
+            composer.startReplaceGroup(-1357607479);
             ComposerKt.sourceInformation(composer, "814@35394L382,814@35320L456");
             SeekableTransitionState seekableTransitionState = (SeekableTransitionState) transitionState;
             Object currentState = seekableTransitionState.getCurrentState();
             Object targetState = seekableTransitionState.getTargetState();
-            ComposerKt.sourceInformationMarkerStart(composer, -1429263905, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1429264513, "CC(remember):Transition.kt#9igjgp");
             if ((i3 <= 4 || !composer.changed(transitionState)) && (i & 6) != 4) {
                 z = false;
             }
@@ -183,21 +183,21 @@ public final class TransitionKt {
             EffectsKt.LaunchedEffect(currentState, targetState, (Function2) rememberedValue2, composer, 0);
             composer.endReplaceGroup();
         } else {
-            composer.startReplaceGroup(-1357127072);
+            composer.startReplaceGroup(-1357145920);
             ComposerKt.sourceInformation(composer, "823@35809L38");
             transition2.animateTo$animation_core(transitionState.getTargetState(), composer, 0);
             composer.endReplaceGroup();
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1429248321, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1429248929, "CC(remember):Transition.kt#9igjgp");
         boolean changed = composer.changed(transition2);
         Object rememberedValue3 = composer.rememberedValue();
         if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
             rememberedValue3 = new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult rememberTransition$lambda$13$lambda$12;
-                    rememberTransition$lambda$13$lambda$12 = TransitionKt.rememberTransition$lambda$13$lambda$12(Transition.this, (DisposableEffectScope) obj);
-                    return rememberTransition$lambda$13$lambda$12;
+                    DisposableEffectResult rememberTransition$lambda$2$0;
+                    rememberTransition$lambda$2$0 = TransitionKt.rememberTransition$lambda$2$0(Transition.this, (DisposableEffectScope) obj);
+                    return rememberTransition$lambda$2$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue3);
@@ -236,7 +236,7 @@ public final class TransitionKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1714122528, i, -1, "androidx.compose.animation.core.createDeferredAnimation (Transition.kt:1738)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1995701050, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1995699226, "CC(remember):Transition.kt#9igjgp");
         int i3 = (i & 14) ^ 6;
         boolean z = true;
         boolean z2 = (i3 > 4 && composer.changed(transition)) || (i & 6) == 4;
@@ -247,7 +247,7 @@ public final class TransitionKt {
         }
         final Transition<S>.DeferredAnimation<T, V> deferredAnimation = (Transition.DeferredAnimation) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 1995703915, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1995702091, "CC(remember):Transition.kt#9igjgp");
         if ((i3 <= 4 || !composer.changed(transition)) && (i & 6) != 4) {
             z = false;
         }
@@ -257,9 +257,9 @@ public final class TransitionKt {
             rememberedValue2 = new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult createDeferredAnimation$lambda$17$lambda$16;
-                    createDeferredAnimation$lambda$17$lambda$16 = TransitionKt.createDeferredAnimation$lambda$17$lambda$16(Transition.this, deferredAnimation, (DisposableEffectScope) obj);
-                    return createDeferredAnimation$lambda$17$lambda$16;
+                    DisposableEffectResult createDeferredAnimation$lambda$1$0;
+                    createDeferredAnimation$lambda$1$0 = TransitionKt.createDeferredAnimation$lambda$1$0(Transition.this, deferredAnimation, (DisposableEffectScope) obj);
+                    return createDeferredAnimation$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -283,7 +283,7 @@ public final class TransitionKt {
             str = "ChildTransition";
         }
         String str2 = str;
-        ComposerKt.sourceInformationMarkerStart(composer, 1410703355, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1410701659, "CC(remember):Transition.kt#9igjgp");
         int i3 = i & 14;
         if (((i3 ^ 6) <= 4 || !composer.changed(transition)) && (i & 6) != 4) {
             z = false;
@@ -308,7 +308,7 @@ public final class TransitionKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-198307638, i, -1, "androidx.compose.animation.core.createChildTransitionInternal (Transition.kt:1780)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1595072442, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1595073562, "CC(remember):Transition.kt#9igjgp");
         int i2 = (i & 14) ^ 6;
         boolean z = true;
         boolean z2 = (i2 > 4 && composer.changed(transition)) || (i & 6) == 4;
@@ -319,7 +319,7 @@ public final class TransitionKt {
         }
         final Transition<T> transition2 = (Transition) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -1595067386, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1595068506, "CC(remember):Transition.kt#9igjgp");
         if ((i2 <= 4 || !composer.changed(transition)) && (i & 6) != 4) {
             z = false;
         }
@@ -329,9 +329,9 @@ public final class TransitionKt {
             rememberedValue2 = new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult createChildTransitionInternal$lambda$22$lambda$21;
-                    createChildTransitionInternal$lambda$22$lambda$21 = TransitionKt.createChildTransitionInternal$lambda$22$lambda$21(Transition.this, transition2, (DisposableEffectScope) obj);
-                    return createChildTransitionInternal$lambda$22$lambda$21;
+                    DisposableEffectResult createChildTransitionInternal$lambda$1$0;
+                    createChildTransitionInternal$lambda$1$0 = TransitionKt.createChildTransitionInternal$lambda$1$0(Transition.this, transition2, (DisposableEffectScope) obj);
+                    return createChildTransitionInternal$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -351,9 +351,9 @@ public final class TransitionKt {
         return transition2;
     }
 
-    public static final DisposableEffectResult createChildTransitionInternal$lambda$22$lambda$21(final Transition transition, final Transition transition2, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult createChildTransitionInternal$lambda$1$0(final Transition transition, final Transition transition2, DisposableEffectScope disposableEffectScope) {
         transition.addTransition$animation_core(transition2);
-        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$createChildTransitionInternal$lambda$22$lambda$21$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$createChildTransitionInternal$lambda$1$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 Transition.this.removeTransition$animation_core(transition2);
@@ -385,13 +385,13 @@ public final class TransitionKt {
         } : function3;
         String str2 = (i2 & 4) != 0 ? "ValueAnimation" : str;
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i & 14) ^ 6) > 4 && composer.changed(transition)) || (i & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -414,7 +414,7 @@ public final class TransitionKt {
         }
         int i3 = (i >> 9) & 112;
         T invoke = function32.invoke(currentState, composer, Integer.valueOf(i3));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i4 = i & 14;
         int i5 = i4 ^ 6;
         boolean z2 = (i5 > 4 && composer.changed(transition)) || (i & 6) == 4;
@@ -425,7 +425,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         T invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i3));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i5 > 4 && composer.changed(transition)) || (i & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -445,7 +445,7 @@ public final class TransitionKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-304821198, i, -1, "androidx.compose.animation.core.createTransitionAnimation (Transition.kt:1869)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -875384412, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -875385532, "CC(remember):Transition.kt#9igjgp");
         int i2 = i & 14;
         int i3 = i2 ^ 6;
         boolean z = (i3 > 4 && composer.changed(transition)) || (i & 6) == 4;
@@ -479,16 +479,16 @@ public final class TransitionKt {
         int i4 = (i >> 3) & 8;
         int i5 = i << 3;
         UpdateInitialAndTargetValues(transition, transitionAnimationState2, t, t2, finiteAnimationSpec, composer, (i4 << 9) | (i4 << 6) | i2 | (i5 & 896) | (i5 & 7168) | (57344 & i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -875349506, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -875350626, "CC(remember):Transition.kt#9igjgp");
         boolean changed = composer.changed(transitionAnimationState2) | ((i3 > 4 && composer.changed(transition)) || (i & 6) == 4);
         Object rememberedValue2 = composer.rememberedValue();
         if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
             rememberedValue2 = new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult createTransitionAnimation$lambda$31$lambda$30;
-                    createTransitionAnimation$lambda$31$lambda$30 = TransitionKt.createTransitionAnimation$lambda$31$lambda$30(Transition.this, transitionAnimationState2, (DisposableEffectScope) obj);
-                    return createTransitionAnimation$lambda$31$lambda$30;
+                    DisposableEffectResult createTransitionAnimation$lambda$1$0;
+                    createTransitionAnimation$lambda$1$0 = TransitionKt.createTransitionAnimation$lambda$1$0(Transition.this, transitionAnimationState2, (DisposableEffectScope) obj);
+                    return createTransitionAnimation$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -502,9 +502,9 @@ public final class TransitionKt {
         return transitionAnimationState2;
     }
 
-    public static final DisposableEffectResult createTransitionAnimation$lambda$31$lambda$30(final Transition transition, final Transition.TransitionAnimationState transitionAnimationState, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult createTransitionAnimation$lambda$1$0(final Transition transition, final Transition.TransitionAnimationState transitionAnimationState, DisposableEffectScope disposableEffectScope) {
         transition.addAnimation$animation_core(transitionAnimationState);
-        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$createTransitionAnimation$lambda$31$lambda$30$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$createTransitionAnimation$lambda$1$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 Transition.this.removeAnimation$animation_core(transitionAnimationState);
@@ -553,9 +553,9 @@ public final class TransitionKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit UpdateInitialAndTargetValues$lambda$32;
-                    UpdateInitialAndTargetValues$lambda$32 = TransitionKt.UpdateInitialAndTargetValues$lambda$32(Transition.this, transitionAnimationState, t, t2, finiteAnimationSpec, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return UpdateInitialAndTargetValues$lambda$32;
+                    Unit UpdateInitialAndTargetValues$lambda$0;
+                    UpdateInitialAndTargetValues$lambda$0 = TransitionKt.UpdateInitialAndTargetValues$lambda$0(Transition.this, transitionAnimationState, t, t2, finiteAnimationSpec, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return UpdateInitialAndTargetValues$lambda$0;
                 }
             });
         }
@@ -589,13 +589,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -618,7 +618,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         Float invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -629,7 +629,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         Float invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -657,7 +657,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1953972046, i3, -1, "androidx.compose.animation.core.animateDp.<anonymous> (Transition.kt:1977)");
                 }
-                SpringSpec<Dp> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m7994boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
+                SpringSpec<Dp> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m8256boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -671,13 +671,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -700,7 +700,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         Dp invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -711,7 +711,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         Dp invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -739,7 +739,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1662821959, i3, -1, "androidx.compose.animation.core.animateOffset.<anonymous> (Transition.kt:2007)");
                 }
-                SpringSpec<Offset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m5025boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
+                SpringSpec<Offset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m5168boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -753,13 +753,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -782,7 +782,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         Offset invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -793,7 +793,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         Offset invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -821,7 +821,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(493329511, i3, -1, "androidx.compose.animation.core.animateSize.<anonymous> (Transition.kt:2037)");
                 }
-                SpringSpec<Size> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m5093boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
+                SpringSpec<Size> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m5236boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -835,13 +835,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -864,7 +864,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         Size invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -875,7 +875,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         Size invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -904,7 +904,7 @@ public final class TransitionKt {
                     ComposerKt.traceEventStart(-428458074, i3, -1, "androidx.compose.animation.core.animateIntOffset.<anonymous> (Transition.kt:2070)");
                 }
                 long j = 1;
-                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m8115boximpl(IntOffset.m8118constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -918,13 +918,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -947,7 +947,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         IntOffset invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -958,7 +958,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         IntOffset invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -1000,13 +1000,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -1029,7 +1029,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         Integer invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -1040,7 +1040,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         Integer invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -1069,7 +1069,7 @@ public final class TransitionKt {
                     ComposerKt.traceEventStart(811932052, i3, -1, "androidx.compose.animation.core.animateIntSize.<anonymous> (Transition.kt:2132)");
                 }
                 long j = 1;
-                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m8159boximpl(IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m8421boximpl(IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -1083,13 +1083,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -1112,7 +1112,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         IntSize invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -1123,7 +1123,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         IntSize invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -1165,13 +1165,13 @@ public final class TransitionKt {
         int i4 = (i & 14) | (i3 & 896) | (i3 & 7168) | (i3 & 57344);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean z = (((i4 & 14) ^ 6) > 4 && composer.changed(transition)) || (i4 & 6) == 4;
             currentState = composer.rememberedValue();
             if (z || currentState == Composer.Companion.getEmpty()) {
@@ -1194,7 +1194,7 @@ public final class TransitionKt {
         }
         int i5 = (i4 >> 9) & 112;
         Rect invoke = function32.invoke(currentState, composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         int i6 = i4 & 14;
         int i7 = i6 ^ 6;
         boolean z2 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
@@ -1205,7 +1205,7 @@ public final class TransitionKt {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         Rect invoke2 = function32.invoke((Object) ((State) rememberedValue).getValue(), composer, Integer.valueOf(i5));
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean z3 = (i7 > 4 && composer.changed(transition)) || (i4 & 6) == 4;
         Object rememberedValue2 = composer.rememberedValue();
         if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -1219,8 +1219,8 @@ public final class TransitionKt {
         return createTransitionAnimation;
     }
 
-    public static final DisposableEffectResult updateTransition$lambda$3$lambda$2(final Transition transition, DisposableEffectScope disposableEffectScope) {
-        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$updateTransition$lambda$3$lambda$2$$inlined$onDispose$1
+    public static final DisposableEffectResult updateTransition$lambda$1$0(final Transition transition, DisposableEffectScope disposableEffectScope) {
+        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$updateTransition$lambda$1$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 Transition.this.onDisposed$animation_core();
@@ -1228,8 +1228,8 @@ public final class TransitionKt {
         };
     }
 
-    public static final DisposableEffectResult rememberTransition$lambda$13$lambda$12(final Transition transition, DisposableEffectScope disposableEffectScope) {
-        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$rememberTransition$lambda$13$lambda$12$$inlined$onDispose$1
+    public static final DisposableEffectResult rememberTransition$lambda$2$0(final Transition transition, DisposableEffectScope disposableEffectScope) {
+        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$rememberTransition$lambda$2$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 Transition.this.onDisposed$animation_core();
@@ -1237,8 +1237,8 @@ public final class TransitionKt {
         };
     }
 
-    public static final DisposableEffectResult createDeferredAnimation$lambda$17$lambda$16(final Transition transition, final Transition.DeferredAnimation deferredAnimation, DisposableEffectScope disposableEffectScope) {
-        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$createDeferredAnimation$lambda$17$lambda$16$$inlined$onDispose$1
+    public static final DisposableEffectResult createDeferredAnimation$lambda$1$0(final Transition transition, final Transition.DeferredAnimation deferredAnimation, DisposableEffectScope disposableEffectScope) {
+        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.TransitionKt$createDeferredAnimation$lambda$1$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 Transition.this.removeAnimation$animation_core(deferredAnimation);

@@ -5,6 +5,7 @@ import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerEvent;
 import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.motion.widget.Key;
 import java.util.List;
 import kotlin.Metadata;
@@ -20,7 +21,7 @@ import kotlin.jvm.functions.Function4;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TransformGestureDetector.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.TransformGestureDetectorKt$detectTransformGestures$2", f = "TransformGestureDetector.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {60, 62}, m = "invokeSuspend", n = {"$this$awaitEachGesture", Key.ROTATION, "zoom", "pan", "pastTouchSlop", "touchSlop", "lockedToPanZoom", "$this$awaitEachGesture", Key.ROTATION, "zoom", "pan", "pastTouchSlop", "touchSlop", "lockedToPanZoom"}, s = {"L$0", "F$0", "F$1", "J$0", "I$0", "F$2", "I$1", "L$0", "F$0", "F$1", "J$0", "I$0", "F$2", "I$1"})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.TransformGestureDetectorKt$detectTransformGestures$2", f = "TransformGestureDetector.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {60, RectListKt.BitOffsetForGesturable}, m = "invokeSuspend", n = {"$this$awaitEachGesture", Key.ROTATION, "zoom", "pan", "pastTouchSlop", "touchSlop", "lockedToPanZoom", "$this$awaitEachGesture", Key.ROTATION, "zoom", "pan", "pastTouchSlop", "touchSlop", "lockedToPanZoom"}, s = {"L$0", "F$0", "F$1", "J$0", "I$0", "F$2", "I$1", "L$0", "F$0", "F$1", "J$0", "I$0", "F$2", "I$1"}, v = 1)
 /* loaded from: classes.dex */
 public final class TransformGestureDetectorKt$detectTransformGestures$2 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function4<Offset, Offset, Float, Float, Unit> $onGesture;
@@ -59,7 +60,7 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
         if (r3 == r1) goto L52;
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x013b, code lost:
-        if (androidx.compose.ui.geometry.Offset.m5033equalsimpl0(r7, androidx.compose.ui.geometry.Offset.Companion.m5052getZeroF1C5BW0()) == false) goto L57;
+        if (androidx.compose.ui.geometry.Offset.m5176equalsimpl0(r7, androidx.compose.ui.geometry.Offset.Companion.m5195getZeroF1C5BW0()) == false) goto L57;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v3 */
@@ -94,12 +95,12 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
         if (i6 == 0) {
             ResultKt.throwOnFailure(obj);
             AwaitPointerEventScope awaitPointerEventScope2 = (AwaitPointerEventScope) this.L$0;
-            long m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
+            long m5195getZeroF1C5BW0 = Offset.Companion.m5195getZeroF1C5BW0();
             float touchSlop = awaitPointerEventScope2.getViewConfiguration().getTouchSlop();
             this.L$0 = awaitPointerEventScope2;
             this.F$0 = 0.0f;
             this.F$1 = 1.0f;
-            this.J$0 = m5052getZeroF1C5BW0;
+            this.J$0 = m5195getZeroF1C5BW0;
             this.I$0 = 0;
             this.F$2 = touchSlop;
             this.I$1 = 0;
@@ -108,7 +109,7 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                 f = 1.0f;
                 f2 = 0.0f;
                 i = 0;
-                j = m5052getZeroF1C5BW0;
+                j = m5195getZeroF1C5BW0;
                 awaitPointerEventScope = awaitPointerEventScope2;
                 f3 = touchSlop;
                 i2 = 0;
@@ -154,14 +155,14 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                     if (i == 0) {
                         f *= calculateZoom;
                         f2 += calculateRotation;
-                        j = Offset.m5041plusMKHz9U(j, calculatePan);
+                        j = Offset.m5184plusMKHz9U(j, calculatePan);
                         float calculateCentroidSize = TransformGestureDetectorKt.calculateCentroidSize(pointerEvent, z);
                         obj2 = coroutine_suspended;
                         i4 = 1;
                         float abs = Math.abs(1 - f) * calculateCentroidSize;
                         float abs2 = Math.abs(((3.1415927f * f2) * calculateCentroidSize) / 180.0f);
-                        float m5034getDistanceimpl = Offset.m5034getDistanceimpl(j);
-                        if (abs > f5 || abs2 > f5 || m5034getDistanceimpl > f5) {
+                        float m5177getDistanceimpl = Offset.m5177getDistanceimpl(j);
+                        if (abs > f5 || abs2 > f5 || m5177getDistanceimpl > f5) {
                             i2 = (!this.$panZoomLock || abs2 >= f5) ? 0 : 1;
                             i = 1;
                         }
@@ -179,7 +180,7 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                         } else {
                             i5 = i2;
                         }
-                        this.$onGesture.invoke(Offset.m5025boximpl(calculateCentroid), Offset.m5025boximpl(calculatePan), Boxing.boxFloat(calculateZoom), Boxing.boxFloat(calculateRotation));
+                        this.$onGesture.invoke(Offset.m5168boximpl(calculateCentroid), Offset.m5168boximpl(calculatePan), Boxing.boxFloat(calculateZoom), Boxing.boxFloat(calculateRotation));
                         List<PointerInputChange> changes2 = pointerEvent.getChanges();
                         int size2 = changes2.size();
                         for (int i10 = 0; i10 < size2; i10++) {

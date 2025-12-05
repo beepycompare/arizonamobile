@@ -40,7 +40,7 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo781measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
+    public MeasureResult mo864measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
         Integer valueOf;
         int intValue;
         int i;
@@ -54,10 +54,10 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
         Integer valueOf5;
         Integer valueOf6;
         Integer valueOf7;
-        long m7939copyZbe2FdA$default;
+        long m8201copyZbe2FdA$default;
         Integer valueOf8;
         int i2 = 0;
-        long m7939copyZbe2FdA$default2 = Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        long m8201copyZbe2FdA$default2 = Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         List<? extends Measurable> list2 = list.get(0);
         int i3 = 1;
         List<? extends Measurable> list3 = list.get(1);
@@ -66,12 +66,12 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
             if (list3.isEmpty()) {
                 valueOf8 = null;
             } else {
-                valueOf8 = Integer.valueOf(list3.get(0).maxIntrinsicHeight(Constraints.m7949getMaxWidthimpl(j)));
+                valueOf8 = Integer.valueOf(list3.get(0).maxIntrinsicHeight(Constraints.m8211getMaxWidthimpl(j)));
                 int lastIndex = CollectionsKt.getLastIndex(list3);
                 if (1 <= lastIndex) {
                     int i4 = 1;
                     while (true) {
-                        Integer valueOf9 = Integer.valueOf(list3.get(i4).maxIntrinsicHeight(Constraints.m7949getMaxWidthimpl(j)));
+                        Integer valueOf9 = Integer.valueOf(list3.get(i4).maxIntrinsicHeight(Constraints.m8211getMaxWidthimpl(j)));
                         if (valueOf9.compareTo(valueOf8) > 0) {
                             valueOf8 = valueOf9;
                         }
@@ -91,12 +91,12 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
             if (list3.isEmpty()) {
                 valueOf = null;
             } else {
-                valueOf = Integer.valueOf(list3.get(0).maxIntrinsicWidth(Constraints.m7948getMaxHeightimpl(j)));
+                valueOf = Integer.valueOf(list3.get(0).maxIntrinsicWidth(Constraints.m8210getMaxHeightimpl(j)));
                 int lastIndex2 = CollectionsKt.getLastIndex(list3);
                 if (1 <= lastIndex2) {
                     int i5 = 1;
                     while (true) {
-                        Integer valueOf10 = Integer.valueOf(list3.get(i5).maxIntrinsicWidth(Constraints.m7948getMaxHeightimpl(j)));
+                        Integer valueOf10 = Integer.valueOf(list3.get(i5).maxIntrinsicWidth(Constraints.m8210getMaxHeightimpl(j)));
                         if (valueOf10.compareTo(valueOf) > 0) {
                             valueOf = valueOf10;
                         }
@@ -113,7 +113,7 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
             }
             intValue = 0;
         }
-        int subtractConstraintSafely = LayoutUtilKt.subtractConstraintSafely(this.isVertical ? Constraints.m7948getMaxHeightimpl(j) : Constraints.m7949getMaxWidthimpl(j), intValue);
+        int subtractConstraintSafely = LayoutUtilKt.subtractConstraintSafely(this.isVertical ? Constraints.m8210getMaxHeightimpl(j) : Constraints.m8211getMaxWidthimpl(j), intValue);
         ArrayList arrayList3 = new ArrayList();
         int size = list2.size();
         int i6 = 0;
@@ -123,17 +123,17 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
                 i = i3;
                 break;
             }
-            Placeable mo6698measureBRTryo0 = list2.get(i6).mo6698measureBRTryo0(m7939copyZbe2FdA$default2);
+            Placeable mo6875measureBRTryo0 = list2.get(i6).mo6875measureBRTryo0(m8201copyZbe2FdA$default2);
             int i8 = i6 == CollectionsKt.getLastIndex(list2) ? i3 : 0;
             i = i3;
             if (i8 == 0 && i6 == this.maxItemCount - 1) {
                 break;
             }
-            int height = this.isVertical ? mo6698measureBRTryo0.getHeight() : mo6698measureBRTryo0.getWidth();
+            int height = this.isVertical ? mo6875measureBRTryo0.getHeight() : mo6875measureBRTryo0.getWidth();
             if (height > subtractConstraintSafely && (i8 == 0 || height > subtractConstraintSafely + intValue)) {
                 break;
             }
-            arrayList3.add(mo6698measureBRTryo0);
+            arrayList3.add(mo6875measureBRTryo0);
             i7 += height;
             subtractConstraintSafely = LayoutUtilKt.subtractConstraintSafely(subtractConstraintSafely, height);
             i6++;
@@ -143,15 +143,15 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
         if (arrayList3.size() != list2.size()) {
             if (this.isVertical) {
                 arrayList = arrayList3;
-                m7939copyZbe2FdA$default = Constraints.m7939copyZbe2FdA$default(m7939copyZbe2FdA$default2, 0, 0, 0, subtractConstraintSafely + intValue, 7, null);
+                m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(m8201copyZbe2FdA$default2, 0, 0, 0, subtractConstraintSafely + intValue, 7, null);
             } else {
                 arrayList = arrayList3;
-                m7939copyZbe2FdA$default = Constraints.m7939copyZbe2FdA$default(m7939copyZbe2FdA$default2, 0, subtractConstraintSafely + intValue, 0, 0, 13, null);
+                m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(m8201copyZbe2FdA$default2, 0, subtractConstraintSafely + intValue, 0, 0, 13, null);
             }
             ArrayList arrayList4 = new ArrayList(list3.size());
             int size2 = list3.size();
             for (int i9 = 0; i9 < size2; i9++) {
-                arrayList4.add(list3.get(i9).mo6698measureBRTryo0(m7939copyZbe2FdA$default));
+                arrayList4.add(list3.get(i9).mo6875measureBRTryo0(m8201copyZbe2FdA$default));
             }
             arrayList2 = arrayList4;
         } else {
@@ -314,7 +314,7 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
             max = Math.max(intValue4, i2);
         }
         if (this.isVertical) {
-            return MeasureScope.layout$default(measureScope, ConstraintsKt.m7966constrainWidthK40F9xA(j, max), ConstraintsKt.m7965constrainHeightK40F9xA(j, i12), null, new Function1() { // from class: androidx.compose.material3.OverflowMeasurePolicy$$ExternalSyntheticLambda0
+            return MeasureScope.layout$default(measureScope, ConstraintsKt.m8228constrainWidthK40F9xA(j, max), ConstraintsKt.m8227constrainHeightK40F9xA(j, i12), null, new Function1() { // from class: androidx.compose.material3.OverflowMeasurePolicy$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measure_3p2s80s$lambda$11;
@@ -323,7 +323,7 @@ public final class OverflowMeasurePolicy implements MultiContentMeasurePolicy {
                 }
             }, 4, null);
         }
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7966constrainWidthK40F9xA(j, i12), ConstraintsKt.m7965constrainHeightK40F9xA(j, max), null, new Function1() { // from class: androidx.compose.material3.OverflowMeasurePolicy$$ExternalSyntheticLambda1
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m8228constrainWidthK40F9xA(j, i12), ConstraintsKt.m8227constrainHeightK40F9xA(j, max), null, new Function1() { // from class: androidx.compose.material3.OverflowMeasurePolicy$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$14;

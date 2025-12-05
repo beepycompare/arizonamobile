@@ -1,9 +1,10 @@
 package androidx.compose.ui.platform;
 
+import android.content.res.Configuration;
 import android.view.View;
 import android.view.ViewParent;
+import androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper;
 import androidx.compose.ui.graphics.Matrix;
-import androidx.compose.ui.platform.coreshims.ContentCaptureSessionCompat;
 import androidx.compose.ui.platform.coreshims.ViewCompatShims;
 import androidx.compose.ui.text.input.PlatformTextInputService;
 import androidx.media3.extractor.text.ttml.TtmlNode;
@@ -11,10 +12,11 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidComposeView.android.kt */
-@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u001b\u0010\t\u001a\u00020\n*\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000bH\u0002¢\u0006\u0004\b\r\u0010\u000e\u001a+\u0010\u000f\u001a\u00020\n*\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u000bH\u0002¢\u0006\u0004\b\u0014\u0010\u0015\u001a/\u0010\u0016\u001a\u00020\u00112\u0006\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u000b2\u0006\u0010\u001b\u001a\u00020\u0019H\u0002¢\u0006\u0004\b\u001c\u0010\u001d\u001a\u0014\u0010\u001e\u001a\u00020\u001f*\u00020 2\u0006\u0010\f\u001a\u00020 H\u0002\u001a\u000e\u0010!\u001a\u0004\u0018\u00010\"*\u00020 H\u0002\"&\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0001X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"platformTextInputServiceInterceptor", "Lkotlin/Function1;", "Landroidx/compose/ui/text/input/PlatformTextInputService;", "getPlatformTextInputServiceInterceptor", "()Lkotlin/jvm/functions/Function1;", "setPlatformTextInputServiceInterceptor", "(Lkotlin/jvm/functions/Function1;)V", "ONE_FRAME_120_HERTZ_IN_MILLISECONDS", "", "preTransform", "", "Landroidx/compose/ui/graphics/Matrix;", "other", "preTransform-JiSxe2E", "([F[F)V", "preTranslate", "x", "", "y", "tmpMatrix", "preTranslate-cG2Xzmc", "([FFF[F)V", TtmlNode.TEXT_EMPHASIS_MARK_DOT, "m1", "row", "", "m2", "column", "dot-p89u6pk", "([FI[FI)F", "containsDescendant", "", "Landroid/view/View;", "getContentCaptureSessionCompat", "Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u001b\u0010\t\u001a\u00020\n*\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000bH\u0002¢\u0006\u0004\b\r\u0010\u000e\u001a+\u0010\u000f\u001a\u00020\n*\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u000bH\u0002¢\u0006\u0004\b\u0014\u0010\u0015\u001a/\u0010\u0016\u001a\u00020\u00112\u0006\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u000b2\u0006\u0010\u001b\u001a\u00020\u0019H\u0002¢\u0006\u0004\b\u001c\u0010\u001d\u001a\u0014\u0010\u001e\u001a\u00020\u001f*\u00020 2\u0006\u0010\f\u001a\u00020 H\u0002\u001a\u000e\u0010!\u001a\u0004\u0018\u00010\"*\u00020 H\u0002\u001a\u0014\u0010$\u001a\u00020\u001f*\u00020%2\u0006\u0010\f\u001a\u00020%H\u0002\"&\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0001X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010#\u001a\u00020\u0019X\u0082T¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"platformTextInputServiceInterceptor", "Lkotlin/Function1;", "Landroidx/compose/ui/text/input/PlatformTextInputService;", "getPlatformTextInputServiceInterceptor", "()Lkotlin/jvm/functions/Function1;", "setPlatformTextInputServiceInterceptor", "(Lkotlin/jvm/functions/Function1;)V", "ONE_FRAME_120_HERTZ_IN_MILLISECONDS", "", "preTransform", "", "Landroidx/compose/ui/graphics/Matrix;", "other", "preTransform-JiSxe2E", "([F[F)V", "preTranslate", "x", "", "y", "tmpMatrix", "preTranslate-cG2Xzmc", "([FFF[F)V", TtmlNode.TEXT_EMPHASIS_MARK_DOT, "m1", "row", "", "m2", "column", "dot-p89u6pk", "([FI[FI)F", "containsDescendant", "", "Landroid/view/View;", "getContentCaptureSessionCompat", "Landroidx/compose/ui/contentcapture/ContentCaptureSessionWrapper;", "maskForNonWindowMetricsChanges", "diffForWindowMetricsChanged", "Landroid/content/res/Configuration;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidComposeView_androidKt {
     private static final long ONE_FRAME_120_HERTZ_IN_MILLISECONDS = 8;
+    private static final int maskForNonWindowMetricsChanges = 1342235263;
     private static Function1<? super PlatformTextInputService, ? extends PlatformTextInputService> platformTextInputServiceInterceptor = new Function1<PlatformTextInputService, PlatformTextInputService>() { // from class: androidx.compose.ui.platform.AndroidComposeView_androidKt$platformTextInputServiceInterceptor$1
         @Override // kotlin.jvm.functions.Function1
         public final PlatformTextInputService invoke(PlatformTextInputService platformTextInputService) {
@@ -26,9 +28,13 @@ public final class AndroidComposeView_androidKt {
         return containsDescendant(view, view2);
     }
 
+    public static final /* synthetic */ boolean access$diffForWindowMetricsChanged(Configuration configuration, Configuration configuration2) {
+        return diffForWindowMetricsChanged(configuration, configuration2);
+    }
+
     /* renamed from: access$preTranslate-cG2Xzmc */
-    public static final /* synthetic */ void m7109access$preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
-        m7112preTranslatecG2Xzmc(fArr, f, f2, fArr2);
+    public static final /* synthetic */ void m7327access$preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
+        m7330preTranslatecG2Xzmc(fArr, f, f2, fArr2);
     }
 
     public static final Function1<PlatformTextInputService, PlatformTextInputService> getPlatformTextInputServiceInterceptor() {
@@ -40,46 +46,46 @@ public final class AndroidComposeView_androidKt {
     }
 
     /* renamed from: preTransform-JiSxe2E */
-    public static final void m7111preTransformJiSxe2E(float[] fArr, float[] fArr2) {
-        float m7110dotp89u6pk = m7110dotp89u6pk(fArr2, 0, fArr, 0);
-        float m7110dotp89u6pk2 = m7110dotp89u6pk(fArr2, 0, fArr, 1);
-        float m7110dotp89u6pk3 = m7110dotp89u6pk(fArr2, 0, fArr, 2);
-        float m7110dotp89u6pk4 = m7110dotp89u6pk(fArr2, 0, fArr, 3);
-        float m7110dotp89u6pk5 = m7110dotp89u6pk(fArr2, 1, fArr, 0);
-        float m7110dotp89u6pk6 = m7110dotp89u6pk(fArr2, 1, fArr, 1);
-        float m7110dotp89u6pk7 = m7110dotp89u6pk(fArr2, 1, fArr, 2);
-        float m7110dotp89u6pk8 = m7110dotp89u6pk(fArr2, 1, fArr, 3);
-        float m7110dotp89u6pk9 = m7110dotp89u6pk(fArr2, 2, fArr, 0);
-        float m7110dotp89u6pk10 = m7110dotp89u6pk(fArr2, 2, fArr, 1);
-        float m7110dotp89u6pk11 = m7110dotp89u6pk(fArr2, 2, fArr, 2);
-        float m7110dotp89u6pk12 = m7110dotp89u6pk(fArr2, 2, fArr, 3);
-        float m7110dotp89u6pk13 = m7110dotp89u6pk(fArr2, 3, fArr, 0);
-        float m7110dotp89u6pk14 = m7110dotp89u6pk(fArr2, 3, fArr, 1);
-        float m7110dotp89u6pk15 = m7110dotp89u6pk(fArr2, 3, fArr, 2);
-        float m7110dotp89u6pk16 = m7110dotp89u6pk(fArr2, 3, fArr, 3);
-        fArr[0] = m7110dotp89u6pk;
-        fArr[1] = m7110dotp89u6pk2;
-        fArr[2] = m7110dotp89u6pk3;
-        fArr[3] = m7110dotp89u6pk4;
-        fArr[4] = m7110dotp89u6pk5;
-        fArr[5] = m7110dotp89u6pk6;
-        fArr[6] = m7110dotp89u6pk7;
-        fArr[7] = m7110dotp89u6pk8;
-        fArr[8] = m7110dotp89u6pk9;
-        fArr[9] = m7110dotp89u6pk10;
-        fArr[10] = m7110dotp89u6pk11;
-        fArr[11] = m7110dotp89u6pk12;
-        fArr[12] = m7110dotp89u6pk13;
-        fArr[13] = m7110dotp89u6pk14;
-        fArr[14] = m7110dotp89u6pk15;
-        fArr[15] = m7110dotp89u6pk16;
+    public static final void m7329preTransformJiSxe2E(float[] fArr, float[] fArr2) {
+        float m7328dotp89u6pk = m7328dotp89u6pk(fArr2, 0, fArr, 0);
+        float m7328dotp89u6pk2 = m7328dotp89u6pk(fArr2, 0, fArr, 1);
+        float m7328dotp89u6pk3 = m7328dotp89u6pk(fArr2, 0, fArr, 2);
+        float m7328dotp89u6pk4 = m7328dotp89u6pk(fArr2, 0, fArr, 3);
+        float m7328dotp89u6pk5 = m7328dotp89u6pk(fArr2, 1, fArr, 0);
+        float m7328dotp89u6pk6 = m7328dotp89u6pk(fArr2, 1, fArr, 1);
+        float m7328dotp89u6pk7 = m7328dotp89u6pk(fArr2, 1, fArr, 2);
+        float m7328dotp89u6pk8 = m7328dotp89u6pk(fArr2, 1, fArr, 3);
+        float m7328dotp89u6pk9 = m7328dotp89u6pk(fArr2, 2, fArr, 0);
+        float m7328dotp89u6pk10 = m7328dotp89u6pk(fArr2, 2, fArr, 1);
+        float m7328dotp89u6pk11 = m7328dotp89u6pk(fArr2, 2, fArr, 2);
+        float m7328dotp89u6pk12 = m7328dotp89u6pk(fArr2, 2, fArr, 3);
+        float m7328dotp89u6pk13 = m7328dotp89u6pk(fArr2, 3, fArr, 0);
+        float m7328dotp89u6pk14 = m7328dotp89u6pk(fArr2, 3, fArr, 1);
+        float m7328dotp89u6pk15 = m7328dotp89u6pk(fArr2, 3, fArr, 2);
+        float m7328dotp89u6pk16 = m7328dotp89u6pk(fArr2, 3, fArr, 3);
+        fArr[0] = m7328dotp89u6pk;
+        fArr[1] = m7328dotp89u6pk2;
+        fArr[2] = m7328dotp89u6pk3;
+        fArr[3] = m7328dotp89u6pk4;
+        fArr[4] = m7328dotp89u6pk5;
+        fArr[5] = m7328dotp89u6pk6;
+        fArr[6] = m7328dotp89u6pk7;
+        fArr[7] = m7328dotp89u6pk8;
+        fArr[8] = m7328dotp89u6pk9;
+        fArr[9] = m7328dotp89u6pk10;
+        fArr[10] = m7328dotp89u6pk11;
+        fArr[11] = m7328dotp89u6pk12;
+        fArr[12] = m7328dotp89u6pk13;
+        fArr[13] = m7328dotp89u6pk14;
+        fArr[14] = m7328dotp89u6pk15;
+        fArr[15] = m7328dotp89u6pk16;
     }
 
     /* renamed from: preTranslate-cG2Xzmc */
-    public static final void m7112preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
-        Matrix.m5531resetimpl(fArr2);
-        Matrix.m5544translateimpl$default(fArr2, f, f2, 0.0f, 4, null);
-        m7111preTransformJiSxe2E(fArr, fArr2);
+    public static final void m7330preTranslatecG2Xzmc(float[] fArr, float f, float f2, float[] fArr2) {
+        Matrix.m5679resetimpl(fArr2);
+        Matrix.m5692translateimpl$default(fArr2, f, f2, 0.0f, 4, null);
+        m7329preTransformJiSxe2E(fArr, fArr2);
     }
 
     public static final boolean containsDescendant(View view, View view2) {
@@ -94,13 +100,17 @@ public final class AndroidComposeView_androidKt {
         return false;
     }
 
-    public static final ContentCaptureSessionCompat getContentCaptureSessionCompat(View view) {
+    public static final ContentCaptureSessionWrapper getContentCaptureSessionCompat(View view) {
         ViewCompatShims.setImportantForContentCapture(view, 1);
         return ViewCompatShims.getContentCaptureSession(view);
     }
 
+    public static final boolean diffForWindowMetricsChanged(Configuration configuration, Configuration configuration2) {
+        return (configuration.diff(configuration2) & (-1342235264)) != 0;
+    }
+
     /* renamed from: dot-p89u6pk */
-    private static final float m7110dotp89u6pk(float[] fArr, int i, float[] fArr2, int i2) {
+    private static final float m7328dotp89u6pk(float[] fArr, int i, float[] fArr2, int i2) {
         int i3 = i * 4;
         return (fArr[i3] * fArr2[i2]) + (fArr[i3 + 1] * fArr2[4 + i2]) + (fArr[i3 + 2] * fArr2[8 + i2]) + (fArr[i3 + 3] * fArr2[12 + i2]);
     }

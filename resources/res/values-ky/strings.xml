@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Төмөнкү менен бөлүшүү</string>
     <string name="abc_shareactionprovider_share_with_application">%s аркылуу бөлүшүү</string>
     <string name="abc_toolbar_collapse_description">Жыйыштыруу</string>
-    <string name="autofill">Автотолтуруу функиясы</string>
+    <string name="androidx_compose_foundation_autofill">Автотолтуруу</string>
+    <string name="androidx_compose_ui_autofill">Автотолтуруу</string>
     <string name="bottomsheet_action_collapse">Ылдыйкы экранды жыйыштыруу</string>
     <string name="bottomsheet_action_expand">Ылдыйкы экранды жайып көрсөтүү</string>
     <string name="bottomsheet_action_expand_halfway">Жарымын жайып көрсөтүү</string>

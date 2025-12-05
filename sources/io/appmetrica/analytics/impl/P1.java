@@ -9,13 +9,13 @@ public final class P1 implements Thread.UncaughtExceptionHandler {
     public static final AtomicBoolean e = new AtomicBoolean();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ga f629a;
-    public final C0566s6 b = C0158c4.l().n();
-    public final C0492p6 c = new C0492p6();
+    public final Ga f712a;
+    public final C0565s6 b = C0157c4.l().n();
+    public final C0491p6 c = new C0491p6();
     public final En d = new En();
 
-    public P1(C0392l6 c0392l6) {
-        this.f629a = c0392l6;
+    public P1(C0391l6 c0391l6) {
+        this.f712a = c0391l6;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -23,14 +23,14 @@ public final class P1 implements Thread.UncaughtExceptionHandler {
         StackTraceElement[] stackTraceElementArr;
         try {
             e.set(true);
-            Ga ga = this.f629a;
-            C0708xn apply = this.c.apply(thread);
+            Ga ga = this.f712a;
+            C0707xn apply = this.c.apply(thread);
             En en = this.d;
-            Thread a2 = en.f467a.a();
+            Thread a2 = en.f550a.a();
             ArrayList a3 = en.a(a2, thread);
             if (thread != a2) {
                 try {
-                    stackTraceElementArr = en.f467a.b();
+                    stackTraceElementArr = en.f550a.b();
                     if (stackTraceElementArr == null) {
                         try {
                             stackTraceElementArr = a2.getStackTrace();
@@ -40,9 +40,9 @@ public final class P1 implements Thread.UncaughtExceptionHandler {
                 } catch (SecurityException unused2) {
                     stackTraceElementArr = null;
                 }
-                a3.add(0, (C0708xn) en.b.apply(a2, stackTraceElementArr));
+                a3.add(0, (C0707xn) en.b.apply(a2, stackTraceElementArr));
             }
-            ga.a(th, new V(apply, a3, this.b.f1114a.a()));
+            ga.a(th, new V(apply, a3, this.b.f1197a.a()));
         } catch (Throwable th2) {
             LoggerStorage.getMainPublicOrAnonymousLogger().error(th2, th2.getMessage(), new Object[0]);
         }

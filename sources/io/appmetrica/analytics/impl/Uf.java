@@ -7,20 +7,20 @@ import java.io.File;
 public final class Uf implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f711a;
+    public final File f794a;
     public final Function b;
     public final Consumer c;
     public final Consumer d;
-    public final C0112aa e;
-    public final InterfaceC0149bl f;
+    public final C0111aa e;
+    public final InterfaceC0148bl f;
 
-    public Uf(File file, Function function, Consumer consumer, Consumer consumer2, C0112aa c0112aa, InterfaceC0149bl interfaceC0149bl) {
-        this.f711a = file;
+    public Uf(File file, Function function, Consumer consumer, Consumer consumer2, C0111aa c0111aa, InterfaceC0148bl interfaceC0148bl) {
+        this.f794a = file;
         this.b = function;
         this.c = consumer;
         this.d = consumer2;
-        this.e = c0112aa;
-        this.f = interfaceC0149bl;
+        this.e = c0111aa;
+        this.f = interfaceC0148bl;
     }
 
     public static final void a(File file) {
@@ -28,25 +28,25 @@ public final class Uf implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (this.f711a.exists()) {
-            C0719y9 b = this.e.b(this.f711a.getName());
+        if (this.f794a.exists()) {
+            C0718y9 b = this.e.b(this.f794a.getName());
             Consumer consumer = this.c;
             try {
-                b.f1215a.lock();
+                b.f1298a.lock();
                 b.b.a();
             } catch (Throwable unused) {
             }
-            if (!this.f711a.exists()) {
-                consumer.consume(this.f711a);
+            if (!this.f794a.exists()) {
+                consumer.consume(this.f794a);
                 b.c();
-                C0112aa c0112aa = this.e;
-                String name = this.f711a.getName();
-                synchronized (c0112aa) {
-                    c0112aa.b.remove(name);
+                C0111aa c0111aa = this.e;
+                String name = this.f794a.getName();
+                synchronized (c0111aa) {
+                    c0111aa.b.remove(name);
                 }
                 return;
             }
-            Object apply = this.b.apply(this.f711a);
+            Object apply = this.b.apply(this.f794a);
             if (apply != null) {
                 if (this.f.a(apply)) {
                     this.d.consume(apply);
@@ -59,9 +59,9 @@ public final class Uf implements Runnable {
                     };
                 }
             }
-            consumer.consume(this.f711a);
+            consumer.consume(this.f794a);
             b.c();
-            this.e.a(this.f711a.getName());
+            this.e.a(this.f794a.getName());
         }
     }
 }

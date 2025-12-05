@@ -9,14 +9,14 @@ import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MeasureScopeWithLayoutNode.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\u001a\u001c\u0010\u0000\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00020\u00010\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0000\u001a\f\u0010\u0005\u001a\u00020\u0006*\u00020\u0007H\u0002¨\u0006\b"}, d2 = {"getChildrenOfVirtualChildren", "", "Landroidx/compose/ui/layout/Measurable;", "scope", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "isInLookaheadPass", "", "Landroidx/compose/ui/node/LayoutNode;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\u001a\u001c\u0010\u0000\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00020\u00010\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0000\u001a\f\u0010\u0005\u001a\u00020\u0006*\u00020\u0007H\u0002¨\u0006\b"}, d2 = {"getChildrenOfVirtualChildren", "", "Landroidx/compose/ui/layout/Measurable;", "scope", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "isInLookaheadPass", "", "Landroidx/compose/ui/node/LayoutNode;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MeasureScopeWithLayoutNodeKt {
 
     /* compiled from: MeasureScopeWithLayoutNode.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -49,19 +49,19 @@ public final class MeasureScopeWithLayoutNodeKt {
         Intrinsics.checkNotNull(intrinsicMeasureScope, "null cannot be cast to non-null type androidx.compose.ui.node.MeasureScopeWithLayoutNode");
         LayoutNode layoutNode = ((MeasureScopeWithLayoutNode) intrinsicMeasureScope).getLayoutNode();
         boolean isInLookaheadPass = isInLookaheadPass(layoutNode);
-        List<LayoutNode> foldedChildren$ui_release = layoutNode.getFoldedChildren$ui_release();
-        ArrayList arrayList = new ArrayList(foldedChildren$ui_release.size());
-        int size = foldedChildren$ui_release.size();
+        List<LayoutNode> foldedChildren$ui = layoutNode.getFoldedChildren$ui();
+        ArrayList arrayList = new ArrayList(foldedChildren$ui.size());
+        int size = foldedChildren$ui.size();
         for (int i = 0; i < size; i++) {
             ArrayList arrayList2 = arrayList;
-            LayoutNode layoutNode2 = foldedChildren$ui_release.get(i);
-            arrayList2.add(isInLookaheadPass ? layoutNode2.getChildLookaheadMeasurables$ui_release() : layoutNode2.getChildMeasurables$ui_release());
+            LayoutNode layoutNode2 = foldedChildren$ui.get(i);
+            arrayList2.add(isInLookaheadPass ? layoutNode2.getChildLookaheadMeasurables$ui() : layoutNode2.getChildMeasurables$ui());
         }
         return arrayList;
     }
 
     private static final boolean isInLookaheadPass(LayoutNode layoutNode) {
-        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui_release().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui().ordinal()];
         if (i == 1 || i == 2) {
             return true;
         }
@@ -71,9 +71,9 @@ public final class MeasureScopeWithLayoutNodeKt {
         if (i != 5) {
             throw new NoWhenBranchMatchedException();
         }
-        LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-        if (parent$ui_release != null) {
-            return isInLookaheadPass(parent$ui_release);
+        LayoutNode parent$ui = layoutNode.getParent$ui();
+        if (parent$ui != null) {
+            return isInLookaheadPass(parent$ui);
         }
         throw new IllegalArgumentException("no parent for idle node".toString());
     }

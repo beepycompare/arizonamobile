@@ -27,7 +27,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BasicText.android.kt */
-@Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\t\u001a%\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0001¢\u0006\u0002\u0010\r\u001a;\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0014\u0010\u000f\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0018\u00010\u0010H\u0001¢\u0006\u0002\u0010\u0013\u001a\u0010\u0010 \u001a\u00020\u00192\u0006\u0010!\u001a\u00020\u0015H\u0000\"\u0019\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u000e\u0010\u0014\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0016\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0017\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000\"\u0012\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001a\"\u001a\u0010\u001b\u001a\u00020\u00198@X\u0081\u0004¢\u0006\f\u0012\u0004\b\u001c\u0010\u001d\u001a\u0004\b\u001e\u0010\u001f¨\u0006\""}, d2 = {"LocalBackgroundTextMeasurementExecutor", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Ljava/util/concurrent/Executor;", "getLocalBackgroundTextMeasurementExecutor", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "BackgroundTextMeasurement", "", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;Landroidx/compose/runtime/Composer;I)V", "Landroidx/compose/ui/text/AnnotatedString;", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;Landroidx/compose/runtime/Composer;I)V", "PrefetchTextMinimumCoreCount", "", "MinTextLengthThreshold", "MaxTextLengthThreshold", "backingCoreCountSatisfactory", "", "Ljava/lang/Boolean;", "coreCountSatisfactory", "getCoreCountSatisfactory$annotations", "()V", "getCoreCountSatisfactory", "()Z", "shouldPrefetch", "textLength", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\t\u001a%\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0001¢\u0006\u0002\u0010\r\u001a;\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0014\u0010\u000f\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0018\u00010\u0010H\u0001¢\u0006\u0002\u0010\u0013\u001a\u0010\u0010 \u001a\u00020\u00192\u0006\u0010!\u001a\u00020\u0015H\u0000\"\u0019\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u000e\u0010\u0014\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0016\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0017\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000\"\u0012\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001a\"\u001a\u0010\u001b\u001a\u00020\u00198@X\u0081\u0004¢\u0006\f\u0012\u0004\b\u001c\u0010\u001d\u001a\u0004\b\u001e\u0010\u001f¨\u0006\""}, d2 = {"LocalBackgroundTextMeasurementExecutor", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Ljava/util/concurrent/Executor;", "getLocalBackgroundTextMeasurementExecutor", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "BackgroundTextMeasurement", "", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;Landroidx/compose/runtime/Composer;I)V", "Landroidx/compose/ui/text/AnnotatedString;", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;Landroidx/compose/runtime/Composer;I)V", "PrefetchTextMinimumCoreCount", "", "MinTextLengthThreshold", "MaxTextLengthThreshold", "backingCoreCountSatisfactory", "", "Ljava/lang/Boolean;", "coreCountSatisfactory", "getCoreCountSatisfactory$annotations", "()V", "getCoreCountSatisfactory", "()Z", "shouldPrefetch", "textLength", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicText_androidKt {
     private static final ProvidableCompositionLocal<Executor> LocalBackgroundTextMeasurementExecutor = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.foundation.text.BasicText_androidKt$$ExternalSyntheticLambda1
@@ -65,10 +65,9 @@ public final class BasicText_androidKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         Executor executor = (Executor) consume;
         if (executor == null || !shouldPrefetch(str.length())) {
-            composer.startReplaceGroup(1255196839);
-            composer.endReplaceGroup();
+            composer.startReplaceGroup(1250991751);
         } else {
-            composer.startReplaceGroup(1254328095);
+            composer.startReplaceGroup(1254274527);
             ComposerKt.sourceInformation(composer, "71@3333L7,72@3376L7,75@3428L699");
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume2 = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
@@ -79,14 +78,14 @@ public final class BasicText_androidKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             final Density density = (Density) consume3;
             try {
-                ComposerKt.sourceInformationMarkerStart(composer, -1622101258, "CC(remember):BasicText.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -1622102986, "CC(remember):BasicText.android.kt#9igjgp");
                 boolean changed = ((((i & 112) ^ 48) > 32 && composer.changed(textStyle)) || (i & 48) == 32) | composer.changed(layoutDirection.ordinal()) | ((((i & 14) ^ 6) > 4 && composer.changed(str)) || (i & 6) == 4) | composer.changed(density) | composer.changedInstance(resolver);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                     Object obj = new Runnable() { // from class: androidx.compose.foundation.text.BasicText_androidKt$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BasicText_androidKt.BackgroundTextMeasurement$lambda$4$lambda$3(TextStyle.this, layoutDirection, str, density, resolver);
+                            BasicText_androidKt.BackgroundTextMeasurement$lambda$0$0(TextStyle.this, layoutDirection, str, density, resolver);
                         }
                     };
                     composer.updateRememberedValue(obj);
@@ -96,8 +95,8 @@ public final class BasicText_androidKt {
                 executor.execute((Runnable) rememberedValue);
             } catch (RejectedExecutionException unused) {
             }
-            composer.endReplaceGroup();
         }
+        composer.endReplaceGroup();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -105,7 +104,7 @@ public final class BasicText_androidKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void BackgroundTextMeasurement$lambda$4$lambda$3(TextStyle textStyle, LayoutDirection layoutDirection, String str, Density density, FontFamily.Resolver resolver) {
+    public static final void BackgroundTextMeasurement$lambda$0$0(TextStyle textStyle, LayoutDirection layoutDirection, String str, Density density, FontFamily.Resolver resolver) {
         Trace.beginSection("BackgroundTextMeasurement");
         try {
             MutableSnapshot takeMutableSnapshot$default = Snapshot.Companion.takeMutableSnapshot$default(Snapshot.Companion, null, null, 3, null);
@@ -132,10 +131,9 @@ public final class BasicText_androidKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         Executor executor = (Executor) consume;
         if (executor == null || !shouldPrefetch(annotatedString.length())) {
-            composer.startReplaceGroup(-517807721);
-            composer.endReplaceGroup();
+            composer.startReplaceGroup(-523310345);
         } else {
-            composer.startReplaceGroup(-518708178);
+            composer.startReplaceGroup(-518761746);
             ComposerKt.sourceInformation(composer, "105@4608L7,106@4651L7,109@4703L732");
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume2 = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
@@ -146,14 +144,14 @@ public final class BasicText_androidKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             final Density density = (Density) consume3;
             try {
-                ComposerKt.sourceInformationMarkerStart(composer, 2061481991, "CC(remember):BasicText.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, 2061480263, "CC(remember):BasicText.android.kt#9igjgp");
                 boolean changed = ((((i & 112) ^ 48) > 32 && composer.changed(textStyle)) || (i & 48) == 32) | composer.changed(layoutDirection.ordinal()) | composer.changedInstance(list) | ((((i & 14) ^ 6) > 4 && composer.changed(annotatedString)) || (i & 6) == 4) | composer.changed(density) | composer.changedInstance(resolver);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                     Object obj = new Runnable() { // from class: androidx.compose.foundation.text.BasicText_androidKt$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BasicText_androidKt.BackgroundTextMeasurement$lambda$8$lambda$7(TextStyle.this, layoutDirection, list, annotatedString, density, resolver);
+                            BasicText_androidKt.BackgroundTextMeasurement$lambda$1$0(TextStyle.this, layoutDirection, list, annotatedString, density, resolver);
                         }
                     };
                     composer.updateRememberedValue(obj);
@@ -163,8 +161,8 @@ public final class BasicText_androidKt {
                 executor.execute((Runnable) rememberedValue);
             } catch (RejectedExecutionException unused) {
             }
-            composer.endReplaceGroup();
         }
+        composer.endReplaceGroup();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -172,7 +170,7 @@ public final class BasicText_androidKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void BackgroundTextMeasurement$lambda$8$lambda$7(TextStyle textStyle, LayoutDirection layoutDirection, List list, AnnotatedString annotatedString, Density density, FontFamily.Resolver resolver) {
+    public static final void BackgroundTextMeasurement$lambda$1$0(TextStyle textStyle, LayoutDirection layoutDirection, List list, AnnotatedString annotatedString, Density density, FontFamily.Resolver resolver) {
         Trace.beginSection("BackgroundTextMeasurement");
         try {
             MutableSnapshot takeMutableSnapshot$default = Snapshot.Companion.takeMutableSnapshot$default(Snapshot.Companion, null, null, 3, null);

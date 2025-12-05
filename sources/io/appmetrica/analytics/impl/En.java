@@ -8,12 +8,12 @@ import java.util.TreeMap;
 public final class En {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dn f467a;
+    public final Dn f550a;
     public final BiFunction b;
     public final Df c;
 
     public En() {
-        this(new Bn(), new C0421ma(), C0158c4.l().n());
+        this(new Bn(), new C0420ma(), C0157c4.l().n());
     }
 
     public final ArrayList a(Thread thread, Thread thread2) {
@@ -21,7 +21,7 @@ public final class En {
         ArrayList arrayList = new ArrayList();
         TreeMap treeMap = new TreeMap(new Cn());
         try {
-            map = this.f467a.c();
+            map = this.f550a.c();
         } catch (SecurityException unused) {
             map = null;
         }
@@ -34,15 +34,15 @@ public final class En {
         for (Map.Entry entry : treeMap.entrySet()) {
             Thread thread3 = (Thread) entry.getKey();
             if (thread3 != thread && thread3 != thread2) {
-                arrayList.add((C0708xn) this.b.apply(thread3, (StackTraceElement[]) entry.getValue()));
+                arrayList.add((C0707xn) this.b.apply(thread3, (StackTraceElement[]) entry.getValue()));
             }
         }
         return arrayList;
     }
 
-    public En(Dn dn, C0421ma c0421ma, C0566s6 c0566s6) {
-        this.f467a = dn;
-        this.b = c0421ma;
-        this.c = c0566s6;
+    public En(Dn dn, C0420ma c0420ma, C0565s6 c0565s6) {
+        this.f550a = dn;
+        this.b = c0420ma;
+        this.c = c0565s6;
     }
 }

@@ -1,11 +1,18 @@
 package androidx.compose.foundation.text;
 
+import androidx.compose.foundation.OverscrollEffect;
 import androidx.compose.foundation.gestures.Orientation;
+import androidx.compose.foundation.gestures.ScrollableKt;
+import androidx.compose.foundation.gestures.ScrollableState;
+import androidx.compose.foundation.gestures.ScrollableStateKt;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.draw.ClipKt;
 import androidx.compose.ui.geometry.Rect;
+import androidx.compose.ui.platform.CompositionLocalsKt;
 import androidx.compose.ui.platform.InspectableValueKt;
 import androidx.compose.ui.platform.InspectorInfo;
 import androidx.compose.ui.text.TextLayoutResult;
@@ -13,20 +20,22 @@ import androidx.compose.ui.text.input.TextFieldValue;
 import androidx.compose.ui.text.input.TransformedText;
 import androidx.compose.ui.text.input.VisualTransformation;
 import androidx.compose.ui.unit.Density;
+import androidx.compose.ui.unit.LayoutDirection;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function3;
 /* compiled from: TextFieldScroll.kt */
-@Metadata(d1 = {"\u0000P\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0000\u001a4\u0010\b\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u000e\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000eH\u0000\u001a6\u0010\u0010\u001a\u00020\u0011*\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u00182\u0006\u0010\u0019\u001a\u00020\u00072\u0006\u0010\u001a\u001a\u00020\u0014H\u0002¨\u0006\u001b"}, d2 = {"textFieldScrollable", "Landroidx/compose/ui/Modifier;", "scrollerPosition", "Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "enabled", "", "defaultTextFieldScroll", "textFieldValue", "Landroidx/compose/ui/text/input/TextFieldValue;", "visualTransformation", "Landroidx/compose/ui/text/input/VisualTransformation;", "textLayoutResultProvider", "Lkotlin/Function0;", "Landroidx/compose/foundation/text/TextLayoutResultProxy;", "getCursorRectInScroller", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/Density;", "cursorOffset", "", "transformedText", "Landroidx/compose/ui/text/input/TransformedText;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "rtl", "textFieldWidth", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a4\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\tH\u0000\u001a4\u0010\n\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u000e\u0010\u000f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00110\u0010H\u0000\u001a6\u0010\u0012\u001a\u00020\u0013*\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\u0006\u0010\u001b\u001a\u00020\u00072\u0006\u0010\u001c\u001a\u00020\u0016H\u0002¨\u0006\u001d"}, d2 = {"textFieldScrollable", "Landroidx/compose/ui/Modifier;", "scrollerPosition", "Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "enabled", "", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "defaultTextFieldScroll", "textFieldValue", "Landroidx/compose/ui/text/input/TextFieldValue;", "visualTransformation", "Landroidx/compose/ui/text/input/VisualTransformation;", "textLayoutResultProvider", "Lkotlin/Function0;", "Landroidx/compose/foundation/text/TextLayoutResultProxy;", "getCursorRectInScroller", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/Density;", "cursorOffset", "", "transformedText", "Landroidx/compose/ui/text/input/TransformedText;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "rtl", "textFieldWidth", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldScrollKt {
 
     /* compiled from: TextFieldScroll.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -43,29 +52,85 @@ public final class TextFieldScrollKt {
         }
     }
 
-    public static /* synthetic */ Modifier textFieldScrollable$default(Modifier modifier, TextFieldScrollerPosition textFieldScrollerPosition, MutableInteractionSource mutableInteractionSource, boolean z, int i, Object obj) {
+    public static /* synthetic */ Modifier textFieldScrollable$default(Modifier modifier, TextFieldScrollerPosition textFieldScrollerPosition, MutableInteractionSource mutableInteractionSource, boolean z, OverscrollEffect overscrollEffect, int i, Object obj) {
         if ((i & 2) != 0) {
             mutableInteractionSource = null;
         }
         if ((i & 4) != 0) {
             z = true;
         }
-        return textFieldScrollable(modifier, textFieldScrollerPosition, mutableInteractionSource, z);
+        return textFieldScrollable(modifier, textFieldScrollerPosition, mutableInteractionSource, z, overscrollEffect);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Modifier textFieldScrollable$lambda$1(final TextFieldScrollerPosition textFieldScrollerPosition, boolean z, OverscrollEffect overscrollEffect, MutableInteractionSource mutableInteractionSource, Modifier modifier, Composer composer, int i) {
+        composer.startReplaceGroup(-2137546592);
+        ComposerKt.sourceInformation(composer, "C76@3265L7,78@3442L464,78@3418L488,93@4082L452:TextFieldScroll.kt#423gt5");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-2137546592, i, -1, "androidx.compose.foundation.text.textFieldScrollable.<anonymous> (TextFieldScroll.kt:76)");
+        }
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+        Object consume = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        boolean z2 = textFieldScrollerPosition.getOrientation() == Orientation.Vertical || !(consume == LayoutDirection.Rtl);
+        ComposerKt.sourceInformationMarkerStart(composer, -1187897360, "CC(remember):TextFieldScroll.kt#9igjgp");
+        boolean changed = composer.changed(textFieldScrollerPosition);
+        Object rememberedValue = composer.rememberedValue();
+        if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = new Function1() { // from class: androidx.compose.foundation.text.TextFieldScrollKt$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    float textFieldScrollable$lambda$1$0$0;
+                    textFieldScrollable$lambda$1$0$0 = TextFieldScrollKt.textFieldScrollable$lambda$1$0$0(TextFieldScrollerPosition.this, ((Float) obj).floatValue());
+                    return Float.valueOf(textFieldScrollable$lambda$1$0$0);
+                }
+            };
+            composer.updateRememberedValue(rememberedValue);
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        ScrollableState rememberScrollableState = ScrollableStateKt.rememberScrollableState((Function1) rememberedValue, composer, 0);
+        ComposerKt.sourceInformationMarkerStart(composer, -1187876892, "CC(remember):TextFieldScroll.kt#9igjgp");
+        boolean changed2 = composer.changed(rememberScrollableState) | composer.changed(textFieldScrollerPosition);
+        Object rememberedValue2 = composer.rememberedValue();
+        if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+            rememberedValue2 = new TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1(rememberScrollableState, textFieldScrollerPosition);
+            composer.updateRememberedValue(rememberedValue2);
+        }
+        TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1 textFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1 = (TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1) rememberedValue2;
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        Modifier scrollable$default = ScrollableKt.scrollable$default(Modifier.Companion, textFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1, textFieldScrollerPosition.getOrientation(), overscrollEffect, z && textFieldScrollerPosition.getMaximum() != 0.0f, z2, null, mutableInteractionSource, null, 160, null);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        composer.endReplaceGroup();
+        return scrollable$default;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final float textFieldScrollable$lambda$1$0$0(TextFieldScrollerPosition textFieldScrollerPosition, float f) {
+        float offset = textFieldScrollerPosition.getOffset() + f;
+        if (offset > textFieldScrollerPosition.getMaximum()) {
+            f = textFieldScrollerPosition.getMaximum() - textFieldScrollerPosition.getOffset();
+        } else if (offset < 0.0f) {
+            f = -textFieldScrollerPosition.getOffset();
+        }
+        textFieldScrollerPosition.setOffset(textFieldScrollerPosition.getOffset() + f);
+        return f;
     }
 
     public static final Modifier defaultTextFieldScroll(Modifier modifier, TextFieldScrollerPosition textFieldScrollerPosition, TextFieldValue textFieldValue, VisualTransformation visualTransformation, Function0<TextLayoutResultProxy> function0) {
         VerticalScrollLayoutModifier verticalScrollLayoutModifier;
         Orientation orientation = textFieldScrollerPosition.getOrientation();
-        int m1379getOffsetToFollow5zctL8 = textFieldScrollerPosition.m1379getOffsetToFollow5zctL8(textFieldValue.m7709getSelectiond9O1mEE());
-        textFieldScrollerPosition.m1381setPreviousSelection5zctL8(textFieldValue.m7709getSelectiond9O1mEE());
+        int m1459getOffsetToFollow5zctL8 = textFieldScrollerPosition.m1459getOffsetToFollow5zctL8(textFieldValue.m7955getSelectiond9O1mEE());
+        textFieldScrollerPosition.m1461setPreviousSelection5zctL8(textFieldValue.m7955getSelectiond9O1mEE());
         TransformedText filterWithValidation = ValidatingOffsetMappingKt.filterWithValidation(visualTransformation, textFieldValue.getAnnotatedString());
         int i = WhenMappings.$EnumSwitchMapping$0[orientation.ordinal()];
         if (i == 1) {
-            verticalScrollLayoutModifier = new VerticalScrollLayoutModifier(textFieldScrollerPosition, m1379getOffsetToFollow5zctL8, filterWithValidation, function0);
+            verticalScrollLayoutModifier = new VerticalScrollLayoutModifier(textFieldScrollerPosition, m1459getOffsetToFollow5zctL8, filterWithValidation, function0);
         } else if (i != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            verticalScrollLayoutModifier = new HorizontalScrollLayoutModifier(textFieldScrollerPosition, m1379getOffsetToFollow5zctL8, filterWithValidation, function0);
+            verticalScrollLayoutModifier = new HorizontalScrollLayoutModifier(textFieldScrollerPosition, m1459getOffsetToFollow5zctL8, filterWithValidation, function0);
         }
         return ClipKt.clipToBounds(modifier).then(verticalScrollLayoutModifier);
     }
@@ -79,9 +144,9 @@ public final class TextFieldScrollKt {
             zero = Rect.Companion.getZero();
         }
         Rect rect = zero;
-        int mo424roundToPx0680j_4 = density.mo424roundToPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness());
+        int mo458roundToPx0680j_4 = density.mo458roundToPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness());
         if (z) {
-            left = (i2 - rect.getLeft()) - mo424roundToPx0680j_4;
+            left = (i2 - rect.getLeft()) - mo458roundToPx0680j_4;
         } else {
             left = rect.getLeft();
         }
@@ -89,12 +154,12 @@ public final class TextFieldScrollKt {
         if (z) {
             left2 = i2 - rect.getLeft();
         } else {
-            left2 = mo424roundToPx0680j_4 + rect.getLeft();
+            left2 = mo458roundToPx0680j_4 + rect.getLeft();
         }
         return Rect.copy$default(rect, f, 0.0f, left2, 0.0f, 10, null);
     }
 
-    public static final Modifier textFieldScrollable(Modifier modifier, final TextFieldScrollerPosition textFieldScrollerPosition, final MutableInteractionSource mutableInteractionSource, final boolean z) {
+    public static final Modifier textFieldScrollable(Modifier modifier, final TextFieldScrollerPosition textFieldScrollerPosition, final MutableInteractionSource mutableInteractionSource, final boolean z, final OverscrollEffect overscrollEffect) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.text.TextFieldScrollKt$textFieldScrollable$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -114,6 +179,13 @@ public final class TextFieldScrollKt {
                 inspectorInfo.getProperties().set("interactionSource", mutableInteractionSource);
                 inspectorInfo.getProperties().set("enabled", Boolean.valueOf(z));
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new TextFieldScrollKt$textFieldScrollable$2(textFieldScrollerPosition, z, mutableInteractionSource));
+        } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.text.TextFieldScrollKt$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function3
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Modifier textFieldScrollable$lambda$1;
+                textFieldScrollable$lambda$1 = TextFieldScrollKt.textFieldScrollable$lambda$1(TextFieldScrollerPosition.this, z, overscrollEffect, mutableInteractionSource, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return textFieldScrollable$lambda$1;
+            }
+        });
     }
 }

@@ -12,15 +12,15 @@ public final class HorizontalAlignNode extends Modifier.Node implements ParentDa
     public static final int $stable = 8;
     private Alignment.Horizontal horizontal;
 
+    public HorizontalAlignNode(Alignment.Horizontal horizontal) {
+        this.horizontal = horizontal;
+    }
+
     public final Alignment.Horizontal getHorizontal() {
         return this.horizontal;
     }
 
     public final void setHorizontal(Alignment.Horizontal horizontal) {
-        this.horizontal = horizontal;
-    }
-
-    public HorizontalAlignNode(Alignment.Horizontal horizontal) {
         this.horizontal = horizontal;
     }
 

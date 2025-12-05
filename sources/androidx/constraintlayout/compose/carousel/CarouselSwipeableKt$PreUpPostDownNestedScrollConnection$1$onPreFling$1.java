@@ -26,6 +26,6 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onP
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo928onPreFlingQWom1Mo(0L, this);
+        return this.this$0.mo1008onPreFlingQWom1Mo(0L, this);
     }
 }

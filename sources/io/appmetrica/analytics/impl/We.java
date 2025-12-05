@@ -12,7 +12,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class We extends AbstractC0748zd {
+public final class We extends AbstractC0747zd {
     public static final Ze d = new Ze("UUID_RESULT", null);
     public static final Ze e = new Ze("DEVICE_ID_RESULT", null);
     public static final Ze f = new Ze("DEVICE_ID_HASH_RESULT", null);
@@ -40,11 +40,11 @@ public final class We extends AbstractC0748zd {
     }
 
     public final boolean a(boolean z) {
-        return this.f765a.getBoolean(t.b, z);
+        return this.f848a.getBoolean(t.b, z);
     }
 
     public final long b(long j2) {
-        return this.f765a.getLong(j.f779a, j2);
+        return this.f848a.getLong(j.f862a, j2);
     }
 
     public final We c(IdentifiersResult identifiersResult) {
@@ -76,7 +76,7 @@ public final class We extends AbstractC0748zd {
     }
 
     public final W9 k() {
-        String string = this.f765a.getString(w.b, null);
+        String string = this.f848a.getString(w.b, null);
         try {
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
@@ -96,7 +96,7 @@ public final class We extends AbstractC0748zd {
     }
 
     public final long n() {
-        return this.f765a.getLong(p.b, 0L);
+        return this.f848a.getLong(p.b, 0L);
     }
 
     public final IdentifiersResult o() {
@@ -104,7 +104,7 @@ public final class We extends AbstractC0748zd {
     }
 
     public final ScreenInfo p() {
-        return AbstractC0294hb.e(this.f765a.getString(u.b, null));
+        return AbstractC0293hb.e(this.f848a.getString(u.b, null));
     }
 
     public final IdentifiersResult q() {
@@ -116,11 +116,11 @@ public final class We extends AbstractC0748zd {
     }
 
     public final boolean s() {
-        return this.f765a.getBoolean(n.b, false);
+        return this.f848a.getBoolean(n.b, false);
     }
 
     public final boolean t() {
-        return this.f765a.getBoolean(v.b, false);
+        return this.f848a.getBoolean(v.b, false);
     }
 
     public final We u() {
@@ -132,15 +132,15 @@ public final class We extends AbstractC0748zd {
     }
 
     public final List<String> g() {
-        String string = this.f765a.getString(i.b, null);
+        String string = this.f848a.getString(i.b, null);
         if (TextUtils.isEmpty(string)) {
             return null;
         }
-        return AbstractC0294hb.b(string);
+        return AbstractC0293hb.b(string);
     }
 
     public final long a(long j2) {
-        return this.f765a.getLong(o.b, j2);
+        return this.f848a.getLong(o.b, j2);
     }
 
     public final We b(IdentifiersResult identifiersResult) {
@@ -160,7 +160,7 @@ public final class We extends AbstractC0748zd {
     }
 
     public final AppMetricaConfig.Builder f() {
-        String string = this.f765a.getString(x.b, null);
+        String string = this.f848a.getString(x.b, null);
         if (string == null) {
             return null;
         }
@@ -176,7 +176,7 @@ public final class We extends AbstractC0748zd {
         IdentifiersResult identifiersResult;
         String string;
         try {
-            string = this.f765a.getString(str, null);
+            string = this.f848a.getString(str, null);
         } catch (Throwable unused) {
         }
         if (string != null) {
@@ -218,14 +218,14 @@ public final class We extends AbstractC0748zd {
     }
 
     public final String i(String str) {
-        return this.f765a.getString(m.b, str);
+        return this.f848a.getString(m.b, str);
     }
 
     public final We j(String str) {
         return (We) b(m.b, str);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0748zd
+    @Override // io.appmetrica.analytics.impl.AbstractC0747zd
     public final String f(String str) {
         return new Ze(str, null).b;
     }
@@ -242,20 +242,20 @@ public final class We extends AbstractC0748zd {
         String str = w.b;
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.putOpt("libSslEnabled", w9.f737a).put(DownloadsDB.DownloadColumns.STATUS, w9.b.getValue()).putOpt("ERROR_EXPLANATION", w9.c);
+            jSONObject.putOpt("libSslEnabled", w9.f820a).put(DownloadsDB.DownloadColumns.STATUS, w9.b.getValue()).putOpt("ERROR_EXPLANATION", w9.c);
         } catch (Throwable unused) {
         }
         return (We) b(str, jSONObject.toString());
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0748zd
+    @Override // io.appmetrica.analytics.impl.AbstractC0747zd
     /* renamed from: k */
     public final We g(String str) {
         return (We) d(new Ze(str, null).b);
     }
 
     public final void a(ScreenInfo screenInfo) {
-        b(u.b, AbstractC0294hb.a(screenInfo));
+        b(u.b, AbstractC0293hb.a(screenInfo));
     }
 
     public final void a(AppMetricaConfig appMetricaConfig) {

@@ -11,12 +11,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class LayoutCornersKt {
     public static final RoundedCornerShape toShape(LayoutCorners layoutCorners, float f) {
         Intrinsics.checkNotNullParameter(layoutCorners, "<this>");
-        return RoundedCornerShapeKt.m1209RoundedCornerShapea9UjIt4(getProgressRadius(layoutCorners.getTopStart(), f), getProgressRadius(layoutCorners.getTopEnd(), f), getProgressRadius(layoutCorners.getBottomEnd(), f), getProgressRadius(layoutCorners.getBottomStart(), f));
+        return RoundedCornerShapeKt.m1284RoundedCornerShapea9UjIt4(getProgressRadius(layoutCorners.getTopStart(), f), getProgressRadius(layoutCorners.getTopEnd(), f), getProgressRadius(layoutCorners.getBottomEnd(), f), getProgressRadius(layoutCorners.getBottomStart(), f));
     }
 
     private static final float getProgressRadius(LayoutCorner layoutCorner, float f) {
         boolean isFixed = layoutCorner.isFixed();
-        float m9400getRadiusD9Ej5fM = layoutCorner.m9400getRadiusD9Ej5fM();
-        return isFixed ? m9400getRadiusD9Ej5fM : Dp.m7996constructorimpl(m9400getRadiusD9Ej5fM * f);
+        float m9695getRadiusD9Ej5fM = layoutCorner.m9695getRadiusD9Ej5fM();
+        return isFixed ? m9695getRadiusD9Ej5fM : Dp.m8258constructorimpl(m9695getRadiusD9Ej5fM * f);
     }
 }

@@ -13,6 +13,11 @@ final class IntrinsicHeightNode extends IntrinsicSizeModifier {
     private boolean enforceIncoming;
     private IntrinsicSize height;
 
+    public IntrinsicHeightNode(IntrinsicSize intrinsicSize, boolean z) {
+        this.height = intrinsicSize;
+        this.enforceIncoming = z;
+    }
+
     public final IntrinsicSize getHeight() {
         return this.height;
     }
@@ -30,24 +35,19 @@ final class IntrinsicHeightNode extends IntrinsicSizeModifier {
         this.enforceIncoming = z;
     }
 
-    public IntrinsicHeightNode(IntrinsicSize intrinsicSize, boolean z) {
-        this.height = intrinsicSize;
-        this.enforceIncoming = z;
-    }
-
     @Override // androidx.compose.foundation.layout.IntrinsicSizeModifier
     /* renamed from: calculateContentConstraints-l58MMJ0  reason: not valid java name */
-    public long mo790calculateContentConstraintsl58MMJ0(MeasureScope measureScope, Measurable measurable, long j) {
+    public long mo876calculateContentConstraintsl58MMJ0(MeasureScope measureScope, Measurable measurable, long j) {
         int maxIntrinsicHeight;
         if (this.height == IntrinsicSize.Min) {
-            maxIntrinsicHeight = measurable.minIntrinsicHeight(Constraints.m7949getMaxWidthimpl(j));
+            maxIntrinsicHeight = measurable.minIntrinsicHeight(Constraints.m8211getMaxWidthimpl(j));
         } else {
-            maxIntrinsicHeight = measurable.maxIntrinsicHeight(Constraints.m7949getMaxWidthimpl(j));
+            maxIntrinsicHeight = measurable.maxIntrinsicHeight(Constraints.m8211getMaxWidthimpl(j));
         }
         if (maxIntrinsicHeight < 0) {
             maxIntrinsicHeight = 0;
         }
-        return Constraints.Companion.m7960fixedHeightOenEA2s(maxIntrinsicHeight);
+        return Constraints.Companion.m8222fixedHeightOenEA2s(maxIntrinsicHeight);
     }
 
     @Override // androidx.compose.foundation.layout.IntrinsicSizeModifier, androidx.compose.ui.node.LayoutModifierNode

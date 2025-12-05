@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Partekatu honekin</string>
     <string name="abc_shareactionprovider_share_with_application">Partekatu %s aplikazioarekin</string>
     <string name="abc_toolbar_collapse_description">Tolestu</string>
-    <string name="autofill">Betetze automatikoa</string>
+    <string name="androidx_compose_foundation_autofill">Betetze automatikoa</string>
+    <string name="androidx_compose_ui_autofill">Betetze automatikoa</string>
     <string name="bottomsheet_action_collapse">Tolestu pantailaren behealdean ainguratutako orria</string>
     <string name="bottomsheet_action_expand">Zabaldu pantailaren behealdean ainguratutako orria</string>
     <string name="bottomsheet_action_expand_halfway">Zabaldu erdiraino</string>

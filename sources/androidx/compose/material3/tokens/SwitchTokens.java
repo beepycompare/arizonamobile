@@ -45,11 +45,11 @@ public final class SwitchTokens {
     private static final ColorSchemeKeyTokens SelectedPressedTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens StateLayerShape = ShapeKeyTokens.CornerFull;
-    private static final float StateLayerSize = Dp.m7996constructorimpl((float) 40.0d);
-    private static final float TrackHeight = Dp.m7996constructorimpl((float) 32.0d);
-    private static final float TrackOutlineWidth = Dp.m7996constructorimpl((float) 2.0d);
+    private static final float StateLayerSize = Dp.m8258constructorimpl((float) 40.0d);
+    private static final float TrackHeight = Dp.m8258constructorimpl((float) 32.0d);
+    private static final float TrackOutlineWidth = Dp.m8258constructorimpl((float) 2.0d);
     private static final ShapeKeyTokens TrackShape = ShapeKeyTokens.CornerFull;
-    private static final float TrackWidth = Dp.m7996constructorimpl((float) 52.0d);
+    private static final float TrackWidth = Dp.m8258constructorimpl((float) 52.0d);
     private static final ColorSchemeKeyTokens UnselectedFocusHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedFocusIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedFocusTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
@@ -72,18 +72,18 @@ public final class SwitchTokens {
 
     static {
         float f = (float) 28.0d;
-        PressedHandleHeight = Dp.m7996constructorimpl(f);
-        PressedHandleWidth = Dp.m7996constructorimpl(f);
+        PressedHandleHeight = Dp.m8258constructorimpl(f);
+        PressedHandleWidth = Dp.m8258constructorimpl(f);
         float f2 = (float) 24.0d;
-        SelectedHandleHeight = Dp.m7996constructorimpl(f2);
-        SelectedHandleWidth = Dp.m7996constructorimpl(f2);
+        SelectedHandleHeight = Dp.m8258constructorimpl(f2);
+        SelectedHandleWidth = Dp.m8258constructorimpl(f2);
         float f3 = (float) 16.0d;
-        SelectedIconSize = Dp.m7996constructorimpl(f3);
-        UnselectedHandleHeight = Dp.m7996constructorimpl(f3);
-        UnselectedHandleWidth = Dp.m7996constructorimpl(f3);
-        UnselectedIconSize = Dp.m7996constructorimpl(f3);
-        IconHandleHeight = Dp.m7996constructorimpl(f2);
-        IconHandleWidth = Dp.m7996constructorimpl(f2);
+        SelectedIconSize = Dp.m8258constructorimpl(f3);
+        UnselectedHandleHeight = Dp.m8258constructorimpl(f3);
+        UnselectedHandleWidth = Dp.m8258constructorimpl(f3);
+        UnselectedIconSize = Dp.m8258constructorimpl(f3);
+        IconHandleHeight = Dp.m8258constructorimpl(f2);
+        IconHandleWidth = Dp.m8258constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getDisabledSelectedHandleColor() {
@@ -143,12 +143,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getPressedHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4323getPressedHandleHeightD9Ej5fM() {
+    public final float m4409getPressedHandleHeightD9Ej5fM() {
         return PressedHandleHeight;
     }
 
     /* renamed from: getPressedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4324getPressedHandleWidthD9Ej5fM() {
+    public final float m4410getPressedHandleWidthD9Ej5fM() {
         return PressedHandleWidth;
     }
 
@@ -169,12 +169,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getSelectedHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4325getSelectedHandleHeightD9Ej5fM() {
+    public final float m4411getSelectedHandleHeightD9Ej5fM() {
         return SelectedHandleHeight;
     }
 
     /* renamed from: getSelectedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4326getSelectedHandleWidthD9Ej5fM() {
+    public final float m4412getSelectedHandleWidthD9Ej5fM() {
         return SelectedHandleWidth;
     }
 
@@ -195,7 +195,7 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getSelectedIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4327getSelectedIconSizeD9Ej5fM() {
+    public final float m4413getSelectedIconSizeD9Ej5fM() {
         return SelectedIconSize;
     }
 
@@ -220,17 +220,17 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getStateLayerSize-D9Ej5fM  reason: not valid java name */
-    public final float m4328getStateLayerSizeD9Ej5fM() {
+    public final float m4414getStateLayerSizeD9Ej5fM() {
         return StateLayerSize;
     }
 
     /* renamed from: getTrackHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4329getTrackHeightD9Ej5fM() {
+    public final float m4415getTrackHeightD9Ej5fM() {
         return TrackHeight;
     }
 
     /* renamed from: getTrackOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4330getTrackOutlineWidthD9Ej5fM() {
+    public final float m4416getTrackOutlineWidthD9Ej5fM() {
         return TrackOutlineWidth;
     }
 
@@ -239,7 +239,7 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getTrackWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4331getTrackWidthD9Ej5fM() {
+    public final float m4417getTrackWidthD9Ej5fM() {
         return TrackWidth;
     }
 
@@ -264,12 +264,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getUnselectedHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4332getUnselectedHandleHeightD9Ej5fM() {
+    public final float m4418getUnselectedHandleHeightD9Ej5fM() {
         return UnselectedHandleHeight;
     }
 
     /* renamed from: getUnselectedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4333getUnselectedHandleWidthD9Ej5fM() {
+    public final float m4419getUnselectedHandleWidthD9Ej5fM() {
         return UnselectedHandleWidth;
     }
 
@@ -294,7 +294,7 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getUnselectedIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4334getUnselectedIconSizeD9Ej5fM() {
+    public final float m4420getUnselectedIconSizeD9Ej5fM() {
         return UnselectedIconSize;
     }
 
@@ -323,12 +323,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getIconHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4321getIconHandleHeightD9Ej5fM() {
+    public final float m4407getIconHandleHeightD9Ej5fM() {
         return IconHandleHeight;
     }
 
     /* renamed from: getIconHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4322getIconHandleWidthD9Ej5fM() {
+    public final float m4408getIconHandleWidthD9Ej5fM() {
         return IconHandleWidth;
     }
 }

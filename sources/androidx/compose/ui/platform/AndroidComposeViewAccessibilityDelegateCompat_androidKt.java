@@ -35,14 +35,14 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.ClosedFloatingPointRange;
 import kotlin.ranges.RangesKt;
 /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-@Metadata(d1 = {"\u0000\\\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\t\u001a\"\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003H\u0002\u001a.\u0010\u0005\u001a\u00020\u00062\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0018\u0010\u000f\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0012\u0010\u0012\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0010\u001a\u00020\u0011H\u0002\u001a\u001a\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u001a\u0010\u0016\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0010\u0010\u0017\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u0011H\u0002\u001a\f\u0010\u0018\u001a\u00020\u0004*\u00020\u0011H\u0002\u001a\u0014\u0010\u0019\u001a\u00020\u0004*\u00020\u00112\u0006\u0010\u001a\u001a\u00020\u001bH\u0002\u001a\f\u0010\u001e\u001a\u00020\u0004*\u00020\u0011H\u0002\u001a\u001a\u0010\u001f\u001a\u00020\u0004*\u0006\u0012\u0002\b\u00030 2\b\u0010!\u001a\u0004\u0018\u00010\"H\u0002\"\u0018\u0010\u001c\u001a\u00020\u0004*\u00020\u00118BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001d\"*\u0010$\u001a\u00020\u00042\u0006\u0010#\u001a\u00020\u00048F@FX\u0087\u000e¢\u0006\u0012\u0012\u0004\b%\u0010&\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*¨\u0006+"}, d2 = {"findClosestParentNode", "Landroidx/compose/ui/node/LayoutNode;", "selector", "Lkotlin/Function1;", "", "setTraversalValues", "", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/semantics/SemanticsNodeWithAdjustedBounds;", "outputBeforeMap", "Landroidx/collection/MutableIntIntMap;", "outputAfterMap", "resources", "Landroid/content/res/Resources;", "isScreenReaderFocusable", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "getInfoText", "Landroidx/compose/ui/text/AnnotatedString;", "getInfoStateDescriptionOrNull", "", "createStateDescriptionForTextField", "getInfoIsCheckable", "enabled", "propertiesDeleted", "oldConfig", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "isRtl", "(Landroidx/compose/ui/semantics/SemanticsNode;)Z", "excludeLineAndPageGranularities", "accessibilityEquals", "Landroidx/compose/ui/semantics/AccessibilityAction;", "other", "", "value", "DisableContentCapture", "getDisableContentCapture$annotations", "()V", "getDisableContentCapture", "()Z", "setDisableContentCapture", "(Z)V", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\t\u001a\"\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003H\u0002\u001a.\u0010\u0005\u001a\u00020\u00062\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0018\u0010\u000f\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0012\u0010\u0012\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0010\u001a\u00020\u0011H\u0002\u001a\u001a\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u001a\u0010\u0016\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0010\u0010\u0017\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u0011H\u0002\u001a\f\u0010\u0018\u001a\u00020\u0004*\u00020\u0011H\u0002\u001a\u0014\u0010\u0019\u001a\u00020\u0004*\u00020\u00112\u0006\u0010\u001a\u001a\u00020\u001bH\u0002\u001a\f\u0010\u001e\u001a\u00020\u0004*\u00020\u0011H\u0002\u001a\u001a\u0010\u001f\u001a\u00020\u0004*\u0006\u0012\u0002\b\u00030 2\b\u0010!\u001a\u0004\u0018\u00010\"H\u0002\"\u0018\u0010\u001c\u001a\u00020\u0004*\u00020\u00118BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001d\"*\u0010$\u001a\u00020\u00042\u0006\u0010#\u001a\u00020\u00048F@FX\u0087\u000e¢\u0006\u0012\u0012\u0004\b%\u0010&\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*¨\u0006+"}, d2 = {"findClosestParentNode", "Landroidx/compose/ui/node/LayoutNode;", "selector", "Lkotlin/Function1;", "", "setTraversalValues", "", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/semantics/SemanticsNodeWithAdjustedBounds;", "outputBeforeMap", "Landroidx/collection/MutableIntIntMap;", "outputAfterMap", "resources", "Landroid/content/res/Resources;", "isScreenReaderFocusable", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "getInfoText", "Landroidx/compose/ui/text/AnnotatedString;", "getInfoStateDescriptionOrNull", "", "createStateDescriptionForTextField", "getInfoIsCheckable", "enabled", "propertiesDeleted", "oldConfig", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "isRtl", "(Landroidx/compose/ui/semantics/SemanticsNode;)Z", "excludeLineAndPageGranularities", "accessibilityEquals", "Landroidx/compose/ui/semantics/AccessibilityAction;", "other", "", "value", "DisableContentCapture", "getDisableContentCapture$annotations", "()V", "getDisableContentCapture", "()Z", "setDisableContentCapture", "(Z)V", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
 
     /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -69,9 +69,9 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final LayoutNode findClosestParentNode(LayoutNode layoutNode, Function1<? super LayoutNode, Boolean> function1) {
-        for (LayoutNode parent$ui_release = layoutNode.getParent$ui_release(); parent$ui_release != null; parent$ui_release = parent$ui_release.getParent$ui_release()) {
-            if (function1.invoke(parent$ui_release).booleanValue()) {
-                return parent$ui_release;
+        for (LayoutNode parent$ui = layoutNode.getParent$ui(); parent$ui != null; parent$ui = parent$ui.getParent$ui()) {
+            if (function1.invoke(parent$ui).booleanValue()) {
+                return parent$ui;
             }
         }
         return null;
@@ -128,30 +128,30 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean isScreenReaderFocusable(SemanticsNode semanticsNode, Resources resources) {
-        List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getContentDescription());
-        return !SemanticsOwnerKt.isHidden(semanticsNode) && (semanticsNode.getUnmergedConfig$ui_release().isMergingSemanticsOfDescendants() || (semanticsNode.isUnmergedLeafNode$ui_release() && ((list != null ? (String) CollectionsKt.firstOrNull((List<? extends Object>) list) : null) != null || getInfoText(semanticsNode) != null || getInfoStateDescriptionOrNull(semanticsNode, resources) != null || getInfoIsCheckable(semanticsNode))));
+        List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getContentDescription());
+        return !SemanticsOwnerKt.isHidden(semanticsNode) && (semanticsNode.getUnmergedConfig$ui().isMergingSemanticsOfDescendants() || (semanticsNode.isUnmergedLeafNode$ui() && ((list != null ? (String) CollectionsKt.firstOrNull((List<? extends Object>) list) : null) != null || getInfoText(semanticsNode) != null || getInfoStateDescriptionOrNull(semanticsNode, resources) != null || getInfoIsCheckable(semanticsNode))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AnnotatedString getInfoText(SemanticsNode semanticsNode) {
-        AnnotatedString annotatedString = (AnnotatedString) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getEditableText());
-        List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getText());
+        AnnotatedString annotatedString = (AnnotatedString) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getEditableText());
+        List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getText());
         return annotatedString == null ? list != null ? (AnnotatedString) CollectionsKt.firstOrNull((List<? extends Object>) list) : null : annotatedString;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final String getInfoStateDescriptionOrNull(SemanticsNode semanticsNode, Resources resources) {
-        Object orNull = SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getStateDescription());
-        ToggleableState toggleableState = (ToggleableState) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getToggleableState());
-        Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getRole());
+        Object orNull = SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getStateDescription());
+        ToggleableState toggleableState = (ToggleableState) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getToggleableState());
+        Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getRole());
         if (toggleableState != null) {
             int i = WhenMappings.$EnumSwitchMapping$0[toggleableState.ordinal()];
             if (i == 1) {
-                if ((role == null ? false : Role.m7201equalsimpl0(role.m7204unboximpl(), Role.Companion.m7211getSwitcho7Vup1c())) && orNull == null) {
+                if ((role == null ? false : Role.m7438equalsimpl0(role.m7441unboximpl(), Role.Companion.m7448getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_on);
                 }
             } else if (i == 2) {
-                if ((role == null ? false : Role.m7201equalsimpl0(role.m7204unboximpl(), Role.Companion.m7211getSwitcho7Vup1c())) && orNull == null) {
+                if ((role == null ? false : Role.m7438equalsimpl0(role.m7441unboximpl(), Role.Companion.m7448getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_off);
                 }
             } else if (i != 3) {
@@ -162,10 +162,10 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
                 }
             }
         }
-        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected());
+        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getSelected());
         if (bool != null) {
             boolean booleanValue = bool.booleanValue();
-            if (!(role == null ? false : Role.m7201equalsimpl0(role.m7204unboximpl(), Role.Companion.m7212getTabo7Vup1c())) && orNull == null) {
+            if (!(role == null ? false : Role.m7438equalsimpl0(role.m7441unboximpl(), Role.Companion.m7449getTabo7Vup1c())) && orNull == null) {
                 if (booleanValue) {
                     orNull = resources.getString(R.string.selected);
                 } else {
@@ -173,7 +173,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
                 }
             }
         }
-        ProgressBarRangeInfo progressBarRangeInfo = (ProgressBarRangeInfo) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getProgressBarRangeInfo());
+        ProgressBarRangeInfo progressBarRangeInfo = (ProgressBarRangeInfo) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getProgressBarRangeInfo());
         if (progressBarRangeInfo != null) {
             if (progressBarRangeInfo != ProgressBarRangeInfo.Companion.getIndeterminate()) {
                 if (orNull == null) {
@@ -194,14 +194,14 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
                 orNull = resources.getString(R.string.in_progress);
             }
         }
-        if (semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getEditableText())) {
+        if (semanticsNode.getUnmergedConfig$ui().contains(SemanticsProperties.INSTANCE.getEditableText())) {
             orNull = createStateDescriptionForTextField(semanticsNode, resources);
         }
         return (String) orNull;
     }
 
     private static final String createStateDescriptionForTextField(SemanticsNode semanticsNode, Resources resources) {
-        SemanticsConfiguration config = semanticsNode.copyWithMergingEnabled$ui_release().getConfig();
+        SemanticsConfiguration config = semanticsNode.copyWithMergingEnabled$ui().getConfig();
         Collection collection = (Collection) SemanticsConfigurationKt.getOrNull(config, SemanticsProperties.INSTANCE.getContentDescription());
         if (collection == null || collection.isEmpty()) {
             Collection collection2 = (Collection) SemanticsConfigurationKt.getOrNull(config, SemanticsProperties.INSTANCE.getText());
@@ -219,13 +219,13 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean getInfoIsCheckable(SemanticsNode semanticsNode) {
-        ToggleableState toggleableState = (ToggleableState) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getToggleableState());
-        Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getRole());
+        ToggleableState toggleableState = (ToggleableState) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getToggleableState());
+        Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getRole());
         boolean z = toggleableState != null;
-        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected());
+        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getSelected());
         if (bool != null) {
             bool.booleanValue();
-            if (!(role != null ? Role.m7201equalsimpl0(role.m7204unboximpl(), Role.Companion.m7212getTabo7Vup1c()) : false)) {
+            if (!(role != null ? Role.m7438equalsimpl0(role.m7441unboximpl(), Role.Companion.m7449getTabo7Vup1c()) : false)) {
                 return true;
             }
         }
@@ -255,8 +255,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean excludeLineAndPageGranularities(SemanticsNode semanticsNode) {
-        if (!semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getEditableText()) || Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getFocused()), (Object) true)) {
-            LayoutNode findClosestParentNode = findClosestParentNode(semanticsNode.getLayoutNode$ui_release(), new Function1<LayoutNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$excludeLineAndPageGranularities$ancestor$1
+        if (!semanticsNode.getUnmergedConfig$ui().contains(SemanticsProperties.INSTANCE.getEditableText()) || Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getFocused()), (Object) true)) {
+            LayoutNode findClosestParentNode = findClosestParentNode(semanticsNode.getLayoutNode$ui(), new Function1<LayoutNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$excludeLineAndPageGranularities$ancestor$1
                 /* JADX WARN: Code restructure failed: missing block: B:7:0x0017, code lost:
                     if (r3.contains(androidx.compose.ui.semantics.SemanticsProperties.INSTANCE.getEditableText()) != false) goto L7;
                  */

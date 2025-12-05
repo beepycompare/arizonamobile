@@ -5,16 +5,16 @@ import io.appmetrica.analytics.AdRevenue;
 public final class Y0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f758a;
-    public final /* synthetic */ C0611u1 b;
+    public final /* synthetic */ AdRevenue f841a;
+    public final /* synthetic */ C0610u1 b;
 
-    public Y0(C0611u1 c0611u1, AdRevenue adRevenue) {
-        this.b = c0611u1;
-        this.f758a = adRevenue;
+    public Y0(C0610u1 c0610u1, AdRevenue adRevenue) {
+        this.b = c0610u1;
+        this.f841a = adRevenue;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0611u1.a(this.b).reportAdRevenue(this.f758a);
+        C0610u1.a(this.b).reportAdRevenue(this.f841a);
     }
 }

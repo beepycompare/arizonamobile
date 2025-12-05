@@ -38,476 +38,515 @@ public final class MovableContentKt {
                 }
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(-328108779, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$1
+        return ComposableLambdaKt.composableLambdaInstance(-328108779, true, new Function2() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
-                invoke(composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C:MovableContent.kt#9igjgp");
-                if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-328108779, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:40)");
-                }
-                composer.insertMovableContent(MovableContent.this, null);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2) {
+                Unit movableContentOf$lambda$0;
+                movableContentOf$lambda$0 = MovableContentKt.movableContentOf$lambda$0(MovableContent.this, (Composer) obj, ((Integer) obj2).intValue());
+                return movableContentOf$lambda$0;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$0(MovableContent movableContent, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C:MovableContent.kt#9igjgp");
+        if (composer.shouldExecute((i & 3) != 2, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-328108779, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:40)");
+            }
+            composer.insertMovableContent(movableContent, null);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <P> Function3<P, Composer, Integer, Unit> movableContentOf(Function3<? super P, ? super Composer, ? super Integer, Unit> function3) {
         final MovableContent movableContent = new MovableContent(function3);
-        return ComposableLambdaKt.composableLambdaInstance(1032736913, true, new Function3<P, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$2
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(1032736913, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentOf$2<P>) obj, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(P p, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "CN(it):MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i |= (i & 8) == 0 ? composer.changed(p) : composer.changedInstance(p) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1032736913, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:63)");
-                }
-                composer.insertMovableContent(movableContent, p);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentOf$lambda$1;
+                movableContentOf$lambda$1 = MovableContentKt.movableContentOf$lambda$1(MovableContent.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentOf$lambda$1;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$1(MovableContent movableContent, Object obj, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "CN(it):MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i |= (i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(1032736913, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:63)");
+            }
+            composer.insertMovableContent(movableContent, obj);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <P1, P2> Function4<P1, P2, Composer, Integer, Unit> movableContentOf(final Function4<? super P1, ? super P2, ? super Composer, ? super Integer, Unit> function4) {
-        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(561467799, true, new Function3<Pair<? extends P1, ? extends P2>, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$movableContent$2
+        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(561467799, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Composer composer, Integer num) {
-                invoke((Pair) obj, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Pair<? extends P1, ? extends P2> pair, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "CN(it)87@3550L28:MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i |= (i & 8) == 0 ? composer.changed(pair) : composer.changedInstance(pair) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(561467799, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:87)");
-                }
-                function4.invoke(pair.getFirst(), pair.getSecond(), composer, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentOf$lambda$2;
+                movableContentOf$lambda$2 = MovableContentKt.movableContentOf$lambda$2(Function4.this, (Pair) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentOf$lambda$2;
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(-525773808, true, new Function4<P1, P2, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$3
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(-525773808, true, new Function4() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function4
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentOf$3<P1, P2>) obj, obj2, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(P1 p1, P2 p2, Composer composer, int i) {
-                int i2;
-                ComposerKt.sourceInformation(composer, "CN(p1,p2):MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i2 = ((i & 8) == 0 ? composer.changed(p1) : composer.changedInstance(p1) ? 4 : 2) | i;
-                } else {
-                    i2 = i;
-                }
-                if ((i & 48) == 0) {
-                    i2 |= (i & 64) == 0 ? composer.changed(p2) : composer.changedInstance(p2) ? 32 : 16;
-                }
-                if (!composer.shouldExecute((i2 & 147) != 146, i2 & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-525773808, i2, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:88)");
-                }
-                composer.insertMovableContent(movableContent, TuplesKt.to(p1, p2));
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
+                Unit movableContentOf$lambda$3;
+                movableContentOf$lambda$3 = MovableContentKt.movableContentOf$lambda$3(MovableContent.this, obj, obj2, (Composer) obj3, ((Integer) obj4).intValue());
+                return movableContentOf$lambda$3;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$2(Function4 function4, Pair pair, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "CN(it)87@3550L28:MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i |= (i & 8) == 0 ? composer.changed(pair) : composer.changedInstance(pair) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(561467799, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:87)");
+            }
+            function4.invoke(pair.getFirst(), pair.getSecond(), composer, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$3(MovableContent movableContent, Object obj, Object obj2, Composer composer, int i) {
+        int i2;
+        ComposerKt.sourceInformation(composer, "CN(p1,p2):MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i2 = ((i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            i2 |= (i & 64) == 0 ? composer.changed(obj2) : composer.changedInstance(obj2) ? 32 : 16;
+        }
+        if (composer.shouldExecute((i2 & 147) != 146, i2 & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-525773808, i2, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:88)");
+            }
+            composer.insertMovableContent(movableContent, TuplesKt.to(obj, obj2));
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <P1, P2, P3> Function5<P1, P2, P3, Composer, Integer, Unit> movableContentOf(final Function5<? super P1, ? super P2, ? super P3, ? super Composer, ? super Integer, Unit> function5) {
-        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-846116651, true, new Function3<Triple<? extends P1, ? extends P2, ? extends P3>, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$movableContent$3
+        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-846116651, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Composer composer, Integer num) {
-                invoke((Triple) obj, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Triple<? extends P1, ? extends P2, ? extends P3> triple, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "CN(it)113@4607L38:MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i |= (i & 8) == 0 ? composer.changed(triple) : composer.changedInstance(triple) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-846116651, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:113)");
-                }
-                function5.invoke(triple.getFirst(), triple.getSecond(), triple.getThird(), composer, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentOf$lambda$4;
+                movableContentOf$lambda$4 = MovableContentKt.movableContentOf$lambda$4(Function5.this, (Triple) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentOf$lambda$4;
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(1477386365, true, new Function5<P1, P2, P3, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$4
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(1477386365, true, new Function5() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function5
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2, Object obj3, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentOf$4<P1, P2, P3>) obj, obj2, obj3, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(P1 p1, P2 p2, P3 p3, Composer composer, int i) {
-                int i2;
-                ComposerKt.sourceInformation(composer, "CN(p1,p2,p3):MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i2 = ((i & 8) == 0 ? composer.changed(p1) : composer.changedInstance(p1) ? 4 : 2) | i;
-                } else {
-                    i2 = i;
-                }
-                if ((i & 48) == 0) {
-                    i2 |= (i & 64) == 0 ? composer.changed(p2) : composer.changedInstance(p2) ? 32 : 16;
-                }
-                if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                    i2 |= (i & 512) == 0 ? composer.changed(p3) : composer.changedInstance(p3) ? 256 : 128;
-                }
-                if (!composer.shouldExecute((i2 & 1171) != 1170, i2 & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1477386365, i2, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:115)");
-                }
-                composer.insertMovableContent(movableContent, new Triple(p1, p2, p3));
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+                Unit movableContentOf$lambda$5;
+                movableContentOf$lambda$5 = MovableContentKt.movableContentOf$lambda$5(MovableContent.this, obj, obj2, obj3, (Composer) obj4, ((Integer) obj5).intValue());
+                return movableContentOf$lambda$5;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$4(Function5 function5, Triple triple, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "CN(it)113@4607L38:MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i |= (i & 8) == 0 ? composer.changed(triple) : composer.changedInstance(triple) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-846116651, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:113)");
+            }
+            function5.invoke(triple.getFirst(), triple.getSecond(), triple.getThird(), composer, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$5(MovableContent movableContent, Object obj, Object obj2, Object obj3, Composer composer, int i) {
+        int i2;
+        ComposerKt.sourceInformation(composer, "CN(p1,p2,p3):MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i2 = ((i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            i2 |= (i & 64) == 0 ? composer.changed(obj2) : composer.changedInstance(obj2) ? 32 : 16;
+        }
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i2 |= (i & 512) == 0 ? composer.changed(obj3) : composer.changedInstance(obj3) ? 256 : 128;
+        }
+        if (!composer.shouldExecute((i2 & 1171) != 1170, i2 & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(1477386365, i2, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:115)");
+            }
+            composer.insertMovableContent(movableContent, new Triple(obj, obj2, obj3));
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <P1, P2, P3, P4> Function6<P1, P2, P3, P4, Composer, Integer, Unit> movableContentOf(final Function6<? super P1, ? super P2, ? super P3, ? super P4, ? super Composer, ? super Integer, Unit> function6) {
-        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(743481490, true, new Function3<Object[], Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$movableContent$4
+        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(743481490, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object[] objArr, Composer composer, Integer num) {
-                invoke(objArr, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Object[] objArr, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C143@5808L47:MovableContent.kt#9igjgp");
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(743481490, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:142)");
-                }
-                function6.invoke(objArr[0], objArr[1], objArr[2], objArr[3], composer, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentOf$lambda$6;
+                movableContentOf$lambda$6 = MovableContentKt.movableContentOf$lambda$6(Function6.this, (Object[]) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentOf$lambda$6;
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(-1304803723, true, new Function6<P1, P2, P3, P4, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentOf$5
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(-1304803723, true, new Function6() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function6
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2, Object obj3, Object obj4, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentOf$5<P1, P2, P3, P4>) obj, obj2, obj3, obj4, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(P1 p1, P2 p2, P3 p3, P4 p4, Composer composer, int i) {
-                int i2;
-                ComposerKt.sourceInformation(composer, "CN(p1,p2,p3,p4):MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i2 = ((i & 8) == 0 ? composer.changed(p1) : composer.changedInstance(p1) ? 4 : 2) | i;
-                } else {
-                    i2 = i;
-                }
-                if ((i & 48) == 0) {
-                    i2 |= (i & 64) == 0 ? composer.changed(p2) : composer.changedInstance(p2) ? 32 : 16;
-                }
-                if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                    i2 |= (i & 512) == 0 ? composer.changed(p3) : composer.changedInstance(p3) ? 256 : 128;
-                }
-                if ((i & 3072) == 0) {
-                    i2 |= (i & 4096) == 0 ? composer.changed(p4) : composer.changedInstance(p4) ? 2048 : 1024;
-                }
-                if (!composer.shouldExecute((i2 & 9363) != 9362, i2 & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-1304803723, i2, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:146)");
-                }
-                composer.insertMovableContent(movableContent, new Object[]{p1, p2, p3, p4});
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6) {
+                Unit movableContentOf$lambda$7;
+                movableContentOf$lambda$7 = MovableContentKt.movableContentOf$lambda$7(MovableContent.this, obj, obj2, obj3, obj4, (Composer) obj5, ((Integer) obj6).intValue());
+                return movableContentOf$lambda$7;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$6(Function6 function6, Object[] objArr, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C143@5808L47:MovableContent.kt#9igjgp");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(743481490, i, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:142)");
+        }
+        function6.invoke(objArr[0], objArr[1], objArr[2], objArr[3], composer, 0);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentOf$lambda$7(MovableContent movableContent, Object obj, Object obj2, Object obj3, Object obj4, Composer composer, int i) {
+        int i2;
+        ComposerKt.sourceInformation(composer, "CN(p1,p2,p3,p4):MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i2 = ((i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            i2 |= (i & 64) == 0 ? composer.changed(obj2) : composer.changedInstance(obj2) ? 32 : 16;
+        }
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i2 |= (i & 512) == 0 ? composer.changed(obj3) : composer.changedInstance(obj3) ? 256 : 128;
+        }
+        if ((i & 3072) == 0) {
+            i2 |= (i & 4096) == 0 ? composer.changed(obj4) : composer.changedInstance(obj4) ? 2048 : 1024;
+        }
+        if (!composer.shouldExecute((i2 & 9363) != 9362, i2 & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1304803723, i2, -1, "androidx.compose.runtime.movableContentOf.<anonymous> (MovableContent.kt:146)");
+            }
+            composer.insertMovableContent(movableContent, new Object[]{obj, obj2, obj3, obj4});
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <R> Function3<R, Composer, Integer, Unit> movableContentWithReceiverOf(final Function3<? super R, ? super Composer, ? super Integer, Unit> function3) {
-        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(668517896, true, new Function3<R, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$movableContent$1
-            /* JADX WARN: Multi-variable type inference failed */
+        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(668517896, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentWithReceiverOf$movableContent$1<R>) obj, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(R r, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "CN(it)171@6908L9:MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i |= (i & 8) == 0 ? composer.changed(r) : composer.changedInstance(r) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(668517896, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:171)");
-                }
-                function3.invoke(r, composer, Integer.valueOf(i & 14));
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentWithReceiverOf$lambda$0;
+                movableContentWithReceiverOf$lambda$0 = MovableContentKt.movableContentWithReceiverOf$lambda$0(Function3.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentWithReceiverOf$lambda$0;
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(-1655274392, true, new Function3<R, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$1
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(-1655274392, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentWithReceiverOf$1<R>) obj, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(R r, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C:MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i |= (i & 8) == 0 ? composer.changed(r) : composer.changedInstance(r) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-1655274392, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:172)");
-                }
-                composer.insertMovableContent(movableContent, r);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentWithReceiverOf$lambda$1;
+                movableContentWithReceiverOf$lambda$1 = MovableContentKt.movableContentWithReceiverOf$lambda$1(MovableContent.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentWithReceiverOf$lambda$1;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$0(Function3 function3, Object obj, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "CN(it)171@6908L9:MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i |= (i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(668517896, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:171)");
+            }
+            function3.invoke(obj, composer, Integer.valueOf(i & 14));
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$1(MovableContent movableContent, Object obj, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C:MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i |= (i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1655274392, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:172)");
+            }
+            composer.insertMovableContent(movableContent, obj);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <R, P> Function4<R, P, Composer, Integer, Unit> movableContentWithReceiverOf(final Function4<? super R, ? super P, ? super Composer, ? super Integer, Unit> function4) {
-        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-95003188, true, new Function3<Pair<? extends R, ? extends P>, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$movableContent$2
+        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-95003188, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Composer composer, Integer num) {
-                invoke((Pair) obj, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Pair<? extends R, ? extends P> pair, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "CN(it)196@7934L18:MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i |= (i & 8) == 0 ? composer.changed(pair) : composer.changedInstance(pair) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-95003188, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:196)");
-                }
-                function4.invoke(pair.getFirst(), pair.getSecond(), composer, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentWithReceiverOf$lambda$2;
+                movableContentWithReceiverOf$lambda$2 = MovableContentKt.movableContentWithReceiverOf$lambda$2(Function4.this, (Pair) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentWithReceiverOf$lambda$2;
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(1349529900, true, new Function4<R, P, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$2
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(1349529900, true, new Function4() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function4
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentWithReceiverOf$2<P, R>) obj, obj2, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(R r, P p, Composer composer, int i) {
-                int i2;
-                ComposerKt.sourceInformation(composer, "CN(it):MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i2 = ((i & 8) == 0 ? composer.changed(r) : composer.changedInstance(r) ? 4 : 2) | i;
-                } else {
-                    i2 = i;
-                }
-                if ((i & 48) == 0) {
-                    i2 |= (i & 64) == 0 ? composer.changed(p) : composer.changedInstance(p) ? 32 : 16;
-                }
-                if (!composer.shouldExecute((i2 & 147) != 146, i2 & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1349529900, i2, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:197)");
-                }
-                composer.insertMovableContent(movableContent, TuplesKt.to(r, p));
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
+                Unit movableContentWithReceiverOf$lambda$3;
+                movableContentWithReceiverOf$lambda$3 = MovableContentKt.movableContentWithReceiverOf$lambda$3(MovableContent.this, obj, obj2, (Composer) obj3, ((Integer) obj4).intValue());
+                return movableContentWithReceiverOf$lambda$3;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$2(Function4 function4, Pair pair, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "CN(it)196@7934L18:MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i |= (i & 8) == 0 ? composer.changed(pair) : composer.changedInstance(pair) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-95003188, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:196)");
+            }
+            function4.invoke(pair.getFirst(), pair.getSecond(), composer, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$3(MovableContent movableContent, Object obj, Object obj2, Composer composer, int i) {
+        int i2;
+        ComposerKt.sourceInformation(composer, "CN(it):MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i2 = ((i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            i2 |= (i & 64) == 0 ? composer.changed(obj2) : composer.changedInstance(obj2) ? 32 : 16;
+        }
+        if (composer.shouldExecute((i2 & 147) != 146, i2 & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(1349529900, i2, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:197)");
+            }
+            composer.insertMovableContent(movableContent, TuplesKt.to(obj, obj2));
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <R, P1, P2> Function5<R, P1, P2, Composer, Integer, Unit> movableContentWithReceiverOf(final Function5<? super R, ? super P1, ? super P2, ? super Composer, ? super Integer, Unit> function5) {
-        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-963896566, true, new Function3<Triple<? extends R, ? extends P1, ? extends P2>, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$movableContent$3
+        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-963896566, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Composer composer, Integer num) {
-                invoke((Triple) obj, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(Triple<? extends R, ? extends P1, ? extends P2> triple, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "CN(it)221@8997L28:MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i |= (i & 8) == 0 ? composer.changed(triple) : composer.changedInstance(triple) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-963896566, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:221)");
-                }
-                function5.invoke(triple.getFirst(), triple.getSecond(), triple.getThird(), composer, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentWithReceiverOf$lambda$4;
+                movableContentWithReceiverOf$lambda$4 = MovableContentKt.movableContentWithReceiverOf$lambda$4(Function5.this, (Triple) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentWithReceiverOf$lambda$4;
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(2121535275, true, new Function5<R, P1, P2, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$3
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(2121535275, true, new Function5() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function5
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2, Object obj3, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentWithReceiverOf$3<P1, P2, R>) obj, obj2, obj3, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(R r, P1 p1, P2 p2, Composer composer, int i) {
-                int i2;
-                ComposerKt.sourceInformation(composer, "CN(p1,p2):MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i2 = ((i & 8) == 0 ? composer.changed(r) : composer.changedInstance(r) ? 4 : 2) | i;
-                } else {
-                    i2 = i;
-                }
-                if ((i & 48) == 0) {
-                    i2 |= (i & 64) == 0 ? composer.changed(p1) : composer.changedInstance(p1) ? 32 : 16;
-                }
-                if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                    i2 |= (i & 512) == 0 ? composer.changed(p2) : composer.changedInstance(p2) ? 256 : 128;
-                }
-                if (!composer.shouldExecute((i2 & 1171) != 1170, i2 & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(2121535275, i2, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:222)");
-                }
-                composer.insertMovableContent(movableContent, new Triple(r, p1, p2));
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+                Unit movableContentWithReceiverOf$lambda$5;
+                movableContentWithReceiverOf$lambda$5 = MovableContentKt.movableContentWithReceiverOf$lambda$5(MovableContent.this, obj, obj2, obj3, (Composer) obj4, ((Integer) obj5).intValue());
+                return movableContentWithReceiverOf$lambda$5;
             }
         });
     }
 
-    public static final <R, P1, P2, P3> Function6<R, P1, P2, P3, Composer, Integer, Unit> movableContentWithReceiverOf(final Function6<? super R, ? super P1, ? super P2, ? super P3, ? super Composer, ? super Integer, Unit> function6) {
-        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-346590649, true, new Function3<Object[], Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$movableContent$4
-            @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(Object[] objArr, Composer composer, Integer num) {
-                invoke(objArr, composer, num.intValue());
-                return Unit.INSTANCE;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$4(Function5 function5, Triple triple, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "CN(it)221@8997L28:MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i |= (i & 8) == 0 ? composer.changed(triple) : composer.changedInstance(triple) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-963896566, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:221)");
             }
+            function5.invoke(triple.getFirst(), triple.getSecond(), triple.getThird(), composer, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
 
-            public final void invoke(Object[] objArr, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C249@10205L37:MovableContent.kt#9igjgp");
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-346590649, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:248)");
-                }
-                function6.invoke(objArr[0], objArr[1], objArr[2], objArr[3], composer, 0);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$5(MovableContent movableContent, Object obj, Object obj2, Object obj3, Composer composer, int i) {
+        int i2;
+        ComposerKt.sourceInformation(composer, "CN(p1,p2):MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i2 = ((i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            i2 |= (i & 64) == 0 ? composer.changed(obj2) : composer.changedInstance(obj2) ? 32 : 16;
+        }
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i2 |= (i & 512) == 0 ? composer.changed(obj3) : composer.changedInstance(obj3) ? 256 : 128;
+        }
+        if (composer.shouldExecute((i2 & 1171) != 1170, i2 & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(2121535275, i2, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:222)");
+            }
+            composer.insertMovableContent(movableContent, new Triple(obj, obj2, obj3));
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    public static final <R, P1, P2, P3> Function6<R, P1, P2, P3, Composer, Integer, Unit> movableContentWithReceiverOf(final Function6<? super R, ? super P1, ? super P2, ? super P3, ? super Composer, ? super Integer, Unit> function6) {
+        final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-346590649, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function3
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Unit movableContentWithReceiverOf$lambda$6;
+                movableContentWithReceiverOf$lambda$6 = MovableContentKt.movableContentWithReceiverOf$lambda$6(Function6.this, (Object[]) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return movableContentWithReceiverOf$lambda$6;
             }
         }));
-        return ComposableLambdaKt.composableLambdaInstance(572330192, true, new Function6<R, P1, P2, P3, Composer, Integer, Unit>() { // from class: androidx.compose.runtime.MovableContentKt$movableContentWithReceiverOf$4
-            /* JADX WARN: Multi-variable type inference failed */
+        return ComposableLambdaKt.composableLambdaInstance(572330192, true, new Function6() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function6
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2, Object obj3, Object obj4, Composer composer, Integer num) {
-                invoke((MovableContentKt$movableContentWithReceiverOf$4<P1, P2, P3, R>) obj, obj2, obj3, obj4, composer, num.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(R r, P1 p1, P2 p2, P3 p3, Composer composer, int i) {
-                int i2;
-                ComposerKt.sourceInformation(composer, "CN(p1,p2,p3):MovableContent.kt#9igjgp");
-                if ((i & 6) == 0) {
-                    i2 = ((i & 8) == 0 ? composer.changed(r) : composer.changedInstance(r) ? 4 : 2) | i;
-                } else {
-                    i2 = i;
-                }
-                if ((i & 48) == 0) {
-                    i2 |= (i & 64) == 0 ? composer.changed(p1) : composer.changedInstance(p1) ? 32 : 16;
-                }
-                if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                    i2 |= (i & 512) == 0 ? composer.changed(p2) : composer.changedInstance(p2) ? 256 : 128;
-                }
-                if ((i & 3072) == 0) {
-                    i2 |= (i & 4096) == 0 ? composer.changed(p3) : composer.changedInstance(p3) ? 2048 : 1024;
-                }
-                if (!composer.shouldExecute((i2 & 9363) != 9362, i2 & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(572330192, i2, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:252)");
-                }
-                composer.insertMovableContent(movableContent, new Object[]{r, p1, p2, p3});
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6) {
+                Unit movableContentWithReceiverOf$lambda$7;
+                movableContentWithReceiverOf$lambda$7 = MovableContentKt.movableContentWithReceiverOf$lambda$7(MovableContent.this, obj, obj2, obj3, obj4, (Composer) obj5, ((Integer) obj6).intValue());
+                return movableContentWithReceiverOf$lambda$7;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$6(Function6 function6, Object[] objArr, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C249@10205L37:MovableContent.kt#9igjgp");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-346590649, i, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:248)");
+        }
+        function6.invoke(objArr[0], objArr[1], objArr[2], objArr[3], composer, 0);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit movableContentWithReceiverOf$lambda$7(MovableContent movableContent, Object obj, Object obj2, Object obj3, Object obj4, Composer composer, int i) {
+        int i2;
+        ComposerKt.sourceInformation(composer, "CN(p1,p2,p3):MovableContent.kt#9igjgp");
+        if ((i & 6) == 0) {
+            i2 = ((i & 8) == 0 ? composer.changed(obj) : composer.changedInstance(obj) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            i2 |= (i & 64) == 0 ? composer.changed(obj2) : composer.changedInstance(obj2) ? 32 : 16;
+        }
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i2 |= (i & 512) == 0 ? composer.changed(obj3) : composer.changedInstance(obj3) ? 256 : 128;
+        }
+        if ((i & 3072) == 0) {
+            i2 |= (i & 4096) == 0 ? composer.changed(obj4) : composer.changedInstance(obj4) ? 2048 : 1024;
+        }
+        if (!composer.shouldExecute((i2 & 9363) != 9362, i2 & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(572330192, i2, -1, "androidx.compose.runtime.movableContentWithReceiverOf.<anonymous> (MovableContent.kt:252)");
+            }
+            composer.insertMovableContent(movableContent, new Object[]{obj, obj2, obj3, obj4});
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
     }
 }

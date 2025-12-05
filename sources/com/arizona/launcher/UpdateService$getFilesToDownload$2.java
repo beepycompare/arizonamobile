@@ -58,14 +58,14 @@ public final class UpdateService$getFilesToDownload$2 extends SuspendLambda impl
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x01b0  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0096 -> B:15:0x0099). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x00f6 -> B:35:0x01ac). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0103 -> B:35:0x01ac). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x0105 -> B:35:0x01ac). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x013f -> B:35:0x01ac). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x017b -> B:35:0x01ac). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x017d -> B:35:0x01ac). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x00f6 -> B:35:0x01ad). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0103 -> B:35:0x01ad). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x0105 -> B:35:0x01ad). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x0140 -> B:35:0x01ad). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x017c -> B:35:0x01ad). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x017e -> B:35:0x01ad). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.

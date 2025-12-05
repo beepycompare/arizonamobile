@@ -29,7 +29,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
-import androidx.core.view.ViewCompat;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import com.google.android.vending.expansion.downloader.impl.DownloadsDB;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -645,7 +644,7 @@ public class IconCompat extends CustomVersionedParcelable {
             canvas.drawCircle(f2, f2, f3, paint);
             paint.clearShadowLayer();
         }
-        paint.setColor(ViewCompat.MEASURED_STATE_MASK);
+        paint.setColor(-16777216);
         BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         Matrix matrix = new Matrix();
         matrix.setTranslate((-(bitmap.getWidth() - min)) / 2.0f, (-(bitmap.getHeight() - min)) / 2.0f);

@@ -1,6 +1,6 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Zm extends AbstractC0614u4 {
+public final class Zm extends AbstractC0613u4 {
     public final Mn g;
 
     public Zm(String str, String str2, Mn mn, to toVar, K2 k2) {
@@ -8,10 +8,10 @@ public final class Zm extends AbstractC0614u4 {
         this.g = mn;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0614u4
-    public final void a(C0281go c0281go) {
+    @Override // io.appmetrica.analytics.impl.AbstractC0613u4
+    public final void a(C0280go c0280go) {
         String str = (String) this.g.a((String) this.f);
-        c0281go.d.f946a = str == null ? new byte[0] : str.getBytes();
+        c0280go.d.f1029a = str == null ? new byte[0] : str.getBytes();
     }
 
     public final Mn h() {

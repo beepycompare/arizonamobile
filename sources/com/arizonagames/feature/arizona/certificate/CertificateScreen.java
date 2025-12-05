@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.view.ViewCompat;
 import androidx.media3.common.C;
 import com.arizonagames.feature.arizona.certificate.databinding.CertificateInfoItemBinding;
 import com.arizonagames.feature.arizona.certificate.databinding.CertificateInfoItemLeftBinding;
@@ -373,7 +372,7 @@ public final class CertificateScreen extends SAMPUIElement {
             }
         }
         QualityType qualityType = (QualityType) obj;
-        this.binding.textBonus.setText(UtilsKt.buildSpannableList(CollectionsKt.toList(arrayList), ViewCompat.MEASURED_STATE_MASK, true, Integer.valueOf(Color.parseColor((qualityType == null || (colors = qualityType.getColors()) == null || (r8 = (String) CollectionsKt.getOrNull(colors, 0)) == null) ? "#9A9A9A" : "#9A9A9A")), true));
+        this.binding.textBonus.setText(UtilsKt.buildSpannableList(CollectionsKt.toList(arrayList), -16777216, true, Integer.valueOf(Color.parseColor((qualityType == null || (colors = qualityType.getColors()) == null || (r8 = (String) CollectionsKt.getOrNull(colors, 0)) == null) ? "#9A9A9A" : "#9A9A9A")), true));
     }
 
     private final void loadCars() {

@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Shadow.kt */
-@Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B(\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0017\u0010\u0007\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\n¢\u0006\u0004\b\u000b\u0010\fJ\b\u0010@\u001a\u00020\tH\u0016J\b\u0010A\u001a\u00020\tH\u0016J\b\u0010B\u001a\u00020\tH\u0002J'\u0010C\u001a\u00020\t2\u0006\u0010\u0005\u001a\u00020\u00062\u0017\u0010\u0007\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\nJ\f\u0010D\u001a\u00020\t*\u00020EH\u0016J\b\u0010F\u001a\u00020\u0012H\u0002J\b\u0010G\u001a\u00020\tH\u0016J\b\u0010H\u001a\u00020\tH\u0002J\u0013\u0010I\u001a\u00020\u00142\b\u0010J\u001a\u0004\u0018\u00010KH\u0096\u0002J\b\u0010L\u001a\u00020MH\u0016R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R@\u0010\u0007\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\n2\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\n@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0018\u001a\u00020\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001bR$\u0010\u001e\u001a\u00020\u00192\u0006\u0010\u0015\u001a\u00020\u0019@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010\u001b\"\u0004\b \u0010!R$\u0010\"\u001a\u00020\u00192\u0006\u0010\u0015\u001a\u00020\u0019@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010\u001b\"\u0004\b$\u0010!R&\u0010&\u001a\u00020%2\u0006\u0010\u0015\u001a\u00020%@VX\u0096\u000e¢\u0006\u0010\n\u0002\u0010+\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R&\u0010-\u001a\u00020,2\u0006\u0010\u0015\u001a\u00020,@VX\u0096\u000e¢\u0006\u0010\n\u0002\u0010+\u001a\u0004\b.\u0010(\"\u0004\b/\u0010*R(\u00101\u001a\u0004\u0018\u0001002\b\u0010\u0015\u001a\u0004\u0018\u000100@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b2\u00103\"\u0004\b4\u00105R$\u00106\u001a\u00020\u00192\u0006\u0010\u0015\u001a\u00020\u0019@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u0010\u001b\"\u0004\b8\u0010!R&\u0010:\u001a\u0002092\u0006\u0010\u0015\u001a\u000209@VX\u0096\u000e¢\u0006\u0010\n\u0002\u0010?\u001a\u0004\b;\u0010<\"\u0004\b=\u0010>¨\u0006N"}, d2 = {"Landroidx/compose/ui/draw/BlockDropShadowNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/ObserverModifierNode;", "Landroidx/compose/ui/draw/DropShadowScope;", "shape", "Landroidx/compose/ui/graphics/Shape;", "block", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "<init>", "(Landroidx/compose/ui/graphics/Shape;Lkotlin/jvm/functions/Function1;)V", "densityObject", "Landroidx/compose/ui/unit/Density;", "targetShadow", "Landroidx/compose/ui/graphics/shadow/Shadow;", "shadowPainter", "Landroidx/compose/ui/graphics/shadow/DropShadowPainter;", "blockRead", "", "value", "setBlock", "(Lkotlin/jvm/functions/Function1;)V", "density", "", "getDensity", "()F", "fontScale", "getFontScale", "radius", "getRadius", "setRadius", "(F)V", "spread", "getSpread", "setSpread", "Landroidx/compose/ui/geometry/Offset;", TypedValues.CycleType.S_WAVE_OFFSET, "getOffset-F1C5BW0", "()J", "setOffset-k-4lQ0M", "(J)V", "J", "Landroidx/compose/ui/graphics/Color;", "color", "getColor-0d7_KjU", "setColor-8_81llA", "Landroidx/compose/ui/graphics/Brush;", "brush", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "setBrush", "(Landroidx/compose/ui/graphics/Brush;)V", "alpha", "getAlpha", "setAlpha", "Landroidx/compose/ui/graphics/BlendMode;", "blendMode", "getBlendMode-0nO6VwU", "()I", "setBlendMode-s9anfk8", "(I)V", "I", "onAttach", "onDensityChange", "updateDensity", "update", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "obtainPainter", "onObservedReadsChanged", "invalidateShadow", "equals", "other", "", "hashCode", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B(\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0017\u0010\u0007\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\n¢\u0006\u0004\b\u000b\u0010\fJ\b\u0010@\u001a\u00020\tH\u0016J\b\u0010A\u001a\u00020\tH\u0016J\b\u0010B\u001a\u00020\tH\u0002J'\u0010C\u001a\u00020\t2\u0006\u0010\u0005\u001a\u00020\u00062\u0017\u0010\u0007\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\nJ\f\u0010D\u001a\u00020\t*\u00020EH\u0016J\b\u0010F\u001a\u00020\u0012H\u0002J\b\u0010G\u001a\u00020\tH\u0016J\b\u0010H\u001a\u00020\tH\u0002J\u0013\u0010I\u001a\u00020\u00142\b\u0010J\u001a\u0004\u0018\u00010KH\u0096\u0002J\b\u0010L\u001a\u00020MH\u0016R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R@\u0010\u0007\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\n2\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0002\b\n@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0018\u001a\u00020\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001bR$\u0010\u001e\u001a\u00020\u00192\u0006\u0010\u0015\u001a\u00020\u0019@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010\u001b\"\u0004\b \u0010!R$\u0010\"\u001a\u00020\u00192\u0006\u0010\u0015\u001a\u00020\u0019@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010\u001b\"\u0004\b$\u0010!R&\u0010&\u001a\u00020%2\u0006\u0010\u0015\u001a\u00020%@VX\u0096\u000e¢\u0006\u0010\n\u0002\u0010+\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R&\u0010-\u001a\u00020,2\u0006\u0010\u0015\u001a\u00020,@VX\u0096\u000e¢\u0006\u0010\n\u0002\u0010+\u001a\u0004\b.\u0010(\"\u0004\b/\u0010*R(\u00101\u001a\u0004\u0018\u0001002\b\u0010\u0015\u001a\u0004\u0018\u000100@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b2\u00103\"\u0004\b4\u00105R$\u00106\u001a\u00020\u00192\u0006\u0010\u0015\u001a\u00020\u0019@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u0010\u001b\"\u0004\b8\u0010!R&\u0010:\u001a\u0002092\u0006\u0010\u0015\u001a\u000209@VX\u0096\u000e¢\u0006\u0010\n\u0002\u0010?\u001a\u0004\b;\u0010<\"\u0004\b=\u0010>¨\u0006N"}, d2 = {"Landroidx/compose/ui/draw/BlockDropShadowNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/ObserverModifierNode;", "Landroidx/compose/ui/draw/DropShadowScope;", "shape", "Landroidx/compose/ui/graphics/Shape;", "block", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "<init>", "(Landroidx/compose/ui/graphics/Shape;Lkotlin/jvm/functions/Function1;)V", "densityObject", "Landroidx/compose/ui/unit/Density;", "targetShadow", "Landroidx/compose/ui/graphics/shadow/Shadow;", "shadowPainter", "Landroidx/compose/ui/graphics/shadow/DropShadowPainter;", "blockRead", "", "value", "setBlock", "(Lkotlin/jvm/functions/Function1;)V", "density", "", "getDensity", "()F", "fontScale", "getFontScale", "radius", "getRadius", "setRadius", "(F)V", "spread", "getSpread", "setSpread", "Landroidx/compose/ui/geometry/Offset;", TypedValues.CycleType.S_WAVE_OFFSET, "getOffset-F1C5BW0", "()J", "setOffset-k-4lQ0M", "(J)V", "J", "Landroidx/compose/ui/graphics/Color;", "color", "getColor-0d7_KjU", "setColor-8_81llA", "Landroidx/compose/ui/graphics/Brush;", "brush", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "setBrush", "(Landroidx/compose/ui/graphics/Brush;)V", "alpha", "getAlpha", "setAlpha", "Landroidx/compose/ui/graphics/BlendMode;", "blendMode", "getBlendMode-0nO6VwU", "()I", "setBlendMode-s9anfk8", "(I)V", "I", "onAttach", "onDensityChange", "updateDensity", "update", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "obtainPainter", "onObservedReadsChanged", "invalidateShadow", "equals", "other", "", "hashCode", "", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BlockDropShadowNode extends Modifier.Node implements DrawModifierNode, ObserverModifierNode, DropShadowScope {
     public static final int $stable = 0;
@@ -39,10 +39,10 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
     private Shape shape;
     private float spread;
     private Shadow targetShadow;
-    private long offset = Offset.Companion.m5052getZeroF1C5BW0();
-    private long color = Color.Companion.m5306getBlack0d7_KjU();
+    private long offset = Offset.Companion.m5195getZeroF1C5BW0();
+    private long color = Color.Companion.m5450getBlack0d7_KjU();
     private float alpha = 1.0f;
-    private int blendMode = BlendMode.Companion.m5221getSrcOver0nO6VwU();
+    private int blendMode = BlendMode.Companion.m5364getSrcOver0nO6VwU();
 
     public BlockDropShadowNode(Shape shape, Function1<? super DropShadowScope, Unit> function1) {
         this.shape = shape;
@@ -105,14 +105,14 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: getOffset-F1C5BW0  reason: not valid java name */
-    public long mo4801getOffsetF1C5BW0() {
+    public long mo4940getOffsetF1C5BW0() {
         return this.offset;
     }
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: setOffset-k-4lQ0M  reason: not valid java name */
-    public void mo4804setOffsetk4lQ0M(long j) {
-        if (Offset.m5033equalsimpl0(this.offset, j)) {
+    public void mo4943setOffsetk4lQ0M(long j) {
+        if (Offset.m5176equalsimpl0(this.offset, j)) {
             return;
         }
         this.offset = j;
@@ -121,17 +121,17 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public long mo4800getColor0d7_KjU() {
+    public long mo4939getColor0d7_KjU() {
         return this.color;
     }
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: setColor-8_81llA  reason: not valid java name */
-    public void mo4803setColor8_81llA(long j) {
+    public void mo4942setColor8_81llA(long j) {
         if (j == 16) {
-            j = Color.Companion.m5306getBlack0d7_KjU();
+            j = Color.Companion.m5450getBlack0d7_KjU();
         }
-        if (Color.m5281equalsimpl0(this.color, j)) {
+        if (Color.m5425equalsimpl0(this.color, j)) {
             return;
         }
         this.color = j;
@@ -168,14 +168,14 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public int mo4799getBlendMode0nO6VwU() {
+    public int mo4938getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    public void mo4802setBlendModes9anfk8(int i) {
-        if (BlendMode.m5190equalsimpl0(this.blendMode, i)) {
+    public void mo4941setBlendModes9anfk8(int i) {
+        if (BlendMode.m5333equalsimpl0(this.blendMode, i)) {
             return;
         }
         this.blendMode = i;
@@ -201,7 +201,7 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
             return;
         }
         this.densityObject = requireDensity;
-        this.block.invoke(this);
+        this.blockRead = false;
         invalidateShadow();
     }
 
@@ -212,7 +212,7 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
-        Painter.m5984drawx_KDEd0$default(obtainPainter(), contentDrawScope, contentDrawScope.mo5859getSizeNHjbRc(), 0.0f, null, 6, null);
+        Painter.m6130drawx_KDEd0$default(obtainPainter(), contentDrawScope, contentDrawScope.mo6005getSizeNHjbRc(), 0.0f, null, 6, null);
         contentDrawScope.drawContent();
     }
 
@@ -220,6 +220,7 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
         Shadow shadow;
         if (!this.blockRead) {
             this.blockRead = true;
+            ShadowKt.resetShadow(this);
             ObserverModifierNodeKt.observeReads(this, new Function0<Unit>() { // from class: androidx.compose.ui.draw.BlockDropShadowNode$obtainPainter$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
@@ -243,18 +244,18 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
         Shadow shadow2 = this.targetShadow;
         DropShadowPainter dropShadowPainter = this.shadowPainter;
         Brush brush = getBrush();
-        float f = mo426toDpu2uoSUM(getRadius());
-        float f2 = mo426toDpu2uoSUM(getSpread());
-        float f3 = mo426toDpu2uoSUM(Float.intBitsToFloat((int) (mo4801getOffsetF1C5BW0() >> 32)));
-        float f4 = mo426toDpu2uoSUM(Float.intBitsToFloat((int) (mo4801getOffsetF1C5BW0() & 4294967295L)));
-        long m8052constructorimpl = DpOffset.m8052constructorimpl((Float.floatToRawIntBits(f4) & 4294967295L) | (Float.floatToRawIntBits(f3) << 32));
-        if (dropShadowPainter != null && shadow2 != null && Dp.m8001equalsimpl0(shadow2.m6005getRadiusD9Ej5fM(), f) && Dp.m8001equalsimpl0(shadow2.m6006getSpreadD9Ej5fM(), f2) && Color.m5281equalsimpl0(shadow2.m6003getColor0d7_KjU(), mo4800getColor0d7_KjU()) && Intrinsics.areEqual(shadow2.getBrush(), brush) && shadow2.getAlpha() == getAlpha() && BlendMode.m5190equalsimpl0(shadow2.m6002getBlendMode0nO6VwU(), mo4799getBlendMode0nO6VwU()) && DpOffset.m8056equalsimpl0(shadow2.m6004getOffsetRKDOV3M(), m8052constructorimpl)) {
+        float f = mo460toDpu2uoSUM(getRadius());
+        float f2 = mo460toDpu2uoSUM(getSpread());
+        float f3 = mo460toDpu2uoSUM(Float.intBitsToFloat((int) (mo4940getOffsetF1C5BW0() >> 32)));
+        float f4 = mo460toDpu2uoSUM(Float.intBitsToFloat((int) (mo4940getOffsetF1C5BW0() & 4294967295L)));
+        long m8314constructorimpl = DpOffset.m8314constructorimpl((Float.floatToRawIntBits(f4) & 4294967295L) | (Float.floatToRawIntBits(f3) << 32));
+        if (dropShadowPainter != null && shadow2 != null && Dp.m8263equalsimpl0(shadow2.m6151getRadiusD9Ej5fM(), f) && Dp.m8263equalsimpl0(shadow2.m6152getSpreadD9Ej5fM(), f2) && Color.m5425equalsimpl0(shadow2.m6149getColor0d7_KjU(), mo4939getColor0d7_KjU()) && Intrinsics.areEqual(shadow2.getBrush(), brush) && shadow2.getAlpha() == getAlpha() && BlendMode.m5333equalsimpl0(shadow2.m6148getBlendMode0nO6VwU(), mo4938getBlendMode0nO6VwU()) && DpOffset.m8318equalsimpl0(shadow2.m6150getOffsetRKDOV3M(), m8314constructorimpl)) {
             return dropShadowPainter;
         }
         if (brush != null) {
-            shadow = new Shadow(f, brush, f2, m8052constructorimpl, getAlpha(), mo4799getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
+            shadow = new Shadow(f, brush, f2, m8314constructorimpl, getAlpha(), mo4938getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
         } else {
-            shadow = new Shadow(f, mo4800getColor0d7_KjU(), f2, m8052constructorimpl, getAlpha(), mo4799getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
+            shadow = new Shadow(f, mo4939getColor0d7_KjU(), f2, m8314constructorimpl, getAlpha(), mo4938getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
         }
         this.targetShadow = shadow;
         DropShadowPainter createDropShadowPainter = DelegatableNodeKt.requireGraphicsContext(this).getShadowContext().createDropShadowPainter(this.shape, shadow);
@@ -264,8 +265,8 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
 
     @Override // androidx.compose.ui.node.ObserverModifierNode
     public void onObservedReadsChanged() {
-        invalidateShadow();
         this.blockRead = false;
+        invalidateShadow();
     }
 
     private final void invalidateShadow() {
@@ -280,14 +281,14 @@ public final class BlockDropShadowNode extends Modifier.Node implements DrawModi
         }
         if (obj != null && (obj instanceof BlockDropShadowNode)) {
             BlockDropShadowNode blockDropShadowNode = (BlockDropShadowNode) obj;
-            return getAlpha() == blockDropShadowNode.getAlpha() && Intrinsics.areEqual(this.shape, blockDropShadowNode.shape) && this.block == blockDropShadowNode.block && getRadius() == blockDropShadowNode.getRadius() && getSpread() == blockDropShadowNode.getSpread() && Offset.m5033equalsimpl0(mo4801getOffsetF1C5BW0(), blockDropShadowNode.mo4801getOffsetF1C5BW0()) && Color.m5281equalsimpl0(mo4800getColor0d7_KjU(), blockDropShadowNode.mo4800getColor0d7_KjU()) && Intrinsics.areEqual(getBrush(), blockDropShadowNode.getBrush()) && BlendMode.m5190equalsimpl0(mo4799getBlendMode0nO6VwU(), blockDropShadowNode.mo4799getBlendMode0nO6VwU());
+            return getAlpha() == blockDropShadowNode.getAlpha() && Intrinsics.areEqual(this.shape, blockDropShadowNode.shape) && this.block == blockDropShadowNode.block && getRadius() == blockDropShadowNode.getRadius() && getSpread() == blockDropShadowNode.getSpread() && Offset.m5176equalsimpl0(mo4940getOffsetF1C5BW0(), blockDropShadowNode.mo4940getOffsetF1C5BW0()) && Color.m5425equalsimpl0(mo4939getColor0d7_KjU(), blockDropShadowNode.mo4939getColor0d7_KjU()) && Intrinsics.areEqual(getBrush(), blockDropShadowNode.getBrush()) && BlendMode.m5333equalsimpl0(mo4938getBlendMode0nO6VwU(), blockDropShadowNode.mo4938getBlendMode0nO6VwU());
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((((((Float.hashCode(getAlpha()) * 31) + this.shape.hashCode()) * 31) + this.block.hashCode()) * 31) + Float.hashCode(getRadius())) * 31) + Float.hashCode(getSpread())) * 31) + Offset.m5038hashCodeimpl(mo4801getOffsetF1C5BW0())) * 31) + Color.m5287hashCodeimpl(mo4800getColor0d7_KjU())) * 31;
+        int hashCode = ((((((((((((Float.hashCode(getAlpha()) * 31) + this.shape.hashCode()) * 31) + this.block.hashCode()) * 31) + Float.hashCode(getRadius())) * 31) + Float.hashCode(getSpread())) * 31) + Offset.m5181hashCodeimpl(mo4940getOffsetF1C5BW0())) * 31) + Color.m5431hashCodeimpl(mo4939getColor0d7_KjU())) * 31;
         Brush brush = getBrush();
-        return ((hashCode + (brush != null ? brush.hashCode() : 0)) * 31) + BlendMode.m5191hashCodeimpl(mo4799getBlendMode0nO6VwU());
+        return ((hashCode + (brush != null ? brush.hashCode() : 0)) * 31) + BlendMode.m5334hashCodeimpl(mo4938getBlendMode0nO6VwU());
     }
 }

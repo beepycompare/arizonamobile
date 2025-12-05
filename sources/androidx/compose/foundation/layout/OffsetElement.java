@@ -20,13 +20,21 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
         this(f, f2, z, function1);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    private OffsetElement(float f, float f2, boolean z, Function1<? super InspectorInfo, Unit> function1) {
+        this.x = f;
+        this.y = f2;
+        this.rtlAware = z;
+        this.inspectorInfo = function1;
+    }
+
     /* renamed from: getX-D9Ej5fM  reason: not valid java name */
-    public final float m793getXD9Ej5fM() {
+    public final float m879getXD9Ej5fM() {
         return this.x;
     }
 
     /* renamed from: getY-D9Ej5fM  reason: not valid java name */
-    public final float m794getYD9Ej5fM() {
+    public final float m880getYD9Ej5fM() {
         return this.y;
     }
 
@@ -38,14 +46,6 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
         return this.inspectorInfo;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    private OffsetElement(float f, float f2, boolean z, Function1<? super InspectorInfo, Unit> function1) {
-        this.x = f;
-        this.y = f2;
-        this.rtlAware = z;
-        this.inspectorInfo = function1;
-    }
-
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public OffsetNode create() {
@@ -54,7 +54,7 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(OffsetNode offsetNode) {
-        offsetNode.m804updateMdfbLM(this.x, this.y, this.rtlAware);
+        offsetNode.m891updateMdfbLM(this.x, this.y, this.rtlAware);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -63,16 +63,16 @@ final class OffsetElement extends ModifierNodeElement<OffsetNode> {
             return true;
         }
         OffsetElement offsetElement = obj instanceof OffsetElement ? (OffsetElement) obj : null;
-        return offsetElement != null && Dp.m8001equalsimpl0(this.x, offsetElement.x) && Dp.m8001equalsimpl0(this.y, offsetElement.y) && this.rtlAware == offsetElement.rtlAware;
+        return offsetElement != null && Dp.m8263equalsimpl0(this.x, offsetElement.x) && Dp.m8263equalsimpl0(this.y, offsetElement.y) && this.rtlAware == offsetElement.rtlAware;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((Dp.m8002hashCodeimpl(this.x) * 31) + Dp.m8002hashCodeimpl(this.y)) * 31) + Boolean.hashCode(this.rtlAware);
+        return (((Dp.m8264hashCodeimpl(this.x) * 31) + Dp.m8264hashCodeimpl(this.y)) * 31) + Boolean.hashCode(this.rtlAware);
     }
 
     public String toString() {
-        return "OffsetModifierElement(x=" + ((Object) Dp.m8007toStringimpl(this.x)) + ", y=" + ((Object) Dp.m8007toStringimpl(this.y)) + ", rtlAware=" + this.rtlAware + ')';
+        return "OffsetModifierElement(x=" + ((Object) Dp.m8269toStringimpl(this.x)) + ", y=" + ((Object) Dp.m8269toStringimpl(this.y)) + ", rtlAware=" + this.rtlAware + ')';
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement

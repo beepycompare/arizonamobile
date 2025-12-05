@@ -14,23 +14,24 @@ import androidx.compose.ui.unit.LayoutDirection;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 /* compiled from: ShadowRenderer.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\b \u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005JE\u0010\u0017\u001a\u00020\u0018*\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\r2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010\u001f\u001a\u00020\u00162\u0006\u0010 \u001a\u00020!¢\u0006\u0004\b\"\u0010#J-\u0010$\u001a\u00020\u0018*\u00020\u00192\u0006\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010\b\u001a\u0004\u0018\u00010\tH$¢\u0006\u0004\b%\u0010&J\b\u0010'\u001a\u00020\u0018H\u0016JQ\u0010(\u001a\u00020\u0018*\u00020\u00192\u0006\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\u001f\u001a\u00020\u00162\b\u0010\u001a\u001a\u0004\u0018\u00010\u000b2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010 \u001a\u00020!H$¢\u0006\u0004\b)\u0010*J\u0017\u0010+\u001a\u00020\u000b2\u0006\u0010\u001c\u001a\u00020\rH\u0002¢\u0006\u0004\b,\u0010-J\u0010\u0010.\u001a\u00020\u00182\u0006\u0010\u0002\u001a\u00020\u0003H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u000eR\u0010\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u000eR\u0010\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u000eR\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006/"}, d2 = {"Landroidx/compose/ui/graphics/shadow/ShadowRenderer;", "", "outline", "Landroidx/compose/ui/graphics/Outline;", "<init>", "(Landroidx/compose/ui/graphics/Outline;)V", "getOutline", "()Landroidx/compose/ui/graphics/Outline;", "path", "Landroidx/compose/ui/graphics/Path;", "shadowTint", "Landroidx/compose/ui/graphics/ColorFilter;", "shadowTintColor", "Landroidx/compose/ui/graphics/Color;", "J", "cornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "generatedSize", "Landroidx/compose/ui/geometry/Size;", "generatedLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "generatedDensity", "", "drawShadow", "", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "colorFilter", "size", "color", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "drawShadow-erFMhIw", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/ColorFilter;JJLandroidx/compose/ui/graphics/Brush;FI)V", "buildShadow", "buildShadow-_SMYjrA", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJLandroidx/compose/ui/graphics/Path;)V", "invalidateShadow", "onDrawShadow", "onDrawShadow-MLmccfk", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJLandroidx/compose/ui/graphics/Path;FLandroidx/compose/ui/graphics/ColorFilter;Landroidx/compose/ui/graphics/Brush;I)V", "obtainTint", "obtainTint-8_81llA", "(J)Landroidx/compose/ui/graphics/ColorFilter;", "updateParamsFromOutline", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\b!\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005JE\u0010\u0017\u001a\u00020\u0018*\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\r2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010\u001f\u001a\u00020\u00162\u0006\u0010 \u001a\u00020!¢\u0006\u0004\b\"\u0010#J-\u0010$\u001a\u00020\u0018*\u00020\u00192\u0006\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010\b\u001a\u0004\u0018\u00010\tH$¢\u0006\u0004\b%\u0010&J\b\u0010'\u001a\u00020\u0018H\u0016JQ\u0010(\u001a\u00020\u0018*\u00020\u00192\u0006\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\u001f\u001a\u00020\u00162\b\u0010\u001a\u001a\u0004\u0018\u00010\u000b2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010 \u001a\u00020!H$¢\u0006\u0004\b)\u0010*J\u0017\u0010+\u001a\u00020\u000b2\u0006\u0010\u001c\u001a\u00020\rH\u0002¢\u0006\u0004\b,\u0010-J\u0010\u0010.\u001a\u00020\u00182\u0006\u0010\u0002\u001a\u00020\u0003H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u000eR\u0010\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u000eR\u0010\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u000eR\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006/"}, d2 = {"Landroidx/compose/ui/graphics/shadow/ShadowRenderer;", "", "outline", "Landroidx/compose/ui/graphics/Outline;", "<init>", "(Landroidx/compose/ui/graphics/Outline;)V", "getOutline", "()Landroidx/compose/ui/graphics/Outline;", "path", "Landroidx/compose/ui/graphics/Path;", "shadowTint", "Landroidx/compose/ui/graphics/ColorFilter;", "shadowTintColor", "Landroidx/compose/ui/graphics/Color;", "J", "cornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "generatedSize", "Landroidx/compose/ui/geometry/Size;", "generatedLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "generatedDensity", "", "drawShadow", "", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "colorFilter", "size", "color", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "drawShadow-erFMhIw", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/ColorFilter;JJLandroidx/compose/ui/graphics/Brush;FI)V", "buildShadow", "buildShadow-_SMYjrA", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJLandroidx/compose/ui/graphics/Path;)V", "invalidateShadow", "onDrawShadow", "onDrawShadow-MLmccfk", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJLandroidx/compose/ui/graphics/Path;FLandroidx/compose/ui/graphics/ColorFilter;Landroidx/compose/ui/graphics/Brush;I)V", "obtainTint", "obtainTint-8_81llA", "(J)Landroidx/compose/ui/graphics/ColorFilter;", "updateParamsFromOutline", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public abstract class ShadowRenderer {
+    public static final int $stable = 8;
     private final Outline outline;
     private Path path;
     private ColorFilter shadowTint;
-    private long shadowTintColor = Color.Companion.m5316getUnspecified0d7_KjU();
-    private long cornerRadius = CornerRadius.Companion.m5008getZerokKHJgLs();
-    private long generatedSize = Size.Companion.m5113getUnspecifiedNHjbRc();
+    private long shadowTintColor = Color.Companion.m5460getUnspecified0d7_KjU();
+    private long cornerRadius = CornerRadius.Companion.m5151getZerokKHJgLs();
+    private long generatedSize = Size.Companion.m5256getUnspecifiedNHjbRc();
     private LayoutDirection generatedLayoutDirection = LayoutDirection.Ltr;
     private float generatedDensity = 1.0f;
 
     /* renamed from: buildShadow-_SMYjrA */
-    protected abstract void mo5997buildShadow_SMYjrA(DrawScope drawScope, long j, long j2, Path path);
+    protected abstract void mo6143buildShadow_SMYjrA(DrawScope drawScope, long j, long j2, Path path);
 
     /* renamed from: onDrawShadow-MLmccfk */
-    protected abstract void mo5998onDrawShadowMLmccfk(DrawScope drawScope, long j, long j2, Path path, float f, ColorFilter colorFilter, Brush brush, int i);
+    protected abstract void mo6144onDrawShadowMLmccfk(DrawScope drawScope, long j, long j2, Path path, float f, ColorFilter colorFilter, Brush brush, int i);
 
     public ShadowRenderer(Outline outline) {
         this.outline = outline;
@@ -41,36 +42,36 @@ public abstract class ShadowRenderer {
     }
 
     /* renamed from: drawShadow-erFMhIw  reason: not valid java name */
-    public final void m6008drawShadowerFMhIw(DrawScope drawScope, ColorFilter colorFilter, long j, long j2, Brush brush, float f, int i) {
+    public final void m6154drawShadowerFMhIw(DrawScope drawScope, ColorFilter colorFilter, long j, long j2, Brush brush, float f, int i) {
         updateParamsFromOutline(this.outline);
         if (colorFilter == null) {
-            colorFilter = (brush != null || j2 == 16) ? null : m6007obtainTint8_81llA(j2);
+            colorFilter = (brush != null || j2 == 16) ? null : m6153obtainTint8_81llA(j2);
         }
         ColorFilter colorFilter2 = colorFilter;
         long j3 = this.generatedSize;
-        if (j3 == InlineClassHelperKt.UnspecifiedPackedFloats || !Size.m5101equalsimpl0(j3, j) || this.generatedLayoutDirection != drawScope.getLayoutDirection() || this.generatedDensity != drawScope.getDensity()) {
-            mo5997buildShadow_SMYjrA(drawScope, j, this.cornerRadius, this.path);
+        if (j3 == InlineClassHelperKt.UnspecifiedPackedFloats || !Size.m5244equalsimpl0(j3, j) || this.generatedLayoutDirection != drawScope.getLayoutDirection() || this.generatedDensity != drawScope.getDensity()) {
+            mo6143buildShadow_SMYjrA(drawScope, j, this.cornerRadius, this.path);
             this.generatedSize = j;
             this.generatedLayoutDirection = drawScope.getLayoutDirection();
             this.generatedDensity = drawScope.getDensity();
         }
-        mo5998onDrawShadowMLmccfk(drawScope, j, this.cornerRadius, this.path, f, colorFilter2, brush, i);
+        mo6144onDrawShadowMLmccfk(drawScope, j, this.cornerRadius, this.path, f, colorFilter2, brush, i);
     }
 
     public void invalidateShadow() {
-        this.generatedSize = Size.Companion.m5113getUnspecifiedNHjbRc();
+        this.generatedSize = Size.Companion.m5256getUnspecifiedNHjbRc();
         this.generatedLayoutDirection = LayoutDirection.Ltr;
         this.generatedDensity = 1.0f;
     }
 
     /* renamed from: obtainTint-8_81llA  reason: not valid java name */
-    private final ColorFilter m6007obtainTint8_81llA(long j) {
+    private final ColorFilter m6153obtainTint8_81llA(long j) {
         ColorFilter colorFilter = this.shadowTint;
-        if (colorFilter == null || !Color.m5281equalsimpl0(this.shadowTintColor, j)) {
-            ColorFilter m5321tintxETnrds$default = ColorFilter.Companion.m5321tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+        if (colorFilter == null || !Color.m5425equalsimpl0(this.shadowTintColor, j)) {
+            ColorFilter m5465tintxETnrds$default = ColorFilter.Companion.m5465tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
             this.shadowTintColor = j;
-            this.shadowTint = m5321tintxETnrds$default;
-            return m5321tintxETnrds$default;
+            this.shadowTint = m5465tintxETnrds$default;
+            return m5465tintxETnrds$default;
         }
         return colorFilter;
     }
@@ -78,21 +79,21 @@ public abstract class ShadowRenderer {
     private final void updateParamsFromOutline(Outline outline) {
         if (outline instanceof Outline.Generic) {
             this.path = ((Outline.Generic) outline).getPath();
-            this.cornerRadius = CornerRadius.Companion.m5008getZerokKHJgLs();
+            this.cornerRadius = CornerRadius.Companion.m5151getZerokKHJgLs();
         } else if (outline instanceof Outline.Rounded) {
             Outline.Rounded rounded = (Outline.Rounded) outline;
             if (RoundRectKt.isSimple(rounded.getRoundRect())) {
                 this.path = null;
-                this.cornerRadius = rounded.getRoundRect().m5086getTopLeftCornerRadiuskKHJgLs();
+                this.cornerRadius = rounded.getRoundRect().m5229getTopLeftCornerRadiuskKHJgLs();
                 return;
             }
-            this.path = rounded.getRoundRectPath$ui_graphics_release();
-            this.cornerRadius = CornerRadius.Companion.m5008getZerokKHJgLs();
+            this.path = rounded.getRoundRectPath$ui_graphics();
+            this.cornerRadius = CornerRadius.Companion.m5151getZerokKHJgLs();
         } else if (!(outline instanceof Outline.Rectangle)) {
             throw new NoWhenBranchMatchedException();
         } else {
             this.path = null;
-            this.cornerRadius = CornerRadius.Companion.m5008getZerokKHJgLs();
+            this.cornerRadius = CornerRadius.Companion.m5151getZerokKHJgLs();
         }
     }
 }

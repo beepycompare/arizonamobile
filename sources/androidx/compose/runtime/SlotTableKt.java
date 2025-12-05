@@ -43,14 +43,6 @@ public final class SlotTableKt {
     private static final int Slots_Shift = 28;
     private static final int parentAnchorPivot = -2;
 
-    public static final /* synthetic */ void access$add(MutableIntObjectMap mutableIntObjectMap, int i, int i2) {
-        add(mutableIntObjectMap, i, i2);
-    }
-
-    public static final /* synthetic */ void access$addAux(int[] iArr, int i) {
-        addAux(iArr, i);
-    }
-
     public static final /* synthetic */ int access$auxIndex(int[] iArr, int i) {
         return auxIndex(iArr, i);
     }
@@ -71,16 +63,8 @@ public final class SlotTableKt {
         return groupSizes(iArr, i);
     }
 
-    public static final /* synthetic */ void access$initGroup(int[] iArr, int i, int i2, boolean z, boolean z2, boolean z3, int i3, int i4) {
-        initGroup(iArr, i, i2, z, z2, z3, i3, i4);
-    }
-
     public static final /* synthetic */ List access$keys(int[] iArr, int i) {
         return keys(iArr, i);
-    }
-
-    public static final /* synthetic */ int access$locationOf(ArrayList arrayList, int i, int i2) {
-        return locationOf(arrayList, i, i2);
     }
 
     public static final /* synthetic */ List access$nodeCounts(int[] iArr, int i) {
@@ -105,26 +89,6 @@ public final class SlotTableKt {
 
     public static final /* synthetic */ String access$summarize(String str, int i) {
         return summarize(str, i);
-    }
-
-    public static final /* synthetic */ void access$updateContainsMark(int[] iArr, int i, boolean z) {
-        updateContainsMark(iArr, i, z);
-    }
-
-    public static final /* synthetic */ void access$updateGroupKey(int[] iArr, int i, int i2) {
-        updateGroupKey(iArr, i, i2);
-    }
-
-    public static final /* synthetic */ void access$updateGroupSize(int[] iArr, int i, int i2) {
-        updateGroupSize(iArr, i, i2);
-    }
-
-    public static final /* synthetic */ void access$updateMark(int[] iArr, int i, boolean z) {
-        updateMark(iArr, i, z);
-    }
-
-    public static final /* synthetic */ void access$updateNodeCount(int[] iArr, int i, int i2) {
-        updateNodeCount(iArr, i, i2);
     }
 
     private static final int toBit(boolean z) {
@@ -248,7 +212,7 @@ public final class SlotTableKt {
     }
 
     private static final int nodeCount(int[] iArr, int i) {
-        return iArr[(i * 5) + 1] & 67108863;
+        return iArr[(i * 5) + 1] & NodeCount_Mask;
     }
 
     public static final void updateNodeCount(int[] iArr, int i, int i2) {
@@ -270,7 +234,7 @@ public final class SlotTableKt {
         ArrayList arrayList = new ArrayList(slice.size());
         int size = slice.size();
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(Integer.valueOf(slice.get(i2).intValue() & 67108863));
+            arrayList.add(Integer.valueOf(slice.get(i2).intValue() & NodeCount_Mask));
         }
         return arrayList;
     }

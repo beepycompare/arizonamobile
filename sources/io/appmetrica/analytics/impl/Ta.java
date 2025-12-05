@@ -5,7 +5,7 @@ import io.appmetrica.analytics.ReporterConfig;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
 public interface Ta extends Ua {
-    Ja a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0386l0 c0386l0);
+    Ja a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0385l0 c0385l0);
 
     @Override // io.appmetrica.analytics.impl.Ua
     /* synthetic */ Ta a();
@@ -14,7 +14,7 @@ public interface Ta extends Ua {
 
     void a(ReporterConfig reporterConfig);
 
-    Ja b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0386l0 c0386l0);
+    Ja b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0385l0 c0385l0);
 
     Sa b(ReporterConfig reporterConfig);
 }

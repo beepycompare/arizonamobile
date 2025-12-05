@@ -25,10 +25,10 @@ public final class AndroidDefaultTypeface implements AndroidTypeface {
 
     @Override // androidx.compose.ui.text.platform.AndroidTypeface
     /* renamed from: getNativeTypeface-PYhJU0U  reason: not valid java name */
-    public Typeface mo7714getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
+    public Typeface mo7959getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
         if (Build.VERSION.SDK_INT < 28) {
-            return Typeface.defaultFromStyle(AndroidFontUtils_androidKt.m7522getAndroidTypefaceStyleFO1MlWM(fontWeight, i));
+            return Typeface.defaultFromStyle(AndroidFontUtils_androidKt.m7766getAndroidTypefaceStyleFO1MlWM(fontWeight, i));
         }
-        return TypefaceHelperMethodsApi28.INSTANCE.create(Typeface.DEFAULT, fontWeight.getWeight(), FontStyle.m7571equalsimpl0(i, FontStyle.Companion.m7577getItalic_LCdwA()));
+        return TypefaceHelperMethodsApi28.INSTANCE.create(Typeface.DEFAULT, fontWeight.getWeight(), FontStyle.m7815equalsimpl0(i, FontStyle.Companion.m7821getItalic_LCdwA()));
     }
 }

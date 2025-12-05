@@ -29,7 +29,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: SnapshotFlow.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1", f = "SnapshotFlow.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {143, 147, 170}, m = "invokeSuspend", n = {"$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "found", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"})
+@DebugMetadata(c = "androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1", f = "SnapshotFlow.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {143, 147, 170}, m = "invokeSuspend", n = {"$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "found", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 1)
 /* loaded from: classes.dex */
 public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends SuspendLambda implements Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<T> $block;
@@ -116,11 +116,11 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     intersects$SnapshotStateKt__SnapshotFlowKt = SnapshotStateKt__SnapshotFlowKt.intersects$SnapshotStateKt__SnapshotFlowKt(mutableScatterSet2, set);
                                     if (!intersects$SnapshotStateKt__SnapshotFlowKt) {
                                         i = 0;
-                                        set = (Set) ChannelResult.m11440getOrNullimpl(channel.mo11428tryReceivePtdJZtk());
+                                        set = (Set) ChannelResult.m11735getOrNullimpl(channel.mo11723tryReceivePtdJZtk());
                                     }
                                 }
                                 i = 1;
-                                set = (Set) ChannelResult.m11440getOrNullimpl(channel.mo11428tryReceivePtdJZtk());
+                                set = (Set) ChannelResult.m11735getOrNullimpl(channel.mo11723tryReceivePtdJZtk());
                             } while (set != null);
                             if (i != 0) {
                                 try {
@@ -182,9 +182,9 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 observerHandle = Snapshot.Companion.registerApplyObserver(new Function2() { // from class: androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj3, Object obj4) {
-                        Unit invokeSuspend$lambda$2;
-                        invokeSuspend$lambda$2 = SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$2(Channel.this, (Set) obj3, (Snapshot) obj4);
-                        return invokeSuspend$lambda$2;
+                        Unit invokeSuspend$lambda$1;
+                        invokeSuspend$lambda$1 = SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$1(Channel.this, (Set) obj3, (Snapshot) obj4);
+                        return invokeSuspend$lambda$1;
                     }
                 });
                 Snapshot takeSnapshot2 = Snapshot.Companion.takeSnapshot(function1);
@@ -227,7 +227,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     if (i == 0) {
                     }
                     i = 1;
-                    set = (Set) ChannelResult.m11440getOrNullimpl(channel.mo11428tryReceivePtdJZtk());
+                    set = (Set) ChannelResult.m11735getOrNullimpl(channel.mo11723tryReceivePtdJZtk());
                 } while (set != null);
                 if (i != 0) {
                 }
@@ -259,14 +259,14 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
     public static final Unit invokeSuspend$lambda$0(MutableScatterSet mutableScatterSet, Object obj) {
         if (obj instanceof StateObjectImpl) {
             ReaderKind.Companion companion = ReaderKind.Companion;
-            ((StateObjectImpl) obj).m4757recordReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(4));
+            ((StateObjectImpl) obj).m4885recordReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(4));
         }
         mutableScatterSet.add(obj);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invokeSuspend$lambda$2(Channel channel, Set set, Snapshot snapshot) {
+    public static final Unit invokeSuspend$lambda$1(Channel channel, Set set, Snapshot snapshot) {
         if (set instanceof ScatterSetWrapper) {
             ScatterSet<T> set$runtime = ((ScatterSetWrapper) set).getSet$runtime();
             Object[] objArr = set$runtime.elements;
@@ -285,7 +285,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     break loop0;
                                 }
                                 ReaderKind.Companion companion = ReaderKind.Companion;
-                                if (((StateObjectImpl) obj).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(4))) {
+                                if (((StateObjectImpl) obj).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(4))) {
                                     break loop0;
                                 }
                             }
@@ -307,10 +307,10 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 for (T t : set2) {
                     if (t instanceof StateObjectImpl) {
                         ReaderKind.Companion companion2 = ReaderKind.Companion;
-                        if (((StateObjectImpl) t).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(4))) {
+                        if (((StateObjectImpl) t).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(4))) {
                         }
                     }
-                    channel.mo8879trySendJP2dKIU(set);
+                    channel.mo9143trySendJP2dKIU(set);
                 }
             }
         }

@@ -23,7 +23,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: DragAndDropNode.kt */
-@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0001\u0018\u0000 E2\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006:\u0001EBD\u0012!\b\u0002\u0010\u0007\u001a\u001b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\b¢\u0006\u0002\b\f\u0012\u0018\b\u0002\u0010\r\u001a\u0012\u0012\u0004\u0012\u00020\u000f\u0012\u0006\u0012\u0004\u0018\u00010\u0006\u0018\u00010\u000e¢\u0006\u0004\b\u0010\u0010\u0011J\b\u0010&\u001a\u00020\u000bH\u0016J\u0017\u0010'\u001a\u00020\u000b2\u0006\u0010\u001f\u001a\u00020 H\u0016¢\u0006\u0004\b(\u0010$J\u0017\u0010*\u001a\u00020\u000b2\u0006\u0010+\u001a\u00020\nH\u0016¢\u0006\u0004\b,\u0010$J'\u0010-\u001a\u00020\u000b*\u00020\t2\u0006\u0010+\u001a\u00020\n2\f\u0010.\u001a\b\u0012\u0004\u0012\u00020\u001d0/¢\u0006\u0004\b0\u00101J8\u00102\u001a\u00020\u000b2\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u0002062\u0017\u00107\u001a\u0013\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u000b0\u000e¢\u0006\u0002\b\fH\u0017¢\u0006\u0004\b9\u0010:J\u0010\u0010;\u001a\u00020\u001d2\u0006\u0010<\u001a\u00020\u000fH\u0016J\u0010\u0010=\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010?\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010@\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010A\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010B\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010C\u001a\u00020\u001d2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010D\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016R'\u0010\u0007\u001a\u001b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\b¢\u0006\u0002\b\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\r\u001a\u0012\u0012\u0004\u0012\u00020\u000f\u0012\u0006\u0012\u0004\u0018\u00010\u0006\u0018\u00010\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\u00020\u0013X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001c\u001a\u00020\u001d8G¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001eR\u001c\u0010\u001f\u001a\u00020 X\u0080\u000e¢\u0006\u0010\n\u0002\u0010%\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0014\u0010)\u001a\u00020\u001d8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010\u001e¨\u0006F"}, d2 = {"Landroidx/compose/ui/draganddrop/DragAndDropNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/TraversableNode;", "Landroidx/compose/ui/draganddrop/DragAndDropModifierNode;", "Landroidx/compose/ui/draganddrop/DragAndDropSourceModifierNode;", "Landroidx/compose/ui/draganddrop/DragAndDropTargetModifierNode;", "Landroidx/compose/ui/draganddrop/DragAndDropTarget;", "onStartTransfer", "Lkotlin/Function2;", "Landroidx/compose/ui/draganddrop/DragAndDropStartTransferScope;", "Landroidx/compose/ui/geometry/Offset;", "", "Lkotlin/ExtensionFunctionType;", "onDropTargetValidate", "Lkotlin/Function1;", "Landroidx/compose/ui/draganddrop/DragAndDropEvent;", "<init>", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)V", "traverseKey", "", "getTraverseKey", "()Ljava/lang/Object;", "dragAndDropManager", "Landroidx/compose/ui/draganddrop/DragAndDropManager;", "getDragAndDropManager", "()Landroidx/compose/ui/draganddrop/DragAndDropManager;", "lastChildDragAndDropModifierNode", "thisDragAndDropTarget", "hasEligibleDropTarget", "", "()Z", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g$ui_release", "()J", "setSize-ozmzZPI$ui_release", "(J)V", "J", "onDetach", "onRemeasured", "onRemeasured-ozmzZPI", "isRequestDragAndDropTransferRequired", "requestDragAndDropTransfer", TypedValues.CycleType.S_WAVE_OFFSET, "requestDragAndDropTransfer-k-4lQ0M", "startDragAndDropTransfer", "isTransferStarted", "Lkotlin/Function0;", "startDragAndDropTransfer-d-4ec7I", "(Landroidx/compose/ui/draganddrop/DragAndDropStartTransferScope;JLkotlin/jvm/functions/Function0;)V", "drag", "transferData", "Landroidx/compose/ui/draganddrop/DragAndDropTransferData;", "decorationSize", "Landroidx/compose/ui/geometry/Size;", "drawDragDecoration", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "drag-12SF9DM", "(Landroidx/compose/ui/draganddrop/DragAndDropTransferData;JLkotlin/jvm/functions/Function1;)V", "acceptDragAndDropTransfer", "startEvent", "onStarted", NotificationCompat.CATEGORY_EVENT, "onEntered", "onMoved", "onChanged", "onExited", "onDrop", "onEnded", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0001\u0018\u0000 E2\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006:\u0001EBD\u0012!\b\u0002\u0010\u0007\u001a\u001b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\b¢\u0006\u0002\b\f\u0012\u0018\b\u0002\u0010\r\u001a\u0012\u0012\u0004\u0012\u00020\u000f\u0012\u0006\u0012\u0004\u0018\u00010\u0006\u0018\u00010\u000e¢\u0006\u0004\b\u0010\u0010\u0011J\b\u0010&\u001a\u00020\u000bH\u0016J\u0017\u0010'\u001a\u00020\u000b2\u0006\u0010\u001f\u001a\u00020 H\u0016¢\u0006\u0004\b(\u0010$J\u0017\u0010*\u001a\u00020\u000b2\u0006\u0010+\u001a\u00020\nH\u0016¢\u0006\u0004\b,\u0010$J'\u0010-\u001a\u00020\u000b*\u00020\t2\u0006\u0010+\u001a\u00020\n2\f\u0010.\u001a\b\u0012\u0004\u0012\u00020\u001d0/¢\u0006\u0004\b0\u00101J8\u00102\u001a\u00020\u000b2\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u0002062\u0017\u00107\u001a\u0013\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u000b0\u000e¢\u0006\u0002\b\fH\u0017¢\u0006\u0004\b9\u0010:J\u0010\u0010;\u001a\u00020\u001d2\u0006\u0010<\u001a\u00020\u000fH\u0016J\u0010\u0010=\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010?\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010@\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010A\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010B\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010C\u001a\u00020\u001d2\u0006\u0010>\u001a\u00020\u000fH\u0016J\u0010\u0010D\u001a\u00020\u000b2\u0006\u0010>\u001a\u00020\u000fH\u0016R'\u0010\u0007\u001a\u001b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\b¢\u0006\u0002\b\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\r\u001a\u0012\u0012\u0004\u0012\u00020\u000f\u0012\u0006\u0012\u0004\u0018\u00010\u0006\u0018\u00010\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\u00020\u0013X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001c\u001a\u00020\u001d8G¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001eR\u001c\u0010\u001f\u001a\u00020 X\u0080\u000e¢\u0006\u0010\n\u0002\u0010%\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0014\u0010)\u001a\u00020\u001d8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010\u001e¨\u0006F"}, d2 = {"Landroidx/compose/ui/draganddrop/DragAndDropNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/TraversableNode;", "Landroidx/compose/ui/draganddrop/DragAndDropModifierNode;", "Landroidx/compose/ui/draganddrop/DragAndDropSourceModifierNode;", "Landroidx/compose/ui/draganddrop/DragAndDropTargetModifierNode;", "Landroidx/compose/ui/draganddrop/DragAndDropTarget;", "onStartTransfer", "Lkotlin/Function2;", "Landroidx/compose/ui/draganddrop/DragAndDropStartTransferScope;", "Landroidx/compose/ui/geometry/Offset;", "", "Lkotlin/ExtensionFunctionType;", "onDropTargetValidate", "Lkotlin/Function1;", "Landroidx/compose/ui/draganddrop/DragAndDropEvent;", "<init>", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)V", "traverseKey", "", "getTraverseKey", "()Ljava/lang/Object;", "dragAndDropManager", "Landroidx/compose/ui/draganddrop/DragAndDropManager;", "getDragAndDropManager", "()Landroidx/compose/ui/draganddrop/DragAndDropManager;", "lastChildDragAndDropModifierNode", "thisDragAndDropTarget", "hasEligibleDropTarget", "", "()Z", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g$ui", "()J", "setSize-ozmzZPI$ui", "(J)V", "J", "onDetach", "onRemeasured", "onRemeasured-ozmzZPI", "isRequestDragAndDropTransferRequired", "requestDragAndDropTransfer", TypedValues.CycleType.S_WAVE_OFFSET, "requestDragAndDropTransfer-k-4lQ0M", "startDragAndDropTransfer", "isTransferStarted", "Lkotlin/Function0;", "startDragAndDropTransfer-d-4ec7I", "(Landroidx/compose/ui/draganddrop/DragAndDropStartTransferScope;JLkotlin/jvm/functions/Function0;)V", "drag", "transferData", "Landroidx/compose/ui/draganddrop/DragAndDropTransferData;", "decorationSize", "Landroidx/compose/ui/geometry/Size;", "drawDragDecoration", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "drag-12SF9DM", "(Landroidx/compose/ui/draganddrop/DragAndDropTransferData;JLkotlin/jvm/functions/Function1;)V", "acceptDragAndDropTransfer", "startEvent", "onStarted", NotificationCompat.CATEGORY_EVENT, "onEntered", "onMoved", "onChanged", "onExited", "onDrop", "onEnded", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DragAndDropNode extends Modifier.Node implements TraversableNode, DragAndDropModifierNode, DragAndDropSourceModifierNode, DragAndDropTargetModifierNode, DragAndDropTarget {
     private DragAndDropNode lastChildDragAndDropModifierNode;
@@ -39,20 +39,20 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
         this(null, null, 3, null);
     }
 
-    public /* synthetic */ DragAndDropNode(Function2 function2, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : function2, (i & 2) != 0 ? null : function1);
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public DragAndDropNode(Function2<? super DragAndDropStartTransferScope, ? super Offset, Unit> function2, Function1<? super DragAndDropEvent, ? extends DragAndDropTarget> function1) {
         this.onStartTransfer = function2;
         this.onDropTargetValidate = function1;
         this.traverseKey = Companion.DragAndDropTraversableKey.INSTANCE;
-        this.size = IntSize.Companion.m8172getZeroYbymL2g();
+        this.size = IntSize.Companion.m8434getZeroYbymL2g();
+    }
+
+    public /* synthetic */ DragAndDropNode(Function2 function2, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? null : function2, (i & 2) != 0 ? null : function1);
     }
 
     /* compiled from: DragAndDropNode.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\b\u0082\u0003\u0018\u00002\u00020\u0001:\u0001\u0004B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0005"}, d2 = {"Landroidx/compose/ui/draganddrop/DragAndDropNode$Companion;", "", "<init>", "()V", "DragAndDropTraversableKey", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\b\u0082\u0003\u0018\u00002\u00020\u0001:\u0001\u0004B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0005"}, d2 = {"Landroidx/compose/ui/draganddrop/DragAndDropNode$Companion;", "", "<init>", "()V", "DragAndDropTraversableKey", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -60,7 +60,7 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
         }
 
         /* compiled from: DragAndDropNode.kt */
-        @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Landroidx/compose/ui/draganddrop/DragAndDropNode$Companion$DragAndDropTraversableKey;", "", "<init>", "()V", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Landroidx/compose/ui/draganddrop/DragAndDropNode$Companion$DragAndDropTraversableKey;", "", "<init>", "()V", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes.dex */
         private static final class DragAndDropTraversableKey {
             public static final DragAndDropTraversableKey INSTANCE = new DragAndDropTraversableKey();
@@ -87,13 +87,13 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
         return (this.lastChildDragAndDropModifierNode == null && this.thisDragAndDropTarget == null) ? false : true;
     }
 
-    /* renamed from: getSize-YbymL2g$ui_release  reason: not valid java name */
-    public final long m4792getSizeYbymL2g$ui_release() {
+    /* renamed from: getSize-YbymL2g$ui  reason: not valid java name */
+    public final long m4931getSizeYbymL2g$ui() {
         return this.size;
     }
 
-    /* renamed from: setSize-ozmzZPI$ui_release  reason: not valid java name */
-    public final void m4794setSizeozmzZPI$ui_release(long j) {
+    /* renamed from: setSize-ozmzZPI$ui  reason: not valid java name */
+    public final void m4933setSizeozmzZPI$ui(long j) {
         this.size = j;
     }
 
@@ -105,7 +105,7 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo419onRemeasuredozmzZPI(long j) {
+    public void mo453onRemeasuredozmzZPI(long j) {
         this.size = j;
     }
 
@@ -116,15 +116,15 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
 
     @Override // androidx.compose.ui.draganddrop.DragAndDropSourceModifierNode
     /* renamed from: requestDragAndDropTransfer-k-4lQ0M  reason: not valid java name */
-    public void mo4793requestDragAndDropTransferk4lQ0M(long j) {
+    public void mo4932requestDragAndDropTransferk4lQ0M(long j) {
         if (!(this.onStartTransfer != null)) {
             InlineClassHelperKt.throwIllegalStateException("Check failed.");
         }
-        getDragAndDropManager().mo4789requestDragAndDropTransferUv8p0NA(this, j);
+        getDragAndDropManager().mo4928requestDragAndDropTransferUv8p0NA(this, j);
     }
 
     /* renamed from: startDragAndDropTransfer-d-4ec7I  reason: not valid java name */
-    public final void m4795startDragAndDropTransferd4ec7I(final DragAndDropStartTransferScope dragAndDropStartTransferScope, final long j, final Function0<Boolean> function0) {
+    public final void m4934startDragAndDropTransferd4ec7I(final DragAndDropStartTransferScope dragAndDropStartTransferScope, final long j, final Function0<Boolean> function0) {
         final LayoutCoordinates coordinates = DelegatableNodeKt.requireLayoutNode(this).getCoordinates();
         DragAndDropNodeKt.traverseSelfAndDescendants(this, new Function1<DragAndDropNode, TraversableNode.Companion.TraverseDescendantsAction>() { // from class: androidx.compose.ui.draganddrop.DragAndDropNode$startDragAndDropTransfer$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -141,14 +141,14 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
                     if (function2 == null) {
                         return TraversableNode.Companion.TraverseDescendantsAction.ContinueTraversal;
                     }
-                    if (!Offset.m5033equalsimpl0(j, Offset.Companion.m5051getUnspecifiedF1C5BW0())) {
-                        long mo6707localPositionOfR5De75A = DelegatableNodeKt.requireLayoutNode(dragAndDropNode).getCoordinates().mo6707localPositionOfR5De75A(coordinates, j);
-                        if (!SizeKt.m5126toRectuvyYCjk(IntSizeKt.m8179toSizeozmzZPI(dragAndDropNode.m4792getSizeYbymL2g$ui_release())).m5062containsk4lQ0M(mo6707localPositionOfR5De75A)) {
+                    if (!Offset.m5176equalsimpl0(j, Offset.Companion.m5194getUnspecifiedF1C5BW0())) {
+                        long mo6884localPositionOfR5De75A = DelegatableNodeKt.requireLayoutNode(dragAndDropNode).getCoordinates().mo6884localPositionOfR5De75A(coordinates, j);
+                        if (!SizeKt.m5269toRectuvyYCjk(IntSizeKt.m8441toSizeozmzZPI(dragAndDropNode.m4931getSizeYbymL2g$ui())).m5205containsk4lQ0M(mo6884localPositionOfR5De75A)) {
                             return TraversableNode.Companion.TraverseDescendantsAction.ContinueTraversal;
                         }
-                        function2.invoke(dragAndDropStartTransferScope, Offset.m5025boximpl(mo6707localPositionOfR5De75A));
+                        function2.invoke(dragAndDropStartTransferScope, Offset.m5168boximpl(mo6884localPositionOfR5De75A));
                     } else {
-                        function2.invoke(dragAndDropStartTransferScope, Offset.m5025boximpl(Offset.Companion.m5051getUnspecifiedF1C5BW0()));
+                        function2.invoke(dragAndDropStartTransferScope, Offset.m5168boximpl(Offset.Companion.m5194getUnspecifiedF1C5BW0()));
                     }
                     if (function0.invoke().booleanValue()) {
                         return TraversableNode.Companion.TraverseDescendantsAction.CancelTraversal;
@@ -163,7 +163,7 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
     @Override // androidx.compose.ui.draganddrop.DragAndDropModifierNode
     @Deprecated(message = "Use DragAndDropSourceModifierNode.requestDragAndDropTransfer instead")
     /* renamed from: drag-12SF9DM */
-    public void mo4791drag12SF9DM(final DragAndDropTransferData dragAndDropTransferData, final long j, final Function1<? super DrawScope, Unit> function1) {
+    public void mo4930drag12SF9DM(final DragAndDropTransferData dragAndDropTransferData, final long j, final Function1<? super DrawScope, Unit> function1) {
         if (!(this.onStartTransfer == null)) {
             InlineClassHelperKt.throwIllegalStateException("Check failed.");
         }
@@ -177,16 +177,16 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(DragAndDropStartTransferScope dragAndDropStartTransferScope, Offset offset) {
-                m4796invokeUv8p0NA(dragAndDropStartTransferScope, offset.m5046unboximpl());
+                m4935invokeUv8p0NA(dragAndDropStartTransferScope, offset.m5189unboximpl());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-            public final void m4796invokeUv8p0NA(DragAndDropStartTransferScope dragAndDropStartTransferScope, long j2) {
-                dragAndDropStartTransferScope.mo4790startDragAndDropTransfer12SF9DM(DragAndDropTransferData.this, j, function1);
+            public final void m4935invokeUv8p0NA(DragAndDropStartTransferScope dragAndDropStartTransferScope, long j2) {
+                dragAndDropStartTransferScope.mo4929startDragAndDropTransfer12SF9DM(DragAndDropTransferData.this, j, function1);
             }
         };
-        getDragAndDropManager().mo4789requestDragAndDropTransferUv8p0NA(this, Offset.Companion.m5051getUnspecifiedF1C5BW0());
+        getDragAndDropManager().mo4928requestDragAndDropTransferUv8p0NA(this, Offset.Companion.m5194getUnspecifiedF1C5BW0());
         this.onStartTransfer = null;
     }
 
@@ -270,11 +270,11 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
     public void onMoved(final DragAndDropEvent dragAndDropEvent) {
         TraversableNode traversableNode;
         DragAndDropNode dragAndDropNode;
-        boolean m4798containsUv8p0NA;
+        boolean m4937containsUv8p0NA;
         DragAndDropNode dragAndDropNode2 = this.lastChildDragAndDropModifierNode;
         if (dragAndDropNode2 != null) {
-            m4798containsUv8p0NA = DragAndDropNodeKt.m4798containsUv8p0NA(dragAndDropNode2, DragAndDrop_androidKt.getPositionInRoot(dragAndDropEvent));
-            if (m4798containsUv8p0NA) {
+            m4937containsUv8p0NA = DragAndDropNodeKt.m4937containsUv8p0NA(dragAndDropNode2, DragAndDrop_androidKt.getPositionInRoot(dragAndDropEvent));
+            if (m4937containsUv8p0NA) {
                 dragAndDropNode = dragAndDropNode2;
                 if (dragAndDropNode == null && dragAndDropNode2 == null) {
                     DragAndDropNodeKt.dispatchEntered(dragAndDropNode, dragAndDropEvent);
@@ -319,12 +319,12 @@ public final class DragAndDropNode extends Modifier.Node implements TraversableN
                 @Override // kotlin.jvm.functions.Function1
                 public final TraversableNode.Companion.TraverseDescendantsAction invoke(DragAndDropNode dragAndDropNode4) {
                     DragAndDropManager dragAndDropManager;
-                    boolean m4798containsUv8p0NA2;
+                    boolean m4937containsUv8p0NA2;
                     DragAndDropNode dragAndDropNode5 = dragAndDropNode4;
                     dragAndDropManager = this.getDragAndDropManager();
                     if (dragAndDropManager.isInterestedTarget(dragAndDropNode5)) {
-                        m4798containsUv8p0NA2 = DragAndDropNodeKt.m4798containsUv8p0NA(dragAndDropNode5, DragAndDrop_androidKt.getPositionInRoot(dragAndDropEvent));
-                        if (m4798containsUv8p0NA2) {
+                        m4937containsUv8p0NA2 = DragAndDropNodeKt.m4937containsUv8p0NA(dragAndDropNode5, DragAndDrop_androidKt.getPositionInRoot(dragAndDropEvent));
+                        if (m4937containsUv8p0NA2) {
                             Ref.ObjectRef.this.element = dragAndDropNode4;
                             return TraversableNode.Companion.TraverseDescendantsAction.CancelTraversal;
                         }

@@ -10,10 +10,7 @@ import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.node.ComposeUiNode;
 import kotlin.Metadata;
-import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Spacer.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"Spacer", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)V", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
@@ -24,7 +21,7 @@ public final class SpacerKt {
             ComposerKt.traceEventStart(-72882467, i, -1, "androidx.compose.foundation.layout.Spacer (Spacer.kt:37)");
         }
         SpacerMeasurePolicy spacerMeasurePolicy = SpacerMeasurePolicy.INSTANCE;
-        ComposerKt.sourceInformationMarkerStart(composer, 544976794, "CC(Layout)P(1)122@4875L27,125@5041L333:Layout.kt#80mrfh");
+        ComposerKt.sourceInformationMarkerStart(composer, 544976794, "CC(Layout)P(1)124@5019L27,127@5185L389:Layout.kt#80mrfh");
         int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, modifier);
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
@@ -39,15 +36,12 @@ public final class SpacerKt {
         } else {
             composer.useNode();
         }
-        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-        Updater.m4605setimpl(m4598constructorimpl, spacerMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
-        }
+        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+        Updater.m4681setimpl(m4673constructorimpl, spacerMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);

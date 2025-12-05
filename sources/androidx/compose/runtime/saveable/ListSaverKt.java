@@ -15,9 +15,9 @@ public final class ListSaverKt {
         Function2 function22 = new Function2() { // from class: androidx.compose.runtime.saveable.ListSaverKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Object listSaver$lambda$1;
-                listSaver$lambda$1 = ListSaverKt.listSaver$lambda$1(Function2.this, (SaverScope) obj, obj2);
-                return listSaver$lambda$1;
+                Object listSaver$lambda$0;
+                listSaver$lambda$0 = ListSaverKt.listSaver$lambda$0(Function2.this, (SaverScope) obj, obj2);
+                return listSaver$lambda$0;
             }
         };
         Intrinsics.checkNotNull(function1, "null cannot be cast to non-null type kotlin.Function1<kotlin.Any, Original of androidx.compose.runtime.saveable.ListSaverKt.listSaver?>");
@@ -25,7 +25,7 @@ public final class ListSaverKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object listSaver$lambda$1(Function2 function2, SaverScope saverScope, Object obj) {
+    public static final Object listSaver$lambda$0(Function2 function2, SaverScope saverScope, Object obj) {
         List list = (List) function2.invoke(saverScope, obj);
         List list2 = list;
         int size = list2.size();

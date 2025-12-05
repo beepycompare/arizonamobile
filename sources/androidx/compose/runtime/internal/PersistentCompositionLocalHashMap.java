@@ -24,6 +24,10 @@ public final class PersistentCompositionLocalHashMap extends PersistentHashMap<C
     public static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
 
+    public PersistentCompositionLocalHashMap(TrieNode<CompositionLocal<Object>, ValueHolder<Object>> trieNode, int i) {
+        super(trieNode, i);
+    }
+
     public /* bridge */ boolean containsKey(CompositionLocal<Object> compositionLocal) {
         return super.containsKey((Object) compositionLocal);
     }
@@ -80,10 +84,6 @@ public final class PersistentCompositionLocalHashMap extends PersistentHashMap<C
     @Override // java.util.Map
     public final /* bridge */ /* synthetic */ Object getOrDefault(Object obj, Object obj2) {
         return !(obj instanceof CompositionLocal) ? obj2 : getOrDefault((CompositionLocal) obj, (ValueHolder) obj2);
-    }
-
-    public PersistentCompositionLocalHashMap(TrieNode<CompositionLocal<Object>, ValueHolder<Object>> trieNode, int i) {
-        super(trieNode, i);
     }
 
     @Override // androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableMap.PersistentHashMap, kotlin.collections.AbstractMap, androidx.compose.runtime.external.kotlinx.collections.immutable.ImmutableMap

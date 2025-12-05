@@ -4,19 +4,19 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class attr {
-        public static int dampingRatio = 0x7f0401bb;
-        public static int dotsClickable = 0x7f0401f7;
-        public static int dotsColor = 0x7f0401f8;
-        public static int dotsCornerRadius = 0x7f0401f9;
-        public static int dotsElevation = 0x7f0401fa;
-        public static int dotsSize = 0x7f0401fb;
-        public static int dotsSpacing = 0x7f0401fc;
-        public static int dotsStrokeColor = 0x7f0401fd;
-        public static int dotsStrokeWidth = 0x7f0401fe;
-        public static int dotsWidthFactor = 0x7f0401ff;
-        public static int progressMode = 0x7f0404fb;
-        public static int selectedDotColor = 0x7f04054d;
-        public static int stiffness = 0x7f0405ba;
+        public static int dampingRatio = 0x7f0401bc;
+        public static int dotsClickable = 0x7f0401f8;
+        public static int dotsColor = 0x7f0401f9;
+        public static int dotsCornerRadius = 0x7f0401fa;
+        public static int dotsElevation = 0x7f0401fb;
+        public static int dotsSize = 0x7f0401fc;
+        public static int dotsSpacing = 0x7f0401fd;
+        public static int dotsStrokeColor = 0x7f0401fe;
+        public static int dotsStrokeWidth = 0x7f0401ff;
+        public static int dotsWidthFactor = 0x7f040200;
+        public static int progressMode = 0x7f040503;
+        public static int selectedDotColor = 0x7f040555;
+        public static int stiffness = 0x7f0405c9;
 
         private attr() {
         }
@@ -36,9 +36,9 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class id {
-        public static int dot = 0x7f0a0450;
-        public static int spring_dot = 0x7f0a0ca3;
-        public static int worm_dot = 0x7f0a0f44;
+        public static int dot = 0x7f0a0455;
+        public static int spring_dot = 0x7f0a0caa;
+        public static int worm_dot = 0x7f0a0f4d;
 
         private id() {
         }

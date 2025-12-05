@@ -58,7 +58,7 @@ final class DefaultNavigationRailOverride$NavigationRail$1 implements Function2<
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1027527987, i, -1, "androidx.compose.material3.DefaultNavigationRailOverride.NavigationRail.<anonymous> (NavigationRail.kt:149)");
         }
-        Modifier selectableGroup = SelectableGroupKt.selectableGroup(PaddingKt.m845paddingVpY3zN4$default(SizeKt.m902widthInVpY3zN4$default(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), this.$this_NavigationRail.getWindowInsets()), NavigationRailCollapsedTokens.INSTANCE.m4092getNarrowContainerWidthD9Ej5fM(), 0.0f, 2, null), 0.0f, NavigationRailKt.getNavigationRailVerticalPadding(), 1, null));
+        Modifier selectableGroup = SelectableGroupKt.selectableGroup(PaddingKt.m930paddingVpY3zN4$default(SizeKt.m983widthInVpY3zN4$default(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), this.$this_NavigationRail.getWindowInsets()), NavigationRailCollapsedTokens.INSTANCE.m4178getNarrowContainerWidthD9Ej5fM(), 0.0f, 2, null), 0.0f, NavigationRailKt.getNavigationRailVerticalPadding(), 1, null));
         ComposerKt.sourceInformationMarkerStart(composer, 388093672, "CC(remember):NavigationRail.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -75,10 +75,10 @@ final class DefaultNavigationRailOverride$NavigationRail$1 implements Function2<
         ComposerKt.sourceInformationMarkerEnd(composer);
         Modifier semantics$default = SemanticsModifierKt.semantics$default(selectableGroup, false, (Function1) rememberedValue, 1, null);
         Alignment.Horizontal centerHorizontally = Alignment.Companion.getCenterHorizontally();
-        Arrangement.HorizontalOrVertical m702spacedBy0680j_4 = Arrangement.INSTANCE.m702spacedBy0680j_4(NavigationRailKt.getNavigationRailVerticalPadding());
+        Arrangement.HorizontalOrVertical m783spacedBy0680j_4 = Arrangement.INSTANCE.m783spacedBy0680j_4(NavigationRailKt.getNavigationRailVerticalPadding());
         NavigationRailOverrideScope navigationRailOverrideScope = this.$this_NavigationRail;
         ComposerKt.sourceInformationMarkerStart(composer, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
-        MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(m702spacedBy0680j_4, centerHorizontally, composer, 54);
+        MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(m783spacedBy0680j_4, centerHorizontally, composer, 54);
         ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
@@ -94,15 +94,15 @@ final class DefaultNavigationRailOverride$NavigationRail$1 implements Function2<
         } else {
             composer.useNode();
         }
-        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-        Updater.m4605setimpl(m4598constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+        Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
         ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, -548351563, "C164@7504L9:NavigationRail.kt#uh7d8r");
@@ -112,7 +112,7 @@ final class DefaultNavigationRailOverride$NavigationRail$1 implements Function2<
             ComposerKt.sourceInformation(composer, "161@7388L8,162@7417L52");
             header.invoke(columnScopeInstance, composer, 6);
             f = NavigationRailKt.NavigationRailHeaderPadding;
-            SpacerKt.Spacer(SizeKt.m881height3ABfNKs(Modifier.Companion, f), composer, 6);
+            SpacerKt.Spacer(SizeKt.m962height3ABfNKs(Modifier.Companion, f), composer, 6);
             composer.endReplaceGroup();
         } else {
             composer.startReplaceGroup(-548182273);

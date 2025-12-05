@@ -50,6 +50,15 @@ public class MutableSnapshot extends Snapshot {
         return false;
     }
 
+    public MutableSnapshot(long j, SnapshotIdSet snapshotIdSet, Function1<Object, Unit> function1, Function1<Object, Unit> function12) {
+        super(j, snapshotIdSet, (DefaultConstructorMarker) null);
+        this.readObserver = function1;
+        this.writeObserver = function12;
+        this.previousIds = SnapshotIdSet.Companion.getEMPTY();
+        this.previousPinnedSnapshots = EmptyIntArray;
+        this.snapshots = 1;
+    }
+
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: getReadObserver$runtime */
     public Function1<Object, Unit> getReadObserver() {
@@ -59,15 +68,6 @@ public class MutableSnapshot extends Snapshot {
     @Override // androidx.compose.runtime.snapshots.Snapshot
     public Function1<Object, Unit> getWriteObserver$runtime() {
         return this.writeObserver;
-    }
-
-    public MutableSnapshot(long j, SnapshotIdSet snapshotIdSet, Function1<Object, Unit> function1, Function1<Object, Unit> function12) {
-        super(j, snapshotIdSet, (DefaultConstructorMarker) null);
-        this.readObserver = function1;
-        this.writeObserver = function12;
-        this.previousIds = SnapshotIdSet.Companion.getEMPTY();
-        this.previousPinnedSnapshots = EmptyIntArray;
-        this.snapshots = 1;
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
@@ -91,31 +91,29 @@ public class MutableSnapshot extends Snapshot {
     }
 
     public MutableSnapshot takeNestedMutableSnapshot(Function1<Object, Unit> function1, Function1<Object, Unit> function12) {
-        Function1<Object, Unit> function13;
-        Function1<Object, Unit> function14;
         Map<SnapshotObserver, SnapshotInstanceObservers> map;
         long j;
         long j2;
         long j3;
         SnapshotIdSet snapshotIdSet;
         NestedMutableSnapshot nestedMutableSnapshot;
-        Function1 mergedWriteObserver;
         long j4;
         long j5;
         SnapshotIdSet snapshotIdSet2;
         validateNotDisposed$runtime();
         validateNotAppliedOrPinned();
+        MutableSnapshot mutableSnapshot = this;
         PersistentList access$getObservers$p = SnapshotObserverKt.access$getObservers$p();
+        Function1<Object, Unit> function13 = function1;
+        Function1<Object, Unit> function14 = function12;
         if (access$getObservers$p != null) {
-            Pair<SnapshotInstanceObservers, Map<SnapshotObserver, SnapshotInstanceObservers>> mergeObservers = SnapshotObserverKt.mergeObservers(access$getObservers$p, this, false, function1, function12);
+            Pair<SnapshotInstanceObservers, Map<SnapshotObserver, SnapshotInstanceObservers>> mergeObservers = SnapshotObserverKt.mergeObservers(access$getObservers$p, mutableSnapshot, false, function13, function14);
             SnapshotInstanceObservers first = mergeObservers.getFirst();
             Function1<Object, Unit> readObserver = first.getReadObserver();
             function14 = first.getWriteObserver();
-            function13 = readObserver;
             map = mergeObservers.getSecond();
+            function13 = readObserver;
         } else {
-            function13 = function1;
-            function14 = function12;
             map = null;
         }
         recordPrevious$runtime(getSnapshotId());
@@ -128,10 +126,7 @@ public class MutableSnapshot extends Snapshot {
             SnapshotKt.openSnapshots = snapshotIdSet.set(j);
             SnapshotIdSet invalid$runtime = getInvalid$runtime();
             setInvalid$runtime(invalid$runtime.set(j));
-            SnapshotIdSet addRange = SnapshotKt.addRange(invalid$runtime, getSnapshotId() + j3, j);
-            Function1 mergedReadObserver$default = SnapshotKt.mergedReadObserver$default(function13, getReadObserver(), false, 4, null);
-            mergedWriteObserver = SnapshotKt.mergedWriteObserver(function14, getWriteObserver$runtime());
-            nestedMutableSnapshot = new NestedMutableSnapshot(j, addRange, mergedReadObserver$default, mergedWriteObserver, this);
+            nestedMutableSnapshot = new NestedMutableSnapshot(j, SnapshotKt.addRange(invalid$runtime, getSnapshotId() + j3, j), SnapshotKt.mergedReadObserver$default(function13, getReadObserver(), false, 4, null), SnapshotKt.mergedWriteObserver(function14, getWriteObserver$runtime()), this);
         }
         if (!getApplied$runtime() && !getDisposed$runtime()) {
             long snapshotId = getSnapshotId();
@@ -148,7 +143,7 @@ public class MutableSnapshot extends Snapshot {
         }
         NestedMutableSnapshot nestedMutableSnapshot2 = nestedMutableSnapshot;
         if (access$getObservers$p != null) {
-            SnapshotObserverKt.dispatchCreatedObservers(access$getObservers$p, this, nestedMutableSnapshot2, map);
+            SnapshotObserverKt.dispatchCreatedObservers(access$getObservers$p, mutableSnapshot, nestedMutableSnapshot2, map);
         }
         return nestedMutableSnapshot2;
     }
@@ -350,7 +345,7 @@ public class MutableSnapshot extends Snapshot {
         }
         super.dispose();
         MutableSnapshot mutableSnapshot = this;
-        mo4736nestedDeactivated$runtime(mutableSnapshot);
+        mo4865nestedDeactivated$runtime(mutableSnapshot);
         SnapshotObserverKt.dispatchObserverOnPreDispose(mutableSnapshot);
     }
 
@@ -413,13 +408,13 @@ public class MutableSnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public void mo4735nestedActivated$runtime(Snapshot snapshot) {
+    public void mo4864nestedActivated$runtime(Snapshot snapshot) {
         this.snapshots++;
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public void mo4736nestedDeactivated$runtime(Snapshot snapshot) {
+    public void mo4865nestedDeactivated$runtime(Snapshot snapshot) {
         if (!(this.snapshots > 0)) {
             PreconditionsKt.throwIllegalArgumentException("no pending nested snapshots");
         }
@@ -707,7 +702,7 @@ public class MutableSnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: recordModified$runtime */
-    public void mo4737recordModified$runtime(StateObject stateObject) {
+    public void mo4866recordModified$runtime(StateObject stateObject) {
         MutableScatterSet<StateObject> modified$runtime = getModified$runtime();
         if (modified$runtime == null) {
             modified$runtime = ScatterSetKt.mutableScatterSetOf();

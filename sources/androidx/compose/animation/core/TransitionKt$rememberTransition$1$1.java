@@ -15,7 +15,7 @@ import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Transition.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.core.TransitionKt$rememberTransition$1$1", f = "Transition.kt", i = {0}, l = {2173}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.animation.core.TransitionKt$rememberTransition$1$1", f = "Transition.kt", i = {0}, l = {2174}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ TransitionState<T> $transitionState;
@@ -70,7 +70,7 @@ public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda imp
             CancellableContinuation compositionContinuation$animation_core = ((SeekableTransitionState) transitionState).getCompositionContinuation$animation_core();
             if (compositionContinuation$animation_core != null) {
                 Result.Companion companion = Result.Companion;
-                compositionContinuation$animation_core.resumeWith(Result.m9904constructorimpl(((SeekableTransitionState) transitionState).getTargetState()));
+                compositionContinuation$animation_core.resumeWith(Result.m10199constructorimpl(((SeekableTransitionState) transitionState).getTargetState()));
             }
             ((SeekableTransitionState) transitionState).setCompositionContinuation$animation_core(null);
             Unit unit = Unit.INSTANCE;

@@ -23,7 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DownloadManager {
     public static final int DEFAULT_MAX_PARALLEL_DOWNLOADS = 3;
     public static final int DEFAULT_MIN_RETRY_COUNT = 5;
@@ -62,7 +62,7 @@ public final class DownloadManager {
     private RequirementsWatcher requirementsWatcher;
     private boolean waitingForRequirements;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         default void onDownloadChanged(DownloadManager downloadManager, Download download, Exception exc) {
         }
@@ -394,7 +394,7 @@ public final class DownloadManager {
         return new Download(download.request.copyWithMergedRequest(downloadRequest), i3, j2, j, -1L, i, 0);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class InternalHandler extends Handler {
         private static final int UPDATE_PROGRESS_INTERVAL_MS = 5000;
         private int activeDownloadTaskCount;
@@ -857,7 +857,7 @@ public final class DownloadManager {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Task extends Thread implements Downloader.ProgressListener {
         private long contentLength;
         private final DownloadProgress downloadProgress;
@@ -948,7 +948,7 @@ public final class DownloadManager {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class DownloadUpdate {
         public final Download download;
         public final List<Download> downloads;

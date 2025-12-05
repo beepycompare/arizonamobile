@@ -17,22 +17,22 @@ public final class MapSaverKt {
         return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.runtime.saveable.MapSaverKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                List mapSaver$lambda$2;
-                mapSaver$lambda$2 = MapSaverKt.mapSaver$lambda$2(Function2.this, (SaverScope) obj, obj2);
-                return mapSaver$lambda$2;
+                List mapSaver$lambda$0;
+                mapSaver$lambda$0 = MapSaverKt.mapSaver$lambda$0(Function2.this, (SaverScope) obj, obj2);
+                return mapSaver$lambda$0;
             }
         }, new Function1() { // from class: androidx.compose.runtime.saveable.MapSaverKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object mapSaver$lambda$4;
-                mapSaver$lambda$4 = MapSaverKt.mapSaver$lambda$4(Function1.this, (List) obj);
-                return mapSaver$lambda$4;
+                Object mapSaver$lambda$1;
+                mapSaver$lambda$1 = MapSaverKt.mapSaver$lambda$1(Function1.this, (List) obj);
+                return mapSaver$lambda$1;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List mapSaver$lambda$2(Function2 function2, SaverScope saverScope, Object obj) {
+    public static final List mapSaver$lambda$0(Function2 function2, SaverScope saverScope, Object obj) {
         ArrayList arrayList = new ArrayList();
         for (Map.Entry entry : ((Map) function2.invoke(saverScope, obj)).entrySet()) {
             arrayList.add(entry.getKey());
@@ -42,7 +42,7 @@ public final class MapSaverKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object mapSaver$lambda$4(Function1 function1, List list) {
+    public static final Object mapSaver$lambda$1(Function1 function1, List list) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         if (list.size() % 2 != 0) {
             throw new IllegalStateException("non-zero remainder".toString());

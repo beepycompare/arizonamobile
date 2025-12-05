@@ -15,7 +15,7 @@ import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.channels.SendChannel;
 /* compiled from: Lifecycle.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", "Landroidx/lifecycle/Lifecycle$Event;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.lifecycle.LifecycleKt$eventFlow$1", f = "Lifecycle.kt", i = {}, l = {373}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.lifecycle.LifecycleKt$eventFlow$1", f = "Lifecycle.kt", i = {}, l = {376}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 final class LifecycleKt$eventFlow$1 extends SuspendLambda implements Function2<ProducerScope<? super Lifecycle.Event>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Lifecycle $this_eventFlow;
@@ -77,7 +77,7 @@ final class LifecycleKt$eventFlow$1 extends SuspendLambda implements Function2<P
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void invokeSuspend$lambda$0(ProducerScope producerScope, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-        producerScope.mo8879trySendJP2dKIU(event);
+        producerScope.mo9143trySendJP2dKIU(event);
         if (event == Lifecycle.Event.ON_DESTROY) {
             SendChannel.DefaultImpls.close$default(producerScope, null, 1, null);
         }

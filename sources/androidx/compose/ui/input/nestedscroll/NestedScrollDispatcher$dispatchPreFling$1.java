@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NestedScrollModifier.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollDispatcher", f = "NestedScrollModifier.kt", i = {}, l = {199}, m = "dispatchPreFling-QWom1Mo", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollDispatcher", f = "NestedScrollModifier.kt", i = {}, l = {199}, m = "dispatchPreFling-QWom1Mo", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class NestedScrollDispatcher$dispatchPreFling$1 extends ContinuationImpl {
     int label;
@@ -25,6 +25,6 @@ public final class NestedScrollDispatcher$dispatchPreFling$1 extends Continuatio
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m6446dispatchPreFlingQWom1Mo(0L, this);
+        return this.this$0.m6607dispatchPreFlingQWom1Mo(0L, this);
     }
 }

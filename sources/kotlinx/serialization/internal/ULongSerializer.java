@@ -21,12 +21,12 @@ public final class ULongSerializer implements KSerializer<ULong> {
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return ULong.m10077boximpl(m11642deserializeI7RO_PI(decoder));
+        return ULong.m10372boximpl(m11937deserializeI7RO_PI(decoder));
     }
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m11643serialize2TYgG_w(encoder, ((ULong) obj).m10135unboximpl());
+        m11938serialize2TYgG_w(encoder, ((ULong) obj).m10430unboximpl());
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -35,14 +35,14 @@ public final class ULongSerializer implements KSerializer<ULong> {
     }
 
     /* renamed from: serialize-2TYgG_w  reason: not valid java name */
-    public void m11643serialize2TYgG_w(Encoder encoder, long j) {
+    public void m11938serialize2TYgG_w(Encoder encoder, long j) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         encoder.encodeInline(getDescriptor()).encodeLong(j);
     }
 
     /* renamed from: deserialize-I7RO_PI  reason: not valid java name */
-    public long m11642deserializeI7RO_PI(Decoder decoder) {
+    public long m11937deserializeI7RO_PI(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return ULong.m10083constructorimpl(decoder.decodeInline(getDescriptor()).decodeLong());
+        return ULong.m10378constructorimpl(decoder.decodeInline(getDescriptor()).decodeLong());
     }
 }

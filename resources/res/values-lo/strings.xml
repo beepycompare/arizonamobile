@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">ແບ່ງປັນກັບ</string>
     <string name="abc_shareactionprovider_share_with_application">ແບ່ງປັນດ້ວຍ %s</string>
     <string name="abc_toolbar_collapse_description">ຫຍໍ້ລົງ</string>
-    <string name="autofill">ຕື່ມຂໍ້ມູນອັດຕະໂນມັດ</string>
+    <string name="androidx_compose_foundation_autofill">ຕື່ມຂໍ້ມູນອັດຕະໂນມັດ</string>
+    <string name="androidx_compose_ui_autofill">ຕື່ມຂໍ້ມູນອັດຕະໂນມັດ</string>
     <string name="bottomsheet_action_collapse">ຫຍໍ້ຊີດລຸ່ມສຸດລົງ</string>
     <string name="bottomsheet_action_expand">ຂະຫຍາຍຊີດລຸ່ມສຸດ</string>
     <string name="bottomsheet_action_expand_halfway">ຂະຫຍາຍອອກເຄິ່ງໜຶ່ງ</string>

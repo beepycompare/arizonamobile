@@ -13,8 +13,8 @@ import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidColorSpace.android.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0007J\f\u0010\u0007\u001a\u00020\u0006*\u00020\u0005H\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;", "", "<init>", "()V", "androidColorSpace", "Landroid/graphics/ColorSpace;", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "composeColorSpace", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0007J\f\u0010\u0007\u001a\u00020\u0006*\u00020\u0005H\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;", "", "<init>", "()V", "androidColorSpace", "Landroid/graphics/ColorSpace;", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "composeColorSpace", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 final class ColorSpaceVerificationHelper {
     public static final ColorSpaceVerificationHelper INSTANCE = new ColorSpaceVerificationHelper();
 
@@ -76,14 +76,14 @@ final class ColorSpaceVerificationHelper {
         if (Build.VERSION.SDK_INT < 34 || (obtainAndroidColorSpace = ColorSpaceVerificationHelperV34.obtainAndroidColorSpace(colorSpace)) == null) {
             if (colorSpace instanceof Rgb) {
                 Rgb rgb2 = (Rgb) colorSpace;
-                float[] xyz$ui_graphics_release = rgb2.getWhitePoint().toXyz$ui_graphics_release();
+                float[] xyz$ui_graphics = rgb2.getWhitePoint().toXyz$ui_graphics();
                 TransferParameters transferParameters = rgb2.getTransferParameters();
                 ColorSpace.Rgb.TransferParameters transferParameters2 = transferParameters != null ? new ColorSpace.Rgb.TransferParameters(transferParameters.getA(), transferParameters.getB(), transferParameters.getC(), transferParameters.getD(), transferParameters.getE(), transferParameters.getF(), transferParameters.getGamma()) : null;
                 if (transferParameters2 != null) {
-                    rgb = new ColorSpace.Rgb(colorSpace.getName(), rgb2.getPrimaries$ui_graphics_release(), xyz$ui_graphics_release, transferParameters2);
+                    rgb = new ColorSpace.Rgb(colorSpace.getName(), rgb2.getPrimaries$ui_graphics(), xyz$ui_graphics, transferParameters2);
                 } else {
                     String name = colorSpace.getName();
-                    float[] primaries$ui_graphics_release = rgb2.getPrimaries$ui_graphics_release();
+                    float[] primaries$ui_graphics = rgb2.getPrimaries$ui_graphics();
                     final Function1<Double, Double> oetf = rgb2.getOetf();
                     DoubleUnaryOperator doubleUnaryOperator = new DoubleUnaryOperator() { // from class: androidx.compose.ui.graphics.ColorSpaceVerificationHelper$$ExternalSyntheticLambda0
                         @Override // java.util.function.DoubleUnaryOperator
@@ -94,7 +94,7 @@ final class ColorSpaceVerificationHelper {
                         }
                     };
                     final Function1<Double, Double> eotf = rgb2.getEotf();
-                    rgb = new ColorSpace.Rgb(name, primaries$ui_graphics_release, xyz$ui_graphics_release, doubleUnaryOperator, new DoubleUnaryOperator() { // from class: androidx.compose.ui.graphics.ColorSpaceVerificationHelper$$ExternalSyntheticLambda1
+                    rgb = new ColorSpace.Rgb(name, primaries$ui_graphics, xyz$ui_graphics, doubleUnaryOperator, new DoubleUnaryOperator() { // from class: androidx.compose.ui.graphics.ColorSpaceVerificationHelper$$ExternalSyntheticLambda1
                         @Override // java.util.function.DoubleUnaryOperator
                         public final double applyAsDouble(double d) {
                             double androidColorSpace$lambda$1;
@@ -175,7 +175,7 @@ final class ColorSpaceVerificationHelper {
         }
         if (Build.VERSION.SDK_INT >= 34) {
             androidx.compose.ui.graphics.colorspace.ColorSpace obtainComposeColorSpaceFromId = ColorSpaceVerificationHelperV34.obtainComposeColorSpaceFromId(colorSpace.getId());
-            if (!Intrinsics.areEqual(obtainComposeColorSpaceFromId, ColorSpaces.INSTANCE.getUnspecified$ui_graphics_release())) {
+            if (!Intrinsics.areEqual(obtainComposeColorSpaceFromId, ColorSpaces.INSTANCE.getUnspecified$ui_graphics())) {
                 return obtainComposeColorSpaceFromId;
             }
         }
@@ -190,16 +190,16 @@ final class ColorSpaceVerificationHelper {
             srgb = new Rgb(rgb.getName(), rgb.getPrimaries(), whitePoint, rgb.getTransform(), new DoubleFunction() { // from class: androidx.compose.ui.graphics.ColorSpaceVerificationHelper$$ExternalSyntheticLambda2
                 @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                 public final double invoke(double d) {
-                    double composeColorSpace$lambda$2;
-                    composeColorSpace$lambda$2 = ColorSpaceVerificationHelper.composeColorSpace$lambda$2(colorSpace, d);
-                    return composeColorSpace$lambda$2;
+                    double composeColorSpace$lambda$0;
+                    composeColorSpace$lambda$0 = ColorSpaceVerificationHelper.composeColorSpace$lambda$0(colorSpace, d);
+                    return composeColorSpace$lambda$0;
                 }
             }, new DoubleFunction() { // from class: androidx.compose.ui.graphics.ColorSpaceVerificationHelper$$ExternalSyntheticLambda3
                 @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                 public final double invoke(double d) {
-                    double composeColorSpace$lambda$3;
-                    composeColorSpace$lambda$3 = ColorSpaceVerificationHelper.composeColorSpace$lambda$3(colorSpace, d);
-                    return composeColorSpace$lambda$3;
+                    double composeColorSpace$lambda$1;
+                    composeColorSpace$lambda$1 = ColorSpaceVerificationHelper.composeColorSpace$lambda$1(colorSpace, d);
+                    return composeColorSpace$lambda$1;
                 }
             }, rgb.getMinValue(0), rgb.getMaxValue(0), transferParameters != null ? new TransferParameters(transferParameters.g, transferParameters.a, transferParameters.b, transferParameters.c, transferParameters.d, transferParameters.e, transferParameters.f) : null, rgb.getId());
         } else {
@@ -209,12 +209,12 @@ final class ColorSpaceVerificationHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final double composeColorSpace$lambda$2(ColorSpace colorSpace, double d) {
+    public static final double composeColorSpace$lambda$0(ColorSpace colorSpace, double d) {
         return ((ColorSpace.Rgb) colorSpace).getOetf().applyAsDouble(d);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final double composeColorSpace$lambda$3(ColorSpace colorSpace, double d) {
+    public static final double composeColorSpace$lambda$1(ColorSpace colorSpace, double d) {
         return ((ColorSpace.Rgb) colorSpace).getEotf().applyAsDouble(d);
     }
 }

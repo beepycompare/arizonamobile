@@ -1,6 +1,7 @@
 package androidx.compose.ui.focus;
 
 import androidx.compose.runtime.collection.MutableVector;
+import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.internal.InlineClassHelperKt;
 import androidx.compose.ui.node.DelegatableNodeKt;
@@ -13,7 +14,7 @@ import kotlin.ReplaceWith;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: FocusRequester.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\b\u0007\u0018\u0000 \u001a2\u00020\u0001:\u0001\u001aB\t\b\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\t\u001a\u00020\nH\u0007J\u0017\u0010\t\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ!\u0010\u0010\u001a\u00020\u000b2\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u000b0\u0012H\u0000¢\u0006\u0002\b\u0014J\u0006\u0010\u0015\u001a\u00020\u000bJ\u0006\u0010\u0016\u001a\u00020\u000bJ\u0006\u0010\u0017\u001a\u00020\u000bJ\u0006\u0010\u0018\u001a\u00020\u000bJ\u001d\u0010\u0019\u001a\u00020\u000b2\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u000b0\u0012H\u0082\bR\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\u001b"}, d2 = {"Landroidx/compose/ui/focus/FocusRequester;", "", "<init>", "()V", "focusRequesterNodes", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "getFocusRequesterNodes$ui_release", "()Landroidx/compose/runtime/collection/MutableVector;", "requestFocus", "", "", "focusDirection", "Landroidx/compose/ui/focus/FocusDirection;", "requestFocus-3ESFkO8", "(I)Z", "findFocusTargetNode", "onFound", "Lkotlin/Function1;", "Landroidx/compose/ui/focus/FocusTargetNode;", "findFocusTargetNode$ui_release", "captureFocus", "freeFocus", "saveFocusedChild", "restoreFocusedChild", "findFocusTarget", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\b\u0007\u0018\u0000 \u001b2\u00020\u0001:\u0001\u001bB\t\b\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\t\u001a\u00020\nH\u0007J\u0017\u0010\t\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ!\u0010\u0010\u001a\u00020\u000b2\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u000b0\u0012H\u0000¢\u0006\u0002\b\u0014J\u0006\u0010\u0015\u001a\u00020\u000bJ\u0006\u0010\u0016\u001a\u00020\u000bJ\u0006\u0010\u0017\u001a\u00020\u000bJ\u0006\u0010\u0018\u001a\u00020\u000bJ\"\u0010\u0019\u001a\u00020\u000b2\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u000b0\u0012H\u0080\b¢\u0006\u0002\b\u001aR\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\u001c"}, d2 = {"Landroidx/compose/ui/focus/FocusRequester;", "", "<init>", "()V", "focusRequesterNodes", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "getFocusRequesterNodes$ui", "()Landroidx/compose/runtime/collection/MutableVector;", "requestFocus", "", "", "focusDirection", "Landroidx/compose/ui/focus/FocusDirection;", "requestFocus-3ESFkO8", "(I)Z", "findFocusTargetNode", "onFound", "Lkotlin/Function1;", "Landroidx/compose/ui/focus/FocusTargetNode;", "findFocusTargetNode$ui", "captureFocus", "freeFocus", "saveFocusedChild", "restoreFocusedChild", "findFocusTarget", "findFocusTarget$ui", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FocusRequester {
     public static final int $stable = 0;
@@ -23,37 +24,128 @@ public final class FocusRequester {
     private static final FocusRequester Cancel = new FocusRequester();
     private static final FocusRequester Redirect = new FocusRequester();
 
-    public final MutableVector<FocusRequesterModifierNode> getFocusRequesterNodes$ui_release() {
+    public final MutableVector<FocusRequesterModifierNode> getFocusRequesterNodes$ui() {
         return this.focusRequesterNodes;
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "use the version the has a FocusDirection", replaceWith = @ReplaceWith(expression = "this.requestFocus()", imports = {}))
     public final /* synthetic */ void requestFocus() {
-        m4944requestFocus3ESFkO8(FocusDirection.Companion.m4920getEnterdhqQ8s());
+        m5085requestFocus3ESFkO8(FocusDirection.Companion.m5059getEnterdhqQ8s());
     }
 
     /* renamed from: requestFocus-3ESFkO8$default  reason: not valid java name */
-    public static /* synthetic */ boolean m4943requestFocus3ESFkO8$default(FocusRequester focusRequester, int i, int i2, Object obj) {
+    public static /* synthetic */ boolean m5084requestFocus3ESFkO8$default(FocusRequester focusRequester, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = FocusDirection.Companion.m4920getEnterdhqQ8s();
+            i = FocusDirection.Companion.m5059getEnterdhqQ8s();
         }
-        return focusRequester.m4944requestFocus3ESFkO8(i);
+        return focusRequester.m5085requestFocus3ESFkO8(i);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0073, code lost:
+        continue;
+     */
     /* renamed from: requestFocus-3ESFkO8  reason: not valid java name */
-    public final boolean m4944requestFocus3ESFkO8(final int i) {
-        return findFocusTargetNode$ui_release(new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusRequester$requestFocus$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean m5085requestFocus3ESFkO8(final int i) {
+        if (!ComposeUiFlags.isRequestFocusOnNonFocusableFocusTargetEnabled) {
+            return findFocusTargetNode$ui(new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusRequester$requestFocus$2
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(1);
+                }
 
-            @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                return Boolean.valueOf(focusTargetNode.mo4947requestFocus3ESFkO8(i));
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(FocusTargetNode focusTargetNode) {
+                    return Boolean.valueOf(focusTargetNode.mo5088requestFocus3ESFkO8(i));
+                }
+            });
+        }
+        Companion companion = Companion;
+        if (this == companion.getDefault()) {
+            throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
+        }
+        if (this == companion.getCancel()) {
+            throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
+        }
+        if (getFocusRequesterNodes$ui().getSize() == 0) {
+            System.out.println((Object) "FocusRelatedWarning: \n   FocusRequester is not initialized. Here are some possible fixes:\n\n   1. Remember the FocusRequester: val focusRequester = remember { FocusRequester() }\n   2. Did you forget to add a Modifier.focusRequester() ?\n   3. Are you attempting to request focus during composition? Focus requests should be made in\n   response to some event. Eg Modifier.clickable { focusRequester.requestFocus() }\n");
+            return false;
+        }
+        MutableVector<FocusRequesterModifierNode> focusRequesterNodes$ui = getFocusRequesterNodes$ui();
+        FocusRequesterModifierNode[] focusRequesterModifierNodeArr = focusRequesterNodes$ui.content;
+        int size = focusRequesterNodes$ui.getSize();
+        boolean z = false;
+        for (int i2 = 0; i2 < size; i2++) {
+            FocusRequesterModifierNode focusRequesterModifierNode = focusRequesterModifierNodeArr[i2];
+            int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+            if (!focusRequesterModifierNode.getNode().isAttached()) {
+                InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
-        });
+            MutableVector mutableVector = new MutableVector(new Modifier.Node[16], 0);
+            Modifier.Node child$ui = focusRequesterModifierNode.getNode().getChild$ui();
+            if (child$ui == null) {
+                DelegatableNodeKt.addLayoutNodeChildren(mutableVector, focusRequesterModifierNode.getNode(), false);
+            } else {
+                mutableVector.add(child$ui);
+            }
+            while (true) {
+                if (mutableVector.getSize() != 0) {
+                    Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
+                    if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                        DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
+                    } else {
+                        while (true) {
+                            if (node == null) {
+                                break;
+                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                MutableVector mutableVector2 = null;
+                                while (node != null) {
+                                    if (node instanceof FocusTargetNode) {
+                                        if (((FocusTargetNode) node).mo5088requestFocus3ESFkO8(i)) {
+                                            z = true;
+                                            break;
+                                        }
+                                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                        int i3 = 0;
+                                        for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                                            if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                                i3++;
+                                                if (i3 == 1) {
+                                                    node = delegate$ui;
+                                                } else {
+                                                    if (mutableVector2 == null) {
+                                                        mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
+                                                    }
+                                                    if (node != null) {
+                                                        if (mutableVector2 != null) {
+                                                            mutableVector2.add(node);
+                                                        }
+                                                        node = null;
+                                                    }
+                                                    if (mutableVector2 != null) {
+                                                        mutableVector2.add(delegate$ui);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        if (i3 == 1) {
+                                        }
+                                    }
+                                    node = DelegatableNodeKt.pop(mutableVector2);
+                                }
+                                continue;
+                            } else {
+                                node = node.getChild$ui();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return z;
     }
 
     public final boolean captureFocus() {
@@ -120,7 +212,7 @@ public final class FocusRequester {
     }
 
     /* compiled from: FocusRequester.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0001\u000eB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\f\u001a\u00020\rR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0007¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/focus/FocusRequester$Companion;", "", "<init>", "()V", "Default", "Landroidx/compose/ui/focus/FocusRequester;", "getDefault", "()Landroidx/compose/ui/focus/FocusRequester;", "Cancel", "getCancel", "Redirect", "getRedirect$ui_release", "createRefs", "Landroidx/compose/ui/focus/FocusRequester$Companion$FocusRequesterFactory;", "FocusRequesterFactory", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0001\u000eB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\f\u001a\u00020\rR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0007¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/focus/FocusRequester$Companion;", "", "<init>", "()V", "Default", "Landroidx/compose/ui/focus/FocusRequester;", "getDefault", "()Landroidx/compose/ui/focus/FocusRequester;", "Cancel", "getCancel", "Redirect", "getRedirect$ui", "createRefs", "Landroidx/compose/ui/focus/FocusRequester$Companion$FocusRequesterFactory;", "FocusRequesterFactory", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -138,12 +230,12 @@ public final class FocusRequester {
             return FocusRequester.Cancel;
         }
 
-        public final FocusRequester getRedirect$ui_release() {
+        public final FocusRequester getRedirect$ui() {
             return FocusRequester.Redirect;
         }
 
         /* compiled from: FocusRequester.kt */
-        @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\t\u0010\u0004\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0006\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0007\u001a\u00020\u0005H\u0086\u0002J\t\u0010\b\u001a\u00020\u0005H\u0086\u0002J\t\u0010\t\u001a\u00020\u0005H\u0086\u0002J\t\u0010\n\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u000b\u001a\u00020\u0005H\u0086\u0002J\t\u0010\f\u001a\u00020\u0005H\u0086\u0002J\t\u0010\r\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u000e\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u000f\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0010\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0011\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0012\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0013\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0014\u001a\u00020\u0005H\u0086\u0002¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/focus/FocusRequester$Companion$FocusRequesterFactory;", "", "<init>", "()V", "component1", "Landroidx/compose/ui/focus/FocusRequester;", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\t\u0010\u0004\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0006\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0007\u001a\u00020\u0005H\u0086\u0002J\t\u0010\b\u001a\u00020\u0005H\u0086\u0002J\t\u0010\t\u001a\u00020\u0005H\u0086\u0002J\t\u0010\n\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u000b\u001a\u00020\u0005H\u0086\u0002J\t\u0010\f\u001a\u00020\u0005H\u0086\u0002J\t\u0010\r\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u000e\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u000f\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0010\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0011\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0012\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0013\u001a\u00020\u0005H\u0086\u0002J\t\u0010\u0014\u001a\u00020\u0005H\u0086\u0002¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/focus/FocusRequester$Companion$FocusRequesterFactory;", "", "<init>", "()V", "component1", "Landroidx/compose/ui/focus/FocusRequester;", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes.dex */
         public static final class FocusRequesterFactory {
             public static final int $stable = 0;
@@ -222,7 +314,7 @@ public final class FocusRequester {
         }
     }
 
-    private final boolean findFocusTarget(Function1<? super FocusTargetNode, Boolean> function1) {
+    public final boolean findFocusTarget$ui(Function1<? super FocusTargetNode, Boolean> function1) {
         Companion companion = Companion;
         if (this == companion.getDefault()) {
             throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
@@ -230,63 +322,63 @@ public final class FocusRequester {
         if (this == companion.getCancel()) {
             throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
         }
-        if (this.focusRequesterNodes.getSize() == 0) {
+        if (getFocusRequesterNodes$ui().getSize() == 0) {
             System.out.println((Object) "FocusRelatedWarning: \n   FocusRequester is not initialized. Here are some possible fixes:\n\n   1. Remember the FocusRequester: val focusRequester = remember { FocusRequester() }\n   2. Did you forget to add a Modifier.focusRequester() ?\n   3. Are you attempting to request focus during composition? Focus requests should be made in\n   response to some event. Eg Modifier.clickable { focusRequester.requestFocus() }\n");
             return false;
         }
-        MutableVector<FocusRequesterModifierNode> mutableVector = this.focusRequesterNodes;
-        FocusRequesterModifierNode[] focusRequesterModifierNodeArr = mutableVector.content;
-        int size = mutableVector.getSize();
+        MutableVector<FocusRequesterModifierNode> focusRequesterNodes$ui = getFocusRequesterNodes$ui();
+        FocusRequesterModifierNode[] focusRequesterModifierNodeArr = focusRequesterNodes$ui.content;
+        int size = focusRequesterNodes$ui.getSize();
         boolean z = false;
         for (int i = 0; i < size; i++) {
             FocusRequesterModifierNode focusRequesterModifierNode = focusRequesterModifierNodeArr[i];
-            int m6989constructorimpl = NodeKind.m6989constructorimpl(1024);
+            int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
             if (!focusRequesterModifierNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
-            MutableVector mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
-            Modifier.Node child$ui_release = focusRequesterModifierNode.getNode().getChild$ui_release();
-            if (child$ui_release == null) {
-                DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, focusRequesterModifierNode.getNode(), false);
+            MutableVector mutableVector = new MutableVector(new Modifier.Node[16], 0);
+            Modifier.Node child$ui = focusRequesterModifierNode.getNode().getChild$ui();
+            if (child$ui == null) {
+                DelegatableNodeKt.addLayoutNodeChildren(mutableVector, focusRequesterModifierNode.getNode(), false);
             } else {
-                mutableVector2.add(child$ui_release);
+                mutableVector.add(child$ui);
             }
             while (true) {
-                if (mutableVector2.getSize() != 0) {
-                    Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-                    if ((node.getAggregateChildKindSet$ui_release() & m6989constructorimpl) == 0) {
-                        DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
+                if (mutableVector.getSize() != 0) {
+                    Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
+                    if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                        DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
                     } else {
                         while (true) {
                             if (node == null) {
                                 break;
-                            } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0) {
-                                MutableVector mutableVector3 = null;
+                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                MutableVector mutableVector2 = null;
                                 while (node != null) {
                                     if (node instanceof FocusTargetNode) {
                                         if (function1.invoke((FocusTargetNode) node).booleanValue()) {
                                             z = true;
                                             break;
                                         }
-                                    } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                         int i2 = 0;
-                                        for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                            if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                                        for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                                            if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                                                 i2++;
                                                 if (i2 == 1) {
-                                                    node = delegate$ui_release;
+                                                    node = delegate$ui;
                                                 } else {
-                                                    if (mutableVector3 == null) {
-                                                        mutableVector3 = new MutableVector(new Modifier.Node[16], 0);
+                                                    if (mutableVector2 == null) {
+                                                        mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
                                                     }
                                                     if (node != null) {
-                                                        if (mutableVector3 != null) {
-                                                            mutableVector3.add(node);
+                                                        if (mutableVector2 != null) {
+                                                            mutableVector2.add(node);
                                                         }
                                                         node = null;
                                                     }
-                                                    if (mutableVector3 != null) {
-                                                        mutableVector3.add(delegate$ui_release);
+                                                    if (mutableVector2 != null) {
+                                                        mutableVector2.add(delegate$ui);
                                                     }
                                                 }
                                             }
@@ -294,10 +386,10 @@ public final class FocusRequester {
                                         if (i2 == 1) {
                                         }
                                     }
-                                    node = DelegatableNodeKt.pop(mutableVector3);
+                                    node = DelegatableNodeKt.pop(mutableVector2);
                                 }
                             } else {
-                                node = node.getChild$ui_release();
+                                node = node.getChild$ui();
                             }
                         }
                     }
@@ -307,14 +399,14 @@ public final class FocusRequester {
         return z;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x006b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x006f, code lost:
         continue;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean findFocusTargetNode$ui_release(Function1<? super FocusTargetNode, Boolean> function1) {
-        boolean m4982findChildCorrespondingToFocusEnterOMvw8;
+    public final boolean findFocusTargetNode$ui(Function1<? super FocusTargetNode, Boolean> function1) {
+        boolean m5125findChildCorrespondingToFocusEnterOMvw8;
         Companion companion = Companion;
         if (this == companion.getDefault()) {
             throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
@@ -322,69 +414,69 @@ public final class FocusRequester {
         if (this == companion.getCancel()) {
             throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
         }
-        if (this.focusRequesterNodes.getSize() == 0) {
+        if (getFocusRequesterNodes$ui().getSize() == 0) {
             System.out.println((Object) "FocusRelatedWarning: \n   FocusRequester is not initialized. Here are some possible fixes:\n\n   1. Remember the FocusRequester: val focusRequester = remember { FocusRequester() }\n   2. Did you forget to add a Modifier.focusRequester() ?\n   3. Are you attempting to request focus during composition? Focus requests should be made in\n   response to some event. Eg Modifier.clickable { focusRequester.requestFocus() }\n");
             return false;
         }
-        MutableVector<FocusRequesterModifierNode> mutableVector = this.focusRequesterNodes;
-        FocusRequesterModifierNode[] focusRequesterModifierNodeArr = mutableVector.content;
-        int size = mutableVector.getSize();
+        MutableVector<FocusRequesterModifierNode> focusRequesterNodes$ui = getFocusRequesterNodes$ui();
+        FocusRequesterModifierNode[] focusRequesterModifierNodeArr = focusRequesterNodes$ui.content;
+        int size = focusRequesterNodes$ui.getSize();
         boolean z = false;
         for (int i = 0; i < size; i++) {
             FocusRequesterModifierNode focusRequesterModifierNode = focusRequesterModifierNodeArr[i];
-            int m6989constructorimpl = NodeKind.m6989constructorimpl(1024);
+            int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
             if (!focusRequesterModifierNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
-            MutableVector mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
-            Modifier.Node child$ui_release = focusRequesterModifierNode.getNode().getChild$ui_release();
-            if (child$ui_release == null) {
-                DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, focusRequesterModifierNode.getNode(), false);
+            MutableVector mutableVector = new MutableVector(new Modifier.Node[16], 0);
+            Modifier.Node child$ui = focusRequesterModifierNode.getNode().getChild$ui();
+            if (child$ui == null) {
+                DelegatableNodeKt.addLayoutNodeChildren(mutableVector, focusRequesterModifierNode.getNode(), false);
             } else {
-                mutableVector2.add(child$ui_release);
+                mutableVector.add(child$ui);
             }
             while (true) {
-                if (mutableVector2.getSize() != 0) {
-                    Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-                    if ((node.getAggregateChildKindSet$ui_release() & m6989constructorimpl) == 0) {
-                        DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
+                if (mutableVector.getSize() != 0) {
+                    Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
+                    if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                        DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
                     } else {
                         while (true) {
                             if (node == null) {
                                 break;
-                            } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0) {
-                                MutableVector mutableVector3 = null;
+                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                MutableVector mutableVector2 = null;
                                 while (node != null) {
                                     if (node instanceof FocusTargetNode) {
                                         FocusTargetNode focusTargetNode = (FocusTargetNode) node;
-                                        if (focusTargetNode.fetchFocusProperties$ui_release().getCanFocus()) {
-                                            m4982findChildCorrespondingToFocusEnterOMvw8 = function1.invoke(focusTargetNode).booleanValue();
+                                        if (focusTargetNode.fetchFocusProperties$ui().getCanFocus()) {
+                                            m5125findChildCorrespondingToFocusEnterOMvw8 = function1.invoke(focusTargetNode).booleanValue();
                                         } else {
-                                            m4982findChildCorrespondingToFocusEnterOMvw8 = TwoDimensionalFocusSearchKt.m4982findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, FocusDirection.Companion.m4920getEnterdhqQ8s(), function1);
+                                            m5125findChildCorrespondingToFocusEnterOMvw8 = TwoDimensionalFocusSearchKt.m5125findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, FocusDirection.Companion.m5059getEnterdhqQ8s(), function1);
                                         }
-                                        if (m4982findChildCorrespondingToFocusEnterOMvw8) {
+                                        if (m5125findChildCorrespondingToFocusEnterOMvw8) {
                                             z = true;
                                             break;
                                         }
-                                    } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                         int i2 = 0;
-                                        for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                            if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                                        for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                                            if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                                                 i2++;
                                                 if (i2 == 1) {
-                                                    node = delegate$ui_release;
+                                                    node = delegate$ui;
                                                 } else {
-                                                    if (mutableVector3 == null) {
-                                                        mutableVector3 = new MutableVector(new Modifier.Node[16], 0);
+                                                    if (mutableVector2 == null) {
+                                                        mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
                                                     }
                                                     if (node != null) {
-                                                        if (mutableVector3 != null) {
-                                                            mutableVector3.add(node);
+                                                        if (mutableVector2 != null) {
+                                                            mutableVector2.add(node);
                                                         }
                                                         node = null;
                                                     }
-                                                    if (mutableVector3 != null) {
-                                                        mutableVector3.add(delegate$ui_release);
+                                                    if (mutableVector2 != null) {
+                                                        mutableVector2.add(delegate$ui);
                                                     }
                                                 }
                                             }
@@ -392,11 +484,11 @@ public final class FocusRequester {
                                         if (i2 == 1) {
                                         }
                                     }
-                                    node = DelegatableNodeKt.pop(mutableVector3);
+                                    node = DelegatableNodeKt.pop(mutableVector2);
                                 }
                                 continue;
                             } else {
-                                node = node.getChild$ui_release();
+                                node = node.getChild$ui();
                             }
                         }
                     }

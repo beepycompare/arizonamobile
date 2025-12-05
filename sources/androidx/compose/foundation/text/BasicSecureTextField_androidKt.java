@@ -21,7 +21,7 @@ import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: BasicSecureTextField.android.kt */
-@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0002\u001a\r\u0010\u0002\u001a\u00020\u0003H\u0001¢\u0006\u0002\u0010\u0004\u001a\b\u0010\u0010\u001a\u00020\u0011H\u0001\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"0\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00068\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\n\u0010\u000b\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000f¨\u0006\u0012²\u0006\n\u0010\u0013\u001a\u00020\u0003X\u008a\u008e\u0002"}, d2 = {"TAG", "", "platformAllowsRevealLastTyped", "", "(Landroidx/compose/runtime/Composer;I)Z", "DefaultContentResolverForSecureTextField", "Lkotlin/Function1;", "Landroid/content/Context;", "Landroidx/compose/foundation/text/ContentResolverForSecureTextField;", "contentResolverForSecureTextField", "getContentResolverForSecureTextField$annotations", "()V", "getContentResolverForSecureTextField", "()Lkotlin/jvm/functions/Function1;", "setContentResolverForSecureTextField", "(Lkotlin/jvm/functions/Function1;)V", "resetContentResolverForSecureTextField", "", "foundation_release", RemoteConfigConstants.ResponseFieldKey.STATE}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0002\u001a\r\u0010\u0002\u001a\u00020\u0003H\u0001¢\u0006\u0002\u0010\u0004\u001a\b\u0010\u0010\u001a\u00020\u0011H\u0001\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"0\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00068\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\n\u0010\u000b\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000f¨\u0006\u0012²\u0006\n\u0010\u0013\u001a\u00020\u0003X\u008a\u008e\u0002"}, d2 = {"TAG", "", "platformAllowsRevealLastTyped", "", "(Landroidx/compose/runtime/Composer;I)Z", "DefaultContentResolverForSecureTextField", "Lkotlin/Function1;", "Landroid/content/Context;", "Landroidx/compose/foundation/text/ContentResolverForSecureTextField;", "contentResolverForSecureTextField", "getContentResolverForSecureTextField$annotations", "()V", "getContentResolverForSecureTextField", "()Lkotlin/jvm/functions/Function1;", "setContentResolverForSecureTextField", "(Lkotlin/jvm/functions/Function1;)V", "resetContentResolverForSecureTextField", "", "foundation", RemoteConfigConstants.ResponseFieldKey.STATE}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicSecureTextField_androidKt {
     private static final Function1<Context, ContentResolverForSecureTextField> DefaultContentResolverForSecureTextField;
@@ -41,7 +41,7 @@ public final class BasicSecureTextField_androidKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         Object obj = (Context) consume;
         Object obj2 = contentResolverForSecureTextField;
-        ComposerKt.sourceInformationMarkerStart(composer, -719118697, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -719119593, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
         boolean changed = composer.changed(obj2) | composer.changed(obj);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -50,7 +50,7 @@ public final class BasicSecureTextField_androidKt {
         }
         final ContentResolverForSecureTextField contentResolverForSecureTextField2 = (ContentResolverForSecureTextField) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -719114372, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -719115268, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
         boolean changed2 = composer.changed(contentResolverForSecureTextField2);
         Object rememberedValue2 = composer.rememberedValue();
         if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -59,7 +59,7 @@ public final class BasicSecureTextField_androidKt {
         }
         final MutableState mutableState = (MutableState) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -719111097, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -719111993, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
         boolean changed3 = composer.changed(contentResolverForSecureTextField2);
         Object rememberedValue3 = composer.rememberedValue();
         if (changed3 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -74,16 +74,16 @@ public final class BasicSecureTextField_androidKt {
         }
         final BasicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1 basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1 = (BasicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1) rememberedValue3;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -719101102, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -719101998, "CC(remember):BasicSecureTextField.android.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(contentResolverForSecureTextField2) | composer.changedInstance(basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1);
         Object rememberedValue4 = composer.rememberedValue();
         if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
             rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.BasicSecureTextField_androidKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj3) {
-                    DisposableEffectResult platformAllowsRevealLastTyped$lambda$7$lambda$6;
-                    platformAllowsRevealLastTyped$lambda$7$lambda$6 = BasicSecureTextField_androidKt.platformAllowsRevealLastTyped$lambda$7$lambda$6(ContentResolverForSecureTextField.this, basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1, (DisposableEffectScope) obj3);
-                    return platformAllowsRevealLastTyped$lambda$7$lambda$6;
+                    DisposableEffectResult platformAllowsRevealLastTyped$lambda$5$0;
+                    platformAllowsRevealLastTyped$lambda$5$0 = BasicSecureTextField_androidKt.platformAllowsRevealLastTyped$lambda$5$0(ContentResolverForSecureTextField.this, basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1, (DisposableEffectScope) obj3);
+                    return platformAllowsRevealLastTyped$lambda$5$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue4);
@@ -108,9 +108,9 @@ public final class BasicSecureTextField_androidKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult platformAllowsRevealLastTyped$lambda$7$lambda$6(final ContentResolverForSecureTextField contentResolverForSecureTextField2, final BasicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1 basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult platformAllowsRevealLastTyped$lambda$5$0(final ContentResolverForSecureTextField contentResolverForSecureTextField2, final BasicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1 basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1, DisposableEffectScope disposableEffectScope) {
         contentResolverForSecureTextField2.registerContentObserver(Settings.System.getUriFor("show_password"), false, basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1);
-        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.BasicSecureTextField_androidKt$platformAllowsRevealLastTyped$lambda$7$lambda$6$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.BasicSecureTextField_androidKt$platformAllowsRevealLastTyped$lambda$5$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 ContentResolverForSecureTextField.this.unregisterContentObserver(basicSecureTextField_androidKt$platformAllowsRevealLastTyped$settingsObserver$1$1);
@@ -122,9 +122,9 @@ public final class BasicSecureTextField_androidKt {
         Function1<Context, ContentResolverForSecureTextField> function1 = new Function1() { // from class: androidx.compose.foundation.text.BasicSecureTextField_androidKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1 DefaultContentResolverForSecureTextField$lambda$8;
-                DefaultContentResolverForSecureTextField$lambda$8 = BasicSecureTextField_androidKt.DefaultContentResolverForSecureTextField$lambda$8((Context) obj);
-                return DefaultContentResolverForSecureTextField$lambda$8;
+                BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1 DefaultContentResolverForSecureTextField$lambda$0;
+                DefaultContentResolverForSecureTextField$lambda$0 = BasicSecureTextField_androidKt.DefaultContentResolverForSecureTextField$lambda$0((Context) obj);
+                return DefaultContentResolverForSecureTextField$lambda$0;
             }
         };
         DefaultContentResolverForSecureTextField = function1;
@@ -133,7 +133,7 @@ public final class BasicSecureTextField_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.foundation.text.BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1] */
-    public static final BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1 DefaultContentResolverForSecureTextField$lambda$8(Context context) {
+    public static final BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1 DefaultContentResolverForSecureTextField$lambda$0(Context context) {
         final ContentResolver contentResolver = context.getContentResolver();
         return new ContentResolverForSecureTextField() { // from class: androidx.compose.foundation.text.BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1
             @Override // androidx.compose.foundation.text.ContentResolverForSecureTextField

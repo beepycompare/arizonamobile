@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 import kotlin.Metadata;
 import kotlin.NotImplementedError;
 import kotlin.jvm.internal.Intrinsics;
@@ -50,7 +49,7 @@ public final class UberPreview implements MobileController {
         bind.mpArizonamobilUberPreviewPage.setLayoutParams(new ConstraintLayout.LayoutParams(-1, -1));
         Drawable mutate = bind.mpUberAction.getBackground().mutate();
         Intrinsics.checkNotNull(mutate, "null cannot be cast to non-null type android.graphics.drawable.GradientDrawable");
-        ((GradientDrawable) mutate).setColor(ViewCompat.MEASURED_STATE_MASK);
+        ((GradientDrawable) mutate).setColor(-16777216);
         binding.phoneCaseContainer.addView(bind.mpArizonamobilUberPreviewPage);
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.phoneCaseContainer);

@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Կիսվել…</string>
     <string name="abc_shareactionprovider_share_with_application">Կիսվել %s հավելվածի միջոցով</string>
     <string name="abc_toolbar_collapse_description">Ծալել</string>
-    <string name="autofill">Ինքնալրացում</string>
+    <string name="androidx_compose_foundation_autofill">Ինքնալրացում</string>
+    <string name="androidx_compose_ui_autofill">Ինքնալրացում</string>
     <string name="bottomsheet_action_collapse">Ծալել ներքևի էկրանը</string>
     <string name="bottomsheet_action_expand">Ծավալել ներքևի էկրանը</string>
     <string name="bottomsheet_action_expand_halfway">Ծավալել կիսով չափ</string>

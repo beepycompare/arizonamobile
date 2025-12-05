@@ -31,12 +31,12 @@ public final class SearchBarColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2789getContainerColor0d7_KjU() {
+    public final long m2875getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getDividerColor-0d7_KjU  reason: not valid java name */
-    public final long m2790getDividerColor0d7_KjU() {
+    public final long m2876getDividerColor0d7_KjU() {
         return this.dividerColor;
     }
 
@@ -60,12 +60,12 @@ public final class SearchBarColors {
         }
         if (obj instanceof SearchBarColors) {
             SearchBarColors searchBarColors = (SearchBarColors) obj;
-            return Color.m5281equalsimpl0(this.containerColor, searchBarColors.containerColor) && Color.m5281equalsimpl0(this.dividerColor, searchBarColors.dividerColor) && Intrinsics.areEqual(this.inputFieldColors, searchBarColors.inputFieldColors);
+            return Color.m5425equalsimpl0(this.containerColor, searchBarColors.containerColor) && Color.m5425equalsimpl0(this.dividerColor, searchBarColors.dividerColor) && Intrinsics.areEqual(this.inputFieldColors, searchBarColors.inputFieldColors);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Color.m5287hashCodeimpl(this.containerColor) * 31) + Color.m5287hashCodeimpl(this.dividerColor)) * 31) + this.inputFieldColors.hashCode();
+        return (((Color.m5431hashCodeimpl(this.containerColor) * 31) + Color.m5431hashCodeimpl(this.dividerColor)) * 31) + this.inputFieldColors.hashCode();
     }
 }

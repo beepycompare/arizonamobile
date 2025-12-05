@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">వీరితో షేర్ చేస్తుంది</string>
     <string name="abc_shareactionprovider_share_with_application">%sతో షేర్ చేస్తుంది</string>
     <string name="abc_toolbar_collapse_description">కుదిస్తుంది</string>
-    <string name="autofill">ఆటోఫిల్</string>
+    <string name="androidx_compose_foundation_autofill">ఆటోఫిల్</string>
+    <string name="androidx_compose_ui_autofill">ఆటోఫిల్</string>
     <string name="bottomsheet_action_collapse">దిగువున ఉన్న షీట్‌ను కుదిస్తుంది</string>
     <string name="bottomsheet_action_expand">దిగువున ఉన్న షీట్‌ను విస్తరిస్తుంది</string>
     <string name="bottomsheet_action_expand_halfway">సగాన్ని విస్తరింపజేయండి</string>

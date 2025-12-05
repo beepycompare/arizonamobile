@@ -5,7 +5,7 @@ import androidx.compose.ui.unit.Dp;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 /* compiled from: TouchBoundsExpansion.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a3\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0003¢\u0006\u0002\u0010\u0007\u001a5\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\u0002\u001a\u00020\n2\b\b\u0002\u0010\u0004\u001a\u00020\n2\b\b\u0002\u0010\u0005\u001a\u00020\n2\b\b\u0002\u0010\u0006\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"TouchBoundsExpansion", "Landroidx/compose/ui/node/TouchBoundsExpansion;", TtmlNode.START, "", "top", TtmlNode.END, "bottom", "(IIII)J", "DpTouchBoundsExpansion", "Landroidx/compose/ui/node/DpTouchBoundsExpansion;", "Landroidx/compose/ui/unit/Dp;", "DpTouchBoundsExpansion-a9UjIt4", "(FFFF)Landroidx/compose/ui/node/DpTouchBoundsExpansion;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a3\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0003¢\u0006\u0002\u0010\u0007\u001a5\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\u0002\u001a\u00020\n2\b\b\u0002\u0010\u0004\u001a\u00020\n2\b\b\u0002\u0010\u0005\u001a\u00020\n2\b\b\u0002\u0010\u0006\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"TouchBoundsExpansion", "Landroidx/compose/ui/node/TouchBoundsExpansion;", TtmlNode.START, "", "top", TtmlNode.END, "bottom", "(IIII)J", "DpTouchBoundsExpansion", "Landroidx/compose/ui/node/DpTouchBoundsExpansion;", "Landroidx/compose/ui/unit/Dp;", "DpTouchBoundsExpansion-a9UjIt4", "(FFFF)Landroidx/compose/ui/node/DpTouchBoundsExpansion;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class TouchBoundsExpansionKt {
     public static /* synthetic */ long TouchBoundsExpansion$default(int i, int i2, int i3, int i4, int i5, Object obj) {
@@ -41,28 +41,28 @@ public final class TouchBoundsExpansionKt {
         if (!z) {
             InlineClassHelperKt.throwIllegalArgumentException("Bottom must be in the range of 0 .. 32767");
         }
-        return TouchBoundsExpansion.m7073constructorimpl(TouchBoundsExpansion.Companion.pack$ui_release(i, i2, i3, i4, true));
+        return TouchBoundsExpansion.m7283constructorimpl(TouchBoundsExpansion.Companion.pack$ui(i, i2, i3, i4, true));
     }
 
-    /* renamed from: DpTouchBoundsExpansion-a9UjIt4 */
-    public static final DpTouchBoundsExpansion m7087DpTouchBoundsExpansiona9UjIt4(float f, float f2, float f3, float f4) {
+    /* renamed from: DpTouchBoundsExpansion-a9UjIt4  reason: not valid java name */
+    public static final DpTouchBoundsExpansion m7297DpTouchBoundsExpansiona9UjIt4(float f, float f2, float f3, float f4) {
         return new DpTouchBoundsExpansion(f, f2, f3, f4, true, null);
     }
 
-    /* renamed from: DpTouchBoundsExpansion-a9UjIt4$default */
-    public static /* synthetic */ DpTouchBoundsExpansion m7088DpTouchBoundsExpansiona9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    /* renamed from: DpTouchBoundsExpansion-a9UjIt4$default  reason: not valid java name */
+    public static /* synthetic */ DpTouchBoundsExpansion m7298DpTouchBoundsExpansiona9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7996constructorimpl(0);
+            f = Dp.m8258constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7996constructorimpl(0);
+            f2 = Dp.m8258constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7996constructorimpl(0);
+            f3 = Dp.m8258constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7996constructorimpl(0);
+            f4 = Dp.m8258constructorimpl(0);
         }
-        return m7087DpTouchBoundsExpansiona9UjIt4(f, f2, f3, f4);
+        return m7297DpTouchBoundsExpansiona9UjIt4(f, f2, f3, f4);
     }
 }

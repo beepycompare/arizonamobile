@@ -12,7 +12,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.view.ViewCompat;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -453,23 +452,23 @@ public final class ItemRatingScreen extends SAMPUIElement {
             CustomCardView card1 = ratingTopbarBinding.card1;
             Intrinsics.checkNotNullExpressionValue(card1, "card1");
             CustomCardView.setBackground$default(card1, this.gradientColor1, this.gradientColor2, null, null, 12, null);
-            ratingTopbarBinding.text1.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            ratingTopbarBinding.text1.setTextColor(-16777216);
         } else if (i == 1) {
             CustomCardView card2 = ratingTopbarBinding.card2;
             Intrinsics.checkNotNullExpressionValue(card2, "card2");
             CustomCardView.setBackground$default(card2, this.gradientColor1, this.gradientColor2, null, null, 12, null);
-            ratingTopbarBinding.text2.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            ratingTopbarBinding.text2.setTextColor(-16777216);
         } else if (i == 2) {
             CustomCardView card3 = ratingTopbarBinding.card3;
             Intrinsics.checkNotNullExpressionValue(card3, "card3");
             CustomCardView.setBackground$default(card3, this.gradientColor1, this.gradientColor2, null, null, 12, null);
-            ratingTopbarBinding.text3.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            ratingTopbarBinding.text3.setTextColor(-16777216);
         } else if (i != 3) {
         } else {
             CustomCardView card4 = ratingTopbarBinding.card4;
             Intrinsics.checkNotNullExpressionValue(card4, "card4");
             CustomCardView.setBackground$default(card4, this.gradientColor1, this.gradientColor2, null, null, 12, null);
-            ratingTopbarBinding.text4.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            ratingTopbarBinding.text4.setTextColor(-16777216);
         }
     }
 
@@ -587,7 +586,7 @@ public final class ItemRatingScreen extends SAMPUIElement {
             }
         }
         QualityType qualityType3 = (QualityType) obj;
-        this.binding.fullscreen.textBonus.setText(UtilsKt.buildSpannableList(CollectionsKt.toList(arrayList), ViewCompat.MEASURED_STATE_MASK, true, Integer.valueOf(Color.parseColor((qualityType3 == null || (colors = qualityType3.getColors()) == null || (r3 = (String) CollectionsKt.getOrNull(colors, 0)) == null) ? "#9A9A9A" : "#9A9A9A")), true));
+        this.binding.fullscreen.textBonus.setText(UtilsKt.buildSpannableList(CollectionsKt.toList(arrayList), -16777216, true, Integer.valueOf(Color.parseColor((qualityType3 == null || (colors = qualityType3.getColors()) == null || (r3 = (String) CollectionsKt.getOrNull(colors, 0)) == null) ? "#9A9A9A" : "#9A9A9A")), true));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

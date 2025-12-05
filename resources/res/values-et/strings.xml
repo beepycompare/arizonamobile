@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Jaga:</string>
     <string name="abc_shareactionprovider_share_with_application">Jagamine rakendusega %s</string>
     <string name="abc_toolbar_collapse_description">Ahendamine</string>
-    <string name="autofill">Automaattäide</string>
+    <string name="androidx_compose_foundation_autofill">Automaattäide</string>
+    <string name="androidx_compose_ui_autofill">Automaattäide</string>
     <string name="bottomsheet_action_collapse">Alumise lehe ahendamine</string>
     <string name="bottomsheet_action_expand">Alumise lehe laiendamine</string>
     <string name="bottomsheet_action_expand_halfway">Laiendamine poolenisti</string>

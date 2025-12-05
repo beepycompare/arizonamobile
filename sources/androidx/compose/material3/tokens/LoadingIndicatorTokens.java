@@ -11,7 +11,7 @@ public final class LoadingIndicatorTokens {
     private static final float ContainerWidth;
     public static final LoadingIndicatorTokens INSTANCE = new LoadingIndicatorTokens();
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
-    private static final float ActiveSize = Dp.m7996constructorimpl((float) 38.0d);
+    private static final float ActiveSize = Dp.m8258constructorimpl((float) 38.0d);
     private static final ColorSchemeKeyTokens ContainedActiveColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens ContainedContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
@@ -21,8 +21,8 @@ public final class LoadingIndicatorTokens {
 
     static {
         float f = (float) 48.0d;
-        ContainerHeight = Dp.m7996constructorimpl(f);
-        ContainerWidth = Dp.m7996constructorimpl(f);
+        ContainerHeight = Dp.m8258constructorimpl(f);
+        ContainerWidth = Dp.m8258constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getActiveIndicatorColor() {
@@ -30,7 +30,7 @@ public final class LoadingIndicatorTokens {
     }
 
     /* renamed from: getActiveSize-D9Ej5fM  reason: not valid java name */
-    public final float m4050getActiveSizeD9Ej5fM() {
+    public final float m4136getActiveSizeD9Ej5fM() {
         return ActiveSize;
     }
 
@@ -43,7 +43,7 @@ public final class LoadingIndicatorTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4051getContainerHeightD9Ej5fM() {
+    public final float m4137getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -52,7 +52,7 @@ public final class LoadingIndicatorTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4052getContainerWidthD9Ej5fM() {
+    public final float m4138getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 }

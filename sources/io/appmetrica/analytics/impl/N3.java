@@ -13,7 +13,7 @@ public final class N3 extends Q5 {
     public Ym r;
     public Vm s;
     public Vm t;
-    public C0105a3 u;
+    public C0104a3 u;
     public Ym v;
 
     public N3(PublicLogger publicLogger) {
@@ -23,7 +23,7 @@ public final class N3 extends Q5 {
 
     public static Q5 b(String str, String str2) {
         Q5 q5 = new Q5("", 0);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         q5.d = 5376;
         q5.a(str, str2);
         return q5;
@@ -31,14 +31,14 @@ public final class N3 extends Q5 {
 
     public static Q5 n() {
         Q5 q5 = new Q5("", 0);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         q5.d = 5632;
         return q5;
     }
 
     public static Q5 o() {
         Q5 q5 = new Q5("", 0);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         q5.d = 40961;
         return q5;
     }
@@ -94,7 +94,7 @@ public final class N3 extends Q5 {
 
     @Override // io.appmetrica.analytics.impl.Q5, io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public final void setName(String str) {
-        this.f648a = d(str);
+        this.f731a = d(str);
     }
 
     @Override // io.appmetrica.analytics.impl.Q5, io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -124,7 +124,7 @@ public final class N3 extends Q5 {
         this.q = new HashMap();
         a(publicLogger);
         this.b = e(str);
-        this.f648a = d(str2);
+        this.f731a = d(str2);
         setType(i);
         setCustomType(i2);
     }
@@ -133,14 +133,14 @@ public final class N3 extends Q5 {
         this.r = new Ym(1000, "event name", publicLogger);
         this.s = new Vm(245760, "event value", publicLogger);
         this.t = new Vm(1024000, "event extended value", publicLogger);
-        this.u = new C0105a3(245760, "event value bytes", publicLogger);
+        this.u = new C0104a3(245760, "event value bytes", publicLogger);
         this.v = new Ym(200, "user profile id", publicLogger);
     }
 
     public final void a(byte[] bArr) {
-        C0105a3 c0105a3 = this.u;
-        c0105a3.getClass();
-        byte[] a2 = c0105a3.a(bArr);
+        C0104a3 c0104a3 = this.u;
+        c0104a3.getClass();
+        byte[] a2 = c0104a3.a(bArr);
         M3 m3 = M3.VALUE;
         if (bArr.length != a2.length) {
             this.q.put(m3, Integer.valueOf(bArr.length - a2.length));
@@ -155,32 +155,32 @@ public final class N3 extends Q5 {
         super.setValueBytes(a2);
     }
 
-    public static Q5 a(C0358jo c0358jo) {
+    public static Q5 a(C0357jo c0357jo) {
         Q5 o = o();
-        o.setValue(new String(Base64.encode(MessageNano.toByteArray(c0358jo), 0)));
+        o.setValue(new String(Base64.encode(MessageNano.toByteArray(c0357jo), 0)));
         return o;
     }
 
     public static N3 a(PublicLogger publicLogger, Pi pi) {
         int i;
         N3 n3 = new N3(publicLogger);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         n3.d = 40976;
         Ni ni = new Ni();
-        ni.b = pi.f637a.currency.getCurrencyCode().getBytes();
-        ni.f = pi.f637a.priceMicros;
-        ni.c = StringUtils.stringToBytesForProtobuf(new Ym(200, "revenue productID", pi.e).a(pi.f637a.productID));
-        ni.f609a = ((Integer) WrapUtils.getOrDefault(pi.f637a.quantity, 1)).intValue();
+        ni.b = pi.f720a.currency.getCurrencyCode().getBytes();
+        ni.f = pi.f720a.priceMicros;
+        ni.c = StringUtils.stringToBytesForProtobuf(new Ym(200, "revenue productID", pi.e).a(pi.f720a.productID));
+        ni.f692a = ((Integer) WrapUtils.getOrDefault(pi.f720a.quantity, 1)).intValue();
         Vm vm = pi.b;
-        String str = pi.f637a.payload;
+        String str = pi.f720a.payload;
         vm.getClass();
         ni.d = StringUtils.stringToBytesForProtobuf(vm.a(str));
-        if (mo.a(pi.f637a.receipt)) {
+        if (mo.a(pi.f720a.receipt)) {
             Ii ii = new Ii();
-            String str2 = (String) pi.c.a(pi.f637a.receipt.data);
-            i = !StringUtils.equalsNullSafety(pi.f637a.receipt.data, str2) ? pi.f637a.receipt.data.length() : 0;
-            ii.f526a = StringUtils.stringToBytesForProtobuf(str2);
-            ii.b = StringUtils.stringToBytesForProtobuf((String) pi.d.a(pi.f637a.receipt.signature));
+            String str2 = (String) pi.c.a(pi.f720a.receipt.data);
+            i = !StringUtils.equalsNullSafety(pi.f720a.receipt.data, str2) ? pi.f720a.receipt.data.length() : 0;
+            ii.f609a = StringUtils.stringToBytesForProtobuf(str2);
+            ii.b = StringUtils.stringToBytesForProtobuf((String) pi.d.a(pi.f720a.receipt.signature));
             ni.e = ii;
         } else {
             i = 0;
@@ -195,13 +195,13 @@ public final class N3 extends Q5 {
         this.q = new HashMap();
         a(publicLogger);
         a(bArr);
-        this.f648a = d(str);
+        this.f731a = d(str);
         setType(i);
     }
 
     public static N3 a(PublicLogger publicLogger, E e) {
         N3 n3 = new N3(publicLogger);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         n3.d = 40977;
         kotlin.Pair a2 = e.a();
         n3.b = n3.e(new String(Base64.encode((byte[]) a2.getFirst(), 0)));

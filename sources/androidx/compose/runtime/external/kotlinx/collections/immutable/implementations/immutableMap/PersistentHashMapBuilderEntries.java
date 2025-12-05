@@ -12,13 +12,13 @@ public final class PersistentHashMapBuilderEntries<K, V> extends AbstractMapBuil
     public static final int $stable = 8;
     private final PersistentHashMapBuilder<K, V> builder;
 
+    public PersistentHashMapBuilderEntries(PersistentHashMapBuilder<K, V> persistentHashMapBuilder) {
+        this.builder = persistentHashMapBuilder;
+    }
+
     @Override // kotlin.collections.AbstractMutableSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public /* bridge */ /* synthetic */ boolean add(Object obj) {
         return add((Map.Entry) ((Map.Entry) obj));
-    }
-
-    public PersistentHashMapBuilderEntries(PersistentHashMapBuilder<K, V> persistentHashMapBuilder) {
-        this.builder = persistentHashMapBuilder;
     }
 
     public boolean add(Map.Entry<K, V> entry) {

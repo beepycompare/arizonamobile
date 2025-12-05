@@ -40,6 +40,12 @@ public final class ComposableLambdaImpl implements ComposableLambda {
     private List<RecomposeScope> scopes;
     private final boolean tracked;
 
+    public ComposableLambdaImpl(int i, boolean z, Object obj) {
+        this.key = i;
+        this.tracked = z;
+        this._block = obj;
+    }
+
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Composer composer, Integer num) {
         return invoke(composer, num.intValue());
@@ -133,12 +139,6 @@ public final class ComposableLambdaImpl implements ComposableLambda {
     @Override // kotlin.jvm.functions.Function21
     public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, Object obj8, Object obj9, Object obj10, Object obj11, Object obj12, Object obj13, Object obj14, Object obj15, Object obj16, Object obj17, Object obj18, Composer composer, Integer num, Integer num2) {
         return invoke(obj, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10, obj11, obj12, obj13, obj14, obj15, obj16, obj17, obj18, composer, num.intValue(), num2.intValue());
-    }
-
-    public ComposableLambdaImpl(int i, boolean z, Object obj) {
-        this.key = i;
-        this.tracked = z;
-        this._block = obj;
     }
 
     public final int getKey() {

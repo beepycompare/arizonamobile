@@ -38,8 +38,8 @@ public final class BulletSpan_androidKt {
             Stroke stroke = (Stroke) drawStyle;
             paint.setStrokeWidth(stroke.getWidth());
             paint.setStrokeMiter(stroke.getMiter());
-            paint.setStrokeCap(DrawStyleSpan_androidKt.m7748toAndroidCapBeK7IIE(stroke.m5928getCapKaPHkGw()));
-            paint.setStrokeJoin(DrawStyleSpan_androidKt.m7749toAndroidJoinWw9F2mQ(stroke.m5929getJoinLxFBmk8()));
+            paint.setStrokeCap(DrawStyleSpan_androidKt.m7994toAndroidCapBeK7IIE(stroke.m6074getCapKaPHkGw()));
+            paint.setStrokeJoin(DrawStyleSpan_androidKt.m7995toAndroidJoinWw9F2mQ(stroke.m6075getJoinLxFBmk8()));
             PathEffect pathEffect = stroke.getPathEffect();
             paint.setPathEffect(pathEffect != null ? AndroidPathEffect_androidKt.asAndroidPathEffect(pathEffect) : null);
         }
@@ -73,7 +73,7 @@ public final class BulletSpan_androidKt {
                 }
                 throw new UnsupportedOperationException("Unable to obtain android.graphics.Path");
             }
-            float intBitsToFloat = Float.intBitsToFloat((int) (rounded.getRoundRect().m5086getTopLeftCornerRadiuskKHJgLs() >> 32));
+            float intBitsToFloat = Float.intBitsToFloat((int) (rounded.getRoundRect().m5229getTopLeftCornerRadiuskKHJgLs() >> 32));
             canvas.drawRoundRect(f, f2 - (rounded.getRoundRect().getHeight() / 2.0f), (i * rounded.getRoundRect().getWidth()) + f, (rounded.getRoundRect().getHeight() / 2.0f) + f2, intBitsToFloat, intBitsToFloat, paint);
         } else if (!(outline instanceof Outline.Rectangle)) {
             throw new NoWhenBranchMatchedException();
@@ -88,7 +88,7 @@ public final class BulletSpan_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setBrushAndDraw-yzxVdVo  reason: not valid java name */
-    public static final void m7747setBrushAndDrawyzxVdVo(Paint paint, Brush brush, float f, long j, Function0<Unit> function0) {
+    public static final void m7992setBrushAndDrawyzxVdVo(Paint paint, Brush brush, float f, long j, Function0<Unit> function0) {
         Integer num = null;
         if (brush == null) {
             if (!Float.isNaN(f)) {
@@ -107,7 +107,7 @@ public final class BulletSpan_androidKt {
                 num.intValue();
                 paint.setAlpha((int) Math.rint(f * 255.0f));
             }
-            paint.setColor(ColorKt.m5334toArgb8_81llA(((SolidColor) brush).m5632getValue0d7_KjU()));
+            paint.setColor(ColorKt.m5478toArgb8_81llA(((SolidColor) brush).m5782getValue0d7_KjU()));
             function0.invoke();
             paint.setColor(color);
             if (num != null) {
@@ -122,7 +122,7 @@ public final class BulletSpan_androidKt {
                 num.intValue();
                 paint.setAlpha((int) Math.rint(f * 255.0f));
             }
-            paint.setShader(((ShaderBrush) brush).mo5249createShaderuvyYCjk(j));
+            paint.setShader(((ShaderBrush) brush).mo5393createShaderuvyYCjk(j));
             function0.invoke();
             paint.setShader(shader);
             if (num != null) {

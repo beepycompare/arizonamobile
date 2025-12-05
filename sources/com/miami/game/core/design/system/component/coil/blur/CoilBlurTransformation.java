@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import androidx.core.view.MotionEventCompat;
-import androidx.core.view.ViewCompat;
 import coil3.size.Size;
 import coil3.transform.Transformation;
 import com.google.android.vending.expansion.downloader.Constants;
@@ -148,7 +147,7 @@ public final class CoilBlurTransformation extends Transformation {
             int i26 = i20;
             int i27 = i10;
             while (i27 < height) {
-                iArr[i26] = (iArr6[i23] << 16) | ViewCompat.MEASURED_STATE_MASK | (iArr6[i24] << 8) | iArr6[i25];
+                iArr[i26] = (iArr6[i23] << 16) | (-16777216) | (iArr6[i24] << 8) | iArr6[i25];
                 if (i20 == 0) {
                     iArr5[i27] = Math.min(i27 + i6 + 1, height - 1) * width;
                 }

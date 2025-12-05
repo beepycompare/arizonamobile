@@ -19,7 +19,7 @@ public final class SafePublicationLazyImpl<T> implements Lazy<T>, Serializable {
     private volatile Object _value;
 
     /* renamed from: final  reason: not valid java name */
-    private final Object f67final;
+    private final Object f148final;
     private volatile Function0<? extends T> initializer;
 
     private static /* synthetic */ void getFinal$annotations() {
@@ -29,7 +29,7 @@ public final class SafePublicationLazyImpl<T> implements Lazy<T>, Serializable {
         Intrinsics.checkNotNullParameter(initializer, "initializer");
         this.initializer = initializer;
         this._value = UNINITIALIZED_VALUE.INSTANCE;
-        this.f67final = UNINITIALIZED_VALUE.INSTANCE;
+        this.f148final = UNINITIALIZED_VALUE.INSTANCE;
     }
 
     @Override // kotlin.Lazy

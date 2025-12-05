@@ -226,9 +226,9 @@ public final class AnnotatedStringKt {
         List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> localAnnotations = getLocalAnnotations(annotatedString, i, i2, new Function1() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean substringWithoutParagraphStyles$lambda$10;
-                substringWithoutParagraphStyles$lambda$10 = AnnotatedStringKt.substringWithoutParagraphStyles$lambda$10((AnnotatedString.Annotation) obj);
-                return Boolean.valueOf(substringWithoutParagraphStyles$lambda$10);
+                boolean substringWithoutParagraphStyles$lambda$0;
+                substringWithoutParagraphStyles$lambda$0 = AnnotatedStringKt.substringWithoutParagraphStyles$lambda$0((AnnotatedString.Annotation) obj);
+                return Boolean.valueOf(substringWithoutParagraphStyles$lambda$0);
             }
         });
         if (localAnnotations == null) {
@@ -237,7 +237,7 @@ public final class AnnotatedStringKt {
         return new AnnotatedString(str, localAnnotations);
     }
 
-    public static final boolean substringWithoutParagraphStyles$lambda$10(AnnotatedString.Annotation annotation) {
+    public static final boolean substringWithoutParagraphStyles$lambda$0(AnnotatedString.Annotation annotation) {
         return !(annotation instanceof ParagraphStyle);
     }
 
@@ -263,14 +263,14 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String upperCase$lambda$12;
-                upperCase$lambda$12 = AnnotatedStringKt.toUpperCase$lambda$12(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return upperCase$lambda$12;
+                String upperCase$lambda$0;
+                upperCase$lambda$0 = AnnotatedStringKt.toUpperCase$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return upperCase$lambda$0;
             }
         });
     }
 
-    public static final String toUpperCase$lambda$12(LocaleList localeList, String str, int i, int i2) {
+    public static final String toUpperCase$lambda$0(LocaleList localeList, String str, int i, int i2) {
         String substring = str.substring(i, i2);
         Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return StringKt.toUpperCase(substring, localeList);
@@ -287,14 +287,14 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String lowerCase$lambda$13;
-                lowerCase$lambda$13 = AnnotatedStringKt.toLowerCase$lambda$13(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return lowerCase$lambda$13;
+                String lowerCase$lambda$0;
+                lowerCase$lambda$0 = AnnotatedStringKt.toLowerCase$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return lowerCase$lambda$0;
             }
         });
     }
 
-    public static final String toLowerCase$lambda$13(LocaleList localeList, String str, int i, int i2) {
+    public static final String toLowerCase$lambda$0(LocaleList localeList, String str, int i, int i2) {
         String substring = str.substring(i, i2);
         Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return StringKt.toLowerCase(substring, localeList);
@@ -311,14 +311,14 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String capitalize$lambda$14;
-                capitalize$lambda$14 = AnnotatedStringKt.capitalize$lambda$14(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return capitalize$lambda$14;
+                String capitalize$lambda$0;
+                capitalize$lambda$0 = AnnotatedStringKt.capitalize$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return capitalize$lambda$0;
             }
         });
     }
 
-    public static final String capitalize$lambda$14(LocaleList localeList, String str, int i, int i2) {
+    public static final String capitalize$lambda$0(LocaleList localeList, String str, int i, int i2) {
         if (i == 0) {
             String substring = str.substring(i, i2);
             Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
@@ -340,14 +340,14 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String decapitalize$lambda$15;
-                decapitalize$lambda$15 = AnnotatedStringKt.decapitalize$lambda$15(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return decapitalize$lambda$15;
+                String decapitalize$lambda$0;
+                decapitalize$lambda$0 = AnnotatedStringKt.decapitalize$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return decapitalize$lambda$0;
             }
         });
     }
 
-    public static final String decapitalize$lambda$15(LocaleList localeList, String str, int i, int i2) {
+    public static final String decapitalize$lambda$0(LocaleList localeList, String str, int i, int i2) {
         if (i == 0) {
             String substring = str.substring(i, i2);
             Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");

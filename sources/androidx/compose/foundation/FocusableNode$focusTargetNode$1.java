@@ -9,7 +9,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: Focusable.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public /* synthetic */ class FocusableNode$focusTargetNode$1 extends FunctionReferenceImpl implements Function2<FocusState, FocusState, Unit> {
+public final /* synthetic */ class FocusableNode$focusTargetNode$1 extends FunctionReferenceImpl implements Function2<FocusState, FocusState, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public FocusableNode$focusTargetNode$1(Object obj) {
         super(2, obj, FocusableNode.class, "onFocusStateChange", "onFocusStateChange(Landroidx/compose/ui/focus/FocusState;Landroidx/compose/ui/focus/FocusState;)V", 0);

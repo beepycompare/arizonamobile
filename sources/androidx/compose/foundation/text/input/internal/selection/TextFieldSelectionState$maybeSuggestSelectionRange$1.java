@@ -15,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionState.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$maybeSuggestSelectionRange$1", f = "TextFieldSelectionState.kt", i = {}, l = {1025}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$maybeSuggestSelectionRange$1", f = "TextFieldSelectionState.kt", i = {}, l = {1095}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionState$maybeSuggestSelectionRange$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ PlatformSelectionBehaviors $platformSelectionBehaviors;
@@ -46,13 +46,12 @@ public final class TextFieldSelectionState$maybeSuggestSelectionRange$1 extends 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        boolean z;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = this.$platformSelectionBehaviors.mo1747suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$selection, this);
+            obj = this.$platformSelectionBehaviors.mo1836suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$selection, this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -62,10 +61,9 @@ public final class TextFieldSelectionState$maybeSuggestSelectionRange$1 extends 
             ResultKt.throwOnFailure(obj);
         }
         TextRange textRange = (TextRange) obj;
-        z = this.this$0.isPassword;
-        if (!z && textRange != null && Intrinsics.areEqual(this.this$0.getTextFieldState$foundation_release().getVisualText().getText(), this.$text) && TextRange.m7451equalsimpl0(this.this$0.getTextFieldState$foundation_release().getVisualText().m1447getSelectiond9O1mEE(), this.$selection)) {
-            if (!TextRange.m7451equalsimpl0(textRange.m7462unboximpl(), this.this$0.getTextFieldState$foundation_release().getVisualText().m1447getSelectiond9O1mEE())) {
-                this.this$0.getTextFieldState$foundation_release().m1604selectCharsIn5zctL8(textRange.m7462unboximpl());
+        if (!this.this$0.isPassword && textRange != null && Intrinsics.areEqual(this.this$0.getTextFieldState$foundation().getVisualText().getText(), this.$text) && TextRange.m7694equalsimpl0(this.this$0.getTextFieldState$foundation().getVisualText().m1537getSelectiond9O1mEE(), this.$selection)) {
+            if (!TextRange.m7694equalsimpl0(textRange.m7705unboximpl(), this.this$0.getTextFieldState$foundation().getVisualText().m1537getSelectiond9O1mEE())) {
+                this.this$0.getTextFieldState$foundation().m1694selectCharsIn5zctL8(textRange.m7705unboximpl());
             }
         }
         return Unit.INSTANCE;

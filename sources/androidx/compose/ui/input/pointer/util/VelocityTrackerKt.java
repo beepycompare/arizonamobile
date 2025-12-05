@@ -1,8 +1,6 @@
 package androidx.compose.ui.input.pointer.util;
 
 import androidx.compose.ui.geometry.Offset;
-import androidx.compose.ui.input.pointer.HistoricalChange;
-import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
 import androidx.compose.ui.internal.InlineClassHelperKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
@@ -10,12 +8,11 @@ import androidx.core.app.NotificationCompat;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.ArraysKt;
 import kotlin.ranges.RangesKt;
 /* compiled from: VelocityTracker.kt */
-@Metadata(d1 = {"\u0000\\\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0014\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0011\u001a1\u0010\u0004\u001a\u00020\u0005*\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u00062\u0006\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0002¢\u0006\u0002\u0010\r\u001a\u0012\u0010\u000e\u001a\u00020\u0005*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011\u001a!\u0010\u000e\u001a\u00020\u0005*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013¢\u0006\u0004\b\u0014\u0010\u0015\u001a#\u0010\u0016\u001a\u00020\u0005*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002¢\u0006\u0004\b\u0017\u0010\u0015\u001a#\u0010\u0018\u001a\u00020\u0005*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002¢\u0006\u0004\b\u0019\u0010\u0015\u001a2\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001c2\u0006\u0010\u001e\u001a\u00020\u001c2\u0006\u0010\u001f\u001a\u00020\u00012\u0006\u0010 \u001a\u00020\u00012\b\b\u0002\u0010!\u001a\u00020\u001cH\u0000\u001a(\u0010\"\u001a\u00020\f2\u0006\u0010#\u001a\u00020\u001c2\u0006\u0010\t\u001a\u00020\u001c2\u0006\u0010\u001f\u001a\u00020\u00012\u0006\u0010$\u001a\u00020%H\u0002\u001a\u0011\u0010&\u001a\u00020\f2\u0006\u0010'\u001a\u00020\fH\u0082\b\u001a\u0014\u0010)\u001a\u00020\f*\u00020\u001c2\u0006\u0010*\u001a\u00020\u001cH\u0002\u001a\r\u0010+\u001a\u00020\f*\u00020\u001cH\u0082\b\u001a(\u0010,\u001a\f\u0012\b\u0012\u00060\u001cj\u0002`-0\u00062\u0006\u0010.\u001a\u00020\u00012\u0006\u0010/\u001a\u00020\u0001H\u0082\b¢\u0006\u0002\u00100\u001a,\u00101\u001a\u00020\f*\f\u0012\u0004\u0012\u00020\u001c0\u0006j\u0002`22\u0006\u00103\u001a\u00020\u00012\u0006\u00104\u001a\u00020\u0001H\u0082\n¢\u0006\u0002\u00105\u001a4\u0010\u0004\u001a\u00020\u0005*\f\u0012\u0004\u0012\u00020\u001c0\u0006j\u0002`22\u0006\u00103\u001a\u00020\u00012\u0006\u00104\u001a\u00020\u00012\u0006\u00106\u001a\u00020\fH\u0082\n¢\u0006\u0002\u00107\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001a\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000\"$\u00108\u001a\u00020%8\u0006@\u0006X\u0087\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b9\u0010:\u001a\u0004\b;\u0010<\"\u0004\b=\u0010>\"$\u0010?\u001a\u00020%8\u0006@\u0006X\u0087\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b@\u0010:\u001a\u0004\bA\u0010<\"\u0004\bB\u0010>*\f\b\u0002\u0010(\"\u00020\u001c2\u00020\u001c*\u0018\b\u0002\u0010,\"\b\u0012\u0004\u0012\u00020\u001c0\u00062\b\u0012\u0004\u0012\u00020\u001c0\u0006¨\u0006C"}, d2 = {"AssumePointerMoveStoppedMilliseconds", "", "HistorySize", "HorizonMilliseconds", "set", "", "", "Landroidx/compose/ui/input/pointer/util/DataPointAtTime;", FirebaseAnalytics.Param.INDEX, "time", "", "dataPoint", "", "([Landroidx/compose/ui/input/pointer/util/DataPointAtTime;IJF)V", "addPointerInputChange", "Landroidx/compose/ui/input/pointer/util/VelocityTracker;", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/pointer/PointerInputChange;", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "addPointerInputChange-0AR0LA0", "(Landroidx/compose/ui/input/pointer/util/VelocityTracker;Landroidx/compose/ui/input/pointer/PointerInputChange;J)V", "addPointerInputChangeLegacy", "addPointerInputChangeLegacy-0AR0LA0", "addPointerInputChangeWithFix", "addPointerInputChangeWithFix-0AR0LA0", "DefaultWeight", "polyFitLeastSquares", "", "x", "y", "sampleCount", "degree", "coefficients", "calculateImpulseVelocity", "dataPoints", "isDataDifferential", "", "kineticEnergyToVelocity", "kineticEnergy", "Vector", TtmlNode.TEXT_EMPHASIS_MARK_DOT, CmcdData.OBJECT_TYPE_AUDIO_ONLY, "norm", "Matrix", "Landroidx/compose/ui/input/pointer/util/Vector;", "rows", "cols", "(II)[[F", "get", "Landroidx/compose/ui/input/pointer/util/Matrix;", "row", "col", "([[FII)F", "value", "([[FIIF)V", "VelocityTrackerAddPointsFix", "getVelocityTrackerAddPointsFix$annotations", "()V", "getVelocityTrackerAddPointsFix", "()Z", "setVelocityTrackerAddPointsFix", "(Z)V", "VelocityTrackerStrategyUseImpulse", "getVelocityTrackerStrategyUseImpulse$annotations", "getVelocityTrackerStrategyUseImpulse", "setVelocityTrackerStrategyUseImpulse", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0010\u0014\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\u001a\u0012\u0010\u0004\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b\u001a!\u0010\u0004\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\f\u001a1\u0010\r\u001a\u00020\u0005*\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000e2\u0006\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002¢\u0006\u0002\u0010\u0015\u001a2\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u00182\u0006\u0010\u001a\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00012\b\b\u0002\u0010\u001d\u001a\u00020\u0018H\u0000\u001a(\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001f\u001a\u00020\u00182\u0006\u0010\u0011\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u00012\u0006\u0010 \u001a\u00020!H\u0002\u001a\u0011\u0010\"\u001a\u00020\u00142\u0006\u0010#\u001a\u00020\u0014H\u0082\b\u001a\u0014\u0010%\u001a\u00020\u0014*\u00020\u00182\u0006\u0010&\u001a\u00020\u0018H\u0002\u001a\r\u0010'\u001a\u00020\u0014*\u00020\u0018H\u0082\b\u001a(\u0010(\u001a\f\u0012\b\u0012\u00060\u0018j\u0002`)0\u000e2\u0006\u0010*\u001a\u00020\u00012\u0006\u0010+\u001a\u00020\u0001H\u0082\b¢\u0006\u0002\u0010,\u001a,\u0010-\u001a\u00020\u0014*\f\u0012\u0004\u0012\u00020\u00180\u000ej\u0002`.2\u0006\u0010/\u001a\u00020\u00012\u0006\u00100\u001a\u00020\u0001H\u0082\n¢\u0006\u0002\u00101\u001a4\u0010\r\u001a\u00020\u0005*\f\u0012\u0004\u0012\u00020\u00180\u000ej\u0002`.2\u0006\u0010/\u001a\u00020\u00012\u0006\u00100\u001a\u00020\u00012\u0006\u00102\u001a\u00020\u0014H\u0082\n¢\u0006\u0002\u00103\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0016\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000\"$\u00104\u001a\u00020!8\u0006@\u0006X\u0087\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b5\u00106\u001a\u0004\b7\u00108\"\u0004\b9\u0010:*\f\b\u0002\u0010$\"\u00020\u00182\u00020\u0018*\u0018\b\u0002\u0010(\"\b\u0012\u0004\u0012\u00020\u00180\u000e2\b\u0012\u0004\u0012\u00020\u00180\u000e¨\u0006;"}, d2 = {"AssumePointerMoveStoppedMilliseconds", "", "HistorySize", "HorizonMilliseconds", "addPointerInputChange", "", "Landroidx/compose/ui/input/pointer/util/VelocityTracker;", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/pointer/PointerInputChange;", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "addPointerInputChange-0AR0LA0", "(Landroidx/compose/ui/input/pointer/util/VelocityTracker;Landroidx/compose/ui/input/pointer/PointerInputChange;J)V", "set", "", "Landroidx/compose/ui/input/pointer/util/DataPointAtTime;", FirebaseAnalytics.Param.INDEX, "time", "", "dataPoint", "", "([Landroidx/compose/ui/input/pointer/util/DataPointAtTime;IJF)V", "DefaultWeight", "polyFitLeastSquares", "", "x", "y", "sampleCount", "degree", "coefficients", "calculateImpulseVelocity", "dataPoints", "isDataDifferential", "", "kineticEnergyToVelocity", "kineticEnergy", "Vector", TtmlNode.TEXT_EMPHASIS_MARK_DOT, CmcdData.OBJECT_TYPE_AUDIO_ONLY, "norm", "Matrix", "Landroidx/compose/ui/input/pointer/util/Vector;", "rows", "cols", "(II)[[F", "get", "Landroidx/compose/ui/input/pointer/util/Matrix;", "row", "col", "([[FII)F", "value", "([[FIIF)V", "VelocityTrackerAddPointsFix", "getVelocityTrackerAddPointsFix$annotations", "()V", "getVelocityTrackerAddPointsFix", "()Z", "setVelocityTrackerAddPointsFix", "(Z)V", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class VelocityTrackerKt {
     private static final int AssumePointerMoveStoppedMilliseconds = 40;
@@ -23,12 +20,17 @@ public final class VelocityTrackerKt {
     private static final int HistorySize = 20;
     private static final int HorizonMilliseconds = 100;
     private static boolean VelocityTrackerAddPointsFix = true;
-    private static boolean VelocityTrackerStrategyUseImpulse;
 
     public static /* synthetic */ void getVelocityTrackerAddPointsFix$annotations() {
     }
 
-    public static /* synthetic */ void getVelocityTrackerStrategyUseImpulse$annotations() {
+    public static final void addPointerInputChange(VelocityTracker velocityTracker, PointerInputChange pointerInputChange) {
+        m6851addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, Offset.Companion.m5195getZeroF1C5BW0());
+    }
+
+    /* renamed from: addPointerInputChange-0AR0LA0  reason: not valid java name */
+    public static final void m6851addPointerInputChange0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
+        velocityTracker.getPlatformVelocityTracker$ui().mo6838addPointerInputChangeUv8p0NA(pointerInputChange, j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40,62 +42,6 @@ public final class VelocityTrackerKt {
         }
         dataPointAtTime.setTime(j);
         dataPointAtTime.setDataPoint(f);
-    }
-
-    public static final void addPointerInputChange(VelocityTracker velocityTracker, PointerInputChange pointerInputChange) {
-        m6672addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, Offset.Companion.m5052getZeroF1C5BW0());
-    }
-
-    /* renamed from: addPointerInputChange-0AR0LA0  reason: not valid java name */
-    public static final void m6672addPointerInputChange0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
-        if (VelocityTrackerAddPointsFix) {
-            m6674addPointerInputChangeWithFix0AR0LA0(velocityTracker, pointerInputChange, j);
-        } else {
-            m6673addPointerInputChangeLegacy0AR0LA0(velocityTracker, pointerInputChange, j);
-        }
-    }
-
-    /* renamed from: addPointerInputChangeLegacy-0AR0LA0  reason: not valid java name */
-    private static final void m6673addPointerInputChangeLegacy0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
-        if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange)) {
-            velocityTracker.m6671setCurrentPointerPositionAccumulatork4lQ0M$ui_release(pointerInputChange.m6570getPositionF1C5BW0());
-            velocityTracker.resetTracking();
-        }
-        long m6571getPreviousPositionF1C5BW0 = pointerInputChange.m6571getPreviousPositionF1C5BW0();
-        List<HistoricalChange> historical = pointerInputChange.getHistorical();
-        int size = historical.size();
-        int i = 0;
-        while (i < size) {
-            HistoricalChange historicalChange = historical.get(i);
-            long m5040minusMKHz9U = Offset.m5040minusMKHz9U(historicalChange.m6494getPositionF1C5BW0(), m6571getPreviousPositionF1C5BW0);
-            long m6494getPositionF1C5BW0 = historicalChange.m6494getPositionF1C5BW0();
-            velocityTracker.m6671setCurrentPointerPositionAccumulatork4lQ0M$ui_release(Offset.m5041plusMKHz9U(velocityTracker.m6670getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), m5040minusMKHz9U));
-            velocityTracker.m6667addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m5041plusMKHz9U(velocityTracker.m6670getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), j));
-            i++;
-            m6571getPreviousPositionF1C5BW0 = m6494getPositionF1C5BW0;
-        }
-        velocityTracker.m6671setCurrentPointerPositionAccumulatork4lQ0M$ui_release(Offset.m5041plusMKHz9U(velocityTracker.m6670getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), Offset.m5040minusMKHz9U(pointerInputChange.m6570getPositionF1C5BW0(), m6571getPreviousPositionF1C5BW0)));
-        velocityTracker.m6667addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m5041plusMKHz9U(velocityTracker.m6670getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), j));
-    }
-
-    /* renamed from: addPointerInputChangeWithFix-0AR0LA0  reason: not valid java name */
-    private static final void m6674addPointerInputChangeWithFix0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
-        if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange)) {
-            velocityTracker.resetTracking();
-        }
-        if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
-            List<HistoricalChange> historical = pointerInputChange.getHistorical();
-            int size = historical.size();
-            for (int i = 0; i < size; i++) {
-                HistoricalChange historicalChange = historical.get(i);
-                velocityTracker.m6667addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m5041plusMKHz9U(historicalChange.m6493getOriginalEventPositionF1C5BW0$ui_release(), j));
-            }
-            velocityTracker.m6667addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m5041plusMKHz9U(pointerInputChange.m6569getOriginalEventPositionF1C5BW0$ui_release(), j));
-        }
-        if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange) && pointerInputChange.getUptimeMillis() - velocityTracker.getLastMoveEventTimeStamp$ui_release() > 40) {
-            velocityTracker.resetTracking();
-        }
-        velocityTracker.setLastMoveEventTimeStamp$ui_release(pointerInputChange.getUptimeMillis());
     }
 
     public static /* synthetic */ float[] polyFitLeastSquares$default(float[] fArr, float[] fArr2, int i, int i2, float[] fArr3, int i3, Object obj) {
@@ -241,13 +187,5 @@ public final class VelocityTrackerKt {
 
     public static final void setVelocityTrackerAddPointsFix(boolean z) {
         VelocityTrackerAddPointsFix = z;
-    }
-
-    public static final boolean getVelocityTrackerStrategyUseImpulse() {
-        return VelocityTrackerStrategyUseImpulse;
-    }
-
-    public static final void setVelocityTrackerStrategyUseImpulse(boolean z) {
-        VelocityTrackerStrategyUseImpulse = z;
     }
 }

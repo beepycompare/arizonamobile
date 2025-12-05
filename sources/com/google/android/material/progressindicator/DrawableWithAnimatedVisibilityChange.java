@@ -44,7 +44,7 @@ public abstract class DrawableWithAnimatedVisibilityChange extends Drawable impl
     private boolean mockShowAnimationRunning;
     private ValueAnimator showAnimator;
     private int totalAlpha;
-    private float mockPhaseFraction = DEFAULT_MOCK_PHASE_FRACTION;
+    private float mockPhaseFraction = -1.0f;
     final Paint paint = new Paint();
     Rect clipBounds = new Rect();
     AnimatorDurationScaleProvider animatorDurationScaleProvider = new AnimatorDurationScaleProvider();

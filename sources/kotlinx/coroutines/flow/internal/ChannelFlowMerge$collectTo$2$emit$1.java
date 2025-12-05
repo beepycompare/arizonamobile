@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow.internal;
 
+import androidx.compose.ui.spatial.RectListKt;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.Flow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Merge.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$2", f = "Merge.kt", i = {0, 0}, l = {62}, m = "emit", n = {"this", "inner"}, s = {"L$0", "L$1"})
+@DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$2", f = "Merge.kt", i = {0, 0}, l = {RectListKt.BitOffsetForGesturable}, m = "emit", n = {"this", "inner"}, s = {"L$0", "L$1"})
 /* loaded from: classes5.dex */
 public final class ChannelFlowMerge$collectTo$2$emit$1 extends ContinuationImpl {
     Object L$0;

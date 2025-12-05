@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Сподели со</string>
     <string name="abc_shareactionprovider_share_with_application">Сподели со %s</string>
     <string name="abc_toolbar_collapse_description">Собери</string>
-    <string name="autofill">Автоматско пополнување</string>
+    <string name="androidx_compose_foundation_autofill">Автоматско пополнување</string>
+    <string name="androidx_compose_ui_autofill">Автоматско пополнување</string>
     <string name="bottomsheet_action_collapse">Соберете го долниот лист</string>
     <string name="bottomsheet_action_expand">Проширете го долниот лист</string>
     <string name="bottomsheet_action_expand_halfway">Прошири до половина</string>

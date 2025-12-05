@@ -4,6 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.style.ReplacementSpan;
 import androidx.compose.ui.text.internal.InlineClassHelperKt;
+import androidx.compose.ui.unit.Density;
+import androidx.compose.ui.unit.TextUnitKt;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -13,7 +15,7 @@ import kotlin.annotation.AnnotationRetention;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlaceholderSpan.android.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0001\u0018\u0000 )2\u00020\u0001:\u0001)B7\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0005¢\u0006\u0004\b\n\u0010\u000bJ4\u0010\u0019\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u00052\b\u0010 \u001a\u0004\u0018\u00010\u000fH\u0017JR\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020\u00052\u0006\u0010(\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u001bH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\t\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001e\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u000e\u001a\u00020\u000f@BX\u0086.¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R \u0010\u0013\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00058F@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\rR \u0010\u0015\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00058F@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\rR\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Landroidx/compose/ui/text/android/style/PlaceholderSpan;", "Landroid/text/style/ReplacementSpan;", "width", "", "widthUnit", "", "height", "heightUnit", "pxPerSp", "verticalAlign", "<init>", "(FIFIFI)V", "getVerticalAlign", "()I", "value", "Landroid/graphics/Paint$FontMetricsInt;", "fontMetrics", "getFontMetrics", "()Landroid/graphics/Paint$FontMetricsInt;", "widthPx", "getWidthPx", "heightPx", "getHeightPx", "isLaidOut", "", "getSize", "paint", "Landroid/graphics/Paint;", "text", "", TtmlNode.START, TtmlNode.END, "fm", "draw", "", "canvas", "Landroid/graphics/Canvas;", "x", "top", "y", "bottom", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0001\u0018\u0000 -2\u00020\u0001:\u0001-BA\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0005¢\u0006\u0004\b\u000b\u0010\fB9\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\n\u001a\u00020\u0005¢\u0006\u0004\b\u000b\u0010\u000fJ4\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u001f2\b\u0010 \u001a\u0004\u0018\u00010!2\u0006\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020\u00052\b\u0010$\u001a\u0004\u0018\u00010\u0013H\u0017JR\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(2\b\u0010 \u001a\u0004\u0018\u00010!2\u0006\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020\u00052\u0006\u0010)\u001a\u00020\u00032\u0006\u0010*\u001a\u00020\u00052\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u001fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\n\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001e\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0012\u001a\u00020\u0013@BX\u0086.¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R \u0010\u0017\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u00058F@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0011R \u0010\u0019\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u00058F@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0011R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006."}, d2 = {"Landroidx/compose/ui/text/android/style/PlaceholderSpan;", "Landroid/text/style/ReplacementSpan;", "width", "", "widthUnit", "", "height", "heightUnit", "widthAsSpInPx", "heightAsSpInPx", "verticalAlign", "<init>", "(FIFIFFI)V", "density", "Landroidx/compose/ui/unit/Density;", "(FIFILandroidx/compose/ui/unit/Density;I)V", "getVerticalAlign", "()I", "value", "Landroid/graphics/Paint$FontMetricsInt;", "fontMetrics", "getFontMetrics", "()Landroid/graphics/Paint$FontMetricsInt;", "widthPx", "getWidthPx", "heightPx", "getHeightPx", "isLaidOut", "", "getSize", "paint", "Landroid/graphics/Paint;", "text", "", TtmlNode.START, TtmlNode.END, "fm", "draw", "", "canvas", "Landroid/graphics/Canvas;", "x", "top", "y", "bottom", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class PlaceholderSpan extends ReplacementSpan {
     public static final int ALIGN_ABOVE_BASELINE = 0;
@@ -28,12 +30,13 @@ public final class PlaceholderSpan extends ReplacementSpan {
     public static final int UNIT_UNSPECIFIED = 2;
     private Paint.FontMetricsInt fontMetrics;
     private final float height;
+    private final float heightAsSpInPx;
     private int heightPx;
     private final int heightUnit;
     private boolean isLaidOut;
-    private final float pxPerSp;
     private final int verticalAlign;
     private final float width;
+    private final float widthAsSpInPx;
     private int widthPx;
     private final int widthUnit;
     public static final Companion Companion = new Companion(null);
@@ -43,8 +46,22 @@ public final class PlaceholderSpan extends ReplacementSpan {
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
     }
 
+    private PlaceholderSpan(float f, int i, float f2, int i2, float f3, float f4, int i3) {
+        this.width = f;
+        this.widthUnit = i;
+        this.height = f2;
+        this.heightUnit = i2;
+        this.widthAsSpInPx = f3;
+        this.heightAsSpInPx = f4;
+        this.verticalAlign = i3;
+    }
+
     public final int getVerticalAlign() {
         return this.verticalAlign;
+    }
+
+    public PlaceholderSpan(float f, int i, float f2, int i2, Density density, int i3) {
+        this(f, i, f2, i2, i == 0 ? density.mo463toPxR2X_6o(TextUnitKt.getSp(f)) : 0.0f, i2 == 0 ? density.mo463toPxR2X_6o(TextUnitKt.getSp(f2)) : 0.0f, i3);
     }
 
     /* compiled from: PlaceholderSpan.android.kt */
@@ -76,15 +93,6 @@ public final class PlaceholderSpan extends ReplacementSpan {
         }
     }
 
-    public PlaceholderSpan(float f, int i, float f2, int i2, float f3, int i3) {
-        this.width = f;
-        this.widthUnit = i;
-        this.height = f2;
-        this.heightUnit = i2;
-        this.pxPerSp = f3;
-        this.verticalAlign = i3;
-    }
-
     public final Paint.FontMetricsInt getFontMetrics() {
         Paint.FontMetricsInt fontMetricsInt = this.fontMetrics;
         if (fontMetricsInt != null) {
@@ -111,7 +119,7 @@ public final class PlaceholderSpan extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         float f;
-        int ceilToInt;
+        float f2;
         this.isLaidOut = true;
         float textSize = paint.getTextSize();
         this.fontMetrics = paint.getFontMetricsInt();
@@ -120,7 +128,7 @@ public final class PlaceholderSpan extends ReplacementSpan {
         }
         int i3 = this.widthUnit;
         if (i3 == 0) {
-            f = this.width * this.pxPerSp;
+            f = this.widthAsSpInPx;
         } else if (i3 == 1) {
             f = this.width * textSize;
         } else {
@@ -130,14 +138,14 @@ public final class PlaceholderSpan extends ReplacementSpan {
         this.widthPx = PlaceholderSpan_androidKt.ceilToInt(f);
         int i4 = this.heightUnit;
         if (i4 == 0) {
-            ceilToInt = PlaceholderSpan_androidKt.ceilToInt(this.height * this.pxPerSp);
+            f2 = this.heightAsSpInPx;
         } else if (i4 == 1) {
-            ceilToInt = PlaceholderSpan_androidKt.ceilToInt(this.height * textSize);
+            f2 = this.height * textSize;
         } else {
             InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("Unsupported unit.");
             throw new KotlinNothingValueException();
         }
-        this.heightPx = ceilToInt;
+        this.heightPx = PlaceholderSpan_androidKt.ceilToInt(f2);
         if (fontMetricsInt != null) {
             fontMetricsInt.ascent = getFontMetrics().ascent;
             fontMetricsInt.descent = getFontMetrics().descent;

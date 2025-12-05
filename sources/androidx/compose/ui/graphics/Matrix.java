@@ -11,9 +11,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: Matrix.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0014\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b)\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 Q2\u00020\u0001:\u0001QB\u0011\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J \u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000bH\u0086\n¢\u0006\u0004\b\r\u0010\u000eJ(\u0010\u000f\u001a\u00020\u00102\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\u0011\u001a\u00020\tH\u0086\n¢\u0006\u0004\b\u0012\u0010\u0013J\u0015\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0015¢\u0006\u0004\b\u0017\u0010\u0018J\u0015\u0010\u0014\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019¢\u0006\u0004\b\u001b\u0010\u001cJ\u0015\u0010\u0014\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u001d¢\u0006\u0004\b\u001b\u0010\u001eJ\u0018\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020\u0000H\u0086\u0002¢\u0006\u0004\b!\u0010\"J\u000f\u0010#\u001a\u00020$H\u0016¢\u0006\u0004\b%\u0010&J\r\u0010'\u001a\u00020\u0010¢\u0006\u0004\b(\u0010)J\r\u0010*\u001a\u00020\u0010¢\u0006\u0004\b+\u0010)J\u0015\u0010,\u001a\u00020\u00102\u0006\u0010-\u001a\u00020\u0000¢\u0006\u0004\b.\u0010\"J\u0015\u0010/\u001a\u00020\u00102\u0006\u00100\u001a\u00020\t¢\u0006\u0004\b1\u00102J\u0015\u00103\u001a\u00020\u00102\u0006\u00100\u001a\u00020\t¢\u0006\u0004\b4\u00102J\u0015\u00105\u001a\u00020\u00102\u0006\u00100\u001a\u00020\t¢\u0006\u0004\b6\u00102J+\u00107\u001a\u00020\u00102\b\b\u0002\u00108\u001a\u00020\t2\b\b\u0002\u00109\u001a\u00020\t2\b\b\u0002\u0010:\u001a\u00020\t¢\u0006\u0004\b;\u0010<J+\u0010=\u001a\u00020\u00102\b\b\u0002\u00108\u001a\u00020\t2\b\b\u0002\u00109\u001a\u00020\t2\b\b\u0002\u0010:\u001a\u00020\t¢\u0006\u0004\b>\u0010<J{\u0010?\u001a\u00020\u00102\b\b\u0002\u0010@\u001a\u00020\t2\b\b\u0002\u0010A\u001a\u00020\t2\b\b\u0002\u0010B\u001a\u00020\t2\b\b\u0002\u0010C\u001a\u00020\t2\b\b\u0002\u0010D\u001a\u00020\t2\b\b\u0002\u0010E\u001a\u00020\t2\b\b\u0002\u0010F\u001a\u00020\t2\b\b\u0002\u0010G\u001a\u00020\t2\b\b\u0002\u0010H\u001a\u00020\t2\b\b\u0002\u0010I\u001a\u00020\t2\b\b\u0002\u0010J\u001a\u00020\t¢\u0006\u0004\bK\u0010LJ\u0013\u0010M\u001a\u00020N2\b\u0010O\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010P\u001a\u00020\u000bHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006R"}, d2 = {"Landroidx/compose/ui/graphics/Matrix;", "", "values", "", "constructor-impl", "([F)[F", "getValues", "()[F", "get", "", "row", "", "column", "get-impl", "([FII)F", "set", "", "v", "set-impl", "([FIIF)V", "map", "Landroidx/compose/ui/geometry/Offset;", "point", "map-MK-Hz9U", "([FJ)J", "Landroidx/compose/ui/geometry/Rect;", "rect", "map-impl", "([FLandroidx/compose/ui/geometry/Rect;)Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/geometry/MutableRect;", "([FLandroidx/compose/ui/geometry/MutableRect;)V", "timesAssign", CmcdData.OBJECT_TYPE_MANIFEST, "timesAssign-58bKbWc", "([F[F)V", "toString", "", "toString-impl", "([F)Ljava/lang/String;", "invert", "invert-impl", "([F)V", "reset", "reset-impl", "setFrom", "matrix", "setFrom-58bKbWc", "rotateX", "degrees", "rotateX-impl", "([FF)V", "rotateY", "rotateY-impl", "rotateZ", "rotateZ-impl", "scale", "x", "y", "z", "scale-impl", "([FFFF)V", "translate", "translate-impl", "resetToPivotedTransform", "pivotX", "pivotY", "translationX", "translationY", "translationZ", "rotationX", "rotationY", "rotationZ", "scaleX", "scaleY", "scaleZ", "resetToPivotedTransform-impl", "([FFFFFFFFFFFF)V", "equals", "", "other", "hashCode", "Companion", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0014\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b)\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 Q2\u00020\u0001:\u0001QB\u0011\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J \u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000bH\u0086\n¢\u0006\u0004\b\r\u0010\u000eJ(\u0010\u000f\u001a\u00020\u00102\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\u0011\u001a\u00020\tH\u0086\n¢\u0006\u0004\b\u0012\u0010\u0013J\u0015\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0015¢\u0006\u0004\b\u0017\u0010\u0018J\u0015\u0010\u0014\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019¢\u0006\u0004\b\u001b\u0010\u001cJ\u0015\u0010\u0014\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u001d¢\u0006\u0004\b\u001b\u0010\u001eJ\u0018\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020\u0000H\u0086\u0002¢\u0006\u0004\b!\u0010\"J\u000f\u0010#\u001a\u00020$H\u0016¢\u0006\u0004\b%\u0010&J\r\u0010'\u001a\u00020\u0010¢\u0006\u0004\b(\u0010)J\r\u0010*\u001a\u00020\u0010¢\u0006\u0004\b+\u0010)J\u0015\u0010,\u001a\u00020\u00102\u0006\u0010-\u001a\u00020\u0000¢\u0006\u0004\b.\u0010\"J\u0015\u0010/\u001a\u00020\u00102\u0006\u00100\u001a\u00020\t¢\u0006\u0004\b1\u00102J\u0015\u00103\u001a\u00020\u00102\u0006\u00100\u001a\u00020\t¢\u0006\u0004\b4\u00102J\u0015\u00105\u001a\u00020\u00102\u0006\u00100\u001a\u00020\t¢\u0006\u0004\b6\u00102J+\u00107\u001a\u00020\u00102\b\b\u0002\u00108\u001a\u00020\t2\b\b\u0002\u00109\u001a\u00020\t2\b\b\u0002\u0010:\u001a\u00020\t¢\u0006\u0004\b;\u0010<J+\u0010=\u001a\u00020\u00102\b\b\u0002\u00108\u001a\u00020\t2\b\b\u0002\u00109\u001a\u00020\t2\b\b\u0002\u0010:\u001a\u00020\t¢\u0006\u0004\b>\u0010<J{\u0010?\u001a\u00020\u00102\b\b\u0002\u0010@\u001a\u00020\t2\b\b\u0002\u0010A\u001a\u00020\t2\b\b\u0002\u0010B\u001a\u00020\t2\b\b\u0002\u0010C\u001a\u00020\t2\b\b\u0002\u0010D\u001a\u00020\t2\b\b\u0002\u0010E\u001a\u00020\t2\b\b\u0002\u0010F\u001a\u00020\t2\b\b\u0002\u0010G\u001a\u00020\t2\b\b\u0002\u0010H\u001a\u00020\t2\b\b\u0002\u0010I\u001a\u00020\t2\b\b\u0002\u0010J\u001a\u00020\t¢\u0006\u0004\bK\u0010LJ\u0013\u0010M\u001a\u00020N2\b\u0010O\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010P\u001a\u00020\u000bHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006R"}, d2 = {"Landroidx/compose/ui/graphics/Matrix;", "", "values", "", "constructor-impl", "([F)[F", "getValues", "()[F", "get", "", "row", "", "column", "get-impl", "([FII)F", "set", "", "v", "set-impl", "([FIIF)V", "map", "Landroidx/compose/ui/geometry/Offset;", "point", "map-MK-Hz9U", "([FJ)J", "Landroidx/compose/ui/geometry/Rect;", "rect", "map-impl", "([FLandroidx/compose/ui/geometry/Rect;)Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/geometry/MutableRect;", "([FLandroidx/compose/ui/geometry/MutableRect;)V", "timesAssign", CmcdData.OBJECT_TYPE_MANIFEST, "timesAssign-58bKbWc", "([F[F)V", "toString", "", "toString-impl", "([F)Ljava/lang/String;", "invert", "invert-impl", "([F)V", "reset", "reset-impl", "setFrom", "matrix", "setFrom-58bKbWc", "rotateX", "degrees", "rotateX-impl", "([FF)V", "rotateY", "rotateY-impl", "rotateZ", "rotateZ-impl", "scale", "x", "y", "z", "scale-impl", "([FFFF)V", "translate", "translate-impl", "resetToPivotedTransform", "pivotX", "pivotY", "translationX", "translationY", "translationZ", "rotationX", "rotationY", "rotationZ", "scaleX", "scaleY", "scaleZ", "resetToPivotedTransform-impl", "([FFFFFFFFFFFF)V", "equals", "", "other", "hashCode", "Companion", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class Matrix {
     public static final Companion Companion = new Companion(null);
     public static final int Perspective0 = 3;
@@ -30,40 +30,40 @@ public final class Matrix {
     private final float[] values;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Matrix m5520boximpl(float[] fArr) {
+    public static final /* synthetic */ Matrix m5668boximpl(float[] fArr) {
         return new Matrix(fArr);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static float[] m5521constructorimpl(float[] fArr) {
+    public static float[] m5669constructorimpl(float[] fArr) {
         return fArr;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5523equalsimpl(float[] fArr, Object obj) {
-        return (obj instanceof Matrix) && Intrinsics.areEqual(fArr, ((Matrix) obj).m5545unboximpl());
+    public static boolean m5671equalsimpl(float[] fArr, Object obj) {
+        return (obj instanceof Matrix) && Intrinsics.areEqual(fArr, ((Matrix) obj).m5693unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5524equalsimpl0(float[] fArr, float[] fArr2) {
+    public static final boolean m5672equalsimpl0(float[] fArr, float[] fArr2) {
         return Intrinsics.areEqual(fArr, fArr2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5526hashCodeimpl(float[] fArr) {
+    public static int m5674hashCodeimpl(float[] fArr) {
         return Arrays.hashCode(fArr);
     }
 
     public boolean equals(Object obj) {
-        return m5523equalsimpl(this.values, obj);
+        return m5671equalsimpl(this.values, obj);
     }
 
     public int hashCode() {
-        return m5526hashCodeimpl(this.values);
+        return m5674hashCodeimpl(this.values);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float[] m5545unboximpl() {
+    public final /* synthetic */ float[] m5693unboximpl() {
         return this.values;
     }
 
@@ -76,25 +76,25 @@ public final class Matrix {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ float[] m5522constructorimpl$default(float[] fArr, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ float[] m5670constructorimpl$default(float[] fArr, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             fArr = new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
         }
-        return m5521constructorimpl(fArr);
+        return m5669constructorimpl(fArr);
     }
 
     /* renamed from: get-impl  reason: not valid java name */
-    public static final float m5525getimpl(float[] fArr, int i, int i2) {
+    public static final float m5673getimpl(float[] fArr, int i, int i2) {
         return fArr[(i * 4) + i2];
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final void m5539setimpl(float[] fArr, int i, int i2, float f) {
+    public static final void m5687setimpl(float[] fArr, int i, int i2, float f) {
         fArr[(i * 4) + i2] = f;
     }
 
     /* renamed from: map-MK-Hz9U  reason: not valid java name */
-    public static final long m5528mapMKHz9U(float[] fArr, long j) {
+    public static final long m5676mapMKHz9U(float[] fArr, long j) {
         if (fArr.length < 16) {
             return j;
         }
@@ -113,11 +113,11 @@ public final class Matrix {
         if ((Float.floatToRawIntBits(f10) & Integer.MAX_VALUE) >= 2139095040) {
             f10 = 0.0f;
         }
-        return Offset.m5028constructorimpl((Float.floatToRawIntBits((((f * intBitsToFloat) + (f4 * intBitsToFloat2)) + f7) * f10) << 32) | (Float.floatToRawIntBits(f10 * ((f2 * intBitsToFloat) + (f5 * intBitsToFloat2) + f8)) & 4294967295L));
+        return Offset.m5171constructorimpl((Float.floatToRawIntBits((((f * intBitsToFloat) + (f4 * intBitsToFloat2)) + f7) * f10) << 32) | (Float.floatToRawIntBits(f10 * ((f2 * intBitsToFloat) + (f5 * intBitsToFloat2) + f8)) & 4294967295L));
     }
 
     /* renamed from: map-impl  reason: not valid java name */
-    public static final Rect m5529mapimpl(float[] fArr, Rect rect) {
+    public static final Rect m5677mapimpl(float[] fArr, Rect rect) {
         if (fArr.length < 16) {
             return rect;
         }
@@ -172,7 +172,7 @@ public final class Matrix {
     }
 
     /* renamed from: map-impl  reason: not valid java name */
-    public static final void m5530mapimpl(float[] fArr, MutableRect mutableRect) {
+    public static final void m5678mapimpl(float[] fArr, MutableRect mutableRect) {
         if (fArr.length < 16) {
             return;
         }
@@ -230,7 +230,7 @@ public final class Matrix {
     }
 
     /* renamed from: timesAssign-58bKbWc  reason: not valid java name */
-    public static final void m5541timesAssign58bKbWc(float[] fArr, float[] fArr2) {
+    public static final void m5689timesAssign58bKbWc(float[] fArr, float[] fArr2) {
         if (fArr.length >= 16 && fArr2.length >= 16) {
             float f = fArr[0];
             float f2 = fArr2[0];
@@ -295,11 +295,11 @@ public final class Matrix {
     }
 
     public String toString() {
-        return m5542toStringimpl(this.values);
+        return m5690toStringimpl(this.values);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5542toStringimpl(float[] fArr) {
+    public static String m5690toStringimpl(float[] fArr) {
         StringBuilder sb = new StringBuilder("\n            |");
         sb.append(fArr[0]).append(' ').append(fArr[1]).append(' ').append(fArr[2]).append(' ').append(fArr[3]).append("|\n            |").append(fArr[4]).append(' ').append(fArr[5]).append(' ').append(fArr[6]).append(' ').append(fArr[7]).append("|\n            |").append(fArr[8]).append(' ').append(fArr[9]).append(' ').append(fArr[10]).append(' ');
         sb.append(fArr[11]).append("|\n            |").append(fArr[12]).append(' ').append(fArr[13]).append(' ').append(fArr[14]).append(' ').append(fArr[15]).append("|\n        ");
@@ -307,7 +307,7 @@ public final class Matrix {
     }
 
     /* renamed from: invert-impl  reason: not valid java name */
-    public static final void m5527invertimpl(float[] fArr) {
+    public static final void m5675invertimpl(float[] fArr) {
         if (fArr.length < 16) {
             return;
         }
@@ -365,7 +365,7 @@ public final class Matrix {
     }
 
     /* renamed from: reset-impl  reason: not valid java name */
-    public static final void m5531resetimpl(float[] fArr) {
+    public static final void m5679resetimpl(float[] fArr) {
         if (fArr.length < 16) {
             return;
         }
@@ -388,7 +388,7 @@ public final class Matrix {
     }
 
     /* renamed from: setFrom-58bKbWc  reason: not valid java name */
-    public static final void m5540setFrom58bKbWc(float[] fArr, float[] fArr2) {
+    public static final void m5688setFrom58bKbWc(float[] fArr, float[] fArr2) {
         if (fArr.length >= 16 && fArr2.length >= 16) {
             fArr[0] = fArr2[0];
             fArr[1] = fArr2[1];
@@ -410,7 +410,7 @@ public final class Matrix {
     }
 
     /* renamed from: rotateX-impl  reason: not valid java name */
-    public static final void m5534rotateXimpl(float[] fArr, float f) {
+    public static final void m5682rotateXimpl(float[] fArr, float f) {
         if (fArr.length < 16) {
             return;
         }
@@ -436,7 +436,7 @@ public final class Matrix {
     }
 
     /* renamed from: rotateY-impl  reason: not valid java name */
-    public static final void m5535rotateYimpl(float[] fArr, float f) {
+    public static final void m5683rotateYimpl(float[] fArr, float f) {
         if (fArr.length < 16) {
             return;
         }
@@ -462,7 +462,7 @@ public final class Matrix {
     }
 
     /* renamed from: rotateZ-impl  reason: not valid java name */
-    public static final void m5536rotateZimpl(float[] fArr, float f) {
+    public static final void m5684rotateZimpl(float[] fArr, float f) {
         if (fArr.length < 16) {
             return;
         }
@@ -489,7 +489,7 @@ public final class Matrix {
     }
 
     /* renamed from: scale-impl$default  reason: not valid java name */
-    public static /* synthetic */ void m5538scaleimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
+    public static /* synthetic */ void m5686scaleimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
         if ((i & 1) != 0) {
             f = 1.0f;
         }
@@ -499,11 +499,11 @@ public final class Matrix {
         if ((i & 4) != 0) {
             f3 = 1.0f;
         }
-        m5537scaleimpl(fArr, f, f2, f3);
+        m5685scaleimpl(fArr, f, f2, f3);
     }
 
     /* renamed from: scale-impl  reason: not valid java name */
-    public static final void m5537scaleimpl(float[] fArr, float f, float f2, float f3) {
+    public static final void m5685scaleimpl(float[] fArr, float f, float f2, float f3) {
         if (fArr.length < 16) {
             return;
         }
@@ -522,7 +522,7 @@ public final class Matrix {
     }
 
     /* renamed from: translate-impl$default  reason: not valid java name */
-    public static /* synthetic */ void m5544translateimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
+    public static /* synthetic */ void m5692translateimpl$default(float[] fArr, float f, float f2, float f3, int i, Object obj) {
         if ((i & 1) != 0) {
             f = 0.0f;
         }
@@ -532,11 +532,11 @@ public final class Matrix {
         if ((i & 4) != 0) {
             f3 = 0.0f;
         }
-        m5543translateimpl(fArr, f, f2, f3);
+        m5691translateimpl(fArr, f, f2, f3);
     }
 
     /* renamed from: translate-impl  reason: not valid java name */
-    public static final void m5543translateimpl(float[] fArr, float f, float f2, float f3) {
+    public static final void m5691translateimpl(float[] fArr, float f, float f2, float f3) {
         if (fArr.length < 16) {
             return;
         }
@@ -550,7 +550,7 @@ public final class Matrix {
     }
 
     /* renamed from: resetToPivotedTransform-impl$default  reason: not valid java name */
-    public static /* synthetic */ void m5533resetToPivotedTransformimpl$default(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, int i, Object obj) {
+    public static /* synthetic */ void m5681resetToPivotedTransformimpl$default(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11, int i, Object obj) {
         if ((i & 1) != 0) {
             f = 0.0f;
         }
@@ -584,11 +584,11 @@ public final class Matrix {
         if ((i & 1024) != 0) {
             f11 = 1.0f;
         }
-        m5532resetToPivotedTransformimpl(fArr, f, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11);
+        m5680resetToPivotedTransformimpl(fArr, f, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11);
     }
 
     /* renamed from: resetToPivotedTransform-impl  reason: not valid java name */
-    public static final void m5532resetToPivotedTransformimpl(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11) {
+    public static final void m5680resetToPivotedTransformimpl(float[] fArr, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11) {
         double d = f6 * 0.017453292519943295d;
         float sin = (float) Math.sin(d);
         float cos = (float) Math.cos(d);
@@ -643,8 +643,8 @@ public final class Matrix {
     }
 
     /* compiled from: Matrix.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u000b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/graphics/Matrix$Companion;", "", "<init>", "()V", "ScaleX", "", "SkewY", "Perspective0", "SkewX", "ScaleY", "Perspective1", "ScaleZ", "TranslateX", "TranslateY", "TranslateZ", "Perspective2", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u000b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/graphics/Matrix$Companion;", "", "<init>", "()V", "ScaleX", "", "SkewY", "Perspective0", "SkewX", "ScaleY", "Perspective1", "ScaleZ", "TranslateX", "TranslateY", "TranslateZ", "Perspective2", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

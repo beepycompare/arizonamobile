@@ -69,7 +69,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 /* compiled from: TextLinkScope.kt */
-@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001e\u0010\u001f\u001a\u00020 *\u00020 2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J\u001e\u0010%\u001a\u00020 *\u00020 2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J\u001c\u0010&\u001a\u0004\u0018\u00010'2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J\u001c\u0010(\u001a\u0004\u0018\u00010)2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J0\u0010*\u001a\u0010\u0012\u0004\u0012\u00020#\u0018\u00010\"j\u0004\u0018\u0001`$2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$2\u0006\u0010\n\u001a\u00020\tH\u0002J\r\u0010+\u001a\u00020\u0018H\u0007¢\u0006\u0002\u0010,J\u001a\u0010-\u001a\u0004\u0018\u00010.*\u0004\u0018\u00010.2\b\u0010/\u001a\u0004\u0018\u00010.H\u0002J\u0018\u00100\u001a\u00020\u00182\u0006\u0010!\u001a\u00020#2\u0006\u00101\u001a\u000202H\u0002J\r\u00103\u001a\u00020\u0003H\u0000¢\u0006\u0002\b4J>\u00105\u001a\u00020\u00182\u0016\u00106\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u000107\"\u0004\u0018\u00010\u00012\u0017\u00108\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00180\u0016¢\u0006\u0002\b\u0019H\u0003¢\u0006\u0002\u00109R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R/\u0010\n\u001a\u0004\u0018\u00010\t2\b\u0010\b\u001a\u0004\u0018\u00010\t8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u000f\u0010\u0010\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u0011\u001a\u00020\u0003X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\u0005R%\u0010\u0014\u001a\u0019\u0012\u0015\u0012\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00180\u0016¢\u0006\u0002\b\u00190\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001b8F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e¨\u0006:"}, d2 = {"Landroidx/compose/foundation/text/TextLinkScope;", "", "initialText", "Landroidx/compose/ui/text/AnnotatedString;", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;)V", "getInitialText$foundation_release", "()Landroidx/compose/ui/text/AnnotatedString;", "<set-?>", "Landroidx/compose/ui/text/TextLayoutResult;", "textLayoutResult", "getTextLayoutResult", "()Landroidx/compose/ui/text/TextLayoutResult;", "setTextLayoutResult", "(Landroidx/compose/ui/text/TextLayoutResult;)V", "textLayoutResult$delegate", "Landroidx/compose/runtime/MutableState;", "text", "getText$foundation_release", "setText$foundation_release", "annotators", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/TextAnnotatorScope;", "", "Lkotlin/ExtensionFunctionType;", "shouldMeasureLinks", "Lkotlin/Function0;", "", "getShouldMeasureLinks", "()Lkotlin/jvm/functions/Function0;", "textRange", "Landroidx/compose/ui/Modifier;", "link", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/LinkAnnotation;", "Landroidx/compose/foundation/text/LinkRange;", "clipLink", "shapeForRange", "Landroidx/compose/ui/graphics/Shape;", "pathForRangeInRangeCoordinates", "Landroidx/compose/ui/graphics/Path;", "calculateVisibleLinkRange", "LinksComposables", "(Landroidx/compose/runtime/Composer;I)V", "mergeOrUse", "Landroidx/compose/ui/text/SpanStyle;", "other", "handleLink", "uriHandler", "Landroidx/compose/ui/platform/UriHandler;", "applyAnnotators", "applyAnnotators$foundation_release", "StyleAnnotation", UserMetadata.KEYDATA_FILENAME, "", "block", "([Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001e\u0010\u001f\u001a\u00020 *\u00020 2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J\u001e\u0010%\u001a\u00020 *\u00020 2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J\u001c\u0010&\u001a\u0004\u0018\u00010'2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J\u001c\u0010(\u001a\u0004\u0018\u00010)2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$H\u0002J0\u0010*\u001a\u0010\u0012\u0004\u0012\u00020#\u0018\u00010\"j\u0004\u0018\u0001`$2\u0010\u0010!\u001a\f\u0012\u0004\u0012\u00020#0\"j\u0002`$2\u0006\u0010\n\u001a\u00020\tH\u0002J\r\u0010+\u001a\u00020\u0018H\u0007¢\u0006\u0002\u0010,J\u001a\u0010-\u001a\u0004\u0018\u00010.*\u0004\u0018\u00010.2\b\u0010/\u001a\u0004\u0018\u00010.H\u0002J\u0018\u00100\u001a\u00020\u00182\u0006\u0010!\u001a\u00020#2\u0006\u00101\u001a\u000202H\u0002J\r\u00103\u001a\u00020\u0003H\u0000¢\u0006\u0002\b4J>\u00105\u001a\u00020\u00182\u0016\u00106\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u000107\"\u0004\u0018\u00010\u00012\u0017\u00108\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00180\u0016¢\u0006\u0002\b\u0019H\u0003¢\u0006\u0002\u00109R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R/\u0010\n\u001a\u0004\u0018\u00010\t2\b\u0010\b\u001a\u0004\u0018\u00010\t8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u000f\u0010\u0010\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u0011\u001a\u00020\u0003X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\u0005R%\u0010\u0014\u001a\u0019\u0012\u0015\u0012\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00180\u0016¢\u0006\u0002\b\u00190\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001b8F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e¨\u0006:"}, d2 = {"Landroidx/compose/foundation/text/TextLinkScope;", "", "initialText", "Landroidx/compose/ui/text/AnnotatedString;", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;)V", "getInitialText$foundation", "()Landroidx/compose/ui/text/AnnotatedString;", "<set-?>", "Landroidx/compose/ui/text/TextLayoutResult;", "textLayoutResult", "getTextLayoutResult", "()Landroidx/compose/ui/text/TextLayoutResult;", "setTextLayoutResult", "(Landroidx/compose/ui/text/TextLayoutResult;)V", "textLayoutResult$delegate", "Landroidx/compose/runtime/MutableState;", "text", "getText$foundation", "setText$foundation", "annotators", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/TextAnnotatorScope;", "", "Lkotlin/ExtensionFunctionType;", "shouldMeasureLinks", "Lkotlin/Function0;", "", "getShouldMeasureLinks", "()Lkotlin/jvm/functions/Function0;", "textRange", "Landroidx/compose/ui/Modifier;", "link", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/LinkAnnotation;", "Landroidx/compose/foundation/text/LinkRange;", "clipLink", "shapeForRange", "Landroidx/compose/ui/graphics/Shape;", "pathForRangeInRangeCoordinates", "Landroidx/compose/ui/graphics/Path;", "calculateVisibleLinkRange", "LinksComposables", "(Landroidx/compose/runtime/Composer;I)V", "mergeOrUse", "Landroidx/compose/ui/text/SpanStyle;", "other", "handleLink", "uriHandler", "Landroidx/compose/ui/platform/UriHandler;", "applyAnnotators", "applyAnnotators$foundation", "StyleAnnotation", UserMetadata.KEYDATA_FILENAME, "", "block", "([Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextLinkScope {
     public static final int $stable = 8;
@@ -79,13 +79,13 @@ public final class TextLinkScope {
     private final MutableState textLayoutResult$delegate;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit LinksComposables$lambda$20(TextLinkScope textLinkScope, int i, Composer composer, int i2) {
+    public static final Unit LinksComposables$lambda$1(TextLinkScope textLinkScope, int i, Composer composer, int i2) {
         textLinkScope.LinksComposables(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit StyleAnnotation$lambda$25(TextLinkScope textLinkScope, Object[] objArr, Function1 function1, int i, Composer composer, int i2) {
+    public static final Unit StyleAnnotation$lambda$1(TextLinkScope textLinkScope, Object[] objArr, Function1 function1, int i, Composer composer, int i2) {
         textLinkScope.StyleAnnotation(objArr, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -95,7 +95,7 @@ public final class TextLinkScope {
         this.initialText = annotatedString;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.textLayoutResult$delegate = mutableStateOf$default;
-        this.text = annotatedString.flatMapAnnotations(new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda6
+        this.text = annotatedString.flatMapAnnotations(new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 List _init_$lambda$0;
@@ -106,7 +106,7 @@ public final class TextLinkScope {
         this.annotators = SnapshotStateKt.mutableStateListOf();
     }
 
-    public final AnnotatedString getInitialText$foundation_release() {
+    public final AnnotatedString getInitialText$foundation() {
         return this.initialText;
     }
 
@@ -118,11 +118,11 @@ public final class TextLinkScope {
         this.textLayoutResult$delegate.setValue(textLayoutResult);
     }
 
-    public final AnnotatedString getText$foundation_release() {
+    public final AnnotatedString getText$foundation() {
         return this.text;
     }
 
-    public final void setText$foundation_release(AnnotatedString annotatedString) {
+    public final void setText$foundation(AnnotatedString annotatedString) {
         this.text = annotatedString;
     }
 
@@ -154,7 +154,7 @@ public final class TextLinkScope {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _get_shouldMeasureLinks_$lambda$1(TextLinkScope textLinkScope) {
+    public static final boolean _get_shouldMeasureLinks_$lambda$0(TextLinkScope textLinkScope) {
         TextLayoutInput layoutInput;
         AnnotatedString annotatedString = textLinkScope.text;
         TextLayoutResult textLayoutResult = textLinkScope.getTextLayoutResult();
@@ -162,90 +162,90 @@ public final class TextLinkScope {
     }
 
     public final Function0<Boolean> getShouldMeasureLinks() {
-        return new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda11
+        return new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean _get_shouldMeasureLinks_$lambda$1;
-                _get_shouldMeasureLinks_$lambda$1 = TextLinkScope._get_shouldMeasureLinks_$lambda$1(TextLinkScope.this);
-                return Boolean.valueOf(_get_shouldMeasureLinks_$lambda$1);
+                boolean _get_shouldMeasureLinks_$lambda$0;
+                _get_shouldMeasureLinks_$lambda$0 = TextLinkScope._get_shouldMeasureLinks_$lambda$0(TextLinkScope.this);
+                return Boolean.valueOf(_get_shouldMeasureLinks_$lambda$0);
             }
         };
     }
 
     private final Modifier textRange(Modifier modifier, final AnnotatedString.Range<LinkAnnotation> range) {
-        return modifier.then(new TextRangeLayoutModifier(new TextRangeScopeMeasurePolicy() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda12
+        return modifier.then(new TextRangeLayoutModifier(new TextRangeScopeMeasurePolicy() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda3
             @Override // androidx.compose.foundation.text.TextRangeScopeMeasurePolicy
             public final TextRangeLayoutMeasureResult measure(TextRangeLayoutMeasureScope textRangeLayoutMeasureScope) {
-                TextRangeLayoutMeasureResult textRange$lambda$5;
-                textRange$lambda$5 = TextLinkScope.textRange$lambda$5(TextLinkScope.this, range, textRangeLayoutMeasureScope);
-                return textRange$lambda$5;
+                TextRangeLayoutMeasureResult textRange$lambda$0;
+                textRange$lambda$0 = TextLinkScope.textRange$lambda$0(TextLinkScope.this, range, textRangeLayoutMeasureScope);
+                return textRange$lambda$0;
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TextRangeLayoutMeasureResult textRange$lambda$5(TextLinkScope textLinkScope, AnnotatedString.Range range, TextRangeLayoutMeasureScope textRangeLayoutMeasureScope) {
+    public static final TextRangeLayoutMeasureResult textRange$lambda$0(TextLinkScope textLinkScope, AnnotatedString.Range range, TextRangeLayoutMeasureScope textRangeLayoutMeasureScope) {
         TextLayoutResult textLayoutResult = textLinkScope.getTextLayoutResult();
         if (textLayoutResult == null) {
-            return textRangeLayoutMeasureScope.layout(0, 0, new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda1
+            return textRangeLayoutMeasureScope.layout(0, 0, new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    IntOffset textRange$lambda$5$lambda$2;
-                    textRange$lambda$5$lambda$2 = TextLinkScope.textRange$lambda$5$lambda$2();
-                    return textRange$lambda$5$lambda$2;
+                    IntOffset textRange$lambda$0$0;
+                    textRange$lambda$0$0 = TextLinkScope.textRange$lambda$0$0();
+                    return textRange$lambda$0$0;
                 }
             });
         }
         AnnotatedString.Range<LinkAnnotation> calculateVisibleLinkRange = textLinkScope.calculateVisibleLinkRange(range, textLayoutResult);
         if (calculateVisibleLinkRange == null) {
-            return textRangeLayoutMeasureScope.layout(0, 0, new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda2
+            return textRangeLayoutMeasureScope.layout(0, 0, new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    IntOffset textRange$lambda$5$lambda$3;
-                    textRange$lambda$5$lambda$3 = TextLinkScope.textRange$lambda$5$lambda$3();
-                    return textRange$lambda$5$lambda$3;
+                    IntOffset textRange$lambda$0$1;
+                    textRange$lambda$0$1 = TextLinkScope.textRange$lambda$0$1();
+                    return textRange$lambda$0$1;
                 }
             });
         }
         final IntRect roundToIntRect = IntRectKt.roundToIntRect(textLayoutResult.getPathForRange(calculateVisibleLinkRange.getStart(), calculateVisibleLinkRange.getEnd()).getBounds());
-        return textRangeLayoutMeasureScope.layout(roundToIntRect.getWidth(), roundToIntRect.getHeight(), new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda3
+        return textRangeLayoutMeasureScope.layout(roundToIntRect.getWidth(), roundToIntRect.getHeight(), new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                IntOffset textRange$lambda$5$lambda$4;
-                textRange$lambda$5$lambda$4 = TextLinkScope.textRange$lambda$5$lambda$4(IntRect.this);
-                return textRange$lambda$5$lambda$4;
+                IntOffset textRange$lambda$0$2;
+                textRange$lambda$0$2 = TextLinkScope.textRange$lambda$0$2(IntRect.this);
+                return textRange$lambda$0$2;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final IntOffset textRange$lambda$5$lambda$2() {
-        return IntOffset.m8115boximpl(IntOffset.Companion.m8135getZeronOccac());
+    public static final IntOffset textRange$lambda$0$0() {
+        return IntOffset.m8377boximpl(IntOffset.Companion.m8397getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final IntOffset textRange$lambda$5$lambda$3() {
-        return IntOffset.m8115boximpl(IntOffset.Companion.m8135getZeronOccac());
+    public static final IntOffset textRange$lambda$0$1() {
+        return IntOffset.m8377boximpl(IntOffset.Companion.m8397getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final IntOffset textRange$lambda$5$lambda$4(IntRect intRect) {
-        return IntOffset.m8115boximpl(intRect.m8153getTopLeftnOccac());
+    public static final IntOffset textRange$lambda$0$2(IntRect intRect) {
+        return IntOffset.m8377boximpl(intRect.m8415getTopLeftnOccac());
     }
 
     private final Modifier clipLink(Modifier modifier, final AnnotatedString.Range<LinkAnnotation> range) {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit clipLink$lambda$7;
-                clipLink$lambda$7 = TextLinkScope.clipLink$lambda$7(TextLinkScope.this, range, (GraphicsLayerScope) obj);
-                return clipLink$lambda$7;
+                Unit clipLink$lambda$0;
+                clipLink$lambda$0 = TextLinkScope.clipLink$lambda$0(TextLinkScope.this, range, (GraphicsLayerScope) obj);
+                return clipLink$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit clipLink$lambda$7(TextLinkScope textLinkScope, AnnotatedString.Range range, GraphicsLayerScope graphicsLayerScope) {
+    public static final Unit clipLink$lambda$0(TextLinkScope textLinkScope, AnnotatedString.Range range, GraphicsLayerScope graphicsLayerScope) {
         Shape shapeForRange = textLinkScope.shapeForRange(range);
         if (shapeForRange != null) {
             graphicsLayerScope.setShape(shapeForRange);
@@ -259,7 +259,7 @@ public final class TextLinkScope {
         return pathForRangeInRangeCoordinates != null ? new Shape() { // from class: androidx.compose.foundation.text.TextLinkScope$shapeForRange$1$1
             @Override // androidx.compose.ui.graphics.Shape
             /* renamed from: createOutline-Pq9zytI */
-            public Outline mo332createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+            public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
                 return new Outline.Generic(Path.this);
             }
         } : null;
@@ -277,7 +277,7 @@ public final class TextLinkScope {
                 path = textLayoutResult.getPathForRange(calculateVisibleLinkRange.getStart(), calculateVisibleLinkRange.getEnd());
                 Rect boundingBox = textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getStart());
                 float min = textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getStart()) == textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getEnd() + (-1)) ? Math.min(textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getEnd() - 1).getLeft(), boundingBox.getLeft()) : 0.0f;
-                path.mo5173translatek4lQ0M(Offset.m5028constructorimpl(Offset.m5028constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
+                path.mo5316translatek4lQ0M(Offset.m5171constructorimpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
             }
             return path;
         }
@@ -293,7 +293,7 @@ public final class TextLinkScope {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r14v9 */
+    /* JADX WARN: Type inference failed for: r15v8 */
     public final void LinksComposables(Composer composer, final int i) {
         int i2;
         boolean isNullOrEmpty;
@@ -321,7 +321,9 @@ public final class TextLinkScope {
             int i4 = 0;
             while (i4 < size) {
                 final AnnotatedString.Range<LinkAnnotation> range = linkAnnotations.get(i4);
-                if (range.getStart() != range.getEnd()) {
+                if (range.getStart() == range.getEnd()) {
+                    startRestartGroup.startReplaceGroup(716130110);
+                } else {
                     startRestartGroup.startReplaceGroup(725478935);
                     ComposerKt.sourceInformation(startRestartGroup, "220@9372L39,224@9514L180,234@10047L38,222@9429L701");
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 854684939, "CC(remember):TextLinkScope.kt#9igjgp");
@@ -336,12 +338,12 @@ public final class TextLinkScope {
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 854689624, "CC(remember):TextLinkScope.kt#9igjgp");
                     Object rememberedValue2 = startRestartGroup.rememberedValue();
                     if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                        rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda7
+                        rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda10
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
-                                Unit LinksComposables$lambda$19$lambda$12$lambda$11;
-                                LinksComposables$lambda$19$lambda$12$lambda$11 = TextLinkScope.LinksComposables$lambda$19$lambda$12$lambda$11((SemanticsPropertyReceiver) obj);
-                                return LinksComposables$lambda$19$lambda$12$lambda$11;
+                                Unit LinksComposables$lambda$0$1$0;
+                                LinksComposables$lambda$0$1$0 = TextLinkScope.LinksComposables$lambda$0$1$0((SemanticsPropertyReceiver) obj);
+                                return LinksComposables$lambda$0$1$0;
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -352,20 +354,22 @@ public final class TextLinkScope {
                     boolean changedInstance = startRestartGroup.changedInstance(this) | startRestartGroup.changed(range) | startRestartGroup.changedInstance(uriHandler);
                     Object rememberedValue3 = startRestartGroup.rememberedValue();
                     if (changedInstance || rememberedValue3 == Composer.Companion.getEmpty()) {
-                        rememberedValue3 = new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda8
+                        rememberedValue3 = new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda11
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                Unit LinksComposables$lambda$19$lambda$14$lambda$13;
-                                LinksComposables$lambda$19$lambda$14$lambda$13 = TextLinkScope.LinksComposables$lambda$19$lambda$14$lambda$13(TextLinkScope.this, range, uriHandler);
-                                return LinksComposables$lambda$19$lambda$14$lambda$13;
+                                Unit LinksComposables$lambda$0$2$0;
+                                LinksComposables$lambda$0$2$0 = TextLinkScope.LinksComposables$lambda$0$2$0(TextLinkScope.this, range, uriHandler);
+                                return LinksComposables$lambda$0$2$0;
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue3);
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    BoxKt.Box(ClickableKt.m313combinedClickableauXiCPI$default(pointerHoverIcon$default, mutableInteractionSource, null, false, null, null, null, null, null, false, rememberedValue3, TypedValues.PositionType.TYPE_CURVE_FIT, null), startRestartGroup, 0);
+                    BoxKt.Box(ClickableKt.m346combinedClickableauXiCPI$default(pointerHoverIcon$default, mutableInteractionSource, null, false, null, null, null, null, null, false, rememberedValue3, TypedValues.PositionType.TYPE_CURVE_FIT, null), startRestartGroup, 0);
                     isNullOrEmpty = TextLinkScopeKt.isNullOrEmpty(range.getItem().getStyles());
-                    if (!isNullOrEmpty) {
+                    if (isNullOrEmpty) {
+                        startRestartGroup.startReplaceGroup(716130110);
+                    } else {
                         startRestartGroup.startReplaceGroup(726303039);
                         ComposerKt.sourceInformation(startRestartGroup, "243@10493L110,246@10645L51,246@10624L72,256@11137L1144,248@10718L1563");
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 854720882, "CC(remember):TextLinkScope.kt#9igjgp");
@@ -400,28 +404,22 @@ public final class TextLinkScope {
                         boolean changedInstance2 = startRestartGroup.changedInstance(this) | startRestartGroup.changed(range);
                         Object rememberedValue6 = startRestartGroup.rememberedValue();
                         if (changedInstance2 || rememberedValue6 == Composer.Companion.getEmpty()) {
-                            rememberedValue6 = new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda9
+                            rememberedValue6 = new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda12
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj) {
-                                    Unit LinksComposables$lambda$19$lambda$18$lambda$17;
-                                    LinksComposables$lambda$19$lambda$18$lambda$17 = TextLinkScope.LinksComposables$lambda$19$lambda$18$lambda$17(TextLinkScope.this, range, linkStateInteractionSourceObserver, (TextAnnotatorScope) obj);
-                                    return LinksComposables$lambda$19$lambda$18$lambda$17;
+                                    Unit LinksComposables$lambda$0$5$0;
+                                    LinksComposables$lambda$0$5$0 = TextLinkScope.LinksComposables$lambda$0$5$0(TextLinkScope.this, range, linkStateInteractionSourceObserver, (TextAnnotatorScope) obj);
+                                    return LinksComposables$lambda$0$5$0;
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue6);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         StyleAnnotation(objArr, (Function1) rememberedValue6, startRestartGroup, (i2 << 6) & 896);
-                        startRestartGroup.endReplaceGroup();
-                    } else {
-                        startRestartGroup.startReplaceGroup(728331710);
-                        startRestartGroup.endReplaceGroup();
                     }
                     startRestartGroup.endReplaceGroup();
-                } else {
-                    startRestartGroup.startReplaceGroup(728345598);
-                    startRestartGroup.endReplaceGroup();
                 }
+                startRestartGroup.endReplaceGroup();
                 i4++;
                 i3 = 1;
             }
@@ -431,31 +429,31 @@ public final class TextLinkScope {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda10
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LinksComposables$lambda$20;
-                    LinksComposables$lambda$20 = TextLinkScope.LinksComposables$lambda$20(TextLinkScope.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LinksComposables$lambda$20;
+                    Unit LinksComposables$lambda$1;
+                    LinksComposables$lambda$1 = TextLinkScope.LinksComposables$lambda$1(TextLinkScope.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return LinksComposables$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit LinksComposables$lambda$19$lambda$12$lambda$11(SemanticsPropertyReceiver semanticsPropertyReceiver) {
+    public static final Unit LinksComposables$lambda$0$1$0(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         semanticsPropertyReceiver.set(SemanticsProperties.INSTANCE.getLinkTestMarker(), Unit.INSTANCE);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit LinksComposables$lambda$19$lambda$14$lambda$13(TextLinkScope textLinkScope, AnnotatedString.Range range, UriHandler uriHandler) {
+    public static final Unit LinksComposables$lambda$0$2$0(TextLinkScope textLinkScope, AnnotatedString.Range range, UriHandler uriHandler) {
         textLinkScope.handleLink((LinkAnnotation) range.getItem(), uriHandler);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit LinksComposables$lambda$19$lambda$18$lambda$17(TextLinkScope textLinkScope, AnnotatedString.Range range, LinkStateInteractionSourceObserver linkStateInteractionSourceObserver, TextAnnotatorScope textAnnotatorScope) {
+    public static final Unit LinksComposables$lambda$0$5$0(TextLinkScope textLinkScope, AnnotatedString.Range range, LinkStateInteractionSourceObserver linkStateInteractionSourceObserver, TextAnnotatorScope textAnnotatorScope) {
         TextLinkStyles styles;
         TextLinkStyles styles2;
         TextLinkStyles styles3;
@@ -492,7 +490,7 @@ public final class TextLinkScope {
         }
     }
 
-    public final AnnotatedString applyAnnotators$foundation_release() {
+    public final AnnotatedString applyAnnotators$foundation() {
         AnnotatedString styledText;
         if (this.annotators.isEmpty()) {
             styledText = this.text;
@@ -516,7 +514,7 @@ public final class TextLinkScope {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(this) ? 256 : 128;
         }
-        startRestartGroup.startMovableGroup(-358305778, Integer.valueOf(objArr.length));
+        startRestartGroup.startMovableGroup(-358306546, Integer.valueOf(objArr.length));
         int i3 = i2 | (startRestartGroup.changed(objArr.length) ? 4 : 0);
         for (Object obj : objArr) {
             i3 |= startRestartGroup.changedInstance(obj) ? 4 : 0;
@@ -535,16 +533,16 @@ public final class TextLinkScope {
             spreadBuilder.add(function1);
             spreadBuilder.addSpread(objArr);
             Object[] array = spreadBuilder.toArray(new Object[spreadBuilder.size()]);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -358302570, "CC(remember):TextLinkScope.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -358303338, "CC(remember):TextLinkScope.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(this) | ((i3 & 112) == 32);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda4
+                rememberedValue = new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda7
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        DisposableEffectResult StyleAnnotation$lambda$24$lambda$23;
-                        StyleAnnotation$lambda$24$lambda$23 = TextLinkScope.StyleAnnotation$lambda$24$lambda$23(TextLinkScope.this, function1, (DisposableEffectScope) obj2);
-                        return StyleAnnotation$lambda$24$lambda$23;
+                        DisposableEffectResult StyleAnnotation$lambda$0$0;
+                        StyleAnnotation$lambda$0$0 = TextLinkScope.StyleAnnotation$lambda$0$0(TextLinkScope.this, function1, (DisposableEffectScope) obj2);
+                        return StyleAnnotation$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -557,21 +555,21 @@ public final class TextLinkScope {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda5
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit StyleAnnotation$lambda$25;
-                    StyleAnnotation$lambda$25 = TextLinkScope.StyleAnnotation$lambda$25(TextLinkScope.this, objArr, function1, i, (Composer) obj2, ((Integer) obj3).intValue());
-                    return StyleAnnotation$lambda$25;
+                    Unit StyleAnnotation$lambda$1;
+                    StyleAnnotation$lambda$1 = TextLinkScope.StyleAnnotation$lambda$1(TextLinkScope.this, objArr, function1, i, (Composer) obj2, ((Integer) obj3).intValue());
+                    return StyleAnnotation$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult StyleAnnotation$lambda$24$lambda$23(final TextLinkScope textLinkScope, final Function1 function1, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult StyleAnnotation$lambda$0$0(final TextLinkScope textLinkScope, final Function1 function1, DisposableEffectScope disposableEffectScope) {
         textLinkScope.annotators.add(function1);
-        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.TextLinkScope$StyleAnnotation$lambda$24$lambda$23$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.TextLinkScope$StyleAnnotation$lambda$0$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 SnapshotStateList snapshotStateList;

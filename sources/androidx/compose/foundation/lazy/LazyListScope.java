@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.functions.Function4;
 /* compiled from: LazyDsl.kt */
 @LazyScopeMarker
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\bg\u0018\u00002\u00020\u0001JC\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0016¢\u0006\u0002\u0010\u000bJ7\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0017¢\u0006\u0002\u0010\fJ\u0096\u0001\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000f2%\b\u0002\u0010\u0004\u001a\u001f\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u00072%\b\u0002\u0010\u0005\u001a\u001f\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u000721\u0010\u0013\u001a-\u0012\u0004\u0012\u00020\b\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u00030\u0014¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0016¢\u0006\u0002\u0010\u0015Jo\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000f2%\b\u0002\u0010\u0004\u001a\u001f\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000721\u0010\u0013\u001a-\u0012\u0004\u0012\u00020\b\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u00030\u0014¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0017¢\u0006\u0002\u0010\u0016JC\u0010\u0017\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0017¢\u0006\u0002\u0010\u000bJI\u0010\u0017\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00012\"\u0010\u0006\u001a\u001e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u00030\u0014¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0016¢\u0006\u0002\u0010\u0018ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0019À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/lazy/LazyListScope;", "", "item", "", "key", "contentType", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/LazyItemScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function3;)V", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function3;)V", "items", "count", "", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "itemContent", "Lkotlin/Function2;", "(ILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "(ILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "stickyHeader", "(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function4;)V", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\bg\u0018\u00002\u00020\u0001JC\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0016¢\u0006\u0002\u0010\u000bJ7\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0017¢\u0006\u0002\u0010\fJ\u0096\u0001\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000f2%\b\u0002\u0010\u0004\u001a\u001f\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u00072%\b\u0002\u0010\u0005\u001a\u001f\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u000721\u0010\u0013\u001a-\u0012\u0004\u0012\u00020\b\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u00030\u0014¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0016¢\u0006\u0002\u0010\u0015Jo\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000f2%\b\u0002\u0010\u0004\u001a\u001f\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000721\u0010\u0013\u001a-\u0012\u0004\u0012\u00020\b\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0004\u0012\u00020\u00030\u0014¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0017¢\u0006\u0002\u0010\u0016JC\u0010\u0017\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0017¢\u0006\u0002\u0010\u000bJI\u0010\u0017\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00012\"\u0010\u0006\u001a\u001e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u00030\u0014¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0016¢\u0006\u0002\u0010\u0018ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0019À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/lazy/LazyListScope;", "", "item", "", "key", "contentType", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/LazyItemScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function3;)V", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function3;)V", "items", "count", "", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "itemContent", "Lkotlin/Function2;", "(ILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "(ILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "stickyHeader", "(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function4;)V", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public interface LazyListScope {
     /* JADX INFO: Access modifiers changed from: private */
@@ -113,7 +113,7 @@ public interface LazyListScope {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the non deprecated overload")
     /* synthetic */ default void items(int i, Function1 function1, Function4 function4) {
-        items(i, function1, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListScope$$ExternalSyntheticLambda0
+        items(i, function1, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListScope$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Object items$lambda$0;
@@ -136,31 +136,34 @@ public interface LazyListScope {
         lazyListScope.stickyHeader(obj, obj2, function3);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    static Unit stickyHeader$lambda$0(Function3 function3, LazyItemScope lazyItemScope, int i, Composer composer, int i2) {
+        ComposerKt.sourceInformation(composer, "C122@5845L9:LazyDsl.kt#428nma");
+        if ((i2 & 6) == 0) {
+            i2 |= composer.changed(lazyItemScope) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i2 & 131) != 130, i2 & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-764088514, i2, -1, "androidx.compose.foundation.lazy.LazyListScope.stickyHeader.<anonymous> (LazyDsl.kt:122)");
+            }
+            function3.invoke(lazyItemScope, composer, Integer.valueOf(i2 & 14));
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Please use the overload with indexing capabilities.", replaceWith = @ReplaceWith(expression = "stickyHeader(key, contentType, { _ -> content() })", imports = {}))
     /* synthetic */ default void stickyHeader(Object obj, Object obj2, final Function3 function3) {
-        stickyHeader(obj, obj2, (Function4<? super LazyItemScope, ? super Integer, ? super Composer, ? super Integer, Unit>) ComposableLambdaKt.composableLambdaInstance(-764088514, true, new Function4<LazyItemScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.lazy.LazyListScope$stickyHeader$1
+        stickyHeader(obj, obj2, (Function4<? super LazyItemScope, ? super Integer, ? super Composer, ? super Integer, Unit>) ComposableLambdaKt.composableLambdaInstance(-764088514, true, new Function4() { // from class: androidx.compose.foundation.lazy.LazyListScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function4
-            public /* bridge */ /* synthetic */ Unit invoke(LazyItemScope lazyItemScope, Integer num, Composer composer, Integer num2) {
-                invoke(lazyItemScope, num.intValue(), composer, num2.intValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(LazyItemScope lazyItemScope, int i, Composer composer, int i2) {
-                ComposerKt.sourceInformation(composer, "C122@5845L9:LazyDsl.kt#428nma");
-                if ((i2 & 6) == 0) {
-                    i2 |= composer.changed(lazyItemScope) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i2 & 131) != 130, i2 & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-764088514, i2, -1, "androidx.compose.foundation.lazy.LazyListScope.stickyHeader.<anonymous> (LazyDsl.kt:122)");
-                }
-                function3.invoke(lazyItemScope, composer, Integer.valueOf(i2 & 14));
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+            public final Object invoke(Object obj3, Object obj4, Object obj5, Object obj6) {
+                Unit stickyHeader$lambda$0;
+                stickyHeader$lambda$0 = LazyListScope.stickyHeader$lambda$0(Function3.this, (LazyItemScope) obj3, ((Integer) obj4).intValue(), (Composer) obj5, ((Integer) obj6).intValue());
+                return stickyHeader$lambda$0;
             }
         }));
     }
@@ -178,30 +181,33 @@ public interface LazyListScope {
         lazyListScope.stickyHeader(obj, obj2, function4);
     }
 
-    default void stickyHeader(Object obj, Object obj2, final Function4<? super LazyItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4) {
-        item(obj, obj2, ComposableLambdaKt.composableLambdaInstance(1691919627, true, new Function3<LazyItemScope, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.lazy.LazyListScope$stickyHeader$2
-            @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Unit invoke(LazyItemScope lazyItemScope, Composer composer, Integer num) {
-                invoke(lazyItemScope, composer, num.intValue());
-                return Unit.INSTANCE;
+    /* JADX INFO: Access modifiers changed from: private */
+    static Unit stickyHeader$lambda$1(Function4 function4, LazyItemScope lazyItemScope, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C148@7423L15:LazyDsl.kt#428nma");
+        if ((i & 6) == 0) {
+            i |= composer.changed(lazyItemScope) ? 4 : 2;
+        }
+        if (composer.shouldExecute((i & 19) != 18, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(1691919627, i, -1, "androidx.compose.foundation.lazy.LazyListScope.stickyHeader.<anonymous> (LazyDsl.kt:148)");
             }
+            function4.invoke(lazyItemScope, 0, composer, Integer.valueOf((i & 14) | 48));
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
 
-            public final void invoke(LazyItemScope lazyItemScope, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C148@7423L15:LazyDsl.kt#428nma");
-                if ((i & 6) == 0) {
-                    i |= composer.changed(lazyItemScope) ? 4 : 2;
-                }
-                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    composer.skipToGroupEnd();
-                    return;
-                }
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1691919627, i, -1, "androidx.compose.foundation.lazy.LazyListScope.stickyHeader.<anonymous> (LazyDsl.kt:148)");
-                }
-                function4.invoke(lazyItemScope, 0, composer, Integer.valueOf((i & 14) | 48));
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
+    default void stickyHeader(Object obj, Object obj2, final Function4<? super LazyItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4) {
+        item(obj, obj2, ComposableLambdaKt.composableLambdaInstance(1691919627, true, new Function3() { // from class: androidx.compose.foundation.lazy.LazyListScope$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function3
+            public final Object invoke(Object obj3, Object obj4, Object obj5) {
+                Unit stickyHeader$lambda$1;
+                stickyHeader$lambda$1 = LazyListScope.stickyHeader$lambda$1(Function4.this, (LazyItemScope) obj3, (Composer) obj4, ((Integer) obj5).intValue());
+                return stickyHeader$lambda$1;
             }
         }));
     }

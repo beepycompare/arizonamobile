@@ -1065,7 +1065,7 @@ public class LinearLayoutCompat extends ViewGroup {
                                     i43 = 0;
                                 }
                                 virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(i43, 1073741824), childMeasureSpec);
-                                i40 = View.combineMeasuredStates(i40, virtualChildAt3.getMeasuredState() & ViewCompat.MEASURED_STATE_MASK);
+                                i40 = View.combineMeasuredStates(i40, virtualChildAt3.getMeasuredState() & (-16777216));
                             }
                         } else {
                             i12 = 1073741824;
@@ -1075,7 +1075,7 @@ public class LinearLayoutCompat extends ViewGroup {
                             measuredWidth2 = 0;
                         }
                         virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth2, i12), childMeasureSpec);
-                        i40 = View.combineMeasuredStates(i40, virtualChildAt3.getMeasuredState() & ViewCompat.MEASURED_STATE_MASK);
+                        i40 = View.combineMeasuredStates(i40, virtualChildAt3.getMeasuredState() & (-16777216));
                     } else {
                         i10 = resolveSizeAndState;
                     }
@@ -1121,7 +1121,7 @@ public class LinearLayoutCompat extends ViewGroup {
                 resolveSizeAndState = i10;
             }
             i6 = resolveSizeAndState;
-            i7 = ViewCompat.MEASURED_STATE_MASK;
+            i7 = -16777216;
             this.mTotalLength += getPaddingLeft() + getPaddingRight();
             int i47 = iArr5[1];
             i38 = (i47 == -1 && iArr5[0] == -1 && iArr5[2] == -1 && iArr5[3] == -1) ? i41 : Math.max(i41, Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i47, iArr5[2]))) + Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[2]))));
@@ -1139,7 +1139,7 @@ public class LinearLayoutCompat extends ViewGroup {
             }
             i6 = resolveSizeAndState;
             i8 = i34;
-            i7 = ViewCompat.MEASURED_STATE_MASK;
+            i7 = -16777216;
         }
         if (z12 || mode2 == 1073741824) {
             i9 = i38;

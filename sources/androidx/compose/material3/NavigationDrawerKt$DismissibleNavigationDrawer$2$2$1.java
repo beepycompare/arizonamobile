@@ -30,18 +30,18 @@ public final class NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1 implemen
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        final Placeable mo6698measureBRTryo0 = list.get(0).mo6698measureBRTryo0(j);
-        final Placeable mo6698measureBRTryo02 = list.get(1).mo6698measureBRTryo0(j);
-        int width = mo6698measureBRTryo02.getWidth();
-        int height = mo6698measureBRTryo02.getHeight();
+    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        final Placeable mo6875measureBRTryo0 = list.get(0).mo6875measureBRTryo0(j);
+        final Placeable mo6875measureBRTryo02 = list.get(1).mo6875measureBRTryo0(j);
+        int width = mo6875measureBRTryo02.getWidth();
+        int height = mo6875measureBRTryo02.getHeight();
         final DrawerState drawerState = this.$drawerState;
         final MutableState<Boolean> mutableState = this.$anchorsInitialized$delegate;
         return MeasureScope.layout$default(measureScope, width, height, null, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1.measure_3p2s80s$lambda$1(DrawerState.this, mo6698measureBRTryo0, mo6698measureBRTryo02, mutableState, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$1 = NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1.measure_3p2s80s$lambda$1(DrawerState.this, mo6875measureBRTryo0, mo6875measureBRTryo02, mutableState, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$1;
             }
         }, 4, null);

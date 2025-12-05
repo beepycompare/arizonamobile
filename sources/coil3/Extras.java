@@ -58,14 +58,14 @@ public final class Extras {
         public static final Companion Companion = new Companion(null);
 
         /* renamed from: default  reason: not valid java name */
-        private final T f44default;
+        private final T f125default;
 
         public Key(T t) {
-            this.f44default = t;
+            this.f125default = t;
         }
 
         public final T getDefault() {
-            return this.f44default;
+            return this.f125default;
         }
 
         /* compiled from: Extras.kt */

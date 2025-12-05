@@ -12,7 +12,7 @@ import androidx.media3.exoplayer.offline.Downloader;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ProgressiveDownloader implements Downloader {
     private final CacheWriter cacheWriter;
     private final CacheDataSource dataSource;

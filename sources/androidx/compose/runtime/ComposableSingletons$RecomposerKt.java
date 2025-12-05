@@ -11,30 +11,33 @@ public final class ComposableSingletons$RecomposerKt {
     public static final ComposableSingletons$RecomposerKt INSTANCE = new ComposableSingletons$RecomposerKt();
 
     /* renamed from: lambda$-1091980426  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f40lambda$1091980426 = ComposableLambdaKt.composableLambdaInstance(-1091980426, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposableSingletons$RecomposerKt$lambda$-1091980426$1
+    private static Function2<Composer, Integer, Unit> f98lambda$1091980426 = ComposableLambdaKt.composableLambdaInstance(-1091980426, false, new Function2() { // from class: androidx.compose.runtime.ComposableSingletons$RecomposerKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
-        public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
-            invoke(composer, num.intValue());
-            return Unit.INSTANCE;
-        }
-
-        public final void invoke(Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C:Recomposer.kt#9igjgp");
-            if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
-                composer.skipToGroupEnd();
-                return;
-            }
-            if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1091980426, i, -1, "androidx.compose.runtime.ComposableSingletons$RecomposerKt.lambda$-1091980426.<anonymous> (Recomposer.kt:423)");
-            }
-            if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventEnd();
-            }
+        public final Object invoke(Object obj, Object obj2) {
+            Unit lambda__1091980426$lambda$0;
+            lambda__1091980426$lambda$0 = ComposableSingletons$RecomposerKt.lambda__1091980426$lambda$0((Composer) obj, ((Integer) obj2).intValue());
+            return lambda__1091980426$lambda$0;
         }
     });
 
     /* renamed from: getLambda$-1091980426$runtime  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m4522getLambda$1091980426$runtime() {
-        return f40lambda$1091980426;
+    public final Function2<Composer, Integer, Unit> m4591getLambda$1091980426$runtime() {
+        return f98lambda$1091980426;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit lambda__1091980426$lambda$0(Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C:Recomposer.kt#9igjgp");
+        if (composer.shouldExecute((i & 3) != 2, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1091980426, i, -1, "androidx.compose.runtime.ComposableSingletons$RecomposerKt.lambda$-1091980426.<anonymous> (Recomposer.kt:434)");
+            }
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
     }
 }

@@ -4,13 +4,22 @@ import android.os.Build;
 import android.util.SparseBooleanArray;
 import android.util.SparseLongArray;
 import android.view.MotionEvent;
+import androidx.collection.LongSparseArray;
+import androidx.collection.SieveCacheKt;
 import androidx.compose.ui.geometry.Offset;
+import androidx.compose.ui.input.indirect.AndroidIndirectPointerEvent;
+import androidx.compose.ui.input.indirect.AndroidIndirectPointerEvent_androidKt;
+import androidx.compose.ui.input.indirect.IndirectPointerEventPrimaryDirectionalMotionAxis;
+import androidx.compose.ui.input.indirect.IndirectPointerInputChange;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.UShort;
+import kotlin.jvm.JvmInline;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: MotionEventAdapter.android.kt */
-@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001f\u0010\u0013\u001a\u0004\u0018\u00010\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0000¢\u0006\u0002\b\u0019J\u000e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0011J\u0010\u0010\u001d\u001a\u00020\u001b2\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0010\u0010\u001e\u001a\u00020\u001b2\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0014\u0010\u001f\u001a\u00020 *\u00020\u00162\u0006\u0010\u001c\u001a\u00020\u0011H\u0002J\u0017\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020\u0011H\u0002¢\u0006\u0004\b$\u0010%J\u0010\u0010&\u001a\u00020\u001b2\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J(\u0010'\u001a\u00020\u000f2\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010(\u001a\u00020\u00112\u0006\u0010)\u001a\u00020 H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0006\u001a\u00020\u00078\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\b\u0010\u0003\u001a\u0004\b\t\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Landroidx/compose/ui/input/pointer/MotionEventAdapter;", "", "<init>", "()V", "nextId", "", "motionEventToComposePointerIdMap", "Landroid/util/SparseLongArray;", "getMotionEventToComposePointerIdMap$ui_release$annotations", "getMotionEventToComposePointerIdMap$ui_release", "()Landroid/util/SparseLongArray;", "activeHoverIds", "Landroid/util/SparseBooleanArray;", "pointers", "", "Landroidx/compose/ui/input/pointer/PointerInputEventData;", "previousToolType", "", "previousSource", "convertToPointerInputEvent", "Landroidx/compose/ui/input/pointer/PointerInputEvent;", "motionEvent", "Landroid/view/MotionEvent;", "positionCalculator", "Landroidx/compose/ui/input/pointer/PositionCalculator;", "convertToPointerInputEvent$ui_release", "endStream", "", "pointerId", "addFreshIds", "removeStaleIds", "hasPointerId", "", "getComposePointerId", "Landroidx/compose/ui/input/pointer/PointerId;", "motionEventPointerId", "getComposePointerId-_I2yYro", "(I)J", "clearOnDeviceChange", "createPointerInputEventData", FirebaseAnalytics.Param.INDEX, "pressed", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\b\u0001\u0018\u00002\u00020\u0001:\u00012B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001f\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0000¢\u0006\u0002\b\u001cJ#\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\u0006\u0010\u0018\u001a\u00020\u00192\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 H\u0000¢\u0006\u0002\b!J\u000e\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0014J\u0010\u0010%\u001a\u00020#2\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\u0010\u0010&\u001a\u00020#2\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\u0014\u0010'\u001a\u00020(*\u00020\u00192\u0006\u0010$\u001a\u00020\u0014H\u0002J\u0017\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u0014H\u0002¢\u0006\u0004\b,\u0010-J\u0010\u0010.\u001a\u00020#2\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J(\u0010/\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u00100\u001a\u00020\u00142\u0006\u00101\u001a\u00020(H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0006\u001a\u00020\u00078\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\b\u0010\u0003\u001a\u0004\b\t\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Landroidx/compose/ui/input/pointer/MotionEventAdapter;", "", "<init>", "()V", "nextId", "", "motionEventToComposePointerIdMap", "Landroid/util/SparseLongArray;", "getMotionEventToComposePointerIdMap$ui$annotations", "getMotionEventToComposePointerIdMap$ui", "()Landroid/util/SparseLongArray;", "activeHoverIds", "Landroid/util/SparseBooleanArray;", "pointers", "", "Landroidx/compose/ui/input/pointer/PointerInputEventData;", "previousIndirectPointerEventData", "Landroidx/collection/LongSparseArray;", "Landroidx/compose/ui/input/pointer/MotionEventAdapter$IndirectPointerEventData;", "previousToolType", "", "previousSource", "convertToPointerInputEvent", "Landroidx/compose/ui/input/pointer/PointerInputEvent;", "motionEvent", "Landroid/view/MotionEvent;", "positionCalculator", "Landroidx/compose/ui/input/pointer/PositionCalculator;", "convertToPointerInputEvent$ui", "convertToIndirectPointerEvent", "Landroidx/compose/ui/input/indirect/AndroidIndirectPointerEvent;", "primaryDirectionalMotionAxisOverride", "Landroidx/compose/ui/input/indirect/IndirectPointerEventPrimaryDirectionalMotionAxis;", "convertToIndirectPointerEvent-k92h6UU$ui", "endStream", "", "pointerId", "addFreshIds", "removeStaleIds", "hasPointerId", "", "getComposePointerId", "Landroidx/compose/ui/input/pointer/PointerId;", "motionEventPointerId", "getComposePointerId-_I2yYro", "(I)J", "clearOnDeviceChange", "createPointerInputEventData", FirebaseAnalytics.Param.INDEX, "pressed", "IndirectPointerEventData", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MotionEventAdapter {
     public static final int $stable = 8;
@@ -18,17 +27,132 @@ public final class MotionEventAdapter {
     private final SparseLongArray motionEventToComposePointerIdMap = new SparseLongArray();
     private final SparseBooleanArray activeHoverIds = new SparseBooleanArray();
     private final List<PointerInputEventData> pointers = new ArrayList();
+    private final LongSparseArray<IndirectPointerEventData> previousIndirectPointerEventData = new LongSparseArray<>(0, 1, null);
     private int previousToolType = -1;
     private int previousSource = -1;
 
-    public static /* synthetic */ void getMotionEventToComposePointerIdMap$ui_release$annotations() {
+    public static /* synthetic */ void getMotionEventToComposePointerIdMap$ui$annotations() {
     }
 
-    public final SparseLongArray getMotionEventToComposePointerIdMap$ui_release() {
+    public final SparseLongArray getMotionEventToComposePointerIdMap$ui() {
         return this.motionEventToComposePointerIdMap;
     }
 
-    public final PointerInputEvent convertToPointerInputEvent$ui_release(MotionEvent motionEvent, PositionCalculator positionCalculator) {
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: MotionEventAdapter.android.kt */
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0083@\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B!\b\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u0004\u0010\u000bJ\u001a\u0010\u0012\u001a\u00020\n2\b\u0010\u0013\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\u0014\u0010\u0015J\u0010\u0010\u0016\u001a\u00020\u0017HÖ\u0001¢\u0006\u0004\b\u0018\u0010\u0019J\u0010\u0010\u001a\u001a\u00020\u001bHÖ\u0001¢\u0006\u0004\b\u001c\u0010\u001dR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\t\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0006\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0005R\u0011\u0010\u0007\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0005\u0088\u0001\u0002¨\u0006\u001f"}, d2 = {"Landroidx/compose/ui/input/pointer/MotionEventAdapter$IndirectPointerEventData;", "", "packedValue", "", "constructor-impl", "(J)J", "uptime", "position", "Landroidx/compose/ui/geometry/Offset;", "down", "", "(JJZ)J", "getPackedValue", "()J", "getDown-impl", "(J)Z", "getUptime-impl", "getPosition-F1C5BW0", "equals", "other", "equals-impl", "(JLjava/lang/Object;)Z", "hashCode", "", "hashCode-impl", "(J)I", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @JvmInline
+    /* loaded from: classes2.dex */
+    public static final class IndirectPointerEventData {
+        public static final Companion Companion = new Companion(null);
+        private final long packedValue;
+
+        /* renamed from: box-impl  reason: not valid java name */
+        public static final /* synthetic */ IndirectPointerEventData m6664boximpl(long j) {
+            return new IndirectPointerEventData(j);
+        }
+
+        /* renamed from: constructor-impl  reason: not valid java name */
+        public static long m6665constructorimpl(long j) {
+            return j;
+        }
+
+        /* renamed from: equals-impl  reason: not valid java name */
+        public static boolean m6667equalsimpl(long j, Object obj) {
+            return (obj instanceof IndirectPointerEventData) && j == ((IndirectPointerEventData) obj).m6674unboximpl();
+        }
+
+        /* renamed from: equals-impl0  reason: not valid java name */
+        public static final boolean m6668equalsimpl0(long j, long j2) {
+            return j == j2;
+        }
+
+        /* renamed from: getDown-impl  reason: not valid java name */
+        public static final boolean m6669getDownimpl(long j) {
+            return (j & 1) != 0;
+        }
+
+        /* renamed from: getUptime-impl  reason: not valid java name */
+        public static final long m6671getUptimeimpl(long j) {
+            return (j >> 1) & SieveCacheKt.NodeLinkMask;
+        }
+
+        /* renamed from: hashCode-impl  reason: not valid java name */
+        public static int m6672hashCodeimpl(long j) {
+            return Long.hashCode(j);
+        }
+
+        /* renamed from: toString-impl  reason: not valid java name */
+        public static String m6673toStringimpl(long j) {
+            return "IndirectPointerEventData(packedValue=" + j + ')';
+        }
+
+        public boolean equals(Object obj) {
+            return m6667equalsimpl(this.packedValue, obj);
+        }
+
+        public int hashCode() {
+            return m6672hashCodeimpl(this.packedValue);
+        }
+
+        public String toString() {
+            return m6673toStringimpl(this.packedValue);
+        }
+
+        /* renamed from: unbox-impl  reason: not valid java name */
+        public final /* synthetic */ long m6674unboximpl() {
+            return this.packedValue;
+        }
+
+        private /* synthetic */ IndirectPointerEventData(long j) {
+            this.packedValue = j;
+        }
+
+        public final long getPackedValue() {
+            return this.packedValue;
+        }
+
+        /* renamed from: constructor-impl  reason: not valid java name */
+        public static long m6666constructorimpl(long j, long j2, boolean z) {
+            return m6665constructorimpl(((j & SieveCacheKt.NodeLinkMask) << 1) | (z ? 1L : 0L) | (Companion.packShorts((short) Float.intBitsToFloat((int) (j2 >> 32)), (short) Float.intBitsToFloat((int) (j2 & 4294967295L))) << 32));
+        }
+
+        /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
+        public static final long m6670getPositionF1C5BW0(long j) {
+            int i = (int) (j >>> 32);
+            Companion companion = Companion;
+            return Offset.m5171constructorimpl((Float.floatToRawIntBits(companion.unpackShort2(i)) & 4294967295L) | (Float.floatToRawIntBits(companion.unpackShort1(i)) << 32));
+        }
+
+        /* compiled from: MotionEventAdapter.android.kt */
+        @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\n\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0007H\u0002J\u0010\u0010\t\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u0005H\u0002J\u0010\u0010\u000b\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u0005H\u0002¨\u0006\f"}, d2 = {"Landroidx/compose/ui/input/pointer/MotionEventAdapter$IndirectPointerEventData$Companion;", "", "<init>", "()V", "packShorts", "", "val1", "", "val2", "unpackShort1", "value", "unpackShort2", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+        /* loaded from: classes2.dex */
+        public static final class Companion {
+            public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+                this();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public final int packShorts(short s, short s2) {
+                return (s << 16) | (s2 & UShort.MAX_VALUE);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public final short unpackShort1(int i) {
+                return (short) (i >>> 16);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public final short unpackShort2(int i) {
+                return (short) (i & 65535);
+            }
+
+            private Companion() {
+            }
+        }
+    }
+
+    public final PointerInputEvent convertToPointerInputEvent$ui(MotionEvent motionEvent, PositionCalculator positionCalculator) {
         int i;
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 3 || actionMasked == 4) {
@@ -57,6 +181,79 @@ public final class MotionEventAdapter {
         }
         removeStaleIds(motionEvent);
         return new PointerInputEvent(motionEvent.getEventTime(), this.pointers, motionEvent);
+    }
+
+    /* renamed from: convertToIndirectPointerEvent-k92h6UU$ui$default  reason: not valid java name */
+    public static /* synthetic */ AndroidIndirectPointerEvent m6661convertToIndirectPointerEventk92h6UU$ui$default(MotionEventAdapter motionEventAdapter, MotionEvent motionEvent, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, int i, Object obj) {
+        if ((i & 2) != 0) {
+            indirectPointerEventPrimaryDirectionalMotionAxis = null;
+        }
+        return motionEventAdapter.m6663convertToIndirectPointerEventk92h6UU$ui(motionEvent, indirectPointerEventPrimaryDirectionalMotionAxis);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00d2  */
+    /* renamed from: convertToIndirectPointerEvent-k92h6UU$ui  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final AndroidIndirectPointerEvent m6663convertToIndirectPointerEventk92h6UU$ui(MotionEvent motionEvent, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
+        int i;
+        int indirectPrimaryDirectionalScrollAxis;
+        int i2;
+        MotionEventAdapter motionEventAdapter = this;
+        int actionMasked = motionEvent.getActionMasked();
+        clearOnDeviceChange(motionEvent);
+        if (actionMasked == 3) {
+            motionEventAdapter.motionEventToComposePointerIdMap.clear();
+            motionEventAdapter.activeHoverIds.clear();
+            return null;
+        }
+        addFreshIds(motionEvent);
+        if (actionMasked != 1) {
+            i = actionMasked != 6 ? -1 : motionEvent.getActionIndex();
+        } else {
+            i = 0;
+        }
+        boolean z = actionMasked == 0 || actionMasked == 2 || actionMasked == 5;
+        int pointerCount = motionEvent.getPointerCount();
+        ArrayList arrayList = new ArrayList(pointerCount);
+        int i3 = 0;
+        while (i3 < pointerCount) {
+            long m6662getComposePointerId_I2yYro = motionEventAdapter.m6662getComposePointerId_I2yYro(motionEvent.getPointerId(i3));
+            float x = motionEvent.getX(i3);
+            long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(motionEvent.getY(i3)) & 4294967295L) | (Float.floatToRawIntBits(x) << 32));
+            boolean z2 = i3 != i;
+            IndirectPointerEventData indirectPointerEventData = motionEventAdapter.previousIndirectPointerEventData.get(m6662getComposePointerId_I2yYro);
+            if (i3 == i) {
+                motionEventAdapter.previousIndirectPointerEventData.remove(m6662getComposePointerId_I2yYro);
+            } else if (z) {
+                i2 = actionMasked;
+                motionEventAdapter.previousIndirectPointerEventData.put(m6662getComposePointerId_I2yYro, IndirectPointerEventData.m6664boximpl(IndirectPointerEventData.m6666constructorimpl(motionEvent.getEventTime(), m5171constructorimpl, true)));
+                arrayList.add(new IndirectPointerInputChange(m6662getComposePointerId_I2yYro, motionEvent.getEventTime(), m5171constructorimpl, z2, motionEvent.getPressure(i3), indirectPointerEventData == null ? IndirectPointerEventData.m6671getUptimeimpl(indirectPointerEventData.m6674unboximpl()) : motionEvent.getEventTime(), indirectPointerEventData == null ? IndirectPointerEventData.m6670getPositionF1C5BW0(indirectPointerEventData.m6674unboximpl()) : m5171constructorimpl, indirectPointerEventData == null ? IndirectPointerEventData.m6669getDownimpl(indirectPointerEventData.m6674unboximpl()) : false, null));
+                i3++;
+                motionEventAdapter = this;
+                actionMasked = i2;
+            }
+            i2 = actionMasked;
+            arrayList.add(new IndirectPointerInputChange(m6662getComposePointerId_I2yYro, motionEvent.getEventTime(), m5171constructorimpl, z2, motionEvent.getPressure(i3), indirectPointerEventData == null ? IndirectPointerEventData.m6671getUptimeimpl(indirectPointerEventData.m6674unboximpl()) : motionEvent.getEventTime(), indirectPointerEventData == null ? IndirectPointerEventData.m6670getPositionF1C5BW0(indirectPointerEventData.m6674unboximpl()) : m5171constructorimpl, indirectPointerEventData == null ? IndirectPointerEventData.m6669getDownimpl(indirectPointerEventData.m6674unboximpl()) : false, null));
+            i3++;
+            motionEventAdapter = this;
+            actionMasked = i2;
+        }
+        int i4 = actionMasked;
+        ArrayList arrayList2 = arrayList;
+        removeStaleIds(motionEvent);
+        if (indirectPointerEventPrimaryDirectionalMotionAxis != null) {
+            indirectPrimaryDirectionalScrollAxis = indirectPointerEventPrimaryDirectionalMotionAxis.m6256unboximpl();
+        } else {
+            indirectPrimaryDirectionalScrollAxis = AndroidIndirectPointerEvent_androidKt.indirectPrimaryDirectionalScrollAxis(motionEvent);
+        }
+        return new AndroidIndirectPointerEvent(arrayList2, AndroidIndirectPointerEvent_androidKt.convertActionToIndirectPointerEventType(i4), indirectPrimaryDirectionalScrollAxis, motionEvent, null);
     }
 
     public final void endStream(int i) {
@@ -124,7 +321,7 @@ public final class MotionEventAdapter {
     }
 
     /* renamed from: getComposePointerId-_I2yYro  reason: not valid java name */
-    private final long m6500getComposePointerId_I2yYro(int i) {
+    private final long m6662getComposePointerId_I2yYro(int i) {
         long j;
         int indexOfKey = this.motionEventToComposePointerIdMap.indexOfKey(i);
         if (indexOfKey >= 0) {
@@ -134,7 +331,7 @@ public final class MotionEventAdapter {
             this.nextId = 1 + j;
             this.motionEventToComposePointerIdMap.put(i, j);
         }
-        return PointerId.m6550constructorimpl(j);
+        return PointerId.m6724constructorimpl(j);
     }
 
     private final void clearOnDeviceChange(MotionEvent motionEvent) {
@@ -155,43 +352,43 @@ public final class MotionEventAdapter {
     private final PointerInputEventData createPointerInputEventData(PositionCalculator positionCalculator, MotionEvent motionEvent, int i, boolean z) {
         long j;
         long j2;
-        int m6649getUnknownT8wyACA;
-        long m5052getZeroF1C5BW0;
+        int m6823getUnknownT8wyACA;
+        long m5195getZeroF1C5BW0;
         int i2;
-        long m6500getComposePointerId_I2yYro = m6500getComposePointerId_I2yYro(motionEvent.getPointerId(i));
+        long m6662getComposePointerId_I2yYro = m6662getComposePointerId_I2yYro(motionEvent.getPointerId(i));
         float pressure = motionEvent.getPressure(i);
         float x = motionEvent.getX(i);
         float y = motionEvent.getY(i);
         char c = ' ';
         long j3 = 4294967295L;
-        long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32));
-        long m5030copydBAh8RU$default = Offset.m5030copydBAh8RU$default(m5028constructorimpl, 0.0f, 0.0f, 3, null);
+        long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32));
+        long m5173copydBAh8RU$default = Offset.m5173copydBAh8RU$default(m5171constructorimpl, 0.0f, 0.0f, 3, null);
         if (i == 0) {
             float rawX = motionEvent.getRawX();
             float rawY = motionEvent.getRawY();
-            j2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(rawY) & 4294967295L) | (Float.floatToRawIntBits(rawX) << 32));
-            j = positionCalculator.mo6651screenToLocalMKHz9U(j2);
+            j2 = Offset.m5171constructorimpl((Float.floatToRawIntBits(rawY) & 4294967295L) | (Float.floatToRawIntBits(rawX) << 32));
+            j = positionCalculator.mo6825screenToLocalMKHz9U(j2);
         } else if (Build.VERSION.SDK_INT >= 29) {
-            j2 = MotionEventHelper.INSTANCE.m6501toRawOffsetdBAh8RU(motionEvent, i);
-            j = positionCalculator.mo6651screenToLocalMKHz9U(j2);
+            j2 = MotionEventHelper.INSTANCE.m6675toRawOffsetdBAh8RU(motionEvent, i);
+            j = positionCalculator.mo6825screenToLocalMKHz9U(j2);
         } else {
-            long mo6650localToScreenMKHz9U = positionCalculator.mo6650localToScreenMKHz9U(m5028constructorimpl);
-            j = m5028constructorimpl;
-            j2 = mo6650localToScreenMKHz9U;
+            long mo6824localToScreenMKHz9U = positionCalculator.mo6824localToScreenMKHz9U(m5171constructorimpl);
+            j = m5171constructorimpl;
+            j2 = mo6824localToScreenMKHz9U;
         }
         int toolType = motionEvent.getToolType(i);
         if (toolType == 0) {
-            m6649getUnknownT8wyACA = PointerType.Companion.m6649getUnknownT8wyACA();
+            m6823getUnknownT8wyACA = PointerType.Companion.m6823getUnknownT8wyACA();
         } else if (toolType == 1) {
-            m6649getUnknownT8wyACA = PointerType.Companion.m6648getTouchT8wyACA();
+            m6823getUnknownT8wyACA = PointerType.Companion.m6822getTouchT8wyACA();
         } else if (toolType == 2) {
-            m6649getUnknownT8wyACA = PointerType.Companion.m6647getStylusT8wyACA();
+            m6823getUnknownT8wyACA = PointerType.Companion.m6821getStylusT8wyACA();
         } else if (toolType == 3) {
-            m6649getUnknownT8wyACA = PointerType.Companion.m6646getMouseT8wyACA();
+            m6823getUnknownT8wyACA = PointerType.Companion.m6820getMouseT8wyACA();
         } else if (toolType == 4) {
-            m6649getUnknownT8wyACA = PointerType.Companion.m6645getEraserT8wyACA();
+            m6823getUnknownT8wyACA = PointerType.Companion.m6819getEraserT8wyACA();
         } else {
-            m6649getUnknownT8wyACA = PointerType.Companion.m6649getUnknownT8wyACA();
+            m6823getUnknownT8wyACA = PointerType.Companion.m6823getUnknownT8wyACA();
         }
         ArrayList arrayList = new ArrayList(motionEvent.getHistorySize());
         int historySize = motionEvent.getHistorySize();
@@ -204,9 +401,9 @@ public final class MotionEventAdapter {
             if ((Float.floatToRawIntBits(historicalX) & Integer.MAX_VALUE) >= 2139095040 || (Float.floatToRawIntBits(historicalY) & Integer.MAX_VALUE) >= 2139095040) {
                 i2 = i3;
             } else {
-                long m5028constructorimpl2 = Offset.m5028constructorimpl((Float.floatToRawIntBits(historicalX) << c2) | (Float.floatToRawIntBits(historicalY) & j4));
+                long m5171constructorimpl2 = Offset.m5171constructorimpl((Float.floatToRawIntBits(historicalX) << c2) | (Float.floatToRawIntBits(historicalY) & j4));
                 i2 = i3;
-                arrayList.add(new HistoricalChange(motionEvent.getHistoricalEventTime(i2), m5028constructorimpl2, m5028constructorimpl2, null));
+                arrayList.add(new HistoricalChange(motionEvent.getHistoricalEventTime(i2), m5171constructorimpl2, m5171constructorimpl2, null));
             }
             i3 = i2 + 1;
             c = c2;
@@ -215,11 +412,11 @@ public final class MotionEventAdapter {
         char c3 = c;
         long j5 = j3;
         if (motionEvent.getActionMasked() == 8) {
-            m5052getZeroF1C5BW0 = Offset.m5028constructorimpl((Float.floatToRawIntBits((-motionEvent.getAxisValue(9)) + 0.0f) & j5) | (Float.floatToRawIntBits(motionEvent.getAxisValue(10)) << c3));
+            m5195getZeroF1C5BW0 = Offset.m5171constructorimpl((Float.floatToRawIntBits((-motionEvent.getAxisValue(9)) + 0.0f) & j5) | (Float.floatToRawIntBits(motionEvent.getAxisValue(10)) << c3));
         } else {
-            m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
+            m5195getZeroF1C5BW0 = Offset.Companion.m5195getZeroF1C5BW0();
         }
-        long j6 = m5052getZeroF1C5BW0;
-        return new PointerInputEventData(m6500getComposePointerId_I2yYro, motionEvent.getEventTime(), j2, j, z, pressure, m6649getUnknownT8wyACA, this.activeHoverIds.get(motionEvent.getPointerId(i), false), arrayList, j6, m5030copydBAh8RU$default, null);
+        long j6 = m5195getZeroF1C5BW0;
+        return new PointerInputEventData(m6662getComposePointerId_I2yYro, motionEvent.getEventTime(), j2, j, z, pressure, m6823getUnknownT8wyACA, this.activeHoverIds.get(motionEvent.getPointerId(i), false), arrayList, j6, m5173copydBAh8RU$default, null);
     }
 }

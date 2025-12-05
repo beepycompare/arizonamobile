@@ -44,7 +44,7 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         float transform;
         IntRect collapsedBounds;
         IntRect collapsedBounds2;
@@ -57,17 +57,17 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
         if (valueOf.intValue() == 0) {
             valueOf = null;
         }
-        int intValue = valueOf != null ? valueOf.intValue() : measureScope2.mo424roundToPx0680j_4(SearchBarKt.getSearchBarMinWidth());
+        int intValue = valueOf != null ? valueOf.intValue() : measureScope2.mo458roundToPx0680j_4(SearchBarKt.getSearchBarMinWidth());
         collapsedBounds2 = SearchBarKt.getCollapsedBounds(this.$state);
         Integer valueOf2 = Integer.valueOf(collapsedBounds2.getHeight());
         Integer num = valueOf2.intValue() != 0 ? valueOf2 : null;
-        int intValue2 = num != null ? num.intValue() : measureScope2.mo424roundToPx0680j_4(SearchBarDefaults.INSTANCE.m2799getInputFieldHeightD9Ej5fM());
-        final int coerceAtLeast = RangesKt.coerceAtLeast(MathKt.roundToInt(Constraints.m7949getMaxWidthimpl(j2) * 0.9f), intValue);
-        final int coerceAtLeast2 = RangesKt.coerceAtLeast(MathKt.roundToInt(Constraints.m7948getMaxHeightimpl(j2) * 0.9f), intValue2);
-        int lerp = MathHelpersKt.lerp(Constraints.m7949getMaxWidthimpl(j2), coerceAtLeast, transform);
-        int lerp2 = MathHelpersKt.lerp(Constraints.m7948getMaxHeightimpl(j2), coerceAtLeast2, transform);
-        int m7966constrainWidthK40F9xA = ConstraintsKt.m7966constrainWidthK40F9xA(j2, MathHelpersKt.lerp(intValue, lerp, this.$state.getProgress()));
-        int m7965constrainHeightK40F9xA = ConstraintsKt.m7965constrainHeightK40F9xA(j2, MathHelpersKt.lerp(intValue2, lerp2, this.$state.getProgress()));
+        int intValue2 = num != null ? num.intValue() : measureScope2.mo458roundToPx0680j_4(SearchBarDefaults.INSTANCE.m2885getInputFieldHeightD9Ej5fM());
+        final int coerceAtLeast = RangesKt.coerceAtLeast(MathKt.roundToInt(Constraints.m8211getMaxWidthimpl(j2) * 0.9f), intValue);
+        final int coerceAtLeast2 = RangesKt.coerceAtLeast(MathKt.roundToInt(Constraints.m8210getMaxHeightimpl(j2) * 0.9f), intValue2);
+        int lerp = MathHelpersKt.lerp(Constraints.m8211getMaxWidthimpl(j2), coerceAtLeast, transform);
+        int lerp2 = MathHelpersKt.lerp(Constraints.m8210getMaxHeightimpl(j2), coerceAtLeast2, transform);
+        int m8228constrainWidthK40F9xA = ConstraintsKt.m8228constrainWidthK40F9xA(j2, MathHelpersKt.lerp(intValue, lerp, this.$state.getProgress()));
+        int m8227constrainHeightK40F9xA = ConstraintsKt.m8227constrainHeightK40F9xA(j2, MathHelpersKt.lerp(intValue2, lerp2, this.$state.getProgress()));
         List<? extends Measurable> list3 = list2;
         int size = list3.size();
         int i = 0;
@@ -76,19 +76,19 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
             final float f = transform;
             List<? extends Measurable> list4 = list3;
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "Surface")) {
-                Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(Constraints.Companion.m7959fixedJhjzzOo(m7966constrainWidthK40F9xA, m7965constrainHeightK40F9xA));
+                Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(m8228constrainWidthK40F9xA, m8227constrainHeightK40F9xA));
                 int size2 = list4.size();
                 int i2 = 0;
                 while (i2 < size2) {
                     Measurable measurable2 = list2.get(i2);
-                    final Placeable placeable = mo6698measureBRTryo0;
+                    final Placeable placeable = mo6875measureBRTryo0;
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "InputField")) {
-                        final Placeable mo6698measureBRTryo02 = measurable2.mo6698measureBRTryo0(Constraints.Companion.m7959fixedJhjzzOo(m7966constrainWidthK40F9xA, intValue2));
-                        final int top = this.$unconsumedInsets.getTop(measureScope2) + measureScope2.mo424roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
-                        int i3 = measureScope2.mo424roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
+                        final Placeable mo6875measureBRTryo02 = measurable2.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(m8228constrainWidthK40F9xA, intValue2));
+                        final int top = this.$unconsumedInsets.getTop(measureScope2) + measureScope2.mo458roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
+                        int i3 = measureScope2.mo458roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
                         final int lerp3 = MathHelpersKt.lerp(0, top, Math.min(this.$state.getProgress(), 1 - f));
                         final int lerp4 = MathHelpersKt.lerp(0, i3, this.$state.getProgress());
-                        int height = mo6698measureBRTryo02.getHeight() + lerp3 + lerp4;
+                        int height = mo6875measureBRTryo02.getHeight() + lerp3 + lerp4;
                         int size3 = list4.size();
                         int i4 = 0;
                         while (i4 < size3) {
@@ -96,17 +96,17 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
                             int i5 = i4;
                             int i6 = height;
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "Content")) {
-                                final Placeable mo6698measureBRTryo03 = measurable3.mo6698measureBRTryo0(ConstraintsKt.Constraints(m7966constrainWidthK40F9xA, m7966constrainWidthK40F9xA, 0, RangesKt.coerceAtLeast(m7965constrainHeightK40F9xA - i6, 0)));
-                                int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j2);
-                                int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j2);
+                                final Placeable mo6875measureBRTryo03 = measurable3.mo6875measureBRTryo0(ConstraintsKt.Constraints(m8228constrainWidthK40F9xA, m8228constrainWidthK40F9xA, 0, RangesKt.coerceAtLeast(m8227constrainHeightK40F9xA - i6, 0)));
+                                int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j2);
+                                int m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(j2);
                                 final MutableState<BackEventProgress.InProgress> mutableState = this.$lastInProgressValue;
                                 final SearchBarState searchBarState = this.$state;
                                 final MutableState<BackEventProgress.InProgress> mutableState2 = this.$firstInProgressValue;
-                                return MeasureScope.layout$default(measureScope, m7949getMaxWidthimpl, m7948getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$FullScreenSearchBarLayout$2$1$$ExternalSyntheticLambda1
+                                return MeasureScope.layout$default(measureScope, m8211getMaxWidthimpl, m8210getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$FullScreenSearchBarLayout$2$1$$ExternalSyntheticLambda1
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj) {
                                         Unit measure_3p2s80s$lambda$6;
-                                        measure_3p2s80s$lambda$6 = SearchBarKt$FullScreenSearchBarLayout$2$1.measure_3p2s80s$lambda$6(MutableState.this, f, searchBarState, placeable, mo6698measureBRTryo02, lerp3, mo6698measureBRTryo03, lerp4, j2, measureScope2, coerceAtLeast, mutableState2, coerceAtLeast2, top, (Placeable.PlacementScope) obj);
+                                        measure_3p2s80s$lambda$6 = SearchBarKt$FullScreenSearchBarLayout$2$1.measure_3p2s80s$lambda$6(MutableState.this, f, searchBarState, placeable, mo6875measureBRTryo02, lerp3, mo6875measureBRTryo03, lerp4, j2, measureScope2, coerceAtLeast, mutableState2, coerceAtLeast2, top, (Placeable.PlacementScope) obj);
                                         return measure_3p2s80s$lambda$6;
                                     }
                                 }, 4, null);
@@ -124,7 +124,7 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
                     measureScope2 = measureScope;
                     list2 = list;
                     j2 = j;
-                    mo6698measureBRTryo0 = placeable;
+                    mo6875measureBRTryo0 = placeable;
                 }
                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
                 throw new KotlinNothingValueException();
@@ -148,11 +148,11 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
         float f2;
         if (inProgress.getSwipeEdge() != SwipeEdge.Left) {
             f = SearchBarKt.SearchBarPredictiveBackMinMargin;
-            i2 = measureScope.mo424roundToPx0680j_4(f);
+            i2 = measureScope.mo458roundToPx0680j_4(f);
         } else {
-            int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+            int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
             f2 = SearchBarKt.SearchBarPredictiveBackMinMargin;
-            i2 = (m7949getMaxWidthimpl - measureScope.mo424roundToPx0680j_4(f2)) - i;
+            i2 = (m8211getMaxWidthimpl - measureScope.mo458roundToPx0680j_4(f2)) - i;
         }
         collapsedBounds = SearchBarKt.getCollapsedBounds(searchBarState);
         int coerceAtLeast = RangesKt.coerceAtLeast(i2, collapsedBounds.getRight() - i);
@@ -169,11 +169,11 @@ public final class SearchBarKt$FullScreenSearchBarLayout$2$1 implements MeasureP
         if (value != null) {
             float touchY2 = touchY - value.getTouchY();
             f = SearchBarKt.SearchBarPredictiveBackMinMargin;
-            int coerceAtLeast = RangesKt.coerceAtLeast(((Constraints.m7948getMaxHeightimpl(j) - i) / 2) - measureScope.mo424roundToPx0680j_4(f), 0);
+            int coerceAtLeast = RangesKt.coerceAtLeast(((Constraints.m8210getMaxHeightimpl(j) - i) / 2) - measureScope.mo458roundToPx0680j_4(f), 0);
             f2 = SearchBarKt.SearchBarPredictiveBackMaxOffsetY;
-            int min = Math.min(coerceAtLeast, measureScope.mo424roundToPx0680j_4(f2));
+            int min = Math.min(coerceAtLeast, measureScope.mo458roundToPx0680j_4(f2));
             collapsedBounds = SearchBarKt.getCollapsedBounds(searchBarState);
-            return RangesKt.coerceAtMost((MathHelpersKt.lerp(0, min, Math.abs(touchY2) / Constraints.m7948getMaxHeightimpl(j)) * ((int) Math.signum(touchY2))) + i2, collapsedBounds.getTop());
+            return RangesKt.coerceAtMost((MathHelpersKt.lerp(0, min, Math.abs(touchY2) / Constraints.m8210getMaxHeightimpl(j)) * ((int) Math.signum(touchY2))) + i2, collapsedBounds.getTop());
         }
         return 0;
     }

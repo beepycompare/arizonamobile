@@ -3,7 +3,7 @@ package androidx.compose.runtime;
 import androidx.collection.MutableScatterSet;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.collection.ScatterSetWrapperKt;
-import androidx.datastore.preferences.protobuf.DescriptorProtos;
+import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
@@ -23,7 +23,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.JobKt;
 /* compiled from: Recomposer.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "parentFrameClock", "Landroidx/compose/runtime/MonotonicFrameClock;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeConcurrentlyAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 1}, l = {DescriptorProtos.Edition.EDITION_PROTO2_VALUE, 1018, 1019}, m = "invokeSuspend", n = {"recomposeCoroutineScope", "frameSignal", "frameLoop", "frameLoop"}, s = {"L$0", "L$1", "L$2", "L$0"})
+@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeConcurrentlyAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 1}, l = {1011, AnalyticsListener.EVENT_AUDIO_TRACK_INITIALIZED, AnalyticsListener.EVENT_AUDIO_TRACK_RELEASED}, m = "invokeSuspend", n = {"recomposeCoroutineScope", "frameSignal", "frameLoop", "frameLoop"}, s = {"L$0", "L$1", "L$2", "L$0"}, v = 1)
 /* loaded from: classes.dex */
 final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends SuspendLambda implements Function3<CoroutineScope, MonotonicFrameClock, Continuation<? super Unit>, Object> {
     final /* synthetic */ CoroutineContext $recomposeCoroutineContext;
@@ -146,7 +146,7 @@ final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends Suspend
             }
             if (requestFrameLocked != null) {
                 Result.Companion companion = Result.Companion;
-                requestFrameLocked.resumeWith(Result.m9904constructorimpl(Unit.INSTANCE));
+                requestFrameLocked.resumeWith(Result.m10199constructorimpl(Unit.INSTANCE));
             }
             i3 = 0;
             shouldKeepRecomposing = this.this$0.getShouldKeepRecomposing();

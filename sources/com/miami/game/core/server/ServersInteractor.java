@@ -1,5 +1,6 @@
 package com.miami.game.core.server;
 
+import androidx.compose.runtime.ComposerImplKt;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.miami.game.core.api.model.response.servers.ServersApiModelItem;
@@ -389,7 +390,7 @@ public final class ServersInteractor {
                         mutableStateFlow = this.stateStore;
                         do {
                             value = mutableStateFlow.getValue();
-                        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, 125, null)));
+                        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, ComposerImplKt.nodeKey, null)));
                     }
                     serversInteractor$getServersMobileList$1.L$0 = null;
                     serversInteractor$getServersMobileList$1.L$1 = null;
@@ -408,7 +409,7 @@ public final class ServersInteractor {
                     mutableStateFlow = this.stateStore;
                     do {
                         value = mutableStateFlow.getValue();
-                    } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, 125, null)));
+                    } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, ComposerImplKt.nodeKey, null)));
                     serversInteractor$getServersMobileList$1.L$0 = null;
                     serversInteractor$getServersMobileList$1.L$1 = null;
                     serversInteractor$getServersMobileList$1.label = 4;
@@ -422,7 +423,7 @@ public final class ServersInteractor {
                             ServersState value3 = mutableStateFlow3.getValue();
                             MutableStateFlow<ServersState> mutableStateFlow4 = mutableStateFlow3;
                             list3 = list2;
-                            if (mutableStateFlow4.compareAndSet(value3, ServersState.copy$default(value3, null, list3, null, null, null, false, 0, 125, null))) {
+                            if (mutableStateFlow4.compareAndSet(value3, ServersState.copy$default(value3, null, list3, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
                                 break;
                             }
                             mutableStateFlow3 = mutableStateFlow4;
@@ -447,7 +448,7 @@ public final class ServersInteractor {
                                 for (ServersApiModelItem serversApiModelItem3 : list9) {
                                     arrayList4.add(ServerModelKt.toDomain(serversApiModelItem3, true, this.buildConfig.isArizona()));
                                 }
-                                if (mutableStateFlow5.compareAndSet(value4, ServersState.copy$default(serversState, null, arrayList4, null, null, null, false, 0, 125, null))) {
+                                if (mutableStateFlow5.compareAndSet(value4, ServersState.copy$default(serversState, null, arrayList4, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
                                     break;
                                 }
                             }
@@ -468,7 +469,7 @@ public final class ServersInteractor {
                     while (true) {
                         value2 = mutableStateFlow2.getValue();
                         list5 = list4;
-                        if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, false, 0, 125, null))) {
+                        if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
                             break;
                         }
                         list4 = list5;
@@ -512,7 +513,7 @@ public final class ServersInteractor {
             while (true) {
                 value2 = mutableStateFlow2.getValue();
                 list5 = list4;
-                if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, false, 0, 125, null))) {
+                if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
                 }
                 list4 = list5;
             }

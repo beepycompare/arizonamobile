@@ -5,15 +5,15 @@ import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
 public final class F3 extends SimpleThreadSafeToggle {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0117af f472a;
+    public final C0116af f555a;
 
-    public F3(C0117af c0117af) {
-        super(c0117af.e(), "[ClientApiTrackingStatusToggle]");
-        this.f472a = c0117af;
+    public F3(C0116af c0116af) {
+        super(c0116af.e(), "[ClientApiTrackingStatusToggle]");
+        this.f555a = c0116af;
     }
 
     public final void a(boolean z) {
         updateState(z);
-        this.f472a.f(z);
+        this.f555a.f(z);
     }
 }

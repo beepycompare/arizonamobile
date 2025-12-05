@@ -6,6 +6,7 @@ import androidx.datastore.preferences.protobuf.MapEntryLite;
 import androidx.datastore.preferences.protobuf.Utf8;
 import androidx.datastore.preferences.protobuf.WireFormat;
 import androidx.datastore.preferences.protobuf.Writer;
+import androidx.window.core.layout.WindowSizeClass;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -1476,7 +1477,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                     this.pos = i6;
                     bArr3[i5] = (byte) (((charAt2 >>> 6) & 63) | 128);
                     this.pos = i - 3;
-                    bArr3[i6] = (byte) ((charAt2 >>> '\f') | 480);
+                    bArr3[i6] = (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
                 } else if (this.pos > this.offset + 2) {
                     if (length != 0) {
                         char charAt3 = in.charAt(length - 1);
@@ -2281,7 +2282,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                         byte[] bArr7 = this.buffer;
                         long j7 = this.pos;
                         this.pos = j7 - 1;
-                        UnsafeUtil.putByte(bArr7, j7, (byte) ((charAt2 >>> '\f') | 480));
+                        UnsafeUtil.putByte(bArr7, j7, (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
                         length--;
                     }
                 }
@@ -2803,7 +2804,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                     ByteBuffer byteBuffer6 = this.buffer;
                     int i6 = this.pos;
                     this.pos = i6 - 1;
-                    byteBuffer6.put(i6, (byte) ((charAt2 >>> '\f') | 480));
+                    byteBuffer6.put(i6, (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
                 } else if (this.pos > 2) {
                     if (length != 0) {
                         char charAt3 = in.charAt(length - 1);
@@ -3532,7 +3533,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                         UnsafeUtil.putByte(j6, (byte) (((charAt2 >>> 6) & 63) | 128));
                         long j7 = this.pos;
                         this.pos = j7 - 1;
-                        UnsafeUtil.putByte(j7, (byte) ((charAt2 >>> '\f') | 480));
+                        UnsafeUtil.putByte(j7, (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
                         length--;
                     }
                 }

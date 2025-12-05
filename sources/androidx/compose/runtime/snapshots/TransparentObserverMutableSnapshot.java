@@ -24,26 +24,23 @@ public final class TransparentObserverMutableSnapshot extends MutableSnapshot {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public TransparentObserverMutableSnapshot(MutableSnapshot mutableSnapshot, Function1<Object, Unit> function1, Function1<Object, Unit> function12, boolean z, boolean z2) {
-        super(r1, r3, r4, r5);
+        super(r1, r3, r4, SnapshotKt.mergedWriteObserver(function12, r8));
         long j;
         GlobalSnapshot globalSnapshot;
         Function1<Object, Unit> readObserver$runtime;
-        Function1 mergedReadObserver;
         GlobalSnapshot globalSnapshot2;
         Function1<Object, Unit> writeObserver$runtime;
-        Function1 mergedWriteObserver;
         j = SnapshotKt.INVALID_SNAPSHOT;
         SnapshotIdSet empty = SnapshotIdSet.Companion.getEMPTY();
         if (mutableSnapshot == null || (readObserver$runtime = mutableSnapshot.getReadObserver()) == null) {
             globalSnapshot = SnapshotKt.globalSnapshot;
             readObserver$runtime = globalSnapshot.getReadObserver();
         }
-        mergedReadObserver = SnapshotKt.mergedReadObserver(function1, readObserver$runtime, z);
+        Function1<Object, Unit> mergedReadObserver = SnapshotKt.mergedReadObserver(function1, readObserver$runtime, z);
         if (mutableSnapshot == null || (writeObserver$runtime = mutableSnapshot.getWriteObserver$runtime()) == null) {
             globalSnapshot2 = SnapshotKt.globalSnapshot;
             writeObserver$runtime = globalSnapshot2.getWriteObserver$runtime();
         }
-        mergedWriteObserver = SnapshotKt.mergedWriteObserver(function12, writeObserver$runtime);
         this.parentSnapshot = mutableSnapshot;
         this.mergeParentObservers = z;
         this.ownsParentSnapshot = z2;
@@ -155,8 +152,8 @@ public final class TransparentObserverMutableSnapshot extends MutableSnapshot {
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot, androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: recordModified$runtime */
-    public void mo4737recordModified$runtime(StateObject stateObject) {
-        getCurrentSnapshot().mo4737recordModified$runtime(stateObject);
+    public void mo4866recordModified$runtime(StateObject stateObject) {
+        getCurrentSnapshot().mo4866recordModified$runtime(stateObject);
     }
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot, androidx.compose.runtime.snapshots.Snapshot
@@ -172,9 +169,8 @@ public final class TransparentObserverMutableSnapshot extends MutableSnapshot {
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot
     public MutableSnapshot takeNestedMutableSnapshot(Function1<Object, Unit> function1, Function1<Object, Unit> function12) {
-        Function1<Object, Unit> mergedWriteObserver;
         Function1<Object, Unit> mergedReadObserver$default = SnapshotKt.mergedReadObserver$default(function1, getReadObserver(), false, 4, null);
-        mergedWriteObserver = SnapshotKt.mergedWriteObserver(function12, getWriteObserver$runtime());
+        Function1<Object, Unit> mergedWriteObserver = SnapshotKt.mergedWriteObserver(function12, getWriteObserver$runtime());
         if (!this.mergeParentObservers) {
             return new TransparentObserverMutableSnapshot(getCurrentSnapshot().takeNestedMutableSnapshot(null, mergedWriteObserver), mergedReadObserver$default, mergedWriteObserver, false, true);
         }
@@ -188,14 +184,14 @@ public final class TransparentObserverMutableSnapshot extends MutableSnapshot {
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot, androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public Void mo4735nestedActivated$runtime(Snapshot snapshot) {
+    public Void mo4864nestedActivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot, androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public Void mo4736nestedDeactivated$runtime(Snapshot snapshot) {
+    public Void mo4865nestedDeactivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }

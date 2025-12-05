@@ -27,7 +27,7 @@ import kotlin.jvm.internal.Ref;
 import kotlin.time.Duration;
 import kotlin.time.TimeSource;
 /* compiled from: LazyLayoutPrefetchState.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001:\u0001+B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u001e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\u0018\u001a\u00020\u0019J\u0006\u0010\u001a\u001a\u00020\u001bJH\u0010\u001c\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0017\u001a\u00020\u000b2\u0019\u0010\u001f\u001a\u0015\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u001b\u0018\u00010 ¢\u0006\u0002\b\"¢\u0006\u0004\b#\u0010$J\u001a\u0010%\u001a\u00020\u001b*\u00020\u00072\u0006\u0010&\u001a\u00020'2\u0006\u0010\u0017\u001a\u00020\u000bJ%\u0010(\u001a\u00020'2\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b)\u0010*J\u0016\u0010(\u001a\u00020'2\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0018\u001a\u00020\u0019R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\f\u001a\u00020\u000b8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\r\u0010\u000e\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012¨\u0006,"}, d2 = {"Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;", "", "itemContentFactory", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemContentFactory;", "subcomposeLayoutState", "Landroidx/compose/ui/layout/SubcomposeLayoutState;", "executor", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemContentFactory;Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;)V", "isStateActive", "", "shouldPauseBetweenPrecompositionAndPremeasure", "getShouldPauseBetweenPrecompositionAndPremeasure$foundation_release$annotations", "()V", "getShouldPauseBetweenPrecompositionAndPremeasure$foundation_release", "()Z", "setShouldPauseBetweenPrecompositionAndPremeasure$foundation_release", "(Z)V", "schedulePrecomposition", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", FirebaseAnalytics.Param.INDEX, "", "isHighPriority", "prefetchMetrics", "Landroidx/compose/foundation/lazy/layout/PrefetchMetrics;", "onDisposed", "", "schedulePremeasure", "constraints", "Landroidx/compose/ui/unit/Constraints;", "onItemPremeasured", "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchResultScope;", "Lkotlin/ExtensionFunctionType;", "schedulePremeasure-m8Kt_7k", "(IJLandroidx/compose/foundation/lazy/layout/PrefetchMetrics;ZLkotlin/jvm/functions/Function1;)Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "executeWithPriority", "request", "Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "createNestedPrefetchRequest", "createNestedPrefetchRequest-VKLhPVY", "(IJLandroidx/compose/foundation/lazy/layout/PrefetchMetrics;)Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "HandleAndRequestImpl", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001:\u0001+B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u001e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\u0018\u001a\u00020\u0019J\u0006\u0010\u001a\u001a\u00020\u001bJH\u0010\u001c\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0017\u001a\u00020\u000b2\u0019\u0010\u001f\u001a\u0015\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u001b\u0018\u00010 ¢\u0006\u0002\b\"¢\u0006\u0004\b#\u0010$J\u001a\u0010%\u001a\u00020\u001b*\u00020\u00072\u0006\u0010&\u001a\u00020'2\u0006\u0010\u0017\u001a\u00020\u000bJ%\u0010(\u001a\u00020'2\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b)\u0010*J\u0016\u0010(\u001a\u00020'2\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0018\u001a\u00020\u0019R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\f\u001a\u00020\u000b8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\r\u0010\u000e\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012¨\u0006,"}, d2 = {"Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;", "", "itemContentFactory", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemContentFactory;", "subcomposeLayoutState", "Landroidx/compose/ui/layout/SubcomposeLayoutState;", "executor", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemContentFactory;Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;)V", "isStateActive", "", "shouldPauseBetweenPrecompositionAndPremeasure", "getShouldPauseBetweenPrecompositionAndPremeasure$foundation$annotations", "()V", "getShouldPauseBetweenPrecompositionAndPremeasure$foundation", "()Z", "setShouldPauseBetweenPrecompositionAndPremeasure$foundation", "(Z)V", "schedulePrecomposition", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", FirebaseAnalytics.Param.INDEX, "", "isHighPriority", "prefetchMetrics", "Landroidx/compose/foundation/lazy/layout/PrefetchMetrics;", "onDisposed", "", "schedulePremeasure", "constraints", "Landroidx/compose/ui/unit/Constraints;", "onItemPremeasured", "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchResultScope;", "Lkotlin/ExtensionFunctionType;", "schedulePremeasure-m8Kt_7k", "(IJLandroidx/compose/foundation/lazy/layout/PrefetchMetrics;ZLkotlin/jvm/functions/Function1;)Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "executeWithPriority", "request", "Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "createNestedPrefetchRequest", "createNestedPrefetchRequest-VKLhPVY", "(IJLandroidx/compose/foundation/lazy/layout/PrefetchMetrics;)Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "HandleAndRequestImpl", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PrefetchHandleProvider {
     public static final int $stable = 8;
@@ -37,7 +37,7 @@ public final class PrefetchHandleProvider {
     private boolean shouldPauseBetweenPrecompositionAndPremeasure;
     private final SubcomposeLayoutState subcomposeLayoutState;
 
-    public static /* synthetic */ void getShouldPauseBetweenPrecompositionAndPremeasure$foundation_release$annotations() {
+    public static /* synthetic */ void getShouldPauseBetweenPrecompositionAndPremeasure$foundation$annotations() {
     }
 
     public PrefetchHandleProvider(LazyLayoutItemContentFactory lazyLayoutItemContentFactory, SubcomposeLayoutState subcomposeLayoutState, PrefetchScheduler prefetchScheduler) {
@@ -46,11 +46,11 @@ public final class PrefetchHandleProvider {
         this.executor = prefetchScheduler;
     }
 
-    public final boolean getShouldPauseBetweenPrecompositionAndPremeasure$foundation_release() {
+    public final boolean getShouldPauseBetweenPrecompositionAndPremeasure$foundation() {
         return this.shouldPauseBetweenPrecompositionAndPremeasure;
     }
 
-    public final void setShouldPauseBetweenPrecompositionAndPremeasure$foundation_release(boolean z) {
+    public final void setShouldPauseBetweenPrecompositionAndPremeasure$foundation(boolean z) {
         this.shouldPauseBetweenPrecompositionAndPremeasure = z;
     }
 
@@ -67,7 +67,7 @@ public final class PrefetchHandleProvider {
     }
 
     /* renamed from: schedulePremeasure-m8Kt_7k  reason: not valid java name */
-    public final LazyLayoutPrefetchState.PrefetchHandle m1083schedulePremeasurem8Kt_7k(int i, long j, PrefetchMetrics prefetchMetrics, boolean z, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
+    public final LazyLayoutPrefetchState.PrefetchHandle m1157schedulePremeasurem8Kt_7k(int i, long j, PrefetchMetrics prefetchMetrics, boolean z, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
         PrefetchScheduler prefetchScheduler = this.executor;
         HandleAndRequestImpl handleAndRequestImpl = new HandleAndRequestImpl(this, i, j, prefetchMetrics, prefetchScheduler instanceof PriorityPrefetchScheduler ? (PriorityPrefetchScheduler) prefetchScheduler : null, function1, null);
         executeWithPriority(this.executor, handleAndRequestImpl, z);
@@ -86,7 +86,7 @@ public final class PrefetchHandleProvider {
     }
 
     /* renamed from: createNestedPrefetchRequest-VKLhPVY  reason: not valid java name */
-    public final PrefetchRequest m1082createNestedPrefetchRequestVKLhPVY(int i, long j, PrefetchMetrics prefetchMetrics) {
+    public final PrefetchRequest m1156createNestedPrefetchRequestVKLhPVY(int i, long j, PrefetchMetrics prefetchMetrics) {
         PrefetchScheduler prefetchScheduler = this.executor;
         return new HandleAndRequestImpl(this, i, j, prefetchMetrics, prefetchScheduler instanceof PriorityPrefetchScheduler ? (PriorityPrefetchScheduler) prefetchScheduler : null, null, null);
     }
@@ -98,7 +98,7 @@ public final class PrefetchHandleProvider {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: LazyLayoutPrefetchState.kt */
-    @Metadata(d1 = {"\u0000\u0094\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0083\u0004\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0001MB<\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\u0019\u0010\n\u001a\u0015\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f\u0018\u00010\u000b¢\u0006\u0002\b\r¢\u0006\u0004\b\u000e\u0010\u000fBF\b\u0016\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\u0019\u0010\n\u001a\u0015\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f\u0018\u00010\u000b¢\u0006\u0002\b\r¢\u0006\u0004\b\u000e\u0010\u0012J\b\u0010'\u001a\u00020\fH\u0016J\b\u0010(\u001a\u00020\fH\u0016J\u0017\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0016¢\u0006\u0004\b.\u0010/J\u0018\u00100\u001a\u00020\u001b2\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u000202H\u0002J\u0010\u00109\u001a\u00020\f2\u0006\u00104\u001a\u000202H\u0002J\b\u0010:\u001a\u00020\fH\u0002J\f\u0010;\u001a\u00020\u001b*\u00020<H\u0016J\b\u0010=\u001a\u00020\fH\u0002J\f\u0010>\u001a\u00020\u001b*\u00020<H\u0002J&\u0010@\u001a\u00020\f*\u00020<2\u0006\u0010A\u001a\u00020\u001f2\b\u0010B\u001a\u0004\u0018\u00010\u001f2\u0006\u0010C\u001a\u00020DH\u0002J\u001a\u0010E\u001a\u00020\f2\u0006\u0010A\u001a\u00020\u001f2\b\u0010B\u001a\u0004\u0018\u00010\u001fH\u0002J\b\u0010F\u001a\u00020\fH\u0002J\u0017\u0010G\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002¢\u0006\u0004\bH\u0010IJ\u0012\u0010J\u001a\f\u0018\u00010\"R\u00060\u0000R\u00020#H\u0002J\b\u0010K\u001a\u00020LH\u0016R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010\n\u001a\u0015\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f\u0018\u00010\u000b¢\u0006\u0002\b\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010!\u001a\f\u0018\u00010\"R\u00060\u0000R\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\u00020\u001b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0014\u0010)\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b*\u0010\u0014R\u000e\u00104\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00106\u001a\u000207X\u0082\u000e¢\u0006\u0004\n\u0002\u00108R\u000e\u0010?\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006N"}, d2 = {"Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchResultScope;", FirebaseAnalytics.Param.INDEX, "", "prefetchMetrics", "Landroidx/compose/foundation/lazy/layout/PrefetchMetrics;", "priorityPrefetchScheduler", "Landroidx/compose/foundation/lazy/layout/PriorityPrefetchScheduler;", "onItemPremeasured", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "<init>", "(Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;ILandroidx/compose/foundation/lazy/layout/PrefetchMetrics;Landroidx/compose/foundation/lazy/layout/PriorityPrefetchScheduler;Lkotlin/jvm/functions/Function1;)V", "constraints", "Landroidx/compose/ui/unit/Constraints;", "(Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;IJLandroidx/compose/foundation/lazy/layout/PrefetchMetrics;Landroidx/compose/foundation/lazy/layout/PriorityPrefetchScheduler;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getIndex", "()I", "premeasureConstraints", "precomposeHandle", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;", "pausedPrecomposition", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PausedPrecomposition;", "isMeasured", "", "isCanceled", "isApplied", "keyUsedForComposition", "", "hasResolvedNestedPrefetches", "nestedPrefetchController", "Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl$NestedPrefetchController;", "Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;", "isUrgent", "isComposed", "()Z", FacebookDialog.COMPLETION_GESTURE_CANCEL, "markAsUrgent", "placeablesCount", "getPlaceablesCount", "getSize", "Landroidx/compose/ui/unit/IntSize;", "placeableIndex", "getSize-YEO4UFw", "(I)J", "shouldExecute", "available", "", "average", "availableTimeNanos", "elapsedTimeNanos", "startTime", "Lkotlin/time/TimeSource$Monotonic$ValueTimeMark;", "J", "resetAvailableTimeTo", "updateElapsedAndAvailableTime", "execute", "Landroidx/compose/foundation/lazy/layout/PrefetchRequestScope;", "cleanUp", "executeRequest", "pauseRequested", "performPausableComposition", "key", "contentType", "averages", "Landroidx/compose/foundation/lazy/layout/Averages;", "performFullComposition", "performApply", "performMeasure", "performMeasure-BRTryo0", "(J)V", "resolveNestedPrefetchStates", "toString", "", "NestedPrefetchController", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0094\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0083\u0004\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0001MB<\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\u0019\u0010\n\u001a\u0015\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f\u0018\u00010\u000b¢\u0006\u0002\b\r¢\u0006\u0004\b\u000e\u0010\u000fBF\b\u0016\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\u0019\u0010\n\u001a\u0015\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f\u0018\u00010\u000b¢\u0006\u0002\b\r¢\u0006\u0004\b\u000e\u0010\u0012J\b\u0010'\u001a\u00020\fH\u0016J\b\u0010(\u001a\u00020\fH\u0016J\u0017\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0016¢\u0006\u0004\b.\u0010/J\u0018\u00100\u001a\u00020\u001b2\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u000202H\u0002J\u0010\u00109\u001a\u00020\f2\u0006\u00104\u001a\u000202H\u0002J\b\u0010:\u001a\u00020\fH\u0002J\f\u0010;\u001a\u00020\u001b*\u00020<H\u0016J\b\u0010=\u001a\u00020\fH\u0002J\f\u0010>\u001a\u00020\u001b*\u00020<H\u0002J&\u0010@\u001a\u00020\f*\u00020<2\u0006\u0010A\u001a\u00020\u001f2\b\u0010B\u001a\u0004\u0018\u00010\u001f2\u0006\u0010C\u001a\u00020DH\u0002J\u001a\u0010E\u001a\u00020\f2\u0006\u0010A\u001a\u00020\u001f2\b\u0010B\u001a\u0004\u0018\u00010\u001fH\u0002J\b\u0010F\u001a\u00020\fH\u0002J\u0017\u0010G\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002¢\u0006\u0004\bH\u0010IJ\u0012\u0010J\u001a\f\u0018\u00010\"R\u00060\u0000R\u00020#H\u0002J\b\u0010K\u001a\u00020LH\u0016R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010\n\u001a\u0015\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f\u0018\u00010\u000b¢\u0006\u0002\b\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010!\u001a\f\u0018\u00010\"R\u00060\u0000R\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\u00020\u001b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0014\u0010)\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b*\u0010\u0014R\u000e\u00104\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00106\u001a\u000207X\u0082\u000e¢\u0006\u0004\n\u0002\u00108R\u000e\u0010?\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006N"}, d2 = {"Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchResultScope;", FirebaseAnalytics.Param.INDEX, "", "prefetchMetrics", "Landroidx/compose/foundation/lazy/layout/PrefetchMetrics;", "priorityPrefetchScheduler", "Landroidx/compose/foundation/lazy/layout/PriorityPrefetchScheduler;", "onItemPremeasured", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "<init>", "(Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;ILandroidx/compose/foundation/lazy/layout/PrefetchMetrics;Landroidx/compose/foundation/lazy/layout/PriorityPrefetchScheduler;Lkotlin/jvm/functions/Function1;)V", "constraints", "Landroidx/compose/ui/unit/Constraints;", "(Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;IJLandroidx/compose/foundation/lazy/layout/PrefetchMetrics;Landroidx/compose/foundation/lazy/layout/PriorityPrefetchScheduler;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getIndex", "()I", "premeasureConstraints", "precomposeHandle", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;", "pausedPrecomposition", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PausedPrecomposition;", "isMeasured", "", "isCanceled", "isApplied", "keyUsedForComposition", "", "hasResolvedNestedPrefetches", "nestedPrefetchController", "Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl$NestedPrefetchController;", "Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider;", "isUrgent", "isComposed", "()Z", FacebookDialog.COMPLETION_GESTURE_CANCEL, "markAsUrgent", "placeablesCount", "getPlaceablesCount", "getSize", "Landroidx/compose/ui/unit/IntSize;", "placeableIndex", "getSize-YEO4UFw", "(I)J", "shouldExecute", "available", "", "average", "availableTimeNanos", "elapsedTimeNanos", "startTime", "Lkotlin/time/TimeSource$Monotonic$ValueTimeMark;", "J", "resetAvailableTimeTo", "updateElapsedAndAvailableTime", "execute", "Landroidx/compose/foundation/lazy/layout/PrefetchRequestScope;", "cleanUp", "executeRequest", "pauseRequested", "performPausableComposition", "key", "contentType", "averages", "Landroidx/compose/foundation/lazy/layout/Averages;", "performFullComposition", "performApply", "performMeasure", "performMeasure-BRTryo0", "(J)V", "resolveNestedPrefetchStates", "toString", "", "NestedPrefetchController", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public final class HandleAndRequestImpl implements LazyLayoutPrefetchState.PrefetchHandle, PrefetchRequest, LazyLayoutPrefetchState.PrefetchResultScope {
         private long availableTimeNanos;
@@ -130,7 +130,7 @@ public final class PrefetchHandleProvider {
             this.prefetchMetrics = prefetchMetrics;
             this.priorityPrefetchScheduler = priorityPrefetchScheduler;
             this.onItemPremeasured = function1;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11374markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11669markNowz9LOYto();
         }
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
@@ -140,7 +140,7 @@ public final class PrefetchHandleProvider {
 
         private HandleAndRequestImpl(PrefetchHandleProvider prefetchHandleProvider, int i, long j, PrefetchMetrics prefetchMetrics, PriorityPrefetchScheduler priorityPrefetchScheduler, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
             this(i, prefetchMetrics, priorityPrefetchScheduler, function1);
-            this.premeasureConstraints = Constraints.m7936boximpl(j);
+            this.premeasureConstraints = Constraints.m8198boximpl(j);
         }
 
         private final boolean isComposed() {
@@ -173,9 +173,9 @@ public final class PrefetchHandleProvider {
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
         /* renamed from: getSize-YEO4UFw */
-        public long mo1063getSizeYEO4UFw(int i) {
+        public long mo1141getSizeYEO4UFw(int i) {
             SubcomposeLayoutState.PrecomposedSlotHandle precomposedSlotHandle = this.precomposeHandle;
-            return precomposedSlotHandle != null ? precomposedSlotHandle.mo6724getSizeYEO4UFw(i) : IntSize.Companion.m8172getZeroYbymL2g();
+            return precomposedSlotHandle != null ? precomposedSlotHandle.mo6902getSizeYEO4UFw(i) : IntSize.Companion.m8434getZeroYbymL2g();
         }
 
         private final boolean shouldExecute(long j, long j2) {
@@ -187,18 +187,18 @@ public final class PrefetchHandleProvider {
 
         private final void resetAvailableTimeTo(long j) {
             this.availableTimeNanos = j;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11374markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11669markNowz9LOYto();
             this.elapsedTimeNanos = 0L;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
         private final void updateElapsedAndAvailableTime() {
-            long m11374markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11374markNowz9LOYto();
-            long m11274getInWholeNanosecondsimpl = Duration.m11274getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11385minus6eNON_k(m11374markNowz9LOYto, this.startTime));
-            this.elapsedTimeNanos = m11274getInWholeNanosecondsimpl;
-            long j = this.availableTimeNanos - m11274getInWholeNanosecondsimpl;
+            long m11669markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11669markNowz9LOYto();
+            long m11569getInWholeNanosecondsimpl = Duration.m11569getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11680minus6eNON_k(m11669markNowz9LOYto, this.startTime));
+            this.elapsedTimeNanos = m11569getInWholeNanosecondsimpl;
+            long j = this.availableTimeNanos - m11569getInWholeNanosecondsimpl;
             this.availableTimeNanos = j;
-            this.startTime = m11374markNowz9LOYto;
+            this.startTime = m11669markNowz9LOYto;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
@@ -319,12 +319,12 @@ public final class PrefetchHandleProvider {
                     }
                     Constraints constraints = this.premeasureConstraints;
                     if (!this.isMeasured && constraints != null) {
-                        if ((PrefetchHandleProvider.this.getShouldPauseBetweenPrecompositionAndPremeasure$foundation_release() && !isComposed) || !shouldExecute(this.availableTimeNanos, average.getMeasureTimeNanos())) {
+                        if ((PrefetchHandleProvider.this.getShouldPauseBetweenPrecompositionAndPremeasure$foundation() && !isComposed) || !shouldExecute(this.availableTimeNanos, average.getMeasureTimeNanos())) {
                             return true;
                         }
                         Trace.beginSection("compose:lazy:prefetch:measure");
                         try {
-                            m1084performMeasureBRTryo0(constraints.m7955unboximpl());
+                            m1158performMeasureBRTryo0(constraints.m8217unboximpl());
                             Unit unit5 = Unit.INSTANCE;
                             Trace.endSection();
                             updateElapsedAndAvailableTime();
@@ -337,7 +337,7 @@ public final class PrefetchHandleProvider {
                         }
                     }
                     NestedPrefetchController nestedPrefetchController4 = this.nestedPrefetchController;
-                    if (ComposeFoundationFlags.isAutomaticNestedPrefetchEnabled && this.isMeasured && this.hasResolvedNestedPrefetches && nestedPrefetchController4 != null) {
+                    if (this.isMeasured && this.hasResolvedNestedPrefetches && nestedPrefetchController4 != null) {
                         int collectIdealNestedPrefetchCount = nestedPrefetchController4.collectIdealNestedPrefetchCount();
                         average.saveNestedPrefetchCount(collectIdealNestedPrefetchCount);
                         if (nestedPrefetchController4.collectNestedPrefetchedItemsCount() < collectIdealNestedPrefetchCount) {
@@ -364,9 +364,9 @@ public final class PrefetchHandleProvider {
                 pausedPrecomposition.resume(new ShouldPauseCallback() { // from class: androidx.compose.foundation.lazy.layout.PrefetchHandleProvider$HandleAndRequestImpl$$ExternalSyntheticLambda1
                     @Override // androidx.compose.runtime.ShouldPauseCallback
                     public final boolean shouldPause() {
-                        boolean performPausableComposition$lambda$10;
-                        performPausableComposition$lambda$10 = PrefetchHandleProvider.HandleAndRequestImpl.performPausableComposition$lambda$10(PrefetchHandleProvider.HandleAndRequestImpl.this, averages);
-                        return performPausableComposition$lambda$10;
+                        boolean performPausableComposition$lambda$1;
+                        performPausableComposition$lambda$1 = PrefetchHandleProvider.HandleAndRequestImpl.performPausableComposition$lambda$1(PrefetchHandleProvider.HandleAndRequestImpl.this, averages);
+                        return performPausableComposition$lambda$1;
                     }
                 });
             }
@@ -379,7 +379,7 @@ public final class PrefetchHandleProvider {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final boolean performPausableComposition$lambda$10(HandleAndRequestImpl handleAndRequestImpl, Averages averages) {
+        public static final boolean performPausableComposition$lambda$1(HandleAndRequestImpl handleAndRequestImpl, Averages averages) {
             if (!handleAndRequestImpl.pauseRequested) {
                 handleAndRequestImpl.updateElapsedAndAvailableTime();
                 averages.saveResumeTimeNanos(handleAndRequestImpl.elapsedTimeNanos);
@@ -409,7 +409,7 @@ public final class PrefetchHandleProvider {
         }
 
         /* renamed from: performMeasure-BRTryo0  reason: not valid java name */
-        private final void m1084performMeasureBRTryo0(long j) {
+        private final void m1158performMeasureBRTryo0(long j) {
             if (this.isCanceled) {
                 InlineClassHelperKt.throwIllegalArgumentException("Callers should check whether the request is still valid before calling performMeasure()");
             }
@@ -421,7 +421,7 @@ public final class PrefetchHandleProvider {
             if (precomposedSlotHandle != null) {
                 int placeablesCount = precomposedSlotHandle.getPlaceablesCount();
                 for (int i = 0; i < placeablesCount; i++) {
-                    precomposedSlotHandle.mo6725premeasure0kLqBqw(i, j);
+                    precomposedSlotHandle.mo6903premeasure0kLqBqw(i, j);
                 }
                 return;
             }
@@ -436,9 +436,9 @@ public final class PrefetchHandleProvider {
                 precomposedSlotHandle.traverseDescendants("androidx.compose.foundation.lazy.layout.TraversablePrefetchStateNode", new Function1() { // from class: androidx.compose.foundation.lazy.layout.PrefetchHandleProvider$HandleAndRequestImpl$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        TraversableNode.Companion.TraverseDescendantsAction resolveNestedPrefetchStates$lambda$19;
-                        resolveNestedPrefetchStates$lambda$19 = PrefetchHandleProvider.HandleAndRequestImpl.resolveNestedPrefetchStates$lambda$19(Ref.ObjectRef.this, (TraversableNode) obj);
-                        return resolveNestedPrefetchStates$lambda$19;
+                        TraversableNode.Companion.TraverseDescendantsAction resolveNestedPrefetchStates$lambda$1;
+                        resolveNestedPrefetchStates$lambda$1 = PrefetchHandleProvider.HandleAndRequestImpl.resolveNestedPrefetchStates$lambda$1(Ref.ObjectRef.this, (TraversableNode) obj);
+                        return resolveNestedPrefetchStates$lambda$1;
                     }
                 });
                 List list = (List) objectRef.element;
@@ -453,7 +453,7 @@ public final class PrefetchHandleProvider {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Multi-variable type inference failed */
-        public static final TraversableNode.Companion.TraverseDescendantsAction resolveNestedPrefetchStates$lambda$19(Ref.ObjectRef objectRef, TraversableNode traversableNode) {
+        public static final TraversableNode.Companion.TraverseDescendantsAction resolveNestedPrefetchStates$lambda$1(Ref.ObjectRef objectRef, TraversableNode traversableNode) {
             T t;
             Intrinsics.checkNotNull(traversableNode, "null cannot be cast to non-null type androidx.compose.foundation.lazy.layout.TraversablePrefetchStateNode");
             LazyLayoutPrefetchState prefetchState = ((TraversablePrefetchStateNode) traversableNode).getPrefetchState();
@@ -474,7 +474,7 @@ public final class PrefetchHandleProvider {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* compiled from: LazyLayoutPrefetchState.kt */
-        @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u001a\u0010\u0014\u001a\u00020\u000f*\u00020\u00152\u0006\u0010\u0016\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\u000fJ\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010\u0019\u001a\u00020\fR\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0007\u001a\u0010\u0012\f\u0012\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00030\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl$NestedPrefetchController;", "", "states", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "<init>", "(Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl;Ljava/util/List;)V", "requestsByState", "", "Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "[Ljava/util/List;", "stateIndex", "", "requestIndex", "executedNestedPrefetch", "", "getExecutedNestedPrefetch", "()Z", "setExecutedNestedPrefetch", "(Z)V", "executeNestedPrefetches", "Landroidx/compose/foundation/lazy/layout/PrefetchRequestScope;", "nestedPrefetchCount", "isUrgent", "collectIdealNestedPrefetchCount", "collectNestedPrefetchedItemsCount", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u001a\u0010\u0014\u001a\u00020\u000f*\u00020\u00152\u0006\u0010\u0016\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\u000fJ\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010\u0019\u001a\u00020\fR\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0007\u001a\u0010\u0012\f\u0012\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00030\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl$NestedPrefetchController;", "", "states", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "<init>", "(Landroidx/compose/foundation/lazy/layout/PrefetchHandleProvider$HandleAndRequestImpl;Ljava/util/List;)V", "requestsByState", "", "Landroidx/compose/foundation/lazy/layout/PrefetchRequest;", "[Ljava/util/List;", "stateIndex", "", "requestIndex", "executedNestedPrefetch", "", "getExecutedNestedPrefetch", "()Z", "setExecutedNestedPrefetch", "(Z)V", "executeNestedPrefetches", "Landroidx/compose/foundation/lazy/layout/PrefetchRequestScope;", "nestedPrefetchCount", "isUrgent", "collectIdealNestedPrefetchCount", "collectNestedPrefetchedItemsCount", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes.dex */
         public final class NestedPrefetchController {
             private boolean executedNestedPrefetch;
@@ -506,53 +506,51 @@ public final class PrefetchHandleProvider {
                 if (HandleAndRequestImpl.this.isCanceled) {
                     InlineClassHelperKt.throwIllegalStateException("Should not execute nested prefetch on canceled request");
                 }
-                if (ComposeFoundationFlags.isAutomaticNestedPrefetchEnabled) {
-                    Trace.beginSection("compose:lazy:prefetch:update_nested_prefetch_count");
-                    try {
-                        List<LazyLayoutPrefetchState> list = this.states;
-                        int size = list.size();
-                        for (int i2 = 0; i2 < size; i2++) {
-                            list.get(i2).setRealizedNestedPrefetchCount$foundation_release(i);
-                        }
-                        Unit unit = Unit.INSTANCE;
-                        Trace.endSection();
-                    } finally {
+                Trace.beginSection("compose:lazy:prefetch:update_nested_prefetch_count");
+                try {
+                    List<LazyLayoutPrefetchState> list = this.states;
+                    int size = list.size();
+                    for (int i2 = 0; i2 < size; i2++) {
+                        list.get(i2).setRealizedNestedPrefetchCount$foundation(i);
                     }
-                }
-                Trace.beginSection("compose:lazy:prefetch:nested");
-                while (this.stateIndex < this.states.size()) {
-                    try {
-                        if (this.requestsByState[this.stateIndex] == null) {
-                            if (prefetchRequestScope.availableTimeNanos() <= 0) {
-                                return true;
-                            }
-                            List<PrefetchRequest>[] listArr = this.requestsByState;
-                            int i3 = this.stateIndex;
-                            listArr[i3] = this.states.get(i3).collectNestedPrefetchRequests$foundation_release();
-                        }
-                        List<PrefetchRequest> list2 = this.requestsByState[this.stateIndex];
-                        Intrinsics.checkNotNull(list2);
-                        while (this.requestIndex < list2.size()) {
-                            PrefetchRequest prefetchRequest = list2.get(this.requestIndex);
-                            if (z) {
-                                HandleAndRequestImpl handleAndRequestImpl = prefetchRequest instanceof HandleAndRequestImpl ? (HandleAndRequestImpl) prefetchRequest : null;
-                                if (handleAndRequestImpl != null) {
-                                    handleAndRequestImpl.markAsUrgent();
+                    Unit unit = Unit.INSTANCE;
+                    Trace.endSection();
+                    Trace.beginSection("compose:lazy:prefetch:nested");
+                    while (this.stateIndex < this.states.size()) {
+                        try {
+                            if (this.requestsByState[this.stateIndex] == null) {
+                                if (prefetchRequestScope.availableTimeNanos() <= 0) {
+                                    return true;
                                 }
+                                List<PrefetchRequest>[] listArr = this.requestsByState;
+                                int i3 = this.stateIndex;
+                                listArr[i3] = this.states.get(i3).collectNestedPrefetchRequests$foundation();
                             }
-                            this.executedNestedPrefetch = true;
-                            if (prefetchRequest.execute(prefetchRequestScope)) {
-                                return true;
+                            List<PrefetchRequest> list2 = this.requestsByState[this.stateIndex];
+                            Intrinsics.checkNotNull(list2);
+                            while (this.requestIndex < list2.size()) {
+                                PrefetchRequest prefetchRequest = list2.get(this.requestIndex);
+                                if (z) {
+                                    HandleAndRequestImpl handleAndRequestImpl = prefetchRequest instanceof HandleAndRequestImpl ? (HandleAndRequestImpl) prefetchRequest : null;
+                                    if (handleAndRequestImpl != null) {
+                                        handleAndRequestImpl.markAsUrgent();
+                                    }
+                                }
+                                this.executedNestedPrefetch = true;
+                                if (prefetchRequest.execute(prefetchRequestScope)) {
+                                    return true;
+                                }
+                                this.requestIndex++;
                             }
-                            this.requestIndex++;
+                            this.requestIndex = 0;
+                            this.stateIndex++;
+                        } finally {
                         }
-                        this.requestIndex = 0;
-                        this.stateIndex++;
-                    } finally {
                     }
+                    Unit unit2 = Unit.INSTANCE;
+                    return false;
+                } finally {
                 }
-                Unit unit2 = Unit.INSTANCE;
-                return false;
             }
 
             public final int collectIdealNestedPrefetchCount() {
@@ -560,7 +558,7 @@ public final class PrefetchHandleProvider {
                 int size = list.size();
                 int i = Integer.MAX_VALUE;
                 for (int i2 = 0; i2 < size; i2++) {
-                    i = Math.min(i, list.get(i2).getIdealNestedPrefetchCount$foundation_release());
+                    i = Math.min(i, list.get(i2).getIdealNestedPrefetchCount$foundation());
                 }
                 if (i == Integer.MAX_VALUE) {
                     return 0;
@@ -573,7 +571,7 @@ public final class PrefetchHandleProvider {
                 int size = list.size();
                 int i = Integer.MAX_VALUE;
                 for (int i2 = 0; i2 < size; i2++) {
-                    i = Math.min(i, list.get(i2).getLastNumberOfNestedPrefetchItems$foundation_release());
+                    i = Math.min(i, list.get(i2).getLastNumberOfNestedPrefetchItems$foundation());
                 }
                 if (i == Integer.MAX_VALUE) {
                     return 0;

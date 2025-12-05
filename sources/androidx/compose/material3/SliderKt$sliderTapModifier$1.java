@@ -44,11 +44,11 @@ public final class SliderKt$sliderTapModifier$1 implements PointerInputEventHand
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m2965invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
+            return m3051invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m2965invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m3051invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$state, continuation);
             anonymousClass1.J$0 = j;
             return anonymousClass1.invokeSuspend(Unit.INSTANCE);
@@ -59,7 +59,7 @@ public final class SliderKt$sliderTapModifier$1 implements PointerInputEventHand
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label == 0) {
                 ResultKt.throwOnFailure(obj);
-                this.$state.m2977onPressk4lQ0M$material3(this.J$0);
+                this.$state.m3063onPressk4lQ0M$material3(this.J$0);
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

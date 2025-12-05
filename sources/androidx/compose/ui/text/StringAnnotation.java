@@ -12,49 +12,49 @@ public final class StringAnnotation implements AnnotatedString.Annotation {
     private final String value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StringAnnotation m7406boximpl(String str) {
+    public static final /* synthetic */ StringAnnotation m7648boximpl(String str) {
         return new StringAnnotation(str);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static String m7407constructorimpl(String str) {
+    public static String m7649constructorimpl(String str) {
         return str;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7408equalsimpl(String str, Object obj) {
-        return (obj instanceof StringAnnotation) && Intrinsics.areEqual(str, ((StringAnnotation) obj).m7412unboximpl());
+    public static boolean m7650equalsimpl(String str, Object obj) {
+        return (obj instanceof StringAnnotation) && Intrinsics.areEqual(str, ((StringAnnotation) obj).m7654unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7409equalsimpl0(String str, String str2) {
+    public static final boolean m7651equalsimpl0(String str, String str2) {
         return Intrinsics.areEqual(str, str2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7410hashCodeimpl(String str) {
+    public static int m7652hashCodeimpl(String str) {
         return str.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7411toStringimpl(String str) {
+    public static String m7653toStringimpl(String str) {
         return "StringAnnotation(value=" + str + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7408equalsimpl(this.value, obj);
+        return m7650equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7410hashCodeimpl(this.value);
+        return m7652hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m7411toStringimpl(this.value);
+        return m7653toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ String m7412unboximpl() {
+    public final /* synthetic */ String m7654unboximpl() {
         return this.value;
     }
 

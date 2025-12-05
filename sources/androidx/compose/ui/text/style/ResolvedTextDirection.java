@@ -22,6 +22,14 @@ public final class ResolvedTextDirection {
         return $ENTRIES;
     }
 
+    public static ResolvedTextDirection valueOf(String str) {
+        return (ResolvedTextDirection) Enum.valueOf(ResolvedTextDirection.class, str);
+    }
+
+    public static ResolvedTextDirection[] values() {
+        return (ResolvedTextDirection[]) $VALUES.clone();
+    }
+
     private ResolvedTextDirection(String str, int i) {
     }
 
@@ -29,13 +37,5 @@ public final class ResolvedTextDirection {
         ResolvedTextDirection[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static ResolvedTextDirection valueOf(String str) {
-        return (ResolvedTextDirection) Enum.valueOf(ResolvedTextDirection.class, str);
-    }
-
-    public static ResolvedTextDirection[] values() {
-        return (ResolvedTextDirection[]) $VALUES.clone();
     }
 }

@@ -4,7 +4,7 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.source.MediaSource;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MediaPeriodInfo {
     public final long durationUs;
     public final long endPositionUs;

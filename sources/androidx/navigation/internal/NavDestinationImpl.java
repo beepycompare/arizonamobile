@@ -242,12 +242,12 @@ public final class NavDestinationImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9000constructorimpl(bundleOf);
+        SavedStateWriter.m9264constructorimpl(bundleOf);
         for (Map.Entry<String, NavArgument> entry2 : this.arguments.entrySet()) {
             entry2.getValue().putDefaultValue(entry2.getKey(), bundleOf);
         }
         if (bundle != null) {
-            SavedStateWriter.m9004putAllimpl(SavedStateWriter.m9000constructorimpl(bundleOf), bundle);
+            SavedStateWriter.m9268putAllimpl(SavedStateWriter.m9264constructorimpl(bundleOf), bundle);
             for (Map.Entry<String, NavArgument> entry3 : this.arguments.entrySet()) {
                 String key = entry3.getKey();
                 NavArgument value = entry3.getValue();
@@ -262,6 +262,6 @@ public final class NavDestinationImpl {
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean hasRequiredArguments$lambda$7(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return !SavedStateReader.m8915containsimpl(SavedStateReader.m8914constructorimpl(bundle), key);
+        return !SavedStateReader.m9179containsimpl(SavedStateReader.m9178constructorimpl(bundle), key);
     }
 }

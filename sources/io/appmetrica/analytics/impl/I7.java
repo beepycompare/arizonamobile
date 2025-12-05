@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class I7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Um f521a;
+    public final Um f604a;
 
     public I7(Um um) {
-        this.f521a = um;
+        this.f604a = um;
     }
 
     public I7() {
-        this(new Um(C0471oa.k().g(), "appmetrica_startup_hosts"));
+        this(new Um(C0470oa.k().g(), "appmetrica_startup_hosts"));
     }
 }

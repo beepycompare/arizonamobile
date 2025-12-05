@@ -31,15 +31,15 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
     public static /* synthetic */ void getDebuggerDisplayValue$annotations() {
     }
 
-    @Override // androidx.compose.runtime.DerivedState
-    public SnapshotMutationPolicy<T> getPolicy() {
-        return this.policy;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public DerivedSnapshotState(Function0<? extends T> function0, SnapshotMutationPolicy<T> snapshotMutationPolicy) {
         this.calculation = function0;
         this.policy = snapshotMutationPolicy;
+    }
+
+    @Override // androidx.compose.runtime.DerivedState
+    public SnapshotMutationPolicy<T> getPolicy() {
+        return this.policy;
     }
 
     /* compiled from: DerivedState.kt */
@@ -55,6 +55,12 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
         public static final int $stable = 8;
         private static final Object Unset = new Object();
 
+        public ResultRecord(long j) {
+            super(j);
+            this.dependencies = ObjectIntMapKt.emptyObjectIntMap();
+            this.result = Unset;
+        }
+
         /* compiled from: DerivedState.kt */
         @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord$Companion;", "", "<init>", "()V", "Unset", "getUnset", "()Ljava/lang/Object;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes.dex */
@@ -69,12 +75,6 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
             public final Object getUnset() {
                 return ResultRecord.Unset;
             }
-        }
-
-        public ResultRecord(long j) {
-            super(j);
-            this.dependencies = ObjectIntMapKt.emptyObjectIntMap();
-            this.result = Unset;
         }
 
         public final long getValidSnapshotId() {
@@ -281,9 +281,9 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
                 T t = (T) Snapshot.Companion.observe(new Function1() { // from class: androidx.compose.runtime.DerivedSnapshotState$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit currentRecord$lambda$5$lambda$4$lambda$3;
-                        currentRecord$lambda$5$lambda$4$lambda$3 = DerivedSnapshotState.currentRecord$lambda$5$lambda$4$lambda$3(DerivedSnapshotState.this, intRef, mutableObjectIntMap, element, obj);
-                        return currentRecord$lambda$5$lambda$4$lambda$3;
+                        Unit currentRecord$lambda$1$0$0;
+                        currentRecord$lambda$1$0$0 = DerivedSnapshotState.currentRecord$lambda$1$0$0(DerivedSnapshotState.this, intRef, mutableObjectIntMap, element, obj);
+                        return currentRecord$lambda$1$0$0;
                     }
                 }, null, function0);
                 intRef.setElement(element);
@@ -395,7 +395,7 @@ public final class DerivedSnapshotState<T> extends StateObjectImpl implements De
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit currentRecord$lambda$5$lambda$4$lambda$3(DerivedSnapshotState derivedSnapshotState, IntRef intRef, MutableObjectIntMap mutableObjectIntMap, int i, Object obj) {
+    public static final Unit currentRecord$lambda$1$0$0(DerivedSnapshotState derivedSnapshotState, IntRef intRef, MutableObjectIntMap mutableObjectIntMap, int i, Object obj) {
         if (obj == derivedSnapshotState) {
             throw new IllegalStateException("A derived state calculation cannot read itself".toString());
         }

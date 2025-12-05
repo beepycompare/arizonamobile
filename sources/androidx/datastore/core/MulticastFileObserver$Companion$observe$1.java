@@ -1,6 +1,7 @@
 package androidx.datastore.core;
 
 import androidx.datastore.core.MulticastFileObserver;
+import androidx.media3.container.MdtaMetadataEntry;
 import java.io.File;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -17,8 +18,8 @@ import kotlinx.coroutines.channels.ChannelsKt;
 import kotlinx.coroutines.channels.ProducerScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MulticastFileObserver.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00010\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.MulticastFileObserver$Companion$observe$1", f = "MulticastFileObserver.android.kt", i = {0, 0}, l = {84, 85}, m = "invokeSuspend", n = {"$this$channelFlow", "disposeListener"}, s = {"L$0", "L$1"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00010\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.MulticastFileObserver$Companion$observe$1", f = "MulticastFileObserver.android.kt", i = {0, 0}, l = {MdtaMetadataEntry.TYPE_INDICATOR_UNSIGNED_INT64, 79}, m = "invokeSuspend", n = {"$this$channelFlow", "disposeListener"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes2.dex */
 public final class MulticastFileObserver$Companion$observe$1 extends SuspendLambda implements Function2<ProducerScope<? super Unit>, Continuation<? super Unit>, Object> {
     final /* synthetic */ File $file;
@@ -45,8 +46,8 @@ public final class MulticastFileObserver$Companion$observe$1 extends SuspendLamb
         return ((MulticastFileObserver$Companion$observe$1) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x006d, code lost:
-        if (kotlinx.coroutines.channels.ProduceKt.awaitClose(r3, new androidx.datastore.core.MulticastFileObserver$Companion$observe$1.AnonymousClass1(), r6) == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0069, code lost:
+        if (kotlinx.coroutines.channels.ProduceKt.awaitClose(r3, new androidx.datastore.core.MulticastFileObserver$Companion$observe$1$$ExternalSyntheticLambda1(r1), r6) == r0) goto L14;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -61,30 +62,18 @@ public final class MulticastFileObserver$Companion$observe$1 extends SuspendLamb
             ResultKt.throwOnFailure(obj);
             final ProducerScope producerScope2 = (ProducerScope) this.L$0;
             final File file = this.$file;
+            Function1 function1 = new Function1() { // from class: androidx.datastore.core.MulticastFileObserver$Companion$observe$1$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj2) {
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = MulticastFileObserver$Companion$observe$1.invokeSuspend$lambda$0(file, producerScope2, (String) obj2);
+                    return invokeSuspend$lambda$0;
+                }
+            };
             MulticastFileObserver.Companion companion = MulticastFileObserver.Companion;
             File parentFile = this.$file.getParentFile();
             Intrinsics.checkNotNull(parentFile);
-            observe = companion.observe(parentFile, new Function1<String, Unit>() { // from class: androidx.datastore.core.MulticastFileObserver$Companion$observe$1$flowObserver$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(1);
-                }
-
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(String str) {
-                    invoke2(str);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(String str) {
-                    if (Intrinsics.areEqual(str, file.getName())) {
-                        ChannelsKt.trySendBlocking(producerScope2, Unit.INSTANCE);
-                    }
-                }
-            });
+            observe = companion.observe(parentFile, function1);
             this.L$0 = producerScope2;
             this.L$1 = observe;
             this.label = 1;
@@ -106,5 +95,19 @@ public final class MulticastFileObserver$Companion$observe$1 extends SuspendLamb
         this.L$0 = null;
         this.L$1 = null;
         this.label = 2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(File file, ProducerScope producerScope, String str) {
+        if (Intrinsics.areEqual(str, file.getName())) {
+            ChannelsKt.trySendBlocking(producerScope, Unit.INSTANCE);
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$1(DisposableHandle disposableHandle) {
+        disposableHandle.dispose();
+        return Unit.INSTANCE;
     }
 }

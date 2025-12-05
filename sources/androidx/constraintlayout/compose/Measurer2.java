@@ -149,17 +149,17 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
         String str = constraintWidget.stringId;
         Integer[] numArr = this.lastMeasures.get(str);
         boolean z2 = true;
-        obtainConstraints(measure.horizontalBehavior, measure.horizontalDimension, constraintWidget.mMatchConstraintDefaultWidth, measure.measureStrategy, (numArr != null ? numArr[1].intValue() : 0) == constraintWidget.getHeight(), constraintWidget.isResolvedHorizontally(), Constraints.m7949getMaxWidthimpl(this.state.m8463getRootIncomingConstraintsmsEJaDk()), this.widthConstraintsHolder);
-        obtainConstraints(measure.verticalBehavior, measure.verticalDimension, constraintWidget.mMatchConstraintDefaultHeight, measure.measureStrategy, (numArr != null ? numArr[0].intValue() : 0) == constraintWidget.getWidth(), constraintWidget.isResolvedVertically(), Constraints.m7948getMaxHeightimpl(this.state.m8463getRootIncomingConstraintsmsEJaDk()), this.heightConstraintsHolder);
+        obtainConstraints(measure.horizontalBehavior, measure.horizontalDimension, constraintWidget.mMatchConstraintDefaultWidth, measure.measureStrategy, (numArr != null ? numArr[1].intValue() : 0) == constraintWidget.getHeight(), constraintWidget.isResolvedHorizontally(), Constraints.m8211getMaxWidthimpl(this.state.m8725getRootIncomingConstraintsmsEJaDk()), this.widthConstraintsHolder);
+        obtainConstraints(measure.verticalBehavior, measure.verticalDimension, constraintWidget.mMatchConstraintDefaultHeight, measure.measureStrategy, (numArr != null ? numArr[0].intValue() : 0) == constraintWidget.getWidth(), constraintWidget.isResolvedVertically(), Constraints.m8210getMaxHeightimpl(this.state.m8725getRootIncomingConstraintsmsEJaDk()), this.heightConstraintsHolder);
         int[] iArr = this.widthConstraintsHolder;
         int i = iArr[0];
         int i2 = iArr[1];
         int[] iArr2 = this.heightConstraintsHolder;
         long Constraints = ConstraintsKt.Constraints(i, i2, iArr2[0], iArr2[1]);
         if (measure.measureStrategy == BasicMeasure.Measure.TRY_GIVEN_DIMENSIONS || measure.measureStrategy == BasicMeasure.Measure.USE_GIVEN_DIMENSIONS || measure.horizontalBehavior != ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT || constraintWidget.mMatchConstraintDefaultWidth != 0 || measure.verticalBehavior != ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT || constraintWidget.mMatchConstraintDefaultHeight != 0) {
-            long m8394measureWidgetyQShABA = m8394measureWidgetyQShABA(constraintWidget, Constraints);
+            long m8656measureWidgetyQShABA = m8656measureWidgetyQShABA(constraintWidget, Constraints);
             constraintWidget.setMeasureRequested(false);
-            Integer valueOf = Integer.valueOf(IntIntPair.m41getFirstimpl(m8394measureWidgetyQShABA));
+            Integer valueOf = Integer.valueOf(IntIntPair.m41getFirstimpl(m8656measureWidgetyQShABA));
             Integer valueOf2 = Integer.valueOf(constraintWidget.mMatchConstraintMinWidth);
             if (valueOf2.intValue() <= 0) {
                 valueOf2 = null;
@@ -170,7 +170,7 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
                 valueOf3 = null;
             }
             int intValue = ((Number) RangesKt.coerceIn(valueOf, num, valueOf3)).intValue();
-            Integer valueOf4 = Integer.valueOf(IntIntPair.m42getSecondimpl(m8394measureWidgetyQShABA));
+            Integer valueOf4 = Integer.valueOf(IntIntPair.m42getSecondimpl(m8656measureWidgetyQShABA));
             Integer valueOf5 = Integer.valueOf(constraintWidget.mMatchConstraintMinHeight);
             if (valueOf5.intValue() <= 0) {
                 valueOf5 = null;
@@ -178,18 +178,18 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
             Integer num2 = valueOf5;
             Integer valueOf6 = Integer.valueOf(constraintWidget.mMatchConstraintMaxHeight);
             int intValue2 = ((Number) RangesKt.coerceIn(valueOf4, num2, valueOf6.intValue() > 0 ? valueOf6 : null)).intValue();
-            if (intValue != IntIntPair.m41getFirstimpl(m8394measureWidgetyQShABA)) {
-                Constraints = ConstraintsKt.Constraints(intValue, intValue, Constraints.m7950getMinHeightimpl(Constraints), Constraints.m7948getMaxHeightimpl(Constraints));
+            if (intValue != IntIntPair.m41getFirstimpl(m8656measureWidgetyQShABA)) {
+                Constraints = ConstraintsKt.Constraints(intValue, intValue, Constraints.m8212getMinHeightimpl(Constraints), Constraints.m8210getMaxHeightimpl(Constraints));
                 z = true;
             } else {
                 z = false;
             }
-            if (intValue2 != IntIntPair.m42getSecondimpl(m8394measureWidgetyQShABA)) {
-                Constraints = ConstraintsKt.Constraints(Constraints.m7951getMinWidthimpl(Constraints), Constraints.m7949getMaxWidthimpl(Constraints), intValue2, intValue2);
+            if (intValue2 != IntIntPair.m42getSecondimpl(m8656measureWidgetyQShABA)) {
+                Constraints = ConstraintsKt.Constraints(Constraints.m8213getMinWidthimpl(Constraints), Constraints.m8211getMaxWidthimpl(Constraints), intValue2, intValue2);
                 z = true;
             }
             if (z) {
-                m8394measureWidgetyQShABA(constraintWidget, Constraints);
+                m8656measureWidgetyQShABA(constraintWidget, Constraints);
                 constraintWidget.setMeasureRequested(false);
             }
         }
@@ -307,30 +307,30 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
     }
 
     /* renamed from: performMeasure-DjhGOtQ  reason: not valid java name */
-    public final long m8396performMeasureDjhGOtQ(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, List<? extends Measurable> list, Map<Measurable, Placeable> map, int i) {
+    public final long m8658performMeasureDjhGOtQ(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, List<? extends Measurable> list, Map<Measurable, Placeable> map, int i) {
         androidx.constraintlayout.core.state.Dimension min;
         androidx.constraintlayout.core.state.Dimension min2;
         this.placeables = map;
         if (list.isEmpty()) {
-            return IntSizeKt.IntSize(Constraints.m7951getMinWidthimpl(j), Constraints.m7950getMinHeightimpl(j));
+            return IntSizeKt.IntSize(Constraints.m8213getMinWidthimpl(j), Constraints.m8212getMinHeightimpl(j));
         }
         State state = this.state;
-        if (Constraints.m7947getHasFixedWidthimpl(j)) {
-            min = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7949getMaxWidthimpl(j));
+        if (Constraints.m8209getHasFixedWidthimpl(j)) {
+            min = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m8211getMaxWidthimpl(j));
         } else {
-            min = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7951getMinWidthimpl(j));
+            min = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m8213getMinWidthimpl(j));
         }
         state.width(min);
         State state2 = this.state;
-        if (Constraints.m7946getHasFixedHeightimpl(j)) {
-            min2 = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7948getMaxHeightimpl(j));
+        if (Constraints.m8208getHasFixedHeightimpl(j)) {
+            min2 = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m8210getMaxHeightimpl(j));
         } else {
-            min2 = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7950getMinHeightimpl(j));
+            min2 = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m8212getMinHeightimpl(j));
         }
         state2.height(min2);
         this.state.mParent.getWidth().apply(this.state, this.root, 0);
         this.state.mParent.getHeight().apply(this.state, this.root, 1);
-        this.state.m8464setRootIncomingConstraintsBRTryo0(j);
+        this.state.m8726setRootIncomingConstraintsBRTryo0(j);
         this.state.setRtl(layoutDirection == LayoutDirection.Rtl);
         resetMeasureState$constraintlayout_compose_release();
         if (constraintSet.isDirty(list)) {
@@ -341,7 +341,7 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
         } else {
             ConstraintLayoutKt.buildMapping(this.state, list);
         }
-        m8395applyRootSizeBRTryo0(j);
+        m8657applyRootSizeBRTryo0(j);
         this.root.updateHierarchy();
         this.root.setOptimizationLevel(i);
         ConstraintWidgetContainer constraintWidgetContainer = this.root;
@@ -357,9 +357,9 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: applyRootSize-BRTryo0  reason: not valid java name */
-    public final void m8395applyRootSizeBRTryo0(long j) {
-        this.root.setWidth(Constraints.m7949getMaxWidthimpl(j));
-        this.root.setHeight(Constraints.m7948getMaxHeightimpl(j));
+    public final void m8657applyRootSizeBRTryo0(long j) {
+        this.root.setWidth(Constraints.m8211getMaxWidthimpl(j));
+        this.root.setHeight(Constraints.m8210getMaxHeightimpl(j));
         this.forcedScaleFactor = Float.NaN;
         LayoutInformationReceiver layoutInformationReceiver = this.layoutInformationReceiver;
         if (layoutInformationReceiver != null && (layoutInformationReceiver == null || layoutInformationReceiver.getForcedWidth() != Integer.MIN_VALUE)) {
@@ -415,7 +415,7 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
                 placementScope2 = placementScope;
             } else {
                 placementScope2 = placementScope;
-                ConstraintLayoutKt.m8337placeWithFrameTransformKtjjmr4$default(placementScope2, placeable, widgetFrame, 0L, 4, null);
+                ConstraintLayoutKt.m8599placeWithFrameTransformKtjjmr4$default(placementScope2, placeable, widgetFrame, 0L, 4, null);
             }
             i++;
             placementScope = placementScope2;
@@ -428,29 +428,29 @@ public class Measurer2 implements BasicMeasure.Measurer, DesignInfoProvider {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: measureWidget-yQShABA  reason: not valid java name */
-    private final long m8394measureWidgetyQShABA(ConstraintWidget constraintWidget, long j) {
+    private final long m8656measureWidgetyQShABA(ConstraintWidget constraintWidget, long j) {
         int i;
         Object companionWidget = constraintWidget.getCompanionWidget();
         String str = constraintWidget.stringId;
         int i2 = 0;
         if (constraintWidget instanceof VirtualLayout) {
-            if (Constraints.m7947getHasFixedWidthimpl(j)) {
+            if (Constraints.m8209getHasFixedWidthimpl(j)) {
                 i = 1073741824;
             } else {
-                i = Constraints.m7945getHasBoundedWidthimpl(j) ? Integer.MIN_VALUE : 0;
+                i = Constraints.m8207getHasBoundedWidthimpl(j) ? Integer.MIN_VALUE : 0;
             }
-            if (Constraints.m7946getHasFixedHeightimpl(j)) {
+            if (Constraints.m8208getHasFixedHeightimpl(j)) {
                 i2 = 1073741824;
-            } else if (Constraints.m7944getHasBoundedHeightimpl(j)) {
+            } else if (Constraints.m8206getHasBoundedHeightimpl(j)) {
                 i2 = Integer.MIN_VALUE;
             }
             VirtualLayout virtualLayout = (VirtualLayout) constraintWidget;
-            virtualLayout.measure(i, Constraints.m7949getMaxWidthimpl(j), i2, Constraints.m7948getMaxHeightimpl(j));
+            virtualLayout.measure(i, Constraints.m8211getMaxWidthimpl(j), i2, Constraints.m8210getMaxHeightimpl(j));
             return IntIntPair.m37constructorimpl(virtualLayout.getMeasuredWidth(), virtualLayout.getMeasuredHeight());
         } else if (companionWidget instanceof Measurable) {
-            Placeable mo6698measureBRTryo0 = ((Measurable) companionWidget).mo6698measureBRTryo0(j);
-            this.placeables.put(companionWidget, mo6698measureBRTryo0);
-            return IntIntPair.m37constructorimpl(mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight());
+            Placeable mo6875measureBRTryo0 = ((Measurable) companionWidget).mo6875measureBRTryo0(j);
+            this.placeables.put(companionWidget, mo6875measureBRTryo0);
+            return IntIntPair.m37constructorimpl(mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight());
         } else {
             Log.w("CCL", "Nothing to measure for widget: " + str);
             return IntIntPair.m37constructorimpl(0, 0);

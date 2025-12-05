@@ -10,14 +10,14 @@ import java.util.Map;
 public final class E7 implements Ic {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f456a;
+    public Location f539a;
     public Boolean b;
     public Boolean c;
     public Boolean e;
     public boolean h;
     public String i;
     public boolean k;
-    public C0703xi l;
+    public C0702xi l;
     public Boolean d = Boolean.FALSE;
     public final LinkedHashMap f = new LinkedHashMap();
     public final LinkedHashMap g = new LinkedHashMap();
@@ -27,9 +27,9 @@ public final class E7 implements Ic {
     public final void a(boolean z) {
         Boolean valueOf = Boolean.valueOf(z);
         this.b = valueOf;
-        C0703xi c0703xi = this.l;
-        if (c0703xi != null) {
-            c0703xi.a(valueOf, this.e, this.c, this.d);
+        C0702xi c0702xi = this.l;
+        if (c0702xi != null) {
+            c0702xi.a(valueOf, this.e, this.c, this.d);
         }
     }
 
@@ -39,12 +39,12 @@ public final class E7 implements Ic {
         this.f.clear();
     }
 
-    public final C0386l0 j() {
-        return new C0386l0(this.j, this.h);
+    public final C0385l0 j() {
+        return new C0385l0(this.j, this.h);
     }
 
     public final Location k() {
-        return this.f456a;
+        return this.f539a;
     }
 
     public final Boolean l() {
@@ -72,9 +72,9 @@ public final class E7 implements Ic {
     public final void setDataSendingEnabled(boolean z) {
         Boolean valueOf = Boolean.valueOf(z);
         this.e = valueOf;
-        C0703xi c0703xi = this.l;
-        if (c0703xi != null) {
-            c0703xi.a(this.b, valueOf, this.c, this.d);
+        C0702xi c0702xi = this.l;
+        if (c0702xi != null) {
+            c0702xi.a(this.b, valueOf, this.c, this.d);
         }
     }
 
@@ -91,16 +91,16 @@ public final class E7 implements Ic {
             this.c = Boolean.valueOf(z);
             Boolean valueOf = Boolean.valueOf(z2);
             this.d = valueOf;
-            C0703xi c0703xi = this.l;
-            if (c0703xi != null) {
-                c0703xi.a(this.b, this.e, this.c, valueOf);
+            C0702xi c0702xi = this.l;
+            if (c0702xi != null) {
+                c0702xi.a(this.b, this.e, this.c, valueOf);
             }
         }
     }
 
     @Override // io.appmetrica.analytics.impl.Ic
     public final void a(Location location) {
-        this.f456a = location;
+        this.f539a = location;
     }
 
     @Override // io.appmetrica.analytics.impl.Ic
@@ -213,7 +213,7 @@ public final class E7 implements Ic {
         if (appMetricaConfig.locationTracking == null && mo.a(bool)) {
             newConfigBuilder.withLocationTracking(bool.booleanValue());
         }
-        Location location = this.f456a;
+        Location location = this.f539a;
         if (appMetricaConfig.location == null && mo.a(location)) {
             newConfigBuilder.withLocation(location);
         }
@@ -229,7 +229,7 @@ public final class E7 implements Ic {
             newConfigBuilder.withAdvIdentifiersTracking(bool3.booleanValue());
         }
         this.k = true;
-        this.f456a = null;
+        this.f539a = null;
         this.b = null;
         this.c = null;
         this.d = Boolean.FALSE;
@@ -246,11 +246,11 @@ public final class E7 implements Ic {
         this.j.add(str);
     }
 
-    public final void a(C0703xi c0703xi) {
+    public final void a(C0702xi c0702xi) {
         Boolean bool = this.b;
         if (bool != null || this.e != null || this.c != null) {
-            c0703xi.a(bool, this.e, this.c, this.d);
+            c0702xi.a(bool, this.e, this.c, this.d);
         }
-        this.l = c0703xi;
+        this.l = c0702xi;
     }
 }

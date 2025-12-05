@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.Xml;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -178,7 +177,7 @@ public class StateSet {
                     this.mConstraintID = obtainStyledAttributes.getResourceId(index, this.mConstraintID);
                     String resourceTypeName = context.getResources().getResourceTypeName(this.mConstraintID);
                     context.getResources().getResourceName(this.mConstraintID);
-                    if (TtmlNode.TAG_LAYOUT.equals(resourceTypeName)) {
+                    if ("layout".equals(resourceTypeName)) {
                         this.mIsLayout = true;
                     }
                 }
@@ -226,7 +225,7 @@ public class StateSet {
                     this.mConstraintID = obtainStyledAttributes.getResourceId(index, this.mConstraintID);
                     String resourceTypeName = context.getResources().getResourceTypeName(this.mConstraintID);
                     context.getResources().getResourceName(this.mConstraintID);
-                    if (TtmlNode.TAG_LAYOUT.equals(resourceTypeName)) {
+                    if ("layout".equals(resourceTypeName)) {
                         this.mIsLayout = true;
                     }
                 } else if (index == R.styleable.Variant_region_heightLessThan) {

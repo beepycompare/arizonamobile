@@ -1,19 +1,22 @@
 package androidx.compose.animation;
 
-import androidx.compose.runtime.MutableState;
+import androidx.compose.animation.SharedTransitionStateMachine;
+import androidx.compose.animation.core.Animatable;
+import androidx.compose.animation.core.AnimationSpecKt;
+import androidx.compose.animation.core.AnimationVector2D;
+import androidx.compose.animation.core.FiniteAnimationSpec;
+import androidx.compose.animation.core.SpringSpec;
+import androidx.compose.animation.core.VectorConvertersKt;
+import androidx.compose.animation.core.VisibilityThresholdsKt;
 import androidx.compose.runtime.SnapshotStateKt;
-import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
 import androidx.compose.runtime.snapshots.SnapshotStateList;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
-import androidx.compose.ui.geometry.RectKt;
-import androidx.compose.ui.geometry.Size;
 import androidx.compose.ui.layout.LayoutCoordinates;
 import androidx.compose.ui.layout.LookaheadScope;
 import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.unit.IntSizeKt;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
-import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -21,75 +24,98 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 /* compiled from: SharedElement.kt */
-@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0006\u0010\u000b\u001a\u00020\fJ\u0006\u0010\r\u001a\u00020\u000eJ\b\u0010\"\u001a\u0004\u0018\u00010#J\b\u0010:\u001a\u00020\u000eH\u0002J\n\u0010;\u001a\u0004\u0018\u00010#H\u0002J\u0016\u0010=\u001a\u00020\u000e2\u0006\u0010>\u001a\u00020?2\u0006\u0010@\u001a\u00020AJ\b\u0010F\u001a\u00020\fH\u0002J\u0006\u0010G\u001a\u00020\u000eJ\u0006\u0010H\u001a\u00020\u000eJ\u000e\u0010L\u001a\u00020\u000e2\u0006\u0010M\u001a\u00020AJ\u000e\u0010N\u001a\u00020\u000e2\u0006\u0010M\u001a\u00020AR\u0011\u0010\u0002\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR+\u0010\u0010\u001a\u00020\f2\u0006\u0010\u000f\u001a\u00020\f8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u0015\u0010\u0016\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R(\u0010\u0019\u001a\u0004\u0018\u00010\u00182\b\u0010\u0017\u001a\u0004\u0018\u00010\u00188@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR/\u0010\u001e\u001a\u0004\u0018\u00010\u00182\b\u0010\u000f\u001a\u0004\u0018\u00010\u00188B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b!\u0010\u0016\u001a\u0004\b\u001f\u0010\u001b\"\u0004\b \u0010\u001dR/\u0010$\u001a\u0004\u0018\u00010#2\b\u0010\u000f\u001a\u0004\u0018\u00010#8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b)\u0010\u0016\u001a\u0004\b%\u0010&\"\u0004\b'\u0010(R\"\u0010+\u001a\u0004\u0018\u00010*2\b\u0010\u0017\u001a\u0004\u0018\u00010*@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b,\u0010-R(\u0010.\u001a\u0004\u0018\u00010*2\b\u0010\u0017\u001a\u0004\u0018\u00010*@BX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b/\u0010-\"\u0004\b0\u00101R+\u00103\u001a\u0002022\u0006\u0010\u000f\u001a\u0002028B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b8\u0010\u0016\u001a\u0004\b4\u00105\"\u0004\b6\u00107R\u000e\u00109\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0017\u0010B\u001a\b\u0012\u0004\u0012\u00020A0C¢\u0006\b\n\u0000\u001a\u0004\bD\u0010ER\u001a\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u000e0IX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010J\u001a\b\u0012\u0004\u0012\u00020\u000e0KX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006O"}, d2 = {"Landroidx/compose/animation/SharedElement;", "", "key", "scope", "Landroidx/compose/animation/SharedTransitionScopeImpl;", "<init>", "(Ljava/lang/Object;Landroidx/compose/animation/SharedTransitionScopeImpl;)V", "getKey", "()Ljava/lang/Object;", "getScope", "()Landroidx/compose/animation/SharedTransitionScopeImpl;", "isAnimating", "", "updateMatch", "", "<set-?>", "foundMatch", "getFoundMatch", "()Z", "setFoundMatch", "(Z)V", "foundMatch$delegate", "Landroidx/compose/runtime/MutableState;", "value", "Landroidx/compose/animation/TargetData;", "targetData", "getTargetData$animation", "()Landroidx/compose/animation/TargetData;", "setTargetData$animation", "(Landroidx/compose/animation/TargetData;)V", "_targetData", "get_targetData", "set_targetData", "_targetData$delegate", "tryInitializingCurrentBounds", "Landroidx/compose/ui/geometry/Rect;", "currentBoundsWhenMatched", "getCurrentBoundsWhenMatched", "()Landroidx/compose/ui/geometry/Rect;", "setCurrentBoundsWhenMatched", "(Landroidx/compose/ui/geometry/Rect;)V", "currentBoundsWhenMatched$delegate", "Landroidx/compose/animation/BoundsProvider;", "lastTargetBoundsProvider", "getLastTargetBoundsProvider$animation", "()Landroidx/compose/animation/BoundsProvider;", "targetBoundsProvider", "getTargetBoundsProvider$animation", "setTargetBoundsProvider", "(Landroidx/compose/animation/BoundsProvider;)V", "", "targetBoundsProviderUpdateRequestId", "getTargetBoundsProviderUpdateRequestId", "()I", "setTargetBoundsProviderUpdateRequestId", "(I)V", "targetBoundsProviderUpdateRequestId$delegate", "lastHandledTargetProviderUpdateRequestId", "updateTargetBoundsProvider", "obtainBoundsFromLastTarget", "targetBoundsProviderChanged", "onLookaheadPlaced", "placementScope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/animation/SharedElementInternalState;", "states", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "getStates", "()Landroidx/compose/runtime/snapshots/SnapshotStateList;", "hasVisibleContent", "invalidateTargetBoundsProvider", "onSharedTransitionFinished", "Lkotlin/Function1;", "observingVisibilityChange", "Lkotlin/Function0;", "addState", "sharedElementState", "removeState", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0001\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0006\u0010\u0018\u001a\u00020\u0019J\r\u0010\u001e\u001a\u00020\u001fH\u0000¢\u0006\u0002\b J\u0017\u0010\"\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020$H\u0000¢\u0006\u0004\b%\u0010&J\u0006\u0010+\u001a\u00020\u001fJ\b\u0010,\u001a\u0004\u0018\u00010-J\u0006\u0010.\u001a\u00020\u001fJ\u0016\u00104\u001a\u00020\u001f2\u0006\u00105\u001a\u0002062\u0006\u0010\r\u001a\u00020\u0013J\u000e\u0010<\u001a\u00020\u001f2\u0006\u0010=\u001a\u00020\u0013J\u000e\u0010>\u001a\u00020\u001f2\u0006\u0010=\u001a\u00020\u0013R\u0011\u0010\u0002\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00020\u000e8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u00128F¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0017\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00130\u00128F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u001d0\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0017\u0010'\u001a\b\u0012\u0004\u0012\u00020\u001c0(¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u0011\u0010/\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b0\u00101R\u0011\u00102\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b3\u00101R\u0014\u00107\u001a\b\u0012\u0004\u0012\u00020\u001308X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020\u001308X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010:\u001a\b\u0012\u0004\u0012\u00020\u001f0(X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b;\u0010*¨\u0006?"}, d2 = {"Landroidx/compose/animation/SharedElement;", "", "key", "scope", "Landroidx/compose/animation/SharedTransitionScopeImpl;", "<init>", "(Ljava/lang/Object;Landroidx/compose/animation/SharedTransitionScopeImpl;)V", "getKey", "()Ljava/lang/Object;", "getScope", "()Landroidx/compose/animation/SharedTransitionScopeImpl;", "stateMachine", "Landroidx/compose/animation/SharedTransitionStateMachine;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/animation/SharedTransitionStateMachine$State;", "getState$animation", "()Landroidx/compose/animation/SharedTransitionStateMachine$State;", "enabledEntries", "", "Landroidx/compose/animation/SharedElementEntry;", "getEnabledEntries", "()Ljava/util/List;", "allEntries", "getAllEntries", "isAnimating", "", "momentumAnimation", "Landroidx/compose/animation/core/Animatable;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/animation/core/AnimationVector2D;", "updateMatch", "", "updateMatch$animation", "animationSpecFinalized", "updateExitVelocity", "velocity", "Landroidx/compose/ui/unit/Velocity;", "updateExitVelocity-TH1AsA0$animation", "(J)V", "momentumAnimationOffset", "Lkotlin/Function0;", "getMomentumAnimationOffset", "()Lkotlin/jvm/functions/Function0;", "invalidateTargetBoundsProvider", "tryInitializingCurrentBounds", "Landroidx/compose/ui/geometry/Rect;", "onSharedTransitionFinished", "foundMatch", "getFoundMatch", "()Z", "boundsTransformIsActive", "getBoundsTransformIsActive", "onLookaheadPlaced", "placementScope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "_allEntries", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "_enabledEntries", "observingVisibilityChange", "getObservingVisibilityChange$animation", "addEntry", "sharedElementState", "removeEntry", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SharedElement {
     public static final int $stable = 8;
-    private final MutableState _targetData$delegate;
-    private final MutableState currentBoundsWhenMatched$delegate;
-    private final MutableState foundMatch$delegate;
+    private boolean animationSpecFinalized;
     private final Object key;
-    private int lastHandledTargetProviderUpdateRequestId;
-    private BoundsProvider lastTargetBoundsProvider;
-    private final Function0<Unit> observingVisibilityChange;
     private final SharedTransitionScopeImpl scope;
-    private final SnapshotStateList<SharedElementInternalState> states;
-    private BoundsProvider targetBoundsProvider;
-    private boolean targetBoundsProviderChanged;
-    private final MutableState targetBoundsProviderUpdateRequestId$delegate;
-    private final Function1<SharedElement, Unit> updateMatch;
+    private final SharedTransitionStateMachine stateMachine = new SharedTransitionStateMachine(this);
+    private final Animatable<Offset, AnimationVector2D> momentumAnimation = new Animatable<>(Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0()), VectorConvertersKt.getVectorConverter(Offset.Companion), null, null, 12, null);
+    private final Function0<Offset> momentumAnimationOffset = new Function0<Offset>() { // from class: androidx.compose.animation.SharedElement$momentumAnimationOffset$1
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public /* bridge */ /* synthetic */ Offset invoke() {
+            return Offset.m5168boximpl(m134invokeF1C5BW0());
+        }
+
+        /* renamed from: invoke-F1C5BW0  reason: not valid java name */
+        public final long m134invokeF1C5BW0() {
+            boolean z;
+            Animatable animatable;
+            Animatable animatable2;
+            SharedElementEntry sharedElementEntry;
+            z = SharedElement.this.animationSpecFinalized;
+            if (!z && SharedElement.this.getScope().isTransitionActive()) {
+                animatable2 = SharedElement.this.momentumAnimation;
+                if (animatable2.isRunning()) {
+                    List<SharedElementEntry> enabledEntries = SharedElement.this.getEnabledEntries();
+                    int size = enabledEntries.size();
+                    int i = 0;
+                    while (true) {
+                        if (i >= size) {
+                            sharedElementEntry = null;
+                            break;
+                        }
+                        sharedElementEntry = enabledEntries.get(i);
+                        if (sharedElementEntry.getTarget()) {
+                            break;
+                        }
+                        i++;
+                    }
+                    SharedElementEntry sharedElementEntry2 = sharedElementEntry;
+                    if (sharedElementEntry2 != null) {
+                        SharedElement sharedElement = SharedElement.this;
+                        FiniteAnimationSpec<Rect> animationSpec = sharedElementEntry2.getBoundsAnimation().getAnimationSpec();
+                        if (animationSpec instanceof SpringSpec) {
+                            SpringSpec springSpec = (SpringSpec) animationSpec;
+                            BuildersKt__Builders_commonKt.launch$default(sharedElement.getScope().getCoroutineScope(), null, null, new SharedElement$momentumAnimationOffset$1$2$1(sharedElement, AnimationSpecKt.spring(springSpec.getDampingRatio(), springSpec.getStiffness(), Offset.m5168boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion))), null), 3, null);
+                        }
+                        sharedElement.animationSpecFinalized = true;
+                    }
+                }
+            }
+            animatable = SharedElement.this.momentumAnimation;
+            return ((Offset) animatable.getValue()).m5189unboximpl();
+        }
+    };
+    private final SnapshotStateList<SharedElementEntry> _allEntries = SnapshotStateKt.mutableStateListOf();
+    private final SnapshotStateList<SharedElementEntry> _enabledEntries = SnapshotStateKt.mutableStateListOf();
+    private final Function0<Unit> observingVisibilityChange = new Function0<Unit>() { // from class: androidx.compose.animation.SharedElement$observingVisibilityChange$1
+        /* JADX INFO: Access modifiers changed from: package-private */
+        {
+            super(0);
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public /* bridge */ /* synthetic */ Unit invoke() {
+            invoke2();
+            return Unit.INSTANCE;
+        }
+
+        /* renamed from: invoke  reason: avoid collision after fix types in other method */
+        public final void invoke2() {
+            List<SharedElementEntry> allEntries = SharedElement.this.getAllEntries();
+            int size = allEntries.size();
+            for (int i = 0; i < size; i++) {
+                SharedElementEntry sharedElementEntry = allEntries.get(i);
+                if (sharedElementEntry.getTarget() && sharedElementEntry.isEnabled()) {
+                    return;
+                }
+            }
+        }
+    };
 
     public SharedElement(Object obj, SharedTransitionScopeImpl sharedTransitionScopeImpl) {
-        MutableState mutableStateOf$default;
-        MutableState mutableStateOf$default2;
-        MutableState mutableStateOf$default3;
-        MutableState mutableStateOf$default4;
         this.key = obj;
         this.scope = sharedTransitionScopeImpl;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
-        this.foundMatch$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
-        this._targetData$delegate = mutableStateOf$default2;
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
-        this.currentBoundsWhenMatched$delegate = mutableStateOf$default3;
-        mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(0, null, 2, null);
-        this.targetBoundsProviderUpdateRequestId$delegate = mutableStateOf$default4;
-        this.states = SnapshotStateKt.mutableStateListOf();
-        this.updateMatch = new Function1<SharedElement, Unit>() { // from class: androidx.compose.animation.SharedElement$updateMatch$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(SharedElement sharedElement) {
-                invoke2(sharedElement);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(SharedElement sharedElement) {
-                SharedElement.this.updateMatch();
-            }
-        };
-        this.observingVisibilityChange = new Function0<Unit>() { // from class: androidx.compose.animation.SharedElement$observingVisibilityChange$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                SharedElement.this.hasVisibleContent();
-            }
-        };
     }
 
     public final Object getKey() {
@@ -100,256 +126,114 @@ public final class SharedElement {
         return this.scope;
     }
 
+    public final SharedTransitionStateMachine.State getState$animation() {
+        return this.stateMachine.getState();
+    }
+
+    public final List<SharedElementEntry> getEnabledEntries() {
+        return this._enabledEntries;
+    }
+
+    public final List<SharedElementEntry> getAllEntries() {
+        return this._allEntries;
+    }
+
     public final boolean isAnimating() {
-        SnapshotStateList<SharedElementInternalState> snapshotStateList = this.states;
-        int size = snapshotStateList.size();
-        int i = 0;
-        while (true) {
-            if (i >= size) {
-                break;
-            } else if (!snapshotStateList.get(i).getBoundsAnimation().isRunning()) {
-                i++;
-            } else if (getFoundMatch()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void updateMatch() {
-        boolean hasVisibleContent = hasVisibleContent();
-        if (this.states.size() > 1 && hasVisibleContent) {
-            setFoundMatch(true);
-        } else if (!this.scope.isTransitionActive()) {
-            setFoundMatch(false);
-        } else if (!hasVisibleContent) {
-            setFoundMatch(false);
-        }
-        if (!this.states.isEmpty()) {
-            this.scope.observeReads$animation(this, this.updateMatch, this.observingVisibilityChange);
-        }
-        invalidateTargetBoundsProvider();
-    }
-
-    private final void setFoundMatch(boolean z) {
-        this.foundMatch$delegate.setValue(Boolean.valueOf(z));
-    }
-
-    public final boolean getFoundMatch() {
-        return ((Boolean) this.foundMatch$delegate.getValue()).booleanValue();
-    }
-
-    public final TargetData getTargetData$animation() {
-        if (getFoundMatch()) {
-            return get_targetData();
-        }
-        return null;
-    }
-
-    public final void setTargetData$animation(TargetData targetData) {
-        if (getFoundMatch()) {
-            set_targetData(targetData);
-        }
-    }
-
-    private final TargetData get_targetData() {
-        return (TargetData) this._targetData$delegate.getValue();
-    }
-
-    private final void set_targetData(TargetData targetData) {
-        this._targetData$delegate.setValue(targetData);
-    }
-
-    public final Rect tryInitializingCurrentBounds() {
-        if (getFoundMatch()) {
-            updateTargetBoundsProvider();
-            if (getCurrentBoundsWhenMatched() == null) {
-                setCurrentBoundsWhenMatched(obtainBoundsFromLastTarget());
-            }
-            return getCurrentBoundsWhenMatched();
-        }
-        return null;
-    }
-
-    public final Rect getCurrentBoundsWhenMatched() {
-        return (Rect) this.currentBoundsWhenMatched$delegate.getValue();
-    }
-
-    public final void setCurrentBoundsWhenMatched(Rect rect) {
-        this.currentBoundsWhenMatched$delegate.setValue(rect);
-    }
-
-    public final BoundsProvider getLastTargetBoundsProvider$animation() {
-        return this.lastTargetBoundsProvider;
-    }
-
-    public final BoundsProvider getTargetBoundsProvider$animation() {
-        return this.targetBoundsProvider;
-    }
-
-    private final void setTargetBoundsProvider(BoundsProvider boundsProvider) {
-        if (!Intrinsics.areEqual(this.targetBoundsProvider, boundsProvider)) {
-            this.lastTargetBoundsProvider = this.targetBoundsProvider;
-        }
-        this.targetBoundsProvider = boundsProvider;
-    }
-
-    private final int getTargetBoundsProviderUpdateRequestId() {
-        return ((Number) this.targetBoundsProviderUpdateRequestId$delegate.getValue()).intValue();
-    }
-
-    private final void setTargetBoundsProviderUpdateRequestId(int i) {
-        this.targetBoundsProviderUpdateRequestId$delegate.setValue(Integer.valueOf(i));
-    }
-
-    private final void updateTargetBoundsProvider() {
-        SharedElementInternalState sharedElementInternalState;
-        if (getTargetBoundsProviderUpdateRequestId() != this.lastHandledTargetProviderUpdateRequestId) {
-            SnapshotStateList<SharedElementInternalState> snapshotStateList = this.states;
-            int size = snapshotStateList.size();
-            int i = 0;
-            while (true) {
-                if (i >= size) {
-                    sharedElementInternalState = null;
-                    break;
-                }
-                sharedElementInternalState = snapshotStateList.get(i);
-                if (sharedElementInternalState.getTarget()) {
-                    break;
-                }
-                i++;
-            }
-            SharedElementInternalState sharedElementInternalState2 = sharedElementInternalState;
-            if (sharedElementInternalState2 == null) {
-                sharedElementInternalState2 = (SharedElementInternalState) CollectionsKt.firstOrNull((List<? extends Object>) this.states);
-            }
-            BoundsProvider boundsProvider = sharedElementInternalState2 != null ? sharedElementInternalState2.getBoundsProvider() : null;
-            if (!Intrinsics.areEqual(boundsProvider, this.targetBoundsProvider)) {
-                this.lastTargetBoundsProvider = this.targetBoundsProvider;
-                setTargetBoundsProvider(boundsProvider);
-                this.targetBoundsProviderChanged = true;
-            }
-            if (boundsProvider == null) {
-                setTargetBoundsProvider(null);
-            }
-            this.lastHandledTargetProviderUpdateRequestId = getTargetBoundsProviderUpdateRequestId();
-        }
-    }
-
-    private final Rect obtainBoundsFromLastTarget() {
-        if (this.lastTargetBoundsProvider != null) {
-            SnapshotStateList<SharedElementInternalState> snapshotStateList = this.states;
-            int size = snapshotStateList.size();
-            for (int i = 0; i < size; i++) {
-                if (Intrinsics.areEqual(snapshotStateList.get(i).getBoundsProvider(), this.lastTargetBoundsProvider)) {
-                    BoundsProvider boundsProvider = this.lastTargetBoundsProvider;
-                    if (boundsProvider != null) {
-                        return boundsProvider.getLastBoundsInSharedTransitionScope();
-                    }
-                    return null;
-                }
-            }
-        }
-        return null;
-    }
-
-    public final void onLookaheadPlaced(Placeable.PlacementScope placementScope, SharedElementInternalState sharedElementInternalState) {
-        LayoutCoordinates coordinates;
-        long j;
-        long j2;
-        updateTargetBoundsProvider();
-        if (getFoundMatch() && sharedElementInternalState.getBoundsAnimation().getTarget() && (coordinates = placementScope.getCoordinates()) != null) {
-            long m8179toSizeozmzZPI = IntSizeKt.m8179toSizeozmzZPI(coordinates.mo6706getSizeYbymL2g());
-            long m6727localLookaheadPositionOfauaQtc$default = LookaheadScope.m6727localLookaheadPositionOfauaQtc$default(sharedElementInternalState.getSharedElement().scope, sharedElementInternalState.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 6, null);
-            SharedTransitionScopeImpl sharedTransitionScopeImpl = sharedElementInternalState.getSharedElement().scope;
-            long m6705localPositionOfS_NoaFU$default = LayoutCoordinates.m6705localPositionOfS_NoaFU$default(sharedElementInternalState.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 2, null);
-            TargetData targetData$animation = getTargetData$animation();
-            if (targetData$animation == null) {
-                j = m8179toSizeozmzZPI;
-                j2 = m6705localPositionOfS_NoaFU$default;
-                targetData$animation = new TargetData(j, Offset.m5040minusMKHz9U(m6727localLookaheadPositionOfauaQtc$default, m6705localPositionOfS_NoaFU$default), j2, null);
-            } else {
-                j = m8179toSizeozmzZPI;
-                j2 = m6705localPositionOfS_NoaFU$default;
-            }
-            if (!Offset.m5033equalsimpl0(targetData$animation.m144getTargetStructuralOffsetF1C5BW0(), j2) || !Size.m5101equalsimpl0(targetData$animation.m143getSizeNHjbRc(), j) || this.targetBoundsProviderChanged) {
-                targetData$animation.m147setSizeuvyYCjk(j);
-                targetData$animation.m148setTargetStructuralOffsetk4lQ0M(j2);
-                if (this.targetBoundsProviderChanged) {
-                    targetData$animation.m146setInitialMfrOffsetk4lQ0M(Offset.m5040minusMKHz9U(Offset.m5040minusMKHz9U(m6727localLookaheadPositionOfauaQtc$default, j2), Offset.m5040minusMKHz9U(targetData$animation.m141getCurrentMfrOffsetF1C5BW0(), targetData$animation.m142getInitialMfrOffsetF1C5BW0())));
-                }
-                if (getCurrentBoundsWhenMatched() == null) {
-                    Rect obtainBoundsFromLastTarget = obtainBoundsFromLastTarget();
-                    if (obtainBoundsFromLastTarget == null) {
-                        obtainBoundsFromLastTarget = RectKt.m5076Recttz77jQw(m6727localLookaheadPositionOfauaQtc$default, j);
-                    }
-                    setCurrentBoundsWhenMatched(obtainBoundsFromLastTarget);
-                }
-            }
-            targetData$animation.m145setCurrentMfrOffsetk4lQ0M(Offset.m5040minusMKHz9U(m6727localLookaheadPositionOfauaQtc$default, j2));
-            setTargetData$animation(targetData$animation);
-            this.targetBoundsProviderChanged = false;
-        }
-    }
-
-    public final SnapshotStateList<SharedElementInternalState> getStates() {
-        return this.states;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final boolean hasVisibleContent() {
-        SnapshotStateList<SharedElementInternalState> snapshotStateList = this.states;
-        int size = snapshotStateList.size();
+        List<SharedElementEntry> enabledEntries = getEnabledEntries();
+        int size = enabledEntries.size();
         for (int i = 0; i < size; i++) {
-            if (snapshotStateList.get(i).getBoundsAnimation().getTarget()) {
+            if (enabledEntries.get(i).getBoundsAnimation().isRunning()) {
                 return true;
             }
         }
         return false;
+    }
+
+    public final void updateMatch$animation() {
+        Function0<Unit> testBlockToRun = this.scope.getTestBlockToRun();
+        if (testBlockToRun != null) {
+            testBlockToRun.invoke();
+        }
+        CollectionsKt.removeAll((List) this._enabledEntries, (Function1) new Function1<SharedElementEntry, Boolean>() { // from class: androidx.compose.animation.SharedElement$updateMatch$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(SharedElementEntry sharedElementEntry) {
+                return Boolean.valueOf((SharedElement.this.getAllEntries().contains(sharedElementEntry) && sharedElementEntry.isEnabled()) ? false : true);
+            }
+        });
+        List<SharedElementEntry> allEntries = getAllEntries();
+        int size = allEntries.size();
+        for (int i = 0; i < size; i++) {
+            SharedElementEntry sharedElementEntry = allEntries.get(i);
+            if (sharedElementEntry.isEnabled() && !getEnabledEntries().contains(sharedElementEntry)) {
+                this._enabledEntries.add(sharedElementEntry);
+            }
+        }
+        this.stateMachine.checkForAndDeferStateUpdates(SharedElementKt.access$hasVisibleContent(this._enabledEntries));
+    }
+
+    /* renamed from: updateExitVelocity-TH1AsA0$animation  reason: not valid java name */
+    public final void m133updateExitVelocityTH1AsA0$animation(long j) {
+        BuildersKt__Builders_commonKt.launch$default(this.scope.getCoroutineScope(), null, null, new SharedElement$updateExitVelocity$1(this, j, null), 3, null);
+    }
+
+    public final Function0<Offset> getMomentumAnimationOffset() {
+        return this.momentumAnimationOffset;
     }
 
     public final void invalidateTargetBoundsProvider() {
-        SharedElementInternalState sharedElementInternalState;
-        Iterator<SharedElementInternalState> it = this.states.iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                sharedElementInternalState = null;
-                break;
-            }
-            sharedElementInternalState = it.next();
-            if (sharedElementInternalState.getTarget()) {
-                break;
-            }
-        }
-        SharedElementInternalState sharedElementInternalState2 = sharedElementInternalState;
-        if (sharedElementInternalState2 == null && this.targetBoundsProvider == null) {
-            return;
-        }
-        if (Intrinsics.areEqual(sharedElementInternalState2 != null ? sharedElementInternalState2.getBoundsProvider() : null, this.targetBoundsProvider)) {
-            return;
-        }
-        setTargetBoundsProviderUpdateRequestId(this.lastHandledTargetProviderUpdateRequestId + 1);
+        this.stateMachine.invalidateTargetBoundsProvider();
+    }
+
+    public final Rect tryInitializingCurrentBounds() {
+        return this.stateMachine.tryInitializingCurrentBounds();
     }
 
     public final void onSharedTransitionFinished() {
-        boolean z = true;
-        setFoundMatch((this.states.size() <= 1 || !hasVisibleContent()) ? false : false);
-        this.lastTargetBoundsProvider = null;
-        set_targetData(null);
+        if (getEnabledEntries().size() <= 1 || !SharedElementKt.access$hasVisibleContent(getEnabledEntries())) {
+            this.stateMachine.resetState();
+        }
     }
 
-    public final void addState(SharedElementInternalState sharedElementInternalState) {
-        this.states.add(sharedElementInternalState);
-        this.scope.observeReads$animation(this, this.updateMatch, this.observingVisibilityChange);
+    public final boolean getFoundMatch() {
+        return getState$animation().getActiveMatchFound() || getState$animation().getMatchIsOrHasBeenConfigured() || this.stateMachine.getActiveMatchDeferred();
     }
 
-    public final void removeState(SharedElementInternalState sharedElementInternalState) {
-        this.states.remove(sharedElementInternalState);
-        if (this.states.isEmpty()) {
-            updateMatch();
-            this.scope.clearObservation$animation(this);
+    public final boolean getBoundsTransformIsActive() {
+        return getState$animation().getMatchIsOrHasBeenConfigured();
+    }
+
+    public final void onLookaheadPlaced(Placeable.PlacementScope placementScope, SharedElementEntry sharedElementEntry) {
+        LayoutCoordinates coordinates;
+        this.stateMachine.processPendingRequest();
+        if (Intrinsics.areEqual(getState$animation(), NoMatchFound.INSTANCE) || !sharedElementEntry.isEnabled()) {
             return;
         }
-        this.scope.observeReads$animation(this, this.updateMatch, this.observingVisibilityChange);
+        SharedTransitionStateMachine.State state$animation = getState$animation();
+        if (sharedElementEntry.getBoundsAnimation().getTarget() && state$animation.getActiveMatchFound() && (coordinates = placementScope.getCoordinates()) != null) {
+            long m8441toSizeozmzZPI = IntSizeKt.m8441toSizeozmzZPI(coordinates.mo6883getSizeYbymL2g());
+            long m6905localLookaheadPositionOfauaQtc$default = LookaheadScope.m6905localLookaheadPositionOfauaQtc$default(sharedElementEntry.getSharedElement().scope, sharedElementEntry.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 6, null);
+            SharedTransitionScopeImpl sharedTransitionScopeImpl = sharedElementEntry.getSharedElement().scope;
+            this.stateMachine.m142configureActiveMatchL7TYDSY(m8441toSizeozmzZPI, m6905localLookaheadPositionOfauaQtc$default, LayoutCoordinates.m6882localPositionOfS_NoaFU$default(sharedElementEntry.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 2, null));
+        }
+    }
+
+    public final Function0<Unit> getObservingVisibilityChange$animation() {
+        return this.observingVisibilityChange;
+    }
+
+    public final void addEntry(SharedElementEntry sharedElementEntry) {
+        this._allEntries.add(sharedElementEntry);
+        updateMatch$animation();
+    }
+
+    public final void removeEntry(SharedElementEntry sharedElementEntry) {
+        this._allEntries.remove(sharedElementEntry);
+        this._enabledEntries.remove(sharedElementEntry);
+        updateMatch$animation();
     }
 }

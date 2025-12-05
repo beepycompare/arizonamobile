@@ -4,7 +4,7 @@ import android.media.metrics.LogSessionId;
 import android.os.Build;
 import androidx.media3.common.util.Assertions;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PlayerId {
     public static final PlayerId UNSET = new PlayerId("");
     private final Object equalityToken;
@@ -40,7 +40,7 @@ public final class PlayerId {
         ((LogSessionIdApi31) Assertions.checkNotNull(this.logSessionIdApi31)).setLogSessionId(logSessionId);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     private static final class LogSessionIdApi31 {
         public LogSessionId logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
 

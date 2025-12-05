@@ -8,11 +8,11 @@ public final class SnapshotApplyConflictException extends Exception {
     public static final int $stable = 8;
     private final Snapshot snapshot;
 
-    public final Snapshot getSnapshot() {
-        return this.snapshot;
-    }
-
     public SnapshotApplyConflictException(Snapshot snapshot) {
         this.snapshot = snapshot;
+    }
+
+    public final Snapshot getSnapshot() {
+        return this.snapshot;
     }
 }

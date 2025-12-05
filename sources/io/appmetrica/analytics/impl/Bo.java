@@ -6,16 +6,16 @@ import java.util.LinkedHashMap;
 public final class Bo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f416a;
+    public final Context f499a;
     public final LinkedHashMap b = new LinkedHashMap();
     public final xo c;
     public final xo d;
 
     public Bo(Context context) {
-        this.f416a = context;
-        C0164ca c0164ca = new C0164ca(context, "appmetrica_vital.dat");
-        this.c = new xo(C0471oa.k().y(), c0164ca);
-        this.d = new xo(new C0117af(C0471oa.k().B().e(context)), c0164ca);
+        this.f499a = context;
+        C0163ca c0163ca = new C0163ca(context, "appmetrica_vital.dat");
+        this.c = new xo(C0470oa.k().y(), c0163ca);
+        this.d = new xo(new C0116af(C0470oa.k().B().e(context)), c0163ca);
     }
 
     public final xo a() {

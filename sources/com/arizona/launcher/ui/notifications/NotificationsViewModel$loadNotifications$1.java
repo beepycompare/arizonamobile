@@ -1,15 +1,15 @@
 package com.arizona.launcher.ui.notifications;
 
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NotificationsViewModel.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel", f = "NotificationsViewModel.kt", i = {1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {LockFreeTaskQueueCore.CLOSED_SHIFT, 62, 68, TsExtractor.TS_SYNC_BYTE}, m = "loadNotifications", n = {"fromApi", "fromApi", "fromDb", "mergedList", "fromApi", "fromDb", "mergedList", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-NotificationsViewModel$loadNotifications$2"}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$5", "L$6", "I$0", "I$1"}, v = 1)
+@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel", f = "NotificationsViewModel.kt", i = {1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {61, RectListKt.BitOffsetForGesturable, 68, TsExtractor.TS_SYNC_BYTE}, m = "loadNotifications", n = {"fromApi", "fromApi", "fromDb", "mergedList", "fromApi", "fromDb", "mergedList", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-NotificationsViewModel$loadNotifications$2"}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$5", "L$6", "I$0", "I$1"}, v = 1)
 /* loaded from: classes3.dex */
 public final class NotificationsViewModel$loadNotifications$1 extends ContinuationImpl {
     int I$0;

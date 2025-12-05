@@ -11,9 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.compose.runtime.ComposerImplKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.internal.view.SupportMenu;
 import com.arizona.common.utils.EasyAnimation;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CancellationException;
@@ -48,12 +52,12 @@ import ru.mrlargha.feature.mobile.presentation.MobilePage;
 import ru.mrlargha.feature.mobile.presentation.MobilePhoneGetSubIds;
 import ru.mrlargha.feature.mobile.presentation.page.rent.adapters.ArizonaRentRealEstateAdapter;
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreateAdModel;
+import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentLimitModel;
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentRealEstateModel;
 /* compiled from: ArizonaRentAddPage.kt */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010 \n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 42\u00020\u0001:\u00014B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0016J\u0016\u0010 \u001a\u00020\u001b2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00180!H\u0002J\b\u0010\"\u001a\u00020\u001bH\u0016J\b\u0010#\u001a\u00020\u001bH\u0016J\b\u0010$\u001a\u00020\u001bH\u0002J\b\u0010%\u001a\u00020\u001bH\u0002J\b\u0010&\u001a\u00020\u001bH\u0002J\b\u0010'\u001a\u00020\u001bH\u0002J\b\u0010(\u001a\u00020\u001bH\u0002J\b\u0010)\u001a\u00020\u001bH\u0002J\b\u0010*\u001a\u00020\u000bH\u0002J\u0018\u0010+\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020\u000b2\u0006\u0010-\u001a\u00020.H\u0002J\b\u0010/\u001a\u00020\u0016H\u0002J\b\u00100\u001a\u00020\u001bH\u0002J\b\u00101\u001a\u000202H\u0002J\b\u00103\u001a\u00020\u001bH\u0002R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentAddPage;", "Lru/mrlargha/feature/mobile/presentation/MobilePage;", "<init>", "()V", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "binding", "Lru/mrlargha/feature/mobile/databinding/MpArizonaRentAddPageBinding;", "isFully", "", "inputFormat", "Lkotlin/Pair;", "", "inputFormatCost", "scope", "Lkotlinx/coroutines/CoroutineScope;", "adState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentCreateAdModel;", "adJob", "Lkotlinx/coroutines/Job;", "currentRealEstate", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentRealEstateModel;", "isFirstOpen", "sendEvent", "", "subId", "Lru/mrlargha/feature/mobile/presentation/MobilePhoneGetSubIds;", "data", "", "setAvailableRealEstateList", "", "hidePage", "renderPage", "initialize", "setDefaultPage", "setupListeners", "setDefaultButtons", "checkIsFully", "checkIsRoom", "checkToFrom", "isError", "showError", "customCardView", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "checkSelectedRealEstate", "setupControllers", "updateLimitData", "Lru/mrlargha/commonui/utils/ui/EditTextValidationBuilder;", "checkEditTexts", "Companion", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 72\u00020\u0001:\u00017B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0016J\u0010\u0010 \u001a\u00020\u001b2\u0006\u0010!\u001a\u00020\"H\u0002J\u0016\u0010#\u001a\u00020\u001b2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00180$H\u0002J\b\u0010%\u001a\u00020\u001bH\u0016J\b\u0010&\u001a\u00020\u001bH\u0016J\b\u0010'\u001a\u00020\u001bH\u0002J\b\u0010(\u001a\u00020\u001bH\u0002J\b\u0010)\u001a\u00020\u001bH\u0002J\b\u0010*\u001a\u00020\u001bH\u0002J\b\u0010+\u001a\u00020\u001bH\u0002J\b\u0010,\u001a\u00020\u001bH\u0002J\b\u0010-\u001a\u00020\u000bH\u0002J\u0018\u0010.\u001a\u00020\u001b2\u0006\u0010/\u001a\u00020\u000b2\u0006\u00100\u001a\u000201H\u0002J\b\u00102\u001a\u00020\u0016H\u0002J\b\u00103\u001a\u00020\u001bH\u0002J\b\u00104\u001a\u000205H\u0002J\b\u00106\u001a\u00020\u001bH\u0002R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00068"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentAddPage;", "Lru/mrlargha/feature/mobile/presentation/MobilePage;", "<init>", "()V", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "binding", "Lru/mrlargha/feature/mobile/databinding/MpArizonaRentAddPageBinding;", "isFully", "", "inputFormat", "Lkotlin/Pair;", "", "inputFormatCost", "scope", "Lkotlinx/coroutines/CoroutineScope;", "adState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentCreateAdModel;", "adJob", "Lkotlinx/coroutines/Job;", "currentRealEstate", "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentRealEstateModel;", "isFirstOpen", "sendEvent", "", "subId", "Lru/mrlargha/feature/mobile/presentation/MobilePhoneGetSubIds;", "data", "", "setLimits", CommonUrlParts.MODEL, "Lru/mrlargha/feature/mobile/presentation/page/rent/models/ArizonaRentLimitModel;", "setAvailableRealEstateList", "", "hidePage", "renderPage", "initialize", "setDefaultPage", "setupListeners", "setDefaultButtons", "checkIsFully", "checkIsRoom", "checkToFrom", "isError", "showError", "customCardView", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "checkSelectedRealEstate", "setupControllers", "updateLimitData", "Lru/mrlargha/commonui/utils/ui/EditTextValidationBuilder;", "checkEditTexts", "Companion", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ArizonaRentAddPage extends MobilePage {
-    public static final int MAX_CHAR_COUNT = 70;
     private Job adJob;
     private final MutableStateFlow<ArizonaRentCreateAdModel> adState;
     private final MpArizonaRentAddPageBinding binding;
@@ -65,10 +69,11 @@ public final class ArizonaRentAddPage extends MobilePage {
     private final CoroutineScope scope;
     private final View view;
     public static final Companion Companion = new Companion(null);
-    private static final Pair<Integer, Integer> DATA_INPUT_LIMIT_FULLY = TuplesKt.to(1, 90);
-    private static final Pair<Integer, Integer> DATA_INPUT_LIMIT_ROOM = TuplesKt.to(1, 720);
-    private static final Pair<Integer, Integer> DATA_INPUT_LIMIT_COST_FULLY = TuplesKt.to(200000, 50000000);
-    private static final Pair<Integer, Integer> DATA_INPUT_LIMIT_COST_ROOM = TuplesKt.to(10000, 1000000);
+    private static int MAX_CHAR_COUNT = 70;
+    private static Pair<Integer, Integer> DATA_INPUT_LIMIT_FULLY = TuplesKt.to(1, 90);
+    private static Pair<Integer, Integer> DATA_INPUT_LIMIT_ROOM = TuplesKt.to(1, 720);
+    private static Pair<Integer, Integer> DATA_INPUT_LIMIT_COST_FULLY = TuplesKt.to(200000, 50000000);
+    private static Pair<Integer, Integer> DATA_INPUT_LIMIT_COST_ROOM = TuplesKt.to(10000, 1000000);
 
     /* compiled from: ArizonaRentAddPage.kt */
     @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
@@ -81,6 +86,10 @@ public final class ArizonaRentAddPage extends MobilePage {
             try {
                 iArr[MobilePhoneGetSubIds.RENT_REAL_ESTATE_LIST.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[MobilePhoneGetSubIds.RENT_LIMIT.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -117,16 +126,32 @@ public final class ArizonaRentAddPage extends MobilePage {
     public void sendEvent(MobilePhoneGetSubIds subId, String data) {
         Intrinsics.checkNotNullParameter(subId, "subId");
         Intrinsics.checkNotNullParameter(data, "data");
-        if (WhenMappings.$EnumSwitchMapping$0[subId.ordinal()] == 1) {
+        int i = WhenMappings.$EnumSwitchMapping$0[subId.ordinal()];
+        if (i == 1) {
             setAvailableRealEstateList(MapperKt.toListModel(data, ArizonaRentRealEstateModel.class));
+        } else if (i != 2) {
+        } else {
+            if (MapperKt.isJsonValid(data)) {
+                setLimits((ArizonaRentLimitModel) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) ArizonaRentLimitModel.class));
+                return;
+            }
+            throw new JsonParseException("Json is not valid");
         }
+    }
+
+    private final void setLimits(ArizonaRentLimitModel arizonaRentLimitModel) {
+        MAX_CHAR_COUNT = arizonaRentLimitModel.getDescMax();
+        DATA_INPUT_LIMIT_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.getFullValueMin()), Integer.valueOf(arizonaRentLimitModel.getFullValueMax()));
+        DATA_INPUT_LIMIT_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.getRoomValueMin()), Integer.valueOf(arizonaRentLimitModel.getRoomValueMax()));
+        DATA_INPUT_LIMIT_COST_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m12465getFullostMin()), Integer.valueOf(arizonaRentLimitModel.getFullCostMax()));
+        DATA_INPUT_LIMIT_COST_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m12466getRoomostMin()), Integer.valueOf(arizonaRentLimitModel.getRoomCostMax()));
     }
 
     private final void setAvailableRealEstateList(List<ArizonaRentRealEstateModel> list) {
         MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding = this.binding;
         String string = getContext().getString(R.string.open_list);
         Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
-        ArizonaRentRealEstateModel arizonaRentRealEstateModel = new ArizonaRentRealEstateModel(0, string, 0, 0, 0, 0, 0, 125, null);
+        ArizonaRentRealEstateModel arizonaRentRealEstateModel = new ArizonaRentRealEstateModel(0, string, 0, 0, 0, 0, 0, ComposerImplKt.nodeKey, null);
         List mutableList = CollectionsKt.toMutableList((Collection) list);
         mutableList.add(arizonaRentRealEstateModel);
         mpArizonaRentAddPageBinding.spinnerRealEstate.setAdapter((SpinnerAdapter) new ArizonaRentRealEstateAdapter(getContext(), mutableList));
@@ -164,7 +189,7 @@ public final class ArizonaRentAddPage extends MobilePage {
         this.isFully = true;
         this.inputFormat = DATA_INPUT_LIMIT_FULLY;
         this.inputFormatCost = DATA_INPUT_LIMIT_COST_FULLY;
-        mpArizonaRentAddPageBinding.tvDescOutOf.setText(getContext().getString(R.string.out_of, new Object[]{0, 70}));
+        mpArizonaRentAddPageBinding.tvDescOutOf.setText(getContext().getString(R.string.out_of, new Object[]{0, Integer.valueOf(MAX_CHAR_COUNT)}));
         mpArizonaRentAddPageBinding.spinnerRealEstate.clearFocus();
         mpArizonaRentAddPageBinding.etDesc.setText((CharSequence) null);
         mpArizonaRentAddPageBinding.etFrom.setText((CharSequence) null);
@@ -312,15 +337,17 @@ public final class ArizonaRentAddPage extends MobilePage {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit setupListeners$lambda$0$3(final MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding, final ArizonaRentAddPage arizonaRentAddPage, Editable editable) {
         String valueOf = String.valueOf(editable);
-        if (valueOf.length() > 70) {
-            String take = StringsKt.take(valueOf, 70);
+        int length = valueOf.length();
+        int i = MAX_CHAR_COUNT;
+        if (length > i) {
+            String take = StringsKt.take(valueOf, i);
             mpArizonaRentAddPageBinding.etDesc.setText(take);
             mpArizonaRentAddPageBinding.etDesc.setSelection(take.length());
         }
-        if (String.valueOf(editable).length() != 0) {
-            mpArizonaRentAddPageBinding.tvDescOutOf.setText(arizonaRentAddPage.getContext().getString(R.string.out_of, new Object[]{Integer.valueOf(valueOf.length()), 70}));
+        if (String.valueOf(editable).length() == 0) {
+            mpArizonaRentAddPageBinding.tvDescOutOf.setText(arizonaRentAddPage.getContext().getString(R.string.out_of, new Object[]{0, Integer.valueOf(MAX_CHAR_COUNT)}));
         } else {
-            mpArizonaRentAddPageBinding.tvDescOutOf.setText(arizonaRentAddPage.getContext().getString(R.string.out_of, new Object[]{0, 70}));
+            mpArizonaRentAddPageBinding.tvDescOutOf.setText(arizonaRentAddPage.getContext().getString(R.string.out_of, new Object[]{Integer.valueOf(valueOf.length()), Integer.valueOf(MAX_CHAR_COUNT)}));
         }
         if (editable == null) {
             mpArizonaRentAddPageBinding.tvDesc.setText("");
@@ -533,7 +560,7 @@ public final class ArizonaRentAddPage extends MobilePage {
     }
 
     /* compiled from: ArizonaRentAddPage.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u001d\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001d\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\tR\u001d\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\tR\u001d\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\t¨\u0006\u0010"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentAddPage$Companion;", "", "<init>", "()V", "MAX_CHAR_COUNT", "", "DATA_INPUT_LIMIT_FULLY", "Lkotlin/Pair;", "getDATA_INPUT_LIMIT_FULLY", "()Lkotlin/Pair;", "DATA_INPUT_LIMIT_ROOM", "getDATA_INPUT_LIMIT_ROOM", "DATA_INPUT_LIMIT_COST_FULLY", "getDATA_INPUT_LIMIT_COST_FULLY", "DATA_INPUT_LIMIT_COST_ROOM", "getDATA_INPUT_LIMIT_COST_ROOM", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR&\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR&\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\r\"\u0004\b\u0012\u0010\u000fR&\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\r\"\u0004\b\u0015\u0010\u000fR&\u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\r\"\u0004\b\u0018\u0010\u000f¨\u0006\u0019"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent/ArizonaRentAddPage$Companion;", "", "<init>", "()V", "MAX_CHAR_COUNT", "", "getMAX_CHAR_COUNT", "()I", "setMAX_CHAR_COUNT", "(I)V", "DATA_INPUT_LIMIT_FULLY", "Lkotlin/Pair;", "getDATA_INPUT_LIMIT_FULLY", "()Lkotlin/Pair;", "setDATA_INPUT_LIMIT_FULLY", "(Lkotlin/Pair;)V", "DATA_INPUT_LIMIT_ROOM", "getDATA_INPUT_LIMIT_ROOM", "setDATA_INPUT_LIMIT_ROOM", "DATA_INPUT_LIMIT_COST_FULLY", "getDATA_INPUT_LIMIT_COST_FULLY", "setDATA_INPUT_LIMIT_COST_FULLY", "DATA_INPUT_LIMIT_COST_ROOM", "getDATA_INPUT_LIMIT_COST_ROOM", "setDATA_INPUT_LIMIT_COST_ROOM", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -543,20 +570,48 @@ public final class ArizonaRentAddPage extends MobilePage {
         private Companion() {
         }
 
+        public final int getMAX_CHAR_COUNT() {
+            return ArizonaRentAddPage.MAX_CHAR_COUNT;
+        }
+
+        public final void setMAX_CHAR_COUNT(int i) {
+            ArizonaRentAddPage.MAX_CHAR_COUNT = i;
+        }
+
         public final Pair<Integer, Integer> getDATA_INPUT_LIMIT_FULLY() {
             return ArizonaRentAddPage.DATA_INPUT_LIMIT_FULLY;
+        }
+
+        public final void setDATA_INPUT_LIMIT_FULLY(Pair<Integer, Integer> pair) {
+            Intrinsics.checkNotNullParameter(pair, "<set-?>");
+            ArizonaRentAddPage.DATA_INPUT_LIMIT_FULLY = pair;
         }
 
         public final Pair<Integer, Integer> getDATA_INPUT_LIMIT_ROOM() {
             return ArizonaRentAddPage.DATA_INPUT_LIMIT_ROOM;
         }
 
+        public final void setDATA_INPUT_LIMIT_ROOM(Pair<Integer, Integer> pair) {
+            Intrinsics.checkNotNullParameter(pair, "<set-?>");
+            ArizonaRentAddPage.DATA_INPUT_LIMIT_ROOM = pair;
+        }
+
         public final Pair<Integer, Integer> getDATA_INPUT_LIMIT_COST_FULLY() {
             return ArizonaRentAddPage.DATA_INPUT_LIMIT_COST_FULLY;
         }
 
+        public final void setDATA_INPUT_LIMIT_COST_FULLY(Pair<Integer, Integer> pair) {
+            Intrinsics.checkNotNullParameter(pair, "<set-?>");
+            ArizonaRentAddPage.DATA_INPUT_LIMIT_COST_FULLY = pair;
+        }
+
         public final Pair<Integer, Integer> getDATA_INPUT_LIMIT_COST_ROOM() {
             return ArizonaRentAddPage.DATA_INPUT_LIMIT_COST_ROOM;
+        }
+
+        public final void setDATA_INPUT_LIMIT_COST_ROOM(Pair<Integer, Integer> pair) {
+            Intrinsics.checkNotNullParameter(pair, "<set-?>");
+            ArizonaRentAddPage.DATA_INPUT_LIMIT_COST_ROOM = pair;
         }
     }
 }

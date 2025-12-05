@@ -15,16 +15,16 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 /* compiled from: Indication.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\u0010\u0000\u001a\u0004\u0018\u00010\u0004\"\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00040\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u000e\u0010\t\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000b\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"indication", "Landroidx/compose/ui/Modifier;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "Landroidx/compose/foundation/Indication;", "LocalIndication", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "getLocalIndication", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "RememberUpdatedInstanceDeprecationMessage", "", "IndicationInstanceDeprecationMessage", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\u0010\u0000\u001a\u0004\u0018\u00010\u0004\"\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00040\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u000e\u0010\t\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000b\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"indication", "Landroidx/compose/ui/Modifier;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "Landroidx/compose/foundation/Indication;", "LocalIndication", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "getLocalIndication", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "RememberUpdatedInstanceDeprecationMessage", "", "IndicationInstanceDeprecationMessage", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class IndicationKt {
     private static final String IndicationInstanceDeprecationMessage = "IndicationInstance has been deprecated along with the rememberUpdatedInstance that returns it. Indication implementations should instead use Modifier.Node APIs, and should be returned from IndicationNodeFactory#create. For a migration guide and background information, please visit developer.android.com";
     private static final ProvidableCompositionLocal<Indication> LocalIndication = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.IndicationKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Indication LocalIndication$lambda$1;
-            LocalIndication$lambda$1 = IndicationKt.LocalIndication$lambda$1();
-            return LocalIndication$lambda$1;
+            Indication LocalIndication$lambda$0;
+            LocalIndication$lambda$0 = IndicationKt.LocalIndication$lambda$0();
+            return LocalIndication$lambda$0;
         }
     }, 1, null);
     private static final String RememberUpdatedInstanceDeprecationMessage = "rememberUpdatedInstance has been deprecated - implementers should instead implement IndicationNodeFactory#create for improved performance and efficiency. Callers should check if the Indication is an IndicationNodeFactory, and call that API instead. For a migration guide and background information, please visit developer.android.com";
@@ -54,39 +54,42 @@ public final class IndicationKt {
                 inspectorInfo.getProperties().set("interactionSource", InteractionSource.this);
                 inspectorInfo.getProperties().set("indication", indication);
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function3<Modifier, Composer, Integer, Modifier>() { // from class: androidx.compose.foundation.IndicationKt$indication$2
+        } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.IndicationKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Modifier invoke(Modifier modifier2, Composer composer, Integer num) {
-                return invoke(modifier2, composer, num.intValue());
-            }
-
-            public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
-                composer.startReplaceGroup(-353972293);
-                ComposerKt.sourceInformation(composer, "C177@8952L42,178@9007L51:Indication.kt#71ulvw");
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-353972293, i, -1, "androidx.compose.foundation.indication.<anonymous> (Indication.kt:176)");
-                }
-                IndicationInstance rememberUpdatedInstance = Indication.this.rememberUpdatedInstance(interactionSource, composer, 0);
-                ComposerKt.sourceInformationMarkerStart(composer, -864952722, "CC(remember):Indication.kt#9igjgp");
-                boolean changed = composer.changed(rememberUpdatedInstance);
-                Object rememberedValue = composer.rememberedValue();
-                if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = new IndicationModifier(rememberUpdatedInstance);
-                    composer.updateRememberedValue(rememberedValue);
-                }
-                IndicationModifier indicationModifier = (IndicationModifier) rememberedValue;
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
-                composer.endReplaceGroup();
-                return indicationModifier;
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Modifier indication$lambda$1;
+                indication$lambda$1 = IndicationKt.indication$lambda$1(Indication.this, interactionSource, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return indication$lambda$1;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Indication LocalIndication$lambda$1() {
+    public static final Modifier indication$lambda$1(Indication indication, InteractionSource interactionSource, Modifier modifier, Composer composer, int i) {
+        composer.startReplaceGroup(-353972293);
+        ComposerKt.sourceInformation(composer, "C177@8952L42,178@9007L51:Indication.kt#71ulvw");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-353972293, i, -1, "androidx.compose.foundation.indication.<anonymous> (Indication.kt:176)");
+        }
+        IndicationInstance rememberUpdatedInstance = indication.rememberUpdatedInstance(interactionSource, composer, 0);
+        ComposerKt.sourceInformationMarkerStart(composer, -864952722, "CC(remember):Indication.kt#9igjgp");
+        boolean changed = composer.changed(rememberUpdatedInstance);
+        Object rememberedValue = composer.rememberedValue();
+        if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = new IndicationModifier(rememberUpdatedInstance);
+            composer.updateRememberedValue(rememberedValue);
+        }
+        IndicationModifier indicationModifier = (IndicationModifier) rememberedValue;
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        composer.endReplaceGroup();
+        return indicationModifier;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Indication LocalIndication$lambda$0() {
         return DefaultDebugIndication.INSTANCE;
     }
 

@@ -33,7 +33,7 @@ public interface FlowLineMeasurePolicy extends RowColumnMeasurePolicy {
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy
     /* renamed from: createConstraints-xF2OJ5Q */
-    default long mo737createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+    default long mo817createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
         if (isHorizontal()) {
             return RowKt.createRowConstraints(z, i, i2, i3, i4);
         }
@@ -61,15 +61,15 @@ public interface FlowLineMeasurePolicy extends RowColumnMeasurePolicy {
         return MeasureScope.layout$default(measureScope, i8, i7, null, new Function1() { // from class: androidx.compose.foundation.layout.FlowLineMeasurePolicy$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit placeHelper$lambda$1$lambda$0;
-                placeHelper$lambda$1$lambda$0 = FlowLineMeasurePolicy.placeHelper$lambda$1$lambda$0(iArr2, i4, i5, i6, placeableArr, this, i3, layoutDirection2, i, iArr, (Placeable.PlacementScope) obj);
-                return placeHelper$lambda$1$lambda$0;
+                Unit placeHelper$lambda$0$0;
+                placeHelper$lambda$0$0 = FlowLineMeasurePolicy.placeHelper$lambda$0$0(iArr2, i4, i5, i6, placeableArr, this, i3, layoutDirection2, i, iArr, (Placeable.PlacementScope) obj);
+                return placeHelper$lambda$0$0;
             }
         }, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    static Unit placeHelper$lambda$1$lambda$0(int[] iArr, int i, int i2, int i3, Placeable[] placeableArr, FlowLineMeasurePolicy flowLineMeasurePolicy, int i4, LayoutDirection layoutDirection, int i5, int[] iArr2, Placeable.PlacementScope placementScope) {
+    static Unit placeHelper$lambda$0$0(int[] iArr, int i, int i2, int i3, Placeable[] placeableArr, FlowLineMeasurePolicy flowLineMeasurePolicy, int i4, LayoutDirection layoutDirection, int i5, int[] iArr2, Placeable.PlacementScope placementScope) {
         int i6 = iArr != null ? iArr[i] : 0;
         for (int i7 = i2; i7 < i3; i7++) {
             Placeable placeable = placeableArr[i7];
@@ -90,7 +90,7 @@ public interface FlowLineMeasurePolicy extends RowColumnMeasurePolicy {
         if (rowColumnParentData == null || (crossAxisAlignment = rowColumnParentData.getCrossAxisAlignment()) == null) {
             crossAxisAlignment = getCrossAxisAlignment();
         }
-        return crossAxisAlignment.align$foundation_layout(i - crossAxisSize(placeable), layoutDirection, placeable, i2);
+        return crossAxisAlignment.align$foundation_layout(i, layoutDirection, placeable, i2);
     }
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy

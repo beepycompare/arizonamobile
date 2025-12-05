@@ -998,6 +998,7 @@ public abstract class Transition implements Cloneable {
         ArrayMap<Animator, AnimationInfo> runningAnimators = getRunningAnimators();
         int size = runningAnimators.size();
         WindowId windowId = viewGroup.getWindowId();
+        ArrayList arrayList = new ArrayList();
         for (int i = size - 1; i >= 0; i--) {
             Animator keyAt = runningAnimators.keyAt(i);
             if (keyAt != null && (animationInfo = runningAnimators.get(keyAt)) != null && animationInfo.mView != null && windowId.equals(animationInfo.mWindowId)) {
@@ -1013,20 +1014,24 @@ public abstract class Transition implements Cloneable {
                     if (transition.getRootTransition().mSeekController != null) {
                         keyAt.cancel();
                         transition.mCurrentAnimators.remove(keyAt);
-                        runningAnimators.remove(keyAt);
+                        runningAnimators.removeAt(i);
                         if (transition.mCurrentAnimators.size() == 0) {
-                            transition.notifyListeners(TransitionNotification.ON_CANCEL, false);
-                            if (!transition.mEnded) {
-                                transition.mEnded = true;
-                                transition.notifyListeners(TransitionNotification.ON_END, false);
-                            }
+                            arrayList.add(transition);
                         }
                     } else if (keyAt.isRunning() || keyAt.isStarted()) {
                         keyAt.cancel();
                     } else {
-                        runningAnimators.remove(keyAt);
+                        runningAnimators.removeAt(i);
                     }
                 }
+            }
+        }
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            Transition transition2 = (Transition) arrayList.get(i2);
+            transition2.notifyListeners(TransitionNotification.ON_CANCEL, false);
+            if (!transition2.mEnded) {
+                transition2.mEnded = true;
+                transition2.notifyListeners(TransitionNotification.ON_END, false);
             }
         }
         createAnimators(viewGroup, this.mStartValues, this.mEndValues, this.mStartValuesList, this.mEndValuesList);
@@ -1241,7 +1246,7 @@ public abstract class Transition implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public Transition mo9044clone() {
+    public Transition mo9308clone() {
         try {
             Transition transition = (Transition) super.clone();
             transition.mAnimators = new ArrayList<>();
@@ -1482,6 +1487,9 @@ public abstract class Transition implements Cloneable {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes3.dex */
     public class SeekController extends TransitionListenerAdapter implements TransitionSeekController, DynamicAnimation.OnAnimationUpdateListener {
+        private static final int ON_READY_ANIMATE_TO_END = 1;
+        private static final int ON_READY_ANIMATE_TO_START = 2;
+        private static final int ON_READY_NOTHING = 0;
         private boolean mIsCanceled;
         private boolean mIsReady;
         private Runnable mResetToStartState;
@@ -1489,6 +1497,7 @@ public abstract class Transition implements Cloneable {
         private long mCurrentPlayTime = -1;
         private ArrayList<Consumer<TransitionSeekController>> mOnReadyListeners = null;
         private ArrayList<Consumer<TransitionSeekController>> mOnProgressListeners = null;
+        private int mOnReady = 0;
         private Consumer<TransitionSeekController>[] mListenerCache = null;
         private final VelocityTracker1D mVelocityTracker = new VelocityTracker1D();
 
@@ -1525,6 +1534,14 @@ public abstract class Transition implements Cloneable {
                 }
             }
             callProgressListeners();
+            int i2 = this.mOnReady;
+            if (i2 == 1) {
+                this.mOnReady = 0;
+                animateToEnd();
+            } else if (i2 == 2) {
+                this.mOnReady = 0;
+                animateToStart(this.mResetToStartState);
+            }
         }
 
         @Override // androidx.transition.TransitionSeekController
@@ -1623,14 +1640,14 @@ public abstract class Transition implements Cloneable {
             this.mSpringAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: androidx.transition.Transition$SeekController$$ExternalSyntheticLambda0
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                 public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                    Transition.SeekController.this.m9045x76b2d240(dynamicAnimation, z, f, f2);
+                    Transition.SeekController.this.m9309x76b2d240(dynamicAnimation, z, f, f2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$ensureAnimation$0$androidx-transition-Transition$SeekController  reason: not valid java name */
-        public /* synthetic */ void m9045x76b2d240(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        public /* synthetic */ void m9309x76b2d240(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
             if (z) {
                 return;
             }
@@ -1658,6 +1675,11 @@ public abstract class Transition implements Cloneable {
 
         @Override // androidx.transition.TransitionSeekController
         public void animateToEnd() {
+            if (!this.mIsReady) {
+                this.mOnReady = 1;
+                this.mResetToStartState = null;
+                return;
+            }
             ensureAnimation();
             this.mSpringAnimation.animateToFinalPosition((float) (getDurationMillis() + 1));
         }
@@ -1665,6 +1687,10 @@ public abstract class Transition implements Cloneable {
         @Override // androidx.transition.TransitionSeekController
         public void animateToStart(Runnable runnable) {
             this.mResetToStartState = runnable;
+            if (!this.mIsReady) {
+                this.mOnReady = 2;
+                return;
+            }
             ensureAnimation();
             this.mSpringAnimation.animateToFinalPosition(0.0f);
         }

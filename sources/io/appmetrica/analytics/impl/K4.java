@@ -10,7 +10,7 @@ import java.util.Iterator;
 public final class K4 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f549a = "sessions";
+    public final String f632a = "sessions";
     public final int b = 200;
     public final String c = "id";
     public final String d = "start_time";
@@ -18,9 +18,9 @@ public final class K4 extends DatabaseScript {
     public final String f = "server_time_offset";
     public final String g = "type";
     public final String h = "obtained_before_first_sync";
-    public final C0617u7 i = new C0617u7(null, 1, null);
+    public final C0616u7 i = new C0616u7(null, 1, null);
 
-    public final C0592t7 a(Cursor cursor) {
+    public final C0591t7 a(Cursor cursor) {
         try {
             Long valueOf = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.c)));
             int i = cursor.getInt(cursor.getColumnIndexOrThrow(this.g));
@@ -38,7 +38,7 @@ public final class K4 extends DatabaseScript {
             if (cursor.getInt(cursor.getColumnIndexOrThrow(this.h)) != 1) {
                 z = false;
             }
-            return new C0592t7(valueOf, wk, string, new C0567s7(valueOf2, valueOf3, Boolean.valueOf(z)));
+            return new C0591t7(valueOf, wk, string, new C0566s7(valueOf2, valueOf3, Boolean.valueOf(z)));
         } catch (Throwable unused) {
             return null;
         }
@@ -64,11 +64,11 @@ public final class K4 extends DatabaseScript {
             sQLiteDatabase2 = sQLiteDatabase;
         }
         try {
-            cursor = sQLiteDatabase2.query(this.f549a, null, null, null, null, null, null, String.valueOf(this.b));
+            cursor = sQLiteDatabase2.query(this.f632a, null, null, null, null, null, null, String.valueOf(this.b));
             while (cursor.moveToNext()) {
                 try {
-                    C0592t7 a2 = a(cursor);
-                    if (a2 != null && (l = a2.f1130a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f1115a) != null && l2.longValue() > 0) {
+                    C0591t7 a2 = a(cursor);
+                    if (a2 != null && (l = a2.f1213a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f1198a) != null && l2.longValue() > 0) {
                         arrayList.add(this.i.fromModel(a2));
                     }
                 } catch (Throwable unused2) {
@@ -78,7 +78,7 @@ public final class K4 extends DatabaseScript {
             cursor = null;
         }
         cursor.close();
-        sQLiteDatabase2.execSQL("DROP TABLE IF EXISTS " + this.f549a);
+        sQLiteDatabase2.execSQL("DROP TABLE IF EXISTS " + this.f632a);
         sQLiteDatabase2.execSQL("CREATE TABLE IF NOT EXISTS sessions (id INTEGER,type INTEGER,report_request_parameters TEXT,session_description BLOB )");
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {

@@ -79,9 +79,9 @@ final class FloatingActionButtonKt$ExtendedFloatingActionButton$5 implements Fun
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult invoke$lambda$4$lambda$3(float f, State state, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        int lerp = MathHelpersKt.lerp(measureScope.mo424roundToPx0680j_4(f), measurable.maxIntrinsicWidth(Constraints.m7948getMaxHeightimpl(constraints.m7955unboximpl())), ((Number) state.getValue()).floatValue());
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(constraints.m7955unboximpl());
-        return MeasureScope.layout$default(measureScope, lerp, mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$5$$ExternalSyntheticLambda4
+        int lerp = MathHelpersKt.lerp(measureScope.mo458roundToPx0680j_4(f), measurable.maxIntrinsicWidth(Constraints.m8210getMaxHeightimpl(constraints.m8217unboximpl())), ((Number) state.getValue()).floatValue());
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(constraints.m8217unboximpl());
+        return MeasureScope.layout$default(measureScope, lerp, mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$5$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit invoke$lambda$4$lambda$3$lambda$2;
@@ -234,7 +234,7 @@ final class FloatingActionButtonKt$ExtendedFloatingActionButton$5 implements Fun
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m847paddingqDBjuR0$default = PaddingKt.m847paddingqDBjuR0$default(SizeKt.m899sizeInqDBjuR0$default(LayoutModifierKt.layout(companion, (Function3) rememberedValue), this.$minWidth, this.$minHeight, 0.0f, 0.0f, 12, null), this.$startPadding, 0.0f, this.$endPadding, 0.0f, 10, null);
+        Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(SizeKt.m980sizeInqDBjuR0$default(LayoutModifierKt.layout(companion, (Function3) rememberedValue), this.$minWidth, this.$minHeight, 0.0f, 0.0f, 12, null), this.$startPadding, 0.0f, this.$endPadding, 0.0f, 10, null);
         Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
         Function2<Composer, Integer, Unit> function2 = this.$icon;
         float f2 = this.$iconPadding;
@@ -244,7 +244,7 @@ final class FloatingActionButtonKt$ExtendedFloatingActionButton$5 implements Fun
         ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
-        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m847paddingqDBjuR0$default);
+        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m932paddingqDBjuR0$default);
         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
         ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
         if (!(composer.getApplier() instanceof Applier)) {
@@ -256,15 +256,15 @@ final class FloatingActionButtonKt$ExtendedFloatingActionButton$5 implements Fun
         } else {
             composer.useNode();
         }
-        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-        Updater.m4605setimpl(m4598constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+        Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -407735110, "C101@5232L9:Row.kt#2w3rfo");
         RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 65394718, "C485@22454L6,487@22510L196:FloatingActionButton.kt#uh7d8r");
@@ -336,19 +336,19 @@ final class FloatingActionButtonKt$ExtendedFloatingActionButton$5 implements Fun
             } else {
                 composer.useNode();
             }
-            Composer m4598constructorimpl2 = Updater.m4598constructorimpl(composer);
-            Updater.m4605setimpl(m4598constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4673constructorimpl2 = Updater.m4673constructorimpl(composer);
+            Updater.m4681setimpl(m4673constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl2.getInserting() || !Intrinsics.areEqual(m4598constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4598constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4598constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4605setimpl(m4598constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -545340570, "C497@22941L35,498@22997L6:FloatingActionButton.kt#uh7d8r");
-            SpacerKt.Spacer(SizeKt.m900width3ABfNKs(Modifier.Companion, f2), composer, 0);
+            SpacerKt.Spacer(SizeKt.m981width3ABfNKs(Modifier.Companion, f2), composer, 0);
             function22.invoke(composer, 0);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);

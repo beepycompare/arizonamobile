@@ -26,7 +26,7 @@ public abstract class FlowLayoutOverflow {
     /* compiled from: FlowLayoutOverflow.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -110,6 +110,14 @@ public abstract class FlowLayoutOverflow {
             return $ENTRIES;
         }
 
+        public static OverflowType valueOf(String str) {
+            return (OverflowType) Enum.valueOf(OverflowType.class, str);
+        }
+
+        public static OverflowType[] values() {
+            return (OverflowType[]) $VALUES.clone();
+        }
+
         private OverflowType(String str, int i) {
         }
 
@@ -117,14 +125,6 @@ public abstract class FlowLayoutOverflow {
             OverflowType[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
-        }
-
-        public static OverflowType valueOf(String str) {
-            return (OverflowType) Enum.valueOf(OverflowType.class, str);
-        }
-
-        public static OverflowType[] values() {
-            return (OverflowType[]) $VALUES.clone();
         }
     }
 }

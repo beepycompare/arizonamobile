@@ -7,7 +7,7 @@ import androidx.media3.common.Timeline;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PlayerMessage {
     private final Clock clock;
     private boolean isCanceled;
@@ -24,12 +24,12 @@ public final class PlayerMessage {
     private long positionMs = C.TIME_UNSET;
     private boolean deleteAfterDelivery = true;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface Sender {
         void sendMessage(PlayerMessage playerMessage);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface Target {
         void handleMessage(int i, Object obj) throws ExoPlaybackException;
     }

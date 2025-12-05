@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidPlatformTextInputSession.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.platform.AndroidPlatformTextInputSession", f = "AndroidPlatformTextInputSession.android.kt", i = {}, l = {TsExtractor.TS_SYNC_BYTE}, m = "startInputMethod", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.ui.platform.AndroidPlatformTextInputSession", f = "AndroidPlatformTextInputSession.android.kt", i = {}, l = {TsExtractor.TS_SYNC_BYTE}, m = "startInputMethod", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class AndroidPlatformTextInputSession$startInputMethod$1 extends ContinuationImpl {
     int label;

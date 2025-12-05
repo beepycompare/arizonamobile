@@ -2,11 +2,16 @@ package androidx.compose.foundation.text.contextmenu.internal;
 
 import android.view.View;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
+import androidx.compose.foundation.layout.BoxKt;
+import androidx.compose.foundation.layout.BoxScopeInstance;
 import androidx.compose.foundation.text.contextmenu.provider.TextContextMenuProvider;
 import androidx.compose.foundation.text.contextmenu.provider.TextContextMenuProviderKt;
+import androidx.compose.runtime.Applier;
+import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalKt;
+import androidx.compose.runtime.CompositionLocalMap;
 import androidx.compose.runtime.DisposableEffectResult;
 import androidx.compose.runtime.DisposableEffectScope;
 import androidx.compose.runtime.EffectsKt;
@@ -15,9 +20,15 @@ import androidx.compose.runtime.ProvidedValue;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.SnapshotStateKt;
+import androidx.compose.runtime.Updater;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
+import androidx.compose.ui.Alignment;
+import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.layout.LayoutCoordinates;
+import androidx.compose.ui.layout.MeasurePolicy;
+import androidx.compose.ui.layout.OnGloballyPositionedModifierKt;
+import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -28,7 +39,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: AndroidTextContextMenuToolbarProvider.android.kt */
-@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u0007\u001a@\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0014\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t2\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u000b\u001a3\u0010\f\u001a\u00020\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000f0\u00052\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n\u0018\u00010\tH\u0001¢\u0006\u0002\u0010\u0010¨\u0006\u0011²\u0006\f\u0010\u0012\u001a\u0004\u0018\u00010\u000fX\u008a\u008e\u0002"}, d2 = {"ProvidePlatformTextContextMenuToolbar", "", "modifier", "Landroidx/compose/ui/Modifier;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "callbackInjector", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/contextmenu/internal/TextActionModeCallback;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "platformTextContextMenuToolbarProvider", "Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuProvider;", "coordinatesProvider", "Landroidx/compose/ui/layout/LayoutCoordinates;", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuProvider;", "foundation_release", "layoutCoordinates"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u0007\u001a@\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0014\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t2\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u000b\u001a3\u0010\f\u001a\u00020\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000f0\u00052\u0016\b\u0002\u0010\b\u001a\u0010\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n\u0018\u00010\tH\u0001¢\u0006\u0002\u0010\u0010¨\u0006\u0011²\u0006\f\u0010\u0012\u001a\u0004\u0018\u00010\u000fX\u008a\u008e\u0002"}, d2 = {"ProvidePlatformTextContextMenuToolbar", "", "modifier", "Landroidx/compose/ui/Modifier;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "callbackInjector", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/contextmenu/internal/TextActionModeCallback;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "platformTextContextMenuToolbarProvider", "Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuProvider;", "coordinatesProvider", "Landroidx/compose/ui/layout/LayoutCoordinates;", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuProvider;", "foundation", "layoutCoordinates"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AndroidTextContextMenuToolbarProvider_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -56,9 +67,7 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
         } else {
             i3 = i;
         }
-        if ((i2 & 2) != 0) {
-            i3 |= 48;
-        } else if ((i & 48) == 0) {
+        if ((i & 48) == 0) {
             i3 |= startRestartGroup.changedInstance(function2) ? 32 : 16;
         }
         if (!startRestartGroup.shouldExecute((i3 & 19) != 18, i3 & 1)) {
@@ -92,7 +101,7 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
         }
     }
 
-    public static final void ProvidePlatformTextContextMenuToolbar(Modifier modifier, final Function1<? super TextActionModeCallback, ? extends TextActionModeCallback> function1, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void ProvidePlatformTextContextMenuToolbar(final Modifier modifier, final Function1<? super TextActionModeCallback, ? extends TextActionModeCallback> function1, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(771959668);
         ComposerKt.sourceInformation(startRestartGroup, "C(ProvidePlatformTextContextMenuToolbar)N(modifier,callbackInjector,content)84@3717L270,92@4090L47,91@4016L181,96@4283L189,96@4203L269:AndroidTextContextMenuToolbarProvider.android.kt#18dpbw");
@@ -104,14 +113,10 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
         } else {
             i3 = i;
         }
-        if ((i2 & 2) != 0) {
-            i3 |= 48;
-        } else if ((i & 48) == 0) {
+        if ((i & 48) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 32 : 16;
         }
-        if ((i2 & 4) != 0) {
-            i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-        } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changedInstance(function2) ? 256 : 128;
         }
         if (!startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
@@ -123,7 +128,7 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(771959668, i3, -1, "androidx.compose.foundation.text.contextmenu.internal.ProvidePlatformTextContextMenuToolbar (AndroidTextContextMenuToolbarProvider.android.kt:83)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1176092510, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1176093790, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
@@ -131,21 +136,28 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
             }
             final MutableState mutableState = (MutableState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1176080797, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1176082077, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = new Function0() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda2
+                rememberedValue2 = new Function0() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        LayoutCoordinates ProvidePlatformTextContextMenuToolbar$lambda$5$lambda$4;
-                        ProvidePlatformTextContextMenuToolbar$lambda$5$lambda$4 = AndroidTextContextMenuToolbarProvider_androidKt.ProvidePlatformTextContextMenuToolbar$lambda$5$lambda$4(MutableState.this);
-                        return ProvidePlatformTextContextMenuToolbar$lambda$5$lambda$4;
+                        LayoutCoordinates ProvidePlatformTextContextMenuToolbar$lambda$4$0;
+                        ProvidePlatformTextContextMenuToolbar$lambda$4$0 = AndroidTextContextMenuToolbarProvider_androidKt.ProvidePlatformTextContextMenuToolbar$lambda$4$0(MutableState.this);
+                        return ProvidePlatformTextContextMenuToolbar$lambda$4$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CompositionLocalKt.CompositionLocalProvider(TextContextMenuProviderKt.getLocalTextContextMenuToolbarProvider().provides(platformTextContextMenuToolbarProvider((Function0) rememberedValue2, function1, startRestartGroup, (i3 & 112) | 6, 0)), ComposableLambdaKt.rememberComposableLambda(-291176396, true, new AndroidTextContextMenuToolbarProvider_androidKt$ProvidePlatformTextContextMenuToolbar$2(modifier, mutableState, function2), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
+            CompositionLocalKt.CompositionLocalProvider(TextContextMenuProviderKt.getLocalTextContextMenuToolbarProvider().provides(platformTextContextMenuToolbarProvider((Function0) rememberedValue2, function1, startRestartGroup, (i3 & 112) | 6, 0)), ComposableLambdaKt.rememberComposableLambda(-291176396, true, new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda4
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ProvidePlatformTextContextMenuToolbar$lambda$5;
+                    ProvidePlatformTextContextMenuToolbar$lambda$5 = AndroidTextContextMenuToolbarProvider_androidKt.ProvidePlatformTextContextMenuToolbar$lambda$5(Modifier.this, mutableState, function2, (Composer) obj, ((Integer) obj2).intValue());
+                    return ProvidePlatformTextContextMenuToolbar$lambda$5;
+                }
+            }, startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -153,7 +165,7 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
         final Modifier modifier2 = modifier;
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda3
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     Unit ProvidePlatformTextContextMenuToolbar$lambda$6;
@@ -169,13 +181,83 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LayoutCoordinates ProvidePlatformTextContextMenuToolbar$lambda$5$lambda$4(MutableState mutableState) {
+    public static final LayoutCoordinates ProvidePlatformTextContextMenuToolbar$lambda$4$0(MutableState mutableState) {
         LayoutCoordinates ProvidePlatformTextContextMenuToolbar$lambda$2 = ProvidePlatformTextContextMenuToolbar$lambda$2(mutableState);
         if (ProvidePlatformTextContextMenuToolbar$lambda$2 != null) {
             return ProvidePlatformTextContextMenuToolbar$lambda$2;
         }
         InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Required value was null.");
         throw new KotlinNothingValueException();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ProvidePlatformTextContextMenuToolbar$lambda$5(Modifier modifier, final MutableState mutableState, Function2 function2, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C99@4395L26,97@4293L173:AndroidTextContextMenuToolbarProvider.android.kt#18dpbw");
+        if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-291176396, i, -1, "androidx.compose.foundation.text.contextmenu.internal.ProvidePlatformTextContextMenuToolbar.<anonymous> (AndroidTextContextMenuToolbarProvider.android.kt:97)");
+            }
+            ComposerKt.sourceInformationMarkerStart(composer, -647638706, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
+            Object rememberedValue = composer.rememberedValue();
+            if (rememberedValue == Composer.Companion.getEmpty()) {
+                rememberedValue = new Function1() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        Unit ProvidePlatformTextContextMenuToolbar$lambda$5$0$0;
+                        ProvidePlatformTextContextMenuToolbar$lambda$5$0$0 = AndroidTextContextMenuToolbarProvider_androidKt.ProvidePlatformTextContextMenuToolbar$lambda$5$0$0(MutableState.this, (LayoutCoordinates) obj);
+                        return ProvidePlatformTextContextMenuToolbar$lambda$5$0$0;
+                    }
+                };
+                composer.updateRememberedValue(rememberedValue);
+            }
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            Modifier onGloballyPositioned = OnGloballyPositionedModifierKt.onGloballyPositioned(modifier, (Function1) rememberedValue);
+            ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
+            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
+            CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, onGloballyPositioned);
+            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            if (!(composer.getApplier() instanceof Applier)) {
+                ComposablesKt.invalidApplier();
+            }
+            composer.startReusableNode();
+            if (composer.getInserting()) {
+                composer.createNode(constructor);
+            } else {
+                composer.useNode();
+            }
+            Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
+            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
+            ComposerKt.sourceInformationMarkerStart(composer, -1683055520, "C101@4447L9:AndroidTextContextMenuToolbarProvider.android.kt#18dpbw");
+            function2.invoke(composer, 0);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            composer.endNode();
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ProvidePlatformTextContextMenuToolbar$lambda$5$0$0(MutableState mutableState, LayoutCoordinates layoutCoordinates) {
+        mutableState.setValue(layoutCoordinates);
+        return Unit.INSTANCE;
     }
 
     public static final TextContextMenuProvider platformTextContextMenuToolbarProvider(Function0<? extends LayoutCoordinates> function0, Function1<? super TextActionModeCallback, ? extends TextActionModeCallback> function1, Composer composer, int i, int i2) {
@@ -190,7 +272,7 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalView());
         ComposerKt.sourceInformationMarkerEnd(composer);
         View view = (View) consume;
-        ComposerKt.sourceInformationMarkerStart(composer, 82125117, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 82124445, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
         boolean changed = composer.changed(view);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -199,16 +281,16 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
         }
         final AndroidTextContextMenuToolbarProvider androidTextContextMenuToolbarProvider = (AndroidTextContextMenuToolbarProvider) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 82129997, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 82129325, "CC(remember):AndroidTextContextMenuToolbarProvider.android.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(androidTextContextMenuToolbarProvider);
         Object rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
-            rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda1
+            rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult platformTextContextMenuToolbarProvider$lambda$10$lambda$9;
-                    platformTextContextMenuToolbarProvider$lambda$10$lambda$9 = AndroidTextContextMenuToolbarProvider_androidKt.platformTextContextMenuToolbarProvider$lambda$10$lambda$9(AndroidTextContextMenuToolbarProvider.this, (DisposableEffectScope) obj);
-                    return platformTextContextMenuToolbarProvider$lambda$10$lambda$9;
+                    DisposableEffectResult platformTextContextMenuToolbarProvider$lambda$1$0;
+                    platformTextContextMenuToolbarProvider$lambda$1$0 = AndroidTextContextMenuToolbarProvider_androidKt.platformTextContextMenuToolbarProvider$lambda$1$0(AndroidTextContextMenuToolbarProvider.this, (DisposableEffectScope) obj);
+                    return platformTextContextMenuToolbarProvider$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -223,9 +305,9 @@ public final class AndroidTextContextMenuToolbarProvider_androidKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult platformTextContextMenuToolbarProvider$lambda$10$lambda$9(final AndroidTextContextMenuToolbarProvider androidTextContextMenuToolbarProvider, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult platformTextContextMenuToolbarProvider$lambda$1$0(final AndroidTextContextMenuToolbarProvider androidTextContextMenuToolbarProvider, DisposableEffectScope disposableEffectScope) {
         androidTextContextMenuToolbarProvider.start();
-        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$platformTextContextMenuToolbarProvider$lambda$10$lambda$9$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider_androidKt$platformTextContextMenuToolbarProvider$lambda$1$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 AndroidTextContextMenuToolbarProvider.this.dispose();

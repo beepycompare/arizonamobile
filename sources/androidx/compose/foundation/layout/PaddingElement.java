@@ -24,58 +24,6 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
         this(f, f2, f3, f4, z, function1);
     }
 
-    /* renamed from: getStart-D9Ej5fM  reason: not valid java name */
-    public final float m827getStartD9Ej5fM() {
-        return this.start;
-    }
-
-    /* renamed from: setStart-0680j_4  reason: not valid java name */
-    public final void m831setStart0680j_4(float f) {
-        this.start = f;
-    }
-
-    /* renamed from: getTop-D9Ej5fM  reason: not valid java name */
-    public final float m828getTopD9Ej5fM() {
-        return this.top;
-    }
-
-    /* renamed from: setTop-0680j_4  reason: not valid java name */
-    public final void m832setTop0680j_4(float f) {
-        this.top = f;
-    }
-
-    /* renamed from: getEnd-D9Ej5fM  reason: not valid java name */
-    public final float m826getEndD9Ej5fM() {
-        return this.end;
-    }
-
-    /* renamed from: setEnd-0680j_4  reason: not valid java name */
-    public final void m830setEnd0680j_4(float f) {
-        this.end = f;
-    }
-
-    /* renamed from: getBottom-D9Ej5fM  reason: not valid java name */
-    public final float m825getBottomD9Ej5fM() {
-        return this.bottom;
-    }
-
-    /* renamed from: setBottom-0680j_4  reason: not valid java name */
-    public final void m829setBottom0680j_4(float f) {
-        this.bottom = f;
-    }
-
-    public final boolean getRtlAware() {
-        return this.rtlAware;
-    }
-
-    public final void setRtlAware(boolean z) {
-        this.rtlAware = z;
-    }
-
-    public final Function1<InspectorInfo, Unit> getInspectorInfo() {
-        return this.inspectorInfo;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     private PaddingElement(float f, float f2, float f3, float f4, boolean z, Function1<? super InspectorInfo, Unit> function1) {
         this.start = f;
@@ -96,6 +44,58 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
         }
     }
 
+    /* renamed from: getStart-D9Ej5fM  reason: not valid java name */
+    public final float m914getStartD9Ej5fM() {
+        return this.start;
+    }
+
+    /* renamed from: setStart-0680j_4  reason: not valid java name */
+    public final void m918setStart0680j_4(float f) {
+        this.start = f;
+    }
+
+    /* renamed from: getTop-D9Ej5fM  reason: not valid java name */
+    public final float m915getTopD9Ej5fM() {
+        return this.top;
+    }
+
+    /* renamed from: setTop-0680j_4  reason: not valid java name */
+    public final void m919setTop0680j_4(float f) {
+        this.top = f;
+    }
+
+    /* renamed from: getEnd-D9Ej5fM  reason: not valid java name */
+    public final float m913getEndD9Ej5fM() {
+        return this.end;
+    }
+
+    /* renamed from: setEnd-0680j_4  reason: not valid java name */
+    public final void m917setEnd0680j_4(float f) {
+        this.end = f;
+    }
+
+    /* renamed from: getBottom-D9Ej5fM  reason: not valid java name */
+    public final float m912getBottomD9Ej5fM() {
+        return this.bottom;
+    }
+
+    /* renamed from: setBottom-0680j_4  reason: not valid java name */
+    public final void m916setBottom0680j_4(float f) {
+        this.bottom = f;
+    }
+
+    public final boolean getRtlAware() {
+        return this.rtlAware;
+    }
+
+    public final void setRtlAware(boolean z) {
+        this.rtlAware = z;
+    }
+
+    public final Function1<InspectorInfo, Unit> getInspectorInfo() {
+        return this.inspectorInfo;
+    }
+
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public PaddingNode create() {
@@ -104,22 +104,22 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(PaddingNode paddingNode) {
-        paddingNode.m855setStart0680j_4(this.start);
-        paddingNode.m856setTop0680j_4(this.top);
-        paddingNode.m854setEnd0680j_4(this.end);
-        paddingNode.m853setBottom0680j_4(this.bottom);
+        paddingNode.m940setStart0680j_4(this.start);
+        paddingNode.m941setTop0680j_4(this.top);
+        paddingNode.m939setEnd0680j_4(this.end);
+        paddingNode.m938setBottom0680j_4(this.bottom);
         paddingNode.setRtlAware(this.rtlAware);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Dp.m8002hashCodeimpl(this.start) * 31) + Dp.m8002hashCodeimpl(this.top)) * 31) + Dp.m8002hashCodeimpl(this.end)) * 31) + Dp.m8002hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.rtlAware);
+        return (((((((Dp.m8264hashCodeimpl(this.start) * 31) + Dp.m8264hashCodeimpl(this.top)) * 31) + Dp.m8264hashCodeimpl(this.end)) * 31) + Dp.m8264hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.rtlAware);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public boolean equals(Object obj) {
         PaddingElement paddingElement = obj instanceof PaddingElement ? (PaddingElement) obj : null;
-        return paddingElement != null && Dp.m8001equalsimpl0(this.start, paddingElement.start) && Dp.m8001equalsimpl0(this.top, paddingElement.top) && Dp.m8001equalsimpl0(this.end, paddingElement.end) && Dp.m8001equalsimpl0(this.bottom, paddingElement.bottom) && this.rtlAware == paddingElement.rtlAware;
+        return paddingElement != null && Dp.m8263equalsimpl0(this.start, paddingElement.start) && Dp.m8263equalsimpl0(this.top, paddingElement.top) && Dp.m8263equalsimpl0(this.end, paddingElement.end) && Dp.m8263equalsimpl0(this.bottom, paddingElement.bottom) && this.rtlAware == paddingElement.rtlAware;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -128,6 +128,6 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
     }
 
     public /* synthetic */ PaddingElement(float f, float f2, float f3, float f4, boolean z, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7996constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7996constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7996constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7996constructorimpl(0) : f4, z, function1, null);
+        this((i & 1) != 0 ? Dp.m8258constructorimpl(0) : f, (i & 2) != 0 ? Dp.m8258constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m8258constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m8258constructorimpl(0) : f4, z, function1, null);
     }
 }

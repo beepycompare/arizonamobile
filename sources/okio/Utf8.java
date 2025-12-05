@@ -1,6 +1,5 @@
 package okio;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.google.common.base.Ascii;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -347,7 +346,7 @@ public final class Utf8 {
                                     int i12 = (b << Ascii.DC2) ^ (((b8 ^ 3678080) ^ (b7 << 6)) ^ (b6 << Ascii.FF));
                                     if (i12 <= 1114111 && ((55296 > i12 || i12 >= 57344) && i12 >= 65536 && i12 != 65533)) {
                                         yield.invoke(Character.valueOf((char) ((i12 >>> 10) + HIGH_SURROGATE_HEADER)));
-                                        yield.invoke(Character.valueOf((char) ((i12 & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + LOG_SURROGATE_HEADER)));
+                                        yield.invoke(Character.valueOf((char) ((i12 & 1023) + LOG_SURROGATE_HEADER)));
                                     } else {
                                         yield.invoke(Character.valueOf(REPLACEMENT_CHARACTER));
                                     }

@@ -80,7 +80,7 @@ public final class NavigationDrawerKt$ModalDrawerSheet$2 implements Function3<Dr
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        NavigationDrawerKt.m2631DrawerSheetcm3T3N0(drawerPredictiveBackState, windowInsets, modifier, shape, j, j2, f, (FloatProducer) rememberedValue, this.$content, composer, i2 & 14, 0);
+        NavigationDrawerKt.m2717DrawerSheetcm3T3N0(drawerPredictiveBackState, windowInsets, modifier, shape, j, j2, f, (FloatProducer) rememberedValue, this.$content, composer, i2 & 14, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

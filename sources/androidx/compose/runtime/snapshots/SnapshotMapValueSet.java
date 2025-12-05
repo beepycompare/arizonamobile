@@ -18,6 +18,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\b\u0004\n\u0002\u0010\u001e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\b\u0002\u0018\u0000*\u0004\b\u0000\u0010\u0001*\u0004\b\u0001\u0010\u00022\u0014\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00020\u0003B\u001b\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0015\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\u000bJ\u0016\u0010\f\u001a\u00020\t2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016J\u0015\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0010H\u0096\u0002J\u0015\u0010\u0011\u001a\u00020\u00122\u0006\u0010\n\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\u0013J\u0016\u0010\u0014\u001a\u00020\u00122\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016J\u0016\u0010\u0015\u001a\u00020\u00122\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016J\u0016\u0010\u0016\u001a\u00020\u00122\u0006\u0010\n\u001a\u00028\u0001H\u0096\u0002¢\u0006\u0002\u0010\u0013J\u0016\u0010\u0017\u001a\u00020\u00122\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016¨\u0006\u0018"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotMapValueSet;", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Landroidx/compose/runtime/snapshots/SnapshotMapSet;", "map", "Landroidx/compose/runtime/snapshots/SnapshotStateMap;", "<init>", "(Landroidx/compose/runtime/snapshots/SnapshotStateMap;)V", "add", "", "element", "(Ljava/lang/Object;)Ljava/lang/Void;", "addAll", "elements", "", "iterator", "Landroidx/compose/runtime/snapshots/StateMapMutableValuesIterator;", "remove", "", "(Ljava/lang/Object;)Z", "removeAll", "retainAll", "contains", "containsAll", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
+    public SnapshotMapValueSet(SnapshotStateMap<K, V> snapshotStateMap) {
+        super(snapshotStateMap);
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.util.Set, java.util.Collection
     public /* bridge */ /* synthetic */ boolean add(Object obj) {
@@ -27,10 +31,6 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
     @Override // java.util.Set, java.util.Collection
     public /* bridge */ /* synthetic */ boolean addAll(Collection collection) {
         return ((Boolean) addAll(collection)).booleanValue();
-    }
-
-    public SnapshotMapValueSet(SnapshotStateMap<K, V> snapshotStateMap) {
-        super(snapshotStateMap);
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -93,11 +93,12 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
             StateRecord firstStateRecord2 = map.getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             SnapshotStateMap.StateMapStateRecord stateMapStateRecord2 = (SnapshotStateMap.StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = map;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, map, current), modification$runtime, build);
+                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, map);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
         return z;
     }
@@ -139,11 +140,12 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
             StateRecord firstStateRecord2 = map.getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             SnapshotStateMap.StateMapStateRecord stateMapStateRecord2 = (SnapshotStateMap.StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = map;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, map, current), modification$runtime, build);
+                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, map);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
         return z;
     }

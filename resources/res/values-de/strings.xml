@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Teilen mit</string>
     <string name="abc_shareactionprovider_share_with_application">Mit %s teilen</string>
     <string name="abc_toolbar_collapse_description">Minimieren</string>
-    <string name="autofill">Automatisch ausfüllen</string>
+    <string name="androidx_compose_foundation_autofill">Automatisch ausfüllen</string>
+    <string name="androidx_compose_ui_autofill">Automatisch ausfüllen</string>
     <string name="bottomsheet_action_collapse">Ansicht am unteren Rand minimieren</string>
     <string name="bottomsheet_action_expand">Ansicht am unteren Rand maximieren</string>
     <string name="bottomsheet_action_expand_halfway">Zur Hälfte maximieren</string>

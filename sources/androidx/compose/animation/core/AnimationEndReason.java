@@ -22,6 +22,14 @@ public final class AnimationEndReason {
         return $ENTRIES;
     }
 
+    public static AnimationEndReason valueOf(String str) {
+        return (AnimationEndReason) Enum.valueOf(AnimationEndReason.class, str);
+    }
+
+    public static AnimationEndReason[] values() {
+        return (AnimationEndReason[]) $VALUES.clone();
+    }
+
     private AnimationEndReason(String str, int i) {
     }
 
@@ -29,13 +37,5 @@ public final class AnimationEndReason {
         AnimationEndReason[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static AnimationEndReason valueOf(String str) {
-        return (AnimationEndReason) Enum.valueOf(AnimationEndReason.class, str);
-    }
-
-    public static AnimationEndReason[] values() {
-        return (AnimationEndReason[]) $VALUES.clone();
     }
 }

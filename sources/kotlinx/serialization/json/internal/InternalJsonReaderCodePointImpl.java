@@ -1,6 +1,5 @@
 package kotlinx.serialization.json.internal;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import okio.Utf8;
@@ -34,7 +33,7 @@ public abstract class InternalJsonReaderCodePointImpl implements InternalJsonRea
                 buffer[i + i3] = (char) nextCodePoint;
                 i3++;
             } else {
-                char c = (char) ((nextCodePoint & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + Utf8.LOG_SURROGATE_HEADER);
+                char c = (char) ((nextCodePoint & 1023) + Utf8.LOG_SURROGATE_HEADER);
                 buffer[i + i3] = (char) ((nextCodePoint >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
                 int i4 = i3 + 1;
                 if (i4 < i2) {

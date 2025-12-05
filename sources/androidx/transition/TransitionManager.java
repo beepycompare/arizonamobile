@@ -55,13 +55,13 @@ public class TransitionManager {
             return;
         }
         sPendingTransitions.add(sceneRoot);
-        Transition mo9044clone = transition.mo9044clone();
+        Transition mo9308clone = transition.mo9308clone();
         if (currentScene != null && currentScene.isCreatedFromLayoutResource()) {
-            mo9044clone.setCanRemoveViews(true);
+            mo9308clone.setCanRemoveViews(true);
         }
-        sceneChangeSetup(sceneRoot, mo9044clone);
+        sceneChangeSetup(sceneRoot, mo9308clone);
         scene.enter();
-        sceneChangeRunTransition(sceneRoot, mo9044clone);
+        sceneChangeRunTransition(sceneRoot, mo9308clone);
     }
 
     static ArrayMap<ViewGroup, ArrayList<Transition>> getRunningTransitions() {
@@ -195,9 +195,9 @@ public class TransitionManager {
             return null;
         }
         sPendingTransitions.add(sceneRoot);
-        Transition mo9044clone = transition.mo9044clone();
+        Transition mo9308clone = transition.mo9308clone();
         TransitionSet transitionSet = new TransitionSet();
-        transitionSet.addTransition(mo9044clone);
+        transitionSet.addTransition(mo9308clone);
         if (currentScene != null && currentScene.isCreatedFromLayoutResource()) {
             transitionSet.setCanRemoveViews(true);
         }
@@ -223,10 +223,10 @@ public class TransitionManager {
         if (transition == null) {
             transition = sDefaultTransition;
         }
-        Transition mo9044clone = transition.mo9044clone();
-        sceneChangeSetup(viewGroup, mo9044clone);
+        Transition mo9308clone = transition.mo9308clone();
+        sceneChangeSetup(viewGroup, mo9308clone);
         Scene.setCurrentScene(viewGroup, null);
-        sceneChangeRunTransition(viewGroup, mo9044clone);
+        sceneChangeRunTransition(viewGroup, mo9308clone);
     }
 
     public static TransitionSeekController controlDelayedTransition(ViewGroup viewGroup, Transition transition) {
@@ -237,9 +237,9 @@ public class TransitionManager {
             throw new IllegalArgumentException("The Transition must support seeking.");
         }
         sPendingTransitions.add(viewGroup);
-        Transition mo9044clone = transition.mo9044clone();
+        Transition mo9308clone = transition.mo9308clone();
         TransitionSet transitionSet = new TransitionSet();
-        transitionSet.addTransition(mo9044clone);
+        transitionSet.addTransition(mo9308clone);
         sceneChangeSetup(viewGroup, transitionSet);
         Scene.setCurrentScene(viewGroup, null);
         sceneChangeRunTransition(viewGroup, transitionSet);

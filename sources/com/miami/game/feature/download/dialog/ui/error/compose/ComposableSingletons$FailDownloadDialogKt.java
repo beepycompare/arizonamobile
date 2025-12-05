@@ -25,7 +25,7 @@ public final class ComposableSingletons$FailDownloadDialogKt {
     });
 
     /* renamed from: lambda$-1143154327  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f56lambda$1143154327 = ComposableLambdaKt.composableLambdaInstance(-1143154327, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt$$ExternalSyntheticLambda1
+    private static Function3<BoxScope, Composer, Integer, Unit> f137lambda$1143154327 = ComposableLambdaKt.composableLambdaInstance(-1143154327, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__1143154327$lambda$0;
@@ -35,8 +35,8 @@ public final class ComposableSingletons$FailDownloadDialogKt {
     });
 
     /* renamed from: getLambda$-1143154327$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9774getLambda$1143154327$dialogs_release() {
-        return f56lambda$1143154327;
+    public final Function3<BoxScope, Composer, Integer, Unit> m10069getLambda$1143154327$dialogs_release() {
+        return f137lambda$1143154327;
     }
 
     public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1464513202$dialogs_release() {
@@ -53,7 +53,7 @@ public final class ComposableSingletons$FailDownloadDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1464513202, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt.lambda$1464513202.<anonymous> (FailDownloadDialog.kt:65)");
             }
-            TextKt.m3169TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3255TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -71,7 +71,7 @@ public final class ComposableSingletons$FailDownloadDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1143154327, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt.lambda$-1143154327.<anonymous> (FailDownloadDialog.kt:71)");
             }
-            TextKt.m3169TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3255TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

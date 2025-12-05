@@ -43,11 +43,21 @@ public abstract class RippleNode extends Modifier.Node implements CompositionLoc
     }
 
     /* renamed from: addRipple-12SF9DM */
-    public abstract void mo1852addRipple12SF9DM(PressInteraction.Press press, long j, float f);
+    public abstract void mo1938addRipple12SF9DM(PressInteraction.Press press, long j, float f);
 
     public abstract void drawRipples(DrawScope drawScope);
 
     public abstract void removeRipple(PressInteraction.Press press);
+
+    private RippleNode(InteractionSource interactionSource, boolean z, float f, ColorProducer colorProducer, Function0<RippleAlpha> function0) {
+        this.interactionSource = interactionSource;
+        this.bounded = z;
+        this.radius = f;
+        this.color = colorProducer;
+        this.rippleAlpha = function0;
+        this.rippleSize = Size.Companion.m5257getZeroNHjbRc();
+        this.pendingInteractions = new MutableObjectList<>(0, 1, null);
+    }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean getBounded() {
@@ -57,16 +67,6 @@ public abstract class RippleNode extends Modifier.Node implements CompositionLoc
     /* JADX INFO: Access modifiers changed from: protected */
     public final Function0<RippleAlpha> getRippleAlpha() {
         return this.rippleAlpha;
-    }
-
-    private RippleNode(InteractionSource interactionSource, boolean z, float f, ColorProducer colorProducer, Function0<RippleAlpha> function0) {
-        this.interactionSource = interactionSource;
-        this.bounded = z;
-        this.radius = f;
-        this.color = colorProducer;
-        this.rippleAlpha = function0;
-        this.rippleSize = Size.Companion.m5114getZeroNHjbRc();
-        this.pendingInteractions = new MutableObjectList<>(0, 1, null);
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -85,28 +85,28 @@ public abstract class RippleNode extends Modifier.Node implements CompositionLoc
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: getRippleSize-NH-jbRc  reason: not valid java name */
-    public final long m1867getRippleSizeNHjbRc() {
+    public final long m1953getRippleSizeNHjbRc() {
         return this.rippleSize;
     }
 
     /* renamed from: getRippleColor-0d7_KjU  reason: not valid java name */
-    public final long m1866getRippleColor0d7_KjU() {
-        return this.color.mo2300invoke0d7_KjU();
+    public final long m1952getRippleColor0d7_KjU() {
+        return this.color.mo2386invoke0d7_KjU();
     }
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo419onRemeasuredozmzZPI(long j) {
-        float mo430toPx0680j_4;
+    public void mo453onRemeasuredozmzZPI(long j) {
+        float mo464toPx0680j_4;
         this.hasValidSize = true;
         Density requireDensity = DelegatableNodeKt.requireDensity(this);
-        this.rippleSize = IntSizeKt.m8179toSizeozmzZPI(j);
+        this.rippleSize = IntSizeKt.m8441toSizeozmzZPI(j);
         if (Float.isNaN(this.radius)) {
-            mo430toPx0680j_4 = RippleAnimationKt.m1857getRippleEndRadiuscSwnlzA(requireDensity, this.bounded, this.rippleSize);
+            mo464toPx0680j_4 = RippleAnimationKt.m1943getRippleEndRadiuscSwnlzA(requireDensity, this.bounded, this.rippleSize);
         } else {
-            mo430toPx0680j_4 = requireDensity.mo430toPx0680j_4(this.radius);
+            mo464toPx0680j_4 = requireDensity.mo464toPx0680j_4(this.radius);
         }
-        this.targetRadius = mo430toPx0680j_4;
+        this.targetRadius = mo464toPx0680j_4;
         MutableObjectList<PressInteraction> mutableObjectList = this.pendingInteractions;
         Object[] objArr = mutableObjectList.content;
         int i = mutableObjectList._size;
@@ -124,7 +124,7 @@ public abstract class RippleNode extends Modifier.Node implements CompositionLoc
     /* JADX INFO: Access modifiers changed from: private */
     public final void handlePressInteraction(PressInteraction pressInteraction) {
         if (pressInteraction instanceof PressInteraction.Press) {
-            mo1852addRipple12SF9DM((PressInteraction.Press) pressInteraction, this.rippleSize, this.targetRadius);
+            mo1938addRipple12SF9DM((PressInteraction.Press) pressInteraction, this.rippleSize, this.targetRadius);
         } else if (pressInteraction instanceof PressInteraction.Release) {
             removeRipple(((PressInteraction.Release) pressInteraction).getPress());
         } else if (pressInteraction instanceof PressInteraction.Cancel) {
@@ -137,7 +137,7 @@ public abstract class RippleNode extends Modifier.Node implements CompositionLoc
         contentDrawScope.drawContent();
         StateLayer stateLayer = this.stateLayer;
         if (stateLayer != null) {
-            stateLayer.m1871drawStateLayermxwnekA(contentDrawScope, this.targetRadius, m1866getRippleColor0d7_KjU());
+            stateLayer.m1957drawStateLayermxwnekA(contentDrawScope, this.targetRadius, m1952getRippleColor0d7_KjU());
         }
         drawRipples(contentDrawScope);
     }

@@ -5,17 +5,17 @@ public final class R {
     /* loaded from: classes2.dex */
     public static final class attr {
         public static int alpha = 0x7f040037;
-        public static int font = 0x7f04029a;
-        public static int fontProviderAuthority = 0x7f04029f;
-        public static int fontProviderCerts = 0x7f0402a0;
-        public static int fontProviderFetchStrategy = 0x7f0402a2;
-        public static int fontProviderFetchTimeout = 0x7f0402a3;
-        public static int fontProviderPackage = 0x7f0402a4;
-        public static int fontProviderQuery = 0x7f0402a5;
-        public static int fontStyle = 0x7f0402a7;
-        public static int fontVariationSettings = 0x7f0402a8;
-        public static int fontWeight = 0x7f0402a9;
-        public static int ttcIndex = 0x7f0406b1;
+        public static int font = 0x7f0402a1;
+        public static int fontProviderAuthority = 0x7f0402a6;
+        public static int fontProviderCerts = 0x7f0402a7;
+        public static int fontProviderFetchStrategy = 0x7f0402a9;
+        public static int fontProviderFetchTimeout = 0x7f0402aa;
+        public static int fontProviderPackage = 0x7f0402ab;
+        public static int fontProviderQuery = 0x7f0402ac;
+        public static int fontStyle = 0x7f0402ae;
+        public static int fontVariationSettings = 0x7f0402af;
+        public static int fontWeight = 0x7f0402b0;
+        public static int ttcIndex = 0x7f0406c1;
 
         private attr() {
         }
@@ -120,35 +120,35 @@ public final class R {
         public static int action_image = 0x7f0a0095;
         public static int action_text = 0x7f0a00a6;
         public static int actions = 0x7f0a00a7;
-        public static int async = 0x7f0a00fc;
-        public static int blocking = 0x7f0a01bb;
-        public static int chronometer = 0x7f0a0343;
-        public static int dialog_button = 0x7f0a03f3;
-        public static int forever = 0x7f0a053e;
-        public static int icon = 0x7f0a0686;
-        public static int icon_group = 0x7f0a0688;
-        public static int info = 0x7f0a06ba;
-        public static int italic = 0x7f0a06e2;
-        public static int line1 = 0x7f0a07d7;
-        public static int line3 = 0x7f0a07d8;
-        public static int normal = 0x7f0a0993;
-        public static int notification_background = 0x7f0a099d;
-        public static int notification_main_column = 0x7f0a099e;
-        public static int notification_main_column_container = 0x7f0a099f;
-        public static int right_icon = 0x7f0a0b27;
-        public static int right_side = 0x7f0a0b2d;
-        public static int tag_accessibility_actions = 0x7f0a0d0c;
-        public static int tag_accessibility_clickable_spans = 0x7f0a0d0d;
-        public static int tag_accessibility_heading = 0x7f0a0d0e;
-        public static int tag_accessibility_pane_title = 0x7f0a0d0f;
-        public static int tag_screen_reader_focusable = 0x7f0a0d14;
-        public static int tag_transition_group = 0x7f0a0d17;
-        public static int tag_unhandled_key_event_manager = 0x7f0a0d18;
-        public static int tag_unhandled_key_listeners = 0x7f0a0d19;
-        public static int text = 0x7f0a0d44;
-        public static int text2 = 0x7f0a0d46;
-        public static int time = 0x7f0a0d8c;
-        public static int title = 0x7f0a0d9c;
+        public static int async = 0x7f0a00ff;
+        public static int blocking = 0x7f0a01bf;
+        public static int chronometer = 0x7f0a0348;
+        public static int dialog_button = 0x7f0a03f8;
+        public static int forever = 0x7f0a0544;
+        public static int icon = 0x7f0a068c;
+        public static int icon_group = 0x7f0a068e;
+        public static int info = 0x7f0a06c0;
+        public static int italic = 0x7f0a06e8;
+        public static int line1 = 0x7f0a07de;
+        public static int line3 = 0x7f0a07df;
+        public static int normal = 0x7f0a099a;
+        public static int notification_background = 0x7f0a09a4;
+        public static int notification_main_column = 0x7f0a09a5;
+        public static int notification_main_column_container = 0x7f0a09a6;
+        public static int right_icon = 0x7f0a0b2e;
+        public static int right_side = 0x7f0a0b34;
+        public static int tag_accessibility_actions = 0x7f0a0d14;
+        public static int tag_accessibility_clickable_spans = 0x7f0a0d15;
+        public static int tag_accessibility_heading = 0x7f0a0d16;
+        public static int tag_accessibility_pane_title = 0x7f0a0d17;
+        public static int tag_screen_reader_focusable = 0x7f0a0d1c;
+        public static int tag_transition_group = 0x7f0a0d1f;
+        public static int tag_unhandled_key_event_manager = 0x7f0a0d20;
+        public static int tag_unhandled_key_listeners = 0x7f0a0d21;
+        public static int text = 0x7f0a0d4c;
+        public static int text2 = 0x7f0a0d4e;
+        public static int time = 0x7f0a0d94;
+        public static int title = 0x7f0a0da4;
 
         private id() {
         }
@@ -178,7 +178,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class string {
-        public static int status_bar_notification_info_overflow = 0x7f120246;
+        public static int status_bar_notification_info_overflow = 0x7f120247;
 
         private string() {
         }

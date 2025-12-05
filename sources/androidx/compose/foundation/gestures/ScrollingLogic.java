@@ -1,6 +1,5 @@
 package androidx.compose.foundation.gestures;
 
-import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.MutatePriority;
 import androidx.compose.foundation.OverscrollEffect;
 import androidx.compose.ui.geometry.Offset;
@@ -19,14 +18,14 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u0000\u0093\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003*\u00018\b\u0001\u0018\u00002\u00020\u0001BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\u0011\u0010\u001b\u001a\u00020\u001c*\u00020\u001d¢\u0006\u0004\b\u001e\u0010\u001fJ\u0011\u0010 \u001a\u00020\u001c*\u00020\u001c¢\u0006\u0004\b!\u0010\"J\u0011\u0010#\u001a\u00020\u001d*\u00020\u001c¢\u0006\u0004\b$\u0010%J\u0011\u0010&\u001a\u00020'*\u00020\u001d¢\u0006\u0004\b(\u0010\u001fJ\u0013\u0010#\u001a\u00020\u001d*\u00020'H\u0002¢\u0006\u0004\b)\u0010%J\u0013\u0010*\u001a\u00020'*\u00020'H\u0002¢\u0006\u0004\b+\u0010\"J\u001b\u0010,\u001a\u00020'*\u00020'2\u0006\u0010-\u001a\u00020\u001dH\u0002¢\u0006\u0004\b.\u0010/J\n\u00100\u001a\u00020\u001d*\u00020\u001dJ\u0011\u00100\u001a\u00020\u001c*\u00020\u001c¢\u0006\u0004\b1\u0010\"J#\u0010<\u001a\u00020\u001c*\u0002062\u0006\u0010=\u001a\u00020\u001c2\u0006\u0010>\u001a\u000203H\u0002¢\u0006\u0004\b?\u0010@J\u0017\u0010C\u001a\u00020\u001c2\u0006\u0010D\u001a\u00020\u001cH\u0016¢\u0006\u0004\bE\u0010\"J\u0017\u0010F\u001a\u00020\u001c2\u0006\u0010D\u001a\u00020\u001cH\u0002¢\u0006\u0004\bG\u0010\"J \u0010H\u001a\u00020I2\u0006\u0010J\u001a\u00020'2\u0006\u0010K\u001a\u00020\u000bH\u0086@¢\u0006\u0004\bL\u0010MJ\u0010\u0010N\u001a\u00020\u000b2\u0006\u0010O\u001a\u00020\u001dH\u0002J\u0018\u0010P\u001a\u00020'2\u0006\u0010Q\u001a\u00020'H\u0096@¢\u0006\u0004\bR\u0010SJ\u0006\u0010T\u001a\u00020\u000bJA\u0010D\u001a\u00020I2\b\b\u0002\u0010U\u001a\u00020V2'\u0010W\u001a#\b\u0001\u0012\u0004\u0012\u00020Y\u0012\n\u0012\b\u0012\u0004\u0012\u00020I0Z\u0012\u0006\u0012\u0004\u0018\u00010[0X¢\u0006\u0002\b\\H\u0086@¢\u0006\u0002\u0010]J8\u0010,\u001a\u00020\u000b2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\t2\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\rJ\u0006\u0010^\u001a\u00020\u000bR\u001a\u0010\u0002\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u00020\u000b2\u0006\u0010\u0018\u001a\u00020\u000b@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0010\u00102\u001a\u000203X\u0082\u000e¢\u0006\u0004\n\u0002\u00104R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0004\n\u0002\u00109R\u001a\u0010:\u001a\u000e\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u001c0;X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010A\u001a\u00020\u000b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bB\u0010\u001a¨\u0006_"}, d2 = {"Landroidx/compose/foundation/gestures/ScrollingLogic;", "Landroidx/compose/foundation/gestures/ScrollLogic;", "scrollableState", "Landroidx/compose/foundation/gestures/ScrollableState;", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "reverseDirection", "", "nestedScrollDispatcher", "Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;", "onScrollChangedDispatcher", "Landroidx/compose/foundation/gestures/OnScrollChangedDispatcher;", "isScrollableNodeAttached", "Lkotlin/Function0;", "<init>", "(Landroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/OverscrollEffect;Landroidx/compose/foundation/gestures/FlingBehavior;Landroidx/compose/foundation/gestures/Orientation;ZLandroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;Landroidx/compose/foundation/gestures/OnScrollChangedDispatcher;Lkotlin/jvm/functions/Function0;)V", "getScrollableState", "()Landroidx/compose/foundation/gestures/ScrollableState;", "setScrollableState", "(Landroidx/compose/foundation/gestures/ScrollableState;)V", "value", "isFlinging", "()Z", "toOffset", "Landroidx/compose/ui/geometry/Offset;", "", "toOffset-tuRUvjQ", "(F)J", "singleAxisOffset", "singleAxisOffset-MK-Hz9U", "(J)J", "toFloat", "toFloat-k-4lQ0M", "(J)F", "toVelocity", "Landroidx/compose/ui/unit/Velocity;", "toVelocity-adjELrA", "toFloat-TH1AsA0", "singleAxisVelocity", "singleAxisVelocity-AH228Gc", "update", "newValue", "update-QWom1Mo", "(JF)J", "reverseIfNeeded", "reverseIfNeeded-MK-Hz9U", "latestScrollSource", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "I", "outerStateScope", "Landroidx/compose/foundation/gestures/ScrollScope;", "nestedScrollScope", "androidx/compose/foundation/gestures/ScrollingLogic$nestedScrollScope$1", "Landroidx/compose/foundation/gestures/ScrollingLogic$nestedScrollScope$1;", "performScrollForOverscroll", "Lkotlin/Function1;", "performScroll", "delta", "source", "performScroll-3eAAhYA", "(Landroidx/compose/foundation/gestures/ScrollScope;JI)J", "shouldDispatchOverscroll", "getShouldDispatchOverscroll", "performRawScroll", "scroll", "performRawScroll-MK-Hz9U", "dispatchRawDelta", "dispatchRawDelta-MK-Hz9U", "onScrollStopped", "", "initialVelocity", "isMouseWheel", "onScrollStopped-BMRW4eQ", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "shouldCancelFling", "pixels", "doFlingAnimation", "available", "doFlingAnimation-QWom1Mo", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "shouldScrollImmediately", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/NestedScrollScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "isVertical", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0093\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001:\b\u0001\u0018\u00002\u00020\u0001BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\u0011\u0010\u001b\u001a\u00020\u001c*\u00020\u001d¢\u0006\u0004\b\u001e\u0010\u001fJ\u0011\u0010 \u001a\u00020\u001c*\u00020\u001c¢\u0006\u0004\b!\u0010\"J\u0011\u0010#\u001a\u00020\u001d*\u00020\u001c¢\u0006\u0004\b$\u0010%J\u0011\u0010&\u001a\u00020\u001d*\u00020\u001c¢\u0006\u0004\b'\u0010%J\u0011\u0010(\u001a\u00020)*\u00020\u001d¢\u0006\u0004\b*\u0010\u001fJ\u0013\u0010#\u001a\u00020\u001d*\u00020)H\u0002¢\u0006\u0004\b+\u0010%J\u0013\u0010,\u001a\u00020)*\u00020)H\u0002¢\u0006\u0004\b-\u0010\"J\u001b\u0010.\u001a\u00020)*\u00020)2\u0006\u0010/\u001a\u00020\u001dH\u0002¢\u0006\u0004\b0\u00101J\n\u00102\u001a\u00020\u001d*\u00020\u001dJ\u0011\u00102\u001a\u00020\u001c*\u00020\u001c¢\u0006\u0004\b3\u0010\"J#\u0010>\u001a\u00020\u001c*\u0002082\u0006\u0010?\u001a\u00020\u001c2\u0006\u0010@\u001a\u000205H\u0002¢\u0006\u0004\bA\u0010BJ\u0017\u0010E\u001a\u00020\u001c2\u0006\u0010F\u001a\u00020\u001cH\u0016¢\u0006\u0004\bG\u0010\"J\u0017\u0010H\u001a\u00020\u001c2\u0006\u0010F\u001a\u00020\u001cH\u0002¢\u0006\u0004\bI\u0010\"J \u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020)2\u0006\u0010M\u001a\u00020\u000bH\u0086@¢\u0006\u0004\bN\u0010OJ\u0018\u0010P\u001a\u00020)2\u0006\u0010Q\u001a\u00020)H\u0096@¢\u0006\u0004\bR\u0010SJ\u0006\u0010T\u001a\u00020\u000bJA\u0010F\u001a\u00020K2\b\b\u0002\u0010U\u001a\u00020V2'\u0010W\u001a#\b\u0001\u0012\u0004\u0012\u00020Y\u0012\n\u0012\b\u0012\u0004\u0012\u00020K0Z\u0012\u0006\u0012\u0004\u0018\u00010[0X¢\u0006\u0002\b\\H\u0086@¢\u0006\u0002\u0010]J8\u0010.\u001a\u00020\u000b2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\t2\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\rJ\u0006\u0010^\u001a\u00020\u000bR\u001a\u0010\u0002\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u00020\u000b2\u0006\u0010\u0018\u001a\u00020\u000b@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0010\u00104\u001a\u000205X\u0082\u000e¢\u0006\u0004\n\u0002\u00106R\u000e\u00107\u001a\u000208X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0004\n\u0002\u0010;R\u001a\u0010<\u001a\u000e\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u001c0=X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010C\u001a\u00020\u000b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bD\u0010\u001a¨\u0006_"}, d2 = {"Landroidx/compose/foundation/gestures/ScrollingLogic;", "Landroidx/compose/foundation/gestures/ScrollLogic;", "scrollableState", "Landroidx/compose/foundation/gestures/ScrollableState;", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "reverseDirection", "", "nestedScrollDispatcher", "Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;", "onScrollChangedDispatcher", "Landroidx/compose/foundation/gestures/OnScrollChangedDispatcher;", "isScrollableNodeAttached", "Lkotlin/Function0;", "<init>", "(Landroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/OverscrollEffect;Landroidx/compose/foundation/gestures/FlingBehavior;Landroidx/compose/foundation/gestures/Orientation;ZLandroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;Landroidx/compose/foundation/gestures/OnScrollChangedDispatcher;Lkotlin/jvm/functions/Function0;)V", "getScrollableState", "()Landroidx/compose/foundation/gestures/ScrollableState;", "setScrollableState", "(Landroidx/compose/foundation/gestures/ScrollableState;)V", "value", "isFlinging", "()Z", "toOffset", "Landroidx/compose/ui/geometry/Offset;", "", "toOffset-tuRUvjQ", "(F)J", "singleAxisOffset", "singleAxisOffset-MK-Hz9U", "(J)J", "toFloat", "toFloat-k-4lQ0M", "(J)F", "toSingleAxisDeltaFromAngle", "toSingleAxisDeltaFromAngle-k-4lQ0M", "toVelocity", "Landroidx/compose/ui/unit/Velocity;", "toVelocity-adjELrA", "toFloat-TH1AsA0", "singleAxisVelocity", "singleAxisVelocity-AH228Gc", "update", "newValue", "update-QWom1Mo", "(JF)J", "reverseIfNeeded", "reverseIfNeeded-MK-Hz9U", "latestScrollSource", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "I", "outerStateScope", "Landroidx/compose/foundation/gestures/ScrollScope;", "nestedScrollScope", "androidx/compose/foundation/gestures/ScrollingLogic$nestedScrollScope$1", "Landroidx/compose/foundation/gestures/ScrollingLogic$nestedScrollScope$1;", "performScrollForOverscroll", "Lkotlin/Function1;", "performScroll", "delta", "source", "performScroll-3eAAhYA", "(Landroidx/compose/foundation/gestures/ScrollScope;JI)J", "shouldDispatchOverscroll", "getShouldDispatchOverscroll", "performRawScroll", "scroll", "performRawScroll-MK-Hz9U", "dispatchRawDelta", "dispatchRawDelta-MK-Hz9U", "onScrollStopped", "", "initialVelocity", "isMouseWheel", "onScrollStopped-BMRW4eQ", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "doFlingAnimation", "available", "doFlingAnimation-QWom1Mo", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "shouldScrollImmediately", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/NestedScrollScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "isVertical", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ScrollingLogic implements ScrollLogic {
     public static final int $stable = 8;
     private FlingBehavior flingBehavior;
     private boolean isFlinging;
     private final Function0<Boolean> isScrollableNodeAttached;
-    private int latestScrollSource = NestedScrollSource.Companion.m6463getUserInputWNlRxjI();
+    private int latestScrollSource = NestedScrollSource.Companion.m6624getUserInputWNlRxjI();
     private NestedScrollDispatcher nestedScrollDispatcher;
     private final ScrollingLogic$nestedScrollScope$1 nestedScrollScope;
     private OnScrollChangedDispatcher onScrollChangedDispatcher;
@@ -53,20 +52,20 @@ public final class ScrollingLogic implements ScrollLogic {
         this.nestedScrollScope = new NestedScrollScope() { // from class: androidx.compose.foundation.gestures.ScrollingLogic$nestedScrollScope$1
             @Override // androidx.compose.foundation.gestures.NestedScrollScope
             /* renamed from: scrollBy-OzD1aCk */
-            public long mo534scrollByOzD1aCk(long j, int i) {
+            public long mo611scrollByOzD1aCk(long j, int i) {
                 ScrollScope scrollScope2;
-                long m587performScroll3eAAhYA;
+                long m665performScroll3eAAhYA;
                 scrollScope2 = ScrollingLogic.this.outerStateScope;
-                m587performScroll3eAAhYA = ScrollingLogic.this.m587performScroll3eAAhYA(scrollScope2, j, i);
-                return m587performScroll3eAAhYA;
+                m665performScroll3eAAhYA = ScrollingLogic.this.m665performScroll3eAAhYA(scrollScope2, j, i);
+                return m665performScroll3eAAhYA;
             }
 
             @Override // androidx.compose.foundation.gestures.NestedScrollScope
             /* renamed from: scrollByWithOverscroll-OzD1aCk */
-            public long mo535scrollByWithOverscrollOzD1aCk(long j, int i) {
+            public long mo612scrollByWithOverscrollOzD1aCk(long j, int i) {
                 OverscrollEffect overscrollEffect2;
                 ScrollScope scrollScope2;
-                long m587performScroll3eAAhYA;
+                long m665performScroll3eAAhYA;
                 boolean shouldDispatchOverscroll;
                 int i2;
                 Function1<? super Offset, Offset> function1;
@@ -77,20 +76,20 @@ public final class ScrollingLogic implements ScrollLogic {
                     if (shouldDispatchOverscroll) {
                         i2 = ScrollingLogic.this.latestScrollSource;
                         function1 = ScrollingLogic.this.performScrollForOverscroll;
-                        return overscrollEffect2.mo247applyToScrollRhakbz0(j, i2, function1);
+                        return overscrollEffect2.mo275applyToScrollRhakbz0(j, i2, function1);
                     }
                 }
                 scrollScope2 = ScrollingLogic.this.outerStateScope;
-                m587performScroll3eAAhYA = ScrollingLogic.this.m587performScroll3eAAhYA(scrollScope2, j, i);
-                return m587performScroll3eAAhYA;
+                m665performScroll3eAAhYA = ScrollingLogic.this.m665performScroll3eAAhYA(scrollScope2, j, i);
+                return m665performScroll3eAAhYA;
             }
         };
         this.performScrollForOverscroll = new Function1() { // from class: androidx.compose.foundation.gestures.ScrollingLogic$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Offset performScrollForOverscroll$lambda$1;
-                performScrollForOverscroll$lambda$1 = ScrollingLogic.performScrollForOverscroll$lambda$1(ScrollingLogic.this, (Offset) obj);
-                return performScrollForOverscroll$lambda$1;
+                Offset performScrollForOverscroll$lambda$0;
+                performScrollForOverscroll$lambda$0 = ScrollingLogic.performScrollForOverscroll$lambda$0(ScrollingLogic.this, (Offset) obj);
+                return performScrollForOverscroll$lambda$0;
             }
         };
     }
@@ -109,49 +108,49 @@ public final class ScrollingLogic implements ScrollLogic {
     }
 
     /* renamed from: toOffset-tuRUvjQ  reason: not valid java name */
-    public final long m595toOffsettuRUvjQ(float f) {
+    public final long m673toOffsettuRUvjQ(float f) {
         if (f == 0.0f) {
-            return Offset.Companion.m5052getZeroF1C5BW0();
+            return Offset.Companion.m5195getZeroF1C5BW0();
         }
         if (this.orientation == Orientation.Horizontal) {
-            return Offset.m5028constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            return Offset.m5171constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         }
-        return Offset.m5028constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
     }
 
     /* renamed from: singleAxisOffset-MK-Hz9U  reason: not valid java name */
-    public final long m593singleAxisOffsetMKHz9U(long j) {
-        return this.orientation == Orientation.Horizontal ? Offset.m5030copydBAh8RU$default(j, 0.0f, 0.0f, 1, null) : Offset.m5030copydBAh8RU$default(j, 0.0f, 0.0f, 2, null);
+    public final long m671singleAxisOffsetMKHz9U(long j) {
+        return this.orientation == Orientation.Horizontal ? Offset.m5173copydBAh8RU$default(j, 0.0f, 0.0f, 1, null) : Offset.m5173copydBAh8RU$default(j, 0.0f, 0.0f, 2, null);
     }
 
     /* renamed from: toFloat-k-4lQ0M  reason: not valid java name */
-    public final float m594toFloatk4lQ0M(long j) {
+    public final float m672toFloatk4lQ0M(long j) {
         return Float.intBitsToFloat((int) (this.orientation == Orientation.Horizontal ? j >> 32 : j & 4294967295L));
     }
 
     /* renamed from: toVelocity-adjELrA  reason: not valid java name */
-    public final long m596toVelocityadjELrA(float f) {
+    public final long m675toVelocityadjELrA(float f) {
         if (f == 0.0f) {
-            return Velocity.Companion.m8245getZero9UxMQ8M();
+            return Velocity.Companion.m8507getZero9UxMQ8M();
         }
         return this.orientation == Orientation.Horizontal ? VelocityKt.Velocity(f, 0.0f) : VelocityKt.Velocity(0.0f, f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toFloat-TH1AsA0  reason: not valid java name */
-    public final float m589toFloatTH1AsA0(long j) {
-        return this.orientation == Orientation.Horizontal ? Velocity.m8234getXimpl(j) : Velocity.m8235getYimpl(j);
+    public final float m667toFloatTH1AsA0(long j) {
+        return this.orientation == Orientation.Horizontal ? Velocity.m8496getXimpl(j) : Velocity.m8497getYimpl(j);
     }
 
     /* renamed from: singleAxisVelocity-AH228Gc  reason: not valid java name */
-    private final long m588singleAxisVelocityAH228Gc(long j) {
-        return this.orientation == Orientation.Horizontal ? Velocity.m8230copyOhffZ5M$default(j, 0.0f, 0.0f, 1, null) : Velocity.m8230copyOhffZ5M$default(j, 0.0f, 0.0f, 2, null);
+    private final long m666singleAxisVelocityAH228Gc(long j) {
+        return this.orientation == Orientation.Horizontal ? Velocity.m8492copyOhffZ5M$default(j, 0.0f, 0.0f, 1, null) : Velocity.m8492copyOhffZ5M$default(j, 0.0f, 0.0f, 2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: update-QWom1Mo  reason: not valid java name */
-    public final long m590updateQWom1Mo(long j, float f) {
-        return this.orientation == Orientation.Horizontal ? Velocity.m8230copyOhffZ5M$default(j, f, 0.0f, 2, null) : Velocity.m8230copyOhffZ5M$default(j, 0.0f, f, 1, null);
+    public final long m668updateQWom1Mo(long j, float f) {
+        return this.orientation == Orientation.Horizontal ? Velocity.m8492copyOhffZ5M$default(j, f, 0.0f, 2, null) : Velocity.m8492copyOhffZ5M$default(j, 0.0f, f, 1, null);
     }
 
     public final float reverseIfNeeded(float f) {
@@ -159,25 +158,23 @@ public final class ScrollingLogic implements ScrollLogic {
     }
 
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
-    public final long m592reverseIfNeededMKHz9U(long j) {
-        return this.reverseDirection ? Offset.m5043timestuRUvjQ(j, -1.0f) : j;
+    public final long m670reverseIfNeededMKHz9U(long j) {
+        return this.reverseDirection ? Offset.m5186timestuRUvjQ(j, -1.0f) : j;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Offset performScrollForOverscroll$lambda$1(ScrollingLogic scrollingLogic, Offset offset) {
-        return Offset.m5025boximpl(scrollingLogic.m587performScroll3eAAhYA(scrollingLogic.outerStateScope, offset.m5046unboximpl(), scrollingLogic.latestScrollSource));
+    public static final Offset performScrollForOverscroll$lambda$0(ScrollingLogic scrollingLogic, Offset offset) {
+        return Offset.m5168boximpl(scrollingLogic.m665performScroll3eAAhYA(scrollingLogic.outerStateScope, offset.m5189unboximpl(), scrollingLogic.latestScrollSource));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: performScroll-3eAAhYA  reason: not valid java name */
-    public final long m587performScroll3eAAhYA(ScrollScope scrollScope, long j, int i) {
-        long m6447dispatchPreScrollOzD1aCk = this.nestedScrollDispatcher.m6447dispatchPreScrollOzD1aCk(j, i);
-        long m5040minusMKHz9U = Offset.m5040minusMKHz9U(j, m6447dispatchPreScrollOzD1aCk);
-        long m592reverseIfNeededMKHz9U = m592reverseIfNeededMKHz9U(m595toOffsettuRUvjQ(scrollScope.scrollBy(m594toFloatk4lQ0M(m592reverseIfNeededMKHz9U(m593singleAxisOffsetMKHz9U(m5040minusMKHz9U))))));
-        if (ComposeFoundationFlags.isOnScrollChangedCallbackEnabled) {
-            this.onScrollChangedDispatcher.mo536dispatchScrollDeltaInfok4lQ0M(m592reverseIfNeededMKHz9U);
-        }
-        return Offset.m5041plusMKHz9U(Offset.m5041plusMKHz9U(m6447dispatchPreScrollOzD1aCk, m592reverseIfNeededMKHz9U), this.nestedScrollDispatcher.m6445dispatchPostScrollDzOQY0M(m592reverseIfNeededMKHz9U, Offset.m5040minusMKHz9U(m5040minusMKHz9U, m592reverseIfNeededMKHz9U), i));
+    public final long m665performScroll3eAAhYA(ScrollScope scrollScope, long j, int i) {
+        long m6608dispatchPreScrollOzD1aCk = this.nestedScrollDispatcher.m6608dispatchPreScrollOzD1aCk(j, i);
+        long m5183minusMKHz9U = Offset.m5183minusMKHz9U(j, m6608dispatchPreScrollOzD1aCk);
+        long m670reverseIfNeededMKHz9U = m670reverseIfNeededMKHz9U(m673toOffsettuRUvjQ(scrollScope.scrollBy(m672toFloatk4lQ0M(m670reverseIfNeededMKHz9U(m671singleAxisOffsetMKHz9U(m5183minusMKHz9U))))));
+        this.onScrollChangedDispatcher.mo614dispatchScrollDeltaInfok4lQ0M(m670reverseIfNeededMKHz9U);
+        return Offset.m5184plusMKHz9U(Offset.m5184plusMKHz9U(m6608dispatchPreScrollOzD1aCk, m670reverseIfNeededMKHz9U), this.nestedScrollDispatcher.m6606dispatchPostScrollDzOQY0M(m670reverseIfNeededMKHz9U, Offset.m5183minusMKHz9U(m5183minusMKHz9U, m670reverseIfNeededMKHz9U), i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -187,20 +184,20 @@ public final class ScrollingLogic implements ScrollLogic {
 
     @Override // androidx.compose.foundation.gestures.ScrollLogic
     /* renamed from: performRawScroll-MK-Hz9U */
-    public long mo565performRawScrollMKHz9U(long j) {
+    public long mo643performRawScrollMKHz9U(long j) {
         if (this.scrollableState.isScrollInProgress()) {
-            return Offset.Companion.m5052getZeroF1C5BW0();
+            return Offset.Companion.m5195getZeroF1C5BW0();
         }
-        return m586dispatchRawDeltaMKHz9U(j);
+        return m664dispatchRawDeltaMKHz9U(j);
     }
 
     /* renamed from: dispatchRawDelta-MK-Hz9U  reason: not valid java name */
-    private final long m586dispatchRawDeltaMKHz9U(long j) {
-        return m595toOffsettuRUvjQ(reverseIfNeeded(this.scrollableState.dispatchRawDelta(reverseIfNeeded(m594toFloatk4lQ0M(j)))));
+    private final long m664dispatchRawDeltaMKHz9U(long j) {
+        return m673toOffsettuRUvjQ(reverseIfNeeded(this.scrollableState.dispatchRawDelta(reverseIfNeeded(m672toFloatk4lQ0M(j)))));
     }
 
     /* renamed from: onScrollStopped-BMRW4eQ  reason: not valid java name */
-    public final Object m591onScrollStoppedBMRW4eQ(long j, boolean z, Continuation<? super Unit> continuation) {
+    public final Object m669onScrollStoppedBMRW4eQ(long j, boolean z, Continuation<? super Unit> continuation) {
         boolean shouldBeTriggeredByMouseWheel;
         if (z) {
             shouldBeTriggeredByMouseWheel = ScrollableKt.getShouldBeTriggeredByMouseWheel(this.flingBehavior);
@@ -208,23 +205,15 @@ public final class ScrollingLogic implements ScrollLogic {
                 return Unit.INSTANCE;
             }
         }
-        long m588singleAxisVelocityAH228Gc = m588singleAxisVelocityAH228Gc(j);
+        long m666singleAxisVelocityAH228Gc = m666singleAxisVelocityAH228Gc(j);
         ScrollingLogic$onScrollStopped$performFling$1 scrollingLogic$onScrollStopped$performFling$1 = new ScrollingLogic$onScrollStopped$performFling$1(this, null);
         OverscrollEffect overscrollEffect = this.overscrollEffect;
         if (overscrollEffect != null && getShouldDispatchOverscroll()) {
-            Object mo246applyToFlingBMRW4eQ = overscrollEffect.mo246applyToFlingBMRW4eQ(m588singleAxisVelocityAH228Gc, scrollingLogic$onScrollStopped$performFling$1, continuation);
-            return mo246applyToFlingBMRW4eQ == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo246applyToFlingBMRW4eQ : Unit.INSTANCE;
+            Object mo274applyToFlingBMRW4eQ = overscrollEffect.mo274applyToFlingBMRW4eQ(m666singleAxisVelocityAH228Gc, scrollingLogic$onScrollStopped$performFling$1, continuation);
+            return mo274applyToFlingBMRW4eQ == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo274applyToFlingBMRW4eQ : Unit.INSTANCE;
         }
-        Object invoke = scrollingLogic$onScrollStopped$performFling$1.invoke(Velocity.m8225boximpl(m588singleAxisVelocityAH228Gc), continuation);
+        Object invoke = scrollingLogic$onScrollStopped$performFling$1.invoke(Velocity.m8487boximpl(m666singleAxisVelocityAH228Gc), continuation);
         return invoke == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? invoke : Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final boolean shouldCancelFling(float f) {
-        if (f <= 0.0f || this.scrollableState.getCanScrollForward()) {
-            return (f < 0.0f && !this.scrollableState.getCanScrollBackward()) || !this.isScrollableNodeAttached.invoke().booleanValue();
-        }
-        return true;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -234,7 +223,7 @@ public final class ScrollingLogic implements ScrollLogic {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo564doFlingAnimationQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+    public Object mo642doFlingAnimationQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         ScrollingLogic$doFlingAnimation$1 scrollingLogic$doFlingAnimation$1;
         int i;
         ScrollingLogic scrollingLogic;
@@ -287,7 +276,7 @@ public final class ScrollingLogic implements ScrollLogic {
                     }
                 }
                 scrollingLogic.isFlinging = false;
-                return Velocity.m8225boximpl(longRef.element);
+                return Velocity.m8487boximpl(longRef.element);
             }
         }
         scrollingLogic$doFlingAnimation$1 = new ScrollingLogic$doFlingAnimation$1(this, continuation);
@@ -297,7 +286,7 @@ public final class ScrollingLogic implements ScrollLogic {
         if (i != 0) {
         }
         scrollingLogic.isFlinging = false;
-        return Velocity.m8225boximpl(longRef.element);
+        return Velocity.m8487boximpl(longRef.element);
     }
 
     public final boolean shouldScrollImmediately() {
@@ -346,5 +335,21 @@ public final class ScrollingLogic implements ScrollLogic {
 
     public final boolean isVertical() {
         return this.orientation == Orientation.Vertical;
+    }
+
+    /* renamed from: toSingleAxisDeltaFromAngle-k-4lQ0M  reason: not valid java name */
+    public final float m674toSingleAxisDeltaFromAnglek4lQ0M(long j) {
+        int i = (int) (4294967295L & j);
+        int i2 = (int) (j >> 32);
+        if (((float) Math.atan2(Math.abs(Float.intBitsToFloat(i)), Math.abs(Float.intBitsToFloat(i2)))) >= 0.7853981633974483d) {
+            if (this.orientation == Orientation.Vertical) {
+                return Float.intBitsToFloat(i);
+            }
+            return 0.0f;
+        } else if (this.orientation == Orientation.Horizontal) {
+            return Float.intBitsToFloat(i2);
+        } else {
+            return 0.0f;
+        }
     }
 }

@@ -194,14 +194,14 @@ public class GmsRpc {
         return task.continueWith(new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return GmsRpc.this.m9690xb80eb67f(task2);
+                return GmsRpc.this.m9985xb80eb67f(task2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$extractResponseWhenComplete$0$com-google-firebase-messaging-GmsRpc  reason: not valid java name */
-    public /* synthetic */ String m9690xb80eb67f(Task task) throws Exception {
+    public /* synthetic */ String m9985xb80eb67f(Task task) throws Exception {
         return handleResponse((Bundle) task.getResult(IOException.class));
     }
 

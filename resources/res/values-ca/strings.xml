@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Comparteix amb</string>
     <string name="abc_shareactionprovider_share_with_application">Comparteix amb %s</string>
     <string name="abc_toolbar_collapse_description">Replega</string>
-    <string name="autofill">Emplena automàticament</string>
+    <string name="androidx_compose_foundation_autofill">Emplenament automàtic</string>
+    <string name="androidx_compose_ui_autofill">Emplenament automàtic</string>
     <string name="bottomsheet_action_collapse">Replega el full inferior</string>
     <string name="bottomsheet_action_expand">Desplega el full inferior</string>
     <string name="bottomsheet_action_expand_halfway">Desplega fins a la meitat</string>

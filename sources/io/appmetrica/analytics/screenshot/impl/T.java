@@ -3,5 +3,5 @@ package io.appmetrica.analytics.screenshot.impl;
 public interface T {
     void a();
 
-    void a(C0771m c0771m);
+    void a(C0770m c0770m);
 }

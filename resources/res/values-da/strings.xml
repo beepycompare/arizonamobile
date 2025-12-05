@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Del med</string>
     <string name="abc_shareactionprovider_share_with_application">Del med %s</string>
     <string name="abc_toolbar_collapse_description">Skjul</string>
-    <string name="autofill">Autofyld</string>
+    <string name="androidx_compose_foundation_autofill">Autofyld</string>
+    <string name="androidx_compose_ui_autofill">Autofyld</string>
     <string name="bottomsheet_action_collapse">Skjul feltet i bunden</string>
     <string name="bottomsheet_action_expand">Udvid feltet i bunden</string>
     <string name="bottomsheet_action_expand_halfway">Udvid halvdelen</string>

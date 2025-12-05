@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Şununla paylaş:</string>
     <string name="abc_shareactionprovider_share_with_application">%s ile paylaş</string>
     <string name="abc_toolbar_collapse_description">Daralt</string>
-    <string name="autofill">Otomatik doldurma</string>
+    <string name="androidx_compose_foundation_autofill">Otomatik doldurma</string>
+    <string name="androidx_compose_ui_autofill">Otomatik doldurma</string>
     <string name="bottomsheet_action_collapse">Alt sayfayı daralt</string>
     <string name="bottomsheet_action_expand">Alt sayfayı genişlet</string>
     <string name="bottomsheet_action_expand_halfway">Yarım genişlet</string>

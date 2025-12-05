@@ -12,8 +12,8 @@ import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFact
 public final class Nb implements Lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0674we f603a = new C0674we();
-    public final C0646vb b = new C0646vb();
+    public final C0673we f686a = new C0673we();
+    public final C0645vb b = new C0645vb();
     public final Xb c = new Xb();
 
     @Override // io.appmetrica.analytics.impl.Lb, io.appmetrica.analytics.impl.Ob
@@ -44,7 +44,7 @@ public final class Nb implements Lb {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
     public final PermissionExtractor getPermissionExtractor() {
-        return this.f603a;
+        return this.f686a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider

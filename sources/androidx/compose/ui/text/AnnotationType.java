@@ -29,6 +29,14 @@ public final class AnnotationType {
         return $ENTRIES;
     }
 
+    public static AnnotationType valueOf(String str) {
+        return (AnnotationType) Enum.valueOf(AnnotationType.class, str);
+    }
+
+    public static AnnotationType[] values() {
+        return (AnnotationType[]) $VALUES.clone();
+    }
+
     private AnnotationType(String str, int i) {
     }
 
@@ -36,13 +44,5 @@ public final class AnnotationType {
         AnnotationType[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static AnnotationType valueOf(String str) {
-        return (AnnotationType) Enum.valueOf(AnnotationType.class, str);
-    }
-
-    public static AnnotationType[] values() {
-        return (AnnotationType[]) $VALUES.clone();
     }
 }

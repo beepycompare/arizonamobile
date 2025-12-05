@@ -18,7 +18,7 @@ import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 public class Signer {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f169a = false;
+    public boolean f252a = false;
     public d b;
     public a c;
     public c d;
@@ -28,13 +28,13 @@ public class Signer {
     }
 
     public final synchronized void a() {
-        if (this.f169a) {
+        if (this.f252a) {
             return;
         }
         this.b = new d();
         this.d = new c(Build.VERSION.SDK_INT);
         this.c = new NativeLibHelper();
-        this.f169a = true;
+        this.f252a = true;
     }
 
     public synchronized void onResume() {
@@ -42,7 +42,7 @@ public class Signer {
         d dVar = this.b;
         a aVar = this.c;
         dVar.getClass();
-        if (!d.f171a) {
+        if (!d.f254a) {
             ((NativeLibHelper) aVar).a();
         }
     }

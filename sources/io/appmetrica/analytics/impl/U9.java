@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class U9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ul f708a = new Ul();
+    public final Ul f791a = new Ul();
     public W9 b = new W9();
 
     public final synchronized void a(W9 w9) {
@@ -23,7 +23,7 @@ public final class U9 {
         String str;
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            if (Intrinsics.areEqual((String) it.next(), "appmetrica_lib_ssl_enabled") && (bool = this.b.f737a) != null) {
+            if (Intrinsics.areEqual((String) it.next(), "appmetrica_lib_ssl_enabled") && (bool = this.b.f820a) != null) {
                 boolean booleanValue = bool.booleanValue();
                 W9 w9 = this.b;
                 IdentifierStatus identifierStatus = w9.b;
@@ -35,7 +35,7 @@ public final class U9 {
                 } else {
                     throw new NoWhenBranchMatchedException();
                 }
-                hashMap.put("appmetrica_lib_ssl_enabled", this.f708a.a(new IdentifiersResult(str, identifierStatus, str2)));
+                hashMap.put("appmetrica_lib_ssl_enabled", this.f791a.a(new IdentifiersResult(str, identifierStatus, str2)));
             }
         }
     }

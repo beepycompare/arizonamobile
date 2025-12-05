@@ -1,5 +1,6 @@
 package ru.mrlargha.feature.mobile.presentation.page.rent;
 
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -18,7 +19,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreat
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentRealEstateModel;
 /* compiled from: ArizonaRentAddPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1", f = "ArizonaRentAddPage.kt", i = {0, 1}, l = {241, 258}, m = "invokeSuspend", n = {"item", "item"}, s = {"L$0", "L$0"}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1", f = "ArizonaRentAddPage.kt", i = {0, 1}, l = {253, SubsamplingScaleImageView.ORIENTATION_270}, m = "invokeSuspend", n = {"item", "item"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes6.dex */
 final class ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MpArizonaRentAddPageBinding $this_with;

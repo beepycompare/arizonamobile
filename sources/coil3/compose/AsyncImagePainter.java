@@ -83,10 +83,10 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.painter$delegate = mutableStateOf$default;
         this.alpha = 1.0f;
-        this.drawSize = Size.Companion.m5113getUnspecifiedNHjbRc();
+        this.drawSize = Size.Companion.m5256getUnspecifiedNHjbRc();
         this.transform = DefaultTransform;
         this.contentScale = ContentScale.Companion.getFit();
-        this.filterQuality = DrawScope.Companion.m5862getDefaultFilterQualityfv9h1I();
+        this.filterQuality = DrawScope.Companion.m6008getDefaultFilterQualityfv9h1I();
         this._input = input;
         MutableStateFlow<Input> MutableStateFlow = StateFlowKt.MutableStateFlow(input);
         this.inputFlow = MutableStateFlow;
@@ -113,14 +113,14 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
     }
 
     /* renamed from: setDrawSize-uvyYCjk */
-    private final void m9068setDrawSizeuvyYCjk(long j) {
-        if (Size.m5101equalsimpl0(this.drawSize, j)) {
+    private final void m9363setDrawSizeuvyYCjk(long j) {
+        if (Size.m5244equalsimpl0(this.drawSize, j)) {
             return;
         }
         this.drawSize = j;
         MutableSharedFlow<Size> mutableSharedFlow = this.drawSizeFlow;
         if (mutableSharedFlow != null) {
-            mutableSharedFlow.tryEmit(Size.m5093boximpl(j));
+            mutableSharedFlow.tryEmit(Size.m5236boximpl(j));
         }
     }
 
@@ -162,12 +162,12 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
     }
 
     /* renamed from: getFilterQuality-f-v9h1I$coil_compose_core_release */
-    public final int m9069getFilterQualityfv9h1I$coil_compose_core_release() {
+    public final int m9364getFilterQualityfv9h1I$coil_compose_core_release() {
         return this.filterQuality;
     }
 
     /* renamed from: setFilterQuality-vDHp3xo$coil_compose_core_release */
-    public final void m9070setFilterQualityvDHp3xo$coil_compose_core_release(int i) {
+    public final void m9365setFilterQualityvDHp3xo$coil_compose_core_release(int i) {
         this.filterQuality = i;
     }
 
@@ -204,17 +204,17 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5979getIntrinsicSizeNHjbRc() {
+    public long mo6125getIntrinsicSizeNHjbRc() {
         Painter painter = getPainter();
-        return painter != null ? painter.mo5979getIntrinsicSizeNHjbRc() : Size.Companion.m5113getUnspecifiedNHjbRc();
+        return painter != null ? painter.mo6125getIntrinsicSizeNHjbRc() : Size.Companion.m5256getUnspecifiedNHjbRc();
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     public void onDraw(DrawScope drawScope) {
-        m9068setDrawSizeuvyYCjk(drawScope.mo5859getSizeNHjbRc());
+        m9363setDrawSizeuvyYCjk(drawScope.mo6005getSizeNHjbRc());
         Painter painter = getPainter();
         if (painter != null) {
-            painter.m5985drawx_KDEd0(drawScope, drawScope.mo5859getSizeNHjbRc(), this.alpha, this.colorFilter);
+            painter.m6131drawx_KDEd0(drawScope, drawScope.mo6005getSizeNHjbRc(), this.alpha, this.colorFilter);
         }
     }
 
@@ -301,7 +301,7 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
 
             @Override // coil3.target.Target
             public void onStart(Image image) {
-                this.updateState(new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m9080asPainter55t9rM(image, ImageRequest.this.getContext(), this.m9069getFilterQualityfv9h1I$coil_compose_core_release()) : null));
+                this.updateState(new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m9375asPainter55t9rM(image, ImageRequest.this.getContext(), this.m9364getFilterQualityfv9h1I$coil_compose_core_release()) : null));
             }
         });
         if (imageRequest.getDefined().getSizeResolver() == null) {
@@ -346,13 +346,13 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
     public final State toState(ImageResult imageResult) {
         if (imageResult instanceof SuccessResult) {
             SuccessResult successResult = (SuccessResult) imageResult;
-            return new State.Success(ImagePainter_androidKt.m9080asPainter55t9rM(successResult.getImage(), successResult.getRequest().getContext(), this.filterQuality), successResult);
+            return new State.Success(ImagePainter_androidKt.m9375asPainter55t9rM(successResult.getImage(), successResult.getRequest().getContext(), this.filterQuality), successResult);
         } else if (!(imageResult instanceof ErrorResult)) {
             throw new NoWhenBranchMatchedException();
         } else {
             ErrorResult errorResult = (ErrorResult) imageResult;
             Image image = errorResult.getImage();
-            return new State.Error(image != null ? ImagePainter_androidKt.m9080asPainter55t9rM(image, errorResult.getRequest().getContext(), this.filterQuality) : null, errorResult);
+            return new State.Error(image != null ? ImagePainter_androidKt.m9375asPainter55t9rM(image, errorResult.getRequest().getContext(), this.filterQuality) : null, errorResult);
         }
     }
 
@@ -362,7 +362,7 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
             mutableSharedFlow = SharedFlowKt.MutableSharedFlow$default(1, 0, BufferOverflow.DROP_OLDEST, 2, null);
             long j = this.drawSize;
             if (j != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                mutableSharedFlow.tryEmit(Size.m5093boximpl(j));
+                mutableSharedFlow.tryEmit(Size.m5236boximpl(j));
             }
             this.drawSizeFlow = mutableSharedFlow;
         }

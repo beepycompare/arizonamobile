@@ -19,10 +19,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.sync.Mutex;
 /* compiled from: PlatformSelectionBehaviors.android.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroidx/compose/ui/text/TextRange;", "Landroid/view/textclassifier/TextClassifier;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2", f = "PlatformSelectionBehaviors.android.kt", i = {0, 0, 0, 1}, l = {351, 158}, m = "invokeSuspend", n = {"suggestedSelection", "$this$withLock_u24default$iv", "newSelection", "newSelection"}, s = {"L$0", "L$1", "J$0", "J$0"})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2", f = "PlatformSelectionBehaviors.android.kt", i = {0, 0, 0, 1}, l = {369, 159}, m = "invokeSuspend", n = {"suggestedSelection", "$this$withLock_u24default$iv", "newSelection", "newSelection"}, s = {"L$0", "L$1", "J$0", "J$0"}, v = 1)
 /* loaded from: classes.dex */
 final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2 extends SuspendLambda implements Function2<TextClassifier, Continuation<? super TextRange>, Object> {
-    final /* synthetic */ long $selection;
+
+    /* renamed from: $$v$c$androidx-compose-ui-text-TextRange$-selection$0  reason: not valid java name */
+    final /* synthetic */ long f59$$v$c$androidxcomposeuitextTextRange$selection$0;
     final /* synthetic */ CharSequence $text;
     long J$0;
     private /* synthetic */ Object L$0;
@@ -37,13 +39,13 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
     public PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2(CharSequence charSequence, long j, PlatformSelectionBehaviorsImpl platformSelectionBehaviorsImpl, Continuation<? super PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2> continuation) {
         super(2, continuation);
         this.$text = charSequence;
-        this.$selection = j;
+        this.f59$$v$c$androidxcomposeuitextTextRange$selection$0 = j;
         this.this$0 = platformSelectionBehaviorsImpl;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2 platformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2 = new PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2(this.$text, this.$selection, this.this$0, continuation);
+        PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2 platformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2 = new PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2(this.$text, this.f59$$v$c$androidxcomposeuitextTextRange$selection$0, this.this$0, continuation);
         platformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2.L$0 = obj;
         return platformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2;
     }
@@ -56,7 +58,7 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         LocaleList androidLocalList;
-        Object m1749classifyTextM8tDOmk;
+        Object m1839classifyTextM8tDOmk;
         long j;
         Mutex mutex;
         CharSequence charSequence;
@@ -68,7 +70,7 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             TextClassifier textClassifier = (TextClassifier) this.L$0;
-            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m7456getMinimpl(this.$selection), TextRange.m7455getMaximpl(this.$selection));
+            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m7699getMinimpl(this.f59$$v$c$androidxcomposeuitextTextRange$selection$0), TextRange.m7698getMaximpl(this.f59$$v$c$androidxcomposeuitextTextRange$selection$0));
             androidLocalList = this.this$0.getAndroidLocalList();
             TextSelection.Request.Builder defaultLocales = builder.setDefaultLocales(androidLocalList);
             if (Build.VERSION.SDK_INT >= 31) {
@@ -79,8 +81,8 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
             if (Build.VERSION.SDK_INT < 31 || suggestSelection.getTextClassification() == null) {
                 this.J$0 = TextRange;
                 this.label = 2;
-                m1749classifyTextM8tDOmk = this.this$0.m1749classifyTextM8tDOmk(this.$text, TextRange, textClassifier, this);
-                if (m1749classifyTextM8tDOmk != coroutine_suspended) {
+                m1839classifyTextM8tDOmk = this.this$0.m1839classifyTextM8tDOmk(this.$text, TextRange, textClassifier, this);
+                if (m1839classifyTextM8tDOmk != coroutine_suspended) {
                     j = TextRange;
                     j2 = j;
                 }
@@ -129,6 +131,6 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
             ResultKt.throwOnFailure(obj);
             j2 = j;
         }
-        return TextRange.m7446boximpl(j2);
+        return TextRange.m7689boximpl(j2);
     }
 }

@@ -1,16 +1,16 @@
 package io.appmetrica.analytics;
 
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class StartupParamsItem {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f192a;
+    private final String f275a;
     private final StartupParamsItemStatus b;
     private final String c;
 
     public StartupParamsItem(String str, StartupParamsItemStatus startupParamsItemStatus, String str2) {
-        this.f192a = str;
+        this.f275a = str;
         this.b = startupParamsItemStatus;
         this.c = str2;
     }
@@ -21,7 +21,7 @@ public final class StartupParamsItem {
         }
         if (obj != null && StartupParamsItem.class == obj.getClass()) {
             StartupParamsItem startupParamsItem = (StartupParamsItem) obj;
-            if (Objects.equals(this.f192a, startupParamsItem.f192a) && this.b == startupParamsItem.b && Objects.equals(this.c, startupParamsItem.c)) {
+            if (Objects.equals(this.f275a, startupParamsItem.f275a) && this.b == startupParamsItem.b && Objects.equals(this.c, startupParamsItem.c)) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ public final class StartupParamsItem {
     }
 
     public String getId() {
-        return this.f192a;
+        return this.f275a;
     }
 
     public StartupParamsItemStatus getStatus() {
@@ -41,10 +41,10 @@ public final class StartupParamsItem {
     }
 
     public int hashCode() {
-        return Objects.hash(this.f192a, this.b, this.c);
+        return Objects.hash(this.f275a, this.b, this.c);
     }
 
     public String toString() {
-        return "StartupParamsItem{id='" + this.f192a + "', status=" + this.b + ", errorDetails='" + this.c + "'}";
+        return "StartupParamsItem{id='" + this.f275a + "', status=" + this.b + ", errorDetails='" + this.c + "'}";
     }
 }

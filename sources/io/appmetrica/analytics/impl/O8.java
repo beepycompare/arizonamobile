@@ -5,14 +5,14 @@ import android.content.ContentValues;
 public final class O8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f619a;
+    public final String f702a;
     public String b;
     public final Long c;
     public final Long d;
     public final Long e;
     public final Long f;
-    public final C0341j7 g;
-    public final EnumC0165cb h;
+    public final C0340j7 g;
+    public final EnumC0164cb h;
     public final Integer i;
     public final String j;
     public final Integer k;
@@ -20,15 +20,15 @@ public final class O8 {
     public final String m;
     public final String n;
     public final J8 o;
-    public final EnumC0215ea p;
-    public final EnumC0445n9 q;
+    public final EnumC0214ea p;
+    public final EnumC0444n9 q;
     public final Boolean r;
     public final Integer s;
     public final byte[] t;
 
     public O8(ContentValues contentValues) {
-        C0238f7 model = new C0264g7(null, 1, null).toModel(contentValues);
-        this.f619a = model.a().j();
+        C0237f7 model = new C0263g7(null, 1, null).toModel(contentValues);
+        this.f702a = model.a().j();
         this.b = model.a().p();
         this.c = model.c();
         this.d = model.b();
@@ -44,8 +44,8 @@ public final class O8 {
         this.n = model.a().m();
         J8 e = model.a().e();
         this.o = e == null ? J8.a(null) : e;
-        EnumC0215ea h = model.a().h();
-        this.p = h == null ? EnumC0215ea.a(null) : h;
+        EnumC0214ea h = model.a().h();
+        this.p = h == null ? EnumC0214ea.a(null) : h;
         this.q = model.a().n();
         this.r = model.a().a();
         this.s = model.a().l();

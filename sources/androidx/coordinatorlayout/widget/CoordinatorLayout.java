@@ -1566,7 +1566,7 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
         }
 
         public int getScrimColor(CoordinatorLayout coordinatorLayout, V v) {
-            return ViewCompat.MEASURED_STATE_MASK;
+            return -16777216;
         }
 
         public float getScrimOpacity(CoordinatorLayout coordinatorLayout, V v) {

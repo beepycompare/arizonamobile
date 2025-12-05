@@ -43,12 +43,14 @@ public class SnapshotMutableLongStateImpl extends StateObjectImpl implements Mut
         LongStateStateRecord longStateStateRecord = (LongStateStateRecord) SnapshotKt.current(this.next);
         if (longStateStateRecord.getValue() != j) {
             LongStateStateRecord longStateStateRecord2 = this.next;
+            SnapshotMutableLongStateImpl snapshotMutableLongStateImpl = this;
+            LongStateStateRecord longStateStateRecord3 = longStateStateRecord;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                ((LongStateStateRecord) SnapshotKt.overwritableRecord(longStateStateRecord2, this, current, longStateStateRecord)).setValue(j);
+                ((LongStateStateRecord) SnapshotKt.overwritableRecord(longStateStateRecord2, snapshotMutableLongStateImpl, current, longStateStateRecord3)).setValue(j);
                 Unit unit = Unit.INSTANCE;
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotMutableLongStateImpl);
         }
     }
 
@@ -64,7 +66,7 @@ public class SnapshotMutableLongStateImpl extends StateObjectImpl implements Mut
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit component2$lambda$4(SnapshotMutableLongStateImpl snapshotMutableLongStateImpl, long j) {
+    public static final Unit component2$lambda$0(SnapshotMutableLongStateImpl snapshotMutableLongStateImpl, long j) {
         snapshotMutableLongStateImpl.setLongValue(j);
         return Unit.INSTANCE;
     }
@@ -74,9 +76,9 @@ public class SnapshotMutableLongStateImpl extends StateObjectImpl implements Mut
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableLongStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$4;
-                component2$lambda$4 = SnapshotMutableLongStateImpl.component2$lambda$4(SnapshotMutableLongStateImpl.this, ((Long) obj).longValue());
-                return component2$lambda$4;
+                Unit component2$lambda$0;
+                component2$lambda$0 = SnapshotMutableLongStateImpl.component2$lambda$0(SnapshotMutableLongStateImpl.this, ((Long) obj).longValue());
+                return component2$lambda$0;
             }
         };
     }
@@ -108,17 +110,17 @@ public class SnapshotMutableLongStateImpl extends StateObjectImpl implements Mut
     public static final class LongStateStateRecord extends StateRecord {
         private long value;
 
+        public LongStateStateRecord(long j, long j2) {
+            super(j);
+            this.value = j2;
+        }
+
         public final long getValue() {
             return this.value;
         }
 
         public final void setValue(long j) {
             this.value = j;
-        }
-
-        public LongStateStateRecord(long j, long j2) {
-            super(j);
-            this.value = j2;
         }
 
         @Override // androidx.compose.runtime.snapshots.StateRecord

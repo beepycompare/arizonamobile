@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Bagikan dengan</string>
     <string name="abc_shareactionprovider_share_with_application">Bagikan dengan %s</string>
     <string name="abc_toolbar_collapse_description">Ciutkan</string>
-    <string name="autofill">Isi otomatis</string>
+    <string name="androidx_compose_foundation_autofill">Isi otomatis</string>
+    <string name="androidx_compose_ui_autofill">Isi otomatis</string>
     <string name="bottomsheet_action_collapse">Menciutkan sheet bawah</string>
     <string name="bottomsheet_action_expand">Meluaskan sheet bawah</string>
     <string name="bottomsheet_action_expand_halfway">Luaskan setengah</string>

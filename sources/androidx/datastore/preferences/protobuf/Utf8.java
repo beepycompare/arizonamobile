@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
+import androidx.window.core.layout.WindowSizeClass;
 import com.google.common.base.Ascii;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -716,7 +716,7 @@ public final class Utf8 {
                         throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i5);
                     }
                 } else {
-                    out[i5] = (byte) ((charAt2 >>> '\f') | 480);
+                    out[i5] = (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
                     int i9 = i5 + 2;
                     out[i5 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
                     i5 += 3;
@@ -1086,7 +1086,7 @@ public final class Utf8 {
                             throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + j4);
                         }
                     }
-                    UnsafeUtil.putByte(out, j4, (byte) ((charAt2 >>> '\f') | 480));
+                    UnsafeUtil.putByte(out, j4, (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
                     long j7 = j4 + 2;
                     j3 = j5;
                     UnsafeUtil.putByte(out, j4 + j2, (byte) (((charAt2 >>> 6) & 63) | 128));
@@ -1178,7 +1178,7 @@ public final class Utf8 {
                             throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + position);
                         }
                     } else {
-                        UnsafeUtil.putByte(position, (byte) ((charAt2 >>> '\f') | 480));
+                        UnsafeUtil.putByte(position, (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
                         j3 = addressOffset;
                         long j7 = position + 2;
                         j4 = limit;
@@ -1473,7 +1473,7 @@ public final class Utf8 {
         }
 
         private static char lowSurrogate(int codePoint) {
-            return (char) ((codePoint & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + okio.Utf8.LOG_SURROGATE_HEADER);
+            return (char) ((codePoint & 1023) + okio.Utf8.LOG_SURROGATE_HEADER);
         }
 
         private static int trailingByteValue(byte b) {

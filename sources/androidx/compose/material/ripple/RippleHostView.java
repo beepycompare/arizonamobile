@@ -73,7 +73,7 @@ public final class RippleHostView extends View {
     }
 
     /* renamed from: addRipple-KOepWvA  reason: not valid java name */
-    public final void m1860addRippleKOepWvA(PressInteraction.Press press, boolean z, long j, int i, long j2, float f, Function0<Unit> function0) {
+    public final void m1946addRippleKOepWvA(PressInteraction.Press press, boolean z, long j, int i, long j2, float f, Function0<Unit> function0) {
         if (this.ripple == null || !Intrinsics.areEqual(Boolean.valueOf(z), this.bounded)) {
             createRipple(z);
             this.bounded = Boolean.valueOf(z);
@@ -81,9 +81,9 @@ public final class RippleHostView extends View {
         UnprojectedRipple unprojectedRipple = this.ripple;
         Intrinsics.checkNotNull(unprojectedRipple);
         this.onInvalidateRipple = function0;
-        m1861setRipplePropertiesbiQXAtU(j, i, j2, f);
+        m1947setRipplePropertiesbiQXAtU(j, i, j2, f);
         if (z) {
-            unprojectedRipple.setHotspot(Offset.m5036getXimpl(press.m639getPressPositionF1C5BW0()), Offset.m5037getYimpl(press.m639getPressPositionF1C5BW0()));
+            unprojectedRipple.setHotspot(Offset.m5179getXimpl(press.m719getPressPositionF1C5BW0()), Offset.m5180getYimpl(press.m719getPressPositionF1C5BW0()));
         } else {
             unprojectedRipple.setHotspot(unprojectedRipple.getBounds().centerX(), unprojectedRipple.getBounds().centerY());
         }
@@ -95,14 +95,14 @@ public final class RippleHostView extends View {
     }
 
     /* renamed from: setRippleProperties-biQXAtU  reason: not valid java name */
-    public final void m1861setRipplePropertiesbiQXAtU(long j, int i, long j2, float f) {
+    public final void m1947setRipplePropertiesbiQXAtU(long j, int i, long j2, float f) {
         UnprojectedRipple unprojectedRipple = this.ripple;
         if (unprojectedRipple == null) {
             return;
         }
         unprojectedRipple.trySetRadius(i);
-        unprojectedRipple.m1873setColorDxMtmZc(j2, f);
-        Rect rect = new Rect(0, 0, MathKt.roundToInt(Size.m5105getWidthimpl(j)), MathKt.roundToInt(Size.m5102getHeightimpl(j)));
+        unprojectedRipple.m1959setColorDxMtmZc(j2, f);
+        Rect rect = new Rect(0, 0, MathKt.roundToInt(Size.m5248getWidthimpl(j)), MathKt.roundToInt(Size.m5245getHeightimpl(j)));
         setLeft(rect.left);
         setTop(rect.top);
         setRight(rect.right);
@@ -145,7 +145,7 @@ public final class RippleHostView extends View {
             Runnable runnable2 = new Runnable() { // from class: androidx.compose.material.ripple.RippleHostView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RippleHostView.setRippleState$lambda$2(RippleHostView.this);
+                    RippleHostView.setRippleState$lambda$1(RippleHostView.this);
                 }
             };
             this.resetRippleRunnable = runnable2;
@@ -161,7 +161,7 @@ public final class RippleHostView extends View {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setRippleState$lambda$2(RippleHostView rippleHostView) {
+    public static final void setRippleState$lambda$1(RippleHostView rippleHostView) {
         UnprojectedRipple unprojectedRipple = rippleHostView.ripple;
         if (unprojectedRipple != null) {
             unprojectedRipple.setState(RestingState);

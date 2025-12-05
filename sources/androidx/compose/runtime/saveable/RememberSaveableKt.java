@@ -27,7 +27,7 @@ public final class RememberSaveableKt {
 
     @Deprecated(message = " 'rememberSaveable' with a custom 'key' is no longer supported. It bypasses positional scoping, leading to state bugs and inconsistent behavior (e.g., unintentional state sharing or loss, issues in nested LazyLayouts). Please remove the 'key' parameter to use positional scoping for consistent, locally-scoped state. See https://r.android.com/3610053 for details.")
     /* renamed from: rememberSaveable  reason: collision with other method in class */
-    public static final <T> T m4725rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, String str, Function0<? extends T> function0, Composer composer, int i, int i2) {
+    public static final <T> T m4856rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, String str, Function0<? extends T> function0, Composer composer, int i, int i2) {
         Object[] objArr2;
         final T t;
         Object consumeRestored;
@@ -56,7 +56,7 @@ public final class RememberSaveableKt {
         Object consume = composer.consume(SaveableStateRegistryKt.getLocalSaveableStateRegistry());
         ComposerKt.sourceInformationMarkerEnd(composer);
         final SaveableStateRegistry saveableStateRegistry = (SaveableStateRegistry) consume;
-        ComposerKt.sourceInformationMarkerStart(composer, -542767440, "CC(remember):RememberSaveable.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -542783120, "CC(remember):RememberSaveable.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             if (saveableStateRegistry != null && (consumeRestored = saveableStateRegistry.consumeRestored(str3)) != null) {
@@ -78,18 +78,18 @@ public final class RememberSaveableKt {
         if (valueIfInputsDidntChange == null) {
             valueIfInputsDidntChange = function0.invoke();
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -542755546, "CC(remember):RememberSaveable.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -542771226, "CC(remember):RememberSaveable.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(saveableHolder2) | ((((i & 112) ^ 48) > 32 && composer.changedInstance(saver2)) || (i & 48) == 32) | composer.changedInstance(saveableStateRegistry) | composer.changed(str3) | composer.changedInstance(valueIfInputsDidntChange) | composer.changedInstance(objArr2);
         Object rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
             final Object[] objArr3 = objArr2;
             t = (T) valueIfInputsDidntChange;
-            Object obj = new Function0() { // from class: androidx.compose.runtime.saveable.RememberSaveableKt$$ExternalSyntheticLambda1
+            Object obj = new Function0() { // from class: androidx.compose.runtime.saveable.RememberSaveableKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit rememberSaveable$lambda$3$lambda$2;
-                    rememberSaveable$lambda$3$lambda$2 = RememberSaveableKt.rememberSaveable$lambda$3$lambda$2(SaveableHolder.this, saver2, saveableStateRegistry, str3, t, objArr3);
-                    return rememberSaveable$lambda$3$lambda$2;
+                    Unit rememberSaveable$lambda$1$0;
+                    rememberSaveable$lambda$1$0 = RememberSaveableKt.rememberSaveable$lambda$1$0(SaveableHolder.this, saver2, saveableStateRegistry, str3, t, objArr3);
+                    return rememberSaveable$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(obj);
@@ -107,7 +107,7 @@ public final class RememberSaveableKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit rememberSaveable$lambda$3$lambda$2(SaveableHolder saveableHolder, Saver saver, SaveableStateRegistry saveableStateRegistry, String str, Object obj, Object[] objArr) {
+    public static final Unit rememberSaveable$lambda$1$0(SaveableHolder saveableHolder, Saver saver, SaveableStateRegistry saveableStateRegistry, String str, Object obj, Object[] objArr) {
         saveableHolder.update(saver, saveableStateRegistry, str, obj, objArr);
         return Unit.INSTANCE;
     }
@@ -117,7 +117,7 @@ public final class RememberSaveableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1564532345, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:135)");
         }
-        T t = (T) m4725rememberSaveable(Arrays.copyOf(objArr, objArr.length), SaverKt.autoSaver(), (String) null, function0, composer, ((i << 6) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+        T t = (T) m4856rememberSaveable(Arrays.copyOf(objArr, objArr.length), SaverKt.autoSaver(), (String) null, function0, composer, ((i << 6) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -126,12 +126,12 @@ public final class RememberSaveableKt {
     }
 
     /* renamed from: rememberSaveable  reason: collision with other method in class */
-    public static final <T> T m4726rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, Function0<? extends T> function0, Composer composer, int i) {
+    public static final <T> T m4857rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, Function0<? extends T> function0, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 674689872, "C(rememberSaveable)N(inputs,saver,init)182@8584L65:RememberSaveable.kt#r2ddri");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(674689872, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:180)");
         }
-        T t = (T) m4725rememberSaveable(Arrays.copyOf(objArr, objArr.length), saver, (String) null, function0, composer, (i & 112) | RendererCapabilities.DECODER_SUPPORT_MASK | ((i << 3) & 7168), 0);
+        T t = (T) m4856rememberSaveable(Arrays.copyOf(objArr, objArr.length), saver, (String) null, function0, composer, (i & 112) | RendererCapabilities.DECODER_SUPPORT_MASK | ((i << 3) & 7168), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -144,7 +144,7 @@ public final class RememberSaveableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-746165481, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:208)");
         }
-        MutableState<T> mutableState = (MutableState) m4725rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), (String) null, (Function0<? extends Object>) function0, composer, ((i << 3) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+        MutableState<T> mutableState = (MutableState) m4856rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), (String) null, (Function0<? extends Object>) function0, composer, ((i << 3) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -162,7 +162,7 @@ public final class RememberSaveableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-202053668, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:248)");
         }
-        MutableState<T> mutableState = (MutableState) m4725rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), str2, (Function0<? extends Object>) function0, composer, i & 8064, 0);
+        MutableState<T> mutableState = (MutableState) m4856rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), str2, (Function0<? extends Object>) function0, composer, i & 8064, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -175,37 +175,22 @@ public final class RememberSaveableKt {
         return SaverKt.Saver(new Function2() { // from class: androidx.compose.runtime.saveable.RememberSaveableKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                MutableState mutableStateSaver$lambda$6$lambda$5;
-                mutableStateSaver$lambda$6$lambda$5 = RememberSaveableKt.mutableStateSaver$lambda$6$lambda$5(Saver.this, (SaverScope) obj, (MutableState) obj2);
-                return mutableStateSaver$lambda$6$lambda$5;
+                MutableState mutableStateSaver$lambda$0$0;
+                mutableStateSaver$lambda$0$0 = RememberSaveableKt.mutableStateSaver$lambda$0$0(Saver.this, (SaverScope) obj, (MutableState) obj2);
+                return mutableStateSaver$lambda$0$0;
             }
-        }, new Function1<MutableState<Object>, MutableState<T>>() { // from class: androidx.compose.runtime.saveable.RememberSaveableKt$mutableStateSaver$1$2
+        }, new Function1() { // from class: androidx.compose.runtime.saveable.RememberSaveableKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public final MutableState<T> invoke(MutableState<Object> mutableState) {
-                T t;
-                if (!(mutableState instanceof SnapshotMutableState)) {
-                    throw new IllegalArgumentException("Failed requirement.".toString());
-                }
-                SnapshotMutableState snapshotMutableState = (SnapshotMutableState) mutableState;
-                if (snapshotMutableState.getValue() != null) {
-                    Saver<T, Object> saver2 = saver;
-                    T value = snapshotMutableState.getValue();
-                    Intrinsics.checkNotNull(value);
-                    t = saver2.restore(value);
-                } else {
-                    t = null;
-                }
-                SnapshotMutationPolicy<T> policy = snapshotMutableState.getPolicy();
-                Intrinsics.checkNotNull(policy, "null cannot be cast to non-null type androidx.compose.runtime.SnapshotMutationPolicy<T of androidx.compose.runtime.saveable.RememberSaveableKt.mutableStateSaver?>");
-                MutableState<T> mutableStateOf = SnapshotStateKt.mutableStateOf(t, policy);
-                Intrinsics.checkNotNull(mutableStateOf, "null cannot be cast to non-null type androidx.compose.runtime.MutableState<T of androidx.compose.runtime.saveable.RememberSaveableKt.mutableStateSaver>");
-                return mutableStateOf;
+            public final Object invoke(Object obj) {
+                MutableState mutableStateSaver$lambda$0$1;
+                mutableStateSaver$lambda$0$1 = RememberSaveableKt.mutableStateSaver$lambda$0$1(Saver.this, (MutableState) obj);
+                return mutableStateSaver$lambda$0$1;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final MutableState mutableStateSaver$lambda$6$lambda$5(Saver saver, SaverScope saverScope, MutableState mutableState) {
+    public static final MutableState mutableStateSaver$lambda$0$0(Saver saver, SaverScope saverScope, MutableState mutableState) {
         if (!(mutableState instanceof SnapshotMutableState)) {
             throw new IllegalArgumentException("If you use a custom MutableState implementation you have to write a custom Saver and pass it as a saver param to rememberSaveable()".toString());
         }
@@ -217,6 +202,27 @@ public final class RememberSaveableKt {
             return SnapshotStateKt.mutableStateOf(save, policy);
         }
         return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final MutableState mutableStateSaver$lambda$0$1(Saver saver, MutableState mutableState) {
+        Object obj;
+        if (!(mutableState instanceof SnapshotMutableState)) {
+            throw new IllegalArgumentException("Failed requirement.".toString());
+        }
+        SnapshotMutableState snapshotMutableState = (SnapshotMutableState) mutableState;
+        if (snapshotMutableState.getValue() != 0) {
+            T value = snapshotMutableState.getValue();
+            Intrinsics.checkNotNull(value);
+            obj = saver.restore(value);
+        } else {
+            obj = null;
+        }
+        SnapshotMutationPolicy policy = snapshotMutableState.getPolicy();
+        Intrinsics.checkNotNull(policy, "null cannot be cast to non-null type androidx.compose.runtime.SnapshotMutationPolicy<T of androidx.compose.runtime.saveable.RememberSaveableKt.mutableStateSaver?>");
+        MutableState mutableStateOf = SnapshotStateKt.mutableStateOf(obj, policy);
+        Intrinsics.checkNotNull(mutableStateOf, "null cannot be cast to non-null type androidx.compose.runtime.MutableState<T of androidx.compose.runtime.saveable.RememberSaveableKt.mutableStateSaver>");
+        return mutableStateOf;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import kotlin.Metadata;
 import kotlin.NotImplementedError;
@@ -55,7 +54,7 @@ public final class UberComplete implements MobileController {
         bind.mpUberCompletePage.setLayoutParams(new ConstraintLayout.LayoutParams(-1, -1));
         Drawable mutate = bind.mpUberActionButton.getBackground().mutate();
         Intrinsics.checkNotNull(mutate, "null cannot be cast to non-null type android.graphics.drawable.GradientDrawable");
-        ((GradientDrawable) mutate).setColor(ViewCompat.MEASURED_STATE_MASK);
+        ((GradientDrawable) mutate).setColor(-16777216);
         bind.mpUberRates.setAdapter(mobilePhoneRateAdapter);
         bind.mpUberRates.setLayoutManager(new GridLayoutManager((Context) context, 1, 0, false));
         binding.phoneCaseContainer.addView(bind.mpUberCompletePage);

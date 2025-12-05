@@ -8,7 +8,7 @@ public final class g implements Converter {
     /* renamed from: a */
     public final s fromModel(BillingConfig billingConfig) {
         s sVar = new s();
-        sVar.f223a = billingConfig.getSendFrequencySeconds();
+        sVar.f306a = billingConfig.getSendFrequencySeconds();
         sVar.b = billingConfig.getFirstCollectingInappMaxAgeSeconds();
         return sVar;
     }
@@ -16,10 +16,10 @@ public final class g implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
         s sVar = (s) obj;
-        return new BillingConfig(sVar.f223a, sVar.b);
+        return new BillingConfig(sVar.f306a, sVar.b);
     }
 
     public final BillingConfig a(s sVar) {
-        return new BillingConfig(sVar.f223a, sVar.b);
+        return new BillingConfig(sVar.f306a, sVar.b);
     }
 }

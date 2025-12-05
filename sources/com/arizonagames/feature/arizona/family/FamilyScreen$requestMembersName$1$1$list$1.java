@@ -1,5 +1,6 @@
 package com.arizonagames.feature.arizona.family;
 
+import androidx.window.core.layout.WindowSizeClass;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
 import com.arizonagames.feature.arizona.family.data.MemberItem;
 import java.util.List;
@@ -15,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lcom/arizonagames/feature/arizona/family/data/MemberItem;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestMembersName$1$1$list$1", f = "FamilyScreen.kt", i = {}, l = {480}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestMembersName$1$1$list$1", f = "FamilyScreen.kt", i = {}, l = {WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 final class FamilyScreen$requestMembersName$1$1$list$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends MemberItem>>, Object> {
     final /* synthetic */ FamilyData $it;

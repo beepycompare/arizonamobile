@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TransformableState.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableStateKt$animateBy$3", f = "TransformableState.kt", i = {}, l = {230}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableStateKt$animateBy$3", f = "TransformableState.kt", i = {}, l = {230}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TransformableStateKt$animateBy$3 extends SuspendLambda implements Function2<TransformScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DelegatingAnimationSpec $animationSpec;
@@ -85,7 +85,7 @@ public final class TransformableStateKt$animateBy$3 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Type inference failed for: r7v1, types: [T, java.lang.Object] */
     public static final Unit invokeSuspend$lambda$0(Ref.ObjectRef objectRef, TransformScope transformScope, AnimationScope animationScope) {
-        transformScope.mo475transformByd4ec7I(((AnimationData) objectRef.element).getZoom() == 0.0f ? 1.0f : ((AnimationData) animationScope.getValue()).getZoom() / ((AnimationData) objectRef.element).getZoom(), Offset.m5040minusMKHz9U(((AnimationData) animationScope.getValue()).m462getOffsetF1C5BW0(), ((AnimationData) objectRef.element).m462getOffsetF1C5BW0()), ((AnimationData) animationScope.getValue()).getDegrees() - ((AnimationData) objectRef.element).getDegrees());
+        transformScope.mo516transformByd4ec7I(((AnimationData) objectRef.element).getZoom() == 0.0f ? 1.0f : ((AnimationData) animationScope.getValue()).getZoom() / ((AnimationData) objectRef.element).getZoom(), Offset.m5183minusMKHz9U(((AnimationData) animationScope.getValue()).m497getOffsetF1C5BW0(), ((AnimationData) objectRef.element).m497getOffsetF1C5BW0()), ((AnimationData) animationScope.getValue()).getDegrees() - ((AnimationData) objectRef.element).getDegrees());
         objectRef.element = animationScope.getValue();
         return Unit.INSTANCE;
     }

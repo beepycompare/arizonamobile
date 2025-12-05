@@ -3,12 +3,12 @@ package io.appmetrica.analytics.impl;
 public class Kn implements Hi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f560a;
+    public final int f643a;
     public final int b;
     public int c = 0;
 
     public Kn(int i, int i2) {
-        this.f560a = i;
+        this.f643a = i;
         this.b = i2;
     }
 
@@ -19,7 +19,7 @@ public class Kn implements Hi {
     public final boolean b() {
         int i = this.c;
         this.c = i + 1;
-        return i < this.f560a;
+        return i < this.f643a;
     }
 
     public final void c() {

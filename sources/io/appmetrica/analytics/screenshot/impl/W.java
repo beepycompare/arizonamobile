@@ -3,21 +3,21 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class W {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0763e f1351a;
+    public final C0762e f1434a;
     public final a0 b;
-    public final C0774p c;
+    public final C0773p c;
 
-    public W(C0763e c0763e, a0 a0Var, C0774p c0774p) {
-        this.f1351a = c0763e;
+    public W(C0762e c0762e, a0 a0Var, C0773p c0773p) {
+        this.f1434a = c0762e;
         this.b = a0Var;
-        this.c = c0774p;
+        this.c = c0773p;
     }
 
-    public final C0763e a() {
-        return this.f1351a;
+    public final C0762e a() {
+        return this.f1434a;
     }
 
-    public final C0774p b() {
+    public final C0773p b() {
         return this.c;
     }
 
@@ -26,10 +26,10 @@ public final class W {
     }
 
     public final String toString() {
-        return "ScreenshotConfig(apiCaptorConfig=" + this.f1351a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ScreenshotConfig(apiCaptorConfig=" + this.f1434a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     public W() {
-        this(new C0763e(), new a0(), new C0774p());
+        this(new C0762e(), new a0(), new C0773p());
     }
 }

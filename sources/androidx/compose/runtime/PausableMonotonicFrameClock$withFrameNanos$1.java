@@ -1,14 +1,14 @@
 package androidx.compose.runtime;
 
+import androidx.compose.ui.spatial.RectListKt;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PausableMonotonicFrameClock.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.PausableMonotonicFrameClock", f = "PausableMonotonicFrameClock.kt", i = {0}, l = {LockFreeTaskQueueCore.CLOSED_SHIFT, 62}, m = "withFrameNanos", n = {"onFrame"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.runtime.PausableMonotonicFrameClock", f = "PausableMonotonicFrameClock.kt", i = {0}, l = {61, RectListKt.BitOffsetForGesturable}, m = "withFrameNanos", n = {"onFrame"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class PausableMonotonicFrameClock$withFrameNanos$1<R> extends ContinuationImpl {
     Object L$0;

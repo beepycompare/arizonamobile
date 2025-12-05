@@ -1,6 +1,5 @@
 package okio.internal;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.google.common.base.Ascii;
 import java.util.Arrays;
 import kotlin.Metadata;
@@ -169,7 +168,7 @@ public final class _Utf8Kt {
                                         if (i19 != 65533) {
                                             cArr[i10] = (char) ((i19 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
                                             i7 = i10 + 2;
-                                            cArr[i10 + 1] = (char) ((i19 & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + Utf8.LOG_SURROGATE_HEADER);
+                                            cArr[i10 + 1] = (char) ((i19 & 1023) + Utf8.LOG_SURROGATE_HEADER);
                                         } else {
                                             cArr[i10] = Utf8.REPLACEMENT_CHARACTER;
                                             i7 = i10 + 1;

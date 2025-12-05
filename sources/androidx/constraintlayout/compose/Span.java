@@ -12,49 +12,49 @@ public final class Span {
     private final String description;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Span m8454boximpl(String str) {
+    public static final /* synthetic */ Span m8716boximpl(String str) {
         return new Span(str);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static String m8457constructorimpl(String str) {
+    public static String m8719constructorimpl(String str) {
         return str;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8458equalsimpl(String str, Object obj) {
-        return (obj instanceof Span) && Intrinsics.areEqual(str, ((Span) obj).m8462unboximpl());
+    public static boolean m8720equalsimpl(String str, Object obj) {
+        return (obj instanceof Span) && Intrinsics.areEqual(str, ((Span) obj).m8724unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8459equalsimpl0(String str, String str2) {
+    public static final boolean m8721equalsimpl0(String str, String str2) {
         return Intrinsics.areEqual(str, str2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8460hashCodeimpl(String str) {
+    public static int m8722hashCodeimpl(String str) {
         return str.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8461toStringimpl(String str) {
+    public static String m8723toStringimpl(String str) {
         return "Span(description=" + str + ')';
     }
 
     public boolean equals(Object obj) {
-        return m8458equalsimpl(this.description, obj);
+        return m8720equalsimpl(this.description, obj);
     }
 
     public int hashCode() {
-        return m8460hashCodeimpl(this.description);
+        return m8722hashCodeimpl(this.description);
     }
 
     public String toString() {
-        return m8461toStringimpl(this.description);
+        return m8723toStringimpl(this.description);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ String m8462unboximpl() {
+    public final /* synthetic */ String m8724unboximpl() {
         return this.description;
     }
 
@@ -67,12 +67,12 @@ public final class Span {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static String m8456constructorimpl(int i, int i2, int i3) {
-        return m8457constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).append('x').append(i3).toString());
+    public static String m8718constructorimpl(int i, int i2, int i3) {
+        return m8719constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).append('x').append(i3).toString());
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static String m8455constructorimpl(int i, int i2) {
-        return m8457constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).toString());
+    public static String m8717constructorimpl(int i, int i2) {
+        return m8719constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).toString());
     }
 }

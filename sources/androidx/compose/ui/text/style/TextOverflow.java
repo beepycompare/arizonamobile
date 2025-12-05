@@ -10,47 +10,47 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextOverflow {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Clip = m7920constructorimpl(1);
-    private static final int Ellipsis = m7920constructorimpl(2);
-    private static final int Visible = m7920constructorimpl(3);
-    private static final int StartEllipsis = m7920constructorimpl(4);
-    private static final int MiddleEllipsis = m7920constructorimpl(5);
+    private static final int Clip = m8182constructorimpl(1);
+    private static final int Ellipsis = m8182constructorimpl(2);
+    private static final int Visible = m8182constructorimpl(3);
+    private static final int StartEllipsis = m8182constructorimpl(4);
+    private static final int MiddleEllipsis = m8182constructorimpl(5);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextOverflow m7919boximpl(int i) {
+    public static final /* synthetic */ TextOverflow m8181boximpl(int i) {
         return new TextOverflow(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m7920constructorimpl(int i) {
+    public static int m8182constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7921equalsimpl(int i, Object obj) {
-        return (obj instanceof TextOverflow) && i == ((TextOverflow) obj).m7925unboximpl();
+    public static boolean m8183equalsimpl(int i, Object obj) {
+        return (obj instanceof TextOverflow) && i == ((TextOverflow) obj).m8187unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7922equalsimpl0(int i, int i2) {
+    public static final boolean m8184equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7923hashCodeimpl(int i) {
+    public static int m8185hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7921equalsimpl(this.value, obj);
+        return m8183equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7923hashCodeimpl(this.value);
+        return m8185hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7925unboximpl() {
+    public final /* synthetic */ int m8187unboximpl() {
         return this.value;
     }
 
@@ -59,12 +59,12 @@ public final class TextOverflow {
     }
 
     public String toString() {
-        return m7924toStringimpl(this.value);
+        return m8186toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7924toStringimpl(int i) {
-        return m7922equalsimpl0(i, Clip) ? "Clip" : m7922equalsimpl0(i, Ellipsis) ? "Ellipsis" : m7922equalsimpl0(i, MiddleEllipsis) ? "MiddleEllipsis" : m7922equalsimpl0(i, Visible) ? "Visible" : m7922equalsimpl0(i, StartEllipsis) ? "StartEllipsis" : "Invalid";
+    public static String m8186toStringimpl(int i) {
+        return m8184equalsimpl0(i, Clip) ? "Clip" : m8184equalsimpl0(i, Ellipsis) ? "Ellipsis" : m8184equalsimpl0(i, MiddleEllipsis) ? "MiddleEllipsis" : m8184equalsimpl0(i, Visible) ? "Visible" : m8184equalsimpl0(i, StartEllipsis) ? "StartEllipsis" : "Invalid";
     }
 
     /* compiled from: TextOverflow.kt */
@@ -76,50 +76,50 @@ public final class TextOverflow {
         }
 
         /* renamed from: getClip-gIe3tQ8$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7926getClipgIe3tQ8$annotations() {
+        public static /* synthetic */ void m8188getClipgIe3tQ8$annotations() {
         }
 
         /* renamed from: getEllipsis-gIe3tQ8$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7927getEllipsisgIe3tQ8$annotations() {
+        public static /* synthetic */ void m8189getEllipsisgIe3tQ8$annotations() {
         }
 
         /* renamed from: getMiddleEllipsis-gIe3tQ8$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7928getMiddleEllipsisgIe3tQ8$annotations() {
+        public static /* synthetic */ void m8190getMiddleEllipsisgIe3tQ8$annotations() {
         }
 
         /* renamed from: getStartEllipsis-gIe3tQ8$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7929getStartEllipsisgIe3tQ8$annotations() {
+        public static /* synthetic */ void m8191getStartEllipsisgIe3tQ8$annotations() {
         }
 
         /* renamed from: getVisible-gIe3tQ8$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7930getVisiblegIe3tQ8$annotations() {
+        public static /* synthetic */ void m8192getVisiblegIe3tQ8$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getClip-gIe3tQ8  reason: not valid java name */
-        public final int m7931getClipgIe3tQ8() {
+        public final int m8193getClipgIe3tQ8() {
             return TextOverflow.Clip;
         }
 
         /* renamed from: getEllipsis-gIe3tQ8  reason: not valid java name */
-        public final int m7932getEllipsisgIe3tQ8() {
+        public final int m8194getEllipsisgIe3tQ8() {
             return TextOverflow.Ellipsis;
         }
 
         /* renamed from: getVisible-gIe3tQ8  reason: not valid java name */
-        public final int m7935getVisiblegIe3tQ8() {
+        public final int m8197getVisiblegIe3tQ8() {
             return TextOverflow.Visible;
         }
 
         /* renamed from: getStartEllipsis-gIe3tQ8  reason: not valid java name */
-        public final int m7934getStartEllipsisgIe3tQ8() {
+        public final int m8196getStartEllipsisgIe3tQ8() {
             return TextOverflow.StartEllipsis;
         }
 
         /* renamed from: getMiddleEllipsis-gIe3tQ8  reason: not valid java name */
-        public final int m7933getMiddleEllipsisgIe3tQ8() {
+        public final int m8195getMiddleEllipsisgIe3tQ8() {
             return TextOverflow.MiddleEllipsis;
         }
     }

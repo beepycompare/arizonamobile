@@ -2,7 +2,6 @@ package androidx.media3.ui;
 
 import android.graphics.Typeface;
 import android.view.accessibility.CaptioningManager;
-import androidx.core.view.ViewCompat;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 /* loaded from: classes3.dex */
 public final class CaptionStyleCompat {
-    public static final CaptionStyleCompat DEFAULT = new CaptionStyleCompat(-1, ViewCompat.MEASURED_STATE_MASK, 0, 0, -1, null);
+    public static final CaptionStyleCompat DEFAULT = new CaptionStyleCompat(-1, -16777216, 0, 0, -1, null);
     public static final int EDGE_TYPE_DEPRESSED = 4;
     public static final int EDGE_TYPE_DROP_SHADOW = 2;
     public static final int EDGE_TYPE_NONE = 0;

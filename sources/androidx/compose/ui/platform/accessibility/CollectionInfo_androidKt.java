@@ -14,7 +14,7 @@ import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 /* compiled from: CollectionInfo.android.kt */
-@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a\u0018\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a\f\u0010\u0007\u001a\u00020\b*\u00020\u0003H\u0000\u001a\u0016\u0010\t\u001a\u00020\b2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00030\u000bH\u0002\u001a\u0014\u0010\u000f\u001a\n \u0011*\u0004\u0018\u00010\u00100\u0010*\u00020\rH\u0002\u001a\u001c\u0010\u0012\u001a\n \u0011*\u0004\u0018\u00010\u00130\u0013*\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0003H\u0002\"\u0018\u0010\f\u001a\u00020\b*\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\u000e¨\u0006\u0016"}, d2 = {"setCollectionInfo", "", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "info", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "setCollectionItemInfo", "hasCollectionInfo", "", "calculateIfHorizontallyStacked", "items", "", "isLazyCollection", "Landroidx/compose/ui/semantics/CollectionInfo;", "(Landroidx/compose/ui/semantics/CollectionInfo;)Z", "toAccessibilityCollectionInfo", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;", "kotlin.jvm.PlatformType", "toAccessibilityCollectionItemInfo", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;", "Landroidx/compose/ui/semantics/CollectionItemInfo;", "itemNode", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a\u0018\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a\f\u0010\u0007\u001a\u00020\b*\u00020\u0003H\u0000\u001a\u0016\u0010\t\u001a\u00020\b2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00030\u000bH\u0002\u001a\u0014\u0010\u000f\u001a\n \u0011*\u0004\u0018\u00010\u00100\u0010*\u00020\rH\u0002\u001a\u001c\u0010\u0012\u001a\n \u0011*\u0004\u0018\u00010\u00130\u0013*\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0003H\u0002\"\u0018\u0010\f\u001a\u00020\b*\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\u000e¨\u0006\u0016"}, d2 = {"setCollectionInfo", "", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "info", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "setCollectionItemInfo", "hasCollectionInfo", "", "calculateIfHorizontallyStacked", "items", "", "isLazyCollection", "Landroidx/compose/ui/semantics/CollectionInfo;", "(Landroidx/compose/ui/semantics/CollectionInfo;)Z", "toAccessibilityCollectionInfo", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;", "kotlin.jvm.PlatformType", "toAccessibilityCollectionItemInfo", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;", "Landroidx/compose/ui/semantics/CollectionItemInfo;", "itemNode", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class CollectionInfo_androidKt {
     public static final void setCollectionInfo(SemanticsNode semanticsNode, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
@@ -25,10 +25,10 @@ public final class CollectionInfo_androidKt {
         }
         ArrayList arrayList = new ArrayList();
         if (SemanticsConfigurationKt.getOrNull(semanticsNode.getConfig(), SemanticsProperties.INSTANCE.getSelectableGroup()) != null) {
-            List<SemanticsNode> replacedChildren$ui_release = semanticsNode.getReplacedChildren$ui_release();
-            int size = replacedChildren$ui_release.size();
+            List<SemanticsNode> replacedChildren$ui = semanticsNode.getReplacedChildren$ui();
+            int size = replacedChildren$ui.size();
             for (int i = 0; i < size; i++) {
-                SemanticsNode semanticsNode2 = replacedChildren$ui_release.get(i);
+                SemanticsNode semanticsNode2 = replacedChildren$ui.get(i);
                 if (semanticsNode2.getConfig().contains(SemanticsProperties.INSTANCE.getSelected())) {
                     arrayList.add(semanticsNode2);
                 }
@@ -54,14 +54,14 @@ public final class CollectionInfo_androidKt {
         CollectionInfo collectionInfo = (CollectionInfo) SemanticsConfigurationKt.getOrNull(parent.getConfig(), SemanticsProperties.INSTANCE.getCollectionInfo());
         if ((collectionInfo == null || !isLazyCollection(collectionInfo)) && semanticsNode.getConfig().contains(SemanticsProperties.INSTANCE.getSelected())) {
             ArrayList arrayList = new ArrayList();
-            List<SemanticsNode> replacedChildren$ui_release = parent.getReplacedChildren$ui_release();
-            int size = replacedChildren$ui_release.size();
+            List<SemanticsNode> replacedChildren$ui = parent.getReplacedChildren$ui();
+            int size = replacedChildren$ui.size();
             int i = 0;
             for (int i2 = 0; i2 < size; i2++) {
-                SemanticsNode semanticsNode2 = replacedChildren$ui_release.get(i2);
+                SemanticsNode semanticsNode2 = replacedChildren$ui.get(i2);
                 if (semanticsNode2.getConfig().contains(SemanticsProperties.INSTANCE.getSelected())) {
                     arrayList.add(semanticsNode2);
-                    if (semanticsNode2.getLayoutNode$ui_release().getPlaceOrder$ui_release() < semanticsNode.getLayoutNode$ui_release().getPlaceOrder$ui_release()) {
+                    if (semanticsNode2.getLayoutNode$ui().getPlaceOrder$ui() < semanticsNode.getLayoutNode$ui().getPlaceOrder$ui()) {
                         i++;
                     }
                 }
@@ -89,7 +89,7 @@ public final class CollectionInfo_androidKt {
 
     private static final boolean calculateIfHorizontallyStacked(List<SemanticsNode> list) {
         List list2;
-        long m5046unboximpl;
+        long m5189unboximpl;
         if (list.size() < 2) {
             return true;
         }
@@ -105,13 +105,13 @@ public final class CollectionInfo_androidKt {
                 SemanticsNode semanticsNode2 = list.get(i);
                 SemanticsNode semanticsNode3 = semanticsNode2;
                 SemanticsNode semanticsNode4 = semanticsNode;
-                arrayList.add(Offset.m5025boximpl(Offset.m5028constructorimpl((Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m5066getCenterF1C5BW0() >> 32)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m5066getCenterF1C5BW0() >> 32)))) << 32) | (Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m5066getCenterF1C5BW0() & 4294967295L)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m5066getCenterF1C5BW0() & 4294967295L)))) & 4294967295L))));
+                arrayList.add(Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m5209getCenterF1C5BW0() >> 32)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m5209getCenterF1C5BW0() >> 32)))) << 32) | (Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m5209getCenterF1C5BW0() & 4294967295L)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m5209getCenterF1C5BW0() & 4294967295L)))) & 4294967295L))));
                 semanticsNode = semanticsNode2;
             }
             list2 = arrayList;
         }
         if (list2.size() == 1) {
-            m5046unboximpl = ((Offset) CollectionsKt.first((List<? extends Object>) list2)).m5046unboximpl();
+            m5189unboximpl = ((Offset) CollectionsKt.first((List<? extends Object>) list2)).m5189unboximpl();
         } else {
             if (list2.isEmpty()) {
                 ListUtilsKt.throwUnsupportedOperationException("Empty collection can't be reduced.");
@@ -121,16 +121,16 @@ public final class CollectionInfo_androidKt {
             if (1 <= lastIndex2) {
                 int i2 = 1;
                 while (true) {
-                    first = Offset.m5025boximpl(Offset.m5041plusMKHz9U(((Offset) first).m5046unboximpl(), ((Offset) list2.get(i2)).m5046unboximpl()));
+                    first = Offset.m5168boximpl(Offset.m5184plusMKHz9U(((Offset) first).m5189unboximpl(), ((Offset) list2.get(i2)).m5189unboximpl()));
                     if (i2 == lastIndex2) {
                         break;
                     }
                     i2++;
                 }
             }
-            m5046unboximpl = ((Offset) first).m5046unboximpl();
+            m5189unboximpl = ((Offset) first).m5189unboximpl();
         }
-        return Float.intBitsToFloat((int) (4294967295L & m5046unboximpl)) < Float.intBitsToFloat((int) (m5046unboximpl >> 32));
+        return Float.intBitsToFloat((int) (4294967295L & m5189unboximpl)) < Float.intBitsToFloat((int) (m5189unboximpl >> 32));
     }
 
     private static final boolean isLazyCollection(CollectionInfo collectionInfo) {

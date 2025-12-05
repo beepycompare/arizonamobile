@@ -23,7 +23,7 @@ public class Q5 implements CounterReportApi, Parcelable {
     public static final Parcelable.Creator<Q5> CREATOR = new P5();
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f648a;
+    protected String f731a;
     protected String b;
     public String c;
     public int d;
@@ -33,8 +33,8 @@ public class Q5 implements CounterReportApi, Parcelable {
     public String h;
     public long i;
     public long j;
-    public EnumC0215ea k;
-    public EnumC0445n9 l;
+    public EnumC0214ea k;
+    public EnumC0444n9 l;
     public Bundle m;
     public Boolean n;
     public Integer o;
@@ -75,7 +75,7 @@ public class Q5 implements CounterReportApi, Parcelable {
         return this.c;
     }
 
-    public final EnumC0215ea g() {
+    public final EnumC0214ea g() {
         return this.k;
     }
 
@@ -96,7 +96,7 @@ public class Q5 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public final String getName() {
-        return this.f648a;
+        return this.f731a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -130,16 +130,16 @@ public class Q5 implements CounterReportApi, Parcelable {
         return this.h;
     }
 
-    public final EnumC0445n9 k() {
+    public final EnumC0444n9 k() {
         return this.l;
     }
 
     public final boolean l() {
-        return this.f648a == null;
+        return this.f731a == null;
     }
 
     public final boolean m() {
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         return -1 == this.d;
     }
 
@@ -160,7 +160,7 @@ public class Q5 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public void setName(String str) {
-        this.f648a = str;
+        this.f731a = str;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -180,8 +180,8 @@ public class Q5 implements CounterReportApi, Parcelable {
 
     public final String toString() {
         Locale locale = Locale.US;
-        String str = this.f648a;
-        String str2 = EnumC0165cb.a(this.d).b;
+        String str = this.f731a;
+        String str2 = EnumC0164cb.a(this.d).b;
         String str3 = this.b;
         if (str3 == null) {
             str3 = null;
@@ -194,13 +194,13 @@ public class Q5 implements CounterReportApi, Parcelable {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putString("CounterReport.Event", this.f648a);
+        bundle.putString("CounterReport.Event", this.f731a);
         bundle.putString("CounterReport.Value", this.b);
         bundle.putInt("CounterReport.Type", this.d);
         bundle.putInt("CounterReport.CustomType", this.e);
         bundle.putInt("CounterReport.TRUNCATED", this.g);
         bundle.putString("CounterReport.ProfileID", this.h);
-        bundle.putInt("CounterReport.UniquenessStatus", this.k.f869a);
+        bundle.putInt("CounterReport.UniquenessStatus", this.k.f952a);
         Bundle bundle2 = this.m;
         if (bundle2 != null) {
             bundle.putParcelable("CounterReport.Payload", bundle2);
@@ -216,9 +216,9 @@ public class Q5 implements CounterReportApi, Parcelable {
         }
         bundle.putLong("CounterReport.CreationElapsedRealtime", this.i);
         bundle.putLong("CounterReport.CreationTimestamp", this.j);
-        EnumC0445n9 enumC0445n9 = this.l;
-        if (enumC0445n9 != null) {
-            bundle.putInt("CounterReport.Source", enumC0445n9.f1027a);
+        EnumC0444n9 enumC0444n9 = this.l;
+        if (enumC0444n9 != null) {
+            bundle.putInt("CounterReport.Source", enumC0444n9.f1110a);
         }
         Boolean bool = this.n;
         if (bool != null) {
@@ -237,7 +237,7 @@ public class Q5 implements CounterReportApi, Parcelable {
     }
 
     public static Q5 e(Q5 q5) {
-        return a(q5, EnumC0165cb.EVENT_TYPE_APP_UPDATE);
+        return a(q5, EnumC0164cb.EVENT_TYPE_APP_UPDATE);
     }
 
     public final void b(String str) {
@@ -273,9 +273,9 @@ public class Q5 implements CounterReportApi, Parcelable {
     }
 
     public Q5(String str, String str2, int i, SystemTimeProvider systemTimeProvider) {
-        this.k = EnumC0215ea.UNKNOWN;
+        this.k = EnumC0214ea.UNKNOWN;
         this.p = new HashMap();
-        this.f648a = str2;
+        this.f731a = str2;
         this.d = i;
         this.b = str;
         this.i = systemTimeProvider.elapsedRealtime();
@@ -297,7 +297,7 @@ public class Q5 implements CounterReportApi, Parcelable {
     }
 
     public static Q5 c(Q5 q5) {
-        return a(q5, EnumC0165cb.EVENT_TYPE_INIT);
+        return a(q5, EnumC0164cb.EVENT_TYPE_INIT);
     }
 
     public static Q5 d(Q5 q5) {
@@ -312,12 +312,12 @@ public class Q5 implements CounterReportApi, Parcelable {
         return q52;
     }
 
-    public final void a(EnumC0215ea enumC0215ea) {
-        this.k = enumC0215ea;
+    public final void a(EnumC0214ea enumC0214ea) {
+        this.k = enumC0214ea;
     }
 
-    public final void a(EnumC0445n9 enumC0445n9) {
-        this.l = enumC0445n9;
+    public final void a(EnumC0444n9 enumC0444n9) {
+        this.l = enumC0444n9;
     }
 
     public final void a(Boolean bool) {
@@ -335,29 +335,29 @@ public class Q5 implements CounterReportApi, Parcelable {
         return null;
     }
 
-    public static Q5 a(Q5 q5, EnumC0165cb enumC0165cb) {
+    public static Q5 a(Q5 q5, EnumC0164cb enumC0164cb) {
         Q5 d = d(q5);
-        d.d = enumC0165cb.f829a;
+        d.d = enumC0164cb.f912a;
         return d;
     }
 
     public static Q5 b(Q5 q5) {
-        return a(q5, EnumC0165cb.EVENT_TYPE_FIRST_ACTIVATION);
+        return a(q5, EnumC0164cb.EVENT_TYPE_FIRST_ACTIVATION);
     }
 
     public static Q5 a(Q5 q5) {
-        return a(q5, EnumC0165cb.EVENT_TYPE_ALIVE);
+        return a(q5, EnumC0164cb.EVENT_TYPE_ALIVE);
     }
 
     public static Q5 a(Q5 q5, N9 n9) {
-        Q5 a2 = a(q5, EnumC0165cb.EVENT_TYPE_START);
-        a2.setValueBytes(MessageNano.toByteArray(new C0520q9().fromModel(new C0495p9((String) n9.b.a()))));
+        Q5 a2 = a(q5, EnumC0164cb.EVENT_TYPE_START);
+        a2.setValueBytes(MessageNano.toByteArray(new C0519q9().fromModel(new C0494p9((String) n9.b.a()))));
         a2.j = q5.j;
         a2.i = q5.i;
         return a2;
     }
 
-    public static Q5 a(Q5 q5, Collection<PermissionState> collection, C0712y2 c0712y2, C0182d2 c0182d2, List<String> list) {
+    public static Q5 a(Q5 q5, Collection<PermissionState> collection, C0711y2 c0711y2, C0181d2 c0181d2, List<String> list) {
         String str;
         String str2;
         Q5 d = d(q5);
@@ -367,12 +367,12 @@ public class Q5 implements CounterReportApi, Parcelable {
                 jSONArray.put(new JSONObject().put("name", permissionState.name).put("granted", permissionState.granted));
             }
             JSONObject jSONObject = new JSONObject();
-            if (c0712y2 != null) {
-                jSONObject.put("background_restricted", c0712y2.b);
-                EnumC0687x2 enumC0687x2 = c0712y2.f1209a;
-                c0182d2.getClass();
-                if (enumC0687x2 != null) {
-                    int ordinal = enumC0687x2.ordinal();
+            if (c0711y2 != null) {
+                jSONObject.put("background_restricted", c0711y2.b);
+                EnumC0686x2 enumC0686x2 = c0711y2.f1292a;
+                c0181d2.getClass();
+                if (enumC0686x2 != null) {
+                    int ordinal = enumC0686x2.ordinal();
                     if (ordinal == 0) {
                         str2 = "EXEMPTED";
                     } else if (ordinal == 1) {
@@ -395,7 +395,7 @@ public class Q5 implements CounterReportApi, Parcelable {
         } catch (Throwable unused) {
             str = "";
         }
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         d.d = 12288;
         d.setValue(str);
         return d;
@@ -403,7 +403,7 @@ public class Q5 implements CounterReportApi, Parcelable {
 
     public static Q5 a(Q5 q5, String str) {
         Q5 d = d(q5);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         d.d = 12289;
         d.setValue(str);
         return d;
@@ -411,17 +411,17 @@ public class Q5 implements CounterReportApi, Parcelable {
 
     public static Q5 a() {
         Q5 q5 = new Q5("", 0);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         q5.d = 16384;
         return q5;
     }
 
     public static Q5 a(String str) {
         Q5 q5 = new Q5("", 0);
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         q5.d = 12320;
         q5.b = str;
-        q5.l = EnumC0445n9.JS;
+        q5.l = EnumC0444n9.JS;
         return q5;
     }
 }

@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Trimite la</string>
     <string name="abc_shareactionprovider_share_with_application">Trimite folosind %s</string>
     <string name="abc_toolbar_collapse_description">Restrânge</string>
-    <string name="autofill">Completare automată</string>
+    <string name="androidx_compose_foundation_autofill">Completare automată</string>
+    <string name="androidx_compose_ui_autofill">Completare automată</string>
     <string name="bottomsheet_action_collapse">Restrângeți foaia din partea de jos</string>
     <string name="bottomsheet_action_expand">Extindeți foaia din partea de jos</string>
     <string name="bottomsheet_action_expand_halfway">Extinde pe ecran complet</string>

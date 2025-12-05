@@ -3,6 +3,6 @@ package io.appmetrica.analytics.impl;
 public abstract class J7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Long f536a = 30L;
-    public static final C0657vm b = new C0657vm();
+    public static final Long f619a = 30L;
+    public static final C0656vm b = new C0656vm();
 }

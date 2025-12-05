@@ -101,13 +101,13 @@ public final class MainScaffoldKt {
                         Function2<Composer, Integer, Unit> lambda$1170228028$app_root_release = i7 != 0 ? ComposableSingletons$MainScaffoldKt.INSTANCE.getLambda$1170228028$app_root_release() : obj2;
                         if (i4 != 0) {
                             function28 = lambda$1170228028$app_root_release;
-                            function29 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9724getLambda$863503316$app_root_release();
+                            function29 = ComposableSingletons$MainScaffoldKt.INSTANCE.m10019getLambda$863503316$app_root_release();
                         } else {
                             function28 = lambda$1170228028$app_root_release;
                             function29 = obj3;
                         }
                         if (i5 != 0) {
-                            function24 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9723getLambda$1632204659$app_root_release();
+                            function24 = ComposableSingletons$MainScaffoldKt.INSTANCE.m10018getLambda$1632204659$app_root_release();
                         }
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-521208120, i3, -1, "com.miami.game.core.app.root.MainScaffold (MainScaffold.kt:16)");
@@ -116,7 +116,7 @@ public final class MainScaffoldKt {
                         Modifier modifier3 = companion;
                         Function2<? super Composer, ? super Integer, Unit> function210 = function28;
                         Function2<? super Composer, ? super Integer, Unit> function211 = function24;
-                        ScaffoldKt.m2786ScaffoldTvnljyQ(SizeKt.fillMaxSize$default(companion, 0.0f, 1, null), function210, function29, function211, null, 0, 0L, 0L, WindowInsetsKt.WindowInsets(0, 0, 0, 0), content, startRestartGroup, i8, 240);
+                        ScaffoldKt.m2872ScaffoldTvnljyQ(SizeKt.fillMaxSize$default(companion, 0.0f, 1, null), function210, function29, function211, null, 0, 0L, 0L, WindowInsetsKt.WindowInsets(0, 0, 0, 0), content, startRestartGroup, i8, 240);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }

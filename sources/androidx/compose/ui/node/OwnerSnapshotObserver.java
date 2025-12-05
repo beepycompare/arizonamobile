@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: OwnerSnapshotObserver.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\r\b\u0001\u0018\u00002\u00020\u0001B0\u0012'\u0010\u0002\u001a#\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\t\u0010\nJ-\u0010\u0015\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\b\b\u0002\u0010\u0017\u001a\u00020\u00182\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0000¢\u0006\u0002\b\u001aJ-\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\b\b\u0002\u0010\u0017\u001a\u00020\u00182\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0000¢\u0006\u0002\b\u001cJ-\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\b\b\u0002\u0010\u0017\u001a\u00020\u00182\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0000¢\u0006\u0002\b\u001eJ#\u0010\u001f\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0000¢\u0006\u0002\b JC\u0010!\u001a\u00020\u0005\"\b\b\u0000\u0010\"*\u00020#2\u0006\u0010$\u001a\u0002H\"2\u0012\u0010%\u001a\u000e\u0012\u0004\u0012\u0002H\"\u0012\u0004\u0012\u00020\u00050\u00032\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0000¢\u0006\u0004\b&\u0010'J\r\u0010(\u001a\u00020\u0005H\u0000¢\u0006\u0002\b)J\u0015\u0010*\u001a\u00020\u00052\u0006\u0010$\u001a\u00020\u0001H\u0000¢\u0006\u0002\b+J\r\u0010,\u001a\u00020\u0005H\u0000¢\u0006\u0002\b-J\r\u0010.\u001a\u00020\u0005H\u0000¢\u0006\u0002\b/R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Landroidx/compose/ui/node/OwnerSnapshotObserver;", "", "onChangedExecutor", "Lkotlin/Function1;", "Lkotlin/Function0;", "", "Lkotlin/ParameterName;", "name", "callback", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "observer", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "onCommitAffectingLookaheadMeasure", "Landroidx/compose/ui/node/LayoutNode;", "onCommitAffectingMeasure", "onCommitAffectingSemantics", "onCommitAffectingLayout", "onCommitAffectingLayoutModifier", "onCommitAffectingLayoutModifierInLookahead", "onCommitAffectingLookahead", "observeLayoutSnapshotReads", "node", "affectsLookahead", "", "block", "observeLayoutSnapshotReads$ui_release", "observeLayoutModifierSnapshotReads", "observeLayoutModifierSnapshotReads$ui_release", "observeMeasureSnapshotReads", "observeMeasureSnapshotReads$ui_release", "observeSemanticsReads", "observeSemanticsReads$ui_release", "observeReads", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/ui/node/OwnerScope;", TypedValues.AttributesType.S_TARGET, "onChanged", "observeReads$ui_release", "(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", "clearInvalidObservations", "clearInvalidObservations$ui_release", "clear", "clear$ui_release", "startObserving", "startObserving$ui_release", "stopObserving", "stopObserving$ui_release", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\r\b\u0001\u0018\u00002\u00020\u0001B0\u0012'\u0010\u0002\u001a#\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\t\u0010\nJ&\u0010\u0015\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0002\b\u0018J&\u0010\u0019\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0002\b\u001aJ&\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0002\b\u001cJ&\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0002\b\u001eJ&\u0010\u001f\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0002\b J&\u0010!\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0002\b\"J&\u0010#\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u000e2\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0002\b$JH\u0010%\u001a\u00020\u0005\"\b\b\u0000\u0010&*\u00020'2\u0006\u0010(\u001a\u0002H&2\u0014\b\b\u0010)\u001a\u000e\u0012\u0004\u0012\u0002H&\u0012\u0004\u0012\u00020\u00050\u00032\u000e\b\b\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0080\b¢\u0006\u0004\b*\u0010+J\r\u0010,\u001a\u00020\u0005H\u0000¢\u0006\u0002\b-J\u0015\u0010.\u001a\u00020\u00052\u0006\u0010(\u001a\u00020\u0001H\u0000¢\u0006\u0002\b/J\r\u00100\u001a\u00020\u0005H\u0000¢\u0006\u0002\b1J\r\u00102\u001a\u00020\u0005H\u0000¢\u0006\u0002\b3R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00064"}, d2 = {"Landroidx/compose/ui/node/OwnerSnapshotObserver;", "", "onChangedExecutor", "Lkotlin/Function1;", "Lkotlin/Function0;", "", "Lkotlin/ParameterName;", "name", "callback", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "observer", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "onCommitAffectingLookaheadMeasure", "Landroidx/compose/ui/node/LayoutNode;", "onCommitAffectingMeasure", "onCommitAffectingSemantics", "onCommitAffectingLayout", "onCommitAffectingLayoutModifier", "onCommitAffectingLayoutModifierInLookahead", "onCommitAffectingLookahead", "observeLayoutSnapshotReads", "node", "block", "observeLayoutSnapshotReads$ui", "observeLayoutSnapshotReadsAffectingLookahead", "observeLayoutSnapshotReadsAffectingLookahead$ui", "observeLayoutModifierSnapshotReads", "observeLayoutModifierSnapshotReads$ui", "observeLayoutModifierSnapshotReadsAffectingLookahead", "observeLayoutModifierSnapshotReadsAffectingLookahead$ui", "observeMeasureSnapshotReads", "observeMeasureSnapshotReads$ui", "observeMeasureSnapshotReadsAffectingLookahead", "observeMeasureSnapshotReadsAffectingLookahead$ui", "observeSemanticsReads", "observeSemanticsReads$ui", "observeReads", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/ui/node/OwnerScope;", TypedValues.AttributesType.S_TARGET, "onChanged", "observeReads$ui", "(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", "clearInvalidObservations", "clearInvalidObservations$ui", "clear", "clear$ui", "startObserving", "startObserving$ui", "stopObserving", "stopObserving$ui", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class OwnerSnapshotObserver {
     public static final int $stable = SnapshotStateObserver.$stable;
@@ -24,7 +24,7 @@ public final class OwnerSnapshotObserver {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(LayoutNode layoutNode) {
             if (layoutNode.isValidOwnerScope()) {
-                LayoutNode.requestLookaheadRemeasure$ui_release$default(layoutNode, false, false, false, 7, null);
+                LayoutNode.requestLookaheadRemeasure$ui$default(layoutNode, false, false, false, 7, null);
             }
         }
     };
@@ -38,7 +38,7 @@ public final class OwnerSnapshotObserver {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(LayoutNode layoutNode) {
             if (layoutNode.isValidOwnerScope()) {
-                LayoutNode.requestRemeasure$ui_release$default(layoutNode, false, false, false, 7, null);
+                LayoutNode.requestRemeasure$ui$default(layoutNode, false, false, false, 7, null);
             }
         }
     };
@@ -52,7 +52,7 @@ public final class OwnerSnapshotObserver {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(LayoutNode layoutNode) {
             if (layoutNode.isValidOwnerScope()) {
-                layoutNode.invalidateSemantics$ui_release();
+                layoutNode.invalidateSemantics$ui();
             }
         }
     };
@@ -66,7 +66,7 @@ public final class OwnerSnapshotObserver {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(LayoutNode layoutNode) {
             if (layoutNode.isValidOwnerScope()) {
-                LayoutNode.requestRelayout$ui_release$default(layoutNode, false, 1, null);
+                LayoutNode.requestRelayout$ui$default(layoutNode, false, 1, null);
             }
         }
     };
@@ -80,7 +80,7 @@ public final class OwnerSnapshotObserver {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(LayoutNode layoutNode) {
             if (layoutNode.isValidOwnerScope()) {
-                LayoutNode.requestRelayout$ui_release$default(layoutNode, false, 1, null);
+                LayoutNode.requestRelayout$ui$default(layoutNode, false, 1, null);
             }
         }
     };
@@ -94,7 +94,7 @@ public final class OwnerSnapshotObserver {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(LayoutNode layoutNode) {
             if (layoutNode.isValidOwnerScope()) {
-                LayoutNode.requestLookaheadRelayout$ui_release$default(layoutNode, false, 1, null);
+                LayoutNode.requestLookaheadRelayout$ui$default(layoutNode, false, 1, null);
             }
         }
     };
@@ -108,7 +108,7 @@ public final class OwnerSnapshotObserver {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(LayoutNode layoutNode) {
             if (layoutNode.isValidOwnerScope()) {
-                LayoutNode.requestLookaheadRelayout$ui_release$default(layoutNode, false, 1, null);
+                LayoutNode.requestLookaheadRelayout$ui$default(layoutNode, false, 1, null);
             }
         }
     };
@@ -117,60 +117,54 @@ public final class OwnerSnapshotObserver {
         this.observer = new SnapshotStateObserver(function1);
     }
 
-    public static /* synthetic */ void observeLayoutSnapshotReads$ui_release$default(OwnerSnapshotObserver ownerSnapshotObserver, LayoutNode layoutNode, boolean z, Function0 function0, int i, Object obj) {
-        if ((i & 2) != 0) {
-            z = true;
-        }
-        ownerSnapshotObserver.observeLayoutSnapshotReads$ui_release(layoutNode, z, function0);
+    public static final /* synthetic */ SnapshotStateObserver access$getObserver$p(OwnerSnapshotObserver ownerSnapshotObserver) {
+        return ownerSnapshotObserver.observer;
     }
 
-    public final void observeLayoutSnapshotReads$ui_release(LayoutNode layoutNode, boolean z, Function0<Unit> function0) {
-        if (z && layoutNode.getLookaheadRoot$ui_release() != null) {
-            observeReads$ui_release(layoutNode, this.onCommitAffectingLookahead, function0);
-        } else {
-            observeReads$ui_release(layoutNode, this.onCommitAffectingLayout, function0);
-        }
+    public static final /* synthetic */ Function1 access$getOnCommitAffectingSemantics$p(OwnerSnapshotObserver ownerSnapshotObserver) {
+        return ownerSnapshotObserver.onCommitAffectingSemantics;
     }
 
-    public static /* synthetic */ void observeLayoutModifierSnapshotReads$ui_release$default(OwnerSnapshotObserver ownerSnapshotObserver, LayoutNode layoutNode, boolean z, Function0 function0, int i, Object obj) {
-        if ((i & 2) != 0) {
-            z = true;
-        }
-        ownerSnapshotObserver.observeLayoutModifierSnapshotReads$ui_release(layoutNode, z, function0);
+    public final void observeLayoutSnapshotReads$ui(LayoutNode layoutNode, Function0<Unit> function0) {
+        Function1 function1 = this.onCommitAffectingLayout;
+        this.observer.observeReads(layoutNode, function1, function0);
     }
 
-    public final void observeLayoutModifierSnapshotReads$ui_release(LayoutNode layoutNode, boolean z, Function0<Unit> function0) {
-        if (z && layoutNode.getLookaheadRoot$ui_release() != null) {
-            observeReads$ui_release(layoutNode, this.onCommitAffectingLayoutModifierInLookahead, function0);
-        } else {
-            observeReads$ui_release(layoutNode, this.onCommitAffectingLayoutModifier, function0);
-        }
+    public final void observeLayoutSnapshotReadsAffectingLookahead$ui(LayoutNode layoutNode, Function0<Unit> function0) {
+        Function1 function1 = this.onCommitAffectingLookahead;
+        this.observer.observeReads(layoutNode, function1, function0);
     }
 
-    public static /* synthetic */ void observeMeasureSnapshotReads$ui_release$default(OwnerSnapshotObserver ownerSnapshotObserver, LayoutNode layoutNode, boolean z, Function0 function0, int i, Object obj) {
-        if ((i & 2) != 0) {
-            z = true;
-        }
-        ownerSnapshotObserver.observeMeasureSnapshotReads$ui_release(layoutNode, z, function0);
+    public final void observeLayoutModifierSnapshotReads$ui(LayoutNode layoutNode, Function0<Unit> function0) {
+        Function1 function1 = this.onCommitAffectingLayoutModifier;
+        this.observer.observeReads(layoutNode, function1, function0);
     }
 
-    public final void observeMeasureSnapshotReads$ui_release(LayoutNode layoutNode, boolean z, Function0<Unit> function0) {
-        if (z && layoutNode.getLookaheadRoot$ui_release() != null) {
-            observeReads$ui_release(layoutNode, this.onCommitAffectingLookaheadMeasure, function0);
-        } else {
-            observeReads$ui_release(layoutNode, this.onCommitAffectingMeasure, function0);
-        }
+    public final void observeLayoutModifierSnapshotReadsAffectingLookahead$ui(LayoutNode layoutNode, Function0<Unit> function0) {
+        Function1 function1 = this.onCommitAffectingLayoutModifierInLookahead;
+        this.observer.observeReads(layoutNode, function1, function0);
     }
 
-    public final void observeSemanticsReads$ui_release(LayoutNode layoutNode, Function0<Unit> function0) {
-        observeReads$ui_release(layoutNode, this.onCommitAffectingSemantics, function0);
+    public final void observeMeasureSnapshotReads$ui(LayoutNode layoutNode, Function0<Unit> function0) {
+        Function1 function1 = this.onCommitAffectingMeasure;
+        this.observer.observeReads(layoutNode, function1, function0);
     }
 
-    public final <T extends OwnerScope> void observeReads$ui_release(T t, Function1<? super T, Unit> function1, Function0<Unit> function0) {
+    public final void observeMeasureSnapshotReadsAffectingLookahead$ui(LayoutNode layoutNode, Function0<Unit> function0) {
+        Function1 function1 = this.onCommitAffectingLookaheadMeasure;
+        this.observer.observeReads(layoutNode, function1, function0);
+    }
+
+    public final void observeSemanticsReads$ui(LayoutNode layoutNode, Function0<Unit> function0) {
+        Function1 function1 = this.onCommitAffectingSemantics;
+        this.observer.observeReads(layoutNode, function1, function0);
+    }
+
+    public final <T extends OwnerScope> void observeReads$ui(T t, Function1<? super T, Unit> function1, Function0<Unit> function0) {
         this.observer.observeReads(t, function1, function0);
     }
 
-    public final void clearInvalidObservations$ui_release() {
+    public final void clearInvalidObservations$ui() {
         this.observer.clearIf(new Function1<Object, Boolean>() { // from class: androidx.compose.ui.node.OwnerSnapshotObserver$clearInvalidObservations$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function1
@@ -181,15 +175,15 @@ public final class OwnerSnapshotObserver {
         });
     }
 
-    public final void clear$ui_release(Object obj) {
+    public final void clear$ui(Object obj) {
         this.observer.clear(obj);
     }
 
-    public final void startObserving$ui_release() {
+    public final void startObserving$ui() {
         this.observer.start();
     }
 
-    public final void stopObserving$ui_release() {
+    public final void stopObserving$ui() {
         this.observer.stop();
         this.observer.clear();
     }

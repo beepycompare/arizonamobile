@@ -13,16 +13,16 @@ public final class StateSetStateRecord<T> extends StateRecord {
     private int modification;
     private PersistentSet<? extends T> set;
 
+    public StateSetStateRecord(long j, PersistentSet<? extends T> persistentSet) {
+        super(j);
+        this.set = persistentSet;
+    }
+
     public final PersistentSet<T> getSet$runtime() {
         return (PersistentSet<? extends T>) this.set;
     }
 
     public final void setSet$runtime(PersistentSet<? extends T> persistentSet) {
-        this.set = persistentSet;
-    }
-
-    public StateSetStateRecord(long j, PersistentSet<? extends T> persistentSet) {
-        super(j);
         this.set = persistentSet;
     }
 

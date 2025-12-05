@@ -8,7 +8,6 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import androidx.core.view.ViewCompat;
 import java.io.File;
 import java.io.FileOutputStream;
 import kotlin.Metadata;
@@ -31,7 +30,7 @@ public final class BgCreator {
         float f2 = i2;
         float f3 = f2 / 2.0f;
         float f4 = f2 / 3.0f;
-        RadialGradient radialGradient = new RadialGradient(f, f3, f4, new int[]{-65281, -16776961, ViewCompat.MEASURED_STATE_MASK}, new float[]{0.0f, 0.7f, 1.0f}, Shader.TileMode.CLAMP);
+        RadialGradient radialGradient = new RadialGradient(f, f3, f4, new int[]{-65281, -16776961, -16777216}, new float[]{0.0f, 0.7f, 1.0f}, Shader.TileMode.CLAMP);
         Paint paint = new Paint(1);
         paint.setShader(radialGradient);
         canvas.drawCircle(f, f3, f4, paint);

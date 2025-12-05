@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.transition.Transition;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 /* loaded from: classes3.dex */
 public class TransitionSet extends Transition {
@@ -25,6 +26,7 @@ public class TransitionSet extends Transition {
     private boolean mPlayTogether;
     boolean mStarted;
     ArrayList<Transition> mTransitions;
+    private Transition[] mTransitionsCache;
 
     @Override // androidx.transition.Transition
     public /* bridge */ /* synthetic */ Transition addTarget(Class cls) {
@@ -535,33 +537,53 @@ public class TransitionSet extends Transition {
         }
     }
 
+    private Transition[] transitionsAsArray() {
+        Transition[] transitionArr = this.mTransitionsCache;
+        this.mTransitionsCache = null;
+        if (transitionArr == null) {
+            transitionArr = new Transition[this.mTransitions.size()];
+        }
+        return (Transition[]) this.mTransitions.toArray(transitionArr);
+    }
+
+    private void returnTransitionArrayToCache(Transition[] transitionArr) {
+        Arrays.fill(transitionArr, (Object) null);
+        this.mTransitionsCache = transitionArr;
+    }
+
     @Override // androidx.transition.Transition
     public void resume(View view) {
         super.resume(view);
+        Transition[] transitionsAsArray = transitionsAsArray();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            this.mTransitions.get(i).resume(view);
+            transitionsAsArray[i].resume(view);
         }
+        returnTransitionArrayToCache(transitionsAsArray);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.transition.Transition
     public void cancel() {
         super.cancel();
+        Transition[] transitionsAsArray = transitionsAsArray();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            this.mTransitions.get(i).cancel();
+            transitionsAsArray[i].cancel();
         }
+        returnTransitionArrayToCache(transitionsAsArray);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.transition.Transition
     public void forceToEnd(ViewGroup viewGroup) {
         super.forceToEnd(viewGroup);
+        Transition[] transitionsAsArray = transitionsAsArray();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            this.mTransitions.get(i).forceToEnd(viewGroup);
+            transitionsAsArray[i].forceToEnd(viewGroup);
         }
+        returnTransitionArrayToCache(transitionsAsArray);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -606,12 +628,12 @@ public class TransitionSet extends Transition {
 
     @Override // androidx.transition.Transition
     /* renamed from: clone */
-    public Transition mo9044clone() {
-        TransitionSet transitionSet = (TransitionSet) super.mo9044clone();
+    public Transition mo9308clone() {
+        TransitionSet transitionSet = (TransitionSet) super.mo9308clone();
         transitionSet.mTransitions = new ArrayList<>();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo9044clone());
+            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo9308clone());
         }
         return transitionSet;
     }

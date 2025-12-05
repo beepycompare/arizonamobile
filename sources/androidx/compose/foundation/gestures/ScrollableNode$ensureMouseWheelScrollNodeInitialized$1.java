@@ -11,7 +11,7 @@ import kotlin.jvm.internal.AdaptedFunctionReference;
 /* compiled from: Scrollable.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public /* synthetic */ class ScrollableNode$ensureMouseWheelScrollNodeInitialized$1 extends AdaptedFunctionReference implements Function2<Velocity, Continuation<? super Unit>, Object>, SuspendFunction {
+public final /* synthetic */ class ScrollableNode$ensureMouseWheelScrollNodeInitialized$1 extends AdaptedFunctionReference implements Function2<Velocity, Continuation<? super Unit>, Object>, SuspendFunction {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ScrollableNode$ensureMouseWheelScrollNodeInitialized$1(Object obj) {
         super(2, obj, ScrollableNode.class, "onWheelScrollStopped", "onWheelScrollStopped-TH1AsA0(J)V", 4);
@@ -19,11 +19,11 @@ public /* synthetic */ class ScrollableNode$ensureMouseWheelScrollNodeInitialize
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Velocity velocity, Continuation<? super Unit> continuation) {
-        return m580invokesFctU(velocity.m8243unboximpl(), continuation);
+        return m658invokesFctU(velocity.m8505unboximpl(), continuation);
     }
 
     /* renamed from: invoke-sF-c-tU  reason: not valid java name */
-    public final Object m580invokesFctU(long j, Continuation<? super Unit> continuation) {
+    public final Object m658invokesFctU(long j, Continuation<? super Unit> continuation) {
         Object ensureMouseWheelScrollNodeInitialized$onWheelScrollStopped;
         ensureMouseWheelScrollNodeInitialized$onWheelScrollStopped = ScrollableNode.ensureMouseWheelScrollNodeInitialized$onWheelScrollStopped((ScrollableNode) this.receiver, j, continuation);
         return ensureMouseWheelScrollNodeInitialized$onWheelScrollStopped;

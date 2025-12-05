@@ -90,9 +90,9 @@ public final class ColumnMeasurePolicy implements MeasurePolicy, RowColumnMeasur
         return MeasureScope.layout$default(measureScope, i3, i2, null, new Function1() { // from class: androidx.compose.foundation.layout.ColumnMeasurePolicy$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit placeHelper$lambda$3$lambda$2;
-                placeHelper$lambda$3$lambda$2 = ColumnMeasurePolicy.placeHelper$lambda$3$lambda$2(placeableArr, this, i3, i, measureScope, iArr, (Placeable.PlacementScope) obj);
-                return placeHelper$lambda$3$lambda$2;
+                Unit placeHelper$lambda$0$0;
+                placeHelper$lambda$0$0 = ColumnMeasurePolicy.placeHelper$lambda$0$0(placeableArr, this, i3, i, measureScope, iArr, (Placeable.PlacementScope) obj);
+                return placeHelper$lambda$0$0;
             }
         }, 4, null);
     }
@@ -100,47 +100,47 @@ public final class ColumnMeasurePolicy implements MeasurePolicy, RowColumnMeasur
     private final int getCrossAxisPosition(Placeable placeable, RowColumnParentData rowColumnParentData, int i, int i2, LayoutDirection layoutDirection) {
         CrossAxisAlignment crossAxisAlignment = rowColumnParentData != null ? rowColumnParentData.getCrossAxisAlignment() : null;
         if (crossAxisAlignment != null) {
-            return crossAxisAlignment.align$foundation_layout(i - placeable.getWidth(), layoutDirection, placeable, i2);
+            return crossAxisAlignment.align$foundation_layout(i, layoutDirection, placeable, i2);
         }
-        return this.horizontalAlignment.align(0, i - placeable.getWidth(), layoutDirection);
+        return this.horizontalAlignment.align(placeable.getWidth(), i, layoutDirection);
     }
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy
     /* renamed from: createConstraints-xF2OJ5Q  reason: not valid java name */
-    public long mo737createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+    public long mo817createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
         return ColumnKt.createColumnConstraints(z, i, i2, i3, i4);
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         MeasureResult measure;
-        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m7950getMinHeightimpl(j), Constraints.m7951getMinWidthimpl(j), Constraints.m7948getMaxHeightimpl(j), Constraints.m7949getMaxWidthimpl(j), measureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
+        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m8212getMinHeightimpl(j), Constraints.m8213getMinWidthimpl(j), Constraints.m8210getMaxHeightimpl(j), Constraints.m8211getMaxWidthimpl(j), measureScope.mo458roundToPx0680j_4(this.verticalArrangement.mo789getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
         return measure;
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinWidth(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinWidth(list, i, intrinsicMeasureScope.mo458roundToPx0680j_4(this.verticalArrangement.mo789getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinHeight(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMinHeight(list, i, intrinsicMeasureScope.mo458roundToPx0680j_4(this.verticalArrangement.mo789getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxWidth(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxWidth(list, i, intrinsicMeasureScope.mo458roundToPx0680j_4(this.verticalArrangement.mo789getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxHeight(list, i, intrinsicMeasureScope.mo424roundToPx0680j_4(this.verticalArrangement.mo709getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.VerticalMaxHeight(list, i, intrinsicMeasureScope.mo458roundToPx0680j_4(this.verticalArrangement.mo789getSpacingD9Ej5fM()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit placeHelper$lambda$3$lambda$2(Placeable[] placeableArr, ColumnMeasurePolicy columnMeasurePolicy, int i, int i2, MeasureScope measureScope, int[] iArr, Placeable.PlacementScope placementScope) {
+    public static final Unit placeHelper$lambda$0$0(Placeable[] placeableArr, ColumnMeasurePolicy columnMeasurePolicy, int i, int i2, MeasureScope measureScope, int[] iArr, Placeable.PlacementScope placementScope) {
         int length = placeableArr.length;
         int i3 = 0;
         int i4 = 0;

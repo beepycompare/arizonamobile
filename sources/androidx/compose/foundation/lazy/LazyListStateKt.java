@@ -19,14 +19,14 @@ import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.jvm.functions.Function0;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: LazyListState.kt */
-@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a!\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0005\u001a+\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u000b\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"rememberLazyListState", "Landroidx/compose/foundation/lazy/LazyListState;", "initialFirstVisibleItemIndex", "", "initialFirstVisibleItemScrollOffset", "(IILandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/LazyListState;", "prefetchStrategy", "Landroidx/compose/foundation/lazy/LazyListPrefetchStrategy;", "(IILandroidx/compose/foundation/lazy/LazyListPrefetchStrategy;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/LazyListState;", "cacheWindow", "Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;IILandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/LazyListState;", "EmptyLazyListMeasureResult", "Landroidx/compose/foundation/lazy/LazyListMeasureResult;", "NumberOfItemsToTeleport", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a!\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0005\u001a+\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u000b\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"rememberLazyListState", "Landroidx/compose/foundation/lazy/LazyListState;", "initialFirstVisibleItemIndex", "", "initialFirstVisibleItemScrollOffset", "(IILandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/LazyListState;", "prefetchStrategy", "Landroidx/compose/foundation/lazy/LazyListPrefetchStrategy;", "(IILandroidx/compose/foundation/lazy/LazyListPrefetchStrategy;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/LazyListState;", "cacheWindow", "Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;IILandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/LazyListState;", "EmptyLazyListMeasureResult", "Landroidx/compose/foundation/lazy/LazyListMeasureResult;", "NumberOfItemsToTeleport", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyListStateKt {
     private static final LazyListMeasureResult EmptyLazyListMeasureResult;
     private static final int NumberOfItemsToTeleport = 100;
 
     public static final LazyListState rememberLazyListState(final int i, final int i2, Composer composer, int i3, int i4) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1470655220, "C(rememberLazyListState)N(initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset)78@3732L96,78@3686L142:LazyListState.kt#428nma");
+        ComposerKt.sourceInformationMarkerStart(composer, 1470655220, "C(rememberLazyListState)N(initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset)79@3788L96,79@3742L142:LazyListState.kt#428nma");
         if ((i4 & 1) != 0) {
             i = 0;
         }
@@ -34,11 +34,11 @@ public final class LazyListStateKt {
             i2 = 0;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1470655220, i3, -1, "androidx.compose.foundation.lazy.rememberLazyListState (LazyListState.kt:77)");
+            ComposerKt.traceEventStart(1470655220, i3, -1, "androidx.compose.foundation.lazy.rememberLazyListState (LazyListState.kt:78)");
         }
         Object[] objArr = new Object[0];
         Saver<LazyListState, ?> saver = LazyListState.Companion.getSaver();
-        ComposerKt.sourceInformationMarkerStart(composer, 255432788, "CC(remember):LazyListState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 255432404, "CC(remember):LazyListState.kt#9igjgp");
         boolean z = true;
         boolean z2 = (((i3 & 14) ^ 6) > 4 && composer.changed(i)) || (i3 & 6) == 4;
         if ((((i3 & 112) ^ 48) <= 32 || !composer.changed(i2)) && (i3 & 48) != 32) {
@@ -50,15 +50,15 @@ public final class LazyListStateKt {
             rememberedValue = new Function0() { // from class: androidx.compose.foundation.lazy.LazyListStateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    LazyListState rememberLazyListState$lambda$1$lambda$0;
-                    rememberLazyListState$lambda$1$lambda$0 = LazyListStateKt.rememberLazyListState$lambda$1$lambda$0(i, i2);
-                    return rememberLazyListState$lambda$1$lambda$0;
+                    LazyListState rememberLazyListState$lambda$0$0;
+                    rememberLazyListState$lambda$0$0 = LazyListStateKt.rememberLazyListState$lambda$0$0(i, i2);
+                    return rememberLazyListState$lambda$0$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4726rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -66,13 +66,12 @@ public final class LazyListStateKt {
         return lazyListState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final LazyListState rememberLazyListState$lambda$1$lambda$0(int i, int i2) {
+    public static final LazyListState rememberLazyListState$lambda$0$0(int i, int i2) {
         return new LazyListState(i, i2);
     }
 
     public static final LazyListState rememberLazyListState(final int i, final int i2, final LazyListPrefetchStrategy lazyListPrefetchStrategy, Composer composer, int i3, int i4) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1287535208, "C(rememberLazyListState)N(initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset,prefetchStrategy)100@4595L39,102@4748L161,102@4666L243:LazyListState.kt#428nma");
+        ComposerKt.sourceInformationMarkerStart(composer, 1287535208, "C(rememberLazyListState)N(initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset,prefetchStrategy)101@4651L39,103@4804L161,103@4722L243:LazyListState.kt#428nma");
         if ((i4 & 1) != 0) {
             i = 0;
         }
@@ -81,7 +80,7 @@ public final class LazyListStateKt {
         }
         boolean z = true;
         if ((i4 & 4) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, 370760335, "CC(remember):LazyListState.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 370759087, "CC(remember):LazyListState.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = LazyListPrefetchStrategyKt.LazyListPrefetchStrategy$default(0, 1, null);
@@ -91,11 +90,11 @@ public final class LazyListStateKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1287535208, i3, -1, "androidx.compose.foundation.lazy.rememberLazyListState (LazyListState.kt:101)");
+            ComposerKt.traceEventStart(1287535208, i3, -1, "androidx.compose.foundation.lazy.rememberLazyListState (LazyListState.kt:102)");
         }
         Object[] objArr = {lazyListPrefetchStrategy};
-        Saver<LazyListState, ?> saver$foundation_release = LazyListState.Companion.saver$foundation_release(lazyListPrefetchStrategy);
-        ComposerKt.sourceInformationMarkerStart(composer, 370765353, "CC(remember):LazyListState.kt#9igjgp");
+        Saver<LazyListState, ?> saver$foundation = LazyListState.Companion.saver$foundation(lazyListPrefetchStrategy);
+        ComposerKt.sourceInformationMarkerStart(composer, 370764105, "CC(remember):LazyListState.kt#9igjgp");
         boolean z2 = ((((i3 & 14) ^ 6) > 4 && composer.changed(i)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(i2)) || (i3 & 48) == 32);
         if ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changedInstance(lazyListPrefetchStrategy)) && (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
             z = false;
@@ -106,15 +105,15 @@ public final class LazyListStateKt {
             rememberedValue2 = new Function0() { // from class: androidx.compose.foundation.lazy.LazyListStateKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    LazyListState rememberLazyListState$lambda$4$lambda$3;
-                    rememberLazyListState$lambda$4$lambda$3 = LazyListStateKt.rememberLazyListState$lambda$4$lambda$3(i, i2, lazyListPrefetchStrategy);
-                    return rememberLazyListState$lambda$4$lambda$3;
+                    LazyListState rememberLazyListState$lambda$2$0;
+                    rememberLazyListState$lambda$2$0 = LazyListStateKt.rememberLazyListState$lambda$2$0(i, i2, lazyListPrefetchStrategy);
+                    return rememberLazyListState$lambda$2$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4726rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue2, composer, 0);
+        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4857rememberSaveable(objArr, saver$foundation, (Function0<? extends Object>) rememberedValue2, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -122,13 +121,12 @@ public final class LazyListStateKt {
         return lazyListState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final LazyListState rememberLazyListState$lambda$4$lambda$3(int i, int i2, LazyListPrefetchStrategy lazyListPrefetchStrategy) {
+    public static final LazyListState rememberLazyListState$lambda$2$0(int i, int i2, LazyListPrefetchStrategy lazyListPrefetchStrategy) {
         return new LazyListState(i, i2, lazyListPrefetchStrategy);
     }
 
     public static final LazyListState rememberLazyListState(final LazyLayoutCacheWindow lazyLayoutCacheWindow, final int i, final int i2, Composer composer, int i3, int i4) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1588550476, "C(rememberLazyListState)N(cacheWindow,initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset)130@5782L156,130@5710L228:LazyListState.kt#428nma");
+        ComposerKt.sourceInformationMarkerStart(composer, 1588550476, "C(rememberLazyListState)N(cacheWindow,initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset)131@5838L156,131@5766L228:LazyListState.kt#428nma");
         if ((i4 & 2) != 0) {
             i = 0;
         }
@@ -136,11 +134,11 @@ public final class LazyListStateKt {
             i2 = 0;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1588550476, i3, -1, "androidx.compose.foundation.lazy.rememberLazyListState (LazyListState.kt:129)");
+            ComposerKt.traceEventStart(1588550476, i3, -1, "androidx.compose.foundation.lazy.rememberLazyListState (LazyListState.kt:130)");
         }
         Object[] objArr = {lazyLayoutCacheWindow};
-        Saver<LazyListState, ?> saver$foundation_release = LazyListState.Companion.saver$foundation_release(lazyLayoutCacheWindow);
-        ComposerKt.sourceInformationMarkerStart(composer, 1883627144, "CC(remember):LazyListState.kt#9igjgp");
+        Saver<LazyListState, ?> saver$foundation = LazyListState.Companion.saver$foundation(lazyLayoutCacheWindow);
+        ComposerKt.sourceInformationMarkerStart(composer, 1883625896, "CC(remember):LazyListState.kt#9igjgp");
         boolean z = true;
         boolean z2 = ((((i3 & 14) ^ 6) > 4 && composer.changed(lazyLayoutCacheWindow)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(i)) || (i3 & 48) == 32);
         if ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(i2)) && (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
@@ -152,15 +150,15 @@ public final class LazyListStateKt {
             rememberedValue = new Function0() { // from class: androidx.compose.foundation.lazy.LazyListStateKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    LazyListState rememberLazyListState$lambda$6$lambda$5;
-                    rememberLazyListState$lambda$6$lambda$5 = LazyListStateKt.rememberLazyListState$lambda$6$lambda$5(LazyLayoutCacheWindow.this, i, i2);
-                    return rememberLazyListState$lambda$6$lambda$5;
+                    LazyListState rememberLazyListState$lambda$3$0;
+                    rememberLazyListState$lambda$3$0 = LazyListStateKt.rememberLazyListState$lambda$3$0(LazyLayoutCacheWindow.this, i, i2);
+                    return rememberLazyListState$lambda$3$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4726rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyListState lazyListState = (LazyListState) RememberSaveableKt.m4857rememberSaveable(objArr, saver$foundation, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -168,8 +166,7 @@ public final class LazyListStateKt {
         return lazyListState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final LazyListState rememberLazyListState$lambda$6$lambda$5(LazyLayoutCacheWindow lazyLayoutCacheWindow, int i, int i2) {
+    public static final LazyListState rememberLazyListState$lambda$3$0(LazyLayoutCacheWindow lazyLayoutCacheWindow, int i, int i2) {
         return new LazyListState(lazyLayoutCacheWindow, i, i2);
     }
 

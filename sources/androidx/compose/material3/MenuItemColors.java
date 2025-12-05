@@ -29,60 +29,60 @@ public final class MenuItemColors {
     }
 
     /* renamed from: getTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2554getTextColor0d7_KjU() {
+    public final long m2640getTextColor0d7_KjU() {
         return this.textColor;
     }
 
     /* renamed from: getLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2553getLeadingIconColor0d7_KjU() {
+    public final long m2639getLeadingIconColor0d7_KjU() {
         return this.leadingIconColor;
     }
 
     /* renamed from: getTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2555getTrailingIconColor0d7_KjU() {
+    public final long m2641getTrailingIconColor0d7_KjU() {
         return this.trailingIconColor;
     }
 
     /* renamed from: getDisabledTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2551getDisabledTextColor0d7_KjU() {
+    public final long m2637getDisabledTextColor0d7_KjU() {
         return this.disabledTextColor;
     }
 
     /* renamed from: getDisabledLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2550getDisabledLeadingIconColor0d7_KjU() {
+    public final long m2636getDisabledLeadingIconColor0d7_KjU() {
         return this.disabledLeadingIconColor;
     }
 
     /* renamed from: getDisabledTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2552getDisabledTrailingIconColor0d7_KjU() {
+    public final long m2638getDisabledTrailingIconColor0d7_KjU() {
         return this.disabledTrailingIconColor;
     }
 
     /* renamed from: copy-tNS2XkQ$default  reason: not valid java name */
-    public static /* synthetic */ MenuItemColors m2548copytNS2XkQ$default(MenuItemColors menuItemColors, long j, long j2, long j3, long j4, long j5, long j6, int i, Object obj) {
+    public static /* synthetic */ MenuItemColors m2634copytNS2XkQ$default(MenuItemColors menuItemColors, long j, long j2, long j3, long j4, long j5, long j6, int i, Object obj) {
         if ((i & 1) != 0) {
             j = menuItemColors.textColor;
         }
-        return menuItemColors.m2549copytNS2XkQ(j, (i & 2) != 0 ? menuItemColors.leadingIconColor : j2, (i & 4) != 0 ? menuItemColors.trailingIconColor : j3, (i & 8) != 0 ? menuItemColors.disabledTextColor : j4, (i & 16) != 0 ? menuItemColors.disabledLeadingIconColor : j5, (i & 32) != 0 ? menuItemColors.disabledTrailingIconColor : j6);
+        return menuItemColors.m2635copytNS2XkQ(j, (i & 2) != 0 ? menuItemColors.leadingIconColor : j2, (i & 4) != 0 ? menuItemColors.trailingIconColor : j3, (i & 8) != 0 ? menuItemColors.disabledTextColor : j4, (i & 16) != 0 ? menuItemColors.disabledLeadingIconColor : j5, (i & 32) != 0 ? menuItemColors.disabledTrailingIconColor : j6);
     }
 
     /* renamed from: copy-tNS2XkQ  reason: not valid java name */
-    public final MenuItemColors m2549copytNS2XkQ(long j, long j2, long j3, long j4, long j5, long j6) {
+    public final MenuItemColors m2635copytNS2XkQ(long j, long j2, long j3, long j4, long j5, long j6) {
         return new MenuItemColors(j != 16 ? j : this.textColor, j2 != 16 ? j2 : this.leadingIconColor, j3 != 16 ? j3 : this.trailingIconColor, j4 != 16 ? j4 : this.disabledTextColor, j5 != 16 ? j5 : this.disabledLeadingIconColor, j6 != 16 ? j6 : this.disabledTrailingIconColor, null);
     }
 
     /* renamed from: textColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2557textColorvNxB06k$material3(boolean z) {
+    public final long m2643textColorvNxB06k$material3(boolean z) {
         return z ? this.textColor : this.disabledTextColor;
     }
 
     /* renamed from: leadingIconColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2556leadingIconColorvNxB06k$material3(boolean z) {
+    public final long m2642leadingIconColorvNxB06k$material3(boolean z) {
         return z ? this.leadingIconColor : this.disabledLeadingIconColor;
     }
 
     /* renamed from: trailingIconColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2558trailingIconColorvNxB06k$material3(boolean z) {
+    public final long m2644trailingIconColorvNxB06k$material3(boolean z) {
         return z ? this.trailingIconColor : this.disabledTrailingIconColor;
     }
 
@@ -94,10 +94,10 @@ public final class MenuItemColors {
             return false;
         }
         MenuItemColors menuItemColors = (MenuItemColors) obj;
-        return Color.m5281equalsimpl0(this.textColor, menuItemColors.textColor) && Color.m5281equalsimpl0(this.leadingIconColor, menuItemColors.leadingIconColor) && Color.m5281equalsimpl0(this.trailingIconColor, menuItemColors.trailingIconColor) && Color.m5281equalsimpl0(this.disabledTextColor, menuItemColors.disabledTextColor) && Color.m5281equalsimpl0(this.disabledLeadingIconColor, menuItemColors.disabledLeadingIconColor) && Color.m5281equalsimpl0(this.disabledTrailingIconColor, menuItemColors.disabledTrailingIconColor);
+        return Color.m5425equalsimpl0(this.textColor, menuItemColors.textColor) && Color.m5425equalsimpl0(this.leadingIconColor, menuItemColors.leadingIconColor) && Color.m5425equalsimpl0(this.trailingIconColor, menuItemColors.trailingIconColor) && Color.m5425equalsimpl0(this.disabledTextColor, menuItemColors.disabledTextColor) && Color.m5425equalsimpl0(this.disabledLeadingIconColor, menuItemColors.disabledLeadingIconColor) && Color.m5425equalsimpl0(this.disabledTrailingIconColor, menuItemColors.disabledTrailingIconColor);
     }
 
     public int hashCode() {
-        return (((((((((Color.m5287hashCodeimpl(this.textColor) * 31) + Color.m5287hashCodeimpl(this.leadingIconColor)) * 31) + Color.m5287hashCodeimpl(this.trailingIconColor)) * 31) + Color.m5287hashCodeimpl(this.disabledTextColor)) * 31) + Color.m5287hashCodeimpl(this.disabledLeadingIconColor)) * 31) + Color.m5287hashCodeimpl(this.disabledTrailingIconColor);
+        return (((((((((Color.m5431hashCodeimpl(this.textColor) * 31) + Color.m5431hashCodeimpl(this.leadingIconColor)) * 31) + Color.m5431hashCodeimpl(this.trailingIconColor)) * 31) + Color.m5431hashCodeimpl(this.disabledTextColor)) * 31) + Color.m5431hashCodeimpl(this.disabledLeadingIconColor)) * 31) + Color.m5431hashCodeimpl(this.disabledTrailingIconColor);
     }
 }

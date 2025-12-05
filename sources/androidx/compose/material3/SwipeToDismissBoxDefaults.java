@@ -54,6 +54,6 @@ public final class SwipeToDismissBoxDefaults {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float _get_positionalThreshold_$lambda$2$lambda$1$lambda$0(Density density, float f) {
-        return density.mo430toPx0680j_4(Dp.m7996constructorimpl(56));
+        return density.mo464toPx0680j_4(Dp.m8258constructorimpl(56));
     }
 }

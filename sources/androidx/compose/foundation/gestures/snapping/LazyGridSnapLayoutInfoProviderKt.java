@@ -14,7 +14,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.ranges.RangesKt;
 /* compiled from: LazyGridSnapLayoutInfoProvider.kt */
-@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u001a\u001f\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\b\u001a\u0014\u0010\u000e\u001a\u00020\n*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0000\u001a\u0014\u0010\u0012\u001a\u00020\n*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0000\"\u0018\u0010\t\u001a\u00020\n*\u00020\u000b8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\r¨\u0006\u0013"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "lazyGridState", "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "rememberSnapFlingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "(Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/gestures/FlingBehavior;", "singleAxisViewportSize", "", "Landroidx/compose/foundation/lazy/grid/LazyGridLayoutInfo;", "getSingleAxisViewportSize", "(Landroidx/compose/foundation/lazy/grid/LazyGridLayoutInfo;)I", "sizeOnMainAxis", "Landroidx/compose/foundation/lazy/grid/LazyGridItemInfo;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "offsetOnMainAxis", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u001a\u001f\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\b\u001a\u0014\u0010\u000e\u001a\u00020\n*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0000\u001a\u0014\u0010\u0012\u001a\u00020\n*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0000\"\u0018\u0010\t\u001a\u00020\n*\u00020\u000b8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\r¨\u0006\u0013"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "lazyGridState", "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "rememberSnapFlingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "(Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/gestures/FlingBehavior;", "singleAxisViewportSize", "", "Landroidx/compose/foundation/lazy/grid/LazyGridLayoutInfo;", "getSingleAxisViewportSize", "(Landroidx/compose/foundation/lazy/grid/LazyGridLayoutInfo;)I", "sizeOnMainAxis", "Landroidx/compose/foundation/lazy/grid/LazyGridItemInfo;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "offsetOnMainAxis", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyGridSnapLayoutInfoProviderKt {
     public static /* synthetic */ SnapLayoutInfoProvider SnapLayoutInfoProvider$default(LazyGridState lazyGridState, SnapPosition snapPosition, int i, Object obj) {
@@ -65,7 +65,7 @@ public final class LazyGridSnapLayoutInfoProviderKt {
                         f3 = calculateDistanceToDesiredSnapPosition;
                     }
                 }
-                return SnapFlingBehaviorKt.m638calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyGridState.this.getDensity$foundation_release(), f), f2, f3);
+                return SnapFlingBehaviorKt.m718calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyGridState.this.getDensity$foundation(), f), f2, f3);
             }
         };
     }
@@ -78,7 +78,7 @@ public final class LazyGridSnapLayoutInfoProviderKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-234434234, i, -1, "androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior (LazyGridSnapLayoutInfoProvider.kt:114)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1952993547, "CC(remember):LazyGridSnapLayoutInfoProvider.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1952993931, "CC(remember):LazyGridSnapLayoutInfoProvider.kt#9igjgp");
         boolean z = (((i & 14) ^ 6) > 4 && composer.changed(lazyGridState)) || (i & 6) == 4;
         Object rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -95,29 +95,29 @@ public final class LazyGridSnapLayoutInfoProviderKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
-        long mo1006getViewportSizeYbymL2g;
+        long mo1087getViewportSizeYbymL2g;
         if (lazyGridLayoutInfo.getOrientation() == Orientation.Vertical) {
-            mo1006getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1006getViewportSizeYbymL2g() & 4294967295L;
+            mo1087getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1087getViewportSizeYbymL2g() & 4294967295L;
         } else {
-            mo1006getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1006getViewportSizeYbymL2g() >> 32;
+            mo1087getViewportSizeYbymL2g = lazyGridLayoutInfo.mo1087getViewportSizeYbymL2g() >> 32;
         }
-        return (int) mo1006getViewportSizeYbymL2g;
+        return (int) mo1087getViewportSizeYbymL2g;
     }
 
     public static final int sizeOnMainAxis(LazyGridItemInfo lazyGridItemInfo, Orientation orientation) {
-        long mo1002getSizeYbymL2g;
+        long mo1082getSizeYbymL2g;
         if (orientation == Orientation.Vertical) {
-            mo1002getSizeYbymL2g = lazyGridItemInfo.mo1002getSizeYbymL2g() & 4294967295L;
+            mo1082getSizeYbymL2g = lazyGridItemInfo.mo1082getSizeYbymL2g() & 4294967295L;
         } else {
-            mo1002getSizeYbymL2g = lazyGridItemInfo.mo1002getSizeYbymL2g() >> 32;
+            mo1082getSizeYbymL2g = lazyGridItemInfo.mo1082getSizeYbymL2g() >> 32;
         }
-        return (int) mo1002getSizeYbymL2g;
+        return (int) mo1082getSizeYbymL2g;
     }
 
     public static final int offsetOnMainAxis(LazyGridItemInfo lazyGridItemInfo, Orientation orientation) {
         if (orientation == Orientation.Vertical) {
-            return IntOffset.m8125getYimpl(lazyGridItemInfo.mo1001getOffsetnOccac());
+            return IntOffset.m8387getYimpl(lazyGridItemInfo.mo1081getOffsetnOccac());
         }
-        return IntOffset.m8124getXimpl(lazyGridItemInfo.mo1001getOffsetnOccac());
+        return IntOffset.m8386getXimpl(lazyGridItemInfo.mo1081getOffsetnOccac());
     }
 }

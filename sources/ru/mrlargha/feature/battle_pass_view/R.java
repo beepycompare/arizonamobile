@@ -4,10 +4,10 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class id {
-        public static int cvReward = 0x7f0a03ca;
-        public static int ivReward = 0x7f0a0743;
-        public static int parentLayout = 0x7f0a09db;
-        public static int tvRewardDesc = 0x7f0a0e3c;
+        public static int cvReward = 0x7f0a03cf;
+        public static int ivReward = 0x7f0a0749;
+        public static int parentLayout = 0x7f0a09e2;
+        public static int tvRewardDesc = 0x7f0a0e45;
 
         private id() {
         }

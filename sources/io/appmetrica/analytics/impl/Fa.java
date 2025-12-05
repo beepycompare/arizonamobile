@@ -4,7 +4,7 @@ import android.content.Context;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes5.dex */
 public interface Fa {
-    void a(C0490p4 c0490p4);
+    void a(C0489p4 c0489p4);
 
     /* synthetic */ R4 b();
 

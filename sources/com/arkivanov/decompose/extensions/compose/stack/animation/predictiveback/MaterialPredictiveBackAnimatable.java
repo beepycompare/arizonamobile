@@ -240,13 +240,13 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
     public static final Unit _get_enterModifier_$lambda$2(MaterialPredictiveBackAnimatable materialPredictiveBackAnimatable, ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         drawWithContent.drawContent();
-        DrawScope.m5853drawRectnJ9OG0$default(drawWithContent, Color.m5279copywmQWz5c$default(Color.Companion.m5306getBlack0d7_KjU(), materialPredictiveBackAnimatable.getFinishProgress() * 0.25f, 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        DrawScope.m5999drawRectnJ9OG0$default(drawWithContent, Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), materialPredictiveBackAnimatable.getFinishProgress() * 0.25f, 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Modifier exitModifier(Modifier modifier, Shape shape, Composer composer, int i) {
-        Modifier m5443graphicsLayerAp8cVGQ;
+        Modifier m5588graphicsLayerAp8cVGQ;
         composer.startReplaceGroup(1519216613);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1519216613, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable.exitModifier (MaterialPredictiveBackAnimatable.kt:80)");
@@ -254,7 +254,7 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         composer.startReplaceGroup(75011103);
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(Size.Companion.m5114getZeroNHjbRc()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5236boximpl(Size.Companion.m5257getZeroNHjbRc()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
@@ -278,26 +278,26 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
             composer.updateRememberedValue(rememberedValue2);
         }
         composer.endReplaceGroup();
-        m5443graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m5443graphicsLayerAp8cVGQ(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), (r41 & 1) != 0 ? 1.0f : progress, (r41 & 2) != 0 ? 1.0f : progress, (r41 & 4) == 0 ? getFinishProgress() : 1.0f, (r41 & 8) != 0 ? 0.0f : exitOffsetX(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) >> 32)), progress), (r41 & 16) != 0 ? 0.0f : exitOffsetY(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) & 4294967295L))), (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5688getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : shape, (r41 & 4096) != 0 ? false : true, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m5370getAutoNrFUSI() : CompositingStrategy.Companion.m5372getOffscreenNrFUSI());
+        m5588graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m5588graphicsLayerAp8cVGQ(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), (r41 & 1) != 0 ? 1.0f : progress, (r41 & 2) != 0 ? 1.0f : progress, (r41 & 4) == 0 ? getFinishProgress() : 1.0f, (r41 & 8) != 0 ? 0.0f : exitOffsetX(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) >> 32)), progress), (r41 & 16) != 0 ? 0.0f : exitOffsetY(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) & 4294967295L))), (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5839getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : shape, (r41 & 4096) != 0 ? false : true, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m5515getAutoNrFUSI() : CompositingStrategy.Companion.m5517getOffscreenNrFUSI());
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m5443graphicsLayerAp8cVGQ;
+        return m5588graphicsLayerAp8cVGQ;
     }
 
     private static final long exitModifier$lambda$4(MutableState<Size> mutableState) {
-        return mutableState.getValue().m5110unboximpl();
+        return mutableState.getValue().m5253unboximpl();
     }
 
     private static final void exitModifier$lambda$5(MutableState<Size> mutableState, long j) {
-        mutableState.setValue(Size.m5093boximpl(j));
+        mutableState.setValue(Size.m5236boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit exitModifier$lambda$7$lambda$6(MutableState mutableState, LayoutCoordinates it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        exitModifier$lambda$5(mutableState, IntSizeKt.m8179toSizeozmzZPI(it.mo6706getSizeYbymL2g()));
+        exitModifier$lambda$5(mutableState, IntSizeKt.m8441toSizeozmzZPI(it.mo6883getSizeYbymL2g()));
         return Unit.INSTANCE;
     }
 
@@ -314,9 +314,9 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
                 }
                 throw new NoWhenBranchMatchedException();
             }
-            return ((f3 - f) / 2.0f) + (density.mo430toPx0680j_4(Dp.m7996constructorimpl(8)) * getProgress());
+            return ((f3 - f) / 2.0f) + (density.mo464toPx0680j_4(Dp.m8258constructorimpl(8)) * getProgress());
         }
-        return ((f - f3) / 2.0f) - (density.mo430toPx0680j_4(Dp.m7996constructorimpl(8)) * getProgress());
+        return ((f - f3) / 2.0f) - (density.mo464toPx0680j_4(Dp.m8258constructorimpl(8)) * getProgress());
     }
 
     @Override // com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimatable
@@ -343,6 +343,6 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         if (f == 0.0f) {
             return 0.0f;
         }
-        return ((f / 20.0f) - density.mo430toPx0680j_4(Dp.m7996constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f);
+        return ((f / 20.0f) - density.mo464toPx0680j_4(Dp.m8258constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f);
     }
 }

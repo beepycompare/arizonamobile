@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.node.LayoutNode;
+import androidx.compose.ui.node.LookaheadCapablePlaceable;
 import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.IntSize;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -22,7 +23,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LookaheadScope.kt */
-@Metadata(d1 = {"\u0000l\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u001a0\u0010\u0000\u001a\u00020\u00012!\u0010\u0002\u001a\u001d\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0005¢\u0006\u0002\b\u0006¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a \u0001\u0010\t\u001a\u00020\n*\u00020\n2!\u0010\u000b\u001a\u001d\u0012\u0013\u0012\u00110\f¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u00032.\b\u0002\u0010\u0011\u001a(\u0012\u0004\u0012\u00020\u0013\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u0015\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\u0002\b\u00072A\u0010\u0016\u001a=\u0012\u0004\u0012\u00020\u0018\u0012\u0013\u0012\u00110\u0019¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u001a\u0012\u0013\u0012\u00110\u001b¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u001c\u0012\u0004\u0012\u00020\u001d0\u0017¢\u0006\u0002\b\u0007\u001a3\u0010\u001f\u001a\u00020 *\u00020\u00042\u0006\u0010!\u001a\u00020\u00142\u0006\u0010\"\u001a\u00020\u00142\u0006\u0010#\u001a\u00020 2\u0006\u0010$\u001a\u00020\u0010H\u0000¢\u0006\u0004\b%\u0010&\"4\u0010\u001e\u001a(\u0012\u0004\u0012\u00020\u0013\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u0015\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\u0002\b\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006'"}, d2 = {"LookaheadScope", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/ui/layout/LookaheadScope;", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/ui/UiComposable;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "approachLayout", "Landroidx/compose/ui/Modifier;", "isMeasurementApproachInProgress", "Landroidx/compose/ui/unit/IntSize;", "Lkotlin/ParameterName;", "name", "lookaheadSize", "", "isPlacementApproachInProgress", "Lkotlin/Function2;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "lookaheadCoordinates", "approachMeasure", "Lkotlin/Function3;", "Landroidx/compose/ui/layout/ApproachMeasureScope;", "Landroidx/compose/ui/layout/Measurable;", "measurable", "Landroidx/compose/ui/unit/Constraints;", "constraints", "Landroidx/compose/ui/layout/MeasureResult;", "defaultPlacementApproachInProgress", "localLookaheadPositionOf", "Landroidx/compose/ui/geometry/Offset;", "coordinates", "sourceCoordinates", "relativeToSource", "includeMotionFrameOfReference", "localLookaheadPositionOf-Fgt4K4Q", "(Landroidx/compose/ui/layout/LookaheadScope;Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;JZ)J", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000l\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a0\u0010\u0000\u001a\u00020\u00012!\u0010\u0002\u001a\u001d\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0005¢\u0006\u0002\b\u0006¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a \u0001\u0010\t\u001a\u00020\n*\u00020\n2!\u0010\u000b\u001a\u001d\u0012\u0013\u0012\u00110\f¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u00032.\b\u0002\u0010\u0011\u001a(\u0012\u0004\u0012\u00020\u0013\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u0015\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\u0002\b\u00072A\u0010\u0016\u001a=\u0012\u0004\u0012\u00020\u0018\u0012\u0013\u0012\u00110\u0019¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u001a\u0012\u0013\u0012\u00110\u001b¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u001c\u0012\u0004\u0012\u00020\u001d0\u0017¢\u0006\u0002\b\u0007\u001a\u0012\u0010\u001f\u001a\u00020\u0014*\u00020\u00042\u0006\u0010 \u001a\u00020\u0014\u001a3\u0010!\u001a\u00020\"*\u00020\u00042\u0006\u0010#\u001a\u00020\u00142\u0006\u0010 \u001a\u00020\u00142\u0006\u0010$\u001a\u00020\"2\u0006\u0010%\u001a\u00020\u0010H\u0000¢\u0006\u0004\b&\u0010'\"4\u0010\u001e\u001a(\u0012\u0004\u0012\u00020\u0013\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u0015\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\u0002\b\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"LookaheadScope", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/ui/layout/LookaheadScope;", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/ui/UiComposable;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "approachLayout", "Landroidx/compose/ui/Modifier;", "isMeasurementApproachInProgress", "Landroidx/compose/ui/unit/IntSize;", "Lkotlin/ParameterName;", "name", "lookaheadSize", "", "isPlacementApproachInProgress", "Lkotlin/Function2;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "lookaheadCoordinates", "approachMeasure", "Lkotlin/Function3;", "Landroidx/compose/ui/layout/ApproachMeasureScope;", "Landroidx/compose/ui/layout/Measurable;", "measurable", "Landroidx/compose/ui/unit/Constraints;", "constraints", "Landroidx/compose/ui/layout/MeasureResult;", "defaultPlacementApproachInProgress", "lookaheadScopeCoordinates", "sourceCoordinates", "localLookaheadPositionOf", "Landroidx/compose/ui/geometry/Offset;", "coordinates", "relativeToSource", "includeMotionFrameOfReference", "localLookaheadPositionOf-Fgt4K4Q", "(Landroidx/compose/ui/layout/LookaheadScope;Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;JZ)J", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LookaheadScopeKt {
     private static final Function2<Placeable.PlacementScope, LayoutCoordinates, Boolean> defaultPlacementApproachInProgress = new Function2<Placeable.PlacementScope, LayoutCoordinates, Boolean>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$defaultPlacementApproachInProgress$1
@@ -35,7 +36,7 @@ public final class LookaheadScopeKt {
     public static final void LookaheadScope(final Function3<? super LookaheadScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(441837433);
-        ComposerKt.sourceInformation(startRestartGroup, "C(LookaheadScope)49@2063L33,51@2166L32,50@2101L429:LookaheadScope.kt#80mrfh");
+        ComposerKt.sourceInformation(startRestartGroup, "C(LookaheadScope)50@2121L33,52@2224L32,51@2159L429:LookaheadScope.kt#80mrfh");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(function3) ? 4 : 2) | i;
         } else {
@@ -45,9 +46,9 @@ public final class LookaheadScopeKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(441837433, i2, -1, "androidx.compose.ui.layout.LookaheadScope (LookaheadScope.kt:48)");
+                ComposerKt.traceEventStart(441837433, i2, -1, "androidx.compose.ui.layout.LookaheadScope (LookaheadScope.kt:49)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -595985158, "CC(remember):LookaheadScope.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -595985990, "CC(remember):LookaheadScope.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new LookaheadScopeImpl(null, 1, null);
@@ -55,7 +56,7 @@ public final class LookaheadScopeKt {
             }
             LookaheadScopeImpl lookaheadScopeImpl = (LookaheadScopeImpl) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -595981863, "CC(remember):LookaheadScope.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -595982695, "CC(remember):LookaheadScope.kt#9igjgp");
             LookaheadScopeKt$LookaheadScope$1$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new Function0<LayoutNode>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$1$1
@@ -79,8 +80,8 @@ public final class LookaheadScopeKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-            Updater.m4602initimpl(m4598constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$1
+            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+            Updater.m4678initimpl(m4673constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode) {
                     invoke2(layoutNode);
@@ -89,10 +90,10 @@ public final class LookaheadScopeKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(LayoutNode layoutNode) {
-                    layoutNode.setVirtualLookaheadRoot$ui_release(true);
+                    layoutNode.setVirtualLookaheadRoot$ui(true);
                 }
             });
-            Updater.m4605setimpl(m4598constructorimpl, lookaheadScopeImpl, new Function2<LayoutNode, LookaheadScopeImpl, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$2
+            Updater.m4681setimpl(m4673constructorimpl, lookaheadScopeImpl, new Function2<LayoutNode, LookaheadScopeImpl, Unit>() { // from class: androidx.compose.ui.layout.LookaheadScopeKt$LookaheadScope$2$2
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, LookaheadScopeImpl lookaheadScopeImpl2) {
                     invoke2(layoutNode, lookaheadScopeImpl2);
@@ -109,14 +110,14 @@ public final class LookaheadScopeKt {
                         /* JADX WARN: Can't rename method to resolve collision */
                         @Override // kotlin.jvm.functions.Function0
                         public final LayoutCoordinates invoke() {
-                            LayoutNode parent$ui_release = LayoutNode.this.getParent$ui_release();
-                            Intrinsics.checkNotNull(parent$ui_release);
-                            return parent$ui_release.getInnerCoordinator$ui_release().getCoordinates();
+                            LayoutNode parent$ui = LayoutNode.this.getParent$ui();
+                            Intrinsics.checkNotNull(parent$ui);
+                            return parent$ui.getInnerCoordinator$ui().getCoordinates();
                         }
                     });
                 }
             });
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1841357025, "C59@2512L9:LookaheadScope.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1841357025, "C60@2570L9:LookaheadScope.kt#80mrfh");
             function3.invoke(lookaheadScopeImpl, startRestartGroup, Integer.valueOf((i2 << 3) & 112));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -159,16 +160,23 @@ public final class LookaheadScopeKt {
         return modifier.then(new ApproachLayoutElement(function3, function1, function2));
     }
 
+    public static final LayoutCoordinates lookaheadScopeCoordinates(LookaheadScope lookaheadScope, LayoutCoordinates layoutCoordinates) {
+        if (!(layoutCoordinates instanceof LookaheadCapablePlaceable)) {
+            throw new IllegalArgumentException(("Invalid LayoutCoordinates: " + layoutCoordinates).toString());
+        }
+        return lookaheadScope.getLookaheadScopeCoordinates(((LookaheadCapablePlaceable) layoutCoordinates).getPlacementScope());
+    }
+
     /* renamed from: localLookaheadPositionOf-Fgt4K4Q  reason: not valid java name */
-    public static final long m6728localLookaheadPositionOfFgt4K4Q(LookaheadScope lookaheadScope, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+    public static final long m6906localLookaheadPositionOfFgt4K4Q(LookaheadScope lookaheadScope, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
         LayoutCoordinates lookaheadCoordinates = lookaheadScope.toLookaheadCoordinates(layoutCoordinates);
         LayoutCoordinates lookaheadCoordinates2 = lookaheadScope.toLookaheadCoordinates(layoutCoordinates2);
         if (lookaheadCoordinates instanceof LookaheadLayoutCoordinates) {
-            return ((LookaheadLayoutCoordinates) lookaheadCoordinates).mo6708localPositionOfS_NoaFU(lookaheadCoordinates2, j, z);
+            return ((LookaheadLayoutCoordinates) lookaheadCoordinates).mo6885localPositionOfS_NoaFU(lookaheadCoordinates2, j, z);
         }
         if (!(lookaheadCoordinates2 instanceof LookaheadLayoutCoordinates)) {
-            return lookaheadCoordinates.mo6708localPositionOfS_NoaFU(lookaheadCoordinates, j, z);
+            return lookaheadCoordinates.mo6885localPositionOfS_NoaFU(lookaheadCoordinates, j, z);
         }
-        return Offset.m5028constructorimpl(((LookaheadLayoutCoordinates) lookaheadCoordinates2).mo6708localPositionOfS_NoaFU(lookaheadCoordinates, j, z) ^ (-9223372034707292160L));
+        return Offset.m5171constructorimpl(((LookaheadLayoutCoordinates) lookaheadCoordinates2).mo6885localPositionOfS_NoaFU(lookaheadCoordinates, j, z) ^ (-9223372034707292160L));
     }
 }

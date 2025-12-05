@@ -9,19 +9,19 @@ import io.appmetrica.analytics.coreutils.internal.permission.SinglePermissionStr
 import io.appmetrica.analytics.coreutils.internal.services.telephony.CellularNetworkTypeExtractor;
 import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public final class Mc implements InterfaceC0583sn {
+public final class Mc implements InterfaceC0582sn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f588a;
+    public final Context f671a;
     public final PermissionResolutionStrategy b;
     public final CellularNetworkTypeExtractor c;
     public final CachedDataProvider.CachedData d;
 
     public Mc(Context context) {
         PermissionResolutionStrategy alwaysAllowPermissionStrategy;
-        this.f588a = context;
+        this.f671a = context;
         if (AndroidUtils.isApiAchieved(29)) {
-            alwaysAllowPermissionStrategy = new SinglePermissionStrategy(C0471oa.k().j(), "android.permission.READ_PHONE_STATE");
+            alwaysAllowPermissionStrategy = new SinglePermissionStrategy(C0470oa.k().j(), "android.permission.READ_PHONE_STATE");
         } else {
             alwaysAllowPermissionStrategy = new AlwaysAllowPermissionStrategy();
         }
@@ -31,14 +31,14 @@ public final class Mc implements InterfaceC0583sn {
         this.d = new CachedDataProvider.CachedData(millis, millis * 2, "mobile-connection");
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0583sn
+    @Override // io.appmetrica.analytics.impl.InterfaceC0582sn
     /* renamed from: b */
     public final synchronized Lc a() {
         Lc lc;
         String str;
         lc = (Lc) this.d.getData();
         if (lc == null || this.d.shouldUpdateData()) {
-            if (this.b.hasNecessaryPermissions(this.f588a)) {
+            if (this.b.hasNecessaryPermissions(this.f671a)) {
                 str = this.c.getNetworkType();
             } else {
                 str = "unknown";

@@ -21,30 +21,30 @@ final class SimpleLayoutKt$SimpleLayout$1$1 implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         int i = 0;
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            Placeable mo6698measureBRTryo0 = list.get(i3).mo6698measureBRTryo0(j);
-            i = Math.max(i, mo6698measureBRTryo0.getWidth());
-            i2 = Math.max(i2, mo6698measureBRTryo0.getHeight());
-            arrayList.add(mo6698measureBRTryo0);
+            Placeable mo6875measureBRTryo0 = list.get(i3).mo6875measureBRTryo0(j);
+            i = Math.max(i, mo6875measureBRTryo0.getWidth());
+            i2 = Math.max(i2, mo6875measureBRTryo0.getHeight());
+            arrayList.add(mo6875measureBRTryo0);
         }
         final ArrayList arrayList2 = arrayList;
         return MeasureScope.layout$default(measureScope, i, i2, null, new Function1() { // from class: androidx.compose.foundation.text.selection.SimpleLayoutKt$SimpleLayout$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$2;
-                measure_3p2s80s$lambda$2 = SimpleLayoutKt$SimpleLayout$1$1.measure_3p2s80s$lambda$2(arrayList2, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$2;
+                Unit measure_3p2s80s$lambda$1;
+                measure_3p2s80s$lambda$1 = SimpleLayoutKt$SimpleLayout$1$1.measure_3p2s80s$lambda$1(arrayList2, (Placeable.PlacementScope) obj);
+                return measure_3p2s80s$lambda$1;
             }
         }, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measure_3p2s80s$lambda$2(List list, Placeable.PlacementScope placementScope) {
+    public static final Unit measure_3p2s80s$lambda$1(List list, Placeable.PlacementScope placementScope) {
         int size = list.size();
         for (int i = 0; i < size; i++) {
             Placeable.PlacementScope.place$default(placementScope, (Placeable) list.get(i), 0, 0, 0.0f, 4, null);

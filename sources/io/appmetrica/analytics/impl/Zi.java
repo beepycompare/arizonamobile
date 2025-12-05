@@ -8,38 +8,38 @@ import java.util.Map;
 public final class Zi implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0599te f782a;
-    public final C0414m3 b;
-    public final C0595ta c;
-    public final C0595ta d;
+    public final C0598te f865a;
+    public final C0413m3 b;
+    public final C0594ta c;
+    public final C0594ta d;
 
     public Zi() {
-        this(new C0599te(), new C0414m3(), new C0595ta(100), new C0595ta(1000));
+        this(new C0598te(), new C0413m3(), new C0594ta(100), new C0594ta(1000));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Ei fromModel(C0199dj c0199dj) {
+    public final Ei fromModel(C0198dj c0198dj) {
         Ei ei;
-        C0543r8 c0543r8 = new C0543r8();
-        Nn a2 = this.c.a(c0199dj.f854a);
-        c0543r8.f1099a = StringUtils.getUTF8Bytes((String) a2.f611a);
-        List<String> list = c0199dj.b;
+        C0542r8 c0542r8 = new C0542r8();
+        Nn a2 = this.c.a(c0198dj.f937a);
+        c0542r8.f1182a = StringUtils.getUTF8Bytes((String) a2.f694a);
+        List<String> list = c0198dj.b;
         Ei ei2 = null;
         if (list != null) {
             ei = this.b.fromModel(list);
-            c0543r8.b = (C0265g8) ei.f463a;
+            c0542r8.b = (C0264g8) ei.f546a;
         } else {
             ei = null;
         }
-        Nn a3 = this.d.a(c0199dj.c);
-        c0543r8.c = StringUtils.getUTF8Bytes((String) a3.f611a);
-        Map<String, String> map = c0199dj.d;
+        Nn a3 = this.d.a(c0198dj.c);
+        c0542r8.c = StringUtils.getUTF8Bytes((String) a3.f694a);
+        Map<String, String> map = c0198dj.d;
         if (map != null) {
-            ei2 = this.f782a.fromModel(map);
-            c0543r8.d = (C0419m8) ei2.f463a;
+            ei2 = this.f865a.fromModel(map);
+            c0542r8.d = (C0418m8) ei2.f546a;
         }
-        return new Ei(c0543r8, new C0131b3(C0131b3.b(a2, ei, a3, ei2)));
+        return new Ei(c0542r8, new C0130b3(C0130b3.b(a2, ei, a3, ei2)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -48,14 +48,14 @@ public final class Zi implements Converter {
         throw new UnsupportedOperationException();
     }
 
-    public Zi(C0599te c0599te, C0414m3 c0414m3, C0595ta c0595ta, C0595ta c0595ta2) {
-        this.f782a = c0599te;
-        this.b = c0414m3;
-        this.c = c0595ta;
-        this.d = c0595ta2;
+    public Zi(C0598te c0598te, C0413m3 c0413m3, C0594ta c0594ta, C0594ta c0594ta2) {
+        this.f865a = c0598te;
+        this.b = c0413m3;
+        this.c = c0594ta;
+        this.d = c0594ta2;
     }
 
-    public final C0199dj a(Ei ei) {
+    public final C0198dj a(Ei ei) {
         throw new UnsupportedOperationException();
     }
 }

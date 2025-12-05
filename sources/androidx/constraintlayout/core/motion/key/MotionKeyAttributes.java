@@ -33,7 +33,7 @@ public class MotionKeyAttributes extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo8476clone() {
+    public MotionKey mo8738clone() {
         return null;
     }
 

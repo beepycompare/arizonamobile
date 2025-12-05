@@ -12,6 +12,8 @@ import android.os.Message;
 import android.util.Pair;
 import android.view.Display;
 import android.view.Surface;
+import androidx.compose.runtime.ComposerImplKt;
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
 import androidx.media3.common.Effect;
@@ -47,6 +49,7 @@ import androidx.media3.exoplayer.video.VideoFrameReleaseControl;
 import androidx.media3.exoplayer.video.VideoRendererEventListener;
 import androidx.media3.exoplayer.video.VideoSink;
 import androidx.media3.extractor.ts.TsExtractor;
+import androidx.window.core.layout.WindowSizeClass;
 import com.google.android.gms.common.Scopes;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
@@ -55,11 +58,9 @@ import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.PriorityQueue;
 import kotlin.text.Typography;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.ws.WebSocketProtocol;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage;
 /* loaded from: classes3.dex */
 public class MediaCodecVideoRenderer extends MediaCodecRenderer implements VideoFrameReleaseControl.FrameTimingEvaluator {
     private static final int HEVC_MAX_INPUT_SIZE_THRESHOLD = 2097152;
@@ -72,7 +73,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private static final long MIN_EARLY_US_LATE_THRESHOLD = -30000;
     private static final long MIN_EARLY_US_VERY_LATE_THRESHOLD = -500000;
     private static final long OFFSET_FROM_PERIOD_END_TO_TREAT_AS_LAST_US = 100000;
-    private static final int[] STANDARD_LONG_EDGE_VIDEO_PX = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
+    private static final int[] STANDARD_LONG_EDGE_VIDEO_PX = {1920, WindowSizeClass.WIDTH_DP_EXTRA_LARGE_LOWER_BOUND, 1440, 1280, 960, 854, 640, 540, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND};
     private static final String TAG = "MediaCodecVideoRenderer";
     private static final long TUNNELING_EOS_PRESENTATION_TIME_US = Long.MAX_VALUE;
     private static boolean deviceNeedsSetOutputSurfaceWorkaround;
@@ -1770,7 +1771,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:621:0x084f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:621:0x0851, code lost:
         if (r0.equals("PGN528") == false) goto L46;
      */
     /*
@@ -2984,8 +2985,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case ':':
                             case ';':
                             case '<':
-                            case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
-                            case '>':
+                            case '=':
+                            case RectListKt.BitOffsetForGesturable /* 62 */:
                             case '?':
                             case '@':
                             case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT /* 65 */:
@@ -2993,7 +2994,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'C':
                             case 'D':
                             case 'E':
-                            case ArizonaRentAddPage.MAX_CHAR_COUNT /* 70 */:
+                            case 'F':
                             case TsExtractor.TS_SYNC_BYTE /* 71 */:
                             case 'H':
                             case 'I':
@@ -3048,7 +3049,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'z':
                             case '{':
                             case '|':
-                            case '}':
+                            case ComposerImplKt.nodeKey /* 125 */:
                             case WebSocketProtocol.PAYLOAD_SHORT /* 126 */:
                             case 127:
                             case 128:

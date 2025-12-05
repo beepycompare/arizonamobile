@@ -58,7 +58,7 @@ public final class DateInputValidator {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String m2185validateXivgLIo(CalendarDate calendarDate, int i, Locale locale) {
+    public final String m2271validateXivgLIo(CalendarDate calendarDate, int i, Locale locale) {
         if (calendarDate == null) {
             String str = this.errorDatePattern;
             String upperCase = this.dateInputFormat.getPatternWithDelimiters().toUpperCase(Locale.ROOT);
@@ -71,11 +71,11 @@ public final class DateInputValidator {
             if (!selectableDates.isSelectableYear(calendarDate.getYear()) || !selectableDates.isSelectableDate(calendarDate.getUtcTimeMillis())) {
                 return Strings_androidKt.formatString(this.errorInvalidNotAllowed, DatePickerFormatter.formatDate$default(this.dateFormatter, Long.valueOf(calendarDate.getUtcTimeMillis()), locale, false, 4, null));
             }
-            if (InputIdentifier.m2490equalsimpl0(i, InputIdentifier.Companion.m2496getStartDateInputJ2x2o4M())) {
+            if (InputIdentifier.m2576equalsimpl0(i, InputIdentifier.Companion.m2582getStartDateInputJ2x2o4M())) {
                 long utcTimeMillis = calendarDate.getUtcTimeMillis();
                 Long l = this.currentEndDateMillis;
             }
-            if (InputIdentifier.m2490equalsimpl0(i, InputIdentifier.Companion.m2494getEndDateInputJ2x2o4M())) {
+            if (InputIdentifier.m2576equalsimpl0(i, InputIdentifier.Companion.m2580getEndDateInputJ2x2o4M())) {
                 long utcTimeMillis2 = calendarDate.getUtcTimeMillis();
                 Long l2 = this.currentStartDateMillis;
                 if (utcTimeMillis2 >= (l2 != null ? l2.longValue() : Long.MIN_VALUE)) {

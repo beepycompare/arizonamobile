@@ -7,7 +7,7 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaCodecPerformancePointCoverageProvider {
     static final int COVERAGE_RESULT_NO = 1;
     static final int COVERAGE_RESULT_NO_PERFORMANCE_POINTS_UNSUPPORTED = 0;
@@ -29,7 +29,7 @@ public final class MediaCodecPerformancePointCoverageProvider {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api29 {
         private Api29() {
         }

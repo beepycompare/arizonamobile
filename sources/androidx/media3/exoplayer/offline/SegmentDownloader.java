@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class SegmentDownloader<M extends FilterableManifest<M>> implements Downloader {
     private static final int BUFFER_SIZE_BYTES = 131072;
     public static final long DEFAULT_MAX_MERGED_SEGMENT_START_TIME_DIFF_MS = 20000;
@@ -47,7 +47,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
 
     protected abstract List<Segment> getSegments(DataSource dataSource, M m, boolean z) throws IOException, InterruptedException;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     protected static abstract class BaseFactory<M extends FilterableManifest<M>> implements SegmentDownloaderFactory {
         protected final CacheDataSource.Factory cacheDataSourceFactory;
         protected ParsingLoadable.Parser<M> manifestParser;
@@ -87,7 +87,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Segment implements Comparable<Segment> {
         public final DataSpec dataSpec;
         public final long startTimeUs;
@@ -378,7 +378,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
         return dataSpec.uri.equals(dataSpec2.uri) && dataSpec.length != -1 && dataSpec.position + dataSpec.length == dataSpec2.position && Objects.equals(dataSpec.key, dataSpec2.key) && dataSpec.flags == dataSpec2.flags && dataSpec.httpMethod == dataSpec2.httpMethod && dataSpec.httpRequestHeaders.equals(dataSpec2.httpRequestHeaders);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class SegmentDownloadRunnable extends RunnableFutureTask<Void, IOException> {
         private final CacheWriter cacheWriter;
         public final CacheDataSource dataSource;
@@ -413,7 +413,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ProgressNotifier implements CacheWriter.ProgressListener {
         private long bytesDownloaded;
         private final long contentLength;

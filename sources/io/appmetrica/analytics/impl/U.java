@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class U implements Ba {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f700a;
+    public final Context f783a;
     public final ICommonExecutor b;
     public FutureTask i;
     public final J j;
@@ -30,14 +30,14 @@ public final class U implements Ba {
     public volatile AdvertisingIdsHolder k = new AdvertisingIdsHolder();
     public G l = new G(4, 4, 4);
 
-    public U(Context context, ICommonExecutor iCommonExecutor, C0279gm c0279gm) {
-        this.f700a = context;
+    public U(Context context, ICommonExecutor iCommonExecutor, C0278gm c0278gm) {
+        this.f783a = context;
         this.b = iCommonExecutor;
-        this.j = new J(c0279gm);
+        this.j = new J(c0278gm);
     }
 
     public static final Void e(U u) {
-        u.k = new AdvertisingIdsHolder(u.a(u.l.f486a, new Q(u)), u.a(u.l.b, new S(u)), u.a(u.l.c, new T(u, new Yd())));
+        u.k = new AdvertisingIdsHolder(u.a(u.l.f569a, new Q(u)), u.a(u.l.b, new S(u)), u.a(u.l.c, new T(u, new Yd())));
         return null;
     }
 
@@ -61,9 +61,9 @@ public final class U implements Ba {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.Ba, io.appmetrica.analytics.impl.InterfaceC0408lm
-    public final synchronized void a(C0279gm c0279gm) {
-        this.j.a(c0279gm);
+    @Override // io.appmetrica.analytics.impl.Ba, io.appmetrica.analytics.impl.InterfaceC0407lm
+    public final synchronized void a(C0278gm c0278gm) {
+        this.j.a(c0278gm);
         a((Hi) new Yd(), false);
     }
 
@@ -130,7 +130,7 @@ public final class U implements Ba {
     public static final Void a(boolean z, G g, U u, Hi hi) {
         if (z || !Intrinsics.areEqual(g, u.l)) {
             AdvertisingIdsHolder advertisingIdsHolder = u.k;
-            AdTrackingInfoResult a2 = u.a(g.f486a, new Q(u));
+            AdTrackingInfoResult a2 = u.a(g.f569a, new Q(u));
             AdTrackingInfoResult google = advertisingIdsHolder.getGoogle();
             IdentifierStatus identifierStatus = a2.mStatus;
             IdentifierStatus identifierStatus2 = IdentifierStatus.UNKNOWN;

@@ -16,8 +16,8 @@ import kotlin.jvm.internal.Reflection;
 /* loaded from: classes2.dex */
 public final class EditProcessor {
     public static final int $stable = 8;
-    private TextFieldValue mBufferState = new TextFieldValue(AnnotatedStringKt.emptyAnnotatedString(), TextRange.Companion.m7463getZerod9O1mEE(), (TextRange) null, (DefaultConstructorMarker) null);
-    private EditingBuffer mBuffer = new EditingBuffer(this.mBufferState.getAnnotatedString(), this.mBufferState.m7709getSelectiond9O1mEE(), (DefaultConstructorMarker) null);
+    private TextFieldValue mBufferState = new TextFieldValue(AnnotatedStringKt.emptyAnnotatedString(), TextRange.Companion.m7706getZerod9O1mEE(), (TextRange) null, (DefaultConstructorMarker) null);
+    private EditingBuffer mBuffer = new EditingBuffer(this.mBufferState.getAnnotatedString(), this.mBufferState.m7955getSelectiond9O1mEE(), (DefaultConstructorMarker) null);
 
     public final TextFieldValue getMBufferState$ui_text() {
         return this.mBufferState;
@@ -28,26 +28,26 @@ public final class EditProcessor {
     }
 
     public final void reset(TextFieldValue textFieldValue, TextInputSession textInputSession) {
-        boolean areEqual = Intrinsics.areEqual(textFieldValue.m7708getCompositionMzsxiRA(), this.mBuffer.m7621getCompositionMzsxiRA$ui_text());
+        boolean areEqual = Intrinsics.areEqual(textFieldValue.m7954getCompositionMzsxiRA(), this.mBuffer.m7867getCompositionMzsxiRA$ui_text());
         boolean z = true;
         boolean z2 = false;
         if (!Intrinsics.areEqual(this.mBufferState.getAnnotatedString().getText(), textFieldValue.getAnnotatedString().getText())) {
-            this.mBuffer = new EditingBuffer(textFieldValue.getAnnotatedString(), textFieldValue.m7709getSelectiond9O1mEE(), (DefaultConstructorMarker) null);
-        } else if (TextRange.m7451equalsimpl0(this.mBufferState.m7709getSelectiond9O1mEE(), textFieldValue.m7709getSelectiond9O1mEE())) {
+            this.mBuffer = new EditingBuffer(textFieldValue.getAnnotatedString(), textFieldValue.m7955getSelectiond9O1mEE(), (DefaultConstructorMarker) null);
+        } else if (TextRange.m7694equalsimpl0(this.mBufferState.m7955getSelectiond9O1mEE(), textFieldValue.m7955getSelectiond9O1mEE())) {
             z = false;
         } else {
-            this.mBuffer.setSelection$ui_text(TextRange.m7456getMinimpl(textFieldValue.m7709getSelectiond9O1mEE()), TextRange.m7455getMaximpl(textFieldValue.m7709getSelectiond9O1mEE()));
+            this.mBuffer.setSelection$ui_text(TextRange.m7699getMinimpl(textFieldValue.m7955getSelectiond9O1mEE()), TextRange.m7698getMaximpl(textFieldValue.m7955getSelectiond9O1mEE()));
             z2 = true;
             z = false;
         }
-        if (textFieldValue.m7708getCompositionMzsxiRA() == null) {
+        if (textFieldValue.m7954getCompositionMzsxiRA() == null) {
             this.mBuffer.commitComposition$ui_text();
-        } else if (!TextRange.m7452getCollapsedimpl(textFieldValue.m7708getCompositionMzsxiRA().m7462unboximpl())) {
-            this.mBuffer.setComposition$ui_text(TextRange.m7456getMinimpl(textFieldValue.m7708getCompositionMzsxiRA().m7462unboximpl()), TextRange.m7455getMaximpl(textFieldValue.m7708getCompositionMzsxiRA().m7462unboximpl()));
+        } else if (!TextRange.m7695getCollapsedimpl(textFieldValue.m7954getCompositionMzsxiRA().m7705unboximpl())) {
+            this.mBuffer.setComposition$ui_text(TextRange.m7699getMinimpl(textFieldValue.m7954getCompositionMzsxiRA().m7705unboximpl()), TextRange.m7698getMaximpl(textFieldValue.m7954getCompositionMzsxiRA().m7705unboximpl()));
         }
         if (z || (!z2 && !areEqual)) {
             this.mBuffer.commitComposition$ui_text();
-            textFieldValue = TextFieldValue.m7704copy3r_uNRQ$default(textFieldValue, (AnnotatedString) null, 0L, (TextRange) null, 3, (Object) null);
+            textFieldValue = TextFieldValue.m7950copy3r_uNRQ$default(textFieldValue, (AnnotatedString) null, 0L, (TextRange) null, 3, (Object) null);
         }
         TextFieldValue textFieldValue2 = this.mBufferState;
         this.mBufferState = textFieldValue;
@@ -62,15 +62,15 @@ public final class EditProcessor {
 
     private final String generateBatchErrorMessage(List<? extends EditCommand> list, final EditCommand editCommand) {
         StringBuilder sb = new StringBuilder();
-        StringBuilder append = sb.append("Error while applying EditCommand batch to buffer (length=" + this.mBuffer.getLength$ui_text() + ", composition=" + this.mBuffer.m7621getCompositionMzsxiRA$ui_text() + ", selection=" + ((Object) TextRange.m7461toStringimpl(this.mBuffer.m7622getSelectiond9O1mEE$ui_text())) + "):");
+        StringBuilder append = sb.append("Error while applying EditCommand batch to buffer (length=" + this.mBuffer.getLength$ui_text() + ", composition=" + this.mBuffer.m7867getCompositionMzsxiRA$ui_text() + ", selection=" + ((Object) TextRange.m7704toStringimpl(this.mBuffer.m7868getSelectiond9O1mEE$ui_text())) + "):");
         Intrinsics.checkNotNullExpressionValue(append, "append(...)");
         Intrinsics.checkNotNullExpressionValue(append.append('\n'), "append(...)");
         CollectionsKt.joinTo$default(list, sb, "\n", null, null, 0, null, new Function1() { // from class: androidx.compose.ui.text.input.EditProcessor$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence generateBatchErrorMessage$lambda$4$lambda$3;
-                generateBatchErrorMessage$lambda$4$lambda$3 = EditProcessor.generateBatchErrorMessage$lambda$4$lambda$3(EditCommand.this, this, (EditCommand) obj);
-                return generateBatchErrorMessage$lambda$4$lambda$3;
+                CharSequence generateBatchErrorMessage$lambda$0$0;
+                generateBatchErrorMessage$lambda$0$0 = EditProcessor.generateBatchErrorMessage$lambda$0$0(EditCommand.this, this, (EditCommand) obj);
+                return generateBatchErrorMessage$lambda$0$0;
             }
         }, 60, null);
         String sb2 = sb.toString();
@@ -79,7 +79,7 @@ public final class EditProcessor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final CharSequence generateBatchErrorMessage$lambda$4$lambda$3(EditCommand editCommand, EditProcessor editProcessor, EditCommand editCommand2) {
+    public static final CharSequence generateBatchErrorMessage$lambda$0$0(EditCommand editCommand, EditProcessor editProcessor, EditCommand editCommand2) {
         return (editCommand == editCommand2 ? " > " : "   ") + editProcessor.toStringForLog(editCommand2);
     }
 
@@ -148,11 +148,11 @@ public final class EditProcessor {
                 }
             }
             AnnotatedString annotatedString$ui_text = this.mBuffer.toAnnotatedString$ui_text();
-            long m7622getSelectiond9O1mEE$ui_text = this.mBuffer.m7622getSelectiond9O1mEE$ui_text();
-            TextRange m7446boximpl = TextRange.m7446boximpl(m7622getSelectiond9O1mEE$ui_text);
-            m7446boximpl.m7462unboximpl();
-            TextRange textRange = TextRange.m7457getReversedimpl(this.mBufferState.m7709getSelectiond9O1mEE()) ? null : m7446boximpl;
-            TextFieldValue textFieldValue = new TextFieldValue(annotatedString$ui_text, textRange != null ? textRange.m7462unboximpl() : TextRangeKt.TextRange(TextRange.m7455getMaximpl(m7622getSelectiond9O1mEE$ui_text), TextRange.m7456getMinimpl(m7622getSelectiond9O1mEE$ui_text)), this.mBuffer.m7621getCompositionMzsxiRA$ui_text(), (DefaultConstructorMarker) null);
+            long m7868getSelectiond9O1mEE$ui_text = this.mBuffer.m7868getSelectiond9O1mEE$ui_text();
+            TextRange m7689boximpl = TextRange.m7689boximpl(m7868getSelectiond9O1mEE$ui_text);
+            m7689boximpl.m7705unboximpl();
+            TextRange textRange = TextRange.m7700getReversedimpl(this.mBufferState.m7955getSelectiond9O1mEE()) ? null : m7689boximpl;
+            TextFieldValue textFieldValue = new TextFieldValue(annotatedString$ui_text, textRange != null ? textRange.m7705unboximpl() : TextRangeKt.TextRange(TextRange.m7698getMaximpl(m7868getSelectiond9O1mEE$ui_text), TextRange.m7699getMinimpl(m7868getSelectiond9O1mEE$ui_text)), this.mBuffer.m7867getCompositionMzsxiRA$ui_text(), (DefaultConstructorMarker) null);
             this.mBufferState = textFieldValue;
             return textFieldValue;
         } catch (Exception e3) {

@@ -1,15 +1,14 @@
 package androidx.compose.foundation.gestures;
 
 import androidx.compose.ui.geometry.Offset;
-import androidx.compose.ui.input.pointer.PointerInputChange;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: DragGestureDetector.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001B\u001d\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0011\u0010\n\u001a\u00020\u000b*\u00020\u0005¢\u0006\u0004\b\f\u0010\rJ\u0011\u0010\u000e\u001a\u00020\u000b*\u00020\u0005¢\u0006\u0004\b\u000f\u0010\rJ\u001d\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u000b¢\u0006\u0004\b\u0016\u0010\u0017J\u0006\u0010\u0018\u001a\u00020\u0019J\u0017\u0010\u001a\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u000bH\u0002¢\u0006\u0004\b\u001b\u0010\u001cR\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0010\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011¨\u0006\u001d"}, d2 = {"Landroidx/compose/foundation/gestures/TouchSlopDetector;", "", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "initialPositionChange", "Landroidx/compose/ui/geometry/Offset;", "<init>", "(Landroidx/compose/foundation/gestures/Orientation;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getOrientation", "()Landroidx/compose/foundation/gestures/Orientation;", "mainAxis", "", "mainAxis-k-4lQ0M", "(J)F", "crossAxis", "crossAxis-k-4lQ0M", "totalPositionChange", "J", "addPointerInputChange", "dragEvent", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "touchSlop", "addPointerInputChange-dBAh8RU", "(Landroidx/compose/ui/input/pointer/PointerInputChange;F)J", "reset", "", "calculatePostSlopOffset", "calculatePostSlopOffset-tuRUvjQ", "(F)J", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\r\n\u0002\u0010\u0002\n\u0002\b\u0007\b\u0001\u0018\u00002\u00020\u0001B\u001d\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0011\u0010\f\u001a\u00020\r*\u00020\u0005¢\u0006\u0004\b\u000e\u0010\u000fJ\u0011\u0010\u0010\u001a\u00020\r*\u00020\u0005¢\u0006\u0004\b\u0011\u0010\u000fJ%\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\r¢\u0006\u0004\b\u0018\u0010\u0019J\u0017\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u0005¢\u0006\u0004\b\u001d\u0010\u001eJ\u0017\u0010\u001f\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\rH\u0002¢\u0006\u0004\b \u0010!R\u001c\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u0010\u0010\u0012\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0013¨\u0006\""}, d2 = {"Landroidx/compose/foundation/gestures/TouchSlopDetector;", "", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "initialPositionChange", "Landroidx/compose/ui/geometry/Offset;", "<init>", "(Landroidx/compose/foundation/gestures/Orientation;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getOrientation", "()Landroidx/compose/foundation/gestures/Orientation;", "setOrientation", "(Landroidx/compose/foundation/gestures/Orientation;)V", "mainAxis", "", "mainAxis-k-4lQ0M", "(J)F", "crossAxis", "crossAxis-k-4lQ0M", "totalPositionChange", "J", "addPositions", "currentPosition", "previousPosition", "touchSlop", "addPositions-akrDWew", "(JJF)J", "reset", "", "initialPositionAccumulator", "reset-k-4lQ0M", "(J)V", "calculatePostSlopOffset", "calculatePostSlopOffset-tuRUvjQ", "(F)J", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TouchSlopDetector {
     public static final int $stable = 8;
-    private final Orientation orientation;
+    private Orientation orientation;
     private long totalPositionChange;
 
     public /* synthetic */ TouchSlopDetector(Orientation orientation, long j, DefaultConstructorMarker defaultConstructorMarker) {
@@ -25,51 +24,64 @@ public final class TouchSlopDetector {
         return this.orientation;
     }
 
+    public final void setOrientation(Orientation orientation) {
+        this.orientation = orientation;
+    }
+
     public /* synthetic */ TouchSlopDetector(Orientation orientation, long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : orientation, (i & 2) != 0 ? Offset.Companion.m5052getZeroF1C5BW0() : j, null);
+        this((i & 1) != 0 ? null : orientation, (i & 2) != 0 ? Offset.Companion.m5195getZeroF1C5BW0() : j, null);
     }
 
     /* renamed from: mainAxis-k-4lQ0M  reason: not valid java name */
-    public final float m612mainAxisk4lQ0M(long j) {
+    public final float m691mainAxisk4lQ0M(long j) {
         return Float.intBitsToFloat((int) (this.orientation == Orientation.Horizontal ? j >> 32 : j & 4294967295L));
     }
 
     /* renamed from: crossAxis-k-4lQ0M  reason: not valid java name */
-    public final float m611crossAxisk4lQ0M(long j) {
+    public final float m690crossAxisk4lQ0M(long j) {
         return Float.intBitsToFloat((int) (this.orientation == Orientation.Horizontal ? j & 4294967295L : j >> 32));
     }
 
-    /* renamed from: addPointerInputChange-dBAh8RU  reason: not valid java name */
-    public final long m610addPointerInputChangedBAh8RU(PointerInputChange pointerInputChange, float f) {
+    /* renamed from: addPositions-akrDWew  reason: not valid java name */
+    public final long m689addPositionsakrDWew(long j, long j2, float f) {
         float abs;
-        long m5041plusMKHz9U = Offset.m5041plusMKHz9U(this.totalPositionChange, Offset.m5040minusMKHz9U(pointerInputChange.m6570getPositionF1C5BW0(), pointerInputChange.m6571getPreviousPositionF1C5BW0()));
-        this.totalPositionChange = m5041plusMKHz9U;
+        long m5184plusMKHz9U = Offset.m5184plusMKHz9U(this.totalPositionChange, Offset.m5183minusMKHz9U(j, j2));
+        this.totalPositionChange = m5184plusMKHz9U;
         if (this.orientation == null) {
-            abs = Offset.m5034getDistanceimpl(m5041plusMKHz9U);
+            abs = Offset.m5177getDistanceimpl(m5184plusMKHz9U);
         } else {
-            abs = Math.abs(m612mainAxisk4lQ0M(m5041plusMKHz9U));
+            abs = Math.abs(m691mainAxisk4lQ0M(m5184plusMKHz9U));
         }
         if (abs >= f) {
-            return m609calculatePostSlopOffsettuRUvjQ(f);
+            return m687calculatePostSlopOffsettuRUvjQ(f);
         }
-        return Offset.Companion.m5051getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5194getUnspecifiedF1C5BW0();
     }
 
-    public final void reset() {
-        this.totalPositionChange = Offset.Companion.m5052getZeroF1C5BW0();
+    /* renamed from: reset-k-4lQ0M$default  reason: not valid java name */
+    public static /* synthetic */ void m688resetk4lQ0M$default(TouchSlopDetector touchSlopDetector, long j, int i, Object obj) {
+        if ((i & 1) != 0) {
+            j = Offset.Companion.m5195getZeroF1C5BW0();
+        }
+        touchSlopDetector.m692resetk4lQ0M(j);
+    }
+
+    /* renamed from: reset-k-4lQ0M  reason: not valid java name */
+    public final void m692resetk4lQ0M(long j) {
+        this.totalPositionChange = j;
     }
 
     /* renamed from: calculatePostSlopOffset-tuRUvjQ  reason: not valid java name */
-    private final long m609calculatePostSlopOffsettuRUvjQ(float f) {
+    private final long m687calculatePostSlopOffsettuRUvjQ(float f) {
         if (this.orientation == null) {
             long j = this.totalPositionChange;
-            return Offset.m5040minusMKHz9U(this.totalPositionChange, Offset.m5043timestuRUvjQ(Offset.m5031divtuRUvjQ(j, Offset.m5034getDistanceimpl(j)), f));
+            return Offset.m5183minusMKHz9U(this.totalPositionChange, Offset.m5186timestuRUvjQ(Offset.m5174divtuRUvjQ(j, Offset.m5177getDistanceimpl(j)), f));
         }
-        float m612mainAxisk4lQ0M = m612mainAxisk4lQ0M(this.totalPositionChange) - (Math.signum(m612mainAxisk4lQ0M(this.totalPositionChange)) * f);
-        float m611crossAxisk4lQ0M = m611crossAxisk4lQ0M(this.totalPositionChange);
+        float m691mainAxisk4lQ0M = m691mainAxisk4lQ0M(this.totalPositionChange) - (Math.signum(m691mainAxisk4lQ0M(this.totalPositionChange)) * f);
+        float m690crossAxisk4lQ0M = m690crossAxisk4lQ0M(this.totalPositionChange);
         if (this.orientation == Orientation.Horizontal) {
-            return Offset.m5028constructorimpl((Float.floatToRawIntBits(m612mainAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m611crossAxisk4lQ0M) & 4294967295L));
+            return Offset.m5171constructorimpl((Float.floatToRawIntBits(m691mainAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m690crossAxisk4lQ0M) & 4294967295L));
         }
-        return Offset.m5028constructorimpl((Float.floatToRawIntBits(m611crossAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m612mainAxisk4lQ0M) & 4294967295L));
+        return Offset.m5171constructorimpl((Float.floatToRawIntBits(m690crossAxisk4lQ0M) << 32) | (Float.floatToRawIntBits(m691mainAxisk4lQ0M) & 4294967295L));
     }
 }

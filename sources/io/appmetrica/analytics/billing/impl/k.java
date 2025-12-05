@@ -8,17 +8,17 @@ import java.util.List;
 public final class k implements BillingInfoStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProtobufStateStorage f216a;
-    public C0097a b;
+    public final ProtobufStateStorage f299a;
+    public C0096a b;
 
-    public k(ProtobufStateStorage<C0097a> protobufStateStorage) {
-        this.f216a = protobufStateStorage;
+    public k(ProtobufStateStorage<C0096a> protobufStateStorage) {
+        this.f299a = protobufStateStorage;
         this.b = protobufStateStorage.read();
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
     public final List<BillingInfo> getBillingInfo() {
-        return this.b.f210a;
+        return this.b.f293a;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
@@ -30,8 +30,8 @@ public final class k implements BillingInfoStorage {
     public final void saveInfo(List<? extends BillingInfo> list, boolean z) {
         for (BillingInfo billingInfo : list) {
         }
-        C0097a c0097a = new C0097a(list, z);
-        this.b = c0097a;
-        this.f216a.save(c0097a);
+        C0096a c0096a = new C0096a(list, z);
+        this.b = c0096a;
+        this.f299a.save(c0096a);
     }
 }

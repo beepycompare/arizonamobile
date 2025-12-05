@@ -33,11 +33,12 @@ public final class SnapshotStateSetKt {
         StateRecord firstStateRecord = snapshotStateSet.getFirstStateRecord();
         Intrinsics.checkNotNull(firstStateRecord, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
         StateSetStateRecord stateSetStateRecord = (StateSetStateRecord) firstStateRecord;
+        SnapshotStateSet<T> snapshotStateSet2 = snapshotStateSet;
         synchronized (SnapshotKt.getLock()) {
             current = Snapshot.Companion.getCurrent();
-            invoke = function1.invoke(SnapshotKt.writableRecord(stateSetStateRecord, snapshotStateSet, current));
+            invoke = function1.invoke(SnapshotKt.writableRecord(stateSetStateRecord, snapshotStateSet2, current));
         }
-        SnapshotKt.notifyWrite(current, snapshotStateSet);
+        SnapshotKt.notifyWrite(current, snapshotStateSet2);
         return invoke;
     }
 
@@ -74,11 +75,12 @@ public final class SnapshotStateSetKt {
             StateRecord firstStateRecord2 = snapshotStateSet.getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
             StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) firstStateRecord2;
+            SnapshotStateSet<T> snapshotStateSet2 = snapshotStateSet;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet, current), modification$runtime, build);
+                attemptUpdate = attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet2, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, snapshotStateSet);
+            SnapshotKt.notifyWrite(current, snapshotStateSet2);
         } while (!attemptUpdate);
         return invoke;
     }
@@ -105,11 +107,12 @@ public final class SnapshotStateSetKt {
             StateRecord firstStateRecord2 = snapshotStateSet.getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
             StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) firstStateRecord2;
+            SnapshotStateSet<T> snapshotStateSet2 = snapshotStateSet;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet, current), modification$runtime, invoke);
+                attemptUpdate = attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet2, current), modification$runtime, invoke);
             }
-            SnapshotKt.notifyWrite(current, snapshotStateSet);
+            SnapshotKt.notifyWrite(current, snapshotStateSet2);
         } while (!attemptUpdate);
         return true;
     }
@@ -167,11 +170,12 @@ public final class SnapshotStateSetKt {
                 StateRecord firstStateRecord2 = snapshotStateSet.getFirstStateRecord();
                 Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
                 StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) firstStateRecord2;
+                SnapshotStateSet<T> snapshotStateSet2 = snapshotStateSet;
                 synchronized (SnapshotKt.getLock()) {
                     current = Snapshot.Companion.getCurrent();
-                    attemptUpdate = attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet, current), modification$runtime, build);
+                    attemptUpdate = attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet2, current), modification$runtime, build);
                 }
-                SnapshotKt.notifyWrite(current, snapshotStateSet);
+                SnapshotKt.notifyWrite(current, snapshotStateSet2);
             } else {
                 throw new IllegalStateException("No set to mutate".toString());
             }
@@ -184,14 +188,15 @@ public final class SnapshotStateSetKt {
         StateRecord firstStateRecord = snapshotStateSet.getFirstStateRecord();
         Intrinsics.checkNotNull(firstStateRecord, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
         StateSetStateRecord stateSetStateRecord = (StateSetStateRecord) firstStateRecord;
+        SnapshotStateSet<T> snapshotStateSet2 = snapshotStateSet;
         synchronized (SnapshotKt.getLock()) {
             current = Snapshot.Companion.getCurrent();
-            StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord, snapshotStateSet, current);
+            StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord, snapshotStateSet2, current);
             synchronized (sync) {
                 stateSetStateRecord2.setSet$runtime(ExtensionsKt.persistentSetOf());
                 stateSetStateRecord2.setModification$runtime(stateSetStateRecord2.getModification$runtime() + 1);
             }
         }
-        SnapshotKt.notifyWrite(current, snapshotStateSet);
+        SnapshotKt.notifyWrite(current, snapshotStateSet2);
     }
 }

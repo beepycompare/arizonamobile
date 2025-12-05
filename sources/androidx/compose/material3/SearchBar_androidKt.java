@@ -18,11 +18,11 @@ public final class SearchBar_androidKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalConfiguration());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float m7996constructorimpl = Dp.m7996constructorimpl(((Configuration) consume).screenHeightDp);
+        float m8258constructorimpl = Dp.m8258constructorimpl(((Configuration) consume).screenHeightDp);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m7996constructorimpl;
+        return m8258constructorimpl;
     }
 }

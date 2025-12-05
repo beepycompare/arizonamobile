@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Делите помоћу</string>
     <string name="abc_shareactionprovider_share_with_application">Делите помоћу апликације %s</string>
     <string name="abc_toolbar_collapse_description">Скупи</string>
-    <string name="autofill">Аутоматско попуњавање</string>
+    <string name="androidx_compose_foundation_autofill">Аутоматски попуни</string>
+    <string name="androidx_compose_ui_autofill">Аутоматски попуни</string>
     <string name="bottomsheet_action_collapse">Скупите доњу табелу</string>
     <string name="bottomsheet_action_expand">Проширите доњу табелу</string>
     <string name="bottomsheet_action_expand_halfway">Проширите до пола</string>

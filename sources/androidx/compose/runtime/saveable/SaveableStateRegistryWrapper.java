@@ -20,17 +20,13 @@ import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function0;
 /* compiled from: SaveableStateRegistryWrapper.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010$\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0001¢\u0006\u0004\b\u0004\u0010\u0005J\u0011\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0096\u0001J\u0013\u0010\u0018\u001a\u0004\u0018\u00010\u00172\u0006\u0010\u0019\u001a\u00020\u001aH\u0096\u0001J\u001d\u0010\u001b\u001a\u0016\u0012\u0004\u0012\u00020\u001a\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00170\u001d0\u001cH\u0096\u0001J!\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0019\u001a\u00020\u001a2\u000e\u0010 \u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00170!H\u0096\u0001R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0096\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\f\u0010\r\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013¨\u0006\""}, d2 = {"Landroidx/compose/runtime/saveable/SaveableStateRegistryWrapper;", "Landroidx/compose/runtime/saveable/SaveableStateRegistry;", "Landroidx/savedstate/SavedStateRegistryOwner;", TtmlNode.RUBY_BASE, "<init>", "(Landroidx/compose/runtime/saveable/SaveableStateRegistry;)V", "controller", "Landroidx/savedstate/SavedStateRegistryController;", "getController", "()Landroidx/savedstate/SavedStateRegistryController;", "lifecycle", "Landroidx/lifecycle/LifecycleRegistry;", "getLifecycle$annotations", "()V", "getLifecycle", "()Landroidx/lifecycle/LifecycleRegistry;", "savedStateRegistry", "Landroidx/savedstate/SavedStateRegistry;", "getSavedStateRegistry", "()Landroidx/savedstate/SavedStateRegistry;", "canBeSaved", "", "value", "", "consumeRestored", "key", "", "performSave", "", "", "registerProvider", "Landroidx/compose/runtime/saveable/SaveableStateRegistry$Entry;", "valueProvider", "Lkotlin/Function0;", "runtime-saveable"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010$\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0001¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u000b\u001a\u00020\u0007H\u0002J\u0018\u0010\u0011\u001a\u00020\r2\u000e\u0010\u0012\u001a\n\u0018\u00010\u0013j\u0004\u0018\u0001`\u0014H\u0002J\u0011\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0096\u0001J\u0013\u0010\u001d\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u001e\u001a\u00020\u001fH\u0096\u0001J\u001d\u0010 \u001a\u0016\u0012\u0004\u0012\u00020\u001f\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001c0\"0!H\u0096\u0001J!\u0010#\u001a\u00020$2\u0006\u0010\u001e\u001a\u00020\u001f2\u000e\u0010%\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001c0&H\u0096\u0001R\u0014\u0010\u0006\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0010\u0010\n\u001a\u0004\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0010\u0010\u0010\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\u00020\u00168VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018¨\u0006'"}, d2 = {"Landroidx/compose/runtime/saveable/SaveableStateRegistryWrapper;", "Landroidx/compose/runtime/saveable/SaveableStateRegistry;", "Landroidx/savedstate/SavedStateRegistryOwner;", TtmlNode.RUBY_BASE, "<init>", "(Landroidx/compose/runtime/saveable/SaveableStateRegistry;)V", "lifecycle", "Landroidx/lifecycle/LifecycleRegistry;", "getLifecycle", "()Landroidx/lifecycle/LifecycleRegistry;", "_lifecycle", "getOrInitLifecycle", "controller", "Landroidx/savedstate/SavedStateRegistryController;", "getController", "()Landroidx/savedstate/SavedStateRegistryController;", "_controller", "getOrInitController", "savedState", "Landroid/os/Bundle;", "Landroidx/savedstate/SavedState;", "savedStateRegistry", "Landroidx/savedstate/SavedStateRegistry;", "getSavedStateRegistry", "()Landroidx/savedstate/SavedStateRegistry;", "canBeSaved", "", "value", "", "consumeRestored", "key", "", "performSave", "", "", "registerProvider", "Landroidx/compose/runtime/saveable/SaveableStateRegistry$Entry;", "valueProvider", "Lkotlin/Function0;", "runtime-saveable"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SaveableStateRegistryWrapper implements SaveableStateRegistry, SavedStateRegistryOwner {
     public static final int $stable = 8;
     private final /* synthetic */ SaveableStateRegistry $$delegate_0;
-    private final SavedStateRegistryController controller;
-    private final LifecycleRegistry lifecycle;
-    private final SavedStateRegistry savedStateRegistry;
-
-    public static /* synthetic */ void getLifecycle$annotations() {
-    }
+    private SavedStateRegistryController _controller;
+    private LifecycleRegistry _lifecycle;
 
     @Override // androidx.compose.runtime.saveable.SaveableStateRegistry
     public boolean canBeSaved(Object obj) {
@@ -54,55 +50,79 @@ public final class SaveableStateRegistryWrapper implements SaveableStateRegistry
 
     public SaveableStateRegistryWrapper(SaveableStateRegistry saveableStateRegistry) {
         this.$$delegate_0 = saveableStateRegistry;
-        SavedStateRegistryController create = SavedStateRegistryController.Companion.create(this);
-        this.controller = create;
-        this.lifecycle = LifecycleRegistry.Companion.createUnsafe(this);
-        this.savedStateRegistry = create.getSavedStateRegistry();
         Object consumeRestored = consumeRestored("androidx.savedstate.SavedStateRegistry");
-        create.performRestore(consumeRestored instanceof Bundle ? (Bundle) consumeRestored : null);
+        Bundle bundle = consumeRestored instanceof Bundle ? (Bundle) consumeRestored : null;
+        if (bundle != null) {
+            getOrInitController(bundle);
+        }
         registerProvider("androidx.savedstate.SavedStateRegistry", new Function0() { // from class: androidx.compose.runtime.saveable.SaveableStateRegistryWrapper$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Object _init_$lambda$1;
-                _init_$lambda$1 = SaveableStateRegistryWrapper._init_$lambda$1(SaveableStateRegistryWrapper.this);
-                return _init_$lambda$1;
+                Object _init_$lambda$0;
+                _init_$lambda$0 = SaveableStateRegistryWrapper._init_$lambda$0(SaveableStateRegistryWrapper.this);
+                return _init_$lambda$0;
             }
         });
     }
 
-    public final SavedStateRegistryController getController() {
-        return this.controller;
-    }
-
     @Override // androidx.lifecycle.LifecycleOwner
     public LifecycleRegistry getLifecycle() {
-        return this.lifecycle;
+        return getOrInitLifecycle();
+    }
+
+    private final LifecycleRegistry getOrInitLifecycle() {
+        LifecycleRegistry lifecycleRegistry = this._lifecycle;
+        if (lifecycleRegistry == null) {
+            LifecycleRegistry createUnsafe = LifecycleRegistry.Companion.createUnsafe(this);
+            this._lifecycle = createUnsafe;
+            return createUnsafe;
+        }
+        return lifecycleRegistry;
+    }
+
+    private final SavedStateRegistryController getController() {
+        return getOrInitController(null);
+    }
+
+    private final SavedStateRegistryController getOrInitController(Bundle bundle) {
+        SavedStateRegistryController savedStateRegistryController = this._controller;
+        if (savedStateRegistryController == null) {
+            SavedStateRegistryController create = SavedStateRegistryController.Companion.create(this);
+            this._controller = create;
+            create.performRestore(bundle);
+            return create;
+        }
+        return savedStateRegistryController;
     }
 
     @Override // androidx.savedstate.SavedStateRegistryOwner
     public SavedStateRegistry getSavedStateRegistry() {
-        return this.savedStateRegistry;
+        return getController().getSavedStateRegistry();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object _init_$lambda$1(SaveableStateRegistryWrapper saveableStateRegistryWrapper) {
+    public static final Object _init_$lambda$0(SaveableStateRegistryWrapper saveableStateRegistryWrapper) {
         Pair[] pairArr;
-        Map emptyMap = MapsKt.emptyMap();
-        if (emptyMap.isEmpty()) {
-            pairArr = new Pair[0];
-        } else {
-            ArrayList arrayList = new ArrayList(emptyMap.size());
-            for (Map.Entry entry : emptyMap.entrySet()) {
-                arrayList.add(TuplesKt.to((String) entry.getKey(), entry.getValue()));
+        SavedStateRegistryController savedStateRegistryController = saveableStateRegistryWrapper._controller;
+        if (savedStateRegistryController != null) {
+            Map emptyMap = MapsKt.emptyMap();
+            if (emptyMap.isEmpty()) {
+                pairArr = new Pair[0];
+            } else {
+                ArrayList arrayList = new ArrayList(emptyMap.size());
+                for (Map.Entry entry : emptyMap.entrySet()) {
+                    arrayList.add(TuplesKt.to((String) entry.getKey(), entry.getValue()));
+                }
+                pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
-            pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
+            Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
+            SavedStateWriter.m9264constructorimpl(bundleOf);
+            savedStateRegistryController.performSave(bundleOf);
+            if (SavedStateReader.m9256isEmptyimpl(SavedStateReader.m9178constructorimpl(bundleOf))) {
+                return null;
+            }
+            return bundleOf;
         }
-        Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9000constructorimpl(bundleOf);
-        saveableStateRegistryWrapper.controller.performSave(bundleOf);
-        if (SavedStateReader.m8992isEmptyimpl(SavedStateReader.m8914constructorimpl(bundleOf))) {
-            return null;
-        }
-        return bundleOf;
+        return null;
     }
 }

@@ -26,13 +26,13 @@ public final class CommonRipple extends Ripple {
 
     @Override // androidx.compose.material.ripple.Ripple
     /* renamed from: rememberUpdatedRippleInstance-942rkJo  reason: not valid java name */
-    public RippleIndicationInstance mo1853rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
+    public RippleIndicationInstance mo1939rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
         composer.startReplaceGroup(-1768051227);
         ComposerKt.sourceInformation(composer, "C(rememberUpdatedRippleInstance)N(interactionSource,bounded,radius:c#ui.unit.Dp,color,rippleAlpha)57@2186L125:CommonRipple.kt#vhb33q");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1768051227, i, -1, "androidx.compose.material.ripple.CommonRipple.rememberUpdatedRippleInstance (CommonRipple.kt:56)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1709828866, "CC(remember):CommonRipple.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1709828066, "CC(remember):CommonRipple.kt#9igjgp");
         boolean z2 = ((((i & 14) ^ 6) > 4 && composer.changed(interactionSource)) || (i & 6) == 4) | ((((458752 & i) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(this)) || (i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072);
         Object rememberedValue = composer.rememberedValue();
         if (z2 || rememberedValue == Composer.Companion.getEmpty()) {

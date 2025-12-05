@@ -110,14 +110,14 @@ public final class ExposedDropdownMenu_androidKt {
     }
 
     /* renamed from: popupPropertiesForAnchorType-BTG8-q0  reason: not valid java name */
-    public static final PopupProperties m2373popupPropertiesForAnchorTypeBTG8q0(String str, boolean z, Composer composer, int i) {
+    public static final PopupProperties m2459popupPropertiesForAnchorTypeBTG8q0(String str, boolean z, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 895018515, "C(popupPropertiesForAnchorType)N(anchorType:c#material3.ExposedDropdownMenuAnchorType,alwaysFocusable)58@2156L35:ExposedDropdownMenu.android.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(895018515, i, -1, "androidx.compose.material3.popupPropertiesForAnchorType (ExposedDropdownMenu.android.kt:57)");
         }
         State<Boolean> rememberAccessibilityServiceState = AccessibilityServiceStateProvider_androidKt.rememberAccessibilityServiceState(false, false, false, composer, 0, 7);
         int i2 = !popupPropertiesForAnchorType_BTG8_q0$lambda$2(rememberAccessibilityServiceState) ? 393248 : 393216;
-        if ((ExposedDropdownMenuAnchorType.m2341equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2345getPrimaryEditableoYjWRB4()) || (ExposedDropdownMenuAnchorType.m2341equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2347getSecondaryEditableoYjWRB4()) && !popupPropertiesForAnchorType_BTG8_q0$lambda$2(rememberAccessibilityServiceState))) && !z) {
+        if ((ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2431getPrimaryEditableoYjWRB4()) || (ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2433getSecondaryEditableoYjWRB4()) && !popupPropertiesForAnchorType_BTG8_q0$lambda$2(rememberAccessibilityServiceState))) && !z) {
             i2 |= 8;
         }
         PopupProperties popupProperties = new PopupProperties(i2, false, false, false, false, false, 62, (DefaultConstructorMarker) null);

@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DataStoreImpl.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$InitDataStore$doRun$initData$1$api$1", f = "DataStoreImpl.kt", i = {0, 0, 1, 2, 2}, l = {544, 447, 449}, m = "updateData", n = {"transform", "$this$withLock_u24default$iv", "$this$withLock_u24default$iv", "$this$withLock_u24default$iv", "newData"}, s = {"L$0", "L$1", "L$0", "L$0", "L$2"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$InitDataStore$doRun$initData$1$api$1", f = "DataStoreImpl.kt", i = {0, 0, 1, 2, 2}, l = {566, 467, 469}, m = "updateData", n = {"transform", "$this$withLock_u24default$iv", "$this$withLock_u24default$iv", "$this$withLock_u24default$iv", "newData"}, s = {"L$0", "L$1", "L$0", "L$0", "L$2"}, v = 1)
 /* loaded from: classes2.dex */
 public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1 extends ContinuationImpl {
     Object L$0;
@@ -17,11 +17,11 @@ public final class DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData
     Object L$4;
     int label;
     /* synthetic */ Object result;
-    final /* synthetic */ DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> this$0;
+    final /* synthetic */ DataStoreImpl$InitDataStore$doRun$initData$1$api$1 this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1(DataStoreImpl$InitDataStore$doRun$initData$1$api$1<T> dataStoreImpl$InitDataStore$doRun$initData$1$api$1, Continuation<? super DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1> continuation) {
+    public DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1(DataStoreImpl$InitDataStore$doRun$initData$1$api$1 dataStoreImpl$InitDataStore$doRun$initData$1$api$1, Continuation<? super DataStoreImpl$InitDataStore$doRun$initData$1$api$1$updateData$1> continuation) {
         super(continuation);
         this.this$0 = dataStoreImpl$InitDataStore$doRun$initData$1$api$1;
     }

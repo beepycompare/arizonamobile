@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Xl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f754a;
+    public final HashSet f837a;
     public final HashMap b;
     public final Ul c;
     public List d;
@@ -30,19 +30,19 @@ public final class Xl {
     public final We i;
     public final P j;
     public final D3 k;
-    public final C0716y6 l;
+    public final C0715y6 l;
     public final U9 m;
     public final T9 n;
     public final qo o;
 
     public Xl(Context context, We we) {
-        this(we, new P(), new D3(), C0158c4.l().a(context), new C0716y6(), new U9(), new T9(), new qo());
+        this(we, new P(), new D3(), C0157c4.l().a(context), new C0715y6(), new U9(), new T9(), new qo());
     }
 
     public final synchronized boolean a(List list) {
         boolean z;
         boolean z2;
-        boolean a2 = a(CollectionsKt.intersect(list, AbstractC0202dm.f857a));
+        boolean a2 = a(CollectionsKt.intersect(list, AbstractC0201dm.f940a));
         Iterator it = list.iterator();
         while (true) {
             z = true;
@@ -50,12 +50,12 @@ public final class Xl {
                 z2 = false;
                 break;
             }
-            if (this.f754a.contains((String) it.next())) {
+            if (this.f837a.contains((String) it.next())) {
                 z2 = true;
                 break;
             }
         }
-        boolean z3 = AbstractC0202dm.b.currentTimeSeconds() > this.h;
+        boolean z3 = AbstractC0201dm.b.currentTimeSeconds() > this.h;
         if (a2 && !z2 && !z3) {
             if (!this.g) {
                 z = false;
@@ -96,9 +96,9 @@ public final class Xl {
         d.a(w9).b();
     }
 
-    public Xl(We we, P p, D3 d3, C0673wd c0673wd, C0716y6 c0716y6, U9 u9, T9 t9, qo qoVar) {
+    public Xl(We we, P p, D3 d3, C0672wd c0672wd, C0715y6 c0715y6, U9 u9, T9 t9, qo qoVar) {
         HashSet hashSet = new HashSet();
-        this.f754a = hashSet;
+        this.f837a = hashSet;
         this.b = new HashMap();
         this.c = new Ul();
         hashSet.add("appmetrica_google_adv_id");
@@ -107,11 +107,11 @@ public final class Xl {
         this.i = we;
         this.j = p;
         this.k = d3;
-        this.l = c0716y6;
+        this.l = c0715y6;
         this.m = u9;
         this.n = t9;
         this.o = qoVar;
-        c(c0673wd.a());
+        c(c0672wd.a());
         a(StartupParamsCallback.APPMETRICA_DEVICE_ID, we.j());
         a(StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, we.i());
         a("appmetrica_get_ad_url", we.d());
@@ -120,7 +120,7 @@ public final class Xl {
         a("appmetrica_google_adv_id", we.l());
         a("appmetrica_huawei_oaid", we.m());
         a("appmetrica_yandex_adv_id", we.r());
-        c0716y6.a(we.h());
+        c0715y6.a(we.h());
         u9.a(we.k());
         this.d = we.g();
         String i = we.i((String) null);
@@ -162,7 +162,7 @@ public final class Xl {
             }
             if (identifiersResult == null) {
                 W9 w9 = this.m.b;
-                if (!Intrinsics.areEqual(str2, "appmetrica_lib_ssl_enabled") || (bool = w9.f737a) == null) {
+                if (!Intrinsics.areEqual(str2, "appmetrica_lib_ssl_enabled") || (bool = w9.f820a) == null) {
                     identifiersResult = null;
                 } else {
                     boolean booleanValue = bool.booleanValue();

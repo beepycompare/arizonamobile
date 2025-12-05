@@ -66,17 +66,17 @@ public final class NavBackStackEntryStateImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9000constructorimpl(bundleOf);
+        SavedStateWriter.m9264constructorimpl(bundleOf);
         this.savedState = bundleOf;
         entry.saveState(bundleOf);
     }
 
     public NavBackStackEntryStateImpl(Bundle state) {
         Intrinsics.checkNotNullParameter(state, "state");
-        this.id = SavedStateReader.m8985getStringimpl(SavedStateReader.m8914constructorimpl(state), KEY_ID);
-        this.destinationId = SavedStateReader.m8945getIntimpl(SavedStateReader.m8914constructorimpl(state), KEY_DESTINATION_ID);
-        this.args = SavedStateReader.m8971getSavedStateimpl(SavedStateReader.m8914constructorimpl(state), KEY_ARGS);
-        this.savedState = SavedStateReader.m8971getSavedStateimpl(SavedStateReader.m8914constructorimpl(state), KEY_SAVED_STATE);
+        this.id = SavedStateReader.m9249getStringimpl(SavedStateReader.m9178constructorimpl(state), KEY_ID);
+        this.destinationId = SavedStateReader.m9209getIntimpl(SavedStateReader.m9178constructorimpl(state), KEY_DESTINATION_ID);
+        this.args = SavedStateReader.m9235getSavedStateimpl(SavedStateReader.m9178constructorimpl(state), KEY_ARGS);
+        this.savedState = SavedStateReader.m9235getSavedStateimpl(SavedStateReader.m9178constructorimpl(state), KEY_SAVED_STATE);
     }
 
     public final NavBackStackEntry instantiate(NavContext context, NavDestination destination, Bundle bundle, Lifecycle.State hostLifecycleState, NavControllerViewModel navControllerViewModel) {
@@ -112,9 +112,9 @@ public final class NavBackStackEntryStateImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        Bundle m9000constructorimpl = SavedStateWriter.m9000constructorimpl(bundleOf);
-        SavedStateWriter.m9033putStringimpl(m9000constructorimpl, KEY_ID, this.id);
-        SavedStateWriter.m9017putIntimpl(m9000constructorimpl, KEY_DESTINATION_ID, this.destinationId);
+        Bundle m9264constructorimpl = SavedStateWriter.m9264constructorimpl(bundleOf);
+        SavedStateWriter.m9297putStringimpl(m9264constructorimpl, KEY_ID, this.id);
+        SavedStateWriter.m9281putIntimpl(m9264constructorimpl, KEY_DESTINATION_ID, this.destinationId);
         Bundle bundle = this.args;
         if (bundle == null) {
             Map emptyMap2 = MapsKt.emptyMap();
@@ -128,10 +128,10 @@ public final class NavBackStackEntryStateImpl {
                 pairArr2 = (Pair[]) arrayList2.toArray(new Pair[0]);
             }
             bundle = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-            SavedStateWriter.m9000constructorimpl(bundle);
+            SavedStateWriter.m9264constructorimpl(bundle);
         }
-        SavedStateWriter.m9027putSavedStateimpl(m9000constructorimpl, KEY_ARGS, bundle);
-        SavedStateWriter.m9027putSavedStateimpl(m9000constructorimpl, KEY_SAVED_STATE, this.savedState);
+        SavedStateWriter.m9291putSavedStateimpl(m9264constructorimpl, KEY_ARGS, bundle);
+        SavedStateWriter.m9291putSavedStateimpl(m9264constructorimpl, KEY_SAVED_STATE, this.savedState);
         return bundleOf;
     }
 }

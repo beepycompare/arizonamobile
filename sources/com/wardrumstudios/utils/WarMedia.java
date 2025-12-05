@@ -62,10 +62,8 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.internal.view.SupportMenu;
-import androidx.core.view.ViewCompat;
 import androidx.media3.common.C;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.vending.expansion.downloader.DownloadProgressInfo;
 import com.google.android.vending.expansion.downloader.DownloaderClientMarshaller;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
@@ -413,7 +411,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         setContentView(this.downloadView);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
         layoutParams.gravity = 17;
-        addContentView((LinearLayout) getLayoutInflater().inflate(Helpers.GetResourceIdentifier(getApplicationContext(), "download", TtmlNode.TAG_LAYOUT), (ViewGroup) null), layoutParams);
+        addContentView((LinearLayout) getLayoutInflater().inflate(Helpers.GetResourceIdentifier(getApplicationContext(), "download", "layout"), (ViewGroup) null), layoutParams);
         this.mPB = (ProgressBar) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressBar", "id"));
         this.mStatusText = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "statusText", "id"));
         this.mProgressFraction = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressAsFraction", "id"));
@@ -1675,7 +1673,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         this.textPaint.setTextSize(this.movieTextScale);
         TextPaint textPaint2 = new TextPaint();
         this.sTextPaint = textPaint2;
-        textPaint2.setColor(ViewCompat.MEASURED_STATE_MASK);
+        textPaint2.setColor(-16777216);
         this.sTextPaint.setTextSize(this.movieTextScale);
     }
 

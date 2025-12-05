@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">इससे शेयर करें:</string>
     <string name="abc_shareactionprovider_share_with_application">%s से शेयर करें</string>
     <string name="abc_toolbar_collapse_description">छोटा करें</string>
-    <string name="autofill">ऑटोमैटिक तरीके से भरें</string>
+    <string name="androidx_compose_foundation_autofill">ऑटोमैटिक तरीके से जानकारी भरने की सुविधा</string>
+    <string name="androidx_compose_ui_autofill">ऑटोमैटिक तरीके से जानकारी भरने की सुविधा</string>
     <string name="bottomsheet_action_collapse">बॉटम शीट को छोटा करें</string>
     <string name="bottomsheet_action_expand">बॉटम शीट को बड़ा करें</string>
     <string name="bottomsheet_action_expand_halfway">पूरी तरह बड़ा करें</string>

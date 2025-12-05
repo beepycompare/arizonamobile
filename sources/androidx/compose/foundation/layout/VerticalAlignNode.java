@@ -12,15 +12,15 @@ public final class VerticalAlignNode extends Modifier.Node implements ParentData
     public static final int $stable = 8;
     private Alignment.Vertical vertical;
 
+    public VerticalAlignNode(Alignment.Vertical vertical) {
+        this.vertical = vertical;
+    }
+
     public final Alignment.Vertical getVertical() {
         return this.vertical;
     }
 
     public final void setVertical(Alignment.Vertical vertical) {
-        this.vertical = vertical;
-    }
-
-    public VerticalAlignNode(Alignment.Vertical vertical) {
         this.vertical = vertical;
     }
 

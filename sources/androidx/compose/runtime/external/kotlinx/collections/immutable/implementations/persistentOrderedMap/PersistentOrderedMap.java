@@ -26,6 +26,12 @@ public final class PersistentOrderedMap<K, V> extends AbstractMap<K, V> implemen
     public static final int $stable = 8;
     private static final PersistentOrderedMap EMPTY = new PersistentOrderedMap(EndOfChain.INSTANCE, EndOfChain.INSTANCE, PersistentHashMap.Companion.emptyOf$runtime());
 
+    public PersistentOrderedMap(Object obj, Object obj2, PersistentHashMap<K, LinkedValue<V>> persistentHashMap) {
+        this.firstKey = obj;
+        this.lastKey = obj2;
+        this.hashMap = persistentHashMap;
+    }
+
     @Override // kotlin.collections.AbstractMap, java.util.Map
     public final /* bridge */ ImmutableSet<Map.Entry<K, V>> entrySet() {
         return getEntries();
@@ -69,12 +75,6 @@ public final class PersistentOrderedMap<K, V> extends AbstractMap<K, V> implemen
 
     public final PersistentHashMap<K, LinkedValue<V>> getHashMap$runtime() {
         return this.hashMap;
-    }
-
-    public PersistentOrderedMap(Object obj, Object obj2, PersistentHashMap<K, LinkedValue<V>> persistentHashMap) {
-        this.firstKey = obj;
-        this.lastKey = obj2;
-        this.hashMap = persistentHashMap;
     }
 
     @Override // kotlin.collections.AbstractMap

@@ -20,7 +20,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(10454275, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:77)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1456628460, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1456627852, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -29,7 +29,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         Unit unit = Unit.INSTANCE;
-        ComposerKt.sourceInformationMarkerStart(composer, 1456630625, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1456630017, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$1$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1928268701, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:107)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1935311796, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1935312404, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -58,7 +58,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         }
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -1935309631, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1935310239, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$2$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -79,7 +79,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1703169085, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:138)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -362945108, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -362945716, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -87,7 +87,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         }
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -362942751, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -362943359, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$3$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -108,7 +108,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1807205155, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:170)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1557372684, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1557372076, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -116,7 +116,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         }
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 1557375233, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1557374625, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$4$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -137,7 +137,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(490154582, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:200)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1407843745, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1407844353, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -146,7 +146,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
-        ComposerKt.sourceInformationMarkerStart(composer, -1407839116, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1407839724, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$5$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class O3 implements Y6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f615a = "client.db";
+    public final String f698a = "client.db";
     public final String b = "metrica_client_data.db";
 
     @Override // io.appmetrica.analytics.impl.Y6
@@ -13,6 +13,6 @@ public final class O3 implements Y6 {
 
     @Override // io.appmetrica.analytics.impl.Y6
     public final String b() {
-        return this.f615a;
+        return this.f698a;
     }
 }

@@ -27,22 +27,22 @@ public final class DefaultChoreographerFrameClock implements MonotonicFrameClock
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
+    public /* bridge */ <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
         return (R) MonotonicFrameClock.DefaultImpls.fold(this, r, function2);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
+    public /* bridge */ <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
         return (E) MonotonicFrameClock.DefaultImpls.get(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
+    public /* bridge */ CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return MonotonicFrameClock.DefaultImpls.minusKey(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
-    public CoroutineContext plus(CoroutineContext coroutineContext) {
+    public /* bridge */ CoroutineContext plus(CoroutineContext coroutineContext) {
         return MonotonicFrameClock.DefaultImpls.plus(this, coroutineContext);
     }
 
@@ -54,18 +54,18 @@ public final class DefaultChoreographerFrameClock implements MonotonicFrameClock
         final Choreographer.FrameCallback frameCallback = new Choreographer.FrameCallback() { // from class: androidx.compose.runtime.DefaultChoreographerFrameClock$withFrameNanos$2$callback$1
             @Override // android.view.Choreographer.FrameCallback
             public final void doFrame(long j) {
-                Object m9904constructorimpl;
+                Object m10199constructorimpl;
                 Continuation continuation2 = cancellableContinuationImpl2;
                 DefaultChoreographerFrameClock defaultChoreographerFrameClock = DefaultChoreographerFrameClock.INSTANCE;
                 Function1<Long, R> function12 = function1;
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9904constructorimpl = Result.m9904constructorimpl(function12.invoke(Long.valueOf(j)));
+                    m10199constructorimpl = Result.m10199constructorimpl(function12.invoke(Long.valueOf(j)));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9904constructorimpl = Result.m9904constructorimpl(ResultKt.createFailure(th));
+                    m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
                 }
-                continuation2.resumeWith(m9904constructorimpl);
+                continuation2.resumeWith(m10199constructorimpl);
             }
         };
         choreographer.postFrameCallback(frameCallback);

@@ -2,7 +2,6 @@ package androidx.core.content.res;
 
 import android.graphics.Color;
 import androidx.core.graphics.ColorUtils;
-import androidx.core.view.ViewCompat;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
 public final class CamUtils {
@@ -22,7 +21,7 @@ public final class CamUtils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int intFromLStar(float f) {
         if (f < 1.0f) {
-            return ViewCompat.MEASURED_STATE_MASK;
+            return -16777216;
         }
         if (f > 99.0f) {
             return -1;

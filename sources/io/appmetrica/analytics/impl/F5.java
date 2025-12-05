@@ -7,32 +7,32 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 public final class F5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0460o f473a;
+    public final C0459o f556a;
     public final IReporter b;
     public Context c;
     public final E5 d;
 
-    public F5(C0460o c0460o) {
-        this(c0460o, 0);
+    public F5(C0459o c0459o) {
+        this(c0459o, 0);
     }
 
     public final synchronized void a(Context context) {
         if (this.c == null) {
             Context applicationContext = context.getApplicationContext();
-            this.f473a.a(applicationContext);
-            this.f473a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
+            this.f556a.a(applicationContext);
+            this.f556a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
             this.c = applicationContext;
         }
     }
 
-    public F5(C0460o c0460o, IReporter iReporter) {
-        this.f473a = c0460o;
+    public F5(C0459o c0459o, IReporter iReporter) {
+        this.f556a = c0459o;
         this.b = iReporter;
         this.d = new E5(this);
     }
 
-    public /* synthetic */ F5(C0460o c0460o, int i) {
-        this(c0460o, AbstractC0711y1.a());
+    public /* synthetic */ F5(C0459o c0459o, int i) {
+        this(c0459o, AbstractC0710y1.a());
     }
 
     public final synchronized Context a() {

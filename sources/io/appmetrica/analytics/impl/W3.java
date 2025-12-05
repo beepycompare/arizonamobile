@@ -6,20 +6,20 @@ import android.util.SparseArray;
 public final class W3 extends Kc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final We f733a;
+    public final We f816a;
 
     public W3(Context context) {
-        this(new We(C0158c4.l().c(context).b(context)));
+        this(new We(C0157c4.l().c(context).b(context)));
     }
 
     @Override // io.appmetrica.analytics.impl.Kc
     public final void a(int i) {
-        this.f733a.c(i);
+        this.f816a.c(i);
     }
 
     @Override // io.appmetrica.analytics.impl.Kc
     public final int b() {
-        return (int) this.f733a.a(-1L);
+        return (int) this.f816a.a(-1L);
     }
 
     @Override // io.appmetrica.analytics.impl.Kc
@@ -28,6 +28,6 @@ public final class W3 extends Kc {
     }
 
     public W3(We we) {
-        this.f733a = we;
+        this.f816a = we;
     }
 }

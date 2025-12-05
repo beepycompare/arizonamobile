@@ -12,15 +12,15 @@ public final class FillCrossAxisSizeNode extends Modifier.Node implements Parent
     public static final int $stable = 8;
     private float fraction;
 
+    public FillCrossAxisSizeNode(float f) {
+        this.fraction = f;
+    }
+
     public final float getFraction() {
         return this.fraction;
     }
 
     public final void setFraction(float f) {
-        this.fraction = f;
-    }
-
-    public FillCrossAxisSizeNode(float f) {
         this.fraction = f;
     }
 

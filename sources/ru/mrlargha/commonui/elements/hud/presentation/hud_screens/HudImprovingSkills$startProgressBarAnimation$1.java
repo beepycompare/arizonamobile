@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.hud.presentation.hud_screens;
 
 import android.widget.ProgressBar;
-import androidx.core.view.ViewCompat;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -72,7 +71,7 @@ public final class HudImprovingSkills$startProgressBarAnimation$1 extends Suspen
     public static final Unit invokeSuspend$lambda$0$0(HudImprovingSkillsModel hudImprovingSkillsModel, HudImprovingSkillsBinding hudImprovingSkillsBinding) {
         if (hudImprovingSkillsModel.getNextExp() == hudImprovingSkillsModel.getMaxExp()) {
             hudImprovingSkillsBinding.skillToContainer.setBackgroundResource(R.drawable.hud_improving_skills_progress_yellow_bg);
-            hudImprovingSkillsBinding.tvSkillsTo.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            hudImprovingSkillsBinding.tvSkillsTo.setTextColor(-16777216);
         }
         return Unit.INSTANCE;
     }

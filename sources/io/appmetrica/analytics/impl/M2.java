@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class M2 implements InterfaceC0558rn {
+public final class M2 implements InterfaceC0557rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0583sn f580a;
+    public final InterfaceC0582sn f663a;
 
-    public M2(InterfaceC0583sn interfaceC0583sn) {
-        this.f580a = interfaceC0583sn;
+    public M2(InterfaceC0582sn interfaceC0582sn) {
+        this.f663a = interfaceC0582sn;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0558rn
-    public final void a(InterfaceC0534qn interfaceC0534qn) {
-        interfaceC0534qn.a(this.f580a.a());
+    @Override // io.appmetrica.analytics.impl.InterfaceC0557rn
+    public final void a(InterfaceC0533qn interfaceC0533qn) {
+        interfaceC0533qn.a(this.f663a.a());
     }
 }

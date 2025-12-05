@@ -14,7 +14,7 @@ public final class m extends MessageNano {
     public static volatile m[] h;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f372a;
+    public byte[] f455a;
     public l b;
     public byte[] c;
     public k[] d;
@@ -39,7 +39,7 @@ public final class m extends MessageNano {
 
     public final m a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f372a = bArr;
+        this.f455a = bArr;
         this.b = null;
         this.c = bArr;
         this.d = k.b();
@@ -53,10 +53,10 @@ public final class m extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f372a;
+        byte[] bArr = this.f455a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f372a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f455a);
         }
         l lVar = this.b;
         if (lVar != null) {
@@ -107,10 +107,10 @@ public final class m extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f372a;
+        byte[] bArr = this.f455a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f372a);
+            codedOutputByteBufferNano.writeBytes(1, this.f455a);
         }
         l lVar = this.b;
         if (lVar != null) {
@@ -165,7 +165,7 @@ public final class m extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f372a = codedInputByteBufferNano.readBytes();
+                this.f455a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new l();

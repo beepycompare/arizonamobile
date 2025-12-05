@@ -17,17 +17,17 @@ import ru.rustore.sdk.core.util.ContextExtKt;
 public final class h0 implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1442a;
+    public final Context f1525a;
     public final String b;
     public final Function0<Unit> c;
     public final Function1<RuStoreException, Unit> d;
 
-    public h0(Context context, String applicationId, C0806v onSuccess, C0807w onError) {
+    public h0(Context context, String applicationId, C0805v onSuccess, C0806w onError) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1442a = context;
+        this.f1525a = context;
         this.b = applicationId;
         this.c = onSuccess;
         this.d = onError;
@@ -46,14 +46,14 @@ public final class h0 implements ServiceConnection {
                 message = "";
             }
             function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1442a, this);
+            ContextExtKt.unbindServiceSafely(this.f1525a, this);
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
         this.d.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1442a, this);
+        ContextExtKt.unbindServiceSafely(this.f1525a, this);
     }
 
     /* loaded from: classes6.dex */
@@ -68,13 +68,13 @@ public final class h0 implements ServiceConnection {
         public final void a(int i, String errorMessage) {
             Intrinsics.checkNotNullParameter(errorMessage, "errorMessage");
             h0.this.d.invoke(RemoteProviderErrors.INSTANCE.toRuStoreException(i, errorMessage));
-            ContextExtKt.unbindServiceSafely(h0.this.f1442a, this.b);
+            ContextExtKt.unbindServiceSafely(h0.this.f1525a, this.b);
         }
 
         @Override // ru.rustore.sdk.appupdate.g0
         public final void a() {
             h0.this.c.invoke();
-            ContextExtKt.unbindServiceSafely(h0.this.f1442a, this.b);
+            ContextExtKt.unbindServiceSafely(h0.this.f1525a, this.b);
         }
     }
 }

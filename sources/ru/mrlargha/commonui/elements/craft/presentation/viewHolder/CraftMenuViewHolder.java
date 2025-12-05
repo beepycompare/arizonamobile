@@ -2,7 +2,6 @@ package ru.mrlargha.commonui.elements.craft.presentation.viewHolder;
 
 import android.content.SharedPreferences;
 import android.view.View;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -42,7 +41,7 @@ public final class CraftMenuViewHolder extends RecyclerView.ViewHolder {
         }
         if (i2 == i3) {
             itemMenuBtnBinding.parentLayout.setBackgroundResource(R.drawable.paralel_white);
-            itemMenuBtnBinding.tvCraftMenu.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            itemMenuBtnBinding.tvCraftMenu.setTextColor(-16777216);
         } else {
             itemMenuBtnBinding.parentLayout.setBackgroundResource(R.drawable.paralel_grey);
             itemMenuBtnBinding.tvCraftMenu.setTextColor(-1);

@@ -10,36 +10,36 @@ public final class NavigationRailVerticalItemTokens {
     private static final float LeadingSpace;
     private static final float TrailingSpace;
     public static final NavigationRailVerticalItemTokens INSTANCE = new NavigationRailVerticalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7996constructorimpl((float) 32.0d);
-    private static final float ActiveIndicatorWidth = Dp.m7996constructorimpl((float) 56.0d);
-    private static final float IconLabelSpace = Dp.m7996constructorimpl((float) 4.0d);
+    private static final float ActiveIndicatorHeight = Dp.m8258constructorimpl((float) 32.0d);
+    private static final float ActiveIndicatorWidth = Dp.m8258constructorimpl((float) 56.0d);
+    private static final float IconLabelSpace = Dp.m8258constructorimpl((float) 4.0d);
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelMedium;
 
     private NavigationRailVerticalItemTokens() {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4104getActiveIndicatorHeightD9Ej5fM() {
+    public final float m4190getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
     /* renamed from: getActiveIndicatorWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4105getActiveIndicatorWidthD9Ej5fM() {
+    public final float m4191getActiveIndicatorWidthD9Ej5fM() {
         return ActiveIndicatorWidth;
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4106getIconLabelSpaceD9Ej5fM() {
+    public final float m4192getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4107getLeadingSpaceD9Ej5fM() {
+    public final float m4193getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4108getTrailingSpaceD9Ej5fM() {
+    public final float m4194getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 
@@ -49,7 +49,7 @@ public final class NavigationRailVerticalItemTokens {
 
     static {
         float f = (float) 16.0d;
-        LeadingSpace = Dp.m7996constructorimpl(f);
-        TrailingSpace = Dp.m7996constructorimpl(f);
+        LeadingSpace = Dp.m8258constructorimpl(f);
+        TrailingSpace = Dp.m8258constructorimpl(f);
     }
 }

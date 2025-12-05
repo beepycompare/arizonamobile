@@ -6,19 +6,19 @@ import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServ
 public final class Wc implements ModuleEventServiceHandlerReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f738a;
-    public final C0395l9 b;
+    public final boolean f821a;
+    public final C0394l9 b;
     public final Q5 c;
 
-    public Wc(boolean z, C0395l9 c0395l9, Q5 q5) {
-        this.f738a = z;
-        this.b = c0395l9;
+    public Wc(boolean z, C0394l9 c0394l9, Q5 q5) {
+        this.f821a = z;
+        this.b = c0394l9;
         this.c = q5;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter
     public final boolean isMain() {
-        return this.f738a;
+        return this.f821a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter
@@ -36,7 +36,7 @@ public final class Wc implements ModuleEventServiceHandlerReporter {
             d.setValueBytes(valueBytes);
         }
         d.g = counterReportApi.getBytesTruncated();
-        C0395l9 c0395l9 = this.b;
-        c0395l9.a(d, Sk.a(c0395l9.c.b(d), d.i));
+        C0394l9 c0394l9 = this.b;
+        c0394l9.a(d, Sk.a(c0394l9.c.b(d), d.i));
     }
 }

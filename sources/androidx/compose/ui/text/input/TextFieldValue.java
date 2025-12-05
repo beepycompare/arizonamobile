@@ -50,8 +50,8 @@ public final class TextFieldValue {
 
     private TextFieldValue(AnnotatedString annotatedString, long j, TextRange textRange) {
         this.annotatedString = annotatedString;
-        this.selection = TextRangeKt.m7464coerceIn8ffj60Q(j, 0, getText().length());
-        this.composition = textRange != null ? TextRange.m7446boximpl(TextRangeKt.m7464coerceIn8ffj60Q(textRange.m7462unboximpl(), 0, getText().length())) : null;
+        this.selection = TextRangeKt.m7707coerceIn8ffj60Q(j, 0, getText().length());
+        this.composition = textRange != null ? TextRange.m7689boximpl(TextRangeKt.m7707coerceIn8ffj60Q(textRange.m7705unboximpl(), 0, getText().length())) : null;
     }
 
     public final AnnotatedString getAnnotatedString() {
@@ -59,11 +59,11 @@ public final class TextFieldValue {
     }
 
     public /* synthetic */ TextFieldValue(AnnotatedString annotatedString, long j, TextRange textRange, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, (i & 2) != 0 ? TextRange.Companion.m7463getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
+        this(annotatedString, (i & 2) != 0 ? TextRange.Companion.m7706getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ TextFieldValue(String str, long j, TextRange textRange, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? "" : str, (i & 2) != 0 ? TextRange.Companion.m7463getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
+        this((i & 1) != 0 ? "" : str, (i & 2) != 0 ? TextRange.Companion.m7706getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
     }
 
     private TextFieldValue(String str, long j, TextRange textRange) {
@@ -75,17 +75,17 @@ public final class TextFieldValue {
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m7709getSelectiond9O1mEE() {
+    public final long m7955getSelectiond9O1mEE() {
         return this.selection;
     }
 
     /* renamed from: getComposition-MzsxiRA  reason: not valid java name */
-    public final TextRange m7708getCompositionMzsxiRA() {
+    public final TextRange m7954getCompositionMzsxiRA() {
         return this.composition;
     }
 
     /* renamed from: copy-3r_uNRQ$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldValue m7704copy3r_uNRQ$default(TextFieldValue textFieldValue, AnnotatedString annotatedString, long j, TextRange textRange, int i, Object obj) {
+    public static /* synthetic */ TextFieldValue m7950copy3r_uNRQ$default(TextFieldValue textFieldValue, AnnotatedString annotatedString, long j, TextRange textRange, int i, Object obj) {
         if ((i & 1) != 0) {
             annotatedString = textFieldValue.annotatedString;
         }
@@ -95,27 +95,27 @@ public final class TextFieldValue {
         if ((i & 4) != 0) {
             textRange = textFieldValue.composition;
         }
-        return textFieldValue.m7706copy3r_uNRQ(annotatedString, j, textRange);
+        return textFieldValue.m7952copy3r_uNRQ(annotatedString, j, textRange);
     }
 
     /* renamed from: copy-3r_uNRQ  reason: not valid java name */
-    public final TextFieldValue m7706copy3r_uNRQ(AnnotatedString annotatedString, long j, TextRange textRange) {
+    public final TextFieldValue m7952copy3r_uNRQ(AnnotatedString annotatedString, long j, TextRange textRange) {
         return new TextFieldValue(annotatedString, j, textRange, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-3r_uNRQ$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldValue m7705copy3r_uNRQ$default(TextFieldValue textFieldValue, String str, long j, TextRange textRange, int i, Object obj) {
+    public static /* synthetic */ TextFieldValue m7951copy3r_uNRQ$default(TextFieldValue textFieldValue, String str, long j, TextRange textRange, int i, Object obj) {
         if ((i & 2) != 0) {
             j = textFieldValue.selection;
         }
         if ((i & 4) != 0) {
             textRange = textFieldValue.composition;
         }
-        return textFieldValue.m7707copy3r_uNRQ(str, j, textRange);
+        return textFieldValue.m7953copy3r_uNRQ(str, j, textRange);
     }
 
     /* renamed from: copy-3r_uNRQ  reason: not valid java name */
-    public final TextFieldValue m7707copy3r_uNRQ(String str, long j, TextRange textRange) {
+    public final TextFieldValue m7953copy3r_uNRQ(String str, long j, TextRange textRange) {
         return new TextFieldValue(new AnnotatedString(str, null, 2, null), j, textRange, (DefaultConstructorMarker) null);
     }
 
@@ -125,19 +125,19 @@ public final class TextFieldValue {
         }
         if (obj instanceof TextFieldValue) {
             TextFieldValue textFieldValue = (TextFieldValue) obj;
-            return TextRange.m7451equalsimpl0(this.selection, textFieldValue.selection) && Intrinsics.areEqual(this.composition, textFieldValue.composition) && Intrinsics.areEqual(this.annotatedString, textFieldValue.annotatedString);
+            return TextRange.m7694equalsimpl0(this.selection, textFieldValue.selection) && Intrinsics.areEqual(this.composition, textFieldValue.composition) && Intrinsics.areEqual(this.annotatedString, textFieldValue.annotatedString);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.annotatedString.hashCode() * 31) + TextRange.m7459hashCodeimpl(this.selection)) * 31;
+        int hashCode = ((this.annotatedString.hashCode() * 31) + TextRange.m7702hashCodeimpl(this.selection)) * 31;
         TextRange textRange = this.composition;
-        return hashCode + (textRange != null ? TextRange.m7459hashCodeimpl(textRange.m7462unboximpl()) : 0);
+        return hashCode + (textRange != null ? TextRange.m7702hashCodeimpl(textRange.m7705unboximpl()) : 0);
     }
 
     public String toString() {
-        return "TextFieldValue(text='" + ((Object) this.annotatedString) + "', selection=" + ((Object) TextRange.m7461toStringimpl(this.selection)) + ", composition=" + this.composition + ')';
+        return "TextFieldValue(text='" + ((Object) this.annotatedString) + "', selection=" + ((Object) TextRange.m7704toStringimpl(this.selection)) + ", composition=" + this.composition + ')';
     }
 
     /* compiled from: TextFieldValue.kt */
@@ -158,7 +158,7 @@ public final class TextFieldValue {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object Saver$lambda$0(SaverScope saverScope, TextFieldValue textFieldValue) {
-        return CollectionsKt.arrayListOf(SaversKt.save(textFieldValue.annotatedString, SaversKt.getAnnotatedStringSaver(), saverScope), SaversKt.save(TextRange.m7446boximpl(textFieldValue.selection), SaversKt.getSaver(TextRange.Companion), saverScope));
+        return CollectionsKt.arrayListOf(SaversKt.save(textFieldValue.annotatedString, SaversKt.getAnnotatedStringSaver(), saverScope), SaversKt.save(TextRange.m7689boximpl(textFieldValue.selection), SaversKt.getSaver(TextRange.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -176,6 +176,6 @@ public final class TextFieldValue {
             textRange = saver.restore(obj3);
         }
         Intrinsics.checkNotNull(textRange);
-        return new TextFieldValue(restore, textRange.m7462unboximpl(), (TextRange) null, 4, (DefaultConstructorMarker) null);
+        return new TextFieldValue(restore, textRange.m7705unboximpl(), (TextRange) null, 4, (DefaultConstructorMarker) null);
     }
 }

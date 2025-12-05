@@ -7,37 +7,37 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Blur.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0087@\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u0011\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0013\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u000b\u001a\u00020\fHÖ\u0001J\t\u0010\r\u001a\u00020\u000eHÖ\u0001R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/draw/BlurredEdgeTreatment;", "", "shape", "Landroidx/compose/ui/graphics/Shape;", "constructor-impl", "(Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/graphics/Shape;", "getShape", "()Landroidx/compose/ui/graphics/Shape;", "equals", "", "other", "hashCode", "", "toString", "", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0087@\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u0011\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0013\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u000b\u001a\u00020\fHÖ\u0001J\t\u0010\r\u001a\u00020\u000eHÖ\u0001R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/draw/BlurredEdgeTreatment;", "", "shape", "Landroidx/compose/ui/graphics/Shape;", "constructor-impl", "(Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/graphics/Shape;", "getShape", "()Landroidx/compose/ui/graphics/Shape;", "equals", "", "other", "hashCode", "", "toString", "", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class BlurredEdgeTreatment {
     public static final Companion Companion = new Companion(null);
-    private static final Shape Rectangle = m4810constructorimpl(RectangleShapeKt.getRectangleShape());
-    private static final Shape Unbounded = m4810constructorimpl(null);
+    private static final Shape Rectangle = m4949constructorimpl(RectangleShapeKt.getRectangleShape());
+    private static final Shape Unbounded = m4949constructorimpl(null);
     private final Shape shape;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BlurredEdgeTreatment m4809boximpl(Shape shape) {
+    public static final /* synthetic */ BlurredEdgeTreatment m4948boximpl(Shape shape) {
         return new BlurredEdgeTreatment(shape);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Shape m4810constructorimpl(Shape shape) {
+    public static Shape m4949constructorimpl(Shape shape) {
         return shape;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4811equalsimpl(Shape shape, Object obj) {
-        return (obj instanceof BlurredEdgeTreatment) && Intrinsics.areEqual(shape, ((BlurredEdgeTreatment) obj).m4815unboximpl());
+    public static boolean m4950equalsimpl(Shape shape, Object obj) {
+        return (obj instanceof BlurredEdgeTreatment) && Intrinsics.areEqual(shape, ((BlurredEdgeTreatment) obj).m4954unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4812equalsimpl0(Shape shape, Shape shape2) {
+    public static final boolean m4951equalsimpl0(Shape shape, Shape shape2) {
         return Intrinsics.areEqual(shape, shape2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4813hashCodeimpl(Shape shape) {
+    public static int m4952hashCodeimpl(Shape shape) {
         if (shape == null) {
             return 0;
         }
@@ -45,24 +45,24 @@ public final class BlurredEdgeTreatment {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4814toStringimpl(Shape shape) {
+    public static String m4953toStringimpl(Shape shape) {
         return "BlurredEdgeTreatment(shape=" + shape + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4811equalsimpl(this.shape, obj);
+        return m4950equalsimpl(this.shape, obj);
     }
 
     public int hashCode() {
-        return m4813hashCodeimpl(this.shape);
+        return m4952hashCodeimpl(this.shape);
     }
 
     public String toString() {
-        return m4814toStringimpl(this.shape);
+        return m4953toStringimpl(this.shape);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Shape m4815unboximpl() {
+    public final /* synthetic */ Shape m4954unboximpl() {
         return this.shape;
     }
 
@@ -75,7 +75,7 @@ public final class BlurredEdgeTreatment {
     }
 
     /* compiled from: Blur.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007¨\u0006\u000b"}, d2 = {"Landroidx/compose/ui/draw/BlurredEdgeTreatment$Companion;", "", "<init>", "()V", "Rectangle", "Landroidx/compose/ui/draw/BlurredEdgeTreatment;", "getRectangle---Goahg", "()Landroidx/compose/ui/graphics/Shape;", "Landroidx/compose/ui/graphics/Shape;", "Unbounded", "getUnbounded---Goahg", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007¨\u0006\u000b"}, d2 = {"Landroidx/compose/ui/draw/BlurredEdgeTreatment$Companion;", "", "<init>", "()V", "Rectangle", "Landroidx/compose/ui/draw/BlurredEdgeTreatment;", "getRectangle---Goahg", "()Landroidx/compose/ui/graphics/Shape;", "Landroidx/compose/ui/graphics/Shape;", "Unbounded", "getUnbounded---Goahg", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -86,12 +86,12 @@ public final class BlurredEdgeTreatment {
         }
 
         /* renamed from: getRectangle---Goahg  reason: not valid java name */
-        public final Shape m4816getRectangleGoahg() {
+        public final Shape m4955getRectangleGoahg() {
             return BlurredEdgeTreatment.Rectangle;
         }
 
         /* renamed from: getUnbounded---Goahg  reason: not valid java name */
-        public final Shape m4817getUnboundedGoahg() {
+        public final Shape m4956getUnboundedGoahg() {
             return BlurredEdgeTreatment.Unbounded;
         }
     }

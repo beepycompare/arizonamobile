@@ -10,7 +10,6 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.os.Build;
 import androidx.core.graphics.PaintCompat;
-import androidx.core.view.ViewCompat;
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;
@@ -183,7 +182,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             this.inOutAnimation.addUpdateListener(new BaseKeyframeAnimation.AnimationListener() { // from class: com.airbnb.lottie.model.layer.BaseLayer$$ExternalSyntheticLambda0
                 @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
                 public final void onValueChanged() {
-                    BaseLayer.this.m9238xf49bd987();
+                    BaseLayer.this.m9533xf49bd987();
                 }
             });
             setVisible(this.inOutAnimation.getValue().floatValue() == 1.0f);
@@ -195,7 +194,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setupInOutAnimations$0$com-airbnb-lottie-model-layer-BaseLayer  reason: not valid java name */
-    public /* synthetic */ void m9238xf49bd987() {
+    public /* synthetic */ void m9533xf49bd987() {
         setVisible(this.inOutAnimation.getFloatValue() == 1.0f);
     }
 
@@ -524,7 +523,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             if (i2 != 1) {
                 if (i2 == 2) {
                     if (i == 0) {
-                        this.contentPaint.setColor(ViewCompat.MEASURED_STATE_MASK);
+                        this.contentPaint.setColor(-16777216);
                         this.contentPaint.setAlpha(255);
                         canvas.drawRect(this.rect, this.contentPaint);
                     }

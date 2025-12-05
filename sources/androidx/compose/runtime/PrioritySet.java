@@ -12,50 +12,50 @@ import kotlin.jvm.internal.Intrinsics;
 public final class PrioritySet {
     private final MutableIntList list;
 
-    /* renamed from: box-impl */
-    public static final /* synthetic */ PrioritySet m4549boximpl(MutableIntList mutableIntList) {
+    /* renamed from: box-impl  reason: not valid java name */
+    public static final /* synthetic */ PrioritySet m4626boximpl(MutableIntList mutableIntList) {
         return new PrioritySet(mutableIntList);
     }
 
-    /* renamed from: constructor-impl */
-    public static MutableIntList m4550constructorimpl(MutableIntList mutableIntList) {
+    /* renamed from: constructor-impl  reason: not valid java name */
+    public static MutableIntList m4627constructorimpl(MutableIntList mutableIntList) {
         return mutableIntList;
     }
 
-    /* renamed from: equals-impl */
-    public static boolean m4552equalsimpl(MutableIntList mutableIntList, Object obj) {
-        return (obj instanceof PrioritySet) && Intrinsics.areEqual(mutableIntList, ((PrioritySet) obj).m4561unboximpl());
+    /* renamed from: equals-impl  reason: not valid java name */
+    public static boolean m4629equalsimpl(MutableIntList mutableIntList, Object obj) {
+        return (obj instanceof PrioritySet) && Intrinsics.areEqual(mutableIntList, ((PrioritySet) obj).m4638unboximpl());
     }
 
-    /* renamed from: equals-impl0 */
-    public static final boolean m4553equalsimpl0(MutableIntList mutableIntList, MutableIntList mutableIntList2) {
+    /* renamed from: equals-impl0  reason: not valid java name */
+    public static final boolean m4630equalsimpl0(MutableIntList mutableIntList, MutableIntList mutableIntList2) {
         return Intrinsics.areEqual(mutableIntList, mutableIntList2);
     }
 
-    /* renamed from: hashCode-impl */
-    public static int m4554hashCodeimpl(MutableIntList mutableIntList) {
+    /* renamed from: hashCode-impl  reason: not valid java name */
+    public static int m4631hashCodeimpl(MutableIntList mutableIntList) {
         return mutableIntList.hashCode();
     }
 
-    /* renamed from: toString-impl */
-    public static String m4559toStringimpl(MutableIntList mutableIntList) {
+    /* renamed from: toString-impl  reason: not valid java name */
+    public static String m4636toStringimpl(MutableIntList mutableIntList) {
         return "PrioritySet(list=" + mutableIntList + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4552equalsimpl(this.list, obj);
+        return m4629equalsimpl(this.list, obj);
     }
 
     public int hashCode() {
-        return m4554hashCodeimpl(this.list);
+        return m4631hashCodeimpl(this.list);
     }
 
     public String toString() {
-        return m4559toStringimpl(this.list);
+        return m4636toStringimpl(this.list);
     }
 
-    /* renamed from: unbox-impl */
-    public final /* synthetic */ MutableIntList m4561unboximpl() {
+    /* renamed from: unbox-impl  reason: not valid java name */
+    public final /* synthetic */ MutableIntList m4638unboximpl() {
         return this.list;
     }
 
@@ -63,8 +63,8 @@ public final class PrioritySet {
         this.list = mutableIntList;
     }
 
-    /* renamed from: add-impl */
-    public static final void m4548addimpl(MutableIntList mutableIntList, int i) {
+    /* renamed from: add-impl  reason: not valid java name */
+    public static final void m4625addimpl(MutableIntList mutableIntList, int i) {
         MutableIntList mutableIntList2 = mutableIntList;
         if (mutableIntList2._size == 0 || !(mutableIntList.get(0) == i || mutableIntList.get(mutableIntList2._size - 1) == i)) {
             int i2 = mutableIntList2._size;
@@ -82,23 +82,23 @@ public final class PrioritySet {
         }
     }
 
-    /* renamed from: isEmpty-impl */
-    public static final boolean m4555isEmptyimpl(MutableIntList mutableIntList) {
+    /* renamed from: isEmpty-impl  reason: not valid java name */
+    public static final boolean m4632isEmptyimpl(MutableIntList mutableIntList) {
         return mutableIntList._size == 0;
     }
 
-    /* renamed from: isNotEmpty-impl */
-    public static final boolean m4556isNotEmptyimpl(MutableIntList mutableIntList) {
+    /* renamed from: isNotEmpty-impl  reason: not valid java name */
+    public static final boolean m4633isNotEmptyimpl(MutableIntList mutableIntList) {
         return mutableIntList._size != 0;
     }
 
-    /* renamed from: peek-impl */
-    public static final int m4557peekimpl(MutableIntList mutableIntList) {
+    /* renamed from: peek-impl  reason: not valid java name */
+    public static final int m4634peekimpl(MutableIntList mutableIntList) {
         return mutableIntList.first();
     }
 
-    /* renamed from: takeMax-impl */
-    public static final int m4558takeMaximpl(MutableIntList mutableIntList) {
+    /* renamed from: takeMax-impl  reason: not valid java name */
+    public static final int m4635takeMaximpl(MutableIntList mutableIntList) {
         int i;
         MutableIntList mutableIntList2 = mutableIntList;
         int i2 = mutableIntList2._size;
@@ -130,8 +130,8 @@ public final class PrioritySet {
         return i3;
     }
 
-    /* renamed from: validateHeap-impl */
-    public static final void m4560validateHeapimpl(MutableIntList mutableIntList) {
+    /* renamed from: validateHeap-impl  reason: not valid java name */
+    public static final void m4637validateHeapimpl(MutableIntList mutableIntList) {
         int i = mutableIntList._size;
         int i2 = i / 2;
         int i3 = 0;
@@ -152,11 +152,11 @@ public final class PrioritySet {
         }
     }
 
-    /* renamed from: constructor-impl$default */
-    public static /* synthetic */ MutableIntList m4551constructorimpl$default(MutableIntList mutableIntList, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    /* renamed from: constructor-impl$default  reason: not valid java name */
+    public static /* synthetic */ MutableIntList m4628constructorimpl$default(MutableIntList mutableIntList, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableIntList = new MutableIntList(0, 1, null);
         }
-        return m4550constructorimpl(mutableIntList);
+        return m4627constructorimpl(mutableIntList);
     }
 }

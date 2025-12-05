@@ -40,21 +40,21 @@ public final class AndroidRippleNode extends RippleNode implements RippleHostKey
 
     @Override // androidx.compose.material.ripple.RippleNode
     /* renamed from: addRipple-12SF9DM  reason: not valid java name */
-    public void mo1852addRipple12SF9DM(PressInteraction.Press press, long j, float f) {
+    public void mo1938addRipple12SF9DM(PressInteraction.Press press, long j, float f) {
         RippleHostView rippleHostView = getOrCreateRippleContainer().getRippleHostView(this);
-        rippleHostView.m1860addRippleKOepWvA(press, getBounded(), j, MathKt.roundToInt(f), m1866getRippleColor0d7_KjU(), getRippleAlpha().invoke().getPressedAlpha(), new Function0() { // from class: androidx.compose.material.ripple.AndroidRippleNode$$ExternalSyntheticLambda0
+        rippleHostView.m1946addRippleKOepWvA(press, getBounded(), j, MathKt.roundToInt(f), m1952getRippleColor0d7_KjU(), getRippleAlpha().invoke().getPressedAlpha(), new Function0() { // from class: androidx.compose.material.ripple.AndroidRippleNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit addRipple_12SF9DM$lambda$4$lambda$3$lambda$2;
-                addRipple_12SF9DM$lambda$4$lambda$3$lambda$2 = AndroidRippleNode.addRipple_12SF9DM$lambda$4$lambda$3$lambda$2(AndroidRippleNode.this);
-                return addRipple_12SF9DM$lambda$4$lambda$3$lambda$2;
+                Unit addRipple_12SF9DM$lambda$0$0$0;
+                addRipple_12SF9DM$lambda$0$0$0 = AndroidRippleNode.addRipple_12SF9DM$lambda$0$0$0(AndroidRippleNode.this);
+                return addRipple_12SF9DM$lambda$0$0$0;
             }
         });
         setRippleHostView(rippleHostView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit addRipple_12SF9DM$lambda$4$lambda$3$lambda$2(AndroidRippleNode androidRippleNode) {
+    public static final Unit addRipple_12SF9DM$lambda$0$0$0(AndroidRippleNode androidRippleNode) {
         DrawModifierNodeKt.invalidateDraw(androidRippleNode);
         return Unit.INSTANCE;
     }
@@ -100,7 +100,7 @@ public final class AndroidRippleNode extends RippleNode implements RippleHostKey
         Canvas canvas = drawScope.getDrawContext().getCanvas();
         RippleHostView rippleHostView = this.rippleHostView;
         if (rippleHostView != null) {
-            rippleHostView.m1861setRipplePropertiesbiQXAtU(m1867getRippleSizeNHjbRc(), MathKt.roundToInt(getTargetRadius()), m1866getRippleColor0d7_KjU(), getRippleAlpha().invoke().getPressedAlpha());
+            rippleHostView.m1947setRipplePropertiesbiQXAtU(m1953getRippleSizeNHjbRc(), MathKt.roundToInt(getTargetRadius()), m1952getRippleColor0d7_KjU(), getRippleAlpha().invoke().getPressedAlpha());
             rippleHostView.draw(AndroidCanvas_androidKt.getNativeCanvas(canvas));
         }
     }

@@ -79,15 +79,15 @@ public final class WideNavigationRailKt {
     private static final float ItemTopIconIndicatorVerticalPadding;
     private static final float PredictiveBackPivotFractionY = 0.5f;
     private static final float WNRItemNoLabelIndicatorPadding;
-    private static final float ItemHorizontalPadding = Dp.m7996constructorimpl(20);
-    private static final float WNRVerticalPadding = NavigationRailCollapsedTokens.INSTANCE.m4093getTopSpaceD9Ej5fM();
-    private static final float WNRHeaderPadding = NavigationRailBaselineItemTokens.INSTANCE.m4087getHeaderSpaceMinimumD9Ej5fM();
-    private static final float CollapsedRailWidth = NavigationRailCollapsedTokens.INSTANCE.m4090getContainerWidthD9Ej5fM();
-    private static final float ExpandedRailMinWidth = NavigationRailExpandedTokens.INSTANCE.m4096getContainerWidthMinimumD9Ej5fM();
-    private static final float ExpandedRailMaxWidth = NavigationRailExpandedTokens.INSTANCE.m4095getContainerWidthMaximumD9Ej5fM();
-    private static final float TopIconItemMinHeight = NavigationRailBaselineItemTokens.INSTANCE.m4085getContainerHeightD9Ej5fM();
-    private static final float PredictiveBackMaxScaleXDistance = Dp.m7996constructorimpl(24);
-    private static final float PredictiveBackMaxScaleYDistance = Dp.m7996constructorimpl(48);
+    private static final float ItemHorizontalPadding = Dp.m8258constructorimpl(20);
+    private static final float WNRVerticalPadding = NavigationRailCollapsedTokens.INSTANCE.m4179getTopSpaceD9Ej5fM();
+    private static final float WNRHeaderPadding = NavigationRailBaselineItemTokens.INSTANCE.m4173getHeaderSpaceMinimumD9Ej5fM();
+    private static final float CollapsedRailWidth = NavigationRailCollapsedTokens.INSTANCE.m4176getContainerWidthD9Ej5fM();
+    private static final float ExpandedRailMinWidth = NavigationRailExpandedTokens.INSTANCE.m4182getContainerWidthMinimumD9Ej5fM();
+    private static final float ExpandedRailMaxWidth = NavigationRailExpandedTokens.INSTANCE.m4181getContainerWidthMaximumD9Ej5fM();
+    private static final float TopIconItemMinHeight = NavigationRailBaselineItemTokens.INSTANCE.m4171getContainerHeightD9Ej5fM();
+    private static final float PredictiveBackMaxScaleXDistance = Dp.m8258constructorimpl(24);
+    private static final float PredictiveBackMaxScaleYDistance = Dp.m8258constructorimpl(48);
     private static final ProvidableCompositionLocal<WideNavigationRailOverride> LocalWideNavigationRailOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.WideNavigationRailKt$$ExternalSyntheticLambda11
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
@@ -107,19 +107,19 @@ public final class WideNavigationRailKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ModalWideNavigationRailContent_pU6N4AM$lambda$25(boolean z, boolean z2, Animatable animatable, RailPredictiveBackState railPredictiveBackState, Function2 function2, Modifier modifier, ModalWideNavigationRailState modalWideNavigationRailState, WideNavigationRailColors wideNavigationRailColors, Shape shape, float f, Function2 function22, WindowInsets windowInsets, boolean z3, Arrangement.Vertical vertical, Function2 function23, int i, int i2, Composer composer, int i3) {
-        m3441ModalWideNavigationRailContentpU6N4AM(z, z2, animatable, railPredictiveBackState, function2, modifier, modalWideNavigationRailState, wideNavigationRailColors, shape, f, function22, windowInsets, z3, vertical, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
+        m3527ModalWideNavigationRailContentpU6N4AM(z, z2, animatable, railPredictiveBackState, function2, modifier, modalWideNavigationRailState, wideNavigationRailColors, shape, f, function22, windowInsets, z3, vertical, function23, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ModalWideNavigationRail_k3FuEkE$lambda$14(Modifier modifier, WideNavigationRailState wideNavigationRailState, boolean z, Shape shape, Shape shape2, WideNavigationRailColors wideNavigationRailColors, Function2 function2, float f, WindowInsets windowInsets, Arrangement.Vertical vertical, ModalWideNavigationRailProperties modalWideNavigationRailProperties, Function2 function22, int i, int i2, int i3, Composer composer, int i4) {
-        m3440ModalWideNavigationRailk3FuEkE(modifier, wideNavigationRailState, z, shape, shape2, wideNavigationRailColors, function2, f, windowInsets, vertical, modalWideNavigationRailProperties, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m3526ModalWideNavigationRailk3FuEkE(modifier, wideNavigationRailState, z, shape, shape2, wideNavigationRailColors, function2, f, windowInsets, vertical, modalWideNavigationRailProperties, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Scrim_3J_VO9M$lambda$37(long j, Function1 function1, boolean z, int i, Composer composer, int i2) {
-        m3442Scrim3JVO9M(j, function1, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m3528Scrim3JVO9M(j, function1, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
@@ -131,7 +131,7 @@ public final class WideNavigationRailKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit WideNavigationRailItem_pli_t6k$lambda$16(boolean z, Function0 function0, Function2 function2, Function2 function22, boolean z2, Modifier modifier, boolean z3, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, int i2, int i3, Composer composer, int i4) {
-        m3443WideNavigationRailItemplit6k(z, function0, function2, function22, z2, modifier, z3, i, navigationItemColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m3529WideNavigationRailItemplit6k(z, function0, function2, function22, z2, modifier, z3, i, navigationItemColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
@@ -434,8 +434,8 @@ public final class WideNavigationRailKt {
     public static final void WideNavigationRailLayout(final Modifier modifier, final boolean z, final boolean z2, final WideNavigationRailColors wideNavigationRailColors, final Shape shape, final Function2<? super Composer, ? super Integer, Unit> function2, final WindowInsets windowInsets, final Arrangement.Vertical vertical, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
         int i2;
         WideNavigationRailColors wideNavigationRailColors2;
-        float m8010unboximpl;
-        float m7996constructorimpl;
+        float m8272unboximpl;
+        float m8258constructorimpl;
         Composer startRestartGroup = composer.startRestartGroup(-1004308036);
         ComposerKt.sourceInformation(startRestartGroup, "C(WideNavigationRailLayout)N(modifier,isModal,expanded,colors,shape,header,windowInsets,arrangement,content)219@9930L33,220@9998L33,222@10107L7,229@10373L11,230@10448L11,232@10488L195,237@10718L195,242@10954L170,247@11158L154,257@11558L8819,252@11318L9059:WideNavigationRail.kt#uh7d8r");
         if ((i & 6) == 0) {
@@ -495,37 +495,37 @@ public final class WideNavigationRailKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            if (!Dp.m8001equalsimpl0(((Dp) consume).m8010unboximpl(), Dp.Companion.m8016getUnspecifiedD9Ej5fM())) {
+            if (!Dp.m8263equalsimpl0(((Dp) consume).m8272unboximpl(), Dp.Companion.m8278getUnspecifiedD9Ej5fM())) {
                 startRestartGroup.startReplaceGroup(-597931134);
                 ComposerKt.sourceInformation(startRestartGroup, "225@10219L7");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                 Object consume2 = startRestartGroup.consume(InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                m8010unboximpl = ((Dp) consume2).m8010unboximpl();
+                m8272unboximpl = ((Dp) consume2).m8272unboximpl();
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(-597966102);
                 startRestartGroup.endReplaceGroup();
-                m8010unboximpl = Dp.m7996constructorimpl(0);
+                m8272unboximpl = Dp.m8258constructorimpl(0);
             }
-            float f = m8010unboximpl;
+            float f = m8272unboximpl;
             FiniteAnimationSpec value = MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, startRestartGroup, 6);
             FiniteAnimationSpec value2 = MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6);
-            State<Dp> m151animateDpAsStateAjpBEmI = AnimateAsStateKt.m151animateDpAsStateAjpBEmI(!z2 ? CollapsedRailWidth : ExpandedRailMinWidth, !z ? value : value2, null, null, startRestartGroup, 0, 12);
+            State<Dp> m174animateDpAsStateAjpBEmI = AnimateAsStateKt.m174animateDpAsStateAjpBEmI(!z2 ? CollapsedRailWidth : ExpandedRailMinWidth, !z ? value : value2, null, null, startRestartGroup, 0, 12);
             float f2 = !z2 ? CollapsedRailWidth : ExpandedRailMaxWidth;
             if (!z) {
                 value2 = value;
             }
-            State<Dp> m151animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m151animateDpAsStateAjpBEmI(f2, value2, null, null, startRestartGroup, 0, 12);
+            State<Dp> m174animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m174animateDpAsStateAjpBEmI(f2, value2, null, null, startRestartGroup, 0, 12);
             if (!z2) {
-                m7996constructorimpl = NavigationRailCollapsedTokens.INSTANCE.m4091getItemVerticalSpaceD9Ej5fM();
+                m8258constructorimpl = NavigationRailCollapsedTokens.INSTANCE.m4177getItemVerticalSpaceD9Ej5fM();
             } else {
-                m7996constructorimpl = Dp.m7996constructorimpl(0);
+                m8258constructorimpl = Dp.m8258constructorimpl(0);
             }
             FiniteAnimationSpec finiteAnimationSpec = value;
-            State<Dp> m151animateDpAsStateAjpBEmI3 = AnimateAsStateKt.m151animateDpAsStateAjpBEmI(m7996constructorimpl, finiteAnimationSpec, null, null, startRestartGroup, 0, 12);
+            State<Dp> m174animateDpAsStateAjpBEmI3 = AnimateAsStateKt.m174animateDpAsStateAjpBEmI(m8258constructorimpl, finiteAnimationSpec, null, null, startRestartGroup, 0, 12);
             int i3 = i2;
-            SurfaceKt.m2997SurfaceT9BRK9s(modifier, shape, !z ? wideNavigationRailColors2.m3427getContainerColor0d7_KjU() : wideNavigationRailColors2.m3429getModalContainerColor0d7_KjU(), !z ? wideNavigationRailColors2.m3428getContentColor0d7_KjU() : wideNavigationRailColors2.m3430getModalContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1489314345, true, new WideNavigationRailKt$WideNavigationRailLayout$1(windowInsets, function2, z2, m151animateDpAsStateAjpBEmI, f, AnimateAsStateKt.m151animateDpAsStateAjpBEmI(!z2 ? TopIconItemMinHeight : f, finiteAnimationSpec, null, null, startRestartGroup, 0, 12), m151animateDpAsStateAjpBEmI2, mutableIntState2, mutableIntState, vertical, m151animateDpAsStateAjpBEmI3, function22), startRestartGroup, 54), startRestartGroup, (i3 & 14) | 12582912 | ((i3 >> 9) & 112), 112);
+            SurfaceKt.m3083SurfaceT9BRK9s(modifier, shape, !z ? wideNavigationRailColors2.m3513getContainerColor0d7_KjU() : wideNavigationRailColors2.m3515getModalContainerColor0d7_KjU(), !z ? wideNavigationRailColors2.m3514getContentColor0d7_KjU() : wideNavigationRailColors2.m3516getModalContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1489314345, true, new WideNavigationRailKt$WideNavigationRailLayout$1(windowInsets, function2, z2, m174animateDpAsStateAjpBEmI, f, AnimateAsStateKt.m174animateDpAsStateAjpBEmI(!z2 ? TopIconItemMinHeight : f, finiteAnimationSpec, null, null, startRestartGroup, 0, 12), m174animateDpAsStateAjpBEmI2, mutableIntState2, mutableIntState, vertical, m174animateDpAsStateAjpBEmI3, function22), startRestartGroup, 54), startRestartGroup, (i3 & 14) | 12582912 | ((i3 >> 9) & 112), 112);
             startRestartGroup = startRestartGroup;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -580,7 +580,7 @@ public final class WideNavigationRailKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3440ModalWideNavigationRailk3FuEkE(Modifier modifier, WideNavigationRailState wideNavigationRailState, boolean z, Shape shape, Shape shape2, WideNavigationRailColors wideNavigationRailColors, Function2<? super Composer, ? super Integer, Unit> function2, float f, WindowInsets windowInsets, Arrangement.Vertical vertical, ModalWideNavigationRailProperties modalWideNavigationRailProperties, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m3526ModalWideNavigationRailk3FuEkE(Modifier modifier, WideNavigationRailState wideNavigationRailState, boolean z, Shape shape, Shape shape2, WideNavigationRailColors wideNavigationRailColors, Function2<? super Composer, ? super Integer, Unit> function2, float f, WindowInsets windowInsets, Arrangement.Vertical vertical, ModalWideNavigationRailProperties modalWideNavigationRailProperties, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i, final int i2, final int i3) {
         Object obj;
         int i4;
         boolean z2;
@@ -810,7 +810,7 @@ public final class WideNavigationRailKt {
                     if (i5 != 0) {
                         obj4 = null;
                     }
-                    float m7996constructorimpl = i6 != 0 ? Dp.m7996constructorimpl(0) : f2;
+                    float m8258constructorimpl = i6 != 0 ? Dp.m8258constructorimpl(0) : f2;
                     if ((i3 & 256) != 0) {
                         windowInsets3 = WideNavigationRailDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
                         i4 &= -234881025;
@@ -828,7 +828,7 @@ public final class WideNavigationRailKt {
                         shape7 = shape5;
                         wideNavigationRailState4 = wideNavigationRailState3;
                         function24 = obj4;
-                        f4 = m7996constructorimpl;
+                        f4 = m8258constructorimpl;
                         windowInsets4 = windowInsets3;
                         vertical4 = vertical3;
                         modalWideNavigationRailProperties3 = WideNavigationRailDefaults.INSTANCE.getModalExpandedProperties();
@@ -838,7 +838,7 @@ public final class WideNavigationRailKt {
                         shape7 = shape5;
                         wideNavigationRailState4 = wideNavigationRailState3;
                         function24 = obj4;
-                        f4 = m7996constructorimpl;
+                        f4 = m8258constructorimpl;
                         windowInsets4 = windowInsets3;
                         vertical4 = vertical3;
                     }
@@ -957,7 +957,7 @@ public final class WideNavigationRailKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3443WideNavigationRailItemplit6k(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final boolean z2, Modifier modifier, boolean z3, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3) {
+    public static final void m3529WideNavigationRailItemplit6k(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final boolean z2, Modifier modifier, boolean z3, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3) {
         boolean z4;
         int i4;
         Function0<Unit> function02;
@@ -1083,7 +1083,7 @@ public final class WideNavigationRailKt {
                                     }
                                     if ((i3 & 128) != 0) {
                                         i12 = i10 & (-29360129);
-                                        i7 = WideNavigationRailItemDefaults.INSTANCE.m3434iconPositionFors8pcRp0(z2);
+                                        i7 = WideNavigationRailItemDefaults.INSTANCE.m3520iconPositionFors8pcRp0(z2);
                                     } else {
                                         i12 = i10;
                                     }
@@ -1121,7 +1121,7 @@ public final class WideNavigationRailKt {
                                         }
                                         int i17 = i13 << 3;
                                         composer2 = startRestartGroup;
-                                        NavigationItemKt.m2665AnimatedNavigationItemDQd_Gtc(z4, function02, obj, ShapesKt.getValue(NavigationRailBaselineItemTokens.INSTANCE.getActiveIndicatorShape(), startRestartGroup, 6), NavigationRailVerticalItemTokens.INSTANCE.m4105getActiveIndicatorWidthD9Ej5fM(), TypographyKt.getValue(NavigationRailVerticalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), TypographyKt.getValue(NavigationRailHorizontalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ItemTopIconIndicatorHorizontalPadding, ItemTopIconIndicatorVerticalPadding, NavigationRailVerticalItemTokens.INSTANCE.m4106getIconLabelSpaceD9Ej5fM(), NavigationRailHorizontalItemTokens.INSTANCE.m4100getFullWidthLeadingSpaceD9Ej5fM(), ItemStartIconIndicatorVerticalPadding, WNRItemNoLabelIndicatorPadding, NavigationRailHorizontalItemTokens.INSTANCE.m4102getIconLabelSpaceD9Ej5fM(), ItemHorizontalPadding, navigationItemColors3, modifier3, z7, obj2, i16, mutableInteractionSource4, composer2, (i13 & 14) | 918577152 | (i13 & 112) | (i13 & 896), ((i13 >> 9) & 458752) | 28086 | (3670016 & i17) | (i17 & 29360128) | ((i13 << 15) & 234881024) | ((i13 << 6) & 1879048192), 0);
+                                        NavigationItemKt.m2751AnimatedNavigationItemDQd_Gtc(z4, function02, obj, ShapesKt.getValue(NavigationRailBaselineItemTokens.INSTANCE.getActiveIndicatorShape(), startRestartGroup, 6), NavigationRailVerticalItemTokens.INSTANCE.m4191getActiveIndicatorWidthD9Ej5fM(), TypographyKt.getValue(NavigationRailVerticalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), TypographyKt.getValue(NavigationRailHorizontalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ItemTopIconIndicatorHorizontalPadding, ItemTopIconIndicatorVerticalPadding, NavigationRailVerticalItemTokens.INSTANCE.m4192getIconLabelSpaceD9Ej5fM(), NavigationRailHorizontalItemTokens.INSTANCE.m4186getFullWidthLeadingSpaceD9Ej5fM(), ItemStartIconIndicatorVerticalPadding, WNRItemNoLabelIndicatorPadding, NavigationRailHorizontalItemTokens.INSTANCE.m4188getIconLabelSpaceD9Ej5fM(), ItemHorizontalPadding, navigationItemColors3, modifier3, z7, obj2, i16, mutableInteractionSource4, composer2, (i13 & 14) | 918577152 | (i13 & 112) | (i13 & 896), ((i13 >> 9) & 458752) | 28086 | (3670016 & i17) | (i17 & 29360128) | ((i13 << 15) & 234881024) | ((i13 << 6) & 1879048192), 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -1150,7 +1150,7 @@ public final class WideNavigationRailKt {
                                 }
                                 int i172 = i13 << 3;
                                 composer2 = startRestartGroup;
-                                NavigationItemKt.m2665AnimatedNavigationItemDQd_Gtc(z4, function02, obj, ShapesKt.getValue(NavigationRailBaselineItemTokens.INSTANCE.getActiveIndicatorShape(), startRestartGroup, 6), NavigationRailVerticalItemTokens.INSTANCE.m4105getActiveIndicatorWidthD9Ej5fM(), TypographyKt.getValue(NavigationRailVerticalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), TypographyKt.getValue(NavigationRailHorizontalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ItemTopIconIndicatorHorizontalPadding, ItemTopIconIndicatorVerticalPadding, NavigationRailVerticalItemTokens.INSTANCE.m4106getIconLabelSpaceD9Ej5fM(), NavigationRailHorizontalItemTokens.INSTANCE.m4100getFullWidthLeadingSpaceD9Ej5fM(), ItemStartIconIndicatorVerticalPadding, WNRItemNoLabelIndicatorPadding, NavigationRailHorizontalItemTokens.INSTANCE.m4102getIconLabelSpaceD9Ej5fM(), ItemHorizontalPadding, navigationItemColors32, modifier32, z72, obj2, i162, mutableInteractionSource4, composer2, (i13 & 14) | 918577152 | (i13 & 112) | (i13 & 896), ((i13 >> 9) & 458752) | 28086 | (3670016 & i172) | (i172 & 29360128) | ((i13 << 15) & 234881024) | ((i13 << 6) & 1879048192), 0);
+                                NavigationItemKt.m2751AnimatedNavigationItemDQd_Gtc(z4, function02, obj, ShapesKt.getValue(NavigationRailBaselineItemTokens.INSTANCE.getActiveIndicatorShape(), startRestartGroup, 6), NavigationRailVerticalItemTokens.INSTANCE.m4191getActiveIndicatorWidthD9Ej5fM(), TypographyKt.getValue(NavigationRailVerticalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), TypographyKt.getValue(NavigationRailHorizontalItemTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ItemTopIconIndicatorHorizontalPadding, ItemTopIconIndicatorVerticalPadding, NavigationRailVerticalItemTokens.INSTANCE.m4192getIconLabelSpaceD9Ej5fM(), NavigationRailHorizontalItemTokens.INSTANCE.m4186getFullWidthLeadingSpaceD9Ej5fM(), ItemStartIconIndicatorVerticalPadding, WNRItemNoLabelIndicatorPadding, NavigationRailHorizontalItemTokens.INSTANCE.m4188getIconLabelSpaceD9Ej5fM(), ItemHorizontalPadding, navigationItemColors32, modifier32, z72, obj2, i162, mutableInteractionSource4, composer2, (i13 & 14) | 918577152 | (i13 & 112) | (i13 & 896), ((i13 >> 9) & 458752) | 28086 | (3670016 & i172) | (i172 & 29360128) | ((i13 << 15) & 234881024) | ((i13 << 6) & 1879048192), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 mutableInteractionSource2 = mutableInteractionSource3;
@@ -1285,7 +1285,7 @@ public final class WideNavigationRailKt {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v29 */
     /* renamed from: ModalWideNavigationRailContent-pU6N4AM  reason: not valid java name */
-    public static final void m3441ModalWideNavigationRailContentpU6N4AM(final boolean z, final boolean z2, final Animatable<Float, AnimationVector1D> animatable, final RailPredictiveBackState railPredictiveBackState, final Function2<? super Float, ? super Continuation<? super Unit>, ? extends Object> function2, final Modifier modifier, final ModalWideNavigationRailState modalWideNavigationRailState, final WideNavigationRailColors wideNavigationRailColors, final Shape shape, final float f, final Function2<? super Composer, ? super Integer, Unit> function22, final WindowInsets windowInsets, final boolean z3, final Arrangement.Vertical vertical, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i, final int i2) {
+    public static final void m3527ModalWideNavigationRailContentpU6N4AM(final boolean z, final boolean z2, final Animatable<Float, AnimationVector1D> animatable, final RailPredictiveBackState railPredictiveBackState, final Function2<? super Float, ? super Continuation<? super Unit>, ? extends Object> function2, final Modifier modifier, final ModalWideNavigationRailState modalWideNavigationRailState, final WideNavigationRailColors wideNavigationRailColors, final Shape shape, final float f, final Function2<? super Composer, ? super Integer, Unit> function22, final WindowInsets windowInsets, final boolean z3, final Arrangement.Vertical vertical, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i, final int i2) {
         int i3;
         WideNavigationRailColors wideNavigationRailColors2;
         int i4;
@@ -1357,19 +1357,19 @@ public final class WideNavigationRailKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final boolean z4 = consume == LayoutDirection.Rtl;
             Strings.Companion companion = Strings.Companion;
-            final String m3611getString2EP1pXo = Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_wide_navigation_rail_pane_title), startRestartGroup, 0);
-            long m3429getModalContainerColor0d7_KjU = wideNavigationRailColors2.m3429getModalContainerColor0d7_KjU();
-            long m3430getModalContentColor0d7_KjU = wideNavigationRailColors2.m3430getModalContentColor0d7_KjU();
-            Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(SizeKt.m902widthInVpY3zN4$default(modifier, 0.0f, f, 1, null), 0.0f, 1, null);
+            final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_wide_navigation_rail_pane_title), startRestartGroup, 0);
+            long m3515getModalContainerColor0d7_KjU = wideNavigationRailColors2.m3515getModalContainerColor0d7_KjU();
+            long m3516getModalContentColor0d7_KjU = wideNavigationRailColors2.m3516getModalContentColor0d7_KjU();
+            Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(SizeKt.m983widthInVpY3zN4$default(modifier, 0.0f, f, 1, null), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2009435560, "CC(remember):WideNavigationRail.kt#9igjgp");
-            boolean changed = startRestartGroup.changed(m3611getString2EP1pXo);
+            boolean changed = startRestartGroup.changed(m3697getString2EP1pXo);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.WideNavigationRailKt$$ExternalSyntheticLambda13
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit ModalWideNavigationRailContent_pU6N4AM$lambda$18$lambda$17;
-                        ModalWideNavigationRailContent_pU6N4AM$lambda$18$lambda$17 = WideNavigationRailKt.ModalWideNavigationRailContent_pU6N4AM$lambda$18$lambda$17(m3611getString2EP1pXo, (SemanticsPropertyReceiver) obj);
+                        ModalWideNavigationRailContent_pU6N4AM$lambda$18$lambda$17 = WideNavigationRailKt.ModalWideNavigationRailContent_pU6N4AM$lambda$18$lambda$17(m3697getString2EP1pXo, (SemanticsPropertyReceiver) obj);
                         return ModalWideNavigationRailContent_pU6N4AM$lambda$18$lambda$17;
                     }
                 };
@@ -1423,7 +1423,7 @@ public final class WideNavigationRailKt {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
-            SurfaceKt.m2997SurfaceT9BRK9s(DraggableKt.draggable$default(draggableAnchors, draggableState$material3, orientation2, z3, null, isAnimationRunning, null, rememberedValue4, false, 168, null), shape, m3429getModalContainerColor0d7_KjU, m3430getModalContentColor0d7_KjU, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1043835354, true, new WideNavigationRailKt$ModalWideNavigationRailContent$5(animatable, railPredictiveBackState, z4, z, wideNavigationRailColors2, shape, function22, windowInsets, vertical, function23), composer2, 54), composer2, ((i3 >> 21) & 112) | 12582912, 112);
+            SurfaceKt.m3083SurfaceT9BRK9s(DraggableKt.draggable$default(draggableAnchors, draggableState$material3, orientation2, z3, null, isAnimationRunning, null, rememberedValue4, false, 168, null), shape, m3515getModalContainerColor0d7_KjU, m3516getModalContentColor0d7_KjU, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1043835354, true, new WideNavigationRailKt$ModalWideNavigationRailContent$5(animatable, railPredictiveBackState, z4, z, wideNavigationRailColors2, shape, function22, windowInsets, vertical, function23), composer2, 54), composer2, ((i3 >> 21) & 112) | 12582912, 112);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -1454,28 +1454,28 @@ public final class WideNavigationRailKt {
             return Unit.INSTANCE;
         }
         float currentOffset = modalWideNavigationRailState.getCurrentOffset();
-        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5475getSizeNHjbRc() >> 32));
+        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() >> 32));
         if (!Float.isNaN(currentOffset) && !Float.isNaN(intBitsToFloat) && intBitsToFloat != 0.0f) {
             graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX(graphicsLayerScope, floatValue, railPredictiveBackState.getSwipeEdgeMatchesRail()));
             graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY(graphicsLayerScope, floatValue));
-            graphicsLayerScope.mo5482setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 1.0f : 0.0f, 0.5f));
+            graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 1.0f : 0.0f, 0.5f));
         }
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Pair ModalWideNavigationRailContent_pU6N4AM$lambda$23$lambda$22(boolean z, boolean z2, ModalWideNavigationRailState modalWideNavigationRailState, IntSize intSize, Constraints constraints) {
-        final float m8171unboximpl = (int) (intSize.m8171unboximpl() >> 32);
+        final float m8433unboximpl = (int) (intSize.m8433unboximpl() >> 32);
         if (!z) {
-            m8171unboximpl = 0.0f;
+            m8433unboximpl = 0.0f;
         } else if (!z2) {
-            m8171unboximpl = -m8171unboximpl;
+            m8433unboximpl = -m8433unboximpl;
         }
         return TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1() { // from class: androidx.compose.material3.WideNavigationRailKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit ModalWideNavigationRailContent_pU6N4AM$lambda$23$lambda$22$lambda$21;
-                ModalWideNavigationRailContent_pU6N4AM$lambda$23$lambda$22$lambda$21 = WideNavigationRailKt.ModalWideNavigationRailContent_pU6N4AM$lambda$23$lambda$22$lambda$21(m8171unboximpl, r2, (DraggableAnchorsConfig) obj);
+                ModalWideNavigationRailContent_pU6N4AM$lambda$23$lambda$22$lambda$21 = WideNavigationRailKt.ModalWideNavigationRailContent_pU6N4AM$lambda$23$lambda$22$lambda$21(m8433unboximpl, r2, (DraggableAnchorsConfig) obj);
                 return ModalWideNavigationRailContent_pU6N4AM$lambda$23$lambda$22$lambda$21;
             }
         }), modalWideNavigationRailState.getTargetValue());
@@ -1490,25 +1490,25 @@ public final class WideNavigationRailKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float calculatePredictiveBackScaleX(GraphicsLayerScope graphicsLayerScope, float f, boolean z) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5475getSizeNHjbRc() >> 32));
+        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() >> 32));
         if (Float.isNaN(intBitsToFloat) || intBitsToFloat == 0.0f) {
             return 1.0f;
         }
-        return (((z ? 1.0f : -1.0f) * MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo430toPx0680j_4(PredictiveBackMaxScaleXDistance), intBitsToFloat), f)) / intBitsToFloat) + 1.0f;
+        return (((z ? 1.0f : -1.0f) * MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo464toPx0680j_4(PredictiveBackMaxScaleXDistance), intBitsToFloat), f)) / intBitsToFloat) + 1.0f;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float calculatePredictiveBackScaleY(GraphicsLayerScope graphicsLayerScope, float f) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5475getSizeNHjbRc() & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() & 4294967295L));
         if (Float.isNaN(intBitsToFloat) || intBitsToFloat == 0.0f) {
             return 1.0f;
         }
-        return 1.0f - (MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo430toPx0680j_4(PredictiveBackMaxScaleYDistance), intBitsToFloat), f) / intBitsToFloat);
+        return 1.0f - (MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo464toPx0680j_4(PredictiveBackMaxScaleYDistance), intBitsToFloat), f) / intBitsToFloat);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: Scrim-3J-VO9M  reason: not valid java name */
-    public static final void m3442Scrim3JVO9M(final long j, final Function1<? super Continuation<? super Unit>, ? extends Object> function1, final boolean z, Composer composer, final int i) {
+    public static final void m3528Scrim3JVO9M(final long j, final Function1<? super Continuation<? super Unit>, ? extends Object> function1, final boolean z, Composer composer, final int i) {
         int i2;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(144695261);
@@ -1542,7 +1542,7 @@ public final class WideNavigationRailKt {
                 final MutableState mutableState = (MutableState) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Strings.Companion companion2 = Strings.Companion;
-                final String m3611getString2EP1pXo = Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_wide_navigation_rail_close_rail), startRestartGroup, 0);
+                final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_wide_navigation_rail_close_rail), startRestartGroup, 0);
                 if (z) {
                     startRestartGroup.startReplaceGroup(-1530047423);
                     ComposerKt.sourceInformation(startRestartGroup, "1114@52509L40,1115@52606L219");
@@ -1556,14 +1556,14 @@ public final class WideNavigationRailKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(companion3, function1, (PointerInputEventHandler) rememberedValue2);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1613216408, "CC(remember):WideNavigationRail.kt#9igjgp");
-                    boolean changed = startRestartGroup.changed(m3611getString2EP1pXo);
+                    boolean changed = startRestartGroup.changed(m3697getString2EP1pXo);
                     Object rememberedValue3 = startRestartGroup.rememberedValue();
                     if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
                         rememberedValue3 = new Function1() { // from class: androidx.compose.material3.WideNavigationRailKt$$ExternalSyntheticLambda3
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
                                 Unit Scrim_3J_VO9M$lambda$33$lambda$32;
-                                Scrim_3J_VO9M$lambda$33$lambda$32 = WideNavigationRailKt.Scrim_3J_VO9M$lambda$33$lambda$32(m3611getString2EP1pXo, mutableState, (SemanticsPropertyReceiver) obj);
+                                Scrim_3J_VO9M$lambda$33$lambda$32 = WideNavigationRailKt.Scrim_3J_VO9M$lambda$33$lambda$32(m3697getString2EP1pXo, mutableState, (SemanticsPropertyReceiver) obj);
                                 return Scrim_3J_VO9M$lambda$33$lambda$32;
                             }
                         };
@@ -1660,7 +1660,7 @@ public final class WideNavigationRailKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Scrim_3J_VO9M$lambda$35$lambda$34(long j, State state, DrawScope drawScope) {
-        DrawScope.m5853drawRectnJ9OG0$default(drawScope, j, 0L, 0L, RangesKt.coerceIn(Scrim_3J_VO9M$lambda$26(state), 0.0f, 1.0f), null, null, 0, 118, null);
+        DrawScope.m5999drawRectnJ9OG0$default(drawScope, j, 0L, 0L, RangesKt.coerceIn(Scrim_3J_VO9M$lambda$26(state), 0.0f, 1.0f), null, null, 0, 118, null);
         return Unit.INSTANCE;
     }
 
@@ -1670,10 +1670,10 @@ public final class WideNavigationRailKt {
 
     static {
         float f = 2;
-        WNRItemNoLabelIndicatorPadding = Dp.m7996constructorimpl(Dp.m7996constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m4105getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4088getIconSizeD9Ej5fM()) / f);
-        ItemTopIconIndicatorVerticalPadding = Dp.m7996constructorimpl(Dp.m7996constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m4104getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4088getIconSizeD9Ej5fM()) / f);
-        ItemTopIconIndicatorHorizontalPadding = Dp.m7996constructorimpl(Dp.m7996constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m4105getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4088getIconSizeD9Ej5fM()) / f);
-        ItemStartIconIndicatorVerticalPadding = Dp.m7996constructorimpl(Dp.m7996constructorimpl(NavigationRailHorizontalItemTokens.INSTANCE.m4099getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4088getIconSizeD9Ej5fM()) / f);
+        WNRItemNoLabelIndicatorPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m4191getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4174getIconSizeD9Ej5fM()) / f);
+        ItemTopIconIndicatorVerticalPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m4190getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4174getIconSizeD9Ej5fM()) / f);
+        ItemTopIconIndicatorHorizontalPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(NavigationRailVerticalItemTokens.INSTANCE.m4191getActiveIndicatorWidthD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4174getIconSizeD9Ej5fM()) / f);
+        ItemStartIconIndicatorVerticalPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(NavigationRailHorizontalItemTokens.INSTANCE.m4185getActiveIndicatorHeightD9Ej5fM() - NavigationRailBaselineItemTokens.INSTANCE.m4174getIconSizeD9Ej5fM()) / f);
     }
 
     public static final ProvidableCompositionLocal<WideNavigationRailOverride> getLocalWideNavigationRailOverride() {
@@ -1696,22 +1696,22 @@ public final class WideNavigationRailKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float WideNavigationRailLayout$lambda$8(State<Dp> state) {
-        return state.getValue().m8010unboximpl();
+        return state.getValue().m8272unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float WideNavigationRailLayout$lambda$9(State<Dp> state) {
-        return state.getValue().m8010unboximpl();
+        return state.getValue().m8272unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float WideNavigationRailLayout$lambda$10(State<Dp> state) {
-        return state.getValue().m8010unboximpl();
+        return state.getValue().m8272unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float WideNavigationRailLayout$lambda$11(State<Dp> state) {
-        return state.getValue().m8010unboximpl();
+        return state.getValue().m8272unboximpl();
     }
 
     private static final float Scrim_3J_VO9M$lambda$26(State<Float> state) {

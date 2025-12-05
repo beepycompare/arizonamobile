@@ -12,8 +12,8 @@ public final class Of implements uo {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final byte[] a(O8 o8, C0403lh c0403lh) {
-        C0477og c0477og;
+    public final byte[] a(O8 o8, C0402lh c0402lh) {
+        C0476og c0476og;
         String str;
         byte[] bytes;
         int ordinal;
@@ -21,18 +21,18 @@ public final class Of implements uo {
             try {
                 byte[] decode = Base64.decode(o8.b, 0);
                 if (decode != null && decode.length != 0) {
-                    c0477og = new C0477og(decode);
+                    c0476og = new C0476og(decode);
                     Wf wf = new Wf();
-                    str = c0477og.f1050a;
+                    str = c0476og.f1133a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
-                    wf.f740a = bytes;
-                    wf.c = c0477og.b;
-                    wf.b = c0477og.c;
-                    ordinal = c0477og.d.ordinal();
+                    wf.f823a = bytes;
+                    wf.c = c0476og.b;
+                    wf.b = c0476og.c;
+                    ordinal = c0476og.d.ordinal();
                     int i = 1;
                     if (ordinal != 1) {
                         i = 2;
@@ -43,15 +43,15 @@ public final class Of implements uo {
                     wf.d = i;
                     return MessageNano.toByteArray(wf);
                 }
-                c0477og = null;
+                c0476og = null;
                 Wf wf2 = new Wf();
-                str = c0477og.f1050a;
+                str = c0476og.f1133a;
                 if (str != null) {
                 }
-                wf2.f740a = bytes;
-                wf2.c = c0477og.b;
-                wf2.b = c0477og.c;
-                ordinal = c0477og.d.ordinal();
+                wf2.f823a = bytes;
+                wf2.c = c0476og.b;
+                wf2.b = c0476og.c;
+                ordinal = c0476og.d.ordinal();
                 int i2 = 1;
                 if (ordinal != 1) {
                 }

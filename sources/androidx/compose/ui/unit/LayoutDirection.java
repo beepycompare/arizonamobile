@@ -22,6 +22,14 @@ public final class LayoutDirection {
         return $ENTRIES;
     }
 
+    public static LayoutDirection valueOf(String str) {
+        return (LayoutDirection) Enum.valueOf(LayoutDirection.class, str);
+    }
+
+    public static LayoutDirection[] values() {
+        return (LayoutDirection[]) $VALUES.clone();
+    }
+
     private LayoutDirection(String str, int i) {
     }
 
@@ -29,13 +37,5 @@ public final class LayoutDirection {
         LayoutDirection[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static LayoutDirection valueOf(String str) {
-        return (LayoutDirection) Enum.valueOf(LayoutDirection.class, str);
-    }
-
-    public static LayoutDirection[] values() {
-        return (LayoutDirection[]) $VALUES.clone();
     }
 }

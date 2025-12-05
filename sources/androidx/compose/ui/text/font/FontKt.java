@@ -10,60 +10,60 @@ import kotlin.ReplaceWith;
 /* loaded from: classes2.dex */
 public final class FontKt {
     /* renamed from: Font-RetOiIg$default  reason: not valid java name */
-    public static /* synthetic */ Font m7550FontRetOiIg$default(int i, FontWeight fontWeight, int i2, int i3, Object obj) {
+    public static /* synthetic */ Font m7794FontRetOiIg$default(int i, FontWeight fontWeight, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i3 & 4) != 0) {
-            i2 = FontStyle.Companion.m7578getNormal_LCdwA();
+            i2 = FontStyle.Companion.m7822getNormal_LCdwA();
         }
-        return m7549FontRetOiIg(i, fontWeight, i2);
+        return m7793FontRetOiIg(i, fontWeight, i2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility until Compose 1.3.", replaceWith = @ReplaceWith(expression = "Font(resId, weight, style)", imports = {}))
     /* renamed from: Font-RetOiIg  reason: not valid java name */
-    public static final /* synthetic */ Font m7549FontRetOiIg(int i, FontWeight fontWeight, int i2) {
-        return new ResourceFont(i, fontWeight, i2, null, FontLoadingStrategy.Companion.m7563getBlockingPKNRLFQ(), 8, null);
+    public static final /* synthetic */ Font m7793FontRetOiIg(int i, FontWeight fontWeight, int i2) {
+        return new ResourceFont(i, fontWeight, i2, null, FontLoadingStrategy.Companion.m7807getBlockingPKNRLFQ(), 8, null);
     }
 
     /* renamed from: Font-YpTlLL0$default  reason: not valid java name */
-    public static /* synthetic */ Font m7552FontYpTlLL0$default(int i, FontWeight fontWeight, int i2, int i3, int i4, Object obj) {
+    public static /* synthetic */ Font m7796FontYpTlLL0$default(int i, FontWeight fontWeight, int i2, int i3, int i4, Object obj) {
         if ((i4 & 2) != 0) {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i4 & 4) != 0) {
-            i2 = FontStyle.Companion.m7578getNormal_LCdwA();
+            i2 = FontStyle.Companion.m7822getNormal_LCdwA();
         }
         if ((i4 & 8) != 0) {
-            i3 = FontLoadingStrategy.Companion.m7563getBlockingPKNRLFQ();
+            i3 = FontLoadingStrategy.Companion.m7807getBlockingPKNRLFQ();
         }
-        return m7551FontYpTlLL0(i, fontWeight, i2, i3);
+        return m7795FontYpTlLL0(i, fontWeight, i2, i3);
     }
 
     /* renamed from: Font-YpTlLL0  reason: not valid java name */
-    public static final Font m7551FontYpTlLL0(int i, FontWeight fontWeight, int i2, int i3) {
+    public static final Font m7795FontYpTlLL0(int i, FontWeight fontWeight, int i2, int i3) {
         return new ResourceFont(i, fontWeight, i2, new FontVariation.Settings(new FontVariation.Setting[0]), i3, null);
     }
 
     /* renamed from: Font-F3nL8kk$default  reason: not valid java name */
-    public static /* synthetic */ Font m7548FontF3nL8kk$default(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings, int i4, Object obj) {
+    public static /* synthetic */ Font m7792FontF3nL8kk$default(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings, int i4, Object obj) {
         if ((i4 & 2) != 0) {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i4 & 4) != 0) {
-            i2 = FontStyle.Companion.m7578getNormal_LCdwA();
+            i2 = FontStyle.Companion.m7822getNormal_LCdwA();
         }
         if ((i4 & 8) != 0) {
-            i3 = FontLoadingStrategy.Companion.m7563getBlockingPKNRLFQ();
+            i3 = FontLoadingStrategy.Companion.m7807getBlockingPKNRLFQ();
         }
         if ((i4 & 16) != 0) {
-            settings = FontVariation.INSTANCE.m7593Settings6EWAqTQ(fontWeight, i2, new FontVariation.Setting[0]);
+            settings = FontVariation.INSTANCE.m7838Settings6EWAqTQ(fontWeight, i2, new FontVariation.Setting[0]);
         }
-        return m7547FontF3nL8kk(i, fontWeight, i2, i3, settings);
+        return m7791FontF3nL8kk(i, fontWeight, i2, i3, settings);
     }
 
     /* renamed from: Font-F3nL8kk  reason: not valid java name */
-    public static final Font m7547FontF3nL8kk(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings) {
+    public static final Font m7791FontF3nL8kk(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings) {
         return new ResourceFont(i, fontWeight, i2, settings, i3, null);
     }
 

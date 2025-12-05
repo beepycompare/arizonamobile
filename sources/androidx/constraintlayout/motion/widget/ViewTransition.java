@@ -466,14 +466,14 @@ public class ViewTransition {
         motionLayout.transitionToEnd(new Runnable() { // from class: androidx.constraintlayout.motion.widget.ViewTransition$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ViewTransition.this.m8480x14d7500(viewArr);
+                ViewTransition.this.m8742x14d7500(viewArr);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$applyTransition$0$androidx-constraintlayout-motion-widget-ViewTransition  reason: not valid java name */
-    public /* synthetic */ void m8480x14d7500(View[] viewArr) {
+    public /* synthetic */ void m8742x14d7500(View[] viewArr) {
         if (this.mSetsTag != -1) {
             for (View view : viewArr) {
                 view.setTag(this.mSetsTag, Long.valueOf(System.nanoTime()));
@@ -500,7 +500,7 @@ public class ViewTransition {
             KeyFrames keyFrames2 = new KeyFrames();
             Iterator<Key> it = keyFramesForView.iterator();
             while (it.hasNext()) {
-                keyFrames2.addKey(it.next().mo8479clone().setViewId(id));
+                keyFrames2.addKey(it.next().mo8741clone().setViewId(id));
             }
             transition.addKeyFrame(keyFrames2);
         }

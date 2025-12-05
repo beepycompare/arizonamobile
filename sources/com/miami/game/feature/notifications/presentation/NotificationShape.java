@@ -17,13 +17,13 @@ public final class NotificationShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo332createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M997.9,14.8C995.6,6.1 987.7,0 978.6,0H20.1C6.9,0 -2.6,12.5 0.8,25.2L92.1,364.2C94.4,372.9 102.3,379 111.4,379H1069.9C1083.1,379 1092.6,366.5 1089.2,353.8L997.9,14.8Z"), null, 1, null);
-        float[] m5522constructorimpl$default = Matrix.m5522constructorimpl$default(null, 1, null);
-        Matrix.m5538scaleimpl$default(m5522constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 1090, Float.intBitsToFloat((int) (j & 4294967295L)) / 379, 0.0f, 4, null);
-        path$default.mo5172transform58bKbWc(m5522constructorimpl$default);
+        float[] m5670constructorimpl$default = Matrix.m5670constructorimpl$default(null, 1, null);
+        Matrix.m5686scaleimpl$default(m5670constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 1090, Float.intBitsToFloat((int) (j & 4294967295L)) / 379, 0.0f, 4, null);
+        path$default.mo5315transform58bKbWc(m5670constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

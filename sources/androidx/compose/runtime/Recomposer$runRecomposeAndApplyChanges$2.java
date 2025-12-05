@@ -10,6 +10,7 @@ import androidx.compose.runtime.snapshots.MutableSnapshot;
 import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.runtime.snapshots.TransparentObserverMutableSnapshot;
 import androidx.compose.runtime.snapshots.TransparentObserverSnapshot;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -27,7 +28,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Recomposer.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "parentFrameClock", "Landroidx/compose/runtime/MonotonicFrameClock;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {587, 598}, m = "invokeSuspend", n = {"parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed", "parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"})
+@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {598, TypedValues.MotionType.TYPE_POLAR_RELATIVETO}, m = "invokeSuspend", n = {"parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed", "parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 1)
 /* loaded from: classes.dex */
 public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambda implements Function3<CoroutineScope, MonotonicFrameClock, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
@@ -59,8 +60,8 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:14:0x00bd  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0130  */
     /* JADX WARN: Type inference failed for: r10v6, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r10v8, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r11v12, types: [java.util.List] */
@@ -68,7 +69,7 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
     /* JADX WARN: Type inference failed for: r9v12, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r9v9, types: [java.util.List] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0110 -> B:24:0x0118). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x011e -> B:12:0x00b5). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0127 -> B:12:0x00b5). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -91,6 +92,7 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
         boolean recordComposerModifications;
         boolean shouldKeepRecomposing;
         Object awaitWorkAvailable;
+        NextFrameEndCallbackQueue nextFrameEndCallbackQueue;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -143,6 +145,8 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
             ArrayList arrayList8 = (List) this.L$2;
             ArrayList arrayList9 = (List) this.L$1;
             this.this$0.discardUnusedMovableContentState();
+            nextFrameEndCallbackQueue = this.this$0.nextFrameEndCallbackQueue;
+            nextFrameEndCallbackQueue.markFrameComplete();
             arrayList3 = arrayList7;
             arrayList2 = arrayList8;
             arrayList = arrayList9;
@@ -198,9 +202,9 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
                         if (monotonicFrameClock.withFrameNanos(new Function1() { // from class: androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit invokeSuspend$lambda$22;
-                                invokeSuspend$lambda$22 = Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$lambda$22(Recomposer.this, mutableScatterSet82, mutableScatterSet4, arrayList6, arrayList5, mutableScatterSet3, arrayList4, mutableScatterSet72, set22, ((Long) obj2).longValue());
-                                return invokeSuspend$lambda$22;
+                                Unit invokeSuspend$lambda$2;
+                                invokeSuspend$lambda$2 = Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$lambda$2(Recomposer.this, mutableScatterSet82, mutableScatterSet4, arrayList6, arrayList5, mutableScatterSet3, arrayList4, mutableScatterSet72, set22, ((Long) obj2).longValue());
+                                return invokeSuspend$lambda$2;
                             }
                         }, this) != coroutine_suspended) {
                             ArrayList arrayList12 = arrayList4;
@@ -213,6 +217,8 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
                             set = set22;
                             arrayList8 = arrayList5;
                             this.this$0.discardUnusedMovableContentState();
+                            nextFrameEndCallbackQueue = this.this$0.nextFrameEndCallbackQueue;
+                            nextFrameEndCallbackQueue.markFrameComplete();
                             arrayList3 = arrayList7;
                             arrayList2 = arrayList8;
                             arrayList = arrayList9;
@@ -356,7 +362,7 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Unit invokeSuspend$lambda$22(Recomposer recomposer, MutableScatterSet mutableScatterSet, MutableScatterSet mutableScatterSet2, List list, List list2, MutableScatterSet mutableScatterSet3, List list3, MutableScatterSet mutableScatterSet4, Set set, long j) {
+    public static final Unit invokeSuspend$lambda$2(Recomposer recomposer, MutableScatterSet mutableScatterSet, MutableScatterSet mutableScatterSet2, List list, List list2, MutableScatterSet mutableScatterSet3, List list3, MutableScatterSet mutableScatterSet4, Set set, long j) {
         boolean hasBroadcastFrameClockAwaiters;
         boolean z;
         List performInsertValues;

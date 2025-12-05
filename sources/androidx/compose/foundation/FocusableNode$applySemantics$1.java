@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: Focusable.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public /* synthetic */ class FocusableNode$applySemantics$1 extends FunctionReferenceImpl implements Function0<Boolean> {
+public final /* synthetic */ class FocusableNode$applySemantics$1 extends FunctionReferenceImpl implements Function0<Boolean> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public FocusableNode$applySemantics$1(Object obj) {
         super(0, obj, FocusableNode.class, "requestFocus", "requestFocus()Z", 0);

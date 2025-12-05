@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Qk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wk f654a;
+    public final Wk f737a;
     public final Integer b;
 
     public Qk(Pk pk) {
         Wk wk;
         Integer num;
-        wk = pk.f639a;
-        this.f654a = wk;
+        wk = pk.f722a;
+        this.f737a = wk;
         num = pk.b;
         this.b = num;
     }
@@ -20,7 +20,7 @@ public final class Qk {
     }
 
     public final Wk b() {
-        return this.f654a;
+        return this.f737a;
     }
 
     public final Integer a() {

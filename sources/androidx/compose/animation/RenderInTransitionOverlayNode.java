@@ -4,34 +4,41 @@ import androidx.compose.runtime.MutableFloatState;
 import androidx.compose.runtime.PrimitiveSnapshotStateKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Offset;
-import androidx.compose.ui.graphics.ClipOp;
-import androidx.compose.ui.graphics.Path;
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope;
-import androidx.compose.ui.graphics.drawscope.DrawContext;
 import androidx.compose.ui.graphics.drawscope.DrawScope;
 import androidx.compose.ui.graphics.layer.GraphicsLayer;
 import androidx.compose.ui.graphics.layer.GraphicsLayerKt;
+import androidx.compose.ui.layout.Measurable;
+import androidx.compose.ui.layout.MeasureResult;
+import androidx.compose.ui.layout.MeasureScope;
+import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.modifier.ModifierLocalModifierNode;
 import androidx.compose.ui.node.DelegatableNodeKt;
 import androidx.compose.ui.node.DrawModifierNode;
-import androidx.compose.ui.unit.Density;
-import androidx.compose.ui.unit.LayoutDirection;
+import androidx.compose.ui.node.DrawModifierNodeKt;
+import androidx.compose.ui.node.LayoutModifierNode;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueConstants;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 /* compiled from: RenderInTransitionOverlayNodeElement.kt */
-@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u00014BA\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u001a\u0010\u000b\u001a\u0016\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\f¢\u0006\u0004\b\u0010\u0010\u0011J\f\u0010)\u001a\u00020**\u00020+H\u0016J\b\u00102\u001a\u00020*H\u0016J\b\u00103\u001a\u00020*H\u0016R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R \u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R.\u0010\u000b\u001a\u0016\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR+\u0010\t\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\n8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b#\u0010$\u001a\u0004\b\u001f\u0010 \"\u0004\b!\u0010\"R\u0013\u0010%\u001a\u0004\u0018\u00010&8F¢\u0006\u0006\u001a\u0004\b'\u0010(R\u0013\u0010,\u001a\u0004\u0018\u00010-8F¢\u0006\u0006\u001a\u0004\b.\u0010/R\u0014\u00100\u001a\b\u0018\u000101R\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Landroidx/compose/animation/RenderInTransitionOverlayNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "sharedScope", "Landroidx/compose/animation/SharedTransitionScopeImpl;", "renderInOverlay", "Lkotlin/Function0;", "", "zIndexInOverlay", "", "clipInOverlay", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/LayoutDirection;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/graphics/Path;", "<init>", "(Landroidx/compose/animation/SharedTransitionScopeImpl;Lkotlin/jvm/functions/Function0;FLkotlin/jvm/functions/Function2;)V", "getSharedScope", "()Landroidx/compose/animation/SharedTransitionScopeImpl;", "setSharedScope", "(Landroidx/compose/animation/SharedTransitionScopeImpl;)V", "getRenderInOverlay", "()Lkotlin/jvm/functions/Function0;", "setRenderInOverlay", "(Lkotlin/jvm/functions/Function0;)V", "getClipInOverlay", "()Lkotlin/jvm/functions/Function2;", "setClipInOverlay", "(Lkotlin/jvm/functions/Function2;)V", "<set-?>", "getZIndexInOverlay", "()F", "setZIndexInOverlay", "(F)V", "zIndexInOverlay$delegate", "Landroidx/compose/runtime/MutableFloatState;", "parentState", "Landroidx/compose/animation/SharedElementInternalState;", "getParentState", "()Landroidx/compose/animation/SharedElementInternalState;", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", AdRevenueConstants.LAYER_KEY, "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "getLayer", "()Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "layerWithRenderer", "Landroidx/compose/animation/RenderInTransitionOverlayNode$LayerWithRenderer;", "onAttach", "onDetach", "LayerWithRenderer", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001>B%\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ#\u0010*\u001a\u00020+*\u00020,2\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u000200H\u0016¢\u0006\u0004\b1\u00102J\f\u00103\u001a\u000204*\u000205H\u0016J\b\u0010<\u001a\u000204H\u0016J\b\u0010=\u001a\u000204H\u0016R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R \u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R+\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0016\u001a\u00020\u000b8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u001b\u0010\u001c\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u0013\u0010\u001d\u001a\u0004\u0018\u00010\u001e8F¢\u0006\u0006\u001a\u0004\b\u001f\u0010 R\u001e\u0010\"\u001a\u00020\t2\u0006\u0010!\u001a\u00020\t@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b#\u0010$R \u0010&\u001a\u00020%2\u0006\u0010!\u001a\u00020%@BX\u0082\u000e¢\u0006\n\n\u0002\u0010)\"\u0004\b'\u0010(R\u0013\u00106\u001a\u0004\u0018\u0001078F¢\u0006\u0006\u001a\u0004\b8\u00109R\u0014\u0010:\u001a\b\u0018\u00010;R\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006?"}, d2 = {"Landroidx/compose/animation/RenderInTransitionOverlayNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "sharedScope", "Landroidx/compose/animation/SharedTransitionScopeImpl;", "renderInOverlay", "Lkotlin/Function0;", "", "zIndexInOverlay", "", "<init>", "(Landroidx/compose/animation/SharedTransitionScopeImpl;Lkotlin/jvm/functions/Function0;F)V", "getSharedScope", "()Landroidx/compose/animation/SharedTransitionScopeImpl;", "setSharedScope", "(Landroidx/compose/animation/SharedTransitionScopeImpl;)V", "getRenderInOverlay", "()Lkotlin/jvm/functions/Function0;", "setRenderInOverlay", "(Lkotlin/jvm/functions/Function0;)V", "<set-?>", "getZIndexInOverlay", "()F", "setZIndexInOverlay", "(F)V", "zIndexInOverlay$delegate", "Landroidx/compose/runtime/MutableFloatState;", "parentState", "Landroidx/compose/animation/SharedElementEntry;", "getParentState", "()Landroidx/compose/animation/SharedElementEntry;", "value", "enabled", "setEnabled", "(Z)V", "Landroidx/compose/ui/geometry/Offset;", "positionInOverlay", "setPositionInOverlay-k-4lQ0M", "(J)V", "J", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", AdRevenueConstants.LAYER_KEY, "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "getLayer", "()Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "layerWithRenderer", "Landroidx/compose/animation/RenderInTransitionOverlayNode$LayerWithRenderer;", "onAttach", "onDetach", "LayerWithRenderer", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class RenderInTransitionOverlayNode extends Modifier.Node implements DrawModifierNode, ModifierLocalModifierNode {
+public final class RenderInTransitionOverlayNode extends Modifier.Node implements LayoutModifierNode, DrawModifierNode, ModifierLocalModifierNode {
     public static final int $stable = 8;
-    private Function2<? super LayoutDirection, ? super Density, ? extends Path> clipInOverlay;
+    private boolean enabled;
     private LayerWithRenderer layerWithRenderer;
+    private long positionInOverlay = Offset.Companion.m5195getZeroF1C5BW0();
     private Function0<Boolean> renderInOverlay;
     private SharedTransitionScopeImpl sharedScope;
     private final MutableFloatState zIndexInOverlay$delegate;
+
+    public RenderInTransitionOverlayNode(SharedTransitionScopeImpl sharedTransitionScopeImpl, Function0<Boolean> function0, float f) {
+        this.sharedScope = sharedTransitionScopeImpl;
+        this.renderInOverlay = function0;
+        this.zIndexInOverlay$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(f);
+    }
 
     public final SharedTransitionScopeImpl getSharedScope() {
         return this.sharedScope;
@@ -49,21 +56,6 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
         this.renderInOverlay = function0;
     }
 
-    public final Function2<LayoutDirection, Density, Path> getClipInOverlay() {
-        return this.clipInOverlay;
-    }
-
-    public final void setClipInOverlay(Function2<? super LayoutDirection, ? super Density, ? extends Path> function2) {
-        this.clipInOverlay = function2;
-    }
-
-    public RenderInTransitionOverlayNode(SharedTransitionScopeImpl sharedTransitionScopeImpl, Function0<Boolean> function0, float f, Function2<? super LayoutDirection, ? super Density, ? extends Path> function2) {
-        this.sharedScope = sharedTransitionScopeImpl;
-        this.renderInOverlay = function0;
-        this.clipInOverlay = function2;
-        this.zIndexInOverlay$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(f);
-    }
-
     public final float getZIndexInOverlay() {
         return this.zIndexInOverlay$delegate.getFloatValue();
     }
@@ -72,13 +64,39 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
         this.zIndexInOverlay$delegate.setFloatValue(f);
     }
 
-    public final SharedElementInternalState getParentState() {
-        return (SharedElementInternalState) getCurrent(SharedContentNodeKt.getModifierLocalSharedElementInternalState());
+    public final SharedElementEntry getParentState() {
+        return (SharedElementEntry) getCurrent(SharedContentNodeKt.getModifierLocalSharedElementInternalState());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void setEnabled(boolean z) {
+        if (z != this.enabled) {
+            Function0<Unit> invalidateOverlay = this.sharedScope.getInvalidateOverlay();
+            if (invalidateOverlay != null) {
+                invalidateOverlay.invoke();
+            }
+            DrawModifierNodeKt.invalidateDraw(this);
+            this.enabled = z;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setPositionInOverlay-k-4lQ0M  reason: not valid java name */
+    public final void m128setPositionInOverlayk4lQ0M(long j) {
+        if (Offset.m5176equalsimpl0(j, this.positionInOverlay)) {
+            return;
+        }
+        Function0<Unit> invalidateOverlay = this.sharedScope.getInvalidateOverlay();
+        if (invalidateOverlay != null) {
+            invalidateOverlay.invoke();
+        }
+        DrawModifierNodeKt.invalidateDraw(this);
+        this.positionInOverlay = j;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: RenderInTransitionOverlayNodeElement.kt */
-    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\b\u001a\u0004\u0018\u00010\t8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0014"}, d2 = {"Landroidx/compose/animation/RenderInTransitionOverlayNode$LayerWithRenderer;", "Landroidx/compose/animation/LayerRenderer;", AdRevenueConstants.LAYER_KEY, "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "<init>", "(Landroidx/compose/animation/RenderInTransitionOverlayNode;Landroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "getLayer", "()Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "parentState", "Landroidx/compose/animation/SharedElementInternalState;", "getParentState", "()Landroidx/compose/animation/SharedElementInternalState;", "zIndex", "", "getZIndex", "()F", "drawInOverlay", "", "drawScope", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\b\u001a\u0004\u0018\u00010\t8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0014"}, d2 = {"Landroidx/compose/animation/RenderInTransitionOverlayNode$LayerWithRenderer;", "Landroidx/compose/animation/LayerRenderer;", AdRevenueConstants.LAYER_KEY, "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "<init>", "(Landroidx/compose/animation/RenderInTransitionOverlayNode;Landroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "getLayer", "()Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "parentState", "Landroidx/compose/animation/SharedElementEntry;", "getParentState", "()Landroidx/compose/animation/SharedElementEntry;", "zIndex", "", "getZIndex", "()F", "drawInOverlay", "", "drawScope", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public final class LayerWithRenderer implements LayerRenderer {
         private final GraphicsLayer layer;
@@ -92,7 +110,7 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
         }
 
         @Override // androidx.compose.animation.LayerRenderer
-        public SharedElementInternalState getParentState() {
+        public SharedElementEntry getParentState() {
             return RenderInTransitionOverlayNode.this.getParentState();
         }
 
@@ -103,28 +121,10 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
 
         @Override // androidx.compose.animation.LayerRenderer
         public void drawInOverlay(DrawScope drawScope) {
-            if (RenderInTransitionOverlayNode.this.getRenderInOverlay().invoke().booleanValue()) {
+            if (RenderInTransitionOverlayNode.this.enabled) {
                 RenderInTransitionOverlayNode renderInTransitionOverlayNode = RenderInTransitionOverlayNode.this;
-                RenderInTransitionOverlayNode renderInTransitionOverlayNode2 = renderInTransitionOverlayNode;
-                long mo6707localPositionOfR5De75A = renderInTransitionOverlayNode.getSharedScope().getRoot$animation().mo6707localPositionOfR5De75A(DelegatableNodeKt.requireLayoutCoordinates(renderInTransitionOverlayNode2), Offset.Companion.m5052getZeroF1C5BW0());
-                float intBitsToFloat = Float.intBitsToFloat((int) (mo6707localPositionOfR5De75A >> 32));
-                float intBitsToFloat2 = Float.intBitsToFloat((int) (mo6707localPositionOfR5De75A & 4294967295L));
-                Path invoke = renderInTransitionOverlayNode.getClipInOverlay().invoke(drawScope.getLayoutDirection(), DelegatableNodeKt.requireDensity(renderInTransitionOverlayNode2));
-                if (invoke != null) {
-                    int m5269getIntersectrtfAjoo = ClipOp.Companion.m5269getIntersectrtfAjoo();
-                    DrawContext drawContext = drawScope.getDrawContext();
-                    long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
-                    drawContext.getCanvas().save();
-                    try {
-                        drawContext.getTransform().mo5782clipPathmtrdDE(invoke, m5269getIntersectrtfAjoo);
-                        drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);
-                        GraphicsLayerKt.drawLayer(drawScope, this.layer);
-                        return;
-                    } finally {
-                        drawContext.getCanvas().restore();
-                        drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
-                    }
-                }
+                float intBitsToFloat = Float.intBitsToFloat((int) (renderInTransitionOverlayNode.positionInOverlay >> 32));
+                float intBitsToFloat2 = Float.intBitsToFloat((int) (renderInTransitionOverlayNode.positionInOverlay & 4294967295L));
                 drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);
                 try {
                     GraphicsLayerKt.drawLayer(drawScope, this.layer);
@@ -135,6 +135,39 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
         }
     }
 
+    @Override // androidx.compose.ui.node.LayoutModifierNode
+    /* renamed from: measure-3p2s80s */
+    public MeasureResult mo82measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$measure$1$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
+                invoke2(placementScope);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(Placeable.PlacementScope placementScope) {
+                if (!MeasureScope.this.isLookingAhead()) {
+                    if (!this.getRenderInOverlay().invoke().booleanValue()) {
+                        this.setEnabled(false);
+                    } else if (placementScope.getCoordinates() != null) {
+                        RenderInTransitionOverlayNode renderInTransitionOverlayNode = this;
+                        renderInTransitionOverlayNode.setEnabled(true);
+                        renderInTransitionOverlayNode.m128setPositionInOverlayk4lQ0M(renderInTransitionOverlayNode.getSharedScope().getRoot$animation().mo6884localPositionOfR5De75A(DelegatableNodeKt.requireLayoutCoordinates(renderInTransitionOverlayNode), Offset.Companion.m5195getZeroF1C5BW0()));
+                    }
+                }
+                Placeable.PlacementScope.place$default(placementScope, mo6875measureBRTryo0, 0, 0, 0.0f, 4, null);
+            }
+        }, 4, null);
+    }
+
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(final ContentDrawScope contentDrawScope) {
         GraphicsLayer layer = getLayer();
@@ -142,7 +175,7 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
             throw new IllegalArgumentException("Error: layer never initialized".toString());
         }
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m5857recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$draw$1
+        DrawScope.m6003recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$draw$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -159,7 +192,7 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
                 ContentDrawScope.this.drawContent();
             }
         }, 1, null);
-        if (this.renderInOverlay.invoke().booleanValue()) {
+        if (this.enabled) {
             return;
         }
         GraphicsLayerKt.drawLayer(contentDrawScope2, layer);

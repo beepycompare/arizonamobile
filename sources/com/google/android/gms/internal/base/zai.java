@@ -12,10 +12,6 @@ final class zai extends Drawable {
     private zai() {
     }
 
-    public static /* bridge */ /* synthetic */ zai zaa() {
-        return zaa;
-    }
-
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
     }

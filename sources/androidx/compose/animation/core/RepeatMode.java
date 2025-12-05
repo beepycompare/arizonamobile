@@ -22,6 +22,14 @@ public final class RepeatMode {
         return $ENTRIES;
     }
 
+    public static RepeatMode valueOf(String str) {
+        return (RepeatMode) Enum.valueOf(RepeatMode.class, str);
+    }
+
+    public static RepeatMode[] values() {
+        return (RepeatMode[]) $VALUES.clone();
+    }
+
     private RepeatMode(String str, int i) {
     }
 
@@ -29,13 +37,5 @@ public final class RepeatMode {
         RepeatMode[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static RepeatMode valueOf(String str) {
-        return (RepeatMode) Enum.valueOf(RepeatMode.class, str);
-    }
-
-    public static RepeatMode[] values() {
-        return (RepeatMode[]) $VALUES.clone();
     }
 }

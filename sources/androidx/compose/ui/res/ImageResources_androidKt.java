@@ -12,7 +12,7 @@ import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ImageResources.android.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\b\b\u0001\u0010\u0005\u001a\u00020\u0006\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0001\u0010\u0005\u001a\u00020\u0006H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"imageResource", "Landroidx/compose/ui/graphics/ImageBitmap;", "Landroidx/compose/ui/graphics/ImageBitmap$Companion;", "res", "Landroid/content/res/Resources;", "id", "", "(Landroidx/compose/ui/graphics/ImageBitmap$Companion;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/ImageBitmap;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\b\b\u0001\u0010\u0005\u001a\u00020\u0006\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0001\u0010\u0005\u001a\u00020\u0006H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"imageResource", "Landroidx/compose/ui/graphics/ImageBitmap;", "Landroidx/compose/ui/graphics/ImageBitmap$Companion;", "res", "Landroid/content/res/Resources;", "id", "", "(Landroidx/compose/ui/graphics/ImageBitmap$Companion;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/ImageBitmap;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ImageResources_androidKt {
     public static final ImageBitmap imageResource(ImageBitmap.Companion companion, Resources resources, int i) {
@@ -30,7 +30,7 @@ public final class ImageResources_androidKt {
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalResources());
         ComposerKt.sourceInformationMarkerEnd(composer);
         Resources resources = (Resources) consume;
-        ComposerKt.sourceInformationMarkerStart(composer, -969829781, "CC(remember):ImageResources.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -969830165, "CC(remember):ImageResources.android.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new TypedValue();
@@ -42,7 +42,7 @@ public final class ImageResources_androidKt {
         CharSequence charSequence = typedValue.string;
         Intrinsics.checkNotNull(charSequence);
         String obj = charSequence.toString();
-        ComposerKt.sourceInformationMarkerStart(composer, -969824640, "CC(remember):ImageResources.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -969825024, "CC(remember):ImageResources.android.kt#9igjgp");
         boolean changed = composer.changed(obj);
         Object rememberedValue2 = composer.rememberedValue();
         if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {

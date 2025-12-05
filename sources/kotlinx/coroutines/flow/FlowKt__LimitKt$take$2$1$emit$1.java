@@ -4,11 +4,10 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$take$2$1", f = "Limit.kt", i = {}, l = {59, LockFreeTaskQueueCore.CLOSED_SHIFT}, m = "emit", n = {}, s = {})
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$take$2$1", f = "Limit.kt", i = {}, l = {59, 61}, m = "emit", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$take$2$1$emit$1 extends ContinuationImpl {
     int label;

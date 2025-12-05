@@ -104,9 +104,9 @@ public final class CarouselItemScopeImpl implements CarouselItemScope {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit rememberMaskShape$lambda$1$lambda$0(CarouselItemScopeImpl carouselItemScopeImpl, Shape shape, Density density, Path path, Size size, LayoutDirection layoutDirection) {
-        Rect intersect = carouselItemScopeImpl.getCarouselItemDrawInfo().getMaskRect().intersect(SizeKt.m5126toRectuvyYCjk(size.m5110unboximpl()));
-        OutlineKt.addOutline(path, shape.mo332createOutlinePq9zytI(intersect.m5069getSizeNHjbRc(), layoutDirection, density));
-        path.mo5173translatek4lQ0M(Offset.m5028constructorimpl((Float.floatToRawIntBits(intersect.getLeft()) << 32) | (Float.floatToRawIntBits(intersect.getTop()) & 4294967295L)));
+        Rect intersect = carouselItemScopeImpl.getCarouselItemDrawInfo().getMaskRect().intersect(SizeKt.m5269toRectuvyYCjk(size.m5253unboximpl()));
+        OutlineKt.addOutline(path, shape.mo365createOutlinePq9zytI(intersect.m5212getSizeNHjbRc(), layoutDirection, density));
+        path.mo5316translatek4lQ0M(Offset.m5171constructorimpl((Float.floatToRawIntBits(intersect.getLeft()) << 32) | (Float.floatToRawIntBits(intersect.getTop()) & 4294967295L)));
         return Unit.INSTANCE;
     }
 }

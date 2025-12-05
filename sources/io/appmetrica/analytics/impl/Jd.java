@@ -6,35 +6,35 @@ import kotlin.jvm.functions.Function1;
 public final class Jd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f539a;
+    public final Function1 f622a;
 
     public Jd(Od od) {
-        this.f539a = od;
+        this.f622a = od;
     }
 
     public final Kd a(Context context, Tg tg) {
-        return new Kd(context, tg, this.f539a, new Sd() { // from class: io.appmetrica.analytics.impl.Jd$$ExternalSyntheticLambda1
+        return new Kd(context, tg, this.f622a, new Sd() { // from class: io.appmetrica.analytics.impl.Jd$$ExternalSyntheticLambda1
             @Override // io.appmetrica.analytics.impl.Sd
-            public final InterfaceC0149bl a(G0 g0) {
+            public final InterfaceC0148bl a(G0 g0) {
                 return Jd.a(g0);
             }
-        }, EnumC0165cb.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF, "actual");
+        }, EnumC0164cb.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF, "actual");
     }
 
     public final Kd b(Context context, Tg tg) {
-        return new Kd(context, tg, this.f539a, new Sd() { // from class: io.appmetrica.analytics.impl.Jd$$ExternalSyntheticLambda0
+        return new Kd(context, tg, this.f622a, new Sd() { // from class: io.appmetrica.analytics.impl.Jd$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.Sd
-            public final InterfaceC0149bl a(G0 g0) {
+            public final InterfaceC0148bl a(G0 g0) {
                 return Jd.b(g0);
             }
-        }, EnumC0165cb.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF, "prev session");
+        }, EnumC0164cb.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF, "prev session");
     }
 
-    public static final InterfaceC0149bl a(G0 g0) {
+    public static final InterfaceC0148bl a(G0 g0) {
         return new Hd(g0.f.d);
     }
 
-    public static final InterfaceC0149bl b(G0 g0) {
+    public static final InterfaceC0148bl b(G0 g0) {
         return new X();
     }
 }

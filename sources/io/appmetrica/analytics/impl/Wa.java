@@ -5,6 +5,6 @@ import kotlin.jvm.functions.Function0;
 public final class Wa implements Function0 {
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return C0471oa.I.f();
+        return C0470oa.I.f();
     }
 }

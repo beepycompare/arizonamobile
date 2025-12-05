@@ -1,6 +1,7 @@
 package androidx.compose.ui.layout;
 
 import androidx.collection.IntSetKt;
+import androidx.collection.MutableIntList;
 import androidx.collection.MutableIntSet;
 import androidx.collection.MutableScatterMap;
 import androidx.collection.ScatterMapKt;
@@ -18,7 +19,6 @@ import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.internal.ComposableLambda;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.runtime.snapshots.Snapshot;
-import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.internal.InlineClassHelperKt;
@@ -41,9 +41,7 @@ import androidx.compose.ui.unit.DpRect;
 import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.LayoutDirection;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.core.view.ViewCompat;
 import androidx.exifinterface.media.ExifInterface;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.List;
@@ -58,7 +56,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SubcomposeLayout.kt */
-@Metadata(d1 = {"\u0000¸\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0011\b\u0001\u0018\u00002\u00020\u0001:\u0003opqB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010(\u001a\u00020)H\u0016J\b\u0010*\u001a\u00020)H\u0016J\b\u0010+\u001a\u00020)H\u0016J.\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2¢\u0006\u0002\u00103J:\u0010,\u001a\u00020)2\u0006\u00104\u001a\u00020\u00032\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0006\u00105\u001a\u0002062\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2H\u0002¢\u0006\u0002\u00107J \u0010,\u001a\u00020)2\u0006\u00104\u001a\u00020\u00032\u0006\u0010<\u001a\u00020\u00182\u0006\u00105\u001a\u000206H\u0002J \u0010=\u001a\u0004\u0018\u00010\u001a2\f\u0010>\u001a\b\u0012\u0004\u0012\u00020\u00030-2\u0006\u0010?\u001a\u00020\u0014H\u0002J\u000e\u0010@\u001a\u00020)2\u0006\u0010A\u001a\u00020\u0014J\u0014\u0010B\u001a\u00020)*\u00020\u00182\u0006\u0010C\u001a\u000209H\u0002J\u0010\u0010D\u001a\u00020)2\u0006\u0010E\u001a\u000206H\u0002J\b\u0010F\u001a\u00020)H\u0002J\u0006\u0010G\u001a\u00020)J\f\u0010H\u001a\u00020)*\u00020\u0003H\u0002J\u0014\u0010I\u001a\u0004\u0018\u00010\u00032\b\u0010/\u001a\u0004\u0018\u00010\u001aH\u0002J%\u0010J\u001a\u00020K2\u001d\u0010L\u001a\u0019\u0012\u0004\u0012\u00020N\u0012\u0004\u0012\u00020O\u0012\u0004\u0012\u00020P0M¢\u0006\u0002\bQJ\b\u0010R\u001a\u00020)H\u0002J!\u0010S\u001a\u00020P2\u0006\u0010T\u001a\u00020P2\u000e\b\u0004\u0010U\u001a\b\u0012\u0004\u0012\u00020)01H\u0082\bJ(\u0010X\u001a\u00020#2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2¢\u0006\u0002\u0010YJ2\u0010X\u001a\u00020)2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b22\u0006\u00105\u001a\u000206H\u0002¢\u0006\u0002\u0010ZJ\u0014\u0010[\u001a\u00020)*\u00020\u00182\u0006\u0010\\\u001a\u000206H\u0002J\f\u0010]\u001a\u00020)*\u00020\u0018H\u0002J\u0012\u0010^\u001a\u00020)2\b\u0010/\u001a\u0004\u0018\u00010\u001aH\u0002J\u0012\u0010_\u001a\u00020#2\b\u0010/\u001a\u0004\u0018\u00010\u001aH\u0002J(\u0010`\u001a\u00020a2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2¢\u0006\u0002\u0010bJ\u0006\u0010c\u001a\u00020)J\u0010\u0010d\u001a\u00020\u00032\u0006\u0010?\u001a\u00020\u0014H\u0002J\"\u0010e\u001a\u00020)2\u0006\u0010f\u001a\u00020\u00142\u0006\u0010g\u001a\u00020\u00142\b\b\u0002\u0010h\u001a\u00020\u0014H\u0002J\"\u0010i\u001a\u0002Hj\"\u0004\b\u0000\u0010j2\f\u0010L\u001a\b\u0012\u0004\u0012\u0002Hj01H\u0082\b¢\u0006\u0002\u0010kJ\u0014\u0010l\u001a\u00020)*\u00020\u00182\u0006\u0010m\u001a\u000206H\u0002J0\u0010n\u001a\b\u0012\u0004\u0012\u00020.0-2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2H\u0002¢\u0006\u0002\u00103R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\b\u001a\u0004\u0018\u00010\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR$\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u0005@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0019\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u001a\u0012\u0004\u0012\u00020\u00030\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u001b\u001a\u00060\u001cR\u00020\u0000X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u001d\u001a\u00060\u001eR\u00020\u0000X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u001f\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u001a\u0012\u0004\u0012\u00020\u00030\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\"\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u001a\u0012\u0004\u0012\u00020#0\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010$\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001a0%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00108\u001a\u0004\u0018\u0001098BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b:\u0010;R\u000e\u0010V\u001a\u00020WX\u0082D¢\u0006\u0002\n\u0000¨\u0006r"}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "root", "Landroidx/compose/ui/node/LayoutNode;", "slotReusePolicy", "Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;)V", "compositionContext", "Landroidx/compose/runtime/CompositionContext;", "getCompositionContext", "()Landroidx/compose/runtime/CompositionContext;", "setCompositionContext", "(Landroidx/compose/runtime/CompositionContext;)V", "value", "getSlotReusePolicy", "()Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;", "setSlotReusePolicy", "(Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;)V", "currentIndex", "", "currentApproachIndex", "nodeToNodeState", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;", "slotIdToNode", "", "scope", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;", "approachMeasureScope", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$ApproachMeasureScopeImpl;", "precomposeMap", "reusableSlotIdsSet", "Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;", "approachPrecomposeSlotHandleMap", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;", "approachComposedSlotIds", "Landroidx/compose/runtime/collection/MutableVector;", "reusableCount", "precomposedCount", "onReuse", "", "onDeactivate", "onRelease", "subcompose", "", "Landroidx/compose/ui/layout/Measurable;", "slotId", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;", "node", "pausable", "", "(Landroidx/compose/ui/node/LayoutNode;Ljava/lang/Object;ZLkotlin/jvm/functions/Function2;)V", "outOfFrameExecutor", "Landroidx/compose/ui/node/OutOfFrameExecutor;", "getOutOfFrameExecutor", "()Landroidx/compose/ui/node/OutOfFrameExecutor;", "nodeState", "getSlotIdAtIndex", "foldedChildren", FirebaseAnalytics.Param.INDEX, "disposeOrReuseStartingFromIndex", "startIndex", "deactivateOutOfFrame", "executor", "markActiveNodesAsReused", "deactivate", "disposeCurrentNodes", "makeSureStateIsConsistent", "resetLayoutState", "takeNodeFromReusables", "createMeasurePolicy", "Landroidx/compose/ui/layout/MeasurePolicy;", "block", "Lkotlin/Function2;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "Landroidx/compose/ui/unit/Constraints;", "Landroidx/compose/ui/layout/MeasureResult;", "Lkotlin/ExtensionFunctionType;", "disposeUnusedSlotsInApproach", "createMeasureResult", "result", "placeChildrenBlock", "NoIntrinsicsMessage", "", "precompose", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Z)V", "reuseComposition", "forceDeactivate", "cancelPausedPrecomposition", "disposePrecomposedSlot", "createPrecomposedSlotHandle", "precomposePaused", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PausedPrecomposition;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/layout/SubcomposeLayoutState$PausedPrecomposition;", "forceRecomposeChildren", "createNodeAt", "move", "from", TypedValues.TransitionType.S_TO, "count", "ignoreRemeasureRequests", ExifInterface.GPS_DIRECTION_TRUE, "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "applyPausedPrecomposition", "shouldComplete", "approachSubcompose", "NodeState", "Scope", "ApproachMeasureScopeImpl", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¸\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0011\b\u0001\u0018\u00002\u00020\u0001:\u0003opqB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010(\u001a\u00020)H\u0016J\b\u0010*\u001a\u00020)H\u0016J\b\u0010+\u001a\u00020)H\u0016J.\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2¢\u0006\u0002\u00103J:\u0010,\u001a\u00020)2\u0006\u00104\u001a\u00020\u00032\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0006\u00105\u001a\u0002062\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2H\u0002¢\u0006\u0002\u00107J \u0010,\u001a\u00020)2\u0006\u00104\u001a\u00020\u00032\u0006\u0010<\u001a\u00020\u00182\u0006\u00105\u001a\u000206H\u0002J \u0010=\u001a\u0004\u0018\u00010\u001a2\f\u0010>\u001a\b\u0012\u0004\u0012\u00020\u00030-2\u0006\u0010?\u001a\u00020\u0014H\u0002J\u000e\u0010@\u001a\u00020)2\u0006\u0010A\u001a\u00020\u0014J\u0014\u0010B\u001a\u00020)*\u00020\u00182\u0006\u0010C\u001a\u000209H\u0002J\u0010\u0010D\u001a\u00020)2\u0006\u0010E\u001a\u000206H\u0002J\b\u0010F\u001a\u00020)H\u0002J\u0006\u0010G\u001a\u00020)J\f\u0010H\u001a\u00020)*\u00020\u0003H\u0002J\u0014\u0010I\u001a\u0004\u0018\u00010\u00032\b\u0010/\u001a\u0004\u0018\u00010\u001aH\u0002J%\u0010J\u001a\u00020K2\u001d\u0010L\u001a\u0019\u0012\u0004\u0012\u00020N\u0012\u0004\u0012\u00020O\u0012\u0004\u0012\u00020P0M¢\u0006\u0002\bQJ\b\u0010R\u001a\u00020)H\u0002J!\u0010S\u001a\u00020P2\u0006\u0010T\u001a\u00020P2\u000e\b\u0004\u0010U\u001a\b\u0012\u0004\u0012\u00020)01H\u0082\bJ(\u0010X\u001a\u00020#2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2¢\u0006\u0002\u0010YJ2\u0010X\u001a\u00020)2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b22\u0006\u00105\u001a\u000206H\u0002¢\u0006\u0002\u0010ZJ\u0014\u0010[\u001a\u00020)*\u00020\u00182\u0006\u0010\\\u001a\u000206H\u0002J\f\u0010]\u001a\u00020)*\u00020\u0018H\u0002J\u0012\u0010^\u001a\u00020)2\b\u0010/\u001a\u0004\u0018\u00010\u001aH\u0002J\u0012\u0010_\u001a\u00020#2\b\u0010/\u001a\u0004\u0018\u00010\u001aH\u0002J(\u0010`\u001a\u00020a2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2¢\u0006\u0002\u0010bJ\u0006\u0010c\u001a\u00020)J\u0010\u0010d\u001a\u00020\u00032\u0006\u0010?\u001a\u00020\u0014H\u0002J\"\u0010e\u001a\u00020)2\u0006\u0010f\u001a\u00020\u00142\u0006\u0010g\u001a\u00020\u00142\b\b\u0002\u0010h\u001a\u00020\u0014H\u0002J\"\u0010i\u001a\u0002Hj\"\u0004\b\u0000\u0010j2\f\u0010L\u001a\b\u0012\u0004\u0012\u0002Hj01H\u0082\b¢\u0006\u0002\u0010kJ\u0014\u0010l\u001a\u00020)*\u00020\u00182\u0006\u0010m\u001a\u000206H\u0002J0\u0010n\u001a\b\u0012\u0004\u0012\u00020.0-2\b\u0010/\u001a\u0004\u0018\u00010\u001a2\u0011\u00100\u001a\r\u0012\u0004\u0012\u00020)01¢\u0006\u0002\b2H\u0002¢\u0006\u0002\u00103R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\b\u001a\u0004\u0018\u00010\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR$\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u0005@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0019\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u001a\u0012\u0004\u0012\u00020\u00030\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u001b\u001a\u00060\u001cR\u00020\u0000X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u001d\u001a\u00060\u001eR\u00020\u0000X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u001f\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u001a\u0012\u0004\u0012\u00020\u00030\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\"\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u001a\u0012\u0004\u0012\u00020#0\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010$\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001a0%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00108\u001a\u0004\u0018\u0001098BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b:\u0010;R\u000e\u0010V\u001a\u00020WX\u0082D¢\u0006\u0002\n\u0000¨\u0006r"}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "root", "Landroidx/compose/ui/node/LayoutNode;", "slotReusePolicy", "Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;)V", "compositionContext", "Landroidx/compose/runtime/CompositionContext;", "getCompositionContext", "()Landroidx/compose/runtime/CompositionContext;", "setCompositionContext", "(Landroidx/compose/runtime/CompositionContext;)V", "value", "getSlotReusePolicy", "()Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;", "setSlotReusePolicy", "(Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;)V", "currentIndex", "", "currentApproachIndex", "nodeToNodeState", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;", "slotIdToNode", "", "scope", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;", "approachMeasureScope", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$ApproachMeasureScopeImpl;", "precomposeMap", "reusableSlotIdsSet", "Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;", "approachPrecomposeSlotHandleMap", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;", "slotIdsOfCompositionsNeededInApproach", "Landroidx/compose/runtime/collection/MutableVector;", "reusableCount", "precomposedCount", "onReuse", "", "onDeactivate", "onRelease", "subcompose", "", "Landroidx/compose/ui/layout/Measurable;", "slotId", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;", "node", "pausable", "", "(Landroidx/compose/ui/node/LayoutNode;Ljava/lang/Object;ZLkotlin/jvm/functions/Function2;)V", "outOfFrameExecutor", "Landroidx/compose/ui/node/OutOfFrameExecutor;", "getOutOfFrameExecutor", "()Landroidx/compose/ui/node/OutOfFrameExecutor;", "nodeState", "getSlotIdAtIndex", "foldedChildren", FirebaseAnalytics.Param.INDEX, "disposeOrReuseStartingFromIndex", "startIndex", "deactivateOutOfFrame", "executor", "markActiveNodesAsReused", "deactivate", "disposeCurrentNodes", "makeSureStateIsConsistent", "resetLayoutState", "takeNodeFromReusables", "createMeasurePolicy", "Landroidx/compose/ui/layout/MeasurePolicy;", "block", "Lkotlin/Function2;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "Landroidx/compose/ui/unit/Constraints;", "Landroidx/compose/ui/layout/MeasureResult;", "Lkotlin/ExtensionFunctionType;", "disposeUnusedSlotsInApproach", "createMeasureResult", "result", "placeChildrenBlock", "NoIntrinsicsMessage", "", "precompose", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Z)V", "reuseComposition", "forceDeactivate", "cancelPausedPrecomposition", "disposePrecomposedSlot", "createPrecomposedSlotHandle", "precomposePaused", "Landroidx/compose/ui/layout/SubcomposeLayoutState$PausedPrecomposition;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/layout/SubcomposeLayoutState$PausedPrecomposition;", "forceRecomposeChildren", "createNodeAt", "move", "from", TypedValues.TransitionType.S_TO, "count", "ignoreRemeasureRequests", ExifInterface.GPS_DIRECTION_TRUE, "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "applyPausedPrecomposition", "shouldComplete", "approachSubcompose", "NodeState", "Scope", "ApproachMeasureScopeImpl", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycleCallback {
     public static final int $stable = 8;
@@ -76,11 +74,11 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     private final MutableScatterMap<Object, LayoutNode> precomposeMap = ScatterMapKt.mutableScatterMapOf();
     private final SubcomposeSlotReusePolicy.SlotIdsSet reusableSlotIdsSet = new SubcomposeSlotReusePolicy.SlotIdsSet(null, 1, null);
     private final MutableScatterMap<Object, SubcomposeLayoutState.PrecomposedSlotHandle> approachPrecomposeSlotHandleMap = ScatterMapKt.mutableScatterMapOf();
-    private final MutableVector<Object> approachComposedSlotIds = new MutableVector<>(new Object[16], 0);
+    private final MutableVector<Object> slotIdsOfCompositionsNeededInApproach = new MutableVector<>(new Object[16], 0);
     private final String NoIntrinsicsMessage = "Asking for intrinsic measurements of SubcomposeLayout layouts is not supported. This includes components that are built on top of SubcomposeLayout, such as lazy lists, BoxWithConstraints, TabRow, etc. To mitigate this:\n- if intrinsic measurements are used to achieve 'match parent' sizing, consider replacing the parent of the component with a custom layout which controls the order in which children are measured, making intrinsic measurement not needed\n- adding a size modifier to the component, in order to fast return the queried intrinsic measurement.";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applyPausedPrecomposition$lambda$28$lambda$27$lambda$26() {
+    public static final boolean applyPausedPrecomposition$lambda$0$0$0() {
         return false;
     }
 
@@ -105,7 +103,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         if (this.slotReusePolicy != subcomposeSlotReusePolicy) {
             this.slotReusePolicy = subcomposeSlotReusePolicy;
             markActiveNodesAsReused(false);
-            LayoutNode.requestRemeasure$ui_release$default(this.root, false, false, false, 7, null);
+            LayoutNode.requestRemeasure$ui$default(this.root, false, false, false, 7, null);
         }
     }
 
@@ -127,8 +125,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     public final List<Measurable> subcompose(Object obj, Function2<? super Composer, ? super Integer, Unit> function2) {
         LayoutNodeSubcompositionsState layoutNodeSubcompositionsState;
         makeSureStateIsConsistent();
-        LayoutNode.LayoutState layoutState$ui_release = this.root.getLayoutState$ui_release();
-        if (!(layoutState$ui_release == LayoutNode.LayoutState.Measuring || layoutState$ui_release == LayoutNode.LayoutState.LayingOut || layoutState$ui_release == LayoutNode.LayoutState.LookaheadMeasuring || layoutState$ui_release == LayoutNode.LayoutState.LookaheadLayingOut)) {
+        LayoutNode.LayoutState layoutState$ui = this.root.getLayoutState$ui();
+        if (!(layoutState$ui == LayoutNode.LayoutState.Measuring || layoutState$ui == LayoutNode.LayoutState.LayingOut || layoutState$ui == LayoutNode.LayoutState.LookaheadMeasuring || layoutState$ui == LayoutNode.LayoutState.LookaheadLayingOut)) {
             InlineClassHelperKt.throwIllegalStateException("subcompose can only be used inside the measure or layout blocks");
         }
         MutableScatterMap<Object, LayoutNode> mutableScatterMap = this.slotIdToNode;
@@ -136,6 +134,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         if (layoutNode == null) {
             layoutNode = this.precomposeMap.remove(obj);
             if (layoutNode != null) {
+                this.nodeToNodeState.get(layoutNode);
                 if (!(this.precomposedCount > 0)) {
                     InlineClassHelperKt.throwIllegalStateException("Check failed.");
                 }
@@ -149,8 +148,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             mutableScatterMap.set(obj, layoutNode);
         }
         LayoutNode layoutNode2 = layoutNode;
-        if (CollectionsKt.getOrNull(this.root.getFoldedChildren$ui_release(), this.currentIndex) != layoutNode2) {
-            int indexOf = this.root.getFoldedChildren$ui_release().indexOf(layoutNode2);
+        if (CollectionsKt.getOrNull(this.root.getFoldedChildren$ui(), this.currentIndex) != layoutNode2) {
+            int indexOf = this.root.getFoldedChildren$ui().indexOf(layoutNode2);
             if (!(indexOf >= this.currentIndex)) {
                 InlineClassHelperKt.throwIllegalArgumentException("Key \"" + obj + "\" was already used. If you are using LazyColumn/Row please make sure you provide a unique key for each item.");
             }
@@ -160,25 +159,25 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 move$default(layoutNodeSubcompositionsState, indexOf, i, 0, 4, null);
                 layoutNodeSubcompositionsState.currentIndex++;
                 subcompose(layoutNode2, obj, false, function2);
-                if (layoutState$ui_release != LayoutNode.LayoutState.Measuring || layoutState$ui_release == LayoutNode.LayoutState.LayingOut) {
-                    return layoutNode2.getChildMeasurables$ui_release();
+                if (layoutState$ui != LayoutNode.LayoutState.Measuring || layoutState$ui == LayoutNode.LayoutState.LayingOut) {
+                    return layoutNode2.getChildMeasurables$ui();
                 }
-                return layoutNode2.getChildLookaheadMeasurables$ui_release();
+                return layoutNode2.getChildLookaheadMeasurables$ui();
             }
         }
         layoutNodeSubcompositionsState = this;
         layoutNodeSubcompositionsState.currentIndex++;
         subcompose(layoutNode2, obj, false, function2);
-        if (layoutState$ui_release != LayoutNode.LayoutState.Measuring) {
+        if (layoutState$ui != LayoutNode.LayoutState.Measuring) {
         }
-        return layoutNode2.getChildMeasurables$ui_release();
+        return layoutNode2.getChildMeasurables$ui();
     }
 
     private final void subcompose(LayoutNode layoutNode, Object obj, boolean z, Function2<? super Composer, ? super Integer, Unit> function2) {
         MutableScatterMap<LayoutNode, NodeState> mutableScatterMap = this.nodeToNodeState;
         NodeState nodeState = mutableScatterMap.get(layoutNode);
         if (nodeState == null) {
-            NodeState nodeState2 = new NodeState(obj, ComposableSingletons$SubcomposeLayoutKt.INSTANCE.getLambda$641200809$ui_release(), null, 4, null);
+            NodeState nodeState2 = new NodeState(obj, ComposableSingletons$SubcomposeLayoutKt.INSTANCE.getLambda$641200809$ui(), null, 4, null);
             mutableScatterMap.set(layoutNode, nodeState2);
             nodeState = nodeState2;
         }
@@ -203,10 +202,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     }
 
     private final OutOfFrameExecutor getOutOfFrameExecutor() {
-        if (ComposeUiFlags.isOutOfFrameDeactivationEnabled) {
-            return LayoutNodeKt.requireOwner(this.root).getOutOfFrameExecutor();
-        }
-        return null;
+        return LayoutNodeKt.requireOwner(this.root).getOutOfFrameExecutor();
     }
 
     private final void subcompose(LayoutNode layoutNode, final NodeState nodeState, boolean z) {
@@ -254,10 +250,10 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                     }
 
                     public final void invoke(Composer composer, int i) {
-                        ComposerKt.sourceInformation(composer, "C683@31030L46:SubcomposeLayout.kt#80mrfh");
+                        ComposerKt.sourceInformation(composer, "C706@32593L46:SubcomposeLayout.kt#80mrfh");
                         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(1524156494, i, -1, "androidx.compose.ui.layout.LayoutNodeSubcompositionsState.subcompose.<anonymous>.<anonymous>.<anonymous> (SubcomposeLayout.kt:683)");
+                                ComposerKt.traceEventStart(1524156494, i, -1, "androidx.compose.ui.layout.LayoutNodeSubcompositionsState.subcompose.<anonymous>.<anonymous>.<anonymous> (SubcomposeLayout.kt:706)");
                             }
                             boolean active = LayoutNodeSubcompositionsState.NodeState.this.getActive();
                             Function2<Composer, Integer, Unit> function2 = content;
@@ -312,14 +308,14 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     public final void disposeOrReuseStartingFromIndex(int i) {
         boolean z = false;
         this.reusableCount = 0;
-        List<LayoutNode> foldedChildren$ui_release = this.root.getFoldedChildren$ui_release();
-        int size = (foldedChildren$ui_release.size() - this.precomposedCount) - 1;
+        List<LayoutNode> foldedChildren$ui = this.root.getFoldedChildren$ui();
+        int size = (foldedChildren$ui.size() - this.precomposedCount) - 1;
         if (i <= size) {
             this.reusableSlotIdsSet.clear();
             if (i <= size) {
                 int i2 = i;
                 while (true) {
-                    this.reusableSlotIdsSet.add(getSlotIdAtIndex(foldedChildren$ui_release, i2));
+                    this.reusableSlotIdsSet.add(getSlotIdAtIndex(foldedChildren$ui, i2));
                     if (i2 == size) {
                         break;
                     }
@@ -334,7 +330,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             boolean z2 = false;
             while (size >= i) {
                 try {
-                    LayoutNode layoutNode = foldedChildren$ui_release.get(size);
+                    LayoutNode layoutNode = foldedChildren$ui.get(size);
                     NodeState nodeState = this.nodeToNodeState.get(layoutNode);
                     Intrinsics.checkNotNull(nodeState);
                     NodeState nodeState2 = nodeState;
@@ -347,7 +343,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                         if (composition != null) {
                             composition.dispose();
                         }
-                        this.root.removeAt$ui_release(size, 1);
+                        this.root.removeAt$ui(size, 1);
                         Unit unit = Unit.INSTANCE;
                         layoutNode2.ignoreRemeasureRequests = false;
                     } else {
@@ -404,8 +400,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     private final void markActiveNodesAsReused(boolean z) {
         this.precomposedCount = 0;
         this.precomposeMap.clear();
-        List<LayoutNode> foldedChildren$ui_release = this.root.getFoldedChildren$ui_release();
-        int size = foldedChildren$ui_release.size();
+        List<LayoutNode> foldedChildren$ui = this.root.getFoldedChildren$ui();
+        int size = foldedChildren$ui.size();
         if (this.reusableCount != size) {
             this.reusableCount = size;
             Snapshot.Companion companion = Snapshot.Companion;
@@ -414,7 +410,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
             for (int i = 0; i < size; i++) {
                 try {
-                    LayoutNode layoutNode = foldedChildren$ui_release.get(i);
+                    LayoutNode layoutNode = foldedChildren$ui.get(i);
                     NodeState nodeState = this.nodeToNodeState.get(layoutNode);
                     if (nodeState != null && nodeState.getActive()) {
                         resetLayoutState(layoutNode);
@@ -463,7 +459,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 i++;
             }
         }
-        this.root.removeAll$ui_release();
+        this.root.removeAll$ui();
         Unit unit = Unit.INSTANCE;
         layoutNode.ignoreRemeasureRequests = false;
         this.nodeToNodeState.clear();
@@ -475,7 +471,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     }
 
     public final void makeSureStateIsConsistent() {
-        int size = this.root.getFoldedChildren$ui_release().size();
+        int size = this.root.getFoldedChildren$ui().size();
         if (!(this.nodeToNodeState.getSize() == size)) {
             InlineClassHelperKt.throwIllegalArgumentException("Inconsistency between the count of nodes tracked by the state (" + this.nodeToNodeState.getSize() + ") and the children count on the SubcomposeLayout (" + size + "). Are you trying to use the state of the disposed SubcomposeLayout?");
         }
@@ -489,10 +485,10 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     }
 
     private final void resetLayoutState(LayoutNode layoutNode) {
-        layoutNode.getMeasurePassDelegate$ui_release().setMeasuredByParent$ui_release(LayoutNode.UsageByParent.NotUsed);
-        LookaheadPassDelegate lookaheadPassDelegate$ui_release = layoutNode.getLookaheadPassDelegate$ui_release();
-        if (lookaheadPassDelegate$ui_release != null) {
-            lookaheadPassDelegate$ui_release.setMeasuredByParent$ui_release(LayoutNode.UsageByParent.NotUsed);
+        layoutNode.getMeasurePassDelegate$ui().setMeasuredByParent$ui(LayoutNode.UsageByParent.NotUsed);
+        LookaheadPassDelegate lookaheadPassDelegate$ui = layoutNode.getLookaheadPassDelegate$ui();
+        if (lookaheadPassDelegate$ui != null) {
+            lookaheadPassDelegate$ui.setMeasuredByParent$ui(LayoutNode.UsageByParent.NotUsed);
         }
     }
 
@@ -502,8 +498,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         if (this.reusableCount == 0) {
             return null;
         }
-        List<LayoutNode> foldedChildren$ui_release = this.root.getFoldedChildren$ui_release();
-        int size = foldedChildren$ui_release.size() - this.precomposedCount;
+        List<LayoutNode> foldedChildren$ui = this.root.getFoldedChildren$ui();
+        int size = foldedChildren$ui.size() - this.precomposedCount;
         int i2 = size - this.reusableCount;
         int i3 = size - 1;
         int i4 = i3;
@@ -511,7 +507,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             if (i4 < i2) {
                 i = -1;
                 break;
-            } else if (Intrinsics.areEqual(getSlotIdAtIndex(foldedChildren$ui_release, i4), obj)) {
+            } else if (Intrinsics.areEqual(getSlotIdAtIndex(foldedChildren$ui, i4), obj)) {
                 i = i4;
                 break;
             } else {
@@ -520,7 +516,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         }
         if (i == -1) {
             while (i3 >= i2) {
-                NodeState nodeState = this.nodeToNodeState.get(foldedChildren$ui_release.get(i3));
+                NodeState nodeState = this.nodeToNodeState.get(foldedChildren$ui.get(i3));
                 Intrinsics.checkNotNull(nodeState);
                 NodeState nodeState2 = nodeState;
                 if (nodeState2.getSlotId() == SubcomposeLayoutKt.access$getReusedSlotId$p() || this.slotReusePolicy.areCompatible(obj, nodeState2.getSlotId())) {
@@ -540,7 +536,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             move(i4, i2, 1);
         }
         this.reusableCount--;
-        LayoutNode layoutNode = foldedChildren$ui_release.get(i2);
+        LayoutNode layoutNode = foldedChildren$ui.get(i2);
         NodeState nodeState3 = this.nodeToNodeState.get(layoutNode);
         Intrinsics.checkNotNull(nodeState3);
         NodeState nodeState4 = nodeState3;
@@ -556,15 +552,15 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         return new LayoutNode.NoIntrinsicsMeasurePolicy(str) { // from class: androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1
             @Override // androidx.compose.ui.layout.MeasurePolicy
             /* renamed from: measure-3p2s80s */
-            public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+            public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                 LayoutNodeSubcompositionsState.ApproachMeasureScopeImpl approachMeasureScopeImpl;
                 final int i;
                 LayoutNodeSubcompositionsState.this.scope.setLayoutDirection(measureScope.getLayoutDirection());
                 LayoutNodeSubcompositionsState.this.scope.setDensity(measureScope.getDensity());
                 LayoutNodeSubcompositionsState.this.scope.setFontScale(measureScope.getFontScale());
-                if (measureScope.isLookingAhead() || LayoutNodeSubcompositionsState.this.root.getLookaheadRoot$ui_release() == null) {
+                if (measureScope.isLookingAhead() || LayoutNodeSubcompositionsState.this.root.getLookaheadRoot$ui() == null) {
                     LayoutNodeSubcompositionsState.this.currentIndex = 0;
-                    final MeasureResult invoke = function2.invoke(LayoutNodeSubcompositionsState.this.scope, Constraints.m7936boximpl(j));
+                    final MeasureResult invoke = function2.invoke(LayoutNodeSubcompositionsState.this.scope, Constraints.m8198boximpl(j));
                     final int i2 = LayoutNodeSubcompositionsState.this.currentIndex;
                     final LayoutNodeSubcompositionsState layoutNodeSubcompositionsState = LayoutNodeSubcompositionsState.this;
                     return new MeasureResult() { // from class: androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure-3p2s80s$$inlined$createMeasureResult$2
@@ -592,15 +588,17 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                         public void placeChildren() {
                             layoutNodeSubcompositionsState.currentIndex = i2;
                             invoke.placeChildren();
-                            LayoutNodeSubcompositionsState layoutNodeSubcompositionsState2 = layoutNodeSubcompositionsState;
-                            layoutNodeSubcompositionsState2.disposeOrReuseStartingFromIndex(layoutNodeSubcompositionsState2.currentIndex);
+                            if (layoutNodeSubcompositionsState.root.getLookaheadRoot$ui() == null) {
+                                LayoutNodeSubcompositionsState layoutNodeSubcompositionsState2 = layoutNodeSubcompositionsState;
+                                layoutNodeSubcompositionsState2.disposeOrReuseStartingFromIndex(layoutNodeSubcompositionsState2.currentIndex);
+                            }
                         }
                     };
                 }
                 LayoutNodeSubcompositionsState.this.currentApproachIndex = 0;
                 Function2<SubcomposeMeasureScope, Constraints, MeasureResult> function22 = function2;
                 approachMeasureScopeImpl = LayoutNodeSubcompositionsState.this.approachMeasureScope;
-                final MeasureResult invoke2 = function22.invoke(approachMeasureScopeImpl, Constraints.m7936boximpl(j));
+                final MeasureResult invoke2 = function22.invoke(approachMeasureScopeImpl, Constraints.m8198boximpl(j));
                 i = LayoutNodeSubcompositionsState.this.currentApproachIndex;
                 final LayoutNodeSubcompositionsState layoutNodeSubcompositionsState2 = LayoutNodeSubcompositionsState.this;
                 return new MeasureResult() { // from class: androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure-3p2s80s$$inlined$createMeasureResult$1
@@ -629,6 +627,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                         layoutNodeSubcompositionsState2.currentApproachIndex = i;
                         invoke2.placeChildren();
                         layoutNodeSubcompositionsState2.disposeUnusedSlotsInApproach();
+                        LayoutNodeSubcompositionsState layoutNodeSubcompositionsState3 = layoutNodeSubcompositionsState2;
+                        layoutNodeSubcompositionsState3.disposeOrReuseStartingFromIndex(layoutNodeSubcompositionsState3.currentIndex);
                     }
                 };
             }
@@ -653,9 +653,14 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                         int i4 = (i << 3) + i3;
                         Object obj = mutableScatterMap.keys[i4];
                         SubcomposeLayoutState.PrecomposedSlotHandle precomposedSlotHandle = (SubcomposeLayoutState.PrecomposedSlotHandle) mutableScatterMap.values[i4];
-                        int indexOf = this.approachComposedSlotIds.indexOf(obj);
+                        int indexOf = this.slotIdsOfCompositionsNeededInApproach.indexOf(obj);
                         if (indexOf < 0 || indexOf >= this.currentApproachIndex) {
-                            precomposedSlotHandle.dispose();
+                            if (indexOf >= 0) {
+                                this.slotIdsOfCompositionsNeededInApproach.set(indexOf, SubcomposeLayoutKt.access$getUnspecifiedSlotId$p());
+                            }
+                            if (this.precomposeMap.contains(obj)) {
+                                precomposedSlotHandle.dispose();
+                            }
                             mutableScatterMap.removeValueAt(i4);
                         }
                     }
@@ -718,10 +723,10 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             if (layoutNode == null) {
                 layoutNode = takeNodeFromReusables(obj);
                 if (layoutNode != null) {
-                    move(this.root.getFoldedChildren$ui_release().indexOf(layoutNode), this.root.getFoldedChildren$ui_release().size(), 1);
+                    move(this.root.getFoldedChildren$ui().indexOf(layoutNode), this.root.getFoldedChildren$ui().size(), 1);
                     this.precomposedCount++;
                 } else {
-                    layoutNode = createNodeAt(this.root.getFoldedChildren$ui_release().size());
+                    layoutNode = createNodeAt(this.root.getFoldedChildren$ui().size());
                     this.precomposedCount++;
                 }
                 mutableScatterMap.set(obj, layoutNode);
@@ -778,8 +783,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             if (!(this.precomposedCount > 0)) {
                 InlineClassHelperKt.throwIllegalStateException("No pre-composed items to dispose");
             }
-            int indexOf = this.root.getFoldedChildren$ui_release().indexOf(remove);
-            if (!(indexOf >= this.root.getFoldedChildren$ui_release().size() - this.precomposedCount)) {
+            int indexOf = this.root.getFoldedChildren$ui().indexOf(remove);
+            if (!(indexOf >= this.root.getFoldedChildren$ui().size() - this.precomposedCount)) {
                 InlineClassHelperKt.throwIllegalStateException("Item is not in pre-composed item range");
             }
             this.reusableCount++;
@@ -788,9 +793,12 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             if (nodeState != null) {
                 cancelPausedPrecomposition(nodeState);
             }
-            int size = (this.root.getFoldedChildren$ui_release().size() - this.precomposedCount) - this.reusableCount;
+            int size = (this.root.getFoldedChildren$ui().size() - this.precomposedCount) - this.reusableCount;
             move(indexOf, size, 1);
             disposeOrReuseStartingFromIndex(size);
+        }
+        if (this.slotIdsOfCompositionsNeededInApproach.contains(obj)) {
+            LayoutNode.requestRemeasure$ui$default(this.root, true, false, false, 6, null);
         }
     }
 
@@ -818,25 +826,25 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             @Override // androidx.compose.ui.layout.SubcomposeLayoutState.PrecomposedSlotHandle
             public int getPlaceablesCount() {
                 MutableScatterMap mutableScatterMap;
-                List<LayoutNode> children$ui_release;
+                List<LayoutNode> children$ui;
                 mutableScatterMap = LayoutNodeSubcompositionsState.this.precomposeMap;
                 LayoutNode layoutNode = (LayoutNode) mutableScatterMap.get(obj);
-                if (layoutNode == null || (children$ui_release = layoutNode.getChildren$ui_release()) == null) {
+                if (layoutNode == null || (children$ui = layoutNode.getChildren$ui()) == null) {
                     return 0;
                 }
-                return children$ui_release.size();
+                return children$ui.size();
             }
 
             @Override // androidx.compose.ui.layout.SubcomposeLayoutState.PrecomposedSlotHandle
             /* renamed from: premeasure-0kLqBqw  reason: not valid java name */
-            public void mo6725premeasure0kLqBqw(int i, long j) {
+            public void mo6903premeasure0kLqBqw(int i, long j) {
                 MutableScatterMap mutableScatterMap;
                 mutableScatterMap = LayoutNodeSubcompositionsState.this.precomposeMap;
                 LayoutNode layoutNode = (LayoutNode) mutableScatterMap.get(obj);
                 if (layoutNode == null || !layoutNode.isAttached()) {
                     return;
                 }
-                int size = layoutNode.getChildren$ui_release().size();
+                int size = layoutNode.getChildren$ui().size();
                 if (i < 0 || i >= size) {
                     InlineClassHelperKt.throwIndexOutOfBoundsException("Index (" + i + ") is out of bound of [0, " + size + ')');
                 }
@@ -845,7 +853,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 }
                 LayoutNode layoutNode2 = LayoutNodeSubcompositionsState.this.root;
                 layoutNode2.ignoreRemeasureRequests = true;
-                LayoutNodeKt.requireOwner(layoutNode).mo7052measureAndLayout0kLqBqw(layoutNode.getChildren$ui_release().get(i), j);
+                LayoutNodeKt.requireOwner(layoutNode).mo7262measureAndLayout0kLqBqw(layoutNode.getChildren$ui().get(i), j);
                 Unit unit = Unit.INSTANCE;
                 layoutNode2.ignoreRemeasureRequests = false;
                 this.hasPremeasured.add(i);
@@ -854,32 +862,32 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             @Override // androidx.compose.ui.layout.SubcomposeLayoutState.PrecomposedSlotHandle
             public void traverseDescendants(Object obj2, Function1<? super TraversableNode, ? extends TraversableNode.Companion.TraverseDescendantsAction> function1) {
                 MutableScatterMap mutableScatterMap;
-                NodeChain nodes$ui_release;
-                Modifier.Node head$ui_release;
+                NodeChain nodes$ui;
+                Modifier.Node head$ui;
                 mutableScatterMap = LayoutNodeSubcompositionsState.this.precomposeMap;
                 LayoutNode layoutNode = (LayoutNode) mutableScatterMap.get(obj);
-                if (layoutNode == null || (nodes$ui_release = layoutNode.getNodes$ui_release()) == null || (head$ui_release = nodes$ui_release.getHead$ui_release()) == null) {
+                if (layoutNode == null || (nodes$ui = layoutNode.getNodes$ui()) == null || (head$ui = nodes$ui.getHead$ui()) == null) {
                     return;
                 }
-                TraversableNodeKt.traverseDescendants(head$ui_release, obj2, function1);
+                TraversableNodeKt.traverseDescendants(head$ui, obj2, function1);
             }
 
             @Override // androidx.compose.ui.layout.SubcomposeLayoutState.PrecomposedSlotHandle
             /* renamed from: getSize-YEO4UFw  reason: not valid java name */
-            public long mo6724getSizeYEO4UFw(int i) {
+            public long mo6902getSizeYEO4UFw(int i) {
                 MutableScatterMap mutableScatterMap;
                 mutableScatterMap = LayoutNodeSubcompositionsState.this.precomposeMap;
                 LayoutNode layoutNode = (LayoutNode) mutableScatterMap.get(obj);
                 if (layoutNode != null && layoutNode.isAttached()) {
-                    int size = layoutNode.getChildren$ui_release().size();
+                    int size = layoutNode.getChildren$ui().size();
                     if (i < 0 || i >= size) {
                         InlineClassHelperKt.throwIndexOutOfBoundsException("Index (" + i + ") is out of bound of [0, " + size + ')');
                     }
                     if (this.hasPremeasured.contains(i)) {
-                        return IntSize.m8162constructorimpl((layoutNode.getChildren$ui_release().get(i).getWidth() << 32) | (layoutNode.getChildren$ui_release().get(i).getHeight() & 4294967295L));
+                        return IntSize.m8424constructorimpl((layoutNode.getChildren$ui().get(i).getWidth() << 32) | (layoutNode.getChildren$ui().get(i).getHeight() & 4294967295L));
                     }
                 }
-                return IntSize.Companion.m8172getZeroYbymL2g();
+                return IntSize.Companion.m8434getZeroYbymL2g();
             }
         };
     }
@@ -952,6 +960,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 }
                 Snapshot.Companion companion = Snapshot.Companion;
                 LayoutNodeSubcompositionsState layoutNodeSubcompositionsState = LayoutNodeSubcompositionsState.this;
+                Object obj2 = obj;
                 Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
                 Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
                 Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
@@ -980,7 +989,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     }
 
     public final void forceRecomposeChildren() {
-        if (this.reusableCount != this.root.getFoldedChildren$ui_release().size()) {
+        if (this.reusableCount != this.root.getFoldedChildren$ui().size()) {
             MutableScatterMap<LayoutNode, NodeState> mutableScatterMap = this.nodeToNodeState;
             Object[] objArr = mutableScatterMap.values;
             long[] jArr = mutableScatterMap.metadata;
@@ -1007,13 +1016,13 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                     i++;
                 }
             }
-            if (this.root.getLookaheadRoot$ui_release() != null) {
-                if (this.root.getLookaheadMeasurePending$ui_release()) {
+            if (this.root.getLookaheadRoot$ui() != null) {
+                if (this.root.getLookaheadMeasurePending$ui()) {
                     return;
                 }
-                LayoutNode.requestLookaheadRemeasure$ui_release$default(this.root, false, false, false, 7, null);
-            } else if (!this.root.getMeasurePending$ui_release()) {
-                LayoutNode.requestRemeasure$ui_release$default(this.root, false, false, false, 7, null);
+                LayoutNode.requestLookaheadRemeasure$ui$default(this.root, false, false, false, 7, null);
+            } else if (!this.root.getMeasurePending$ui()) {
+                LayoutNode.requestRemeasure$ui$default(this.root, false, false, false, 7, null);
             }
         }
     }
@@ -1022,7 +1031,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         LayoutNode layoutNode = new LayoutNode(true, 0, 2, null);
         LayoutNode layoutNode2 = this.root;
         layoutNode2.ignoreRemeasureRequests = true;
-        this.root.insertAt$ui_release(i, layoutNode);
+        this.root.insertAt$ui(i, layoutNode);
         Unit unit = Unit.INSTANCE;
         layoutNode2.ignoreRemeasureRequests = false;
         return layoutNode;
@@ -1059,9 +1068,9 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                         pausedComposition.resume(new ShouldPauseCallback() { // from class: androidx.compose.ui.layout.LayoutNodeSubcompositionsState$$ExternalSyntheticLambda0
                             @Override // androidx.compose.runtime.ShouldPauseCallback
                             public final boolean shouldPause() {
-                                boolean applyPausedPrecomposition$lambda$28$lambda$27$lambda$26;
-                                applyPausedPrecomposition$lambda$28$lambda$27$lambda$26 = LayoutNodeSubcompositionsState.applyPausedPrecomposition$lambda$28$lambda$27$lambda$26();
-                                return applyPausedPrecomposition$lambda$28$lambda$27$lambda$26;
+                                boolean applyPausedPrecomposition$lambda$0$0$0;
+                                applyPausedPrecomposition$lambda$0$0$0 = LayoutNodeSubcompositionsState.applyPausedPrecomposition$lambda$0$0$0();
+                                return applyPausedPrecomposition$lambda$0$0$0;
                             }
                         });
                     }
@@ -1079,7 +1088,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SubcomposeLayout.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\f\b\u0002\u0018\u00002\u00020\u0001B0\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0001\u0012\u0011\u0010\u0003\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\b\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nR\u001c\u0010\u0002\u001a\u0004\u0018\u00010\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR'\u0010\u0003\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\b\u0006X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0013\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\u0018\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001e\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010\u001b\"\u0004\b \u0010\u001dR\u001c\u0010!\u001a\u0004\u0018\u00010\"X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R \u0010'\u001a\b\u0012\u0004\u0012\u00020\u00190(X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010*\"\u0004\b+\u0010,R\u001a\u0010-\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010\u001b\"\u0004\b/\u0010\u001dR$\u00101\u001a\u00020\u00192\u0006\u00100\u001a\u00020\u00198F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b2\u0010\u001b\"\u0004\b3\u0010\u001d¨\u00064"}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;", "", "slotId", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "composition", "Landroidx/compose/runtime/ReusableComposition;", "<init>", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/ReusableComposition;)V", "getSlotId", "()Ljava/lang/Object;", "setSlotId", "(Ljava/lang/Object;)V", "getContent", "()Lkotlin/jvm/functions/Function2;", "setContent", "(Lkotlin/jvm/functions/Function2;)V", "Lkotlin/jvm/functions/Function2;", "getComposition", "()Landroidx/compose/runtime/ReusableComposition;", "setComposition", "(Landroidx/compose/runtime/ReusableComposition;)V", "forceRecompose", "", "getForceRecompose", "()Z", "setForceRecompose", "(Z)V", "forceReuse", "getForceReuse", "setForceReuse", "pausedComposition", "Landroidx/compose/runtime/PausedComposition;", "getPausedComposition", "()Landroidx/compose/runtime/PausedComposition;", "setPausedComposition", "(Landroidx/compose/runtime/PausedComposition;)V", "activeState", "Landroidx/compose/runtime/MutableState;", "getActiveState", "()Landroidx/compose/runtime/MutableState;", "setActiveState", "(Landroidx/compose/runtime/MutableState;)V", "composedWithReusableContentHost", "getComposedWithReusableContentHost", "setComposedWithReusableContentHost", "value", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, "getActive", "setActive", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u0001B0\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0001\u0012\u0011\u0010\u0003\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\b\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nJ\u0015\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020:¢\u0006\u0004\b;\u0010<R\u001c\u0010\u0002\u001a\u0004\u0018\u00010\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR'\u0010\u0003\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\b\u0006X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0013\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\u0018\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001e\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010\u001b\"\u0004\b \u0010\u001dR\u001c\u0010!\u001a\u0004\u0018\u00010\"X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R \u0010'\u001a\b\u0012\u0004\u0012\u00020\u00190(X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010*\"\u0004\b+\u0010,R\u001a\u0010-\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010\u001b\"\u0004\b/\u0010\u001dR$\u00101\u001a\u00020\u00192\u0006\u00100\u001a\u00020\u00198F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b2\u0010\u001b\"\u0004\b3\u0010\u001dR\u0013\u00104\u001a\u0004\u0018\u000105¢\u0006\b\n\u0000\u001a\u0004\b6\u00107¨\u0006="}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;", "", "slotId", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "composition", "Landroidx/compose/runtime/ReusableComposition;", "<init>", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/ReusableComposition;)V", "getSlotId", "()Ljava/lang/Object;", "setSlotId", "(Ljava/lang/Object;)V", "getContent", "()Lkotlin/jvm/functions/Function2;", "setContent", "(Lkotlin/jvm/functions/Function2;)V", "Lkotlin/jvm/functions/Function2;", "getComposition", "()Landroidx/compose/runtime/ReusableComposition;", "setComposition", "(Landroidx/compose/runtime/ReusableComposition;)V", "forceRecompose", "", "getForceRecompose", "()Z", "setForceRecompose", "(Z)V", "forceReuse", "getForceReuse", "setForceReuse", "pausedComposition", "Landroidx/compose/runtime/PausedComposition;", "getPausedComposition", "()Landroidx/compose/runtime/PausedComposition;", "setPausedComposition", "(Landroidx/compose/runtime/PausedComposition;)V", "activeState", "Landroidx/compose/runtime/MutableState;", "getActiveState", "()Landroidx/compose/runtime/MutableState;", "setActiveState", "(Landroidx/compose/runtime/MutableState;)V", "composedWithReusableContentHost", "getComposedWithReusableContentHost", "setComposedWithReusableContentHost", "value", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, "getActive", "setActive", "operations", "Landroidx/collection/MutableIntList;", "getOperations", "()Landroidx/collection/MutableIntList;", "record", "op", "Landroidx/compose/ui/layout/SLOperation;", "record-Fsph7yY", "(I)V", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class NodeState {
         private MutableState<Boolean> activeState;
@@ -1088,6 +1097,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         private Function2<? super Composer, ? super Integer, Unit> content;
         private boolean forceRecompose;
         private boolean forceReuse;
+        private final MutableIntList operations;
         private PausedComposition pausedComposition;
         private Object slotId;
 
@@ -1098,6 +1108,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             this.composition = reusableComposition;
             mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(true, null, 2, null);
             this.activeState = mutableStateOf$default;
+            this.operations = null;
         }
 
         public /* synthetic */ NodeState(Object obj, Function2 function2, ReusableComposition reusableComposition, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -1175,11 +1186,27 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         public final void setActive(boolean z) {
             this.activeState.setValue(Boolean.valueOf(z));
         }
+
+        public final MutableIntList getOperations() {
+            return this.operations;
+        }
+
+        /* renamed from: record-Fsph7yY  reason: not valid java name */
+        public final void m6901recordFsph7yY(int i) {
+            MutableIntList mutableIntList = this.operations;
+            if (mutableIntList == null) {
+                return;
+            }
+            mutableIntList.add(i);
+            if (mutableIntList._size >= 50) {
+                mutableIntList.removeRange(0, 10);
+            }
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SubcomposeLayout.kt */
-    @Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u00172\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\u0011\u0010\u001b\u001a\r\u0012\u0004\u0012\u00020\u001d0\u001c¢\u0006\u0002\b\u001eH\u0016¢\u0006\u0002\u0010\u001fJ`\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020#2\u0012\u0010%\u001a\u000e\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020#0&2\u0019\u0010(\u001a\u0015\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020\u001d\u0018\u00010)¢\u0006\u0002\b+2\u0017\u0010,\u001a\u0013\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020\u001d0)¢\u0006\u0002\b+H\u0016R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u000bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\r\"\u0004\b\u0012\u0010\u000fR\u0014\u0010\u0013\u001a\u00020\u00148VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0015¨\u0006."}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "<init>", "(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "density", "", "getDensity", "()F", "setDensity", "(F)V", "fontScale", "getFontScale", "setFontScale", "isLookingAhead", "", "()Z", "subcompose", "", "Landroidx/compose/ui/layout/Measurable;", "slotId", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;", TtmlNode.TAG_LAYOUT, "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "rulers", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/RulerScope;", "Lkotlin/ExtensionFunctionType;", "placementBlock", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u00172\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\u0011\u0010\u001b\u001a\r\u0012\u0004\u0012\u00020\u001d0\u001c¢\u0006\u0002\b\u001eH\u0016¢\u0006\u0002\u0010\u001fJ`\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020#2\u0012\u0010%\u001a\u000e\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020#0&2\u0019\u0010(\u001a\u0015\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020\u001d\u0018\u00010)¢\u0006\u0002\b+2\u0017\u0010,\u001a\u0013\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020\u001d0)¢\u0006\u0002\b+H\u0016R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u000bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\r\"\u0004\b\u0012\u0010\u000fR\u0014\u0010\u0013\u001a\u00020\u00148VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0015¨\u0006."}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "<init>", "(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "density", "", "getDensity", "()F", "setDensity", "(F)V", "fontScale", "getFontScale", "setFontScale", "isLookingAhead", "", "()Z", "subcompose", "", "Landroidx/compose/ui/layout/Measurable;", "slotId", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;", "layout", "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "rulers", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/RulerScope;", "Lkotlin/ExtensionFunctionType;", "placementBlock", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public final class Scope implements SubcomposeMeasureScope {
         private float density;
@@ -1218,7 +1245,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
         @Override // androidx.compose.ui.layout.IntrinsicMeasureScope
         public boolean isLookingAhead() {
-            return LayoutNodeSubcompositionsState.this.root.getLayoutState$ui_release() == LayoutNode.LayoutState.LookaheadLayingOut || LayoutNodeSubcompositionsState.this.root.getLayoutState$ui_release() == LayoutNode.LayoutState.LookaheadMeasuring;
+            return LayoutNodeSubcompositionsState.this.root.getLayoutState$ui() == LayoutNode.LayoutState.LookaheadLayingOut || LayoutNodeSubcompositionsState.this.root.getLayoutState$ui() == LayoutNode.LayoutState.LookaheadMeasuring;
         }
 
         @Override // androidx.compose.ui.layout.SubcomposeMeasureScope
@@ -1228,7 +1255,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
         @Override // androidx.compose.ui.layout.MeasureScope
         public MeasureResult layout(final int i, final int i2, final Map<AlignmentLine, Integer> map, final Function1<? super RulerScope, Unit> function1, final Function1<? super Placeable.PlacementScope, Unit> function12) {
-            if (!((i & ViewCompat.MEASURED_STATE_MASK) == 0 && ((-16777216) & i2) == 0)) {
+            if (!((i & (-16777216)) == 0 && ((-16777216) & i2) == 0)) {
                 InlineClassHelperKt.throwIllegalStateException("Size(" + i + " x " + i2 + ") is out of range. Each dimension must be between 0 and 16777215.");
             }
             final LayoutNodeSubcompositionsState layoutNodeSubcompositionsState = LayoutNodeSubcompositionsState.this;
@@ -1256,8 +1283,8 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 @Override // androidx.compose.ui.layout.MeasureResult
                 public void placeChildren() {
                     LookaheadDelegate lookaheadDelegate;
-                    if (!this.isLookingAhead() || (lookaheadDelegate = layoutNodeSubcompositionsState.root.getInnerCoordinator$ui_release().getLookaheadDelegate()) == null) {
-                        function12.invoke(layoutNodeSubcompositionsState.root.getInnerCoordinator$ui_release().getPlacementScope());
+                    if (!this.isLookingAhead() || (lookaheadDelegate = layoutNodeSubcompositionsState.root.getInnerCoordinator$ui().getLookaheadDelegate()) == null) {
+                        function12.invoke(layoutNodeSubcompositionsState.root.getInnerCoordinator$ui().getPlacementScope());
                     } else {
                         function12.invoke(lookaheadDelegate.getPlacementScope());
                     }
@@ -1268,7 +1295,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SubcomposeLayout.kt */
-    @Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0004\u0018\u00002\u00020\u00012\u00020\u0002B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J0\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u00062\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0011\u0010\n\u001a\r\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0002\b\rH\u0016¢\u0006\u0002\u0010\u000eJF\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00122\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00120\u00152\u0017\u0010\u0017\u001a\u0013\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\f0\u0018¢\u0006\u0002\b\u001aH\u0096\u0001Ja\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00122\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00120\u00152\u0019\u0010\u001b\u001a\u0015\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\f\u0018\u00010\u0018¢\u0006\u0002\b\u001a2\u0017\u0010\u0017\u001a\u0013\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\f0\u0018¢\u0006\u0002\b\u001aH\u0096\u0001J\u0014\u0010\u001d\u001a\u00020\u0012*\u00020\u001eH\u0097\u0001¢\u0006\u0004\b\u001f\u0010 J\u0014\u0010\u001d\u001a\u00020\u0012*\u00020!H\u0097\u0001¢\u0006\u0004\b\"\u0010#J\u0014\u0010$\u001a\u00020\u001e*\u00020\u0012H\u0097\u0001¢\u0006\u0004\b%\u0010&J\u0014\u0010$\u001a\u00020\u001e*\u00020'H\u0097\u0001¢\u0006\u0004\b%\u0010(J\u0014\u0010$\u001a\u00020\u001e*\u00020!H\u0097\u0001¢\u0006\u0004\b)\u0010*J\u0014\u0010+\u001a\u00020,*\u00020-H\u0097\u0001¢\u0006\u0004\b.\u0010/J\u0014\u00100\u001a\u00020'*\u00020\u001eH\u0097\u0001¢\u0006\u0004\b1\u0010(J\u0014\u00100\u001a\u00020'*\u00020!H\u0097\u0001¢\u0006\u0004\b2\u0010*J\r\u00103\u001a\u000204*\u000205H\u0097\u0001J\u0014\u00106\u001a\u00020-*\u00020,H\u0097\u0001¢\u0006\u0004\b7\u0010/J\u0014\u00108\u001a\u00020!*\u00020\u0012H\u0097\u0001¢\u0006\u0004\b9\u0010:J\u0014\u00108\u001a\u00020!*\u00020'H\u0097\u0001¢\u0006\u0004\b9\u0010;J\u0014\u00108\u001a\u00020!*\u00020\u001eH\u0097\u0001¢\u0006\u0004\b<\u0010;R\u0014\u0010=\u001a\u00020'8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b>\u0010?R\u0014\u0010@\u001a\u00020'8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bA\u0010?R\u0014\u0010B\u001a\u00020C8VX\u0096\u0005¢\u0006\u0006\u001a\u0004\bB\u0010DR\u0012\u0010E\u001a\u00020FX\u0096\u0005¢\u0006\u0006\u001a\u0004\bG\u0010H¨\u0006I"}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$ApproachMeasureScopeImpl;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "Landroidx/compose/ui/layout/MeasureScope;", "<init>", "(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V", "subcompose", "", "Landroidx/compose/ui/layout/Measurable;", "slotId", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;", TtmlNode.TAG_LAYOUT, "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "placementBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "Lkotlin/ExtensionFunctionType;", "rulers", "Landroidx/compose/ui/layout/RulerScope;", "roundToPx", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "Landroidx/compose/ui/geometry/Size;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "density", "getDensity", "()F", "fontScale", "getFontScale", "isLookingAhead", "", "()Z", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0004\u0018\u00002\u00020\u00012\u00020\u0002B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J0\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u00062\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0011\u0010\n\u001a\r\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0002\b\rH\u0016¢\u0006\u0002\u0010\u000eJF\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00122\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00120\u00152\u0017\u0010\u0017\u001a\u0013\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\f0\u0018¢\u0006\u0002\b\u001aH\u0096\u0001Ja\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00122\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00120\u00152\u0019\u0010\u001b\u001a\u0015\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\f\u0018\u00010\u0018¢\u0006\u0002\b\u001a2\u0017\u0010\u0017\u001a\u0013\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\f0\u0018¢\u0006\u0002\b\u001aH\u0096\u0001J\u0014\u0010\u001d\u001a\u00020\u0012*\u00020\u001eH\u0097\u0001¢\u0006\u0004\b\u001f\u0010 J\u0014\u0010\u001d\u001a\u00020\u0012*\u00020!H\u0097\u0001¢\u0006\u0004\b\"\u0010#J\u0014\u0010$\u001a\u00020\u001e*\u00020\u0012H\u0097\u0001¢\u0006\u0004\b%\u0010&J\u0014\u0010$\u001a\u00020\u001e*\u00020'H\u0097\u0001¢\u0006\u0004\b%\u0010(J\u0014\u0010$\u001a\u00020\u001e*\u00020!H\u0097\u0001¢\u0006\u0004\b)\u0010*J\u0014\u0010+\u001a\u00020,*\u00020-H\u0097\u0001¢\u0006\u0004\b.\u0010/J\u0014\u00100\u001a\u00020'*\u00020\u001eH\u0097\u0001¢\u0006\u0004\b1\u0010(J\u0014\u00100\u001a\u00020'*\u00020!H\u0097\u0001¢\u0006\u0004\b2\u0010*J\r\u00103\u001a\u000204*\u000205H\u0097\u0001J\u0014\u00106\u001a\u00020-*\u00020,H\u0097\u0001¢\u0006\u0004\b7\u0010/J\u0014\u00108\u001a\u00020!*\u00020\u0012H\u0097\u0001¢\u0006\u0004\b9\u0010:J\u0014\u00108\u001a\u00020!*\u00020'H\u0097\u0001¢\u0006\u0004\b9\u0010;J\u0014\u00108\u001a\u00020!*\u00020\u001eH\u0097\u0001¢\u0006\u0004\b<\u0010;R\u0014\u0010=\u001a\u00020'8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b>\u0010?R\u0014\u0010@\u001a\u00020'8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bA\u0010?R\u0014\u0010B\u001a\u00020C8VX\u0096\u0005¢\u0006\u0006\u001a\u0004\bB\u0010DR\u0012\u0010E\u001a\u00020FX\u0096\u0005¢\u0006\u0006\u001a\u0004\bG\u0010H¨\u0006I"}, d2 = {"Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$ApproachMeasureScopeImpl;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "Landroidx/compose/ui/layout/MeasureScope;", "<init>", "(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V", "subcompose", "", "Landroidx/compose/ui/layout/Measurable;", "slotId", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;", "layout", "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "placementBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "Lkotlin/ExtensionFunctionType;", "rulers", "Landroidx/compose/ui/layout/RulerScope;", "roundToPx", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "Landroidx/compose/ui/geometry/Size;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "density", "getDensity", "()F", "fontScale", "getFontScale", "isLookingAhead", "", "()Z", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public final class ApproachMeasureScopeImpl implements SubcomposeMeasureScope, MeasureScope {
         private final /* synthetic */ Scope $$delegate_0;
@@ -1305,50 +1332,50 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx--R2X_6o */
-        public int mo423roundToPxR2X_6o(long j) {
-            return this.$$delegate_0.mo423roundToPxR2X_6o(j);
+        public int mo457roundToPxR2X_6o(long j) {
+            return this.$$delegate_0.mo457roundToPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx-0680j_4 */
-        public int mo424roundToPx0680j_4(float f) {
-            return this.$$delegate_0.mo424roundToPx0680j_4(f);
+        public int mo458roundToPx0680j_4(float f) {
+            return this.$$delegate_0.mo458roundToPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toDp-GaN1DYA */
-        public float mo425toDpGaN1DYA(long j) {
-            return this.$$delegate_0.mo425toDpGaN1DYA(j);
+        public float mo459toDpGaN1DYA(long j) {
+            return this.$$delegate_0.mo459toDpGaN1DYA(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo426toDpu2uoSUM(float f) {
-            return this.$$delegate_0.mo426toDpu2uoSUM(f);
+        public float mo460toDpu2uoSUM(float f) {
+            return this.$$delegate_0.mo460toDpu2uoSUM(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo427toDpu2uoSUM(int i) {
-            return this.$$delegate_0.mo427toDpu2uoSUM(i);
+        public float mo461toDpu2uoSUM(int i) {
+            return this.$$delegate_0.mo461toDpu2uoSUM(i);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDpSize-k-rfVVM */
-        public long mo428toDpSizekrfVVM(long j) {
-            return this.$$delegate_0.mo428toDpSizekrfVVM(j);
+        public long mo462toDpSizekrfVVM(long j) {
+            return this.$$delegate_0.mo462toDpSizekrfVVM(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx--R2X_6o */
-        public float mo429toPxR2X_6o(long j) {
-            return this.$$delegate_0.mo429toPxR2X_6o(j);
+        public float mo463toPxR2X_6o(long j) {
+            return this.$$delegate_0.mo463toPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx-0680j_4 */
-        public float mo430toPx0680j_4(float f) {
-            return this.$$delegate_0.mo430toPx0680j_4(f);
+        public float mo464toPx0680j_4(float f) {
+            return this.$$delegate_0.mo464toPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
@@ -1358,26 +1385,26 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSize-XkaWNTQ */
-        public long mo431toSizeXkaWNTQ(long j) {
-            return this.$$delegate_0.mo431toSizeXkaWNTQ(j);
+        public long mo465toSizeXkaWNTQ(long j) {
+            return this.$$delegate_0.mo465toSizeXkaWNTQ(j);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toSp-0xMU5do */
-        public long mo432toSp0xMU5do(float f) {
-            return this.$$delegate_0.mo432toSp0xMU5do(f);
+        public long mo466toSp0xMU5do(float f) {
+            return this.$$delegate_0.mo466toSp0xMU5do(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo433toSpkPz2Gy4(float f) {
-            return this.$$delegate_0.mo433toSpkPz2Gy4(f);
+        public long mo467toSpkPz2Gy4(float f) {
+            return this.$$delegate_0.mo467toSpkPz2Gy4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo434toSpkPz2Gy4(int i) {
-            return this.$$delegate_0.mo434toSpkPz2Gy4(i);
+        public long mo468toSpkPz2Gy4(int i) {
+            return this.$$delegate_0.mo468toSpkPz2Gy4(i);
         }
 
         public ApproachMeasureScopeImpl() {
@@ -1387,49 +1414,56 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         @Override // androidx.compose.ui.layout.SubcomposeMeasureScope
         public List<Measurable> subcompose(Object obj, Function2<? super Composer, ? super Integer, Unit> function2) {
             LayoutNode layoutNode = (LayoutNode) LayoutNodeSubcompositionsState.this.slotIdToNode.get(obj);
-            if (layoutNode == null || LayoutNodeSubcompositionsState.this.root.getFoldedChildren$ui_release().indexOf(layoutNode) >= LayoutNodeSubcompositionsState.this.currentIndex) {
+            if (layoutNode == null || LayoutNodeSubcompositionsState.this.root.getFoldedChildren$ui().indexOf(layoutNode) >= LayoutNodeSubcompositionsState.this.currentIndex) {
                 return LayoutNodeSubcompositionsState.this.approachSubcompose(obj, function2);
             }
-            return layoutNode.getChildMeasurables$ui_release();
+            return layoutNode.getChildMeasurables$ui();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final List<Measurable> approachSubcompose(Object obj, Function2<? super Composer, ? super Integer, Unit> function2) {
-        if (!(this.approachComposedSlotIds.getSize() >= this.currentApproachIndex)) {
+        if (!(this.slotIdsOfCompositionsNeededInApproach.getSize() >= this.currentApproachIndex)) {
             InlineClassHelperKt.throwIllegalArgumentException("Error: currentApproachIndex cannot be greater than the size of theapproachComposedSlotIds list.");
         }
-        int size = this.approachComposedSlotIds.getSize();
+        LayoutNode layoutNode = this.slotIdToNode.get(obj);
+        int size = this.slotIdsOfCompositionsNeededInApproach.getSize();
         int i = this.currentApproachIndex;
         if (size == i) {
-            this.approachComposedSlotIds.add(obj);
+            this.slotIdsOfCompositionsNeededInApproach.add(obj);
         } else {
-            this.approachComposedSlotIds.set(i, obj);
+            this.slotIdsOfCompositionsNeededInApproach.set(i, obj);
         }
         this.currentApproachIndex++;
-        if (!this.precomposeMap.contains(obj)) {
+        boolean contains = this.precomposeMap.contains(obj);
+        if (!contains && layoutNode == null) {
             this.approachPrecomposeSlotHandleMap.set(obj, precompose(obj, function2));
-            if (this.root.getLayoutState$ui_release() == LayoutNode.LayoutState.LayingOut) {
-                this.root.requestLookaheadRelayout$ui_release(true);
-            } else {
-                LayoutNode.requestLookaheadRemeasure$ui_release$default(this.root, true, false, false, 6, null);
-            }
         } else {
-            LayoutNode layoutNode = this.precomposeMap.get(obj);
-            NodeState nodeState = layoutNode != null ? this.nodeToNodeState.get(layoutNode) : null;
+            if (!contains && layoutNode != null) {
+                move(this.root.getFoldedChildren$ui().indexOf(layoutNode), this.root.getFoldedChildren$ui().size(), 1);
+                this.precomposedCount++;
+                this.slotIdToNode.remove(obj);
+                this.precomposeMap.set(obj, layoutNode);
+                this.approachPrecomposeSlotHandleMap.set(obj, createPrecomposedSlotHandle(obj));
+                if (this.root.isAttached()) {
+                    makeSureStateIsConsistent();
+                }
+            }
+            LayoutNode layoutNode2 = this.precomposeMap.get(obj);
+            NodeState nodeState = layoutNode2 != null ? this.nodeToNodeState.get(layoutNode2) : null;
             if (nodeState != null && nodeState.getForceRecompose()) {
-                subcompose(layoutNode, obj, false, function2);
+                subcompose(layoutNode2, obj, false, function2);
             }
         }
-        LayoutNode layoutNode2 = this.precomposeMap.get(obj);
-        if (layoutNode2 != null) {
-            List<MeasurePassDelegate> childDelegates$ui_release = layoutNode2.getMeasurePassDelegate$ui_release().getChildDelegates$ui_release();
-            int size2 = childDelegates$ui_release.size();
+        LayoutNode layoutNode3 = this.precomposeMap.get(obj);
+        if (layoutNode3 != null) {
+            List<MeasurePassDelegate> childDelegates$ui = layoutNode3.getMeasurePassDelegate$ui().getChildDelegates$ui();
+            int size2 = childDelegates$ui.size();
             for (int i2 = 0; i2 < size2; i2++) {
-                childDelegates$ui_release.get(i2).markDetachedFromParentLookaheadPass$ui_release();
+                childDelegates$ui.get(i2).markDetachedFromParentLookaheadPass$ui();
             }
-            if (childDelegates$ui_release != null) {
-                return childDelegates$ui_release;
+            if (childDelegates$ui != null) {
+                return childDelegates$ui;
             }
         }
         return CollectionsKt.emptyList();
@@ -1438,7 +1472,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
     private final void move(int i, int i2, int i3) {
         LayoutNode layoutNode = this.root;
         layoutNode.ignoreRemeasureRequests = true;
-        this.root.move$ui_release(i, i2, i3);
+        this.root.move$ui(i, i2, i3);
         Unit unit = Unit.INSTANCE;
         layoutNode.ignoreRemeasureRequests = false;
     }

@@ -15,10 +15,11 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Vector.kt */
-@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010Q\u001a\u00020RH\u0002J\b\u0010S\u001a\u00020RH\u0002J\f\u0010T\u001a\u00020R*\u00020UH\u0016J\b\u0010V\u001a\u00020\u0005H\u0016R$\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0004\u001a\u00020\u0005@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR(\u0010\f\u001a\u0004\u0018\u00010\u000b2\b\u0010\u0004\u001a\u0004\u0018\u00010\u000b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R$\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R0\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00180\u00172\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR&\u0010\u001f\u001a\u00020\u001e2\u0006\u0010\u0004\u001a\u00020\u001e@FX\u0086\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R$\u0010%\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b&\u0010\u0014\"\u0004\b'\u0010\u0016R$\u0010(\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010\u0014\"\u0004\b*\u0010\u0016R(\u0010+\u001a\u0004\u0018\u00010\u000b2\b\u0010\u0004\u001a\u0004\u0018\u00010\u000b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b,\u0010\u000e\"\u0004\b-\u0010\u0010R&\u0010/\u001a\u00020.2\u0006\u0010\u0004\u001a\u00020.@FX\u0086\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b0\u0010!\"\u0004\b1\u0010#R&\u00103\u001a\u0002022\u0006\u0010\u0004\u001a\u000202@FX\u0086\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b4\u0010!\"\u0004\b5\u0010#R$\u00106\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u0010\u0014\"\u0004\b8\u0010\u0016R$\u00109\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b:\u0010\u0014\"\u0004\b;\u0010\u0016R$\u0010<\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b=\u0010\u0014\"\u0004\b>\u0010\u0016R$\u0010?\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b@\u0010\u0014\"\u0004\bA\u0010\u0016R\u000e\u0010B\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010F\u001a\u0004\u0018\u00010GX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020IX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010J\u001a\u00020IX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010K\u001a\u00020L8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bO\u0010P\u001a\u0004\bM\u0010N¨\u0006W"}, d2 = {"Landroidx/compose/ui/graphics/vector/PathComponent;", "Landroidx/compose/ui/graphics/vector/VNode;", "<init>", "()V", "value", "", "name", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "Landroidx/compose/ui/graphics/Brush;", "fill", "getFill", "()Landroidx/compose/ui/graphics/Brush;", "setFill", "(Landroidx/compose/ui/graphics/Brush;)V", "", "fillAlpha", "getFillAlpha", "()F", "setFillAlpha", "(F)V", "", "Landroidx/compose/ui/graphics/vector/PathNode;", "pathData", "getPathData", "()Ljava/util/List;", "setPathData", "(Ljava/util/List;)V", "Landroidx/compose/ui/graphics/PathFillType;", "pathFillType", "getPathFillType-Rg-k1Os", "()I", "setPathFillType-oQ8Xj4U", "(I)V", "I", "strokeAlpha", "getStrokeAlpha", "setStrokeAlpha", "strokeLineWidth", "getStrokeLineWidth", "setStrokeLineWidth", "stroke", "getStroke", "setStroke", "Landroidx/compose/ui/graphics/StrokeCap;", "strokeLineCap", "getStrokeLineCap-KaPHkGw", "setStrokeLineCap-BeK7IIE", "Landroidx/compose/ui/graphics/StrokeJoin;", "strokeLineJoin", "getStrokeLineJoin-LxFBmk8", "setStrokeLineJoin-Ww9F2mQ", "strokeLineMiter", "getStrokeLineMiter", "setStrokeLineMiter", "trimPathStart", "getTrimPathStart", "setTrimPathStart", "trimPathEnd", "getTrimPathEnd", "setTrimPathEnd", "trimPathOffset", "getTrimPathOffset", "setTrimPathOffset", "isPathDirty", "", "isStrokeDirty", "isTrimPathDirty", "strokeStyle", "Landroidx/compose/ui/graphics/drawscope/Stroke;", "path", "Landroidx/compose/ui/graphics/Path;", "renderPath", "pathMeasure", "Landroidx/compose/ui/graphics/PathMeasure;", "getPathMeasure", "()Landroidx/compose/ui/graphics/PathMeasure;", "pathMeasure$delegate", "Lkotlin/Lazy;", "updatePath", "", "updateRenderPath", "draw", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "toString", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010U\u001a\u00020VH\u0002J\b\u0010W\u001a\u00020VH\u0002J\f\u0010X\u001a\u00020V*\u00020YH\u0016J\b\u0010Z\u001a\u00020\u0005H\u0016R$\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0004\u001a\u00020\u0005@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR(\u0010\f\u001a\u0004\u0018\u00010\u000b2\b\u0010\u0004\u001a\u0004\u0018\u00010\u000b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R$\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R0\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00180\u00172\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR&\u0010\u001f\u001a\u00020\u001e2\u0006\u0010\u0004\u001a\u00020\u001e@FX\u0086\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R$\u0010%\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b&\u0010\u0014\"\u0004\b'\u0010\u0016R$\u0010(\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010\u0014\"\u0004\b*\u0010\u0016R(\u0010+\u001a\u0004\u0018\u00010\u000b2\b\u0010\u0004\u001a\u0004\u0018\u00010\u000b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b,\u0010\u000e\"\u0004\b-\u0010\u0010R&\u0010/\u001a\u00020.2\u0006\u0010\u0004\u001a\u00020.@FX\u0086\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b0\u0010!\"\u0004\b1\u0010#R&\u00103\u001a\u0002022\u0006\u0010\u0004\u001a\u000202@FX\u0086\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b4\u0010!\"\u0004\b5\u0010#R$\u00106\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u0010\u0014\"\u0004\b8\u0010\u0016R$\u00109\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b:\u0010\u0014\"\u0004\b;\u0010\u0016R$\u0010<\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b=\u0010\u0014\"\u0004\b>\u0010\u0016R$\u0010?\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b@\u0010\u0014\"\u0004\bA\u0010\u0016R\u000e\u0010B\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010F\u001a\u0004\u0018\u00010GX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020IX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010J\u001a\u00020IX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010K\u001a\u0004\u0018\u00010IX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010L\u001a\u00020I8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bM\u0010NR\u001b\u0010O\u001a\u00020P8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bS\u0010T\u001a\u0004\bQ\u0010R¨\u0006["}, d2 = {"Landroidx/compose/ui/graphics/vector/PathComponent;", "Landroidx/compose/ui/graphics/vector/VNode;", "<init>", "()V", "value", "", "name", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "Landroidx/compose/ui/graphics/Brush;", "fill", "getFill", "()Landroidx/compose/ui/graphics/Brush;", "setFill", "(Landroidx/compose/ui/graphics/Brush;)V", "", "fillAlpha", "getFillAlpha", "()F", "setFillAlpha", "(F)V", "", "Landroidx/compose/ui/graphics/vector/PathNode;", "pathData", "getPathData", "()Ljava/util/List;", "setPathData", "(Ljava/util/List;)V", "Landroidx/compose/ui/graphics/PathFillType;", "pathFillType", "getPathFillType-Rg-k1Os", "()I", "setPathFillType-oQ8Xj4U", "(I)V", "I", "strokeAlpha", "getStrokeAlpha", "setStrokeAlpha", "strokeLineWidth", "getStrokeLineWidth", "setStrokeLineWidth", "stroke", "getStroke", "setStroke", "Landroidx/compose/ui/graphics/StrokeCap;", "strokeLineCap", "getStrokeLineCap-KaPHkGw", "setStrokeLineCap-BeK7IIE", "Landroidx/compose/ui/graphics/StrokeJoin;", "strokeLineJoin", "getStrokeLineJoin-LxFBmk8", "setStrokeLineJoin-Ww9F2mQ", "strokeLineMiter", "getStrokeLineMiter", "setStrokeLineMiter", "trimPathStart", "getTrimPathStart", "setTrimPathStart", "trimPathEnd", "getTrimPathEnd", "setTrimPathEnd", "trimPathOffset", "getTrimPathOffset", "setTrimPathOffset", "isPathDirty", "", "isStrokeDirty", "isTrimPathDirty", "strokeStyle", "Landroidx/compose/ui/graphics/drawscope/Stroke;", "path", "Landroidx/compose/ui/graphics/Path;", "renderPath", "_tmpPath", "tmpPath", "getTmpPath", "()Landroidx/compose/ui/graphics/Path;", "pathMeasure", "Landroidx/compose/ui/graphics/PathMeasure;", "getPathMeasure", "()Landroidx/compose/ui/graphics/PathMeasure;", "pathMeasure$delegate", "Lkotlin/Lazy;", "updatePath", "", "updateRenderPath", "draw", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "toString", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class PathComponent extends VNode {
     public static final int $stable = 8;
+    private Path _tmpPath;
     private Brush fill;
     private float fillAlpha;
     private boolean isPathDirty;
@@ -104,14 +105,14 @@ public final class PathComponent extends VNode {
     }
 
     /* renamed from: getPathFillType-Rg-k1Os  reason: not valid java name */
-    public final int m6020getPathFillTypeRgk1Os() {
+    public final int m6166getPathFillTypeRgk1Os() {
         return this.pathFillType;
     }
 
     /* renamed from: setPathFillType-oQ8Xj4U  reason: not valid java name */
-    public final void m6023setPathFillTypeoQ8Xj4U(int i) {
+    public final void m6169setPathFillTypeoQ8Xj4U(int i) {
         this.pathFillType = i;
-        this.renderPath.mo5171setFillTypeoQ8Xj4U(i);
+        this.renderPath.mo5314setFillTypeoQ8Xj4U(i);
         invalidate();
     }
 
@@ -144,24 +145,24 @@ public final class PathComponent extends VNode {
     }
 
     /* renamed from: getStrokeLineCap-KaPHkGw  reason: not valid java name */
-    public final int m6021getStrokeLineCapKaPHkGw() {
+    public final int m6167getStrokeLineCapKaPHkGw() {
         return this.strokeLineCap;
     }
 
     /* renamed from: setStrokeLineCap-BeK7IIE  reason: not valid java name */
-    public final void m6024setStrokeLineCapBeK7IIE(int i) {
+    public final void m6170setStrokeLineCapBeK7IIE(int i) {
         this.strokeLineCap = i;
         this.isStrokeDirty = true;
         invalidate();
     }
 
     /* renamed from: getStrokeLineJoin-LxFBmk8  reason: not valid java name */
-    public final int m6022getStrokeLineJoinLxFBmk8() {
+    public final int m6168getStrokeLineJoinLxFBmk8() {
         return this.strokeLineJoin;
     }
 
     /* renamed from: setStrokeLineJoin-Ww9F2mQ  reason: not valid java name */
-    public final void m6025setStrokeLineJoinWw9F2mQ(int i) {
+    public final void m6171setStrokeLineJoinWw9F2mQ(int i) {
         this.strokeLineJoin = i;
         this.isStrokeDirty = true;
         invalidate();
@@ -207,6 +208,16 @@ public final class PathComponent extends VNode {
         invalidate();
     }
 
+    private final Path getTmpPath() {
+        Path path = this._tmpPath;
+        if (path != null) {
+            return path;
+        }
+        Path Path = AndroidPath_androidKt.Path();
+        this._tmpPath = Path;
+        return Path;
+    }
+
     private final PathMeasure getPathMeasure() {
         return (PathMeasure) this.pathMeasure$delegate.getValue();
     }
@@ -224,9 +235,9 @@ public final class PathComponent extends VNode {
         if (Intrinsics.areEqual(this.renderPath, this.path)) {
             this.renderPath = AndroidPath_androidKt.Path();
         } else {
-            int mo5169getFillTypeRgk1Os = this.renderPath.mo5169getFillTypeRgk1Os();
+            int mo5312getFillTypeRgk1Os = this.renderPath.mo5312getFillTypeRgk1Os();
             this.renderPath.rewind();
-            this.renderPath.mo5171setFillTypeoQ8Xj4U(mo5169getFillTypeRgk1Os);
+            this.renderPath.mo5314setFillTypeoQ8Xj4U(mo5312getFillTypeRgk1Os);
         }
         getPathMeasure().setPath(this.path, false);
         float length = getPathMeasure().getLength();
@@ -235,8 +246,13 @@ public final class PathComponent extends VNode {
         float f3 = ((f + f2) % 1.0f) * length;
         float f4 = ((this.trimPathEnd + f2) % 1.0f) * length;
         if (f3 > f4) {
-            getPathMeasure().getSegment(f3, length, this.renderPath, true);
-            getPathMeasure().getSegment(0.0f, f4, this.renderPath, true);
+            Path tmpPath = getTmpPath();
+            tmpPath.reset();
+            getPathMeasure().getSegment(f3, length, tmpPath, true);
+            Path.m5710addPathUv8p0NA$default(this.renderPath, tmpPath, 0L, 2, null);
+            tmpPath.reset();
+            getPathMeasure().getSegment(0.0f, f4, tmpPath, true);
+            Path.m5710addPathUv8p0NA$default(this.renderPath, tmpPath, 0L, 2, null);
             return;
         }
         getPathMeasure().getSegment(f3, f4, this.renderPath, true);
@@ -253,7 +269,7 @@ public final class PathComponent extends VNode {
         this.isTrimPathDirty = false;
         Brush brush = this.fill;
         if (brush != null) {
-            DrawScope.m5848drawPathGBMwjPU$default(drawScope, this.renderPath, brush, this.fillAlpha, null, null, 0, 56, null);
+            DrawScope.m5994drawPathGBMwjPU$default(drawScope, this.renderPath, brush, this.fillAlpha, null, null, 0, 56, null);
         }
         Brush brush2 = this.stroke;
         if (brush2 != null) {
@@ -264,7 +280,7 @@ public final class PathComponent extends VNode {
                 this.isStrokeDirty = false;
                 stroke = stroke2;
             }
-            DrawScope.m5848drawPathGBMwjPU$default(drawScope, this.renderPath, brush2, this.strokeAlpha, stroke, null, 0, 48, null);
+            DrawScope.m5994drawPathGBMwjPU$default(drawScope, this.renderPath, brush2, this.strokeAlpha, stroke, null, 0, 48, null);
         }
     }
 

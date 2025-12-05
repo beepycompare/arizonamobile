@@ -15,7 +15,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ExoPlaybackException extends PlaybackException {
     public static final int TYPE_REMOTE = 3;
     public static final int TYPE_RENDERER = 1;
@@ -32,7 +32,7 @@ public final class ExoPlaybackException extends PlaybackException {
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface Type {
     }
 

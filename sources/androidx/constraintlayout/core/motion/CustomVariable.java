@@ -1,7 +1,6 @@
 package androidx.constraintlayout.core.motion;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.core.view.ViewCompat;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes2.dex */
 public class CustomVariable {
@@ -35,17 +34,17 @@ public class CustomVariable {
                             if (i != 5) {
                                 return 0;
                             }
-                            return ((i5 << 16) + (i2 << 8) + i3) | ViewCompat.MEASURED_STATE_MASK;
+                            return ((i5 << 16) + (i2 << 8) + i3) | (-16777216);
                         }
-                        return ((i4 << 16) + (i2 << 8) + i5) | ViewCompat.MEASURED_STATE_MASK;
+                        return ((i4 << 16) + (i2 << 8) + i5) | (-16777216);
                     }
-                    return ((i2 << 16) + (i3 << 8) + i5) | ViewCompat.MEASURED_STATE_MASK;
+                    return ((i2 << 16) + (i3 << 8) + i5) | (-16777216);
                 }
-                return ((i2 << 16) + (i5 << 8) + i4) | ViewCompat.MEASURED_STATE_MASK;
+                return ((i2 << 16) + (i5 << 8) + i4) | (-16777216);
             }
-            return ((i3 << 16) + (i5 << 8) + i2) | ViewCompat.MEASURED_STATE_MASK;
+            return ((i3 << 16) + (i5 << 8) + i2) | (-16777216);
         }
-        return ((i5 << 16) + (i4 << 8) + i2) | ViewCompat.MEASURED_STATE_MASK;
+        return ((i5 << 16) + (i4 << 8) + i2) | (-16777216);
     }
 
     public CustomVariable copy() {

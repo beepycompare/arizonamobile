@@ -77,17 +77,17 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         this.firstFrameLambda = new Function1() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit firstFrameLambda$lambda$1;
-                firstFrameLambda$lambda$1 = SeekableTransitionState.firstFrameLambda$lambda$1(SeekableTransitionState.this, ((Long) obj).longValue());
-                return firstFrameLambda$lambda$1;
+                Unit firstFrameLambda$lambda$0;
+                firstFrameLambda$lambda$0 = SeekableTransitionState.firstFrameLambda$lambda$0(SeekableTransitionState.this, ((Long) obj).longValue());
+                return firstFrameLambda$lambda$0;
             }
         };
         this.animateOneFrameLambda = new Function1() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit animateOneFrameLambda$lambda$4;
-                animateOneFrameLambda$lambda$4 = SeekableTransitionState.animateOneFrameLambda$lambda$4(SeekableTransitionState.this, ((Long) obj).longValue());
-                return animateOneFrameLambda$lambda$4;
+                Unit animateOneFrameLambda$lambda$0;
+                animateOneFrameLambda$lambda$0 = SeekableTransitionState.animateOneFrameLambda$lambda$0(SeekableTransitionState.this, ((Long) obj).longValue());
+                return animateOneFrameLambda$lambda$0;
             }
         };
     }
@@ -157,13 +157,13 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit firstFrameLambda$lambda$1(SeekableTransitionState seekableTransitionState, long j) {
+    public static final Unit firstFrameLambda$lambda$0(SeekableTransitionState seekableTransitionState, long j) {
         seekableTransitionState.lastFrameTimeNanos = j;
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit animateOneFrameLambda$lambda$4(SeekableTransitionState seekableTransitionState, long j) {
+    public static final Unit animateOneFrameLambda$lambda$0(SeekableTransitionState seekableTransitionState, long j) {
         seekableTransitionState.lastFrameTimeNanos = j;
         long roundToLong = MathKt.roundToLong((j - seekableTransitionState.lastFrameTimeNanos) / seekableTransitionState.durationScale);
         if (seekableTransitionState.initialValueAnimations.isNotEmpty()) {

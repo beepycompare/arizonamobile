@@ -95,7 +95,7 @@ public final class WideNavigationRailKt$ModalWideNavigationRailContent$5 impleme
             calculatePredictiveBackScaleX = WideNavigationRailKt.calculatePredictiveBackScaleX(graphicsLayerScope, floatValue, railPredictiveBackState.getSwipeEdgeMatchesRail());
             calculatePredictiveBackScaleY = WideNavigationRailKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
             graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX == 0.0f ? 1.0f : calculatePredictiveBackScaleY / calculatePredictiveBackScaleX);
-            graphicsLayerScope.mo5482setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.5f));
+            graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.5f));
             return Unit.INSTANCE;
         }
         return Unit.INSTANCE;

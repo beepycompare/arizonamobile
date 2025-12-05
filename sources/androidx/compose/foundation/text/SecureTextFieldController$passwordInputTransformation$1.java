@@ -8,7 +8,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: BasicSecureTextField.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public /* synthetic */ class SecureTextFieldController$passwordInputTransformation$1 extends FunctionReferenceImpl implements Function0<Unit> {
+public final /* synthetic */ class SecureTextFieldController$passwordInputTransformation$1 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SecureTextFieldController$passwordInputTransformation$1(Object obj) {
         super(0, obj, SecureTextFieldController.class, "scheduleHide", "scheduleHide()V", 0);

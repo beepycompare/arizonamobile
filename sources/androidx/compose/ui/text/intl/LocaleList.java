@@ -75,6 +75,11 @@ public final class LocaleList implements Collection<Locale>, KMappedMarker {
         return (T[]) CollectionToArray.toArray(this, tArr);
     }
 
+    public LocaleList(List<Locale> list) {
+        this.localeList = list;
+        this.size = list.size();
+    }
+
     @Override // java.util.Collection
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof Locale) {
@@ -106,11 +111,6 @@ public final class LocaleList implements Collection<Locale>, KMappedMarker {
         public final LocaleList getCurrent() {
             return PlatformLocaleKt.getPlatformLocaleDelegate().getCurrent();
         }
-    }
-
-    public LocaleList(List<Locale> list) {
-        this.localeList = list;
-        this.size = list.size();
     }
 
     public final List<Locale> getLocaleList() {

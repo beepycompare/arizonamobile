@@ -9,14 +9,14 @@ import androidx.compose.ui.node.NodeKind;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 /* compiled from: FocusEventModifierNode.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000\u001a\f\u0010\u0003\u001a\u00020\u0004*\u00020\u0002H\u0000¨\u0006\u0005"}, d2 = {"invalidateFocusEvent", "", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "getFocusState", "Landroidx/compose/ui/focus/FocusState;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000\u001a\f\u0010\u0003\u001a\u00020\u0004*\u00020\u0002H\u0000¨\u0006\u0005"}, d2 = {"invalidateFocusEvent", "", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "getFocusState", "Landroidx/compose/ui/focus/FocusState;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FocusEventModifierNodeKt {
 
     /* compiled from: FocusEventModifierNode.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -53,7 +53,7 @@ public final class FocusEventModifierNodeKt {
     */
     public static final FocusState getFocusState(FocusEventModifierNode focusEventModifierNode) {
         FocusEventModifierNode focusEventModifierNode2 = focusEventModifierNode;
-        int m6989constructorimpl = NodeKind.m6989constructorimpl(1024);
+        int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
         Modifier.Node node = focusEventModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -66,13 +66,13 @@ public final class FocusEventModifierNodeKt {
                 if (i != 4) {
                     throw new NoWhenBranchMatchedException();
                 }
-            } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i2 = 0;
-                for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                    if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                         i2++;
                         if (i2 == 1) {
-                            node = delegate$ui_release;
+                            node = delegate$ui;
                         } else {
                             if (mutableVector == null) {
                                 mutableVector = new MutableVector(new Modifier.Node[16], 0);
@@ -84,7 +84,7 @@ public final class FocusEventModifierNodeKt {
                                 node = null;
                             }
                             if (mutableVector != null) {
-                                mutableVector.add(delegate$ui_release);
+                                mutableVector.add(delegate$ui);
                             }
                         }
                     }
@@ -98,21 +98,21 @@ public final class FocusEventModifierNodeKt {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
         MutableVector mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
-        Modifier.Node child$ui_release = focusEventModifierNode2.getNode().getChild$ui_release();
-        if (child$ui_release == null) {
+        Modifier.Node child$ui = focusEventModifierNode2.getNode().getChild$ui();
+        if (child$ui == null) {
             DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, focusEventModifierNode2.getNode(), false);
         } else {
-            mutableVector2.add(child$ui_release);
+            mutableVector2.add(child$ui);
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui_release() & m6989constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
@@ -124,13 +124,13 @@ public final class FocusEventModifierNodeKt {
                                 if (i3 != 4) {
                                     throw new NoWhenBranchMatchedException();
                                 }
-                            } else if ((node2.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui() & m7195constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i4 = 0;
-                                for (Modifier.Node delegate$ui_release2 = ((DelegatingNode) node2).getDelegate$ui_release(); delegate$ui_release2 != null; delegate$ui_release2 = delegate$ui_release2.getChild$ui_release()) {
-                                    if ((delegate$ui_release2.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                                for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
+                                    if ((delegate$ui2.getKindSet$ui() & m7195constructorimpl) != 0) {
                                         i4++;
                                         if (i4 == 1) {
-                                            node2 = delegate$ui_release2;
+                                            node2 = delegate$ui2;
                                         } else {
                                             if (mutableVector3 == null) {
                                                 mutableVector3 = new MutableVector(new Modifier.Node[16], 0);
@@ -142,7 +142,7 @@ public final class FocusEventModifierNodeKt {
                                                 node2 = null;
                                             }
                                             if (mutableVector3 != null) {
-                                                mutableVector3.add(delegate$ui_release2);
+                                                mutableVector3.add(delegate$ui2);
                                             }
                                         }
                                     }
@@ -154,7 +154,7 @@ public final class FocusEventModifierNodeKt {
                         }
                         continue;
                     } else {
-                        node2 = node2.getChild$ui_release();
+                        node2 = node2.getChild$ui();
                     }
                 }
             }

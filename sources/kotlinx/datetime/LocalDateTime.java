@@ -110,7 +110,7 @@ public final class LocalDateTime implements Comparable<LocalDateTime>, java.io.S
     }
 
     /* renamed from: getMonth  reason: collision with other method in class */
-    public final Month m11528getMonth() {
+    public final Month m11823getMonth() {
         java.time.Month month = this.value.getMonth();
         Intrinsics.checkNotNullExpressionValue(month, "getMonth(...)");
         return ConvertersKt.toKotlinMonth(month);
@@ -131,7 +131,7 @@ public final class LocalDateTime implements Comparable<LocalDateTime>, java.io.S
     }
 
     /* renamed from: getDayOfWeek  reason: collision with other method in class */
-    public final DayOfWeek m11527getDayOfWeek() {
+    public final DayOfWeek m11822getDayOfWeek() {
         java.time.DayOfWeek dayOfWeek = this.value.getDayOfWeek();
         Intrinsics.checkNotNullExpressionValue(dayOfWeek, "getDayOfWeek(...)");
         return ConvertersKt.toKotlinDayOfWeek(dayOfWeek);

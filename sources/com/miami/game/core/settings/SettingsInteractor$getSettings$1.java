@@ -1,7 +1,6 @@
 package com.miami.game.core.settings;
 
 import androidx.core.app.NotificationManagerCompat;
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.miami.game.core.local.repository.common.IKeyValueRepository;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import kotlin.Metadata;
@@ -84,7 +83,7 @@ public final class SettingsInteractor$getSettings$1 extends SuspendLambda implem
             z = z2;
         }
         SettingState settingState = (SettingState) withContext;
-        SettingState settingState2 = settingState == null ? new SettingState(0.0f, 0, false, false, false, false, false, false, false, null, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null) : settingState;
+        SettingState settingState2 = settingState == null ? new SettingState(0.0f, 0, false, false, false, false, false, false, false, null, 1023, null) : settingState;
         mutableStateFlow = this.this$0.stateStore;
         do {
             value = mutableStateFlow.getValue();

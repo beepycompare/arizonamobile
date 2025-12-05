@@ -2,7 +2,9 @@ package androidx.media3.exoplayer.upstream.experimental;
 
 import android.content.Context;
 import android.os.Handler;
+import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
 import androidx.media3.common.util.Assertions;
@@ -29,11 +31,9 @@ import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
 import java.util.Map;
 import kotlin.text.Typography;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.ws.WebSocketProtocol;
-import ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage;
 /* loaded from: classes3.dex */
 public final class ExperimentalBandwidthMeter implements BandwidthMeter, TransferListener {
     private static final int COUNTRY_GROUP_INDEX_2G = 1;
@@ -1761,7 +1761,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case '\n':
                 return new int[]{2, 2, 3, 3, 2, 2};
             case 11:
-            case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+            case '=':
             case ']':
             case 'f':
             case 127:
@@ -1845,7 +1845,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case '&':
                 return new int[]{4, 2, 4, 2, 2, 2};
             case '\'':
-            case '>':
+            case RectListKt.BitOffsetForGesturable /* 62 */:
             case TsExtractor.TS_STREAM_TYPE_SPLICE_INFO /* 134 */:
                 return new int[]{3, 4, 3, 3, 2, 2};
             case '(':
@@ -1900,7 +1900,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{3, 2, 2, 2, 2, 2};
             case 'E':
                 return new int[]{4, 2, 4, 0, 2, 2};
-            case ArizonaRentAddPage.MAX_CHAR_COUNT /* 70 */:
+            case 'F':
                 return new int[]{0, 2, 2, 0, 2, 2};
             case TsExtractor.TS_SYNC_BYTE /* 71 */:
                 return new int[]{1, 1, 1, 1, 0, 2};
@@ -1992,7 +1992,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case '|':
             case 168:
                 return new int[]{4, 3, 3, 3, 2, 2};
-            case '}':
+            case ComposerImplKt.nodeKey /* 125 */:
                 return new int[]{0, 1, 0, 1, 0, 2};
             case WebSocketProtocol.PAYLOAD_SHORT /* 126 */:
                 return new int[]{4, 0, 3, 2, 1, 3};

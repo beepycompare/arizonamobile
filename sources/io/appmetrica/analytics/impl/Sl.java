@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public final class Sl implements NetworkResponseHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zl f682a;
+    public final Zl f765a;
     public final W2 b;
 
     public Sl() {
@@ -22,7 +22,7 @@ public final class Sl implements NetworkResponseHandler {
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkResponseHandler
     /* renamed from: a */
-    public final C0227em handle(ResponseDataHolder responseDataHolder) {
+    public final C0226em handle(ResponseDataHolder responseDataHolder) {
         String str;
         String str2;
         if (200 == responseDataHolder.getResponseCode()) {
@@ -33,13 +33,13 @@ public final class Sl implements NetworkResponseHandler {
                 responseData = this.b.a(responseDataHolder.getResponseData());
             }
             if (responseData != null) {
-                Zl zl = this.f682a;
+                Zl zl = this.f765a;
                 zl.getClass();
-                C0227em c0227em = new C0227em();
+                C0226em c0226em = new C0226em();
                 try {
                     zl.h.getClass();
-                    C0268gb c0268gb = new C0268gb(new String(responseData, "UTF-8"));
-                    JSONObject optJSONObject = c0268gb.optJSONObject("device_id");
+                    C0267gb c0267gb = new C0267gb(new String(responseData, "UTF-8"));
+                    JSONObject optJSONObject = c0267gb.optJSONObject("device_id");
                     if (optJSONObject == null) {
                         str = "";
                         str2 = "";
@@ -47,16 +47,16 @@ public final class Sl implements NetworkResponseHandler {
                         str = optJSONObject.optString("hash");
                         str2 = optJSONObject.optString("value");
                     }
-                    c0227em.h = str2;
-                    c0227em.i = str;
-                    zl.a(c0227em, c0268gb);
-                    c0227em.f875a = TextUtils.isEmpty(c0227em.i) ? 1 : 2;
+                    c0226em.h = str2;
+                    c0226em.i = str;
+                    zl.a(c0226em, c0267gb);
+                    c0226em.f958a = TextUtils.isEmpty(c0226em.i) ? 1 : 2;
                 } catch (Throwable unused) {
-                    c0227em = new C0227em();
-                    c0227em.f875a = 1;
+                    c0226em = new C0226em();
+                    c0226em.f958a = 1;
                 }
-                if (2 == c0227em.f875a) {
-                    return c0227em;
+                if (2 == c0226em.f958a) {
+                    return c0226em;
                 }
             }
         }
@@ -64,7 +64,7 @@ public final class Sl implements NetworkResponseHandler {
     }
 
     public Sl(Zl zl, W2 w2) {
-        this.f682a = zl;
+        this.f765a = zl;
         this.b = w2;
     }
 }

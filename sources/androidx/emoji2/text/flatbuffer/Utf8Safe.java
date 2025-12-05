@@ -1,6 +1,7 @@
 package androidx.emoji2.text.flatbuffer;
 
 import androidx.emoji2.text.flatbuffer.Utf8;
+import androidx.window.core.layout.WindowSizeClass;
 import java.nio.ByteBuffer;
 /* loaded from: classes2.dex */
 public final class Utf8Safe extends Utf8 {
@@ -323,7 +324,7 @@ public final class Utf8Safe extends Utf8 {
                     throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i7);
                 }
             } else {
-                bArr[i7] = (byte) ((charAt2 >>> '\f') | 480);
+                bArr[i7] = (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
                 int i11 = i7 + 2;
                 bArr[i7 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
                 i7 += 3;

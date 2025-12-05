@@ -140,6 +140,8 @@
     </attr>
     <attr name="animateRelativeTo" format="reference">
     </attr>
+    <attr name="animationBackgroundColor" format="color">
+    </attr>
     <attr name="animationMode">
         <enum name="slide" value="0" />
         <enum name="fade" value="1" />
@@ -1220,6 +1222,10 @@
         <enum name="dragClockwise" value="6" />
         <enum name="dragAnticlockwise" value="7" />
     </attr>
+    <attr name="dragRangeMaxRatio" format="float">
+    </attr>
+    <attr name="dragRangeMinRatio" format="float">
+    </attr>
     <attr name="dragScale" format="float">
     </attr>
     <attr name="dragThreshold" format="float">
@@ -1291,6 +1297,14 @@
     <attr name="elevationOverlayColor" format="color">
     </attr>
     <attr name="elevationOverlayEnabled" format="boolean">
+    </attr>
+    <attr name="embeddingDividerColor" format="reference|color">
+    </attr>
+    <attr name="embeddingDividerType">
+        <enum name="fixed" value="0" />
+        <enum name="draggable" value="1" />
+    </attr>
+    <attr name="embeddingDividerWidthDp" format="integer">
     </attr>
     <attr name="emojiCompatEnabled" format="boolean">
     </attr>
@@ -1507,9 +1521,19 @@
     </attr>
     <attr name="fastforward_icon" format="reference">
     </attr>
-    <attr name="finishPrimaryWithSecondary" format="boolean">
+    <attr name="finishPrimaryWithPlaceholder">
+        <enum name="always" value="1" />
+        <enum name="adjacent" value="2" />
     </attr>
-    <attr name="finishSecondaryWithPrimary" format="boolean">
+    <attr name="finishPrimaryWithSecondary">
+        <enum name="never" value="0" />
+        <enum name="always" value="1" />
+        <enum name="adjacent" value="2" />
+    </attr>
+    <attr name="finishSecondaryWithPrimary">
+        <enum name="never" value="0" />
+        <enum name="always" value="1" />
+        <enum name="adjacent" value="2" />
     </attr>
     <attr name="firstBaselineToTopHeight" format="dimension">
     </attr>
@@ -1958,6 +1982,8 @@
     <attr name="innerCornerSize" format="reference|dimension|fraction">
     </attr>
     <attr name="insetForeground" format="reference|color">
+    </attr>
+    <attr name="isDraggingToFullscreenAllowed" format="boolean">
     </attr>
     <attr name="isLightTheme" format="boolean">
     </attr>
@@ -3530,14 +3556,38 @@
     </attr>
     <attr name="splashScreenIconSize" format="dimension">
     </attr>
+    <attr name="splitChangeAnimation">
+        <enum name="systemDefault" value="0" />
+        <enum name="jumpCut" value="1" />
+    </attr>
+    <attr name="splitCloseAnimation">
+        <enum name="systemDefault" value="0" />
+        <enum name="jumpCut" value="1" />
+    </attr>
     <attr name="splitLayoutDirection">
         <enum name="locale" value="0" />
         <enum name="ltr" value="1" />
         <enum name="rtl" value="2" />
+        <enum name="topToBottom" value="3" />
+        <enum name="bottomToTop" value="4" />
     </attr>
-    <attr name="splitMinSmallestWidth" format="dimension">
+    <attr name="splitMaxAspectRatioInLandscape" format="float">
+        <enum name="alwaysAllow" value="0" />
+        <enum name="alwaysDisallow" value="-1" />
     </attr>
-    <attr name="splitMinWidth" format="dimension">
+    <attr name="splitMaxAspectRatioInPortrait" format="float">
+        <enum name="alwaysAllow" value="0" />
+        <enum name="alwaysDisallow" value="-1" />
+    </attr>
+    <attr name="splitMinHeightDp" format="integer">
+    </attr>
+    <attr name="splitMinSmallestWidthDp" format="integer">
+    </attr>
+    <attr name="splitMinWidthDp" format="integer">
+    </attr>
+    <attr name="splitOpenAnimation">
+        <enum name="systemDefault" value="0" />
+        <enum name="jumpCut" value="1" />
     </attr>
     <attr name="splitRatio" format="float">
     </attr>
@@ -3622,6 +3672,8 @@
     <attr name="statusBarForeground" format="color">
     </attr>
     <attr name="statusBarScrim" format="color">
+    </attr>
+    <attr name="stickyPlaceholder" format="boolean">
     </attr>
     <attr name="stiffness" format="float">
     </attr>
@@ -3772,6 +3824,8 @@
     <attr name="tabTextColor" format="color">
     </attr>
     <attr name="tabUnboundedRipple" format="boolean">
+    </attr>
+    <attr name="tag" format="string">
     </attr>
     <attr name="targetId" format="reference">
     </attr>

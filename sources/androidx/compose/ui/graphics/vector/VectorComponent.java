@@ -16,8 +16,8 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Vector.kt */
-@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u000e\u001a\u00020\u000fH\u0002J\u001c\u00108\u001a\u00020\u000f*\u0002062\u0006\u00109\u001a\u0002022\b\u0010:\u001a\u0004\u0018\u00010\u001fJ\f\u00108\u001a\u00020\u000f*\u000206H\u0016J\b\u0010;\u001a\u00020\tH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\u00020\u00158@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R \u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u000f0\u0019X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR/\u0010 \u001a\u0004\u0018\u00010\u001f2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001f8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b%\u0010&\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0010\u0010'\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010)\u001a\u00020(2\u0006\u0010\u001e\u001a\u00020(8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b.\u0010&\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u0010\u0010/\u001a\u00020(X\u0082\u000e¢\u0006\u0004\n\u0002\u00100R\u000e\u00101\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u001f\u00104\u001a\u0013\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u00020\u000f05¢\u0006\u0002\b7X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006<"}, d2 = {"Landroidx/compose/ui/graphics/vector/VectorComponent;", "Landroidx/compose/ui/graphics/vector/VNode;", "root", "Landroidx/compose/ui/graphics/vector/GroupComponent;", "<init>", "(Landroidx/compose/ui/graphics/vector/GroupComponent;)V", "getRoot", "()Landroidx/compose/ui/graphics/vector/GroupComponent;", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "doInvalidate", "", "isDirty", "", "cacheDrawScope", "Landroidx/compose/ui/graphics/vector/DrawCache;", "cacheBitmapConfig", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "getCacheBitmapConfig-_sVssgQ$ui_release", "()I", "invalidateCallback", "Lkotlin/Function0;", "getInvalidateCallback$ui_release", "()Lkotlin/jvm/functions/Function0;", "setInvalidateCallback$ui_release", "(Lkotlin/jvm/functions/Function0;)V", "<set-?>", "Landroidx/compose/ui/graphics/ColorFilter;", "intrinsicColorFilter", "getIntrinsicColorFilter$ui_release", "()Landroidx/compose/ui/graphics/ColorFilter;", "setIntrinsicColorFilter$ui_release", "(Landroidx/compose/ui/graphics/ColorFilter;)V", "intrinsicColorFilter$delegate", "Landroidx/compose/runtime/MutableState;", "tintFilter", "Landroidx/compose/ui/geometry/Size;", "viewportSize", "getViewportSize-NH-jbRc$ui_release", "()J", "setViewportSize-uvyYCjk$ui_release", "(J)V", "viewportSize$delegate", "previousDrawSize", "J", "rootScaleX", "", "rootScaleY", "drawVectorBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "draw", "alpha", "colorFilter", "toString", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u000e\u001a\u00020\u000fH\u0002J\u001c\u00108\u001a\u00020\u000f*\u0002062\u0006\u00109\u001a\u0002022\b\u0010:\u001a\u0004\u0018\u00010\u001fJ\f\u00108\u001a\u00020\u000f*\u000206H\u0016J\b\u0010;\u001a\u00020\tH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\u00020\u00158@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R \u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u000f0\u0019X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR/\u0010 \u001a\u0004\u0018\u00010\u001f2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001f8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b%\u0010&\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0010\u0010'\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010)\u001a\u00020(2\u0006\u0010\u001e\u001a\u00020(8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b.\u0010&\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u0010\u0010/\u001a\u00020(X\u0082\u000e¢\u0006\u0004\n\u0002\u00100R\u000e\u00101\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u001f\u00104\u001a\u0013\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u00020\u000f05¢\u0006\u0002\b7X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006<"}, d2 = {"Landroidx/compose/ui/graphics/vector/VectorComponent;", "Landroidx/compose/ui/graphics/vector/VNode;", "root", "Landroidx/compose/ui/graphics/vector/GroupComponent;", "<init>", "(Landroidx/compose/ui/graphics/vector/GroupComponent;)V", "getRoot", "()Landroidx/compose/ui/graphics/vector/GroupComponent;", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "doInvalidate", "", "isDirty", "", "cacheDrawScope", "Landroidx/compose/ui/graphics/vector/DrawCache;", "cacheBitmapConfig", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "getCacheBitmapConfig-_sVssgQ$ui", "()I", "invalidateCallback", "Lkotlin/Function0;", "getInvalidateCallback$ui", "()Lkotlin/jvm/functions/Function0;", "setInvalidateCallback$ui", "(Lkotlin/jvm/functions/Function0;)V", "<set-?>", "Landroidx/compose/ui/graphics/ColorFilter;", "intrinsicColorFilter", "getIntrinsicColorFilter$ui", "()Landroidx/compose/ui/graphics/ColorFilter;", "setIntrinsicColorFilter$ui", "(Landroidx/compose/ui/graphics/ColorFilter;)V", "intrinsicColorFilter$delegate", "Landroidx/compose/runtime/MutableState;", "tintFilter", "Landroidx/compose/ui/geometry/Size;", "viewportSize", "getViewportSize-NH-jbRc$ui", "()J", "setViewportSize-uvyYCjk$ui", "(J)V", "viewportSize$delegate", "previousDrawSize", "J", "rootScaleX", "", "rootScaleY", "drawVectorBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "draw", "alpha", "colorFilter", "toString", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class VectorComponent extends VNode {
     public static final int $stable = 8;
     private final DrawCache cacheDrawScope;
@@ -38,7 +38,7 @@ public final class VectorComponent extends VNode {
         MutableState mutableStateOf$default;
         MutableState mutableStateOf$default2;
         this.root = groupComponent;
-        groupComponent.setInvalidateListener$ui_release(new Function1<VNode, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComponent.1
+        groupComponent.setInvalidateListener$ui(new Function1<VNode, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComponent.1
             {
                 super(1);
             }
@@ -70,9 +70,9 @@ public final class VectorComponent extends VNode {
         };
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.intrinsicColorFilter$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5093boximpl(Size.Companion.m5114getZeroNHjbRc()), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5236boximpl(Size.Companion.m5257getZeroNHjbRc()), null, 2, null);
         this.viewportSize$delegate = mutableStateOf$default2;
-        this.previousDrawSize = Size.Companion.m5113getUnspecifiedNHjbRc();
+        this.previousDrawSize = Size.Companion.m5256getUnspecifiedNHjbRc();
         this.rootScaleX = 1.0f;
         this.rootScaleY = 1.0f;
         this.drawVectorBlock = new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComponent$drawVectorBlock$1
@@ -95,16 +95,16 @@ public final class VectorComponent extends VNode {
                 VectorComponent vectorComponent = VectorComponent.this;
                 f = vectorComponent.rootScaleX;
                 f2 = vectorComponent.rootScaleY;
-                long m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
+                long m5195getZeroF1C5BW0 = Offset.Companion.m5195getZeroF1C5BW0();
                 DrawContext drawContext = drawScope.getDrawContext();
-                long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
+                long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
                 drawContext.getCanvas().save();
                 try {
-                    drawContext.getTransform().mo5787scale0AR0LA0(f, f2, m5052getZeroF1C5BW0);
+                    drawContext.getTransform().mo5933scale0AR0LA0(f, f2, m5195getZeroF1C5BW0);
                     root.draw(drawScope);
                 } finally {
                     drawContext.getCanvas().restore();
-                    drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
+                    drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
                 }
             }
         };
@@ -128,57 +128,57 @@ public final class VectorComponent extends VNode {
         this.invalidateCallback.invoke();
     }
 
-    /* renamed from: getCacheBitmapConfig-_sVssgQ$ui_release  reason: not valid java name */
-    public final int m6026getCacheBitmapConfig_sVssgQ$ui_release() {
+    /* renamed from: getCacheBitmapConfig-_sVssgQ$ui  reason: not valid java name */
+    public final int m6172getCacheBitmapConfig_sVssgQ$ui() {
         ImageBitmap mCachedImage = this.cacheDrawScope.getMCachedImage();
-        return mCachedImage != null ? mCachedImage.mo5145getConfig_sVssgQ() : ImageBitmapConfig.Companion.m5512getArgb8888_sVssgQ();
+        return mCachedImage != null ? mCachedImage.mo5288getConfig_sVssgQ() : ImageBitmapConfig.Companion.m5657getArgb8888_sVssgQ();
     }
 
-    public final Function0<Unit> getInvalidateCallback$ui_release() {
+    public final Function0<Unit> getInvalidateCallback$ui() {
         return this.invalidateCallback;
     }
 
-    public final void setInvalidateCallback$ui_release(Function0<Unit> function0) {
+    public final void setInvalidateCallback$ui(Function0<Unit> function0) {
         this.invalidateCallback = function0;
     }
 
-    public final ColorFilter getIntrinsicColorFilter$ui_release() {
+    public final ColorFilter getIntrinsicColorFilter$ui() {
         return (ColorFilter) this.intrinsicColorFilter$delegate.getValue();
     }
 
-    public final void setIntrinsicColorFilter$ui_release(ColorFilter colorFilter) {
+    public final void setIntrinsicColorFilter$ui(ColorFilter colorFilter) {
         this.intrinsicColorFilter$delegate.setValue(colorFilter);
     }
 
-    /* renamed from: getViewportSize-NH-jbRc$ui_release  reason: not valid java name */
-    public final long m6027getViewportSizeNHjbRc$ui_release() {
-        return ((Size) this.viewportSize$delegate.getValue()).m5110unboximpl();
+    /* renamed from: getViewportSize-NH-jbRc$ui  reason: not valid java name */
+    public final long m6173getViewportSizeNHjbRc$ui() {
+        return ((Size) this.viewportSize$delegate.getValue()).m5253unboximpl();
     }
 
-    /* renamed from: setViewportSize-uvyYCjk$ui_release  reason: not valid java name */
-    public final void m6028setViewportSizeuvyYCjk$ui_release(long j) {
-        this.viewportSize$delegate.setValue(Size.m5093boximpl(j));
+    /* renamed from: setViewportSize-uvyYCjk$ui  reason: not valid java name */
+    public final void m6174setViewportSizeuvyYCjk$ui(long j) {
+        this.viewportSize$delegate.setValue(Size.m5236boximpl(j));
     }
 
     public final void draw(DrawScope drawScope, float f, ColorFilter colorFilter) {
-        int m5512getArgb8888_sVssgQ;
-        if (this.root.isTintable() && this.root.m6011getTintColor0d7_KjU() != 16 && VectorKt.tintableWithAlphaMask(getIntrinsicColorFilter$ui_release()) && VectorKt.tintableWithAlphaMask(colorFilter)) {
-            m5512getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5511getAlpha8_sVssgQ();
+        int m5657getArgb8888_sVssgQ;
+        if (this.root.isTintable() && this.root.m6157getTintColor0d7_KjU() != 16 && VectorKt.tintableWithAlphaMask(getIntrinsicColorFilter$ui()) && VectorKt.tintableWithAlphaMask(colorFilter)) {
+            m5657getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5656getAlpha8_sVssgQ();
         } else {
-            m5512getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5512getArgb8888_sVssgQ();
+            m5657getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m5657getArgb8888_sVssgQ();
         }
-        int i = m5512getArgb8888_sVssgQ;
-        if (this.isDirty || !Size.m5101equalsimpl0(this.previousDrawSize, drawScope.mo5859getSizeNHjbRc()) || !ImageBitmapConfig.m5507equalsimpl0(i, m6026getCacheBitmapConfig_sVssgQ$ui_release())) {
-            this.tintFilter = ImageBitmapConfig.m5507equalsimpl0(i, ImageBitmapConfig.Companion.m5511getAlpha8_sVssgQ()) ? ColorFilter.Companion.m5321tintxETnrds$default(ColorFilter.Companion, VectorKt.m6034toOpaque8_81llA(this.root.m6011getTintColor0d7_KjU()), 0, 2, null) : null;
-            this.rootScaleX = Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)) / Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() >> 32));
-            this.rootScaleY = Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)) / Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() & 4294967295L));
-            this.cacheDrawScope.m6009drawCachedImageFqjB98A(i, IntSize.m8162constructorimpl((((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)))) & 4294967295L) | (((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)))) << 32)), drawScope, drawScope.getLayoutDirection(), this.drawVectorBlock);
+        int i = m5657getArgb8888_sVssgQ;
+        if (this.isDirty || !Size.m5244equalsimpl0(this.previousDrawSize, drawScope.mo6005getSizeNHjbRc()) || !ImageBitmapConfig.m5652equalsimpl0(i, m6172getCacheBitmapConfig_sVssgQ$ui())) {
+            this.tintFilter = ImageBitmapConfig.m5652equalsimpl0(i, ImageBitmapConfig.Companion.m5656getAlpha8_sVssgQ()) ? ColorFilter.Companion.m5465tintxETnrds$default(ColorFilter.Companion, VectorKt.m6180toOpaque8_81llA(this.root.m6157getTintColor0d7_KjU()), 0, 2, null) : null;
+            this.rootScaleX = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)) / Float.intBitsToFloat((int) (m6173getViewportSizeNHjbRc$ui() >> 32));
+            this.rootScaleY = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)) / Float.intBitsToFloat((int) (m6173getViewportSizeNHjbRc$ui() & 4294967295L));
+            this.cacheDrawScope.m6155drawCachedImageFqjB98A(i, IntSize.m8424constructorimpl((((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)))) & 4294967295L) | (((int) Math.ceil(Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)))) << 32)), drawScope, drawScope.getLayoutDirection(), this.drawVectorBlock);
             this.isDirty = false;
-            this.previousDrawSize = drawScope.mo5859getSizeNHjbRc();
+            this.previousDrawSize = drawScope.mo6005getSizeNHjbRc();
         }
         if (colorFilter == null) {
-            if (getIntrinsicColorFilter$ui_release() != null) {
-                colorFilter = getIntrinsicColorFilter$ui_release();
+            if (getIntrinsicColorFilter$ui() != null) {
+                colorFilter = getIntrinsicColorFilter$ui();
             } else {
                 colorFilter = this.tintFilter;
             }
@@ -194,8 +194,8 @@ public final class VectorComponent extends VNode {
     public String toString() {
         StringBuilder sb = new StringBuilder("Params: \tname: ");
         sb.append(this.name).append("\n\tviewportWidth: ");
-        sb.append(Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() >> 32))).append("\n\tviewportHeight: ");
-        sb.append(Float.intBitsToFloat((int) (m6027getViewportSizeNHjbRc$ui_release() & 4294967295L))).append("\n");
+        sb.append(Float.intBitsToFloat((int) (m6173getViewportSizeNHjbRc$ui() >> 32))).append("\n\tviewportHeight: ");
+        sb.append(Float.intBitsToFloat((int) (m6173getViewportSizeNHjbRc$ui() & 4294967295L))).append("\n");
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
         return sb2;

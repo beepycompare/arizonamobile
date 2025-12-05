@@ -1,10 +1,10 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0589t4;
-import io.appmetrica.analytics.impl.C0616u6;
+import io.appmetrica.analytics.impl.C0588t4;
+import io.appmetrica.analytics.impl.C0615u6;
 import io.appmetrica.analytics.impl.Ci;
-import io.appmetrica.analytics.impl.InterfaceC0255fo;
-import io.appmetrica.analytics.impl.InterfaceC0362k2;
+import io.appmetrica.analytics.impl.InterfaceC0254fo;
+import io.appmetrica.analytics.impl.InterfaceC0361k2;
 import io.appmetrica.analytics.impl.Mn;
 import io.appmetrica.analytics.impl.Yk;
 import io.appmetrica.analytics.impl.Ym;
@@ -14,27 +14,27 @@ import io.appmetrica.analytics.impl.to;
 public class StringAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Mn f1324a;
-    private final C0616u6 b;
+    private final Mn f1407a;
+    private final C0615u6 b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public StringAttribute(String str, Ym ym, to toVar, InterfaceC0362k2 interfaceC0362k2) {
-        this.b = new C0616u6(str, toVar, interfaceC0362k2);
-        this.f1324a = ym;
+    public StringAttribute(String str, Ym ym, to toVar, InterfaceC0361k2 interfaceC0361k2) {
+        this.b = new C0615u6(str, toVar, interfaceC0361k2);
+        this.f1407a = ym;
     }
 
-    public UserProfileUpdate<? extends InterfaceC0255fo> withValue(String str) {
-        C0616u6 c0616u6 = this.b;
-        return new UserProfileUpdate<>(new Zm(c0616u6.c, str, this.f1324a, c0616u6.f1144a, new C0589t4(c0616u6.b)));
+    public UserProfileUpdate<? extends InterfaceC0254fo> withValue(String str) {
+        C0615u6 c0615u6 = this.b;
+        return new UserProfileUpdate<>(new Zm(c0615u6.c, str, this.f1407a, c0615u6.f1227a, new C0588t4(c0615u6.b)));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0255fo> withValueIfUndefined(String str) {
-        C0616u6 c0616u6 = this.b;
-        return new UserProfileUpdate<>(new Zm(c0616u6.c, str, this.f1324a, c0616u6.f1144a, new Yk(c0616u6.b)));
+    public UserProfileUpdate<? extends InterfaceC0254fo> withValueIfUndefined(String str) {
+        C0615u6 c0615u6 = this.b;
+        return new UserProfileUpdate<>(new Zm(c0615u6.c, str, this.f1407a, c0615u6.f1227a, new Yk(c0615u6.b)));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0255fo> withValueReset() {
-        C0616u6 c0616u6 = this.b;
-        return new UserProfileUpdate<>(new Ci(0, c0616u6.c, c0616u6.f1144a, c0616u6.b));
+    public UserProfileUpdate<? extends InterfaceC0254fo> withValueReset() {
+        C0615u6 c0615u6 = this.b;
+        return new UserProfileUpdate<>(new Ci(0, c0615u6.c, c0615u6.f1227a, c0615u6.b));
     }
 }

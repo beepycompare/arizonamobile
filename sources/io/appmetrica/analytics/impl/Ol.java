@@ -6,16 +6,16 @@ import io.appmetrica.analytics.StartupParamsCallback;
 public final class Ol implements B6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ StartupParamsCallback f626a;
+    public final /* synthetic */ StartupParamsCallback f709a;
     public final /* synthetic */ Pl b;
 
     public Ol(Pl pl, StartupParamsCallback startupParamsCallback) {
         this.b = pl;
-        this.f626a = startupParamsCallback;
+        this.f709a = startupParamsCallback;
     }
 
     @Override // io.appmetrica.analytics.impl.B6
     public final void a(int i, Bundle bundle) {
-        this.b.b(bundle, this.f626a);
+        this.b.b(bundle, this.f709a);
     }
 }

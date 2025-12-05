@@ -1,5 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.datastore.preferences.protobuf.ArrayDecoders;
 import androidx.datastore.preferences.protobuf.ByteString;
@@ -15,7 +16,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
 @CheckReturnValue
@@ -894,8 +894,8 @@ public final class MessageSchema<T> implements Schema<T> {
             case 58:
             case 59:
             case 60:
-            case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
-            case 62:
+            case 61:
+            case RectListKt.BitOffsetForGesturable /* 62 */:
             case 63:
             case 64:
             case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT /* 65 */:
@@ -1145,7 +1145,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     } else {
                         break;
                     }
-                case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                case 61:
                     if (isOneofPresent(message, numberAt, i3)) {
                         i = i2 * 53;
                         hashLong = UnsafeUtil.getObject(message, offset).hashCode();
@@ -1154,7 +1154,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     } else {
                         break;
                     }
-                case 62:
+                case RectListKt.BitOffsetForGesturable /* 62 */:
                     if (isOneofPresent(message, numberAt, i3)) {
                         i = i2 * 53;
                         hashLong = oneofIntAt(message, offset);
@@ -1414,8 +1414,8 @@ public final class MessageSchema<T> implements Schema<T> {
             case 60:
                 mergeOneofMessage(message, other, pos);
                 return;
-            case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
-            case 62:
+            case 61:
+            case RectListKt.BitOffsetForGesturable /* 62 */:
             case 63:
             case 64:
             case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT /* 65 */:
@@ -2073,7 +2073,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     }
                     i5 = i9;
                     break;
-                case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                case 61:
                     if (messageSchema.isOneofPresent(t, numberAt, i3)) {
                         computeDoubleSize = CodedOutputStream.computeBytesSize(numberAt, (ByteString) unsafe.getObject(t, offset));
                         i5 = i9 + computeDoubleSize;
@@ -2081,7 +2081,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     }
                     i5 = i9;
                     break;
-                case 62:
+                case RectListKt.BitOffsetForGesturable /* 62 */:
                     if (messageSchema.isOneofPresent(t, numberAt, i3)) {
                         computeDoubleSize = CodedOutputStream.computeUInt32Size(numberAt, oneofIntAt(t, offset));
                         i5 = i9 + computeDoubleSize;
@@ -2487,12 +2487,12 @@ public final class MessageSchema<T> implements Schema<T> {
                                 writer.writeMessage(numberAt, unsafe.getObject(message, offset), messageSchema.getMessageFieldSchema(i));
                             }
                             break;
-                        case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                        case 61:
                             if (messageSchema.isOneofPresent(message, numberAt, i)) {
                                 writer.writeBytes(numberAt, (ByteString) unsafe.getObject(message, offset));
                             }
                             break;
-                        case 62:
+                        case RectListKt.BitOffsetForGesturable /* 62 */:
                             if (messageSchema.isOneofPresent(message, numberAt, i)) {
                                 writer.writeUInt32(numberAt, oneofIntAt(message, offset));
                             }
@@ -2872,14 +2872,14 @@ public final class MessageSchema<T> implements Schema<T> {
                             } else {
                                 break;
                             }
-                        case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                        case 61:
                             if (isOneofPresent(message, numberAt, length)) {
                                 writer.writeBytes(numberAt, (ByteString) UnsafeUtil.getObject(message, offset(typeAndOffsetAt)));
                                 break;
                             } else {
                                 break;
                             }
-                        case 62:
+                        case RectListKt.BitOffsetForGesturable /* 62 */:
                             if (isOneofPresent(message, numberAt, length)) {
                                 writer.writeUInt32(numberAt, oneofIntAt(message, offset(typeAndOffsetAt)));
                                 break;
@@ -3770,13 +3770,13 @@ public final class MessageSchema<T> implements Schema<T> {
                                     messageSchema2 = messageSchema2;
                                     ub4 = ub2;
                                     break;
-                                case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                                case 61:
                                     UnsafeUtil.putObject(t2, offset(typeAndOffsetAt), reader3.readBytes());
                                     messageSchema2.setOneofPresent(t2, fieldNumber, positionForFieldNumber);
                                     messageSchema2 = messageSchema2;
                                     ub4 = ub2;
                                     break;
-                                case 62:
+                                case RectListKt.BitOffsetForGesturable /* 62 */:
                                     UnsafeUtil.putObject(t2, offset(typeAndOffsetAt), Integer.valueOf(reader3.readUInt32()));
                                     messageSchema2.setOneofPresent(t2, fieldNumber, positionForFieldNumber);
                                     messageSchema2 = messageSchema2;
@@ -4404,7 +4404,7 @@ public final class MessageSchema<T> implements Schema<T> {
                 }
                 return position;
             case ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE /* 55 */:
-            case 62:
+            case RectListKt.BitOffsetForGesturable /* 62 */:
                 if (wireType == 0) {
                     int decodeVarint32 = ArrayDecoders.decodeVarint32(data, position, registers);
                     unsafe.putObject(message, fieldOffset, Integer.valueOf(registers.int1));
@@ -4462,7 +4462,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     return mergeMessageField;
                 }
                 return position;
-            case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+            case 61:
                 if (wireType == 2) {
                     int decodeBytes = ArrayDecoders.decodeBytes(data, position, registers);
                     unsafe.putObject(message, fieldOffset, registers.object1);

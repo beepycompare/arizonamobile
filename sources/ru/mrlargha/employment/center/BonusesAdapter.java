@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.core.view.ViewCompat;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.RecyclerView;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
@@ -152,13 +151,10 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$0$1(EmploymentCenterBonusItemBinding employmentCenterBonusItemBinding, Palette palette) {
-        int i = ViewCompat.MEASURED_STATE_MASK;
-        if (palette != null) {
-            i = palette.getDominantColor(ViewCompat.MEASURED_STATE_MASK);
-        }
+        int dominantColor = palette != null ? palette.getDominantColor(-16777216) : -16777216;
         CustomCardView cardBg = employmentCenterBonusItemBinding.cardBg;
         Intrinsics.checkNotNullExpressionValue(cardBg, "cardBg");
-        CustomCardView.setBackground$default(cardBg, i, 0, null, null, 12, null);
+        CustomCardView.setBackground$default(cardBg, dominantColor, 0, null, null, 12, null);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

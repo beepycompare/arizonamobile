@@ -58,7 +58,7 @@ public final class AndroidRippleIndicationInstance extends RippleIndicationInsta
         this.rippleHostView$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(true, null, 2, null);
         this.invalidateTick$delegate = mutableStateOf$default2;
-        this.rippleSize = Size.Companion.m5114getZeroNHjbRc();
+        this.rippleSize = Size.Companion.m5257getZeroNHjbRc();
         this.rippleRadius = -1;
         this.onInvalidateRipple = new Function0() { // from class: androidx.compose.material.ripple.AndroidRippleIndicationInstance$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
@@ -95,23 +95,23 @@ public final class AndroidRippleIndicationInstance extends RippleIndicationInsta
     @Override // androidx.compose.foundation.IndicationInstance
     public void drawIndication(ContentDrawScope contentDrawScope) {
         int i;
-        this.rippleSize = contentDrawScope.mo5859getSizeNHjbRc();
+        this.rippleSize = contentDrawScope.mo6005getSizeNHjbRc();
         if (Float.isNaN(this.radius)) {
-            i = MathKt.roundToInt(RippleAnimationKt.m1857getRippleEndRadiuscSwnlzA(contentDrawScope, this.bounded, contentDrawScope.mo5859getSizeNHjbRc()));
+            i = MathKt.roundToInt(RippleAnimationKt.m1943getRippleEndRadiuscSwnlzA(contentDrawScope, this.bounded, contentDrawScope.mo6005getSizeNHjbRc()));
         } else {
-            i = contentDrawScope.mo424roundToPx0680j_4(this.radius);
+            i = contentDrawScope.mo458roundToPx0680j_4(this.radius);
         }
         this.rippleRadius = i;
-        long m5290unboximpl = this.color.getValue().m5290unboximpl();
+        long m5434unboximpl = this.color.getValue().m5434unboximpl();
         float pressedAlpha = this.rippleAlpha.getValue().getPressedAlpha();
         contentDrawScope.drawContent();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        m1863drawStateLayerH2RKhps(contentDrawScope2, this.radius, m5290unboximpl);
+        m1949drawStateLayerH2RKhps(contentDrawScope2, this.radius, m5434unboximpl);
         Canvas canvas = contentDrawScope2.getDrawContext().getCanvas();
         getInvalidateTick();
         RippleHostView rippleHostView = getRippleHostView();
         if (rippleHostView != null) {
-            rippleHostView.m1861setRipplePropertiesbiQXAtU(contentDrawScope.mo5859getSizeNHjbRc(), this.rippleRadius, m5290unboximpl, pressedAlpha);
+            rippleHostView.m1947setRipplePropertiesbiQXAtU(contentDrawScope.mo6005getSizeNHjbRc(), this.rippleRadius, m5434unboximpl, pressedAlpha);
             rippleHostView.draw(AndroidCanvas_androidKt.getNativeCanvas(canvas));
         }
     }
@@ -119,7 +119,7 @@ public final class AndroidRippleIndicationInstance extends RippleIndicationInsta
     @Override // androidx.compose.material.ripple.RippleIndicationInstance
     public void addRipple(PressInteraction.Press press, CoroutineScope coroutineScope) {
         RippleHostView rippleHostView = getOrCreateRippleContainer().getRippleHostView(this);
-        rippleHostView.m1860addRippleKOepWvA(press, this.bounded, this.rippleSize, this.rippleRadius, this.color.getValue().m5290unboximpl(), this.rippleAlpha.getValue().getPressedAlpha(), this.onInvalidateRipple);
+        rippleHostView.m1946addRippleKOepWvA(press, this.bounded, this.rippleSize, this.rippleRadius, this.color.getValue().m5434unboximpl(), this.rippleAlpha.getValue().getPressedAlpha(), this.onInvalidateRipple);
         setRippleHostView(rippleHostView);
     }
 

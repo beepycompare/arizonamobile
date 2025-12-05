@@ -15,30 +15,30 @@ import java.io.File;
 public final class Ak implements ServiceStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f400a;
-    public final InterfaceC0656vl b;
+    public final Context f483a;
+    public final InterfaceC0655vl b;
     public final SQLiteOpenHelper c;
 
-    public Ak(Context context, InterfaceC0656vl interfaceC0656vl, SQLiteOpenHelper sQLiteOpenHelper) {
-        this.f400a = context;
-        this.b = interfaceC0656vl;
+    public Ak(Context context, InterfaceC0655vl interfaceC0655vl, SQLiteOpenHelper sQLiteOpenHelper) {
+        this.f483a = context;
+        this.b = interfaceC0655vl;
         this.c = sQLiteOpenHelper;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final <T, P extends MessageNano> ProtobufBinaryStateStorageFactory<T> createBinaryStateStorageFactory(String str, ProtobufStateSerializer<P> protobufStateSerializer, ProtobufConverter<T, P> protobufConverter) {
-        Pm.f641a.getClass();
+        Pm.f724a.getClass();
         return new Om(str, protobufStateSerializer, protobufConverter);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getAppDataStorage() {
-        return FileUtils.getAppDataDir(this.f400a);
+        return FileUtils.getAppDataDir(this.f483a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getAppFileStorage() {
-        return FileUtils.getAppStorageDirectory(this.f400a);
+        return FileUtils.getAppStorageDirectory(this.f483a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
@@ -48,28 +48,28 @@ public final class Ak implements ServiceStorageProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getSdkDataStorage() {
-        return FileUtils.sdkStorage(this.f400a);
+        return FileUtils.sdkStorage(this.f483a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final TempCacheStorage getTempCacheStorage() {
-        C0633un c0633un;
-        C0755zk B = C0471oa.I.B();
-        Context context = this.f400a;
+        C0632un c0632un;
+        C0754zk B = C0470oa.I.B();
+        Context context = this.f483a;
         synchronized (B) {
-            c0633un = B.h;
-            if (c0633un == null) {
+            c0632un = B.h;
+            if (c0632un == null) {
                 Tm tm = Tm.SERVICE;
-                C0608tn c0608tn = B.g;
-                if (c0608tn == null) {
-                    c0608tn = new C0608tn(new C0556rl(B.f(context)), "temp_cache");
-                    B.g = c0608tn;
+                C0607tn c0607tn = B.g;
+                if (c0607tn == null) {
+                    c0607tn = new C0607tn(new C0555rl(B.f(context)), "temp_cache");
+                    B.g = c0607tn;
                 }
-                c0633un = new C0633un(context, tm, c0608tn);
-                B.h = c0633un;
+                c0632un = new C0632un(context, tm, c0607tn);
+                B.h = c0632un;
             }
         }
-        return c0633un;
+        return c0632un;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider

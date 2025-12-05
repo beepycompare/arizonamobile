@@ -101,13 +101,13 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
         TwoWayConverter<Float, AnimationVector1D> vectorConverter = VectorConvertersKt.getVectorConverter(FloatCompanionObject.INSTANCE);
         ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
         if (transition.isSeeking()) {
-            composer.startReplaceGroup(1666853325);
+            composer.startReplaceGroup(1666827533);
             composer.endReplaceGroup();
             currentState = transition.getCurrentState();
         } else {
-            composer.startReplaceGroup(1666599280);
+            composer.startReplaceGroup(1666573488);
             ComposerKt.sourceInformation(composer, "1844@78495L67");
-            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054612652, "CC(remember):Transition.kt#9igjgp");
             boolean changed = composer.changed(transition);
             currentState = composer.rememberedValue();
             if (changed || currentState == Composer.Companion.getEmpty()) {
@@ -139,7 +139,7 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
         }
         composer.endReplaceGroup();
         Float valueOf = Float.valueOf(f);
-        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592958, "CC(remember):Transition.kt#9igjgp");
         boolean changed2 = composer.changed(transition);
         Object rememberedValue = composer.rememberedValue();
         if (changed2 || rememberedValue == Composer.Companion.getEmpty()) {
@@ -164,7 +164,7 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
         }
         composer.endReplaceGroup();
         Float valueOf2 = Float.valueOf(f2);
-        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589890, "CC(remember):Transition.kt#9igjgp");
         boolean changed3 = composer.changed(transition);
         Object rememberedValue2 = composer.rememberedValue();
         if (changed3 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -213,7 +213,7 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
         T t2 = this.$stateForContent;
         ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-        ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+        ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
         int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, graphicsLayer);
@@ -228,15 +228,12 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
         } else {
             composer.useNode();
         }
-        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
-        }
-        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+        Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, -191227322, "C129@5975L24:Crossfade.kt#xbi5r1");

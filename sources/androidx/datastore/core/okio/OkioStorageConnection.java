@@ -23,7 +23,7 @@ import kotlinx.coroutines.sync.MutexKt;
 import okio.FileSystem;
 import okio.Path;
 /* compiled from: OkioStorage.kt */
-@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0000\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B9\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f¢\u0006\u0002\u0010\u000eJ\b\u0010\u0015\u001a\u00020\rH\u0002J\b\u0010\u0016\u001a\u00020\rH\u0016JX\u0010\u0017\u001a\u0002H\u0018\"\u0004\b\u0001\u0010\u00182B\u0010\u0019\u001a>\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\u001b\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b\u001d\u0012\b\b\u001e\u0012\u0004\b\b(\u001f\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00180 \u0012\u0006\u0012\u0004\u0018\u00010!0\u001a¢\u0006\u0002\b\"H\u0096@¢\u0006\u0002\u0010#J=\u0010$\u001a\u00020\r2-\u0010\u0019\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000&\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0 \u0012\u0006\u0012\u0004\u0018\u00010!0%¢\u0006\u0002\b\"H\u0096@¢\u0006\u0002\u0010'R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\u00020\nX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Landroidx/datastore/core/okio/OkioStorageConnection;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/datastore/core/StorageConnection;", "fileSystem", "Lokio/FileSystem;", "path", "Lokio/Path;", "serializer", "Landroidx/datastore/core/okio/OkioSerializer;", "coordinator", "Landroidx/datastore/core/InterProcessCoordinator;", "onClose", "Lkotlin/Function0;", "", "(Lokio/FileSystem;Lokio/Path;Landroidx/datastore/core/okio/OkioSerializer;Landroidx/datastore/core/InterProcessCoordinator;Lkotlin/jvm/functions/Function0;)V", "closed", "Landroidx/datastore/core/okio/AtomicBoolean;", "getCoordinator", "()Landroidx/datastore/core/InterProcessCoordinator;", "transactionMutex", "Lkotlinx/coroutines/sync/Mutex;", "checkNotClosed", "close", "readScope", "R", "block", "Lkotlin/Function3;", "Landroidx/datastore/core/ReadScope;", "", "Lkotlin/ParameterName;", "name", "locked", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "writeScope", "Lkotlin/Function2;", "Landroidx/datastore/core/WriteScope;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "datastore-core-okio"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0000\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B;\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f¢\u0006\u0004\b\u000e\u0010\u000fJX\u0010\u0016\u001a\u0002H\u0017\"\u0004\b\u0001\u0010\u00172B\u0010\u0018\u001a>\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\u001a\u0012\u0013\u0012\u00110\u001b¢\u0006\f\b\u001c\u0012\b\b\u001d\u0012\u0004\b\b(\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00170\u001f\u0012\u0006\u0012\u0004\u0018\u00010 0\u0019¢\u0006\u0002\b!H\u0096@¢\u0006\u0002\u0010\"J=\u0010#\u001a\u00020\r2-\u0010\u0018\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000%\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\u001f\u0012\u0006\u0012\u0004\u0018\u00010 0$¢\u0006\u0002\b!H\u0096@¢\u0006\u0002\u0010&J\b\u0010'\u001a\u00020\rH\u0002J\b\u0010(\u001a\u00020\rH\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\u00020\nX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Landroidx/datastore/core/okio/OkioStorageConnection;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/datastore/core/StorageConnection;", "fileSystem", "Lokio/FileSystem;", "path", "Lokio/Path;", "serializer", "Landroidx/datastore/core/okio/OkioSerializer;", "coordinator", "Landroidx/datastore/core/InterProcessCoordinator;", "onClose", "Lkotlin/Function0;", "", "<init>", "(Lokio/FileSystem;Lokio/Path;Landroidx/datastore/core/okio/OkioSerializer;Landroidx/datastore/core/InterProcessCoordinator;Lkotlin/jvm/functions/Function0;)V", "getCoordinator", "()Landroidx/datastore/core/InterProcessCoordinator;", "closed", "Landroidx/datastore/core/okio/AtomicBoolean;", "transactionMutex", "Lkotlinx/coroutines/sync/Mutex;", "readScope", "R", "block", "Lkotlin/Function3;", "Landroidx/datastore/core/ReadScope;", "", "Lkotlin/ParameterName;", "name", "locked", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "writeScope", "Lkotlin/Function2;", "Landroidx/datastore/core/WriteScope;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "checkNotClosed", "close", "datastore-core-okio"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class OkioStorageConnection<T> implements StorageConnection<T> {
     private final AtomicBoolean closed;
@@ -54,37 +54,32 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
         return this.coordinator;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(7:(2:3|(8:5|6|7|(1:(3:10|11|12)(2:28|29))(6:30|31|32|33|34|(1:36)(1:37))|14|15|16|(2:(1:19)|20)(1:22)))|7|(0)(0)|14|15|16|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0078, code lost:
-        r1 = th;
+    /* JADX WARN: Can't wrap try/catch for region: R(7:(2:3|(8:5|6|7|(1:(3:10|11|12)(2:28|29))(6:30|31|32|33|34|(1:36)(1:37))|13|14|15|(2:(1:18)|19)(1:21)))|7|(0)(0)|13|14|15|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0071, code lost:
+        r0 = th;
      */
-    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0083 A[Catch: all -> 0x0093, TRY_ENTER, TRY_LEAVE, TryCatch #6 {all -> 0x0093, blocks: (B:31:0x0083, B:38:0x0092, B:34:0x008a), top: B:54:0x0023 }] */
-    /* JADX WARN: Type inference failed for: r0v1, types: [androidx.datastore.core.okio.OkioStorageConnection$readScope$1] */
-    /* JADX WARN: Type inference failed for: r0v14, types: [androidx.datastore.core.okio.OkioStorageConnection$readScope$1] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x007c A[Catch: all -> 0x008b, TRY_ENTER, TRY_LEAVE, TryCatch #3 {all -> 0x008b, blocks: (B:31:0x007c, B:38:0x008a, B:34:0x0082), top: B:50:0x0023 }] */
     @Override // androidx.datastore.core.StorageConnection
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public <R> Object readScope(Function3<? super ReadScope<T>, ? super Boolean, ? super Continuation<? super R>, ? extends Object> function3, Continuation<? super R> continuation) {
-        OkioStorageConnection<T> okioStorageConnection;
+        OkioStorageConnection$readScope$1 okioStorageConnection$readScope$1;
         int i;
         Throwable th;
         Closeable closeable;
         boolean z;
-        OkioStorageConnection<T> okioStorageConnection2;
         try {
             if (continuation instanceof OkioStorageConnection$readScope$1) {
-                OkioStorageConnection$readScope$1 okioStorageConnection$readScope$1 = (OkioStorageConnection$readScope$1) continuation;
+                okioStorageConnection$readScope$1 = (OkioStorageConnection$readScope$1) continuation;
                 if ((okioStorageConnection$readScope$1.label & Integer.MIN_VALUE) != 0) {
                     okioStorageConnection$readScope$1.label -= Integer.MIN_VALUE;
-                    okioStorageConnection = okioStorageConnection$readScope$1;
-                    Object obj = ((OkioStorageConnection$readScope$1) okioStorageConnection).result;
+                    Object obj = okioStorageConnection$readScope$1.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = ((OkioStorageConnection$readScope$1) okioStorageConnection).label;
+                    i = okioStorageConnection$readScope$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         checkNotClosed();
@@ -93,17 +88,15 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                             OkioReadScope okioReadScope = new OkioReadScope(this.fileSystem, this.path, this.serializer);
                             try {
                                 Boolean boxBoolean = Boxing.boxBoolean(tryLock$default);
-                                ((OkioStorageConnection$readScope$1) okioStorageConnection).L$0 = this;
-                                ((OkioStorageConnection$readScope$1) okioStorageConnection).L$1 = okioReadScope;
-                                ((OkioStorageConnection$readScope$1) okioStorageConnection).Z$0 = tryLock$default;
-                                ((OkioStorageConnection$readScope$1) okioStorageConnection).label = 1;
-                                Object invoke = function3.invoke(okioReadScope, boxBoolean, okioStorageConnection);
+                                okioStorageConnection$readScope$1.L$0 = okioReadScope;
+                                okioStorageConnection$readScope$1.Z$0 = tryLock$default;
+                                okioStorageConnection$readScope$1.label = 1;
+                                Object invoke = function3.invoke(okioReadScope, boxBoolean, okioStorageConnection$readScope$1);
                                 if (invoke == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
                                 obj = invoke;
                                 z = tryLock$default;
-                                okioStorageConnection2 = this;
                                 closeable = okioReadScope;
                             } catch (Throwable th2) {
                                 th = th2;
@@ -114,18 +107,16 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                         } catch (Throwable th3) {
                             th = th3;
                             function3 = tryLock$default;
-                            okioStorageConnection = this;
                             if (function3 != null) {
-                                Mutex.DefaultImpls.unlock$default(okioStorageConnection.transactionMutex, null, 1, null);
+                                Mutex.DefaultImpls.unlock$default(this.transactionMutex, null, 1, null);
                             }
                             throw th;
                         }
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        z = ((OkioStorageConnection$readScope$1) okioStorageConnection).Z$0;
-                        closeable = (Closeable) ((OkioStorageConnection$readScope$1) okioStorageConnection).L$1;
-                        okioStorageConnection2 = (OkioStorageConnection) ((OkioStorageConnection$readScope$1) okioStorageConnection).L$0;
+                        z = okioStorageConnection$readScope$1.Z$0;
+                        closeable = (Closeable) okioStorageConnection$readScope$1.L$0;
                         try {
                             ResultKt.throwOnFailure(obj);
                         } catch (Throwable th4) {
@@ -138,7 +129,7 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                     th = null;
                     if (th != null) {
                         if (z) {
-                            Mutex.DefaultImpls.unlock$default(okioStorageConnection2.transactionMutex, null, 1, null);
+                            Mutex.DefaultImpls.unlock$default(this.transactionMutex, null, 1, null);
                         }
                         return obj;
                     }
@@ -154,28 +145,34 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
         } catch (Throwable th5) {
             th = th5;
         }
-        okioStorageConnection = new OkioStorageConnection$readScope$1(this, continuation);
-        Object obj2 = ((OkioStorageConnection$readScope$1) okioStorageConnection).result;
+        okioStorageConnection$readScope$1 = new OkioStorageConnection$readScope$1(this, continuation);
+        Object obj2 = okioStorageConnection$readScope$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = ((OkioStorageConnection$readScope$1) okioStorageConnection).label;
+        i = okioStorageConnection$readScope$1.label;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x007a, code lost:
+        if (r10.lock(null, r0) == r1) goto L47;
+     */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00c9  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00d7 A[Catch: all -> 0x00fe, IOException -> 0x0101, TRY_ENTER, TryCatch #5 {IOException -> 0x0101, blocks: (B:37:0x00d7, B:39:0x00df, B:43:0x00ee, B:49:0x00fa, B:50:0x00fd), top: B:76:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00ee A[Catch: all -> 0x00fe, IOException -> 0x0101, TRY_ENTER, TRY_LEAVE, TryCatch #5 {IOException -> 0x0101, blocks: (B:37:0x00d7, B:39:0x00df, B:43:0x00ee, B:49:0x00fa, B:50:0x00fd), top: B:76:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00c9 A[Catch: all -> 0x00ef, IOException -> 0x00f2, TRY_ENTER, TryCatch #5 {IOException -> 0x00f2, blocks: (B:36:0x00c9, B:38:0x00d1, B:42:0x00e0, B:48:0x00eb, B:49:0x00ee), top: B:75:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00e0 A[Catch: all -> 0x00ef, IOException -> 0x00f2, TRY_ENTER, TRY_LEAVE, TryCatch #5 {IOException -> 0x00f2, blocks: (B:36:0x00c9, B:38:0x00d1, B:42:0x00e0, B:48:0x00eb, B:49:0x00ee), top: B:75:0x0025 }] */
     /* JADX WARN: Type inference failed for: r0v3, types: [okio.FileSystem] */
     /* JADX WARN: Type inference failed for: r0v5, types: [okio.FileSystem] */
-    /* JADX WARN: Type inference failed for: r10v13, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r10v15 */
-    /* JADX WARN: Type inference failed for: r10v16, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r10v30, types: [androidx.datastore.core.Closeable] */
-    /* JADX WARN: Type inference failed for: r10v31 */
-    /* JADX WARN: Type inference failed for: r2v0, types: [int] */
+    /* JADX WARN: Type inference failed for: r10v2 */
+    /* JADX WARN: Type inference failed for: r10v4, types: [kotlinx.coroutines.sync.Mutex] */
+    /* JADX WARN: Type inference failed for: r10v5 */
+    /* JADX WARN: Type inference failed for: r10v6 */
     /* JADX WARN: Type inference failed for: r2v1 */
     /* JADX WARN: Type inference failed for: r2v2, types: [okio.Path] */
+    /* JADX WARN: Type inference failed for: r9v13, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v15 */
+    /* JADX WARN: Type inference failed for: r9v16, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v30, types: [androidx.datastore.core.Closeable] */
+    /* JADX WARN: Type inference failed for: r9v31 */
     @Override // androidx.datastore.core.StorageConnection
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -183,31 +180,28 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
     public Object writeScope(Function2<? super WriteScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation) {
         OkioStorageConnection$writeScope$1 okioStorageConnection$writeScope$1;
         Object coroutine_suspended;
-        ?? r2;
+        int i;
         Mutex mutex;
-        OkioStorageConnection<T> okioStorageConnection;
         Path path;
         Path parent;
         OkioWriteScope okioWriteScope;
         Throwable th;
         OkioWriteScope okioWriteScope2;
-        Path path2;
-        OkioStorageConnection<T> okioStorageConnection2;
         Mutex mutex2;
+        Path path2;
         try {
             try {
                 try {
                     try {
                         try {
                             if (continuation instanceof OkioStorageConnection$writeScope$1) {
-                                OkioStorageConnection$writeScope$1 okioStorageConnection$writeScope$12 = (OkioStorageConnection$writeScope$1) continuation;
-                                if ((okioStorageConnection$writeScope$12.label & Integer.MIN_VALUE) != 0) {
-                                    okioStorageConnection$writeScope$12.label -= Integer.MIN_VALUE;
-                                    okioStorageConnection$writeScope$1 = okioStorageConnection$writeScope$12;
+                                okioStorageConnection$writeScope$1 = (OkioStorageConnection$writeScope$1) continuation;
+                                if ((okioStorageConnection$writeScope$1.label & Integer.MIN_VALUE) != 0) {
+                                    okioStorageConnection$writeScope$1.label -= Integer.MIN_VALUE;
                                     Object obj = okioStorageConnection$writeScope$1.result;
                                     coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                                    r2 = okioStorageConnection$writeScope$1.label;
-                                    if (r2 != 0) {
+                                    i = okioStorageConnection$writeScope$1.label;
+                                    if (i != 0) {
                                         ResultKt.throwOnFailure(obj);
                                         checkNotClosed();
                                         parent = this.path.parent();
@@ -216,21 +210,15 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                                         }
                                         this.fileSystem.createDirectories(parent, false);
                                         mutex = this.transactionMutex;
-                                        okioStorageConnection$writeScope$1.L$0 = this;
-                                        okioStorageConnection$writeScope$1.L$1 = function2;
-                                        okioStorageConnection$writeScope$1.L$2 = parent;
-                                        okioStorageConnection$writeScope$1.L$3 = mutex;
+                                        okioStorageConnection$writeScope$1.L$0 = function2;
+                                        okioStorageConnection$writeScope$1.L$1 = parent;
+                                        okioStorageConnection$writeScope$1.L$2 = mutex;
                                         okioStorageConnection$writeScope$1.label = 1;
-                                        if (mutex.lock(null, okioStorageConnection$writeScope$1) != coroutine_suspended) {
-                                            okioStorageConnection = this;
-                                        }
-                                        return coroutine_suspended;
-                                    } else if (r2 != 1) {
-                                        if (r2 == 2) {
-                                            okioWriteScope2 = (Closeable) okioStorageConnection$writeScope$1.L$3;
-                                            path2 = (Path) okioStorageConnection$writeScope$1.L$2;
-                                            mutex2 = (Mutex) okioStorageConnection$writeScope$1.L$1;
-                                            okioStorageConnection2 = (OkioStorageConnection) okioStorageConnection$writeScope$1.L$0;
+                                    } else if (i != 1) {
+                                        if (i == 2) {
+                                            okioWriteScope2 = (Closeable) okioStorageConnection$writeScope$1.L$2;
+                                            path2 = (Path) okioStorageConnection$writeScope$1.L$1;
+                                            mutex2 = (Mutex) okioStorageConnection$writeScope$1.L$0;
                                             try {
                                                 ResultKt.throwOnFailure(obj);
                                                 okioWriteScope2 = okioWriteScope2;
@@ -242,8 +230,8 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                                                     th = th2;
                                                 }
                                                 if (th != null) {
-                                                    if (okioStorageConnection2.fileSystem.exists(path2)) {
-                                                        okioStorageConnection2.fileSystem.atomicMove(path2, okioStorageConnection2.path);
+                                                    if (this.fileSystem.exists(path2)) {
+                                                        this.fileSystem.atomicMove(path2, this.path);
                                                     }
                                                     Unit unit2 = Unit.INSTANCE;
                                                     mutex2.unlock(null);
@@ -262,25 +250,22 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                                         }
                                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                                     } else {
-                                        parent = (Path) okioStorageConnection$writeScope$1.L$2;
-                                        okioStorageConnection = (OkioStorageConnection) okioStorageConnection$writeScope$1.L$0;
+                                        parent = (Path) okioStorageConnection$writeScope$1.L$1;
                                         ResultKt.throwOnFailure(obj);
-                                        mutex = (Mutex) okioStorageConnection$writeScope$1.L$3;
-                                        function2 = (Function2) okioStorageConnection$writeScope$1.L$1;
+                                        mutex = (Mutex) okioStorageConnection$writeScope$1.L$2;
+                                        function2 = (Function2) okioStorageConnection$writeScope$1.L$0;
                                     }
-                                    path = parent.resolve(okioStorageConnection.path.name() + ".tmp");
-                                    okioStorageConnection.fileSystem.delete(path, false);
-                                    okioWriteScope = new OkioWriteScope(okioStorageConnection.fileSystem, path, okioStorageConnection.serializer);
-                                    okioStorageConnection$writeScope$1.L$0 = okioStorageConnection;
-                                    okioStorageConnection$writeScope$1.L$1 = mutex;
-                                    okioStorageConnection$writeScope$1.L$2 = path;
-                                    okioStorageConnection$writeScope$1.L$3 = okioWriteScope;
+                                    path = parent.resolve(this.path.name() + ".tmp");
+                                    this.fileSystem.delete(path, false);
+                                    okioWriteScope = new OkioWriteScope(this.fileSystem, path, this.serializer);
+                                    okioStorageConnection$writeScope$1.L$0 = mutex;
+                                    okioStorageConnection$writeScope$1.L$1 = path;
+                                    okioStorageConnection$writeScope$1.L$2 = okioWriteScope;
                                     okioStorageConnection$writeScope$1.label = 2;
                                     if (function2.invoke(okioWriteScope, okioStorageConnection$writeScope$1) != coroutine_suspended) {
+                                        mutex2 = mutex;
                                         path2 = path;
                                         okioWriteScope2 = okioWriteScope;
-                                        okioStorageConnection2 = okioStorageConnection;
-                                        mutex2 = mutex;
                                         Unit unit3 = Unit.INSTANCE;
                                         okioWriteScope2.close();
                                         th = null;
@@ -290,10 +275,9 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                                     return coroutine_suspended;
                                 }
                             }
-                            okioStorageConnection$writeScope$1.L$0 = okioStorageConnection;
-                            okioStorageConnection$writeScope$1.L$1 = mutex;
-                            okioStorageConnection$writeScope$1.L$2 = path;
-                            okioStorageConnection$writeScope$1.L$3 = okioWriteScope;
+                            okioStorageConnection$writeScope$1.L$0 = mutex;
+                            okioStorageConnection$writeScope$1.L$1 = path;
+                            okioStorageConnection$writeScope$1.L$2 = okioWriteScope;
                             okioStorageConnection$writeScope$1.label = 2;
                             if (function2.invoke(okioWriteScope, okioStorageConnection$writeScope$1) != coroutine_suspended) {
                             }
@@ -304,42 +288,41 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                             okioWriteScope2.close();
                             throw th;
                         }
-                        okioStorageConnection.fileSystem.delete(path, false);
-                        okioWriteScope = new OkioWriteScope(okioStorageConnection.fileSystem, path, okioStorageConnection.serializer);
+                        this.fileSystem.delete(path, false);
+                        okioWriteScope = new OkioWriteScope(this.fileSystem, path, this.serializer);
                     } catch (IOException e) {
                         e = e;
-                        if (okioStorageConnection.fileSystem.exists(path)) {
+                        if (this.fileSystem.exists(path)) {
                             try {
-                                okioStorageConnection.fileSystem.delete(path);
+                                this.fileSystem.delete(path);
                             } catch (IOException unused) {
                             }
                         }
                         throw e;
                     }
-                    path = parent.resolve(okioStorageConnection.path.name() + ".tmp");
+                    path = parent.resolve(this.path.name() + ".tmp");
                 } catch (Throwable th6) {
                     th = th6;
                     mutex.unlock(null);
                     throw th;
                 }
-                if (r2 != 0) {
+                if (i != 0) {
                 }
             } catch (IOException e2) {
                 e = e2;
-                okioStorageConnection = okioStorageConnection$writeScope$1;
-                mutex = r2;
+                mutex = okioStorageConnection$writeScope$1;
                 path = coroutine_suspended;
             }
         } catch (Throwable th7) {
             th = th7;
-            mutex = r2;
+            mutex = okioStorageConnection$writeScope$1;
             mutex.unlock(null);
             throw th;
         }
         okioStorageConnection$writeScope$1 = new OkioStorageConnection$writeScope$1(this, continuation);
         Object obj2 = okioStorageConnection$writeScope$1.result;
         coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        r2 = okioStorageConnection$writeScope$1.label;
+        i = okioStorageConnection$writeScope$1.label;
     }
 
     private final void checkNotClosed() {

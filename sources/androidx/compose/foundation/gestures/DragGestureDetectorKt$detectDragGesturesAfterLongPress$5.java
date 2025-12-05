@@ -16,10 +16,11 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DragGestureDetector.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5", f = "DragGestureDetector.kt", i = {0, 1, 2}, l = {362, 363, 368}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "$this$awaitEachGesture"}, s = {"L$0", "L$0", "L$0"})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5", f = "DragGestureDetector.kt", i = {0, 1, 2}, l = {359, RouletteView.PREMIUM_ROULETTE_WIDTH, 365}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "$this$awaitEachGesture"}, s = {"L$0", "L$0", "L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<PointerInputChange, Offset, Unit> $onDrag;
@@ -103,12 +104,12 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
                 ResultKt.throwOnFailure(obj);
                 pointerInputChange = (PointerInputChange) obj;
                 if (pointerInputChange != null) {
-                    this.$onDragStart.invoke(Offset.m5025boximpl(pointerInputChange.m6570getPositionF1C5BW0()));
-                    long m6568getIdJ3iCeTQ = pointerInputChange.m6568getIdJ3iCeTQ();
+                    this.$onDragStart.invoke(Offset.m5168boximpl(pointerInputChange.m6744getPositionF1C5BW0()));
+                    long m6742getIdJ3iCeTQ = pointerInputChange.m6742getIdJ3iCeTQ();
                     final Function2<PointerInputChange, Offset, Unit> function2 = this.$onDrag;
                     this.L$0 = awaitPointerEventScope;
                     this.label = 3;
-                    obj = DragGestureDetectorKt.m498dragjO51t88(awaitPointerEventScope, m6568getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
+                    obj = DragGestureDetectorKt.m547dragjO51t88(awaitPointerEventScope, m6742getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             Unit invokeSuspend$lambda$0;
@@ -130,7 +131,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
             }
             this.L$0 = awaitPointerEventScope;
             this.label = 2;
-            obj = DragGestureDetectorKt.m488awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m6568getIdJ3iCeTQ(), this);
+            obj = DragGestureDetectorKt.m537awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m6742getIdJ3iCeTQ(), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -146,7 +147,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Function2 function2, PointerInputChange pointerInputChange) {
-        function2.invoke(pointerInputChange, Offset.m5025boximpl(PointerEventKt.positionChange(pointerInputChange)));
+        function2.invoke(pointerInputChange, Offset.m5168boximpl(PointerEventKt.positionChange(pointerInputChange)));
         pointerInputChange.consume();
         return Unit.INSTANCE;
     }

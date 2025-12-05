@@ -3,7 +3,6 @@ package com.androidplot.ui.widget;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import androidx.core.view.ViewCompat;
 import com.androidplot.ui.LayoutManager;
 import com.androidplot.ui.Size;
 import com.androidplot.ui.TableModel;
@@ -41,7 +40,7 @@ public abstract class LegendWidget<ItemT extends LegendItem> extends Widget {
         this.textPaint.setAntiAlias(true);
         Paint paint2 = new Paint();
         this.iconBackgroundPaint = paint2;
-        paint2.setColor(ViewCompat.MEASURED_STATE_MASK);
+        paint2.setColor(-16777216);
         Paint paint3 = new Paint();
         this.iconBorderPaint = paint3;
         paint3.setColor(0);

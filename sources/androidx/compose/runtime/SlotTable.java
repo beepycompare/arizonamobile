@@ -4,7 +4,6 @@ import androidx.collection.MutableIntObjectMap;
 import androidx.collection.MutableIntSet;
 import androidx.compose.runtime.tooling.CompositionData;
 import androidx.compose.runtime.tooling.CompositionGroup;
-import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.common.C;
@@ -254,7 +253,7 @@ public final class SlotTable implements CompositionData, Iterable<CompositionGro
         }
         SlotReader openReader = openReader();
         try {
-            invalidateGroupsWithKey$lambda$20$scanGroup(openReader, mutableIntSet2, arrayList, booleanRef, this, arrayList2);
+            invalidateGroupsWithKey$lambda$2$scanGroup(openReader, mutableIntSet2, arrayList, booleanRef, this, arrayList2);
             Unit unit = Unit.INSTANCE;
             openReader.close();
             SlotWriter openWriter = openWriter();
@@ -285,7 +284,7 @@ public final class SlotTable implements CompositionData, Iterable<CompositionGro
         }
     }
 
-    private static final void invalidateGroupsWithKey$lambda$20$scanGroup(SlotReader slotReader, MutableIntSet mutableIntSet, List<Anchor> list, Ref.BooleanRef booleanRef, SlotTable slotTable, List<RecomposeScopeImpl> list2) {
+    private static final void invalidateGroupsWithKey$lambda$2$scanGroup(SlotReader slotReader, MutableIntSet mutableIntSet, List<Anchor> list, Ref.BooleanRef booleanRef, SlotTable slotTable, List<RecomposeScopeImpl> list2) {
         RecomposeScopeImpl findEffectiveRecomposeScope;
         int groupKey = slotReader.getGroupKey();
         if (mutableIntSet.contains(groupKey)) {
@@ -310,7 +309,7 @@ public final class SlotTable implements CompositionData, Iterable<CompositionGro
         }
         slotReader.startGroup();
         while (!slotReader.isGroupEnd()) {
-            invalidateGroupsWithKey$lambda$20$scanGroup(slotReader, mutableIntSet, list, booleanRef, slotTable, list2);
+            invalidateGroupsWithKey$lambda$2$scanGroup(slotReader, mutableIntSet, list, booleanRef, slotTable, list2);
         }
         slotReader.endGroup();
     }
@@ -439,7 +438,7 @@ public final class SlotTable implements CompositionData, Iterable<CompositionGro
             i12 += verifyWellFormed$validateGroup(intRef, slotTable, i3, access$groupSize);
         }
         int[] iArr3 = slotTable.groups;
-        int i13 = iArr3[i10] & RectListKt.Lower26Bits;
+        int i13 = iArr3[i10] & 67108863;
         int access$groupSize2 = SlotTableKt.access$groupSize(iArr3, i3);
         if (!(i13 == i12)) {
             PreconditionsKt.throwIllegalStateException("Incorrect node count detected at " + i3 + ", expected " + i13 + ", received " + i12);
@@ -538,7 +537,7 @@ public final class SlotTable implements CompositionData, Iterable<CompositionGro
         int access$groupSize = SlotTableKt.access$groupSize(this.groups, i);
         sb.append(", nodes=");
         int i5 = i4 + 1;
-        sb.append(this.groups[i5] & RectListKt.Lower26Bits);
+        sb.append(this.groups[i5] & 67108863);
         sb.append(", size=");
         sb.append(access$groupSize);
         if ((this.groups[i5] & C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {

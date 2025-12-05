@@ -12,6 +12,11 @@ public final class LayoutWeightNode extends Modifier.Node implements ParentDataM
     private boolean fill;
     private float weight;
 
+    public LayoutWeightNode(float f, boolean z) {
+        this.weight = f;
+        this.fill = z;
+    }
+
     public final boolean getFill() {
         return this.fill;
     }
@@ -26,11 +31,6 @@ public final class LayoutWeightNode extends Modifier.Node implements ParentDataM
 
     public final void setWeight(float f) {
         this.weight = f;
-    }
-
-    public LayoutWeightNode(float f, boolean z) {
-        this.weight = f;
-        this.fill = z;
     }
 
     @Override // androidx.compose.ui.node.ParentDataModifierNode

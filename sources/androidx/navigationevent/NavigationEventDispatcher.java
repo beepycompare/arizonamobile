@@ -206,11 +206,11 @@ public final class NavigationEventDispatcher {
             NavigationEventDispatcher navigationEventDispatcher = (NavigationEventDispatcher) arrayDeque.removeFirst();
             navigationEventDispatcher.isDisposed = true;
             CollectionsKt.addAll(arrayDeque2, navigationEventDispatcher.childDispatchers);
-            for (NavigationEventInput navigationEventInput : navigationEventDispatcher.inputs) {
+            for (NavigationEventInput navigationEventInput : CollectionsKt.toList(navigationEventDispatcher.inputs)) {
                 this.sharedProcessor.removeInput(navigationEventInput);
             }
             navigationEventDispatcher.inputs.clear();
-            for (NavigationEventHandler<?> navigationEventHandler : navigationEventDispatcher.handlers) {
+            for (NavigationEventHandler navigationEventHandler : CollectionsKt.toList(navigationEventDispatcher.handlers)) {
                 navigationEventHandler.remove();
             }
             navigationEventDispatcher.handlers.clear();

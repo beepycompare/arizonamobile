@@ -34,7 +34,7 @@ public final class VectorizedRepeatableSpec<V extends AnimationVector> implement
     }
 
     public /* synthetic */ VectorizedRepeatableSpec(int i, VectorizedDurationBasedAnimationSpec vectorizedDurationBasedAnimationSpec, RepeatMode repeatMode, long j, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, vectorizedDurationBasedAnimationSpec, (i2 & 4) != 0 ? RepeatMode.Restart : repeatMode, (i2 & 8) != 0 ? StartOffset.m197constructorimpl$default(0, 0, 2, null) : j, (DefaultConstructorMarker) null);
+        this(i, vectorizedDurationBasedAnimationSpec, (i2 & 4) != 0 ? RepeatMode.Restart : repeatMode, (i2 & 8) != 0 ? StartOffset.m222constructorimpl$default(0, 0, 2, null) : j, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ VectorizedRepeatableSpec(int i, VectorizedDurationBasedAnimationSpec vectorizedDurationBasedAnimationSpec, RepeatMode repeatMode, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -43,7 +43,7 @@ public final class VectorizedRepeatableSpec<V extends AnimationVector> implement
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This method has been deprecated in favor of the constructor that accepts start offset.")
     public /* synthetic */ VectorizedRepeatableSpec(int i, VectorizedDurationBasedAnimationSpec vectorizedDurationBasedAnimationSpec, RepeatMode repeatMode) {
-        this(i, vectorizedDurationBasedAnimationSpec, repeatMode, StartOffset.m197constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
+        this(i, vectorizedDurationBasedAnimationSpec, repeatMode, StartOffset.m222constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
     }
 
     public final long getDurationNanos$animation_core() {

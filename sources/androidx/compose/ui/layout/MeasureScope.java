@@ -5,8 +5,6 @@ import androidx.compose.ui.internal.InlineClassHelperKt;
 import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.node.LookaheadCapablePlaceable;
 import androidx.compose.ui.unit.DpRect;
-import androidx.core.view.ViewCompat;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -14,7 +12,7 @@ import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function1;
 /* compiled from: MeasureScope.kt */
 @MeasureScopeMarker
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bg\u0018\u00002\u00020\u0001JG\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0014\b\u0002\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\b2\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000eH\u0016Jd\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0014\b\u0002\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\b2\u001b\b\u0002\u0010\u000f\u001a\u0015\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\r\u0018\u00010\u000b¢\u0006\u0002\b\u000e2\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000eH\u0016ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0011À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", TtmlNode.TAG_LAYOUT, "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "placementBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "", "Lkotlin/ExtensionFunctionType;", "rulers", "Landroidx/compose/ui/layout/RulerScope;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bg\u0018\u00002\u00020\u0001JG\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0014\b\u0002\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\b2\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000eH\u0016Jd\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0014\b\u0002\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\b2\u001b\b\u0002\u0010\u000f\u001a\u0015\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\r\u0018\u00010\u000b¢\u0006\u0002\b\u000e2\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000eH\u0016ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0011À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "layout", "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "placementBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "", "Lkotlin/ExtensionFunctionType;", "rulers", "Landroidx/compose/ui/layout/RulerScope;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public interface MeasureScope extends IntrinsicMeasureScope {
 
@@ -28,51 +26,51 @@ public interface MeasureScope extends IntrinsicMeasureScope {
         }
 
         @Deprecated
-        /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m6741roundToPxR2X_6o(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo423roundToPxR2X_6o(j);
+        /* renamed from: roundToPx--R2X_6o */
+        public static int m6919roundToPxR2X_6o(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo457roundToPxR2X_6o(j);
         }
 
         @Deprecated
-        /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m6742roundToPx0680j_4(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo424roundToPx0680j_4(f);
+        /* renamed from: roundToPx-0680j_4 */
+        public static int m6920roundToPx0680j_4(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo458roundToPx0680j_4(f);
         }
 
         @Deprecated
-        /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m6743toDpGaN1DYA(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo425toDpGaN1DYA(j);
+        /* renamed from: toDp-GaN1DYA */
+        public static float m6921toDpGaN1DYA(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo459toDpGaN1DYA(j);
         }
 
         @Deprecated
-        /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m6744toDpu2uoSUM(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo426toDpu2uoSUM(f);
+        /* renamed from: toDp-u2uoSUM */
+        public static float m6922toDpu2uoSUM(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo460toDpu2uoSUM(f);
         }
 
         @Deprecated
-        /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m6745toDpu2uoSUM(MeasureScope measureScope, int i) {
-            return MeasureScope.super.mo427toDpu2uoSUM(i);
+        /* renamed from: toDp-u2uoSUM */
+        public static float m6923toDpu2uoSUM(MeasureScope measureScope, int i) {
+            return MeasureScope.super.mo461toDpu2uoSUM(i);
         }
 
         @Deprecated
-        /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m6746toDpSizekrfVVM(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo428toDpSizekrfVVM(j);
+        /* renamed from: toDpSize-k-rfVVM */
+        public static long m6924toDpSizekrfVVM(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo462toDpSizekrfVVM(j);
         }
 
         @Deprecated
-        /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m6747toPxR2X_6o(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo429toPxR2X_6o(j);
+        /* renamed from: toPx--R2X_6o */
+        public static float m6925toPxR2X_6o(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo463toPxR2X_6o(j);
         }
 
         @Deprecated
-        /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m6748toPx0680j_4(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo430toPx0680j_4(f);
+        /* renamed from: toPx-0680j_4 */
+        public static float m6926toPx0680j_4(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo464toPx0680j_4(f);
         }
 
         @Deprecated
@@ -81,27 +79,27 @@ public interface MeasureScope extends IntrinsicMeasureScope {
         }
 
         @Deprecated
-        /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m6749toSizeXkaWNTQ(MeasureScope measureScope, long j) {
-            return MeasureScope.super.mo431toSizeXkaWNTQ(j);
+        /* renamed from: toSize-XkaWNTQ */
+        public static long m6927toSizeXkaWNTQ(MeasureScope measureScope, long j) {
+            return MeasureScope.super.mo465toSizeXkaWNTQ(j);
         }
 
         @Deprecated
-        /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m6750toSp0xMU5do(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo432toSp0xMU5do(f);
+        /* renamed from: toSp-0xMU5do */
+        public static long m6928toSp0xMU5do(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo466toSp0xMU5do(f);
         }
 
         @Deprecated
-        /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m6751toSpkPz2Gy4(MeasureScope measureScope, float f) {
-            return MeasureScope.super.mo433toSpkPz2Gy4(f);
+        /* renamed from: toSp-kPz2Gy4 */
+        public static long m6929toSpkPz2Gy4(MeasureScope measureScope, float f) {
+            return MeasureScope.super.mo467toSpkPz2Gy4(f);
         }
 
         @Deprecated
-        /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m6752toSpkPz2Gy4(MeasureScope measureScope, int i) {
-            return MeasureScope.super.mo434toSpkPz2Gy4(i);
+        /* renamed from: toSp-kPz2Gy4 */
+        public static long m6930toSpkPz2Gy4(MeasureScope measureScope, int i) {
+            return MeasureScope.super.mo468toSpkPz2Gy4(i);
         }
 
         @Deprecated
@@ -147,8 +145,8 @@ public interface MeasureScope extends IntrinsicMeasureScope {
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: layout");
     }
 
-    default MeasureResult layout(final int i, final int i2, final Map<AlignmentLine, Integer> map, final Function1<? super RulerScope, Unit> function1, final Function1<? super Placeable.PlacementScope, Unit> function12) {
-        if (!((i & ViewCompat.MEASURED_STATE_MASK) == 0 && ((-16777216) & i2) == 0)) {
+    default MeasureResult layout(int i, int i2, Map<AlignmentLine, Integer> map, Function1<? super RulerScope, Unit> function1, Function1<? super Placeable.PlacementScope, Unit> function12) {
+        if (!((i & (-16777216)) == 0 && ((-16777216) & i2) == 0)) {
             InlineClassHelperKt.throwIllegalStateException("Size(" + i + " x " + i2 + ") is out of range. Each dimension must be between 0 and 16777215.");
         }
         return new MeasureResult(i, i2, map, function1, this, function12) { // from class: androidx.compose.ui.layout.MeasureScope$layout$1

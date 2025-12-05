@@ -74,7 +74,7 @@ public final class TwoRowsTopAppBarOverrideScope {
     }
 
     /* renamed from: getTitleBottomPadding-D9Ej5fM  reason: not valid java name */
-    public final float m3420getTitleBottomPaddingD9Ej5fM() {
+    public final float m3506getTitleBottomPaddingD9Ej5fM() {
         return this.titleBottomPadding;
     }
 
@@ -115,12 +115,12 @@ public final class TwoRowsTopAppBarOverrideScope {
     }
 
     /* renamed from: getCollapsedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3418getCollapsedHeightD9Ej5fM() {
+    public final float m3504getCollapsedHeightD9Ej5fM() {
         return this.collapsedHeight;
     }
 
     /* renamed from: getExpandedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3419getExpandedHeightD9Ej5fM() {
+    public final float m3505getExpandedHeightD9Ej5fM() {
         return this.expandedHeight;
     }
 

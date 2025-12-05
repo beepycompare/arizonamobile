@@ -62,7 +62,7 @@ public final class ToggleableAppBarItem implements AppBarItem {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-53051696, i2, -1, "androidx.compose.material3.ToggleableAppBarItem.AppbarContent (AppBarDsl.kt:193)");
             }
-            TooltipKt.TooltipBox(TooltipDefaults.INSTANCE.m3366rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3353getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2), ComposableLambdaKt.rememberComposableLambda(-1965247803, true, new Function3<TooltipScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ToggleableAppBarItem$AppbarContent$1
+            TooltipKt.TooltipBox(TooltipDefaults.INSTANCE.m3452rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3439getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2), ComposableLambdaKt.rememberComposableLambda(-1965247803, true, new Function3<TooltipScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ToggleableAppBarItem$AppbarContent$1
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(TooltipScope tooltipScope, Composer composer2, Integer num) {
                     invoke(tooltipScope, composer2, num.intValue());
@@ -85,7 +85,7 @@ public final class ToggleableAppBarItem implements AppBarItem {
                         ComposerKt.traceEventStart(-1965247803, i4, -1, "androidx.compose.material3.ToggleableAppBarItem.AppbarContent.<anonymous> (AppBarDsl.kt:198)");
                     }
                     final ToggleableAppBarItem toggleableAppBarItem = ToggleableAppBarItem.this;
-                    TooltipKt.m3374PlainTooltipgv3ox5I(tooltipScope, null, null, 0.0f, null, 0L, 0L, 0.0f, 0.0f, ComposableLambdaKt.rememberComposableLambda(2059984663, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ToggleableAppBarItem$AppbarContent$1.1
+                    TooltipKt.m3460PlainTooltipgv3ox5I(tooltipScope, null, null, 0.0f, null, 0L, 0L, 0.0f, 0.0f, ComposableLambdaKt.rememberComposableLambda(2059984663, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ToggleableAppBarItem$AppbarContent$1.1
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                             invoke(composer3, num.intValue());
@@ -103,7 +103,7 @@ public final class ToggleableAppBarItem implements AppBarItem {
                                 ComposerKt.traceEventStart(2059984663, i5, -1, "androidx.compose.material3.ToggleableAppBarItem.AppbarContent.<anonymous>.<anonymous> (AppBarDsl.kt:198)");
                             }
                             str = ToggleableAppBarItem.this.label;
-                            TextKt.m3169TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer3, 0, 0, 262142);
+                            TextKt.m3255TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer3, 0, 0, 262142);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -201,7 +201,7 @@ public final class ToggleableAppBarItem implements AppBarItem {
                         ComposerKt.traceEventStart(-269621941, i3, -1, "androidx.compose.material3.ToggleableAppBarItem.MenuContent.<anonymous> (AppBarDsl.kt:214)");
                     }
                     str = ToggleableAppBarItem.this.label;
-                    TextKt.m3169TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, 0, 0, 262142);
+                    TextKt.m3255TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, 0, 0, 262142);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }

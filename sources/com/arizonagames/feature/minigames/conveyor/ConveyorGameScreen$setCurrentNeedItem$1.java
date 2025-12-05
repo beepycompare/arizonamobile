@@ -59,13 +59,13 @@ public final class ConveyorGameScreen$setCurrentNeedItem$1 extends SuspendLambda
                 @DebugMetadata(c = "com.arizonagames.feature.minigames.conveyor.ConveyorGameScreen$setCurrentNeedItem$1$1$1", f = "ConveyorGameScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                 /* renamed from: com.arizonagames.feature.minigames.conveyor.ConveyorGameScreen$setCurrentNeedItem$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes3.dex */
-                public static final class C00471 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+                public static final class C00461 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                     final /* synthetic */ int $collectedEggs;
                     int label;
                     final /* synthetic */ ConveyorGameScreen this$0;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00471(ConveyorGameScreen conveyorGameScreen, int i, Continuation<? super C00471> continuation) {
+                    C00461(ConveyorGameScreen conveyorGameScreen, int i, Continuation<? super C00461> continuation) {
                         super(2, continuation);
                         this.this$0 = conveyorGameScreen;
                         this.$collectedEggs = i;
@@ -73,12 +73,12 @@ public final class ConveyorGameScreen$setCurrentNeedItem$1 extends SuspendLambda
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        return new C00471(this.this$0, this.$collectedEggs, continuation);
+                        return new C00461(this.this$0, this.$collectedEggs, continuation);
                     }
 
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                        return ((C00471) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C00461) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -99,7 +99,7 @@ public final class ConveyorGameScreen$setCurrentNeedItem$1 extends SuspendLambda
                 }
 
                 public final Object emit(int i2, Continuation<? super Unit> continuation) {
-                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C00471(ConveyorGameScreen.this, i2, null), continuation);
+                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C00461(ConveyorGameScreen.this, i2, null), continuation);
                     return withContext == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withContext : Unit.INSTANCE;
                 }
             }, this) == coroutine_suspended) {

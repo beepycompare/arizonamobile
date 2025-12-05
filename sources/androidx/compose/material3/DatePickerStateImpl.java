@@ -47,7 +47,7 @@ public final class DatePickerStateImpl extends BaseDatePickerStateImpl implement
         calendarDate = null;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(calendarDate, null, 2, null);
         this._selectedDate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(DisplayMode.m2301boximpl(i), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(DisplayMode.m2387boximpl(i), null, 2, null);
         this._displayMode = mutableStateOf$default2;
     }
 
@@ -72,18 +72,18 @@ public final class DatePickerStateImpl extends BaseDatePickerStateImpl implement
 
     @Override // androidx.compose.material3.DatePickerState
     /* renamed from: getDisplayMode-jFl-4v0 */
-    public int mo2242getDisplayModejFl4v0() {
-        return this._displayMode.getValue().m2307unboximpl();
+    public int mo2328getDisplayModejFl4v0() {
+        return this._displayMode.getValue().m2393unboximpl();
     }
 
     @Override // androidx.compose.material3.DatePickerState
     /* renamed from: setDisplayMode-vCnGnXg */
-    public void mo2243setDisplayModevCnGnXg(int i) {
+    public void mo2329setDisplayModevCnGnXg(int i) {
         Long selectedDateMillis = getSelectedDateMillis();
         if (selectedDateMillis != null) {
             setDisplayedMonthMillis(getCalendarModel().getMonth(selectedDateMillis.longValue()).getStartUtcTimeMillis());
         }
-        this._displayMode.setValue(DisplayMode.m2301boximpl(i));
+        this._displayMode.setValue(DisplayMode.m2387boximpl(i));
     }
 
     /* compiled from: DatePicker.kt */
@@ -117,7 +117,7 @@ public final class DatePickerStateImpl extends BaseDatePickerStateImpl implement
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final List Saver$lambda$0(SaverScope saverScope, DatePickerStateImpl datePickerStateImpl) {
-            return CollectionsKt.listOf(datePickerStateImpl.getSelectedDateMillis(), Long.valueOf(datePickerStateImpl.getDisplayedMonthMillis()), Integer.valueOf(datePickerStateImpl.getYearRange().getFirst()), Integer.valueOf(datePickerStateImpl.getYearRange().getLast()), Integer.valueOf(datePickerStateImpl.mo2242getDisplayModejFl4v0()));
+            return CollectionsKt.listOf(datePickerStateImpl.getSelectedDateMillis(), Long.valueOf(datePickerStateImpl.getDisplayedMonthMillis()), Integer.valueOf(datePickerStateImpl.getYearRange().getFirst()), Integer.valueOf(datePickerStateImpl.getYearRange().getLast()), Integer.valueOf(datePickerStateImpl.mo2328getDisplayModejFl4v0()));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -130,7 +130,7 @@ public final class DatePickerStateImpl extends BaseDatePickerStateImpl implement
             IntRange intRange = new IntRange(intValue, ((Integer) obj2).intValue());
             Object obj3 = list.get(4);
             Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type kotlin.Int");
-            return new DatePickerStateImpl((Long) list.get(0), (Long) list.get(1), intRange, DisplayMode.m2302constructorimpl(((Integer) obj3).intValue()), selectableDates, locale, null);
+            return new DatePickerStateImpl((Long) list.get(0), (Long) list.get(1), intRange, DisplayMode.m2388constructorimpl(((Integer) obj3).intValue()), selectableDates, locale, null);
         }
     }
 }

@@ -8,7 +8,7 @@ import kotlin.Metadata;
 public final class OutlinedSegmentedButtonTokens {
     public static final int $stable = 0;
     public static final OutlinedSegmentedButtonTokens INSTANCE = new OutlinedSegmentedButtonTokens();
-    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 40.0d);
+    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 40.0d);
     private static final ColorSchemeKeyTokens DisabledIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
@@ -17,7 +17,7 @@ public final class OutlinedSegmentedButtonTokens {
     private static final float DisabledOutlineOpacity = 0.12f;
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens OutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float OutlineWidth = Dp.m7996constructorimpl((float) 1.0d);
+    private static final float OutlineWidth = Dp.m8258constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -36,13 +36,13 @@ public final class OutlinedSegmentedButtonTokens {
     private static final ColorSchemeKeyTokens UnselectedPressedIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float IconSize = Dp.m7996constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m8258constructorimpl((float) 18.0d);
 
     private OutlinedSegmentedButtonTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4124getContainerHeightD9Ej5fM() {
+    public final float m4210getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -79,7 +79,7 @@ public final class OutlinedSegmentedButtonTokens {
     }
 
     /* renamed from: getOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4126getOutlineWidthD9Ej5fM() {
+    public final float m4212getOutlineWidthD9Ej5fM() {
         return OutlineWidth;
     }
 
@@ -156,7 +156,7 @@ public final class OutlinedSegmentedButtonTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4125getIconSizeD9Ej5fM() {
+    public final float m4211getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

@@ -15,9 +15,10 @@ import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
-import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
@@ -94,18 +95,18 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreScroll-OzD1aCk  reason: not valid java name */
-    public long mo929onPreScrollOzD1aCk(long j, int i) {
-        return m927scroll8S9VItk(j, this.sideCalculator.hideMotion(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (4294967295L & j))));
+    public long mo1009onPreScrollOzD1aCk(long j, int i) {
+        return m1007scroll8S9VItk(j, this.sideCalculator.hideMotion(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (4294967295L & j))));
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostScroll-DzOQY0M */
-    public long mo578onPostScrollDzOQY0M(long j, long j2, int i) {
-        return m927scroll8S9VItk(j2, this.sideCalculator.showMotion(Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (4294967295L & j2))));
+    public long mo656onPostScrollDzOQY0M(long j, long j2, int i) {
+        return m1007scroll8S9VItk(j2, this.sideCalculator.showMotion(Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (4294967295L & j2))));
     }
 
     /* renamed from: scroll-8S9VItk  reason: not valid java name */
-    private final long m927scroll8S9VItk(long j, float f) {
+    private final long m1007scroll8S9VItk(long j, float f) {
         Job job = this.animationJob;
         if (job != null) {
             job.cancel((CancellationException) new WindowInsetsAnimationCancelledException());
@@ -118,7 +119,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 if (windowInsetsAnimationController == null) {
                     this.partialConsumption = 0.0f;
                     requestAnimationController();
-                    return this.sideCalculator.mo876consumedOffsetsMKHz9U(j);
+                    return this.sideCalculator.mo957consumedOffsetsMKHz9U(j);
                 }
                 int valueOf = this.sideCalculator.valueOf(windowInsetsAnimationController.getHiddenStateInsets());
                 int valueOf2 = this.sideCalculator.valueOf(windowInsetsAnimationController.getShownStateInsets());
@@ -126,7 +127,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 int valueOf3 = this.sideCalculator.valueOf(currentInsets);
                 if (valueOf3 == (i > 0 ? valueOf2 : valueOf)) {
                     this.partialConsumption = 0.0f;
-                    return Offset.Companion.m5052getZeroF1C5BW0();
+                    return Offset.Companion.m5195getZeroF1C5BW0();
                 }
                 float f2 = valueOf3 + f + this.partialConsumption;
                 int coerceIn = RangesKt.coerceIn(Math.round(f2), valueOf, valueOf2);
@@ -134,22 +135,22 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 if (coerceIn != valueOf3) {
                     windowInsetsAnimationController.setInsetsAndAlpha(this.sideCalculator.adjustInsets(currentInsets, coerceIn), 1.0f, 0.0f);
                 }
-                return this.sideCalculator.mo876consumedOffsetsMKHz9U(j);
+                return this.sideCalculator.mo957consumedOffsetsMKHz9U(j);
             }
         }
-        return Offset.Companion.m5052getZeroF1C5BW0();
+        return Offset.Companion.m5195getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreFling-QWom1Mo  reason: not valid java name */
-    public Object mo928onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
-        return m926flinghuYlsQE(j, this.sideCalculator.hideMotion(Velocity.m8234getXimpl(j), Velocity.m8235getYimpl(j)), false, continuation);
+    public Object mo1008onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+        return m1006flinghuYlsQE(j, this.sideCalculator.hideMotion(Velocity.m8496getXimpl(j), Velocity.m8497getYimpl(j)), false, continuation);
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostFling-RZ2iAVY */
-    public Object mo577onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
-        return m926flinghuYlsQE(j2, this.sideCalculator.showMotion(Velocity.m8234getXimpl(j2), Velocity.m8235getYimpl(j2)), true, continuation);
+    public Object mo655onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+        return m1006flinghuYlsQE(j2, this.sideCalculator.showMotion(Velocity.m8496getXimpl(j2), Velocity.m8497getYimpl(j2)), true, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -161,7 +162,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m926flinghuYlsQE(long j, float f, boolean z, Continuation<? super Velocity> continuation) {
+    public final Object m1006flinghuYlsQE(long j, float f, boolean z, Continuation<? super Velocity> continuation) {
         WindowInsetsNestedScrollConnection$fling$1 windowInsetsNestedScrollConnection$fling$1;
         int i;
         Object animationController;
@@ -188,7 +189,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                     this.animationJob = null;
                     this.partialConsumption = 0.0f;
                     if ((f2 == 0.0f && !z) || (this.animationController == null && this.windowInsets.isVisible() == z)) {
-                        return Velocity.m8225boximpl(Velocity.Companion.m8245getZero9UxMQ8M());
+                        return Velocity.m8487boximpl(Velocity.Companion.m8507getZero9UxMQ8M());
                     }
                     windowInsetsNestedScrollConnection$fling$12.J$0 = j;
                     windowInsetsNestedScrollConnection$fling$12.F$0 = f2;
@@ -203,11 +204,11 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                         j3 = windowInsetsNestedScrollConnection$fling$12.J$0;
                         floatRef = (Ref.FloatRef) windowInsetsNestedScrollConnection$fling$12.L$0;
                         ResultKt.throwOnFailure(obj);
-                        return Velocity.m8225boximpl(this.sideCalculator.mo877consumedVelocityQWom1Mo(j3, floatRef.element));
+                        return Velocity.m8487boximpl(this.sideCalculator.mo958consumedVelocityQWom1Mo(j3, floatRef.element));
                     } else if (i == 3) {
                         j4 = windowInsetsNestedScrollConnection$fling$12.J$0;
                         ResultKt.throwOnFailure(obj);
-                        return Velocity.m8225boximpl(this.sideCalculator.mo877consumedVelocityQWom1Mo(j4, 0.0f));
+                        return Velocity.m8487boximpl(this.sideCalculator.mo958consumedVelocityQWom1Mo(j4, 0.0f));
                     } else {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
@@ -220,7 +221,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 float f3 = f2;
                 windowInsetsAnimationController = (WindowInsetsAnimationController) animationController;
                 if (windowInsetsAnimationController != null) {
-                    return Velocity.m8225boximpl(Velocity.Companion.m8245getZero9UxMQ8M());
+                    return Velocity.m8487boximpl(Velocity.Companion.m8507getZero9UxMQ8M());
                 }
                 int valueOf = this.sideCalculator.valueOf(windowInsetsAnimationController.getHiddenStateInsets());
                 int valueOf2 = this.sideCalculator.valueOf(windowInsetsAnimationController.getShownStateInsets());
@@ -228,7 +229,7 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                 if ((f3 <= 0.0f && valueOf3 == valueOf) || (f3 >= 0.0f && valueOf3 == valueOf2)) {
                     windowInsetsAnimationController.finish(valueOf3 == valueOf2);
                     this.animationController = null;
-                    return Velocity.m8225boximpl(Velocity.Companion.m8245getZero9UxMQ8M());
+                    return Velocity.m8487boximpl(Velocity.Companion.m8507getZero9UxMQ8M());
                 }
                 SplineBasedFloatDecayAnimationSpec splineBasedFloatDecayAnimationSpec = new SplineBasedFloatDecayAnimationSpec(this.density);
                 float flingDistance = valueOf3 + splineBasedFloatDecayAnimationSpec.flingDistance(f3);
@@ -243,14 +244,14 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
                     if (CoroutineScopeKt.coroutineScope(new WindowInsetsNestedScrollConnection$fling$2(this, valueOf3, f3, splineBasedFloatDecayAnimationSpec, valueOf, valueOf2, floatRef2, windowInsetsAnimationController, z2, null), windowInsetsNestedScrollConnection$fling$12) != coroutine_suspended) {
                         floatRef = floatRef2;
                         j3 = j2;
-                        return Velocity.m8225boximpl(this.sideCalculator.mo877consumedVelocityQWom1Mo(j3, floatRef.element));
+                        return Velocity.m8487boximpl(this.sideCalculator.mo958consumedVelocityQWom1Mo(j3, floatRef.element));
                     }
                 } else {
                     windowInsetsNestedScrollConnection$fling$12.J$0 = j2;
                     windowInsetsNestedScrollConnection$fling$12.label = 3;
                     if (CoroutineScopeKt.coroutineScope(new WindowInsetsNestedScrollConnection$fling$3(this, valueOf3, i2, f3, windowInsetsAnimationController, z2, null), windowInsetsNestedScrollConnection$fling$12) != coroutine_suspended) {
                         j4 = j2;
-                        return Velocity.m8225boximpl(this.sideCalculator.mo877consumedVelocityQWom1Mo(j4, 0.0f));
+                        return Velocity.m8487boximpl(this.sideCalculator.mo958consumedVelocityQWom1Mo(j4, 0.0f));
                     }
                 }
                 return coroutine_suspended;
@@ -283,12 +284,12 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
         this.isControllerRequested = false;
         CancellableContinuation<? super WindowInsetsAnimationController> cancellableContinuation = this.continuation;
         if (cancellableContinuation != null) {
-            cancellableContinuation.resume((CancellableContinuation<? super WindowInsetsAnimationController>) windowInsetsAnimationController, new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$$ExternalSyntheticLambda2
-                @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Object obj) {
-                    Unit onReady$lambda$3;
-                    onReady$lambda$3 = WindowInsetsNestedScrollConnection.onReady$lambda$3((Throwable) obj);
-                    return onReady$lambda$3;
+            cancellableContinuation.resume((CancellableContinuation<? super WindowInsetsAnimationController>) windowInsetsAnimationController, (Function3<? super Throwable, ? super CancellableContinuation<? super WindowInsetsAnimationController>, ? super CoroutineContext, Unit>) new Function3() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function3
+                public final Object invoke(Object obj, Object obj2, Object obj3) {
+                    Unit onReady$lambda$0;
+                    onReady$lambda$0 = WindowInsetsNestedScrollConnection.onReady$lambda$0((Throwable) obj, (WindowInsetsAnimationController) obj2, (CoroutineContext) obj3);
+                    return onReady$lambda$0;
                 }
             });
         }
@@ -296,24 +297,21 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onReady$lambda$3(Throwable th) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dispose$lambda$4(Throwable th) {
+    public static final Unit onReady$lambda$0(Throwable th, WindowInsetsAnimationController windowInsetsAnimationController, CoroutineContext coroutineContext) {
         return Unit.INSTANCE;
     }
 
     public final void dispose() {
         CancellableContinuation<? super WindowInsetsAnimationController> cancellableContinuation = this.continuation;
         if (cancellableContinuation != null) {
-            cancellableContinuation.resume((CancellableContinuation<? super WindowInsetsAnimationController>) null, new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$$ExternalSyntheticLambda1
-                @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Object obj) {
-                    Unit dispose$lambda$4;
-                    dispose$lambda$4 = WindowInsetsNestedScrollConnection.dispose$lambda$4((Throwable) obj);
-                    return dispose$lambda$4;
+            cancellableContinuation.resume((CancellableContinuation<? super WindowInsetsAnimationController>) null, new Function3() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$dispose$1
+                public final void invoke(Throwable th, Void r2, CoroutineContext coroutineContext) {
+                }
+
+                @Override // kotlin.jvm.functions.Function3
+                public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2, Object obj3) {
+                    invoke((Throwable) obj, (Void) obj2, (CoroutineContext) obj3);
+                    return Unit.INSTANCE;
                 }
             });
         }
@@ -346,12 +344,14 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
         this.animationController = null;
         CancellableContinuation<? super WindowInsetsAnimationController> cancellableContinuation = this.continuation;
         if (cancellableContinuation != null) {
-            cancellableContinuation.resume((CancellableContinuation<? super WindowInsetsAnimationController>) null, new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$$ExternalSyntheticLambda0
-                @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Object obj) {
-                    Unit animationEnded$lambda$5;
-                    animationEnded$lambda$5 = WindowInsetsNestedScrollConnection.animationEnded$lambda$5((Throwable) obj);
-                    return animationEnded$lambda$5;
+            cancellableContinuation.resume((CancellableContinuation<? super WindowInsetsAnimationController>) null, new Function3() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$animationEnded$1
+                public final void invoke(Throwable th, Void r2, CoroutineContext coroutineContext) {
+                }
+
+                @Override // kotlin.jvm.functions.Function3
+                public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2, Object obj3) {
+                    invoke((Throwable) obj, (Void) obj2, (CoroutineContext) obj3);
+                    return Unit.INSTANCE;
                 }
             });
         }
@@ -363,10 +363,5 @@ public final class WindowInsetsNestedScrollConnection implements NestedScrollCon
         this.animationJob = null;
         this.partialConsumption = 0.0f;
         this.isControllerRequested = false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit animationEnded$lambda$5(Throwable th) {
-        return Unit.INSTANCE;
     }
 }

@@ -35,121 +35,121 @@ public final class VectorConvertersKt {
     private static final TwoWayConverter<Integer, AnimationVector1D> IntToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector1D IntToVector$lambda$2;
-            IntToVector$lambda$2 = VectorConvertersKt.IntToVector$lambda$2(((Integer) obj).intValue());
-            return IntToVector$lambda$2;
+            AnimationVector1D IntToVector$lambda$0;
+            IntToVector$lambda$0 = VectorConvertersKt.IntToVector$lambda$0(((Integer) obj).intValue());
+            return IntToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            int IntToVector$lambda$3;
-            IntToVector$lambda$3 = VectorConvertersKt.IntToVector$lambda$3((AnimationVector1D) obj);
-            return Integer.valueOf(IntToVector$lambda$3);
+            int IntToVector$lambda$1;
+            IntToVector$lambda$1 = VectorConvertersKt.IntToVector$lambda$1((AnimationVector1D) obj);
+            return Integer.valueOf(IntToVector$lambda$1);
         }
     });
     private static final TwoWayConverter<Dp, AnimationVector1D> DpToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector1D DpToVector$lambda$4;
-            DpToVector$lambda$4 = VectorConvertersKt.DpToVector$lambda$4((Dp) obj);
-            return DpToVector$lambda$4;
+            AnimationVector1D DpToVector$lambda$0;
+            DpToVector$lambda$0 = VectorConvertersKt.DpToVector$lambda$0((Dp) obj);
+            return DpToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Dp DpToVector$lambda$5;
-            DpToVector$lambda$5 = VectorConvertersKt.DpToVector$lambda$5((AnimationVector1D) obj);
-            return DpToVector$lambda$5;
+            Dp DpToVector$lambda$1;
+            DpToVector$lambda$1 = VectorConvertersKt.DpToVector$lambda$1((AnimationVector1D) obj);
+            return DpToVector$lambda$1;
         }
     });
     private static final TwoWayConverter<DpOffset, AnimationVector2D> DpOffsetToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector2D DpOffsetToVector$lambda$6;
-            DpOffsetToVector$lambda$6 = VectorConvertersKt.DpOffsetToVector$lambda$6((DpOffset) obj);
-            return DpOffsetToVector$lambda$6;
+            AnimationVector2D DpOffsetToVector$lambda$0;
+            DpOffsetToVector$lambda$0 = VectorConvertersKt.DpOffsetToVector$lambda$0((DpOffset) obj);
+            return DpOffsetToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda6
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            DpOffset DpOffsetToVector$lambda$7;
-            DpOffsetToVector$lambda$7 = VectorConvertersKt.DpOffsetToVector$lambda$7((AnimationVector2D) obj);
-            return DpOffsetToVector$lambda$7;
+            DpOffset DpOffsetToVector$lambda$1;
+            DpOffsetToVector$lambda$1 = VectorConvertersKt.DpOffsetToVector$lambda$1((AnimationVector2D) obj);
+            return DpOffsetToVector$lambda$1;
         }
     });
     private static final TwoWayConverter<Size, AnimationVector2D> SizeToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda7
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector2D SizeToVector$lambda$8;
-            SizeToVector$lambda$8 = VectorConvertersKt.SizeToVector$lambda$8((Size) obj);
-            return SizeToVector$lambda$8;
+            AnimationVector2D SizeToVector$lambda$0;
+            SizeToVector$lambda$0 = VectorConvertersKt.SizeToVector$lambda$0((Size) obj);
+            return SizeToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda8
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Size SizeToVector$lambda$9;
-            SizeToVector$lambda$9 = VectorConvertersKt.SizeToVector$lambda$9((AnimationVector2D) obj);
-            return SizeToVector$lambda$9;
+            Size SizeToVector$lambda$1;
+            SizeToVector$lambda$1 = VectorConvertersKt.SizeToVector$lambda$1((AnimationVector2D) obj);
+            return SizeToVector$lambda$1;
         }
     });
     private static final TwoWayConverter<Offset, AnimationVector2D> OffsetToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda9
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector2D OffsetToVector$lambda$10;
-            OffsetToVector$lambda$10 = VectorConvertersKt.OffsetToVector$lambda$10((Offset) obj);
-            return OffsetToVector$lambda$10;
+            AnimationVector2D OffsetToVector$lambda$0;
+            OffsetToVector$lambda$0 = VectorConvertersKt.OffsetToVector$lambda$0((Offset) obj);
+            return OffsetToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda10
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Offset OffsetToVector$lambda$11;
-            OffsetToVector$lambda$11 = VectorConvertersKt.OffsetToVector$lambda$11((AnimationVector2D) obj);
-            return OffsetToVector$lambda$11;
+            Offset OffsetToVector$lambda$1;
+            OffsetToVector$lambda$1 = VectorConvertersKt.OffsetToVector$lambda$1((AnimationVector2D) obj);
+            return OffsetToVector$lambda$1;
         }
     });
     private static final TwoWayConverter<IntOffset, AnimationVector2D> IntOffsetToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda11
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector2D IntOffsetToVector$lambda$12;
-            IntOffsetToVector$lambda$12 = VectorConvertersKt.IntOffsetToVector$lambda$12((IntOffset) obj);
-            return IntOffsetToVector$lambda$12;
+            AnimationVector2D IntOffsetToVector$lambda$0;
+            IntOffsetToVector$lambda$0 = VectorConvertersKt.IntOffsetToVector$lambda$0((IntOffset) obj);
+            return IntOffsetToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda12
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            IntOffset IntOffsetToVector$lambda$13;
-            IntOffsetToVector$lambda$13 = VectorConvertersKt.IntOffsetToVector$lambda$13((AnimationVector2D) obj);
-            return IntOffsetToVector$lambda$13;
+            IntOffset IntOffsetToVector$lambda$1;
+            IntOffsetToVector$lambda$1 = VectorConvertersKt.IntOffsetToVector$lambda$1((AnimationVector2D) obj);
+            return IntOffsetToVector$lambda$1;
         }
     });
     private static final TwoWayConverter<IntSize, AnimationVector2D> IntSizeToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda13
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector2D IntSizeToVector$lambda$14;
-            IntSizeToVector$lambda$14 = VectorConvertersKt.IntSizeToVector$lambda$14((IntSize) obj);
-            return IntSizeToVector$lambda$14;
+            AnimationVector2D IntSizeToVector$lambda$0;
+            IntSizeToVector$lambda$0 = VectorConvertersKt.IntSizeToVector$lambda$0((IntSize) obj);
+            return IntSizeToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda14
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            IntSize IntSizeToVector$lambda$15;
-            IntSizeToVector$lambda$15 = VectorConvertersKt.IntSizeToVector$lambda$15((AnimationVector2D) obj);
-            return IntSizeToVector$lambda$15;
+            IntSize IntSizeToVector$lambda$1;
+            IntSizeToVector$lambda$1 = VectorConvertersKt.IntSizeToVector$lambda$1((AnimationVector2D) obj);
+            return IntSizeToVector$lambda$1;
         }
     });
     private static final TwoWayConverter<Rect, AnimationVector4D> RectToVector = TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda15
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector4D RectToVector$lambda$16;
-            RectToVector$lambda$16 = VectorConvertersKt.RectToVector$lambda$16((Rect) obj);
-            return RectToVector$lambda$16;
+            AnimationVector4D RectToVector$lambda$0;
+            RectToVector$lambda$0 = VectorConvertersKt.RectToVector$lambda$0((Rect) obj);
+            return RectToVector$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.animation.core.VectorConvertersKt$$ExternalSyntheticLambda16
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Rect RectToVector$lambda$17;
-            RectToVector$lambda$17 = VectorConvertersKt.RectToVector$lambda$17((AnimationVector4D) obj);
-            return RectToVector$lambda$17;
+            Rect RectToVector$lambda$1;
+            RectToVector$lambda$1 = VectorConvertersKt.RectToVector$lambda$1((AnimationVector4D) obj);
+            return RectToVector$lambda$1;
         }
     });
 
@@ -175,12 +175,12 @@ public final class VectorConvertersKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector1D IntToVector$lambda$2(int i) {
+    public static final AnimationVector1D IntToVector$lambda$0(int i) {
         return new AnimationVector1D(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int IntToVector$lambda$3(AnimationVector1D animationVector1D) {
+    public static final int IntToVector$lambda$1(AnimationVector1D animationVector1D) {
         return (int) animationVector1D.getValue();
     }
 
@@ -213,77 +213,77 @@ public final class VectorConvertersKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector1D DpToVector$lambda$4(Dp dp) {
-        return new AnimationVector1D(dp.m8010unboximpl());
+    public static final AnimationVector1D DpToVector$lambda$0(Dp dp) {
+        return new AnimationVector1D(dp.m8272unboximpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Dp DpToVector$lambda$5(AnimationVector1D animationVector1D) {
-        return Dp.m7994boximpl(Dp.m7996constructorimpl(animationVector1D.getValue()));
+    public static final Dp DpToVector$lambda$1(AnimationVector1D animationVector1D) {
+        return Dp.m8256boximpl(Dp.m8258constructorimpl(animationVector1D.getValue()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector2D DpOffsetToVector$lambda$6(DpOffset dpOffset) {
-        return new AnimationVector2D(DpOffset.m8057getXD9Ej5fM(dpOffset.m8065unboximpl()), DpOffset.m8059getYD9Ej5fM(dpOffset.m8065unboximpl()));
+    public static final AnimationVector2D DpOffsetToVector$lambda$0(DpOffset dpOffset) {
+        return new AnimationVector2D(DpOffset.m8319getXD9Ej5fM(dpOffset.m8327unboximpl()), DpOffset.m8321getYD9Ej5fM(dpOffset.m8327unboximpl()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DpOffset DpOffsetToVector$lambda$7(AnimationVector2D animationVector2D) {
-        return DpOffset.m8051boximpl(DpOffset.m8052constructorimpl((Float.floatToRawIntBits(Dp.m7996constructorimpl(animationVector2D.getV1())) << 32) | (Float.floatToRawIntBits(Dp.m7996constructorimpl(animationVector2D.getV2())) & 4294967295L)));
+    public static final DpOffset DpOffsetToVector$lambda$1(AnimationVector2D animationVector2D) {
+        return DpOffset.m8313boximpl(DpOffset.m8314constructorimpl((Float.floatToRawIntBits(Dp.m8258constructorimpl(animationVector2D.getV1())) << 32) | (Float.floatToRawIntBits(Dp.m8258constructorimpl(animationVector2D.getV2())) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector2D SizeToVector$lambda$8(Size size) {
-        return new AnimationVector2D(Float.intBitsToFloat((int) (size.m5110unboximpl() >> 32)), Float.intBitsToFloat((int) (size.m5110unboximpl() & 4294967295L)));
+    public static final AnimationVector2D SizeToVector$lambda$0(Size size) {
+        return new AnimationVector2D(Float.intBitsToFloat((int) (size.m5253unboximpl() >> 32)), Float.intBitsToFloat((int) (size.m5253unboximpl() & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Size SizeToVector$lambda$9(AnimationVector2D animationVector2D) {
-        return Size.m5093boximpl(Size.m5096constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
+    public static final Size SizeToVector$lambda$1(AnimationVector2D animationVector2D) {
+        return Size.m5236boximpl(Size.m5239constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector2D OffsetToVector$lambda$10(Offset offset) {
-        return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m5046unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m5046unboximpl() & 4294967295L)));
+    public static final AnimationVector2D OffsetToVector$lambda$0(Offset offset) {
+        return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m5189unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m5189unboximpl() & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Offset OffsetToVector$lambda$11(AnimationVector2D animationVector2D) {
-        return Offset.m5025boximpl(Offset.m5028constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
+    public static final Offset OffsetToVector$lambda$1(AnimationVector2D animationVector2D) {
+        return Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector2D IntOffsetToVector$lambda$12(IntOffset intOffset) {
-        return new AnimationVector2D(IntOffset.m8124getXimpl(intOffset.m8133unboximpl()), IntOffset.m8125getYimpl(intOffset.m8133unboximpl()));
+    public static final AnimationVector2D IntOffsetToVector$lambda$0(IntOffset intOffset) {
+        return new AnimationVector2D(IntOffset.m8386getXimpl(intOffset.m8395unboximpl()), IntOffset.m8387getYimpl(intOffset.m8395unboximpl()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final IntOffset IntOffsetToVector$lambda$13(AnimationVector2D animationVector2D) {
-        return IntOffset.m8115boximpl(IntOffset.m8118constructorimpl((Math.round(animationVector2D.getV1()) << 32) | (Math.round(animationVector2D.getV2()) & 4294967295L)));
+    public static final IntOffset IntOffsetToVector$lambda$1(AnimationVector2D animationVector2D) {
+        return IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((Math.round(animationVector2D.getV1()) << 32) | (Math.round(animationVector2D.getV2()) & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector2D IntSizeToVector$lambda$14(IntSize intSize) {
-        return new AnimationVector2D((int) (intSize.m8171unboximpl() >> 32), (int) (intSize.m8171unboximpl() & 4294967295L));
+    public static final AnimationVector2D IntSizeToVector$lambda$0(IntSize intSize) {
+        return new AnimationVector2D((int) (intSize.m8433unboximpl() >> 32), (int) (intSize.m8433unboximpl() & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final IntSize IntSizeToVector$lambda$15(AnimationVector2D animationVector2D) {
+    public static final IntSize IntSizeToVector$lambda$1(AnimationVector2D animationVector2D) {
         int round;
         int round2 = Math.round(animationVector2D.getV1());
         if (round2 < 0) {
             round2 = 0;
         }
-        return IntSize.m8159boximpl(IntSize.m8162constructorimpl(((Math.round(animationVector2D.getV2()) >= 0 ? round : 0) & 4294967295L) | (round2 << 32)));
+        return IntSize.m8421boximpl(IntSize.m8424constructorimpl(((Math.round(animationVector2D.getV2()) >= 0 ? round : 0) & 4294967295L) | (round2 << 32)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final AnimationVector4D RectToVector$lambda$16(Rect rect) {
+    public static final AnimationVector4D RectToVector$lambda$0(Rect rect) {
         return new AnimationVector4D(rect.getLeft(), rect.getTop(), rect.getRight(), rect.getBottom());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Rect RectToVector$lambda$17(AnimationVector4D animationVector4D) {
+    public static final Rect RectToVector$lambda$1(AnimationVector4D animationVector4D) {
         return new Rect(animationVector4D.getV1(), animationVector4D.getV2(), animationVector4D.getV3(), animationVector4D.getV4());
     }
 }

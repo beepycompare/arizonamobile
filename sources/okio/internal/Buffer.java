@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Typography;
 import okio.Buffer;
 import okio.ByteString;
-import okio.C0784SegmentedByteString;
+import okio.C0783SegmentedByteString;
 import okio.Options;
 import okio.Segment;
 import okio.SegmentPool;
@@ -1513,7 +1513,7 @@ public final class Buffer {
             i5++;
             segment2 = segment2.next;
         }
-        return new C0784SegmentedByteString(bArr, iArr);
+        return new C0783SegmentedByteString(bArr, iArr);
     }
 
     public static final Buffer.UnsafeCursor commonReadUnsafe(okio.Buffer buffer, Buffer.UnsafeCursor unsafeCursor) {

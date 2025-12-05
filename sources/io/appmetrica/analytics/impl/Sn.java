@@ -7,24 +7,24 @@ import java.util.List;
 public final class Sn implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gn f683a;
+    public final Gn f766a;
     public final W b;
-    public final C0315i6 c;
+    public final C0314i6 c;
     public final Cl d;
     public final Ie e;
     public final Je f;
 
     public Sn() {
-        this(new Gn(), new W(new C0733yn()), new C0315i6(), new Cl(), new Ie(), new Je());
+        this(new Gn(), new W(new C0732yn()), new C0314i6(), new Cl(), new Ie(), new Je());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final W5 fromModel(Rn rn) {
         W5 w5 = new W5();
-        Hn hn = rn.f666a;
+        Hn hn = rn.f749a;
         if (hn != null) {
-            w5.f735a = this.f683a.fromModel(hn);
+            w5.f818a = this.f766a.fromModel(hn);
         }
         V v = rn.b;
         if (v != null) {
@@ -57,10 +57,10 @@ public final class Sn implements ProtobufConverter {
         throw new UnsupportedOperationException();
     }
 
-    public Sn(Gn gn, W w, C0315i6 c0315i6, Cl cl, Ie ie, Je je) {
+    public Sn(Gn gn, W w, C0314i6 c0314i6, Cl cl, Ie ie, Je je) {
         this.b = w;
-        this.f683a = gn;
-        this.c = c0315i6;
+        this.f766a = gn;
+        this.c = c0314i6;
         this.d = cl;
         this.e = ie;
         this.f = je;

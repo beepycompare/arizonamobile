@@ -65,6 +65,6 @@ public final class InteractiveComponentSizeKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Dp LocalMinimumInteractiveComponentSize$lambda$1() {
-        return Dp.m7994boximpl(Dp.m7996constructorimpl(48));
+        return Dp.m8256boximpl(Dp.m8258constructorimpl(48));
     }
 }

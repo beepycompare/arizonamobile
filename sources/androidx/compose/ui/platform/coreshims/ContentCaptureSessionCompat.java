@@ -6,10 +6,11 @@ import android.view.View;
 import android.view.ViewStructure;
 import android.view.autofill.AutofillId;
 import android.view.contentcapture.ContentCaptureSession;
+import androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper;
 import java.util.List;
 import java.util.Objects;
 /* loaded from: classes2.dex */
-public class ContentCaptureSessionCompat {
+public class ContentCaptureSessionCompat implements ContentCaptureSessionWrapper {
     private static final String KEY_VIEW_TREE_APPEARED = "TREAT_AS_VIEW_TREE_APPEARED";
     private static final String KEY_VIEW_TREE_APPEARING = "TREAT_AS_VIEW_TREE_APPEARING";
     private final View mView;
@@ -28,6 +29,7 @@ public class ContentCaptureSessionCompat {
         this.mView = view;
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public AutofillId newAutofillId(long j) {
         if (Build.VERSION.SDK_INT >= 29) {
             return Api29Impl.newAutofillId((ContentCaptureSession) this.mWrappedObj, ((AutofillIdCompat) Objects.requireNonNull(ViewCompatShims.getAutofillId(this.mView))).toAutofillId(), j);
@@ -35,6 +37,7 @@ public class ContentCaptureSessionCompat {
         return null;
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public ViewStructureCompat newVirtualViewStructure(AutofillId autofillId, long j) {
         if (Build.VERSION.SDK_INT >= 29) {
             return ViewStructureCompat.toViewStructureCompat(Api29Impl.newVirtualViewStructure((ContentCaptureSession) this.mWrappedObj, autofillId, j));
@@ -42,24 +45,28 @@ public class ContentCaptureSessionCompat {
         return null;
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public void notifyViewAppeared(ViewStructure viewStructure) {
         if (Build.VERSION.SDK_INT >= 29) {
             Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, viewStructure);
         }
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public void notifyViewDisappeared(AutofillId autofillId) {
         if (Build.VERSION.SDK_INT >= 29) {
             Api29Impl.notifyViewDisappeared((ContentCaptureSession) this.mWrappedObj, autofillId);
         }
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public void flush() {
         if (Build.VERSION.SDK_INT >= 29) {
             Api29Impl.notifyViewsDisappeared((ContentCaptureSession) this.mWrappedObj, ((AutofillIdCompat) Objects.requireNonNull(ViewCompatShims.getAutofillId(this.mView))).toAutofillId(), new long[]{Long.MIN_VALUE});
         }
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public void notifyViewsAppeared(List<ViewStructure> list) {
         if (Build.VERSION.SDK_INT >= 34) {
             Api34Impl.notifyViewsAppeared((ContentCaptureSession) this.mWrappedObj, list);
@@ -76,6 +83,7 @@ public class ContentCaptureSessionCompat {
         }
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public void notifyViewsDisappeared(long[] jArr) {
         if (Build.VERSION.SDK_INT >= 34) {
             Api29Impl.notifyViewsDisappeared((ContentCaptureSession) this.mWrappedObj, ((AutofillIdCompat) Objects.requireNonNull(ViewCompatShims.getAutofillId(this.mView))).toAutofillId(), jArr);
@@ -90,6 +98,7 @@ public class ContentCaptureSessionCompat {
         }
     }
 
+    @Override // androidx.compose.ui.contentcapture.ContentCaptureSessionWrapper
     public void notifyViewTextChanged(AutofillId autofillId, CharSequence charSequence) {
         if (Build.VERSION.SDK_INT >= 29) {
             Api29Impl.notifyViewTextChanged((ContentCaptureSession) this.mWrappedObj, autofillId, charSequence);
@@ -106,9 +115,8 @@ public class ContentCaptureSessionCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    public static class Api29Impl {
+    private static class Api29Impl {
         private Api29Impl() {
         }
 

@@ -10,11 +10,12 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyListState.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/ScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.lazy.LazyListState$animateScrollToItem$2", f = "LazyListState.kt", i = {}, l = {560}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.lazy.LazyListState$animateScrollToItem$2", f = "LazyListState.kt", i = {}, l = {583}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
-final class LazyListState$animateScrollToItem$2 extends SuspendLambda implements Function2<ScrollScope, Continuation<? super Unit>, Object> {
+public final class LazyListState$animateScrollToItem$2 extends SuspendLambda implements Function2<ScrollScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $index;
     final /* synthetic */ int $scrollOffset;
     private /* synthetic */ Object L$0;
@@ -50,7 +51,7 @@ final class LazyListState$animateScrollToItem$2 extends SuspendLambda implements
             ResultKt.throwOnFailure(obj);
             LazyListState lazyListState = this.this$0;
             this.label = 1;
-            if (LazyLayoutScrollScopeKt.animateScrollToItem(LazyListScrollScopeKt.LazyLayoutScrollScope(lazyListState, (ScrollScope) this.L$0), this.$index, this.$scrollOffset, 100, this.this$0.getDensity$foundation_release(), this) == coroutine_suspended) {
+            if (LazyLayoutScrollScopeKt.animateScrollToItem(LazyListScrollScopeKt.LazyLayoutScrollScope(lazyListState, (ScrollScope) this.L$0), this.$index, this.$scrollOffset, 100, this.this$0.getDensity$foundation(), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

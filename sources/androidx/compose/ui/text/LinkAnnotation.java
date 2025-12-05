@@ -30,6 +30,13 @@ public abstract class LinkAnnotation implements AnnotatedString.Annotation {
         private final TextLinkStyles styles;
         private final String url;
 
+        public Url(String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener) {
+            super(null);
+            this.url = str;
+            this.styles = textLinkStyles;
+            this.linkInteractionListener = linkInteractionListener;
+        }
+
         public /* synthetic */ Url(String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener, int i, DefaultConstructorMarker defaultConstructorMarker) {
             this(str, (i & 2) != 0 ? null : textLinkStyles, (i & 4) != 0 ? null : linkInteractionListener);
         }
@@ -46,13 +53,6 @@ public abstract class LinkAnnotation implements AnnotatedString.Annotation {
         @Override // androidx.compose.ui.text.LinkAnnotation
         public LinkInteractionListener getLinkInteractionListener() {
             return this.linkInteractionListener;
-        }
-
-        public Url(String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener) {
-            super(null);
-            this.url = str;
-            this.styles = textLinkStyles;
-            this.linkInteractionListener = linkInteractionListener;
         }
 
         public static /* synthetic */ Url copy$default(Url url, String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener, int i, Object obj) {
@@ -105,6 +105,13 @@ public abstract class LinkAnnotation implements AnnotatedString.Annotation {
         private final TextLinkStyles styles;
         private final String tag;
 
+        public Clickable(String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener) {
+            super(null);
+            this.tag = str;
+            this.styles = textLinkStyles;
+            this.linkInteractionListener = linkInteractionListener;
+        }
+
         public /* synthetic */ Clickable(String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener, int i, DefaultConstructorMarker defaultConstructorMarker) {
             this(str, (i & 2) != 0 ? null : textLinkStyles, linkInteractionListener);
         }
@@ -121,13 +128,6 @@ public abstract class LinkAnnotation implements AnnotatedString.Annotation {
         @Override // androidx.compose.ui.text.LinkAnnotation
         public LinkInteractionListener getLinkInteractionListener() {
             return this.linkInteractionListener;
-        }
-
-        public Clickable(String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener) {
-            super(null);
-            this.tag = str;
-            this.styles = textLinkStyles;
-            this.linkInteractionListener = linkInteractionListener;
         }
 
         public static /* synthetic */ Clickable copy$default(Clickable clickable, String str, TextLinkStyles textLinkStyles, LinkInteractionListener linkInteractionListener, int i, Object obj) {

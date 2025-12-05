@@ -22,30 +22,30 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int black_overlay = 0x7f0a01b6;
-        public static int bonus_title = 0x7f0a01c6;
-        public static int bottom_container = 0x7f0a01d1;
-        public static int button_get = 0x7f0a027c;
-        public static int button_sell = 0x7f0a028e;
-        public static int card_info = 0x7f0a02bc;
-        public static int ic = 0x7f0a067b;
-        public static int image = 0x7f0a0690;
-        public static int info1 = 0x7f0a06bb;
-        public static int info2 = 0x7f0a06bd;
-        public static int info3 = 0x7f0a06bf;
-        public static int info4 = 0x7f0a06c1;
-        public static int overlay = 0x7f0a09cf;
-        public static int quality_bg = 0x7f0a0a8a;
-        public static int quality_button = 0x7f0a0a8b;
-        public static int quality_text = 0x7f0a0a8d;
-        public static int sell_ic = 0x7f0a0c23;
-        public static int sell_text = 0x7f0a0c24;
-        public static int text_bonus = 0x7f0a0d63;
-        public static int title = 0x7f0a0d9c;
-        public static int top_container = 0x7f0a0db8;
-        public static int transport_screen = 0x7f0a0de2;
-        public static int type = 0x7f0a0ed2;
-        public static int value = 0x7f0a0ef4;
+        public static int black_overlay = 0x7f0a01ba;
+        public static int bonus_title = 0x7f0a01ca;
+        public static int bottom_container = 0x7f0a01d6;
+        public static int button_get = 0x7f0a0281;
+        public static int button_sell = 0x7f0a0293;
+        public static int card_info = 0x7f0a02c1;
+        public static int ic = 0x7f0a0681;
+        public static int image = 0x7f0a0696;
+        public static int info1 = 0x7f0a06c1;
+        public static int info2 = 0x7f0a06c3;
+        public static int info3 = 0x7f0a06c5;
+        public static int info4 = 0x7f0a06c7;
+        public static int overlay = 0x7f0a09d6;
+        public static int quality_bg = 0x7f0a0a91;
+        public static int quality_button = 0x7f0a0a92;
+        public static int quality_text = 0x7f0a0a94;
+        public static int sell_ic = 0x7f0a0c2a;
+        public static int sell_text = 0x7f0a0c2b;
+        public static int text_bonus = 0x7f0a0d6b;
+        public static int title = 0x7f0a0da4;
+        public static int top_container = 0x7f0a0dc1;
+        public static int transport_screen = 0x7f0a0deb;
+        public static int type = 0x7f0a0edb;
+        public static int value = 0x7f0a0efd;
 
         private id() {
         }

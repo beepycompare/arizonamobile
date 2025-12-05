@@ -9,104 +9,104 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes2.dex */
 public final class PointKt {
     /* renamed from: copy-5P9i7ZU  reason: not valid java name */
-    public static final long m8545copy5P9i7ZU(long j, float f, float f2) {
+    public static final long m8814copy5P9i7ZU(long j, float f, float f2) {
         return FloatFloatPair.m25constructorimpl(f, f2);
     }
 
     /* renamed from: getDistance-DnnuFBc  reason: not valid java name */
-    public static final float m8551getDistanceDnnuFBc(long j) {
-        return (float) Math.sqrt((m8553getXDnnuFBc(j) * m8553getXDnnuFBc(j)) + (m8554getYDnnuFBc(j) * m8554getYDnnuFBc(j)));
+    public static final float m8820getDistanceDnnuFBc(long j) {
+        return (float) Math.sqrt((m8822getXDnnuFBc(j) * m8822getXDnnuFBc(j)) + (m8823getYDnnuFBc(j) * m8823getYDnnuFBc(j)));
     }
 
     /* renamed from: getDistanceSquared-DnnuFBc  reason: not valid java name */
-    public static final float m8552getDistanceSquaredDnnuFBc(long j) {
-        return (m8553getXDnnuFBc(j) * m8553getXDnnuFBc(j)) + (m8554getYDnnuFBc(j) * m8554getYDnnuFBc(j));
+    public static final float m8821getDistanceSquaredDnnuFBc(long j) {
+        return (m8822getXDnnuFBc(j) * m8822getXDnnuFBc(j)) + (m8823getYDnnuFBc(j) * m8823getYDnnuFBc(j));
     }
 
     /* renamed from: dotProduct-ybeJwSQ  reason: not valid java name */
-    public static final float m8549dotProductybeJwSQ(long j, long j2) {
-        return (m8553getXDnnuFBc(j) * m8553getXDnnuFBc(j2)) + (m8554getYDnnuFBc(j) * m8554getYDnnuFBc(j2));
+    public static final float m8818dotProductybeJwSQ(long j, long j2) {
+        return (m8822getXDnnuFBc(j) * m8822getXDnnuFBc(j2)) + (m8823getYDnnuFBc(j) * m8823getYDnnuFBc(j2));
     }
 
     /* renamed from: dotProduct-5P9i7ZU  reason: not valid java name */
-    public static final float m8548dotProduct5P9i7ZU(long j, float f, float f2) {
-        return (m8553getXDnnuFBc(j) * f) + (m8554getYDnnuFBc(j) * f2);
+    public static final float m8817dotProduct5P9i7ZU(long j, float f, float f2) {
+        return (m8822getXDnnuFBc(j) * f) + (m8823getYDnnuFBc(j) * f2);
     }
 
     /* renamed from: clockwise-ybeJwSQ  reason: not valid java name */
-    public static final boolean m8544clockwiseybeJwSQ(long j, long j2) {
-        return (m8553getXDnnuFBc(j) * m8554getYDnnuFBc(j2)) - (m8554getYDnnuFBc(j) * m8553getXDnnuFBc(j2)) > 0.0f;
+    public static final boolean m8813clockwiseybeJwSQ(long j, long j2) {
+        return (m8822getXDnnuFBc(j) * m8823getYDnnuFBc(j2)) - (m8823getYDnnuFBc(j) * m8822getXDnnuFBc(j2)) > 0.0f;
     }
 
     /* renamed from: getDirection-DnnuFBc  reason: not valid java name */
-    public static final long m8550getDirectionDnnuFBc(long j) {
-        float m8551getDistanceDnnuFBc = m8551getDistanceDnnuFBc(j);
-        if (m8551getDistanceDnnuFBc <= 0.0f) {
+    public static final long m8819getDirectionDnnuFBc(long j) {
+        float m8820getDistanceDnnuFBc = m8820getDistanceDnnuFBc(j);
+        if (m8820getDistanceDnnuFBc <= 0.0f) {
             throw new IllegalArgumentException("Can't get the direction of a 0-length vector".toString());
         }
-        return m8547divso9K2fw(j, m8551getDistanceDnnuFBc);
+        return m8816divso9K2fw(j, m8820getDistanceDnnuFBc);
     }
 
     /* renamed from: unaryMinus-DnnuFBc  reason: not valid java name */
-    public static final long m8561unaryMinusDnnuFBc(long j) {
-        return FloatFloatPair.m25constructorimpl(-m8553getXDnnuFBc(j), -m8554getYDnnuFBc(j));
+    public static final long m8830unaryMinusDnnuFBc(long j) {
+        return FloatFloatPair.m25constructorimpl(-m8822getXDnnuFBc(j), -m8823getYDnnuFBc(j));
     }
 
     /* renamed from: minus-ybeJwSQ  reason: not valid java name */
-    public static final long m8556minusybeJwSQ(long j, long j2) {
-        return FloatFloatPair.m25constructorimpl(m8553getXDnnuFBc(j) - m8553getXDnnuFBc(j2), m8554getYDnnuFBc(j) - m8554getYDnnuFBc(j2));
+    public static final long m8825minusybeJwSQ(long j, long j2) {
+        return FloatFloatPair.m25constructorimpl(m8822getXDnnuFBc(j) - m8822getXDnnuFBc(j2), m8823getYDnnuFBc(j) - m8823getYDnnuFBc(j2));
     }
 
     /* renamed from: plus-ybeJwSQ  reason: not valid java name */
-    public static final long m8557plusybeJwSQ(long j, long j2) {
-        return FloatFloatPair.m25constructorimpl(m8553getXDnnuFBc(j) + m8553getXDnnuFBc(j2), m8554getYDnnuFBc(j) + m8554getYDnnuFBc(j2));
+    public static final long m8826plusybeJwSQ(long j, long j2) {
+        return FloatFloatPair.m25constructorimpl(m8822getXDnnuFBc(j) + m8822getXDnnuFBc(j2), m8823getYDnnuFBc(j) + m8823getYDnnuFBc(j2));
     }
 
     /* renamed from: times-so9K2fw  reason: not valid java name */
-    public static final long m8559timesso9K2fw(long j, float f) {
-        return FloatFloatPair.m25constructorimpl(m8553getXDnnuFBc(j) * f, m8554getYDnnuFBc(j) * f);
+    public static final long m8828timesso9K2fw(long j, float f) {
+        return FloatFloatPair.m25constructorimpl(m8822getXDnnuFBc(j) * f, m8823getYDnnuFBc(j) * f);
     }
 
     /* renamed from: div-so9K2fw  reason: not valid java name */
-    public static final long m8547divso9K2fw(long j, float f) {
-        return FloatFloatPair.m25constructorimpl(m8553getXDnnuFBc(j) / f, m8554getYDnnuFBc(j) / f);
+    public static final long m8816divso9K2fw(long j, float f) {
+        return FloatFloatPair.m25constructorimpl(m8822getXDnnuFBc(j) / f, m8823getYDnnuFBc(j) / f);
     }
 
     /* renamed from: rem-so9K2fw  reason: not valid java name */
-    public static final long m8558remso9K2fw(long j, float f) {
-        return FloatFloatPair.m25constructorimpl(m8553getXDnnuFBc(j) % f, m8554getYDnnuFBc(j) % f);
+    public static final long m8827remso9K2fw(long j, float f) {
+        return FloatFloatPair.m25constructorimpl(m8822getXDnnuFBc(j) % f, m8823getYDnnuFBc(j) % f);
     }
 
     /* renamed from: interpolate-dLqxh1s  reason: not valid java name */
-    public static final long m8555interpolatedLqxh1s(long j, long j2, float f) {
-        return FloatFloatPair.m25constructorimpl(Utils.interpolate(m8553getXDnnuFBc(j), m8553getXDnnuFBc(j2), f), Utils.interpolate(m8554getYDnnuFBc(j), m8554getYDnnuFBc(j2), f));
+    public static final long m8824interpolatedLqxh1s(long j, long j2, float f) {
+        return FloatFloatPair.m25constructorimpl(Utils.interpolate(m8822getXDnnuFBc(j), m8822getXDnnuFBc(j2), f), Utils.interpolate(m8823getYDnnuFBc(j), m8823getYDnnuFBc(j2), f));
     }
 
     /* renamed from: transformed-so9K2fw  reason: not valid java name */
-    public static final long m8560transformedso9K2fw(long j, PointTransformer f) {
+    public static final long m8829transformedso9K2fw(long j, PointTransformer f) {
         Intrinsics.checkNotNullParameter(f, "f");
-        long mo8562transformXgqJiTY = f.mo8562transformXgqJiTY(m8553getXDnnuFBc(j), m8554getYDnnuFBc(j));
-        return FloatFloatPair.m25constructorimpl(Float.intBitsToFloat((int) (mo8562transformXgqJiTY >> 32)), Float.intBitsToFloat((int) (mo8562transformXgqJiTY & 4294967295L)));
+        long mo8831transformXgqJiTY = f.mo8831transformXgqJiTY(m8822getXDnnuFBc(j), m8823getYDnnuFBc(j));
+        return FloatFloatPair.m25constructorimpl(Float.intBitsToFloat((int) (mo8831transformXgqJiTY >> 32)), Float.intBitsToFloat((int) (mo8831transformXgqJiTY & 4294967295L)));
     }
 
     /* renamed from: getX-DnnuFBc  reason: not valid java name */
-    public static final float m8553getXDnnuFBc(long j) {
+    public static final float m8822getXDnnuFBc(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getY-DnnuFBc  reason: not valid java name */
-    public static final float m8554getYDnnuFBc(long j) {
+    public static final float m8823getYDnnuFBc(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: copy-5P9i7ZU$default  reason: not valid java name */
-    public static /* synthetic */ long m8546copy5P9i7ZU$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m8815copy5P9i7ZU$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = Float.intBitsToFloat((int) (j >> 32));
         }
         if ((i & 2) != 0) {
             f2 = Float.intBitsToFloat((int) (4294967295L & j));
         }
-        return m8545copy5P9i7ZU(j, f, f2);
+        return m8814copy5P9i7ZU(j, f, f2);
     }
 }

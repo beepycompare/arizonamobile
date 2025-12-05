@@ -45,11 +45,11 @@ public final class ComposableLambdaKt {
 
     @ComposeCompilerApi
     public static final ComposableLambda rememberComposableLambda(int i, boolean z, Object obj, Composer composer, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1573003438, "C(rememberComposableLambda)N(key,tracked,block)1371@35313L54:ComposableLambda.kt#9drcc");
+        ComposerKt.sourceInformationMarkerStart(composer, -1573003438, "C(rememberComposableLambda)N(key,tracked,block)1372@35376L54:ComposableLambda.kt#9drcc");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1573003438, i2, -1, "androidx.compose.runtime.internal.rememberComposableLambda (ComposableLambda.kt:1371)");
+            ComposerKt.traceEventStart(-1573003438, i2, -1, "androidx.compose.runtime.internal.rememberComposableLambda (ComposableLambda.kt:1372)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 172189192, "CC(remember):ComposableLambda.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 172187304, "CC(remember):ComposableLambda.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new ComposableLambdaImpl(i, z, obj);

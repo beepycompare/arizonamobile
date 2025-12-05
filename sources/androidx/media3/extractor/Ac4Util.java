@@ -9,6 +9,7 @@ import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
+import androidx.window.core.layout.WindowSizeClass;
 import com.google.common.primitives.SignedBytes;
 import java.nio.ByteBuffer;
 /* loaded from: classes3.dex */
@@ -35,7 +36,7 @@ public final class Ac4Util {
     private static final int CHANNEL_MODE_UNKNOWN = -1;
     public static final int HEADER_SIZE_FOR_PARSER = 16;
     public static final int MAX_RATE_BYTES_PER_SECOND = 336000;
-    private static final int[] SAMPLE_COUNT = {PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT, 2000, 1920, 1601, 1600, 1001, 1000, 960, 800, 800, 480, 400, 400, 2048};
+    private static final int[] SAMPLE_COUNT = {PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT, 2000, 1920, 1601, WindowSizeClass.WIDTH_DP_EXTRA_LARGE_LOWER_BOUND, 1001, 1000, 960, 800, 800, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, 400, 400, 2048};
     public static final int SAMPLE_HEADER_SIZE = 7;
     private static final String TAG = "Ac4Util";
 
@@ -94,10 +95,10 @@ public final class Ac4Util {
     /* JADX WARN: Code restructure failed: missing block: B:61:0x0117, code lost:
         if (r5 == 2) goto L138;
      */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0287  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x02d9  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x030f  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x027d  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x02da  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0310  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

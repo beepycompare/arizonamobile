@@ -84,7 +84,7 @@ public class CLObject extends CLContainer implements Iterable<CLKey> {
 
     @Override // androidx.constraintlayout.core.parser.CLContainer, androidx.constraintlayout.core.parser.CLElement
     /* renamed from: clone */
-    public CLObject mo8477clone() {
-        return (CLObject) super.mo8477clone();
+    public CLObject mo8739clone() {
+        return (CLObject) super.mo8739clone();
     }
 }

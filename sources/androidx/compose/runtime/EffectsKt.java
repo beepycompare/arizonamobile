@@ -26,7 +26,7 @@ public final class EffectsKt {
     private static final String LaunchedEffectNoParamError = "LaunchedEffect must provide one or more 'key' parameters that define the identity of the LaunchedEffect and determine when its previous effect coroutine should be cancelled and a new effect launched for the new key.";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit LaunchedEffect$lambda$4(Function2 function2, int i, Composer composer, int i2) {
+    public static final Unit LaunchedEffect$lambda$0(Function2 function2, int i, Composer composer, int i2) {
         LaunchedEffect(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -57,7 +57,7 @@ public final class EffectsKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1371986847, i, -1, "androidx.compose.runtime.DisposableEffect (Effects.kt:153)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 75604912, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 75603472, "CC(remember):Effects.kt#9igjgp");
         boolean changed = composer.changed(obj);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -77,7 +77,7 @@ public final class EffectsKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1429097729, i, -1, "androidx.compose.runtime.DisposableEffect (Effects.kt:190)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1026611626, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1026613066, "CC(remember):Effects.kt#9igjgp");
         boolean changed = composer.changed(obj) | composer.changed(obj2);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -97,7 +97,7 @@ public final class EffectsKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1239538271, i, -1, "androidx.compose.runtime.DisposableEffect (Effects.kt:228)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1490331396, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1490332836, "CC(remember):Effects.kt#9igjgp");
         boolean changed = composer.changed(obj) | composer.changed(obj2) | composer.changed(obj3);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -141,7 +141,7 @@ public final class EffectsKt {
         int i2 = i & 1;
         if (startRestartGroup.shouldExecute(i2 != 0, i2)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-805415771, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:325)");
+                ComposerKt.traceEventStart(-805415771, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:317)");
             }
             throw new IllegalStateException(LaunchedEffectNoParamError.toString());
         }
@@ -151,21 +151,21 @@ public final class EffectsKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.EffectsKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LaunchedEffect$lambda$4;
-                    LaunchedEffect$lambda$4 = EffectsKt.LaunchedEffect$lambda$4(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LaunchedEffect$lambda$4;
+                    Unit LaunchedEffect$lambda$0;
+                    LaunchedEffect$lambda$0 = EffectsKt.LaunchedEffect$lambda$0(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return LaunchedEffect$lambda$0;
                 }
             });
         }
     }
 
     public static final void LaunchedEffect(Object obj, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1179185413, "C(LaunchedEffect)N(key1,block)343@15463L58:Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1179185413, "C(LaunchedEffect)N(key1,block)335@15245L58:Effects.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1179185413, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:341)");
+            ComposerKt.traceEventStart(1179185413, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:333)");
         }
         CoroutineContext applyCoroutineContext = composer.getApplyCoroutineContext();
-        ComposerKt.sourceInformationMarkerStart(composer, -674177185, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -674179713, "CC(remember):Effects.kt#9igjgp");
         boolean changed = composer.changed(obj);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -181,12 +181,12 @@ public final class EffectsKt {
     }
 
     public static final void LaunchedEffect(Object obj, Object obj2, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 590241125, "C(LaunchedEffect)N(key1,key2,block)362@16464L64:Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 590241125, "C(LaunchedEffect)N(key1,key2,block)354@16246L64:Effects.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(590241125, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:360)");
+            ComposerKt.traceEventStart(590241125, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:352)");
         }
         CoroutineContext applyCoroutineContext = composer.getApplyCoroutineContext();
-        ComposerKt.sourceInformationMarkerStart(composer, 286045509, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 286042981, "CC(remember):Effects.kt#9igjgp");
         boolean changed = composer.changed(obj) | composer.changed(obj2);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -202,12 +202,12 @@ public final class EffectsKt {
     }
 
     public static final void LaunchedEffect(Object obj, Object obj2, Object obj3, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -54093371, "C(LaunchedEffect)N(key1,key2,key3,block)386@17510L70:Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -54093371, "C(LaunchedEffect)N(key1,key2,key3,block)378@17292L70:Effects.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-54093371, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:384)");
+            ComposerKt.traceEventStart(-54093371, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:376)");
         }
         CoroutineContext applyCoroutineContext = composer.getApplyCoroutineContext();
-        ComposerKt.sourceInformationMarkerStart(composer, -444113525, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -444116053, "CC(remember):Effects.kt#9igjgp");
         boolean changed = composer.changed(obj) | composer.changed(obj2) | composer.changed(obj3);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -223,9 +223,9 @@ public final class EffectsKt {
     }
 
     public static final void LaunchedEffect(Object[] objArr, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -139560008, "C(LaunchedEffect)N(keys,block)409@18676L59:Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -139560008, "C(LaunchedEffect)N(keys,block)401@18458L59:Effects.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-139560008, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:407)");
+            ComposerKt.traceEventStart(-139560008, i, -1, "androidx.compose.runtime.LaunchedEffect (Effects.kt:399)");
         }
         CoroutineContext applyCoroutineContext = composer.getApplyCoroutineContext();
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
@@ -256,7 +256,7 @@ public final class EffectsKt {
     }
 
     public static final CoroutineScope rememberCoroutineScope(Function0<? extends CoroutineContext> function0, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, 773894976, "CC(rememberCoroutineScope)N(getContext)608@27648L68:Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
         if ((i2 & 1) != 0) {
             function0 = new Function0<EmptyCoroutineContext>() { // from class: androidx.compose.runtime.EffectsKt$rememberCoroutineScope$1
                 @Override // kotlin.jvm.functions.Function0
@@ -265,7 +265,7 @@ public final class EffectsKt {
                 }
             };
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 683737348, "CC(remember):Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 683736516, "CC(remember):Effects.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = createCompositionCoroutineScope(function0.invoke(), composer);

@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AnchoredDraggable.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode", f = "AnchoredDraggable.kt", i = {1}, l = {456, 459}, m = "fling", n = {"leftoverVelocity"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode", f = "AnchoredDraggable.kt", i = {1}, l = {457, 460}, m = "fling", n = {"leftoverVelocity"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class AnchoredDraggableNode$fling$1 extends ContinuationImpl {
     Object L$0;

@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PlatformSelectionBehaviors.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.PlatformSelectionBehaviorsImpl", f = "PlatformSelectionBehaviors.android.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {351, 361}, m = "classifyText-M8tDOmk", n = {"text", "textClassifier", "$this$withLock_u24default$iv", "selection", "text", "textClassification", "$this$withLock_u24default$iv", "selection"}, s = {"L$0", "L$1", "L$2", "J$0", "L$0", "L$1", "L$2", "J$0"})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.PlatformSelectionBehaviorsImpl", f = "PlatformSelectionBehaviors.android.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {369, 380}, m = "classifyText-M8tDOmk", n = {"text", "textClassifier", "$this$withLock_u24default$iv", "$v$c$androidx-compose-ui-text-TextRange$-selection$0", "text", "textClassification", "$this$withLock_u24default$iv", "$v$c$androidx-compose-ui-text-TextRange$-selection$0"}, s = {"L$0", "L$1", "L$2", "J$0", "L$0", "L$1", "L$2", "J$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class PlatformSelectionBehaviorsImpl$classifyText$1 extends ContinuationImpl {
     long J$0;
@@ -27,10 +27,10 @@ public final class PlatformSelectionBehaviorsImpl$classifyText$1 extends Continu
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m1749classifyTextM8tDOmk;
+        Object m1839classifyTextM8tDOmk;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m1749classifyTextM8tDOmk = this.this$0.m1749classifyTextM8tDOmk(null, 0L, null, this);
-        return m1749classifyTextM8tDOmk;
+        m1839classifyTextM8tDOmk = this.this$0.m1839classifyTextM8tDOmk(null, 0L, null, this);
+        return m1839classifyTextM8tDOmk;
     }
 }

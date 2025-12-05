@@ -20,13 +20,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
 /* compiled from: LazyLayoutScrollScope.kt */
-@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0082\b\u001a\u0014\u0010\f\u001a\u00020\u0006*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000\u001a2\u0010\u0010\u001a\u00020\b*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u0014H\u0080@¢\u0006\u0002\u0010\u0015\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0003\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0004\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"TargetDistance", "Landroidx/compose/ui/unit/Dp;", "F", "BoundDistance", "MinimumDistance", "DEBUG", "", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "isItemVisible", "Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;", FirebaseAnalytics.Param.INDEX, "", "animateScrollToItem", "scrollOffset", "numOfItemsForTeleport", "density", "Landroidx/compose/ui/unit/Density;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;IIILandroidx/compose/ui/unit/Density;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0082\b\u001a\u0014\u0010\f\u001a\u00020\u0006*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000\u001a2\u0010\u0010\u001a\u00020\b*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u0014H\u0080@¢\u0006\u0002\u0010\u0015\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0003\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0004\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"TargetDistance", "Landroidx/compose/ui/unit/Dp;", "F", "BoundDistance", "MinimumDistance", "DEBUG", "", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "isItemVisible", "Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;", FirebaseAnalytics.Param.INDEX, "", "animateScrollToItem", "scrollOffset", "numOfItemsForTeleport", "density", "Landroidx/compose/ui/unit/Density;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;IIILandroidx/compose/ui/unit/Density;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutScrollScopeKt {
     private static final boolean DEBUG = false;
-    private static final float TargetDistance = Dp.m7996constructorimpl((float) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS);
-    private static final float BoundDistance = Dp.m7996constructorimpl(1500);
-    private static final float MinimumDistance = Dp.m7996constructorimpl(50);
+    private static final float TargetDistance = Dp.m8258constructorimpl((float) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS);
+    private static final float BoundDistance = Dp.m8258constructorimpl(1500);
+    private static final float MinimumDistance = Dp.m8258constructorimpl(50);
 
     private static final void debugLog(Function0<String> function0) {
     }
@@ -71,9 +71,9 @@ public final class LazyLayoutScrollScopeKt {
         int i5;
         int i6;
         int i7;
-        float mo430toPx0680j_4;
-        float mo430toPx0680j_42;
-        float mo430toPx0680j_43;
+        float mo464toPx0680j_4;
+        float mo464toPx0680j_42;
+        float mo464toPx0680j_43;
         Ref.BooleanRef booleanRef;
         Ref.ObjectRef objectRef;
         final int i8;
@@ -120,9 +120,9 @@ public final class LazyLayoutScrollScopeKt {
                         InlineClassHelperKt.throwIllegalArgumentException("Index should be non-negative");
                     }
                     try {
-                        mo430toPx0680j_4 = density.mo430toPx0680j_4(TargetDistance);
-                        mo430toPx0680j_42 = density.mo430toPx0680j_4(BoundDistance);
-                        mo430toPx0680j_43 = density.mo430toPx0680j_4(MinimumDistance);
+                        mo464toPx0680j_4 = density.mo464toPx0680j_4(TargetDistance);
+                        mo464toPx0680j_42 = density.mo464toPx0680j_4(BoundDistance);
+                        mo464toPx0680j_43 = density.mo464toPx0680j_4(MinimumDistance);
                         booleanRef = new Ref.BooleanRef();
                         booleanRef.element = true;
                         objectRef = new Ref.ObjectRef();
@@ -150,9 +150,9 @@ public final class LazyLayoutScrollScopeKt {
                             function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    Unit animateScrollToItem$lambda$19;
-                                    animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset, floatRef, lazyLayoutScrollScope2, (AnimationScope) obj2);
-                                    return animateScrollToItem$lambda$19;
+                                    Unit animateScrollToItem$lambda$7;
+                                    animateScrollToItem$lambda$7 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$7(itemOffset, floatRef, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                    return animateScrollToItem$lambda$7;
                                 }
                             };
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
@@ -173,11 +173,11 @@ public final class LazyLayoutScrollScopeKt {
                         intRef2.element = 1;
                         i8 = i2;
                         i9 = i3;
-                        f2 = mo430toPx0680j_42;
+                        f2 = mo464toPx0680j_42;
                         intRef = intRef2;
-                        f3 = mo430toPx0680j_4;
+                        f3 = mo464toPx0680j_4;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12 = lazyLayoutScrollScopeKt$animateScrollToItem$1;
-                        f4 = mo430toPx0680j_43;
+                        f4 = mo464toPx0680j_43;
                         i10 = i;
                         i11 = i19;
                         lazyLayoutScrollScope3 = lazyLayoutScrollScope;
@@ -198,9 +198,9 @@ public final class LazyLayoutScrollScopeKt {
                         function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit animateScrollToItem$lambda$19;
-                                animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset2, floatRef2, lazyLayoutScrollScope2, (AnimationScope) obj2);
-                                return animateScrollToItem$lambda$19;
+                                Unit animateScrollToItem$lambda$7;
+                                animateScrollToItem$lambda$7 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$7(itemOffset2, floatRef2, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                return animateScrollToItem$lambda$7;
                             }
                         };
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
@@ -285,9 +285,9 @@ public final class LazyLayoutScrollScopeKt {
                         function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit animateScrollToItem$lambda$19;
-                                animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset22, floatRef22, lazyLayoutScrollScope2, (AnimationScope) obj2);
-                                return animateScrollToItem$lambda$19;
+                                Unit animateScrollToItem$lambda$7;
+                                animateScrollToItem$lambda$7 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$7(itemOffset22, floatRef22, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                return animateScrollToItem$lambda$7;
                             }
                         };
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
@@ -325,9 +325,9 @@ public final class LazyLayoutScrollScopeKt {
                             function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    Unit animateScrollToItem$lambda$19;
-                                    animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset222, floatRef222, lazyLayoutScrollScope2, (AnimationScope) obj2);
-                                    return animateScrollToItem$lambda$19;
+                                    Unit animateScrollToItem$lambda$7;
+                                    animateScrollToItem$lambda$7 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$7(itemOffset222, floatRef222, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                    return animateScrollToItem$lambda$7;
                                 }
                             };
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
@@ -357,9 +357,9 @@ public final class LazyLayoutScrollScopeKt {
                                 function12 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda0
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj2) {
-                                        Unit animateScrollToItem$lambda$15;
-                                        animateScrollToItem$lambda$15 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$15(LazyLayoutScrollScope.this, i15, f6, floatRef3, booleanRef3, z2, f2, intRef, i9, i8, objectRef3, (AnimationScope) obj2);
-                                        return animateScrollToItem$lambda$15;
+                                        Unit animateScrollToItem$lambda$5;
+                                        animateScrollToItem$lambda$5 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$5(LazyLayoutScrollScope.this, i15, f6, floatRef3, booleanRef3, z2, f2, intRef, i9, i8, objectRef3, (AnimationScope) obj2);
+                                        return animateScrollToItem$lambda$5;
                                     }
                                 };
                                 lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
@@ -418,9 +418,9 @@ public final class LazyLayoutScrollScopeKt {
                                                 function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
                                                     @Override // kotlin.jvm.functions.Function1
                                                     public final Object invoke(Object obj2) {
-                                                        Unit animateScrollToItem$lambda$19;
-                                                        animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset2222, floatRef2222, lazyLayoutScrollScope2, (AnimationScope) obj2);
-                                                        return animateScrollToItem$lambda$19;
+                                                        Unit animateScrollToItem$lambda$7;
+                                                        animateScrollToItem$lambda$7 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$7(itemOffset2222, floatRef2222, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                                        return animateScrollToItem$lambda$7;
                                                     }
                                                 };
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
@@ -456,9 +456,9 @@ public final class LazyLayoutScrollScopeKt {
                         function12 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit animateScrollToItem$lambda$15;
-                                animateScrollToItem$lambda$15 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$15(LazyLayoutScrollScope.this, i15, f6, floatRef32, booleanRef32, z2, f2, intRef, i9, i8, objectRef32, (AnimationScope) obj2);
-                                return animateScrollToItem$lambda$15;
+                                Unit animateScrollToItem$lambda$5;
+                                animateScrollToItem$lambda$5 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$5(LazyLayoutScrollScope.this, i15, f6, floatRef32, booleanRef32, z2, f2, intRef, i9, i8, objectRef32, (AnimationScope) obj2);
+                                return animateScrollToItem$lambda$5;
                             }
                         };
                         lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
@@ -494,9 +494,9 @@ public final class LazyLayoutScrollScopeKt {
                 function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit animateScrollToItem$lambda$19;
-                        animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset22222, floatRef22222, lazyLayoutScrollScope2, (AnimationScope) obj2);
-                        return animateScrollToItem$lambda$19;
+                        Unit animateScrollToItem$lambda$7;
+                        animateScrollToItem$lambda$7 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$7(itemOffset22222, floatRef22222, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                        return animateScrollToItem$lambda$7;
                     }
                 };
                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
@@ -533,9 +533,9 @@ public final class LazyLayoutScrollScopeKt {
         function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj22) {
-                Unit animateScrollToItem$lambda$19;
-                animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset222222, floatRef222222, lazyLayoutScrollScope2, (AnimationScope) obj22);
-                return animateScrollToItem$lambda$19;
+                Unit animateScrollToItem$lambda$7;
+                animateScrollToItem$lambda$7 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$7(itemOffset222222, floatRef222222, lazyLayoutScrollScope2, (AnimationScope) obj22);
+                return animateScrollToItem$lambda$7;
             }
         };
         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
@@ -564,7 +564,7 @@ public final class LazyLayoutScrollScopeKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit animateScrollToItem$lambda$15(LazyLayoutScrollScope lazyLayoutScrollScope, int i, float f, Ref.FloatRef floatRef, Ref.BooleanRef booleanRef, boolean z, float f2, Ref.IntRef intRef, int i2, int i3, Ref.ObjectRef objectRef, AnimationScope animationScope) {
+    public static final Unit animateScrollToItem$lambda$5(LazyLayoutScrollScope lazyLayoutScrollScope, int i, float f, Ref.FloatRef floatRef, Ref.BooleanRef booleanRef, boolean z, float f2, Ref.IntRef intRef, int i2, int i3, Ref.ObjectRef objectRef, AnimationScope animationScope) {
         float coerceAtLeast;
         if (!isItemVisible(lazyLayoutScrollScope, i)) {
             if (f > 0.0f) {
@@ -610,7 +610,7 @@ public final class LazyLayoutScrollScopeKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit animateScrollToItem$lambda$19(float f, Ref.FloatRef floatRef, LazyLayoutScrollScope lazyLayoutScrollScope, AnimationScope animationScope) {
+    public static final Unit animateScrollToItem$lambda$7(float f, Ref.FloatRef floatRef, LazyLayoutScrollScope lazyLayoutScrollScope, AnimationScope animationScope) {
         float f2 = 0.0f;
         if (f > 0.0f) {
             f2 = RangesKt.coerceAtMost(((Number) animationScope.getValue()).floatValue(), f);

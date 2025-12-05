@@ -183,11 +183,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
         StateRecord firstStateRecord = getFirstStateRecord();
         Intrinsics.checkNotNull(firstStateRecord, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
         StateMapStateRecord stateMapStateRecord = (StateMapStateRecord) firstStateRecord;
+        SnapshotStateMap<K, V> snapshotStateMap = this;
         synchronized (SnapshotKt.getLock()) {
             current = Snapshot.Companion.getCurrent();
-            invoke = function1.invoke(SnapshotKt.writableRecord(stateMapStateRecord, this, current));
+            invoke = function1.invoke(SnapshotKt.writableRecord(stateMapStateRecord, snapshotStateMap, current));
         }
-        SnapshotKt.notifyWrite(current, this);
+        SnapshotKt.notifyWrite(current, snapshotStateMap);
         return invoke;
     }
 
@@ -218,11 +219,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             StateMapStateRecord stateMapStateRecord2 = (StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, this, current), modification$runtime, build);
+                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
         return invoke;
     }
@@ -264,16 +266,16 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
         private PersistentMap<K, ? extends V> map;
         private int modification;
 
+        public StateMapStateRecord(long j, PersistentMap<K, ? extends V> persistentMap) {
+            super(j);
+            this.map = persistentMap;
+        }
+
         public final PersistentMap<K, V> getMap$runtime() {
             return (PersistentMap<K, ? extends V>) this.map;
         }
 
         public final void setMap$runtime(PersistentMap<K, ? extends V> persistentMap) {
-            this.map = persistentMap;
-        }
-
-        public StateMapStateRecord(long j, PersistentMap<K, ? extends V> persistentMap) {
-            super(j);
             this.map = persistentMap;
         }
 
@@ -321,11 +323,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             StateMapStateRecord stateMapStateRecord2 = (StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                commitUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, this, current), persistentHashMapOf);
+                commitUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), persistentHashMapOf);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         }
     }
 
@@ -357,11 +360,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             StateMapStateRecord stateMapStateRecord2 = (StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, this, current), modification$runtime, build);
+                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
         return put;
     }
@@ -394,11 +398,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             StateMapStateRecord stateMapStateRecord2 = (StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, this, current), modification$runtime, build);
+                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
     }
 
@@ -430,11 +435,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             StateMapStateRecord stateMapStateRecord2 = (StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, this, current), modification$runtime, build);
+                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
         return remove;
     }
@@ -473,11 +479,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             StateMapStateRecord stateMapStateRecord2 = (StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, this, current), modification$runtime, build);
+                attemptUpdate = attemptUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
         return z;
     }
@@ -498,11 +505,12 @@ public final class SnapshotStateMap<K, V> implements StateObject, Map<K, V>, KMu
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             StateMapStateRecord stateMapStateRecord2 = (StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                commitUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, this, current), invoke);
+                commitUpdate((StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), invoke);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         }
     }
 }

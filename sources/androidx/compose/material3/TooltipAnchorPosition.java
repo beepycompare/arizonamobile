@@ -10,48 +10,48 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TooltipAnchorPosition {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Above = m3347constructorimpl(1);
-    private static final int Below = m3347constructorimpl(2);
-    private static final int Left = m3347constructorimpl(3);
-    private static final int Right = m3347constructorimpl(4);
-    private static final int Start = m3347constructorimpl(5);
-    private static final int End = m3347constructorimpl(6);
+    private static final int Above = m3433constructorimpl(1);
+    private static final int Below = m3433constructorimpl(2);
+    private static final int Left = m3433constructorimpl(3);
+    private static final int Right = m3433constructorimpl(4);
+    private static final int Start = m3433constructorimpl(5);
+    private static final int End = m3433constructorimpl(6);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TooltipAnchorPosition m3346boximpl(int i) {
+    public static final /* synthetic */ TooltipAnchorPosition m3432boximpl(int i) {
         return new TooltipAnchorPosition(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m3347constructorimpl(int i) {
+    private static int m3433constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m3348equalsimpl(int i, Object obj) {
-        return (obj instanceof TooltipAnchorPosition) && i == ((TooltipAnchorPosition) obj).m3352unboximpl();
+    public static boolean m3434equalsimpl(int i, Object obj) {
+        return (obj instanceof TooltipAnchorPosition) && i == ((TooltipAnchorPosition) obj).m3438unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m3349equalsimpl0(int i, int i2) {
+    public static final boolean m3435equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m3350hashCodeimpl(int i) {
+    public static int m3436hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m3348equalsimpl(this.value, obj);
+        return m3434equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m3350hashCodeimpl(this.value);
+        return m3436hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m3352unboximpl() {
+    public final /* synthetic */ int m3438unboximpl() {
         return this.value;
     }
 
@@ -60,12 +60,12 @@ public final class TooltipAnchorPosition {
     }
 
     public String toString() {
-        return m3351toStringimpl(this.value);
+        return m3437toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m3351toStringimpl(int i) {
-        return m3349equalsimpl0(i, Above) ? "Above" : m3349equalsimpl0(i, Below) ? "Below" : m3349equalsimpl0(i, Left) ? "Left" : m3349equalsimpl0(i, Right) ? "Right" : m3349equalsimpl0(i, Start) ? "Start" : m3349equalsimpl0(i, End) ? "End" : "Invalid";
+    public static String m3437toStringimpl(int i) {
+        return m3435equalsimpl0(i, Above) ? "Above" : m3435equalsimpl0(i, Below) ? "Below" : m3435equalsimpl0(i, Left) ? "Left" : m3435equalsimpl0(i, Right) ? "Right" : m3435equalsimpl0(i, Start) ? "Start" : m3435equalsimpl0(i, End) ? "End" : "Invalid";
     }
 
     /* compiled from: Tooltip.kt */
@@ -80,32 +80,32 @@ public final class TooltipAnchorPosition {
         }
 
         /* renamed from: getAbove-lOKsHw4  reason: not valid java name */
-        public final int m3353getAbovelOKsHw4() {
+        public final int m3439getAbovelOKsHw4() {
             return TooltipAnchorPosition.Above;
         }
 
         /* renamed from: getBelow-lOKsHw4  reason: not valid java name */
-        public final int m3354getBelowlOKsHw4() {
+        public final int m3440getBelowlOKsHw4() {
             return TooltipAnchorPosition.Below;
         }
 
         /* renamed from: getLeft-lOKsHw4  reason: not valid java name */
-        public final int m3356getLeftlOKsHw4() {
+        public final int m3442getLeftlOKsHw4() {
             return TooltipAnchorPosition.Left;
         }
 
         /* renamed from: getRight-lOKsHw4  reason: not valid java name */
-        public final int m3357getRightlOKsHw4() {
+        public final int m3443getRightlOKsHw4() {
             return TooltipAnchorPosition.Right;
         }
 
         /* renamed from: getStart-lOKsHw4  reason: not valid java name */
-        public final int m3358getStartlOKsHw4() {
+        public final int m3444getStartlOKsHw4() {
             return TooltipAnchorPosition.Start;
         }
 
         /* renamed from: getEnd-lOKsHw4  reason: not valid java name */
-        public final int m3355getEndlOKsHw4() {
+        public final int m3441getEndlOKsHw4() {
             return TooltipAnchorPosition.End;
         }
     }

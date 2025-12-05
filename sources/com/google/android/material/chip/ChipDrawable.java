@@ -25,7 +25,6 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.graphics.drawable.TintAwareDrawable;
 import androidx.core.internal.view.SupportMenu;
 import androidx.core.text.BidiFormatter;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.canvas.CanvasCompat;
@@ -468,7 +467,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         Canvas canvas2;
         Paint paint = this.debugPaint;
         if (paint != null) {
-            paint.setColor(ColorUtils.setAlphaComponent(ViewCompat.MEASURED_STATE_MASK, 127));
+            paint.setColor(ColorUtils.setAlphaComponent(-16777216, 127));
             canvas.drawRect(rect, this.debugPaint);
             if (showsChipIcon() || showsCheckedIcon()) {
                 calculateChipIconBounds(rect, this.rectF);

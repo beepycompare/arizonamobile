@@ -39,7 +39,7 @@ public final class ModalBottomSheetDialogLayout extends AbstractComposeView impl
         super(context, null, 0, 6, null);
         MutableState mutableStateOf$default;
         this.window = window;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$ModalBottomSheet_androidKt.INSTANCE.m2169getLambda$91331245$material3(), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$ModalBottomSheet_androidKt.INSTANCE.m2255getLambda$91331245$material3(), null, 2, null);
         this.content$delegate = mutableStateOf$default;
     }
 

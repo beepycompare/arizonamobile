@@ -16,6 +16,13 @@ public final class BoxChildDataElement extends ModifierNodeElement<BoxChildDataN
     private final Function1<InspectorInfo, Unit> inspectorInfo;
     private final boolean matchParentSize;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public BoxChildDataElement(Alignment alignment, boolean z, Function1<? super InspectorInfo, Unit> function1) {
+        this.alignment = alignment;
+        this.matchParentSize = z;
+        this.inspectorInfo = function1;
+    }
+
     public final Alignment getAlignment() {
         return this.alignment;
     }
@@ -26,13 +33,6 @@ public final class BoxChildDataElement extends ModifierNodeElement<BoxChildDataN
 
     public final Function1<InspectorInfo, Unit> getInspectorInfo() {
         return this.inspectorInfo;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public BoxChildDataElement(Alignment alignment, boolean z, Function1<? super InspectorInfo, Unit> function1) {
-        this.alignment = alignment;
-        this.matchParentSize = z;
-        this.inspectorInfo = function1;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

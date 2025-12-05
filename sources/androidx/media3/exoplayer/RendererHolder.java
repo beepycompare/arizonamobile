@@ -12,7 +12,7 @@ import androidx.media3.exoplayer.trackselection.TrackSelectorResult;
 import androidx.media3.exoplayer.video.VideoFrameMetadataListener;
 import java.io.IOException;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 class RendererHolder {
     static final int RENDERER_PREWARMING_STATE_NOT_PREWARMING_USING_PRIMARY = 0;
     static final int RENDERER_PREWARMING_STATE_NOT_PREWARMING_USING_SECONDARY = 1;

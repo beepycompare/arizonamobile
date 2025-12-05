@@ -55,12 +55,12 @@ public final class CloudyModifierNodeKt {
         Object consume = composer.consume(InspectionModeKt.getLocalInspectionMode());
         ComposerKt.sourceInformationMarkerEnd(composer);
         if (((Boolean) consume).booleanValue()) {
-            Modifier m4808blurF8QBwvs$default = BlurKt.m4808blurF8QBwvs$default(modifier, Dp.m7996constructorimpl(i), null, 2, null);
+            Modifier m4947blurF8QBwvs$default = BlurKt.m4947blurF8QBwvs$default(modifier, Dp.m8258constructorimpl(i), null, 2, null);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
             composer.endReplaceGroup();
-            return m4808blurF8QBwvs$default;
+            return m4947blurF8QBwvs$default;
         }
         Modifier then = modifier.then(new CloudyModifierNodeElement(i, function1));
         if (ComposerKt.isTraceInProgress()) {

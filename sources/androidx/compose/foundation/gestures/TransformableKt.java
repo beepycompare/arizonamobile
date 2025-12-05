@@ -22,7 +22,7 @@ import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.channels.Channel;
 import kotlinx.coroutines.channels.ChannelResult;
 /* compiled from: Transformable.kt */
-@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a&\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0005\u001a:\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\b2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0005\u001a(\u0010\f\u001a\u00020\r*\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010\u0014\u001a\u001a\u0010\u0015\u001a\u00020\t*\u00020\u00162\u0006\u0010\u0012\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010\u0017\u001a\u001c\u0010\u0018\u001a\u0004\u0018\u00010\t*\u00020\u00162\u0006\u0010\u0012\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010\u0017\u001a<\u0010\u0019\u001a\u00020\r*\u00020\u00162\u0006\u0010\u001a\u001a\u00020\u00052\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00102\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\bH\u0082@¢\u0006\u0002\u0010\u001b\"\u000e\u0010\n\u001a\u00020\u000bX\u0080T¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"transformable", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/gestures/TransformableState;", "lockRotationOnZoomPan", "", "enabled", "canPan", "Lkotlin/Function1;", "Landroidx/compose/ui/geometry/Offset;", "SCROLL_FACTOR", "", "detectZoomByCtrlMouseScroll", "", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "channel", "Lkotlinx/coroutines/channels/Channel;", "Landroidx/compose/foundation/gestures/TransformEvent;", "scrollConfig", "Landroidx/compose/foundation/gestures/ScrollConfig;", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlinx/coroutines/channels/Channel;Landroidx/compose/foundation/gestures/ScrollConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstCtrlMouseScroll", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/foundation/gestures/ScrollConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitCtrlMouseScrollOrNull", "detectZoom", "panZoomLock", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;ZLkotlinx/coroutines/channels/Channel;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a&\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0005\u001a:\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\b2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0005\u001a(\u0010\f\u001a\u00020\r*\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010\u0014\u001a\u001a\u0010\u0015\u001a\u00020\t*\u00020\u00162\u0006\u0010\u0012\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010\u0017\u001a\u001c\u0010\u0018\u001a\u0004\u0018\u00010\t*\u00020\u00162\u0006\u0010\u0012\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010\u0017\u001a<\u0010\u0019\u001a\u00020\r*\u00020\u00162\u0006\u0010\u001a\u001a\u00020\u00052\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00102\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\bH\u0082@¢\u0006\u0002\u0010\u001b\"\u000e\u0010\n\u001a\u00020\u000bX\u0080T¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"transformable", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/gestures/TransformableState;", "lockRotationOnZoomPan", "", "enabled", "canPan", "Lkotlin/Function1;", "Landroidx/compose/ui/geometry/Offset;", "SCROLL_FACTOR", "", "detectZoomByCtrlMouseScroll", "", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "channel", "Lkotlinx/coroutines/channels/Channel;", "Landroidx/compose/foundation/gestures/TransformEvent;", "scrollConfig", "Landroidx/compose/foundation/gestures/ScrollConfig;", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlinx/coroutines/channels/Channel;Landroidx/compose/foundation/gestures/ScrollConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstCtrlMouseScroll", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/foundation/gestures/ScrollConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitCtrlMouseScrollOrNull", "detectZoom", "panZoomLock", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;ZLkotlinx/coroutines/channels/Channel;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TransformableKt {
     public static final float SCROLL_FACTOR = 545.0f;
@@ -169,11 +169,11 @@ public final class TransformableKt {
                     ResultKt.throwOnFailure(obj);
                 }
                 pointerEvent = (PointerEvent) obj;
-                if (PointerEvent_androidKt.m6537isCtrlPressed5xRPYO0(pointerEvent.m6511getKeyboardModifiersk7X9c1A()) || !PointerEventType.m6519equalsimpl0(pointerEvent.m6512getType7fucELk(), PointerEventType.Companion.m6528getScroll7fucELk())) {
+                if (PointerEvent_androidKt.m6711isCtrlPressed5xRPYO0(pointerEvent.m6685getKeyboardModifiersk7X9c1A()) || !PointerEventType.m6693equalsimpl0(pointerEvent.m6686getType7fucELk(), PointerEventType.Companion.m6702getScroll7fucELk())) {
                     return null;
                 }
-                long mo458calculateMouseWheelScroll8xgXZGE = scrollConfig.mo458calculateMouseWheelScroll8xgXZGE(awaitPointerEventScope, pointerEvent, awaitPointerEventScope.mo6479getSizeYbymL2g());
-                if (Offset.m5033equalsimpl0(mo458calculateMouseWheelScroll8xgXZGE, Offset.Companion.m5052getZeroF1C5BW0())) {
+                long mo493calculateMouseWheelScroll8xgXZGE = scrollConfig.mo493calculateMouseWheelScroll8xgXZGE(awaitPointerEventScope, pointerEvent, awaitPointerEventScope.mo6640getSizeYbymL2g());
+                if (Offset.m5176equalsimpl0(mo493calculateMouseWheelScroll8xgXZGE, Offset.Companion.m5195getZeroF1C5BW0())) {
                     return null;
                 }
                 List<PointerInputChange> changes = pointerEvent.getChanges();
@@ -181,7 +181,7 @@ public final class TransformableKt {
                 for (int i2 = 0; i2 < size; i2++) {
                     changes.get(i2).consume();
                 }
-                return Offset.m5025boximpl(mo458calculateMouseWheelScroll8xgXZGE);
+                return Offset.m5168boximpl(mo493calculateMouseWheelScroll8xgXZGE);
             }
         }
         transformableKt$awaitCtrlMouseScrollOrNull$1 = new TransformableKt$awaitCtrlMouseScrollOrNull$1(continuation);
@@ -191,14 +191,14 @@ public final class TransformableKt {
         if (i != 0) {
         }
         pointerEvent = (PointerEvent) obj2;
-        if (PointerEvent_androidKt.m6537isCtrlPressed5xRPYO0(pointerEvent.m6511getKeyboardModifiersk7X9c1A())) {
+        if (PointerEvent_androidKt.m6711isCtrlPressed5xRPYO0(pointerEvent.m6685getKeyboardModifiersk7X9c1A())) {
         }
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:65:0x020d, code lost:
-        if (r13.invoke(androidx.compose.ui.geometry.Offset.m5025boximpl(r9)).booleanValue() != false) goto L63;
+        if (r13.invoke(androidx.compose.ui.geometry.Offset.m5168boximpl(r9)).booleanValue() != false) goto L63;
      */
     /* JADX WARN: Code restructure failed: missing block: B:87:0x02c3, code lost:
         if (r6 != 0) goto L96;
@@ -277,7 +277,7 @@ public final class TransformableKt {
                 i = transformableKt$detectZoom$14.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    long m5052getZeroF1C5BW0 = Offset.Companion.m5052getZeroF1C5BW0();
+                    long m5195getZeroF1C5BW0 = Offset.Companion.m5195getZeroF1C5BW0();
                     float touchSlop = awaitPointerEventScope.getViewConfiguration().getTouchSlop();
                     transformableKt$detectZoom$14.L$0 = awaitPointerEventScope;
                     channel2 = channel;
@@ -288,14 +288,14 @@ public final class TransformableKt {
                     transformableKt$detectZoom$14.Z$0 = z2;
                     transformableKt$detectZoom$14.F$0 = 0.0f;
                     transformableKt$detectZoom$14.F$1 = 1.0f;
-                    transformableKt$detectZoom$14.J$0 = m5052getZeroF1C5BW0;
+                    transformableKt$detectZoom$14.J$0 = m5195getZeroF1C5BW0;
                     transformableKt$detectZoom$14.I$0 = 0;
                     transformableKt$detectZoom$14.F$2 = touchSlop;
                     transformableKt$detectZoom$14.I$1 = 0;
                     transformableKt$detectZoom$14.label = 1;
                     if (TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope, false, null, transformableKt$detectZoom$14, 2, null) != coroutine_suspended) {
                         f = touchSlop;
-                        j = m5052getZeroF1C5BW0;
+                        j = m5195getZeroF1C5BW0;
                         i2 = 0;
                         i3 = 0;
                         f2 = 1.0f;
@@ -398,14 +398,14 @@ public final class TransformableKt {
                         if (i3 == 0) {
                             float f15 = f13 * calculateZoom;
                             float f16 = f14 + calculateRotation;
-                            long m5041plusMKHz9U = Offset.m5041plusMKHz9U(j, calculatePan);
+                            long m5184plusMKHz9U = Offset.m5184plusMKHz9U(j, calculatePan);
                             int i14 = i3;
                             float calculateCentroidSize = TransformGestureDetectorKt.calculateCentroidSize(pointerEvent2, false);
                             float abs = Math.abs(((3.1415927f * f16) * calculateCentroidSize) / 180.0f);
-                            float m5034getDistanceimpl = Offset.m5034getDistanceimpl(m5041plusMKHz9U);
-                            if (Math.abs(1 - f15) * calculateCentroidSize > f || abs > f || (m5034getDistanceimpl > f && function13.invoke(Offset.m5025boximpl(calculatePan)).booleanValue())) {
+                            float m5177getDistanceimpl = Offset.m5177getDistanceimpl(m5184plusMKHz9U);
+                            if (Math.abs(1 - f15) * calculateCentroidSize > f || abs > f || (m5177getDistanceimpl > f && function13.invoke(Offset.m5168boximpl(calculatePan)).booleanValue())) {
                                 i7 = (!z2 || abs >= f) ? 0 : 1;
-                                channel3.mo8879trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                                channel3.mo9143trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
                                 i6 = 1;
                                 f8 = f15;
                                 f9 = f16;
@@ -415,7 +415,7 @@ public final class TransformableKt {
                                 f9 = f16;
                                 i6 = i14;
                             }
-                            j3 = m5041plusMKHz9U;
+                            j3 = m5184plusMKHz9U;
                         } else {
                             f8 = f13;
                             f9 = f14;
@@ -431,7 +431,7 @@ public final class TransformableKt {
                                 transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
                             } else if (calculateZoom == 1.0f) {
                                 transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                                if (!Offset.m5033equalsimpl0(calculatePan, Offset.Companion.m5052getZeroF1C5BW0())) {
+                                if (!Offset.m5176equalsimpl0(calculatePan, Offset.Companion.m5195getZeroF1C5BW0())) {
                                 }
                                 List<PointerInputChange> changes4 = pointerEvent2.getChanges();
                                 size2 = changes4.size();
@@ -444,7 +444,7 @@ public final class TransformableKt {
                             } else {
                                 transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
                             }
-                            channel3.mo8879trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f17, null));
+                            channel3.mo9143trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f17, null));
                             List<PointerInputChange> changes42 = pointerEvent2.getChanges();
                             size2 = changes42.size();
                             while (i10 < size2) {
@@ -456,7 +456,7 @@ public final class TransformableKt {
                     } else {
                         int i15 = i3;
                         transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                        ChannelResult.m11435boximpl(channel3.mo8879trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
+                        ChannelResult.m11730boximpl(channel3.mo9143trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
                         f6 = f5;
                         f3 = f4;
                         j2 = j;

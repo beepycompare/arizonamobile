@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public final class c implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public final e f363a;
+    public final e f446a;
     public final String b = "id_sync";
     public final String c = "id_sync";
     public final String d = "launch_delay_seconds";
@@ -31,7 +31,7 @@ public final class c implements JsonParser {
     public final String n = "cell";
 
     public c(e eVar) {
-        this.f363a = eVar;
+        this.f446a = eVar;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
@@ -50,9 +50,9 @@ public final class c implements JsonParser {
             optJSONObject = new JSONObject();
         }
         o oVar = new o();
-        oVar.f374a = RemoteConfigJsonUtils.extractFeature(jSONObject, this.b, oVar.f374a);
+        oVar.f457a = RemoteConfigJsonUtils.extractFeature(jSONObject, this.b, oVar.f457a);
         n nVar = new n();
-        nVar.f373a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject, this.d, nVar.f373a);
+        nVar.f456a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject, this.d, nVar.f456a);
         JSONArray optJSONArray = optJSONObject.optJSONArray(this.e);
         int i2 = 0;
         if (optJSONArray == null) {
@@ -70,11 +70,11 @@ public final class c implements JsonParser {
                 } else {
                     String optString = optJSONObject2.optString(this.f);
                     Charset charset = Charsets.UTF_8;
-                    mVar.f372a = optString.getBytes(charset);
+                    mVar.f455a = optString.getBytes(charset);
                     JSONObject optJSONObject3 = optJSONObject2.optJSONObject(this.l);
                     l lVar = new l();
                     if (optJSONObject3 != null && Intrinsics.areEqual(optJSONObject3.optString(this.m), this.n)) {
-                        lVar.f371a = 1;
+                        lVar.f454a = 1;
                     }
                     mVar.b = lVar;
                     mVar.c = optJSONObject2.optString(this.g).getBytes(charset);
@@ -88,7 +88,7 @@ public final class c implements JsonParser {
                         while (keys.hasNext()) {
                             String next = keys.next();
                             k kVar = new k();
-                            kVar.f370a = next.getBytes(Charsets.UTF_8);
+                            kVar.f453a = next.getBytes(Charsets.UTF_8);
                             JSONArray optJSONArray2 = optJSONObject4.optJSONArray(next);
                             if (optJSONArray2 == null) {
                                 bArr = new byte[i2];
@@ -159,7 +159,7 @@ public final class c implements JsonParser {
         }
         nVar.b = mVarArr;
         oVar.b = nVar;
-        return this.f363a.toModel(oVar);
+        return this.f446a.toModel(oVar);
     }
 
     public final IdSyncConfig b(JSONObject jSONObject) {

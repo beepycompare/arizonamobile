@@ -3,15 +3,15 @@ package io.appmetrica.analytics.billing.impl;
 public final class B {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f209a;
+    public final boolean f292a;
     public final A b;
 
     public B(boolean z, A a2) {
-        this.f209a = z;
+        this.f292a = z;
         this.b = a2;
     }
 
     public final String toString() {
-        return "ServiceSideRemoteBillingConfig(enabled=" + this.f209a + ", config=" + this.b + ')';
+        return "ServiceSideRemoteBillingConfig(enabled=" + this.f292a + ", config=" + this.b + ')';
     }
 }

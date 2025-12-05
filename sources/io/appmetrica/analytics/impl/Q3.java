@@ -6,14 +6,14 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Q3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f647a;
+    public final String f730a;
     public final String b;
     public final Integer c;
     public final String d;
     public final CounterConfigurationReporterType e;
 
     public Q3(String str, String str2, Integer num, String str3, CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f647a = str;
+        this.f730a = str;
         this.b = str2;
         this.c = num;
         this.d = str3;
@@ -21,7 +21,7 @@ public final class Q3 {
     }
 
     public static Q3 a(I3 i3) {
-        return new Q3(i3.b.getApiKey(), i3.f518a.f432a.getAsString("PROCESS_CFG_PACKAGE_NAME"), i3.f518a.f432a.getAsInteger("PROCESS_CFG_PROCESS_ID"), i3.f518a.f432a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), i3.b.getReporterType());
+        return new Q3(i3.b.getApiKey(), i3.f601a.f515a.getAsString("PROCESS_CFG_PACKAGE_NAME"), i3.f601a.f515a.getAsInteger("PROCESS_CFG_PROCESS_ID"), i3.f601a.f515a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), i3.b.getReporterType());
     }
 
     public final boolean equals(Object obj) {
@@ -30,8 +30,8 @@ public final class Q3 {
         }
         if (obj != null && Q3.class == obj.getClass()) {
             Q3 q3 = (Q3) obj;
-            String str = this.f647a;
-            if (str == null ? q3.f647a != null : !str.equals(q3.f647a)) {
+            String str = this.f730a;
+            if (str == null ? q3.f730a != null : !str.equals(q3.f730a)) {
                 return false;
             }
             if (!this.b.equals(q3.b)) {
@@ -53,7 +53,7 @@ public final class Q3 {
     }
 
     public final int hashCode() {
-        String str = this.f647a;
+        String str = this.f730a;
         int hashCode = (this.b.hashCode() + ((str != null ? str.hashCode() : 0) * 31)) * 31;
         Integer num = this.c;
         int hashCode2 = (hashCode + (num != null ? num.hashCode() : 0)) * 31;
@@ -62,6 +62,6 @@ public final class Q3 {
     }
 
     public final String toString() {
-        return "ClientDescription{mApiKey='" + this.f647a + "', mPackageName='" + this.b + "', mProcessID=" + this.c + ", mProcessSessionID='" + this.d + "', mReporterType=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "ClientDescription{mApiKey='" + this.f730a + "', mPackageName='" + this.b + "', mProcessID=" + this.c + ", mProcessSessionID='" + this.d + "', mReporterType=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 }

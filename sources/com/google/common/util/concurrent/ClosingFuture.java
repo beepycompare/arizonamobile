@@ -845,7 +845,7 @@ public final class ClosingFuture<V> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void lambda$closeQuietly$0(AutoCloseable autoCloseable) {
         try {
-            UByte$$ExternalSyntheticBackport0.m9977m((Object) autoCloseable);
+            UByte$$ExternalSyntheticBackport0.m10272m((Object) autoCloseable);
         } catch (Exception e) {
             Platform.restoreInterruptIfIsInterruptedException(e);
             logger.get().log(Level.WARNING, "thrown by close()", (Throwable) e);

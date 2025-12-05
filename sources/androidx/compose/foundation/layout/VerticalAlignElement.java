@@ -12,12 +12,12 @@ public final class VerticalAlignElement extends ModifierNodeElement<VerticalAlig
     public static final int $stable = 0;
     private final Alignment.Vertical alignment;
 
-    public final Alignment.Vertical getAlignment() {
-        return this.alignment;
-    }
-
     public VerticalAlignElement(Alignment.Vertical vertical) {
         this.alignment = vertical;
+    }
+
+    public final Alignment.Vertical getAlignment() {
+        return this.alignment;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

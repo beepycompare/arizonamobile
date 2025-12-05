@@ -572,7 +572,7 @@ public final class Cea708Decoder extends CeaDecoder {
                         case CHARACTER_LOWER_LEFT_BORDER /* 124 */:
                             this.currentCueInfoBuilder.append((char) 9492);
                             return;
-                        case CHARACTER_HORIZONTAL_BORDER /* 125 */:
+                        case 125:
                             this.currentCueInfoBuilder.append((char) 9472);
                             return;
                         case 126:

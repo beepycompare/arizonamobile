@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">සමග බෙදා ගන්න</string>
     <string name="abc_shareactionprovider_share_with_application">%s සමඟ බෙදා ගන්න</string>
     <string name="abc_toolbar_collapse_description">හකුළන්න</string>
-    <string name="autofill">ස්වයං පිරවුම</string>
+    <string name="androidx_compose_foundation_autofill">ස්වයං පිරවුම</string>
+    <string name="androidx_compose_ui_autofill">ස්වයං පිරවුම</string>
     <string name="bottomsheet_action_collapse">පහළම පත්‍රය හකුළන්න</string>
     <string name="bottomsheet_action_expand">පහළම පත්‍රය දිග හරින්න</string>
     <string name="bottomsheet_action_expand_halfway">අඩක් දිග හරින්න</string>

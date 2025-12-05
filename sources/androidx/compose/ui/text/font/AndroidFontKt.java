@@ -13,59 +13,59 @@ public final class AndroidFontKt {
     }
 
     /* renamed from: Font-MuC2MFs$default  reason: not valid java name */
-    public static /* synthetic */ Font m7521FontMuC2MFs$default(String str, AssetManager assetManager, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, Object obj) {
+    public static /* synthetic */ Font m7765FontMuC2MFs$default(String str, AssetManager assetManager, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i2 & 8) != 0) {
-            i = FontStyle.Companion.m7578getNormal_LCdwA();
+            i = FontStyle.Companion.m7822getNormal_LCdwA();
         }
         if ((i2 & 16) != 0) {
-            settings = FontVariation.INSTANCE.m7593Settings6EWAqTQ(fontWeight, i, new FontVariation.Setting[0]);
+            settings = FontVariation.INSTANCE.m7838Settings6EWAqTQ(fontWeight, i, new FontVariation.Setting[0]);
         }
-        return m7520FontMuC2MFs(str, assetManager, fontWeight, i, settings);
+        return m7764FontMuC2MFs(str, assetManager, fontWeight, i, settings);
     }
 
     /* renamed from: Font-MuC2MFs  reason: not valid java name */
-    public static final Font m7520FontMuC2MFs(String str, AssetManager assetManager, FontWeight fontWeight, int i, FontVariation.Settings settings) {
+    public static final Font m7764FontMuC2MFs(String str, AssetManager assetManager, FontWeight fontWeight, int i, FontVariation.Settings settings) {
         return new AndroidAssetFont(assetManager, str, fontWeight, i, settings, null);
     }
 
     /* renamed from: Font-Ej4NQ78$default  reason: not valid java name */
-    public static /* synthetic */ Font m7519FontEj4NQ78$default(File file, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, Object obj) {
+    public static /* synthetic */ Font m7763FontEj4NQ78$default(File file, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i2 & 4) != 0) {
-            i = FontStyle.Companion.m7578getNormal_LCdwA();
+            i = FontStyle.Companion.m7822getNormal_LCdwA();
         }
         if ((i2 & 8) != 0) {
-            settings = FontVariation.INSTANCE.m7593Settings6EWAqTQ(fontWeight, i, new FontVariation.Setting[0]);
+            settings = FontVariation.INSTANCE.m7838Settings6EWAqTQ(fontWeight, i, new FontVariation.Setting[0]);
         }
-        return m7517FontEj4NQ78(file, fontWeight, i, settings);
+        return m7761FontEj4NQ78(file, fontWeight, i, settings);
     }
 
     /* renamed from: Font-Ej4NQ78  reason: not valid java name */
-    public static final Font m7517FontEj4NQ78(File file, FontWeight fontWeight, int i, FontVariation.Settings settings) {
+    public static final Font m7761FontEj4NQ78(File file, FontWeight fontWeight, int i, FontVariation.Settings settings) {
         return new AndroidFileFont(file, fontWeight, i, settings, null);
     }
 
     /* renamed from: Font-Ej4NQ78$default  reason: not valid java name */
-    public static /* synthetic */ Font m7518FontEj4NQ78$default(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, Object obj) {
+    public static /* synthetic */ Font m7762FontEj4NQ78$default(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i2 & 4) != 0) {
-            i = FontStyle.Companion.m7578getNormal_LCdwA();
+            i = FontStyle.Companion.m7822getNormal_LCdwA();
         }
         if ((i2 & 8) != 0) {
-            settings = FontVariation.INSTANCE.m7593Settings6EWAqTQ(fontWeight, i, new FontVariation.Setting[0]);
+            settings = FontVariation.INSTANCE.m7838Settings6EWAqTQ(fontWeight, i, new FontVariation.Setting[0]);
         }
-        return m7516FontEj4NQ78(parcelFileDescriptor, fontWeight, i, settings);
+        return m7760FontEj4NQ78(parcelFileDescriptor, fontWeight, i, settings);
     }
 
     /* renamed from: Font-Ej4NQ78  reason: not valid java name */
-    public static final Font m7516FontEj4NQ78(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings) {
+    public static final Font m7760FontEj4NQ78(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings) {
         return new AndroidFileDescriptorFont(parcelFileDescriptor, fontWeight, i, settings, null);
     }
 }

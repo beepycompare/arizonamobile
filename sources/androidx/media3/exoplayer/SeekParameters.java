@@ -2,7 +2,7 @@ package androidx.media3.exoplayer;
 
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class SeekParameters {
     public static final SeekParameters CLOSEST_SYNC;
     public static final SeekParameters DEFAULT;

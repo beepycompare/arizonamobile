@@ -53,20 +53,20 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: FlowLayout.kt */
-@Metadata(d1 = {"\u0000â\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010(\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aq\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u000e2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0014\u001ag\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0015\u001aq\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u001a2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001c\u001ag\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001d\u001a%\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010!\u001a=\u0010\"\u001a\u00020#2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010&\u001a%\u0010'\u001a\u00020\u001f2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010(\u001a=\u0010)\u001a\u00020#2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010*\u001aT\u0010+\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000bH\u0082\b\u001a\u0091\u0001\u00103\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0082\b\u001a[\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002092\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0002¢\u0006\u0002\u0010<\u001a\u0096\u0001\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0082\b¢\u0006\u0002\u0010=\u001aY\u0010>\u001a\u00020?*\u00020@2\u0006\u0010A\u001a\u00020B2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020E0D2\u0006\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020G2\u0006\u0010I\u001a\u00020J2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0000¢\u0006\u0004\bK\u0010L\u001a\u001e\u0010M\u001a\u0004\u0018\u00010E*\b\u0012\u0004\u0012\u00020E0D2\b\u0010N\u001a\u0004\u0018\u00010OH\u0002\u001a\u001c\u0010P\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u00104\u001a\u00020\u000bH\u0000\u001a\u001c\u0010S\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u0010/\u001a\u00020\u000bH\u0000\u001a9\u0010Z\u001a\u000207*\u00020E2\u0006\u0010A\u001a\u00020B2\u0006\u0010I\u001a\u00020[2\u0014\u0010\\\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010]\u0012\u0004\u0012\u00020\u00010\u0010H\u0000¢\u0006\u0004\b^\u0010_\u001aQ\u0010`\u001a\u00020?*\u00020@2\u0006\u0010I\u001a\u00020J2\u0006\u0010a\u001a\u00020\u000b2\u0006\u0010b\u001a\u00020\u000b2\u0006\u0010:\u001a\u0002092\f\u0010c\u001a\b\u0012\u0004\u0012\u00020?0d2\u0006\u0010e\u001a\u00020B2\u0006\u0010f\u001a\u000209H\u0000¢\u0006\u0004\bg\u0010h\"\u0014\u0010T\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bV\u0010W\"\u0014\u0010X\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bY\u0010W¨\u0006i"}, d2 = {"FlowRow", "", "modifier", "Landroidx/compose/ui/Modifier;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "itemVerticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "maxItemsInEachRow", "", "maxLines", "overflow", "Landroidx/compose/foundation/layout/FlowRowOverflow;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/FlowRowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowRowOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "FlowColumn", "itemHorizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "maxItemsInEachColumn", "Landroidx/compose/foundation/layout/FlowColumnOverflow;", "Landroidx/compose/foundation/layout/FlowColumnScope;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowColumnOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "rowMeasurementHelper", "Landroidx/compose/ui/layout/MeasurePolicy;", "maxItemsInMainAxis", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "rowMeasurementMultiContentHelper", "Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "overflowState", "Landroidx/compose/foundation/layout/FlowLayoutOverflowState;", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "columnMeasurementHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "columnMeasurementMultiContentHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "maxIntrinsicMainAxisSize", "children", "", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "mainAxisSize", "Lkotlin/Function3;", "crossAxisAvailable", "mainAxisSpacing", "minIntrinsicMainAxisSize", "crossAxisSize", "crossAxisSpacing", "intrinsicCrossAxisSize", "Landroidx/collection/IntIntPair;", "mainAxisSizes", "", "crossAxisSizes", "mainAxisAvailable", "(Ljava/util/List;[I[IIIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "breakDownItems", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurePolicy", "Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;", "measurablesIterator", "", "Landroidx/compose/ui/layout/Measurable;", "mainAxisSpacingDp", "Landroidx/compose/ui/unit/Dp;", "crossAxisSpacingDp", "constraints", "Landroidx/compose/foundation/layout/OrientationIndependentConstraints;", "breakDownItems-di9J0FM", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;Ljava/util/Iterator;FFJIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)Landroidx/compose/ui/layout/MeasureResult;", "safeNext", "info", "Landroidx/compose/foundation/layout/FlowLineInfo;", "mainAxisMin", "isHorizontal", "", "crossAxisMin", "CROSS_AXIS_ALIGNMENT_TOP", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "getCROSS_AXIS_ALIGNMENT_TOP", "()Landroidx/compose/foundation/layout/CrossAxisAlignment;", "CROSS_AXIS_ALIGNMENT_START", "getCROSS_AXIS_ALIGNMENT_START", "measureAndCache", "Landroidx/compose/ui/unit/Constraints;", "storePlaceable", "Landroidx/compose/ui/layout/Placeable;", "measureAndCache-rqJ1uqs", "(Landroidx/compose/ui/layout/Measurable;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;JLkotlin/jvm/functions/Function1;)J", "placeHelper", "mainAxisTotalSize", "crossAxisTotalSize", "items", "Landroidx/compose/runtime/collection/MutableVector;", "measureHelper", "outPosition", "placeHelper-BmaY500", "(Landroidx/compose/ui/layout/MeasureScope;JII[ILandroidx/compose/runtime/collection/MutableVector;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;[I)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000â\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010(\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aq\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u000e2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0014\u001ag\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0015\u001aq\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u001a2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001c\u001ag\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001d\u001a%\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010!\u001a=\u0010\"\u001a\u00020#2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010&\u001a%\u0010'\u001a\u00020\u001f2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010(\u001a=\u0010)\u001a\u00020#2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010*\u001aT\u0010+\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000bH\u0082\b\u001a\u0091\u0001\u00103\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0083\b\u001a[\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002092\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0002¢\u0006\u0002\u0010<\u001a\u0096\u0001\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0082\b¢\u0006\u0002\u0010=\u001aY\u0010>\u001a\u00020?*\u00020@2\u0006\u0010A\u001a\u00020B2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020E0D2\u0006\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020G2\u0006\u0010I\u001a\u00020J2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0000¢\u0006\u0004\bK\u0010L\u001a\u001e\u0010M\u001a\u0004\u0018\u00010E*\b\u0012\u0004\u0012\u00020E0D2\b\u0010N\u001a\u0004\u0018\u00010OH\u0002\u001a\u001c\u0010P\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u00104\u001a\u00020\u000bH\u0000\u001a\u001c\u0010S\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u0010/\u001a\u00020\u000bH\u0000\u001a9\u0010Z\u001a\u000207*\u00020E2\u0006\u0010A\u001a\u00020B2\u0006\u0010I\u001a\u00020[2\u0014\u0010\\\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010]\u0012\u0004\u0012\u00020\u00010\u0010H\u0000¢\u0006\u0004\b^\u0010_\u001aQ\u0010`\u001a\u00020?*\u00020@2\u0006\u0010I\u001a\u00020J2\u0006\u0010a\u001a\u00020\u000b2\u0006\u0010b\u001a\u00020\u000b2\u0006\u0010:\u001a\u0002092\f\u0010c\u001a\b\u0012\u0004\u0012\u00020?0d2\u0006\u0010e\u001a\u00020B2\u0006\u0010f\u001a\u000209H\u0000¢\u0006\u0004\bg\u0010h\"\u0014\u0010T\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bV\u0010W\"\u0014\u0010X\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bY\u0010W¨\u0006i"}, d2 = {"FlowRow", "", "modifier", "Landroidx/compose/ui/Modifier;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "itemVerticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "maxItemsInEachRow", "", "maxLines", "overflow", "Landroidx/compose/foundation/layout/FlowRowOverflow;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/FlowRowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowRowOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "FlowColumn", "itemHorizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "maxItemsInEachColumn", "Landroidx/compose/foundation/layout/FlowColumnOverflow;", "Landroidx/compose/foundation/layout/FlowColumnScope;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowColumnOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "rowMeasurementHelper", "Landroidx/compose/ui/layout/MeasurePolicy;", "maxItemsInMainAxis", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "rowMeasurementMultiContentHelper", "Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "overflowState", "Landroidx/compose/foundation/layout/FlowLayoutOverflowState;", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "columnMeasurementHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "columnMeasurementMultiContentHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "maxIntrinsicMainAxisSize", "children", "", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "mainAxisSize", "Lkotlin/Function3;", "crossAxisAvailable", "mainAxisSpacing", "minIntrinsicMainAxisSize", "crossAxisSize", "crossAxisSpacing", "intrinsicCrossAxisSize", "Landroidx/collection/IntIntPair;", "mainAxisSizes", "", "crossAxisSizes", "mainAxisAvailable", "(Ljava/util/List;[I[IIIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "breakDownItems", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurePolicy", "Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;", "measurablesIterator", "", "Landroidx/compose/ui/layout/Measurable;", "mainAxisSpacingDp", "Landroidx/compose/ui/unit/Dp;", "crossAxisSpacingDp", "constraints", "Landroidx/compose/foundation/layout/OrientationIndependentConstraints;", "breakDownItems-di9J0FM", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;Ljava/util/Iterator;FFJIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)Landroidx/compose/ui/layout/MeasureResult;", "safeNext", "info", "Landroidx/compose/foundation/layout/FlowLineInfo;", "mainAxisMin", "isHorizontal", "", "crossAxisMin", "CROSS_AXIS_ALIGNMENT_TOP", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "getCROSS_AXIS_ALIGNMENT_TOP", "()Landroidx/compose/foundation/layout/CrossAxisAlignment;", "CROSS_AXIS_ALIGNMENT_START", "getCROSS_AXIS_ALIGNMENT_START", "measureAndCache", "Landroidx/compose/ui/unit/Constraints;", "storePlaceable", "Landroidx/compose/ui/layout/Placeable;", "measureAndCache-rqJ1uqs", "(Landroidx/compose/ui/layout/Measurable;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;JLkotlin/jvm/functions/Function1;)J", "placeHelper", "mainAxisTotalSize", "crossAxisTotalSize", "items", "Landroidx/compose/runtime/collection/MutableVector;", "measureHelper", "outPosition", "placeHelper-BmaY500", "(Landroidx/compose/ui/layout/MeasureScope;JII[ILandroidx/compose/runtime/collection/MutableVector;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;[I)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FlowLayoutKt {
     private static final CrossAxisAlignment CROSS_AXIS_ALIGNMENT_TOP = CrossAxisAlignment.Companion.vertical$foundation_layout(Alignment.Companion.getTop());
     private static final CrossAxisAlignment CROSS_AXIS_ALIGNMENT_START = CrossAxisAlignment.Companion.horizontal$foundation_layout(Alignment.Companion.getStart());
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FlowColumn$lambda$6(Modifier modifier, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, Alignment.Horizontal horizontal2, int i, int i2, FlowColumnOverflow flowColumnOverflow, Function3 function3, int i3, int i4, Composer composer, int i5) {
+    public static final Unit FlowColumn$lambda$2(Modifier modifier, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, Alignment.Horizontal horizontal2, int i, int i2, FlowColumnOverflow flowColumnOverflow, Function3 function3, int i3, int i4, Composer composer, int i5) {
         FlowColumn(modifier, vertical, horizontal, horizontal2, i, i2, flowColumnOverflow, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FlowColumn$lambda$7(Modifier modifier, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, Alignment.Horizontal horizontal2, int i, int i2, Function3 function3, int i3, int i4, Composer composer, int i5) {
+    public static final Unit FlowColumn$lambda$3(Modifier modifier, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, Alignment.Horizontal horizontal2, int i, int i2, Function3 function3, int i3, int i4, Composer composer, int i5) {
         FlowColumn(modifier, vertical, horizontal, horizontal2, i, i2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
@@ -83,27 +83,26 @@ public final class FlowLayoutKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x01da, code lost:
-        if (r5 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L99;
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x01c6, code lost:
+        if (r4 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L98;
      */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x02e6  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x02fd  */
-    /* JADX WARN: Removed duplicated region for block: B:169:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x02c0  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x02d7  */
+    /* JADX WARN: Removed duplicated region for block: B:161:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0106  */
     @Deprecated(message = "The overflow parameter has been deprecated")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -119,12 +118,12 @@ public final class FlowLayoutKt {
         int i10;
         int i11;
         final Modifier modifier2;
-        final FlowRowOverflow flowRowOverflow2;
-        Composer composer2;
-        final Arrangement.Horizontal horizontal2;
-        final int i12;
         final Arrangement.Vertical vertical4;
+        final Arrangement.Horizontal horizontal2;
+        Composer composer2;
+        final int i12;
         final int i13;
+        final FlowRowOverflow flowRowOverflow2;
         ScopeUpdateScope endRestartGroup;
         int i14;
         Arrangement.Vertical vertical5;
@@ -175,20 +174,18 @@ public final class FlowLayoutKt {
                         } else if ((i3 & 1572864) == 0) {
                             i5 |= startRestartGroup.changed(flowRowOverflow) ? 1048576 : 524288;
                         }
-                        if ((i4 & 128) != 0) {
-                            i5 |= 12582912;
-                        } else if ((i3 & 12582912) == 0) {
+                        if ((i3 & 12582912) == 0) {
                             i5 |= startRestartGroup.changedInstance(function3) ? 8388608 : 4194304;
                         }
                         if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
                             startRestartGroup.skipToGroupEnd();
                             modifier2 = modifier;
-                            flowRowOverflow2 = flowRowOverflow;
-                            composer2 = startRestartGroup;
-                            horizontal2 = obj;
-                            i12 = i9;
                             vertical4 = vertical;
+                            horizontal2 = obj;
+                            composer2 = startRestartGroup;
+                            i12 = i9;
                             i13 = i2;
+                            flowRowOverflow2 = flowRowOverflow;
                         } else {
                             Modifier.Companion companion = i15 != 0 ? Modifier.Companion : modifier;
                             Arrangement.Horizontal start = i16 != 0 ? Arrangement.INSTANCE.getStart() : obj;
@@ -208,7 +205,7 @@ public final class FlowLayoutKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1956591841, i5, -1, "androidx.compose.foundation.layout.FlowRow (FlowLayout.kt:99)");
                             }
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 910934132, "CC(remember):FlowLayout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 910931156, "CC(remember):FlowLayout.kt#9igjgp");
                             int i19 = 3670016 & i5;
                             boolean z = i19 == 1048576;
                             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -219,43 +216,28 @@ public final class FlowLayoutKt {
                             FlowLayoutOverflowState flowLayoutOverflowState = (FlowLayoutOverflowState) rememberedValue;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             MultiContentMeasurePolicy rowMeasurementMultiContentHelper = rowMeasurementMultiContentHelper(start, vertical5, vertical3, i17, i18, flowLayoutOverflowState, startRestartGroup, (i5 >> 3) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
-                            int i20 = i5;
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 910946082, "CC(remember):FlowLayout.kt#9igjgp");
-                            boolean z2 = (i19 == 1048576) | ((i20 & 29360128) == 8388608) | ((i20 & 458752) == 131072);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 910943106, "CC(remember):FlowLayout.kt#9igjgp");
+                            boolean z2 = (i19 == 1048576) | ((29360128 & i5) == 8388608) | ((i5 & 458752) == 131072);
                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                             if (!z2) {
                                 arrayList = rememberedValue2;
                             }
                             ArrayList arrayList2 = new ArrayList();
-                            arrayList2.add(ComposableLambdaKt.composableLambdaInstance(-1192950673, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$FlowRow$list$1$1
+                            arrayList2.add(ComposableLambdaKt.composableLambdaInstance(-1192950673, true, new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda6
                                 @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer3, int i21) {
-                                    ComposerKt.sourceInformation(composer3, "C113@5051L9:FlowLayout.kt#2w3rfo");
-                                    if (!composer3.shouldExecute((i21 & 3) != 2, i21 & 1)) {
-                                        composer3.skipToGroupEnd();
-                                        return;
-                                    }
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-1192950673, i21, -1, "androidx.compose.foundation.layout.FlowRow.<anonymous>.<anonymous> (FlowLayout.kt:113)");
-                                    }
-                                    function3.invoke(FlowRowScopeInstance.INSTANCE, composer3, 6);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
+                                public final Object invoke(Object obj3, Object obj4) {
+                                    Unit FlowRow$lambda$1$0;
+                                    FlowRow$lambda$1$0 = FlowLayoutKt.FlowRow$lambda$1$0(Function3.this, (Composer) obj3, ((Integer) obj4).intValue());
+                                    return FlowRow$lambda$1$0;
                                 }
                             }));
                             clip.addOverflowComposables$foundation_layout(flowLayoutOverflowState, arrayList2);
                             startRestartGroup.updateRememberedValue(arrayList2);
                             arrayList = arrayList2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)169@6976L62,166@6862L183:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)172@7176L62,169@7062L183:Layout.kt#80mrfh");
                             Function2<Composer, Integer, Unit> combineAsVirtualLayouts = LayoutKt.combineAsVirtualLayouts((List) arrayList);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 292529258, "CC(remember):Layout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 292526026, "CC(remember):Layout.kt#9igjgp");
                             boolean changed = startRestartGroup.changed(rowMeasurementMultiContentHelper);
                             Object rememberedValue3 = startRestartGroup.rememberedValue();
                             if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -264,7 +246,7 @@ public final class FlowLayoutKt {
                             }
                             MeasurePolicy measurePolicy = (MeasurePolicy) rememberedValue3;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
                             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
                             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, companion);
@@ -280,15 +262,12 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-                            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
-                            }
-                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+                            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -297,18 +276,18 @@ public final class FlowLayoutKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
-                            flowRowOverflow2 = clip;
-                            composer2 = startRestartGroup;
-                            horizontal2 = start;
                             vertical4 = vertical5;
                             i12 = i17;
                             i13 = i18;
                             modifier2 = modifier3;
+                            composer2 = startRestartGroup;
+                            flowRowOverflow2 = clip;
+                            horizontal2 = start;
                         }
                         final Alignment.Vertical vertical6 = vertical3;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
-                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda5
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda7
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
                                     Unit FlowRow$lambda$2;
@@ -327,7 +306,7 @@ public final class FlowLayoutKt {
                     i11 = i4 & 64;
                     if (i11 != 0) {
                     }
-                    if ((i4 & 128) != 0) {
+                    if ((i3 & 12582912) == 0) {
                     }
                     if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
                     }
@@ -347,7 +326,7 @@ public final class FlowLayoutKt {
                 i11 = i4 & 64;
                 if (i11 != 0) {
                 }
-                if ((i4 & 128) != 0) {
+                if ((i3 & 12582912) == 0) {
                 }
                 if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
                 }
@@ -370,7 +349,7 @@ public final class FlowLayoutKt {
             i11 = i4 & 64;
             if (i11 != 0) {
             }
-            if ((i4 & 128) != 0) {
+            if ((i3 & 12582912) == 0) {
             }
             if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
             }
@@ -397,7 +376,7 @@ public final class FlowLayoutKt {
         i11 = i4 & 64;
         if (i11 != 0) {
         }
-        if ((i4 & 128) != 0) {
+        if ((i3 & 12582912) == 0) {
         }
         if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
         }
@@ -407,9 +386,26 @@ public final class FlowLayoutKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:0x017b  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:114:? A[RETURN, SYNTHETIC] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit FlowRow$lambda$1$0(Function3 function3, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C113@5051L9:FlowLayout.kt#2w3rfo");
+        if (composer.shouldExecute((i & 3) != 2, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1192950673, i, -1, "androidx.compose.foundation.layout.FlowRow.<anonymous>.<anonymous> (FlowLayout.kt:113)");
+            }
+            function3.invoke(FlowRowScopeInstance.INSTANCE, composer, 6);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:111:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0051  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006a  */
@@ -418,11 +414,10 @@ public final class FlowLayoutKt {
     /* JADX WARN: Removed duplicated region for block: B:49:0x0089  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x00a4  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00de  */
     /* JADX WARN: Removed duplicated region for block: B:81:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00f0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -488,9 +483,7 @@ public final class FlowLayoutKt {
                         } else if ((196608 & i3) == 0) {
                             i11 = i2;
                             i5 |= startRestartGroup.changed(i11) ? 131072 : 65536;
-                            if ((i4 & 64) == 0) {
-                                i5 |= 1572864;
-                            } else if ((i3 & 1572864) == 0) {
+                            if ((i3 & 1572864) == 0) {
                                 i5 |= startRestartGroup.changedInstance(function3) ? 1048576 : 524288;
                             }
                             if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
@@ -539,7 +532,7 @@ public final class FlowLayoutKt {
                             final int i18 = i9;
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup == null) {
-                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda6
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda8
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj3, Object obj4) {
                                         Unit FlowRow$lambda$3;
@@ -552,7 +545,7 @@ public final class FlowLayoutKt {
                             return;
                         }
                         i11 = i2;
-                        if ((i4 & 64) == 0) {
+                        if ((i3 & 1572864) == 0) {
                         }
                         if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
                         }
@@ -566,7 +559,7 @@ public final class FlowLayoutKt {
                     if (i10 != 0) {
                     }
                     i11 = i2;
-                    if ((i4 & 64) == 0) {
+                    if ((i3 & 1572864) == 0) {
                     }
                     if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
                     }
@@ -583,7 +576,7 @@ public final class FlowLayoutKt {
                 if (i10 != 0) {
                 }
                 i11 = i2;
-                if ((i4 & 64) == 0) {
+                if ((i3 & 1572864) == 0) {
                 }
                 if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
                 }
@@ -603,7 +596,7 @@ public final class FlowLayoutKt {
             if (i10 != 0) {
             }
             i11 = i2;
-            if ((i4 & 64) == 0) {
+            if ((i3 & 1572864) == 0) {
             }
             if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
             }
@@ -627,7 +620,7 @@ public final class FlowLayoutKt {
         if (i10 != 0) {
         }
         i11 = i2;
-        if ((i4 & 64) == 0) {
+        if ((i3 & 1572864) == 0) {
         }
         if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
         }
@@ -637,27 +630,26 @@ public final class FlowLayoutKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x01da, code lost:
-        if (r5 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L99;
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x01c6, code lost:
+        if (r4 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L98;
      */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x02e6  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x02fd  */
-    /* JADX WARN: Removed duplicated region for block: B:169:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x02c0  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x02d7  */
+    /* JADX WARN: Removed duplicated region for block: B:161:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0106  */
     @Deprecated(message = "The overflow parameter has been deprecated")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -673,12 +665,12 @@ public final class FlowLayoutKt {
         int i10;
         int i11;
         final Modifier modifier2;
-        final FlowColumnOverflow flowColumnOverflow2;
-        Composer composer2;
-        final Arrangement.Vertical vertical2;
-        final int i12;
         final Arrangement.Horizontal horizontal4;
+        final Arrangement.Vertical vertical2;
+        Composer composer2;
+        final int i12;
         final int i13;
+        final FlowColumnOverflow flowColumnOverflow2;
         ScopeUpdateScope endRestartGroup;
         int i14;
         Arrangement.Horizontal horizontal5;
@@ -729,20 +721,18 @@ public final class FlowLayoutKt {
                         } else if ((i3 & 1572864) == 0) {
                             i5 |= startRestartGroup.changed(flowColumnOverflow) ? 1048576 : 524288;
                         }
-                        if ((i4 & 128) != 0) {
-                            i5 |= 12582912;
-                        } else if ((i3 & 12582912) == 0) {
+                        if ((i3 & 12582912) == 0) {
                             i5 |= startRestartGroup.changedInstance(function3) ? 8388608 : 4194304;
                         }
                         if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
                             startRestartGroup.skipToGroupEnd();
                             modifier2 = modifier;
-                            flowColumnOverflow2 = flowColumnOverflow;
-                            composer2 = startRestartGroup;
-                            vertical2 = obj;
-                            i12 = i9;
                             horizontal4 = horizontal;
+                            vertical2 = obj;
+                            composer2 = startRestartGroup;
+                            i12 = i9;
                             i13 = i2;
+                            flowColumnOverflow2 = flowColumnOverflow;
                         } else {
                             Modifier.Companion companion = i15 != 0 ? Modifier.Companion : modifier;
                             Arrangement.Vertical top = i16 != 0 ? Arrangement.INSTANCE.getTop() : obj;
@@ -762,7 +752,7 @@ public final class FlowLayoutKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1944405121, i5, -1, "androidx.compose.foundation.layout.FlowColumn (FlowLayout.kt:213)");
                             }
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -262529164, "CC(remember):FlowLayout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -262532140, "CC(remember):FlowLayout.kt#9igjgp");
                             int i19 = 3670016 & i5;
                             boolean z = i19 == 1048576;
                             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -773,43 +763,28 @@ public final class FlowLayoutKt {
                             FlowLayoutOverflowState flowLayoutOverflowState = (FlowLayoutOverflowState) rememberedValue;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             MultiContentMeasurePolicy columnMeasurementMultiContentHelper = columnMeasurementMultiContentHelper(top, horizontal5, horizontal3, i17, i18, flowLayoutOverflowState, startRestartGroup, (i5 >> 3) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
-                            int i20 = i5;
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -262516955, "CC(remember):FlowLayout.kt#9igjgp");
-                            boolean z2 = (i19 == 1048576) | ((i20 & 29360128) == 8388608) | ((i20 & 458752) == 131072);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -262519931, "CC(remember):FlowLayout.kt#9igjgp");
+                            boolean z2 = (i19 == 1048576) | ((29360128 & i5) == 8388608) | ((i5 & 458752) == 131072);
                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                             if (!z2) {
                                 arrayList = rememberedValue2;
                             }
                             ArrayList arrayList2 = new ArrayList();
-                            arrayList2.add(ComposableLambdaKt.composableLambdaInstance(-1720407857, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$FlowColumn$list$1$1
+                            arrayList2.add(ComposableLambdaKt.composableLambdaInstance(-1720407857, true, new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda0
                                 @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
-                                }
-
-                                public final void invoke(Composer composer3, int i21) {
-                                    ComposerKt.sourceInformation(composer3, "C227@10017L9:FlowLayout.kt#2w3rfo");
-                                    if (!composer3.shouldExecute((i21 & 3) != 2, i21 & 1)) {
-                                        composer3.skipToGroupEnd();
-                                        return;
-                                    }
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-1720407857, i21, -1, "androidx.compose.foundation.layout.FlowColumn.<anonymous>.<anonymous> (FlowLayout.kt:227)");
-                                    }
-                                    function3.invoke(FlowColumnScopeInstance.INSTANCE, composer3, 6);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
+                                public final Object invoke(Object obj3, Object obj4) {
+                                    Unit FlowColumn$lambda$1$0;
+                                    FlowColumn$lambda$1$0 = FlowLayoutKt.FlowColumn$lambda$1$0(Function3.this, (Composer) obj3, ((Integer) obj4).intValue());
+                                    return FlowColumn$lambda$1$0;
                                 }
                             }));
                             clip.addOverflowComposables$foundation_layout(flowLayoutOverflowState, arrayList2);
                             startRestartGroup.updateRememberedValue(arrayList2);
                             arrayList = arrayList2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)169@6976L62,166@6862L183:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)172@7176L62,169@7062L183:Layout.kt#80mrfh");
                             Function2<Composer, Integer, Unit> combineAsVirtualLayouts = LayoutKt.combineAsVirtualLayouts((List) arrayList);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 292529258, "CC(remember):Layout.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 292526026, "CC(remember):Layout.kt#9igjgp");
                             boolean changed = startRestartGroup.changed(columnMeasurementMultiContentHelper);
                             Object rememberedValue3 = startRestartGroup.rememberedValue();
                             if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -818,7 +793,7 @@ public final class FlowLayoutKt {
                             }
                             MeasurePolicy measurePolicy = (MeasurePolicy) rememberedValue3;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
                             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
                             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, companion);
@@ -834,15 +809,12 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-                            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
-                            }
-                            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+                            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -851,23 +823,23 @@ public final class FlowLayoutKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
-                            flowColumnOverflow2 = clip;
-                            composer2 = startRestartGroup;
-                            vertical2 = top;
                             horizontal4 = horizontal5;
                             i12 = i17;
                             i13 = i18;
                             modifier2 = modifier3;
+                            composer2 = startRestartGroup;
+                            flowColumnOverflow2 = clip;
+                            vertical2 = top;
                         }
                         final Alignment.Horizontal horizontal6 = horizontal3;
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
-                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda0
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
-                                    Unit FlowColumn$lambda$6;
-                                    FlowColumn$lambda$6 = FlowLayoutKt.FlowColumn$lambda$6(Modifier.this, vertical2, horizontal4, horizontal6, i12, i13, flowColumnOverflow2, function3, i3, i4, (Composer) obj3, ((Integer) obj4).intValue());
-                                    return FlowColumn$lambda$6;
+                                    Unit FlowColumn$lambda$2;
+                                    FlowColumn$lambda$2 = FlowLayoutKt.FlowColumn$lambda$2(Modifier.this, vertical2, horizontal4, horizontal6, i12, i13, flowColumnOverflow2, function3, i3, i4, (Composer) obj3, ((Integer) obj4).intValue());
+                                    return FlowColumn$lambda$2;
                                 }
                             });
                             return;
@@ -881,7 +853,7 @@ public final class FlowLayoutKt {
                     i11 = i4 & 64;
                     if (i11 != 0) {
                     }
-                    if ((i4 & 128) != 0) {
+                    if ((i3 & 12582912) == 0) {
                     }
                     if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
                     }
@@ -901,7 +873,7 @@ public final class FlowLayoutKt {
                 i11 = i4 & 64;
                 if (i11 != 0) {
                 }
-                if ((i4 & 128) != 0) {
+                if ((i3 & 12582912) == 0) {
                 }
                 if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
                 }
@@ -924,7 +896,7 @@ public final class FlowLayoutKt {
             i11 = i4 & 64;
             if (i11 != 0) {
             }
-            if ((i4 & 128) != 0) {
+            if ((i3 & 12582912) == 0) {
             }
             if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
             }
@@ -951,7 +923,7 @@ public final class FlowLayoutKt {
         i11 = i4 & 64;
         if (i11 != 0) {
         }
-        if ((i4 & 128) != 0) {
+        if ((i3 & 12582912) == 0) {
         }
         if (!startRestartGroup.shouldExecute((i5 & 4793491) != 4793490, i5 & 1)) {
         }
@@ -961,9 +933,26 @@ public final class FlowLayoutKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:0x017b  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:114:? A[RETURN, SYNTHETIC] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit FlowColumn$lambda$1$0(Function3 function3, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C227@10017L9:FlowLayout.kt#2w3rfo");
+        if (composer.shouldExecute((i & 3) != 2, i & 1)) {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-1720407857, i, -1, "androidx.compose.foundation.layout.FlowColumn.<anonymous>.<anonymous> (FlowLayout.kt:227)");
+            }
+            function3.invoke(FlowColumnScopeInstance.INSTANCE, composer, 6);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        } else {
+            composer.skipToGroupEnd();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0185  */
+    /* JADX WARN: Removed duplicated region for block: B:111:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0051  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x006a  */
@@ -972,11 +961,10 @@ public final class FlowLayoutKt {
     /* JADX WARN: Removed duplicated region for block: B:49:0x0089  */
     /* JADX WARN: Removed duplicated region for block: B:59:0x00a4  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00de  */
     /* JADX WARN: Removed duplicated region for block: B:81:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00f0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1042,9 +1030,7 @@ public final class FlowLayoutKt {
                         } else if ((196608 & i3) == 0) {
                             i11 = i2;
                             i5 |= startRestartGroup.changed(i11) ? 131072 : 65536;
-                            if ((i4 & 64) == 0) {
-                                i5 |= 1572864;
-                            } else if ((i3 & 1572864) == 0) {
+                            if ((i3 & 1572864) == 0) {
                                 i5 |= startRestartGroup.changedInstance(function3) ? 1048576 : 524288;
                             }
                             if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
@@ -1093,12 +1079,12 @@ public final class FlowLayoutKt {
                             final int i18 = i9;
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup == null) {
-                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda1
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda2
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj3, Object obj4) {
-                                        Unit FlowColumn$lambda$7;
-                                        FlowColumn$lambda$7 = FlowLayoutKt.FlowColumn$lambda$7(Modifier.this, vertical2, horizontal4, horizontal3, i18, i12, function3, i3, i4, (Composer) obj3, ((Integer) obj4).intValue());
-                                        return FlowColumn$lambda$7;
+                                        Unit FlowColumn$lambda$3;
+                                        FlowColumn$lambda$3 = FlowLayoutKt.FlowColumn$lambda$3(Modifier.this, vertical2, horizontal4, horizontal3, i18, i12, function3, i3, i4, (Composer) obj3, ((Integer) obj4).intValue());
+                                        return FlowColumn$lambda$3;
                                     }
                                 });
                                 return;
@@ -1106,7 +1092,7 @@ public final class FlowLayoutKt {
                             return;
                         }
                         i11 = i2;
-                        if ((i4 & 64) == 0) {
+                        if ((i3 & 1572864) == 0) {
                         }
                         if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
                         }
@@ -1120,7 +1106,7 @@ public final class FlowLayoutKt {
                     if (i10 != 0) {
                     }
                     i11 = i2;
-                    if ((i4 & 64) == 0) {
+                    if ((i3 & 1572864) == 0) {
                     }
                     if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
                     }
@@ -1137,7 +1123,7 @@ public final class FlowLayoutKt {
                 if (i10 != 0) {
                 }
                 i11 = i2;
-                if ((i4 & 64) == 0) {
+                if ((i3 & 1572864) == 0) {
                 }
                 if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
                 }
@@ -1157,7 +1143,7 @@ public final class FlowLayoutKt {
             if (i10 != 0) {
             }
             i11 = i2;
-            if ((i4 & 64) == 0) {
+            if ((i3 & 1572864) == 0) {
             }
             if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
             }
@@ -1181,7 +1167,7 @@ public final class FlowLayoutKt {
         if (i10 != 0) {
         }
         i11 = i2;
-        if ((i4 & 64) == 0) {
+        if ((i3 & 1572864) == 0) {
         }
         if (startRestartGroup.shouldExecute((i5 & 599187) == 599186, i5 & 1)) {
         }
@@ -1196,16 +1182,16 @@ public final class FlowLayoutKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1479255111, i2, -1, "androidx.compose.foundation.layout.rowMeasurementHelper (FlowLayout.kt:439)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -70004252, "CC(remember):FlowLayout.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -70006556, "CC(remember):FlowLayout.kt#9igjgp");
         boolean z = ((((i2 & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i2 & 6) == 4) | ((((i2 & 112) ^ 48) > 32 && composer.changed(vertical)) || (i2 & 48) == 32) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         MeasurePolicy rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo709getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_TOP, vertical.mo709getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
+            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo789getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_TOP, vertical.mo789getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
             rememberedValue = new MeasurePolicy() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$rowMeasurementHelper$1$1
                 @Override // androidx.compose.ui.layout.MeasurePolicy
                 /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                    return MultiContentMeasurePolicy.this.mo781measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
+                public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                    return MultiContentMeasurePolicy.this.mo864measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -1224,11 +1210,11 @@ public final class FlowLayoutKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2010142641, i3, -1, "androidx.compose.foundation.layout.rowMeasurementMultiContentHelper (FlowLayout.kt:470)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 988217907, "CC(remember):FlowLayout.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 988216051, "CC(remember):FlowLayout.kt#9igjgp");
         boolean changed = ((((i3 & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(vertical)) || (i3 & 48) == 32) | ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(vertical2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i3 & 7168) ^ 3072) > 2048 && composer.changed(i)) || (i3 & 3072) == 2048) | ((((57344 & i3) ^ 24576) > 16384 && composer.changed(i2)) || (i3 & 24576) == 16384) | composer.changed(flowLayoutOverflowState);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo709getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.vertical$foundation_layout(vertical2), vertical.mo709getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
+            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo789getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.vertical$foundation_layout(vertical2), vertical.mo789getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
             composer.updateRememberedValue(flowMeasurePolicy);
             rememberedValue = flowMeasurePolicy;
         }
@@ -1246,16 +1232,16 @@ public final class FlowLayoutKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2013098357, i2, -1, "androidx.compose.foundation.layout.columnMeasurementHelper (FlowLayout.kt:500)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -1852228771, "CC(remember):FlowLayout.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1852231075, "CC(remember):FlowLayout.kt#9igjgp");
         boolean z = ((((i2 & 14) ^ 6) > 4 && composer.changed(vertical)) || (i2 & 6) == 4) | ((((i2 & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i2 & 48) == 32) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         MeasurePolicy rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo709getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_START, horizontal.mo709getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
+            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo789getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_START, horizontal.mo789getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
             rememberedValue = new MeasurePolicy() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$columnMeasurementHelper$1$1
                 @Override // androidx.compose.ui.layout.MeasurePolicy
                 /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                    return FlowMeasurePolicy.this.mo781measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
+                public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                    return FlowMeasurePolicy.this.mo864measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -1274,11 +1260,11 @@ public final class FlowLayoutKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-308635847, i3, -1, "androidx.compose.foundation.layout.columnMeasurementMultiContentHelper (FlowLayout.kt:528)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -246293788, "CC(remember):FlowLayout.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -246294460, "CC(remember):FlowLayout.kt#9igjgp");
         boolean changed = ((((i3 & 14) ^ 6) > 4 && composer.changed(vertical)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i3 & 48) == 32) | ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(horizontal2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i3 & 7168) ^ 3072) > 2048 && composer.changed(i)) || (i3 & 3072) == 2048) | ((((57344 & i3) ^ 24576) > 16384 && composer.changed(i2)) || (i3 & 24576) == 16384) | composer.changed(flowLayoutOverflowState);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo709getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.horizontal$foundation_layout(horizontal2), horizontal.mo709getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
+            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo789getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.horizontal$foundation_layout(horizontal2), horizontal.mo789getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
             composer.updateRememberedValue(flowMeasurePolicy);
             rememberedValue = flowMeasurePolicy;
         }
@@ -1381,15 +1367,15 @@ public final class FlowLayoutKt {
         if (list.isEmpty()) {
             return IntIntPair.m37constructorimpl(0, 0);
         }
-        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m807constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
+        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m894constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
         IntrinsicMeasurable intrinsicMeasurable = (IntrinsicMeasurable) CollectionsKt.getOrNull(list, 0);
         int intValue = intrinsicMeasurable != null ? function32.invoke(intrinsicMeasurable, 0, Integer.valueOf(i)).intValue() : 0;
         int intValue2 = intrinsicMeasurable != null ? function3.invoke(intrinsicMeasurable, 0, Integer.valueOf(intValue)).intValue() : 0;
         int i7 = 0;
         int i8 = 0;
-        if (flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m37constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue2, intValue)), 0, 0, 0, false, false).isLastItemInContainer()) {
-            IntIntPair m763ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m763ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
-            return IntIntPair.m37constructorimpl(m763ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m42getSecondimpl(m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) : 0, 0);
+        if (flowLayoutBuildingBlocks.m836getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m37constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue2, intValue)), 0, 0, 0, false, false).isLastItemInContainer()) {
+            IntIntPair m845ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m845ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
+            return IntIntPair.m37constructorimpl(m845ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m42getSecondimpl(m845ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) : 0, 0);
         }
         int size = list.size();
         int i9 = i;
@@ -1412,17 +1398,17 @@ public final class FlowLayoutKt {
             int i17 = i16 - i12;
             i6 = i16;
             int i18 = i13;
-            FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(i10 + 2 < list.size(), i17, IntIntPair.m37constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue4, intValue3)), i18, i7, i8, false, false);
-            if (m755getWrapInfoOpUlnko.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m836getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m836getWrapInfoOpUlnko(i10 + 2 < list.size(), i17, IntIntPair.m37constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue4, intValue3)), i18, i7, i8, false, false);
+            if (m836getWrapInfoOpUlnko.isLastItemInLine()) {
                 int i19 = i7 + i8 + i3;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i18, i19, i15, i17);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m836getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i18, i19, i15, i17);
                 intValue4 -= i2;
                 i13 = i18 + 1;
-                if (m755getWrapInfoOpUlnko.isLastItemInContainer()) {
+                if (m836getWrapInfoOpUlnko.isLastItemInContainer()) {
                     if (wrapEllipsisInfo != null) {
-                        long m756getEllipsisSizeOO21N7I = wrapEllipsisInfo.m756getEllipsisSizeOO21N7I();
+                        long m837getEllipsisSizeOO21N7I = wrapEllipsisInfo.m837getEllipsisSizeOO21N7I();
                         if (!wrapEllipsisInfo.getPlaceEllipsisOnLastContentLine()) {
-                            i19 += IntIntPair.m42getSecondimpl(m756getEllipsisSizeOO21N7I) + i3;
+                            i19 += IntIntPair.m42getSecondimpl(m837getEllipsisSizeOO21N7I) + i3;
                         }
                     }
                     i7 = i19;
@@ -1446,14 +1432,14 @@ public final class FlowLayoutKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static final Unit breakDownItems_di9J0FM$lambda$20$lambda$19(Ref.ObjectRef objectRef, Placeable placeable) {
+    public static final Unit breakDownItems_di9J0FM$lambda$0$0(Ref.ObjectRef objectRef, Placeable placeable) {
         objectRef.element = placeable;
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public static final Unit breakDownItems_di9J0FM$lambda$23$lambda$22(Ref.ObjectRef objectRef, Placeable placeable) {
+    public static final Unit breakDownItems_di9J0FM$lambda$2$0(Ref.ObjectRef objectRef, Placeable placeable) {
         objectRef.element = placeable;
         return Unit.INSTANCE;
     }
@@ -1493,15 +1479,15 @@ public final class FlowLayoutKt {
     }
 
     /* renamed from: measureAndCache-rqJ1uqs  reason: not valid java name */
-    public static final long m761measureAndCacherqJ1uqs(Measurable measurable, FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function1<? super Placeable, Unit> function1) {
+    public static final long m841measureAndCacherqJ1uqs(Measurable measurable, FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function1<? super Placeable, Unit> function1) {
         FlowLayoutData flowLayoutData;
         Measurable measurable2 = measurable;
         if (RowColumnImplKt.getWeight(RowColumnImplKt.getRowColumnParentData(measurable2)) == 0.0f) {
             RowColumnParentData rowColumnParentData = RowColumnImplKt.getRowColumnParentData(measurable2);
             if (((rowColumnParentData == null || (flowLayoutData = rowColumnParentData.getFlowLayoutData()) == null) ? null : Float.valueOf(flowLayoutData.getFillCrossAxisFraction())) == null) {
-                Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
-                function1.invoke(mo6698measureBRTryo0);
-                return IntIntPair.m37constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo6698measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo6698measureBRTryo0));
+                Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
+                function1.invoke(mo6875measureBRTryo0);
+                return IntIntPair.m37constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo6875measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo6875measureBRTryo0));
             }
         }
         int mainAxisMin = mainAxisMin(measurable2, flowLineMeasurePolicy.isHorizontal(), Integer.MAX_VALUE);
@@ -1509,7 +1495,7 @@ public final class FlowLayoutKt {
     }
 
     /* renamed from: placeHelper-BmaY500  reason: not valid java name */
-    public static final MeasureResult m762placeHelperBmaY500(MeasureScope measureScope, long j, int i, int i2, int[] iArr, final MutableVector<MeasureResult> mutableVector, FlowLineMeasurePolicy flowLineMeasurePolicy, int[] iArr2) {
+    public static final MeasureResult m842placeHelperBmaY500(MeasureScope measureScope, long j, int i, int i2, int[] iArr, final MutableVector<MeasureResult> mutableVector, FlowLineMeasurePolicy flowLineMeasurePolicy, int[] iArr2) {
         int i3;
         int i4;
         int i5;
@@ -1517,48 +1503,48 @@ public final class FlowLayoutKt {
         Arrangement.Vertical verticalArrangement = flowLineMeasurePolicy.getVerticalArrangement();
         Arrangement.Horizontal horizontalArrangement = flowLineMeasurePolicy.getHorizontalArrangement();
         if (isHorizontal) {
-            int i6 = i2 + (measureScope.mo424roundToPx0680j_4(verticalArrangement.mo709getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
-            i3 = Constraints.m7948getMaxHeightimpl(j);
-            if (i6 < m7950getMinHeightimpl) {
-                i6 = m7950getMinHeightimpl;
+            int i6 = i2 + (measureScope.mo458roundToPx0680j_4(verticalArrangement.mo789getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
+            int m8212getMinHeightimpl = Constraints.m8212getMinHeightimpl(j);
+            i3 = Constraints.m8210getMaxHeightimpl(j);
+            if (i6 < m8212getMinHeightimpl) {
+                i6 = m8212getMinHeightimpl;
             }
             if (i6 <= i3) {
                 i3 = i6;
             }
             verticalArrangement.arrange(measureScope, i3, iArr, iArr2);
         } else {
-            int i7 = i2 + (measureScope.mo424roundToPx0680j_4(horizontalArrangement.mo709getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7950getMinHeightimpl2 = Constraints.m7950getMinHeightimpl(j);
-            int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
-            if (i7 < m7950getMinHeightimpl2) {
-                i7 = m7950getMinHeightimpl2;
+            int i7 = i2 + (measureScope.mo458roundToPx0680j_4(horizontalArrangement.mo789getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
+            int m8212getMinHeightimpl2 = Constraints.m8212getMinHeightimpl(j);
+            int m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(j);
+            if (i7 < m8212getMinHeightimpl2) {
+                i7 = m8212getMinHeightimpl2;
             }
-            int i8 = i7 > m7948getMaxHeightimpl ? m7948getMaxHeightimpl : i7;
+            int i8 = i7 > m8210getMaxHeightimpl ? m8210getMaxHeightimpl : i7;
             horizontalArrangement.arrange(measureScope, i8, iArr, measureScope.getLayoutDirection(), iArr2);
             i3 = i8;
         }
-        int m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
-        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
-        if (i < m7951getMinWidthimpl) {
-            i = m7951getMinWidthimpl;
+        int m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
+        int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
+        if (i < m8213getMinWidthimpl) {
+            i = m8213getMinWidthimpl;
         }
-        if (i <= m7949getMaxWidthimpl) {
-            m7949getMaxWidthimpl = i;
+        if (i <= m8211getMaxWidthimpl) {
+            m8211getMaxWidthimpl = i;
         }
         if (isHorizontal) {
-            i5 = m7949getMaxWidthimpl;
+            i5 = m8211getMaxWidthimpl;
             i4 = i3;
         } else {
-            i4 = m7949getMaxWidthimpl;
+            i4 = m8211getMaxWidthimpl;
             i5 = i3;
         }
-        return MeasureScope.layout$default(measureScope, i5, i4, null, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda2
+        return MeasureScope.layout$default(measureScope, i5, i4, null, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit placeHelper_BmaY500$lambda$30;
-                placeHelper_BmaY500$lambda$30 = FlowLayoutKt.placeHelper_BmaY500$lambda$30(MutableVector.this, (Placeable.PlacementScope) obj);
-                return placeHelper_BmaY500$lambda$30;
+                Unit placeHelper_BmaY500$lambda$2;
+                placeHelper_BmaY500$lambda$2 = FlowLayoutKt.placeHelper_BmaY500$lambda$2(MutableVector.this, (Placeable.PlacementScope) obj);
+                return placeHelper_BmaY500$lambda$2;
             }
         }, 4, null);
     }
@@ -1589,14 +1575,14 @@ public final class FlowLayoutKt {
         if (list.isEmpty()) {
             return IntIntPair.m37constructorimpl(0, 0);
         }
-        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m807constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
+        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m894constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
         IntrinsicMeasurable intrinsicMeasurable = (IntrinsicMeasurable) CollectionsKt.getOrNull(list, 0);
         int i6 = intrinsicMeasurable != null ? iArr2[0] : 0;
         int i7 = intrinsicMeasurable != null ? iArr[0] : 0;
         int i8 = 0;
-        if (flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m37constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i7, i6)), 0, 0, 0, false, false).isLastItemInContainer()) {
-            IntIntPair m763ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m763ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
-            return IntIntPair.m37constructorimpl(m763ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m42getSecondimpl(m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) : 0, 0);
+        if (flowLayoutBuildingBlocks.m836getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m37constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i7, i6)), 0, 0, 0, false, false).isLastItemInContainer()) {
+            IntIntPair m845ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m845ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
+            return IntIntPair.m37constructorimpl(m845ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m42getSecondimpl(m845ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) : 0, 0);
         }
         int size = list.size();
         int i9 = i;
@@ -1619,17 +1605,17 @@ public final class FlowLayoutKt {
             int i20 = i13;
             int i21 = i17;
             int i22 = i18;
-            FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(i10 + 2 < list.size(), i19, IntIntPair.m37constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i18, i17)), i20, i8, max, false, false);
-            if (m755getWrapInfoOpUlnko.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m836getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m836getWrapInfoOpUlnko(i10 + 2 < list.size(), i19, IntIntPair.m37constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(i18, i17)), i20, i8, max, false, false);
+            if (m836getWrapInfoOpUlnko.isLastItemInLine()) {
                 int i23 = i8 + max + i3;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i20, i23, i15, i19);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m836getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i20, i23, i15, i19);
                 int i24 = i22 - i2;
                 i13 = i20 + 1;
-                if (m755getWrapInfoOpUlnko.isLastItemInContainer()) {
+                if (m836getWrapInfoOpUlnko.isLastItemInContainer()) {
                     if (wrapEllipsisInfo != null) {
-                        long m756getEllipsisSizeOO21N7I = wrapEllipsisInfo.m756getEllipsisSizeOO21N7I();
+                        long m837getEllipsisSizeOO21N7I = wrapEllipsisInfo.m837getEllipsisSizeOO21N7I();
                         if (!wrapEllipsisInfo.getPlaceEllipsisOnLastContentLine()) {
-                            i23 += IntIntPair.m42getSecondimpl(m756getEllipsisSizeOO21N7I) + i3;
+                            i23 += IntIntPair.m42getSecondimpl(m837getEllipsisSizeOO21N7I) + i3;
                         }
                     }
                     i8 = i23;
@@ -1655,7 +1641,7 @@ public final class FlowLayoutKt {
     }
 
     /* renamed from: breakDownItems-di9J0FM  reason: not valid java name */
-    public static final MeasureResult m760breakDownItemsdi9J0FM(MeasureScope measureScope, FlowLineMeasurePolicy flowLineMeasurePolicy, Iterator<? extends Measurable> it, float f, float f2, long j, int i, int i2, FlowLayoutOverflowState flowLayoutOverflowState) {
+    public static final MeasureResult m840breakDownItemsdi9J0FM(MeasureScope measureScope, FlowLineMeasurePolicy flowLineMeasurePolicy, Iterator<? extends Measurable> it, float f, float f2, long j, int i, int i2, FlowLayoutOverflowState flowLayoutOverflowState) {
         int i3;
         FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo;
         MutableIntObjectMap mutableIntObjectMap;
@@ -1685,24 +1671,24 @@ public final class FlowLayoutKt {
         MeasureScope measureScope3 = measureScope;
         Iterator<? extends Measurable> it2 = it;
         MutableVector mutableVector = new MutableVector(new MeasureResult[16], 0);
-        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
-        int m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
-        int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
+        int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
+        int m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
+        int m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(j);
         MutableIntObjectMap mutableIntObjectMapOf = IntObjectMapKt.mutableIntObjectMapOf();
         ArrayList arrayList = new ArrayList();
-        int ceil = (int) Math.ceil(measureScope3.mo430toPx0680j_4(f));
-        int ceil2 = (int) Math.ceil(measureScope3.mo430toPx0680j_4(f2));
-        long m807constructorimpl = OrientationIndependentConstraints.m807constructorimpl(0, m7949getMaxWidthimpl, 0, m7948getMaxHeightimpl);
-        long m822toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m822toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m811copyyUG9Ft0$default(m807constructorimpl, 0, 0, 0, 0, 14, null), flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
+        int ceil = (int) Math.ceil(measureScope3.mo464toPx0680j_4(f));
+        int ceil2 = (int) Math.ceil(measureScope3.mo464toPx0680j_4(f2));
+        long m894constructorimpl = OrientationIndependentConstraints.m894constructorimpl(0, m8211getMaxWidthimpl, 0, m8210getMaxHeightimpl);
+        long m909toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m909toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m898copyyUG9Ft0$default(m894constructorimpl, 0, 0, 0, 0, 14, null), flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo427toDpu2uoSUM(m7949getMaxWidthimpl), measureScope3.mo427toDpu2uoSUM(m7948getMaxHeightimpl), null) : null;
+        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo461toDpu2uoSUM(m8211getMaxWidthimpl), measureScope3.mo461toDpu2uoSUM(m8210getMaxHeightimpl), null) : null;
         Measurable safeNext = !it2.hasNext() ? null : safeNext(it2, flowLineInfo);
-        IntIntPair m34boximpl2 = safeNext != null ? IntIntPair.m34boximpl(m761measureAndCacherqJ1uqs(safeNext, flowLineMeasurePolicy, m822toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda3
+        IntIntPair m34boximpl2 = safeNext != null ? IntIntPair.m34boximpl(m841measureAndCacherqJ1uqs(safeNext, flowLineMeasurePolicy, m909toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit breakDownItems_di9J0FM$lambda$20$lambda$19;
-                breakDownItems_di9J0FM$lambda$20$lambda$19 = FlowLayoutKt.breakDownItems_di9J0FM$lambda$20$lambda$19(Ref.ObjectRef.this, (Placeable) obj);
-                return breakDownItems_di9J0FM$lambda$20$lambda$19;
+                Unit breakDownItems_di9J0FM$lambda$0$0;
+                breakDownItems_di9J0FM$lambda$0$0 = FlowLayoutKt.breakDownItems_di9J0FM$lambda$0$0(Ref.ObjectRef.this, (Placeable) obj);
+                return breakDownItems_di9J0FM$lambda$0$0;
             }
         })) : null;
         Integer valueOf = m34boximpl2 != null ? Integer.valueOf(IntIntPair.m41getFirstimpl(m34boximpl2.m45unboximpl())) : null;
@@ -1713,19 +1699,19 @@ public final class FlowLayoutKt {
         MutableIntList mutableIntList5 = new MutableIntList(0, 1, null);
         MutableIntSet mutableIntSetOf = IntSetKt.mutableIntSetOf();
         FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i, flowLayoutOverflowState, j, i2, ceil, ceil2, null);
-        FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m37constructorimpl(m7949getMaxWidthimpl, m7948getMaxHeightimpl), m34boximpl2, 0, 0, 0, false, false);
-        if (m755getWrapInfoOpUlnko.isLastItemInContainer()) {
-            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko, m34boximpl2 != null, -1, 0, m7949getMaxWidthimpl, 0);
-            i3 = m7949getMaxWidthimpl;
+        FlowLayoutBuildingBlocks.WrapInfo m836getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m836getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m37constructorimpl(m8211getMaxWidthimpl, m8210getMaxHeightimpl), m34boximpl2, 0, 0, 0, false, false);
+        if (m836getWrapInfoOpUlnko.isLastItemInContainer()) {
+            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m836getWrapInfoOpUlnko, m34boximpl2 != null, -1, 0, m8211getMaxWidthimpl, 0);
+            i3 = m8211getMaxWidthimpl;
         } else {
-            i3 = m7949getMaxWidthimpl;
+            i3 = m8211getMaxWidthimpl;
             wrapEllipsisInfo = null;
         }
         FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo3 = wrapEllipsisInfo;
         MutableIntList mutableIntList6 = mutableIntList4;
         int i12 = i3;
-        FlowLayoutBuildingBlocks.WrapInfo wrapInfo = m755getWrapInfoOpUlnko;
-        int i13 = m7951getMinWidthimpl;
+        FlowLayoutBuildingBlocks.WrapInfo wrapInfo = m836getWrapInfoOpUlnko;
+        int i13 = m8213getMinWidthimpl;
         int i14 = 0;
         int i15 = 0;
         int i16 = 0;
@@ -1733,7 +1719,7 @@ public final class FlowLayoutKt {
         int i17 = 0;
         int i18 = 0;
         MutableIntSet mutableIntSet = mutableIntSetOf;
-        int i19 = m7948getMaxHeightimpl;
+        int i19 = m8210getMaxHeightimpl;
         Measurable measurable2 = measurable;
         int i20 = 0;
         while (!wrapInfo.isLastItemInContainer() && measurable2 != null) {
@@ -1774,7 +1760,7 @@ public final class FlowLayoutKt {
                     z = z3;
                     i10 = i21;
                 }
-                float f3 = measureScope3.mo427toDpu2uoSUM(i10);
+                float f3 = measureScope3.mo461toDpu2uoSUM(i10);
                 if (z) {
                     mutableIntObjectMap2 = mutableIntObjectMapOf;
                     i11 = i19;
@@ -1783,7 +1769,7 @@ public final class FlowLayoutKt {
                     mutableIntObjectMap2 = mutableIntObjectMapOf;
                     i11 = i29 < 0 ? 0 : i29;
                 }
-                flowLineInfo.m771update4j6BHR0$foundation_layout(i9, i27, f3, measureScope3.mo427toDpu2uoSUM(i11));
+                flowLineInfo.m853update4j6BHR0$foundation_layout(i9, i27, f3, measureScope3.mo461toDpu2uoSUM(i11));
                 Unit unit = Unit.INSTANCE;
             } else {
                 i6 = i26;
@@ -1791,12 +1777,12 @@ public final class FlowLayoutKt {
             }
             measurable2 = !it2.hasNext() ? null : safeNext(it2, flowLineInfo);
             objectRef.element = null;
-            IntIntPair m34boximpl3 = measurable2 != null ? IntIntPair.m34boximpl(m761measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m822toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda4
+            IntIntPair m34boximpl3 = measurable2 != null ? IntIntPair.m34boximpl(m841measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m909toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit breakDownItems_di9J0FM$lambda$23$lambda$22;
-                    breakDownItems_di9J0FM$lambda$23$lambda$22 = FlowLayoutKt.breakDownItems_di9J0FM$lambda$23$lambda$22(Ref.ObjectRef.this, (Placeable) obj);
-                    return breakDownItems_di9J0FM$lambda$23$lambda$22;
+                    Unit breakDownItems_di9J0FM$lambda$2$0;
+                    breakDownItems_di9J0FM$lambda$2$0 = FlowLayoutKt.breakDownItems_di9J0FM$lambda$2$0(Ref.ObjectRef.this, (Placeable) obj);
+                    return breakDownItems_di9J0FM$lambda$2$0;
                 }
             })) : null;
             Integer valueOf3 = m34boximpl3 != null ? Integer.valueOf(IntIntPair.m41getFirstimpl(m34boximpl3.m45unboximpl()) + ceil) : null;
@@ -1812,18 +1798,18 @@ public final class FlowLayoutKt {
                 Intrinsics.checkNotNull(valueOf2);
                 m34boximpl = IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(intValue2, valueOf2.intValue()));
             }
-            FlowLayoutBuildingBlocks.WrapInfo m755getWrapInfoOpUlnko2 = flowLayoutBuildingBlocks.m755getWrapInfoOpUlnko(hasNext, i6, m37constructorimpl, m34boximpl, i30, i18, max, false, false);
-            if (m755getWrapInfoOpUlnko2.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m836getWrapInfoOpUlnko2 = flowLayoutBuildingBlocks.m836getWrapInfoOpUlnko(hasNext, i6, m37constructorimpl, m34boximpl, i30, i18, max, false, false);
+            if (m836getWrapInfoOpUlnko2.isLastItemInLine()) {
                 int min = Math.min(Math.max(i25, i22), i21);
                 int i31 = i18 + max;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo4 = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m755getWrapInfoOpUlnko2, m34boximpl3 != null, i30, i31, i23, i6);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo4 = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m836getWrapInfoOpUlnko2, m34boximpl3 != null, i30, i31, i23, i6);
                 mutableIntList3 = mutableIntList7;
                 mutableIntList3.add(max);
                 MutableIntSet mutableIntSet2 = mutableIntSet;
                 if (z2) {
                     mutableIntSet2.plusAssign(i30);
                 }
-                int i32 = (m7948getMaxHeightimpl - i31) - ceil2;
+                int i32 = (m8210getMaxHeightimpl - i31) - ceil2;
                 mutableIntSet = mutableIntSet2;
                 mutableIntList2 = mutableIntList6;
                 mutableIntList2.add(i24);
@@ -1855,7 +1841,7 @@ public final class FlowLayoutKt {
             i13 = i8;
             i14 = i24;
             mutableIntObjectMapOf = mutableIntObjectMap2;
-            wrapInfo = m755getWrapInfoOpUlnko2;
+            wrapInfo = m836getWrapInfoOpUlnko2;
             it2 = it;
             mutableIntList5 = mutableIntList3;
             i16 = i22;
@@ -1872,11 +1858,11 @@ public final class FlowLayoutKt {
             mutableIntObjectMap.set(arrayList.size() - 1, wrapEllipsisInfo3.getPlaceable());
             int i33 = mutableIntList9._size - 1;
             if (wrapEllipsisInfo3.getPlaceEllipsisOnLastContentLine()) {
-                mutableIntList8.set(i33, Math.max(mutableIntList8.get(i33), IntIntPair.m42getSecondimpl(wrapEllipsisInfo3.m756getEllipsisSizeOO21N7I())));
+                mutableIntList8.set(i33, Math.max(mutableIntList8.get(i33), IntIntPair.m42getSecondimpl(wrapEllipsisInfo3.m837getEllipsisSizeOO21N7I())));
                 mutableIntList9.set(mutableIntList._size - 1, mutableIntList9.last() + 1);
                 Unit unit2 = Unit.INSTANCE;
             } else {
-                mutableIntList8.add(IntIntPair.m42getSecondimpl(wrapEllipsisInfo3.m756getEllipsisSizeOO21N7I()));
+                mutableIntList8.add(IntIntPair.m42getSecondimpl(wrapEllipsisInfo3.m837getEllipsisSizeOO21N7I()));
                 Boolean.valueOf(mutableIntList9.add(mutableIntList9.last() + 1));
             }
         } else {
@@ -1899,14 +1885,14 @@ public final class FlowLayoutKt {
             int i39 = iArr5[i37];
             int i40 = mutableIntList8.get(i37);
             if (!mutableIntSet3.contains(i37)) {
-                i40 = Constraints.m7948getMaxHeightimpl(m807constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m7948getMaxHeightimpl(m807constructorimpl) - i38;
+                i40 = Constraints.m8210getMaxHeightimpl(m894constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m8210getMaxHeightimpl(m894constructorimpl) - i38;
             }
             int i41 = i35;
             MutableIntSet mutableIntSet4 = mutableIntSet3;
             int[] iArr6 = iArr3;
             Placeable[] placeableArr2 = placeableArr;
             MutableIntList mutableIntList11 = mutableIntList8;
-            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m7950getMinHeightimpl(m807constructorimpl), Constraints.m7949getMaxWidthimpl(m807constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
+            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m8212getMinHeightimpl(m894constructorimpl), Constraints.m8211getMaxWidthimpl(m894constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
             if (flowLineMeasurePolicy.isHorizontal()) {
                 height = measure.getWidth();
                 width = measure.getHeight();
@@ -1945,11 +1931,11 @@ public final class FlowLayoutKt {
             iArr2 = iArr4;
             j2 = j;
         }
-        return m762placeHelperBmaY500(measureScope2, j2, i4, i5, iArr2, mutableVector, flowLineMeasurePolicy2, iArr);
+        return m842placeHelperBmaY500(measureScope2, j2, i4, i5, iArr2, mutableVector, flowLineMeasurePolicy2, iArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit placeHelper_BmaY500$lambda$30(MutableVector mutableVector, Placeable.PlacementScope placementScope) {
+    public static final Unit placeHelper_BmaY500$lambda$2(MutableVector mutableVector, Placeable.PlacementScope placementScope) {
         Object[] objArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {

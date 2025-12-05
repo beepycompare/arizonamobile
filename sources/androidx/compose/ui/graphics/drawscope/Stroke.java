@@ -7,12 +7,9 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DrawScope.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eB;\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\u0004\b\u000b\u0010\fJ\u0013\u0010\u0016\u001a\u00020\u00172\b\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0096\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0016J\b\u0010\u001c\u001a\u00020\u001dH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0013\u0010\u0005\u001a\u00020\u0006¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0007\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0013\u0010\u0011R\u0013\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015¨\u0006\u001f"}, d2 = {"Landroidx/compose/ui/graphics/drawscope/Stroke;", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "width", "", "miter", "cap", "Landroidx/compose/ui/graphics/StrokeCap;", "join", "Landroidx/compose/ui/graphics/StrokeJoin;", "pathEffect", "Landroidx/compose/ui/graphics/PathEffect;", "<init>", "(FFIILandroidx/compose/ui/graphics/PathEffect;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getWidth", "()F", "getMiter", "getCap-KaPHkGw", "()I", "I", "getJoin-LxFBmk8", "getPathEffect", "()Landroidx/compose/ui/graphics/PathEffect;", "equals", "", "other", "", "hashCode", "", "toString", "", "Companion", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0007\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eB;\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\u0004\b\u000b\u0010\fJ\u0013\u0010\u0016\u001a\u00020\u00172\b\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0096\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0016J\b\u0010\u001c\u001a\u00020\u001dH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0013\u0010\u0005\u001a\u00020\u0006¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0007\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0013\u0010\u0011R\u0013\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015¨\u0006\u001f"}, d2 = {"Landroidx/compose/ui/graphics/drawscope/Stroke;", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "width", "", "miter", "cap", "Landroidx/compose/ui/graphics/StrokeCap;", "join", "Landroidx/compose/ui/graphics/StrokeJoin;", "pathEffect", "Landroidx/compose/ui/graphics/PathEffect;", "<init>", "(FFIILandroidx/compose/ui/graphics/PathEffect;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getWidth", "()F", "getMiter", "getCap-KaPHkGw", "()I", "I", "getJoin-LxFBmk8", "getPathEffect", "()Landroidx/compose/ui/graphics/PathEffect;", "equals", "", "other", "", "hashCode", "", "toString", "", "Companion", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class Stroke extends DrawStyle {
-    public static final Companion Companion = new Companion(null);
-    private static final int DefaultCap = StrokeCap.Companion.m5650getButtKaPHkGw();
-    private static final int DefaultJoin = StrokeJoin.Companion.m5661getMiterLxFBmk8();
     public static final float DefaultMiter = 4.0f;
     public static final float HairlineWidth = 0.0f;
     private final int cap;
@@ -20,9 +17,22 @@ public final class Stroke extends DrawStyle {
     private final float miter;
     private final PathEffect pathEffect;
     private final float width;
+    public static final Companion Companion = new Companion(null);
+    public static final int $stable = 8;
+    private static final int DefaultCap = StrokeCap.Companion.m5800getButtKaPHkGw();
+    private static final int DefaultJoin = StrokeJoin.Companion.m5811getMiterLxFBmk8();
 
     public /* synthetic */ Stroke(float f, float f2, int i, int i2, PathEffect pathEffect, DefaultConstructorMarker defaultConstructorMarker) {
         this(f, f2, i, i2, pathEffect);
+    }
+
+    private Stroke(float f, float f2, int i, int i2, PathEffect pathEffect) {
+        super(null);
+        this.width = f;
+        this.miter = f2;
+        this.cap = i;
+        this.join = i2;
+        this.pathEffect = pathEffect;
     }
 
     public final float getWidth() {
@@ -38,12 +48,12 @@ public final class Stroke extends DrawStyle {
     }
 
     /* renamed from: getCap-KaPHkGw  reason: not valid java name */
-    public final int m5928getCapKaPHkGw() {
+    public final int m6074getCapKaPHkGw() {
         return this.cap;
     }
 
     /* renamed from: getJoin-LxFBmk8  reason: not valid java name */
-    public final int m5929getJoinLxFBmk8() {
+    public final int m6075getJoinLxFBmk8() {
         return this.join;
     }
 
@@ -52,8 +62,8 @@ public final class Stroke extends DrawStyle {
     }
 
     /* compiled from: DrawScope.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0013\u0010\u0007\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\nR\u0013\u0010\f\u001a\u00020\r¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u000e\u0010\n¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/graphics/drawscope/Stroke$Companion;", "", "<init>", "()V", "HairlineWidth", "", "DefaultMiter", "DefaultCap", "Landroidx/compose/ui/graphics/StrokeCap;", "getDefaultCap-KaPHkGw", "()I", "I", "DefaultJoin", "Landroidx/compose/ui/graphics/StrokeJoin;", "getDefaultJoin-LxFBmk8", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0013\u0010\u0007\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\nR\u0013\u0010\f\u001a\u00020\r¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\u000e\u0010\n¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/graphics/drawscope/Stroke$Companion;", "", "<init>", "()V", "HairlineWidth", "", "DefaultMiter", "DefaultCap", "Landroidx/compose/ui/graphics/StrokeCap;", "getDefaultCap-KaPHkGw", "()I", "I", "DefaultJoin", "Landroidx/compose/ui/graphics/StrokeJoin;", "getDefaultJoin-LxFBmk8", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -63,23 +73,14 @@ public final class Stroke extends DrawStyle {
         }
 
         /* renamed from: getDefaultCap-KaPHkGw  reason: not valid java name */
-        public final int m5930getDefaultCapKaPHkGw() {
+        public final int m6076getDefaultCapKaPHkGw() {
             return Stroke.DefaultCap;
         }
 
         /* renamed from: getDefaultJoin-LxFBmk8  reason: not valid java name */
-        public final int m5931getDefaultJoinLxFBmk8() {
+        public final int m6077getDefaultJoinLxFBmk8() {
             return Stroke.DefaultJoin;
         }
-    }
-
-    private Stroke(float f, float f2, int i, int i2, PathEffect pathEffect) {
-        super(null);
-        this.width = f;
-        this.miter = f2;
-        this.cap = i;
-        this.join = i2;
-        this.pathEffect = pathEffect;
     }
 
     public boolean equals(Object obj) {
@@ -88,18 +89,18 @@ public final class Stroke extends DrawStyle {
         }
         if (obj instanceof Stroke) {
             Stroke stroke = (Stroke) obj;
-            return this.width == stroke.width && this.miter == stroke.miter && StrokeCap.m5646equalsimpl0(this.cap, stroke.cap) && StrokeJoin.m5656equalsimpl0(this.join, stroke.join) && Intrinsics.areEqual(this.pathEffect, stroke.pathEffect);
+            return this.width == stroke.width && this.miter == stroke.miter && StrokeCap.m5796equalsimpl0(this.cap, stroke.cap) && StrokeJoin.m5806equalsimpl0(this.join, stroke.join) && Intrinsics.areEqual(this.pathEffect, stroke.pathEffect);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((Float.hashCode(this.width) * 31) + Float.hashCode(this.miter)) * 31) + StrokeCap.m5647hashCodeimpl(this.cap)) * 31) + StrokeJoin.m5657hashCodeimpl(this.join)) * 31;
+        int hashCode = ((((((Float.hashCode(this.width) * 31) + Float.hashCode(this.miter)) * 31) + StrokeCap.m5797hashCodeimpl(this.cap)) * 31) + StrokeJoin.m5807hashCodeimpl(this.join)) * 31;
         PathEffect pathEffect = this.pathEffect;
         return hashCode + (pathEffect != null ? pathEffect.hashCode() : 0);
     }
 
     public String toString() {
-        return "Stroke(width=" + this.width + ", miter=" + this.miter + ", cap=" + ((Object) StrokeCap.m5648toStringimpl(this.cap)) + ", join=" + ((Object) StrokeJoin.m5658toStringimpl(this.join)) + ", pathEffect=" + this.pathEffect + ')';
+        return "Stroke(width=" + this.width + ", miter=" + this.miter + ", cap=" + ((Object) StrokeCap.m5798toStringimpl(this.cap)) + ", join=" + ((Object) StrokeJoin.m5808toStringimpl(this.join)) + ", pathEffect=" + this.pathEffect + ')';
     }
 }

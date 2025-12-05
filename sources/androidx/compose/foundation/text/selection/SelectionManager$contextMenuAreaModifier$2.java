@@ -1,7 +1,9 @@
 package androidx.compose.foundation.text.selection;
 
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
+import androidx.compose.ui.text.AnnotatedString;
+import androidx.compose.ui.text.TextRange;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -9,12 +11,11 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectionManager.kt */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionManager$contextMenuAreaModifier$2", f = "SelectionManager.kt", i = {}, l = {DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionManager$contextMenuAreaModifier$2", f = "SelectionManager.kt", i = {}, l = {208}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
-public final class SelectionManager$contextMenuAreaModifier$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+final class SelectionManager$contextMenuAreaModifier$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     int label;
     final /* synthetic */ SelectionManager this$0;
 
@@ -37,15 +38,22 @@ public final class SelectionManager$contextMenuAreaModifier$2 extends SuspendLam
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object notifyPlatformSelectionBehaviorsOnShowContextMenu;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            this.label = 1;
-            notifyPlatformSelectionBehaviorsOnShowContextMenu = this.this$0.notifyPlatformSelectionBehaviorsOnShowContextMenu(this);
-            if (notifyPlatformSelectionBehaviorsOnShowContextMenu == coroutine_suspended) {
-                return coroutine_suspended;
+            Pair<AnnotatedString, TextRange> contextTextAndSelection$foundation = this.this$0.getContextTextAndSelection$foundation();
+            if (contextTextAndSelection$foundation != null) {
+                SelectionManager selectionManager = this.this$0;
+                AnnotatedString component1 = contextTextAndSelection$foundation.component1();
+                long m7705unboximpl = contextTextAndSelection$foundation.component2().m7705unboximpl();
+                PlatformSelectionBehaviors platformSelectionBehaviors$foundation = selectionManager.getPlatformSelectionBehaviors$foundation();
+                if (platformSelectionBehaviors$foundation != null) {
+                    this.label = 1;
+                    if (platformSelectionBehaviors$foundation.mo1835onShowSelectionToolbarSbBc2M(component1, m7705unboximpl, this) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                }
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

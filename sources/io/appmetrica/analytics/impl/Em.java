@@ -5,18 +5,18 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class Em implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0657vm fromModel(Dm dm) {
-        C0657vm c0657vm = new C0657vm();
-        c0657vm.f1174a = dm.f450a;
-        return c0657vm;
+    public final C0656vm fromModel(Dm dm) {
+        C0656vm c0656vm = new C0656vm();
+        c0656vm.f1257a = dm.f533a;
+        return c0656vm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new Dm(((C0657vm) obj).f1174a);
+        return new Dm(((C0656vm) obj).f1257a);
     }
 
-    public final Dm a(C0657vm c0657vm) {
-        return new Dm(c0657vm.f1174a);
+    public final Dm a(C0656vm c0656vm) {
+        return new Dm(c0656vm.f1257a);
     }
 }

@@ -20,7 +20,7 @@ public final class VectorizedKeyframeSpecElementInfo<V extends AnimationVector> 
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: copy-2NF0KzA$default  reason: not valid java name */
-    public static /* synthetic */ VectorizedKeyframeSpecElementInfo m228copy2NF0KzA$default(VectorizedKeyframeSpecElementInfo vectorizedKeyframeSpecElementInfo, AnimationVector animationVector, Easing easing, int i, int i2, Object obj) {
+    public static /* synthetic */ VectorizedKeyframeSpecElementInfo m256copy2NF0KzA$default(VectorizedKeyframeSpecElementInfo vectorizedKeyframeSpecElementInfo, AnimationVector animationVector, Easing easing, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             animationVector = vectorizedKeyframeSpecElementInfo.vectorValue;
         }
@@ -30,7 +30,7 @@ public final class VectorizedKeyframeSpecElementInfo<V extends AnimationVector> 
         if ((i2 & 4) != 0) {
             i = vectorizedKeyframeSpecElementInfo.arcMode;
         }
-        return vectorizedKeyframeSpecElementInfo.m230copy2NF0KzA(animationVector, easing, i);
+        return vectorizedKeyframeSpecElementInfo.m258copy2NF0KzA(animationVector, easing, i);
     }
 
     public final V component1() {
@@ -42,12 +42,12 @@ public final class VectorizedKeyframeSpecElementInfo<V extends AnimationVector> 
     }
 
     /* renamed from: component3--9T-Mq4  reason: not valid java name */
-    public final int m229component39TMq4() {
+    public final int m257component39TMq4() {
         return this.arcMode;
     }
 
     /* renamed from: copy-2NF0KzA  reason: not valid java name */
-    public final VectorizedKeyframeSpecElementInfo<V> m230copy2NF0KzA(V v, Easing easing, int i) {
+    public final VectorizedKeyframeSpecElementInfo<V> m258copy2NF0KzA(V v, Easing easing, int i) {
         return new VectorizedKeyframeSpecElementInfo<>(v, easing, i, null);
     }
 
@@ -57,17 +57,17 @@ public final class VectorizedKeyframeSpecElementInfo<V extends AnimationVector> 
         }
         if (obj instanceof VectorizedKeyframeSpecElementInfo) {
             VectorizedKeyframeSpecElementInfo vectorizedKeyframeSpecElementInfo = (VectorizedKeyframeSpecElementInfo) obj;
-            return Intrinsics.areEqual(this.vectorValue, vectorizedKeyframeSpecElementInfo.vectorValue) && Intrinsics.areEqual(this.easing, vectorizedKeyframeSpecElementInfo.easing) && ArcMode.m169equalsimpl0(this.arcMode, vectorizedKeyframeSpecElementInfo.arcMode);
+            return Intrinsics.areEqual(this.vectorValue, vectorizedKeyframeSpecElementInfo.vectorValue) && Intrinsics.areEqual(this.easing, vectorizedKeyframeSpecElementInfo.easing) && ArcMode.m192equalsimpl0(this.arcMode, vectorizedKeyframeSpecElementInfo.arcMode);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.vectorValue.hashCode() * 31) + this.easing.hashCode()) * 31) + ArcMode.m170hashCodeimpl(this.arcMode);
+        return (((this.vectorValue.hashCode() * 31) + this.easing.hashCode()) * 31) + ArcMode.m193hashCodeimpl(this.arcMode);
     }
 
     public String toString() {
-        return "VectorizedKeyframeSpecElementInfo(vectorValue=" + this.vectorValue + ", easing=" + this.easing + ", arcMode=" + ((Object) ArcMode.m171toStringimpl(this.arcMode)) + ')';
+        return "VectorizedKeyframeSpecElementInfo(vectorValue=" + this.vectorValue + ", easing=" + this.easing + ", arcMode=" + ((Object) ArcMode.m194toStringimpl(this.arcMode)) + ')';
     }
 
     private VectorizedKeyframeSpecElementInfo(V v, Easing easing, int i) {
@@ -85,7 +85,7 @@ public final class VectorizedKeyframeSpecElementInfo<V extends AnimationVector> 
     }
 
     /* renamed from: getArcMode--9T-Mq4  reason: not valid java name */
-    public final int m231getArcMode9TMq4() {
+    public final int m259getArcMode9TMq4() {
         return this.arcMode;
     }
 }

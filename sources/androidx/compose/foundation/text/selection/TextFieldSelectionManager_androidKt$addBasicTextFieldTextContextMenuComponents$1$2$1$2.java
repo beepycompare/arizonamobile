@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function1;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.android.kt */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$addBasicTextFieldTextContextMenuComponents$1$2$1$2", f = "TextFieldSelectionManager.android.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$addBasicTextFieldTextContextMenuComponents$1$2$1$2", f = "TextFieldSelectionManager.android.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager_androidKt$addBasicTextFieldTextContextMenuComponents$1$2$1$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ TextFieldSelectionManager $this_with;
@@ -42,7 +42,7 @@ public final class TextFieldSelectionManager_androidKt$addBasicTextFieldTextCont
         }
         ResultKt.throwOnFailure(obj);
         TextFieldSelectionManager textFieldSelectionManager = this.$this_with;
-        textFieldSelectionManager.copy$foundation_release(textFieldSelectionManager.getTextToolbarShown$foundation_release());
+        textFieldSelectionManager.copy$foundation(textFieldSelectionManager.getTextToolbarShown$foundation());
         return Unit.INSTANCE;
     }
 }

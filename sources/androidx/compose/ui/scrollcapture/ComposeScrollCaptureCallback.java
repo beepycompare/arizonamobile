@@ -8,6 +8,7 @@ import android.view.ScrollCaptureCallback;
 import android.view.ScrollCaptureSession;
 import android.view.View;
 import androidx.compose.runtime.MonotonicFrameClockKt;
+import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.graphics.Color;
 import androidx.compose.ui.graphics.ColorKt;
 import androidx.compose.ui.graphics.RectHelper_androidKt;
@@ -29,7 +30,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.NonCancellable;
 /* compiled from: ComposeScrollCaptureCallback.android.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001:\u0001%B/\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\u001e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017H\u0016J \u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u001cH\u0016J.\u0010\u001d\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u001e\u001a\u00020\u00182\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017H\u0016J\u001e\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010 J\u0010\u0010!\u001a\u00020\u00132\u0006\u0010\u0016\u001a\u00020\u001cH\u0016J\f\u0010\"\u001a\u00020\u0013*\u00020#H\u0002J\f\u0010$\u001a\u00020\u0013*\u00020#H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback;", "Landroid/view/ScrollCaptureCallback;", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "viewportBoundsInWindow", "Landroidx/compose/ui/unit/IntRect;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback$ScrollCaptureSessionListener;", "composeView", "Landroid/view/View;", "<init>", "(Landroidx/compose/ui/semantics/SemanticsNode;Landroidx/compose/ui/unit/IntRect;Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback$ScrollCaptureSessionListener;Landroid/view/View;)V", "scrollTracker", "Landroidx/compose/ui/scrollcapture/RelativeScroller;", "requestCount", "", "onScrollCaptureSearch", "", "signal", "Landroid/os/CancellationSignal;", "onReady", "Ljava/util/function/Consumer;", "Landroid/graphics/Rect;", "onScrollCaptureStart", "session", "Landroid/view/ScrollCaptureSession;", "Ljava/lang/Runnable;", "onScrollCaptureImageRequest", "captureArea", "onComplete", "(Landroid/view/ScrollCaptureSession;Landroidx/compose/ui/unit/IntRect;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onScrollCaptureEnd", "drawDebugBackground", "Landroid/graphics/Canvas;", "drawDebugOverlay", "ScrollCaptureSessionListener", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001:\u0001%B/\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\u001e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017H\u0016J \u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u001cH\u0016J.\u0010\u001d\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u001e\u001a\u00020\u00182\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017H\u0016J\u001e\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010 J\u0010\u0010!\u001a\u00020\u00132\u0006\u0010\u0016\u001a\u00020\u001cH\u0016J\f\u0010\"\u001a\u00020\u0013*\u00020#H\u0002J\f\u0010$\u001a\u00020\u0013*\u00020#H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback;", "Landroid/view/ScrollCaptureCallback;", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "viewportBoundsInWindow", "Landroidx/compose/ui/unit/IntRect;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback$ScrollCaptureSessionListener;", "composeView", "Landroid/view/View;", "<init>", "(Landroidx/compose/ui/semantics/SemanticsNode;Landroidx/compose/ui/unit/IntRect;Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback$ScrollCaptureSessionListener;Landroid/view/View;)V", "scrollTracker", "Landroidx/compose/ui/scrollcapture/RelativeScroller;", "requestCount", "", "onScrollCaptureSearch", "", "signal", "Landroid/os/CancellationSignal;", "onReady", "Ljava/util/function/Consumer;", "Landroid/graphics/Rect;", "onScrollCaptureStart", "session", "Landroid/view/ScrollCaptureSession;", "Ljava/lang/Runnable;", "onScrollCaptureImageRequest", "captureArea", "onComplete", "(Landroid/view/ScrollCaptureSession;Landroidx/compose/ui/unit/IntRect;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onScrollCaptureEnd", "drawDebugBackground", "Landroid/graphics/Canvas;", "drawDebugOverlay", "ScrollCaptureSessionListener", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback {
     public static final int $stable = 8;
@@ -42,7 +43,7 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
     private final IntRect viewportBoundsInWindow;
 
     /* compiled from: ComposeScrollCaptureCallback.android.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0005À\u0006\u0001"}, d2 = {"Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback$ScrollCaptureSessionListener;", "", "onSessionStarted", "", "onSessionEnded", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0005À\u0006\u0001"}, d2 = {"Landroidx/compose/ui/scrollcapture/ComposeScrollCaptureCallback$ScrollCaptureSessionListener;", "", "onSessionStarted", "", "onSessionEnded", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public interface ScrollCaptureSessionListener {
         void onSessionEnded();
@@ -78,14 +79,17 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0072, code lost:
-        if (r5.scrollRangeIntoView(r10, r2, r0) == r1) goto L30;
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x007a, code lost:
+        if (r4.scrollRangeToCenter(r11, r2, r0) == r1) goto L32;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00ab  */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0093, code lost:
+        if (r5.scrollRangeIntoView(r11, r2, r0) == r1) goto L32;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00c9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -95,10 +99,10 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
         int i;
         int top;
         int bottom;
-        IntRect intRect2;
-        int i2;
         ScrollCaptureSession scrollCaptureSession2;
+        int i2;
         int i3;
+        IntRect intRect2;
         int mapOffsetToViewport;
         int mapOffsetToViewport2;
         if (continuation instanceof ComposeScrollCaptureCallback$onScrollCaptureImageRequest$2) {
@@ -112,33 +116,47 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
                     ResultKt.throwOnFailure(obj);
                     top = intRect.getTop();
                     bottom = intRect.getBottom();
-                    RelativeScroller relativeScroller = this.scrollTracker;
-                    composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession;
-                    composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect;
-                    composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = top;
-                    composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = bottom;
-                    composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 1;
-                } else if (i != 1) {
-                    if (i == 2) {
-                        i3 = composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1;
-                        i2 = composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0;
+                    if (ComposeUiFlags.isScrollCaptureCenteringEnabled) {
+                        RelativeScroller relativeScroller = this.scrollTracker;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = top;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = bottom;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 1;
+                    } else {
+                        RelativeScroller relativeScroller2 = this.scrollTracker;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = top;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = bottom;
+                        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 2;
+                    }
+                    mapOffsetToViewport = this.scrollTracker.mapOffsetToViewport(i3);
+                    mapOffsetToViewport2 = this.scrollTracker.mapOffsetToViewport(i2);
+                    IntRect copy$default = IntRect.copy$default(intRect2, 0, mapOffsetToViewport, 0, mapOffsetToViewport2, 5, null);
+                    if (mapOffsetToViewport == mapOffsetToViewport2) {
+                    }
+                } else if (i != 1 && i != 2) {
+                    if (i == 3) {
+                        i2 = composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1;
+                        i3 = composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0;
                         ResultKt.throwOnFailure(obj);
                         scrollCaptureSession2 = (ScrollCaptureSession) composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0;
                         intRect2 = (IntRect) composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1;
-                        mapOffsetToViewport = this.scrollTracker.mapOffsetToViewport(i2);
-                        mapOffsetToViewport2 = this.scrollTracker.mapOffsetToViewport(i3);
-                        IntRect copy$default = IntRect.copy$default(intRect2, 0, mapOffsetToViewport, 0, mapOffsetToViewport2, 5, null);
-                        if (mapOffsetToViewport != mapOffsetToViewport2) {
+                        mapOffsetToViewport = this.scrollTracker.mapOffsetToViewport(i3);
+                        mapOffsetToViewport2 = this.scrollTracker.mapOffsetToViewport(i2);
+                        IntRect copy$default2 = IntRect.copy$default(intRect2, 0, mapOffsetToViewport, 0, mapOffsetToViewport2, 5, null);
+                        if (mapOffsetToViewport == mapOffsetToViewport2) {
                             return IntRect.Companion.getZero();
                         }
                         Canvas lockHardwareCanvas = scrollCaptureSession2.getSurface().lockHardwareCanvas();
                         try {
                             lockHardwareCanvas.save();
-                            lockHardwareCanvas.translate(-copy$default.getLeft(), -copy$default.getTop());
+                            lockHardwareCanvas.translate(-copy$default2.getLeft(), -copy$default2.getTop());
                             lockHardwareCanvas.translate(-this.viewportBoundsInWindow.getLeft(), -this.viewportBoundsInWindow.getTop());
                             this.composeView.getRootView().draw(lockHardwareCanvas);
                             scrollCaptureSession2.getSurface().unlockCanvasAndPost(lockHardwareCanvas);
-                            return copy$default.translate(0, MathKt.roundToInt(this.scrollTracker.getScrollAmount()));
+                            return copy$default2.translate(0, MathKt.roundToInt(this.scrollTracker.getScrollAmount()));
                         } catch (Throwable th) {
                             scrollCaptureSession2.getSurface().unlockCanvasAndPost(lockHardwareCanvas);
                             throw th;
@@ -154,11 +172,16 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
                     bottom = i4;
                     scrollCaptureSession = (ScrollCaptureSession) composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0;
                 }
-                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession;
-                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect;
-                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = top;
-                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = bottom;
-                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 2;
+                int i6 = top;
+                scrollCaptureSession2 = scrollCaptureSession;
+                i2 = bottom;
+                IntRect intRect3 = intRect;
+                i3 = i6;
+                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession2;
+                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect3;
+                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = i3;
+                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = i2;
+                composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 3;
                 if (MonotonicFrameClockKt.withFrameNanos(new Function1<Long, Unit>() { // from class: androidx.compose.ui.scrollcapture.ComposeScrollCaptureCallback$onScrollCaptureImageRequest$3
                     public final void invoke(long j) {
                     }
@@ -169,14 +192,11 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
                         return Unit.INSTANCE;
                     }
                 }, composeScrollCaptureCallback$onScrollCaptureImageRequest$2) != coroutine_suspended) {
-                    intRect2 = intRect;
-                    i2 = top;
-                    scrollCaptureSession2 = scrollCaptureSession;
-                    i3 = bottom;
-                    mapOffsetToViewport = this.scrollTracker.mapOffsetToViewport(i2);
-                    mapOffsetToViewport2 = this.scrollTracker.mapOffsetToViewport(i3);
-                    IntRect copy$default2 = IntRect.copy$default(intRect2, 0, mapOffsetToViewport, 0, mapOffsetToViewport2, 5, null);
-                    if (mapOffsetToViewport != mapOffsetToViewport2) {
+                    intRect2 = intRect3;
+                    mapOffsetToViewport = this.scrollTracker.mapOffsetToViewport(i3);
+                    mapOffsetToViewport2 = this.scrollTracker.mapOffsetToViewport(i2);
+                    IntRect copy$default22 = IntRect.copy$default(intRect2, 0, mapOffsetToViewport, 0, mapOffsetToViewport2, 5, null);
+                    if (mapOffsetToViewport == mapOffsetToViewport2) {
                     }
                 }
                 return coroutine_suspended;
@@ -188,11 +208,16 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
         i = composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label;
         if (i != 0) {
         }
-        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession;
-        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect;
-        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = top;
-        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = bottom;
-        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 2;
+        int i62 = top;
+        scrollCaptureSession2 = scrollCaptureSession;
+        i2 = bottom;
+        IntRect intRect32 = intRect;
+        i3 = i62;
+        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession2;
+        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect32;
+        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = i3;
+        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = i2;
+        composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 3;
         if (MonotonicFrameClockKt.withFrameNanos(new Function1<Long, Unit>() { // from class: androidx.compose.ui.scrollcapture.ComposeScrollCaptureCallback$onScrollCaptureImageRequest$3
             public final void invoke(long j) {
             }
@@ -213,7 +238,7 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
     }
 
     private final void drawDebugBackground(Canvas canvas) {
-        canvas.drawColor(ColorKt.m5334toArgb8_81llA(Color.Companion.m5304hslJlNiLsg$default(Color.Companion, Random.Default.nextFloat() * 360.0f, 0.75f, 0.5f, 1.0f, null, 16, null)));
+        canvas.drawColor(ColorKt.m5478toArgb8_81llA(Color.Companion.m5448hslJlNiLsg$default(Color.Companion, Random.Default.nextFloat() * 360.0f, 0.75f, 0.5f, 1.0f, null, 16, null)));
     }
 
     private final void drawDebugOverlay(Canvas canvas) {

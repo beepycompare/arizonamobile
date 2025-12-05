@@ -10,10 +10,10 @@ public final class Wm extends Di {
 
     @Override // io.appmetrica.analytics.impl.Di
     public final Object a(int i) {
-        return this.f447a.getString(i);
+        return this.f530a.getString(i);
     }
 
     public final String b(int i) {
-        return this.f447a.getString(i);
+        return this.f530a.getString(i);
     }
 }

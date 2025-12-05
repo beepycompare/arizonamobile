@@ -20,7 +20,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InfiniteTransition.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.core.InfiniteTransition$run$1$1", f = "InfiniteTransition.kt", i = {0, 0, 1, 1}, l = {TsExtractor.TS_STREAM_TYPE_AC4, DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {"$this$LaunchedEffect", "durationScale", "$this$LaunchedEffect", "durationScale"}, s = {"L$0", "L$1", "L$0", "L$1"})
+@DebugMetadata(c = "androidx.compose.animation.core.InfiniteTransition$run$1$1", f = "InfiniteTransition.kt", i = {0, 0, 1, 1}, l = {TsExtractor.TS_STREAM_TYPE_AC4, DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {"$this$LaunchedEffect", "durationScale", "$this$LaunchedEffect", "durationScale"}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 1)
 /* loaded from: classes.dex */
 public final class InfiniteTransition$run$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MutableState<State<Long>> $toolingOverride;
@@ -98,7 +98,7 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invokeSuspend$lambda$2(MutableState mutableState, InfiniteTransition infiniteTransition, Ref.FloatRef floatRef, CoroutineScope coroutineScope, long j) {
+    public static final Unit invokeSuspend$lambda$0(MutableState mutableState, InfiniteTransition infiniteTransition, Ref.FloatRef floatRef, CoroutineScope coroutineScope, long j) {
         long j2;
         MutableVector mutableVector;
         long j3;
@@ -134,7 +134,7 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: InfiniteTransition.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.animation.core.InfiniteTransition$run$1$1$3", f = "InfiniteTransition.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.animation.core.InfiniteTransition$run$1$1$3", f = "InfiniteTransition.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.animation.core.InfiniteTransition$run$1$1$3  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass3 extends SuspendLambda implements Function2<Float, Continuation<? super Boolean>, Object> {
@@ -173,7 +173,7 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final float invokeSuspend$lambda$3(CoroutineScope coroutineScope) {
+    public static final float invokeSuspend$lambda$1(CoroutineScope coroutineScope) {
         return SuspendAnimationKt.getDurationScale(coroutineScope.getCoroutineContext());
     }
 }

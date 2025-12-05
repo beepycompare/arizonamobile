@@ -4,51 +4,51 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: EmojiSupportMatch.android.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u001a\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\r\u0010\u000eJ\u0010\u0010\u000f\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\u0010\u0010\u0005R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/EmojiSupportMatch;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u001a\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\r\u0010\u000eJ\u0010\u0010\u000f\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\u0010\u0010\u0005R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/EmojiSupportMatch;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class EmojiSupportMatch {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Default = m7286constructorimpl(0);
-    private static final int None = m7286constructorimpl(1);
-    private static final int All = m7286constructorimpl(2);
+    private static final int Default = m7522constructorimpl(0);
+    private static final int None = m7522constructorimpl(1);
+    private static final int All = m7522constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ EmojiSupportMatch m7285boximpl(int i) {
+    public static final /* synthetic */ EmojiSupportMatch m7521boximpl(int i) {
         return new EmojiSupportMatch(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7286constructorimpl(int i) {
+    public static int m7522constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7287equalsimpl(int i, Object obj) {
-        return (obj instanceof EmojiSupportMatch) && i == ((EmojiSupportMatch) obj).m7291unboximpl();
+    public static boolean m7523equalsimpl(int i, Object obj) {
+        return (obj instanceof EmojiSupportMatch) && i == ((EmojiSupportMatch) obj).m7527unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7288equalsimpl0(int i, int i2) {
+    public static final boolean m7524equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7289hashCodeimpl(int i) {
+    public static int m7525hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m7287equalsimpl(this.value, obj);
+        return m7523equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7289hashCodeimpl(this.value);
+        return m7525hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7291unboximpl() {
+    public final /* synthetic */ int m7527unboximpl() {
         return this.value;
     }
 
@@ -57,11 +57,11 @@ public final class EmojiSupportMatch {
     }
 
     public String toString() {
-        return m7290toStringimpl(this.value);
+        return m7526toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7290toStringimpl(int i) {
+    public static String m7526toStringimpl(int i) {
         return i == Default ? "EmojiSupportMatch.Default" : i == None ? "EmojiSupportMatch.None" : i == All ? "EmojiSupportMatch.All" : "Invalid(value=" + i + ')';
     }
 
@@ -77,17 +77,17 @@ public final class EmojiSupportMatch {
         }
 
         /* renamed from: getDefault-_3YsG6Y  reason: not valid java name */
-        public final int m7293getDefault_3YsG6Y() {
+        public final int m7529getDefault_3YsG6Y() {
             return EmojiSupportMatch.Default;
         }
 
         /* renamed from: getNone-_3YsG6Y  reason: not valid java name */
-        public final int m7294getNone_3YsG6Y() {
+        public final int m7530getNone_3YsG6Y() {
             return EmojiSupportMatch.None;
         }
 
         /* renamed from: getAll-_3YsG6Y  reason: not valid java name */
-        public final int m7292getAll_3YsG6Y() {
+        public final int m7528getAll_3YsG6Y() {
             return EmojiSupportMatch.All;
         }
     }

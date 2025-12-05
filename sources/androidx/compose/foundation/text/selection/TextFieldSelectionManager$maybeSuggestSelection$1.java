@@ -18,7 +18,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$maybeSuggestSelection$1", f = "TextFieldSelectionManager.kt", i = {}, l = {539}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$maybeSuggestSelection$1", f = "TextFieldSelectionManager.kt", i = {}, l = {567}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$maybeSuggestSelection$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ OffsetMapping $offsetMapping;
@@ -53,13 +53,13 @@ public final class TextFieldSelectionManager$maybeSuggestSelection$1 extends Sus
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        TextFieldValue m1826createTextFieldValueFDrldGo;
+        TextFieldValue m1913createTextFieldValueFDrldGo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = this.$platformSelectionBehaviors.mo1747suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$transformedSelection, this);
+            obj = this.$platformSelectionBehaviors.mo1836suggestSelectionForLongPressOrDoubleClickpYaCww(this.$text, this.$transformedSelection, this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -71,14 +71,14 @@ public final class TextFieldSelectionManager$maybeSuggestSelection$1 extends Sus
         TextRange textRange = (TextRange) obj;
         if (textRange != null) {
             OffsetMapping offsetMapping = this.$offsetMapping;
-            long m7462unboximpl = textRange.m7462unboximpl();
-            long TextRange = TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextRange.m7458getStartimpl(m7462unboximpl)), offsetMapping.transformedToOriginal(TextRange.m7453getEndimpl(m7462unboximpl)));
-            if (!TextRange.m7450equalsimpl(TextRange, this.$selection) && Intrinsics.areEqual(this.this$0.getValue$foundation_release().getText(), this.$text) && this.$offsetMapping == this.this$0.getOffsetMapping$foundation_release()) {
-                Function1<TextFieldValue, Unit> onValueChange$foundation_release = this.this$0.getOnValueChange$foundation_release();
+            long m7705unboximpl = textRange.m7705unboximpl();
+            long TextRange = TextRangeKt.TextRange(offsetMapping.transformedToOriginal(TextRange.m7701getStartimpl(m7705unboximpl)), offsetMapping.transformedToOriginal(TextRange.m7696getEndimpl(m7705unboximpl)));
+            if (!TextRange.m7693equalsimpl(TextRange, this.$selection) && Intrinsics.areEqual(this.this$0.getValue$foundation().getText(), this.$text) && this.$offsetMapping == this.this$0.getOffsetMapping$foundation()) {
+                Function1<TextFieldValue, Unit> onValueChange$foundation = this.this$0.getOnValueChange$foundation();
                 TextFieldSelectionManager textFieldSelectionManager = this.this$0;
-                m1826createTextFieldValueFDrldGo = textFieldSelectionManager.m1826createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRange);
-                onValueChange$foundation_release.invoke(m1826createTextFieldValueFDrldGo);
-                this.this$0.m1838setLatestSelectionOEnZFl4$foundation_release(TextRange.m7446boximpl(TextRange));
+                m1913createTextFieldValueFDrldGo = textFieldSelectionManager.m1913createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation().getAnnotatedString(), TextRange);
+                onValueChange$foundation.invoke(m1913createTextFieldValueFDrldGo);
+                this.this$0.m1925setLatestSelectionOEnZFl4$foundation(TextRange.m7689boximpl(TextRange));
             }
             return Unit.INSTANCE;
         }

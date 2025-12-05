@@ -6,13 +6,13 @@ import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 public final class N9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f602a;
+    public final Context f685a;
     public final Wm b;
     public final X2 c;
     public final SafePackageManager d;
 
     public N9(Context context, Wm wm, X2 x2, SafePackageManager safePackageManager) {
-        this.f602a = context;
+        this.f685a = context;
         this.b = wm;
         this.c = x2;
         this.d = safePackageManager;

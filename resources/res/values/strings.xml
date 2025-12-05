@@ -34,6 +34,8 @@
     <string name="all">Все</string>
     <string name="all_list">ВЕсь список</string>
     <string name="already_registered">Уже зарегистрированы?</string>
+    <string name="androidx_compose_foundation_autofill">Autofill</string>
+    <string name="androidx_compose_ui_autofill">Autofill</string>
     <string name="androidx_startup">androidx.startup</string>
     <string name="another_variant">Другой вариант</string>
     <string name="apartment">квартира</string>
@@ -43,7 +45,6 @@
     <string name="arizona_mini_game_search_document_title_txt">Поиск документов</string>
     <string name="arizona_rent">ARIZONA\nRENT</string>
     <string name="authorization">Авторизация</string>
-    <string name="autofill">Autofill</string>
     <string name="available">Доступно до 3 уровня</string>
     <string name="available_out_of">Доступно %1$d/%2$d</string>
     <string name="back_keyboard">Клавиатура</string>
@@ -80,8 +81,8 @@
     <string name="close_drawer">Close navigation menu</string>
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
-    <string name="res_0x7f120050_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f120051_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"2481535e1ecea36acfbcffbcffde04eeb98ed675\"\n}\n</string>
+    <string name="res_0x7f120051_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
+    <string name="res_0x7f120052_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"b9bb5ad5a5a8f5365db680cf47dc1b6d0bd7e741\"\n}\n</string>
     <string name="common_google_play_services_enable_button">Enable</string>
     <string name="common_google_play_services_enable_text">%1$s won\'t work unless you enable Google Play services.</string>
     <string name="common_google_play_services_enable_title">Enable Google Play services</string>

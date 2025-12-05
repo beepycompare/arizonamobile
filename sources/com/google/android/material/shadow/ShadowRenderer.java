@@ -10,7 +10,6 @@ import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.Shader;
 import androidx.core.graphics.ColorUtils;
-import androidx.core.view.ViewCompat;
 /* loaded from: classes4.dex */
 public class ShadowRenderer {
     private static final int COLOR_ALPHA_END = 0;
@@ -30,7 +29,7 @@ public class ShadowRenderer {
     private static final float[] cornerPositions = {0.0f, 0.0f, 0.5f, 1.0f};
 
     public ShadowRenderer() {
-        this(ViewCompat.MEASURED_STATE_MASK);
+        this(-16777216);
     }
 
     public ShadowRenderer(int i) {

@@ -23,6 +23,14 @@ public final class Direction {
         return $ENTRIES;
     }
 
+    public static Direction valueOf(String str) {
+        return (Direction) Enum.valueOf(Direction.class, str);
+    }
+
+    public static Direction[] values() {
+        return (Direction[]) $VALUES.clone();
+    }
+
     private Direction(String str, int i) {
     }
 
@@ -30,13 +38,5 @@ public final class Direction {
         Direction[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static Direction valueOf(String str) {
-        return (Direction) Enum.valueOf(Direction.class, str);
-    }
-
-    public static Direction[] values() {
-        return (Direction[]) $VALUES.clone();
     }
 }

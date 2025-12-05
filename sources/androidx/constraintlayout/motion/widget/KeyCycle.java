@@ -760,7 +760,7 @@ public class KeyCycle extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo8479clone() {
+    public Key mo8741clone() {
         return new KeyCycle().copy(this);
     }
 }

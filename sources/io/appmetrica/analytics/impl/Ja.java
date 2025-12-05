@@ -18,7 +18,7 @@ public interface Ja extends Ea, Ic {
 
     void a(Io io2);
 
-    void a(EnumC0435n enumC0435n);
+    void a(EnumC0434n enumC0434n);
 
     @Override // io.appmetrica.analytics.impl.Ic
     /* synthetic */ void a(String str);

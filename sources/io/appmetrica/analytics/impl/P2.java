@@ -8,10 +8,10 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import java.util.ArrayList;
 import java.util.Iterator;
 /* loaded from: classes5.dex */
-public final class P2 implements InterfaceC0431mk {
+public final class P2 implements InterfaceC0430mk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f630a;
+    public final ArrayList f713a;
     public Intent b;
     public final Context c;
     public final H5 d;
@@ -22,7 +22,7 @@ public final class P2 implements InterfaceC0431mk {
     }
 
     public final synchronized Intent a(Consumer<Intent> consumer) {
-        this.f630a.add(consumer);
+        this.f713a.add(consumer);
         return this.b;
     }
 
@@ -33,7 +33,7 @@ public final class P2 implements InterfaceC0431mk {
         synchronized (h5) {
             if (h5.b) {
                 try {
-                    context.unregisterReceiver(h5.f502a);
+                    context.unregisterReceiver(h5.f585a);
                     h5.b = false;
                 } catch (Throwable unused) {
                 }
@@ -41,32 +41,32 @@ public final class P2 implements InterfaceC0431mk {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0431mk
+    @Override // io.appmetrica.analytics.impl.InterfaceC0430mk
     public final synchronized void onCreate() {
         Intent a2 = a();
         this.b = a2;
-        Iterator it = this.f630a.iterator();
+        Iterator it = this.f713a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(a2);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0431mk
+    @Override // io.appmetrica.analytics.impl.InterfaceC0430mk
     public final synchronized void onDestroy() {
         this.b = null;
         b();
-        Iterator it = this.f630a.iterator();
+        Iterator it = this.f713a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(null);
         }
     }
 
     public P2(Context context, IHandlerExecutor iHandlerExecutor, int i) {
-        this.f630a = new ArrayList();
+        this.f713a = new ArrayList();
         this.b = null;
         this.c = context;
         this.e = iHandlerExecutor;
-        this.d = G5.a(new C0612u2(new O2(this), iHandlerExecutor));
+        this.d = G5.a(new C0611u2(new O2(this), iHandlerExecutor));
     }
 
     public final Intent a() {
@@ -78,7 +78,7 @@ public final class P2 implements InterfaceC0431mk {
         synchronized (h5) {
             intent = null;
             try {
-                intent = context.registerReceiver(h5.f502a, intentFilter, null, iHandlerExecutor.getHandler());
+                intent = context.registerReceiver(h5.f585a, intentFilter, null, iHandlerExecutor.getHandler());
                 h5.b = true;
             } catch (Throwable unused) {
             }

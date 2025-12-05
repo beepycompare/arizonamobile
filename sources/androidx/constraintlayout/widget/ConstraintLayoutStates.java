@@ -6,7 +6,6 @@ import android.content.res.XmlResourceParser;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.Xml;
-import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
@@ -134,7 +133,7 @@ public class ConstraintLayoutStates {
                     this.mConstraintID = obtainStyledAttributes.getResourceId(index, this.mConstraintID);
                     String resourceTypeName = context.getResources().getResourceTypeName(this.mConstraintID);
                     context.getResources().getResourceName(this.mConstraintID);
-                    if (TtmlNode.TAG_LAYOUT.equals(resourceTypeName)) {
+                    if ("layout".equals(resourceTypeName)) {
                         ConstraintSet constraintSet = new ConstraintSet();
                         this.mConstraintSet = constraintSet;
                         constraintSet.clone(context, this.mConstraintID);
@@ -183,7 +182,7 @@ public class ConstraintLayoutStates {
                     this.mConstraintID = obtainStyledAttributes.getResourceId(index, this.mConstraintID);
                     String resourceTypeName = context.getResources().getResourceTypeName(this.mConstraintID);
                     context.getResources().getResourceName(this.mConstraintID);
-                    if (TtmlNode.TAG_LAYOUT.equals(resourceTypeName)) {
+                    if ("layout".equals(resourceTypeName)) {
                         ConstraintSet constraintSet = new ConstraintSet();
                         this.mConstraintSet = constraintSet;
                         constraintSet.clone(context, this.mConstraintID);

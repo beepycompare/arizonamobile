@@ -18,6 +18,11 @@ public final class TextIndent {
         this(j, j2);
     }
 
+    private TextIndent(long j, long j2) {
+        this.firstLine = j;
+        this.restLine = j2;
+    }
+
     /* compiled from: TextIndent.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/text/style/TextIndent$Companion;", "", "<init>", "()V", "None", "Landroidx/compose/ui/text/style/TextIndent;", "getNone$annotations", "getNone", "()Landroidx/compose/ui/text/style/TextIndent;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
@@ -37,38 +42,33 @@ public final class TextIndent {
         }
     }
 
-    private TextIndent(long j, long j2) {
-        this.firstLine = j;
-        this.restLine = j2;
-    }
-
     public /* synthetic */ TextIndent(long j, long j2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? TextUnitKt.getSp(0) : j, (i & 2) != 0 ? TextUnitKt.getSp(0) : j2, null);
     }
 
     /* renamed from: getFirstLine-XSAIIZE  reason: not valid java name */
-    public final long m7904getFirstLineXSAIIZE() {
+    public final long m8166getFirstLineXSAIIZE() {
         return this.firstLine;
     }
 
     /* renamed from: getRestLine-XSAIIZE  reason: not valid java name */
-    public final long m7905getRestLineXSAIIZE() {
+    public final long m8167getRestLineXSAIIZE() {
         return this.restLine;
     }
 
     /* renamed from: copy-NB67dxo$default  reason: not valid java name */
-    public static /* synthetic */ TextIndent m7902copyNB67dxo$default(TextIndent textIndent, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ TextIndent m8164copyNB67dxo$default(TextIndent textIndent, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
             j = textIndent.firstLine;
         }
         if ((i & 2) != 0) {
             j2 = textIndent.restLine;
         }
-        return textIndent.m7903copyNB67dxo(j, j2);
+        return textIndent.m8165copyNB67dxo(j, j2);
     }
 
     /* renamed from: copy-NB67dxo  reason: not valid java name */
-    public final TextIndent m7903copyNB67dxo(long j, long j2) {
+    public final TextIndent m8165copyNB67dxo(long j, long j2) {
         return new TextIndent(j, j2, null);
     }
 
@@ -78,16 +78,16 @@ public final class TextIndent {
         }
         if (obj instanceof TextIndent) {
             TextIndent textIndent = (TextIndent) obj;
-            return TextUnit.m8187equalsimpl0(this.firstLine, textIndent.firstLine) && TextUnit.m8187equalsimpl0(this.restLine, textIndent.restLine);
+            return TextUnit.m8449equalsimpl0(this.firstLine, textIndent.firstLine) && TextUnit.m8449equalsimpl0(this.restLine, textIndent.restLine);
         }
         return false;
     }
 
     public int hashCode() {
-        return (TextUnit.m8191hashCodeimpl(this.firstLine) * 31) + TextUnit.m8191hashCodeimpl(this.restLine);
+        return (TextUnit.m8453hashCodeimpl(this.firstLine) * 31) + TextUnit.m8453hashCodeimpl(this.restLine);
     }
 
     public String toString() {
-        return "TextIndent(firstLine=" + ((Object) TextUnit.m8197toStringimpl(this.firstLine)) + ", restLine=" + ((Object) TextUnit.m8197toStringimpl(this.restLine)) + ')';
+        return "TextIndent(firstLine=" + ((Object) TextUnit.m8459toStringimpl(this.firstLine)) + ", restLine=" + ((Object) TextUnit.m8459toStringimpl(this.restLine)) + ')';
     }
 }

@@ -4,13 +4,11 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.JvmStatic;
-import kotlin.jvm.internal.ArrayIteratorKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: Lifecycling.jvm.kt */
@@ -138,9 +136,9 @@ public final class Lifecycling {
             } else {
                 arrayList = null;
             }
-            Iterator it = ArrayIteratorKt.iterator(cls.getInterfaces());
-            while (it.hasNext()) {
-                Class<?> cls2 = (Class) it.next();
+            Class<?>[] interfaces = cls.getInterfaces();
+            Intrinsics.checkNotNullExpressionValue(interfaces, "getInterfaces(...)");
+            for (Class<?> cls2 : interfaces) {
                 if (isLifecycleParent(cls2)) {
                     Intrinsics.checkNotNull(cls2);
                     if (getObserverConstructorType(cls2) == 1) {

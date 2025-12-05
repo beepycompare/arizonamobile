@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">هم‌رسانی با</string>
     <string name="abc_shareactionprovider_share_with_application">هم‌رسانی با %s</string>
     <string name="abc_toolbar_collapse_description">کوچک کردن</string>
-    <string name="autofill">تکمیل خودکار</string>
+    <string name="androidx_compose_foundation_autofill">تکمیل خودکار</string>
+    <string name="androidx_compose_ui_autofill">تکمیل خودکار</string>
     <string name="bottomsheet_action_collapse">جمع کردن برگ زیرین</string>
     <string name="bottomsheet_action_expand">ازهم بازکردن برگ زیرین</string>
     <string name="bottomsheet_action_expand_halfway">گسترده کردن تا نیمه</string>
@@ -281,7 +282,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="summary_collapsed_preference_list">%1$s، %2$s</string>
     <string name="switch_role">کلید</string>
-    <string name="tab">برگه</string>
+    <string name="tab">زبانه</string>
     <string name="template_percent">%1$d درصد.</string>
     <string name="tooltip_description">نکته‌ابزار</string>
     <string name="tooltip_label">نمایش نکته‌ابزار</string>

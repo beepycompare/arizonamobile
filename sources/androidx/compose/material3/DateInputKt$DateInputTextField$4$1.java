@@ -54,7 +54,7 @@ final class DateInputKt$DateInputTextField$4$1 extends SuspendLambda implements 
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        FocusRequester.m4943requestFocus3ESFkO8$default(this.$focusRequester, 0, 1, null);
+        FocusRequester.m5084requestFocus3ESFkO8$default(this.$focusRequester, 0, 1, null);
         return Unit.INSTANCE;
     }
 }

@@ -78,16 +78,16 @@ public final class DensityWithConverter implements Density {
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toSp-0xMU5do */
-    public long mo432toSp0xMU5do(float f) {
+    public long mo466toSp0xMU5do(float f) {
         return TextUnitKt.getSp(this.converter.convertDpToSp(f));
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toDp-GaN1DYA */
-    public float mo425toDpGaN1DYA(long j) {
-        if (!TextUnitType.m8218equalsimpl0(TextUnit.m8189getTypeUIouoOA(j), TextUnitType.Companion.m8223getSpUIouoOA())) {
+    public float mo459toDpGaN1DYA(long j) {
+        if (!TextUnitType.m8480equalsimpl0(TextUnit.m8451getTypeUIouoOA(j), TextUnitType.Companion.m8485getSpUIouoOA())) {
             throw new IllegalStateException("Only Sp can convert to Px".toString());
         }
-        return Dp.m7996constructorimpl(this.converter.convertSpToDp(TextUnit.m8190getValueimpl(j)));
+        return Dp.m8258constructorimpl(this.converter.convertSpToDp(TextUnit.m8452getValueimpl(j)));
     }
 }

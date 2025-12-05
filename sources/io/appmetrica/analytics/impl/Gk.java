@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Gk {
 
     /* renamed from: a  reason: collision with root package name */
-    public Long f495a;
+    public Long f578a;
     public final Wk b;
     public Long c;
     public Long d;

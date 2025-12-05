@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">यांच्यासोबत शेअर करा</string>
     <string name="abc_shareactionprovider_share_with_application">%s सह शेअर करा</string>
     <string name="abc_toolbar_collapse_description">कोलॅप्स करा</string>
-    <string name="autofill">ऑटोफिल</string>
+    <string name="androidx_compose_foundation_autofill">ऑटोफिल</string>
+    <string name="androidx_compose_ui_autofill">ऑटोफिल</string>
     <string name="bottomsheet_action_collapse">तळाशी असलेली शीट कोलॅप्स करा</string>
     <string name="bottomsheet_action_expand">तळाशी असलेल्या शीटचा विस्तार करा</string>
     <string name="bottomsheet_action_expand_halfway">पूर्णपणे विस्तृत करा</string>

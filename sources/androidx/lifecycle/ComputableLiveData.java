@@ -8,7 +8,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ComputableLiveData.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0003\b'\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B\u0013\b\u0007\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u001a\u001a\u00020\u001bH\u0016J\r\u0010\u001c\u001a\u00028\u0000H%¢\u0006\u0002\u0010\u001dR\u0014\u0010\u0003\u001a\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0016\u0010\t\u001a\n\u0012\u0006\u0012\u0004\u0018\u00018\u00000\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u000b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00018\u00000\nX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u00020\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u0012\u001a\u00020\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0011R\u0016\u0010\u0014\u001a\u00020\u00158\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0016\u0010\u0017R\u0016\u0010\u0018\u001a\u00020\u00158\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0019\u0010\u0017¨\u0006\u001e"}, d2 = {"Landroidx/lifecycle/ComputableLiveData;", ExifInterface.GPS_DIRECTION_TRUE, "", "executor", "Ljava/util/concurrent/Executor;", "<init>", "(Ljava/util/concurrent/Executor;)V", "getExecutor$lifecycle_livedata_release", "()Ljava/util/concurrent/Executor;", "_liveData", "Landroidx/lifecycle/LiveData;", "liveData", "getLiveData", "()Landroidx/lifecycle/LiveData;", "invalid", "Ljava/util/concurrent/atomic/AtomicBoolean;", "getInvalid$lifecycle_livedata_release", "()Ljava/util/concurrent/atomic/AtomicBoolean;", "computing", "getComputing$lifecycle_livedata_release", "refreshRunnable", "Ljava/lang/Runnable;", "getRefreshRunnable$lifecycle_livedata_release$annotations", "()V", "invalidationRunnable", "getInvalidationRunnable$lifecycle_livedata_release$annotations", "invalidate", "", "compute", "()Ljava/lang/Object;", "lifecycle-livedata_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0003\b'\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B\u0013\b\u0007\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u001a\u001a\u00020\u001bH\u0016J\r\u0010\u001c\u001a\u00028\u0000H%¢\u0006\u0002\u0010\u001dR\u0014\u0010\u0003\u001a\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0016\u0010\t\u001a\n\u0012\u0006\u0012\u0004\u0018\u00018\u00000\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u000b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00018\u00000\nX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u00020\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u0012\u001a\u00020\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0011R\u0016\u0010\u0014\u001a\u00020\u00158\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0016\u0010\u0017R\u0016\u0010\u0018\u001a\u00020\u00158\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0019\u0010\u0017¨\u0006\u001e"}, d2 = {"Landroidx/lifecycle/ComputableLiveData;", ExifInterface.GPS_DIRECTION_TRUE, "", "executor", "Ljava/util/concurrent/Executor;", "<init>", "(Ljava/util/concurrent/Executor;)V", "getExecutor$lifecycle_livedata", "()Ljava/util/concurrent/Executor;", "_liveData", "Landroidx/lifecycle/LiveData;", "liveData", "getLiveData", "()Landroidx/lifecycle/LiveData;", "invalid", "Ljava/util/concurrent/atomic/AtomicBoolean;", "getInvalid$lifecycle_livedata", "()Ljava/util/concurrent/atomic/AtomicBoolean;", "computing", "getComputing$lifecycle_livedata", "refreshRunnable", "Ljava/lang/Runnable;", "getRefreshRunnable$lifecycle_livedata$annotations", "()V", "invalidationRunnable", "getInvalidationRunnable$lifecycle_livedata$annotations", "invalidate", "", "compute", "()Ljava/lang/Object;", "lifecycle-livedata"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public abstract class ComputableLiveData<T> {
     private final LiveData<T> _liveData;
@@ -23,10 +23,10 @@ public abstract class ComputableLiveData<T> {
         this(null, 1, null);
     }
 
-    public static /* synthetic */ void getInvalidationRunnable$lifecycle_livedata_release$annotations() {
+    public static /* synthetic */ void getInvalidationRunnable$lifecycle_livedata$annotations() {
     }
 
-    public static /* synthetic */ void getRefreshRunnable$lifecycle_livedata_release$annotations() {
+    public static /* synthetic */ void getRefreshRunnable$lifecycle_livedata$annotations() {
     }
 
     protected abstract T compute();
@@ -45,7 +45,7 @@ public abstract class ComputableLiveData<T> {
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // androidx.lifecycle.LiveData
             public void onActive() {
-                this.this$0.getExecutor$lifecycle_livedata_release().execute(this.this$0.refreshRunnable);
+                this.this$0.getExecutor$lifecycle_livedata().execute(this.this$0.refreshRunnable);
             }
         };
         this._liveData = liveData;
@@ -61,16 +61,24 @@ public abstract class ComputableLiveData<T> {
         this.invalidationRunnable = new Runnable() { // from class: androidx.lifecycle.ComputableLiveData$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ComputableLiveData.invalidationRunnable$lambda$1(ComputableLiveData.this);
+                ComputableLiveData.invalidationRunnable$lambda$0(ComputableLiveData.this);
             }
         };
     }
 
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public /* synthetic */ ComputableLiveData(Executor executor, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? ArchTaskExecutor.getIOThreadExecutor() : executor);
+        this(executor);
+        if ((i & 1) != 0) {
+            executor = ArchTaskExecutor.getIOThreadExecutor();
+            Intrinsics.checkNotNullExpressionValue(executor, "getIOThreadExecutor(...)");
+        }
     }
 
-    public final Executor getExecutor$lifecycle_livedata_release() {
+    public final Executor getExecutor$lifecycle_livedata() {
         return this.executor;
     }
 
@@ -78,11 +86,11 @@ public abstract class ComputableLiveData<T> {
         return this.liveData;
     }
 
-    public final AtomicBoolean getInvalid$lifecycle_livedata_release() {
+    public final AtomicBoolean getInvalid$lifecycle_livedata() {
         return this.invalid;
     }
 
-    public final AtomicBoolean getComputing$lifecycle_livedata_release() {
+    public final AtomicBoolean getComputing$lifecycle_livedata() {
         return this.computing;
     }
 
@@ -115,7 +123,7 @@ public abstract class ComputableLiveData<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void invalidationRunnable$lambda$1(ComputableLiveData computableLiveData) {
+    public static final void invalidationRunnable$lambda$0(ComputableLiveData computableLiveData) {
         boolean hasActiveObservers = computableLiveData.getLiveData().hasActiveObservers();
         if (computableLiveData.invalid.compareAndSet(false, true) && hasActiveObservers) {
             computableLiveData.executor.execute(computableLiveData.refreshRunnable);

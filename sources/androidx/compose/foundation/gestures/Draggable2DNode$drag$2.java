@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Draggable2D.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/Drag2DScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.Draggable2DNode$drag$2", f = "Draggable2D.kt", i = {}, l = {257}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.Draggable2DNode$drag$2", f = "Draggable2D.kt", i = {}, l = {257}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class Draggable2DNode$drag$2 extends SuspendLambda implements Function2<Drag2DScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<Function1<? super DragEvent.DragDelta, Unit>, Continuation<? super Unit>, Object> $forEachDelta;
@@ -73,11 +73,11 @@ final class Draggable2DNode$drag$2 extends SuspendLambda implements Function2<Dr
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Drag2DScope drag2DScope, Draggable2DNode draggable2DNode, DragEvent.DragDelta dragDelta) {
-        long m476getDeltaF1C5BW0 = dragDelta.m476getDeltaF1C5BW0();
+        long m523getDeltaF1C5BW0 = dragDelta.m523getDeltaF1C5BW0();
         if (draggable2DNode.reverseDirection) {
-            m476getDeltaF1C5BW0 = Offset.m5028constructorimpl((-9223372034707292160L) ^ m476getDeltaF1C5BW0);
+            m523getDeltaF1C5BW0 = Offset.m5171constructorimpl((-9223372034707292160L) ^ m523getDeltaF1C5BW0);
         }
-        drag2DScope.mo471dragByk4lQ0M(m476getDeltaF1C5BW0);
+        drag2DScope.mo512dragByk4lQ0M(m523getDeltaF1C5BW0);
         return Unit.INSTANCE;
     }
 }

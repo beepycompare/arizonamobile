@@ -85,17 +85,17 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: getCaretSize-MYxV2XQ  reason: not valid java name */
-    public final long m3361getCaretSizeMYxV2XQ() {
+    public final long m3447getCaretSizeMYxV2XQ() {
         return caretSize;
     }
 
     /* renamed from: getPlainTooltipMaxWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3362getPlainTooltipMaxWidthD9Ej5fM() {
+    public final float m3448getPlainTooltipMaxWidthD9Ej5fM() {
         return plainTooltipMaxWidth;
     }
 
     /* renamed from: getRichTooltipMaxWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3363getRichTooltipMaxWidthD9Ej5fM() {
+    public final float m3449getRichTooltipMaxWidthD9Ej5fM() {
         return richTooltipMaxWidth;
     }
 
@@ -104,15 +104,15 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: caretShape-EaSLcWc$default  reason: not valid java name */
-    public static /* synthetic */ Shape m3359caretShapeEaSLcWc$default(TooltipDefaults tooltipDefaults, long j, int i, Object obj) {
+    public static /* synthetic */ Shape m3445caretShapeEaSLcWc$default(TooltipDefaults tooltipDefaults, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             j = caretSize;
         }
-        return tooltipDefaults.m3360caretShapeEaSLcWc(j);
+        return tooltipDefaults.m3446caretShapeEaSLcWc(j);
     }
 
     /* renamed from: caretShape-EaSLcWc  reason: not valid java name */
-    public final Shape m3360caretShapeEaSLcWc(long j) {
+    public final Shape m3446caretShapeEaSLcWc(long j) {
         return new DefaultTooltipCaretShape(j, null);
     }
 
@@ -130,21 +130,21 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: richTooltipColors-ro_MJ88  reason: not valid java name */
-    public final RichTooltipColors m3368richTooltipColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final RichTooltipColors m3454richTooltipColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1498555081, "C(richTooltipColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,titleContentColor:c#ui.graphics.Color,actionContentColor:c#ui.graphics.Color)673@27513L11:Tooltip.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1498555081, i, -1, "androidx.compose.material3.TooltipDefaults.richTooltipColors (Tooltip.kt:673)");
         }
-        RichTooltipColors m2773copyjRlVdoo = getDefaultRichTooltipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2773copyjRlVdoo(m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4);
+        RichTooltipColors m2859copyjRlVdoo = getDefaultRichTooltipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2859copyjRlVdoo(m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2773copyjRlVdoo;
+        return m2859copyjRlVdoo;
     }
 
     public final RichTooltipColors getDefaultRichTooltipColors$material3(ColorScheme colorScheme) {
@@ -159,7 +159,7 @@ public final class TooltipDefaults {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Deprecated in favor of rememberTooltipPositionProvider API.", replaceWith = @ReplaceWith(expression = "rememberTooltipPositionProvider(spacingBetweenTooltipAndAnchor)", imports = {}))
     /* renamed from: rememberPlainTooltipPositionProvider-kHDZbjc  reason: not valid java name */
-    public final PopupPositionProvider m3364rememberPlainTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
+    public final PopupPositionProvider m3450rememberPlainTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1047866909, "C(rememberPlainTooltipPositionProvider)N(spacingBetweenTooltipAndAnchor:c#ui.unit.Dp)709@29147L7,710@29218L898:Tooltip.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             f = TooltipKt.getSpacingBetweenTooltipAndAnchor();
@@ -170,21 +170,21 @@ public final class TooltipDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final int mo424roundToPx0680j_4 = ((Density) consume).mo424roundToPx0680j_4(f);
+        final int mo458roundToPx0680j_4 = ((Density) consume).mo458roundToPx0680j_4(f);
         ComposerKt.sourceInformationMarkerStart(composer, 1977770815, "CC(remember):Tooltip.kt#9igjgp");
-        boolean changed = composer.changed(mo424roundToPx0680j_4);
+        boolean changed = composer.changed(mo458roundToPx0680j_4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new PopupPositionProvider() { // from class: androidx.compose.material3.TooltipDefaults$rememberPlainTooltipPositionProvider$1$1
                 @Override // androidx.compose.ui.window.PopupPositionProvider
                 /* renamed from: calculatePosition-llwVHH4 */
-                public long mo394calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+                public long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
                     int left = intRect.getLeft() + ((intRect.getWidth() - ((int) (j2 >> 32))) / 2);
-                    int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo424roundToPx0680j_4;
+                    int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo458roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo424roundToPx0680j_4 + intRect.getBottom();
+                        top = mo458roundToPx0680j_4 + intRect.getBottom();
                     }
-                    return IntOffset.m8118constructorimpl((left << 32) | (top & 4294967295L));
+                    return IntOffset.m8380constructorimpl((left << 32) | (top & 4294967295L));
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -200,7 +200,7 @@ public final class TooltipDefaults {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Deprecated in favor of rememberTooltipPositionProvider API.", replaceWith = @ReplaceWith(expression = "rememberTooltipPositionProvider(spacingBetweenTooltipAndAnchor)", imports = {}))
     /* renamed from: rememberRichTooltipPositionProvider-kHDZbjc  reason: not valid java name */
-    public final PopupPositionProvider m3365rememberRichTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
+    public final PopupPositionProvider m3451rememberRichTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1538806795, "C(rememberRichTooltipPositionProvider)N(spacingBetweenTooltipAndAnchor:c#ui.unit.Dp)748@30878L7,749@30949L1458:Tooltip.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             f = TooltipKt.getSpacingBetweenTooltipAndAnchor();
@@ -211,25 +211,25 @@ public final class TooltipDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final int mo424roundToPx0680j_4 = ((Density) consume).mo424roundToPx0680j_4(f);
+        final int mo458roundToPx0680j_4 = ((Density) consume).mo458roundToPx0680j_4(f);
         ComposerKt.sourceInformationMarkerStart(composer, -1324561113, "CC(remember):Tooltip.kt#9igjgp");
-        boolean changed = composer.changed(mo424roundToPx0680j_4);
+        boolean changed = composer.changed(mo458roundToPx0680j_4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new PopupPositionProvider() { // from class: androidx.compose.material3.TooltipDefaults$rememberRichTooltipPositionProvider$1$1
                 @Override // androidx.compose.ui.window.PopupPositionProvider
                 /* renamed from: calculatePosition-llwVHH4 */
-                public long mo394calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+                public long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
                     int left = intRect.getLeft();
                     int i3 = (int) (j2 >> 32);
                     if (left + i3 > ((int) (j >> 32)) && (left = intRect.getRight() - i3) < 0) {
                         left = intRect.getLeft() + ((intRect.getWidth() - i3) / 2);
                     }
-                    int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo424roundToPx0680j_4;
+                    int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo458roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo424roundToPx0680j_4 + intRect.getBottom();
+                        top = mo458roundToPx0680j_4 + intRect.getBottom();
                     }
-                    return IntOffset.m8118constructorimpl((top & 4294967295L) | (left << 32));
+                    return IntOffset.m8380constructorimpl((top & 4294967295L) | (left << 32));
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -245,7 +245,7 @@ public final class TooltipDefaults {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Deprecated in favor of rememberTooltipPositionProvider API that takes a preferred positioning. Please use rememberTooltipPositionProvider with TooltipAnchorPosition.Above if this same behavior is desired.", replaceWith = @ReplaceWith(expression = "rememberTooltipPositionProvider(TooltipAnchorPosition.ABOVE, spacingBetweenTooltipAndAnchor)", imports = {}))
     /* renamed from: rememberTooltipPositionProvider-kHDZbjc  reason: not valid java name */
-    public final PopupPositionProvider m3367rememberTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
+    public final PopupPositionProvider m3453rememberTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1613894159, "C(rememberTooltipPositionProvider)N(spacingBetweenTooltipAndAnchor:c#ui.unit.Dp)801@33428L7,802@33499L1618:Tooltip.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             f = TooltipKt.getSpacingBetweenTooltipAndAnchor();
@@ -256,15 +256,15 @@ public final class TooltipDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final int mo424roundToPx0680j_4 = ((Density) consume).mo424roundToPx0680j_4(f);
+        final int mo458roundToPx0680j_4 = ((Density) consume).mo458roundToPx0680j_4(f);
         ComposerKt.sourceInformationMarkerStart(composer, -469066237, "CC(remember):Tooltip.kt#9igjgp");
-        boolean changed = composer.changed(mo424roundToPx0680j_4);
+        boolean changed = composer.changed(mo458roundToPx0680j_4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new PopupPositionProvider() { // from class: androidx.compose.material3.TooltipDefaults$rememberTooltipPositionProvider$1$1
                 @Override // androidx.compose.ui.window.PopupPositionProvider
                 /* renamed from: calculatePosition-llwVHH4 */
-                public long mo394calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+                public long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
                     int i3 = (int) (j2 >> 32);
                     int left = intRect.getLeft() + ((intRect.getWidth() - i3) / 2);
                     if (left < 0) {
@@ -272,11 +272,11 @@ public final class TooltipDefaults {
                     } else if (left + i3 > ((int) (j >> 32))) {
                         left = intRect.getRight() - i3;
                     }
-                    int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo424roundToPx0680j_4;
+                    int top = (intRect.getTop() - ((int) (j2 & 4294967295L))) - mo458roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo424roundToPx0680j_4 + intRect.getBottom();
+                        top = mo458roundToPx0680j_4 + intRect.getBottom();
                     }
-                    return IntOffset.m8118constructorimpl((top & 4294967295L) | (left << 32));
+                    return IntOffset.m8380constructorimpl((top & 4294967295L) | (left << 32));
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -291,7 +291,7 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: rememberTooltipPositionProvider-Hu5FAss  reason: not valid java name */
-    public final PopupPositionProvider m3366rememberTooltipPositionProviderHu5FAss(int i, float f, Composer composer, int i2, int i3) {
+    public final PopupPositionProvider m3452rememberTooltipPositionProviderHu5FAss(int i, float f, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, -573803578, "C(rememberTooltipPositionProvider)N(positioning:c#material3.TooltipAnchorPosition,spacingBetweenTooltipAndAnchor:c#ui.unit.Dp)851@35822L7,852@35893L130:Tooltip.kt#uh7d8r");
         if ((i3 & 2) != 0) {
             f = TooltipKt.getSpacingBetweenTooltipAndAnchor();
@@ -302,12 +302,12 @@ public final class TooltipDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        int mo424roundToPx0680j_4 = ((Density) consume).mo424roundToPx0680j_4(f);
+        int mo458roundToPx0680j_4 = ((Density) consume).mo458roundToPx0680j_4(f);
         ComposerKt.sourceInformationMarkerStart(composer, -1669413528, "CC(remember):Tooltip.kt#9igjgp");
-        boolean changed = ((((i2 & 14) ^ 6) > 4 && composer.changed(i)) || (i2 & 6) == 4) | composer.changed(mo424roundToPx0680j_4);
+        boolean changed = ((((i2 & 14) ^ 6) > 4 && composer.changed(i)) || (i2 & 6) == 4) | composer.changed(mo458roundToPx0680j_4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = new TooltipPositionProviderImpl(i, mo424roundToPx0680j_4, null);
+            rememberedValue = new TooltipPositionProviderImpl(i, mo458roundToPx0680j_4, null);
             composer.updateRememberedValue(rememberedValue);
         }
         TooltipPositionProviderImpl tooltipPositionProviderImpl = (TooltipPositionProviderImpl) rememberedValue;
@@ -324,10 +324,10 @@ public final class TooltipDefaults {
     }
 
     static {
-        long m8018DpSizeYgX7TsA = DpKt.m8018DpSizeYgX7TsA(Dp.m7996constructorimpl(16), Dp.m7996constructorimpl(8));
-        caretSize = m8018DpSizeYgX7TsA;
-        plainTooltipMaxWidth = Dp.m7996constructorimpl(200);
-        richTooltipMaxWidth = Dp.m7996constructorimpl(320);
-        DefaultCaretShape = new DefaultTooltipCaretShape(m8018DpSizeYgX7TsA, null);
+        long m8280DpSizeYgX7TsA = DpKt.m8280DpSizeYgX7TsA(Dp.m8258constructorimpl(16), Dp.m8258constructorimpl(8));
+        caretSize = m8280DpSizeYgX7TsA;
+        plainTooltipMaxWidth = Dp.m8258constructorimpl(200);
+        richTooltipMaxWidth = Dp.m8258constructorimpl(320);
+        DefaultCaretShape = new DefaultTooltipCaretShape(m8280DpSizeYgX7TsA, null);
     }
 }

@@ -21,8 +21,8 @@ public final class Wg extends Sg {
         this(y4, new SafePackageManager());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
     @Override // io.appmetrica.analytics.impl.Sg
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -30,10 +30,10 @@ public final class Wg extends Sg {
     public final boolean a(Q5 q5) {
         HashSet hashSet;
         ArrayList b;
-        Y4 y4 = this.f679a;
+        Y4 y4 = this.f762a;
         if (y4.t.c() && y4.y()) {
             Xe xe = y4.c;
-            String e = this.f679a.c.e();
+            String e = this.f762a.c.e();
             try {
                 if (!TextUtils.isEmpty(e)) {
                     try {
@@ -47,17 +47,17 @@ public final class Wg extends Sg {
                     }
                     b = b();
                     if (!CollectionUtils.areCollectionsEqual(hashSet, b)) {
-                        C0395l9 c0395l9 = y4.n;
-                        int i2 = c0395l9.j;
-                        c0395l9.l = i2;
-                        c0395l9.f991a.a(i2).b();
+                        C0394l9 c0394l9 = y4.n;
+                        int i2 = c0394l9.j;
+                        c0394l9.l = i2;
+                        c0394l9.f1074a.a(i2).b();
                     } else {
                         JSONArray jSONArray2 = new JSONArray();
                         Iterator it = b.iterator();
                         while (it.hasNext()) {
                             S9 s9 = (S9) it.next();
                             s9.getClass();
-                            JSONObject put = new JSONObject().put("name", s9.f676a).put("required", s9.c);
+                            JSONObject put = new JSONObject().put("name", s9.f759a).put("required", s9.c);
                             int i3 = s9.b;
                             if (i3 != -1) {
                                 put.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, i3);
@@ -65,11 +65,11 @@ public final class Wg extends Sg {
                             jSONArray2.put(put);
                         }
                         Q5 a2 = Q5.a(q5, new JSONObject().put("features", jSONArray2).toString());
-                        C0395l9 c0395l92 = y4.n;
-                        c0395l92.a(a2, Sk.a(c0395l92.c.b(a2), a2.i));
-                        int i4 = c0395l92.j;
-                        c0395l92.l = i4;
-                        c0395l92.f991a.a(i4).b();
+                        C0394l9 c0394l92 = y4.n;
+                        c0394l92.a(a2, Sk.a(c0394l92.c.b(a2), a2.i));
+                        int i4 = c0394l92.j;
+                        c0394l92.l = i4;
+                        c0394l92.f1074a.a(i4).b();
                         xe.i(jSONArray2.toString());
                     }
                 }
@@ -87,9 +87,9 @@ public final class Wg extends Sg {
         R9 q9;
         FeatureInfo[] featureInfoArr;
         try {
-            Y4 y4 = this.f679a;
+            Y4 y4 = this.f762a;
             SafePackageManager safePackageManager = this.b;
-            Context context = y4.f760a;
+            Context context = y4.f843a;
             PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 16384);
             ArrayList arrayList = new ArrayList();
             if (AndroidUtils.isApiAchieved(24)) {

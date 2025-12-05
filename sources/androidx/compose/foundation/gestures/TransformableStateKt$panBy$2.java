@@ -10,10 +10,12 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* compiled from: TransformableState.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableStateKt$panBy$2", f = "TransformableState.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableStateKt$panBy$2", f = "TransformableState.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class TransformableStateKt$panBy$2 extends SuspendLambda implements Function2<TransformScope, Continuation<? super Unit>, Object> {
-    final /* synthetic */ long $offset;
+
+    /* renamed from: $$v$c$androidx-compose-ui-geometry-Offset$-offset$0  reason: not valid java name */
+    final /* synthetic */ long f20$$v$c$androidxcomposeuigeometryOffset$offset$0;
     private /* synthetic */ Object L$0;
     int label;
 
@@ -21,12 +23,12 @@ final class TransformableStateKt$panBy$2 extends SuspendLambda implements Functi
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TransformableStateKt$panBy$2(long j, Continuation<? super TransformableStateKt$panBy$2> continuation) {
         super(2, continuation);
-        this.$offset = j;
+        this.f20$$v$c$androidxcomposeuigeometryOffset$offset$0 = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        TransformableStateKt$panBy$2 transformableStateKt$panBy$2 = new TransformableStateKt$panBy$2(this.$offset, continuation);
+        TransformableStateKt$panBy$2 transformableStateKt$panBy$2 = new TransformableStateKt$panBy$2(this.f20$$v$c$androidxcomposeuigeometryOffset$offset$0, continuation);
         transformableStateKt$panBy$2.L$0 = obj;
         return transformableStateKt$panBy$2;
     }
@@ -41,7 +43,7 @@ final class TransformableStateKt$panBy$2 extends SuspendLambda implements Functi
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
-            ((TransformScope) this.L$0).mo475transformByd4ec7I(1.0f, this.$offset, 0.0f);
+            ((TransformScope) this.L$0).mo516transformByd4ec7I(1.0f, this.f20$$v$c$androidxcomposeuigeometryOffset$offset$0, 0.0f);
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

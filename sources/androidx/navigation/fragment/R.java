@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int defaultNavHost = 0x7f0401c4;
+        public static int defaultNavHost = 0x7f0401c5;
 
         private attr() {
         }
@@ -20,9 +20,9 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int nav_host_fragment_container = 0x7f0a0974;
-        public static int sliding_pane_detail_container = 0x7f0a0c61;
-        public static int sliding_pane_layout = 0x7f0a0c62;
+        public static int nav_host_fragment_container = 0x7f0a097b;
+        public static int sliding_pane_detail_container = 0x7f0a0c68;
+        public static int sliding_pane_layout = 0x7f0a0c69;
 
         private id() {
         }

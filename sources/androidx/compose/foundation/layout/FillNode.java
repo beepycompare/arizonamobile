@@ -18,6 +18,11 @@ final class FillNode extends Modifier.Node implements LayoutModifierNode {
     private Direction direction;
     private float fraction;
 
+    public FillNode(Direction direction, float f) {
+        this.direction = direction;
+        this.fraction = f;
+    }
+
     public final Direction getDirection() {
         return this.direction;
     }
@@ -34,51 +39,46 @@ final class FillNode extends Modifier.Node implements LayoutModifierNode {
         this.fraction = f;
     }
 
-    public FillNode(Direction direction, float f) {
-        this.direction = direction;
-        this.fraction = f;
-    }
-
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        int m7951getMinWidthimpl;
-        int m7949getMaxWidthimpl;
-        int m7948getMaxHeightimpl;
+    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        int m8213getMinWidthimpl;
+        int m8211getMaxWidthimpl;
+        int m8210getMaxHeightimpl;
         int i;
-        if (!Constraints.m7945getHasBoundedWidthimpl(j) || this.direction == Direction.Vertical) {
-            m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
-            m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+        if (!Constraints.m8207getHasBoundedWidthimpl(j) || this.direction == Direction.Vertical) {
+            m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
+            m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
         } else {
-            int round = Math.round(Constraints.m7949getMaxWidthimpl(j) * this.fraction);
-            int m7951getMinWidthimpl2 = Constraints.m7951getMinWidthimpl(j);
-            m7951getMinWidthimpl = Constraints.m7949getMaxWidthimpl(j);
-            if (round < m7951getMinWidthimpl2) {
-                round = m7951getMinWidthimpl2;
+            int round = Math.round(Constraints.m8211getMaxWidthimpl(j) * this.fraction);
+            int m8213getMinWidthimpl2 = Constraints.m8213getMinWidthimpl(j);
+            m8213getMinWidthimpl = Constraints.m8211getMaxWidthimpl(j);
+            if (round < m8213getMinWidthimpl2) {
+                round = m8213getMinWidthimpl2;
             }
-            if (round <= m7951getMinWidthimpl) {
-                m7951getMinWidthimpl = round;
+            if (round <= m8213getMinWidthimpl) {
+                m8213getMinWidthimpl = round;
             }
-            m7949getMaxWidthimpl = m7951getMinWidthimpl;
+            m8211getMaxWidthimpl = m8213getMinWidthimpl;
         }
-        if (!Constraints.m7944getHasBoundedHeightimpl(j) || this.direction == Direction.Horizontal) {
-            int m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
-            m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j);
-            i = m7950getMinHeightimpl;
+        if (!Constraints.m8206getHasBoundedHeightimpl(j) || this.direction == Direction.Horizontal) {
+            int m8212getMinHeightimpl = Constraints.m8212getMinHeightimpl(j);
+            m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(j);
+            i = m8212getMinHeightimpl;
         } else {
-            int round2 = Math.round(Constraints.m7948getMaxHeightimpl(j) * this.fraction);
-            int m7950getMinHeightimpl2 = Constraints.m7950getMinHeightimpl(j);
-            i = Constraints.m7948getMaxHeightimpl(j);
-            if (round2 < m7950getMinHeightimpl2) {
-                round2 = m7950getMinHeightimpl2;
+            int round2 = Math.round(Constraints.m8210getMaxHeightimpl(j) * this.fraction);
+            int m8212getMinHeightimpl2 = Constraints.m8212getMinHeightimpl(j);
+            i = Constraints.m8210getMaxHeightimpl(j);
+            if (round2 < m8212getMinHeightimpl2) {
+                round2 = m8212getMinHeightimpl2;
             }
             if (round2 <= i) {
                 i = round2;
             }
-            m7948getMaxHeightimpl = i;
+            m8210getMaxHeightimpl = i;
         }
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(ConstraintsKt.Constraints(m7951getMinWidthimpl, m7949getMaxWidthimpl, i, m7948getMaxHeightimpl));
-        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.FillNode$$ExternalSyntheticLambda0
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(ConstraintsKt.Constraints(m8213getMinWidthimpl, m8211getMaxWidthimpl, i, m8210getMaxHeightimpl));
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.FillNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;

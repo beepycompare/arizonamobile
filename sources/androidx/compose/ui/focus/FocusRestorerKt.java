@@ -3,6 +3,7 @@ package androidx.compose.ui.focus;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.saveable.SaveableStateRegistry;
 import androidx.compose.runtime.saveable.SaveableStateRegistryKt;
+import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.internal.InlineClassHelperKt;
 import androidx.compose.ui.layout.PinnableContainer;
@@ -17,7 +18,7 @@ import kotlin.Metadata;
 import kotlin.ReplaceWith;
 import kotlin.jvm.functions.Function0;
 /* compiled from: FocusRestorer.kt */
-@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0002\u001a\u00020\u0003*\u00020\u0004H\u0000\u001a\f\u0010\u0005\u001a\u00020\u0003*\u00020\u0004H\u0000\u001a\u000e\u0010\u0006\u001a\u0004\u0018\u00010\u0007*\u00020\u0004H\u0000\u001a\u0014\u0010\b\u001a\u00020\t*\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b\u001a\u001c\u0010\b\u001a\u00020\t*\u00020\t2\u000e\u0010\f\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\rH\u0007\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"PrevFocusedChild", "", "saveFocusedChild", "", "Landroidx/compose/ui/focus/FocusTargetNode;", "restoreFocusedChild", "pinFocusedChild", "Landroidx/compose/ui/layout/PinnableContainer$PinnedHandle;", "focusRestorer", "Landroidx/compose/ui/Modifier;", "fallback", "Landroidx/compose/ui/focus/FocusRequester;", "onRestoreFailed", "Lkotlin/Function0;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0002\u001a\u00020\u0003*\u00020\u0004H\u0000\u001a\f\u0010\u0005\u001a\u00020\u0003*\u00020\u0004H\u0000\u001a\u000e\u0010\u0006\u001a\u0004\u0018\u00010\u0007*\u00020\u0004H\u0000\u001a\u0014\u0010\b\u001a\u00020\t*\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b\u001a\u001c\u0010\b\u001a\u00020\t*\u00020\t2\u000e\u0010\f\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\rH\u0007\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"PrevFocusedChild", "", "saveFocusedChild", "", "Landroidx/compose/ui/focus/FocusTargetNode;", "restoreFocusedChild", "pinFocusedChild", "Landroidx/compose/ui/layout/PinnableContainer$PinnedHandle;", "focusRestorer", "Landroidx/compose/ui/Modifier;", "fallback", "Landroidx/compose/ui/focus/FocusRequester;", "onRestoreFailed", "Lkotlin/Function0;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FocusRestorerKt {
     private static final String PrevFocusedChild = "previouslyFocusedChildHash";
@@ -31,26 +32,26 @@ public final class FocusRestorerKt {
     public static final boolean saveFocusedChild(final FocusTargetNode focusTargetNode) {
         if (focusTargetNode.getFocusState().getHasFocus()) {
             FocusTargetNode focusTargetNode2 = focusTargetNode;
-            int m6989constructorimpl = NodeKind.m6989constructorimpl(1024);
+            int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
             if (!focusTargetNode2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
             MutableVector mutableVector = new MutableVector(new Modifier.Node[16], 0);
-            Modifier.Node child$ui_release = focusTargetNode2.getNode().getChild$ui_release();
-            if (child$ui_release == null) {
+            Modifier.Node child$ui = focusTargetNode2.getNode().getChild$ui();
+            if (child$ui == null) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector, focusTargetNode2.getNode(), false);
             } else {
-                mutableVector.add(child$ui_release);
+                mutableVector.add(child$ui);
             }
             while (mutableVector.getSize() != 0) {
                 Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-                if ((node.getAggregateChildKindSet$ui_release() & m6989constructorimpl) == 0) {
+                if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
                     DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
                 } else {
                     while (true) {
                         if (node == null) {
                             break;
-                        } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                        } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
                             MutableVector mutableVector2 = null;
                             while (node != null) {
                                 if (node instanceof FocusTargetNode) {
@@ -73,13 +74,13 @@ public final class FocusRestorerKt {
                                         }
                                         return true;
                                     }
-                                } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i = 0;
-                                    for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                        if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                                    for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
-                                                node = delegate$ui_release;
+                                                node = delegate$ui;
                                             } else {
                                                 if (mutableVector2 == null) {
                                                     mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
@@ -91,7 +92,7 @@ public final class FocusRestorerKt {
                                                     node = null;
                                                 }
                                                 if (mutableVector2 != null) {
-                                                    mutableVector2.add(delegate$ui_release);
+                                                    mutableVector2.add(delegate$ui);
                                                 }
                                             }
                                         }
@@ -103,7 +104,7 @@ public final class FocusRestorerKt {
                             }
                             continue;
                         } else {
-                            node = node.getChild$ui_release();
+                            node = node.getChild$ui();
                         }
                     }
                 }
@@ -113,7 +114,7 @@ public final class FocusRestorerKt {
         return false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0068, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0068, code lost:
         continue;
      */
     /*
@@ -129,40 +130,40 @@ public final class FocusRestorerKt {
             return false;
         }
         FocusTargetNode focusTargetNode2 = focusTargetNode;
-        int m6989constructorimpl = NodeKind.m6989constructorimpl(1024);
+        int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
         if (!focusTargetNode2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
         MutableVector mutableVector = new MutableVector(new Modifier.Node[16], 0);
-        Modifier.Node child$ui_release = focusTargetNode2.getNode().getChild$ui_release();
-        if (child$ui_release == null) {
+        Modifier.Node child$ui = focusTargetNode2.getNode().getChild$ui();
+        if (child$ui == null) {
             DelegatableNodeKt.addLayoutNodeChildren(mutableVector, focusTargetNode2.getNode(), false);
         } else {
-            mutableVector.add(child$ui_release);
+            mutableVector.add(child$ui);
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui_release() & m6989constructorimpl) == 0) {
+            if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
             } else {
                 while (true) {
                     if (node == null) {
                         break;
-                    } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
                         MutableVector mutableVector2 = null;
                         while (node != null) {
                             if (node instanceof FocusTargetNode) {
                                 FocusTargetNode focusTargetNode3 = (FocusTargetNode) node;
                                 if (focusTargetNode3.isAttached() && DelegatableNodeKt.requireLayoutNode(focusTargetNode3).getCompositeKeyHash() == focusTargetNode.getPreviouslyFocusedChildHash()) {
-                                    return restoreFocusedChild(focusTargetNode3) || FocusTargetModifierNode.m4945requestFocus3ESFkO8$default(focusTargetNode3, 0, 1, null);
+                                    return ComposeUiFlags.isRequestFocusOnNonFocusableFocusTargetEnabled ? restoreFocusedChild(focusTargetNode3) || (focusTargetNode3.fetchFocusProperties$ui().getCanFocus() && FocusTargetModifierNode.m5086requestFocus3ESFkO8$default(focusTargetNode3, 0, 1, null)) : restoreFocusedChild(focusTargetNode3) || FocusTargetModifierNode.m5086requestFocus3ESFkO8$default(focusTargetNode3, 0, 1, null);
                                 }
-                            } else if ((node.getKindSet$ui_release() & m6989constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
-                                for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6989constructorimpl) != 0) {
+                                for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
-                                            node = delegate$ui_release;
+                                            node = delegate$ui;
                                         } else {
                                             if (mutableVector2 == null) {
                                                 mutableVector2 = new MutableVector(new Modifier.Node[16], 0);
@@ -174,7 +175,7 @@ public final class FocusRestorerKt {
                                                 node = null;
                                             }
                                             if (mutableVector2 != null) {
-                                                mutableVector2.add(delegate$ui_release);
+                                                mutableVector2.add(delegate$ui);
                                             }
                                         }
                                     }
@@ -186,7 +187,7 @@ public final class FocusRestorerKt {
                         }
                         continue;
                     } else {
-                        node = node.getChild$ui_release();
+                        node = node.getChild$ui();
                     }
                 }
             }

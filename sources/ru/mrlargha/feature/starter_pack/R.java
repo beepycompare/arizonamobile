@@ -27,32 +27,32 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class id {
-        public static int bg = 0x7f0a019c;
-        public static int bg1 = 0x7f0a019d;
-        public static int bg2 = 0x7f0a019e;
-        public static int button_1 = 0x7f0a0261;
-        public static int button_2 = 0x7f0a0262;
-        public static int button_close = 0x7f0a0273;
-        public static int discount = 0x7f0a040e;
-        public static int discount_container = 0x7f0a040f;
-        public static int imagePrise = 0x7f0a0692;
-        public static int iv_second_container_bg = 0x7f0a0777;
-        public static int newbie_level = 0x7f0a0988;
-        public static int price1 = 0x7f0a0a48;
-        public static int price2 = 0x7f0a0a49;
-        public static int price2_old = 0x7f0a0a4a;
-        public static int rarity = 0x7f0a0a9d;
-        public static int rich_level = 0x7f0a0b11;
-        public static int rv_newbie = 0x7f0a0bcf;
-        public static int rv_rich = 0x7f0a0bd4;
-        public static int starter_pack = 0x7f0a0cc5;
-        public static int time = 0x7f0a0d8c;
-        public static int time_container = 0x7f0a0d8d;
-        public static int title = 0x7f0a0d9c;
-        public static int tv_newbie_title = 0x7f0a0e9e;
-        public static int tv_rich_1 = 0x7f0a0eb7;
-        public static int tv_rich_2 = 0x7f0a0eb8;
-        public static int tv_title = 0x7f0a0ec6;
+        public static int bg = 0x7f0a01a0;
+        public static int bg1 = 0x7f0a01a1;
+        public static int bg2 = 0x7f0a01a2;
+        public static int button_1 = 0x7f0a0266;
+        public static int button_2 = 0x7f0a0267;
+        public static int button_close = 0x7f0a0278;
+        public static int discount = 0x7f0a0413;
+        public static int discount_container = 0x7f0a0414;
+        public static int imagePrise = 0x7f0a0698;
+        public static int iv_second_container_bg = 0x7f0a077d;
+        public static int newbie_level = 0x7f0a098f;
+        public static int price1 = 0x7f0a0a4f;
+        public static int price2 = 0x7f0a0a50;
+        public static int price2_old = 0x7f0a0a51;
+        public static int rarity = 0x7f0a0aa4;
+        public static int rich_level = 0x7f0a0b18;
+        public static int rv_newbie = 0x7f0a0bd6;
+        public static int rv_rich = 0x7f0a0bdb;
+        public static int starter_pack = 0x7f0a0ccc;
+        public static int time = 0x7f0a0d94;
+        public static int time_container = 0x7f0a0d95;
+        public static int title = 0x7f0a0da4;
+        public static int tv_newbie_title = 0x7f0a0ea7;
+        public static int tv_rich_1 = 0x7f0a0ec0;
+        public static int tv_rich_2 = 0x7f0a0ec1;
+        public static int tv_title = 0x7f0a0ecf;
 
         private id() {
         }

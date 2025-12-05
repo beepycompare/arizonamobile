@@ -837,7 +837,7 @@ public class MotionScene {
                 if (index == R.styleable.Transition_constraintSetEnd) {
                     this.mConstraintSetEnd = typedArray.getResourceId(index, -1);
                     String resourceTypeName = context.getResources().getResourceTypeName(this.mConstraintSetEnd);
-                    if (TtmlNode.TAG_LAYOUT.equals(resourceTypeName)) {
+                    if ("layout".equals(resourceTypeName)) {
                         ConstraintSet constraintSet = new ConstraintSet();
                         constraintSet.load(context, this.mConstraintSetEnd);
                         motionScene.mConstraintSetMap.append(this.mConstraintSetEnd, constraintSet);
@@ -847,7 +847,7 @@ public class MotionScene {
                 } else if (index == R.styleable.Transition_constraintSetStart) {
                     this.mConstraintSetStart = typedArray.getResourceId(index, this.mConstraintSetStart);
                     String resourceTypeName2 = context.getResources().getResourceTypeName(this.mConstraintSetStart);
-                    if (TtmlNode.TAG_LAYOUT.equals(resourceTypeName2)) {
+                    if ("layout".equals(resourceTypeName2)) {
                         ConstraintSet constraintSet2 = new ConstraintSet();
                         constraintSet2.load(context, this.mConstraintSetStart);
                         motionScene.mConstraintSetMap.append(this.mConstraintSetStart, constraintSet2);

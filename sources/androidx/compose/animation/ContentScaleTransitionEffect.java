@@ -55,6 +55,12 @@ public final class ContentScaleTransitionEffect extends TransitionEffect {
         return "ContentScaleTransitionEffect(contentScale=" + this.contentScale + ", alignment=" + this.alignment + ')';
     }
 
+    public ContentScaleTransitionEffect(ContentScale contentScale, Alignment alignment) {
+        super(null);
+        this.contentScale = contentScale;
+        this.alignment = alignment;
+    }
+
     public final ContentScale getContentScale() {
         return this.contentScale;
     }
@@ -73,12 +79,6 @@ public final class ContentScaleTransitionEffect extends TransitionEffect {
 
         private Key() {
         }
-    }
-
-    public ContentScaleTransitionEffect(ContentScale contentScale, Alignment alignment) {
-        super(null);
-        this.contentScale = contentScale;
-        this.alignment = alignment;
     }
 
     @Override // androidx.compose.animation.TransitionEffect

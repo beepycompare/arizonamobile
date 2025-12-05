@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0117af f531a = C0471oa.k().y();
+    public final C0116af f614a = C0470oa.k().y();
     public final SavableToggle b;
     public final OuterStateToggle c;
     public final OuterStateToggle d;
@@ -17,7 +17,7 @@ public final class J {
     public final ConjunctiveCompositeThreadSafeToggle f;
     public final SavableToggle g;
 
-    public J(C0279gm c0279gm) {
+    public J(C0278gm c0278gm) {
         SavableToggle savableToggle = new SavableToggle("advIdsFromClientApi", new I(this));
         this.b = savableToggle;
         OuterStateToggle outerStateToggle = new OuterStateToggle(false, "GAID-remote-config");
@@ -27,15 +27,15 @@ public final class J {
         this.e = new ConjunctiveCompositeThreadSafeToggle(CollectionsKt.listOf((Object[]) new SimpleThreadSafeToggle[]{savableToggle, outerStateToggle}), "GAID");
         this.f = new ConjunctiveCompositeThreadSafeToggle(CollectionsKt.listOf((Object[]) new SimpleThreadSafeToggle[]{savableToggle, outerStateToggle2}), "HOAID");
         this.g = savableToggle;
-        a(c0279gm);
+        a(c0278gm);
     }
 
-    public final void a(C0279gm c0279gm) {
-        boolean z = c0279gm.p;
+    public final void a(C0278gm c0278gm) {
+        boolean z = c0278gm.p;
         boolean z2 = false;
-        this.c.update(!z || c0279gm.n.c);
+        this.c.update(!z || c0278gm.n.c);
         OuterStateToggle outerStateToggle = this.d;
-        if (!z || c0279gm.n.e) {
+        if (!z || c0278gm.n.e) {
             z2 = true;
         }
         outerStateToggle.update(z2);

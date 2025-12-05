@@ -42,7 +42,7 @@ public final /* synthetic */ class SnapshotStateKt__SnapshotFlowKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-606625098, i, -1, "androidx.compose.runtime.collectAsState (SnapshotFlow.kt:65)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1148839119, "CC(remember):SnapshotFlow.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1148838511, "CC(remember):SnapshotFlow.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(coroutineContext2) | composer.changedInstance(flow);
         SnapshotStateKt__SnapshotFlowKt$collectAsState$1$1 rememberedValue = composer.rememberedValue();
         if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {

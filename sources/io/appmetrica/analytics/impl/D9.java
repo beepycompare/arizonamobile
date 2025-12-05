@@ -5,20 +5,20 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class D9 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0557rm fromModel(C9 c9) {
-        C0557rm c0557rm = new C0557rm();
+    public final C0556rm fromModel(C9 c9) {
+        C0556rm c0556rm = new C0556rm();
         if (c9 != null) {
-            c0557rm.f1106a = c9.f427a;
+            c0556rm.f1189a = c9.f510a;
         }
-        return c0557rm;
+        return c0556rm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new C9(((C0557rm) obj).f1106a);
+        return new C9(((C0556rm) obj).f1189a);
     }
 
-    public final C9 a(C0557rm c0557rm) {
-        return new C9(c0557rm.f1106a);
+    public final C9 a(C0556rm c0556rm) {
+        return new C9(c0556rm.f1189a);
     }
 }

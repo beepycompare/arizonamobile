@@ -21,31 +21,31 @@ public final class Placeholder {
         this.width = j;
         this.height = j2;
         this.placeholderVerticalAlign = i;
-        if (TextUnit.m8188getRawTypeimpl(j) == 0) {
+        if (TextUnit.m8450getRawTypeimpl(j) == 0) {
             InlineClassHelperKt.throwIllegalArgumentException("width cannot be TextUnit.Unspecified");
         }
-        if (TextUnit.m8188getRawTypeimpl(j2) == 0) {
+        if (TextUnit.m8450getRawTypeimpl(j2) == 0) {
             InlineClassHelperKt.throwIllegalArgumentException("height cannot be TextUnit.Unspecified");
         }
     }
 
     /* renamed from: getWidth-XSAIIZE  reason: not valid java name */
-    public final long m7352getWidthXSAIIZE() {
+    public final long m7588getWidthXSAIIZE() {
         return this.width;
     }
 
     /* renamed from: getHeight-XSAIIZE  reason: not valid java name */
-    public final long m7350getHeightXSAIIZE() {
+    public final long m7586getHeightXSAIIZE() {
         return this.height;
     }
 
     /* renamed from: getPlaceholderVerticalAlign-J6kI3mc  reason: not valid java name */
-    public final int m7351getPlaceholderVerticalAlignJ6kI3mc() {
+    public final int m7587getPlaceholderVerticalAlignJ6kI3mc() {
         return this.placeholderVerticalAlign;
     }
 
     /* renamed from: copy-K8Q-__8$default  reason: not valid java name */
-    public static /* synthetic */ Placeholder m7348copyK8Q__8$default(Placeholder placeholder, long j, long j2, int i, int i2, Object obj) {
+    public static /* synthetic */ Placeholder m7584copyK8Q__8$default(Placeholder placeholder, long j, long j2, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             j = placeholder.width;
         }
@@ -57,11 +57,11 @@ public final class Placeholder {
         if ((i2 & 4) != 0) {
             i = placeholder.placeholderVerticalAlign;
         }
-        return placeholder.m7349copyK8Q__8(j3, j4, i);
+        return placeholder.m7585copyK8Q__8(j3, j4, i);
     }
 
     /* renamed from: copy-K8Q-__8  reason: not valid java name */
-    public final Placeholder m7349copyK8Q__8(long j, long j2, int i) {
+    public final Placeholder m7585copyK8Q__8(long j, long j2, int i) {
         return new Placeholder(j, j2, i, null);
     }
 
@@ -71,16 +71,16 @@ public final class Placeholder {
         }
         if (obj instanceof Placeholder) {
             Placeholder placeholder = (Placeholder) obj;
-            return TextUnit.m8187equalsimpl0(this.width, placeholder.width) && TextUnit.m8187equalsimpl0(this.height, placeholder.height) && PlaceholderVerticalAlign.m7356equalsimpl0(this.placeholderVerticalAlign, placeholder.placeholderVerticalAlign);
+            return TextUnit.m8449equalsimpl0(this.width, placeholder.width) && TextUnit.m8449equalsimpl0(this.height, placeholder.height) && PlaceholderVerticalAlign.m7592equalsimpl0(this.placeholderVerticalAlign, placeholder.placeholderVerticalAlign);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((TextUnit.m8191hashCodeimpl(this.width) * 31) + TextUnit.m8191hashCodeimpl(this.height)) * 31) + PlaceholderVerticalAlign.m7357hashCodeimpl(this.placeholderVerticalAlign);
+        return (((TextUnit.m8453hashCodeimpl(this.width) * 31) + TextUnit.m8453hashCodeimpl(this.height)) * 31) + PlaceholderVerticalAlign.m7593hashCodeimpl(this.placeholderVerticalAlign);
     }
 
     public String toString() {
-        return "Placeholder(width=" + ((Object) TextUnit.m8197toStringimpl(this.width)) + ", height=" + ((Object) TextUnit.m8197toStringimpl(this.height)) + ", placeholderVerticalAlign=" + ((Object) PlaceholderVerticalAlign.m7358toStringimpl(this.placeholderVerticalAlign)) + ')';
+        return "Placeholder(width=" + ((Object) TextUnit.m8459toStringimpl(this.width)) + ", height=" + ((Object) TextUnit.m8459toStringimpl(this.height)) + ", placeholderVerticalAlign=" + ((Object) PlaceholderVerticalAlign.m7594toStringimpl(this.placeholderVerticalAlign)) + ')';
     }
 }

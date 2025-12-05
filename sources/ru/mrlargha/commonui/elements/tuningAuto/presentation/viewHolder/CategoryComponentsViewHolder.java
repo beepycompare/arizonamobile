@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -64,7 +63,7 @@ public final class CategoryComponentsViewHolder extends RecyclerView.ViewHolder 
                 itemTuningCharacteristicBinding.btnCartTypes.setText("Добавить в корзину");
                 itemTuningCharacteristicBinding.btnCartTypes.setBackgroundTintList(ColorStateList.valueOf(this.context.getColor(R.color.green_type3)));
                 itemTuningCharacteristicBinding.clickedBg.setBackgroundTintList(ColorStateList.valueOf(this.context.getColor(R.color.rodina_gray)));
-                itemTuningCharacteristicBinding.btnCartTypes.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+                itemTuningCharacteristicBinding.btnCartTypes.setTextColor(-16777216);
             } else {
                 itemTuningCharacteristicBinding.btnCartTypes.setText("Удалить из корзины");
                 itemTuningCharacteristicBinding.btnCartTypes.setBackgroundTintList(ColorStateList.valueOf(this.context.getColor(R.color.grey_type6)));
@@ -103,7 +102,7 @@ public final class CategoryComponentsViewHolder extends RecyclerView.ViewHolder 
         appCompatTextView2.setBackgroundTintList(ColorStateList.valueOf(UtilsKt.getColorTint(color != null ? color.intValue() : 0)));
         Integer color2 = item.getColor();
         if (color2 != null && color2.intValue() == -1) {
-            itemTuningCharacteristicBinding.tvItemType.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            itemTuningCharacteristicBinding.tvItemType.setTextColor(-16777216);
         }
         itemTuningCharacteristicBinding.mainView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.viewHolder.CategoryComponentsViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

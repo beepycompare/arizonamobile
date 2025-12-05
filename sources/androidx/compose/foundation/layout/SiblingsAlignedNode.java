@@ -32,16 +32,16 @@ public abstract class SiblingsAlignedNode extends Modifier.Node implements Paren
         public static final int $stable = 8;
         private Function1<? super Measured, Integer> block;
 
+        public WithAlignmentLineBlockNode(Function1<? super Measured, Integer> function1) {
+            super(null);
+            this.block = function1;
+        }
+
         public final Function1<Measured, Integer> getBlock() {
             return this.block;
         }
 
         public final void setBlock(Function1<? super Measured, Integer> function1) {
-            this.block = function1;
-        }
-
-        public WithAlignmentLineBlockNode(Function1<? super Measured, Integer> function1) {
-            super(null);
             this.block = function1;
         }
 

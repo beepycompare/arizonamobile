@@ -36,20 +36,18 @@ import androidx.compose.ui.unit.Density;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.ArrayIteratorKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: AndroidParagraph.android.kt */
-@Metadata(d1 = {"\u0000\u0098\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0014\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001e\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bBk\b\u0016\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0014\u0010\u0010\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00130\u00120\u0011\u0012\u0012\u0010\u0014\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00120\u0011\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b\n\u0010\u001aJ\u0010\u0010N\u001a\u00020\u00052\u0006\u0010O\u001a\u00020-H\u0016J\u0017\u0010P\u001a\u00020\u00052\u0006\u0010Q\u001a\u00020RH\u0016¢\u0006\u0004\bS\u0010TJ'\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020F2\u0006\u0010X\u001a\u00020Y2\u0006\u0010Z\u001a\u00020[H\u0016¢\u0006\u0004\b\\\u0010]J\u0010\u0010^\u001a\u00020F2\u0006\u0010_\u001a\u00020\u0005H\u0016J)\u0010`\u001a\u00020a2\u0006\u0010b\u001a\u00020V2\u0006\u0010c\u001a\u00020d2\b\b\u0001\u0010e\u001a\u00020\u0005H\u0016¢\u0006\u0004\bf\u0010gJ\u0018\u0010h\u001a\u00020i2\u0006\u0010j\u001a\u00020\u00052\u0006\u0010k\u001a\u00020\u0005H\u0016J\u0010\u0010l\u001a\u00020F2\u0006\u0010_\u001a\u00020\u0005H\u0016J\u0017\u0010m\u001a\u00020V2\u0006\u0010_\u001a\u00020\u0005H\u0016¢\u0006\u0004\bn\u0010oJ\u0010\u0010p\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010r\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010s\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0015\u0010t\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0002\buJ\u0010\u0010v\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0015\u0010w\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0002\bxJ\u0010\u0010y\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010z\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010{\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010|\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0018\u0010}\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u00052\u0006\u0010~\u001a\u00020;H\u0016J\u0010\u0010\u007f\u001a\u00020;2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0017\u0010\u0080\u0001\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0003\b\u0081\u0001J\u0017\u0010\u0082\u0001\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0003\b\u0083\u0001J\u0011\u0010\u0084\u0001\u001a\u00020\u00052\u0006\u0010_\u001a\u00020\u0005H\u0016J\u001a\u0010\u0085\u0001\u001a\u00020-2\u0006\u0010_\u001a\u00020\u00052\u0007\u0010\u0086\u0001\u001a\u00020;H\u0016J\u0012\u0010\u0087\u0001\u001a\u00030\u0088\u00012\u0006\u0010_\u001a\u00020\u0005H\u0016J\u0012\u0010\u0089\u0001\u001a\u00030\u0088\u00012\u0006\u0010_\u001a\u00020\u0005H\u0016J\u001d\u0010\u008a\u0001\u001a\f\u0012\u0005\u0012\u00030\u008c\u0001\u0018\u00010\u008b\u0001*\u00020%H\u0002¢\u0006\u0003\u0010\u008d\u0001J\u001c\u0010\u008e\u0001\u001a\u00020;*\u00030\u008f\u00012\f\u0010\u0090\u0001\u001a\u0007\u0012\u0002\b\u00030\u0091\u0001H\u0002J>\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u00012\b\u0010\u0095\u0001\u001a\u00030\u0096\u00012\n\u0010\u0097\u0001\u001a\u0005\u0018\u00010\u0098\u00012\n\u0010\u0099\u0001\u001a\u0005\u0018\u00010\u009a\u0001H\u0016¢\u0006\u0006\b\u009b\u0001\u0010\u009c\u0001JT\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u00012\b\u0010\u0095\u0001\u001a\u00030\u0096\u00012\n\u0010\u0097\u0001\u001a\u0005\u0018\u00010\u0098\u00012\n\u0010\u0099\u0001\u001a\u0005\u0018\u00010\u009a\u00012\n\u0010\u009d\u0001\u001a\u0005\u0018\u00010\u009e\u00012\b\u0010\u009f\u0001\u001a\u00030 \u0001H\u0016¢\u0006\u0006\b¡\u0001\u0010¢\u0001J]\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u00012\b\u0010£\u0001\u001a\u00030¤\u00012\u0007\u0010¥\u0001\u001a\u00020-2\n\u0010\u0097\u0001\u001a\u0005\u0018\u00010\u0098\u00012\n\u0010\u0099\u0001\u001a\u0005\u0018\u00010\u009a\u00012\n\u0010\u009d\u0001\u001a\u0005\u0018\u00010\u009e\u00012\b\u0010\u009f\u0001\u001a\u00030 \u0001H\u0016¢\u0006\u0006\b¦\u0001\u0010§\u0001J\u0013\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u0001H\u0002J]\u0010¨\u0001\u001a\u00020%2\u0007\u0010©\u0001\u001a\u00020\u00052\u0007\u0010ª\u0001\u001a\u00020\u00052\n\u0010«\u0001\u001a\u0005\u0018\u00010¬\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0007\u0010\u00ad\u0001\u001a\u00020\u00052\u0007\u0010®\u0001\u001a\u00020\u00052\u0007\u0010¯\u0001\u001a\u00020\u00052\u0007\u0010°\u0001\u001a\u00020\u00052\b\b\u0002\u0010&\u001a\u00020'H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u0013\u0010\u0006\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010 \u001a\u0004\b\u001f\u0010\u001eR\u0013\u0010\b\u001a\u00020\t¢\u0006\n\n\u0002\u0010#\u001a\u0004\b!\u0010\"R\u000e\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010&\u001a\u00020'8\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b(\u0010)\u001a\u0004\b*\u0010+R\u0014\u0010,\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b.\u0010/R\u0014\u00100\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u0010/R\u0014\u00102\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b3\u0010/R\u0014\u00104\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b5\u0010/R\u0014\u00106\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b7\u0010/R\u0014\u00108\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b9\u0010/R\u0014\u0010:\u001a\u00020;8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b<\u0010=R\u001a\u0010>\u001a\u00020?8@X\u0081\u0004¢\u0006\f\u0012\u0004\b@\u0010)\u001a\u0004\bA\u0010BR\u0014\u0010C\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bD\u0010\u001eR\u001c\u0010E\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010F0\u0011X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bG\u0010HR\u001a\u0010I\u001a\u00020J8@X\u0081\u0004¢\u0006\f\u0012\u0004\bK\u0010)\u001a\u0004\bL\u0010M¨\u0006±\u0001"}, d2 = {"Landroidx/compose/ui/text/AndroidParagraph;", "Landroidx/compose/ui/text/Paragraph;", "paragraphIntrinsics", "Landroidx/compose/ui/text/platform/AndroidParagraphIntrinsics;", "maxLines", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "<init>", "(Landroidx/compose/ui/text/platform/AndroidParagraphIntrinsics;IIJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "placeholders", "Landroidx/compose/ui/text/Placeholder;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "density", "Landroidx/compose/ui/unit/Density;", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Ljava/util/List;Ljava/util/List;IIJLandroidx/compose/ui/text/font/FontFamily$Resolver;Landroidx/compose/ui/unit/Density;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getParagraphIntrinsics", "()Landroidx/compose/ui/text/platform/AndroidParagraphIntrinsics;", "getMaxLines", "()I", "getOverflow-gIe3tQ8", "I", "getConstraints-msEJaDk", "()J", "J", TtmlNode.TAG_LAYOUT, "Landroidx/compose/ui/text/android/TextLayout;", "charSequence", "", "getCharSequence$ui_text$annotations", "()V", "getCharSequence$ui_text", "()Ljava/lang/CharSequence;", "width", "", "getWidth", "()F", "height", "getHeight", "maxIntrinsicWidth", "getMaxIntrinsicWidth", "minIntrinsicWidth", "getMinIntrinsicWidth", "firstBaseline", "getFirstBaseline", "lastBaseline", "getLastBaseline", "didExceedMaxLines", "", "getDidExceedMaxLines", "()Z", "textLocale", "Ljava/util/Locale;", "getTextLocale$ui_text$annotations", "getTextLocale$ui_text", "()Ljava/util/Locale;", "lineCount", "getLineCount", "placeholderRects", "Landroidx/compose/ui/geometry/Rect;", "getPlaceholderRects", "()Ljava/util/List;", "textPaint", "Landroidx/compose/ui/text/platform/AndroidTextPaint;", "getTextPaint$ui_text$annotations", "getTextPaint$ui_text", "()Landroidx/compose/ui/text/platform/AndroidTextPaint;", "getLineForVerticalPosition", "vertical", "getOffsetForPosition", "position", "Landroidx/compose/ui/geometry/Offset;", "getOffsetForPosition-k-4lQ0M", "(J)I", "getRangeForRect", "Landroidx/compose/ui/text/TextRange;", "rect", "granularity", "Landroidx/compose/ui/text/TextGranularity;", "inclusionStrategy", "Landroidx/compose/ui/text/TextInclusionStrategy;", "getRangeForRect-8-6BmAI", "(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/text/TextInclusionStrategy;)J", "getBoundingBox", TypedValues.CycleType.S_WAVE_OFFSET, "fillBoundingBoxes", "", "range", "array", "", "arrayStart", "fillBoundingBoxes-8ffj60Q", "(J[FI)V", "getPathForRange", "Landroidx/compose/ui/graphics/Path;", TtmlNode.START, TtmlNode.END, "getCursorRect", "getWordBoundary", "getWordBoundary--jx7JFs", "(I)J", "getLineLeft", "lineIndex", "getLineRight", "getLineTop", "getLineAscent", "getLineAscent$ui_text", "getLineBaseline", "getLineDescent", "getLineDescent$ui_text", "getLineBottom", "getLineHeight", "getLineWidth", "getLineStart", "getLineEnd", "visibleEnd", "isLineEllipsized", "getLineEllipsisOffset", "getLineEllipsisOffset$ui_text", "getLineEllipsisCount", "getLineEllipsisCount$ui_text", "getLineForOffset", "getHorizontalPosition", "usePrimaryDirection", "getParagraphDirection", "Landroidx/compose/ui/text/style/ResolvedTextDirection;", "getBidiRunDirection", "getShaderBrushSpans", "", "Landroidx/compose/ui/text/platform/style/ShaderBrushSpan;", "(Landroidx/compose/ui/text/android/TextLayout;)[Landroidx/compose/ui/text/platform/style/ShaderBrushSpan;", "hasSpan", "Landroid/text/Spanned;", "clazz", "Ljava/lang/Class;", "paint", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "color", "Landroidx/compose/ui/graphics/Color;", "shadow", "Landroidx/compose/ui/graphics/Shadow;", TtmlNode.ATTR_TTS_TEXT_DECORATION, "Landroidx/compose/ui/text/style/TextDecoration;", "paint-RPmYEkk", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;)V", "drawStyle", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "paint-LG529CI", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "paint-hn5TExg", "(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "constructTextLayout", "alignment", "justificationMode", "ellipsize", "Landroid/text/TextUtils$TruncateAt;", "hyphens", "breakStrategy", "lineBreakStyle", "lineBreakWordStyle", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0098\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0014\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001e\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bBk\b\u0016\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0014\u0010\u0010\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00130\u00120\u0011\u0012\u0012\u0010\u0014\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00120\u0011\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b\n\u0010\u001aJ\u0010\u0010N\u001a\u00020\u00052\u0006\u0010O\u001a\u00020-H\u0016J\u0017\u0010P\u001a\u00020\u00052\u0006\u0010Q\u001a\u00020RH\u0016¢\u0006\u0004\bS\u0010TJ'\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020F2\u0006\u0010X\u001a\u00020Y2\u0006\u0010Z\u001a\u00020[H\u0016¢\u0006\u0004\b\\\u0010]J\u0010\u0010^\u001a\u00020F2\u0006\u0010_\u001a\u00020\u0005H\u0016J)\u0010`\u001a\u00020a2\u0006\u0010b\u001a\u00020V2\u0006\u0010c\u001a\u00020d2\b\b\u0001\u0010e\u001a\u00020\u0005H\u0016¢\u0006\u0004\bf\u0010gJ\u0018\u0010h\u001a\u00020i2\u0006\u0010j\u001a\u00020\u00052\u0006\u0010k\u001a\u00020\u0005H\u0016J\u0010\u0010l\u001a\u00020F2\u0006\u0010_\u001a\u00020\u0005H\u0016J\u0017\u0010m\u001a\u00020V2\u0006\u0010_\u001a\u00020\u0005H\u0016¢\u0006\u0004\bn\u0010oJ\u0010\u0010p\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010r\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010s\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0015\u0010t\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0002\buJ\u0010\u0010v\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0015\u0010w\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0002\bxJ\u0010\u0010y\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010z\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010{\u001a\u00020-2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0010\u0010|\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0018\u0010}\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u00052\u0006\u0010~\u001a\u00020;H\u0016J\u0010\u0010\u007f\u001a\u00020;2\u0006\u0010q\u001a\u00020\u0005H\u0016J\u0017\u0010\u0080\u0001\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0003\b\u0081\u0001J\u0017\u0010\u0082\u0001\u001a\u00020\u00052\u0006\u0010q\u001a\u00020\u0005H\u0000¢\u0006\u0003\b\u0083\u0001J\u0011\u0010\u0084\u0001\u001a\u00020\u00052\u0006\u0010_\u001a\u00020\u0005H\u0016J\u001a\u0010\u0085\u0001\u001a\u00020-2\u0006\u0010_\u001a\u00020\u00052\u0007\u0010\u0086\u0001\u001a\u00020;H\u0016J\u0012\u0010\u0087\u0001\u001a\u00030\u0088\u00012\u0006\u0010_\u001a\u00020\u0005H\u0016J\u0012\u0010\u0089\u0001\u001a\u00030\u0088\u00012\u0006\u0010_\u001a\u00020\u0005H\u0016J\u001d\u0010\u008a\u0001\u001a\f\u0012\u0005\u0012\u00030\u008c\u0001\u0018\u00010\u008b\u0001*\u00020%H\u0002¢\u0006\u0003\u0010\u008d\u0001J\u001c\u0010\u008e\u0001\u001a\u00020;*\u00030\u008f\u00012\f\u0010\u0090\u0001\u001a\u0007\u0012\u0002\b\u00030\u0091\u0001H\u0002J>\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u00012\b\u0010\u0095\u0001\u001a\u00030\u0096\u00012\n\u0010\u0097\u0001\u001a\u0005\u0018\u00010\u0098\u00012\n\u0010\u0099\u0001\u001a\u0005\u0018\u00010\u009a\u0001H\u0016¢\u0006\u0006\b\u009b\u0001\u0010\u009c\u0001JT\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u00012\b\u0010\u0095\u0001\u001a\u00030\u0096\u00012\n\u0010\u0097\u0001\u001a\u0005\u0018\u00010\u0098\u00012\n\u0010\u0099\u0001\u001a\u0005\u0018\u00010\u009a\u00012\n\u0010\u009d\u0001\u001a\u0005\u0018\u00010\u009e\u00012\b\u0010\u009f\u0001\u001a\u00030 \u0001H\u0016¢\u0006\u0006\b¡\u0001\u0010¢\u0001J]\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u00012\b\u0010£\u0001\u001a\u00030¤\u00012\u0007\u0010¥\u0001\u001a\u00020-2\n\u0010\u0097\u0001\u001a\u0005\u0018\u00010\u0098\u00012\n\u0010\u0099\u0001\u001a\u0005\u0018\u00010\u009a\u00012\n\u0010\u009d\u0001\u001a\u0005\u0018\u00010\u009e\u00012\b\u0010\u009f\u0001\u001a\u00030 \u0001H\u0016¢\u0006\u0006\b¦\u0001\u0010§\u0001J\u0013\u0010\u0092\u0001\u001a\u00020a2\b\u0010\u0093\u0001\u001a\u00030\u0094\u0001H\u0002J]\u0010¨\u0001\u001a\u00020%2\u0007\u0010©\u0001\u001a\u00020\u00052\u0007\u0010ª\u0001\u001a\u00020\u00052\n\u0010«\u0001\u001a\u0005\u0018\u00010¬\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0007\u0010\u00ad\u0001\u001a\u00020\u00052\u0007\u0010®\u0001\u001a\u00020\u00052\u0007\u0010¯\u0001\u001a\u00020\u00052\u0007\u0010°\u0001\u001a\u00020\u00052\b\b\u0002\u0010&\u001a\u00020'H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u0013\u0010\u0006\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010 \u001a\u0004\b\u001f\u0010\u001eR\u0013\u0010\b\u001a\u00020\t¢\u0006\n\n\u0002\u0010#\u001a\u0004\b!\u0010\"R\u000e\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010&\u001a\u00020'8\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b(\u0010)\u001a\u0004\b*\u0010+R\u0014\u0010,\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b.\u0010/R\u0014\u00100\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u0010/R\u0014\u00102\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b3\u0010/R\u0014\u00104\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b5\u0010/R\u0014\u00106\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b7\u0010/R\u0014\u00108\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b9\u0010/R\u0014\u0010:\u001a\u00020;8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b<\u0010=R\u001a\u0010>\u001a\u00020?8@X\u0081\u0004¢\u0006\f\u0012\u0004\b@\u0010)\u001a\u0004\bA\u0010BR\u0014\u0010C\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bD\u0010\u001eR\u001c\u0010E\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010F0\u0011X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bG\u0010HR\u001a\u0010I\u001a\u00020J8@X\u0081\u0004¢\u0006\f\u0012\u0004\bK\u0010)\u001a\u0004\bL\u0010M¨\u0006±\u0001"}, d2 = {"Landroidx/compose/ui/text/AndroidParagraph;", "Landroidx/compose/ui/text/Paragraph;", "paragraphIntrinsics", "Landroidx/compose/ui/text/platform/AndroidParagraphIntrinsics;", "maxLines", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "<init>", "(Landroidx/compose/ui/text/platform/AndroidParagraphIntrinsics;IIJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "placeholders", "Landroidx/compose/ui/text/Placeholder;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "density", "Landroidx/compose/ui/unit/Density;", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Ljava/util/List;Ljava/util/List;IIJLandroidx/compose/ui/text/font/FontFamily$Resolver;Landroidx/compose/ui/unit/Density;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getParagraphIntrinsics", "()Landroidx/compose/ui/text/platform/AndroidParagraphIntrinsics;", "getMaxLines", "()I", "getOverflow-gIe3tQ8", "I", "getConstraints-msEJaDk", "()J", "J", "layout", "Landroidx/compose/ui/text/android/TextLayout;", "charSequence", "", "getCharSequence$ui_text$annotations", "()V", "getCharSequence$ui_text", "()Ljava/lang/CharSequence;", "width", "", "getWidth", "()F", "height", "getHeight", "maxIntrinsicWidth", "getMaxIntrinsicWidth", "minIntrinsicWidth", "getMinIntrinsicWidth", "firstBaseline", "getFirstBaseline", "lastBaseline", "getLastBaseline", "didExceedMaxLines", "", "getDidExceedMaxLines", "()Z", "textLocale", "Ljava/util/Locale;", "getTextLocale$ui_text$annotations", "getTextLocale$ui_text", "()Ljava/util/Locale;", "lineCount", "getLineCount", "placeholderRects", "Landroidx/compose/ui/geometry/Rect;", "getPlaceholderRects", "()Ljava/util/List;", "textPaint", "Landroidx/compose/ui/text/platform/AndroidTextPaint;", "getTextPaint$ui_text$annotations", "getTextPaint$ui_text", "()Landroidx/compose/ui/text/platform/AndroidTextPaint;", "getLineForVerticalPosition", "vertical", "getOffsetForPosition", "position", "Landroidx/compose/ui/geometry/Offset;", "getOffsetForPosition-k-4lQ0M", "(J)I", "getRangeForRect", "Landroidx/compose/ui/text/TextRange;", "rect", "granularity", "Landroidx/compose/ui/text/TextGranularity;", "inclusionStrategy", "Landroidx/compose/ui/text/TextInclusionStrategy;", "getRangeForRect-8-6BmAI", "(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/text/TextInclusionStrategy;)J", "getBoundingBox", TypedValues.CycleType.S_WAVE_OFFSET, "fillBoundingBoxes", "", "range", "array", "", "arrayStart", "fillBoundingBoxes-8ffj60Q", "(J[FI)V", "getPathForRange", "Landroidx/compose/ui/graphics/Path;", TtmlNode.START, TtmlNode.END, "getCursorRect", "getWordBoundary", "getWordBoundary--jx7JFs", "(I)J", "getLineLeft", "lineIndex", "getLineRight", "getLineTop", "getLineAscent", "getLineAscent$ui_text", "getLineBaseline", "getLineDescent", "getLineDescent$ui_text", "getLineBottom", "getLineHeight", "getLineWidth", "getLineStart", "getLineEnd", "visibleEnd", "isLineEllipsized", "getLineEllipsisOffset", "getLineEllipsisOffset$ui_text", "getLineEllipsisCount", "getLineEllipsisCount$ui_text", "getLineForOffset", "getHorizontalPosition", "usePrimaryDirection", "getParagraphDirection", "Landroidx/compose/ui/text/style/ResolvedTextDirection;", "getBidiRunDirection", "getShaderBrushSpans", "", "Landroidx/compose/ui/text/platform/style/ShaderBrushSpan;", "(Landroidx/compose/ui/text/android/TextLayout;)[Landroidx/compose/ui/text/platform/style/ShaderBrushSpan;", "hasSpan", "Landroid/text/Spanned;", "clazz", "Ljava/lang/Class;", "paint", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "color", "Landroidx/compose/ui/graphics/Color;", "shadow", "Landroidx/compose/ui/graphics/Shadow;", TtmlNode.ATTR_TTS_TEXT_DECORATION, "Landroidx/compose/ui/text/style/TextDecoration;", "paint-RPmYEkk", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;)V", "drawStyle", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "paint-LG529CI", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "paint-hn5TExg", "(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "constructTextLayout", "alignment", "justificationMode", "ellipsize", "Landroid/text/TextUtils$TruncateAt;", "hyphens", "breakStrategy", "lineBreakStyle", "lineBreakWordStyle", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidParagraph implements Paragraph {
     public static final int $stable = 8;
@@ -64,7 +62,7 @@ public final class AndroidParagraph implements Paragraph {
     /* compiled from: AndroidParagraph.android.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -99,9 +97,9 @@ public final class AndroidParagraph implements Paragraph {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01fe  */
     /* JADX WARN: Type inference failed for: r11v15 */
     /* JADX WARN: Type inference failed for: r11v16 */
     /* JADX WARN: Type inference failed for: r11v23 */
@@ -109,13 +107,13 @@ public final class AndroidParagraph implements Paragraph {
     /* JADX WARN: Type inference failed for: r13v30 */
     /* JADX WARN: Type inference failed for: r13v4 */
     /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v2, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v3 */
     /* JADX WARN: Type inference failed for: r2v1 */
     /* JADX WARN: Type inference failed for: r2v11, types: [android.text.Spanned] */
-    /* JADX WARN: Type inference failed for: r2v18 */
+    /* JADX WARN: Type inference failed for: r2v16 */
+    /* JADX WARN: Type inference failed for: r2v19 */
     /* JADX WARN: Type inference failed for: r2v2 */
-    /* JADX WARN: Type inference failed for: r2v21 */
     /* JADX WARN: Type inference failed for: r2v3 */
     /* JADX WARN: Type inference failed for: r2v4 */
     /* JADX WARN: Type inference failed for: r9v17 */
@@ -150,49 +148,49 @@ public final class AndroidParagraph implements Paragraph {
         this.maxLines = i;
         this.overflow = i2;
         this.constraints = j;
-        if ((Constraints.m7950getMinHeightimpl(j) == 0 && Constraints.m7951getMinWidthimpl(j) == 0) == false) {
+        if ((Constraints.m8212getMinHeightimpl(j) == 0 && Constraints.m8213getMinWidthimpl(j) == 0) == false) {
             InlineClassHelperKt.throwIllegalArgumentException("Setting Constraints.minWidth and Constraints.minHeight is not supported, these should be the default zero values instead.");
         }
         if ((i >= 1) == false) {
             InlineClassHelperKt.throwIllegalArgumentException("maxLines should be greater than 0");
         }
         TextStyle style = androidParagraphIntrinsics.getStyle();
-        if (AndroidParagraph_androidKt.access$shouldAttachIndentationFixSpan(style, TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7932getEllipsisgIe3tQ8()))) {
+        if (AndroidParagraph_androidKt.access$shouldAttachIndentationFixSpan(style, TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8()))) {
             charSequence$ui_text = AndroidParagraph_androidKt.access$attachIndentationFixSpan(androidParagraphIntrinsics.getCharSequence$ui_text());
         } else {
             charSequence$ui_text = androidParagraphIntrinsics.getCharSequence$ui_text();
         }
         this.charSequence = charSequence$ui_text;
-        int m7258access$toLayoutAlignaXe7zB0 = AndroidParagraph_androidKt.m7258access$toLayoutAlignaXe7zB0(style.m7499getTextAligne0LSkKk());
-        boolean m7876equalsimpl0 = TextAlign.m7876equalsimpl0(style.m7499getTextAligne0LSkKk(), TextAlign.Companion.m7882getJustifye0LSkKk());
-        int m7260access$toLayoutHyphenationFrequency3fSNIE = AndroidParagraph_androidKt.m7260access$toLayoutHyphenationFrequency3fSNIE(style.getParagraphStyle$ui_text().m7339getHyphensvmbZdU8());
-        int m7259access$toLayoutBreakStrategyxImikfE = AndroidParagraph_androidKt.m7259access$toLayoutBreakStrategyxImikfE(LineBreak.m7788getStrategyfcGXIks(style.m7496getLineBreakrAG3T2k()));
-        int m7261access$toLayoutLineBreakStylehpcqdu8 = AndroidParagraph_androidKt.m7261access$toLayoutLineBreakStylehpcqdu8(LineBreak.m7789getStrictnessusljTpc(style.m7496getLineBreakrAG3T2k()));
-        int m7262access$toLayoutLineBreakWordStylewPN0Rpw = AndroidParagraph_androidKt.m7262access$toLayoutLineBreakWordStylewPN0Rpw(LineBreak.m7790getWordBreakjp8hJ3c(style.m7496getLineBreakrAG3T2k()));
-        if (TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7932getEllipsisgIe3tQ8())) {
+        int m7494access$toLayoutAlignaXe7zB0 = AndroidParagraph_androidKt.m7494access$toLayoutAlignaXe7zB0(style.m7742getTextAligne0LSkKk());
+        boolean m8132equalsimpl0 = TextAlign.m8132equalsimpl0(style.m7742getTextAligne0LSkKk(), TextAlign.Companion.m8138getJustifye0LSkKk());
+        int m7496access$toLayoutHyphenationFrequency3fSNIE = AndroidParagraph_androidKt.m7496access$toLayoutHyphenationFrequency3fSNIE(style.getParagraphStyle$ui_text().m7575getHyphensvmbZdU8());
+        int m7495access$toLayoutBreakStrategyxImikfE = AndroidParagraph_androidKt.m7495access$toLayoutBreakStrategyxImikfE(LineBreak.m8041getStrategyfcGXIks(style.m7739getLineBreakrAG3T2k()));
+        int m7497access$toLayoutLineBreakStylehpcqdu8 = AndroidParagraph_androidKt.m7497access$toLayoutLineBreakStylehpcqdu8(LineBreak.m8042getStrictnessusljTpc(style.m7739getLineBreakrAG3T2k()));
+        int m7498access$toLayoutLineBreakWordStylewPN0Rpw = AndroidParagraph_androidKt.m7498access$toLayoutLineBreakWordStylewPN0Rpw(LineBreak.m8043getWordBreakjp8hJ3c(style.m7739getLineBreakrAG3T2k()));
+        if (TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) {
             truncateAt = TextUtils.TruncateAt.END;
-        } else if (TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7933getMiddleEllipsisgIe3tQ8())) {
+        } else if (TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8195getMiddleEllipsisgIe3tQ8())) {
             truncateAt = TextUtils.TruncateAt.MIDDLE;
-        } else if (!TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7934getStartEllipsisgIe3tQ8())) {
+        } else if (!TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8196getStartEllipsisgIe3tQ8())) {
             textStyle = style;
-            i3 = m7876equalsimpl0 ? 1 : 0;
-            i4 = m7259access$toLayoutBreakStrategyxImikfE;
-            i5 = m7262access$toLayoutLineBreakWordStylewPN0Rpw;
+            i3 = m8132equalsimpl0 ? 1 : 0;
+            i4 = m7495access$toLayoutBreakStrategyxImikfE;
+            i5 = m7498access$toLayoutLineBreakWordStylewPN0Rpw;
             truncateAt = null;
             TextUtils.TruncateAt truncateAt2 = truncateAt;
             CharSequence charSequence2 = charSequence$ui_text;
-            constructTextLayout$default = constructTextLayout$default(this, m7258access$toLayoutAlignaXe7zB0, i3, truncateAt2, i, m7260access$toLayoutHyphenationFrequency3fSNIE, i4, m7261access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
-            if (Build.VERSION.SDK_INT < 35 || getTextPaint$ui_text().getLetterSpacing() == 0.0f || (!(TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7934getStartEllipsisgIe3tQ8()) || TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7933getMiddleEllipsisgIe3tQ8())) || constructTextLayout$default.getLineEllipsisCount(0) <= 0)) {
+            constructTextLayout$default = constructTextLayout$default(this, m7494access$toLayoutAlignaXe7zB0, i3, truncateAt2, i, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
+            if (Build.VERSION.SDK_INT < 35 || getTextPaint$ui_text().getLetterSpacing() == 0.0f || (!(TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8196getStartEllipsisgIe3tQ8()) || TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8195getMiddleEllipsisgIe3tQ8())) || constructTextLayout$default.getLineEllipsisCount(0) <= 0)) {
                 i6 = i;
                 r15 = 1;
             } else {
                 int lineEllipsisOffset = constructTextLayout$default.getLineEllipsisOffset(0);
                 r15 = 1;
                 i6 = i;
-                constructTextLayout$default = constructTextLayout(m7258access$toLayoutAlignaXe7zB0, i3, truncateAt2, i6, m7260access$toLayoutHyphenationFrequency3fSNIE, i4, m7261access$toLayoutLineBreakStylehpcqdu8, i5, TextUtils.concat(charSequence2.subSequence(0, lineEllipsisOffset), "…", charSequence2.subSequence(constructTextLayout$default.getLineEllipsisCount(0) + lineEllipsisOffset, charSequence2.length())));
+                constructTextLayout$default = constructTextLayout(m7494access$toLayoutAlignaXe7zB0, i3, truncateAt2, i6, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, TextUtils.concat(charSequence2.subSequence(0, lineEllipsisOffset), "…", charSequence2.subSequence(constructTextLayout$default.getLineEllipsisCount(0) + lineEllipsisOffset, charSequence2.length())));
             }
-            if (!TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7932getEllipsisgIe3tQ8()) && constructTextLayout$default.getHeight() > Constraints.m7948getMaxHeightimpl(j) && i6 > r15) {
-                int access$numberOfLinesThatFitMaxHeight = AndroidParagraph_androidKt.access$numberOfLinesThatFitMaxHeight(constructTextLayout$default, Constraints.m7948getMaxHeightimpl(j));
+            if (!TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8()) && constructTextLayout$default.getHeight() > Constraints.m8210getMaxHeightimpl(j) && i6 > r15) {
+                int access$numberOfLinesThatFitMaxHeight = AndroidParagraph_androidKt.access$numberOfLinesThatFitMaxHeight(constructTextLayout$default, Constraints.m8210getMaxHeightimpl(j));
                 if (access$numberOfLinesThatFitMaxHeight < 0 || access$numberOfLinesThatFitMaxHeight == i6) {
                     androidParagraph = this;
                     i7 = 2;
@@ -200,7 +198,7 @@ public final class AndroidParagraph implements Paragraph {
                     int coerceAtLeast = RangesKt.coerceAtLeast(access$numberOfLinesThatFitMaxHeight, (int) r15);
                     i7 = 2;
                     androidParagraph = this;
-                    constructTextLayout$default = constructTextLayout$default(androidParagraph, m7258access$toLayoutAlignaXe7zB0, i3, truncateAt2, coerceAtLeast, m7260access$toLayoutHyphenationFrequency3fSNIE, i4, m7261access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
+                    constructTextLayout$default = constructTextLayout$default(androidParagraph, m7494access$toLayoutAlignaXe7zB0, i3, truncateAt2, coerceAtLeast, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
                 }
                 androidParagraph.layout = constructTextLayout$default;
             } else {
@@ -208,12 +206,11 @@ public final class AndroidParagraph implements Paragraph {
                 i7 = 2;
                 androidParagraph.layout = constructTextLayout$default;
             }
-            androidParagraph.getTextPaint$ui_text().m7728setBrush12SF9DM(textStyle.getBrush(), Size.m5096constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
+            androidParagraph.getTextPaint$ui_text().m7973setBrush12SF9DM(textStyle.getBrush(), Size.m5239constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
             shaderBrushSpans = androidParagraph.getShaderBrushSpans(androidParagraph.layout);
             if (shaderBrushSpans != null) {
-                Iterator it = ArrayIteratorKt.iterator(shaderBrushSpans);
-                while (it.hasNext()) {
-                    ((ShaderBrushSpan) it.next()).m7751setSizeuvyYCjk(Size.m5096constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)));
+                for (ShaderBrushSpan shaderBrushSpan : shaderBrushSpans) {
+                    shaderBrushSpan.m7997setSizeuvyYCjk(Size.m5239constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)));
                 }
             }
             charSequence = androidParagraph.charSequence;
@@ -289,22 +286,22 @@ public final class AndroidParagraph implements Paragraph {
             truncateAt = TextUtils.TruncateAt.START;
         }
         textStyle = style;
-        i3 = m7876equalsimpl0 ? 1 : 0;
-        i4 = m7259access$toLayoutBreakStrategyxImikfE;
-        i5 = m7262access$toLayoutLineBreakWordStylewPN0Rpw;
+        i3 = m8132equalsimpl0 ? 1 : 0;
+        i4 = m7495access$toLayoutBreakStrategyxImikfE;
+        i5 = m7498access$toLayoutLineBreakWordStylewPN0Rpw;
         TextUtils.TruncateAt truncateAt22 = truncateAt;
         CharSequence charSequence22 = charSequence$ui_text;
-        constructTextLayout$default = constructTextLayout$default(this, m7258access$toLayoutAlignaXe7zB0, i3, truncateAt22, i, m7260access$toLayoutHyphenationFrequency3fSNIE, i4, m7261access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
+        constructTextLayout$default = constructTextLayout$default(this, m7494access$toLayoutAlignaXe7zB0, i3, truncateAt22, i, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
         if (Build.VERSION.SDK_INT < 35) {
         }
         i6 = i;
         r15 = 1;
-        if (!TextOverflow.m7922equalsimpl0(i2, TextOverflow.Companion.m7932getEllipsisgIe3tQ8())) {
+        if (!TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) {
         }
         androidParagraph = this;
         i7 = 2;
         androidParagraph.layout = constructTextLayout$default;
-        androidParagraph.getTextPaint$ui_text().m7728setBrush12SF9DM(textStyle.getBrush(), Size.m5096constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
+        androidParagraph.getTextPaint$ui_text().m7973setBrush12SF9DM(textStyle.getBrush(), Size.m5239constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
         shaderBrushSpans = androidParagraph.getShaderBrushSpans(androidParagraph.layout);
         if (shaderBrushSpans != null) {
         }
@@ -323,12 +320,12 @@ public final class AndroidParagraph implements Paragraph {
     }
 
     /* renamed from: getOverflow-gIe3tQ8  reason: not valid java name */
-    public final int m7252getOverflowgIe3tQ8() {
+    public final int m7488getOverflowgIe3tQ8() {
         return this.overflow;
     }
 
     /* renamed from: getConstraints-msEJaDk  reason: not valid java name */
-    public final long m7250getConstraintsmsEJaDk() {
+    public final long m7486getConstraintsmsEJaDk() {
         return this.constraints;
     }
 
@@ -342,7 +339,7 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     public float getWidth() {
-        return Constraints.m7949getMaxWidthimpl(this.constraints);
+        return Constraints.m8211getMaxWidthimpl(this.constraints);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
@@ -400,29 +397,29 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: getOffsetForPosition-k-4lQ0M  reason: not valid java name */
-    public int mo7251getOffsetForPositionk4lQ0M(long j) {
+    public int mo7487getOffsetForPositionk4lQ0M(long j) {
         return this.layout.getOffsetForHorizontal(this.layout.getLineForVertical((int) Float.intBitsToFloat((int) (4294967295L & j))), Float.intBitsToFloat((int) (j >> 32)));
     }
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: getRangeForRect-8-6BmAI  reason: not valid java name */
-    public long mo7253getRangeForRect86BmAI(Rect rect, int i, final TextInclusionStrategy textInclusionStrategy) {
-        int[] rangeForRect = this.layout.getRangeForRect(RectHelper_androidKt.toAndroidRectF(rect), AndroidParagraph_androidKt.m7263access$toLayoutTextGranularityduNsdkg(i), new Function2() { // from class: androidx.compose.ui.text.AndroidParagraph$$ExternalSyntheticLambda0
+    public long mo7489getRangeForRect86BmAI(Rect rect, int i, final TextInclusionStrategy textInclusionStrategy) {
+        int[] rangeForRect = this.layout.getRangeForRect(RectHelper_androidKt.toAndroidRectF(rect), AndroidParagraph_androidKt.m7499access$toLayoutTextGranularityduNsdkg(i), new Function2() { // from class: androidx.compose.ui.text.AndroidParagraph$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                boolean rangeForRect_8_6BmAI$lambda$6;
-                rangeForRect_8_6BmAI$lambda$6 = AndroidParagraph.getRangeForRect_8_6BmAI$lambda$6(TextInclusionStrategy.this, (RectF) obj, (RectF) obj2);
-                return Boolean.valueOf(rangeForRect_8_6BmAI$lambda$6);
+                boolean rangeForRect_8_6BmAI$lambda$0;
+                rangeForRect_8_6BmAI$lambda$0 = AndroidParagraph.getRangeForRect_8_6BmAI$lambda$0(TextInclusionStrategy.this, (RectF) obj, (RectF) obj2);
+                return Boolean.valueOf(rangeForRect_8_6BmAI$lambda$0);
             }
         });
         if (rangeForRect == null) {
-            return TextRange.Companion.m7463getZerod9O1mEE();
+            return TextRange.Companion.m7706getZerod9O1mEE();
         }
         return TextRangeKt.TextRange(rangeForRect[0], rangeForRect[1]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean getRangeForRect_8_6BmAI$lambda$6(TextInclusionStrategy textInclusionStrategy, RectF rectF, RectF rectF2) {
+    public static final boolean getRangeForRect_8_6BmAI$lambda$0(TextInclusionStrategy textInclusionStrategy, RectF rectF, RectF rectF2) {
         return textInclusionStrategy.isIncluded(RectHelper_androidKt.toComposeRect(rectF), RectHelper_androidKt.toComposeRect(rectF2));
     }
 
@@ -441,8 +438,8 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: fillBoundingBoxes-8ffj60Q  reason: not valid java name */
-    public void mo7249fillBoundingBoxes8ffj60Q(long j, float[] fArr, int i) {
-        this.layout.fillBoundingBoxes(TextRange.m7456getMinimpl(j), TextRange.m7455getMaximpl(j), fArr, i);
+    public void mo7485fillBoundingBoxes8ffj60Q(long j, float[] fArr, int i) {
+        this.layout.fillBoundingBoxes(TextRange.m7699getMinimpl(j), TextRange.m7698getMaximpl(j), fArr, i);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
@@ -467,7 +464,7 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: getWordBoundary--jx7JFs  reason: not valid java name */
-    public long mo7254getWordBoundaryjx7JFs(int i) {
+    public long mo7490getWordBoundaryjx7JFs(int i) {
         WordIterator wordIterator = this.layout.getWordIterator();
         return TextRangeKt.TextRange(WordBoundary_androidKt.getWordStart(wordIterator, i), WordBoundary_androidKt.getWordEnd(wordIterator, i));
     }
@@ -584,9 +581,9 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: paint-RPmYEkk  reason: not valid java name */
-    public void mo7256paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
+    public void mo7492paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
         AndroidTextPaint textPaint$ui_text = getTextPaint$ui_text();
-        textPaint$ui_text.m7730setColor8_81llA(j);
+        textPaint$ui_text.m7975setColor8_81llA(j);
         textPaint$ui_text.setShadow(shadow);
         textPaint$ui_text.setTextDecoration(textDecoration);
         paint(canvas);
@@ -594,32 +591,32 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: paint-LG529CI  reason: not valid java name */
-    public void mo7255paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
-        int m7725getBlendMode0nO6VwU = getTextPaint$ui_text().m7725getBlendMode0nO6VwU();
+    public void mo7491paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+        int m7970getBlendMode0nO6VwU = getTextPaint$ui_text().m7970getBlendMode0nO6VwU();
         AndroidTextPaint textPaint$ui_text = getTextPaint$ui_text();
-        textPaint$ui_text.m7730setColor8_81llA(j);
+        textPaint$ui_text.m7975setColor8_81llA(j);
         textPaint$ui_text.setShadow(shadow);
         textPaint$ui_text.setTextDecoration(textDecoration);
         textPaint$ui_text.setDrawStyle(drawStyle);
-        textPaint$ui_text.m7727setBlendModes9anfk8(i);
+        textPaint$ui_text.m7972setBlendModes9anfk8(i);
         paint(canvas);
-        getTextPaint$ui_text().m7727setBlendModes9anfk8(m7725getBlendMode0nO6VwU);
+        getTextPaint$ui_text().m7972setBlendModes9anfk8(m7970getBlendMode0nO6VwU);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: paint-hn5TExg  reason: not valid java name */
-    public void mo7257painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
-        int m7725getBlendMode0nO6VwU = getTextPaint$ui_text().m7725getBlendMode0nO6VwU();
+    public void mo7493painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+        int m7970getBlendMode0nO6VwU = getTextPaint$ui_text().m7970getBlendMode0nO6VwU();
         AndroidTextPaint textPaint$ui_text = getTextPaint$ui_text();
         float width = getWidth();
         float height = getHeight();
-        textPaint$ui_text.m7728setBrush12SF9DM(brush, Size.m5096constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), f);
+        textPaint$ui_text.m7973setBrush12SF9DM(brush, Size.m5239constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), f);
         textPaint$ui_text.setShadow(shadow);
         textPaint$ui_text.setTextDecoration(textDecoration);
         textPaint$ui_text.setDrawStyle(drawStyle);
-        textPaint$ui_text.m7727setBlendModes9anfk8(i);
+        textPaint$ui_text.m7972setBlendModes9anfk8(i);
         paint(canvas);
-        getTextPaint$ui_text().m7727setBlendModes9anfk8(m7725getBlendMode0nO6VwU);
+        getTextPaint$ui_text().m7972setBlendModes9anfk8(m7970getBlendMode0nO6VwU);
     }
 
     private final void paint(Canvas canvas) {

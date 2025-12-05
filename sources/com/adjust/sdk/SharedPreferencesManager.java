@@ -96,11 +96,6 @@ public class SharedPreferencesManager {
                 return sharedPreferences2.getString(str, null);
             } catch (ClassCastException unused) {
                 return null;
-            } catch (Throwable unused2) {
-                if (str.equals(PREFS_KEY_RAW_REFERRERS)) {
-                    remove(PREFS_KEY_RAW_REFERRERS);
-                }
-                return null;
             }
         }
         return null;

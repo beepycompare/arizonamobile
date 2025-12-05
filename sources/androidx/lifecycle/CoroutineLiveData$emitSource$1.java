@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CoroutineLiveData.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.lifecycle.CoroutineLiveData", f = "CoroutineLiveData.kt", i = {0}, l = {219, 220}, m = "emitSource$lifecycle_livedata_release", n = {"source"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.lifecycle.CoroutineLiveData", f = "CoroutineLiveData.kt", i = {0}, l = {221, 222}, m = "emitSource$lifecycle_livedata", n = {"source"}, s = {"L$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class CoroutineLiveData$emitSource$1 extends ContinuationImpl {
     Object L$0;
@@ -26,6 +26,6 @@ public final class CoroutineLiveData$emitSource$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.emitSource$lifecycle_livedata_release(null, this);
+        return this.this$0.emitSource$lifecycle_livedata(null, this);
     }
 }

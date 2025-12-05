@@ -142,7 +142,7 @@ public final class FontListFontFamily extends FileBasedFontFamily implements Lis
     }
 
     /* renamed from: removeFirst  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m7553removeFirst() {
+    public /* bridge */ /* synthetic */ Object m7797removeFirst() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -151,7 +151,7 @@ public final class FontListFontFamily extends FileBasedFontFamily implements Lis
     }
 
     /* renamed from: removeLast  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Object m7554removeLast() {
+    public /* bridge */ /* synthetic */ Object m7798removeLast() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -195,6 +195,15 @@ public final class FontListFontFamily extends FileBasedFontFamily implements Lis
         return (T[]) CollectionToArray.toArray(this, tArr);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public FontListFontFamily(List<? extends Font> list) {
+        super(null);
+        this.fonts = list;
+        if (list.isEmpty()) {
+            InlineClassHelperKt.throwIllegalStateException("At least one font should be passed to FontFamily");
+        }
+    }
+
     @Override // java.util.List, java.util.Collection
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof Font) {
@@ -226,15 +235,6 @@ public final class FontListFontFamily extends FileBasedFontFamily implements Lis
 
     public final List<Font> getFonts() {
         return this.fonts;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public FontListFontFamily(List<? extends Font> list) {
-        super(null);
-        this.fonts = list;
-        if (list.isEmpty()) {
-            InlineClassHelperKt.throwIllegalStateException("At least one font should be passed to FontFamily");
-        }
     }
 
     @Override // java.util.List, java.util.Collection

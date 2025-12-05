@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Megosztás a következővel:</string>
     <string name="abc_shareactionprovider_share_with_application">Megosztás a következő alkalmazással: %s</string>
     <string name="abc_toolbar_collapse_description">Összecsukás</string>
-    <string name="autofill">Automatikus kitöltés</string>
+    <string name="androidx_compose_foundation_autofill">Automatikus kitöltés</string>
+    <string name="androidx_compose_ui_autofill">Automatikus kitöltés</string>
     <string name="bottomsheet_action_collapse">Az alsó lap összecsukása</string>
     <string name="bottomsheet_action_expand">Az alsó lap kibontása</string>
     <string name="bottomsheet_action_expand_halfway">Kibontás félig</string>

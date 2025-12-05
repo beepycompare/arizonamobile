@@ -39,7 +39,7 @@ final class ChipLayoutMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         Measurable measurable;
         Measurable measurable2;
         List<? extends Measurable> list2 = list;
@@ -57,9 +57,9 @@ final class ChipLayoutMeasurePolicy implements MeasurePolicy {
             i++;
         }
         Measurable measurable3 = measurable;
-        final Placeable mo6698measureBRTryo0 = measurable3 != null ? measurable3.mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
-        final int widthOrZero = LayoutUtilKt.getWidthOrZero(mo6698measureBRTryo0);
-        final int heightOrZero = LayoutUtilKt.getHeightOrZero(mo6698measureBRTryo0);
+        final Placeable mo6875measureBRTryo0 = measurable3 != null ? measurable3.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
+        final int widthOrZero = LayoutUtilKt.getWidthOrZero(mo6875measureBRTryo0);
+        final int heightOrZero = LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo0);
         int size2 = list2.size();
         int i2 = 0;
         while (true) {
@@ -74,21 +74,21 @@ final class ChipLayoutMeasurePolicy implements MeasurePolicy {
             i2++;
         }
         Measurable measurable4 = measurable2;
-        Placeable mo6698measureBRTryo02 = measurable4 != null ? measurable4.mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
-        int widthOrZero2 = LayoutUtilKt.getWidthOrZero(mo6698measureBRTryo02);
-        final int heightOrZero2 = LayoutUtilKt.getHeightOrZero(mo6698measureBRTryo02);
+        Placeable mo6875measureBRTryo02 = measurable4 != null ? measurable4.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
+        int widthOrZero2 = LayoutUtilKt.getWidthOrZero(mo6875measureBRTryo02);
+        final int heightOrZero2 = LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo02);
         int size3 = list2.size();
         for (int i3 = 0; i3 < size3; i3++) {
             Measurable measurable5 = list.get(i3);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable5), Constants.ScionAnalytics.PARAM_LABEL)) {
-                final Placeable mo6698measureBRTryo03 = measurable5.mo6698measureBRTryo0(ConstraintsKt.m7969offsetNN6EwU$default(j, -(widthOrZero + widthOrZero2), 0, 2, null));
-                final int max = Math.max(heightOrZero, Math.max(mo6698measureBRTryo03.getHeight(), heightOrZero2));
-                final Placeable placeable = mo6698measureBRTryo02;
-                return MeasureScope.layout$default(measureScope, mo6698measureBRTryo03.getWidth() + widthOrZero + widthOrZero2, max, null, new Function1() { // from class: androidx.compose.material3.ChipLayoutMeasurePolicy$$ExternalSyntheticLambda0
+                final Placeable mo6875measureBRTryo03 = measurable5.mo6875measureBRTryo0(ConstraintsKt.m8231offsetNN6EwU$default(j, -(widthOrZero + widthOrZero2), 0, 2, null));
+                final int max = Math.max(heightOrZero, Math.max(mo6875measureBRTryo03.getHeight(), heightOrZero2));
+                final Placeable placeable = mo6875measureBRTryo02;
+                return MeasureScope.layout$default(measureScope, mo6875measureBRTryo03.getWidth() + widthOrZero + widthOrZero2, max, null, new Function1() { // from class: androidx.compose.material3.ChipLayoutMeasurePolicy$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit measure_3p2s80s$lambda$3;
-                        measure_3p2s80s$lambda$3 = ChipLayoutMeasurePolicy.measure_3p2s80s$lambda$3(Placeable.this, heightOrZero, max, mo6698measureBRTryo03, widthOrZero, placeable, heightOrZero2, (Placeable.PlacementScope) obj);
+                        measure_3p2s80s$lambda$3 = ChipLayoutMeasurePolicy.measure_3p2s80s$lambda$3(Placeable.this, heightOrZero, max, mo6875measureBRTryo03, widthOrZero, placeable, heightOrZero2, (Placeable.PlacementScope) obj);
                         return measure_3p2s80s$lambda$3;
                     }
                 }, 4, null);

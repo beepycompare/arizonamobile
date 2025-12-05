@@ -6,7 +6,7 @@ import kotlin.enums.EnumEntriesKt;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* compiled from: ToggleableState.kt */
-@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/state/ToggleableState;", "", "<init>", "(Ljava/lang/String;I)V", "On", "Off", "Indeterminate", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/state/ToggleableState;", "", "<init>", "(Ljava/lang/String;I)V", "On", "Off", "Indeterminate", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ToggleableState {
     private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -23,6 +23,14 @@ public final class ToggleableState {
         return $ENTRIES;
     }
 
+    public static ToggleableState valueOf(String str) {
+        return (ToggleableState) Enum.valueOf(ToggleableState.class, str);
+    }
+
+    public static ToggleableState[] values() {
+        return (ToggleableState[]) $VALUES.clone();
+    }
+
     private ToggleableState(String str, int i) {
     }
 
@@ -30,13 +38,5 @@ public final class ToggleableState {
         ToggleableState[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static ToggleableState valueOf(String str) {
-        return (ToggleableState) Enum.valueOf(ToggleableState.class, str);
-    }
-
-    public static ToggleableState[] values() {
-        return (ToggleableState[]) $VALUES.clone();
     }
 }

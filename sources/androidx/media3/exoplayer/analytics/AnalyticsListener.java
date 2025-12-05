@@ -32,7 +32,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public interface AnalyticsListener {
     public static final int EVENT_AUDIO_ATTRIBUTES_CHANGED = 20;
     public static final int EVENT_AUDIO_CODEC_ERROR = 1029;
@@ -103,7 +103,7 @@ public interface AnalyticsListener {
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface EventFlags {
     }
 
@@ -348,7 +348,7 @@ public interface AnalyticsListener {
     default void onVolumeChanged(EventTime eventTime, float f) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Events {
         private final SparseArray<EventTime> eventTimes;
         private final FlagSet flags;
@@ -384,7 +384,7 @@ public interface AnalyticsListener {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class EventTime {
         public final MediaSource.MediaPeriodId currentMediaPeriodId;
         public final long currentPlaybackPositionMs;

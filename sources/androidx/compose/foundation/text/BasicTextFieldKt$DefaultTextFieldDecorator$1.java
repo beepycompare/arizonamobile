@@ -28,7 +28,7 @@ public final class BasicTextFieldKt$DefaultTextFieldDecorator$1 implements TextF
     public final void Decoration(final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-2101003086);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Decoration)N(it)610@30626L4:BasicTextField.kt#423gt5");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Decoration)N(it)622@31133L4:BasicTextField.kt#423gt5");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(function2) ? 4 : 2) | i;
         } else {
@@ -39,7 +39,7 @@ public final class BasicTextFieldKt$DefaultTextFieldDecorator$1 implements TextF
         }
         if (startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-2101003086, i2, -1, "androidx.compose.foundation.text.DefaultTextFieldDecorator.<no name provided>.Decoration (BasicTextField.kt:610)");
+                ComposerKt.traceEventStart(-2101003086, i2, -1, "androidx.compose.foundation.text.DefaultTextFieldDecorator.<no name provided>.Decoration (BasicTextField.kt:622)");
             }
             function2.invoke(startRestartGroup, Integer.valueOf(i2 & 14));
             if (ComposerKt.isTraceInProgress()) {

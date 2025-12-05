@@ -11,17 +11,17 @@ public final class LayoutWeightElement extends ModifierNodeElement<LayoutWeightN
     private final boolean fill;
     private final float weight;
 
+    public LayoutWeightElement(float f, boolean z) {
+        this.weight = f;
+        this.fill = z;
+    }
+
     public final boolean getFill() {
         return this.fill;
     }
 
     public final float getWeight() {
         return this.weight;
-    }
-
-    public LayoutWeightElement(float f, boolean z) {
-        this.weight = f;
-        this.fill = z;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

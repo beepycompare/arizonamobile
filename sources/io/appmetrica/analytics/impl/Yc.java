@@ -3,8 +3,8 @@ package io.appmetrica.analytics.impl;
 public final class Yc extends E2 {
     public final String b;
 
-    public Yc(String str, InterfaceC0656vl interfaceC0656vl) {
-        super(interfaceC0656vl);
+    public Yc(String str, InterfaceC0655vl interfaceC0655vl) {
+        super(interfaceC0655vl);
         this.b = str;
     }
 

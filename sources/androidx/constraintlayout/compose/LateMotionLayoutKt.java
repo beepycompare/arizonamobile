@@ -247,7 +247,7 @@ public final class LateMotionLayoutKt {
         return new MeasurePolicy() { // from class: androidx.constraintlayout.compose.LateMotionLayoutKt$lateMotionLayoutMeasurePolicy$1
             @Override // androidx.compose.ui.layout.MeasurePolicy
             /* renamed from: measure-3p2s80s */
-            public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, final List<? extends Measurable> list, long j) {
+            public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, final List<? extends Measurable> list, long j) {
                 final LinkedHashMap linkedHashMap = new LinkedHashMap();
                 state.getValue();
                 MotionMeasurer motionMeasurer2 = motionMeasurer;
@@ -261,12 +261,12 @@ public final class LateMotionLayoutKt {
                 if (value == null) {
                     value = CompositionSource.Unknown;
                 }
-                long m8437performInterpolationMeasureLzAeyeM = motionMeasurer2.m8437performInterpolationMeasureLzAeyeM(j, layoutDirection, invoke, invoke2, eMPTY$constraintlayout_compose_release, list, linkedHashMap, i2, floatValue, value, null);
+                long m8699performInterpolationMeasureLzAeyeM = motionMeasurer2.m8699performInterpolationMeasureLzAeyeM(j, layoutDirection, invoke, invoke2, eMPTY$constraintlayout_compose_release, list, linkedHashMap, i2, floatValue, value, null);
                 ref.setValue(CompositionSource.Unknown);
-                int m8167getWidthimpl = IntSize.m8167getWidthimpl(m8437performInterpolationMeasureLzAeyeM);
-                int m8166getHeightimpl = IntSize.m8166getHeightimpl(m8437performInterpolationMeasureLzAeyeM);
+                int m8429getWidthimpl = IntSize.m8429getWidthimpl(m8699performInterpolationMeasureLzAeyeM);
+                int m8428getHeightimpl = IntSize.m8428getHeightimpl(m8699performInterpolationMeasureLzAeyeM);
                 final MotionMeasurer motionMeasurer3 = motionMeasurer;
-                return MeasureScope.layout$default(measureScope, m8167getWidthimpl, m8166getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.LateMotionLayoutKt$lateMotionLayoutMeasurePolicy$1.1
+                return MeasureScope.layout$default(measureScope, m8429getWidthimpl, m8428getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.LateMotionLayoutKt$lateMotionLayoutMeasurePolicy$1.1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
                     {

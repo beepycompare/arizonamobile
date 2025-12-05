@@ -5,14 +5,14 @@ import io.appmetrica.analytics.ModuleEvent;
 public final class Gj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ModuleEvent f494a;
+    public final /* synthetic */ ModuleEvent f577a;
 
     public Gj(ModuleEvent moduleEvent) {
-        this.f494a = moduleEvent;
+        this.f577a = moduleEvent;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.reportEvent(this.f494a);
+        sa.reportEvent(this.f577a);
     }
 }

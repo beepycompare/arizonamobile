@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Partager avec</string>
     <string name="abc_shareactionprovider_share_with_application">Partager avec %s</string>
     <string name="abc_toolbar_collapse_description">Réduire</string>
-    <string name="autofill">Remplissage automatique</string>
+    <string name="androidx_compose_foundation_autofill">Remplissage automatique</string>
+    <string name="androidx_compose_ui_autofill">Remplissage automatique</string>
     <string name="bottomsheet_action_collapse">Réduire la zone de contenu dans le bas de l\'écran</string>
     <string name="bottomsheet_action_expand">Développer la zone de contenu dans le bas de l\'écran</string>
     <string name="bottomsheet_action_expand_halfway">Développer à moitié</string>

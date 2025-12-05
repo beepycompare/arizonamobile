@@ -15,8 +15,10 @@ import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.collection.ScatterSetWrapper;
 import androidx.compose.runtime.collection.ScopeMap;
+import androidx.compose.runtime.internal.SnapshotThreadLocal;
 import androidx.compose.runtime.internal.Thread_jvmKt;
 import androidx.compose.runtime.snapshots.ReaderKind;
+import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.runtime.snapshots.SnapshotStateObserver;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
@@ -60,9 +62,9 @@ public final class SnapshotStateObserver {
     private final Function1<Object, Unit> readObserver = new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotStateObserver$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit readObserver$lambda$7;
-            readObserver$lambda$7 = SnapshotStateObserver.readObserver$lambda$7(SnapshotStateObserver.this, obj);
-            return readObserver$lambda$7;
+            Unit readObserver$lambda$0;
+            readObserver$lambda$0 = SnapshotStateObserver.readObserver$lambda$0(SnapshotStateObserver.this, obj);
+            return readObserver$lambda$0;
         }
     };
     private final MutableVector<ObservedScopeMap> observedScopeMaps = new MutableVector<>(new ObservedScopeMap[16], 0);
@@ -116,15 +118,15 @@ public final class SnapshotStateObserver {
         this.onChangedExecutor.invoke(new Function0() { // from class: androidx.compose.runtime.snapshots.SnapshotStateObserver$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit sendNotifications$lambda$5;
-                sendNotifications$lambda$5 = SnapshotStateObserver.sendNotifications$lambda$5(SnapshotStateObserver.this);
-                return sendNotifications$lambda$5;
+                Unit sendNotifications$lambda$0;
+                sendNotifications$lambda$0 = SnapshotStateObserver.sendNotifications$lambda$0(SnapshotStateObserver.this);
+                return sendNotifications$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit sendNotifications$lambda$5(SnapshotStateObserver snapshotStateObserver) {
+    public static final Unit sendNotifications$lambda$0(SnapshotStateObserver snapshotStateObserver) {
         do {
             synchronized (snapshotStateObserver.observedScopeMapsLock) {
                 if (!snapshotStateObserver.sendingNotifications) {
@@ -197,7 +199,7 @@ public final class SnapshotStateObserver {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit readObserver$lambda$7(SnapshotStateObserver snapshotStateObserver, Object obj) {
+    public static final Unit readObserver$lambda$0(SnapshotStateObserver snapshotStateObserver, Object obj) {
         if (!snapshotStateObserver.isPaused) {
             synchronized (snapshotStateObserver.observedScopeMapsLock) {
                 ObservedScopeMap observedScopeMap = snapshotStateObserver.currentMap;
@@ -242,26 +244,169 @@ public final class SnapshotStateObserver {
 
     public final <T> void observeReads(T t, Function1<? super T, Unit> function1, Function0<Unit> function0) {
         ObservedScopeMap ensureMap;
+        long j;
+        MutableVector<DerivedStateObserver> mutableVector;
+        SnapshotThreadLocal snapshotThreadLocal;
+        long j2;
+        TransparentObserverMutableSnapshot transparentObserverMutableSnapshot;
+        Snapshot snapshot;
+        Snapshot makeCurrent;
         synchronized (this.observedScopeMapsLock) {
             ensureMap = ensureMap(function1);
         }
         boolean z = this.isPaused;
         ObservedScopeMap observedScopeMap = this.currentMap;
-        long j = this.currentMapThreadId;
-        if (j != -1) {
-            if (!(j == Thread_jvmKt.currentThreadId())) {
-                PreconditionsKt.throwIllegalArgumentException("Detected multithreaded access to SnapshotStateObserver: previousThreadId=" + j + "), currentThread={id=" + Thread_jvmKt.currentThreadId() + ", name=" + Thread_jvmKt.currentThreadName() + "}. Note that observation on multiple threads in layout/draw is not supported. Make sure your measure/layout/draw for each Owner (AndroidComposeView) is executed on the same thread.");
+        long j3 = this.currentMapThreadId;
+        if (j3 != -1) {
+            if (!(j3 == Thread_jvmKt.currentThreadId())) {
+                PreconditionsKt.throwIllegalArgumentException("Detected multithreaded access to SnapshotStateObserver: previousThreadId=" + j3 + "), currentThread={id=" + Thread_jvmKt.currentThreadId() + ", name=" + Thread_jvmKt.currentThreadName() + "}. Note that observation on multiple threads in layout/draw is not supported. Make sure your measure/layout/draw for each Owner (AndroidComposeView) is executed on the same thread.");
             }
         }
         try {
             this.isPaused = false;
             this.currentMap = ensureMap;
             this.currentMapThreadId = Thread_jvmKt.currentThreadId();
-            ensureMap.observe(t, this.readObserver, function0);
-        } finally {
-            this.currentMap = observedScopeMap;
-            this.isPaused = z;
-            this.currentMapThreadId = j;
+            Function1<Object, Unit> function12 = this.readObserver;
+            Object obj = ensureMap.currentScope;
+            MutableObjectIntMap mutableObjectIntMap = ensureMap.currentScopeReads;
+            int i = ensureMap.currentToken;
+            ensureMap.currentScope = t;
+            ensureMap.currentScopeReads = (MutableObjectIntMap) ensureMap.scopeToValues.get(t);
+            if (ensureMap.currentToken == -1) {
+                ensureMap.currentToken = Long.hashCode(SnapshotKt.currentSnapshot().getSnapshotId());
+            }
+            DerivedStateObserver derivedStateObserver = ensureMap.getDerivedStateObserver();
+            MutableVector<DerivedStateObserver> derivedStateObservers = SnapshotStateKt.derivedStateObservers();
+            try {
+                derivedStateObservers.add(derivedStateObserver);
+                Snapshot.Companion companion = Snapshot.Companion;
+                if (function12 == null) {
+                    function0.invoke();
+                    j2 = j3;
+                    mutableVector = derivedStateObservers;
+                } else {
+                    snapshotThreadLocal = SnapshotKt.threadSnapshot;
+                    Snapshot snapshot2 = (Snapshot) snapshotThreadLocal.get();
+                    try {
+                        if (snapshot2 instanceof TransparentObserverMutableSnapshot) {
+                            try {
+                                if (((TransparentObserverMutableSnapshot) snapshot2).getThreadId$runtime() == Thread_jvmKt.currentThreadId()) {
+                                    Function1<Object, Unit> readObserver = ((TransparentObserverMutableSnapshot) snapshot2).getReadObserver();
+                                    Function1<Object, Unit> writeObserver$runtime = ((TransparentObserverMutableSnapshot) snapshot2).getWriteObserver$runtime();
+                                    try {
+                                        j2 = j3;
+                                        try {
+                                            ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(SnapshotKt.mergedReadObserver$default(function12, readObserver, false, 4, null));
+                                            ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(SnapshotKt.mergedWriteObserver(null, writeObserver$runtime));
+                                            function0.invoke();
+                                            ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(readObserver);
+                                            ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(writeObserver$runtime);
+                                            mutableVector = derivedStateObservers;
+                                        } catch (Throwable th) {
+                                            th = th;
+                                            ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(readObserver);
+                                            ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(writeObserver$runtime);
+                                            throw th;
+                                        }
+                                    } catch (Throwable th2) {
+                                        th = th2;
+                                    }
+                                }
+                            } catch (Throwable th3) {
+                                th = th3;
+                                j2 = j3;
+                                mutableVector = derivedStateObservers;
+                                j = j2;
+                                try {
+                                    mutableVector.removeAt(mutableVector.getSize() - 1);
+                                    throw th;
+                                } catch (Throwable th4) {
+                                    th = th4;
+                                    this.currentMap = observedScopeMap;
+                                    this.isPaused = z;
+                                    this.currentMapThreadId = j;
+                                    throw th;
+                                }
+                            }
+                        }
+                        j2 = j3;
+                        try {
+                            try {
+                                try {
+                                    if (snapshot2 != null && !(snapshot2 instanceof MutableSnapshot)) {
+                                        transparentObserverMutableSnapshot = snapshot2.takeNestedSnapshot(function12);
+                                        mutableVector = derivedStateObservers;
+                                        snapshot = transparentObserverMutableSnapshot;
+                                        makeCurrent = snapshot.makeCurrent();
+                                        function0.invoke();
+                                        snapshot.restoreCurrent(makeCurrent);
+                                        snapshot.dispose();
+                                    }
+                                    function0.invoke();
+                                    snapshot.restoreCurrent(makeCurrent);
+                                    snapshot.dispose();
+                                } catch (Throwable th5) {
+                                    j = j2;
+                                    try {
+                                        snapshot.restoreCurrent(makeCurrent);
+                                        throw th5;
+                                    } catch (Throwable th6) {
+                                        th = th6;
+                                        try {
+                                            snapshot.dispose();
+                                            throw th;
+                                        } catch (Throwable th7) {
+                                            th = th7;
+                                            mutableVector.removeAt(mutableVector.getSize() - 1);
+                                            throw th;
+                                        }
+                                    }
+                                }
+                                makeCurrent = snapshot.makeCurrent();
+                            } catch (Throwable th8) {
+                                th = th8;
+                                j = j2;
+                            }
+                            transparentObserverMutableSnapshot = new TransparentObserverMutableSnapshot(snapshot2 instanceof MutableSnapshot ? (MutableSnapshot) snapshot2 : null, function12, null, true, false);
+                            snapshot = transparentObserverMutableSnapshot;
+                        } catch (Throwable th9) {
+                            th = th9;
+                            j = j2;
+                            mutableVector.removeAt(mutableVector.getSize() - 1);
+                            throw th;
+                        }
+                        mutableVector = derivedStateObservers;
+                    } catch (Throwable th10) {
+                        th = th10;
+                    }
+                }
+                try {
+                    mutableVector.removeAt(mutableVector.getSize() - 1);
+                    Object obj2 = ensureMap.currentScope;
+                    Intrinsics.checkNotNull(obj2);
+                    ensureMap.clearObsoleteStateReads(obj2);
+                    ensureMap.currentScope = obj;
+                    ensureMap.currentScopeReads = mutableObjectIntMap;
+                    ensureMap.currentToken = i;
+                    this.currentMap = observedScopeMap;
+                    this.isPaused = z;
+                    this.currentMapThreadId = j2;
+                } catch (Throwable th11) {
+                    th = th11;
+                    j = j2;
+                    this.currentMap = observedScopeMap;
+                    this.isPaused = z;
+                    this.currentMapThreadId = j;
+                    throw th;
+                }
+            } catch (Throwable th12) {
+                th = th12;
+                j = j3;
+                mutableVector = derivedStateObservers;
+            }
+        } catch (Throwable th13) {
+            th = th13;
+            j = j3;
         }
     }
 
@@ -320,15 +465,16 @@ public final class SnapshotStateObserver {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SnapshotStateObserver.kt */
-    @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u0001B\u001b\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010!\u001a\u00020\u00042\u0006\u0010\"\u001a\u00020\u0001J.\u0010!\u001a\u00020\u00042\u0006\u0010\"\u001a\u00020\u00012\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\t\u001a\u00020\u00012\f\u0010#\u001a\b\u0012\u0004\u0012\u00020\u00010\u000bH\u0002J0\u0010$\u001a\u00020\u00042\u0006\u0010%\u001a\u00020\u00012\u0012\u0010&\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u00032\f\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00040(J\u0010\u0010)\u001a\u00020\u00042\u0006\u0010%\u001a\u00020\u0001H\u0002J\u000e\u0010*\u001a\u00020\u00042\u0006\u0010%\u001a\u00020\u0001J)\u0010+\u001a\u00020\u00042!\u0010,\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020/0\u0003J\u0006\u00100\u001a\u00020/J\u0018\u00101\u001a\u00020\u00042\u0006\u0010%\u001a\u00020\u00012\u0006\u0010\"\u001a\u00020\u0001H\u0002J\u0006\u00102\u001a\u00020\u0004J\u0014\u00103\u001a\u00020/2\f\u00104\u001a\b\u0012\u0004\u0012\u00020\u000105J\u0012\u00106\u001a\u00020\u00042\n\u00107\u001a\u0006\u0012\u0002\b\u00030\u0017J\u0006\u00108\u001a\u00020\u0004R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0010\u0010\t\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R \u0010\u0011\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u000b0\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00010\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0015\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0018\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u000e\u0010\u001c\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u001d\u001a\u0012\u0012\u0004\u0012\u00020\u0001\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R6\u0010\u001e\u001a*\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u001fj\u0014\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u0001` X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00069"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;", "", "onChanged", "Lkotlin/Function1;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnChanged", "()Lkotlin/jvm/functions/Function1;", "currentScope", "currentScopeReads", "Landroidx/collection/MutableObjectIntMap;", "currentToken", "", "valueToScopes", "Landroidx/compose/runtime/collection/ScopeMap;", "Landroidx/collection/MutableScatterMap;", "scopeToValues", "Landroidx/collection/MutableScatterMap;", "invalidated", "Landroidx/collection/MutableScatterSet;", "statesToReread", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/DerivedState;", "derivedStateObserver", "Landroidx/compose/runtime/DerivedStateObserver;", "getDerivedStateObserver", "()Landroidx/compose/runtime/DerivedStateObserver;", "deriveStateScopeCount", "dependencyToDerivedStates", "recordedDerivedStateValues", "Ljava/util/HashMap;", "Lkotlin/collections/HashMap;", "recordRead", "value", "recordedValues", "observe", "scope", "readObserver", "block", "Lkotlin/Function0;", "clearObsoleteStateReads", "clearScopeObservations", "removeScopeIf", "predicate", "Lkotlin/ParameterName;", "name", "", "hasScopeObservations", "removeObservation", "clear", "recordInvalidation", "changes", "", "rereadDerivedState", "derivedState", "notifyInvalidatedScopes", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u0001B\u001b\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010'\u001a\u00020\u00042\u0006\u0010(\u001a\u00020\u0001J.\u0010'\u001a\u00020\u00042\u0006\u0010(\u001a\u00020\u00012\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\t\u001a\u00020\u00012\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00010\u000bH\u0002J7\u0010*\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u00012\u0014\b\b\u0010,\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u00032\u000e\b\b\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00040.H\u0086\bJ\u0010\u0010/\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0001H\u0002J\u000e\u00100\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0001J)\u00101\u001a\u00020\u00042!\u00102\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b3\u0012\b\b4\u0012\u0004\b\b(+\u0012\u0004\u0012\u00020\u001d0\u0003J\u0006\u00105\u001a\u00020\u001dJ\u0018\u00106\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u00012\u0006\u0010(\u001a\u00020\u0001H\u0002J\u0006\u00107\u001a\u00020\u0004J\u0014\u00108\u001a\u00020\u001d2\f\u00109\u001a\b\u0012\u0004\u0012\u00020\u00010:J\u0012\u0010;\u001a\u00020\u00042\n\u0010<\u001a\u0006\u0012\u0002\b\u00030\u0017J\u0006\u0010=\u001a\u00020\u0004R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0010\u0010\t\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R \u0010\u0011\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u000b0\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00010\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0015\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0018\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u001a\u0010\u001c\u001a\u00020\u001dX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R\u000e\u0010\"\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010#\u001a\u0012\u0012\u0004\u0012\u00020\u0001\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R6\u0010$\u001a*\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u00010%j\u0014\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u0001`&X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;", "", "onChanged", "Lkotlin/Function1;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnChanged", "()Lkotlin/jvm/functions/Function1;", "currentScope", "currentScopeReads", "Landroidx/collection/MutableObjectIntMap;", "currentToken", "", "valueToScopes", "Landroidx/compose/runtime/collection/ScopeMap;", "Landroidx/collection/MutableScatterMap;", "scopeToValues", "Landroidx/collection/MutableScatterMap;", "invalidated", "Landroidx/collection/MutableScatterSet;", "statesToReread", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/DerivedState;", "derivedStateObserver", "Landroidx/compose/runtime/DerivedStateObserver;", "getDerivedStateObserver", "()Landroidx/compose/runtime/DerivedStateObserver;", "readingDerivedStates", "", "getReadingDerivedStates", "()Z", "setReadingDerivedStates", "(Z)V", "deriveStateScopeCount", "dependencyToDerivedStates", "recordedDerivedStateValues", "Ljava/util/HashMap;", "Lkotlin/collections/HashMap;", "recordRead", "value", "recordedValues", "observe", "scope", "readObserver", "block", "Lkotlin/Function0;", "clearObsoleteStateReads", "clearScopeObservations", "removeScopeIf", "predicate", "Lkotlin/ParameterName;", "name", "hasScopeObservations", "removeObservation", "clear", "recordInvalidation", "changes", "", "rereadDerivedState", "derivedState", "notifyInvalidatedScopes", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class ObservedScopeMap {
         private Object currentScope;
         private MutableObjectIntMap<Object> currentScopeReads;
         private int deriveStateScopeCount;
         private final Function1<Object, Unit> onChanged;
+        private boolean readingDerivedStates;
         private int currentToken = -1;
-        private final MutableScatterMap<Object, Object> valueToScopes = ScopeMap.m4699constructorimpl$default(null, 1, null);
+        private final MutableScatterMap<Object, Object> valueToScopes = ScopeMap.m4778constructorimpl$default(null, 1, null);
         private final MutableScatterMap<Object, MutableObjectIntMap<Object>> scopeToValues = new MutableScatterMap<>(0, 1, null);
         private final MutableScatterSet<Object> invalidated = new MutableScatterSet<>(0, 1, null);
         private final MutableVector<DerivedState<?>> statesToReread = new MutableVector<>(new DerivedState[16], 0);
@@ -347,7 +493,7 @@ public final class SnapshotStateObserver {
                 SnapshotStateObserver.ObservedScopeMap.this.deriveStateScopeCount = i - 1;
             }
         };
-        private final MutableScatterMap<Object, Object> dependencyToDerivedStates = ScopeMap.m4699constructorimpl$default(null, 1, null);
+        private final MutableScatterMap<Object, Object> dependencyToDerivedStates = ScopeMap.m4778constructorimpl$default(null, 1, null);
         private final HashMap<DerivedState<?>, Object> recordedDerivedStateValues = new HashMap<>();
 
         public ObservedScopeMap(Function1<Object, Unit> function1) {
@@ -360,6 +506,14 @@ public final class SnapshotStateObserver {
 
         public final DerivedStateObserver getDerivedStateObserver() {
             return this.derivedStateObserver;
+        }
+
+        public final boolean getReadingDerivedStates() {
+            return this.readingDerivedStates;
+        }
+
+        public final void setReadingDerivedStates(boolean z) {
+            this.readingDerivedStates = z;
         }
 
         public final void recordRead(Object obj) {
@@ -393,7 +547,7 @@ public final class SnapshotStateObserver {
                 this.recordedDerivedStateValues.put(obj, currentRecord.getCurrentValue());
                 ObjectIntMap<StateObject> dependencies = currentRecord.getDependencies();
                 MutableScatterMap<Object, Object> mutableScatterMap = this.dependencyToDerivedStates;
-                ScopeMap.m4708removeScopeimpl(mutableScatterMap, obj);
+                ScopeMap.m4787removeScopeimpl(mutableScatterMap, obj);
                 Object[] objArr = dependencies.keys;
                 long[] jArr = dependencies.metadata;
                 int length = jArr.length - 2;
@@ -410,9 +564,9 @@ public final class SnapshotStateObserver {
                                     StateObject stateObject = (StateObject) objArr[(i6 << 3) + i8];
                                     if (stateObject instanceof StateObjectImpl) {
                                         ReaderKind.Companion companion = ReaderKind.Companion;
-                                        ((StateObjectImpl) stateObject).m4757recordReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(i4));
+                                        ((StateObjectImpl) stateObject).m4885recordReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(i4));
                                     }
-                                    ScopeMap.m4693addimpl(mutableScatterMap, stateObject, obj);
+                                    ScopeMap.m4772addimpl(mutableScatterMap, stateObject, obj);
                                 } else {
                                     i4 = i5;
                                 }
@@ -441,26 +595,56 @@ public final class SnapshotStateObserver {
             if (put == i3) {
                 if (obj instanceof StateObjectImpl) {
                     ReaderKind.Companion companion2 = ReaderKind.Companion;
-                    ((StateObjectImpl) obj).m4757recordReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(i2));
+                    ((StateObjectImpl) obj).m4885recordReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(i2));
                 }
-                ScopeMap.m4693addimpl(this.valueToScopes, obj, obj2);
+                ScopeMap.m4772addimpl(this.valueToScopes, obj, obj2);
             }
         }
 
         public final void observe(Object obj, Function1<Object, Unit> function1, Function0<Unit> function0) {
+            SnapshotThreadLocal snapshotThreadLocal;
+            TransparentObserverMutableSnapshot transparentObserverMutableSnapshot;
             Object obj2 = this.currentScope;
-            MutableObjectIntMap<Object> mutableObjectIntMap = this.currentScopeReads;
+            MutableObjectIntMap mutableObjectIntMap = this.currentScopeReads;
             int i = this.currentToken;
             this.currentScope = obj;
-            this.currentScopeReads = this.scopeToValues.get(obj);
+            this.currentScopeReads = (MutableObjectIntMap) this.scopeToValues.get(obj);
             if (this.currentToken == -1) {
                 this.currentToken = Long.hashCode(SnapshotKt.currentSnapshot().getSnapshotId());
             }
-            DerivedStateObserver derivedStateObserver = this.derivedStateObserver;
+            DerivedStateObserver derivedStateObserver = getDerivedStateObserver();
             MutableVector<DerivedStateObserver> derivedStateObservers = SnapshotStateKt.derivedStateObservers();
             try {
                 derivedStateObservers.add(derivedStateObserver);
-                Snapshot.Companion.observe(function1, null, function0);
+                Snapshot.Companion companion = Snapshot.Companion;
+                if (function1 != null) {
+                    snapshotThreadLocal = SnapshotKt.threadSnapshot;
+                    Snapshot snapshot = (Snapshot) snapshotThreadLocal.get();
+                    if ((snapshot instanceof TransparentObserverMutableSnapshot) && ((TransparentObserverMutableSnapshot) snapshot).getThreadId$runtime() == Thread_jvmKt.currentThreadId()) {
+                        Function1<Object, Unit> readObserver = ((TransparentObserverMutableSnapshot) snapshot).getReadObserver();
+                        Function1<Object, Unit> writeObserver$runtime = ((TransparentObserverMutableSnapshot) snapshot).getWriteObserver$runtime();
+                        ((TransparentObserverMutableSnapshot) snapshot).setReadObserver$runtime(SnapshotKt.mergedReadObserver$default(function1, readObserver, false, 4, null));
+                        ((TransparentObserverMutableSnapshot) snapshot).setWriteObserver$runtime(SnapshotKt.mergedWriteObserver(null, writeObserver$runtime));
+                        function0.invoke();
+                        ((TransparentObserverMutableSnapshot) snapshot).setReadObserver$runtime(readObserver);
+                        ((TransparentObserverMutableSnapshot) snapshot).setWriteObserver$runtime(writeObserver$runtime);
+                    } else {
+                        if (snapshot != null && !(snapshot instanceof MutableSnapshot)) {
+                            transparentObserverMutableSnapshot = snapshot.takeNestedSnapshot(function1);
+                            Snapshot makeCurrent = transparentObserverMutableSnapshot.makeCurrent();
+                            function0.invoke();
+                            transparentObserverMutableSnapshot.restoreCurrent(makeCurrent);
+                            transparentObserverMutableSnapshot.dispose();
+                        }
+                        transparentObserverMutableSnapshot = new TransparentObserverMutableSnapshot(snapshot instanceof MutableSnapshot ? (MutableSnapshot) snapshot : null, function1, null, true, false);
+                        Snapshot makeCurrent2 = transparentObserverMutableSnapshot.makeCurrent();
+                        function0.invoke();
+                        transparentObserverMutableSnapshot.restoreCurrent(makeCurrent2);
+                        transparentObserverMutableSnapshot.dispose();
+                    }
+                } else {
+                    function0.invoke();
+                }
                 derivedStateObservers.removeAt(derivedStateObservers.getSize() - 1);
                 Object obj3 = this.currentScope;
                 Intrinsics.checkNotNull(obj3);
@@ -474,7 +658,8 @@ public final class SnapshotStateObserver {
             }
         }
 
-        private final void clearObsoleteStateReads(Object obj) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public final void clearObsoleteStateReads(Object obj) {
             int i = this.currentToken;
             MutableObjectIntMap<Object> mutableObjectIntMap = this.currentScopeReads;
             if (mutableObjectIntMap == null) {
@@ -672,345 +857,325 @@ public final class SnapshotStateObserver {
         }
 
         private final void removeObservation(Object obj, Object obj2) {
-            ScopeMap.m4706removeimpl(this.valueToScopes, obj2, obj);
-            if (!(obj2 instanceof DerivedState) || ScopeMap.m4700containsimpl(this.valueToScopes, obj2)) {
+            ScopeMap.m4785removeimpl(this.valueToScopes, obj2, obj);
+            if (!(obj2 instanceof DerivedState) || ScopeMap.m4779containsimpl(this.valueToScopes, obj2)) {
                 return;
             }
-            ScopeMap.m4708removeScopeimpl(this.dependencyToDerivedStates, obj2);
+            ScopeMap.m4787removeScopeimpl(this.dependencyToDerivedStates, obj2);
             this.recordedDerivedStateValues.remove(obj2);
         }
 
         public final void clear() {
-            ScopeMap.m4697clearimpl(this.valueToScopes);
+            ScopeMap.m4776clearimpl(this.valueToScopes);
             this.scopeToValues.clear();
-            ScopeMap.m4697clearimpl(this.dependencyToDerivedStates);
+            ScopeMap.m4776clearimpl(this.dependencyToDerivedStates);
             this.recordedDerivedStateValues.clear();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:231:0x051c  */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r12v0 */
+        /* JADX WARN: Type inference failed for: r12v1, types: [int] */
+        /* JADX WARN: Type inference failed for: r8v6 */
+        /* JADX WARN: Type inference failed for: r8v7, types: [int] */
         public final boolean recordInvalidation(Set<? extends Object> set) {
             boolean z;
             Iterator it;
             MutableScatterMap<Object, Object> mutableScatterMap;
-            Object obj;
-            int i;
-            Object obj2;
-            long[] jArr;
+            String str;
+            boolean z2;
+            boolean z3;
             Object[] objArr;
             Iterator it2;
             MutableScatterMap<Object, Object> mutableScatterMap2;
-            long[] jArr2;
+            String str2;
+            int i;
             Object[] objArr2;
             long j;
-            boolean z2;
+            long[] jArr;
+            long[] jArr2;
             long[] jArr3;
             Object[] objArr3;
-            String str;
             int i2;
             long[] jArr4;
             Object[] objArr4;
-            String str2;
             int i3;
             int i4;
-            long j2;
             int i5;
+            long j2;
             int i6;
-            Object obj3;
-            Object obj4;
-            boolean z3;
-            String str3;
-            Object obj5;
             int i7;
-            long j3;
             int i8;
             int i9;
+            int i10;
+            long j3;
+            int i11;
             MutableScatterMap<Object, Object> mutableScatterMap3 = this.dependencyToDerivedStates;
             HashMap<DerivedState<?>, Object> hashMap = this.recordedDerivedStateValues;
             MutableScatterMap<Object, Object> mutableScatterMap4 = this.valueToScopes;
             MutableScatterSet<Object> mutableScatterSet = this.invalidated;
-            String str4 = "null cannot be cast to non-null type androidx.compose.runtime.DerivedState<kotlin.Any?>";
-            int i10 = 8;
+            String str3 = "null cannot be cast to non-null type androidx.compose.runtime.DerivedState<kotlin.Any?>";
+            int i12 = 8;
             if (set instanceof ScatterSetWrapper) {
                 ScatterSet set$runtime = ((ScatterSetWrapper) set).getSet$runtime();
                 Object[] objArr5 = set$runtime.elements;
                 long[] jArr5 = set$runtime.metadata;
                 int length = jArr5.length - 2;
                 if (length >= 0) {
-                    int i11 = 0;
+                    int i13 = 0;
                     z = false;
                     while (true) {
-                        long j4 = jArr5[i11];
+                        long j4 = jArr5[i13];
+                        int i14 = length;
                         if ((((~j4) << 7) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
-                            int i12 = 8 - ((~(i11 - length)) >>> 31);
-                            int i13 = 0;
-                            while (i13 < i12) {
+                            int i15 = 8 - ((~(i13 - i14)) >>> 31);
+                            int i16 = 0;
+                            while (i16 < i15) {
                                 if ((j4 & 255) < 128) {
-                                    int i14 = i10;
-                                    Object obj6 = objArr5[(i11 << 3) + i13];
-                                    jArr4 = jArr5;
-                                    if (obj6 instanceof StateObjectImpl) {
+                                    Object obj = objArr5[(i13 << 3) + i16];
+                                    int i17 = i12;
+                                    if (obj instanceof StateObjectImpl) {
                                         ReaderKind.Companion companion = ReaderKind.Companion;
-                                        objArr4 = objArr5;
-                                        if (!((StateObjectImpl) obj6).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(2))) {
-                                            str2 = str4;
-                                            i3 = length;
-                                            i4 = i11;
+                                        if (!((StateObjectImpl) obj).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(2))) {
+                                            jArr4 = jArr5;
+                                            objArr4 = objArr5;
+                                            i3 = i15;
+                                            i4 = i16;
+                                            i5 = i13;
                                             j2 = j4;
-                                            i5 = i12;
                                             i6 = 8;
                                         }
-                                    } else {
-                                        objArr4 = objArr5;
                                     }
-                                    if (ScopeMap.m4700containsimpl(mutableScatterMap3, obj6)) {
-                                        Object obj7 = mutableScatterMap3.get(obj6);
-                                        if (obj7 == null) {
-                                            str2 = str4;
-                                            obj4 = obj6;
-                                            i3 = length;
-                                            i4 = i11;
-                                            j2 = j4;
-                                            i5 = i12;
-                                        } else if (obj7 instanceof MutableScatterSet) {
-                                            MutableScatterSet mutableScatterSet2 = (MutableScatterSet) obj7;
-                                            Object[] objArr6 = mutableScatterSet2.elements;
-                                            long[] jArr6 = mutableScatterSet2.metadata;
-                                            int length2 = jArr6.length - 2;
-                                            if (length2 >= 0) {
-                                                j2 = j4;
-                                                int i15 = 0;
-                                                z3 = z;
-                                                while (true) {
-                                                    long j5 = jArr6[i15];
-                                                    i3 = length;
-                                                    i4 = i11;
-                                                    if ((((~j5) << 7) & j5 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                        int i16 = 8 - ((~(i15 - length2)) >>> 31);
-                                                        int i17 = 0;
-                                                        while (i17 < i16) {
-                                                            if ((j5 & 255) < 128) {
-                                                                i7 = i17;
-                                                                DerivedState<?> derivedState = (DerivedState) objArr6[(i15 << 3) + i17];
-                                                                Intrinsics.checkNotNull(derivedState, str4);
-                                                                j3 = j5;
-                                                                Object obj8 = hashMap.get(derivedState);
-                                                                SnapshotMutationPolicy<?> policy = derivedState.getPolicy();
-                                                                if (policy == null) {
-                                                                    policy = SnapshotStateKt.structuralEqualityPolicy();
-                                                                }
-                                                                boolean z4 = z3;
-                                                                if (policy.equivalent(derivedState.getCurrentRecord().getCurrentValue(), obj8)) {
-                                                                    str3 = str4;
-                                                                    obj5 = obj6;
-                                                                    i8 = i12;
-                                                                    Boolean.valueOf(this.statesToReread.add(derivedState));
-                                                                    z3 = z4;
-                                                                } else {
-                                                                    Object obj9 = mutableScatterMap4.get(derivedState);
-                                                                    if (obj9 == null) {
-                                                                        str3 = str4;
-                                                                        obj5 = obj6;
-                                                                        i8 = i12;
-                                                                    } else if (obj9 instanceof MutableScatterSet) {
-                                                                        MutableScatterSet mutableScatterSet3 = (MutableScatterSet) obj9;
-                                                                        Object[] objArr7 = mutableScatterSet3.elements;
-                                                                        long[] jArr7 = mutableScatterSet3.metadata;
-                                                                        int length3 = jArr7.length - 2;
-                                                                        if (length3 >= 0) {
-                                                                            i8 = i12;
-                                                                            int i18 = 0;
-                                                                            while (true) {
-                                                                                long j6 = jArr7[i18];
-                                                                                str3 = str4;
-                                                                                obj5 = obj6;
-                                                                                if ((((~j6) << 7) & j6 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                                                    int i19 = 8 - ((~(i18 - length3)) >>> 31);
-                                                                                    int i20 = 0;
-                                                                                    while (i20 < i19) {
-                                                                                        if ((j6 & 255) < 128) {
-                                                                                            i9 = i20;
-                                                                                            mutableScatterSet.add(objArr7[(i18 << 3) + i20]);
-                                                                                            z4 = true;
-                                                                                        } else {
-                                                                                            i9 = i20;
-                                                                                        }
-                                                                                        j6 >>= i14;
-                                                                                        i20 = i9 + 1;
-                                                                                    }
-                                                                                    if (i19 != i14) {
-                                                                                        break;
-                                                                                    }
-                                                                                }
-                                                                                if (i18 == length3) {
-                                                                                    break;
-                                                                                }
-                                                                                i18++;
-                                                                                str4 = str3;
-                                                                                obj6 = obj5;
-                                                                                i14 = 8;
-                                                                            }
-                                                                        } else {
-                                                                            str3 = str4;
-                                                                            obj5 = obj6;
-                                                                            i8 = i12;
-                                                                        }
-                                                                        z4 = z4;
-                                                                    } else {
-                                                                        str3 = str4;
-                                                                        obj5 = obj6;
-                                                                        i8 = i12;
-                                                                        mutableScatterSet.add(obj9);
-                                                                        z3 = true;
-                                                                        Unit unit = Unit.INSTANCE;
+                                    if (this.readingDerivedStates || !ScopeMap.m4779containsimpl(mutableScatterMap3, obj)) {
+                                        jArr4 = jArr5;
+                                        objArr4 = objArr5;
+                                        i3 = i15;
+                                        i4 = i16;
+                                        i5 = i13;
+                                        j2 = j4;
+                                    } else {
+                                        this.readingDerivedStates = true;
+                                        try {
+                                            Object obj2 = mutableScatterMap3.get(obj);
+                                            if (obj2 == null) {
+                                                jArr4 = jArr5;
+                                                objArr4 = objArr5;
+                                            } else if (obj2 instanceof MutableScatterSet) {
+                                                MutableScatterSet mutableScatterSet2 = (MutableScatterSet) obj2;
+                                                Object[] objArr6 = mutableScatterSet2.elements;
+                                                long[] jArr6 = mutableScatterSet2.metadata;
+                                                jArr4 = jArr5;
+                                                int length2 = jArr6.length - 2;
+                                                objArr4 = objArr5;
+                                                if (length2 >= 0) {
+                                                    j2 = j4;
+                                                    int i18 = 0;
+                                                    while (true) {
+                                                        long j5 = jArr6[i18];
+                                                        long[] jArr7 = jArr6;
+                                                        Object[] objArr7 = objArr6;
+                                                        if ((((~j5) << 7) & j5 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                            int i19 = 8 - ((~(i18 - length2)) >>> 31);
+                                                            int i20 = 0;
+                                                            while (i20 < i19) {
+                                                                if ((j5 & 255) < 128) {
+                                                                    i7 = i20;
+                                                                    DerivedState<?> derivedState = (DerivedState) objArr7[(i18 << 3) + i20];
+                                                                    Intrinsics.checkNotNull(derivedState, "null cannot be cast to non-null type androidx.compose.runtime.DerivedState<kotlin.Any?>");
+                                                                    i9 = i16;
+                                                                    Object obj3 = hashMap.get(derivedState);
+                                                                    SnapshotMutationPolicy<?> policy = derivedState.getPolicy();
+                                                                    if (policy == null) {
+                                                                        policy = SnapshotStateKt.structuralEqualityPolicy();
                                                                     }
-                                                                    z3 = z4;
-                                                                    Unit unit2 = Unit.INSTANCE;
+                                                                    j3 = j5;
+                                                                    if (policy.equivalent(derivedState.getCurrentRecord().getCurrentValue(), obj3)) {
+                                                                        i8 = i15;
+                                                                        i10 = i13;
+                                                                        Boolean.valueOf(this.statesToReread.add(derivedState));
+                                                                    } else {
+                                                                        Object obj4 = mutableScatterMap4.get(derivedState);
+                                                                        if (obj4 != null) {
+                                                                            if (obj4 instanceof MutableScatterSet) {
+                                                                                MutableScatterSet mutableScatterSet3 = (MutableScatterSet) obj4;
+                                                                                Object[] objArr8 = mutableScatterSet3.elements;
+                                                                                long[] jArr8 = mutableScatterSet3.metadata;
+                                                                                int length3 = jArr8.length - 2;
+                                                                                if (length3 >= 0) {
+                                                                                    i10 = i13;
+                                                                                    int i21 = 0;
+                                                                                    while (true) {
+                                                                                        long j6 = jArr8[i21];
+                                                                                        long[] jArr9 = jArr8;
+                                                                                        i8 = i15;
+                                                                                        if ((((~j6) << 7) & j6 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                                                            int i22 = 8 - ((~(i21 - length3)) >>> 31);
+                                                                                            int i23 = 0;
+                                                                                            while (i23 < i22) {
+                                                                                                if ((j6 & 255) < 128) {
+                                                                                                    i11 = i23;
+                                                                                                    mutableScatterSet.add(objArr8[(i21 << 3) + i23]);
+                                                                                                    z = true;
+                                                                                                } else {
+                                                                                                    i11 = i23;
+                                                                                                }
+                                                                                                j6 >>= i17;
+                                                                                                i23 = i11 + 1;
+                                                                                            }
+                                                                                            if (i22 != i17) {
+                                                                                                break;
+                                                                                            }
+                                                                                        }
+                                                                                        if (i21 == length3) {
+                                                                                            break;
+                                                                                        }
+                                                                                        i21++;
+                                                                                        i15 = i8;
+                                                                                        jArr8 = jArr9;
+                                                                                        i17 = 8;
+                                                                                    }
+                                                                                }
+                                                                            } else {
+                                                                                i8 = i15;
+                                                                                i10 = i13;
+                                                                                mutableScatterSet.add(obj4);
+                                                                                z = true;
+                                                                            }
+                                                                            Unit unit = Unit.INSTANCE;
+                                                                        }
+                                                                        i8 = i15;
+                                                                        i10 = i13;
+                                                                        Unit unit2 = Unit.INSTANCE;
+                                                                    }
+                                                                } else {
+                                                                    i7 = i20;
+                                                                    i8 = i15;
+                                                                    i9 = i16;
+                                                                    i10 = i13;
+                                                                    j3 = j5;
                                                                 }
-                                                            } else {
-                                                                str3 = str4;
-                                                                obj5 = obj6;
-                                                                i7 = i17;
-                                                                j3 = j5;
-                                                                i8 = i12;
+                                                                j5 = j3 >> 8;
+                                                                i20 = i7 + 1;
+                                                                i17 = 8;
+                                                                i16 = i9;
+                                                                i13 = i10;
+                                                                i15 = i8;
                                                             }
-                                                            j5 = j3 >> 8;
-                                                            i17 = i7 + 1;
-                                                            i14 = 8;
-                                                            i12 = i8;
-                                                            str4 = str3;
-                                                            obj6 = obj5;
+                                                            i3 = i15;
+                                                            i4 = i16;
+                                                            i5 = i13;
+                                                            if (i19 != i17) {
+                                                                break;
+                                                            }
+                                                        } else {
+                                                            i3 = i15;
+                                                            i4 = i16;
+                                                            i5 = i13;
                                                         }
-                                                        str2 = str4;
-                                                        obj4 = obj6;
-                                                        i5 = i12;
-                                                        if (i16 != i14) {
+                                                        if (i18 == length2) {
                                                             break;
                                                         }
-                                                    } else {
-                                                        str2 = str4;
-                                                        obj4 = obj6;
-                                                        i5 = i12;
+                                                        i18++;
+                                                        objArr6 = objArr7;
+                                                        jArr6 = jArr7;
+                                                        i16 = i4;
+                                                        i13 = i5;
+                                                        i15 = i3;
+                                                        i17 = 8;
                                                     }
-                                                    if (i15 == length2) {
-                                                        z = z3;
-                                                        break;
-                                                    }
-                                                    i15++;
-                                                    length = i3;
-                                                    i11 = i4;
-                                                    i12 = i5;
-                                                    str4 = str2;
-                                                    obj6 = obj4;
-                                                    i14 = 8;
                                                 }
                                             } else {
-                                                str2 = str4;
-                                                obj4 = obj6;
-                                                i3 = length;
-                                                i4 = i11;
+                                                jArr4 = jArr5;
+                                                objArr4 = objArr5;
+                                                i3 = i15;
+                                                i4 = i16;
+                                                i5 = i13;
                                                 j2 = j4;
-                                                i5 = i12;
-                                            }
-                                            z3 = z;
-                                            z = z3;
-                                        } else {
-                                            str2 = str4;
-                                            obj4 = obj6;
-                                            i3 = length;
-                                            i4 = i11;
-                                            j2 = j4;
-                                            i5 = i12;
-                                            DerivedState<?> derivedState2 = (DerivedState) obj7;
-                                            Object obj10 = hashMap.get(derivedState2);
-                                            SnapshotMutationPolicy<?> policy2 = derivedState2.getPolicy();
-                                            if (policy2 == null) {
-                                                policy2 = SnapshotStateKt.structuralEqualityPolicy();
-                                            }
-                                            if (policy2.equivalent(derivedState2.getCurrentRecord().getCurrentValue(), obj10)) {
-                                                Boolean.valueOf(this.statesToReread.add(derivedState2));
-                                            } else {
-                                                Object obj11 = mutableScatterMap4.get(derivedState2);
-                                                if (obj11 != null) {
-                                                    if (obj11 instanceof MutableScatterSet) {
-                                                        MutableScatterSet mutableScatterSet4 = (MutableScatterSet) obj11;
-                                                        Object[] objArr8 = mutableScatterSet4.elements;
-                                                        long[] jArr8 = mutableScatterSet4.metadata;
-                                                        int length4 = jArr8.length - 2;
-                                                        if (length4 >= 0) {
-                                                            int i21 = 0;
-                                                            while (true) {
-                                                                long j7 = jArr8[i21];
-                                                                if ((((~j7) << 7) & j7 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                                    int i22 = 8 - ((~(i21 - length4)) >>> 31);
-                                                                    for (int i23 = 0; i23 < i22; i23++) {
-                                                                        if ((j7 & 255) < 128) {
-                                                                            mutableScatterSet.add(objArr8[(i21 << 3) + i23]);
-                                                                            z = true;
+                                                DerivedState<?> derivedState2 = (DerivedState) obj2;
+                                                Object obj5 = hashMap.get(derivedState2);
+                                                SnapshotMutationPolicy<?> policy2 = derivedState2.getPolicy();
+                                                if (policy2 == null) {
+                                                    policy2 = SnapshotStateKt.structuralEqualityPolicy();
+                                                }
+                                                if (policy2.equivalent(derivedState2.getCurrentRecord().getCurrentValue(), obj5)) {
+                                                    Boolean.valueOf(this.statesToReread.add(derivedState2));
+                                                } else {
+                                                    Object obj6 = mutableScatterMap4.get(derivedState2);
+                                                    if (obj6 != null) {
+                                                        if (obj6 instanceof MutableScatterSet) {
+                                                            MutableScatterSet mutableScatterSet4 = (MutableScatterSet) obj6;
+                                                            Object[] objArr9 = mutableScatterSet4.elements;
+                                                            long[] jArr10 = mutableScatterSet4.metadata;
+                                                            int length4 = jArr10.length - 2;
+                                                            if (length4 >= 0) {
+                                                                int i24 = 0;
+                                                                while (true) {
+                                                                    long j7 = jArr10[i24];
+                                                                    if ((((~j7) << 7) & j7 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                                        int i25 = 8 - ((~(i24 - length4)) >>> 31);
+                                                                        for (int i26 = 0; i26 < i25; i26++) {
+                                                                            if ((j7 & 255) < 128) {
+                                                                                mutableScatterSet.add(objArr9[(i24 << 3) + i26]);
+                                                                                z = true;
+                                                                            }
+                                                                            j7 >>= 8;
                                                                         }
-                                                                        j7 >>= 8;
+                                                                        if (i25 != 8) {
+                                                                            break;
+                                                                        }
                                                                     }
-                                                                    if (i22 != 8) {
+                                                                    if (i24 == length4) {
                                                                         break;
                                                                     }
+                                                                    i24++;
                                                                 }
-                                                                if (i21 == length4) {
-                                                                    break;
-                                                                }
-                                                                i21++;
                                                             }
+                                                        } else {
+                                                            mutableScatterSet.add(obj6);
+                                                            z = true;
                                                         }
-                                                    } else {
-                                                        mutableScatterSet.add(obj11);
-                                                        z = true;
                                                     }
+                                                    Unit unit3 = Unit.INSTANCE;
                                                 }
-                                                Unit unit3 = Unit.INSTANCE;
                                             }
+                                            i3 = i15;
+                                            i4 = i16;
+                                            i5 = i13;
+                                            j2 = j4;
+                                        } finally {
                                         }
-                                        obj3 = obj4;
-                                    } else {
-                                        str2 = str4;
-                                        i3 = length;
-                                        i4 = i11;
-                                        j2 = j4;
-                                        i5 = i12;
-                                        obj3 = obj6;
                                     }
-                                    Object obj12 = mutableScatterMap4.get(obj3);
-                                    if (obj12 != null) {
-                                        if (obj12 instanceof MutableScatterSet) {
-                                            MutableScatterSet mutableScatterSet5 = (MutableScatterSet) obj12;
-                                            Object[] objArr9 = mutableScatterSet5.elements;
-                                            long[] jArr9 = mutableScatterSet5.metadata;
-                                            int length5 = jArr9.length - 2;
+                                    Object obj7 = mutableScatterMap4.get(obj);
+                                    if (obj7 != null) {
+                                        if (obj7 instanceof MutableScatterSet) {
+                                            MutableScatterSet mutableScatterSet5 = (MutableScatterSet) obj7;
+                                            Object[] objArr10 = mutableScatterSet5.elements;
+                                            long[] jArr11 = mutableScatterSet5.metadata;
+                                            int length5 = jArr11.length - 2;
                                             if (length5 >= 0) {
-                                                int i24 = 0;
+                                                int i27 = 0;
                                                 while (true) {
-                                                    long j8 = jArr9[i24];
+                                                    long j8 = jArr11[i27];
                                                     if ((((~j8) << 7) & j8 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                        int i25 = 8 - ((~(i24 - length5)) >>> 31);
-                                                        for (int i26 = 0; i26 < i25; i26++) {
+                                                        int i28 = 8 - ((~(i27 - length5)) >>> 31);
+                                                        for (int i29 = 0; i29 < i28; i29++) {
                                                             if ((j8 & 255) < 128) {
-                                                                mutableScatterSet.add(objArr9[(i24 << 3) + i26]);
+                                                                mutableScatterSet.add(objArr10[(i27 << 3) + i29]);
                                                                 z = true;
                                                             }
                                                             j8 >>= 8;
                                                         }
-                                                        if (i25 != 8) {
+                                                        if (i28 != 8) {
                                                             break;
                                                         }
                                                     }
-                                                    if (i24 == length5) {
+                                                    if (i27 == length5) {
                                                         break;
                                                     }
-                                                    i24++;
+                                                    i27++;
                                                 }
                                             }
                                         } else {
-                                            mutableScatterSet.add(obj12);
+                                            mutableScatterSet.add(obj7);
                                             z = true;
                                         }
                                     }
@@ -1018,280 +1183,314 @@ public final class SnapshotStateObserver {
                                 } else {
                                     jArr4 = jArr5;
                                     objArr4 = objArr5;
-                                    str2 = str4;
-                                    i3 = length;
-                                    i4 = i11;
+                                    i3 = i15;
+                                    i4 = i16;
+                                    i5 = i13;
                                     j2 = j4;
-                                    i5 = i12;
-                                    i6 = i10;
+                                    i6 = i12;
                                 }
                                 j4 = j2 >> i6;
-                                i13++;
-                                i10 = i6;
+                                i16 = i4 + 1;
+                                i12 = i6;
                                 jArr5 = jArr4;
                                 objArr5 = objArr4;
-                                length = i3;
-                                i11 = i4;
-                                i12 = i5;
-                                str4 = str2;
+                                i13 = i5;
+                                i15 = i3;
                             }
                             jArr3 = jArr5;
                             objArr3 = objArr5;
-                            str = str4;
-                            int i27 = length;
-                            int i28 = i11;
-                            if (i12 != i10) {
+                            int i30 = i13;
+                            if (i15 != i12) {
                                 break;
                             }
-                            length = i27;
-                            i2 = i28;
+                            i2 = i30;
                         } else {
                             jArr3 = jArr5;
                             objArr3 = objArr5;
-                            str = str4;
-                            i2 = i11;
+                            i2 = i13;
                         }
+                        length = i14;
                         if (i2 == length) {
                             break;
                         }
-                        i11 = i2 + 1;
+                        i13 = i2 + 1;
                         jArr5 = jArr3;
                         objArr5 = objArr3;
-                        str4 = str;
-                        i10 = 8;
+                        i12 = 8;
                     }
                 } else {
                     z = false;
                 }
             } else {
                 Iterator it3 = set.iterator();
-                z = false;
+                boolean z4 = false;
                 while (it3.hasNext()) {
                     Object next = it3.next();
                     if (next instanceof StateObjectImpl) {
                         ReaderKind.Companion companion2 = ReaderKind.Companion;
-                        if (!((StateObjectImpl) next).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(2))) {
+                        if (!((StateObjectImpl) next).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(2))) {
                             it = it3;
                             mutableScatterMap = mutableScatterMap3;
+                            str = str3;
                             it3 = it;
                             mutableScatterMap3 = mutableScatterMap;
+                            str3 = str;
                         }
                     }
-                    if (ScopeMap.m4700containsimpl(mutableScatterMap3, next) && (obj2 = mutableScatterMap3.get(next)) != null) {
-                        if (obj2 instanceof MutableScatterSet) {
-                            MutableScatterSet mutableScatterSet6 = (MutableScatterSet) obj2;
-                            Object[] objArr10 = mutableScatterSet6.elements;
-                            long[] jArr10 = mutableScatterSet6.metadata;
-                            int length6 = jArr10.length - 2;
-                            if (length6 >= 0) {
-                                int i29 = 0;
-                                while (true) {
-                                    long j9 = jArr10[i29];
-                                    if ((((~j9) << 7) & j9 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                        int i30 = 8 - ((~(i29 - length6)) >>> 31);
+                    if (this.readingDerivedStates || !ScopeMap.m4779containsimpl(mutableScatterMap3, next)) {
+                        it = it3;
+                        mutableScatterMap = mutableScatterMap3;
+                        str = str3;
+                        z2 = false;
+                    } else {
+                        this.readingDerivedStates = true;
+                        try {
+                            Object obj8 = mutableScatterMap3.get(next);
+                            if (obj8 != null) {
+                                if (obj8 instanceof MutableScatterSet) {
+                                    MutableScatterSet mutableScatterSet6 = (MutableScatterSet) obj8;
+                                    Object[] objArr11 = mutableScatterSet6.elements;
+                                    long[] jArr12 = mutableScatterSet6.metadata;
+                                    int length6 = jArr12.length - 2;
+                                    if (length6 >= 0) {
                                         int i31 = 0;
-                                        while (i31 < i30) {
-                                            if ((j9 & 255) < 128) {
-                                                it2 = it3;
-                                                DerivedState<?> derivedState3 = (DerivedState) objArr10[(i29 << 3) + i31];
-                                                mutableScatterMap2 = mutableScatterMap3;
-                                                Intrinsics.checkNotNull(derivedState3, "null cannot be cast to non-null type androidx.compose.runtime.DerivedState<kotlin.Any?>");
-                                                Object obj13 = hashMap.get(derivedState3);
-                                                SnapshotMutationPolicy<?> policy3 = derivedState3.getPolicy();
-                                                if (policy3 == null) {
-                                                    policy3 = SnapshotStateKt.structuralEqualityPolicy();
-                                                }
-                                                jArr2 = jArr10;
-                                                objArr2 = objArr10;
-                                                if (policy3.equivalent(derivedState3.getCurrentRecord().getCurrentValue(), obj13)) {
-                                                    j = j9;
-                                                    Boolean.valueOf(this.statesToReread.add(derivedState3));
-                                                } else {
-                                                    Object obj14 = mutableScatterMap4.get(derivedState3);
-                                                    if (obj14 == null) {
-                                                        j = j9;
-                                                    } else if (obj14 instanceof MutableScatterSet) {
-                                                        MutableScatterSet mutableScatterSet7 = (MutableScatterSet) obj14;
-                                                        Object[] objArr11 = mutableScatterSet7.elements;
-                                                        long[] jArr11 = mutableScatterSet7.metadata;
-                                                        int length7 = jArr11.length - 2;
-                                                        j = j9;
-                                                        if (length7 >= 0) {
-                                                            int i32 = 0;
-                                                            z2 = z;
-                                                            while (true) {
-                                                                long j10 = jArr11[i32];
-                                                                long[] jArr12 = jArr11;
-                                                                Object[] objArr12 = objArr11;
-                                                                if ((((~j10) << 7) & j10 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                                    int i33 = 8 - ((~(i32 - length7)) >>> 31);
-                                                                    for (int i34 = 0; i34 < i33; i34++) {
-                                                                        if ((j10 & 255) < 128) {
-                                                                            mutableScatterSet.add(objArr12[(i32 << 3) + i34]);
-                                                                            z2 = true;
+                                        while (true) {
+                                            long j9 = jArr12[i31];
+                                            long[] jArr13 = jArr12;
+                                            if ((((~j9) << 7) & j9 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                int i32 = 8 - ((~(i31 - length6)) >>> 31);
+                                                int i33 = 0;
+                                                while (i33 < i32) {
+                                                    if ((j9 & 255) < 128) {
+                                                        DerivedState<?> derivedState3 = (DerivedState) objArr11[(i31 << 3) + i33];
+                                                        Intrinsics.checkNotNull(derivedState3, str3);
+                                                        it2 = it3;
+                                                        Object obj9 = hashMap.get(derivedState3);
+                                                        SnapshotMutationPolicy<?> policy3 = derivedState3.getPolicy();
+                                                        if (policy3 == null) {
+                                                            policy3 = SnapshotStateKt.structuralEqualityPolicy();
+                                                        }
+                                                        mutableScatterMap2 = mutableScatterMap3;
+                                                        str2 = str3;
+                                                        if (policy3.equivalent(derivedState3.getCurrentRecord().getCurrentValue(), obj9)) {
+                                                            i = i33;
+                                                            objArr2 = objArr11;
+                                                            j = j9;
+                                                            Boolean.valueOf(this.statesToReread.add(derivedState3));
+                                                        } else {
+                                                            Object obj10 = mutableScatterMap4.get(derivedState3);
+                                                            if (obj10 != null) {
+                                                                if (obj10 instanceof MutableScatterSet) {
+                                                                    MutableScatterSet mutableScatterSet7 = (MutableScatterSet) obj10;
+                                                                    Object[] objArr12 = mutableScatterSet7.elements;
+                                                                    long[] jArr14 = mutableScatterSet7.metadata;
+                                                                    int length7 = jArr14.length - 2;
+                                                                    if (length7 >= 0) {
+                                                                        i = i33;
+                                                                        objArr2 = objArr11;
+                                                                        int i34 = 0;
+                                                                        while (true) {
+                                                                            long j10 = jArr14[i34];
+                                                                            j = j9;
+                                                                            if ((((~j10) << 7) & j10 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                                                int i35 = 8 - ((~(i34 - length7)) >>> 31);
+                                                                                int i36 = 0;
+                                                                                while (i36 < i35) {
+                                                                                    if ((j10 & 255) < 128) {
+                                                                                        jArr2 = jArr14;
+                                                                                        mutableScatterSet.add(objArr12[(i34 << 3) + i36]);
+                                                                                        z4 = true;
+                                                                                    } else {
+                                                                                        jArr2 = jArr14;
+                                                                                    }
+                                                                                    j10 >>= 8;
+                                                                                    i36++;
+                                                                                    jArr14 = jArr2;
+                                                                                }
+                                                                                jArr = jArr14;
+                                                                                if (i35 != 8) {
+                                                                                    break;
+                                                                                }
+                                                                            } else {
+                                                                                jArr = jArr14;
+                                                                            }
+                                                                            if (i34 == length7) {
+                                                                                break;
+                                                                            }
+                                                                            i34++;
+                                                                            j9 = j;
+                                                                            jArr14 = jArr;
                                                                         }
-                                                                        j10 >>= 8;
                                                                     }
-                                                                    if (i33 != 8) {
-                                                                        break;
-                                                                    }
+                                                                } else {
+                                                                    i = i33;
+                                                                    objArr2 = objArr11;
+                                                                    j = j9;
+                                                                    mutableScatterSet.add(obj10);
+                                                                    z4 = true;
                                                                 }
-                                                                if (i32 == length7) {
-                                                                    z = z2;
-                                                                    break;
-                                                                }
-                                                                i32++;
-                                                                objArr11 = objArr12;
-                                                                jArr11 = jArr12;
+                                                                Unit unit4 = Unit.INSTANCE;
                                                             }
+                                                            i = i33;
+                                                            objArr2 = objArr11;
+                                                            j = j9;
+                                                            Unit unit42 = Unit.INSTANCE;
                                                         }
-                                                        z2 = z;
-                                                        z = z2;
                                                     } else {
+                                                        it2 = it3;
+                                                        mutableScatterMap2 = mutableScatterMap3;
+                                                        str2 = str3;
+                                                        i = i33;
+                                                        objArr2 = objArr11;
                                                         j = j9;
-                                                        mutableScatterSet.add(obj14);
-                                                        z = true;
                                                     }
-                                                    Unit unit4 = Unit.INSTANCE;
+                                                    j9 = j >> 8;
+                                                    i33 = i + 1;
+                                                    objArr11 = objArr2;
+                                                    mutableScatterMap3 = mutableScatterMap2;
+                                                    str3 = str2;
+                                                    it3 = it2;
                                                 }
-                                            } else {
-                                                it2 = it3;
-                                                mutableScatterMap2 = mutableScatterMap3;
-                                                jArr2 = jArr10;
-                                                objArr2 = objArr10;
-                                                j = j9;
-                                            }
-                                            j9 = j >> 8;
-                                            i31++;
-                                            it3 = it2;
-                                            mutableScatterMap3 = mutableScatterMap2;
-                                            jArr10 = jArr2;
-                                            objArr10 = objArr2;
-                                        }
-                                        it = it3;
-                                        mutableScatterMap = mutableScatterMap3;
-                                        jArr = jArr10;
-                                        objArr = objArr10;
-                                        if (i30 != 8) {
-                                            break;
-                                        }
-                                    } else {
-                                        it = it3;
-                                        mutableScatterMap = mutableScatterMap3;
-                                        jArr = jArr10;
-                                        objArr = objArr10;
-                                    }
-                                    if (i29 == length6) {
-                                        break;
-                                    }
-                                    i29++;
-                                    it3 = it;
-                                    mutableScatterMap3 = mutableScatterMap;
-                                    jArr10 = jArr;
-                                    objArr10 = objArr;
-                                }
-                            }
-                        } else {
-                            it = it3;
-                            mutableScatterMap = mutableScatterMap3;
-                            DerivedState<?> derivedState4 = (DerivedState) obj2;
-                            Object obj15 = hashMap.get(derivedState4);
-                            SnapshotMutationPolicy<?> policy4 = derivedState4.getPolicy();
-                            if (policy4 == null) {
-                                policy4 = SnapshotStateKt.structuralEqualityPolicy();
-                            }
-                            if (policy4.equivalent(derivedState4.getCurrentRecord().getCurrentValue(), obj15)) {
-                                Boolean.valueOf(this.statesToReread.add(derivedState4));
-                            } else {
-                                Object obj16 = mutableScatterMap4.get(derivedState4);
-                                if (obj16 != null) {
-                                    if (obj16 instanceof MutableScatterSet) {
-                                        MutableScatterSet mutableScatterSet8 = (MutableScatterSet) obj16;
-                                        Object[] objArr13 = mutableScatterSet8.elements;
-                                        long[] jArr13 = mutableScatterSet8.metadata;
-                                        int length8 = jArr13.length - 2;
-                                        if (length8 >= 0) {
-                                            int i35 = 0;
-                                            while (true) {
-                                                long j11 = jArr13[i35];
-                                                if ((((~j11) << 7) & j11 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                    int i36 = 8 - ((~(i35 - length8)) >>> 31);
-                                                    for (int i37 = 0; i37 < i36; i37++) {
-                                                        if ((j11 & 255) < 128) {
-                                                            mutableScatterSet.add(objArr13[(i35 << 3) + i37]);
-                                                            z = true;
-                                                        }
-                                                        j11 >>= 8;
-                                                    }
-                                                    if (i36 != 8) {
-                                                        break;
-                                                    }
-                                                }
-                                                if (i35 == length8) {
+                                                it = it3;
+                                                mutableScatterMap = mutableScatterMap3;
+                                                str = str3;
+                                                objArr = objArr11;
+                                                if (i32 != 8) {
                                                     break;
                                                 }
-                                                i35++;
+                                            } else {
+                                                it = it3;
+                                                mutableScatterMap = mutableScatterMap3;
+                                                str = str3;
+                                                objArr = objArr11;
                                             }
-                                        }
-                                    } else {
-                                        mutableScatterSet.add(obj16);
-                                        z = true;
-                                    }
-                                }
-                                Unit unit5 = Unit.INSTANCE;
-                            }
-                        }
-                        obj = mutableScatterMap4.get(next);
-                        if (obj != null) {
-                            if (obj instanceof MutableScatterSet) {
-                                MutableScatterSet mutableScatterSet9 = (MutableScatterSet) obj;
-                                Object[] objArr14 = mutableScatterSet9.elements;
-                                long[] jArr14 = mutableScatterSet9.metadata;
-                                int length9 = jArr14.length - 2;
-                                if (length9 >= 0) {
-                                    while (true) {
-                                        long j12 = jArr14[i];
-                                        if ((((~j12) << 7) & j12 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                            int i38 = 8 - ((~(i - length9)) >>> 31);
-                                            for (int i39 = 0; i39 < i38; i39++) {
-                                                if ((j12 & 255) < 128) {
-                                                    mutableScatterSet.add(objArr14[(i << 3) + i39]);
-                                                    z = true;
-                                                }
-                                                j12 >>= 8;
-                                            }
-                                            if (i38 != 8) {
+                                            if (i31 == length6) {
                                                 break;
                                             }
+                                            i31++;
+                                            it3 = it;
+                                            jArr12 = jArr13;
+                                            objArr11 = objArr;
+                                            mutableScatterMap3 = mutableScatterMap;
+                                            str3 = str;
                                         }
-                                        i = i != length9 ? i + 1 : 0;
+                                    }
+                                } else {
+                                    it = it3;
+                                    mutableScatterMap = mutableScatterMap3;
+                                    str = str3;
+                                    DerivedState<?> derivedState4 = (DerivedState) obj8;
+                                    Object obj11 = hashMap.get(derivedState4);
+                                    SnapshotMutationPolicy<?> policy4 = derivedState4.getPolicy();
+                                    if (policy4 == null) {
+                                        policy4 = SnapshotStateKt.structuralEqualityPolicy();
+                                    }
+                                    if (policy4.equivalent(derivedState4.getCurrentRecord().getCurrentValue(), obj11)) {
+                                        Boolean.valueOf(this.statesToReread.add(derivedState4));
+                                    } else {
+                                        Object obj12 = mutableScatterMap4.get(derivedState4);
+                                        if (obj12 != null) {
+                                            if (obj12 instanceof MutableScatterSet) {
+                                                MutableScatterSet mutableScatterSet8 = (MutableScatterSet) obj12;
+                                                Object[] objArr13 = mutableScatterSet8.elements;
+                                                long[] jArr15 = mutableScatterSet8.metadata;
+                                                int length8 = jArr15.length - 2;
+                                                if (length8 >= 0) {
+                                                    int i37 = 0;
+                                                    while (true) {
+                                                        long j11 = jArr15[i37];
+                                                        if ((((~j11) << 7) & j11 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                            int i38 = 8 - ((~(i37 - length8)) >>> 31);
+                                                            for (int i39 = 0; i39 < i38; i39++) {
+                                                                if ((j11 & 255) < 128) {
+                                                                    mutableScatterSet.add(objArr13[(i37 << 3) + i39]);
+                                                                    z4 = true;
+                                                                }
+                                                                j11 >>= 8;
+                                                            }
+                                                            if (i38 != 8) {
+                                                                break;
+                                                            }
+                                                        }
+                                                        if (i37 == length8) {
+                                                            break;
+                                                        }
+                                                        i37++;
+                                                    }
+                                                }
+                                            } else {
+                                                mutableScatterSet.add(obj12);
+                                                z4 = true;
+                                            }
+                                        }
+                                        Unit unit5 = Unit.INSTANCE;
                                     }
                                 }
-                            } else {
-                                mutableScatterSet.add(obj);
-                                z = true;
                             }
+                            it = it3;
+                            mutableScatterMap = mutableScatterMap3;
+                            str = str3;
+                        } finally {
+                        }
+                    }
+                    Object obj13 = mutableScatterMap4.get(next);
+                    if (obj13 != null) {
+                        if (obj13 instanceof MutableScatterSet) {
+                            MutableScatterSet mutableScatterSet9 = (MutableScatterSet) obj13;
+                            Object[] objArr14 = mutableScatterSet9.elements;
+                            long[] jArr16 = mutableScatterSet9.metadata;
+                            int length9 = jArr16.length - 2;
+                            if (length9 >= 0) {
+                                int i40 = z2;
+                                while (true) {
+                                    long j12 = jArr16[i40];
+                                    if ((((~j12) << 7) & j12 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                        int i41 = 8 - ((~(i40 - length9)) >>> 31);
+                                        for (int i42 = z2; i42 < i41; i42++) {
+                                            if ((j12 & 255) < 128) {
+                                                mutableScatterSet.add(objArr14[(i40 << 3) + i42]);
+                                                z4 = true;
+                                            }
+                                            j12 >>= 8;
+                                        }
+                                        if (i41 != 8) {
+                                            break;
+                                        }
+                                    }
+                                    if (i40 == length9) {
+                                        break;
+                                    }
+                                    i40++;
+                                }
+                                z3 = z4;
+                                z4 = z3;
+                                it3 = it;
+                                mutableScatterMap3 = mutableScatterMap;
+                                str3 = str;
+                            }
+                        } else {
+                            mutableScatterSet.add(obj13);
+                            z3 = true;
+                            z4 = z3;
                             it3 = it;
                             mutableScatterMap3 = mutableScatterMap;
+                            str3 = str;
                         }
-                        it3 = it;
-                        mutableScatterMap3 = mutableScatterMap;
                     }
-                    it = it3;
-                    mutableScatterMap = mutableScatterMap3;
-                    obj = mutableScatterMap4.get(next);
-                    if (obj != null) {
-                    }
+                    z3 = z4;
+                    z4 = z3;
                     it3 = it;
                     mutableScatterMap3 = mutableScatterMap;
+                    str3 = str;
                 }
+                z = z4;
             }
-            if (this.statesToReread.getSize() != 0) {
+            if (!this.readingDerivedStates && this.statesToReread.getSize() != 0) {
                 MutableVector<DerivedState<?>> mutableVector = this.statesToReread;
                 DerivedState<?>[] derivedStateArr = mutableVector.content;
                 int size = mutableVector.getSize();
-                for (int i40 = 0; i40 < size; i40++) {
-                    rereadDerivedState(derivedStateArr[i40]);
+                for (int i43 = 0; i43 < size; i43++) {
+                    rereadDerivedState(derivedStateArr[i43]);
                 }
                 this.statesToReread.clear();
             }

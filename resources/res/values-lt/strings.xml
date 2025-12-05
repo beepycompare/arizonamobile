@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Bendrinti su</string>
     <string name="abc_shareactionprovider_share_with_application">Bendrinti naudojant programą „%s“</string>
     <string name="abc_toolbar_collapse_description">Sutraukti</string>
-    <string name="autofill">Automatinis pildymas</string>
+    <string name="androidx_compose_foundation_autofill">Automatinis pildymas</string>
+    <string name="androidx_compose_ui_autofill">Automatinis pildymas</string>
     <string name="bottomsheet_action_collapse">Sutraukti apatinį lapą</string>
     <string name="bottomsheet_action_expand">Išskleisti apatinį lapą</string>
     <string name="bottomsheet_action_expand_halfway">Išskleisti iki pusės</string>

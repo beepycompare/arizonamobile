@@ -1,6 +1,5 @@
 package androidx.compose.runtime;
 
-import androidx.compose.ui.spatial.RectListKt;
 import androidx.media3.common.C;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
@@ -88,11 +87,11 @@ public final class SlotReader {
     }
 
     public final int getNodeCount() {
-        return this.groups[(this.currentGroup * 5) + 1] & RectListKt.Lower26Bits;
+        return this.groups[(this.currentGroup * 5) + 1] & 67108863;
     }
 
     public final int nodeCount(int i) {
-        return this.groups[(i * 5) + 1] & RectListKt.Lower26Bits;
+        return this.groups[(i * 5) + 1] & 67108863;
     }
 
     public final Object node(int i) {
@@ -224,7 +223,7 @@ public final class SlotReader {
     public final int getParentNodes() {
         int i = this.parent;
         if (i >= 0) {
-            return this.groups[(i * 5) + 1] & RectListKt.Lower26Bits;
+            return this.groups[(i * 5) + 1] & 67108863;
         }
         return 0;
     }
@@ -359,7 +358,7 @@ public final class SlotReader {
         }
         int[] iArr = this.groups;
         int i = this.currentGroup;
-        int i2 = (iArr[(i * 5) + 1] & 1073741824) == 0 ? iArr[(i * 5) + 1] & RectListKt.Lower26Bits : 1;
+        int i2 = (iArr[(i * 5) + 1] & 1073741824) == 0 ? iArr[(i * 5) + 1] & 67108863 : 1;
         groupSize = SlotTableKt.groupSize(iArr, i);
         this.currentGroup = i + groupSize;
         return i2;
@@ -455,7 +454,7 @@ public final class SlotReader {
                 int i6 = 1;
                 int i7 = this.groups[i4 + 1];
                 if ((1073741824 & i7) == 0) {
-                    i6 = i7 & RectListKt.Lower26Bits;
+                    i6 = i7 & 67108863;
                 }
                 i = i3 + 1;
                 arrayList.add(new KeyInfo(i5, objectKey, i2, i6, i3));

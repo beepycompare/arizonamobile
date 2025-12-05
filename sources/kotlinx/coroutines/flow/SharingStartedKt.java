@@ -8,18 +8,18 @@ import kotlinx.coroutines.flow.SharingStarted;
 /* loaded from: classes5.dex */
 public final class SharingStartedKt {
     /* renamed from: WhileSubscribed-5qebJ5I$default  reason: not valid java name */
-    public static /* synthetic */ SharingStarted m11473WhileSubscribed5qebJ5I$default(SharingStarted.Companion companion, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ SharingStarted m11768WhileSubscribed5qebJ5I$default(SharingStarted.Companion companion, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = Duration.Companion.m11352getZEROUwyO8pc();
+            j = Duration.Companion.m11647getZEROUwyO8pc();
         }
         if ((i & 2) != 0) {
-            j2 = Duration.Companion.m11350getINFINITEUwyO8pc();
+            j2 = Duration.Companion.m11645getINFINITEUwyO8pc();
         }
-        return m11472WhileSubscribed5qebJ5I(companion, j, j2);
+        return m11767WhileSubscribed5qebJ5I(companion, j, j2);
     }
 
     /* renamed from: WhileSubscribed-5qebJ5I  reason: not valid java name */
-    public static final SharingStarted m11472WhileSubscribed5qebJ5I(SharingStarted.Companion companion, long j, long j2) {
-        return new StartedWhileSubscribed(Duration.m11272getInWholeMillisecondsimpl(j), Duration.m11272getInWholeMillisecondsimpl(j2));
+    public static final SharingStarted m11767WhileSubscribed5qebJ5I(SharingStarted.Companion companion, long j, long j2) {
+        return new StartedWhileSubscribed(Duration.m11567getInWholeMillisecondsimpl(j), Duration.m11567getInWholeMillisecondsimpl(j2));
     }
 }

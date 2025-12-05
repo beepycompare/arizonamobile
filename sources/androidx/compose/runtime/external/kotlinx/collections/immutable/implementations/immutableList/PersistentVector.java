@@ -24,6 +24,17 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
     private final int size;
     private final Object[] tail;
 
+    public PersistentVector(Object[] objArr, Object[] objArr2, int i, int i2) {
+        this.root = objArr;
+        this.tail = objArr2;
+        this.size = i;
+        this.rootShift = i2;
+        if (!(size() > 32)) {
+            PreconditionsKt.throwIllegalArgumentException("Trie-based persistent vector should have at least 33 elements, got " + size());
+        }
+        CommonFunctionsKt.m4792assert(size() - UtilsKt.rootSize(size()) <= RangesKt.coerceAtMost(objArr2.length, 32));
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.util.Collection, java.util.List, androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentCollection
     public /* bridge */ /* synthetic */ PersistentCollection add(Object obj) {
@@ -33,17 +44,6 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
         return this.size;
-    }
-
-    public PersistentVector(Object[] objArr, Object[] objArr2, int i, int i2) {
-        this.root = objArr;
-        this.tail = objArr2;
-        this.size = i;
-        this.rootShift = i2;
-        if (!(size() > 32)) {
-            PreconditionsKt.throwIllegalArgumentException("Trie-based persistent vector should have at least 33 elements, got " + size());
-        }
-        CommonFunctionsKt.m4715assert(size() - UtilsKt.rootSize(size()) <= RangesKt.coerceAtMost(objArr2.length, 32));
     }
 
     private final int rootSize() {
@@ -170,7 +170,7 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
 
     private final PersistentList<E> removeFromTailAt(Object[] objArr, int i, int i2, int i3) {
         int size = size() - i;
-        CommonFunctionsKt.m4715assert(i3 < size);
+        CommonFunctionsKt.m4792assert(i3 < size);
         if (size == 1) {
             return pullLastBufferFromRoot(objArr, i, i2);
         }

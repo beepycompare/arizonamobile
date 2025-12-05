@@ -56,7 +56,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ExoPlayerImplInternal implements Handler.Callback, MediaPeriod.Callback, TrackSelector.InvalidationListener, MediaSourceList.MediaSourceListInfoRefreshListener, DefaultMediaClock.PlaybackParametersListener, PlayerMessage.Sender, AudioFocusManager.PlayerControl, VideoFrameMetadataListener {
     private static final long BUFFERING_MAXIMUM_INTERVAL_MS = Util.usToMs(Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
     private static final int MSG_ADD_MEDIA_SOURCES = 18;
@@ -162,7 +162,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
     private long lastRebufferRealtimeMs = C.TIME_UNSET;
     private Timeline lastPreloadPoolInvalidationTimeline = Timeline.EMPTY;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface PlaybackInfoUpdateListener {
         void onPlaybackInfoUpdate(PlaybackInfoUpdate playbackInfoUpdate);
     }
@@ -187,7 +187,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         return i2;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class PlaybackInfoUpdate {
         public int discontinuityReason;
         private boolean hasPendingChange;
@@ -288,14 +288,14 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         createHandler2.obtainMessage(35, new VideoFrameMetadataListener() { // from class: androidx.media3.exoplayer.ExoPlayerImplInternal$$ExternalSyntheticLambda3
             @Override // androidx.media3.exoplayer.video.VideoFrameMetadataListener
             public final void onVideoFrameAboutToBeRendered(long j2, long j3, Format format, MediaFormat mediaFormat) {
-                ExoPlayerImplInternal.this.m8633lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(videoFrameMetadataListener, j2, j3, format, mediaFormat);
+                ExoPlayerImplInternal.this.m8897lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(videoFrameMetadataListener, j2, j3, format, mediaFormat);
             }
         }).sendToTarget();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-exoplayer-ExoPlayerImplInternal  reason: not valid java name */
-    public /* synthetic */ void m8633lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(VideoFrameMetadataListener videoFrameMetadataListener, long j, long j2, Format format, MediaFormat mediaFormat) {
+    public /* synthetic */ void m8897lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(VideoFrameMetadataListener videoFrameMetadataListener, long j, long j2, Format format, MediaFormat mediaFormat) {
         videoFrameMetadataListener.onVideoFrameAboutToBeRendered(j, j2, format, mediaFormat);
         onVideoFrameAboutToBeRendered(j, j2, format, mediaFormat);
     }
@@ -1164,7 +1164,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
             this.applicationLooperHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.ExoPlayerImplInternal$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ExoPlayerImplInternal.this.m8632x6a39ddd9(i, z);
+                    ExoPlayerImplInternal.this.m8896x6a39ddd9(i, z);
                 }
             });
         }
@@ -1172,7 +1172,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeTriggerOnRendererReadyChanged$1$androidx-media3-exoplayer-ExoPlayerImplInternal  reason: not valid java name */
-    public /* synthetic */ void m8632x6a39ddd9(int i, boolean z) {
+    public /* synthetic */ void m8896x6a39ddd9(int i, boolean z) {
         this.analyticsCollector.onRendererReadyChanged(i, this.renderers[i].getTrackType(), z);
     }
 
@@ -1674,14 +1674,14 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         this.clock.createHandler(looper, null).post(new Runnable() { // from class: androidx.media3.exoplayer.ExoPlayerImplInternal$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ExoPlayerImplInternal.this.m8634x7ddc96d2(playerMessage);
+                ExoPlayerImplInternal.this.m8898x7ddc96d2(playerMessage);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$sendMessageToTargetThread$2$androidx-media3-exoplayer-ExoPlayerImplInternal  reason: not valid java name */
-    public /* synthetic */ void m8634x7ddc96d2(PlayerMessage playerMessage) {
+    public /* synthetic */ void m8898x7ddc96d2(PlayerMessage playerMessage) {
         try {
             deliverMessage(playerMessage);
         } catch (ExoPlaybackException e) {
@@ -3122,7 +3122,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class SeekPosition {
         public final Timeline timeline;
         public final int windowIndex;
@@ -3136,7 +3136,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class PositionUpdateForPlaylistChange {
         public final boolean endPlayback;
         public final boolean forceBufferingState;
@@ -3156,7 +3156,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class PendingMessageInfo implements Comparable<PendingMessageInfo> {
         public final PlayerMessage message;
         public int resolvedPeriodIndex;
@@ -3188,7 +3188,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class MediaSourceListUpdateMessage {
         private final List<MediaSourceList.MediaSourceHolder> mediaSourceHolders;
         private final long positionUs;
@@ -3204,7 +3204,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static class MoveMediaItemsMessage {
         public final int fromIndex;
         public final int newFromIndex;

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 final class PlaylistTimeline extends AbstractConcatenatedTimeline {
     private final HashMap<Object, Integer> childIndexByUid;
     private final int[] firstPeriodInChildIndices;

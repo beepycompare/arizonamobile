@@ -33,9 +33,9 @@ public final class TypefaceRequestCache {
                 TypefaceResult invoke = function1.invoke(new Function1() { // from class: androidx.compose.ui.text.font.TypefaceRequestCache$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit runCached$lambda$3;
-                        runCached$lambda$3 = TypefaceRequestCache.runCached$lambda$3(TypefaceRequestCache.this, typefaceRequest, (TypefaceResult) obj);
-                        return runCached$lambda$3;
+                        Unit runCached$lambda$1;
+                        runCached$lambda$1 = TypefaceRequestCache.runCached$lambda$1(TypefaceRequestCache.this, typefaceRequest, (TypefaceResult) obj);
+                        return runCached$lambda$1;
                     }
                 });
                 synchronized (this.lock) {
@@ -52,7 +52,7 @@ public final class TypefaceRequestCache {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit runCached$lambda$3(TypefaceRequestCache typefaceRequestCache, TypefaceRequest typefaceRequest, TypefaceResult typefaceResult) {
+    public static final Unit runCached$lambda$1(TypefaceRequestCache typefaceRequestCache, TypefaceRequest typefaceRequest, TypefaceResult typefaceResult) {
         synchronized (typefaceRequestCache.lock) {
             if (typefaceResult.getCacheable()) {
                 typefaceRequestCache.resultCache.put(typefaceRequest, typefaceResult);

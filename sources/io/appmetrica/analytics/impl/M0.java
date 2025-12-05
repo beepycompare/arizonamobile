@@ -5,21 +5,21 @@ import android.content.Intent;
 public final class M0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Intent f578a;
-    public final /* synthetic */ C0611u1 b;
+    public final /* synthetic */ Intent f661a;
+    public final /* synthetic */ C0610u1 b;
 
-    public M0(C0611u1 c0611u1, Intent intent) {
-        this.b = c0611u1;
-        this.f578a = intent;
+    public M0(C0610u1 c0610u1, Intent intent) {
+        this.b = c0610u1;
+        this.f661a = intent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0742z7 c0742z7 = this.b.d().b;
-        Intent intent = this.f578a;
-        c0742z7.getClass();
+        C0741z7 c0741z7 = this.b.d().b;
+        Intent intent = this.f661a;
+        c0741z7.getClass();
         if (intent != null) {
-            c0742z7.a(intent.getDataString(), false);
+            c0741z7.a(intent.getDataString(), false);
         }
     }
 }

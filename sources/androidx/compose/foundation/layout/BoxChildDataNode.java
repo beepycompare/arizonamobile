@@ -18,6 +18,11 @@ public final class BoxChildDataNode extends Modifier.Node implements ParentDataM
         return this;
     }
 
+    public BoxChildDataNode(Alignment alignment, boolean z) {
+        this.alignment = alignment;
+        this.matchParentSize = z;
+    }
+
     public final Alignment getAlignment() {
         return this.alignment;
     }
@@ -31,11 +36,6 @@ public final class BoxChildDataNode extends Modifier.Node implements ParentDataM
     }
 
     public final void setMatchParentSize(boolean z) {
-        this.matchParentSize = z;
-    }
-
-    public BoxChildDataNode(Alignment alignment, boolean z) {
-        this.alignment = alignment;
         this.matchParentSize = z;
     }
 }

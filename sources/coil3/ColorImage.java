@@ -2,7 +2,6 @@ package coil3;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import androidx.core.view.ViewCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ColorImage.kt */
@@ -48,7 +47,7 @@ public final class ColorImage implements Image {
     }
 
     public /* synthetic */ ColorImage(int i, int i2, int i3, long j, boolean z, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? ViewCompat.MEASURED_STATE_MASK : i, (i4 & 2) != 0 ? -1 : i2, (i4 & 4) != 0 ? -1 : i3, (i4 & 8) != 0 ? 0L : j, (i4 & 16) != 0 ? true : z);
+        this((i4 & 1) != 0 ? -16777216 : i, (i4 & 2) != 0 ? -1 : i2, (i4 & 4) != 0 ? -1 : i3, (i4 & 8) != 0 ? 0L : j, (i4 & 16) != 0 ? true : z);
     }
 
     public final int getColor() {

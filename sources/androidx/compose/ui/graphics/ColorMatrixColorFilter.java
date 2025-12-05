@@ -6,9 +6,10 @@ import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ColorFilter.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u001f\b\u0000\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\u0010\u0004\u001a\u00060\u0005j\u0002`\u0006¢\u0006\u0004\b\u0007\u0010\bB\u0011\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\tJ\u0017\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u0003¢\u0006\u0004\b\r\u0010\u000eJ\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0096\u0002J\u000f\u0010\u0013\u001a\u00020\u0003H\u0002¢\u0006\u0004\b\u0014\u0010\u0015J\b\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u0018\u001a\u00020\u0019H\u0016R\u0012\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\n¨\u0006\u001a"}, d2 = {"Landroidx/compose/ui/graphics/ColorMatrixColorFilter;", "Landroidx/compose/ui/graphics/ColorFilter;", "colorMatrix", "Landroidx/compose/ui/graphics/ColorMatrix;", "nativeColorFilter", "Landroid/graphics/ColorFilter;", "Landroidx/compose/ui/graphics/NativeColorFilter;", "<init>", "([FLandroid/graphics/ColorFilter;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "([FLkotlin/jvm/internal/DefaultConstructorMarker;)V", "[F", "copyColorMatrix", "targetColorMatrix", "copyColorMatrix-gBh15pI", "([F)[F", "equals", "", "other", "", "obtainColorMatrix", "obtainColorMatrix-p10-uLo", "()[F", "hashCode", "", "toString", "", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u001f\b\u0000\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\u0010\u0004\u001a\u00060\u0005j\u0002`\u0006¢\u0006\u0004\b\u0007\u0010\bB\u0011\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\tJ\u0017\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u0003¢\u0006\u0004\b\r\u0010\u000eJ\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0096\u0002J\u000f\u0010\u0013\u001a\u00020\u0003H\u0002¢\u0006\u0004\b\u0014\u0010\u0015J\b\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u0018\u001a\u00020\u0019H\u0016R\u0012\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\n¨\u0006\u001a"}, d2 = {"Landroidx/compose/ui/graphics/ColorMatrixColorFilter;", "Landroidx/compose/ui/graphics/ColorFilter;", "colorMatrix", "Landroidx/compose/ui/graphics/ColorMatrix;", "nativeColorFilter", "Landroid/graphics/ColorFilter;", "Landroidx/compose/ui/graphics/NativeColorFilter;", "<init>", "([FLandroid/graphics/ColorFilter;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "([FLkotlin/jvm/internal/DefaultConstructorMarker;)V", "[F", "copyColorMatrix", "targetColorMatrix", "copyColorMatrix-gBh15pI", "([F)[F", "equals", "", "other", "", "obtainColorMatrix", "obtainColorMatrix-p10-uLo", "()[F", "hashCode", "", "toString", "", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class ColorMatrixColorFilter extends ColorFilter {
+    public static final int $stable = 0;
     private float[] colorMatrix;
 
     public /* synthetic */ ColorMatrixColorFilter(float[] fArr, android.graphics.ColorFilter colorFilter, DefaultConstructorMarker defaultConstructorMarker) {
@@ -25,20 +26,20 @@ public final class ColorMatrixColorFilter extends ColorFilter {
     }
 
     private ColorMatrixColorFilter(float[] fArr) {
-        this(fArr, AndroidColorFilter_androidKt.m5141actualColorMatrixColorFilterjHGOpc(fArr), null);
+        this(fArr, AndroidColorFilter_androidKt.m5284actualColorMatrixColorFilterjHGOpc(fArr), null);
     }
 
     /* renamed from: copyColorMatrix-gBh15pI$default  reason: not valid java name */
-    public static /* synthetic */ float[] m5356copyColorMatrixgBh15pI$default(ColorMatrixColorFilter colorMatrixColorFilter, float[] fArr, int i, Object obj) {
+    public static /* synthetic */ float[] m5500copyColorMatrixgBh15pI$default(ColorMatrixColorFilter colorMatrixColorFilter, float[] fArr, int i, Object obj) {
         if ((i & 1) != 0) {
-            fArr = ColorMatrix.m5337constructorimpl$default(null, 1, null);
+            fArr = ColorMatrix.m5481constructorimpl$default(null, 1, null);
         }
-        return colorMatrixColorFilter.m5358copyColorMatrixgBh15pI(fArr);
+        return colorMatrixColorFilter.m5502copyColorMatrixgBh15pI(fArr);
     }
 
     /* renamed from: copyColorMatrix-gBh15pI  reason: not valid java name */
-    public final float[] m5358copyColorMatrixgBh15pI(float[] fArr) {
-        ArraysKt.copyInto$default(m5357obtainColorMatrixp10uLo(), fArr, 0, 0, 0, 14, (Object) null);
+    public final float[] m5502copyColorMatrixgBh15pI(float[] fArr) {
+        ArraysKt.copyInto$default(m5501obtainColorMatrixp10uLo(), fArr, 0, 0, 0, 14, (Object) null);
         return fArr;
     }
 
@@ -46,14 +47,14 @@ public final class ColorMatrixColorFilter extends ColorFilter {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof ColorMatrixColorFilter) && Arrays.equals(m5357obtainColorMatrixp10uLo(), ((ColorMatrixColorFilter) obj).m5357obtainColorMatrixp10uLo());
+        return (obj instanceof ColorMatrixColorFilter) && Arrays.equals(m5501obtainColorMatrixp10uLo(), ((ColorMatrixColorFilter) obj).m5501obtainColorMatrixp10uLo());
     }
 
     /* renamed from: obtainColorMatrix-p10-uLo  reason: not valid java name */
-    private final float[] m5357obtainColorMatrixp10uLo() {
+    private final float[] m5501obtainColorMatrixp10uLo() {
         float[] fArr = this.colorMatrix;
         if (fArr == null) {
-            float[] actualColorMatrixFromFilter = AndroidColorFilter_androidKt.actualColorMatrixFromFilter(getNativeColorFilter$ui_graphics_release());
+            float[] actualColorMatrixFromFilter = AndroidColorFilter_androidKt.actualColorMatrixFromFilter(getNativeColorFilter$ui_graphics());
             this.colorMatrix = actualColorMatrixFromFilter;
             return actualColorMatrixFromFilter;
         }
@@ -63,7 +64,7 @@ public final class ColorMatrixColorFilter extends ColorFilter {
     public int hashCode() {
         float[] fArr = this.colorMatrix;
         if (fArr != null) {
-            return ColorMatrix.m5343hashCodeimpl(fArr);
+            return ColorMatrix.m5487hashCodeimpl(fArr);
         }
         return 0;
     }
@@ -71,6 +72,6 @@ public final class ColorMatrixColorFilter extends ColorFilter {
     public String toString() {
         StringBuilder sb = new StringBuilder("ColorMatrixColorFilter(colorMatrix=");
         float[] fArr = this.colorMatrix;
-        return sb.append((Object) (fArr == null ? AbstractJsonLexerKt.NULL : ColorMatrix.m5354toStringimpl(fArr))).append(')').toString();
+        return sb.append((Object) (fArr == null ? AbstractJsonLexerKt.NULL : ColorMatrix.m5498toStringimpl(fArr))).append(')').toString();
     }
 }

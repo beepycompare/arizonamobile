@@ -57,7 +57,7 @@ public interface Da extends Ic, B6, Ua {
 
     AdvIdentifiersResult h();
 
-    C0372kc i();
+    C0371kc i();
 
     @Override // io.appmetrica.analytics.impl.Ic
     /* synthetic */ void putAppEnvironmentValue(String str, String str2);

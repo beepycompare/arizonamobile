@@ -15,7 +15,6 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import androidx.core.util.Preconditions;
-import androidx.core.view.ViewCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -46,7 +45,7 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
     float mRotationCount;
     private static final Interpolator LINEAR_INTERPOLATOR = new LinearInterpolator();
     private static final Interpolator MATERIAL_INTERPOLATOR = new FastOutSlowInInterpolator();
-    private static final int[] COLORS = {ViewCompat.MEASURED_STATE_MASK};
+    private static final int[] COLORS = {-16777216};
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes3.dex */

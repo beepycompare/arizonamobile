@@ -5,11 +5,11 @@ import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 public class R4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f659a;
+    public final String f742a;
     public final String b;
 
     public R4(String str, String str2) {
-        this.f659a = str;
+        this.f742a = str;
         this.b = str2;
     }
 
@@ -22,7 +22,7 @@ public class R4 {
     }
 
     public final String c() {
-        return this.f659a;
+        return this.f742a;
     }
 
     public boolean d() {
@@ -30,7 +30,7 @@ public class R4 {
     }
 
     public String e() {
-        return this.f659a + "_" + ApiKeyUtils.createPartialApiKey(this.b);
+        return this.f742a + "_" + ApiKeyUtils.createPartialApiKey(this.b);
     }
 
     public final boolean equals(Object obj) {
@@ -39,8 +39,8 @@ public class R4 {
         }
         if (obj != null && getClass() == obj.getClass()) {
             R4 r4 = (R4) obj;
-            String str = this.f659a;
-            if (str == null ? r4.f659a != null : !str.equals(r4.f659a)) {
+            String str = this.f742a;
+            if (str == null ? r4.f742a != null : !str.equals(r4.f742a)) {
                 return false;
             }
             String str2 = this.b;
@@ -56,13 +56,13 @@ public class R4 {
     }
 
     public final int hashCode() {
-        String str = this.f659a;
+        String str = this.f742a;
         int hashCode = (str != null ? str.hashCode() : 0) * 31;
         String str2 = this.b;
         return hashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {
-        return this.f659a + "_" + this.b;
+        return this.f742a + "_" + this.b;
     }
 }

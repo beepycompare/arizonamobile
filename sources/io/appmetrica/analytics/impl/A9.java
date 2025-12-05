@@ -12,18 +12,18 @@ import java.util.concurrent.TimeUnit;
 public final class A9 implements IHandlerExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Looper f393a;
+    public final Looper f476a;
     public final Handler b;
-    public final HandlerThreadC0191db c;
+    public final HandlerThreadC0190db c;
 
     public A9(String str) {
         this(a(str));
     }
 
-    public static HandlerThreadC0191db a(String str) {
-        HandlerThreadC0191db handlerThreadC0191db = new HandlerThreadC0191db(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Ad.f395a.incrementAndGet());
-        handlerThreadC0191db.start();
-        return handlerThreadC0191db;
+    public static HandlerThreadC0190db a(String str) {
+        HandlerThreadC0190db handlerThreadC0190db = new HandlerThreadC0190db(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Ad.f478a.incrementAndGet());
+        handlerThreadC0190db.start();
+        return handlerThreadC0190db;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor, java.util.concurrent.Executor
@@ -43,15 +43,15 @@ public final class A9 implements IHandlerExecutor {
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
     public final Looper getLooper() {
-        return this.f393a;
+        return this.f476a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public final boolean isRunning() {
         boolean z;
-        HandlerThreadC0191db handlerThreadC0191db = this.c;
-        synchronized (handlerThreadC0191db) {
-            z = handlerThreadC0191db.f848a;
+        HandlerThreadC0190db handlerThreadC0190db = this.c;
+        synchronized (handlerThreadC0190db) {
+            z = handlerThreadC0190db.f931a;
         }
         return z;
     }
@@ -68,10 +68,10 @@ public final class A9 implements IHandlerExecutor {
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public final void stopRunning() {
-        HandlerThreadC0191db handlerThreadC0191db = this.c;
-        synchronized (handlerThreadC0191db) {
-            handlerThreadC0191db.f848a = false;
-            handlerThreadC0191db.interrupt();
+        HandlerThreadC0190db handlerThreadC0190db = this.c;
+        synchronized (handlerThreadC0190db) {
+            handlerThreadC0190db.f931a = false;
+            handlerThreadC0190db.interrupt();
         }
     }
 
@@ -82,13 +82,13 @@ public final class A9 implements IHandlerExecutor {
         return futureTask;
     }
 
-    public A9(HandlerThreadC0191db handlerThreadC0191db) {
-        this(handlerThreadC0191db, handlerThreadC0191db.getLooper(), new Handler(handlerThreadC0191db.getLooper()));
+    public A9(HandlerThreadC0190db handlerThreadC0190db) {
+        this(handlerThreadC0190db, handlerThreadC0190db.getLooper(), new Handler(handlerThreadC0190db.getLooper()));
     }
 
-    public A9(HandlerThreadC0191db handlerThreadC0191db, Looper looper, Handler handler) {
-        this.c = handlerThreadC0191db;
-        this.f393a = looper;
+    public A9(HandlerThreadC0190db handlerThreadC0190db, Looper looper, Handler handler) {
+        this.c = handlerThreadC0190db;
+        this.f476a = looper;
         this.b = handler;
     }
 

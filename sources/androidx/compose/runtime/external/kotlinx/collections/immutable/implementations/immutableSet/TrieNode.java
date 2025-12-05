@@ -273,11 +273,11 @@ public final class TrieNode<E> {
         int i = 0;
         int i2 = 0;
         while (i < objArr2.length) {
-            CommonFunctionsKt.m4715assert(i2 <= i);
+            CommonFunctionsKt.m4792assert(i2 <= i);
             if (!collisionContainsElement((E) objArr2[i])) {
                 copyOf[length + i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m4715assert(length + i2 <= copyOf.length);
+                CommonFunctionsKt.m4792assert(length + i2 <= copyOf.length);
             }
             i++;
         }
@@ -313,11 +313,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m4715assert(i2 <= i);
+            CommonFunctionsKt.m4792assert(i2 <= i);
             if (trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m4715assert(i2 <= objArr.length);
+                CommonFunctionsKt.m4792assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -355,11 +355,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m4715assert(i2 <= i);
+            CommonFunctionsKt.m4792assert(i2 <= i);
             if (!trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m4715assert(i2 <= objArr.length);
+                CommonFunctionsKt.m4792assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -570,11 +570,11 @@ public final class TrieNode<E> {
                 int i6 = 0;
                 int i7 = 0;
                 while (i6 < objArr2.length) {
-                    CommonFunctionsKt.m4715assert(i7 <= i6);
+                    CommonFunctionsKt.m4792assert(i7 <= i6);
                     if (objArr2[i6] != Companion.getEMPTY$runtime()) {
                         objArr[i7] = objArr2[i6];
                         i7++;
-                        CommonFunctionsKt.m4715assert(i7 <= bitCount);
+                        CommonFunctionsKt.m4792assert(i7 <= bitCount);
                     }
                     i6++;
                 }
@@ -665,11 +665,11 @@ public final class TrieNode<E> {
                     int i5 = 0;
                     int i6 = 0;
                     while (i5 < objArr4.length) {
-                        CommonFunctionsKt.m4715assert(i6 <= i5);
+                        CommonFunctionsKt.m4792assert(i6 <= i5);
                         if (objArr4[i5] != Companion.getEMPTY$runtime()) {
                             objArr3[i6] = objArr4[i5];
                             i6++;
-                            CommonFunctionsKt.m4715assert(i6 <= bitCount);
+                            CommonFunctionsKt.m4792assert(i6 <= bitCount);
                         }
                         i5++;
                     }

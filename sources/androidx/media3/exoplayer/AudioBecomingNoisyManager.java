@@ -9,14 +9,14 @@ import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.HandlerWrapper;
 import androidx.media3.exoplayer.AudioBecomingNoisyManager;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AudioBecomingNoisyManager {
     private final HandlerWrapper backgroundHandler;
     private final Context context;
     private boolean isEnabled;
     private final AudioBecomingNoisyReceiver receiver;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface EventListener {
         void onAudioBecomingNoisy();
     }
@@ -35,7 +35,7 @@ public final class AudioBecomingNoisyManager {
             this.backgroundHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.AudioBecomingNoisyManager$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioBecomingNoisyManager.this.m8616xd3e553();
+                    AudioBecomingNoisyManager.this.m8880xd3e553();
                 }
             });
             this.isEnabled = true;
@@ -44,7 +44,7 @@ public final class AudioBecomingNoisyManager {
         this.backgroundHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.AudioBecomingNoisyManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                AudioBecomingNoisyManager.this.m8617x8e0e96d4();
+                AudioBecomingNoisyManager.this.m8881x8e0e96d4();
             }
         });
         this.isEnabled = false;
@@ -52,18 +52,18 @@ public final class AudioBecomingNoisyManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$0$androidx-media3-exoplayer-AudioBecomingNoisyManager  reason: not valid java name */
-    public /* synthetic */ void m8616xd3e553() {
+    public /* synthetic */ void m8880xd3e553() {
         this.context.registerReceiver(this.receiver, new IntentFilter("android.media.AUDIO_BECOMING_NOISY"));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$1$androidx-media3-exoplayer-AudioBecomingNoisyManager  reason: not valid java name */
-    public /* synthetic */ void m8617x8e0e96d4() {
+    public /* synthetic */ void m8881x8e0e96d4() {
         this.context.unregisterReceiver(this.receiver);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public final class AudioBecomingNoisyReceiver extends BroadcastReceiver {
         private final HandlerWrapper eventHandler;
         private final EventListener listener;

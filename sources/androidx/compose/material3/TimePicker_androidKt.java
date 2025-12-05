@@ -10,7 +10,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TimePicker_androidKt {
     public static final int defaultTimePickerLayoutType(Composer composer, int i) {
-        int m3248getVerticalQJTpgSE;
+        int m3334getVerticalQJTpgSE;
         ComposerKt.sourceInformationMarkerStart(composer, -721362352, "C(defaultTimePickerLayoutType)26@977L7:TimePicker.android.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-721362352, i, -1, "androidx.compose.material3.defaultTimePickerLayoutType (TimePicker.android.kt:26)");
@@ -20,14 +20,14 @@ public final class TimePicker_androidKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         Configuration configuration = (Configuration) consume;
         if (configuration.screenHeightDp < configuration.screenWidthDp) {
-            m3248getVerticalQJTpgSE = TimePickerLayoutType.Companion.m3247getHorizontalQJTpgSE();
+            m3334getVerticalQJTpgSE = TimePickerLayoutType.Companion.m3333getHorizontalQJTpgSE();
         } else {
-            m3248getVerticalQJTpgSE = TimePickerLayoutType.Companion.m3248getVerticalQJTpgSE();
+            m3334getVerticalQJTpgSE = TimePickerLayoutType.Companion.m3334getVerticalQJTpgSE();
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3248getVerticalQJTpgSE;
+        return m3334getVerticalQJTpgSE;
     }
 }

@@ -9,10 +9,10 @@ public final class Um extends Di {
 
     @Override // io.appmetrica.analytics.impl.Di
     public final Object a(int i) {
-        return this.f447a.getResources().getStringArray(i);
+        return this.f530a.getResources().getStringArray(i);
     }
 
     public final String[] b(int i) {
-        return this.f447a.getResources().getStringArray(i);
+        return this.f530a.getResources().getStringArray(i);
     }
 }

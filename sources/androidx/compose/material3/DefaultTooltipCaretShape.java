@@ -25,25 +25,25 @@ public final class DefaultTooltipCaretShape implements Shape {
     }
 
     public /* synthetic */ DefaultTooltipCaretShape(long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? TooltipDefaults.INSTANCE.m3361getCaretSizeMYxV2XQ() : j, null);
+        this((i & 1) != 0 ? TooltipDefaults.INSTANCE.m3447getCaretSizeMYxV2XQ() : j, null);
     }
 
     /* renamed from: getCaretSize-MYxV2XQ  reason: not valid java name */
-    public final long m2292getCaretSizeMYxV2XQ() {
+    public final long m2378getCaretSizeMYxV2XQ() {
         return this.caretSize;
     }
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo332createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Path Path = AndroidPath_androidKt.Path();
-        float mo430toPx0680j_4 = density.mo430toPx0680j_4(DpSize.m8094getWidthD9Ej5fM(this.caretSize));
-        float mo430toPx0680j_42 = density.mo430toPx0680j_4(DpSize.m8092getHeightD9Ej5fM(this.caretSize));
+        float mo464toPx0680j_4 = density.mo464toPx0680j_4(DpSize.m8356getWidthD9Ej5fM(this.caretSize));
+        float mo464toPx0680j_42 = density.mo464toPx0680j_4(DpSize.m8354getHeightD9Ej5fM(this.caretSize));
         Path.moveTo(0.0f, 0.0f);
         float f = 2;
-        Path.lineTo(mo430toPx0680j_4 / f, 0.0f);
-        Path.lineTo(0.0f, mo430toPx0680j_42);
-        Path.lineTo((-mo430toPx0680j_4) / f, 0.0f);
+        Path.lineTo(mo464toPx0680j_4 / f, 0.0f);
+        Path.lineTo(0.0f, mo464toPx0680j_42);
+        Path.lineTo((-mo464toPx0680j_4) / f, 0.0f);
         Path.close();
         return new Outline.Generic(Path);
     }

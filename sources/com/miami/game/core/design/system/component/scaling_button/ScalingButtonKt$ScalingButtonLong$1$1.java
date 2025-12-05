@@ -17,7 +17,6 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ScalingButton.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
@@ -36,7 +35,7 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
 
     /* compiled from: ScalingButton.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", "it", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2", f = "ScalingButton.kt", i = {0}, l = {LockFreeTaskQueueCore.CLOSED_SHIFT}, m = "invokeSuspend", n = {"$this$detectTapGestures"}, s = {"L$0"}, v = 1)
+    @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2", f = "ScalingButton.kt", i = {0}, l = {61}, m = "invokeSuspend", n = {"$this$detectTapGestures"}, s = {"L$0"}, v = 1)
     /* renamed from: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2  reason: invalid class name */
     /* loaded from: classes4.dex */
     static final class AnonymousClass2 extends SuspendLambda implements Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> {
@@ -52,11 +51,11 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m9740invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
+            return m10035invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m9740invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m10035invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.$selected$delegate, continuation);
             anonymousClass2.L$0 = pressGestureScope;
             return anonymousClass2.invokeSuspend(Unit.INSTANCE);

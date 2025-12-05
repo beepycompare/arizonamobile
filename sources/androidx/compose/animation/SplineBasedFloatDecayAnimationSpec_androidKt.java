@@ -29,7 +29,7 @@ public final class SplineBasedFloatDecayAnimationSpec_androidKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         Density density = (Density) consume;
         float density2 = density.getDensity();
-        ComposerKt.sourceInformationMarkerStart(composer, 1589079149, "CC(remember):SplineBasedFloatDecayAnimationSpec.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1589078317, "CC(remember):SplineBasedFloatDecayAnimationSpec.android.kt#9igjgp");
         boolean changed = composer.changed(density2);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {

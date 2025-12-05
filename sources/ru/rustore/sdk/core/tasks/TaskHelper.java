@@ -91,7 +91,7 @@ public final class TaskHelper {
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 public final Object invokeSuspend(Object obj) {
-                    Object m9904constructorimpl;
+                    Object m10199constructorimpl;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     int i = this.label;
                     try {
@@ -110,19 +110,19 @@ public final class TaskHelper {
                         } else {
                             ResultKt.throwOnFailure(obj);
                         }
-                        m9904constructorimpl = Result.m9904constructorimpl(obj);
+                        m10199constructorimpl = Result.m10199constructorimpl(obj);
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        m9904constructorimpl = Result.m9904constructorimpl(ResultKt.createFailure(th));
+                        m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
                     }
                     Task<T>.TaskResultProvider taskResultProvider = this.$this_create;
-                    if (Result.m9911isSuccessimpl(m9904constructorimpl)) {
-                        taskResultProvider.setTaskSuccessResult(m9904constructorimpl);
+                    if (Result.m10206isSuccessimpl(m10199constructorimpl)) {
+                        taskResultProvider.setTaskSuccessResult(m10199constructorimpl);
                     }
                     Task<T>.TaskResultProvider taskResultProvider2 = this.$this_create;
-                    Throwable m9907exceptionOrNullimpl = Result.m9907exceptionOrNullimpl(m9904constructorimpl);
-                    if (m9907exceptionOrNullimpl != null) {
-                        taskResultProvider2.setTaskErrorResult(m9907exceptionOrNullimpl);
+                    Throwable m10202exceptionOrNullimpl = Result.m10202exceptionOrNullimpl(m10199constructorimpl);
+                    if (m10202exceptionOrNullimpl != null) {
+                        taskResultProvider2.setTaskErrorResult(m10202exceptionOrNullimpl);
                     }
                     return Unit.INSTANCE;
                 }

@@ -12,7 +12,7 @@ import java.util.Set;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LookaheadLayoutCoordinates.kt */
-@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0017\u0010\"\u001a\u00020 2\u0006\u0010#\u001a\u00020 H\u0016¢\u0006\u0004\b$\u0010%J\u0017\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020 H\u0016¢\u0006\u0004\b(\u0010%J\u0017\u0010)\u001a\u00020 2\u0006\u0010*\u001a\u00020 H\u0016¢\u0006\u0004\b+\u0010%J\u0017\u0010,\u001a\u00020 2\u0006\u0010'\u001a\u00020 H\u0016¢\u0006\u0004\b-\u0010%J\u0017\u0010.\u001a\u00020 2\u0006\u0010'\u001a\u00020 H\u0016¢\u0006\u0004\b/\u0010%J\u001f\u00100\u001a\u00020 2\u0006\u00101\u001a\u00020\u00012\u0006\u00102\u001a\u00020 H\u0016¢\u0006\u0004\b3\u00104J'\u00100\u001a\u00020 2\u0006\u00101\u001a\u00020\u00012\u0006\u00102\u001a\u00020 2\u0006\u00105\u001a\u00020\u001bH\u0016¢\u0006\u0004\b6\u00107J\u0018\u00108\u001a\u0002092\u0006\u00101\u001a\u00020\u00012\u0006\u0010:\u001a\u00020\u001bH\u0016J\u001f\u0010;\u001a\u00020<2\u0006\u00101\u001a\u00020\u00012\u0006\u0010=\u001a\u00020>H\u0016¢\u0006\u0004\b?\u0010@J\u0017\u0010A\u001a\u00020<2\u0006\u0010=\u001a\u00020>H\u0016¢\u0006\u0004\bB\u0010CJ\u0011\u0010D\u001a\u00020E2\u0006\u0010F\u001a\u00020\u0012H\u0096\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u00118VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u0016\u0010\u0015\u001a\u0004\u0018\u00010\u00018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0016\u0010\u0018\u001a\u0004\u0018\u00010\u00018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u0017R\u0014\u0010\u001a\u001a\u00020\u001b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001cR\u0014\u0010\u001d\u001a\u00020\u001b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u001cR\u0014\u0010\u001f\u001a\u00020 8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\u000f¨\u0006G"}, d2 = {"Landroidx/compose/ui/layout/LookaheadLayoutCoordinates;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "lookaheadDelegate", "Landroidx/compose/ui/node/LookaheadDelegate;", "<init>", "(Landroidx/compose/ui/node/LookaheadDelegate;)V", "getLookaheadDelegate", "()Landroidx/compose/ui/node/LookaheadDelegate;", "coordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "getCoordinator", "()Landroidx/compose/ui/node/NodeCoordinator;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "()J", "providedAlignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "getProvidedAlignmentLines", "()Ljava/util/Set;", "parentLayoutCoordinates", "getParentLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "parentCoordinates", "getParentCoordinates", "isAttached", "", "()Z", "introducesMotionFrameOfReference", "getIntroducesMotionFrameOfReference", "lookaheadOffset", "Landroidx/compose/ui/geometry/Offset;", "getLookaheadOffset-F1C5BW0", "screenToLocal", "relativeToScreen", "screenToLocal-MK-Hz9U", "(J)J", "localToScreen", "relativeToLocal", "localToScreen-MK-Hz9U", "windowToLocal", "relativeToWindow", "windowToLocal-MK-Hz9U", "localToWindow", "localToWindow-MK-Hz9U", "localToRoot", "localToRoot-MK-Hz9U", "localPositionOf", "sourceCoordinates", "relativeToSource", "localPositionOf-R5De75A", "(Landroidx/compose/ui/layout/LayoutCoordinates;J)J", "includeMotionFrameOfReference", "localPositionOf-S_NoaFU", "(Landroidx/compose/ui/layout/LayoutCoordinates;JZ)J", "localBoundingBoxOf", "Landroidx/compose/ui/geometry/Rect;", "clipBounds", "transformFrom", "", "matrix", "Landroidx/compose/ui/graphics/Matrix;", "transformFrom-EL8BTi8", "(Landroidx/compose/ui/layout/LayoutCoordinates;[F)V", "transformToScreen", "transformToScreen-58bKbWc", "([F)V", "get", "", "alignmentLine", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0017\u0010\"\u001a\u00020 2\u0006\u0010#\u001a\u00020 H\u0016¢\u0006\u0004\b$\u0010%J\u0017\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020 H\u0016¢\u0006\u0004\b(\u0010%J\u0017\u0010)\u001a\u00020 2\u0006\u0010*\u001a\u00020 H\u0016¢\u0006\u0004\b+\u0010%J\u0017\u0010,\u001a\u00020 2\u0006\u0010'\u001a\u00020 H\u0016¢\u0006\u0004\b-\u0010%J\u0017\u0010.\u001a\u00020 2\u0006\u0010'\u001a\u00020 H\u0016¢\u0006\u0004\b/\u0010%J\u001f\u00100\u001a\u00020 2\u0006\u00101\u001a\u00020\u00012\u0006\u00102\u001a\u00020 H\u0016¢\u0006\u0004\b3\u00104J'\u00100\u001a\u00020 2\u0006\u00101\u001a\u00020\u00012\u0006\u00102\u001a\u00020 2\u0006\u00105\u001a\u00020\u001bH\u0016¢\u0006\u0004\b6\u00107J\u0018\u00108\u001a\u0002092\u0006\u00101\u001a\u00020\u00012\u0006\u0010:\u001a\u00020\u001bH\u0016J\u001f\u0010;\u001a\u00020<2\u0006\u00101\u001a\u00020\u00012\u0006\u0010=\u001a\u00020>H\u0016¢\u0006\u0004\b?\u0010@J\u0017\u0010A\u001a\u00020<2\u0006\u0010=\u001a\u00020>H\u0016¢\u0006\u0004\bB\u0010CJ\u0011\u0010D\u001a\u00020E2\u0006\u0010F\u001a\u00020\u0012H\u0096\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u00118VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u0016\u0010\u0015\u001a\u0004\u0018\u00010\u00018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0016\u0010\u0018\u001a\u0004\u0018\u00010\u00018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u0017R\u0014\u0010\u001a\u001a\u00020\u001b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001cR\u0014\u0010\u001d\u001a\u00020\u001b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u001cR\u0014\u0010\u001f\u001a\u00020 8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\u000f¨\u0006G"}, d2 = {"Landroidx/compose/ui/layout/LookaheadLayoutCoordinates;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "lookaheadDelegate", "Landroidx/compose/ui/node/LookaheadDelegate;", "<init>", "(Landroidx/compose/ui/node/LookaheadDelegate;)V", "getLookaheadDelegate", "()Landroidx/compose/ui/node/LookaheadDelegate;", "coordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "getCoordinator", "()Landroidx/compose/ui/node/NodeCoordinator;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "()J", "providedAlignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "getProvidedAlignmentLines", "()Ljava/util/Set;", "parentLayoutCoordinates", "getParentLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "parentCoordinates", "getParentCoordinates", "isAttached", "", "()Z", "introducesMotionFrameOfReference", "getIntroducesMotionFrameOfReference", "lookaheadOffset", "Landroidx/compose/ui/geometry/Offset;", "getLookaheadOffset-F1C5BW0", "screenToLocal", "relativeToScreen", "screenToLocal-MK-Hz9U", "(J)J", "localToScreen", "relativeToLocal", "localToScreen-MK-Hz9U", "windowToLocal", "relativeToWindow", "windowToLocal-MK-Hz9U", "localToWindow", "localToWindow-MK-Hz9U", "localToRoot", "localToRoot-MK-Hz9U", "localPositionOf", "sourceCoordinates", "relativeToSource", "localPositionOf-R5De75A", "(Landroidx/compose/ui/layout/LayoutCoordinates;J)J", "includeMotionFrameOfReference", "localPositionOf-S_NoaFU", "(Landroidx/compose/ui/layout/LayoutCoordinates;JZ)J", "localBoundingBoxOf", "Landroidx/compose/ui/geometry/Rect;", "clipBounds", "transformFrom", "", "matrix", "Landroidx/compose/ui/graphics/Matrix;", "transformFrom-EL8BTi8", "(Landroidx/compose/ui/layout/LayoutCoordinates;[F)V", "transformToScreen", "transformToScreen-58bKbWc", "([F)V", "get", "", "alignmentLine", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
     public static final int $stable = 0;
@@ -32,9 +32,9 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: getSize-YbymL2g */
-    public long mo6706getSizeYbymL2g() {
+    public long mo6883getSizeYbymL2g() {
         LookaheadDelegate lookaheadDelegate = this.lookaheadDelegate;
-        return IntSize.m8162constructorimpl((lookaheadDelegate.getWidth() << 32) | (lookaheadDelegate.getHeight() & 4294967295L));
+        return IntSize.m8424constructorimpl((lookaheadDelegate.getWidth() << 32) | (lookaheadDelegate.getHeight() & 4294967295L));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
@@ -48,8 +48,8 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
         if (!isAttached()) {
             InlineClassHelperKt.throwIllegalStateException(NodeCoordinator.ExpectAttachedLayoutCoordinates);
         }
-        NodeCoordinator wrappedBy$ui_release = getCoordinator().getLayoutNode().getOuterCoordinator$ui_release().getWrappedBy$ui_release();
-        if (wrappedBy$ui_release == null || (lookaheadDelegate = wrappedBy$ui_release.getLookaheadDelegate()) == null) {
+        NodeCoordinator wrappedBy$ui = getCoordinator().getLayoutNode().getOuterCoordinator$ui().getWrappedBy$ui();
+        if (wrappedBy$ui == null || (lookaheadDelegate = wrappedBy$ui.getLookaheadDelegate()) == null) {
             return null;
         }
         return lookaheadDelegate.getCoordinates();
@@ -61,8 +61,8 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
         if (!isAttached()) {
             InlineClassHelperKt.throwIllegalStateException(NodeCoordinator.ExpectAttachedLayoutCoordinates);
         }
-        NodeCoordinator wrappedBy$ui_release = getCoordinator().getWrappedBy$ui_release();
-        if (wrappedBy$ui_release == null || (lookaheadDelegate = wrappedBy$ui_release.getLookaheadDelegate()) == null) {
+        NodeCoordinator wrappedBy$ui = getCoordinator().getWrappedBy$ui();
+        if (wrappedBy$ui == null || (lookaheadDelegate = wrappedBy$ui.getLookaheadDelegate()) == null) {
             return null;
         }
         return lookaheadDelegate.getCoordinates();
@@ -79,78 +79,78 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
     }
 
     /* renamed from: getLookaheadOffset-F1C5BW0  reason: not valid java name */
-    private final long m6726getLookaheadOffsetF1C5BW0() {
+    private final long m6904getLookaheadOffsetF1C5BW0() {
         LookaheadDelegate rootLookaheadDelegate = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(this.lookaheadDelegate);
-        return Offset.m5040minusMKHz9U(mo6707localPositionOfR5De75A(rootLookaheadDelegate.getCoordinates(), Offset.Companion.m5052getZeroF1C5BW0()), getCoordinator().mo6707localPositionOfR5De75A(rootLookaheadDelegate.getCoordinator(), Offset.Companion.m5052getZeroF1C5BW0()));
+        return Offset.m5183minusMKHz9U(mo6884localPositionOfR5De75A(rootLookaheadDelegate.getCoordinates(), Offset.Companion.m5195getZeroF1C5BW0()), getCoordinator().mo6884localPositionOfR5De75A(rootLookaheadDelegate.getCoordinator(), Offset.Companion.m5195getZeroF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: screenToLocal-MK-Hz9U */
-    public long mo6712screenToLocalMKHz9U(long j) {
-        return Offset.m5041plusMKHz9U(getCoordinator().mo6712screenToLocalMKHz9U(j), m6726getLookaheadOffsetF1C5BW0());
+    public long mo6889screenToLocalMKHz9U(long j) {
+        return Offset.m5184plusMKHz9U(getCoordinator().mo6889screenToLocalMKHz9U(j), m6904getLookaheadOffsetF1C5BW0());
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToScreen-MK-Hz9U */
-    public long mo6710localToScreenMKHz9U(long j) {
-        return getCoordinator().mo6710localToScreenMKHz9U(Offset.m5041plusMKHz9U(j, m6726getLookaheadOffsetF1C5BW0()));
+    public long mo6887localToScreenMKHz9U(long j) {
+        return getCoordinator().mo6887localToScreenMKHz9U(Offset.m5184plusMKHz9U(j, m6904getLookaheadOffsetF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: windowToLocal-MK-Hz9U */
-    public long mo6715windowToLocalMKHz9U(long j) {
-        return Offset.m5041plusMKHz9U(getCoordinator().mo6715windowToLocalMKHz9U(j), m6726getLookaheadOffsetF1C5BW0());
+    public long mo6892windowToLocalMKHz9U(long j) {
+        return Offset.m5184plusMKHz9U(getCoordinator().mo6892windowToLocalMKHz9U(j), m6904getLookaheadOffsetF1C5BW0());
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToWindow-MK-Hz9U */
-    public long mo6711localToWindowMKHz9U(long j) {
-        return getCoordinator().mo6711localToWindowMKHz9U(Offset.m5041plusMKHz9U(j, m6726getLookaheadOffsetF1C5BW0()));
+    public long mo6888localToWindowMKHz9U(long j) {
+        return getCoordinator().mo6888localToWindowMKHz9U(Offset.m5184plusMKHz9U(j, m6904getLookaheadOffsetF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localToRoot-MK-Hz9U */
-    public long mo6709localToRootMKHz9U(long j) {
-        return getCoordinator().mo6709localToRootMKHz9U(Offset.m5041plusMKHz9U(j, m6726getLookaheadOffsetF1C5BW0()));
+    public long mo6886localToRootMKHz9U(long j) {
+        return getCoordinator().mo6886localToRootMKHz9U(Offset.m5184plusMKHz9U(j, m6904getLookaheadOffsetF1C5BW0()));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localPositionOf-R5De75A */
-    public long mo6707localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j) {
-        return mo6708localPositionOfS_NoaFU(layoutCoordinates, j, true);
+    public long mo6884localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j) {
+        return mo6885localPositionOfS_NoaFU(layoutCoordinates, j, true);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: localPositionOf-S_NoaFU */
-    public long mo6708localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
+    public long mo6885localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
         if (layoutCoordinates instanceof LookaheadLayoutCoordinates) {
             LookaheadDelegate lookaheadDelegate = ((LookaheadLayoutCoordinates) layoutCoordinates).lookaheadDelegate;
-            lookaheadDelegate.getCoordinator().onCoordinatesUsed$ui_release();
-            LookaheadDelegate lookaheadDelegate2 = getCoordinator().findCommonAncestor$ui_release(lookaheadDelegate.getCoordinator()).getLookaheadDelegate();
+            lookaheadDelegate.getCoordinator().onCoordinatesUsed$ui();
+            LookaheadDelegate lookaheadDelegate2 = getCoordinator().findCommonAncestor$ui(lookaheadDelegate.getCoordinator()).getLookaheadDelegate();
             if (lookaheadDelegate2 != null) {
-                long m8127minusqkQi6aY = IntOffset.m8127minusqkQi6aY(IntOffset.m8128plusqkQi6aY(lookaheadDelegate.m6929positionIniSbpLlY$ui_release(lookaheadDelegate2, !z), IntOffsetKt.m8141roundk4lQ0M(j)), this.lookaheadDelegate.m6929positionIniSbpLlY$ui_release(lookaheadDelegate2, !z));
-                return Offset.m5028constructorimpl((Float.floatToRawIntBits(IntOffset.m8124getXimpl(m8127minusqkQi6aY)) << 32) | (Float.floatToRawIntBits(IntOffset.m8125getYimpl(m8127minusqkQi6aY)) & 4294967295L));
+                long m8389minusqkQi6aY = IntOffset.m8389minusqkQi6aY(IntOffset.m8390plusqkQi6aY(lookaheadDelegate.m7135positionIniSbpLlY$ui(lookaheadDelegate2, !z), IntOffsetKt.m8403roundk4lQ0M(j)), this.lookaheadDelegate.m7135positionIniSbpLlY$ui(lookaheadDelegate2, !z));
+                return Offset.m5171constructorimpl((Float.floatToRawIntBits(IntOffset.m8386getXimpl(m8389minusqkQi6aY)) << 32) | (Float.floatToRawIntBits(IntOffset.m8387getYimpl(m8389minusqkQi6aY)) & 4294967295L));
             }
             LookaheadDelegate rootLookaheadDelegate = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(lookaheadDelegate);
-            long m8128plusqkQi6aY = IntOffset.m8128plusqkQi6aY(IntOffset.m8128plusqkQi6aY(lookaheadDelegate.m6929positionIniSbpLlY$ui_release(rootLookaheadDelegate, !z), rootLookaheadDelegate.mo6918getPositionnOccac()), IntOffsetKt.m8141roundk4lQ0M(j));
+            long m8390plusqkQi6aY = IntOffset.m8390plusqkQi6aY(IntOffset.m8390plusqkQi6aY(lookaheadDelegate.m7135positionIniSbpLlY$ui(rootLookaheadDelegate, !z), rootLookaheadDelegate.mo7124getPositionnOccac()), IntOffsetKt.m8403roundk4lQ0M(j));
             LookaheadDelegate rootLookaheadDelegate2 = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(this.lookaheadDelegate);
-            long m8127minusqkQi6aY2 = IntOffset.m8127minusqkQi6aY(m8128plusqkQi6aY, IntOffset.m8128plusqkQi6aY(this.lookaheadDelegate.m6929positionIniSbpLlY$ui_release(rootLookaheadDelegate2, !z), rootLookaheadDelegate2.mo6918getPositionnOccac()));
-            long m5028constructorimpl = Offset.m5028constructorimpl((Float.floatToRawIntBits(IntOffset.m8125getYimpl(m8127minusqkQi6aY2)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m8124getXimpl(m8127minusqkQi6aY2)) << 32));
-            NodeCoordinator wrappedBy$ui_release = rootLookaheadDelegate2.getCoordinator().getWrappedBy$ui_release();
-            Intrinsics.checkNotNull(wrappedBy$ui_release);
-            NodeCoordinator wrappedBy$ui_release2 = rootLookaheadDelegate.getCoordinator().getWrappedBy$ui_release();
-            Intrinsics.checkNotNull(wrappedBy$ui_release2);
-            return wrappedBy$ui_release.mo6708localPositionOfS_NoaFU(wrappedBy$ui_release2, m5028constructorimpl, z);
+            long m8389minusqkQi6aY2 = IntOffset.m8389minusqkQi6aY(m8390plusqkQi6aY, IntOffset.m8390plusqkQi6aY(this.lookaheadDelegate.m7135positionIniSbpLlY$ui(rootLookaheadDelegate2, !z), rootLookaheadDelegate2.mo7124getPositionnOccac()));
+            long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(IntOffset.m8387getYimpl(m8389minusqkQi6aY2)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m8386getXimpl(m8389minusqkQi6aY2)) << 32));
+            NodeCoordinator wrappedBy$ui = rootLookaheadDelegate2.getCoordinator().getWrappedBy$ui();
+            Intrinsics.checkNotNull(wrappedBy$ui);
+            NodeCoordinator wrappedBy$ui2 = rootLookaheadDelegate.getCoordinator().getWrappedBy$ui();
+            Intrinsics.checkNotNull(wrappedBy$ui2);
+            return wrappedBy$ui.mo6885localPositionOfS_NoaFU(wrappedBy$ui2, m5171constructorimpl, z);
         }
         LookaheadDelegate rootLookaheadDelegate3 = LookaheadLayoutCoordinatesKt.getRootLookaheadDelegate(this.lookaheadDelegate);
-        long mo6708localPositionOfS_NoaFU = mo6708localPositionOfS_NoaFU(rootLookaheadDelegate3.getLookaheadLayoutCoordinates(), j, z);
-        long mo6918getPositionnOccac = rootLookaheadDelegate3.mo6918getPositionnOccac();
-        long m5040minusMKHz9U = Offset.m5040minusMKHz9U(mo6708localPositionOfS_NoaFU, Offset.m5028constructorimpl((4294967295L & Float.floatToRawIntBits(IntOffset.m8125getYimpl(mo6918getPositionnOccac))) | (Float.floatToRawIntBits(IntOffset.m8124getXimpl(mo6918getPositionnOccac)) << 32)));
+        long mo6885localPositionOfS_NoaFU = mo6885localPositionOfS_NoaFU(rootLookaheadDelegate3.getLookaheadLayoutCoordinates(), j, z);
+        long mo7124getPositionnOccac = rootLookaheadDelegate3.mo7124getPositionnOccac();
+        long m5183minusMKHz9U = Offset.m5183minusMKHz9U(mo6885localPositionOfS_NoaFU, Offset.m5171constructorimpl((4294967295L & Float.floatToRawIntBits(IntOffset.m8387getYimpl(mo7124getPositionnOccac))) | (Float.floatToRawIntBits(IntOffset.m8386getXimpl(mo7124getPositionnOccac)) << 32)));
         LayoutCoordinates parentCoordinates = rootLookaheadDelegate3.getCoordinator().getParentCoordinates();
         if (parentCoordinates == null) {
             parentCoordinates = rootLookaheadDelegate3.getCoordinator().getCoordinates();
         }
-        return Offset.m5041plusMKHz9U(m5040minusMKHz9U, parentCoordinates.mo6708localPositionOfS_NoaFU(layoutCoordinates, Offset.Companion.m5052getZeroF1C5BW0(), z));
+        return Offset.m5184plusMKHz9U(m5183minusMKHz9U, parentCoordinates.mo6885localPositionOfS_NoaFU(layoutCoordinates, Offset.Companion.m5195getZeroF1C5BW0(), z));
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
@@ -160,14 +160,14 @@ public final class LookaheadLayoutCoordinates implements LayoutCoordinates {
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: transformFrom-EL8BTi8 */
-    public void mo6713transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
-        getCoordinator().mo6713transformFromEL8BTi8(layoutCoordinates, fArr);
+    public void mo6890transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
+        getCoordinator().mo6890transformFromEL8BTi8(layoutCoordinates, fArr);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates
     /* renamed from: transformToScreen-58bKbWc */
-    public void mo6714transformToScreen58bKbWc(float[] fArr) {
-        getCoordinator().mo6714transformToScreen58bKbWc(fArr);
+    public void mo6891transformToScreen58bKbWc(float[] fArr) {
+        getCoordinator().mo6891transformToScreen58bKbWc(fArr);
     }
 
     @Override // androidx.compose.ui.layout.LayoutCoordinates

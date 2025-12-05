@@ -24,8 +24,8 @@ public final class Pl implements Ql {
     public static final Map k = Collections.unmodifiableMap(new Ml());
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f640a;
-    public final C0703xi b;
+    public final List f723a;
+    public final C0702xi b;
     public final Xl c;
     public final Handler d;
     public PublicLogger e;
@@ -35,8 +35,8 @@ public final class Pl implements Ql {
     public HashMap i;
     public boolean j;
 
-    public Pl(Context context, C0703xi c0703xi, We we, Handler handler) {
-        this(c0703xi, new Xl(context, we), handler);
+    public Pl(Context context, C0702xi c0702xi, We we, Handler handler) {
+        this(c0702xi, new Xl(context, we), handler);
     }
 
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list, Map<String, String> map) {
@@ -107,7 +107,7 @@ public final class Pl implements Ql {
                     xl.f = j;
                     D3 d3 = xl.k;
                     hashMap = xl.e;
-                    HashMap a14 = AbstractC0294hb.a(a8.id);
+                    HashMap a14 = AbstractC0293hb.a(a8.id);
                     d3.getClass();
                     if (!mo.a((Map) hashMap)) {
                         equals = mo.a((Map) a14);
@@ -137,7 +137,7 @@ public final class Pl implements Ql {
             xl.f = j;
             D3 d32 = xl.k;
             hashMap = xl.e;
-            HashMap a142 = AbstractC0294hb.a(a8.id);
+            HashMap a142 = AbstractC0293hb.a(a8.id);
             d32.getClass();
             if (!mo.a((Map) hashMap)) {
             }
@@ -146,7 +146,7 @@ public final class Pl implements Ql {
             xl.h = j2;
             xl.c();
         }
-        C0158c4.l().m().a(bundle2, new SdkIdentifiers(a2.id, a3.id, a4.id));
+        C0157c4.l().m().a(bundle2, new SdkIdentifiers(a2.id, a3.id, a4.id));
         h();
     }
 
@@ -171,7 +171,7 @@ public final class Pl implements Ql {
             w9 = u9.b;
         }
         t9.getClass();
-        Boolean bool = w9.f737a;
+        Boolean bool = w9.f820a;
         return new Y9();
     }
 
@@ -208,17 +208,17 @@ public final class Pl implements Ql {
         synchronized (this.g) {
             if (!this.j || this.c.b()) {
                 this.j = true;
-                a(this.f640a, this.f, this.i, false);
+                a(this.f723a, this.f, this.i, false);
             }
         }
     }
 
-    public Pl(C0703xi c0703xi, Xl xl, Handler handler) {
-        this.f640a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
+    public Pl(C0702xi c0702xi, Xl xl, Handler handler) {
+        this.f723a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
         this.g = new Object();
         this.h = new WeakHashMap();
         this.j = false;
-        this.b = c0703xi;
+        this.b = c0702xi;
         this.c = xl;
         this.d = handler;
         this.f = new Nl(this);
@@ -234,17 +234,17 @@ public final class Pl implements Ql {
 
     public final void a(List list, B6 b6, Map map, boolean z) {
         C6 c6 = new C6(this.d, b6);
-        C0703xi c0703xi = this.b;
-        c0703xi.getClass();
+        C0702xi c0702xi = this.b;
+        c0702xi.getClass();
         Bundle bundle = new Bundle();
         bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new Ya(c6, list, map, z));
-        EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = AbstractC0694x9.f1197a;
+        Set set = AbstractC0693x9.f1280a;
         N3 n3 = new N3("", "", 1536, 0, anonymousInstance);
         n3.m = bundle;
-        G4 g4 = c0703xi.f1201a;
-        c0703xi.a(C0703xi.a(n3, g4), g4, 1, (Map) null);
+        G4 g4 = c0702xi.f1284a;
+        c0702xi.a(C0702xi.a(n3, g4), g4, 1, (Map) null);
     }
 
     public final void a(Map<String, String> map) {
@@ -339,10 +339,10 @@ public final class Pl implements Ql {
             }
             this.h.remove(startupParamsCallback);
             if (this.h.isEmpty()) {
-                C0486p0 c0486p0 = this.b.d;
-                synchronized (c0486p0.f) {
-                    c0486p0.c = false;
-                    c0486p0.c();
+                C0485p0 c0485p0 = this.b.d;
+                synchronized (c0485p0.f) {
+                    c0485p0.c = false;
+                    c0485p0.c();
                 }
             }
         }
@@ -358,7 +358,7 @@ public final class Pl implements Ql {
         IdentifiersResult identifiersResult = (IdentifiersResult) this.c.b.get("appmetrica_clids");
         String str = identifiersResult == null ? null : identifiersResult.id;
         if (!TextUtils.isEmpty(str)) {
-            return AbstractC0294hb.a(str);
+            return AbstractC0293hb.a(str);
         }
         return this.i;
     }
@@ -383,10 +383,10 @@ public final class Pl implements Ql {
 
     public final void a(StartupParamsCallback startupParamsCallback, List list) {
         if (this.h.isEmpty()) {
-            C0486p0 c0486p0 = this.b.d;
-            synchronized (c0486p0.f) {
-                c0486p0.c = true;
-                c0486p0.b();
+            C0485p0 c0485p0 = this.b.d;
+            synchronized (c0485p0.f) {
+                c0485p0.c = true;
+                c0485p0.b();
             }
         }
         this.h.put(startupParamsCallback, list);

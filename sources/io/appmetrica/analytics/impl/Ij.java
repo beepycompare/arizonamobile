@@ -5,16 +5,16 @@ import io.appmetrica.analytics.AdRevenue;
 public final class Ij implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f527a;
+    public final /* synthetic */ AdRevenue f610a;
     public final /* synthetic */ boolean b;
 
     public Ij(AdRevenue adRevenue, boolean z) {
-        this.f527a = adRevenue;
+        this.f610a = adRevenue;
         this.b = z;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.reportAdRevenue(this.f527a, this.b);
+        sa.reportAdRevenue(this.f610a, this.b);
     }
 }

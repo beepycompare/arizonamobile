@@ -8,6 +8,7 @@ import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.RendererCapabilities;
+import androidx.window.core.layout.WindowSizeClass;
 import com.google.android.material.internal.ViewUtils;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -324,7 +325,7 @@ public final class DtsUtil {
             if (readBits == 0) {
                 i2 = 512;
             } else if (readBits == 1) {
-                i2 = 480;
+                i2 = WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND;
             } else if (readBits != 2) {
                 throw ParserException.createForMalformedContainer("Unsupported base duration index in DTS UHD header: " + readBits, null);
             } else {

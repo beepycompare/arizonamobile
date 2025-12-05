@@ -9,7 +9,7 @@ import kotlin.jvm.internal.AdaptedFunctionReference;
 /* compiled from: ComposableLambda.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public /* synthetic */ class ComposableLambdaImpl$invoke$1 extends AdaptedFunctionReference implements Function2<Composer, Integer, Unit> {
+public final /* synthetic */ class ComposableLambdaImpl$invoke$1 extends AdaptedFunctionReference implements Function2<Composer, Integer, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ComposableLambdaImpl$invoke$1(Object obj) {
         super(2, obj, ComposableLambdaImpl.class, "invoke", "invoke(Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", 8);

@@ -105,7 +105,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     /* renamed from: clone */
-    public FieldSet<T> m8518clone() {
+    public FieldSet<T> m8787clone() {
         FieldSet<T> newFieldSet = newFieldSet();
         int numArrayEntries = this.fields.getNumArrayEntries();
         for (int i = 0; i < numArrayEntries; i++) {

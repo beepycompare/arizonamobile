@@ -131,14 +131,14 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
             function0.invoke();
         }
         if (combinedClickableNode.getHapticFeedbackEnabled()) {
-            ((HapticFeedback) CompositionLocalConsumerModifierNodeKt.currentValueOf(combinedClickableNode, CompositionLocalsKt.getLocalHapticFeedback())).mo6054performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6067getLongPress5zf0vsI());
+            ((HapticFeedback) CompositionLocalConsumerModifierNodeKt.currentValueOf(combinedClickableNode, CompositionLocalsKt.getLocalHapticFeedback())).mo6200performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6213getLongPress5zf0vsI());
         }
         return Unit.INSTANCE;
     }
 
     /* compiled from: Clickable.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$3", f = "Clickable.kt", i = {}, l = {1121}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$3", f = "Clickable.kt", i = {}, l = {1047}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$3  reason: invalid class name */
     /* loaded from: classes.dex */
     static final class AnonymousClass3 extends SuspendLambda implements Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> {
@@ -155,11 +155,11 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m329invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
+            return m362invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m329invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m362invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.this$0, continuation);
             anonymousClass3.L$0 = pressGestureScope;
             anonymousClass3.J$0 = j;
@@ -176,7 +176,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                 long j = this.J$0;
                 if (this.this$0.getEnabled()) {
                     this.label = 1;
-                    if (this.this$0.m232handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
+                    if (this.this$0.m260handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }

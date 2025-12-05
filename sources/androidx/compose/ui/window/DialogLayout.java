@@ -1,6 +1,7 @@
 package androidx.compose.ui.window;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -30,7 +31,7 @@ import kotlin.jvm.functions.Function4;
 import kotlin.math.MathKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidDialog.android.kt */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0017\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u0016\u0010\u001f\u001a\u00020\u000e2\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0018J\u001d\u0010 \u001a\u00020\u000e2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020\"H\u0010¢\u0006\u0002\b$J5\u0010%\u001a\u00020\u000e2\u0006\u0010&\u001a\u00020\u00182\u0006\u0010'\u001a\u00020\"2\u0006\u0010(\u001a\u00020\"2\u0006\u0010)\u001a\u00020\"2\u0006\u0010*\u001a\u00020\"H\u0010¢\u0006\u0002\b+J&\u0010\u0013\u001a\u00020\u000e2\u0006\u0010,\u001a\u00020-2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0002\b\u000f¢\u0006\u0002\u0010.J\u0018\u0010/\u001a\u0002002\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u000200H\u0016J~\u00104\u001a\u0002H5\"\u0004\b\u0000\u001052\u0006\u00106\u001a\u0002H52`\u00107\u001a\\\u0012\u0013\u0012\u00110\"¢\u0006\f\b9\u0012\b\b:\u0012\u0004\b\b('\u0012\u0013\u0012\u00110\"¢\u0006\f\b9\u0012\b\b:\u0012\u0004\b\b((\u0012\u0013\u0012\u00110\"¢\u0006\f\b9\u0012\b\b:\u0012\u0004\b\b()\u0012\u0013\u0012\u00110\"¢\u0006\f\b9\u0012\b\b:\u0012\u0004\b\b(*\u0012\u0004\u0012\u0002H508H\u0082\b¢\u0006\u0002\u0010;J\u000e\u0010<\u001a\u00020\u00182\u0006\u0010=\u001a\u00020>J\r\u0010?\u001a\u00020\u000eH\u0017¢\u0006\u0002\u0010@R\u0014\u0010\u0006\u001a\u00020\u0007X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bRA\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0002\b\u000f2\u0011\u0010\f\u001a\r\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0002\b\u000f8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u0015\u0010\u0016\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001c\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0018@RX\u0094\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001e¨\u0006A"}, d2 = {"Landroidx/compose/ui/window/DialogLayout;", "Landroidx/compose/ui/platform/AbstractComposeView;", "Landroidx/compose/ui/window/DialogWindowProvider;", "Landroidx/core/view/OnApplyWindowInsetsListener;", "context", "Landroid/content/Context;", "window", "Landroid/view/Window;", "<init>", "(Landroid/content/Context;Landroid/view/Window;)V", "getWindow", "()Landroid/view/Window;", "<set-?>", "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", FirebaseAnalytics.Param.CONTENT, "getContent", "()Lkotlin/jvm/functions/Function2;", "setContent", "(Lkotlin/jvm/functions/Function2;)V", "content$delegate", "Landroidx/compose/runtime/MutableState;", "usePlatformDefaultWidth", "", "decorFitsSystemWindows", "hasCalledSetLayout", "value", "shouldCreateCompositionOnAttachedToWindow", "getShouldCreateCompositionOnAttachedToWindow", "()Z", "updateProperties", "internalOnMeasure", "widthMeasureSpec", "", "heightMeasureSpec", "internalOnMeasure$ui_release", "internalOnLayout", "changed", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "internalOnLayout$ui_release", "parent", "Landroidx/compose/runtime/CompositionContext;", "(Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)V", "onApplyWindowInsets", "Landroidx/core/view/WindowInsetsCompat;", "v", "Landroid/view/View;", "insets", "insetValue", ExifInterface.GPS_DIRECTION_TRUE, "unchangedValue", "block", "Lkotlin/Function4;", "Lkotlin/ParameterName;", "name", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function4;)Ljava/lang/Object;", "isInsideContent", NotificationCompat.CATEGORY_EVENT, "Landroid/view/MotionEvent;", "Content", "(Landroidx/compose/runtime/Composer;I)V", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0017\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u0016\u0010\u001f\u001a\u00020\u000e2\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0018J\u001d\u0010 \u001a\u00020\u000e2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020\"H\u0010¢\u0006\u0002\b$J\u0018\u0010%\u001a\u00020\"2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010&\u001a\u00020\"H\u0002J5\u0010'\u001a\u00020\u000e2\u0006\u0010(\u001a\u00020\u00182\u0006\u0010)\u001a\u00020\"2\u0006\u0010*\u001a\u00020\"2\u0006\u0010+\u001a\u00020\"2\u0006\u0010,\u001a\u00020\"H\u0010¢\u0006\u0002\b-J&\u0010\u0013\u001a\u00020\u000e2\u0006\u0010.\u001a\u00020/2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0002\b\u000f¢\u0006\u0002\u00100J\u0018\u00101\u001a\u0002022\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u000202H\u0016J~\u00106\u001a\u0002H7\"\u0004\b\u0000\u001072\u0006\u00108\u001a\u0002H72`\u00109\u001a\\\u0012\u0013\u0012\u00110\"¢\u0006\f\b;\u0012\b\b<\u0012\u0004\b\b()\u0012\u0013\u0012\u00110\"¢\u0006\f\b;\u0012\b\b<\u0012\u0004\b\b(*\u0012\u0013\u0012\u00110\"¢\u0006\f\b;\u0012\b\b<\u0012\u0004\b\b(+\u0012\u0013\u0012\u00110\"¢\u0006\f\b;\u0012\b\b<\u0012\u0004\b\b(,\u0012\u0004\u0012\u0002H70:H\u0082\b¢\u0006\u0002\u0010=J\u000e\u0010>\u001a\u00020\u00182\u0006\u0010?\u001a\u00020@J\r\u0010A\u001a\u00020\u000eH\u0017¢\u0006\u0002\u0010BR\u0014\u0010\u0006\u001a\u00020\u0007X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bRA\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0002\b\u000f2\u0011\u0010\f\u001a\r\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0002\b\u000f8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u0015\u0010\u0016\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001c\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0018@RX\u0094\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001e¨\u0006C"}, d2 = {"Landroidx/compose/ui/window/DialogLayout;", "Landroidx/compose/ui/platform/AbstractComposeView;", "Landroidx/compose/ui/window/DialogWindowProvider;", "Landroidx/core/view/OnApplyWindowInsetsListener;", "context", "Landroid/content/Context;", "window", "Landroid/view/Window;", "<init>", "(Landroid/content/Context;Landroid/view/Window;)V", "getWindow", "()Landroid/view/Window;", "<set-?>", "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", FirebaseAnalytics.Param.CONTENT, "getContent", "()Lkotlin/jvm/functions/Function2;", "setContent", "(Lkotlin/jvm/functions/Function2;)V", "content$delegate", "Landroidx/compose/runtime/MutableState;", "usePlatformDefaultWidth", "", "decorFitsSystemWindows", "hasCalledSetLayout", "value", "shouldCreateCompositionOnAttachedToWindow", "getShouldCreateCompositionOnAttachedToWindow", "()Z", "updateProperties", "internalOnMeasure", "widthMeasureSpec", "", "heightMeasureSpec", "internalOnMeasure$ui", "getMaxDialogHeightExcludingInsets", "height", "internalOnLayout", "changed", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "internalOnLayout$ui", "parent", "Landroidx/compose/runtime/CompositionContext;", "(Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)V", "onApplyWindowInsets", "Landroidx/core/view/WindowInsetsCompat;", "v", "Landroid/view/View;", "insets", "insetValue", ExifInterface.GPS_DIRECTION_TRUE, "unchangedValue", "block", "Lkotlin/Function4;", "Lkotlin/ParameterName;", "name", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function4;)Ljava/lang/Object;", "isInsideContent", NotificationCompat.CATEGORY_EVENT, "Landroid/view/MotionEvent;", "Content", "(Landroidx/compose/runtime/Composer;I)V", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class DialogLayout extends AbstractComposeView implements DialogWindowProvider, OnApplyWindowInsetsListener {
     private final MutableState content$delegate;
@@ -40,16 +41,11 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
     private boolean usePlatformDefaultWidth;
     private final Window window;
 
-    @Override // androidx.compose.ui.window.DialogWindowProvider
-    public Window getWindow() {
-        return this.window;
-    }
-
     public DialogLayout(Context context, Window window) {
         super(context, null, 0, 6, null);
         MutableState mutableStateOf$default;
         this.window = window;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$AndroidDialog_androidKt.INSTANCE.getLambda$210148896$ui_release(), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$AndroidDialog_androidKt.INSTANCE.getLambda$210148896$ui(), null, 2, null);
         this.content$delegate = mutableStateOf$default;
         DialogLayout dialogLayout = this;
         ViewCompat.setOnApplyWindowInsetsListener(dialogLayout, this);
@@ -92,6 +88,11 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
         });
     }
 
+    @Override // androidx.compose.ui.window.DialogWindowProvider
+    public Window getWindow() {
+        return this.window;
+    }
+
     private final Function2<Composer, Integer, Unit> getContent() {
         return (Function2) this.content$delegate.getValue();
     }
@@ -121,17 +122,22 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
     }
 
     @Override // androidx.compose.ui.platform.AbstractComposeView
-    public void internalOnMeasure$ui_release(int i, int i2) {
+    public void internalOnMeasure$ui(int i, int i2) {
+        int i3;
         int min;
         View childAt = getChildAt(0);
         if (childAt == null) {
-            super.internalOnMeasure$ui_release(i, i2);
+            super.internalOnMeasure$ui(i, i2);
             return;
         }
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
         int mode = View.MeasureSpec.getMode(i2);
-        int i3 = (mode != Integer.MIN_VALUE || this.usePlatformDefaultWidth || this.decorFitsSystemWindows || getWindow().getAttributes().height != -2) ? size2 : size2 + 1;
+        if (mode == Integer.MIN_VALUE && !this.usePlatformDefaultWidth && getWindow().getAttributes().height == -2) {
+            i3 = this.decorFitsSystemWindows ? getMaxDialogHeightExcludingInsets(getWindow(), size2) : size2 + 1;
+        } else {
+            i3 = size2;
+        }
         int paddingLeft = getPaddingLeft() + getPaddingRight();
         int paddingTop = getPaddingTop() + getPaddingBottom();
         int i4 = size - paddingLeft;
@@ -169,8 +175,15 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
         getWindow().setLayout(-1, -1);
     }
 
+    private final int getMaxDialogHeightExcludingInsets(Window window, int i) {
+        if (Build.VERSION.SDK_INT < 30) {
+            return Api21Impl.INSTANCE.getMaxDialogHeightExcludingSystemBarInsets(window);
+        }
+        return Build.VERSION.SDK_INT < 32 ? Api30Impl.INSTANCE.getMaxDialogHeightExcludingSystemBarInsets(window) : i;
+    }
+
     @Override // androidx.compose.ui.platform.AbstractComposeView
-    public void internalOnLayout$ui_release(boolean z, int i, int i2, int i3, int i4) {
+    public void internalOnLayout$ui(boolean z, int i, int i2, int i3, int i4) {
         View childAt = getChildAt(0);
         if (childAt == null) {
             return;
@@ -231,7 +244,7 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
     public void Content(Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(1735448596);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Content)433@17803L9:AndroidDialog.android.kt#2oxthz");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Content)455@18976L9:AndroidDialog.android.kt#2oxthz");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(this) ? 4 : 2) | i;
         } else {
@@ -241,7 +254,7 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1735448596, i2, -1, "androidx.compose.ui.window.DialogLayout.Content (AndroidDialog.android.kt:432)");
+                ComposerKt.traceEventStart(1735448596, i2, -1, "androidx.compose.ui.window.DialogLayout.Content (AndroidDialog.android.kt:454)");
             }
             getContent().invoke(startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {

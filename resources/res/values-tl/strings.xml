@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Ibahagi sa/kay</string>
     <string name="abc_shareactionprovider_share_with_application">Ibahagi gamit ang %s</string>
     <string name="abc_toolbar_collapse_description">I-collapse</string>
-    <string name="autofill">Autofill</string>
+    <string name="androidx_compose_foundation_autofill">Autofill</string>
+    <string name="androidx_compose_ui_autofill">Autofill</string>
     <string name="bottomsheet_action_collapse">I-collapse ang bottom sheet</string>
     <string name="bottomsheet_action_expand">I-expand ang bottom sheet</string>
     <string name="bottomsheet_action_expand_halfway">I-expand hanggang gitna</string>

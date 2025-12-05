@@ -36,12 +36,12 @@ import androidx.media3.extractor.DefaultExtractorsFactory;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public interface ExoPlayer extends Player {
     public static final long DEFAULT_DETACH_SURFACE_TIMEOUT_MS = 2000;
     public static final long DEFAULT_RELEASE_TIMEOUT_MS = 500;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface AudioOffloadListener {
         default void onOffloadedPlayback(boolean z) {
         }
@@ -204,7 +204,7 @@ public interface ExoPlayer extends Player {
 
     void setWakeMode(int i);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static class PreloadConfiguration {
         public static final PreloadConfiguration DEFAULT = new PreloadConfiguration(C.TIME_UNSET);
         public final long targetPreloadDurationUs;
@@ -214,7 +214,7 @@ public interface ExoPlayer extends Player {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Builder {
         Function<Clock, AnalyticsCollector> analyticsCollectorFunction;
         AudioAttributes audioAttributes;

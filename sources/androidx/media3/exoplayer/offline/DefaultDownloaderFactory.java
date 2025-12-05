@@ -7,7 +7,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.datasource.cache.CacheDataSource;
 import androidx.media3.exoplayer.offline.DownloadRequest;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultDownloaderFactory implements DownloaderFactory {
     private final CacheDataSource.Factory cacheDataSourceFactory;
     private final Executor executor;

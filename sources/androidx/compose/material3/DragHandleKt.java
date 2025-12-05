@@ -297,7 +297,7 @@ public final class DragHandleKt {
                     startRestartGroup.updateRememberedValue(rememberedValue7);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                BoxKt.Box(IndicationKt.indication(DrawModifierKt.drawBehind(layout, (Function1) rememberedValue7), mutableInteractionSource3, RippleKt.m2781rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), startRestartGroup, 0);
+                BoxKt.Box(IndicationKt.indication(DrawModifierKt.drawBehind(layout, (Function1) rememberedValue7), mutableInteractionSource3, RippleKt.m2867rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -368,15 +368,15 @@ public final class DragHandleKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult VerticalDragHandle$lambda$13$lambda$12(DragHandleSizes dragHandleSizes, State state, MutableState mutableState, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        long m2325getPressedSizeMYxV2XQ;
+        long m2411getPressedSizeMYxV2XQ;
         if (VerticalDragHandle$lambda$1(state)) {
-            m2325getPressedSizeMYxV2XQ = dragHandleSizes.m2324getDraggedSizeMYxV2XQ();
+            m2411getPressedSizeMYxV2XQ = dragHandleSizes.m2410getDraggedSizeMYxV2XQ();
         } else {
-            m2325getPressedSizeMYxV2XQ = VerticalDragHandle$lambda$3(mutableState) ? dragHandleSizes.m2325getPressedSizeMYxV2XQ() : dragHandleSizes.m2326getSizeMYxV2XQ();
+            m2411getPressedSizeMYxV2XQ = VerticalDragHandle$lambda$3(mutableState) ? dragHandleSizes.m2411getPressedSizeMYxV2XQ() : dragHandleSizes.m2412getSizeMYxV2XQ();
         }
-        long j = measureScope.mo431toSizeXkaWNTQ(m2325getPressedSizeMYxV2XQ);
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(Constraints.Companion.m7959fixedJhjzzOo(Math.round(Float.intBitsToFloat((int) (j >> 32))), Math.round(Float.intBitsToFloat((int) (j & 4294967295L)))));
-        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.DragHandleKt$$ExternalSyntheticLambda0
+        long j = measureScope.mo465toSizeXkaWNTQ(m2411getPressedSizeMYxV2XQ);
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(Math.round(Float.intBitsToFloat((int) (j >> 32))), Math.round(Float.intBitsToFloat((int) (j & 4294967295L)))));
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.DragHandleKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit VerticalDragHandle$lambda$13$lambda$12$lambda$11;
@@ -394,13 +394,13 @@ public final class DragHandleKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit VerticalDragHandle$lambda$15$lambda$14(DragHandleColors dragHandleColors, State state, MutableState mutableState, DrawScope drawScope) {
-        long m2320getPressedColor0d7_KjU;
+        long m2406getPressedColor0d7_KjU;
         if (VerticalDragHandle$lambda$1(state)) {
-            m2320getPressedColor0d7_KjU = dragHandleColors.m2319getDraggedColor0d7_KjU();
+            m2406getPressedColor0d7_KjU = dragHandleColors.m2405getDraggedColor0d7_KjU();
         } else {
-            m2320getPressedColor0d7_KjU = VerticalDragHandle$lambda$3(mutableState) ? dragHandleColors.m2320getPressedColor0d7_KjU() : dragHandleColors.m2318getColor0d7_KjU();
+            m2406getPressedColor0d7_KjU = VerticalDragHandle$lambda$3(mutableState) ? dragHandleColors.m2406getPressedColor0d7_KjU() : dragHandleColors.m2404getColor0d7_KjU();
         }
-        DrawScope.m5853drawRectnJ9OG0$default(drawScope, m2320getPressedColor0d7_KjU, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        DrawScope.m5999drawRectnJ9OG0$default(drawScope, m2406getPressedColor0d7_KjU, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         return Unit.INSTANCE;
     }
 

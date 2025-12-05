@@ -447,12 +447,12 @@ public final class ConstraintLayoutKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
             EffectsKt.LaunchedEffect(channel, (Function2) rememberedValue7, composer, 0);
-            ConstraintSet m8323ConstraintLayout$lambda17 = m8323ConstraintLayout$lambda17(mutableState);
-            ConstraintSet m8325ConstraintLayout$lambda20 = m8325ConstraintLayout$lambda20(mutableState2);
+            ConstraintSet m8585ConstraintLayout$lambda17 = m8585ConstraintLayout$lambda17(mutableState);
+            ConstraintSet m8587ConstraintLayout$lambda20 = m8587ConstraintLayout$lambda20(mutableState2);
             float floatValue = ((Number) animatable.getValue()).floatValue();
             int i5 = (i2 << 6) & 7168;
             ComposerKt.sourceInformationMarkerStart(composer, -531105279, "CC(MotionLayout)P(7,2,6,4,8,1:androidx.constraintlayout.compose.DebugFlags,5,3)145@6151L53,146@6233L93,151@6488L627,166@7120L556:MotionLayout.kt#fysre8");
-            int m8351getNonebfy_xzQ = DebugFlags.Companion.m8351getNonebfy_xzQ();
+            int m8613getNonebfy_xzQ = DebugFlags.Companion.m8613getNonebfy_xzQ();
             InvalidationStrategy defaultInvalidationStrategy = InvalidationStrategy.Companion.getDefaultInvalidationStrategy();
             ComposerKt.sourceInformationMarkerStart(composer, 1692702995, "CC(remember):MotionLayout.kt#9igjgp");
             Object rememberedValue8 = composer.rememberedValue();
@@ -473,7 +473,7 @@ public final class ConstraintLayoutKt {
             }
             Ref ref2 = (Ref) obj4;
             ComposerKt.sourceInformationMarkerEnd(composer);
-            MotionLayoutKt.MotionLayoutCore(m8323ConstraintLayout$lambda17, m8325ConstraintLayout$lambda20, null, floatValue, null, 257, DebugFlags.m8344getShowBoundsimpl(m8351getNonebfy_xzQ), DebugFlags.m8346getShowPathsimpl(m8351getNonebfy_xzQ), DebugFlags.m8345getShowKeyPositionsimpl(m8351getNonebfy_xzQ), companion, mutableState3, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(284503157, true, new ConstraintLayoutKt$ConstraintLayout$$inlined$MotionLayoutT3LJ6Qw$1(mutableState3, defaultInvalidationStrategy, ref2, function2, i2), composer, 54), composer, 24576 | ((i5 << 18) & 1879048192), (Ref.$stable << 3) | 3078);
+            MotionLayoutKt.MotionLayoutCore(m8585ConstraintLayout$lambda17, m8587ConstraintLayout$lambda20, null, floatValue, null, 257, DebugFlags.m8606getShowBoundsimpl(m8613getNonebfy_xzQ), DebugFlags.m8608getShowPathsimpl(m8613getNonebfy_xzQ), DebugFlags.m8607getShowKeyPositionsimpl(m8613getNonebfy_xzQ), companion, mutableState3, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(284503157, true, new ConstraintLayoutKt$ConstraintLayout$$inlined$MotionLayoutT3LJ6Qw$1(mutableState3, defaultInvalidationStrategy, ref2, function2, i2), composer, 54), composer, 24576 | ((i5 << 18) & 1879048192), (Ref.$stable << 3) | 3078);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endReplaceGroup();
         } else {
@@ -541,15 +541,15 @@ public final class ConstraintLayoutKt {
                 } else {
                     composer.useNode();
                 }
-                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-                Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -2074157001, "C839@35286L33,841@35445L13,838@35221L255:ConstraintLayout.kt#fysre8");
@@ -589,12 +589,12 @@ public final class ConstraintLayoutKt {
     }
 
     /* renamed from: ConstraintLayout$lambda-17 */
-    public static final ConstraintSet m8323ConstraintLayout$lambda17(MutableState<ConstraintSet> mutableState) {
+    public static final ConstraintSet m8585ConstraintLayout$lambda17(MutableState<ConstraintSet> mutableState) {
         return mutableState.getValue();
     }
 
     /* renamed from: ConstraintLayout$lambda-20 */
-    public static final ConstraintSet m8325ConstraintLayout$lambda20(MutableState<ConstraintSet> mutableState) {
+    public static final ConstraintSet m8587ConstraintLayout$lambda20(MutableState<ConstraintSet> mutableState) {
         return mutableState.getValue();
     }
 
@@ -677,12 +677,12 @@ public final class ConstraintLayoutKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
             EffectsKt.LaunchedEffect(channel, (Function2) rememberedValue7, composer, 0);
-            ConstraintSet m8323ConstraintLayout$lambda17 = m8323ConstraintLayout$lambda17(mutableState);
-            ConstraintSet m8325ConstraintLayout$lambda20 = m8325ConstraintLayout$lambda20(mutableState2);
+            ConstraintSet m8585ConstraintLayout$lambda17 = m8585ConstraintLayout$lambda17(mutableState);
+            ConstraintSet m8587ConstraintLayout$lambda20 = m8587ConstraintLayout$lambda20(mutableState2);
             float floatValue = ((Number) animatable.getValue()).floatValue();
             int i7 = (i6 << 6) & 7168;
             ComposerKt.sourceInformationMarkerStart(composer, -531105279, "CC(MotionLayout)P(7,2,6,4,8,1:androidx.constraintlayout.compose.DebugFlags,5,3)145@6151L53,146@6233L93,151@6488L627,166@7120L556:MotionLayout.kt#fysre8");
-            int m8351getNonebfy_xzQ = DebugFlags.Companion.m8351getNonebfy_xzQ();
+            int m8613getNonebfy_xzQ = DebugFlags.Companion.m8613getNonebfy_xzQ();
             InvalidationStrategy defaultInvalidationStrategy = InvalidationStrategy.Companion.getDefaultInvalidationStrategy();
             ComposerKt.sourceInformationMarkerStart(composer, 1692702995, "CC(remember):MotionLayout.kt#9igjgp");
             Object rememberedValue8 = composer.rememberedValue();
@@ -703,7 +703,7 @@ public final class ConstraintLayoutKt {
             }
             Ref ref2 = (Ref) obj3;
             ComposerKt.sourceInformationMarkerEnd(composer);
-            MotionLayoutKt.MotionLayoutCore(m8323ConstraintLayout$lambda17, m8325ConstraintLayout$lambda20, null, floatValue, null, 257, DebugFlags.m8344getShowBoundsimpl(m8351getNonebfy_xzQ), DebugFlags.m8346getShowPathsimpl(m8351getNonebfy_xzQ), DebugFlags.m8345getShowKeyPositionsimpl(m8351getNonebfy_xzQ), companion, mutableState3, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(284503157, true, new ConstraintLayoutKt$ConstraintLayout$$inlined$MotionLayoutT3LJ6Qw$1(mutableState3, defaultInvalidationStrategy, ref2, function2, i6), composer, 54), composer, 24576 | ((i7 << 18) & 1879048192), (Ref.$stable << 3) | 3078);
+            MotionLayoutKt.MotionLayoutCore(m8585ConstraintLayout$lambda17, m8587ConstraintLayout$lambda20, null, floatValue, null, 257, DebugFlags.m8606getShowBoundsimpl(m8613getNonebfy_xzQ), DebugFlags.m8608getShowPathsimpl(m8613getNonebfy_xzQ), DebugFlags.m8607getShowKeyPositionsimpl(m8613getNonebfy_xzQ), companion, mutableState3, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(284503157, true, new ConstraintLayoutKt$ConstraintLayout$$inlined$MotionLayoutT3LJ6Qw$1(mutableState3, defaultInvalidationStrategy, ref2, function2, i6), composer, 54), composer, 24576 | ((i7 << 18) & 1879048192), (Ref.$stable << 3) | 3078);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endReplaceGroup();
         } else {
@@ -784,15 +784,15 @@ public final class ConstraintLayoutKt {
                 } else {
                     composer.useNode();
                 }
-                Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-                Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -2074157001, "C839@35286L33,841@35445L13,838@35221L255:ConstraintLayout.kt#fysre8");
@@ -832,18 +832,18 @@ public final class ConstraintLayoutKt {
     }
 
     /* renamed from: atLeast-3ABfNKs */
-    public static final Dimension.MaxCoercible m8331atLeast3ABfNKs(Dimension.Coercible coercible, float f) {
+    public static final Dimension.MaxCoercible m8593atLeast3ABfNKs(Dimension.Coercible coercible, float f) {
         Intrinsics.checkNotNull(coercible, "null cannot be cast to non-null type androidx.constraintlayout.compose.DimensionDescription");
         DimensionDescription dimensionDescription = (DimensionDescription) coercible;
-        dimensionDescription.getMin$constraintlayout_compose_release().m8354update0680j_4(f);
+        dimensionDescription.getMin$constraintlayout_compose_release().m8616update0680j_4(f);
         return dimensionDescription;
     }
 
     /* renamed from: atMost-3ABfNKs */
-    public static final Dimension.MinCoercible m8334atMost3ABfNKs(Dimension.Coercible coercible, float f) {
+    public static final Dimension.MinCoercible m8596atMost3ABfNKs(Dimension.Coercible coercible, float f) {
         Intrinsics.checkNotNull(coercible, "null cannot be cast to non-null type androidx.constraintlayout.compose.DimensionDescription");
         DimensionDescription dimensionDescription = (DimensionDescription) coercible;
-        dimensionDescription.getMax$constraintlayout_compose_release().m8354update0680j_4(f);
+        dimensionDescription.getMax$constraintlayout_compose_release().m8616update0680j_4(f);
         return dimensionDescription;
     }
 
@@ -856,18 +856,18 @@ public final class ConstraintLayoutKt {
 
     @Deprecated(message = "Unintended method name, use atLeast(dp) instead", replaceWith = @ReplaceWith(expression = "this.atLeast(dp)", imports = {"androidx.constraintlayout.compose.atLeast"}))
     /* renamed from: atLeastWrapContent-3ABfNKs */
-    public static final Dimension m8333atLeastWrapContent3ABfNKs(Dimension.MinCoercible minCoercible, float f) {
+    public static final Dimension m8595atLeastWrapContent3ABfNKs(Dimension.MinCoercible minCoercible, float f) {
         Intrinsics.checkNotNull(minCoercible, "null cannot be cast to non-null type androidx.constraintlayout.compose.DimensionDescription");
         DimensionDescription dimensionDescription = (DimensionDescription) minCoercible;
-        dimensionDescription.getMin$constraintlayout_compose_release().m8354update0680j_4(f);
+        dimensionDescription.getMin$constraintlayout_compose_release().m8616update0680j_4(f);
         return dimensionDescription;
     }
 
     /* renamed from: atLeast-3ABfNKs */
-    public static final Dimension m8332atLeast3ABfNKs(Dimension.MinCoercible minCoercible, float f) {
+    public static final Dimension m8594atLeast3ABfNKs(Dimension.MinCoercible minCoercible, float f) {
         Intrinsics.checkNotNull(minCoercible, "null cannot be cast to non-null type androidx.constraintlayout.compose.DimensionDescription");
         DimensionDescription dimensionDescription = (DimensionDescription) minCoercible;
-        dimensionDescription.getMin$constraintlayout_compose_release().m8354update0680j_4(f);
+        dimensionDescription.getMin$constraintlayout_compose_release().m8616update0680j_4(f);
         return dimensionDescription;
     }
 
@@ -879,10 +879,10 @@ public final class ConstraintLayoutKt {
     }
 
     /* renamed from: atMost-3ABfNKs */
-    public static final Dimension m8335atMost3ABfNKs(Dimension.MaxCoercible maxCoercible, float f) {
+    public static final Dimension m8597atMost3ABfNKs(Dimension.MaxCoercible maxCoercible, float f) {
         Intrinsics.checkNotNull(maxCoercible, "null cannot be cast to non-null type androidx.constraintlayout.compose.DimensionDescription");
         DimensionDescription dimensionDescription = (DimensionDescription) maxCoercible;
-        dimensionDescription.getMax$constraintlayout_compose_release().m8354update0680j_4(f);
+        dimensionDescription.getMax$constraintlayout_compose_release().m8616update0680j_4(f);
         return dimensionDescription;
     }
 
@@ -936,23 +936,23 @@ public final class ConstraintLayoutKt {
     }
 
     /* renamed from: placeWithFrameTransform-Ktjjmr4$default */
-    public static /* synthetic */ void m8337placeWithFrameTransformKtjjmr4$default(Placeable.PlacementScope placementScope, Placeable placeable, WidgetFrame widgetFrame, long j, int i, Object obj) {
+    public static /* synthetic */ void m8599placeWithFrameTransformKtjjmr4$default(Placeable.PlacementScope placementScope, Placeable placeable, WidgetFrame widgetFrame, long j, int i, Object obj) {
         if ((i & 4) != 0) {
-            j = IntOffset.Companion.m8135getZeronOccac();
+            j = IntOffset.Companion.m8397getZeronOccac();
         }
-        m8336placeWithFrameTransformKtjjmr4(placementScope, placeable, widgetFrame, j);
+        m8598placeWithFrameTransformKtjjmr4(placementScope, placeable, widgetFrame, j);
     }
 
     /* renamed from: placeWithFrameTransform-Ktjjmr4 */
-    public static final void m8336placeWithFrameTransformKtjjmr4(Placeable.PlacementScope placementScope, Placeable placeable, final WidgetFrame widgetFrame, long j) {
+    public static final void m8598placeWithFrameTransformKtjjmr4(Placeable.PlacementScope placementScope, Placeable placeable, final WidgetFrame widgetFrame, long j) {
         if (widgetFrame.visibility == 8) {
             return;
         }
         if (widgetFrame.isDefaultTransform()) {
-            Placeable.PlacementScope.m6763place70tqf50$default(placementScope, placeable, IntOffsetKt.IntOffset(widgetFrame.left - IntOffset.m8124getXimpl(j), widgetFrame.top - IntOffset.m8125getYimpl(j)), 0.0f, 2, null);
+            Placeable.PlacementScope.m6941place70tqf50$default(placementScope, placeable, IntOffsetKt.IntOffset(widgetFrame.left - IntOffset.m8386getXimpl(j), widgetFrame.top - IntOffset.m8387getYimpl(j)), 0.0f, 2, null);
             return;
         }
-        placementScope.placeWithLayer(placeable, widgetFrame.left - IntOffset.m8124getXimpl(j), widgetFrame.top - IntOffset.m8125getYimpl(j), Float.isNaN(widgetFrame.translationZ) ? 0.0f : widgetFrame.translationZ, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.constraintlayout.compose.ConstraintLayoutKt$placeWithFrameTransform$layerBlock$1
+        placementScope.placeWithLayer(placeable, widgetFrame.left - IntOffset.m8386getXimpl(j), widgetFrame.top - IntOffset.m8387getYimpl(j), Float.isNaN(widgetFrame.translationZ) ? 0.0f : widgetFrame.translationZ, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.constraintlayout.compose.ConstraintLayoutKt$placeWithFrameTransform$layerBlock$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -967,7 +967,7 @@ public final class ConstraintLayoutKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(GraphicsLayerScope graphicsLayerScope) {
                 if (!Float.isNaN(WidgetFrame.this.pivotX) || !Float.isNaN(WidgetFrame.this.pivotY)) {
-                    graphicsLayerScope.mo5482setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(Float.isNaN(WidgetFrame.this.pivotX) ? 0.5f : WidgetFrame.this.pivotX, Float.isNaN(WidgetFrame.this.pivotY) ? 0.5f : WidgetFrame.this.pivotY));
+                    graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(Float.isNaN(WidgetFrame.this.pivotX) ? 0.5f : WidgetFrame.this.pivotX, Float.isNaN(WidgetFrame.this.pivotY) ? 0.5f : WidgetFrame.this.pivotY));
                 }
                 if (!Float.isNaN(WidgetFrame.this.rotationX)) {
                     graphicsLayerScope.setRotationX(WidgetFrame.this.rotationX);

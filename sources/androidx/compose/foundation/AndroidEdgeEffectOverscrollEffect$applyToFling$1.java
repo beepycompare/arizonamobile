@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidOverscroll.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.AndroidEdgeEffectOverscrollEffect", f = "AndroidOverscroll.android.kt", i = {1}, l = {688, 720}, m = "applyToFling-BMRW4eQ", n = {"remainingVelocity"}, s = {"J$0"})
+@DebugMetadata(c = "androidx.compose.foundation.AndroidEdgeEffectOverscrollEffect", f = "AndroidOverscroll.android.kt", i = {1}, l = {688, 720}, m = "applyToFling-BMRW4eQ", n = {"remainingVelocity"}, s = {"J$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class AndroidEdgeEffectOverscrollEffect$applyToFling$1 extends ContinuationImpl {
     long J$0;
@@ -26,6 +26,6 @@ public final class AndroidEdgeEffectOverscrollEffect$applyToFling$1 extends Cont
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo246applyToFlingBMRW4eQ(0L, null, this);
+        return this.this$0.mo274applyToFlingBMRW4eQ(0L, null, this);
     }
 }

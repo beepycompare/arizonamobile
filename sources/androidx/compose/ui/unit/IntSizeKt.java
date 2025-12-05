@@ -8,41 +8,41 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class IntSizeKt {
     /* renamed from: getCenter-ozmzZPI$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8174getCenterozmzZPI$annotations(long j) {
+    public static /* synthetic */ void m8436getCenterozmzZPI$annotations(long j) {
     }
 
     public static final long IntSize(int i, int i2) {
-        return IntSize.m8162constructorimpl((i2 & 4294967295L) | (i << 32));
+        return IntSize.m8424constructorimpl((i2 & 4294967295L) | (i << 32));
     }
 
     /* renamed from: times-O0kMr_c  reason: not valid java name */
-    public static final long m8176timesO0kMr_c(int i, long j) {
-        return IntSize.m8169timesYEO4UFw(j, i);
+    public static final long m8438timesO0kMr_c(int i, long j) {
+        return IntSize.m8431timesYEO4UFw(j, i);
     }
 
     /* renamed from: toIntRect-ozmzZPI  reason: not valid java name */
-    public static final IntRect m8177toIntRectozmzZPI(long j) {
-        return IntRectKt.m8157IntRectVbeCjmY(IntOffset.Companion.m8135getZeronOccac(), j);
+    public static final IntRect m8439toIntRectozmzZPI(long j) {
+        return IntRectKt.m8419IntRectVbeCjmY(IntOffset.Companion.m8397getZeronOccac(), j);
     }
 
     /* renamed from: getCenter-ozmzZPI  reason: not valid java name */
-    public static final long m8173getCenterozmzZPI(long j) {
-        return IntOffset.m8118constructorimpl((((j << 32) >> 33) & 4294967295L) | ((j >> 33) << 32));
+    public static final long m8435getCenterozmzZPI(long j) {
+        return IntOffset.m8380constructorimpl((((j << 32) >> 33) & 4294967295L) | ((j >> 33) << 32));
     }
 
     /* renamed from: toSize-ozmzZPI  reason: not valid java name */
-    public static final long m8179toSizeozmzZPI(long j) {
-        return Size.m5096constructorimpl((Float.floatToRawIntBits((int) (j & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (j >> 32)) << 32));
+    public static final long m8441toSizeozmzZPI(long j) {
+        return Size.m5239constructorimpl((Float.floatToRawIntBits((int) (j & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (j >> 32)) << 32));
     }
 
     /* renamed from: toIntSize-uvyYCjk  reason: not valid java name */
-    public static final long m8178toIntSizeuvyYCjk(long j) {
-        return IntSize.m8162constructorimpl((((int) Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (((int) Float.intBitsToFloat((int) (j >> 32))) << 32));
+    public static final long m8440toIntSizeuvyYCjk(long j) {
+        return IntSize.m8424constructorimpl((((int) Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (((int) Float.intBitsToFloat((int) (j >> 32))) << 32));
     }
 
     /* renamed from: roundToIntSize-uvyYCjk  reason: not valid java name */
-    public static final long m8175roundToIntSizeuvyYCjk(long j) {
+    public static final long m8437roundToIntSizeuvyYCjk(long j) {
         int round = Math.round(Float.intBitsToFloat((int) (j >> 32)));
-        return IntSize.m8162constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (round << 32));
+        return IntSize.m8424constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (round << 32));
     }
 }

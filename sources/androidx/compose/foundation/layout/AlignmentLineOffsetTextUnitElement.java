@@ -24,30 +24,30 @@ public final class AlignmentLineOffsetTextUnitElement extends ModifierNodeElemen
         this(alignmentLine, j, j2, function1);
     }
 
-    public final AlignmentLine getAlignmentLine() {
-        return this.alignmentLine;
-    }
-
-    /* renamed from: getBefore-XSAIIZE  reason: not valid java name */
-    public final long m683getBeforeXSAIIZE() {
-        return this.before;
-    }
-
-    /* renamed from: getAfter-XSAIIZE  reason: not valid java name */
-    public final long m682getAfterXSAIIZE() {
-        return this.after;
-    }
-
-    public final Function1<InspectorInfo, Unit> getInspectorInfo() {
-        return this.inspectorInfo;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     private AlignmentLineOffsetTextUnitElement(AlignmentLine alignmentLine, long j, long j2, Function1<? super InspectorInfo, Unit> function1) {
         this.alignmentLine = alignmentLine;
         this.before = j;
         this.after = j2;
         this.inspectorInfo = function1;
+    }
+
+    public final AlignmentLine getAlignmentLine() {
+        return this.alignmentLine;
+    }
+
+    /* renamed from: getBefore-XSAIIZE  reason: not valid java name */
+    public final long m764getBeforeXSAIIZE() {
+        return this.before;
+    }
+
+    /* renamed from: getAfter-XSAIIZE  reason: not valid java name */
+    public final long m763getAfterXSAIIZE() {
+        return this.after;
+    }
+
+    public final Function1<InspectorInfo, Unit> getInspectorInfo() {
+        return this.inspectorInfo;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -58,7 +58,7 @@ public final class AlignmentLineOffsetTextUnitElement extends ModifierNodeElemen
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((this.alignmentLine.hashCode() * 31) + TextUnit.m8191hashCodeimpl(this.before)) * 31) + TextUnit.m8191hashCodeimpl(this.after);
+        return (((this.alignmentLine.hashCode() * 31) + TextUnit.m8453hashCodeimpl(this.before)) * 31) + TextUnit.m8453hashCodeimpl(this.after);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -67,7 +67,7 @@ public final class AlignmentLineOffsetTextUnitElement extends ModifierNodeElemen
             return true;
         }
         AlignmentLineOffsetTextUnitElement alignmentLineOffsetTextUnitElement = obj instanceof AlignmentLineOffsetTextUnitElement ? (AlignmentLineOffsetTextUnitElement) obj : null;
-        return alignmentLineOffsetTextUnitElement != null && Intrinsics.areEqual(this.alignmentLine, alignmentLineOffsetTextUnitElement.alignmentLine) && TextUnit.m8187equalsimpl0(this.before, alignmentLineOffsetTextUnitElement.before) && TextUnit.m8187equalsimpl0(this.after, alignmentLineOffsetTextUnitElement.after);
+        return alignmentLineOffsetTextUnitElement != null && Intrinsics.areEqual(this.alignmentLine, alignmentLineOffsetTextUnitElement.alignmentLine) && TextUnit.m8449equalsimpl0(this.before, alignmentLineOffsetTextUnitElement.before) && TextUnit.m8449equalsimpl0(this.after, alignmentLineOffsetTextUnitElement.after);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -78,7 +78,7 @@ public final class AlignmentLineOffsetTextUnitElement extends ModifierNodeElemen
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(AlignmentLineOffsetTextUnitNode alignmentLineOffsetTextUnitNode) {
         alignmentLineOffsetTextUnitNode.setAlignmentLine(this.alignmentLine);
-        alignmentLineOffsetTextUnitNode.m687setBeforeR2X_6o(this.before);
-        alignmentLineOffsetTextUnitNode.m686setAfterR2X_6o(this.after);
+        alignmentLineOffsetTextUnitNode.m768setBeforeR2X_6o(this.before);
+        alignmentLineOffsetTextUnitNode.m767setAfterR2X_6o(this.after);
     }
 }

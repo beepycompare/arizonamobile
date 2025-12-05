@@ -50,7 +50,7 @@ public final class AudioMixingUtil {
                     byteBuffer2.putShort((short) Util.constrainValue(fArr2[i5], -32768.0f, 32767.0f));
                 } else {
                     if (z2) {
-                        f = Util.constrainValue(fArr2[i5], (float) FLOAT_PCM_MIN_VALUE, 1.0f);
+                        f = Util.constrainValue(fArr2[i5], -1.0f, 1.0f);
                     } else {
                         f = fArr2[i5];
                     }

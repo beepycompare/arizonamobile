@@ -125,15 +125,15 @@ public final class SnapshotStateSet<T> implements Parcelable, StateObject, Set<T
         return SnapshotStateSetKt.mutateBoolean(this, new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotStateSet$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean retainAll$lambda$5;
-                retainAll$lambda$5 = SnapshotStateSet.retainAll$lambda$5(collection, (Set) obj);
-                return Boolean.valueOf(retainAll$lambda$5);
+                boolean retainAll$lambda$0;
+                retainAll$lambda$0 = SnapshotStateSet.retainAll$lambda$0(collection, (Set) obj);
+                return Boolean.valueOf(retainAll$lambda$0);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean retainAll$lambda$5(Collection collection, Set set) {
+    public static final boolean retainAll$lambda$0(Collection collection, Set set) {
         return set.retainAll(CollectionsKt.toSet(collection));
     }
 
@@ -185,11 +185,12 @@ public final class SnapshotStateSet<T> implements Parcelable, StateObject, Set<T
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
             StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) firstStateRecord2;
+            SnapshotStateSet<T> snapshotStateSet = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, this, current), modification$runtime, add);
+                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet, current), modification$runtime, add);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateSet);
         } while (!attemptUpdate);
         return true;
     }
@@ -217,11 +218,12 @@ public final class SnapshotStateSet<T> implements Parcelable, StateObject, Set<T
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
             StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) firstStateRecord2;
+            SnapshotStateSet<T> snapshotStateSet = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, this, current), modification$runtime, addAll);
+                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet, current), modification$runtime, addAll);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateSet);
         } while (!attemptUpdate);
         return true;
     }
@@ -232,15 +234,16 @@ public final class SnapshotStateSet<T> implements Parcelable, StateObject, Set<T
         StateRecord firstStateRecord = getFirstStateRecord();
         Intrinsics.checkNotNull(firstStateRecord, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
         StateSetStateRecord stateSetStateRecord = (StateSetStateRecord) firstStateRecord;
+        SnapshotStateSet<T> snapshotStateSet = this;
         synchronized (SnapshotKt.getLock()) {
             current = Snapshot.Companion.getCurrent();
-            StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord, this, current);
+            StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord, snapshotStateSet, current);
             synchronized (SnapshotStateSetKt.access$getSync$p()) {
                 stateSetStateRecord2.setSet$runtime(ExtensionsKt.persistentSetOf());
                 stateSetStateRecord2.setModification$runtime(stateSetStateRecord2.getModification$runtime() + 1);
             }
         }
-        SnapshotKt.notifyWrite(current, this);
+        SnapshotKt.notifyWrite(current, snapshotStateSet);
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -266,11 +269,12 @@ public final class SnapshotStateSet<T> implements Parcelable, StateObject, Set<T
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
             StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) firstStateRecord2;
+            SnapshotStateSet<T> snapshotStateSet = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, this, current), modification$runtime, remove);
+                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet, current), modification$runtime, remove);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateSet);
         } while (!attemptUpdate);
         return true;
     }
@@ -298,11 +302,12 @@ public final class SnapshotStateSet<T> implements Parcelable, StateObject, Set<T
             StateRecord firstStateRecord2 = getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateSetStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateSetKt.writable>");
             StateSetStateRecord stateSetStateRecord2 = (StateSetStateRecord) firstStateRecord2;
+            SnapshotStateSet<T> snapshotStateSet = this;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, this, current), modification$runtime, removeAll);
+                attemptUpdate = SnapshotStateSetKt.attemptUpdate((StateSetStateRecord) SnapshotKt.writableRecord(stateSetStateRecord2, snapshotStateSet, current), modification$runtime, removeAll);
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotStateSet);
         } while (!attemptUpdate);
         return true;
     }

@@ -1,5 +1,6 @@
 package androidx.datastore.core.okio;
 
+import androidx.datastore.core.DirectBootExceptionUtilKt;
 import androidx.datastore.core.ReadScope;
 import androidx.exifinterface.media.ExifInterface;
 import java.io.Closeable;
@@ -15,7 +16,7 @@ import okio.FileSystem;
 import okio.Okio;
 import okio.Path;
 /* compiled from: OkioStorage.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\u0004\b\u0010\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B#\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\b¢\u0006\u0002\u0010\tJ\b\u0010\u0012\u001a\u00020\u0013H\u0004J\b\u0010\u0014\u001a\u00020\u0013H\u0016J\u000e\u0010\u0015\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010\u0016R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0003\u001a\u00020\u0004X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u0005\u001a\u00020\u0006X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\bX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u0017"}, d2 = {"Landroidx/datastore/core/okio/OkioReadScope;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/datastore/core/ReadScope;", "fileSystem", "Lokio/FileSystem;", "path", "Lokio/Path;", "serializer", "Landroidx/datastore/core/okio/OkioSerializer;", "(Lokio/FileSystem;Lokio/Path;Landroidx/datastore/core/okio/OkioSerializer;)V", "closed", "Landroidx/datastore/core/okio/AtomicBoolean;", "getFileSystem", "()Lokio/FileSystem;", "getPath", "()Lokio/Path;", "getSerializer", "()Landroidx/datastore/core/okio/OkioSerializer;", "checkClose", "", "close", "readData", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "datastore-core-okio"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0010\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B%\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\b¢\u0006\u0004\b\t\u0010\nJ\u000e\u0010\u0013\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010\u0014J\b\u0010\u0015\u001a\u00020\u0016H\u0016J\b\u0010\u0017\u001a\u00020\u0016H\u0004R\u0014\u0010\u0003\u001a\u00020\u0004X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0014\u0010\u0005\u001a\u00020\u0006X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u001a\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\bX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Landroidx/datastore/core/okio/OkioReadScope;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/datastore/core/ReadScope;", "fileSystem", "Lokio/FileSystem;", "path", "Lokio/Path;", "serializer", "Landroidx/datastore/core/okio/OkioSerializer;", "<init>", "(Lokio/FileSystem;Lokio/Path;Landroidx/datastore/core/okio/OkioSerializer;)V", "getFileSystem", "()Lokio/FileSystem;", "getPath", "()Lokio/Path;", "getSerializer", "()Landroidx/datastore/core/okio/OkioSerializer;", "closed", "Landroidx/datastore/core/okio/AtomicBoolean;", "readData", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "close", "", "checkClose", "datastore-core-okio"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public class OkioReadScope<T> implements ReadScope<T> {
     private final AtomicBoolean closed;
@@ -54,24 +55,32 @@ public class OkioReadScope<T> implements ReadScope<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x007c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0097 A[Catch: FileNotFoundException -> 0x0091, TryCatch #2 {FileNotFoundException -> 0x0091, blocks: (B:46:0x0097, B:47:0x009b, B:39:0x0088), top: B:76:0x0088 }] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x009b A[Catch: FileNotFoundException -> 0x0091, TRY_LEAVE, TryCatch #2 {FileNotFoundException -> 0x0091, blocks: (B:46:0x0097, B:47:0x009b, B:39:0x0088), top: B:76:0x0088 }] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0088 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00d7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0079 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x009c A[Catch: FileNotFoundException -> 0x0094, TRY_LEAVE, TryCatch #5 {FileNotFoundException -> 0x0094, blocks: (B:47:0x009c, B:39:0x008b), top: B:92:0x008b }] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x00ed A[Catch: Exception -> 0x00ee, TRY_ENTER, TRY_LEAVE, TryCatch #3 {Exception -> 0x00ee, blocks: (B:73:0x00ed, B:50:0x00a7), top: B:88:0x00a7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00de A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x008b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r9v21, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r9v27, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r9v30 */
+    /* JADX WARN: Type inference failed for: r9v33, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r9v8 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static /* synthetic */ <T> Object readData$suspendImpl(OkioReadScope<T> okioReadScope, Continuation<? super T> continuation) {
         OkioReadScope$readData$1 okioReadScope$readData$1;
         int i;
-        Throwable th;
+        OkioReadScope<T> okioReadScope2;
         Closeable closeable;
-        BufferedSource buffer;
+        ?? th;
         Closeable closeable2;
         Throwable th2;
         Throwable th3;
@@ -82,67 +91,87 @@ public class OkioReadScope<T> implements ReadScope<T> {
                 Object obj = okioReadScope$readData$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = okioReadScope$readData$1.label;
-                Throwable th4 = null;
+                Object th4 = null;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     okioReadScope.checkClose();
                     try {
-                        buffer = Okio.buffer(((OkioReadScope) okioReadScope).fileSystem.source(((OkioReadScope) okioReadScope).path));
+                        BufferedSource buffer = Okio.buffer(((OkioReadScope) okioReadScope).fileSystem.source(((OkioReadScope) okioReadScope).path));
+                        try {
+                            OkioSerializer<T> okioSerializer = ((OkioReadScope) okioReadScope).serializer;
+                            okioReadScope$readData$1.L$0 = okioReadScope;
+                            okioReadScope$readData$1.L$1 = buffer;
+                            okioReadScope$readData$1.label = 1;
+                            Object readFrom = okioSerializer.readFrom(buffer, okioReadScope$readData$1);
+                            if (readFrom != coroutine_suspended) {
+                                closeable2 = buffer;
+                                obj = readFrom;
+                            }
+                        } catch (Throwable th5) {
+                            closeable2 = buffer;
+                            th2 = th5;
+                            if (closeable2 != null) {
+                                try {
+                                    closeable2.close();
+                                }
+                            }
+                            th3 = th2;
+                            obj = null;
+                            if (th3 != null) {
+                            }
+                        }
                     } catch (FileNotFoundException unused) {
                         if (!((OkioReadScope) okioReadScope).fileSystem.exists(((OkioReadScope) okioReadScope).path)) {
                             return ((OkioReadScope) okioReadScope).serializer.getDefaultValue();
                         }
-                        BufferedSource buffer2 = Okio.buffer(((OkioReadScope) okioReadScope).fileSystem.source(((OkioReadScope) okioReadScope).path));
                         try {
-                            OkioSerializer<T> okioSerializer = ((OkioReadScope) okioReadScope).serializer;
-                            okioReadScope$readData$1.L$0 = buffer2;
-                            okioReadScope$readData$1.L$1 = null;
-                            okioReadScope$readData$1.label = 2;
-                            Object readFrom = okioSerializer.readFrom(buffer2, okioReadScope$readData$1);
-                            if (readFrom != coroutine_suspended) {
-                                obj = readFrom;
+                            BufferedSource buffer2 = Okio.buffer(((OkioReadScope) okioReadScope).fileSystem.source(((OkioReadScope) okioReadScope).path));
+                            try {
+                                OkioSerializer<T> okioSerializer2 = ((OkioReadScope) okioReadScope).serializer;
+                                okioReadScope$readData$1.L$0 = okioReadScope;
+                                okioReadScope$readData$1.L$1 = buffer2;
+                                okioReadScope$readData$1.label = 2;
+                                Object readFrom2 = okioSerializer2.readFrom(buffer2, okioReadScope$readData$1);
+                                if (readFrom2 != coroutine_suspended) {
+                                    okioReadScope2 = okioReadScope;
+                                    closeable = buffer2;
+                                    obj = readFrom2;
+                                }
+                            } catch (Throwable th6) {
+                                okioReadScope2 = okioReadScope;
                                 closeable = buffer2;
-                            }
-                        } catch (Throwable th5) {
-                            th = th5;
-                            closeable = buffer2;
-                            if (closeable != null) {
-                                try {
-                                    closeable.close();
-                                } catch (Throwable th6) {
-                                    ExceptionsKt.addSuppressed(th, th6);
+                                th = th6;
+                                if (closeable != null) {
+                                    try {
+                                        closeable.close();
+                                    } catch (Throwable th7) {
+                                        try {
+                                            ExceptionsKt.addSuppressed(th, th7);
+                                        } catch (Exception e) {
+                                            e = e;
+                                            if (!(e instanceof FileNotFoundException)) {
+                                            }
+                                        }
+                                    }
+                                }
+                                okioReadScope = okioReadScope2;
+                                if (th == 0) {
                                 }
                             }
-                            th4 = th;
-                            obj = null;
-                            if (th4 != null) {
+                        } catch (Exception e2) {
+                            okioReadScope2 = okioReadScope;
+                            e = e2;
+                            if (!(e instanceof FileNotFoundException)) {
+                                throw DirectBootExceptionUtilKt.wrapExceptionIfDueToDirectBoot(String.valueOf(((OkioReadScope) okioReadScope2).path.parent()), e);
                             }
+                            throw e;
                         }
                     }
-                    try {
-                        OkioSerializer<T> okioSerializer2 = ((OkioReadScope) okioReadScope).serializer;
-                        okioReadScope$readData$1.L$0 = okioReadScope;
-                        okioReadScope$readData$1.L$1 = buffer;
-                        okioReadScope$readData$1.label = 1;
-                        Object readFrom2 = okioSerializer2.readFrom(buffer, okioReadScope$readData$1);
-                        if (readFrom2 != coroutine_suspended) {
-                            closeable2 = buffer;
-                            obj = readFrom2;
-                        }
-                        return coroutine_suspended;
-                    } catch (Throwable th7) {
-                        closeable2 = buffer;
-                        th2 = th7;
-                        if (closeable2 != null) {
-                        }
-                        th3 = th2;
-                        obj = null;
-                        if (th3 == null) {
-                        }
-                    }
+                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        closeable = (Closeable) okioReadScope$readData$1.L$0;
+                        closeable = (Closeable) okioReadScope$readData$1.L$1;
+                        okioReadScope2 = (OkioReadScope) okioReadScope$readData$1.L$0;
                         try {
                             ResultKt.throwOnFailure(obj);
                             if (closeable != null) {
@@ -152,37 +181,36 @@ public class OkioReadScope<T> implements ReadScope<T> {
                                     th4 = th8;
                                 }
                             }
+                            Object obj2 = th4;
+                            th4 = obj;
+                            th = obj2;
                         } catch (Throwable th9) {
                             th = th9;
                             if (closeable != null) {
                             }
-                            th4 = th;
-                            obj = null;
-                            if (th4 != null) {
+                            okioReadScope = okioReadScope2;
+                            if (th == 0) {
                             }
                         }
-                        if (th4 != null) {
-                            throw th4;
+                        okioReadScope = okioReadScope2;
+                        if (th == 0) {
+                            return th4;
                         }
-                        Intrinsics.checkNotNull(obj);
-                        return obj;
+                        throw th;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     closeable2 = (Closeable) okioReadScope$readData$1.L$1;
-                    OkioReadScope okioReadScope2 = (OkioReadScope) okioReadScope$readData$1.L$0;
+                    OkioReadScope okioReadScope3 = (OkioReadScope) okioReadScope$readData$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
                     } catch (Throwable th10) {
                         th2 = th10;
                         if (closeable2 != null) {
-                            try {
-                                closeable2.close();
-                            }
                         }
                         th3 = th2;
                         obj = null;
-                        if (th3 == null) {
+                        if (th3 != null) {
                         }
                     }
                 }
@@ -194,24 +222,23 @@ public class OkioReadScope<T> implements ReadScope<T> {
                     }
                 }
                 th3 = null;
-                if (th3 == null) {
-                    throw th3;
+                if (th3 != null) {
+                    return obj;
                 }
-                Intrinsics.checkNotNull(obj);
-                return obj;
+                throw th3;
             }
         }
         okioReadScope$readData$1 = new OkioReadScope$readData$1(okioReadScope, continuation);
-        Object obj2 = okioReadScope$readData$1.result;
+        Object obj3 = okioReadScope$readData$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = okioReadScope$readData$1.label;
-        Throwable th42 = null;
+        Object th42 = null;
         if (i != 0) {
         }
         if (closeable2 != null) {
         }
         th3 = null;
-        if (th3 == null) {
+        if (th3 != null) {
         }
     }
 

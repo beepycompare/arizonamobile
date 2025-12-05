@@ -14,15 +14,16 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.JobKt;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: SessionMutex.kt */
 @Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "R", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.SessionMutex$withSessionCancellingPrevious$2", f = "SessionMutex.kt", i = {0, 1}, l = {LockFreeTaskQueueCore.CLOSED_SHIFT, 63}, m = "invokeSuspend", n = {"newSession", "newSession"}, s = {"L$0", "L$0"})
+@DebugMetadata(c = "androidx.compose.ui.SessionMutex$withSessionCancellingPrevious$2", f = "SessionMutex.kt", i = {0, 1}, l = {61, 63}, m = "invokeSuspend", n = {"newSession", "newSession"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class SessionMutex$withSessionCancellingPrevious$2<R> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super R>, Object> {
-    final /* synthetic */ AtomicReference<SessionMutex.Session<T>> $arg0;
+
+    /* renamed from: $$v$c$androidx-compose-ui-SessionMutex$-this$0  reason: not valid java name */
+    final /* synthetic */ AtomicReference<SessionMutex.Session<T>> f99$$v$c$androidxcomposeuiSessionMutex$this$0;
     final /* synthetic */ Function2<T, Continuation<? super R>, Object> $session;
     final /* synthetic */ Function1<CoroutineScope, T> $sessionInitializer;
     private /* synthetic */ Object L$0;
@@ -34,13 +35,13 @@ public final class SessionMutex$withSessionCancellingPrevious$2<R> extends Suspe
     public SessionMutex$withSessionCancellingPrevious$2(Function1<? super CoroutineScope, ? extends T> function1, AtomicReference<SessionMutex.Session<T>> atomicReference, Function2<? super T, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super SessionMutex$withSessionCancellingPrevious$2> continuation) {
         super(2, continuation);
         this.$sessionInitializer = function1;
-        this.$arg0 = atomicReference;
+        this.f99$$v$c$androidxcomposeuiSessionMutex$this$0 = atomicReference;
         this.$session = function2;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        SessionMutex$withSessionCancellingPrevious$2 sessionMutex$withSessionCancellingPrevious$2 = new SessionMutex$withSessionCancellingPrevious$2(this.$sessionInitializer, this.$arg0, this.$session, continuation);
+        SessionMutex$withSessionCancellingPrevious$2 sessionMutex$withSessionCancellingPrevious$2 = new SessionMutex$withSessionCancellingPrevious$2(this.$sessionInitializer, this.f99$$v$c$androidxcomposeuiSessionMutex$this$0, this.$session, continuation);
         sessionMutex$withSessionCancellingPrevious$2.L$0 = obj;
         return sessionMutex$withSessionCancellingPrevious$2;
     }
@@ -71,7 +72,7 @@ public final class SessionMutex$withSessionCancellingPrevious$2<R> extends Suspe
                 ResultKt.throwOnFailure(obj);
                 CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
                 session = new SessionMutex.Session(JobKt.getJob(coroutineScope.getCoroutineContext()), this.$sessionInitializer.invoke(coroutineScope));
-                SessionMutex.Session session3 = (SessionMutex.Session) this.$arg0.getAndSet(session);
+                SessionMutex.Session session3 = (SessionMutex.Session) this.f99$$v$c$androidxcomposeuiSessionMutex$this$0.getAndSet(session);
                 if (session3 != null && (r8 = session3.getJob()) != null) {
                     this.L$0 = session;
                     this.label = 1;
@@ -81,11 +82,11 @@ public final class SessionMutex$withSessionCancellingPrevious$2<R> extends Suspe
                     session2 = (SessionMutex.Session) this.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                        MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.$arg0, session2, null);
+                        MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.f99$$v$c$androidxcomposeuiSessionMutex$this$0, session2, null);
                         return obj;
                     } catch (Throwable th) {
                         th = th;
-                        MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.$arg0, session2, null);
+                        MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.f99$$v$c$androidxcomposeuiSessionMutex$this$0, session2, null);
                         throw th;
                     }
                 }
@@ -101,14 +102,14 @@ public final class SessionMutex$withSessionCancellingPrevious$2<R> extends Suspe
             obj = function2.invoke(value, this);
             if (obj != coroutine_suspended) {
                 session2 = session;
-                MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.$arg0, session2, null);
+                MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.f99$$v$c$androidxcomposeuiSessionMutex$this$0, session2, null);
                 return obj;
             }
             return coroutine_suspended;
         } catch (Throwable th2) {
             th = th2;
             session2 = session;
-            MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.$arg0, session2, null);
+            MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.f99$$v$c$androidxcomposeuiSessionMutex$this$0, session2, null);
             throw th;
         }
     }

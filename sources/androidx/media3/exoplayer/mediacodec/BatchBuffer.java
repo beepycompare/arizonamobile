@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.mediacodec;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderInputBuffer;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class BatchBuffer extends DecoderInputBuffer {
     public static final int DEFAULT_MAX_SAMPLE_COUNT = 32;
     static final int MAX_SIZE_BYTES = 3072000;

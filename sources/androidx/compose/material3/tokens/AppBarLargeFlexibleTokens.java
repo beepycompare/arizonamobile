@@ -8,16 +8,16 @@ import kotlin.Metadata;
 public final class AppBarLargeFlexibleTokens {
     public static final int $stable = 0;
     public static final AppBarLargeFlexibleTokens INSTANCE = new AppBarLargeFlexibleTokens();
-    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 120.0d);
+    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 120.0d);
     private static final TypographyKeyTokens SubtitleFont = TypographyKeyTokens.TitleMedium;
     private static final TypographyKeyTokens TitleFont = TypographyKeyTokens.DisplaySmall;
-    private static final float LargeContainerHeight = Dp.m7996constructorimpl((float) 152.0d);
+    private static final float LargeContainerHeight = Dp.m8258constructorimpl((float) 152.0d);
 
     private AppBarLargeFlexibleTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3642getContainerHeightD9Ej5fM() {
+    public final float m3728getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -30,7 +30,7 @@ public final class AppBarLargeFlexibleTokens {
     }
 
     /* renamed from: getLargeContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3643getLargeContainerHeightD9Ej5fM() {
+    public final float m3729getLargeContainerHeightD9Ej5fM() {
         return LargeContainerHeight;
     }
 }

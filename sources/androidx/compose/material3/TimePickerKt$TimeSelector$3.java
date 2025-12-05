@@ -55,7 +55,7 @@ public final class TimePickerKt$TimeSelector$3 implements Function2<Composer, In
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1477282471, i, -1, "androidx.compose.material3.TimeSelector.<anonymous> (TimePicker.kt:1431)");
         }
-        final String m3230numberContentDescriptiondSwYdS4 = TimePickerKt.m3230numberContentDescriptiondSwYdS4(this.$selection, this.$state.is24hour(), this.$value, composer, 0);
+        final String m3316numberContentDescriptiondSwYdS4 = TimePickerKt.m3316numberContentDescriptiondSwYdS4(this.$selection, this.$state.is24hour(), this.$value, composer, 0);
         Alignment center = Alignment.Companion.getCenter();
         int i2 = this.$value;
         long j = this.$contentColor;
@@ -76,35 +76,35 @@ public final class TimePickerKt$TimeSelector$3 implements Function2<Composer, In
         } else {
             composer.useNode();
         }
-        Composer m4598constructorimpl = Updater.m4598constructorimpl(composer);
-        Updater.m4605setimpl(m4598constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
+        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4598constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4598constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 1422859184, "C1440@57870L48,1439@57818L212:TimePicker.kt#uh7d8r");
         Modifier.Companion companion = Modifier.Companion;
         ComposerKt.sourceInformationMarkerStart(composer, -231194481, "CC(remember):TimePicker.kt#9igjgp");
-        boolean changed = composer.changed(m3230numberContentDescriptiondSwYdS4);
+        boolean changed = composer.changed(m3316numberContentDescriptiondSwYdS4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeSelector$3$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit invoke$lambda$2$lambda$1$lambda$0;
-                    invoke$lambda$2$lambda$1$lambda$0 = TimePickerKt$TimeSelector$3.invoke$lambda$2$lambda$1$lambda$0(m3230numberContentDescriptiondSwYdS4, (SemanticsPropertyReceiver) obj);
+                    invoke$lambda$2$lambda$1$lambda$0 = TimePickerKt$TimeSelector$3.invoke$lambda$2$lambda$1$lambda$0(m3316numberContentDescriptiondSwYdS4, (SemanticsPropertyReceiver) obj);
                     return invoke$lambda$2$lambda$1$lambda$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3169TextNvy7gAk(CalendarLocale_jvmKt.toLocalString$default(i2, 2, 0, false, null, 14, null), SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
+        TextKt.m3255TextNvy7gAk(CalendarLocale_jvmKt.toLocalString$default(i2, 2, 0, false, null, 14, null), SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         composer.endNode();

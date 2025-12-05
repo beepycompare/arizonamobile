@@ -22,6 +22,14 @@ public final class IntrinsicSize {
         return $ENTRIES;
     }
 
+    public static IntrinsicSize valueOf(String str) {
+        return (IntrinsicSize) Enum.valueOf(IntrinsicSize.class, str);
+    }
+
+    public static IntrinsicSize[] values() {
+        return (IntrinsicSize[]) $VALUES.clone();
+    }
+
     private IntrinsicSize(String str, int i) {
     }
 
@@ -29,13 +37,5 @@ public final class IntrinsicSize {
         IntrinsicSize[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static IntrinsicSize valueOf(String str) {
-        return (IntrinsicSize) Enum.valueOf(IntrinsicSize.class, str);
-    }
-
-    public static IntrinsicSize[] values() {
-        return (IntrinsicSize[]) $VALUES.clone();
     }
 }

@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SavedStateHandleSaver.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
-public /* synthetic */ class SavedStateHandleSaverKt$saveable$1$1$1 implements SaverScope, FunctionAdapter {
+public final /* synthetic */ class SavedStateHandleSaverKt$saveable$1$1$1 implements SaverScope, FunctionAdapter {
     final /* synthetic */ SavedStateHandle.Companion $tmp0;
 
     /* JADX INFO: Access modifiers changed from: package-private */

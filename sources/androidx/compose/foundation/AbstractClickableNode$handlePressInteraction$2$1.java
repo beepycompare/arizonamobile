@@ -3,6 +3,7 @@ package androidx.compose.foundation;
 import androidx.compose.foundation.gestures.PressGestureScope;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
 import androidx.compose.foundation.interaction.PressInteraction;
+import androidx.compose.material3.ProgressIndicatorKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -19,11 +20,13 @@ import kotlinx.coroutines.JobKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Clickable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteraction$2$1", f = "Clickable.kt", i = {0, 1, 2}, l = {1725, 1727, 1734, 1735, 1745}, m = "invokeSuspend", n = {"delayJob", FirebaseAnalytics.Param.SUCCESS, "release"}, s = {"L$0", "Z$0", "L$0"})
+@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteraction$2$1", f = "Clickable.kt", i = {0, 1, 2}, l = {ProgressIndicatorKt.LinearAnimationDuration, 1752, 1759, 1760, 1770}, m = "invokeSuspend", n = {"delayJob", FirebaseAnalytics.Param.SUCCESS, "release"}, s = {"L$0", "Z$0", "L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class AbstractClickableNode$handlePressInteraction$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+
+    /* renamed from: $$v$c$androidx-compose-ui-geometry-Offset$-offset$0  reason: not valid java name */
+    final /* synthetic */ long f2$$v$c$androidxcomposeuigeometryOffset$offset$0;
     final /* synthetic */ MutableInteractionSource $interactionSource;
-    final /* synthetic */ long $offset;
     final /* synthetic */ PressGestureScope $this_handlePressInteraction;
     private /* synthetic */ Object L$0;
     boolean Z$0;
@@ -35,14 +38,14 @@ public final class AbstractClickableNode$handlePressInteraction$2$1 extends Susp
     public AbstractClickableNode$handlePressInteraction$2$1(PressGestureScope pressGestureScope, long j, MutableInteractionSource mutableInteractionSource, AbstractClickableNode abstractClickableNode, Continuation<? super AbstractClickableNode$handlePressInteraction$2$1> continuation) {
         super(2, continuation);
         this.$this_handlePressInteraction = pressGestureScope;
-        this.$offset = j;
+        this.f2$$v$c$androidxcomposeuigeometryOffset$offset$0 = j;
         this.$interactionSource = mutableInteractionSource;
         this.this$0 = abstractClickableNode;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        AbstractClickableNode$handlePressInteraction$2$1 abstractClickableNode$handlePressInteraction$2$1 = new AbstractClickableNode$handlePressInteraction$2$1(this.$this_handlePressInteraction, this.$offset, this.$interactionSource, this.this$0, continuation);
+        AbstractClickableNode$handlePressInteraction$2$1 abstractClickableNode$handlePressInteraction$2$1 = new AbstractClickableNode$handlePressInteraction$2$1(this.$this_handlePressInteraction, this.f2$$v$c$androidxcomposeuigeometryOffset$offset$0, this.$interactionSource, this.this$0, continuation);
         abstractClickableNode$handlePressInteraction$2$1.L$0 = obj;
         return abstractClickableNode$handlePressInteraction$2$1;
     }
@@ -77,7 +80,7 @@ public final class AbstractClickableNode$handlePressInteraction$2$1 extends Susp
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            launch$default = BuildersKt__Builders_commonKt.launch$default((CoroutineScope) this.L$0, null, null, new AbstractClickableNode$handlePressInteraction$2$1$delayJob$1(this.this$0, this.$offset, this.$interactionSource, null), 3, null);
+            launch$default = BuildersKt__Builders_commonKt.launch$default((CoroutineScope) this.L$0, null, null, new AbstractClickableNode$handlePressInteraction$2$1$delayJob$1(this.this$0, this.f2$$v$c$androidxcomposeuigeometryOffset$offset$0, this.$interactionSource, null), 3, null);
             this.L$0 = launch$default;
             this.label = 1;
             tryAwaitRelease = this.$this_handlePressInteraction.tryAwaitRelease(this);
@@ -89,7 +92,7 @@ public final class AbstractClickableNode$handlePressInteraction$2$1 extends Susp
             z = this.Z$0;
             ResultKt.throwOnFailure(obj);
             if (z) {
-                PressInteraction.Press press2 = new PressInteraction.Press(this.$offset, null);
+                PressInteraction.Press press2 = new PressInteraction.Press(this.f2$$v$c$androidxcomposeuigeometryOffset$offset$0, null);
                 PressInteraction.Release release2 = new PressInteraction.Release(press2);
                 this.L$0 = release2;
                 this.label = 3;

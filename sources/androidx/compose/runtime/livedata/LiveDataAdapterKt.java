@@ -16,7 +16,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwnerKt;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: LiveDataAdapter.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a%\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a5\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0001\"\u0004\b\u0000\u0010\u0005\"\b\b\u0001\u0010\u0002*\u0002H\u0005*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u0006\u0010\u0006\u001a\u0002H\u0005H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"observeAsState", "Landroidx/compose/runtime/State;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/lifecycle/LiveData;", "(Landroidx/lifecycle/LiveData;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "R", "initial", "(Landroidx/lifecycle/LiveData;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "runtime-livedata_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a%\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a5\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0001\"\u0004\b\u0000\u0010\u0005\"\b\b\u0001\u0010\u0002*\u0002H\u0005*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u0006\u0010\u0006\u001a\u0002H\u0005H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"observeAsState", "Landroidx/compose/runtime/State;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/lifecycle/LiveData;", "(Landroidx/lifecycle/LiveData;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "R", "initial", "(Landroidx/lifecycle/LiveData;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "runtime-livedata"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LiveDataAdapterKt {
     public static final <T> State<T> observeAsState(LiveData<T> liveData, Composer composer, int i) {
@@ -42,7 +42,7 @@ public final class LiveDataAdapterKt {
         Object consume = composer.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
         ComposerKt.sourceInformationMarkerEnd(composer);
         final LifecycleOwner lifecycleOwner = (LifecycleOwner) consume;
-        ComposerKt.sourceInformationMarkerStart(composer, 5360169, "CC(remember):LiveDataAdapter.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 5359561, "CC(remember):LiveDataAdapter.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             R r2 = r;
@@ -54,16 +54,16 @@ public final class LiveDataAdapterKt {
         }
         final MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 5367092, "CC(remember):LiveDataAdapter.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 5366484, "CC(remember):LiveDataAdapter.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(liveData) | composer.changedInstance(lifecycleOwner);
         Object rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
             rememberedValue2 = new Function1() { // from class: androidx.compose.runtime.livedata.LiveDataAdapterKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult observeAsState$lambda$4$lambda$3;
-                    observeAsState$lambda$4$lambda$3 = LiveDataAdapterKt.observeAsState$lambda$4$lambda$3(LiveData.this, lifecycleOwner, mutableState, (DisposableEffectScope) obj);
-                    return observeAsState$lambda$4$lambda$3;
+                    DisposableEffectResult observeAsState$lambda$1$0;
+                    observeAsState$lambda$1$0 = LiveDataAdapterKt.observeAsState$lambda$1$0(LiveData.this, lifecycleOwner, mutableState, (DisposableEffectScope) obj);
+                    return observeAsState$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -78,7 +78,7 @@ public final class LiveDataAdapterKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult observeAsState$lambda$4$lambda$3(final LiveData liveData, LifecycleOwner lifecycleOwner, final MutableState mutableState, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult observeAsState$lambda$1$0(final LiveData liveData, LifecycleOwner lifecycleOwner, final MutableState mutableState, DisposableEffectScope disposableEffectScope) {
         final Observer observer = new Observer() { // from class: androidx.compose.runtime.livedata.LiveDataAdapterKt$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
@@ -86,7 +86,7 @@ public final class LiveDataAdapterKt {
             }
         };
         liveData.observe(lifecycleOwner, observer);
-        return new DisposableEffectResult() { // from class: androidx.compose.runtime.livedata.LiveDataAdapterKt$observeAsState$lambda$4$lambda$3$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.runtime.livedata.LiveDataAdapterKt$observeAsState$lambda$1$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 LiveData.this.removeObserver(observer);

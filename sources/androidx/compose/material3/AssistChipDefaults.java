@@ -17,19 +17,19 @@ import kotlin.ReplaceWith;
 public final class AssistChipDefaults {
     public static final int $stable = 0;
     public static final AssistChipDefaults INSTANCE = new AssistChipDefaults();
-    private static final float Height = AssistChipTokens.INSTANCE.m3656getContainerHeightD9Ej5fM();
-    private static final float IconSize = AssistChipTokens.INSTANCE.m3665getIconSizeD9Ej5fM();
+    private static final float Height = AssistChipTokens.INSTANCE.m3742getContainerHeightD9Ej5fM();
+    private static final float IconSize = AssistChipTokens.INSTANCE.m3751getIconSizeD9Ej5fM();
 
     private AssistChipDefaults() {
     }
 
     /* renamed from: getHeight-D9Ej5fM  reason: not valid java name */
-    public final float m1945getHeightD9Ej5fM() {
+    public final float m2031getHeightD9Ej5fM() {
         return Height;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m1946getIconSizeD9Ej5fM() {
+    public final float m2032getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -47,31 +47,31 @@ public final class AssistChipDefaults {
     }
 
     /* renamed from: assistChipColors-oq7We08  reason: not valid java name */
-    public final ChipColors m1941assistChipColorsoq7We08(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, Composer composer, int i, int i2) {
+    public final ChipColors m2027assistChipColorsoq7We08(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -391745725, "C(assistChipColors)N(containerColor:c#ui.graphics.Color,labelColor:c#ui.graphics.Color,leadingIconContentColor:c#ui.graphics.Color,trailingIconContentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,disabledLeadingIconContentColor:c#ui.graphics.Color,disabledTrailingIconContentColor:c#ui.graphics.Color)1039@50070L11:Chip.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
-        long m5316getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j5;
-        long m5316getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j6;
-        long m5316getUnspecified0d7_KjU7 = (i2 & 64) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j7;
-        long m5316getUnspecified0d7_KjU8 = (i2 & 128) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j8;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j5;
+        long m5460getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j6;
+        long m5460getUnspecified0d7_KjU7 = (i2 & 64) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j7;
+        long m5460getUnspecified0d7_KjU8 = (i2 & 128) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j8;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-391745725, i, -1, "androidx.compose.material3.AssistChipDefaults.assistChipColors (Chip.kt:1039)");
         }
-        ChipColors m2029copyFD3wquc = getDefaultAssistChipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2029copyFD3wquc(m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4, m5316getUnspecified0d7_KjU5, m5316getUnspecified0d7_KjU6, m5316getUnspecified0d7_KjU7, m5316getUnspecified0d7_KjU8);
+        ChipColors m2115copyFD3wquc = getDefaultAssistChipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2115copyFD3wquc(m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4, m5460getUnspecified0d7_KjU5, m5460getUnspecified0d7_KjU6, m5460getUnspecified0d7_KjU7, m5460getUnspecified0d7_KjU8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2029copyFD3wquc;
+        return m2115copyFD3wquc;
     }
 
     public final ChipColors getDefaultAssistChipColors$material3(ColorScheme colorScheme) {
         ChipColors defaultAssistChipColorsCached$material3 = colorScheme.getDefaultAssistChipColorsCached$material3();
         if (defaultAssistChipColorsCached$material3 == null) {
-            ChipColors chipColors = new ChipColors(Color.Companion.m5315getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), Color.Companion.m5315getTransparent0d7_KjU(), Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledLabelTextColor()), AssistChipTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            ChipColors chipColors = new ChipColors(Color.Companion.m5459getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), Color.Companion.m5459getTransparent0d7_KjU(), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledLabelTextColor()), AssistChipTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultAssistChipColorsCached$material3(chipColors);
             return chipColors;
         }
@@ -79,21 +79,21 @@ public final class AssistChipDefaults {
     }
 
     /* renamed from: assistChipElevation-aqJV_2Y  reason: not valid java name */
-    public final ChipElevation m1942assistChipElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
+    public final ChipElevation m2028assistChipElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 245366099, "C(assistChipElevation)N(elevation:c#ui.unit.Dp,pressedElevation:c#ui.unit.Dp,focusedElevation:c#ui.unit.Dp,hoveredElevation:c#ui.unit.Dp,draggedElevation:c#ui.unit.Dp,disabledElevation:c#ui.unit.Dp):Chip.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            f = AssistChipTokens.INSTANCE.m3663getFlatContainerElevationD9Ej5fM();
+            f = AssistChipTokens.INSTANCE.m3749getFlatContainerElevationD9Ej5fM();
         }
         float f7 = f;
         float f8 = (i2 & 2) != 0 ? f7 : f2;
         float f9 = (i2 & 4) != 0 ? f7 : f3;
         float f10 = (i2 & 8) != 0 ? f7 : f4;
-        float m3657getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? AssistChipTokens.INSTANCE.m3657getDraggedContainerElevationD9Ej5fM() : f5;
+        float m3743getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? AssistChipTokens.INSTANCE.m3743getDraggedContainerElevationD9Ej5fM() : f5;
         float f11 = (i2 & 32) != 0 ? f7 : f6;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(245366099, i, -1, "androidx.compose.material3.AssistChipDefaults.assistChipElevation (Chip.kt:1092)");
         }
-        ChipElevation chipElevation = new ChipElevation(f7, f8, f9, f10, m3657getDraggedContainerElevationD9Ej5fM, f11, null);
+        ChipElevation chipElevation = new ChipElevation(f7, f8, f9, f10, m3743getDraggedContainerElevationD9Ej5fM, f11, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -102,36 +102,36 @@ public final class AssistChipDefaults {
     }
 
     /* renamed from: assistChipBorder-h1eT-Ww  reason: not valid java name */
-    public final BorderStroke m1940assistChipBorderh1eTWw(boolean z, long j, long j2, float f, Composer composer, int i, int i2) {
+    public final BorderStroke m2026assistChipBorderh1eTWw(boolean z, long j, long j2, float f, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1458649561, "C(assistChipBorder)N(enabled,borderColor:c#ui.graphics.Color,disabledBorderColor:c#ui.graphics.Color,borderWidth:c#ui.unit.Dp)1112@53758L5,1114@53856L5:Chip.kt#uh7d8r");
         long value = (i2 & 2) != 0 ? ColorSchemeKt.getValue(AssistChipTokens.INSTANCE.getFlatOutlineColor(), composer, 6) : j;
-        long m5279copywmQWz5c$default = (i2 & 4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(AssistChipTokens.INSTANCE.getFlatDisabledOutlineColor(), composer, 6), AssistChipTokens.INSTANCE.getFlatDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
-        float m3664getFlatOutlineWidthD9Ej5fM = (i2 & 8) != 0 ? AssistChipTokens.INSTANCE.m3664getFlatOutlineWidthD9Ej5fM() : f;
+        long m5423copywmQWz5c$default = (i2 & 4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(AssistChipTokens.INSTANCE.getFlatDisabledOutlineColor(), composer, 6), AssistChipTokens.INSTANCE.getFlatDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
+        float m3750getFlatOutlineWidthD9Ej5fM = (i2 & 8) != 0 ? AssistChipTokens.INSTANCE.m3750getFlatOutlineWidthD9Ej5fM() : f;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1458649561, i, -1, "androidx.compose.material3.AssistChipDefaults.assistChipBorder (Chip.kt:1118)");
         }
         if (!z) {
-            value = m5279copywmQWz5c$default;
+            value = m5423copywmQWz5c$default;
         }
-        BorderStroke m298BorderStrokecXLIe8U = BorderStrokeKt.m298BorderStrokecXLIe8U(m3664getFlatOutlineWidthD9Ej5fM, value);
+        BorderStroke m332BorderStrokecXLIe8U = BorderStrokeKt.m332BorderStrokecXLIe8U(m3750getFlatOutlineWidthD9Ej5fM, value);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m298BorderStrokecXLIe8U;
+        return m332BorderStrokecXLIe8U;
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Maintained for binary compatibility. Use the assistChipBorder function that returns BorderStroke instead", replaceWith = @ReplaceWith(expression = "assistChipBorder(enabled, borderColor, disabledBorderColor, borderWidth)", imports = {}))
     /* renamed from: assistChipBorder-d_3_b6Q  reason: not valid java name */
-    public final ChipBorder m1939assistChipBorderd_3_b6Q(long j, long j2, float f, Composer composer, int i, int i2) {
+    public final ChipBorder m2025assistChipBorderd_3_b6Q(long j, long j2, float f, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 382372847, "C(assistChipBorder)N(borderColor:c#ui.graphics.Color,disabledBorderColor:c#ui.graphics.Color,borderWidth:c#ui.unit.Dp)1139@54932L5,1141@55030L5:Chip.kt#uh7d8r");
         long value = (i2 & 1) != 0 ? ColorSchemeKt.getValue(AssistChipTokens.INSTANCE.getFlatOutlineColor(), composer, 6) : j;
-        long m5279copywmQWz5c$default = (i2 & 2) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(AssistChipTokens.INSTANCE.getFlatDisabledOutlineColor(), composer, 6), AssistChipTokens.INSTANCE.getFlatDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
-        float m3664getFlatOutlineWidthD9Ej5fM = (i2 & 4) != 0 ? AssistChipTokens.INSTANCE.m3664getFlatOutlineWidthD9Ej5fM() : f;
+        long m5423copywmQWz5c$default = (i2 & 2) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(AssistChipTokens.INSTANCE.getFlatDisabledOutlineColor(), composer, 6), AssistChipTokens.INSTANCE.getFlatDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
+        float m3750getFlatOutlineWidthD9Ej5fM = (i2 & 4) != 0 ? AssistChipTokens.INSTANCE.m3750getFlatOutlineWidthD9Ej5fM() : f;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(382372847, i, -1, "androidx.compose.material3.AssistChipDefaults.assistChipBorder (Chip.kt:1146)");
         }
-        ChipBorder chipBorder = new ChipBorder(value, m5279copywmQWz5c$default, m3664getFlatOutlineWidthD9Ej5fM, null);
+        ChipBorder chipBorder = new ChipBorder(value, m5423copywmQWz5c$default, m3750getFlatOutlineWidthD9Ej5fM, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -153,31 +153,31 @@ public final class AssistChipDefaults {
     }
 
     /* renamed from: elevatedAssistChipColors-oq7We08  reason: not valid java name */
-    public final ChipColors m1943elevatedAssistChipColorsoq7We08(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, Composer composer, int i, int i2) {
+    public final ChipColors m2029elevatedAssistChipColorsoq7We08(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -535762675, "C(elevatedAssistChipColors)N(containerColor:c#ui.graphics.Color,labelColor:c#ui.graphics.Color,leadingIconContentColor:c#ui.graphics.Color,trailingIconContentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,disabledLeadingIconContentColor:c#ui.graphics.Color,disabledTrailingIconContentColor:c#ui.graphics.Color)1183@57027L11:Chip.kt#uh7d8r");
-        long m5316getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j;
-        long m5316getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j2;
-        long m5316getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j3;
-        long m5316getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j4;
-        long m5316getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j5;
-        long m5316getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j6;
-        long m5316getUnspecified0d7_KjU7 = (i2 & 64) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j7;
-        long m5316getUnspecified0d7_KjU8 = (i2 & 128) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j8;
+        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
+        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
+        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m5460getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j5;
+        long m5460getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j6;
+        long m5460getUnspecified0d7_KjU7 = (i2 & 64) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j7;
+        long m5460getUnspecified0d7_KjU8 = (i2 & 128) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j8;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-535762675, i, -1, "androidx.compose.material3.AssistChipDefaults.elevatedAssistChipColors (Chip.kt:1183)");
         }
-        ChipColors m2029copyFD3wquc = SuggestionChipDefaults.INSTANCE.getDefaultElevatedSuggestionChipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2029copyFD3wquc(m5316getUnspecified0d7_KjU, m5316getUnspecified0d7_KjU2, m5316getUnspecified0d7_KjU3, m5316getUnspecified0d7_KjU4, m5316getUnspecified0d7_KjU5, m5316getUnspecified0d7_KjU6, m5316getUnspecified0d7_KjU7, m5316getUnspecified0d7_KjU8);
+        ChipColors m2115copyFD3wquc = SuggestionChipDefaults.INSTANCE.getDefaultElevatedSuggestionChipColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2115copyFD3wquc(m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4, m5460getUnspecified0d7_KjU5, m5460getUnspecified0d7_KjU6, m5460getUnspecified0d7_KjU7, m5460getUnspecified0d7_KjU8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2029copyFD3wquc;
+        return m2115copyFD3wquc;
     }
 
     public final ChipColors getDefaultElevatedAssistChipColors$material3(ColorScheme colorScheme) {
         ChipColors defaultElevatedAssistChipColorsCached$material3 = colorScheme.getDefaultElevatedAssistChipColorsCached$material3();
         if (defaultElevatedAssistChipColorsCached$material3 == null) {
-            ChipColors chipColors = new ChipColors(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getElevatedContainerColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getElevatedDisabledContainerColor()), AssistChipTokens.INSTANCE.getElevatedDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledLabelTextColor()), AssistChipTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5279copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            ChipColors chipColors = new ChipColors(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getElevatedContainerColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getIconColor()), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getElevatedDisabledContainerColor()), AssistChipTokens.INSTANCE.getElevatedDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledLabelTextColor()), AssistChipTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, AssistChipTokens.INSTANCE.getDisabledIconColor()), AssistChipTokens.INSTANCE.getDisabledIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultElevatedAssistChipColorsCached$material3(chipColors);
             return chipColors;
         }
@@ -185,30 +185,30 @@ public final class AssistChipDefaults {
     }
 
     /* renamed from: elevatedAssistChipElevation-aqJV_2Y  reason: not valid java name */
-    public final ChipElevation m1944elevatedAssistChipElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
+    public final ChipElevation m2030elevatedAssistChipElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1457698077, "C(elevatedAssistChipElevation)N(elevation:c#ui.unit.Dp,pressedElevation:c#ui.unit.Dp,focusedElevation:c#ui.unit.Dp,hoveredElevation:c#ui.unit.Dp,draggedElevation:c#ui.unit.Dp,disabledElevation:c#ui.unit.Dp):Chip.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            f = AssistChipTokens.INSTANCE.m3658getElevatedContainerElevationD9Ej5fM();
+            f = AssistChipTokens.INSTANCE.m3744getElevatedContainerElevationD9Ej5fM();
         }
         float f7 = f;
         if ((i2 & 2) != 0) {
-            f2 = AssistChipTokens.INSTANCE.m3662getElevatedPressedContainerElevationD9Ej5fM();
+            f2 = AssistChipTokens.INSTANCE.m3748getElevatedPressedContainerElevationD9Ej5fM();
         }
         float f8 = f2;
         if ((i2 & 4) != 0) {
-            f3 = AssistChipTokens.INSTANCE.m3660getElevatedFocusContainerElevationD9Ej5fM();
+            f3 = AssistChipTokens.INSTANCE.m3746getElevatedFocusContainerElevationD9Ej5fM();
         }
         float f9 = f3;
         if ((i2 & 8) != 0) {
-            f4 = AssistChipTokens.INSTANCE.m3661getElevatedHoverContainerElevationD9Ej5fM();
+            f4 = AssistChipTokens.INSTANCE.m3747getElevatedHoverContainerElevationD9Ej5fM();
         }
         float f10 = f4;
-        float m3657getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? AssistChipTokens.INSTANCE.m3657getDraggedContainerElevationD9Ej5fM() : f5;
-        float m3659getElevatedDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? AssistChipTokens.INSTANCE.m3659getElevatedDisabledContainerElevationD9Ej5fM() : f6;
+        float m3743getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? AssistChipTokens.INSTANCE.m3743getDraggedContainerElevationD9Ej5fM() : f5;
+        float m3745getElevatedDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? AssistChipTokens.INSTANCE.m3745getElevatedDisabledContainerElevationD9Ej5fM() : f6;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1457698077, i, -1, "androidx.compose.material3.AssistChipDefaults.elevatedAssistChipElevation (Chip.kt:1238)");
         }
-        ChipElevation chipElevation = new ChipElevation(f7, f8, f9, f10, m3657getDraggedContainerElevationD9Ej5fM, m3659getElevatedDisabledContainerElevationD9Ej5fM, null);
+        ChipElevation chipElevation = new ChipElevation(f7, f8, f9, f10, m3743getDraggedContainerElevationD9Ej5fM, m3745getElevatedDisabledContainerElevationD9Ej5fM, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

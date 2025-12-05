@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">နှင့် မျှဝေရန်</string>
     <string name="abc_shareactionprovider_share_with_application">%s ဖြင့် မျှဝေရန်</string>
     <string name="abc_toolbar_collapse_description">လျှော့ပြရန်</string>
-    <string name="autofill">အော်တိုဖြည့်</string>
+    <string name="androidx_compose_foundation_autofill">အော်တိုဖြည့်</string>
+    <string name="androidx_compose_ui_autofill">အော်တိုဖြည့်</string>
     <string name="bottomsheet_action_collapse">အောက်ခြေအပိုဆောင်း စာမျက်နှာကို ပိတ်နိုင်သည်</string>
     <string name="bottomsheet_action_expand">အောက်ခြေအပိုဆောင်း စာမျက်နှာကို ချဲ့နိုင်သည်</string>
     <string name="bottomsheet_action_expand_halfway">တစ်ဝက်ချဲ့ရန်</string>

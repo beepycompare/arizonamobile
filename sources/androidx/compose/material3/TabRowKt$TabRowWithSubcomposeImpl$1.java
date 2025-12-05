@@ -80,12 +80,12 @@ final class TabRowKt$TabRowWithSubcomposeImpl$1 implements Function2<Composer, I
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult invoke$lambda$8$lambda$7(Function2 function2, final Function2 function22, final Function3 function3, final SubcomposeMeasureScope subcomposeMeasureScope, final Constraints constraints) {
-        final int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(constraints.m7955unboximpl());
+        final int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(constraints.m8217unboximpl());
         List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function2);
         int size = subcompose.size();
         final Ref.IntRef intRef = new Ref.IntRef();
         if (size > 0) {
-            intRef.element = m7949getMaxWidthimpl / size;
+            intRef.element = m8211getMaxWidthimpl / size;
         }
         int i = 0;
         List<Measurable> list = subcompose;
@@ -97,19 +97,19 @@ final class TabRowKt$TabRowWithSubcomposeImpl$1 implements Function2<Composer, I
         ArrayList arrayList = new ArrayList(subcompose.size());
         int size3 = list.size();
         for (int i3 = 0; i3 < size3; i3++) {
-            arrayList.add(subcompose.get(i3).mo6698measureBRTryo0(Constraints.m7938copyZbe2FdA(constraints.m7955unboximpl(), intRef.element, intRef.element, intValue, intValue)));
+            arrayList.add(subcompose.get(i3).mo6875measureBRTryo0(Constraints.m8200copyZbe2FdA(constraints.m8217unboximpl(), intRef.element, intRef.element, intValue, intValue)));
         }
         final ArrayList arrayList2 = arrayList;
         ArrayList arrayList3 = new ArrayList(size);
         for (int i4 = 0; i4 < size; i4++) {
-            arrayList3.add(new TabPosition(Dp.m7996constructorimpl(subcomposeMeasureScope.mo427toDpu2uoSUM(intRef.element) * i4), subcomposeMeasureScope.mo427toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7994boximpl(Dp.m7996constructorimpl(subcomposeMeasureScope.mo427toDpu2uoSUM(Math.min(subcompose.get(i4).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7996constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m7994boximpl(Dp.m7996constructorimpl(24)))).m8010unboximpl(), null));
+            arrayList3.add(new TabPosition(Dp.m8258constructorimpl(subcomposeMeasureScope.mo461toDpu2uoSUM(intRef.element) * i4), subcomposeMeasureScope.mo461toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m8256boximpl(Dp.m8258constructorimpl(subcomposeMeasureScope.mo461toDpu2uoSUM(Math.min(subcompose.get(i4).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m8258constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m8256boximpl(Dp.m8258constructorimpl(24)))).m8272unboximpl(), null));
         }
         final ArrayList arrayList4 = arrayList3;
-        return MeasureScope.layout$default(subcomposeMeasureScope, m7949getMaxWidthimpl, intValue, null, new Function1() { // from class: androidx.compose.material3.TabRowKt$TabRowWithSubcomposeImpl$1$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(subcomposeMeasureScope, m8211getMaxWidthimpl, intValue, null, new Function1() { // from class: androidx.compose.material3.TabRowKt$TabRowWithSubcomposeImpl$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit invoke$lambda$8$lambda$7$lambda$6;
-                invoke$lambda$8$lambda$7$lambda$6 = TabRowKt$TabRowWithSubcomposeImpl$1.invoke$lambda$8$lambda$7$lambda$6(arrayList2, subcomposeMeasureScope, function22, intRef, constraints, intValue, function3, arrayList4, m7949getMaxWidthimpl, (Placeable.PlacementScope) obj);
+                invoke$lambda$8$lambda$7$lambda$6 = TabRowKt$TabRowWithSubcomposeImpl$1.invoke$lambda$8$lambda$7$lambda$6(arrayList2, subcomposeMeasureScope, function22, intRef, constraints, intValue, function3, arrayList4, m8211getMaxWidthimpl, (Placeable.PlacementScope) obj);
                 return invoke$lambda$8$lambda$7$lambda$6;
             }
         }, 4, null);
@@ -124,8 +124,8 @@ final class TabRowKt$TabRowWithSubcomposeImpl$1 implements Function2<Composer, I
         List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Divider, function2);
         int size2 = subcompose.size();
         for (int i4 = 0; i4 < size2; i4++) {
-            Placeable mo6698measureBRTryo0 = subcompose.get(i4).mo6698measureBRTryo0(Constraints.m7939copyZbe2FdA$default(constraints.m7955unboximpl(), 0, 0, 0, 0, 11, null));
-            Placeable.PlacementScope.placeRelative$default(placementScope, mo6698measureBRTryo0, 0, i - mo6698measureBRTryo0.getHeight(), 0.0f, 4, null);
+            Placeable mo6875measureBRTryo0 = subcompose.get(i4).mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(constraints.m8217unboximpl(), 0, 0, 0, 0, 11, null));
+            Placeable.PlacementScope.placeRelative$default(placementScope, mo6875measureBRTryo0, 0, i - mo6875measureBRTryo0.getHeight(), 0.0f, 4, null);
         }
         List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Indicator, ComposableLambdaKt.composableLambdaInstance(1918742627, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowWithSubcomposeImpl$1$1$1$1$3
             @Override // kotlin.jvm.functions.Function2
@@ -151,7 +151,7 @@ final class TabRowKt$TabRowWithSubcomposeImpl$1 implements Function2<Composer, I
         }));
         int size3 = subcompose2.size();
         for (int i5 = 0; i5 < size3; i5++) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose2.get(i5).mo6698measureBRTryo0(Constraints.Companion.m7959fixedJhjzzOo(i2, i)), 0, 0, 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose2.get(i5).mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(i2, i)), 0, 0, 0.0f, 4, null);
         }
         return Unit.INSTANCE;
     }

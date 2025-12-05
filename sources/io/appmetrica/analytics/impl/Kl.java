@@ -7,9 +7,9 @@ public enum Kl {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f559a;
+    public final int f642a;
 
     Kl(int i) {
-        this.f559a = i;
+        this.f642a = i;
     }
 }

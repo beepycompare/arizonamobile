@@ -39,22 +39,22 @@ public final class SpanStyleKt {
     private static final TextForegroundStyle DefaultColorForegroundStyle;
     private static final long DefaultFontSize = TextUnitKt.getSp(14);
     private static final long DefaultLetterSpacing = TextUnitKt.getSp(0);
-    private static final long DefaultBackgroundColor = Color.Companion.m5315getTransparent0d7_KjU();
+    private static final long DefaultBackgroundColor = Color.Companion.m5459getTransparent0d7_KjU();
 
     public static final <T> T lerpDiscrete(T t, T t2, float f) {
         return ((double) f) < 0.5d ? t : t2;
     }
 
     static {
-        long m5306getBlack0d7_KjU = Color.Companion.m5306getBlack0d7_KjU();
-        DefaultColor = m5306getBlack0d7_KjU;
-        DefaultColorForegroundStyle = TextForegroundStyle.Companion.m7901from8_81llA(m5306getBlack0d7_KjU);
+        long m5450getBlack0d7_KjU = Color.Companion.m5450getBlack0d7_KjU();
+        DefaultColor = m5450getBlack0d7_KjU;
+        DefaultColorForegroundStyle = TextForegroundStyle.Companion.m8163from8_81llA(m5450getBlack0d7_KjU);
     }
 
     public static final SpanStyle lerp(SpanStyle spanStyle, SpanStyle spanStyle2, float f) {
         TextForegroundStyle lerp = TextDrawStyleKt.lerp(spanStyle.getTextForegroundStyle$ui_text(), spanStyle2.getTextForegroundStyle$ui_text(), f);
         FontFamily fontFamily = (FontFamily) lerpDiscrete(spanStyle.getFontFamily(), spanStyle2.getFontFamily(), f);
-        long m7405lerpTextUnitInheritableC3pnCVY = m7405lerpTextUnitInheritableC3pnCVY(spanStyle.m7400getFontSizeXSAIIZE(), spanStyle2.m7400getFontSizeXSAIIZE(), f);
+        long m7647lerpTextUnitInheritableC3pnCVY = m7647lerpTextUnitInheritableC3pnCVY(spanStyle.m7642getFontSizeXSAIIZE(), spanStyle2.m7642getFontSizeXSAIIZE(), f);
         FontWeight fontWeight = spanStyle.getFontWeight();
         if (fontWeight == null) {
             fontWeight = FontWeight.Companion.getNormal();
@@ -64,14 +64,14 @@ public final class SpanStyleKt {
             fontWeight2 = FontWeight.Companion.getNormal();
         }
         FontWeight lerp2 = FontWeightKt.lerp(fontWeight, fontWeight2, f);
-        FontStyle fontStyle = (FontStyle) lerpDiscrete(spanStyle.m7401getFontStyle4Lr2A7w(), spanStyle2.m7401getFontStyle4Lr2A7w(), f);
-        FontSynthesis fontSynthesis = (FontSynthesis) lerpDiscrete(spanStyle.m7402getFontSynthesisZQGJjVo(), spanStyle2.m7402getFontSynthesisZQGJjVo(), f);
+        FontStyle fontStyle = (FontStyle) lerpDiscrete(spanStyle.m7643getFontStyle4Lr2A7w(), spanStyle2.m7643getFontStyle4Lr2A7w(), f);
+        FontSynthesis fontSynthesis = (FontSynthesis) lerpDiscrete(spanStyle.m7644getFontSynthesisZQGJjVo(), spanStyle2.m7644getFontSynthesisZQGJjVo(), f);
         String str = (String) lerpDiscrete(spanStyle.getFontFeatureSettings(), spanStyle2.getFontFeatureSettings(), f);
-        long m7405lerpTextUnitInheritableC3pnCVY2 = m7405lerpTextUnitInheritableC3pnCVY(spanStyle.m7403getLetterSpacingXSAIIZE(), spanStyle2.m7403getLetterSpacingXSAIIZE(), f);
-        BaselineShift m7398getBaselineShift5SSeXJ0 = spanStyle.m7398getBaselineShift5SSeXJ0();
-        float m7758unboximpl = m7398getBaselineShift5SSeXJ0 != null ? m7398getBaselineShift5SSeXJ0.m7758unboximpl() : BaselineShift.m7753constructorimpl(0.0f);
-        BaselineShift m7398getBaselineShift5SSeXJ02 = spanStyle2.m7398getBaselineShift5SSeXJ0();
-        float m7765lerpjWV1Mfo = BaselineShiftKt.m7765lerpjWV1Mfo(m7758unboximpl, m7398getBaselineShift5SSeXJ02 != null ? m7398getBaselineShift5SSeXJ02.m7758unboximpl() : BaselineShift.m7753constructorimpl(0.0f), f);
+        long m7647lerpTextUnitInheritableC3pnCVY2 = m7647lerpTextUnitInheritableC3pnCVY(spanStyle.m7645getLetterSpacingXSAIIZE(), spanStyle2.m7645getLetterSpacingXSAIIZE(), f);
+        BaselineShift m7640getBaselineShift5SSeXJ0 = spanStyle.m7640getBaselineShift5SSeXJ0();
+        float m8004unboximpl = m7640getBaselineShift5SSeXJ0 != null ? m7640getBaselineShift5SSeXJ0.m8004unboximpl() : BaselineShift.m7999constructorimpl(0.0f);
+        BaselineShift m7640getBaselineShift5SSeXJ02 = spanStyle2.m7640getBaselineShift5SSeXJ0();
+        float m8014lerpjWV1Mfo = BaselineShiftKt.m8014lerpjWV1Mfo(m8004unboximpl, m7640getBaselineShift5SSeXJ02 != null ? m7640getBaselineShift5SSeXJ02.m8004unboximpl() : BaselineShift.m7999constructorimpl(0.0f), f);
         TextGeometricTransform textGeometricTransform = spanStyle.getTextGeometricTransform();
         if (textGeometricTransform == null) {
             textGeometricTransform = TextGeometricTransform.Companion.getNone$ui_text();
@@ -82,7 +82,7 @@ public final class SpanStyleKt {
         }
         TextGeometricTransform lerp3 = TextGeometricTransformKt.lerp(textGeometricTransform, textGeometricTransform2, f);
         LocaleList localeList = (LocaleList) lerpDiscrete(spanStyle.getLocaleList(), spanStyle2.getLocaleList(), f);
-        long m5331lerpjxsXWHM = ColorKt.m5331lerpjxsXWHM(spanStyle.m7397getBackground0d7_KjU(), spanStyle2.m7397getBackground0d7_KjU(), f);
+        long m5475lerpjxsXWHM = ColorKt.m5475lerpjxsXWHM(spanStyle.m7639getBackground0d7_KjU(), spanStyle2.m7639getBackground0d7_KjU(), f);
         TextDecoration textDecoration = (TextDecoration) lerpDiscrete(spanStyle.getTextDecoration(), spanStyle2.getTextDecoration(), f);
         Shadow shadow = spanStyle.getShadow();
         if (shadow == null) {
@@ -92,7 +92,7 @@ public final class SpanStyleKt {
         if (shadow2 == null) {
             shadow2 = new Shadow(0L, 0L, 0.0f, 7, null);
         }
-        return new SpanStyle(lerp, m7405lerpTextUnitInheritableC3pnCVY, lerp2, fontStyle, fontSynthesis, fontFamily, str, m7405lerpTextUnitInheritableC3pnCVY2, BaselineShift.m7752boximpl(m7765lerpjWV1Mfo), lerp3, localeList, m5331lerpjxsXWHM, textDecoration, ShadowKt.lerp(shadow, shadow2, f), lerpPlatformStyle(spanStyle.getPlatformStyle(), spanStyle2.getPlatformStyle(), f), (DrawStyle) lerpDiscrete(spanStyle.getDrawStyle(), spanStyle2.getDrawStyle(), f), (DefaultConstructorMarker) null);
+        return new SpanStyle(lerp, m7647lerpTextUnitInheritableC3pnCVY, lerp2, fontStyle, fontSynthesis, fontFamily, str, m7647lerpTextUnitInheritableC3pnCVY2, BaselineShift.m7998boximpl(m8014lerpjWV1Mfo), lerp3, localeList, m5475lerpjxsXWHM, textDecoration, ShadowKt.lerp(shadow, shadow2, f), lerpPlatformStyle(spanStyle.getPlatformStyle(), spanStyle2.getPlatformStyle(), f), (DrawStyle) lerpDiscrete(spanStyle.getDrawStyle(), spanStyle2.getDrawStyle(), f), (DefaultConstructorMarker) null);
     }
 
     private static final PlatformSpanStyle lerpPlatformStyle(PlatformSpanStyle platformSpanStyle, PlatformSpanStyle platformSpanStyle2, float f) {
@@ -109,7 +109,7 @@ public final class SpanStyleKt {
     }
 
     public static final SpanStyle resolveSpanStyleDefaults(SpanStyle spanStyle) {
-        long m7403getLetterSpacingXSAIIZE;
+        long m7645getLetterSpacingXSAIIZE;
         TextForegroundStyle takeOrElse = spanStyle.getTextForegroundStyle$ui_text().takeOrElse(new Function0() { // from class: androidx.compose.ui.text.SpanStyleKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
@@ -118,16 +118,16 @@ public final class SpanStyleKt {
                 return textForegroundStyle;
             }
         });
-        long m7400getFontSizeXSAIIZE = TextUnit.m8188getRawTypeimpl(spanStyle.m7400getFontSizeXSAIIZE()) == 0 ? DefaultFontSize : spanStyle.m7400getFontSizeXSAIIZE();
+        long m7642getFontSizeXSAIIZE = TextUnit.m8450getRawTypeimpl(spanStyle.m7642getFontSizeXSAIIZE()) == 0 ? DefaultFontSize : spanStyle.m7642getFontSizeXSAIIZE();
         FontWeight fontWeight = spanStyle.getFontWeight();
         if (fontWeight == null) {
             fontWeight = FontWeight.Companion.getNormal();
         }
         FontWeight fontWeight2 = fontWeight;
-        FontStyle m7401getFontStyle4Lr2A7w = spanStyle.m7401getFontStyle4Lr2A7w();
-        FontStyle m7568boximpl = FontStyle.m7568boximpl(m7401getFontStyle4Lr2A7w != null ? m7401getFontStyle4Lr2A7w.m7574unboximpl() : FontStyle.Companion.m7578getNormal_LCdwA());
-        FontSynthesis m7402getFontSynthesisZQGJjVo = spanStyle.m7402getFontSynthesisZQGJjVo();
-        FontSynthesis m7579boximpl = FontSynthesis.m7579boximpl(m7402getFontSynthesisZQGJjVo != null ? m7402getFontSynthesisZQGJjVo.m7587unboximpl() : FontSynthesis.Companion.m7588getAllGVVA2EU());
+        FontStyle m7643getFontStyle4Lr2A7w = spanStyle.m7643getFontStyle4Lr2A7w();
+        FontStyle m7812boximpl = FontStyle.m7812boximpl(m7643getFontStyle4Lr2A7w != null ? m7643getFontStyle4Lr2A7w.m7818unboximpl() : FontStyle.Companion.m7822getNormal_LCdwA());
+        FontSynthesis m7644getFontSynthesisZQGJjVo = spanStyle.m7644getFontSynthesisZQGJjVo();
+        FontSynthesis m7823boximpl = FontSynthesis.m7823boximpl(m7644getFontSynthesisZQGJjVo != null ? m7644getFontSynthesisZQGJjVo.m7831unboximpl() : FontSynthesis.Companion.m7832getAllGVVA2EU());
         SystemFontFamily fontFamily = spanStyle.getFontFamily();
         if (fontFamily == null) {
             fontFamily = FontFamily.Companion.getDefault();
@@ -138,14 +138,18 @@ public final class SpanStyleKt {
             fontFeatureSettings = "";
         }
         String str = fontFeatureSettings;
-        if (TextUnit.m8188getRawTypeimpl(spanStyle.m7403getLetterSpacingXSAIIZE()) == 0) {
-            m7403getLetterSpacingXSAIIZE = DefaultLetterSpacing;
+        if (TextUnit.m8450getRawTypeimpl(spanStyle.m7645getLetterSpacingXSAIIZE()) == 0) {
+            m7645getLetterSpacingXSAIIZE = DefaultLetterSpacing;
         } else {
-            m7403getLetterSpacingXSAIIZE = spanStyle.m7403getLetterSpacingXSAIIZE();
+            m7645getLetterSpacingXSAIIZE = spanStyle.m7645getLetterSpacingXSAIIZE();
         }
-        long j = m7403getLetterSpacingXSAIIZE;
-        BaselineShift m7398getBaselineShift5SSeXJ0 = spanStyle.m7398getBaselineShift5SSeXJ0();
-        BaselineShift m7752boximpl = BaselineShift.m7752boximpl(m7398getBaselineShift5SSeXJ0 != null ? m7398getBaselineShift5SSeXJ0.m7758unboximpl() : BaselineShift.Companion.m7762getNoney9eOQZs());
+        long j = m7645getLetterSpacingXSAIIZE;
+        BaselineShift m7640getBaselineShift5SSeXJ0 = spanStyle.m7640getBaselineShift5SSeXJ0();
+        float m8004unboximpl = m7640getBaselineShift5SSeXJ0 != null ? m7640getBaselineShift5SSeXJ0.m8004unboximpl() : BaselineShift.Companion.m8009getNoney9eOQZs();
+        if (Float.isNaN(m8004unboximpl)) {
+            m8004unboximpl = BaselineShift.Companion.m8009getNoney9eOQZs();
+        }
+        BaselineShift m7998boximpl = BaselineShift.m7998boximpl(m8004unboximpl);
         TextGeometricTransform textGeometricTransform = spanStyle.getTextGeometricTransform();
         if (textGeometricTransform == null) {
             textGeometricTransform = TextGeometricTransform.Companion.getNone$ui_text();
@@ -156,11 +160,11 @@ public final class SpanStyleKt {
             localeList = LocaleList.Companion.getCurrent();
         }
         LocaleList localeList2 = localeList;
-        long m7397getBackground0d7_KjU = spanStyle.m7397getBackground0d7_KjU();
-        if (m7397getBackground0d7_KjU == 16) {
-            m7397getBackground0d7_KjU = DefaultBackgroundColor;
+        long m7639getBackground0d7_KjU = spanStyle.m7639getBackground0d7_KjU();
+        if (m7639getBackground0d7_KjU == 16) {
+            m7639getBackground0d7_KjU = DefaultBackgroundColor;
         }
-        long j2 = m7397getBackground0d7_KjU;
+        long j2 = m7639getBackground0d7_KjU;
         TextDecoration textDecoration = spanStyle.getTextDecoration();
         if (textDecoration == null) {
             textDecoration = TextDecoration.Companion.getNone();
@@ -176,7 +180,7 @@ public final class SpanStyleKt {
         if (drawStyle == null) {
             drawStyle = Fill.INSTANCE;
         }
-        return new SpanStyle(takeOrElse, m7400getFontSizeXSAIIZE, fontWeight2, m7568boximpl, m7579boximpl, fontFamily2, str, j, m7752boximpl, textGeometricTransform2, localeList2, j2, textDecoration2, shadow2, platformStyle, drawStyle, (DefaultConstructorMarker) null);
+        return new SpanStyle(takeOrElse, m7642getFontSizeXSAIIZE, fontWeight2, m7812boximpl, m7823boximpl, fontFamily2, str, j, m7998boximpl, textGeometricTransform2, localeList2, j2, textDecoration2, shadow2, platformStyle, drawStyle, (DefaultConstructorMarker) null);
     }
 
     private static final PlatformSpanStyle mergePlatformStyle(SpanStyle spanStyle, PlatformSpanStyle platformSpanStyle) {
@@ -190,15 +194,15 @@ public final class SpanStyleKt {
     }
 
     /* renamed from: lerpTextUnitInheritable-C3pnCVY  reason: not valid java name */
-    public static final long m7405lerpTextUnitInheritableC3pnCVY(long j, long j2, float f) {
-        if (TextUnit.m8188getRawTypeimpl(j) == 0 || TextUnit.m8188getRawTypeimpl(j2) == 0) {
-            return ((TextUnit) lerpDiscrete(TextUnit.m8180boximpl(j), TextUnit.m8180boximpl(j2), f)).m8199unboximpl();
+    public static final long m7647lerpTextUnitInheritableC3pnCVY(long j, long j2, float f) {
+        if (TextUnit.m8450getRawTypeimpl(j) == 0 || TextUnit.m8450getRawTypeimpl(j2) == 0) {
+            return ((TextUnit) lerpDiscrete(TextUnit.m8442boximpl(j), TextUnit.m8442boximpl(j2), f)).m8461unboximpl();
         }
-        return TextUnitKt.m8210lerpC3pnCVY(j, j2, f);
+        return TextUnitKt.m8472lerpC3pnCVY(j, j2, f);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x008f, code lost:
-        if (androidx.compose.ui.unit.TextUnit.m8187equalsimpl0(r35, r23.m7403getLetterSpacingXSAIIZE()) == false) goto L8;
+        if (androidx.compose.ui.unit.TextUnit.m8449equalsimpl0(r35, r23.m7645getLetterSpacingXSAIIZE()) == false) goto L8;
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:0x00ec, code lost:
         if (kotlin.jvm.internal.Intrinsics.areEqual(r14, r23.getTextGeometricTransform()) != false) goto L97;
@@ -207,10 +211,10 @@ public final class SpanStyleKt {
         if (kotlin.jvm.internal.Intrinsics.areEqual(r39, r23.getLocaleList()) == false) goto L9;
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0110, code lost:
-        if (androidx.compose.ui.graphics.Color.m5281equalsimpl0(r7, r23.m7397getBackground0d7_KjU()) != false) goto L104;
+        if (androidx.compose.ui.graphics.Color.m5425equalsimpl0(r7, r23.m7639getBackground0d7_KjU()) != false) goto L104;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0037, code lost:
-        if (androidx.compose.ui.unit.TextUnit.m8187equalsimpl0(r11, r23.m7400getFontSizeXSAIIZE()) != false) goto L57;
+        if (androidx.compose.ui.unit.TextUnit.m8449equalsimpl0(r11, r23.m7642getFontSizeXSAIIZE()) != false) goto L57;
      */
     /* JADX WARN: Removed duplicated region for block: B:100:0x017f  */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0184  */
@@ -239,25 +243,25 @@ public final class SpanStyleKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final SpanStyle m7404fastMergedSHsh3o(SpanStyle spanStyle, long j, Brush brush, float f, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
+    public static final SpanStyle m7646fastMergedSHsh3o(SpanStyle spanStyle, long j, Brush brush, float f, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
         long j5;
         TextGeometricTransform textGeometricTransform2;
         long j6;
         DrawStyle drawStyle2;
-        TextForegroundStyle m7901from8_81llA;
+        TextForegroundStyle m8163from8_81llA;
         String str2 = str;
         BaselineShift baselineShift2 = baselineShift;
         TextDecoration textDecoration2 = textDecoration;
         Shadow shadow2 = shadow;
-        if (TextUnit.m8188getRawTypeimpl(j2) == 0) {
+        if (TextUnit.m8450getRawTypeimpl(j2) == 0) {
             j5 = j2;
         } else {
             j5 = j2;
         }
-        if ((brush != null || j == 16 || Color.m5281equalsimpl0(j, spanStyle.getTextForegroundStyle$ui_text().mo7766getColor0d7_KjU())) && ((fontStyle == null || Intrinsics.areEqual(fontStyle, spanStyle.m7401getFontStyle4Lr2A7w())) && ((fontWeight == null || Intrinsics.areEqual(fontWeight, spanStyle.getFontWeight())) && (fontFamily == null || fontFamily == spanStyle.getFontFamily())))) {
-            if (TextUnit.m8188getRawTypeimpl(j3) == 0) {
+        if ((brush != null || j == 16 || Color.m5425equalsimpl0(j, spanStyle.getTextForegroundStyle$ui_text().mo8016getColor0d7_KjU())) && ((fontStyle == null || Intrinsics.areEqual(fontStyle, spanStyle.m7643getFontStyle4Lr2A7w())) && ((fontWeight == null || Intrinsics.areEqual(fontWeight, spanStyle.getFontWeight())) && (fontFamily == null || fontFamily == spanStyle.getFontFamily())))) {
+            if (TextUnit.m8450getRawTypeimpl(j3) == 0) {
             }
-            if ((textDecoration2 == null || Intrinsics.areEqual(textDecoration2, spanStyle.getTextDecoration())) && Intrinsics.areEqual(brush, spanStyle.getTextForegroundStyle$ui_text().getBrush()) && ((brush == null || f == spanStyle.getTextForegroundStyle$ui_text().getAlpha()) && ((fontSynthesis == null || Intrinsics.areEqual(fontSynthesis, spanStyle.m7402getFontSynthesisZQGJjVo())) && ((str2 == null || Intrinsics.areEqual(str2, spanStyle.getFontFeatureSettings())) && (baselineShift2 == null || Intrinsics.areEqual(baselineShift2, spanStyle.m7398getBaselineShift5SSeXJ0())))))) {
+            if ((textDecoration2 == null || Intrinsics.areEqual(textDecoration2, spanStyle.getTextDecoration())) && Intrinsics.areEqual(brush, spanStyle.getTextForegroundStyle$ui_text().getBrush()) && ((brush == null || f == spanStyle.getTextForegroundStyle$ui_text().getAlpha()) && ((fontSynthesis == null || Intrinsics.areEqual(fontSynthesis, spanStyle.m7644getFontSynthesisZQGJjVo())) && ((str2 == null || Intrinsics.areEqual(str2, spanStyle.getFontFeatureSettings())) && (baselineShift2 == null || Intrinsics.areEqual(baselineShift2, spanStyle.m7640getBaselineShift5SSeXJ0())))))) {
                 if (textGeometricTransform != null) {
                     textGeometricTransform2 = textGeometricTransform;
                 } else {
@@ -276,31 +280,31 @@ public final class SpanStyleKt {
                         return spanStyle;
                     }
                     if (brush != null) {
-                        m7901from8_81llA = TextForegroundStyle.Companion.from(brush, f);
+                        m8163from8_81llA = TextForegroundStyle.Companion.from(brush, f);
                     } else {
-                        m7901from8_81llA = TextForegroundStyle.Companion.m7901from8_81llA(j);
+                        m8163from8_81llA = TextForegroundStyle.Companion.m8163from8_81llA(j);
                     }
-                    TextForegroundStyle merge = spanStyle.getTextForegroundStyle$ui_text().merge(m7901from8_81llA);
+                    TextForegroundStyle merge = spanStyle.getTextForegroundStyle$ui_text().merge(m8163from8_81llA);
                     FontFamily fontFamily2 = fontFamily == null ? spanStyle.getFontFamily() : fontFamily;
-                    if (TextUnit.m8188getRawTypeimpl(j5) == 0) {
-                        j5 = spanStyle.m7400getFontSizeXSAIIZE();
+                    if (TextUnit.m8450getRawTypeimpl(j5) == 0) {
+                        j5 = spanStyle.m7642getFontSizeXSAIIZE();
                     }
                     FontWeight fontWeight2 = fontWeight == null ? spanStyle.getFontWeight() : fontWeight;
-                    FontStyle m7401getFontStyle4Lr2A7w = fontStyle == null ? spanStyle.m7401getFontStyle4Lr2A7w() : fontStyle;
-                    FontSynthesis m7402getFontSynthesisZQGJjVo = fontSynthesis == null ? spanStyle.m7402getFontSynthesisZQGJjVo() : fontSynthesis;
+                    FontStyle m7643getFontStyle4Lr2A7w = fontStyle == null ? spanStyle.m7643getFontStyle4Lr2A7w() : fontStyle;
+                    FontSynthesis m7644getFontSynthesisZQGJjVo = fontSynthesis == null ? spanStyle.m7644getFontSynthesisZQGJjVo() : fontSynthesis;
                     if (str2 == null) {
                         str2 = spanStyle.getFontFeatureSettings();
                     }
-                    long m7403getLetterSpacingXSAIIZE = TextUnit.m8188getRawTypeimpl(j3) == 0 ? spanStyle.m7403getLetterSpacingXSAIIZE() : j3;
+                    long m7645getLetterSpacingXSAIIZE = TextUnit.m8450getRawTypeimpl(j3) == 0 ? spanStyle.m7645getLetterSpacingXSAIIZE() : j3;
                     if (baselineShift2 == null) {
-                        baselineShift2 = spanStyle.m7398getBaselineShift5SSeXJ0();
+                        baselineShift2 = spanStyle.m7640getBaselineShift5SSeXJ0();
                     }
                     if (textGeometricTransform2 == null) {
                         textGeometricTransform2 = spanStyle.getTextGeometricTransform();
                     }
                     LocaleList localeList2 = localeList == null ? spanStyle.getLocaleList() : localeList;
                     if (j6 == 16) {
-                        j6 = spanStyle.m7397getBackground0d7_KjU();
+                        j6 = spanStyle.m7639getBackground0d7_KjU();
                     }
                     if (textDecoration2 == null) {
                         textDecoration2 = spanStyle.getTextDecoration();
@@ -308,15 +312,15 @@ public final class SpanStyleKt {
                     if (shadow2 == null) {
                         shadow2 = spanStyle.getShadow();
                     }
-                    return new SpanStyle(merge, j5, fontWeight2, m7401getFontStyle4Lr2A7w, m7402getFontSynthesisZQGJjVo, fontFamily2, str2, m7403getLetterSpacingXSAIIZE, baselineShift2, textGeometricTransform2, localeList2, j6, textDecoration2, shadow2, mergePlatformStyle(spanStyle, platformSpanStyle), drawStyle2 == null ? spanStyle.getDrawStyle() : drawStyle2, (DefaultConstructorMarker) null);
+                    return new SpanStyle(merge, j5, fontWeight2, m7643getFontStyle4Lr2A7w, m7644getFontSynthesisZQGJjVo, fontFamily2, str2, m7645getLetterSpacingXSAIIZE, baselineShift2, textGeometricTransform2, localeList2, j6, textDecoration2, shadow2, mergePlatformStyle(spanStyle, platformSpanStyle), drawStyle2 == null ? spanStyle.getDrawStyle() : drawStyle2, (DefaultConstructorMarker) null);
                 }
                 drawStyle2 = drawStyle;
                 if (brush != null) {
                 }
-                TextForegroundStyle merge2 = spanStyle.getTextForegroundStyle$ui_text().merge(m7901from8_81llA);
+                TextForegroundStyle merge2 = spanStyle.getTextForegroundStyle$ui_text().merge(m8163from8_81llA);
                 if (fontFamily == null) {
                 }
-                if (TextUnit.m8188getRawTypeimpl(j5) == 0) {
+                if (TextUnit.m8450getRawTypeimpl(j5) == 0) {
                 }
                 if (fontWeight == null) {
                 }
@@ -326,7 +330,7 @@ public final class SpanStyleKt {
                 }
                 if (str2 == null) {
                 }
-                if (TextUnit.m8188getRawTypeimpl(j3) == 0) {
+                if (TextUnit.m8450getRawTypeimpl(j3) == 0) {
                 }
                 if (baselineShift2 == null) {
                 }
@@ -340,7 +344,7 @@ public final class SpanStyleKt {
                 }
                 if (shadow2 == null) {
                 }
-                return new SpanStyle(merge2, j5, fontWeight2, m7401getFontStyle4Lr2A7w, m7402getFontSynthesisZQGJjVo, fontFamily2, str2, m7403getLetterSpacingXSAIIZE, baselineShift2, textGeometricTransform2, localeList2, j6, textDecoration2, shadow2, mergePlatformStyle(spanStyle, platformSpanStyle), drawStyle2 == null ? spanStyle.getDrawStyle() : drawStyle2, (DefaultConstructorMarker) null);
+                return new SpanStyle(merge2, j5, fontWeight2, m7643getFontStyle4Lr2A7w, m7644getFontSynthesisZQGJjVo, fontFamily2, str2, m7645getLetterSpacingXSAIIZE, baselineShift2, textGeometricTransform2, localeList2, j6, textDecoration2, shadow2, mergePlatformStyle(spanStyle, platformSpanStyle), drawStyle2 == null ? spanStyle.getDrawStyle() : drawStyle2, (DefaultConstructorMarker) null);
             }
         }
         textGeometricTransform2 = textGeometricTransform;
@@ -348,10 +352,10 @@ public final class SpanStyleKt {
         drawStyle2 = drawStyle;
         if (brush != null) {
         }
-        TextForegroundStyle merge22 = spanStyle.getTextForegroundStyle$ui_text().merge(m7901from8_81llA);
+        TextForegroundStyle merge22 = spanStyle.getTextForegroundStyle$ui_text().merge(m8163from8_81llA);
         if (fontFamily == null) {
         }
-        if (TextUnit.m8188getRawTypeimpl(j5) == 0) {
+        if (TextUnit.m8450getRawTypeimpl(j5) == 0) {
         }
         if (fontWeight == null) {
         }
@@ -361,7 +365,7 @@ public final class SpanStyleKt {
         }
         if (str2 == null) {
         }
-        if (TextUnit.m8188getRawTypeimpl(j3) == 0) {
+        if (TextUnit.m8450getRawTypeimpl(j3) == 0) {
         }
         if (baselineShift2 == null) {
         }
@@ -375,6 +379,6 @@ public final class SpanStyleKt {
         }
         if (shadow2 == null) {
         }
-        return new SpanStyle(merge22, j5, fontWeight2, m7401getFontStyle4Lr2A7w, m7402getFontSynthesisZQGJjVo, fontFamily2, str2, m7403getLetterSpacingXSAIIZE, baselineShift2, textGeometricTransform2, localeList2, j6, textDecoration2, shadow2, mergePlatformStyle(spanStyle, platformSpanStyle), drawStyle2 == null ? spanStyle.getDrawStyle() : drawStyle2, (DefaultConstructorMarker) null);
+        return new SpanStyle(merge22, j5, fontWeight2, m7643getFontStyle4Lr2A7w, m7644getFontSynthesisZQGJjVo, fontFamily2, str2, m7645getLetterSpacingXSAIIZE, baselineShift2, textGeometricTransform2, localeList2, j6, textDecoration2, shadow2, mergePlatformStyle(spanStyle, platformSpanStyle), drawStyle2 == null ? spanStyle.getDrawStyle() : drawStyle2, (DefaultConstructorMarker) null);
     }
 }

@@ -25,7 +25,6 @@ import androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompa
 import androidx.compose.ui.platform.SemanticsNodeCopy;
 import androidx.compose.ui.platform.SemanticsUtils_androidKt;
 import androidx.compose.ui.platform.coreshims.AutofillIdCompat;
-import androidx.compose.ui.platform.coreshims.ContentCaptureSessionCompat;
 import androidx.compose.ui.platform.coreshims.ViewCompatShims;
 import androidx.compose.ui.platform.coreshims.ViewStructureCompat;
 import androidx.compose.ui.semantics.AccessibilityAction;
@@ -35,6 +34,7 @@ import androidx.compose.ui.semantics.SemanticsConfiguration;
 import androidx.compose.ui.semantics.SemanticsConfigurationKt;
 import androidx.compose.ui.semantics.SemanticsNode;
 import androidx.compose.ui.semantics.SemanticsNodeWithAdjustedBounds;
+import androidx.compose.ui.semantics.SemanticsNode_androidKt;
 import androidx.compose.ui.semantics.SemanticsOwnerKt;
 import androidx.compose.ui.semantics.SemanticsProperties;
 import androidx.compose.ui.semantics.SemanticsPropertyKey;
@@ -69,15 +69,15 @@ import kotlinx.coroutines.channels.Channel;
 import kotlinx.coroutines.channels.ChannelIterator;
 import kotlinx.coroutines.channels.ChannelKt;
 /* compiled from: AndroidContentCaptureManager.android.kt */
-@Metadata(d1 = {"\u0000Ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000 \u0085\u00012\u00020\u00012\u00020\u00022\u00020\u0003:\u0006\u0083\u0001\u0084\u0001\u0085\u0001B\u001f\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u000e\u0010\u0006\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u0010\u00107\u001a\u00020#2\u0006\u00108\u001a\u000209H\u0016J\u0010\u0010:\u001a\u00020#2\u0006\u00108\u001a\u000209H\u0016J\u0010\u0010>\u001a\u00020#2\u0006\u0010?\u001a\u00020@H\u0016J\u0010\u0010A\u001a\u00020#2\u0006\u0010?\u001a\u00020@H\u0016J\u0010\u0010B\u001a\u00020#H\u0080@¢\u0006\u0004\bC\u0010DJ\r\u0010E\u001a\u00020#H\u0000¢\u0006\u0002\bFJ\r\u0010G\u001a\u00020#H\u0000¢\u0006\u0002\bHJ\b\u0010I\u001a\u00020#H\u0002J\u0018\u0010J\u001a\u00020#2\u0006\u0010K\u001a\u00020L2\u0006\u0010M\u001a\u000202H\u0002J\u0016\u0010N\u001a\u00020#2\f\u0010O\u001a\b\u0012\u0004\u0012\u00020*0)H\u0002J\u0018\u0010P\u001a\u00020#2\u0006\u0010Q\u001a\u00020R2\u0006\u0010S\u001a\u00020TH\u0002J\b\u0010U\u001a\u00020#H\u0002J\b\u0010V\u001a\u00020#H\u0002J\u0016\u0010W\u001a\u0004\u0018\u00010X*\u00020L2\u0006\u0010Y\u001a\u00020RH\u0002J&\u0010Z\u001a\u00020#*\u00020L2\u0018\u0010[\u001a\u0014\u0012\u0004\u0012\u00020R\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020#0\\H\u0002JG\u0010]\u001a\u00020#\"\u0004\b\u0000\u0010^*\b\u0012\u0004\u0012\u0002H^0_2\u0018\u0010[\u001a\u0014\u0012\u0004\u0012\u00020R\u0012\u0004\u0012\u0002H^\u0012\u0004\u0012\u00020#0\\2\u0012\u0010`\u001a\u000e\u0012\u0004\u0012\u0002H^\u0012\u0004\u0012\u00020 0aH\u0082\bJ\u001a\u0010b\u001a\u00020#2\u0006\u0010c\u001a\u00020R2\b\u0010d\u001a\u0004\u0018\u00010XH\u0002J\u0010\u0010e\u001a\u00020#2\u0006\u0010c\u001a\u00020RH\u0002J\b\u0010f\u001a\u00020#H\u0002J\u0018\u0010g\u001a\u00020#2\u0006\u0010Y\u001a\u00020R2\u0006\u0010h\u001a\u00020LH\u0002J\u0010\u0010i\u001a\u00020#2\u0006\u0010h\u001a\u00020LH\u0002J\u0010\u0010j\u001a\u00020#2\u0006\u0010h\u001a\u00020LH\u0002J\r\u0010k\u001a\u00020#H\u0000¢\u0006\u0002\blJ\r\u0010m\u001a\u00020#H\u0000¢\u0006\u0002\bnJ\r\u0010o\u001a\u00020#H\u0000¢\u0006\u0002\bpJ\b\u0010q\u001a\u00020#H\u0002J\b\u0010r\u001a\u00020#H\u0002J\b\u0010s\u001a\u00020#H\u0002J-\u0010t\u001a\u00020#2\u0006\u0010u\u001a\u00020v2\u0006\u0010w\u001a\u00020x2\u000e\u0010y\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010{0zH\u0001¢\u0006\u0002\b|J(\u0010}\u001a\u00020#2\u0006\u0010~\u001a\u00020\u00002\u0010\u0010\u007f\u001a\f\u0012\u0007\u0012\u0005\u0018\u00010\u0081\u00010\u0080\u0001H\u0001¢\u0006\u0003\b\u0082\u0001R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\"\u0010\u0006\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R&\u0010\u0011\u001a\u0004\u0018\u00010\b8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u0012\u0010\u0013\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\u00020%X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\"\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)8@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010,\"\u0004\b-\u0010.R\u000e\u0010/\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\b\u0012\u0004\u0012\u00020201X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010;\u001a\u00020 8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b<\u0010=¨\u0006\u0086\u0001"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "Landroidx/compose/ui/contentcapture/ContentCaptureManager;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "Landroid/view/View$OnAttachStateChangeListener;", "view", "Landroidx/compose/ui/platform/AndroidComposeView;", "onContentCaptureSession", "Lkotlin/Function0;", "Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;Lkotlin/jvm/functions/Function0;)V", "getView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "getOnContentCaptureSession", "()Lkotlin/jvm/functions/Function0;", "setOnContentCaptureSession", "(Lkotlin/jvm/functions/Function0;)V", "contentCaptureSession", "getContentCaptureSession$ui_release$annotations", "()V", "getContentCaptureSession$ui_release", "()Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;", "setContentCaptureSession$ui_release", "(Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;)V", "bufferedEvents", "", "Landroidx/compose/ui/contentcapture/ContentCaptureEvent;", "SendRecurringContentCaptureEventsIntervalMillis", "", "translateStatus", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "currentSemanticsNodesInvalidated", "", "boundsUpdateChannel", "Lkotlinx/coroutines/channels/Channel;", "", "handler", "Landroid/os/Handler;", "getHandler$ui_release", "()Landroid/os/Handler;", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/semantics/SemanticsNodeWithAdjustedBounds;", "getCurrentSemanticsNodes$ui_release", "()Landroidx/collection/IntObjectMap;", "setCurrentSemanticsNodes$ui_release", "(Landroidx/collection/IntObjectMap;)V", "currentSemanticsNodesSnapshotTimestampMillis", "previousSemanticsNodes", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/platform/SemanticsNodeCopy;", "previousSemanticsRoot", "checkingForSemanticsChanges", "contentCaptureChangeChecker", "Ljava/lang/Runnable;", "onViewAttachedToWindow", "v", "Landroid/view/View;", "onViewDetachedFromWindow", "isEnabled", "isEnabled$ui_release", "()Z", "onStart", "owner", "Landroidx/lifecycle/LifecycleOwner;", "onStop", "boundsUpdatesEventLoop", "boundsUpdatesEventLoop$ui_release", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onSemanticsChange", "onSemanticsChange$ui_release", "onLayoutChange", "onLayoutChange$ui_release", "sendContentCaptureDisappearEvents", "sendContentCaptureAppearEvents", "newNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "oldNode", "checkForContentCapturePropertyChanges", "newSemanticsNodes", "sendContentCaptureTextUpdateEvent", "id", "", "newText", "", "updateSemanticsCopy", "notifySubtreeStateChangeIfNeeded", "toViewStructure", "Landroidx/compose/ui/platform/coreshims/ViewStructureCompat;", FirebaseAnalytics.Param.INDEX, "fastForEachReplacedVisibleChildren", "action", "Lkotlin/Function2;", "fastForEachIndexedWithFilter", ExifInterface.GPS_DIRECTION_TRUE, "", "predicate", "Lkotlin/Function1;", "bufferContentCaptureViewAppeared", "virtualId", "viewStructure", "bufferContentCaptureViewDisappeared", "notifyContentCaptureChanges", "updateBuffersOnAppeared", "node", "updateBuffersOnDisappeared", "updateTranslationOnAppeared", "onShowTranslation", "onShowTranslation$ui_release", "onHideTranslation", "onHideTranslation$ui_release", "onClearTranslation", "onClearTranslation$ui_release", "showTranslatedText", "hideTranslatedText", "clearTranslatedText", "onCreateVirtualViewTranslationRequests", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onCreateVirtualViewTranslationRequests$ui_release", "onVirtualViewTranslationResponses", "contentCaptureManager", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "onVirtualViewTranslationResponses$ui_release", "TranslateStatus", "ViewTranslationHelperMethods", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000 \u0084\u00012\u00020\u00012\u00020\u0002:\u0006\u0082\u0001\u0083\u0001\u0084\u0001B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u000e\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0006¢\u0006\u0004\b\b\u0010\tJ\u0010\u00106\u001a\u00020\"2\u0006\u00107\u001a\u000208H\u0016J\u0010\u00109\u001a\u00020\"2\u0006\u00107\u001a\u000208H\u0016J\u0010\u0010=\u001a\u00020\"2\u0006\u0010>\u001a\u00020?H\u0016J\u0010\u0010@\u001a\u00020\"2\u0006\u0010>\u001a\u00020?H\u0016J\u0010\u0010A\u001a\u00020\"H\u0080@¢\u0006\u0004\bB\u0010CJ\r\u0010D\u001a\u00020\"H\u0000¢\u0006\u0002\bEJ\r\u0010F\u001a\u00020\"H\u0000¢\u0006\u0002\bGJ\b\u0010H\u001a\u00020\"H\u0002J\u0018\u0010I\u001a\u00020\"2\u0006\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u000201H\u0002J\u0016\u0010M\u001a\u00020\"2\f\u0010N\u001a\b\u0012\u0004\u0012\u00020)0(H\u0002J\u0018\u0010O\u001a\u00020\"2\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020SH\u0002J\b\u0010T\u001a\u00020\"H\u0002J\b\u0010U\u001a\u00020\"H\u0002J\u0016\u0010V\u001a\u0004\u0018\u00010W*\u00020K2\u0006\u0010X\u001a\u00020QH\u0002J&\u0010Y\u001a\u00020\"*\u00020K2\u0018\u0010Z\u001a\u0014\u0012\u0004\u0012\u00020Q\u0012\u0004\u0012\u00020K\u0012\u0004\u0012\u00020\"0[H\u0002JG\u0010\\\u001a\u00020\"\"\u0004\b\u0000\u0010]*\b\u0012\u0004\u0012\u0002H]0^2\u0018\u0010Z\u001a\u0014\u0012\u0004\u0012\u00020Q\u0012\u0004\u0012\u0002H]\u0012\u0004\u0012\u00020\"0[2\u0012\u0010_\u001a\u000e\u0012\u0004\u0012\u0002H]\u0012\u0004\u0012\u00020\u001f0`H\u0082\bJ\u001a\u0010a\u001a\u00020\"2\u0006\u0010b\u001a\u00020Q2\b\u0010c\u001a\u0004\u0018\u00010WH\u0002J\u0010\u0010d\u001a\u00020\"2\u0006\u0010b\u001a\u00020QH\u0002J\b\u0010e\u001a\u00020\"H\u0002J\u0018\u0010f\u001a\u00020\"2\u0006\u0010X\u001a\u00020Q2\u0006\u0010g\u001a\u00020KH\u0002J\u0010\u0010h\u001a\u00020\"2\u0006\u0010g\u001a\u00020KH\u0002J\u0010\u0010i\u001a\u00020\"2\u0006\u0010g\u001a\u00020KH\u0002J\r\u0010j\u001a\u00020\"H\u0000¢\u0006\u0002\bkJ\r\u0010l\u001a\u00020\"H\u0000¢\u0006\u0002\bmJ\r\u0010n\u001a\u00020\"H\u0000¢\u0006\u0002\boJ\b\u0010p\u001a\u00020\"H\u0002J\b\u0010q\u001a\u00020\"H\u0002J\b\u0010r\u001a\u00020\"H\u0002J-\u0010s\u001a\u00020\"2\u0006\u0010t\u001a\u00020u2\u0006\u0010v\u001a\u00020w2\u000e\u0010x\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010z0yH\u0001¢\u0006\u0002\b{J'\u0010|\u001a\u00020\"2\u0006\u0010}\u001a\u00020\u00002\u000f\u0010~\u001a\u000b\u0012\u0007\u0012\u0005\u0018\u00010\u0080\u00010\u007fH\u0001¢\u0006\u0003\b\u0081\u0001R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\"\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR&\u0010\u0010\u001a\u0004\u0018\u00010\u00078\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u0011\u0010\u0012\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\u00020$X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\"\u0010'\u001a\b\u0012\u0004\u0012\u00020)0(8@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u000e\u0010.\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020100X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u000201X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010:\u001a\u00020\u001f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b;\u0010<¨\u0006\u0085\u0001"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "Landroid/view/View$OnAttachStateChangeListener;", "view", "Landroidx/compose/ui/platform/AndroidComposeView;", "onContentCaptureSession", "Lkotlin/Function0;", "Landroidx/compose/ui/contentcapture/ContentCaptureSessionWrapper;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;Lkotlin/jvm/functions/Function0;)V", "getView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "getOnContentCaptureSession", "()Lkotlin/jvm/functions/Function0;", "setOnContentCaptureSession", "(Lkotlin/jvm/functions/Function0;)V", "contentCaptureSession", "getContentCaptureSession$ui$annotations", "()V", "getContentCaptureSession$ui", "()Landroidx/compose/ui/contentcapture/ContentCaptureSessionWrapper;", "setContentCaptureSession$ui", "(Landroidx/compose/ui/contentcapture/ContentCaptureSessionWrapper;)V", "bufferedEvents", "", "Landroidx/compose/ui/contentcapture/ContentCaptureEvent;", "SendRecurringContentCaptureEventsIntervalMillis", "", "translateStatus", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "currentSemanticsNodesInvalidated", "", "boundsUpdateChannel", "Lkotlinx/coroutines/channels/Channel;", "", "handler", "Landroid/os/Handler;", "getHandler$ui", "()Landroid/os/Handler;", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/semantics/SemanticsNodeWithAdjustedBounds;", "getCurrentSemanticsNodes$ui", "()Landroidx/collection/IntObjectMap;", "setCurrentSemanticsNodes$ui", "(Landroidx/collection/IntObjectMap;)V", "currentSemanticsNodesSnapshotTimestampMillis", "previousSemanticsNodes", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/platform/SemanticsNodeCopy;", "previousSemanticsRoot", "checkingForSemanticsChanges", "contentCaptureChangeChecker", "Ljava/lang/Runnable;", "onViewAttachedToWindow", "v", "Landroid/view/View;", "onViewDetachedFromWindow", "isEnabled", "isEnabled$ui", "()Z", "onStart", "owner", "Landroidx/lifecycle/LifecycleOwner;", "onStop", "boundsUpdatesEventLoop", "boundsUpdatesEventLoop$ui", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onSemanticsChange", "onSemanticsChange$ui", "onLayoutChange", "onLayoutChange$ui", "sendContentCaptureDisappearEvents", "sendContentCaptureAppearEvents", "newNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "oldNode", "checkForContentCapturePropertyChanges", "newSemanticsNodes", "sendContentCaptureTextUpdateEvent", "id", "", "newText", "", "updateSemanticsCopy", "notifySubtreeStateChangeIfNeeded", "toViewStructure", "Landroidx/compose/ui/platform/coreshims/ViewStructureCompat;", FirebaseAnalytics.Param.INDEX, "fastForEachReplacedVisibleChildren", "action", "Lkotlin/Function2;", "fastForEachIndexedWithFilter", ExifInterface.GPS_DIRECTION_TRUE, "", "predicate", "Lkotlin/Function1;", "bufferContentCaptureViewAppeared", "virtualId", "viewStructure", "bufferContentCaptureViewDisappeared", "notifyContentCaptureChanges", "updateBuffersOnAppeared", "node", "updateBuffersOnDisappeared", "updateTranslationOnAppeared", "onShowTranslation", "onShowTranslation$ui", "onHideTranslation", "onHideTranslation$ui", "onClearTranslation", "onClearTranslation$ui", "showTranslatedText", "hideTranslatedText", "clearTranslatedText", "onCreateVirtualViewTranslationRequests", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onCreateVirtualViewTranslationRequests$ui", "onVirtualViewTranslationResponses", "contentCaptureManager", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "onVirtualViewTranslationResponses$ui", "TranslateStatus", "ViewTranslationHelperMethods", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class AndroidContentCaptureManager implements ContentCaptureManager, DefaultLifecycleObserver, View.OnAttachStateChangeListener {
+public final class AndroidContentCaptureManager implements DefaultLifecycleObserver, View.OnAttachStateChangeListener {
     public static final String VIEW_STRUCTURE_BUNDLE_KEY_ADDITIONAL_INDEX = "android.view.ViewStructure.extra.EXTRA_VIEW_NODE_INDEX";
     public static final String VIEW_STRUCTURE_BUNDLE_KEY_TIMESTAMP = "android.view.contentcapture.EventTimestamp";
     private boolean checkingForSemanticsChanges;
-    private ContentCaptureSessionCompat contentCaptureSession;
+    private ContentCaptureSessionWrapper contentCaptureSession;
     private long currentSemanticsNodesSnapshotTimestampMillis;
-    private Function0<? extends ContentCaptureSessionCompat> onContentCaptureSession;
+    private Function0<? extends ContentCaptureSessionWrapper> onContentCaptureSession;
     private SemanticsNodeCopy previousSemanticsRoot;
     private final AndroidComposeView view;
     public static final Companion Companion = new Companion(null);
@@ -93,14 +93,14 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     private final Runnable contentCaptureChangeChecker = new Runnable() { // from class: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            AndroidContentCaptureManager.contentCaptureChangeChecker$lambda$2(AndroidContentCaptureManager.this);
+            AndroidContentCaptureManager.contentCaptureChangeChecker$lambda$0(AndroidContentCaptureManager.this);
         }
     };
 
     /* compiled from: AndroidContentCaptureManager.android.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -117,14 +117,14 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         }
     }
 
-    public static /* synthetic */ void getContentCaptureSession$ui_release$annotations() {
+    public static /* synthetic */ void getContentCaptureSession$ui$annotations() {
     }
 
     @Override // android.view.View.OnAttachStateChangeListener
     public void onViewAttachedToWindow(View view) {
     }
 
-    public AndroidContentCaptureManager(AndroidComposeView androidComposeView, Function0<? extends ContentCaptureSessionCompat> function0) {
+    public AndroidContentCaptureManager(AndroidComposeView androidComposeView, Function0<? extends ContentCaptureSessionWrapper> function0) {
         this.view = androidComposeView;
         this.onContentCaptureSession = function0;
         this.previousSemanticsRoot = new SemanticsNodeCopy(androidComposeView.getSemanticsOwner().getUnmergedRootSemanticsNode(), IntObjectMapKt.intObjectMapOf());
@@ -134,27 +134,27 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         return this.view;
     }
 
-    public final Function0<ContentCaptureSessionCompat> getOnContentCaptureSession() {
+    public final Function0<ContentCaptureSessionWrapper> getOnContentCaptureSession() {
         return this.onContentCaptureSession;
     }
 
-    public final void setOnContentCaptureSession(Function0<? extends ContentCaptureSessionCompat> function0) {
+    public final void setOnContentCaptureSession(Function0<? extends ContentCaptureSessionWrapper> function0) {
         this.onContentCaptureSession = function0;
     }
 
-    public final ContentCaptureSessionCompat getContentCaptureSession$ui_release() {
+    public final ContentCaptureSessionWrapper getContentCaptureSession$ui() {
         return this.contentCaptureSession;
     }
 
-    public final void setContentCaptureSession$ui_release(ContentCaptureSessionCompat contentCaptureSessionCompat) {
-        this.contentCaptureSession = contentCaptureSessionCompat;
+    public final void setContentCaptureSession$ui(ContentCaptureSessionWrapper contentCaptureSessionWrapper) {
+        this.contentCaptureSession = contentCaptureSessionWrapper;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: AndroidContentCaptureManager.android.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "", "<init>", "(Ljava/lang/String;I)V", "SHOW_ORIGINAL", "SHOW_TRANSLATED", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "", "<init>", "(Ljava/lang/String;I)V", "SHOW_ORIGINAL", "SHOW_TRANSLATED", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class TranslateStatus {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -170,6 +170,14 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             return $ENTRIES;
         }
 
+        public static TranslateStatus valueOf(String str) {
+            return (TranslateStatus) Enum.valueOf(TranslateStatus.class, str);
+        }
+
+        public static TranslateStatus[] values() {
+            return (TranslateStatus[]) $VALUES.clone();
+        }
+
         private TranslateStatus(String str, int i) {
         }
 
@@ -178,36 +186,33 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
         }
-
-        public static TranslateStatus valueOf(String str) {
-            return (TranslateStatus) Enum.valueOf(TranslateStatus.class, str);
-        }
-
-        public static TranslateStatus[] values() {
-            return (TranslateStatus[]) $VALUES.clone();
-        }
     }
 
-    public final Handler getHandler$ui_release() {
+    public final Handler getHandler$ui() {
         return this.handler;
     }
 
-    public final void setCurrentSemanticsNodes$ui_release(IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap) {
+    public final void setCurrentSemanticsNodes$ui(IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap) {
         this.currentSemanticsNodes = intObjectMap;
     }
 
-    public final IntObjectMap<SemanticsNodeWithAdjustedBounds> getCurrentSemanticsNodes$ui_release() {
+    public final IntObjectMap<SemanticsNodeWithAdjustedBounds> getCurrentSemanticsNodes$ui() {
         if (this.currentSemanticsNodesInvalidated) {
             this.currentSemanticsNodesInvalidated = false;
-            this.currentSemanticsNodes = SemanticsOwnerKt.getAllUncoveredSemanticsNodesToIntObjectMap(this.view.getSemanticsOwner(), -1);
+            this.currentSemanticsNodes = SemanticsOwnerKt.getAllUncoveredSemanticsNodesToIntObjectMap(this.view.getSemanticsOwner(), -1, new Function1<SemanticsNode, Boolean>() { // from class: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$currentSemanticsNodes$1
+                @Override // kotlin.jvm.functions.Function1
+                public final Boolean invoke(SemanticsNode semanticsNode) {
+                    return Boolean.valueOf(SemanticsNode_androidKt.isAccessibilityIgnoredLink(semanticsNode));
+                }
+            });
             this.currentSemanticsNodesSnapshotTimestampMillis = System.currentTimeMillis();
         }
         return this.currentSemanticsNodes;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void contentCaptureChangeChecker$lambda$2(AndroidContentCaptureManager androidContentCaptureManager) {
-        if (androidContentCaptureManager.isEnabled$ui_release()) {
+    public static final void contentCaptureChangeChecker$lambda$0(AndroidContentCaptureManager androidContentCaptureManager) {
+        if (androidContentCaptureManager.isEnabled$ui()) {
             Trace.beginSection("ContentCapture:changeChecker");
             try {
                 Owner.measureAndLayout$default(androidContentCaptureManager.view, false, 1, null);
@@ -216,7 +221,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 androidContentCaptureManager.sendContentCaptureAppearEvents(androidContentCaptureManager.view.getSemanticsOwner().getUnmergedRootSemanticsNode(), androidContentCaptureManager.previousSemanticsRoot);
                 Unit unit = Unit.INSTANCE;
                 Trace.endSection();
-                androidContentCaptureManager.checkForContentCapturePropertyChanges(androidContentCaptureManager.getCurrentSemanticsNodes$ui_release());
+                androidContentCaptureManager.checkForContentCapturePropertyChanges(androidContentCaptureManager.getCurrentSemanticsNodes$ui());
                 androidContentCaptureManager.updateSemanticsCopy();
                 androidContentCaptureManager.checkingForSemanticsChanges = false;
                 Unit unit2 = Unit.INSTANCE;
@@ -232,7 +237,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         this.contentCaptureSession = null;
     }
 
-    public final boolean isEnabled$ui_release() {
+    public final boolean isEnabled$ui() {
         return ContentCaptureManager.Companion.isEnabled() && this.contentCaptureSession != null;
     }
 
@@ -262,7 +267,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object boundsUpdatesEventLoop$ui_release(Continuation<? super Unit> continuation) {
+    public final Object boundsUpdatesEventLoop$ui(Continuation<? super Unit> continuation) {
         AndroidContentCaptureManager$boundsUpdatesEventLoop$1 androidContentCaptureManager$boundsUpdatesEventLoop$1;
         int i;
         ChannelIterator<Unit> it;
@@ -297,7 +302,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                             obj = hasNext;
                             if (!((Boolean) obj).booleanValue()) {
                                 channelIterator.next();
-                                if (isEnabled$ui_release()) {
+                                if (isEnabled$ui()) {
                                     notifyContentCaptureChanges();
                                 }
                                 if (!this.checkingForSemanticsChanges) {
@@ -330,18 +335,18 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         }
     }
 
-    public final void onSemanticsChange$ui_release() {
+    public final void onSemanticsChange$ui() {
         this.currentSemanticsNodesInvalidated = true;
-        if (!isEnabled$ui_release() || this.checkingForSemanticsChanges) {
+        if (!isEnabled$ui() || this.checkingForSemanticsChanges) {
             return;
         }
         this.checkingForSemanticsChanges = true;
         this.handler.post(this.contentCaptureChangeChecker);
     }
 
-    public final void onLayoutChange$ui_release() {
+    public final void onLayoutChange$ui() {
         this.currentSemanticsNodesInvalidated = true;
-        if (isEnabled$ui_release()) {
+        if (isEnabled$ui()) {
             notifySubtreeStateChangeIfNeeded();
         }
     }
@@ -362,7 +367,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 for (int i3 = 0; i3 < i2; i3++) {
                     if ((255 & j) < 128) {
                         int i4 = iArr[(i << 3) + i3];
-                        if (!getCurrentSemanticsNodes$ui_release().containsKey(i4)) {
+                        if (!getCurrentSemanticsNodes$ui().containsKey(i4)) {
                             bufferContentCaptureViewDisappeared(i4);
                             notifySubtreeStateChangeIfNeeded();
                         }
@@ -402,11 +407,11 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 this.notifySubtreeStateChangeIfNeeded();
             }
         });
-        List<SemanticsNode> replacedChildren$ui_release = semanticsNode.getReplacedChildren$ui_release();
-        int size = replacedChildren$ui_release.size();
+        List<SemanticsNode> replacedChildren$ui = semanticsNode.getReplacedChildren$ui();
+        int size = replacedChildren$ui.size();
         for (int i = 0; i < size; i++) {
-            SemanticsNode semanticsNode2 = replacedChildren$ui_release.get(i);
-            if (getCurrentSemanticsNodes$ui_release().containsKey(semanticsNode2.getId()) && this.previousSemanticsNodes.containsKey(semanticsNode2.getId())) {
+            SemanticsNode semanticsNode2 = replacedChildren$ui.get(i);
+            if (getCurrentSemanticsNodes$ui().containsKey(semanticsNode2.getId()) && this.previousSemanticsNodes.containsKey(semanticsNode2.getId())) {
                 SemanticsNodeCopy semanticsNodeCopy2 = this.previousSemanticsNodes.get(semanticsNode2.getId());
                 if (semanticsNodeCopy2 != null) {
                     sendContentCaptureAppearEvents(semanticsNode2, semanticsNodeCopy2);
@@ -419,11 +424,11 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     }
 
     private final void sendContentCaptureTextUpdateEvent(int i, String str) {
-        ContentCaptureSessionCompat contentCaptureSessionCompat;
-        if (Build.VERSION.SDK_INT >= 29 && (contentCaptureSessionCompat = this.contentCaptureSession) != null) {
-            AutofillId newAutofillId = contentCaptureSessionCompat.newAutofillId(i);
+        ContentCaptureSessionWrapper contentCaptureSessionWrapper;
+        if (Build.VERSION.SDK_INT >= 29 && (contentCaptureSessionWrapper = this.contentCaptureSession) != null) {
+            AutofillId newAutofillId = contentCaptureSessionWrapper.newAutofillId(i);
             if (newAutofillId != null) {
-                contentCaptureSessionCompat.notifyViewTextChanged(newAutofillId, str);
+                contentCaptureSessionWrapper.notifyViewTextChanged(newAutofillId, str);
             } else {
                 InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Invalid content capture ID");
                 throw new KotlinNothingValueException();
@@ -433,10 +438,10 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
 
     private final void updateSemanticsCopy() {
         this.previousSemanticsNodes.clear();
-        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui_release = getCurrentSemanticsNodes$ui_release();
-        int[] iArr = currentSemanticsNodes$ui_release.keys;
-        Object[] objArr = currentSemanticsNodes$ui_release.values;
-        long[] jArr = currentSemanticsNodes$ui_release.metadata;
+        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui = getCurrentSemanticsNodes$ui();
+        int[] iArr = currentSemanticsNodes$ui.keys;
+        Object[] objArr = currentSemanticsNodes$ui.values;
+        long[] jArr = currentSemanticsNodes$ui.metadata;
         int length = jArr.length - 2;
         if (length >= 0) {
             int i = 0;
@@ -447,7 +452,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                     for (int i3 = 0; i3 < i2; i3++) {
                         if ((255 & j) < 128) {
                             int i4 = (i << 3) + i3;
-                            this.previousSemanticsNodes.set(iArr[i4], new SemanticsNodeCopy(((SemanticsNodeWithAdjustedBounds) objArr[i4]).getSemanticsNode(), getCurrentSemanticsNodes$ui_release()));
+                            this.previousSemanticsNodes.set(iArr[i4], new SemanticsNodeCopy(((SemanticsNodeWithAdjustedBounds) objArr[i4]).getSemanticsNode(), getCurrentSemanticsNodes$ui()));
                         }
                         j >>= 8;
                     }
@@ -461,37 +466,37 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 i++;
             }
         }
-        this.previousSemanticsRoot = new SemanticsNodeCopy(this.view.getSemanticsOwner().getUnmergedRootSemanticsNode(), getCurrentSemanticsNodes$ui_release());
+        this.previousSemanticsRoot = new SemanticsNodeCopy(this.view.getSemanticsOwner().getUnmergedRootSemanticsNode(), getCurrentSemanticsNodes$ui());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void notifySubtreeStateChangeIfNeeded() {
-        this.boundsUpdateChannel.mo8879trySendJP2dKIU(Unit.INSTANCE);
+        this.boundsUpdateChannel.mo9143trySendJP2dKIU(Unit.INSTANCE);
     }
 
     private final ViewStructureCompat toViewStructure(SemanticsNode semanticsNode, int i) {
         AutofillIdCompat autofillId;
         AutofillId autofillId2;
-        String m7180toLegacyClassNameV4PA4sw;
-        ContentCaptureSessionCompat contentCaptureSessionCompat = this.contentCaptureSession;
-        if (contentCaptureSessionCompat == null || Build.VERSION.SDK_INT < 29 || (autofillId = ViewCompatShims.getAutofillId(this.view)) == null) {
+        String m7416toLegacyClassNameV4PA4sw;
+        ContentCaptureSessionWrapper contentCaptureSessionWrapper = this.contentCaptureSession;
+        if (contentCaptureSessionWrapper == null || Build.VERSION.SDK_INT < 29 || (autofillId = ViewCompatShims.getAutofillId(this.view)) == null) {
             return null;
         }
         SemanticsNode parent = semanticsNode.getParent();
         if (parent != null) {
-            autofillId2 = contentCaptureSessionCompat.newAutofillId(parent.getId());
+            autofillId2 = contentCaptureSessionWrapper.newAutofillId(parent.getId());
             if (autofillId2 == null) {
                 return null;
             }
         } else {
             autofillId2 = autofillId.toAutofillId();
         }
-        ViewStructureCompat newVirtualViewStructure = contentCaptureSessionCompat.newVirtualViewStructure(autofillId2, semanticsNode.getId());
+        ViewStructureCompat newVirtualViewStructure = contentCaptureSessionWrapper.newVirtualViewStructure(autofillId2, semanticsNode.getId());
         if (newVirtualViewStructure == null) {
             return null;
         }
-        SemanticsConfiguration unmergedConfig$ui_release = semanticsNode.getUnmergedConfig$ui_release();
-        if (unmergedConfig$ui_release.contains(SemanticsProperties.INSTANCE.getPassword())) {
+        SemanticsConfiguration unmergedConfig$ui = semanticsNode.getUnmergedConfig$ui();
+        if (unmergedConfig$ui.contains(SemanticsProperties.INSTANCE.getPassword())) {
             return null;
         }
         Bundle extras = newVirtualViewStructure.getExtras();
@@ -499,50 +504,50 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             extras.putLong(VIEW_STRUCTURE_BUNDLE_KEY_TIMESTAMP, this.currentSemanticsNodesSnapshotTimestampMillis);
             extras.putInt(VIEW_STRUCTURE_BUNDLE_KEY_ADDITIONAL_INDEX, i);
         }
-        String str = (String) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getTestTag());
+        String str = (String) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getTestTag());
         if (str != null) {
             newVirtualViewStructure.setId(semanticsNode.getId(), null, null, str);
         }
-        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getIsTraversalGroup());
+        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getIsTraversalGroup());
         if (bool != null) {
             bool.booleanValue();
             newVirtualViewStructure.setClassName("android.widget.ViewGroup");
         }
-        List list = (List) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getText());
+        List list = (List) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getText());
         if (list != null) {
             newVirtualViewStructure.setClassName(AndroidComposeViewAccessibilityDelegateCompat.TextClassName);
             newVirtualViewStructure.setText(ListUtilsKt.fastJoinToString$default(list, "\n", null, null, 0, null, null, 62, null));
         }
-        AnnotatedString annotatedString = (AnnotatedString) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getEditableText());
+        AnnotatedString annotatedString = (AnnotatedString) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getEditableText());
         if (annotatedString != null) {
             newVirtualViewStructure.setClassName(AndroidComposeViewAccessibilityDelegateCompat.TextFieldClassName);
             newVirtualViewStructure.setText(annotatedString);
         }
-        List list2 = (List) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getContentDescription());
+        List list2 = (List) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getContentDescription());
         if (list2 != null) {
             newVirtualViewStructure.setContentDescription(ListUtilsKt.fastJoinToString$default(list2, "\n", null, null, 0, null, null, 62, null));
         }
-        Role role = (Role) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getRole());
-        if (role != null && (m7180toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m7180toLegacyClassNameV4PA4sw(role.m7204unboximpl())) != null) {
-            newVirtualViewStructure.setClassName(m7180toLegacyClassNameV4PA4sw);
+        Role role = (Role) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getRole());
+        if (role != null && (m7416toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m7416toLegacyClassNameV4PA4sw(role.m7441unboximpl())) != null) {
+            newVirtualViewStructure.setClassName(m7416toLegacyClassNameV4PA4sw);
         }
-        TextLayoutResult textLayoutResult = SemanticsUtils_androidKt.getTextLayoutResult(unmergedConfig$ui_release);
+        TextLayoutResult textLayoutResult = SemanticsUtils_androidKt.getTextLayoutResult(unmergedConfig$ui);
         if (textLayoutResult != null) {
             TextLayoutInput layoutInput = textLayoutResult.getLayoutInput();
-            newVirtualViewStructure.setTextStyle(TextUnit.m8190getValueimpl(layoutInput.getStyle().m7489getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
+            newVirtualViewStructure.setTextStyle(TextUnit.m8452getValueimpl(layoutInput.getStyle().m7732getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
         }
-        Rect boundsInParent$ui_release = semanticsNode.getBoundsInParent$ui_release();
-        newVirtualViewStructure.setDimens((int) boundsInParent$ui_release.getLeft(), (int) boundsInParent$ui_release.getTop(), 0, 0, (int) (boundsInParent$ui_release.getRight() - boundsInParent$ui_release.getLeft()), (int) (boundsInParent$ui_release.getBottom() - boundsInParent$ui_release.getTop()));
+        Rect boundsInParent$ui = semanticsNode.getBoundsInParent$ui();
+        newVirtualViewStructure.setDimens((int) boundsInParent$ui.getLeft(), (int) boundsInParent$ui.getTop(), 0, 0, (int) (boundsInParent$ui.getRight() - boundsInParent$ui.getLeft()), (int) (boundsInParent$ui.getBottom() - boundsInParent$ui.getTop()));
         return newVirtualViewStructure;
     }
 
     private final void fastForEachReplacedVisibleChildren(SemanticsNode semanticsNode, Function2<? super Integer, ? super SemanticsNode, Unit> function2) {
-        List<SemanticsNode> replacedChildren$ui_release = semanticsNode.getReplacedChildren$ui_release();
-        int size = replacedChildren$ui_release.size();
+        List<SemanticsNode> replacedChildren$ui = semanticsNode.getReplacedChildren$ui();
+        int size = replacedChildren$ui.size();
         int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
-            SemanticsNode semanticsNode2 = replacedChildren$ui_release.get(i2);
-            if (getCurrentSemanticsNodes$ui_release().containsKey(semanticsNode2.getId())) {
+            SemanticsNode semanticsNode2 = replacedChildren$ui.get(i2);
+            if (getCurrentSemanticsNodes$ui().containsKey(semanticsNode2.getId())) {
                 function2.invoke(Integer.valueOf(i), semanticsNode2);
                 i++;
             }
@@ -573,8 +578,8 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     }
 
     private final void notifyContentCaptureChanges() {
-        ContentCaptureSessionCompat contentCaptureSessionCompat = this.contentCaptureSession;
-        if (contentCaptureSessionCompat == null || Build.VERSION.SDK_INT < 29 || this.bufferedEvents.isEmpty()) {
+        ContentCaptureSessionWrapper contentCaptureSessionWrapper = this.contentCaptureSession;
+        if (contentCaptureSessionWrapper == null || Build.VERSION.SDK_INT < 29 || this.bufferedEvents.isEmpty()) {
             return;
         }
         List<ContentCaptureEvent> list = this.bufferedEvents;
@@ -585,24 +590,24 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             if (i2 == 1) {
                 ViewStructureCompat structureCompat = contentCaptureEvent.getStructureCompat();
                 if (structureCompat != null) {
-                    contentCaptureSessionCompat.notifyViewAppeared(structureCompat.toViewStructure());
+                    contentCaptureSessionWrapper.notifyViewAppeared(structureCompat.toViewStructure());
                 }
             } else if (i2 != 2) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                AutofillId newAutofillId = contentCaptureSessionCompat.newAutofillId(contentCaptureEvent.getId());
+                AutofillId newAutofillId = contentCaptureSessionWrapper.newAutofillId(contentCaptureEvent.getId());
                 if (newAutofillId != null) {
-                    contentCaptureSessionCompat.notifyViewDisappeared(newAutofillId);
+                    contentCaptureSessionWrapper.notifyViewDisappeared(newAutofillId);
                 }
             }
         }
-        contentCaptureSessionCompat.flush();
+        contentCaptureSessionWrapper.flush();
         this.bufferedEvents.clear();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updateBuffersOnAppeared(int i, SemanticsNode semanticsNode) {
-        if (isEnabled$ui_release()) {
+        if (isEnabled$ui()) {
             updateTranslationOnAppeared(semanticsNode);
             bufferContentCaptureViewAppeared(semanticsNode.getId(), toViewStructure(semanticsNode, i));
             fastForEachReplacedVisibleChildren(semanticsNode, new Function2<Integer, SemanticsNode, Unit>() { // from class: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$updateBuffersOnAppeared$1
@@ -625,12 +630,12 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     }
 
     private final void updateBuffersOnDisappeared(SemanticsNode semanticsNode) {
-        if (isEnabled$ui_release()) {
+        if (isEnabled$ui()) {
             bufferContentCaptureViewDisappeared(semanticsNode.getId());
-            List<SemanticsNode> replacedChildren$ui_release = semanticsNode.getReplacedChildren$ui_release();
-            int size = replacedChildren$ui_release.size();
+            List<SemanticsNode> replacedChildren$ui = semanticsNode.getReplacedChildren$ui();
+            int size = replacedChildren$ui.size();
             for (int i = 0; i < size; i++) {
-                updateBuffersOnDisappeared(replacedChildren$ui_release.get(i));
+                updateBuffersOnDisappeared(replacedChildren$ui.get(i));
             }
         }
     }
@@ -639,31 +644,31 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         AccessibilityAction accessibilityAction;
         Function1 function1;
         Function1 function12;
-        SemanticsConfiguration unmergedConfig$ui_release = semanticsNode.getUnmergedConfig$ui_release();
-        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution());
+        SemanticsConfiguration unmergedConfig$ui = semanticsNode.getUnmergedConfig$ui();
+        Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution());
         if (this.translateStatus == TranslateStatus.SHOW_ORIGINAL && Intrinsics.areEqual((Object) bool, (Object) true)) {
-            AccessibilityAction accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getShowTextSubstitution());
+            AccessibilityAction accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsActions.INSTANCE.getShowTextSubstitution());
             if (accessibilityAction2 == null || (function12 = (Function1) accessibilityAction2.getAction()) == null) {
                 return;
             }
             Boolean bool2 = (Boolean) function12.invoke(false);
-        } else if (this.translateStatus != TranslateStatus.SHOW_TRANSLATED || !Intrinsics.areEqual((Object) bool, (Object) false) || (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getShowTextSubstitution())) == null || (function1 = (Function1) accessibilityAction.getAction()) == null) {
+        } else if (this.translateStatus != TranslateStatus.SHOW_TRANSLATED || !Intrinsics.areEqual((Object) bool, (Object) false) || (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsActions.INSTANCE.getShowTextSubstitution())) == null || (function1 = (Function1) accessibilityAction.getAction()) == null) {
         } else {
             Boolean bool3 = (Boolean) function1.invoke(true);
         }
     }
 
-    public final void onShowTranslation$ui_release() {
+    public final void onShowTranslation$ui() {
         this.translateStatus = TranslateStatus.SHOW_TRANSLATED;
         showTranslatedText();
     }
 
-    public final void onHideTranslation$ui_release() {
+    public final void onHideTranslation$ui() {
         this.translateStatus = TranslateStatus.SHOW_ORIGINAL;
         hideTranslatedText();
     }
 
-    public final void onClearTranslation$ui_release() {
+    public final void onClearTranslation$ui() {
         this.translateStatus = TranslateStatus.SHOW_ORIGINAL;
         clearTranslatedText();
     }
@@ -671,9 +676,9 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     private final void showTranslatedText() {
         AccessibilityAction accessibilityAction;
         Function1 function1;
-        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui_release = getCurrentSemanticsNodes$ui_release();
-        Object[] objArr = currentSemanticsNodes$ui_release.values;
-        long[] jArr = currentSemanticsNodes$ui_release.metadata;
+        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui = getCurrentSemanticsNodes$ui();
+        Object[] objArr = currentSemanticsNodes$ui.values;
+        long[] jArr = currentSemanticsNodes$ui.metadata;
         int length = jArr.length - 2;
         if (length < 0) {
             return;
@@ -685,8 +690,8 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 int i2 = 8 - ((~(i - length)) >>> 31);
                 for (int i3 = 0; i3 < i2; i3++) {
                     if ((255 & j) < 128) {
-                        SemanticsConfiguration unmergedConfig$ui_release = ((SemanticsNodeWithAdjustedBounds) objArr[(i << 3) + i3]).getSemanticsNode().getUnmergedConfig$ui_release();
-                        if (Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution()), (Object) false) && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getShowTextSubstitution())) != null && (function1 = (Function1) accessibilityAction.getAction()) != null) {
+                        SemanticsConfiguration unmergedConfig$ui = ((SemanticsNodeWithAdjustedBounds) objArr[(i << 3) + i3]).getSemanticsNode().getUnmergedConfig$ui();
+                        if (Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution()), (Object) false) && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsActions.INSTANCE.getShowTextSubstitution())) != null && (function1 = (Function1) accessibilityAction.getAction()) != null) {
                             Boolean bool = (Boolean) function1.invoke(true);
                         }
                     }
@@ -706,9 +711,9 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     private final void hideTranslatedText() {
         AccessibilityAction accessibilityAction;
         Function1 function1;
-        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui_release = getCurrentSemanticsNodes$ui_release();
-        Object[] objArr = currentSemanticsNodes$ui_release.values;
-        long[] jArr = currentSemanticsNodes$ui_release.metadata;
+        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui = getCurrentSemanticsNodes$ui();
+        Object[] objArr = currentSemanticsNodes$ui.values;
+        long[] jArr = currentSemanticsNodes$ui.metadata;
         int length = jArr.length - 2;
         if (length < 0) {
             return;
@@ -720,8 +725,8 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 int i2 = 8 - ((~(i - length)) >>> 31);
                 for (int i3 = 0; i3 < i2; i3++) {
                     if ((255 & j) < 128) {
-                        SemanticsConfiguration unmergedConfig$ui_release = ((SemanticsNodeWithAdjustedBounds) objArr[(i << 3) + i3]).getSemanticsNode().getUnmergedConfig$ui_release();
-                        if (Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution()), (Object) true) && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getShowTextSubstitution())) != null && (function1 = (Function1) accessibilityAction.getAction()) != null) {
+                        SemanticsConfiguration unmergedConfig$ui = ((SemanticsNodeWithAdjustedBounds) objArr[(i << 3) + i3]).getSemanticsNode().getUnmergedConfig$ui();
+                        if (Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution()), (Object) true) && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsActions.INSTANCE.getShowTextSubstitution())) != null && (function1 = (Function1) accessibilityAction.getAction()) != null) {
                             Boolean bool = (Boolean) function1.invoke(false);
                         }
                     }
@@ -741,9 +746,9 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     private final void clearTranslatedText() {
         AccessibilityAction accessibilityAction;
         Function0 function0;
-        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui_release = getCurrentSemanticsNodes$ui_release();
-        Object[] objArr = currentSemanticsNodes$ui_release.values;
-        long[] jArr = currentSemanticsNodes$ui_release.metadata;
+        IntObjectMap<SemanticsNodeWithAdjustedBounds> currentSemanticsNodes$ui = getCurrentSemanticsNodes$ui();
+        Object[] objArr = currentSemanticsNodes$ui.values;
+        long[] jArr = currentSemanticsNodes$ui.metadata;
         int length = jArr.length - 2;
         if (length < 0) {
             return;
@@ -755,8 +760,8 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 int i2 = 8 - ((~(i - length)) >>> 31);
                 for (int i3 = 0; i3 < i2; i3++) {
                     if ((255 & j) < 128) {
-                        SemanticsConfiguration unmergedConfig$ui_release = ((SemanticsNodeWithAdjustedBounds) objArr[(i << 3) + i3]).getSemanticsNode().getUnmergedConfig$ui_release();
-                        if (SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution()) != null && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getClearTextSubstitution())) != null && (function0 = (Function0) accessibilityAction.getAction()) != null) {
+                        SemanticsConfiguration unmergedConfig$ui = ((SemanticsNodeWithAdjustedBounds) objArr[(i << 3) + i3]).getSemanticsNode().getUnmergedConfig$ui();
+                        if (SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getIsShowingTextSubstitution()) != null && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsActions.INSTANCE.getClearTextSubstitution())) != null && (function0 = (Function0) accessibilityAction.getAction()) != null) {
                             Boolean bool = (Boolean) function0.invoke();
                         }
                     }
@@ -774,7 +779,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     }
 
     /* compiled from: AndroidContentCaptureManager.android.kt */
-    @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u000e\u0010\f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000e0\rH\u0007J \u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u000e\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011H\u0007J \u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u000e\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011H\u0002¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$ViewTranslationHelperMethods;", "", "<init>", "()V", "onCreateVirtualViewTranslationRequests", "", "contentCaptureManager", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onVirtualViewTranslationResponses", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "doTranslation", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u000e\u0010\f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000e0\rH\u0007J \u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u000e\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011H\u0007J \u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u000e\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011H\u0002¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$ViewTranslationHelperMethods;", "", "<init>", "()V", "onCreateVirtualViewTranslationRequests", "", "contentCaptureManager", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onVirtualViewTranslationResponses", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "doTranslation", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     private static final class ViewTranslationHelperMethods {
         public static final ViewTranslationHelperMethods INSTANCE = new ViewTranslationHelperMethods();
@@ -792,14 +797,14 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 androidContentCaptureManager.getView().post(new Runnable() { // from class: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$ViewTranslationHelperMethods$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AndroidContentCaptureManager.ViewTranslationHelperMethods.onVirtualViewTranslationResponses$lambda$1(AndroidContentCaptureManager.this, longSparseArray);
+                        AndroidContentCaptureManager.ViewTranslationHelperMethods.onVirtualViewTranslationResponses$lambda$0(AndroidContentCaptureManager.this, longSparseArray);
                     }
                 });
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void onVirtualViewTranslationResponses$lambda$1(AndroidContentCaptureManager androidContentCaptureManager, LongSparseArray longSparseArray) {
+        public static final void onVirtualViewTranslationResponses$lambda$0(AndroidContentCaptureManager androidContentCaptureManager, LongSparseArray longSparseArray) {
             INSTANCE.doTranslation(androidContentCaptureManager, longSparseArray);
         }
 
@@ -814,7 +819,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             for (int i = 0; i < size; i++) {
                 long keyAt = longSparseArray.keyAt(i);
                 ViewTranslationResponse viewTranslationResponse = longSparseArray.get(keyAt);
-                if (viewTranslationResponse != null && (value = viewTranslationResponse.getValue("android:text")) != null && (text = value.getText()) != null && (semanticsNodeWithAdjustedBounds = androidContentCaptureManager.getCurrentSemanticsNodes$ui_release().get((int) keyAt)) != null && (semanticsNode = semanticsNodeWithAdjustedBounds.getSemanticsNode()) != null && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetTextSubstitution())) != null && (function1 = (Function1) accessibilityAction.getAction()) != null) {
+                if (viewTranslationResponse != null && (value = viewTranslationResponse.getValue("android:text")) != null && (text = value.getText()) != null && (semanticsNodeWithAdjustedBounds = androidContentCaptureManager.getCurrentSemanticsNodes$ui().get((int) keyAt)) != null && (semanticsNode = semanticsNodeWithAdjustedBounds.getSemanticsNode()) != null && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsActions.INSTANCE.getSetTextSubstitution())) != null && (function1 = (Function1) accessibilityAction.getAction()) != null) {
                     Boolean bool = (Boolean) function1.invoke(new AnnotatedString(text.toString(), null, 2, null));
                 }
             }
@@ -824,10 +829,10 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             SemanticsNode semanticsNode;
             String fastJoinToString$default;
             for (long j : jArr) {
-                SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = androidContentCaptureManager.getCurrentSemanticsNodes$ui_release().get((int) j);
+                SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = androidContentCaptureManager.getCurrentSemanticsNodes$ui().get((int) j);
                 if (semanticsNodeWithAdjustedBounds != null && (semanticsNode = semanticsNodeWithAdjustedBounds.getSemanticsNode()) != null) {
                     ViewTranslationRequest.Builder builder = new ViewTranslationRequest.Builder(androidContentCaptureManager.getView().getAutofillId(), semanticsNode.getId());
-                    List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getText());
+                    List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getText());
                     if (list != null && (fastJoinToString$default = ListUtilsKt.fastJoinToString$default(list, "\n", null, null, 0, null, null, 62, null)) != null) {
                         builder.setValue("android:text", TranslationRequestValue.forText(new AnnotatedString(fastJoinToString$default, null, 2, null)));
                         consumer.accept(builder.build());
@@ -837,16 +842,16 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         }
     }
 
-    public final void onCreateVirtualViewTranslationRequests$ui_release(long[] jArr, int[] iArr, Consumer<ViewTranslationRequest> consumer) {
+    public final void onCreateVirtualViewTranslationRequests$ui(long[] jArr, int[] iArr, Consumer<ViewTranslationRequest> consumer) {
         ViewTranslationHelperMethods.INSTANCE.onCreateVirtualViewTranslationRequests(this, jArr, iArr, consumer);
     }
 
-    public final void onVirtualViewTranslationResponses$ui_release(AndroidContentCaptureManager androidContentCaptureManager, LongSparseArray<ViewTranslationResponse> longSparseArray) {
+    public final void onVirtualViewTranslationResponses$ui(AndroidContentCaptureManager androidContentCaptureManager, LongSparseArray<ViewTranslationResponse> longSparseArray) {
         ViewTranslationHelperMethods.INSTANCE.onVirtualViewTranslationResponses(androidContentCaptureManager, longSparseArray);
     }
 
     /* compiled from: AndroidContentCaptureManager.android.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$Companion;", "", "<init>", "()V", "VIEW_STRUCTURE_BUNDLE_KEY_TIMESTAMP", "", "VIEW_STRUCTURE_BUNDLE_KEY_ADDITIONAL_INDEX", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$Companion;", "", "<init>", "()V", "VIEW_STRUCTURE_BUNDLE_KEY_TIMESTAMP", "", "VIEW_STRUCTURE_BUNDLE_KEY_ADDITIONAL_INDEX", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -900,10 +905,10 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                             throw new KotlinNothingValueException();
                         }
                         if (semanticsNodeCopy == null) {
-                            MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui_release = semanticsNode3.getUnmergedConfig$ui_release().getProps$ui_release();
+                            MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui = semanticsNode3.getUnmergedConfig$ui().getProps$ui();
                             j2 = j5;
-                            Object[] objArr = props$ui_release.keys;
-                            long[] jArr5 = props$ui_release.metadata;
+                            Object[] objArr = props$ui.keys;
+                            long[] jArr5 = props$ui.metadata;
                             int length2 = jArr5.length - 2;
                             if (length2 >= 0) {
                                 int i9 = 0;
@@ -919,7 +924,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                                                 i3 = i12;
                                                 jArr3 = jArr4;
                                                 if (Intrinsics.areEqual((SemanticsPropertyKey) objArr[(i9 << 3) + i12], SemanticsProperties.INSTANCE.getText())) {
-                                                    List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode3.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getText());
+                                                    List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode3.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getText());
                                                     sendContentCaptureTextUpdateEvent(semanticsNode3.getId(), String.valueOf(list != null ? (AnnotatedString) CollectionsKt.firstOrNull((List<? extends Object>) list) : null));
                                                 }
                                             } else {
@@ -953,9 +958,9 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                             iArr2 = iArr3;
                             jArr2 = jArr4;
                             j2 = j5;
-                            MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui_release2 = semanticsNode3.getUnmergedConfig$ui_release().getProps$ui_release();
-                            Object[] objArr2 = props$ui_release2.keys;
-                            long[] jArr6 = props$ui_release2.metadata;
+                            MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui2 = semanticsNode3.getUnmergedConfig$ui().getProps$ui();
+                            Object[] objArr2 = props$ui2.keys;
+                            long[] jArr6 = props$ui2.metadata;
                             int length3 = jArr6.length - 2;
                             if (length3 >= 0) {
                                 int i13 = 0;
@@ -974,7 +979,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                                                     List list2 = (List) SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), SemanticsProperties.INSTANCE.getText());
                                                     AnnotatedString annotatedString = list2 != null ? (AnnotatedString) CollectionsKt.firstOrNull((List<? extends Object>) list2) : null;
                                                     j3 = j4;
-                                                    List list3 = (List) SemanticsConfigurationKt.getOrNull(semanticsNode2.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getText());
+                                                    List list3 = (List) SemanticsConfigurationKt.getOrNull(semanticsNode2.getUnmergedConfig$ui(), SemanticsProperties.INSTANCE.getText());
                                                     AnnotatedString annotatedString2 = list3 != null ? (AnnotatedString) CollectionsKt.firstOrNull((List<? extends Object>) list3) : null;
                                                     if (!Intrinsics.areEqual(annotatedString, annotatedString2)) {
                                                         sendContentCaptureTextUpdateEvent(semanticsNode2.getId(), String.valueOf(annotatedString2));

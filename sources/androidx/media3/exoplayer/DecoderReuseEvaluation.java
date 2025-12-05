@@ -7,7 +7,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DecoderReuseEvaluation {
     public static final int DISCARD_REASON_APP_OVERRIDE = 4;
     public static final int DISCARD_REASON_AUDIO_BYPASS_POSSIBLE = 32768;
@@ -38,14 +38,14 @@ public final class DecoderReuseEvaluation {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface DecoderDiscardReasons {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface DecoderReuseResult {
     }
 

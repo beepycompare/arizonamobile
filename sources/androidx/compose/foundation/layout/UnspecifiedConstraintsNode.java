@@ -26,65 +26,65 @@ final class UnspecifiedConstraintsNode extends Modifier.Node implements LayoutMo
         this(f, f2);
     }
 
-    public /* synthetic */ UnspecifiedConstraintsNode(float f, float f2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.Companion.m8016getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m8016getUnspecifiedD9Ej5fM() : f2, null);
-    }
-
-    /* renamed from: getMinWidth-D9Ej5fM  reason: not valid java name */
-    public final float m917getMinWidthD9Ej5fM() {
-        return this.minWidth;
-    }
-
-    /* renamed from: setMinWidth-0680j_4  reason: not valid java name */
-    public final void m919setMinWidth0680j_4(float f) {
-        this.minWidth = f;
-    }
-
-    /* renamed from: getMinHeight-D9Ej5fM  reason: not valid java name */
-    public final float m916getMinHeightD9Ej5fM() {
-        return this.minHeight;
-    }
-
-    /* renamed from: setMinHeight-0680j_4  reason: not valid java name */
-    public final void m918setMinHeight0680j_4(float f) {
-        this.minHeight = f;
-    }
-
     private UnspecifiedConstraintsNode(float f, float f2) {
         this.minWidth = f;
         this.minHeight = f2;
     }
 
+    public /* synthetic */ UnspecifiedConstraintsNode(float f, float f2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f2, null);
+    }
+
+    /* renamed from: getMinWidth-D9Ej5fM  reason: not valid java name */
+    public final float m997getMinWidthD9Ej5fM() {
+        return this.minWidth;
+    }
+
+    /* renamed from: setMinWidth-0680j_4  reason: not valid java name */
+    public final void m999setMinWidth0680j_4(float f) {
+        this.minWidth = f;
+    }
+
+    /* renamed from: getMinHeight-D9Ej5fM  reason: not valid java name */
+    public final float m996getMinHeightD9Ej5fM() {
+        return this.minHeight;
+    }
+
+    /* renamed from: setMinHeight-0680j_4  reason: not valid java name */
+    public final void m998setMinHeight0680j_4(float f) {
+        this.minHeight = f;
+    }
+
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        int m7951getMinWidthimpl;
-        int m7950getMinHeightimpl;
-        if (!Float.isNaN(this.minWidth) && Constraints.m7951getMinWidthimpl(j) == 0) {
-            int i = measureScope.mo424roundToPx0680j_4(this.minWidth);
-            m7951getMinWidthimpl = Constraints.m7949getMaxWidthimpl(j);
+    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        int m8213getMinWidthimpl;
+        int m8212getMinHeightimpl;
+        if (!Float.isNaN(this.minWidth) && Constraints.m8213getMinWidthimpl(j) == 0) {
+            int i = measureScope.mo458roundToPx0680j_4(this.minWidth);
+            m8213getMinWidthimpl = Constraints.m8211getMaxWidthimpl(j);
             if (i < 0) {
                 i = 0;
             }
-            if (i <= m7951getMinWidthimpl) {
-                m7951getMinWidthimpl = i;
+            if (i <= m8213getMinWidthimpl) {
+                m8213getMinWidthimpl = i;
             }
         } else {
-            m7951getMinWidthimpl = Constraints.m7951getMinWidthimpl(j);
+            m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
         }
-        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j);
-        if (!Float.isNaN(this.minHeight) && Constraints.m7950getMinHeightimpl(j) == 0) {
-            int i2 = measureScope.mo424roundToPx0680j_4(this.minHeight);
-            m7950getMinHeightimpl = Constraints.m7948getMaxHeightimpl(j);
+        int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
+        if (!Float.isNaN(this.minHeight) && Constraints.m8212getMinHeightimpl(j) == 0) {
+            int i2 = measureScope.mo458roundToPx0680j_4(this.minHeight);
+            m8212getMinHeightimpl = Constraints.m8210getMaxHeightimpl(j);
             int i3 = i2 >= 0 ? i2 : 0;
-            if (i3 <= m7950getMinHeightimpl) {
-                m7950getMinHeightimpl = i3;
+            if (i3 <= m8212getMinHeightimpl) {
+                m8212getMinHeightimpl = i3;
             }
         } else {
-            m7950getMinHeightimpl = Constraints.m7950getMinHeightimpl(j);
+            m8212getMinHeightimpl = Constraints.m8212getMinHeightimpl(j);
         }
-        final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(ConstraintsKt.Constraints(m7951getMinWidthimpl, m7949getMaxWidthimpl, m7950getMinHeightimpl, Constraints.m7948getMaxHeightimpl(j)));
-        return MeasureScope.layout$default(measureScope, mo6698measureBRTryo0.getWidth(), mo6698measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.UnspecifiedConstraintsNode$$ExternalSyntheticLambda0
+        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(ConstraintsKt.Constraints(m8213getMinWidthimpl, m8211getMaxWidthimpl, m8212getMinHeightimpl, Constraints.m8210getMaxHeightimpl(j)));
+        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.UnspecifiedConstraintsNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
@@ -103,28 +103,28 @@ final class UnspecifiedConstraintsNode extends Modifier.Node implements LayoutMo
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         int minIntrinsicWidth = intrinsicMeasurable.minIntrinsicWidth(i);
-        int i2 = !Float.isNaN(this.minWidth) ? intrinsicMeasureScope.mo424roundToPx0680j_4(this.minWidth) : 0;
+        int i2 = !Float.isNaN(this.minWidth) ? intrinsicMeasureScope.mo458roundToPx0680j_4(this.minWidth) : 0;
         return minIntrinsicWidth < i2 ? i2 : minIntrinsicWidth;
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         int maxIntrinsicWidth = intrinsicMeasurable.maxIntrinsicWidth(i);
-        int i2 = !Float.isNaN(this.minWidth) ? intrinsicMeasureScope.mo424roundToPx0680j_4(this.minWidth) : 0;
+        int i2 = !Float.isNaN(this.minWidth) ? intrinsicMeasureScope.mo458roundToPx0680j_4(this.minWidth) : 0;
         return maxIntrinsicWidth < i2 ? i2 : maxIntrinsicWidth;
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         int minIntrinsicHeight = intrinsicMeasurable.minIntrinsicHeight(i);
-        int i2 = !Float.isNaN(this.minHeight) ? intrinsicMeasureScope.mo424roundToPx0680j_4(this.minHeight) : 0;
+        int i2 = !Float.isNaN(this.minHeight) ? intrinsicMeasureScope.mo458roundToPx0680j_4(this.minHeight) : 0;
         return minIntrinsicHeight < i2 ? i2 : minIntrinsicHeight;
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
         int maxIntrinsicHeight = intrinsicMeasurable.maxIntrinsicHeight(i);
-        int i2 = !Float.isNaN(this.minHeight) ? intrinsicMeasureScope.mo424roundToPx0680j_4(this.minHeight) : 0;
+        int i2 = !Float.isNaN(this.minHeight) ? intrinsicMeasureScope.mo458roundToPx0680j_4(this.minHeight) : 0;
         return maxIntrinsicHeight < i2 ? i2 : maxIntrinsicHeight;
     }
 }

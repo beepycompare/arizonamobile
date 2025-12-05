@@ -15,10 +15,10 @@ public final class LargeIconButtonTokens {
     private static final float WideLeadingSpace;
     private static final float WideTrailingSpace;
     public static final LargeIconButtonTokens INSTANCE = new LargeIconButtonTokens();
-    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 96.0d);
+    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 96.0d);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
-    private static final float OutlinedOutlineWidth = Dp.m7996constructorimpl((float) 2.0d);
+    private static final float OutlinedOutlineWidth = Dp.m8258constructorimpl((float) 2.0d);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerLarge;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerExtraLarge;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerFull;
@@ -27,7 +27,7 @@ public final class LargeIconButtonTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4014getContainerHeightD9Ej5fM() {
+    public final float m4100getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -40,22 +40,22 @@ public final class LargeIconButtonTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4015getIconSizeD9Ej5fM() {
+    public final float m4101getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getNarrowLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4016getNarrowLeadingSpaceD9Ej5fM() {
+    public final float m4102getNarrowLeadingSpaceD9Ej5fM() {
         return NarrowLeadingSpace;
     }
 
     /* renamed from: getNarrowTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4017getNarrowTrailingSpaceD9Ej5fM() {
+    public final float m4103getNarrowTrailingSpaceD9Ej5fM() {
         return NarrowTrailingSpace;
     }
 
     /* renamed from: getOutlinedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4018getOutlinedOutlineWidthD9Ej5fM() {
+    public final float m4104getOutlinedOutlineWidthD9Ej5fM() {
         return OutlinedOutlineWidth;
     }
 
@@ -72,35 +72,35 @@ public final class LargeIconButtonTokens {
     }
 
     /* renamed from: getUniformLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4019getUniformLeadingSpaceD9Ej5fM() {
+    public final float m4105getUniformLeadingSpaceD9Ej5fM() {
         return UniformLeadingSpace;
     }
 
     /* renamed from: getUniformTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4020getUniformTrailingSpaceD9Ej5fM() {
+    public final float m4106getUniformTrailingSpaceD9Ej5fM() {
         return UniformTrailingSpace;
     }
 
     /* renamed from: getWideLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4021getWideLeadingSpaceD9Ej5fM() {
+    public final float m4107getWideLeadingSpaceD9Ej5fM() {
         return WideLeadingSpace;
     }
 
     /* renamed from: getWideTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4022getWideTrailingSpaceD9Ej5fM() {
+    public final float m4108getWideTrailingSpaceD9Ej5fM() {
         return WideTrailingSpace;
     }
 
     static {
         float f = (float) 32.0d;
-        IconSize = Dp.m7996constructorimpl(f);
+        IconSize = Dp.m8258constructorimpl(f);
         float f2 = (float) 16.0d;
-        NarrowLeadingSpace = Dp.m7996constructorimpl(f2);
-        NarrowTrailingSpace = Dp.m7996constructorimpl(f2);
-        UniformLeadingSpace = Dp.m7996constructorimpl(f);
-        UniformTrailingSpace = Dp.m7996constructorimpl(f);
+        NarrowLeadingSpace = Dp.m8258constructorimpl(f2);
+        NarrowTrailingSpace = Dp.m8258constructorimpl(f2);
+        UniformLeadingSpace = Dp.m8258constructorimpl(f);
+        UniformTrailingSpace = Dp.m8258constructorimpl(f);
         float f3 = (float) 48.0d;
-        WideLeadingSpace = Dp.m7996constructorimpl(f3);
-        WideTrailingSpace = Dp.m7996constructorimpl(f3);
+        WideLeadingSpace = Dp.m8258constructorimpl(f3);
+        WideTrailingSpace = Dp.m8258constructorimpl(f3);
     }
 }

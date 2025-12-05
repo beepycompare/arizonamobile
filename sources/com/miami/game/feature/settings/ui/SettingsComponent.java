@@ -1,6 +1,7 @@
 package com.miami.game.feature.settings.ui;
 
 import android.net.Uri;
+import androidx.core.app.FrameMetricsAggregator;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arkivanov.decompose.ComponentContext;
@@ -188,7 +189,7 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         do {
             value = mutableStateFlow.getValue();
         } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, 239, null)));
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), connectionData.getPassword()), 511, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), connectionData.getPassword()), FrameMetricsAggregator.EVERY_DURATION, null));
         ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), 0, 0, false, false, false, false, false, false, connectionData.getIp(), connectionData.getPort(), connectionData.getPassword(), 255, null));
         ConnectionHolder.INSTANCE.getOnConnectTest().invoke();
     }

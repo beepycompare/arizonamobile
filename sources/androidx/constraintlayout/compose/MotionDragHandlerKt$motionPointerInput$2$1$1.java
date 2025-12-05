@@ -85,8 +85,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
             ResultKt.throwOnFailure(obj);
             i = i3;
             coroutineScope = coroutineScope3;
-            obj2 = this.$dragChannel.mo11428tryReceivePtdJZtk();
-            if (ChannelResult.m11445isSuccessimpl(obj2)) {
+            obj2 = this.$dragChannel.mo11723tryReceivePtdJZtk();
+            if (ChannelResult.m11740isSuccessimpl(obj2)) {
             }
             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
             }
@@ -99,9 +99,9 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                 coroutineScope = coroutineScope2;
                 i = i2;
                 motionDragState = null;
-                obj2 = this.$dragChannel.mo11428tryReceivePtdJZtk();
-                if (ChannelResult.m11445isSuccessimpl(obj2)) {
-                    motionDragState = (MotionDragState) ChannelResult.m11441getOrThrowimpl(obj2);
+                obj2 = this.$dragChannel.mo11723tryReceivePtdJZtk();
+                if (ChannelResult.m11740isSuccessimpl(obj2)) {
+                    motionDragState = (MotionDragState) ChannelResult.m11736getOrThrowimpl(obj2);
                     if (motionDragState.isDragging()) {
                         i = 0;
                     }
@@ -117,8 +117,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                             i3 = i;
                             i = i3;
                             coroutineScope = coroutineScope3;
-                            obj2 = this.$dragChannel.mo11428tryReceivePtdJZtk();
-                            if (ChannelResult.m11445isSuccessimpl(obj2)) {
+                            obj2 = this.$dragChannel.mo11723tryReceivePtdJZtk();
+                            if (ChannelResult.m11740isSuccessimpl(obj2)) {
                             }
                             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                             }
@@ -140,25 +140,25 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                             this.L$1 = null;
                             this.I$0 = i2;
                             this.label = 3;
-                            if (this.$swipeHandler.m8466onTouchUpsFctU(motionDragState2.m8407getVelocity9UxMQ8M(), this) != coroutine_suspended) {
+                            if (this.$swipeHandler.m8728onTouchUpsFctU(motionDragState2.m8669getVelocity9UxMQ8M(), this) != coroutine_suspended) {
                                 i5 = i2;
                                 i2 = i5;
                                 coroutineScope = coroutineScope2;
                                 i = i2;
                                 motionDragState = null;
-                                obj2 = this.$dragChannel.mo11428tryReceivePtdJZtk();
-                                if (ChannelResult.m11445isSuccessimpl(obj2)) {
+                                obj2 = this.$dragChannel.mo11723tryReceivePtdJZtk();
+                                if (ChannelResult.m11740isSuccessimpl(obj2)) {
                                 }
                                 if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                                 }
                             }
                         } else {
-                            this.$swipeHandler.m8467updateProgressOnDragk4lQ0M(motionDragState2.m8406getDragAmountF1C5BW0());
+                            this.$swipeHandler.m8729updateProgressOnDragk4lQ0M(motionDragState2.m8668getDragAmountF1C5BW0());
                             coroutineScope = coroutineScope2;
                             i = i2;
                             motionDragState = null;
-                            obj2 = this.$dragChannel.mo11428tryReceivePtdJZtk();
-                            if (ChannelResult.m11445isSuccessimpl(obj2)) {
+                            obj2 = this.$dragChannel.mo11723tryReceivePtdJZtk();
+                            if (ChannelResult.m11740isSuccessimpl(obj2)) {
                             }
                             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                             }

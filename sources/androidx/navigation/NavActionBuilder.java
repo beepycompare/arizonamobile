@@ -60,7 +60,7 @@ public final class NavActionBuilder {
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            SavedStateWriter.m9000constructorimpl(bundleOf);
+            SavedStateWriter.m9264constructorimpl(bundleOf);
         }
         return new NavAction(i, navOptions, bundleOf);
     }

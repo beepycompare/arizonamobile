@@ -46,12 +46,14 @@ public class SnapshotMutableIntStateImpl extends StateObjectImpl implements Muta
         IntStateStateRecord intStateStateRecord = (IntStateStateRecord) SnapshotKt.current(this.next);
         if (intStateStateRecord.getValue() != i) {
             IntStateStateRecord intStateStateRecord2 = this.next;
+            SnapshotMutableIntStateImpl snapshotMutableIntStateImpl = this;
+            IntStateStateRecord intStateStateRecord3 = intStateStateRecord;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                ((IntStateStateRecord) SnapshotKt.overwritableRecord(intStateStateRecord2, this, current, intStateStateRecord)).setValue(i);
+                ((IntStateStateRecord) SnapshotKt.overwritableRecord(intStateStateRecord2, snapshotMutableIntStateImpl, current, intStateStateRecord3)).setValue(i);
                 Unit unit = Unit.INSTANCE;
             }
-            SnapshotKt.notifyWrite(current, this);
+            SnapshotKt.notifyWrite(current, snapshotMutableIntStateImpl);
         }
     }
 
@@ -67,7 +69,7 @@ public class SnapshotMutableIntStateImpl extends StateObjectImpl implements Muta
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit component2$lambda$4(SnapshotMutableIntStateImpl snapshotMutableIntStateImpl, int i) {
+    public static final Unit component2$lambda$0(SnapshotMutableIntStateImpl snapshotMutableIntStateImpl, int i) {
         snapshotMutableIntStateImpl.setIntValue(i);
         return Unit.INSTANCE;
     }
@@ -77,9 +79,9 @@ public class SnapshotMutableIntStateImpl extends StateObjectImpl implements Muta
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableIntStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$4;
-                component2$lambda$4 = SnapshotMutableIntStateImpl.component2$lambda$4(SnapshotMutableIntStateImpl.this, ((Integer) obj).intValue());
-                return component2$lambda$4;
+                Unit component2$lambda$0;
+                component2$lambda$0 = SnapshotMutableIntStateImpl.component2$lambda$0(SnapshotMutableIntStateImpl.this, ((Integer) obj).intValue());
+                return component2$lambda$0;
             }
         };
     }
@@ -115,16 +117,16 @@ public class SnapshotMutableIntStateImpl extends StateObjectImpl implements Muta
     public static final class IntStateStateRecord extends StateRecord {
         private int value;
 
+        public IntStateStateRecord(long j, int i) {
+            super(j);
+            this.value = i;
+        }
+
         public final int getValue() {
             return this.value;
         }
 
         public final void setValue(int i) {
-            this.value = i;
-        }
-
-        public IntStateStateRecord(long j, int i) {
-            super(j);
             this.value = i;
         }
 

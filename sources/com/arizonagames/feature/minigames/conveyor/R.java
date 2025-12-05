@@ -80,23 +80,23 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int age_label = 0x7f0a00bf;
-        public static int age_locker = 0x7f0a00c0;
-        public static int btn_close_screen = 0x7f0a0224;
-        public static int button_close = 0x7f0a0273;
-        public static int button_play = 0x7f0a0286;
-        public static int conveyor_game_container = 0x7f0a03aa;
-        public static int counter_container = 0x7f0a03b5;
-        public static int game_title = 0x7f0a0551;
-        public static int item_container = 0x7f0a06f3;
-        public static int iv_default_item = 0x7f0a075c;
-        public static int iv_item = 0x7f0a076a;
-        public static int left_container = 0x7f0a07b1;
-        public static int left_item = 0x7f0a07b9;
-        public static int rv_boxes = 0x7f0a0bc7;
-        public static int rv_items = 0x7f0a0bcd;
-        public static int top_elements_container = 0x7f0a0dba;
-        public static int tv_hint = 0x7f0a0e90;
+        public static int age_label = 0x7f0a00c0;
+        public static int age_locker = 0x7f0a00c1;
+        public static int btn_close_screen = 0x7f0a0229;
+        public static int button_close = 0x7f0a0278;
+        public static int button_play = 0x7f0a028b;
+        public static int conveyor_game_container = 0x7f0a03af;
+        public static int counter_container = 0x7f0a03ba;
+        public static int game_title = 0x7f0a0557;
+        public static int item_container = 0x7f0a06f9;
+        public static int iv_default_item = 0x7f0a0762;
+        public static int iv_item = 0x7f0a0770;
+        public static int left_container = 0x7f0a07b8;
+        public static int left_item = 0x7f0a07c0;
+        public static int rv_boxes = 0x7f0a0bce;
+        public static int rv_items = 0x7f0a0bd4;
+        public static int top_elements_container = 0x7f0a0dc3;
+        public static int tv_hint = 0x7f0a0e99;
 
         private id() {
         }

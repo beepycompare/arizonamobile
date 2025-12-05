@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.draw.RotateKt;
 import androidx.compose.ui.graphics.ColorFilter;
+import androidx.compose.ui.graphics.painter.Painter;
 import androidx.compose.ui.layout.ContentScale;
 import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
@@ -33,7 +34,7 @@ import kotlin.jvm.functions.Function2;
 public final class AnimatedLoadingKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AnimatedLoading_uFdPcIQ$lambda$1(boolean z, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        m9737AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m10032AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -42,14 +43,14 @@ public final class AnimatedLoadingKt {
     /* JADX WARN: Removed duplicated region for block: B:34:0x0063  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0065  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x012d  */
     /* JADX WARN: Removed duplicated region for block: B:60:? A[RETURN, SYNTHETIC] */
     /* renamed from: AnimatedLoading-uFdPcIQ  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9737AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void m10032AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         float f2;
         int i4;
@@ -82,7 +83,7 @@ public final class AnimatedLoadingKt {
                     f3 = f2;
                     modifier2 = obj;
                 } else {
-                    float m7996constructorimpl = i5 != 0 ? Dp.m7996constructorimpl(60) : f2;
+                    float m8258constructorimpl = i5 != 0 ? Dp.m8258constructorimpl(60) : f2;
                     Modifier.Companion companion = i4 != 0 ? Modifier.Companion : obj;
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-113788150, i3, -1, "com.miami.game.core.design.system.component.other.AnimatedLoading (AnimatedLoading.kt:21)");
@@ -91,21 +92,21 @@ public final class AnimatedLoadingKt {
                         startRestartGroup.startReplaceGroup(-1133444200);
                         ComposerKt.sourceInformation(startRestartGroup, "23@999L28,24@1071L418,39@1624L84,35@1498L260");
                         modifier3 = companion;
-                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.loading_animated_icon, startRestartGroup, 0), (String) null, RotateKt.rotate(SizeKt.m900width3ABfNKs(companion, m7996constructorimpl), AnimatedLoading_uFdPcIQ$lambda$0(InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1), 0.0f, 360.0f, AnimationSpecKt.m162infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, EasingKt.getLinearEasing(), 2, null), RepeatMode.Restart, 0L, 4, null), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8))), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, 48, 120);
+                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.loading_animated_icon, startRestartGroup, 0), (String) null, RotateKt.rotate(SizeKt.m981width3ABfNKs(companion, m8258constructorimpl), AnimatedLoading_uFdPcIQ$lambda$0(InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1), 0.0f, 360.0f, AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, EasingKt.getLinearEasing(), 2, null), RepeatMode.Restart, 0L, 4, null), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8))), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 48, 120);
                         startRestartGroup = startRestartGroup;
                         startRestartGroup.endReplaceGroup();
                     } else {
                         modifier3 = companion;
                         startRestartGroup.startReplaceGroup(-1132659373);
                         ComposerKt.sourceInformation(startRestartGroup, "47@1788L53");
-                        SpacerKt.Spacer(SizeKt.m900width3ABfNKs(Modifier.Companion, Dp.m7996constructorimpl(60)), startRestartGroup, 6);
+                        SpacerKt.Spacer(SizeKt.m981width3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(60)), startRestartGroup, 6);
                         startRestartGroup.endReplaceGroup();
                     }
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
                     modifier2 = modifier3;
-                    f3 = m7996constructorimpl;
+                    f3 = m8258constructorimpl;
                 }
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {

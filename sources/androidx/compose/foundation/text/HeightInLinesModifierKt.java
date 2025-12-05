@@ -24,7 +24,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 /* compiled from: HeightInLinesModifier.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\u001a(\u0010\u0002\u001a\u00020\u0003*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00012\b\b\u0002\u0010\u0007\u001a\u00020\u0001H\u0000\u001a\u0018\u0010\b\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\u0001H\u0000\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000¨\u0006\n²\u0006\n\u0010\u000b\u001a\u00020\fX\u008a\u0084\u0002"}, d2 = {"DefaultMinLines", "", "heightInLines", "Landroidx/compose/ui/Modifier;", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "minLines", "maxLines", "validateMinMaxLines", "", "foundation_release", "typeface", ""}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\u001a(\u0010\u0002\u001a\u00020\u0003*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00012\b\b\u0002\u0010\u0007\u001a\u00020\u0001H\u0000\u001a\u0018\u0010\b\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\u0001H\u0000\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000¨\u0006\n²\u0006\n\u0010\u000b\u001a\u00020\fX\u008a\u0084\u0002"}, d2 = {"DefaultMinLines", "", "heightInLines", "Landroidx/compose/ui/Modifier;", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "minLines", "maxLines", "validateMinMaxLines", "", "foundation", "typeface", ""}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class HeightInLinesModifierKt {
     public static final int DefaultMinLines = 1;
@@ -37,6 +37,96 @@ public final class HeightInLinesModifierKt {
             i2 = Integer.MAX_VALUE;
         }
         return heightInLines(modifier, textStyle, i, i2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Modifier heightInLines$lambda$1(int i, int i2, TextStyle textStyle, Modifier modifier, Composer composer, int i3) {
+        long j;
+        composer.startReplaceGroup(408240218);
+        ComposerKt.sourceInformation(composer, "C65@2532L7,66@2597L7,67@2656L7,72@2851L84,74@2972L369,84@3385L430,96@3863L500:HeightInLinesModifier.kt#423gt5");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(408240218, i3, -1, "androidx.compose.foundation.text.heightInLines.<anonymous> (HeightInLinesModifier.kt:62)");
+        }
+        validateMinMaxLines(i, i2);
+        if (i == 1 && i2 == Integer.MAX_VALUE) {
+            Modifier.Companion companion = Modifier.Companion;
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+            composer.endReplaceGroup();
+            return companion;
+        }
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+        Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        Density density = (Density) consume;
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+        Object consume2 = composer.consume(CompositionLocalsKt.getLocalFontFamilyResolver());
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        FontFamily.Resolver resolver = (FontFamily.Resolver) consume2;
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+        Object consume3 = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        LayoutDirection layoutDirection = (LayoutDirection) consume3;
+        ComposerKt.sourceInformationMarkerStart(composer, 1476841646, "CC(remember):HeightInLinesModifier.kt#9igjgp");
+        LayoutDirection layoutDirection2 = layoutDirection;
+        boolean changed = composer.changed(textStyle) | composer.changed(layoutDirection2.ordinal());
+        Object rememberedValue = composer.rememberedValue();
+        if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = TextStyleKt.resolveDefaults(textStyle, layoutDirection);
+            composer.updateRememberedValue(rememberedValue);
+        }
+        TextStyle textStyle2 = (TextStyle) rememberedValue;
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        ComposerKt.sourceInformationMarkerStart(composer, 1476845803, "CC(remember):HeightInLinesModifier.kt#9igjgp");
+        boolean changed2 = composer.changed(resolver) | composer.changed(textStyle2);
+        Object rememberedValue2 = composer.rememberedValue();
+        if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+            FontFamily fontFamily = textStyle2.getFontFamily();
+            FontWeight fontWeight = textStyle2.getFontWeight();
+            if (fontWeight == null) {
+                fontWeight = FontWeight.Companion.getNormal();
+            }
+            FontStyle m7733getFontStyle4Lr2A7w = textStyle2.m7733getFontStyle4Lr2A7w();
+            int m7818unboximpl = m7733getFontStyle4Lr2A7w != null ? m7733getFontStyle4Lr2A7w.m7818unboximpl() : FontStyle.Companion.m7822getNormal_LCdwA();
+            FontSynthesis m7734getFontSynthesisZQGJjVo = textStyle2.m7734getFontSynthesisZQGJjVo();
+            rememberedValue2 = resolver.mo7787resolveDPcqOEQ(fontFamily, fontWeight, m7818unboximpl, m7734getFontSynthesisZQGJjVo != null ? m7734getFontSynthesisZQGJjVo.m7831unboximpl() : FontSynthesis.Companion.m7832getAllGVVA2EU());
+            composer.updateRememberedValue(rememberedValue2);
+        }
+        State state = (State) rememberedValue2;
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        Object value = state.getValue();
+        ComposerKt.sourceInformationMarkerStart(composer, 1476859080, "CC(remember):HeightInLinesModifier.kt#9igjgp");
+        boolean changed3 = composer.changed(value) | composer.changed(density) | composer.changed(resolver) | composer.changed(textStyle) | composer.changed(layoutDirection2.ordinal());
+        Object rememberedValue3 = composer.rememberedValue();
+        if (changed3 || rememberedValue3 == Composer.Companion.getEmpty()) {
+            j = 4294967295L;
+            rememberedValue3 = Integer.valueOf((int) (TextFieldDelegateKt.computeSizeForDefaultText(textStyle2, density, resolver, TextFieldDelegateKt.getEmptyTextReplacement(), 1) & 4294967295L));
+            composer.updateRememberedValue(rememberedValue3);
+        } else {
+            j = 4294967295L;
+        }
+        int intValue = ((Number) rememberedValue3).intValue();
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        Object value2 = state.getValue();
+        ComposerKt.sourceInformationMarkerStart(composer, 1476874446, "CC(remember):HeightInLinesModifier.kt#9igjgp");
+        boolean changed4 = composer.changed(textStyle) | composer.changed(density) | composer.changed(resolver) | composer.changed(layoutDirection2.ordinal()) | composer.changed(value2);
+        Object rememberedValue4 = composer.rememberedValue();
+        if (changed4 || rememberedValue4 == Composer.Companion.getEmpty()) {
+            rememberedValue4 = Integer.valueOf((int) (TextFieldDelegateKt.computeSizeForDefaultText(textStyle2, density, resolver, TextFieldDelegateKt.getEmptyTextReplacement() + '\n' + TextFieldDelegateKt.getEmptyTextReplacement(), 2) & j));
+            composer.updateRememberedValue(rememberedValue4);
+        }
+        int intValue2 = ((Number) rememberedValue4).intValue();
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        int i4 = intValue2 - intValue;
+        Integer valueOf = i == 1 ? null : Integer.valueOf(((i - 1) * i4) + intValue);
+        Integer valueOf2 = i2 != Integer.MAX_VALUE ? Integer.valueOf(intValue + (i4 * (i2 - 1))) : null;
+        Modifier m963heightInVpY3zN4 = SizeKt.m963heightInVpY3zN4(Modifier.Companion, valueOf != null ? density.mo461toDpu2uoSUM(valueOf.intValue()) : Dp.Companion.m8278getUnspecifiedD9Ej5fM(), valueOf2 != null ? density.mo461toDpu2uoSUM(valueOf2.intValue()) : Dp.Companion.m8278getUnspecifiedD9Ej5fM());
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        composer.endReplaceGroup();
+        return m963heightInVpY3zN4;
     }
 
     public static final void validateMinMaxLines(int i, int i2) {
@@ -69,98 +159,12 @@ public final class HeightInLinesModifierKt {
                 inspectorInfo.getProperties().set("maxLines", Integer.valueOf(i2));
                 inspectorInfo.getProperties().set("textStyle", textStyle);
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function3<Modifier, Composer, Integer, Modifier>() { // from class: androidx.compose.foundation.text.HeightInLinesModifierKt$heightInLines$2
+        } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.text.HeightInLinesModifierKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Modifier invoke(Modifier modifier2, Composer composer, Integer num) {
-                return invoke(modifier2, composer, num.intValue());
-            }
-
-            public final Modifier invoke(Modifier modifier2, Composer composer, int i3) {
-                composer.startReplaceGroup(408240218);
-                ComposerKt.sourceInformation(composer, "C65@2532L7,66@2597L7,67@2656L7,72@2851L84,74@2972L369,84@3385L430,96@3863L500:HeightInLinesModifier.kt#423gt5");
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(408240218, i3, -1, "androidx.compose.foundation.text.heightInLines.<anonymous> (HeightInLinesModifier.kt:62)");
-                }
-                HeightInLinesModifierKt.validateMinMaxLines(i, i2);
-                if (i == 1 && i2 == Integer.MAX_VALUE) {
-                    Modifier.Companion companion = Modifier.Companion;
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                    }
-                    composer.endReplaceGroup();
-                    return companion;
-                }
-                ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                Density density = (Density) consume;
-                ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                Object consume2 = composer.consume(CompositionLocalsKt.getLocalFontFamilyResolver());
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                FontFamily.Resolver resolver = (FontFamily.Resolver) consume2;
-                ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                Object consume3 = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                LayoutDirection layoutDirection = (LayoutDirection) consume3;
-                ComposerKt.sourceInformationMarkerStart(composer, 1476841646, "CC(remember):HeightInLinesModifier.kt#9igjgp");
-                LayoutDirection layoutDirection2 = layoutDirection;
-                boolean changed = composer.changed(textStyle) | composer.changed(layoutDirection2.ordinal());
-                TextStyle textStyle2 = textStyle;
-                Object rememberedValue = composer.rememberedValue();
-                if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = TextStyleKt.resolveDefaults(textStyle2, layoutDirection);
-                    composer.updateRememberedValue(rememberedValue);
-                }
-                TextStyle textStyle3 = (TextStyle) rememberedValue;
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                ComposerKt.sourceInformationMarkerStart(composer, 1476845803, "CC(remember):HeightInLinesModifier.kt#9igjgp");
-                boolean changed2 = composer.changed(resolver) | composer.changed(textStyle3);
-                Object rememberedValue2 = composer.rememberedValue();
-                if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                    FontFamily fontFamily = textStyle3.getFontFamily();
-                    FontWeight fontWeight = textStyle3.getFontWeight();
-                    if (fontWeight == null) {
-                        fontWeight = FontWeight.Companion.getNormal();
-                    }
-                    FontStyle m7490getFontStyle4Lr2A7w = textStyle3.m7490getFontStyle4Lr2A7w();
-                    int m7574unboximpl = m7490getFontStyle4Lr2A7w != null ? m7490getFontStyle4Lr2A7w.m7574unboximpl() : FontStyle.Companion.m7578getNormal_LCdwA();
-                    FontSynthesis m7491getFontSynthesisZQGJjVo = textStyle3.m7491getFontSynthesisZQGJjVo();
-                    rememberedValue2 = resolver.mo7543resolveDPcqOEQ(fontFamily, fontWeight, m7574unboximpl, m7491getFontSynthesisZQGJjVo != null ? m7491getFontSynthesisZQGJjVo.m7587unboximpl() : FontSynthesis.Companion.m7588getAllGVVA2EU());
-                    composer.updateRememberedValue(rememberedValue2);
-                }
-                State state = (State) rememberedValue2;
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                Object value = state.getValue();
-                ComposerKt.sourceInformationMarkerStart(composer, 1476859080, "CC(remember):HeightInLinesModifier.kt#9igjgp");
-                boolean changed3 = composer.changed(value) | composer.changed(density) | composer.changed(resolver) | composer.changed(textStyle) | composer.changed(layoutDirection2.ordinal());
-                Object rememberedValue3 = composer.rememberedValue();
-                if (changed3 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                    rememberedValue3 = Integer.valueOf((int) (TextFieldDelegateKt.computeSizeForDefaultText(textStyle3, density, resolver, TextFieldDelegateKt.getEmptyTextReplacement(), 1) & 4294967295L));
-                    composer.updateRememberedValue(rememberedValue3);
-                }
-                int intValue = ((Number) rememberedValue3).intValue();
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                Object value2 = state.getValue();
-                ComposerKt.sourceInformationMarkerStart(composer, 1476874446, "CC(remember):HeightInLinesModifier.kt#9igjgp");
-                boolean changed4 = composer.changed(value2) | composer.changed(density) | composer.changed(resolver) | composer.changed(textStyle) | composer.changed(layoutDirection2.ordinal());
-                Object rememberedValue4 = composer.rememberedValue();
-                if (changed4 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                    rememberedValue4 = Integer.valueOf((int) (TextFieldDelegateKt.computeSizeForDefaultText(textStyle3, density, resolver, TextFieldDelegateKt.getEmptyTextReplacement() + '\n' + TextFieldDelegateKt.getEmptyTextReplacement(), 2) & 4294967295L));
-                    composer.updateRememberedValue(rememberedValue4);
-                }
-                int intValue2 = ((Number) rememberedValue4).intValue();
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                int i4 = intValue2 - intValue;
-                int i5 = i;
-                Integer valueOf = i5 == 1 ? null : Integer.valueOf(((i5 - 1) * i4) + intValue);
-                int i6 = i2;
-                Integer valueOf2 = i6 != Integer.MAX_VALUE ? Integer.valueOf(intValue + (i4 * (i6 - 1))) : null;
-                Modifier m882heightInVpY3zN4 = SizeKt.m882heightInVpY3zN4(Modifier.Companion, valueOf != null ? density.mo427toDpu2uoSUM(valueOf.intValue()) : Dp.Companion.m8016getUnspecifiedD9Ej5fM(), valueOf2 != null ? density.mo427toDpu2uoSUM(valueOf2.intValue()) : Dp.Companion.m8016getUnspecifiedD9Ej5fM());
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
-                composer.endReplaceGroup();
-                return m882heightInVpY3zN4;
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Modifier heightInLines$lambda$1;
+                heightInLines$lambda$1 = HeightInLinesModifierKt.heightInLines$lambda$1(i, i2, textStyle, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return heightInLines$lambda$1;
             }
         });
     }

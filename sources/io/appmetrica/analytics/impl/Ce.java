@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class Ce implements InterfaceC0388l2 {
+public final class Ce implements InterfaceC0387l2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f431a = 10;
+    public final int f514a = 10;
     public final int b = 13;
     public final Regex c = new Regex("^[0-9()\\-+\\s]+$");
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0388l2
+    @Override // io.appmetrica.analytics.impl.InterfaceC0387l2
     public final String a(String str) {
         StringBuilder sb = new StringBuilder();
         int length = str.length();
@@ -24,7 +24,7 @@ public final class Ce implements InterfaceC0388l2 {
         int length2 = sb2.length();
         Character firstOrNull = StringsKt.firstOrNull(str);
         Character firstOrNull2 = StringsKt.firstOrNull(sb2);
-        if (length2 < this.f431a || length2 > this.b || ((firstOrNull2 != null && firstOrNull2.charValue() == '0') || !this.c.matches(str))) {
+        if (length2 < this.f514a || length2 > this.b || ((firstOrNull2 != null && firstOrNull2.charValue() == '0') || !this.c.matches(str))) {
             return null;
         }
         if (length2 == 10 && (firstOrNull == null || firstOrNull.charValue() != '+')) {

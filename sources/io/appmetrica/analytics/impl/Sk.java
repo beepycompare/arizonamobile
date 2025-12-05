@@ -12,18 +12,18 @@ import org.json.JSONObject;
 public final class Sk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y4 f681a;
+    public final Y4 f764a;
     public final Rk b;
     public final X4 c;
-    public final AbstractC0256g d;
-    public final AbstractC0256g e;
+    public final AbstractC0255g d;
+    public final AbstractC0255g e;
     public Ek f;
     public int g = 0;
 
-    public Sk(Y4 y4, Rk rk, X4 x4, C0319ia c0319ia, A2 a2) {
-        this.f681a = y4;
+    public Sk(Y4 y4, Rk rk, X4 x4, C0318ia c0318ia, A2 a2) {
+        this.f764a = y4;
         this.c = x4;
-        this.d = c0319ia;
+        this.d = c0318ia;
         this.e = a2;
         this.b = rk;
     }
@@ -37,17 +37,17 @@ public final class Sk {
     public final void b(Ek ek, Q5 q5) {
         if (ek.g && ek.d > 0) {
             X4 x4 = this.c;
-            Q5 a2 = Q5.a(q5, EnumC0165cb.EVENT_TYPE_ALIVE);
+            Q5 a2 = Q5.a(q5, EnumC0164cb.EVENT_TYPE_ALIVE);
             Uk uk = new Uk();
-            uk.f714a = ek.d;
-            uk.d = ek.c.f511a;
+            uk.f797a = ek.d;
+            uk.d = ek.c.f594a;
             long andIncrement = ek.f.getAndIncrement();
             Vk vk = ek.b;
             vk.a(Vk.g, Long.valueOf(ek.f.get()));
             vk.b();
             uk.b = andIncrement;
             uk.c = TimeUnit.MILLISECONDS.toSeconds(Math.max(ek.i - ek.e, ek.j));
-            x4.f746a.n.a(a2, uk);
+            x4.f829a.n.a(a2, uk);
             if (ek.g) {
                 ek.g = false;
                 Vk vk2 = ek.b;
@@ -55,8 +55,8 @@ public final class Sk {
                 vk2.b();
             }
         }
-        PublicLogger publicLogger = this.f681a.m;
-        int ordinal = ek.c.f511a.ordinal();
+        PublicLogger publicLogger = this.f764a.m;
+        int ordinal = ek.c.f594a.ordinal();
         if (ordinal == 0) {
             publicLogger.info("Finish foreground session", new Object[0]);
         } else if (ordinal == 1) {
@@ -65,7 +65,7 @@ public final class Sk {
         synchronized (ek) {
             Vk vk3 = ek.b;
             vk3.getClass();
-            vk3.c = new C0268gb();
+            vk3.c = new C0267gb();
             vk3.b();
             ek.h = null;
         }
@@ -109,22 +109,22 @@ public final class Sk {
     }
 
     public final Ek a(Q5 q5) {
-        this.f681a.m.info("Start foreground session", new Object[0]);
+        this.f764a.m.info("Start foreground session", new Object[0]);
         long j = q5.i;
-        AbstractC0256g abstractC0256g = this.d;
+        AbstractC0255g abstractC0255g = this.d;
         Fk fk = new Fk(j, q5.j);
-        abstractC0256g.getClass();
-        Ek a2 = abstractC0256g.a(fk);
+        abstractC0255g.getClass();
+        Ek a2 = abstractC0255g.a(fk);
         this.g = 3;
-        ((C0391l5) this.f681a.p).e();
+        ((C0390l5) this.f764a.p).e();
         X4 x4 = this.c;
-        x4.f746a.n.a(Q5.a(q5, C0471oa.I.i()), a(a2, j));
+        x4.f829a.n.a(Q5.a(q5, C0470oa.I.i()), a(a2, j));
         return a2;
     }
 
     public static Uk a(Ek ek, long j) {
         Uk uk = new Uk();
-        uk.f714a = ek.d;
+        uk.f797a = ek.d;
         long andIncrement = ek.f.getAndIncrement();
         Vk vk = ek.b;
         vk.a(Vk.g, Long.valueOf(ek.f.get()));
@@ -135,7 +135,7 @@ public final class Sk {
         ek.j = j2;
         vk2.a(Vk.e, Long.valueOf(j2));
         uk.c = TimeUnit.MILLISECONDS.toSeconds(ek.j);
-        uk.d = ek.c.f511a;
+        uk.d = ek.c.f594a;
         return uk;
     }
 
@@ -170,24 +170,24 @@ public final class Sk {
             vk.b();
             return this.f;
         } else if (a2 != 2) {
-            this.f681a.m.info("Start background session", new Object[0]);
+            this.f764a.m.info("Start background session", new Object[0]);
             this.g = 2;
             long j2 = q5.i;
-            AbstractC0256g abstractC0256g = this.e;
+            AbstractC0255g abstractC0255g = this.e;
             Fk fk = new Fk(j2, q5.j);
-            abstractC0256g.getClass();
-            Ek a3 = abstractC0256g.a(fk);
-            if (this.f681a.t.c()) {
+            abstractC0255g.getClass();
+            Ek a3 = abstractC0255g.a(fk);
+            if (this.f764a.t.c()) {
                 X4 x4 = this.c;
-                x4.f746a.n.a(Q5.a(q5, C0471oa.I.i()), a(a3, q5.i));
+                x4.f829a.n.a(Q5.a(q5, C0470oa.I.i()), a(a3, q5.i));
             } else {
                 int i = q5.d;
-                EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+                EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
                 if (i == 6145) {
                     X4 x42 = this.c;
-                    x42.f746a.n.a(q5, a(a3, j2));
+                    x42.f829a.n.a(q5, a(a3, j2));
                     X4 x43 = this.c;
-                    x43.f746a.n.a(Q5.a(q5, C0471oa.I.i()), a(a3, j2));
+                    x43.f829a.n.a(Q5.a(q5, C0470oa.I.i()), a(a3, j2));
                 }
             }
             this.f = a3;
@@ -209,7 +209,7 @@ public final class Sk {
             synchronized (ek) {
                 if (ek.h == null) {
                     try {
-                        String asString = ek.f465a.e.a(ek.d, ek.c.f511a).getAsString("report_request_parameters");
+                        String asString = ek.f548a.e.a(ek.d, ek.c.f594a).getAsString("report_request_parameters");
                         if (!TextUtils.isEmpty(asString)) {
                             ek.h = new Tk(new JSONObject(asString));
                         }
@@ -223,15 +223,15 @@ public final class Sk {
             z = false;
             break;
         }
-        C0403lh c0403lh = (C0403lh) ek.f465a.k.a();
+        C0402lh c0402lh = (C0402lh) ek.f548a.k.a();
         Boolean[] boolArr = new Boolean[7];
-        boolArr[0] = Boolean.valueOf(TextUtils.equals(c0403lh.getAnalyticsSdkVersionName(), tk.f697a));
-        boolArr[1] = Boolean.valueOf(TextUtils.equals(c0403lh.getAnalyticsSdkBuildNumber(), tk.b));
-        boolArr[2] = Boolean.valueOf(TextUtils.equals(c0403lh.getAppVersion(), tk.c));
-        boolArr[3] = Boolean.valueOf(TextUtils.equals(c0403lh.getAppBuildNumber(), tk.d));
-        boolArr[4] = Boolean.valueOf(TextUtils.equals(c0403lh.getOsVersion(), tk.e));
-        boolArr[5] = Boolean.valueOf(tk.f == c0403lh.getOsApiLevel());
-        boolArr[6] = Boolean.valueOf(tk.g == c0403lh.r);
+        boolArr[0] = Boolean.valueOf(TextUtils.equals(c0402lh.getAnalyticsSdkVersionName(), tk.f780a));
+        boolArr[1] = Boolean.valueOf(TextUtils.equals(c0402lh.getAnalyticsSdkBuildNumber(), tk.b));
+        boolArr[2] = Boolean.valueOf(TextUtils.equals(c0402lh.getAppVersion(), tk.c));
+        boolArr[3] = Boolean.valueOf(TextUtils.equals(c0402lh.getAppBuildNumber(), tk.d));
+        boolArr[4] = Boolean.valueOf(TextUtils.equals(c0402lh.getOsVersion(), tk.e));
+        boolArr[5] = Boolean.valueOf(tk.f == c0402lh.getOsApiLevel());
+        boolArr[6] = Boolean.valueOf(tk.g == c0402lh.r);
         List<Boolean> listOf = CollectionsKt.listOf((Object[]) boolArr);
         if (!(listOf instanceof Collection) || !listOf.isEmpty()) {
             for (Boolean bool : listOf) {
@@ -250,12 +250,12 @@ public final class Sk {
         if (!z4) {
             TimeUnit timeUnit = TimeUnit.SECONDS;
             Hk hk = ek.c;
-            int i = ((C0403lh) ek.f465a.k.a()).f;
+            int i = ((C0402lh) ek.f548a.k.a()).f;
             Integer num = hk.d;
             if (num != null) {
                 i = num.intValue();
             }
-            if (j3 < timeUnit.toMillis(i) && j4 < timeUnit.toMillis(Ik.f528a)) {
+            if (j3 < timeUnit.toMillis(i) && j4 < timeUnit.toMillis(Ik.f611a)) {
                 z2 = false;
                 if (z3 || !z || z2) {
                     b(ek, q5);

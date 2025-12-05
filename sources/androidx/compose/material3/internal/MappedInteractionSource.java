@@ -154,6 +154,6 @@ public final class MappedInteractionSource implements InteractionSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final PressInteraction.Press mapPress(PressInteraction.Press press) {
-        return new PressInteraction.Press(Offset.m5040minusMKHz9U(press.m639getPressPositionF1C5BW0(), this.delta), null);
+        return new PressInteraction.Press(Offset.m5183minusMKHz9U(press.m719getPressPositionF1C5BW0(), this.delta), null);
     }
 }

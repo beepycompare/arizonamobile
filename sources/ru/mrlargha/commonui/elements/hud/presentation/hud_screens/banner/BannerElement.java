@@ -368,7 +368,7 @@ public final class BannerElement {
         public static final class BannersType {
             private static final /* synthetic */ EnumEntries $ENTRIES;
             private static final /* synthetic */ BannersType[] $VALUES;
-            public static final C0085Companion Companion;
+            public static final C0084Companion Companion;
             public static final BannersType DEFAULT = new BannersType("DEFAULT", 0, 0);
             public static final BannersType EASTER = new BannersType("EASTER", 1, 1);
             private final int subId;
@@ -401,19 +401,19 @@ public final class BannerElement {
                 BannersType[] $values = $values();
                 $VALUES = $values;
                 $ENTRIES = EnumEntriesKt.enumEntries($values);
-                Companion = new C0085Companion(null);
+                Companion = new C0084Companion(null);
             }
 
             /* compiled from: Banner.kt */
             @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement$Companion$BannersType$Companion;", "", "<init>", "()V", "getBannersType", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement$Companion$BannersType;", "number", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
             /* renamed from: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.banner.BannerElement$Companion$BannersType$Companion  reason: collision with other inner class name */
             /* loaded from: classes6.dex */
-            public static final class C0085Companion {
-                public /* synthetic */ C0085Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            public static final class C0084Companion {
+                public /* synthetic */ C0084Companion(DefaultConstructorMarker defaultConstructorMarker) {
                     this();
                 }
 
-                private C0085Companion() {
+                private C0084Companion() {
                 }
 
                 public final BannersType getBannersType(int i) {

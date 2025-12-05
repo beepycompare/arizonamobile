@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0136b8;
-import io.appmetrica.analytics.impl.C0440n4;
-import io.appmetrica.analytics.impl.C0589t4;
-import io.appmetrica.analytics.impl.C0616u6;
+import io.appmetrica.analytics.impl.C0135b8;
+import io.appmetrica.analytics.impl.C0439n4;
+import io.appmetrica.analytics.impl.C0588t4;
+import io.appmetrica.analytics.impl.C0615u6;
 import io.appmetrica.analytics.impl.Hb;
-import io.appmetrica.analytics.impl.InterfaceC0255fo;
+import io.appmetrica.analytics.impl.InterfaceC0254fo;
 import io.appmetrica.analytics.impl.Xm;
 import io.appmetrica.analytics.impl.Ym;
 import io.appmetrica.analytics.impl.Zk;
@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class FirstPartyDataTelegramLoginSha256Attribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0616u6 f1320a = new C0616u6("appmetrica_1pd_telegram_sha256", new C0136b8(), new Hb(new C0440n4(100)));
+    private final C0615u6 f1403a = new C0615u6("appmetrica_1pd_telegram_sha256", new C0135b8(), new Hb(new C0439n4(100)));
     private final Zk b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -24,15 +24,15 @@ public class FirstPartyDataTelegramLoginSha256Attribute {
         this.b = zk;
     }
 
-    public UserProfileUpdate<? extends InterfaceC0255fo> withTelegramLoginValues(String... strArr) {
+    public UserProfileUpdate<? extends InterfaceC0254fo> withTelegramLoginValues(String... strArr) {
         return withTelegramLoginValues(Arrays.asList(strArr));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0255fo> withTelegramLoginValues(Iterable<String> iterable) {
-        String str = this.f1320a.c;
+    public UserProfileUpdate<? extends InterfaceC0254fo> withTelegramLoginValues(Iterable<String> iterable) {
+        String str = this.f1403a.c;
         ArrayList a2 = this.b.a(iterable);
         Ym ym = new Ym(200, "First party data telegram logins attribute", PublicLogger.getAnonymousInstance());
-        C0616u6 c0616u6 = this.f1320a;
-        return new UserProfileUpdate<>(new Xm(str, a2, 10, ym, c0616u6.f1144a, new C0589t4(c0616u6.b)));
+        C0615u6 c0615u6 = this.f1403a;
+        return new UserProfileUpdate<>(new Xm(str, a2, 10, ym, c0615u6.f1227a, new C0588t4(c0615u6.b)));
     }
 }

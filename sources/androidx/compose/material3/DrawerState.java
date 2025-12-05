@@ -57,8 +57,8 @@ public final class DrawerState {
     public DrawerState(DrawerValue drawerValue, Function1<? super DrawerValue, Boolean> function1) {
         MutableState mutableStateOf$default;
         this.confirmStateChange = function1;
-        TweenSpec access$getAnchoredDraggableDefaultAnimationSpec$p = NavigationDrawerKt.access$getAnchoredDraggableDefaultAnimationSpec$p();
-        this.anchoredDraggableMotionSpec = access$getAnchoredDraggableDefaultAnimationSpec$p;
+        TweenSpec tweenSpec = NavigationDrawerKt.AnchoredDraggableDefaultAnimationSpec;
+        this.anchoredDraggableMotionSpec = tweenSpec;
         this.anchoredDraggableState = AnchoredDraggableKt.AnchoredDraggableState(drawerValue, new Function1() { // from class: androidx.compose.material3.DrawerState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -73,7 +73,7 @@ public final class DrawerState {
                 anchoredDraggableState$lambda$3 = DrawerState.anchoredDraggableState$lambda$3(DrawerState.this);
                 return Float.valueOf(anchoredDraggableState$lambda$3);
             }
-        }, access$getAnchoredDraggableDefaultAnimationSpec$p, AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
+        }, tweenSpec, AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
         this.offset = new State<Float>() { // from class: androidx.compose.material3.DrawerState$offset$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // androidx.compose.runtime.State
@@ -116,12 +116,12 @@ public final class DrawerState {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float anchoredDraggableState$lambda$1(float f) {
-        return f * NavigationDrawerKt.access$getDrawerPositionalThreshold$p();
+        return f * NavigationDrawerKt.DrawerPositionalThreshold;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float anchoredDraggableState$lambda$3(DrawerState drawerState) {
-        return drawerState.requireDensity().mo430toPx0680j_4(NavigationDrawerKt.access$getDrawerVelocityThreshold$p());
+        return drawerState.requireDensity().mo464toPx0680j_4(NavigationDrawerKt.DrawerVelocityThreshold);
     }
 
     public final boolean isOpen() {

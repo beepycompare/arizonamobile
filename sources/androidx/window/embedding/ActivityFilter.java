@@ -3,51 +3,40 @@ package androidx.window.embedding;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
+import androidx.window.core.ActivityComponentInfo;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
 /* compiled from: ActivityFilter.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0002\u0010\u0006J\u0013\u0010\u000b\u001a\u00020\f2\b\u0010\r\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u000e\u001a\u00020\u000fH\u0016J\u000e\u0010\u0010\u001a\u00020\f2\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\f2\u0006\u0010\u0014\u001a\u00020\u0015J\b\u0010\u0016\u001a\u00020\u0005H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u0017"}, d2 = {"Landroidx/window/embedding/ActivityFilter;", "", "componentName", "Landroid/content/ComponentName;", "intentAction", "", "(Landroid/content/ComponentName;Ljava/lang/String;)V", "getComponentName", "()Landroid/content/ComponentName;", "getIntentAction", "()Ljava/lang/String;", "equals", "", "other", "hashCode", "", "matchesActivity", "activity", "Landroid/app/Activity;", "matchesIntent", "intent", "Landroid/content/Intent;", "toString", "window_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u001b\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007B\u001b\b\u0016\u0012\u0006\u0010\b\u001a\u00020\t\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\nJ\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0014\u001a\u00020\u0015J\u0013\u0010\u0018\u001a\u00020\u00102\b\u0010\u0019\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0016J\b\u0010\u001c\u001a\u00020\u0005H\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017¨\u0006\u001d"}, d2 = {"Landroidx/window/embedding/ActivityFilter;", "", "activityComponentInfo", "Landroidx/window/core/ActivityComponentInfo;", "intentAction", "", "<init>", "(Landroidx/window/core/ActivityComponentInfo;Ljava/lang/String;)V", "componentName", "Landroid/content/ComponentName;", "(Landroid/content/ComponentName;Ljava/lang/String;)V", "getActivityComponentInfo$window_release", "()Landroidx/window/core/ActivityComponentInfo;", "getIntentAction", "()Ljava/lang/String;", "matchesIntent", "", "intent", "Landroid/content/Intent;", "matchesActivity", "activity", "Landroid/app/Activity;", "getComponentName", "()Landroid/content/ComponentName;", "equals", "other", "hashCode", "", "toString", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ActivityFilter {
-    private final ComponentName componentName;
+    private final ActivityComponentInfo activityComponentInfo;
     private final String intentAction;
 
-    public ActivityFilter(ComponentName componentName, String str) {
-        Intrinsics.checkNotNullParameter(componentName, "componentName");
-        this.componentName = componentName;
+    public ActivityFilter(ActivityComponentInfo activityComponentInfo, String str) {
+        Intrinsics.checkNotNullParameter(activityComponentInfo, "activityComponentInfo");
+        this.activityComponentInfo = activityComponentInfo;
         this.intentAction = str;
-        String packageName = componentName.getPackageName();
-        Intrinsics.checkNotNullExpressionValue(packageName, "componentName.packageName");
-        String className = componentName.getClassName();
-        Intrinsics.checkNotNullExpressionValue(className, "componentName.className");
-        String str2 = packageName;
-        if (str2.length() <= 0) {
-            throw new IllegalArgumentException("Package name must not be empty".toString());
-        }
-        String str3 = className;
-        if (str3.length() <= 0) {
-            throw new IllegalArgumentException("Activity class name must not be empty.".toString());
-        }
-        if (StringsKt.contains$default((CharSequence) str2, (CharSequence) "*", false, 2, (Object) null) && StringsKt.indexOf$default((CharSequence) str2, "*", 0, false, 6, (Object) null) != packageName.length() - 1) {
-            throw new IllegalArgumentException("Wildcard in package name is only allowed at the end.".toString());
-        }
-        if (StringsKt.contains$default((CharSequence) str3, (CharSequence) "*", false, 2, (Object) null) && StringsKt.indexOf$default((CharSequence) str3, "*", 0, false, 6, (Object) null) != className.length() - 1) {
-            throw new IllegalArgumentException("Wildcard in class name is only allowed at the end.".toString());
-        }
+        MatcherUtils.INSTANCE.validateComponentName$window_release(activityComponentInfo.getPackageName(), activityComponentInfo.getClassName());
     }
 
-    public final ComponentName getComponentName() {
-        return this.componentName;
+    public final ActivityComponentInfo getActivityComponentInfo$window_release() {
+        return this.activityComponentInfo;
     }
 
     public final String getIntentAction() {
         return this.intentAction;
     }
 
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public ActivityFilter(ComponentName componentName, String str) {
+        this(new ActivityComponentInfo(componentName), str);
+        Intrinsics.checkNotNullParameter(componentName, "componentName");
+    }
+
     public final boolean matchesIntent(Intent intent) {
         Intrinsics.checkNotNullParameter(intent, "intent");
-        if (MatcherUtils.INSTANCE.areComponentsMatching$window_release(intent.getComponent(), this.componentName)) {
+        if (MatcherUtils.INSTANCE.isIntentMatching$window_release(intent, this.activityComponentInfo)) {
             String str = this.intentAction;
             return str == null || Intrinsics.areEqual(str, intent.getAction());
         }
@@ -56,15 +45,19 @@ public final class ActivityFilter {
 
     public final boolean matchesActivity(Activity activity) {
         Intrinsics.checkNotNullParameter(activity, "activity");
-        if (MatcherUtils.INSTANCE.areActivityOrIntentComponentsMatching$window_release(activity, this.componentName)) {
+        if (MatcherUtils.INSTANCE.isActivityMatching$window_release(activity, this.activityComponentInfo)) {
             String str = this.intentAction;
             if (str != null) {
                 Intent intent = activity.getIntent();
-                return Intrinsics.areEqual(str, intent == null ? null : intent.getAction());
+                return Intrinsics.areEqual(str, intent != null ? intent.getAction() : null);
             }
             return true;
         }
         return false;
+    }
+
+    public final ComponentName getComponentName() {
+        return new ComponentName(this.activityComponentInfo.getPackageName(), this.activityComponentInfo.getClassName());
     }
 
     public boolean equals(Object obj) {
@@ -73,18 +66,18 @@ public final class ActivityFilter {
         }
         if (obj instanceof ActivityFilter) {
             ActivityFilter activityFilter = (ActivityFilter) obj;
-            return Intrinsics.areEqual(this.componentName, activityFilter.componentName) && Intrinsics.areEqual(this.intentAction, activityFilter.intentAction);
+            return Intrinsics.areEqual(this.activityComponentInfo, activityFilter.activityComponentInfo) && Intrinsics.areEqual(this.intentAction, activityFilter.intentAction);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = this.componentName.hashCode() * 31;
+        int hashCode = this.activityComponentInfo.hashCode() * 31;
         String str = this.intentAction;
-        return hashCode + (str == null ? 0 : str.hashCode());
+        return hashCode + (str != null ? str.hashCode() : 0);
     }
 
     public String toString() {
-        return "ActivityFilter(componentName=" + this.componentName + ", intentAction=" + ((Object) this.intentAction) + ')';
+        return "ActivityFilter(componentName=" + this.activityComponentInfo + ", intentAction=" + this.intentAction + ')';
     }
 }

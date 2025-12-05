@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class Eg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f462a;
+    public final String f545a;
     public final Rn b;
 
     public Eg(String str, Rn rn) {
-        this.f462a = str;
+        this.f545a = str;
         this.b = rn;
     }
 }

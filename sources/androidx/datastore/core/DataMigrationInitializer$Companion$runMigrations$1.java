@@ -1,5 +1,6 @@
 package androidx.datastore.core;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.datastore.core.DataMigrationInitializer;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
@@ -7,8 +8,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DataMigrationInitializer.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.DataMigrationInitializer$Companion", f = "DataMigrationInitializer.kt", i = {0, 1}, l = {42, 57}, m = "runMigrations", n = {"cleanUps", "cleanUpFailure"}, s = {"L$0", "L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.DataMigrationInitializer$Companion", f = "DataMigrationInitializer.kt", i = {0, 1}, l = {39, ConstraintLayout.LayoutParams.Table.LAYOUT_MARGIN_BASELINE}, m = "runMigrations", n = {"cleanUps", "cleanUpFailure"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class DataMigrationInitializer$Companion$runMigrations$1<T> extends ContinuationImpl {
     Object L$0;

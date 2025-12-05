@@ -7,10 +7,10 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: SelectionManager.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-/* synthetic */ class SelectionManager$updateSelectionTextToolbar$2 extends FunctionReferenceImpl implements Function0<Unit> {
+final /* synthetic */ class SelectionManager$updateSelectionTextToolbar$2 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SelectionManager$updateSelectionTextToolbar$2(Object obj) {
-        super(0, obj, SelectionManager.class, "selectAll", "selectAll$foundation_release()V", 0);
+        super(0, obj, SelectionManager.class, "selectAll", "selectAll$foundation()V", 0);
     }
 
     @Override // kotlin.jvm.functions.Function0
@@ -21,6 +21,6 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        ((SelectionManager) this.receiver).selectAll$foundation_release();
+        ((SelectionManager) this.receiver).selectAll$foundation();
     }
 }

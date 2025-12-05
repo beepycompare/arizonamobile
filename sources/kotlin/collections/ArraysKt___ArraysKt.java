@@ -11832,7 +11832,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <T> float m10274maxOf(T[] tArr, Function1<? super T, Float> selector) {
+    private static final <T> float m10569maxOf(T[] tArr, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -11854,7 +11854,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10268maxOf(byte[] bArr, Function1<? super Byte, Float> selector) {
+    private static final float m10563maxOf(byte[] bArr, Function1<? super Byte, Float> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -11876,7 +11876,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10275maxOf(short[] sArr, Function1<? super Short, Float> selector) {
+    private static final float m10570maxOf(short[] sArr, Function1<? super Short, Float> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -11898,7 +11898,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10272maxOf(int[] iArr, Function1<? super Integer, Float> selector) {
+    private static final float m10567maxOf(int[] iArr, Function1<? super Integer, Float> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -11920,7 +11920,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10273maxOf(long[] jArr, Function1<? super Long, Float> selector) {
+    private static final float m10568maxOf(long[] jArr, Function1<? super Long, Float> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -11942,7 +11942,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10271maxOf(float[] fArr, Function1<? super Float, Float> selector) {
+    private static final float m10566maxOf(float[] fArr, Function1<? super Float, Float> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -11964,7 +11964,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10270maxOf(double[] dArr, Function1<? super Double, Float> selector) {
+    private static final float m10565maxOf(double[] dArr, Function1<? super Double, Float> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -11986,7 +11986,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10276maxOf(boolean[] zArr, Function1<? super Boolean, Float> selector) {
+    private static final float m10571maxOf(boolean[] zArr, Function1<? super Boolean, Float> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -12008,7 +12008,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m10269maxOf(char[] cArr, Function1<? super Character, Float> selector) {
+    private static final float m10564maxOf(char[] cArr, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -12030,7 +12030,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <T, R extends Comparable<? super R>> R m10283maxOf(T[] tArr, Function1<? super T, ? extends R> selector) {
+    private static final <T, R extends Comparable<? super R>> R m10578maxOf(T[] tArr, Function1<? super T, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -12055,7 +12055,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10277maxOf(byte[] bArr, Function1<? super Byte, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10572maxOf(byte[] bArr, Function1<? super Byte, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -12080,7 +12080,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10284maxOf(short[] sArr, Function1<? super Short, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10579maxOf(short[] sArr, Function1<? super Short, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -12105,7 +12105,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10281maxOf(int[] iArr, Function1<? super Integer, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10576maxOf(int[] iArr, Function1<? super Integer, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -12130,7 +12130,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10282maxOf(long[] jArr, Function1<? super Long, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10577maxOf(long[] jArr, Function1<? super Long, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -12155,7 +12155,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10280maxOf(float[] fArr, Function1<? super Float, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10575maxOf(float[] fArr, Function1<? super Float, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -12180,7 +12180,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10279maxOf(double[] dArr, Function1<? super Double, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10574maxOf(double[] dArr, Function1<? super Double, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -12205,7 +12205,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10285maxOf(boolean[] zArr, Function1<? super Boolean, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10580maxOf(boolean[] zArr, Function1<? super Boolean, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -12230,7 +12230,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10278maxOf(char[] cArr, Function1<? super Character, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10573maxOf(char[] cArr, Function1<? super Character, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -12255,7 +12255,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final <T> Double m10292maxOfOrNull(T[] tArr, Function1<? super T, Double> selector) {
+    private static final <T> Double m10587maxOfOrNull(T[] tArr, Function1<? super T, Double> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -12277,7 +12277,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10286maxOfOrNull(byte[] bArr, Function1<? super Byte, Double> selector) {
+    private static final Double m10581maxOfOrNull(byte[] bArr, Function1<? super Byte, Double> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -12299,7 +12299,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10293maxOfOrNull(short[] sArr, Function1<? super Short, Double> selector) {
+    private static final Double m10588maxOfOrNull(short[] sArr, Function1<? super Short, Double> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -12321,7 +12321,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10290maxOfOrNull(int[] iArr, Function1<? super Integer, Double> selector) {
+    private static final Double m10585maxOfOrNull(int[] iArr, Function1<? super Integer, Double> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -12343,7 +12343,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10291maxOfOrNull(long[] jArr, Function1<? super Long, Double> selector) {
+    private static final Double m10586maxOfOrNull(long[] jArr, Function1<? super Long, Double> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -12365,7 +12365,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10289maxOfOrNull(float[] fArr, Function1<? super Float, Double> selector) {
+    private static final Double m10584maxOfOrNull(float[] fArr, Function1<? super Float, Double> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -12387,7 +12387,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10288maxOfOrNull(double[] dArr, Function1<? super Double, Double> selector) {
+    private static final Double m10583maxOfOrNull(double[] dArr, Function1<? super Double, Double> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -12409,7 +12409,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10294maxOfOrNull(boolean[] zArr, Function1<? super Boolean, Double> selector) {
+    private static final Double m10589maxOfOrNull(boolean[] zArr, Function1<? super Boolean, Double> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -12431,7 +12431,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Double m10287maxOfOrNull(char[] cArr, Function1<? super Character, Double> selector) {
+    private static final Double m10582maxOfOrNull(char[] cArr, Function1<? super Character, Double> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -12453,7 +12453,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final <T> Float m10301maxOfOrNull(T[] tArr, Function1<? super T, Float> selector) {
+    private static final <T> Float m10596maxOfOrNull(T[] tArr, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -12475,7 +12475,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10295maxOfOrNull(byte[] bArr, Function1<? super Byte, Float> selector) {
+    private static final Float m10590maxOfOrNull(byte[] bArr, Function1<? super Byte, Float> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -12497,7 +12497,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10302maxOfOrNull(short[] sArr, Function1<? super Short, Float> selector) {
+    private static final Float m10597maxOfOrNull(short[] sArr, Function1<? super Short, Float> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -12519,7 +12519,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10299maxOfOrNull(int[] iArr, Function1<? super Integer, Float> selector) {
+    private static final Float m10594maxOfOrNull(int[] iArr, Function1<? super Integer, Float> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -12541,7 +12541,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10300maxOfOrNull(long[] jArr, Function1<? super Long, Float> selector) {
+    private static final Float m10595maxOfOrNull(long[] jArr, Function1<? super Long, Float> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -12563,7 +12563,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10298maxOfOrNull(float[] fArr, Function1<? super Float, Float> selector) {
+    private static final Float m10593maxOfOrNull(float[] fArr, Function1<? super Float, Float> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -12585,7 +12585,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10297maxOfOrNull(double[] dArr, Function1<? super Double, Float> selector) {
+    private static final Float m10592maxOfOrNull(double[] dArr, Function1<? super Double, Float> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -12607,7 +12607,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10303maxOfOrNull(boolean[] zArr, Function1<? super Boolean, Float> selector) {
+    private static final Float m10598maxOfOrNull(boolean[] zArr, Function1<? super Boolean, Float> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -12629,7 +12629,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m10296maxOfOrNull(char[] cArr, Function1<? super Character, Float> selector) {
+    private static final Float m10591maxOfOrNull(char[] cArr, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -14922,7 +14922,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <T> float m10310minOf(T[] tArr, Function1<? super T, Float> selector) {
+    private static final <T> float m10605minOf(T[] tArr, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -14944,7 +14944,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10304minOf(byte[] bArr, Function1<? super Byte, Float> selector) {
+    private static final float m10599minOf(byte[] bArr, Function1<? super Byte, Float> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -14966,7 +14966,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10311minOf(short[] sArr, Function1<? super Short, Float> selector) {
+    private static final float m10606minOf(short[] sArr, Function1<? super Short, Float> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -14988,7 +14988,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10308minOf(int[] iArr, Function1<? super Integer, Float> selector) {
+    private static final float m10603minOf(int[] iArr, Function1<? super Integer, Float> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -15010,7 +15010,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10309minOf(long[] jArr, Function1<? super Long, Float> selector) {
+    private static final float m10604minOf(long[] jArr, Function1<? super Long, Float> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -15032,7 +15032,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10307minOf(float[] fArr, Function1<? super Float, Float> selector) {
+    private static final float m10602minOf(float[] fArr, Function1<? super Float, Float> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -15054,7 +15054,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10306minOf(double[] dArr, Function1<? super Double, Float> selector) {
+    private static final float m10601minOf(double[] dArr, Function1<? super Double, Float> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -15076,7 +15076,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10312minOf(boolean[] zArr, Function1<? super Boolean, Float> selector) {
+    private static final float m10607minOf(boolean[] zArr, Function1<? super Boolean, Float> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -15098,7 +15098,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m10305minOf(char[] cArr, Function1<? super Character, Float> selector) {
+    private static final float m10600minOf(char[] cArr, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -15120,7 +15120,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <T, R extends Comparable<? super R>> R m10319minOf(T[] tArr, Function1<? super T, ? extends R> selector) {
+    private static final <T, R extends Comparable<? super R>> R m10614minOf(T[] tArr, Function1<? super T, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -15145,7 +15145,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10313minOf(byte[] bArr, Function1<? super Byte, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10608minOf(byte[] bArr, Function1<? super Byte, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -15170,7 +15170,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10320minOf(short[] sArr, Function1<? super Short, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10615minOf(short[] sArr, Function1<? super Short, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -15195,7 +15195,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10317minOf(int[] iArr, Function1<? super Integer, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10612minOf(int[] iArr, Function1<? super Integer, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -15220,7 +15220,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10318minOf(long[] jArr, Function1<? super Long, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10613minOf(long[] jArr, Function1<? super Long, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -15245,7 +15245,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10316minOf(float[] fArr, Function1<? super Float, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10611minOf(float[] fArr, Function1<? super Float, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -15270,7 +15270,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10315minOf(double[] dArr, Function1<? super Double, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10610minOf(double[] dArr, Function1<? super Double, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -15295,7 +15295,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10321minOf(boolean[] zArr, Function1<? super Boolean, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10616minOf(boolean[] zArr, Function1<? super Boolean, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -15320,7 +15320,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m10314minOf(char[] cArr, Function1<? super Character, ? extends R> selector) {
+    private static final <R extends Comparable<? super R>> R m10609minOf(char[] cArr, Function1<? super Character, ? extends R> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -15345,7 +15345,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final <T> Double m10328minOfOrNull(T[] tArr, Function1<? super T, Double> selector) {
+    private static final <T> Double m10623minOfOrNull(T[] tArr, Function1<? super T, Double> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -15367,7 +15367,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10322minOfOrNull(byte[] bArr, Function1<? super Byte, Double> selector) {
+    private static final Double m10617minOfOrNull(byte[] bArr, Function1<? super Byte, Double> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -15389,7 +15389,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10329minOfOrNull(short[] sArr, Function1<? super Short, Double> selector) {
+    private static final Double m10624minOfOrNull(short[] sArr, Function1<? super Short, Double> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -15411,7 +15411,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10326minOfOrNull(int[] iArr, Function1<? super Integer, Double> selector) {
+    private static final Double m10621minOfOrNull(int[] iArr, Function1<? super Integer, Double> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -15433,7 +15433,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10327minOfOrNull(long[] jArr, Function1<? super Long, Double> selector) {
+    private static final Double m10622minOfOrNull(long[] jArr, Function1<? super Long, Double> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -15455,7 +15455,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10325minOfOrNull(float[] fArr, Function1<? super Float, Double> selector) {
+    private static final Double m10620minOfOrNull(float[] fArr, Function1<? super Float, Double> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -15477,7 +15477,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10324minOfOrNull(double[] dArr, Function1<? super Double, Double> selector) {
+    private static final Double m10619minOfOrNull(double[] dArr, Function1<? super Double, Double> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -15499,7 +15499,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10330minOfOrNull(boolean[] zArr, Function1<? super Boolean, Double> selector) {
+    private static final Double m10625minOfOrNull(boolean[] zArr, Function1<? super Boolean, Double> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -15521,7 +15521,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Double m10323minOfOrNull(char[] cArr, Function1<? super Character, Double> selector) {
+    private static final Double m10618minOfOrNull(char[] cArr, Function1<? super Character, Double> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -15543,7 +15543,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final <T> Float m10337minOfOrNull(T[] tArr, Function1<? super T, Float> selector) {
+    private static final <T> Float m10632minOfOrNull(T[] tArr, Function1<? super T, Float> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (tArr.length == 0) {
@@ -15565,7 +15565,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10331minOfOrNull(byte[] bArr, Function1<? super Byte, Float> selector) {
+    private static final Float m10626minOfOrNull(byte[] bArr, Function1<? super Byte, Float> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (bArr.length == 0) {
@@ -15587,7 +15587,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10338minOfOrNull(short[] sArr, Function1<? super Short, Float> selector) {
+    private static final Float m10633minOfOrNull(short[] sArr, Function1<? super Short, Float> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (sArr.length == 0) {
@@ -15609,7 +15609,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10335minOfOrNull(int[] iArr, Function1<? super Integer, Float> selector) {
+    private static final Float m10630minOfOrNull(int[] iArr, Function1<? super Integer, Float> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (iArr.length == 0) {
@@ -15631,7 +15631,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10336minOfOrNull(long[] jArr, Function1<? super Long, Float> selector) {
+    private static final Float m10631minOfOrNull(long[] jArr, Function1<? super Long, Float> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (jArr.length == 0) {
@@ -15653,7 +15653,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10334minOfOrNull(float[] fArr, Function1<? super Float, Float> selector) {
+    private static final Float m10629minOfOrNull(float[] fArr, Function1<? super Float, Float> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (fArr.length == 0) {
@@ -15675,7 +15675,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10333minOfOrNull(double[] dArr, Function1<? super Double, Float> selector) {
+    private static final Float m10628minOfOrNull(double[] dArr, Function1<? super Double, Float> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (dArr.length == 0) {
@@ -15697,7 +15697,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10339minOfOrNull(boolean[] zArr, Function1<? super Boolean, Float> selector) {
+    private static final Float m10634minOfOrNull(boolean[] zArr, Function1<? super Boolean, Float> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (zArr.length == 0) {
@@ -15719,7 +15719,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m10332minOfOrNull(char[] cArr, Function1<? super Character, Float> selector) {
+    private static final Float m10627minOfOrNull(char[] cArr, Function1<? super Character, Float> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
         if (cArr.length == 0) {
@@ -19883,181 +19883,181 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     private static final <T> int sumOfUInt(T[] tArr, Function1<? super T, UInt> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (T t : tArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(t).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(t).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(byte[] bArr, Function1<? super Byte, UInt> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (byte b : bArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Byte.valueOf(b)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Byte.valueOf(b)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(short[] sArr, Function1<? super Short, UInt> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (short s : sArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Short.valueOf(s)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Short.valueOf(s)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(int[] iArr, Function1<? super Integer, UInt> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (int i : iArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Integer.valueOf(i)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Integer.valueOf(i)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(long[] jArr, Function1<? super Long, UInt> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (long j : jArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Long.valueOf(j)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Long.valueOf(j)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(float[] fArr, Function1<? super Float, UInt> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (float f : fArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Float.valueOf(f)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Float.valueOf(f)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(double[] dArr, Function1<? super Double, UInt> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (double d : dArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Double.valueOf(d)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Double.valueOf(d)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(boolean[] zArr, Function1<? super Boolean, UInt> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (boolean z : zArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Boolean.valueOf(z)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Boolean.valueOf(z)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final int sumOfUInt(char[] cArr, Function1<? super Character, UInt> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m10004constructorimpl = UInt.m10004constructorimpl(0);
+        int m10299constructorimpl = UInt.m10299constructorimpl(0);
         for (char c : cArr) {
-            m10004constructorimpl = UInt.m10004constructorimpl(m10004constructorimpl + selector.invoke(Character.valueOf(c)).m10056unboximpl());
+            m10299constructorimpl = UInt.m10299constructorimpl(m10299constructorimpl + selector.invoke(Character.valueOf(c)).m10351unboximpl());
         }
-        return m10004constructorimpl;
+        return m10299constructorimpl;
     }
 
     private static final <T> long sumOfULong(T[] tArr, Function1<? super T, ULong> selector) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (T t : tArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(t).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(t).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(byte[] bArr, Function1<? super Byte, ULong> selector) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (byte b : bArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Byte.valueOf(b)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Byte.valueOf(b)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(short[] sArr, Function1<? super Short, ULong> selector) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (short s : sArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Short.valueOf(s)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Short.valueOf(s)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(int[] iArr, Function1<? super Integer, ULong> selector) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (int i : iArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Integer.valueOf(i)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Integer.valueOf(i)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(long[] jArr, Function1<? super Long, ULong> selector) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (long j : jArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Long.valueOf(j)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Long.valueOf(j)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(float[] fArr, Function1<? super Float, ULong> selector) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (float f : fArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Float.valueOf(f)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Float.valueOf(f)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(double[] dArr, Function1<? super Double, ULong> selector) {
         Intrinsics.checkNotNullParameter(dArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (double d : dArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Double.valueOf(d)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Double.valueOf(d)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(boolean[] zArr, Function1<? super Boolean, ULong> selector) {
         Intrinsics.checkNotNullParameter(zArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (boolean z : zArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Boolean.valueOf(z)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Boolean.valueOf(z)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     private static final long sumOfULong(char[] cArr, Function1<? super Character, ULong> selector) {
         Intrinsics.checkNotNullParameter(cArr, "<this>");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m10083constructorimpl = ULong.m10083constructorimpl(0L);
+        long m10378constructorimpl = ULong.m10378constructorimpl(0L);
         for (char c : cArr) {
-            m10083constructorimpl = ULong.m10083constructorimpl(m10083constructorimpl + selector.invoke(Character.valueOf(c)).m10135unboximpl());
+            m10378constructorimpl = ULong.m10378constructorimpl(m10378constructorimpl + selector.invoke(Character.valueOf(c)).m10430unboximpl());
         }
-        return m10083constructorimpl;
+        return m10378constructorimpl;
     }
 
     public static final <T> T[] requireNoNulls(T[] tArr) {

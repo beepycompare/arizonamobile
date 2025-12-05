@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.workshop.presentation;
 
 import android.view.View;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -32,7 +31,7 @@ public final class WorkshopMenuViewHolder extends RecyclerView.ViewHolder {
         itemMenuBtnBinding.tvCraftMenu.setText(item);
         if (i == i2) {
             itemMenuBtnBinding.parentLayout.setBackgroundResource(R.drawable.paralel_white);
-            itemMenuBtnBinding.tvCraftMenu.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            itemMenuBtnBinding.tvCraftMenu.setTextColor(-16777216);
         } else {
             itemMenuBtnBinding.parentLayout.setBackgroundResource(R.drawable.paralel_grey);
             itemMenuBtnBinding.tvCraftMenu.setTextColor(-1);

@@ -29,7 +29,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Recomposer.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2", f = "Recomposer.kt", i = {0, 0}, l = {1159}, m = "invokeSuspend", n = {"callingJob", "unregisterApplyObserver"}, s = {"L$0", "L$1"})
+@DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2", f = "Recomposer.kt", i = {0, 0}, l = {1173}, m = "invokeSuspend", n = {"callingJob", "unregisterApplyObserver"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes.dex */
 public final class Recomposer$recompositionRunner$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function3<CoroutineScope, MonotonicFrameClock, Continuation<? super Unit>, Object> $block;
@@ -87,9 +87,9 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
             ObserverHandle registerApplyObserver = companion.registerApplyObserver(new Function2() { // from class: androidx.compose.runtime.Recomposer$recompositionRunner$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit invokeSuspend$lambda$2;
-                    invokeSuspend$lambda$2 = Recomposer$recompositionRunner$2.invokeSuspend$lambda$2(Recomposer.this, (Set) obj3, (Snapshot) obj4);
-                    return invokeSuspend$lambda$2;
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = Recomposer$recompositionRunner$2.invokeSuspend$lambda$0(Recomposer.this, (Set) obj3, (Snapshot) obj4);
+                    return invokeSuspend$lambda$0;
                 }
             });
             Recomposer.Companion companion2 = Recomposer.Companion;
@@ -159,7 +159,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invokeSuspend$lambda$2(Recomposer recomposer, Set set, Snapshot snapshot) {
+    public static final Unit invokeSuspend$lambda$0(Recomposer recomposer, Set set, Snapshot snapshot) {
         MutableStateFlow mutableStateFlow;
         CancellableContinuation cancellableContinuation;
         synchronized (recomposer.stateLock) {
@@ -182,7 +182,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                                         Object obj = objArr[(i << 3) + i3];
                                         if (obj instanceof StateObjectImpl) {
                                             ReaderKind.Companion companion = ReaderKind.Companion;
-                                            if (!((StateObjectImpl) obj).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(1))) {
+                                            if (!((StateObjectImpl) obj).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(1))) {
                                             }
                                         }
                                         mutableScatterSet.add(obj);
@@ -203,7 +203,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                     for (Object obj2 : set) {
                         if (obj2 instanceof StateObjectImpl) {
                             ReaderKind.Companion companion2 = ReaderKind.Companion;
-                            if (!((StateObjectImpl) obj2).m4756isReadInh_f27i8$runtime(ReaderKind.m4739constructorimpl(1))) {
+                            if (!((StateObjectImpl) obj2).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(1))) {
                             }
                         }
                         mutableScatterSet.add(obj2);
@@ -216,7 +216,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
         }
         if (cancellableContinuation != null) {
             Result.Companion companion3 = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9904constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m10199constructorimpl(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }
@@ -224,7 +224,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: Recomposer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2$2", f = "Recomposer.kt", i = {}, l = {1159}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2$2", f = "Recomposer.kt", i = {}, l = {1173}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.runtime.Recomposer$recompositionRunner$2$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

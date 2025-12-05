@@ -6,7 +6,7 @@ import androidx.compose.foundation.content.TransferableContent;
 import kotlin.Metadata;
 import kotlin.ranges.RangesKt;
 /* compiled from: ReceiveContentConfiguration.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\n\u0010\b\u001a\u0004\u0018\u00010\tH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\n\u001a\u00020\tX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"Landroidx/compose/foundation/content/internal/DynamicReceiveContentConfiguration;", "Landroidx/compose/foundation/content/internal/ReceiveContentConfiguration;", "receiveContentNode", "Landroidx/compose/foundation/content/ReceiveContentNode;", "<init>", "(Landroidx/compose/foundation/content/ReceiveContentNode;)V", "getReceiveContentNode", "()Landroidx/compose/foundation/content/ReceiveContentNode;", "getParentReceiveContentListener", "Landroidx/compose/foundation/content/ReceiveContentListener;", "receiveContentListener", "getReceiveContentListener", "()Landroidx/compose/foundation/content/ReceiveContentListener;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\n\u0010\b\u001a\u0004\u0018\u00010\tH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\n\u001a\u00020\tX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"Landroidx/compose/foundation/content/internal/DynamicReceiveContentConfiguration;", "Landroidx/compose/foundation/content/internal/ReceiveContentConfiguration;", "receiveContentNode", "Landroidx/compose/foundation/content/ReceiveContentNode;", "<init>", "(Landroidx/compose/foundation/content/ReceiveContentNode;)V", "getReceiveContentNode", "()Landroidx/compose/foundation/content/ReceiveContentNode;", "getParentReceiveContentListener", "Landroidx/compose/foundation/content/ReceiveContentListener;", "receiveContentListener", "getReceiveContentListener", "()Landroidx/compose/foundation/content/ReceiveContentListener;", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DynamicReceiveContentConfiguration extends ReceiveContentConfiguration {
     public static final int $stable = 8;
@@ -67,12 +67,12 @@ public final class DynamicReceiveContentConfiguration extends ReceiveContentConf
     };
     private final ReceiveContentNode receiveContentNode;
 
-    public final ReceiveContentNode getReceiveContentNode() {
-        return this.receiveContentNode;
-    }
-
     public DynamicReceiveContentConfiguration(ReceiveContentNode receiveContentNode) {
         this.receiveContentNode = receiveContentNode;
+    }
+
+    public final ReceiveContentNode getReceiveContentNode() {
+        return this.receiveContentNode;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Deel met</string>
     <string name="abc_shareactionprovider_share_with_application">Deel met %s</string>
     <string name="abc_toolbar_collapse_description">Vou in</string>
-    <string name="autofill">Outovul</string>
+    <string name="androidx_compose_foundation_autofill">Outovul</string>
+    <string name="androidx_compose_ui_autofill">Outovul</string>
     <string name="bottomsheet_action_collapse">Vou die onderste blad in</string>
     <string name="bottomsheet_action_expand">Vou die onderste blad uit</string>
     <string name="bottomsheet_action_expand_halfway">Vou halfpad uit</string>

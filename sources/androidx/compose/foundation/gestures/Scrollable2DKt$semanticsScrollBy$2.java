@@ -6,6 +6,7 @@ import androidx.compose.animation.core.TwoWayConverter;
 import androidx.compose.animation.core.VectorConvertersKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -18,10 +19,12 @@ import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable2D.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2", f = "Scrollable2D.kt", i = {}, l = {527}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2", f = "Scrollable2D.kt", i = {}, l = {TypedValues.PositionType.TYPE_POSITION_TYPE}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
-    final /* synthetic */ long $offset;
+
+    /* renamed from: $$v$c$androidx-compose-ui-geometry-Offset$-offset$0  reason: not valid java name */
+    final /* synthetic */ long f13$$v$c$androidxcomposeuigeometryOffset$offset$0;
     final /* synthetic */ Ref.LongRef $previousValue;
     private /* synthetic */ Object L$0;
     int label;
@@ -30,13 +33,13 @@ public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda impl
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Scrollable2DKt$semanticsScrollBy$2(long j, Ref.LongRef longRef, Continuation<? super Scrollable2DKt$semanticsScrollBy$2> continuation) {
         super(2, continuation);
-        this.$offset = j;
+        this.f13$$v$c$androidxcomposeuigeometryOffset$offset$0 = j;
         this.$previousValue = longRef;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Scrollable2DKt$semanticsScrollBy$2 scrollable2DKt$semanticsScrollBy$2 = new Scrollable2DKt$semanticsScrollBy$2(this.$offset, this.$previousValue, continuation);
+        Scrollable2DKt$semanticsScrollBy$2 scrollable2DKt$semanticsScrollBy$2 = new Scrollable2DKt$semanticsScrollBy$2(this.f13$$v$c$androidxcomposeuigeometryOffset$offset$0, this.$previousValue, continuation);
         scrollable2DKt$semanticsScrollBy$2.L$0 = obj;
         return scrollable2DKt$semanticsScrollBy$2;
     }
@@ -54,11 +57,11 @@ public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda impl
             ResultKt.throwOnFailure(obj);
             final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
             TwoWayConverter<Offset, AnimationVector2D> vectorConverter = VectorConvertersKt.getVectorConverter(Offset.Companion);
-            Offset m5025boximpl = Offset.m5025boximpl(Offset.Companion.m5052getZeroF1C5BW0());
-            Offset m5025boximpl2 = Offset.m5025boximpl(this.$offset);
+            Offset m5168boximpl = Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0());
+            Offset m5168boximpl2 = Offset.m5168boximpl(this.f13$$v$c$androidxcomposeuigeometryOffset$offset$0);
             final Ref.LongRef longRef = this.$previousValue;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(vectorConverter, m5025boximpl, m5025boximpl2, null, null, new Function2() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animate$default(vectorConverter, m5168boximpl, m5168boximpl2, null, null, new Function2() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     Unit invokeSuspend$lambda$0;
@@ -78,7 +81,7 @@ public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda impl
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, NestedScrollScope nestedScrollScope, Offset offset, Offset offset2) {
-        longRef.element = Offset.m5041plusMKHz9U(longRef.element, nestedScrollScope.mo534scrollByOzD1aCk(Offset.m5040minusMKHz9U(offset.m5046unboximpl(), longRef.element), NestedScrollSource.Companion.m6463getUserInputWNlRxjI()));
+        longRef.element = Offset.m5184plusMKHz9U(longRef.element, nestedScrollScope.mo611scrollByOzD1aCk(Offset.m5183minusMKHz9U(offset.m5189unboximpl(), longRef.element), NestedScrollSource.Companion.m6624getUserInputWNlRxjI()));
         return Unit.INSTANCE;
     }
 }

@@ -96,7 +96,7 @@ public final class FlowLayoutBuildingBlocks {
         }
 
         /* renamed from: getEllipsisSize-OO21N7I  reason: not valid java name */
-        public final long m756getEllipsisSizeOO21N7I() {
+        public final long m837getEllipsisSizeOO21N7I() {
             return this.ellipsisSize;
         }
 
@@ -112,14 +112,14 @@ public final class FlowLayoutBuildingBlocks {
     public final WrapEllipsisInfo getWrapEllipsisInfo(WrapInfo wrapInfo, boolean z, int i, int i2, int i3, int i4) {
         WrapEllipsisInfo ellipsisInfo$foundation_layout;
         if (wrapInfo.isLastItemInContainer() && (ellipsisInfo$foundation_layout = this.overflow.ellipsisInfo$foundation_layout(z, i, i2)) != null) {
-            ellipsisInfo$foundation_layout.setPlaceEllipsisOnLastContentLine(i >= 0 && (i4 == 0 || (i3 - IntIntPair.m41getFirstimpl(ellipsisInfo$foundation_layout.m756getEllipsisSizeOO21N7I()) >= 0 && i4 < this.maxItemsInMainAxis)));
+            ellipsisInfo$foundation_layout.setPlaceEllipsisOnLastContentLine(i >= 0 && (i4 == 0 || (i3 - IntIntPair.m41getFirstimpl(ellipsisInfo$foundation_layout.m837getEllipsisSizeOO21N7I()) >= 0 && i4 < this.maxItemsInMainAxis)));
             return ellipsisInfo$foundation_layout;
         }
         return null;
     }
 
     /* renamed from: getWrapInfo-OpUlnko  reason: not valid java name */
-    public final WrapInfo m755getWrapInfoOpUlnko(boolean z, int i, long j, IntIntPair intIntPair, int i2, int i3, int i4, boolean z2, boolean z3) {
+    public final WrapInfo m836getWrapInfoOpUlnko(boolean z, int i, long j, IntIntPair intIntPair, int i2, int i3, int i4, boolean z2, boolean z3) {
         int i5 = i3 + i4;
         if (intIntPair == null) {
             return new WrapInfo(true, true);
@@ -131,18 +131,18 @@ public final class FlowLayoutBuildingBlocks {
             if (z2) {
                 return new WrapInfo(true, true);
             }
-            return new WrapInfo(true, m755getWrapInfoOpUlnko(z, 0, IntIntPair.m37constructorimpl(Constraints.m7949getMaxWidthimpl(this.constraints), (IntIntPair.m42getSecondimpl(j) - this.crossAxisSpacing) - i4), IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(IntIntPair.m41getFirstimpl(intIntPair.m45unboximpl()) - this.mainAxisSpacing, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()))), i2 + 1, i5, 0, true, false).isLastItemInContainer());
+            return new WrapInfo(true, m836getWrapInfoOpUlnko(z, 0, IntIntPair.m37constructorimpl(Constraints.m8211getMaxWidthimpl(this.constraints), (IntIntPair.m42getSecondimpl(j) - this.crossAxisSpacing) - i4), IntIntPair.m34boximpl(IntIntPair.m37constructorimpl(IntIntPair.m41getFirstimpl(intIntPair.m45unboximpl()) - this.mainAxisSpacing, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()))), i2 + 1, i5, 0, true, false).isLastItemInContainer());
         }
         int max = i3 + Math.max(i4, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()));
-        IntIntPair m763ellipsisSizeF35zmw$foundation_layout = z3 ? null : this.overflow.m763ellipsisSizeF35zmw$foundation_layout(z, i2, max);
-        if (m763ellipsisSizeF35zmw$foundation_layout != null) {
-            m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl();
-            if (i + 1 >= this.maxItemsInMainAxis || ((IntIntPair.m41getFirstimpl(j) - IntIntPair.m41getFirstimpl(intIntPair.m45unboximpl())) - this.mainAxisSpacing) - IntIntPair.m41getFirstimpl(m763ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) < 0) {
+        IntIntPair m845ellipsisSizeF35zmw$foundation_layout = z3 ? null : this.overflow.m845ellipsisSizeF35zmw$foundation_layout(z, i2, max);
+        if (m845ellipsisSizeF35zmw$foundation_layout != null) {
+            m845ellipsisSizeF35zmw$foundation_layout.m45unboximpl();
+            if (i + 1 >= this.maxItemsInMainAxis || ((IntIntPair.m41getFirstimpl(j) - IntIntPair.m41getFirstimpl(intIntPair.m45unboximpl())) - this.mainAxisSpacing) - IntIntPair.m41getFirstimpl(m845ellipsisSizeF35zmw$foundation_layout.m45unboximpl()) < 0) {
                 if (z3) {
                     return new WrapInfo(true, true);
                 }
-                WrapInfo m755getWrapInfoOpUlnko = m755getWrapInfoOpUlnko(false, 0, IntIntPair.m37constructorimpl(Constraints.m7949getMaxWidthimpl(this.constraints), (IntIntPair.m42getSecondimpl(j) - this.crossAxisSpacing) - Math.max(i4, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()))), m763ellipsisSizeF35zmw$foundation_layout, i2 + 1, max, 0, true, true);
-                return new WrapInfo(m755getWrapInfoOpUlnko.isLastItemInContainer(), m755getWrapInfoOpUlnko.isLastItemInContainer());
+                WrapInfo m836getWrapInfoOpUlnko = m836getWrapInfoOpUlnko(false, 0, IntIntPair.m37constructorimpl(Constraints.m8211getMaxWidthimpl(this.constraints), (IntIntPair.m42getSecondimpl(j) - this.crossAxisSpacing) - Math.max(i4, IntIntPair.m42getSecondimpl(intIntPair.m45unboximpl()))), m845ellipsisSizeF35zmw$foundation_layout, i2 + 1, max, 0, true, true);
+                return new WrapInfo(m836getWrapInfoOpUlnko.isLastItemInContainer(), m836getWrapInfoOpUlnko.isLastItemInContainer());
             }
         }
         return new WrapInfo(false, false);

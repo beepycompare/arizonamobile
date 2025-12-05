@@ -1,0 +1,12 @@
+package io.appmetrica.analytics.impl;
+/* renamed from: io.appmetrica.analytics.impl.hc  reason: case insensitive filesystem */
+/* loaded from: classes5.dex */
+public final class C0294hc {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ C0320ic f1005a;
+
+    public C0294hc(C0320ic c0320ic) {
+        this.f1005a = c0320ic;
+    }
+}

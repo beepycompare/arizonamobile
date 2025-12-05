@@ -22,7 +22,7 @@ public final class Shapes_androidKt {
         return roundedPolygon.transformed(new PointTransformer() { // from class: androidx.graphics.shapes.Shapes_androidKt$transformed$1
             @Override // androidx.graphics.shapes.PointTransformer
             /* renamed from: transform-XgqJiTY */
-            public final long mo8562transformXgqJiTY(float f, float f2) {
+            public final long mo8831transformXgqJiTY(float f, float f2) {
                 float[] fArr2 = fArr;
                 fArr2[0] = f;
                 fArr2[1] = f2;

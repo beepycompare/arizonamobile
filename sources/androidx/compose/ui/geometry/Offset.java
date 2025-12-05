@@ -11,27 +11,27 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Offset {
     private final long packedValue;
     public static final Companion Companion = new Companion(null);
-    private static final long Zero = m5028constructorimpl(0);
-    private static final long Infinite = m5028constructorimpl(InlineClassHelperKt.DualFloatInfinityBase);
-    private static final long Unspecified = m5028constructorimpl(InlineClassHelperKt.UnspecifiedPackedFloats);
+    private static final long Zero = m5171constructorimpl(0);
+    private static final long Infinite = m5171constructorimpl(InlineClassHelperKt.DualFloatInfinityBase);
+    private static final long Unspecified = m5171constructorimpl(InlineClassHelperKt.UnspecifiedPackedFloats);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Offset m5025boximpl(long j) {
+    public static final /* synthetic */ Offset m5168boximpl(long j) {
         return new Offset(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m5028constructorimpl(long j) {
+    public static long m5171constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5032equalsimpl(long j, Object obj) {
-        return (obj instanceof Offset) && j == ((Offset) obj).m5046unboximpl();
+    public static boolean m5175equalsimpl(long j, Object obj) {
+        return (obj instanceof Offset) && j == ((Offset) obj).m5189unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5033equalsimpl0(long j, long j2) {
+    public static final boolean m5176equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -42,25 +42,25 @@ public final class Offset {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5038hashCodeimpl(long j) {
+    public static int m5181hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: isValid-impl  reason: not valid java name */
-    public static final boolean m5039isValidimpl(long j) {
+    public static final boolean m5182isValidimpl(long j) {
         return (((j & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0;
     }
 
     public boolean equals(Object obj) {
-        return m5032equalsimpl(this.packedValue, obj);
+        return m5175equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m5038hashCodeimpl(this.packedValue);
+        return m5181hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m5046unboximpl() {
+    public final /* synthetic */ long m5189unboximpl() {
         return this.packedValue;
     }
 
@@ -81,47 +81,47 @@ public final class Offset {
         }
 
         /* renamed from: getInfinite-F1C5BW0$annotations  reason: not valid java name */
-        public static /* synthetic */ void m5047getInfiniteF1C5BW0$annotations() {
+        public static /* synthetic */ void m5190getInfiniteF1C5BW0$annotations() {
         }
 
         /* renamed from: getUnspecified-F1C5BW0$annotations  reason: not valid java name */
-        public static /* synthetic */ void m5048getUnspecifiedF1C5BW0$annotations() {
+        public static /* synthetic */ void m5191getUnspecifiedF1C5BW0$annotations() {
         }
 
         /* renamed from: getZero-F1C5BW0$annotations  reason: not valid java name */
-        public static /* synthetic */ void m5049getZeroF1C5BW0$annotations() {
+        public static /* synthetic */ void m5192getZeroF1C5BW0$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getZero-F1C5BW0  reason: not valid java name */
-        public final long m5052getZeroF1C5BW0() {
+        public final long m5195getZeroF1C5BW0() {
             return Offset.Zero;
         }
 
         /* renamed from: getInfinite-F1C5BW0  reason: not valid java name */
-        public final long m5050getInfiniteF1C5BW0() {
+        public final long m5193getInfiniteF1C5BW0() {
             return Offset.Infinite;
         }
 
         /* renamed from: getUnspecified-F1C5BW0  reason: not valid java name */
-        public final long m5051getUnspecifiedF1C5BW0() {
+        public final long m5194getUnspecifiedF1C5BW0() {
             return Offset.Unspecified;
         }
     }
 
     /* renamed from: unaryMinus-F1C5BW0  reason: not valid java name */
-    public static final long m5045unaryMinusF1C5BW0(long j) {
-        return m5028constructorimpl(j ^ (-9223372034707292160L));
+    public static final long m5188unaryMinusF1C5BW0(long j) {
+        return m5171constructorimpl(j ^ (-9223372034707292160L));
     }
 
     public String toString() {
-        return m5044toStringimpl(this.packedValue);
+        return m5187toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5044toStringimpl(long j) {
+    public static String m5187toStringimpl(long j) {
         if ((9223372034707292159L & j) != InlineClassHelperKt.UnspecifiedPackedFloats) {
             return "Offset(" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat((int) (j >> 32)), 1) + ", " + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat((int) (j & 4294967295L)), 1) + ')';
         }
@@ -129,77 +129,77 @@ public final class Offset {
     }
 
     /* renamed from: getX-impl  reason: not valid java name */
-    public static final float m5036getXimpl(long j) {
+    public static final float m5179getXimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getY-impl  reason: not valid java name */
-    public static final float m5037getYimpl(long j) {
+    public static final float m5180getYimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final float m5026component1impl(long j) {
+    public static final float m5169component1impl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final float m5027component2impl(long j) {
+    public static final float m5170component2impl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: copy-dBAh8RU  reason: not valid java name */
-    public static final long m5029copydBAh8RU(long j, float f, float f2) {
-        return m5028constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+    public static final long m5172copydBAh8RU(long j, float f, float f2) {
+        return m5171constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 
     /* renamed from: copy-dBAh8RU$default  reason: not valid java name */
-    public static /* synthetic */ long m5030copydBAh8RU$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m5173copydBAh8RU$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = Float.intBitsToFloat((int) (j >> 32));
         }
         if ((i & 2) != 0) {
             f2 = Float.intBitsToFloat((int) (4294967295L & j));
         }
-        return m5029copydBAh8RU(j, f, f2);
+        return m5172copydBAh8RU(j, f, f2);
     }
 
     /* renamed from: getDistance-impl  reason: not valid java name */
-    public static final float m5034getDistanceimpl(long j) {
+    public static final float m5177getDistanceimpl(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         return (float) Math.sqrt((intBitsToFloat * intBitsToFloat) + (intBitsToFloat2 * intBitsToFloat2));
     }
 
     /* renamed from: getDistanceSquared-impl  reason: not valid java name */
-    public static final float m5035getDistanceSquaredimpl(long j) {
+    public static final float m5178getDistanceSquaredimpl(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         return (intBitsToFloat * intBitsToFloat) + (intBitsToFloat2 * intBitsToFloat2);
     }
 
     /* renamed from: minus-MK-Hz9U  reason: not valid java name */
-    public static final long m5040minusMKHz9U(long j, long j2) {
-        return m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m5183minusMKHz9U(long j, long j2) {
+        return m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: plus-MK-Hz9U  reason: not valid java name */
-    public static final long m5041plusMKHz9U(long j, long j2) {
-        return m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m5184plusMKHz9U(long j, long j2) {
+        return m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: times-tuRUvjQ  reason: not valid java name */
-    public static final long m5043timestuRUvjQ(long j, float f) {
-        return m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
+    public static final long m5186timestuRUvjQ(long j, float f) {
+        return m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
     }
 
     /* renamed from: div-tuRUvjQ  reason: not valid java name */
-    public static final long m5031divtuRUvjQ(long j, float f) {
-        return m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
+    public static final long m5174divtuRUvjQ(long j, float f) {
+        return m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
     }
 
     /* renamed from: rem-tuRUvjQ  reason: not valid java name */
-    public static final long m5042remtuRUvjQ(long j, float f) {
-        return m5028constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) % f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) % f) & 4294967295L));
+    public static final long m5185remtuRUvjQ(long j, float f) {
+        return m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) % f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) % f) & 4294967295L));
     }
 }

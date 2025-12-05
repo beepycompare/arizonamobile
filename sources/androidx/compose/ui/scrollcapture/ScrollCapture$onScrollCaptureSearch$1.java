@@ -9,7 +9,7 @@ import kotlin.jvm.internal.AdaptedFunctionReference;
 /* compiled from: ScrollCapture.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
-public /* synthetic */ class ScrollCapture$onScrollCaptureSearch$1 extends AdaptedFunctionReference implements Function1<ScrollCaptureCandidate, Unit> {
+public final /* synthetic */ class ScrollCapture$onScrollCaptureSearch$1 extends AdaptedFunctionReference implements Function1<ScrollCaptureCandidate, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ScrollCapture$onScrollCaptureSearch$1(Object obj) {
         super(1, obj, MutableVector.class, "add", "add(Ljava/lang/Object;)Z", 8);

@@ -24,6 +24,11 @@ public class PersistentHashMap<K, V> extends AbstractMap<K, V> implements Persis
     public static final int $stable = 8;
     private static final PersistentHashMap EMPTY = new PersistentHashMap(TrieNode.Companion.getEMPTY$runtime(), 0);
 
+    public PersistentHashMap(TrieNode<K, V> trieNode, int i) {
+        this.node = trieNode;
+        this.size = i;
+    }
+
     @Override // kotlin.collections.AbstractMap, java.util.Map
     public final /* bridge */ ImmutableSet<Map.Entry<K, V>> entrySet() {
         return getEntries();
@@ -59,11 +64,6 @@ public class PersistentHashMap<K, V> extends AbstractMap<K, V> implements Persis
     @Override // kotlin.collections.AbstractMap, java.util.Map
     public final /* bridge */ ImmutableCollection<V> values() {
         return getValues();
-    }
-
-    public PersistentHashMap(TrieNode<K, V> trieNode, int i) {
-        this.node = trieNode;
-        this.size = i;
     }
 
     @Override // kotlin.collections.AbstractMap

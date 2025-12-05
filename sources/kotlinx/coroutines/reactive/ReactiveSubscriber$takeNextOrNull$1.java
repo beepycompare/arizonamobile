@@ -1,5 +1,6 @@
 package kotlinx.coroutines.reactive;
 
+import androidx.compose.runtime.ComposerImplKt;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ReactiveFlow.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.reactive.ReactiveSubscriber", f = "ReactiveFlow.kt", i = {}, l = {125}, m = "takeNextOrNull", n = {}, s = {})
+@DebugMetadata(c = "kotlinx.coroutines.reactive.ReactiveSubscriber", f = "ReactiveFlow.kt", i = {}, l = {ComposerImplKt.nodeKey}, m = "takeNextOrNull", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class ReactiveSubscriber$takeNextOrNull$1 extends ContinuationImpl {
     int label;

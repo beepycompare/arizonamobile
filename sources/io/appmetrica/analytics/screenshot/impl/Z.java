@@ -18,30 +18,30 @@ public final class Z extends ContentObserver {
     public static final String d = MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString();
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1354a;
+    public final ClientContext f1437a;
     public final Function0 b;
-    public volatile C0769k c;
+    public volatile C0768k c;
 
-    public Z(ClientContext clientContext, C0776s c0776s) {
+    public Z(ClientContext clientContext, C0775s c0775s) {
         super(clientContext.getClientExecutorProvider().getDefaultExecutor().getHandler());
-        this.f1354a = clientContext;
-        this.b = c0776s;
+        this.f1437a = clientContext;
+        this.b = c0775s;
     }
 
     @Override // android.database.ContentObserver
     public final void onChange(boolean z, Uri uri) {
-        C0769k c0769k;
+        C0768k c0768k;
         super.onChange(z, uri);
-        if (!StringsKt.startsWith$default(String.valueOf(uri), d, false, 2, (Object) null) || (c0769k = this.c) == null) {
+        if (!StringsKt.startsWith$default(String.valueOf(uri), d, false, 2, (Object) null) || (c0768k = this.c) == null) {
             return;
         }
         try {
-            String[] strArr = (String[]) ArraysKt.plus((Object[]) new String[]{"date_added"}, (Collection) c0769k.b);
-            Cursor query = this.f1354a.getContext().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, strArr, "date_added >= ?", new String[]{String.valueOf(new SystemTimeProvider().currentTimeSeconds() - c0769k.c)}, "date_added DESC");
+            String[] strArr = (String[]) ArraysKt.plus((Object[]) new String[]{"date_added"}, (Collection) c0768k.b);
+            Cursor query = this.f1437a.getContext().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, strArr, "date_added >= ?", new String[]{String.valueOf(new SystemTimeProvider().currentTimeSeconds() - c0768k.c)}, "date_added DESC");
             if (query != null && query.moveToFirst()) {
                 for (String str : strArr) {
                 }
-                for (String str2 : c0769k.b) {
+                for (String str2 : c0768k.b) {
                     if (StringsKt.contains$default((CharSequence) query.getString(query.getColumnIndexOrThrow(str2)).toLowerCase(Locale.ROOT), (CharSequence) "screenshot", false, 2, (Object) null)) {
                         this.b.invoke();
                     }

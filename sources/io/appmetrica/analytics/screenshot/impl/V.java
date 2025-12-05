@@ -5,22 +5,22 @@ import java.util.List;
 public final class V {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1350a;
+    public final List f1433a;
 
-    public V(InterfaceC0767i interfaceC0767i) {
-        this.f1350a = interfaceC0767i.a();
+    public V(InterfaceC0766i interfaceC0766i) {
+        this.f1433a = interfaceC0766i.a();
     }
 
-    public final void a(C0770l c0770l) {
-        for (T t : this.f1350a) {
-            C0771m c0771m = null;
-            if (c0770l != null) {
-                C0770l c0770l2 = Boolean.valueOf(c0770l.f1371a).booleanValue() ? c0770l : null;
-                if (c0770l2 != null) {
-                    c0771m = c0770l2.b;
+    public final void a(C0769l c0769l) {
+        for (T t : this.f1433a) {
+            C0770m c0770m = null;
+            if (c0769l != null) {
+                C0769l c0769l2 = Boolean.valueOf(c0769l.f1454a).booleanValue() ? c0769l : null;
+                if (c0769l2 != null) {
+                    c0770m = c0769l2.b;
                 }
             }
-            t.a(c0771m);
+            t.a(c0770m);
         }
     }
 }

@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Delite pomoću</string>
     <string name="abc_shareactionprovider_share_with_application">Delite pomoću aplikacije %s</string>
     <string name="abc_toolbar_collapse_description">Skupi</string>
-    <string name="autofill">Automatsko popunjavanje</string>
+    <string name="androidx_compose_foundation_autofill">Automatski popuni</string>
+    <string name="androidx_compose_ui_autofill">Automatski popuni</string>
     <string name="bottomsheet_action_collapse">Skupite donju tabelu</string>
     <string name="bottomsheet_action_expand">Proširite donju tabelu</string>
     <string name="bottomsheet_action_expand_halfway">Proširite do pola</string>

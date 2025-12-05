@@ -6,10 +6,10 @@ import java.util.Iterator;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class Xm implements InterfaceC0255fo {
+public final class Xm implements InterfaceC0254fo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f755a;
+    public final ArrayList f838a;
 
     public Xm(String str, List<String> list, int i, Mn mn, to toVar, K2 k2) {
         List take = CollectionsKt.take(CollectionsKt.toList(CollectionsKt.toSet(list)), i);
@@ -23,20 +23,20 @@ public final class Xm implements InterfaceC0255fo {
             arrayList.add(new Zm(str + '_' + i2, (String) obj, mn, toVar, k2));
             i2 = i3;
         }
-        this.f755a = arrayList;
+        this.f838a = arrayList;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0255fo
-    public final void a(C0229eo c0229eo) {
-        Iterator it = this.f755a.iterator();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
+    public final void a(C0228eo c0228eo) {
+        Iterator it = this.f838a.iterator();
         while (it.hasNext()) {
-            ((Zm) it.next()).a(c0229eo);
+            ((Zm) it.next()).a(c0228eo);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0255fo
+    @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
     public final void a(PublicLogger publicLogger) {
-        Iterator it = this.f755a.iterator();
+        Iterator it = this.f838a.iterator();
         while (it.hasNext()) {
             ((Zm) it.next()).e = publicLogger;
         }

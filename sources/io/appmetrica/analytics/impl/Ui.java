@@ -13,13 +13,13 @@ import java.util.LinkedHashMap;
 public final class Ui implements Vi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f713a;
+    public final Context f796a;
     public final String b = NativeProtocol.CONTENT_SCHEME + a() + "/clids";
     public final String c = "clid_key";
     public final String d = "clid_value";
 
     public Ui(Context context) {
-        this.f713a = context;
+        this.f796a = context;
     }
 
     public final String a() {
@@ -28,14 +28,14 @@ public final class Ui implements Vi {
 
     @Override // kotlin.jvm.functions.Function0
     /* renamed from: b */
-    public final C0563s3 invoke() {
+    public final C0562s3 invoke() {
         Cursor cursor;
-        if (!PackageManagerUtils.hasContentProvider(this.f713a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
-            AbstractC0276gj.a("Satellite content provider with clids was not found.", new Object[0]);
+        if (!PackageManagerUtils.hasContentProvider(this.f796a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
+            AbstractC0275gj.a("Satellite content provider with clids was not found.", new Object[0]);
             return null;
         }
         try {
-            cursor = this.f713a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
+            cursor = this.f796a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
             try {
             } catch (Throwable th) {
                 th = th;
@@ -59,15 +59,15 @@ public final class Ui implements Vi {
                     if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
                         linkedHashMap.put(string, string2);
                     } else {
-                        AbstractC0276gj.a("Invalid clid {%s : %s}", string, string2);
+                        AbstractC0275gj.a("Invalid clid {%s : %s}", string, string2);
                     }
                 } catch (Throwable unused) {
                 }
             }
-            AbstractC0276gj.a("Clids from satellite: %s", linkedHashMap);
-            return new C0563s3(linkedHashMap, T7.d);
+            AbstractC0275gj.a("Clids from satellite: %s", linkedHashMap);
+            return new C0562s3(linkedHashMap, T7.d);
         }
-        AbstractC0276gj.a("No Satellite content provider found", new Object[0]);
+        AbstractC0275gj.a("No Satellite content provider found", new Object[0]);
         return null;
     }
 }

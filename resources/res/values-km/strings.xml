@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">ចែករំលែក​ជា​មួយ</string>
     <string name="abc_shareactionprovider_share_with_application">ចែក​រំលែក​ជា​មួយ %s</string>
     <string name="abc_toolbar_collapse_description">បង្រួម</string>
-    <string name="autofill">បំពេញ​ស្វ័យ​ប្រវត្តិ</string>
+    <string name="androidx_compose_foundation_autofill">បំពេញស្វ័យប្រវត្តិ</string>
+    <string name="androidx_compose_ui_autofill">បំពេញស្វ័យប្រវត្តិ</string>
     <string name="bottomsheet_action_collapse">បង្រួមសន្លឹក​ខាងក្រោម</string>
     <string name="bottomsheet_action_expand">ពង្រីកសន្លឹក​ខាងក្រោម</string>
     <string name="bottomsheet_action_expand_halfway">ពង្រីក​ពាក់កណ្ដាល</string>

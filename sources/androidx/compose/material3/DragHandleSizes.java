@@ -23,17 +23,17 @@ public final class DragHandleSizes {
     }
 
     /* renamed from: getDraggedSize-MYxV2XQ  reason: not valid java name */
-    public final long m2324getDraggedSizeMYxV2XQ() {
+    public final long m2410getDraggedSizeMYxV2XQ() {
         return this.draggedSize;
     }
 
     /* renamed from: getPressedSize-MYxV2XQ  reason: not valid java name */
-    public final long m2325getPressedSizeMYxV2XQ() {
+    public final long m2411getPressedSizeMYxV2XQ() {
         return this.pressedSize;
     }
 
     /* renamed from: getSize-MYxV2XQ  reason: not valid java name */
-    public final long m2326getSizeMYxV2XQ() {
+    public final long m2412getSizeMYxV2XQ() {
         return this.size;
     }
 
@@ -45,10 +45,10 @@ public final class DragHandleSizes {
             return false;
         }
         DragHandleSizes dragHandleSizes = (DragHandleSizes) obj;
-        return DpSize.m8091equalsimpl0(this.size, dragHandleSizes.size) && DpSize.m8091equalsimpl0(this.pressedSize, dragHandleSizes.pressedSize) && DpSize.m8091equalsimpl0(this.draggedSize, dragHandleSizes.draggedSize);
+        return DpSize.m8353equalsimpl0(this.size, dragHandleSizes.size) && DpSize.m8353equalsimpl0(this.pressedSize, dragHandleSizes.pressedSize) && DpSize.m8353equalsimpl0(this.draggedSize, dragHandleSizes.draggedSize);
     }
 
     public int hashCode() {
-        return (((DpSize.m8096hashCodeimpl(this.size) * 31) + DpSize.m8096hashCodeimpl(this.pressedSize)) * 31) + DpSize.m8096hashCodeimpl(this.draggedSize);
+        return (((DpSize.m8358hashCodeimpl(this.size) * 31) + DpSize.m8358hashCodeimpl(this.pressedSize)) * 31) + DpSize.m8358hashCodeimpl(this.draggedSize);
     }
 }

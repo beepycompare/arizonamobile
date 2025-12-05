@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Κοινοποίηση σε</string>
     <string name="abc_shareactionprovider_share_with_application">Κοινοποίηση στην εφαρμογή %s</string>
     <string name="abc_toolbar_collapse_description">Σύμπτυξη</string>
-    <string name="autofill">Αυτόματη συμπλήρωση</string>
+    <string name="androidx_compose_foundation_autofill">Αυτόματη συμπλήρωση</string>
+    <string name="androidx_compose_ui_autofill">Αυτόματη συμπλήρωση</string>
     <string name="bottomsheet_action_collapse">Σύμπτυξη του φύλλου κάτω μέρους</string>
     <string name="bottomsheet_action_expand">Ανάπτυξη του φύλλου κάτω μέρους</string>
     <string name="bottomsheet_action_expand_halfway">Ανάπτυξη μέχρι τη μέση</string>

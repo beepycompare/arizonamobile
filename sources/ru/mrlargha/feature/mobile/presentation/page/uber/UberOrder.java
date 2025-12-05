@@ -10,7 +10,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 import java.util.Locale;
 import kotlin.Metadata;
 import kotlin.NotImplementedError;
@@ -60,7 +59,7 @@ public final class UberOrder implements MobileController {
         bind.mpUberOrderPage.setLayoutParams(new ConstraintLayout.LayoutParams(-1, -1));
         Drawable mutate = bind.mpUberActionButton.getBackground().mutate();
         Intrinsics.checkNotNull(mutate, "null cannot be cast to non-null type android.graphics.drawable.GradientDrawable");
-        ((GradientDrawable) mutate).setColor(ViewCompat.MEASURED_STATE_MASK);
+        ((GradientDrawable) mutate).setColor(-16777216);
         binding.phoneCaseContainer.addView(bind.mpUberOrderPage);
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(binding.phoneCaseContainer);

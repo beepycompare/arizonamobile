@@ -25,7 +25,7 @@ public final class ComposableSingletons$AndroidDialog_androidKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(210148896, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidDialog_androidKt.lambda$210148896.<anonymous> (AndroidDialog.android.kt:247)");
+                ComposerKt.traceEventStart(210148896, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidDialog_androidKt.lambda$210148896.<anonymous> (AndroidDialog.android.kt:249)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -33,7 +33,7 @@ public final class ComposableSingletons$AndroidDialog_androidKt {
         }
     });
 
-    public final Function2<Composer, Integer, Unit> getLambda$210148896$ui_release() {
+    public final Function2<Composer, Integer, Unit> getLambda$210148896$ui() {
         return lambda$210148896;
     }
 }

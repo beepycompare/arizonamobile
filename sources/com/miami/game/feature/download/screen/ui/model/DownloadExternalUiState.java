@@ -1,5 +1,6 @@
 package com.miami.game.feature.download.screen.ui.model;
 
+import androidx.core.app.FrameMetricsAggregator;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -20,7 +21,7 @@ public final class DownloadExternalUiState {
     private final String updateSize;
 
     public DownloadExternalUiState() {
-        this(null, null, null, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 511, null);
+        this(null, null, null, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, FrameMetricsAggregator.EVERY_DURATION, null);
     }
 
     public static /* synthetic */ DownloadExternalUiState copy$default(DownloadExternalUiState downloadExternalUiState, String str, String str2, String str3, double d, boolean z, String str4, boolean z2, boolean z3, boolean z4, int i, Object obj) {

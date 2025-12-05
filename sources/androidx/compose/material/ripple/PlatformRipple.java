@@ -29,7 +29,7 @@ public final class PlatformRipple extends Ripple {
 
     @Override // androidx.compose.material.ripple.Ripple
     /* renamed from: rememberUpdatedRippleInstance-942rkJo */
-    public RippleIndicationInstance mo1853rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
+    public RippleIndicationInstance mo1939rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
         ViewGroup findNearestViewGroup;
         composer.startReplaceGroup(331259447);
         ComposerKt.sourceInformation(composer, "C(rememberUpdatedRippleInstance)N(interactionSource,bounded,radius:c#ui.unit.Dp,color,rippleAlpha)85@3492L7,86@3516L138:Ripple.android.kt#vhb33q");
@@ -40,7 +40,7 @@ public final class PlatformRipple extends Ripple {
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalView());
         ComposerKt.sourceInformationMarkerEnd(composer);
         findNearestViewGroup = Ripple_androidKt.findNearestViewGroup((View) consume);
-        ComposerKt.sourceInformationMarkerStart(composer, 512759585, "CC(remember):Ripple.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 512758561, "CC(remember):Ripple.android.kt#9igjgp");
         boolean changed = ((((i & 14) ^ 6) > 4 && composer.changed(interactionSource)) || (i & 6) == 4) | ((((458752 & i) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(this)) || (i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072) | composer.changed(findNearestViewGroup);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {

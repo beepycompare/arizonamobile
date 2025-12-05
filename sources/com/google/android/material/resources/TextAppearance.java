@@ -12,7 +12,6 @@ import android.util.Log;
 import android.util.Xml;
 import androidx.appcompat.R;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.core.view.ViewCompat;
 /* loaded from: classes4.dex */
 public class TextAppearance {
     private static final String TAG = "TextAppearance";
@@ -168,7 +167,7 @@ public class TextAppearance {
     public void updateDrawState(Context context, TextPaint textPaint, TextAppearanceFontCallback textAppearanceFontCallback) {
         updateMeasureState(context, textPaint, textAppearanceFontCallback);
         ColorStateList colorStateList = this.textColor;
-        textPaint.setColor(colorStateList != null ? colorStateList.getColorForState(textPaint.drawableState, this.textColor.getDefaultColor()) : ViewCompat.MEASURED_STATE_MASK);
+        textPaint.setColor(colorStateList != null ? colorStateList.getColorForState(textPaint.drawableState, this.textColor.getDefaultColor()) : -16777216);
         float f = this.shadowRadius;
         float f2 = this.shadowDx;
         float f3 = this.shadowDy;

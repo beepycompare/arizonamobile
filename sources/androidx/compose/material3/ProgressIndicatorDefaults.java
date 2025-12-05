@@ -23,17 +23,17 @@ import kotlin.ReplaceWith;
 public final class ProgressIndicatorDefaults {
     public static final int $stable = 0;
     public static final ProgressIndicatorDefaults INSTANCE = new ProgressIndicatorDefaults();
-    private static final float CircularStrokeWidth = CircularProgressIndicatorTokens.INSTANCE.m3737getTrackThicknessD9Ej5fM();
-    private static final int LinearStrokeCap = StrokeCap.Companion.m5651getRoundKaPHkGw();
-    private static final int CircularDeterminateStrokeCap = StrokeCap.Companion.m5651getRoundKaPHkGw();
-    private static final int CircularIndeterminateStrokeCap = StrokeCap.Companion.m5651getRoundKaPHkGw();
-    private static final float LinearTrackStopIndicatorSize = LinearProgressIndicatorTokens.INSTANCE.m4028getStopSizeD9Ej5fM();
-    private static final float LinearIndicatorTrackGapSize = LinearProgressIndicatorTokens.INSTANCE.m4030getTrackActiveSpaceD9Ej5fM();
-    private static final float CircularIndicatorTrackGapSize = CircularProgressIndicatorTokens.INSTANCE.m3736getTrackActiveSpaceD9Ej5fM();
+    private static final float CircularStrokeWidth = CircularProgressIndicatorTokens.INSTANCE.m3823getTrackThicknessD9Ej5fM();
+    private static final int LinearStrokeCap = StrokeCap.Companion.m5801getRoundKaPHkGw();
+    private static final int CircularDeterminateStrokeCap = StrokeCap.Companion.m5801getRoundKaPHkGw();
+    private static final int CircularIndeterminateStrokeCap = StrokeCap.Companion.m5801getRoundKaPHkGw();
+    private static final float LinearTrackStopIndicatorSize = LinearProgressIndicatorTokens.INSTANCE.m4114getStopSizeD9Ej5fM();
+    private static final float LinearIndicatorTrackGapSize = LinearProgressIndicatorTokens.INSTANCE.m4116getTrackActiveSpaceD9Ej5fM();
+    private static final float CircularIndicatorTrackGapSize = CircularProgressIndicatorTokens.INSTANCE.m3822getTrackActiveSpaceD9Ej5fM();
     private static final SpringSpec<Float> ProgressAnimationSpec = new SpringSpec<>(1.0f, 50.0f, Float.valueOf(0.001f));
 
     /* renamed from: getCircularIndicatorTrackGapSize-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m2724getCircularIndicatorTrackGapSizeD9Ej5fM$annotations() {
+    public static /* synthetic */ void m2810getCircularIndicatorTrackGapSizeD9Ej5fM$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Renamed to circularDeterminateTrackColor or circularIndeterminateTrackColor", replaceWith = @ReplaceWith(expression = "ProgressIndicatorDefaults.circularIndeterminateTrackColor", imports = {}))
@@ -41,11 +41,11 @@ public final class ProgressIndicatorDefaults {
     }
 
     /* renamed from: getLinearIndicatorTrackGapSize-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m2725getLinearIndicatorTrackGapSizeD9Ej5fM$annotations() {
+    public static /* synthetic */ void m2811getLinearIndicatorTrackGapSizeD9Ej5fM$annotations() {
     }
 
     /* renamed from: getLinearTrackStopIndicatorSize-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m2726getLinearTrackStopIndicatorSizeD9Ej5fM$annotations() {
+    public static /* synthetic */ void m2812getLinearTrackStopIndicatorSizeD9Ej5fM$annotations() {
     }
 
     private ProgressIndicatorDefaults() {
@@ -95,12 +95,12 @@ public final class ProgressIndicatorDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-404222247, i, -1, "androidx.compose.material3.ProgressIndicatorDefaults.<get-circularTrackColor> (ProgressIndicator.kt:830)");
         }
-        long m5315getTransparent0d7_KjU = Color.Companion.m5315getTransparent0d7_KjU();
+        long m5459getTransparent0d7_KjU = Color.Companion.m5459getTransparent0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m5315getTransparent0d7_KjU;
+        return m5459getTransparent0d7_KjU;
     }
 
     public final long getCircularDeterminateTrackColor(Composer composer, int i) {
@@ -121,46 +121,46 @@ public final class ProgressIndicatorDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1947901123, i, -1, "androidx.compose.material3.ProgressIndicatorDefaults.<get-circularIndeterminateTrackColor> (ProgressIndicator.kt:838)");
         }
-        long m5315getTransparent0d7_KjU = Color.Companion.m5315getTransparent0d7_KjU();
+        long m5459getTransparent0d7_KjU = Color.Companion.m5459getTransparent0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m5315getTransparent0d7_KjU;
+        return m5459getTransparent0d7_KjU;
     }
 
     /* renamed from: getCircularStrokeWidth-D9Ej5fM  reason: not valid java name */
-    public final float m2731getCircularStrokeWidthD9Ej5fM() {
+    public final float m2817getCircularStrokeWidthD9Ej5fM() {
         return CircularStrokeWidth;
     }
 
     /* renamed from: getLinearStrokeCap-KaPHkGw  reason: not valid java name */
-    public final int m2733getLinearStrokeCapKaPHkGw() {
+    public final int m2819getLinearStrokeCapKaPHkGw() {
         return LinearStrokeCap;
     }
 
     /* renamed from: getCircularDeterminateStrokeCap-KaPHkGw  reason: not valid java name */
-    public final int m2728getCircularDeterminateStrokeCapKaPHkGw() {
+    public final int m2814getCircularDeterminateStrokeCapKaPHkGw() {
         return CircularDeterminateStrokeCap;
     }
 
     /* renamed from: getCircularIndeterminateStrokeCap-KaPHkGw  reason: not valid java name */
-    public final int m2729getCircularIndeterminateStrokeCapKaPHkGw() {
+    public final int m2815getCircularIndeterminateStrokeCapKaPHkGw() {
         return CircularIndeterminateStrokeCap;
     }
 
     /* renamed from: getLinearTrackStopIndicatorSize-D9Ej5fM  reason: not valid java name */
-    public final float m2734getLinearTrackStopIndicatorSizeD9Ej5fM() {
+    public final float m2820getLinearTrackStopIndicatorSizeD9Ej5fM() {
         return LinearTrackStopIndicatorSize;
     }
 
     /* renamed from: getLinearIndicatorTrackGapSize-D9Ej5fM  reason: not valid java name */
-    public final float m2732getLinearIndicatorTrackGapSizeD9Ej5fM() {
+    public final float m2818getLinearIndicatorTrackGapSizeD9Ej5fM() {
         return LinearIndicatorTrackGapSize;
     }
 
     /* renamed from: getCircularIndicatorTrackGapSize-D9Ej5fM  reason: not valid java name */
-    public final float m2730getCircularIndicatorTrackGapSizeD9Ej5fM() {
+    public final float m2816getCircularIndicatorTrackGapSizeD9Ej5fM() {
         return CircularIndicatorTrackGapSize;
     }
 
@@ -169,34 +169,34 @@ public final class ProgressIndicatorDefaults {
     }
 
     private static final void drawStopIndicator_EgI2THU$drawIndicator(DrawScope drawScope, int i, long j, float f, float f2) {
-        if (StrokeCap.m5646equalsimpl0(i, StrokeCap.Companion.m5651getRoundKaPHkGw())) {
+        if (StrokeCap.m5796equalsimpl0(i, StrokeCap.Companion.m5801getRoundKaPHkGw())) {
             float f3 = f / 2.0f;
-            DrawScope.m5840drawCircleVaOC9Bg$default(drawScope, j, f3, Offset.m5028constructorimpl((Float.floatToRawIntBits((Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)) - f3) - f2) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)) / 2.0f))), 0.0f, null, null, 0, 120, null);
+            DrawScope.m5986drawCircleVaOC9Bg$default(drawScope, j, f3, Offset.m5171constructorimpl((Float.floatToRawIntBits((Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)) - f3) - f2) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)) / 2.0f))), 0.0f, null, null, 0, 120, null);
             return;
         }
-        DrawScope.m5853drawRectnJ9OG0$default(drawScope, j, Offset.m5028constructorimpl((Float.floatToRawIntBits((Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() >> 32)) - f) - f2) << 32) | (Float.floatToRawIntBits((Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)) - f) / 2.0f) & 4294967295L)), Size.m5096constructorimpl((Float.floatToRawIntBits(f) << 32) | (4294967295L & Float.floatToRawIntBits(f))), 0.0f, null, null, 0, 120, null);
+        DrawScope.m5999drawRectnJ9OG0$default(drawScope, j, Offset.m5171constructorimpl((Float.floatToRawIntBits((Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)) - f) - f2) << 32) | (Float.floatToRawIntBits((Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)) - f) / 2.0f) & 4294967295L)), Size.m5239constructorimpl((Float.floatToRawIntBits(f) << 32) | (4294967295L & Float.floatToRawIntBits(f))), 0.0f, null, null, 0, 120, null);
     }
 
     /* renamed from: drawStopIndicator-EgI2THU  reason: not valid java name */
-    public final void m2727drawStopIndicatorEgI2THU(DrawScope drawScope, float f, long j, int i) {
-        float min = Math.min(drawScope.mo430toPx0680j_4(f), Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)));
-        float f2 = drawScope.mo430toPx0680j_4(ProgressIndicatorKt.getStopIndicatorTrailingSpace());
-        float intBitsToFloat = (Float.intBitsToFloat((int) (drawScope.mo5859getSizeNHjbRc() & 4294967295L)) - min) / 2;
+    public final void m2813drawStopIndicatorEgI2THU(DrawScope drawScope, float f, long j, int i) {
+        float min = Math.min(drawScope.mo464toPx0680j_4(f), Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)));
+        float f2 = drawScope.mo464toPx0680j_4(ProgressIndicatorKt.getStopIndicatorTrailingSpace());
+        float intBitsToFloat = (Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)) - min) / 2;
         float f3 = intBitsToFloat > f2 ? f2 : intBitsToFloat;
         if (drawScope.getLayoutDirection() != LayoutDirection.Rtl) {
             drawStopIndicator_EgI2THU$drawIndicator(drawScope, i, j, min, f3);
             return;
         }
-        long mo5858getCenterF1C5BW0 = drawScope.mo5858getCenterF1C5BW0();
+        long mo6004getCenterF1C5BW0 = drawScope.mo6004getCenterF1C5BW0();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5780getSizeNHjbRc = drawContext.mo5780getSizeNHjbRc();
+        long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5787scale0AR0LA0(-1.0f, 1.0f, mo5858getCenterF1C5BW0);
+            drawContext.getTransform().mo5933scale0AR0LA0(-1.0f, 1.0f, mo6004getCenterF1C5BW0);
             drawStopIndicator_EgI2THU$drawIndicator(drawScope, i, j, min, f3);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
+            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
         }
     }
 }

@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.core.content.res.TypedArrayUtils;
+import androidx.core.view.ViewCompat;
 import androidx.transition.Transition;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -288,7 +289,7 @@ public abstract class Visibility extends Transition {
                 viewGroup.getLocationOnScreen(iArr2);
                 view5.offsetLeftAndRight((i3 - iArr2[0]) - view5.getLeft());
                 view5.offsetTopAndBottom((i4 - iArr2[1]) - view5.getTop());
-                viewGroup.getOverlay().add(view5);
+                ViewCompat.addOverlayView(viewGroup, view5);
             }
             Animator onDisappear2 = onDisappear(viewGroup, view5, transitionValues, transitionValues2);
             if (!z2) {
@@ -460,7 +461,7 @@ public abstract class Visibility extends Transition {
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorPauseListener
         public void onAnimationResume(Animator animator) {
             if (this.mOverlayView.getParent() == null) {
-                this.mOverlayHost.getOverlay().add(this.mOverlayView);
+                ViewCompat.addOverlayView(this.mOverlayHost, this.mOverlayView);
             } else {
                 Visibility.this.cancel();
             }
@@ -470,7 +471,7 @@ public abstract class Visibility extends Transition {
         public void onAnimationStart(Animator animator, boolean z) {
             if (z) {
                 this.mStartView.setTag(R.id.save_overlay_view, this.mOverlayView);
-                this.mOverlayHost.getOverlay().add(this.mOverlayView);
+                ViewCompat.addOverlayView(this.mOverlayHost, this.mOverlayView);
                 this.mHasOverlay = true;
             }
         }

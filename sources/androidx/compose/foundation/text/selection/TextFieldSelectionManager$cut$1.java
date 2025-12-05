@@ -1,14 +1,8 @@
 package androidx.compose.foundation.text.selection;
 
 import androidx.compose.foundation.internal.ClipboardUtils_androidKt;
-import androidx.compose.foundation.text.HandleState;
-import androidx.compose.foundation.text.UndoManager;
 import androidx.compose.ui.platform.Clipboard;
 import androidx.compose.ui.text.AnnotatedString;
-import androidx.compose.ui.text.TextRange;
-import androidx.compose.ui.text.TextRangeKt;
-import androidx.compose.ui.text.input.TextFieldValue;
-import androidx.compose.ui.text.input.TextFieldValueKt;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -21,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$cut$1", f = "TextFieldSelectionManager.kt", i = {}, l = {872}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$cut$1", f = "TextFieldSelectionManager.kt", i = {}, l = {966}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$cut$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -46,18 +40,18 @@ public final class TextFieldSelectionManager$cut$1 extends SuspendLambda impleme
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        TextFieldValue m1826createTextFieldValueFDrldGo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (TextRange.m7452getCollapsedimpl(this.this$0.getValue$foundation_release().m7709getSelectiond9O1mEE())) {
+            AnnotatedString cutWithResult$foundation = this.this$0.cutWithResult$foundation();
+            if (cutWithResult$foundation == null) {
                 return Unit.INSTANCE;
             }
-            Clipboard clipboard$foundation_release = this.this$0.getClipboard$foundation_release();
-            if (clipboard$foundation_release != null) {
+            Clipboard clipboard$foundation = this.this$0.getClipboard$foundation();
+            if (clipboard$foundation != null) {
                 this.label = 1;
-                if (clipboard$foundation_release.setClipEntry(ClipboardUtils_androidKt.toClipEntry(TextFieldValueKt.getSelectedText(this.this$0.getValue$foundation_release())), this) == coroutine_suspended) {
+                if (clipboard$foundation.setClipEntry(ClipboardUtils_androidKt.toClipEntry(cutWithResult$foundation), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             }
@@ -65,16 +59,6 @@ public final class TextFieldSelectionManager$cut$1 extends SuspendLambda impleme
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
-        }
-        AnnotatedString plus = TextFieldValueKt.getTextBeforeSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()).plus(TextFieldValueKt.getTextAfterSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()));
-        int m7456getMinimpl = TextRange.m7456getMinimpl(this.this$0.getValue$foundation_release().m7709getSelectiond9O1mEE());
-        m1826createTextFieldValueFDrldGo = this.this$0.m1826createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m7456getMinimpl, m7456getMinimpl));
-        this.this$0.getOnValueChange$foundation_release().invoke(m1826createTextFieldValueFDrldGo);
-        this.this$0.m1838setLatestSelectionOEnZFl4$foundation_release(TextRange.m7446boximpl(m1826createTextFieldValueFDrldGo.m7709getSelectiond9O1mEE()));
-        this.this$0.setHandleState(HandleState.None);
-        UndoManager undoManager = this.this$0.getUndoManager();
-        if (undoManager != null) {
-            undoManager.forceNextSnapshot();
         }
         return Unit.INSTANCE;
     }

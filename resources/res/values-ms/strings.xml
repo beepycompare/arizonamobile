@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Kongsi dengan</string>
     <string name="abc_shareactionprovider_share_with_application">Kongsi dengan %s</string>
     <string name="abc_toolbar_collapse_description">Runtuhkan</string>
-    <string name="autofill">Autolengkap</string>
+    <string name="androidx_compose_foundation_autofill">Autolengkap</string>
+    <string name="androidx_compose_ui_autofill">Autolengkap</string>
     <string name="bottomsheet_action_collapse">Kuncupkan helaian bawah</string>
     <string name="bottomsheet_action_expand">Kembangkan helaian bawah</string>
     <string name="bottomsheet_action_expand_halfway">Kembangkan helaian bawah</string>

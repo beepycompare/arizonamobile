@@ -56,7 +56,7 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(747010833, i, -1, "androidx.compose.material3.ClockFace.<anonymous> (TimePicker.kt:1609)");
         }
-        Modifier m895size3ABfNKs = SizeKt.m895size3ABfNKs(Modifier.Companion, TimePickerTokens.INSTANCE.m4342getClockDialContainerSizeD9Ej5fM());
+        Modifier m976size3ABfNKs = SizeKt.m976size3ABfNKs(Modifier.Companion, TimePickerTokens.INSTANCE.m4428getClockDialContainerSizeD9Ej5fM());
         ComposerKt.sourceInformationMarkerStart(composer, 617875526, "CC(remember):TimePicker.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -71,7 +71,7 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier semantics$default = SemanticsModifierKt.semantics$default(m895size3ABfNKs, false, (Function1) rememberedValue, 1, null);
+        Modifier semantics$default = SemanticsModifierKt.semantics$default(m976size3ABfNKs, false, (Function1) rememberedValue, 1, null);
         f = TimePickerKt.OuterCircleToSizeRatio;
         final TimePickerColors timePickerColors = this.$colors;
         final AnalogTimePickerState analogTimePickerState = this.$state;
@@ -123,7 +123,7 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
                     IntList intList = this.$screen;
                     boolean z = this.$autoSwitchToMinute;
                     for (final int i4 = 0; i4 < i3; i4++) {
-                        if (!analogTimePickerState.is24hour() || TimePickerSelectionMode.m3252equalsimpl0(analogTimePickerState.mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3257getMinuteyecRtBI())) {
+                        if (!analogTimePickerState.is24hour() || TimePickerSelectionMode.m3338equalsimpl0(analogTimePickerState.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI())) {
                             i2 = intList.get(i4);
                         } else {
                             i2 = intList.get(i4) % 12;
@@ -149,12 +149,12 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
                         z = z2;
                     }
                     composer.endReplaceGroup();
-                    if (TimePickerSelectionMode.m3252equalsimpl0(this.$state.mo1883getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3256getHouryecRtBI()) && this.$state.is24hour()) {
+                    if (TimePickerSelectionMode.m3338equalsimpl0(this.$state.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3342getHouryecRtBI()) && this.$state.is24hour()) {
                         composer.startReplaceGroup(2020585964);
                         ComposerKt.sourceInformation(composer, "1638@64839L553,1632@64475L917");
-                        Modifier m267backgroundbw27NRU = BackgroundKt.m267backgroundbw27NRU(SizeKt.m895size3ABfNKs(LayoutIdKt.layoutId(Modifier.Companion, LayoutId.InnerCircle), TimePickerTokens.INSTANCE.m4342getClockDialContainerSizeD9Ej5fM()), Color.Companion.m5315getTransparent0d7_KjU(), RoundedCornerShapeKt.getCircleShape());
+                        Modifier m298backgroundbw27NRU = BackgroundKt.m298backgroundbw27NRU(SizeKt.m976size3ABfNKs(LayoutIdKt.layoutId(Modifier.Companion, LayoutId.InnerCircle), TimePickerTokens.INSTANCE.m4428getClockDialContainerSizeD9Ej5fM()), Color.Companion.m5459getTransparent0d7_KjU(), RoundedCornerShapeKt.getCircleShape());
                         f = TimePickerKt.InnerCircleToSizeRatio;
-                        TimePickerKt.CircularLayout(m267backgroundbw27NRU, f, ComposableLambdaKt.rememberComposableLambda(-1385767514, true, new C00232(this.$state, this.$autoSwitchToMinute), composer, 54), composer, 432, 0);
+                        TimePickerKt.CircularLayout(m298backgroundbw27NRU, f, ComposableLambdaKt.rememberComposableLambda(-1385767514, true, new C00212(this.$state, this.$autoSwitchToMinute), composer, 54), composer, 432, 0);
                         composer.endReplaceGroup();
                     } else {
                         composer.startReplaceGroup(2021505641);
@@ -176,11 +176,11 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
                 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
                 /* renamed from: androidx.compose.material3.TimePickerKt$ClockFace$1$2$1$2  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
-                public static final class C00232 implements Function2<Composer, Integer, Unit> {
+                public static final class C00212 implements Function2<Composer, Integer, Unit> {
                     final /* synthetic */ boolean $autoSwitchToMinute;
                     final /* synthetic */ AnalogTimePickerState $state;
 
-                    C00232(AnalogTimePickerState analogTimePickerState, boolean z) {
+                    C00212(AnalogTimePickerState analogTimePickerState, boolean z) {
                         this.$state = analogTimePickerState;
                         this.$autoSwitchToMinute = z;
                     }
@@ -215,7 +215,7 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj) {
                                             Unit invoke$lambda$2$lambda$1$lambda$0;
-                                            invoke$lambda$2$lambda$1$lambda$0 = TimePickerKt$ClockFace$1.AnonymousClass2.AnonymousClass1.C00232.invoke$lambda$2$lambda$1$lambda$0(i3, (SemanticsPropertyReceiver) obj);
+                                            invoke$lambda$2$lambda$1$lambda$0 = TimePickerKt$ClockFace$1.AnonymousClass2.AnonymousClass1.C00212.invoke$lambda$2$lambda$1$lambda$0(i3, (SemanticsPropertyReceiver) obj);
                                             return invoke$lambda$2$lambda$1$lambda$0;
                                         }
                                     };
@@ -250,7 +250,7 @@ public final class TimePickerKt$ClockFace$1 implements Function3<IntList, Compos
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-99063847, i2, -1, "androidx.compose.material3.ClockFace.<anonymous>.<anonymous> (TimePicker.kt:1613)");
                 }
-                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5270boximpl(TimePickerColors.this.m3173clockDialContentColorvNxB06k$material3(false))), ComposableLambdaKt.rememberComposableLambda(-596940007, true, new AnonymousClass1(intList, analogTimePickerState, z), composer2, 54), composer2, ProvidedValue.$stable | 48);
+                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5414boximpl(TimePickerColors.this.m3259clockDialContentColorvNxB06k$material3(false))), ComposableLambdaKt.rememberComposableLambda(-596940007, true, new AnonymousClass1(intList, analogTimePickerState, z), composer2, 54), composer2, ProvidedValue.$stable | 48);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

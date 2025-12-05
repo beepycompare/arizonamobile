@@ -6,14 +6,14 @@ import java.util.List;
 public final class Hn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f514a;
+    public final String f597a;
     public final String b;
     public final List c;
     public final Hn d;
     public final List e;
 
     public Hn(String str, String str2, ArrayList arrayList, Hn hn, ArrayList arrayList2) {
-        this.f514a = str;
+        this.f597a = str;
         this.b = str2;
         this.c = arrayList;
         this.d = hn;

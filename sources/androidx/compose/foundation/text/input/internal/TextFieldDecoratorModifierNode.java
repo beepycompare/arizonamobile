@@ -11,6 +11,7 @@ import androidx.compose.foundation.content.internal.ReceiveContentConfigurationK
 import androidx.compose.foundation.interaction.HoverInteraction;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
 import androidx.compose.foundation.text.AutofillHighlightKt;
+import androidx.compose.foundation.text.AutofillHighlight_androidKt;
 import androidx.compose.foundation.text.Handle;
 import androidx.compose.foundation.text.KeyCommand;
 import androidx.compose.foundation.text.KeyboardOptions;
@@ -26,11 +27,17 @@ import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
 import androidx.compose.ui.autofill.ContentDataType;
+import androidx.compose.ui.autofill.ContentType;
+import androidx.compose.ui.autofill.FillableData;
+import androidx.compose.ui.autofill.FillableData_androidKt;
 import androidx.compose.ui.draganddrop.DragAndDropEvent;
 import androidx.compose.ui.draganddrop.DragAndDropTargetModifierNode;
 import androidx.compose.ui.focus.FocusDirection;
 import androidx.compose.ui.focus.FocusManager;
+import androidx.compose.ui.focus.FocusProperties;
+import androidx.compose.ui.focus.FocusPropertiesModifierNode;
 import androidx.compose.ui.geometry.Offset;
+import androidx.compose.ui.graphics.Brush;
 import androidx.compose.ui.graphics.Color;
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope;
 import androidx.compose.ui.graphics.drawscope.DrawScope;
@@ -68,6 +75,7 @@ import androidx.compose.ui.text.TextLayoutResult;
 import androidx.compose.ui.text.TextRange;
 import androidx.compose.ui.text.TextRangeKt;
 import androidx.compose.ui.text.input.ImeAction;
+import androidx.compose.ui.text.input.KeyboardType;
 import androidx.core.app.NotificationCompat;
 import java.util.List;
 import java.util.Set;
@@ -94,9 +102,9 @@ import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.MutableSharedFlow;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: TextFieldDecoratorModifier.kt */
-@Metadata(d1 = {"\u0000ÿ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b,\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005*\u0001]\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b2\u00020\t2\u00020\n2\u00020\u000bBs\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\b\u0010\u0012\u001a\u0004\u0018\u00010\u0013\u0012\u0006\u0010\u0014\u001a\u00020\u0015\u0012\u0006\u0010\u0016\u001a\u00020\u0015\u0012\u0006\u0010\u0017\u001a\u00020\u0018\u0012\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a\u0012\u0006\u0010\u001b\u001a\u00020\u0015\u0012\u0006\u0010\u001c\u001a\u00020\u001d\u0012\u0006\u0010\u001e\u001a\u00020\u0015\u0012\u000e\u0010\u001f\u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010 ¢\u0006\u0004\b\"\u0010#J\f\u0010l\u001a\u00020!*\u00020mH\u0016J\u000e\u0010n\u001a\u00020!H\u0082@¢\u0006\u0002\u0010oJr\u0010p\u001a\u00020!2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0017\u001a\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\u0006\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00152\u000e\u0010\u001f\u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010 J\f\u0010s\u001a\u00020!*\u00020tH\u0016J\b\u0010u\u001a\u00020!H\u0002J\b\u0010v\u001a\u00020!H\u0002J\b\u0010w\u001a\u00020!H\u0016J\b\u0010x\u001a\u00020!H\u0016J\u0010\u0010y\u001a\u00020!2\u0006\u0010z\u001a\u00020{H\u0016J,\u0010|\u001a\u00020!2\u0006\u0010}\u001a\u00020~2\u0007\u0010\u007f\u001a\u00030\u0080\u00012\b\u0010\u0081\u0001\u001a\u00030\u0082\u0001H\u0016¢\u0006\u0006\b\u0083\u0001\u0010\u0084\u0001J\t\u0010\u0085\u0001\u001a\u00020!H\u0016J\u001c\u0010\u0086\u0001\u001a\u00020\u00152\b\u0010\u0087\u0001\u001a\u00030\u0088\u0001H\u0016¢\u0006\u0006\b\u0089\u0001\u0010\u008a\u0001J\u001c\u0010\u008b\u0001\u001a\u00020\u00152\b\u0010\u0087\u0001\u001a\u00030\u0088\u0001H\u0016¢\u0006\u0006\b\u008c\u0001\u0010\u008a\u0001J\t\u0010\u008d\u0001\u001a\u00020!H\u0016J\t\u0010\u008e\u0001\u001a\u00020!H\u0002J\u0011\u0010\u008f\u0001\u001a\u00020!2\u0006\u0010z\u001a\u00020{H\u0016J\u001c\u0010\u0090\u0001\u001a\u00020!2\b\u0010\u0091\u0001\u001a\u00030\u0082\u0001H\u0016¢\u0006\u0006\b\u0092\u0001\u0010\u0093\u0001J\u0012\u0010\u0094\u0001\u001a\u00020!2\u0007\u0010\u0095\u0001\u001a\u00020\u0015H\u0002J\t\u0010\u0096\u0001\u001a\u00020!H\u0002J\n\u0010\u0097\u0001\u001a\u00030\u0098\u0001H\u0002J\t\u0010\u0099\u0001\u001a\u00020!H\u0002J\u001c\u0010\u009a\u0001\u001a\u00020\u00152\b\u0010\u009b\u0001\u001a\u00030\u009c\u0001H\u0002¢\u0006\u0006\b\u009d\u0001\u0010\u009e\u0001J\u001c\u0010\u009f\u0001\u001a\u00020\u00152\b\u0010\u009b\u0001\u001a\u00030\u009c\u0001H\u0002¢\u0006\u0006\b \u0001\u0010\u009e\u0001R\u001a\u0010\f\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'R\u001a\u0010\u000e\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b(\u0010)\"\u0004\b*\u0010+R\u001a\u0010\u0010\u001a\u00020\u0011X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b,\u0010-\"\u0004\b.\u0010/R\u001c\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103R\u001a\u0010\u0014\u001a\u00020\u0015X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b4\u00105\"\u0004\b6\u00107R\u001a\u0010\u0016\u001a\u00020\u0015X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b8\u00105\"\u0004\b9\u00107R\u001a\u0010\u0017\u001a\u00020\u0018X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b:\u0010;\"\u0004\b<\u0010=R\u001c\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b>\u0010?\"\u0004\b@\u0010AR\u001a\u0010\u001b\u001a\u00020\u0015X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bB\u00105\"\u0004\bC\u00107R\u001a\u0010\u001c\u001a\u00020\u001dX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bD\u0010E\"\u0004\bF\u0010GR\u001a\u0010\u001e\u001a\u00020\u0015X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u00105\"\u0004\bH\u00107R\"\u0010\u001f\u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010 X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bI\u0010J\"\u0004\bK\u0010LR\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010O\u001a\u00020PX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010Q\u001a\u0004\u0018\u00010RX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010S\u001a\u00020TX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010U\u001a\u0004\u0018\u00010VX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010W\u001a\u00020\u00158BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bW\u00105R\u0010\u0010X\u001a\u0004\u0018\u00010YX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010Z\u001a\u00020[X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\\\u001a\u00020]X\u0082\u0004¢\u0006\u0004\n\u0002\u0010^R\u0010\u0010_\u001a\u00020`X\u0082\u0004¢\u0006\u0004\n\u0002\u0010aR\u0010\u0010b\u001a\u0004\u0018\u00010YX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010c\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010e0dX\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010g\u001a\u00020\u00152\u0006\u0010f\u001a\u00020\u00158B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bj\u0010k\u001a\u0004\bh\u00105\"\u0004\bi\u00107R\u0014\u0010q\u001a\u00020\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\br\u00105¨\u0006¡\u0001"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldDecoratorModifierNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/platform/PlatformTextInputModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/input/key/KeyInputModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "Landroidx/compose/ui/node/LayoutAwareModifierNode;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "filter", "Landroidx/compose/foundation/text/input/InputTransformation;", "enabled", "", "readOnly", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "keyboardActionHandler", "Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "singleLine", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "isPassword", "stylusHandwritingTrigger", "Lkotlinx/coroutines/flow/MutableSharedFlow;", "", "<init>", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/foundation/text/input/InputTransformation;ZZLandroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;ZLandroidx/compose/foundation/interaction/MutableInteractionSource;ZLkotlinx/coroutines/flow/MutableSharedFlow;)V", "getTextFieldState", "()Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "setTextFieldState", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;)V", "getTextLayoutState", "()Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "setTextLayoutState", "(Landroidx/compose/foundation/text/input/internal/TextLayoutState;)V", "getTextFieldSelectionState", "()Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "setTextFieldSelectionState", "(Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;)V", "getFilter", "()Landroidx/compose/foundation/text/input/InputTransformation;", "setFilter", "(Landroidx/compose/foundation/text/input/InputTransformation;)V", "getEnabled", "()Z", "setEnabled", "(Z)V", "getReadOnly", "setReadOnly", "getKeyboardOptions", "()Landroidx/compose/foundation/text/KeyboardOptions;", "setKeyboardOptions", "(Landroidx/compose/foundation/text/KeyboardOptions;)V", "getKeyboardActionHandler", "()Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "setKeyboardActionHandler", "(Landroidx/compose/foundation/text/input/KeyboardActionHandler;)V", "getSingleLine", "setSingleLine", "getInteractionSource", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "setInteractionSource", "(Landroidx/compose/foundation/interaction/MutableInteractionSource;)V", "setPassword", "getStylusHandwritingTrigger", "()Lkotlinx/coroutines/flow/MutableSharedFlow;", "setStylusHandwritingTrigger", "(Lkotlinx/coroutines/flow/MutableSharedFlow;)V", "focusableNode", "Landroidx/compose/foundation/FocusableNode;", "pointerInputNode", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "dragEnterEvent", "Landroidx/compose/foundation/interaction/HoverInteraction$Enter;", "dragAndDropNode", "Landroidx/compose/ui/draganddrop/DragAndDropTargetModifierNode;", "windowInfo", "Landroidx/compose/ui/platform/WindowInfo;", "isFocused", "toolbarAndHandlesVisibilityObserverJob", "Lkotlinx/coroutines/Job;", "textFieldKeyEventHandler", "Landroidx/compose/foundation/text/input/internal/TextFieldKeyEventHandler;", "keyboardActionScope", "androidx/compose/foundation/text/input/internal/TextFieldDecoratorModifierNode$keyboardActionScope$1", "Landroidx/compose/foundation/text/input/internal/TextFieldDecoratorModifierNode$keyboardActionScope$1;", "clipboardKeyCommandsHandler", "Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "Lkotlin/jvm/functions/Function1;", "inputSessionJob", "receiveContentConfigurationProvider", "Lkotlin/Function0;", "Landroidx/compose/foundation/content/internal/ReceiveContentConfiguration;", "<set-?>", "autofillHighlightOn", "getAutofillHighlightOn", "setAutofillHighlightOn", "autofillHighlightOn$delegate", "Landroidx/compose/runtime/MutableState;", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "observeUntransformedTextChanges", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateNode", "shouldMergeDescendantSemantics", "getShouldMergeDescendantSemantics", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "requestFocus", "onIsFocusedUpdated", "onAttach", "onDetach", "onGloballyPositioned", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onCancelPointerInput", "onPreKeyEvent", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "onPreKeyEvent-ZmokQxo", "(Landroid/view/KeyEvent;)Z", "onKeyEvent", "onKeyEvent-ZmokQxo", "onObservedReadsChanged", "updateWindowFocus", "onPlaced", "onRemeasured", "size", "onRemeasured-ozmzZPI", "(J)V", "startInputSession", "fromTap", "disposeInputSession", "requireKeyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "emitDragExitEvent", "onImeActionPerformed", "imeAction", "Landroidx/compose/ui/text/input/ImeAction;", "onImeActionPerformed-KlQnJC8", "(I)Z", "defaultKeyboardActionWithResult", "defaultKeyboardActionWithResult-KlQnJC8", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b,\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005*\u0001^\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b2\u00020\t2\u00020\n2\u00020\u000b2\u00020\fBs\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012\u0012\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014\u0012\u0006\u0010\u0015\u001a\u00020\u0016\u0012\u0006\u0010\u0017\u001a\u00020\u0016\u0012\u0006\u0010\u0018\u001a\u00020\u0019\u0012\b\u0010\u001a\u001a\u0004\u0018\u00010\u001b\u0012\u0006\u0010\u001c\u001a\u00020\u0016\u0012\u0006\u0010\u001d\u001a\u00020\u001e\u0012\u0006\u0010\u001f\u001a\u00020\u0016\u0012\u000e\u0010 \u001a\n\u0012\u0004\u0012\u00020\"\u0018\u00010!¢\u0006\u0004\b#\u0010$J\f\u0010m\u001a\u00020\"*\u00020nH\u0016J\u000e\u0010o\u001a\u00020\"H\u0082@¢\u0006\u0002\u0010pJr\u0010q\u001a\u00020\"2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\b\u0010\u0013\u001a\u0004\u0018\u00010\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00162\u0006\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\u0006\u0010\u001c\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u00162\u000e\u0010 \u001a\n\u0012\u0004\u0012\u00020\"\u0018\u00010!J\f\u0010t\u001a\u00020\"*\u00020uH\u0016J\b\u0010v\u001a\u00020\"H\u0002J\b\u0010w\u001a\u00020\"H\u0002J\u0010\u0010x\u001a\u00020\"2\u0006\u0010y\u001a\u00020zH\u0016J\b\u0010{\u001a\u00020\"H\u0016J\b\u0010|\u001a\u00020\"H\u0016J\u0010\u0010}\u001a\u00020\"2\u0006\u0010~\u001a\u00020\u007fH\u0016J0\u0010\u0080\u0001\u001a\u00020\"2\b\u0010\u0081\u0001\u001a\u00030\u0082\u00012\b\u0010\u0083\u0001\u001a\u00030\u0084\u00012\b\u0010\u0085\u0001\u001a\u00030\u0086\u0001H\u0016¢\u0006\u0006\b\u0087\u0001\u0010\u0088\u0001J\t\u0010\u0089\u0001\u001a\u00020\"H\u0016J\u001c\u0010\u008a\u0001\u001a\u00020\u00162\b\u0010\u008b\u0001\u001a\u00030\u008c\u0001H\u0016¢\u0006\u0006\b\u008d\u0001\u0010\u008e\u0001J\u001c\u0010\u008f\u0001\u001a\u00020\u00162\b\u0010\u008b\u0001\u001a\u00030\u008c\u0001H\u0016¢\u0006\u0006\b\u0090\u0001\u0010\u008e\u0001J\t\u0010\u0091\u0001\u001a\u00020\"H\u0016J\t\u0010\u0092\u0001\u001a\u00020\"H\u0002J\u0011\u0010\u0093\u0001\u001a\u00020\"2\u0006\u0010~\u001a\u00020\u007fH\u0016J\u001c\u0010\u0094\u0001\u001a\u00020\"2\b\u0010\u0095\u0001\u001a\u00030\u0086\u0001H\u0016¢\u0006\u0006\b\u0096\u0001\u0010\u0097\u0001J\u0012\u0010\u0098\u0001\u001a\u00020\"2\u0007\u0010\u0099\u0001\u001a\u00020\u0016H\u0002J\t\u0010\u009a\u0001\u001a\u00020\"H\u0002J\n\u0010\u009b\u0001\u001a\u00030\u009c\u0001H\u0002J\t\u0010\u009d\u0001\u001a\u00020\"H\u0002J\u001c\u0010\u009e\u0001\u001a\u00020\u00162\b\u0010\u009f\u0001\u001a\u00030 \u0001H\u0002¢\u0006\u0006\b¡\u0001\u0010¢\u0001J\u001c\u0010£\u0001\u001a\u00020\u00162\b\u0010\u009f\u0001\u001a\u00030 \u0001H\u0002¢\u0006\u0006\b¤\u0001\u0010¢\u0001R\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b%\u0010&\"\u0004\b'\u0010(R\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010*\"\u0004\b+\u0010,R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010.\"\u0004\b/\u00100R\u001c\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b1\u00102\"\u0004\b3\u00104R\u001a\u0010\u0015\u001a\u00020\u0016X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b5\u00106\"\u0004\b7\u00108R\u001a\u0010\u0017\u001a\u00020\u0016X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b9\u00106\"\u0004\b:\u00108R\u001a\u0010\u0018\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b;\u0010<\"\u0004\b=\u0010>R\u001c\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b?\u0010@\"\u0004\bA\u0010BR\u001a\u0010\u001c\u001a\u00020\u0016X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bC\u00106\"\u0004\bD\u00108R\u001a\u0010\u001d\u001a\u00020\u001eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bE\u0010F\"\u0004\bG\u0010HR\u001a\u0010\u001f\u001a\u00020\u0016X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u00106\"\u0004\bI\u00108R\"\u0010 \u001a\n\u0012\u0004\u0012\u00020\"\u0018\u00010!X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bJ\u0010K\"\u0004\bL\u0010MR\u000e\u0010N\u001a\u00020OX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010P\u001a\u00020QX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010R\u001a\u0004\u0018\u00010SX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010T\u001a\u00020UX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010V\u001a\u0004\u0018\u00010WX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010X\u001a\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bX\u00106R\u0010\u0010Y\u001a\u0004\u0018\u00010ZX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010[\u001a\u00020\\X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010]\u001a\u00020^X\u0082\u0004¢\u0006\u0004\n\u0002\u0010_R\u0010\u0010`\u001a\u00020aX\u0082\u0004¢\u0006\u0004\n\u0002\u0010bR\u0010\u0010c\u001a\u0004\u0018\u00010ZX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010d\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010f0eX\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010h\u001a\u00020\u00162\u0006\u0010g\u001a\u00020\u00168B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bk\u0010l\u001a\u0004\bi\u00106\"\u0004\bj\u00108R\u0014\u0010r\u001a\u00020\u00168VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bs\u00106¨\u0006¥\u0001"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldDecoratorModifierNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/platform/PlatformTextInputModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/input/key/KeyInputModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "Landroidx/compose/ui/node/LayoutAwareModifierNode;", "Landroidx/compose/ui/focus/FocusPropertiesModifierNode;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "filter", "Landroidx/compose/foundation/text/input/InputTransformation;", "enabled", "", "readOnly", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "keyboardActionHandler", "Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "singleLine", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "isPassword", "stylusHandwritingTrigger", "Lkotlinx/coroutines/flow/MutableSharedFlow;", "", "<init>", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/foundation/text/input/InputTransformation;ZZLandroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;ZLandroidx/compose/foundation/interaction/MutableInteractionSource;ZLkotlinx/coroutines/flow/MutableSharedFlow;)V", "getTextFieldState", "()Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "setTextFieldState", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;)V", "getTextLayoutState", "()Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "setTextLayoutState", "(Landroidx/compose/foundation/text/input/internal/TextLayoutState;)V", "getTextFieldSelectionState", "()Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "setTextFieldSelectionState", "(Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;)V", "getFilter", "()Landroidx/compose/foundation/text/input/InputTransformation;", "setFilter", "(Landroidx/compose/foundation/text/input/InputTransformation;)V", "getEnabled", "()Z", "setEnabled", "(Z)V", "getReadOnly", "setReadOnly", "getKeyboardOptions", "()Landroidx/compose/foundation/text/KeyboardOptions;", "setKeyboardOptions", "(Landroidx/compose/foundation/text/KeyboardOptions;)V", "getKeyboardActionHandler", "()Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "setKeyboardActionHandler", "(Landroidx/compose/foundation/text/input/KeyboardActionHandler;)V", "getSingleLine", "setSingleLine", "getInteractionSource", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "setInteractionSource", "(Landroidx/compose/foundation/interaction/MutableInteractionSource;)V", "setPassword", "getStylusHandwritingTrigger", "()Lkotlinx/coroutines/flow/MutableSharedFlow;", "setStylusHandwritingTrigger", "(Lkotlinx/coroutines/flow/MutableSharedFlow;)V", "focusableNode", "Landroidx/compose/foundation/FocusableNode;", "pointerInputNode", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "dragEnterEvent", "Landroidx/compose/foundation/interaction/HoverInteraction$Enter;", "dragAndDropNode", "Landroidx/compose/ui/draganddrop/DragAndDropTargetModifierNode;", "windowInfo", "Landroidx/compose/ui/platform/WindowInfo;", "isFocused", "toolbarAndHandlesVisibilityObserverJob", "Lkotlinx/coroutines/Job;", "textFieldKeyEventHandler", "Landroidx/compose/foundation/text/input/internal/TextFieldKeyEventHandler;", "keyboardActionScope", "androidx/compose/foundation/text/input/internal/TextFieldDecoratorModifierNode$keyboardActionScope$1", "Landroidx/compose/foundation/text/input/internal/TextFieldDecoratorModifierNode$keyboardActionScope$1;", "clipboardKeyCommandsHandler", "Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "Lkotlin/jvm/functions/Function1;", "inputSessionJob", "receiveContentConfigurationProvider", "Lkotlin/Function0;", "Landroidx/compose/foundation/content/internal/ReceiveContentConfiguration;", "<set-?>", "autofillHighlightOn", "getAutofillHighlightOn", "setAutofillHighlightOn", "autofillHighlightOn$delegate", "Landroidx/compose/runtime/MutableState;", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "observeUntransformedTextChanges", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateNode", "shouldMergeDescendantSemantics", "getShouldMergeDescendantSemantics", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "requestFocus", "onIsFocusedUpdated", "applyFocusProperties", "focusProperties", "Landroidx/compose/ui/focus/FocusProperties;", "onAttach", "onDetach", "onGloballyPositioned", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onCancelPointerInput", "onPreKeyEvent", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "onPreKeyEvent-ZmokQxo", "(Landroid/view/KeyEvent;)Z", "onKeyEvent", "onKeyEvent-ZmokQxo", "onObservedReadsChanged", "updateWindowFocus", "onPlaced", "onRemeasured", "size", "onRemeasured-ozmzZPI", "(J)V", "startInputSession", "fromTap", "disposeInputSession", "requireKeyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "emitDragExitEvent", "onImeActionPerformed", "imeAction", "Landroidx/compose/ui/text/input/ImeAction;", "onImeActionPerformed-KlQnJC8", "(I)Z", "defaultKeyboardActionWithResult", "defaultKeyboardActionWithResult-KlQnJC8", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class TextFieldDecoratorModifierNode extends DelegatingNode implements DrawModifierNode, PlatformTextInputModifierNode, SemanticsModifierNode, GlobalPositionAwareModifierNode, PointerInputModifierNode, KeyInputModifierNode, CompositionLocalConsumerModifierNode, ModifierLocalModifierNode, ObserverModifierNode, LayoutAwareModifierNode {
+public final class TextFieldDecoratorModifierNode extends DelegatingNode implements DrawModifierNode, PlatformTextInputModifierNode, SemanticsModifierNode, GlobalPositionAwareModifierNode, PointerInputModifierNode, KeyInputModifierNode, CompositionLocalConsumerModifierNode, ModifierLocalModifierNode, ObserverModifierNode, LayoutAwareModifierNode, FocusPropertiesModifierNode {
     public static final int $stable = 8;
     private final MutableState autofillHighlightOn$delegate;
     private final Function1<? super KeyCommand, ? extends Unit> clipboardKeyCommandsHandler;
@@ -128,102 +136,6 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return true;
     }
 
-    public final TransformedTextFieldState getTextFieldState() {
-        return this.textFieldState;
-    }
-
-    public final void setTextFieldState(TransformedTextFieldState transformedTextFieldState) {
-        this.textFieldState = transformedTextFieldState;
-    }
-
-    public final TextLayoutState getTextLayoutState() {
-        return this.textLayoutState;
-    }
-
-    public final void setTextLayoutState(TextLayoutState textLayoutState) {
-        this.textLayoutState = textLayoutState;
-    }
-
-    public final TextFieldSelectionState getTextFieldSelectionState() {
-        return this.textFieldSelectionState;
-    }
-
-    public final void setTextFieldSelectionState(TextFieldSelectionState textFieldSelectionState) {
-        this.textFieldSelectionState = textFieldSelectionState;
-    }
-
-    public final InputTransformation getFilter() {
-        return this.filter;
-    }
-
-    public final void setFilter(InputTransformation inputTransformation) {
-        this.filter = inputTransformation;
-    }
-
-    public final boolean getEnabled() {
-        return this.enabled;
-    }
-
-    public final void setEnabled(boolean z) {
-        this.enabled = z;
-    }
-
-    public final boolean getReadOnly() {
-        return this.readOnly;
-    }
-
-    public final void setReadOnly(boolean z) {
-        this.readOnly = z;
-    }
-
-    public final KeyboardOptions getKeyboardOptions() {
-        return this.keyboardOptions;
-    }
-
-    public final void setKeyboardOptions(KeyboardOptions keyboardOptions) {
-        this.keyboardOptions = keyboardOptions;
-    }
-
-    public final KeyboardActionHandler getKeyboardActionHandler() {
-        return this.keyboardActionHandler;
-    }
-
-    public final void setKeyboardActionHandler(KeyboardActionHandler keyboardActionHandler) {
-        this.keyboardActionHandler = keyboardActionHandler;
-    }
-
-    public final boolean getSingleLine() {
-        return this.singleLine;
-    }
-
-    public final void setSingleLine(boolean z) {
-        this.singleLine = z;
-    }
-
-    public final MutableInteractionSource getInteractionSource() {
-        return this.interactionSource;
-    }
-
-    public final void setInteractionSource(MutableInteractionSource mutableInteractionSource) {
-        this.interactionSource = mutableInteractionSource;
-    }
-
-    public final boolean isPassword() {
-        return this.isPassword;
-    }
-
-    public final void setPassword(boolean z) {
-        this.isPassword = z;
-    }
-
-    public final MutableSharedFlow<Unit> getStylusHandwritingTrigger() {
-        return this.stylusHandwritingTrigger;
-    }
-
-    public final void setStylusHandwritingTrigger(MutableSharedFlow<Unit> mutableSharedFlow) {
-        this.stylusHandwritingTrigger = mutableSharedFlow;
-    }
-
     public TextFieldDecoratorModifierNode(TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, InputTransformation inputTransformation, boolean z, boolean z2, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, boolean z3, MutableInteractionSource mutableInteractionSource, boolean z4, MutableSharedFlow<Unit> mutableSharedFlow) {
         MutableState mutableStateOf$default;
         this.textFieldState = transformedTextFieldState;
@@ -249,16 +161,16 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         this.focusableNode = new FocusableNode(this.interactionSource, 0, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit focusableNode$lambda$2;
-                focusableNode$lambda$2 = TextFieldDecoratorModifierNode.focusableNode$lambda$2(TextFieldDecoratorModifierNode.this, ((Boolean) obj).booleanValue());
-                return focusableNode$lambda$2;
+                Unit focusableNode$lambda$0;
+                focusableNode$lambda$0 = TextFieldDecoratorModifierNode.focusableNode$lambda$0(TextFieldDecoratorModifierNode.this, ((Boolean) obj).booleanValue());
+                return focusableNode$lambda$0;
             }
         }, 2, null);
         this.pointerInputNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1
 
             /* compiled from: TextFieldDecoratorModifier.kt */
             @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1", f = "TextFieldDecoratorModifier.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+            @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1", f = "TextFieldDecoratorModifier.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
             /* renamed from: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1  reason: invalid class name */
             /* loaded from: classes.dex */
             static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -392,7 +304,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                 }
 
                 /* JADX INFO: Access modifiers changed from: private */
-                public static final Unit invokeSuspend$lambda$1$lambda$0(TextFieldSelectionState textFieldSelectionState, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+                public static final Unit invokeSuspend$lambda$0$0(TextFieldSelectionState textFieldSelectionState, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
                     if (!textFieldSelectionState.isFocused()) {
                         textFieldDecoratorModifierNode.requestFocus();
                     }
@@ -409,73 +321,169 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         this.dragAndDropNode = (DragAndDropTargetModifierNode) delegate(TextFieldDragAndDropNode_androidKt.textFieldDragAndDropNode$default(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Set dragAndDropNode$lambda$3;
-                dragAndDropNode$lambda$3 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$3(TextFieldDecoratorModifierNode.this);
-                return dragAndDropNode$lambda$3;
+                Set dragAndDropNode$lambda$0;
+                dragAndDropNode$lambda$0 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$0(TextFieldDecoratorModifierNode.this);
+                return dragAndDropNode$lambda$0;
             }
         }, new Function2() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                boolean dragAndDropNode$lambda$4;
-                dragAndDropNode$lambda$4 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$4(TextFieldDecoratorModifierNode.this, (ClipEntry) obj, (ClipMetadata) obj2);
-                return Boolean.valueOf(dragAndDropNode$lambda$4);
+                boolean dragAndDropNode$lambda$1;
+                dragAndDropNode$lambda$1 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$1(TextFieldDecoratorModifierNode.this, (ClipEntry) obj, (ClipMetadata) obj2);
+                return Boolean.valueOf(dragAndDropNode$lambda$1);
             }
         }, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda10
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit dragAndDropNode$lambda$2;
+                dragAndDropNode$lambda$2 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$2(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
+                return dragAndDropNode$lambda$2;
+            }
+        }, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda12
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit dragAndDropNode$lambda$3;
+                dragAndDropNode$lambda$3 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$3(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
+                return dragAndDropNode$lambda$3;
+            }
+        }, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda13
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit dragAndDropNode$lambda$4;
+                dragAndDropNode$lambda$4 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$4(TextFieldDecoratorModifierNode.this, (Offset) obj);
+                return dragAndDropNode$lambda$4;
+            }
+        }, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit dragAndDropNode$lambda$5;
                 dragAndDropNode$lambda$5 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$5(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
                 return dragAndDropNode$lambda$5;
             }
-        }, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda12
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$7;
-                dragAndDropNode$lambda$7 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$7(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
-                return dragAndDropNode$lambda$7;
-            }
-        }, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda13
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$8;
-                dragAndDropNode$lambda$8 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$8(TextFieldDecoratorModifierNode.this, (Offset) obj);
-                return dragAndDropNode$lambda$8;
-            }
-        }, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda14
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$9;
-                dragAndDropNode$lambda$9 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$9(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
-                return dragAndDropNode$lambda$9;
-            }
         }, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$10;
-                dragAndDropNode$lambda$10 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$10(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
-                return dragAndDropNode$lambda$10;
+                Unit dragAndDropNode$lambda$6;
+                dragAndDropNode$lambda$6 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$6(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
+                return dragAndDropNode$lambda$6;
             }
         }, 72, null));
         this.textFieldKeyEventHandler = TextFieldKeyEventHandler_androidKt.createTextFieldKeyEventHandler();
         this.keyboardActionScope = new TextFieldDecoratorModifierNode$keyboardActionScope$1(this);
-        this.clipboardKeyCommandsHandler = ClipboardKeyCommandsHandler.m1485constructorimpl(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda16
+        this.clipboardKeyCommandsHandler = ClipboardKeyCommandsHandler.m1574constructorimpl(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit clipboardKeyCommandsHandler$lambda$11;
-                clipboardKeyCommandsHandler$lambda$11 = TextFieldDecoratorModifierNode.clipboardKeyCommandsHandler$lambda$11(TextFieldDecoratorModifierNode.this, (KeyCommand) obj);
-                return clipboardKeyCommandsHandler$lambda$11;
+                Unit clipboardKeyCommandsHandler$lambda$0;
+                clipboardKeyCommandsHandler$lambda$0 = TextFieldDecoratorModifierNode.clipboardKeyCommandsHandler$lambda$0(TextFieldDecoratorModifierNode.this, (KeyCommand) obj);
+                return clipboardKeyCommandsHandler$lambda$0;
             }
         });
         this.receiveContentConfigurationProvider = new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                ReceiveContentConfiguration receiveContentConfigurationProvider$lambda$12;
-                receiveContentConfigurationProvider$lambda$12 = TextFieldDecoratorModifierNode.receiveContentConfigurationProvider$lambda$12(TextFieldDecoratorModifierNode.this);
-                return receiveContentConfigurationProvider$lambda$12;
+                ReceiveContentConfiguration receiveContentConfigurationProvider$lambda$0;
+                receiveContentConfigurationProvider$lambda$0 = TextFieldDecoratorModifierNode.receiveContentConfigurationProvider$lambda$0(TextFieldDecoratorModifierNode.this);
+                return receiveContentConfigurationProvider$lambda$0;
             }
         };
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.autofillHighlightOn$delegate = mutableStateOf$default;
+    }
+
+    public final TransformedTextFieldState getTextFieldState() {
+        return this.textFieldState;
+    }
+
+    public final void setTextFieldState(TransformedTextFieldState transformedTextFieldState) {
+        this.textFieldState = transformedTextFieldState;
+    }
+
+    public final TextLayoutState getTextLayoutState() {
+        return this.textLayoutState;
+    }
+
+    public final void setTextLayoutState(TextLayoutState textLayoutState) {
+        this.textLayoutState = textLayoutState;
+    }
+
+    public final TextFieldSelectionState getTextFieldSelectionState() {
+        return this.textFieldSelectionState;
+    }
+
+    public final void setTextFieldSelectionState(TextFieldSelectionState textFieldSelectionState) {
+        this.textFieldSelectionState = textFieldSelectionState;
+    }
+
+    public final InputTransformation getFilter() {
+        return this.filter;
+    }
+
+    public final void setFilter(InputTransformation inputTransformation) {
+        this.filter = inputTransformation;
+    }
+
+    public final boolean getEnabled() {
+        return this.enabled;
+    }
+
+    public final void setEnabled(boolean z) {
+        this.enabled = z;
+    }
+
+    public final boolean getReadOnly() {
+        return this.readOnly;
+    }
+
+    public final void setReadOnly(boolean z) {
+        this.readOnly = z;
+    }
+
+    public final KeyboardOptions getKeyboardOptions() {
+        return this.keyboardOptions;
+    }
+
+    public final void setKeyboardOptions(KeyboardOptions keyboardOptions) {
+        this.keyboardOptions = keyboardOptions;
+    }
+
+    public final KeyboardActionHandler getKeyboardActionHandler() {
+        return this.keyboardActionHandler;
+    }
+
+    public final void setKeyboardActionHandler(KeyboardActionHandler keyboardActionHandler) {
+        this.keyboardActionHandler = keyboardActionHandler;
+    }
+
+    public final boolean getSingleLine() {
+        return this.singleLine;
+    }
+
+    public final void setSingleLine(boolean z) {
+        this.singleLine = z;
+    }
+
+    public final MutableInteractionSource getInteractionSource() {
+        return this.interactionSource;
+    }
+
+    public final void setInteractionSource(MutableInteractionSource mutableInteractionSource) {
+        this.interactionSource = mutableInteractionSource;
+    }
+
+    public final boolean isPassword() {
+        return this.isPassword;
+    }
+
+    public final void setPassword(boolean z) {
+        this.isPassword = z;
+    }
+
+    public final MutableSharedFlow<Unit> getStylusHandwritingTrigger() {
+        return this.stylusHandwritingTrigger;
+    }
+
+    public final void setStylusHandwritingTrigger(MutableSharedFlow<Unit> mutableSharedFlow) {
+        this.stylusHandwritingTrigger = mutableSharedFlow;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -485,7 +493,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit focusableNode$lambda$2(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, boolean z) {
+    public static final Unit focusableNode$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, boolean z) {
         boolean z2 = textFieldDecoratorModifierNode.enabled && !textFieldDecoratorModifierNode.readOnly;
         if (!z) {
             textFieldDecoratorModifierNode.disposeInputSession();
@@ -493,10 +501,10 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             TextFieldState textFieldState = transformedTextFieldState.textFieldState;
             InputTransformation inputTransformation = transformedTextFieldState.inputTransformation;
             TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-            textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-            TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-            mainBuffer$foundation_release.commitComposition$foundation_release();
-            transformedTextFieldState.updateWedgeAffinity(mainBuffer$foundation_release);
+            textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+            TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+            mainBuffer$foundation.commitComposition$foundation();
+            transformedTextFieldState.updateWedgeAffinity(mainBuffer$foundation);
             textFieldState.commitEditAsUser(inputTransformation, true, textFieldEditUndoBehavior);
             textFieldDecoratorModifierNode.textFieldState.collapseSelectionToMax();
         } else if (z2) {
@@ -507,7 +515,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Set dragAndDropNode$lambda$3(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final Set dragAndDropNode$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         Set set;
         Set set2;
         if (ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode) != null) {
@@ -519,7 +527,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dragAndDropNode$lambda$5(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
+    public static final Unit dragAndDropNode$lambda$2(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         if (ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode) != null) {
             DragAndDropRequestPermission_androidKt.dragAndDropRequestPermission(textFieldDecoratorModifierNode, dragAndDropEvent);
         }
@@ -527,7 +535,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dragAndDropNode$lambda$7(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
+    public static final Unit dragAndDropNode$lambda$3(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         ReceiveContentListener receiveContentListener;
         HoverInteraction.Enter enter = new HoverInteraction.Enter();
         textFieldDecoratorModifierNode.interactionSource.tryEmit(enter);
@@ -540,25 +548,25 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dragAndDropNode$lambda$8(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, Offset offset) {
-        long m1592fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1592fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m5046unboximpl());
-        int m1582getOffsetForPosition3MmeM6k$default = TextLayoutState.m1582getOffsetForPosition3MmeM6k$default(textFieldDecoratorModifierNode.textLayoutState, m1592fromWindowToDecorationUv8p0NA, false, 2, null);
-        if (m1582getOffsetForPosition3MmeM6k$default >= 0) {
-            textFieldDecoratorModifierNode.textFieldState.m1604selectCharsIn5zctL8(TextRangeKt.TextRange(m1582getOffsetForPosition3MmeM6k$default));
+    public static final Unit dragAndDropNode$lambda$4(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, Offset offset) {
+        long m1683fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1683fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m5189unboximpl());
+        int m1673getOffsetForPosition3MmeM6k$default = TextLayoutState.m1673getOffsetForPosition3MmeM6k$default(textFieldDecoratorModifierNode.textLayoutState, m1683fromWindowToDecorationUv8p0NA, false, 2, null);
+        if (m1673getOffsetForPosition3MmeM6k$default >= 0) {
+            textFieldDecoratorModifierNode.textFieldState.m1694selectCharsIn5zctL8(TextRangeKt.TextRange(m1673getOffsetForPosition3MmeM6k$default));
         }
-        textFieldDecoratorModifierNode.textFieldSelectionState.m1656updateHandleDraggingUv8p0NA(Handle.Cursor, m1592fromWindowToDecorationUv8p0NA);
+        textFieldDecoratorModifierNode.textFieldSelectionState.m1743updateHandleDraggingUv8p0NA(Handle.Cursor, m1683fromWindowToDecorationUv8p0NA);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean dragAndDropNode$lambda$4(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, ClipEntry clipEntry, ClipMetadata clipMetadata) {
+    public static final boolean dragAndDropNode$lambda$1(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, ClipEntry clipEntry, ClipMetadata clipMetadata) {
         ClipEntry clipEntry2;
         textFieldDecoratorModifierNode.emitDragExitEvent();
         textFieldDecoratorModifierNode.textFieldSelectionState.clearHandleDragging();
         String readPlainText = TransferableContent_androidKt.readPlainText(clipEntry);
         ReceiveContentConfiguration receiveContentConfiguration = ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode);
         if (receiveContentConfiguration != null) {
-            TransferableContent onReceive = receiveContentConfiguration.getReceiveContentListener().onReceive(new TransferableContent(clipEntry, clipMetadata, TransferableContent.Source.Companion.m383getDragAndDropkB6V9T0(), null, 8, null));
+            TransferableContent onReceive = receiveContentConfiguration.getReceiveContentListener().onReceive(new TransferableContent(clipEntry, clipMetadata, TransferableContent.Source.Companion.m418getDragAndDropkB6V9T0(), null, 8, null));
             readPlainText = (onReceive == null || (clipEntry2 = onReceive.getClipEntry()) == null) ? null : TransferableContent_androidKt.readPlainText(clipEntry2);
         }
         if (readPlainText != null) {
@@ -569,7 +577,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dragAndDropNode$lambda$9(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
+    public static final Unit dragAndDropNode$lambda$5(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         ReceiveContentListener receiveContentListener;
         textFieldDecoratorModifierNode.emitDragExitEvent();
         textFieldDecoratorModifierNode.textFieldSelectionState.clearHandleDragging();
@@ -581,7 +589,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dragAndDropNode$lambda$10(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
+    public static final Unit dragAndDropNode$lambda$6(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         textFieldDecoratorModifierNode.emitDragExitEvent();
         return Unit.INSTANCE;
     }
@@ -592,13 +600,13 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit clipboardKeyCommandsHandler$lambda$11(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, KeyCommand keyCommand) {
+    public static final Unit clipboardKeyCommandsHandler$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, KeyCommand keyCommand) {
         BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, CoroutineStart.UNDISPATCHED, new TextFieldDecoratorModifierNode$clipboardKeyCommandsHandler$1$1(keyCommand, textFieldDecoratorModifierNode, null), 1, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ReceiveContentConfiguration receiveContentConfigurationProvider$lambda$12(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final ReceiveContentConfiguration receiveContentConfigurationProvider$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         return ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode);
     }
 
@@ -615,7 +623,9 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     public void draw(ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
         if (getAutofillHighlightOn()) {
-            DrawScope.m5853drawRectnJ9OG0$default(contentDrawScope, ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, AutofillHighlightKt.getLocalAutofillHighlightColor())).m5290unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+            ContentDrawScope contentDrawScope2 = contentDrawScope;
+            TextFieldDecoratorModifierNode textFieldDecoratorModifierNode = this;
+            DrawScope.m5998drawRectAsUm42w$default(contentDrawScope2, AutofillHighlightKt.m1292resolveAutofillHighlightWkMShQ((Brush) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightBrush()), ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightColor())).m5434unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor()), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
     }
 
@@ -624,9 +634,9 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         Object collect = FlowKt.take(FlowKt.drop(SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String observeUntransformedTextChanges$lambda$13;
-                observeUntransformedTextChanges$lambda$13 = TextFieldDecoratorModifierNode.observeUntransformedTextChanges$lambda$13(TextFieldDecoratorModifierNode.this);
-                return observeUntransformedTextChanges$lambda$13;
+                String observeUntransformedTextChanges$lambda$0;
+                observeUntransformedTextChanges$lambda$0 = TextFieldDecoratorModifierNode.observeUntransformedTextChanges$lambda$0(TextFieldDecoratorModifierNode.this);
+                return observeUntransformedTextChanges$lambda$0;
             }
         }), 1), 1).collect(new FlowCollector() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$observeUntransformedTextChanges$3
             @Override // kotlinx.coroutines.flow.FlowCollector
@@ -643,7 +653,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String observeUntransformedTextChanges$lambda$13(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final String observeUntransformedTextChanges$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         return textFieldDecoratorModifierNode.textFieldState.getUntransformedText().toString();
     }
 
@@ -680,13 +690,13 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         this.isPassword = z4;
         this.stylusHandwritingTrigger = mutableSharedFlow;
         if (z5 != z7 || !Intrinsics.areEqual(transformedTextFieldState, transformedTextFieldState2) || !Intrinsics.areEqual(keyboardOptions, keyboardOptions2) || !Intrinsics.areEqual(mutableSharedFlow, mutableSharedFlow2)) {
-            if (z5 && isFocused()) {
+            if (z5 && (isFocused() || this.inputSessionJob != null)) {
                 startInputSession(false);
             } else if (!z5) {
                 disposeInputSession();
             }
         }
-        if (z != z6 || z5 != z7 || !ImeAction.m7627equalsimpl0(keyboardOptions.m1285getImeActionOrDefaulteUduSuo$foundation_release(), keyboardOptions2.m1285getImeActionOrDefaulteUduSuo$foundation_release()) || z4 != z8) {
+        if (z != z6 || z5 != z7 || !ImeAction.m7873equalsimpl0(keyboardOptions.m1389getImeActionOrDefaulteUduSuo$foundation(), keyboardOptions2.m1389getImeActionOrDefaulteUduSuo$foundation()) || z4 != z8) {
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         if (!Intrinsics.areEqual(textFieldSelectionState, textFieldSelectionState2)) {
@@ -704,9 +714,9 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             textFieldSelectionState.setRequestAutofillAction(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit updateNode$lambda$14;
-                    updateNode$lambda$14 = TextFieldDecoratorModifierNode.updateNode$lambda$14(TextFieldDecoratorModifierNode.this);
-                    return updateNode$lambda$14;
+                    Unit updateNode$lambda$0;
+                    updateNode$lambda$0 = TextFieldDecoratorModifierNode.updateNode$lambda$0(TextFieldDecoratorModifierNode.this);
+                    return updateNode$lambda$0;
                 }
             });
         }
@@ -727,7 +737,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit updateNode$lambda$14(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final Unit updateNode$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         DelegatableNodeKt.requestAutofill(textFieldDecoratorModifierNode);
         return Unit.INSTANCE;
     }
@@ -735,10 +745,10 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         TextFieldCharSequence outputText = this.textFieldState.getOutputText();
-        long m1447getSelectiond9O1mEE = outputText.m1447getSelectiond9O1mEE();
+        long m1537getSelectiond9O1mEE = outputText.m1537getSelectiond9O1mEE();
         SemanticsPropertiesKt.setInputText(semanticsPropertyReceiver, new AnnotatedString(this.textFieldState.getUntransformedText().toString(), null, 2, null));
         SemanticsPropertiesKt.setEditableText(semanticsPropertyReceiver, new AnnotatedString(outputText.toString(), null, 2, null));
-        SemanticsPropertiesKt.m7225setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1447getSelectiond9O1mEE);
+        SemanticsPropertiesKt.m7462setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1537getSelectiond9O1mEE);
         if (!this.enabled) {
             SemanticsPropertiesKt.disabled(semanticsPropertyReceiver);
         }
@@ -748,89 +758,103 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         final boolean z = this.enabled && !this.readOnly;
         SemanticsPropertiesKt.setEditable(semanticsPropertyReceiver, z);
         SemanticsPropertiesKt.setContentDataType(semanticsPropertyReceiver, ContentDataType.Companion.getText());
-        SemanticsPropertiesKt.onAutofillText$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda11
+        FillableData createFromText = FillableData_androidKt.createFromText(FillableData.Companion, outputText);
+        if (createFromText != null) {
+            SemanticsPropertiesKt.setFillableData(semanticsPropertyReceiver, createFromText);
+        }
+        SemanticsPropertiesKt.onFillData$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applySemantics$lambda$15;
-                applySemantics$lambda$15 = TextFieldDecoratorModifierNode.applySemantics$lambda$15(z, this, (AnnotatedString) obj);
-                return Boolean.valueOf(applySemantics$lambda$15);
+                boolean applySemantics$lambda$1;
+                applySemantics$lambda$1 = TextFieldDecoratorModifierNode.applySemantics$lambda$1(z, this, (FillableData) obj);
+                return Boolean.valueOf(applySemantics$lambda$1);
             }
         }, 1, null);
+        int m1390getKeyboardTypePjHm6EE = this.keyboardOptions.m1390getKeyboardTypePjHm6EE();
+        if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7942getEmailPjHm6EE())) {
+            SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getEmailAddress());
+        } else if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7945getPasswordPjHm6EE())) {
+            SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPassword());
+        } else if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7944getNumberPasswordPjHm6EE())) {
+            SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPassword());
+        } else if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7946getPhonePjHm6EE())) {
+            SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPhoneNumber());
+        }
         SemanticsPropertiesKt.getTextLayoutResult$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applySemantics$lambda$17;
-                applySemantics$lambda$17 = TextFieldDecoratorModifierNode.applySemantics$lambda$17(TextFieldDecoratorModifierNode.this, (List) obj);
-                return Boolean.valueOf(applySemantics$lambda$17);
+                boolean applySemantics$lambda$2;
+                applySemantics$lambda$2 = TextFieldDecoratorModifierNode.applySemantics$lambda$2(TextFieldDecoratorModifierNode.this, (List) obj);
+                return Boolean.valueOf(applySemantics$lambda$2);
             }
         }, 1, null);
         if (z) {
             SemanticsPropertiesKt.setText$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda21
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean applySemantics$lambda$18;
-                    applySemantics$lambda$18 = TextFieldDecoratorModifierNode.applySemantics$lambda$18(z, this, (AnnotatedString) obj);
-                    return Boolean.valueOf(applySemantics$lambda$18);
+                    boolean applySemantics$lambda$3;
+                    applySemantics$lambda$3 = TextFieldDecoratorModifierNode.applySemantics$lambda$3(z, this, (AnnotatedString) obj);
+                    return Boolean.valueOf(applySemantics$lambda$3);
                 }
             }, 1, null);
             SemanticsPropertiesKt.insertTextAtCursor$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda22
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean applySemantics$lambda$19;
-                    applySemantics$lambda$19 = TextFieldDecoratorModifierNode.applySemantics$lambda$19(z, this, (AnnotatedString) obj);
-                    return Boolean.valueOf(applySemantics$lambda$19);
+                    boolean applySemantics$lambda$4;
+                    applySemantics$lambda$4 = TextFieldDecoratorModifierNode.applySemantics$lambda$4(z, this, (AnnotatedString) obj);
+                    return Boolean.valueOf(applySemantics$lambda$4);
                 }
             }, 1, null);
         }
         SemanticsPropertiesKt.setSelection$default(semanticsPropertyReceiver, null, new Function3() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                boolean applySemantics$lambda$20;
-                applySemantics$lambda$20 = TextFieldDecoratorModifierNode.applySemantics$lambda$20(TextFieldDecoratorModifierNode.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), ((Boolean) obj3).booleanValue());
-                return Boolean.valueOf(applySemantics$lambda$20);
+                boolean applySemantics$lambda$5;
+                applySemantics$lambda$5 = TextFieldDecoratorModifierNode.applySemantics$lambda$5(TextFieldDecoratorModifierNode.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), ((Boolean) obj3).booleanValue());
+                return Boolean.valueOf(applySemantics$lambda$5);
             }
         }, 1, null);
-        final int m1285getImeActionOrDefaulteUduSuo$foundation_release = this.keyboardOptions.m1285getImeActionOrDefaulteUduSuo$foundation_release();
-        SemanticsPropertiesKt.m7221onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1285getImeActionOrDefaulteUduSuo$foundation_release, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
+        final int m1389getImeActionOrDefaulteUduSuo$foundation = this.keyboardOptions.m1389getImeActionOrDefaulteUduSuo$foundation();
+        SemanticsPropertiesKt.m7458onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1389getImeActionOrDefaulteUduSuo$foundation, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$21;
-                applySemantics$lambda$21 = TextFieldDecoratorModifierNode.applySemantics$lambda$21(TextFieldDecoratorModifierNode.this, m1285getImeActionOrDefaulteUduSuo$foundation_release);
-                return Boolean.valueOf(applySemantics$lambda$21);
+                boolean applySemantics$lambda$6;
+                applySemantics$lambda$6 = TextFieldDecoratorModifierNode.applySemantics$lambda$6(TextFieldDecoratorModifierNode.this, m1389getImeActionOrDefaulteUduSuo$foundation);
+                return Boolean.valueOf(applySemantics$lambda$6);
             }
         }, 2, null);
         SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$22;
-                applySemantics$lambda$22 = TextFieldDecoratorModifierNode.applySemantics$lambda$22(TextFieldDecoratorModifierNode.this);
-                return Boolean.valueOf(applySemantics$lambda$22);
+                boolean applySemantics$lambda$7;
+                applySemantics$lambda$7 = TextFieldDecoratorModifierNode.applySemantics$lambda$7(TextFieldDecoratorModifierNode.this);
+                return Boolean.valueOf(applySemantics$lambda$7);
             }
         }, 1, null);
         SemanticsPropertiesKt.onLongClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda26
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$23;
-                applySemantics$lambda$23 = TextFieldDecoratorModifierNode.applySemantics$lambda$23(TextFieldDecoratorModifierNode.this);
-                return Boolean.valueOf(applySemantics$lambda$23);
+                boolean applySemantics$lambda$8;
+                applySemantics$lambda$8 = TextFieldDecoratorModifierNode.applySemantics$lambda$8(TextFieldDecoratorModifierNode.this);
+                return Boolean.valueOf(applySemantics$lambda$8);
             }
         }, 1, null);
-        if (!TextRange.m7452getCollapsedimpl(m1447getSelectiond9O1mEE) && !this.isPassword) {
+        if (!TextRange.m7695getCollapsedimpl(m1537getSelectiond9O1mEE) && !this.isPassword) {
             SemanticsPropertiesKt.copyText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean applySemantics$lambda$24;
-                    applySemantics$lambda$24 = TextFieldDecoratorModifierNode.applySemantics$lambda$24(TextFieldDecoratorModifierNode.this);
-                    return Boolean.valueOf(applySemantics$lambda$24);
+                    boolean applySemantics$lambda$9;
+                    applySemantics$lambda$9 = TextFieldDecoratorModifierNode.applySemantics$lambda$9(TextFieldDecoratorModifierNode.this);
+                    return Boolean.valueOf(applySemantics$lambda$9);
                 }
             }, 1, null);
             if (this.enabled && !this.readOnly) {
                 SemanticsPropertiesKt.cutText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean applySemantics$lambda$25;
-                        applySemantics$lambda$25 = TextFieldDecoratorModifierNode.applySemantics$lambda$25(TextFieldDecoratorModifierNode.this);
-                        return Boolean.valueOf(applySemantics$lambda$25);
+                        boolean applySemantics$lambda$10;
+                        applySemantics$lambda$10 = TextFieldDecoratorModifierNode.applySemantics$lambda$10(TextFieldDecoratorModifierNode.this);
+                        return Boolean.valueOf(applySemantics$lambda$10);
                     }
                 }, 1, null);
             }
@@ -839,9 +863,9 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             SemanticsPropertiesKt.pasteText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda19
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean applySemantics$lambda$26;
-                    applySemantics$lambda$26 = TextFieldDecoratorModifierNode.applySemantics$lambda$26(TextFieldDecoratorModifierNode.this);
-                    return Boolean.valueOf(applySemantics$lambda$26);
+                    boolean applySemantics$lambda$11;
+                    applySemantics$lambda$11 = TextFieldDecoratorModifierNode.applySemantics$lambda$11(TextFieldDecoratorModifierNode.this);
+                    return Boolean.valueOf(applySemantics$lambda$11);
                 }
             }, 1, null);
         }
@@ -855,18 +879,21 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$15(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, AnnotatedString annotatedString) {
+    public static final boolean applySemantics$lambda$1(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, FillableData fillableData) {
         if (z) {
-            textFieldDecoratorModifierNode.textFieldState.replaceAll(annotatedString);
+            CharSequence textValue = fillableData.getTextValue();
+            if (textValue != null) {
+                textFieldDecoratorModifierNode.textFieldState.replaceAll(textValue);
+            }
             textFieldDecoratorModifierNode.setAutofillHighlightOn(true);
-            BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$1$1(textFieldDecoratorModifierNode, null), 3, null);
+            BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$2$2(textFieldDecoratorModifierNode, null), 3, null);
             return true;
         }
         return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$17(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, List list) {
+    public static final boolean applySemantics$lambda$2(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, List list) {
         TextLayoutResult layoutResult = textFieldDecoratorModifierNode.textLayoutState.getLayoutResult();
         if (layoutResult != null) {
             return list.add(layoutResult);
@@ -875,7 +902,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$18(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, AnnotatedString annotatedString) {
+    public static final boolean applySemantics$lambda$3(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, AnnotatedString annotatedString) {
         if (z) {
             textFieldDecoratorModifierNode.textFieldState.replaceAll(annotatedString);
             return true;
@@ -884,7 +911,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$19(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, AnnotatedString annotatedString) {
+    public static final boolean applySemantics$lambda$4(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, AnnotatedString annotatedString) {
         if (z) {
             TransformedTextFieldState.replaceSelectedText$default(textFieldDecoratorModifierNode.textFieldState, annotatedString, true, null, false, 12, null);
             return true;
@@ -893,18 +920,18 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$20(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i, int i2, boolean z) {
+    public static final boolean applySemantics$lambda$5(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i, int i2, boolean z) {
         TextFieldCharSequence visualText;
         if (z) {
             visualText = textFieldDecoratorModifierNode.textFieldState.getUntransformedText();
         } else {
             visualText = textFieldDecoratorModifierNode.textFieldState.getVisualText();
         }
-        long m1447getSelectiond9O1mEE = visualText.m1447getSelectiond9O1mEE();
+        long m1537getSelectiond9O1mEE = visualText.m1537getSelectiond9O1mEE();
         if (!textFieldDecoratorModifierNode.enabled || Math.min(i, i2) < 0 || Math.max(i, i2) > visualText.length()) {
             return false;
         }
-        if (i == TextRange.m7458getStartimpl(m1447getSelectiond9O1mEE) && i2 == TextRange.m7453getEndimpl(m1447getSelectiond9O1mEE)) {
+        if (i == TextRange.m7701getStartimpl(m1537getSelectiond9O1mEE) && i2 == TextRange.m7696getEndimpl(m1537getSelectiond9O1mEE)) {
             return true;
         }
         long TextRange = TextRangeKt.TextRange(i, i2);
@@ -914,21 +941,21 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             textFieldDecoratorModifierNode.textFieldSelectionState.updateTextToolbarState(TextToolbarState.Selection);
         }
         if (z) {
-            textFieldDecoratorModifierNode.textFieldState.m1605selectUntransformedCharsIn5zctL8(TextRange);
+            textFieldDecoratorModifierNode.textFieldState.m1695selectUntransformedCharsIn5zctL8(TextRange);
         } else {
-            textFieldDecoratorModifierNode.textFieldState.m1604selectCharsIn5zctL8(TextRange);
+            textFieldDecoratorModifierNode.textFieldState.m1694selectCharsIn5zctL8(TextRange);
         }
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$21(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
-        textFieldDecoratorModifierNode.m1565onImeActionPerformedKlQnJC8(i);
+    public static final boolean applySemantics$lambda$6(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
+        textFieldDecoratorModifierNode.m1655onImeActionPerformedKlQnJC8(i);
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$22(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final boolean applySemantics$lambda$7(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         if (!textFieldDecoratorModifierNode.isFocused()) {
             textFieldDecoratorModifierNode.requestFocus();
             return true;
@@ -941,7 +968,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$23(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final boolean applySemantics$lambda$8(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         if (!textFieldDecoratorModifierNode.isFocused()) {
             textFieldDecoratorModifierNode.requestFocus();
         }
@@ -950,20 +977,20 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$24(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
-        BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$9$1(textFieldDecoratorModifierNode, null), 3, null);
-        return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$25(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final boolean applySemantics$lambda$9(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$10$1(textFieldDecoratorModifierNode, null), 3, null);
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean applySemantics$lambda$26(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final boolean applySemantics$lambda$10(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$11$1(textFieldDecoratorModifierNode, null), 3, null);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$11(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+        BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$12$1(textFieldDecoratorModifierNode, null), 3, null);
         return true;
     }
 
@@ -988,6 +1015,11 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             }
             this.toolbarAndHandlesVisibilityObserverJob = null;
         }
+    }
+
+    @Override // androidx.compose.ui.focus.FocusPropertiesModifierNode
+    public void applyFocusProperties(FocusProperties focusProperties) {
+        focusProperties.setFocusRect(this.textFieldSelectionState.getFocusRect());
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -1015,8 +1047,8 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo238onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.pointerInputNode.mo238onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo266onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.pointerInputNode.mo266onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -1026,26 +1058,26 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onPreKeyEvent-ZmokQxo */
-    public boolean mo239onPreKeyEventZmokQxo(KeyEvent keyEvent) {
-        return this.textFieldKeyEventHandler.mo1477onPreKeyEventMyFupTE(keyEvent, this.textFieldState, this.textFieldSelectionState, (FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager()), requireKeyboardController());
+    public boolean mo267onPreKeyEventZmokQxo(KeyEvent keyEvent) {
+        return this.textFieldKeyEventHandler.mo1565onPreKeyEventMyFupTE(keyEvent, this.textFieldState, this.textFieldSelectionState, (FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager()), requireKeyboardController());
     }
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onKeyEvent-ZmokQxo */
-    public boolean mo237onKeyEventZmokQxo(KeyEvent keyEvent) {
-        return this.textFieldKeyEventHandler.mo1476onKeyEvent8zsqlwg(keyEvent, this.textFieldState, this.textLayoutState, this.textFieldSelectionState, this.clipboardKeyCommandsHandler, requireKeyboardController(), this.enabled && !this.readOnly, this.singleLine, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda17
+    public boolean mo265onKeyEventZmokQxo(KeyEvent keyEvent) {
+        return this.textFieldKeyEventHandler.mo1564onKeyEvent8zsqlwg(keyEvent, this.textFieldState, this.textLayoutState, this.textFieldSelectionState, this.clipboardKeyCommandsHandler, requireKeyboardController(), this.enabled && !this.readOnly, this.singleLine, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean onKeyEvent_ZmokQxo$lambda$30;
-                onKeyEvent_ZmokQxo$lambda$30 = TextFieldDecoratorModifierNode.onKeyEvent_ZmokQxo$lambda$30(TextFieldDecoratorModifierNode.this);
-                return Boolean.valueOf(onKeyEvent_ZmokQxo$lambda$30);
+                boolean onKeyEvent_ZmokQxo$lambda$0;
+                onKeyEvent_ZmokQxo$lambda$0 = TextFieldDecoratorModifierNode.onKeyEvent_ZmokQxo$lambda$0(TextFieldDecoratorModifierNode.this);
+                return Boolean.valueOf(onKeyEvent_ZmokQxo$lambda$0);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onKeyEvent_ZmokQxo$lambda$30(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
-        return textFieldDecoratorModifierNode.m1565onImeActionPerformedKlQnJC8(textFieldDecoratorModifierNode.keyboardOptions.m1285getImeActionOrDefaulteUduSuo$foundation_release());
+    public static final boolean onKeyEvent_ZmokQxo$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+        return textFieldDecoratorModifierNode.m1655onImeActionPerformedKlQnJC8(textFieldDecoratorModifierNode.keyboardOptions.m1389getImeActionOrDefaulteUduSuo$foundation());
     }
 
     @Override // androidx.compose.ui.node.ObserverModifierNode
@@ -1057,15 +1089,15 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit updateWindowFocus$lambda$31;
-                updateWindowFocus$lambda$31 = TextFieldDecoratorModifierNode.updateWindowFocus$lambda$31(TextFieldDecoratorModifierNode.this);
-                return updateWindowFocus$lambda$31;
+                Unit updateWindowFocus$lambda$0;
+                updateWindowFocus$lambda$0 = TextFieldDecoratorModifierNode.updateWindowFocus$lambda$0(TextFieldDecoratorModifierNode.this);
+                return updateWindowFocus$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit updateWindowFocus$lambda$31(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
+    public static final Unit updateWindowFocus$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         textFieldDecoratorModifierNode.windowInfo = (WindowInfo) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, CompositionLocalsKt.getLocalWindowInfo());
         textFieldDecoratorModifierNode.onIsFocusedUpdated();
         return Unit.INSTANCE;
@@ -1078,14 +1110,14 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo419onRemeasuredozmzZPI(long j) {
-        this.dragAndDropNode.mo419onRemeasuredozmzZPI(j);
+    public void mo453onRemeasuredozmzZPI(long j) {
+        this.dragAndDropNode.mo453onRemeasuredozmzZPI(j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void startInputSession(boolean z) {
         Job launch$default;
-        if (z || this.keyboardOptions.getShowKeyboardOnFocusOrDefault$foundation_release()) {
+        if (z || this.keyboardOptions.getShowKeyboardOnFocusOrDefault$foundation()) {
             launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$startInputSession$1(this, ReceiveContentConfigurationKt.getReceiveContentConfiguration(this), null), 3, null);
             this.inputSessionJob = launch$default;
         }
@@ -1122,18 +1154,18 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onImeActionPerformed-KlQnJC8  reason: not valid java name */
-    public final boolean m1565onImeActionPerformedKlQnJC8(final int i) {
+    public final boolean m1655onImeActionPerformedKlQnJC8(final int i) {
         KeyboardActionHandler keyboardActionHandler;
-        if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7644getNoneeUduSuo()) || ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7640getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
-            return m1564defaultKeyboardActionWithResultKlQnJC8(i);
+        if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7890getNoneeUduSuo()) || ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7886getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
+            return m1654defaultKeyboardActionWithResultKlQnJC8(i);
         }
         if (keyboardActionHandler != null) {
             keyboardActionHandler.onKeyboardAction(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda18
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit onImeActionPerformed_KlQnJC8$lambda$33;
-                    onImeActionPerformed_KlQnJC8$lambda$33 = TextFieldDecoratorModifierNode.onImeActionPerformed_KlQnJC8$lambda$33(TextFieldDecoratorModifierNode.this, i);
-                    return onImeActionPerformed_KlQnJC8$lambda$33;
+                    Unit onImeActionPerformed_KlQnJC8$lambda$0;
+                    onImeActionPerformed_KlQnJC8$lambda$0 = TextFieldDecoratorModifierNode.onImeActionPerformed_KlQnJC8$lambda$0(TextFieldDecoratorModifierNode.this, i);
+                    return onImeActionPerformed_KlQnJC8$lambda$0;
                 }
             });
             return true;
@@ -1142,21 +1174,21 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onImeActionPerformed_KlQnJC8$lambda$33(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
-        textFieldDecoratorModifierNode.keyboardActionScope.mo1271defaultKeyboardActionKlQnJC8(i);
+    public static final Unit onImeActionPerformed_KlQnJC8$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
+        textFieldDecoratorModifierNode.keyboardActionScope.mo1375defaultKeyboardActionKlQnJC8(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: defaultKeyboardActionWithResult-KlQnJC8  reason: not valid java name */
-    public final boolean m1564defaultKeyboardActionWithResultKlQnJC8(int i) {
-        if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7643getNexteUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4929moveFocus3ESFkO8(FocusDirection.Companion.m4923getNextdhqQ8s());
+    public final boolean m1654defaultKeyboardActionWithResultKlQnJC8(int i) {
+        if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7889getNexteUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5062getNextdhqQ8s());
             return true;
-        } else if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7645getPreviouseUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4929moveFocus3ESFkO8(FocusDirection.Companion.m4924getPreviousdhqQ8s());
+        } else if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7891getPreviouseUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5063getPreviousdhqQ8s());
             return true;
-        } else if (ImeAction.m7627equalsimpl0(i, ImeAction.Companion.m7641getDoneeUduSuo())) {
+        } else if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7887getDoneeUduSuo())) {
             requireKeyboardController().hide();
             return true;
         } else {

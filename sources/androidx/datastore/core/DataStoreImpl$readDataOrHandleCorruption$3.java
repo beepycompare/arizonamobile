@@ -1,6 +1,6 @@
 package androidx.datastore.core;
 
-import androidx.exifinterface.media.ExifInterface;
+import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,8 +12,8 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DataStoreImpl.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$readDataOrHandleCorruption$3", f = "DataStoreImpl.kt", i = {}, l = {387, 388, 390}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$readDataOrHandleCorruption$3", f = "DataStoreImpl.kt", i = {}, l = {403, 404, Constants.STATUS_NOT_ACCEPTABLE}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class DataStoreImpl$readDataOrHandleCorruption$3 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ Ref.ObjectRef<T> $newData;
@@ -58,10 +58,10 @@ public final class DataStoreImpl$readDataOrHandleCorruption$3 extends SuspendLam
             Ref.IntRef intRef3 = this.$version;
             this.L$0 = intRef3;
             this.label = 3;
-            Object writeData$datastore_core_release = this.this$0.writeData$datastore_core_release(this.$newData.element, true, this);
-            if (writeData$datastore_core_release != coroutine_suspended) {
+            Object writeData$datastore_core = this.this$0.writeData$datastore_core(this.$newData.element, true, this);
+            if (writeData$datastore_core != coroutine_suspended) {
                 intRef = intRef3;
-                obj2 = writeData$datastore_core_release;
+                obj2 = writeData$datastore_core;
             }
         }
         if (i == 0) {

@@ -201,7 +201,7 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCost  reason: collision with other method in class */
-    public final String m12071getCost() {
+    public final String m12366getCost() {
         int intValue;
         if (this.countLeft > 0) {
             return "Открыть";
@@ -214,7 +214,7 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCountLeft  reason: collision with other method in class */
-    public final String m12072getCountLeft() {
+    public final String m12367getCountLeft() {
         return "Осталось " + this.countLeft + " шт.";
     }
 
@@ -224,7 +224,7 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCurrency  reason: collision with other method in class */
-    public final CasesCurrencyType m12073getCurrency() {
+    public final CasesCurrencyType m12368getCurrency() {
         Object obj;
         Iterator<E> it = CasesCurrencyType.getEntries().iterator();
         while (true) {

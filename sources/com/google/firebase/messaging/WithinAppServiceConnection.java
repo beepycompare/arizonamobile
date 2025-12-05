@@ -41,7 +41,7 @@ class WithinAppServiceConnection implements ServiceConnection {
             final ScheduledFuture<?> schedule = scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WithinAppServiceConnection.BindRequest.this.m9693x9cf97a38();
+                    WithinAppServiceConnection.BindRequest.this.m9988x9cf97a38();
                 }
             }, 20L, TimeUnit.SECONDS);
             getTask().addOnCompleteListener(scheduledExecutorService, new OnCompleteListener() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda1
@@ -54,7 +54,7 @@ class WithinAppServiceConnection implements ServiceConnection {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$arrangeTimeout$0$com-google-firebase-messaging-WithinAppServiceConnection$BindRequest  reason: not valid java name */
-        public /* synthetic */ void m9693x9cf97a38() {
+        public /* synthetic */ void m9988x9cf97a38() {
             Log.w(Constants.TAG, "Service took too long to process intent: " + this.intent.getAction() + " finishing.");
             finish();
         }

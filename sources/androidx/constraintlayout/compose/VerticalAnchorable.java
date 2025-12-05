@@ -8,7 +8,7 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface VerticalAnchorable {
     /* renamed from: linkTo-VpY3zN4 */
-    void mo8255linkToVpY3zN4(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, float f, float f2);
+    void mo8517linkToVpY3zN4(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, float f, float f2);
 
     /* compiled from: ConstraintScopeCommon.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
@@ -17,16 +17,16 @@ public interface VerticalAnchorable {
     }
 
     /* renamed from: linkTo-VpY3zN4$default  reason: not valid java name */
-    static /* synthetic */ void m8468linkToVpY3zN4$default(VerticalAnchorable verticalAnchorable, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, float f, float f2, int i, Object obj) {
+    static /* synthetic */ void m8730linkToVpY3zN4$default(VerticalAnchorable verticalAnchorable, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, float f, float f2, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: linkTo-VpY3zN4");
         }
         if ((i & 2) != 0) {
-            f = Dp.m7996constructorimpl(0);
+            f = Dp.m8258constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f2 = Dp.m7996constructorimpl(0);
+            f2 = Dp.m8258constructorimpl(0);
         }
-        verticalAnchorable.mo8255linkToVpY3zN4(verticalAnchor, f, f2);
+        verticalAnchorable.mo8517linkToVpY3zN4(verticalAnchor, f, f2);
     }
 }

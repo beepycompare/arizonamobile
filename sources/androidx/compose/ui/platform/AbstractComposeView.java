@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composition;
 import androidx.compose.runtime.CompositionContext;
 import androidx.compose.runtime.Recomposer;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
+import androidx.compose.ui.R;
 import androidx.compose.ui.node.Owner;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -21,7 +22,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ComposeView.android.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b)\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\b'\u0018\u00002\u00020\u0001B'\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u0010\u0010\u0017\u001a\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\fJ\u000e\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u001f\u001a\u00020 J\r\u0010*\u001a\u00020\u0018H'¢\u0006\u0002\u0010+J\u0006\u0010,\u001a\u00020\u0018J\b\u0010.\u001a\u00020\u0018H\u0002J\f\u00101\u001a\u00020\f*\u00020\fH\u0002J\b\u00102\u001a\u00020\fH\u0002J\b\u00103\u001a\u00020\u0018H\u0002J\u0006\u00104\u001a\u00020\u0018J\b\u00107\u001a\u00020\u0018H\u0014J\u0018\u00108\u001a\u00020\u00182\u0006\u00109\u001a\u00020\u00072\u0006\u0010:\u001a\u00020\u0007H\u0004J\u001d\u0010;\u001a\u00020\u00182\u0006\u00109\u001a\u00020\u00072\u0006\u0010:\u001a\u00020\u0007H\u0010¢\u0006\u0002\b<J0\u0010=\u001a\u00020\u00182\u0006\u0010>\u001a\u00020\"2\u0006\u0010?\u001a\u00020\u00072\u0006\u0010@\u001a\u00020\u00072\u0006\u0010A\u001a\u00020\u00072\u0006\u0010B\u001a\u00020\u0007H\u0004J5\u0010C\u001a\u00020\u00182\u0006\u0010>\u001a\u00020\"2\u0006\u0010?\u001a\u00020\u00072\u0006\u0010@\u001a\u00020\u00072\u0006\u0010A\u001a\u00020\u00072\u0006\u0010B\u001a\u00020\u0007H\u0010¢\u0006\u0002\bDJ\u0010\u0010E\u001a\u00020\u00182\u0006\u0010F\u001a\u00020\u0007H\u0016J\b\u0010H\u001a\u00020\"H\u0016J\u0010\u0010I\u001a\u00020\u00182\u0006\u0010H\u001a\u00020\"H\u0016J\u0012\u0010J\u001a\u00020\u00182\b\u0010K\u001a\u0004\u0018\u00010LH\u0016J\u001a\u0010J\u001a\u00020\u00182\b\u0010K\u001a\u0004\u0018\u00010L2\u0006\u0010M\u001a\u00020\u0007H\u0016J\"\u0010J\u001a\u00020\u00182\b\u0010K\u001a\u0004\u0018\u00010L2\u0006\u0010N\u001a\u00020\u00072\u0006\u0010O\u001a\u00020\u0007H\u0016J\u001c\u0010J\u001a\u00020\u00182\b\u0010K\u001a\u0004\u0018\u00010L2\b\u0010P\u001a\u0004\u0018\u00010QH\u0016J$\u0010J\u001a\u00020\u00182\b\u0010K\u001a\u0004\u0018\u00010L2\u0006\u0010M\u001a\u00020\u00072\b\u0010P\u001a\u0004\u0018\u00010QH\u0016J$\u0010R\u001a\u00020\"2\b\u0010K\u001a\u0004\u0018\u00010L2\u0006\u0010M\u001a\u00020\u00072\b\u0010P\u001a\u0004\u0018\u00010QH\u0014J,\u0010R\u001a\u00020\"2\b\u0010K\u001a\u0004\u0018\u00010L2\u0006\u0010M\u001a\u00020\u00072\b\u0010P\u001a\u0004\u0018\u00010Q2\u0006\u0010S\u001a\u00020\"H\u0014J\b\u0010T\u001a\u00020\"H\u0016R\u0016\u0010\n\u001a\n\u0012\u0004\u0012\u00020\f\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010\u000f\u001a\u0004\u0018\u00010\u000e2\b\u0010\r\u001a\u0004\u0018\u00010\u000e@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010\u0014\u001a\u0004\u0018\u00010\f2\b\u0010\r\u001a\u0004\u0018\u00010\f@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b\u0015\u0010\u0016R\u001c\u0010\u001a\u001a\n\u0012\u0004\u0012\u00020\u0018\u0018\u00010\u001bX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u001c\u0010\u001dR\u0014\u0010!\u001a\u00020\"8TX\u0094\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$R,\u0010%\u001a\u00020\"2\u0006\u0010\r\u001a\u00020\"8\u0006@FX\u0087\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b&\u0010\u001d\u001a\u0004\b'\u0010$\"\u0004\b(\u0010)R\u000e\u0010-\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010/\u001a\u00020\"*\u00020\f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b/\u00100R\u0011\u00105\u001a\u00020\"8F¢\u0006\u0006\u001a\u0004\b6\u0010$R\u000e\u0010G\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006U"}, d2 = {"Landroidx/compose/ui/platform/AbstractComposeView;", "Landroid/view/ViewGroup;", "context", "Landroid/content/Context;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "<init>", "(Landroid/content/Context;Landroid/util/AttributeSet;I)V", "cachedViewTreeCompositionContext", "Ljava/lang/ref/WeakReference;", "Landroidx/compose/runtime/CompositionContext;", "value", "Landroid/os/IBinder;", "previousAttachedWindowToken", "setPreviousAttachedWindowToken", "(Landroid/os/IBinder;)V", "composition", "Landroidx/compose/runtime/Composition;", "parentContext", "setParentContext", "(Landroidx/compose/runtime/CompositionContext;)V", "setParentCompositionContext", "", "parent", "disposeViewCompositionStrategy", "Lkotlin/Function0;", "getDisposeViewCompositionStrategy$annotations", "()V", "setViewCompositionStrategy", "strategy", "Landroidx/compose/ui/platform/ViewCompositionStrategy;", "shouldCreateCompositionOnAttachedToWindow", "", "getShouldCreateCompositionOnAttachedToWindow", "()Z", "showLayoutBounds", "getShowLayoutBounds$annotations", "getShowLayoutBounds", "setShowLayoutBounds", "(Z)V", "Content", "(Landroidx/compose/runtime/Composer;I)V", "createComposition", "creatingComposition", "checkAddView", "isAlive", "(Landroidx/compose/runtime/CompositionContext;)Z", "cacheIfAlive", "resolveParentCompositionContext", "ensureCompositionCreated", "disposeComposition", "hasComposition", "getHasComposition", "onAttachedToWindow", "onMeasure", "widthMeasureSpec", "heightMeasureSpec", "internalOnMeasure", "internalOnMeasure$ui_release", "onLayout", "changed", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "internalOnLayout", "internalOnLayout$ui_release", "onRtlPropertiesChanged", "layoutDirection", "isTransitionGroupSet", "isTransitionGroup", "setTransitionGroup", "addView", "child", "Landroid/view/View;", FirebaseAnalytics.Param.INDEX, "width", "height", "params", "Landroid/view/ViewGroup$LayoutParams;", "addViewInLayout", "preventRequestLayout", "shouldDelayChildPressedState", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b'\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\b'\u0018\u00002\u00020\u0001B'\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u0010\u0010\u0017\u001a\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\fJ\u000e\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u001f\u001a\u00020 J\r\u00100\u001a\u00020\u0018H'¢\u0006\u0002\u00101J\u0006\u00102\u001a\u00020\u0018J\b\u00104\u001a\u00020\u0018H\u0002J\f\u00107\u001a\u00020\f*\u00020\fH\u0002J\b\u00108\u001a\u00020\fH\u0002J\b\u00109\u001a\u00020\u0018H\u0002J\u0006\u0010:\u001a\u00020\u0018J\b\u0010=\u001a\u00020\u0018H\u0014J\u0018\u0010>\u001a\u00020\u00182\u0006\u0010?\u001a\u00020\u00072\u0006\u0010@\u001a\u00020\u0007H\u0004J\u001d\u0010A\u001a\u00020\u00182\u0006\u0010?\u001a\u00020\u00072\u0006\u0010@\u001a\u00020\u0007H\u0010¢\u0006\u0002\bBJ0\u0010C\u001a\u00020\u00182\u0006\u0010D\u001a\u00020\"2\u0006\u0010E\u001a\u00020\u00072\u0006\u0010F\u001a\u00020\u00072\u0006\u0010G\u001a\u00020\u00072\u0006\u0010H\u001a\u00020\u0007H\u0004J5\u0010I\u001a\u00020\u00182\u0006\u0010D\u001a\u00020\"2\u0006\u0010E\u001a\u00020\u00072\u0006\u0010F\u001a\u00020\u00072\u0006\u0010G\u001a\u00020\u00072\u0006\u0010H\u001a\u00020\u0007H\u0010¢\u0006\u0002\bJJ\u0010\u0010K\u001a\u00020\u00182\u0006\u0010L\u001a\u00020\u0007H\u0016J\b\u0010N\u001a\u00020\"H\u0016J\u0010\u0010O\u001a\u00020\u00182\u0006\u0010N\u001a\u00020\"H\u0016J\u0012\u0010P\u001a\u00020\u00182\b\u0010Q\u001a\u0004\u0018\u00010RH\u0016J\u001a\u0010P\u001a\u00020\u00182\b\u0010Q\u001a\u0004\u0018\u00010R2\u0006\u0010S\u001a\u00020\u0007H\u0016J\"\u0010P\u001a\u00020\u00182\b\u0010Q\u001a\u0004\u0018\u00010R2\u0006\u0010T\u001a\u00020\u00072\u0006\u0010U\u001a\u00020\u0007H\u0016J\u001c\u0010P\u001a\u00020\u00182\b\u0010Q\u001a\u0004\u0018\u00010R2\b\u0010V\u001a\u0004\u0018\u00010WH\u0016J$\u0010P\u001a\u00020\u00182\b\u0010Q\u001a\u0004\u0018\u00010R2\u0006\u0010S\u001a\u00020\u00072\b\u0010V\u001a\u0004\u0018\u00010WH\u0016J$\u0010X\u001a\u00020\"2\b\u0010Q\u001a\u0004\u0018\u00010R2\u0006\u0010S\u001a\u00020\u00072\b\u0010V\u001a\u0004\u0018\u00010WH\u0014J,\u0010X\u001a\u00020\"2\b\u0010Q\u001a\u0004\u0018\u00010R2\u0006\u0010S\u001a\u00020\u00072\b\u0010V\u001a\u0004\u0018\u00010W2\u0006\u0010Y\u001a\u00020\"H\u0014J\b\u0010Z\u001a\u00020\"H\u0016R\u0016\u0010\n\u001a\n\u0012\u0004\u0012\u00020\f\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010\u000f\u001a\u0004\u0018\u00010\u000e2\b\u0010\r\u001a\u0004\u0018\u00010\u000e@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010\u0014\u001a\u0004\u0018\u00010\f2\b\u0010\r\u001a\u0004\u0018\u00010\f@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b\u0015\u0010\u0016R\u001c\u0010\u001a\u001a\n\u0012\u0004\u0012\u00020\u0018\u0018\u00010\u001bX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u001c\u0010\u001dR\u0014\u0010!\u001a\u00020\"8TX\u0094\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$R,\u0010%\u001a\u00020\"2\u0006\u0010\r\u001a\u00020\"8\u0006@FX\u0087\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b&\u0010\u001d\u001a\u0004\b'\u0010$\"\u0004\b(\u0010)R$\u0010+\u001a\u00020*2\u0006\u0010\r\u001a\u00020*8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b,\u0010-\"\u0004\b.\u0010/R\u000e\u00103\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u00105\u001a\u00020\"*\u00020\f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b5\u00106R\u0011\u0010;\u001a\u00020\"8F¢\u0006\u0006\u001a\u0004\b<\u0010$R\u000e\u0010M\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006["}, d2 = {"Landroidx/compose/ui/platform/AbstractComposeView;", "Landroid/view/ViewGroup;", "context", "Landroid/content/Context;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "<init>", "(Landroid/content/Context;Landroid/util/AttributeSet;I)V", "cachedViewTreeCompositionContext", "Ljava/lang/ref/WeakReference;", "Landroidx/compose/runtime/CompositionContext;", "value", "Landroid/os/IBinder;", "previousAttachedWindowToken", "setPreviousAttachedWindowToken", "(Landroid/os/IBinder;)V", "composition", "Landroidx/compose/runtime/Composition;", "parentContext", "setParentContext", "(Landroidx/compose/runtime/CompositionContext;)V", "setParentCompositionContext", "", "parent", "disposeViewCompositionStrategy", "Lkotlin/Function0;", "getDisposeViewCompositionStrategy$annotations", "()V", "setViewCompositionStrategy", "strategy", "Landroidx/compose/ui/platform/ViewCompositionStrategy;", "shouldCreateCompositionOnAttachedToWindow", "", "getShouldCreateCompositionOnAttachedToWindow", "()Z", "showLayoutBounds", "getShowLayoutBounds$annotations", "getShowLayoutBounds", "setShowLayoutBounds", "(Z)V", "Landroidx/compose/ui/platform/AutoClearFocusBehavior;", "autoClearFocusBehavior", "getAutoClearFocusBehavior-4UtRPd4", "()I", "setAutoClearFocusBehavior-17tfJxM", "(I)V", "Content", "(Landroidx/compose/runtime/Composer;I)V", "createComposition", "creatingComposition", "checkAddView", "isAlive", "(Landroidx/compose/runtime/CompositionContext;)Z", "cacheIfAlive", "resolveParentCompositionContext", "ensureCompositionCreated", "disposeComposition", "hasComposition", "getHasComposition", "onAttachedToWindow", "onMeasure", "widthMeasureSpec", "heightMeasureSpec", "internalOnMeasure", "internalOnMeasure$ui", "onLayout", "changed", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "internalOnLayout", "internalOnLayout$ui", "onRtlPropertiesChanged", "layoutDirection", "isTransitionGroupSet", "isTransitionGroup", "setTransitionGroup", "addView", "child", "Landroid/view/View;", FirebaseAnalytics.Param.INDEX, "width", "height", "params", "Landroid/view/ViewGroup$LayoutParams;", "addViewInLayout", "preventRequestLayout", "shouldDelayChildPressedState", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public abstract class AbstractComposeView extends ViewGroup {
     public static final int $stable = 8;
@@ -59,16 +60,16 @@ public abstract class AbstractComposeView extends ViewGroup {
         return false;
     }
 
-    public /* synthetic */ AbstractComposeView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
-    }
-
     public AbstractComposeView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         setClipChildren(false);
         setClipToPadding(false);
         setImportantForAccessibility(1);
         this.disposeViewCompositionStrategy = ViewCompositionStrategy.Companion.getDefault().installFor(this);
+    }
+
+    public /* synthetic */ AbstractComposeView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
     }
 
     private final void setPreviousAttachedWindowToken(IBinder iBinder) {
@@ -117,6 +118,18 @@ public abstract class AbstractComposeView extends ViewGroup {
         if (childAt != null) {
             ((Owner) childAt).setShowLayoutBounds(z);
         }
+    }
+
+    /* renamed from: getAutoClearFocusBehavior-4UtRPd4  reason: not valid java name */
+    public final int m7299getAutoClearFocusBehavior4UtRPd4() {
+        Object tag = getTag(R.id.auto_clear_focus_behavior_tag);
+        AutoClearFocusBehavior autoClearFocusBehavior = tag instanceof AutoClearFocusBehavior ? (AutoClearFocusBehavior) tag : null;
+        return autoClearFocusBehavior != null ? autoClearFocusBehavior.m7337unboximpl() : AutoClearFocusBehavior.Companion.m7339getDefault4UtRPd4();
+    }
+
+    /* renamed from: setAutoClearFocusBehavior-17tfJxM  reason: not valid java name */
+    public final void m7300setAutoClearFocusBehavior17tfJxM(int i) {
+        setTag(R.id.auto_clear_focus_behavior_tag, AutoClearFocusBehavior.m7331boximpl(i));
     }
 
     public final void createComposition() {
@@ -181,13 +194,13 @@ public abstract class AbstractComposeView extends ViewGroup {
                     }
 
                     public final void invoke(Composer composer, int i) {
-                        ComposerKt.sourceInformation(composer, "C249@11156L9:ComposeView.android.kt#itgzvw");
+                        ComposerKt.sourceInformation(composer, "C264@11750L9:ComposeView.android.kt#itgzvw");
                         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                             composer.skipToGroupEnd();
                             return;
                         }
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-656146368, i, -1, "androidx.compose.ui.platform.AbstractComposeView.ensureCompositionCreated.<anonymous> (ComposeView.android.kt:249)");
+                            ComposerKt.traceEventStart(-656146368, i, -1, "androidx.compose.ui.platform.AbstractComposeView.ensureCompositionCreated.<anonymous> (ComposeView.android.kt:264)");
                         }
                         AbstractComposeView.this.Content(composer, 0);
                         if (ComposerKt.isTraceInProgress()) {
@@ -227,10 +240,10 @@ public abstract class AbstractComposeView extends ViewGroup {
     @Override // android.view.View
     protected final void onMeasure(int i, int i2) {
         ensureCompositionCreated();
-        internalOnMeasure$ui_release(i, i2);
+        internalOnMeasure$ui(i, i2);
     }
 
-    public void internalOnMeasure$ui_release(int i, int i2) {
+    public void internalOnMeasure$ui(int i, int i2) {
         View childAt = getChildAt(0);
         if (childAt == null) {
             super.onMeasure(i, i2);
@@ -242,10 +255,10 @@ public abstract class AbstractComposeView extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     protected final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        internalOnLayout$ui_release(z, i, i2, i3, i4);
+        internalOnLayout$ui(z, i, i2, i3, i4);
     }
 
-    public void internalOnLayout$ui_release(boolean z, int i, int i2, int i3, int i4) {
+    public void internalOnLayout$ui(boolean z, int i, int i2, int i3, int i4) {
         View childAt = getChildAt(0);
         if (childAt != null) {
             childAt.layout(getPaddingLeft(), getPaddingTop(), (i3 - i) - getPaddingRight(), (i4 - i2) - getPaddingBottom());

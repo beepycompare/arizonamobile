@@ -16,6 +16,11 @@ public final class TextGeometricTransform {
         this(0.0f, 0.0f, 3, null);
     }
 
+    public TextGeometricTransform(float f, float f2) {
+        this.scaleX = f;
+        this.skewX = f2;
+    }
+
     /* compiled from: TextGeometricTransform.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u00020\u00058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;", "", "<init>", "()V", "None", "Landroidx/compose/ui/text/style/TextGeometricTransform;", "getNone$ui_text$annotations", "getNone$ui_text", "()Landroidx/compose/ui/text/style/TextGeometricTransform;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
@@ -33,11 +38,6 @@ public final class TextGeometricTransform {
         public final TextGeometricTransform getNone$ui_text() {
             return TextGeometricTransform.None;
         }
-    }
-
-    public TextGeometricTransform(float f, float f2) {
-        this.scaleX = f;
-        this.skewX = f2;
     }
 
     public /* synthetic */ TextGeometricTransform(float f, float f2, int i, DefaultConstructorMarker defaultConstructorMarker) {

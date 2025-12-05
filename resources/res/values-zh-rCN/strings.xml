@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">分享对象</string>
     <string name="abc_shareactionprovider_share_with_application">与%s分享</string>
     <string name="abc_toolbar_collapse_description">收起</string>
-    <string name="autofill">自动填充</string>
+    <string name="androidx_compose_foundation_autofill">自动填充</string>
+    <string name="androidx_compose_ui_autofill">自动填充</string>
     <string name="bottomsheet_action_collapse">收起底部动作条</string>
     <string name="bottomsheet_action_expand">展开底部动作条</string>
     <string name="bottomsheet_action_expand_halfway">展开到一半高度</string>

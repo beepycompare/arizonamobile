@@ -27,7 +27,7 @@ import kotlinx.coroutines.channels.ChannelResult;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AnimateAsState.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.core.AnimateAsStateKt$animateValueAsState$3$1", f = "AnimateAsState.kt", i = {0}, l = {418}, m = "invokeSuspend", n = {"$this$LaunchedEffect"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.animation.core.AnimateAsStateKt$animateValueAsState$3$1", f = "AnimateAsState.kt", i = {0}, l = {418}, m = "invokeSuspend", n = {"$this$LaunchedEffect"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class AnimateAsStateKt$animateValueAsState$3$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ State<AnimationSpec<T>> $animSpec$delegate;
@@ -99,8 +99,8 @@ public final class AnimateAsStateKt$animateValueAsState$3$1 extends SuspendLambd
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 Object next = it.next();
-                Object m11440getOrNullimpl = ChannelResult.m11440getOrNullimpl(this.$channel.mo11428tryReceivePtdJZtk());
-                BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(m11440getOrNullimpl == null ? next : m11440getOrNullimpl, this.$animatable, this.$animSpec$delegate, this.$listener$delegate, null), 3, null);
+                Object m11735getOrNullimpl = ChannelResult.m11735getOrNullimpl(this.$channel.mo11723tryReceivePtdJZtk());
+                BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(m11735getOrNullimpl == null ? next : m11735getOrNullimpl, this.$animatable, this.$animSpec$delegate, this.$listener$delegate, null), 3, null);
                 this.L$0 = coroutineScope;
                 this.L$1 = it;
                 this.label = 1;
@@ -118,7 +118,7 @@ public final class AnimateAsStateKt$animateValueAsState$3$1 extends SuspendLambd
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: AnimateAsState.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.animation.core.AnimateAsStateKt$animateValueAsState$3$1$1", f = "AnimateAsState.kt", i = {}, l = {427}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.animation.core.AnimateAsStateKt$animateValueAsState$3$1$1", f = "AnimateAsState.kt", i = {}, l = {427}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.animation.core.AnimateAsStateKt$animateValueAsState$3$1$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -155,8 +155,8 @@ public final class AnimateAsStateKt$animateValueAsState$3$1 extends SuspendLambd
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            AnimationSpec animateValueAsState$lambda$6;
-            Function1 animateValueAsState$lambda$4;
+            AnimationSpec animateValueAsState$lambda$5;
+            Function1 animateValueAsState$lambda$3;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
@@ -164,9 +164,9 @@ public final class AnimateAsStateKt$animateValueAsState$3$1 extends SuspendLambd
                 if (!Intrinsics.areEqual(this.$newTarget, this.$animatable.getTargetValue())) {
                     Animatable<T, V> animatable = this.$animatable;
                     T t = this.$newTarget;
-                    animateValueAsState$lambda$6 = AnimateAsStateKt.animateValueAsState$lambda$6(this.$animSpec$delegate);
+                    animateValueAsState$lambda$5 = AnimateAsStateKt.animateValueAsState$lambda$5(this.$animSpec$delegate);
                     this.label = 1;
-                    if (Animatable.animateTo$default(animatable, t, animateValueAsState$lambda$6, null, null, this, 12, null) == coroutine_suspended) {
+                    if (Animatable.animateTo$default(animatable, t, animateValueAsState$lambda$5, null, null, this, 12, null) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
@@ -176,9 +176,9 @@ public final class AnimateAsStateKt$animateValueAsState$3$1 extends SuspendLambd
             } else {
                 ResultKt.throwOnFailure(obj);
             }
-            animateValueAsState$lambda$4 = AnimateAsStateKt.animateValueAsState$lambda$4(this.$listener$delegate);
-            if (animateValueAsState$lambda$4 != null) {
-                animateValueAsState$lambda$4.invoke(this.$animatable.getValue());
+            animateValueAsState$lambda$3 = AnimateAsStateKt.animateValueAsState$lambda$3(this.$listener$delegate);
+            if (animateValueAsState$lambda$3 != null) {
+                animateValueAsState$lambda$3.invoke(this.$animatable.getValue());
             }
             return Unit.INSTANCE;
         }

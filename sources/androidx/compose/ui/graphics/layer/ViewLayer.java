@@ -19,10 +19,21 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: GraphicsViewLayer.android.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0006\b\u0000\u0018\u0000 32\u00020\u0001:\u00013B#\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0012\u001a\u00020\u000e2\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014J9\u0010%\u001a\u00020!2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\b\u0010#\u001a\u0004\u0018\u00010$2\u0017\u0010\u001e\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020!0\u001f¢\u0006\u0002\b\"J\b\u0010&\u001a\u00020!H\u0016J\b\u0010'\u001a\u00020\u000eH\u0016J\u0010\u0010(\u001a\u00020!2\u0006\u0010)\u001a\u00020*H\u0014J0\u0010+\u001a\u00020!2\u0006\u0010,\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020.2\u0006\u00100\u001a\u00020.2\u0006\u00101\u001a\u00020.H\u0014J\b\u00102\u001a\u00020!H\u0016R\u0011\u0010\u0002\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u0017\u001a\u00020\u000e2\u0006\u0010\u0016\u001a\u00020\u000e@@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u000f\"\u0004\b\u0019\u0010\u0011R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u001f\u0010\u001e\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020!0\u001f¢\u0006\u0002\b\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00064"}, d2 = {"Landroidx/compose/ui/graphics/layer/ViewLayer;", "Landroid/view/View;", "ownerView", "canvasHolder", "Landroidx/compose/ui/graphics/CanvasHolder;", "canvasDrawScope", "Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;", "<init>", "(Landroid/view/View;Landroidx/compose/ui/graphics/CanvasHolder;Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;)V", "getOwnerView", "()Landroid/view/View;", "getCanvasHolder", "()Landroidx/compose/ui/graphics/CanvasHolder;", "isInvalidated", "", "()Z", "setInvalidated", "(Z)V", "setLayerOutline", "outline", "Landroid/graphics/Outline;", "layerOutline", "value", "canUseCompositingLayer", "getCanUseCompositingLayer$ui_graphics_release", "setCanUseCompositingLayer$ui_graphics_release", "density", "Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "drawBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "", "Lkotlin/ExtensionFunctionType;", "parentLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "setDrawParams", "invalidate", "hasOverlappingRendering", "dispatchDraw", "canvas", "Landroid/graphics/Canvas;", "onLayout", "changed", CmcdData.STREAM_TYPE_LIVE, "", "t", "r", "b", "forceLayout", "Companion", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0006\b\u0001\u0018\u0000 32\u00020\u0001:\u00013B#\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0012\u001a\u00020\u000e2\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014J9\u0010%\u001a\u00020!2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\b\u0010#\u001a\u0004\u0018\u00010$2\u0017\u0010\u001e\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020!0\u001f¢\u0006\u0002\b\"J\b\u0010&\u001a\u00020!H\u0016J\b\u0010'\u001a\u00020\u000eH\u0016J\u0010\u0010(\u001a\u00020!2\u0006\u0010)\u001a\u00020*H\u0014J0\u0010+\u001a\u00020!2\u0006\u0010,\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020.2\u0006\u00100\u001a\u00020.2\u0006\u00101\u001a\u00020.H\u0014J\b\u00102\u001a\u00020!H\u0016R\u0011\u0010\u0002\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u0017\u001a\u00020\u000e2\u0006\u0010\u0016\u001a\u00020\u000e@@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u000f\"\u0004\b\u0019\u0010\u0011R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u001f\u0010\u001e\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020!0\u001f¢\u0006\u0002\b\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00064"}, d2 = {"Landroidx/compose/ui/graphics/layer/ViewLayer;", "Landroid/view/View;", "ownerView", "canvasHolder", "Landroidx/compose/ui/graphics/CanvasHolder;", "canvasDrawScope", "Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;", "<init>", "(Landroid/view/View;Landroidx/compose/ui/graphics/CanvasHolder;Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;)V", "getOwnerView", "()Landroid/view/View;", "getCanvasHolder", "()Landroidx/compose/ui/graphics/CanvasHolder;", "isInvalidated", "", "()Z", "setInvalidated", "(Z)V", "setLayerOutline", "outline", "Landroid/graphics/Outline;", "layerOutline", "value", "canUseCompositingLayer", "getCanUseCompositingLayer$ui_graphics", "setCanUseCompositingLayer$ui_graphics", "density", "Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "drawBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "", "Lkotlin/ExtensionFunctionType;", "parentLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "setDrawParams", "invalidate", "hasOverlappingRendering", "dispatchDraw", "canvas", "Landroid/graphics/Canvas;", "onLayout", "changed", CmcdData.STREAM_TYPE_LIVE, "", "t", "r", "b", "forceLayout", "Companion", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class ViewLayer extends View {
+    private boolean canUseCompositingLayer;
+    private final CanvasDrawScope canvasDrawScope;
+    private final CanvasHolder canvasHolder;
+    private Density density;
+    private Function1<? super DrawScope, Unit> drawBlock;
+    private boolean isInvalidated;
+    private Outline layerOutline;
+    private LayoutDirection layoutDirection;
+    private final View ownerView;
+    private GraphicsLayer parentLayer;
     public static final Companion Companion = new Companion(null);
+    public static final int $stable = 8;
     private static final ViewOutlineProvider LayerOutlineProvider = new ViewOutlineProvider() { // from class: androidx.compose.ui.graphics.layer.ViewLayer$Companion$LayerOutlineProvider$1
         /* JADX WARN: Code restructure failed: missing block: B:4:0x0004, code lost:
             r2 = ((androidx.compose.ui.graphics.layer.ViewLayer) r2).layerOutline;
@@ -39,16 +50,6 @@ public final class ViewLayer extends View {
             outline.set(outline2);
         }
     };
-    private boolean canUseCompositingLayer;
-    private final CanvasDrawScope canvasDrawScope;
-    private final CanvasHolder canvasHolder;
-    private Density density;
-    private Function1<? super DrawScope, Unit> drawBlock;
-    private boolean isInvalidated;
-    private Outline layerOutline;
-    private LayoutDirection layoutDirection;
-    private final View ownerView;
-    private GraphicsLayer parentLayer;
 
     @Override // android.view.View
     public void forceLayout() {
@@ -97,11 +98,11 @@ public final class ViewLayer extends View {
         return OutlineUtils.INSTANCE.rebuildOutline(this);
     }
 
-    public final boolean getCanUseCompositingLayer$ui_graphics_release() {
+    public final boolean getCanUseCompositingLayer$ui_graphics() {
         return this.canUseCompositingLayer;
     }
 
-    public final void setCanUseCompositingLayer$ui_graphics_release(boolean z) {
+    public final void setCanUseCompositingLayer$ui_graphics(boolean z) {
         if (this.canUseCompositingLayer != z) {
             this.canUseCompositingLayer = z;
             invalidate();
@@ -138,19 +139,19 @@ public final class ViewLayer extends View {
         CanvasDrawScope canvasDrawScope = this.canvasDrawScope;
         Density density = this.density;
         LayoutDirection layoutDirection = this.layoutDirection;
-        long m5096constructorimpl = Size.m5096constructorimpl((Float.floatToRawIntBits(getHeight()) & 4294967295L) | (Float.floatToRawIntBits(getWidth()) << 32));
+        long m5239constructorimpl = Size.m5239constructorimpl((Float.floatToRawIntBits(getHeight()) & 4294967295L) | (Float.floatToRawIntBits(getWidth()) << 32));
         GraphicsLayer graphicsLayer = this.parentLayer;
         Function1<? super DrawScope, Unit> function1 = this.drawBlock;
         Density density2 = canvasDrawScope.getDrawContext().getDensity();
         LayoutDirection layoutDirection2 = canvasDrawScope.getDrawContext().getLayoutDirection();
         androidx.compose.ui.graphics.Canvas canvas2 = canvasDrawScope.getDrawContext().getCanvas();
-        long mo5780getSizeNHjbRc = canvasDrawScope.getDrawContext().mo5780getSizeNHjbRc();
+        long mo5926getSizeNHjbRc = canvasDrawScope.getDrawContext().mo5926getSizeNHjbRc();
         GraphicsLayer graphicsLayer2 = canvasDrawScope.getDrawContext().getGraphicsLayer();
         DrawContext drawContext = canvasDrawScope.getDrawContext();
         drawContext.setDensity(density);
         drawContext.setLayoutDirection(layoutDirection);
         drawContext.setCanvas(androidCanvas);
-        drawContext.mo5781setSizeuvyYCjk(m5096constructorimpl);
+        drawContext.mo5927setSizeuvyYCjk(m5239constructorimpl);
         drawContext.setGraphicsLayer(graphicsLayer);
         androidCanvas.save();
         try {
@@ -160,7 +161,7 @@ public final class ViewLayer extends View {
             drawContext2.setDensity(density2);
             drawContext2.setLayoutDirection(layoutDirection2);
             drawContext2.setCanvas(canvas2);
-            drawContext2.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
+            drawContext2.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
             drawContext2.setGraphicsLayer(graphicsLayer2);
             canvasHolder.getAndroidCanvas().setInternalCanvas(internalCanvas);
             this.isInvalidated = false;
@@ -170,15 +171,15 @@ public final class ViewLayer extends View {
             drawContext3.setDensity(density2);
             drawContext3.setLayoutDirection(layoutDirection2);
             drawContext3.setCanvas(canvas2);
-            drawContext3.mo5781setSizeuvyYCjk(mo5780getSizeNHjbRc);
+            drawContext3.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
             drawContext3.setGraphicsLayer(graphicsLayer2);
             throw th;
         }
     }
 
     /* compiled from: GraphicsViewLayer.android.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/graphics/layer/ViewLayer$Companion;", "", "<init>", "()V", "LayerOutlineProvider", "Landroid/view/ViewOutlineProvider;", "getLayerOutlineProvider$ui_graphics_release", "()Landroid/view/ViewOutlineProvider;", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/graphics/layer/ViewLayer$Companion;", "", "<init>", "()V", "LayerOutlineProvider", "Landroid/view/ViewOutlineProvider;", "getLayerOutlineProvider$ui_graphics", "()Landroid/view/ViewOutlineProvider;", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -187,7 +188,7 @@ public final class ViewLayer extends View {
         private Companion() {
         }
 
-        public final ViewOutlineProvider getLayerOutlineProvider$ui_graphics_release() {
+        public final ViewOutlineProvider getLayerOutlineProvider$ui_graphics() {
             return ViewLayer.LayerOutlineProvider;
         }
     }

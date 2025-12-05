@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Build;
 import android.view.Window;
 import androidx.core.graphics.ColorUtils;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import com.google.android.material.color.MaterialColors;
 /* loaded from: classes4.dex */
@@ -25,7 +24,7 @@ public class EdgeToEdgeUtils {
             z2 = true;
         }
         if (z3 || z2) {
-            int color = MaterialColors.getColor(window.getContext(), 16842801, (int) ViewCompat.MEASURED_STATE_MASK);
+            int color = MaterialColors.getColor(window.getContext(), 16842801, -16777216);
             if (z3) {
                 num = Integer.valueOf(color);
             }
@@ -54,7 +53,7 @@ public class EdgeToEdgeUtils {
         if (z) {
             return 0;
         }
-        return MaterialColors.getColor(context, 16843857, (int) ViewCompat.MEASURED_STATE_MASK);
+        return MaterialColors.getColor(context, 16843857, -16777216);
     }
 
     private static int getNavigationBarColor(Context context, boolean z) {
@@ -62,9 +61,9 @@ public class EdgeToEdgeUtils {
             if (z) {
                 return 0;
             }
-            return MaterialColors.getColor(context, 16843858, (int) ViewCompat.MEASURED_STATE_MASK);
+            return MaterialColors.getColor(context, 16843858, -16777216);
         }
-        return ColorUtils.setAlphaComponent(MaterialColors.getColor(context, 16843858, (int) ViewCompat.MEASURED_STATE_MASK), 128);
+        return ColorUtils.setAlphaComponent(MaterialColors.getColor(context, 16843858, -16777216), 128);
     }
 
     private static boolean isUsingLightSystemBar(int i, boolean z) {

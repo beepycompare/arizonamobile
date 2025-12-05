@@ -12,7 +12,7 @@ public final class T5 extends MessageNano {
     public static volatile T5[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public S5 f689a;
+    public S5 f772a;
     public String b;
     public int c;
 
@@ -32,7 +32,7 @@ public final class T5 extends MessageNano {
     }
 
     public final T5 a() {
-        this.f689a = null;
+        this.f772a = null;
         this.b = "";
         this.c = -1;
         this.cachedSize = -1;
@@ -42,7 +42,7 @@ public final class T5 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        S5 s5 = this.f689a;
+        S5 s5 = this.f772a;
         if (s5 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, s5);
         }
@@ -55,7 +55,7 @@ public final class T5 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        S5 s5 = this.f689a;
+        S5 s5 = this.f772a;
         if (s5 != null) {
             codedOutputByteBufferNano.writeMessage(1, s5);
         }
@@ -77,10 +77,10 @@ public final class T5 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f689a == null) {
-                    this.f689a = new S5();
+                if (this.f772a == null) {
+                    this.f772a = new S5();
                 }
-                codedInputByteBufferNano.readMessage(this.f689a);
+                codedInputByteBufferNano.readMessage(this.f772a);
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readString();
             } else if (readTag != 24) {

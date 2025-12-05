@@ -1,5 +1,6 @@
 package io.appmetrica.analytics.protobuf.nano;
 
+import androidx.window.core.layout.WindowSizeClass;
 import java.io.IOException;
 import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
@@ -308,7 +309,7 @@ public final class CodedOutputByteBufferNano {
                 }
                 throw new IllegalArgumentException("Unpaired surrogate at index " + (i - 1));
             } else {
-                byteBuffer.put((byte) ((charAt >>> '\f') | 480));
+                byteBuffer.put((byte) ((charAt >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
                 byteBuffer.put((byte) (((charAt >>> 6) & 63) | 128));
                 byteBuffer.put((byte) ((charAt & '?') | 128));
             }
@@ -763,7 +764,7 @@ public final class CodedOutputByteBufferNano {
                 }
                 throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i6);
             } else {
-                bArr[i6] = (byte) ((charAt2 >>> '\f') | 480);
+                bArr[i6] = (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
                 int i10 = i6 + 2;
                 bArr[i6 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
                 i6 += 3;

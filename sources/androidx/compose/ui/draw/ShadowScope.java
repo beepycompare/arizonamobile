@@ -7,21 +7,21 @@ import androidx.compose.ui.unit.DpRect;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 /* compiled from: Shadow.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\bf\u0018\u00002\u00020\u0001R\u0018\u0010\u0002\u001a\u00020\u0003X¦\u000e¢\u0006\f\u001a\u0004\b\u0004\u0010\u0005\"\u0004\b\u0006\u0010\u0007R\u0018\u0010\b\u001a\u00020\u0003X¦\u000e¢\u0006\f\u001a\u0004\b\t\u0010\u0005\"\u0004\b\n\u0010\u0007R\u0018\u0010\u000b\u001a\u00020\fX¦\u000e¢\u0006\f\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u0004\u0018\u00010\u0012X¦\u000e¢\u0006\f\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u0018\u0010\u0017\u001a\u00020\u0003X¦\u000e¢\u0006\f\u001a\u0004\b\u0018\u0010\u0005\"\u0004\b\u0019\u0010\u0007R\u0018\u0010\u001a\u001a\u00020\u001bX¦\u000e¢\u0006\f\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u0018\u0010 \u001a\u00020!X¦\u000e¢\u0006\f\u001a\u0004\b\"\u0010\u000e\"\u0004\b#\u0010\u0010ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006$À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/draw/ShadowScope;", "Landroidx/compose/ui/unit/Density;", "radius", "", "getRadius", "()F", "setRadius", "(F)V", "spread", "getSpread", "setSpread", "color", "Landroidx/compose/ui/graphics/Color;", "getColor-0d7_KjU", "()J", "setColor-8_81llA", "(J)V", "brush", "Landroidx/compose/ui/graphics/Brush;", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "setBrush", "(Landroidx/compose/ui/graphics/Brush;)V", "alpha", "getAlpha", "setAlpha", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "getBlendMode-0nO6VwU", "()I", "setBlendMode-s9anfk8", "(I)V", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "getOffset-F1C5BW0", "setOffset-k-4lQ0M", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\bf\u0018\u00002\u00020\u0001R\u0018\u0010\u0002\u001a\u00020\u0003X¦\u000e¢\u0006\f\u001a\u0004\b\u0004\u0010\u0005\"\u0004\b\u0006\u0010\u0007R\u0018\u0010\b\u001a\u00020\u0003X¦\u000e¢\u0006\f\u001a\u0004\b\t\u0010\u0005\"\u0004\b\n\u0010\u0007R\u0018\u0010\u000b\u001a\u00020\fX¦\u000e¢\u0006\f\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u0004\u0018\u00010\u0012X¦\u000e¢\u0006\f\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u0018\u0010\u0017\u001a\u00020\u0003X¦\u000e¢\u0006\f\u001a\u0004\b\u0018\u0010\u0005\"\u0004\b\u0019\u0010\u0007R\u0018\u0010\u001a\u001a\u00020\u001bX¦\u000e¢\u0006\f\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u0018\u0010 \u001a\u00020!X¦\u000e¢\u0006\f\u001a\u0004\b\"\u0010\u000e\"\u0004\b#\u0010\u0010ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006$À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/draw/ShadowScope;", "Landroidx/compose/ui/unit/Density;", "radius", "", "getRadius", "()F", "setRadius", "(F)V", "spread", "getSpread", "setSpread", "color", "Landroidx/compose/ui/graphics/Color;", "getColor-0d7_KjU", "()J", "setColor-8_81llA", "(J)V", "brush", "Landroidx/compose/ui/graphics/Brush;", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "setBrush", "(Landroidx/compose/ui/graphics/Brush;)V", "alpha", "getAlpha", "setAlpha", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "getBlendMode-0nO6VwU", "()I", "setBlendMode-s9anfk8", "(I)V", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "getOffset-F1C5BW0", "setOffset-k-4lQ0M", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public interface ShadowScope extends Density {
     float getAlpha();
 
     /* renamed from: getBlendMode-0nO6VwU */
-    int mo4799getBlendMode0nO6VwU();
+    int mo4938getBlendMode0nO6VwU();
 
     Brush getBrush();
 
     /* renamed from: getColor-0d7_KjU */
-    long mo4800getColor0d7_KjU();
+    long mo4939getColor0d7_KjU();
 
     /* renamed from: getOffset-F1C5BW0 */
-    long mo4801getOffsetF1C5BW0();
+    long mo4940getOffsetF1C5BW0();
 
     float getRadius();
 
@@ -30,15 +30,15 @@ public interface ShadowScope extends Density {
     void setAlpha(float f);
 
     /* renamed from: setBlendMode-s9anfk8 */
-    void mo4802setBlendModes9anfk8(int i);
+    void mo4941setBlendModes9anfk8(int i);
 
     void setBrush(Brush brush);
 
     /* renamed from: setColor-8_81llA */
-    void mo4803setColor8_81llA(long j);
+    void mo4942setColor8_81llA(long j);
 
     /* renamed from: setOffset-k-4lQ0M */
-    void mo4804setOffsetk4lQ0M(long j);
+    void mo4943setOffsetk4lQ0M(long j);
 
     void setRadius(float f);
 
@@ -50,50 +50,50 @@ public interface ShadowScope extends Density {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m4898roundToPxR2X_6o(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo423roundToPxR2X_6o(j);
+        public static int m5037roundToPxR2X_6o(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo457roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m4899roundToPx0680j_4(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo424roundToPx0680j_4(f);
+        public static int m5038roundToPx0680j_4(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo458roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m4900toDpGaN1DYA(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo425toDpGaN1DYA(j);
+        public static float m5039toDpGaN1DYA(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo459toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4901toDpu2uoSUM(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo426toDpu2uoSUM(f);
+        public static float m5040toDpu2uoSUM(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo460toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4902toDpu2uoSUM(ShadowScope shadowScope, int i) {
-            return ShadowScope.super.mo427toDpu2uoSUM(i);
+        public static float m5041toDpu2uoSUM(ShadowScope shadowScope, int i) {
+            return ShadowScope.super.mo461toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m4903toDpSizekrfVVM(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo428toDpSizekrfVVM(j);
+        public static long m5042toDpSizekrfVVM(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo462toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m4904toPxR2X_6o(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo429toPxR2X_6o(j);
+        public static float m5043toPxR2X_6o(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo463toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m4905toPx0680j_4(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo430toPx0680j_4(f);
+        public static float m5044toPx0680j_4(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo464toPx0680j_4(f);
         }
 
         @Deprecated
@@ -103,26 +103,26 @@ public interface ShadowScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m4906toSizeXkaWNTQ(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo431toSizeXkaWNTQ(j);
+        public static long m5045toSizeXkaWNTQ(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo465toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m4907toSp0xMU5do(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo432toSp0xMU5do(f);
+        public static long m5046toSp0xMU5do(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo466toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4908toSpkPz2Gy4(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo433toSpkPz2Gy4(f);
+        public static long m5047toSpkPz2Gy4(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo467toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4909toSpkPz2Gy4(ShadowScope shadowScope, int i) {
-            return ShadowScope.super.mo434toSpkPz2Gy4(i);
+        public static long m5048toSpkPz2Gy4(ShadowScope shadowScope, int i) {
+            return ShadowScope.super.mo468toSpkPz2Gy4(i);
         }
     }
 }

@@ -23,6 +23,14 @@ public final class MutatePriority {
         return $ENTRIES;
     }
 
+    public static MutatePriority valueOf(String str) {
+        return (MutatePriority) Enum.valueOf(MutatePriority.class, str);
+    }
+
+    public static MutatePriority[] values() {
+        return (MutatePriority[]) $VALUES.clone();
+    }
+
     private MutatePriority(String str, int i) {
     }
 
@@ -30,13 +38,5 @@ public final class MutatePriority {
         MutatePriority[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static MutatePriority valueOf(String str) {
-        return (MutatePriority) Enum.valueOf(MutatePriority.class, str);
-    }
-
-    public static MutatePriority[] values() {
-        return (MutatePriority[]) $VALUES.clone();
     }
 }

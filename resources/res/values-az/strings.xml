@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Paylaşın</string>
     <string name="abc_shareactionprovider_share_with_application">%s ilə paylaşın</string>
     <string name="abc_toolbar_collapse_description">Yığcamlaşdırın</string>
-    <string name="autofill">Avto-doldurma</string>
+    <string name="androidx_compose_foundation_autofill">Avto-doldurma</string>
+    <string name="androidx_compose_ui_autofill">Avto-doldurma</string>
     <string name="bottomsheet_action_collapse">Aşağıdakı vərəqi yığcamlaşdırın</string>
     <string name="bottomsheet_action_expand">Aşağıdakı vərəqi genişləndirin</string>
     <string name="bottomsheet_action_expand_halfway">Tam genişləndirin</string>

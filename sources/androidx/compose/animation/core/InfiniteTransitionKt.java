@@ -32,7 +32,7 @@ public final class InfiniteTransitionKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1013651573, i, -1, "androidx.compose.animation.core.rememberInfiniteTransition (InfiniteTransition.kt:44)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -838410053, "CC(remember):InfiniteTransition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -838410661, "CC(remember):InfiniteTransition.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new InfiniteTransition(str);
@@ -54,7 +54,7 @@ public final class InfiniteTransitionKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1062847727, i, -1, "androidx.compose.animation.core.animateValue (InfiniteTransition.kt:245)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 805560258, "CC(remember):InfiniteTransition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 805559650, "CC(remember):InfiniteTransition.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             InfiniteTransition.TransitionAnimationState transitionAnimationState = new InfiniteTransition.TransitionAnimationState(t, t2, twoWayConverter, infiniteRepeatableSpec, str2);
@@ -63,7 +63,7 @@ public final class InfiniteTransitionKt {
         }
         final InfiniteTransition.TransitionAnimationState transitionAnimationState2 = (InfiniteTransition.TransitionAnimationState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 805564669, "CC(remember):InfiniteTransition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 805564061, "CC(remember):InfiniteTransition.kt#9igjgp");
         boolean z = true;
         boolean z2 = ((((i & 112) ^ 48) > 32 && composer.changedInstance(t)) || (i & 48) == 32) | ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changedInstance(t2)) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         if ((((57344 & i) ^ 24576) <= 16384 || !composer.changedInstance(infiniteRepeatableSpec)) && (i & 24576) != 16384) {
@@ -75,25 +75,25 @@ public final class InfiniteTransitionKt {
             rememberedValue2 = new Function0() { // from class: androidx.compose.animation.core.InfiniteTransitionKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit animateValue$lambda$3$lambda$2;
-                    animateValue$lambda$3$lambda$2 = InfiniteTransitionKt.animateValue$lambda$3$lambda$2(t, transitionAnimationState2, t2, infiniteRepeatableSpec);
-                    return animateValue$lambda$3$lambda$2;
+                    Unit animateValue$lambda$1$0;
+                    animateValue$lambda$1$0 = InfiniteTransitionKt.animateValue$lambda$1$0(t, transitionAnimationState2, t2, infiniteRepeatableSpec);
+                    return animateValue$lambda$1$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         EffectsKt.SideEffect((Function0) rememberedValue2, composer, 0);
-        ComposerKt.sourceInformationMarkerStart(composer, 805577469, "CC(remember):InfiniteTransition.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 805576861, "CC(remember):InfiniteTransition.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(infiniteTransition);
         Object rememberedValue3 = composer.rememberedValue();
         if (changedInstance || rememberedValue3 == Composer.Companion.getEmpty()) {
             rememberedValue3 = new Function1() { // from class: androidx.compose.animation.core.InfiniteTransitionKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult animateValue$lambda$6$lambda$5;
-                    animateValue$lambda$6$lambda$5 = InfiniteTransitionKt.animateValue$lambda$6$lambda$5(InfiniteTransition.this, transitionAnimationState2, (DisposableEffectScope) obj);
-                    return animateValue$lambda$6$lambda$5;
+                    DisposableEffectResult animateValue$lambda$2$0;
+                    animateValue$lambda$2$0 = InfiniteTransitionKt.animateValue$lambda$2$0(InfiniteTransition.this, transitionAnimationState2, (DisposableEffectScope) obj);
+                    return animateValue$lambda$2$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue3);
@@ -108,7 +108,7 @@ public final class InfiniteTransitionKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit animateValue$lambda$3$lambda$2(Object obj, InfiniteTransition.TransitionAnimationState transitionAnimationState, Object obj2, InfiniteRepeatableSpec infiniteRepeatableSpec) {
+    public static final Unit animateValue$lambda$1$0(Object obj, InfiniteTransition.TransitionAnimationState transitionAnimationState, Object obj2, InfiniteRepeatableSpec infiniteRepeatableSpec) {
         if (!Intrinsics.areEqual(obj, transitionAnimationState.getInitialValue$animation_core()) || !Intrinsics.areEqual(obj2, transitionAnimationState.getTargetValue$animation_core())) {
             transitionAnimationState.updateValues$animation_core(obj, obj2, infiniteRepeatableSpec);
         }
@@ -116,9 +116,9 @@ public final class InfiniteTransitionKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult animateValue$lambda$6$lambda$5(final InfiniteTransition infiniteTransition, final InfiniteTransition.TransitionAnimationState transitionAnimationState, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult animateValue$lambda$2$0(final InfiniteTransition infiniteTransition, final InfiniteTransition.TransitionAnimationState transitionAnimationState, DisposableEffectScope disposableEffectScope) {
         infiniteTransition.addAnimation$animation_core(transitionAnimationState);
-        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.InfiniteTransitionKt$animateValue$lambda$6$lambda$5$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.animation.core.InfiniteTransitionKt$animateValue$lambda$2$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 InfiniteTransition.this.removeAnimation$animation_core(transitionAnimationState);

@@ -13,7 +13,7 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
     public static final ComposableSingletons$AndroidPopup_androidKt INSTANCE = new ComposableSingletons$AndroidPopup_androidKt();
 
     /* renamed from: lambda$-1131826196  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f42lambda$1131826196 = ComposableLambdaKt.composableLambdaInstance(-1131826196, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt$lambda$-1131826196$1
+    private static Function2<Composer, Integer, Unit> f123lambda$1131826196 = ComposableLambdaKt.composableLambdaInstance(-1131826196, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt$lambda$-1131826196$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -27,7 +27,7 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1131826196, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt.lambda$-1131826196.<anonymous> (AndroidPopup.android.kt:555)");
+                ComposerKt.traceEventStart(-1131826196, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt.lambda$-1131826196.<anonymous> (AndroidPopup.android.kt:573)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -35,8 +35,8 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
         }
     });
 
-    /* renamed from: getLambda$-1131826196$ui_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m8250getLambda$1131826196$ui_release() {
-        return f42lambda$1131826196;
+    /* renamed from: getLambda$-1131826196$ui  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m8512getLambda$1131826196$ui() {
+        return f123lambda$1131826196;
     }
 }

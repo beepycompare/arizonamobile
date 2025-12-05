@@ -5,7 +5,6 @@ import androidx.compose.animation.core.AnimationResult;
 import androidx.compose.animation.core.AnimationSpec;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.ui.node.DelegatableNodeKt;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -21,7 +20,7 @@ import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BasicMarquee.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.MarqueeModifierNode$runAnimation$2", f = "BasicMarquee.kt", i = {}, l = {TypedValues.CycleType.TYPE_VISIBILITY}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.MarqueeModifierNode$runAnimation$2", f = "BasicMarquee.kt", i = {}, l = {413}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -82,7 +81,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
         if (contentWidth <= containerWidth) {
             return null;
         }
-        if (MarqueeAnimationMode.m353equalsimpl0(marqueeModifierNode.m365getAnimationModeZbEOnfQ(), MarqueeAnimationMode.Companion.m358getWhileFocusedZbEOnfQ())) {
+        if (MarqueeAnimationMode.m385equalsimpl0(marqueeModifierNode.m398getAnimationModeZbEOnfQ(), MarqueeAnimationMode.Companion.m390getWhileFocusedZbEOnfQ())) {
             hasFocus = marqueeModifierNode.getHasFocus();
             if (!hasFocus) {
                 return null;
@@ -96,7 +95,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: BasicMarquee.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0007\u0010\u0000\u001a\u00020\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003H\n"}, d2 = {"<anonymous>", "", "contentWithSpacingWidth", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.MarqueeModifierNode$runAnimation$2$2", f = "BasicMarquee.kt", i = {0, 0}, l = {416, 418, TypedValues.CycleType.TYPE_CUSTOM_WAVE_SHAPE, TypedValues.CycleType.TYPE_CUSTOM_WAVE_SHAPE}, m = "invokeSuspend", n = {"contentWithSpacingWidth", "spec"}, s = {"L$0", "L$1"})
+    @DebugMetadata(c = "androidx.compose.foundation.MarqueeModifierNode$runAnimation$2$2", f = "BasicMarquee.kt", i = {0, 0}, l = {427, 429, 433, 433}, m = "invokeSuspend", n = {"contentWithSpacingWidth", "spec"}, s = {"L$0", "L$1"}, v = 1)
     /* renamed from: androidx.compose.foundation.MarqueeModifierNode$runAnimation$2$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<Float, Continuation<? super Unit>, Object> {
@@ -136,7 +135,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
             int i2;
             int i3;
             float f;
-            AnimationSpec m275createMarqueeAnimationSpecZ4HSEVQ;
+            AnimationSpec m306createMarqueeAnimationSpecZ4HSEVQ;
             Animatable animatable2;
             Float f2;
             AnimationSpec animationSpec;
@@ -164,14 +163,14 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
                     i2 = this.this$0.initialDelayMillis;
                     i3 = this.this$0.delayMillis;
                     f = this.this$0.velocity;
-                    m275createMarqueeAnimationSpecZ4HSEVQ = BasicMarqueeKt.m275createMarqueeAnimationSpecZ4HSEVQ(i, floatValue, i2, i3, f, DelegatableNodeKt.requireDensity(this.this$0));
+                    m306createMarqueeAnimationSpecZ4HSEVQ = BasicMarqueeKt.m306createMarqueeAnimationSpecZ4HSEVQ(i, floatValue, i2, i3, f, DelegatableNodeKt.requireDensity(this.this$0));
                     animatable2 = this.this$0.offset;
                     this.L$0 = f3;
-                    this.L$1 = m275createMarqueeAnimationSpecZ4HSEVQ;
+                    this.L$1 = m306createMarqueeAnimationSpecZ4HSEVQ;
                     this.label = 1;
                     if (animatable2.snapTo(Boxing.boxFloat(0.0f), this) != coroutine_suspended) {
                         f2 = f3;
-                        animationSpec = m275createMarqueeAnimationSpecZ4HSEVQ;
+                        animationSpec = m306createMarqueeAnimationSpecZ4HSEVQ;
                     }
                     return coroutine_suspended;
                 }

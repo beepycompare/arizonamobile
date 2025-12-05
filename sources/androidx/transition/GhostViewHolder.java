@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
+import androidx.core.view.ViewCompat;
 import java.util.ArrayList;
 /* loaded from: classes3.dex */
 class GhostViewHolder extends FrameLayout {
@@ -16,7 +17,7 @@ class GhostViewHolder extends FrameLayout {
         setClipChildren(false);
         this.mParent = viewGroup;
         viewGroup.setTag(R.id.ghost_view_holder, this);
-        this.mParent.getOverlay().add(this);
+        ViewCompat.addOverlayView(this.mParent, this);
         this.mAttached = true;
     }
 

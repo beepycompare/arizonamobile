@@ -44,17 +44,17 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
             public void bind(SQLiteStatement statement, NotificationHistoryData entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo8902bindLong(1, entity.getId());
+                statement.mo9166bindLong(1, entity.getId());
                 Long dateToTimestamp = NotificationHistoryDAO_Impl.this.__dateConverter.dateToTimestamp(entity.getDate());
                 if (dateToTimestamp == null) {
-                    statement.mo8903bindNull(2);
+                    statement.mo9167bindNull(2);
                 } else {
-                    statement.mo8902bindLong(2, dateToTimestamp.longValue());
+                    statement.mo9166bindLong(2, dateToTimestamp.longValue());
                 }
-                statement.mo8904bindText(3, entity.getTitle());
-                statement.mo8904bindText(4, entity.getText());
-                statement.mo8904bindText(5, entity.getImageUrl());
-                statement.mo8902bindLong(6, entity.isViewed() ? 1L : 0L);
+                statement.mo9168bindText(3, entity.getTitle());
+                statement.mo9168bindText(4, entity.getText());
+                statement.mo9168bindText(5, entity.getImageUrl());
+                statement.mo9166bindLong(6, entity.isViewed() ? 1L : 0L);
             }
         };
     }

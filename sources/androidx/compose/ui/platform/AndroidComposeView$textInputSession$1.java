@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidComposeView.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.platform.AndroidComposeView", f = "AndroidComposeView.android.kt", i = {}, l = {734}, m = "textInputSession", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.ui.platform.AndroidComposeView", f = "AndroidComposeView.android.kt", i = {}, l = {776}, m = "textInputSession", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class AndroidComposeView$textInputSession$1 extends ContinuationImpl {
     int label;

@@ -45,12 +45,14 @@ public class SnapshotMutableDoubleStateImpl extends StateObjectImpl implements M
             return;
         }
         DoubleStateStateRecord doubleStateStateRecord2 = this.next;
+        SnapshotMutableDoubleStateImpl snapshotMutableDoubleStateImpl = this;
+        DoubleStateStateRecord doubleStateStateRecord3 = doubleStateStateRecord;
         synchronized (SnapshotKt.getLock()) {
             current = Snapshot.Companion.getCurrent();
-            ((DoubleStateStateRecord) SnapshotKt.overwritableRecord(doubleStateStateRecord2, this, current, doubleStateStateRecord)).setValue(d);
+            ((DoubleStateStateRecord) SnapshotKt.overwritableRecord(doubleStateStateRecord2, snapshotMutableDoubleStateImpl, current, doubleStateStateRecord3)).setValue(d);
             Unit unit = Unit.INSTANCE;
         }
-        SnapshotKt.notifyWrite(current, this);
+        SnapshotKt.notifyWrite(current, snapshotMutableDoubleStateImpl);
     }
 
     @Override // androidx.compose.runtime.snapshots.SnapshotMutableState
@@ -65,7 +67,7 @@ public class SnapshotMutableDoubleStateImpl extends StateObjectImpl implements M
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit component2$lambda$4(SnapshotMutableDoubleStateImpl snapshotMutableDoubleStateImpl, double d) {
+    public static final Unit component2$lambda$0(SnapshotMutableDoubleStateImpl snapshotMutableDoubleStateImpl, double d) {
         snapshotMutableDoubleStateImpl.setDoubleValue(d);
         return Unit.INSTANCE;
     }
@@ -75,9 +77,9 @@ public class SnapshotMutableDoubleStateImpl extends StateObjectImpl implements M
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableDoubleStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$4;
-                component2$lambda$4 = SnapshotMutableDoubleStateImpl.component2$lambda$4(SnapshotMutableDoubleStateImpl.this, ((Double) obj).doubleValue());
-                return component2$lambda$4;
+                Unit component2$lambda$0;
+                component2$lambda$0 = SnapshotMutableDoubleStateImpl.component2$lambda$0(SnapshotMutableDoubleStateImpl.this, ((Double) obj).doubleValue());
+                return component2$lambda$0;
             }
         };
     }
@@ -109,16 +111,16 @@ public class SnapshotMutableDoubleStateImpl extends StateObjectImpl implements M
     public static final class DoubleStateStateRecord extends StateRecord {
         private double value;
 
+        public DoubleStateStateRecord(long j, double d) {
+            super(j);
+            this.value = d;
+        }
+
         public final double getValue() {
             return this.value;
         }
 
         public final void setValue(double d) {
-            this.value = d;
-        }
-
-        public DoubleStateStateRecord(long j, double d) {
-            super(j);
             this.value = d;
         }
 

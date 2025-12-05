@@ -14,7 +14,7 @@ import kotlinx.coroutines.TimeoutKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FontListFontFamilyTypefaceAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1", f = "FontListFontFamilyTypefaceAdapter.kt", i = {}, l = {109}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1", f = "FontListFontFamilyTypefaceAdapter.kt", i = {}, l = {109}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
     final /* synthetic */ Font $font;
@@ -49,7 +49,7 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: FontListFontFamilyTypefaceAdapter.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0000\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1", f = "FontListFontFamilyTypefaceAdapter.kt", i = {}, l = {111}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1", f = "FontListFontFamilyTypefaceAdapter.kt", i = {}, l = {111}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1  reason: invalid class name */
     /* loaded from: classes2.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function1<Continuation<? super Object>, Object> {
@@ -87,7 +87,7 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
                 if (i == 0) {
                     ResultKt.throwOnFailure(obj);
                     this.label = 1;
-                    obj = TimeoutKt.withTimeout(15000L, new C00291(this.$resourceLoader, this.$font, null), this);
+                    obj = TimeoutKt.withTimeout(15000L, new C00271(this.$resourceLoader, this.$font, null), this);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -108,16 +108,16 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: FontListFontFamilyTypefaceAdapter.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1$1", f = "FontListFontFamilyTypefaceAdapter.kt", i = {}, l = {112}, m = "invokeSuspend", n = {}, s = {})
+        @DebugMetadata(c = "androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1$1", f = "FontListFontFamilyTypefaceAdapter.kt", i = {}, l = {112}, m = "invokeSuspend", n = {}, s = {}, v = 1)
         /* renamed from: androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$preload$3$2$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes2.dex */
-        public static final class C00291 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
+        public static final class C00271 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
             final /* synthetic */ Font $font;
             final /* synthetic */ PlatformFontLoader $resourceLoader;
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00291(PlatformFontLoader platformFontLoader, Font font, Continuation<? super C00291> continuation) {
+            C00271(PlatformFontLoader platformFontLoader, Font font, Continuation<? super C00271> continuation) {
                 super(2, continuation);
                 this.$resourceLoader = platformFontLoader;
                 this.$font = font;
@@ -125,7 +125,7 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new C00291(this.$resourceLoader, this.$font, continuation);
+                return new C00271(this.$resourceLoader, this.$font, continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
@@ -135,7 +135,7 @@ public final class FontListFontFamilyTypefaceAdapter$preload$3$2$1 extends Suspe
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final Object invoke2(CoroutineScope coroutineScope, Continuation<Object> continuation) {
-                return ((C00291) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00271) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

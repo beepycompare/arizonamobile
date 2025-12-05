@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Draggable.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureNode", f = "Draggable.kt", i = {}, l = {583}, m = "processDragCancel", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureNode", f = "Draggable.kt", i = {}, l = {667}, m = "processDragCancel", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class DragGestureNode$processDragCancel$1 extends ContinuationImpl {
     int label;

@@ -1,7 +1,6 @@
 package com.bumptech.glide.gifdecoder;
 
 import android.util.Log;
-import androidx.core.view.ViewCompat;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -227,7 +226,7 @@ public class GifHeaderParser {
                 int i4 = i3 + 2;
                 i3 += 3;
                 int i5 = i2 + 1;
-                iArr[i2] = ((bArr[i3 + 1] & 255) << 8) | ((bArr[i3] & 255) << 16) | ViewCompat.MEASURED_STATE_MASK | (bArr[i4] & 255);
+                iArr[i2] = ((bArr[i3 + 1] & 255) << 8) | ((bArr[i3] & 255) << 16) | (-16777216) | (bArr[i4] & 255);
                 i2 = i5;
             }
             return iArr;

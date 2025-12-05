@@ -14,25 +14,25 @@ public final class SaveableStateHolderKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(15454635, i, -1, "androidx.compose.runtime.saveable.rememberSaveableStateHolder (SaveableStateHolder.kt:57)");
         }
-        composer.startReplaceGroup(1967008021);
+        composer.startReplaceGroup(1967007413);
         ComposerKt.sourceInformation(composer, "*58@2715L7");
         Object[] objArr = new Object[0];
         Saver<SaveableStateHolderImpl, ?> saver = SaveableStateHolderImpl.Companion.getSaver();
-        ComposerKt.sourceInformationMarkerStart(composer, 1967006728, "CC(remember):SaveableStateHolder.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1967006120, "CC(remember):SaveableStateHolder.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new Function0() { // from class: androidx.compose.runtime.saveable.SaveableStateHolderKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    SaveableStateHolderImpl rememberSaveableStateHolder$lambda$1$lambda$0;
-                    rememberSaveableStateHolder$lambda$1$lambda$0 = SaveableStateHolderKt.rememberSaveableStateHolder$lambda$1$lambda$0();
-                    return rememberSaveableStateHolder$lambda$1$lambda$0;
+                    SaveableStateHolderImpl rememberSaveableStateHolder$lambda$0$0;
+                    rememberSaveableStateHolder$lambda$0$0 = SaveableStateHolderKt.rememberSaveableStateHolder$lambda$0$0();
+                    return rememberSaveableStateHolder$lambda$0$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SaveableStateHolderImpl saveableStateHolderImpl = (SaveableStateHolderImpl) RememberSaveableKt.m4726rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+        SaveableStateHolderImpl saveableStateHolderImpl = (SaveableStateHolderImpl) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(SaveableStateRegistryKt.getLocalSaveableStateRegistry());
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -46,7 +46,7 @@ public final class SaveableStateHolderKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final SaveableStateHolderImpl rememberSaveableStateHolder$lambda$1$lambda$0() {
+    public static final SaveableStateHolderImpl rememberSaveableStateHolder$lambda$0$0() {
         return new SaveableStateHolderImpl(null, 1, null);
     }
 }

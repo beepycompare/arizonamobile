@@ -15,7 +15,6 @@ import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
-import androidx.core.view.ViewCompat;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
@@ -89,7 +88,7 @@ final class SubtitlePainter {
         int i5;
         boolean z = cue.bitmap == null;
         if (!z) {
-            i5 = ViewCompat.MEASURED_STATE_MASK;
+            i5 = -16777216;
         } else if (TextUtils.isEmpty(cue.text)) {
             return;
         } else {

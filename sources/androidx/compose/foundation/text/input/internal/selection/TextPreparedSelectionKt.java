@@ -7,14 +7,14 @@ import androidx.compose.ui.text.TextRange;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 /* compiled from: TextPreparedSelection.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a%\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u0006H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"calculateNextCursorPositionAndWedgeAffinity", "Landroidx/compose/foundation/text/input/internal/selection/CursorAndWedgeAffinity;", "proposedCursor", "", "cursor", "transformedTextFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "(IILandroidx/compose/foundation/text/input/internal/TransformedTextFieldState;)J", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a%\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u0006H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"calculateNextCursorPositionAndWedgeAffinity", "Landroidx/compose/foundation/text/input/internal/selection/CursorAndWedgeAffinity;", "proposedCursor", "", "cursor", "transformedTextFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "(IILandroidx/compose/foundation/text/input/internal/TransformedTextFieldState;)J", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextPreparedSelectionKt {
 
     /* compiled from: TextPreparedSelection.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -42,45 +42,45 @@ public final class TextPreparedSelectionKt {
     public static final long calculateNextCursorPositionAndWedgeAffinity(int i, int i2, TransformedTextFieldState transformedTextFieldState) {
         IndexTransformationType indexTransformationType;
         if (i == -1) {
-            return CursorAndWedgeAffinity.m1614constructorimpl(i2);
+            return CursorAndWedgeAffinity.m1704constructorimpl(i2);
         }
         boolean z = i > i2;
-        long m1599mapFromTransformedjx7JFs = transformedTextFieldState.m1599mapFromTransformedjx7JFs(i);
-        long m1602mapToTransformedGEjPoXI = transformedTextFieldState.m1602mapToTransformedGEjPoXI(m1599mapFromTransformedjx7JFs);
-        if (TextRange.m7452getCollapsedimpl(m1599mapFromTransformedjx7JFs) && TextRange.m7452getCollapsedimpl(m1602mapToTransformedGEjPoXI)) {
+        long m1689mapFromTransformedjx7JFs = transformedTextFieldState.m1689mapFromTransformedjx7JFs(i);
+        long m1692mapToTransformedGEjPoXI = transformedTextFieldState.m1692mapToTransformedGEjPoXI(m1689mapFromTransformedjx7JFs);
+        if (TextRange.m7695getCollapsedimpl(m1689mapFromTransformedjx7JFs) && TextRange.m7695getCollapsedimpl(m1692mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Untransformed;
-        } else if (!TextRange.m7452getCollapsedimpl(m1599mapFromTransformedjx7JFs) && !TextRange.m7452getCollapsedimpl(m1602mapToTransformedGEjPoXI)) {
+        } else if (!TextRange.m7695getCollapsedimpl(m1689mapFromTransformedjx7JFs) && !TextRange.m7695getCollapsedimpl(m1692mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Replacement;
-        } else if (TextRange.m7452getCollapsedimpl(m1599mapFromTransformedjx7JFs) && !TextRange.m7452getCollapsedimpl(m1602mapToTransformedGEjPoXI)) {
+        } else if (TextRange.m7695getCollapsedimpl(m1689mapFromTransformedjx7JFs) && !TextRange.m7695getCollapsedimpl(m1692mapToTransformedGEjPoXI)) {
             indexTransformationType = IndexTransformationType.Insertion;
         } else {
             indexTransformationType = IndexTransformationType.Deletion;
         }
         int i3 = WhenMappings.$EnumSwitchMapping$0[indexTransformationType.ordinal()];
         if (i3 == 1) {
-            return CursorAndWedgeAffinity.m1615constructorimpl(i, z ? WedgeAffinity.Start : WedgeAffinity.End);
+            return CursorAndWedgeAffinity.m1705constructorimpl(i, z ? WedgeAffinity.Start : WedgeAffinity.End);
         } else if (i3 != 2) {
             if (i3 == 3) {
                 if (z) {
-                    return CursorAndWedgeAffinity.m1615constructorimpl(TextRange.m7453getEndimpl(m1602mapToTransformedGEjPoXI), WedgeAffinity.Start);
+                    return CursorAndWedgeAffinity.m1705constructorimpl(TextRange.m7696getEndimpl(m1692mapToTransformedGEjPoXI), WedgeAffinity.Start);
                 }
-                return CursorAndWedgeAffinity.m1615constructorimpl(TextRange.m7458getStartimpl(m1602mapToTransformedGEjPoXI), WedgeAffinity.End);
+                return CursorAndWedgeAffinity.m1705constructorimpl(TextRange.m7701getStartimpl(m1692mapToTransformedGEjPoXI), WedgeAffinity.End);
             } else if (i3 == 4) {
                 if (z) {
-                    if (i == TextRange.m7458getStartimpl(m1602mapToTransformedGEjPoXI)) {
-                        return CursorAndWedgeAffinity.m1615constructorimpl(i, WedgeAffinity.Start);
+                    if (i == TextRange.m7701getStartimpl(m1692mapToTransformedGEjPoXI)) {
+                        return CursorAndWedgeAffinity.m1705constructorimpl(i, WedgeAffinity.Start);
                     }
-                    return CursorAndWedgeAffinity.m1615constructorimpl(TextRange.m7453getEndimpl(m1602mapToTransformedGEjPoXI), WedgeAffinity.End);
-                } else if (i == TextRange.m7453getEndimpl(m1602mapToTransformedGEjPoXI)) {
-                    return CursorAndWedgeAffinity.m1615constructorimpl(i, WedgeAffinity.End);
+                    return CursorAndWedgeAffinity.m1705constructorimpl(TextRange.m7696getEndimpl(m1692mapToTransformedGEjPoXI), WedgeAffinity.End);
+                } else if (i == TextRange.m7696getEndimpl(m1692mapToTransformedGEjPoXI)) {
+                    return CursorAndWedgeAffinity.m1705constructorimpl(i, WedgeAffinity.End);
                 } else {
-                    return CursorAndWedgeAffinity.m1615constructorimpl(TextRange.m7458getStartimpl(m1602mapToTransformedGEjPoXI), WedgeAffinity.Start);
+                    return CursorAndWedgeAffinity.m1705constructorimpl(TextRange.m7701getStartimpl(m1692mapToTransformedGEjPoXI), WedgeAffinity.Start);
                 }
             } else {
                 throw new NoWhenBranchMatchedException();
             }
         } else {
-            return CursorAndWedgeAffinity.m1614constructorimpl(i);
+            return CursorAndWedgeAffinity.m1704constructorimpl(i);
         }
     }
 }

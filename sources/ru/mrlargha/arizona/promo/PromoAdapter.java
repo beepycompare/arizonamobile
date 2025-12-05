@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
@@ -75,7 +74,7 @@ public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder
                     CustomCardView buttonCard = binding.buttonCard;
                     Intrinsics.checkNotNullExpressionValue(buttonCard, "buttonCard");
                     CustomCardView.setBorder$default(buttonCard, Color.parseColor("#33FFFFFF"), Color.parseColor("#BCBCBC"), null, 4, null);
-                    binding.buttonGet.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+                    binding.buttonGet.setTextColor(-16777216);
                     binding.available.setVisibility(4);
                     binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizona.promo.PromoAdapter$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
@@ -97,7 +96,7 @@ public final class PromoAdapter extends RecyclerView.Adapter<PromoItemViewHolder
                 });
             }
         } else if (buttonStyle.equals("available")) {
-            binding.buttonGet.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+            binding.buttonGet.setTextColor(-16777216);
             CustomCardView buttonCard2 = binding.buttonCard;
             Intrinsics.checkNotNullExpressionValue(buttonCard2, "buttonCard");
             CustomCardView.setBackground$default(buttonCard2, Color.parseColor("#FCD80F"), Color.parseColor("#FF9112"), null, null, 12, null);

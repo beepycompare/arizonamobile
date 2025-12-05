@@ -31,10 +31,10 @@ public final class PlainStringParserOperation<Output> implements ParserOperation
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo11558consumeFANa98k(Output output, final CharSequence input, final int i) {
+    public Object mo11853consumeFANa98k(Output output, final CharSequence input, final int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (this.string.length() + i > input.length()) {
-            return ParseResult.Companion.m11568ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m11863ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     String consume_FANa98k$lambda$3;
@@ -46,7 +46,7 @@ public final class PlainStringParserOperation<Output> implements ParserOperation
         int length = this.string.length();
         for (final int i2 = 0; i2 < length; i2++) {
             if (input.charAt(i + i2) != this.string.charAt(i2)) {
-                return ParseResult.Companion.m11568ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda1
+                return ParseResult.Companion.m11863ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         String consume_FANa98k$lambda$4;
@@ -56,7 +56,7 @@ public final class PlainStringParserOperation<Output> implements ParserOperation
                 });
             }
         }
-        return ParseResult.Companion.m11569OkQi1bsqg(i + this.string.length());
+        return ParseResult.Companion.m11864OkQi1bsqg(i + this.string.length());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -5,16 +5,16 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class Dj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f448a;
+    public final /* synthetic */ PluginErrorDetails f531a;
     public final /* synthetic */ String b;
 
     public Dj(PluginErrorDetails pluginErrorDetails, String str) {
-        this.f448a = pluginErrorDetails;
+        this.f531a = pluginErrorDetails;
         this.b = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.getPluginExtension().reportError(this.f448a, this.b);
+        sa.getPluginExtension().reportError(this.f531a, this.b);
     }
 }

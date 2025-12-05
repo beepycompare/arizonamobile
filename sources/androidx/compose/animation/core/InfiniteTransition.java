@@ -204,7 +204,7 @@ public final class InfiniteTransition {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-318043801, i2, -1, "androidx.compose.animation.core.InfiniteTransition.run (InfiniteTransition.kt:164)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -697411466, "CC(remember):InfiniteTransition.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -697413354, "CC(remember):InfiniteTransition.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
@@ -213,9 +213,9 @@ public final class InfiniteTransition {
             MutableState mutableState = (MutableState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             if (isRunning() || getRefreshChildNeeded()) {
-                startRestartGroup.startReplaceGroup(-144783432);
+                startRestartGroup.startReplaceGroup(-144841960);
                 ComposerKt.sourceInformation(startRestartGroup, "167@7123L1398,167@7102L1419");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -697406019, "CC(remember):InfiniteTransition.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -697407907, "CC(remember):InfiniteTransition.kt#9igjgp");
                 boolean changedInstance = startRestartGroup.changedInstance(this);
                 InfiniteTransition$run$1$1 rememberedValue2 = startRestartGroup.rememberedValue();
                 if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -224,11 +224,10 @@ public final class InfiniteTransition {
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 EffectsKt.LaunchedEffect(this, (Function2) rememberedValue2, startRestartGroup, i2 & 14);
-                startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(-143396709);
-                startRestartGroup.endReplaceGroup();
+                startRestartGroup.startReplaceGroup(-151918981);
             }
+            startRestartGroup.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

@@ -91,10 +91,10 @@ public final class SettingsCacheImpl implements SettingsCache {
         @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
         /* renamed from: com.google.firebase.sessions.settings.SettingsCacheImpl$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes4.dex */
-        public /* synthetic */ class C00701 implements FlowCollector, FunctionAdapter {
+        public /* synthetic */ class C00691 implements FlowCollector, FunctionAdapter {
             final /* synthetic */ AtomicReference<SessionConfigs> $tmp0;
 
-            C00701(AtomicReference<SessionConfigs> atomicReference) {
+            C00691(AtomicReference<SessionConfigs> atomicReference) {
                 this.$tmp0 = atomicReference;
             }
 
@@ -132,7 +132,7 @@ public final class SettingsCacheImpl implements SettingsCache {
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (SettingsCacheImpl.this.sessionConfigsDataStore.getData().collect(new C00701(SettingsCacheImpl.this.sessionConfigsAtomicReference), this) == coroutine_suspended) {
+                if (SettingsCacheImpl.this.sessionConfigsDataStore.getData().collect(new C00691(SettingsCacheImpl.this.sessionConfigsAtomicReference), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

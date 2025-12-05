@@ -1,6 +1,5 @@
 package com.google.android.material.color.utilities;
 
-import androidx.core.view.ViewCompat;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -174,7 +173,7 @@ public final class QuantizerWu implements Quantizer {
             int volume = volume(box, this.weights);
             if (volume > 0) {
                 int volume2 = volume(box, this.momentsG) / volume;
-                arrayList.add(Integer.valueOf(((volume(box, this.momentsB) / volume) & 255) | (((volume(box, this.momentsR) / volume) & 255) << 16) | ViewCompat.MEASURED_STATE_MASK | ((volume2 & 255) << 8)));
+                arrayList.add(Integer.valueOf(((volume(box, this.momentsB) / volume) & 255) | (((volume(box, this.momentsR) / volume) & 255) << 16) | (-16777216) | ((volume2 & 255) << 8)));
             }
         }
         return arrayList;

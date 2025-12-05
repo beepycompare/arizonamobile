@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">यसमार्फत सेयर गर्नुहोस्</string>
     <string name="abc_shareactionprovider_share_with_application">%s मार्फत सेयर गर्नुहोस्</string>
     <string name="abc_toolbar_collapse_description">संक्षिप्त गर्नुहोस्</string>
-    <string name="autofill">अटोफिल</string>
+    <string name="androidx_compose_foundation_autofill">अटोफिल</string>
+    <string name="androidx_compose_ui_autofill">अटोफिल</string>
     <string name="bottomsheet_action_collapse">पुछारको पाना कोल्याप्स गर्नुहोस्</string>
     <string name="bottomsheet_action_expand">पुछारको पाना एक्स्पान्ड गर्नुहोस्</string>
     <string name="bottomsheet_action_expand_halfway">आधा ठुलो पार्नुहोस्</string>

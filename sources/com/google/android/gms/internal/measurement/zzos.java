@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.measurement;
 
+import androidx.window.core.layout.WindowSizeClass;
 import com.google.common.base.Ascii;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
@@ -197,7 +198,7 @@ public final class zzos {
                     throw new zzor(i6, length);
                 }
             } else {
-                bArr[i7] = (byte) ((charAt2 >>> '\f') | 480);
+                bArr[i7] = (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
                 bArr[i7 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
                 bArr[i7 + 2] = (byte) ((charAt2 & '?') | 128);
                 i7 += 3;

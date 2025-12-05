@@ -13,6 +13,13 @@ final class IntrinsicHeightElement extends ModifierNodeElement<IntrinsicHeightNo
     private final IntrinsicSize height;
     private final Function1<InspectorInfo, Unit> inspectorInfo;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public IntrinsicHeightElement(IntrinsicSize intrinsicSize, boolean z, Function1<? super InspectorInfo, Unit> function1) {
+        this.height = intrinsicSize;
+        this.enforceIncoming = z;
+        this.inspectorInfo = function1;
+    }
+
     public final IntrinsicSize getHeight() {
         return this.height;
     }
@@ -23,13 +30,6 @@ final class IntrinsicHeightElement extends ModifierNodeElement<IntrinsicHeightNo
 
     public final Function1<InspectorInfo, Unit> getInspectorInfo() {
         return this.inspectorInfo;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public IntrinsicHeightElement(IntrinsicSize intrinsicSize, boolean z, Function1<? super InspectorInfo, Unit> function1) {
-        this.height = intrinsicSize;
-        this.enforceIncoming = z;
-        this.inspectorInfo = function1;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

@@ -11,22 +11,22 @@ final class CancelledCoroutineContext implements CoroutineContext.Element {
     public static final Key Key = new Key(null);
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
+    public /* bridge */ <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
         return (R) CoroutineContext.Element.DefaultImpls.fold(this, r, function2);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
+    public /* bridge */ <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
         return (E) CoroutineContext.Element.DefaultImpls.get(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
+    public /* bridge */ CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return CoroutineContext.Element.DefaultImpls.minusKey(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
-    public CoroutineContext plus(CoroutineContext coroutineContext) {
+    public /* bridge */ CoroutineContext plus(CoroutineContext coroutineContext) {
         return CoroutineContext.Element.DefaultImpls.plus(this, coroutineContext);
     }
 

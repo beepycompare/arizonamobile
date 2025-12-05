@@ -30,91 +30,91 @@ public final class AndroidParagraph_androidKt {
     }
 
     /* renamed from: access$toLayoutAlign-aXe7zB0  reason: not valid java name */
-    public static final /* synthetic */ int m7258access$toLayoutAlignaXe7zB0(int i) {
-        return m7264toLayoutAlignaXe7zB0(i);
+    public static final /* synthetic */ int m7494access$toLayoutAlignaXe7zB0(int i) {
+        return m7500toLayoutAlignaXe7zB0(i);
     }
 
     /* renamed from: access$toLayoutBreakStrategy-xImikfE  reason: not valid java name */
-    public static final /* synthetic */ int m7259access$toLayoutBreakStrategyxImikfE(int i) {
-        return m7265toLayoutBreakStrategyxImikfE(i);
+    public static final /* synthetic */ int m7495access$toLayoutBreakStrategyxImikfE(int i) {
+        return m7501toLayoutBreakStrategyxImikfE(i);
     }
 
     /* renamed from: access$toLayoutHyphenationFrequency--3fSNIE  reason: not valid java name */
-    public static final /* synthetic */ int m7260access$toLayoutHyphenationFrequency3fSNIE(int i) {
-        return m7266toLayoutHyphenationFrequency3fSNIE(i);
+    public static final /* synthetic */ int m7496access$toLayoutHyphenationFrequency3fSNIE(int i) {
+        return m7502toLayoutHyphenationFrequency3fSNIE(i);
     }
 
     /* renamed from: access$toLayoutLineBreakStyle-hpcqdu8  reason: not valid java name */
-    public static final /* synthetic */ int m7261access$toLayoutLineBreakStylehpcqdu8(int i) {
-        return m7267toLayoutLineBreakStylehpcqdu8(i);
+    public static final /* synthetic */ int m7497access$toLayoutLineBreakStylehpcqdu8(int i) {
+        return m7503toLayoutLineBreakStylehpcqdu8(i);
     }
 
     /* renamed from: access$toLayoutLineBreakWordStyle-wPN0Rpw  reason: not valid java name */
-    public static final /* synthetic */ int m7262access$toLayoutLineBreakWordStylewPN0Rpw(int i) {
-        return m7268toLayoutLineBreakWordStylewPN0Rpw(i);
+    public static final /* synthetic */ int m7498access$toLayoutLineBreakWordStylewPN0Rpw(int i) {
+        return m7504toLayoutLineBreakWordStylewPN0Rpw(i);
     }
 
     /* renamed from: access$toLayoutTextGranularity-duNsdkg  reason: not valid java name */
-    public static final /* synthetic */ int m7263access$toLayoutTextGranularityduNsdkg(int i) {
-        return m7269toLayoutTextGranularityduNsdkg(i);
+    public static final /* synthetic */ int m7499access$toLayoutTextGranularityduNsdkg(int i) {
+        return m7505toLayoutTextGranularityduNsdkg(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutAlign-aXe7zB0  reason: not valid java name */
-    public static final int m7264toLayoutAlignaXe7zB0(int i) {
-        if (TextAlign.m7876equalsimpl0(i, TextAlign.Companion.m7883getLefte0LSkKk())) {
+    public static final int m7500toLayoutAlignaXe7zB0(int i) {
+        if (TextAlign.m8132equalsimpl0(i, TextAlign.Companion.m8139getLefte0LSkKk())) {
             return 3;
         }
-        if (TextAlign.m7876equalsimpl0(i, TextAlign.Companion.m7884getRighte0LSkKk())) {
+        if (TextAlign.m8132equalsimpl0(i, TextAlign.Companion.m8140getRighte0LSkKk())) {
             return 4;
         }
-        if (TextAlign.m7876equalsimpl0(i, TextAlign.Companion.m7880getCentere0LSkKk())) {
+        if (TextAlign.m8132equalsimpl0(i, TextAlign.Companion.m8136getCentere0LSkKk())) {
             return 2;
         }
-        return (!TextAlign.m7876equalsimpl0(i, TextAlign.Companion.m7885getStarte0LSkKk()) && TextAlign.m7876equalsimpl0(i, TextAlign.Companion.m7881getEnde0LSkKk())) ? 1 : 0;
+        return (!TextAlign.m8132equalsimpl0(i, TextAlign.Companion.m8141getStarte0LSkKk()) && TextAlign.m8132equalsimpl0(i, TextAlign.Companion.m8137getEnde0LSkKk())) ? 1 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutHyphenationFrequency--3fSNIE  reason: not valid java name */
-    public static final int m7266toLayoutHyphenationFrequency3fSNIE(int i) {
-        if (Hyphens.m7774equalsimpl0(i, Hyphens.Companion.m7778getAutovmbZdU8())) {
+    public static final int m7502toLayoutHyphenationFrequency3fSNIE(int i) {
+        if (Hyphens.m8024equalsimpl0(i, Hyphens.Companion.m8028getAutovmbZdU8())) {
             return Build.VERSION.SDK_INT <= 32 ? 2 : 4;
         }
-        Hyphens.m7774equalsimpl0(i, Hyphens.Companion.m7779getNonevmbZdU8());
+        Hyphens.m8024equalsimpl0(i, Hyphens.Companion.m8029getNonevmbZdU8());
         return 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutBreakStrategy-xImikfE  reason: not valid java name */
-    public static final int m7265toLayoutBreakStrategyxImikfE(int i) {
-        if (LineBreak.Strategy.m7805equalsimpl0(i, LineBreak.Strategy.Companion.m7811getSimplefcGXIks())) {
+    public static final int m7501toLayoutBreakStrategyxImikfE(int i) {
+        if (LineBreak.Strategy.m8058equalsimpl0(i, LineBreak.Strategy.Companion.m8064getSimplefcGXIks())) {
             return 0;
         }
-        if (LineBreak.Strategy.m7805equalsimpl0(i, LineBreak.Strategy.Companion.m7810getHighQualityfcGXIks())) {
+        if (LineBreak.Strategy.m8058equalsimpl0(i, LineBreak.Strategy.Companion.m8063getHighQualityfcGXIks())) {
             return 1;
         }
-        return LineBreak.Strategy.m7805equalsimpl0(i, LineBreak.Strategy.Companion.m7809getBalancedfcGXIks()) ? 2 : 0;
+        return LineBreak.Strategy.m8058equalsimpl0(i, LineBreak.Strategy.Companion.m8062getBalancedfcGXIks()) ? 2 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutLineBreakStyle-hpcqdu8  reason: not valid java name */
-    public static final int m7267toLayoutLineBreakStylehpcqdu8(int i) {
-        if (LineBreak.Strictness.m7816equalsimpl0(i, LineBreak.Strictness.Companion.m7820getDefaultusljTpc())) {
+    public static final int m7503toLayoutLineBreakStylehpcqdu8(int i) {
+        if (LineBreak.Strictness.m8069equalsimpl0(i, LineBreak.Strictness.Companion.m8073getDefaultusljTpc())) {
             return 0;
         }
-        if (LineBreak.Strictness.m7816equalsimpl0(i, LineBreak.Strictness.Companion.m7821getLooseusljTpc())) {
+        if (LineBreak.Strictness.m8069equalsimpl0(i, LineBreak.Strictness.Companion.m8074getLooseusljTpc())) {
             return 1;
         }
-        if (LineBreak.Strictness.m7816equalsimpl0(i, LineBreak.Strictness.Companion.m7822getNormalusljTpc())) {
+        if (LineBreak.Strictness.m8069equalsimpl0(i, LineBreak.Strictness.Companion.m8075getNormalusljTpc())) {
             return 2;
         }
-        return LineBreak.Strictness.m7816equalsimpl0(i, LineBreak.Strictness.Companion.m7823getStrictusljTpc()) ? 3 : 0;
+        return LineBreak.Strictness.m8069equalsimpl0(i, LineBreak.Strictness.Companion.m8076getStrictusljTpc()) ? 3 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutLineBreakWordStyle-wPN0Rpw  reason: not valid java name */
-    public static final int m7268toLayoutLineBreakWordStylewPN0Rpw(int i) {
-        return (!LineBreak.WordBreak.m7828equalsimpl0(i, LineBreak.WordBreak.Companion.m7832getDefaultjp8hJ3c()) && LineBreak.WordBreak.m7828equalsimpl0(i, LineBreak.WordBreak.Companion.m7833getPhrasejp8hJ3c())) ? 1 : 0;
+    public static final int m7504toLayoutLineBreakWordStylewPN0Rpw(int i) {
+        return (!LineBreak.WordBreak.m8081equalsimpl0(i, LineBreak.WordBreak.Companion.m8085getDefaultjp8hJ3c()) && LineBreak.WordBreak.m8081equalsimpl0(i, LineBreak.WordBreak.Companion.m8086getPhrasejp8hJ3c())) ? 1 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -130,7 +130,7 @@ public final class AndroidParagraph_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean shouldAttachIndentationFixSpan(TextStyle textStyle, boolean z) {
-        return (!z || TextUnit.m8187equalsimpl0(textStyle.m7494getLetterSpacingXSAIIZE(), TextUnitKt.getSp(0)) || TextUnit.m8187equalsimpl0(textStyle.m7494getLetterSpacingXSAIIZE(), TextUnit.Companion.m8201getUnspecifiedXSAIIZE()) || TextAlign.m7876equalsimpl0(textStyle.m7499getTextAligne0LSkKk(), TextAlign.Companion.m7886getUnspecifiede0LSkKk()) || TextAlign.m7876equalsimpl0(textStyle.m7499getTextAligne0LSkKk(), TextAlign.Companion.m7885getStarte0LSkKk()) || TextAlign.m7876equalsimpl0(textStyle.m7499getTextAligne0LSkKk(), TextAlign.Companion.m7882getJustifye0LSkKk())) ? false : true;
+        return (!z || TextUnit.m8449equalsimpl0(textStyle.m7737getLetterSpacingXSAIIZE(), TextUnitKt.getSp(0)) || TextUnit.m8449equalsimpl0(textStyle.m7737getLetterSpacingXSAIIZE(), TextUnit.Companion.m8463getUnspecifiedXSAIIZE()) || TextAlign.m8132equalsimpl0(textStyle.m7742getTextAligne0LSkKk(), TextAlign.Companion.m8142getUnspecifiede0LSkKk()) || TextAlign.m8132equalsimpl0(textStyle.m7742getTextAligne0LSkKk(), TextAlign.Companion.m8141getStarte0LSkKk()) || TextAlign.m8132equalsimpl0(textStyle.m7742getTextAligne0LSkKk(), TextAlign.Companion.m8138getJustifye0LSkKk())) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -150,7 +150,7 @@ public final class AndroidParagraph_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutTextGranularity-duNsdkg  reason: not valid java name */
-    public static final int m7269toLayoutTextGranularityduNsdkg(int i) {
-        return (!TextGranularity.m7416equalsimpl0(i, TextGranularity.Companion.m7420getCharacterDRrd7Zo()) && TextGranularity.m7416equalsimpl0(i, TextGranularity.Companion.m7421getWordDRrd7Zo())) ? 1 : 0;
+    public static final int m7505toLayoutTextGranularityduNsdkg(int i) {
+        return (!TextGranularity.m7658equalsimpl0(i, TextGranularity.Companion.m7662getCharacterDRrd7Zo()) && TextGranularity.m7658equalsimpl0(i, TextGranularity.Companion.m7663getWordDRrd7Zo())) ? 1 : 0;
     }
 }

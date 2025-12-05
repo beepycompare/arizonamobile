@@ -6,10 +6,11 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionAdapter;
 import kotlin.jvm.internal.Intrinsics;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectionContainer.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class SelectionContainerKt$sam$androidx_compose_foundation_text_selection_OffsetProvider$0 implements OffsetProvider, FunctionAdapter {
+public final class SelectionContainerKt$sam$androidx_compose_foundation_text_selection_OffsetProvider$0 implements OffsetProvider, FunctionAdapter {
     private final /* synthetic */ Function0 function;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,7 +36,7 @@ final class SelectionContainerKt$sam$androidx_compose_foundation_text_selection_
 
     @Override // androidx.compose.foundation.text.selection.OffsetProvider
     /* renamed from: provide-F1C5BW0 */
-    public final /* synthetic */ long mo1230provideF1C5BW0() {
-        return ((Offset) this.function.invoke()).m5046unboximpl();
+    public final /* synthetic */ long mo1308provideF1C5BW0() {
+        return ((Offset) this.function.invoke()).m5189unboximpl();
     }
 }

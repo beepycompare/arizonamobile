@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Delen met</string>
     <string name="abc_shareactionprovider_share_with_application">Delen met %s</string>
     <string name="abc_toolbar_collapse_description">Samenvouwen</string>
-    <string name="autofill">Automatisch invullen</string>
+    <string name="androidx_compose_foundation_autofill">Automatisch invullen</string>
+    <string name="androidx_compose_ui_autofill">Automatisch invullen</string>
     <string name="bottomsheet_action_collapse">Het blad onderaan samenvouwen</string>
     <string name="bottomsheet_action_expand">Het blad onderaan uitvouwen</string>
     <string name="bottomsheet_action_expand_halfway">Half uitvouwen</string>

@@ -13,7 +13,7 @@ import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SavedState.android.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u001aC\u0010\u0002\u001a\u00060\u0001j\u0002`\u00032\u0016\b\u0002\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u00052\u0019\b\u0002\u0010\b\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\t¢\u0006\u0002\b\fH\u0086\bø\u0001\u0000\u001a7\u0010\u0002\u001a\u00060\u0001j\u0002`\u00032\n\u0010\u0004\u001a\u00060\u0001j\u0002`\u00032\u0019\b\u0002\u0010\b\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\t¢\u0006\u0002\b\fH\u0086\bø\u0001\u0000*\n\u0010\u0000\"\u00020\u00012\u00020\u0001\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\r"}, d2 = {"SavedState", "Landroid/os/Bundle;", "savedState", "Landroidx/savedstate/SavedState;", "initialState", "", "", "", "builderAction", "Lkotlin/Function1;", "Landroidx/savedstate/SavedStateWriter;", "", "Lkotlin/ExtensionFunctionType;", "savedstate_release"}, k = 5, mv = {2, 0, 0}, xi = 48, xs = "androidx/savedstate/SavedStateKt")
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u001aC\u0010\u0002\u001a\u00060\u0001j\u0002`\u00032\u0016\b\u0002\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u00052\u0019\b\u0002\u0010\b\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\t¢\u0006\u0002\b\fH\u0086\bø\u0001\u0000\u001a7\u0010\u0002\u001a\u00060\u0001j\u0002`\u00032\n\u0010\u0004\u001a\u00060\u0001j\u0002`\u00032\u0019\b\u0002\u0010\b\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\t¢\u0006\u0002\b\fH\u0086\bø\u0001\u0000*\n\u0010\u0000\"\u00020\u00012\u00020\u0001\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\r"}, d2 = {"SavedState", "Landroid/os/Bundle;", "savedState", "Landroidx/savedstate/SavedState;", "initialState", "", "", "", "builderAction", "Lkotlin/Function1;", "Landroidx/savedstate/SavedStateWriter;", "", "Lkotlin/ExtensionFunctionType;", "savedstate"}, k = 5, mv = {2, 0, 0}, xi = 48, xs = "androidx/savedstate/SavedStateKt")
 /* loaded from: classes3.dex */
 final /* synthetic */ class SavedStateKt__SavedState_androidKt {
     public static final Bundle savedState(Map<String, ? extends Object> initialState, Function1<? super SavedStateWriter, Unit> builderAction) {
@@ -30,7 +30,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundleOf)));
+        builderAction.invoke(SavedStateWriter.m9262boximpl(SavedStateWriter.m9264constructorimpl(bundleOf)));
         return bundleOf;
     }
 
@@ -38,7 +38,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         Intrinsics.checkNotNullParameter(initialState, "initialState");
         Intrinsics.checkNotNullParameter(builderAction, "builderAction");
         Bundle bundle = new Bundle(initialState);
-        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundle)));
+        builderAction.invoke(SavedStateWriter.m9262boximpl(SavedStateWriter.m9264constructorimpl(bundle)));
         return bundle;
     }
 
@@ -46,13 +46,13 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         if ((i & 2) != 0) {
             builderAction = new Function1<SavedStateWriter, Unit>() { // from class: androidx.savedstate.SavedStateKt__SavedState_androidKt$savedState$3
                 /* renamed from: invoke-xApjlu4  reason: not valid java name */
-                public final void m8912invokexApjlu4(Bundle bundle) {
+                public final void m9176invokexApjlu4(Bundle bundle) {
                     Intrinsics.checkNotNullParameter(bundle, "<this>");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SavedStateWriter savedStateWriter) {
-                    m8912invokexApjlu4(savedStateWriter.m9038unboximpl());
+                    m9176invokexApjlu4(savedStateWriter.m9302unboximpl());
                     return Unit.INSTANCE;
                 }
             };
@@ -60,7 +60,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         Intrinsics.checkNotNullParameter(initialState, "initialState");
         Intrinsics.checkNotNullParameter(builderAction, "builderAction");
         Bundle bundle = new Bundle(initialState);
-        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundle)));
+        builderAction.invoke(SavedStateWriter.m9262boximpl(SavedStateWriter.m9264constructorimpl(bundle)));
         return bundle;
     }
 
@@ -72,13 +72,13 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
         if ((i & 2) != 0) {
             builderAction = new Function1<SavedStateWriter, Unit>() { // from class: androidx.savedstate.SavedStateKt__SavedState_androidKt$savedState$1
                 /* renamed from: invoke-xApjlu4  reason: not valid java name */
-                public final void m8911invokexApjlu4(Bundle bundle) {
+                public final void m9175invokexApjlu4(Bundle bundle) {
                     Intrinsics.checkNotNullParameter(bundle, "<this>");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SavedStateWriter savedStateWriter) {
-                    m8911invokexApjlu4(savedStateWriter.m9038unboximpl());
+                    m9175invokexApjlu4(savedStateWriter.m9302unboximpl());
                     return Unit.INSTANCE;
                 }
             };
@@ -95,7 +95,7 @@ final /* synthetic */ class SavedStateKt__SavedState_androidKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        builderAction.invoke(SavedStateWriter.m8998boximpl(SavedStateWriter.m9000constructorimpl(bundleOf)));
+        builderAction.invoke(SavedStateWriter.m9262boximpl(SavedStateWriter.m9264constructorimpl(bundleOf)));
         return bundleOf;
     }
 }

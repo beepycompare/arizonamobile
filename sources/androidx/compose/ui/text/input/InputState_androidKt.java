@@ -5,7 +5,7 @@ import androidx.compose.ui.text.TextRange;
 import kotlin.Metadata;
 import kotlin.text.StringsKt;
 /* compiled from: InputState.android.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000¨\u0006\u0003"}, d2 = {"toExtractedText", "Landroid/view/inputmethod/ExtractedText;", "Landroidx/compose/ui/text/input/TextFieldValue;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000¨\u0006\u0003"}, d2 = {"toExtractedText", "Landroid/view/inputmethod/ExtractedText;", "Landroidx/compose/ui/text/input/TextFieldValue;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class InputState_androidKt {
     public static final ExtractedText toExtractedText(TextFieldValue textFieldValue) {
@@ -14,8 +14,8 @@ public final class InputState_androidKt {
         extractedText.startOffset = 0;
         extractedText.partialEndOffset = textFieldValue.getText().length();
         extractedText.partialStartOffset = -1;
-        extractedText.selectionStart = TextRange.m7456getMinimpl(textFieldValue.m7709getSelectiond9O1mEE());
-        extractedText.selectionEnd = TextRange.m7455getMaximpl(textFieldValue.m7709getSelectiond9O1mEE());
+        extractedText.selectionStart = TextRange.m7699getMinimpl(textFieldValue.m7955getSelectiond9O1mEE());
+        extractedText.selectionEnd = TextRange.m7698getMaximpl(textFieldValue.m7955getSelectiond9O1mEE());
         extractedText.flags = !StringsKt.contains$default((CharSequence) textFieldValue.getText(), '\n', false, 2, (Object) null) ? 1 : 0;
         return extractedText;
     }

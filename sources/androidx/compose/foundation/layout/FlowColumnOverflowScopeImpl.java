@@ -56,9 +56,9 @@ public final class FlowColumnOverflowScopeImpl implements FlowColumnScope, FlowC
         this.shownItemCount$delegate = FlowLayoutOverflowKt.lazyInt(flowLayoutOverflowState.getShownItemLazyErrorMessage$foundation_layout(), new Function0() { // from class: androidx.compose.foundation.layout.FlowColumnOverflowScopeImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int shownItemCount_delegate$lambda$1;
-                shownItemCount_delegate$lambda$1 = FlowColumnOverflowScopeImpl.shownItemCount_delegate$lambda$1(FlowColumnOverflowScopeImpl.this);
-                return Integer.valueOf(shownItemCount_delegate$lambda$1);
+                int shownItemCount_delegate$lambda$0;
+                shownItemCount_delegate$lambda$0 = FlowColumnOverflowScopeImpl.shownItemCount_delegate$lambda$0(FlowColumnOverflowScopeImpl.this);
+                return Integer.valueOf(shownItemCount_delegate$lambda$0);
             }
         });
     }
@@ -74,7 +74,7 @@ public final class FlowColumnOverflowScopeImpl implements FlowColumnScope, FlowC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int shownItemCount_delegate$lambda$1(FlowColumnOverflowScopeImpl flowColumnOverflowScopeImpl) {
+    public static final int shownItemCount_delegate$lambda$0(FlowColumnOverflowScopeImpl flowColumnOverflowScopeImpl) {
         return flowColumnOverflowScopeImpl.state.getItemShown$foundation_layout();
     }
 

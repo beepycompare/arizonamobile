@@ -57,22 +57,22 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AnimatedContentKt {
     private static final long UnspecifiedSize;
 
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x00ec  */
-    /* JADX WARN: Removed duplicated region for block: B:210:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x019c  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x01ac  */
-    /* JADX WARN: Removed duplicated region for block: B:243:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x018d  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x019d  */
+    /* JADX WARN: Removed duplicated region for block: B:231:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,9 +98,7 @@ public final class AnimatedContentKt {
         Alignment alignment3;
         Composer startRestartGroup = composer.startRestartGroup(1501828832);
         ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedContent)P(5,4,6,1,3,2)131@7139L226,138@7503L6,141@7610L58,142@7684L137:AnimatedContent.kt#xbi5r1");
-        if ((i2 & 1) != 0) {
-            i3 = i | 6;
-        } else if ((i & 6) == 0) {
+        if ((i & 6) == 0) {
             i3 = ((i & 8) == 0 ? startRestartGroup.changed(s) : startRestartGroup.changedInstance(s) ? 4 : 2) | i;
         } else {
             i3 = i;
@@ -133,140 +131,131 @@ public final class AnimatedContentKt {
                         } else if ((196608 & i) == 0) {
                             obj3 = function12;
                             i3 |= startRestartGroup.changedInstance(obj3) ? 131072 : 65536;
-                            if ((i2 & 64) == 0) {
-                                i3 |= 1572864;
-                            } else if ((i & 1572864) == 0) {
+                            if ((1572864 & i) != 0) {
                                 function42 = function4;
                                 i3 |= startRestartGroup.changedInstance(function42) ? 1048576 : 524288;
-                                if (!startRestartGroup.shouldExecute((i3 & 599187) != 599186, i3 & 1)) {
-                                    startRestartGroup.skipToGroupEnd();
-                                    modifier2 = modifier;
-                                    str2 = str;
-                                    function13 = obj;
-                                    alignment2 = obj2;
+                            } else {
+                                function42 = function4;
+                            }
+                            if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
+                                startRestartGroup.skipToGroupEnd();
+                                modifier2 = modifier;
+                                str2 = str;
+                                function13 = obj;
+                                alignment2 = obj2;
+                            } else {
+                                if (i10 != 0) {
+                                    companion = Modifier.Companion;
+                                    i8 = i6;
                                 } else {
-                                    if (i10 != 0) {
-                                        companion = Modifier.Companion;
-                                        i8 = i6;
-                                    } else {
-                                        i8 = i6;
-                                        companion = modifier;
-                                    }
-                                    if (i4 != 0) {
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 148502018, "CC(remember):AnimatedContent.kt#9igjgp");
-                                        AnimatedContentKt$AnimatedContent$1$1 rememberedValue = startRestartGroup.rememberedValue();
-                                        if (rememberedValue == Composer.Companion.getEmpty()) {
-                                            rememberedValue = new Function1<AnimatedContentTransitionScope<S>, ContentTransform>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$1$1
-                                                @Override // kotlin.jvm.functions.Function1
-                                                public /* bridge */ /* synthetic */ ContentTransform invoke(Object obj4) {
-                                                    return invoke((AnimatedContentTransitionScope) ((AnimatedContentTransitionScope) obj4));
-                                                }
-
-                                                public final ContentTransform invoke(AnimatedContentTransitionScope<S> animatedContentTransitionScope) {
-                                                    return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m97scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
-                                                }
-                                            };
-                                            startRestartGroup.updateRememberedValue(rememberedValue);
-                                        }
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        function14 = (Function1) rememberedValue;
-                                    } else {
-                                        function14 = obj;
-                                    }
-                                    if (i5 != 0) {
-                                        alignment3 = Alignment.Companion.getTopStart();
-                                        i9 = i7;
-                                    } else {
-                                        i9 = i7;
-                                        alignment3 = obj2;
-                                    }
-                                    String str3 = i8 != 0 ? "AnimatedContent" : str;
-                                    if (i9 != 0) {
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 148513446, "CC(remember):AnimatedContent.kt#9igjgp");
-                                        AnimatedContentKt$AnimatedContent$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
-                                        if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                                            rememberedValue2 = new Function1<S, S>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$2$1
-                                                @Override // kotlin.jvm.functions.Function1
-                                                public final S invoke(S s2) {
-                                                    return s2;
-                                                }
-                                            };
-                                            startRestartGroup.updateRememberedValue(rememberedValue2);
-                                        }
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        obj3 = (Function1) rememberedValue2;
-                                    }
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(1501828832, i3, -1, "androidx.compose.animation.AnimatedContent (AnimatedContent.kt:140)");
-                                    }
-                                    Transition updateTransition = androidx.compose.animation.core.TransitionKt.updateTransition(s, str3, startRestartGroup, (i3 & 14) | ((i3 >> 9) & 112), 0);
-                                    int i11 = i3 & 8176;
-                                    int i12 = i3 >> 3;
-                                    AnimatedContent(updateTransition, companion, function14, alignment3, obj3, function42, startRestartGroup, i11 | (57344 & i12) | (i12 & 458752), 0);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
-                                    str2 = str3;
-                                    modifier2 = companion;
-                                    function13 = function14;
-                                    alignment2 = alignment3;
+                                    i8 = i6;
+                                    companion = modifier;
                                 }
-                                final Function1<? super S, ? extends Object> function15 = obj3;
-                                endRestartGroup = startRestartGroup.endRestartGroup();
-                                if (endRestartGroup != null) {
-                                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$3
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
+                                if (i4 != 0) {
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 148501410, "CC(remember):AnimatedContent.kt#9igjgp");
+                                    AnimatedContentKt$AnimatedContent$1$1 rememberedValue = startRestartGroup.rememberedValue();
+                                    if (rememberedValue == Composer.Companion.getEmpty()) {
+                                        rememberedValue = new Function1<AnimatedContentTransitionScope<S>, ContentTransform>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$1$1
+                                            @Override // kotlin.jvm.functions.Function1
+                                            public /* bridge */ /* synthetic */ ContentTransform invoke(Object obj4) {
+                                                return invoke((AnimatedContentTransitionScope) ((AnimatedContentTransitionScope) obj4));
+                                            }
 
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                                            invoke(composer2, num.intValue());
-                                            return Unit.INSTANCE;
-                                        }
-
-                                        public final void invoke(Composer composer2, int i13) {
-                                            AnimatedContentKt.AnimatedContent(s, modifier2, function13, alignment2, str2, function15, function4, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
-                                        }
-                                    });
-                                    return;
+                                            public final ContentTransform invoke(AnimatedContentTransitionScope<S> animatedContentTransitionScope) {
+                                                return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m99scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
+                                            }
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    function14 = (Function1) rememberedValue;
+                                } else {
+                                    function14 = obj;
                                 }
+                                if (i5 != 0) {
+                                    alignment3 = Alignment.Companion.getTopStart();
+                                    i9 = i7;
+                                } else {
+                                    i9 = i7;
+                                    alignment3 = obj2;
+                                }
+                                String str3 = i8 != 0 ? "AnimatedContent" : str;
+                                if (i9 != 0) {
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 148512838, "CC(remember):AnimatedContent.kt#9igjgp");
+                                    AnimatedContentKt$AnimatedContent$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
+                                    if (rememberedValue2 == Composer.Companion.getEmpty()) {
+                                        rememberedValue2 = new Function1<S, S>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$2$1
+                                            @Override // kotlin.jvm.functions.Function1
+                                            public final S invoke(S s2) {
+                                                return s2;
+                                            }
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue2);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    obj3 = (Function1) rememberedValue2;
+                                }
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(1501828832, i3, -1, "androidx.compose.animation.AnimatedContent (AnimatedContent.kt:140)");
+                                }
+                                Transition updateTransition = androidx.compose.animation.core.TransitionKt.updateTransition(s, str3, startRestartGroup, (i3 & 14) | ((i3 >> 9) & 112), 0);
+                                int i11 = i3 & 8176;
+                                int i12 = i3 >> 3;
+                                AnimatedContent(updateTransition, companion, function14, alignment3, obj3, function42, startRestartGroup, i11 | (57344 & i12) | (i12 & 458752), 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                str2 = str3;
+                                modifier2 = companion;
+                                function13 = function14;
+                                alignment2 = alignment3;
+                            }
+                            final Function1<? super S, ? extends Object> function15 = obj3;
+                            endRestartGroup = startRestartGroup.endRestartGroup();
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$3
+                                    /* JADX INFO: Access modifiers changed from: package-private */
+                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                    /* JADX WARN: Multi-variable type inference failed */
+                                    {
+                                        super(2);
+                                    }
+
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
+                                        invoke(composer2, num.intValue());
+                                        return Unit.INSTANCE;
+                                    }
+
+                                    public final void invoke(Composer composer2, int i13) {
+                                        AnimatedContentKt.AnimatedContent(s, modifier2, function13, alignment2, str2, function15, function4, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    }
+                                });
                                 return;
                             }
-                            function42 = function4;
-                            if (!startRestartGroup.shouldExecute((i3 & 599187) != 599186, i3 & 1)) {
-                            }
-                            final Function1<? super S, ? extends Object> function152 = obj3;
-                            endRestartGroup = startRestartGroup.endRestartGroup();
-                            if (endRestartGroup != null) {
-                            }
+                            return;
                         }
                         obj3 = function12;
-                        if ((i2 & 64) == 0) {
+                        if ((1572864 & i) != 0) {
                         }
-                        function42 = function4;
-                        if (!startRestartGroup.shouldExecute((i3 & 599187) != 599186, i3 & 1)) {
+                        if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
                         }
-                        final Function1<? super S, ? extends Object> function1522 = obj3;
+                        final Function1<? super S, ? extends Object> function152 = obj3;
                         endRestartGroup = startRestartGroup.endRestartGroup();
-                        if (endRestartGroup != null) {
+                        if (endRestartGroup == null) {
                         }
                     }
                     i7 = i2 & 32;
                     if (i7 != 0) {
                     }
                     obj3 = function12;
-                    if ((i2 & 64) == 0) {
+                    if ((1572864 & i) != 0) {
                     }
-                    function42 = function4;
-                    if (!startRestartGroup.shouldExecute((i3 & 599187) != 599186, i3 & 1)) {
+                    if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
                     }
-                    final Function1<? super S, ? extends Object> function15222 = obj3;
+                    final Function1<? super S, ? extends Object> function1522 = obj3;
                     endRestartGroup = startRestartGroup.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    if (endRestartGroup == null) {
                     }
                 }
                 obj2 = alignment;
@@ -277,14 +266,13 @@ public final class AnimatedContentKt {
                 if (i7 != 0) {
                 }
                 obj3 = function12;
-                if ((i2 & 64) == 0) {
+                if ((1572864 & i) != 0) {
                 }
-                function42 = function4;
-                if (!startRestartGroup.shouldExecute((i3 & 599187) != 599186, i3 & 1)) {
+                if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
                 }
-                final Function1<? super S, ? extends Object> function152222 = obj3;
+                final Function1<? super S, ? extends Object> function15222 = obj3;
                 endRestartGroup = startRestartGroup.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             obj = function1;
@@ -299,14 +287,13 @@ public final class AnimatedContentKt {
             if (i7 != 0) {
             }
             obj3 = function12;
-            if ((i2 & 64) == 0) {
+            if ((1572864 & i) != 0) {
             }
-            function42 = function4;
-            if (!startRestartGroup.shouldExecute((i3 & 599187) != 599186, i3 & 1)) {
+            if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
             }
-            final Function1<? super S, ? extends Object> function1522222 = obj3;
+            final Function1<? super S, ? extends Object> function152222 = obj3;
             endRestartGroup = startRestartGroup.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         i4 = i2 & 4;
@@ -324,14 +311,13 @@ public final class AnimatedContentKt {
         if (i7 != 0) {
         }
         obj3 = function12;
-        if ((i2 & 64) == 0) {
+        if ((1572864 & i) != 0) {
         }
-        function42 = function4;
-        if (!startRestartGroup.shouldExecute((i3 & 599187) != 599186, i3 & 1)) {
+        if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
         }
-        final Function1<? super S, ? extends Object> function15222222 = obj3;
+        final Function1<? super S, ? extends Object> function1522222 = obj3;
         endRestartGroup = startRestartGroup.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
@@ -343,12 +329,12 @@ public final class AnimatedContentKt {
             function2 = new Function2<IntSize, IntSize, SpringSpec<IntSize>>() { // from class: androidx.compose.animation.AnimatedContentKt$SizeTransform$1
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ SpringSpec<IntSize> invoke(IntSize intSize, IntSize intSize2) {
-                    return m52invokeTemP2vQ(intSize.m8171unboximpl(), intSize2.m8171unboximpl());
+                    return m53invokeTemP2vQ(intSize.m8433unboximpl(), intSize2.m8433unboximpl());
                 }
 
                 /* renamed from: invoke-TemP2vQ  reason: not valid java name */
-                public final SpringSpec<IntSize> m52invokeTemP2vQ(long j, long j2) {
-                    return AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8159boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+                public final SpringSpec<IntSize> m53invokeTemP2vQ(long j, long j2) {
+                    return AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
                 }
             };
         }
@@ -368,33 +354,32 @@ public final class AnimatedContentKt {
         return new ContentTransform(enterTransition, exitTransition, 0.0f, null, 12, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:231:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:265:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:398:0x0456  */
-    /* JADX WARN: Removed duplicated region for block: B:401:0x0463  */
-    /* JADX WARN: Removed duplicated region for block: B:409:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:376:0x042c  */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x0439  */
+    /* JADX WARN: Removed duplicated region for block: B:387:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final <S> void AnimatedContent(final Transition<S> transition, Modifier modifier, Function1<? super AnimatedContentTransitionScope<S>, ContentTransform> function1, Alignment alignment, Function1<? super S, ? extends Object> function12, final Function4<? super AnimatedContentScope, ? super S, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
-        int i3;
         Object obj;
-        int i4;
+        int i3;
         Object obj2;
-        int i5;
+        int i4;
         Alignment alignment2;
-        int i6;
+        int i5;
         Function1<? super S, ? extends Object> function13;
-        Object obj3;
+        Function4<? super AnimatedContentScope, ? super S, ? super Composer, ? super Integer, Unit> function42;
         final Modifier modifier2;
         final Function1<? super AnimatedContentTransitionScope<S>, ContentTransform> function14;
         ScopeUpdateScope endRestartGroup;
@@ -405,633 +390,609 @@ public final class AnimatedContentKt {
         final Transition<S> transition2 = transition;
         Composer startRestartGroup = composer.startRestartGroup(511725103);
         ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedContent)P(3,4,1,2)765@38134L226,771@38459L6,774@38592L7,776@38628L114,780@38830L51,781@38903L69,867@43438L58,868@43530L45,874@43785L52,869@43580L264:AnimatedContent.kt#xbi5r1");
-        if ((i2 & Integer.MIN_VALUE) != 0) {
-            i3 = i | 6;
-        } else if ((i & 6) == 0) {
-            i3 = (startRestartGroup.changed(transition2) ? 4 : 2) | i;
-        } else {
-            i3 = i;
-        }
+        int i6 = (i & 6) == 0 ? (startRestartGroup.changed(transition2) ? 4 : 2) | i : i;
         int i7 = i2 & 1;
         if (i7 != 0) {
-            i3 |= 48;
+            i6 |= 48;
         } else if ((i & 48) == 0) {
             obj = modifier;
-            i3 |= startRestartGroup.changed(obj) ? 32 : 16;
-            i4 = i2 & 2;
-            if (i4 == 0) {
-                i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+            i6 |= startRestartGroup.changed(obj) ? 32 : 16;
+            i3 = i2 & 2;
+            if (i3 == 0) {
+                i6 |= RendererCapabilities.DECODER_SUPPORT_MASK;
             } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                 obj2 = function1;
-                i3 |= startRestartGroup.changedInstance(obj2) ? 256 : 128;
-                i5 = i2 & 4;
-                if (i5 != 0) {
-                    i3 |= 3072;
+                i6 |= startRestartGroup.changedInstance(obj2) ? 256 : 128;
+                i4 = i2 & 4;
+                if (i4 != 0) {
+                    i6 |= 3072;
                 } else if ((i & 3072) == 0) {
-                    Object obj4 = alignment;
-                    i3 |= startRestartGroup.changed(obj4) ? 2048 : 1024;
-                    alignment2 = obj4;
-                    i6 = i2 & 8;
-                    if (i6 == 0) {
-                        i3 |= 24576;
+                    Object obj3 = alignment;
+                    i6 |= startRestartGroup.changed(obj3) ? 2048 : 1024;
+                    alignment2 = obj3;
+                    i5 = i2 & 8;
+                    if (i5 == 0) {
+                        i6 |= 24576;
                     } else if ((i & 24576) == 0) {
-                        Object obj5 = function12;
-                        i3 |= startRestartGroup.changedInstance(obj5) ? 16384 : 8192;
-                        function13 = obj5;
-                        if ((i2 & 16) != 0) {
-                            i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
-                        } else if ((i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
-                            obj3 = function4;
-                            i3 |= startRestartGroup.changedInstance(obj3) ? 131072 : 65536;
-                            if (startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
-                                startRestartGroup.skipToGroupEnd();
-                                modifier2 = obj;
-                                function14 = obj2;
-                            } else {
-                                Modifier.Companion companion = i7 != 0 ? Modifier.Companion : obj;
-                                String str2 = "CC(remember):AnimatedContent.kt#9igjgp";
-                                if (i4 != 0) {
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141559249, "CC(remember):AnimatedContent.kt#9igjgp");
-                                    AnimatedContentKt$AnimatedContent$4$1 rememberedValue = startRestartGroup.rememberedValue();
-                                    if (rememberedValue == Composer.Companion.getEmpty()) {
-                                        rememberedValue = new Function1<AnimatedContentTransitionScope<S>, ContentTransform>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$4$1
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public /* bridge */ /* synthetic */ ContentTransform invoke(Object obj6) {
-                                                return invoke((AnimatedContentTransitionScope) ((AnimatedContentTransitionScope) obj6));
-                                            }
+                        Object obj4 = function12;
+                        i6 |= startRestartGroup.changedInstance(obj4) ? 16384 : 8192;
+                        function13 = obj4;
+                        if ((196608 & i) == 0) {
+                            function42 = function4;
+                            i6 |= startRestartGroup.changedInstance(function42) ? 131072 : 65536;
+                        } else {
+                            function42 = function4;
+                        }
+                        if (!startRestartGroup.shouldExecute((74899 & i6) != 74898, i6 & 1)) {
+                            startRestartGroup.skipToGroupEnd();
+                            modifier2 = obj;
+                            function14 = obj2;
+                        } else {
+                            Modifier.Companion companion = i7 != 0 ? Modifier.Companion : obj;
+                            String str2 = "CC(remember):AnimatedContent.kt#9igjgp";
+                            if (i3 != 0) {
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141557361, "CC(remember):AnimatedContent.kt#9igjgp");
+                                AnimatedContentKt$AnimatedContent$4$1 rememberedValue = startRestartGroup.rememberedValue();
+                                if (rememberedValue == Composer.Companion.getEmpty()) {
+                                    rememberedValue = new Function1<AnimatedContentTransitionScope<S>, ContentTransform>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$4$1
+                                        @Override // kotlin.jvm.functions.Function1
+                                        public /* bridge */ /* synthetic */ ContentTransform invoke(Object obj5) {
+                                            return invoke((AnimatedContentTransitionScope) ((AnimatedContentTransitionScope) obj5));
+                                        }
 
-                                            public final ContentTransform invoke(AnimatedContentTransitionScope<S> animatedContentTransitionScope) {
-                                                return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m97scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue);
-                                    }
-                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    obj2 = (Function1) rememberedValue;
+                                        public final ContentTransform invoke(AnimatedContentTransitionScope<S> animatedContentTransitionScope) {
+                                            return AnimatedContentKt.togetherWith(EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.0f, 2, null).plus(EnterExitTransitionKt.m99scaleInL8ZKhE$default(AnimationSpecKt.tween$default(220, 90, null, 4, null), 0.92f, 0L, 4, null)), EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(90, 0, null, 6, null), 0.0f, 2, null));
+                                        }
+                                    };
+                                    startRestartGroup.updateRememberedValue(rememberedValue);
                                 }
-                                if (i5 != 0) {
-                                    alignment2 = Alignment.Companion.getTopStart();
-                                }
-                                if (i6 != 0) {
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141569429, "CC(remember):AnimatedContent.kt#9igjgp");
-                                    AnimatedContentKt$AnimatedContent$5$1 rememberedValue2 = startRestartGroup.rememberedValue();
-                                    if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                                        rememberedValue2 = new Function1<S, S>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$5$1
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final S invoke(S s) {
-                                                return s;
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue2);
-                                    }
-                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    function13 = (Function1) rememberedValue2;
-                                }
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(511725103, i3, -1, "androidx.compose.animation.AnimatedContent (AnimatedContent.kt:773)");
-                                }
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                LayoutDirection layoutDirection = (LayoutDirection) consume;
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141574945, "CC(remember):AnimatedContent.kt#9igjgp");
-                                int i8 = i3 & 14;
-                                boolean z = i8 == 4;
-                                Object rememberedValue3 = startRestartGroup.rememberedValue();
-                                if (z || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                    rememberedValue3 = new AnimatedContentTransitionScopeImpl(transition2, alignment2, layoutDirection);
-                                    startRestartGroup.updateRememberedValue(rememberedValue3);
+                                obj2 = (Function1) rememberedValue;
+                            }
+                            if (i4 != 0) {
+                                alignment2 = Alignment.Companion.getTopStart();
+                            }
+                            if (i5 != 0) {
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141567541, "CC(remember):AnimatedContent.kt#9igjgp");
+                                AnimatedContentKt$AnimatedContent$5$1 rememberedValue2 = startRestartGroup.rememberedValue();
+                                if (rememberedValue2 == Composer.Companion.getEmpty()) {
+                                    rememberedValue2 = new Function1<S, S>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$5$1
+                                        @Override // kotlin.jvm.functions.Function1
+                                        public final S invoke(S s) {
+                                            return s;
+                                        }
+                                    };
+                                    startRestartGroup.updateRememberedValue(rememberedValue2);
                                 }
-                                AnimatedContentTransitionScopeImpl animatedContentTransitionScopeImpl2 = (AnimatedContentTransitionScopeImpl) rememberedValue3;
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141581346, "CC(remember):AnimatedContent.kt#9igjgp");
-                                boolean z2 = i8 == 4;
-                                Object rememberedValue4 = startRestartGroup.rememberedValue();
-                                if (z2 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                    rememberedValue4 = SnapshotStateKt.mutableStateListOf(transition2.getCurrentState());
-                                    startRestartGroup.updateRememberedValue(rememberedValue4);
-                                }
-                                SnapshotStateList snapshotStateList2 = (SnapshotStateList) rememberedValue4;
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141583700, "CC(remember):AnimatedContent.kt#9igjgp");
-                                boolean z3 = i8 == 4;
-                                Object rememberedValue5 = startRestartGroup.rememberedValue();
-                                if (z3 || rememberedValue5 == Composer.Companion.getEmpty()) {
-                                    rememberedValue5 = ScatterMapKt.mutableScatterMapOf();
-                                    startRestartGroup.updateRememberedValue(rememberedValue5);
-                                }
-                                MutableScatterMap mutableScatterMap2 = (MutableScatterMap) rememberedValue5;
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                if (!snapshotStateList2.contains(transition2.getCurrentState())) {
+                                function13 = (Function1) rememberedValue2;
+                            }
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventStart(511725103, i6, -1, "androidx.compose.animation.AnimatedContent (AnimatedContent.kt:773)");
+                            }
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                            Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            LayoutDirection layoutDirection = (LayoutDirection) consume;
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141573057, "CC(remember):AnimatedContent.kt#9igjgp");
+                            int i8 = i6 & 14;
+                            boolean z = i8 == 4;
+                            Object rememberedValue3 = startRestartGroup.rememberedValue();
+                            if (z || rememberedValue3 == Composer.Companion.getEmpty()) {
+                                rememberedValue3 = new AnimatedContentTransitionScopeImpl(transition2, alignment2, layoutDirection);
+                                startRestartGroup.updateRememberedValue(rememberedValue3);
+                            }
+                            AnimatedContentTransitionScopeImpl animatedContentTransitionScopeImpl2 = (AnimatedContentTransitionScopeImpl) rememberedValue3;
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141579458, "CC(remember):AnimatedContent.kt#9igjgp");
+                            boolean z2 = i8 == 4;
+                            Object rememberedValue4 = startRestartGroup.rememberedValue();
+                            if (z2 || rememberedValue4 == Composer.Companion.getEmpty()) {
+                                rememberedValue4 = SnapshotStateKt.mutableStateListOf(transition2.getCurrentState());
+                                startRestartGroup.updateRememberedValue(rememberedValue4);
+                            }
+                            SnapshotStateList snapshotStateList2 = (SnapshotStateList) rememberedValue4;
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141581812, "CC(remember):AnimatedContent.kt#9igjgp");
+                            boolean z3 = i8 == 4;
+                            Object rememberedValue5 = startRestartGroup.rememberedValue();
+                            if (z3 || rememberedValue5 == Composer.Companion.getEmpty()) {
+                                rememberedValue5 = ScatterMapKt.mutableScatterMapOf();
+                                startRestartGroup.updateRememberedValue(rememberedValue5);
+                            }
+                            MutableScatterMap mutableScatterMap2 = (MutableScatterMap) rememberedValue5;
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            if (!snapshotStateList2.contains(transition2.getCurrentState())) {
+                                snapshotStateList2.clear();
+                                snapshotStateList2.add(transition2.getCurrentState());
+                            }
+                            if (Intrinsics.areEqual(transition2.getCurrentState(), transition2.getTargetState())) {
+                                if (snapshotStateList2.size() != 1 || !Intrinsics.areEqual(snapshotStateList2.get(0), transition2.getCurrentState())) {
                                     snapshotStateList2.clear();
                                     snapshotStateList2.add(transition2.getCurrentState());
                                 }
-                                if (Intrinsics.areEqual(transition2.getCurrentState(), transition2.getTargetState())) {
-                                    if (snapshotStateList2.size() != 1 || !Intrinsics.areEqual(snapshotStateList2.get(0), transition2.getCurrentState())) {
-                                        snapshotStateList2.clear();
-                                        snapshotStateList2.add(transition2.getCurrentState());
-                                    }
-                                    if (mutableScatterMap2.getSize() != 1 || mutableScatterMap2.containsKey(transition2.getCurrentState())) {
-                                        mutableScatterMap2.clear();
-                                    }
-                                    animatedContentTransitionScopeImpl2.setContentAlignment(alignment2);
-                                    animatedContentTransitionScopeImpl2.setLayoutDirection$animation(layoutDirection);
-                                }
-                                if (!Intrinsics.areEqual(transition2.getCurrentState(), transition2.getTargetState()) && !snapshotStateList2.contains(transition2.getTargetState())) {
-                                    Iterator<T> it = snapshotStateList2.iterator();
-                                    int i9 = 0;
-                                    while (true) {
-                                        if (!it.hasNext()) {
-                                            i9 = -1;
-                                            break;
-                                        } else if (Intrinsics.areEqual(function13.invoke((Object) it.next()), function13.invoke(transition2.getTargetState()))) {
-                                            break;
-                                        } else {
-                                            i9++;
-                                        }
-                                    }
-                                    if (i9 == -1) {
-                                        Boolean.valueOf(snapshotStateList2.add(transition2.getTargetState()));
-                                    } else {
-                                        snapshotStateList2.set(i9, transition2.getTargetState());
-                                        Unit unit = Unit.INSTANCE;
-                                    }
-                                }
-                                if (!mutableScatterMap2.containsKey(transition2.getTargetState()) || !mutableScatterMap2.containsKey(transition2.getCurrentState())) {
-                                    startRestartGroup.startReplaceGroup(1966468977);
-                                    ComposerKt.sourceInformation(startRestartGroup, "*817@40849L2545");
+                                if (mutableScatterMap2.getSize() != 1 || mutableScatterMap2.containsKey(transition2.getCurrentState())) {
                                     mutableScatterMap2.clear();
-                                    SnapshotStateList snapshotStateList3 = snapshotStateList2;
-                                    int size = snapshotStateList3.size();
-                                    int i10 = 0;
-                                    Object obj6 = obj3;
-                                    while (i10 < size) {
-                                        MutableScatterMap mutableScatterMap3 = mutableScatterMap2;
-                                        final T t = snapshotStateList3.get(i10);
-                                        int i11 = i10;
-                                        final SnapshotStateList snapshotStateList4 = snapshotStateList2;
-                                        int i12 = size;
-                                        final AnimatedContentTransitionScopeImpl animatedContentTransitionScopeImpl3 = animatedContentTransitionScopeImpl2;
-                                        final Function4<? super AnimatedContentScope, ? super S, ? super Composer, ? super Integer, Unit> function42 = obj6;
-                                        String str3 = str2;
-                                        final Function1<? super AnimatedContentTransitionScope<S>, ContentTransform> function15 = obj2;
-                                        mutableScatterMap3.set(t, ComposableLambdaKt.rememberComposableLambda(-23915175, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
+                                }
+                                animatedContentTransitionScopeImpl2.setContentAlignment(alignment2);
+                                animatedContentTransitionScopeImpl2.setLayoutDirection$animation(layoutDirection);
+                            }
+                            if (!Intrinsics.areEqual(transition2.getCurrentState(), transition2.getTargetState()) && !snapshotStateList2.contains(transition2.getTargetState())) {
+                                Iterator<T> it = snapshotStateList2.iterator();
+                                int i9 = 0;
+                                while (true) {
+                                    if (!it.hasNext()) {
+                                        i9 = -1;
+                                        break;
+                                    } else if (Intrinsics.areEqual(function13.invoke((Object) it.next()), function13.invoke(transition2.getTargetState()))) {
+                                        break;
+                                    } else {
+                                        i9++;
+                                    }
+                                }
+                                if (i9 == -1) {
+                                    snapshotStateList2.add(transition2.getTargetState());
+                                } else {
+                                    snapshotStateList2.set(i9, transition2.getTargetState());
+                                }
+                            }
+                            if (mutableScatterMap2.containsKey(transition2.getTargetState()) && mutableScatterMap2.containsKey(transition2.getCurrentState())) {
+                                startRestartGroup.startReplaceGroup(1925931827);
+                                startRestartGroup.endReplaceGroup();
+                                str = "CC(remember):AnimatedContent.kt#9igjgp";
+                                function14 = obj2;
+                                animatedContentTransitionScopeImpl = animatedContentTransitionScopeImpl2;
+                                snapshotStateList = snapshotStateList2;
+                                mutableScatterMap = mutableScatterMap2;
+                            } else {
+                                startRestartGroup.startReplaceGroup(1966410449);
+                                ComposerKt.sourceInformation(startRestartGroup, "*817@40849L2545");
+                                mutableScatterMap2.clear();
+                                SnapshotStateList snapshotStateList3 = snapshotStateList2;
+                                int size = snapshotStateList3.size();
+                                int i10 = 0;
+                                while (i10 < size) {
+                                    MutableScatterMap mutableScatterMap3 = mutableScatterMap2;
+                                    final T t = snapshotStateList3.get(i10);
+                                    int i11 = i10;
+                                    final SnapshotStateList snapshotStateList4 = snapshotStateList2;
+                                    int i12 = size;
+                                    final AnimatedContentTransitionScopeImpl animatedContentTransitionScopeImpl3 = animatedContentTransitionScopeImpl2;
+                                    final Function4<? super AnimatedContentScope, ? super S, ? super Composer, ? super Integer, Unit> function43 = function42;
+                                    String str3 = str2;
+                                    final Function1<? super AnimatedContentTransitionScope<S>, ContentTransform> function15 = obj2;
+                                    mutableScatterMap3.set(t, ComposableLambdaKt.rememberComposableLambda(-23915175, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1
+                                        /* JADX INFO: Access modifiers changed from: package-private */
+                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                        /* JADX WARN: Multi-variable type inference failed */
+                                        {
+                                            super(2);
+                                        }
+
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
+                                            invoke(composer2, num.intValue());
+                                            return Unit.INSTANCE;
+                                        }
+
+                                        /* JADX WARN: Multi-variable type inference failed */
+                                        public final void invoke(Composer composer2, int i13) {
+                                            Object initialContentExit;
+                                            ComposerKt.sourceInformation(composer2, "C818@40885L38,822@41099L323,829@41455L125,840@42023L348,836@41832L25,847@42511L233,852@42764L616,834@41763L1617:AnimatedContent.kt#xbi5r1");
+                                            if (!composer2.shouldExecute((i13 & 3) != 2, i13 & 1)) {
+                                                composer2.skipToGroupEnd();
+                                                return;
                                             }
-
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                                                invoke(composer2, num.intValue());
-                                                return Unit.INSTANCE;
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventStart(-23915175, i13, -1, "androidx.compose.animation.AnimatedContent.<anonymous>.<anonymous> (AnimatedContent.kt:818)");
                                             }
-
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            public final void invoke(Composer composer2, int i13) {
-                                                Object initialContentExit;
-                                                ComposerKt.sourceInformation(composer2, "C818@40885L38,822@41099L323,829@41455L125,840@42023L348,836@41832L25,847@42511L233,852@42764L616,834@41763L1617:AnimatedContent.kt#xbi5r1");
-                                                if (!composer2.shouldExecute((i13 & 3) != 2, i13 & 1)) {
-                                                    composer2.skipToGroupEnd();
-                                                    return;
+                                            ComposerKt.sourceInformationMarkerStart(composer2, -1507645505, "CC(remember):AnimatedContent.kt#9igjgp");
+                                            Function1<AnimatedContentTransitionScope<S>, ContentTransform> function16 = function15;
+                                            Object obj5 = animatedContentTransitionScopeImpl3;
+                                            ContentTransform rememberedValue6 = composer2.rememberedValue();
+                                            if (rememberedValue6 == Composer.Companion.getEmpty()) {
+                                                rememberedValue6 = function16.invoke(obj5);
+                                                composer2.updateRememberedValue(rememberedValue6);
+                                            }
+                                            final ContentTransform contentTransform = (ContentTransform) rememberedValue6;
+                                            ComposerKt.sourceInformationMarkerEnd(composer2);
+                                            boolean areEqual = Intrinsics.areEqual(transition2.getSegment().getTargetState(), t);
+                                            ComposerKt.sourceInformationMarkerStart(composer2, -1507638372, "CC(remember):AnimatedContent.kt#9igjgp");
+                                            boolean changed = composer2.changed(areEqual);
+                                            Transition<S> transition3 = transition2;
+                                            S s = t;
+                                            Function1<AnimatedContentTransitionScope<S>, ContentTransform> function17 = function15;
+                                            Object obj6 = animatedContentTransitionScopeImpl3;
+                                            Object rememberedValue7 = composer2.rememberedValue();
+                                            if (changed || rememberedValue7 == Composer.Companion.getEmpty()) {
+                                                if (Intrinsics.areEqual(transition3.getSegment().getTargetState(), s)) {
+                                                    initialContentExit = ExitTransition.Companion.getNone();
+                                                } else {
+                                                    initialContentExit = function17.invoke(obj6).getInitialContentExit();
                                                 }
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventStart(-23915175, i13, -1, "androidx.compose.animation.AnimatedContent.<anonymous>.<anonymous> (AnimatedContent.kt:818)");
-                                                }
-                                                ComposerKt.sourceInformationMarkerStart(composer2, -1507645505, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                Function1<AnimatedContentTransitionScope<S>, ContentTransform> function16 = function15;
-                                                Object obj7 = animatedContentTransitionScopeImpl3;
-                                                ContentTransform rememberedValue6 = composer2.rememberedValue();
-                                                if (rememberedValue6 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue6 = function16.invoke(obj7);
-                                                    composer2.updateRememberedValue(rememberedValue6);
-                                                }
-                                                final ContentTransform contentTransform = (ContentTransform) rememberedValue6;
-                                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                                boolean areEqual = Intrinsics.areEqual(transition2.getSegment().getTargetState(), t);
-                                                ComposerKt.sourceInformationMarkerStart(composer2, -1507638372, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                boolean changed = composer2.changed(areEqual);
-                                                Transition<S> transition3 = transition2;
-                                                S s = t;
-                                                Function1<AnimatedContentTransitionScope<S>, ContentTransform> function17 = function15;
-                                                Object obj8 = animatedContentTransitionScopeImpl3;
-                                                Object rememberedValue7 = composer2.rememberedValue();
-                                                if (changed || rememberedValue7 == Composer.Companion.getEmpty()) {
-                                                    if (Intrinsics.areEqual(transition3.getSegment().getTargetState(), s)) {
-                                                        initialContentExit = ExitTransition.Companion.getNone();
-                                                    } else {
-                                                        initialContentExit = function17.invoke(obj8).getInitialContentExit();
-                                                    }
-                                                    rememberedValue7 = initialContentExit;
-                                                    composer2.updateRememberedValue(rememberedValue7);
-                                                }
-                                                final ExitTransition exitTransition = (ExitTransition) rememberedValue7;
-                                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                                ComposerKt.sourceInformationMarkerStart(composer2, -1507627178, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                S s2 = t;
-                                                Transition<S> transition4 = transition2;
-                                                Object rememberedValue8 = composer2.rememberedValue();
-                                                if (rememberedValue8 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue8 = new AnimatedContentTransitionScopeImpl.ChildData(Intrinsics.areEqual(s2, transition4.getTargetState()));
-                                                    composer2.updateRememberedValue(rememberedValue8);
-                                                }
-                                                AnimatedContentTransitionScopeImpl.ChildData childData = (AnimatedContentTransitionScopeImpl.ChildData) rememberedValue8;
-                                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                                EnterTransition targetContentEnter = contentTransform.getTargetContentEnter();
-                                                Modifier.Companion companion2 = Modifier.Companion;
-                                                ComposerKt.sourceInformationMarkerStart(composer2, -1507608779, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                boolean changedInstance = composer2.changedInstance(contentTransform);
-                                                Object rememberedValue9 = composer2.rememberedValue();
-                                                if (changedInstance || rememberedValue9 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue9 = (Function3) new Function3<MeasureScope, Measurable, Constraints, MeasureResult>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$1$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        {
-                                                            super(3);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function3
-                                                        public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                                                            return m51invoke3p2s80s(measureScope, measurable, constraints.m7955unboximpl());
-                                                        }
-
-                                                        /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                                                        public final MeasureResult m51invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                                                            final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
-                                                            int width = mo6698measureBRTryo0.getWidth();
-                                                            int height = mo6698measureBRTryo0.getHeight();
-                                                            final ContentTransform contentTransform2 = ContentTransform.this;
-                                                            return MeasureScope.layout$default(measureScope, width, height, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$1$1.1
-                                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                                {
-                                                                    super(1);
-                                                                }
-
-                                                                @Override // kotlin.jvm.functions.Function1
-                                                                public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                                                                    invoke2(placementScope);
-                                                                    return Unit.INSTANCE;
-                                                                }
-
-                                                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                                public final void invoke2(Placeable.PlacementScope placementScope) {
-                                                                    placementScope.place(Placeable.this, 0, 0, contentTransform2.getTargetContentZIndex());
-                                                                }
-                                                            }, 4, null);
-                                                        }
-                                                    };
-                                                    composer2.updateRememberedValue(rememberedValue9);
-                                                }
-                                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                                Modifier layout = LayoutModifierKt.layout(companion2, (Function3) rememberedValue9);
-                                                childData.setTarget(Intrinsics.areEqual(t, transition2.getTargetState()));
-                                                Modifier then = layout.then(childData);
-                                                Transition<S> transition5 = transition2;
-                                                ComposerKt.sourceInformationMarkerStart(composer2, -1507615214, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                boolean changedInstance2 = composer2.changedInstance(t);
-                                                final S s3 = t;
-                                                Object rememberedValue10 = composer2.rememberedValue();
-                                                if (changedInstance2 || rememberedValue10 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue10 = (Function1) new Function1<S, Boolean>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$3$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                        {
-                                                            super(1);
-                                                        }
-
-                                                        /* JADX WARN: Can't rename method to resolve collision */
-                                                        @Override // kotlin.jvm.functions.Function1
-                                                        public final Boolean invoke(S s4) {
-                                                            return Boolean.valueOf(Intrinsics.areEqual(s4, s3));
-                                                        }
-
-                                                        /* JADX WARN: Multi-variable type inference failed */
-                                                        @Override // kotlin.jvm.functions.Function1
-                                                        public /* bridge */ /* synthetic */ Boolean invoke(Object obj9) {
-                                                            return invoke((AnimatedContentKt$AnimatedContent$6$1$3$1<S>) obj9);
-                                                        }
-                                                    };
-                                                    composer2.updateRememberedValue(rememberedValue10);
-                                                }
-                                                Function1 function18 = (Function1) rememberedValue10;
-                                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                                ComposerKt.sourceInformationMarkerStart(composer2, -1507593278, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                boolean changed2 = composer2.changed(exitTransition);
-                                                Object rememberedValue11 = composer2.rememberedValue();
-                                                if (changed2 || rememberedValue11 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue11 = (Function2) new Function2<EnterExitState, EnterExitState, Boolean>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$4$1
-                                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                                        {
-                                                            super(2);
-                                                        }
-
-                                                        @Override // kotlin.jvm.functions.Function2
-                                                        public final Boolean invoke(EnterExitState enterExitState, EnterExitState enterExitState2) {
-                                                            return Boolean.valueOf(enterExitState == EnterExitState.PostExit && enterExitState2 == EnterExitState.PostExit && !ExitTransition.this.getData$animation().getHold());
-                                                        }
-                                                    };
-                                                    composer2.updateRememberedValue(rememberedValue11);
-                                                }
-                                                ComposerKt.sourceInformationMarkerEnd(composer2);
-                                                final SnapshotStateList<S> snapshotStateList5 = snapshotStateList4;
-                                                final S s4 = t;
-                                                final AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl4 = animatedContentTransitionScopeImpl3;
-                                                final Function4<AnimatedContentScope, S, Composer, Integer, Unit> function43 = function42;
-                                                AnimatedVisibilityKt.AnimatedEnterExitImpl(transition5, function18, then, targetContentEnter, exitTransition, (Function2) rememberedValue11, null, ComposableLambdaKt.rememberComposableLambda(-143346359, true, new Function3<AnimatedVisibilityScope, Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1.5
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    /* JADX WARN: Multi-variable type inference failed */
+                                                rememberedValue7 = initialContentExit;
+                                                composer2.updateRememberedValue(rememberedValue7);
+                                            }
+                                            final ExitTransition exitTransition = (ExitTransition) rememberedValue7;
+                                            ComposerKt.sourceInformationMarkerEnd(composer2);
+                                            ComposerKt.sourceInformationMarkerStart(composer2, -1507627178, "CC(remember):AnimatedContent.kt#9igjgp");
+                                            S s2 = t;
+                                            Transition<S> transition4 = transition2;
+                                            Object rememberedValue8 = composer2.rememberedValue();
+                                            if (rememberedValue8 == Composer.Companion.getEmpty()) {
+                                                rememberedValue8 = new AnimatedContentTransitionScopeImpl.ChildData(Intrinsics.areEqual(s2, transition4.getTargetState()));
+                                                composer2.updateRememberedValue(rememberedValue8);
+                                            }
+                                            AnimatedContentTransitionScopeImpl.ChildData childData = (AnimatedContentTransitionScopeImpl.ChildData) rememberedValue8;
+                                            ComposerKt.sourceInformationMarkerEnd(composer2);
+                                            EnterTransition targetContentEnter = contentTransform.getTargetContentEnter();
+                                            Modifier.Companion companion2 = Modifier.Companion;
+                                            ComposerKt.sourceInformationMarkerStart(composer2, -1507608779, "CC(remember):AnimatedContent.kt#9igjgp");
+                                            boolean changedInstance = composer2.changedInstance(contentTransform);
+                                            Object rememberedValue9 = composer2.rememberedValue();
+                                            if (changedInstance || rememberedValue9 == Composer.Companion.getEmpty()) {
+                                                rememberedValue9 = (Function3) new Function3<MeasureScope, Measurable, Constraints, MeasureResult>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$1$1
+                                                    /* JADX INFO: Access modifiers changed from: package-private */
                                                     {
                                                         super(3);
                                                     }
 
                                                     @Override // kotlin.jvm.functions.Function3
-                                                    public /* bridge */ /* synthetic */ Unit invoke(AnimatedVisibilityScope animatedVisibilityScope, Composer composer3, Integer num) {
-                                                        invoke(animatedVisibilityScope, composer3, num.intValue());
-                                                        return Unit.INSTANCE;
+                                                    public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
+                                                        return m52invoke3p2s80s(measureScope, measurable, constraints.m8217unboximpl());
                                                     }
 
-                                                    public final void invoke(AnimatedVisibilityScope animatedVisibilityScope, Composer composer3, int i14) {
-                                                        ComposerKt.sourceInformation(composer3, "C854@42897L230,854@42874L253,862@43289L43,*862@43336L24:AnimatedContent.kt#xbi5r1");
-                                                        if ((i14 & 6) == 0) {
-                                                            i14 |= (i14 & 8) == 0 ? composer3.changed(animatedVisibilityScope) : composer3.changedInstance(animatedVisibilityScope) ? 4 : 2;
-                                                        }
-                                                        if (!composer3.shouldExecute((i14 & 19) != 18, i14 & 1)) {
-                                                            composer3.skipToGroupEnd();
-                                                            return;
-                                                        }
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(-143346359, i14, -1, "androidx.compose.animation.AnimatedContent.<anonymous>.<anonymous>.<anonymous> (AnimatedContent.kt:854)");
-                                                        }
-                                                        ComposerKt.sourceInformationMarkerStart(composer3, -316893041, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                        boolean changed3 = composer3.changed(snapshotStateList5) | composer3.changedInstance(s4) | composer3.changedInstance(animatedContentTransitionScopeImpl4);
-                                                        final SnapshotStateList<S> snapshotStateList6 = snapshotStateList5;
-                                                        final S s5 = s4;
-                                                        final AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl5 = animatedContentTransitionScopeImpl4;
-                                                        Object rememberedValue12 = composer3.rememberedValue();
-                                                        if (changed3 || rememberedValue12 == Composer.Companion.getEmpty()) {
-                                                            rememberedValue12 = (Function1) new Function1<DisposableEffectScope, DisposableEffectResult>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$5$1$1
-                                                                /* JADX INFO: Access modifiers changed from: package-private */
-                                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                                {
-                                                                    super(1);
-                                                                }
+                                                    /* renamed from: invoke-3p2s80s  reason: not valid java name */
+                                                    public final MeasureResult m52invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                                                        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
+                                                        int width = mo6875measureBRTryo0.getWidth();
+                                                        int height = mo6875measureBRTryo0.getHeight();
+                                                        final ContentTransform contentTransform2 = ContentTransform.this;
+                                                        return MeasureScope.layout$default(measureScope, width, height, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$1$1.1
+                                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                                            {
+                                                                super(1);
+                                                            }
 
-                                                                @Override // kotlin.jvm.functions.Function1
-                                                                public /* bridge */ /* synthetic */ DisposableEffectResult invoke(DisposableEffectScope disposableEffectScope) {
-                                                                    return invoke2(disposableEffectScope);
-                                                                }
+                                                            @Override // kotlin.jvm.functions.Function1
+                                                            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
+                                                                invoke2(placementScope);
+                                                                return Unit.INSTANCE;
+                                                            }
 
-                                                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                                public final DisposableEffectResult invoke2(DisposableEffectScope disposableEffectScope) {
-                                                                    final SnapshotStateList<S> snapshotStateList7 = snapshotStateList6;
-                                                                    final S s6 = s5;
-                                                                    final AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl6 = animatedContentTransitionScopeImpl5;
-                                                                    return new DisposableEffectResult() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$5$1$1$invoke$$inlined$onDispose$1
-                                                                        @Override // androidx.compose.runtime.DisposableEffectResult
-                                                                        public void dispose() {
-                                                                            SnapshotStateList.this.remove(s6);
-                                                                            animatedContentTransitionScopeImpl6.getTargetSizeMap$animation().remove(s6);
-                                                                        }
-                                                                    };
-                                                                }
-                                                            };
-                                                            composer3.updateRememberedValue(rememberedValue12);
-                                                        }
-                                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                        EffectsKt.DisposableEffect(animatedVisibilityScope, (Function1) rememberedValue12, composer3, i14 & 14);
-                                                        MutableScatterMap targetSizeMap$animation = animatedContentTransitionScopeImpl4.getTargetSizeMap$animation();
-                                                        S s6 = s4;
-                                                        Intrinsics.checkNotNull(animatedVisibilityScope, "null cannot be cast to non-null type androidx.compose.animation.AnimatedVisibilityScopeImpl");
-                                                        targetSizeMap$animation.set(s6, ((AnimatedVisibilityScopeImpl) animatedVisibilityScope).getTargetSize$animation());
-                                                        ComposerKt.sourceInformationMarkerStart(composer3, -316880684, "CC(remember):AnimatedContent.kt#9igjgp");
-                                                        Object rememberedValue13 = composer3.rememberedValue();
-                                                        if (rememberedValue13 == Composer.Companion.getEmpty()) {
-                                                            rememberedValue13 = new AnimatedContentScopeImpl(animatedVisibilityScope);
-                                                            composer3.updateRememberedValue(rememberedValue13);
-                                                        }
-                                                        ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                        function43.invoke((AnimatedContentScopeImpl) rememberedValue13, s4, composer3, 0);
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventEnd();
-                                                        }
+                                                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                                                            public final void invoke2(Placeable.PlacementScope placementScope) {
+                                                                placementScope.place(Placeable.this, 0, 0, contentTransform2.getTargetContentZIndex());
+                                                            }
+                                                        }, 4, null);
                                                     }
-                                                }, composer2, 54), composer2, 12582912, 64);
-                                                if (ComposerKt.isTraceInProgress()) {
-                                                    ComposerKt.traceEventEnd();
-                                                }
+                                                };
+                                                composer2.updateRememberedValue(rememberedValue9);
                                             }
-                                        }, startRestartGroup, 54));
-                                        transition2 = transition;
-                                        obj2 = function15;
-                                        mutableScatterMap2 = mutableScatterMap3;
-                                        str2 = str3;
-                                        obj6 = function4;
-                                        animatedContentTransitionScopeImpl2 = animatedContentTransitionScopeImpl3;
-                                        size = i12;
-                                        snapshotStateList2 = snapshotStateList4;
-                                        i10 = i11 + 1;
-                                        snapshotStateList3 = snapshotStateList3;
-                                    }
-                                    str = str2;
-                                    function14 = obj2;
-                                    animatedContentTransitionScopeImpl = animatedContentTransitionScopeImpl2;
-                                    snapshotStateList = snapshotStateList2;
-                                    mutableScatterMap = mutableScatterMap2;
-                                    startRestartGroup.endReplaceGroup();
-                                } else {
-                                    startRestartGroup.startReplaceGroup(1969054067);
-                                    startRestartGroup.endReplaceGroup();
-                                    str = "CC(remember):AnimatedContent.kt#9igjgp";
-                                    function14 = obj2;
-                                    animatedContentTransitionScopeImpl = animatedContentTransitionScopeImpl2;
-                                    snapshotStateList = snapshotStateList2;
-                                    mutableScatterMap = mutableScatterMap2;
+                                            ComposerKt.sourceInformationMarkerEnd(composer2);
+                                            Modifier layout = LayoutModifierKt.layout(companion2, (Function3) rememberedValue9);
+                                            childData.setTarget(Intrinsics.areEqual(t, transition2.getTargetState()));
+                                            Modifier then = layout.then(childData);
+                                            Transition<S> transition5 = transition2;
+                                            ComposerKt.sourceInformationMarkerStart(composer2, -1507615214, "CC(remember):AnimatedContent.kt#9igjgp");
+                                            boolean changedInstance2 = composer2.changedInstance(t);
+                                            final S s3 = t;
+                                            Object rememberedValue10 = composer2.rememberedValue();
+                                            if (changedInstance2 || rememberedValue10 == Composer.Companion.getEmpty()) {
+                                                rememberedValue10 = (Function1) new Function1<S, Boolean>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$3$1
+                                                    /* JADX INFO: Access modifiers changed from: package-private */
+                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                                    {
+                                                        super(1);
+                                                    }
+
+                                                    /* JADX WARN: Can't rename method to resolve collision */
+                                                    @Override // kotlin.jvm.functions.Function1
+                                                    public final Boolean invoke(S s4) {
+                                                        return Boolean.valueOf(Intrinsics.areEqual(s4, s3));
+                                                    }
+
+                                                    /* JADX WARN: Multi-variable type inference failed */
+                                                    @Override // kotlin.jvm.functions.Function1
+                                                    public /* bridge */ /* synthetic */ Boolean invoke(Object obj7) {
+                                                        return invoke((AnimatedContentKt$AnimatedContent$6$1$3$1<S>) obj7);
+                                                    }
+                                                };
+                                                composer2.updateRememberedValue(rememberedValue10);
+                                            }
+                                            Function1 function18 = (Function1) rememberedValue10;
+                                            ComposerKt.sourceInformationMarkerEnd(composer2);
+                                            ComposerKt.sourceInformationMarkerStart(composer2, -1507593278, "CC(remember):AnimatedContent.kt#9igjgp");
+                                            boolean changed2 = composer2.changed(exitTransition);
+                                            Object rememberedValue11 = composer2.rememberedValue();
+                                            if (changed2 || rememberedValue11 == Composer.Companion.getEmpty()) {
+                                                rememberedValue11 = (Function2) new Function2<EnterExitState, EnterExitState, Boolean>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$4$1
+                                                    /* JADX INFO: Access modifiers changed from: package-private */
+                                                    {
+                                                        super(2);
+                                                    }
+
+                                                    @Override // kotlin.jvm.functions.Function2
+                                                    public final Boolean invoke(EnterExitState enterExitState, EnterExitState enterExitState2) {
+                                                        return Boolean.valueOf(enterExitState == EnterExitState.PostExit && enterExitState2 == EnterExitState.PostExit && !ExitTransition.this.getData$animation().getHold());
+                                                    }
+                                                };
+                                                composer2.updateRememberedValue(rememberedValue11);
+                                            }
+                                            ComposerKt.sourceInformationMarkerEnd(composer2);
+                                            final SnapshotStateList<S> snapshotStateList5 = snapshotStateList4;
+                                            final S s4 = t;
+                                            final AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl4 = animatedContentTransitionScopeImpl3;
+                                            final Function4<AnimatedContentScope, S, Composer, Integer, Unit> function44 = function43;
+                                            AnimatedVisibilityKt.AnimatedEnterExitImpl(transition5, function18, then, targetContentEnter, exitTransition, (Function2) rememberedValue11, null, ComposableLambdaKt.rememberComposableLambda(-143346359, true, new Function3<AnimatedVisibilityScope, Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1.5
+                                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                                /* JADX WARN: Multi-variable type inference failed */
+                                                {
+                                                    super(3);
+                                                }
+
+                                                @Override // kotlin.jvm.functions.Function3
+                                                public /* bridge */ /* synthetic */ Unit invoke(AnimatedVisibilityScope animatedVisibilityScope, Composer composer3, Integer num) {
+                                                    invoke(animatedVisibilityScope, composer3, num.intValue());
+                                                    return Unit.INSTANCE;
+                                                }
+
+                                                public final void invoke(AnimatedVisibilityScope animatedVisibilityScope, Composer composer3, int i14) {
+                                                    ComposerKt.sourceInformation(composer3, "C854@42897L230,854@42874L253,862@43289L43,*862@43336L24:AnimatedContent.kt#xbi5r1");
+                                                    if ((i14 & 6) == 0) {
+                                                        i14 |= (i14 & 8) == 0 ? composer3.changed(animatedVisibilityScope) : composer3.changedInstance(animatedVisibilityScope) ? 4 : 2;
+                                                    }
+                                                    if (!composer3.shouldExecute((i14 & 19) != 18, i14 & 1)) {
+                                                        composer3.skipToGroupEnd();
+                                                        return;
+                                                    }
+                                                    if (ComposerKt.isTraceInProgress()) {
+                                                        ComposerKt.traceEventStart(-143346359, i14, -1, "androidx.compose.animation.AnimatedContent.<anonymous>.<anonymous>.<anonymous> (AnimatedContent.kt:854)");
+                                                    }
+                                                    ComposerKt.sourceInformationMarkerStart(composer3, -316893041, "CC(remember):AnimatedContent.kt#9igjgp");
+                                                    boolean changed3 = composer3.changed(snapshotStateList5) | composer3.changedInstance(s4) | composer3.changedInstance(animatedContentTransitionScopeImpl4);
+                                                    final SnapshotStateList<S> snapshotStateList6 = snapshotStateList5;
+                                                    final S s5 = s4;
+                                                    final AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl5 = animatedContentTransitionScopeImpl4;
+                                                    Object rememberedValue12 = composer3.rememberedValue();
+                                                    if (changed3 || rememberedValue12 == Composer.Companion.getEmpty()) {
+                                                        rememberedValue12 = (Function1) new Function1<DisposableEffectScope, DisposableEffectResult>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$5$1$1
+                                                            /* JADX INFO: Access modifiers changed from: package-private */
+                                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                                            {
+                                                                super(1);
+                                                            }
+
+                                                            @Override // kotlin.jvm.functions.Function1
+                                                            public /* bridge */ /* synthetic */ DisposableEffectResult invoke(DisposableEffectScope disposableEffectScope) {
+                                                                return invoke2(disposableEffectScope);
+                                                            }
+
+                                                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                                                            public final DisposableEffectResult invoke2(DisposableEffectScope disposableEffectScope) {
+                                                                final SnapshotStateList<S> snapshotStateList7 = snapshotStateList6;
+                                                                final S s6 = s5;
+                                                                final AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl6 = animatedContentTransitionScopeImpl5;
+                                                                return new DisposableEffectResult() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$5$1$1$invoke$$inlined$onDispose$1
+                                                                    @Override // androidx.compose.runtime.DisposableEffectResult
+                                                                    public void dispose() {
+                                                                        SnapshotStateList.this.remove(s6);
+                                                                        animatedContentTransitionScopeImpl6.getTargetSizeMap$animation().remove(s6);
+                                                                    }
+                                                                };
+                                                            }
+                                                        };
+                                                        composer3.updateRememberedValue(rememberedValue12);
+                                                    }
+                                                    ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                    EffectsKt.DisposableEffect(animatedVisibilityScope, (Function1) rememberedValue12, composer3, i14 & 14);
+                                                    MutableScatterMap targetSizeMap$animation = animatedContentTransitionScopeImpl4.getTargetSizeMap$animation();
+                                                    S s6 = s4;
+                                                    Intrinsics.checkNotNull(animatedVisibilityScope, "null cannot be cast to non-null type androidx.compose.animation.AnimatedVisibilityScopeImpl");
+                                                    targetSizeMap$animation.set(s6, ((AnimatedVisibilityScopeImpl) animatedVisibilityScope).getTargetSize$animation());
+                                                    ComposerKt.sourceInformationMarkerStart(composer3, -316880684, "CC(remember):AnimatedContent.kt#9igjgp");
+                                                    Object rememberedValue13 = composer3.rememberedValue();
+                                                    if (rememberedValue13 == Composer.Companion.getEmpty()) {
+                                                        rememberedValue13 = new AnimatedContentScopeImpl(animatedVisibilityScope);
+                                                        composer3.updateRememberedValue(rememberedValue13);
+                                                    }
+                                                    ComposerKt.sourceInformationMarkerEnd(composer3);
+                                                    function44.invoke((AnimatedContentScopeImpl) rememberedValue13, s4, composer3, 0);
+                                                    if (ComposerKt.isTraceInProgress()) {
+                                                        ComposerKt.traceEventEnd();
+                                                    }
+                                                }
+                                            }, composer2, 54), composer2, 12582912, 64);
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventEnd();
+                                            }
+                                        }
+                                    }, startRestartGroup, 54));
+                                    transition2 = transition;
+                                    obj2 = function15;
+                                    mutableScatterMap2 = mutableScatterMap3;
+                                    str2 = str3;
+                                    function42 = function4;
+                                    animatedContentTransitionScopeImpl2 = animatedContentTransitionScopeImpl3;
+                                    size = i12;
+                                    snapshotStateList2 = snapshotStateList4;
+                                    i10 = i11 + 1;
+                                    snapshotStateList3 = snapshotStateList3;
                                 }
-                                Transition.Segment<S> segment = transition.getSegment();
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141728809, str);
-                                boolean changed = startRestartGroup.changed(segment) | startRestartGroup.changed(animatedContentTransitionScopeImpl);
-                                ContentTransform rememberedValue6 = startRestartGroup.rememberedValue();
-                                if (changed || rememberedValue6 == Composer.Companion.getEmpty()) {
-                                    rememberedValue6 = function14.invoke(animatedContentTransitionScopeImpl);
-                                    startRestartGroup.updateRememberedValue(rememberedValue6);
-                                }
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                Modifier then = companion.then(animatedContentTransitionScopeImpl.createSizeAnimationModifier$animation((ContentTransform) rememberedValue6, startRestartGroup, 0));
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141739907, str);
-                                Object rememberedValue7 = startRestartGroup.rememberedValue();
-                                if (rememberedValue7 == Composer.Companion.getEmpty()) {
-                                    rememberedValue7 = new AnimatedContentMeasurePolicy(animatedContentTransitionScopeImpl);
-                                    startRestartGroup.updateRememberedValue(rememberedValue7);
-                                }
-                                AnimatedContentMeasurePolicy animatedContentMeasurePolicy = (AnimatedContentMeasurePolicy) rememberedValue7;
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
-                                int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-                                CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, then);
-                                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
-                                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                                    ComposablesKt.invalidApplier();
-                                }
-                                startRestartGroup.startReusableNode();
-                                if (startRestartGroup.getInserting()) {
-                                    startRestartGroup.createNode(constructor);
-                                } else {
-                                    startRestartGroup.useNode();
-                                }
-                                Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-                                Updater.m4605setimpl(m4598constructorimpl, animatedContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                    m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                    m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
-                                }
-                                Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -895590996, "C:AnimatedContent.kt#xbi5r1");
-                                startRestartGroup.startReplaceGroup(-860173498);
-                                ComposerKt.sourceInformation(startRestartGroup, "");
-                                SnapshotStateList snapshotStateList5 = snapshotStateList;
-                                int size2 = snapshotStateList5.size();
-                                for (int i13 = 0; i13 < size2; i13++) {
-                                    Object obj7 = (Object) snapshotStateList5.get(i13);
-                                    startRestartGroup.startMovableGroup(-2026002954, function13.invoke(obj7));
-                                    ComposerKt.sourceInformation(startRestartGroup, "");
-                                    Function2 function2 = (Function2) mutableScatterMap.get(obj7);
-                                    if (function2 == null) {
-                                        startRestartGroup.startReplaceGroup(1618454323);
-                                        startRestartGroup.endReplaceGroup();
-                                    } else {
-                                        startRestartGroup.startReplaceGroup(-2026001778);
-                                        ComposerKt.sourceInformation(startRestartGroup, "872@43737L8");
-                                        function2.invoke(startRestartGroup, 0);
-                                        startRestartGroup.endReplaceGroup();
-                                        Unit unit2 = Unit.INSTANCE;
-                                    }
-                                    startRestartGroup.endMovableGroup();
-                                }
+                                str = str2;
+                                function14 = obj2;
+                                animatedContentTransitionScopeImpl = animatedContentTransitionScopeImpl2;
+                                snapshotStateList = snapshotStateList2;
+                                mutableScatterMap = mutableScatterMap2;
                                 startRestartGroup.endReplaceGroup();
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                startRestartGroup.endNode();
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventEnd();
+                            }
+                            Transition.Segment<S> segment = transition.getSegment();
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141726921, str);
+                            boolean changed = startRestartGroup.changed(segment) | startRestartGroup.changed(animatedContentTransitionScopeImpl);
+                            ContentTransform rememberedValue6 = startRestartGroup.rememberedValue();
+                            if (changed || rememberedValue6 == Composer.Companion.getEmpty()) {
+                                rememberedValue6 = function14.invoke(animatedContentTransitionScopeImpl);
+                                startRestartGroup.updateRememberedValue(rememberedValue6);
+                            }
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            Modifier then = companion.then(animatedContentTransitionScopeImpl.createSizeAnimationModifier$animation((ContentTransform) rememberedValue6, startRestartGroup, 0));
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2141738019, str);
+                            Object rememberedValue7 = startRestartGroup.rememberedValue();
+                            if (rememberedValue7 == Composer.Companion.getEmpty()) {
+                                rememberedValue7 = new AnimatedContentMeasurePolicy(animatedContentTransitionScopeImpl);
+                                startRestartGroup.updateRememberedValue(rememberedValue7);
+                            }
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            AnimatedContentMeasurePolicy animatedContentMeasurePolicy = (AnimatedContentMeasurePolicy) rememberedValue7;
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+                            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
+                            CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, then);
+                            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+                            if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                                ComposablesKt.invalidApplier();
+                            }
+                            startRestartGroup.startReusableNode();
+                            if (startRestartGroup.getInserting()) {
+                                startRestartGroup.createNode(constructor);
+                            } else {
+                                startRestartGroup.useNode();
+                            }
+                            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+                            Updater.m4681setimpl(m4673constructorimpl, animatedContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -895590996, "C:AnimatedContent.kt#xbi5r1");
+                            startRestartGroup.startReplaceGroup(-860173498);
+                            ComposerKt.sourceInformation(startRestartGroup, "");
+                            SnapshotStateList snapshotStateList5 = snapshotStateList;
+                            int size2 = snapshotStateList5.size();
+                            for (int i13 = 0; i13 < size2; i13++) {
+                                Object obj5 = (Object) snapshotStateList5.get(i13);
+                                startRestartGroup.startMovableGroup(-2026002954, function13.invoke(obj5));
+                                ComposerKt.sourceInformation(startRestartGroup, "");
+                                Function2 function2 = (Function2) mutableScatterMap.get(obj5);
+                                if (function2 == null) {
+                                    startRestartGroup.startReplaceGroup(1618454323);
+                                    startRestartGroup.endReplaceGroup();
+                                } else {
+                                    startRestartGroup.startReplaceGroup(-2026001778);
+                                    ComposerKt.sourceInformation(startRestartGroup, "872@43737L8");
+                                    function2.invoke(startRestartGroup, 0);
+                                    startRestartGroup.endReplaceGroup();
                                 }
-                                modifier2 = companion;
+                                startRestartGroup.endMovableGroup();
                             }
-                            final Alignment alignment3 = alignment2;
-                            final Function1<? super S, ? extends Object> function16 = function13;
-                            endRestartGroup = startRestartGroup.endRestartGroup();
-                            if (endRestartGroup == null) {
-                                endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$9
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                                        invoke(composer2, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer2, int i14) {
-                                        AnimatedContentKt.AnimatedContent(transition, modifier2, function14, alignment3, function16, function4, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
-                                    }
-                                });
-                                return;
+                            startRestartGroup.endReplaceGroup();
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            startRestartGroup.endNode();
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventEnd();
                             }
+                            modifier2 = companion;
+                        }
+                        final Alignment alignment3 = alignment2;
+                        final Function1<? super S, ? extends Object> function16 = function13;
+                        endRestartGroup = startRestartGroup.endRestartGroup();
+                        if (endRestartGroup != null) {
+                            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedContentKt$AnimatedContent$9
+                                /* JADX INFO: Access modifiers changed from: package-private */
+                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                /* JADX WARN: Multi-variable type inference failed */
+                                {
+                                    super(2);
+                                }
+
+                                @Override // kotlin.jvm.functions.Function2
+                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
+                                    invoke(composer2, num.intValue());
+                                    return Unit.INSTANCE;
+                                }
+
+                                public final void invoke(Composer composer2, int i14) {
+                                    AnimatedContentKt.AnimatedContent(transition, modifier2, function14, alignment3, function16, function4, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                }
+                            });
                             return;
                         }
-                        obj3 = function4;
-                        if (startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
-                        }
-                        final Alignment alignment32 = alignment2;
-                        final Function1<? super S, ? extends Object> function162 = function13;
-                        endRestartGroup = startRestartGroup.endRestartGroup();
-                        if (endRestartGroup == null) {
-                        }
+                        return;
                     }
                     function13 = function12;
-                    if ((i2 & 16) != 0) {
+                    if ((196608 & i) == 0) {
                     }
-                    obj3 = function4;
-                    if (startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
+                    if (!startRestartGroup.shouldExecute((74899 & i6) != 74898, i6 & 1)) {
                     }
-                    final Alignment alignment322 = alignment2;
-                    final Function1<? super S, ? extends Object> function1622 = function13;
+                    final Alignment alignment32 = alignment2;
+                    final Function1<? super S, ? extends Object> function162 = function13;
                     endRestartGroup = startRestartGroup.endRestartGroup();
-                    if (endRestartGroup == null) {
+                    if (endRestartGroup != null) {
                     }
                 }
                 alignment2 = alignment;
-                i6 = i2 & 8;
-                if (i6 == 0) {
+                i5 = i2 & 8;
+                if (i5 == 0) {
                 }
                 function13 = function12;
-                if ((i2 & 16) != 0) {
+                if ((196608 & i) == 0) {
                 }
-                obj3 = function4;
-                if (startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
+                if (!startRestartGroup.shouldExecute((74899 & i6) != 74898, i6 & 1)) {
                 }
-                final Alignment alignment3222 = alignment2;
-                final Function1<? super S, ? extends Object> function16222 = function13;
+                final Alignment alignment322 = alignment2;
+                final Function1<? super S, ? extends Object> function1622 = function13;
                 endRestartGroup = startRestartGroup.endRestartGroup();
-                if (endRestartGroup == null) {
+                if (endRestartGroup != null) {
                 }
             }
             obj2 = function1;
-            i5 = i2 & 4;
-            if (i5 != 0) {
+            i4 = i2 & 4;
+            if (i4 != 0) {
             }
             alignment2 = alignment;
-            i6 = i2 & 8;
-            if (i6 == 0) {
+            i5 = i2 & 8;
+            if (i5 == 0) {
             }
             function13 = function12;
-            if ((i2 & 16) != 0) {
+            if ((196608 & i) == 0) {
             }
-            obj3 = function4;
-            if (startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
+            if (!startRestartGroup.shouldExecute((74899 & i6) != 74898, i6 & 1)) {
             }
-            final Alignment alignment32222 = alignment2;
-            final Function1<? super S, ? extends Object> function162222 = function13;
+            final Alignment alignment3222 = alignment2;
+            final Function1<? super S, ? extends Object> function16222 = function13;
             endRestartGroup = startRestartGroup.endRestartGroup();
-            if (endRestartGroup == null) {
+            if (endRestartGroup != null) {
             }
         }
         obj = modifier;
-        i4 = i2 & 2;
-        if (i4 == 0) {
+        i3 = i2 & 2;
+        if (i3 == 0) {
         }
         obj2 = function1;
-        i5 = i2 & 4;
-        if (i5 != 0) {
+        i4 = i2 & 4;
+        if (i4 != 0) {
         }
         alignment2 = alignment;
-        i6 = i2 & 8;
-        if (i6 == 0) {
+        i5 = i2 & 8;
+        if (i5 == 0) {
         }
         function13 = function12;
-        if ((i2 & 16) != 0) {
+        if ((196608 & i) == 0) {
         }
-        obj3 = function4;
-        if (startRestartGroup.shouldExecute((74899 & i3) == 74898, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((74899 & i6) != 74898, i6 & 1)) {
         }
-        final Alignment alignment322222 = alignment2;
-        final Function1<? super S, ? extends Object> function1622222 = function13;
+        final Alignment alignment32222 = alignment2;
+        final Function1<? super S, ? extends Object> function162222 = function13;
         endRestartGroup = startRestartGroup.endRestartGroup();
-        if (endRestartGroup == null) {
+        if (endRestartGroup != null) {
         }
     }
 
     static {
         long j = Integer.MIN_VALUE;
-        UnspecifiedSize = IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32));
+        UnspecifiedSize = IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

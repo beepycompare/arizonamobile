@@ -14,13 +14,13 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.Ref;
 /* compiled from: Scrollable2D.kt */
-@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aB\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0007\u001a\u001c\u0010\u000e\u001a\u00020\u000f*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u000fH\u0082@¢\u0006\u0004\b\u0012\u0010\u0013\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000\"\u0018\u0010\u0014\u001a\u00020\u0015*\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018\"\u0018\u0010\u0019\u001a\u00020\u0015*\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0018¨\u0006\u001b"}, d2 = {"scrollable2D", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/gestures/Scrollable2DState;", "enabled", "", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "NoOpScrollScope", "Landroidx/compose/foundation/gestures/Scroll2DScope;", "semanticsScrollBy", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/foundation/gestures/ScrollingLogic2D;", TypedValues.CycleType.S_WAVE_OFFSET, "semanticsScrollBy-d-4ec7I", "(Landroidx/compose/foundation/gestures/ScrollingLogic2D;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "magnitude", "", "Landroidx/compose/ui/unit/Velocity;", "getMagnitude-TH1AsA0", "(J)F", "angle", "getAngle-TH1AsA0", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aB\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0007\u001a\u001c\u0010\u000e\u001a\u00020\u000f*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u000fH\u0082@¢\u0006\u0004\b\u0012\u0010\u0013\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000\"\u0018\u0010\u0014\u001a\u00020\u0015*\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018\"\u0018\u0010\u0019\u001a\u00020\u0015*\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0018¨\u0006\u001b"}, d2 = {"scrollable2D", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/gestures/Scrollable2DState;", "enabled", "", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "NoOpScrollScope", "Landroidx/compose/foundation/gestures/Scroll2DScope;", "semanticsScrollBy", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/foundation/gestures/ScrollingLogic2D;", TypedValues.CycleType.S_WAVE_OFFSET, "semanticsScrollBy-d-4ec7I", "(Landroidx/compose/foundation/gestures/ScrollingLogic2D;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "magnitude", "", "Landroidx/compose/ui/unit/Velocity;", "getMagnitude-TH1AsA0", "(J)F", "angle", "getAngle-TH1AsA0", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class Scrollable2DKt {
     private static final Scroll2DScope NoOpScrollScope = new Scroll2DScope() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$NoOpScrollScope$1
         @Override // androidx.compose.foundation.gestures.Scroll2DScope
         /* renamed from: scrollBy-MK-Hz9U */
-        public long mo474scrollByMKHz9U(long j) {
+        public long mo515scrollByMKHz9U(long j) {
             return j;
         }
     };
@@ -43,7 +43,7 @@ public final class Scrollable2DKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m571semanticsScrollByd4ec7I(ScrollingLogic2D scrollingLogic2D, long j, Continuation<? super Offset> continuation) {
+    public static final Object m649semanticsScrollByd4ec7I(ScrollingLogic2D scrollingLogic2D, long j, Continuation<? super Offset> continuation) {
         Scrollable2DKt$semanticsScrollBy$1 scrollable2DKt$semanticsScrollBy$1;
         int i;
         Ref.LongRef longRef;
@@ -57,7 +57,7 @@ public final class Scrollable2DKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Ref.LongRef longRef2 = new Ref.LongRef();
-                    longRef2.element = Offset.Companion.m5052getZeroF1C5BW0();
+                    longRef2.element = Offset.Companion.m5195getZeroF1C5BW0();
                     scrollable2DKt$semanticsScrollBy$1.L$0 = longRef2;
                     scrollable2DKt$semanticsScrollBy$1.label = 1;
                     if (scrollingLogic2D.scroll(MutatePriority.Default, new Scrollable2DKt$semanticsScrollBy$2(j, longRef2, null), scrollable2DKt$semanticsScrollBy$1) == coroutine_suspended) {
@@ -70,7 +70,7 @@ public final class Scrollable2DKt {
                     longRef = (Ref.LongRef) scrollable2DKt$semanticsScrollBy$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Offset.m5025boximpl(longRef.element);
+                return Offset.m5168boximpl(longRef.element);
             }
         }
         scrollable2DKt$semanticsScrollBy$1 = new Scrollable2DKt$semanticsScrollBy$1(continuation);
@@ -79,19 +79,19 @@ public final class Scrollable2DKt {
         i = scrollable2DKt$semanticsScrollBy$1.label;
         if (i != 0) {
         }
-        return Offset.m5025boximpl(longRef.element);
+        return Offset.m5168boximpl(longRef.element);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getMagnitude-TH1AsA0  reason: not valid java name */
-    public static final float m570getMagnitudeTH1AsA0(long j) {
+    public static final float m648getMagnitudeTH1AsA0(long j) {
         double d = 2;
-        return (float) Math.sqrt(((float) Math.pow(Velocity.m8234getXimpl(j), d)) + ((float) Math.pow(Velocity.m8235getYimpl(j), d)));
+        return (float) Math.sqrt(((float) Math.pow(Velocity.m8496getXimpl(j), d)) + ((float) Math.pow(Velocity.m8497getYimpl(j), d)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getAngle-TH1AsA0  reason: not valid java name */
-    public static final float m569getAngleTH1AsA0(long j) {
-        return (float) Math.atan2(Velocity.m8235getYimpl(j), Velocity.m8234getXimpl(j));
+    public static final float m647getAngleTH1AsA0(long j) {
+        return (float) Math.atan2(Velocity.m8497getYimpl(j), Velocity.m8496getXimpl(j));
     }
 }

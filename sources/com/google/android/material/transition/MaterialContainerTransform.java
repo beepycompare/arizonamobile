@@ -113,8 +113,8 @@ public final class MaterialContainerTransform extends Transition {
         this.fadeMode = 0;
         this.fitMode = 0;
         this.elevationShadowEnabled = Build.VERSION.SDK_INT >= 28;
-        this.startElevation = ELEVATION_NOT_SET;
-        this.endElevation = ELEVATION_NOT_SET;
+        this.startElevation = -1.0f;
+        this.endElevation = -1.0f;
     }
 
     public MaterialContainerTransform(Context context, boolean z) {
@@ -133,8 +133,8 @@ public final class MaterialContainerTransform extends Transition {
         this.fadeMode = 0;
         this.fitMode = 0;
         this.elevationShadowEnabled = Build.VERSION.SDK_INT >= 28;
-        this.startElevation = ELEVATION_NOT_SET;
-        this.endElevation = ELEVATION_NOT_SET;
+        this.startElevation = -1.0f;
+        this.endElevation = -1.0f;
         maybeApplyThemeValues(context, z);
         this.appliedThemeValues = true;
     }
@@ -476,7 +476,7 @@ public final class MaterialContainerTransform extends Transition {
     }
 
     private static float getElevationOrDefault(float f, View view) {
-        return f != ELEVATION_NOT_SET ? f : view.getElevation();
+        return f != -1.0f ? f : view.getElevation();
     }
 
     private static RectF calculateDrawableBounds(View view, View view2, float f, float f2) {
@@ -745,7 +745,7 @@ public final class MaterialContainerTransform extends Transition {
                     f2 = 0.99f;
                 } else {
                     f2 = 0.01f;
-                    f3 = (f / 0.01f) * MaterialContainerTransform.ELEVATION_NOT_SET;
+                    f3 = (f / 0.01f) * (-1.0f);
                 }
                 this.motionPathMeasure.getPosTan(this.motionPathLength * f2, fArr, null);
                 float[] fArr2 = this.motionPathPosition;

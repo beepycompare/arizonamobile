@@ -13,6 +13,13 @@ final class IntrinsicWidthElement extends ModifierNodeElement<IntrinsicWidthNode
     private final Function1<InspectorInfo, Unit> inspectorInfo;
     private final IntrinsicSize width;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public IntrinsicWidthElement(IntrinsicSize intrinsicSize, boolean z, Function1<? super InspectorInfo, Unit> function1) {
+        this.width = intrinsicSize;
+        this.enforceIncoming = z;
+        this.inspectorInfo = function1;
+    }
+
     public final IntrinsicSize getWidth() {
         return this.width;
     }
@@ -23,13 +30,6 @@ final class IntrinsicWidthElement extends ModifierNodeElement<IntrinsicWidthNode
 
     public final Function1<InspectorInfo, Unit> getInspectorInfo() {
         return this.inspectorInfo;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public IntrinsicWidthElement(IntrinsicSize intrinsicSize, boolean z, Function1<? super InspectorInfo, Unit> function1) {
-        this.width = intrinsicSize;
-        this.enforceIncoming = z;
-        this.inspectorInfo = function1;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

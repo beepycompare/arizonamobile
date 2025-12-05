@@ -1,9 +1,9 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0168ce;
+import io.appmetrica.analytics.impl.C0167ce;
 import io.appmetrica.analytics.impl.Fn;
 import java.util.Currency;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class Revenue {
     public final Currency currency;
     public final String payload;
@@ -12,12 +12,12 @@ public class Revenue {
     public final Integer quantity;
     public final Receipt receipt;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
-        private static final Fn g = new Fn(new C0168ce("revenue currency"));
+        private static final Fn g = new Fn(new C0167ce("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
-        final long f190a;
+        final long f273a;
         final Currency b;
         Integer c;
         String d;
@@ -54,21 +54,21 @@ public class Revenue {
 
         private Builder(long j, Currency currency) {
             g.a(currency);
-            this.f190a = j;
+            this.f273a = j;
             this.b = currency;
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Receipt {
         public final String data;
         public final String signature;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */
-            private String f191a;
+            private String f274a;
             private String b;
 
             /* synthetic */ Builder(int i) {
@@ -80,7 +80,7 @@ public class Revenue {
             }
 
             public Builder withData(String str) {
-                this.f191a = str;
+                this.f274a = str;
                 return this;
             }
 
@@ -102,7 +102,7 @@ public class Revenue {
         }
 
         private Receipt(Builder builder) {
-            this.data = builder.f191a;
+            this.data = builder.f274a;
             this.signature = builder.b;
         }
     }
@@ -116,7 +116,7 @@ public class Revenue {
     }
 
     private Revenue(Builder builder) {
-        this.priceMicros = builder.f190a;
+        this.priceMicros = builder.f273a;
         this.currency = builder.b;
         this.quantity = builder.c;
         this.productID = builder.d;

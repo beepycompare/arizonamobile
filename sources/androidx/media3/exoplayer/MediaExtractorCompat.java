@@ -68,7 +68,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MediaExtractorCompat {
     private static final long DEFAULT_LAST_SAMPLE_DURATION_US = 10000;
     public static final int SEEK_TO_CLOSEST_SYNC = 2;
@@ -99,7 +99,7 @@ public final class MediaExtractorCompat {
     private int upstreamFormatsCount;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface SeekMode {
     }
 
@@ -592,7 +592,7 @@ public final class MediaExtractorCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public final class ExtractorOutputImpl implements ExtractorOutput {
         private ExtractorOutputImpl() {
         }
@@ -624,7 +624,7 @@ public final class MediaExtractorCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class MediaExtractorTrack {
         public final String compatibilityTrackMimeType;
         public final boolean isCompatibilityTrack;
@@ -677,7 +677,7 @@ public final class MediaExtractorCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public final class MediaExtractorSampleQueue extends SampleQueue {
         private int compatibilityTrackIndex;
         private int mainTrackIndex;
@@ -739,7 +739,7 @@ public final class MediaExtractorCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class SampleMetadataQueue {
         private final ArrayDeque<SampleMetadata> sampleMetadataPool = new ArrayDeque<>();
         private final ArrayDeque<SampleMetadata> sampleMetadataQueue = new ArrayDeque<>();
@@ -782,7 +782,7 @@ public final class MediaExtractorCompat {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes2.dex */
+        /* loaded from: classes.dex */
         public static final class SampleMetadata {
             public int flags;
             public long timeUs;

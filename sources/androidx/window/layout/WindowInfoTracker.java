@@ -3,14 +3,25 @@ package androidx.window.layout;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
+import androidx.window.WindowSdkExtensions;
+import androidx.window.core.ConsumerAdapter;
 import androidx.window.extensions.layout.WindowLayoutComponent;
+import androidx.window.layout.WindowInfoTracker;
+import androidx.window.layout.adapter.WindowBackend;
+import androidx.window.layout.adapter.extensions.ExtensionWindowBackend;
+import androidx.window.layout.adapter.sidecar.SidecarWindowBackend;
+import java.util.List;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 import kotlin.Metadata;
+import kotlin.NotImplementedError;
 import kotlin.jvm.JvmStatic;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: WindowInfoTracker.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bf\u0018\u0000 \u00072\u00020\u0001:\u0001\u0007J\u0016\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0005\u001a\u00020\u0006H&¨\u0006\b"}, d2 = {"Landroidx/window/layout/WindowInfoTracker;", "", "windowLayoutInfo", "Lkotlinx/coroutines/flow/Flow;", "Landroidx/window/layout/WindowLayoutInfo;", "activity", "Landroid/app/Activity;", "Companion", "window_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\bf\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011J\u0016\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0005\u001a\u00020\u0006H\u0016J\u0016\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0007\u001a\u00020\bH&J\u0010\u0010\u0010\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0017R \u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n8WX\u0097\u0004¢\u0006\f\u0012\u0004\b\f\u0010\r\u001a\u0004\b\u000e\u0010\u000fø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0012À\u0006\u0001"}, d2 = {"Landroidx/window/layout/WindowInfoTracker;", "", "windowLayoutInfo", "Lkotlinx/coroutines/flow/Flow;", "Landroidx/window/layout/WindowLayoutInfo;", "context", "Landroid/content/Context;", "activity", "Landroid/app/Activity;", "supportedPostures", "", "Landroidx/window/layout/SupportedPosture;", "getSupportedPostures$annotations", "()V", "getSupportedPostures", "()Ljava/util/List;", "getCurrentWindowLayoutInfo", "Companion", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public interface WindowInfoTracker {
     public static final Companion Companion = Companion.$$INSTANCE;
@@ -18,6 +29,9 @@ public interface WindowInfoTracker {
     @JvmStatic
     static WindowInfoTracker getOrCreate(Context context) {
         return Companion.getOrCreate(context);
+    }
+
+    static /* synthetic */ void getSupportedPostures$annotations() {
     }
 
     @JvmStatic
@@ -32,38 +46,78 @@ public interface WindowInfoTracker {
 
     Flow<WindowLayoutInfo> windowLayoutInfo(Activity activity);
 
+    default Flow<WindowLayoutInfo> windowLayoutInfo(Context context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        Activity activity = context instanceof Activity ? (Activity) context : null;
+        Flow<WindowLayoutInfo> windowLayoutInfo = activity != null ? windowLayoutInfo(activity) : null;
+        if (windowLayoutInfo != null) {
+            return windowLayoutInfo;
+        }
+        throw new NotImplementedError("Must override windowLayoutInfo(context) and provide an implementation.");
+    }
+
+    default List<SupportedPosture> getSupportedPostures() {
+        throw new NotImplementedError("Method was not implemented.");
+    }
+
+    default WindowLayoutInfo getCurrentWindowLayoutInfo(Context context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        throw new NotImplementedError("Method was not implemented.");
+    }
+
     /* compiled from: WindowInfoTracker.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0007J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\bH\u0007J\b\u0010\u0010\u001a\u00020\u000eH\u0007J\u0015\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u000b\u001a\u00020\fH\u0000¢\u0006\u0002\b\u0013R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082D¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Landroidx/window/layout/WindowInfoTracker$Companion;", "", "()V", "DEBUG", "", "TAG", "", "decorator", "Landroidx/window/layout/WindowInfoTrackerDecorator;", "getOrCreate", "Landroidx/window/layout/WindowInfoTracker;", "context", "Landroid/content/Context;", "overrideDecorator", "", "overridingDecorator", "reset", "windowBackend", "Landroidx/window/layout/WindowBackend;", "windowBackend$window_release", "window_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0007J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0010H\u0007J\b\u0010\u0018\u001a\u00020\u0016H\u0007R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\b\u001a\u0004\u0018\u00010\t8@X\u0080\u0084\u0002¢\u0006\u0012\n\u0004\b\r\u0010\u000e\u0012\u0004\b\n\u0010\u0003\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0019"}, d2 = {"Landroidx/window/layout/WindowInfoTracker$Companion;", "", "<init>", "()V", "DEBUG", "", "TAG", "", "extensionBackend", "Landroidx/window/layout/adapter/WindowBackend;", "getExtensionBackend$window_release$annotations", "getExtensionBackend$window_release", "()Landroidx/window/layout/adapter/WindowBackend;", "extensionBackend$delegate", "Lkotlin/Lazy;", "decorator", "Landroidx/window/layout/WindowInfoTrackerDecorator;", "getOrCreate", "Landroidx/window/layout/WindowInfoTracker;", "context", "Landroid/content/Context;", "overrideDecorator", "", "overridingDecorator", "reset", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         private static final boolean DEBUG = false;
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
         private static final String TAG = Reflection.getOrCreateKotlinClass(WindowInfoTracker.class).getSimpleName();
+        private static final Lazy<WindowBackend> extensionBackend$delegate = LazyKt.lazy(new Function0() { // from class: androidx.window.layout.WindowInfoTracker$Companion$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                WindowBackend extensionBackend_delegate$lambda$2;
+                extensionBackend_delegate$lambda$2 = WindowInfoTracker.Companion.extensionBackend_delegate$lambda$2();
+                return extensionBackend_delegate$lambda$2;
+            }
+        });
         private static WindowInfoTrackerDecorator decorator = EmptyDecorator.INSTANCE;
 
+        public static /* synthetic */ void getExtensionBackend$window_release$annotations() {
+        }
+
         private Companion() {
+        }
+
+        public final WindowBackend getExtensionBackend$window_release() {
+            return extensionBackend$delegate.getValue();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final WindowBackend extensionBackend_delegate$lambda$2() {
+            WindowLayoutComponent windowLayoutComponent;
+            try {
+                ClassLoader classLoader = WindowInfoTracker.class.getClassLoader();
+                SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider = classLoader != null ? new SafeWindowLayoutComponentProvider(classLoader, new ConsumerAdapter(classLoader)) : null;
+                if (safeWindowLayoutComponentProvider == null || (windowLayoutComponent = safeWindowLayoutComponentProvider.getWindowLayoutComponent()) == null) {
+                    return null;
+                }
+                return ExtensionWindowBackend.Companion.newInstance(windowLayoutComponent, new ConsumerAdapter(classLoader));
+            } catch (Throwable unused) {
+                if (DEBUG) {
+                    Log.d(TAG, "Failed to load WindowExtensions");
+                }
+                return null;
+            }
         }
 
         @JvmStatic
         public final WindowInfoTracker getOrCreate(Context context) {
             Intrinsics.checkNotNullParameter(context, "context");
-            return decorator.decorate(new WindowInfoTrackerImpl(WindowMetricsCalculatorCompat.INSTANCE, windowBackend$window_release(context)));
-        }
-
-        public final WindowBackend windowBackend$window_release(Context context) {
-            Intrinsics.checkNotNullParameter(context, "context");
-            ExtensionWindowLayoutInfoBackend extensionWindowLayoutInfoBackend = null;
-            try {
-                WindowLayoutComponent windowLayoutComponent = SafeWindowLayoutComponentProvider.INSTANCE.getWindowLayoutComponent();
-                if (windowLayoutComponent != null) {
-                    extensionWindowLayoutInfoBackend = new ExtensionWindowLayoutInfoBackend(windowLayoutComponent);
-                }
-            } catch (Throwable unused) {
-                if (DEBUG) {
-                    Log.d(TAG, "Failed to load WindowExtensions");
-                }
+            SidecarWindowBackend extensionBackend$window_release = getExtensionBackend$window_release();
+            if (extensionBackend$window_release == null) {
+                extensionBackend$window_release = SidecarWindowBackend.Companion.getInstance(context);
             }
-            return extensionWindowLayoutInfoBackend == null ? SidecarWindowBackend.Companion.getInstance(context) : extensionWindowLayoutInfoBackend;
+            return decorator.decorate(new WindowInfoTrackerImpl(new WindowMetricsCalculatorCompat(null, 1, null), extensionBackend$window_release, WindowSdkExtensions.Companion.getInstance()));
         }
 
         @JvmStatic

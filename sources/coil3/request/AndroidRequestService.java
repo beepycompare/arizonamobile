@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import androidx.core.app.FrameMetricsAggregator;
 import androidx.lifecycle.Lifecycle;
 import coil3.BitmapImage;
 import coil3.Extras;
@@ -64,7 +65,7 @@ public final class AndroidRequestService implements RequestService {
         if (lifecycle2 != null) {
             return new LifecycleRequestDelegate(lifecycle2, job);
         }
-        return BaseRequestDelegate.m9139boximpl(BaseRequestDelegate.m9140constructorimpl(job));
+        return BaseRequestDelegate.m9434boximpl(BaseRequestDelegate.m9435constructorimpl(job));
     }
 
     private final Lifecycle findLifecycle(ImageRequest imageRequest) {
@@ -154,7 +155,7 @@ public final class AndroidRequestService implements RequestService {
             extras = extras.newBuilder().set(ImageRequests_androidKt.getBitmapConfig(Extras.Key.Companion), Bitmap.Config.ARGB_8888).build();
             z = true;
         }
-        return z ? Options.copy$default(options, null, null, null, null, null, null, null, null, null, extras, 511, null) : options;
+        return z ? Options.copy$default(options, null, null, null, null, null, null, null, null, null, extras, FrameMetricsAggregator.EVERY_DURATION, null) : options;
     }
 
     @Override // coil3.request.RequestService

@@ -29,16 +29,16 @@ public final class MovableContentState {
         return Integer.valueOf(movableContentState.slotTable.anchorIndex(movableContentStateReference.getAnchor$runtime()));
     }
 
-    private static final void extractNestedStates$lambda$4$closeToGroupContaining(SlotWriter slotWriter, int i) {
+    private static final void extractNestedStates$lambda$2$closeToGroupContaining(SlotWriter slotWriter, int i) {
         while (slotWriter.getParent() >= 0 && slotWriter.getCurrentGroupEnd() <= i) {
             slotWriter.skipToGroupEnd();
             slotWriter.endGroup();
         }
     }
 
-    private static final void extractNestedStates$lambda$4$openParent(SlotWriter slotWriter, int i) {
+    private static final void extractNestedStates$lambda$2$openParent(SlotWriter slotWriter, int i) {
         int nextGroup;
-        extractNestedStates$lambda$4$closeToGroupContaining(slotWriter, i);
+        extractNestedStates$lambda$2$closeToGroupContaining(slotWriter, i);
         while (slotWriter.getCurrentGroup() != i && !slotWriter.isGroupEnd()) {
             nextGroup = ComposerKt.getNextGroup(slotWriter);
             if (i < nextGroup) {
@@ -95,12 +95,12 @@ public final class MovableContentState {
                 MovableContentStateReference movableContentStateReference = (MovableContentStateReference) objArr3[i6];
                 int anchorIndex = openWriter.anchorIndex(movableContentStateReference.getAnchor$runtime());
                 int parent = openWriter.parent(anchorIndex);
-                extractNestedStates$lambda$4$closeToGroupContaining(openWriter, parent);
-                extractNestedStates$lambda$4$openParent(openWriter, parent);
+                extractNestedStates$lambda$2$closeToGroupContaining(openWriter, parent);
+                extractNestedStates$lambda$2$openParent(openWriter, parent);
                 openWriter.advanceBy(anchorIndex - openWriter.getCurrentGroup());
                 mutableScatterMapOf.set(movableContentStateReference, ComposerKt.extractMovableContentAtCurrent(movableContentStateReference.getComposition$runtime(), movableContentStateReference, openWriter, applier));
             }
-            extractNestedStates$lambda$4$closeToGroupContaining(openWriter, Integer.MAX_VALUE);
+            extractNestedStates$lambda$2$closeToGroupContaining(openWriter, Integer.MAX_VALUE);
             Unit unit = Unit.INSTANCE;
             openWriter.close(true);
             return mutableScatterMapOf;

@@ -22,6 +22,14 @@ public final class LayoutOrientation {
         return $ENTRIES;
     }
 
+    public static LayoutOrientation valueOf(String str) {
+        return (LayoutOrientation) Enum.valueOf(LayoutOrientation.class, str);
+    }
+
+    public static LayoutOrientation[] values() {
+        return (LayoutOrientation[]) $VALUES.clone();
+    }
+
     private LayoutOrientation(String str, int i) {
     }
 
@@ -29,13 +37,5 @@ public final class LayoutOrientation {
         LayoutOrientation[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static LayoutOrientation valueOf(String str) {
-        return (LayoutOrientation) Enum.valueOf(LayoutOrientation.class, str);
-    }
-
-    public static LayoutOrientation[] values() {
-        return (LayoutOrientation[]) $VALUES.clone();
     }
 }

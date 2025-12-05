@@ -24,6 +24,14 @@ public final class InvalidationResult {
         return $ENTRIES;
     }
 
+    public static InvalidationResult valueOf(String str) {
+        return (InvalidationResult) Enum.valueOf(InvalidationResult.class, str);
+    }
+
+    public static InvalidationResult[] values() {
+        return (InvalidationResult[]) $VALUES.clone();
+    }
+
     private InvalidationResult(String str, int i) {
     }
 
@@ -31,13 +39,5 @@ public final class InvalidationResult {
         InvalidationResult[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static InvalidationResult valueOf(String str) {
-        return (InvalidationResult) Enum.valueOf(InvalidationResult.class, str);
-    }
-
-    public static InvalidationResult[] values() {
-        return (InvalidationResult[]) $VALUES.clone();
     }
 }

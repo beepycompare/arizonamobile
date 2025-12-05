@@ -6,7 +6,6 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineExceptionHandler;
@@ -26,34 +25,28 @@ public final class LaunchedEffectImpl implements RememberObserver, CoroutineExce
 
     /* JADX WARN: Multi-variable type inference failed */
     public LaunchedEffectImpl(CoroutineContext coroutineContext, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2) {
-        EmptyCoroutineContext emptyCoroutineContext;
         this.parentCoroutineContext = coroutineContext;
         this.task = function2;
-        if (coroutineContext.get(CompositionErrorContextImpl.Key) != null) {
-            emptyCoroutineContext = this;
-        } else {
-            emptyCoroutineContext = EmptyCoroutineContext.INSTANCE;
-        }
-        this.scope = CoroutineScopeKt.CoroutineScope(coroutineContext.plus(emptyCoroutineContext));
+        this.scope = CoroutineScopeKt.CoroutineScope(coroutineContext.plus(this));
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
+    public /* bridge */ <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
         return (R) CoroutineExceptionHandler.DefaultImpls.fold(this, r, function2);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
+    public /* bridge */ <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
         return (E) CoroutineExceptionHandler.DefaultImpls.get(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
+    public /* bridge */ CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return CoroutineExceptionHandler.DefaultImpls.minusKey(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
-    public CoroutineContext plus(CoroutineContext coroutineContext) {
+    public /* bridge */ CoroutineContext plus(CoroutineContext coroutineContext) {
         return CoroutineExceptionHandler.DefaultImpls.plus(this, coroutineContext);
     }
 

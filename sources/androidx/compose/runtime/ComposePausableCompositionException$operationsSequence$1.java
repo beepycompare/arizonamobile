@@ -16,7 +16,7 @@ import kotlin.sequences.SequenceScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PausableComposition.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.ComposePausableCompositionException$operationsSequence$1", f = "PausableComposition.kt", i = {0, 0, 0, 0}, l = {554}, m = "invokeSuspend", n = {"$this$sequence", "currentOperation", "currentInstance", "currentReused"}, s = {"L$0", "I$0", "I$1", "I$2"})
+@DebugMetadata(c = "androidx.compose.runtime.ComposePausableCompositionException$operationsSequence$1", f = "PausableComposition.kt", i = {0, 0, 0, 0}, l = {579}, m = "invokeSuspend", n = {"$this$sequence", "currentOperation", "currentInstance", "currentReused"}, s = {"L$0", "I$0", "I$1", "I$2"}, v = 1)
 /* loaded from: classes.dex */
 public final class ComposePausableCompositionException$operationsSequence$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super String>, Continuation<? super Unit>, Object> {
     int I$0;
@@ -45,7 +45,7 @@ public final class ComposePausableCompositionException$operationsSequence$1 exte
         return ((ComposePausableCompositionException$operationsSequence$1) create(sequenceScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Incorrect condition in loop: B:10:0x0041 */
+    /* JADX WARN: Incorrect condition in loop: B:10:0x0043 */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -69,13 +69,11 @@ public final class ComposePausableCompositionException$operationsSequence$1 exte
         int i5;
         ObjectList objectList2;
         int i6;
-        String str2;
         IntList intList9;
         ObjectList objectList3;
         ObjectList objectList4;
         Object obj2;
         ObjectList objectList5;
-        ObjectList objectList6;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i7 = this.label;
         if (i7 == 0) {
@@ -96,7 +94,7 @@ public final class ComposePausableCompositionException$operationsSequence$1 exte
             i3 = i8;
             i = i10;
         }
-        while (i < Math.min(i4, intList._size)) {
+        while (i < Math.min(i4 + 10, intList._size)) {
             intList2 = this.this$0.operations;
             int i11 = i + 1;
             int i12 = intList2.get(i);
@@ -134,8 +132,7 @@ public final class ComposePausableCompositionException$operationsSequence$1 exte
                     int i16 = intList8.get(i11);
                     objectList2 = this.this$0.instances;
                     i6 = i2 + 1;
-                    str2 = "insertBottomUp " + i16 + ' ' + objectList2.get(i2);
-                    str = str2;
+                    str = "insertBottomUp " + i16 + ' ' + objectList2.get(i2);
                     i11 = i5;
                     i2 = i6;
                     break;
@@ -145,24 +142,24 @@ public final class ComposePausableCompositionException$operationsSequence$1 exte
                     int i17 = intList9.get(i11);
                     objectList3 = this.this$0.instances;
                     i6 = i2 + 1;
-                    str2 = "insertTopDown " + i17 + ' ' + objectList3.get(i2);
-                    str = str2;
+                    str = "insertTopDown " + i17 + ' ' + objectList3.get(i2);
                     i11 = i5;
                     i2 = i6;
                     break;
                 case 7:
                     objectList4 = this.this$0.instances;
-                    int i18 = i2 + 1;
                     Intrinsics.checkNotNull(objectList4.get(i2), "null cannot be cast to non-null type @[ExtensionFunctionType] kotlin.Function2<kotlin.Any?, kotlin.Any?, kotlin.Unit>");
-                    objectList5 = this.this$0.instances;
                     i2 += 2;
-                    str = "apply " + ((Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(obj2, 2)) + ' ' + objectList5.get(i18);
+                    str = "apply " + ((Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(obj2, 2));
                     break;
                 case 8:
                     StringBuilder sb = new StringBuilder("reuse ");
-                    objectList6 = this.this$0.reused;
-                    str = sb.append(objectList6.get(i3)).toString();
+                    objectList5 = this.this$0.reused;
+                    str = sb.append(objectList5.get(i3)).toString();
                     i3++;
+                    break;
+                case 9:
+                    str = "recompose pending";
                     break;
                 default:
                     str = "unknown op: " + i12;

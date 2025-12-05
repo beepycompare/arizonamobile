@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public abstract class W4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bm f734a;
+    public final Bm f817a;
 
     public W4(Bm bm) {
-        this.f734a = bm;
+        this.f817a = bm;
     }
 
     public abstract Ll a();

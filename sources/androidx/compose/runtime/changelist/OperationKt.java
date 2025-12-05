@@ -4,6 +4,7 @@ import androidx.compose.runtime.Anchor;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.SlotWriter;
+import androidx.compose.runtime.tooling.ComposeStackTrace;
 import androidx.compose.runtime.tooling.ComposeStackTraceBuilderKt;
 import androidx.compose.runtime.tooling.ComposeStackTraceFrame;
 import androidx.compose.runtime.tooling.ComposeStackTraceKt;
@@ -89,15 +90,15 @@ public final class OperationKt {
         return operationErrorContext == null ? th : ComposeStackTraceKt.attachComposeStackTrace(th, new Function0() { // from class: androidx.compose.runtime.changelist.OperationKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List attachComposeStackTrace$lambda$1;
-                attachComposeStackTrace$lambda$1 = OperationKt.attachComposeStackTrace$lambda$1(Anchor.this, slotWriter, operationErrorContext);
-                return attachComposeStackTrace$lambda$1;
+                ComposeStackTrace attachComposeStackTrace$lambda$0;
+                attachComposeStackTrace$lambda$0 = OperationKt.attachComposeStackTrace$lambda$0(Anchor.this, slotWriter, operationErrorContext);
+                return attachComposeStackTrace$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List attachComposeStackTrace$lambda$1(Anchor anchor, SlotWriter slotWriter, OperationErrorContext operationErrorContext) {
+    public static final ComposeStackTrace attachComposeStackTrace$lambda$0(Anchor anchor, SlotWriter slotWriter, OperationErrorContext operationErrorContext) {
         if (anchor != null) {
             slotWriter.seek(anchor);
         }
@@ -106,9 +107,9 @@ public final class OperationKt {
         Integer groupOffset = composeStackTraceFrame != null ? composeStackTraceFrame.getGroupOffset() : null;
         List<ComposeStackTraceFrame> buildStackTrace = operationErrorContext.buildStackTrace(groupOffset);
         if (groupOffset != null && !buildStackTrace.isEmpty()) {
-            buildStackTrace = CollectionsKt.plus((Collection) CollectionsKt.listOf(ComposeStackTraceFrame.copy$default((ComposeStackTraceFrame) CollectionsKt.first((List<? extends Object>) buildStackTrace), null, groupOffset, 1, null)), (Iterable) CollectionsKt.drop(buildStackTrace, 1));
+            buildStackTrace = CollectionsKt.plus((Collection) CollectionsKt.listOf(ComposeStackTraceFrame.copy$default((ComposeStackTraceFrame) CollectionsKt.first((List<? extends Object>) buildStackTrace), 0, null, groupOffset, 3, null)), (Iterable) CollectionsKt.drop(buildStackTrace, 1));
         }
-        return CollectionsKt.plus((Collection) buildTrace$default, (Iterable) buildStackTrace);
+        return new ComposeStackTrace(CollectionsKt.plus((Collection) buildTrace$default, (Iterable) buildStackTrace));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

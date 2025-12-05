@@ -20,6 +20,11 @@ public final class PersistentHashSet<E> extends AbstractSet<E> implements Persis
     public static final int $stable = 8;
     private static final PersistentHashSet EMPTY = new PersistentHashSet(TrieNode.Companion.getEMPTY$runtime(), 0);
 
+    public PersistentHashSet(TrieNode<E> trieNode, int i) {
+        this.node = trieNode;
+        this.size = i;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.util.Collection, java.util.Set, androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentCollection
     public /* bridge */ /* synthetic */ PersistentCollection add(Object obj) {
@@ -34,11 +39,6 @@ public final class PersistentHashSet<E> extends AbstractSet<E> implements Persis
     @Override // java.util.Collection, java.util.Set, androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentCollection
     public /* bridge */ /* synthetic */ PersistentCollection remove(Object obj) {
         return remove((PersistentHashSet<E>) obj);
-    }
-
-    public PersistentHashSet(TrieNode<E> trieNode, int i) {
-        this.node = trieNode;
-        this.size = i;
     }
 
     @Override // kotlin.collections.AbstractCollection

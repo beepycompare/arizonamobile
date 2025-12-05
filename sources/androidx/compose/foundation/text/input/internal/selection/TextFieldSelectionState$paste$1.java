@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionState.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState", f = "TextFieldSelectionState.kt", i = {1}, l = {1429, 1431, 1431}, m = "paste", n = {"receiveContentConfiguration"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState", f = "TextFieldSelectionState.kt", i = {1}, l = {1544, 1546, 1546}, m = "paste", n = {"receiveContentConfiguration"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionState$paste$1 extends ContinuationImpl {
     Object L$0;

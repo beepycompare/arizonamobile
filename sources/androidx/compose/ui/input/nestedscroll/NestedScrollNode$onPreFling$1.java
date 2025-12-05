@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NestedScrollNode.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollNode", f = "NestedScrollNode.kt", i = {0, 1}, l = {115, 116}, m = "onPreFling-QWom1Mo", n = {"available", "parentPreConsumed"}, s = {"J$0", "J$0"})
+@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollNode", f = "NestedScrollNode.kt", i = {0, 1}, l = {106, 107}, m = "onPreFling-QWom1Mo", n = {"$v$c$androidx-compose-ui-unit-Velocity$-available$0", "parentPreConsumed"}, s = {"J$0", "J$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class NestedScrollNode$onPreFling$1 extends ContinuationImpl {
     long J$0;
@@ -26,6 +26,6 @@ public final class NestedScrollNode$onPreFling$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo928onPreFlingQWom1Mo(0L, this);
+        return this.this$0.mo1008onPreFlingQWom1Mo(0L, this);
     }
 }

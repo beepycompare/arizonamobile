@@ -7,22 +7,22 @@ import java.util.Map;
 public final class Ok {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f625a;
+    public final String f708a;
     public final Jk b;
     public final Nk c;
     public final IBinaryDataHelper d;
 
     public Ok(Context context, R4 r4) {
         r4.a();
-        this.f625a = "session_extras";
+        this.f708a = "session_extras";
         this.b = new Jk();
         this.c = new Nk();
-        this.d = C0471oa.k().B().a(context, r4);
+        this.d = C0470oa.k().B().a(context, r4);
     }
 
     public final Map a() {
         try {
-            byte[] bArr = this.d.get(this.f625a);
+            byte[] bArr = this.d.get(this.f708a);
             if (bArr != null) {
                 if (!(bArr.length == 0)) {
                     return this.b.toModel(this.c.toState(bArr));

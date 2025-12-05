@@ -47,7 +47,7 @@ public abstract class ConstraintLayoutBaseScope {
     public ConstraintLayoutBaseScope(CLObject cLObject) {
         CLObject cLObject2;
         this.tasks = new ArrayList();
-        this.containerObject = (cLObject == null || (cLObject2 = cLObject.mo8477clone()) == null) ? new CLObject(new char[0]) : cLObject2;
+        this.containerObject = (cLObject == null || (cLObject2 = cLObject.mo8739clone()) == null) ? new CLObject(new char[0]) : cLObject2;
         this.HelpersStartId = 1000;
         this.helperId = 1000;
     }
@@ -326,26 +326,26 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: createGuidelineFromStart-0680j_4  reason: not valid java name */
-    public final VerticalAnchor m8313createGuidelineFromStart0680j_4(float f) {
+    public final VerticalAnchor m8575createGuidelineFromStart0680j_4(float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         LayoutReferenceImpl layoutReferenceImpl2 = layoutReferenceImpl;
         CLObject asCLContainer$constraintlayout_compose_release = asCLContainer$constraintlayout_compose_release(layoutReferenceImpl2);
         asCLContainer$constraintlayout_compose_release.putString("type", "vGuideline");
         asCLContainer$constraintlayout_compose_release.putNumber(TtmlNode.START, f);
         updateHelpersHashCode(1);
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createGuidelineFromAbsoluteLeft-0680j_4  reason: not valid java name */
-    public final VerticalAnchor m8309createGuidelineFromAbsoluteLeft0680j_4(float f) {
+    public final VerticalAnchor m8571createGuidelineFromAbsoluteLeft0680j_4(float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         LayoutReferenceImpl layoutReferenceImpl2 = layoutReferenceImpl;
         CLObject asCLContainer$constraintlayout_compose_release = asCLContainer$constraintlayout_compose_release(layoutReferenceImpl2);
         asCLContainer$constraintlayout_compose_release.putString("type", "vGuideline");
         asCLContainer$constraintlayout_compose_release.putNumber(TtmlNode.LEFT, f);
         updateHelpersHashCode(2);
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
@@ -375,26 +375,26 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: createGuidelineFromEnd-0680j_4  reason: not valid java name */
-    public final VerticalAnchor m8312createGuidelineFromEnd0680j_4(float f) {
+    public final VerticalAnchor m8574createGuidelineFromEnd0680j_4(float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         LayoutReferenceImpl layoutReferenceImpl2 = layoutReferenceImpl;
         CLObject asCLContainer$constraintlayout_compose_release = asCLContainer$constraintlayout_compose_release(layoutReferenceImpl2);
         asCLContainer$constraintlayout_compose_release.putString("type", "vGuideline");
         asCLContainer$constraintlayout_compose_release.putNumber(TtmlNode.END, f);
         updateHelpersHashCode(5);
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createGuidelineFromAbsoluteRight-0680j_4  reason: not valid java name */
-    public final VerticalAnchor m8310createGuidelineFromAbsoluteRight0680j_4(float f) {
+    public final VerticalAnchor m8572createGuidelineFromAbsoluteRight0680j_4(float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         LayoutReferenceImpl layoutReferenceImpl2 = layoutReferenceImpl;
         CLObject asCLContainer$constraintlayout_compose_release = asCLContainer$constraintlayout_compose_release(layoutReferenceImpl2);
         asCLContainer$constraintlayout_compose_release.putString("type", "vGuideline");
         asCLContainer$constraintlayout_compose_release.putNumber(TtmlNode.RIGHT, f);
         updateHelpersHashCode(6);
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
@@ -417,14 +417,14 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: createGuidelineFromTop-0680j_4  reason: not valid java name */
-    public final HorizontalAnchor m8314createGuidelineFromTop0680j_4(float f) {
+    public final HorizontalAnchor m8576createGuidelineFromTop0680j_4(float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         LayoutReferenceImpl layoutReferenceImpl2 = layoutReferenceImpl;
         CLObject asCLContainer$constraintlayout_compose_release = asCLContainer$constraintlayout_compose_release(layoutReferenceImpl2);
         asCLContainer$constraintlayout_compose_release.putString("type", "hGuideline");
         asCLContainer$constraintlayout_compose_release.putNumber(TtmlNode.START, f);
         updateHelpersHashCode(7);
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new HorizontalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
@@ -440,14 +440,14 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: createGuidelineFromBottom-0680j_4  reason: not valid java name */
-    public final HorizontalAnchor m8311createGuidelineFromBottom0680j_4(float f) {
+    public final HorizontalAnchor m8573createGuidelineFromBottom0680j_4(float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         LayoutReferenceImpl layoutReferenceImpl2 = layoutReferenceImpl;
         CLObject asCLContainer$constraintlayout_compose_release = asCLContainer$constraintlayout_compose_release(layoutReferenceImpl2);
         asCLContainer$constraintlayout_compose_release.putString("type", "hGuideline");
         asCLContainer$constraintlayout_compose_release.putNumber(TtmlNode.END, f);
         updateHelpersHashCode(9);
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new HorizontalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
@@ -456,7 +456,7 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: createStartBarrier-3ABfNKs  reason: not valid java name */
-    public final VerticalAnchor m8316createStartBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
+    public final VerticalAnchor m8578createStartBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         CLArray cLArray = new CLArray(new char[0]);
         for (LayoutReference layoutReference : layoutReferenceArr) {
@@ -472,12 +472,12 @@ public abstract class ConstraintLayoutBaseScope {
         for (LayoutReference layoutReference2 : layoutReferenceArr) {
             updateHelpersHashCode(layoutReference2.hashCode());
         }
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createAbsoluteLeftBarrier-3ABfNKs  reason: not valid java name */
-    public final VerticalAnchor m8300createAbsoluteLeftBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
+    public final VerticalAnchor m8562createAbsoluteLeftBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         CLArray cLArray = new CLArray(new char[0]);
         for (LayoutReference layoutReference : layoutReferenceArr) {
@@ -493,12 +493,12 @@ public abstract class ConstraintLayoutBaseScope {
         for (LayoutReference layoutReference2 : layoutReferenceArr) {
             updateHelpersHashCode(layoutReference2.hashCode());
         }
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createTopBarrier-3ABfNKs  reason: not valid java name */
-    public final HorizontalAnchor m8317createTopBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
+    public final HorizontalAnchor m8579createTopBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         CLArray cLArray = new CLArray(new char[0]);
         for (LayoutReference layoutReference : layoutReferenceArr) {
@@ -514,12 +514,12 @@ public abstract class ConstraintLayoutBaseScope {
         for (LayoutReference layoutReference2 : layoutReferenceArr) {
             updateHelpersHashCode(layoutReference2.hashCode());
         }
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new HorizontalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createEndBarrier-3ABfNKs  reason: not valid java name */
-    public final VerticalAnchor m8304createEndBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
+    public final VerticalAnchor m8566createEndBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         CLArray cLArray = new CLArray(new char[0]);
         for (LayoutReference layoutReference : layoutReferenceArr) {
@@ -535,12 +535,12 @@ public abstract class ConstraintLayoutBaseScope {
         for (LayoutReference layoutReference2 : layoutReferenceArr) {
             updateHelpersHashCode(layoutReference2.hashCode());
         }
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createAbsoluteRightBarrier-3ABfNKs  reason: not valid java name */
-    public final VerticalAnchor m8301createAbsoluteRightBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
+    public final VerticalAnchor m8563createAbsoluteRightBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         CLArray cLArray = new CLArray(new char[0]);
         for (LayoutReference layoutReference : layoutReferenceArr) {
@@ -556,12 +556,12 @@ public abstract class ConstraintLayoutBaseScope {
         for (LayoutReference layoutReference2 : layoutReferenceArr) {
             updateHelpersHashCode(layoutReference2.hashCode());
         }
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new VerticalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createBottomBarrier-3ABfNKs  reason: not valid java name */
-    public final HorizontalAnchor m8302createBottomBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
+    public final HorizontalAnchor m8564createBottomBarrier3ABfNKs(LayoutReference[] layoutReferenceArr, float f) {
         LayoutReferenceImpl layoutReferenceImpl = new LayoutReferenceImpl(Integer.valueOf(createHelperId()));
         CLArray cLArray = new CLArray(new char[0]);
         for (LayoutReference layoutReference : layoutReferenceArr) {
@@ -577,22 +577,22 @@ public abstract class ConstraintLayoutBaseScope {
         for (LayoutReference layoutReference2 : layoutReferenceArr) {
             updateHelpersHashCode(layoutReference2.hashCode());
         }
-        updateHelpersHashCode(Dp.m8002hashCodeimpl(f));
+        updateHelpersHashCode(Dp.m8264hashCodeimpl(f));
         return new HorizontalAnchor(layoutReferenceImpl.getId$constraintlayout_compose_release(), 0, layoutReferenceImpl2);
     }
 
     /* renamed from: createFlow-IkjhEj4  reason: not valid java name */
-    public final ConstrainedLayoutReference m8307createFlowIkjhEj4(LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f4, float f5, FlowStyle flowStyle, FlowStyle flowStyle2) {
-        return m8306createFlowFgo90cY((LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), z, f, f2, i, f3, f3, f3, f3, wrap, verticalAlign, horizontalAlign, f4, f5, flowStyle, flowStyle2);
+    public final ConstrainedLayoutReference m8569createFlowIkjhEj4(LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f4, float f5, FlowStyle flowStyle, FlowStyle flowStyle2) {
+        return m8568createFlowFgo90cY((LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), z, f, f2, i, f3, f3, f3, f3, wrap, verticalAlign, horizontalAlign, f4, f5, flowStyle, flowStyle2);
     }
 
     /* renamed from: createFlow-6oEtc9w  reason: not valid java name */
-    public final ConstrainedLayoutReference m8305createFlow6oEtc9w(LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f5, float f6, FlowStyle flowStyle, FlowStyle flowStyle2) {
-        return m8306createFlowFgo90cY((LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), z, f, f2, i, f3, f4, f3, f4, wrap, verticalAlign, horizontalAlign, f5, f6, flowStyle, flowStyle2);
+    public final ConstrainedLayoutReference m8567createFlow6oEtc9w(LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f5, float f6, FlowStyle flowStyle, FlowStyle flowStyle2) {
+        return m8568createFlowFgo90cY((LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), z, f, f2, i, f3, f4, f3, f4, wrap, verticalAlign, horizontalAlign, f5, f6, flowStyle, flowStyle2);
     }
 
     /* renamed from: createFlow-Fgo90cY  reason: not valid java name */
-    public final ConstrainedLayoutReference m8306createFlowFgo90cY(LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, float f5, float f6, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f7, float f8, FlowStyle flowStyle, FlowStyle flowStyle2) {
+    public final ConstrainedLayoutReference m8568createFlowFgo90cY(LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, float f5, float f6, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f7, float f8, FlowStyle flowStyle, FlowStyle flowStyle2) {
         ConstrainedLayoutReference constrainedLayoutReference = new ConstrainedLayoutReference(Integer.valueOf(createHelperId()));
         CLArray cLArray = new CLArray(new char[0]);
         for (LayoutReference layoutReference : layoutReferenceArr) {
@@ -629,23 +629,23 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: createRow-lG28NQ4  reason: not valid java name */
-    public final ConstrainedLayoutReference m8315createRowlG28NQ4(LayoutReference[] layoutReferenceArr, float f, float[] fArr) {
+    public final ConstrainedLayoutReference m8577createRowlG28NQ4(LayoutReference[] layoutReferenceArr, float f, float[] fArr) {
         if (!(fArr.length == 0) && layoutReferenceArr.length != fArr.length) {
             throw new IllegalArgumentException("Number of weights (" + fArr.length + ") should match number of elements (" + layoutReferenceArr.length + ").");
         }
-        return m8293createGridHu23Yyw$default(this, (LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), 1, 0, false, 0.0f, f, null, fArr, null, null, 0, 1880, null);
+        return m8555createGridHu23Yyw$default(this, (LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), 1, 0, false, 0.0f, f, null, fArr, null, null, 0, 1880, null);
     }
 
     /* renamed from: createColumn-lG28NQ4  reason: not valid java name */
-    public final ConstrainedLayoutReference m8303createColumnlG28NQ4(LayoutReference[] layoutReferenceArr, float f, float[] fArr) {
+    public final ConstrainedLayoutReference m8565createColumnlG28NQ4(LayoutReference[] layoutReferenceArr, float f, float[] fArr) {
         if (!(fArr.length == 0) && layoutReferenceArr.length != fArr.length) {
             throw new IllegalArgumentException("Number of weights (" + fArr.length + ") should match number of elements (" + layoutReferenceArr.length + ").");
         }
-        return m8293createGridHu23Yyw$default(this, (LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), 0, 1, false, f, 0.0f, fArr, null, null, null, 0, 1960, null);
+        return m8555createGridHu23Yyw$default(this, (LayoutReference[]) Arrays.copyOf(layoutReferenceArr, layoutReferenceArr.length), 0, 1, false, f, 0.0f, fArr, null, null, null, 0, 1960, null);
     }
 
     /* renamed from: createGrid-Hu23Yyw  reason: not valid java name */
-    public final ConstrainedLayoutReference m8308createGridHu23Yyw(LayoutReference[] layoutReferenceArr, int i, int i2, boolean z, float f, float f2, float[] fArr, float[] fArr2, Skip[] skipArr, Span[] spanArr, int i3) {
+    public final ConstrainedLayoutReference m8570createGridHu23Yyw(LayoutReference[] layoutReferenceArr, int i, int i2, boolean z, float f, float f2, float[] fArr, float[] fArr2, Skip[] skipArr, Span[] spanArr, int i3) {
         CLArray cLArray;
         String str;
         String str2;
@@ -678,22 +678,22 @@ public abstract class ConstraintLayoutBaseScope {
         String joinToString$default = !(skipArr.length == 0) ? ArraysKt.joinToString$default(skipArr, StringUtils.COMMA, (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1<Skip, CharSequence>() { // from class: androidx.constraintlayout.compose.ConstraintLayoutBaseScope$createGrid$2
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ CharSequence invoke(Skip skip) {
-                return m8321invokefXgvMDs(skip.m8453unboximpl());
+                return m8583invokefXgvMDs(skip.m8715unboximpl());
             }
 
             /* renamed from: invoke-fXgvMDs  reason: not valid java name */
-            public final CharSequence m8321invokefXgvMDs(String str4) {
+            public final CharSequence m8583invokefXgvMDs(String str4) {
                 return str4;
             }
         }, 30, (Object) null) : "";
         String joinToString$default2 = spanArr.length == 0 ? "" : ArraysKt.joinToString$default(spanArr, StringUtils.COMMA, (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1<Span, CharSequence>() { // from class: androidx.constraintlayout.compose.ConstraintLayoutBaseScope$createGrid$3
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ CharSequence invoke(Span span) {
-                return m8322invoke56oDYsA(span.m8462unboximpl());
+                return m8584invoke56oDYsA(span.m8724unboximpl());
             }
 
             /* renamed from: invoke-56oDYsA  reason: not valid java name */
-            public final CharSequence m8322invoke56oDYsA(String str4) {
+            public final CharSequence m8584invoke56oDYsA(String str4) {
                 return str4;
             }
         }, 30, (Object) null);
@@ -741,10 +741,10 @@ public abstract class ConstraintLayoutBaseScope {
                 from = new CLArray(new char[0]);
                 from.add(CLString.from(layoutReference.getId$constraintlayout_compose_release().toString()));
                 from.add(new CLNumber(chainParams.getWeight()));
-                from.add(new CLNumber(chainParams.m8267getStartMarginD9Ej5fM()));
-                from.add(new CLNumber(chainParams.m8265getEndMarginD9Ej5fM()));
-                from.add(new CLNumber(chainParams.m8266getStartGoneMarginD9Ej5fM()));
-                from.add(new CLNumber(chainParams.m8264getEndGoneMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8529getStartMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8527getEndMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8528getStartGoneMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8526getEndGoneMarginD9Ej5fM()));
             } else {
                 from = CLString.from(layoutReference.getId$constraintlayout_compose_release().toString());
             }
@@ -794,10 +794,10 @@ public abstract class ConstraintLayoutBaseScope {
                 from = new CLArray(new char[0]);
                 from.add(CLString.from(layoutReference.getId$constraintlayout_compose_release().toString()));
                 from.add(new CLNumber(chainParams.getWeight()));
-                from.add(new CLNumber(chainParams.m8269getTopMarginD9Ej5fM()));
-                from.add(new CLNumber(chainParams.m8263getBottomMarginD9Ej5fM()));
-                from.add(new CLNumber(chainParams.m8268getTopGoneMarginD9Ej5fM()));
-                from.add(new CLNumber(chainParams.m8262getBottomGoneMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8531getTopMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8525getBottomMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8530getTopGoneMarginD9Ej5fM()));
+                from.add(new CLNumber(chainParams.m8524getBottomGoneMarginD9Ej5fM()));
             } else {
                 from = CLString.from(layoutReference.getId$constraintlayout_compose_release().toString());
             }
@@ -820,7 +820,7 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: withChainParams-ouYQatA  reason: not valid java name */
-    public final LayoutReference m8318withChainParamsouYQatA(LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9) {
+    public final LayoutReference m8580withChainParamsouYQatA(LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9) {
         layoutReference.setHelperParams$constraintlayout_compose_release(new ChainParams(f, f2, f3, f4, f5, f6, f7, f8, f9, null));
         return layoutReference;
     }
@@ -854,172 +854,172 @@ public abstract class ConstraintLayoutBaseScope {
     }
 
     /* renamed from: createStartBarrier-3ABfNKs$default  reason: not valid java name */
-    public static /* synthetic */ VerticalAnchor m8295createStartBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
+    public static /* synthetic */ VerticalAnchor m8557createStartBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
-            return constraintLayoutBaseScope.m8316createStartBarrier3ABfNKs(layoutReferenceArr, f);
+            return constraintLayoutBaseScope.m8578createStartBarrier3ABfNKs(layoutReferenceArr, f);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createStartBarrier-3ABfNKs");
     }
 
     /* renamed from: createAbsoluteLeftBarrier-3ABfNKs$default  reason: not valid java name */
-    public static /* synthetic */ VerticalAnchor m8285createAbsoluteLeftBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
+    public static /* synthetic */ VerticalAnchor m8547createAbsoluteLeftBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
-            return constraintLayoutBaseScope.m8300createAbsoluteLeftBarrier3ABfNKs(layoutReferenceArr, f);
+            return constraintLayoutBaseScope.m8562createAbsoluteLeftBarrier3ABfNKs(layoutReferenceArr, f);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createAbsoluteLeftBarrier-3ABfNKs");
     }
 
     /* renamed from: createTopBarrier-3ABfNKs$default  reason: not valid java name */
-    public static /* synthetic */ HorizontalAnchor m8296createTopBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
+    public static /* synthetic */ HorizontalAnchor m8558createTopBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
-            return constraintLayoutBaseScope.m8317createTopBarrier3ABfNKs(layoutReferenceArr, f);
+            return constraintLayoutBaseScope.m8579createTopBarrier3ABfNKs(layoutReferenceArr, f);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createTopBarrier-3ABfNKs");
     }
 
     /* renamed from: createEndBarrier-3ABfNKs$default  reason: not valid java name */
-    public static /* synthetic */ VerticalAnchor m8289createEndBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
+    public static /* synthetic */ VerticalAnchor m8551createEndBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
-            return constraintLayoutBaseScope.m8304createEndBarrier3ABfNKs(layoutReferenceArr, f);
+            return constraintLayoutBaseScope.m8566createEndBarrier3ABfNKs(layoutReferenceArr, f);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createEndBarrier-3ABfNKs");
     }
 
     /* renamed from: createAbsoluteRightBarrier-3ABfNKs$default  reason: not valid java name */
-    public static /* synthetic */ VerticalAnchor m8286createAbsoluteRightBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
+    public static /* synthetic */ VerticalAnchor m8548createAbsoluteRightBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
-            return constraintLayoutBaseScope.m8301createAbsoluteRightBarrier3ABfNKs(layoutReferenceArr, f);
+            return constraintLayoutBaseScope.m8563createAbsoluteRightBarrier3ABfNKs(layoutReferenceArr, f);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createAbsoluteRightBarrier-3ABfNKs");
     }
 
     /* renamed from: createBottomBarrier-3ABfNKs$default  reason: not valid java name */
-    public static /* synthetic */ HorizontalAnchor m8287createBottomBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
+    public static /* synthetic */ HorizontalAnchor m8549createBottomBarrier3ABfNKs$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
-            return constraintLayoutBaseScope.m8302createBottomBarrier3ABfNKs(layoutReferenceArr, f);
+            return constraintLayoutBaseScope.m8564createBottomBarrier3ABfNKs(layoutReferenceArr, f);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createBottomBarrier-3ABfNKs");
     }
 
     /* renamed from: createFlow-IkjhEj4$default  reason: not valid java name */
-    public static /* synthetic */ ConstrainedLayoutReference m8292createFlowIkjhEj4$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f4, float f5, FlowStyle flowStyle, FlowStyle flowStyle2, int i2, Object obj) {
+    public static /* synthetic */ ConstrainedLayoutReference m8554createFlowIkjhEj4$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f4, float f5, FlowStyle flowStyle, FlowStyle flowStyle2, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 2) != 0) {
                 z = false;
             }
             if ((i2 & 4) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
-            return constraintLayoutBaseScope.m8307createFlowIkjhEj4(layoutReferenceArr, z, f, (i2 & 8) != 0 ? Dp.m7996constructorimpl(0) : f2, (i2 & 16) != 0 ? 0 : i, (i2 & 32) != 0 ? Dp.m7996constructorimpl(0) : f3, (i2 & 64) != 0 ? Wrap.Companion.getNone() : wrap, (i2 & 128) != 0 ? VerticalAlign.Companion.getCenter() : verticalAlign, (i2 & 256) != 0 ? HorizontalAlign.Companion.getCenter() : horizontalAlign, (i2 & 512) != 0 ? 0.0f : f4, (i2 & 1024) == 0 ? f5 : 0.0f, (i2 & 2048) != 0 ? FlowStyle.Companion.getPacked() : flowStyle, (i2 & 4096) != 0 ? FlowStyle.Companion.getPacked() : flowStyle2);
+            return constraintLayoutBaseScope.m8569createFlowIkjhEj4(layoutReferenceArr, z, f, (i2 & 8) != 0 ? Dp.m8258constructorimpl(0) : f2, (i2 & 16) != 0 ? 0 : i, (i2 & 32) != 0 ? Dp.m8258constructorimpl(0) : f3, (i2 & 64) != 0 ? Wrap.Companion.getNone() : wrap, (i2 & 128) != 0 ? VerticalAlign.Companion.getCenter() : verticalAlign, (i2 & 256) != 0 ? HorizontalAlign.Companion.getCenter() : horizontalAlign, (i2 & 512) != 0 ? 0.0f : f4, (i2 & 1024) == 0 ? f5 : 0.0f, (i2 & 2048) != 0 ? FlowStyle.Companion.getPacked() : flowStyle, (i2 & 4096) != 0 ? FlowStyle.Companion.getPacked() : flowStyle2);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createFlow-IkjhEj4");
     }
 
     /* renamed from: createFlow-6oEtc9w$default  reason: not valid java name */
-    public static /* synthetic */ ConstrainedLayoutReference m8290createFlow6oEtc9w$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f5, float f6, FlowStyle flowStyle, FlowStyle flowStyle2, int i2, Object obj) {
+    public static /* synthetic */ ConstrainedLayoutReference m8552createFlow6oEtc9w$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f5, float f6, FlowStyle flowStyle, FlowStyle flowStyle2, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 2) != 0) {
                 z = false;
             }
-            return constraintLayoutBaseScope.m8305createFlow6oEtc9w(layoutReferenceArr, z, (i2 & 4) != 0 ? Dp.m7996constructorimpl(0) : f, (i2 & 8) != 0 ? Dp.m7996constructorimpl(0) : f2, (i2 & 16) != 0 ? 0 : i, (i2 & 32) != 0 ? Dp.m7996constructorimpl(0) : f3, (i2 & 64) != 0 ? Dp.m7996constructorimpl(0) : f4, (i2 & 128) != 0 ? Wrap.Companion.getNone() : wrap, (i2 & 256) != 0 ? VerticalAlign.Companion.getCenter() : verticalAlign, (i2 & 512) != 0 ? HorizontalAlign.Companion.getCenter() : horizontalAlign, (i2 & 1024) != 0 ? 0.0f : f5, (i2 & 2048) == 0 ? f6 : 0.0f, (i2 & 4096) != 0 ? FlowStyle.Companion.getPacked() : flowStyle, (i2 & 8192) != 0 ? FlowStyle.Companion.getPacked() : flowStyle2);
+            return constraintLayoutBaseScope.m8567createFlow6oEtc9w(layoutReferenceArr, z, (i2 & 4) != 0 ? Dp.m8258constructorimpl(0) : f, (i2 & 8) != 0 ? Dp.m8258constructorimpl(0) : f2, (i2 & 16) != 0 ? 0 : i, (i2 & 32) != 0 ? Dp.m8258constructorimpl(0) : f3, (i2 & 64) != 0 ? Dp.m8258constructorimpl(0) : f4, (i2 & 128) != 0 ? Wrap.Companion.getNone() : wrap, (i2 & 256) != 0 ? VerticalAlign.Companion.getCenter() : verticalAlign, (i2 & 512) != 0 ? HorizontalAlign.Companion.getCenter() : horizontalAlign, (i2 & 1024) != 0 ? 0.0f : f5, (i2 & 2048) == 0 ? f6 : 0.0f, (i2 & 4096) != 0 ? FlowStyle.Companion.getPacked() : flowStyle, (i2 & 8192) != 0 ? FlowStyle.Companion.getPacked() : flowStyle2);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createFlow-6oEtc9w");
     }
 
     /* renamed from: createFlow-Fgo90cY$default  reason: not valid java name */
-    public static /* synthetic */ ConstrainedLayoutReference m8291createFlowFgo90cY$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, float f5, float f6, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f7, float f8, FlowStyle flowStyle, FlowStyle flowStyle2, int i2, Object obj) {
+    public static /* synthetic */ ConstrainedLayoutReference m8553createFlowFgo90cY$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, boolean z, float f, float f2, int i, float f3, float f4, float f5, float f6, Wrap wrap, VerticalAlign verticalAlign, HorizontalAlign horizontalAlign, float f7, float f8, FlowStyle flowStyle, FlowStyle flowStyle2, int i2, Object obj) {
         if (obj == null) {
-            return constraintLayoutBaseScope.m8306createFlowFgo90cY(layoutReferenceArr, (i2 & 2) != 0 ? false : z, (i2 & 4) != 0 ? Dp.m7996constructorimpl(0) : f, (i2 & 8) != 0 ? Dp.m7996constructorimpl(0) : f2, (i2 & 16) != 0 ? 0 : i, (i2 & 32) != 0 ? Dp.m7996constructorimpl(0) : f3, (i2 & 64) != 0 ? Dp.m7996constructorimpl(0) : f4, (i2 & 128) != 0 ? Dp.m7996constructorimpl(0) : f5, (i2 & 256) != 0 ? Dp.m7996constructorimpl(0) : f6, (i2 & 512) != 0 ? Wrap.Companion.getNone() : wrap, (i2 & 1024) != 0 ? VerticalAlign.Companion.getCenter() : verticalAlign, (i2 & 2048) != 0 ? HorizontalAlign.Companion.getCenter() : horizontalAlign, (i2 & 4096) != 0 ? 0.0f : f7, (i2 & 8192) == 0 ? f8 : 0.0f, (i2 & 16384) != 0 ? FlowStyle.Companion.getPacked() : flowStyle, (i2 & 32768) != 0 ? FlowStyle.Companion.getPacked() : flowStyle2);
+            return constraintLayoutBaseScope.m8568createFlowFgo90cY(layoutReferenceArr, (i2 & 2) != 0 ? false : z, (i2 & 4) != 0 ? Dp.m8258constructorimpl(0) : f, (i2 & 8) != 0 ? Dp.m8258constructorimpl(0) : f2, (i2 & 16) != 0 ? 0 : i, (i2 & 32) != 0 ? Dp.m8258constructorimpl(0) : f3, (i2 & 64) != 0 ? Dp.m8258constructorimpl(0) : f4, (i2 & 128) != 0 ? Dp.m8258constructorimpl(0) : f5, (i2 & 256) != 0 ? Dp.m8258constructorimpl(0) : f6, (i2 & 512) != 0 ? Wrap.Companion.getNone() : wrap, (i2 & 1024) != 0 ? VerticalAlign.Companion.getCenter() : verticalAlign, (i2 & 2048) != 0 ? HorizontalAlign.Companion.getCenter() : horizontalAlign, (i2 & 4096) != 0 ? 0.0f : f7, (i2 & 8192) == 0 ? f8 : 0.0f, (i2 & 16384) != 0 ? FlowStyle.Companion.getPacked() : flowStyle, (i2 & 32768) != 0 ? FlowStyle.Companion.getPacked() : flowStyle2);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createFlow-Fgo90cY");
     }
 
     /* renamed from: createRow-lG28NQ4$default  reason: not valid java name */
-    public static /* synthetic */ ConstrainedLayoutReference m8294createRowlG28NQ4$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, float[] fArr, int i, Object obj) {
+    public static /* synthetic */ ConstrainedLayoutReference m8556createRowlG28NQ4$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, float[] fArr, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
             if ((i & 4) != 0) {
                 fArr = new float[0];
             }
-            return constraintLayoutBaseScope.m8315createRowlG28NQ4(layoutReferenceArr, f, fArr);
+            return constraintLayoutBaseScope.m8577createRowlG28NQ4(layoutReferenceArr, f, fArr);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createRow-lG28NQ4");
     }
 
     /* renamed from: createColumn-lG28NQ4$default  reason: not valid java name */
-    public static /* synthetic */ ConstrainedLayoutReference m8288createColumnlG28NQ4$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, float[] fArr, int i, Object obj) {
+    public static /* synthetic */ ConstrainedLayoutReference m8550createColumnlG28NQ4$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, float f, float[] fArr, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                f = Dp.m7996constructorimpl(0);
+                f = Dp.m8258constructorimpl(0);
             }
             if ((i & 4) != 0) {
                 fArr = new float[0];
             }
-            return constraintLayoutBaseScope.m8303createColumnlG28NQ4(layoutReferenceArr, f, fArr);
+            return constraintLayoutBaseScope.m8565createColumnlG28NQ4(layoutReferenceArr, f, fArr);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createColumn-lG28NQ4");
     }
 
     /* renamed from: createGrid-Hu23Yyw$default  reason: not valid java name */
-    public static /* synthetic */ ConstrainedLayoutReference m8293createGridHu23Yyw$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, int i, int i2, boolean z, float f, float f2, float[] fArr, float[] fArr2, Skip[] skipArr, Span[] spanArr, int i3, int i4, Object obj) {
+    public static /* synthetic */ ConstrainedLayoutReference m8555createGridHu23Yyw$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference[] layoutReferenceArr, int i, int i2, boolean z, float f, float f2, float[] fArr, float[] fArr2, Skip[] skipArr, Span[] spanArr, int i3, int i4, Object obj) {
         if (obj == null) {
-            return constraintLayoutBaseScope.m8308createGridHu23Yyw(layoutReferenceArr, i, i2, (i4 & 8) != 0 ? true : z, (i4 & 16) != 0 ? Dp.m7996constructorimpl(0) : f, (i4 & 32) != 0 ? Dp.m7996constructorimpl(0) : f2, (i4 & 64) != 0 ? new float[0] : fArr, (i4 & 128) != 0 ? new float[0] : fArr2, (i4 & 256) != 0 ? new Skip[0] : skipArr, (i4 & 512) != 0 ? new Span[0] : spanArr, (i4 & 1024) != 0 ? GridFlag.Companion.m8367getNonedTRCCdc() : i3);
+            return constraintLayoutBaseScope.m8570createGridHu23Yyw(layoutReferenceArr, i, i2, (i4 & 8) != 0 ? true : z, (i4 & 16) != 0 ? Dp.m8258constructorimpl(0) : f, (i4 & 32) != 0 ? Dp.m8258constructorimpl(0) : f2, (i4 & 64) != 0 ? new float[0] : fArr, (i4 & 128) != 0 ? new float[0] : fArr2, (i4 & 256) != 0 ? new Skip[0] : skipArr, (i4 & 512) != 0 ? new Span[0] : spanArr, (i4 & 1024) != 0 ? GridFlag.Companion.m8629getNonedTRCCdc() : i3);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: createGrid-Hu23Yyw");
     }
 
     /* renamed from: withChainParams-ouYQatA$default  reason: not valid java name */
-    public static /* synthetic */ LayoutReference m8297withChainParamsouYQatA$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, int i, Object obj) {
+    public static /* synthetic */ LayoutReference m8559withChainParamsouYQatA$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, int i, Object obj) {
         if (obj == null) {
-            return constraintLayoutBaseScope.m8318withChainParamsouYQatA(layoutReference, (i & 1) != 0 ? Dp.m7996constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7996constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7996constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7996constructorimpl(0) : f4, (i & 16) != 0 ? Dp.m7996constructorimpl(0) : f5, (i & 32) != 0 ? Dp.m7996constructorimpl(0) : f6, (i & 64) != 0 ? Dp.m7996constructorimpl(0) : f7, (i & 128) != 0 ? Dp.m7996constructorimpl(0) : f8, (i & 256) != 0 ? Float.NaN : f9);
+            return constraintLayoutBaseScope.m8580withChainParamsouYQatA(layoutReference, (i & 1) != 0 ? Dp.m8258constructorimpl(0) : f, (i & 2) != 0 ? Dp.m8258constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m8258constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m8258constructorimpl(0) : f4, (i & 16) != 0 ? Dp.m8258constructorimpl(0) : f5, (i & 32) != 0 ? Dp.m8258constructorimpl(0) : f6, (i & 64) != 0 ? Dp.m8258constructorimpl(0) : f7, (i & 128) != 0 ? Dp.m8258constructorimpl(0) : f8, (i & 256) != 0 ? Float.NaN : f9);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: withChainParams-ouYQatA");
     }
 
     /* renamed from: withHorizontalChainParams-YLPp7PM  reason: not valid java name */
-    public final LayoutReference m8319withHorizontalChainParamsYLPp7PM(LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5) {
+    public final LayoutReference m8581withHorizontalChainParamsYLPp7PM(LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5) {
         float f6 = 0;
-        return m8318withChainParamsouYQatA(layoutReference, f, Dp.m7996constructorimpl(f6), f2, Dp.m7996constructorimpl(f6), f3, Dp.m7996constructorimpl(f6), f4, Dp.m7996constructorimpl(f6), f5);
+        return m8580withChainParamsouYQatA(layoutReference, f, Dp.m8258constructorimpl(f6), f2, Dp.m8258constructorimpl(f6), f3, Dp.m8258constructorimpl(f6), f4, Dp.m8258constructorimpl(f6), f5);
     }
 
     /* renamed from: withHorizontalChainParams-YLPp7PM$default  reason: not valid java name */
-    public static /* synthetic */ LayoutReference m8298withHorizontalChainParamsYLPp7PM$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
+    public static /* synthetic */ LayoutReference m8560withHorizontalChainParamsYLPp7PM$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
         if (obj == null) {
-            return constraintLayoutBaseScope.m8319withHorizontalChainParamsYLPp7PM(layoutReference, (i & 1) != 0 ? Dp.m7996constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7996constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7996constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7996constructorimpl(0) : f4, (i & 16) != 0 ? Float.NaN : f5);
+            return constraintLayoutBaseScope.m8581withHorizontalChainParamsYLPp7PM(layoutReference, (i & 1) != 0 ? Dp.m8258constructorimpl(0) : f, (i & 2) != 0 ? Dp.m8258constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m8258constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m8258constructorimpl(0) : f4, (i & 16) != 0 ? Float.NaN : f5);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: withHorizontalChainParams-YLPp7PM");
     }
 
     /* renamed from: withVerticalChainParams-YLPp7PM  reason: not valid java name */
-    public final LayoutReference m8320withVerticalChainParamsYLPp7PM(LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5) {
+    public final LayoutReference m8582withVerticalChainParamsYLPp7PM(LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5) {
         float f6 = 0;
-        return m8318withChainParamsouYQatA(layoutReference, Dp.m7996constructorimpl(f6), f, Dp.m7996constructorimpl(f6), f2, Dp.m7996constructorimpl(f6), f3, Dp.m7996constructorimpl(f6), f4, f5);
+        return m8580withChainParamsouYQatA(layoutReference, Dp.m8258constructorimpl(f6), f, Dp.m8258constructorimpl(f6), f2, Dp.m8258constructorimpl(f6), f3, Dp.m8258constructorimpl(f6), f4, f5);
     }
 
     /* renamed from: withVerticalChainParams-YLPp7PM$default  reason: not valid java name */
-    public static /* synthetic */ LayoutReference m8299withVerticalChainParamsYLPp7PM$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
+    public static /* synthetic */ LayoutReference m8561withVerticalChainParamsYLPp7PM$default(ConstraintLayoutBaseScope constraintLayoutBaseScope, LayoutReference layoutReference, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
         if (obj == null) {
-            return constraintLayoutBaseScope.m8320withVerticalChainParamsYLPp7PM(layoutReference, (i & 1) != 0 ? Dp.m7996constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7996constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7996constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7996constructorimpl(0) : f4, (i & 16) != 0 ? Float.NaN : f5);
+            return constraintLayoutBaseScope.m8582withVerticalChainParamsYLPp7PM(layoutReference, (i & 1) != 0 ? Dp.m8258constructorimpl(0) : f, (i & 2) != 0 ? Dp.m8258constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m8258constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m8258constructorimpl(0) : f4, (i & 16) != 0 ? Float.NaN : f5);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: withVerticalChainParams-YLPp7PM");
     }

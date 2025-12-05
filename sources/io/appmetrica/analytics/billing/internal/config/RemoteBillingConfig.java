@@ -8,11 +8,11 @@ import kotlin.Metadata;
 public final class RemoteBillingConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f235a;
+    private final boolean f318a;
     private final BillingConfig b;
 
     public RemoteBillingConfig(boolean z, BillingConfig billingConfig) {
-        this.f235a = z;
+        this.f318a = z;
         this.b = billingConfig;
     }
 
@@ -21,14 +21,14 @@ public final class RemoteBillingConfig {
     }
 
     public final boolean getEnabled() {
-        return this.f235a;
+        return this.f318a;
     }
 
     public String toString() {
-        return "RemoteBillingConfig(enabled=" + this.f235a + ", config=" + this.b + ')';
+        return "RemoteBillingConfig(enabled=" + this.f318a + ", config=" + this.b + ')';
     }
 
     public RemoteBillingConfig() {
-        this(new t().f224a, new BillingConfig());
+        this(new t().f307a, new BillingConfig());
     }
 }

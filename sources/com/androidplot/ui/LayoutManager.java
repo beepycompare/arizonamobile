@@ -8,7 +8,6 @@ import android.graphics.Region;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.core.view.InputDeviceCompat;
-import androidx.core.view.ViewCompat;
 import com.androidplot.ui.widget.Widget;
 import com.androidplot.util.DisplayDimensions;
 import com.androidplot.util.LinkedLayerList;
@@ -189,7 +188,7 @@ public class LayoutManager extends LinkedLayerList<Widget> implements View.OnTou
             this.outlineShadowPaint = paint;
             paint.setColor(-12303292);
             this.outlineShadowPaint.setStyle(Paint.Style.FILL);
-            this.outlineShadowPaint.setShadowLayer(3.0f, 5.0f, 5.0f, ViewCompat.MEASURED_STATE_MASK);
+            this.outlineShadowPaint.setShadowLayer(3.0f, 5.0f, 5.0f, -16777216);
         }
     }
 

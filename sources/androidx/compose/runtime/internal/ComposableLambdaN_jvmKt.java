@@ -32,7 +32,7 @@ public final class ComposableLambdaN_jvmKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-293456346, i3, -1, "androidx.compose.runtime.internal.rememberComposableLambdaN (ComposableLambdaN.jvm.kt:170)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1456298685, "CC(remember):ComposableLambdaN.jvm.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1456297117, "CC(remember):ComposableLambdaN.jvm.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new ComposableLambdaNImpl(i, z, i2);

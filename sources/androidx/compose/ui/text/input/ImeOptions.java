@@ -50,11 +50,11 @@ public final class ImeOptions {
     }
 
     public /* synthetic */ ImeOptions(boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, LocaleList localeList, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? false : z, (i4 & 2) != 0 ? KeyboardCapitalization.Companion.m7673getNoneIUNYP9k() : i, (i4 & 4) != 0 ? true : z2, (i4 & 8) != 0 ? KeyboardType.Companion.m7701getTextPjHm6EE() : i2, (i4 & 16) != 0 ? ImeAction.Companion.m7640getDefaulteUduSuo() : i3, (i4 & 32) != 0 ? null : platformImeOptions, (i4 & 64) != 0 ? LocaleList.Companion.getEmpty() : localeList, (DefaultConstructorMarker) null);
+        this((i4 & 1) != 0 ? false : z, (i4 & 2) != 0 ? KeyboardCapitalization.Companion.m7919getNoneIUNYP9k() : i, (i4 & 4) != 0 ? true : z2, (i4 & 8) != 0 ? KeyboardType.Companion.m7947getTextPjHm6EE() : i2, (i4 & 16) != 0 ? ImeAction.Companion.m7886getDefaulteUduSuo() : i3, (i4 & 32) != 0 ? null : platformImeOptions, (i4 & 64) != 0 ? LocaleList.Companion.getEmpty() : localeList, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: getCapitalization-IUNYP9k  reason: not valid java name */
-    public final int m7655getCapitalizationIUNYP9k() {
+    public final int m7901getCapitalizationIUNYP9k() {
         return this.capitalization;
     }
 
@@ -63,12 +63,12 @@ public final class ImeOptions {
     }
 
     /* renamed from: getKeyboardType-PjHm6EE  reason: not valid java name */
-    public final int m7657getKeyboardTypePjHm6EE() {
+    public final int m7903getKeyboardTypePjHm6EE() {
         return this.keyboardType;
     }
 
     /* renamed from: getImeAction-eUduSuo  reason: not valid java name */
-    public final int m7656getImeActioneUduSuo() {
+    public final int m7902getImeActioneUduSuo() {
         return this.imeAction;
     }
 
@@ -97,7 +97,7 @@ public final class ImeOptions {
     }
 
     public /* synthetic */ ImeOptions(boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? false : z, (i4 & 2) != 0 ? KeyboardCapitalization.Companion.m7673getNoneIUNYP9k() : i, (i4 & 4) != 0 ? true : z2, (i4 & 8) != 0 ? KeyboardType.Companion.m7701getTextPjHm6EE() : i2, (i4 & 16) != 0 ? ImeAction.Companion.m7640getDefaulteUduSuo() : i3, (i4 & 32) != 0 ? null : platformImeOptions, (DefaultConstructorMarker) null);
+        this((i4 & 1) != 0 ? false : z, (i4 & 2) != 0 ? KeyboardCapitalization.Companion.m7919getNoneIUNYP9k() : i, (i4 & 4) != 0 ? true : z2, (i4 & 8) != 0 ? KeyboardType.Companion.m7947getTextPjHm6EE() : i2, (i4 & 16) != 0 ? ImeAction.Companion.m7886getDefaulteUduSuo() : i3, (i4 & 32) != 0 ? null : platformImeOptions, (DefaultConstructorMarker) null);
     }
 
     private ImeOptions(boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions) {
@@ -105,7 +105,7 @@ public final class ImeOptions {
     }
 
     public /* synthetic */ ImeOptions(boolean z, int i, boolean z2, int i2, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? false : z, (i4 & 2) != 0 ? KeyboardCapitalization.Companion.m7673getNoneIUNYP9k() : i, (i4 & 4) != 0 ? true : z2, (i4 & 8) != 0 ? KeyboardType.Companion.m7701getTextPjHm6EE() : i2, (i4 & 16) != 0 ? ImeAction.Companion.m7640getDefaulteUduSuo() : i3, (DefaultConstructorMarker) null);
+        this((i4 & 1) != 0 ? false : z, (i4 & 2) != 0 ? KeyboardCapitalization.Companion.m7919getNoneIUNYP9k() : i, (i4 & 4) != 0 ? true : z2, (i4 & 8) != 0 ? KeyboardType.Companion.m7947getTextPjHm6EE() : i2, (i4 & 16) != 0 ? ImeAction.Companion.m7886getDefaulteUduSuo() : i3, (DefaultConstructorMarker) null);
     }
 
     private ImeOptions(boolean z, int i, boolean z2, int i2, int i3) {
@@ -113,7 +113,7 @@ public final class ImeOptions {
     }
 
     /* renamed from: copy-wBHncE4$default  reason: not valid java name */
-    public static /* synthetic */ ImeOptions m7651copywBHncE4$default(ImeOptions imeOptions, boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, LocaleList localeList, int i4, Object obj) {
+    public static /* synthetic */ ImeOptions m7897copywBHncE4$default(ImeOptions imeOptions, boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, LocaleList localeList, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             z = imeOptions.singleLine;
         }
@@ -139,16 +139,16 @@ public final class ImeOptions {
         LocaleList localeList2 = localeList;
         int i5 = i3;
         boolean z3 = z2;
-        return imeOptions.m7654copywBHncE4(z, i, z3, i2, i5, platformImeOptions2, localeList2);
+        return imeOptions.m7900copywBHncE4(z, i, z3, i2, i5, platformImeOptions2, localeList2);
     }
 
     /* renamed from: copy-wBHncE4  reason: not valid java name */
-    public final ImeOptions m7654copywBHncE4(boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, LocaleList localeList) {
+    public final ImeOptions m7900copywBHncE4(boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, LocaleList localeList) {
         return new ImeOptions(z, i, z2, i2, i3, platformImeOptions, localeList, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-YTHSh70$default  reason: not valid java name */
-    public static /* synthetic */ ImeOptions m7649copyYTHSh70$default(ImeOptions imeOptions, boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, int i4, Object obj) {
+    public static /* synthetic */ ImeOptions m7895copyYTHSh70$default(ImeOptions imeOptions, boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             z = imeOptions.singleLine;
         }
@@ -169,17 +169,17 @@ public final class ImeOptions {
         }
         int i5 = i3;
         PlatformImeOptions platformImeOptions2 = platformImeOptions;
-        return imeOptions.m7652copyYTHSh70(z, i, z2, i2, i5, platformImeOptions2);
+        return imeOptions.m7898copyYTHSh70(z, i, z2, i2, i5, platformImeOptions2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Please use the new copy function that takes optional hintLocales parameter.")
     /* renamed from: copy-YTHSh70  reason: not valid java name */
-    public final /* synthetic */ ImeOptions m7652copyYTHSh70(boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions) {
+    public final /* synthetic */ ImeOptions m7898copyYTHSh70(boolean z, int i, boolean z2, int i2, int i3, PlatformImeOptions platformImeOptions) {
         return new ImeOptions(z, i, z2, i2, i3, platformImeOptions, this.hintLocales, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-uxg59PA$default  reason: not valid java name */
-    public static /* synthetic */ ImeOptions m7650copyuxg59PA$default(ImeOptions imeOptions, boolean z, int i, boolean z2, int i2, int i3, int i4, Object obj) {
+    public static /* synthetic */ ImeOptions m7896copyuxg59PA$default(ImeOptions imeOptions, boolean z, int i, boolean z2, int i2, int i3, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             z = imeOptions.singleLine;
         }
@@ -197,12 +197,12 @@ public final class ImeOptions {
         }
         int i5 = i3;
         boolean z3 = z2;
-        return imeOptions.m7653copyuxg59PA(z, i, z3, i2, i5);
+        return imeOptions.m7899copyuxg59PA(z, i, z3, i2, i5);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Please use the new copy function that takes optional platformImeOptions parameter.")
     /* renamed from: copy-uxg59PA  reason: not valid java name */
-    public final /* synthetic */ ImeOptions m7653copyuxg59PA(boolean z, int i, boolean z2, int i2, int i3) {
+    public final /* synthetic */ ImeOptions m7899copyuxg59PA(boolean z, int i, boolean z2, int i2, int i3) {
         return new ImeOptions(z, i, z2, i2, i3, this.platformImeOptions, this.hintLocales, (DefaultConstructorMarker) null);
     }
 
@@ -212,18 +212,18 @@ public final class ImeOptions {
         }
         if (obj instanceof ImeOptions) {
             ImeOptions imeOptions = (ImeOptions) obj;
-            return this.singleLine == imeOptions.singleLine && KeyboardCapitalization.m7663equalsimpl0(this.capitalization, imeOptions.capitalization) && this.autoCorrect == imeOptions.autoCorrect && KeyboardType.m7680equalsimpl0(this.keyboardType, imeOptions.keyboardType) && ImeAction.m7627equalsimpl0(this.imeAction, imeOptions.imeAction) && Intrinsics.areEqual(this.platformImeOptions, imeOptions.platformImeOptions) && Intrinsics.areEqual(this.hintLocales, imeOptions.hintLocales);
+            return this.singleLine == imeOptions.singleLine && KeyboardCapitalization.m7909equalsimpl0(this.capitalization, imeOptions.capitalization) && this.autoCorrect == imeOptions.autoCorrect && KeyboardType.m7926equalsimpl0(this.keyboardType, imeOptions.keyboardType) && ImeAction.m7873equalsimpl0(this.imeAction, imeOptions.imeAction) && Intrinsics.areEqual(this.platformImeOptions, imeOptions.platformImeOptions) && Intrinsics.areEqual(this.hintLocales, imeOptions.hintLocales);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((Boolean.hashCode(this.singleLine) * 31) + KeyboardCapitalization.m7664hashCodeimpl(this.capitalization)) * 31) + Boolean.hashCode(this.autoCorrect)) * 31) + KeyboardType.m7681hashCodeimpl(this.keyboardType)) * 31) + ImeAction.m7628hashCodeimpl(this.imeAction)) * 31;
+        int hashCode = ((((((((Boolean.hashCode(this.singleLine) * 31) + KeyboardCapitalization.m7910hashCodeimpl(this.capitalization)) * 31) + Boolean.hashCode(this.autoCorrect)) * 31) + KeyboardType.m7927hashCodeimpl(this.keyboardType)) * 31) + ImeAction.m7874hashCodeimpl(this.imeAction)) * 31;
         PlatformImeOptions platformImeOptions = this.platformImeOptions;
         return ((hashCode + (platformImeOptions != null ? platformImeOptions.hashCode() : 0)) * 31) + this.hintLocales.hashCode();
     }
 
     public String toString() {
-        return "ImeOptions(singleLine=" + this.singleLine + ", capitalization=" + ((Object) KeyboardCapitalization.m7665toStringimpl(this.capitalization)) + ", autoCorrect=" + this.autoCorrect + ", keyboardType=" + ((Object) KeyboardType.m7682toStringimpl(this.keyboardType)) + ", imeAction=" + ((Object) ImeAction.m7629toStringimpl(this.imeAction)) + ", platformImeOptions=" + this.platformImeOptions + ", hintLocales=" + this.hintLocales + ')';
+        return "ImeOptions(singleLine=" + this.singleLine + ", capitalization=" + ((Object) KeyboardCapitalization.m7911toStringimpl(this.capitalization)) + ", autoCorrect=" + this.autoCorrect + ", keyboardType=" + ((Object) KeyboardType.m7928toStringimpl(this.keyboardType)) + ", imeAction=" + ((Object) ImeAction.m7875toStringimpl(this.imeAction)) + ", platformImeOptions=" + this.platformImeOptions + ", hintLocales=" + this.hintLocales + ')';
     }
 }

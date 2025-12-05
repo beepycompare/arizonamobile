@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager", f = "TextFieldSelectionManager.kt", i = {}, l = {777}, m = "updateClipboardEntry$foundation_release", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager", f = "TextFieldSelectionManager.kt", i = {}, l = {822}, m = "updateClipboardEntry$foundation", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$updateClipboardEntry$1 extends ContinuationImpl {
     Object L$0;
@@ -26,6 +26,6 @@ public final class TextFieldSelectionManager$updateClipboardEntry$1 extends Cont
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.updateClipboardEntry$foundation_release(this);
+        return this.this$0.updateClipboardEntry$foundation(this);
     }
 }

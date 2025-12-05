@@ -40,30 +40,30 @@ final class InstantTimeMark implements ComparableTimeMark {
 
     @Override // kotlin.time.TimeMark
     /* renamed from: elapsedNow-UwyO8pc */
-    public long mo11251elapsedNowUwyO8pc() {
-        return m11521saturatingDiff3nIYWDw(this.clock.now(), this.instant);
+    public long mo11546elapsedNowUwyO8pc() {
+        return m11816saturatingDiff3nIYWDw(this.clock.now(), this.instant);
     }
 
     @Override // kotlin.time.TimeMark
     /* renamed from: plus-LRDsOJo */
-    public ComparableTimeMark mo11254plusLRDsOJo(long j) {
-        return new InstantTimeMark(m11520saturatingAddHG0u8IE(this.instant, j), this.clock);
+    public ComparableTimeMark mo11549plusLRDsOJo(long j) {
+        return new InstantTimeMark(m11815saturatingAddHG0u8IE(this.instant, j), this.clock);
     }
 
     @Override // kotlin.time.TimeMark
     /* renamed from: minus-LRDsOJo */
-    public ComparableTimeMark mo11252minusLRDsOJo(long j) {
-        return new InstantTimeMark(m11520saturatingAddHG0u8IE(this.instant, Duration.m11305unaryMinusUwyO8pc(j)), this.clock);
+    public ComparableTimeMark mo11547minusLRDsOJo(long j) {
+        return new InstantTimeMark(m11815saturatingAddHG0u8IE(this.instant, Duration.m11600unaryMinusUwyO8pc(j)), this.clock);
     }
 
     @Override // kotlin.time.ComparableTimeMark
     /* renamed from: minus-5sfh64U  reason: not valid java name */
-    public long mo11253minusUwyO8pc(ComparableTimeMark other) {
+    public long mo11548minusUwyO8pc(ComparableTimeMark other) {
         Intrinsics.checkNotNullParameter(other, "other");
         if (other instanceof InstantTimeMark) {
             InstantTimeMark instantTimeMark = (InstantTimeMark) other;
             if (Intrinsics.areEqual(instantTimeMark.clock, this.clock)) {
-                return m11521saturatingDiff3nIYWDw(this.instant, instantTimeMark.instant);
+                return m11816saturatingDiff3nIYWDw(this.instant, instantTimeMark.instant);
             }
         }
         throw new IllegalArgumentException("Subtracting or comparing time marks from different time sources is not possible: " + this + " and " + other);
@@ -89,9 +89,9 @@ final class InstantTimeMark implements ComparableTimeMark {
 
     private final boolean isSaturated(Instant instant) {
         Duration.Companion companion = Duration.Companion;
-        if (!Intrinsics.areEqual(instant.m11361plusLRDsOJo(DurationKt.toDuration(1, DurationUnit.SECONDS)), instant)) {
+        if (!Intrinsics.areEqual(instant.m11656plusLRDsOJo(DurationKt.toDuration(1, DurationUnit.SECONDS)), instant)) {
             Duration.Companion companion2 = Duration.Companion;
-            if (!Intrinsics.areEqual(instant.m11361plusLRDsOJo(DurationKt.toDuration(-1, DurationUnit.SECONDS)), instant)) {
+            if (!Intrinsics.areEqual(instant.m11656plusLRDsOJo(DurationKt.toDuration(-1, DurationUnit.SECONDS)), instant)) {
                 return false;
             }
         }
@@ -99,26 +99,26 @@ final class InstantTimeMark implements ComparableTimeMark {
     }
 
     /* renamed from: saturatingAdd-HG0u8IE  reason: not valid java name */
-    private final Instant m11520saturatingAddHG0u8IE(Instant instant, long j) {
+    private final Instant m11815saturatingAddHG0u8IE(Instant instant, long j) {
         if (isSaturated(instant)) {
-            if (Duration.m11286isInfiniteimpl(j)) {
-                if (Duration.m11288isPositiveimpl(j) != (instant.compareTo(Instant.Companion.getDISTANT_FUTURE()) >= 0)) {
+            if (Duration.m11581isInfiniteimpl(j)) {
+                if (Duration.m11583isPositiveimpl(j) != (instant.compareTo(Instant.Companion.getDISTANT_FUTURE()) >= 0)) {
                     throw new IllegalArgumentException("Summing infinities of different signs");
                 }
             }
             return instant;
         }
-        return instant.m11361plusLRDsOJo(j);
+        return instant.m11656plusLRDsOJo(j);
     }
 
     /* renamed from: saturatingDiff-3nIYWDw  reason: not valid java name */
-    private final long m11521saturatingDiff3nIYWDw(Instant instant, Instant instant2) {
+    private final long m11816saturatingDiff3nIYWDw(Instant instant, Instant instant2) {
         if (Intrinsics.areEqual(instant, instant2)) {
-            return Duration.Companion.m11352getZEROUwyO8pc();
+            return Duration.Companion.m11647getZEROUwyO8pc();
         }
         if (isSaturated(instant) || isSaturated(instant2)) {
-            return Duration.m11291timesUwyO8pc(instant.m11360minusUwyO8pc(instant2), Double.POSITIVE_INFINITY);
+            return Duration.m11586timesUwyO8pc(instant.m11655minusUwyO8pc(instant2), Double.POSITIVE_INFINITY);
         }
-        return instant.m11360minusUwyO8pc(instant2);
+        return instant.m11655minusUwyO8pc(instant2);
     }
 }

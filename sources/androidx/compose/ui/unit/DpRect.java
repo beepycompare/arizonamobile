@@ -23,7 +23,7 @@ public final class DpRect {
     }
 
     /* renamed from: copy-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ DpRect m8068copya9UjIt4$default(DpRect dpRect, float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ DpRect m8330copya9UjIt4$default(DpRect dpRect, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
             f = dpRect.left;
         }
@@ -36,47 +36,47 @@ public final class DpRect {
         if ((i & 8) != 0) {
             f4 = dpRect.bottom;
         }
-        return dpRect.m8077copya9UjIt4(f, f2, f3, f4);
+        return dpRect.m8339copya9UjIt4(f, f2, f3, f4);
     }
 
     /* renamed from: getBottom-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8069getBottomD9Ej5fM$annotations() {
+    public static /* synthetic */ void m8331getBottomD9Ej5fM$annotations() {
     }
 
     /* renamed from: getLeft-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8070getLeftD9Ej5fM$annotations() {
+    public static /* synthetic */ void m8332getLeftD9Ej5fM$annotations() {
     }
 
     /* renamed from: getRight-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8071getRightD9Ej5fM$annotations() {
+    public static /* synthetic */ void m8333getRightD9Ej5fM$annotations() {
     }
 
     /* renamed from: getTop-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8072getTopD9Ej5fM$annotations() {
+    public static /* synthetic */ void m8334getTopD9Ej5fM$annotations() {
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m8073component1D9Ej5fM() {
+    public final float m8335component1D9Ej5fM() {
         return this.left;
     }
 
     /* renamed from: component2-D9Ej5fM  reason: not valid java name */
-    public final float m8074component2D9Ej5fM() {
+    public final float m8336component2D9Ej5fM() {
         return this.top;
     }
 
     /* renamed from: component3-D9Ej5fM  reason: not valid java name */
-    public final float m8075component3D9Ej5fM() {
+    public final float m8337component3D9Ej5fM() {
         return this.right;
     }
 
     /* renamed from: component4-D9Ej5fM  reason: not valid java name */
-    public final float m8076component4D9Ej5fM() {
+    public final float m8338component4D9Ej5fM() {
         return this.bottom;
     }
 
     /* renamed from: copy-a9UjIt4  reason: not valid java name */
-    public final DpRect m8077copya9UjIt4(float f, float f2, float f3, float f4) {
+    public final DpRect m8339copya9UjIt4(float f, float f2, float f3, float f4) {
         return new DpRect(f, f2, f3, f4, null);
     }
 
@@ -86,17 +86,17 @@ public final class DpRect {
         }
         if (obj instanceof DpRect) {
             DpRect dpRect = (DpRect) obj;
-            return Dp.m8001equalsimpl0(this.left, dpRect.left) && Dp.m8001equalsimpl0(this.top, dpRect.top) && Dp.m8001equalsimpl0(this.right, dpRect.right) && Dp.m8001equalsimpl0(this.bottom, dpRect.bottom);
+            return Dp.m8263equalsimpl0(this.left, dpRect.left) && Dp.m8263equalsimpl0(this.top, dpRect.top) && Dp.m8263equalsimpl0(this.right, dpRect.right) && Dp.m8263equalsimpl0(this.bottom, dpRect.bottom);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Dp.m8002hashCodeimpl(this.left) * 31) + Dp.m8002hashCodeimpl(this.top)) * 31) + Dp.m8002hashCodeimpl(this.right)) * 31) + Dp.m8002hashCodeimpl(this.bottom);
+        return (((((Dp.m8264hashCodeimpl(this.left) * 31) + Dp.m8264hashCodeimpl(this.top)) * 31) + Dp.m8264hashCodeimpl(this.right)) * 31) + Dp.m8264hashCodeimpl(this.bottom);
     }
 
     public String toString() {
-        return "DpRect(left=" + ((Object) Dp.m8007toStringimpl(this.left)) + ", top=" + ((Object) Dp.m8007toStringimpl(this.top)) + ", right=" + ((Object) Dp.m8007toStringimpl(this.right)) + ", bottom=" + ((Object) Dp.m8007toStringimpl(this.bottom)) + ')';
+        return "DpRect(left=" + ((Object) Dp.m8269toStringimpl(this.left)) + ", top=" + ((Object) Dp.m8269toStringimpl(this.top)) + ", right=" + ((Object) Dp.m8269toStringimpl(this.right)) + ", bottom=" + ((Object) Dp.m8269toStringimpl(this.bottom)) + ')';
     }
 
     private DpRect(float f, float f2, float f3, float f4) {
@@ -107,27 +107,27 @@ public final class DpRect {
     }
 
     /* renamed from: getLeft-D9Ej5fM  reason: not valid java name */
-    public final float m8079getLeftD9Ej5fM() {
+    public final float m8341getLeftD9Ej5fM() {
         return this.left;
     }
 
     /* renamed from: getTop-D9Ej5fM  reason: not valid java name */
-    public final float m8081getTopD9Ej5fM() {
+    public final float m8343getTopD9Ej5fM() {
         return this.top;
     }
 
     /* renamed from: getRight-D9Ej5fM  reason: not valid java name */
-    public final float m8080getRightD9Ej5fM() {
+    public final float m8342getRightD9Ej5fM() {
         return this.right;
     }
 
     /* renamed from: getBottom-D9Ej5fM  reason: not valid java name */
-    public final float m8078getBottomD9Ej5fM() {
+    public final float m8340getBottomD9Ej5fM() {
         return this.bottom;
     }
 
     private DpRect(long j, long j2) {
-        this(DpOffset.m8057getXD9Ej5fM(j), DpOffset.m8059getYD9Ej5fM(j), Dp.m7996constructorimpl(DpOffset.m8057getXD9Ej5fM(j) + DpSize.m8094getWidthD9Ej5fM(j2)), Dp.m7996constructorimpl(DpOffset.m8059getYD9Ej5fM(j) + DpSize.m8092getHeightD9Ej5fM(j2)), null);
+        this(DpOffset.m8319getXD9Ej5fM(j), DpOffset.m8321getYD9Ej5fM(j), Dp.m8258constructorimpl(DpOffset.m8319getXD9Ej5fM(j) + DpSize.m8356getWidthD9Ej5fM(j2)), Dp.m8258constructorimpl(DpOffset.m8321getYD9Ej5fM(j) + DpSize.m8354getHeightD9Ej5fM(j2)), null);
     }
 
     /* compiled from: Dp.kt */

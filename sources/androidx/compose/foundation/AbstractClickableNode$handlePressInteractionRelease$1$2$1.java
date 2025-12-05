@@ -2,6 +2,7 @@ package androidx.compose.foundation;
 
 import androidx.compose.foundation.interaction.MutableInteractionSource;
 import androidx.compose.foundation.interaction.PressInteraction;
+import com.arizona.game.BuildConfig;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -13,24 +14,24 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Clickable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionRelease$1$2$1", f = "Clickable.kt", i = {}, l = {1688}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionRelease$1$2$1", f = "Clickable.kt", i = {}, l = {BuildConfig.VERSION_CODE}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class AbstractClickableNode$handlePressInteractionRelease$1$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MutableInteractionSource $interactionSource;
-    final /* synthetic */ PressInteraction.Press $pressInteraction;
+    final /* synthetic */ PressInteraction.Press $it;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public AbstractClickableNode$handlePressInteractionRelease$1$2$1(PressInteraction.Press press, MutableInteractionSource mutableInteractionSource, Continuation<? super AbstractClickableNode$handlePressInteractionRelease$1$2$1> continuation) {
         super(2, continuation);
-        this.$pressInteraction = press;
+        this.$it = press;
         this.$interactionSource = mutableInteractionSource;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new AbstractClickableNode$handlePressInteractionRelease$1$2$1(this.$pressInteraction, this.$interactionSource, continuation);
+        return new AbstractClickableNode$handlePressInteractionRelease$1$2$1(this.$it, this.$interactionSource, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -44,7 +45,7 @@ final class AbstractClickableNode$handlePressInteractionRelease$1$2$1 extends Su
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            PressInteraction.Release release = new PressInteraction.Release(this.$pressInteraction);
+            PressInteraction.Release release = new PressInteraction.Release(this.$it);
             this.label = 1;
             if (this.$interactionSource.emit(release, this) == coroutine_suspended) {
                 return coroutine_suspended;

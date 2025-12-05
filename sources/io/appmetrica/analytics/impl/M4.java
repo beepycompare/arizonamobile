@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 public final class M4 extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final M4 f582a = new M4();
+    public static final M4 f665a = new M4();
 
     public M4() {
         super(0);

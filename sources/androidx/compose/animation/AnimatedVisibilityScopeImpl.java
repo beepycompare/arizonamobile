@@ -16,7 +16,7 @@ public final class AnimatedVisibilityScopeImpl implements AnimatedVisibilityScop
     public AnimatedVisibilityScopeImpl(Transition<EnterExitState> transition) {
         MutableState<IntSize> mutableStateOf$default;
         this.transition = transition;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8159boximpl(IntSize.Companion.m8172getZeroYbymL2g()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8421boximpl(IntSize.Companion.m8434getZeroYbymL2g()), null, 2, null);
         this.targetSize = mutableStateOf$default;
     }
 

@@ -32,7 +32,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CancellableContinuationImpl;
 /* compiled from: TransformedTextFieldState.kt */
-@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\r\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0001\u0018\u0000 `2\u00020\u0001:\u0002_`B3\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\n\u0010\u000bJ\u0010\u0010!\u001a\u00020\"2\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005J\u000e\u0010#\u001a\u00020\"2\u0006\u0010$\u001a\u00020%J\u0015\u0010&\u001a\u00020\"2\u0006\u0010'\u001a\u00020(¢\u0006\u0004\b)\u0010*J\u0015\u0010+\u001a\u00020\"2\u0006\u0010,\u001a\u00020(¢\u0006\u0004\b-\u0010*J\u001d\u0010.\u001a\u00020\"2\u0006\u0010/\u001a\u0002002\u0006\u0010'\u001a\u00020(¢\u0006\u0004\b1\u00102J\u000e\u00103\u001a\u00020\"2\u0006\u00104\u001a\u000205J\u0006\u00106\u001a\u00020\"J\u0006\u00107\u001a\u00020\"J1\u00108\u001a\u00020\"2\u0006\u00104\u001a\u0002052\u0006\u00109\u001a\u00020(2\b\b\u0002\u0010:\u001a\u00020;2\b\b\u0002\u0010<\u001a\u00020=¢\u0006\u0004\b>\u0010?J,\u0010@\u001a\u00020\"2\u0006\u00104\u001a\u0002052\b\b\u0002\u0010A\u001a\u00020=2\b\b\u0002\u0010:\u001a\u00020;2\b\b\u0002\u0010<\u001a\u00020=J\u0006\u0010B\u001a\u00020\"J\u0006\u0010C\u001a\u00020\"J\u0006\u0010D\u001a\u00020\"J\u0006\u0010E\u001a\u00020\"J,\u0010F\u001a\u00020\"2\b\b\u0002\u0010<\u001a\u00020=2\u0017\u0010G\u001a\u0013\u0012\u0004\u0012\u00020I\u0012\u0004\u0012\u00020\"0H¢\u0006\u0002\bJH\u0086\bJ\f\u0010K\u001a\u00020\"*\u00020IH\u0002J\u0015\u0010L\u001a\u00020(2\u0006\u0010M\u001a\u00020%¢\u0006\u0004\bN\u0010OJ\u0015\u0010L\u001a\u00020(2\u0006\u00109\u001a\u00020(¢\u0006\u0004\bP\u0010QJ\u0015\u0010R\u001a\u00020(2\u0006\u0010M\u001a\u00020%¢\u0006\u0004\bS\u0010OJ\u0015\u0010R\u001a\u00020(2\u0006\u00109\u001a\u00020(¢\u0006\u0004\bT\u0010QJ\u0016\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020XH\u0086@¢\u0006\u0002\u0010YJ\u0013\u0010Z\u001a\u00020=2\b\u0010[\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\\\u001a\u00020%H\u0016J\b\u0010]\u001a\u00020^H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\f\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u000e\u0018\u00010\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u000f\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u000e\u0018\u00010\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0010\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0014\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0013R\u0011\u0010\u0016\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0013R+\u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0018\u001a\u00020\u00198F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u001f\u0010 \u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001e¨\u0006a"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "", "textFieldState", "Landroidx/compose/foundation/text/input/TextFieldState;", "inputTransformation", "Landroidx/compose/foundation/text/input/InputTransformation;", "codepointTransformation", "Landroidx/compose/foundation/text/input/internal/CodepointTransformation;", "outputTransformation", "Landroidx/compose/foundation/text/input/OutputTransformation;", "<init>", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/foundation/text/input/internal/CodepointTransformation;Landroidx/compose/foundation/text/input/OutputTransformation;)V", "outputTransformedText", "Landroidx/compose/runtime/State;", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$TransformedText;", "codepointTransformedText", "untransformedText", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "getUntransformedText", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "outputText", "getOutputText", "visualText", "getVisualText", "<set-?>", "Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;", "selectionWedgeAffinity", "getSelectionWedgeAffinity", "()Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;", "setSelectionWedgeAffinity", "(Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;)V", "selectionWedgeAffinity$delegate", "Landroidx/compose/runtime/MutableState;", "update", "", "placeCursorBeforeCharAt", "transformedOffset", "", "selectCharsIn", "transformedRange", "Landroidx/compose/ui/text/TextRange;", "selectCharsIn-5zc-tL8", "(J)V", "selectUntransformedCharsIn", "untransformedRange", "selectUntransformedCharsIn-5zc-tL8", "highlightCharsIn", "type", "Landroidx/compose/foundation/text/input/TextHighlightType;", "highlightCharsIn-7RAjNK8", "(IJ)V", "replaceAll", "newText", "", "selectAll", "deleteSelectedText", "replaceText", "range", "undoBehavior", "Landroidx/compose/foundation/text/input/internal/undo/TextFieldEditUndoBehavior;", "restartImeIfContentChanges", "", "replaceText-M8tDOmk", "(Ljava/lang/CharSequence;JLandroidx/compose/foundation/text/input/internal/undo/TextFieldEditUndoBehavior;Z)V", "replaceSelectedText", "clearComposition", "collapseSelectionToMax", "collapseSelectionToEnd", "undo", "redo", "editUntransformedTextAsUser", "block", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "Lkotlin/ExtensionFunctionType;", "updateWedgeAffinity", "mapToTransformed", TypedValues.CycleType.S_WAVE_OFFSET, "mapToTransformed--jx7JFs", "(I)J", "mapToTransformed-GEjPoXI", "(J)J", "mapFromTransformed", "mapFromTransformed--jx7JFs", "mapFromTransformed-GEjPoXI", "collectImeNotifications", "", "notifyImeListener", "Landroidx/compose/foundation/text/input/TextFieldState$NotifyImeListener;", "(Landroidx/compose/foundation/text/input/TextFieldState$NotifyImeListener;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "equals", "other", "hashCode", "toString", "", "TransformedText", "Companion", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\r\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0001\u0018\u0000 `2\u00020\u0001:\u0002_`B3\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\n\u0010\u000bJ\u0010\u0010!\u001a\u00020\"2\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005J\u000e\u0010#\u001a\u00020\"2\u0006\u0010$\u001a\u00020%J\u0015\u0010&\u001a\u00020\"2\u0006\u0010'\u001a\u00020(¢\u0006\u0004\b)\u0010*J\u0015\u0010+\u001a\u00020\"2\u0006\u0010,\u001a\u00020(¢\u0006\u0004\b-\u0010*J\u001d\u0010.\u001a\u00020\"2\u0006\u0010/\u001a\u0002002\u0006\u0010'\u001a\u00020(¢\u0006\u0004\b1\u00102J\u000e\u00103\u001a\u00020\"2\u0006\u00104\u001a\u000205J\u0006\u00106\u001a\u00020\"J\u0006\u00107\u001a\u00020\"J1\u00108\u001a\u00020\"2\u0006\u00104\u001a\u0002052\u0006\u00109\u001a\u00020(2\b\b\u0002\u0010:\u001a\u00020;2\b\b\u0002\u0010<\u001a\u00020=¢\u0006\u0004\b>\u0010?J,\u0010@\u001a\u00020\"2\u0006\u00104\u001a\u0002052\b\b\u0002\u0010A\u001a\u00020=2\b\b\u0002\u0010:\u001a\u00020;2\b\b\u0002\u0010<\u001a\u00020=J\u0006\u0010B\u001a\u00020\"J\u0006\u0010C\u001a\u00020\"J\u0006\u0010D\u001a\u00020\"J\u0006\u0010E\u001a\u00020\"J,\u0010F\u001a\u00020\"2\b\b\u0002\u0010<\u001a\u00020=2\u0017\u0010G\u001a\u0013\u0012\u0004\u0012\u00020I\u0012\u0004\u0012\u00020\"0H¢\u0006\u0002\bJH\u0086\bJ\f\u0010K\u001a\u00020\"*\u00020IH\u0002J\u0015\u0010L\u001a\u00020(2\u0006\u0010M\u001a\u00020%¢\u0006\u0004\bN\u0010OJ\u0015\u0010L\u001a\u00020(2\u0006\u00109\u001a\u00020(¢\u0006\u0004\bP\u0010QJ\u0015\u0010R\u001a\u00020(2\u0006\u0010M\u001a\u00020%¢\u0006\u0004\bS\u0010OJ\u0015\u0010R\u001a\u00020(2\u0006\u00109\u001a\u00020(¢\u0006\u0004\bT\u0010QJ\u0016\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020XH\u0086@¢\u0006\u0002\u0010YJ\u0013\u0010Z\u001a\u00020=2\b\u0010[\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\\\u001a\u00020%H\u0016J\b\u0010]\u001a\u00020^H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\f\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u000e\u0018\u00010\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u000f\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u000e\u0018\u00010\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0010\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0014\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0013R\u0011\u0010\u0016\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0013R+\u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0018\u001a\u00020\u00198F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u001f\u0010 \u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001e¨\u0006a"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "", "textFieldState", "Landroidx/compose/foundation/text/input/TextFieldState;", "inputTransformation", "Landroidx/compose/foundation/text/input/InputTransformation;", "codepointTransformation", "Landroidx/compose/foundation/text/input/internal/CodepointTransformation;", "outputTransformation", "Landroidx/compose/foundation/text/input/OutputTransformation;", "<init>", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/foundation/text/input/internal/CodepointTransformation;Landroidx/compose/foundation/text/input/OutputTransformation;)V", "outputTransformedText", "Landroidx/compose/runtime/State;", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$TransformedText;", "codepointTransformedText", "untransformedText", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "getUntransformedText", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "outputText", "getOutputText", "visualText", "getVisualText", "<set-?>", "Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;", "selectionWedgeAffinity", "getSelectionWedgeAffinity", "()Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;", "setSelectionWedgeAffinity", "(Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;)V", "selectionWedgeAffinity$delegate", "Landroidx/compose/runtime/MutableState;", "update", "", "placeCursorBeforeCharAt", "transformedOffset", "", "selectCharsIn", "transformedRange", "Landroidx/compose/ui/text/TextRange;", "selectCharsIn-5zc-tL8", "(J)V", "selectUntransformedCharsIn", "untransformedRange", "selectUntransformedCharsIn-5zc-tL8", "highlightCharsIn", "type", "Landroidx/compose/foundation/text/input/TextHighlightType;", "highlightCharsIn-7RAjNK8", "(IJ)V", "replaceAll", "newText", "", "selectAll", "deleteSelectedText", "replaceText", "range", "undoBehavior", "Landroidx/compose/foundation/text/input/internal/undo/TextFieldEditUndoBehavior;", "restartImeIfContentChanges", "", "replaceText-M8tDOmk", "(Ljava/lang/CharSequence;JLandroidx/compose/foundation/text/input/internal/undo/TextFieldEditUndoBehavior;Z)V", "replaceSelectedText", "clearComposition", "collapseSelectionToMax", "collapseSelectionToEnd", "undo", "redo", "editUntransformedTextAsUser", "block", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "Lkotlin/ExtensionFunctionType;", "updateWedgeAffinity", "mapToTransformed", TypedValues.CycleType.S_WAVE_OFFSET, "mapToTransformed--jx7JFs", "(I)J", "mapToTransformed-GEjPoXI", "(J)J", "mapFromTransformed", "mapFromTransformed--jx7JFs", "mapFromTransformed-GEjPoXI", "collectImeNotifications", "", "notifyImeListener", "Landroidx/compose/foundation/text/input/TextFieldState$NotifyImeListener;", "(Landroidx/compose/foundation/text/input/TextFieldState$NotifyImeListener;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "equals", "other", "hashCode", "toString", "", "TransformedText", "Companion", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TransformedTextFieldState {
     public static final int $stable = 0;
@@ -57,14 +57,14 @@ public final class TransformedTextFieldState {
 
     @JvmStatic
     /* renamed from: mapFromTransformed-xdX6-G0  reason: not valid java name */
-    private static final long m1595mapFromTransformedxdX6G0(long j, OffsetMappingCalculator offsetMappingCalculator) {
-        return Companion.m1608mapFromTransformedxdX6G0(j, offsetMappingCalculator);
+    private static final long m1685mapFromTransformedxdX6G0(long j, OffsetMappingCalculator offsetMappingCalculator) {
+        return Companion.m1698mapFromTransformedxdX6G0(j, offsetMappingCalculator);
     }
 
     @JvmStatic
     /* renamed from: mapToTransformed-XGyztTk  reason: not valid java name */
-    private static final long m1596mapToTransformedXGyztTk(long j, OffsetMappingCalculator offsetMappingCalculator, SelectionWedgeAffinity selectionWedgeAffinity) {
-        return Companion.m1609mapToTransformedXGyztTk(j, offsetMappingCalculator, selectionWedgeAffinity);
+    private static final long m1686mapToTransformedXGyztTk(long j, OffsetMappingCalculator offsetMappingCalculator, SelectionWedgeAffinity selectionWedgeAffinity) {
+        return Companion.m1699mapToTransformedXGyztTk(j, offsetMappingCalculator, selectionWedgeAffinity);
     }
 
     public TransformedTextFieldState(TextFieldState textFieldState, InputTransformation inputTransformation, final CodepointTransformation codepointTransformation, final OutputTransformation outputTransformation) {
@@ -76,17 +76,17 @@ public final class TransformedTextFieldState {
         this.outputTransformedText = outputTransformation != null ? SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TransformedTextFieldState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                TransformedTextFieldState.TransformedText outputTransformedText$lambda$1$lambda$0;
-                outputTransformedText$lambda$1$lambda$0 = TransformedTextFieldState.outputTransformedText$lambda$1$lambda$0(TransformedTextFieldState.this, outputTransformation);
-                return outputTransformedText$lambda$1$lambda$0;
+                TransformedTextFieldState.TransformedText outputTransformedText$lambda$0$0;
+                outputTransformedText$lambda$0$0 = TransformedTextFieldState.outputTransformedText$lambda$0$0(TransformedTextFieldState.this, outputTransformation);
+                return outputTransformedText$lambda$0$0;
             }
         }) : null;
         this.codepointTransformedText = codepointTransformation != null ? SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TransformedTextFieldState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                TransformedTextFieldState.TransformedText codepointTransformedText$lambda$3$lambda$2;
-                codepointTransformedText$lambda$3$lambda$2 = TransformedTextFieldState.codepointTransformedText$lambda$3$lambda$2(TransformedTextFieldState.this, codepointTransformation);
-                return codepointTransformedText$lambda$3$lambda$2;
+                TransformedTextFieldState.TransformedText codepointTransformedText$lambda$0$0;
+                codepointTransformedText$lambda$0$0 = TransformedTextFieldState.codepointTransformedText$lambda$0$0(TransformedTextFieldState.this, codepointTransformation);
+                return codepointTransformedText$lambda$0$0;
             }
         }) : null;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new SelectionWedgeAffinity(WedgeAffinity.Start), null, 2, null);
@@ -98,24 +98,24 @@ public final class TransformedTextFieldState {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TransformedText outputTransformedText$lambda$1$lambda$0(TransformedTextFieldState transformedTextFieldState, OutputTransformation outputTransformation) {
-        return Companion.calculateTransformedText(transformedTextFieldState.textFieldState.getValue$foundation_release(), outputTransformation, transformedTextFieldState.getSelectionWedgeAffinity());
+    public static final TransformedText outputTransformedText$lambda$0$0(TransformedTextFieldState transformedTextFieldState, OutputTransformation outputTransformation) {
+        return Companion.calculateTransformedText(transformedTextFieldState.textFieldState.getValue$foundation(), outputTransformation, transformedTextFieldState.getSelectionWedgeAffinity());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final TransformedText codepointTransformedText$lambda$3$lambda$2(TransformedTextFieldState transformedTextFieldState, CodepointTransformation codepointTransformation) {
-        TextFieldCharSequence value$foundation_release;
+    public static final TransformedText codepointTransformedText$lambda$0$0(TransformedTextFieldState transformedTextFieldState, CodepointTransformation codepointTransformation) {
+        TextFieldCharSequence value$foundation;
         TransformedText value;
         Companion companion = Companion;
         State<TransformedText> state = transformedTextFieldState.outputTransformedText;
-        if (state == null || (value = state.getValue()) == null || (value$foundation_release = value.getText()) == null) {
-            value$foundation_release = transformedTextFieldState.textFieldState.getValue$foundation_release();
+        if (state == null || (value = state.getValue()) == null || (value$foundation = value.getText()) == null) {
+            value$foundation = transformedTextFieldState.textFieldState.getValue$foundation();
         }
-        return companion.calculateTransformedText(value$foundation_release, codepointTransformation, transformedTextFieldState.getSelectionWedgeAffinity());
+        return companion.calculateTransformedText(value$foundation, codepointTransformation, transformedTextFieldState.getSelectionWedgeAffinity());
     }
 
     public final TextFieldCharSequence getUntransformedText() {
-        return this.textFieldState.getValue$foundation_release();
+        return this.textFieldState.getValue$foundation();
     }
 
     public final TextFieldCharSequence getOutputText() {
@@ -145,32 +145,32 @@ public final class TransformedTextFieldState {
     }
 
     public final void placeCursorBeforeCharAt(int i) {
-        m1604selectCharsIn5zctL8(TextRangeKt.TextRange(i));
+        m1694selectCharsIn5zctL8(TextRangeKt.TextRange(i));
     }
 
     /* renamed from: selectCharsIn-5zc-tL8  reason: not valid java name */
-    public final void m1604selectCharsIn5zctL8(long j) {
-        m1605selectUntransformedCharsIn5zctL8(m1600mapFromTransformedGEjPoXI(j));
+    public final void m1694selectCharsIn5zctL8(long j) {
+        m1695selectUntransformedCharsIn5zctL8(m1690mapFromTransformedGEjPoXI(j));
     }
 
     /* renamed from: selectUntransformedCharsIn-5zc-tL8  reason: not valid java name */
-    public final void m1605selectUntransformedCharsIn5zctL8(long j) {
+    public final void m1695selectUntransformedCharsIn5zctL8(long j) {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBufferKt.setSelectionCoerced(textFieldState.getMainBuffer$foundation_release(), TextRange.m7458getStartimpl(j), TextRange.m7453getEndimpl(j));
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBufferKt.setSelectionCoerced(textFieldState.getMainBuffer$foundation(), TextRange.m7701getStartimpl(j), TextRange.m7696getEndimpl(j));
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, true, textFieldEditUndoBehavior);
     }
 
     /* renamed from: highlightCharsIn-7RAjNK8  reason: not valid java name */
-    public final void m1598highlightCharsIn7RAjNK8(int i, long j) {
-        long m1600mapFromTransformedGEjPoXI = m1600mapFromTransformedGEjPoXI(j);
+    public final void m1688highlightCharsIn7RAjNK8(int i, long j) {
+        long m1690mapFromTransformedGEjPoXI = m1690mapFromTransformedGEjPoXI(j);
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        textFieldState.getMainBuffer$foundation_release().m1440setHighlightK7f2yys$foundation_release(i, TextRange.m7458getStartimpl(m1600mapFromTransformedGEjPoXI), TextRange.m7453getEndimpl(m1600mapFromTransformedGEjPoXI));
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        textFieldState.getMainBuffer$foundation().m1530setHighlightK7f2yys$foundation(i, TextRange.m7701getStartimpl(m1690mapFromTransformedGEjPoXI), TextRange.m7696getEndimpl(m1690mapFromTransformedGEjPoXI));
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, true, textFieldEditUndoBehavior);
     }
 
@@ -178,11 +178,11 @@ public final class TransformedTextFieldState {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        TextFieldBufferKt.delete(mainBuffer$foundation_release, 0, mainBuffer$foundation_release.getLength());
-        mainBuffer$foundation_release.append(charSequence.toString());
-        updateWedgeAffinity(mainBuffer$foundation_release);
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        TextFieldBufferKt.delete(mainBuffer$foundation, 0, mainBuffer$foundation.getLength());
+        mainBuffer$foundation.append(charSequence.toString());
+        updateWedgeAffinity(mainBuffer$foundation);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, true, textFieldEditUndoBehavior);
     }
 
@@ -190,9 +190,9 @@ public final class TransformedTextFieldState {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        TextFieldBufferKt.setSelectionCoerced(mainBuffer$foundation_release, 0, mainBuffer$foundation_release.getLength());
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        TextFieldBufferKt.setSelectionCoerced(mainBuffer$foundation, 0, mainBuffer$foundation.getLength());
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, true, textFieldEditUndoBehavior);
     }
 
@@ -200,16 +200,16 @@ public final class TransformedTextFieldState {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.NeverMerge;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        TextFieldBufferKt.delete(mainBuffer$foundation_release, TextRange.m7456getMinimpl(mainBuffer$foundation_release.m1439getSelectiond9O1mEE()), TextRange.m7455getMaximpl(mainBuffer$foundation_release.m1439getSelectiond9O1mEE()));
-        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation_release, TextRange.m7456getMinimpl(mainBuffer$foundation_release.m1439getSelectiond9O1mEE()), 0, 2, null);
-        updateWedgeAffinity(mainBuffer$foundation_release);
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        TextFieldBufferKt.delete(mainBuffer$foundation, TextRange.m7699getMinimpl(mainBuffer$foundation.m1529getSelectiond9O1mEE()), TextRange.m7698getMaximpl(mainBuffer$foundation.m1529getSelectiond9O1mEE()));
+        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation, TextRange.m7699getMinimpl(mainBuffer$foundation.m1529getSelectiond9O1mEE()), 0, 2, null);
+        updateWedgeAffinity(mainBuffer$foundation);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, true, textFieldEditUndoBehavior);
     }
 
     /* renamed from: replaceText-M8tDOmk$default  reason: not valid java name */
-    public static /* synthetic */ void m1597replaceTextM8tDOmk$default(TransformedTextFieldState transformedTextFieldState, CharSequence charSequence, long j, TextFieldEditUndoBehavior textFieldEditUndoBehavior, boolean z, int i, Object obj) {
+    public static /* synthetic */ void m1687replaceTextM8tDOmk$default(TransformedTextFieldState transformedTextFieldState, CharSequence charSequence, long j, TextFieldEditUndoBehavior textFieldEditUndoBehavior, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
         }
@@ -217,19 +217,19 @@ public final class TransformedTextFieldState {
         if ((i & 8) != 0) {
             z = true;
         }
-        transformedTextFieldState.m1603replaceTextM8tDOmk(charSequence, j, textFieldEditUndoBehavior2, z);
+        transformedTextFieldState.m1693replaceTextM8tDOmk(charSequence, j, textFieldEditUndoBehavior2, z);
     }
 
     /* renamed from: replaceText-M8tDOmk  reason: not valid java name */
-    public final void m1603replaceTextM8tDOmk(CharSequence charSequence, long j, TextFieldEditUndoBehavior textFieldEditUndoBehavior, boolean z) {
+    public final void m1693replaceTextM8tDOmk(CharSequence charSequence, long j, TextFieldEditUndoBehavior textFieldEditUndoBehavior, boolean z) {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        long m1600mapFromTransformedGEjPoXI = m1600mapFromTransformedGEjPoXI(j);
-        mainBuffer$foundation_release.replace(TextRange.m7456getMinimpl(m1600mapFromTransformedGEjPoXI), TextRange.m7455getMaximpl(m1600mapFromTransformedGEjPoXI), charSequence);
-        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation_release, TextRange.m7456getMinimpl(m1600mapFromTransformedGEjPoXI) + charSequence.length(), 0, 2, null);
-        updateWedgeAffinity(mainBuffer$foundation_release);
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        long m1690mapFromTransformedGEjPoXI = m1690mapFromTransformedGEjPoXI(j);
+        mainBuffer$foundation.replace(TextRange.m7699getMinimpl(m1690mapFromTransformedGEjPoXI), TextRange.m7698getMaximpl(m1690mapFromTransformedGEjPoXI), charSequence);
+        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation, TextRange.m7699getMinimpl(m1690mapFromTransformedGEjPoXI) + charSequence.length(), 0, 2, null);
+        updateWedgeAffinity(mainBuffer$foundation);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, z, textFieldEditUndoBehavior);
     }
 
@@ -249,15 +249,15 @@ public final class TransformedTextFieldState {
     public final void replaceSelectedText(CharSequence charSequence, boolean z, TextFieldEditUndoBehavior textFieldEditUndoBehavior, boolean z2) {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
         if (z) {
-            mainBuffer$foundation_release.commitComposition$foundation_release();
+            mainBuffer$foundation.commitComposition$foundation();
         }
-        long m1439getSelectiond9O1mEE = mainBuffer$foundation_release.m1439getSelectiond9O1mEE();
-        mainBuffer$foundation_release.replace(TextRange.m7456getMinimpl(m1439getSelectiond9O1mEE), TextRange.m7455getMaximpl(m1439getSelectiond9O1mEE), charSequence);
-        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation_release, TextRange.m7456getMinimpl(m1439getSelectiond9O1mEE) + charSequence.length(), 0, 2, null);
-        updateWedgeAffinity(mainBuffer$foundation_release);
+        long m1529getSelectiond9O1mEE = mainBuffer$foundation.m1529getSelectiond9O1mEE();
+        mainBuffer$foundation.replace(TextRange.m7699getMinimpl(m1529getSelectiond9O1mEE), TextRange.m7698getMaximpl(m1529getSelectiond9O1mEE), charSequence);
+        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation, TextRange.m7699getMinimpl(m1529getSelectiond9O1mEE) + charSequence.length(), 0, 2, null);
+        updateWedgeAffinity(mainBuffer$foundation);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, z2, textFieldEditUndoBehavior);
     }
 
@@ -265,9 +265,9 @@ public final class TransformedTextFieldState {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation_release, TextRange.m7455getMaximpl(mainBuffer$foundation_release.m1439getSelectiond9O1mEE()), 0, 2, null);
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation, TextRange.m7698getMaximpl(mainBuffer$foundation.m1529getSelectiond9O1mEE()), 0, 2, null);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, true, textFieldEditUndoBehavior);
     }
 
@@ -275,9 +275,9 @@ public final class TransformedTextFieldState {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation_release, TextRange.m7453getEndimpl(mainBuffer$foundation_release.m1439getSelectiond9O1mEE()), 0, 2, null);
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        TextFieldBufferKt.setSelectionCoerced$default(mainBuffer$foundation, TextRange.m7696getEndimpl(mainBuffer$foundation.m1529getSelectiond9O1mEE()), 0, 2, null);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, true, textFieldEditUndoBehavior);
     }
 
@@ -296,10 +296,10 @@ public final class TransformedTextFieldState {
         TextFieldState textFieldState = transformedTextFieldState.textFieldState;
         InputTransformation inputTransformation = transformedTextFieldState.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        function1.invoke(mainBuffer$foundation_release);
-        transformedTextFieldState.updateWedgeAffinity(mainBuffer$foundation_release);
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        function1.invoke(mainBuffer$foundation);
+        transformedTextFieldState.updateWedgeAffinity(mainBuffer$foundation);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, z, textFieldEditUndoBehavior);
     }
 
@@ -307,23 +307,23 @@ public final class TransformedTextFieldState {
         TextFieldState textFieldState = this.textFieldState;
         InputTransformation inputTransformation = this.inputTransformation;
         TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
-        textFieldState.getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
-        TextFieldBuffer mainBuffer$foundation_release = textFieldState.getMainBuffer$foundation_release();
-        function1.invoke(mainBuffer$foundation_release);
-        updateWedgeAffinity(mainBuffer$foundation_release);
+        textFieldState.getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
+        TextFieldBuffer mainBuffer$foundation = textFieldState.getMainBuffer$foundation();
+        function1.invoke(mainBuffer$foundation);
+        updateWedgeAffinity(mainBuffer$foundation);
         TextFieldState.access$commitEditAsUser(textFieldState, inputTransformation, z, textFieldEditUndoBehavior);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updateWedgeAffinity(TextFieldBuffer textFieldBuffer) {
-        if (textFieldBuffer.getChangeTracker$foundation_release().getChangeCount() <= 0 || !TextRange.m7452getCollapsedimpl(textFieldBuffer.m1439getSelectiond9O1mEE())) {
+        if (textFieldBuffer.getChangeTracker$foundation().getChangeCount() <= 0 || !TextRange.m7695getCollapsedimpl(textFieldBuffer.m1529getSelectiond9O1mEE())) {
             return;
         }
         setSelectionWedgeAffinity(new SelectionWedgeAffinity(WedgeAffinity.Start));
     }
 
     /* renamed from: mapToTransformed--jx7JFs  reason: not valid java name */
-    public final long m1601mapToTransformedjx7JFs(int i) {
+    public final long m1691mapToTransformedjx7JFs(int i) {
         TransformedText value;
         TransformedText value2;
         State<TransformedText> state = this.outputTransformedText;
@@ -333,12 +333,12 @@ public final class TransformedTextFieldState {
         if (state2 != null && (value = state2.getValue()) != null) {
             offsetMappingCalculator = value.getOffsetMapping();
         }
-        long m1536mapFromSourcejx7JFs = offsetMapping != null ? offsetMapping.m1536mapFromSourcejx7JFs(i) : TextRangeKt.TextRange(i);
-        return offsetMappingCalculator != null ? Companion.m1609mapToTransformedXGyztTk(m1536mapFromSourcejx7JFs, offsetMappingCalculator, getSelectionWedgeAffinity()) : m1536mapFromSourcejx7JFs;
+        long m1624mapFromSourcejx7JFs = offsetMapping != null ? offsetMapping.m1624mapFromSourcejx7JFs(i) : TextRangeKt.TextRange(i);
+        return offsetMappingCalculator != null ? Companion.m1699mapToTransformedXGyztTk(m1624mapFromSourcejx7JFs, offsetMappingCalculator, getSelectionWedgeAffinity()) : m1624mapFromSourcejx7JFs;
     }
 
     /* renamed from: mapToTransformed-GEjPoXI  reason: not valid java name */
-    public final long m1602mapToTransformedGEjPoXI(long j) {
+    public final long m1692mapToTransformedGEjPoXI(long j) {
         TransformedText value;
         TransformedText value2;
         State<TransformedText> state = this.outputTransformedText;
@@ -349,13 +349,13 @@ public final class TransformedTextFieldState {
             offsetMappingCalculator = value.getOffsetMapping();
         }
         if (offsetMapping != null) {
-            j = Companion.m1610mapToTransformedXGyztTk$default(Companion, j, offsetMapping, null, 4, null);
+            j = Companion.m1700mapToTransformedXGyztTk$default(Companion, j, offsetMapping, null, 4, null);
         }
-        return offsetMappingCalculator != null ? Companion.m1609mapToTransformedXGyztTk(j, offsetMappingCalculator, getSelectionWedgeAffinity()) : j;
+        return offsetMappingCalculator != null ? Companion.m1699mapToTransformedXGyztTk(j, offsetMappingCalculator, getSelectionWedgeAffinity()) : j;
     }
 
     /* renamed from: mapFromTransformed--jx7JFs  reason: not valid java name */
-    public final long m1599mapFromTransformedjx7JFs(int i) {
+    public final long m1689mapFromTransformedjx7JFs(int i) {
         TransformedText value;
         TransformedText value2;
         State<TransformedText> state = this.outputTransformedText;
@@ -365,12 +365,12 @@ public final class TransformedTextFieldState {
         if (state2 != null && (value = state2.getValue()) != null) {
             offsetMappingCalculator = value.getOffsetMapping();
         }
-        long m1535mapFromDestjx7JFs = offsetMappingCalculator != null ? offsetMappingCalculator.m1535mapFromDestjx7JFs(i) : TextRangeKt.TextRange(i);
-        return offsetMapping != null ? Companion.m1608mapFromTransformedxdX6G0(m1535mapFromDestjx7JFs, offsetMapping) : m1535mapFromDestjx7JFs;
+        long m1623mapFromDestjx7JFs = offsetMappingCalculator != null ? offsetMappingCalculator.m1623mapFromDestjx7JFs(i) : TextRangeKt.TextRange(i);
+        return offsetMapping != null ? Companion.m1698mapFromTransformedxdX6G0(m1623mapFromDestjx7JFs, offsetMapping) : m1623mapFromDestjx7JFs;
     }
 
     /* renamed from: mapFromTransformed-GEjPoXI  reason: not valid java name */
-    public final long m1600mapFromTransformedGEjPoXI(long j) {
+    public final long m1690mapFromTransformedGEjPoXI(long j) {
         TransformedText value;
         TransformedText value2;
         State<TransformedText> state = this.outputTransformedText;
@@ -381,9 +381,9 @@ public final class TransformedTextFieldState {
             offsetMappingCalculator = value.getOffsetMapping();
         }
         if (offsetMappingCalculator != null) {
-            j = Companion.m1608mapFromTransformedxdX6G0(j, offsetMappingCalculator);
+            j = Companion.m1698mapFromTransformedxdX6G0(j, offsetMappingCalculator);
         }
-        return offsetMapping != null ? Companion.m1608mapFromTransformedxdX6G0(j, offsetMapping) : j;
+        return offsetMapping != null ? Companion.m1698mapFromTransformedxdX6G0(j, offsetMapping) : j;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -407,7 +407,7 @@ public final class TransformedTextFieldState {
                         notifyImeListener = new TextFieldState.NotifyImeListener() { // from class: androidx.compose.foundation.text.input.internal.TransformedTextFieldState$$ExternalSyntheticLambda0
                             @Override // androidx.compose.foundation.text.input.TextFieldState.NotifyImeListener
                             public final void onChange(TextFieldCharSequence textFieldCharSequence, TextFieldCharSequence textFieldCharSequence2, boolean z) {
-                                TransformedTextFieldState.collectImeNotifications$lambda$20(TextFieldState.NotifyImeListener.this, this, textFieldCharSequence, textFieldCharSequence2, z);
+                                TransformedTextFieldState.collectImeNotifications$lambda$0(TextFieldState.NotifyImeListener.this, this, textFieldCharSequence, textFieldCharSequence2, z);
                             }
                         };
                     }
@@ -416,7 +416,7 @@ public final class TransformedTextFieldState {
                     TransformedTextFieldState$collectImeNotifications$1 transformedTextFieldState$collectImeNotifications$12 = transformedTextFieldState$collectImeNotifications$1;
                     CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(transformedTextFieldState$collectImeNotifications$12), 1);
                     cancellableContinuationImpl.initCancellability();
-                    this.textFieldState.addNotifyImeListener$foundation_release(notifyImeListener);
+                    this.textFieldState.addNotifyImeListener$foundation(notifyImeListener);
                     cancellableContinuationImpl.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: androidx.compose.foundation.text.input.internal.TransformedTextFieldState$collectImeNotifications$2$1
                         @Override // kotlin.jvm.functions.Function1
                         public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
@@ -426,7 +426,7 @@ public final class TransformedTextFieldState {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(Throwable th) {
-                            TransformedTextFieldState.this.textFieldState.removeNotifyImeListener$foundation_release(notifyImeListener);
+                            TransformedTextFieldState.this.textFieldState.removeNotifyImeListener$foundation(notifyImeListener);
                         }
                     });
                     Object result = cancellableContinuationImpl.getResult();
@@ -455,7 +455,7 @@ public final class TransformedTextFieldState {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void collectImeNotifications$lambda$20(TextFieldState.NotifyImeListener notifyImeListener, TransformedTextFieldState transformedTextFieldState, TextFieldCharSequence textFieldCharSequence, TextFieldCharSequence textFieldCharSequence2, boolean z) {
+    public static final void collectImeNotifications$lambda$0(TextFieldState.NotifyImeListener notifyImeListener, TransformedTextFieldState transformedTextFieldState, TextFieldCharSequence textFieldCharSequence, TextFieldCharSequence textFieldCharSequence2, boolean z) {
         TextFieldCharSequence text;
         TransformedText calculateTransformedText = Companion.calculateTransformedText(textFieldCharSequence, transformedTextFieldState.outputTransformation, transformedTextFieldState.getSelectionWedgeAffinity());
         if (calculateTransformedText != null && (text = calculateTransformedText.getText()) != null) {
@@ -492,7 +492,7 @@ public final class TransformedTextFieldState {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: TransformedTextFieldState.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\t\u0010\r\u001a\u00020\u0005HÆ\u0003J\u001d\u0010\u000e\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005HÆ\u0001J\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0012\u001a\u00020\u0013HÖ\u0001J\t\u0010\u0014\u001a\u00020\u0015HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0016"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$TransformedText;", "", "text", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "offsetMapping", "Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "<init>", "(Landroidx/compose/foundation/text/input/TextFieldCharSequence;Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;)V", "getText", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "getOffsetMapping", "()Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\t\u0010\r\u001a\u00020\u0005HÆ\u0003J\u001d\u0010\u000e\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005HÆ\u0001J\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0012\u001a\u00020\u0013HÖ\u0001J\t\u0010\u0014\u001a\u00020\u0015HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0016"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$TransformedText;", "", "text", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "offsetMapping", "Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "<init>", "(Landroidx/compose/foundation/text/input/TextFieldCharSequence;Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;)V", "getText", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "getOffsetMapping", "()Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class TransformedText {
         private final OffsetMappingCalculator offsetMapping;
@@ -555,14 +555,14 @@ public final class TransformedTextFieldState {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: TransformedTextFieldState.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\"\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0003J\"\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\n\u001a\u00020\u000bH\u0003J+\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u00122\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u000bH\u0003¢\u0006\u0004\b\u0014\u0010\u0015J\u001f\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u0012H\u0003¢\u0006\u0004\b\u0017\u0010\u0018¨\u0006\u0019"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$Companion;", "", "<init>", "()V", "calculateTransformedText", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$TransformedText;", "untransformedValue", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "outputTransformation", "Landroidx/compose/foundation/text/input/OutputTransformation;", "wedgeAffinity", "Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;", "codepointTransformation", "Landroidx/compose/foundation/text/input/internal/CodepointTransformation;", "mapToTransformed", "Landroidx/compose/ui/text/TextRange;", "range", "mapping", "Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "selectionWedgeAffinity", "mapToTransformed-XGyztTk", "(JLandroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;)J", "mapFromTransformed", "mapFromTransformed-xdX6-G0", "(JLandroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;)J", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\"\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0003J\"\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\n\u001a\u00020\u000bH\u0003J+\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u00122\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u000bH\u0003¢\u0006\u0004\b\u0014\u0010\u0015J\u001f\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u0012H\u0003¢\u0006\u0004\b\u0017\u0010\u0018¨\u0006\u0019"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$Companion;", "", "<init>", "()V", "calculateTransformedText", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState$TransformedText;", "untransformedValue", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "outputTransformation", "Landroidx/compose/foundation/text/input/OutputTransformation;", "wedgeAffinity", "Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;", "codepointTransformation", "Landroidx/compose/foundation/text/input/internal/CodepointTransformation;", "mapToTransformed", "Landroidx/compose/ui/text/TextRange;", "range", "mapping", "Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "selectionWedgeAffinity", "mapToTransformed-XGyztTk", "(JLandroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;Landroidx/compose/foundation/text/input/internal/SelectionWedgeAffinity;)J", "mapFromTransformed", "mapFromTransformed-xdX6-G0", "(JLandroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;)J", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
 
         /* compiled from: TransformedTextFieldState.kt */
         @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes.dex */
-        public /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ class WhenMappings {
             public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
             static {
@@ -592,16 +592,16 @@ public final class TransformedTextFieldState {
             List<AnnotatedString.Range<AnnotatedString.Annotation>> list;
             OffsetMappingCalculator offsetMappingCalculator = new OffsetMappingCalculator();
             TextFieldBuffer textFieldBuffer = new TextFieldBuffer(textFieldCharSequence, null, null, offsetMappingCalculator, 6, null);
-            textFieldBuffer.setCanCallAddStyle$foundation_release(true);
+            textFieldBuffer.setCanCallAddStyle$foundation(true);
             outputTransformation.transformOutput(textFieldBuffer);
-            textFieldBuffer.setCanCallAddStyle$foundation_release(false);
-            List<AnnotatedString.Range<AnnotatedString.Annotation>> outputTransformationAnnotations$foundation_release = textFieldBuffer.getOutputTransformationAnnotations$foundation_release();
-            if (textFieldBuffer.getChanges().getChangeCount() == 0 && ((list = outputTransformationAnnotations$foundation_release) == null || list.isEmpty())) {
+            textFieldBuffer.setCanCallAddStyle$foundation(false);
+            List<AnnotatedString.Range<AnnotatedString.Annotation>> outputTransformationAnnotations$foundation = textFieldBuffer.getOutputTransformationAnnotations$foundation();
+            if (textFieldBuffer.getChanges().getChangeCount() == 0 && ((list = outputTransformationAnnotations$foundation) == null || list.isEmpty())) {
                 return null;
             }
-            long m1609mapToTransformedXGyztTk = m1609mapToTransformedXGyztTk(textFieldCharSequence.m1447getSelectiond9O1mEE(), offsetMappingCalculator, selectionWedgeAffinity);
-            TextRange m1446getCompositionMzsxiRA = textFieldCharSequence.m1446getCompositionMzsxiRA();
-            return new TransformedText(TextFieldBuffer.m1436toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer, m1609mapToTransformedXGyztTk, m1446getCompositionMzsxiRA != null ? TextRange.m7446boximpl(TransformedTextFieldState.Companion.m1609mapToTransformedXGyztTk(m1446getCompositionMzsxiRA.m7462unboximpl(), offsetMappingCalculator, selectionWedgeAffinity)) : null, null, outputTransformationAnnotations$foundation_release, 4, null), offsetMappingCalculator);
+            long m1699mapToTransformedXGyztTk = m1699mapToTransformedXGyztTk(textFieldCharSequence.m1537getSelectiond9O1mEE(), offsetMappingCalculator, selectionWedgeAffinity);
+            TextRange m1536getCompositionMzsxiRA = textFieldCharSequence.m1536getCompositionMzsxiRA();
+            return new TransformedText(TextFieldBuffer.m1526toTextFieldCharSequencewFTz33Y$foundation$default(textFieldBuffer, m1699mapToTransformedXGyztTk, m1536getCompositionMzsxiRA != null ? TextRange.m7689boximpl(TransformedTextFieldState.Companion.m1699mapToTransformedXGyztTk(m1536getCompositionMzsxiRA.m7705unboximpl(), offsetMappingCalculator, selectionWedgeAffinity)) : null, null, outputTransformationAnnotations$foundation, 4, null), offsetMappingCalculator);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -613,60 +613,60 @@ public final class TransformedTextFieldState {
             if (visualText == textFieldCharSequence) {
                 return null;
             }
-            long m1609mapToTransformedXGyztTk = m1609mapToTransformedXGyztTk(textFieldCharSequence.m1447getSelectiond9O1mEE(), offsetMappingCalculator, selectionWedgeAffinity);
-            TextRange m1446getCompositionMzsxiRA = textFieldCharSequence.m1446getCompositionMzsxiRA();
-            if (m1446getCompositionMzsxiRA != null) {
-                textRange = TextRange.m7446boximpl(TransformedTextFieldState.Companion.m1609mapToTransformedXGyztTk(m1446getCompositionMzsxiRA.m7462unboximpl(), offsetMappingCalculator, selectionWedgeAffinity));
+            long m1699mapToTransformedXGyztTk = m1699mapToTransformedXGyztTk(textFieldCharSequence.m1537getSelectiond9O1mEE(), offsetMappingCalculator, selectionWedgeAffinity);
+            TextRange m1536getCompositionMzsxiRA = textFieldCharSequence.m1536getCompositionMzsxiRA();
+            if (m1536getCompositionMzsxiRA != null) {
+                textRange = TextRange.m7689boximpl(TransformedTextFieldState.Companion.m1699mapToTransformedXGyztTk(m1536getCompositionMzsxiRA.m7705unboximpl(), offsetMappingCalculator, selectionWedgeAffinity));
             }
-            return new TransformedText(new TextFieldCharSequence(visualText, m1609mapToTransformedXGyztTk, textRange, null, null, null, 56, null), offsetMappingCalculator);
+            return new TransformedText(new TextFieldCharSequence(visualText, m1699mapToTransformedXGyztTk, textRange, null, null, null, 56, null), offsetMappingCalculator);
         }
 
         /* renamed from: mapToTransformed-XGyztTk$default  reason: not valid java name */
-        static /* synthetic */ long m1610mapToTransformedXGyztTk$default(Companion companion, long j, OffsetMappingCalculator offsetMappingCalculator, SelectionWedgeAffinity selectionWedgeAffinity, int i, Object obj) {
+        static /* synthetic */ long m1700mapToTransformedXGyztTk$default(Companion companion, long j, OffsetMappingCalculator offsetMappingCalculator, SelectionWedgeAffinity selectionWedgeAffinity, int i, Object obj) {
             if ((i & 4) != 0) {
                 selectionWedgeAffinity = null;
             }
-            return companion.m1609mapToTransformedXGyztTk(j, offsetMappingCalculator, selectionWedgeAffinity);
+            return companion.m1699mapToTransformedXGyztTk(j, offsetMappingCalculator, selectionWedgeAffinity);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         @JvmStatic
         /* renamed from: mapToTransformed-XGyztTk  reason: not valid java name */
-        public final long m1609mapToTransformedXGyztTk(long j, OffsetMappingCalculator offsetMappingCalculator, SelectionWedgeAffinity selectionWedgeAffinity) {
+        public final long m1699mapToTransformedXGyztTk(long j, OffsetMappingCalculator offsetMappingCalculator, SelectionWedgeAffinity selectionWedgeAffinity) {
             long TextRange;
-            long m1536mapFromSourcejx7JFs = offsetMappingCalculator.m1536mapFromSourcejx7JFs(TextRange.m7458getStartimpl(j));
-            long m1536mapFromSourcejx7JFs2 = TextRange.m7452getCollapsedimpl(j) ? m1536mapFromSourcejx7JFs : offsetMappingCalculator.m1536mapFromSourcejx7JFs(TextRange.m7453getEndimpl(j));
+            long m1624mapFromSourcejx7JFs = offsetMappingCalculator.m1624mapFromSourcejx7JFs(TextRange.m7701getStartimpl(j));
+            long m1624mapFromSourcejx7JFs2 = TextRange.m7695getCollapsedimpl(j) ? m1624mapFromSourcejx7JFs : offsetMappingCalculator.m1624mapFromSourcejx7JFs(TextRange.m7696getEndimpl(j));
             WedgeAffinity wedgeAffinity = null;
             WedgeAffinity startAffinity = selectionWedgeAffinity != null ? selectionWedgeAffinity.getStartAffinity() : null;
-            if (TextRange.m7452getCollapsedimpl(j)) {
+            if (TextRange.m7695getCollapsedimpl(j)) {
                 wedgeAffinity = startAffinity;
             } else if (selectionWedgeAffinity != null) {
                 wedgeAffinity = selectionWedgeAffinity.getEndAffinity();
             }
-            if (startAffinity != null && !TextRange.m7452getCollapsedimpl(m1536mapFromSourcejx7JFs)) {
+            if (startAffinity != null && !TextRange.m7695getCollapsedimpl(m1624mapFromSourcejx7JFs)) {
                 int i = WhenMappings.$EnumSwitchMapping$0[startAffinity.ordinal()];
                 if (i == 1) {
-                    m1536mapFromSourcejx7JFs = TextRangeKt.TextRange(TextRange.m7458getStartimpl(m1536mapFromSourcejx7JFs));
+                    m1624mapFromSourcejx7JFs = TextRangeKt.TextRange(TextRange.m7701getStartimpl(m1624mapFromSourcejx7JFs));
                 } else if (i != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    m1536mapFromSourcejx7JFs = TextRangeKt.TextRange(TextRange.m7453getEndimpl(m1536mapFromSourcejx7JFs));
+                    m1624mapFromSourcejx7JFs = TextRangeKt.TextRange(TextRange.m7696getEndimpl(m1624mapFromSourcejx7JFs));
                 }
             }
-            if (wedgeAffinity != null && !TextRange.m7452getCollapsedimpl(m1536mapFromSourcejx7JFs2)) {
+            if (wedgeAffinity != null && !TextRange.m7695getCollapsedimpl(m1624mapFromSourcejx7JFs2)) {
                 int i2 = WhenMappings.$EnumSwitchMapping$0[wedgeAffinity.ordinal()];
                 if (i2 == 1) {
-                    TextRange = TextRangeKt.TextRange(TextRange.m7458getStartimpl(m1536mapFromSourcejx7JFs2));
+                    TextRange = TextRangeKt.TextRange(TextRange.m7701getStartimpl(m1624mapFromSourcejx7JFs2));
                 } else if (i2 != 2) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    TextRange = TextRangeKt.TextRange(TextRange.m7453getEndimpl(m1536mapFromSourcejx7JFs2));
+                    TextRange = TextRangeKt.TextRange(TextRange.m7696getEndimpl(m1624mapFromSourcejx7JFs2));
                 }
-                m1536mapFromSourcejx7JFs2 = TextRange;
+                m1624mapFromSourcejx7JFs2 = TextRange;
             }
-            int min = Math.min(TextRange.m7456getMinimpl(m1536mapFromSourcejx7JFs), TextRange.m7456getMinimpl(m1536mapFromSourcejx7JFs2));
-            int max = Math.max(TextRange.m7455getMaximpl(m1536mapFromSourcejx7JFs), TextRange.m7455getMaximpl(m1536mapFromSourcejx7JFs2));
-            if (TextRange.m7457getReversedimpl(j)) {
+            int min = Math.min(TextRange.m7699getMinimpl(m1624mapFromSourcejx7JFs), TextRange.m7699getMinimpl(m1624mapFromSourcejx7JFs2));
+            int max = Math.max(TextRange.m7698getMaximpl(m1624mapFromSourcejx7JFs), TextRange.m7698getMaximpl(m1624mapFromSourcejx7JFs2));
+            if (TextRange.m7700getReversedimpl(j)) {
                 return TextRangeKt.TextRange(max, min);
             }
             return TextRangeKt.TextRange(min, max);
@@ -675,12 +675,12 @@ public final class TransformedTextFieldState {
         /* JADX INFO: Access modifiers changed from: private */
         @JvmStatic
         /* renamed from: mapFromTransformed-xdX6-G0  reason: not valid java name */
-        public final long m1608mapFromTransformedxdX6G0(long j, OffsetMappingCalculator offsetMappingCalculator) {
-            long m1535mapFromDestjx7JFs = offsetMappingCalculator.m1535mapFromDestjx7JFs(TextRange.m7458getStartimpl(j));
-            long m1535mapFromDestjx7JFs2 = TextRange.m7452getCollapsedimpl(j) ? m1535mapFromDestjx7JFs : offsetMappingCalculator.m1535mapFromDestjx7JFs(TextRange.m7453getEndimpl(j));
-            int min = Math.min(TextRange.m7456getMinimpl(m1535mapFromDestjx7JFs), TextRange.m7456getMinimpl(m1535mapFromDestjx7JFs2));
-            int max = Math.max(TextRange.m7455getMaximpl(m1535mapFromDestjx7JFs), TextRange.m7455getMaximpl(m1535mapFromDestjx7JFs2));
-            if (TextRange.m7457getReversedimpl(j)) {
+        public final long m1698mapFromTransformedxdX6G0(long j, OffsetMappingCalculator offsetMappingCalculator) {
+            long m1623mapFromDestjx7JFs = offsetMappingCalculator.m1623mapFromDestjx7JFs(TextRange.m7701getStartimpl(j));
+            long m1623mapFromDestjx7JFs2 = TextRange.m7695getCollapsedimpl(j) ? m1623mapFromDestjx7JFs : offsetMappingCalculator.m1623mapFromDestjx7JFs(TextRange.m7696getEndimpl(j));
+            int min = Math.min(TextRange.m7699getMinimpl(m1623mapFromDestjx7JFs), TextRange.m7699getMinimpl(m1623mapFromDestjx7JFs2));
+            int max = Math.max(TextRange.m7698getMaximpl(m1623mapFromDestjx7JFs), TextRange.m7698getMaximpl(m1623mapFromDestjx7JFs2));
+            if (TextRange.m7700getReversedimpl(j)) {
                 return TextRangeKt.TextRange(max, min);
             }
             return TextRangeKt.TextRange(min, max);

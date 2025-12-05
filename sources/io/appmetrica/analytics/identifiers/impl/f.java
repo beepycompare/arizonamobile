@@ -10,13 +10,13 @@ import kotlin.jvm.functions.Function1;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final e f350a;
+    public final e f433a;
     public final Function1 b;
     public final String c;
     public final SafePackageManager d;
 
     public f(e eVar, Function1 function1, String str, SafePackageManager safePackageManager) {
-        this.f350a = eVar;
+        this.f433a = eVar;
         this.b = function1;
         this.c = str;
         this.d = safePackageManager;
@@ -30,13 +30,13 @@ public final class f {
     public final Object a(Context context) {
         IBinder iBinder;
         e eVar;
-        if (this.d.resolveService(context, this.f350a.f349a, 0) != null) {
+        if (this.d.resolveService(context, this.f433a.f432a, 0) != null) {
             try {
-                eVar = this.f350a;
+                eVar = this.f433a;
             } catch (Throwable unused) {
             }
-            if (context.bindService(eVar.f349a, eVar, 1)) {
-                e eVar2 = this.f350a;
+            if (context.bindService(eVar.f432a, eVar, 1)) {
+                e eVar2 = this.f433a;
                 if (eVar2.b == null) {
                     synchronized (eVar2.c) {
                         if (eVar2.b == null) {
@@ -63,7 +63,7 @@ public final class f {
 
     public final void b(Context context) {
         try {
-            this.f350a.a(context);
+            this.f433a.a(context);
         } catch (Throwable unused) {
         }
     }

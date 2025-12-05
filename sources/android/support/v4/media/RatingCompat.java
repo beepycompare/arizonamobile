@@ -74,7 +74,7 @@ public final class RatingCompat implements Parcelable {
             case 4:
             case 5:
             case 6:
-                return new RatingCompat(i, RATING_NOT_RATED);
+                return new RatingCompat(i, -1.0f);
             default:
                 return null;
         }
@@ -133,11 +133,17 @@ public final class RatingCompat implements Parcelable {
 
     public float getStarRating() {
         int i = this.mRatingStyle;
-        return ((i == 3 || i == 4 || i == 5) && isRated()) ? this.mRatingValue : RATING_NOT_RATED;
+        if ((i == 3 || i == 4 || i == 5) && isRated()) {
+            return this.mRatingValue;
+        }
+        return -1.0f;
     }
 
     public float getPercentRating() {
-        return (this.mRatingStyle == 6 && isRated()) ? this.mRatingValue : RATING_NOT_RATED;
+        if (this.mRatingStyle == 6 && isRated()) {
+            return this.mRatingValue;
+        }
+        return -1.0f;
     }
 
     public static RatingCompat fromRating(Object obj) {

@@ -1,7 +1,6 @@
 package androidx.compose.material3.internal.colorUtil;
 
 import androidx.core.graphics.ColorUtils;
-import androidx.core.view.ViewCompat;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import kotlin.Metadata;
 import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
@@ -18,7 +17,7 @@ public final class CamUtils {
     public static final int $stable = 8;
 
     private final int argbFromRgb(int i, int i2, int i3) {
-        return ((i & 255) << 16) | ViewCompat.MEASURED_STATE_MASK | ((i2 & 255) << 8) | (i3 & 255);
+        return ((i & 255) << 16) | (-16777216) | ((i2 & 255) << 8) | (i3 & 255);
     }
 
     private final int clampInt(int i, int i2, int i3) {
@@ -81,7 +80,7 @@ public final class CamUtils {
 
     public final int intFromLstar(float f) {
         if (f < 1.0f) {
-            return ViewCompat.MEASURED_STATE_MASK;
+            return -16777216;
         }
         if (f > 99.0f) {
             return -1;

@@ -19,11 +19,11 @@ public final class LazyGridDslKt$itemsIndexed$3 implements Function2<LazyGridIte
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ GridItemSpan invoke(LazyGridItemSpanScope lazyGridItemSpanScope, Integer num) {
-        return GridItemSpan.m983boximpl(m996invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
+        return GridItemSpan.m1063boximpl(m1076invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
     }
 
     /* renamed from: invoke-_-orMbw  reason: not valid java name */
-    public final long m996invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
-        return this.$span.invoke(lazyGridItemSpanScope, Integer.valueOf(i), this.$items.get(i)).m990unboximpl();
+    public final long m1076invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
+        return this.$span.invoke(lazyGridItemSpanScope, Integer.valueOf(i), this.$items.get(i)).m1070unboximpl();
     }
 }

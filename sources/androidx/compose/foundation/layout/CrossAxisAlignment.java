@@ -9,14 +9,11 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RowColumnImpl.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b1\u0018\u0000 \u00142\u00020\u0001:\u0007\u0014\u0015\u0016\u0017\u0018\u0019\u001aB\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003J-\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u0005H ¢\u0006\u0002\b\fJ\u0019\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0006\u0010\t\u001a\u00020\nH\u0010¢\u0006\u0004\b\u0012\u0010\u0013R\u0014\u0010\r\u001a\u00020\u000e8PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010\u0082\u0001\u0006\u001b\u001c\u001d\u001e\u001f ¨\u0006!"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment;", "", "<init>", "()V", "align", "", "size", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "placeable", "Landroidx/compose/ui/layout/Placeable;", "beforeCrossAxisAlignmentLine", "align$foundation_layout", "isRelative", "", "isRelative$foundation_layout", "()Z", "calculateAlignmentLinePosition", "calculateAlignmentLinePosition$foundation_layout", "(Landroidx/compose/ui/layout/Placeable;)Ljava/lang/Integer;", "Companion", "CenterCrossAxisAlignment", "StartCrossAxisAlignment", "EndCrossAxisAlignment", "AlignmentLineCrossAxisAlignment", "VerticalCrossAxisAlignment", "HorizontalCrossAxisAlignment", "Landroidx/compose/foundation/layout/CrossAxisAlignment$AlignmentLineCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment$CenterCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment$EndCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment$HorizontalCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment$StartCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment$VerticalCrossAxisAlignment;", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b1\u0018\u0000 \u00142\u00020\u0001:\u0004\u0014\u0015\u0016\u0017B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003J-\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u0005H ¢\u0006\u0002\b\fJ\u0019\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0006\u0010\t\u001a\u00020\nH\u0010¢\u0006\u0004\b\u0012\u0010\u0013R\u0014\u0010\r\u001a\u00020\u000e8PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010\u0082\u0001\u0003\u0018\u0019\u001a¨\u0006\u001b"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment;", "", "<init>", "()V", "align", "", "size", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "placeable", "Landroidx/compose/ui/layout/Placeable;", "beforeCrossAxisAlignmentLine", "align$foundation_layout", "isRelative", "", "isRelative$foundation_layout", "()Z", "calculateAlignmentLinePosition", "calculateAlignmentLinePosition$foundation_layout", "(Landroidx/compose/ui/layout/Placeable;)Ljava/lang/Integer;", "Companion", "AlignmentLineCrossAxisAlignment", "VerticalCrossAxisAlignment", "HorizontalCrossAxisAlignment", "Landroidx/compose/foundation/layout/CrossAxisAlignment$AlignmentLineCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment$HorizontalCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment$VerticalCrossAxisAlignment;", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class CrossAxisAlignment {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final CrossAxisAlignment Center = CenterCrossAxisAlignment.INSTANCE;
-    private static final CrossAxisAlignment Start = StartCrossAxisAlignment.INSTANCE;
-    private static final CrossAxisAlignment End = EndCrossAxisAlignment.INSTANCE;
 
     public /* synthetic */ CrossAxisAlignment(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -36,35 +33,14 @@ public abstract class CrossAxisAlignment {
     }
 
     /* compiled from: RowColumnImpl.kt */
-    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u0011J\u0015\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0013\u001a\u00020\u0014H\u0000¢\u0006\u0002\b\u0015J\u0015\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0016\u001a\u00020\u0017H\u0000¢\u0006\u0002\b\u0018J\u0015\u0010\u0019\u001a\u00020\u00052\u0006\u0010\u0019\u001a\u00020\u001aH\u0000¢\u0006\u0002\b\u001bR\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\n\u0010\u0003\u001a\u0004\b\u000b\u0010\bR\u001c\u0010\f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\r\u0010\u0003\u001a\u0004\b\u000e\u0010\b¨\u0006\u001c"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment$Companion;", "", "<init>", "()V", "Center", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "getCenter$annotations", "getCenter", "()Landroidx/compose/foundation/layout/CrossAxisAlignment;", "Start", "getStart$annotations", "getStart", "End", "getEnd$annotations", "getEnd", "AlignmentLine", "alignmentLine", "Landroidx/compose/ui/layout/AlignmentLine;", "Relative", "alignmentLineProvider", "Landroidx/compose/foundation/layout/AlignmentLineProvider;", "Relative$foundation_layout", "vertical", "Landroidx/compose/ui/Alignment$Vertical;", "vertical$foundation_layout", "horizontal", "Landroidx/compose/ui/Alignment$Horizontal;", "horizontal$foundation_layout", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007J\u0015\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\nH\u0000¢\u0006\u0002\b\u000bJ\u0015\u0010\f\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\rH\u0000¢\u0006\u0002\b\u000eJ\u0015\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0010H\u0000¢\u0006\u0002\b\u0011¨\u0006\u0012"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment$Companion;", "", "<init>", "()V", "AlignmentLine", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "alignmentLine", "Landroidx/compose/ui/layout/AlignmentLine;", "Relative", "alignmentLineProvider", "Landroidx/compose/foundation/layout/AlignmentLineProvider;", "Relative$foundation_layout", "vertical", "Landroidx/compose/ui/Alignment$Vertical;", "vertical$foundation_layout", "horizontal", "Landroidx/compose/ui/Alignment$Horizontal;", "horizontal$foundation_layout", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
-        public static /* synthetic */ void getCenter$annotations() {
-        }
-
-        public static /* synthetic */ void getEnd$annotations() {
-        }
-
-        public static /* synthetic */ void getStart$annotations() {
-        }
-
         private Companion() {
-        }
-
-        public final CrossAxisAlignment getCenter() {
-            return CrossAxisAlignment.Center;
-        }
-
-        public final CrossAxisAlignment getStart() {
-            return CrossAxisAlignment.Start;
-        }
-
-        public final CrossAxisAlignment getEnd() {
-            return CrossAxisAlignment.End;
         }
 
         public final CrossAxisAlignment AlignmentLine(AlignmentLine alignmentLine) {
@@ -85,60 +61,6 @@ public abstract class CrossAxisAlignment {
     }
 
     /* compiled from: RowColumnImpl.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J-\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u0005H\u0010¢\u0006\u0002\b\f¨\u0006\r"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment$CenterCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "<init>", "()V", "align", "", "size", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "placeable", "Landroidx/compose/ui/layout/Placeable;", "beforeCrossAxisAlignmentLine", "align$foundation_layout", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
-    private static final class CenterCrossAxisAlignment extends CrossAxisAlignment {
-        public static final CenterCrossAxisAlignment INSTANCE = new CenterCrossAxisAlignment();
-
-        private CenterCrossAxisAlignment() {
-            super(null);
-        }
-
-        @Override // androidx.compose.foundation.layout.CrossAxisAlignment
-        public int align$foundation_layout(int i, LayoutDirection layoutDirection, Placeable placeable, int i2) {
-            return i / 2;
-        }
-    }
-
-    /* compiled from: RowColumnImpl.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J-\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u0005H\u0010¢\u0006\u0002\b\f¨\u0006\r"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment$StartCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "<init>", "()V", "align", "", "size", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "placeable", "Landroidx/compose/ui/layout/Placeable;", "beforeCrossAxisAlignmentLine", "align$foundation_layout", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
-    private static final class StartCrossAxisAlignment extends CrossAxisAlignment {
-        public static final StartCrossAxisAlignment INSTANCE = new StartCrossAxisAlignment();
-
-        private StartCrossAxisAlignment() {
-            super(null);
-        }
-
-        @Override // androidx.compose.foundation.layout.CrossAxisAlignment
-        public int align$foundation_layout(int i, LayoutDirection layoutDirection, Placeable placeable, int i2) {
-            if (layoutDirection == LayoutDirection.Ltr) {
-                return 0;
-            }
-            return i;
-        }
-    }
-
-    /* compiled from: RowColumnImpl.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÂ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J-\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u0005H\u0010¢\u0006\u0002\b\f¨\u0006\r"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment$EndCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "<init>", "()V", "align", "", "size", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "placeable", "Landroidx/compose/ui/layout/Placeable;", "beforeCrossAxisAlignmentLine", "align$foundation_layout", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
-    private static final class EndCrossAxisAlignment extends CrossAxisAlignment {
-        public static final EndCrossAxisAlignment INSTANCE = new EndCrossAxisAlignment();
-
-        private EndCrossAxisAlignment() {
-            super(null);
-        }
-
-        @Override // androidx.compose.foundation.layout.CrossAxisAlignment
-        public int align$foundation_layout(int i, LayoutDirection layoutDirection, Placeable placeable, int i2) {
-            if (layoutDirection == LayoutDirection.Ltr) {
-                return i;
-            }
-            return 0;
-        }
-    }
-
-    /* compiled from: RowColumnImpl.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0017\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0010¢\u0006\u0004\b\u0010\u0010\u0011J-\u0010\u0012\u001a\u00020\r2\u0006\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0016\u001a\u00020\rH\u0010¢\u0006\u0002\b\u0017R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\t8PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\n\u0010\u000b¨\u0006\u0018"}, d2 = {"Landroidx/compose/foundation/layout/CrossAxisAlignment$AlignmentLineCrossAxisAlignment;", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "alignmentLineProvider", "Landroidx/compose/foundation/layout/AlignmentLineProvider;", "<init>", "(Landroidx/compose/foundation/layout/AlignmentLineProvider;)V", "getAlignmentLineProvider", "()Landroidx/compose/foundation/layout/AlignmentLineProvider;", "isRelative", "", "isRelative$foundation_layout", "()Z", "calculateAlignmentLinePosition", "", "placeable", "Landroidx/compose/ui/layout/Placeable;", "calculateAlignmentLinePosition$foundation_layout", "(Landroidx/compose/ui/layout/Placeable;)Ljava/lang/Integer;", "align", "size", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "beforeCrossAxisAlignmentLine", "align$foundation_layout", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     private static final class AlignmentLineCrossAxisAlignment extends CrossAxisAlignment {
@@ -149,13 +71,13 @@ public abstract class CrossAxisAlignment {
             return true;
         }
 
-        public final AlignmentLineProvider getAlignmentLineProvider() {
-            return this.alignmentLineProvider;
-        }
-
         public AlignmentLineCrossAxisAlignment(AlignmentLineProvider alignmentLineProvider) {
             super(null);
             this.alignmentLineProvider = alignmentLineProvider;
+        }
+
+        public final AlignmentLineProvider getAlignmentLineProvider() {
+            return this.alignmentLineProvider;
         }
 
         @Override // androidx.compose.foundation.layout.CrossAxisAlignment
@@ -168,7 +90,7 @@ public abstract class CrossAxisAlignment {
             int calculateAlignmentLinePosition = this.alignmentLineProvider.calculateAlignmentLinePosition(placeable);
             if (calculateAlignmentLinePosition != Integer.MIN_VALUE) {
                 int i3 = i2 - calculateAlignmentLinePosition;
-                return layoutDirection == LayoutDirection.Rtl ? i - i3 : i3;
+                return layoutDirection == LayoutDirection.Rtl ? (i - placeable.getWidth()) - i3 : i3;
             }
             return 0;
         }
@@ -210,18 +132,18 @@ public abstract class CrossAxisAlignment {
             return "VerticalCrossAxisAlignment(vertical=" + this.vertical + ')';
         }
 
-        public final Alignment.Vertical getVertical() {
-            return this.vertical;
-        }
-
         public VerticalCrossAxisAlignment(Alignment.Vertical vertical) {
             super(null);
             this.vertical = vertical;
         }
 
+        public final Alignment.Vertical getVertical() {
+            return this.vertical;
+        }
+
         @Override // androidx.compose.foundation.layout.CrossAxisAlignment
         public int align$foundation_layout(int i, LayoutDirection layoutDirection, Placeable placeable, int i2) {
-            return this.vertical.align(0, i);
+            return this.vertical.align(placeable.getHeight(), i);
         }
     }
 
@@ -261,18 +183,18 @@ public abstract class CrossAxisAlignment {
             return "HorizontalCrossAxisAlignment(horizontal=" + this.horizontal + ')';
         }
 
-        public final Alignment.Horizontal getHorizontal() {
-            return this.horizontal;
-        }
-
         public HorizontalCrossAxisAlignment(Alignment.Horizontal horizontal) {
             super(null);
             this.horizontal = horizontal;
         }
 
+        public final Alignment.Horizontal getHorizontal() {
+            return this.horizontal;
+        }
+
         @Override // androidx.compose.foundation.layout.CrossAxisAlignment
         public int align$foundation_layout(int i, LayoutDirection layoutDirection, Placeable placeable, int i2) {
-            return this.horizontal.align(0, i, layoutDirection);
+            return this.horizontal.align(placeable.getWidth(), i, layoutDirection);
         }
     }
 }

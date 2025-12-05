@@ -21,7 +21,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 import com.arizonagames.feature.arizona.family.adapters.CharterAdapter;
 import com.arizonagames.feature.arizona.family.adapters.CharterMembersAdapter;
 import com.arizonagames.feature.arizona.family.adapters.CreateClanColorAdapter;
@@ -1213,7 +1212,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setFrameMember$lambda$0$0(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonPrem.setCardBackgroundColor(-1);
-        familyMembersFrameBinding.buttonPremText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        familyMembersFrameBinding.buttonPremText.setTextColor(-16777216);
         familyScreen.notifyClick(10, 0, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
         familyScreen.onClickMembersFrame();
     }
@@ -1221,7 +1220,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setFrameMember$lambda$0$1(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonRank.setCardBackgroundColor(-1);
-        familyMembersFrameBinding.buttonRankText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        familyMembersFrameBinding.buttonRankText.setTextColor(-16777216);
         familyScreen.notifyClick(10, 1, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
         familyScreen.onClickMembersFrame();
     }
@@ -1229,7 +1228,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setFrameMember$lambda$0$2(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonWarn.setCardBackgroundColor(-1);
-        familyMembersFrameBinding.buttonWarnText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        familyMembersFrameBinding.buttonWarnText.setTextColor(-16777216);
         familyScreen.notifyClick(10, 2, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
         familyScreen.onClickMembersFrame();
     }
@@ -1237,7 +1236,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setFrameMember$lambda$0$3(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonKick.setCardBackgroundColor(-1);
-        familyMembersFrameBinding.buttonKickText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        familyMembersFrameBinding.buttonKickText.setTextColor(-16777216);
         familyScreen.notifyClick(10, 3, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
         familyScreen.onClickMembersFrame();
     }

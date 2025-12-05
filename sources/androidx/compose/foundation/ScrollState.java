@@ -27,7 +27,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.ranges.RangesKt;
 /* compiled from: Scroll.kt */
-@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u0000 C2\u00020\u0001:\u0001CB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J?\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020%2'\u0010&\u001a#\b\u0001\u0012\u0004\u0012\u00020(\u0012\n\u0012\b\u0012\u0004\u0012\u00020#0)\u0012\u0006\u0012\u0004\u0018\u00010*0'¢\u0006\u0002\b+H\u0096@¢\u0006\u0002\u0010,J\u0010\u0010-\u001a\u00020 2\u0006\u0010.\u001a\u00020 H\u0016J&\u0010=\u001a\u00020#2\u0006\u0010\u0007\u001a\u00020\u00032\u000e\b\u0002\u0010>\u001a\b\u0012\u0004\u0012\u00020 0?H\u0086@¢\u0006\u0002\u0010@J\u0016\u0010A\u001a\u00020 2\u0006\u0010\u0007\u001a\u00020\u0003H\u0086@¢\u0006\u0002\u0010BR+\u0010\u0007\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00038F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u000b\u0010\f\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u0005R$\u0010\u000e\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u00038F@@X\u0086\u000e¢\u0006\f\u001a\u0004\b\u000f\u0010\t\"\u0004\b\u0010\u0010\u0005R+\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00038F@@X\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u0014\u0010\f\u001a\u0004\b\u0012\u0010\t\"\u0004\b\u0013\u0010\u0005R\u0011\u0010\u0015\u001a\u00020\u00168F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R\u0014\u0010\u0019\u001a\u00020\u001aX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\u0002008VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b/\u00101R\u001b\u00102\u001a\u0002008VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b4\u00105\u001a\u0004\b3\u00101R\u001b\u00106\u001a\u0002008VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b8\u00105\u001a\u0004\b7\u00101R\u0014\u00109\u001a\u0002008VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b:\u00101R\u0014\u0010;\u001a\u0002008VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b<\u00101¨\u0006D"}, d2 = {"Landroidx/compose/foundation/ScrollState;", "Landroidx/compose/foundation/gestures/ScrollableState;", "initial", "", "<init>", "(I)V", "<set-?>", "value", "getValue", "()I", "setValue", "value$delegate", "Landroidx/compose/runtime/MutableIntState;", "newMax", "maxValue", "getMaxValue", "setMaxValue$foundation_release", "viewportSize", "getViewportSize", "setViewportSize$foundation_release", "viewportSize$delegate", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "internalInteractionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "getInternalInteractionSource$foundation_release", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "_maxValueState", "Landroidx/compose/runtime/MutableIntState;", "accumulator", "", "scrollableState", "scroll", "", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/ScrollScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchRawDelta", "delta", "isScrollInProgress", "", "()Z", "canScrollForward", "getCanScrollForward", "canScrollForward$delegate", "Landroidx/compose/runtime/State;", "canScrollBackward", "getCanScrollBackward", "canScrollBackward$delegate", "lastScrolledForward", "getLastScrolledForward", "lastScrolledBackward", "getLastScrolledBackward", "animateScrollTo", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(ILandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollTo", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000s\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005*\u0001'\b\u0007\u0018\u0000 N2\u00020\u0001:\u0001NB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J?\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020,2'\u0010-\u001a#\b\u0001\u0012\u0004\u0012\u00020/\u0012\n\u0012\b\u0012\u0004\u0012\u00020*00\u0012\u0006\u0012\u0004\u0018\u0001010.¢\u0006\u0002\b2H\u0096@¢\u0006\u0002\u00103J\u0010\u00104\u001a\u00020$2\u0006\u00105\u001a\u00020$H\u0016J&\u0010H\u001a\u00020*2\u0006\u0010\u0007\u001a\u00020\u00032\u000e\b\u0002\u0010I\u001a\b\u0012\u0004\u0012\u00020$0JH\u0086@¢\u0006\u0002\u0010KJ\u0016\u0010L\u001a\u00020$2\u0006\u0010\u0007\u001a\u00020\u0003H\u0086@¢\u0006\u0002\u0010MR+\u0010\u0007\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00038G@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u000b\u0010\f\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u0005R$\u0010\u000e\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u00038F@@X\u0086\u000e¢\u0006\f\u001a\u0004\b\u000f\u0010\t\"\u0004\b\u0010\u0010\u0005R+\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00038F@@X\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u0014\u0010\f\u001a\u0004\b\u0012\u0010\t\"\u0004\b\u0013\u0010\u0005R\u0011\u0010\u0015\u001a\u00020\u00168F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R+\u0010\u0019\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00038@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u001c\u0010\f\u001a\u0004\b\u001a\u0010\t\"\u0004\b\u001b\u0010\u0005R\u0014\u0010\u001d\u001a\u00020\u001eX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010&\u001a\u00020'X\u0082\u0004¢\u0006\u0004\n\u0002\u0010(R\u0014\u00106\u001a\u0002078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b6\u00108R\u001b\u00109\u001a\u0002078VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b;\u0010<\u001a\u0004\b:\u00108R\u001b\u0010=\u001a\u0002078VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b?\u0010<\u001a\u0004\b>\u00108R\u0014\u0010@\u001a\u0002078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bA\u00108R\u0014\u0010B\u001a\u0002078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bC\u00108R\u0016\u0010D\u001a\u0004\u0018\u00010E8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bF\u0010G¨\u0006O"}, d2 = {"Landroidx/compose/foundation/ScrollState;", "Landroidx/compose/foundation/gestures/ScrollableState;", "initial", "", "<init>", "(I)V", "<set-?>", "value", "getValue", "()I", "setValue", "value$delegate", "Landroidx/compose/runtime/MutableIntState;", "newMax", "maxValue", "getMaxValue", "setMaxValue$foundation", "viewportSize", "getViewportSize", "setViewportSize$foundation", "viewportSize$delegate", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "contentSize", "getContentSize$foundation", "setContentSize$foundation", "contentSize$delegate", "internalInteractionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "getInternalInteractionSource$foundation", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "_maxValueState", "Landroidx/compose/runtime/MutableIntState;", "accumulator", "", "scrollableState", "_scrollIndicatorState", "androidx/compose/foundation/ScrollState$_scrollIndicatorState$1", "Landroidx/compose/foundation/ScrollState$_scrollIndicatorState$1;", "scroll", "", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/ScrollScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchRawDelta", "delta", "isScrollInProgress", "", "()Z", "canScrollForward", "getCanScrollForward", "canScrollForward$delegate", "Landroidx/compose/runtime/State;", "canScrollBackward", "getCanScrollBackward", "canScrollBackward$delegate", "lastScrolledForward", "getLastScrolledForward", "lastScrolledBackward", "getLastScrolledBackward", "scrollIndicatorState", "Landroidx/compose/foundation/ScrollIndicatorState;", "getScrollIndicatorState", "()Landroidx/compose/foundation/ScrollIndicatorState;", "animateScrollTo", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(ILandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollTo", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ScrollState implements ScrollableState {
     public static final int $stable = 0;
@@ -35,48 +35,66 @@ public final class ScrollState implements ScrollableState {
     private static final Saver<ScrollState, ?> Saver = SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Integer Saver$lambda$4;
-            Saver$lambda$4 = ScrollState.Saver$lambda$4((SaverScope) obj, (ScrollState) obj2);
-            return Saver$lambda$4;
+            Integer Saver$lambda$0;
+            Saver$lambda$0 = ScrollState.Saver$lambda$0((SaverScope) obj, (ScrollState) obj2);
+            return Saver$lambda$0;
         }
     }, new Function1() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            ScrollState Saver$lambda$5;
-            Saver$lambda$5 = ScrollState.Saver$lambda$5(((Integer) obj).intValue());
-            return Saver$lambda$5;
+            ScrollState Saver$lambda$1;
+            Saver$lambda$1 = ScrollState.Saver$lambda$1(((Integer) obj).intValue());
+            return Saver$lambda$1;
         }
     });
     private float accumulator;
     private final MutableIntState value$delegate;
     private final MutableIntState viewportSize$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
+    private final MutableIntState contentSize$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
     private final MutableInteractionSource internalInteractionSource = InteractionSourceKt.MutableInteractionSource();
     private MutableIntState _maxValueState = SnapshotIntStateKt.mutableIntStateOf(Integer.MAX_VALUE);
     private final ScrollableState scrollableState = ScrollableStateKt.ScrollableState(new Function1() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            float scrollableState$lambda$1;
-            scrollableState$lambda$1 = ScrollState.scrollableState$lambda$1(ScrollState.this, ((Float) obj).floatValue());
-            return Float.valueOf(scrollableState$lambda$1);
+            float scrollableState$lambda$0;
+            scrollableState$lambda$0 = ScrollState.scrollableState$lambda$0(ScrollState.this, ((Float) obj).floatValue());
+            return Float.valueOf(scrollableState$lambda$0);
         }
     });
+    private final ScrollState$_scrollIndicatorState$1 _scrollIndicatorState = new ScrollIndicatorState() { // from class: androidx.compose.foundation.ScrollState$_scrollIndicatorState$1
+        @Override // androidx.compose.foundation.ScrollIndicatorState
+        public int getScrollOffset() {
+            return ScrollState.this.getValue();
+        }
+
+        @Override // androidx.compose.foundation.ScrollIndicatorState
+        public int getContentSize() {
+            return ScrollState.this.getContentSize$foundation();
+        }
+
+        @Override // androidx.compose.foundation.ScrollIndicatorState
+        public int getViewportSize() {
+            return ScrollState.this.getViewportSize();
+        }
+    };
     private final State canScrollForward$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            boolean canScrollForward_delegate$lambda$2;
-            canScrollForward_delegate$lambda$2 = ScrollState.canScrollForward_delegate$lambda$2(ScrollState.this);
-            return Boolean.valueOf(canScrollForward_delegate$lambda$2);
+            boolean canScrollForward_delegate$lambda$0;
+            canScrollForward_delegate$lambda$0 = ScrollState.canScrollForward_delegate$lambda$0(ScrollState.this);
+            return Boolean.valueOf(canScrollForward_delegate$lambda$0);
         }
     });
     private final State canScrollBackward$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            boolean canScrollBackward_delegate$lambda$3;
-            canScrollBackward_delegate$lambda$3 = ScrollState.canScrollBackward_delegate$lambda$3(ScrollState.this);
-            return Boolean.valueOf(canScrollBackward_delegate$lambda$3);
+            boolean canScrollBackward_delegate$lambda$0;
+            canScrollBackward_delegate$lambda$0 = ScrollState.canScrollBackward_delegate$lambda$0(ScrollState.this);
+            return Boolean.valueOf(canScrollBackward_delegate$lambda$0);
         }
     });
 
+    /* JADX WARN: Type inference failed for: r2v9, types: [androidx.compose.foundation.ScrollState$_scrollIndicatorState$1] */
     public ScrollState(int i) {
         this.value$delegate = SnapshotIntStateKt.mutableIntStateOf(i);
     }
@@ -93,7 +111,7 @@ public final class ScrollState implements ScrollableState {
         return this._maxValueState.getIntValue();
     }
 
-    public final void setMaxValue$foundation_release(int i) {
+    public final void setMaxValue$foundation(int i) {
         this._maxValueState.setIntValue(i);
         Snapshot.Companion companion = Snapshot.Companion;
         Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
@@ -113,7 +131,7 @@ public final class ScrollState implements ScrollableState {
         return this.viewportSize$delegate.getIntValue();
     }
 
-    public final void setViewportSize$foundation_release(int i) {
+    public final void setViewportSize$foundation(int i) {
         this.viewportSize$delegate.setIntValue(i);
     }
 
@@ -121,12 +139,20 @@ public final class ScrollState implements ScrollableState {
         return this.internalInteractionSource;
     }
 
-    public final MutableInteractionSource getInternalInteractionSource$foundation_release() {
+    public final int getContentSize$foundation() {
+        return this.contentSize$delegate.getIntValue();
+    }
+
+    public final void setContentSize$foundation(int i) {
+        this.contentSize$delegate.setIntValue(i);
+    }
+
+    public final MutableInteractionSource getInternalInteractionSource$foundation() {
         return this.internalInteractionSource;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final float scrollableState$lambda$1(ScrollState scrollState, float f) {
+    public static final float scrollableState$lambda$0(ScrollState scrollState, float f) {
         float value = scrollState.getValue() + f + scrollState.accumulator;
         float coerceIn = RangesKt.coerceIn(value, 0.0f, scrollState.getMaxValue());
         boolean z = value == coerceIn;
@@ -154,7 +180,7 @@ public final class ScrollState implements ScrollableState {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean canScrollForward_delegate$lambda$2(ScrollState scrollState) {
+    public static final boolean canScrollForward_delegate$lambda$0(ScrollState scrollState) {
         return scrollState.getValue() < scrollState.getMaxValue();
     }
 
@@ -164,7 +190,7 @@ public final class ScrollState implements ScrollableState {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean canScrollBackward_delegate$lambda$3(ScrollState scrollState) {
+    public static final boolean canScrollBackward_delegate$lambda$0(ScrollState scrollState) {
         return scrollState.getValue() > 0;
     }
 
@@ -181,6 +207,11 @@ public final class ScrollState implements ScrollableState {
     @Override // androidx.compose.foundation.gestures.ScrollableState
     public boolean getLastScrolledBackward() {
         return this.scrollableState.getLastScrolledBackward();
+    }
+
+    @Override // androidx.compose.foundation.gestures.ScrollableState
+    public ScrollIndicatorState getScrollIndicatorState() {
+        return this._scrollIndicatorState;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -201,7 +232,7 @@ public final class ScrollState implements ScrollableState {
     }
 
     /* compiled from: Scroll.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001b\u0010\u0004\u001a\f\u0012\u0004\u0012\u00020\u0006\u0012\u0002\b\u00030\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/foundation/ScrollState$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/foundation/ScrollState;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001b\u0010\u0004\u001a\f\u0012\u0004\u0012\u00020\u0006\u0012\u0002\b\u00030\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/foundation/ScrollState$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/foundation/ScrollState;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -217,12 +248,12 @@ public final class ScrollState implements ScrollableState {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Integer Saver$lambda$4(SaverScope saverScope, ScrollState scrollState) {
+    public static final Integer Saver$lambda$0(SaverScope saverScope, ScrollState scrollState) {
         return Integer.valueOf(scrollState.getValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ScrollState Saver$lambda$5(int i) {
+    public static final ScrollState Saver$lambda$1(int i) {
         return new ScrollState(i);
     }
 }

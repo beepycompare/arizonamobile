@@ -269,7 +269,7 @@ public class ConstraintSet {
         sMapToConstant.append(R.styleable.Constraint_layout_constraintWidth_min, WIDTH_MIN);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintHeight_min, HEIGHT_MIN);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintCircle, 61);
-        sMapToConstant.append(R.styleable.Constraint_layout_constraintCircleRadius, CIRCLE_RADIUS);
+        sMapToConstant.append(R.styleable.Constraint_layout_constraintCircleRadius, 62);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintCircleAngle, 63);
         sMapToConstant.append(R.styleable.Constraint_animateRelativeTo, 64);
         sMapToConstant.append(R.styleable.Constraint_transitionEasing, 65);
@@ -279,7 +279,7 @@ public class ConstraintSet {
         sMapToConstant.append(R.styleable.Constraint_android_id, 38);
         sMapToConstant.append(R.styleable.Constraint_motionProgress, PROGRESS);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintWidth_percent, WIDTH_PERCENT);
-        sMapToConstant.append(R.styleable.Constraint_layout_constraintHeight_percent, 70);
+        sMapToConstant.append(R.styleable.Constraint_layout_constraintHeight_percent, HEIGHT_PERCENT);
         sMapToConstant.append(R.styleable.Constraint_layout_wrapBehaviorInParent, 97);
         sMapToConstant.append(R.styleable.Constraint_chainUseRtl, 71);
         sMapToConstant.append(R.styleable.Constraint_barrierDirection, BARRIER_DIRECTION);
@@ -346,7 +346,7 @@ public class ConstraintSet {
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintHeight_max, HEIGHT_MAX);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintWidth_min, WIDTH_MIN);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintHeight_min, HEIGHT_MIN);
-        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintCircleRadius, CIRCLE_RADIUS);
+        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintCircleRadius, 62);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintCircleAngle, 63);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_animateRelativeTo, 64);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_transitionEasing, 65);
@@ -357,7 +357,7 @@ public class ConstraintSet {
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_motionTarget, MOTION_TARGET);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_motionProgress, PROGRESS);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintWidth_percent, WIDTH_PERCENT);
-        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintHeight_percent, 70);
+        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_constraintHeight_percent, HEIGHT_PERCENT);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_chainUseRtl, 71);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_barrierDirection, BARRIER_DIRECTION);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_barrierMargin, BARRIER_MARGIN);
@@ -1034,10 +1034,10 @@ public class ConstraintSet {
             sMapToConstant.append(R.styleable.Layout_layout_constrainedHeight, CONSTRAINED_HEIGHT);
             sMapToConstant.append(R.styleable.Layout_layout_wrapBehaviorInParent, LAYOUT_WRAP_BEHAVIOR);
             sMapToConstant.append(R.styleable.Layout_layout_constraintCircle, 61);
-            sMapToConstant.append(R.styleable.Layout_layout_constraintCircleRadius, CIRCLE_RADIUS);
+            sMapToConstant.append(R.styleable.Layout_layout_constraintCircleRadius, 62);
             sMapToConstant.append(R.styleable.Layout_layout_constraintCircleAngle, 63);
             sMapToConstant.append(R.styleable.Layout_layout_constraintWidth_percent, WIDTH_PERCENT);
-            sMapToConstant.append(R.styleable.Layout_layout_constraintHeight_percent, 70);
+            sMapToConstant.append(R.styleable.Layout_layout_constraintHeight_percent, HEIGHT_PERCENT);
             sMapToConstant.append(R.styleable.Layout_chainUseRtl, 71);
             sMapToConstant.append(R.styleable.Layout_barrierDirection, BARRIER_DIRECTION);
             sMapToConstant.append(R.styleable.Layout_barrierMargin, BARRIER_MARGIN);
@@ -1192,7 +1192,7 @@ public class ConstraintSet {
                             case 61:
                                 this.circleConstraint = ConstraintSet.lookupID(obtainStyledAttributes, index, this.circleConstraint);
                                 continue;
-                            case CIRCLE_RADIUS /* 62 */:
+                            case 62:
                                 this.circleRadius = obtainStyledAttributes.getDimensionPixelSize(index, this.circleRadius);
                                 continue;
                             case 63:
@@ -1203,7 +1203,7 @@ public class ConstraintSet {
                                     case WIDTH_PERCENT /* 69 */:
                                         this.widthPercent = obtainStyledAttributes.getFloat(index, 1.0f);
                                         continue;
-                                    case 70:
+                                    case HEIGHT_PERCENT /* 70 */:
                                         this.heightPercent = obtainStyledAttributes.getFloat(index, 1.0f);
                                         continue;
                                     case 71:
@@ -1779,7 +1779,7 @@ public class ConstraintSet {
         }
 
         /* renamed from: clone */
-        public Constraint m8482clone() {
+        public Constraint m8744clone() {
             Constraint constraint = new Constraint();
             constraint.layout.copyFrom(this.layout);
             constraint.motion.copyFrom(this.motion);
@@ -1955,7 +1955,7 @@ public class ConstraintSet {
         for (Integer num : constraintSet.mConstraints.keySet()) {
             Constraint constraint = constraintSet.mConstraints.get(num);
             if (constraint != null) {
-                this.mConstraints.put(num, constraint.m8482clone());
+                this.mConstraints.put(num, constraint.m8744clone());
             }
         }
     }
@@ -3545,8 +3545,8 @@ public class ConstraintSet {
                 case 60:
                     delta.add(60, typedArray.getFloat(index, constraint.transform.rotation));
                     break;
-                case CIRCLE_RADIUS /* 62 */:
-                    delta.add(CIRCLE_RADIUS, typedArray.getDimensionPixelSize(index, constraint.layout.circleRadius));
+                case 62:
+                    delta.add(62, typedArray.getDimensionPixelSize(index, constraint.layout.circleRadius));
                     break;
                 case 63:
                     delta.add(63, typedArray.getFloat(index, constraint.layout.circleAngle));
@@ -3574,8 +3574,8 @@ public class ConstraintSet {
                 case WIDTH_PERCENT /* 69 */:
                     delta.add(WIDTH_PERCENT, typedArray.getFloat(index, 1.0f));
                     break;
-                case 70:
-                    delta.add(70, typedArray.getFloat(index, 1.0f));
+                case HEIGHT_PERCENT /* 70 */:
+                    delta.add(HEIGHT_PERCENT, typedArray.getFloat(index, 1.0f));
                     break;
                 case 71:
                     Log.e(TAG, "CURRENTLY UNSUPPORTED");
@@ -3760,7 +3760,7 @@ public class ConstraintSet {
                             case WIDTH_PERCENT /* 69 */:
                                 constraint.layout.widthPercent = f;
                                 return;
-                            case 70:
+                            case HEIGHT_PERCENT /* 70 */:
                                 constraint.layout.heightPercent = f;
                                 return;
                             default:
@@ -3792,7 +3792,7 @@ public class ConstraintSet {
             constraint.layout.verticalChainStyle = i2;
         } else if (i == 61) {
             constraint.layout.circleConstraint = i2;
-        } else if (i == CIRCLE_RADIUS) {
+        } else if (i == 62) {
             constraint.layout.circleRadius = i2;
         } else if (i == BARRIER_DIRECTION) {
             constraint.layout.mBarrierDirection = i2;
@@ -4160,7 +4160,7 @@ public class ConstraintSet {
                 case 61:
                     constraint.layout.circleConstraint = lookupID(typedArray, index, constraint.layout.circleConstraint);
                     break;
-                case CIRCLE_RADIUS /* 62 */:
+                case 62:
                     constraint.layout.circleRadius = typedArray.getDimensionPixelSize(index, constraint.layout.circleRadius);
                     break;
                 case 63:
@@ -4189,7 +4189,7 @@ public class ConstraintSet {
                 case WIDTH_PERCENT /* 69 */:
                     constraint.layout.widthPercent = typedArray.getFloat(index, 1.0f);
                     break;
-                case 70:
+                case HEIGHT_PERCENT /* 70 */:
                     constraint.layout.heightPercent = typedArray.getFloat(index, 1.0f);
                     break;
                 case 71:

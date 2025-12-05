@@ -21,10 +21,11 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldPressGestureFilter.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implements PointerInputEventHandler {
+public final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implements PointerInputEventHandler {
     final /* synthetic */ MutableInteractionSource $interactionSource;
     final /* synthetic */ State<Function1<Offset, Unit>> $onTapState;
     final /* synthetic */ MutableState<PressInteraction.Press> $pressedInteraction;
@@ -41,7 +42,7 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
 
     /* compiled from: TextFieldPressGestureFilter.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", "it", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1", f = "TextFieldPressGestureFilter.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1", f = "TextFieldPressGestureFilter.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1  reason: invalid class name */
     /* loaded from: classes.dex */
     static final class AnonymousClass1 extends SuspendLambda implements Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> {
@@ -62,11 +63,11 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m1377invoked4ec7I(pressGestureScope, offset.m5046unboximpl(), continuation);
+            return m1456invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m1377invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m1456invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$scope, this.$pressedInteraction, this.$interactionSource, continuation);
             anonymousClass1.L$0 = pressGestureScope;
             anonymousClass1.J$0 = j;
@@ -76,10 +77,10 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TextFieldPressGestureFilter.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1$1", f = "TextFieldPressGestureFilter.kt", i = {1}, l = {60, 64}, m = "invokeSuspend", n = {"interaction"}, s = {"L$0"})
+        @DebugMetadata(c = "androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1$1", f = "TextFieldPressGestureFilter.kt", i = {1}, l = {60, 64}, m = "invokeSuspend", n = {"interaction"}, s = {"L$0"}, v = 1)
         /* renamed from: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C00141 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        public static final class C00131 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ MutableInteractionSource $interactionSource;
             final /* synthetic */ long $it;
             final /* synthetic */ MutableState<PressInteraction.Press> $pressedInteraction;
@@ -87,7 +88,7 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00141(MutableState<PressInteraction.Press> mutableState, long j, MutableInteractionSource mutableInteractionSource, Continuation<? super C00141> continuation) {
+            C00131(MutableState<PressInteraction.Press> mutableState, long j, MutableInteractionSource mutableInteractionSource, Continuation<? super C00131> continuation) {
                 super(2, continuation);
                 this.$pressedInteraction = mutableState;
                 this.$it = j;
@@ -96,12 +97,12 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new C00141(this.$pressedInteraction, this.$it, this.$interactionSource, continuation);
+                return new C00131(this.$pressedInteraction, this.$it, this.$interactionSource, continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((C00141) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00131) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             /* JADX WARN: Removed duplicated region for block: B:22:0x005c  */
@@ -177,7 +178,7 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                BuildersKt__Builders_commonKt.launch$default(this.$scope, null, null, new C00141(this.$pressedInteraction, this.J$0, this.$interactionSource, null), 3, null);
+                BuildersKt__Builders_commonKt.launch$default(this.$scope, null, null, new C00131(this.$pressedInteraction, this.J$0, this.$interactionSource, null), 3, null);
                 this.label = 1;
                 obj = ((PressGestureScope) this.L$0).tryAwaitRelease(this);
                 if (obj == coroutine_suspended) {
@@ -195,7 +196,7 @@ final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1 implem
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TextFieldPressGestureFilter.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1$2", f = "TextFieldPressGestureFilter.kt", i = {}, l = {76}, m = "invokeSuspend", n = {}, s = {})
+        @DebugMetadata(c = "androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1$2", f = "TextFieldPressGestureFilter.kt", i = {}, l = {76}, m = "invokeSuspend", n = {}, s = {}, v = 1)
         /* renamed from: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$1$2  reason: invalid class name */
         /* loaded from: classes.dex */
         public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

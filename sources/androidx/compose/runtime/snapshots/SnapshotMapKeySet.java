@@ -106,11 +106,12 @@ public final class SnapshotMapKeySet<K, V> extends SnapshotMapSet<K, V, K> {
             StateRecord firstStateRecord2 = map.getFirstStateRecord();
             Intrinsics.checkNotNull(firstStateRecord2, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             SnapshotStateMap.StateMapStateRecord stateMapStateRecord2 = (SnapshotStateMap.StateMapStateRecord) firstStateRecord2;
+            SnapshotStateMap<K, V> snapshotStateMap = map;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, map, current), modification$runtime, build);
+                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, snapshotStateMap, current), modification$runtime, build);
             }
-            SnapshotKt.notifyWrite(current, map);
+            SnapshotKt.notifyWrite(current, snapshotStateMap);
         } while (!attemptUpdate);
         return z;
     }

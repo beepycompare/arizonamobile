@@ -14,16 +14,16 @@ public final class StateListStateRecord<T> extends StateRecord {
     private int modification;
     private int structuralChange;
 
+    public StateListStateRecord(long j, PersistentList<? extends T> persistentList) {
+        super(j);
+        this.list = persistentList;
+    }
+
     public final PersistentList<T> getList$runtime() {
         return (PersistentList<? extends T>) this.list;
     }
 
     public final void setList$runtime(PersistentList<? extends T> persistentList) {
-        this.list = persistentList;
-    }
-
-    public StateListStateRecord(long j, PersistentList<? extends T> persistentList) {
-        super(j);
         this.list = persistentList;
     }
 

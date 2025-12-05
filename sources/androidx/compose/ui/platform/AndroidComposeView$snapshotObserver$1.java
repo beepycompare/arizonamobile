@@ -2,6 +2,7 @@ package androidx.compose.ui.platform;
 
 import android.os.Handler;
 import android.os.Looper;
+import androidx.compose.ui.node.RootForTest;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -29,6 +30,31 @@ public final class AndroidComposeView$snapshotObserver$1 extends Lambda implemen
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(final Function0<Unit> function0) {
+        final RootForTest.UncaughtExceptionHandler uncaughtExceptionHandler$ui = this.this$0.getUncaughtExceptionHandler$ui();
+        if (uncaughtExceptionHandler$ui != null) {
+            function0 = new Function0<Unit>() { // from class: androidx.compose.ui.platform.AndroidComposeView$snapshotObserver$1$command$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    try {
+                        function0.invoke();
+                    } catch (Exception e) {
+                        uncaughtExceptionHandler$ui.onUncaughtException(e);
+                    }
+                }
+            };
+        }
         Handler handler = this.this$0.getHandler();
         if ((handler != null ? handler.getLooper() : null) == Looper.myLooper()) {
             function0.invoke();

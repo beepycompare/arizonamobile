@@ -9,7 +9,7 @@ public final class wo extends SimpleThreadSafeToggle implements ApplicationState
     public wo() {
         super(false, "[VisibleAppStateOnlyTrackingStatusToggle]");
         synchronized (this) {
-            a(C0471oa.k().e().registerStickyObserver(this));
+            a(C0470oa.k().e().registerStickyObserver(this));
             Unit unit = Unit.INSTANCE;
         }
     }

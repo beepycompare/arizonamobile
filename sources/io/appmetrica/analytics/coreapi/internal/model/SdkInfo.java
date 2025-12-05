@@ -8,19 +8,19 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SdkInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f280a;
+    private final String f363a;
     private final String b;
     private final String c;
 
     public SdkInfo(String str, String str2, String str3) {
-        this.f280a = str;
+        this.f363a = str;
         this.b = str2;
         this.c = str3;
     }
 
     public static /* synthetic */ SdkInfo copy$default(SdkInfo sdkInfo, String str, String str2, String str3, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = sdkInfo.f280a;
+            str = sdkInfo.f363a;
         }
         if ((i & 2) != 0) {
             str2 = sdkInfo.b;
@@ -32,7 +32,7 @@ public final class SdkInfo {
     }
 
     public final String component1() {
-        return this.f280a;
+        return this.f363a;
     }
 
     public final String component2() {
@@ -53,7 +53,7 @@ public final class SdkInfo {
         }
         if (obj instanceof SdkInfo) {
             SdkInfo sdkInfo = (SdkInfo) obj;
-            return Intrinsics.areEqual(this.f280a, sdkInfo.f280a) && Intrinsics.areEqual(this.b, sdkInfo.b) && Intrinsics.areEqual(this.c, sdkInfo.c);
+            return Intrinsics.areEqual(this.f363a, sdkInfo.f363a) && Intrinsics.areEqual(this.b, sdkInfo.b) && Intrinsics.areEqual(this.c, sdkInfo.c);
         }
         return false;
     }
@@ -67,15 +67,15 @@ public final class SdkInfo {
     }
 
     public final String getSdkVersionName() {
-        return this.f280a;
+        return this.f363a;
     }
 
     public int hashCode() {
         int hashCode = this.b.hashCode();
-        return this.c.hashCode() + ((hashCode + (this.f280a.hashCode() * 31)) * 31);
+        return this.c.hashCode() + ((hashCode + (this.f363a.hashCode() * 31)) * 31);
     }
 
     public String toString() {
-        return "SdkInfo(sdkVersionName=" + this.f280a + ", sdkBuildNumber=" + this.b + ", sdkBuildType=" + this.c + ')';
+        return "SdkInfo(sdkVersionName=" + this.f363a + ", sdkBuildNumber=" + this.b + ", sdkBuildType=" + this.c + ')';
     }
 }

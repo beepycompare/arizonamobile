@@ -15,7 +15,7 @@ import kotlin.jvm.functions.Function3;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AnchoredDraggable.kt */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$2", f = "AnchoredDraggable.kt", i = {}, l = {1123}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$2", f = "AnchoredDraggable.kt", i = {}, l = {1128}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class AnchoredDraggableState$anchoredDrag$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ Function3<AnchoredDragScope, DraggableAnchors<T>, Continuation<? super Unit>, Object> $block;
@@ -45,7 +45,7 @@ public final class AnchoredDraggableState$anchoredDrag$2 extends SuspendLambda i
     /* JADX INFO: Add missing generic type declarations: [T] */
     /* compiled from: AnchoredDraggable.kt */
     @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0004H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "latestAnchors", "Landroidx/compose/foundation/gestures/DraggableAnchors;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$2$2", f = "AnchoredDraggable.kt", i = {}, l = {1124}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$2$2", f = "AnchoredDraggable.kt", i = {}, l = {1129}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$2$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2<T> extends SuspendLambda implements Function2<DraggableAnchors<T>, Continuation<? super Unit>, Object> {
@@ -127,7 +127,7 @@ public final class AnchoredDraggableState$anchoredDrag$2 extends SuspendLambda i
         }
         Object closestAnchor = this.this$0.getAnchors().closestAnchor(this.this$0.getOffset());
         if (closestAnchor != null) {
-            if (Math.abs(this.this$0.getOffset() - this.this$0.getAnchors().positionOf(closestAnchor)) < 0.5f && ((Boolean) this.this$0.getConfirmValueChange$foundation_release().invoke(closestAnchor)).booleanValue()) {
+            if (Math.abs(this.this$0.getOffset() - this.this$0.getAnchors().positionOf(closestAnchor)) < 0.5f && ((Boolean) this.this$0.getConfirmValueChange$foundation().invoke(closestAnchor)).booleanValue()) {
                 this.this$0.setSettledValue(closestAnchor);
                 this.this$0.setCurrentValue(closestAnchor);
             }

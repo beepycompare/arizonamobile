@@ -13,7 +13,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MeasureAndLayoutDelegate.kt */
-@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b%\b\u0001\u0018\u00002\u00020\u0001:\u0001_B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0015\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020 ¢\u0006\u0004\b*\u0010+J\u0018\u0010.\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u0018\u00101\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u0018\u00102\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u0018\u00103\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u000e\u00104\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0003J\u001f\u00105\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\u0010)\u001a\u0004\u0018\u00010 H\u0002¢\u0006\u0002\b6J\u001f\u00107\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\u0010)\u001a\u0004\u0018\u00010 H\u0002¢\u0006\u0002\b8J\u0018\u00109\u001a\u00020\t2\u0010\b\u0002\u0010:\u001a\n\u0012\u0004\u0012\u00020(\u0018\u00010;J\u0006\u0010<\u001a\u00020(J\u0010\u0010=\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001d\u00109\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010)\u001a\u00020 ¢\u0006\u0004\b>\u0010?J\u0010\u0010@\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001f\u0010A\u001a\u00020(2\u0006\u0010B\u001a\u00020\t2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020(0;H\u0082\bJ\u000e\u0010D\u001a\u00020(2\u0006\u0010E\u001a\u00020\u0017J\b\u0010F\u001a\u00020(H\u0002J$\u0010G\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u0010H\u001a\u00020\t2\b\b\u0002\u0010I\u001a\u00020\tH\u0002J\b\u0010J\u001a\u00020(H\u0002J\u0018\u0010K\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002J\u0016\u0010L\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tJ\u0018\u0010M\u001a\u00020(2\u0006\u0010N\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002J\u0018\u0010O\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002J\u0010\u0010P\u001a\u00020(2\b\b\u0002\u0010Q\u001a\u00020\tJ\u000e\u0010R\u001a\u00020(2\u0006\u0010N\u001a\u00020\u0003J\u0014\u0010^\u001a\u00020\t*\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\f\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\r\u0010\u000bR\u001a\u0010\u000e\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u000b\"\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0018\u001a\u00020\u00198F@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001e0\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010!\u001a\u0004\u0018\u00010\"X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u0010\u0010,\u001a\u0004\u0018\u00010-X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010S\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bT\u0010UR\u0018\u0010V\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bW\u0010UR\u0018\u0010X\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bY\u0010UR\u0018\u0010Z\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b[\u0010UR\u0018\u0010\\\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b]\u0010U¨\u0006`"}, d2 = {"Landroidx/compose/ui/node/MeasureAndLayoutDelegate;", "", "root", "Landroidx/compose/ui/node/LayoutNode;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;)V", "relayoutNodes", "Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;", "hasPendingMeasureOrLayout", "", "getHasPendingMeasureOrLayout", "()Z", "hasPendingOnPositionedCallbacks", "getHasPendingOnPositionedCallbacks", "duringMeasureLayout", "getDuringMeasureLayout$ui_release", "setDuringMeasureLayout$ui_release", "(Z)V", "duringFullMeasureLayoutPass", "onPositionedDispatcher", "Landroidx/compose/ui/node/OnPositionedDispatcher;", "onLayoutCompletedListeners", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;", "value", "", "measureIteration", "getMeasureIteration", "()J", "postponedMeasureRequests", "Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;", "rootConstraints", "Landroidx/compose/ui/unit/Constraints;", "uncaughtExceptionHandler", "Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;", "getUncaughtExceptionHandler$ui_release", "()Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;", "setUncaughtExceptionHandler$ui_release", "(Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;)V", "updateRootConstraints", "", "constraints", "updateRootConstraints-BRTryo0", "(J)V", "consistencyChecker", "Landroidx/compose/ui/node/LayoutTreeConsistencyChecker;", "requestLookaheadRemeasure", "layoutNode", "forced", "requestRemeasure", "requestLookaheadRelayout", "requestRelayout", "requestOnPositionedCallback", "doLookaheadRemeasure", "doLookaheadRemeasure-sdFAvZA", "doRemeasure", "doRemeasure-sdFAvZA", "measureAndLayout", "onLayout", "Lkotlin/Function0;", "measureOnly", "remeasureLookaheadRootsInSubtree", "measureAndLayout-0kLqBqw", "(Landroidx/compose/ui/node/LayoutNode;J)V", "ensureSubtreeLookaheadReplaced", "performMeasureAndLayout", "fullPass", "block", "registerOnLayoutCompletedListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "callOnLayoutCompletedListeners", "remeasureAndRelayoutIfNeeded", "affectsLookahead", "relayoutNeeded", "drainPostponedMeasureRequests", "remeasureOnly", "forceMeasureTheSubtree", "onlyRemeasureIfPending", "node", "forceMeasureTheSubtreeInternal", "dispatchOnPositionedCallbacks", "forceDispatch", "onNodeDetached", "remeasureCanAffectParentSize", "getRemeasureCanAffectParentSize", "(Landroidx/compose/ui/node/LayoutNode;)Z", "measuredByPlacedParent", "getMeasuredByPlacedParent", "canAffectPlacedParent", "getCanAffectPlacedParent", "canAffectParentInLookahead", "getCanAffectParentInLookahead", "lookaheadRemeasureCanAffectParentSize", "getLookaheadRemeasureCanAffectParentSize", "measurePending", "PostponedRequest", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b%\b\u0001\u0018\u00002\u00020\u0001:\u0001_B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0015\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020 ¢\u0006\u0004\b*\u0010+J\u0018\u0010.\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u0018\u00101\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u0018\u00102\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u0018\u00103\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020\tJ\u000e\u00104\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0003J\u001f\u00105\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\u0010)\u001a\u0004\u0018\u00010 H\u0002¢\u0006\u0002\b6J\u001f\u00107\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\u0010)\u001a\u0004\u0018\u00010 H\u0002¢\u0006\u0002\b8J\u0018\u00109\u001a\u00020\t2\u0010\b\u0002\u0010:\u001a\n\u0012\u0004\u0012\u00020(\u0018\u00010;J\u0006\u0010<\u001a\u00020(J\u0010\u0010=\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001d\u00109\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010)\u001a\u00020 ¢\u0006\u0004\b>\u0010?J\u0010\u0010@\u001a\u00020(2\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001f\u0010A\u001a\u00020(2\u0006\u0010B\u001a\u00020\t2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020(0;H\u0082\bJ\u000e\u0010D\u001a\u00020(2\u0006\u0010E\u001a\u00020\u0017J\b\u0010F\u001a\u00020(H\u0002J$\u0010G\u001a\u00020\t2\u0006\u0010/\u001a\u00020\u00032\b\b\u0002\u0010H\u001a\u00020\t2\b\b\u0002\u0010I\u001a\u00020\tH\u0002J\b\u0010J\u001a\u00020(H\u0002J\u0018\u0010K\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002J\u0016\u0010L\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tJ\u0018\u0010M\u001a\u00020(2\u0006\u0010N\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002J\u0018\u0010O\u001a\u00020(2\u0006\u0010/\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002J\u0010\u0010P\u001a\u00020(2\b\b\u0002\u0010Q\u001a\u00020\tJ\u000e\u0010R\u001a\u00020(2\u0006\u0010N\u001a\u00020\u0003J\u0014\u0010^\u001a\u00020\t*\u00020\u00032\u0006\u0010H\u001a\u00020\tH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\f\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\r\u0010\u000bR\u001a\u0010\u000e\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u000b\"\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0018\u001a\u00020\u00198F@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001e0\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010!\u001a\u0004\u0018\u00010\"X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u0010\u0010,\u001a\u0004\u0018\u00010-X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010S\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bT\u0010UR\u0018\u0010V\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bW\u0010UR\u0018\u0010X\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bY\u0010UR\u0018\u0010Z\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b[\u0010UR\u0018\u0010\\\u001a\u00020\t*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b]\u0010U¨\u0006`"}, d2 = {"Landroidx/compose/ui/node/MeasureAndLayoutDelegate;", "", "root", "Landroidx/compose/ui/node/LayoutNode;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;)V", "relayoutNodes", "Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;", "hasPendingMeasureOrLayout", "", "getHasPendingMeasureOrLayout", "()Z", "hasPendingOnPositionedCallbacks", "getHasPendingOnPositionedCallbacks", "duringMeasureLayout", "getDuringMeasureLayout$ui", "setDuringMeasureLayout$ui", "(Z)V", "duringFullMeasureLayoutPass", "onPositionedDispatcher", "Landroidx/compose/ui/node/OnPositionedDispatcher;", "onLayoutCompletedListeners", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;", "value", "", "measureIteration", "getMeasureIteration", "()J", "postponedMeasureRequests", "Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;", "rootConstraints", "Landroidx/compose/ui/unit/Constraints;", "uncaughtExceptionHandler", "Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;", "getUncaughtExceptionHandler$ui", "()Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;", "setUncaughtExceptionHandler$ui", "(Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;)V", "updateRootConstraints", "", "constraints", "updateRootConstraints-BRTryo0", "(J)V", "consistencyChecker", "Landroidx/compose/ui/node/LayoutTreeConsistencyChecker;", "requestLookaheadRemeasure", "layoutNode", "forced", "requestRemeasure", "requestLookaheadRelayout", "requestRelayout", "requestOnPositionedCallback", "doLookaheadRemeasure", "doLookaheadRemeasure-sdFAvZA", "doRemeasure", "doRemeasure-sdFAvZA", "measureAndLayout", "onLayout", "Lkotlin/Function0;", "measureOnly", "remeasureLookaheadRootsInSubtree", "measureAndLayout-0kLqBqw", "(Landroidx/compose/ui/node/LayoutNode;J)V", "ensureSubtreeLookaheadReplaced", "performMeasureAndLayout", "fullPass", "block", "registerOnLayoutCompletedListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "callOnLayoutCompletedListeners", "remeasureAndRelayoutIfNeeded", "affectsLookahead", "relayoutNeeded", "drainPostponedMeasureRequests", "remeasureOnly", "forceMeasureTheSubtree", "onlyRemeasureIfPending", "node", "forceMeasureTheSubtreeInternal", "dispatchOnPositionedCallbacks", "forceDispatch", "onNodeDetached", "remeasureCanAffectParentSize", "getRemeasureCanAffectParentSize", "(Landroidx/compose/ui/node/LayoutNode;)Z", "measuredByPlacedParent", "getMeasuredByPlacedParent", "canAffectPlacedParent", "getCanAffectPlacedParent", "canAffectParentInLookahead", "getCanAffectParentInLookahead", "lookaheadRemeasureCanAffectParentSize", "getLookaheadRemeasureCanAffectParentSize", "measurePending", "PostponedRequest", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MeasureAndLayoutDelegate {
     public static final int $stable = 8;
@@ -32,7 +32,7 @@ public final class MeasureAndLayoutDelegate {
     /* compiled from: MeasureAndLayoutDelegate.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -81,11 +81,11 @@ public final class MeasureAndLayoutDelegate {
         return this.onPositionedDispatcher.isNotEmpty();
     }
 
-    public final boolean getDuringMeasureLayout$ui_release() {
+    public final boolean getDuringMeasureLayout$ui() {
         return this.duringMeasureLayout;
     }
 
-    public final void setDuringMeasureLayout$ui_release(boolean z) {
+    public final void setDuringMeasureLayout$ui(boolean z) {
         this.duringMeasureLayout = z;
     }
 
@@ -96,32 +96,32 @@ public final class MeasureAndLayoutDelegate {
         return this.measureIteration;
     }
 
-    public final RootForTest.UncaughtExceptionHandler getUncaughtExceptionHandler$ui_release() {
+    public final RootForTest.UncaughtExceptionHandler getUncaughtExceptionHandler$ui() {
         return this.uncaughtExceptionHandler;
     }
 
-    public final void setUncaughtExceptionHandler$ui_release(RootForTest.UncaughtExceptionHandler uncaughtExceptionHandler) {
+    public final void setUncaughtExceptionHandler$ui(RootForTest.UncaughtExceptionHandler uncaughtExceptionHandler) {
         this.uncaughtExceptionHandler = uncaughtExceptionHandler;
     }
 
     /* renamed from: updateRootConstraints-BRTryo0 */
-    public final void m6938updateRootConstraintsBRTryo0(long j) {
+    public final void m7144updateRootConstraintsBRTryo0(long j) {
         Invalidation invalidation;
         Constraints constraints = this.rootConstraints;
-        if (constraints == null ? false : Constraints.m7942equalsimpl0(constraints.m7955unboximpl(), j)) {
+        if (constraints == null ? false : Constraints.m8204equalsimpl0(constraints.m8217unboximpl(), j)) {
             return;
         }
         if (this.duringMeasureLayout) {
             InlineClassHelperKt.throwIllegalArgumentException("updateRootConstraints called while measuring");
         }
-        this.rootConstraints = Constraints.m7936boximpl(j);
-        if (this.root.getLookaheadRoot$ui_release() != null) {
-            this.root.markLookaheadMeasurePending$ui_release();
+        this.rootConstraints = Constraints.m8198boximpl(j);
+        if (this.root.getLookaheadRoot$ui() != null) {
+            this.root.markLookaheadMeasurePending$ui();
         }
-        this.root.markMeasurePending$ui_release();
+        this.root.markMeasurePending$ui();
         DepthSortedSetsForDifferentPasses depthSortedSetsForDifferentPasses = this.relayoutNodes;
         LayoutNode layoutNode = this.root;
-        if (layoutNode.getLookaheadRoot$ui_release() != null) {
+        if (layoutNode.getLookaheadRoot$ui() != null) {
             invalidation = Invalidation.LookaheadMeasurement;
         } else {
             invalidation = Invalidation.Measurement;
@@ -137,26 +137,26 @@ public final class MeasureAndLayoutDelegate {
     }
 
     public final boolean requestLookaheadRemeasure(LayoutNode layoutNode, boolean z) {
-        LayoutNode parent$ui_release;
-        LayoutNode parent$ui_release2;
-        if (!(layoutNode.getLookaheadRoot$ui_release() != null)) {
+        LayoutNode parent$ui;
+        LayoutNode parent$ui2;
+        if (!(layoutNode.getLookaheadRoot$ui() != null)) {
             InlineClassHelperKt.throwIllegalStateException("Error: requestLookaheadRemeasure cannot be called on a node outside LookaheadScope");
         }
-        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui_release().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui().ordinal()];
         if (i != 1) {
             if (i != 2 && i != 3 && i != 4) {
                 if (i != 5) {
                     throw new NoWhenBranchMatchedException();
                 }
-                if (!layoutNode.getLookaheadMeasurePending$ui_release() || z) {
-                    layoutNode.markLookaheadMeasurePending$ui_release();
-                    layoutNode.markMeasurePending$ui_release();
+                if (!layoutNode.getLookaheadMeasurePending$ui() || z) {
+                    layoutNode.markLookaheadMeasurePending$ui();
+                    layoutNode.markMeasurePending$ui();
                     if (layoutNode.isDeactivated()) {
                         return false;
                     }
-                    if ((Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true) || getCanAffectParentInLookahead(layoutNode)) && ((parent$ui_release = layoutNode.getParent$ui_release()) == null || !parent$ui_release.getLookaheadMeasurePending$ui_release())) {
+                    if ((Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true) || getCanAffectParentInLookahead(layoutNode)) && ((parent$ui = layoutNode.getParent$ui()) == null || !parent$ui.getLookaheadMeasurePending$ui())) {
                         this.relayoutNodes.add(layoutNode, Invalidation.LookaheadMeasurement);
-                    } else if ((layoutNode.isPlaced() || getCanAffectPlacedParent(layoutNode)) && ((parent$ui_release2 = layoutNode.getParent$ui_release()) == null || !parent$ui_release2.getMeasurePending$ui_release())) {
+                    } else if ((layoutNode.isPlaced() || getCanAffectPlacedParent(layoutNode)) && ((parent$ui2 = layoutNode.getParent$ui()) == null || !parent$ui2.getMeasurePending$ui())) {
                         this.relayoutNodes.add(layoutNode, Invalidation.Measurement);
                     }
                     return !this.duringFullMeasureLayoutPass;
@@ -180,20 +180,20 @@ public final class MeasureAndLayoutDelegate {
     }
 
     public final boolean requestRemeasure(LayoutNode layoutNode, boolean z) {
-        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui_release().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui().ordinal()];
         if (i != 1 && i != 2) {
             if (i != 3 && i != 4) {
                 if (i != 5) {
                     throw new NoWhenBranchMatchedException();
                 }
-                if (!layoutNode.getMeasurePending$ui_release() || z) {
-                    layoutNode.markMeasurePending$ui_release();
+                if (!layoutNode.getMeasurePending$ui() || z) {
+                    layoutNode.markMeasurePending$ui();
                     if (layoutNode.isDeactivated()) {
                         return false;
                     }
                     if (layoutNode.isPlaced() || getCanAffectPlacedParent(layoutNode)) {
-                        LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-                        if (parent$ui_release == null || !parent$ui_release.getMeasurePending$ui_release()) {
+                        LayoutNode parent$ui = layoutNode.getParent$ui();
+                        if (parent$ui == null || !parent$ui.getMeasurePending$ui()) {
                             this.relayoutNodes.add(layoutNode, Invalidation.Measurement);
                         }
                         return !this.duringFullMeasureLayoutPass;
@@ -219,7 +219,7 @@ public final class MeasureAndLayoutDelegate {
     }
 
     public final boolean requestLookaheadRelayout(LayoutNode layoutNode, boolean z) {
-        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui_release().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -228,22 +228,22 @@ public final class MeasureAndLayoutDelegate {
                     }
                 }
             }
-            if ((layoutNode.getLookaheadMeasurePending$ui_release() || layoutNode.getLookaheadLayoutPending$ui_release()) && !z) {
+            if ((layoutNode.getLookaheadMeasurePending$ui() || layoutNode.getLookaheadLayoutPending$ui()) && !z) {
                 LayoutTreeConsistencyChecker layoutTreeConsistencyChecker = this.consistencyChecker;
                 if (layoutTreeConsistencyChecker != null) {
                     layoutTreeConsistencyChecker.assertConsistent();
                 }
                 return false;
             }
-            layoutNode.markLookaheadLayoutPending$ui_release();
-            layoutNode.markLayoutPending$ui_release();
+            layoutNode.markLookaheadLayoutPending$ui();
+            layoutNode.markLayoutPending$ui();
             if (layoutNode.isDeactivated()) {
                 return false;
             }
-            LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-            if (Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true) && ((parent$ui_release == null || !parent$ui_release.getLookaheadMeasurePending$ui_release()) && (parent$ui_release == null || !parent$ui_release.getLookaheadLayoutPending$ui_release()))) {
+            LayoutNode parent$ui = layoutNode.getParent$ui();
+            if (Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true) && ((parent$ui == null || !parent$ui.getLookaheadMeasurePending$ui()) && (parent$ui == null || !parent$ui.getLookaheadLayoutPending$ui()))) {
                 this.relayoutNodes.add(layoutNode, Invalidation.LookaheadPlacement);
-            } else if (layoutNode.isPlaced() && ((parent$ui_release == null || !parent$ui_release.getLayoutPending$ui_release()) && (parent$ui_release == null || !parent$ui_release.getMeasurePending$ui_release()))) {
+            } else if (layoutNode.isPlaced() && ((parent$ui == null || !parent$ui.getLayoutPending$ui()) && (parent$ui == null || !parent$ui.getMeasurePending$ui()))) {
                 this.relayoutNodes.add(layoutNode, Invalidation.Placement);
             }
             return !this.duringFullMeasureLayoutPass;
@@ -263,7 +263,7 @@ public final class MeasureAndLayoutDelegate {
     }
 
     public final boolean requestRelayout(LayoutNode layoutNode, boolean z) {
-        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui_release().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[layoutNode.getLayoutState$ui().ordinal()];
         if (i == 1 || i == 2 || i == 3 || i == 4) {
             LayoutTreeConsistencyChecker layoutTreeConsistencyChecker = this.consistencyChecker;
             if (layoutTreeConsistencyChecker != null) {
@@ -273,18 +273,18 @@ public final class MeasureAndLayoutDelegate {
         } else if (i != 5) {
             throw new NoWhenBranchMatchedException();
         } else {
-            LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-            boolean z2 = parent$ui_release == null || parent$ui_release.isPlaced();
-            if (!z && (layoutNode.getMeasurePending$ui_release() || (layoutNode.getLayoutPending$ui_release() && layoutNode.isPlaced() == z2 && layoutNode.isPlaced() == layoutNode.isPlacedByParent()))) {
+            LayoutNode parent$ui = layoutNode.getParent$ui();
+            boolean z2 = parent$ui == null || parent$ui.isPlaced();
+            if (!z && (layoutNode.getMeasurePending$ui() || (layoutNode.getLayoutPending$ui() && layoutNode.isPlaced() == z2 && layoutNode.isPlaced() == layoutNode.isPlacedByParent()))) {
                 LayoutTreeConsistencyChecker layoutTreeConsistencyChecker2 = this.consistencyChecker;
                 if (layoutTreeConsistencyChecker2 != null) {
                     layoutTreeConsistencyChecker2.assertConsistent();
                 }
                 return false;
             }
-            layoutNode.markLayoutPending$ui_release();
+            layoutNode.markLayoutPending$ui();
             if (!layoutNode.isDeactivated() && layoutNode.isPlacedByParent() && z2) {
-                if ((parent$ui_release == null || !parent$ui_release.getLayoutPending$ui_release()) && (parent$ui_release == null || !parent$ui_release.getMeasurePending$ui_release())) {
+                if ((parent$ui == null || !parent$ui.getLayoutPending$ui()) && (parent$ui == null || !parent$ui.getMeasurePending$ui())) {
                     this.relayoutNodes.add(layoutNode, Invalidation.Placement);
                 }
                 if (!this.duringFullMeasureLayoutPass) {
@@ -300,49 +300,49 @@ public final class MeasureAndLayoutDelegate {
     }
 
     /* renamed from: doLookaheadRemeasure-sdFAvZA */
-    private final boolean m6935doLookaheadRemeasuresdFAvZA(LayoutNode layoutNode, Constraints constraints) {
-        boolean m6893lookaheadRemeasure_Sx5XlM$ui_release$default;
-        if (layoutNode.getLookaheadRoot$ui_release() == null) {
+    private final boolean m7141doLookaheadRemeasuresdFAvZA(LayoutNode layoutNode, Constraints constraints) {
+        boolean m7099lookaheadRemeasure_Sx5XlM$ui$default;
+        if (layoutNode.getLookaheadRoot$ui() == null) {
             return false;
         }
         if (constraints != null) {
-            m6893lookaheadRemeasure_Sx5XlM$ui_release$default = layoutNode.m6900lookaheadRemeasure_Sx5XlM$ui_release(constraints);
+            m7099lookaheadRemeasure_Sx5XlM$ui$default = layoutNode.m7106lookaheadRemeasure_Sx5XlM$ui(constraints);
         } else {
-            m6893lookaheadRemeasure_Sx5XlM$ui_release$default = LayoutNode.m6893lookaheadRemeasure_Sx5XlM$ui_release$default(layoutNode, null, 1, null);
+            m7099lookaheadRemeasure_Sx5XlM$ui$default = LayoutNode.m7099lookaheadRemeasure_Sx5XlM$ui$default(layoutNode, null, 1, null);
         }
-        LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-        if (m6893lookaheadRemeasure_Sx5XlM$ui_release$default && parent$ui_release != null) {
-            if (parent$ui_release.getLookaheadRoot$ui_release() == null) {
-                LayoutNode.requestRemeasure$ui_release$default(parent$ui_release, false, false, false, 3, null);
-                return m6893lookaheadRemeasure_Sx5XlM$ui_release$default;
-            } else if (layoutNode.getMeasuredByParentInLookahead$ui_release() == LayoutNode.UsageByParent.InMeasureBlock) {
-                LayoutNode.requestLookaheadRemeasure$ui_release$default(parent$ui_release, false, false, false, 3, null);
-                return m6893lookaheadRemeasure_Sx5XlM$ui_release$default;
-            } else if (layoutNode.getMeasuredByParentInLookahead$ui_release() == LayoutNode.UsageByParent.InLayoutBlock) {
-                LayoutNode.requestLookaheadRelayout$ui_release$default(parent$ui_release, false, 1, null);
+        LayoutNode parent$ui = layoutNode.getParent$ui();
+        if (m7099lookaheadRemeasure_Sx5XlM$ui$default && parent$ui != null) {
+            if (parent$ui.getLookaheadRoot$ui() == null) {
+                LayoutNode.requestRemeasure$ui$default(parent$ui, false, false, false, 3, null);
+                return m7099lookaheadRemeasure_Sx5XlM$ui$default;
+            } else if (layoutNode.getMeasuredByParentInLookahead$ui() == LayoutNode.UsageByParent.InMeasureBlock) {
+                LayoutNode.requestLookaheadRemeasure$ui$default(parent$ui, false, false, false, 3, null);
+                return m7099lookaheadRemeasure_Sx5XlM$ui$default;
+            } else if (layoutNode.getMeasuredByParentInLookahead$ui() == LayoutNode.UsageByParent.InLayoutBlock) {
+                LayoutNode.requestLookaheadRelayout$ui$default(parent$ui, false, 1, null);
             }
         }
-        return m6893lookaheadRemeasure_Sx5XlM$ui_release$default;
+        return m7099lookaheadRemeasure_Sx5XlM$ui$default;
     }
 
     /* renamed from: doRemeasure-sdFAvZA */
-    private final boolean m6936doRemeasuresdFAvZA(LayoutNode layoutNode, Constraints constraints) {
-        boolean m6894remeasure_Sx5XlM$ui_release$default;
+    private final boolean m7142doRemeasuresdFAvZA(LayoutNode layoutNode, Constraints constraints) {
+        boolean m7100remeasure_Sx5XlM$ui$default;
         if (constraints != null) {
-            m6894remeasure_Sx5XlM$ui_release$default = layoutNode.m6901remeasure_Sx5XlM$ui_release(constraints);
+            m7100remeasure_Sx5XlM$ui$default = layoutNode.m7107remeasure_Sx5XlM$ui(constraints);
         } else {
-            m6894remeasure_Sx5XlM$ui_release$default = LayoutNode.m6894remeasure_Sx5XlM$ui_release$default(layoutNode, null, 1, null);
+            m7100remeasure_Sx5XlM$ui$default = LayoutNode.m7100remeasure_Sx5XlM$ui$default(layoutNode, null, 1, null);
         }
-        LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-        if (m6894remeasure_Sx5XlM$ui_release$default && parent$ui_release != null) {
-            if (layoutNode.getMeasuredByParent$ui_release() == LayoutNode.UsageByParent.InMeasureBlock) {
-                LayoutNode.requestRemeasure$ui_release$default(parent$ui_release, false, false, false, 3, null);
-                return m6894remeasure_Sx5XlM$ui_release$default;
-            } else if (layoutNode.getMeasuredByParent$ui_release() == LayoutNode.UsageByParent.InLayoutBlock) {
-                LayoutNode.requestRelayout$ui_release$default(parent$ui_release, false, 1, null);
+        LayoutNode parent$ui = layoutNode.getParent$ui();
+        if (m7100remeasure_Sx5XlM$ui$default && parent$ui != null) {
+            if (layoutNode.getMeasuredByParent$ui() == LayoutNode.UsageByParent.InMeasureBlock) {
+                LayoutNode.requestRemeasure$ui$default(parent$ui, false, false, false, 3, null);
+                return m7100remeasure_Sx5XlM$ui$default;
+            } else if (layoutNode.getMeasuredByParent$ui() == LayoutNode.UsageByParent.InLayoutBlock) {
+                LayoutNode.requestRelayout$ui$default(parent$ui, false, 1, null);
             }
         }
-        return m6894remeasure_Sx5XlM$ui_release$default;
+        return m7100remeasure_Sx5XlM$ui$default;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -369,7 +369,7 @@ public final class MeasureAndLayoutDelegate {
                 this.duringFullMeasureLayoutPass = false;
                 try {
                     if (this.relayoutNodes.getAffectsLookaheadMeasure()) {
-                        if (this.root.getLookaheadRoot$ui_release() != null) {
+                        if (this.root.getLookaheadRoot$ui() != null) {
                             remeasureOnly(this.root, true);
                         } else {
                             remeasureLookaheadRootsInSubtree(this.root);
@@ -397,7 +397,7 @@ public final class MeasureAndLayoutDelegate {
     }
 
     /* renamed from: measureAndLayout-0kLqBqw */
-    public final void m6937measureAndLayout0kLqBqw(LayoutNode layoutNode, long j) {
+    public final void m7143measureAndLayout0kLqBqw(LayoutNode layoutNode, long j) {
         if (layoutNode.isDeactivated()) {
             return;
         }
@@ -418,13 +418,13 @@ public final class MeasureAndLayoutDelegate {
             this.duringFullMeasureLayoutPass = false;
             try {
                 this.relayoutNodes.remove(layoutNode);
-                if ((m6935doLookaheadRemeasuresdFAvZA(layoutNode, Constraints.m7936boximpl(j)) || layoutNode.getLookaheadLayoutPending$ui_release()) && Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true)) {
-                    layoutNode.lookaheadReplace$ui_release();
+                if ((m7141doLookaheadRemeasuresdFAvZA(layoutNode, Constraints.m8198boximpl(j)) || layoutNode.getLookaheadLayoutPending$ui()) && Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true)) {
+                    layoutNode.lookaheadReplace$ui();
                 }
                 ensureSubtreeLookaheadReplaced(layoutNode);
-                m6936doRemeasuresdFAvZA(layoutNode, Constraints.m7936boximpl(j));
-                if (layoutNode.getLayoutPending$ui_release() && layoutNode.isPlaced()) {
-                    layoutNode.replace$ui_release();
+                m7142doRemeasuresdFAvZA(layoutNode, Constraints.m8198boximpl(j));
+                if (layoutNode.getLayoutPending$ui() && layoutNode.isPlaced()) {
+                    layoutNode.replace$ui();
                     this.onPositionedDispatcher.onNodePositioned(layoutNode);
                 }
                 drainPostponedMeasureRequests();
@@ -512,11 +512,11 @@ public final class MeasureAndLayoutDelegate {
     public final boolean remeasureAndRelayoutIfNeeded(LayoutNode layoutNode, boolean z, boolean z2) {
         Constraints constraints;
         boolean z3;
-        LayoutNode parent$ui_release;
+        LayoutNode parent$ui;
         if (layoutNode.isDeactivated()) {
             return false;
         }
-        if (layoutNode.isPlaced() || layoutNode.isPlacedByParent() || getCanAffectPlacedParent(layoutNode) || Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true) || getCanAffectParentInLookahead(layoutNode) || layoutNode.getAlignmentLinesRequired$ui_release()) {
+        if (layoutNode.isPlaced() || layoutNode.isPlacedByParent() || getCanAffectPlacedParent(layoutNode) || Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true) || getCanAffectParentInLookahead(layoutNode) || layoutNode.getAlignmentLinesRequired$ui()) {
             if (layoutNode == this.root) {
                 constraints = this.rootConstraints;
                 Intrinsics.checkNotNull(constraints);
@@ -524,26 +524,25 @@ public final class MeasureAndLayoutDelegate {
                 constraints = null;
             }
             if (z) {
-                z3 = layoutNode.getLookaheadMeasurePending$ui_release() ? m6935doLookaheadRemeasuresdFAvZA(layoutNode, constraints) : false;
-                if (z2 && ((z3 || layoutNode.getLookaheadLayoutPending$ui_release()) && Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true))) {
-                    layoutNode.lookaheadReplace$ui_release();
+                z3 = layoutNode.getLookaheadMeasurePending$ui() ? m7141doLookaheadRemeasuresdFAvZA(layoutNode, constraints) : false;
+                if (z2 && ((z3 || layoutNode.getLookaheadLayoutPending$ui()) && Intrinsics.areEqual((Object) layoutNode.isPlacedInLookahead(), (Object) true))) {
+                    layoutNode.lookaheadReplace$ui();
                 }
             } else {
-                boolean m6936doRemeasuresdFAvZA = layoutNode.getMeasurePending$ui_release() ? m6936doRemeasuresdFAvZA(layoutNode, constraints) : false;
-                if (z2 && layoutNode.getLayoutPending$ui_release() && (layoutNode == this.root || ((parent$ui_release = layoutNode.getParent$ui_release()) != null && parent$ui_release.isPlaced() && layoutNode.isPlacedByParent()))) {
+                boolean m7142doRemeasuresdFAvZA = layoutNode.getMeasurePending$ui() ? m7142doRemeasuresdFAvZA(layoutNode, constraints) : false;
+                if (z2 && layoutNode.getLayoutPending$ui() && (layoutNode == this.root || ((parent$ui = layoutNode.getParent$ui()) != null && parent$ui.isPlaced() && layoutNode.isPlacedByParent()))) {
                     if (layoutNode == this.root) {
-                        layoutNode.place$ui_release(0, 0);
+                        layoutNode.place$ui(0, 0);
                     } else {
-                        layoutNode.replace$ui_release();
+                        layoutNode.replace$ui();
                     }
                     this.onPositionedDispatcher.onNodePositioned(layoutNode);
-                    LayoutNodeKt.requireOwner(layoutNode).getRectManager().invalidateCallbacksFor(layoutNode);
                     LayoutTreeConsistencyChecker layoutTreeConsistencyChecker = this.consistencyChecker;
                     if (layoutTreeConsistencyChecker != null) {
                         layoutTreeConsistencyChecker.assertConsistent();
                     }
                 }
-                z3 = m6936doRemeasuresdFAvZA;
+                z3 = m7142doRemeasuresdFAvZA;
             }
             drainPostponedMeasureRequests();
             return z3;
@@ -560,9 +559,9 @@ public final class MeasureAndLayoutDelegate {
                 PostponedRequest postponedRequest = postponedRequestArr[i];
                 if (postponedRequest.getNode().isAttached()) {
                     if (!postponedRequest.isLookahead()) {
-                        LayoutNode.requestRemeasure$ui_release$default(postponedRequest.getNode(), postponedRequest.isForced(), false, false, 2, null);
+                        LayoutNode.requestRemeasure$ui$default(postponedRequest.getNode(), postponedRequest.isForced(), false, false, 2, null);
                     } else {
-                        LayoutNode.requestLookaheadRemeasure$ui_release$default(postponedRequest.getNode(), postponedRequest.isForced(), false, false, 2, null);
+                        LayoutNode.requestLookaheadRemeasure$ui$default(postponedRequest.getNode(), postponedRequest.isForced(), false, false, 2, null);
                     }
                 }
             }
@@ -582,9 +581,9 @@ public final class MeasureAndLayoutDelegate {
             constraints = null;
         }
         if (z) {
-            m6935doLookaheadRemeasuresdFAvZA(layoutNode, constraints);
+            m7141doLookaheadRemeasuresdFAvZA(layoutNode, constraints);
         } else {
-            m6936doRemeasuresdFAvZA(layoutNode, constraints);
+            m7142doRemeasuresdFAvZA(layoutNode, constraints);
         }
     }
 
@@ -626,18 +625,18 @@ public final class MeasureAndLayoutDelegate {
     }
 
     private final boolean getRemeasureCanAffectParentSize(LayoutNode layoutNode) {
-        return layoutNode.getMeasuredByParent$ui_release() == LayoutNode.UsageByParent.InMeasureBlock || layoutNode.getLayoutDelegate$ui_release().getAlignmentLinesOwner$ui_release().getAlignmentLines().getRequired$ui_release();
+        return layoutNode.getMeasuredByParent$ui() == LayoutNode.UsageByParent.InMeasureBlock || layoutNode.getLayoutDelegate$ui().getAlignmentLinesOwner$ui().getAlignmentLines().getRequired$ui();
     }
 
     private final boolean getMeasuredByPlacedParent(LayoutNode layoutNode) {
         do {
-            if (layoutNode.getMeasuredByParent$ui_release() == LayoutNode.UsageByParent.NotUsed && !layoutNode.getLayoutDelegate$ui_release().getAlignmentLinesOwner$ui_release().getAlignmentLines().getRequired$ui_release()) {
-                LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-                if ((parent$ui_release != null ? parent$ui_release.getLayoutState$ui_release() : null) != LayoutNode.LayoutState.Measuring) {
+            if (layoutNode.getMeasuredByParent$ui() == LayoutNode.UsageByParent.NotUsed && !layoutNode.getLayoutDelegate$ui().getAlignmentLinesOwner$ui().getAlignmentLines().getRequired$ui()) {
+                LayoutNode parent$ui = layoutNode.getParent$ui();
+                if ((parent$ui != null ? parent$ui.getLayoutState$ui() : null) != LayoutNode.LayoutState.Measuring) {
                     return false;
                 }
             }
-            layoutNode = layoutNode.getParent$ui_release();
+            layoutNode = layoutNode.getParent$ui();
             if (layoutNode == null) {
                 return false;
             }
@@ -646,30 +645,30 @@ public final class MeasureAndLayoutDelegate {
     }
 
     private final boolean getCanAffectPlacedParent(LayoutNode layoutNode) {
-        return layoutNode.getMeasurePending$ui_release() && getMeasuredByPlacedParent(layoutNode);
+        return layoutNode.getMeasurePending$ui() && getMeasuredByPlacedParent(layoutNode);
     }
 
     private final boolean getCanAffectParentInLookahead(LayoutNode layoutNode) {
-        AlignmentLinesOwner lookaheadAlignmentLinesOwner$ui_release;
+        AlignmentLinesOwner lookaheadAlignmentLinesOwner$ui;
         AlignmentLines alignmentLines;
-        if (layoutNode.getLookaheadMeasurePending$ui_release()) {
-            return (layoutNode.getMeasuredByParentInLookahead$ui_release() == LayoutNode.UsageByParent.NotUsed && ((lookaheadAlignmentLinesOwner$ui_release = layoutNode.getLayoutDelegate$ui_release().getLookaheadAlignmentLinesOwner$ui_release()) == null || (alignmentLines = lookaheadAlignmentLinesOwner$ui_release.getAlignmentLines()) == null || !alignmentLines.getRequired$ui_release())) ? false : true;
+        if (layoutNode.getLookaheadMeasurePending$ui()) {
+            return (layoutNode.getMeasuredByParentInLookahead$ui() == LayoutNode.UsageByParent.NotUsed && ((lookaheadAlignmentLinesOwner$ui = layoutNode.getLayoutDelegate$ui().getLookaheadAlignmentLinesOwner$ui()) == null || (alignmentLines = lookaheadAlignmentLinesOwner$ui.getAlignmentLines()) == null || !alignmentLines.getRequired$ui())) ? false : true;
         }
         return false;
     }
 
     private final boolean getLookaheadRemeasureCanAffectParentSize(LayoutNode layoutNode) {
-        AlignmentLinesOwner lookaheadAlignmentLinesOwner$ui_release;
+        AlignmentLinesOwner lookaheadAlignmentLinesOwner$ui;
         AlignmentLines alignmentLines;
-        return layoutNode.getMeasuredByParentInLookahead$ui_release() == LayoutNode.UsageByParent.InMeasureBlock || !((lookaheadAlignmentLinesOwner$ui_release = layoutNode.getLayoutDelegate$ui_release().getLookaheadAlignmentLinesOwner$ui_release()) == null || (alignmentLines = lookaheadAlignmentLinesOwner$ui_release.getAlignmentLines()) == null || !alignmentLines.getRequired$ui_release());
+        return layoutNode.getMeasuredByParentInLookahead$ui() == LayoutNode.UsageByParent.InMeasureBlock || !((lookaheadAlignmentLinesOwner$ui = layoutNode.getLayoutDelegate$ui().getLookaheadAlignmentLinesOwner$ui()) == null || (alignmentLines = lookaheadAlignmentLinesOwner$ui.getAlignmentLines()) == null || !alignmentLines.getRequired$ui());
     }
 
     private final boolean measurePending(LayoutNode layoutNode, boolean z) {
-        return z ? layoutNode.getLookaheadMeasurePending$ui_release() : layoutNode.getMeasurePending$ui_release();
+        return z ? layoutNode.getLookaheadMeasurePending$ui() : layoutNode.getMeasurePending$ui();
     }
 
     /* compiled from: MeasureAndLayoutDelegate.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\b\u0007\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005¢\u0006\u0004\b\u0007\u0010\bR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u000bR\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u000b¨\u0006\f"}, d2 = {"Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;", "", "node", "Landroidx/compose/ui/node/LayoutNode;", "isLookahead", "", "isForced", "<init>", "(Landroidx/compose/ui/node/LayoutNode;ZZ)V", "getNode", "()Landroidx/compose/ui/node/LayoutNode;", "()Z", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\b\u0007\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005¢\u0006\u0004\b\u0007\u0010\bR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u000bR\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u000b¨\u0006\f"}, d2 = {"Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;", "", "node", "Landroidx/compose/ui/node/LayoutNode;", "isLookahead", "", "isForced", "<init>", "(Landroidx/compose/ui/node/LayoutNode;ZZ)V", "getNode", "()Landroidx/compose/ui/node/LayoutNode;", "()Z", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class PostponedRequest {
         public static final int $stable = 8;
@@ -727,11 +726,11 @@ public final class MeasureAndLayoutDelegate {
                         try {
                             if (!depthSortedSetsForDifferentPasses.lookaheadAndAncestorMeasureSet.isEmpty()) {
                                 pop = depthSortedSetsForDifferentPasses.lookaheadAndAncestorMeasureSet.pop();
-                                z3 = pop.getLookaheadRoot$ui_release() != null;
+                                z3 = pop.getLookaheadRoot$ui() != null;
                                 z2 = false;
                             } else if (!depthSortedSetsForDifferentPasses.lookaheadAndAncestorPlaceSet.isEmpty()) {
                                 pop = depthSortedSetsForDifferentPasses.lookaheadAndAncestorPlaceSet.pop();
-                                z3 = pop.getLookaheadRoot$ui_release() != null;
+                                z3 = pop.getLookaheadRoot$ui() != null;
                                 z2 = true;
                             } else if (depthSortedSetsForDifferentPasses.approachSet.isEmpty()) {
                                 break;
@@ -742,10 +741,10 @@ public final class MeasureAndLayoutDelegate {
                             }
                             boolean remeasureAndRelayoutIfNeeded = remeasureAndRelayoutIfNeeded(pop, z3, z2);
                             if (!z2) {
-                                if (pop.getLookaheadLayoutPending$ui_release()) {
+                                if (pop.getLookaheadLayoutPending$ui()) {
                                     this.relayoutNodes.add(pop, Invalidation.LookaheadPlacement);
                                 }
-                                if (pop.getLayoutPending$ui_release()) {
+                                if (pop.getLayoutPending$ui()) {
                                     this.relayoutNodes.add(pop, Invalidation.Placement);
                                 }
                             }
@@ -798,7 +797,7 @@ public final class MeasureAndLayoutDelegate {
     }
 
     private final void remeasureLookaheadRootsInSubtree(LayoutNode layoutNode) {
-        MutableVector<LayoutNode> mutableVector = layoutNode.get_children$ui_release();
+        MutableVector<LayoutNode> mutableVector = layoutNode.get_children$ui();
         LayoutNode[] layoutNodeArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {
@@ -814,14 +813,14 @@ public final class MeasureAndLayoutDelegate {
     }
 
     private final void ensureSubtreeLookaheadReplaced(LayoutNode layoutNode) {
-        MutableVector<LayoutNode> mutableVector = layoutNode.get_children$ui_release();
+        MutableVector<LayoutNode> mutableVector = layoutNode.get_children$ui();
         LayoutNode[] layoutNodeArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {
             LayoutNode layoutNode2 = layoutNodeArr[i];
             if (Intrinsics.areEqual((Object) layoutNode2.isPlacedInLookahead(), (Object) true) && !layoutNode2.isDeactivated()) {
                 if (this.relayoutNodes.contains(layoutNode2, true)) {
-                    layoutNode2.lookaheadReplace$ui_release();
+                    layoutNode2.lookaheadReplace$ui();
                 }
                 ensureSubtreeLookaheadReplaced(layoutNode2);
             }
@@ -829,14 +828,14 @@ public final class MeasureAndLayoutDelegate {
     }
 
     private final void forceMeasureTheSubtreeInternal(LayoutNode layoutNode, boolean z) {
-        MutableVector<LayoutNode> mutableVector = layoutNode.get_children$ui_release();
+        MutableVector<LayoutNode> mutableVector = layoutNode.get_children$ui();
         LayoutNode[] layoutNodeArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {
             LayoutNode layoutNode2 = layoutNodeArr[i];
             if ((!z && getRemeasureCanAffectParentSize(layoutNode2)) || (z && getLookaheadRemeasureCanAffectParentSize(layoutNode2))) {
                 if (LayoutNodeLayoutDelegateKt.isOutMostLookaheadRoot(layoutNode2) && !z) {
-                    if (layoutNode2.getLookaheadMeasurePending$ui_release() && this.relayoutNodes.contains(layoutNode2, true)) {
+                    if (layoutNode2.getLookaheadMeasurePending$ui() && this.relayoutNodes.contains(layoutNode2, true)) {
                         remeasureAndRelayoutIfNeeded(layoutNode2, true, false);
                     } else {
                         forceMeasureTheSubtree(layoutNode2, true);

@@ -5,5 +5,5 @@ import java.util.concurrent.TimeUnit;
 public abstract class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f1289a = (int) TimeUnit.SECONDS.toMillis(30);
+    public static final int f1372a = (int) TimeUnit.SECONDS.toMillis(30);
 }

@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow.internal;
 
+import androidx.compose.runtime.ComposerImplKt;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +9,7 @@ import kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Combine.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$2$1", f = "Combine.kt", i = {}, l = {125}, m = "emit", n = {}, s = {})
+@DebugMetadata(c = "kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$2$1", f = "Combine.kt", i = {}, l = {ComposerImplKt.nodeKey}, m = "emit", n = {}, s = {})
 /* loaded from: classes5.dex */
 public final class CombineKt$zipImpl$1$1$2$1$emit$1 extends ContinuationImpl {
     int label;

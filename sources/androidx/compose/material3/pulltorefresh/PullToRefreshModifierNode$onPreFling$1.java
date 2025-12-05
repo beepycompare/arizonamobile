@@ -26,6 +26,6 @@ public final class PullToRefreshModifierNode$onPreFling$1 extends ContinuationIm
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo928onPreFlingQWom1Mo(0L, this);
+        return this.this$0.mo1008onPreFlingQWom1Mo(0L, this);
     }
 }

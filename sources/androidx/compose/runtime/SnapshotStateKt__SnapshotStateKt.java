@@ -76,11 +76,11 @@ public final /* synthetic */ class SnapshotStateKt__SnapshotStateKt {
     }
 
     public static final <T> State<T> rememberUpdatedState(T t, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1058319986, "C(rememberUpdatedState)N(newValue)335@11760L37:SnapshotState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1058319986, "C(rememberUpdatedState)N(newValue)340@11995L37:SnapshotState.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1058319986, i, -1, "androidx.compose.runtime.rememberUpdatedState (SnapshotState.kt:335)");
+            ComposerKt.traceEventStart(-1058319986, i, -1, "androidx.compose.runtime.rememberUpdatedState (SnapshotState.kt:340)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 861745107, "CC(remember):SnapshotState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 861744499, "CC(remember):SnapshotState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = mutableStateOf$default(t, null, 2, null);

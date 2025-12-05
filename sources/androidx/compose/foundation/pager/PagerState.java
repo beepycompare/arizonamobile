@@ -1,8 +1,11 @@
 package androidx.compose.foundation.pager;
 
+import androidx.collection.SieveCacheKt;
 import androidx.compose.animation.core.AnimationSpec;
 import androidx.compose.animation.core.AnimationSpecKt;
+import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.MutatePriority;
+import androidx.compose.foundation.ScrollIndicatorState;
 import androidx.compose.foundation.gestures.Orientation;
 import androidx.compose.foundation.gestures.ScrollScope;
 import androidx.compose.foundation.gestures.ScrollableState;
@@ -13,6 +16,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
 import androidx.compose.foundation.lazy.layout.AwaitFirstLayoutModifier;
 import androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsInfo;
+import androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow;
 import androidx.compose.foundation.lazy.layout.LazyLayoutPinnedItemList;
 import androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState;
 import androidx.compose.foundation.lazy.layout.NestedPrefetchScope;
@@ -46,14 +50,16 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 /* compiled from: PagerState.kt */
-@Metadata(d1 = {"\u0000ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b$\n\u0002\u0018\u0002\n\u0002\b\u0002\b'\u0018\u00002\u00020\u0001B)\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\u0004\b\b\u0010\tB\u001d\b\u0016\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\b\u0010\nJ\u0010\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0002J%\u0010\u0099\u0001\u001a\u00030\u009a\u00012\u0007\u0010\u009b\u0001\u001a\u00020\u00032\t\b\u0003\u0010\u009c\u0001\u001a\u00020\u0005H\u0086@¢\u0006\u0003\u0010\u009d\u0001J!\u0010\u009e\u0001\u001a\u00030\u009a\u0001*\u00030\u009f\u00012\u0007\u0010\u009b\u0001\u001a\u00020\u00032\t\b\u0003\u0010\u009c\u0001\u001a\u00020\u0005J\u0015\u0010 \u0001\u001a\u00030\u009a\u0001*\u00030\u009f\u00012\u0006\u0010k\u001a\u00020\u0003J+\u0010¡\u0001\u001a\u00030\u009a\u00012\u0007\u0010\u009b\u0001\u001a\u00020\u00032\u0007\u0010¢\u0001\u001a\u00020\u00052\u0007\u0010£\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\b¤\u0001J\u001e\u0010§\u0001\u001a\u00030\u009a\u00012\t\b\u0001\u0010\u009b\u0001\u001a\u00020\u00032\t\b\u0003\u0010\u009c\u0001\u001a\u00020\u0005J7\u0010¨\u0001\u001a\u00030\u009a\u00012\u0007\u0010\u009b\u0001\u001a\u00020\u00032\t\b\u0003\u0010\u009c\u0001\u001a\u00020\u00052\u0010\b\u0002\u0010©\u0001\u001a\t\u0012\u0004\u0012\u00020\u00050ª\u0001H\u0086@¢\u0006\u0003\u0010«\u0001J\u0011\u0010¬\u0001\u001a\u00030\u009a\u0001H\u0082@¢\u0006\u0003\u0010\u00ad\u0001JK\u0010®\u0001\u001a\u00030\u009a\u00012\b\u0010¯\u0001\u001a\u00030°\u00012.\u0010±\u0001\u001a)\b\u0001\u0012\u0005\u0012\u00030\u009f\u0001\u0012\f\u0012\n\u0012\u0005\u0012\u00030\u009a\u00010³\u0001\u0012\u0007\u0012\u0005\u0018\u00010´\u00010²\u0001¢\u0006\u0003\bµ\u0001H\u0096@¢\u0006\u0003\u0010¶\u0001J\u0011\u0010·\u0001\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0016J-\u0010Ç\u0001\u001a\u00030\u009a\u00012\u0007\u0010È\u0001\u001a\u00020\u00102\u0007\u0010É\u0001\u001a\u00020\f2\t\b\u0002\u0010Ê\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\bË\u0001J\u0013\u0010Ì\u0001\u001a\u00030\u009a\u00012\u0007\u0010È\u0001\u001a\u00020\u0010H\u0002J\r\u0010Í\u0001\u001a\u00020\u0003*\u00020\u0003H\u0002J\u0012\u0010Î\u0001\u001a\u00020\f2\u0007\u0010Ï\u0001\u001a\u00020\u0005H\u0002J\u000f\u0010Ð\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\bÑ\u0001J\u001b\u0010Ò\u0001\u001a\u00030\u009a\u00012\u0006\u00101\u001a\u00020\u00052\u0007\u0010Ó\u0001\u001a\u00020BH\u0002J\u0013\u0010Ô\u0001\u001a\u00030\u009a\u00012\u0007\u0010Ó\u0001\u001a\u00020BH\u0002J\u001b\u0010Õ\u0001\u001a\u00020\u00032\u0007\u0010Ö\u0001\u001a\u00020\f2\u0007\u0010Ó\u0001\u001a\u00020BH\u0002J\u0010\u0010×\u0001\u001a\u00020\u00052\u0007\u0010\u009b\u0001\u001a\u00020\u0003J#\u0010Ø\u0001\u001a\u00020\u00032\b\u0010Ù\u0001\u001a\u00030Ú\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0000¢\u0006\u0003\bÛ\u0001R\u001e\u0010\r\u001a\u00020\f2\u0006\u0010\u000b\u001a\u00020\f@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\"\u0010\u0011\u001a\u0004\u0018\u00010\u00102\b\u0010\u000b\u001a\u0004\u0018\u00010\u0010@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0012\u0010\u0014\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016R+\u0010\u0019\u001a\u00020\u00182\u0006\u0010\u0017\u001a\u00020\u00188@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u001e\u0010\u001f\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\"\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0016R\u001e\u0010$\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0016R\u001a\u0010&\u001a\u00020'X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b(\u0010\u001b\"\u0004\b)\u0010\u001dR\u001a\u0010*\u001a\u00020'X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010\u001b\"\u0004\b,\u0010\u001dR\u000e\u0010-\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00102\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b3\u0010\u0016R\u001e\u00104\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b5\u0010\u0016R\u000e\u00106\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00107\u001a\u00020\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b8\u0010\u000f\"\u0004\b9\u0010:R\u000e\u0010;\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010<\u001a\u0004\u0018\u00010=X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010?\u001a\b\u0012\u0004\u0012\u00020\u00100@X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010A\u001a\u00020B8F¢\u0006\u0006\u001a\u0004\bC\u0010DR\u0014\u0010E\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bF\u0010\u0016R\u0014\u0010G\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bH\u0010\u0016R\u001a\u0010I\u001a\u00020JX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bK\u0010L\"\u0004\bM\u0010NR\u0014\u0010O\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bP\u0010\u0016R\u0014\u0010Q\u001a\u00020\u00058@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bR\u0010SR\u0014\u0010T\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bV\u0010WR\u0011\u0010X\u001a\u00020Y8F¢\u0006\u0006\u001a\u0004\bZ\u0010[R\u0011\u0010\u0002\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\\\u0010\u0016R+\u0010]\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\ba\u0010b\u001a\u0004\b^\u0010\u0016\"\u0004\b_\u0010`R+\u0010c\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bf\u0010b\u001a\u0004\bd\u0010\u0016\"\u0004\be\u0010`R\u001b\u0010g\u001a\u00020\u00038FX\u0086\u0084\u0002¢\u0006\f\n\u0004\bi\u0010j\u001a\u0004\bh\u0010\u0016R\u001b\u0010k\u001a\u00020\u00038FX\u0086\u0084\u0002¢\u0006\f\n\u0004\bm\u0010j\u001a\u0004\bl\u0010\u0016R\u0011\u0010\u0004\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\bn\u0010SR\u0014\u0010o\u001a\u00020pX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bq\u0010rR\u0014\u0010s\u001a\u00020tX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bu\u0010vR\u0014\u0010w\u001a\u00020xX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\by\u0010zR1\u0010|\u001a\u0004\u0018\u00010{2\b\u0010\u0017\u001a\u0004\u0018\u00010{8@@BX\u0080\u008e\u0002¢\u0006\u0014\n\u0005\b\u0081\u0001\u0010\u001f\u001a\u0004\b}\u0010~\"\u0005\b\u007f\u0010\u0080\u0001R\u0018\u0010\u0082\u0001\u001a\u00030\u0083\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0084\u0001\u0010\u0085\u0001R!\u0010\u0086\u0001\u001a\u00030\u0087\u0001X\u0080\u000e¢\u0006\u0013\n\u0003\u0010\u008a\u0001\u001a\u0005\b\u0088\u0001\u0010\u001b\"\u0005\b\u0089\u0001\u0010\u001dR\u0018\u0010\u008b\u0001\u001a\u00030\u008c\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u008d\u0001\u0010\u008e\u0001R!\u0010\u008f\u0001\u001a\u00030\u0090\u00018@X\u0080\u0084\u0002¢\u0006\u0010\u001a\u0006\b\u0093\u0001\u0010\u0094\u0001*\u0006\b\u0091\u0001\u0010\u0092\u0001R\u001a\u0010\u0095\u0001\u001a\u00030\u0096\u0001X\u0080\u0004¢\u0006\f\n\u0002\u0010\u001f\u001a\u0006\b\u0097\u0001\u0010\u0098\u0001R\u001a\u0010¥\u0001\u001a\u00030\u0096\u0001X\u0080\u0004¢\u0006\f\n\u0002\u0010\u001f\u001a\u0006\b¦\u0001\u0010\u0098\u0001R\u0016\u0010¸\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b¸\u0001\u0010\u000fR/\u0010¹\u0001\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\f8F@BX\u0086\u008e\u0002¢\u0006\u0015\n\u0005\b¼\u0001\u0010\u001f\u001a\u0005\bº\u0001\u0010\u000f\"\u0005\b»\u0001\u0010:R/\u0010½\u0001\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\f8F@BX\u0086\u008e\u0002¢\u0006\u0015\n\u0005\bÀ\u0001\u0010\u001f\u001a\u0005\b¾\u0001\u0010\u000f\"\u0005\b¿\u0001\u0010:R\u0015\u0010Á\u0001\u001a\b\u0012\u0004\u0012\u00020\f0@X\u0082\u0004¢\u0006\u0002\n\u0000R\u0015\u0010Â\u0001\u001a\b\u0012\u0004\u0012\u00020\f0@X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010Ã\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bÄ\u0001\u0010\u000fR\u0016\u0010Å\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bÆ\u0001\u0010\u000f¨\u0006Ü\u0001"}, d2 = {"Landroidx/compose/foundation/pager/PagerState;", "Landroidx/compose/foundation/gestures/ScrollableState;", "currentPage", "", "currentPageOffsetFraction", "", "prefetchScheduler", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "<init>", "(IFLandroidx/compose/foundation/lazy/layout/PrefetchScheduler;)V", "(IF)V", "value", "", "hasLookaheadOccurred", "getHasLookaheadOccurred$foundation_release", "()Z", "Landroidx/compose/foundation/pager/PagerMeasureResult;", "approachLayoutInfo", "getApproachLayoutInfo$foundation_release", "()Landroidx/compose/foundation/pager/PagerMeasureResult;", "pageCount", "getPageCount", "()I", "<set-?>", "Landroidx/compose/ui/geometry/Offset;", "upDownDifference", "getUpDownDifference-F1C5BW0$foundation_release", "()J", "setUpDownDifference-k-4lQ0M$foundation_release", "(J)V", "upDownDifference$delegate", "Landroidx/compose/runtime/MutableState;", "scrollPosition", "Landroidx/compose/foundation/pager/PagerScrollPosition;", "firstVisiblePage", "getFirstVisiblePage$foundation_release", "firstVisiblePageOffset", "getFirstVisiblePageOffset$foundation_release", "maxScrollOffset", "", "getMaxScrollOffset$foundation_release", "setMaxScrollOffset$foundation_release", "minScrollOffset", "getMinScrollOffset$foundation_release", "setMinScrollOffset$foundation_release", "accumulator", "previousPassDelta", "scrollableState", "performScroll", "delta", "numMeasurePasses", "getNumMeasurePasses$foundation_release", "layoutWithMeasurement", "getLayoutWithMeasurement$foundation_release", "layoutWithoutMeasurement", "prefetchingEnabled", "getPrefetchingEnabled$foundation_release", "setPrefetchingEnabled$foundation_release", "(Z)V", "indexToPrefetch", "currentPrefetchHandle", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "wasPrefetchingForward", "pagerLayoutInfoState", "Landroidx/compose/runtime/MutableState;", "layoutInfo", "Landroidx/compose/foundation/pager/PagerLayoutInfo;", "getLayoutInfo", "()Landroidx/compose/foundation/pager/PagerLayoutInfo;", "pageSpacing", "getPageSpacing$foundation_release", "pageSize", "getPageSize$foundation_release", "density", "Landroidx/compose/ui/unit/Density;", "getDensity$foundation_release", "()Landroidx/compose/ui/unit/Density;", "setDensity$foundation_release", "(Landroidx/compose/ui/unit/Density;)V", "pageSizeWithSpacing", "getPageSizeWithSpacing$foundation_release", "positionThresholdFraction", "getPositionThresholdFraction$foundation_release", "()F", "internalInteractionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "getInternalInteractionSource$foundation_release", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "getCurrentPage", "programmaticScrollTargetPage", "getProgrammaticScrollTargetPage", "setProgrammaticScrollTargetPage", "(I)V", "programmaticScrollTargetPage$delegate", "Landroidx/compose/runtime/MutableIntState;", "settledPageState", "getSettledPageState", "setSettledPageState", "settledPageState$delegate", "settledPage", "getSettledPage", "settledPage$delegate", "Landroidx/compose/runtime/State;", "targetPage", "getTargetPage", "targetPage$delegate", "getCurrentPageOffsetFraction", "prefetchState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "getPrefetchState$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "beyondBoundsInfo", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "getBeyondBoundsInfo$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "awaitLayoutModifier", "Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "getAwaitLayoutModifier$foundation_release", "()Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "Landroidx/compose/ui/layout/Remeasurement;", "remeasurement", "getRemeasurement$foundation_release", "()Landroidx/compose/ui/layout/Remeasurement;", "setRemeasurement", "(Landroidx/compose/ui/layout/Remeasurement;)V", "remeasurement$delegate", "remeasurementModifier", "Landroidx/compose/ui/layout/RemeasurementModifier;", "getRemeasurementModifier$foundation_release", "()Landroidx/compose/ui/layout/RemeasurementModifier;", "premeasureConstraints", "Landroidx/compose/ui/unit/Constraints;", "getPremeasureConstraints-msEJaDk$foundation_release", "setPremeasureConstraints-BRTryo0$foundation_release", "J", "pinnedPages", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "getPinnedPages$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "nearestRange", "Lkotlin/ranges/IntRange;", "getNearestRange$foundation_release$delegate", "(Landroidx/compose/foundation/pager/PagerState;)Ljava/lang/Object;", "getNearestRange$foundation_release", "()Lkotlin/ranges/IntRange;", "placementScopeInvalidator", "Landroidx/compose/foundation/lazy/layout/ObservableScopeInvalidator;", "getPlacementScopeInvalidator-zYiylxw$foundation_release", "()Landroidx/compose/runtime/MutableState;", "scrollToPage", "", "page", "pageOffsetFraction", "(IFLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateCurrentPage", "Landroidx/compose/foundation/gestures/ScrollScope;", "updateTargetPage", "snapToItem", "offsetFraction", "forceRemeasure", "snapToItem$foundation_release", "measurementScopeInvalidator", "getMeasurementScopeInvalidator-zYiylxw$foundation_release", "requestScrollToPage", "animateScrollToPage", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(IFLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitScrollDependencies", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scroll", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchRawDelta", "isScrollInProgress", "canScrollForward", "getCanScrollForward", "setCanScrollForward", "canScrollForward$delegate", "canScrollBackward", "getCanScrollBackward", "setCanScrollBackward", "canScrollBackward$delegate", "isLastScrollForwardState", "isLastScrollBackwardState", "lastScrolledForward", "getLastScrolledForward", "lastScrolledBackward", "getLastScrolledBackward", "applyMeasureResult", "result", "isLookingAhead", "visibleItemsStayedTheSame", "applyMeasureResult$foundation_release", "tryRunPrefetch", "coerceInPageRange", "isGestureActionMatchesScroll", "scrollDelta", "isNotGestureAction", "isNotGestureAction$foundation_release", "notifyPrefetch", "info", "cancelPrefetchIfVisibleItemsChanged", "calculatePrefetchIndex", "forward", "getOffsetDistanceInPages", "matchScrollPositionWithKey", "itemProvider", "Landroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;", "matchScrollPositionWithKey$foundation_release", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0002wz\b'\u0018\u00002\u00020\u0001B)\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\u0004\b\b\u0010\tB\u001d\b\u0016\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0003\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\b\u0010\nJ\u0010\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0002J\b\u0010|\u001a\u00020\u0003H\u0002J%\u0010§\u0001\u001a\u00030¨\u00012\u0007\u0010©\u0001\u001a\u00020\u00032\t\b\u0003\u0010ª\u0001\u001a\u00020\u0005H\u0086@¢\u0006\u0003\u0010«\u0001J!\u0010¬\u0001\u001a\u00030¨\u0001*\u00030\u00ad\u00012\u0007\u0010©\u0001\u001a\u00020\u00032\t\b\u0003\u0010ª\u0001\u001a\u00020\u0005J\u0015\u0010®\u0001\u001a\u00030¨\u0001*\u00030\u00ad\u00012\u0006\u0010n\u001a\u00020\u0003J+\u0010¯\u0001\u001a\u00030¨\u00012\u0007\u0010©\u0001\u001a\u00020\u00032\u0007\u0010°\u0001\u001a\u00020\u00052\u0007\u0010±\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\b²\u0001J\u001e\u0010µ\u0001\u001a\u00030¨\u00012\t\b\u0001\u0010©\u0001\u001a\u00020\u00032\t\b\u0003\u0010ª\u0001\u001a\u00020\u0005J7\u0010¶\u0001\u001a\u00030¨\u00012\u0007\u0010©\u0001\u001a\u00020\u00032\t\b\u0003\u0010ª\u0001\u001a\u00020\u00052\u0010\b\u0002\u0010·\u0001\u001a\t\u0012\u0004\u0012\u00020\u00050¸\u0001H\u0086@¢\u0006\u0003\u0010¹\u0001J\u0011\u0010º\u0001\u001a\u00030¨\u0001H\u0082@¢\u0006\u0003\u0010»\u0001JK\u0010¼\u0001\u001a\u00030¨\u00012\b\u0010½\u0001\u001a\u00030¾\u00012.\u0010¿\u0001\u001a)\b\u0001\u0012\u0005\u0012\u00030\u00ad\u0001\u0012\f\u0012\n\u0012\u0005\u0012\u00030¨\u00010Á\u0001\u0012\u0007\u0012\u0005\u0018\u00010Â\u00010À\u0001¢\u0006\u0003\bÃ\u0001H\u0096@¢\u0006\u0003\u0010Ä\u0001J\u0011\u0010Å\u0001\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0016J-\u0010Ù\u0001\u001a\u00030¨\u00012\u0007\u0010Ú\u0001\u001a\u00020\u00102\u0007\u0010Û\u0001\u001a\u00020\f2\t\b\u0002\u0010Ü\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\bÝ\u0001J\u0013\u0010Þ\u0001\u001a\u00030¨\u00012\u0007\u0010Ú\u0001\u001a\u00020\u0010H\u0002J\r\u0010ß\u0001\u001a\u00020\u0003*\u00020\u0003H\u0002J\u0012\u0010à\u0001\u001a\u00020\f2\u0007\u0010á\u0001\u001a\u00020\u0005H\u0002J\u000f\u0010â\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\bã\u0001J\u001b\u0010ä\u0001\u001a\u00030¨\u00012\u0006\u00101\u001a\u00020\u00052\u0007\u0010å\u0001\u001a\u00020BH\u0002J\u0013\u0010æ\u0001\u001a\u00030¨\u00012\u0007\u0010å\u0001\u001a\u00020BH\u0002J\u001b\u0010ç\u0001\u001a\u00020\u00032\u0007\u0010è\u0001\u001a\u00020\f2\u0007\u0010å\u0001\u001a\u00020BH\u0002J\u0010\u0010é\u0001\u001a\u00020\u00052\u0007\u0010©\u0001\u001a\u00020\u0003J#\u0010ê\u0001\u001a\u00020\u00032\b\u0010ë\u0001\u001a\u00030ì\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0000¢\u0006\u0003\bí\u0001R\u001e\u0010\r\u001a\u00020\f2\u0006\u0010\u000b\u001a\u00020\f@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\"\u0010\u0011\u001a\u0004\u0018\u00010\u00102\b\u0010\u000b\u001a\u0004\u0018\u00010\u0010@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0012\u0010\u0014\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016R+\u0010\u0019\u001a\u00020\u00182\u0006\u0010\u0017\u001a\u00020\u00188@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u001e\u0010\u001f\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\"\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0016R\u001e\u0010$\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0016R\u001a\u0010&\u001a\u00020'X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b(\u0010\u001b\"\u0004\b)\u0010\u001dR\u001a\u0010*\u001a\u00020'X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010\u001b\"\u0004\b,\u0010\u001dR\u000e\u0010-\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00102\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b3\u0010\u0016R\u001e\u00104\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b5\u0010\u0016R\u000e\u00106\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00107\u001a\u00020\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b8\u0010\u000f\"\u0004\b9\u0010:R\u000e\u0010;\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010<\u001a\u0004\u0018\u00010=X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010?\u001a\b\u0012\u0004\u0012\u00020\u00100@X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010A\u001a\u00020B8F¢\u0006\u0006\u001a\u0004\bC\u0010DR\u0014\u0010E\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bF\u0010\u0016R\u0014\u0010G\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bH\u0010\u0016R\u001a\u0010I\u001a\u00020JX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bK\u0010L\"\u0004\bM\u0010NR\u0014\u0010O\u001a\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bP\u0010\u0016R\u001a\u0010Q\u001a\u00020\u0003X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bR\u0010\u0016\"\u0004\bS\u0010TR\u0014\u0010U\u001a\u00020\u00058@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bV\u0010WR\u0014\u0010X\u001a\u00020YX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010[R\u0011\u0010\\\u001a\u00020]8F¢\u0006\u0006\u001a\u0004\b^\u0010_R\u0011\u0010\u0002\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b`\u0010\u0016R+\u0010a\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bd\u0010e\u001a\u0004\bb\u0010\u0016\"\u0004\bc\u0010TR+\u0010f\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bi\u0010e\u001a\u0004\bg\u0010\u0016\"\u0004\bh\u0010TR\u001b\u0010j\u001a\u00020\u00038FX\u0086\u0084\u0002¢\u0006\f\n\u0004\bl\u0010m\u001a\u0004\bk\u0010\u0016R\u001b\u0010n\u001a\u00020\u00038FX\u0086\u0084\u0002¢\u0006\f\n\u0004\bp\u0010m\u001a\u0004\bo\u0010\u0016R\u0011\u0010\u0004\u001a\u00020\u00058G¢\u0006\u0006\u001a\u0004\bq\u0010WR\u0014\u0010r\u001a\u00020sX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bt\u0010uR\u0010\u0010v\u001a\u00020wX\u0082\u0004¢\u0006\u0004\n\u0002\u0010xR\u0010\u0010y\u001a\u00020zX\u0082\u0004¢\u0006\u0004\n\u0002\u0010{R\u0015\u0010}\u001a\u00020~X\u0080\u0004¢\u0006\t\n\u0000\u001a\u0005\b\u007f\u0010\u0080\u0001R\u0018\u0010\u0081\u0001\u001a\u00030\u0082\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0083\u0001\u0010\u0084\u0001R\u0018\u0010\u0085\u0001\u001a\u00030\u0086\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0087\u0001\u0010\u0088\u0001R7\u0010\u008a\u0001\u001a\u0005\u0018\u00010\u0089\u00012\t\u0010\u0017\u001a\u0005\u0018\u00010\u0089\u00018@@BX\u0080\u008e\u0002¢\u0006\u0017\n\u0005\b\u008f\u0001\u0010\u001f\u001a\u0006\b\u008b\u0001\u0010\u008c\u0001\"\u0006\b\u008d\u0001\u0010\u008e\u0001R\u0018\u0010\u0090\u0001\u001a\u00030\u0091\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0092\u0001\u0010\u0093\u0001R!\u0010\u0094\u0001\u001a\u00030\u0095\u0001X\u0080\u000e¢\u0006\u0013\n\u0003\u0010\u0098\u0001\u001a\u0005\b\u0096\u0001\u0010\u001b\"\u0005\b\u0097\u0001\u0010\u001dR\u0018\u0010\u0099\u0001\u001a\u00030\u009a\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u009b\u0001\u0010\u009c\u0001R!\u0010\u009d\u0001\u001a\u00030\u009e\u00018@X\u0080\u0084\u0002¢\u0006\u0010\u001a\u0006\b¡\u0001\u0010¢\u0001*\u0006\b\u009f\u0001\u0010 \u0001R\u001a\u0010£\u0001\u001a\u00030¤\u0001X\u0080\u0004¢\u0006\f\n\u0002\u0010\u001f\u001a\u0006\b¥\u0001\u0010¦\u0001R\u001a\u0010³\u0001\u001a\u00030¤\u0001X\u0080\u0004¢\u0006\f\n\u0002\u0010\u001f\u001a\u0006\b´\u0001\u0010¦\u0001R\u0016\u0010Æ\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bÆ\u0001\u0010\u000fR/\u0010Ç\u0001\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\f8F@BX\u0086\u008e\u0002¢\u0006\u0015\n\u0005\bÊ\u0001\u0010\u001f\u001a\u0005\bÈ\u0001\u0010\u000f\"\u0005\bÉ\u0001\u0010:R/\u0010Ë\u0001\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\f8F@BX\u0086\u008e\u0002¢\u0006\u0015\n\u0005\bÎ\u0001\u0010\u001f\u001a\u0005\bÌ\u0001\u0010\u000f\"\u0005\bÍ\u0001\u0010:R\u0015\u0010Ï\u0001\u001a\b\u0012\u0004\u0012\u00020\f0@X\u0082\u0004¢\u0006\u0002\n\u0000R\u0015\u0010Ð\u0001\u001a\b\u0012\u0004\u0012\u00020\f0@X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010Ñ\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bÒ\u0001\u0010\u000fR\u0016\u0010Ó\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bÔ\u0001\u0010\u000fR\u001a\u0010Õ\u0001\u001a\u0005\u0018\u00010Ö\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b×\u0001\u0010Ø\u0001¨\u0006î\u0001"}, d2 = {"Landroidx/compose/foundation/pager/PagerState;", "Landroidx/compose/foundation/gestures/ScrollableState;", "currentPage", "", "currentPageOffsetFraction", "", "prefetchScheduler", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "<init>", "(IFLandroidx/compose/foundation/lazy/layout/PrefetchScheduler;)V", "(IF)V", "value", "", "hasLookaheadOccurred", "getHasLookaheadOccurred$foundation", "()Z", "Landroidx/compose/foundation/pager/PagerMeasureResult;", "approachLayoutInfo", "getApproachLayoutInfo$foundation", "()Landroidx/compose/foundation/pager/PagerMeasureResult;", "pageCount", "getPageCount", "()I", "<set-?>", "Landroidx/compose/ui/geometry/Offset;", "upDownDifference", "getUpDownDifference-F1C5BW0$foundation", "()J", "setUpDownDifference-k-4lQ0M$foundation", "(J)V", "upDownDifference$delegate", "Landroidx/compose/runtime/MutableState;", "scrollPosition", "Landroidx/compose/foundation/pager/PagerScrollPosition;", "firstVisiblePage", "getFirstVisiblePage$foundation", "firstVisiblePageOffset", "getFirstVisiblePageOffset$foundation", "maxScrollOffset", "", "getMaxScrollOffset$foundation", "setMaxScrollOffset$foundation", "minScrollOffset", "getMinScrollOffset$foundation", "setMinScrollOffset$foundation", "accumulator", "previousPassDelta", "scrollableState", "performScroll", "delta", "numMeasurePasses", "getNumMeasurePasses$foundation", "layoutWithMeasurement", "getLayoutWithMeasurement$foundation", "layoutWithoutMeasurement", "prefetchingEnabled", "getPrefetchingEnabled$foundation", "setPrefetchingEnabled$foundation", "(Z)V", "indexToPrefetch", "currentPrefetchHandle", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "wasPrefetchingForward", "pagerLayoutInfoState", "Landroidx/compose/runtime/MutableState;", "layoutInfo", "Landroidx/compose/foundation/pager/PagerLayoutInfo;", "getLayoutInfo", "()Landroidx/compose/foundation/pager/PagerLayoutInfo;", "pageSpacing", "getPageSpacing$foundation", "pageSize", "getPageSize$foundation", "density", "Landroidx/compose/ui/unit/Density;", "getDensity$foundation", "()Landroidx/compose/ui/unit/Density;", "setDensity$foundation", "(Landroidx/compose/ui/unit/Density;)V", "pageSizeWithSpacing", "getPageSizeWithSpacing$foundation", "latestPageSizeWithSpacing", "getLatestPageSizeWithSpacing$foundation", "setLatestPageSizeWithSpacing$foundation", "(I)V", "positionThresholdFraction", "getPositionThresholdFraction$foundation", "()F", "internalInteractionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "getInternalInteractionSource$foundation", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "getCurrentPage", "programmaticScrollTargetPage", "getProgrammaticScrollTargetPage", "setProgrammaticScrollTargetPage", "programmaticScrollTargetPage$delegate", "Landroidx/compose/runtime/MutableIntState;", "settledPageState", "getSettledPageState", "setSettledPageState", "settledPageState$delegate", "settledPage", "getSettledPage", "settledPage$delegate", "Landroidx/compose/runtime/State;", "targetPage", "getTargetPage", "targetPage$delegate", "getCurrentPageOffsetFraction", "prefetchState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "getPrefetchState$foundation", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "pagerCacheWindow", "androidx/compose/foundation/pager/PagerState$pagerCacheWindow$1", "Landroidx/compose/foundation/pager/PagerState$pagerCacheWindow$1;", "_scrollIndicatorState", "androidx/compose/foundation/pager/PagerState$_scrollIndicatorState$1", "Landroidx/compose/foundation/pager/PagerState$_scrollIndicatorState$1;", "calculateScrollOffset", "cacheWindowLogic", "Landroidx/compose/foundation/pager/PagerCacheWindowLogic;", "getCacheWindowLogic$foundation", "()Landroidx/compose/foundation/pager/PagerCacheWindowLogic;", "beyondBoundsInfo", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "getBeyondBoundsInfo$foundation", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "awaitLayoutModifier", "Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "getAwaitLayoutModifier$foundation", "()Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "Landroidx/compose/ui/layout/Remeasurement;", "remeasurement", "getRemeasurement$foundation", "()Landroidx/compose/ui/layout/Remeasurement;", "setRemeasurement", "(Landroidx/compose/ui/layout/Remeasurement;)V", "remeasurement$delegate", "remeasurementModifier", "Landroidx/compose/ui/layout/RemeasurementModifier;", "getRemeasurementModifier$foundation", "()Landroidx/compose/ui/layout/RemeasurementModifier;", "premeasureConstraints", "Landroidx/compose/ui/unit/Constraints;", "getPremeasureConstraints-msEJaDk$foundation", "setPremeasureConstraints-BRTryo0$foundation", "J", "pinnedPages", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "getPinnedPages$foundation", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "nearestRange", "Lkotlin/ranges/IntRange;", "getNearestRange$foundation$delegate", "(Landroidx/compose/foundation/pager/PagerState;)Ljava/lang/Object;", "getNearestRange$foundation", "()Lkotlin/ranges/IntRange;", "placementScopeInvalidator", "Landroidx/compose/foundation/lazy/layout/ObservableScopeInvalidator;", "getPlacementScopeInvalidator-zYiylxw$foundation", "()Landroidx/compose/runtime/MutableState;", "scrollToPage", "", "page", "pageOffsetFraction", "(IFLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateCurrentPage", "Landroidx/compose/foundation/gestures/ScrollScope;", "updateTargetPage", "snapToItem", "offsetFraction", "forceRemeasure", "snapToItem$foundation", "measurementScopeInvalidator", "getMeasurementScopeInvalidator-zYiylxw$foundation", "requestScrollToPage", "animateScrollToPage", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(IFLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitScrollDependencies", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scroll", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchRawDelta", "isScrollInProgress", "canScrollForward", "getCanScrollForward", "setCanScrollForward", "canScrollForward$delegate", "canScrollBackward", "getCanScrollBackward", "setCanScrollBackward", "canScrollBackward$delegate", "isLastScrollForwardState", "isLastScrollBackwardState", "lastScrolledForward", "getLastScrolledForward", "lastScrolledBackward", "getLastScrolledBackward", "scrollIndicatorState", "Landroidx/compose/foundation/ScrollIndicatorState;", "getScrollIndicatorState", "()Landroidx/compose/foundation/ScrollIndicatorState;", "applyMeasureResult", "result", "isLookingAhead", "visibleItemsStayedTheSame", "applyMeasureResult$foundation", "tryRunPrefetch", "coerceInPageRange", "isGestureActionMatchesScroll", "scrollDelta", "isNotGestureAction", "isNotGestureAction$foundation", "notifyPrefetch", "info", "cancelPrefetchIfVisibleItemsChanged", "calculatePrefetchIndex", "forward", "getOffsetDistanceInPages", "matchScrollPositionWithKey", "itemProvider", "Landroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;", "matchScrollPositionWithKey$foundation", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class PagerState implements ScrollableState {
     public static final int $stable = 0;
+    private final PagerState$_scrollIndicatorState$1 _scrollIndicatorState;
     private float accumulator;
     private PagerMeasureResult approachLayoutInfo;
     private final AwaitFirstLayoutModifier awaitLayoutModifier;
     private final LazyLayoutBeyondBoundsInfo beyondBoundsInfo;
+    private final PagerCacheWindowLogic cacheWindowLogic;
     private final MutableState canScrollBackward$delegate;
     private final MutableState canScrollForward$delegate;
     private LazyLayoutPrefetchState.PrefetchHandle currentPrefetchHandle;
@@ -65,11 +71,13 @@ public abstract class PagerState implements ScrollableState {
     private final MutableInteractionSource internalInteractionSource;
     private final MutableState<Boolean> isLastScrollBackwardState;
     private final MutableState<Boolean> isLastScrollForwardState;
+    private int latestPageSizeWithSpacing;
     private int layoutWithMeasurement;
     private int layoutWithoutMeasurement;
     private long maxScrollOffset;
     private final MutableState<Unit> measurementScopeInvalidator;
     private long minScrollOffset;
+    private final PagerState$pagerCacheWindow$1 pagerCacheWindow;
     private MutableState<PagerMeasureResult> pagerLayoutInfoState;
     private final LazyLayoutPinnedItemList pinnedPages;
     private final MutableState<Unit> placementScopeInvalidator;
@@ -99,6 +107,8 @@ public abstract class PagerState implements ScrollableState {
         return scroll$suspendImpl(this, mutatePriority, function2, continuation);
     }
 
+    /* JADX WARN: Type inference failed for: r14v8, types: [androidx.compose.foundation.pager.PagerState$pagerCacheWindow$1] */
+    /* JADX WARN: Type inference failed for: r15v1, types: [androidx.compose.foundation.pager.PagerState$_scrollIndicatorState$1] */
     public PagerState(int i, float f, PrefetchScheduler prefetchScheduler) {
         MutableState mutableStateOf$default;
         MutableState mutableStateOf$default2;
@@ -114,7 +124,7 @@ public abstract class PagerState implements ScrollableState {
         if (!z) {
             InlineClassHelperKt.throwIllegalArgumentException("currentPageOffsetFraction " + f + " is not within the range -0.5 to 0.5");
         }
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5025boximpl(Offset.Companion.m5052getZeroF1C5BW0()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0()), null, 2, null);
         this.upDownDifference$delegate = mutableStateOf$default;
         PagerScrollPosition pagerScrollPosition = new PagerScrollPosition(i, f, this);
         this.scrollPosition = pagerScrollPosition;
@@ -139,24 +149,63 @@ public abstract class PagerState implements ScrollableState {
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 int i2;
-                i2 = PagerState.settledPage_delegate$lambda$6(PagerState.this);
+                i2 = PagerState.settledPage_delegate$lambda$0(PagerState.this);
                 return Integer.valueOf(i2);
             }
         });
         this.targetPage$delegate = SnapshotStateKt.derivedStateOf(SnapshotStateKt.structuralEqualityPolicy(), new Function0() { // from class: androidx.compose.foundation.pager.PagerState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int targetPage_delegate$lambda$7;
-                targetPage_delegate$lambda$7 = PagerState.targetPage_delegate$lambda$7(PagerState.this);
-                return Integer.valueOf(targetPage_delegate$lambda$7);
+                int targetPage_delegate$lambda$0;
+                targetPage_delegate$lambda$0 = PagerState.targetPage_delegate$lambda$0(PagerState.this);
+                return Integer.valueOf(targetPage_delegate$lambda$0);
             }
         });
-        this.prefetchState = new LazyLayoutPrefetchState(prefetchScheduler, new Function1() { // from class: androidx.compose.foundation.pager.PagerState$$ExternalSyntheticLambda3
+        LazyLayoutPrefetchState lazyLayoutPrefetchState = new LazyLayoutPrefetchState(prefetchScheduler, new Function1() { // from class: androidx.compose.foundation.pager.PagerState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit prefetchState$lambda$9;
-                prefetchState$lambda$9 = PagerState.prefetchState$lambda$9(PagerState.this, (NestedPrefetchScope) obj);
-                return prefetchState$lambda$9;
+                Unit prefetchState$lambda$0;
+                prefetchState$lambda$0 = PagerState.prefetchState$lambda$0(PagerState.this, (NestedPrefetchScope) obj);
+                return prefetchState$lambda$0;
+            }
+        });
+        this.prefetchState = lazyLayoutPrefetchState;
+        ?? r14 = new LazyLayoutCacheWindow() { // from class: androidx.compose.foundation.pager.PagerState$pagerCacheWindow$1
+            @Override // androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow
+            public int calculateBehindWindow(Density density, int i2) {
+                return 0;
+            }
+
+            @Override // androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow
+            public int calculateAheadWindow(Density density, int i2) {
+                return PagerState.this.getLatestPageSizeWithSpacing$foundation();
+            }
+        };
+        this.pagerCacheWindow = r14;
+        this._scrollIndicatorState = new ScrollIndicatorState() { // from class: androidx.compose.foundation.pager.PagerState$_scrollIndicatorState$1
+            @Override // androidx.compose.foundation.ScrollIndicatorState
+            public int getScrollOffset() {
+                int calculateScrollOffset;
+                calculateScrollOffset = PagerState.this.calculateScrollOffset();
+                return calculateScrollOffset;
+            }
+
+            @Override // androidx.compose.foundation.ScrollIndicatorState
+            public int getContentSize() {
+                return PagerLayoutInfoKt.calculateContentSize(PagerState.this.getLayoutInfo(), PagerState.this.getPageCount());
+            }
+
+            @Override // androidx.compose.foundation.ScrollIndicatorState
+            public int getViewportSize() {
+                return PagerLayoutInfoKt.getMainAxisViewportSize(PagerState.this.getLayoutInfo());
+            }
+        };
+        this.cacheWindowLogic = new PagerCacheWindowLogic((LazyLayoutCacheWindow) r14, lazyLayoutPrefetchState, new Function0() { // from class: androidx.compose.foundation.pager.PagerState$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                int pageCount;
+                pageCount = PagerState.this.getPageCount();
+                return Integer.valueOf(pageCount);
             }
         });
         this.beyondBoundsInfo = new LazyLayoutBeyondBoundsInfo();
@@ -172,8 +221,8 @@ public abstract class PagerState implements ScrollableState {
         this.premeasureConstraints = ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null);
         this.pinnedPages = new LazyLayoutPinnedItemList();
         pagerScrollPosition.getNearestRangeState();
-        this.placementScopeInvalidator = ObservableScopeInvalidator.m1075constructorimpl$default(null, 1, null);
-        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1075constructorimpl$default(null, 1, null);
+        this.placementScopeInvalidator = ObservableScopeInvalidator.m1149constructorimpl$default(null, 1, null);
+        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1149constructorimpl$default(null, 1, null);
         mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.canScrollForward$delegate = mutableStateOf$default3;
         mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
@@ -196,45 +245,45 @@ public abstract class PagerState implements ScrollableState {
         this(i, f, null);
     }
 
-    public final boolean getHasLookaheadOccurred$foundation_release() {
+    public final boolean getHasLookaheadOccurred$foundation() {
         return this.hasLookaheadOccurred;
     }
 
-    public final PagerMeasureResult getApproachLayoutInfo$foundation_release() {
+    public final PagerMeasureResult getApproachLayoutInfo$foundation() {
         return this.approachLayoutInfo;
     }
 
-    /* renamed from: getUpDownDifference-F1C5BW0$foundation_release  reason: not valid java name */
-    public final long m1162getUpDownDifferenceF1C5BW0$foundation_release() {
-        return ((Offset) this.upDownDifference$delegate.getValue()).m5046unboximpl();
+    /* renamed from: getUpDownDifference-F1C5BW0$foundation  reason: not valid java name */
+    public final long m1236getUpDownDifferenceF1C5BW0$foundation() {
+        return ((Offset) this.upDownDifference$delegate.getValue()).m5189unboximpl();
     }
 
-    /* renamed from: setUpDownDifference-k-4lQ0M$foundation_release  reason: not valid java name */
-    public final void m1164setUpDownDifferencek4lQ0M$foundation_release(long j) {
-        this.upDownDifference$delegate.setValue(Offset.m5025boximpl(j));
+    /* renamed from: setUpDownDifference-k-4lQ0M$foundation  reason: not valid java name */
+    public final void m1238setUpDownDifferencek4lQ0M$foundation(long j) {
+        this.upDownDifference$delegate.setValue(Offset.m5168boximpl(j));
     }
 
-    public final int getFirstVisiblePage$foundation_release() {
+    public final int getFirstVisiblePage$foundation() {
         return this.firstVisiblePage;
     }
 
-    public final int getFirstVisiblePageOffset$foundation_release() {
+    public final int getFirstVisiblePageOffset$foundation() {
         return this.firstVisiblePageOffset;
     }
 
-    public final long getMaxScrollOffset$foundation_release() {
+    public final long getMaxScrollOffset$foundation() {
         return this.maxScrollOffset;
     }
 
-    public final void setMaxScrollOffset$foundation_release(long j) {
+    public final void setMaxScrollOffset$foundation(long j) {
         this.maxScrollOffset = j;
     }
 
-    public final long getMinScrollOffset$foundation_release() {
+    public final long getMinScrollOffset$foundation() {
         return this.minScrollOffset;
     }
 
-    public final void setMinScrollOffset$foundation_release(long j) {
+    public final void setMinScrollOffset$foundation(long j) {
         this.minScrollOffset = j;
     }
 
@@ -270,33 +319,33 @@ public abstract class PagerState implements ScrollableState {
             }
         }
         if (copyWithScrollDeltaWithoutRemeasure != null) {
-            applyMeasureResult$foundation_release(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
-            ObservableScopeInvalidator.m1079invalidateScopeimpl(this.placementScopeInvalidator);
+            applyMeasureResult$foundation(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
+            ObservableScopeInvalidator.m1153invalidateScopeimpl(this.placementScopeInvalidator);
             this.layoutWithoutMeasurement++;
         } else {
             this.scrollPosition.applyScrollDelta(i);
-            Remeasurement remeasurement$foundation_release = getRemeasurement$foundation_release();
-            if (remeasurement$foundation_release != null) {
-                remeasurement$foundation_release.forceRemeasure();
+            Remeasurement remeasurement$foundation = getRemeasurement$foundation();
+            if (remeasurement$foundation != null) {
+                remeasurement$foundation.forceRemeasure();
             }
             this.layoutWithMeasurement++;
         }
         return (z ? Long.valueOf(j2) : Float.valueOf(f)).floatValue();
     }
 
-    public final int getNumMeasurePasses$foundation_release() {
+    public final int getNumMeasurePasses$foundation() {
         return this.layoutWithMeasurement + this.layoutWithoutMeasurement;
     }
 
-    public final int getLayoutWithMeasurement$foundation_release() {
+    public final int getLayoutWithMeasurement$foundation() {
         return this.layoutWithMeasurement;
     }
 
-    public final boolean getPrefetchingEnabled$foundation_release() {
+    public final boolean getPrefetchingEnabled$foundation() {
         return this.prefetchingEnabled;
     }
 
-    public final void setPrefetchingEnabled$foundation_release(boolean z) {
+    public final void setPrefetchingEnabled$foundation(boolean z) {
         this.prefetchingEnabled = z;
     }
 
@@ -304,31 +353,39 @@ public abstract class PagerState implements ScrollableState {
         return this.pagerLayoutInfoState.getValue();
     }
 
-    public final int getPageSpacing$foundation_release() {
+    public final int getPageSpacing$foundation() {
         return this.pagerLayoutInfoState.getValue().getPageSpacing();
     }
 
-    public final int getPageSize$foundation_release() {
+    public final int getPageSize$foundation() {
         return this.pagerLayoutInfoState.getValue().getPageSize();
     }
 
-    public final Density getDensity$foundation_release() {
+    public final Density getDensity$foundation() {
         return this.density;
     }
 
-    public final void setDensity$foundation_release(Density density) {
+    public final void setDensity$foundation(Density density) {
         this.density = density;
     }
 
-    public final int getPageSizeWithSpacing$foundation_release() {
-        return getPageSize$foundation_release() + getPageSpacing$foundation_release();
+    public final int getPageSizeWithSpacing$foundation() {
+        return getPageSize$foundation() + getPageSpacing$foundation();
     }
 
-    public final float getPositionThresholdFraction$foundation_release() {
-        return Math.min(this.density.mo430toPx0680j_4(PagerStateKt.getDefaultPositionThreshold()), getPageSize$foundation_release() / 2.0f) / getPageSize$foundation_release();
+    public final int getLatestPageSizeWithSpacing$foundation() {
+        return this.latestPageSizeWithSpacing;
     }
 
-    public final MutableInteractionSource getInternalInteractionSource$foundation_release() {
+    public final void setLatestPageSizeWithSpacing$foundation(int i) {
+        this.latestPageSizeWithSpacing = i;
+    }
+
+    public final float getPositionThresholdFraction$foundation() {
+        return Math.min(this.density.mo464toPx0680j_4(PagerStateKt.getDefaultPositionThreshold()), getPageSize$foundation() / 2.0f) / getPageSize$foundation();
+    }
+
+    public final MutableInteractionSource getInternalInteractionSource$foundation() {
         return this.internalInteractionSource;
     }
 
@@ -361,7 +418,7 @@ public abstract class PagerState implements ScrollableState {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int settledPage_delegate$lambda$6(PagerState pagerState) {
+    public static final int settledPage_delegate$lambda$0(PagerState pagerState) {
         if (pagerState.isScrollInProgress()) {
             return pagerState.getSettledPageState();
         }
@@ -373,13 +430,13 @@ public abstract class PagerState implements ScrollableState {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int targetPage_delegate$lambda$7(PagerState pagerState) {
+    public static final int targetPage_delegate$lambda$0(PagerState pagerState) {
         int currentPage;
         if (!pagerState.isScrollInProgress()) {
             currentPage = pagerState.getCurrentPage();
         } else if (pagerState.getProgrammaticScrollTargetPage() != -1) {
             currentPage = pagerState.getProgrammaticScrollTargetPage();
-        } else if (Math.abs(pagerState.getCurrentPageOffsetFraction()) >= Math.abs(pagerState.getPositionThresholdFraction$foundation_release())) {
+        } else if (Math.abs(pagerState.getCurrentPageOffsetFraction()) >= Math.abs(pagerState.getPositionThresholdFraction$foundation())) {
             if (pagerState.getLastScrolledForward()) {
                 currentPage = pagerState.firstVisiblePage + 1;
             } else {
@@ -395,12 +452,12 @@ public abstract class PagerState implements ScrollableState {
         return this.scrollPosition.getCurrentPageOffsetFraction();
     }
 
-    public final LazyLayoutPrefetchState getPrefetchState$foundation_release() {
+    public final LazyLayoutPrefetchState getPrefetchState$foundation() {
         return this.prefetchState;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit prefetchState$lambda$9(PagerState pagerState, NestedPrefetchScope nestedPrefetchScope) {
+    public static final Unit prefetchState$lambda$0(PagerState pagerState, NestedPrefetchScope nestedPrefetchScope) {
         Snapshot.Companion companion = Snapshot.Companion;
         Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
         Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
@@ -416,11 +473,24 @@ public abstract class PagerState implements ScrollableState {
         }
     }
 
-    public final LazyLayoutBeyondBoundsInfo getBeyondBoundsInfo$foundation_release() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final int calculateScrollOffset() {
+        long pageSizeWithSpacing$foundation = (getPageSizeWithSpacing$foundation() * this.firstVisiblePage) + this.firstVisiblePageOffset;
+        if (pageSizeWithSpacing$foundation > SieveCacheKt.NodeLinkMask) {
+            pageSizeWithSpacing$foundation = 2147483647L;
+        }
+        return (int) pageSizeWithSpacing$foundation;
+    }
+
+    public final PagerCacheWindowLogic getCacheWindowLogic$foundation() {
+        return this.cacheWindowLogic;
+    }
+
+    public final LazyLayoutBeyondBoundsInfo getBeyondBoundsInfo$foundation() {
         return this.beyondBoundsInfo;
     }
 
-    public final AwaitFirstLayoutModifier getAwaitLayoutModifier$foundation_release() {
+    public final AwaitFirstLayoutModifier getAwaitLayoutModifier$foundation() {
         return this.awaitLayoutModifier;
     }
 
@@ -429,34 +499,34 @@ public abstract class PagerState implements ScrollableState {
         this.remeasurement$delegate.setValue(remeasurement);
     }
 
-    public final Remeasurement getRemeasurement$foundation_release() {
+    public final Remeasurement getRemeasurement$foundation() {
         return (Remeasurement) this.remeasurement$delegate.getValue();
     }
 
-    public final RemeasurementModifier getRemeasurementModifier$foundation_release() {
+    public final RemeasurementModifier getRemeasurementModifier$foundation() {
         return this.remeasurementModifier;
     }
 
-    /* renamed from: getPremeasureConstraints-msEJaDk$foundation_release  reason: not valid java name */
-    public final long m1161getPremeasureConstraintsmsEJaDk$foundation_release() {
+    /* renamed from: getPremeasureConstraints-msEJaDk$foundation  reason: not valid java name */
+    public final long m1235getPremeasureConstraintsmsEJaDk$foundation() {
         return this.premeasureConstraints;
     }
 
-    /* renamed from: setPremeasureConstraints-BRTryo0$foundation_release  reason: not valid java name */
-    public final void m1163setPremeasureConstraintsBRTryo0$foundation_release(long j) {
+    /* renamed from: setPremeasureConstraints-BRTryo0$foundation  reason: not valid java name */
+    public final void m1237setPremeasureConstraintsBRTryo0$foundation(long j) {
         this.premeasureConstraints = j;
     }
 
-    public final LazyLayoutPinnedItemList getPinnedPages$foundation_release() {
+    public final LazyLayoutPinnedItemList getPinnedPages$foundation() {
         return this.pinnedPages;
     }
 
-    public final IntRange getNearestRange$foundation_release() {
+    public final IntRange getNearestRange$foundation() {
         return this.scrollPosition.getNearestRangeState().getValue();
     }
 
-    /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1160getPlacementScopeInvalidatorzYiylxw$foundation_release() {
+    /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation  reason: not valid java name */
+    public final MutableState<Unit> m1234getPlacementScopeInvalidatorzYiylxw$foundation() {
         return this.placementScopeInvalidator;
     }
 
@@ -486,28 +556,31 @@ public abstract class PagerState implements ScrollableState {
     }
 
     public final void updateCurrentPage(ScrollScope scrollScope, int i, float f) {
-        snapToItem$foundation_release(i, f, true);
+        snapToItem$foundation(i, f, true);
     }
 
     public final void updateTargetPage(ScrollScope scrollScope, int i) {
         setProgrammaticScrollTargetPage(coerceInPageRange(i));
     }
 
-    public final void snapToItem$foundation_release(int i, float f, boolean z) {
+    public final void snapToItem$foundation(int i, float f, boolean z) {
+        if (this.scrollPosition.getCurrentPage() != i || this.scrollPosition.getCurrentPageOffsetFraction() != f) {
+            this.cacheWindowLogic.resetStrategy();
+        }
         this.scrollPosition.requestPositionAndForgetLastKnownKey(i, f);
         if (z) {
-            Remeasurement remeasurement$foundation_release = getRemeasurement$foundation_release();
-            if (remeasurement$foundation_release != null) {
-                remeasurement$foundation_release.forceRemeasure();
+            Remeasurement remeasurement$foundation = getRemeasurement$foundation();
+            if (remeasurement$foundation != null) {
+                remeasurement$foundation.forceRemeasure();
                 return;
             }
             return;
         }
-        ObservableScopeInvalidator.m1079invalidateScopeimpl(this.measurementScopeInvalidator);
+        ObservableScopeInvalidator.m1153invalidateScopeimpl(this.measurementScopeInvalidator);
     }
 
-    /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1159getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
+    /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation  reason: not valid java name */
+    public final MutableState<Unit> m1233getMeasurementScopeInvalidatorzYiylxw$foundation() {
         return this.measurementScopeInvalidator;
     }
 
@@ -525,14 +598,14 @@ public abstract class PagerState implements ScrollableState {
         if (isScrollInProgress()) {
             BuildersKt__Builders_commonKt.launch$default(this.pagerLayoutInfoState.getValue().getCoroutineScope(), null, null, new PagerState$requestScrollToPage$1(this, null), 3, null);
         }
-        snapToItem$foundation_release(i, f, false);
+        snapToItem$foundation(i, f, false);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x006b, code lost:
         if (awaitScrollDependencies(r4) == r0) goto L26;
      */
     /* JADX WARN: Code restructure failed: missing block: B:38:0x00bd, code lost:
-        if (androidx.compose.foundation.gestures.ScrollableState.scroll$default(r11, null, new androidx.compose.foundation.pager.PagerState$animateScrollToPage$3(r11, coerceInPageRange(r12), r13 * getPageSizeWithSpacing$foundation_release(), r9, null), r4, 1, null) != r0) goto L11;
+        if (androidx.compose.foundation.gestures.ScrollableState.scroll$default(r11, null, new androidx.compose.foundation.pager.PagerState$animateScrollToPage$3(r11, coerceInPageRange(r12), r13 * getPageSizeWithSpacing$foundation(), r9, null), r4, 1, null) != r0) goto L11;
      */
     /* JADX WARN: Code restructure failed: missing block: B:39:0x00bf, code lost:
         return r0;
@@ -625,8 +698,11 @@ public abstract class PagerState implements ScrollableState {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object awaitScrollDependencies(Continuation<? super Unit> continuation) {
-        Object waitForFirstLayout = this.awaitLayoutModifier.waitForFirstLayout(continuation);
-        return waitForFirstLayout == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? waitForFirstLayout : Unit.INSTANCE;
+        if (this.pagerLayoutInfoState.getValue() == PagerStateKt.getEmptyLayoutInfo()) {
+            Object waitForFirstLayout = this.awaitLayoutModifier.waitForFirstLayout(continuation);
+            return waitForFirstLayout == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? waitForFirstLayout : Unit.INSTANCE;
+        }
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -738,18 +814,24 @@ public abstract class PagerState implements ScrollableState {
         return this.isLastScrollBackwardState.getValue().booleanValue();
     }
 
-    public static /* synthetic */ void applyMeasureResult$foundation_release$default(PagerState pagerState, PagerMeasureResult pagerMeasureResult, boolean z, boolean z2, int i, Object obj) {
+    @Override // androidx.compose.foundation.gestures.ScrollableState
+    public ScrollIndicatorState getScrollIndicatorState() {
+        return this._scrollIndicatorState;
+    }
+
+    public static /* synthetic */ void applyMeasureResult$foundation$default(PagerState pagerState, PagerMeasureResult pagerMeasureResult, boolean z, boolean z2, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: applyMeasureResult");
         }
         if ((i & 4) != 0) {
             z2 = false;
         }
-        pagerState.applyMeasureResult$foundation_release(pagerMeasureResult, z, z2);
+        pagerState.applyMeasureResult$foundation(pagerMeasureResult, z, z2);
     }
 
-    public final void applyMeasureResult$foundation_release(PagerMeasureResult pagerMeasureResult, boolean z, boolean z2) {
-        this.prefetchState.setIdealNestedPrefetchCount$foundation_release(pagerMeasureResult.getVisiblePagesInfo().size());
+    public final void applyMeasureResult$foundation(PagerMeasureResult pagerMeasureResult, boolean z, boolean z2) {
+        this.prefetchState.setIdealNestedPrefetchCount$foundation(pagerMeasureResult.getVisiblePagesInfo().size());
+        this.latestPageSizeWithSpacing = pagerMeasureResult.getPageSize() + pagerMeasureResult.getPageSpacing();
         if (!z && this.hasLookaheadOccurred) {
             this.approachLayoutInfo = pagerMeasureResult;
             return;
@@ -761,7 +843,13 @@ public abstract class PagerState implements ScrollableState {
             this.scrollPosition.updateCurrentPageOffsetFraction(pagerMeasureResult.getCurrentPageOffsetFraction());
         } else {
             this.scrollPosition.updateFromMeasureResult(pagerMeasureResult);
-            cancelPrefetchIfVisibleItemsChanged(pagerMeasureResult);
+            if (ComposeFoundationFlags.isCacheWindowForPagerEnabled) {
+                if (this.prefetchingEnabled) {
+                    this.cacheWindowLogic.onVisibleItemsChanged(pagerMeasureResult);
+                }
+            } else {
+                cancelPrefetchIfVisibleItemsChanged(pagerMeasureResult);
+            }
         }
         this.pagerLayoutInfoState.setValue(pagerMeasureResult);
         setCanScrollForward(pagerMeasureResult.getCanScrollForward());
@@ -773,7 +861,7 @@ public abstract class PagerState implements ScrollableState {
         this.firstVisiblePageOffset = pagerMeasureResult.getFirstVisiblePageScrollOffset();
         tryRunPrefetch(pagerMeasureResult);
         this.maxScrollOffset = PagerStateKt.calculateNewMaxScrollOffset(pagerMeasureResult, getPageCount());
-        this.minScrollOffset = PagerStateKt.access$calculateNewMinScrollOffset(pagerMeasureResult, getPageCount());
+        this.minScrollOffset = RangesKt.coerceAtMost(PagerStateKt.access$calculateNewMinScrollOffset(pagerMeasureResult, getPageCount()), this.maxScrollOffset);
     }
 
     private final void tryRunPrefetch(PagerMeasureResult pagerMeasureResult) {
@@ -790,7 +878,11 @@ public abstract class PagerState implements ScrollableState {
                     return;
                 }
                 if (isGestureActionMatchesScroll(this.previousPassDelta)) {
-                    notifyPrefetch(this.previousPassDelta, pagerMeasureResult);
+                    if (ComposeFoundationFlags.isCacheWindowForPagerEnabled) {
+                        this.cacheWindowLogic.onScroll(this.previousPassDelta, pagerMeasureResult);
+                    } else {
+                        notifyPrefetch(this.previousPassDelta, pagerMeasureResult);
+                    }
                     Unit unit = Unit.INSTANCE;
                 }
             }
@@ -809,17 +901,17 @@ public abstract class PagerState implements ScrollableState {
 
     private final boolean isGestureActionMatchesScroll(float f) {
         if (getLayoutInfo().getOrientation() == Orientation.Vertical) {
-            if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L)))) {
+            if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1236getUpDownDifferenceF1C5BW0$foundation() & 4294967295L)))) {
                 return true;
             }
-        } else if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() >> 32)))) {
+        } else if (Math.signum(f) == Math.signum(-Float.intBitsToFloat((int) (m1236getUpDownDifferenceF1C5BW0$foundation() >> 32)))) {
             return true;
         }
-        return isNotGestureAction$foundation_release();
+        return isNotGestureAction$foundation();
     }
 
-    public final boolean isNotGestureAction$foundation_release() {
-        return ((int) Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() >> 32))) == 0 && ((int) Float.intBitsToFloat((int) (m1162getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L))) == 0;
+    public final boolean isNotGestureAction$foundation() {
+        return ((int) Float.intBitsToFloat((int) (m1236getUpDownDifferenceF1C5BW0$foundation() >> 32))) == 0 && ((int) Float.intBitsToFloat((int) (m1236getUpDownDifferenceF1C5BW0$foundation() & 4294967295L))) == 0;
     }
 
     private final void notifyPrefetch(float f, PagerLayoutInfo pagerLayoutInfo) {
@@ -838,7 +930,7 @@ public abstract class PagerState implements ScrollableState {
                 }
                 this.wasPrefetchingForward = z;
                 this.indexToPrefetch = calculatePrefetchIndex;
-                this.currentPrefetchHandle = LazyLayoutPrefetchState.m1058schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, calculatePrefetchIndex, this.premeasureConstraints, null, 4, null);
+                this.currentPrefetchHandle = LazyLayoutPrefetchState.m1136schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, calculatePrefetchIndex, this.premeasureConstraints, null, 4, null);
             }
             if (z) {
                 if ((((PageInfo) CollectionsKt.last((List<? extends Object>) pagerLayoutInfo.getVisiblePagesInfo())).getOffset() + (pagerLayoutInfo.getPageSize() + pagerLayoutInfo.getPageSpacing())) - pagerLayoutInfo.getViewportEndOffset() >= f || (prefetchHandle2 = this.currentPrefetchHandle) == null) {
@@ -888,7 +980,7 @@ public abstract class PagerState implements ScrollableState {
         return (i - getCurrentPage()) - getCurrentPageOffsetFraction();
     }
 
-    public static /* synthetic */ int matchScrollPositionWithKey$foundation_release$default(PagerState pagerState, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i, int i2, Object obj) {
+    public static /* synthetic */ int matchScrollPositionWithKey$foundation$default(PagerState pagerState, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 2) != 0) {
                 Snapshot.Companion companion = Snapshot.Companion;
@@ -904,12 +996,12 @@ public abstract class PagerState implements ScrollableState {
                     throw th;
                 }
             }
-            return pagerState.matchScrollPositionWithKey$foundation_release(pagerLazyLayoutItemProvider, i);
+            return pagerState.matchScrollPositionWithKey$foundation(pagerLazyLayoutItemProvider, i);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: matchScrollPositionWithKey");
     }
 
-    public final int matchScrollPositionWithKey$foundation_release(PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i) {
+    public final int matchScrollPositionWithKey$foundation(PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i) {
         return this.scrollPosition.matchPageWithKey(pagerLazyLayoutItemProvider, i);
     }
 }

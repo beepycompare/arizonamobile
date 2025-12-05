@@ -11,7 +11,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: LayerMatrixCache.android.kt */
-@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B?\u00126\u0010\u0003\u001a2\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0004¢\u0006\u0004\b\u000b\u0010\fJ\u0006\u0010\u0017\u001a\u00020\nJ\u0006\u0010\u0018\u001a\u00020\nJ\u0015\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u0007\u001a\u00028\u0000¢\u0006\u0004\b\u001a\u0010\u001bJ\u0017\u0010\u001c\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0007\u001a\u00028\u0000¢\u0006\u0004\b\u001d\u0010\u001bJ\u001b\u0010\u001e\u001a\u00020\n2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010\u001f\u001a\u00020 ¢\u0006\u0002\u0010!J\u001b\u0010\"\u001a\u00020\n2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010\u001f\u001a\u00020 ¢\u0006\u0002\u0010!J\u001d\u0010\u001e\u001a\u00020#2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010$\u001a\u00020#¢\u0006\u0004\b%\u0010&J\u001d\u0010\"\u001a\u00020#2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010$\u001a\u00020#¢\u0006\u0004\b'\u0010&R>\u0010\u0003\u001a2\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u0010\u0010\u0011\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Landroidx/compose/ui/platform/LayerMatrixCache;", ExifInterface.GPS_DIRECTION_TRUE, "", "getMatrix", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", TypedValues.AttributesType.S_TARGET, "Landroid/graphics/Matrix;", "matrix", "", "<init>", "(Lkotlin/jvm/functions/Function2;)V", "androidMatrixCache", "matrixCache", "Landroidx/compose/ui/graphics/Matrix;", "[F", "inverseMatrixCache", "isDirty", "", "isInverseDirty", "isInverseValid", "isIdentity", "reset", "invalidate", "calculateMatrix", "calculateMatrix-GrdbGEg", "(Ljava/lang/Object;)[F", "calculateInverseMatrix", "calculateInverseMatrix-bWbORWo", "map", "rect", "Landroidx/compose/ui/geometry/MutableRect;", "(Ljava/lang/Object;Landroidx/compose/ui/geometry/MutableRect;)V", "mapInverse", "Landroidx/compose/ui/geometry/Offset;", TypedValues.CycleType.S_WAVE_OFFSET, "map-R5De75A", "(Ljava/lang/Object;J)J", "mapInverse-R5De75A", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B?\u00126\u0010\u0003\u001a2\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0004¢\u0006\u0004\b\u000b\u0010\fJ\u0006\u0010\u0017\u001a\u00020\nJ\u0006\u0010\u0018\u001a\u00020\nJ\u0015\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u0007\u001a\u00028\u0000¢\u0006\u0004\b\u001a\u0010\u001bJ\u0017\u0010\u001c\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0007\u001a\u00028\u0000¢\u0006\u0004\b\u001d\u0010\u001bJ\u001b\u0010\u001e\u001a\u00020\n2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010\u001f\u001a\u00020 ¢\u0006\u0002\u0010!J\u001b\u0010\"\u001a\u00020\n2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010\u001f\u001a\u00020 ¢\u0006\u0002\u0010!J\u001d\u0010\u001e\u001a\u00020#2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010$\u001a\u00020#¢\u0006\u0004\b%\u0010&J\u001d\u0010\"\u001a\u00020#2\u0006\u0010\u0007\u001a\u00028\u00002\u0006\u0010$\u001a\u00020#¢\u0006\u0004\b'\u0010&R>\u0010\u0003\u001a2\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\u0007\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u0005\u0012\b\b\u0006\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u0010\u0010\u0011\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Landroidx/compose/ui/platform/LayerMatrixCache;", ExifInterface.GPS_DIRECTION_TRUE, "", "getMatrix", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", TypedValues.AttributesType.S_TARGET, "Landroid/graphics/Matrix;", "matrix", "", "<init>", "(Lkotlin/jvm/functions/Function2;)V", "androidMatrixCache", "matrixCache", "Landroidx/compose/ui/graphics/Matrix;", "[F", "inverseMatrixCache", "isDirty", "", "isInverseDirty", "isInverseValid", "isIdentity", "reset", "invalidate", "calculateMatrix", "calculateMatrix-GrdbGEg", "(Ljava/lang/Object;)[F", "calculateInverseMatrix", "calculateInverseMatrix-bWbORWo", "map", "rect", "Landroidx/compose/ui/geometry/MutableRect;", "(Ljava/lang/Object;Landroidx/compose/ui/geometry/MutableRect;)V", "mapInverse", "Landroidx/compose/ui/geometry/Offset;", TypedValues.CycleType.S_WAVE_OFFSET, "map-R5De75A", "(Ljava/lang/Object;J)J", "mapInverse-R5De75A", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LayerMatrixCache<T> {
     public static final int $stable = 8;
@@ -19,8 +19,8 @@ public final class LayerMatrixCache<T> {
     private final Function2<T, Matrix, Unit> getMatrix;
     private boolean isDirty;
     private boolean isInverseDirty;
-    private float[] matrixCache = androidx.compose.ui.graphics.Matrix.m5522constructorimpl$default(null, 1, null);
-    private float[] inverseMatrixCache = androidx.compose.ui.graphics.Matrix.m5522constructorimpl$default(null, 1, null);
+    private float[] matrixCache = androidx.compose.ui.graphics.Matrix.m5670constructorimpl$default(null, 1, null);
+    private float[] inverseMatrixCache = androidx.compose.ui.graphics.Matrix.m5670constructorimpl$default(null, 1, null);
     private boolean isInverseValid = true;
     private boolean isIdentity = true;
 
@@ -34,8 +34,8 @@ public final class LayerMatrixCache<T> {
         this.isInverseDirty = false;
         this.isIdentity = true;
         this.isInverseValid = true;
-        androidx.compose.ui.graphics.Matrix.m5531resetimpl(this.matrixCache);
-        androidx.compose.ui.graphics.Matrix.m5531resetimpl(this.inverseMatrixCache);
+        androidx.compose.ui.graphics.Matrix.m5679resetimpl(this.matrixCache);
+        androidx.compose.ui.graphics.Matrix.m5679resetimpl(this.inverseMatrixCache);
     }
 
     public final void invalidate() {
@@ -44,7 +44,7 @@ public final class LayerMatrixCache<T> {
     }
 
     /* renamed from: calculateMatrix-GrdbGEg  reason: not valid java name */
-    public final float[] m7148calculateMatrixGrdbGEg(T t) {
+    public final float[] m7383calculateMatrixGrdbGEg(T t) {
         float[] fArr = this.matrixCache;
         if (this.isDirty) {
             Matrix matrix = this.androidMatrixCache;
@@ -53,19 +53,19 @@ public final class LayerMatrixCache<T> {
                 this.androidMatrixCache = matrix;
             }
             this.getMatrix.invoke(t, matrix);
-            AndroidMatrixConversions_androidKt.m5149setFromtUYjHk(fArr, matrix);
+            AndroidMatrixConversions_androidKt.m5292setFromtUYjHk(fArr, matrix);
             this.isDirty = false;
-            this.isIdentity = MatrixKt.m5547isIdentity58bKbWc(fArr);
+            this.isIdentity = MatrixKt.m5695isIdentity58bKbWc(fArr);
             return fArr;
         }
         return fArr;
     }
 
     /* renamed from: calculateInverseMatrix-bWbORWo  reason: not valid java name */
-    public final float[] m7147calculateInverseMatrixbWbORWo(T t) {
+    public final float[] m7382calculateInverseMatrixbWbORWo(T t) {
         float[] fArr = this.inverseMatrixCache;
         if (this.isInverseDirty) {
-            this.isInverseValid = InvertMatrixKt.m7145invertToJiSxe2E(m7148calculateMatrixGrdbGEg(t), fArr);
+            this.isInverseValid = InvertMatrixKt.m7380invertToJiSxe2E(m7383calculateMatrixGrdbGEg(t), fArr);
             this.isInverseDirty = false;
         }
         if (this.isInverseValid) {
@@ -75,34 +75,34 @@ public final class LayerMatrixCache<T> {
     }
 
     public final void map(T t, MutableRect mutableRect) {
-        float[] m7148calculateMatrixGrdbGEg = m7148calculateMatrixGrdbGEg(t);
+        float[] m7383calculateMatrixGrdbGEg = m7383calculateMatrixGrdbGEg(t);
         if (this.isIdentity) {
             return;
         }
-        androidx.compose.ui.graphics.Matrix.m5530mapimpl(m7148calculateMatrixGrdbGEg, mutableRect);
+        androidx.compose.ui.graphics.Matrix.m5678mapimpl(m7383calculateMatrixGrdbGEg, mutableRect);
     }
 
     public final void mapInverse(T t, MutableRect mutableRect) {
-        float[] m7147calculateInverseMatrixbWbORWo = m7147calculateInverseMatrixbWbORWo(t);
-        if (m7147calculateInverseMatrixbWbORWo == null) {
+        float[] m7382calculateInverseMatrixbWbORWo = m7382calculateInverseMatrixbWbORWo(t);
+        if (m7382calculateInverseMatrixbWbORWo == null) {
             mutableRect.set(0.0f, 0.0f, 0.0f, 0.0f);
         } else if (this.isIdentity) {
         } else {
-            androidx.compose.ui.graphics.Matrix.m5530mapimpl(m7147calculateInverseMatrixbWbORWo, mutableRect);
+            androidx.compose.ui.graphics.Matrix.m5678mapimpl(m7382calculateInverseMatrixbWbORWo, mutableRect);
         }
     }
 
     /* renamed from: map-R5De75A  reason: not valid java name */
-    public final long m7149mapR5De75A(T t, long j) {
-        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m5528mapMKHz9U(m7148calculateMatrixGrdbGEg(t), j) : j;
+    public final long m7384mapR5De75A(T t, long j) {
+        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m5676mapMKHz9U(m7383calculateMatrixGrdbGEg(t), j) : j;
     }
 
     /* renamed from: mapInverse-R5De75A  reason: not valid java name */
-    public final long m7150mapInverseR5De75A(T t, long j) {
-        float[] m7147calculateInverseMatrixbWbORWo = m7147calculateInverseMatrixbWbORWo(t);
-        if (m7147calculateInverseMatrixbWbORWo == null) {
-            return Offset.Companion.m5050getInfiniteF1C5BW0();
+    public final long m7385mapInverseR5De75A(T t, long j) {
+        float[] m7382calculateInverseMatrixbWbORWo = m7382calculateInverseMatrixbWbORWo(t);
+        if (m7382calculateInverseMatrixbWbORWo == null) {
+            return Offset.Companion.m5193getInfiniteF1C5BW0();
         }
-        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m5528mapMKHz9U(m7147calculateInverseMatrixbWbORWo, j) : j;
+        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m5676mapMKHz9U(m7382calculateInverseMatrixbWbORWo, j) : j;
     }
 }

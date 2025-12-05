@@ -31,20 +31,20 @@ public final class EditingBuffer {
 
     private EditingBuffer(AnnotatedString annotatedString, long j) {
         this.gapBuffer = new PartialGapBuffer(annotatedString.getText());
-        this.selectionStart = TextRange.m7456getMinimpl(j);
-        this.selectionEnd = TextRange.m7455getMaximpl(j);
+        this.selectionStart = TextRange.m7699getMinimpl(j);
+        this.selectionEnd = TextRange.m7698getMaximpl(j);
         this.compositionStart = -1;
         this.compositionEnd = -1;
-        int m7456getMinimpl = TextRange.m7456getMinimpl(j);
-        int m7455getMaximpl = TextRange.m7455getMaximpl(j);
-        if (m7456getMinimpl < 0 || m7456getMinimpl > annotatedString.length()) {
-            throw new IndexOutOfBoundsException("start (" + m7456getMinimpl + ") offset is outside of text region " + annotatedString.length());
+        int m7699getMinimpl = TextRange.m7699getMinimpl(j);
+        int m7698getMaximpl = TextRange.m7698getMaximpl(j);
+        if (m7699getMinimpl < 0 || m7699getMinimpl > annotatedString.length()) {
+            throw new IndexOutOfBoundsException("start (" + m7699getMinimpl + ") offset is outside of text region " + annotatedString.length());
         }
-        if (m7455getMaximpl < 0 || m7455getMaximpl > annotatedString.length()) {
-            throw new IndexOutOfBoundsException("end (" + m7455getMaximpl + ") offset is outside of text region " + annotatedString.length());
+        if (m7698getMaximpl < 0 || m7698getMaximpl > annotatedString.length()) {
+            throw new IndexOutOfBoundsException("end (" + m7698getMaximpl + ") offset is outside of text region " + annotatedString.length());
         }
-        if (m7456getMinimpl > m7455getMaximpl) {
-            throw new IllegalArgumentException("Do not set reversed range: " + m7456getMinimpl + " > " + m7455getMaximpl);
+        if (m7699getMinimpl > m7698getMaximpl) {
+            throw new IllegalArgumentException("Do not set reversed range: " + m7699getMinimpl + " > " + m7698getMaximpl);
         }
     }
 
@@ -95,15 +95,15 @@ public final class EditingBuffer {
     }
 
     /* renamed from: getComposition-MzsxiRA$ui_text  reason: not valid java name */
-    public final TextRange m7621getCompositionMzsxiRA$ui_text() {
+    public final TextRange m7867getCompositionMzsxiRA$ui_text() {
         if (hasComposition$ui_text()) {
-            return TextRange.m7446boximpl(TextRangeKt.TextRange(this.compositionStart, this.compositionEnd));
+            return TextRange.m7689boximpl(TextRangeKt.TextRange(this.compositionStart, this.compositionEnd));
         }
         return null;
     }
 
     /* renamed from: getSelection-d9O1mEE$ui_text  reason: not valid java name */
-    public final long m7622getSelectiond9O1mEE$ui_text() {
+    public final long m7868getSelectiond9O1mEE$ui_text() {
         return TextRangeKt.TextRange(this.selectionStart, this.selectionEnd);
     }
 
@@ -156,17 +156,17 @@ public final class EditingBuffer {
     public final void delete$ui_text(int i, int i2) {
         long TextRange = TextRangeKt.TextRange(i, i2);
         this.gapBuffer.replace(i, i2, "");
-        long m7623updateRangeAfterDeletepWDy79M = EditingBufferKt.m7623updateRangeAfterDeletepWDy79M(TextRangeKt.TextRange(this.selectionStart, this.selectionEnd), TextRange);
-        setSelectionStart(TextRange.m7456getMinimpl(m7623updateRangeAfterDeletepWDy79M));
-        setSelectionEnd(TextRange.m7455getMaximpl(m7623updateRangeAfterDeletepWDy79M));
+        long m7869updateRangeAfterDeletepWDy79M = EditingBufferKt.m7869updateRangeAfterDeletepWDy79M(TextRangeKt.TextRange(this.selectionStart, this.selectionEnd), TextRange);
+        setSelectionStart(TextRange.m7699getMinimpl(m7869updateRangeAfterDeletepWDy79M));
+        setSelectionEnd(TextRange.m7698getMaximpl(m7869updateRangeAfterDeletepWDy79M));
         if (hasComposition$ui_text()) {
-            long m7623updateRangeAfterDeletepWDy79M2 = EditingBufferKt.m7623updateRangeAfterDeletepWDy79M(TextRangeKt.TextRange(this.compositionStart, this.compositionEnd), TextRange);
-            if (TextRange.m7452getCollapsedimpl(m7623updateRangeAfterDeletepWDy79M2)) {
+            long m7869updateRangeAfterDeletepWDy79M2 = EditingBufferKt.m7869updateRangeAfterDeletepWDy79M(TextRangeKt.TextRange(this.compositionStart, this.compositionEnd), TextRange);
+            if (TextRange.m7695getCollapsedimpl(m7869updateRangeAfterDeletepWDy79M2)) {
                 commitComposition$ui_text();
                 return;
             }
-            this.compositionStart = TextRange.m7456getMinimpl(m7623updateRangeAfterDeletepWDy79M2);
-            this.compositionEnd = TextRange.m7455getMaximpl(m7623updateRangeAfterDeletepWDy79M2);
+            this.compositionStart = TextRange.m7699getMinimpl(m7869updateRangeAfterDeletepWDy79M2);
+            this.compositionEnd = TextRange.m7698getMaximpl(m7869updateRangeAfterDeletepWDy79M2);
         }
     }
 

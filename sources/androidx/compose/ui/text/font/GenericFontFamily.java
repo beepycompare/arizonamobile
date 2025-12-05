@@ -9,14 +9,14 @@ public final class GenericFontFamily extends SystemFontFamily {
     private final String fontFamilyName;
     private final String name;
 
-    public final String getName() {
-        return this.name;
-    }
-
     public GenericFontFamily(String str, String str2) {
         super(null);
         this.name = str;
         this.fontFamilyName = str2;
+    }
+
+    public final String getName() {
+        return this.name;
     }
 
     public String toString() {

@@ -12,12 +12,12 @@ public final class HorizontalAlignElement extends ModifierNodeElement<Horizontal
     public static final int $stable = 0;
     private final Alignment.Horizontal horizontal;
 
-    public final Alignment.Horizontal getHorizontal() {
-        return this.horizontal;
-    }
-
     public HorizontalAlignElement(Alignment.Horizontal horizontal) {
         this.horizontal = horizontal;
+    }
+
+    public final Alignment.Horizontal getHorizontal() {
+        return this.horizontal;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

@@ -65,7 +65,7 @@ public final class DatePickerKt$YearPicker$1$1$1$1 implements Function4<LazyGrid
         }
         final int first = i + this.$yearRange.getFirst();
         String localString$default = CalendarLocale_jvmKt.toLocalString$default(first, 0, 0, false, this.$calendarModel.getLocale(), 7, null);
-        Modifier m889requiredSizeVpY3zN4 = SizeKt.m889requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3856getSelectionYearContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3855getSelectionYearContainerHeightD9Ej5fM());
+        Modifier m970requiredSizeVpY3zN4 = SizeKt.m970requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3942getSelectionYearContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3941getSelectionYearContainerHeightD9Ej5fM());
         boolean z = first == this.$displayedYear;
         boolean z2 = first == this.$currentYear;
         ComposerKt.sourceInformationMarkerStart(composer, -236876686, "CC(remember):DatePicker.kt#9igjgp");
@@ -86,9 +86,9 @@ public final class DatePickerKt$YearPicker$1$1$1$1 implements Function4<LazyGrid
         ComposerKt.sourceInformationMarkerEnd(composer);
         boolean isSelectableYear = this.$selectableDates.isSelectableYear(first);
         Strings.Companion companion = Strings.Companion;
-        String format = String.format(Strings_androidKt.m3611getString2EP1pXo(Strings.m3532constructorimpl(R.string.m3c_date_picker_navigate_to_year_description), composer, 0), Arrays.copyOf(new Object[]{localString$default}, 1));
+        String format = String.format(Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_picker_navigate_to_year_description), composer, 0), Arrays.copyOf(new Object[]{localString$default}, 1));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-        DatePickerKt.Year(localString$default, m889requiredSizeVpY3zN4, z, z2, (Function0) rememberedValue, isSelectableYear, format, this.$colors, composer, 48);
+        DatePickerKt.Year(localString$default, m970requiredSizeVpY3zN4, z, z2, (Function0) rememberedValue, isSelectableYear, format, this.$colors, composer, 48);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

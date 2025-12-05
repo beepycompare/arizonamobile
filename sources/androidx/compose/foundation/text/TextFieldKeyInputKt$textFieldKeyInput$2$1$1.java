@@ -4,10 +4,11 @@ import androidx.compose.ui.input.key.KeyEvent;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldKeyInput.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-/* synthetic */ class TextFieldKeyInputKt$textFieldKeyInput$2$1$1 extends FunctionReferenceImpl implements Function1<KeyEvent, Boolean> {
+public final /* synthetic */ class TextFieldKeyInputKt$textFieldKeyInput$2$1$1 extends FunctionReferenceImpl implements Function1<KeyEvent, Boolean> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public TextFieldKeyInputKt$textFieldKeyInput$2$1$1(Object obj) {
         super(1, obj, TextFieldKeyInput.class, "process", "process-ZmokQxo(Landroid/view/KeyEvent;)Z", 0);
@@ -15,11 +16,11 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-        return m1375invokeZmokQxo(keyEvent.m6415unboximpl());
+        return m1454invokeZmokQxo(keyEvent.m6576unboximpl());
     }
 
     /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-    public final Boolean m1375invokeZmokQxo(android.view.KeyEvent keyEvent) {
-        return Boolean.valueOf(((TextFieldKeyInput) this.receiver).m1371processZmokQxo(keyEvent));
+    public final Boolean m1454invokeZmokQxo(android.view.KeyEvent keyEvent) {
+        return Boolean.valueOf(((TextFieldKeyInput) this.receiver).m1449processZmokQxo(keyEvent));
     }
 }

@@ -17,7 +17,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: Preferences.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\b\b\n\u0002\u0010\u000e\n\u0000\u0018\u00002\u00020\u0001B+\b\u0000\u0012\u0018\b\u0002\u0010\u0002\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0004\u0012\u0004\u0012\u00020\u00050\u0003\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bJ\u0018\u0010\r\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0004\u0012\u0004\u0012\u00020\u00050\u000eH\u0016J\r\u0010\u000f\u001a\u00020\u0010H\u0000¢\u0006\u0002\b\u0011J\u0006\u0010\u0012\u001a\u00020\u0010J\u001d\u0010\u0013\u001a\u00020\u0007\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u0004H\u0096\u0002J\u0013\u0010\u0016\u001a\u00020\u00072\b\u0010\u0017\u001a\u0004\u0018\u00010\u0005H\u0096\u0002J\r\u0010\u0018\u001a\u00020\u0010H\u0000¢\u0006\u0002\b\u0019J$\u0010\u001a\u001a\u0004\u0018\u0001H\u0014\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u0004H\u0096\u0002¢\u0006\u0002\u0010\u001bJ\b\u0010\u001c\u001a\u00020\u001dH\u0016J\u0015\u0010\u001e\u001a\u00020\u00102\n\u0010\u0015\u001a\u0006\u0012\u0002\b\u00030\u0004H\u0086\u0002J\u0011\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020\u0001H\u0086\u0002J\u0015\u0010\u001f\u001a\u00020\u00102\n\u0010!\u001a\u0006\u0012\u0002\b\u00030\"H\u0086\u0002J'\u0010#\u001a\u00020\u00102\u001a\u0010$\u001a\u000e\u0012\n\b\u0001\u0012\u0006\u0012\u0002\b\u00030\"0%\"\u0006\u0012\u0002\b\u00030\"¢\u0006\u0002\u0010&J\u001f\u0010'\u001a\u0002H\u0014\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u0004¢\u0006\u0002\u0010\u001bJ*\u0010(\u001a\u00020\u0010\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u00042\u0006\u0010)\u001a\u0002H\u0014H\u0086\u0002¢\u0006\u0002\u0010*J#\u0010+\u001a\u00020\u00102\n\u0010\u0015\u001a\u0006\u0012\u0002\b\u00030\u00042\b\u0010)\u001a\u0004\u0018\u00010\u0005H\u0000¢\u0006\u0002\b,J\b\u0010-\u001a\u00020.H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u0002\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0004\u0012\u0004\u0012\u00020\u00050\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006/"}, d2 = {"Landroidx/datastore/preferences/core/MutablePreferences;", "Landroidx/datastore/preferences/core/Preferences;", "preferencesMap", "", "Landroidx/datastore/preferences/core/Preferences$Key;", "", "startFrozen", "", "(Ljava/util/Map;Z)V", "frozen", "Landroidx/datastore/preferences/core/AtomicBoolean;", "getPreferencesMap$datastore_preferences_core_release", "()Ljava/util/Map;", "asMap", "", "checkNotFrozen", "", "checkNotFrozen$datastore_preferences_core_release", "clear", "contains", ExifInterface.GPS_DIRECTION_TRUE, "key", "equals", "other", "freeze", "freeze$datastore_preferences_core_release", "get", "(Landroidx/datastore/preferences/core/Preferences$Key;)Ljava/lang/Object;", "hashCode", "", "minusAssign", "plusAssign", "prefs", "pair", "Landroidx/datastore/preferences/core/Preferences$Pair;", "putAll", "pairs", "", "([Landroidx/datastore/preferences/core/Preferences$Pair;)V", "remove", "set", "value", "(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V", "setUnchecked", "setUnchecked$datastore_preferences_core_release", "toString", "", "datastore-preferences-core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0010$\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\b\u0006\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\u0018\u00002\u00020\u0001B-\b\u0000\u0012\u0018\b\u0002\u0010\u0002\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0004\u0012\u0004\u0012\u00020\u00050\u0003\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\r\u0010\u000e\u001a\u00020\u000fH\u0000¢\u0006\u0002\b\u0010J\r\u0010\u0011\u001a\u00020\u000fH\u0000¢\u0006\u0002\b\u0012J\u001d\u0010\u0013\u001a\u00020\u0007\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u0004H\u0096\u0002J$\u0010\u0016\u001a\u0004\u0018\u0001H\u0014\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u0004H\u0096\u0002¢\u0006\u0002\u0010\u0017J\u0018\u0010\u0018\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0004\u0012\u0004\u0012\u00020\u00050\u0019H\u0016J*\u0010\u001a\u001a\u00020\u000f\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u00042\u0006\u0010\u001b\u001a\u0002H\u0014H\u0086\u0002¢\u0006\u0002\u0010\u001cJ#\u0010\u001d\u001a\u00020\u000f2\n\u0010\u0015\u001a\u0006\u0012\u0002\b\u00030\u00042\b\u0010\u001b\u001a\u0004\u0018\u00010\u0005H\u0000¢\u0006\u0002\b\u001eJ\u0011\u0010\u001f\u001a\u00020\u000f2\u0006\u0010 \u001a\u00020\u0001H\u0086\u0002J\u0015\u0010\u001f\u001a\u00020\u000f2\n\u0010!\u001a\u0006\u0012\u0002\b\u00030\"H\u0086\u0002J\u0015\u0010#\u001a\u00020\u000f2\n\u0010\u0015\u001a\u0006\u0012\u0002\b\u00030\u0004H\u0086\u0002J'\u0010$\u001a\u00020\u000f2\u001a\u0010%\u001a\u000e\u0012\n\b\u0001\u0012\u0006\u0012\u0002\b\u00030\"0&\"\u0006\u0012\u0002\b\u00030\"¢\u0006\u0002\u0010'J\u001f\u0010(\u001a\u0002H\u0014\"\u0004\b\u0000\u0010\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00140\u0004¢\u0006\u0002\u0010\u0017J\u0006\u0010)\u001a\u00020\u000fJ\u0013\u0010*\u001a\u00020\u00072\b\u0010+\u001a\u0004\u0018\u00010\u0005H\u0096\u0002J\b\u0010,\u001a\u00020-H\u0016J\b\u0010.\u001a\u00020/H\u0016R$\u0010\u0002\u001a\u0012\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0004\u0012\u0004\u0012\u00020\u00050\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Landroidx/datastore/preferences/core/MutablePreferences;", "Landroidx/datastore/preferences/core/Preferences;", "preferencesMap", "", "Landroidx/datastore/preferences/core/Preferences$Key;", "", "startFrozen", "", "<init>", "(Ljava/util/Map;Z)V", "getPreferencesMap$datastore_preferences_core", "()Ljava/util/Map;", "frozen", "Landroidx/datastore/preferences/core/AtomicBoolean;", "checkNotFrozen", "", "checkNotFrozen$datastore_preferences_core", "freeze", "freeze$datastore_preferences_core", "contains", ExifInterface.GPS_DIRECTION_TRUE, "key", "get", "(Landroidx/datastore/preferences/core/Preferences$Key;)Ljava/lang/Object;", "asMap", "", "set", "value", "(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V", "setUnchecked", "setUnchecked$datastore_preferences_core", "plusAssign", "prefs", "pair", "Landroidx/datastore/preferences/core/Preferences$Pair;", "minusAssign", "putAll", "pairs", "", "([Landroidx/datastore/preferences/core/Preferences$Pair;)V", "remove", "clear", "equals", "other", "hashCode", "", "toString", "", "datastore-preferences-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MutablePreferences extends Preferences {
     private final AtomicBoolean frozen;
@@ -27,27 +27,27 @@ public final class MutablePreferences extends Preferences {
         this(null, false, 3, null);
     }
 
-    public /* synthetic */ MutablePreferences(LinkedHashMap linkedHashMap, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new LinkedHashMap() : linkedHashMap, (i & 2) != 0 ? true : z);
-    }
-
-    public final Map<Preferences.Key<?>, Object> getPreferencesMap$datastore_preferences_core_release() {
-        return this.preferencesMap;
-    }
-
     public MutablePreferences(Map<Preferences.Key<?>, Object> preferencesMap, boolean z) {
         Intrinsics.checkNotNullParameter(preferencesMap, "preferencesMap");
         this.preferencesMap = preferencesMap;
         this.frozen = new AtomicBoolean(z);
     }
 
-    public final void checkNotFrozen$datastore_preferences_core_release() {
+    public /* synthetic */ MutablePreferences(LinkedHashMap linkedHashMap, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? new LinkedHashMap() : linkedHashMap, (i & 2) != 0 ? true : z);
+    }
+
+    public final Map<Preferences.Key<?>, Object> getPreferencesMap$datastore_preferences_core() {
+        return this.preferencesMap;
+    }
+
+    public final void checkNotFrozen$datastore_preferences_core() {
         if (this.frozen.get()) {
             throw new IllegalStateException("Do mutate preferences once returned to DataStore.".toString());
         }
     }
 
-    public final void freeze$datastore_preferences_core_release() {
+    public final void freeze$datastore_preferences_core() {
         this.frozen.set(true);
     }
 
@@ -64,7 +64,7 @@ public final class MutablePreferences extends Preferences {
         if (t instanceof byte[]) {
             byte[] bArr = (byte[]) t;
             T t2 = (T) Arrays.copyOf(bArr, bArr.length);
-            Intrinsics.checkNotNullExpressionValue(t2, "copyOf(this, size)");
+            Intrinsics.checkNotNullExpressionValue(t2, "copyOf(...)");
             return t2;
         }
         return t;
@@ -83,7 +83,7 @@ public final class MutablePreferences extends Preferences {
                 Object key = entry.getKey();
                 byte[] bArr = (byte[]) value;
                 byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
-                Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, size)");
+                Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
                 pair = new Pair(key, copyOf);
             } else {
                 pair = new Pair(entry.getKey(), entry.getValue());
@@ -95,12 +95,12 @@ public final class MutablePreferences extends Preferences {
 
     public final <T> void set(Preferences.Key<T> key, T t) {
         Intrinsics.checkNotNullParameter(key, "key");
-        setUnchecked$datastore_preferences_core_release(key, t);
+        setUnchecked$datastore_preferences_core(key, t);
     }
 
-    public final void setUnchecked$datastore_preferences_core_release(Preferences.Key<?> key, Object obj) {
+    public final void setUnchecked$datastore_preferences_core(Preferences.Key<?> key, Object obj) {
         Intrinsics.checkNotNullParameter(key, "key");
-        checkNotFrozen$datastore_preferences_core_release();
+        checkNotFrozen$datastore_preferences_core();
         if (obj == null) {
             remove(key);
         } else if (obj instanceof Set) {
@@ -111,45 +111,45 @@ public final class MutablePreferences extends Preferences {
             Map<Preferences.Key<?>, Object> map = this.preferencesMap;
             byte[] bArr = (byte[]) obj;
             byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
-            Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, size)");
+            Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
             map.put(key, copyOf);
         }
     }
 
     public final void plusAssign(Preferences prefs) {
         Intrinsics.checkNotNullParameter(prefs, "prefs");
-        checkNotFrozen$datastore_preferences_core_release();
+        checkNotFrozen$datastore_preferences_core();
         this.preferencesMap.putAll(prefs.asMap());
     }
 
     public final void plusAssign(Preferences.Pair<?> pair) {
         Intrinsics.checkNotNullParameter(pair, "pair");
-        checkNotFrozen$datastore_preferences_core_release();
+        checkNotFrozen$datastore_preferences_core();
         putAll(pair);
     }
 
     public final void minusAssign(Preferences.Key<?> key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        checkNotFrozen$datastore_preferences_core_release();
+        checkNotFrozen$datastore_preferences_core();
         remove(key);
     }
 
     public final void putAll(Preferences.Pair<?>... pairs) {
         Intrinsics.checkNotNullParameter(pairs, "pairs");
-        checkNotFrozen$datastore_preferences_core_release();
+        checkNotFrozen$datastore_preferences_core();
         for (Preferences.Pair<?> pair : pairs) {
-            setUnchecked$datastore_preferences_core_release(pair.getKey$datastore_preferences_core_release(), pair.getValue$datastore_preferences_core_release());
+            setUnchecked$datastore_preferences_core(pair.getKey$datastore_preferences_core(), pair.getValue$datastore_preferences_core());
         }
     }
 
     public final <T> T remove(Preferences.Key<T> key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        checkNotFrozen$datastore_preferences_core_release();
+        checkNotFrozen$datastore_preferences_core();
         return (T) this.preferencesMap.remove(key);
     }
 
     public final void clear() {
-        checkNotFrozen$datastore_preferences_core_release();
+        checkNotFrozen$datastore_preferences_core();
         this.preferencesMap.clear();
     }
 
@@ -208,13 +208,20 @@ public final class MutablePreferences extends Preferences {
     }
 
     public String toString() {
-        return CollectionsKt.joinToString$default(this.preferencesMap.entrySet(), ",\n", "{\n", "\n}", 0, null, new Function1<Map.Entry<Preferences.Key<?>, Object>, CharSequence>() { // from class: androidx.datastore.preferences.core.MutablePreferences$toString$1
+        return CollectionsKt.joinToString$default(this.preferencesMap.entrySet(), ",\n", "{\n", "\n}", 0, null, new Function1() { // from class: androidx.datastore.preferences.core.MutablePreferences$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public final CharSequence invoke(Map.Entry<Preferences.Key<?>, Object> entry) {
-                Intrinsics.checkNotNullParameter(entry, "entry");
-                Object value = entry.getValue();
-                return "  " + entry.getKey().getName() + " = " + (value instanceof byte[] ? ArraysKt.joinToString$default((byte[]) value, (CharSequence) ", ", (CharSequence) "[", (CharSequence) "]", 0, (CharSequence) null, (Function1) null, 56, (Object) null) : String.valueOf(entry.getValue()));
+            public final Object invoke(Object obj) {
+                CharSequence string$lambda$0;
+                string$lambda$0 = MutablePreferences.toString$lambda$0((Map.Entry) obj);
+                return string$lambda$0;
             }
         }, 24, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CharSequence toString$lambda$0(Map.Entry entry) {
+        Intrinsics.checkNotNullParameter(entry, "entry");
+        Object value = entry.getValue();
+        return "  " + ((Preferences.Key) entry.getKey()).getName() + " = " + (value instanceof byte[] ? ArraysKt.joinToString$default((byte[]) value, (CharSequence) ", ", (CharSequence) "[", (CharSequence) "]", 0, (CharSequence) null, (Function1) null, 56, (Object) null) : String.valueOf(entry.getValue()));
     }
 }

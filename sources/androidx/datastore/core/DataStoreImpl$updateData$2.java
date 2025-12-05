@@ -15,8 +15,8 @@ import kotlinx.coroutines.CompletableDeferredKt;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: DataStoreImpl.kt */
-@Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$updateData$2", f = "DataStoreImpl.kt", i = {}, l = {169}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl$updateData$2", f = "DataStoreImpl.kt", i = {}, l = {185}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 final class DataStoreImpl$updateData$2<T> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super T>, Object> {
     final /* synthetic */ Function2<T, Continuation<? super T>, Object> $transform;
@@ -62,8 +62,13 @@ final class DataStoreImpl$updateData$2<T> extends SuspendLambda implements Funct
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
+        CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         CompletableDeferred CompletableDeferred$default = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
-        Message.Update update = new Message.Update(this.$transform, CompletableDeferred$default, ((DataStoreImpl) this.this$0).inMemoryCache.getCurrentState(), ((CoroutineScope) this.L$0).getCoroutineContext());
+        NoValueDataState currentState = ((DataStoreImpl) this.this$0).inMemoryCache.getCurrentState();
+        if (currentState instanceof Data) {
+            currentState = new NoValueDataState(((Data) currentState).getVersion());
+        }
+        Message.Update update = new Message.Update(this.$transform, CompletableDeferred$default, currentState, coroutineScope.getCoroutineContext());
         simpleActor = ((DataStoreImpl) this.this$0).writeActor;
         simpleActor.offer(update);
         this.label = 1;

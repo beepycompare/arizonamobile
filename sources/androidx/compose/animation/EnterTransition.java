@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class EnterTransition {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final EnterTransition None = new EnterTransitionImpl(new TransitionData(null, null, null, null, false, null, 63, null));
+    private static final EnterTransition None = new EnterTransitionImpl(new TransitionData(null, null, null, null, null, false, null, 127, null));
 
     public /* synthetic */ EnterTransition(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -38,7 +38,11 @@ public abstract class EnterTransition {
         if (scale == null) {
             scale = getData$animation().getScale();
         }
-        return new EnterTransitionImpl(new TransitionData(fade, slide, changeSize, scale, false, MapsKt.plus(getData$animation().getEffectsMap(), enterTransition.getData$animation().getEffectsMap()), 16, null));
+        Veil veil = enterTransition.getData$animation().getVeil();
+        if (veil == null) {
+            veil = getData$animation().getVeil();
+        }
+        return new EnterTransitionImpl(new TransitionData(fade, slide, changeSize, scale, veil, false, MapsKt.plus(getData$animation().getEffectsMap(), enterTransition.getData$animation().getEffectsMap()), 32, null));
     }
 
     public String toString() {

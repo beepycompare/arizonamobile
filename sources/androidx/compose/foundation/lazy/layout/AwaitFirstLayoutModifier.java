@@ -1,111 +1,120 @@
 package androidx.compose.foundation.lazy.layout;
 
-import androidx.compose.ui.layout.LayoutCoordinates;
-import androidx.compose.ui.layout.OnGloballyPositionedModifier;
-import java.util.ArrayList;
-import java.util.List;
+import androidx.compose.foundation.lazy.layout.AwaitFirstLayoutModifier;
+import androidx.compose.ui.Modifier;
+import androidx.compose.ui.layout.OnLayoutRectChangedModifierKt;
+import androidx.compose.ui.node.DelegatableNode;
+import androidx.compose.ui.node.ModifierNodeElement;
+import androidx.compose.ui.platform.InspectorInfo;
+import androidx.compose.ui.spatial.RelativeLayoutBounds;
 import kotlin.Metadata;
-import kotlin.Result;
-import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.DebugProbesKt;
-import kotlin.jvm.internal.Ref;
-import kotlin.jvm.internal.TypeIntrinsics;
-import kotlinx.coroutines.CancellableContinuationImpl;
+import kotlin.jvm.functions.Function1;
+import kotlinx.coroutines.CompletableDeferred;
+import kotlinx.coroutines.CompletableDeferredKt;
 /* compiled from: AwaitFirstLayoutModifier.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\n\u001a\u00020\tH\u0086@¢\u0006\u0002\u0010\u000bJ\u0010\u0010\f\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\t0\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "Landroidx/compose/ui/layout/OnGloballyPositionedModifier;", "<init>", "()V", "wasPositioned", "", "continuations", "", "Lkotlin/coroutines/Continuation;", "", "waitForFirstLayout", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onGloballyPositioned", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\b\u0001\u0018\u00002\f\u0012\b\u0012\u00060\u0002R\u00020\u00000\u0001:\u0001\u0016B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\t\u001a\u00020\bH\u0086@¢\u0006\u0002\u0010\nJ\f\u0010\u000b\u001a\u00060\u0002R\u00020\u0000H\u0016J\u0014\u0010\f\u001a\u00020\b2\n\u0010\r\u001a\u00060\u0002R\u00020\u0000H\u0016J\f\u0010\u000e\u001a\u00020\b*\u00020\u000fH\u0016J\b\u0010\u0010\u001a\u00020\u0011H\u0016J\u0013\u0010\u0012\u001a\u00020\u00132\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0096\u0002R\u0014\u0010\u0005\u001a\b\u0018\u00010\u0002R\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier$Node;", "<init>", "()V", "attachedNode", "lock", "Lkotlinx/coroutines/CompletableDeferred;", "", "waitForFirstLayout", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "create", "update", "node", "inspectableProperties", "Landroidx/compose/ui/platform/InspectorInfo;", "hashCode", "", "equals", "", "other", "", "Node", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class AwaitFirstLayoutModifier implements OnGloballyPositionedModifier {
+public final class AwaitFirstLayoutModifier extends ModifierNodeElement<Node> {
     public static final int $stable = 0;
-    private final List<Continuation<Unit>> continuations = new ArrayList();
-    private boolean wasPositioned;
+    private Node attachedNode;
+    private CompletableDeferred<Unit> lock;
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
-    /* JADX WARN: Type inference failed for: r2v5, types: [kotlinx.coroutines.CancellableContinuation, T, java.lang.Object] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object waitForFirstLayout(Continuation<? super Unit> continuation) {
-        AwaitFirstLayoutModifier$waitForFirstLayout$1 awaitFirstLayoutModifier$waitForFirstLayout$1;
-        int i;
-        Ref.ObjectRef objectRef;
-        Throwable th;
-        if (continuation instanceof AwaitFirstLayoutModifier$waitForFirstLayout$1) {
-            awaitFirstLayoutModifier$waitForFirstLayout$1 = (AwaitFirstLayoutModifier$waitForFirstLayout$1) continuation;
-            if ((awaitFirstLayoutModifier$waitForFirstLayout$1.label & Integer.MIN_VALUE) != 0) {
-                awaitFirstLayoutModifier$waitForFirstLayout$1.label -= Integer.MIN_VALUE;
-                Object obj = awaitFirstLayoutModifier$waitForFirstLayout$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = awaitFirstLayoutModifier$waitForFirstLayout$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    if (!this.wasPositioned) {
-                        Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-                        try {
-                            awaitFirstLayoutModifier$waitForFirstLayout$1.L$0 = objectRef2;
-                            awaitFirstLayoutModifier$waitForFirstLayout$1.label = 1;
-                            CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(awaitFirstLayoutModifier$waitForFirstLayout$1), 1);
-                            cancellableContinuationImpl.initCancellability();
-                            CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
-                            objectRef2.element = cancellableContinuationImpl2;
-                            this.continuations.add(cancellableContinuationImpl2);
-                            Object result = cancellableContinuationImpl.getResult();
-                            if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
-                                DebugProbesKt.probeCoroutineSuspended(awaitFirstLayoutModifier$waitForFirstLayout$1);
-                            }
-                            if (result == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            objectRef = objectRef2;
-                        } catch (Throwable th2) {
-                            objectRef = objectRef2;
-                            th = th2;
-                            TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-                            throw th;
-                        }
-                    }
-                    return Unit.INSTANCE;
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    objectRef = (Ref.ObjectRef) awaitFirstLayoutModifier$waitForFirstLayout$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th3) {
-                        th = th3;
-                        TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-                        throw th;
-                    }
-                }
-                TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-                return Unit.INSTANCE;
-            }
-        }
-        awaitFirstLayoutModifier$waitForFirstLayout$1 = new AwaitFirstLayoutModifier$waitForFirstLayout$1(this, continuation);
-        Object obj2 = awaitFirstLayoutModifier$waitForFirstLayout$1.result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = awaitFirstLayoutModifier$waitForFirstLayout$1.label;
-        if (i != 0) {
-        }
-        TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-        return Unit.INSTANCE;
+    @Override // androidx.compose.ui.node.ModifierNodeElement
+    public boolean equals(Object obj) {
+        return obj == this;
     }
 
-    @Override // androidx.compose.ui.layout.OnGloballyPositionedModifier
-    public void onGloballyPositioned(LayoutCoordinates layoutCoordinates) {
-        if (this.wasPositioned) {
-            return;
+    @Override // androidx.compose.ui.node.ModifierNodeElement
+    public int hashCode() {
+        return 234;
+    }
+
+    @Override // androidx.compose.ui.node.ModifierNodeElement
+    public void update(Node node) {
+    }
+
+    public final Object waitForFirstLayout(Continuation<? super Unit> continuation) {
+        CompletableDeferred<Unit> completableDeferred = this.lock;
+        if (completableDeferred == null) {
+            completableDeferred = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
+            this.lock = completableDeferred;
+            Node node = this.attachedNode;
+            if (node != null && node.isAttached()) {
+                node.requestOnAfterLayoutCallback();
+            }
         }
-        this.wasPositioned = true;
-        List<Continuation<Unit>> list = this.continuations;
-        int size = list.size();
-        for (int i = 0; i < size; i++) {
-            Result.Companion companion = Result.Companion;
-            list.get(i).resumeWith(Result.m9904constructorimpl(Unit.INSTANCE));
+        Object await = completableDeferred.await(continuation);
+        return await == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? await : Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Can't rename method to resolve collision */
+    @Override // androidx.compose.ui.node.ModifierNodeElement
+    public Node create() {
+        return new Node();
+    }
+
+    @Override // androidx.compose.ui.node.ModifierNodeElement
+    public void inspectableProperties(InspectorInfo inspectorInfo) {
+        inspectorInfo.setName("AwaitFirstLayoutModifier");
+    }
+
+    /* compiled from: AwaitFirstLayoutModifier.kt */
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\u0005H\u0016J\u0006\u0010\b\u001a\u00020\u0005J\b\u0010\t\u001a\u00020\u0005H\u0016R\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier$Node;", "Landroidx/compose/ui/Modifier$Node;", "<init>", "(Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;)V", "onAttach", "", "handle", "Landroidx/compose/ui/node/DelegatableNode$RegistrationHandle;", "requestOnAfterLayoutCallback", "onDetach", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes.dex */
+    public final class Node extends Modifier.Node {
+        private DelegatableNode.RegistrationHandle handle;
+
+        public Node() {
         }
-        this.continuations.clear();
+
+        @Override // androidx.compose.ui.Modifier.Node
+        public void onAttach() {
+            AwaitFirstLayoutModifier.this.attachedNode = this;
+            if (AwaitFirstLayoutModifier.this.lock != null) {
+                requestOnAfterLayoutCallback();
+            }
+        }
+
+        public final void requestOnAfterLayoutCallback() {
+            final AwaitFirstLayoutModifier awaitFirstLayoutModifier = AwaitFirstLayoutModifier.this;
+            this.handle = OnLayoutRectChangedModifierKt.registerOnLayoutRectChanged(this, 0L, 0L, new Function1() { // from class: androidx.compose.foundation.lazy.layout.AwaitFirstLayoutModifier$Node$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit requestOnAfterLayoutCallback$lambda$0;
+                    requestOnAfterLayoutCallback$lambda$0 = AwaitFirstLayoutModifier.Node.requestOnAfterLayoutCallback$lambda$0(AwaitFirstLayoutModifier.Node.this, awaitFirstLayoutModifier, (RelativeLayoutBounds) obj);
+                    return requestOnAfterLayoutCallback$lambda$0;
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit requestOnAfterLayoutCallback$lambda$0(Node node, AwaitFirstLayoutModifier awaitFirstLayoutModifier, RelativeLayoutBounds relativeLayoutBounds) {
+            DelegatableNode.RegistrationHandle registrationHandle = node.handle;
+            if (registrationHandle != null) {
+                registrationHandle.unregister();
+            }
+            node.handle = null;
+            CompletableDeferred completableDeferred = awaitFirstLayoutModifier.lock;
+            if (completableDeferred != null) {
+                completableDeferred.complete(Unit.INSTANCE);
+            }
+            awaitFirstLayoutModifier.lock = null;
+            return Unit.INSTANCE;
+        }
+
+        @Override // androidx.compose.ui.Modifier.Node
+        public void onDetach() {
+            if (AwaitFirstLayoutModifier.this.attachedNode == this) {
+                AwaitFirstLayoutModifier.this.attachedNode = null;
+            }
+            DelegatableNode.RegistrationHandle registrationHandle = this.handle;
+            if (registrationHandle != null) {
+                registrationHandle.unregister();
+            }
+            this.handle = null;
+        }
     }
 }

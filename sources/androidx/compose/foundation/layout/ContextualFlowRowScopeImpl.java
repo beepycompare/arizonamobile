@@ -68,13 +68,13 @@ public final class ContextualFlowRowScopeImpl implements RowScope, ContextualFlo
 
     @Override // androidx.compose.foundation.layout.ContextualFlowRowScope
     /* renamed from: getMaxWidthInLine-D9Ej5fM */
-    public float mo746getMaxWidthInLineD9Ej5fM() {
+    public float mo827getMaxWidthInLineD9Ej5fM() {
         return this.maxWidthInLine;
     }
 
     @Override // androidx.compose.foundation.layout.ContextualFlowRowScope
     /* renamed from: getMaxHeight-D9Ej5fM */
-    public float mo745getMaxHeightD9Ej5fM() {
+    public float mo826getMaxHeightD9Ej5fM() {
         return this.maxHeight;
     }
 

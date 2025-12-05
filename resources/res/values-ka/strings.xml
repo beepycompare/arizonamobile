@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">გაზიარება:</string>
     <string name="abc_shareactionprovider_share_with_application">%s-ით გაზიარება</string>
     <string name="abc_toolbar_collapse_description">ჩაკეცვა</string>
-    <string name="autofill">ავტომატური შევსება</string>
+    <string name="androidx_compose_foundation_autofill">ავტომატური შევსება</string>
+    <string name="androidx_compose_ui_autofill">ავტომატური შევსება</string>
     <string name="bottomsheet_action_collapse">ქვედა ფურცლის ჩაკეცვა</string>
     <string name="bottomsheet_action_expand">ქვედა ფურცლის გაშლა</string>
     <string name="bottomsheet_action_expand_halfway">ნახევრამდე გაფართოება</string>

@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Jaa…</string>
     <string name="abc_shareactionprovider_share_with_application">Jaa: %s</string>
     <string name="abc_toolbar_collapse_description">Tiivistä</string>
-    <string name="autofill">Automaattinen täyttö</string>
+    <string name="androidx_compose_foundation_autofill">Automaattinen täyttö</string>
+    <string name="androidx_compose_ui_autofill">Automaattinen täyttö</string>
     <string name="bottomsheet_action_collapse">Tiivistä alapaneeli</string>
     <string name="bottomsheet_action_expand">Laajenna alapaneeli</string>
     <string name="bottomsheet_action_expand_halfway">Laajenna puoliväliin</string>

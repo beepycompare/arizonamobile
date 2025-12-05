@@ -503,12 +503,12 @@ public class NavController {
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            Bundle m9000constructorimpl = SavedStateWriter.m9000constructorimpl(bundleOf);
+            Bundle m9264constructorimpl = SavedStateWriter.m9264constructorimpl(bundleOf);
             Intrinsics.checkNotNull(intent);
-            SavedStateWriter.m9024putParcelableimpl(m9000constructorimpl, KEY_DEEP_LINK_INTENT, intent);
+            SavedStateWriter.m9288putParcelableimpl(m9264constructorimpl, KEY_DEEP_LINK_INTENT, intent);
             Bundle bundle2 = extras.getBundle(KEY_DEEP_LINK_EXTRAS);
             if (bundle2 != null) {
-                SavedStateWriter.m9004putAllimpl(m9000constructorimpl, bundle2);
+                SavedStateWriter.m9268putAllimpl(m9264constructorimpl, bundle2);
             }
             createDeepLink.setArguments(bundleOf);
             for (Object obj : mutableList) {
@@ -551,7 +551,7 @@ public class NavController {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                Bundle m9000constructorimpl = SavedStateWriter.m9000constructorimpl(bundleOf);
+                Bundle m9264constructorimpl = SavedStateWriter.m9264constructorimpl(bundleOf);
                 Activity activity = this.activity;
                 if (activity != null) {
                     Intrinsics.checkNotNull(activity);
@@ -563,7 +563,7 @@ public class NavController {
                             Intrinsics.checkNotNull(activity3);
                             Intent intent = activity3.getIntent();
                             Intrinsics.checkNotNullExpressionValue(intent, "getIntent(...)");
-                            SavedStateWriter.m9024putParcelableimpl(m9000constructorimpl, KEY_DEEP_LINK_INTENT, intent);
+                            SavedStateWriter.m9288putParcelableimpl(m9264constructorimpl, KEY_DEEP_LINK_INTENT, intent);
                             NavGraph topGraph$navigation_runtime_release = this.impl.getTopGraph$navigation_runtime_release();
                             Activity activity4 = this.activity;
                             Intrinsics.checkNotNull(activity4);
@@ -571,7 +571,7 @@ public class NavController {
                             Intrinsics.checkNotNullExpressionValue(intent2, "getIntent(...)");
                             NavDestination.DeepLinkMatch matchDeepLinkComprehensive = topGraph$navigation_runtime_release.matchDeepLinkComprehensive(NavControllerKt.NavDeepLinkRequest(intent2), true, true, topGraph$navigation_runtime_release);
                             if ((matchDeepLinkComprehensive != null ? matchDeepLinkComprehensive.getMatchingArgs() : null) != null && (addInDefaultArgs = matchDeepLinkComprehensive.getDestination().addInDefaultArgs(matchDeepLinkComprehensive.getMatchingArgs())) != null) {
-                                SavedStateWriter.m9004putAllimpl(m9000constructorimpl, addInDefaultArgs);
+                                SavedStateWriter.m9268putAllimpl(m9264constructorimpl, addInDefaultArgs);
                             }
                         }
                     }
@@ -677,17 +677,17 @@ public class NavController {
                 pairArr = (Pair[]) arrayList2.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            SavedStateWriter.m9000constructorimpl(bundleOf);
+            SavedStateWriter.m9264constructorimpl(bundleOf);
             bundle = extras == null ? extras.getBundle(KEY_DEEP_LINK_EXTRAS) : null;
             if (bundle != null) {
-                SavedStateWriter.m9004putAllimpl(SavedStateWriter.m9000constructorimpl(bundleOf), bundle);
+                SavedStateWriter.m9268putAllimpl(SavedStateWriter.m9264constructorimpl(bundleOf), bundle);
             }
             if ((intArray != null || intArray.length == 0) && (matchDeepLinkComprehensive = (topGraph$navigation_runtime_release = this.impl.getTopGraph$navigation_runtime_release()).matchDeepLinkComprehensive(NavControllerKt.NavDeepLinkRequest(intent), true, true, topGraph$navigation_runtime_release)) != null) {
                 NavDestination destination = matchDeepLinkComprehensive.getDestination();
                 int[] buildDeepLinkIds$default = NavDestination.buildDeepLinkIds$default(destination, null, 1, null);
                 addInDefaultArgs = destination.addInDefaultArgs(matchDeepLinkComprehensive.getMatchingArgs());
                 if (addInDefaultArgs != null) {
-                    SavedStateWriter.m9004putAllimpl(SavedStateWriter.m9000constructorimpl(bundleOf), addInDefaultArgs);
+                    SavedStateWriter.m9268putAllimpl(SavedStateWriter.m9264constructorimpl(bundleOf), addInDefaultArgs);
                 }
                 intArray = buildDeepLinkIds$default;
             } else {
@@ -701,7 +701,7 @@ public class NavController {
                 androidx.navigation.internal.Log.Companion.i(NavControllerImpl.TAG, "Could not find destination " + findInvalidDestinationDisplayNameInDeepLink + " in the navigation graph, ignoring the deep link from " + intent);
                 return false;
             }
-            SavedStateWriter.m9024putParcelableimpl(SavedStateWriter.m9000constructorimpl(bundleOf), KEY_DEEP_LINK_INTENT, intent);
+            SavedStateWriter.m9288putParcelableimpl(SavedStateWriter.m9264constructorimpl(bundleOf), KEY_DEEP_LINK_INTENT, intent);
             int length = intArray.length;
             Bundle[] bundleArr = new Bundle[length];
             for (int i = 0; i < length; i++) {
@@ -716,10 +716,10 @@ public class NavController {
                     pairArr2 = (Pair[]) arrayList3.toArray(new Pair[0]);
                 }
                 Bundle bundleOf2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                Bundle m9000constructorimpl = SavedStateWriter.m9000constructorimpl(bundleOf2);
-                SavedStateWriter.m9004putAllimpl(m9000constructorimpl, bundleOf);
+                Bundle m9264constructorimpl = SavedStateWriter.m9264constructorimpl(bundleOf2);
+                SavedStateWriter.m9268putAllimpl(m9264constructorimpl, bundleOf);
                 if (arrayList != null && (bundle2 = (Bundle) arrayList.get(i)) != null) {
-                    SavedStateWriter.m9004putAllimpl(m9000constructorimpl, bundle2);
+                    SavedStateWriter.m9268putAllimpl(m9264constructorimpl, bundle2);
                 }
                 bundleArr[i] = bundleOf2;
             }
@@ -746,7 +746,7 @@ public class NavController {
         if (!emptyMap.isEmpty()) {
         }
         Bundle bundleOf3 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9000constructorimpl(bundleOf3);
+        SavedStateWriter.m9264constructorimpl(bundleOf3);
         if (extras == null) {
         }
         if (bundle != null) {
@@ -784,10 +784,10 @@ public class NavController {
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            Bundle m9000constructorimpl = SavedStateWriter.m9000constructorimpl(bundleOf);
+            Bundle m9264constructorimpl = SavedStateWriter.m9264constructorimpl(bundleOf);
             Bundle addInDefaultArgs = destination.addInDefaultArgs(matchDeepLinkComprehensive.getMatchingArgs());
             if (addInDefaultArgs != null) {
-                SavedStateWriter.m9004putAllimpl(m9000constructorimpl, addInDefaultArgs);
+                SavedStateWriter.m9268putAllimpl(m9264constructorimpl, addInDefaultArgs);
             }
             int length = buildDeepLinkIds$default.length;
             Bundle[] bundleArr = new Bundle[length];
@@ -803,7 +803,7 @@ public class NavController {
                     pairArr2 = (Pair[]) arrayList2.toArray(new Pair[0]);
                 }
                 Bundle bundleOf2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                SavedStateWriter.m9004putAllimpl(SavedStateWriter.m9000constructorimpl(bundleOf2), bundleOf);
+                SavedStateWriter.m9268putAllimpl(SavedStateWriter.m9264constructorimpl(bundleOf2), bundleOf);
                 bundleArr[i] = bundleOf2;
             }
             return handleDeepLink(buildDeepLinkIds$default, bundleArr, true);
@@ -1017,7 +1017,7 @@ public class NavController {
                     pairArr2 = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 bundle2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                SavedStateWriter.m9004putAllimpl(SavedStateWriter.m9000constructorimpl(bundle2), defaultArguments);
+                SavedStateWriter.m9268putAllimpl(SavedStateWriter.m9264constructorimpl(bundle2), defaultArguments);
                 if (bundle != null) {
                     if (bundle2 == null) {
                         Map emptyMap2 = MapsKt.emptyMap();
@@ -1031,9 +1031,9 @@ public class NavController {
                             pairArr = (Pair[]) arrayList2.toArray(new Pair[0]);
                         }
                         bundle2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                        SavedStateWriter.m9000constructorimpl(bundle2);
+                        SavedStateWriter.m9264constructorimpl(bundle2);
                     }
-                    SavedStateWriter.m9004putAllimpl(SavedStateWriter.m9000constructorimpl(bundle2), bundle);
+                    SavedStateWriter.m9268putAllimpl(SavedStateWriter.m9264constructorimpl(bundle2), bundle);
                 }
                 if (i2 != 0 && navOptions != null && (navOptions.getPopUpToId() != -1 || navOptions.getPopUpToRoute() != null || navOptions.getPopUpToRouteClass() != null)) {
                     if (navOptions.getPopUpToRoute() != null) {
@@ -1115,7 +1115,7 @@ public class NavController {
         Intent intent = new Intent();
         intent.setDataAndType(request.getUri(), request.getMimeType());
         intent.setAction(request.getAction());
-        SavedStateWriter.m9024putParcelableimpl(SavedStateWriter.m9000constructorimpl(args), KEY_DEEP_LINK_INTENT, intent);
+        SavedStateWriter.m9288putParcelableimpl(SavedStateWriter.m9264constructorimpl(args), KEY_DEEP_LINK_INTENT, intent);
     }
 
     private final void navigate(NavDestination navDestination, Bundle bundle, NavOptions navOptions, Navigator.Extras extras) {
@@ -1206,9 +1206,9 @@ public class NavController {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 saveState$navigation_runtime_release = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                SavedStateWriter.m9000constructorimpl(saveState$navigation_runtime_release);
+                SavedStateWriter.m9264constructorimpl(saveState$navigation_runtime_release);
             }
-            SavedStateWriter.m9006putBooleanimpl(SavedStateWriter.m9000constructorimpl(saveState$navigation_runtime_release), KEY_DEEP_LINK_HANDLED, this.deepLinkHandled);
+            SavedStateWriter.m9270putBooleanimpl(SavedStateWriter.m9264constructorimpl(saveState$navigation_runtime_release), KEY_DEEP_LINK_HANDLED, this.deepLinkHandled);
         }
         return saveState$navigation_runtime_release;
     }
@@ -1219,8 +1219,8 @@ public class NavController {
         }
         this.impl.restoreState$navigation_runtime_release(bundle);
         if (bundle != null) {
-            Boolean m8926getBooleanOrNullimpl = SavedStateReader.m8926getBooleanOrNullimpl(SavedStateReader.m8914constructorimpl(bundle), KEY_DEEP_LINK_HANDLED);
-            this.deepLinkHandled = m8926getBooleanOrNullimpl != null ? m8926getBooleanOrNullimpl.booleanValue() : false;
+            Boolean m9190getBooleanOrNullimpl = SavedStateReader.m9190getBooleanOrNullimpl(SavedStateReader.m9178constructorimpl(bundle), KEY_DEEP_LINK_HANDLED);
+            this.deepLinkHandled = m9190getBooleanOrNullimpl != null ? m9190getBooleanOrNullimpl.booleanValue() : false;
         }
     }
 

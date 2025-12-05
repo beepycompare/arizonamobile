@@ -11,26 +11,29 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.DisposableHandle;
 /* compiled from: Clickable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionCancel$1$1$1", f = "Clickable.kt", i = {}, l = {1706}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionCancel$1$1$1", f = "Clickable.kt", i = {}, l = {1726}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class AbstractClickableNode$handlePressInteractionCancel$1$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ PressInteraction.Cancel $endInteraction;
+    final /* synthetic */ DisposableHandle $handler;
     final /* synthetic */ MutableInteractionSource $interactionSource;
-    final /* synthetic */ PressInteraction.Press $pressInteraction;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public AbstractClickableNode$handlePressInteractionCancel$1$1$1(PressInteraction.Press press, MutableInteractionSource mutableInteractionSource, Continuation<? super AbstractClickableNode$handlePressInteractionCancel$1$1$1> continuation) {
+    public AbstractClickableNode$handlePressInteractionCancel$1$1$1(MutableInteractionSource mutableInteractionSource, PressInteraction.Cancel cancel, DisposableHandle disposableHandle, Continuation<? super AbstractClickableNode$handlePressInteractionCancel$1$1$1> continuation) {
         super(2, continuation);
-        this.$pressInteraction = press;
         this.$interactionSource = mutableInteractionSource;
+        this.$endInteraction = cancel;
+        this.$handler = disposableHandle;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new AbstractClickableNode$handlePressInteractionCancel$1$1$1(this.$pressInteraction, this.$interactionSource, continuation);
+        return new AbstractClickableNode$handlePressInteractionCancel$1$1$1(this.$interactionSource, this.$endInteraction, this.$handler, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -44,15 +47,18 @@ final class AbstractClickableNode$handlePressInteractionCancel$1$1$1 extends Sus
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            PressInteraction.Cancel cancel = new PressInteraction.Cancel(this.$pressInteraction);
             this.label = 1;
-            if (this.$interactionSource.emit(cancel, this) == coroutine_suspended) {
+            if (this.$interactionSource.emit(this.$endInteraction, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
+        }
+        DisposableHandle disposableHandle = this.$handler;
+        if (disposableHandle != null) {
+            disposableHandle.dispose();
         }
         return Unit.INSTANCE;
     }

@@ -44,19 +44,17 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidDialog.android.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a8\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0011\u0010\u0006\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a*\u0010\t\u001a\u00020\u00012\b\b\u0002\u0010\n\u001a\u00020\u000b2\u0011\u0010\u0006\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0007H\u0003¢\u0006\u0002\u0010\f¨\u0006\r²\u0006\u0015\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0007X\u008a\u0084\u0002"}, d2 = {"Dialog", "", "onDismissRequest", "Lkotlin/Function0;", "properties", "Landroidx/compose/ui/window/DialogProperties;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/window/DialogProperties;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "DialogLayout", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "ui_release", "currentContent"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a8\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0011\u0010\u0006\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a*\u0010\t\u001a\u00020\u00012\b\b\u0002\u0010\n\u001a\u00020\u000b2\u0011\u0010\u0006\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0007H\u0003¢\u0006\u0002\u0010\f¨\u0006\r²\u0006\u0015\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0007X\u008a\u0084\u0002"}, d2 = {"Dialog", "", "onDismissRequest", "Lkotlin/Function0;", "properties", "Landroidx/compose/ui/window/DialogProperties;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/window/DialogProperties;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "DialogLayout", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "ui", "currentContent"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidDialog_androidKt {
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01f1  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x01fb  */
-    /* JADX WARN: Removed duplicated region for block: B:85:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01b4  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:74:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -67,10 +65,8 @@ public final class AndroidDialog_androidKt {
         final DialogProperties dialogProperties2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(826668973);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Dialog)P(1,2)200@8769L7,201@8808L7,202@8863L7,203@8893L28,204@8948L29,205@9014L21,205@8997L38,207@9061L330,216@9418L17,216@9397L38,218@9466L106,218@9441L131,225@9589L183,225@9578L194:AndroidDialog.android.kt#2oxthz");
-        if ((i2 & 1) != 0) {
-            i3 = i | 6;
-        } else if ((i & 6) == 0) {
+        ComposerKt.sourceInformation(startRestartGroup, "C(Dialog)P(1,2)202@8819L7,203@8858L7,204@8913L7,205@8943L28,206@8998L29,207@9064L21,207@9047L38,209@9111L330,218@9472L129,218@9447L154,227@9618L183,227@9607L194:AndroidDialog.android.kt#2oxthz");
+        if ((i & 6) == 0) {
             i3 = (startRestartGroup.changedInstance(function0) ? 4 : 2) | i;
         } else {
             i3 = i;
@@ -81,16 +77,14 @@ public final class AndroidDialog_androidKt {
         } else if ((i & 48) == 0) {
             obj = dialogProperties;
             i3 |= startRestartGroup.changed(obj) ? 32 : 16;
-            if ((i2 & 4) == 0) {
-                i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-            } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                 i3 |= startRestartGroup.changedInstance(function2) ? 256 : 128;
             }
             i4 = i3;
             if (!startRestartGroup.shouldExecute((i4 & 147) == 146, i4 & 1)) {
                 dialogProperties2 = i5 != 0 ? new DialogProperties(false, false, false, 7, (DefaultConstructorMarker) null) : obj;
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(826668973, i4, -1, "androidx.compose.ui.window.Dialog (AndroidDialog.android.kt:199)");
+                    ComposerKt.traceEventStart(826668973, i4, -1, "androidx.compose.ui.window.Dialog (AndroidDialog.android.kt:201)");
                 }
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                 Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalView());
@@ -107,7 +101,7 @@ public final class AndroidDialog_androidKt {
                 CompositionContext rememberCompositionContext = ComposablesKt.rememberCompositionContext(startRestartGroup, 0);
                 final State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(function2, startRestartGroup, (i4 >> 6) & 14);
                 Object[] objArr = new Object[0];
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140053566, "CC(remember):AndroidDialog.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140054174, "CC(remember):AndroidDialog.android.kt#9igjgp");
                 AndroidDialog_androidKt$Dialog$dialogId$1$1 rememberedValue = startRestartGroup.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = new Function0<UUID>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$dialogId$1$1
@@ -120,7 +114,7 @@ public final class AndroidDialog_androidKt {
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 UUID uuid = (UUID) RememberSaveableKt.rememberSaveable(objArr, (Function0) rememberedValue, startRestartGroup, 48);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140051753, "CC(remember):AndroidDialog.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140052361, "CC(remember):AndroidDialog.android.kt#9igjgp");
                 boolean changed = startRestartGroup.changed(view) | startRestartGroup.changed(density);
                 Object rememberedValue2 = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -141,13 +135,13 @@ public final class AndroidDialog_androidKt {
 
                         public final void invoke(Composer composer2, int i6) {
                             Function2 Dialog$lambda$0;
-                            ComposerKt.sourceInformation(composer2, "C211@9312L12,211@9280L61:AndroidDialog.android.kt#2oxthz");
+                            ComposerKt.sourceInformation(composer2, "C213@9362L12,213@9330L61:AndroidDialog.android.kt#2oxthz");
                             if (!composer2.shouldExecute((i6 & 3) != 2, i6 & 1)) {
                                 composer2.skipToGroupEnd();
                                 return;
                             }
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(346960332, i6, -1, "androidx.compose.ui.window.Dialog.<anonymous>.<anonymous>.<anonymous> (AndroidDialog.android.kt:211)");
+                                ComposerKt.traceEventStart(346960332, i6, -1, "androidx.compose.ui.window.Dialog.<anonymous>.<anonymous>.<anonymous> (AndroidDialog.android.kt:213)");
                             }
                             Modifier.Companion companion = Modifier.Companion;
                             ComposerKt.sourceInformationMarkerStart(composer2, -1578568168, "CC(remember):AndroidDialog.android.kt#9igjgp");
@@ -181,21 +175,11 @@ public final class AndroidDialog_androidKt {
                 }
                 final DialogWrapper dialogWrapper2 = (DialogWrapper) rememberedValue2;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Unit unit = Unit.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140040642, "CC(remember):AndroidDialog.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140041010, "CC(remember):AndroidDialog.android.kt#9igjgp");
                 boolean changedInstance = startRestartGroup.changedInstance(dialogWrapper2);
-                AndroidDialog_androidKt$Dialog$1$1 rememberedValue3 = startRestartGroup.rememberedValue();
+                Object rememberedValue3 = startRestartGroup.rememberedValue();
                 if (changedInstance || rememberedValue3 == Composer.Companion.getEmpty()) {
-                    rememberedValue3 = new AndroidDialog_androidKt$Dialog$1$1(dialogWrapper2, null);
-                    startRestartGroup.updateRememberedValue(rememberedValue3);
-                }
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                EffectsKt.LaunchedEffect(unit, (Function2) rememberedValue3, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140039017, "CC(remember):AndroidDialog.android.kt#9igjgp");
-                boolean changedInstance2 = startRestartGroup.changedInstance(dialogWrapper2);
-                Object rememberedValue4 = startRestartGroup.rememberedValue();
-                if (changedInstance2 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                    rememberedValue4 = (Function1) new Function1<DisposableEffectScope, DisposableEffectResult>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$2$1
+                    rememberedValue3 = (Function1) new Function1<DisposableEffectScope, DisposableEffectResult>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$1$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         {
                             super(1);
@@ -203,8 +187,9 @@ public final class AndroidDialog_androidKt {
 
                         @Override // kotlin.jvm.functions.Function1
                         public final DisposableEffectResult invoke(DisposableEffectScope disposableEffectScope) {
+                            DialogWrapper.this.show();
                             final DialogWrapper dialogWrapper3 = DialogWrapper.this;
-                            return new DisposableEffectResult() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$2$1$invoke$$inlined$onDispose$1
+                            return new DisposableEffectResult() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$1$1$invoke$$inlined$onDispose$1
                                 @Override // androidx.compose.runtime.DisposableEffectResult
                                 public void dispose() {
                                     DialogWrapper.this.dismiss();
@@ -213,15 +198,15 @@ public final class AndroidDialog_androidKt {
                             };
                         }
                     };
-                    startRestartGroup.updateRememberedValue(rememberedValue4);
+                    startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                EffectsKt.DisposableEffect(dialogWrapper2, (Function1) rememberedValue4, startRestartGroup, 0);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140035004, "CC(remember):AndroidDialog.android.kt#9igjgp");
-                boolean changedInstance3 = startRestartGroup.changedInstance(dialogWrapper2) | ((i4 & 14) == 4) | ((i4 & 112) == 32) | startRestartGroup.changed(layoutDirection.ordinal());
-                Object rememberedValue5 = startRestartGroup.rememberedValue();
-                if (changedInstance3 || rememberedValue5 == Composer.Companion.getEmpty()) {
-                    rememberedValue5 = (Function0) new Function0<Unit>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$3$1
+                EffectsKt.DisposableEffect(dialogWrapper2, (Function1) rememberedValue3, startRestartGroup, 0);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -140036284, "CC(remember):AndroidDialog.android.kt#9igjgp");
+                boolean changedInstance2 = startRestartGroup.changedInstance(dialogWrapper2) | ((i4 & 14) == 4) | ((i4 & 112) == 32) | startRestartGroup.changed(layoutDirection.ordinal());
+                Object rememberedValue4 = startRestartGroup.rememberedValue();
+                if (changedInstance2 || rememberedValue4 == Composer.Companion.getEmpty()) {
+                    rememberedValue4 = (Function0) new Function0<Unit>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$2$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
@@ -239,10 +224,10 @@ public final class AndroidDialog_androidKt {
                             DialogWrapper.this.updateParameters(function0, dialogProperties2, layoutDirection);
                         }
                     };
-                    startRestartGroup.updateRememberedValue(rememberedValue5);
+                    startRestartGroup.updateRememberedValue(rememberedValue4);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                EffectsKt.SideEffect((Function0) rememberedValue5, startRestartGroup, 0);
+                EffectsKt.SideEffect((Function0) rememberedValue4, startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -252,7 +237,7 @@ public final class AndroidDialog_androidKt {
             }
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
-                endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$4
+                endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$Dialog$3
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -275,7 +260,7 @@ public final class AndroidDialog_androidKt {
             return;
         }
         obj = dialogProperties;
-        if ((i2 & 4) == 0) {
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
         }
         i4 = i3;
         if (!startRestartGroup.shouldExecute((i4 & 147) == 146, i4 & 1)) {
@@ -289,7 +274,7 @@ public final class AndroidDialog_androidKt {
     public static final void DialogLayout(final Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(1090521195);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DialogLayout)P(1)666@27020L559,666@26973L606:AndroidDialog.android.kt#2oxthz");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DialogLayout)P(1)688@28193L559,688@28146L606:AndroidDialog.android.kt#2oxthz");
         int i4 = i2 & 1;
         if (i4 != 0) {
             i3 = i | 6;
@@ -298,9 +283,7 @@ public final class AndroidDialog_androidKt {
         } else {
             i3 = i;
         }
-        if ((i2 & 2) != 0) {
-            i3 |= 48;
-        } else if ((i & 48) == 0) {
+        if ((i & 48) == 0) {
             i3 |= startRestartGroup.changedInstance(function2) ? 32 : 16;
         }
         if (!startRestartGroup.shouldExecute((i3 & 19) != 18, i3 & 1)) {
@@ -310,29 +293,29 @@ public final class AndroidDialog_androidKt {
                 modifier = Modifier.Companion;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1090521195, i3, -1, "androidx.compose.ui.window.DialogLayout (AndroidDialog.android.kt:665)");
+                ComposerKt.traceEventStart(1090521195, i3, -1, "androidx.compose.ui.window.DialogLayout (AndroidDialog.android.kt:687)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 18853658, "CC(remember):AndroidDialog.android.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 18853018, "CC(remember):AndroidDialog.android.kt#9igjgp");
             AndroidDialog_androidKt$DialogLayout$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new MeasurePolicy() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$DialogLayout$1$1
                     @Override // androidx.compose.ui.layout.MeasurePolicy
                     /* renamed from: measure-3p2s80s */
-                    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                         ArrayList arrayList = new ArrayList(list.size());
                         int size = list.size();
                         int i5 = 0;
                         int i6 = 0;
                         for (int i7 = 0; i7 < size; i7++) {
-                            Placeable mo6698measureBRTryo0 = list.get(i7).mo6698measureBRTryo0(j);
-                            i5 = Math.max(i5, mo6698measureBRTryo0.getWidth());
-                            i6 = Math.max(i6, mo6698measureBRTryo0.getHeight());
-                            arrayList.add(mo6698measureBRTryo0);
+                            Placeable mo6875measureBRTryo0 = list.get(i7).mo6875measureBRTryo0(j);
+                            i5 = Math.max(i5, mo6875measureBRTryo0.getWidth());
+                            i6 = Math.max(i6, mo6875measureBRTryo0.getHeight());
+                            arrayList.add(mo6875measureBRTryo0);
                         }
                         final ArrayList arrayList2 = arrayList;
                         if (list.isEmpty()) {
-                            i5 = Constraints.m7951getMinWidthimpl(j);
-                            i6 = Constraints.m7950getMinHeightimpl(j);
+                            i5 = Constraints.m8213getMinWidthimpl(j);
+                            i6 = Constraints.m8212getMinHeightimpl(j);
                         }
                         return MeasureScope.layout$default(measureScope, i5, i6, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$DialogLayout$1$1.1
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -363,7 +346,7 @@ public final class AndroidDialog_androidKt {
             MeasurePolicy measurePolicy = (MeasurePolicy) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             int i5 = ((i3 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK | ((i3 << 3) & 112);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, modifier);
@@ -379,15 +362,12 @@ public final class AndroidDialog_androidKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4598constructorimpl = Updater.m4598constructorimpl(startRestartGroup);
-            Updater.m4605setimpl(m4598constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4605setimpl(m4598constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4598constructorimpl.getInserting() || !Intrinsics.areEqual(m4598constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m4598constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m4598constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
-            }
-            Updater.m4605setimpl(m4598constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
+            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             function2.invoke(startRestartGroup, Integer.valueOf((i6 >> 6) & 14));
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

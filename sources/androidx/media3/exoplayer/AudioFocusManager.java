@@ -17,7 +17,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AudioFocusManager {
     private static final int AUDIO_FOCUS_STATE_HAVE_FOCUS = 2;
     private static final int AUDIO_FOCUS_STATE_LOSS_TRANSIENT = 3;
@@ -43,11 +43,11 @@ public final class AudioFocusManager {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface PlayerCommand {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface PlayerControl {
         void executePlayerCommand(int i);
 

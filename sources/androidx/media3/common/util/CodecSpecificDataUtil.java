@@ -1,6 +1,7 @@
 package androidx.media3.common.util;
 
 import android.util.Pair;
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.InputDeviceCompat;
 import androidx.exifinterface.media.ExifInterface;
@@ -14,7 +15,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 /* loaded from: classes2.dex */
 public final class CodecSpecificDataUtil {
     private static final String CODEC_ID_AC4 = "ac-4";
@@ -250,9 +250,9 @@ public final class CodecSpecificDataUtil {
                                                 switch (i) {
                                                     case 60:
                                                         return 2048;
-                                                    case LockFreeTaskQueueCore.CLOSED_SHIFT /* 61 */:
+                                                    case 61:
                                                         return 4096;
-                                                    case 62:
+                                                    case RectListKt.BitOffsetForGesturable /* 62 */:
                                                         return 8192;
                                                     default:
                                                         return -1;

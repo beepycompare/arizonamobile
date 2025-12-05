@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.arizonagames.feature.minigames.conveyor.ConveyorGameScreen;
 import com.arizonagames.feature.minigames.conveyor.databinding.ConveyorGameScreenBinding;
@@ -232,7 +231,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         conveyorGameScreenBinding.getRoot().setBackgroundResource(R.drawable.conveyor_game_bg);
         conveyorGameScreenBinding.gameTitle.setText("Сортировка пасхальных яиц");
         conveyorGameScreenBinding.leftContainer.setBackgroundResource(R.drawable.conveyor_game_left_container_bg);
-        conveyorGameScreenBinding.leftItem.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        conveyorGameScreenBinding.leftItem.setTextColor(-16777216);
         conveyorGameScreenBinding.tvHint.setText("Нажимайте на яйца и на нужную коробку по цветам");
         conveyorGameScreenBinding.ivDefaultItem.setImageResource(R.drawable.conveyor_game_egg_empty);
         this.itemImageList = this.itemEggList;

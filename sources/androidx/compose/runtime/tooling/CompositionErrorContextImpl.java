@@ -21,22 +21,22 @@ public final class CompositionErrorContextImpl implements CompositionErrorContex
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
+    public /* bridge */ <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
         return (R) CoroutineContext.Element.DefaultImpls.fold(this, r, function2);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
+    public /* bridge */ <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
         return (E) CoroutineContext.Element.DefaultImpls.get(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
+    public /* bridge */ CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return CoroutineContext.Element.DefaultImpls.minusKey(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
-    public CoroutineContext plus(CoroutineContext coroutineContext) {
+    public /* bridge */ CoroutineContext plus(CoroutineContext coroutineContext) {
         return CoroutineContext.Element.DefaultImpls.plus(this, coroutineContext);
     }
 
@@ -45,7 +45,7 @@ public final class CompositionErrorContextImpl implements CompositionErrorContex
         return ComposeStackTraceKt.tryAttachComposeStackTrace(th, new Function0() { // from class: androidx.compose.runtime.tooling.CompositionErrorContextImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List attachComposeStackTrace$lambda$0;
+                ComposeStackTrace attachComposeStackTrace$lambda$0;
                 attachComposeStackTrace$lambda$0 = CompositionErrorContextImpl.attachComposeStackTrace$lambda$0(CompositionErrorContextImpl.this, obj);
                 return attachComposeStackTrace$lambda$0;
             }
@@ -53,7 +53,7 @@ public final class CompositionErrorContextImpl implements CompositionErrorContex
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List attachComposeStackTrace$lambda$0(CompositionErrorContextImpl compositionErrorContextImpl, Object obj) {
+    public static final ComposeStackTrace attachComposeStackTrace$lambda$0(CompositionErrorContextImpl compositionErrorContextImpl, Object obj) {
         return compositionErrorContextImpl.composer.stackTraceForValue$runtime(obj);
     }
 

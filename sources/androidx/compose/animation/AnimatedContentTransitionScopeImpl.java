@@ -51,7 +51,7 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
         this.transition = transition;
         this.contentAlignment = alignment;
         this.layoutDirection = layoutDirection;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8159boximpl(IntSize.Companion.m8172getZeroYbymL2g()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8421boximpl(IntSize.Companion.m8434getZeroYbymL2g()), null, 2, null);
         this.measuredSize$delegate = mutableStateOf$default;
         this.targetSizeMap = ScatterMapKt.mutableScatterMapOf();
     }
@@ -95,8 +95,8 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
 
     @Override // androidx.compose.animation.AnimatedContentTransitionScope
     /* renamed from: slideIntoContainer-mOhB8PU */
-    public EnterTransition mo56slideIntoContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, final Function1<? super Integer, Integer> function1) {
-        if (m75isLeftgWo6LJ4(i)) {
+    public EnterTransition mo57slideIntoContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, final Function1<? super Integer, Integer> function1) {
+        if (m76isLeftgWo6LJ4(i)) {
             return EnterExitTransitionKt.slideInHorizontally(finiteAnimationSpec, new Function1<Integer, Integer>() { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideIntoContainer$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -111,21 +111,21 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m74getCurrentSizeYbymL2g;
-                    long m74getCurrentSizeYbymL2g2;
-                    long m73calculateOffsetemnUabE;
+                    long m75getCurrentSizeYbymL2g;
+                    long m75getCurrentSizeYbymL2g2;
+                    long m74calculateOffsetemnUabE;
                     Function1<Integer, Integer> function12 = function1;
-                    m74getCurrentSizeYbymL2g = this.m74getCurrentSizeYbymL2g();
+                    m75getCurrentSizeYbymL2g = this.m75getCurrentSizeYbymL2g();
                     AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl = this;
                     long j = i2;
-                    long m8162constructorimpl = IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32));
-                    m74getCurrentSizeYbymL2g2 = this.m74getCurrentSizeYbymL2g();
-                    m73calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m73calculateOffsetemnUabE(m8162constructorimpl, m74getCurrentSizeYbymL2g2);
-                    return function12.invoke(Integer.valueOf(((int) (m74getCurrentSizeYbymL2g >> 32)) - IntOffset.m8124getXimpl(m73calculateOffsetemnUabE)));
+                    long m8424constructorimpl = IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32));
+                    m75getCurrentSizeYbymL2g2 = this.m75getCurrentSizeYbymL2g();
+                    m74calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m74calculateOffsetemnUabE(m8424constructorimpl, m75getCurrentSizeYbymL2g2);
+                    return function12.invoke(Integer.valueOf(((int) (m75getCurrentSizeYbymL2g >> 32)) - IntOffset.m8386getXimpl(m74calculateOffsetemnUabE)));
                 }
             });
         }
-        if (m76isRightgWo6LJ4(i)) {
+        if (m77isRightgWo6LJ4(i)) {
             return EnterExitTransitionKt.slideInHorizontally(finiteAnimationSpec, new Function1<Integer, Integer>() { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideIntoContainer$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -140,19 +140,19 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m74getCurrentSizeYbymL2g;
-                    long m73calculateOffsetemnUabE;
+                    long m75getCurrentSizeYbymL2g;
+                    long m74calculateOffsetemnUabE;
                     Function1<Integer, Integer> function12 = function1;
                     AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl = this;
                     long j = i2;
-                    long m8162constructorimpl = IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32));
-                    m74getCurrentSizeYbymL2g = this.m74getCurrentSizeYbymL2g();
-                    m73calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m73calculateOffsetemnUabE(m8162constructorimpl, m74getCurrentSizeYbymL2g);
-                    return function12.invoke(Integer.valueOf((-IntOffset.m8124getXimpl(m73calculateOffsetemnUabE)) - i2));
+                    long m8424constructorimpl = IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32));
+                    m75getCurrentSizeYbymL2g = this.m75getCurrentSizeYbymL2g();
+                    m74calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m74calculateOffsetemnUabE(m8424constructorimpl, m75getCurrentSizeYbymL2g);
+                    return function12.invoke(Integer.valueOf((-IntOffset.m8386getXimpl(m74calculateOffsetemnUabE)) - i2));
                 }
             });
         }
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m70getUpDKzdypw())) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m71getUpDKzdypw())) {
             return EnterExitTransitionKt.slideInVertically(finiteAnimationSpec, new Function1<Integer, Integer>() { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideIntoContainer$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -167,21 +167,21 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m74getCurrentSizeYbymL2g;
-                    long m74getCurrentSizeYbymL2g2;
-                    long m73calculateOffsetemnUabE;
+                    long m75getCurrentSizeYbymL2g;
+                    long m75getCurrentSizeYbymL2g2;
+                    long m74calculateOffsetemnUabE;
                     Function1<Integer, Integer> function12 = function1;
-                    m74getCurrentSizeYbymL2g = this.m74getCurrentSizeYbymL2g();
+                    m75getCurrentSizeYbymL2g = this.m75getCurrentSizeYbymL2g();
                     AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl = this;
                     long j = i2;
-                    long m8162constructorimpl = IntSize.m8162constructorimpl((4294967295L & j) | (j << 32));
-                    m74getCurrentSizeYbymL2g2 = this.m74getCurrentSizeYbymL2g();
-                    m73calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m73calculateOffsetemnUabE(m8162constructorimpl, m74getCurrentSizeYbymL2g2);
-                    return function12.invoke(Integer.valueOf(((int) (m74getCurrentSizeYbymL2g & 4294967295L)) - IntOffset.m8125getYimpl(m73calculateOffsetemnUabE)));
+                    long m8424constructorimpl = IntSize.m8424constructorimpl((4294967295L & j) | (j << 32));
+                    m75getCurrentSizeYbymL2g2 = this.m75getCurrentSizeYbymL2g();
+                    m74calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m74calculateOffsetemnUabE(m8424constructorimpl, m75getCurrentSizeYbymL2g2);
+                    return function12.invoke(Integer.valueOf(((int) (m75getCurrentSizeYbymL2g & 4294967295L)) - IntOffset.m8387getYimpl(m74calculateOffsetemnUabE)));
                 }
             });
         }
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m65getDownDKzdypw())) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m66getDownDKzdypw())) {
             return EnterExitTransitionKt.slideInVertically(finiteAnimationSpec, new Function1<Integer, Integer>() { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideIntoContainer$4
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -196,15 +196,15 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m74getCurrentSizeYbymL2g;
-                    long m73calculateOffsetemnUabE;
+                    long m75getCurrentSizeYbymL2g;
+                    long m74calculateOffsetemnUabE;
                     Function1<Integer, Integer> function12 = function1;
                     AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl = this;
                     long j = i2;
-                    long m8162constructorimpl = IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32));
-                    m74getCurrentSizeYbymL2g = this.m74getCurrentSizeYbymL2g();
-                    m73calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m73calculateOffsetemnUabE(m8162constructorimpl, m74getCurrentSizeYbymL2g);
-                    return function12.invoke(Integer.valueOf((-IntOffset.m8125getYimpl(m73calculateOffsetemnUabE)) - i2));
+                    long m8424constructorimpl = IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32));
+                    m75getCurrentSizeYbymL2g = this.m75getCurrentSizeYbymL2g();
+                    m74calculateOffsetemnUabE = animatedContentTransitionScopeImpl.m74calculateOffsetemnUabE(m8424constructorimpl, m75getCurrentSizeYbymL2g);
+                    return function12.invoke(Integer.valueOf((-IntOffset.m8387getYimpl(m74calculateOffsetemnUabE)) - i2));
                 }
             });
         }
@@ -212,37 +212,37 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
     }
 
     /* renamed from: isLeft-gWo6LJ4  reason: not valid java name */
-    private final boolean m75isLeftgWo6LJ4(int i) {
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m67getLeftDKzdypw())) {
+    private final boolean m76isLeftgWo6LJ4(int i) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m68getLeftDKzdypw())) {
             return true;
         }
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m69getStartDKzdypw()) && this.layoutDirection == LayoutDirection.Ltr) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m70getStartDKzdypw()) && this.layoutDirection == LayoutDirection.Ltr) {
             return true;
         }
-        return AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m66getEndDKzdypw()) && this.layoutDirection == LayoutDirection.Rtl;
+        return AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m67getEndDKzdypw()) && this.layoutDirection == LayoutDirection.Rtl;
     }
 
     /* renamed from: isRight-gWo6LJ4  reason: not valid java name */
-    private final boolean m76isRightgWo6LJ4(int i) {
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m68getRightDKzdypw())) {
+    private final boolean m77isRightgWo6LJ4(int i) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m69getRightDKzdypw())) {
             return true;
         }
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m69getStartDKzdypw()) && this.layoutDirection == LayoutDirection.Rtl) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m70getStartDKzdypw()) && this.layoutDirection == LayoutDirection.Rtl) {
             return true;
         }
-        return AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m66getEndDKzdypw()) && this.layoutDirection == LayoutDirection.Ltr;
+        return AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m67getEndDKzdypw()) && this.layoutDirection == LayoutDirection.Ltr;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculateOffset-emnUabE  reason: not valid java name */
-    public final long m73calculateOffsetemnUabE(long j, long j2) {
-        return getContentAlignment().mo4759alignKFBX0sM(j, j2, LayoutDirection.Ltr);
+    public final long m74calculateOffsetemnUabE(long j, long j2) {
+        return getContentAlignment().mo4898alignKFBX0sM(j, j2, LayoutDirection.Ltr);
     }
 
     @Override // androidx.compose.animation.AnimatedContentTransitionScope
     /* renamed from: slideOutOfContainer-mOhB8PU */
-    public ExitTransition mo57slideOutOfContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, final Function1<? super Integer, Integer> function1) {
-        if (m75isLeftgWo6LJ4(i)) {
+    public ExitTransition mo58slideOutOfContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, final Function1<? super Integer, Integer> function1) {
+        if (m76isLeftgWo6LJ4(i)) {
             return EnterExitTransitionKt.slideOutHorizontally(finiteAnimationSpec, new Function1<Integer, Integer>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideOutOfContainer$1
                 final /* synthetic */ AnimatedContentTransitionScopeImpl<S> this$0;
 
@@ -260,17 +260,17 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m73calculateOffsetemnUabE;
+                    long m74calculateOffsetemnUabE;
                     State state = (State) this.this$0.getTargetSizeMap$animation().get(this.this$0.getTransition$animation().getTargetState());
-                    long m8171unboximpl = state != null ? ((IntSize) state.getValue()).m8171unboximpl() : IntSize.Companion.m8172getZeroYbymL2g();
+                    long m8433unboximpl = state != null ? ((IntSize) state.getValue()).m8433unboximpl() : IntSize.Companion.m8434getZeroYbymL2g();
                     Function1<Integer, Integer> function12 = function1;
                     long j = i2;
-                    m73calculateOffsetemnUabE = this.this$0.m73calculateOffsetemnUabE(IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32)), m8171unboximpl);
-                    return function12.invoke(Integer.valueOf((-IntOffset.m8124getXimpl(m73calculateOffsetemnUabE)) - i2));
+                    m74calculateOffsetemnUabE = this.this$0.m74calculateOffsetemnUabE(IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32)), m8433unboximpl);
+                    return function12.invoke(Integer.valueOf((-IntOffset.m8386getXimpl(m74calculateOffsetemnUabE)) - i2));
                 }
             });
         }
-        if (m76isRightgWo6LJ4(i)) {
+        if (m77isRightgWo6LJ4(i)) {
             return EnterExitTransitionKt.slideOutHorizontally(finiteAnimationSpec, new Function1<Integer, Integer>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideOutOfContainer$2
                 final /* synthetic */ AnimatedContentTransitionScopeImpl<S> this$0;
 
@@ -288,17 +288,17 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m73calculateOffsetemnUabE;
+                    long m74calculateOffsetemnUabE;
                     State state = (State) this.this$0.getTargetSizeMap$animation().get(this.this$0.getTransition$animation().getTargetState());
-                    long m8171unboximpl = state != null ? ((IntSize) state.getValue()).m8171unboximpl() : IntSize.Companion.m8172getZeroYbymL2g();
+                    long m8433unboximpl = state != null ? ((IntSize) state.getValue()).m8433unboximpl() : IntSize.Companion.m8434getZeroYbymL2g();
                     Function1<Integer, Integer> function12 = function1;
                     long j = i2;
-                    m73calculateOffsetemnUabE = this.this$0.m73calculateOffsetemnUabE(IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32)), m8171unboximpl);
-                    return function12.invoke(Integer.valueOf((-IntOffset.m8124getXimpl(m73calculateOffsetemnUabE)) + ((int) (m8171unboximpl >> 32))));
+                    m74calculateOffsetemnUabE = this.this$0.m74calculateOffsetemnUabE(IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32)), m8433unboximpl);
+                    return function12.invoke(Integer.valueOf((-IntOffset.m8386getXimpl(m74calculateOffsetemnUabE)) + ((int) (m8433unboximpl >> 32))));
                 }
             });
         }
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m70getUpDKzdypw())) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m71getUpDKzdypw())) {
             return EnterExitTransitionKt.slideOutVertically(finiteAnimationSpec, new Function1<Integer, Integer>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideOutOfContainer$3
                 final /* synthetic */ AnimatedContentTransitionScopeImpl<S> this$0;
 
@@ -316,17 +316,17 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m73calculateOffsetemnUabE;
+                    long m74calculateOffsetemnUabE;
                     State state = (State) this.this$0.getTargetSizeMap$animation().get(this.this$0.getTransition$animation().getTargetState());
-                    long m8171unboximpl = state != null ? ((IntSize) state.getValue()).m8171unboximpl() : IntSize.Companion.m8172getZeroYbymL2g();
+                    long m8433unboximpl = state != null ? ((IntSize) state.getValue()).m8433unboximpl() : IntSize.Companion.m8434getZeroYbymL2g();
                     Function1<Integer, Integer> function12 = function1;
                     long j = i2;
-                    m73calculateOffsetemnUabE = this.this$0.m73calculateOffsetemnUabE(IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32)), m8171unboximpl);
-                    return function12.invoke(Integer.valueOf((-IntOffset.m8125getYimpl(m73calculateOffsetemnUabE)) - i2));
+                    m74calculateOffsetemnUabE = this.this$0.m74calculateOffsetemnUabE(IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32)), m8433unboximpl);
+                    return function12.invoke(Integer.valueOf((-IntOffset.m8387getYimpl(m74calculateOffsetemnUabE)) - i2));
                 }
             });
         }
-        if (AnimatedContentTransitionScope.SlideDirection.m61equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m65getDownDKzdypw())) {
+        if (AnimatedContentTransitionScope.SlideDirection.m62equalsimpl0(i, AnimatedContentTransitionScope.SlideDirection.Companion.m66getDownDKzdypw())) {
             return EnterExitTransitionKt.slideOutVertically(finiteAnimationSpec, new Function1<Integer, Integer>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$slideOutOfContainer$4
                 final /* synthetic */ AnimatedContentTransitionScopeImpl<S> this$0;
 
@@ -344,13 +344,13 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                 }
 
                 public final Integer invoke(int i2) {
-                    long m73calculateOffsetemnUabE;
+                    long m74calculateOffsetemnUabE;
                     State state = (State) this.this$0.getTargetSizeMap$animation().get(this.this$0.getTransition$animation().getTargetState());
-                    long m8171unboximpl = state != null ? ((IntSize) state.getValue()).m8171unboximpl() : IntSize.Companion.m8172getZeroYbymL2g();
+                    long m8433unboximpl = state != null ? ((IntSize) state.getValue()).m8433unboximpl() : IntSize.Companion.m8434getZeroYbymL2g();
                     Function1<Integer, Integer> function12 = function1;
                     long j = i2;
-                    m73calculateOffsetemnUabE = this.this$0.m73calculateOffsetemnUabE(IntSize.m8162constructorimpl((j & 4294967295L) | (j << 32)), m8171unboximpl);
-                    return function12.invoke(Integer.valueOf((-IntOffset.m8125getYimpl(m73calculateOffsetemnUabE)) + ((int) (m8171unboximpl & 4294967295L))));
+                    m74calculateOffsetemnUabE = this.this$0.m74calculateOffsetemnUabE(IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32)), m8433unboximpl);
+                    return function12.invoke(Integer.valueOf((-IntOffset.m8387getYimpl(m74calculateOffsetemnUabE)) + ((int) (m8433unboximpl & 4294967295L))));
                 }
             });
         }
@@ -358,13 +358,13 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
     }
 
     /* renamed from: getMeasuredSize-YbymL2g$animation  reason: not valid java name */
-    public final long m77getMeasuredSizeYbymL2g$animation() {
-        return ((IntSize) this.measuredSize$delegate.getValue()).m8171unboximpl();
+    public final long m78getMeasuredSizeYbymL2g$animation() {
+        return ((IntSize) this.measuredSize$delegate.getValue()).m8433unboximpl();
     }
 
     /* renamed from: setMeasuredSize-ozmzZPI$animation  reason: not valid java name */
-    public final void m78setMeasuredSizeozmzZPI$animation(long j) {
-        this.measuredSize$delegate.setValue(IntSize.m8159boximpl(j));
+    public final void m79setMeasuredSizeozmzZPI$animation(long j) {
+        this.measuredSize$delegate.setValue(IntSize.m8421boximpl(j));
     }
 
     public final MutableScatterMap<S, State<IntSize>> getTargetSizeMap$animation() {
@@ -381,9 +381,9 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getCurrentSize-YbymL2g  reason: not valid java name */
-    public final long m74getCurrentSizeYbymL2g() {
+    public final long m75getCurrentSizeYbymL2g() {
         State<IntSize> state = this.animatedSize;
-        return state != null ? state.getValue().m8171unboximpl() : m77getMeasuredSizeYbymL2g$animation();
+        return state != null ? state.getValue().m8433unboximpl() : m78getMeasuredSizeYbymL2g$animation();
     }
 
     public final Modifier createSizeAnimationModifier$animation(ContentTransform contentTransform, Composer composer, int i) {
@@ -393,7 +393,7 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(93755870, i, -1, "androidx.compose.animation.AnimatedContentTransitionScopeImpl.createSizeAnimationModifier (AnimatedContent.kt:557)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -94915162, "CC(remember):AnimatedContent.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -94918490, "CC(remember):AnimatedContent.kt#9igjgp");
         boolean changed = composer.changed(this);
         Object rememberedValue = composer.rememberedValue();
         Transition.DeferredAnimation deferredAnimation = null;
@@ -405,16 +405,16 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
         ComposerKt.sourceInformationMarkerEnd(composer);
         State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(contentTransform.getSizeTransform(), composer, 0);
         if (Intrinsics.areEqual(this.transition.getCurrentState(), this.transition.getTargetState())) {
-            createSizeAnimationModifier$lambda$3(mutableState, false);
+            createSizeAnimationModifier$lambda$2(mutableState, false);
         } else if (rememberUpdatedState.getValue() != null) {
-            createSizeAnimationModifier$lambda$3(mutableState, true);
+            createSizeAnimationModifier$lambda$2(mutableState, true);
         }
-        if (createSizeAnimationModifier$lambda$2(mutableState)) {
-            composer.startReplaceGroup(1353180665);
+        if (createSizeAnimationModifier$lambda$1(mutableState)) {
+            composer.startReplaceGroup(1353077497);
             ComposerKt.sourceInformation(composer, "570@28546L48,571@28611L143");
             composer2 = composer;
             deferredAnimation = androidx.compose.animation.core.TransitionKt.createDeferredAnimation(this.transition, VectorConvertersKt.getVectorConverter(IntSize.Companion), null, composer2, 0, 2);
-            ComposerKt.sourceInformationMarkerStart(composer2, -94892947, "CC(remember):AnimatedContent.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer2, -94896275, "CC(remember):AnimatedContent.kt#9igjgp");
             boolean changed2 = composer2.changed(deferredAnimation);
             Object rememberedValue2 = composer2.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -427,7 +427,7 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
             composer2.endReplaceGroup();
         } else {
             composer2 = composer;
-            composer2.startReplaceGroup(1353446707);
+            composer2.startReplaceGroup(1353343539);
             composer2.endReplaceGroup();
             this.animatedSize = null;
             companion = Modifier.Companion;
@@ -440,11 +440,11 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
         return then;
     }
 
-    private static final boolean createSizeAnimationModifier$lambda$2(MutableState<Boolean> mutableState) {
+    private static final boolean createSizeAnimationModifier$lambda$1(MutableState<Boolean> mutableState) {
         return mutableState.getValue().booleanValue();
     }
 
-    private static final void createSizeAnimationModifier$lambda$3(MutableState<Boolean> mutableState, boolean z) {
+    private static final void createSizeAnimationModifier$lambda$2(MutableState<Boolean> mutableState, boolean z) {
         mutableState.setValue(Boolean.valueOf(z));
     }
 
@@ -484,6 +484,13 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
         private final Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> sizeAnimation;
         private final State<SizeTransform> sizeTransform;
 
+        /* JADX WARN: Multi-variable type inference failed */
+        public SizeModifierElement(Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> deferredAnimation, State<? extends SizeTransform> state, AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl) {
+            this.sizeAnimation = deferredAnimation;
+            this.sizeTransform = state;
+            this.scope = animatedContentTransitionScopeImpl;
+        }
+
         @Override // androidx.compose.ui.node.ModifierNodeElement
         public /* bridge */ /* synthetic */ void update(Modifier.Node node) {
             update((SizeModifierNode) ((SizeModifierNode) node));
@@ -499,13 +506,6 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
 
         public final AnimatedContentTransitionScopeImpl<S> getScope() {
             return this.scope;
-        }
-
-        /* JADX WARN: Multi-variable type inference failed */
-        public SizeModifierElement(Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> deferredAnimation, State<? extends SizeTransform> state, AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl) {
-            this.sizeAnimation = deferredAnimation;
-            this.sizeTransform = state;
-            this.scope = animatedContentTransitionScopeImpl;
         }
 
         @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -554,6 +554,15 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
         private Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> sizeAnimation;
         private State<? extends SizeTransform> sizeTransform;
 
+        public SizeModifierNode(Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> deferredAnimation, State<? extends SizeTransform> state, AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl) {
+            long j;
+            this.sizeAnimation = deferredAnimation;
+            this.sizeTransform = state;
+            this.scope = animatedContentTransitionScopeImpl;
+            j = AnimatedContentKt.UnspecifiedSize;
+            this.lastSize = j;
+        }
+
         public final Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> getSizeAnimation() {
             return this.sizeAnimation;
         }
@@ -578,22 +587,13 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
             this.scope = animatedContentTransitionScopeImpl;
         }
 
-        public SizeModifierNode(Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> deferredAnimation, State<? extends SizeTransform> state, AnimatedContentTransitionScopeImpl<S> animatedContentTransitionScopeImpl) {
-            long j;
-            this.sizeAnimation = deferredAnimation;
-            this.sizeTransform = state;
-            this.scope = animatedContentTransitionScopeImpl;
-            j = AnimatedContentKt.UnspecifiedSize;
-            this.lastSize = j;
-        }
-
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: lastContinuousSizeOrDefault-mzRDjE0  reason: not valid java name */
-        public final long m80lastContinuousSizeOrDefaultmzRDjE0(long j) {
+        public final long m81lastContinuousSizeOrDefaultmzRDjE0(long j) {
             long j2;
             long j3 = this.lastSize;
             j2 = AnimatedContentKt.UnspecifiedSize;
-            return IntSize.m8165equalsimpl0(j3, j2) ? j : this.lastSize;
+            return IntSize.m8427equalsimpl0(j3, j2) ? j : this.lastSize;
         }
 
         @Override // androidx.compose.ui.Modifier.Node
@@ -606,16 +606,16 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
 
         @Override // androidx.compose.ui.node.LayoutModifierNode
         /* renamed from: measure-3p2s80s  reason: not valid java name */
-        public MeasureResult mo81measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-            final long m8171unboximpl;
-            final Placeable mo6698measureBRTryo0 = measurable.mo6698measureBRTryo0(j);
+        public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+            final long m8433unboximpl;
+            final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
             if (measureScope.isLookingAhead()) {
-                m8171unboximpl = IntSize.m8162constructorimpl((mo6698measureBRTryo0.getWidth() << 32) | (mo6698measureBRTryo0.getHeight() & 4294967295L));
+                m8433unboximpl = IntSize.m8424constructorimpl((mo6875measureBRTryo0.getWidth() << 32) | (mo6875measureBRTryo0.getHeight() & 4294967295L));
             } else if (this.sizeAnimation == null) {
-                m8171unboximpl = IntSize.m8162constructorimpl((mo6698measureBRTryo0.getWidth() << 32) | (mo6698measureBRTryo0.getHeight() & 4294967295L));
-                this.lastSize = IntSize.m8162constructorimpl((mo6698measureBRTryo0.getWidth() << 32) | (mo6698measureBRTryo0.getHeight() & 4294967295L));
+                m8433unboximpl = IntSize.m8424constructorimpl((mo6875measureBRTryo0.getWidth() << 32) | (mo6875measureBRTryo0.getHeight() & 4294967295L));
+                this.lastSize = IntSize.m8424constructorimpl((mo6875measureBRTryo0.getWidth() << 32) | (mo6875measureBRTryo0.getHeight() & 4294967295L));
             } else {
-                final long m8162constructorimpl = IntSize.m8162constructorimpl((mo6698measureBRTryo0.getWidth() << 32) | (mo6698measureBRTryo0.getHeight() & 4294967295L));
+                final long m8424constructorimpl = IntSize.m8424constructorimpl((mo6875measureBRTryo0.getWidth() << 32) | (mo6875measureBRTryo0.getHeight() & 4294967295L));
                 Transition<S>.DeferredAnimation<IntSize, AnimationVector2D> deferredAnimation = this.sizeAnimation;
                 Intrinsics.checkNotNull(deferredAnimation);
                 State<IntSize> animate = deferredAnimation.animate(new Function1<Transition.Segment<S>, FiniteAnimationSpec<IntSize>>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$SizeModifierNode$measure$size$1
@@ -634,18 +634,18 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                     }
 
                     public final FiniteAnimationSpec<IntSize> invoke(Transition.Segment<S> segment) {
-                        long m8171unboximpl2;
-                        FiniteAnimationSpec<IntSize> mo140createAnimationSpecTemP2vQ;
+                        long m8433unboximpl2;
+                        FiniteAnimationSpec<IntSize> mo156createAnimationSpecTemP2vQ;
                         if (Intrinsics.areEqual(segment.getInitialState(), this.this$0.getScope().getInitialState())) {
-                            m8171unboximpl2 = this.this$0.m80lastContinuousSizeOrDefaultmzRDjE0(m8162constructorimpl);
+                            m8433unboximpl2 = this.this$0.m81lastContinuousSizeOrDefaultmzRDjE0(m8424constructorimpl);
                         } else {
                             State<IntSize> state = this.this$0.getScope().getTargetSizeMap$animation().get(segment.getInitialState());
-                            m8171unboximpl2 = state != null ? state.getValue().m8171unboximpl() : IntSize.Companion.m8172getZeroYbymL2g();
+                            m8433unboximpl2 = state != null ? state.getValue().m8433unboximpl() : IntSize.Companion.m8434getZeroYbymL2g();
                         }
                         State<IntSize> state2 = this.this$0.getScope().getTargetSizeMap$animation().get(segment.getTargetState());
-                        long m8171unboximpl3 = state2 != null ? state2.getValue().m8171unboximpl() : IntSize.Companion.m8172getZeroYbymL2g();
+                        long m8433unboximpl3 = state2 != null ? state2.getValue().m8433unboximpl() : IntSize.Companion.m8434getZeroYbymL2g();
                         SizeTransform value = this.this$0.getSizeTransform().getValue();
-                        return (value == null || (mo140createAnimationSpecTemP2vQ = value.mo140createAnimationSpecTemP2vQ(m8171unboximpl2, m8171unboximpl3)) == null) ? AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null) : mo140createAnimationSpecTemP2vQ;
+                        return (value == null || (mo156createAnimationSpecTemP2vQ = value.mo156createAnimationSpecTemP2vQ(m8433unboximpl2, m8433unboximpl3)) == null) ? AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null) : mo156createAnimationSpecTemP2vQ;
                     }
                 }, (Function1) ((Function1<S, IntSize>) new Function1<S, IntSize>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$SizeModifierNode$measure$size$2
                     final /* synthetic */ AnimatedContentTransitionScopeImpl.SizeModifierNode<S> this$0;
@@ -660,25 +660,25 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
                     /* JADX WARN: Multi-variable type inference failed */
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ IntSize invoke(Object obj) {
-                        return IntSize.m8159boximpl(m82invokeYEO4UFw(obj));
+                        return IntSize.m8421boximpl(m83invokeYEO4UFw(obj));
                     }
 
                     /* renamed from: invoke-YEO4UFw  reason: not valid java name */
-                    public final long m82invokeYEO4UFw(S s) {
-                        long m80lastContinuousSizeOrDefaultmzRDjE0;
+                    public final long m83invokeYEO4UFw(S s) {
+                        long m81lastContinuousSizeOrDefaultmzRDjE0;
                         if (Intrinsics.areEqual(s, this.this$0.getScope().getInitialState())) {
-                            m80lastContinuousSizeOrDefaultmzRDjE0 = this.this$0.m80lastContinuousSizeOrDefaultmzRDjE0(m8162constructorimpl);
-                            return m80lastContinuousSizeOrDefaultmzRDjE0;
+                            m81lastContinuousSizeOrDefaultmzRDjE0 = this.this$0.m81lastContinuousSizeOrDefaultmzRDjE0(m8424constructorimpl);
+                            return m81lastContinuousSizeOrDefaultmzRDjE0;
                         }
                         State<IntSize> state = this.this$0.getScope().getTargetSizeMap$animation().get(s);
-                        return state != null ? state.getValue().m8171unboximpl() : IntSize.Companion.m8172getZeroYbymL2g();
+                        return state != null ? state.getValue().m8433unboximpl() : IntSize.Companion.m8434getZeroYbymL2g();
                     }
                 }));
                 this.scope.setAnimatedSize$animation(animate);
-                m8171unboximpl = animate.getValue().m8171unboximpl();
-                this.lastSize = animate.getValue().m8171unboximpl();
+                m8433unboximpl = animate.getValue().m8433unboximpl();
+                this.lastSize = animate.getValue().m8433unboximpl();
             }
-            return MeasureScope.layout$default(measureScope, (int) (m8171unboximpl >> 32), (int) (m8171unboximpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$SizeModifierNode$measure$1
+            return MeasureScope.layout$default(measureScope, (int) (m8433unboximpl >> 32), (int) (m8433unboximpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>(this) { // from class: androidx.compose.animation.AnimatedContentTransitionScopeImpl$SizeModifierNode$measure$1
                 final /* synthetic */ AnimatedContentTransitionScopeImpl.SizeModifierNode<S> this$0;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -696,7 +696,7 @@ public final class AnimatedContentTransitionScopeImpl<S> implements AnimatedCont
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(Placeable.PlacementScope placementScope) {
-                    Placeable.PlacementScope.m6763place70tqf50$default(placementScope, mo6698measureBRTryo0, this.this$0.getScope().getContentAlignment().mo4759alignKFBX0sM(IntSize.m8162constructorimpl((mo6698measureBRTryo0.getWidth() << 32) | (mo6698measureBRTryo0.getHeight() & 4294967295L)), m8171unboximpl, LayoutDirection.Ltr), 0.0f, 2, null);
+                    Placeable.PlacementScope.m6941place70tqf50$default(placementScope, mo6875measureBRTryo0, this.this$0.getScope().getContentAlignment().mo4898alignKFBX0sM(IntSize.m8424constructorimpl((mo6875measureBRTryo0.getWidth() << 32) | (mo6875measureBRTryo0.getHeight() & 4294967295L)), m8433unboximpl, LayoutDirection.Ltr), 0.0f, 2, null);
                 }
             }, 4, null);
         }

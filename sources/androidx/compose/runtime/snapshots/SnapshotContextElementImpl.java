@@ -12,28 +12,28 @@ public final class SnapshotContextElementImpl implements SnapshotContextElement,
     public static final int $stable = 8;
     private final Snapshot snapshot;
 
+    public SnapshotContextElementImpl(Snapshot snapshot) {
+        this.snapshot = snapshot;
+    }
+
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
+    public /* bridge */ <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
         return (R) SnapshotContextElement.DefaultImpls.fold(this, r, function2);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
+    public /* bridge */ <E extends CoroutineContext.Element> E get(CoroutineContext.Key<E> key) {
         return (E) SnapshotContextElement.DefaultImpls.get(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
-    public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
+    public /* bridge */ CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return SnapshotContextElement.DefaultImpls.minusKey(this, key);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
-    public CoroutineContext plus(CoroutineContext coroutineContext) {
+    public /* bridge */ CoroutineContext plus(CoroutineContext coroutineContext) {
         return SnapshotContextElement.DefaultImpls.plus(this, coroutineContext);
-    }
-
-    public SnapshotContextElementImpl(Snapshot snapshot) {
-        this.snapshot = snapshot;
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element

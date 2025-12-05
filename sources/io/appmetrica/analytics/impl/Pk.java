@@ -5,11 +5,11 @@ import kotlinx.datetime.internal.DateCalculationsKt;
 public final class Pk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wk f639a;
+    public final Wk f722a;
     public Integer b;
 
     public Pk(Wk wk) {
-        this.f639a = wk;
+        this.f722a = wk;
     }
 
     public final Qk a() {

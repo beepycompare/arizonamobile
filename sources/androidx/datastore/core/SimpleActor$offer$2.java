@@ -1,6 +1,5 @@
 package androidx.datastore.core;
 
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -11,10 +10,11 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SimpleActor.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.SimpleActor$offer$2", f = "SimpleActor.kt", i = {}, l = {121, 121}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.datastore.core.SimpleActor$offer$2", f = "SimpleActor.kt", i = {}, l = {114, 114}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class SimpleActor$offer$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -56,6 +56,7 @@ public final class SimpleActor$offer$2 extends SuspendLambda implements Function
         AtomicInt atomicInt;
         Function2 function2;
         CoroutineScope coroutineScope;
+        Channel channel;
         AtomicInt atomicInt2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -68,9 +69,10 @@ public final class SimpleActor$offer$2 extends SuspendLambda implements Function
             coroutineScope = ((SimpleActor) this.this$0).scope;
             CoroutineScopeKt.ensureActive(coroutineScope);
             function2 = ((SimpleActor) this.this$0).consumeMessage;
+            channel = ((SimpleActor) this.this$0).messageQueue;
             this.L$0 = function2;
             this.label = 1;
-            obj = ((SimpleActor) this.this$0).messageQueue.receive(this);
+            obj = channel.receive(this);
         } else if (i == 1) {
             function2 = (Function2) this.L$0;
             ResultKt.throwOnFailure(obj);
@@ -87,9 +89,10 @@ public final class SimpleActor$offer$2 extends SuspendLambda implements Function
             coroutineScope = ((SimpleActor) this.this$0).scope;
             CoroutineScopeKt.ensureActive(coroutineScope);
             function2 = ((SimpleActor) this.this$0).consumeMessage;
+            channel = ((SimpleActor) this.this$0).messageQueue;
             this.L$0 = function2;
             this.label = 1;
-            obj = ((SimpleActor) this.this$0).messageQueue.receive(this);
+            obj = channel.receive(this);
         }
     }
 }

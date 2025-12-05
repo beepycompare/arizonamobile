@@ -14,9 +14,10 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Clickable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionStart$1$1", f = "Clickable.kt", i = {}, l = {1661, 1662}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionStart$1$1", f = "Clickable.kt", i = {}, l = {1624, 1625}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class AbstractClickableNode$handlePressInteractionStart$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ boolean $indirectPointer;
     final /* synthetic */ MutableInteractionSource $interactionSource;
     final /* synthetic */ PressInteraction.Press $press;
     int label;
@@ -24,16 +25,17 @@ public final class AbstractClickableNode$handlePressInteractionStart$1$1 extends
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public AbstractClickableNode$handlePressInteractionStart$1$1(MutableInteractionSource mutableInteractionSource, PressInteraction.Press press, AbstractClickableNode abstractClickableNode, Continuation<? super AbstractClickableNode$handlePressInteractionStart$1$1> continuation) {
+    public AbstractClickableNode$handlePressInteractionStart$1$1(MutableInteractionSource mutableInteractionSource, PressInteraction.Press press, boolean z, AbstractClickableNode abstractClickableNode, Continuation<? super AbstractClickableNode$handlePressInteractionStart$1$1> continuation) {
         super(2, continuation);
         this.$interactionSource = mutableInteractionSource;
         this.$press = press;
+        this.$indirectPointer = z;
         this.this$0 = abstractClickableNode;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new AbstractClickableNode$handlePressInteractionStart$1$1(this.$interactionSource, this.$press, this.this$0, continuation);
+        return new AbstractClickableNode$handlePressInteractionStart$1$1(this.$interactionSource, this.$press, this.$indirectPointer, this.this$0, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -42,10 +44,10 @@ public final class AbstractClickableNode$handlePressInteractionStart$1$1 extends
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x002e, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(androidx.compose.foundation.Clickable_androidKt.getTapIndicationDelay(), r6) == r0) goto L14;
+        if (kotlinx.coroutines.DelayKt.delay(androidx.compose.foundation.Clickable_androidKt.getTapIndicationDelay(), r6) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0040, code lost:
-        if (r6.$interactionSource.emit(r6.$press, r6) == r0) goto L14;
+        if (r6.$interactionSource.emit(r6.$press, r6) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0042, code lost:
         return r0;
@@ -63,7 +65,11 @@ public final class AbstractClickableNode$handlePressInteractionStart$1$1 extends
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.throwOnFailure(obj);
-                this.this$0.pressInteraction = this.$press;
+                if (this.$indirectPointer) {
+                    this.this$0.indirectPointerPressInteraction = this.$press;
+                } else {
+                    this.this$0.pressInteraction = this.$press;
+                }
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

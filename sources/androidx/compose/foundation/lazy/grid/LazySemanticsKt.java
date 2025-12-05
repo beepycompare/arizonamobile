@@ -12,7 +12,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 /* compiled from: LazySemantics.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0001¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"rememberLazyGridSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "reverseScrolling", "", "(Landroidx/compose/foundation/lazy/grid/LazyGridState;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0001¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"rememberLazyGridSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "reverseScrolling", "", "(Landroidx/compose/foundation/lazy/grid/LazyGridState;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazySemanticsKt {
     public static final LazyLayoutSemanticState rememberLazyGridSemanticState(final LazyGridState lazyGridState, boolean z, Composer composer, int i) {
@@ -20,7 +20,7 @@ public final class LazySemanticsKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1247008005, i, -1, "androidx.compose.foundation.lazy.grid.rememberLazyGridSemanticState (LazySemantics.kt:31)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -78811094, "CC(remember):LazySemantics.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -78811766, "CC(remember):LazySemantics.kt#9igjgp");
         boolean z2 = ((((i & 14) ^ 6) > 4 && composer.changed(lazyGridState)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(z)) || (i & 48) == 32);
         Object rememberedValue = composer.rememberedValue();
         if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
@@ -48,13 +48,13 @@ public final class LazySemanticsKt {
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
                 public int getViewport() {
-                    long mo1006getViewportSizeYbymL2g;
+                    long mo1087getViewportSizeYbymL2g;
                     if (LazyGridState.this.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-                        mo1006getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1006getViewportSizeYbymL2g() & 4294967295L;
+                        mo1087getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1087getViewportSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo1006getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1006getViewportSizeYbymL2g() >> 32;
+                        mo1087getViewportSizeYbymL2g = LazyGridState.this.getLayoutInfo().mo1087getViewportSizeYbymL2g() >> 32;
                     }
-                    return (int) mo1006getViewportSizeYbymL2g;
+                    return (int) mo1087getViewportSizeYbymL2g;
                 }
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

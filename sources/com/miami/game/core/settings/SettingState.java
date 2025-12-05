@@ -1,6 +1,5 @@
 package com.miami.game.core.settings;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -20,7 +19,7 @@ public final class SettingState {
     private final boolean streamerMode;
 
     public SettingState() {
-        this(0.0f, 0, false, false, false, false, false, false, false, null, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null);
+        this(0.0f, 0, false, false, false, false, false, false, false, null, 1023, null);
     }
 
     public static /* synthetic */ SettingState copy$default(SettingState settingState, float f, int i, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7, ConnectionData connectionData, int i2, Object obj) {

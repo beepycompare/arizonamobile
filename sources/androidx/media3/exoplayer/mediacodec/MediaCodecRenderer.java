@@ -39,7 +39,7 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class MediaCodecRenderer extends BaseRenderer {
     private static final byte[] ADAPTATION_WORKAROUND_BUFFER = {0, 0, 1, 103, 66, -64, Ascii.VT, -38, 37, -112, 0, 0, 1, 104, -50, Ascii.SI, 19, 32, 0, 0, 1, 101, -120, -124, Ascii.CR, -50, 113, Ascii.CAN, -96, 0, 47, -65, Ascii.FS, 49, -61, 39, 93, 120};
     private static final int ADAPTATION_WORKAROUND_MODE_ALWAYS = 2;
@@ -145,7 +145,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     protected float getCodecOperatingRateV23(float f, Format format, Format[] formatArr) {
-        return CODEC_OPERATING_RATE_UNSET;
+        return -1.0f;
     }
 
     protected abstract List<MediaCodecInfo> getDecoderInfos(MediaCodecSelector mediaCodecSelector, Format format, boolean z) throws MediaCodecUtil.DecoderQueryException;
@@ -224,7 +224,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         return 8;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class DecoderInitializationException extends Exception {
         private static final int CUSTOM_ERROR_CODE_BASE = -50000;
         private static final int DECODER_QUERY_ERROR = -49998;
@@ -282,7 +282,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         batchBuffer.ensureSpaceForWrite(0);
         batchBuffer.data.order(ByteOrder.nativeOrder());
         this.oggOpusAudioPacketizer = new OggOpusAudioPacketizer();
-        this.codecOperatingRate = CODEC_OPERATING_RATE_UNSET;
+        this.codecOperatingRate = -1.0f;
         this.codecAdaptationWorkaroundMode = 0;
         this.codecReconfigurationState = 0;
         this.inputIndex = -1;
@@ -706,7 +706,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.codecOutputMediaFormat = null;
         this.codecOutputMediaFormatChanged = false;
         this.codecHasOutputMediaFormat = false;
-        this.codecOperatingRate = CODEC_OPERATING_RATE_UNSET;
+        this.codecOperatingRate = -1.0f;
         this.codecAdaptationWorkaroundMode = 0;
         this.codecNeedsSosFlushWorkaround = false;
         this.codecNeedsEosFlushWorkaround = false;
@@ -841,7 +841,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         String str = mediaCodecInfo.name;
         float codecOperatingRateV23 = getCodecOperatingRateV23(this.targetPlaybackSpeed, format, getStreamFormats());
         if (codecOperatingRateV23 <= this.assumedMinimumCodecOperatingRate) {
-            codecOperatingRateV23 = CODEC_OPERATING_RATE_UNSET;
+            codecOperatingRateV23 = -1.0f;
         }
         long elapsedRealtime = getClock().elapsedRealtime();
         MediaCodecAdapter.Configuration mediaCodecConfiguration = getMediaCodecConfiguration(mediaCodecInfo, format, mediaCrypto, codecOperatingRateV23);
@@ -1039,16 +1039,16 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00aa, code lost:
         if (drainAndUpdateCodecDrmSessionV23() == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00dc, code lost:
         if (drainAndUpdateCodecDrmSessionV23() == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x00f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00f7, code lost:
         r9 = 2;
      */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0101  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1198,10 +1198,10 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             if (f == codecOperatingRateV23) {
                 return true;
             }
-            if (codecOperatingRateV23 == CODEC_OPERATING_RATE_UNSET) {
+            if (codecOperatingRateV23 == -1.0f) {
                 drainAndReinitializeCodec();
                 return false;
-            } else if (f == CODEC_OPERATING_RATE_UNSET && codecOperatingRateV23 <= this.assumedMinimumCodecOperatingRate) {
+            } else if (f == -1.0f && codecOperatingRateV23 <= this.assumedMinimumCodecOperatingRate) {
                 return true;
             } else {
                 Bundle bundle = new Bundle();
@@ -1580,7 +1580,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class OutputStreamInfo {
         public static final OutputStreamInfo UNSET = new OutputStreamInfo(C.TIME_UNSET, C.TIME_UNSET, C.TIME_UNSET);
         public final TimedValueQueue<Format> formatQueue = new TimedValueQueue<>();
@@ -1596,7 +1596,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api31 {
         private Api31() {
         }
@@ -1611,7 +1611,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class MediaCodecRendererCodecAdapterListener implements MediaCodecAdapter.OnBufferAvailableListener {
         private MediaCodecRendererCodecAdapterListener() {
         }

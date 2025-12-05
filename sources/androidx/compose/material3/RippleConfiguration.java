@@ -23,11 +23,11 @@ public final class RippleConfiguration {
     }
 
     public /* synthetic */ RippleConfiguration(long j, RippleAlpha rippleAlpha, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Color.Companion.m5316getUnspecified0d7_KjU() : j, (i & 2) != 0 ? null : rippleAlpha, null);
+        this((i & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j, (i & 2) != 0 ? null : rippleAlpha, null);
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m2778getColor0d7_KjU() {
+    public final long m2864getColor0d7_KjU() {
         return this.color;
     }
 
@@ -41,18 +41,18 @@ public final class RippleConfiguration {
         }
         if (obj instanceof RippleConfiguration) {
             RippleConfiguration rippleConfiguration = (RippleConfiguration) obj;
-            return Color.m5281equalsimpl0(this.color, rippleConfiguration.color) && Intrinsics.areEqual(this.rippleAlpha, rippleConfiguration.rippleAlpha);
+            return Color.m5425equalsimpl0(this.color, rippleConfiguration.color) && Intrinsics.areEqual(this.rippleAlpha, rippleConfiguration.rippleAlpha);
         }
         return false;
     }
 
     public int hashCode() {
-        int m5287hashCodeimpl = Color.m5287hashCodeimpl(this.color) * 31;
+        int m5431hashCodeimpl = Color.m5431hashCodeimpl(this.color) * 31;
         RippleAlpha rippleAlpha = this.rippleAlpha;
-        return m5287hashCodeimpl + (rippleAlpha != null ? rippleAlpha.hashCode() : 0);
+        return m5431hashCodeimpl + (rippleAlpha != null ? rippleAlpha.hashCode() : 0);
     }
 
     public String toString() {
-        return "RippleConfiguration(color=" + ((Object) Color.m5288toStringimpl(this.color)) + ", rippleAlpha=" + this.rippleAlpha + ')';
+        return "RippleConfiguration(color=" + ((Object) Color.m5432toStringimpl(this.color)) + ", rippleAlpha=" + this.rippleAlpha + ')';
     }
 }

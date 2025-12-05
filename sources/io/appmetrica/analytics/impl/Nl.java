@@ -5,14 +5,14 @@ import android.os.Bundle;
 public final class Nl implements B6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Pl f610a;
+    public final /* synthetic */ Pl f693a;
 
     public Nl(Pl pl) {
-        this.f610a = pl;
+        this.f693a = pl;
     }
 
     @Override // io.appmetrica.analytics.impl.B6
     public final void a(int i, Bundle bundle) {
-        this.f610a.b(bundle);
+        this.f693a.b(bundle);
     }
 }

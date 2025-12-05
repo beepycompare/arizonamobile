@@ -6,7 +6,7 @@ import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public class Gh extends I3 {
     protected E8 c;
-    protected C0650vf d;
+    protected C0649vf d;
     public boolean e;
     public String f;
 
@@ -17,7 +17,7 @@ public class Gh extends I3 {
     public final Bundle c() {
         Bundle bundle = new Bundle();
         this.b.toBundle(bundle);
-        Cf cf = this.f518a;
+        Cf cf = this.f601a;
         synchronized (cf) {
             bundle.putParcelable("PROCESS_CFG_OBJ", cf);
         }
@@ -27,7 +27,7 @@ public class Gh extends I3 {
     public final synchronized String d() {
         E8 e8;
         e8 = this.c;
-        return e8.f457a.isEmpty() ? null : new JSONObject(e8.f457a).toString();
+        return e8.f540a.isEmpty() ? null : new JSONObject(e8.f540a).toString();
     }
 
     public final synchronized String e() {

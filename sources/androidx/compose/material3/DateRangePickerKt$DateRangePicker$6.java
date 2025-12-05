@@ -46,7 +46,7 @@ public final class DateRangePickerKt$DateRangePicker$6 implements Function2<Comp
         Long selectedStartDateMillis = this.$state.getSelectedStartDateMillis();
         Long selectedEndDateMillis = this.$state.getSelectedEndDateMillis();
         long displayedMonthMillis = this.$state.getDisplayedMonthMillis();
-        int mo2273getDisplayModejFl4v0 = this.$state.mo2273getDisplayModejFl4v0();
+        int mo2359getDisplayModejFl4v0 = this.$state.mo2359getDisplayModejFl4v0();
         ComposerKt.sourceInformationMarkerStart(composer, 1044600229, "CC(remember):DateRangePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$state);
         final DateRangePickerState dateRangePickerState = this.$state;
@@ -80,7 +80,7 @@ public final class DateRangePickerKt$DateRangePicker$6 implements Function2<Comp
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DateRangePickerKt.m2265SwitchableDateEntryContenteVtQiho(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2273getDisplayModejFl4v0, function2, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
+        DateRangePickerKt.m2351SwitchableDateEntryContenteVtQiho(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2359getDisplayModejFl4v0, function2, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

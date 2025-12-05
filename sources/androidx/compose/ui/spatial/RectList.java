@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.LockFreeTaskQueueCore;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: RectList.kt */
-@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0016\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0015\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\t\u0010\f\u001a\u00020\bH\u0082\bJ \u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\b2\u0006\u0010\u0010\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u0005H\u0002JL\u0010\u0012\u001a\u00020\u000e2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\b\b\u0002\u0010\u0018\u001a\u00020\b2\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001aJ\u000e\u0010\u001c\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\bJ.\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bJ\u001e\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001aJ.\u0010\u001f\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bJ\u001e\u0010 \u001a\u00020\u000e2\u0006\u0010!\u001a\u00020\b2\u0006\u0010\"\u001a\u00020\b2\u0006\u0010#\u001a\u00020\bJ \u0010 \u001a\u00020\u000e2\u0006\u0010$\u001a\u00020%2\u0006\u0010\"\u001a\u00020\b2\u0006\u0010#\u001a\u00020\bH\u0002J\u000e\u0010&\u001a\u00020\u000e2\u0006\u0010\u0013\u001a\u00020\bJ4\u0010'\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2$\u0010(\u001a \u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e0)J(\u0010*\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0018\u0010(\u001a\u0014\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u000e0+J\u0011\u0010,\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\bH\u0086\u0002J\u000e\u0010-\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\bJ\u000e\u0010.\u001a\u00020%2\u0006\u0010\u0013\u001a\u00020\bJ=\u0010/\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\u0012\u0010(\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e00H\u0086\bJ=\u00101\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\u0012\u0010(\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e00H\u0086\bJ5\u00102\u001a\u00020\u000e2*\u0010(\u001a&\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e03H\u0086\bJ-\u0010/\u001a\u00020\u000e2\u0006\u00104\u001a\u00020\b2\u0006\u00105\u001a\u00020\b2\u0012\u0010(\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e00H\u0086\bJ=\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\b2*\u0010(\u001a&\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e03H\u0086\bJ5\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bH\u0000¢\u0006\u0002\b;JÇ\u0001\u0010<\u001a\u00020\u000e2\u0006\u0010:\u001a\u00020\b2\u0006\u0010=\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\u008b\u0001\u0010(\u001a\u0086\u0001\u0012\u0013\u0012\u00110\b¢\u0006\f\b?\u0012\b\b@\u0012\u0004\b\b(A\u0012\u0013\u0012\u00110\b¢\u0006\f\b?\u0012\b\b@\u0012\u0004\b\b(!\u0012\u0013\u0012\u00110\b¢\u0006\f\b?\u0012\b\b@\u0012\u0004\b\b(\u0014\u0012\u0013\u0012\u00110\b¢\u0006\f\b?\u0012\b\b@\u0012\u0004\b\b(\u0015\u0012\u0013\u0012\u00110\b¢\u0006\f\b?\u0012\b\b@\u0012\u0004\b\b(\u0016\u0012\u0013\u0012\u00110\b¢\u0006\f\b?\u0012\b\b@\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u00020\u000e0>H\u0086\bJ1\u0010B\u001a\u00020\b2\u0006\u0010:\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bH\u0086\bJ\u0006\u0010C\u001a\u00020\u000eJ\u0006\u0010D\u001a\u00020\u000eJ)\u0010E\u001a\u00020\u000e2\u001e\u0010(\u001a\u001a\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020\u000e0FH\u0086\bJ\u0006\u0010G\u001a\u00020HR\u0012\u0010\u0004\u001a\u00020\u00058\u0000@\u0000X\u0081\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0006\u001a\u00020\u00058\u0000@\u0000X\u0081\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0007\u001a\u00020\b8\u0000@\u0000X\u0081\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\t\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000b¨\u0006I"}, d2 = {"Landroidx/compose/ui/spatial/RectList;", "", "<init>", "()V", "items", "", "stack", "itemsSize", "", "size", "getSize", "()I", "allocateItemsIndex", "resizeStorage", "", "actualSize", "currentSize", "currentItems", "insert", "value", CmcdData.STREAM_TYPE_LIVE, "t", "r", "b", "parentId", "focusable", "", "gesturable", "remove", "update", "updateFlagsFor", "move", "updateSubhierarchy", "id", "deltaX", "deltaY", "stackMeta", "", "markUpdated", "withRect", "block", "Lkotlin/Function4;", "withTopLeftBottomRight", "Lkotlin/Function2;", "contains", "indexOf", "metaFor", "forEachIntersection", "Lkotlin/Function1;", "forEachGesturableIntersection", "forEachRect", "Lkotlin/Function5;", "x", "y", "forEachIntersectingRectWithValueAt", FirebaseAnalytics.Param.INDEX, "neighborsScoredByDistance", "", "searchAxis", "neighborsScoredByDistance$ui_release", "findKNearestNeighbors", "k", "Lkotlin/Function6;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.SCORE, "findNearestNeighbor", "defragment", "clearUpdated", "forEachUpdatedRect", "Lkotlin/Function3;", "debugString", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0016\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0013\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0015\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\t\u0010\f\u001a\u00020\bH\u0082\bJ \u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\b2\u0006\u0010\u0010\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u0005H\u0002J`\u0010\u0012\u001a\u00020\u000e2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\b\b\u0002\u0010\u0018\u001a\u00020\b2\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001a2\b\b\u0002\u0010\u001c\u001a\u00020\u001a2\b\b\u0002\u0010\u001d\u001a\u00020\bJN\u0010\u001e\u001a\u00020\u000e2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0018\u001a\u00020\b2\u0006\u0010\u001f\u001a\u00020\b2\u0006\u0010 \u001a\u00020\b2\u0006\u0010!\u001a\u00020\b2\u0006\u0010\"\u001a\u00020\b2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00020\u001aJ\u000e\u0010#\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\bJ.\u0010$\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bJ\u001e\u0010%\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001aJ\u0016\u0010&\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u001c\u001a\u00020\u001aJ.\u0010'\u001a\u00020\u000e2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bJ6\u0010(\u001a\u00020\u000e2\u0006\u0010\u0013\u001a\u00020\b2\u0006\u0010\u0018\u001a\u00020\b2\u0006\u0010\u001f\u001a\u00020\b2\u0006\u0010 \u001a\u00020\b2\u0006\u0010!\u001a\u00020\b2\u0006\u0010\"\u001a\u00020\bJ\u001e\u0010)\u001a\u00020\u000e2\u0006\u0010*\u001a\u00020\b2\u0006\u0010+\u001a\u00020\b2\u0006\u0010,\u001a\u00020\bJ \u0010)\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010+\u001a\u00020\b2\u0006\u0010,\u001a\u00020\bH\u0002J\u000e\u0010/\u001a\u00020\u000e2\u0006\u0010\u0013\u001a\u00020\bJ4\u00100\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2$\u00101\u001a \u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e02J(\u00103\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\b2\u0018\u00101\u001a\u0014\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000e04J\u000e\u00105\u001a\u00020.2\u0006\u0010\u0013\u001a\u00020\bJ\u0011\u00106\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\bH\u0086\u0002J\u000e\u00107\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\bJ\u000e\u00108\u001a\u00020.2\u0006\u0010\u0013\u001a\u00020\bJ=\u00109\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\u0012\u00101\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e0:H\u0086\bJ=\u0010;\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\u0012\u00101\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e0:H\u0086\bJ=\u0010<\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\u0012\u00101\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e0:H\u0086\bJ5\u0010=\u001a\u00020\u000e2*\u00101\u001a&\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e0>H\u0086\bJ-\u00109\u001a\u00020\u000e2\u0006\u0010?\u001a\u00020\b2\u0006\u0010@\u001a\u00020\b2\u0012\u00101\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e0:H\u0086\bJ=\u0010A\u001a\u00020\u000e2\u0006\u0010B\u001a\u00020\b2*\u00101\u001a&\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u000e0>H\u0086\bJ5\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bH\u0000¢\u0006\u0002\bFJÇ\u0001\u0010G\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\b2\u0006\u0010H\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\b2\u008b\u0001\u00101\u001a\u0086\u0001\u0012\u0013\u0012\u00110\b¢\u0006\f\bJ\u0012\b\bK\u0012\u0004\b\b(L\u0012\u0013\u0012\u00110\b¢\u0006\f\bJ\u0012\b\bK\u0012\u0004\b\b(*\u0012\u0013\u0012\u00110\b¢\u0006\f\bJ\u0012\b\bK\u0012\u0004\b\b(\u0014\u0012\u0013\u0012\u00110\b¢\u0006\f\bJ\u0012\b\bK\u0012\u0004\b\b(\u0015\u0012\u0013\u0012\u00110\b¢\u0006\f\bJ\u0012\b\bK\u0012\u0004\b\b(\u0016\u0012\u0013\u0012\u00110\b¢\u0006\f\bJ\u0012\b\bK\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u00020\u000e0IH\u0086\bJ1\u0010M\u001a\u00020\b2\u0006\u0010E\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bH\u0086\bJ\u0006\u0010N\u001a\u00020\u000eJ\u0006\u0010O\u001a\u00020\u000eJ)\u0010P\u001a\u00020\u000e2\u001e\u00101\u001a\u001a\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000e0QH\u0086\bJ\u0006\u0010R\u001a\u00020SR\u0012\u0010\u0004\u001a\u00020\u00058\u0000@\u0000X\u0081\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0006\u001a\u00020\u00058\u0000@\u0000X\u0081\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0007\u001a\u00020\b8\u0000@\u0000X\u0081\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\t\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000b¨\u0006T"}, d2 = {"Landroidx/compose/ui/spatial/RectList;", "", "<init>", "()V", "items", "", "stack", "itemsSize", "", "size", "getSize", "()I", "allocateItemsIndex", "resizeStorage", "", "actualSize", "currentSize", "currentItems", "insert", "value", CmcdData.STREAM_TYPE_LIVE, "t", "r", "b", "parentId", "focusable", "", "gesturable", "hasCallbacks", "parentIndexInRectList", "insertBasedOnParentOffset", "offsetFromParentX", "offsetFromParentY", "width", "height", "remove", "update", "updateFlagsFor", "updateHasCallbacks", "move", "moveBasedOnParentOffset", "updateSubhierarchy", "id", "deltaX", "deltaY", "stackMeta", "", "markUpdated", "withRect", "block", "Lkotlin/Function4;", "withTopLeftBottomRight", "Lkotlin/Function2;", "getTopLeft", "contains", "indexOf", "metaFor", "forEachIntersection", "Lkotlin/Function1;", "forEachGesturableIntersection", "forEachFocusableIntersection", "forEachRect", "Lkotlin/Function5;", "x", "y", "forEachIntersectingRectWithValueAt", FirebaseAnalytics.Param.INDEX, "neighborsScoredByDistance", "", "searchAxis", "neighborsScoredByDistance$ui", "findKNearestNeighbors", "k", "Lkotlin/Function6;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.SCORE, "findNearestNeighbor", "defragment", "clearUpdated", "forEachUpdatedRect", "Lkotlin/Function3;", "debugString", "", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class RectList {
     public static final int $stable = 8;
@@ -50,46 +50,50 @@ public final class RectList {
         this.stack = copyOf2;
     }
 
-    public static /* synthetic */ void insert$default(RectList rectList, int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2, int i7, Object obj) {
-        boolean z3;
-        RectList rectList2;
-        int i8;
-        int i9;
-        int i10;
-        int i11;
-        int i12;
-        int i13 = (i7 & 32) != 0 ? -1 : i6;
-        boolean z4 = (i7 & 64) != 0 ? false : z;
-        if ((i7 & 128) != 0) {
-            z3 = false;
-            i8 = i;
-            i9 = i2;
-            i10 = i3;
-            i11 = i4;
-            i12 = i5;
-            rectList2 = rectList;
-        } else {
-            z3 = z2;
-            rectList2 = rectList;
-            i8 = i;
-            i9 = i2;
-            i10 = i3;
-            i11 = i4;
-            i12 = i5;
+    public static /* synthetic */ void insert$default(RectList rectList, int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2, boolean z3, int i7, int i8, Object obj) {
+        if ((i8 & 32) != 0) {
+            i6 = -1;
         }
-        rectList2.insert(i8, i9, i10, i11, i12, i13, z4, z3);
+        if ((i8 & 64) != 0) {
+            z = false;
+        }
+        if ((i8 & 128) != 0) {
+            z2 = false;
+        }
+        if ((i8 & 256) != 0) {
+            z3 = false;
+        }
+        if ((i8 & 512) != 0) {
+            i7 = -1;
+        }
+        rectList.insert(i, i2, i3, i4, i5, i6, z, z2, z3, i7);
+    }
+
+    public final void insertBasedOnParentOffset(int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2, boolean z3) {
+        int i7 = i & 33554431;
+        long[] jArr = this.items;
+        int i8 = this.itemsSize;
+        for (int i9 = 0; i9 < jArr.length - 2 && i9 < i8; i9 += 3) {
+            if ((((int) jArr[i9 + 2]) & 33554431) == i2) {
+                long j = jArr[i9];
+                int i10 = ((int) (j >> 32)) + i3;
+                int i11 = ((int) j) + i4;
+                insert(i7, i10, i11, i10 + i5, i11 + i6, i2, z, z2, z3, i9);
+                return;
+            }
+        }
     }
 
     public final boolean remove(int i) {
-        int i2 = i & RectListKt.Lower26Bits;
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
             int i5 = i4 + 2;
-            if ((((int) jArr[i5]) & RectListKt.Lower26Bits) == i2) {
+            if ((((int) jArr[i5]) & 33554431) == i2) {
                 jArr[i4] = -1;
                 jArr[i4 + 1] = -1;
-                jArr[i5] = 2305843009213693951L;
+                jArr[i5] = RectListKt.getTombStone();
                 return true;
             }
         }
@@ -97,16 +101,16 @@ public final class RectList {
     }
 
     public final boolean update(int i, int i2, int i3, int i4, int i5) {
-        int i6 = i & RectListKt.Lower26Bits;
+        int i6 = i & 33554431;
         long[] jArr = this.items;
         int i7 = this.itemsSize;
         for (int i8 = 0; i8 < jArr.length - 2 && i8 < i7; i8 += 3) {
             int i9 = i8 + 2;
             long j = jArr[i9];
-            if ((((int) j) & RectListKt.Lower26Bits) == i6) {
+            if ((((int) j) & 33554431) == i6) {
                 jArr[i8] = (i2 << 32) | (i3 & 4294967295L);
                 jArr[i8 + 1] = (i4 << 32) | (i5 & 4294967295L);
-                jArr[i9] = LockFreeTaskQueueCore.CLOSED_MASK | j;
+                jArr[i9] = (((j >> 63) & 1) << 60) | j;
                 return true;
             }
         }
@@ -114,46 +118,101 @@ public final class RectList {
     }
 
     public final boolean updateFlagsFor(int i, boolean z, boolean z2) {
-        int i2 = i & RectListKt.Lower26Bits;
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
             int i5 = i4 + 2;
             long j = jArr[i5];
-            if ((((int) j) & RectListKt.Lower26Bits) == i2) {
-                jArr[i5] = ((z ? 1L : 0L) * 4611686018427387904L) | (4611686018427387903L & j) | ((z2 ? 1L : 0L) * Long.MIN_VALUE);
+            if ((((int) j) & 33554431) == i2) {
+                jArr[i5] = ((z ? 1L : 0L) * LockFreeTaskQueueCore.CLOSED_MASK) | ((-6917529027641081857L) & j) | ((z2 ? 1L : 0L) * 4611686018427387904L);
                 return true;
             }
         }
         return false;
     }
 
-    public final boolean move(int i, int i2, int i3, int i4, int i5) {
-        int i6 = i & RectListKt.Lower26Bits;
+    public final boolean updateHasCallbacks(int i, boolean z) {
+        int i2 = i & 33554431;
+        long[] jArr = this.items;
+        int i3 = this.itemsSize;
+        for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
+            int i5 = i4 + 2;
+            long j = jArr[i5];
+            if ((((int) j) & 33554431) == i2) {
+                jArr[i5] = ((z ? 1L : 0L) * Long.MIN_VALUE) | (8070450532247928831L & j) | ((z ? 1L : 0L) * LockFreeTaskQueueCore.FROZEN_MASK);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void move(int i, int i2, int i3, int i4, int i5) {
+        int i6 = i & 33554431;
         long[] jArr = this.items;
         int i7 = this.itemsSize;
         for (int i8 = 0; i8 < jArr.length - 2 && i8 < i7; i8 += 3) {
             int i9 = i8 + 2;
             long j = jArr[i9];
-            if ((((int) j) & RectListKt.Lower26Bits) == i6) {
+            if ((((int) j) & 33554431) == i6) {
                 long j2 = jArr[i8];
                 jArr[i8] = (i3 & 4294967295L) | (i2 << 32);
                 int i10 = i8;
                 jArr[i8 + 1] = (i5 & 4294967295L) | (i4 << 32);
-                jArr[i9] = LockFreeTaskQueueCore.CLOSED_MASK | j;
+                jArr[i9] = (((j >> 63) & 1) << 60) | j;
                 int i11 = i2 - ((int) (j2 >> 32));
                 int i12 = i3 - ((int) j2);
-                if ((i11 != 0) | (i12 != 0)) {
-                    updateSubhierarchy((RectListKt.EverythingButParentId & j) | (((i10 + 3) & RectListKt.Lower26Bits) << 26), i11, i12);
+                if ((i11 != 0) || (i12 != 0)) {
+                    updateSubhierarchy((RectListKt.getEverythingButParentId() & j) | (((i10 + 3) & 33554431) << 25), i11, i12);
+                    return;
                 }
-                return true;
+                return;
             }
         }
-        return false;
+    }
+
+    public final void moveBasedOnParentOffset(int i, int i2, int i3, int i4, int i5, int i6) {
+        int i7 = 33554431;
+        int i8 = i & 33554431;
+        int i9 = this.itemsSize;
+        int i10 = 0;
+        for (long[] jArr = this.items; i10 < jArr.length - 2 && i10 < i9; jArr = jArr) {
+            if ((((int) jArr[i10 + 2]) & i7) == i2) {
+                long j = jArr[i10];
+                int i11 = ((int) (j >> 32)) + i3;
+                int i12 = ((int) j) + i4;
+                int i13 = i11 + i5;
+                int i14 = i12 + i6;
+                while (true) {
+                    i10 += 3;
+                    if (i10 < jArr.length - 2 && i10 < i9) {
+                        int i15 = i10 + 2;
+                        long j2 = jArr[i15];
+                        if ((((int) j2) & i7) == i8) {
+                            int i16 = i7;
+                            long j3 = jArr[i10];
+                            int i17 = i11 - ((int) (j3 >> 32));
+                            int i18 = i12 - ((int) j3);
+                            long[] jArr2 = jArr;
+                            jArr2[i10] = (i12 & 4294967295L) | (i11 << 32);
+                            jArr2[i10 + 1] = (i13 << 32) | (i14 & 4294967295L);
+                            jArr2[i15] = (((j2 >> 63) & 1) << 60) | j2;
+                            if (i17 == 0 && i18 == 0) {
+                                return;
+                            }
+                            updateSubhierarchy((RectListKt.getEverythingButParentId() & j2) | (((i10 + 3) & i16) << 25), i17, i18);
+                            return;
+                        }
+                    }
+                }
+            }
+            i10 += 3;
+            i7 = i7;
+        }
     }
 
     public final void updateSubhierarchy(int i, int i2, int i3) {
-        updateSubhierarchy((Math.min(this.itemsSize, 511) << 52) | (0 << 26) | (i & RectListKt.Lower26Bits), i2, i3);
+        updateSubhierarchy((Math.min(this.itemsSize / 3, 1023) << 50) | (0 << 25) | (i & 33554431), i2, i3);
     }
 
     private final void updateSubhierarchy(long j, int i, int i2) {
@@ -168,31 +227,31 @@ public final class RectList {
         while (i4 > 0) {
             i4--;
             long j2 = jArr2[i4];
-            int i5 = RectListKt.Lower26Bits;
-            int i6 = ((int) j2) & RectListKt.Lower26Bits;
-            char c3 = 26;
-            int i7 = ((int) (j2 >> 26)) & RectListKt.Lower26Bits;
-            char c4 = '4';
-            int i8 = ((int) (j2 >> 52)) & 511;
-            int length = i8 == 511 ? jArr.length : i8 + i7;
+            int i5 = 33554431;
+            int i6 = ((int) j2) & 33554431;
+            char c3 = 25;
+            int i7 = ((int) (j2 >> 25)) & 33554431;
+            char c4 = '2';
+            int i8 = ((int) (j2 >> 50)) & 1023;
+            int i9 = i8 == 1023 ? this.itemsSize : (i8 * 3) + i7;
             if (i7 < 0) {
                 return;
             }
-            while (i7 < jArr.length - 2 && i7 < length) {
-                int i9 = i7 + 2;
-                long j3 = jArr[i9];
+            while (i7 < jArr.length - 2 && i7 < i9) {
+                int i10 = i7 + 2;
+                long j3 = jArr[i10];
                 if ((((int) (j3 >> c3)) & i5) == i6) {
                     long j4 = jArr[i7];
-                    int i10 = i7 + 1;
+                    int i11 = i7 + 1;
                     i3 = i5;
                     c = c3;
-                    long j5 = jArr[i10];
+                    long j5 = jArr[i11];
                     c2 = c4;
                     jArr[i7] = ((((int) j4) + i2) & 4294967295L) | ((((int) (j4 >> 32)) + i) << 32);
-                    jArr[i10] = ((((int) j5) + i2) & 4294967295L) | ((((int) (j5 >> 32)) + i) << 32);
-                    jArr[i9] = LockFreeTaskQueueCore.CLOSED_MASK | j3;
-                    if ((((int) (j3 >> c2)) & 511) > 0) {
-                        jArr2[i4] = (RectListKt.EverythingButParentId & j3) | (((i7 + 3) & i3) << c);
+                    jArr[i11] = ((((int) j5) + i2) & 4294967295L) | ((((int) (j5 >> 32)) + i) << 32);
+                    jArr[i10] = (((j3 >> 63) & 1) << 60) | j3;
+                    if ((((int) (j3 >> c2)) & 1023) > 0) {
+                        jArr2[i4] = (RectListKt.getEverythingButParentId() & j3) | (((i7 + 3) & i3) << c);
                         i4++;
                     }
                 } else {
@@ -209,25 +268,25 @@ public final class RectList {
     }
 
     public final void markUpdated(int i) {
-        int i2 = i & RectListKt.Lower26Bits;
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
             int i5 = i4 + 2;
             long j = jArr[i5];
-            if ((((int) j) & RectListKt.Lower26Bits) == i2) {
-                jArr[i5] = LockFreeTaskQueueCore.CLOSED_MASK | j;
+            if ((((int) j) & 33554431) == i2) {
+                jArr[i5] = (((j >> 63) & 1) << 60) | j;
                 return;
             }
         }
     }
 
     public final boolean withRect(int i, Function4<? super Integer, ? super Integer, ? super Integer, ? super Integer, Unit> function4) {
-        int i2 = i & RectListKt.Lower26Bits;
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
-            if ((((int) jArr[i4 + 2]) & RectListKt.Lower26Bits) == i2) {
+            if ((((int) jArr[i4 + 2]) & 33554431) == i2) {
                 long j = jArr[i4];
                 long j2 = jArr[i4 + 1];
                 function4.invoke(Integer.valueOf((int) (j >> 32)), Integer.valueOf((int) j), Integer.valueOf((int) (j2 >> 32)), Integer.valueOf((int) j2));
@@ -238,11 +297,11 @@ public final class RectList {
     }
 
     public final boolean withTopLeftBottomRight(int i, Function2<? super Long, ? super Long, Unit> function2) {
-        int i2 = i & RectListKt.Lower26Bits;
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
-            if ((((int) jArr[i4 + 2]) & RectListKt.Lower26Bits) == i2) {
+            if ((((int) jArr[i4 + 2]) & 33554431) == i2) {
                 function2.invoke(Long.valueOf(jArr[i4]), Long.valueOf(jArr[i4 + 1]));
                 return true;
             }
@@ -250,12 +309,24 @@ public final class RectList {
         return false;
     }
 
-    public final boolean contains(int i) {
-        int i2 = i & RectListKt.Lower26Bits;
+    public final long getTopLeft(int i) {
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
-            if ((((int) jArr[i4 + 2]) & RectListKt.Lower26Bits) == i2) {
+            if ((((int) jArr[i4 + 2]) & 33554431) == i2) {
+                return jArr[i4];
+            }
+        }
+        return Long.MAX_VALUE;
+    }
+
+    public final boolean contains(int i) {
+        int i2 = i & 33554431;
+        long[] jArr = this.items;
+        int i3 = this.itemsSize;
+        for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
+            if ((((int) jArr[i4 + 2]) & 33554431) == i2) {
                 return true;
             }
         }
@@ -263,11 +334,11 @@ public final class RectList {
     }
 
     public final int indexOf(int i) {
-        int i2 = i & RectListKt.Lower26Bits;
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
-            if ((((int) jArr[i4 + 2]) & RectListKt.Lower26Bits) == i2) {
+            if ((((int) jArr[i4 + 2]) & 33554431) == i2) {
                 return i4;
             }
         }
@@ -275,16 +346,16 @@ public final class RectList {
     }
 
     public final long metaFor(int i) {
-        int i2 = i & RectListKt.Lower26Bits;
+        int i2 = i & 33554431;
         long[] jArr = this.items;
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
             long j = jArr[i4 + 2];
-            if ((((int) j) & RectListKt.Lower26Bits) == i2) {
+            if ((((int) j) & 33554431) == i2) {
                 return j;
             }
         }
-        return RectListKt.TombStone;
+        return RectListKt.getTombStone();
     }
 
     public final void forEachIntersection(int i, int i2, int i3, int i4, Function1<? super Integer, Unit> function1) {
@@ -294,7 +365,7 @@ public final class RectList {
         int i5 = this.itemsSize;
         for (int i6 = 0; i6 < jArr.length - 2 && i6 < i5; i6 += 3) {
             if (((((j2 - jArr[i6]) - InlineClassHelperKt.Uint64Low32) | ((jArr[i6 + 1] - j) - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) == 0) {
-                function1.invoke(Integer.valueOf(((int) jArr[i6 + 2]) & RectListKt.Lower26Bits));
+                function1.invoke(Integer.valueOf(((int) jArr[i6 + 2]) & 33554431));
             }
         }
     }
@@ -306,9 +377,24 @@ public final class RectList {
         int i5 = this.itemsSize;
         for (int i6 = 0; i6 < jArr.length - 2 && i6 < i5; i6 += 3) {
             long j3 = jArr[i6 + 2];
-            if ((((int) (j3 >> 63)) & 1) != 0) {
+            if ((((int) (j3 >> 62)) & 1) != 0) {
                 if (((((j2 - jArr[i6]) - InlineClassHelperKt.Uint64Low32) | ((jArr[i6 + 1] - j) - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) == 0) {
-                    function1.invoke(Integer.valueOf(((int) j3) & RectListKt.Lower26Bits));
+                    function1.invoke(Integer.valueOf(((int) j3) & 33554431));
+                }
+            }
+        }
+    }
+
+    public final void forEachFocusableIntersection(int i, int i2, int i3, int i4, Function1<? super Integer, Unit> function1) {
+        long j = (i << 32) | (i2 & 4294967295L);
+        long j2 = (i3 << 32) | (i4 & 4294967295L);
+        long[] jArr = this.items;
+        int i5 = this.itemsSize;
+        for (int i6 = 0; i6 < jArr.length - 2 && i6 < i5; i6 += 3) {
+            long j3 = jArr[i6 + 2];
+            if ((((int) (j3 >> 61)) & 1) != 0) {
+                if (((((j2 - jArr[i6]) - InlineClassHelperKt.Uint64Low32) | ((jArr[i6 + 1] - j) - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) == 0) {
+                    function1.invoke(Integer.valueOf(((int) j3) & 33554431));
                 }
             }
         }
@@ -320,7 +406,7 @@ public final class RectList {
         for (int i2 = 0; i2 < jArr.length - 2 && i2 < i; i2 += 3) {
             long j = jArr[i2];
             long j2 = jArr[i2 + 1];
-            function5.invoke(Integer.valueOf(((int) jArr[i2 + 2]) & RectListKt.Lower26Bits), Integer.valueOf((int) (j >> 32)), Integer.valueOf((int) j), Integer.valueOf((int) (j2 >> 32)), Integer.valueOf((int) j2));
+            function5.invoke(Integer.valueOf(((int) jArr[i2 + 2]) & 33554431), Integer.valueOf((int) (j >> 32)), Integer.valueOf((int) j), Integer.valueOf((int) (j2 >> 32)), Integer.valueOf((int) j2));
         }
     }
 
@@ -330,7 +416,7 @@ public final class RectList {
         int i3 = this.itemsSize;
         for (int i4 = 0; i4 < jArr.length - 2 && i4 < i3; i4 += 3) {
             if (((((j - jArr[i4]) - InlineClassHelperKt.Uint64Low32) | ((jArr[i4 + 1] - j) - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) == 0) {
-                function1.invoke(Integer.valueOf(((int) jArr[i4 + 2]) & RectListKt.Lower26Bits));
+                function1.invoke(Integer.valueOf(((int) jArr[i4 + 2]) & 33554431));
             }
         }
     }
@@ -345,13 +431,13 @@ public final class RectList {
                 long j3 = jArr[i3];
                 long j4 = jArr[i3 + 1];
                 if (((((j2 - j3) - InlineClassHelperKt.Uint64Low32) | ((j4 - j) - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) == 0) {
-                    function5.invoke(Integer.valueOf((int) (j3 >> 32)), Integer.valueOf((int) j3), Integer.valueOf((int) (j4 >> 32)), Integer.valueOf((int) j4), Integer.valueOf(((int) jArr[i3 + 2]) & RectListKt.Lower26Bits));
+                    function5.invoke(Integer.valueOf((int) (j3 >> 32)), Integer.valueOf((int) j3), Integer.valueOf((int) (j4 >> 32)), Integer.valueOf((int) j4), Integer.valueOf(((int) jArr[i3 + 2]) & 33554431));
                 }
             }
         }
     }
 
-    public final int[] neighborsScoredByDistance$ui_release(int i, int i2, int i3, int i4, int i5) {
+    public final int[] neighborsScoredByDistance$ui(int i, int i2, int i3, int i4, int i5) {
         long[] jArr = this.items;
         int i6 = this.itemsSize / 3;
         int[] iArr = new int[i6];
@@ -369,7 +455,7 @@ public final class RectList {
 
     public final void findKNearestNeighbors(int i, int i2, int i3, int i4, int i5, int i6, Function6<? super Integer, ? super Integer, ? super Integer, ? super Integer, ? super Integer, ? super Integer, Unit> function6) {
         int i7;
-        int[] neighborsScoredByDistance$ui_release = neighborsScoredByDistance$ui_release(i, i3, i4, i5, i6);
+        int[] neighborsScoredByDistance$ui = neighborsScoredByDistance$ui(i, i3, i4, i5, i6);
         long[] jArr = this.items;
         int i8 = 1;
         int i9 = 0;
@@ -377,8 +463,8 @@ public final class RectList {
         while (i9 <= i2) {
             int i11 = Integer.MAX_VALUE;
             int i12 = 0;
-            while (i12 < neighborsScoredByDistance$ui_release.length) {
-                int i13 = neighborsScoredByDistance$ui_release[i12];
+            while (i12 < neighborsScoredByDistance$ui.length) {
+                int i13 = neighborsScoredByDistance$ui[i12];
                 if (i13 > i8) {
                     i11 = Math.min(i11, i13);
                 }
@@ -387,7 +473,7 @@ public final class RectList {
                     long j = jArr[i14];
                     long j2 = jArr[i14 + 1];
                     i7 = i8;
-                    function6.invoke(Integer.valueOf(i13), Integer.valueOf(((int) jArr[i14 + 2]) & RectListKt.Lower26Bits), Integer.valueOf((int) (j >> 32)), Integer.valueOf((int) j), Integer.valueOf((int) (j2 >> 32)), Integer.valueOf((int) j2));
+                    function6.invoke(Integer.valueOf(i13), Integer.valueOf(((int) jArr[i14 + 2]) & 33554431), Integer.valueOf((int) (j >> 32)), Integer.valueOf((int) j), Integer.valueOf((int) (j2 >> 32)), Integer.valueOf((int) j2));
                     i10++;
                     if (i10 == i2) {
                         return;
@@ -424,7 +510,7 @@ public final class RectList {
         if (i8 < 0 || i8 >= jArr.length) {
             return -1;
         }
-        return ((int) jArr[i8]) & RectListKt.Lower26Bits;
+        return ((int) jArr[i8]) & 33554431;
     }
 
     public final void defragment() {
@@ -434,7 +520,7 @@ public final class RectList {
         int i2 = 0;
         for (int i3 = 0; i3 < jArr.length - 2 && i2 < jArr2.length - 2 && i3 < i; i3 += 3) {
             int i4 = i3 + 2;
-            if (jArr[i4] != RectListKt.TombStone) {
+            if (jArr[i4] != RectListKt.getTombStone()) {
                 jArr2[i2] = jArr[i3];
                 jArr2[i2 + 1] = jArr[i3 + 1];
                 jArr2[i2 + 2] = jArr[i4];
@@ -451,7 +537,7 @@ public final class RectList {
         int i = this.itemsSize;
         for (int i2 = 0; i2 < jArr.length - 2 && i2 < i; i2 += 3) {
             int i3 = i2 + 2;
-            jArr[i3] = jArr[i3] & (-2305843009213693953L);
+            jArr[i3] = jArr[i3] & (-1152921504606846977L);
         }
     }
 
@@ -460,8 +546,8 @@ public final class RectList {
         int i = this.itemsSize;
         for (int i2 = 0; i2 < jArr.length - 2 && i2 < i; i2 += 3) {
             long j = jArr[i2 + 2];
-            if ((((int) (j >> 61)) & 1) != 0) {
-                function3.invoke(Integer.valueOf(((int) j) & RectListKt.Lower26Bits), Long.valueOf(jArr[i2]), Long.valueOf(jArr[i2 + 1]));
+            if ((((int) (j >> 60)) & 1) != 0) {
+                function3.invoke(Integer.valueOf(((int) j) & 33554431), Long.valueOf(jArr[i2]), Long.valueOf(jArr[i2 + 1]));
             }
         }
     }
@@ -470,42 +556,48 @@ public final class RectList {
         StringBuilder sb = new StringBuilder();
         long[] jArr = this.items;
         int i = this.itemsSize;
-        for (int i2 = 0; i2 < jArr.length - 2 && i2 < i; i2 += 3) {
+        int i2 = 0;
+        while (i2 < jArr.length - 2 && i2 < i) {
             long j = jArr[i2];
             long j2 = jArr[i2 + 1];
             long j3 = jArr[i2 + 2];
-            int i3 = ((int) j3) & RectListKt.Lower26Bits;
-            StringBuilder append = sb.append("id=" + i3 + ", rect=[" + ((int) (j >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j) + AbstractJsonLexerKt.COMMA + ((int) (j2 >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j2) + "], parent=" + (((int) (j3 >> 26)) & RectListKt.Lower26Bits));
+            int i3 = i;
+            StringBuilder sb2 = sb;
+            StringBuilder append = sb2.append("id=" + (((int) j3) & 33554431) + ", rect=[" + ((int) (j >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j) + AbstractJsonLexerKt.COMMA + ((int) (j2 >> 32)) + AbstractJsonLexerKt.COMMA + ((int) j2) + "], parent=" + (33554431 & ((int) (j3 >> 25))) + ", lastChildOffset=" + (((int) (j3 >> 50)) & 1023) + ", updated=" + (((int) (j3 >> 60)) & 1) + ", focusable=" + (((int) (j3 >> 61)) & 1) + ", gesturable=" + (((int) (j3 >> 62)) & 1));
             Intrinsics.checkNotNullExpressionValue(append, "append(...)");
             Intrinsics.checkNotNullExpressionValue(append.append('\n'), "append(...)");
+            i2 += 3;
+            jArr = jArr;
+            sb = sb2;
+            i = i3;
         }
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb3 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb3, "toString(...)");
+        return sb3;
     }
 
-    public final void insert(int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2) {
+    public final void insert(int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2, boolean z3, int i7) {
         long[] jArr = this.items;
-        int i7 = this.itemsSize;
-        int i8 = i7 + 3;
-        this.itemsSize = i8;
+        int i8 = this.itemsSize;
+        int i9 = i8 + 3;
+        this.itemsSize = i9;
         int length = jArr.length;
-        if (length <= i8) {
-            resizeStorage(length, i7, jArr);
+        if (length <= i9) {
+            resizeStorage(length, i8, jArr);
         }
         long[] jArr2 = this.items;
-        jArr2[i7] = (i2 << 32) | (i3 & 4294967295L);
-        jArr2[i7 + 1] = (i4 << 32) | (i5 & 4294967295L);
-        int i9 = i6 & RectListKt.Lower26Bits;
-        jArr2[i7 + 2] = ((z2 ? 1L : 0L) << 63) | ((z ? 1L : 0L) << 62) | (1 << 61) | (Math.min(0, 511) << 52) | (i9 << 26) | (i & RectListKt.Lower26Bits);
+        jArr2[i8] = (i2 << 32) | (i3 & 4294967295L);
+        jArr2[i8 + 1] = (i4 << 32) | (i5 & 4294967295L);
+        int i10 = i6 & 33554431;
+        jArr2[i8 + 2] = ((z3 ? 1L : 0L) << 63) | ((z2 ? 1L : 0L) << 62) | ((z ? 1L : 0L) << 61) | (1 << 60) | (Math.min(0, 1023) << 50) | (i10 << 25) | (i & 33554431);
         if (i6 < 0) {
             return;
         }
-        for (int i10 = i7 - 3; i10 >= 0; i10 -= 3) {
-            int i11 = i10 + 2;
-            long j = jArr2[i11];
-            if ((((int) j) & RectListKt.Lower26Bits) == i9) {
-                jArr2[i11] = (j & RectListKt.EverythingButLastChildOffset) | (Math.min(i7 - i10, 511) << 52);
+        for (int i11 = i7 != -1 ? i7 : i8 - 3; i11 >= 0; i11 -= 3) {
+            int i12 = i11 + 2;
+            long j = jArr2[i12];
+            if ((((int) j) & 33554431) == i10) {
+                jArr2[i12] = (j & RectListKt.getEverythingButLastChildOffset()) | (Math.min((i8 - i11) / 3, 1023) << 50);
                 return;
             }
         }

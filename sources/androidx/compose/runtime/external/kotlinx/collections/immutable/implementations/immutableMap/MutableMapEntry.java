@@ -12,6 +12,12 @@ public final class MutableMapEntry<K, V> extends MapEntry<K, V> implements Map.E
     private final PersistentHashMapBuilderEntriesIterator<K, V> parentIterator;
     private V value;
 
+    public MutableMapEntry(PersistentHashMapBuilderEntriesIterator<K, V> persistentHashMapBuilderEntriesIterator, K k, V v) {
+        super(k, v);
+        this.parentIterator = persistentHashMapBuilderEntriesIterator;
+        this.value = v;
+    }
+
     @Override // androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableMap.MapEntry, java.util.Map.Entry
     public V getValue() {
         return this.value;
@@ -19,12 +25,6 @@ public final class MutableMapEntry<K, V> extends MapEntry<K, V> implements Map.E
 
     @Override // java.util.Map.Entry
     public void setValue(V v) {
-        this.value = v;
-    }
-
-    public MutableMapEntry(PersistentHashMapBuilderEntriesIterator<K, V> persistentHashMapBuilderEntriesIterator, K k, V v) {
-        super(k, v);
-        this.parentIterator = persistentHashMapBuilderEntriesIterator;
         this.value = v;
     }
 

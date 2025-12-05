@@ -3,17 +3,17 @@ package io.appmetrica.analytics.impl;
 public final class Kh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f555a;
-    public final /* synthetic */ C0301hi b;
+    public final /* synthetic */ Throwable f638a;
+    public final /* synthetic */ C0300hi b;
 
-    public Kh(C0301hi c0301hi, Throwable th) {
-        this.b = c0301hi;
-        this.f555a = th;
+    public Kh(C0300hi c0300hi, Throwable th) {
+        this.b = c0300hi;
+        this.f638a = th;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0301hi c0301hi = this.b;
-        C0301hi.a(c0301hi.f926a, c0301hi.d, c0301hi.e).reportUnhandledException(this.f555a);
+        C0300hi c0300hi = this.b;
+        C0300hi.a(c0300hi.f1009a, c0300hi.d, c0300hi.e).reportUnhandledException(this.f638a);
     }
 }

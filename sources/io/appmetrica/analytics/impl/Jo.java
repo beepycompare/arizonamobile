@@ -6,10 +6,10 @@ public final class Jo extends Location {
     public static final /* synthetic */ int b = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f545a;
+    public final String f628a;
 
     public Jo(Location location, String str) {
         super(location);
-        this.f545a = str;
+        this.f628a = str;
     }
 }

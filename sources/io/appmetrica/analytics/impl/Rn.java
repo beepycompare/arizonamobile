@@ -9,7 +9,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hn f666a;
+    public final Hn f749a;
     public final V b;
     public final List c;
     public final String d;
@@ -19,7 +19,7 @@ public final class Rn {
     public final Boolean h;
 
     public Rn(Hn hn, V v, ArrayList arrayList, String str, String str2, Map map, String str3, Boolean bool) {
-        this.f666a = hn;
+        this.f749a = hn;
         this.b = v;
         this.c = arrayList;
         this.d = str;
@@ -31,12 +31,12 @@ public final class Rn {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        Hn hn = this.f666a;
+        Hn hn = this.f749a;
         if (hn != null) {
             for (El el : hn.c) {
-                sb.append("at " + el.f466a + "." + el.e + "(" + el.b + StringUtils.PROCESS_POSTFIX_DELIMITER + el.c + StringUtils.PROCESS_POSTFIX_DELIMITER + el.d + ")\n");
+                sb.append("at " + el.f549a + "." + el.e + "(" + el.b + StringUtils.PROCESS_POSTFIX_DELIMITER + el.c + StringUtils.PROCESS_POSTFIX_DELIMITER + el.d + ")\n");
             }
         }
-        return "UnhandledException{exception=" + this.f666a + "\n" + sb.toString() + AbstractJsonLexerKt.END_OBJ;
+        return "UnhandledException{exception=" + this.f749a + "\n" + sb.toString() + AbstractJsonLexerKt.END_OBJ;
     }
 }

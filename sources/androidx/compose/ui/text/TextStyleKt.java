@@ -13,7 +13,7 @@ public final class TextStyleKt {
     /* compiled from: TextStyle.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -39,25 +39,25 @@ public final class TextStyleKt {
     }
 
     /* renamed from: resolveTextDirection-IhaHGbI */
-    public static final int m7504resolveTextDirectionIhaHGbI(LayoutDirection layoutDirection, int i) {
-        if (TextDirection.m7890equalsimpl0(i, TextDirection.Companion.m7894getContents_7Xco())) {
+    public static final int m7747resolveTextDirectionIhaHGbI(LayoutDirection layoutDirection, int i) {
+        if (TextDirection.m8149equalsimpl0(i, TextDirection.Companion.m8153getContents_7Xco())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
             if (i2 != 1) {
                 if (i2 != 2) {
                     throw new NoWhenBranchMatchedException();
                 }
-                return TextDirection.Companion.m7896getContentOrRtls_7Xco();
+                return TextDirection.Companion.m8155getContentOrRtls_7Xco();
             }
-            return TextDirection.Companion.m7895getContentOrLtrs_7Xco();
-        } else if (TextDirection.m7890equalsimpl0(i, TextDirection.Companion.m7899getUnspecifieds_7Xco())) {
+            return TextDirection.Companion.m8154getContentOrLtrs_7Xco();
+        } else if (TextDirection.m8149equalsimpl0(i, TextDirection.Companion.m8158getUnspecifieds_7Xco())) {
             int i3 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
             if (i3 != 1) {
                 if (i3 != 2) {
                     throw new NoWhenBranchMatchedException();
                 }
-                return TextDirection.Companion.m7898getRtls_7Xco();
+                return TextDirection.Companion.m8157getRtls_7Xco();
             }
-            return TextDirection.Companion.m7897getLtrs_7Xco();
+            return TextDirection.Companion.m8156getLtrs_7Xco();
         } else {
             return i;
         }

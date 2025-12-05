@@ -72,7 +72,7 @@ public final class ExposedDropdownMenuDefaults {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1732824199, i3, -1, "androidx.compose.material3.ExposedDropdownMenuDefaults.TrailingIcon (ExposedDropdownMenu.kt:511)");
             }
-            IconKt.m2463Iconww6aTOc(Icons.Filled.INSTANCE.getArrowDropDown$material3(), (String) null, RotateKt.rotate(modifier, z ? 180.0f : 0.0f), 0L, startRestartGroup, 48, 8);
+            IconKt.m2549Iconww6aTOc(Icons.Filled.INSTANCE.getArrowDropDown$material3(), (String) null, RotateKt.rotate(modifier, z ? 180.0f : 0.0f), 0L, startRestartGroup, 48, 8);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -92,7 +92,7 @@ public final class ExposedDropdownMenuDefaults {
     }
 
     /* renamed from: textFieldColors-FD9MK7s  reason: not valid java name */
-    public final TextFieldColors m2359textFieldColorsFD9MK7s(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
+    public final TextFieldColors m2445textFieldColorsFD9MK7s(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
         TextSelectionColors textSelectionColors2;
         int i7;
         long j39;
@@ -109,7 +109,7 @@ public final class ExposedDropdownMenuDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, -375683630, "C(textFieldColors)N(focusedTextColor:c#ui.graphics.Color,unfocusedTextColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color,errorTextColor:c#ui.graphics.Color,focusedContainerColor:c#ui.graphics.Color,unfocusedContainerColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,errorContainerColor:c#ui.graphics.Color,cursorColor:c#ui.graphics.Color,errorCursorColor:c#ui.graphics.Color,selectionColors,focusedIndicatorColor:c#ui.graphics.Color,unfocusedIndicatorColor:c#ui.graphics.Color,disabledIndicatorColor:c#ui.graphics.Color,errorIndicatorColor:c#ui.graphics.Color,focusedLeadingIconColor:c#ui.graphics.Color,unfocusedLeadingIconColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,errorLeadingIconColor:c#ui.graphics.Color,focusedTrailingIconColor:c#ui.graphics.Color,unfocusedTrailingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color,errorTrailingIconColor:c#ui.graphics.Color,focusedLabelColor:c#ui.graphics.Color,unfocusedLabelColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,errorLabelColor:c#ui.graphics.Color,focusedPlaceholderColor:c#ui.graphics.Color,unfocusedPlaceholderColor:c#ui.graphics.Color,disabledPlaceholderColor:c#ui.graphics.Color,errorPlaceholderColor:c#ui.graphics.Color,focusedPrefixColor:c#ui.graphics.Color,unfocusedPrefixColor:c#ui.graphics.Color,disabledPrefixColor:c#ui.graphics.Color,errorPrefixColor:c#ui.graphics.Color,focusedSuffixColor:c#ui.graphics.Color,unfocusedSuffixColor:c#ui.graphics.Color,disabledSuffixColor:c#ui.graphics.Color,errorSuffixColor:c#ui.graphics.Color)565@26918L5,566@27006L5,568@27113L5,571@27301L5,572@27396L5,573@27493L5,574@27589L5,575@27682L5,576@27763L5,577@27859L5,578@27938L7,580@28058L5,582@28173L5,584@28295L5,588@28520L5,590@28636L5,591@28737L5,593@28857L5,597@29076L5,599@29194L5,601@29309L5,603@29431L5,607@29653L5,608@29745L5,609@29834L5,610@29930L5,611@30020L5,612@30118L5,613@30218L5,615@30337L5,618@30537L5,619@30630L5,620@30725L5,622@30839L5,625@31034L5,626@31127L5,627@31222L5,629@31336L5,632@31531L5,634@31589L2230:ExposedDropdownMenu.kt#uh7d8r");
         long value = (i5 & 1) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldFocusInputTextColor(), composer, 6) : j;
         long value2 = (i5 & 2) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldInputTextColor(), composer, 6) : j2;
-        long m5279copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
+        long m5423copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
         long value3 = (i5 & 8) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldErrorInputTextColor(), composer, 6) : j4;
         long value4 = (i5 & 16) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldContainerColor(), composer, 6) : j5;
         long value5 = (i5 & 32) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldContainerColor(), composer, 6) : j6;
@@ -133,7 +133,7 @@ public final class ExposedDropdownMenuDefaults {
             j39 = j11;
         }
         long value10 = (i5 & 4096) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldActiveIndicatorColor(), composer, i7) : j12;
-        long m5279copywmQWz5c$default2 = (i5 & 8192) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorColor(), composer, i7), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j13;
+        long m5423copywmQWz5c$default2 = (i5 & 8192) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorColor(), composer, i7), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j13;
         TextSelectionColors textSelectionColors3 = textSelectionColors2;
         if ((i5 & 16384) != 0) {
             i8 = 6;
@@ -144,7 +144,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value11 = (i5 & 32768) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldFocusLeadingIconColor(), composer, i8) : j15;
         long value12 = (i5 & 65536) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldLeadingIconColor(), composer, i8) : j16;
-        long m5279copywmQWz5c$default3 = (i5 & 131072) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j17;
+        long m5423copywmQWz5c$default3 = (i5 & 131072) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j17;
         if ((i5 & 262144) != 0) {
             i9 = 6;
             j41 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorLeadingIconColor(), composer, 6);
@@ -154,7 +154,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value13 = (i5 & 524288) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldFocusTrailingIconColor(), composer, i9) : j19;
         long value14 = (i5 & 1048576) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldTrailingIconColor(), composer, i9) : j20;
-        long m5279copywmQWz5c$default4 = (i5 & 2097152) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j21;
+        long m5423copywmQWz5c$default4 = (i5 & 2097152) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j21;
         if ((i5 & 4194304) != 0) {
             i10 = 6;
             j42 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorTrailingIconColor(), composer, 6);
@@ -168,7 +168,7 @@ public final class ExposedDropdownMenuDefaults {
         long value18 = (i5 & 67108864) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldErrorLabelTextColor(), composer, i10) : j26;
         long value19 = (i5 & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i10) : j27;
         long value20 = (i5 & 268435456) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i10) : j28;
-        long m5279copywmQWz5c$default5 = (i5 & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i10), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j29;
+        long m5423copywmQWz5c$default5 = (i5 & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i10), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j29;
         if ((i5 & 1073741824) != 0) {
             i11 = 6;
             j43 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -178,7 +178,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value21 = (i6 & 1) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j31;
         long value22 = (i6 & 2) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j32;
-        long m5279copywmQWz5c$default6 = (i6 & 4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j33;
+        long m5423copywmQWz5c$default6 = (i6 & 4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j33;
         if ((i6 & 8) != 0) {
             i12 = 6;
             j44 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -188,7 +188,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value23 = (i6 & 16) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j35;
         long value24 = (i6 & 32) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j36;
-        long m5279copywmQWz5c$default7 = (i6 & 64) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j37;
+        long m5423copywmQWz5c$default7 = (i6 & 64) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j37;
         long value25 = (i6 & 128) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6) : j38;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-375683630, i, i2, "androidx.compose.material3.ExposedDropdownMenuDefaults.textFieldColors (ExposedDropdownMenu.kt:634)");
@@ -196,20 +196,20 @@ public final class ExposedDropdownMenuDefaults {
         int i13 = i4 << 12;
         int i14 = i4 >> 18;
         int i15 = (i14 & 14) | 3072 | (i14 & 112) | (i14 & 896);
-        long j45 = m5279copywmQWz5c$default2;
-        long j46 = m5279copywmQWz5c$default;
+        long j45 = m5423copywmQWz5c$default2;
+        long j46 = m5423copywmQWz5c$default;
         long j47 = value5;
         long j48 = value8;
-        TextFieldColors m3140colors0hiis_0 = TextFieldDefaults.INSTANCE.m3140colors0hiis_0(value, value2, j46, value3, value4, j47, value6, value7, j48, value9, textSelectionColors3, j39, value10, j45, j40, value11, value12, m5279copywmQWz5c$default3, j41, value13, value14, m5279copywmQWz5c$default4, j42, value15, value16, value17, value18, value19, value20, m5279copywmQWz5c$default5, j43, 0L, 0L, 0L, 0L, value21, value22, m5279copywmQWz5c$default6, j44, value23, value24, m5279copywmQWz5c$default7, value25, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i13) | (3670016 & i13) | (29360128 & i13) | (234881024 & i13) | (i13 & 1879048192), i15, 0, 15);
+        TextFieldColors m3226colors0hiis_0 = TextFieldDefaults.INSTANCE.m3226colors0hiis_0(value, value2, j46, value3, value4, j47, value6, value7, j48, value9, textSelectionColors3, j39, value10, j45, j40, value11, value12, m5423copywmQWz5c$default3, j41, value13, value14, m5423copywmQWz5c$default4, j42, value15, value16, value17, value18, value19, value20, m5423copywmQWz5c$default5, j43, 0L, 0L, 0L, 0L, value21, value22, m5423copywmQWz5c$default6, j44, value23, value24, m5423copywmQWz5c$default7, value25, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i13) | (3670016 & i13) | (29360128 & i13) | (234881024 & i13) | (i13 & 1879048192), i15, 0, 15);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3140colors0hiis_0;
+        return m3226colors0hiis_0;
     }
 
     /* renamed from: outlinedTextFieldColors-FD9MK7s  reason: not valid java name */
-    public final TextFieldColors m2356outlinedTextFieldColorsFD9MK7s(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
+    public final TextFieldColors m2442outlinedTextFieldColorsFD9MK7s(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
         TextSelectionColors textSelectionColors2;
         int i7;
         long j39;
@@ -228,12 +228,12 @@ public final class ExposedDropdownMenuDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, -325161132, "C(outlinedTextFieldColors)N(focusedTextColor:c#ui.graphics.Color,unfocusedTextColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color,errorTextColor:c#ui.graphics.Color,focusedContainerColor:c#ui.graphics.Color,unfocusedContainerColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,errorContainerColor:c#ui.graphics.Color,cursorColor:c#ui.graphics.Color,errorCursorColor:c#ui.graphics.Color,selectionColors,focusedBorderColor:c#ui.graphics.Color,unfocusedBorderColor:c#ui.graphics.Color,disabledBorderColor:c#ui.graphics.Color,errorBorderColor:c#ui.graphics.Color,focusedLeadingIconColor:c#ui.graphics.Color,unfocusedLeadingIconColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,errorLeadingIconColor:c#ui.graphics.Color,focusedTrailingIconColor:c#ui.graphics.Color,unfocusedTrailingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color,errorTrailingIconColor:c#ui.graphics.Color,focusedLabelColor:c#ui.graphics.Color,unfocusedLabelColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,errorLabelColor:c#ui.graphics.Color,focusedPlaceholderColor:c#ui.graphics.Color,unfocusedPlaceholderColor:c#ui.graphics.Color,disabledPlaceholderColor:c#ui.graphics.Color,errorPlaceholderColor:c#ui.graphics.Color,focusedPrefixColor:c#ui.graphics.Color,unfocusedPrefixColor:c#ui.graphics.Color,disabledPrefixColor:c#ui.graphics.Color,errorPrefixColor:c#ui.graphics.Color,focusedSuffixColor:c#ui.graphics.Color,unfocusedSuffixColor:c#ui.graphics.Color,disabledSuffixColor:c#ui.graphics.Color,errorSuffixColor:c#ui.graphics.Color)726@37797L5,727@37887L5,729@37996L5,732@38188L5,737@38504L5,738@38602L5,739@38681L7,740@38780L5,741@38874L5,743@38987L5,746@39185L5,748@39303L5,750@39418L5,752@39540L5,756@39763L5,758@39883L5,760@40000L5,762@40124L5,766@40350L5,767@40444L5,768@40535L5,770@40645L5,773@40838L5,774@40938L5,776@41052L5,778@41173L5,781@41377L5,782@41472L5,783@41569L5,785@41685L5,788@41884L5,789@41979L5,790@42076L5,792@42192L5,795@42391L5,797@42457L2206:ExposedDropdownMenu.kt#uh7d8r");
         long value = (i5 & 1) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldFocusInputTextColor(), composer, 6) : j;
         long value2 = (i5 & 2) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldInputTextColor(), composer, 6) : j2;
-        long m5279copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
+        long m5423copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
         long value3 = (i5 & 8) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldErrorInputTextColor(), composer, 6) : j4;
-        long m5315getTransparent0d7_KjU = (i5 & 16) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j5;
-        long m5315getTransparent0d7_KjU2 = (i5 & 32) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j6;
-        long m5315getTransparent0d7_KjU3 = (i5 & 64) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j7;
-        long m5315getTransparent0d7_KjU4 = (i5 & 128) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j8;
+        long m5459getTransparent0d7_KjU = (i5 & 16) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j5;
+        long m5459getTransparent0d7_KjU2 = (i5 & 32) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j6;
+        long m5459getTransparent0d7_KjU3 = (i5 & 64) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j7;
+        long m5459getTransparent0d7_KjU4 = (i5 & 128) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j8;
         long value4 = (i5 & 256) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldCaretColor(), composer, 6) : j9;
         long value5 = (i5 & 512) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorFocusCaretColor(), composer, 6) : j10;
         if ((i5 & 1024) != 0) {
@@ -252,7 +252,7 @@ public final class ExposedDropdownMenuDefaults {
             j39 = j11;
         }
         long value6 = (i5 & 4096) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldOutlineColor(), composer, i7) : j12;
-        long m5279copywmQWz5c$default2 = (i5 & 8192) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineColor(), composer, i7), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j13;
+        long m5423copywmQWz5c$default2 = (i5 & 8192) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineColor(), composer, i7), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j13;
         TextSelectionColors textSelectionColors3 = textSelectionColors2;
         if ((i5 & 16384) != 0) {
             i8 = 6;
@@ -263,7 +263,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value7 = (i5 & 32768) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldFocusLeadingIconColor(), composer, i8) : j15;
         long value8 = (i5 & 65536) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldLeadingIconColor(), composer, i8) : j16;
-        long m5279copywmQWz5c$default3 = (i5 & 131072) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j17;
+        long m5423copywmQWz5c$default3 = (i5 & 131072) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j17;
         if ((i5 & 262144) != 0) {
             i9 = 6;
             j41 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorLeadingIconColor(), composer, 6);
@@ -273,7 +273,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value9 = (i5 & 524288) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldFocusTrailingIconColor(), composer, i9) : j19;
         long value10 = (i5 & 1048576) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldTrailingIconColor(), composer, i9) : j20;
-        long m5279copywmQWz5c$default4 = (i5 & 2097152) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j21;
+        long m5423copywmQWz5c$default4 = (i5 & 2097152) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j21;
         if ((i5 & 4194304) != 0) {
             i10 = 6;
             j42 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorTrailingIconColor(), composer, 6);
@@ -283,7 +283,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value11 = (i5 & 8388608) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldFocusLabelTextColor(), composer, i10) : j23;
         long value12 = (i5 & 16777216) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldLabelTextColor(), composer, i10) : j24;
-        long m5279copywmQWz5c$default5 = (i5 & 33554432) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextColor(), composer, i10), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j25;
+        long m5423copywmQWz5c$default5 = (i5 & 33554432) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextColor(), composer, i10), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j25;
         if ((i5 & 67108864) != 0) {
             i11 = 6;
             j43 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldErrorLabelTextColor(), composer, 6);
@@ -293,7 +293,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value13 = (i5 & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j27;
         long value14 = (i5 & 268435456) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j28;
-        long m5279copywmQWz5c$default6 = (i5 & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j29;
+        long m5423copywmQWz5c$default6 = (i5 & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j29;
         if ((i5 & 1073741824) != 0) {
             i12 = 6;
             j44 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -303,7 +303,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value15 = (i6 & 1) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j31;
         long value16 = (i6 & 2) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j32;
-        long m5279copywmQWz5c$default7 = (i6 & 4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j33;
+        long m5423copywmQWz5c$default7 = (i6 & 4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j33;
         if ((i6 & 8) != 0) {
             i13 = 6;
             j45 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -313,7 +313,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value17 = (i6 & 16) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i13) : j35;
         long value18 = (i6 & 32) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i13) : j36;
-        long m5279copywmQWz5c$default8 = (i6 & 64) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i13), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j37;
+        long m5423copywmQWz5c$default8 = (i6 & 64) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i13), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j37;
         long value19 = (i6 & 128) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6) : j38;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-325161132, i, i2, "androidx.compose.material3.ExposedDropdownMenuDefaults.outlinedTextFieldColors (ExposedDropdownMenu.kt:797)");
@@ -321,16 +321,16 @@ public final class ExposedDropdownMenuDefaults {
         int i14 = i4 << 12;
         int i15 = i4 >> 18;
         int i16 = (i15 & 14) | 3072 | (i15 & 112) | (i15 & 896);
-        long j46 = m5279copywmQWz5c$default2;
-        long j47 = m5279copywmQWz5c$default;
-        long j48 = m5315getTransparent0d7_KjU2;
+        long j46 = m5423copywmQWz5c$default2;
+        long j47 = m5423copywmQWz5c$default;
+        long j48 = m5459getTransparent0d7_KjU2;
         long j49 = value4;
-        TextFieldColors m2708colors0hiis_0 = OutlinedTextFieldDefaults.INSTANCE.m2708colors0hiis_0(value, value2, j47, value3, m5315getTransparent0d7_KjU, j48, m5315getTransparent0d7_KjU3, m5315getTransparent0d7_KjU4, j49, value5, textSelectionColors3, j39, value6, j46, j40, value7, value8, m5279copywmQWz5c$default3, j41, value9, value10, m5279copywmQWz5c$default4, j42, value11, value12, m5279copywmQWz5c$default5, j43, value13, value14, m5279copywmQWz5c$default6, j44, 0L, 0L, 0L, 0L, value15, value16, m5279copywmQWz5c$default7, j45, value17, value18, m5279copywmQWz5c$default8, value19, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i14) | (3670016 & i14) | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), i16, 0, 15);
+        TextFieldColors m2794colors0hiis_0 = OutlinedTextFieldDefaults.INSTANCE.m2794colors0hiis_0(value, value2, j47, value3, m5459getTransparent0d7_KjU, j48, m5459getTransparent0d7_KjU3, m5459getTransparent0d7_KjU4, j49, value5, textSelectionColors3, j39, value6, j46, j40, value7, value8, m5423copywmQWz5c$default3, j41, value9, value10, m5423copywmQWz5c$default4, j42, value11, value12, m5423copywmQWz5c$default5, j43, value13, value14, m5423copywmQWz5c$default6, j44, 0L, 0L, 0L, 0L, value15, value16, m5423copywmQWz5c$default7, j45, value17, value18, m5423copywmQWz5c$default8, value19, composer, i & 2147483646, i2 & 2147483646, i3 & 2147483646, (i4 & 14) | (458752 & i14) | (3670016 & i14) | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), i16, 0, 15);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2708colors0hiis_0;
+        return m2794colors0hiis_0;
     }
 
     public final PaddingValues getItemContentPadding() {
@@ -340,7 +340,7 @@ public final class ExposedDropdownMenuDefaults {
     static {
         float f;
         f = ExposedDropdownMenuKt.ExposedDropdownMenuItemHorizontalPadding;
-        ItemContentPadding = PaddingKt.m837PaddingValuesYgX7TsA(f, Dp.m7996constructorimpl(0));
+        ItemContentPadding = PaddingKt.m922PaddingValuesYgX7TsA(f, Dp.m8258constructorimpl(0));
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
@@ -385,7 +385,7 @@ public final class ExposedDropdownMenuDefaults {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: textFieldColors-tN0la-I  reason: not valid java name */
-    public final /* synthetic */ TextFieldColors m2361textFieldColorstN0laI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, TextSelectionColors textSelectionColors, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
+    public final /* synthetic */ TextFieldColors m2447textFieldColorstN0laI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, TextSelectionColors textSelectionColors, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
         TextSelectionColors textSelectionColors2;
         int i7;
         long j37;
@@ -403,7 +403,7 @@ public final class ExposedDropdownMenuDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 1357676928, "C(textFieldColors)N(focusedTextColor:c#ui.graphics.Color,unfocusedTextColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color,errorTextColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,errorContainerColor:c#ui.graphics.Color,cursorColor:c#ui.graphics.Color,errorCursorColor:c#ui.graphics.Color,selectionColors,focusedIndicatorColor:c#ui.graphics.Color,unfocusedIndicatorColor:c#ui.graphics.Color,disabledIndicatorColor:c#ui.graphics.Color,errorIndicatorColor:c#ui.graphics.Color,focusedLeadingIconColor:c#ui.graphics.Color,unfocusedLeadingIconColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,errorLeadingIconColor:c#ui.graphics.Color,focusedTrailingIconColor:c#ui.graphics.Color,unfocusedTrailingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color,errorTrailingIconColor:c#ui.graphics.Color,focusedLabelColor:c#ui.graphics.Color,unfocusedLabelColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,errorLabelColor:c#ui.graphics.Color,focusedPlaceholderColor:c#ui.graphics.Color,unfocusedPlaceholderColor:c#ui.graphics.Color,disabledPlaceholderColor:c#ui.graphics.Color,errorPlaceholderColor:c#ui.graphics.Color,focusedPrefixColor:c#ui.graphics.Color,unfocusedPrefixColor:c#ui.graphics.Color,disabledPrefixColor:c#ui.graphics.Color,errorPrefixColor:c#ui.graphics.Color,focusedSuffixColor:c#ui.graphics.Color,unfocusedSuffixColor:c#ui.graphics.Color,disabledSuffixColor:c#ui.graphics.Color,errorSuffixColor:c#ui.graphics.Color)854@45398L5,855@45486L5,857@45593L5,860@45781L5,861@45869L5,862@45962L5,863@46043L5,864@46139L5,865@46218L7,867@46338L5,869@46453L5,871@46575L5,875@46800L5,877@46916L5,878@47017L5,880@47137L5,884@47356L5,886@47474L5,888@47589L5,890@47711L5,894@47933L5,895@48025L5,896@48114L5,897@48210L5,898@48300L5,899@48398L5,900@48498L5,902@48617L5,905@48817L5,906@48910L5,907@49005L5,909@49119L5,912@49314L5,913@49407L5,914@49502L5,916@49616L5,919@49811L5,921@49851L2215:ExposedDropdownMenu.kt#uh7d8r");
         long value = (i5 & 1) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldFocusInputTextColor(), composer, 6) : j;
         long value2 = (i5 & 2) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldInputTextColor(), composer, 6) : j2;
-        long m5279copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
+        long m5423copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
         long value3 = (i5 & 8) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldErrorInputTextColor(), composer, 6) : j4;
         long value4 = (i5 & 16) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldContainerColor(), composer, 6) : j5;
         long value5 = (i5 & 32) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldContainerColor(), composer, 6) : j6;
@@ -425,20 +425,20 @@ public final class ExposedDropdownMenuDefaults {
             j37 = j9;
         }
         long value8 = (i5 & 1024) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldActiveIndicatorColor(), composer, i7) : j10;
-        long m5279copywmQWz5c$default2 = (i5 & 2048) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorColor(), composer, i7), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j11;
+        long m5423copywmQWz5c$default2 = (i5 & 2048) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorColor(), composer, i7), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j11;
         TextSelectionColors textSelectionColors3 = textSelectionColors2;
         if ((i5 & 4096) != 0) {
-            j38 = m5279copywmQWz5c$default2;
+            j38 = m5423copywmQWz5c$default2;
             i8 = 6;
             j39 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorActiveIndicatorColor(), composer, 6);
         } else {
-            j38 = m5279copywmQWz5c$default2;
+            j38 = m5423copywmQWz5c$default2;
             i8 = 6;
             j39 = j12;
         }
         long value9 = (i5 & 8192) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldFocusLeadingIconColor(), composer, i8) : j13;
         long value10 = (i5 & 16384) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldLeadingIconColor(), composer, i8) : j14;
-        long m5279copywmQWz5c$default3 = (32768 & i5) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j15;
+        long m5423copywmQWz5c$default3 = (32768 & i5) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j15;
         if ((65536 & i5) != 0) {
             i9 = 6;
             j40 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorLeadingIconColor(), composer, 6);
@@ -448,7 +448,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value11 = (131072 & i5) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldFocusTrailingIconColor(), composer, i9) : j17;
         long value12 = (262144 & i5) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldTrailingIconColor(), composer, i9) : j18;
-        long m5279copywmQWz5c$default4 = (524288 & i5) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j19;
+        long m5423copywmQWz5c$default4 = (524288 & i5) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j19;
         if ((1048576 & i5) != 0) {
             i10 = 6;
             j41 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorTrailingIconColor(), composer, 6);
@@ -462,7 +462,7 @@ public final class ExposedDropdownMenuDefaults {
         long value16 = (16777216 & i5) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldErrorLabelTextColor(), composer, i10) : j24;
         long value17 = (33554432 & i5) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i10) : j25;
         long value18 = (67108864 & i5) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i10) : j26;
-        long m5279copywmQWz5c$default5 = (134217728 & i5) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i10), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j27;
+        long m5423copywmQWz5c$default5 = (134217728 & i5) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i10), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j27;
         if ((268435456 & i5) != 0) {
             i11 = 6;
             j42 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -472,7 +472,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value19 = (536870912 & i5) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j29;
         long value20 = (i5 & 1073741824) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j30;
-        long m5279copywmQWz5c$default6 = (i6 & 1) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j31;
+        long m5423copywmQWz5c$default6 = (i6 & 1) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j31;
         if ((i6 & 2) != 0) {
             i12 = 6;
             j43 = ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -482,7 +482,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value21 = (i6 & 4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j33;
         long value22 = (i6 & 8) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j34;
-        long m5279copywmQWz5c$default7 = (i6 & 16) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j35;
+        long m5423copywmQWz5c$default7 = (i6 & 16) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), FilledAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j35;
         long value23 = (i6 & 32) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6) : j36;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1357676928, i, i2, "androidx.compose.material3.ExposedDropdownMenuDefaults.textFieldColors (ExposedDropdownMenu.kt:921)");
@@ -495,17 +495,17 @@ public final class ExposedDropdownMenuDefaults {
         int i18 = ((i2 >> 24) & WebSocketProtocol.PAYLOAD_SHORT) | (i17 & 896) | (i17 & 7168) | (i17 & 57344) | (i17 & 458752) | (i17 & 3670016) | (i17 & 29360128) | (i17 & 234881024) | (i17 & 1879048192);
         int i19 = i4 << 6;
         long j44 = value4;
-        TextFieldColors m2359textFieldColorsFD9MK7s = m2359textFieldColorsFD9MK7s(value, value2, m5279copywmQWz5c$default, value3, j44, value4, j44, value5, value6, value7, textSelectionColors3, j37, value8, j38, j39, value9, value10, m5279copywmQWz5c$default3, j40, value11, value12, m5279copywmQWz5c$default4, j41, value13, value14, value15, value16, value17, value18, m5279copywmQWz5c$default5, j42, value19, value20, m5279copywmQWz5c$default6, j43, value21, value22, m5279copywmQWz5c$default7, value23, composer, i14, i16, i18, ((i3 >> 24) & WebSocketProtocol.PAYLOAD_SHORT) | (i19 & 896) | (i19 & 7168) | (i19 & 57344) | (i19 & 458752) | (i19 & 3670016) | (i19 & 29360128) | (i19 & 234881024) | (i19 & 1879048192), 0, 0);
+        TextFieldColors m2445textFieldColorsFD9MK7s = m2445textFieldColorsFD9MK7s(value, value2, m5423copywmQWz5c$default, value3, j44, value4, j44, value5, value6, value7, textSelectionColors3, j37, value8, j38, j39, value9, value10, m5423copywmQWz5c$default3, j40, value11, value12, m5423copywmQWz5c$default4, j41, value13, value14, value15, value16, value17, value18, m5423copywmQWz5c$default5, j42, value19, value20, m5423copywmQWz5c$default6, j43, value21, value22, m5423copywmQWz5c$default7, value23, composer, i14, i16, i18, ((i3 >> 24) & WebSocketProtocol.PAYLOAD_SHORT) | (i19 & 896) | (i19 & 7168) | (i19 & 57344) | (i19 & 458752) | (i19 & 3670016) | (i19 & 29360128) | (i19 & 234881024) | (i19 & 1879048192), 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2359textFieldColorsFD9MK7s;
+        return m2445textFieldColorsFD9MK7s;
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: outlinedTextFieldColors-tN0la-I  reason: not valid java name */
-    public final /* synthetic */ TextFieldColors m2358outlinedTextFieldColorstN0laI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, TextSelectionColors textSelectionColors, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
+    public final /* synthetic */ TextFieldColors m2444outlinedTextFieldColorstN0laI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, TextSelectionColors textSelectionColors, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, Composer composer, int i, int i2, int i3, int i4, int i5, int i6) {
         TextSelectionColors textSelectionColors2;
         int i7;
         long j37;
@@ -525,10 +525,10 @@ public final class ExposedDropdownMenuDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, -907010558, "C(outlinedTextFieldColors)N(focusedTextColor:c#ui.graphics.Color,unfocusedTextColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color,errorTextColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,errorContainerColor:c#ui.graphics.Color,cursorColor:c#ui.graphics.Color,errorCursorColor:c#ui.graphics.Color,selectionColors,focusedBorderColor:c#ui.graphics.Color,unfocusedBorderColor:c#ui.graphics.Color,disabledBorderColor:c#ui.graphics.Color,errorBorderColor:c#ui.graphics.Color,focusedLeadingIconColor:c#ui.graphics.Color,unfocusedLeadingIconColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,errorLeadingIconColor:c#ui.graphics.Color,focusedTrailingIconColor:c#ui.graphics.Color,unfocusedTrailingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color,errorTrailingIconColor:c#ui.graphics.Color,focusedLabelColor:c#ui.graphics.Color,unfocusedLabelColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,errorLabelColor:c#ui.graphics.Color,focusedPlaceholderColor:c#ui.graphics.Color,unfocusedPlaceholderColor:c#ui.graphics.Color,disabledPlaceholderColor:c#ui.graphics.Color,errorPlaceholderColor:c#ui.graphics.Color,focusedPrefixColor:c#ui.graphics.Color,unfocusedPrefixColor:c#ui.graphics.Color,disabledPrefixColor:c#ui.graphics.Color,errorPrefixColor:c#ui.graphics.Color,focusedSuffixColor:c#ui.graphics.Color,unfocusedSuffixColor:c#ui.graphics.Color,disabledSuffixColor:c#ui.graphics.Color,errorSuffixColor:c#ui.graphics.Color)966@52291L5,967@52381L5,969@52490L5,972@52682L5,975@52872L5,976@52970L5,977@53049L7,978@53148L5,979@53242L5,981@53355L5,984@53553L5,986@53671L5,988@53786L5,990@53908L5,994@54131L5,996@54251L5,998@54368L5,1000@54492L5,1004@54718L5,1005@54812L5,1006@54903L5,1008@55013L5,1011@55206L5,1012@55306L5,1014@55420L5,1016@55541L5,1019@55745L5,1020@55840L5,1021@55937L5,1023@56053L5,1026@56252L5,1027@56347L5,1028@56444L5,1030@56560L5,1033@56759L5,1035@56799L2199:ExposedDropdownMenu.kt#uh7d8r");
         long value = (i5 & 1) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldFocusInputTextColor(), composer, 6) : j;
         long value2 = (i5 & 2) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldInputTextColor(), composer, 6) : j2;
-        long m5279copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
+        long m5423copywmQWz5c$default = (i5 & 4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
         long value3 = (i5 & 8) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldErrorInputTextColor(), composer, 6) : j4;
-        long m5315getTransparent0d7_KjU = (i5 & 16) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j5;
-        long m5315getTransparent0d7_KjU2 = (i5 & 32) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j6;
+        long m5459getTransparent0d7_KjU = (i5 & 16) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j5;
+        long m5459getTransparent0d7_KjU2 = (i5 & 32) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j6;
         long value4 = (i5 & 64) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldCaretColor(), composer, 6) : j7;
         long value5 = (i5 & 128) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorFocusCaretColor(), composer, 6) : j8;
         if ((i5 & 256) != 0) {
@@ -547,20 +547,20 @@ public final class ExposedDropdownMenuDefaults {
             j37 = j9;
         }
         long value6 = (i5 & 1024) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldOutlineColor(), composer, i7) : j10;
-        long m5279copywmQWz5c$default2 = (i5 & 2048) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineColor(), composer, i7), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j11;
+        long m5423copywmQWz5c$default2 = (i5 & 2048) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineColor(), composer, i7), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j11;
         TextSelectionColors textSelectionColors3 = textSelectionColors2;
         if ((i5 & 4096) != 0) {
-            j38 = m5279copywmQWz5c$default2;
+            j38 = m5423copywmQWz5c$default2;
             i8 = 6;
             j39 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorOutlineColor(), composer, 6);
         } else {
-            j38 = m5279copywmQWz5c$default2;
+            j38 = m5423copywmQWz5c$default2;
             i8 = 6;
             j39 = j12;
         }
         long value7 = (i5 & 8192) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldFocusLeadingIconColor(), composer, i8) : j13;
         long value8 = (i5 & 16384) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldLeadingIconColor(), composer, i8) : j14;
-        long m5279copywmQWz5c$default3 = (32768 & i5) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j15;
+        long m5423copywmQWz5c$default3 = (32768 & i5) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, i8), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j15;
         if ((65536 & i5) != 0) {
             i9 = 6;
             j40 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorLeadingIconColor(), composer, 6);
@@ -570,7 +570,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value9 = (131072 & i5) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldFocusTrailingIconColor(), composer, i9) : j17;
         long value10 = (262144 & i5) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldTrailingIconColor(), composer, i9) : j18;
-        long m5279copywmQWz5c$default4 = (524288 & i5) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j19;
+        long m5423copywmQWz5c$default4 = (524288 & i5) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, i9), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j19;
         if ((1048576 & i5) != 0) {
             i10 = 6;
             j41 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorTrailingIconColor(), composer, 6);
@@ -580,7 +580,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value11 = (2097152 & i5) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldFocusLabelTextColor(), composer, i10) : j21;
         long value12 = (4194304 & i5) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldLabelTextColor(), composer, i10) : j22;
-        long m5279copywmQWz5c$default5 = (8388608 & i5) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextColor(), composer, i10), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j23;
+        long m5423copywmQWz5c$default5 = (8388608 & i5) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextColor(), composer, i10), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j23;
         if ((16777216 & i5) != 0) {
             i11 = 6;
             j42 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldErrorLabelTextColor(), composer, 6);
@@ -590,7 +590,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value13 = (33554432 & i5) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j25;
         long value14 = (67108864 & i5) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i11) : j26;
-        long m5279copywmQWz5c$default6 = (134217728 & i5) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j27;
+        long m5423copywmQWz5c$default6 = (134217728 & i5) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i11), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j27;
         if ((268435456 & i5) != 0) {
             i12 = 6;
             j43 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -600,7 +600,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value15 = (536870912 & i5) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j29;
         long value16 = (i5 & 1073741824) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i12) : j30;
-        long m5279copywmQWz5c$default7 = (i6 & 1) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j31;
+        long m5423copywmQWz5c$default7 = (i6 & 1) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i12), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j31;
         if ((i6 & 2) != 0) {
             i13 = 6;
             j44 = ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6);
@@ -610,7 +610,7 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value17 = (i6 & 4) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i13) : j33;
         long value18 = (i6 & 8) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, i13) : j34;
-        long m5279copywmQWz5c$default8 = (i6 & 16) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i13), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j35;
+        long m5423copywmQWz5c$default8 = (i6 & 16) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, i13), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j35;
         long value19 = (i6 & 32) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6) : j36;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-907010558, i, i2, "androidx.compose.material3.ExposedDropdownMenuDefaults.outlinedTextFieldColors (ExposedDropdownMenu.kt:1035)");
@@ -622,22 +622,22 @@ public final class ExposedDropdownMenuDefaults {
         int i18 = i3 << 6;
         int i19 = ((i2 >> 24) & WebSocketProtocol.PAYLOAD_SHORT) | (i18 & 896) | (i18 & 7168) | (i18 & 57344) | (i18 & 458752) | (i18 & 3670016) | (i18 & 29360128) | (i18 & 234881024) | (i18 & 1879048192);
         int i20 = i4 << 6;
-        long j45 = m5315getTransparent0d7_KjU;
-        TextFieldColors m2356outlinedTextFieldColorsFD9MK7s = m2356outlinedTextFieldColorsFD9MK7s(value, value2, m5279copywmQWz5c$default, value3, j45, m5315getTransparent0d7_KjU, j45, m5315getTransparent0d7_KjU2, value4, value5, textSelectionColors3, j37, value6, j38, j39, value7, value8, m5279copywmQWz5c$default3, j40, value9, value10, m5279copywmQWz5c$default4, j41, value11, value12, m5279copywmQWz5c$default5, j42, value13, value14, m5279copywmQWz5c$default6, j43, value15, value16, m5279copywmQWz5c$default7, j44, value17, value18, m5279copywmQWz5c$default8, value19, composer, i15, i17, i19, ((i3 >> 24) & WebSocketProtocol.PAYLOAD_SHORT) | (i20 & 896) | (i20 & 7168) | (i20 & 57344) | (i20 & 458752) | (i20 & 3670016) | (i20 & 29360128) | (i20 & 234881024) | (i20 & 1879048192), 0, 0);
+        long j45 = m5459getTransparent0d7_KjU;
+        TextFieldColors m2442outlinedTextFieldColorsFD9MK7s = m2442outlinedTextFieldColorsFD9MK7s(value, value2, m5423copywmQWz5c$default, value3, j45, m5459getTransparent0d7_KjU, j45, m5459getTransparent0d7_KjU2, value4, value5, textSelectionColors3, j37, value6, j38, j39, value7, value8, m5423copywmQWz5c$default3, j40, value9, value10, m5423copywmQWz5c$default4, j41, value11, value12, m5423copywmQWz5c$default5, j42, value13, value14, m5423copywmQWz5c$default6, j43, value15, value16, m5423copywmQWz5c$default7, j44, value17, value18, m5423copywmQWz5c$default8, value19, composer, i15, i17, i19, ((i3 >> 24) & WebSocketProtocol.PAYLOAD_SHORT) | (i20 & 896) | (i20 & 7168) | (i20 & 57344) | (i20 & 458752) | (i20 & 3670016) | (i20 & 29360128) | (i20 & 234881024) | (i20 & 1879048192), 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2356outlinedTextFieldColorsFD9MK7s;
+        return m2442outlinedTextFieldColorsFD9MK7s;
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: textFieldColors-St-qZLY  reason: not valid java name */
-    public final /* synthetic */ TextFieldColors m2360textFieldColorsStqZLY(long j, long j2, long j3, long j4, long j5, TextSelectionColors textSelectionColors, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, Composer composer, int i, int i2, int i3, int i4) {
+    public final /* synthetic */ TextFieldColors m2446textFieldColorsStqZLY(long j, long j2, long j3, long j4, long j5, TextSelectionColors textSelectionColors, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, Composer composer, int i, int i2, int i3, int i4) {
         TextSelectionColors textSelectionColors2;
         ComposerKt.sourceInformationMarkerStart(composer, -2013303349, "C(textFieldColors)N(textColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,cursorColor:c#ui.graphics.Color,errorCursorColor:c#ui.graphics.Color,selectionColors,focusedIndicatorColor:c#ui.graphics.Color,unfocusedIndicatorColor:c#ui.graphics.Color,disabledIndicatorColor:c#ui.graphics.Color,errorIndicatorColor:c#ui.graphics.Color,focusedLeadingIconColor:c#ui.graphics.Color,unfocusedLeadingIconColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,errorLeadingIconColor:c#ui.graphics.Color,focusedTrailingIconColor:c#ui.graphics.Color,unfocusedTrailingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color,errorTrailingIconColor:c#ui.graphics.Color,focusedLabelColor:c#ui.graphics.Color,unfocusedLabelColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,errorLabelColor:c#ui.graphics.Color,placeholderColor:c#ui.graphics.Color,disabledPlaceholderColor:c#ui.graphics.Color)1080@59201L5,1082@59308L5,1085@59495L5,1086@59576L5,1087@59672L5,1088@59751L7,1090@59871L5,1092@59986L5,1094@60108L5,1098@60333L5,1100@60449L5,1101@60550L5,1103@60670L5,1107@60889L5,1109@61007L5,1111@61122L5,1113@61244L5,1117@61466L5,1118@61558L5,1119@61647L5,1120@61743L5,1121@61833L5,1122@61924L5,1124@62038L5,1160@63993L5,1161@64087L5,1163@64204L5,1166@64408L5,1167@64500L5,1168@64594L5,1170@64711L5,1173@64915L5,1128@62177L2754:ExposedDropdownMenu.kt#uh7d8r");
         long value = (i4 & 1) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldInputTextColor(), composer, 6) : j;
-        long m5279copywmQWz5c$default = (i4 & 2) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
+        long m5423copywmQWz5c$default = (i4 & 2) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
         long value2 = (i4 & 4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldContainerColor(), composer, 6) : j3;
         long value3 = (i4 & 8) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldCaretColor(), composer, 6) : j4;
         long value4 = (i4 & 16) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorFocusCaretColor(), composer, 6) : j5;
@@ -651,22 +651,22 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value5 = (i4 & 64) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldFocusActiveIndicatorColor(), composer, 6) : j6;
         long value6 = (i4 & 128) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldActiveIndicatorColor(), composer, 6) : j7;
-        long m5279copywmQWz5c$default2 = (i4 & 256) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j8;
+        long m5423copywmQWz5c$default2 = (i4 & 256) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledActiveIndicatorOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j8;
         long value7 = (i4 & 512) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorActiveIndicatorColor(), composer, 6) : j9;
         long value8 = (i4 & 1024) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldFocusLeadingIconColor(), composer, 6) : j10;
         long value9 = (i4 & 2048) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldLeadingIconColor(), composer, 6) : j11;
-        long m5279copywmQWz5c$default3 = (i4 & 4096) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j12;
+        long m5423copywmQWz5c$default3 = (i4 & 4096) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j12;
         long value10 = (i4 & 8192) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorLeadingIconColor(), composer, 6) : j13;
         long value11 = (i4 & 16384) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldFocusTrailingIconColor(), composer, 6) : j14;
         long value12 = (32768 & i4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldTrailingIconColor(), composer, 6) : j15;
-        long m5279copywmQWz5c$default4 = (65536 & i4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j16;
+        long m5423copywmQWz5c$default4 = (65536 & i4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j16;
         long value13 = (131072 & i4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getTextFieldErrorTrailingIconColor(), composer, 6) : j17;
         long value14 = (262144 & i4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldFocusLabelTextColor(), composer, 6) : j18;
         long value15 = (524288 & i4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldLabelTextColor(), composer, 6) : j19;
         long value16 = (1048576 & i4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextColor(), composer, 6) : j20;
         long value17 = (2097152 & i4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldErrorLabelTextColor(), composer, 6) : j21;
         long value18 = (4194304 & i4) != 0 ? ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6) : j22;
-        long m5279copywmQWz5c$default5 = (i4 & 8388608) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j23;
+        long m5423copywmQWz5c$default5 = (i4 & 8388608) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), FilledAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j23;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2013303349, i, i2, "androidx.compose.material3.ExposedDropdownMenuDefaults.textFieldColors (ExposedDropdownMenu.kt:1128)");
         }
@@ -682,22 +682,22 @@ public final class ExposedDropdownMenuDefaults {
         int i14 = ((i3 >> 6) & 14) | (i12 & 1879048192);
         long j24 = value;
         long j25 = value2;
-        TextFieldColors m2359textFieldColorsFD9MK7s = m2359textFieldColorsFD9MK7s(j24, value, m5279copywmQWz5c$default, j24, j25, j25, j25, j25, value3, value4, textSelectionColors2, value5, value6, m5279copywmQWz5c$default2, value7, value8, value9, m5279copywmQWz5c$default3, value10, value11, value12, m5279copywmQWz5c$default4, value13, value14, value15, value16, value17, value18, value18, m5279copywmQWz5c$default5, value18, ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), composer, i10, ((i >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024) | (i11 & 1879048192), ((i2 >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i12 & 458752) | (i12 & 3670016) | (i12 & 29360128) | (i13 & 234881024) | (i13 & 1879048192), i14, 0, 0);
+        TextFieldColors m2445textFieldColorsFD9MK7s = m2445textFieldColorsFD9MK7s(j24, value, m5423copywmQWz5c$default, j24, j25, j25, j25, j25, value3, value4, textSelectionColors2, value5, value6, m5423copywmQWz5c$default2, value7, value8, value9, m5423copywmQWz5c$default3, value10, value11, value12, m5423copywmQWz5c$default4, value13, value14, value15, value16, value17, value18, value18, m5423copywmQWz5c$default5, value18, ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), composer, i10, ((i >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024) | (i11 & 1879048192), ((i2 >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i12 & 458752) | (i12 & 3670016) | (i12 & 29360128) | (i13 & 234881024) | (i13 & 1879048192), i14, 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2359textFieldColorsFD9MK7s;
+        return m2445textFieldColorsFD9MK7s;
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: outlinedTextFieldColors-St-qZLY  reason: not valid java name */
-    public final /* synthetic */ TextFieldColors m2357outlinedTextFieldColorsStqZLY(long j, long j2, long j3, long j4, long j5, TextSelectionColors textSelectionColors, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, Composer composer, int i, int i2, int i3, int i4) {
+    public final /* synthetic */ TextFieldColors m2443outlinedTextFieldColorsStqZLY(long j, long j2, long j3, long j4, long j5, TextSelectionColors textSelectionColors, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, Composer composer, int i, int i2, int i3, int i4) {
         TextSelectionColors textSelectionColors2;
         ComposerKt.sourceInformationMarkerStart(composer, -83147315, "C(outlinedTextFieldColors)N(textColor:c#ui.graphics.Color,disabledTextColor:c#ui.graphics.Color,containerColor:c#ui.graphics.Color,cursorColor:c#ui.graphics.Color,errorCursorColor:c#ui.graphics.Color,selectionColors,focusedBorderColor:c#ui.graphics.Color,unfocusedBorderColor:c#ui.graphics.Color,disabledBorderColor:c#ui.graphics.Color,errorBorderColor:c#ui.graphics.Color,focusedLeadingIconColor:c#ui.graphics.Color,unfocusedLeadingIconColor:c#ui.graphics.Color,disabledLeadingIconColor:c#ui.graphics.Color,errorLeadingIconColor:c#ui.graphics.Color,focusedTrailingIconColor:c#ui.graphics.Color,unfocusedTrailingIconColor:c#ui.graphics.Color,disabledTrailingIconColor:c#ui.graphics.Color,errorTrailingIconColor:c#ui.graphics.Color,focusedLabelColor:c#ui.graphics.Color,unfocusedLabelColor:c#ui.graphics.Color,disabledLabelColor:c#ui.graphics.Color,errorLabelColor:c#ui.graphics.Color,placeholderColor:c#ui.graphics.Color,disabledPlaceholderColor:c#ui.graphics.Color)1179@65144L5,1181@65253L5,1185@65488L5,1186@65586L5,1187@65665L7,1188@65764L5,1189@65858L5,1191@65971L5,1194@66169L5,1196@66287L5,1198@66402L5,1200@66524L5,1204@66747L5,1206@66867L5,1208@66984L5,1210@67108L5,1214@67334L5,1215@67428L5,1216@67519L5,1218@67629L5,1221@67822L5,1222@67915L5,1224@68031L5,1260@69972L5,1261@70066L5,1263@70183L5,1266@70387L5,1267@70479L5,1268@70573L5,1270@70690L5,1273@70894L5,1228@68172L2738:ExposedDropdownMenu.kt#uh7d8r");
         long value = (i4 & 1) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldInputTextColor(), composer, 6) : j;
-        long m5279copywmQWz5c$default = (i4 & 2) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
-        long m5315getTransparent0d7_KjU = (i4 & 4) != 0 ? Color.Companion.m5315getTransparent0d7_KjU() : j3;
+        long m5423copywmQWz5c$default = (i4 & 2) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
+        long m5459getTransparent0d7_KjU = (i4 & 4) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j3;
         long value2 = (i4 & 8) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldCaretColor(), composer, 6) : j4;
         long value3 = (i4 & 16) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorFocusCaretColor(), composer, 6) : j5;
         if ((i4 & 32) != 0) {
@@ -710,22 +710,22 @@ public final class ExposedDropdownMenuDefaults {
         }
         long value4 = (i4 & 64) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldFocusOutlineColor(), composer, 6) : j6;
         long value5 = (i4 & 128) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldOutlineColor(), composer, 6) : j7;
-        long m5279copywmQWz5c$default2 = (i4 & 256) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j8;
+        long m5423copywmQWz5c$default2 = (i4 & 256) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j8;
         long value6 = (i4 & 512) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorOutlineColor(), composer, 6) : j9;
         long value7 = (i4 & 1024) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldFocusLeadingIconColor(), composer, 6) : j10;
         long value8 = (i4 & 2048) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldLeadingIconColor(), composer, 6) : j11;
-        long m5279copywmQWz5c$default3 = (i4 & 4096) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j12;
+        long m5423copywmQWz5c$default3 = (i4 & 4096) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j12;
         long value9 = (i4 & 8192) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorLeadingIconColor(), composer, 6) : j13;
         long value10 = (i4 & 16384) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldFocusTrailingIconColor(), composer, 6) : j14;
         long value11 = (32768 & i4) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldTrailingIconColor(), composer, 6) : j15;
-        long m5279copywmQWz5c$default4 = (65536 & i4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j16;
+        long m5423copywmQWz5c$default4 = (65536 & i4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getTextFieldDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j16;
         long value12 = (131072 & i4) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getTextFieldErrorTrailingIconColor(), composer, 6) : j17;
         long value13 = (262144 & i4) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldFocusLabelTextColor(), composer, 6) : j18;
         long value14 = (524288 & i4) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldLabelTextColor(), composer, 6) : j19;
-        long m5279copywmQWz5c$default5 = (1048576 & i4) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j20;
+        long m5423copywmQWz5c$default5 = (1048576 & i4) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j20;
         long value15 = (2097152 & i4) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldErrorLabelTextColor(), composer, 6) : j21;
         long value16 = (4194304 & i4) != 0 ? ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6) : j22;
-        long m5279copywmQWz5c$default6 = (i4 & 8388608) != 0 ? Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j23;
+        long m5423copywmQWz5c$default6 = (i4 & 8388608) != 0 ? Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledInputTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j23;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-83147315, i, i2, "androidx.compose.material3.ExposedDropdownMenuDefaults.outlinedTextFieldColors (ExposedDropdownMenu.kt:1228)");
         }
@@ -740,12 +740,12 @@ public final class ExposedDropdownMenuDefaults {
         int i13 = i3 << 18;
         int i14 = ((i3 >> 6) & 14) | (i12 & 1879048192);
         long j24 = value;
-        long j25 = m5315getTransparent0d7_KjU;
-        TextFieldColors m2356outlinedTextFieldColorsFD9MK7s = m2356outlinedTextFieldColorsFD9MK7s(j24, value, m5279copywmQWz5c$default, j24, j25, j25, j25, j25, value2, value3, textSelectionColors2, value4, value5, m5279copywmQWz5c$default2, value6, value7, value8, m5279copywmQWz5c$default3, value9, value10, value11, m5279copywmQWz5c$default4, value12, value13, value14, m5279copywmQWz5c$default5, value15, value16, value16, m5279copywmQWz5c$default6, value16, ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5279copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), composer, i10, ((i >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024) | (i11 & 1879048192), ((i2 >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i12 & 458752) | (i12 & 3670016) | (i12 & 29360128) | (i13 & 234881024) | (i13 & 1879048192), i14, 0, 0);
+        long j25 = m5459getTransparent0d7_KjU;
+        TextFieldColors m2442outlinedTextFieldColorsFD9MK7s = m2442outlinedTextFieldColorsFD9MK7s(j24, value, m5423copywmQWz5c$default, j24, j25, j25, j25, j25, value2, value3, textSelectionColors2, value4, value5, m5423copywmQWz5c$default2, value6, value7, value8, m5423copywmQWz5c$default3, value9, value10, value11, m5423copywmQWz5c$default4, value12, value13, value14, m5423copywmQWz5c$default5, value15, value16, value16, m5423copywmQWz5c$default6, value16, ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextColor(), composer, 6), OutlinedAutocompleteTokens.INSTANCE.getFieldDisabledSupportingTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(OutlinedAutocompleteTokens.INSTANCE.getFieldSupportingTextColor(), composer, 6), composer, i10, ((i >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024) | (i11 & 1879048192), ((i2 >> 15) & WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE) | (i12 & 458752) | (i12 & 3670016) | (i12 & 29360128) | (i13 & 234881024) | (i13 & 1879048192), i14, 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2356outlinedTextFieldColorsFD9MK7s;
+        return m2442outlinedTextFieldColorsFD9MK7s;
     }
 }

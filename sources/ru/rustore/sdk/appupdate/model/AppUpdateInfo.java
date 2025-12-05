@@ -70,7 +70,7 @@ public final class AppUpdateInfo {
             simpleDateFormat.setTimeZone(i0.c);
             Date parse = simpleDateFormat.parse(string);
             Intrinsics.checkNotNull(parse);
-            Date time = this.timeProvider.f1445a.getTime();
+            Date time = this.timeProvider.f1528a.getTime();
             Intrinsics.checkNotNullExpressionValue(time, "calendar.time");
             int calcDayBetween = calcDayBetween(time, parse);
             if (i != 1) {

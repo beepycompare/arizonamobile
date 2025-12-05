@@ -43,7 +43,6 @@ import androidx.constraintlayout.widget.Constraints;
 import androidx.constraintlayout.widget.R;
 import androidx.core.internal.view.SupportMenu;
 import androidx.core.view.NestedScrollingParent3;
-import androidx.core.view.ViewCompat;
 import androidx.exifinterface.media.ExifInterface;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
@@ -2309,7 +2308,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             StringBuilder append = new StringBuilder().append(this.mLastFps + " fps " + Debug.getState(this, this.mBeginState) + " -> ").append(Debug.getState(this, this.mEndState)).append(" (progress: ").append(((int) (getProgress() * 1000.0f)) / 10.0f).append(" ) state=");
             int i = this.mCurrentState;
             String sb = append.append(i == -1 ? StringUtils.UNDEFINED : Debug.getState(this, i)).toString();
-            paint.setColor(ViewCompat.MEASURED_STATE_MASK);
+            paint.setColor(-16777216);
             canvas.drawText(sb, 11.0f, getHeight() - 29, paint);
             paint.setColor(-7864184);
             canvas.drawText(sb, 10.0f, getHeight() - 30, paint);

@@ -38,17 +38,17 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.functions.Function5;
 /* compiled from: LazyGridDsl.kt */
-@Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0003\u001a\u008a\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u0019\u001a~\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u001a\u001a\u008a\u0001\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u001d\u001a~\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u001e\u001a\u001d\u0010\u001f\u001a\u00020 2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000fH\u0003¢\u0006\u0002\u0010!\u001a\u001d\u0010\"\u001a\u00020 2\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\rH\u0003¢\u0006\u0002\u0010#\u001a&\u0010$\u001a\b\u0012\u0004\u0012\u00020&0%2\u0006\u0010'\u001a\u00020&2\u0006\u0010(\u001a\u00020&2\u0006\u0010)\u001a\u00020&H\u0002\u001aÛ\u0001\u0010*\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0%2%\b\n\u0010,\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u00010\u001620\b\n\u00101\u001a*\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u000102¢\u0006\u0002\b\u00182%\b\n\u00105\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u0001000\u001623\b\u0004\u00106\u001a-\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u000102¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u00109\u001a¯\u0002\u0010:\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0%2:\b\n\u0010,\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u0001022E\b\n\u00101\u001a?\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u00010<¢\u0006\u0002\b\u00182:\b\u0006\u00105\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u000100022H\b\u0004\u00106\u001aB\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u00010<¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u0010=\u001aÛ\u0001\u0010*\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0>2%\b\n\u0010,\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u00010\u001620\b\n\u00101\u001a*\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u000102¢\u0006\u0002\b\u00182%\b\n\u00105\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u0001000\u001623\b\u0004\u00106\u001a-\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u000102¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u0010?\u001a¯\u0002\u0010:\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0>2:\b\n\u0010,\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u0001022E\b\n\u00101\u001a?\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u00010<¢\u0006\u0002\b\u00182:\b\u0006\u00105\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u000100022H\b\u0004\u00106\u001aB\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u00010<¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u0010@¨\u0006A"}, d2 = {"LazyVerticalGrid", "", "columns", "Landroidx/compose/foundation/lazy/grid/GridCells;", "modifier", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "reverseLayout", "", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "userScrollEnabled", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/grid/LazyGridScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/gestures/FlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/gestures/FlingBehavior;ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "LazyHorizontalGrid", "rows", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/gestures/FlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/gestures/FlingBehavior;ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "rememberColumnWidthSums", "Landroidx/compose/foundation/lazy/grid/LazyGridSlotsProvider;", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/grid/LazyGridSlotsProvider;", "rememberRowHeightSums", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/grid/LazyGridSlotsProvider;", "calculateCellsCrossAxisSizeImpl", "", "", "gridSize", "slotCount", "spacing", "items", ExifInterface.GPS_DIRECTION_TRUE, "key", "Lkotlin/ParameterName;", "name", "item", "", TtmlNode.TAG_SPAN, "Lkotlin/Function2;", "Landroidx/compose/foundation/lazy/grid/LazyGridItemSpanScope;", "Landroidx/compose/foundation/lazy/grid/GridItemSpan;", "contentType", "itemContent", "Landroidx/compose/foundation/lazy/grid/LazyGridItemScope;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;Ljava/util/List;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "itemsIndexed", FirebaseAnalytics.Param.INDEX, "Lkotlin/Function3;", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;Ljava/util/List;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function5;)V", "", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;[Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function5;)V", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0003\u001a\u008a\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u0019\u001a~\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u001a\u001a\u008a\u0001\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u001d\u001a~\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u000b2\u0017\u0010\u0015\u001a\u0013\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018H\u0007¢\u0006\u0002\u0010\u001e\u001a\u001d\u0010\u001f\u001a\u00020 2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000fH\u0003¢\u0006\u0002\u0010!\u001a\u001d\u0010\"\u001a\u00020 2\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\rH\u0003¢\u0006\u0002\u0010#\u001a&\u0010$\u001a\b\u0012\u0004\u0012\u00020&0%2\u0006\u0010'\u001a\u00020&2\u0006\u0010(\u001a\u00020&2\u0006\u0010)\u001a\u00020&H\u0002\u001aÛ\u0001\u0010*\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0%2%\b\n\u0010,\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u00010\u001620\b\n\u00101\u001a*\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u000102¢\u0006\u0002\b\u00182%\b\n\u00105\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u0001000\u001623\b\u0004\u00106\u001a-\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u000102¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u00109\u001a¯\u0002\u0010:\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0%2:\b\n\u0010,\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u0001022E\b\n\u00101\u001a?\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u00010<¢\u0006\u0002\b\u00182:\b\u0006\u00105\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u000100022H\b\u0004\u00106\u001aB\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u00010<¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u0010=\u001aÛ\u0001\u0010*\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0>2%\b\n\u0010,\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u00010\u001620\b\n\u00101\u001a*\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u000102¢\u0006\u0002\b\u00182%\b\n\u00105\u001a\u001f\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u0001000\u001623\b\u0004\u00106\u001a-\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u000102¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u0010?\u001a¯\u0002\u0010:\u001a\u00020\u0001\"\u0004\b\u0000\u0010+*\u00020\u00172\f\u0010*\u001a\b\u0012\u0004\u0012\u0002H+0>2:\b\n\u0010,\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000200\u0018\u0001022E\b\n\u00101\u001a?\u0012\u0004\u0012\u000203\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u000204\u0018\u00010<¢\u0006\u0002\b\u00182:\b\u0006\u00105\u001a4\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0006\u0012\u0004\u0018\u000100022H\b\u0004\u00106\u001aB\u0012\u0004\u0012\u000207\u0012\u0013\u0012\u00110&¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(;\u0012\u0013\u0012\u0011H+¢\u0006\f\b-\u0012\b\b.\u0012\u0004\b\b(/\u0012\u0004\u0012\u00020\u00010<¢\u0006\u0002\b8¢\u0006\u0002\b\u0018H\u0086\b¢\u0006\u0002\u0010@¨\u0006A"}, d2 = {"LazyVerticalGrid", "", "columns", "Landroidx/compose/foundation/lazy/grid/GridCells;", "modifier", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "reverseLayout", "", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "userScrollEnabled", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/grid/LazyGridScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/gestures/FlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/gestures/FlingBehavior;ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "LazyHorizontalGrid", "rows", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/gestures/FlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/gestures/FlingBehavior;ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "rememberColumnWidthSums", "Landroidx/compose/foundation/lazy/grid/LazyGridSlotsProvider;", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/grid/LazyGridSlotsProvider;", "rememberRowHeightSums", "(Landroidx/compose/foundation/lazy/grid/GridCells;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/grid/LazyGridSlotsProvider;", "calculateCellsCrossAxisSizeImpl", "", "", "gridSize", "slotCount", "spacing", "items", ExifInterface.GPS_DIRECTION_TRUE, "key", "Lkotlin/ParameterName;", "name", "item", "", TtmlNode.TAG_SPAN, "Lkotlin/Function2;", "Landroidx/compose/foundation/lazy/grid/LazyGridItemSpanScope;", "Landroidx/compose/foundation/lazy/grid/GridItemSpan;", "contentType", "itemContent", "Landroidx/compose/foundation/lazy/grid/LazyGridItemScope;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;Ljava/util/List;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "itemsIndexed", FirebaseAnalytics.Param.INDEX, "Lkotlin/Function3;", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;Ljava/util/List;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function5;)V", "", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;[Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V", "(Landroidx/compose/foundation/lazy/grid/LazyGridScope;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function5;)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyGridDslKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit LazyHorizontalGrid$lambda$2(GridCells gridCells, Modifier modifier, LazyGridState lazyGridState, PaddingValues paddingValues, boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, FlingBehavior flingBehavior, boolean z2, OverscrollEffect overscrollEffect, Function1 function1, int i, int i2, int i3, Composer composer, int i4) {
+    public static final Unit LazyHorizontalGrid$lambda$0(GridCells gridCells, Modifier modifier, LazyGridState lazyGridState, PaddingValues paddingValues, boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, FlingBehavior flingBehavior, boolean z2, OverscrollEffect overscrollEffect, Function1 function1, int i, int i2, int i3, Composer composer, int i4) {
         LazyHorizontalGrid(gridCells, modifier, lazyGridState, paddingValues, z, horizontal, vertical, flingBehavior, z2, overscrollEffect, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit LazyHorizontalGrid$lambda$3(GridCells gridCells, Modifier modifier, LazyGridState lazyGridState, PaddingValues paddingValues, boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, FlingBehavior flingBehavior, boolean z2, Function1 function1, int i, int i2, Composer composer, int i3) {
+    public static final Unit LazyHorizontalGrid$lambda$1(GridCells gridCells, Modifier modifier, LazyGridState lazyGridState, PaddingValues paddingValues, boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, FlingBehavior flingBehavior, boolean z2, Function1 function1, int i, int i2, Composer composer, int i3) {
         LazyHorizontalGrid(gridCells, modifier, lazyGridState, paddingValues, z, horizontal, vertical, flingBehavior, z2, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -65,29 +65,29 @@ public final class LazyGridDslKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0177  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x02b0  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x02c8  */
-    /* JADX WARN: Removed duplicated region for block: B:195:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x029f  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:189:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0114  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -133,9 +133,7 @@ public final class LazyGridDslKt {
         int i14;
         Composer startRestartGroup = composer.startRestartGroup(-2072102870);
         ComposerKt.sourceInformation(startRestartGroup, "C(LazyVerticalGrid)N(columns,modifier,state,contentPadding,reverseLayout,verticalArrangement,horizontalArrangement,flingBehavior,userScrollEnabled,overscrollEffect,content)81@3849L55,80@3823L511:LazyGridDsl.kt#7791vq");
-        if ((i3 & 1) != 0) {
-            i4 = i | 6;
-        } else if ((i & 6) == 0) {
+        if ((i & 6) == 0) {
             i4 = (startRestartGroup.changed(gridCells) ? 4 : 2) | i;
         } else {
             i4 = i;
@@ -205,9 +203,7 @@ public final class LazyGridDslKt {
                             i12 = 268435456;
                             i4 |= i12;
                         }
-                        if ((i3 & 1024) != 0) {
-                            i10 = i2 | 6;
-                        } else if ((i2 & 6) == 0) {
+                        if ((i2 & 6) == 0) {
                             i10 = i2 | (startRestartGroup.changedInstance(function1) ? 4 : 2);
                         } else {
                             i10 = i2;
@@ -247,7 +243,7 @@ public final class LazyGridDslKt {
                                 } else {
                                     lazyGridState3 = obj2;
                                 }
-                                PaddingValues m836PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj3;
+                                PaddingValues m921PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
@@ -275,7 +271,7 @@ public final class LazyGridDslKt {
                                     modifier3 = companion;
                                 }
                                 lazyGridState4 = lazyGridState3;
-                                paddingValues3 = m836PaddingValues0680j_4;
+                                paddingValues3 = m921PaddingValues0680j_4;
                                 vertical4 = vertical3;
                                 flingBehavior4 = flingBehavior3;
                                 z6 = z3;
@@ -338,7 +334,7 @@ public final class LazyGridDslKt {
                     }
                     if ((i & 805306368) == 0) {
                     }
-                    if ((i3 & 1024) != 0) {
+                    if ((i2 & 6) == 0) {
                     }
                     if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
                     }
@@ -361,7 +357,7 @@ public final class LazyGridDslKt {
                 }
                 if ((i & 805306368) == 0) {
                 }
-                if ((i3 & 1024) != 0) {
+                if ((i2 & 6) == 0) {
                 }
                 if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
                 }
@@ -388,7 +384,7 @@ public final class LazyGridDslKt {
             }
             if ((i & 805306368) == 0) {
             }
-            if ((i3 & 1024) != 0) {
+            if ((i2 & 6) == 0) {
             }
             if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
             }
@@ -421,7 +417,7 @@ public final class LazyGridDslKt {
         }
         if ((i & 805306368) == 0) {
         }
-        if ((i3 & 1024) != 0) {
+        if ((i2 & 6) == 0) {
         }
         if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
         }
@@ -430,34 +426,32 @@ public final class LazyGridDslKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:174:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0115  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0134  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0232  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:167:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x00f0  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x00f3  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the non deprecated overload")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final /* synthetic */ void LazyVerticalGrid(final GridCells gridCells, Modifier modifier, LazyGridState lazyGridState, PaddingValues paddingValues, boolean z, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, FlingBehavior flingBehavior, boolean z2, final Function1 function1, Composer composer, final int i, final int i2) {
-        GridCells gridCells2;
         int i3;
         LazyGridState lazyGridState2;
         int i4;
@@ -495,16 +489,10 @@ public final class LazyGridDslKt {
         int i12;
         Composer startRestartGroup = composer.startRestartGroup(1485410512);
         ComposerKt.sourceInformation(startRestartGroup, "C(LazyVerticalGrid)N(columns,modifier,state,contentPadding,reverseLayout,verticalArrangement,horizontalArrangement,flingBehavior,userScrollEnabled,content)121@5397L26,111@5001L456:LazyGridDsl.kt#7791vq");
-        if ((i2 & 1) != 0) {
-            i3 = i | 6;
-            gridCells2 = gridCells;
+        if ((i & 6) == 0) {
+            i3 = (startRestartGroup.changed(gridCells) ? 4 : 2) | i;
         } else {
-            gridCells2 = gridCells;
-            if ((i & 6) == 0) {
-                i3 = (startRestartGroup.changed(gridCells2) ? 4 : 2) | i;
-            } else {
-                i3 = i;
-            }
+            i3 = i;
         }
         int i13 = i2 & 2;
         if (i13 != 0) {
@@ -573,135 +561,128 @@ public final class LazyGridDslKt {
                         } else if ((i & 100663296) == 0) {
                             i8 = i7;
                             i3 |= startRestartGroup.changed(z2) ? 67108864 : 33554432;
-                            if ((i2 & 512) == 0) {
-                                i3 |= 805306368;
-                            } else if ((i & 805306368) == 0) {
+                            if ((i & 805306368) == 0) {
                                 i3 |= startRestartGroup.changedInstance(function1) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
-                                if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
-                                    startRestartGroup.startDefaults();
-                                    ComposerKt.sourceInformation(startRestartGroup, "101@4538L23,107@4898L15");
-                                    if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
-                                        startRestartGroup.skipToGroupEnd();
-                                        if ((i2 & 4) != 0) {
-                                            i3 &= -897;
-                                        }
-                                        if ((i2 & 32) != 0) {
-                                            i3 &= -458753;
-                                        }
-                                        if ((i2 & 128) != 0) {
-                                            i3 &= -29360129;
-                                        }
-                                        modifier3 = modifier;
-                                        flingBehavior4 = flingBehavior;
-                                        z6 = z2;
-                                        paddingValues3 = obj;
-                                        z7 = z3;
-                                        vertical4 = obj2;
-                                        horizontal3 = obj3;
-                                        i9 = 1485410512;
-                                        lazyGridState4 = lazyGridState2;
-                                    } else {
-                                        Modifier.Companion companion = i13 != 0 ? Modifier.Companion : modifier;
-                                        if ((i2 & 4) != 0) {
-                                            lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
-                                            i3 &= -897;
-                                        }
-                                        PaddingValues m836PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
-                                        if (i5 != 0) {
-                                            z3 = false;
-                                        }
-                                        if ((i2 & 32) != 0) {
-                                            Arrangement arrangement = Arrangement.INSTANCE;
-                                            vertical3 = !z3 ? arrangement.getTop() : arrangement.getBottom();
-                                            i3 &= -458753;
-                                        } else {
-                                            vertical3 = obj2;
-                                        }
-                                        Arrangement.Horizontal start = i6 != 0 ? Arrangement.INSTANCE.getStart() : obj3;
-                                        if ((i2 & 128) != 0) {
-                                            flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
-                                            i3 &= -29360129;
-                                        } else {
-                                            flingBehavior3 = flingBehavior;
-                                        }
-                                        if (i8 != 0) {
-                                            modifier3 = companion;
-                                            lazyGridState4 = lazyGridState2;
-                                            paddingValues3 = m836PaddingValues0680j_4;
-                                            horizontal3 = start;
-                                            z7 = z3;
-                                            flingBehavior4 = flingBehavior3;
-                                            z6 = true;
-                                            i9 = 1485410512;
-                                            vertical4 = vertical3;
-                                        } else {
-                                            z6 = z2;
-                                            modifier3 = companion;
-                                            lazyGridState4 = lazyGridState2;
-                                            paddingValues3 = m836PaddingValues0680j_4;
-                                            vertical4 = vertical3;
-                                            horizontal3 = start;
-                                            z7 = z3;
-                                            flingBehavior4 = flingBehavior3;
-                                            i9 = 1485410512;
-                                        }
-                                    }
-                                    startRestartGroup.endDefaults();
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(i9, i3, -1, "androidx.compose.foundation.lazy.grid.LazyVerticalGrid (LazyGridDsl.kt:110)");
-                                    }
-                                    composer2 = startRestartGroup;
-                                    LazyVerticalGrid(gridCells2, modifier3, lazyGridState4, paddingValues3, z7, vertical4, horizontal3, flingBehavior4, z6, OverscrollKt.rememberOverscrollEffect(startRestartGroup, 0), function1, composer2, i3 & 268435454, (i3 >> 27) & 14, 0);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
-                                    modifier2 = modifier3;
-                                    lazyGridState3 = lazyGridState4;
-                                    paddingValues2 = paddingValues3;
-                                    z4 = z7;
-                                    vertical2 = vertical4;
-                                    horizontal2 = horizontal3;
-                                    flingBehavior2 = flingBehavior4;
-                                    z5 = z6;
-                                } else {
-                                    composer2 = startRestartGroup;
-                                    composer2.skipToGroupEnd();
-                                    modifier2 = modifier;
-                                    flingBehavior2 = flingBehavior;
-                                    lazyGridState3 = lazyGridState2;
-                                    paddingValues2 = obj;
-                                    z4 = z3;
-                                    vertical2 = obj2;
-                                    horizontal2 = obj3;
-                                    z5 = z2;
-                                }
-                                endRestartGroup = composer2.endRestartGroup();
-                                if (endRestartGroup != null) {
-                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridDslKt$$ExternalSyntheticLambda1
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public final Object invoke(Object obj4, Object obj5) {
-                                            Unit LazyVerticalGrid$lambda$1;
-                                            LazyVerticalGrid$lambda$1 = LazyGridDslKt.LazyVerticalGrid$lambda$1(GridCells.this, modifier2, lazyGridState3, paddingValues2, z4, vertical2, horizontal2, flingBehavior2, z5, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                                            return LazyVerticalGrid$lambda$1;
-                                        }
-                                    });
-                                    return;
-                                }
-                                return;
                             }
-                            if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
+                                startRestartGroup.startDefaults();
+                                ComposerKt.sourceInformation(startRestartGroup, "101@4538L23,107@4898L15");
+                                if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                    startRestartGroup.skipToGroupEnd();
+                                    if ((i2 & 4) != 0) {
+                                        i3 &= -897;
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        i3 &= -458753;
+                                    }
+                                    if ((i2 & 128) != 0) {
+                                        i3 &= -29360129;
+                                    }
+                                    modifier3 = modifier;
+                                    flingBehavior4 = flingBehavior;
+                                    z6 = z2;
+                                    paddingValues3 = obj;
+                                    z7 = z3;
+                                    vertical4 = obj2;
+                                    horizontal3 = obj3;
+                                    i9 = 1485410512;
+                                    lazyGridState4 = lazyGridState2;
+                                } else {
+                                    Modifier.Companion companion = i13 != 0 ? Modifier.Companion : modifier;
+                                    if ((i2 & 4) != 0) {
+                                        lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
+                                        i3 &= -897;
+                                    }
+                                    PaddingValues m921PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : obj;
+                                    if (i5 != 0) {
+                                        z3 = false;
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        Arrangement arrangement = Arrangement.INSTANCE;
+                                        vertical3 = !z3 ? arrangement.getTop() : arrangement.getBottom();
+                                        i3 &= -458753;
+                                    } else {
+                                        vertical3 = obj2;
+                                    }
+                                    Arrangement.Horizontal start = i6 != 0 ? Arrangement.INSTANCE.getStart() : obj3;
+                                    if ((i2 & 128) != 0) {
+                                        flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
+                                        i3 &= -29360129;
+                                    } else {
+                                        flingBehavior3 = flingBehavior;
+                                    }
+                                    if (i8 != 0) {
+                                        modifier3 = companion;
+                                        lazyGridState4 = lazyGridState2;
+                                        paddingValues3 = m921PaddingValues0680j_4;
+                                        horizontal3 = start;
+                                        z7 = z3;
+                                        flingBehavior4 = flingBehavior3;
+                                        z6 = true;
+                                        i9 = 1485410512;
+                                        vertical4 = vertical3;
+                                    } else {
+                                        z6 = z2;
+                                        modifier3 = companion;
+                                        lazyGridState4 = lazyGridState2;
+                                        paddingValues3 = m921PaddingValues0680j_4;
+                                        vertical4 = vertical3;
+                                        horizontal3 = start;
+                                        z7 = z3;
+                                        flingBehavior4 = flingBehavior3;
+                                        i9 = 1485410512;
+                                    }
+                                }
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(i9, i3, -1, "androidx.compose.foundation.lazy.grid.LazyVerticalGrid (LazyGridDsl.kt:110)");
+                                }
+                                composer2 = startRestartGroup;
+                                LazyVerticalGrid(gridCells, modifier3, lazyGridState4, paddingValues3, z7, vertical4, horizontal3, flingBehavior4, z6, OverscrollKt.rememberOverscrollEffect(startRestartGroup, 0), function1, composer2, i3 & 268435454, (i3 >> 27) & 14, 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                modifier2 = modifier3;
+                                lazyGridState3 = lazyGridState4;
+                                paddingValues2 = paddingValues3;
+                                z4 = z7;
+                                vertical2 = vertical4;
+                                horizontal2 = horizontal3;
+                                flingBehavior2 = flingBehavior4;
+                                z5 = z6;
+                            } else {
+                                composer2 = startRestartGroup;
+                                composer2.skipToGroupEnd();
+                                modifier2 = modifier;
+                                flingBehavior2 = flingBehavior;
+                                lazyGridState3 = lazyGridState2;
+                                paddingValues2 = obj;
+                                z4 = z3;
+                                vertical2 = obj2;
+                                horizontal2 = obj3;
+                                z5 = z2;
                             }
                             endRestartGroup = composer2.endRestartGroup();
-                            if (endRestartGroup != null) {
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridDslKt$$ExternalSyntheticLambda1
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj4, Object obj5) {
+                                        Unit LazyVerticalGrid$lambda$1;
+                                        LazyVerticalGrid$lambda$1 = LazyGridDslKt.LazyVerticalGrid$lambda$1(GridCells.this, modifier2, lazyGridState3, paddingValues2, z4, vertical2, horizontal2, flingBehavior2, z5, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
+                                        return LazyVerticalGrid$lambda$1;
+                                    }
+                                });
+                                return;
                             }
+                            return;
                         }
                         i8 = i7;
-                        if ((i2 & 512) == 0) {
+                        if ((i & 805306368) == 0) {
                         }
-                        if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                        if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                         }
                         endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
+                        if (endRestartGroup == null) {
                         }
                     }
                     obj3 = horizontal;
@@ -711,12 +692,12 @@ public final class LazyGridDslKt {
                     if (i7 != 0) {
                     }
                     i8 = i7;
-                    if ((i2 & 512) == 0) {
+                    if ((i & 805306368) == 0) {
                     }
-                    if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                    if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                     }
                     endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    if (endRestartGroup == null) {
                     }
                 }
                 z3 = z;
@@ -732,12 +713,12 @@ public final class LazyGridDslKt {
                 if (i7 != 0) {
                 }
                 i8 = i7;
-                if ((i2 & 512) == 0) {
+                if ((i & 805306368) == 0) {
                 }
-                if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             obj = paddingValues;
@@ -757,12 +738,12 @@ public final class LazyGridDslKt {
             if (i7 != 0) {
             }
             i8 = i7;
-            if ((i2 & 512) == 0) {
+            if ((i & 805306368) == 0) {
             }
-            if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) != 0) {
@@ -787,38 +768,38 @@ public final class LazyGridDslKt {
         if (i7 != 0) {
         }
         i8 = i7;
-        if ((i2 & 512) == 0) {
+        if ((i & 805306368) == 0) {
         }
-        if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0177  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x02ae  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x02c6  */
-    /* JADX WARN: Removed duplicated region for block: B:195:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x00fd  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x029d  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x02b5  */
+    /* JADX WARN: Removed duplicated region for block: B:189:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0114  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -864,9 +845,7 @@ public final class LazyGridDslKt {
         int i14;
         Composer startRestartGroup = composer.startRestartGroup(635941664);
         ComposerKt.sourceInformation(startRestartGroup, "C(LazyHorizontalGrid)N(rows,modifier,state,contentPadding,reverseLayout,horizontalArrangement,verticalArrangement,flingBehavior,userScrollEnabled,overscrollEffect,content)170@7824L48,169@7798L505:LazyGridDsl.kt#7791vq");
-        if ((i3 & 1) != 0) {
-            i4 = i | 6;
-        } else if ((i & 6) == 0) {
+        if ((i & 6) == 0) {
             i4 = (startRestartGroup.changed(gridCells) ? 4 : 2) | i;
         } else {
             i4 = i;
@@ -936,9 +915,7 @@ public final class LazyGridDslKt {
                             i12 = 268435456;
                             i4 |= i12;
                         }
-                        if ((i3 & 1024) != 0) {
-                            i10 = i2 | 6;
-                        } else if ((i2 & 6) == 0) {
+                        if ((i2 & 6) == 0) {
                             i10 = i2 | (startRestartGroup.changedInstance(function1) ? 4 : 2);
                         } else {
                             i10 = i2;
@@ -978,7 +955,7 @@ public final class LazyGridDslKt {
                                 } else {
                                     lazyGridState3 = obj2;
                                 }
-                                PaddingValues m836PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj3;
+                                PaddingValues m921PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : obj3;
                                 if (i6 != 0) {
                                     z3 = false;
                                 }
@@ -1006,7 +983,7 @@ public final class LazyGridDslKt {
                                     modifier3 = companion;
                                 }
                                 lazyGridState4 = lazyGridState3;
-                                paddingValues3 = m836PaddingValues0680j_4;
+                                paddingValues3 = m921PaddingValues0680j_4;
                                 horizontal4 = horizontal3;
                                 flingBehavior4 = flingBehavior3;
                                 z6 = z3;
@@ -1052,9 +1029,9 @@ public final class LazyGridDslKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridDslKt$$ExternalSyntheticLambda4
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj5, Object obj6) {
-                                    Unit LazyHorizontalGrid$lambda$2;
-                                    LazyHorizontalGrid$lambda$2 = LazyGridDslKt.LazyHorizontalGrid$lambda$2(GridCells.this, modifier2, lazyGridState2, paddingValues2, z5, horizontal2, vertical2, flingBehavior2, z4, overscrollEffect2, function1, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
-                                    return LazyHorizontalGrid$lambda$2;
+                                    Unit LazyHorizontalGrid$lambda$0;
+                                    LazyHorizontalGrid$lambda$0 = LazyGridDslKt.LazyHorizontalGrid$lambda$0(GridCells.this, modifier2, lazyGridState2, paddingValues2, z5, horizontal2, vertical2, flingBehavior2, z4, overscrollEffect2, function1, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
+                                    return LazyHorizontalGrid$lambda$0;
                                 }
                             });
                             return;
@@ -1070,7 +1047,7 @@ public final class LazyGridDslKt {
                     }
                     if ((i & 805306368) == 0) {
                     }
-                    if ((i3 & 1024) != 0) {
+                    if ((i2 & 6) == 0) {
                     }
                     if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
                     }
@@ -1093,7 +1070,7 @@ public final class LazyGridDslKt {
                 }
                 if ((i & 805306368) == 0) {
                 }
-                if ((i3 & 1024) != 0) {
+                if ((i2 & 6) == 0) {
                 }
                 if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
                 }
@@ -1120,7 +1097,7 @@ public final class LazyGridDslKt {
             }
             if ((i & 805306368) == 0) {
             }
-            if ((i3 & 1024) != 0) {
+            if ((i2 & 6) == 0) {
             }
             if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
             }
@@ -1153,7 +1130,7 @@ public final class LazyGridDslKt {
         }
         if ((i & 805306368) == 0) {
         }
-        if ((i3 & 1024) != 0) {
+        if ((i2 & 6) == 0) {
         }
         if (startRestartGroup.shouldExecute((i4 & 306783379) == 306783378 || (i10 & 3) != 2, i4 & 1)) {
         }
@@ -1162,34 +1139,32 @@ public final class LazyGridDslKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:174:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0115  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0134  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0232  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:167:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x00f0  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x00f3  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the non deprecated overload")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final /* synthetic */ void LazyHorizontalGrid(final GridCells gridCells, Modifier modifier, LazyGridState lazyGridState, PaddingValues paddingValues, boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, FlingBehavior flingBehavior, boolean z2, final Function1 function1, Composer composer, final int i, final int i2) {
-        GridCells gridCells2;
         int i3;
         LazyGridState lazyGridState2;
         int i4;
@@ -1227,16 +1202,10 @@ public final class LazyGridDslKt {
         int i12;
         Composer startRestartGroup = composer.startRestartGroup(2123608858);
         ComposerKt.sourceInformation(startRestartGroup, "C(LazyHorizontalGrid)N(rows,modifier,state,contentPadding,reverseLayout,horizontalArrangement,verticalArrangement,flingBehavior,userScrollEnabled,content)210@9358L26,200@8966L452:LazyGridDsl.kt#7791vq");
-        if ((i2 & 1) != 0) {
-            i3 = i | 6;
-            gridCells2 = gridCells;
+        if ((i & 6) == 0) {
+            i3 = (startRestartGroup.changed(gridCells) ? 4 : 2) | i;
         } else {
-            gridCells2 = gridCells;
-            if ((i & 6) == 0) {
-                i3 = (startRestartGroup.changed(gridCells2) ? 4 : 2) | i;
-            } else {
-                i3 = i;
-            }
+            i3 = i;
         }
         int i13 = i2 & 2;
         if (i13 != 0) {
@@ -1305,135 +1274,128 @@ public final class LazyGridDslKt {
                         } else if ((i & 100663296) == 0) {
                             i8 = i7;
                             i3 |= startRestartGroup.changed(z2) ? 67108864 : 33554432;
-                            if ((i2 & 512) == 0) {
-                                i3 |= 805306368;
-                            } else if ((i & 805306368) == 0) {
+                            if ((i & 805306368) == 0) {
                                 i3 |= startRestartGroup.changedInstance(function1) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
-                                if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
-                                    startRestartGroup.startDefaults();
-                                    ComposerKt.sourceInformation(startRestartGroup, "190@8506L23,196@8863L15");
-                                    if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
-                                        startRestartGroup.skipToGroupEnd();
-                                        if ((i2 & 4) != 0) {
-                                            i3 &= -897;
-                                        }
-                                        if ((i2 & 32) != 0) {
-                                            i3 &= -458753;
-                                        }
-                                        if ((i2 & 128) != 0) {
-                                            i3 &= -29360129;
-                                        }
-                                        modifier3 = modifier;
-                                        flingBehavior4 = flingBehavior;
-                                        z6 = z2;
-                                        paddingValues3 = obj;
-                                        z7 = z3;
-                                        horizontal4 = obj2;
-                                        vertical3 = obj3;
-                                        i9 = 2123608858;
-                                        lazyGridState4 = lazyGridState2;
-                                    } else {
-                                        Modifier.Companion companion = i13 != 0 ? Modifier.Companion : modifier;
-                                        if ((i2 & 4) != 0) {
-                                            lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
-                                            i3 &= -897;
-                                        }
-                                        PaddingValues m836PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m836PaddingValues0680j_4(Dp.m7996constructorimpl(0)) : obj;
-                                        if (i5 != 0) {
-                                            z3 = false;
-                                        }
-                                        if ((i2 & 32) != 0) {
-                                            Arrangement arrangement = Arrangement.INSTANCE;
-                                            horizontal3 = !z3 ? arrangement.getStart() : arrangement.getEnd();
-                                            i3 &= -458753;
-                                        } else {
-                                            horizontal3 = obj2;
-                                        }
-                                        Arrangement.Vertical top = i6 != 0 ? Arrangement.INSTANCE.getTop() : obj3;
-                                        if ((i2 & 128) != 0) {
-                                            flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
-                                            i3 &= -29360129;
-                                        } else {
-                                            flingBehavior3 = flingBehavior;
-                                        }
-                                        if (i8 != 0) {
-                                            modifier3 = companion;
-                                            lazyGridState4 = lazyGridState2;
-                                            paddingValues3 = m836PaddingValues0680j_4;
-                                            vertical3 = top;
-                                            z7 = z3;
-                                            flingBehavior4 = flingBehavior3;
-                                            z6 = true;
-                                            i9 = 2123608858;
-                                            horizontal4 = horizontal3;
-                                        } else {
-                                            z6 = z2;
-                                            modifier3 = companion;
-                                            lazyGridState4 = lazyGridState2;
-                                            paddingValues3 = m836PaddingValues0680j_4;
-                                            horizontal4 = horizontal3;
-                                            vertical3 = top;
-                                            z7 = z3;
-                                            flingBehavior4 = flingBehavior3;
-                                            i9 = 2123608858;
-                                        }
-                                    }
-                                    startRestartGroup.endDefaults();
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(i9, i3, -1, "androidx.compose.foundation.lazy.grid.LazyHorizontalGrid (LazyGridDsl.kt:199)");
-                                    }
-                                    composer2 = startRestartGroup;
-                                    LazyHorizontalGrid(gridCells2, modifier3, lazyGridState4, paddingValues3, z7, horizontal4, vertical3, flingBehavior4, z6, OverscrollKt.rememberOverscrollEffect(startRestartGroup, 0), function1, composer2, i3 & 268435454, (i3 >> 27) & 14, 0);
-                                    if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventEnd();
-                                    }
-                                    modifier2 = modifier3;
-                                    lazyGridState3 = lazyGridState4;
-                                    paddingValues2 = paddingValues3;
-                                    z4 = z7;
-                                    horizontal2 = horizontal4;
-                                    vertical2 = vertical3;
-                                    flingBehavior2 = flingBehavior4;
-                                    z5 = z6;
-                                } else {
-                                    composer2 = startRestartGroup;
-                                    composer2.skipToGroupEnd();
-                                    modifier2 = modifier;
-                                    flingBehavior2 = flingBehavior;
-                                    lazyGridState3 = lazyGridState2;
-                                    paddingValues2 = obj;
-                                    z4 = z3;
-                                    horizontal2 = obj2;
-                                    vertical2 = obj3;
-                                    z5 = z2;
-                                }
-                                endRestartGroup = composer2.endRestartGroup();
-                                if (endRestartGroup != null) {
-                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridDslKt$$ExternalSyntheticLambda5
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public final Object invoke(Object obj4, Object obj5) {
-                                            Unit LazyHorizontalGrid$lambda$3;
-                                            LazyHorizontalGrid$lambda$3 = LazyGridDslKt.LazyHorizontalGrid$lambda$3(GridCells.this, modifier2, lazyGridState3, paddingValues2, z4, horizontal2, vertical2, flingBehavior2, z5, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                                            return LazyHorizontalGrid$lambda$3;
-                                        }
-                                    });
-                                    return;
-                                }
-                                return;
                             }
-                            if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
+                                startRestartGroup.startDefaults();
+                                ComposerKt.sourceInformation(startRestartGroup, "190@8506L23,196@8863L15");
+                                if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                    startRestartGroup.skipToGroupEnd();
+                                    if ((i2 & 4) != 0) {
+                                        i3 &= -897;
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        i3 &= -458753;
+                                    }
+                                    if ((i2 & 128) != 0) {
+                                        i3 &= -29360129;
+                                    }
+                                    modifier3 = modifier;
+                                    flingBehavior4 = flingBehavior;
+                                    z6 = z2;
+                                    paddingValues3 = obj;
+                                    z7 = z3;
+                                    horizontal4 = obj2;
+                                    vertical3 = obj3;
+                                    i9 = 2123608858;
+                                    lazyGridState4 = lazyGridState2;
+                                } else {
+                                    Modifier.Companion companion = i13 != 0 ? Modifier.Companion : modifier;
+                                    if ((i2 & 4) != 0) {
+                                        lazyGridState2 = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
+                                        i3 &= -897;
+                                    }
+                                    PaddingValues m921PaddingValues0680j_4 = i4 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : obj;
+                                    if (i5 != 0) {
+                                        z3 = false;
+                                    }
+                                    if ((i2 & 32) != 0) {
+                                        Arrangement arrangement = Arrangement.INSTANCE;
+                                        horizontal3 = !z3 ? arrangement.getStart() : arrangement.getEnd();
+                                        i3 &= -458753;
+                                    } else {
+                                        horizontal3 = obj2;
+                                    }
+                                    Arrangement.Vertical top = i6 != 0 ? Arrangement.INSTANCE.getTop() : obj3;
+                                    if ((i2 & 128) != 0) {
+                                        flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
+                                        i3 &= -29360129;
+                                    } else {
+                                        flingBehavior3 = flingBehavior;
+                                    }
+                                    if (i8 != 0) {
+                                        modifier3 = companion;
+                                        lazyGridState4 = lazyGridState2;
+                                        paddingValues3 = m921PaddingValues0680j_4;
+                                        vertical3 = top;
+                                        z7 = z3;
+                                        flingBehavior4 = flingBehavior3;
+                                        z6 = true;
+                                        i9 = 2123608858;
+                                        horizontal4 = horizontal3;
+                                    } else {
+                                        z6 = z2;
+                                        modifier3 = companion;
+                                        lazyGridState4 = lazyGridState2;
+                                        paddingValues3 = m921PaddingValues0680j_4;
+                                        horizontal4 = horizontal3;
+                                        vertical3 = top;
+                                        z7 = z3;
+                                        flingBehavior4 = flingBehavior3;
+                                        i9 = 2123608858;
+                                    }
+                                }
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(i9, i3, -1, "androidx.compose.foundation.lazy.grid.LazyHorizontalGrid (LazyGridDsl.kt:199)");
+                                }
+                                composer2 = startRestartGroup;
+                                LazyHorizontalGrid(gridCells, modifier3, lazyGridState4, paddingValues3, z7, horizontal4, vertical3, flingBehavior4, z6, OverscrollKt.rememberOverscrollEffect(startRestartGroup, 0), function1, composer2, i3 & 268435454, (i3 >> 27) & 14, 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                modifier2 = modifier3;
+                                lazyGridState3 = lazyGridState4;
+                                paddingValues2 = paddingValues3;
+                                z4 = z7;
+                                horizontal2 = horizontal4;
+                                vertical2 = vertical3;
+                                flingBehavior2 = flingBehavior4;
+                                z5 = z6;
+                            } else {
+                                composer2 = startRestartGroup;
+                                composer2.skipToGroupEnd();
+                                modifier2 = modifier;
+                                flingBehavior2 = flingBehavior;
+                                lazyGridState3 = lazyGridState2;
+                                paddingValues2 = obj;
+                                z4 = z3;
+                                horizontal2 = obj2;
+                                vertical2 = obj3;
+                                z5 = z2;
                             }
                             endRestartGroup = composer2.endRestartGroup();
-                            if (endRestartGroup != null) {
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridDslKt$$ExternalSyntheticLambda5
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj4, Object obj5) {
+                                        Unit LazyHorizontalGrid$lambda$1;
+                                        LazyHorizontalGrid$lambda$1 = LazyGridDslKt.LazyHorizontalGrid$lambda$1(GridCells.this, modifier2, lazyGridState3, paddingValues2, z4, horizontal2, vertical2, flingBehavior2, z5, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
+                                        return LazyHorizontalGrid$lambda$1;
+                                    }
+                                });
+                                return;
                             }
+                            return;
                         }
                         i8 = i7;
-                        if ((i2 & 512) == 0) {
+                        if ((i & 805306368) == 0) {
                         }
-                        if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                        if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                         }
                         endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
+                        if (endRestartGroup == null) {
                         }
                     }
                     obj3 = vertical;
@@ -1443,12 +1405,12 @@ public final class LazyGridDslKt {
                     if (i7 != 0) {
                     }
                     i8 = i7;
-                    if ((i2 & 512) == 0) {
+                    if ((i & 805306368) == 0) {
                     }
-                    if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                    if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                     }
                     endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    if (endRestartGroup == null) {
                     }
                 }
                 z3 = z;
@@ -1464,12 +1426,12 @@ public final class LazyGridDslKt {
                 if (i7 != 0) {
                 }
                 i8 = i7;
-                if ((i2 & 512) == 0) {
+                if ((i & 805306368) == 0) {
                 }
-                if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+                if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             obj = paddingValues;
@@ -1489,12 +1451,12 @@ public final class LazyGridDslKt {
             if (i7 != 0) {
             }
             i8 = i7;
-            if ((i2 & 512) == 0) {
+            if ((i & 805306368) == 0) {
             }
-            if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+            if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) != 0) {
@@ -1519,12 +1481,12 @@ public final class LazyGridDslKt {
         if (i7 != 0) {
         }
         i8 = i7;
-        if ((i2 & 512) == 0) {
+        if ((i & 805306368) == 0) {
         }
-        if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
@@ -1533,16 +1495,16 @@ public final class LazyGridDslKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-76500289, i, -1, "androidx.compose.foundation.lazy.grid.rememberColumnWidthSums (LazyGridDsl.kt:221)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -502328624, "CC(remember):LazyGridDsl.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -502329264, "CC(remember):LazyGridDsl.kt#9igjgp");
         boolean z = ((((i & 14) ^ 6) > 4 && composer.changed(gridCells)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i & 48) == 32);
         GridSlotCache rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new GridSlotCache(new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridDslKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    LazyGridSlots rememberColumnWidthSums$lambda$9$lambda$8;
-                    rememberColumnWidthSums$lambda$9$lambda$8 = LazyGridDslKt.rememberColumnWidthSums$lambda$9$lambda$8(GridCells.this, horizontal, (Density) obj, (Constraints) obj2);
-                    return rememberColumnWidthSums$lambda$9$lambda$8;
+                    LazyGridSlots rememberColumnWidthSums$lambda$0$0;
+                    rememberColumnWidthSums$lambda$0$0 = LazyGridDslKt.rememberColumnWidthSums$lambda$0$0(GridCells.this, horizontal, (Density) obj, (Constraints) obj2);
+                    return rememberColumnWidthSums$lambda$0$0;
                 }
             });
             composer.updateRememberedValue(rememberedValue);
@@ -1557,14 +1519,14 @@ public final class LazyGridDslKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LazyGridSlots rememberColumnWidthSums$lambda$9$lambda$8(GridCells gridCells, Arrangement.Horizontal horizontal, Density density, Constraints constraints) {
-        if (!(Constraints.m7949getMaxWidthimpl(constraints.m7955unboximpl()) != Integer.MAX_VALUE)) {
+    public static final LazyGridSlots rememberColumnWidthSums$lambda$0$0(GridCells gridCells, Arrangement.Horizontal horizontal, Density density, Constraints constraints) {
+        if (!(Constraints.m8211getMaxWidthimpl(constraints.m8217unboximpl()) != Integer.MAX_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("LazyVerticalGrid's width should be bound by parent.");
         }
-        int m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(constraints.m7955unboximpl());
-        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m7949getMaxWidthimpl, density.mo424roundToPx0680j_4(horizontal.mo709getSpacingD9Ej5fM())));
+        int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(constraints.m8217unboximpl());
+        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m8211getMaxWidthimpl, density.mo458roundToPx0680j_4(horizontal.mo789getSpacingD9Ej5fM())));
         int[] iArr = new int[intArray.length];
-        horizontal.arrange(density, m7949getMaxWidthimpl, intArray, LayoutDirection.Ltr, iArr);
+        horizontal.arrange(density, m8211getMaxWidthimpl, intArray, LayoutDirection.Ltr, iArr);
         return new LazyGridSlots(intArray, iArr);
     }
 
@@ -1573,16 +1535,16 @@ public final class LazyGridDslKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-150818144, i, -1, "androidx.compose.foundation.lazy.grid.rememberRowHeightSums (LazyGridDsl.kt:245)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1092656036, "CC(remember):LazyGridDsl.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1092655396, "CC(remember):LazyGridDsl.kt#9igjgp");
         boolean z = ((((i & 14) ^ 6) > 4 && composer.changed(gridCells)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(vertical)) || (i & 48) == 32);
         GridSlotCache rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new GridSlotCache(new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridDslKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    LazyGridSlots rememberRowHeightSums$lambda$15$lambda$14;
-                    rememberRowHeightSums$lambda$15$lambda$14 = LazyGridDslKt.rememberRowHeightSums$lambda$15$lambda$14(GridCells.this, vertical, (Density) obj, (Constraints) obj2);
-                    return rememberRowHeightSums$lambda$15$lambda$14;
+                    LazyGridSlots rememberRowHeightSums$lambda$0$0;
+                    rememberRowHeightSums$lambda$0$0 = LazyGridDslKt.rememberRowHeightSums$lambda$0$0(GridCells.this, vertical, (Density) obj, (Constraints) obj2);
+                    return rememberRowHeightSums$lambda$0$0;
                 }
             });
             composer.updateRememberedValue(rememberedValue);
@@ -1597,14 +1559,14 @@ public final class LazyGridDslKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LazyGridSlots rememberRowHeightSums$lambda$15$lambda$14(GridCells gridCells, Arrangement.Vertical vertical, Density density, Constraints constraints) {
-        if (!(Constraints.m7948getMaxHeightimpl(constraints.m7955unboximpl()) != Integer.MAX_VALUE)) {
+    public static final LazyGridSlots rememberRowHeightSums$lambda$0$0(GridCells gridCells, Arrangement.Vertical vertical, Density density, Constraints constraints) {
+        if (!(Constraints.m8210getMaxHeightimpl(constraints.m8217unboximpl()) != Integer.MAX_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("LazyHorizontalGrid's height should be bound by parent.");
         }
-        int m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(constraints.m7955unboximpl());
-        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m7948getMaxHeightimpl, density.mo424roundToPx0680j_4(vertical.mo709getSpacingD9Ej5fM())));
+        int m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(constraints.m8217unboximpl());
+        int[] intArray = CollectionsKt.toIntArray(gridCells.calculateCrossAxisCellSizes(density, m8210getMaxHeightimpl, density.mo458roundToPx0680j_4(vertical.mo789getSpacingD9Ej5fM())));
         int[] iArr = new int[intArray.length];
-        vertical.arrange(density, m7948getMaxHeightimpl, intArray, iArr);
+        vertical.arrange(density, m8210getMaxHeightimpl, intArray, iArr);
         return new LazyGridSlots(intArray, iArr);
     }
 

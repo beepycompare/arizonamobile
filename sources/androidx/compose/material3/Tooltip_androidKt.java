@@ -212,7 +212,7 @@ public final class Tooltip_androidKt {
                             companion = Modifier.Companion;
                         }
                         if ((i2 & 2) != 0) {
-                            j4 = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
+                            j4 = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
                             i3 &= -897;
                         }
                         if ((i2 & 4) != 0) {
@@ -227,12 +227,12 @@ public final class Tooltip_androidKt {
                             j6 = TooltipDefaults.INSTANCE.getPlainTooltipContainerColor(startRestartGroup, 6);
                             i3 &= -458753;
                         }
-                        float m7996constructorimpl = i4 != 0 ? Dp.m7996constructorimpl(0) : f;
+                        float m8258constructorimpl = i4 != 0 ? Dp.m8258constructorimpl(0) : f;
                         if (i5 != 0) {
                             shape3 = obj;
                             j10 = j5;
-                            f6 = m7996constructorimpl;
-                            f5 = Dp.m7996constructorimpl(0);
+                            f6 = m8258constructorimpl;
+                            f5 = Dp.m8258constructorimpl(0);
                             i6 = i3;
                             modifier3 = companion;
                         } else {
@@ -240,7 +240,7 @@ public final class Tooltip_androidKt {
                             shape3 = obj;
                             j10 = j5;
                             f5 = f2;
-                            f6 = m7996constructorimpl;
+                            f6 = m8258constructorimpl;
                             i6 = i3;
                         }
                         j11 = j4;
@@ -253,7 +253,7 @@ public final class Tooltip_androidKt {
                     }
                     int i11 = i6 << 3;
                     long j14 = j11;
-                    TooltipKt.m3374PlainTooltipgv3ox5I(tooltipScope, modifier3, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j11), TooltipDefaults.INSTANCE.m3362getPlainTooltipMaxWidthD9Ej5fM(), shape3, j12, j13, f6, f5, function2, startRestartGroup, (i11 & 1879048192) | (i6 & 14) | 3072 | (i6 & 112) | (i11 & 57344) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024), 0);
+                    TooltipKt.m3460PlainTooltipgv3ox5I(tooltipScope, modifier3, TooltipDefaults.INSTANCE.m3446caretShapeEaSLcWc(j11), TooltipDefaults.INSTANCE.m3448getPlainTooltipMaxWidthD9Ej5fM(), shape3, j12, j13, f6, f5, function2, startRestartGroup, (i11 & 1879048192) | (i6 & 14) | 3072 | (i6 & 112) | (i11 & 57344) | (i11 & 458752) | (i11 & 3670016) | (i11 & 29360128) | (i11 & 234881024), 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -371,7 +371,7 @@ public final class Tooltip_androidKt {
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
         long j9;
-        float m3362getPlainTooltipMaxWidthD9Ej5fM;
+        float m3448getPlainTooltipMaxWidthD9Ej5fM;
         Shape shape3;
         long j10;
         long j11;
@@ -379,7 +379,7 @@ public final class Tooltip_androidKt {
         Shape shape4;
         long j13;
         int i10;
-        float m7996constructorimpl;
+        float m8258constructorimpl;
         float f8;
         int i11;
         int i12;
@@ -484,19 +484,19 @@ public final class Tooltip_androidKt {
                                     }
                                     companion = obj;
                                     j12 = j4;
-                                    m3362getPlainTooltipMaxWidthD9Ej5fM = f4;
+                                    m3448getPlainTooltipMaxWidthD9Ej5fM = f4;
                                     shape4 = obj2;
                                     j10 = j5;
                                     j13 = j3;
                                 } else {
                                     companion = i13 != 0 ? Modifier.Companion : obj;
                                     if ((i2 & 2) != 0) {
-                                        j9 = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
+                                        j9 = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
                                         i9 &= -897;
                                     } else {
                                         j9 = j4;
                                     }
-                                    m3362getPlainTooltipMaxWidthD9Ej5fM = i4 != 0 ? TooltipDefaults.INSTANCE.m3362getPlainTooltipMaxWidthD9Ej5fM() : f4;
+                                    m3448getPlainTooltipMaxWidthD9Ej5fM = i4 != 0 ? TooltipDefaults.INSTANCE.m3448getPlainTooltipMaxWidthD9Ej5fM() : f4;
                                     if ((i2 & 8) != 0) {
                                         shape3 = TooltipDefaults.INSTANCE.getPlainTooltipContainerShape(startRestartGroup, 6);
                                         i9 &= -57345;
@@ -515,28 +515,28 @@ public final class Tooltip_androidKt {
                                     } else {
                                         j11 = j3;
                                     }
-                                    float m7996constructorimpl2 = i6 != 0 ? Dp.m7996constructorimpl(0) : f5;
+                                    float m8258constructorimpl2 = i6 != 0 ? Dp.m8258constructorimpl(0) : f5;
                                     if (i8 != 0) {
-                                        f5 = m7996constructorimpl2;
+                                        f5 = m8258constructorimpl2;
                                         i10 = i9;
-                                        m7996constructorimpl = Dp.m7996constructorimpl(0);
+                                        m8258constructorimpl = Dp.m8258constructorimpl(0);
                                         j12 = j9;
                                         shape4 = shape3;
                                         j13 = j11;
                                         startRestartGroup.endDefaults();
                                         if (ComposerKt.isTraceInProgress()) {
-                                            f8 = m7996constructorimpl;
+                                            f8 = m8258constructorimpl;
                                         } else {
-                                            f8 = m7996constructorimpl;
+                                            f8 = m8258constructorimpl;
                                             ComposerKt.traceEventStart(1456881596, i10, -1, "androidx.compose.material3.PlainTooltipAndroid (Tooltip.android.kt:104)");
                                         }
                                         int i15 = 2147482750 & i10;
                                         long j14 = j12;
-                                        float f9 = m3362getPlainTooltipMaxWidthD9Ej5fM;
+                                        float f9 = m3448getPlainTooltipMaxWidthD9Ej5fM;
                                         long j15 = j10;
                                         float f10 = f5;
                                         float f11 = f8;
-                                        TooltipKt.m3374PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j12), f9, shape4, j15, j13, f10, f11, function2, startRestartGroup, i15, 0);
+                                        TooltipKt.m3460PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3446caretShapeEaSLcWc(j12), f9, shape4, j15, j13, f10, f11, function2, startRestartGroup, i15, 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -550,24 +550,24 @@ public final class Tooltip_androidKt {
                                         shape2 = shape4;
                                         j6 = j14;
                                     } else {
-                                        f5 = m7996constructorimpl2;
+                                        f5 = m8258constructorimpl2;
                                         j12 = j9;
                                         shape4 = shape3;
                                         j13 = j11;
                                     }
                                 }
                                 i10 = i9;
-                                m7996constructorimpl = f3;
+                                m8258constructorimpl = f3;
                                 startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 int i152 = 2147482750 & i10;
                                 long j142 = j12;
-                                float f92 = m3362getPlainTooltipMaxWidthD9Ej5fM;
+                                float f92 = m3448getPlainTooltipMaxWidthD9Ej5fM;
                                 long j152 = j10;
                                 float f102 = f5;
                                 float f112 = f8;
-                                TooltipKt.m3374PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j12), f92, shape4, j152, j13, f102, f112, function2, startRestartGroup, i152, 0);
+                                TooltipKt.m3460PlainTooltipgv3ox5I(tooltipScope, companion, TooltipDefaults.INSTANCE.m3446caretShapeEaSLcWc(j12), f92, shape4, j152, j13, f102, f112, function2, startRestartGroup, i152, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 modifier2 = companion;
@@ -735,7 +735,7 @@ public final class Tooltip_androidKt {
         final Modifier modifier2;
         final long j3;
         ScopeUpdateScope endRestartGroup;
-        float m4232getContainerElevationD9Ej5fM;
+        float m4318getContainerElevationD9Ej5fM;
         int i10;
         Function2 function26;
         float f6;
@@ -835,7 +835,7 @@ public final class Tooltip_androidKt {
                                         obj2 = null;
                                     }
                                     if ((i2 & 8) != 0) {
-                                        j2 = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
+                                        j2 = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
                                         i3 &= -57345;
                                     }
                                     if ((i2 & 16) != 0) {
@@ -847,11 +847,11 @@ public final class Tooltip_androidKt {
                                         i3 = (-3670017) & i3;
                                     }
                                     if (i7 != 0) {
-                                        f3 = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
+                                        f3 = ElevationTokens.INSTANCE.m3975getLevel0D9Ej5fM();
                                     }
                                     if (i9 != 0) {
                                         Function2 function28 = obj2;
-                                        m4232getContainerElevationD9Ej5fM = RichTooltipTokens.INSTANCE.m4232getContainerElevationD9Ej5fM();
+                                        m4318getContainerElevationD9Ej5fM = RichTooltipTokens.INSTANCE.m4318getContainerElevationD9Ej5fM();
                                         i10 = i3;
                                         function26 = function28;
                                         f6 = f3;
@@ -866,12 +866,12 @@ public final class Tooltip_androidKt {
                                         }
                                         int i13 = i10 << 3;
                                         long j5 = j4;
-                                        TooltipKt.m3376RichTooltipEkvW5A0(tooltipScope, modifier3, function27, function26, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j4), TooltipDefaults.INSTANCE.m3363getRichTooltipMaxWidthD9Ej5fM(), shape3, richTooltipColors3, f6, m4232getContainerElevationD9Ej5fM, function23, startRestartGroup, (i10 & 14) | i6 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (i13 & 3670016) | (i13 & 29360128) | (i13 & 234881024) | (i13 & 1879048192), (i10 >> 27) & 14, 0);
+                                        TooltipKt.m3462RichTooltipEkvW5A0(tooltipScope, modifier3, function27, function26, TooltipDefaults.INSTANCE.m3446caretShapeEaSLcWc(j4), TooltipDefaults.INSTANCE.m3449getRichTooltipMaxWidthD9Ej5fM(), shape3, richTooltipColors3, f6, m4318getContainerElevationD9Ej5fM, function23, startRestartGroup, (i10 & 14) | i6 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (i13 & 3670016) | (i13 & 29360128) | (i13 & 234881024) | (i13 & 1879048192), (i10 >> 27) & 14, 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
                                         function25 = function26;
-                                        f4 = m4232getContainerElevationD9Ej5fM;
+                                        f4 = m4318getContainerElevationD9Ej5fM;
                                         function24 = function27;
                                         f5 = f6;
                                         modifier2 = modifier3;
@@ -899,17 +899,17 @@ public final class Tooltip_androidKt {
                                 richTooltipColors3 = obj4;
                                 j4 = j2;
                                 shape3 = obj3;
-                                m4232getContainerElevationD9Ej5fM = f2;
+                                m4318getContainerElevationD9Ej5fM = f2;
                                 startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 int i132 = i10 << 3;
                                 long j52 = j4;
-                                TooltipKt.m3376RichTooltipEkvW5A0(tooltipScope, modifier3, function27, function26, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j4), TooltipDefaults.INSTANCE.m3363getRichTooltipMaxWidthD9Ej5fM(), shape3, richTooltipColors3, f6, m4232getContainerElevationD9Ej5fM, function23, startRestartGroup, (i10 & 14) | i6 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (i132 & 3670016) | (i132 & 29360128) | (i132 & 234881024) | (i132 & 1879048192), (i10 >> 27) & 14, 0);
+                                TooltipKt.m3462RichTooltipEkvW5A0(tooltipScope, modifier3, function27, function26, TooltipDefaults.INSTANCE.m3446caretShapeEaSLcWc(j4), TooltipDefaults.INSTANCE.m3449getRichTooltipMaxWidthD9Ej5fM(), shape3, richTooltipColors3, f6, m4318getContainerElevationD9Ej5fM, function23, startRestartGroup, (i10 & 14) | i6 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (i132 & 3670016) | (i132 & 29360128) | (i132 & 234881024) | (i132 & 1879048192), (i10 >> 27) & 14, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 function25 = function26;
-                                f4 = m4232getContainerElevationD9Ej5fM;
+                                f4 = m4318getContainerElevationD9Ej5fM;
                                 function24 = function27;
                                 f5 = f6;
                                 modifier2 = modifier3;
@@ -1213,13 +1213,13 @@ public final class Tooltip_androidKt {
                                     }
                                     Function2 function29 = i6 == 0 ? obj3 : null;
                                     if ((i3 & 8) != 0) {
-                                        j4 = DpSize.Companion.m8103getUnspecifiedMYxV2XQ();
+                                        j4 = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
                                         i4 &= -57345;
                                     } else {
                                         j4 = j2;
                                     }
                                     if (i7 != 0) {
-                                        f4 = TooltipDefaults.INSTANCE.m3363getRichTooltipMaxWidthD9Ej5fM();
+                                        f4 = TooltipDefaults.INSTANCE.m3449getRichTooltipMaxWidthD9Ej5fM();
                                     }
                                     if ((i3 & 32) != 0) {
                                         shape3 = TooltipDefaults.INSTANCE.getRichTooltipContainerShape(startRestartGroup, 6);
@@ -1231,13 +1231,13 @@ public final class Tooltip_androidKt {
                                         richTooltipColors2 = TooltipDefaults.INSTANCE.richTooltipColors(startRestartGroup, 6);
                                         i4 = (-29360129) & i4;
                                     }
-                                    float m3889getLevel0D9Ej5fM = i9 != 0 ? ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM() : f2;
+                                    float m3975getLevel0D9Ej5fM = i9 != 0 ? ElevationTokens.INSTANCE.m3975getLevel0D9Ej5fM() : f2;
                                     if (i11 != 0) {
                                         long j6 = j4;
-                                        f10 = m3889getLevel0D9Ej5fM;
+                                        f10 = m3975getLevel0D9Ej5fM;
                                         richTooltipColors4 = richTooltipColors2;
                                         function27 = obj2;
-                                        f9 = RichTooltipTokens.INSTANCE.m4232getContainerElevationD9Ej5fM();
+                                        f9 = RichTooltipTokens.INSTANCE.m4318getContainerElevationD9Ej5fM();
                                         i13 = i4;
                                         function26 = function29;
                                         f8 = f4;
@@ -1249,7 +1249,7 @@ public final class Tooltip_androidKt {
                                         Function2 function210 = obj2;
                                         f9 = f3;
                                         long j7 = j4;
-                                        f10 = m3889getLevel0D9Ej5fM;
+                                        f10 = m3975getLevel0D9Ej5fM;
                                         richTooltipColors4 = richTooltipColors2;
                                         j5 = j7;
                                         function27 = function210;
@@ -1262,7 +1262,7 @@ public final class Tooltip_androidKt {
                                 long j8 = j5;
                                 float f11 = f8;
                                 Shape shape4 = shape3;
-                                TooltipKt.m3376RichTooltipEkvW5A0(tooltipScope, companion, function27, function26, TooltipDefaults.INSTANCE.m3360caretShapeEaSLcWc(j5), f11, shape4, richTooltipColors4, f10, f9, function23, startRestartGroup, i13 & 2147426302, i12 & 14, 0);
+                                TooltipKt.m3462RichTooltipEkvW5A0(tooltipScope, companion, function27, function26, TooltipDefaults.INSTANCE.m3446caretShapeEaSLcWc(j5), f11, shape4, richTooltipColors4, f10, f9, function23, startRestartGroup, i13 & 2147426302, i12 & 14, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }

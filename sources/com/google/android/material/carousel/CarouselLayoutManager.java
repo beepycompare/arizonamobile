@@ -59,7 +59,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-carousel-CarouselLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m9495x2ff337cb(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+    public /* synthetic */ void m9790x2ff337cb(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
         if (i3 - i == i7 - i5 && i4 - i2 == i8 - i6) {
             return;
         }
@@ -102,7 +102,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         this.recyclerViewSizeChangeListener = new View.OnLayoutChangeListener() { // from class: com.google.android.material.carousel.CarouselLayoutManager$$ExternalSyntheticLambda1
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
-                CarouselLayoutManager.this.m9495x2ff337cb(view, i2, i3, i4, i5, i6, i7, i8, i9);
+                CarouselLayoutManager.this.m9790x2ff337cb(view, i2, i3, i4, i5, i6, i7, i8, i9);
             }
         };
         this.currentEstimatedPosition = -1;
@@ -118,7 +118,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         this.recyclerViewSizeChangeListener = new View.OnLayoutChangeListener() { // from class: com.google.android.material.carousel.CarouselLayoutManager$$ExternalSyntheticLambda1
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i22, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
-                CarouselLayoutManager.this.m9495x2ff337cb(view, i22, i3, i4, i5, i6, i7, i8, i9);
+                CarouselLayoutManager.this.m9790x2ff337cb(view, i22, i3, i4, i5, i6, i7, i8, i9);
             }
         };
         this.currentEstimatedPosition = -1;

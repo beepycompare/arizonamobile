@@ -22,7 +22,7 @@ public final class W1 extends MessageNano {
     public static volatile W1[] m;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f731a;
+    public int f814a;
     public int b;
 
     public W1() {
@@ -41,7 +41,7 @@ public final class W1 extends MessageNano {
     }
 
     public final W1 a() {
-        this.f731a = 0;
+        this.f814a = 0;
         this.b = -1;
         this.cachedSize = -1;
         return this;
@@ -49,12 +49,12 @@ public final class W1 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt32Size(3, this.b) + CodedOutputByteBufferNano.computeInt32Size(2, this.f731a) + super.computeSerializedSize();
+        return CodedOutputByteBufferNano.computeInt32Size(3, this.b) + CodedOutputByteBufferNano.computeInt32Size(2, this.f814a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt32(2, this.f731a);
+        codedOutputByteBufferNano.writeInt32(2, this.f814a);
         codedOutputByteBufferNano.writeInt32(3, this.b);
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -75,7 +75,7 @@ public final class W1 extends MessageNano {
                         case 4:
                         case 5:
                         case 6:
-                            this.f731a = readInt32;
+                            this.f814a = readInt32;
                             continue;
                     }
                 } else if (readTag != 24) {

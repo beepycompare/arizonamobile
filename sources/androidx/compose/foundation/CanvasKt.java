@@ -17,7 +17,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Canvas.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a.\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"Canvas", "", "modifier", "Landroidx/compose/ui/Modifier;", "onDraw", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "contentDescription", "", "(Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a.\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"Canvas", "", "modifier", "Landroidx/compose/ui/Modifier;", "onDraw", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "contentDescription", "", "(Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CanvasKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -27,7 +27,7 @@ public final class CanvasKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit Canvas$lambda$3(Modifier modifier, String str, Function1 function1, int i, Composer composer, int i2) {
+    public static final Unit Canvas$lambda$2(Modifier modifier, String str, Function1 function1, int i, Composer composer, int i2) {
         Canvas(modifier, str, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -88,16 +88,16 @@ public final class CanvasKt {
                 ComposerKt.traceEventStart(-1162737955, i2, -1, "androidx.compose.foundation.Canvas (Canvas.kt:60)");
             }
             Modifier drawBehind = DrawModifierKt.drawBehind(modifier, function1);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -699672883, "CC(remember):Canvas.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -699673267, "CC(remember):Canvas.kt#9igjgp");
             boolean z = (i2 & 112) == 32;
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: androidx.compose.foundation.CanvasKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit Canvas$lambda$2$lambda$1;
-                        Canvas$lambda$2$lambda$1 = CanvasKt.Canvas$lambda$2$lambda$1(str, (SemanticsPropertyReceiver) obj);
-                        return Canvas$lambda$2$lambda$1;
+                        Unit Canvas$lambda$1$0;
+                        Canvas$lambda$1$0 = CanvasKt.Canvas$lambda$1$0(str, (SemanticsPropertyReceiver) obj);
+                        return Canvas$lambda$1$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -115,16 +115,16 @@ public final class CanvasKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.CanvasKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Canvas$lambda$3;
-                    Canvas$lambda$3 = CanvasKt.Canvas$lambda$3(Modifier.this, str, function1, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Canvas$lambda$3;
+                    Unit Canvas$lambda$2;
+                    Canvas$lambda$2 = CanvasKt.Canvas$lambda$2(Modifier.this, str, function1, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return Canvas$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit Canvas$lambda$2$lambda$1(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
+    public static final Unit Canvas$lambda$1$0(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }

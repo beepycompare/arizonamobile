@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable2D.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DNode$setScrollSemanticsActions$1$1", f = "Scrollable2D.kt", i = {}, l = {286}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DNode$setScrollSemanticsActions$1$1", f = "Scrollable2D.kt", i = {}, l = {285}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class Scrollable2DNode$setScrollSemanticsActions$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ float $x;
@@ -43,7 +43,7 @@ public final class Scrollable2DNode$setScrollSemanticsActions$1$1 extends Suspen
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         ScrollingLogic2D scrollingLogic2D;
-        Object m571semanticsScrollByd4ec7I;
+        Object m649semanticsScrollByd4ec7I;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -53,8 +53,8 @@ public final class Scrollable2DNode$setScrollSemanticsActions$1$1 extends Suspen
             float f2 = this.$y;
             long floatToRawIntBits = Float.floatToRawIntBits(f);
             this.label = 1;
-            m571semanticsScrollByd4ec7I = Scrollable2DKt.m571semanticsScrollByd4ec7I(scrollingLogic2D, Offset.m5028constructorimpl((floatToRawIntBits << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), this);
-            if (m571semanticsScrollByd4ec7I == coroutine_suspended) {
+            m649semanticsScrollByd4ec7I = Scrollable2DKt.m649semanticsScrollByd4ec7I(scrollingLogic2D, Offset.m5171constructorimpl((floatToRawIntBits << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), this);
+            if (m649semanticsScrollByd4ec7I == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

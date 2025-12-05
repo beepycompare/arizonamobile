@@ -8,14 +8,27 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class TextFieldValueKt {
     public static final AnnotatedString getTextBeforeSelection(TextFieldValue textFieldValue, int i) {
-        return textFieldValue.getAnnotatedString().subSequence(Math.max(0, TextRange.m7456getMinimpl(textFieldValue.m7709getSelectiond9O1mEE()) - i), TextRange.m7456getMinimpl(textFieldValue.m7709getSelectiond9O1mEE()));
+        AnnotatedString annotatedString = textFieldValue.getAnnotatedString();
+        int m7699getMinimpl = TextRange.m7699getMinimpl(textFieldValue.m7955getSelectiond9O1mEE());
+        int i2 = m7699getMinimpl - i;
+        if (((i ^ m7699getMinimpl) & (m7699getMinimpl ^ i2)) < 0) {
+            i2 = 0;
+        }
+        return annotatedString.subSequence(Math.max(0, i2), TextRange.m7699getMinimpl(textFieldValue.m7955getSelectiond9O1mEE()));
     }
 
     public static final AnnotatedString getTextAfterSelection(TextFieldValue textFieldValue, int i) {
-        return textFieldValue.getAnnotatedString().subSequence(TextRange.m7455getMaximpl(textFieldValue.m7709getSelectiond9O1mEE()), Math.min(TextRange.m7455getMaximpl(textFieldValue.m7709getSelectiond9O1mEE()) + i, textFieldValue.getText().length()));
+        AnnotatedString annotatedString = textFieldValue.getAnnotatedString();
+        int m7698getMaximpl = TextRange.m7698getMaximpl(textFieldValue.m7955getSelectiond9O1mEE());
+        int m7698getMaximpl2 = TextRange.m7698getMaximpl(textFieldValue.m7955getSelectiond9O1mEE());
+        int i2 = m7698getMaximpl2 + i;
+        if (((i ^ i2) & (m7698getMaximpl2 ^ i2)) < 0) {
+            i2 = textFieldValue.getText().length();
+        }
+        return annotatedString.subSequence(m7698getMaximpl, Math.min(i2, textFieldValue.getText().length()));
     }
 
     public static final AnnotatedString getSelectedText(TextFieldValue textFieldValue) {
-        return textFieldValue.getAnnotatedString().m7270subSequence5zctL8(textFieldValue.m7709getSelectiond9O1mEE());
+        return textFieldValue.getAnnotatedString().m7506subSequence5zctL8(textFieldValue.m7955getSelectiond9O1mEE());
     }
 }

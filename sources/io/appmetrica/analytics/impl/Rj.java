@@ -13,8 +13,8 @@ import java.util.Map;
 public final class Rj implements Sa, IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f664a = new ArrayList();
-    public volatile C0301hi b;
+    public final ArrayList f747a = new ArrayList();
+    public volatile C0300hi b;
 
     @Override // io.appmetrica.analytics.impl.Sa, io.appmetrica.analytics.impl.Va
     public final void a(Rn rn) {
@@ -33,7 +33,7 @@ public final class Rj implements Sa, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void pauseSession() {
-        a(new C0629uj());
+        a(new C0628uj());
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -53,12 +53,12 @@ public final class Rj implements Sa, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportECommerce(ECommerceEvent eCommerceEvent) {
-        a(new C0729yj(eCommerceEvent));
+        a(new C0728yj(eCommerceEvent));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportError(String str, Throwable th) {
-        a(new C0530qj(str, th));
+        a(new C0529qj(str, th));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -68,22 +68,22 @@ public final class Rj implements Sa, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportRevenue(Revenue revenue) {
-        a(new C0704xj(revenue));
+        a(new C0703xj(revenue));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportUnhandledException(Throwable th) {
-        a(new C0579sj(th));
+        a(new C0578sj(th));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportUserProfile(UserProfile userProfile) {
-        a(new C0679wj(userProfile));
+        a(new C0678wj(userProfile));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void resumeSession() {
-        a(new C0604tj());
+        a(new C0603tj());
     }
 
     @Override // io.appmetrica.analytics.IReporter, io.appmetrica.analytics.IModuleReporter
@@ -93,7 +93,7 @@ public final class Rj implements Sa, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void setDataSendingEnabled(boolean z) {
-        a(new C0754zj(z));
+        a(new C0753zj(z));
     }
 
     @Override // io.appmetrica.analytics.IModuleReporter
@@ -103,10 +103,10 @@ public final class Rj implements Sa, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void setUserProfileID(String str) {
-        a(new C0654vj(str));
+        a(new C0653vj(str));
     }
 
-    @Override // io.appmetrica.analytics.impl.Sa, io.appmetrica.analytics.impl.InterfaceC0257g0
+    @Override // io.appmetrica.analytics.impl.Sa, io.appmetrica.analytics.impl.InterfaceC0256g0
     public final void a(V v) {
         a(new Kj(v));
     }
@@ -118,7 +118,7 @@ public final class Rj implements Sa, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportError(String str, String str2) {
-        a(new C0554rj(str, str2, null));
+        a(new C0553rj(str, str2, null));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -137,7 +137,7 @@ public final class Rj implements Sa, IPluginReporter {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportError(String str, String str2, Throwable th) {
-        a(new C0554rj(str, str2, th));
+        a(new C0553rj(str, str2, th));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -147,7 +147,7 @@ public final class Rj implements Sa, IPluginReporter {
 
     public final synchronized void a(Ra ra) {
         if (this.b == null) {
-            this.f664a.add(ra);
+            this.f747a.add(ra);
         } else {
             ra.a(this.b);
         }

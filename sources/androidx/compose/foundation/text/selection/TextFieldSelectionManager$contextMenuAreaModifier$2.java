@@ -1,6 +1,8 @@
 package androidx.compose.foundation.text.selection;
 
+import androidx.compose.ui.text.TextRange;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -11,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$contextMenuAreaModifier$2", f = "TextFieldSelectionManager.kt", i = {}, l = {225, 226}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$contextMenuAreaModifier$2", f = "TextFieldSelectionManager.kt", i = {}, l = {241, 243}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     int label;
@@ -35,12 +37,12 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends S
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x002c, code lost:
-        if (r4.this$0.updateClipboardEntry$foundation_release(r4) == r0) goto L14;
+        if (r7.this$0.updateClipboardEntry$foundation(r7) == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x003a, code lost:
-        if (r5 == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0057, code lost:
+        if (r8.mo1835onShowSelectionToolbarSbBc2M(r4, r5, r7) == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x003c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0059, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -48,7 +50,7 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends S
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object notifyPlatformSelectionBehaviorsOnShowContextMenu;
+        Pair contextTextAndSelection;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -57,14 +59,24 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends S
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.throwOnFailure(obj);
-                this.this$0.setTextToolbarShownViaProvider$foundation_release(true);
+                this.this$0.setTextToolbarShownViaProvider$foundation(true);
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        this.label = 2;
-        notifyPlatformSelectionBehaviorsOnShowContextMenu = this.this$0.notifyPlatformSelectionBehaviorsOnShowContextMenu(this);
+        contextTextAndSelection = this.this$0.getContextTextAndSelection();
+        if (contextTextAndSelection != null) {
+            TextFieldSelectionManager textFieldSelectionManager = this.this$0;
+            String str = (String) contextTextAndSelection.component1();
+            long m7705unboximpl = ((TextRange) contextTextAndSelection.component2()).m7705unboximpl();
+            PlatformSelectionBehaviors platformSelectionBehaviors$foundation = textFieldSelectionManager.getPlatformSelectionBehaviors$foundation();
+            if (platformSelectionBehaviors$foundation != null) {
+                this.label = 2;
+            }
+        }
+        this.this$0.setTextToolbarShownViaProvider$foundation(true);
+        return Unit.INSTANCE;
     }
 }

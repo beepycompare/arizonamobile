@@ -12,7 +12,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: AndroidComposeView.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
-public /* synthetic */ class AndroidComposeView$dragAndDropManager$1 extends FunctionReferenceImpl implements Function3<DragAndDropTransferData, Size, Function1<? super DrawScope, ? extends Unit>, Boolean> {
+public final /* synthetic */ class AndroidComposeView$dragAndDropManager$1 extends FunctionReferenceImpl implements Function3<DragAndDropTransferData, Size, Function1<? super DrawScope, ? extends Unit>, Boolean> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AndroidComposeView$dragAndDropManager$1(Object obj) {
         super(3, obj, AndroidComposeView.class, "startDrag", "startDrag-12SF9DM(Landroidx/compose/ui/draganddrop/DragAndDropTransferData;JLkotlin/jvm/functions/Function1;)Z", 0);
@@ -20,13 +20,13 @@ public /* synthetic */ class AndroidComposeView$dragAndDropManager$1 extends Fun
 
     @Override // kotlin.jvm.functions.Function3
     public /* bridge */ /* synthetic */ Boolean invoke(DragAndDropTransferData dragAndDropTransferData, Size size, Function1<? super DrawScope, ? extends Unit> function1) {
-        return m7100invoke12SF9DM(dragAndDropTransferData, size.m5110unboximpl(), function1);
+        return m7320invoke12SF9DM(dragAndDropTransferData, size.m5253unboximpl(), function1);
     }
 
     /* renamed from: invoke-12SF9DM  reason: not valid java name */
-    public final Boolean m7100invoke12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
-        boolean m7097startDrag12SF9DM;
-        m7097startDrag12SF9DM = ((AndroidComposeView) this.receiver).m7097startDrag12SF9DM(dragAndDropTransferData, j, function1);
-        return Boolean.valueOf(m7097startDrag12SF9DM);
+    public final Boolean m7320invoke12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
+        boolean m7315startDrag12SF9DM;
+        m7315startDrag12SF9DM = ((AndroidComposeView) this.receiver).m7315startDrag12SF9DM(dragAndDropTransferData, j, function1);
+        return Boolean.valueOf(m7315startDrag12SF9DM);
     }
 }

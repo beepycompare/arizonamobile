@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable2D.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DKt", f = "Scrollable2D.kt", i = {0}, l = {526}, m = "semanticsScrollBy-d-4ec7I", n = {"previousValue"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DKt", f = "Scrollable2D.kt", i = {0}, l = {509}, m = "semanticsScrollBy-d-4ec7I", n = {"previousValue"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class Scrollable2DKt$semanticsScrollBy$1 extends ContinuationImpl {
     Object L$0;
@@ -21,10 +21,10 @@ public final class Scrollable2DKt$semanticsScrollBy$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m571semanticsScrollByd4ec7I;
+        Object m649semanticsScrollByd4ec7I;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m571semanticsScrollByd4ec7I = Scrollable2DKt.m571semanticsScrollByd4ec7I(null, 0L, this);
-        return m571semanticsScrollByd4ec7I;
+        m649semanticsScrollByd4ec7I = Scrollable2DKt.m649semanticsScrollByd4ec7I(null, 0L, this);
+        return m649semanticsScrollByd4ec7I;
     }
 }

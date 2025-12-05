@@ -16,7 +16,7 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* compiled from: LongPressTextDragObserver.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.LongPressTextDragObserverKt$detectPreDragGesturesWithObserver$2", f = "LongPressTextDragObserver.kt", i = {0, 1, 1}, l = {87, 91}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "down"}, s = {"L$0", "L$0", "L$1"})
+@DebugMetadata(c = "androidx.compose.foundation.text.LongPressTextDragObserverKt$detectPreDragGesturesWithObserver$2", f = "LongPressTextDragObserver.kt", i = {0, 1, 1}, l = {77, 81}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "down"}, s = {"L$0", "L$0", "L$1"}, v = 1)
 /* loaded from: classes.dex */
 final class LongPressTextDragObserverKt$detectPreDragGesturesWithObserver$2 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ TextDragObserver $observer;
@@ -76,7 +76,7 @@ final class LongPressTextDragObserverKt$detectPreDragGesturesWithObserver$2 exte
                 int size = changes.size();
                 for (int i2 = 0; i2 < size; i2++) {
                     PointerInputChange pointerInputChange2 = changes.get(i2);
-                    if (PointerId.m6552equalsimpl0(pointerInputChange2.m6568getIdJ3iCeTQ(), pointerInputChange.m6568getIdJ3iCeTQ()) && pointerInputChange2.getPressed()) {
+                    if (PointerId.m6726equalsimpl0(pointerInputChange2.m6742getIdJ3iCeTQ(), pointerInputChange.m6742getIdJ3iCeTQ()) && pointerInputChange2.getPressed()) {
                         this.L$0 = awaitPointerEventScope2;
                         this.L$1 = pointerInputChange;
                         this.label = 2;
@@ -92,7 +92,7 @@ final class LongPressTextDragObserverKt$detectPreDragGesturesWithObserver$2 exte
             ResultKt.throwOnFailure(obj);
         }
         PointerInputChange pointerInputChange3 = (PointerInputChange) obj;
-        this.$observer.mo1348onDownk4lQ0M(pointerInputChange3.m6570getPositionF1C5BW0());
+        this.$observer.mo1427onDownk4lQ0M(pointerInputChange3.m6744getPositionF1C5BW0());
         awaitPointerEventScope2 = awaitPointerEventScope;
         pointerInputChange = pointerInputChange3;
         this.L$0 = awaitPointerEventScope2;

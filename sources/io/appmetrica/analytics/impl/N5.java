@@ -9,7 +9,7 @@ import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 public abstract class N5 extends BaseRequestConfig.ComponentLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SafePackageManager f598a;
+    public final SafePackageManager f681a;
 
     public N5(Context context, String str) {
         this(context, str, new SafePackageManager());
@@ -20,26 +20,26 @@ public abstract class N5 extends BaseRequestConfig.ComponentLoader {
     public O5 load(M5 m5) {
         O5 o5 = (O5) super.load((N5) m5);
         String packageName = getContext().getPackageName();
-        ApplicationInfo applicationInfo = this.f598a.getApplicationInfo(getContext(), getPackageName(), 0);
+        ApplicationInfo applicationInfo = this.f681a.getApplicationInfo(getContext(), getPackageName(), 0);
         if (applicationInfo != null) {
             int i = applicationInfo.flags;
-            o5.f617a = (i & 2) != 0 ? "1" : "0";
+            o5.f700a = (i & 2) != 0 ? "1" : "0";
             o5.b = (i & 1) == 0 ? "0" : "1";
         } else if (TextUtils.equals(packageName, getPackageName())) {
-            o5.f617a = (getContext().getApplicationInfo().flags & 2) != 0 ? "1" : "0";
+            o5.f700a = (getContext().getApplicationInfo().flags & 2) != 0 ? "1" : "0";
             o5.b = (getContext().getApplicationInfo().flags & 1) == 0 ? "0" : "1";
         } else {
-            o5.f617a = "0";
+            o5.f700a = "0";
             o5.b = "0";
         }
-        C0279gm c0279gm = m5.f583a;
-        o5.c = c0279gm;
-        o5.setRetryPolicyConfig(c0279gm.t);
+        C0278gm c0278gm = m5.f666a;
+        o5.c = c0278gm;
+        o5.setRetryPolicyConfig(c0278gm.t);
         return o5;
     }
 
     public N5(Context context, String str, SafePackageManager safePackageManager) {
         super(context, str);
-        this.f598a = safePackageManager;
+        this.f681a = safePackageManager;
     }
 }

@@ -7,7 +7,7 @@ import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.HandlerWrapper;
 import androidx.media3.common.util.Log;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class WifiLockManager {
     private static final String TAG = "WifiLockManager";
     private static final String WIFI_LOCK_TAG = "ExoPlayer:WifiLockManager";
@@ -30,14 +30,14 @@ public final class WifiLockManager {
         this.wifiLockHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.WifiLockManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                WifiLockManager.this.m8664lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(z, z2);
+                WifiLockManager.this.m8928lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(z, z2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$0$androidx-media3-exoplayer-WifiLockManager  reason: not valid java name */
-    public /* synthetic */ void m8664lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(boolean z, boolean z2) {
+    public /* synthetic */ void m8928lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(boolean z, boolean z2) {
         this.wifiLockManagerInternal.updateWifiLock(z, z2);
     }
 
@@ -50,7 +50,7 @@ public final class WifiLockManager {
             this.wifiLockHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.WifiLockManager$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WifiLockManager.this.m8665lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(z);
+                    WifiLockManager.this.m8929lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(z);
                 }
             });
         }
@@ -58,11 +58,11 @@ public final class WifiLockManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setStayAwake$1$androidx-media3-exoplayer-WifiLockManager  reason: not valid java name */
-    public /* synthetic */ void m8665lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(boolean z) {
+    public /* synthetic */ void m8929lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(boolean z) {
         this.wifiLockManagerInternal.updateWifiLock(true, z);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     private static final class WifiLockManagerInternal {
         private final Context applicationContext;
         private WifiManager.WifiLock wifiLock;

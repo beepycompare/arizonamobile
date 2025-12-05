@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Абагуліць праз</string>
     <string name="abc_shareactionprovider_share_with_application">Абагуліць праз праграму \"%s\"</string>
     <string name="abc_toolbar_collapse_description">Згарнуць</string>
-    <string name="autofill">Аўтазапаўненне</string>
+    <string name="androidx_compose_foundation_autofill">Аўтазапаўненне</string>
+    <string name="androidx_compose_ui_autofill">Аўтазапаўненне</string>
     <string name="bottomsheet_action_collapse">Згарнуць ніжні аркуш</string>
     <string name="bottomsheet_action_expand">Разгарнуць ніжні аркуш</string>
     <string name="bottomsheet_action_expand_halfway">Разгарнуць напалову</string>

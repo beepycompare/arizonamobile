@@ -3,56 +3,56 @@ package androidx.compose.ui.input.pointer;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 /* compiled from: PointerEvent.kt */
-@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087@\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0013\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u000b\u001a\u00020\fHÖ\u0001J\t\u0010\r\u001a\u00020\u000eHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerId;", "", "value", "", "constructor-impl", "(J)J", "getValue", "()J", "equals", "", "other", "hashCode", "", "toString", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087@\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0013\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u000b\u001a\u00020\fHÖ\u0001J\t\u0010\r\u001a\u00020\u000eHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerId;", "", "value", "", "constructor-impl", "(J)J", "getValue", "()J", "equals", "", "other", "hashCode", "", "toString", "", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class PointerId {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PointerId m6549boximpl(long j) {
+    public static final /* synthetic */ PointerId m6723boximpl(long j) {
         return new PointerId(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m6550constructorimpl(long j) {
+    public static long m6724constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6551equalsimpl(long j, Object obj) {
-        return (obj instanceof PointerId) && j == ((PointerId) obj).m6555unboximpl();
+    public static boolean m6725equalsimpl(long j, Object obj) {
+        return (obj instanceof PointerId) && j == ((PointerId) obj).m6729unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6552equalsimpl0(long j, long j2) {
+    public static final boolean m6726equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6553hashCodeimpl(long j) {
+    public static int m6727hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6554toStringimpl(long j) {
+    public static String m6728toStringimpl(long j) {
         return "PointerId(value=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m6551equalsimpl(this.value, obj);
+        return m6725equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6553hashCodeimpl(this.value);
+        return m6727hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m6554toStringimpl(this.value);
+        return m6728toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m6555unboximpl() {
+    public final /* synthetic */ long m6729unboximpl() {
         return this.value;
     }
 

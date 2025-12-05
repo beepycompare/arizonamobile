@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.measurement;
 
+import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Iterator;
@@ -151,7 +152,7 @@ public final class zzbj extends zzav {
             return zzao.zzf;
         } else {
             switch (ordinal) {
-                case 62:
+                case RectListKt.BitOffsetForGesturable /* 62 */:
                     zzh.zza(zzbk.TYPEOF.name(), 1, list);
                     zzao zza13 = zzgVar.zza((zzao) list.get(0));
                     if (zza13 instanceof zzat) {

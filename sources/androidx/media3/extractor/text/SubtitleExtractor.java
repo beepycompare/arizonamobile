@@ -147,7 +147,7 @@ public class SubtitleExtractor implements Extractor {
             this.subtitleParser.parse(this.subtitleData, 0, this.bytesRead, allCues, new Consumer() { // from class: androidx.media3.extractor.text.SubtitleExtractor$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    SubtitleExtractor.this.m8784xdbba10ad((CuesWithTiming) obj);
+                    SubtitleExtractor.this.m9048xdbba10ad((CuesWithTiming) obj);
                 }
             });
             Collections.sort(this.samples);
@@ -163,7 +163,7 @@ public class SubtitleExtractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$parseAndWriteToOutput$0$androidx-media3-extractor-text-SubtitleExtractor  reason: not valid java name */
-    public /* synthetic */ void m8784xdbba10ad(CuesWithTiming cuesWithTiming) {
+    public /* synthetic */ void m9048xdbba10ad(CuesWithTiming cuesWithTiming) {
         Sample sample = new Sample(cuesWithTiming.startTimeUs, this.cueEncoder.encode(cuesWithTiming.cues, cuesWithTiming.durationUs));
         this.samples.add(sample);
         if (this.seekTimeUs == C.TIME_UNSET || cuesWithTiming.endTimeUs >= this.seekTimeUs) {

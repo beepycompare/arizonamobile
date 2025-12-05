@@ -1,6 +1,5 @@
 package androidx.compose.animation;
 
-import androidx.collection.MutableScatterMap;
 import androidx.compose.animation.SharedTransitionScope;
 import androidx.compose.animation.core.AnimationVector4D;
 import androidx.compose.animation.core.MutableTransitionState;
@@ -12,7 +11,7 @@ import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
 import androidx.compose.runtime.snapshots.SnapshotStateList;
-import androidx.compose.runtime.snapshots.SnapshotStateObserver;
+import androidx.compose.runtime.snapshots.SnapshotStateMap;
 import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Rect;
@@ -29,59 +28,37 @@ import androidx.compose.ui.unit.LayoutDirection;
 import androidx.exifinterface.media.ExifInterface;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Map;
 import kotlin.Function;
-import kotlin.Lazy;
-import kotlin.LazyKt;
-import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.comparisons.ComparisonsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: SharedTransitionScope.kt */
-@Metadata(d1 = {"\u0000î\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000 \u0085\u00012\u00020\u00012\u00020\u0002:\u0004\u0085\u0001\u0086\u0001B\u0019\b\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\f\u0010\u0015\u001a\u00020\u0016*\u00020\u0016H\u0016J>\u0010\u0017\u001a\u00020\u0016*\u00020\u00162\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u000b0\u00192\u0006\u0010\u001a\u001a\u00020\u001b2\u001a\u0010\u001c\u001a\u0016\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001f\u0012\u0006\u0012\u0004\u0018\u00010 0\u001dH\u0016JD\u0010!\u001a\u00020\u0016*\u00020\u00162\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020\u000b2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020+H\u0016J\\\u0010,\u001a\u00020\u0016*\u00020\u00162\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020%2\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u0002002\u0006\u0010&\u001a\u00020'2\u0006\u00101\u001a\u0002022\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020\u000b2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020+H\u0016JD\u00103\u001a\u00020\u0016*\u00020\u00162\u0006\u0010\"\u001a\u00020#2\u0006\u00104\u001a\u00020\u000b2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020\u000b2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020+H\u0016JS\u00105\u001a\u00020\u0016*\u00020\u00162\u0006\u0010\"\u001a\u00020#2\u0006\u00104\u001a\u00020\u000b2\b\b\u0002\u0010&\u001a\u00020'2\b\b\u0002\u0010(\u001a\u00020)2\b\b\u0002\u0010*\u001a\u00020\u000b2\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020+H\u0000¢\u0006\u0002\b6J\u0010\u00107\u001a\u00020+2\u0006\u00108\u001a\u000209H\u0016J\u0015\u0010:\u001a\u00020#2\u0006\u0010;\u001a\u00020<H\u0017¢\u0006\u0002\u0010=J\b\u0010@\u001a\u00020?H\u0002Jp\u0010B\u001a\u00020\u0016\"\u0004\b\u0000\u0010C*\u00020\u00162\u0006\u0010\"\u001a\u00020#2\u000e\u0010D\u001a\n\u0012\u0004\u0012\u0002HC\u0018\u00010E2\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u0002HC\u0012\u0004\u0012\u00020\u000b0A2\u0006\u0010&\u001a\u00020'2\b\b\u0002\u0010(\u001a\u00020)2\u0006\u0010F\u001a\u00020\u000b2\u0006\u0010*\u001a\u00020\u000b2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020+H\u0002JM\u0010G\u001a\u00020H2\u0006\u0010!\u001a\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010(\u001a\u00020)2\u0006\u0010F\u001a\u00020\u000b2\u0006\u0010\"\u001a\u00020#2\u0006\u0010\u001c\u001a\u00020+2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010*\u001a\u00020\u000bH\u0003¢\u0006\u0002\u0010LJ\u0010\u0010]\u001a\u00020I2\u0006\u0010;\u001a\u00020<H\u0002J\u0015\u0010^\u001a\u00020?2\u0006\u0010_\u001a\u00020`H\u0000¢\u0006\u0002\baJ\u0015\u0010b\u001a\u00020?2\u0006\u0010c\u001a\u00020HH\u0000¢\u0006\u0002\bdJ\u0015\u0010e\u001a\u00020?2\u0006\u0010c\u001a\u00020HH\u0000¢\u0006\u0002\bfJ\u0015\u0010g\u001a\u00020?2\u0006\u0010h\u001a\u00020ZH\u0000¢\u0006\u0002\biJ\u0015\u0010j\u001a\u00020?2\u0006\u0010h\u001a\u00020ZH\u0000¢\u0006\u0002\bkJ\r\u0010l\u001a\u00020?H\u0000¢\u0006\u0002\bmJ\b\u0010r\u001a\u00020?H\u0002J7\u0010s\u001a\u00020?2\u0006\u0010_\u001a\u00020I2\u0012\u0010t\u001a\u000e\u0012\u0004\u0012\u00020I\u0012\u0004\u0012\u00020?0A2\f\u0010u\u001a\b\u0012\u0004\u0012\u00020?0\u0019H\u0000¢\u0006\u0002\bvJ\u0015\u0010w\u001a\u00020?2\u0006\u0010_\u001a\u00020<H\u0000¢\u0006\u0002\bxJ,\u0010y\u001a\u00020z*\u00020N2\u0006\u0010{\u001a\u00020N2\u0006\u0010|\u001a\u00020z2\u0006\u0010}\u001a\u00020\u000bH\u0096\u0001¢\u0006\u0004\b~\u0010\u007fJ\u000e\u0010\u0080\u0001\u001a\u00020N*\u00020NH\u0096\u0001R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001e\u0010\f\u001a\u00020\u000b2\u0006\u0010\n\u001a\u00020\u000b@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR+\u0010\u0010\u001a\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u000b8V@RX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b\u0013\u0010\u0014\u001a\u0004\b\u0010\u0010\u000e\"\u0004\b\u0011\u0010\u0012R\u0014\u0010>\u001a\b\u0012\u0004\u0012\u00020?0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010@\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020?0AX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010M\u001a\u00020NX\u0080.¢\u0006\u000e\n\u0000\u001a\u0004\bO\u0010P\"\u0004\bQ\u0010RR\u0014\u0010S\u001a\u00020N8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bT\u0010PR\u001c\u0010U\u001a\u0004\u0018\u00010NX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bV\u0010P\"\u0004\bW\u0010RR\u0014\u0010X\u001a\b\u0012\u0004\u0012\u00020Z0YX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010[\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020I0\\X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010n\u001a\u00020o8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bp\u0010qR\u001a\u0010\u0081\u0001\u001a\u00020N*\u00030\u0082\u0001X\u0096\u0005¢\u0006\b\u001a\u0006\b\u0083\u0001\u0010\u0084\u0001¨\u0006\u0087\u0001"}, d2 = {"Landroidx/compose/animation/SharedTransitionScopeImpl;", "Landroidx/compose/animation/SharedTransitionScope;", "Landroidx/compose/ui/layout/LookaheadScope;", "lookaheadScope", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "<init>", "(Landroidx/compose/ui/layout/LookaheadScope;Lkotlinx/coroutines/CoroutineScope;)V", "getCoroutineScope", "()Lkotlinx/coroutines/CoroutineScope;", "value", "", "disposed", "getDisposed$animation", "()Z", "<set-?>", "isTransitionActive", "setTransitionActive", "(Z)V", "isTransitionActive$delegate", "Landroidx/compose/runtime/MutableState;", "skipToLookaheadSize", "Landroidx/compose/ui/Modifier;", "renderInSharedTransitionScopeOverlay", "renderInOverlay", "Lkotlin/Function0;", "zIndexInOverlay", "", "clipInOverlayDuringTransition", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/LayoutDirection;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/graphics/Path;", "sharedElement", "sharedContentState", "Landroidx/compose/animation/SharedTransitionScope$SharedContentState;", "animatedVisibilityScope", "Landroidx/compose/animation/AnimatedVisibilityScope;", "boundsTransform", "Landroidx/compose/animation/BoundsTransform;", "placeHolderSize", "Landroidx/compose/animation/SharedTransitionScope$PlaceHolderSize;", "renderInOverlayDuringTransition", "Landroidx/compose/animation/SharedTransitionScope$OverlayClip;", "sharedBounds", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", "resizeMode", "Landroidx/compose/animation/SharedTransitionScope$ResizeMode;", "sharedElementWithCallerManagedVisibility", "visible", "sharedBoundsWithCallerManagedVisibility", "sharedBoundsWithCallerManagedVisibility$animation", "OverlayClip", "clipShape", "Landroidx/compose/ui/graphics/Shape;", "rememberSharedContentState", "key", "", "(Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/animation/SharedTransitionScope$SharedContentState;", "observeAnimatingBlock", "", "updateTransitionActiveness", "Lkotlin/Function1;", "sharedBoundsImpl", ExifInterface.GPS_DIRECTION_TRUE, "parentTransition", "Landroidx/compose/animation/core/Transition;", "renderOnlyWhenVisible", "rememberSharedElementState", "Landroidx/compose/animation/SharedElementInternalState;", "Landroidx/compose/animation/SharedElement;", "boundsAnimation", "Landroidx/compose/animation/BoundsAnimation;", "(Landroidx/compose/animation/SharedElement;Landroidx/compose/animation/BoundsAnimation;Landroidx/compose/animation/SharedTransitionScope$PlaceHolderSize;ZLandroidx/compose/animation/SharedTransitionScope$SharedContentState;Landroidx/compose/animation/SharedTransitionScope$OverlayClip;FZLandroidx/compose/runtime/Composer;I)Landroidx/compose/animation/SharedElementInternalState;", "root", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getRoot$animation", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setRoot$animation", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "lookaheadRoot", "getLookaheadRoot$animation", "nullableLookaheadRoot", "getNullableLookaheadRoot$animation", "setNullableLookaheadRoot$animation", "renderers", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Landroidx/compose/animation/LayerRenderer;", "sharedElements", "Landroidx/collection/MutableScatterMap;", "sharedElementsFor", "drawInOverlay", "scope", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "drawInOverlay$animation", "onStateRemoved", "sharedElementState", "onStateRemoved$animation", "onStateAdded", "onStateAdded$animation", "onLayerRendererCreated", "renderer", "onLayerRendererCreated$animation", "onLayerRendererRemoved", "onLayerRendererRemoved$animation", "onDispose", "onDispose$animation", "observerForTest", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "getObserverForTest$animation", "()Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "observeIsAnimating", "observeReads", "onValueChangedForScope", "block", "observeReads$animation", "clearObservation", "clearObservation$animation", "localLookaheadPositionOf", "Landroidx/compose/ui/geometry/Offset;", "sourceCoordinates", "relativeToSource", "includeMotionFrameOfReference", "localLookaheadPositionOf-au-aQtc", "(Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;JZ)J", "toLookaheadCoordinates", "lookaheadScopeCoordinates", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getLookaheadScopeCoordinates", "(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/layout/LayoutCoordinates;", "Companion", "ShapeBasedClip", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Î\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002:\u0001}B\u0019\b\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001a\u0010\u001e\u001a\u00020\u001f*\u00020\u001f2\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u00120\u000bH\u0016J\"\u0010!\u001a\u00020\u001f*\u00020\u001f2\u0006\u0010\"\u001a\u00020#2\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00120\u000bH\u0016JD\u0010%\u001a\u00020\u001f*\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u00122\u0006\u0010\"\u001a\u00020#2\u0006\u0010/\u001a\u000200H\u0016J\\\u00101\u001a\u00020\u001f*\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002052\u0006\u0010*\u001a\u00020+2\u0006\u00106\u001a\u0002072\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u00122\u0006\u0010\"\u001a\u00020#2\u0006\u0010/\u001a\u000200H\u0016JD\u00108\u001a\u00020\u001f*\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u0006\u00109\u001a\u00020\u00122\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u00122\u0006\u0010\"\u001a\u00020#2\u0006\u0010/\u001a\u000200H\u0016JS\u0010:\u001a\u00020\u001f*\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u0006\u00109\u001a\u00020\u00122\b\b\u0002\u0010*\u001a\u00020+2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010.\u001a\u00020\u00122\b\b\u0002\u0010\"\u001a\u00020#2\b\b\u0002\u0010/\u001a\u000200H\u0000¢\u0006\u0002\b;J\u0010\u0010<\u001a\u0002002\u0006\u0010=\u001a\u00020>H\u0016J\r\u0010A\u001a\u00020\fH\u0000¢\u0006\u0002\bBJp\u0010C\u001a\u00020\u001f\"\u0004\b\u0000\u0010D*\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u000e\u0010E\u001a\n\u0012\u0004\u0012\u0002HD\u0018\u00010F2\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u0002HD\u0012\u0004\u0012\u00020\u00120G2\u0006\u0010*\u001a\u00020+2\b\b\u0002\u0010,\u001a\u00020-2\u0006\u0010H\u001a\u00020\u00122\u0006\u0010.\u001a\u00020\u00122\u0006\u0010\"\u001a\u00020#2\u0006\u0010/\u001a\u000200H\u0002JM\u0010I\u001a\u00020J2\u0006\u0010%\u001a\u00020K2\u0006\u0010L\u001a\u00020M2\u0006\u0010,\u001a\u00020-2\u0006\u0010H\u001a\u00020\u00122\u0006\u0010&\u001a\u00020'2\u0006\u0010/\u001a\u0002002\u0006\u0010\"\u001a\u00020#2\u0006\u0010.\u001a\u00020\u0012H\u0003¢\u0006\u0002\u0010NJ\u0010\u0010a\u001a\u00020K2\u0006\u0010b\u001a\u00020`H\u0002J\u0015\u0010c\u001a\u00020\f2\u0006\u0010d\u001a\u00020eH\u0000¢\u0006\u0002\bfJ\u0015\u0010g\u001a\u00020\f2\u0006\u0010h\u001a\u00020JH\u0000¢\u0006\u0002\biJ\u0015\u0010j\u001a\u00020\f2\u0006\u0010h\u001a\u00020JH\u0000¢\u0006\u0002\bkJ\u0015\u0010l\u001a\u00020\f2\u0006\u0010m\u001a\u00020]H\u0000¢\u0006\u0002\bnJ\u0015\u0010o\u001a\u00020\f2\u0006\u0010m\u001a\u00020]H\u0000¢\u0006\u0002\bpJ,\u0010q\u001a\u00020r*\u00020P2\u0006\u0010s\u001a\u00020P2\u0006\u0010t\u001a\u00020r2\u0006\u0010u\u001a\u00020\u0012H\u0096\u0001¢\u0006\u0004\bv\u0010wJ\r\u0010x\u001a\u00020P*\u00020PH\u0096\u0001R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\"\u0010\n\u001a\n\u0012\u0004\u0012\u00020\f\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R+\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u00128V@RX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b\u0017\u0010\u0018\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R,\u0010\u0019\u001a\n\u0012\u0004\u0012\u00020\f\u0018\u00010\u000b8\u0006@\u0006X\u0087\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u001a\u0010\u001b\u001a\u0004\b\u001c\u0010\u000e\"\u0004\b\u001d\u0010\u0010R\u001a\u0010?\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b@\u0010\u000eR$\u0010Q\u001a\u00020P2\u0006\u0010O\u001a\u00020P8@@@X\u0080\u000e¢\u0006\f\u001a\u0004\bR\u0010S\"\u0004\bT\u0010UR\u0010\u0010V\u001a\u0004\u0018\u00010PX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010W\u001a\u00020P2\u0006\u0010O\u001a\u00020P8@@@X\u0080\u000e¢\u0006\f\u001a\u0004\bX\u0010S\"\u0004\bY\u0010UR\u0010\u0010Z\u001a\u0004\u0018\u00010PX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010[\u001a\b\u0012\u0004\u0012\u00020]0\\X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010^\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020K0_X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010y\u001a\u00020P*\u00020zX\u0096\u0005¢\u0006\u0006\u001a\u0004\b{\u0010|¨\u0006~"}, d2 = {"Landroidx/compose/animation/SharedTransitionScopeImpl;", "Landroidx/compose/animation/SharedTransitionScope;", "Landroidx/compose/ui/layout/LookaheadScope;", "lookaheadScope", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "<init>", "(Landroidx/compose/ui/layout/LookaheadScope;Lkotlinx/coroutines/CoroutineScope;)V", "getCoroutineScope", "()Lkotlinx/coroutines/CoroutineScope;", "invalidateOverlay", "Lkotlin/Function0;", "", "getInvalidateOverlay", "()Lkotlin/jvm/functions/Function0;", "setInvalidateOverlay", "(Lkotlin/jvm/functions/Function0;)V", "<set-?>", "", "isTransitionActive", "()Z", "setTransitionActive", "(Z)V", "isTransitionActive$delegate", "Landroidx/compose/runtime/MutableState;", "testBlockToRun", "getTestBlockToRun$annotations", "()V", "getTestBlockToRun", "setTestBlockToRun", "skipToLookaheadSize", "Landroidx/compose/ui/Modifier;", "enabled", "renderInSharedTransitionScopeOverlay", "zIndexInOverlay", "", "renderInOverlay", "sharedElement", "sharedContentState", "Landroidx/compose/animation/SharedTransitionScope$SharedContentState;", "animatedVisibilityScope", "Landroidx/compose/animation/AnimatedVisibilityScope;", "boundsTransform", "Landroidx/compose/animation/BoundsTransform;", "placeholderSize", "Landroidx/compose/animation/SharedTransitionScope$PlaceholderSize;", "renderInOverlayDuringTransition", "clipInOverlayDuringTransition", "Landroidx/compose/animation/SharedTransitionScope$OverlayClip;", "sharedBounds", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", "resizeMode", "Landroidx/compose/animation/SharedTransitionScope$ResizeMode;", "sharedElementWithCallerManagedVisibility", "visible", "sharedBoundsWithCallerManagedVisibility", "sharedBoundsWithCallerManagedVisibility$animation", "OverlayClip", "clipShape", "Landroidx/compose/ui/graphics/Shape;", "observeAnimatingBlock", "getObserveAnimatingBlock$animation", "updateTransitionActiveness", "updateTransitionActiveness$animation", "sharedBoundsImpl", ExifInterface.GPS_DIRECTION_TRUE, "parentTransition", "Landroidx/compose/animation/core/Transition;", "Lkotlin/Function1;", "renderOnlyWhenVisible", "rememberSharedElementState", "Landroidx/compose/animation/SharedElementEntry;", "Landroidx/compose/animation/SharedElement;", "boundsAnimation", "Landroidx/compose/animation/BoundsAnimation;", "(Landroidx/compose/animation/SharedElement;Landroidx/compose/animation/BoundsAnimation;Landroidx/compose/animation/SharedTransitionScope$PlaceholderSize;ZLandroidx/compose/animation/SharedTransitionScope$SharedContentState;Landroidx/compose/animation/SharedTransitionScope$OverlayClip;FZLandroidx/compose/runtime/Composer;I)Landroidx/compose/animation/SharedElementEntry;", "value", "Landroidx/compose/ui/layout/LayoutCoordinates;", "root", "getRoot$animation", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setRoot$animation", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "_nullableRoot", "lookaheadRoot", "getLookaheadRoot$animation", "setLookaheadRoot$animation", "_nullableLookaheadRoot", "renderers", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Landroidx/compose/animation/LayerRenderer;", "sharedElements", "Landroidx/compose/runtime/snapshots/SnapshotStateMap;", "", "sharedElementsFor", "key", "drawInOverlay", "scope", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "drawInOverlay$animation", "onEntryRemoved", "sharedElementState", "onEntryRemoved$animation", "onEntryAdded", "onEntryAdded$animation", "onLayerRendererCreated", "renderer", "onLayerRendererCreated$animation", "onLayerRendererRemoved", "onLayerRendererRemoved$animation", "localLookaheadPositionOf", "Landroidx/compose/ui/geometry/Offset;", "sourceCoordinates", "relativeToSource", "includeMotionFrameOfReference", "localLookaheadPositionOf-au-aQtc", "(Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;JZ)J", "toLookaheadCoordinates", "lookaheadScopeCoordinates", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getLookaheadScopeCoordinates", "(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/layout/LayoutCoordinates;", "ShapeBasedClip", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SharedTransitionScopeImpl implements SharedTransitionScope, LookaheadScope {
     public static final int $stable = 0;
-    public static final Companion Companion = new Companion(null);
-    private static final Lazy<SnapshotStateObserver> SharedTransitionObserver$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, (Function0) new Function0<SnapshotStateObserver>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$Companion$SharedTransitionObserver$2
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // kotlin.jvm.functions.Function0
-        public final SnapshotStateObserver invoke() {
-            SnapshotStateObserver snapshotStateObserver = new SnapshotStateObserver(new Function1<Function0<? extends Unit>, Unit>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$Companion$SharedTransitionObserver$2.1
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Function0<? extends Unit> function0) {
-                    invoke2((Function0<Unit>) function0);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(Function0<Unit> function0) {
-                    function0.invoke();
-                }
-            });
-            snapshotStateObserver.start();
-            return snapshotStateObserver;
-        }
-    });
     private final /* synthetic */ LookaheadScope $$delegate_0;
+    private LayoutCoordinates _nullableLookaheadRoot;
+    private LayoutCoordinates _nullableRoot;
     private final CoroutineScope coroutineScope;
-    private boolean disposed;
+    private Function0<Unit> invalidateOverlay;
     private final MutableState isTransitionActive$delegate;
-    private LayoutCoordinates nullableLookaheadRoot;
     private final Function0<Unit> observeAnimatingBlock;
     private final SnapshotStateList<LayerRenderer> renderers;
-    public LayoutCoordinates root;
-    private final MutableScatterMap<Object, SharedElement> sharedElements;
-    private final Function1<SharedTransitionScope, Unit> updateTransitionActiveness;
+    private final SnapshotStateMap<Object, SharedElement> sharedElements;
+    private Function0<Unit> testBlockToRun;
+
+    public static /* synthetic */ void getTestBlockToRun$annotations() {
+    }
 
     @Override // androidx.compose.ui.layout.LookaheadScope
     public LayoutCoordinates getLookaheadScopeCoordinates(Placeable.PlacementScope placementScope) {
@@ -90,8 +67,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
 
     @Override // androidx.compose.ui.layout.LookaheadScope
     /* renamed from: localLookaheadPositionOf-au-aQtc  reason: not valid java name */
-    public long mo126localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
-        return this.$$delegate_0.mo126localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j, z);
+    public long mo141localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+        return this.$$delegate_0.mo141localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j, z);
     }
 
     @Override // androidx.compose.ui.layout.LookaheadScope
@@ -119,86 +96,31 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                MutableScatterMap mutableScatterMap;
-                mutableScatterMap = SharedTransitionScopeImpl.this.sharedElements;
-                MutableScatterMap mutableScatterMap2 = mutableScatterMap;
-                Object[] objArr = mutableScatterMap2.keys;
-                Object[] objArr2 = mutableScatterMap2.values;
-                long[] jArr = mutableScatterMap2.metadata;
-                int length = jArr.length - 2;
-                if (length < 0) {
+                SnapshotStateMap snapshotStateMap;
+                snapshotStateMap = SharedTransitionScopeImpl.this.sharedElements;
+                SnapshotStateMap snapshotStateMap2 = snapshotStateMap;
+                if (snapshotStateMap2.isEmpty()) {
                     return;
                 }
-                int i = 0;
-                while (true) {
-                    long j = jArr[i];
-                    if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                        int i2 = 8 - ((~(i - length)) >>> 31);
-                        for (int i3 = 0; i3 < i2; i3++) {
-                            if ((255 & j) < 128) {
-                                int i4 = (i << 3) + i3;
-                                Object obj = objArr[i4];
-                                if (((SharedElement) objArr2[i4]).isAnimating()) {
-                                    return;
-                                }
-                            }
-                            j >>= 8;
-                        }
-                        if (i2 != 8) {
-                            return;
-                        }
-                    }
-                    if (i == length) {
-                        return;
-                    }
-                    i++;
+                Iterator it = snapshotStateMap2.entrySet().iterator();
+                while (it.hasNext() && !((SharedElement) ((Map.Entry) it.next()).getValue()).isAnimating()) {
                 }
-            }
-        };
-        this.updateTransitionActiveness = new Function1<SharedTransitionScope, Unit>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$updateTransitionActiveness$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(SharedTransitionScope sharedTransitionScope) {
-                invoke2(sharedTransitionScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(SharedTransitionScope sharedTransitionScope) {
-                SharedTransitionScopeImpl.this.updateTransitionActiveness();
             }
         };
         this.renderers = SnapshotStateKt.mutableStateListOf();
-        this.sharedElements = new MutableScatterMap<>(0, 1, null);
+        this.sharedElements = SnapshotStateKt.mutableStateMapOf();
     }
 
     public final CoroutineScope getCoroutineScope() {
         return this.coroutineScope;
     }
 
-    /* compiled from: SharedTransitionScope.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001b\u0010\u0004\u001a\u00020\u00058BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\b\u0010\t\u001a\u0004\b\u0006\u0010\u0007¨\u0006\n"}, d2 = {"Landroidx/compose/animation/SharedTransitionScopeImpl$Companion;", "", "<init>", "()V", "SharedTransitionObserver", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "getSharedTransitionObserver", "()Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "SharedTransitionObserver$delegate", "Lkotlin/Lazy;", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final SnapshotStateObserver getSharedTransitionObserver() {
-            return (SnapshotStateObserver) SharedTransitionScopeImpl.SharedTransitionObserver$delegate.getValue();
-        }
+    public final Function0<Unit> getInvalidateOverlay() {
+        return this.invalidateOverlay;
     }
 
-    public final boolean getDisposed$animation() {
-        return this.disposed;
+    public final void setInvalidateOverlay(Function0<Unit> function0) {
+        this.invalidateOverlay = function0;
     }
 
     private void setTransitionActive(boolean z) {
@@ -210,34 +132,42 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         return ((Boolean) this.isTransitionActive$delegate.getValue()).booleanValue();
     }
 
-    @Override // androidx.compose.animation.SharedTransitionScope
-    public Modifier skipToLookaheadSize(Modifier modifier) {
-        return modifier.then(new SkipToLookaheadElement(null, null, 3, null));
+    public final Function0<Unit> getTestBlockToRun() {
+        return this.testBlockToRun;
+    }
+
+    public final void setTestBlockToRun(Function0<Unit> function0) {
+        this.testBlockToRun = function0;
     }
 
     @Override // androidx.compose.animation.SharedTransitionScope
-    public Modifier renderInSharedTransitionScopeOverlay(Modifier modifier, Function0<Boolean> function0, float f, Function2<? super LayoutDirection, ? super Density, ? extends Path> function2) {
-        return modifier.then(new RenderInTransitionOverlayNodeElement(this, function0, f, function2));
+    public Modifier skipToLookaheadSize(Modifier modifier, Function0<Boolean> function0) {
+        return modifier.then(new SkipToLookaheadSizeElement(null, function0, 1, null));
     }
 
     @Override // androidx.compose.animation.SharedTransitionScope
-    public Modifier sharedElement(Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, AnimatedVisibilityScope animatedVisibilityScope, BoundsTransform boundsTransform, SharedTransitionScope.PlaceHolderSize placeHolderSize, boolean z, float f, SharedTransitionScope.OverlayClip overlayClip) {
+    public Modifier renderInSharedTransitionScopeOverlay(Modifier modifier, float f, Function0<Boolean> function0) {
+        return modifier.then(new RenderInTransitionOverlayNodeElement(this, function0, f));
+    }
+
+    @Override // androidx.compose.animation.SharedTransitionScope
+    public Modifier sharedElement(Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, AnimatedVisibilityScope animatedVisibilityScope, BoundsTransform boundsTransform, SharedTransitionScope.PlaceholderSize placeholderSize, boolean z, float f, SharedTransitionScope.OverlayClip overlayClip) {
         return sharedBoundsImpl(modifier, sharedContentState, animatedVisibilityScope.getTransition(), new Function1<EnterExitState, Boolean>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$sharedElement$1
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(EnterExitState enterExitState) {
                 return Boolean.valueOf(enterExitState == EnterExitState.Visible);
             }
-        }, boundsTransform, placeHolderSize, true, z, f, overlayClip);
+        }, boundsTransform, placeholderSize, true, z, f, overlayClip);
     }
 
     @Override // androidx.compose.animation.SharedTransitionScope
-    public Modifier sharedBounds(Modifier modifier, final SharedTransitionScope.SharedContentState sharedContentState, final AnimatedVisibilityScope animatedVisibilityScope, final EnterTransition enterTransition, final ExitTransition exitTransition, BoundsTransform boundsTransform, final SharedTransitionScope.ResizeMode resizeMode, SharedTransitionScope.PlaceHolderSize placeHolderSize, boolean z, float f, SharedTransitionScope.OverlayClip overlayClip) {
+    public Modifier sharedBounds(Modifier modifier, final SharedTransitionScope.SharedContentState sharedContentState, final AnimatedVisibilityScope animatedVisibilityScope, final EnterTransition enterTransition, final ExitTransition exitTransition, BoundsTransform boundsTransform, final SharedTransitionScope.ResizeMode resizeMode, SharedTransitionScope.PlaceholderSize placeholderSize, boolean z, float f, SharedTransitionScope.OverlayClip overlayClip) {
         return ComposedModifierKt.composed$default(sharedBoundsImpl(modifier, sharedContentState, animatedVisibilityScope.getTransition(), new Function1<EnterExitState, Boolean>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$sharedBounds$1
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(EnterExitState enterExitState) {
                 return Boolean.valueOf(enterExitState == EnterExitState.Visible);
             }
-        }, boundsTransform, placeHolderSize, false, z, f, overlayClip), null, new Function3<Modifier, Composer, Integer, Modifier>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$sharedBounds$2
+        }, boundsTransform, placeholderSize, false, z, f, overlayClip), null, new Function3<Modifier, Composer, Integer, Modifier>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$sharedBounds$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -251,15 +181,15 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 Modifier.Companion companion;
-                composer.startReplaceGroup(-419341573);
-                ComposerKt.sourceInformation(composer, "C745@41618L35,737@41095L657:SharedTransitionScope.kt#xbi5r1");
+                composer.startReplaceGroup(-233734437);
+                ComposerKt.sourceInformation(composer, "C1062@58781L35,1054@58258L657:SharedTransitionScope.kt#xbi5r1");
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-419341573, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBounds.<anonymous> (SharedTransitionScope.kt:736)");
+                    ComposerKt.traceEventStart(-233734437, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBounds.<anonymous> (SharedTransitionScope.kt:1053)");
                 }
                 Transition<EnterExitState> transition = AnimatedVisibilityScope.this.getTransition();
                 EnterTransition enterTransition2 = enterTransition;
                 ExitTransition exitTransition2 = exitTransition;
-                ComposerKt.sourceInformationMarkerStart(composer, 739693310, "CC(remember):SharedTransitionScope.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -1280475426, "CC(remember):SharedTransitionScope.kt#9igjgp");
                 boolean changedInstance = composer.changedInstance(sharedContentState);
                 final SharedTransitionScope.SharedContentState sharedContentState2 = sharedContentState;
                 Object rememberedValue = composer.rememberedValue();
@@ -281,11 +211,11 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 Modifier createModifier = EnterExitTransitionKt.createModifier(transition, enterTransition2, exitTransition2, (Function0) rememberedValue, "enter/exit for " + sharedContentState.getKey(), composer, 0, 0);
                 if (resizeMode instanceof ScaleToBoundsImpl) {
-                    composer.startReplaceGroup(1455895917);
-                    ComposerKt.sourceInformation(composer, "750@41919L530");
+                    composer.startReplaceGroup(-1039792755);
+                    ComposerKt.sourceInformation(composer, "1067@59082L530");
                     Modifier.Companion companion2 = Modifier.Companion;
                     ScaleToBoundsImpl scaleToBoundsImpl = (ScaleToBoundsImpl) resizeMode;
-                    ComposerKt.sourceInformationMarkerStart(composer, 739703437, "CC(remember):SharedTransitionScope.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(composer, -1280465299, "CC(remember):SharedTransitionScope.kt#9igjgp");
                     boolean changedInstance2 = composer.changedInstance(sharedContentState);
                     final SharedTransitionScope.SharedContentState sharedContentState3 = sharedContentState;
                     Object rememberedValue2 = composer.rememberedValue();
@@ -305,10 +235,10 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                         composer.updateRememberedValue(rememberedValue2);
                     }
                     ComposerKt.sourceInformationMarkerEnd(composer);
-                    companion = SkipToLookaheadNodeKt.createContentScaleModifier(companion2, scaleToBoundsImpl, (Function0) rememberedValue2);
+                    companion = SkipToLookaheadSizeNodeKt.createContentScaleModifier(companion2, scaleToBoundsImpl, (Function0) rememberedValue2);
                     composer.endReplaceGroup();
                 } else {
-                    composer.startReplaceGroup(1456513127);
+                    composer.startReplaceGroup(-1039175545);
                     composer.endReplaceGroup();
                     companion = Modifier.Companion;
                 }
@@ -323,7 +253,7 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
     }
 
     @Override // androidx.compose.animation.SharedTransitionScope
-    public Modifier sharedElementWithCallerManagedVisibility(Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, final boolean z, BoundsTransform boundsTransform, SharedTransitionScope.PlaceHolderSize placeHolderSize, boolean z2, float f, SharedTransitionScope.OverlayClip overlayClip) {
+    public Modifier sharedElementWithCallerManagedVisibility(Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, final boolean z, BoundsTransform boundsTransform, SharedTransitionScope.PlaceholderSize placeholderSize, boolean z2, float f, SharedTransitionScope.OverlayClip overlayClip) {
         return sharedBoundsImpl(modifier, sharedContentState, null, new Function1<Unit, Boolean>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$sharedElementWithCallerManagedVisibility$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -335,32 +265,21 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
             public final Boolean invoke(Unit unit) {
                 return Boolean.valueOf(z);
             }
-        }, boundsTransform, placeHolderSize, true, z2, f, overlayClip);
+        }, boundsTransform, placeholderSize, true, z2, f, overlayClip);
     }
 
-    public static /* synthetic */ Modifier sharedBoundsWithCallerManagedVisibility$animation$default(SharedTransitionScopeImpl sharedTransitionScopeImpl, Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, boolean z, BoundsTransform boundsTransform, SharedTransitionScope.PlaceHolderSize placeHolderSize, boolean z2, float f, SharedTransitionScope.OverlayClip overlayClip, int i, Object obj) {
-        SharedTransitionScope.OverlayClip overlayClip2;
-        SharedTransitionScope.OverlayClip overlayClip3;
+    public static /* synthetic */ Modifier sharedBoundsWithCallerManagedVisibility$animation$default(SharedTransitionScopeImpl sharedTransitionScopeImpl, Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, boolean z, BoundsTransform boundsTransform, SharedTransitionScope.PlaceholderSize placeholderSize, boolean z2, float f, SharedTransitionScope.OverlayClip overlayClip, int i, Object obj) {
         if ((i & 4) != 0) {
-            boundsTransform = SharedTransitionScopeKt.DefaultBoundsTransform;
+            boundsTransform = SharedTransitionDefaults.INSTANCE.getBoundsTransform();
         }
         BoundsTransform boundsTransform2 = boundsTransform;
         if ((i & 8) != 0) {
-            placeHolderSize = SharedTransitionScope.PlaceHolderSize.Companion.getContentSize();
+            placeholderSize = SharedTransitionScope.PlaceholderSize.Companion.getContentSize();
         }
-        SharedTransitionScope.PlaceHolderSize placeHolderSize2 = placeHolderSize;
-        boolean z3 = (i & 16) != 0 ? true : z2;
-        float f2 = (i & 32) != 0 ? 0.0f : f;
-        if ((i & 64) != 0) {
-            overlayClip3 = SharedTransitionScopeKt.ParentClip;
-            overlayClip2 = overlayClip3;
-        } else {
-            overlayClip2 = overlayClip;
-        }
-        return sharedTransitionScopeImpl.sharedBoundsWithCallerManagedVisibility$animation(modifier, sharedContentState, z, boundsTransform2, placeHolderSize2, z3, f2, overlayClip2);
+        return sharedTransitionScopeImpl.sharedBoundsWithCallerManagedVisibility$animation(modifier, sharedContentState, z, boundsTransform2, placeholderSize, (i & 16) != 0 ? true : z2, (i & 32) != 0 ? 0.0f : f, (i & 64) != 0 ? SharedTransitionScopeKt.access$getParentClip$p() : overlayClip);
     }
 
-    public final Modifier sharedBoundsWithCallerManagedVisibility$animation(Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, final boolean z, BoundsTransform boundsTransform, SharedTransitionScope.PlaceHolderSize placeHolderSize, boolean z2, float f, SharedTransitionScope.OverlayClip overlayClip) {
+    public final Modifier sharedBoundsWithCallerManagedVisibility$animation(Modifier modifier, SharedTransitionScope.SharedContentState sharedContentState, final boolean z, BoundsTransform boundsTransform, SharedTransitionScope.PlaceholderSize placeholderSize, boolean z2, float f, SharedTransitionScope.OverlayClip overlayClip) {
         return sharedBoundsImpl(modifier, sharedContentState, null, new Function1<Unit, Boolean>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$sharedBoundsWithCallerManagedVisibility$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -372,7 +291,7 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
             public final Boolean invoke(Unit unit) {
                 return Boolean.valueOf(z);
             }
-        }, boundsTransform, placeHolderSize, false, z2, f, overlayClip);
+        }, boundsTransform, placeholderSize, false, z2, f, overlayClip);
     }
 
     @Override // androidx.compose.animation.SharedTransitionScope
@@ -380,163 +299,41 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         return new ShapeBasedClip(shape);
     }
 
-    @Override // androidx.compose.animation.SharedTransitionScope
-    public SharedTransitionScope.SharedContentState rememberSharedContentState(Object obj, Composer composer, int i) {
-        composer.startReplaceGroup(799702514);
-        ComposerKt.sourceInformation(composer, "C(rememberSharedContentState)874@49216L41:SharedTransitionScope.kt#xbi5r1");
-        if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(799702514, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.rememberSharedContentState (SharedTransitionScope.kt:874)");
-        }
-        ComposerKt.sourceInformationMarkerStart(composer, -285026917, "CC(remember):SharedTransitionScope.kt#9igjgp");
-        boolean changed = composer.changed(obj);
-        Object rememberedValue = composer.rememberedValue();
-        if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = new SharedTransitionScope.SharedContentState(obj);
-            composer.updateRememberedValue(rememberedValue);
-        }
-        SharedTransitionScope.SharedContentState sharedContentState = (SharedTransitionScope.SharedContentState) rememberedValue;
-        ComposerKt.sourceInformationMarkerEnd(composer);
-        if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventEnd();
-        }
-        composer.endReplaceGroup();
-        return sharedContentState;
+    public final Function0<Unit> getObserveAnimatingBlock$animation() {
+        return this.observeAnimatingBlock;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00c0  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void updateTransitionActiveness() {
-        long j;
-        long j2;
-        boolean z;
-        char c;
-        long j3;
-        int length;
-        MutableScatterMap<Object, SharedElement> mutableScatterMap = this.sharedElements;
-        Object[] objArr = mutableScatterMap.keys;
-        Object[] objArr2 = mutableScatterMap.values;
-        long[] jArr = mutableScatterMap.metadata;
-        int length2 = jArr.length - 2;
-        char c2 = 7;
-        long j4 = -9187201950435737472L;
-        if (length2 >= 0) {
-            int i = 0;
-            j = 128;
-            loop0: while (true) {
-                long j5 = jArr[i];
-                j2 = 255;
-                if ((((~j5) << 7) & j5 & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i2 = 8 - ((~(i - length2)) >>> 31);
-                    for (int i3 = 0; i3 < i2; i3++) {
-                        if ((j5 & 255) < 128) {
-                            int i4 = (i << 3) + i3;
-                            Object obj = objArr[i4];
-                            if (((SharedElement) objArr2[i4]).isAnimating()) {
-                                z = true;
-                                break loop0;
-                            }
-                        }
-                        j5 >>= 8;
-                    }
-                    if (i2 != 8) {
+    public final void updateTransitionActiveness$animation() {
+        SnapshotStateMap<Object, SharedElement> snapshotStateMap = this.sharedElements;
+        boolean z = false;
+        if (!snapshotStateMap.isEmpty()) {
+            Iterator<Map.Entry<Object, SharedElement>> it = snapshotStateMap.entrySet().iterator();
+            while (true) {
+                if (it.hasNext()) {
+                    if (it.next().getValue().isAnimating()) {
+                        z = true;
                         break;
                     }
-                }
-                if (i == length2) {
+                } else {
                     break;
                 }
-                i++;
             }
-        } else {
-            j = 128;
-            j2 = 255;
         }
-        z = false;
         if (z != isTransitionActive()) {
             setTransitionActive(z);
             if (!z) {
-                MutableScatterMap<Object, SharedElement> mutableScatterMap2 = this.sharedElements;
-                Object[] objArr3 = mutableScatterMap2.keys;
-                Object[] objArr4 = mutableScatterMap2.values;
-                long[] jArr2 = mutableScatterMap2.metadata;
-                int length3 = jArr2.length - 2;
-                if (length3 >= 0) {
-                    int i5 = 0;
-                    while (true) {
-                        long j6 = jArr2[i5];
-                        c = c2;
-                        j3 = j4;
-                        if ((((~j6) << c) & j6 & j3) != j3) {
-                            int i6 = 8 - ((~(i5 - length3)) >>> 31);
-                            for (int i7 = 0; i7 < i6; i7++) {
-                                if ((j6 & j2) < j) {
-                                    int i8 = (i5 << 3) + i7;
-                                    Object obj2 = objArr3[i8];
-                                    ((SharedElement) objArr4[i8]).onSharedTransitionFinished();
-                                }
-                                j6 >>= 8;
-                            }
-                            if (i6 != 8) {
-                                break;
-                            }
-                        }
-                        if (i5 == length3) {
-                            break;
-                        }
-                        i5++;
-                        c2 = c;
-                        j4 = j3;
-                    }
-                    MutableScatterMap<Object, SharedElement> mutableScatterMap3 = this.sharedElements;
-                    Object[] objArr5 = mutableScatterMap3.keys;
-                    Object[] objArr6 = mutableScatterMap3.values;
-                    long[] jArr3 = mutableScatterMap3.metadata;
-                    length = jArr3.length - 2;
-                    if (length >= 0) {
-                        int i9 = 0;
-                        while (true) {
-                            long j7 = jArr3[i9];
-                            if ((((~j7) << c) & j7 & j3) != j3) {
-                                int i10 = 8 - ((~(i9 - length)) >>> 31);
-                                for (int i11 = 0; i11 < i10; i11++) {
-                                    if ((j7 & j2) < j) {
-                                        int i12 = (i9 << 3) + i11;
-                                        Object obj3 = objArr5[i12];
-                                        ((SharedElement) objArr6[i12]).updateMatch();
-                                    }
-                                    j7 >>= 8;
-                                }
-                                if (i10 != 8) {
-                                    break;
-                                }
-                            }
-                            if (i9 == length) {
-                                break;
-                            }
-                            i9++;
-                        }
-                    }
-                    observeIsAnimating();
+                for (Map.Entry<Object, SharedElement> entry : this.sharedElements.entrySet()) {
+                    entry.getValue().onSharedTransitionFinished();
                 }
             }
         }
-        c = 7;
-        j3 = -9187201950435737472L;
-        MutableScatterMap<Object, SharedElement> mutableScatterMap32 = this.sharedElements;
-        Object[] objArr52 = mutableScatterMap32.keys;
-        Object[] objArr62 = mutableScatterMap32.values;
-        long[] jArr32 = mutableScatterMap32.metadata;
-        length = jArr32.length - 2;
-        if (length >= 0) {
+        for (Map.Entry<Object, SharedElement> entry2 : this.sharedElements.entrySet()) {
+            entry2.getValue().updateMatch$animation();
         }
-        observeIsAnimating();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final <T> Modifier sharedBoundsImpl(Modifier modifier, final SharedTransitionScope.SharedContentState sharedContentState, final Transition<T> transition, final Function1<? super T, Boolean> function1, final BoundsTransform boundsTransform, final SharedTransitionScope.PlaceHolderSize placeHolderSize, final boolean z, final boolean z2, final float f, final SharedTransitionScope.OverlayClip overlayClip) {
+    public final <T> Modifier sharedBoundsImpl(Modifier modifier, final SharedTransitionScope.SharedContentState sharedContentState, final Transition<T> transition, final Function1<? super T, Boolean> function1, final BoundsTransform boundsTransform, final SharedTransitionScope.PlaceholderSize placeholderSize, final boolean z, final boolean z2, final float f, final SharedTransitionScope.OverlayClip overlayClip) {
         return ComposedModifierKt.composed$default(modifier, null, new Function3<Modifier, Composer, Integer, Modifier>() { // from class: androidx.compose.animation.SharedTransitionScopeImpl$sharedBoundsImpl$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -550,117 +347,116 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                 return invoke(modifier2, composer, num.intValue());
             }
 
-            /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r6v3 */
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 Transition rememberTransition;
-                SharedElementInternalState rememberSharedElementState;
+                SharedElementEntry rememberSharedElementState;
                 Composer composer2 = composer;
-                composer.startReplaceGroup(-1843478929);
-                ComposerKt.sourceInformation(composer, "C:SharedTransitionScope.kt#xbi5r1");
+                composer2.startReplaceGroup(-1539505585);
+                ComposerKt.sourceInformation(composer2, "C:SharedTransitionScope.kt#xbi5r1");
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-1843478929, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBoundsImpl.<anonymous> (SharedTransitionScope.kt:915)");
+                    ComposerKt.traceEventStart(-1539505585, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBoundsImpl.<anonymous> (SharedTransitionScope.kt:1225)");
                 }
                 Object key = SharedTransitionScope.SharedContentState.this.getKey();
-                composer.startMovableGroup(-2056718552, key);
-                ComposerKt.sourceInformation(composer, "918@51094L35,966@53923L559");
-                ComposerKt.sourceInformationMarkerStart(composer, -2056720462, "CC(remember):SharedTransitionScope.kt#9igjgp");
+                composer2.startMovableGroup(-1996110529, key);
+                ComposerKt.sourceInformation(composer2, "1228@68034L35,1285@71430L559");
+                ComposerKt.sourceInformationMarkerStart(composer2, -1996113006, "CC(remember):SharedTransitionScope.kt#9igjgp");
                 SharedTransitionScopeImpl sharedTransitionScopeImpl = this;
-                Object rememberedValue = composer.rememberedValue();
+                Object rememberedValue = composer2.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = sharedTransitionScopeImpl.sharedElementsFor(key);
-                    composer.updateRememberedValue(rememberedValue);
+                    composer2.updateRememberedValue(rememberedValue);
                 }
                 SharedElement sharedElement = (SharedElement) rememberedValue;
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                composer.startMovableGroup(-2056714740, transition);
-                ComposerKt.sourceInformation(composer, "956@53436L363");
+                ComposerKt.sourceInformationMarkerEnd(composer2);
+                composer2.startMovableGroup(-1996106748, transition);
+                ComposerKt.sourceInformation(composer2, "1265@70383L438");
                 boolean z3 = false;
                 if (transition != null) {
-                    composer.startReplaceGroup(666402505);
-                    ComposerKt.sourceInformation(composer, "924@51369L121");
-                    Transition transition2 = transition;
+                    composer2.startReplaceGroup(-1749734647);
+                    ComposerKt.sourceInformation(composer2, "1233@68308L121");
+                    Transition<T> transition2 = transition;
                     String obj = key.toString();
-                    Function1 function12 = function1;
-                    ComposerKt.sourceInformationMarkerStart(composer, -539313577, "CC(createChildTransition)N(label,transformToChildState)1768@75281L36,1769@75341L74,1770@75438L39,1771@75489L63:Transition.kt#pdpnli");
-                    ComposerKt.sourceInformationMarkerStart(composer, 1410703355, "CC(remember):Transition.kt#9igjgp");
-                    boolean changed = composer.changed(transition2);
-                    Object rememberedValue2 = composer.rememberedValue();
+                    Function1<T, Boolean> function12 = function1;
+                    ComposerKt.sourceInformationMarkerStart(composer2, -539313577, "CC(createChildTransition)N(label,transformToChildState)1768@75281L36,1769@75341L74,1770@75438L39,1771@75489L63:Transition.kt#pdpnli");
+                    ComposerKt.sourceInformationMarkerStart(composer2, 1410701659, "CC(remember):Transition.kt#9igjgp");
+                    boolean changed = composer2.changed(transition2);
+                    Object rememberedValue2 = composer2.rememberedValue();
                     if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
                         rememberedValue2 = transition2.getCurrentState();
-                        composer.updateRememberedValue(rememberedValue2);
+                        composer2.updateRememberedValue(rememberedValue2);
                     }
-                    ComposerKt.sourceInformationMarkerEnd(composer);
+                    ComposerKt.sourceInformationMarkerEnd(composer2);
                     if (transition2.isSeeking()) {
                         rememberedValue2 = transition2.getCurrentState();
                     }
-                    composer.startReplaceGroup(1329676753);
-                    ComposerKt.sourceInformation(composer, "C:SharedTransitionScope.kt#xbi5r1");
+                    composer2.startReplaceGroup(1498260051);
+                    ComposerKt.sourceInformation(composer2, "C:SharedTransitionScope.kt#xbi5r1");
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(1329676753, 0, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBoundsImpl.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SharedTransitionScope.kt:925)");
+                        ComposerKt.traceEventStart(1498260051, 0, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBoundsImpl.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SharedTransitionScope.kt:1234)");
                     }
-                    boolean booleanValue = ((Boolean) function12.invoke(rememberedValue2)).booleanValue();
+                    boolean booleanValue = function12.invoke(rememberedValue2).booleanValue();
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
-                    composer.endReplaceGroup();
+                    composer2.endReplaceGroup();
                     Boolean valueOf = Boolean.valueOf(booleanValue);
                     Object targetState = transition2.getTargetState();
-                    composer.startReplaceGroup(1329676753);
-                    ComposerKt.sourceInformation(composer, "C:SharedTransitionScope.kt#xbi5r1");
+                    composer2.startReplaceGroup(1498260051);
+                    ComposerKt.sourceInformation(composer2, "C:SharedTransitionScope.kt#xbi5r1");
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(1329676753, 0, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBoundsImpl.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SharedTransitionScope.kt:925)");
+                        ComposerKt.traceEventStart(1498260051, 0, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBoundsImpl.<anonymous>.<anonymous>.<anonymous>.<anonymous> (SharedTransitionScope.kt:1234)");
                     }
-                    boolean booleanValue2 = ((Boolean) function12.invoke(targetState)).booleanValue();
+                    boolean booleanValue2 = function12.invoke(targetState).booleanValue();
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
-                    composer.endReplaceGroup();
+                    composer2.endReplaceGroup();
                     rememberTransition = androidx.compose.animation.core.TransitionKt.createChildTransitionInternal(transition2, valueOf, Boolean.valueOf(booleanValue2), obj, composer2, 0);
                     composer2 = composer2;
-                    ComposerKt.sourceInformationMarkerEnd(composer);
-                    composer.endReplaceGroup();
+                    ComposerKt.sourceInformationMarkerEnd(composer2);
+                    composer2.endReplaceGroup();
                 } else {
-                    composer.startReplaceGroup(666654225);
-                    ComposerKt.sourceInformation(composer, "931@51772L1243,950@53127L35");
+                    composer2.startReplaceGroup(-1749482679);
+                    ComposerKt.sourceInformation(composer2, "1240@68711L1251,1259@70074L35");
                     Function function = function1;
                     Intrinsics.checkNotNull(function, "null cannot be cast to non-null type kotlin.Function1<kotlin.Unit, kotlin.Boolean>");
                     boolean booleanValue3 = ((Boolean) ((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function, 1)).invoke(Unit.INSTANCE)).booleanValue();
-                    ComposerKt.sourceInformationMarkerStart(composer, -2056697558, "CC(remember):SharedTransitionScope.kt#9igjgp");
-                    Object rememberedValue3 = composer.rememberedValue();
+                    ComposerKt.sourceInformationMarkerStart(composer2, -1996090126, "CC(remember):SharedTransitionScope.kt#9igjgp");
+                    Object rememberedValue3 = composer2.rememberedValue();
                     if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                        if (sharedElement.getStates().isEmpty()) {
+                        if (sharedElement.getEnabledEntries().isEmpty()) {
                             z3 = booleanValue3;
                         } else if (!booleanValue3) {
                             z3 = true;
                         }
                         rememberedValue3 = new MutableTransitionState(Boolean.valueOf(z3));
-                        composer.updateRememberedValue(rememberedValue3);
+                        composer2.updateRememberedValue(rememberedValue3);
                     }
                     MutableTransitionState mutableTransitionState = (MutableTransitionState) rememberedValue3;
-                    ComposerKt.sourceInformationMarkerEnd(composer);
+                    ComposerKt.sourceInformationMarkerEnd(composer2);
                     mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(booleanValue3));
-                    rememberTransition = androidx.compose.animation.core.TransitionKt.rememberTransition(mutableTransitionState, null, composer, MutableTransitionState.$stable, 2);
-                    composer.endReplaceGroup();
+                    rememberTransition = androidx.compose.animation.core.TransitionKt.rememberTransition(mutableTransitionState, null, composer2, MutableTransitionState.$stable, 2);
+                    composer2.endReplaceGroup();
                 }
-                composer.startMovableGroup(-2056651003, Boolean.valueOf(this.isTransitionActive()));
-                ComposerKt.sourceInformation(composer, "954@53336L45");
+                composer2.startMovableGroup(-1996043323, Boolean.valueOf(this.isTransitionActive()));
+                ComposerKt.sourceInformation(composer2, "1263@70283L45");
                 Transition<Boolean>.DeferredAnimation<Rect, AnimationVector4D> createDeferredAnimation = androidx.compose.animation.core.TransitionKt.createDeferredAnimation(rememberTransition, VectorConvertersKt.getVectorConverter(Rect.Companion), null, composer2, 0, 2);
-                composer.endMovableGroup();
-                ComposerKt.sourceInformationMarkerStart(composer, -2056645190, "CC(remember):SharedTransitionScope.kt#9igjgp");
-                boolean changed2 = composer.changed(rememberTransition);
+                composer2.endMovableGroup();
+                ComposerKt.sourceInformationMarkerStart(composer2, -1996037435, "CC(remember):SharedTransitionScope.kt#9igjgp");
+                boolean changed2 = composer2.changed(rememberTransition);
                 SharedTransitionScopeImpl sharedTransitionScopeImpl2 = this;
                 BoundsTransform boundsTransform2 = boundsTransform;
-                Object rememberedValue4 = composer.rememberedValue();
+                Object rememberedValue4 = composer2.rememberedValue();
                 if (changed2 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                    rememberedValue4 = new BoundsAnimation(sharedTransitionScopeImpl2, rememberTransition, createDeferredAnimation, boundsTransform2);
-                    composer.updateRememberedValue(rememberedValue4);
+                    BoundsAnimation boundsAnimation = new BoundsAnimation(sharedTransitionScopeImpl2, rememberTransition, createDeferredAnimation, boundsTransform2, sharedElement.getMomentumAnimationOffset());
+                    composer2.updateRememberedValue(boundsAnimation);
+                    rememberedValue4 = boundsAnimation;
                 }
-                BoundsAnimation boundsAnimation = rememberedValue4;
-                ComposerKt.sourceInformationMarkerEnd(composer);
-                boundsAnimation.updateAnimation(createDeferredAnimation, boundsTransform);
-                composer.endMovableGroup();
-                rememberSharedElementState = this.rememberSharedElementState(sharedElement, boundsAnimation, placeHolderSize, z, SharedTransitionScope.SharedContentState.this, overlayClip, f, z2, composer, 0);
+                BoundsAnimation boundsAnimation2 = (BoundsAnimation) rememberedValue4;
+                ComposerKt.sourceInformationMarkerEnd(composer2);
+                boundsAnimation2.updateAnimation(createDeferredAnimation, boundsTransform);
+                composer2.endMovableGroup();
+                rememberSharedElementState = this.rememberSharedElementState(sharedElement, boundsAnimation2, placeholderSize, z, SharedTransitionScope.SharedContentState.this, overlayClip, f, z2, composer, 0);
                 composer.endMovableGroup();
                 Modifier then = modifier2.then(new SharedBoundsNodeElement(rememberSharedElementState));
                 if (ComposerKt.isTraceInProgress()) {
@@ -673,62 +469,57 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final SharedElementInternalState rememberSharedElementState(SharedElement sharedElement, BoundsAnimation boundsAnimation, SharedTransitionScope.PlaceHolderSize placeHolderSize, boolean z, SharedTransitionScope.SharedContentState sharedContentState, SharedTransitionScope.OverlayClip overlayClip, float f, boolean z2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 2066772852, "C(rememberSharedElementState)P(6!1,2,4,5!1,7)992@55015L512:SharedTransitionScope.kt#xbi5r1");
+    public final SharedElementEntry rememberSharedElementState(SharedElement sharedElement, BoundsAnimation boundsAnimation, SharedTransitionScope.PlaceholderSize placeholderSize, boolean z, SharedTransitionScope.SharedContentState sharedContentState, SharedTransitionScope.OverlayClip overlayClip, float f, boolean z2, Composer composer, int i) {
+        ComposerKt.sourceInformationMarkerStart(composer, 864401334, "C(rememberSharedElementState)P(6!1,2,4,5!1,7)1311@72514L504:SharedTransitionScope.kt#xbi5r1");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(2066772852, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.rememberSharedElementState (SharedTransitionScope.kt:992)");
+            ComposerKt.traceEventStart(864401334, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.rememberSharedElementState (SharedTransitionScope.kt:1311)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 1893834740, "CC(remember):SharedTransitionScope.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1761007534, "CC(remember):SharedTransitionScope.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = new SharedElementInternalState(sharedElement, boundsAnimation, placeHolderSize, z, overlayClip, z2, sharedContentState, f);
+            rememberedValue = new SharedElementEntry(sharedElement, boundsAnimation, placeholderSize, z, overlayClip, z2, sharedContentState, f);
             composer.updateRememberedValue(rememberedValue);
         }
-        SharedElementInternalState sharedElementInternalState = (SharedElementInternalState) rememberedValue;
+        SharedElementEntry sharedElementEntry = (SharedElementEntry) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        sharedContentState.setInternalState$animation(sharedElementInternalState);
-        sharedElementInternalState.setSharedElement(sharedElement);
-        sharedElementInternalState.setRenderOnlyWhenVisible(z);
-        sharedElementInternalState.setBoundsAnimation(boundsAnimation);
-        sharedElementInternalState.setPlaceHolderSize(placeHolderSize);
-        sharedElementInternalState.setOverlayClip(overlayClip);
-        sharedElementInternalState.setZIndex(f);
-        sharedElementInternalState.setRenderInOverlayDuringTransition(z2);
-        sharedElementInternalState.setUserState(sharedContentState);
+        sharedContentState.setInternalState$animation(sharedElementEntry);
+        sharedElementEntry.setSharedElement(sharedElement);
+        sharedElementEntry.setRenderOnlyWhenVisible(z);
+        sharedElementEntry.setBoundsAnimation(boundsAnimation);
+        sharedElementEntry.setPlaceholderSize(placeholderSize);
+        sharedElementEntry.setOverlayClip(overlayClip);
+        sharedElementEntry.setZIndex(f);
+        sharedElementEntry.setRenderInOverlayDuringTransition(z2);
+        sharedElementEntry.setUserState(sharedContentState);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return sharedElementInternalState;
+        return sharedElementEntry;
     }
 
     public final LayoutCoordinates getRoot$animation() {
-        LayoutCoordinates layoutCoordinates = this.root;
-        if (layoutCoordinates != null) {
-            return layoutCoordinates;
-        }
-        Intrinsics.throwUninitializedPropertyAccessException("root");
-        return null;
-    }
-
-    public final void setRoot$animation(LayoutCoordinates layoutCoordinates) {
-        this.root = layoutCoordinates;
-    }
-
-    public final LayoutCoordinates getLookaheadRoot$animation() {
-        LayoutCoordinates layoutCoordinates = this.nullableLookaheadRoot;
+        LayoutCoordinates layoutCoordinates = this._nullableRoot;
         if (layoutCoordinates != null) {
             return layoutCoordinates;
         }
         throw new IllegalArgumentException("Error: Uninitialized LayoutCoordinates. Please make sure when using the SharedTransitionScope composable function, the modifier passed to the child content is being used, or use SharedTransitionLayout instead.".toString());
     }
 
-    public final LayoutCoordinates getNullableLookaheadRoot$animation() {
-        return this.nullableLookaheadRoot;
+    public final void setRoot$animation(LayoutCoordinates layoutCoordinates) {
+        this._nullableRoot = layoutCoordinates;
     }
 
-    public final void setNullableLookaheadRoot$animation(LayoutCoordinates layoutCoordinates) {
-        this.nullableLookaheadRoot = layoutCoordinates;
+    public final LayoutCoordinates getLookaheadRoot$animation() {
+        LayoutCoordinates layoutCoordinates = this._nullableLookaheadRoot;
+        if (layoutCoordinates != null) {
+            return layoutCoordinates;
+        }
+        throw new IllegalArgumentException("Error: Uninitialized LayoutCoordinates. Please make sure when using the SharedTransitionScope composable function, the modifier passed to the child content is being used, or use SharedTransitionLayout instead.".toString());
+    }
+
+    public final void setLookaheadRoot$animation(LayoutCoordinates layoutCoordinates) {
+        this._nullableLookaheadRoot = layoutCoordinates;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -736,7 +527,7 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         SharedElement sharedElement = this.sharedElements.get(obj);
         if (sharedElement == null) {
             SharedElement sharedElement2 = new SharedElement(obj, this);
-            this.sharedElements.set(obj, sharedElement2);
+            this.sharedElements.put(obj, sharedElement2);
             return sharedElement2;
         }
         return sharedElement;
@@ -750,9 +541,9 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                 public final int compare(T t, T t2) {
                     LayerRenderer layerRenderer = (LayerRenderer) t;
                     float f = -1.0f;
-                    Float valueOf = Float.valueOf((layerRenderer.getZIndex() == 0.0f && (layerRenderer instanceof SharedElementInternalState) && ((SharedElementInternalState) layerRenderer).getParentState() == null) ? -1.0f : layerRenderer.getZIndex());
+                    Float valueOf = Float.valueOf((layerRenderer.getZIndex() == 0.0f && (layerRenderer instanceof SharedElementEntry) && ((SharedElementEntry) layerRenderer).getParentState() == null) ? -1.0f : layerRenderer.getZIndex());
                     LayerRenderer layerRenderer2 = (LayerRenderer) t2;
-                    if (layerRenderer2.getZIndex() != 0.0f || !(layerRenderer2 instanceof SharedElementInternalState) || ((SharedElementInternalState) layerRenderer2).getParentState() != null) {
+                    if (layerRenderer2.getZIndex() != 0.0f || !(layerRenderer2 instanceof SharedElementEntry) || ((SharedElementEntry) layerRenderer2).getParentState() != null) {
                         f = layerRenderer2.getZIndex();
                     }
                     return ComparisonsKt.compareValues(valueOf, Float.valueOf(f));
@@ -766,22 +557,19 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         }
     }
 
-    public final void onStateRemoved$animation(SharedElementInternalState sharedElementInternalState) {
-        SharedElement sharedElement = sharedElementInternalState.getSharedElement();
-        sharedElement.removeState(sharedElementInternalState);
-        this.updateTransitionActiveness.invoke(this);
-        sharedElement.getScope().observeIsAnimating();
-        this.renderers.remove(sharedElementInternalState);
-        if (sharedElement.getStates().isEmpty()) {
-            BuildersKt__Builders_commonKt.launch$default(sharedElement.getScope().coroutineScope, null, null, new SharedTransitionScopeImpl$onStateRemoved$1$1(sharedElement, null), 3, null);
+    public final void onEntryRemoved$animation(SharedElementEntry sharedElementEntry) {
+        SharedElement sharedElement = sharedElementEntry.getSharedElement();
+        sharedElement.removeEntry(sharedElementEntry);
+        updateTransitionActiveness$animation();
+        this.renderers.remove(sharedElementEntry);
+        if (sharedElement.getAllEntries().isEmpty()) {
+            BuildersKt__Builders_commonKt.launch$default(sharedElement.getScope().coroutineScope, null, null, new SharedTransitionScopeImpl$onEntryRemoved$1$1(sharedElement, sharedElementEntry, null), 3, null);
         }
     }
 
-    public final void onStateAdded$animation(SharedElementInternalState sharedElementInternalState) {
-        SharedElement sharedElement = sharedElementInternalState.getSharedElement();
-        sharedElement.addState(sharedElementInternalState);
-        this.updateTransitionActiveness.invoke(this);
-        sharedElement.getScope().observeIsAnimating();
+    public final void onEntryAdded$animation(SharedElementEntry sharedElementEntry) {
+        sharedElementEntry.getSharedElement().addEntry(sharedElementEntry);
+        updateTransitionActiveness$animation();
         Iterator<LayerRenderer> it = this.renderers.iterator();
         int i = 0;
         while (true) {
@@ -790,16 +578,16 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                 break;
             }
             LayerRenderer next = it.next();
-            SharedElementInternalState sharedElementInternalState2 = next instanceof SharedElementInternalState ? (SharedElementInternalState) next : null;
-            if (Intrinsics.areEqual(sharedElementInternalState2 != null ? sharedElementInternalState2.getSharedElement() : null, sharedElementInternalState.getSharedElement())) {
+            SharedElementEntry sharedElementEntry2 = next instanceof SharedElementEntry ? (SharedElementEntry) next : null;
+            if (Intrinsics.areEqual(sharedElementEntry2 != null ? sharedElementEntry2.getSharedElement() : null, sharedElementEntry.getSharedElement())) {
                 break;
             }
             i++;
         }
         if (i == this.renderers.size() - 1 || i == -1) {
-            this.renderers.add(sharedElementInternalState);
+            this.renderers.add(sharedElementEntry);
         } else {
-            this.renderers.add(i + 1, sharedElementInternalState);
+            this.renderers.add(i + 1, sharedElementEntry);
         }
     }
 
@@ -809,33 +597,6 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
 
     public final void onLayerRendererRemoved$animation(LayerRenderer layerRenderer) {
         this.renderers.remove(layerRenderer);
-    }
-
-    public final void onDispose$animation() {
-        Companion.getSharedTransitionObserver().clear(this);
-        this.disposed = true;
-    }
-
-    public final SnapshotStateObserver getObserverForTest$animation() {
-        return Companion.getSharedTransitionObserver();
-    }
-
-    private final void observeIsAnimating() {
-        if (this.disposed) {
-            return;
-        }
-        Companion.getSharedTransitionObserver().observeReads(this, this.updateTransitionActiveness, this.observeAnimatingBlock);
-    }
-
-    public final void observeReads$animation(SharedElement sharedElement, Function1<? super SharedElement, Unit> function1, Function0<Unit> function0) {
-        if (this.disposed) {
-            return;
-        }
-        Companion.getSharedTransitionObserver().observeReads(sharedElement, function1, function0);
-    }
-
-    public final void clearObservation$animation(Object obj) {
-        Companion.getSharedTransitionObserver().clear(obj);
     }
 
     /* compiled from: SharedTransitionScope.kt */
@@ -856,8 +617,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         @Override // androidx.compose.animation.SharedTransitionScope.OverlayClip
         public Path getClipPath(SharedTransitionScope.SharedContentState sharedContentState, Rect rect, LayoutDirection layoutDirection, Density density) {
             this.path.reset();
-            OutlineKt.addOutline(this.path, this.clipShape.mo332createOutlinePq9zytI(rect.m5069getSizeNHjbRc(), layoutDirection, density));
-            this.path.mo5173translatek4lQ0M(rect.m5071getTopLeftF1C5BW0());
+            OutlineKt.addOutline(this.path, this.clipShape.mo365createOutlinePq9zytI(rect.m5212getSizeNHjbRc(), layoutDirection, density));
+            this.path.mo5316translatek4lQ0M(rect.m5214getTopLeftF1C5BW0());
             return this.path;
         }
     }

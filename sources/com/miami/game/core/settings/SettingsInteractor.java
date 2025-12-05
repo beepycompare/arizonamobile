@@ -1,7 +1,6 @@
 package com.miami.game.core.settings;
 
 import android.content.Intent;
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -35,7 +34,7 @@ public final class SettingsInteractor {
         Intrinsics.checkNotNullParameter(localRepository, "localRepository");
         this.localRepository = localRepository;
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null)));
-        MutableStateFlow<SettingState> MutableStateFlow = StateFlowKt.MutableStateFlow(new SettingState(0.0f, 0, false, false, false, false, false, false, false, null, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null));
+        MutableStateFlow<SettingState> MutableStateFlow = StateFlowKt.MutableStateFlow(new SettingState(0.0f, 0, false, false, false, false, false, false, false, null, 1023, null));
         this.stateStore = MutableStateFlow;
         this.interactorStateFlow = FlowKt.asStateFlow(MutableStateFlow);
         getSettings();

@@ -14,71 +14,71 @@ public final class LinearProgressIndicatorTokens {
     private static final float TrackActiveSpace;
     private static final float TrackThickness;
     public static final LinearProgressIndicatorTokens INSTANCE = new LinearProgressIndicatorTokens();
-    private static final float ActiveWaveAmplitude = Dp.m7996constructorimpl((float) 3.0d);
-    private static final float ActiveWaveWavelength = Dp.m7996constructorimpl((float) 40.0d);
-    private static final float IndeterminateActiveWaveWavelength = Dp.m7996constructorimpl((float) 20.0d);
-    private static final float StopTrailingSpace = Dp.m7996constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-    private static final float WaveHeight = Dp.m7996constructorimpl((float) 10.0d);
+    private static final float ActiveWaveAmplitude = Dp.m8258constructorimpl((float) 3.0d);
+    private static final float ActiveWaveWavelength = Dp.m8258constructorimpl((float) 40.0d);
+    private static final float IndeterminateActiveWaveWavelength = Dp.m8258constructorimpl((float) 20.0d);
+    private static final float StopTrailingSpace = Dp.m8258constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final float WaveHeight = Dp.m8258constructorimpl((float) 10.0d);
 
     private LinearProgressIndicatorTokens() {
     }
 
     /* renamed from: getActiveThickness-D9Ej5fM  reason: not valid java name */
-    public final float m4023getActiveThicknessD9Ej5fM() {
+    public final float m4109getActiveThicknessD9Ej5fM() {
         return ActiveThickness;
     }
 
     /* renamed from: getActiveWaveAmplitude-D9Ej5fM  reason: not valid java name */
-    public final float m4024getActiveWaveAmplitudeD9Ej5fM() {
+    public final float m4110getActiveWaveAmplitudeD9Ej5fM() {
         return ActiveWaveAmplitude;
     }
 
     /* renamed from: getActiveWaveWavelength-D9Ej5fM  reason: not valid java name */
-    public final float m4025getActiveWaveWavelengthD9Ej5fM() {
+    public final float m4111getActiveWaveWavelengthD9Ej5fM() {
         return ActiveWaveWavelength;
     }
 
     /* renamed from: getHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4026getHeightD9Ej5fM() {
+    public final float m4112getHeightD9Ej5fM() {
         return Height;
     }
 
     /* renamed from: getIndeterminateActiveWaveWavelength-D9Ej5fM  reason: not valid java name */
-    public final float m4027getIndeterminateActiveWaveWavelengthD9Ej5fM() {
+    public final float m4113getIndeterminateActiveWaveWavelengthD9Ej5fM() {
         return IndeterminateActiveWaveWavelength;
     }
 
     /* renamed from: getStopSize-D9Ej5fM  reason: not valid java name */
-    public final float m4028getStopSizeD9Ej5fM() {
+    public final float m4114getStopSizeD9Ej5fM() {
         return StopSize;
     }
 
     /* renamed from: getStopTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4029getStopTrailingSpaceD9Ej5fM() {
+    public final float m4115getStopTrailingSpaceD9Ej5fM() {
         return StopTrailingSpace;
     }
 
     /* renamed from: getTrackActiveSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4030getTrackActiveSpaceD9Ej5fM() {
+    public final float m4116getTrackActiveSpaceD9Ej5fM() {
         return TrackActiveSpace;
     }
 
     /* renamed from: getTrackThickness-D9Ej5fM  reason: not valid java name */
-    public final float m4031getTrackThicknessD9Ej5fM() {
+    public final float m4117getTrackThicknessD9Ej5fM() {
         return TrackThickness;
     }
 
     /* renamed from: getWaveHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4032getWaveHeightD9Ej5fM() {
+    public final float m4118getWaveHeightD9Ej5fM() {
         return WaveHeight;
     }
 
     static {
         float f = (float) 4.0d;
-        ActiveThickness = Dp.m7996constructorimpl(f);
-        Height = Dp.m7996constructorimpl(f);
-        StopSize = Dp.m7996constructorimpl(f);
-        TrackActiveSpace = Dp.m7996constructorimpl(f);
-        TrackThickness = Dp.m7996constructorimpl(f);
+        ActiveThickness = Dp.m8258constructorimpl(f);
+        Height = Dp.m8258constructorimpl(f);
+        StopSize = Dp.m8258constructorimpl(f);
+        TrackActiveSpace = Dp.m8258constructorimpl(f);
+        TrackThickness = Dp.m8258constructorimpl(f);
     }
 }

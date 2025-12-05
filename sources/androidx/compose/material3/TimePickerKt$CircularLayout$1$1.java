@@ -27,11 +27,11 @@ public final class TimePickerKt$CircularLayout$1$1 implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, final long j) {
+    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, final long j) {
         Measurable measurable;
         Measurable measurable2;
-        final float m7948getMaxHeightimpl = Constraints.m7948getMaxHeightimpl(j) * this.$radiusToSizeRatio;
-        long m7939copyZbe2FdA$default = Constraints.m7939copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        final float m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(j) * this.$radiusToSizeRatio;
+        long m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list.size());
         List<? extends Measurable> list2 = list;
         int size = list2.size();
@@ -47,7 +47,7 @@ public final class TimePickerKt$CircularLayout$1$1 implements MeasurePolicy {
         ArrayList arrayList3 = new ArrayList(arrayList2.size());
         int size2 = arrayList2.size();
         for (int i3 = 0; i3 < size2; i3++) {
-            arrayList3.add(((Measurable) arrayList2.get(i3)).mo6698measureBRTryo0(m7939copyZbe2FdA$default));
+            arrayList3.add(((Measurable) arrayList2.get(i3)).mo6875measureBRTryo0(m8201copyZbe2FdA$default));
         }
         final ArrayList arrayList4 = arrayList3;
         int size3 = list2.size();
@@ -78,14 +78,14 @@ public final class TimePickerKt$CircularLayout$1$1 implements MeasurePolicy {
         }
         Measurable measurable6 = measurable2;
         final float size5 = 6.2831855f / arrayList4.size();
-        Placeable mo6698measureBRTryo0 = measurable5 != null ? measurable5.mo6698measureBRTryo0(m7939copyZbe2FdA$default) : null;
-        final Placeable mo6698measureBRTryo02 = measurable6 != null ? measurable6.mo6698measureBRTryo0(m7939copyZbe2FdA$default) : null;
-        final Placeable placeable = mo6698measureBRTryo0;
-        return MeasureScope.layout$default(measureScope, Constraints.m7951getMinWidthimpl(j), Constraints.m7950getMinHeightimpl(j), null, new Function1() { // from class: androidx.compose.material3.TimePickerKt$CircularLayout$1$1$$ExternalSyntheticLambda0
+        Placeable mo6875measureBRTryo0 = measurable5 != null ? measurable5.mo6875measureBRTryo0(m8201copyZbe2FdA$default) : null;
+        final Placeable mo6875measureBRTryo02 = measurable6 != null ? measurable6.mo6875measureBRTryo0(m8201copyZbe2FdA$default) : null;
+        final Placeable placeable = mo6875measureBRTryo0;
+        return MeasureScope.layout$default(measureScope, Constraints.m8213getMinWidthimpl(j), Constraints.m8212getMinHeightimpl(j), null, new Function1() { // from class: androidx.compose.material3.TimePickerKt$CircularLayout$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$5;
-                measure_3p2s80s$lambda$5 = TimePickerKt$CircularLayout$1$1.measure_3p2s80s$lambda$5(Placeable.this, arrayList4, mo6698measureBRTryo02, j, m7948getMaxHeightimpl, size5, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$5 = TimePickerKt$CircularLayout$1$1.measure_3p2s80s$lambda$5(Placeable.this, arrayList4, mo6875measureBRTryo02, j, m8210getMaxHeightimpl, size5, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$5;
             }
         }, 4, null);
@@ -101,10 +101,10 @@ public final class TimePickerKt$CircularLayout$1$1 implements MeasurePolicy {
         for (int i = 0; i < size; i++) {
             double d = f;
             double d2 = (i * f2) - 1.5707963267948966d;
-            Placeable.PlacementScope.place$default(placementScope, (Placeable) list.get(i), MathKt.roundToInt((Math.cos(d2) * d) + ((Constraints.m7949getMaxWidthimpl(j) / 2) - (placeable3.getWidth() / 2))), MathKt.roundToInt((d * Math.sin(d2)) + ((Constraints.m7948getMaxHeightimpl(j) / 2) - (placeable3.getHeight() / 2))), 0.0f, 4, null);
+            Placeable.PlacementScope.place$default(placementScope, (Placeable) list.get(i), MathKt.roundToInt((Math.cos(d2) * d) + ((Constraints.m8211getMaxWidthimpl(j) / 2) - (placeable3.getWidth() / 2))), MathKt.roundToInt((d * Math.sin(d2)) + ((Constraints.m8210getMaxHeightimpl(j) / 2) - (placeable3.getHeight() / 2))), 0.0f, 4, null);
         }
         if (placeable2 != null) {
-            Placeable.PlacementScope.place$default(placementScope, placeable2, (Constraints.m7951getMinWidthimpl(j) - placeable2.getWidth()) / 2, (Constraints.m7950getMinHeightimpl(j) - placeable2.getHeight()) / 2, 0.0f, 4, null);
+            Placeable.PlacementScope.place$default(placementScope, placeable2, (Constraints.m8213getMinWidthimpl(j) - placeable2.getWidth()) / 2, (Constraints.m8212getMinHeightimpl(j) - placeable2.getHeight()) / 2, 0.0f, 4, null);
         }
         return Unit.INSTANCE;
     }

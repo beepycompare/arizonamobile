@@ -18,11 +18,11 @@ public final class W5 extends MessageNano {
     public static volatile boolean o;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0160c6 f735a;
+    public C0159c6 f818a;
     public S5 b;
     public String c;
     public int d;
-    public C0108a6[] e;
+    public C0107a6[] e;
     public int f;
     public V5 g;
     public byte[] h;
@@ -53,11 +53,11 @@ public final class W5 extends MessageNano {
     }
 
     public final W5 a() {
-        this.f735a = null;
+        this.f818a = null;
         this.b = null;
         this.c = "";
         this.d = -1;
-        this.e = C0108a6.b();
+        this.e = C0107a6.b();
         this.f = 0;
         this.g = null;
         this.h = (byte[]) n.clone();
@@ -70,9 +70,9 @@ public final class W5 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0160c6 c0160c6 = this.f735a;
-        if (c0160c6 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0160c6);
+        C0159c6 c0159c6 = this.f818a;
+        if (c0159c6 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0159c6);
         }
         S5 s5 = this.b;
         if (s5 != null) {
@@ -85,18 +85,18 @@ public final class W5 extends MessageNano {
         if (i != -1) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(4, i);
         }
-        C0108a6[] c0108a6Arr = this.e;
+        C0107a6[] c0107a6Arr = this.e;
         int i2 = 0;
-        if (c0108a6Arr != null && c0108a6Arr.length > 0) {
+        if (c0107a6Arr != null && c0107a6Arr.length > 0) {
             int i3 = 0;
             while (true) {
-                C0108a6[] c0108a6Arr2 = this.e;
-                if (i3 >= c0108a6Arr2.length) {
+                C0107a6[] c0107a6Arr2 = this.e;
+                if (i3 >= c0107a6Arr2.length) {
                     break;
                 }
-                C0108a6 c0108a6 = c0108a6Arr2[i3];
-                if (c0108a6 != null) {
-                    computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, c0108a6);
+                C0107a6 c0107a6 = c0107a6Arr2[i3];
+                if (c0107a6 != null) {
+                    computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, c0107a6);
                 }
                 i3++;
             }
@@ -134,9 +134,9 @@ public final class W5 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0160c6 c0160c6 = this.f735a;
-        if (c0160c6 != null) {
-            codedOutputByteBufferNano.writeMessage(1, c0160c6);
+        C0159c6 c0159c6 = this.f818a;
+        if (c0159c6 != null) {
+            codedOutputByteBufferNano.writeMessage(1, c0159c6);
         }
         S5 s5 = this.b;
         if (s5 != null) {
@@ -149,18 +149,18 @@ public final class W5 extends MessageNano {
         if (i != -1) {
             codedOutputByteBufferNano.writeInt32(4, i);
         }
-        C0108a6[] c0108a6Arr = this.e;
+        C0107a6[] c0107a6Arr = this.e;
         int i2 = 0;
-        if (c0108a6Arr != null && c0108a6Arr.length > 0) {
+        if (c0107a6Arr != null && c0107a6Arr.length > 0) {
             int i3 = 0;
             while (true) {
-                C0108a6[] c0108a6Arr2 = this.e;
-                if (i3 >= c0108a6Arr2.length) {
+                C0107a6[] c0107a6Arr2 = this.e;
+                if (i3 >= c0107a6Arr2.length) {
                     break;
                 }
-                C0108a6 c0108a6 = c0108a6Arr2[i3];
-                if (c0108a6 != null) {
-                    codedOutputByteBufferNano.writeMessage(5, c0108a6);
+                C0107a6 c0107a6 = c0107a6Arr2[i3];
+                if (c0107a6 != null) {
+                    codedOutputByteBufferNano.writeMessage(5, c0107a6);
                 }
                 i3++;
             }
@@ -209,10 +209,10 @@ public final class W5 extends MessageNano {
                 case 0:
                     break;
                 case 10:
-                    if (this.f735a == null) {
-                        this.f735a = new C0160c6();
+                    if (this.f818a == null) {
+                        this.f818a = new C0159c6();
                     }
-                    codedInputByteBufferNano.readMessage(this.f735a);
+                    codedInputByteBufferNano.readMessage(this.f818a);
                     break;
                 case 18:
                     if (this.b == null) {
@@ -233,24 +233,24 @@ public final class W5 extends MessageNano {
                     }
                 case 42:
                     int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 42);
-                    C0108a6[] c0108a6Arr = this.e;
-                    int length = c0108a6Arr == null ? 0 : c0108a6Arr.length;
+                    C0107a6[] c0107a6Arr = this.e;
+                    int length = c0107a6Arr == null ? 0 : c0107a6Arr.length;
                     int i = repeatedFieldArrayLength + length;
-                    C0108a6[] c0108a6Arr2 = new C0108a6[i];
+                    C0107a6[] c0107a6Arr2 = new C0107a6[i];
                     if (length != 0) {
-                        System.arraycopy(c0108a6Arr, 0, c0108a6Arr2, 0, length);
+                        System.arraycopy(c0107a6Arr, 0, c0107a6Arr2, 0, length);
                     }
                     while (length < i - 1) {
-                        C0108a6 c0108a6 = new C0108a6();
-                        c0108a6Arr2[length] = c0108a6;
-                        codedInputByteBufferNano.readMessage(c0108a6);
+                        C0107a6 c0107a6 = new C0107a6();
+                        c0107a6Arr2[length] = c0107a6;
+                        codedInputByteBufferNano.readMessage(c0107a6);
                         codedInputByteBufferNano.readTag();
                         length++;
                     }
-                    C0108a6 c0108a62 = new C0108a6();
-                    c0108a6Arr2[length] = c0108a62;
-                    codedInputByteBufferNano.readMessage(c0108a62);
-                    this.e = c0108a6Arr2;
+                    C0107a6 c0107a62 = new C0107a6();
+                    c0107a6Arr2[length] = c0107a62;
+                    codedInputByteBufferNano.readMessage(c0107a62);
+                    this.e = c0107a6Arr2;
                     break;
                 case 48:
                     int readInt322 = codedInputByteBufferNano.readInt32();

@@ -62,7 +62,7 @@ import java.util.UUID;
 import java.util.concurrent.Executor;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MediaMetricsListener implements AnalyticsListener, PlaybackSessionManager.Listener {
     private String activeSessionId;
     private int audioUnderruns;
@@ -273,7 +273,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m8669xdf4bfb0e(build);
+                MediaMetricsListener.this.m8933xdf4bfb0e(build);
             }
         });
         this.reportedEventsForCurrentSession = true;
@@ -282,7 +282,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackError$0$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8669xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
+    public /* synthetic */ void m8933xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
         this.playbackSession.reportPlaybackErrorEvent(playbackErrorEvent);
     }
 
@@ -331,7 +331,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m8668xe45a00bc(build);
+                    MediaMetricsListener.this.m8932xe45a00bc(build);
                 }
             });
         }
@@ -339,7 +339,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportNetworkChange$1$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8668xe45a00bc(NetworkEvent networkEvent) {
+    public /* synthetic */ void m8932xe45a00bc(NetworkEvent networkEvent) {
         this.playbackSession.reportNetworkEvent(networkEvent);
     }
 
@@ -360,7 +360,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m8670x6c41e093(build);
+                    MediaMetricsListener.this.m8934x6c41e093(build);
                 }
             });
         }
@@ -368,7 +368,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackStateChange$2$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8670x6c41e093(PlaybackStateEvent playbackStateEvent) {
+    public /* synthetic */ void m8934x6c41e093(PlaybackStateEvent playbackStateEvent) {
         this.playbackSession.reportPlaybackStateEvent(playbackStateEvent);
     }
 
@@ -484,14 +484,14 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m8671x86fc0269(build);
+                MediaMetricsListener.this.m8935x86fc0269(build);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$reportTrackChangeEvent$3$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8671x86fc0269(TrackChangeEvent trackChangeEvent) {
+    public /* synthetic */ void m8935x86fc0269(TrackChangeEvent trackChangeEvent) {
         this.playbackSession.reportTrackChangeEvent(trackChangeEvent);
     }
 
@@ -527,7 +527,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m8667x9548dab(build);
+                    MediaMetricsListener.this.m8931x9548dab(build);
                 }
             });
         }
@@ -544,7 +544,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$finishCurrentSession$4$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8667x9548dab(PlaybackMetrics playbackMetrics) {
+    public /* synthetic */ void m8931x9548dab(PlaybackMetrics playbackMetrics) {
         this.playbackSession.reportPlaybackMetrics(playbackMetrics);
     }
 
@@ -745,7 +745,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class ErrorInfo {
         public final int errorCode;
         public final int subErrorCode;
@@ -757,7 +757,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class PendingFormatUpdate {
         public final Format format;
         public final int selectionReason;

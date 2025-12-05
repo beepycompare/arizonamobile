@@ -20,16 +20,16 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: DrawCache.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JF\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u001b\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0017\u0010\u001c\u001a\u0013\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001a0\u001d¢\u0006\u0002\b\u001f¢\u0006\u0004\b \u0010!J$\u0010\"\u001a\u00020\u001a2\u0006\u0010#\u001a\u00020\u001e2\b\b\u0002\u0010$\u001a\u00020%2\n\b\u0002\u0010&\u001a\u0004\u0018\u00010'J\f\u0010(\u001a\u00020\u001a*\u00020\u001eH\u0002R&\u0010\u0004\u001a\u0004\u0018\u00010\u00058\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0013R\u0010\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Landroidx/compose/ui/graphics/vector/DrawCache;", "", "<init>", "()V", "mCachedImage", "Landroidx/compose/ui/graphics/ImageBitmap;", "getMCachedImage$annotations", "getMCachedImage", "()Landroidx/compose/ui/graphics/ImageBitmap;", "setMCachedImage", "(Landroidx/compose/ui/graphics/ImageBitmap;)V", "cachedCanvas", "Landroidx/compose/ui/graphics/Canvas;", "scopeDensity", "Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "size", "Landroidx/compose/ui/unit/IntSize;", "J", "config", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "I", "cacheScope", "Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;", "drawCachedImage", "", "density", "block", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "drawCachedImage-FqjB98A", "(IJLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Lkotlin/jvm/functions/Function1;)V", "drawInto", TypedValues.AttributesType.S_TARGET, "alpha", "", "colorFilter", "Landroidx/compose/ui/graphics/ColorFilter;", "clear", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JF\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u001b\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0017\u0010\u001c\u001a\u0013\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001a0\u001d¢\u0006\u0002\b\u001f¢\u0006\u0004\b \u0010!J$\u0010\"\u001a\u00020\u001a2\u0006\u0010#\u001a\u00020\u001e2\b\b\u0002\u0010$\u001a\u00020%2\n\b\u0002\u0010&\u001a\u0004\u0018\u00010'J\f\u0010(\u001a\u00020\u001a*\u00020\u001eH\u0002R&\u0010\u0004\u001a\u0004\u0018\u00010\u00058\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0013R\u0010\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Landroidx/compose/ui/graphics/vector/DrawCache;", "", "<init>", "()V", "mCachedImage", "Landroidx/compose/ui/graphics/ImageBitmap;", "getMCachedImage$annotations", "getMCachedImage", "()Landroidx/compose/ui/graphics/ImageBitmap;", "setMCachedImage", "(Landroidx/compose/ui/graphics/ImageBitmap;)V", "cachedCanvas", "Landroidx/compose/ui/graphics/Canvas;", "scopeDensity", "Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "size", "Landroidx/compose/ui/unit/IntSize;", "J", "config", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "I", "cacheScope", "Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;", "drawCachedImage", "", "density", "block", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "drawCachedImage-FqjB98A", "(IJLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Lkotlin/jvm/functions/Function1;)V", "drawInto", TypedValues.AttributesType.S_TARGET, "alpha", "", "colorFilter", "Landroidx/compose/ui/graphics/ColorFilter;", "clear", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class DrawCache {
     public static final int $stable = 8;
     private Canvas cachedCanvas;
     private ImageBitmap mCachedImage;
     private Density scopeDensity;
     private LayoutDirection layoutDirection = LayoutDirection.Ltr;
-    private long size = IntSize.Companion.m8172getZeroYbymL2g();
-    private int config = ImageBitmapConfig.Companion.m5512getArgb8888_sVssgQ();
+    private long size = IntSize.Companion.m8434getZeroYbymL2g();
+    private int config = ImageBitmapConfig.Companion.m5657getArgb8888_sVssgQ();
     private final CanvasDrawScope cacheScope = new CanvasDrawScope();
 
     public static /* synthetic */ void getMCachedImage$annotations() {
@@ -44,13 +44,13 @@ public final class DrawCache {
     }
 
     /* renamed from: drawCachedImage-FqjB98A  reason: not valid java name */
-    public final void m6009drawCachedImageFqjB98A(int i, long j, Density density, LayoutDirection layoutDirection, Function1<? super DrawScope, Unit> function1) {
+    public final void m6155drawCachedImageFqjB98A(int i, long j, Density density, LayoutDirection layoutDirection, Function1<? super DrawScope, Unit> function1) {
         this.scopeDensity = density;
         this.layoutDirection = layoutDirection;
         ImageBitmap imageBitmap = this.mCachedImage;
         Canvas canvas = this.cachedCanvas;
-        if (imageBitmap == null || canvas == null || ((int) (j >> 32)) > imageBitmap.getWidth() || ((int) (j & 4294967295L)) > imageBitmap.getHeight() || !ImageBitmapConfig.m5507equalsimpl0(this.config, i)) {
-            imageBitmap = ImageBitmapKt.m5517ImageBitmapx__hDU$default((int) (j >> 32), (int) (4294967295L & j), i, false, null, 24, null);
+        if (imageBitmap == null || canvas == null || ((int) (j >> 32)) > imageBitmap.getWidth() || ((int) (j & 4294967295L)) > imageBitmap.getHeight() || !ImageBitmapConfig.m5652equalsimpl0(this.config, i)) {
+            imageBitmap = ImageBitmapKt.m5662ImageBitmapx__hDU$default((int) (j >> 32), (int) (4294967295L & j), i, false, null, 24, null);
             canvas = CanvasKt.Canvas(imageBitmap);
             this.mCachedImage = imageBitmap;
             this.cachedCanvas = canvas;
@@ -58,17 +58,17 @@ public final class DrawCache {
         }
         this.size = j;
         CanvasDrawScope canvasDrawScope = this.cacheScope;
-        long m8179toSizeozmzZPI = IntSizeKt.m8179toSizeozmzZPI(j);
+        long m8441toSizeozmzZPI = IntSizeKt.m8441toSizeozmzZPI(j);
         CanvasDrawScope.DrawParams drawParams = canvasDrawScope.getDrawParams();
         Density component1 = drawParams.component1();
         LayoutDirection component2 = drawParams.component2();
         Canvas component3 = drawParams.component3();
-        long m5776component4NHjbRc = drawParams.m5776component4NHjbRc();
+        long m5922component4NHjbRc = drawParams.m5922component4NHjbRc();
         CanvasDrawScope.DrawParams drawParams2 = canvasDrawScope.getDrawParams();
         drawParams2.setDensity(density);
         drawParams2.setLayoutDirection(layoutDirection);
         drawParams2.setCanvas(canvas);
-        drawParams2.m5779setSizeuvyYCjk(m8179toSizeozmzZPI);
+        drawParams2.m5925setSizeuvyYCjk(m8441toSizeozmzZPI);
         canvas.save();
         CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
         clear(canvasDrawScope2);
@@ -78,7 +78,7 @@ public final class DrawCache {
         drawParams3.setDensity(component1);
         drawParams3.setLayoutDirection(component2);
         drawParams3.setCanvas(component3);
-        drawParams3.m5779setSizeuvyYCjk(m5776component4NHjbRc);
+        drawParams3.m5925setSizeuvyYCjk(m5922component4NHjbRc);
         imageBitmap.prepareToDraw();
     }
 
@@ -97,10 +97,10 @@ public final class DrawCache {
         if (!(imageBitmap != null)) {
             InlineClassHelperKt.throwIllegalStateException("drawCachedImage must be invoked first before attempting to draw the result into another destination");
         }
-        DrawScope.m5842drawImageAZ2fEMs$default(drawScope, imageBitmap, 0L, this.size, 0L, 0L, f, null, colorFilter, 0, 0, 858, null);
+        DrawScope.m5988drawImageAZ2fEMs$default(drawScope, imageBitmap, 0L, this.size, 0L, 0L, f, null, colorFilter, 0, 0, 858, null);
     }
 
     private final void clear(DrawScope drawScope) {
-        DrawScope.m5853drawRectnJ9OG0$default(drawScope, Color.Companion.m5306getBlack0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5194getClear0nO6VwU(), 62, null);
+        DrawScope.m5999drawRectnJ9OG0$default(drawScope, Color.Companion.m5450getBlack0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5337getClear0nO6VwU(), 62, null);
     }
 }

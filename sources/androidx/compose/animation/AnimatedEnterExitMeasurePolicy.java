@@ -39,23 +39,23 @@ final class AnimatedEnterExitMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo53measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         int i = 0;
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            Placeable mo6698measureBRTryo0 = list.get(i3).mo6698measureBRTryo0(j);
-            i = Math.max(i, mo6698measureBRTryo0.getWidth());
-            i2 = Math.max(i2, mo6698measureBRTryo0.getHeight());
-            arrayList.add(mo6698measureBRTryo0);
+            Placeable mo6875measureBRTryo0 = list.get(i3).mo6875measureBRTryo0(j);
+            i = Math.max(i, mo6875measureBRTryo0.getWidth());
+            i2 = Math.max(i2, mo6875measureBRTryo0.getHeight());
+            arrayList.add(mo6875measureBRTryo0);
         }
         final ArrayList arrayList2 = arrayList;
         if (measureScope.isLookingAhead()) {
             this.hasLookaheadOccurred = true;
-            this.scope.getTargetSize$animation().setValue(IntSize.m8159boximpl(IntSize.m8162constructorimpl((4294967295L & i2) | (i << 32))));
+            this.scope.getTargetSize$animation().setValue(IntSize.m8421boximpl(IntSize.m8424constructorimpl((4294967295L & i2) | (i << 32))));
         } else if (!this.hasLookaheadOccurred) {
-            this.scope.getTargetSize$animation().setValue(IntSize.m8159boximpl(IntSize.m8162constructorimpl((4294967295L & i2) | (i << 32))));
+            this.scope.getTargetSize$animation().setValue(IntSize.m8421boximpl(IntSize.m8424constructorimpl((4294967295L & i2) | (i << 32))));
         }
         return MeasureScope.layout$default(measureScope, i, i2, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedEnterExitMeasurePolicy$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */

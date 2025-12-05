@@ -12,6 +12,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import androidx.core.view.ViewCompat;
 /* loaded from: classes3.dex */
 class TransitionUtils {
     private static final boolean HAS_PICTURE_BITMAP;
@@ -58,7 +59,7 @@ class TransitionUtils {
         } else {
             viewGroup2 = (ViewGroup) view.getParent();
             i = viewGroup2.indexOfChild(view);
-            viewGroup.getOverlay().add(view);
+            ViewCompat.addOverlayView(viewGroup, view);
         }
         int round = Math.round(rectF.width());
         int round2 = Math.round(rectF.height());

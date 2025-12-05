@@ -1,6 +1,5 @@
 package androidx.emoji2.text.flatbuffer;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.google.common.base.Ascii;
 import java.nio.ByteBuffer;
 /* loaded from: classes2.dex */
@@ -51,7 +50,7 @@ public abstract class Utf8 {
         }
 
         private static char lowSurrogate(int i) {
-            return (char) ((i & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + okio.Utf8.LOG_SURROGATE_HEADER);
+            return (char) ((i & 1023) + okio.Utf8.LOG_SURROGATE_HEADER);
         }
 
         private static int trailingByteValue(byte b) {

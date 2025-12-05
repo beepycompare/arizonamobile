@@ -13,13 +13,13 @@ public final class PersistentOrderedMapBuilderEntries<K, V> extends AbstractMapB
     public static final int $stable = 8;
     private final PersistentOrderedMapBuilder<K, V> builder;
 
+    public PersistentOrderedMapBuilderEntries(PersistentOrderedMapBuilder<K, V> persistentOrderedMapBuilder) {
+        this.builder = persistentOrderedMapBuilder;
+    }
+
     @Override // kotlin.collections.AbstractMutableSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public /* bridge */ /* synthetic */ boolean add(Object obj) {
         return add((Map.Entry) ((Map.Entry) obj));
-    }
-
-    public PersistentOrderedMapBuilderEntries(PersistentOrderedMapBuilder<K, V> persistentOrderedMapBuilder) {
-        this.builder = persistentOrderedMapBuilder;
     }
 
     public boolean add(Map.Entry<K, V> entry) {

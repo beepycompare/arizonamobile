@@ -12,7 +12,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DisposableHandle;
 /* compiled from: CoroutineLiveData.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/DisposableHandle;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.lifecycle.LiveDataScopeImpl$emitSource$2", f = "CoroutineLiveData.kt", i = {}, l = {92}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.lifecycle.LiveDataScopeImpl$emitSource$2", f = "CoroutineLiveData.kt", i = {}, l = {94}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 final class LiveDataScopeImpl$emitSource$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super DisposableHandle>, Object> {
     final /* synthetic */ LiveData<T> $source;
@@ -50,7 +50,7 @@ final class LiveDataScopeImpl$emitSource$2 extends SuspendLambda implements Func
         }
         ResultKt.throwOnFailure(obj);
         this.label = 1;
-        Object emitSource$lifecycle_livedata_release = this.this$0.getTarget$lifecycle_livedata_release().emitSource$lifecycle_livedata_release(this.$source, this);
-        return emitSource$lifecycle_livedata_release == coroutine_suspended ? coroutine_suspended : emitSource$lifecycle_livedata_release;
+        Object emitSource$lifecycle_livedata = this.this$0.getTarget$lifecycle_livedata().emitSource$lifecycle_livedata(this.$source, this);
+        return emitSource$lifecycle_livedata == coroutine_suspended ? coroutine_suspended : emitSource$lifecycle_livedata;
     }
 }

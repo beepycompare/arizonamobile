@@ -4,9 +4,9 @@ package io.appmetrica.analytics.impl;
 public final class Cif implements A5 {
     @Override // kotlin.jvm.functions.Function1
     /* renamed from: a */
-    public final Boolean invoke(C0550rf c0550rf) {
-        C0471oa c0471oa = C0471oa.I;
-        c0471oa.E();
-        return Boolean.valueOf(c0471oa.j.b(c0550rf));
+    public final Boolean invoke(C0549rf c0549rf) {
+        C0470oa c0470oa = C0470oa.I;
+        c0470oa.E();
+        return Boolean.valueOf(c0470oa.j.b(c0549rf));
     }
 }

@@ -1,7 +1,6 @@
 package androidx.compose.ui.autofill;
 
 import android.graphics.Rect;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewStructure;
@@ -25,6 +24,7 @@ import androidx.compose.ui.semantics.SemanticsListener;
 import androidx.compose.ui.semantics.SemanticsOwner;
 import androidx.compose.ui.semantics.SemanticsProperties;
 import androidx.compose.ui.spatial.RectManager;
+import androidx.compose.ui.state.ToggleableState;
 import androidx.compose.ui.text.AnnotatedString;
 import com.facebook.widget.FacebookDialog;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -36,7 +36,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidAutofillManager.android.kt */
-@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B/\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\b\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\u0019H\u0016J\u001c\u0010\u001b\u001a\u00020\u00192\b\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001dH\u0016J\u001a\u0010\u001f\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!2\b\u0010\"\u001a\u0004\u0018\u00010#H\u0016J\u000e\u0010$\u001a\u00020\u00192\u0006\u0010%\u001a\u00020&J\u0014\u0010'\u001a\u00020\u00192\f\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)J\u0015\u0010-\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b.J\u0015\u0010/\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b0J\u001d\u00101\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!2\u0006\u00102\u001a\u000203H\u0000¢\u0006\u0002\b4J\u0015\u00105\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b6J\u0015\u00107\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b8J\r\u0010;\u001a\u00020\u0019H\u0000¢\u0006\u0002\b<R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006="}, d2 = {"Landroidx/compose/ui/autofill/AndroidAutofillManager;", "Landroidx/compose/ui/autofill/AutofillManager;", "Landroidx/compose/ui/semantics/SemanticsListener;", "Landroidx/compose/ui/focus/FocusListener;", "platformAutofillManager", "Landroidx/compose/ui/autofill/PlatformAutofillManager;", "semanticsOwner", "Landroidx/compose/ui/semantics/SemanticsOwner;", "view", "Landroid/view/View;", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, "", "<init>", "(Landroidx/compose/ui/autofill/PlatformAutofillManager;Landroidx/compose/ui/semantics/SemanticsOwner;Landroid/view/View;Landroidx/compose/ui/spatial/RectManager;Ljava/lang/String;)V", "getPlatformAutofillManager", "()Landroidx/compose/ui/autofill/PlatformAutofillManager;", "setPlatformAutofillManager", "(Landroidx/compose/ui/autofill/PlatformAutofillManager;)V", "reusableRect", "Landroid/graphics/Rect;", "rootAutofillId", "Landroid/view/autofill/AutofillId;", "commit", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "onFocusChanged", "previous", "Landroidx/compose/ui/focus/FocusTargetModifierNode;", "current", "onSemanticsChanged", "semanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "previousSemanticsConfiguration", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "populateViewStructure", "rootViewStructure", "Landroid/view/ViewStructure;", "performAutofill", "values", "Landroid/util/SparseArray;", "Landroid/view/autofill/AutofillValue;", "currentlyDisplayedIDs", "Landroidx/collection/MutableIntSet;", "requestAutofill", "requestAutofill$ui_release", "onPostAttach", "onPostAttach$ui_release", "onPostLayoutNodeReused", "previousSemanticsId", "", "onPostLayoutNodeReused$ui_release", "onLayoutNodeDeactivated", "onLayoutNodeDeactivated$ui_release", "onDetach", "onDetach$ui_release", "pendingAutofillCommit", "", "onEndApplyChanges", "onEndApplyChanges$ui_release", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B/\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\b\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\u0019H\u0016J\u001c\u0010\u001b\u001a\u00020\u00192\b\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001dH\u0016J\u001a\u0010\u001f\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!2\b\u0010\"\u001a\u0004\u0018\u00010#H\u0016J\u000e\u0010$\u001a\u00020\u00192\u0006\u0010%\u001a\u00020&J\u0014\u0010'\u001a\u00020\u00192\f\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)J\u0015\u0010-\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b.J\u0015\u0010/\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b0J\u001d\u00101\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!2\u0006\u00102\u001a\u000203H\u0000¢\u0006\u0002\b4J\u0015\u00105\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b6J\u0015\u00107\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!H\u0000¢\u0006\u0002\b8J\r\u0010;\u001a\u00020\u0019H\u0000¢\u0006\u0002\b<R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006="}, d2 = {"Landroidx/compose/ui/autofill/AndroidAutofillManager;", "Landroidx/compose/ui/autofill/AutofillManager;", "Landroidx/compose/ui/semantics/SemanticsListener;", "Landroidx/compose/ui/focus/FocusListener;", "platformAutofillManager", "Landroidx/compose/ui/autofill/PlatformAutofillManager;", "semanticsOwner", "Landroidx/compose/ui/semantics/SemanticsOwner;", "view", "Landroid/view/View;", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, "", "<init>", "(Landroidx/compose/ui/autofill/PlatformAutofillManager;Landroidx/compose/ui/semantics/SemanticsOwner;Landroid/view/View;Landroidx/compose/ui/spatial/RectManager;Ljava/lang/String;)V", "getPlatformAutofillManager", "()Landroidx/compose/ui/autofill/PlatformAutofillManager;", "setPlatformAutofillManager", "(Landroidx/compose/ui/autofill/PlatformAutofillManager;)V", "reusableRect", "Landroid/graphics/Rect;", "rootAutofillId", "Landroid/view/autofill/AutofillId;", "commit", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "onFocusChanged", "previous", "Landroidx/compose/ui/focus/FocusTargetModifierNode;", "current", "onSemanticsChanged", "semanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "previousSemanticsConfiguration", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "populateViewStructure", "rootViewStructure", "Landroid/view/ViewStructure;", "performAutofill", "values", "Landroid/util/SparseArray;", "Landroid/view/autofill/AutofillValue;", "currentlyDisplayedIDs", "Landroidx/collection/MutableIntSet;", "requestAutofill", "requestAutofill$ui", "onPostAttach", "onPostAttach$ui", "onPostLayoutNodeReused", "previousSemanticsId", "", "onPostLayoutNodeReused$ui", "onLayoutNodeDeactivated", "onLayoutNodeDeactivated$ui", "onDetach", "onDetach$ui", "pendingAutofillCommit", "", "onEndApplyChanges", "onEndApplyChanges$ui", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AndroidAutofillManager extends AutofillManager implements SemanticsListener, FocusListener {
     public static final int $stable = 8;
@@ -50,12 +50,24 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
     private final SemanticsOwner semanticsOwner;
     private final View view;
 
-    public final PlatformAutofillManager getPlatformAutofillManager() {
-        return this.platformAutofillManager;
-    }
+    /* compiled from: AndroidAutofillManager.android.kt */
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes.dex */
+    public static final /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
-    public final void setPlatformAutofillManager(PlatformAutofillManager platformAutofillManager) {
-        this.platformAutofillManager = platformAutofillManager;
+        static {
+            int[] iArr = new int[ToggleableState.values().length];
+            try {
+                iArr[ToggleableState.On.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ToggleableState.Off.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            $EnumSwitchMapping$0 = iArr;
+        }
     }
 
     public AndroidAutofillManager(PlatformAutofillManager platformAutofillManager, SemanticsOwner semanticsOwner, View view, RectManager rectManager, String str) {
@@ -74,6 +86,14 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         }
         InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Required value was null.");
         throw new KotlinNothingValueException();
+    }
+
+    public final PlatformAutofillManager getPlatformAutofillManager() {
+        return this.platformAutofillManager;
+    }
+
+    public final void setPlatformAutofillManager(PlatformAutofillManager platformAutofillManager) {
+        this.platformAutofillManager = platformAutofillManager;
     }
 
     @Override // androidx.compose.ui.autofill.AutofillManager
@@ -129,12 +149,9 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0085, code lost:
-        if (r0 == true) goto L26;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:71:? A[RETURN, SYNTHETIC] */
     @Override // androidx.compose.ui.semantics.SemanticsListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -143,23 +160,51 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         boolean z;
         boolean isRelatedToAutoCommit;
         boolean isRelatedToAutoCommit2;
+        Boolean bool;
         AnnotatedString annotatedString;
         AnnotatedString annotatedString2;
         SemanticsConfiguration semanticsConfiguration2 = semanticsInfo.getSemanticsConfiguration();
         int semanticsId = semanticsInfo.getSemanticsId();
-        String str = null;
         String text = (semanticsConfiguration == null || (annotatedString2 = (AnnotatedString) SemanticsConfigurationKt.getOrNull(semanticsConfiguration, SemanticsProperties.INSTANCE.getInputText())) == null) ? null : annotatedString2.getText();
-        if (semanticsConfiguration2 != null && (annotatedString = (AnnotatedString) SemanticsConfigurationKt.getOrNull(semanticsConfiguration2, SemanticsProperties.INSTANCE.getInputText())) != null) {
-            str = annotatedString.getText();
-        }
-        boolean z2 = true;
-        if (text != str) {
+        String text2 = (semanticsConfiguration2 == null || (annotatedString = (AnnotatedString) SemanticsConfigurationKt.getOrNull(semanticsConfiguration2, SemanticsProperties.INSTANCE.getInputText())) == null) ? null : annotatedString.getText();
+        boolean z2 = false;
+        if (text != text2) {
             if (text == null) {
                 this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, true);
-            } else if (str == null) {
+            } else if (text2 == null) {
                 this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, false);
             } else if (Intrinsics.areEqual((ContentDataType) SemanticsConfigurationKt.getOrNull(semanticsConfiguration2, SemanticsProperties.INSTANCE.getContentDataType()), ContentDataType.Companion.getText())) {
-                this.platformAutofillManager.notifyValueChanged(this.view, semanticsId, AutofillApi26Helper.INSTANCE.getAutofillTextValue(str.toString()));
+                this.platformAutofillManager.notifyValueChanged(this.view, semanticsId, AutofillApi26Helper.INSTANCE.getAutofillTextValue(text2));
+            }
+        }
+        ToggleableState toggleableState = semanticsConfiguration != null ? (ToggleableState) SemanticsConfigurationKt.getOrNull(semanticsConfiguration, SemanticsProperties.INSTANCE.getToggleableState()) : null;
+        ToggleableState toggleableState2 = semanticsConfiguration2 != null ? (ToggleableState) SemanticsConfigurationKt.getOrNull(semanticsConfiguration2, SemanticsProperties.INSTANCE.getToggleableState()) : null;
+        if (toggleableState != toggleableState2) {
+            if (toggleableState == null) {
+                this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, true);
+            } else if (toggleableState2 == null) {
+                this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, false);
+            } else if (Intrinsics.areEqual((ContentDataType) SemanticsConfigurationKt.getOrNull(semanticsConfiguration2, SemanticsProperties.INSTANCE.getContentDataType()), ContentDataType.Companion.getToggle())) {
+                int i = WhenMappings.$EnumSwitchMapping$0[toggleableState2.ordinal()];
+                if (i == 1) {
+                    bool = true;
+                } else {
+                    bool = i != 2 ? null : false;
+                }
+                if (bool != null) {
+                    this.platformAutofillManager.notifyValueChanged(this.view, semanticsId, AutofillApi26Helper.INSTANCE.getAutofillToggleValue(bool.booleanValue()));
+                }
+            }
+        }
+        FillableData fillableData = semanticsConfiguration != null ? (FillableData) SemanticsConfigurationKt.getOrNull(semanticsConfiguration, SemanticsProperties.INSTANCE.getFillableData()) : null;
+        FillableData fillableData2 = semanticsConfiguration2 != null ? (FillableData) SemanticsConfigurationKt.getOrNull(semanticsConfiguration2, SemanticsProperties.INSTANCE.getFillableData()) : null;
+        if (!Intrinsics.areEqual(fillableData, fillableData2)) {
+            if (fillableData == null) {
+                this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, true);
+            } else if (fillableData2 == null) {
+                this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, false);
+            } else {
+                this.platformAutofillManager.notifyValueChanged(this.view, semanticsId, ((AndroidFillableData) fillableData2).getAutofillValue$ui());
             }
         }
         if (semanticsConfiguration != null) {
@@ -168,8 +213,10 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
                 z = true;
                 if (semanticsConfiguration2 != null) {
                     isRelatedToAutoCommit = AndroidAutofillManager_androidKt.isRelatedToAutoCommit(semanticsConfiguration2);
+                    if (isRelatedToAutoCommit) {
+                        z2 = true;
+                    }
                 }
-                z2 = false;
                 if (z == z2) {
                     if (z2) {
                         this.currentlyDisplayedIDs.add(semanticsId);
@@ -185,7 +232,6 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         z = false;
         if (semanticsConfiguration2 != null) {
         }
-        z2 = false;
         if (z == z2) {
         }
     }
@@ -193,9 +239,9 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
     public final void populateViewStructure(ViewStructure viewStructure) {
         boolean isRelatedToAutofill;
         AutofillApi26Helper autofillApi26Helper = AutofillApi26Helper.INSTANCE;
-        SemanticsInfo rootInfo$ui_release = this.semanticsOwner.getRootInfo$ui_release();
-        PopulateViewStructure_androidKt.populate(viewStructure, rootInfo$ui_release, this.rootAutofillId, this.packageName, this.rectManager);
-        MutableObjectList mutableObjectListOf = ObjectListKt.mutableObjectListOf(rootInfo$ui_release, viewStructure);
+        SemanticsInfo rootInfo$ui = this.semanticsOwner.getRootInfo$ui();
+        PopulateViewStructure_androidKt.populate(viewStructure, rootInfo$ui, this.rootAutofillId, this.packageName, this.rectManager);
+        MutableObjectList mutableObjectListOf = ObjectListKt.mutableObjectListOf(rootInfo$ui, viewStructure);
         while (mutableObjectListOf.isNotEmpty()) {
             MutableObjectList mutableObjectList = mutableObjectListOf;
             Object removeAt = mutableObjectListOf.removeAt(mutableObjectList._size - 1);
@@ -225,30 +271,7 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         }
     }
 
-    public final void performAutofill(SparseArray<AutofillValue> sparseArray) {
-        SemanticsConfiguration semanticsConfiguration;
-        AccessibilityAction accessibilityAction;
-        Function1 function1;
-        int size = sparseArray.size();
-        for (int i = 0; i < size; i++) {
-            int keyAt = sparseArray.keyAt(i);
-            AutofillValue autofillValue = sparseArray.get(keyAt);
-            if (AutofillApi26Helper.INSTANCE.isText(autofillValue)) {
-                SemanticsInfo semanticsInfo = this.semanticsOwner.get$ui_release(keyAt);
-                if (semanticsInfo != null && (semanticsConfiguration = semanticsInfo.getSemanticsConfiguration()) != null && (accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsConfiguration, SemanticsActions.INSTANCE.getOnAutofillText())) != null && (function1 = (Function1) accessibilityAction.getAction()) != null) {
-                    Boolean bool = (Boolean) function1.invoke(new AnnotatedString(AutofillApi26Helper.INSTANCE.textValue(autofillValue).toString(), null, 2, null));
-                }
-            } else if (AutofillApi26Helper.INSTANCE.isDate(autofillValue)) {
-                Log.w("ComposeAutofillManager", "Auto filling Date fields is not yet supported.");
-            } else if (AutofillApi26Helper.INSTANCE.isList(autofillValue)) {
-                Log.w("ComposeAutofillManager", "Auto filling dropdown lists is not yet supported.");
-            } else if (AutofillApi26Helper.INSTANCE.isToggle(autofillValue)) {
-                Log.w("ComposeAutofillManager", "Auto filling toggle fields are not yet supported.");
-            }
-        }
-    }
-
-    public final void requestAutofill$ui_release(final SemanticsInfo semanticsInfo) {
+    public final void requestAutofill$ui(final SemanticsInfo semanticsInfo) {
         this.rectManager.getRects().withRect(semanticsInfo.getSemanticsId(), new Function4<Integer, Integer, Integer, Integer, Unit>() { // from class: androidx.compose.ui.autofill.AndroidAutofillManager$requestAutofill$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -277,7 +300,7 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         });
     }
 
-    public final void onPostAttach$ui_release(SemanticsInfo semanticsInfo) {
+    public final void onPostAttach$ui(SemanticsInfo semanticsInfo) {
         boolean isRelatedToAutoCommit;
         SemanticsConfiguration semanticsConfiguration = semanticsInfo.getSemanticsConfiguration();
         if (semanticsConfiguration != null) {
@@ -289,7 +312,7 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         }
     }
 
-    public final void onPostLayoutNodeReused$ui_release(SemanticsInfo semanticsInfo, int i) {
+    public final void onPostLayoutNodeReused$ui(SemanticsInfo semanticsInfo, int i) {
         boolean isRelatedToAutoCommit;
         if (this.currentlyDisplayedIDs.remove(i)) {
             this.platformAutofillManager.notifyViewVisibilityChanged(this.view, i, false);
@@ -304,25 +327,47 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         }
     }
 
-    public final void onLayoutNodeDeactivated$ui_release(SemanticsInfo semanticsInfo) {
+    public final void onLayoutNodeDeactivated$ui(SemanticsInfo semanticsInfo) {
         if (this.currentlyDisplayedIDs.remove(semanticsInfo.getSemanticsId())) {
             this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsInfo.getSemanticsId(), false);
         }
     }
 
-    public final void onDetach$ui_release(SemanticsInfo semanticsInfo) {
+    public final void onDetach$ui(SemanticsInfo semanticsInfo) {
         if (this.currentlyDisplayedIDs.remove(semanticsInfo.getSemanticsId())) {
             this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsInfo.getSemanticsId(), false);
         }
     }
 
-    public final void onEndApplyChanges$ui_release() {
+    public final void onEndApplyChanges$ui() {
         if (this.currentlyDisplayedIDs.isEmpty() && this.pendingAutofillCommit) {
             this.platformAutofillManager.commit();
             this.pendingAutofillCommit = false;
         }
         if (this.currentlyDisplayedIDs.isNotEmpty()) {
             this.pendingAutofillCommit = true;
+        }
+    }
+
+    public final void performAutofill(SparseArray<AutofillValue> sparseArray) {
+        SemanticsConfiguration semanticsConfiguration;
+        Function1 function1;
+        Function1 function12;
+        int size = sparseArray.size();
+        for (int i = 0; i < size; i++) {
+            int keyAt = sparseArray.keyAt(i);
+            AutofillValue autofillValue = sparseArray.get(keyAt);
+            SemanticsInfo semanticsInfo = this.semanticsOwner.get$ui(keyAt);
+            if (semanticsInfo != null && (semanticsConfiguration = semanticsInfo.getSemanticsConfiguration()) != null) {
+                AccessibilityAction accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsConfiguration, SemanticsActions.INSTANCE.getOnAutofillText());
+                if (accessibilityAction != null && (function12 = (Function1) accessibilityAction.getAction()) != null) {
+                    Boolean bool = (Boolean) function12.invoke(new AnnotatedString(AutofillApi26Helper.INSTANCE.textValue(autofillValue).toString(), null, 2, null));
+                }
+                AccessibilityAction accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsConfiguration, SemanticsActions.INSTANCE.getOnFillData());
+                if (accessibilityAction2 != null && (function1 = (Function1) accessibilityAction2.getAction()) != null) {
+                    Boolean bool2 = (Boolean) function1.invoke(new AndroidFillableData(autofillValue));
+                }
+            }
         }
     }
 }

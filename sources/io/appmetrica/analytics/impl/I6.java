@@ -18,26 +18,26 @@ import org.json.JSONObject;
 public final class I6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CounterConfigurationReporterType f520a;
+    public final CounterConfigurationReporterType f603a;
 
     public I6(CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f520a = counterConfigurationReporterType;
+        this.f603a = counterConfigurationReporterType;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(12:1|2|3|(3:63|64|(9:66|(2:69|67)|70|6|7|8|(2:15|(8:18|7a|26|27|(4:30|(5:34|35|(1:37)(1:41)|38|39)|40|28)|44|45|(2:49|50)))|59|60))|5|6|7|8|(4:10|12|15|(2:18|7a))|59|60|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(12:1|2|3|(3:63|64|(9:66|(2:69|67)|70|6|7|8|(2:15|(8:18|7b|26|27|(4:30|(5:34|35|(1:37)(1:41)|38|39)|40|28)|44|45|(2:49|50)))|59|60))|5|6|7|8|(4:10|12|15|(2:18|7b))|59|60|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x005e, code lost:
         r10 = 0;
      */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x007b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x007c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final G6 a(SQLiteDatabase sQLiteDatabase, String str, int i, String str2, boolean z) {
         Cursor cursor;
         ArrayList<ContentValues> arrayList;
-        C0455nj c0455nj;
-        C0405lj c0405lj;
+        C0454nj c0454nj;
+        C0404lj c0404lj;
         N3 n3;
         Integer num;
         try {
@@ -51,9 +51,9 @@ public final class I6 {
             } catch (Throwable th2) {
                 th = th2;
                 try {
-                    Rj rj = AbstractC0505pj.f1071a;
+                    Rj rj = AbstractC0504pj.f1154a;
                     rj.getClass();
-                    rj.a(new C0530qj("select_rows_to_delete_exception", th));
+                    rj.a(new C0529qj("select_rows_to_delete_exception", th));
                     mo.a(cursor);
                     arrayList = null;
                     int i2 = sQLiteDatabase.delete("events", str, null);
@@ -73,14 +73,14 @@ public final class I6 {
                 }
                 int i22 = sQLiteDatabase.delete("events", str, null);
                 if (arrayList != null && arrayList.size() != 0 && i22 == arrayList.size() && z) {
-                    c0455nj = C0471oa.I.f;
-                    if (str2 != null && c0455nj != null) {
-                        CounterConfigurationReporterType counterConfigurationReporterType = this.f520a;
-                        synchronized (c0455nj) {
-                            c0405lj = (C0405lj) c0455nj.c.get(str2);
-                            if (c0405lj == null) {
-                                c0405lj = new C0405lj(str2, c0455nj.b, counterConfigurationReporterType, c0455nj.f1033a);
-                                c0455nj.c.put(str2, c0405lj);
+                    c0454nj = C0470oa.I.f;
+                    if (str2 != null && c0454nj != null) {
+                        CounterConfigurationReporterType counterConfigurationReporterType = this.f603a;
+                        synchronized (c0454nj) {
+                            c0404lj = (C0404lj) c0454nj.c.get(str2);
+                            if (c0404lj == null) {
+                                c0404lj = new C0404lj(str2, c0454nj.b, counterConfigurationReporterType, c0454nj.f1116a);
+                                c0454nj.c.put(str2, c0404lj);
                             }
                         }
                         try {
@@ -92,9 +92,9 @@ public final class I6 {
                                 Integer asInteger2 = contentValues2.getAsInteger("type");
                                 if (asInteger != null && asInteger2 != null) {
                                     jSONArray.put(asInteger);
-                                    EnumC0165cb a2 = EnumC0165cb.a(asInteger2.intValue());
+                                    EnumC0164cb a2 = EnumC0164cb.a(asInteger2.intValue());
                                     if (a2 == null) {
-                                        Map map = Qf.f650a;
+                                        Map map = Qf.f733a;
                                         num = null;
                                     } else {
                                         num = (Integer) Qf.c.get(a2);
@@ -106,17 +106,17 @@ public final class I6 {
                             JSONObject put = new JSONObject().put("details", new JSONObject().put("reason", H6.a(i)).put("cleared", jSONObject).put("actual_deleted_number", i22));
                             PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str2);
                             String jSONObject2 = put.toString();
-                            Set set = AbstractC0694x9.f1197a;
-                            EnumC0165cb enumC0165cb = EnumC0165cb.EVENT_TYPE_UNDEFINED;
+                            Set set = AbstractC0693x9.f1280a;
+                            EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
                             n3 = new N3(jSONObject2, "", 12290, 0, orCreatePublicLogger);
                         } catch (Throwable unused) {
                             n3 = null;
                         }
-                        if (n3 != null && c0405lj.c != null) {
+                        if (n3 != null && c0404lj.c != null) {
                             try {
-                                CounterConfiguration counterConfiguration = new CounterConfiguration(c0405lj.f995a);
-                                counterConfiguration.setReporterType(c0405lj.c);
-                                ((C1) c0405lj.d.f1052a).reportData(1, n3.d(new Gh(new Cf(c0405lj.b, (ResultReceiver) null), counterConfiguration, new E8(new C0581sl(LoggerStorage.getOrCreatePublicLogger(c0405lj.f995a), "Crash Environment")), null).c()));
+                                CounterConfiguration counterConfiguration = new CounterConfiguration(c0404lj.f1078a);
+                                counterConfiguration.setReporterType(c0404lj.c);
+                                ((C1) c0404lj.d.f1135a).reportData(1, n3.d(new Gh(new Cf(c0404lj.b, (ResultReceiver) null), counterConfiguration, new E8(new C0580sl(LoggerStorage.getOrCreatePublicLogger(c0404lj.f1078a), "Crash Environment")), null).c()));
                             } catch (Throwable unused2) {
                             }
                         }
@@ -128,10 +128,10 @@ public final class I6 {
         arrayList = null;
         int i222 = sQLiteDatabase.delete("events", str, null);
         if (arrayList != null) {
-            c0455nj = C0471oa.I.f;
+            c0454nj = C0470oa.I.f;
             if (str2 != null) {
-                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f520a;
-                synchronized (c0455nj) {
+                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f603a;
+                synchronized (c0454nj) {
                 }
             }
         }

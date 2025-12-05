@@ -6,6 +6,6 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorPr
 public final class Rc implements ModuleClientExecutorProvider {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorProvider
     public final IHandlerExecutor getDefaultExecutor() {
-        return C0158c4.l().c.a();
+        return C0157c4.l().c.a();
     }
 }

@@ -5,7 +5,6 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewParent;
 import androidx.collection.IntObjectMap;
-import androidx.collection.MutableIntObjectMap;
 import androidx.collection.MutableObjectList;
 import androidx.collection.MutableScatterMap;
 import androidx.collection.ScatterMap;
@@ -27,7 +26,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WindowInsetsRulers.android.kt */
-@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B\u000f\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016J\u0018\u0010*\u001a\u00020+2\u0006\u0010(\u001a\u00020)2\u0006\u0010,\u001a\u00020+H\u0016J\u0018\u0010-\u001a\u00020'2\u0006\u0010.\u001a\u00020\u00142\u0006\u0010(\u001a\u00020)H\u0002J\u001e\u0010/\u001a\u00020\u00102\u0006\u00100\u001a\u00020\u00102\f\u00101\u001a\b\u0012\u0004\u0012\u00020)02H\u0016J\u0010\u00103\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016J\u0010\u00104\u001a\u00020'2\u0006\u0010.\u001a\u00020\u0014H\u0002J\u0018\u00105\u001a\u00020\u00102\u0006\u00106\u001a\u0002072\u0006\u00100\u001a\u00020\u0010H\u0016J\u0010\u00108\u001a\u00020'2\u0006\u00100\u001a\u00020\u0010H\u0002J\b\u00109\u001a\u00020'H\u0016J\u0010\u0010:\u001a\u00020'2\u0006\u00106\u001a\u000207H\u0016J\u0010\u0010;\u001a\u00020'2\u0006\u00106\u001a\u000207H\u0016R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00140\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0017\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001d\u0010\u001b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001e0\u001d0\u001c¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u0017\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%¨\u0006<"}, d2 = {"Landroidx/compose/ui/layout/InsetsListener;", "Landroidx/core/view/WindowInsetsAnimationCompat$Callback;", "Ljava/lang/Runnable;", "Landroidx/core/view/OnApplyWindowInsetsListener;", "Landroid/view/View$OnAttachStateChangeListener;", "composeView", "Landroidx/compose/ui/platform/AndroidComposeView;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;)V", "getComposeView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "prepared", "", "runningAnimationMask", "", "savedInsets", "Landroidx/core/view/WindowInsetsCompat;", "insetsValues", "Landroidx/collection/ScatterMap;", "", "Landroidx/compose/ui/layout/WindowWindowInsetsAnimationValues;", "getInsetsValues", "()Landroidx/collection/ScatterMap;", "generation", "Landroidx/compose/runtime/MutableIntState;", "getGeneration", "()Landroidx/compose/runtime/MutableIntState;", "displayCutouts", "Landroidx/collection/MutableObjectList;", "Landroidx/compose/runtime/MutableState;", "Landroid/graphics/Rect;", "getDisplayCutouts", "()Landroidx/collection/MutableObjectList;", "displayCutoutRulers", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Landroidx/compose/ui/layout/RectRulers;", "getDisplayCutoutRulers", "()Landroidx/compose/runtime/snapshots/SnapshotStateList;", "onPrepare", "", "animation", "Landroidx/core/view/WindowInsetsAnimationCompat;", "onStart", "Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;", "bounds", "updateInsetAnimationInfo", "insetsValue", "onProgress", "insets", "runningAnimations", "", "onEnd", "stopAnimationForRuler", "onApplyWindowInsets", "view", "Landroid/view/View;", "updateInsets", "run", "onViewAttachedToWindow", "onViewDetachedFromWindow", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B\u000f\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016J\u0018\u0010*\u001a\u00020+2\u0006\u0010(\u001a\u00020)2\u0006\u0010,\u001a\u00020+H\u0016J\u0018\u0010-\u001a\u00020'2\u0006\u0010.\u001a\u00020\u00142\u0006\u0010(\u001a\u00020)H\u0002J\u001e\u0010/\u001a\u00020\u00102\u0006\u00100\u001a\u00020\u00102\f\u00101\u001a\b\u0012\u0004\u0012\u00020)02H\u0016J\u0010\u00103\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016J\u0010\u00104\u001a\u00020'2\u0006\u0010.\u001a\u00020\u0014H\u0002J\u0018\u00105\u001a\u00020\u00102\u0006\u00106\u001a\u0002072\u0006\u00100\u001a\u00020\u0010H\u0016J\u0010\u00108\u001a\u00020'2\u0006\u00100\u001a\u00020\u0010H\u0002J\b\u00109\u001a\u00020'H\u0016J\u0010\u0010:\u001a\u00020'2\u0006\u00106\u001a\u000207H\u0016J\u0010\u0010;\u001a\u00020'2\u0006\u00106\u001a\u000207H\u0016R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00140\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0017\u001a\u00020\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001d\u0010\u001b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001e0\u001d0\u001c¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u0017\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%¨\u0006<"}, d2 = {"Landroidx/compose/ui/layout/InsetsListener;", "Landroidx/core/view/WindowInsetsAnimationCompat$Callback;", "Ljava/lang/Runnable;", "Landroidx/core/view/OnApplyWindowInsetsListener;", "Landroid/view/View$OnAttachStateChangeListener;", "composeView", "Landroidx/compose/ui/platform/AndroidComposeView;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;)V", "getComposeView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "prepared", "", "runningAnimationMask", "", "savedInsets", "Landroidx/core/view/WindowInsetsCompat;", "insetsValues", "Landroidx/collection/ScatterMap;", "", "Landroidx/compose/ui/layout/WindowWindowInsetsAnimationValues;", "getInsetsValues", "()Landroidx/collection/ScatterMap;", "generation", "Landroidx/compose/runtime/MutableIntState;", "getGeneration", "()Landroidx/compose/runtime/MutableIntState;", "displayCutouts", "Landroidx/collection/MutableObjectList;", "Landroidx/compose/runtime/MutableState;", "Landroid/graphics/Rect;", "getDisplayCutouts", "()Landroidx/collection/MutableObjectList;", "displayCutoutRulers", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Landroidx/compose/ui/layout/RectRulers;", "getDisplayCutoutRulers", "()Landroidx/compose/runtime/snapshots/SnapshotStateList;", "onPrepare", "", "animation", "Landroidx/core/view/WindowInsetsAnimationCompat;", "onStart", "Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;", "bounds", "updateInsetAnimationInfo", "insetsValue", "onProgress", "insets", "runningAnimations", "", "onEnd", "stopAnimationForRuler", "onApplyWindowInsets", "view", "Landroid/view/View;", "updateInsets", "run", "onViewAttachedToWindow", "onViewDetachedFromWindow", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class InsetsListener extends WindowInsetsAnimationCompat.Callback implements Runnable, OnApplyWindowInsetsListener, View.OnAttachStateChangeListener {
     public static final int $stable = 8;
@@ -39,10 +38,6 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
     private boolean prepared;
     private int runningAnimationMask;
     private WindowInsetsCompat savedInsets;
-
-    public final AndroidComposeView getComposeView() {
-        return this.composeView;
-    }
 
     public InsetsListener(AndroidComposeView androidComposeView) {
         super(1);
@@ -61,6 +56,10 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
         this.generation = SnapshotIntStateKt.mutableIntStateOf(0);
         this.displayCutouts = new MutableObjectList<>(4);
         this.displayCutoutRulers = SnapshotStateKt.mutableStateListOf();
+    }
+
+    public final AndroidComposeView getComposeView() {
+        return this.composeView;
     }
 
     public final ScatterMap<Object, WindowWindowInsetsAnimationValues> getInsetsValues() {
@@ -87,25 +86,25 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
 
     @Override // androidx.core.view.WindowInsetsAnimationCompat.Callback
     public WindowInsetsAnimationCompat.BoundsCompat onStart(WindowInsetsAnimationCompat windowInsetsAnimationCompat, WindowInsetsAnimationCompat.BoundsCompat boundsCompat) {
-        MutableIntObjectMap mutableIntObjectMap;
+        IntObjectMap intObjectMap;
         WindowInsetsCompat windowInsetsCompat = this.savedInsets;
         this.prepared = false;
         this.savedInsets = null;
         if (windowInsetsAnimationCompat.getDurationMillis() > 0 && windowInsetsCompat != null) {
             int typeMask = windowInsetsAnimationCompat.getTypeMask();
             this.runningAnimationMask |= typeMask;
-            mutableIntObjectMap = WindowInsetsRulers_androidKt.AnimatableRulers;
-            WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) mutableIntObjectMap.get(typeMask);
+            intObjectMap = WindowInsetsRulers_androidKt.WindowInsetsTypeMap;
+            WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) intObjectMap.get(typeMask);
             if (windowInsetsRulers != null) {
                 WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues = this.insetsValues.get(windowInsetsRulers);
                 Intrinsics.checkNotNull(windowWindowInsetsAnimationValues);
                 WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues2 = windowWindowInsetsAnimationValues;
                 Insets insets = windowInsetsCompat.getInsets(typeMask);
-                long m6806constructorimpl = ValueInsets.m6806constructorimpl(insets.bottom | (insets.left << 48) | (insets.top << 32) | (insets.right << 16));
-                long m6818getCurrenthdzbrEE = windowWindowInsetsAnimationValues2.m6818getCurrenthdzbrEE();
-                if (!ValueInsets.m6808equalsimpl0(m6806constructorimpl, m6818getCurrenthdzbrEE)) {
-                    windowWindowInsetsAnimationValues2.m6824setSourceValueInsetsYnlvx88(m6818getCurrenthdzbrEE);
-                    windowWindowInsetsAnimationValues2.m6825setTargetValueInsetsYnlvx88(m6806constructorimpl);
+                long m7009constructorimpl = ValueInsets.m7009constructorimpl(insets.bottom | (insets.left << 48) | (insets.top << 32) | (insets.right << 16));
+                long m7020getCurrenthdzbrEE = windowWindowInsetsAnimationValues2.m7020getCurrenthdzbrEE();
+                if (!ValueInsets.m7011equalsimpl0(m7009constructorimpl, m7020getCurrenthdzbrEE)) {
+                    windowWindowInsetsAnimationValues2.m7026setSourceValueInsetsYnlvx88(m7020getCurrenthdzbrEE);
+                    windowWindowInsetsAnimationValues2.m7027setTargetValueInsetsYnlvx88(m7009constructorimpl);
                     windowWindowInsetsAnimationValues2.setAnimating(true);
                     updateInsetAnimationInfo(windowWindowInsetsAnimationValues2, windowInsetsAnimationCompat);
                     MutableIntState mutableIntState = this.generation;
@@ -125,13 +124,13 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
 
     @Override // androidx.core.view.WindowInsetsAnimationCompat.Callback
     public void onEnd(WindowInsetsAnimationCompat windowInsetsAnimationCompat) {
-        MutableIntObjectMap mutableIntObjectMap;
+        IntObjectMap intObjectMap;
         this.prepared = false;
         int typeMask = windowInsetsAnimationCompat.getTypeMask();
         this.runningAnimationMask &= ~typeMask;
         this.savedInsets = null;
-        mutableIntObjectMap = WindowInsetsRulers_androidKt.AnimatableRulers;
-        WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) mutableIntObjectMap.get(typeMask);
+        intObjectMap = WindowInsetsRulers_androidKt.WindowInsetsTypeMap;
+        WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) intObjectMap.get(typeMask);
         if (windowInsetsRulers != null) {
             WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues = this.insetsValues.get(windowInsetsRulers);
             Intrinsics.checkNotNull(windowWindowInsetsAnimationValues);
@@ -150,8 +149,8 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
 
     private final void stopAnimationForRuler(WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues) {
         windowWindowInsetsAnimationValues.setAnimating(false);
-        windowWindowInsetsAnimationValues.m6824setSourceValueInsetsYnlvx88(ValueInsets_androidKt.getUnsetValueInsets());
-        windowWindowInsetsAnimationValues.m6825setTargetValueInsetsYnlvx88(ValueInsets_androidKt.getUnsetValueInsets());
+        windowWindowInsetsAnimationValues.m7026setSourceValueInsetsYnlvx88(ValueInsets_androidKt.getUnsetValueInsets());
+        windowWindowInsetsAnimationValues.m7027setTargetValueInsetsYnlvx88(ValueInsets_androidKt.getUnsetValueInsets());
     }
 
     @Override // androidx.core.view.OnApplyWindowInsetsListener
@@ -170,223 +169,142 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
 
     private final void updateInsets(WindowInsetsCompat windowInsetsCompat) {
         IntObjectMap intObjectMap;
-        long j;
-        boolean z;
-        long j2;
         char c;
         char c2;
+        boolean z;
         char c3;
-        char c4;
-        int i;
         boolean z2;
         boolean z3;
-        MutableIntObjectMap mutableIntObjectMap;
-        long m6806constructorimpl;
-        long m6806constructorimpl2;
+        long m7009constructorimpl;
         MutableState<Rect> mutableStateOf$default;
         long[] jArr;
         int[] iArr;
+        Object[] objArr;
         long[] jArr2;
         int[] iArr2;
-        long[] jArr3;
-        int[] iArr3;
-        long[] jArr4;
-        int[] iArr4;
-        int i2;
-        long j3;
-        int i3;
+        long j;
+        int i;
+        char c4;
+        Object[] objArr2;
         intObjectMap = WindowInsetsRulers_androidKt.WindowInsetsTypeMap;
-        int[] iArr5 = intObjectMap.keys;
-        Object[] objArr = intObjectMap.values;
-        long[] jArr5 = intObjectMap.metadata;
-        int i4 = 2;
-        int length = jArr5.length - 2;
-        long j4 = -9187201950435737472L;
-        int i5 = 8;
+        int[] iArr3 = intObjectMap.keys;
+        Object[] objArr3 = intObjectMap.values;
+        long[] jArr3 = intObjectMap.metadata;
+        int length = jArr3.length - 2;
         if (length >= 0) {
-            int i6 = 0;
+            int i2 = 0;
             z2 = false;
             z3 = false;
-            z = true;
-            j2 = 255;
+            char c5 = 16;
+            c = ' ';
             while (true) {
-                long j5 = jArr5[i6];
-                c = 7;
-                c2 = 16;
-                if ((((~j5) << 7) & j5 & j4) != j4) {
-                    int i7 = 8 - ((~(i6 - length)) >>> 31);
-                    int i8 = 0;
-                    while (i8 < i7) {
-                        if ((j5 & 255) < 128) {
-                            int i9 = (i6 << 3) + i8;
-                            int i10 = iArr5[i9];
-                            WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) objArr[i9];
-                            Insets insets = windowInsetsCompat.getInsets(i10);
-                            j3 = j4;
-                            i3 = i4;
-                            i2 = i5;
-                            jArr4 = jArr5;
-                            iArr4 = iArr5;
-                            long m6806constructorimpl3 = ValueInsets.m6806constructorimpl((insets.top << 32) | (insets.left << 48) | (insets.right << 16) | insets.bottom);
+                long j2 = jArr3[i2];
+                c2 = '0';
+                z = true;
+                if ((((~j2) << 7) & j2 & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i3 = 8;
+                    int i4 = 8 - ((~(i2 - length)) >>> 31);
+                    int i5 = 0;
+                    while (i5 < i4) {
+                        if ((j2 & 255) < 128) {
+                            int i6 = (i2 << 3) + i5;
+                            c4 = c5;
+                            int i7 = iArr3[i6];
+                            WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) objArr3[i6];
+                            i = i3;
+                            Insets insets = windowInsetsCompat.getInsets(i7);
+                            jArr2 = jArr3;
+                            iArr2 = iArr3;
+                            long m7009constructorimpl2 = ValueInsets.m7009constructorimpl((insets.left << 48) | (insets.top << 32) | (insets.right << c4) | insets.bottom);
                             WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues = this.insetsValues.get(windowInsetsRulers);
                             Intrinsics.checkNotNull(windowWindowInsetsAnimationValues);
                             WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues2 = windowWindowInsetsAnimationValues;
-                            if (!ValueInsets.m6808equalsimpl0(m6806constructorimpl3, windowWindowInsetsAnimationValues2.m6818getCurrenthdzbrEE())) {
-                                windowWindowInsetsAnimationValues2.m6822setCurrentYnlvx88(m6806constructorimpl3);
+                            j = j2;
+                            if (!ValueInsets.m7011equalsimpl0(m7009constructorimpl2, windowWindowInsetsAnimationValues2.m7020getCurrenthdzbrEE())) {
+                                windowWindowInsetsAnimationValues2.m7024setCurrentYnlvx88(m7009constructorimpl2);
                                 z2 = true;
-                                if (!ValueInsets.m6808equalsimpl0(m6806constructorimpl3, ValueInsets_androidKt.getZeroValueInsets())) {
+                                if (!ValueInsets.m7011equalsimpl0(m7009constructorimpl2, ValueInsets_androidKt.getZeroValueInsets())) {
                                     z3 = true;
                                 }
                             }
-                        } else {
-                            jArr4 = jArr5;
-                            iArr4 = iArr5;
-                            i2 = i5;
-                            j3 = j4;
-                            i3 = i4;
-                        }
-                        j5 >>= i2;
-                        i8++;
-                        i4 = i3;
-                        i5 = i2;
-                        j4 = j3;
-                        iArr5 = iArr4;
-                        jArr5 = jArr4;
-                    }
-                    jArr3 = jArr5;
-                    iArr3 = iArr5;
-                    j = j4;
-                    c3 = ' ';
-                    c4 = '0';
-                    i = i4;
-                    if (i7 != i5) {
-                        break;
-                    }
-                } else {
-                    jArr3 = jArr5;
-                    iArr3 = iArr5;
-                    j = j4;
-                    c3 = ' ';
-                    c4 = '0';
-                    i = i4;
-                }
-                if (i6 == length) {
-                    break;
-                }
-                i6++;
-                i4 = i;
-                j4 = j;
-                iArr5 = iArr3;
-                jArr5 = jArr3;
-                i5 = 8;
-            }
-        } else {
-            j = -9187201950435737472L;
-            z = true;
-            j2 = 255;
-            c = 7;
-            c2 = 16;
-            c3 = ' ';
-            c4 = '0';
-            i = 2;
-            z2 = false;
-            z3 = false;
-        }
-        mutableIntObjectMap = WindowInsetsRulers_androidKt.AnimatableRulers;
-        MutableIntObjectMap mutableIntObjectMap2 = mutableIntObjectMap;
-        int[] iArr6 = mutableIntObjectMap2.keys;
-        Object[] objArr2 = mutableIntObjectMap2.values;
-        long[] jArr6 = mutableIntObjectMap2.metadata;
-        int length2 = jArr6.length - 2;
-        if (length2 >= 0) {
-            int i11 = 0;
-            while (true) {
-                long j6 = jArr6[i11];
-                if ((((~j6) << c) & j6 & j) != j) {
-                    int i12 = 8 - ((~(i11 - length2)) >>> 31);
-                    int i13 = 0;
-                    while (i13 < i12) {
-                        if ((j6 & j2) < 128) {
-                            int i14 = (i11 << 3) + i13;
-                            int i15 = iArr6[i14];
-                            WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues3 = this.insetsValues.get((WindowInsetsRulers) objArr2[i14]);
-                            Intrinsics.checkNotNull(windowWindowInsetsAnimationValues3);
-                            WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues4 = windowWindowInsetsAnimationValues3;
-                            if (i15 != WindowInsetsCompat.Type.ime()) {
-                                Insets insetsIgnoringVisibility = windowInsetsCompat.getInsetsIgnoringVisibility(i15);
-                                jArr2 = jArr6;
-                                iArr2 = iArr6;
-                                long m6806constructorimpl4 = ValueInsets.m6806constructorimpl((insetsIgnoringVisibility.top << c3) | (insetsIgnoringVisibility.left << c4) | (insetsIgnoringVisibility.right << c2) | insetsIgnoringVisibility.bottom);
-                                if (!ValueInsets.m6808equalsimpl0(windowWindowInsetsAnimationValues4.m6819getMaximumhdzbrEE(), m6806constructorimpl4)) {
-                                    windowWindowInsetsAnimationValues4.m6823setMaximumYnlvx88(m6806constructorimpl4);
-                                    z2 = z;
-                                    if (!ValueInsets.m6808equalsimpl0(m6806constructorimpl4, ValueInsets_androidKt.getZeroValueInsets())) {
-                                        z3 = z2;
+                            if (i7 != WindowInsetsCompat.Type.ime()) {
+                                Insets insetsIgnoringVisibility = windowInsetsCompat.getInsetsIgnoringVisibility(i7);
+                                objArr2 = objArr3;
+                                long m7009constructorimpl3 = ValueInsets.m7009constructorimpl((insetsIgnoringVisibility.top << 32) | (insetsIgnoringVisibility.left << 48) | (insetsIgnoringVisibility.right << c4) | insetsIgnoringVisibility.bottom);
+                                if (!ValueInsets.m7011equalsimpl0(windowWindowInsetsAnimationValues2.m7021getMaximumhdzbrEE(), m7009constructorimpl3)) {
+                                    windowWindowInsetsAnimationValues2.m7025setMaximumYnlvx88(m7009constructorimpl3);
+                                    z2 = true;
+                                    if (!ValueInsets.m7011equalsimpl0(m7009constructorimpl3, ValueInsets_androidKt.getZeroValueInsets())) {
+                                        z3 = true;
                                     }
                                 }
                             } else {
-                                jArr2 = jArr6;
-                                iArr2 = iArr6;
+                                objArr2 = objArr3;
                             }
-                            windowWindowInsetsAnimationValues4.setVisible(windowInsetsCompat.isVisible(i15));
+                            windowWindowInsetsAnimationValues2.setVisible(windowInsetsCompat.isVisible(i7));
                         } else {
-                            jArr2 = jArr6;
-                            iArr2 = iArr6;
+                            jArr2 = jArr3;
+                            iArr2 = iArr3;
+                            j = j2;
+                            i = i3;
+                            c4 = c5;
+                            objArr2 = objArr3;
                         }
-                        j6 >>= 8;
-                        i13++;
-                        jArr6 = jArr2;
-                        iArr6 = iArr2;
+                        j2 = j >> i;
+                        i5++;
+                        objArr3 = objArr2;
+                        i3 = i;
+                        c5 = c4;
+                        jArr3 = jArr2;
+                        iArr3 = iArr2;
                     }
-                    jArr = jArr6;
-                    iArr = iArr6;
-                    if (i12 != 8) {
+                    jArr = jArr3;
+                    iArr = iArr3;
+                    int i8 = i3;
+                    c3 = c5;
+                    objArr = objArr3;
+                    if (i4 != i8) {
                         break;
                     }
                 } else {
-                    jArr = jArr6;
-                    iArr = iArr6;
+                    jArr = jArr3;
+                    iArr = iArr3;
+                    objArr = objArr3;
+                    c3 = c5;
                 }
-                if (i11 == length2) {
+                if (i2 == length) {
                     break;
                 }
-                i11++;
-                jArr6 = jArr;
-                iArr6 = iArr;
+                i2++;
+                objArr3 = objArr;
+                c5 = c3;
+                jArr3 = jArr;
+                iArr3 = iArr;
             }
+        } else {
+            c = ' ';
+            c2 = '0';
+            z = true;
+            c3 = 16;
+            z2 = false;
+            z3 = false;
         }
         DisplayCutoutCompat displayCutout = windowInsetsCompat.getDisplayCutout();
         if (displayCutout == null) {
-            m6806constructorimpl = ValueInsets_androidKt.getZeroValueInsets();
+            m7009constructorimpl = ValueInsets_androidKt.getZeroValueInsets();
         } else {
             Insets waterfallInsets = displayCutout.getWaterfallInsets();
-            m6806constructorimpl = ValueInsets.m6806constructorimpl((waterfallInsets.left << c4) | (waterfallInsets.top << c3) | (waterfallInsets.right << c2) | waterfallInsets.bottom);
+            m7009constructorimpl = ValueInsets.m7009constructorimpl((waterfallInsets.left << c2) | (waterfallInsets.top << c) | (waterfallInsets.right << c3) | waterfallInsets.bottom);
         }
-        WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues5 = this.insetsValues.get(WindowInsetsRulers.Companion.getWaterfall());
-        Intrinsics.checkNotNull(windowWindowInsetsAnimationValues5);
-        WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues6 = windowWindowInsetsAnimationValues5;
-        if (!ValueInsets.m6808equalsimpl0(windowWindowInsetsAnimationValues6.m6818getCurrenthdzbrEE(), m6806constructorimpl)) {
-            windowWindowInsetsAnimationValues6.m6822setCurrentYnlvx88(m6806constructorimpl);
-            windowWindowInsetsAnimationValues6.m6823setMaximumYnlvx88(m6806constructorimpl);
+        WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues3 = this.insetsValues.get(WindowInsetsRulers.Companion.getWaterfall());
+        Intrinsics.checkNotNull(windowWindowInsetsAnimationValues3);
+        WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues4 = windowWindowInsetsAnimationValues3;
+        windowWindowInsetsAnimationValues4.setVisible(!ValueInsets.m7011equalsimpl0(m7009constructorimpl, ValueInsets_androidKt.getZeroValueInsets()));
+        if (!ValueInsets.m7011equalsimpl0(windowWindowInsetsAnimationValues4.m7020getCurrenthdzbrEE(), m7009constructorimpl)) {
+            windowWindowInsetsAnimationValues4.m7024setCurrentYnlvx88(m7009constructorimpl);
+            windowWindowInsetsAnimationValues4.m7025setMaximumYnlvx88(m7009constructorimpl);
             z2 = z;
-            if (!ValueInsets.m6808equalsimpl0(m6806constructorimpl, ValueInsets_androidKt.getZeroValueInsets())) {
-                z3 = z2;
-            }
-        }
-        if (displayCutout == null) {
-            m6806constructorimpl2 = ValueInsets_androidKt.getZeroValueInsets();
-        } else {
-            int safeInsetLeft = displayCutout.getSafeInsetLeft();
-            m6806constructorimpl2 = ValueInsets.m6806constructorimpl((displayCutout.getSafeInsetTop() << c3) | (safeInsetLeft << c4) | (displayCutout.getSafeInsetRight() << c2) | displayCutout.getSafeInsetBottom());
-        }
-        WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues7 = this.insetsValues.get(WindowInsetsRulers.Companion.getDisplayCutout());
-        Intrinsics.checkNotNull(windowWindowInsetsAnimationValues7);
-        WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues8 = windowWindowInsetsAnimationValues7;
-        if (!ValueInsets.m6808equalsimpl0(m6806constructorimpl2, windowWindowInsetsAnimationValues8.m6818getCurrenthdzbrEE())) {
-            windowWindowInsetsAnimationValues8.m6822setCurrentYnlvx88(m6806constructorimpl2);
-            windowWindowInsetsAnimationValues8.m6823setMaximumYnlvx88(m6806constructorimpl2);
-            z2 = z;
-            if (!ValueInsets.m6808equalsimpl0(m6806constructorimpl2, ValueInsets_androidKt.getZeroValueInsets())) {
+            if (!ValueInsets.m7011equalsimpl0(m7009constructorimpl, ValueInsets_androidKt.getZeroValueInsets())) {
                 z3 = z2;
             }
         }
@@ -404,21 +322,21 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
                 z2 = z;
             } else {
                 int size = boundingRects.size() - this.displayCutouts.getSize();
-                int i16 = 0;
-                while (i16 < size) {
+                int i9 = 0;
+                while (i9 < size) {
                     MutableObjectList<MutableState<Rect>> mutableObjectList = this.displayCutouts;
-                    mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(boundingRects.get(mutableObjectList.getSize()), null, i, null);
+                    mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(boundingRects.get(mutableObjectList.getSize()), null, 2, null);
                     mutableObjectList.add(mutableStateOf$default);
                     this.displayCutoutRulers.add(RectRulersKt.RectRulers("display cutout rect " + this.displayCutouts.getSize()));
-                    i16++;
+                    i9++;
                     z2 = z;
                 }
             }
             List<Rect> list = boundingRects;
             int size2 = list.size();
-            for (int i17 = 0; i17 < size2; i17++) {
-                Rect rect = boundingRects.get(i17);
-                MutableState<Rect> mutableState = this.displayCutouts.get(i17);
+            for (int i10 = 0; i10 < size2; i10++) {
+                Rect rect = boundingRects.get(i10);
+                MutableState<Rect> mutableState = this.displayCutouts.get(i10);
                 if (!Intrinsics.areEqual(mutableState.getValue(), rect)) {
                     mutableState.setValue(rect);
                     z2 = z;
@@ -472,13 +390,13 @@ public final class InsetsListener extends WindowInsetsAnimationCompat.Callback i
 
     @Override // androidx.core.view.WindowInsetsAnimationCompat.Callback
     public WindowInsetsCompat onProgress(WindowInsetsCompat windowInsetsCompat, List<WindowInsetsAnimationCompat> list) {
-        MutableIntObjectMap mutableIntObjectMap;
+        IntObjectMap intObjectMap;
         int size = list.size();
         for (int i = 0; i < size; i++) {
             WindowInsetsAnimationCompat windowInsetsAnimationCompat = list.get(i);
             int typeMask = windowInsetsAnimationCompat.getTypeMask();
-            mutableIntObjectMap = WindowInsetsRulers_androidKt.AnimatableRulers;
-            WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) mutableIntObjectMap.get(typeMask);
+            intObjectMap = WindowInsetsRulers_androidKt.WindowInsetsTypeMap;
+            WindowInsetsRulers windowInsetsRulers = (WindowInsetsRulers) intObjectMap.get(typeMask);
             if (windowInsetsRulers != null) {
                 WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues = this.insetsValues.get(windowInsetsRulers);
                 Intrinsics.checkNotNull(windowWindowInsetsAnimationValues);

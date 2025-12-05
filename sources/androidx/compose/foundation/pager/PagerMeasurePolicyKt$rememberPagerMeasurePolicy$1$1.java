@@ -24,10 +24,14 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.CoroutineScope;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PagerMeasurePolicy.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyLayoutMeasurePolicy {
+public final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyLayoutMeasurePolicy {
+
+    /* renamed from: $$v$c$androidx-compose-ui-unit-Dp$-pageSpacing$0  reason: not valid java name */
+    final /* synthetic */ float f53$$v$c$androidxcomposeuiunitDp$pageSpacing$0;
     final /* synthetic */ int $beyondViewportPageCount;
     final /* synthetic */ PaddingValues $contentPadding;
     final /* synthetic */ CoroutineScope $coroutineScope;
@@ -36,7 +40,6 @@ final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyL
     final /* synthetic */ Orientation $orientation;
     final /* synthetic */ Function0<Integer> $pageCount;
     final /* synthetic */ PageSize $pageSize;
-    final /* synthetic */ float $pageSpacing;
     final /* synthetic */ boolean $reverseLayout;
     final /* synthetic */ SnapPosition $snapPosition;
     final /* synthetic */ PagerState $state;
@@ -48,7 +51,7 @@ final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyL
         this.$orientation = orientation;
         this.$contentPadding = paddingValues;
         this.$reverseLayout = z;
-        this.$pageSpacing = f;
+        this.f53$$v$c$androidxcomposeuiunitDp$pageSpacing$0 = f;
         this.$pageSize = pageSize;
         this.$itemProviderLambda = function0;
         this.$pageCount = function02;
@@ -61,28 +64,28 @@ final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyL
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasurePolicy
     /* renamed from: measure-0kLqBqw */
-    public final MeasureResult mo960measure0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
+    public final MeasureResult mo1043measure0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
         int i;
         int i2;
         int i3;
-        int m7949getMaxWidthimpl;
+        int m8211getMaxWidthimpl;
         int i4;
-        long m8118constructorimpl;
-        ObservableScopeInvalidator.m1072attachToScopeimpl(this.$state.m1159getMeasurementScopeInvalidatorzYiylxw$foundation_release());
+        long m8380constructorimpl;
+        ObservableScopeInvalidator.m1146attachToScopeimpl(this.$state.m1233getMeasurementScopeInvalidatorzYiylxw$foundation());
         boolean z = this.$orientation == Orientation.Vertical;
-        CheckScrollableContainerConstraintsKt.m300checkScrollableContainerConstraintsK40F9xA(j, z ? Orientation.Vertical : Orientation.Horizontal);
+        CheckScrollableContainerConstraintsKt.m333checkScrollableContainerConstraintsK40F9xA(j, z ? Orientation.Vertical : Orientation.Horizontal);
         if (z) {
-            i = lazyLayoutMeasureScope.mo424roundToPx0680j_4(this.$contentPadding.mo787calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
+            i = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo873calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
         } else {
-            i = lazyLayoutMeasureScope.mo424roundToPx0680j_4(PaddingKt.calculateStartPadding(this.$contentPadding, lazyLayoutMeasureScope.getLayoutDirection()));
+            i = lazyLayoutMeasureScope.mo458roundToPx0680j_4(PaddingKt.calculateStartPadding(this.$contentPadding, lazyLayoutMeasureScope.getLayoutDirection()));
         }
         if (z) {
-            i2 = lazyLayoutMeasureScope.mo424roundToPx0680j_4(this.$contentPadding.mo788calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
+            i2 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo874calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
         } else {
-            i2 = lazyLayoutMeasureScope.mo424roundToPx0680j_4(PaddingKt.calculateEndPadding(this.$contentPadding, lazyLayoutMeasureScope.getLayoutDirection()));
+            i2 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(PaddingKt.calculateEndPadding(this.$contentPadding, lazyLayoutMeasureScope.getLayoutDirection()));
         }
-        int i5 = lazyLayoutMeasureScope.mo424roundToPx0680j_4(this.$contentPadding.mo789calculateTopPaddingD9Ej5fM());
-        int i6 = lazyLayoutMeasureScope.mo424roundToPx0680j_4(this.$contentPadding.mo786calculateBottomPaddingD9Ej5fM());
+        int i5 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo875calculateTopPaddingD9Ej5fM());
+        int i6 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo872calculateBottomPaddingD9Ej5fM());
         int i7 = i2;
         int i8 = i5 + i6;
         final int i9 = i + i7;
@@ -95,47 +98,50 @@ final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyL
             i3 = (z || this.$reverseLayout) ? i7 : i;
         }
         int i11 = i10 - i3;
-        long m7968offsetNN6EwU = ConstraintsKt.m7968offsetNN6EwU(j, -i9, -i8);
+        long m8230offsetNN6EwU = ConstraintsKt.m8230offsetNN6EwU(j, -i9, -i8);
         LazyLayoutMeasureScope lazyLayoutMeasureScope2 = lazyLayoutMeasureScope;
-        this.$state.setDensity$foundation_release(lazyLayoutMeasureScope2);
-        int i12 = lazyLayoutMeasureScope.mo424roundToPx0680j_4(this.$pageSpacing);
+        this.$state.setDensity$foundation(lazyLayoutMeasureScope2);
+        int i12 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.f53$$v$c$androidxcomposeuiunitDp$pageSpacing$0);
         if (z) {
-            m7949getMaxWidthimpl = Constraints.m7948getMaxHeightimpl(j) - i8;
+            m8211getMaxWidthimpl = Constraints.m8210getMaxHeightimpl(j) - i8;
         } else {
-            m7949getMaxWidthimpl = Constraints.m7949getMaxWidthimpl(j) - i9;
+            m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j) - i9;
         }
-        if (!this.$reverseLayout || m7949getMaxWidthimpl > 0) {
+        if (!this.$reverseLayout || m8211getMaxWidthimpl > 0) {
             i4 = i8;
-            m8118constructorimpl = IntOffset.m8118constructorimpl((i << 32) | (i5 & 4294967295L));
+            m8380constructorimpl = IntOffset.m8380constructorimpl((i << 32) | (i5 & 4294967295L));
         } else {
             if (!z) {
-                i += m7949getMaxWidthimpl;
+                i += m8211getMaxWidthimpl;
             }
             if (z) {
-                i5 += m7949getMaxWidthimpl;
+                i5 += m8211getMaxWidthimpl;
             }
             i4 = i8;
-            m8118constructorimpl = IntOffset.m8118constructorimpl((i5 & 4294967295L) | (i << 32));
+            m8380constructorimpl = IntOffset.m8380constructorimpl((i5 & 4294967295L) | (i << 32));
         }
-        int coerceAtLeast = RangesKt.coerceAtLeast(this.$pageSize.calculateMainAxisPageSize(lazyLayoutMeasureScope2, m7949getMaxWidthimpl, i12), 0);
-        this.$state.m1163setPremeasureConstraintsBRTryo0$foundation_release(ConstraintsKt.Constraints$default(0, this.$orientation == Orientation.Vertical ? Constraints.m7949getMaxWidthimpl(m7968offsetNN6EwU) : coerceAtLeast, 0, this.$orientation != Orientation.Vertical ? Constraints.m7948getMaxHeightimpl(m7968offsetNN6EwU) : coerceAtLeast, 5, null));
+        int coerceAtLeast = RangesKt.coerceAtLeast(this.$pageSize.calculateMainAxisPageSize(lazyLayoutMeasureScope2, m8211getMaxWidthimpl, i12), 0);
+        this.$state.m1237setPremeasureConstraintsBRTryo0$foundation(ConstraintsKt.Constraints$default(0, this.$orientation == Orientation.Vertical ? Constraints.m8211getMaxWidthimpl(m8230offsetNN6EwU) : coerceAtLeast, 0, this.$orientation != Orientation.Vertical ? Constraints.m8210getMaxHeightimpl(m8230offsetNN6EwU) : coerceAtLeast, 5, null));
         PagerLazyLayoutItemProvider invoke = this.$itemProviderLambda.invoke();
-        int i13 = m7949getMaxWidthimpl + i3 + i11;
+        int i13 = m8211getMaxWidthimpl + i3 + i11;
         Snapshot.Companion companion = Snapshot.Companion;
+        long j2 = m8380constructorimpl;
         PagerState pagerState = this.$state;
-        long j2 = m8118constructorimpl;
         SnapPosition snapPosition = this.$snapPosition;
         Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
         Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
         Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
         try {
-            int matchScrollPositionWithKey$foundation_release = pagerState.matchScrollPositionWithKey$foundation_release(invoke, pagerState.getCurrentPage());
-            int i14 = m7949getMaxWidthimpl;
-            int currentPageOffset = PagerKt.currentPageOffset(snapPosition, i13, coerceAtLeast, i12, i3, i11, pagerState.getCurrentPage(), pagerState.getCurrentPageOffsetFraction(), pagerState.getPageCount());
+            int matchScrollPositionWithKey$foundation = pagerState.matchScrollPositionWithKey$foundation(invoke, pagerState.getCurrentPage());
+            int currentPage = pagerState.getCurrentPage();
+            float currentPageOffsetFraction = pagerState.getCurrentPageOffsetFraction();
+            int pageCount = pagerState.getPageCount();
+            int i14 = m8211getMaxWidthimpl;
+            int currentPageOffset = PagerKt.currentPageOffset(snapPosition, i13, coerceAtLeast, i12, i3, i11, currentPage, currentPageOffsetFraction, pageCount);
             Unit unit = Unit.INSTANCE;
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
             final int i15 = i4;
-            PagerMeasureResult m1154measurePagerBiYVr7A = PagerMeasureKt.m1154measurePagerBiYVr7A(lazyLayoutMeasureScope, this.$pageCount.invoke().intValue(), invoke, i14, i3, i11, i12, matchScrollPositionWithKey$foundation_release, currentPageOffset, m7968offsetNN6EwU, this.$orientation, this.$verticalAlignment, this.$horizontalAlignment, this.$reverseLayout, j2, coerceAtLeast, this.$beyondViewportPageCount, LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(invoke, this.$state.getPinnedPages$foundation_release(), this.$state.getBeyondBoundsInfo$foundation_release()), this.$snapPosition, this.$state.m1160getPlacementScopeInvalidatorzYiylxw$foundation_release(), this.$coroutineScope, new Function3() { // from class: androidx.compose.foundation.pager.PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1$$ExternalSyntheticLambda0
+            PagerMeasureResult m1229measurePager7L1iB3k = PagerMeasureKt.m1229measurePager7L1iB3k(lazyLayoutMeasureScope, this.$pageCount.invoke().intValue(), invoke, i14, i3, i11, i12, matchScrollPositionWithKey$foundation, currentPageOffset, m8230offsetNN6EwU, this.$orientation, this.$verticalAlignment, this.$horizontalAlignment, this.$reverseLayout, j2, coerceAtLeast, this.$beyondViewportPageCount, LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(invoke, this.$state.getPinnedPages$foundation(), this.$state.getBeyondBoundsInfo$foundation()), this.$snapPosition, this.$state.m1234getPlacementScopeInvalidatorzYiylxw$foundation(), this.$coroutineScope, lazyLayoutMeasureScope2, new Function3() { // from class: androidx.compose.foundation.pager.PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
                     MeasureResult measure_0kLqBqw$lambda$2;
@@ -143,8 +149,9 @@ final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyL
                     return measure_0kLqBqw$lambda$2;
                 }
             }, IntObjectMapKt.mutableIntObjectMapOf());
-            PagerState.applyMeasureResult$foundation_release$default(this.$state, m1154measurePagerBiYVr7A, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-            return m1154measurePagerBiYVr7A;
+            PagerState.applyMeasureResult$foundation$default(this.$state, m1229measurePager7L1iB3k, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
+            PagerMeasurePolicyKt.keepAroundItems(lazyLayoutMeasureScope, this.$state.getCacheWindowLogic$foundation(), m1229measurePager7L1iB3k.getVisiblePagesInfo());
+            return m1229measurePager7L1iB3k;
         } catch (Throwable th) {
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
             throw th;
@@ -153,6 +160,6 @@ final class PagerMeasurePolicyKt$rememberPagerMeasurePolicy$1$1 implements LazyL
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult measure_0kLqBqw$lambda$2(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j, int i, int i2, int i3, int i4, Function1 function1) {
-        return lazyLayoutMeasureScope.layout(ConstraintsKt.m7966constrainWidthK40F9xA(j, i3 + i), ConstraintsKt.m7965constrainHeightK40F9xA(j, i4 + i2), MapsKt.emptyMap(), function1);
+        return lazyLayoutMeasureScope.layout(ConstraintsKt.m8228constrainWidthK40F9xA(j, i3 + i), ConstraintsKt.m8227constrainHeightK40F9xA(j, i4 + i2), MapsKt.emptyMap(), function1);
     }
 }

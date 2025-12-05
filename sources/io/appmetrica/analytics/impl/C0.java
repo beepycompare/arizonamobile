@@ -25,34 +25,34 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0 implements Da {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f418a;
+    public final Context f501a;
     public final Ca b;
     public final We c;
     public final Pl d;
-    public final C0376kg e;
+    public final C0375kg e;
     public final Cf f;
-    public final C0378ki g;
-    public final C0703xi h;
+    public final C0377ki g;
+    public final C0702xi h;
     public final E7 i;
     public final Xk j;
-    public volatile C0372kc k;
-    public final C0411m0 l;
+    public volatile C0371kc k;
+    public final C0410m0 l;
     public boolean m;
 
     public C0(Context context, Ca ca) {
-        this.f418a = context;
+        this.f501a = context;
         this.b = ca;
-        We b = C0158c4.l().b(context);
+        We b = C0157c4.l().b(context);
         this.c = b;
-        ArrayList a2 = C0598td.a();
-        C0158c4 l = C0158c4.l();
+        ArrayList a2 = C0597td.a();
+        C0157c4 l = C0157c4.l();
         l.m().a(new L3(context));
         D0.a(context).a(a2);
         Cf a3 = D0.a(context, D0.a(ca.b(), this));
         this.f = a3;
         E7 j = l.j();
         this.i = j;
-        C0703xi a4 = D0.a(a3, context, ca.getDefaultExecutor());
+        C0702xi a4 = D0.a(a3, context, ca.getDefaultExecutor());
         this.h = a4;
         j.a(a4);
         Pl a5 = D0.a(context, a4, b, ca.b());
@@ -61,7 +61,7 @@ public final class C0 implements Da {
         this.e = D0.a(a4, b, ca.b());
         this.g = D0.a(context, a3, a4, ca.b(), a5);
         this.j = l.o();
-        this.l = new C0411m0(b);
+        this.l = new C0410m0(b);
     }
 
     @Override // io.appmetrica.analytics.impl.Da
@@ -95,17 +95,17 @@ public final class C0 implements Da {
     }
 
     @Override // io.appmetrica.analytics.impl.Da
-    public final C0372kc i() {
+    public final C0371kc i() {
         return this.k;
     }
 
     public final Ja j() {
-        C0372kc c0372kc = this.k;
-        Intrinsics.checkNotNull(c0372kc);
-        return c0372kc.f975a;
+        C0371kc c0371kc = this.k;
+        Intrinsics.checkNotNull(c0371kc);
+        return c0371kc.f1058a;
     }
 
-    public final C0378ki k() {
+    public final C0377ki k() {
         return this.g;
     }
 
@@ -127,11 +127,11 @@ public final class C0 implements Da {
     @Override // io.appmetrica.analytics.impl.Da
     public final void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         Boolean bool;
-        C0411m0 c0411m0 = this.l;
-        C0660w0 c0660w0 = c0411m0.b;
-        c0660w0.getClass();
+        C0410m0 c0410m0 = this.l;
+        C0659w0 c0659w0 = c0410m0.b;
+        c0659w0.getClass();
         AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder("629a824d-c717-4ba5-bc0f-3f3968554d01");
-        if (c0660w0.f1177a.b() && Intrinsics.areEqual(c0660w0.b.f847a, Boolean.TRUE)) {
+        if (c0659w0.f1260a.b() && Intrinsics.areEqual(c0659w0.b.f930a, Boolean.TRUE)) {
             newConfigBuilder.handleFirstActivationAsUpdate(true);
         }
         Boolean bool2 = appMetricaLibraryAdapterConfig.advIdentifiersTracking;
@@ -140,7 +140,7 @@ public final class C0 implements Da {
         }
         newConfigBuilder.withAdvIdentifiersTracking(bool2.booleanValue());
         AppMetricaConfig build = newConfigBuilder.build();
-        AppMetricaConfig.Builder f = c0411m0.f999a.f();
+        AppMetricaConfig.Builder f = c0410m0.f1082a.f();
         if (f != null) {
             if (f.build().advIdentifiersTracking == null && (bool = build.advIdentifiersTracking) != null) {
                 f.withAdvIdentifiersTracking(bool.booleanValue());
@@ -200,30 +200,30 @@ public final class C0 implements Da {
 
     @Override // io.appmetrica.analytics.impl.Da
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
-        this.d.a(startupParamsCallback, list, AbstractC0294hb.c(this.f.f432a.getAsString("PROCESS_CFG_CLIDS")));
+        this.d.a(startupParamsCallback, list, AbstractC0293hb.c(this.f.f515a.getAsString("PROCESS_CFG_CLIDS")));
     }
 
-    public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, InterfaceC0697xc interfaceC0697xc, boolean z) {
+    public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, InterfaceC0696xc interfaceC0696xc, boolean z) {
         if (this.k == null) {
             a(publicLogger, appMetricaConfig, z);
             this.e.a();
-            C0321ic a2 = interfaceC0697xc.a();
-            C0742z7 c0742z7 = new C0742z7(a2);
-            C0372kc c0372kc = new C0372kc(a2, c0742z7);
-            this.b.c().a(c0742z7);
-            this.k = c0372kc;
-            C0441n5 c0441n5 = this.j.b;
-            synchronized (c0441n5) {
-                c0441n5.f1023a = a2;
-                Iterator it = c0441n5.b.iterator();
+            C0320ic a2 = interfaceC0696xc.a();
+            C0741z7 c0741z7 = new C0741z7(a2);
+            C0371kc c0371kc = new C0371kc(a2, c0741z7);
+            this.b.c().a(c0741z7);
+            this.k = c0371kc;
+            C0440n5 c0440n5 = this.j.b;
+            synchronized (c0440n5) {
+                c0440n5.f1106a = a2;
+                Iterator it = c0440n5.b.iterator();
                 while (it.hasNext()) {
-                    ((InterfaceC0142be) it.next()).consume(a2);
+                    ((InterfaceC0141be) it.next()).consume(a2);
                 }
-                c0441n5.b.clear();
+                c0440n5.b.clear();
             }
             return true;
         }
-        interfaceC0697xc.a();
+        interfaceC0696xc.a();
         return false;
     }
 
@@ -238,7 +238,7 @@ public final class C0 implements Da {
             PublicLogger.Companion.getAnonymousInstance().setEnabled(false);
         }
         if (((Boolean) WrapUtils.getOrDefault(appMetricaConfig.crashReporting, bool2)).booleanValue()) {
-            this.b.d().a(this.f418a, appMetricaConfig, this);
+            this.b.d().a(this.f501a, appMetricaConfig, this);
             this.b.d().b();
             publicLogger.info("Register application crash handler", new Object[0]);
         } else {
@@ -251,8 +251,8 @@ public final class C0 implements Da {
             Xk xk = this.j;
             synchronized (xk) {
                 if (xk.g) {
-                    xk.f753a.unregisterListener(xk.c, ActivityEvent.RESUMED);
-                    xk.f753a.unregisterListener(xk.d, ActivityEvent.PAUSED);
+                    xk.f836a.unregisterListener(xk.c, ActivityEvent.RESUMED);
+                    xk.f836a.unregisterListener(xk.d, ActivityEvent.PAUSED);
                     xk.g = false;
                 }
             }

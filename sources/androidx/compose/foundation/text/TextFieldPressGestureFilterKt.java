@@ -1,14 +1,29 @@
 package androidx.compose.foundation.text;
 
 import androidx.compose.foundation.interaction.MutableInteractionSource;
+import androidx.compose.foundation.interaction.PressInteraction;
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.ComposerKt;
+import androidx.compose.runtime.DisposableEffectResult;
+import androidx.compose.runtime.DisposableEffectScope;
+import androidx.compose.runtime.EffectsKt;
+import androidx.compose.runtime.MutableState;
+import androidx.compose.runtime.SnapshotStateKt;
+import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
+import androidx.compose.runtime.State;
 import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Offset;
+import androidx.compose.ui.input.pointer.PointerInputEventHandler;
+import androidx.compose.ui.input.pointer.SuspendingPointerInputFilterKt;
 import kotlin.Metadata;
 import kotlin.Unit;
+import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function3;
+import kotlinx.coroutines.CoroutineScope;
 /* compiled from: TextFieldPressGestureFilter.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\u001a4\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007H\u0000¨\u0006\n"}, d2 = {"tapPressTextFieldModifier", "Landroidx/compose/ui/Modifier;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "enabled", "", "onTap", "Lkotlin/Function1;", "Landroidx/compose/ui/geometry/Offset;", "", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\u001a4\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007H\u0000¨\u0006\n"}, d2 = {"tapPressTextFieldModifier", "Landroidx/compose/ui/Modifier;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "enabled", "", "onTap", "Lkotlin/Function1;", "Landroidx/compose/ui/geometry/Offset;", "", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldPressGestureFilterKt {
     public static /* synthetic */ Modifier tapPressTextFieldModifier$default(Modifier modifier, MutableInteractionSource mutableInteractionSource, boolean z, Function1 function1, int i, Object obj) {
@@ -18,7 +33,91 @@ public final class TextFieldPressGestureFilterKt {
         return tapPressTextFieldModifier(modifier, mutableInteractionSource, z, function1);
     }
 
-    public static final Modifier tapPressTextFieldModifier(Modifier modifier, MutableInteractionSource mutableInteractionSource, boolean z, Function1<? super Offset, Unit> function1) {
-        return z ? ComposedModifierKt.composed$default(modifier, null, new TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1(function1, mutableInteractionSource), 1, null) : modifier;
+    public static final Modifier tapPressTextFieldModifier(Modifier modifier, final MutableInteractionSource mutableInteractionSource, boolean z, final Function1<? super Offset, Unit> function1) {
+        return z ? ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function3
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                Modifier tapPressTextFieldModifier$lambda$0;
+                tapPressTextFieldModifier$lambda$0 = TextFieldPressGestureFilterKt.tapPressTextFieldModifier$lambda$0(Function1.this, mutableInteractionSource, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                return tapPressTextFieldModifier$lambda$0;
+            }
+        }, 1, null) : modifier;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Modifier tapPressTextFieldModifier$lambda$0(Function1 function1, final MutableInteractionSource mutableInteractionSource, Modifier modifier, Composer composer, int i) {
+        composer.startReplaceGroup(-102778667);
+        ComposerKt.sourceInformation(composer, "C40@1628L24,41@1690L58,42@1778L27,43@1854L343,43@1818L379,52@2251L1562:TextFieldPressGestureFilter.kt#423gt5");
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-102778667, i, -1, "androidx.compose.foundation.text.tapPressTextFieldModifier.<anonymous> (TextFieldPressGestureFilter.kt:40)");
+        }
+        ComposerKt.sourceInformationMarkerStart(composer, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 683736516, "CC(remember):Effects.kt#9igjgp");
+        Object rememberedValue = composer.rememberedValue();
+        if (rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, composer);
+            composer.updateRememberedValue(rememberedValue);
+        }
+        CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        ComposerKt.sourceInformationMarkerStart(composer, 13951695, "CC(remember):TextFieldPressGestureFilter.kt#9igjgp");
+        Object rememberedValue2 = composer.rememberedValue();
+        if (rememberedValue2 == Composer.Companion.getEmpty()) {
+            rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
+            composer.updateRememberedValue(rememberedValue2);
+        }
+        final MutableState mutableState = (MutableState) rememberedValue2;
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(function1, composer, 0);
+        ComposerKt.sourceInformationMarkerStart(composer, 13957228, "CC(remember):TextFieldPressGestureFilter.kt#9igjgp");
+        boolean changed = composer.changed(mutableInteractionSource);
+        Object rememberedValue3 = composer.rememberedValue();
+        if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
+            rememberedValue3 = new Function1() { // from class: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$$ExternalSyntheticLambda1
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    DisposableEffectResult tapPressTextFieldModifier$lambda$0$1$0;
+                    tapPressTextFieldModifier$lambda$0$1$0 = TextFieldPressGestureFilterKt.tapPressTextFieldModifier$lambda$0$1$0(MutableState.this, mutableInteractionSource, (DisposableEffectScope) obj);
+                    return tapPressTextFieldModifier$lambda$0$1$0;
+                }
+            };
+            composer.updateRememberedValue(rememberedValue3);
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        EffectsKt.DisposableEffect(mutableInteractionSource, (Function1) rememberedValue3, composer, 0);
+        Modifier.Companion companion = Modifier.Companion;
+        ComposerKt.sourceInformationMarkerStart(composer, 13971151, "CC(remember):TextFieldPressGestureFilter.kt#9igjgp");
+        boolean changedInstance = composer.changedInstance(coroutineScope) | composer.changed(mutableInteractionSource) | composer.changed(rememberUpdatedState);
+        Object rememberedValue4 = composer.rememberedValue();
+        if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
+            rememberedValue4 = (PointerInputEventHandler) new TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1(coroutineScope, mutableState, mutableInteractionSource, rememberUpdatedState);
+            composer.updateRememberedValue(rememberedValue4);
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(companion, mutableInteractionSource, (PointerInputEventHandler) rememberedValue4);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        composer.endReplaceGroup();
+        return pointerInput;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final DisposableEffectResult tapPressTextFieldModifier$lambda$0$1$0(final MutableState mutableState, final MutableInteractionSource mutableInteractionSource, DisposableEffectScope disposableEffectScope) {
+        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$lambda$0$1$0$$inlined$onDispose$1
+            @Override // androidx.compose.runtime.DisposableEffectResult
+            public void dispose() {
+                PressInteraction.Press press = (PressInteraction.Press) MutableState.this.getValue();
+                if (press != null) {
+                    PressInteraction.Cancel cancel = new PressInteraction.Cancel(press);
+                    MutableInteractionSource mutableInteractionSource2 = mutableInteractionSource;
+                    if (mutableInteractionSource2 != null) {
+                        mutableInteractionSource2.tryEmit(cancel);
+                    }
+                    MutableState.this.setValue(null);
+                }
+            }
+        };
     }
 }

@@ -106,15 +106,15 @@ final class MotionDragHandlerKt$detectDragGesturesWhenNeeded$2 extends Restricte
             PointerInputChange pointerInputChange2 = (PointerInputChange) obj;
             if (pointerInputChange2 == null || pointerInputChange2.isConsumed()) {
                 if (pointerInputChange2 != null) {
-                    this.$onDragStart.invoke(Offset.m5025boximpl(pointerInputChange2.m6570getPositionF1C5BW0()));
-                    this.$onDrag.invoke(pointerInputChange2, Offset.m5025boximpl(longRef.element));
-                    long m6568getIdJ3iCeTQ = pointerInputChange2.m6568getIdJ3iCeTQ();
+                    this.$onDragStart.invoke(Offset.m5168boximpl(pointerInputChange2.m6744getPositionF1C5BW0()));
+                    this.$onDrag.invoke(pointerInputChange2, Offset.m5168boximpl(longRef.element));
+                    long m6742getIdJ3iCeTQ = pointerInputChange2.m6742getIdJ3iCeTQ();
                     final Function2<PointerInputChange, Offset, Unit> function2 = this.$onDrag;
                     this.L$0 = null;
                     this.L$1 = null;
                     this.L$2 = null;
                     this.label = 3;
-                    obj = DragGestureDetectorKt.m498dragjO51t88(awaitPointerEventScope2, m6568getIdJ3iCeTQ, new Function1<PointerInputChange, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$detectDragGesturesWhenNeeded$2.2
+                    obj = DragGestureDetectorKt.m547dragjO51t88(awaitPointerEventScope2, m6742getIdJ3iCeTQ, new Function1<PointerInputChange, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$detectDragGesturesWhenNeeded$2.2
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
                         {
@@ -129,7 +129,7 @@ final class MotionDragHandlerKt$detectDragGesturesWhenNeeded$2 extends Restricte
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(PointerInputChange pointerInputChange3) {
-                            function2.invoke(pointerInputChange3, Offset.m5025boximpl(PointerEventKt.positionChange(pointerInputChange3)));
+                            function2.invoke(pointerInputChange3, Offset.m5168boximpl(PointerEventKt.positionChange(pointerInputChange3)));
                             pointerInputChange3.consume();
                         }
                     }, this);
@@ -140,30 +140,30 @@ final class MotionDragHandlerKt$detectDragGesturesWhenNeeded$2 extends Restricte
             this.L$1 = pointerInputChange;
             this.L$2 = longRef;
             this.label = 2;
-            obj = DragGestureDetectorKt.m492awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, pointerInputChange.m6568getIdJ3iCeTQ(), new Function2<PointerInputChange, Offset, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$detectDragGesturesWhenNeeded$2.1
+            obj = DragGestureDetectorKt.m541awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, pointerInputChange.m6742getIdJ3iCeTQ(), new Function2<PointerInputChange, Offset, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$detectDragGesturesWhenNeeded$2.1
                 {
                     super(2);
                 }
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange3, Offset offset) {
-                    m8398invokeUv8p0NA(pointerInputChange3, offset.m5046unboximpl());
+                    m8660invokeUv8p0NA(pointerInputChange3, offset.m5189unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-                public final void m8398invokeUv8p0NA(PointerInputChange pointerInputChange3, long j) {
+                public final void m8660invokeUv8p0NA(PointerInputChange pointerInputChange3, long j) {
                     pointerInputChange3.consume();
                     Ref.LongRef.this.element = j;
                 }
             }, this);
         }
         PointerInputChange pointerInputChange3 = (PointerInputChange) obj;
-        if (!this.$onAcceptFirstDown.invoke(Offset.m5025boximpl(pointerInputChange3.m6570getPositionF1C5BW0())).booleanValue()) {
+        if (!this.$onAcceptFirstDown.invoke(Offset.m5168boximpl(pointerInputChange3.m6744getPositionF1C5BW0())).booleanValue()) {
             return Unit.INSTANCE;
         }
         Ref.LongRef longRef2 = new Ref.LongRef();
-        longRef2.element = Offset.Companion.m5052getZeroF1C5BW0();
+        longRef2.element = Offset.Companion.m5195getZeroF1C5BW0();
         awaitPointerEventScope2 = awaitPointerEventScope;
         longRef = longRef2;
         pointerInputChange = pointerInputChange3;
@@ -171,19 +171,19 @@ final class MotionDragHandlerKt$detectDragGesturesWhenNeeded$2 extends Restricte
         this.L$1 = pointerInputChange;
         this.L$2 = longRef;
         this.label = 2;
-        obj = DragGestureDetectorKt.m492awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, pointerInputChange.m6568getIdJ3iCeTQ(), new Function2<PointerInputChange, Offset, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$detectDragGesturesWhenNeeded$2.1
+        obj = DragGestureDetectorKt.m541awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, pointerInputChange.m6742getIdJ3iCeTQ(), new Function2<PointerInputChange, Offset, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$detectDragGesturesWhenNeeded$2.1
             {
                 super(2);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange32, Offset offset) {
-                m8398invokeUv8p0NA(pointerInputChange32, offset.m5046unboximpl());
+                m8660invokeUv8p0NA(pointerInputChange32, offset.m5189unboximpl());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-            public final void m8398invokeUv8p0NA(PointerInputChange pointerInputChange32, long j) {
+            public final void m8660invokeUv8p0NA(PointerInputChange pointerInputChange32, long j) {
                 pointerInputChange32.consume();
                 Ref.LongRef.this.element = j;
             }

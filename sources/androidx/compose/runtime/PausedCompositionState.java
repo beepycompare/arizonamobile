@@ -28,6 +28,14 @@ public final class PausedCompositionState {
         return $ENTRIES;
     }
 
+    public static PausedCompositionState valueOf(String str) {
+        return (PausedCompositionState) Enum.valueOf(PausedCompositionState.class, str);
+    }
+
+    public static PausedCompositionState[] values() {
+        return (PausedCompositionState[]) $VALUES.clone();
+    }
+
     private PausedCompositionState(String str, int i) {
     }
 
@@ -35,13 +43,5 @@ public final class PausedCompositionState {
         PausedCompositionState[] $values = $values();
         $VALUES = $values;
         $ENTRIES = EnumEntriesKt.enumEntries($values);
-    }
-
-    public static PausedCompositionState valueOf(String str) {
-        return (PausedCompositionState) Enum.valueOf(PausedCompositionState.class, str);
-    }
-
-    public static PausedCompositionState[] values() {
-        return (PausedCompositionState[]) $VALUES.clone();
     }
 }

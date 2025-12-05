@@ -1,5 +1,5 @@
 package com.google.android.billing;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class IabException extends Exception {
     IabResult mResult;
 

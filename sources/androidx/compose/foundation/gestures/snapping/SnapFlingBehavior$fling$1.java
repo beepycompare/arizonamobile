@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SnapFlingBehavior.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.snapping.SnapFlingBehavior", f = "SnapFlingBehavior.kt", i = {0}, l = {114}, m = "fling", n = {"onRemainingScrollOffsetUpdate"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.snapping.SnapFlingBehavior", f = "SnapFlingBehavior.kt", i = {0}, l = {114}, m = "fling", n = {"onRemainingScrollOffsetUpdate"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class SnapFlingBehavior$fling$1 extends ContinuationImpl {
     Object L$0;

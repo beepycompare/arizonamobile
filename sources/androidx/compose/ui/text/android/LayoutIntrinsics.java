@@ -74,9 +74,9 @@ public final class LayoutIntrinsics {
         PriorityQueue priorityQueue = new PriorityQueue(10, new Comparator() { // from class: androidx.compose.ui.text.android.LayoutIntrinsics$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int computeMinIntrinsicWidth$lambda$1;
-                computeMinIntrinsicWidth$lambda$1 = LayoutIntrinsics.computeMinIntrinsicWidth$lambda$1((Pair) obj, (Pair) obj2);
-                return computeMinIntrinsicWidth$lambda$1;
+                int computeMinIntrinsicWidth$lambda$0;
+                computeMinIntrinsicWidth$lambda$0 = LayoutIntrinsics.computeMinIntrinsicWidth$lambda$0((Pair) obj, (Pair) obj2);
+                return computeMinIntrinsicWidth$lambda$0;
             }
         });
         int next = lineInstance.next();
@@ -114,7 +114,7 @@ public final class LayoutIntrinsics {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int computeMinIntrinsicWidth$lambda$1(Pair pair, Pair pair2) {
+    public static final int computeMinIntrinsicWidth$lambda$0(Pair pair, Pair pair2) {
         return (((Number) pair.getSecond()).intValue() - ((Number) pair.getFirst()).intValue()) - (((Number) pair2.getSecond()).intValue() - ((Number) pair2.getFirst()).intValue());
     }
 

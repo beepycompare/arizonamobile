@@ -20,8 +20,8 @@ public final class DatePickerModalTokens {
     private static final float SelectionYearStateLayerWidth;
     public static final DatePickerModalTokens INSTANCE = new DatePickerModalTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3892getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7996constructorimpl((float) 568.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3978getLevel3D9Ej5fM();
+    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 568.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
     private static final ShapeKeyTokens DateContainerShape = ShapeKeyTokens.CornerFull;
     private static final TypographyKeyTokens DateLabelTextFont = TypographyKeyTokens.BodyLarge;
@@ -29,20 +29,20 @@ public final class DatePickerModalTokens {
     private static final ColorSchemeKeyTokens DateSelectedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ShapeKeyTokens DateStateLayerShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens DateTodayContainerOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float DateTodayContainerOutlineWidth = Dp.m7996constructorimpl((float) 1.0d);
+    private static final float DateTodayContainerOutlineWidth = Dp.m8258constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens DateTodayLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens DateUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float HeaderContainerHeight = Dp.m7996constructorimpl((float) 120.0d);
+    private static final float HeaderContainerHeight = Dp.m8258constructorimpl((float) 120.0d);
     private static final ColorSchemeKeyTokens HeaderHeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderHeadlineFont = TypographyKeyTokens.HeadlineLarge;
     private static final ColorSchemeKeyTokens HeaderSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderSupportingTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens RangeSelectionActiveIndicatorContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ShapeKeyTokens RangeSelectionActiveIndicatorContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float RangeSelectionContainerElevation = ElevationTokens.INSTANCE.m3889getLevel0D9Ej5fM();
+    private static final float RangeSelectionContainerElevation = ElevationTokens.INSTANCE.m3975getLevel0D9Ej5fM();
     private static final ShapeKeyTokens RangeSelectionContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens SelectionDateInRangeLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float RangeSelectionHeaderContainerHeight = Dp.m7996constructorimpl((float) 128.0d);
+    private static final float RangeSelectionHeaderContainerHeight = Dp.m8258constructorimpl((float) 128.0d);
     private static final TypographyKeyTokens RangeSelectionHeaderHeadlineFont = TypographyKeyTokens.TitleLarge;
     private static final ColorSchemeKeyTokens RangeSelectionMonthSubheadColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens RangeSelectionMonthSubheadFont = TypographyKeyTokens.TitleSmall;
@@ -59,20 +59,20 @@ public final class DatePickerModalTokens {
 
     static {
         float f = (float) 360.0d;
-        ContainerWidth = Dp.m7996constructorimpl(f);
+        ContainerWidth = Dp.m8258constructorimpl(f);
         float f2 = (float) 40.0d;
-        DateContainerHeight = Dp.m7996constructorimpl(f2);
-        DateContainerWidth = Dp.m7996constructorimpl(f2);
-        DateStateLayerHeight = Dp.m7996constructorimpl(f2);
-        DateStateLayerWidth = Dp.m7996constructorimpl(f2);
-        HeaderContainerWidth = Dp.m7996constructorimpl(f);
-        RangeSelectionActiveIndicatorContainerHeight = Dp.m7996constructorimpl(f2);
+        DateContainerHeight = Dp.m8258constructorimpl(f2);
+        DateContainerWidth = Dp.m8258constructorimpl(f2);
+        DateStateLayerHeight = Dp.m8258constructorimpl(f2);
+        DateStateLayerWidth = Dp.m8258constructorimpl(f2);
+        HeaderContainerWidth = Dp.m8258constructorimpl(f);
+        RangeSelectionActiveIndicatorContainerHeight = Dp.m8258constructorimpl(f2);
         float f3 = (float) 36.0d;
-        SelectionYearContainerHeight = Dp.m7996constructorimpl(f3);
+        SelectionYearContainerHeight = Dp.m8258constructorimpl(f3);
         float f4 = (float) 72.0d;
-        SelectionYearContainerWidth = Dp.m7996constructorimpl(f4);
-        SelectionYearStateLayerHeight = Dp.m7996constructorimpl(f3);
-        SelectionYearStateLayerWidth = Dp.m7996constructorimpl(f4);
+        SelectionYearContainerWidth = Dp.m8258constructorimpl(f4);
+        SelectionYearStateLayerHeight = Dp.m8258constructorimpl(f3);
+        SelectionYearStateLayerWidth = Dp.m8258constructorimpl(f4);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -80,12 +80,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3842getContainerElevationD9Ej5fM() {
+    public final float m3928getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3843getContainerHeightD9Ej5fM() {
+    public final float m3929getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -94,12 +94,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3844getContainerWidthD9Ej5fM() {
+    public final float m3930getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getDateContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3845getDateContainerHeightD9Ej5fM() {
+    public final float m3931getDateContainerHeightD9Ej5fM() {
         return DateContainerHeight;
     }
 
@@ -108,7 +108,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3846getDateContainerWidthD9Ej5fM() {
+    public final float m3932getDateContainerWidthD9Ej5fM() {
         return DateContainerWidth;
     }
 
@@ -125,7 +125,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateStateLayerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3847getDateStateLayerHeightD9Ej5fM() {
+    public final float m3933getDateStateLayerHeightD9Ej5fM() {
         return DateStateLayerHeight;
     }
 
@@ -134,7 +134,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateStateLayerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3848getDateStateLayerWidthD9Ej5fM() {
+    public final float m3934getDateStateLayerWidthD9Ej5fM() {
         return DateStateLayerWidth;
     }
 
@@ -143,7 +143,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getDateTodayContainerOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3849getDateTodayContainerOutlineWidthD9Ej5fM() {
+    public final float m3935getDateTodayContainerOutlineWidthD9Ej5fM() {
         return DateTodayContainerOutlineWidth;
     }
 
@@ -156,12 +156,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getHeaderContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3850getHeaderContainerHeightD9Ej5fM() {
+    public final float m3936getHeaderContainerHeightD9Ej5fM() {
         return HeaderContainerHeight;
     }
 
     /* renamed from: getHeaderContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3851getHeaderContainerWidthD9Ej5fM() {
+    public final float m3937getHeaderContainerWidthD9Ej5fM() {
         return HeaderContainerWidth;
     }
 
@@ -186,7 +186,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getRangeSelectionActiveIndicatorContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3852getRangeSelectionActiveIndicatorContainerHeightD9Ej5fM() {
+    public final float m3938getRangeSelectionActiveIndicatorContainerHeightD9Ej5fM() {
         return RangeSelectionActiveIndicatorContainerHeight;
     }
 
@@ -195,7 +195,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getRangeSelectionContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3853getRangeSelectionContainerElevationD9Ej5fM() {
+    public final float m3939getRangeSelectionContainerElevationD9Ej5fM() {
         return RangeSelectionContainerElevation;
     }
 
@@ -208,7 +208,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getRangeSelectionHeaderContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3854getRangeSelectionHeaderContainerHeightD9Ej5fM() {
+    public final float m3940getRangeSelectionHeaderContainerHeightD9Ej5fM() {
         return RangeSelectionHeaderContainerHeight;
     }
 
@@ -233,12 +233,12 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getSelectionYearContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3855getSelectionYearContainerHeightD9Ej5fM() {
+    public final float m3941getSelectionYearContainerHeightD9Ej5fM() {
         return SelectionYearContainerHeight;
     }
 
     /* renamed from: getSelectionYearContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3856getSelectionYearContainerWidthD9Ej5fM() {
+    public final float m3942getSelectionYearContainerWidthD9Ej5fM() {
         return SelectionYearContainerWidth;
     }
 
@@ -255,7 +255,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getSelectionYearStateLayerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3857getSelectionYearStateLayerHeightD9Ej5fM() {
+    public final float m3943getSelectionYearStateLayerHeightD9Ej5fM() {
         return SelectionYearStateLayerHeight;
     }
 
@@ -264,7 +264,7 @@ public final class DatePickerModalTokens {
     }
 
     /* renamed from: getSelectionYearStateLayerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3858getSelectionYearStateLayerWidthD9Ej5fM() {
+    public final float m3944getSelectionYearStateLayerWidthD9Ej5fM() {
         return SelectionYearStateLayerWidth;
     }
 

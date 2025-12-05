@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class TimePickerLayoutType {
     public static final Companion Companion = new Companion(null);
-    private static final int Horizontal = m3241constructorimpl(0);
-    private static final int Vertical = m3241constructorimpl(1);
+    private static final int Horizontal = m3327constructorimpl(0);
+    private static final int Vertical = m3327constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TimePickerLayoutType m3240boximpl(int i) {
+    public static final /* synthetic */ TimePickerLayoutType m3326boximpl(int i) {
         return new TimePickerLayoutType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m3241constructorimpl(int i) {
+    public static int m3327constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m3242equalsimpl(int i, Object obj) {
-        return (obj instanceof TimePickerLayoutType) && i == ((TimePickerLayoutType) obj).m3246unboximpl();
+    public static boolean m3328equalsimpl(int i, Object obj) {
+        return (obj instanceof TimePickerLayoutType) && i == ((TimePickerLayoutType) obj).m3332unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m3243equalsimpl0(int i, int i2) {
+    public static final boolean m3329equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m3244hashCodeimpl(int i) {
+    public static int m3330hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m3242equalsimpl(this.value, obj);
+        return m3328equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m3244hashCodeimpl(this.value);
+        return m3330hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m3246unboximpl() {
+    public final /* synthetic */ int m3332unboximpl() {
         return this.value;
     }
 
@@ -68,22 +68,22 @@ public final class TimePickerLayoutType {
         }
 
         /* renamed from: getHorizontal-QJTpgSE  reason: not valid java name */
-        public final int m3247getHorizontalQJTpgSE() {
+        public final int m3333getHorizontalQJTpgSE() {
             return TimePickerLayoutType.Horizontal;
         }
 
         /* renamed from: getVertical-QJTpgSE  reason: not valid java name */
-        public final int m3248getVerticalQJTpgSE() {
+        public final int m3334getVerticalQJTpgSE() {
             return TimePickerLayoutType.Vertical;
         }
     }
 
     public String toString() {
-        return m3245toStringimpl(this.value);
+        return m3331toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m3245toStringimpl(int i) {
-        return m3243equalsimpl0(i, Horizontal) ? "Horizontal" : m3243equalsimpl0(i, Vertical) ? "Vertical" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m3331toStringimpl(int i) {
+        return m3329equalsimpl0(i, Horizontal) ? "Horizontal" : m3329equalsimpl0(i, Vertical) ? "Vertical" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

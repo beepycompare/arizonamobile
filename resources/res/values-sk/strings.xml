@@ -27,7 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Zdieľať s</string>
     <string name="abc_shareactionprovider_share_with_application">Zdieľať s aplikáciou %s</string>
     <string name="abc_toolbar_collapse_description">Zbaliť</string>
-    <string name="autofill">Automatické dopĺňanie</string>
+    <string name="androidx_compose_foundation_autofill">Automaticky doplniť</string>
+    <string name="androidx_compose_ui_autofill">Automaticky doplniť</string>
     <string name="bottomsheet_action_collapse">Zbaliť dolný hárok</string>
     <string name="bottomsheet_action_expand">Rozbaliť dolný hárok</string>
     <string name="bottomsheet_action_expand_halfway">Rozbaliť napoly</string>

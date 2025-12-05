@@ -1,6 +1,6 @@
 package androidx.compose.foundation.gestures;
 
-import androidx.compose.runtime.ComposerKt;
+import androidx.compose.foundation.gestures.DragEvent;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,24 +12,24 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Scrollable2D.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DNode$onDragStopped$1", f = "Scrollable2D.kt", i = {}, l = {ComposerKt.compositionLocalMapKey}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.foundation.gestures.Scrollable2DNode$onDragStopped$1", f = "Scrollable2D.kt", i = {}, l = {200}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class Scrollable2DNode$onDragStopped$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-    final /* synthetic */ long $velocity;
+    final /* synthetic */ DragEvent.DragStopped $event;
     int label;
     final /* synthetic */ Scrollable2DNode this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Scrollable2DNode$onDragStopped$1(Scrollable2DNode scrollable2DNode, long j, Continuation<? super Scrollable2DNode$onDragStopped$1> continuation) {
+    public Scrollable2DNode$onDragStopped$1(Scrollable2DNode scrollable2DNode, DragEvent.DragStopped dragStopped, Continuation<? super Scrollable2DNode$onDragStopped$1> continuation) {
         super(2, continuation);
         this.this$0 = scrollable2DNode;
-        this.$velocity = j;
+        this.$event = dragStopped;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new Scrollable2DNode$onDragStopped$1(this.this$0, this.$velocity, continuation);
+        return new Scrollable2DNode$onDragStopped$1(this.this$0, this.$event, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -46,7 +46,7 @@ final class Scrollable2DNode$onDragStopped$1 extends SuspendLambda implements Fu
             ResultKt.throwOnFailure(obj);
             scrollingLogic2D = this.this$0.scrollingLogic;
             this.label = 1;
-            if (scrollingLogic2D.m603onScrollStoppedsFctU(this.$velocity, this) == coroutine_suspended) {
+            if (scrollingLogic2D.m681onScrollStoppedsFctU(this.$event.m525getVelocity9UxMQ8M(), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

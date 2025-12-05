@@ -13,13 +13,13 @@ public final class WithAlignmentLineBlockElement extends ModifierNodeElement<Sib
     public static final int $stable = 0;
     private final Function1<Measured, Integer> block;
 
-    public final Function1<Measured, Integer> getBlock() {
-        return this.block;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public WithAlignmentLineBlockElement(Function1<? super Measured, Integer> function1) {
         this.block = function1;
+    }
+
+    public final Function1<Measured, Integer> getBlock() {
+        return this.block;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

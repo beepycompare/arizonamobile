@@ -1,5 +1,6 @@
 package com.miami.game.feature.download.screen.ui.model;
 
+import androidx.core.app.FrameMetricsAggregator;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import kotlin.Metadata;
@@ -33,9 +34,9 @@ public final class DownloadExternalUiStateHolder {
     static {
         CoroutineScope CoroutineScope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().plus(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null)));
         scope = CoroutineScope;
-        MutableStateFlow<DownloadExternalUiState> MutableStateFlow = StateFlowKt.MutableStateFlow(new DownloadExternalUiState(null, null, null, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 511, null));
+        MutableStateFlow<DownloadExternalUiState> MutableStateFlow = StateFlowKt.MutableStateFlow(new DownloadExternalUiState(null, null, null, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, FrameMetricsAggregator.EVERY_DURATION, null));
         stateStore = MutableStateFlow;
-        state = FlowKt.stateIn(MutableStateFlow, CoroutineScope, SharingStarted.Companion.getEagerly(), new DownloadExternalUiState(null, null, null, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 511, null));
+        state = FlowKt.stateIn(MutableStateFlow, CoroutineScope, SharingStarted.Companion.getEagerly(), new DownloadExternalUiState(null, null, null, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, FrameMetricsAggregator.EVERY_DURATION, null));
         onStartDownload = new Function0() { // from class: com.miami.game.feature.download.screen.ui.model.DownloadExternalUiStateHolder$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {

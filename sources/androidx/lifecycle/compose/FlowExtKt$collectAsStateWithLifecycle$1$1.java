@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: FlowExt.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/ProduceStateScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1", f = "FlowExt.kt", i = {}, l = {177}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1", f = "FlowExt.kt", i = {}, l = {177}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 final class FlowExtKt$collectAsStateWithLifecycle$1$1<T> extends SuspendLambda implements Function2<ProduceStateScope<T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ CoroutineContext $context;
@@ -61,7 +61,7 @@ final class FlowExtKt$collectAsStateWithLifecycle$1$1<T> extends SuspendLambda i
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: FlowExt.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1", f = "FlowExt.kt", i = {}, l = {179, 181}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1", f = "FlowExt.kt", i = {}, l = {179, 181}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1  reason: invalid class name */
     /* loaded from: classes2.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -90,7 +90,7 @@ final class FlowExtKt$collectAsStateWithLifecycle$1$1<T> extends SuspendLambda i
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:13:0x003c, code lost:
-            if (r7.collect(new androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1.AnonymousClass1.C00321<>(), r6) == r0) goto L15;
+            if (r7.collect(new androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1.AnonymousClass1.C00311<>(), r6) == r0) goto L15;
          */
         /* JADX WARN: Code restructure failed: missing block: B:16:0x0056, code lost:
             if (kotlinx.coroutines.BuildersKt.withContext(r6.$context, new androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1.AnonymousClass1.AnonymousClass2(r6.$this_collectAsStateWithLifecycle, r6.$$this$produceState, null), r6) == r0) goto L15;
@@ -125,7 +125,7 @@ final class FlowExtKt$collectAsStateWithLifecycle$1$1<T> extends SuspendLambda i
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: FlowExt.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1$2", f = "FlowExt.kt", i = {}, l = {182}, m = "invokeSuspend", n = {}, s = {})
+        @DebugMetadata(c = "androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1$2", f = "FlowExt.kt", i = {}, l = {182}, m = "invokeSuspend", n = {}, s = {}, v = 1)
         /* renamed from: androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1$2  reason: invalid class name */
         /* loaded from: classes2.dex */
         public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

@@ -37,7 +37,6 @@ import androidx.core.content.LocusIdCompat;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.text.BidiFormatter;
-import androidx.core.view.ViewCompat;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.text.NumberFormat;
@@ -1736,9 +1735,8 @@ public class NotificationCompat {
             BidiFormatter bidiFormatter = BidiFormatter.getInstance();
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             String name = message.getPerson() == null ? "" : message.getPerson().getName();
-            boolean isEmpty = TextUtils.isEmpty(name);
-            int i = ViewCompat.MEASURED_STATE_MASK;
-            if (isEmpty) {
+            int i = -16777216;
+            if (TextUtils.isEmpty(name)) {
                 name = this.mUser.getName();
                 if (this.mBuilder.getColor() != 0) {
                     i = this.mBuilder.getColor();
@@ -3487,7 +3485,7 @@ public class NotificationCompat {
             }
 
             /* renamed from: clone */
-            public WearableExtender m8483clone() {
+            public WearableExtender m8745clone() {
                 WearableExtender wearableExtender = new WearableExtender();
                 wearableExtender.mFlags = this.mFlags;
                 wearableExtender.mInProgressLabel = this.mInProgressLabel;
@@ -3766,7 +3764,7 @@ public class NotificationCompat {
         }
 
         /* renamed from: clone */
-        public WearableExtender m8484clone() {
+        public WearableExtender m8746clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;

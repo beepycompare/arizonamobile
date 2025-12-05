@@ -15,25 +15,25 @@ public final class M1 {
     public static B1 d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f579a;
+    public final Context f662a;
     public final A1 b;
-    public BinderC0736z1 c;
+    public BinderC0735z1 c;
 
     public M1(Context context, A1 a1) {
-        this.f579a = context;
+        this.f662a = context;
         this.b = a1;
     }
 
     public final void b() {
-        C0471oa.a(this.f579a);
-        PublicLogger.Companion.init(this.f579a);
-        Context context = this.f579a;
+        C0470oa.a(this.f662a);
+        PublicLogger.Companion.init(this.f662a);
+        Context context = this.f662a;
         A1 a1 = this.b;
         if (d == null) {
-            C1 c1 = new C1(context, a1, new C0210e5(context));
-            C0251fk c0251fk = C0471oa.I.v;
+            C1 c1 = new C1(context, a1, new C0209e5(context));
+            C0250fk c0250fk = C0470oa.I.v;
             F1 f1 = new F1(c1);
-            LinkedHashMap linkedHashMap = c0251fk.f894a;
+            LinkedHashMap linkedHashMap = c0250fk.f977a;
             Object obj = linkedHashMap.get(1);
             if (obj == null) {
                 obj = new ArrayList();
@@ -44,9 +44,9 @@ public final class M1 {
         }
         B1 b1 = d;
         if (b1 != null) {
-            this.c = new BinderC0736z1(b1);
-            C0471oa c0471oa = C0471oa.I;
-            c0471oa.f = new C0455nj(c0471oa.f1046a, new C0480oj(b1));
+            this.c = new BinderC0735z1(b1);
+            C0470oa c0470oa = C0470oa.I;
+            c0470oa.f = new C0454nj(c0470oa.f1129a, new C0479oj(b1));
             ((C1) b1).onCreate();
         }
     }
@@ -67,7 +67,7 @@ public final class M1 {
     public final void a(Intent intent, int i) {
         B1 b1 = d;
         if (b1 != null) {
-            ((C0610u0) ((C1) b1).c).f1140a.stopSelf(i);
+            ((C0609u0) ((C1) b1).c).f1223a.stopSelf(i);
         }
     }
 
@@ -81,7 +81,7 @@ public final class M1 {
     public final int a(Intent intent, int i, int i2) {
         B1 b1 = d;
         if (b1 != null) {
-            ((C0610u0) ((C1) b1).c).f1140a.stopSelf(i2);
+            ((C0609u0) ((C1) b1).c).f1223a.stopSelf(i2);
             return 2;
         }
         return 2;
@@ -96,17 +96,17 @@ public final class M1 {
         if (action != null && StringsKt.startsWith$default(action, "io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK", false, 2, (Object) null)) {
             return new Do();
         }
-        BinderC0736z1 binderC0736z1 = this.c;
-        if (binderC0736z1 == null) {
+        BinderC0735z1 binderC0735z1 = this.c;
+        if (binderC0735z1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("coreBinder");
             return null;
         }
-        return binderC0736z1;
+        return binderC0735z1;
     }
 
     public final void a(Configuration configuration) {
         if (d != null) {
-            C0471oa.I.v().a(configuration);
+            C0470oa.I.v().a(configuration);
         }
     }
 

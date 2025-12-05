@@ -1,9 +1,7 @@
 package androidx.compose.foundation.lazy.layout;
 
-import androidx.collection.IntIntMapKt;
 import androidx.collection.IntObjectMapKt;
 import androidx.collection.IntSetKt;
-import androidx.collection.MutableIntIntMap;
 import androidx.collection.MutableIntObjectMap;
 import androidx.collection.MutableIntSet;
 import androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState;
@@ -14,36 +12,50 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
 import kotlin.ranges.RangesKt;
 /* compiled from: CacheWindowLogic.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b \b!\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0012\u0010\u001e\u001a\u00020\u001f*\u00020 2\u0006\u0010!\u001a\u00020\u000fJ\b\u0010\"\u001a\u00020\u001fH\u0002J\n\u0010#\u001a\u00020\u001f*\u00020 J\u0006\u0010$\u001a\u00020\u0013J\u0014\u0010%\u001a\u00020\u001f*\u00020 2\u0006\u0010!\u001a\u00020\u000fH\u0002J\u0014\u0010&\u001a\u00020\u001f*\u00020 2\u0006\u0010!\u001a\u00020\u000fH\u0002J\u0014\u0010'\u001a\u00020\u001f*\u00020 2\u0006\u0010(\u001a\u00020\u0013H\u0002J\u0006\u0010)\u001a\u00020\u001fJD\u0010*\u001a\u00020\u001f*\u00020 2\u0006\u0010+\u001a\u00020\u00112\u0006\u0010,\u001a\u00020\u00112\u0006\u0010-\u001a\u00020\u00112\u0006\u0010.\u001a\u00020\u00112\u0006\u0010/\u001a\u00020\u00112\u0006\u00100\u001a\u00020\u000f2\u0006\u00101\u001a\u00020\u0013H\u0002J@\u00102\u001a\u00020\u001f2\u0006\u0010+\u001a\u00020\u00112\u0006\u0010,\u001a\u00020\u00112\u0006\u0010.\u001a\u00020\u00112\u0006\u0010/\u001a\u00020\u00112\u0006\u00103\u001a\u00020\u00112\u0006\u00100\u001a\u00020\u000f2\u0006\u0010\u001d\u001a\u00020\u0011H\u0002J\u001c\u00104\u001a\u00020\u0011*\u00020 2\u0006\u00105\u001a\u00020\u00112\u0006\u00106\u001a\u00020\u0013H\u0002J\u0018\u00107\u001a\u00020\u001f2\u0006\u00105\u001a\u00020\u00112\u0006\u00108\u001a\u00020\u0011H\u0002J\u0018\u00109\u001a\u00020\u001f2\u0006\u00105\u001a\u00020\u00112\u0006\u00108\u001a\u00020\u0011H\u0002J\u0018\u0010:\u001a\u00020\u001f2\u0006\u0010;\u001a\u00020\u00112\u0006\u0010<\u001a\u00020\u0011H\u0002J\u001c\u0010=\u001a\u00020\u001f*\u00020 2\u0006\u00105\u001a\u00020\u00112\u0006\u0010>\u001a\u00020\u0011H\u0002J\f\u0010?\u001a\u00020\u001f*\u00020 H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\t0\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0015\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0011@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u001e\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0011@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0017R\u000e\u0010\u001a\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Landroidx/compose/foundation/lazy/layout/CacheWindowLogic;", "", "cacheWindow", "Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;)V", "prefetchWindowHandles", "Landroidx/collection/MutableIntObjectMap;", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "indicesToRemove", "Landroidx/collection/MutableIntSet;", "windowCache", "Landroidx/collection/MutableIntIntMap;", "previousPassDelta", "", "previousPassItemCount", "", "hasUpdatedVisibleItemsOnce", "", "value", "prefetchWindowStartLine", "getPrefetchWindowStartLine$foundation_release", "()I", "prefetchWindowEndLine", "getPrefetchWindowEndLine$foundation_release", "prefetchWindowStartExtraSpace", "prefetchWindowEndExtraSpace", "shouldRefillWindow", "itemsCount", "onScroll", "", "Landroidx/compose/foundation/lazy/layout/CacheWindowScope;", "delta", "traceWindowInfo", "onVisibleItemsUpdated", "hasValidBounds", "fillCacheWindowBackward", "fillCacheWindowForward", "refillWindow", "refillForward", "resetStrategy", "onPrefetchForward", "visibleWindowStart", "visibleWindowEnd", "prefetchForwardWindow", "mainAxisExtraSpaceEnd", "mainAxisExtraSpaceStart", "scrollDelta", "applyForwardPrefetch", "onKeepAround", "keepAroundWindow", "getItemSizeOrPrefetch", FirebaseAnalytics.Param.INDEX, "isUrgent", "cachePrefetchedItem", "size", "cacheVisibleItemsInfo", "removeOutOfBoundsItems", "startLine", "endLine", "onItemPrefetched", "itemSize", "scheduleNextItemIfNeeded", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b#\b!\u0018\u00002\u00020\u0001B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0012\u0010\u001f\u001a\u00020 *\u00020!2\u0006\u0010\"\u001a\u00020\u0011J\b\u0010#\u001a\u00020 H\u0002J\n\u0010$\u001a\u00020 *\u00020!J\u0006\u0010%\u001a\u00020\u0005J\u0014\u0010&\u001a\u00020 *\u00020!2\u0006\u0010\"\u001a\u00020\u0011H\u0002J\u0014\u0010'\u001a\u00020 *\u00020!2\u0006\u0010\"\u001a\u00020\u0011H\u0002J\u0014\u0010(\u001a\u00020 *\u00020!2\u0006\u0010)\u001a\u00020\u0005H\u0002J\f\u0010*\u001a\u00020 *\u00020!H\u0002J\u0006\u0010+\u001a\u00020 JD\u0010,\u001a\u00020 *\u00020!2\u0006\u0010-\u001a\u00020\u00132\u0006\u0010.\u001a\u00020\u00132\u0006\u0010/\u001a\u00020\u00132\u0006\u00100\u001a\u00020\u00132\u0006\u00101\u001a\u00020\u00132\u0006\u00102\u001a\u00020\u00112\u0006\u00103\u001a\u00020\u0005H\u0002J@\u00104\u001a\u00020 2\u0006\u0010-\u001a\u00020\u00132\u0006\u0010.\u001a\u00020\u00132\u0006\u00100\u001a\u00020\u00132\u0006\u00101\u001a\u00020\u00132\u0006\u00105\u001a\u00020\u00132\u0006\u00102\u001a\u00020\u00112\u0006\u0010\u001e\u001a\u00020\u0013H\u0002J\u001c\u00106\u001a\u00020\u0013*\u00020!2\u0006\u00107\u001a\u00020\u00132\u0006\u00108\u001a\u00020\u0005H\u0002J\u0018\u00109\u001a\u00020 2\u0006\u00107\u001a\u00020\u00132\u0006\u0010:\u001a\u00020\u0013H\u0002J \u0010;\u001a\u00020\u000f2\u0006\u00107\u001a\u00020\u00132\u0006\u0010:\u001a\u00020\u00132\u0006\u0010<\u001a\u00020\u0001H\u0002J \u0010=\u001a\u00020 2\u0006\u00107\u001a\u00020\u00132\u0006\u0010<\u001a\u00020\u00012\u0006\u0010:\u001a\u00020\u0013H\u0002J\u0018\u0010>\u001a\u00020 2\u0006\u0010?\u001a\u00020\u00132\u0006\u0010@\u001a\u00020\u0013H\u0002J\u001c\u0010A\u001a\u00020 *\u00020!2\u0006\u00107\u001a\u00020\u00132\u0006\u0010B\u001a\u00020\u0013H\u0002J\f\u0010C\u001a\u00020 *\u00020!H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000f0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0013@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001e\u0010\u0019\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0013@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0018R\u000e\u0010\u001b\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006D"}, d2 = {"Landroidx/compose/foundation/lazy/layout/CacheWindowLogic;", "", "cacheWindow", "Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;", "enableInitialPrefetch", "", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;Z)V", "prefetchWindowHandles", "Landroidx/collection/MutableIntObjectMap;", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState$PrefetchHandle;", "indicesToRemove", "Landroidx/collection/MutableIntSet;", "windowCache", "Landroidx/compose/foundation/lazy/layout/CachedItem;", "previousPassDelta", "", "previousPassItemCount", "", "hasUpdatedVisibleItemsOnce", "value", "prefetchWindowStartLine", "getPrefetchWindowStartLine$foundation", "()I", "prefetchWindowEndLine", "getPrefetchWindowEndLine$foundation", "prefetchWindowStartExtraSpace", "prefetchWindowEndExtraSpace", "shouldRefillWindow", "itemsCount", "onScroll", "", "Landroidx/compose/foundation/lazy/layout/CacheWindowScope;", "delta", "traceWindowInfo", "onVisibleItemsUpdated", "hasValidBounds", "fillCacheWindowBackward", "fillCacheWindowForward", "refillWindow", "refillForward", "onDatasetChangedSize", "resetStrategy", "onPrefetchForward", "visibleWindowStart", "visibleWindowEnd", "prefetchForwardWindow", "mainAxisExtraSpaceEnd", "mainAxisExtraSpaceStart", "scrollDelta", "applyForwardPrefetch", "onKeepAround", "keepAroundWindow", "getItemSizeOrPrefetch", FirebaseAnalytics.Param.INDEX, "isUrgent", "cachePrefetchedItem", "size", "updateOrCreateCachedItem", "key", "cacheVisibleItemsInfo", "removeOutOfBoundsItems", "startLine", "endLine", "onItemPrefetched", "itemSize", "scheduleNextItemIfNeeded", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class CacheWindowLogic {
     public static final int $stable = 8;
     private final LazyLayoutCacheWindow cacheWindow;
+    private final boolean enableInitialPrefetch;
     private boolean hasUpdatedVisibleItemsOnce;
+    private final MutableIntSet indicesToRemove;
     private int itemsCount;
     private int prefetchWindowEndExtraSpace;
+    private int prefetchWindowEndLine;
+    private final MutableIntObjectMap<List<LazyLayoutPrefetchState.PrefetchHandle>> prefetchWindowHandles;
     private int prefetchWindowStartExtraSpace;
+    private int prefetchWindowStartLine;
     private float previousPassDelta;
+    private int previousPassItemCount;
     private boolean shouldRefillWindow;
-    private final MutableIntObjectMap<List<LazyLayoutPrefetchState.PrefetchHandle>> prefetchWindowHandles = IntObjectMapKt.mutableIntObjectMapOf();
-    private final MutableIntSet indicesToRemove = IntSetKt.mutableIntSetOf();
-    private final MutableIntIntMap windowCache = IntIntMapKt.mutableIntIntMapOf();
-    private int previousPassItemCount = -1;
-    private int prefetchWindowStartLine = Integer.MAX_VALUE;
-    private int prefetchWindowEndLine = Integer.MIN_VALUE;
+    private final MutableIntObjectMap<CachedItem> windowCache;
 
-    public CacheWindowLogic(LazyLayoutCacheWindow lazyLayoutCacheWindow) {
+    public CacheWindowLogic(LazyLayoutCacheWindow lazyLayoutCacheWindow, boolean z) {
         this.cacheWindow = lazyLayoutCacheWindow;
+        this.enableInitialPrefetch = z;
+        this.prefetchWindowHandles = IntObjectMapKt.mutableIntObjectMapOf();
+        this.indicesToRemove = IntSetKt.mutableIntSetOf();
+        this.windowCache = IntObjectMapKt.mutableIntObjectMapOf();
+        this.previousPassItemCount = -1;
+        this.prefetchWindowStartLine = Integer.MAX_VALUE;
+        this.prefetchWindowEndLine = Integer.MIN_VALUE;
     }
 
-    public final int getPrefetchWindowStartLine$foundation_release() {
+    public /* synthetic */ CacheWindowLogic(LazyLayoutCacheWindow lazyLayoutCacheWindow, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(lazyLayoutCacheWindow, (i & 2) != 0 ? true : z);
+    }
+
+    public final int getPrefetchWindowStartLine$foundation() {
         return this.prefetchWindowStartLine;
     }
 
-    public final int getPrefetchWindowEndLine$foundation_release() {
+    public final int getPrefetchWindowEndLine$foundation() {
         return this.prefetchWindowEndLine;
     }
 
@@ -63,7 +75,7 @@ public abstract class CacheWindowLogic {
     }
 
     public final void onVisibleItemsUpdated(CacheWindowScope cacheWindowScope) {
-        if (!this.hasUpdatedVisibleItemsOnce) {
+        if (!this.hasUpdatedVisibleItemsOnce && this.enableInitialPrefetch) {
             LazyLayoutCacheWindow lazyLayoutCacheWindow = this.cacheWindow;
             Density density = cacheWindowScope.getDensity();
             if ((density != null ? lazyLayoutCacheWindow.calculateAheadWindow(density, cacheWindowScope.getMainAxisViewportSize()) : 0) != 0) {
@@ -73,12 +85,7 @@ public abstract class CacheWindowLogic {
         }
         int i = this.previousPassItemCount;
         if (i != -1 && i != cacheWindowScope.getTotalItemsCount()) {
-            this.shouldRefillWindow = true;
-            this.prefetchWindowStartLine = RangesKt.coerceAtLeast(this.prefetchWindowStartLine, 0);
-            int lastLineIndex = cacheWindowScope.getLastLineIndex();
-            if (lastLineIndex != -1) {
-                this.prefetchWindowEndLine = RangesKt.coerceAtMost(this.prefetchWindowEndLine, lastLineIndex);
-            }
+            onDatasetChangedSize(cacheWindowScope);
         }
         this.itemsCount = cacheWindowScope.getTotalItemsCount();
         if (!cacheWindowScope.getHasVisibleItems()) {
@@ -86,7 +93,12 @@ public abstract class CacheWindowLogic {
         } else {
             int visibleLineCount = cacheWindowScope.getVisibleLineCount();
             for (int i2 = 0; i2 < visibleLineCount; i2++) {
-                cacheVisibleItemsInfo(cacheWindowScope.getVisibleItemLine(i2), cacheWindowScope.getVisibleItemSize(i2));
+                int visibleItemLine = cacheWindowScope.getVisibleItemLine(i2);
+                Object visibleLineKey = cacheWindowScope.getVisibleLineKey(i2);
+                int visibleItemSize = cacheWindowScope.getVisibleItemSize(i2);
+                if (visibleItemLine != -1) {
+                    cacheVisibleItemsInfo(visibleItemLine, visibleLineKey, visibleItemSize);
+                }
             }
             if (this.shouldRefillWindow) {
                 refillWindow(cacheWindowScope, this.previousPassDelta <= 0.0f);
@@ -127,6 +139,20 @@ public abstract class CacheWindowLogic {
             LazyLayoutCacheWindow lazyLayoutCacheWindow = this.cacheWindow;
             Density density = cacheWindowScope.getDensity();
             onPrefetchForward(cacheWindowScope, cacheWindowScope.getFirstVisibleLineIndex(), cacheWindowScope.getLastVisibleLineIndex(), density != null ? lazyLayoutCacheWindow.calculateAheadWindow(density, mainAxisViewportSize) : 0, cacheWindowScope.getMainAxisExtraSpaceEnd(), cacheWindowScope.getMainAxisExtraSpaceStart(), 0.0f, z);
+        }
+    }
+
+    private final void onDatasetChangedSize(CacheWindowScope cacheWindowScope) {
+        this.shouldRefillWindow = true;
+        this.prefetchWindowStartLine = RangesKt.coerceAtLeast(this.prefetchWindowStartLine, 0);
+        int lastLineIndex = cacheWindowScope.getLastLineIndex();
+        if (lastLineIndex != -1) {
+            this.prefetchWindowEndLine = RangesKt.coerceAtMost(this.prefetchWindowEndLine, lastLineIndex);
+        }
+        if (this.previousPassDelta <= 0.0f) {
+            removeOutOfBoundsItems(cacheWindowScope.getLastVisibleLineIndex(), this.itemsCount - 1);
+        } else {
+            removeOutOfBoundsItems(0, cacheWindowScope.getFirstVisibleLineIndex());
         }
     }
 
@@ -180,10 +206,10 @@ public abstract class CacheWindowLogic {
                 this.prefetchWindowEndExtraSpace = i3 - i4;
                 this.prefetchWindowEndLine = i2;
             } else {
-                this.prefetchWindowEndExtraSpace += MathKt.roundToInt(Math.abs(f));
+                this.prefetchWindowEndExtraSpace = RangesKt.coerceAtMost(this.prefetchWindowEndExtraSpace + MathKt.roundToInt(Math.abs(f)), i3 - i4);
             }
             while (this.prefetchWindowEndExtraSpace > 0 && cacheWindowScope.getLastIndexInLine(this.prefetchWindowEndLine) != -1 && cacheWindowScope.getLastIndexInLine(this.prefetchWindowEndLine) < this.itemsCount - 1) {
-                int itemSizeOrPrefetch = getItemSizeOrPrefetch(cacheWindowScope, this.prefetchWindowEndLine + 1, this.prefetchWindowEndLine + 1 == i2 + 1 && Math.abs(f) >= ((float) i4));
+                int itemSizeOrPrefetch = getItemSizeOrPrefetch(cacheWindowScope, this.prefetchWindowEndLine + 1, this.prefetchWindowEndLine + 1 == i2 + 1 && f != 0.0f && Math.abs(f) >= ((float) i4));
                 if (itemSizeOrPrefetch == -1) {
                     return;
                 }
@@ -196,10 +222,10 @@ public abstract class CacheWindowLogic {
             this.prefetchWindowStartExtraSpace = i3 - i5;
             this.prefetchWindowStartLine = i;
         } else {
-            this.prefetchWindowStartExtraSpace += MathKt.roundToInt(Math.abs(f));
+            this.prefetchWindowStartExtraSpace = RangesKt.coerceAtMost(this.prefetchWindowStartExtraSpace + MathKt.roundToInt(Math.abs(f)), i3 - i5);
         }
         while (this.prefetchWindowStartExtraSpace > 0 && (i6 = this.prefetchWindowStartLine) > 0) {
-            int itemSizeOrPrefetch2 = getItemSizeOrPrefetch(cacheWindowScope, this.prefetchWindowStartLine - 1, i6 + (-1) == i + (-1) && Math.abs(f) >= ((float) i5));
+            int itemSizeOrPrefetch2 = getItemSizeOrPrefetch(cacheWindowScope, this.prefetchWindowStartLine - 1, i6 + (-1) == i + (-1) && f != 0.0f && Math.abs(f) >= ((float) i5));
             if (itemSizeOrPrefetch2 == -1) {
                 return;
             }
@@ -215,8 +241,10 @@ public abstract class CacheWindowLogic {
             this.prefetchWindowStartExtraSpace = i5 - i4;
             this.prefetchWindowStartLine = i;
             while (this.prefetchWindowStartExtraSpace > 0 && (i8 = this.prefetchWindowStartLine) > 0 && this.windowCache.containsKey(i8 - 1)) {
+                CachedItem cachedItem = this.windowCache.get(this.prefetchWindowStartLine - 1);
+                Intrinsics.checkNotNull(cachedItem);
                 this.prefetchWindowStartLine--;
-                this.prefetchWindowStartExtraSpace -= this.windowCache.get(this.prefetchWindowStartLine - 1);
+                this.prefetchWindowStartExtraSpace -= cachedItem.getMainAxisSize();
             }
             removeOutOfBoundsItems(0, this.prefetchWindowStartLine - 1);
             return;
@@ -224,9 +252,11 @@ public abstract class CacheWindowLogic {
         this.prefetchWindowEndExtraSpace = i5 - i3;
         this.prefetchWindowEndLine = i2;
         while (this.prefetchWindowEndExtraSpace > 0 && (i7 = this.prefetchWindowEndLine) < i6 - 1 && this.windowCache.containsKey(i7 + 1)) {
-            int i9 = this.windowCache.get(this.prefetchWindowEndLine + 1);
+            CachedItem cachedItem2 = this.windowCache.get(this.prefetchWindowEndLine + 1);
+            Intrinsics.checkNotNull(cachedItem2);
+            int mainAxisSize = cachedItem2.getMainAxisSize();
             this.prefetchWindowEndLine++;
-            this.prefetchWindowEndExtraSpace -= i9;
+            this.prefetchWindowEndExtraSpace -= mainAxisSize;
         }
         removeOutOfBoundsItems(this.prefetchWindowEndLine + 1, i6 - 1);
     }
@@ -235,7 +265,9 @@ public abstract class CacheWindowLogic {
         List<LazyLayoutPrefetchState.PrefetchHandle> list;
         List<LazyLayoutPrefetchState.PrefetchHandle> list2;
         if (this.windowCache.containsKey(i)) {
-            return this.windowCache.get(i);
+            CachedItem cachedItem = this.windowCache.get(i);
+            Intrinsics.checkNotNull(cachedItem);
+            return cachedItem.getMainAxisSize();
         }
         int i2 = 0;
         if (this.prefetchWindowHandles.containsKey(i)) {
@@ -251,9 +283,9 @@ public abstract class CacheWindowLogic {
         this.prefetchWindowHandles.set(i, cacheWindowScope.schedulePrefetch(i, new Function2() { // from class: androidx.compose.foundation.lazy.layout.CacheWindowLogic$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit itemSizeOrPrefetch$lambda$8;
-                itemSizeOrPrefetch$lambda$8 = CacheWindowLogic.getItemSizeOrPrefetch$lambda$8(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
-                return itemSizeOrPrefetch$lambda$8;
+                Unit itemSizeOrPrefetch$lambda$4;
+                itemSizeOrPrefetch$lambda$4 = CacheWindowLogic.getItemSizeOrPrefetch$lambda$4(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
+                return itemSizeOrPrefetch$lambda$4;
             }
         }));
         if (z && (list = this.prefetchWindowHandles.get(i)) != null) {
@@ -267,13 +299,13 @@ public abstract class CacheWindowLogic {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit getItemSizeOrPrefetch$lambda$8(CacheWindowLogic cacheWindowLogic, CacheWindowScope cacheWindowScope, int i, int i2) {
+    public static final Unit getItemSizeOrPrefetch$lambda$4(CacheWindowLogic cacheWindowLogic, CacheWindowScope cacheWindowScope, int i, int i2) {
         cacheWindowLogic.onItemPrefetched(cacheWindowScope, i, i2);
         return Unit.INSTANCE;
     }
 
     private final void cachePrefetchedItem(int i, int i2) {
-        this.windowCache.set(i, i2);
+        this.windowCache.set(i, updateOrCreateCachedItem(i, i2, CachedItem.NoKey));
         if (i > this.prefetchWindowEndLine) {
             this.prefetchWindowEndLine = i;
             this.prefetchWindowEndExtraSpace -= i2;
@@ -283,11 +315,29 @@ public abstract class CacheWindowLogic {
         }
     }
 
-    private final void cacheVisibleItemsInfo(int i, int i2) {
-        if (this.windowCache.containsKey(i) && this.windowCache.get(i) != i2) {
-            this.shouldRefillWindow = true;
+    private final CachedItem updateOrCreateCachedItem(int i, int i2, Object obj) {
+        CachedItem cachedItem = this.windowCache.get(i);
+        if (cachedItem != null) {
+            cachedItem.setMainAxisSize(i2);
+            cachedItem.setKey(obj);
+            return cachedItem;
         }
-        this.windowCache.set(i, i2);
+        return new CachedItem(CachedItem.NoKey, i2);
+    }
+
+    private final void cacheVisibleItemsInfo(int i, Object obj, int i2) {
+        if (this.windowCache.containsKey(i)) {
+            CachedItem cachedItem = this.windowCache.get(i);
+            Intrinsics.checkNotNull(cachedItem);
+            int mainAxisSize = cachedItem.getMainAxisSize();
+            CachedItem cachedItem2 = this.windowCache.get(i);
+            Intrinsics.checkNotNull(cachedItem2);
+            Object key = cachedItem2.getKey();
+            if (mainAxisSize != i2 || !Intrinsics.areEqual(key, obj)) {
+                this.shouldRefillWindow = true;
+            }
+        }
+        this.windowCache.set(i, updateOrCreateCachedItem(i, i2, obj));
         this.prefetchWindowStartLine = Math.min(this.prefetchWindowStartLine, i);
         this.prefetchWindowEndLine = Math.max(this.prefetchWindowEndLine, i);
         List<LazyLayoutPrefetchState.PrefetchHandle> remove = this.prefetchWindowHandles.remove(i);
@@ -366,9 +416,9 @@ public abstract class CacheWindowLogic {
             j2 = 128;
             j3 = 255;
         }
-        MutableIntIntMap mutableIntIntMap = this.windowCache;
-        int[] iArr2 = mutableIntIntMap.keys;
-        long[] jArr2 = mutableIntIntMap.metadata;
+        MutableIntObjectMap<CachedItem> mutableIntObjectMap2 = this.windowCache;
+        int[] iArr2 = mutableIntObjectMap2.keys;
+        long[] jArr2 = mutableIntObjectMap2.metadata;
         int length2 = jArr2.length - 2;
         if (length2 >= 0) {
             int i8 = 0;
@@ -454,15 +504,15 @@ public abstract class CacheWindowLogic {
         this.prefetchWindowHandles.set(i, cacheWindowScope.schedulePrefetch(i, new Function2() { // from class: androidx.compose.foundation.lazy.layout.CacheWindowLogic$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit scheduleNextItemIfNeeded$lambda$15;
-                scheduleNextItemIfNeeded$lambda$15 = CacheWindowLogic.scheduleNextItemIfNeeded$lambda$15(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
-                return scheduleNextItemIfNeeded$lambda$15;
+                Unit scheduleNextItemIfNeeded$lambda$1;
+                scheduleNextItemIfNeeded$lambda$1 = CacheWindowLogic.scheduleNextItemIfNeeded$lambda$1(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
+                return scheduleNextItemIfNeeded$lambda$1;
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit scheduleNextItemIfNeeded$lambda$15(CacheWindowLogic cacheWindowLogic, CacheWindowScope cacheWindowScope, int i, int i2) {
+    public static final Unit scheduleNextItemIfNeeded$lambda$1(CacheWindowLogic cacheWindowLogic, CacheWindowScope cacheWindowScope, int i, int i2) {
         cacheWindowLogic.onItemPrefetched(cacheWindowScope, i, i2);
         return Unit.INSTANCE;
     }
