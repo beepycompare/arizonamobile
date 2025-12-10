@@ -8,7 +8,7 @@ public final class zzhf extends zzmb implements zznn {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public /* synthetic */ zzhf(byte[] bArr) {
-        super(zzhg.zzn());
+        super(zzhg.zzh);
     }
 
     public final zzhf zza(int i) {
