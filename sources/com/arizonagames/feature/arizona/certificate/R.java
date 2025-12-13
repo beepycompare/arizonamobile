@@ -4,17 +4,17 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int certificate_ic_rubble = 0x7f08056d;
-        public static int sertificate_ic_anim = 0x7f080d46;
-        public static int sertificate_ic_armor = 0x7f080d47;
-        public static int sertificate_ic_caliper = 0x7f080d48;
-        public static int sertificate_ic_container = 0x7f080d49;
-        public static int sertificate_ic_engine = 0x7f080d4a;
-        public static int sertificate_ic_gov = 0x7f080d4b;
-        public static int sertificate_ic_hp = 0x7f080d4c;
-        public static int sertificate_ic_safe = 0x7f080d4d;
-        public static int sertificate_ic_set = 0x7f080d4e;
-        public static int sertificate_ic_speed = 0x7f080d4f;
+        public static int certificate_ic_rubble = 0x7f08057a;
+        public static int sertificate_ic_anim = 0x7f080d53;
+        public static int sertificate_ic_armor = 0x7f080d54;
+        public static int sertificate_ic_caliper = 0x7f080d55;
+        public static int sertificate_ic_container = 0x7f080d56;
+        public static int sertificate_ic_engine = 0x7f080d57;
+        public static int sertificate_ic_gov = 0x7f080d58;
+        public static int sertificate_ic_hp = 0x7f080d59;
+        public static int sertificate_ic_safe = 0x7f080d5a;
+        public static int sertificate_ic_set = 0x7f080d5b;
+        public static int sertificate_ic_speed = 0x7f080d5c;
 
         private drawable() {
         }

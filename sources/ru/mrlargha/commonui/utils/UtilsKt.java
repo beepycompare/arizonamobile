@@ -876,22 +876,49 @@ public final class UtilsKt {
         Intrinsics.checkNotNullParameter(action, "action");
         int hashCode = action.hashCode();
         if (hashCode != -690213213) {
-            if (hashCode != -689618847) {
+            if (hashCode == -689618847) {
+                if (!action.equals("first_topup")) {
+                    return;
+                } else {
+                    str = ExifInterface.GPS_MEASUREMENT_2D;
+                }
+            } else {
                 if (hashCode != 443600344 || !action.equals("third_topup")) {
                     return;
                 }
                 str = ExifInterface.GPS_MEASUREMENT_3D;
-            } else if (!action.equals("first_topup")) {
-                return;
-            } else {
-                str = ExifInterface.GPS_MEASUREMENT_2D;
             }
         } else if (!action.equals("register")) {
             return;
         } else {
             str = "1";
         }
-        client.newCall(new Request.Builder().url(new HttpUrl.Builder().scheme(Constants.SCHEME).host("ad.admitad.com").addPathSegment("r").addQueryParameter("campaign_code", "cbb5e52c77").addQueryParameter("pb", "1").addQueryParameter("pk", "8E2e5c2c32A1BcCF695582A73c8a1f44").addQueryParameter("ac", str).addQueryParameter("uid", "").addQueryParameter("oid", "").addQueryParameter("tc", "1").build()).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.UtilsKt$sendAdmitadAnalytics$1
+        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
+        if (string == null) {
+            string = "";
+        }
+        ArrayList arrayList = new ArrayList();
+        for (Object obj : StringsKt.split$default((CharSequence) string, new String[]{"&"}, false, 0, 6, (Object) null)) {
+            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
+                arrayList.add(obj);
+            }
+        }
+        ArrayList<String> arrayList2 = arrayList;
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList2, 10)), 16));
+        for (String str2 : arrayList2) {
+            List split$default = StringsKt.split$default((CharSequence) str2, new String[]{"="}, false, 0, 6, (Object) null);
+            Pair pair = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
+            linkedHashMap.put(pair.getFirst(), pair.getSecond());
+        }
+        String str3 = (String) linkedHashMap.get("admitad_uid");
+        if (str3 == null) {
+            str3 = "unknown_uid";
+        }
+        String str4 = (String) linkedHashMap.get("utm_campaign");
+        if (str4 == null) {
+            str4 = "unknown_campaign";
+        }
+        client.newCall(new Request.Builder().url(new HttpUrl.Builder().scheme(Constants.SCHEME).host("ad.admitad.com").addPathSegment("r").addQueryParameter("campaign_code", str4).addQueryParameter("pb", "1").addQueryParameter("pk", "8E2e5c2c32A1BcCF695582A73c8a1f44").addQueryParameter("ac", str).addQueryParameter("uid", str3).addQueryParameter("oid", "").addQueryParameter("tc", "1").build()).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.UtilsKt$sendAdmitadAnalytics$1
             @Override // okhttp3.Callback
             public void onFailure(okhttp3.Call call, IOException e) {
                 Intrinsics.checkNotNullParameter(call, "call");
@@ -911,26 +938,67 @@ public final class UtilsKt {
 
     public static final void sendAdvertiseAnalytics(Context context, String action) {
         String str;
+        String str2;
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
         int hashCode = action.hashCode();
-        if (hashCode != -689618847) {
-            if (hashCode != 443600344) {
-                if (hashCode != 2006065723 || !action.equals("effective_register")) {
+        if (hashCode != -690213213) {
+            if (hashCode == -689618847) {
+                if (!action.equals("first_topup")) {
+                    return;
+                } else {
+                    str = ExifInterface.GPS_MEASUREMENT_2D;
+                }
+            } else {
+                if (hashCode != 443600344 || !action.equals("third_topup")) {
                     return;
                 }
-                str = "2c0713f72875426b";
-            } else if (!action.equals("third_topup")) {
-                return;
+                str = ExifInterface.GPS_MEASUREMENT_3D;
+            }
+        } else if (!action.equals("register")) {
+            return;
+        } else {
+            str = "1";
+        }
+        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
+        String str3 = string != null ? string : "";
+        ArrayList arrayList = new ArrayList();
+        for (Object obj : StringsKt.split$default((CharSequence) str3, new String[]{"&"}, false, 0, 6, (Object) null)) {
+            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
+                arrayList.add(obj);
+            }
+        }
+        ArrayList<String> arrayList2 = arrayList;
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList2, 10)), 16));
+        for (String str4 : arrayList2) {
+            List split$default = StringsKt.split$default((CharSequence) str4, new String[]{"="}, false, 0, 6, (Object) null);
+            Pair pair = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
+            linkedHashMap.put(pair.getFirst(), pair.getSecond());
+        }
+        String str5 = (String) linkedHashMap.get("uid");
+        if (str5 == null) {
+            str5 = "unknown_uid";
+        }
+        int hashCode2 = action.hashCode();
+        if (hashCode2 != -689618847) {
+            if (hashCode2 == 443600344) {
+                if (!action.equals("third_topup")) {
+                    return;
+                } else {
+                    str2 = "2c0713f72a75426b";
+                }
             } else {
-                str = "2c0713f72a75426b";
+                if (hashCode2 != 2006065723 || !action.equals("effective_register")) {
+                    return;
+                }
+                str2 = "2c0713f72875426b";
             }
         } else if (!action.equals("first_topup")) {
             return;
         } else {
-            str = "2c0713f72b75426b";
+            str2 = "2c0713f72b75426b";
         }
-        client.newCall(new Request.Builder().url(new HttpUrl.Builder().scheme(Constants.SCHEME).host("advertiseru.net").addPathSegment("postback").addPathSegment(str).addQueryParameter("token", "0b31d2ebdf374ea02f71aa271b35c8d0").addQueryParameter("uid", "").build()).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.UtilsKt$sendAdvertiseAnalytics$1
+        client.newCall(new Request.Builder().url(new HttpUrl.Builder().scheme(Constants.SCHEME).host("advertiseru.net").addPathSegment("postback").addPathSegment(str2).addQueryParameter("token", "0b31d2ebdf374ea02f71aa271b35c8d0").addQueryParameter("uid", str5).addQueryParameter("ac", str).build()).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.UtilsKt$sendAdvertiseAnalytics$1
             @Override // okhttp3.Callback
             public void onFailure(okhttp3.Call call, IOException e) {
                 Intrinsics.checkNotNullParameter(call, "call");

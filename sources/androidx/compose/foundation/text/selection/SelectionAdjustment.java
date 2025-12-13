@@ -86,7 +86,7 @@ public interface SelectionAdjustment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final Selection Word$lambda$0(SelectionLayout selectionLayout) {
-            return SelectionAdjustmentKt.adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Word$1$1
+            return SelectionAdjustmentKt.access$adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Word$1$1
                 @Override // androidx.compose.foundation.text.selection.BoundaryFunction
                 /* renamed from: getBoundary-fzxv0v0 */
                 public final long mo1827getBoundaryfzxv0v0(SelectableInfo selectableInfo, int i) {
@@ -101,7 +101,7 @@ public interface SelectionAdjustment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final Selection Paragraph$lambda$0(SelectionLayout selectionLayout) {
-            return SelectionAdjustmentKt.adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Paragraph$1$1
+            return SelectionAdjustmentKt.access$adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Paragraph$1$1
                 @Override // androidx.compose.foundation.text.selection.BoundaryFunction
                 /* renamed from: getBoundary-fzxv0v0 */
                 public final long mo1827getBoundaryfzxv0v0(SelectableInfo selectableInfo, int i) {
@@ -117,7 +117,7 @@ public interface SelectionAdjustment {
         /* JADX INFO: Access modifiers changed from: private */
         public static final Selection CharacterWithWordAccelerate$lambda$0(SelectionLayout selectionLayout) {
             Selection.AnchorInfo end;
-            Selection.AnchorInfo updateSelectionBoundary;
+            Selection.AnchorInfo access$updateSelectionBoundary;
             Selection.AnchorInfo start;
             Selection.AnchorInfo anchorInfo;
             Selection previousSelection = selectionLayout.getPreviousSelection();
@@ -126,16 +126,16 @@ public interface SelectionAdjustment {
             }
             if (selectionLayout.isStartHandle()) {
                 end = previousSelection.getStart();
-                updateSelectionBoundary = SelectionAdjustmentKt.updateSelectionBoundary(selectionLayout, selectionLayout.getStartInfo(), end);
+                access$updateSelectionBoundary = SelectionAdjustmentKt.access$updateSelectionBoundary(selectionLayout, selectionLayout.getStartInfo(), end);
                 anchorInfo = previousSelection.getEnd();
-                start = updateSelectionBoundary;
+                start = access$updateSelectionBoundary;
             } else {
                 end = previousSelection.getEnd();
-                updateSelectionBoundary = SelectionAdjustmentKt.updateSelectionBoundary(selectionLayout, selectionLayout.getEndInfo(), end);
+                access$updateSelectionBoundary = SelectionAdjustmentKt.access$updateSelectionBoundary(selectionLayout, selectionLayout.getEndInfo(), end);
                 start = previousSelection.getStart();
-                anchorInfo = updateSelectionBoundary;
+                anchorInfo = access$updateSelectionBoundary;
             }
-            if (Intrinsics.areEqual(updateSelectionBoundary, end)) {
+            if (Intrinsics.areEqual(access$updateSelectionBoundary, end)) {
                 return previousSelection;
             }
             return SelectionAdjustmentKt.ensureAtLeastOneChar(new Selection(start, anchorInfo, selectionLayout.getCrossStatus() == CrossStatus.CROSSED || (selectionLayout.getCrossStatus() == CrossStatus.COLLAPSED && start.getOffset() > anchorInfo.getOffset())), selectionLayout);

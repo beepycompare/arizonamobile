@@ -32,9 +32,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class drawable {
-        public static int compat_splash_screen = 0x7f08059e;
-        public static int compat_splash_screen_no_icon_background = 0x7f08059f;
-        public static int icon_background = 0x7f080a91;
+        public static int compat_splash_screen = 0x7f0805ab;
+        public static int compat_splash_screen_no_icon_background = 0x7f0805ac;
+        public static int icon_background = 0x7f080a9e;
 
         private drawable() {
         }

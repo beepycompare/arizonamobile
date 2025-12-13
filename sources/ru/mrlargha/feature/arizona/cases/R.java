@@ -16,24 +16,24 @@ public final class R {
         public static int arizona_cases_prize_item_bg = 0x7f080324;
         public static int arizona_cases_prize_item_bg_pattern = 0x7f080325;
         public static int arizona_cases_prize_select_item_bg_image = 0x7f080326;
-        public static int cases_arrow_icon = 0x7f080541;
-        public static int cases_benefit_bg = 0x7f080542;
-        public static int cases_btn_close_bg = 0x7f080543;
-        public static int cases_close_icon = 0x7f080544;
-        public static int cases_custom_scrollbar_thumb = 0x7f080545;
-        public static int cases_custom_scrollbar_track = 0x7f080546;
-        public static int cases_info_icon = 0x7f080548;
-        public static int cases_mark_ckeck_icon = 0x7f080549;
-        public static int cases_new_bg = 0x7f08054a;
-        public static int cases_prize_select_item_bg = 0x7f08054b;
-        public static int cases_prizes_arrow_down_up_icon = 0x7f08054c;
-        public static int cases_prizes_page_bg = 0x7f08054d;
-        public static int cases_select_x = 0x7f08054e;
-        public static int cases_top_bar_gold_box_bg = 0x7f08054f;
-        public static int cases_top_bar_linear_progress = 0x7f080550;
-        public static int cases_top_bg = 0x7f080551;
-        public static int cases_unselect_x = 0x7f080552;
-        public static int done_ic = 0x7f0806f7;
+        public static int cases_arrow_icon = 0x7f08054e;
+        public static int cases_benefit_bg = 0x7f08054f;
+        public static int cases_btn_close_bg = 0x7f080550;
+        public static int cases_close_icon = 0x7f080551;
+        public static int cases_custom_scrollbar_thumb = 0x7f080552;
+        public static int cases_custom_scrollbar_track = 0x7f080553;
+        public static int cases_info_icon = 0x7f080555;
+        public static int cases_mark_ckeck_icon = 0x7f080556;
+        public static int cases_new_bg = 0x7f080557;
+        public static int cases_prize_select_item_bg = 0x7f080558;
+        public static int cases_prizes_arrow_down_up_icon = 0x7f080559;
+        public static int cases_prizes_page_bg = 0x7f08055a;
+        public static int cases_select_x = 0x7f08055b;
+        public static int cases_top_bar_gold_box_bg = 0x7f08055c;
+        public static int cases_top_bar_linear_progress = 0x7f08055d;
+        public static int cases_top_bg = 0x7f08055e;
+        public static int cases_unselect_x = 0x7f08055f;
+        public static int done_ic = 0x7f080704;
 
         private drawable() {
         }

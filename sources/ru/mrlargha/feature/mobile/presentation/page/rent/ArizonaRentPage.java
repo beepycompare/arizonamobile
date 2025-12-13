@@ -499,12 +499,12 @@ public final class ArizonaRentPage extends MobilePage {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void getAds() {
-        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), null, null, new ArizonaRentPage$getAds$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$getAds$1(this, null), 2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkUpdate() {
-        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), null, null, new ArizonaRentPage$checkUpdate$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.retrofitClient.getRetrofit().getScope(), Dispatchers.getMain(), null, new ArizonaRentPage$checkUpdate$1(this, null), 2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

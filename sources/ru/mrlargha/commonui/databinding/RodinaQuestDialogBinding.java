@@ -5,19 +5,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes3.dex */
 public final class RodinaQuestDialogBinding implements ViewBinding {
     public final Guideline guideline28;
     public final Guideline guidelineEnd;
     public final Guideline guidelineStart;
-    public final AppCompatImageView imageView26;
+    public final CustomCardView imageView26;
     public final LinearLayout linearLayout;
     public final RecyclerView rodinaQuestDialogRecycler;
     public final ConstraintLayout rodinaQuestDialogRoot;
@@ -26,7 +26,7 @@ public final class RodinaQuestDialogBinding implements ViewBinding {
     public final TextView rodinaQuestTitle;
     private final ConstraintLayout rootView;
 
-    private RodinaQuestDialogBinding(ConstraintLayout rootView, Guideline guideline28, Guideline guidelineEnd, Guideline guidelineStart, AppCompatImageView imageView26, LinearLayout linearLayout, RecyclerView rodinaQuestDialogRecycler, ConstraintLayout rodinaQuestDialogRoot, TextView rodinaQuestNpcName, TextView rodinaQuestNpcText, TextView rodinaQuestTitle) {
+    private RodinaQuestDialogBinding(ConstraintLayout rootView, Guideline guideline28, Guideline guidelineEnd, Guideline guidelineStart, CustomCardView imageView26, LinearLayout linearLayout, RecyclerView rodinaQuestDialogRecycler, ConstraintLayout rodinaQuestDialogRoot, TextView rodinaQuestNpcName, TextView rodinaQuestNpcText, TextView rodinaQuestTitle) {
         this.rootView = rootView;
         this.guideline28 = guideline28;
         this.guidelineEnd = guidelineEnd;
@@ -68,8 +68,8 @@ public final class RodinaQuestDialogBinding implements ViewBinding {
                 Guideline guideline3 = (Guideline) ViewBindings.findChildViewById(rootView, i);
                 if (guideline3 != null) {
                     i = R.id.imageView26;
-                    AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
-                    if (appCompatImageView != null) {
+                    CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                    if (customCardView != null) {
                         i = R.id.linearLayout;
                         LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                         if (linearLayout != null) {
@@ -86,7 +86,7 @@ public final class RodinaQuestDialogBinding implements ViewBinding {
                                         i = R.id.rodina_quest_title;
                                         TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                         if (textView3 != null) {
-                                            return new RodinaQuestDialogBinding(constraintLayout, guideline, guideline2, guideline3, appCompatImageView, linearLayout, recyclerView, constraintLayout, textView, textView2, textView3);
+                                            return new RodinaQuestDialogBinding(constraintLayout, guideline, guideline2, guideline3, customCardView, linearLayout, recyclerView, constraintLayout, textView, textView2, textView3);
                                         }
                                     }
                                 }

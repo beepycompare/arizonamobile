@@ -97,6 +97,7 @@ import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.radar.RadarScr
 import ru.mrlargha.commonui.elements.hud.presentation.models.GroupItem;
 import ru.mrlargha.commonui.elements.hud.presentation.models.ProgressBarModel;
 import ru.mrlargha.commonui.elements.hud.presentation.models.ServerInfoItem;
+import ru.mrlargha.commonui.elements.hud.presentation.models.SharedPreferenceKeys;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
@@ -1154,7 +1155,7 @@ public final class Hud extends SAMPUIElement {
     private final void setServerID(ServerInfoItem serverInfoItem) {
         TokenManagerKt.setServerId(serverInfoItem.getServer());
         TokenManagerKt.set_token(serverInfoItem.getToken());
-        this.sharedPref.edit().putInt("server_id", serverInfoItem.getServer()).putString("api_token", serverInfoItem.getToken()).apply();
+        this.sharedPref.edit().putInt(SharedPreferenceKeys.SERVER_ID.getKeyName(), serverInfoItem.getServer()).putString(SharedPreferenceKeys.API_TOKEN.getKeyName(), serverInfoItem.getToken()).putInt(SharedPreferenceKeys.ACCOUNT_ID.getKeyName(), serverInfoItem.getAccountId()).apply();
     }
 
     private final void setGroupButtonVisibility(int i) {

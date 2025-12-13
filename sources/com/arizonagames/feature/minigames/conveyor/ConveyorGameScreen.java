@@ -367,6 +367,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
                 float f;
                 ConveyorGameScreenBinding conveyorGameScreenBinding;
                 view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                view.setLayerType(2, null);
                 targetActivity = this.getTargetActivity();
                 float f2 = (-view.getWidth()) * 1.4f;
                 float f3 = targetActivity.getResources().getDisplayMetrics().widthPixels * 1.1f;

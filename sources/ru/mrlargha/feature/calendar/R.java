@@ -5,30 +5,30 @@ public final class R {
     /* loaded from: classes6.dex */
     public static final class drawable {
         public static int autumn_reward_bg = 0x7f080341;
-        public static int daily_reward_autumn_item_bg = 0x7f080600;
-        public static int daily_reward_bg = 0x7f080601;
-        public static int daily_reward_count_bg = 0x7f080602;
-        public static int daily_reward_get_button_available_bg = 0x7f080603;
-        public static int daily_reward_get_button_unavailable_bg = 0x7f080604;
-        public static int daily_reward_item_current_day_bg = 0x7f080605;
-        public static int daily_reward_may_item_bg = 0x7f080606;
-        public static int daily_reward_progress_bar = 0x7f080607;
-        public static int daily_reward_welcom_bg = 0x7f080608;
-        public static int daily_reward_welcom_item_bg = 0x7f080609;
-        public static int daily_rewards_award_day_container_bg = 0x7f08060a;
-        public static int daily_rewards_award_item_bg = 0x7f08060b;
-        public static int daily_rewards_black_foreground = 0x7f08060c;
-        public static int daily_rewards_common_item_bg = 0x7f08060d;
-        public static int daily_rewards_current_day_container_bg = 0x7f08060e;
-        public static int daily_rewards_day_container_bg = 0x7f08060f;
-        public static int daily_rewards_done_ic = 0x7f080610;
-        public static int daily_rewards_info_ic = 0x7f080611;
-        public static int daily_rewards_may_bg = 0x7f080612;
-        public static int daily_rewards_may_info_icon = 0x7f080613;
-        public static int daily_rewards_prize_ic = 0x7f080614;
-        public static int daily_rewards_tip_container_bg = 0x7f080615;
-        public static int daily_rewerd_item_get_bg = 0x7f080616;
-        public static int new_year_reward_bg = 0x7f080bbd;
+        public static int daily_reward_autumn_item_bg = 0x7f08060d;
+        public static int daily_reward_bg = 0x7f08060e;
+        public static int daily_reward_count_bg = 0x7f08060f;
+        public static int daily_reward_get_button_available_bg = 0x7f080610;
+        public static int daily_reward_get_button_unavailable_bg = 0x7f080611;
+        public static int daily_reward_item_current_day_bg = 0x7f080612;
+        public static int daily_reward_may_item_bg = 0x7f080613;
+        public static int daily_reward_progress_bar = 0x7f080614;
+        public static int daily_reward_welcom_bg = 0x7f080615;
+        public static int daily_reward_welcom_item_bg = 0x7f080616;
+        public static int daily_rewards_award_day_container_bg = 0x7f080617;
+        public static int daily_rewards_award_item_bg = 0x7f080618;
+        public static int daily_rewards_black_foreground = 0x7f080619;
+        public static int daily_rewards_common_item_bg = 0x7f08061a;
+        public static int daily_rewards_current_day_container_bg = 0x7f08061b;
+        public static int daily_rewards_day_container_bg = 0x7f08061c;
+        public static int daily_rewards_done_ic = 0x7f08061d;
+        public static int daily_rewards_info_ic = 0x7f08061e;
+        public static int daily_rewards_may_bg = 0x7f08061f;
+        public static int daily_rewards_may_info_icon = 0x7f080620;
+        public static int daily_rewards_prize_ic = 0x7f080621;
+        public static int daily_rewards_tip_container_bg = 0x7f080622;
+        public static int daily_rewerd_item_get_bg = 0x7f080623;
+        public static int new_year_reward_bg = 0x7f080bca;
 
         private drawable() {
         }

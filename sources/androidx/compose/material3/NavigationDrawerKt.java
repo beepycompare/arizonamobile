@@ -3591,7 +3591,7 @@ public final class NavigationDrawerKt {
     /* JADX WARN: Removed duplicated region for block: B:305:0x02ad  */
     /* JADX WARN: Removed duplicated region for block: B:307:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r2v10 */
-    /* JADX WARN: Type inference failed for: r2v5, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v5, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r2v9 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -3,6 +3,7 @@ package ru.mrlargha.feature.mobile.data.remote;
 import android.app.Activity;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.TokenManagerKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.feature.mobile.data.remote.rent.api_services.MobileRentApiService;
 /* compiled from: MobileRetrofitClient.kt */
@@ -16,7 +17,7 @@ public final class MobileRetrofitClient {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.retrofit = arizonaRetrofit;
-        this.rentApiService = (MobileRentApiService) ArizonaRetrofit.create$default(arizonaRetrofit, MobileRentApiService.class, true, null, 4, null);
+        this.rentApiService = (MobileRentApiService) ArizonaRetrofit.create$default(arizonaRetrofit, MobileRentApiService.class, TokenManagerKt.getServerId() == 0, null, 4, null);
     }
 
     public final ArizonaRetrofit getRetrofit() {

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -35,7 +34,7 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: BlueprintScreen.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u00013B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010\u0018\u001a\u00020\u0015H\u0002J\u0010\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u0015H\u0002J\u0010\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001e\u001a\u00020\u0015H\u0002J\b\u0010\u001f\u001a\u00020\u0015H\u0002J\b\u0010 \u001a\u00020\u0015H\u0002J\b\u0010!\u001a\u00020\u0015H\u0002J\b\u0010\"\u001a\u00020\u0015H\u0002J\b\u0010#\u001a\u00020\u0015H\u0002J\b\u0010$\u001a\u00020\u0015H\u0002J\b\u0010%\u001a\u00020\u0015H\u0002J&\u0010&\u001a\u00020\u0015*\u00020'2\n\b\u0002\u0010(\u001a\u0004\u0018\u00010'2\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J&\u0010*\u001a\u00020\u0015*\u00020'2\n\b\u0002\u0010(\u001a\u0004\u0018\u00010'2\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010+\u001a\u00020\u0015H\u0002J\u0018\u0010,\u001a\u00020\u00152\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0005H\u0016J\u0010\u00100\u001a\u00020\u00152\u0006\u00101\u001a\u000202H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00064"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "blueprintScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "blueprintBinding", "Lcom/arizonagames/feature/minigames/blueprint/databinding/BlueprintScreenBinding;", "showLastAreaTimer", "Landroid/os/CountDownTimer;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundId", "topHalloweenAdapter", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "startLastAreaTimer", "", "onFinish", "Lkotlin/Function0;", "closeScreen", "showBlueprintScreen", "response", "Lcom/arizonagames/feature/minigames/blueprint/BlueprintResponse;", "showHalloween", "rewardsPanelInitialize", "showAkWeapon", "showRpgWeapon", "showPMWeapon", "showPipeOne", "showPipeTwo", "showPipeThree", "showPipeFour", "showPipeFive", "clickOnPipe", "Landroid/view/View;", "touch", "onClick", "clickOnWeapon", "invisibleOtherWeaponPages", "onBackendMessage", "data", "", "subId", "setVisibility", "visible", "", "Spawner", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u00014B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010\u0018\u001a\u00020\u0015H\u0002J\u0010\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u0015H\u0002J\b\u0010\u001d\u001a\u00020\u0015H\u0002J\u0010\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001f\u001a\u00020\u0015H\u0002J\b\u0010 \u001a\u00020\u0015H\u0002J\b\u0010!\u001a\u00020\u0015H\u0002J\b\u0010\"\u001a\u00020\u0015H\u0002J\b\u0010#\u001a\u00020\u0015H\u0002J\b\u0010$\u001a\u00020\u0015H\u0002J\b\u0010%\u001a\u00020\u0015H\u0002J\b\u0010&\u001a\u00020\u0015H\u0002J&\u0010'\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J&\u0010+\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010,\u001a\u00020\u0015H\u0002J\u0018\u0010-\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0016J\u0010\u00101\u001a\u00020\u00152\u0006\u00102\u001a\u000203H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "blueprintScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "blueprintBinding", "Lcom/arizonagames/feature/minigames/blueprint/databinding/BlueprintScreenBinding;", "showLastAreaTimer", "Landroid/os/CountDownTimer;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundId", "topHalloweenAdapter", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "startLastAreaTimer", "", "onFinish", "Lkotlin/Function0;", "closeScreen", "showBlueprintScreen", "response", "Lcom/arizonagames/feature/minigames/blueprint/BlueprintResponse;", "showHalloween", "showSnowmen", "rewardsPanelInitialize", "showAkWeapon", "showRpgWeapon", "showPMWeapon", "showPipeOne", "showPipeTwo", "showPipeThree", "showPipeFour", "showPipeFive", "clickOnPipe", "Landroid/view/View;", "touch", "onClick", "clickOnWeapon", "invisibleOtherWeaponPages", "onBackendMessage", "data", "", "subId", "setVisibility", "visible", "", "Spawner", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class BlueprintScreen extends SAMPUIElement {
     private final BlueprintScreenBinding blueprintBinding;
@@ -97,6 +96,10 @@ public final class BlueprintScreen extends SAMPUIElement {
                 iArr[WeaponType.HALLOWEEN.ordinal()] = 11;
             } catch (NoSuchFieldError unused11) {
             }
+            try {
+                iArr[WeaponType.SNOWMEN.ordinal()] = 12;
+            } catch (NoSuchFieldError unused12) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -146,7 +149,6 @@ public final class BlueprintScreen extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit topHalloweenAdapter$lambda$0(BlueprintScreen blueprintScreen) {
-        Log.d("tag", "click on item");
         blueprintScreen.soundPool.play(blueprintScreen.soundId, 1.0f, 1.0f, 0, 0, 1.0f);
         return Unit.INSTANCE;
     }
@@ -248,6 +250,9 @@ public final class BlueprintScreen extends SAMPUIElement {
             case 11:
                 showHalloween();
                 return;
+            case 12:
+                showSnowmen();
+                return;
             default:
                 throw new NoWhenBranchMatchedException();
         }
@@ -258,7 +263,19 @@ public final class BlueprintScreen extends SAMPUIElement {
         blueprintScreenBinding.getRoot().setBackgroundResource(R.drawable.blueprint_halloween_bg);
         blueprintScreenBinding.halloween.getRoot().setVisibility(0);
         blueprintScreenBinding.halloween.topRv.setAdapter(this.topHalloweenAdapter);
+        this.topHalloweenAdapter.setItemList(HalloweeenKt.getHalloweenList());
         this.topHalloweenAdapter.addItems(((HalloweenGameVariation) CollectionsKt.random(HalloweeenKt.getGamesVariations(), Random.Default)).getList());
+    }
+
+    private final void showSnowmen() {
+        BlueprintScreenBinding blueprintScreenBinding = this.blueprintBinding;
+        blueprintScreenBinding.getRoot().setBackgroundResource(R.drawable.blueprint_snowmen_bg);
+        LinearLayout root = blueprintScreenBinding.halloween.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+        root.setVisibility(0);
+        blueprintScreenBinding.halloween.topRv.setAdapter(this.topHalloweenAdapter);
+        this.topHalloweenAdapter.setItemList(SnowmenKt.getSnowmenList());
+        this.topHalloweenAdapter.addItems(((HalloweenGameVariation) CollectionsKt.random(SnowmenKt.getSnowmenGamesVariations(), Random.Default)).getList());
     }
 
     private final void rewardsPanelInitialize(BlueprintResponse blueprintResponse) {
